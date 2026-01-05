@@ -83,6 +83,7 @@ export async function middleware(request: NextRequest) {
   
   const protectedRoutes = [
     '/dashboard',
+    '/study',
     '/books',
     '/practice',
     '/mistakes',
@@ -109,9 +110,9 @@ export async function middleware(request: NextRequest) {
 
   const authRoutes = ['/login', '/register']
 
-  // Redirect to dashboard if already logged in and trying to access auth routes
+  // Redirect to home if already logged in and trying to access auth routes
   if (authRoutes.includes(pathname) && session) {
-    return NextResponse.redirect(new URL('/dashboard', request.url))
+    return NextResponse.redirect(new URL('/', request.url))
   }
 
   // ========================================

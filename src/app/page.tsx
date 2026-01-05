@@ -1,156 +1,780 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import { redirect } from 'next/navigation'
+import Link from 'next/link'
+import { BookOpen, GraduationCap, Sparkles, Trophy, Target, Zap, Users, TrendingUp, Star, Clock, Award, ArrowRight, Calendar, XCircle, Plus } from 'lucide-react'
 
-export default function Home() {
-  return (
-    <div className="min-h-screen" style={{ backgroundColor: "#FFFBEB" }}>
-      {/* Hero Section */}
-      <main className="container mx-auto px-4 py-16 md:py-24">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Badge */}
-          <div className="inline-block mb-8">
-            <span
-              className="inline-block px-4 py-2 text-sm font-bold border-brutal shadow-brutal bg-[#FFEB3B]"
-              style={{ fontSize: "14px" }}
-            >
-              ✨ 重新定义英语学习
-            </span>
-          </div>
+// Mock 数据（Supabase 无数据时使用）
+const mockBooks = [
+  {
+    id: '1',
+    name: 'CET-4 核心词汇',
+    description: '大学英语四级必备词汇',
+    word_count: 4500,
+    cover_color: 'from-green-400 to-green-500',
+    progress: 75,
+    status: 'learning'
+  },
+  {
+    id: '2',
+    name: 'CET-6 高频词汇',
+    description: '大学英语六级核心词汇',
+    word_count: 6000,
+    cover_color: 'from-blue-400 to-blue-500',
+    progress: 45,
+    status: 'learning'
+  },
+  {
+    id: '3',
+    name: 'IELTS 雅思词汇',
+    description: '雅思考试必备词汇',
+    word_count: 8000,
+    cover_color: 'from-purple-400 to-purple-500',
+    progress: 0,
+    status: 'not_started'
+  },
+  {
+    id: '4',
+    name: 'TOEFL 托福词汇',
+    description: '托福考试核心词汇',
+    word_count: 8000,
+    cover_color: 'from-orange-400 to-orange-500',
+    progress: 20,
+    status: 'learning'
+  }
+]
 
-          {/* Headline */}
-          <h1
-            className="text-5xl md:text-7xl font-brutal mb-6 leading-tight"
-            style={{ fontWeight: 900, letterSpacing: "-0.02em" }}
-          >
-            Little Language Notes
-          </h1>
+export default async function Home() {
+  // 获取用户信息
+  const user = await getCurrentUser()
 
-          {/* Subheadline */}
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto" style={{ lineHeight: "1.6" }}>
-            集"高效录入"、"结构化记忆"、"数据可视化"于一体的<br />
-            <span style={{ color: "#22C55E", fontWeight: 700 }}>智能英语学习平台</span>
-          </p>
+  // 如果用户已登录，获取数据并显示工作台
+  if (user) {
+    const supabase = await createClient()
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="btn-brutal btn-brutal-primary text-lg px-8 py-4">
-              开始学习 🚀
-            </button>
-            <button className="btn-brutal btn-brutal-secondary text-lg px-8 py-4">
-              了解更多 →
-            </button>
-          </div>
+    // 获取词书数据
+    let books = mockBooks
 
-          {/* Features Card */}
-          <Card className="max-w-3xl mx-auto border-brutal shadow-brutal rounded-brutal p-8 bg-white">
-            <CardHeader className="text-center pb-6">
-              <CardTitle className="text-2xl font-brutal mb-2">
-                核心特色
-              </CardTitle>
-              <CardDescription className="text-base">
-                为什么选择小语笔记？
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-6 text-left">
-                {/* Feature 1 */}
-                <div className="space-y-2">
-                  <div className="inline-block px-3 py-1 border-brutal bg-[#22C55E] text-white text-sm font-bold">
-                    🎯 结构化记忆
-                  </div>
-                  <p className="text-sm" style={{ lineHeight: "1.6" }}>
-                    科学的复习算法，基于艾宾浩斯遗忘曲线优化学习效果
-                  </p>
+    try {
+      const { data: booksData } = await supabase
+        .from('books')
+        .select('*')
+        .order('created_at', { ascending: false })
+
+      if (booksData && booksData.length > 0) {
+        // 映射数据库字段到组件需要的格式
+        books = booksData.map((book: any) => ({
+          id: book.id,
+          name: book.title,
+          description: book.description || '',
+          word_count: book.total_words || 0,
+          cover_color: 'from-green-400 to-green-500', // 默认颜色，后续可从 cover_url 提取
+          progress: 0, // 暂无进度数据
+          status: 'not_started'
+        }))
+      }
+    } catch (error) {
+      console.error('Error fetching data:', error)
+    }
+
+    // 显示工作台内容
+    return (
+      <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+        {/* Header */}
+        <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
+          <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
+            <div className="flex items-center justify-between">
+              {/* Logo */}
+              <div className="flex items-center gap-3">
+                <div className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl">
+                  <GraduationCap className="w-7 h-7 text-white" />
                 </div>
-
-                {/* Feature 2 */}
-                <div className="space-y-2">
-                  <div className="inline-block px-3 py-1 border-brutal bg-[#2196F3] text-white text-sm font-bold">
-                    📊 数据可视化
-                  </div>
-                  <p className="text-sm" style={{ lineHeight: "1.6" }}>
-                    生词日历、学习进度分析，让学习成果一目了然
-                  </p>
-                </div>
-
-                {/* Feature 3 */}
-                <div className="space-y-2">
-                  <div className="inline-block px-3 py-1 border-brutal bg-[#FFEB3B] text-black text-sm font-bold">
-                    🎮 游戏化学习
-                  </div>
-                  <p className="text-sm" style={{ lineHeight: "1.6" }}>
-                    听写、消消乐、卡片背单词等多种练习模式
-                  </p>
-                </div>
-
-                {/* Feature 4 */}
-                <div className="space-y-2">
-                  <div className="inline-block px-3 py-1 border-brutal bg-[#EF4444] text-white text-sm font-bold">
-                    🔄 多端同步
-                  </div>
-                  <p className="text-sm" style={{ lineHeight: "1.6" }}>
-                    WebSocket 实时同步学习进度，随时随地无缝衔接
-                  </p>
-                </div>
-
-                {/* Feature 5 */}
-                <div className="space-y-2">
-                  <div className="inline-block px-3 py-1 border-brutal bg-[#CBA6F7] text-white text-sm font-bold">
-                    🤖 智能录入
-                  </div>
-                  <p className="text-sm" style={{ lineHeight: "1.6" }}>
-                    API 自动匹配单词释义、音标，500词/日智能配额
-                  </p>
-                </div>
-
-                {/* Feature 6 */}
-                <div className="space-y-2">
-                  <div className="inline-block px-3 py-1 border-brutal bg-[#76E0C2] text-black text-sm font-bold">
-                    ⚡ 高效学习
-                  </div>
-                  <p className="text-sm" style={{ lineHeight: "1.6" }}>
-                    Web Speech API 发音，虚拟列表优化，秒级响应
-                  </p>
+                <div>
+                  <h1 className="text-2xl font-bold text-gray-900">小语笔记</h1>
+                  <p className="text-xs text-gray-500">{user.email}</p>
                 </div>
               </div>
-            </CardContent>
-          </Card>
 
-          {/* Version Badge */}
-          <div className="mt-12">
-            <span
-              className="inline-block px-4 py-2 text-sm font-bold border-brutal shadow-brutal"
-              style={{ backgroundColor: "#22C55E", color: "white" }}
-            >
-              v3.2.1
-            </span>
+              {/* Action Buttons */}
+              <div className="flex items-center gap-3">
+                <Link
+                  href="/logout"
+                  className="px-5 py-2.5 text-sm font-bold text-gray-700 border-2 border-gray-200 rounded-xl hover:border-red-300 hover:text-red-600 transition-all duration-300"
+                >
+                  退出登录
+                </Link>
+              </div>
+            </div>
           </div>
+        </header>
 
-          {/* Tech Stack */}
-          <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {["Next.js 16", "TypeScript", "Tailwind CSS", "Supabase", "React 19"].map((tech) => (
-              <span
-                key={tech}
-                className="px-3 py-1 text-xs font-bold border-brutal shadow-brutal bg-white"
+        {/* Main Content - 工作台 */}
+        <main className="px-3 sm:px-4 md:px-6 py-6 md:py-8">
+          <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
+
+            {/* [A] 个人学习区 */}
+            <section className="mb-8 md:mb-12">
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl lg:text-3xl font-black text-gray-900">
+                  📚 个人学习区
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-6">
+                {/* 智能继续学习 */}
+                <Link href="/study" className="col-span-1">
+                  <div className="clay-card p-5 md:p-8 h-full hover:scale-105 transition-transform cursor-pointer group">
+                    <div className="flex items-start justify-between mb-3 md:mb-4">
+                      <div className="w-12 h-12 md:w-14 md:h-14 clay-card clay-icon flex items-center justify-center">
+                        <Target className="w-6 h-6 md:w-7 md:h-7 text-green-600" />
+                      </div>
+                      <div className="text-right">
+                        <div className="text-2xl md:text-3xl font-black text-green-600 mb-1">65%</div>
+                        <p className="text-xs md:text-sm font-semibold text-gray-600">上次进度</p>
+                      </div>
+                    </div>
+                    <h4 className="text-lg md:text-xl font-black text-gray-900 mb-2">智能继续学习</h4>
+                    <p className="text-sm md:text-base text-gray-600 font-medium mb-3 md:mb-4">
+                      继续上次的学习进度，保持学习节奏
+                    </p>
+                    <div className="flex items-center gap-2 text-xs md:text-sm font-semibold text-green-600">
+                      <Clock className="w-3 h-3 md:w-4 md:h-4" />
+                      <span>预计 15 分钟</span>
+                    </div>
+                  </div>
+                </Link>
+
+                {/* 错题本 */}
+                <Link href="/mistakes" className="col-span-1">
+                  <div className="clay-card p-5 md:p-6 h-full hover:scale-105 transition-transform cursor-pointer">
+                    <div className="w-12 h-12 md:w-14 md:h-14 clay-card clay-icon mb-3 md:mb-4 mx-auto flex items-center justify-center">
+                      <XCircle className="w-6 h-6 md:w-7 md:h-7 text-red-500" />
+                    </div>
+                    <h4 className="text-base md:text-lg font-black text-gray-900 mb-2 text-center">错题本</h4>
+                    <p className="text-2xl md:text-3xl font-black text-red-500 mb-1 text-center">23</p>
+                    <p className="text-xs md:text-sm font-semibold text-gray-600 text-center">待复习</p>
+                  </div>
+                </Link>
+
+                {/* 生词日历 */}
+                <Link href="/calendar" className="col-span-1">
+                  <div className="clay-card p-5 md:p-6 h-full hover:scale-105 transition-transform cursor-pointer">
+                    <div className="w-12 h-12 md:w-14 md:h-14 clay-card clay-icon mb-3 md:mb-4 mx-auto flex items-center justify-center">
+                      <Calendar className="w-6 h-6 md:w-7 md:h-7 text-blue-600" />
+                    </div>
+                    <h4 className="text-base md:text-lg font-black text-gray-900 mb-2 text-center">生词日历</h4>
+                    <p className="text-2xl md:text-3xl font-black text-blue-600 mb-1 text-center">12</p>
+                    <p className="text-xs md:text-sm font-semibold text-gray-600 text-center">今日新增</p>
+                  </div>
+                </Link>
+              </div>
+
+              {/* 新建词库按钮 */}
+              <Link href="/library/new" className="inline-block mt-6">
+                <div className="clay-card p-5 md:p-6 hover:scale-105 transition-transform cursor-pointer flex items-center gap-4">
+                  <div className="w-12 h-12 md:w-14 md:h-14 clay-card clay-icon flex items-center justify-center">
+                    <Plus className="w-6 h-6 md:w-7 md:h-7 text-green-600" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-lg md:text-xl font-black text-gray-900 mb-1">新建自定义词库</h4>
+                    <p className="text-sm md:text-base text-gray-600 font-medium">
+                      打造你的专属单词书
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </section>
+
+            {/* [B] 词库资源列表 */}
+            <section>
+              <div className="flex items-center justify-between mb-6">
+                <h3 className="text-2xl lg:text-3xl font-black text-gray-900">
+                  📖 词库资源
+                </h3>
+                <Link
+                  href="/library"
+                  className="text-base font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1"
+                >
+                  查看全部
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </Link>
+              </div>
+
+              {/* 筛选 Tabs */}
+              <div className="flex gap-3 mb-6 overflow-x-auto pb-2">
+                <button className="px-6 py-3 text-base font-bold text-white rounded-xl transition-all duration-300 min-h-[52px]" style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #45A049 100%)', boxShadow: '0 4px 8px rgba(76, 175, 80, 0.3)' }}>
+                  全部
+                </button>
+                <button className="px-6 py-3 text-base font-bold text-gray-700 rounded-xl border-2 border-gray-200 hover:border-purple-300 hover:text-purple-600 transition-all duration-300 min-h-[52px]">
+                  考试
+                </button>
+                <button className="px-6 py-3 text-base font-bold text-gray-700 rounded-xl border-2 border-gray-200 hover:border-purple-300 hover:text-purple-600 transition-all duration-300 min-h-[52px]">
+                  场景
+                </button>
+                <button className="px-6 py-3 text-base font-bold text-gray-700 rounded-xl border-2 border-gray-200 hover:border-purple-300 hover:text-purple-600 transition-all duration-300 min-h-[52px]">
+                  教材
+                </button>
+              </div>
+
+              {/* 词书卡片网格 */}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                {books.map((book) => (
+                  <Link
+                    key={book.id}
+                    href={`/library/${book.id}`}
+                    className="group"
+                  >
+                    <div className="clay-card p-5 md:p-6 h-full hover:scale-105 transition-transform cursor-pointer">
+                      {/* 封面 */}
+                      <div className={`w-full h-32 rounded-xl mb-4 bg-gradient-to-br ${book.cover_color || 'from-green-400 to-green-500'} flex items-center justify-center`}>
+                        <BookOpen className="w-12 h-12 text-white/90" />
+                      </div>
+
+                      {/* 内容 */}
+                      <h4 className="text-lg font-black text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
+                        {book.name || '未命名词书'}
+                      </h4>
+                      <p className="text-sm text-gray-600 font-medium mb-4 line-clamp-2">
+                        {book.description || '暂无描述'}
+                      </p>
+
+                      {/* 底部信息 */}
+                      <div className="flex items-center justify-between text-sm">
+                        <span className="font-semibold text-gray-600">
+                          {(book.word_count || 0).toLocaleString()} 词
+                        </span>
+                        {book.progress > 0 && (
+                          <span className="px-3 py-1 font-bold text-green-600 bg-green-50 rounded-full text-xs">
+                            {book.progress}%
+                          </span>
+                        )}
+                      </div>
+
+                      {/* 进度条 */}
+                      {book.progress && book.progress > 0 && (
+                        <div className="mt-3">
+                          <div className="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+                            <div
+                              className="h-full bg-gradient-to-r from-green-400 to-green-500 rounded-full transition-all duration-300"
+                              style={{ width: `${book.progress}%` }}
+                            />
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </section>
+
+          </div>
+        </main>
+
+        {/* Footer */}
+        <footer className="px-3 sm:px-4 md:px-6 py-6 md:py-8 mt-8 md:mt-12">
+          <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
+            <div className="clay-card px-6 md:px-8 py-6 text-center">
+              <p className="text-sm text-gray-600 font-semibold">
+                🎓 小语笔记 © 2024 · 让英语学习更简单、更有趣
+              </p>
+            </div>
+          </div>
+        </footer>
+      </div>
+    )
+  }
+
+  // 未登录，显示 Landing Page
+  return (
+    <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F8F5F2' }}>
+      {/* Header - Floating Claymorphism Navbar */}
+      <header className="sticky top-0 z-50 px-4 py-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="clay-card px-6 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <div className="flex items-center justify-center w-12 h-12 clay-card clay-icon clay-float">
+                <GraduationCap className="w-7 h-7 text-purple-600" />
+              </div>
+              <div>
+                <h1 className="text-2xl font-bold text-gradient-purple">小语笔记</h1>
+                <p className="text-xs text-gray-600 font-semibold">✨ 智能英语学习平台</p>
+              </div>
+            </div>
+            <div className="flex items-center gap-3">
+              <Link
+                href="/login"
+                className="px-6 py-3 text-sm font-bold text-purple-600 hover:text-orange-600 clay-badge transition-all duration-300"
               >
-                {tech}
-              </span>
-            ))}
+                登录
+              </Link>
+              <Link
+                href="/login"
+                className="clay-button-orange px-6 py-3 text-sm font-bold flex items-center gap-2"
+              >
+                <Sparkles className="w-4 h-4" />
+                注册
+              </Link>
+            </div>
           </div>
+        </div>
+      </header>
+
+      {/* Storytelling Landing Page */}
+      <main className="flex-1 px-4 py-16">
+        <div className="max-w-7xl mx-auto">
+
+          {/* INTRO HOOK */}
+          <section className="clay-card p-16 mb-8 text-center">
+            <div className="inline-flex items-center justify-center w-24 h-24 clay-card clay-icon mb-8 clay-float">
+              <BookOpen className="w-12 h-12 text-purple-600" />
+            </div>
+
+            <h1 className="text-5xl md:text-6xl font-black mb-6 text-gradient-purple">
+              英语学习，从此不同
+            </h1>
+
+            <p className="text-xl md:text-2xl text-gray-800 font-semibold mb-8 max-w-3xl mx-auto">
+              📚 告别死记硬背 · 🎯 AI 智能推荐 · 🏆 成就系统激励
+            </p>
+
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+              <Link
+                href="/login"
+                className="clay-button-orange text-xl px-12 py-5 flex items-center gap-3 w-full sm:w-auto justify-center"
+              >
+                <Sparkles className="w-6 h-6" />
+                立即开始学习
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link
+                href="/login"
+                className="clay-button-primary text-xl px-12 py-5 flex items-center gap-3 w-full sm:w-auto justify-center"
+              >
+                了解更多
+              </Link>
+            </div>
+
+            <p className="text-sm text-gray-600 font-medium">
+              🎓 已有 <span className="text-orange-600 font-black">1,234</span> 位学习者加入
+            </p>
+          </section>
+
+          <div className="chapter-divider" />
+
+          {/* CHAPTER 1: THE PROBLEM */}
+          <section className="mb-16">
+            <div className="text-center mb-12">
+              <span className="clay-badge text-sm mb-4 inline-block text-purple-600">Chapter 1</span>
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gradient-purple">
+                你是否也遇到过这些问题？
+              </h2>
+              <p className="text-lg text-gray-600 font-semibold max-w-2xl mx-auto">
+                传统背单词方式效率低，容易遗忘，学习动力不足
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="clay-card-pink p-8">
+                <div className="clay-icon w-16 h-16 mb-6 mx-auto">
+                  <span className="text-4xl">😫</span>
+                </div>
+                <h3 className="text-2xl font-black text-gray-900 mb-3 text-center">
+                  记不住
+                </h3>
+                <p className="text-gray-600 font-semibold text-center">
+                  今天记的单词，明天就忘了，反复记反复忘
+                </p>
+              </div>
+
+              <div className="clay-card-purple p-8">
+                <div className="clay-icon w-16 h-16 mb-6 mx-auto">
+                  <span className="text-4xl">😴</span>
+                </div>
+                <h3 className="text-2xl font-black text-gray-900 mb-3 text-center">
+                  没动力
+                </h3>
+                <p className="text-gray-600 font-semibold text-center">
+                  学习枯燥无味，很难坚持超过三天
+                </p>
+              </div>
+
+              <div className="clay-card-orange p-8">
+                <div className="clay-icon w-16 h-16 mb-6 mx-auto">
+                  <span className="text-4xl">😵</span>
+                </div>
+                <h3 className="text-2xl font-black text-gray-900 mb-3 text-center">
+                  效率低
+                </h3>
+                <p className="text-gray-600 font-semibold text-center">
+                  不知从何学起，浪费时间在已掌握的单词上
+                </p>
+              </div>
+            </div>
+          </section>
+
+          <div className="chapter-divider" />
+
+          {/* CHAPTER 2: THE JOURNEY */}
+          <section className="mb-16">
+            <div className="text-center mb-12">
+              <span className="clay-badge text-sm mb-4 inline-block text-purple-600">Chapter 2</span>
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gradient-purple">
+                小语笔记，重新定义单词学习
+              </h2>
+              <p className="text-lg text-gray-600 font-semibold max-w-2xl mx-auto">
+                科学的学习方法 + 有趣的学习体验 = 高效的记忆效果
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="clay-card-blue p-8 hover:scale-105 transition-transform">
+                <div className="clay-icon w-16 h-16 mb-6">
+                  <Target className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-2xl font-black text-gray-900 mb-3">
+                  🎯 AI 智能推荐
+                </h3>
+                <p className="text-gray-600 font-semibold mb-4">
+                  根据你的学习水平，智能推荐最适合的单词，告别无效学习
+                </p>
+                <div className="clay-progress">
+                  <div className="clay-progress-bar" style={{ width: '85%' }}></div>
+                </div>
+                <p className="text-sm text-blue-600 font-bold mt-2">学习效率提升 85%</p>
+              </div>
+
+              <div className="clay-card-orange p-8 hover:scale-105 transition-transform">
+                <div className="clay-icon w-16 h-16 mb-6">
+                  <Trophy className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-2xl font-black text-gray-900 mb-3">
+                  🏆 成就系统
+                </h3>
+                <p className="text-gray-600 font-semibold mb-4">
+                  完成学习目标解锁成就，让学习像游戏一样有趣
+                </p>
+                <div className="flex items-center gap-2">
+                  <Trophy className="w-5 h-5 text-orange-600" />
+                  <Trophy className="w-5 h-5 text-orange-600" />
+                  <Trophy className="w-5 h-5 text-orange-600" />
+                  <Trophy className="w-5 h-5 text-gray-300" />
+                  <Trophy className="w-5 h-5 text-gray-300" />
+                </div>
+                <p className="text-sm text-orange-600 font-bold mt-2">连续学习 7 天</p>
+              </div>
+
+              <div className="clay-card-green p-8 hover:scale-105 transition-transform">
+                <div className="clay-icon w-16 h-16 mb-6">
+                  <Zap className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-2xl font-black text-gray-900 mb-3">
+                  ⚡ 间隔重复
+                </h3>
+                <p className="text-gray-600 font-semibold mb-4">
+                  科学的记忆曲线算法，在最佳时机复习，记忆更持久
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-2 h-2 rounded-full bg-green-600"></div>
+                    <span className="font-semibold text-gray-900">今天：20 词</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-sm">
+                    <div className="w-2 h-2 rounded-full bg-purple-600"></div>
+                    <span className="font-semibold text-gray-900">复习：50 词</span>
+                  </div>
+                </div>
+                <p className="text-sm text-green-600 font-bold mt-2">记忆保持率提升 3 倍</p>
+              </div>
+            </div>
+          </section>
+
+          <div className="chapter-divider" />
+
+          {/* CHAPTER 3: THE SOLUTION - Course Catalog + Progress */}
+          <section className="mb-16">
+            <div className="text-center mb-12">
+              <span className="clay-badge text-sm mb-4 inline-block text-purple-600">Chapter 3</span>
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gradient-purple">
+                精选课程，满足不同需求
+              </h2>
+              <p className="text-lg text-gray-600 font-semibold max-w-2xl mx-auto">
+                从四六级到雅思托福，总有一款适合你
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
+              {/* Daily Progress */}
+              <div className="clay-card p-8">
+                <div className="flex items-center justify-between mb-6">
+                  <h3 className="text-2xl font-black text-gray-900">📅 今日学习</h3>
+                  <div className="clay-icon p-3">
+                    <TrendingUp className="w-6 h-6 text-green-600" />
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-2 gap-4 mb-6">
+                  <div className="clay-badge p-4 text-center">
+                    <p className="text-sm font-semibold text-gray-600 mb-1">今日目标</p>
+                    <p className="text-3xl font-black text-orange-600">20 词</p>
+                  </div>
+                  <div className="clay-badge p-4 text-center">
+                    <p className="text-sm font-semibold text-gray-600 mb-1">已完成</p>
+                    <p className="text-3xl font-black text-green-600">15 词</p>
+                  </div>
+                </div>
+
+                <div className="mb-4">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-bold text-gray-900">今日进度</span>
+                    <span className="text-sm font-black text-purple-600">75%</span>
+                  </div>
+                  <div className="clay-progress">
+                    <div className="clay-progress-bar" style={{ width: '75%' }}></div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-2 text-sm text-gray-600">
+                  <Zap className="w-4 h-4 text-orange-600 clay-pulse" />
+                  <span className="font-semibold">连续学习 <span className="text-orange-600 font-black">7 天</span></span>
+                </div>
+              </div>
+
+              {/* Course Grid */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="clay-card-purple p-4 hover:scale-105 transition-transform cursor-pointer">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="clay-icon p-2">
+                      <BookOpen className="w-5 h-5 text-purple-600" />
+                    </div>
+                    <span className="text-xs font-bold text-purple-600">热门</span>
+                  </div>
+                  <h4 className="text-lg font-black text-gray-900 mb-1">CET-4</h4>
+                  <p className="text-xs text-gray-600 font-semibold mb-2">4,500 词</p>
+                  <div className="clay-progress h-2 mb-1">
+                    <div className="clay-progress-bar" style={{ width: '100%' }}></div>
+                  </div>
+                  <p className="text-xs font-black text-purple-600">100%</p>
+                </div>
+
+                <div className="clay-card-pink p-4 hover:scale-105 transition-transform cursor-pointer">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="clay-icon p-2">
+                      <BookOpen className="w-5 h-5 text-pink-600" />
+                    </div>
+                    <span className="text-xs font-bold text-pink-600">推荐</span>
+                  </div>
+                  <h4 className="text-lg font-black text-gray-900 mb-1">CET-6</h4>
+                  <p className="text-xs text-gray-600 font-semibold mb-2">6,000 词</p>
+                  <div className="clay-progress h-2 mb-1">
+                    <div className="clay-progress-bar" style={{ width: '100%' }}></div>
+                  </div>
+                  <p className="text-xs font-black text-pink-600">100%</p>
+                </div>
+
+                <div className="clay-card-teal p-4 hover:scale-105 transition-transform cursor-pointer">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="clay-icon p-2">
+                      <BookOpen className="w-5 h-5 text-teal-600" />
+                    </div>
+                    <span className="text-xs font-bold text-teal-600">新课</span>
+                  </div>
+                  <h4 className="text-lg font-black text-gray-900 mb-1">IELTS</h4>
+                  <p className="text-xs text-gray-600 font-semibold mb-2">8,000 词</p>
+                  <div className="clay-progress h-2 mb-1">
+                    <div className="clay-progress-bar" style={{ width: '44%' }}></div>
+                  </div>
+                  <p className="text-xs font-black text-teal-600">44%</p>
+                </div>
+
+                <div className="clay-card-blue p-4 hover:scale-105 transition-transform cursor-pointer">
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="clay-icon p-2">
+                      <BookOpen className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <span className="text-xs font-bold text-blue-600">精选</span>
+                  </div>
+                  <h4 className="text-lg font-black text-gray-900 mb-1">TOEFL</h4>
+                  <p className="text-xs text-gray-600 font-semibold mb-2">8,000 词</p>
+                  <div className="clay-progress h-2 mb-1">
+                    <div className="clay-progress-bar" style={{ width: '63%' }}></div>
+                  </div>
+                  <p className="text-xs font-black text-blue-600">63%</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div className="chapter-divider" />
+
+          {/* STUDENT TESTIMONIALS */}
+          <section className="mb-16">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 text-gradient-purple">
+                学员真实反馈
+              </h2>
+              <p className="text-lg text-gray-600 font-semibold max-w-2xl mx-auto">
+                看看其他学习者怎么说
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="clay-card-yellow p-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-orange-500 text-orange-500" />
+                  ))}
+                </div>
+                <p className="text-gray-800 font-semibold mb-4 leading-relaxed">
+                  "AI 智能推荐太准了！总是能找到我不会的单词，再也不浪费时间在已经掌握的词汇上。"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="clay-icon w-12 h-12">
+                    <span className="text-2xl">👨‍🎓</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900">张同学</p>
+                    <p className="text-sm text-gray-600 font-medium">CET-4 学习者</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="clay-card-pink p-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-orange-500 text-orange-500" />
+                  ))}
+                </div>
+                <p className="text-gray-800 font-semibold mb-4 leading-relaxed">
+                  "成就系统让我每天都有动力学习！连续学习 30 天，词汇量提升了一倍，太有成就感了！"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="clay-icon w-12 h-12">
+                    <span className="text-2xl">👩‍💼</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900">李女士</p>
+                    <p className="text-sm text-gray-600 font-medium">IELTS 备考中</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="clay-card-blue p-6">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 fill-orange-500 text-orange-500" />
+                  ))}
+                </div>
+                <p className="text-gray-800 font-semibold mb-4 leading-relaxed">
+                  "界面设计很漂亮，Claymorphism 风格很有趣，用起来很开心。间隔重复算法让记忆效果特别好！"
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="clay-icon w-12 h-12">
+                    <span className="text-2xl">👨‍💻</span>
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-900">王同学</p>
+                    <p className="text-sm text-gray-600 font-medium">TOEFL 学习者</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div className="chapter-divider" />
+
+          {/* CLIMAX CTA */}
+          <section className="mb-16">
+            <div className="clay-card-orange p-16 text-center relative overflow-hidden">
+              <div className="absolute inset-0 opacity-10">
+                <div className="absolute top-0 left-0 w-64 h-64 bg-orange-600 rounded-full blur-3xl"></div>
+                <div className="absolute bottom-0 right-0 w-64 h-64 bg-purple-600 rounded-full blur-3xl"></div>
+              </div>
+
+              <div className="relative z-10">
+                <div className="inline-flex items-center justify-center w-24 h-24 clay-card clay-icon mb-8 clay-float">
+                  <GraduationCap className="w-12 h-12 text-orange-600" />
+                </div>
+
+                <h2 className="text-4xl md:text-5xl font-black mb-6 text-gradient-purple">
+                  准备好开始学习了吗？
+                </h2>
+
+                <p className="text-xl text-gray-800 font-semibold mb-8 max-w-2xl mx-auto">
+                  加入 <span className="text-orange-600 font-black">1,234</span> 位学习者，一起开启英语提升之旅！
+                </p>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+                  <Link
+                    href="/login"
+                    className="clay-button-primary text-xl px-12 py-5 flex items-center gap-3 w-full sm:w-auto justify-center"
+                  >
+                    <Sparkles className="w-6 h-6" />
+                    免费注册
+                    <ArrowRight className="w-5 h-5" />
+                  </Link>
+                  <Link
+                    href="/login"
+                    className="clay-button-orange text-xl px-12 py-5 flex items-center gap-3 w-full sm:w-auto justify-center"
+                  >
+                    立即登录
+                  </Link>
+                </div>
+
+                <div className="flex items-center justify-center gap-6 text-sm text-gray-700 font-semibold">
+                  <span className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-green-600" />
+                    完全免费
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-purple-600" />
+                    无需信用卡
+                  </span>
+                  <span className="flex items-center gap-2">
+                    <Sparkles className="w-4 h-4 text-pink-600" />
+                    随时取消
+                  </span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="clay-card p-6 text-center">
+              <div className="text-4xl font-black text-gradient-purple mb-2">500+</div>
+              <p className="text-gray-600 font-semibold">📚 精选单词书</p>
+            </div>
+
+            <div className="clay-card p-6 text-center">
+              <div className="text-4xl font-black text-gradient-pink mb-2">10万+</div>
+              <p className="text-gray-600 font-semibold">📖 词汇总量</p>
+            </div>
+
+            <div className="clay-card p-6 text-center">
+              <div className="text-4xl font-black text-green-600 mb-2">98%</div>
+              <p className="text-gray-600 font-semibold">😊 用户满意度</p>
+            </div>
+
+            <div className="clay-card p-6 text-center">
+              <div className="text-4xl font-black text-blue-600 mb-2">∞</div>
+              <p className="text-gray-600 font-semibold">🚀 学习无止境</p>
+            </div>
+          </div>
+
         </div>
       </main>
 
       {/* Footer */}
-      <footer className="border-brutal border-t py-6 mt-16">
-        <div className="container mx-auto px-4 text-center">
-          <p className="text-sm font-bold">
-            © 2024 小语笔记. All rights reserved.
-          </p>
-          <p className="text-xs mt-2" style={{ color: "#6B7280" }}>
-            Made with ❤️ for English learners worldwide
-          </p>
+      <footer className="px-4 py-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="clay-card px-8 py-6 text-center">
+            <p className="text-gray-600 font-semibold">
+              🎓 小语笔记 © 2024 · 让英语学习更简单、更有趣
+            </p>
+          </div>
         </div>
       </footer>
     </div>
-  );
+  )
 }

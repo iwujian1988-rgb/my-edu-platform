@@ -22,16 +22,10 @@ import type { Database } from '@/types/database'
  * Creates a Supabase client for server-side usage
  *
  * @example
- * ```tsx
- * // In a Server Component
- * import { createClient } from '@/lib/supabase/server'
- *
- * export default async function Page() {
- *   const supabase = await createClient()
- *   const { data: books } = await supabase.from('books').select('*')
- *   return <div>{/* render books */}</div>
- * }
- * ```
+ * Example usage:
+ * - Server Components: await createClient()
+ * - Server Actions: await createClient()
+ * - Route Handlers: await createClient()
  */
 export async function createClient() {
   const cookieStore = await cookies()

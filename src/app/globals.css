@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -11,155 +9,347 @@
 }
 
 :root {
-  /* Neo-brutalism Color Palette */
-  --background: #FFFBEB; /* Cream background */
-  --foreground: #000000; /* Black text */
-  --card: #FFFFFF; /* White cards */
-  --card-foreground: #000000;
-  --popover: #FFFFFF;
-  --popover-foreground: #000000;
+  /* Educational Platform Color Palette */
+  --background: #F8F5F2; /* Light beige background */
+  --foreground: #2D3748; /* Dark gray text */
 
-  /* Primary - Green (Education friendly) */
-  --primary: #22C55E; /* Success green */
+  /* Primary Green */
+  --primary: #4CAF50;
   --primary-foreground: #FFFFFF;
 
-  /* Secondary - Yellow */
-  --secondary: #FFEB3B;
-  --secondary-foreground: #000000;
+  /* Secondary Blue */
+  --secondary: #87CEEB;
+  --secondary-foreground: #2D3748;
 
-  /* Accent - Red */
-  --accent: #EF4444;
-  --accent-foreground: #FFFFFF;
+  /* Card colors */
+  --card: #ffffff;
+  --card-foreground: #2D3748;
 
   /* Muted */
-  --muted: #F3F4F6;
-  --muted-foreground: #6B7280;
+  --muted: #F7FAFC;
+  --muted-foreground: #718096;
 
-  /* Borders - Always black */
-  --border: #000000;
-  --input: #000000;
-  --ring: #000000;
+  /* Borders */
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #4CAF50;
 
-  /* Neo-brutalism Specific */
-  --radius: 0px; /* Sharp corners */
+  /* Radius */
+  --radius: 0.75rem;
 }
 
-.dark {
-  --background: #1A1A1A;
-  --foreground: #FFFFFF;
-  --card: #2A2A2A;
-  --card-foreground: #FFFFFF;
-  --popover: #2A2A2A;
-  --popover-foreground: #FFFFFF;
-
-  --primary: #22C55E;
-  --primary-foreground: #FFFFFF;
-
-  --secondary: #FFEB3B;
-  --secondary-foreground: #000000;
-
-  --accent: #EF4444;
-  --accent-foreground: #FFFFFF;
-
-  --muted: #3A3A3A;
-  --muted-foreground: #A1A1A1;
-
-  --border: #FFFFFF;
-  --input: #FFFFFF;
-  --ring: #22C55E;
+* {
+  border-color: var(--border);
 }
 
-@layer base {
-  * {
-    border-color: #000000;
-  }
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-nunito), 'Nunito', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    font-weight: 500;
-    antialiased;
+/* SKILL typography.csv line 6: Fredoka for headings (Display) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-fredoka), 'Fredoka', sans-serif;
+  font-weight: 700;
+}
+
+/* ============================================
+   EDUCATIONAL PLATFORM DESIGN SYSTEM
+   Clean, Modern, Accessible
+   ============================================ */
+
+/* Primary Button - Green */
+.btn-primary {
+  background: linear-gradient(135deg, #4CAF50 0%, #45A049 100%);
+  color: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #45A049 0%, #3D8B40 100%);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(76, 175, 80, 0.2);
+}
+
+/* Secondary Button - Blue */
+.btn-secondary {
+  background: linear-gradient(135deg, #87CEEB 0%, #7DD3E8 100%);
+  color: #2D3748;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 4px rgba(135, 206, 235, 0.2);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(135deg, #7DD3E8 0%, #70C8E0 100%);
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(135, 206, 235, 0.2);
+}
+
+/* Card Component */
+.card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
+
+/* Badge Component */
+.badge {
+  background: #F7FAFC;
+  border: 2px solid #E2E8F0;
+  border-radius: 2rem;
+  padding: 0.375rem 0.875rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Progress Bar */
+.progress {
+  background: #F7FAFC;
+  border-radius: 1rem;
+  height: 0.75rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50 0%, #66BB6A 100%);
+  border-radius: 1rem;
+  transition: width 0.3s ease;
+  position: relative;
+}
+
+/* Icon Container */
+.icon-container {
+  background: #F7FAFC;
+  border: 2px solid #E2E8F0;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.icon-container:hover {
+  background: #EDF2F7;
+  transform: scale(1.05);
+}
+
+/* Text Gradients */
+.text-gradient-green {
+  background: linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-blue {
+  background: linear-gradient(135deg, #87CEEB 0%, #A8DCE8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }
 
-/* Neo-brutalism Utility Classes */
-@layer components {
-  /* Hard black borders */
-  .border-brutal {
-    border: 3px solid #000000;
-  }
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
 
-  .dark .border-brutal {
-    border: 3px solid #FFFFFF;
+/* Pulse Animation */
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
   }
-
-  /* Hard shadow (no blur) */
-  .shadow-brutal {
-    box-shadow: 4px 4px 0 #000000;
-  }
-
-  .dark .shadow-brutal {
-    box-shadow: 4px 4px 0 #FFFFFF;
-  }
-
-  /* Sharp corners */
-  .rounded-brutal {
-    border-radius: 0 !important;
-  }
-
-  /* Hover shift effect */
-  .hover-shift {
-    transition: transform 0.15s steps(1);
-  }
-
-  .hover-shift:hover {
-    transform: translate(2px, 2px);
-  }
-
-  /* Bold text */
-  .font-brutal {
-    font-weight: 700;
-  }
-
-  /* Marquee animation for scrolling text */
-  @keyframes marquee {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-  }
-
-  .animate-marquee {
-    animation: marquee 20s linear infinite;
+  50% {
+    opacity: 0.7;
   }
 }
 
-/* Neo-brutalism button styles */
-@layer components {
-  .btn-brutal {
-    @apply px-6 py-3 font-brutal text-base border-brutal shadow-brutal hover-shift cursor-pointer inline-flex items-center justify-center;
-    transition: transform 0.15s steps(1), background-color 0.15s;
-  }
+.pulse-animation {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
 
-  .btn-brutal-primary {
-    @apply bg-[#22C55E] text-white;
-  }
+/* ============================================
+   LEGACY CLAYMORPHISM CLASSES (For backward compatibility)
+   ============================================ */
 
-  .btn-brutal-primary:hover {
-    @apply bg-[#16A34A];
-  }
+.clay-card {
+  background: #FFFFFF;
+  border: 2px solid #E2E8F0;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
 
-  .btn-brutal-secondary {
-    @apply bg-[#FFEB3B] text-black;
-  }
+.clay-card:hover {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+  transform: translateY(-2px);
+}
 
-  .btn-brutal-secondary:hover {
-    @apply bg-[#FDE047];
-  }
+.clay-icon {
+  background: #F7FAFC;
+  border: 2px solid #E2E8F0;
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .btn-brutal-accent {
-    @apply bg-[#EF4444] text-white;
-  }
+.clay-badge {
+  background: #F7FAFC;
+  border: 2px solid #E2E8F0;
+  border-radius: 2rem;
+  padding: 0.375rem 0.875rem;
+  font-weight: 600;
+}
 
-  .btn-brutal-accent:hover {
-    @apply bg-[#DC2626];
-  }
+.clay-button-primary {
+  background: linear-gradient(135deg, #4CAF50 0%, #45A049 100%);
+  color: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clay-button-primary:hover {
+  background: linear-gradient(135deg, #45A049 0%, #3D8B40 100%);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+}
+
+.clay-button-secondary {
+  background: linear-gradient(135deg, #87CEEB 0%, #7DD3E8 100%);
+  color: #2D3748;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 4px rgba(135, 206, 235, 0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clay-button-secondary:hover {
+  background: linear-gradient(135deg, #7DD3E8 0%, #70C8E0 100%);
+  box-shadow: 0 4px 8px rgba(135, 206, 235, 0.3);
+}
+
+.clay-button-orange {
+  background: linear-gradient(135deg, #FF8C61 0%, #FF7A4D 100%);
+  color: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 4px rgba(255, 140, 97, 0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.clay-button-orange:hover {
+  background: linear-gradient(135deg, #FF7A4D 0%, #FF6333 100%);
+  box-shadow: 0 4px 8px rgba(255, 140, 97, 0.3);
+}
+
+.clay-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.clay-pulse {
+  animation: pulse-soft 2s ease-in-out infinite;
+}
+
+.clay-progress {
+  background: #F7FAFC;
+  border-radius: 1rem;
+  height: 0.75rem;
+  overflow: hidden;
+}
+
+.clay-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #4CAF50 0%, #66BB6A 100%);
+  border-radius: 1rem;
+  transition: width 0.3s ease;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #9B8CB5 0%, #B8A8D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-pink {
+  background: linear-gradient(135deg, #E8B4A0 0%, #F5C8B8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.chapter-divider {
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #E2E8F0, transparent);
+  border-radius: 1rem;
+  margin: 4rem 0;
 }
