@@ -1,0 +1,421 @@
+/**
+ * CLAYMORPHISM DESIGN SYSTEM
+ * Based on ui-ux-pro-max search results
+ *
+ * Key CSS Values:
+ * - Border-radius: 16-24px (rounded)
+ * - Border: 3-4px thick borders
+ * - Shadows: Inner + outer (subtle, no hard lines)
+ * - Colors: Pastel (Soft Peach, Baby Blue, Mint, Lilac)
+ * - Animation: 200ms ease-out soft press
+ */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap');
+
+/* ============================================
+   CLAYMORPHISM NAVBAR
+   ============================================ */
+.clay-nav {
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  border-radius: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.06),
+    -6px -6px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.02);
+  padding: 1rem 1.5rem;
+  backdrop-filter: blur(10px);
+  transition: all 200ms ease-out;
+}
+
+/* ============================================
+   CLAYMORPHISM CARDS
+   ============================================ */
+.clay-card {
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  border-radius: 20px;
+  border: 3px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.06),
+    -6px -6px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 200ms ease-out;
+  cursor: default;
+}
+
+.clay-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    8px 8px 16px rgba(0, 0, 0, 0.08),
+    -8px -8px 16px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.02);
+}
+
+/* Pastel Color Variations */
+.clay-card-orange {
+  background: linear-gradient(145deg, #FFF5EE, /* Soft Peach */ #FDBCB4);
+  border-color: rgba(255, 107, 53, 0.12);
+  box-shadow:
+    6px 6px 12px rgba(255, 107, 53, 0.10),
+    -6px -6px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(255, 107, 53, 0.04);
+}
+
+.clay-card-pink {
+  background: linear-gradient(145deg, #FFF0F5, /* Lavender Blush */ #FFB6D9);
+  border-color: rgba(236, 72, 153, 0.12);
+  box-shadow:
+    6px 6px 12px rgba(236, 72, 153, 0.10),
+    -6px -6px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(236, 72, 153, 0.04);
+}
+
+.clay-card-green {
+  background: linear-gradient(145deg, #F0FFF0, /* Honeydew */ #98FF98);
+  border-color: rgba(34, 197, 94, 0.12);
+  box-shadow:
+    6px 6px 12px rgba(34, 197, 94, 0.10),
+    -6px -6px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(34, 197, 94, 0.04);
+}
+
+.clay-card-blue {
+  background: linear-gradient(145deg, #F0F8FF, /* Alice Blue */ #ADD8E6);
+  border-color: rgba(14, 165, 233, 0.12);
+  box-shadow:
+    6px 6px 12px rgba(14, 165, 233, 0.10),
+    -6px -6px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(14, 165, 233, 0.04);
+}
+
+/* ============================================
+   CLAYMORPHISM BUTTONS
+   ============================================ */
+.clay-button {
+  background: linear-gradient(145deg, #ffffff, #f0f0f0);
+  border-radius: 18px;
+  border: 3px solid rgba(0, 0, 0, 0.08);
+  padding: 1rem 2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.03);
+  transition: all 200ms ease-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: 'Nunito', sans-serif;
+}
+
+.clay-button:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    6px 6px 12px rgba(0, 0, 0, 0.10),
+    -6px -6px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.03);
+}
+
+.clay-button:active {
+  transform: translateY(0);
+  box-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.08),
+    -2px -2px 4px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.04),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Primary CTA Button - Orange */
+.clay-button-orange {
+  background: linear-gradient(145deg, #FF6B35, #FF8C61);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow:
+    6px 6px 12px rgba(255, 107, 53, 0.35),
+    -6px -6px 12px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.clay-button-orange:hover {
+  box-shadow:
+    8px 8px 16px rgba(255, 107, 53, 0.40),
+    -8px -8px 16px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.clay-button-orange:active {
+  box-shadow:
+    2px 2px 4px rgba(255, 107, 53, 0.35),
+    -2px -2px 4px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+/* Primary Button */
+.clay-button-primary {
+  background: linear-gradient(145deg, #FF6B35, #FF8C61);
+  color: white;
+  border-radius: 16px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  box-shadow:
+    5px 5px 10px rgba(255, 107, 53, 0.35),
+    -5px -5px 10px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.08);
+  transition: all 200ms ease-out;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.clay-button-primary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    7px 7px 14px rgba(255, 107, 53, 0.40),
+    -7px -7px 14px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.08);
+}
+
+/* Secondary Button */
+.clay-button-secondary {
+  background: linear-gradient(145deg, #FFF0F5, #FFB6D9);
+  border-radius: 18px;
+  border: 3px solid rgba(236, 72, 153, 0.12);
+  padding: 1rem 1.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  box-shadow:
+    5px 5px 10px rgba(236, 72, 153, 0.12),
+    -5px -5px 10px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(236, 72, 153, 0.04);
+  transition: all 200ms ease-out;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.clay-button-secondary:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    7px 7px 14px rgba(236, 72, 153, 0.15),
+    -7px -7px 14px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(236, 72, 153, 0.04);
+}
+
+/* ============================================
+   CLAYMORPHISM ICON WRAPPERS
+   ============================================ */
+.clay-icon-wrapper {
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  border-radius: 18px;
+  border: 3px solid rgba(0, 0, 0, 0.06);
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.06),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.02);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 200ms ease-out;
+}
+
+.clay-icon-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* Colored Icon Wrappers */
+.clay-icon-orange {
+  background: linear-gradient(145deg, #FFF5EE, #FFE4D4);
+  border-color: rgba(255, 107, 53, 0.10);
+  box-shadow:
+    4px 4px 8px rgba(255, 107, 53, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(255, 107, 53, 0.03);
+}
+
+.clay-icon-pink {
+  background: linear-gradient(145deg, #FFF0F5, #FFD4E8);
+  border-color: rgba(236, 72, 153, 0.10);
+  box-shadow:
+    4px 4px 8px rgba(236, 72, 153, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(236, 72, 153, 0.03);
+}
+
+.clay-icon-green {
+  background: linear-gradient(145deg, #F0FFF0, #D4FFD4);
+  border-color: rgba(34, 197, 94, 0.10);
+  box-shadow:
+    4px 4px 8px rgba(34, 197, 94, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(34, 197, 94, 0.03);
+}
+
+.clay-icon-blue {
+  background: linear-gradient(145deg, #F0F8FF, #D4F2FF);
+  border-color: rgba(14, 165, 233, 0.10);
+  box-shadow:
+    4px 4px 8px rgba(14, 165, 233, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(14, 165, 233, 0.03);
+}
+
+/* ============================================
+   CLAYMORPHISM BADGES
+   ============================================ */
+.clay-badge {
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  border-radius: 18px;
+  border: 3px solid rgba(0, 0, 0, 0.06);
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.06),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 200ms ease-out;
+  font-family: 'Nunito', sans-serif;
+}
+
+.clay-badge:hover {
+  transform: translateY(-1px);
+}
+
+/* Colored Badges */
+.clay-badge-orange {
+  background: linear-gradient(145deg, #FFF5EE, #FFE4D4);
+  border-color: rgba(255, 107, 53, 0.10);
+  box-shadow:
+    4px 4px 8px rgba(255, 107, 53, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(255, 107, 53, 0.03);
+}
+
+.clay-badge-pink {
+  background: linear-gradient(145deg, #FFF0F5, #FFD4E8);
+  border-color: rgba(236, 72, 153, 0.10);
+  box-shadow:
+    4px 4px 8px rgba(236, 72, 153, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(236, 72, 153, 0.03);
+}
+
+.clay-badge-green {
+  background: linear-gradient(145deg, #F0FFF0, #D4FFD4);
+  border-color: rgba(34, 197, 94, 0.10);
+  box-shadow:
+    4px 4px 8px rgba(34, 197, 94, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(34, 197, 94, 0.03);
+}
+
+.clay-badge-blue {
+  background: linear-gradient(145deg, #F0F8FF, #D4F2FF);
+  border-color: rgba(14, 165, 233, 0.10);
+  box-shadow:
+    4px 4px 8px rgba(14, 165, 233, 0.08),
+    -4px -4px 8px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(14, 165, 233, 0.03);
+}
+
+/* ============================================
+   NAVIGATION LINKS
+   ============================================ */
+.clay-nav-link {
+  background: linear-gradient(145deg, #ffffff, #f8f8f8);
+  border-radius: 14px;
+  border: 3px solid rgba(0, 0, 0, 0.06);
+  padding: 0.6rem 1.2rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-decoration: none;
+  box-shadow:
+    3px 3px 6px rgba(0, 0, 0, 0.06),
+    -3px -3px 6px rgba(255, 255, 255, 0.95),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.95),
+    inset -2px -2px 4px rgba(0, 0, 0, 0.02);
+  transition: all 200ms ease-out;
+  font-family: 'Nunito', sans-serif;
+  cursor: pointer;
+}
+
+.clay-nav-link:hover {
+  transform: translateY(-1px);
+}
+
+.clay-nav-link-orange:hover {
+  background: linear-gradient(145deg, #FFF5EE, #FFE4D4);
+  border-color: rgba(255, 107, 53, 0.12);
+}
+
+.clay-nav-link-pink:hover {
+  background: linear-gradient(145deg, #FFF0F5, #FFD4E8);
+  border-color: rgba(236, 72, 153, 0.12);
+}
+
+.clay-nav-link-blue:hover {
+  background: linear-gradient(145deg, #F0F8FF, #D4F2FF);
+  border-color: rgba(14, 165, 233, 0.12);
+}
+
+/* ============================================
+   FLOATING ANIMATIONS
+   ============================================ */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 3s ease-in-out infinite;
+  animation-delay: 1.5s;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.font-heading {
+  font-family: 'Fredoka', sans-serif;
+}
+
+.font-body {
+  font-family: 'Nunito', sans-serif;
+}
