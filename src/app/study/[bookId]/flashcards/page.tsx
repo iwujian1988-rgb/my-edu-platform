@@ -44,6 +44,10 @@ export default function FlashcardsPage() {
   const [keyboardAnimation, setKeyboardAnimation] = useState<{ x: number; rotate: number } | null>(null)
   const cardRef = useRef<HTMLDivElement>(null)
 
+  // 批量保存相关状态
+  const pendingSaveRef = useRef<Record<string, 'known' | 'vague' | 'unknown'>>({})
+  const saveTimerRef = useRef<NodeJS.Timeout | null>(null)
+
   // Fetch words and progress
   useEffect(() => {
     async function fetchData() {
@@ -125,16 +129,60 @@ export default function FlashcardsPage() {
     }
   }, [])
 
+  // 批量保存函数
+  const flushPendingSaves = useCallback(async () => {
+    const pending = { ...pendingSaveRef.current }
+    if (Object.keys(pending).length === 0) return
+
+    try {
+      // 批量保存所有待保存的数据
+      const promises = Object.entries(pending).map(([wordId, status]) =>
+        fetch('/api/word-progress', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            word_id: wordId,
+            book_id: bookId,
+            status
+          })
+        })
+      )
+
+      await Promise.all(promises)
+      pendingSaveRef.current = {} // 清空待保存队列
+    } catch (error) {
+      console.error('Error saving progress batch:', error)
+    }
+  }, [bookId])
+
   // Handle card flip
   const handleFlip = useCallback(() => {
     setIsFlipped(!isFlipped)
   }, [isFlipped])
 
   // Handle word status
-  const handleStatus = useCallback(async (status: 'known' | 'vague' | 'unknown') => {
+  const handleStatus = useCallback((status: 'known' | 'vague' | 'unknown') => {
     if (!currentWord) return
 
-    // 触发键盘动画
+    // 1. 立即更新本地状态（乐观更新）
+    setWordProgress(prev => ({
+      ...prev,
+      [currentWord.id]: { word_id: currentWord.id, status }
+    }))
+
+    // 2. 添加到待保存队列
+    pendingSaveRef.current[currentWord.id] = status
+
+    // 3. 设置定时器，3秒后批量保存
+    if (saveTimerRef.current) {
+      clearTimeout(saveTimerRef.current)
+    }
+    saveTimerRef.current = setTimeout(() => {
+      flushPendingSaves()
+      saveTimerRef.current = null
+    }, 3000)
+
+    // 4. 触发键盘动画
     let animationOffset = { x: 0, rotate: 0 }
     if (status === 'known') {
       animationOffset = { x: -150, rotate: -15 }
@@ -145,36 +193,16 @@ export default function FlashcardsPage() {
     }
     setKeyboardAnimation(animationOffset)
 
-    try {
-      await fetch('/api/word-progress', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          word_id: currentWord.id,
-          book_id: bookId,
-          status
-        })
-      })
+    setIsFlipped(false)
 
-      setWordProgress(prev => ({
-        ...prev,
-        [currentWord.id]: { word_id: currentWord.id, status }
-      }))
-
-      setIsFlipped(false)
-
-      // 等待动画完成后再切换
-      setTimeout(() => {
-        setKeyboardAnimation(null)
-        if (currentIndex < words.length - 1) {
-          setCurrentIndex(prev => prev + 1)
-        }
-      }, 300)
-    } catch (error) {
-      console.error('Error saving progress:', error)
+    // 5. 立即执行动画和切换，不等待保存
+    setTimeout(() => {
       setKeyboardAnimation(null)
-    }
-  }, [currentWord, bookId, currentIndex, words.length])
+      if (currentIndex < words.length - 1) {
+        setCurrentIndex(prev => prev + 1)
+      }
+    }, 300)
+  }, [currentWord, currentIndex, words.length, flushPendingSaves])
 
   // 自动朗读新单词 - 只在索引变化时触发
   useEffect(() => {
@@ -213,6 +241,33 @@ export default function FlashcardsPage() {
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [handleStatus, handleFlip])
+
+  // 页面卸载或隐藏时保存待保存的数据
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      if (Object.keys(pendingSaveRef.current).length > 0) {
+        flushPendingSaves()
+      }
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.hidden && Object.keys(pendingSaveRef.current).length > 0) {
+        flushPendingSaves()
+      }
+    }
+
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+      // 组件卸载时保存
+      if (Object.keys(pendingSaveRef.current).length > 0) {
+        flushPendingSaves()
+      }
+    }
+  }, [flushPendingSaves])
 
   // 拖拽开始
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
