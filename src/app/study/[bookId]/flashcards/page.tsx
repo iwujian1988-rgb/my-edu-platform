@@ -419,7 +419,8 @@ export default function FlashcardsPage() {
                   opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 0.4 : 0,
                   transform: `translateZ(-50px)`,
                   transition: 'opacity 0.3s ease-out',
-                  zIndex: 0
+                  zIndex: 0,
+                  perspective: '1000px'
                 }}
               >
                 <div className="flex flex-col items-center justify-center h-full">
@@ -470,7 +471,7 @@ export default function FlashcardsPage() {
               style={{
                 height: '800px',
                 perspective: '1000px',
-                transform: `translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
+                transform: `translateZ(0px) translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
                 transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out',
                 zIndex: 10
               }}
