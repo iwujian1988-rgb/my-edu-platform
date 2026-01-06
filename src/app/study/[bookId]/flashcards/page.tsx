@@ -294,23 +294,36 @@ export default function FlashcardsPage() {
   const handleDragEnd = () => {
     if (!dragStart) return
 
-    const threshold = 100 // 拖拽阈值（像素）
+    const distance = Math.sqrt(dragOffset.x ** 2 + dragOffset.y ** 2)
+    const threshold = 50 // 最小滑动距离（像素）
 
-    // 左滑：认识
-    if (dragOffset.x < -threshold && Math.abs(dragOffset.y) < threshold) {
-      handleStatus('known')
+    // 如果滑动距离太小，视为点击
+    if (distance < threshold) {
+      setDragStart(null)
+      setDragOffset({ x: 0, y: 0 })
+      return
     }
-    // 右滑：不认识
-    else if (dragOffset.x > threshold && Math.abs(dragOffset.y) < threshold) {
+
+    // 计算滑动角度（转换为度数）
+    const angle = Math.atan2(dragOffset.y, dragOffset.x) * (180 / Math.PI)
+
+    // 根据角度判断主要滑动方向
+    // 右滑：-45° 到 45°
+    if (angle > -45 && angle <= 45) {
       handleStatus('unknown')
     }
-    // 上滑：翻转查看详情
-    else if (dragOffset.y < -threshold && Math.abs(dragOffset.x) < threshold) {
-      handleFlip()
-    }
-    // 下滑：翻转回正面
-    else if (dragOffset.y > threshold && Math.abs(dragOffset.x) < threshold) {
+    // 下滑：45° 到 135°
+    else if (angle > 45 && angle <= 135) {
+      // 下滑时如果卡片在背面，翻回正面
       if (isFlipped) handleFlip()
+    }
+    // 左滑：135° 到 225°（-135° 到 -180° 和 135° 到 180°）
+    else if (angle > 135 || angle <= -135) {
+      handleStatus('known')
+    }
+    // 上滑：-135° 到 -45°
+    else if (angle > -135 && angle <= -45) {
+      handleFlip()
     }
 
     setDragStart(null)
