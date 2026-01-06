@@ -416,9 +416,9 @@ export default function FlashcardsPage() {
                 className="clay-card-xl p-8 pointer-events-none absolute top-0 left-0 right-0"
                 style={{
                   height: '800px',
-                  opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 0.4 : 0,
-                  transform: `translateZ(-50px)`,
-                  transition: 'opacity 0.3s ease-out',
+                  opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 1 : 0,
+                  transform: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? `translateZ(-50px) scale(1.05)` : `translateZ(-50px) scale(1)`,
+                  transition: 'all 0.3s ease-out',
                   zIndex: 0,
                   perspective: '1000px'
                 }}
@@ -459,7 +459,7 @@ export default function FlashcardsPage() {
             {/* Current Card */}
             <div
               ref={cardRef}
-              className="clay-card-xl p-8 cursor-pointer absolute top-0 left-0 right-0"
+              className="clay-card-xl p-8 cursor-pointer absolute left-0 right-0"
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
               onMouseUp={handleDragEnd}
@@ -469,6 +469,7 @@ export default function FlashcardsPage() {
               onTouchEnd={handleDragEnd}
               onClick={handleFlip}
               style={{
+                top: '-800px',
                 height: '800px',
                 perspective: '1000px',
                 transform: `translateZ(0px) translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
@@ -485,7 +486,7 @@ export default function FlashcardsPage() {
                 }}
               >
                 {/* Front - Word */}
-                <div className="text-center" style={{ backfaceVisibility: 'hidden' }}>
+                <div className="text-center" style={{ backfaceVisibility: 'hidden', transition: 'opacity 0.3s ease-out', opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 0.3 : 1 }}>
                   {/* Status Badge */}
                   {progress && (
                     <div className="mb-4">
