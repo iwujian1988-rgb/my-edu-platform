@@ -41,6 +41,7 @@ export default function FlashcardsPage() {
   // 拖拽相关状态
   const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
+  const [keyboardAnimation, setKeyboardAnimation] = useState<{ x: number; rotate: number } | null>(null)
   const cardRef = useRef<HTMLDivElement>(null)
 
   // Fetch words and progress
@@ -125,13 +126,24 @@ export default function FlashcardsPage() {
   }, [])
 
   // Handle card flip
-  const handleFlip = () => {
+  const handleFlip = useCallback(() => {
     setIsFlipped(!isFlipped)
-  }
+  }, [isFlipped])
 
   // Handle word status
-  const handleStatus = async (status: 'known' | 'vague' | 'unknown') => {
+  const handleStatus = useCallback(async (status: 'known' | 'vague' | 'unknown') => {
     if (!currentWord) return
+
+    // 触发键盘动画
+    let animationOffset = { x: 0, rotate: 0 }
+    if (status === 'known') {
+      animationOffset = { x: -150, rotate: -15 }
+    } else if (status === 'vague') {
+      animationOffset = { x: 0, rotate: 0 }
+    } else if (status === 'unknown') {
+      animationOffset = { x: 150, rotate: 15 }
+    }
+    setKeyboardAnimation(animationOffset)
 
     try {
       await fetch('/api/word-progress', {
@@ -150,13 +162,19 @@ export default function FlashcardsPage() {
       }))
 
       setIsFlipped(false)
-      if (currentIndex < words.length - 1) {
-        setCurrentIndex(prev => prev + 1)
-      }
+
+      // 等待动画完成后再切换
+      setTimeout(() => {
+        setKeyboardAnimation(null)
+        if (currentIndex < words.length - 1) {
+          setCurrentIndex(prev => prev + 1)
+        }
+      }, 300)
     } catch (error) {
       console.error('Error saving progress:', error)
+      setKeyboardAnimation(null)
     }
-  }
+  }, [currentWord, bookId, currentIndex, words.length])
 
   // 自动朗读新单词 - 只在索引变化时触发
   useEffect(() => {
@@ -194,7 +212,7 @@ export default function FlashcardsPage() {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentWord, currentIndex])
+  }, [handleStatus, handleFlip])
 
   // 拖拽开始
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
@@ -372,8 +390,8 @@ export default function FlashcardsPage() {
               onClick={handleFlip}
               style={{
                 perspective: '1000px',
-                transform: `translate(${dragOffset.x}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05}deg)`,
-                transition: dragStart ? 'none' : 'transform 0.3s ease-out'
+                transform: `translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
+                transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out'
               }}
             >
               <div
