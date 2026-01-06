@@ -339,7 +339,7 @@ export default function FlashcardsPage() {
               onClick={handleFlip}
               style={{
                 perspective: '1000px',
-                transform: `translate(${dragOffset.x}px, ${dragOffset.y}px)`,
+                transform: `translate(${dragOffset.x}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05}deg)`,
                 transition: dragStart ? 'none' : 'transform 0.3s ease-out'
               }}
             >
