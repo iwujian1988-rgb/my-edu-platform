@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0",
+  "name": "ui-ux-pro-max",
+  "description": "A searchable database of UI styles, color palettes, and UX guidelines.",
+  "tools": [
+    {
+      "name": "search_design_system",
+      "description": "Search for UI/UX design guidelines based on project type (e.g., 'saas', 'education', 'ecommerce').",
+      "executable": "python3",
+      "arguments": [
+        "search.py",
+        "{{query}}"
+      ]
+    }
+  ]
+}

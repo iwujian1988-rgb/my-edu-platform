@@ -1,11 +1,12 @@
 'use client'
 
 import { useState, useMemo, useEffect } from 'react'
-import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, EyeOff, Check, X, Volume2, Gamepad2, CreditCard } from 'lucide-react'
+import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb } from 'lucide-react'
 import Link from 'next/link'
 import { WordList } from '@/components/WordList'
 import { GlobalHideButton } from '@/components/GlobalHideButton'
 import { ScopeSelectorModal } from '@/components/ScopeSelectorModal'
+import { BookIcon } from '@/components/BookIcon'
 
 interface Word {
   id: string
@@ -18,7 +19,7 @@ interface Word {
   example_sentence: string
   example_sentence_en: string
   part_of_speech: string
-  status: 'known' | 'fuzzy' | 'unknown'
+  status: 'known' | 'fuzzy' | 'unknown' | 'new'
   theme?: string
   scene?: string
 }
@@ -50,12 +51,41 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
   const [selectedScene, setSelectedScene] = useState<string>('all')
   const [showThemeMenu, setShowThemeMenu] = useState(false)
   const [showSceneMenu, setShowSceneMenu] = useState(false)
+  const [showScrollTop, setShowScrollTop] = useState(false)
 
   // 范围选择对话框状态
   const [showScopeModal, setShowScopeModal] = useState(false)
   const [selectedPracticeMode, setSelectedPracticeMode] = useState<'flashcards' | 'dictation' | 'match-game'>('flashcards')
 
+  // 随机选择一条学习小贴士
+  const tips = [
+    '• 建议每天学习20-30个单词，保持连续性',
+    '• 尝试不同练习模式，找到最适合你的方式',
+    '• 标记"不认识"的单词会自动加入错题本'
+  ]
+  const [randomTip, setRandomTip] = useState(tips[0]) // 初始值固定，避免hydration错误
+
+  // 在客户端随机选择
+  useEffect(() => {
+    setRandomTip(tips[Math.floor(Math.random() * tips.length)])
+  }, [])
+
   const WORDS_PER_PAGE = 50
+
+  // 监听滚动，显示/隐藏回到顶部按钮
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 400)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  // 滚动到顶部
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
 
   // 提取所有唯一的主题和场景
   const { uniqueThemes, uniqueScenes } = useMemo(() => {
@@ -132,9 +162,6 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
         // 优先使用 localStorage 中保存的状态
         const actualStatus = localStorageStatus[word.id] || word.status
 
-        if (statusFilter === 'new') {
-          return actualStatus === 'unknown'
-        }
         return actualStatus === statusFilter
       })
     }
@@ -148,11 +175,41 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
     return result
   }, [words, selectedTheme, selectedScene, statusFilter, sortOrder, book.id])
 
-  // 分页逻辑
+  // 分页逻辑 - 仅在PC端使用分页，移动端/平板端显示所有单词
   const totalPages = Math.ceil(filteredWords.length / WORDS_PER_PAGE)
   const startIndex = (currentPage - 1) * WORDS_PER_PAGE
   const endIndex = startIndex + WORDS_PER_PAGE
-  const paginatedWords = filteredWords.slice(startIndex, endIndex)
+
+  // 检测是否为移动端/平板端（通过窗口宽度）
+  // 初始值设为true，确保在服务端渲染时也能显示所有单词
+  const [isMobileOrTablet, setIsMobileOrTablet] = useState(true)
+
+  useEffect(() => {
+    const checkDevice = () => {
+      const isMobile = window.innerWidth <= 1024 // lg断点是1024px，包含1024px
+      setIsMobileOrTablet(isMobile)
+      console.log('📱 Device check:', window.innerWidth, 'isMobile:', isMobile)
+    }
+
+    // 初始检测
+    checkDevice()
+
+    // 监听窗口大小变化
+    window.addEventListener('resize', checkDevice)
+    return () => window.removeEventListener('resize', checkDevice)
+  }, [])
+
+  // 移动端/平板端显示所有单词，PC端使用分页
+  const paginatedWords = isMobileOrTablet ? filteredWords : filteredWords.slice(startIndex, endIndex)
+
+  // 调试日志
+  console.log('📊 Word display:', {
+    isMobileOrTablet,
+    totalWords: filteredWords.length,
+    displayWords: paginatedWords.length,
+    startIndex,
+    endIndex
+  })
 
   // 重置页码当筛选条件改变时
   useEffect(() => {
@@ -194,42 +251,40 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
       {/* Header */}
-      <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
-          <div className="flex items-center justify-between">
+      <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200 shadow-sm">
+        <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
             {/* Logo & Back */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               <Link
                 href="/"
-                className="flex items-center justify-center w-10 h-10 rounded-xl hover:bg-gray-100 transition-colors"
+                className="flex items-center justify-center w-10 h-10 rounded-xl hover:bg-slate-100 transition-colors duration-200"
               >
-                <ArrowLeft className="w-5 h-5 text-gray-700" />
+                <ArrowLeft className="w-5 h-5 text-slate-700" />
               </Link>
               <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl">
-                  <BookOpen className="w-5 h-5 text-white" />
-                </div>
+                <BookIcon title={book.title || 'Book'} size="md" />
                 <div>
-                  <h1 className="text-lg font-bold text-gray-900">{book.title || '未命名词书'}</h1>
-                  <p className="text-xs text-gray-500">{words.length} 个单词</p>
+                  <h1 className="text-lg font-bold text-slate-900">{book.title || '未命名词书'}</h1>
+                  <p className="text-xs text-slate-500">{words.length} 个单词</p>
                 </div>
               </div>
               {/* 演示数据提示 */}
               {useMockData && (
-                <div className="hidden md:block px-3 py-1 bg-yellow-100 border border-yellow-300 rounded-full">
-                  <span className="text-xs font-semibold text-yellow-800">演示数据</span>
+                <div className="hidden md:block px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full">
+                  <span className="text-xs font-semibold text-amber-700">演示数据</span>
                 </div>
               )}
             </div>
 
             {/* User */}
             <div className="flex items-center gap-3">
-              <span className="text-xs text-gray-600 hidden sm:block">{user.email}</span>
+              <span className="text-sm text-slate-600 hidden sm:block">{user.email}</span>
               <Link
                 href="/logout"
-                className="px-4 py-2 text-sm font-bold text-gray-700 border-2 border-gray-200 rounded-xl hover:border-red-300 hover:text-red-600 transition-all"
+                className="px-4 py-2 text-sm font-semibold text-slate-700 border-2 border-slate-200 rounded-xl hover:border-red-300 hover:text-red-600 hover:bg-red-50 transition-all duration-200"
               >
                 退出
               </Link>
@@ -239,11 +294,96 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
       </header>
 
       {/* Main Content */}
-      <main className="px-3 sm:px-4 md:px-6 py-6 md:py-8">
-        <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
+      <main className="px-4 sm:px-6 lg:px-8 py-8">
+        <div className="w-full mx-auto max-w-7xl">
+
+          {/* 练习模式 + 学习小贴士 */}
+          <div className="flex flex-col md:flex-row gap-4 mb-6 items-end">
+            {/* 练习模式按钮 - 左侧 */}
+            <div className="flex gap-3">
+              {/* 卡片背单词 */}
+              <button
+                onClick={() => handlePracticeModeClick('flashcards')}
+                className="group flex-1 md:flex-none hover:scale-[1.02] transition-transform duration-200"
+                style={{ width: 'auto', minWidth: '160px' }}
+              >
+                <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 hover:border-indigo-200 p-4 h-full flex flex-col items-center text-center transition-all duration-300 cursor-pointer">
+                  {/* 原创CSS图标 - 卡片翻转 */}
+                  <div className="relative w-10 h-10 mb-2">
+                    <div className="absolute inset-0 border-2 border-indigo-500 rounded-lg"></div>
+                    <div className="absolute inset-0 border-2 border-indigo-500 rounded-lg transform rotate-180 opacity-50"></div>
+                    <div className="absolute inset-2 bg-indigo-100 rounded flex items-center justify-center">
+                      <span className="text-indigo-600 font-bold text-lg">F</span>
+                    </div>
+                  </div>
+
+                  <h3 className="text-sm font-bold text-slate-900 mb-2">
+                    卡片背单词
+                  </h3>
+                </div>
+              </button>
+
+              {/* 听写模式 */}
+              <button
+                onClick={() => handlePracticeModeClick('dictation')}
+                className="group flex-1 md:flex-none hover:scale-[1.02] transition-transform duration-200"
+                style={{ width: 'auto', minWidth: '160px' }}
+              >
+                <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 hover:border-emerald-200 p-4 h-full flex flex-col items-center text-center transition-all duration-300 cursor-pointer">
+                  {/* 原创CSS图标 - 声音波 */}
+                  <div className="relative w-10 h-10 flex items-center justify-center mb-2">
+                    <div className="flex items-end gap-0.5">
+                      <div className="w-1 h-3 bg-emerald-500 rounded-full"></div>
+                      <div className="w-1 h-5 bg-emerald-500 rounded-full"></div>
+                      <div className="w-1 h-7 bg-emerald-500 rounded-full"></div>
+                      <div className="w-1 h-5 bg-emerald-500 rounded-full"></div>
+                      <div className="w-1 h-3 bg-emerald-500 rounded-full"></div>
+                    </div>
+                  </div>
+
+                  <h3 className="text-sm font-bold text-slate-900 mb-2">
+                    听写模式
+                  </h3>
+                </div>
+              </button>
+
+              {/* 消消乐 */}
+              <button
+                onClick={() => handlePracticeModeClick('match-game')}
+                className="group flex-1 md:flex-none hover:scale-[1.02] transition-transform duration-200"
+                style={{ width: 'auto', minWidth: '160px' }}
+              >
+                <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 hover:border-rose-200 p-4 h-full flex flex-col items-center text-center transition-all duration-300 cursor-pointer">
+                  {/* 原创CSS图标 - 拼图块 */}
+                  <div className="relative w-10 h-10 mb-2">
+                    <div className="absolute top-0 left-0 w-4 h-4 border-2 border-rose-500 rounded"></div>
+                    <div className="absolute top-0 right-0 w-4 h-4 border-2 border-rose-500 rounded"></div>
+                    <div className="absolute bottom-0 left-0 w-4 h-4 border-2 border-rose-500 rounded"></div>
+                    <div className="absolute bottom-0 right-0 w-4 h-4 border-2 border-rose-500 rounded"></div>
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-2 h-2 bg-rose-500 rounded-sm"></div>
+                    </div>
+                  </div>
+
+                  <h3 className="text-sm font-bold text-slate-900 mb-2">
+                    消消乐
+                  </h3>
+                </div>
+              </button>
+            </div>
+
+            {/* 学习小贴士 - 右侧 */}
+            <div className="md:ml-auto text-right">
+              <h3 className="text-sm font-semibold text-slate-600 mb-2 flex items-center gap-2 justify-end">
+                学习小贴士
+                <Lightbulb className="w-4 h-4 text-slate-500" />
+              </h3>
+              <p className="text-xs text-slate-500 leading-relaxed">{randomTip}</p>
+            </div>
+          </div>
 
           {/* 顶部筛选栏 */}
-          <section className="clay-card p-4 md:p-6 mb-6">
+          <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
               {/* 左侧：主题/场景筛选 */}
               <div className="flex items-center gap-3 flex-wrap">
@@ -251,14 +391,14 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                 <div className="relative">
                   <button
                     onClick={() => setShowThemeMenu(!showThemeMenu)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-semibold transition-colors ${
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
                       selectedTheme !== 'all'
-                        ? 'border-purple-400 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 text-gray-700 hover:border-purple-300'
+                        ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
+                        : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-slate-50'
                     }`}
                   >
                     <span>{selectedTheme === 'all' ? '全部主题' : selectedTheme}</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${showThemeMenu ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showThemeMenu ? 'rotate-180' : ''}`} />
                   </button>
 
                   {/* 主题下拉菜单 */}
@@ -268,18 +408,18 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                         className="fixed inset-0 z-10"
                         onClick={() => setShowThemeMenu(false)}
                       />
-                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-200 z-20 max-h-80 overflow-y-auto">
+                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-200 z-20 max-h-80 overflow-y-auto">
                         <button
                           onClick={() => {
                             setSelectedTheme('all')
                             setShowThemeMenu(false)
                           }}
-                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                            selectedTheme === 'all' ? 'bg-purple-50 text-purple-700' : 'text-gray-700'
+                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                            selectedTheme === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                           }`}
                         >
                           全部主题
-                          {selectedTheme === 'all' && <Check className="w-4 h-4" />}
+                          {selectedTheme === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
                         </button>
                         {uniqueThemes.map(theme => (
                           <button
@@ -288,12 +428,12 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                               setSelectedTheme(theme)
                               setShowThemeMenu(false)
                             }}
-                            className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                              selectedTheme === theme ? 'bg-purple-50 text-purple-700' : 'text-gray-700'
+                            className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                              selectedTheme === theme ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                             }`}
                           >
                             {theme}
-                            {selectedTheme === theme && <Check className="w-4 h-4" />}
+                            {selectedTheme === theme && <ChevronDown className="w-4 h-4 rotate-180" />}
                           </button>
                         ))}
                       </div>
@@ -306,14 +446,14 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                   <button
                     onClick={() => setShowSceneMenu(!showSceneMenu)}
                     disabled={availableScenes.length === 0}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-semibold transition-colors ${
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 ${
                       selectedScene !== 'all'
-                        ? 'border-purple-400 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 text-gray-700 hover:border-purple-300'
-                    } ${availableScenes.length === 0 ? 'opacity-50 cursor-not-allowed' : ''}`}
+                        ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
+                        : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-slate-50'
+                    } ${availableScenes.length === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                   >
                     <span>{selectedScene === 'all' ? '全部场景' : selectedScene}</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform ${showSceneMenu ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showSceneMenu ? 'rotate-180' : ''}`} />
                   </button>
 
                   {/* 场景下拉菜单 */}
@@ -323,18 +463,18 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                         className="fixed inset-0 z-10"
                         onClick={() => setShowSceneMenu(false)}
                       />
-                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-gray-200 z-20 max-h-80 overflow-y-auto">
+                      <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-200 z-20 max-h-80 overflow-y-auto">
                         <button
                           onClick={() => {
                             setSelectedScene('all')
                             setShowSceneMenu(false)
                           }}
-                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                            selectedScene === 'all' ? 'bg-purple-50 text-purple-700' : 'text-gray-700'
+                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                            selectedScene === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                           }`}
                         >
                           全部场景
-                          {selectedScene === 'all' && <Check className="w-4 h-4" />}
+                          {selectedScene === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
                         </button>
                         {availableScenes.map(scene => (
                           <button
@@ -343,12 +483,12 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                               setSelectedScene(scene)
                               setShowSceneMenu(false)
                             }}
-                            className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                              selectedScene === scene ? 'bg-purple-50 text-purple-700' : 'text-gray-700'
+                            className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                              selectedScene === scene ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                             }`}
                           >
                             {scene}
-                            {selectedScene === scene && <Check className="w-4 h-4" />}
+                            {selectedScene === scene && <ChevronDown className="w-4 h-4 rotate-180" />}
                           </button>
                         ))}
                       </div>
@@ -368,10 +508,10 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                 {/* 随机按钮 */}
                 <button
                   onClick={() => setSortOrder(sortOrder === 'default' ? 'random' : 'default')}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-semibold transition-all ${
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
                     sortOrder === 'random'
-                      ? 'border-purple-400 bg-purple-50 text-purple-700'
-                      : 'border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-600'
+                      ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
+                      : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50'
                   }`}
                 >
                   <Shuffle className="w-4 h-4" />
@@ -382,15 +522,15 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                 <div className="relative">
                   <button
                     onClick={() => setShowFilterMenu(!showFilterMenu)}
-                    className={`flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-semibold transition-all ${
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
                       statusFilter !== 'all'
-                        ? 'border-purple-400 bg-purple-50 text-purple-700'
-                        : 'border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-600'
+                        ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
+                        : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50'
                     }`}
                   >
                     <Filter className="w-4 h-4" />
                     {getFilterLabel()}
-                    <ChevronDown className={`w-4 h-4 transition-transform ${showFilterMenu ? 'rotate-180' : ''}`} />
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showFilterMenu ? 'rotate-180' : ''}`} />
                   </button>
 
                   {/* 筛选下拉菜单 */}
@@ -401,66 +541,66 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                         className="fixed inset-0 z-10"
                         onClick={() => setShowFilterMenu(false)}
                       />
-                      <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-gray-200 z-20 overflow-hidden">
+                      <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-slate-200 z-20 overflow-hidden">
                         <button
                           onClick={() => {
                             setStatusFilter('all')
                             setShowFilterMenu(false)
                           }}
-                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                            statusFilter === 'all' ? 'bg-purple-50 text-purple-700' : 'text-gray-700'
+                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                            statusFilter === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                           }`}
                         >
                           全部
-                          {statusFilter === 'all' && <Check className="w-4 h-4" />}
+                          {statusFilter === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
                         </button>
                         <button
                           onClick={() => {
                             setStatusFilter('new')
                             setShowFilterMenu(false)
                           }}
-                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                            statusFilter === 'new' ? 'bg-purple-50 text-purple-700' : 'text-gray-700'
+                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                            statusFilter === 'new' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                           }`}
                         >
                           未标注
-                          {statusFilter === 'new' && <Check className="w-4 h-4" />}
+                          {statusFilter === 'new' && <ChevronDown className="w-4 h-4 rotate-180" />}
                         </button>
                         <button
                           onClick={() => {
                             setStatusFilter('known')
                             setShowFilterMenu(false)
                           }}
-                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                            statusFilter === 'known' ? 'bg-green-50 text-green-700' : 'text-gray-700'
+                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                            statusFilter === 'known' ? 'bg-emerald-50 text-emerald-700' : 'text-slate-700'
                           }`}
                         >
                           认识
-                          {statusFilter === 'known' && <Check className="w-4 h-4 text-green-600" />}
+                          {statusFilter === 'known' && <ChevronDown className="w-4 h-4 rotate-180 text-emerald-600" />}
                         </button>
                         <button
                           onClick={() => {
                             setStatusFilter('fuzzy')
                             setShowFilterMenu(false)
                           }}
-                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                            statusFilter === 'fuzzy' ? 'bg-yellow-50 text-yellow-700' : 'text-gray-700'
+                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                            statusFilter === 'fuzzy' ? 'bg-amber-50 text-amber-700' : 'text-slate-700'
                           }`}
                         >
                           模糊
-                          {statusFilter === 'fuzzy' && <Check className="w-4 h-4 text-yellow-600" />}
+                          {statusFilter === 'fuzzy' && <ChevronDown className="w-4 h-4 rotate-180 text-amber-600" />}
                         </button>
                         <button
                           onClick={() => {
                             setStatusFilter('unknown')
                             setShowFilterMenu(false)
                           }}
-                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-gray-50 transition-colors ${
-                            statusFilter === 'unknown' ? 'bg-red-50 text-red-700' : 'text-gray-700'
+                          className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                            statusFilter === 'unknown' ? 'bg-rose-50 text-rose-700' : 'text-slate-700'
                           }`}
                         >
                           不认识
-                          {statusFilter === 'unknown' && <Check className="w-4 h-4 text-red-600" />}
+                          {statusFilter === 'unknown' && <ChevronDown className="w-4 h-4 rotate-180 text-rose-600" />}
                         </button>
                       </div>
                     </>
@@ -470,132 +610,37 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
             </div>
           </section>
 
-          {/* 练习模式选择 */}
-          <section className="mb-6">
-            <div className="clay-card p-6 md:p-8 mb-6">
-              <h2 className="text-2xl md:text-3xl font-black text-gradient-lilac mb-2">
-                选择练习模式 🎯
-              </h2>
-              <p className="text-gray-700 font-semibold mb-6">
-                选择你喜欢的练习模式开始学习吧！
-              </p>
-            </div>
-
-            {/* 练习模式网格 */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* 卡片背单词 */}
-              <button
-                onClick={() => handlePracticeModeClick('flashcards')}
-                className="group text-left"
-              >
-                <div className="clay-card-lilac p-8 h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="clay-icon p-4 mb-6 group-hover:scale-110 transition-transform">
-                    <CreditCard className="w-12 h-12 text-gradient-lilac" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    卡片背单词
-                  </h3>
-                  <p className="text-base text-gray-700 font-semibold mb-6 flex-1">
-                    经典记忆模式，点击翻转卡片，快速记忆单词
-                  </p>
-
-                  <div className="clay-button-primary text-center py-3 font-black">
-                    开始背诵
-                  </div>
-                </div>
-              </button>
-
-              {/* 听写模式 */}
-              <button
-                onClick={() => handlePracticeModeClick('dictation')}
-                className="group text-left"
-              >
-                <div className="clay-card-mint p-8 h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="clay-icon p-4 mb-6 group-hover:scale-110 transition-transform">
-                    <Volume2 className="w-12 h-12 text-gradient-mint" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    听写模式
-                  </h3>
-                  <p className="text-base text-gray-700 font-semibold mb-6 flex-1">
-                    听音拼写，强化记忆，检验学习成果
-                  </p>
-
-                  <div className="clay-button-primary text-center py-3 font-black">
-                    开始听写
-                  </div>
-                </div>
-              </button>
-
-              {/* 消消乐 */}
-              <button
-                onClick={() => handlePracticeModeClick('match-game')}
-                className="group text-left"
-              >
-                <div className="clay-card-peach p-8 h-full flex flex-col shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
-                  <div className="clay-icon p-4 mb-6 group-hover:scale-110 transition-transform">
-                    <Gamepad2 className="w-12 h-12 text-gradient-peach" />
-                  </div>
-
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                    消消乐
-                  </h3>
-                  <p className="text-base text-gray-700 font-semibold mb-6 flex-1">
-                    趣味配对游戏，轻松学习，寓教于乐
-                  </p>
-
-                  <div className="clay-button-primary text-center py-3 font-black">
-                    开始游戏
-                  </div>
-                </div>
-              </button>
-            </div>
-
-            {/* 学习小贴士 */}
-            <div className="clay-card-blue p-6 mt-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
-                💡 学习小贴士
-              </h3>
-              <ul className="space-y-2 text-sm text-gray-700 font-semibold">
-                <li>• 建议每天学习20-30个单词，保持连续性</li>
-                <li>• 尝试不同练习模式，找到最适合你的方式</li>
-                <li>• 标记"不认识"的单词会自动加入错题本</li>
-                <li>• 定期复习错题本中的单词，巩固记忆</li>
-              </ul>
-            </div>
-          </section>
-
           {/* 单词列表 */}
-          <WordList
-            initialWords={paginatedWords}
-            bookId={book.id}
-            globalHideChinese={globalHideChinese}
-          />
+          <div>
+            <WordList
+              initialWords={paginatedWords}
+              bookId={book.id}
+              globalHideChinese={globalHideChinese}
+            />
+          </div>
 
-          {/* 底部控制栏 - 仅在单词数 > 50 时显示 */}
-          {filteredWords.length > WORDS_PER_PAGE && (
-            <section className="clay-card p-4 md:p-6 mt-6">
+          {/* 底部控制栏 - 仅在PC端且单词数 > 50 时显示 */}
+          {!isMobileOrTablet && filteredWords.length > WORDS_PER_PAGE && (
+            <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mt-6 hidden md:block">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-                <div className="text-sm text-gray-600">
-                  显示 {startIndex + 1}-{Math.min(endIndex, filteredWords.length)} / 共 {filteredWords.length} 个单词
+                <div className="text-sm text-slate-600">
+                  显示 <span className="font-semibold text-slate-900">{startIndex + 1}-{Math.min(endIndex, filteredWords.length)}</span> / 共 <span className="font-semibold text-slate-900">{filteredWords.length}</span> 个单词
                 </div>
                 <div className="flex items-center gap-2">
                   <button
                     onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
                     disabled={currentPage === 1}
-                    className="px-4 py-2 rounded-xl border-2 border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                    className="px-4 py-2.5 rounded-xl border-2 border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white transition-all duration-200"
                   >
                     上一页
                   </button>
-                  <span className="text-sm font-semibold text-gray-900 px-2">
+                  <span className="text-sm font-bold text-slate-900 px-3 py-2.5 bg-slate-50 rounded-xl">
                     {currentPage} / {totalPages}
                   </span>
                   <button
                     onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
                     disabled={currentPage === totalPages}
-                    className="px-4 py-2 rounded-xl bg-gradient-to-r from-green-400 to-green-500 text-white text-sm font-semibold hover:shadow-lg disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                    className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-sm font-semibold hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                   >
                     下一页
                   </button>
@@ -606,10 +651,10 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
 
           {/* 筛选结果为空时的提示 */}
           {filteredWords.length === 0 && (
-            <section className="clay-card p-12 text-center">
-              <Filter className="w-16 h-16 mx-auto mb-4 text-gray-300" />
-              <h3 className="text-xl font-bold text-gray-700 mb-2">没有找到符合条件的单词</h3>
-              <p className="text-gray-500">请尝试切换筛选条件</p>
+            <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-12 text-center">
+              <Filter className="w-16 h-16 mx-auto mb-4 text-slate-300" />
+              <h3 className="text-xl font-bold text-slate-700 mb-2">没有找到符合条件的单词</h3>
+              <p className="text-slate-500">请尝试切换筛选条件</p>
             </section>
           )}
 
@@ -631,6 +676,29 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
           status: statusFilter
         }}
       />
+
+      {/* 回到顶部按钮 */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 z-50 bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 cursor-pointer"
+          aria-label="回到顶部"
+        >
+          <svg
+            className="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M5 10l7-7m0 0l7 7m-7-7v18"
+            />
+          </svg>
+        </button>
+      )}
     </div>
   )
 }

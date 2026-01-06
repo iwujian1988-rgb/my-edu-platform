@@ -20,7 +20,7 @@ const mockWords = [
     example_sentence: '请在会议前把议程发给我好吗？',
     example_sentence_en: 'Could you please send me the agenda before the meeting?',
     part_of_speech: 'noun',
-    status: 'unknown' as const
+    status: 'new' as const
   },
   {
     id: '2',
@@ -33,7 +33,7 @@ const mockWords = [
     example_sentence: '我们需要达成一个让双方都满意的妥协。',
     example_sentence_en: 'We need to reach a compromise that satisfies both parties.',
     part_of_speech: 'noun, verb',
-    status: 'known' as const
+    status: 'new' as const
   },
   {
     id: '3',
@@ -46,7 +46,7 @@ const mockWords = [
     example_sentence: '请把报告缩写成一页。',
     example_sentence_en: 'Please abbreviate the report to one page.',
     part_of_speech: 'verb',
-    status: 'fuzzy' as const
+    status: 'new' as const
   },
   {
     id: '4',
@@ -59,7 +59,7 @@ const mockWords = [
     example_sentence: '我想点这个汤作为开胃菜。',
     example_sentence_en: 'I would like to order the soup as an appetizer.',
     part_of_speech: 'noun',
-    status: 'unknown' as const
+    status: 'new' as const
   },
 ]
 
@@ -115,6 +115,19 @@ export default async function BookDetailPage({
           .order('order_index', { ascending: true })
 
         if (wordsData && wordsData.length > 0) {
+          // 获取用户的单词学习进度
+          const { data: progressData } = await supabase
+            .from('word_progress')
+            .select('word_id, status')
+            .eq('user_id', user.id)
+            .eq('book_id', id)
+
+          // 将进度数据转换为 Map 方便查找
+          const progressMap = new Map<string, string>()
+          progressData?.forEach((p: any) => {
+            progressMap.set(p.word_id, p.status)
+          })
+
           // 映射数据库字段到组件格式
           words = wordsData.map((w: any) => ({
             id: w.id,
@@ -127,8 +140,8 @@ export default async function BookDetailPage({
             example_sentence: w.example_sentence || '',
             example_sentence_en: w.example_sentence_en || '',
             part_of_speech: w.part_of_speech || '',
-            status: 'unknown' as 'known' | 'unknown' | 'fuzzy' // TODO: 从 user_word_progress 表获取
-          }))
+            status: (progressMap.get(w.id) as 'known' | 'unknown' | 'fuzzy' | 'new') || 'new'
+          })) as typeof mockWords
         } else {
           console.log('No words found in database, using mock data')
           useMockData = true

@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "Bash(taskkill:*)",
+      "Bash(if exist \".next\\\\dev\\\\lock\" del \".next\\\\dev\\\\lock\")",
+      "Bash(npx tsc:*)",
+      "Bash(test:*)",
+      "Bash(if exist \"src\\\\app\\\\dashboard\\\\page.tsx\" del \"src\\\\app\\\\dashboard\\\\page.tsx\")",
+      "Bash(psql:*)",
+      "Bash(exit:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(netstat:*)",
+      "Bash(findstr:*)",
+      "Bash(if exist \".next\" rmdir /s /q .next)",
+      "Bash(cmd /c \"if exist .next rmdir /s /q .next\")",
+      "Bash(cmd /c:*)",
+      "Bash(tasklist:*)",
+      "Bash(curl:*)",
+      "Bash(powershell -Command \"if \\(Test-Path ''.next\\\\dev\\\\lock''\\) { Remove-Item -Force ''.next\\\\dev\\\\lock''; Write-Host ''Lock file deleted'' } else { Write-Host ''Lock file not found'' }\")",
+      "Bash(echo \"===================================  &amp;&amp;  echo \"单词状态持久化功能测试\"  &amp;&amp;  echo \"===================================\"  &amp;&amp;  echo \" \")",
+      "Bash(supabase:*)",
+      "Bash(npx playwright test:*)",
+      "Bash(cd:*)",
+      "Bash(tree:*)",
+      "Bash(cat:*)",
+      "Bash(npm run dev)",
+      "Bash(dir:*)",
+      "Bash(if [ ! -d \"src/app/study/[bookId]/dictation\" ])",
+      "Bash(then mkdir -p \"src/app/study/[bookId]/dictation\")",
+      "Bash(fi:*)",
+      "Bash(if:*)",
+      "Bash(then mkdir -p \"src/app/study/[bookId]/match-game\")",
+      "Bash(npm run build:*)",
+      "Skill(ui-ux-pro-max)",
+      "Bash(python3:*)",
+      "Bash(ping:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

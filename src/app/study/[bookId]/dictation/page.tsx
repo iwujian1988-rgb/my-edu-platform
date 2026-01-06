@@ -2,8 +2,18 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
-import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw } from 'lucide-react'
+import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw, Settings, X } from 'lucide-react'
 import Link from 'next/link'
+
+// 辅助函数：Fisher-Yates 洗牌算法
+function shuffleArray<T>(array: T[]): T[] {
+  const shuffled = [...array]
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+  }
+  return shuffled
+}
 
 type Word = {
   id: string
@@ -47,6 +57,14 @@ export default function DictationPage() {
   const [showDefinition, setShowDefinition] = useState(true) // 默认显示中文释义
   const [definitionPreferenceLoaded, setDefinitionPreferenceLoaded] = useState(false)
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false) // 追踪是否已经播放过一次
+
+  // 用户设置
+  const [shuffleOrder, setShuffleOrder] = useState(false)
+  const [autoRemoveFromMistakes, setAutoRemoveFromMistakes] = useState(false)
+  const [consecutiveCorrectThreshold, setConsecutiveCorrectThreshold] = useState(3)
+  const [showSettings, setShowSettings] = useState(false) // 设置面板显示状态
+  const [settingsLoaded, setSettingsLoaded] = useState(false)
+
   const inputRef = useRef<HTMLInputElement>(null)
   const speechTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -76,7 +94,38 @@ export default function DictationPage() {
         if (!wordsRes.ok) throw new Error('Failed to fetch words')
         const wordsData = await wordsRes.json()
 
-        setWords(wordsData.data)
+        // 获取用户偏好（包括乱序、自动删除等设置）
+        try {
+          const prefRes = await fetch(`/api/user-preferences?book_id=${bookId}`)
+          if (prefRes.ok) {
+            const prefData = await prefRes.json()
+            if (prefData.data) {
+              // 中文释义设置
+              if (prefData.data.hide_definition !== undefined) {
+                setShowDefinition(!prefData.data.hide_definition)
+              }
+
+              // 听写设置
+              setShuffleOrder(prefData.data.shuffle_order || false)
+              setAutoRemoveFromMistakes(prefData.data.auto_remove_from_mistakes || false)
+              setConsecutiveCorrectThreshold(prefData.data.consecutive_correct_threshold || 3)
+
+              // 应用乱序设置
+              const wordsToSet = prefData.data.shuffle_order
+                ? shuffleArray([...wordsData.data])
+                : wordsData.data
+
+              setWords(wordsToSet)
+            }
+          }
+        } catch (error) {
+          console.error('Error fetching preferences:', error)
+          // 如果获取偏好失败，使用原始顺序
+          setWords(wordsData.data)
+        }
+
+        setDefinitionPreferenceLoaded(true)
+        setSettingsLoaded(true)
 
         // Generate scope label
         if (scope === 'all') {
@@ -107,21 +156,6 @@ export default function DictationPage() {
           const progressData = await progressRes.json()
           setWordProgress(progressData.data || {})
         }
-
-        // 获取用户偏好（听写模式中文释义设置）
-        try {
-          const prefRes = await fetch(`/api/user-preferences?book_id=${bookId}`)
-          if (prefRes.ok) {
-            const prefData = await prefRes.json()
-            if (prefData.data && prefData.data.hide_definition !== undefined) {
-              setShowDefinition(!prefData.data.hide_definition)
-            }
-          }
-        } catch (error) {
-          console.error('Error fetching preferences:', error)
-        }
-
-        setDefinitionPreferenceLoaded(true)
       } catch (error) {
         console.error('Error fetching data:', error)
         setDefinitionPreferenceLoaded(true)
@@ -160,6 +194,39 @@ export default function DictationPage() {
       saveDefinitionPreference(newShowDefinition)
     }
   }, [showDefinition, definitionPreferenceLoaded, saveDefinitionPreference])
+
+  // 保存听写设置
+  const handleSaveSettings = useCallback(async () => {
+    try {
+      const response = await fetch('/api/user-preferences', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          book_id: bookId,
+          shuffle_order: shuffleOrder,
+          auto_remove_from_mistakes: autoRemoveFromMistakes,
+          consecutive_correct_threshold: consecutiveCorrectThreshold
+        })
+      })
+
+      if (response.ok) {
+        // 保存成功，关闭设置面板
+        setShowSettings(false)
+
+        // 如果刚刚启用了乱序，需要重新打乱当前单词列表
+        // 注意：这里不重新打乱已经学习过的单词，只影响当前会话
+        // 如果用户想立即应用乱序，可以重新进入页面
+        console.log('✅ 听写设置已保存')
+      } else {
+        const errorData = await response.json()
+        console.error('❌ 保存设置失败:', errorData.error)
+        alert(`保存设置失败：${errorData.error || '未知错误'}`)
+      }
+    } catch (error) {
+      console.error('❌ 保存设置时发生错误:', error)
+      alert('保存设置时发生错误，请重试')
+    }
+  }, [bookId, shuffleOrder, autoRemoveFromMistakes, consecutiveCorrectThreshold])
 
   // 自动聚焦输入框
   useEffect(() => {
@@ -272,21 +339,43 @@ export default function DictationPage() {
       setFeedback('correct')
       playSound('correct')
 
-      // 保存状态为"认识"
+      // 保存状态为"认识" + 处理连续答对计数
       try {
+        const currentProgress = wordProgress[currentWord.id]
+        let newConsecutiveCount = (currentProgress as any)?.consecutive_correct_count || 0
+        newConsecutiveCount += 1
+
+        // 检查是否需要从错词本移除
+        let finalStatus = 'known'
+        if (autoRemoveFromMistakes && currentProgress && currentProgress.status !== 'known') {
+          // 如果开启了自动移除，且连续答对次数达到阈值，则移出错词本
+          if (newConsecutiveCount >= consecutiveCorrectThreshold) {
+            finalStatus = 'known' // 从错词本移除，标记为"认识"
+            console.log(`✅ 单词 "${currentWord.word}" 连续答对 ${newConsecutiveCount} 次，从错词本移除`)
+          } else {
+            finalStatus = currentProgress.status // 保持原状态，继续在错词本中
+          }
+        }
+
+        // 保存进度和计数
         await fetch('/api/word-progress', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             word_id: currentWord.id,
             book_id: bookId,
-            status: 'known'
+            status: finalStatus,
+            consecutive_correct_count: newConsecutiveCount
           })
         })
 
         setWordProgress(prev => ({
           ...prev,
-          [currentWord.id]: { word_id: currentWord.id, status: 'known' }
+          [currentWord.id]: {
+            word_id: currentWord.id,
+            status: finalStatus as 'new' | 'known' | 'vague' | 'unknown',
+            consecutive_correct_count: newConsecutiveCount
+          }
         }))
       } catch (error) {
         console.error('Error saving progress:', error)
@@ -302,7 +391,7 @@ export default function DictationPage() {
       setShowCorrectAnswer(true)
       playSound('wrong')
 
-      // 自动标记为"不认识"
+      // 自动标记为"不认识" + 重置连续答对计数
       try {
         await fetch('/api/word-progress', {
           method: 'POST',
@@ -310,13 +399,18 @@ export default function DictationPage() {
           body: JSON.stringify({
             word_id: currentWord.id,
             book_id: bookId,
-            status: 'unknown'
+            status: 'unknown',
+            consecutive_correct_count: 0 // 重置连续答对计数
           })
         })
 
         setWordProgress(prev => ({
           ...prev,
-          [currentWord.id]: { word_id: currentWord.id, status: 'unknown' }
+          [currentWord.id]: {
+            word_id: currentWord.id,
+            status: 'unknown',
+            consecutive_correct_count: 0
+          }
         }))
       } catch (error) {
         console.error('Error saving progress:', error)
@@ -430,20 +524,29 @@ export default function DictationPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 px-4 py-4">
         <div className="max-w-4xl mx-auto">
-          <div className="clay-card px-6 py-4 flex items-center gap-4">
-            <button
-              onClick={() => router.push(`/library/${bookId}`)}
-              className="clay-icon p-2 hover:scale-110 transition-transform"
-              title="返回"
-            >
-              <ArrowLeft className="w-5 h-5 text-gray-700" />
-            </button>
-            <div>
-              <h1 className="text-lg font-bold text-gradient-lilac">{bookTitle}</h1>
-              <p className="text-xs text-gray-600 font-semibold">
-                听写模式 • {scopeLabel} • {currentIndex + 1} / {words.length}
-              </p>
+          <div className="clay-card px-6 py-4 flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <button
+                onClick={() => router.push(`/library/${bookId}`)}
+                className="clay-icon p-2 hover:scale-110 transition-transform"
+                title="返回"
+              >
+                <ArrowLeft className="w-5 h-5 text-gray-700" />
+              </button>
+              <div>
+                <h1 className="text-lg font-bold text-gradient-lilac">{bookTitle}</h1>
+                <p className="text-xs text-gray-600 font-semibold">
+                  听写模式 • {scopeLabel} • {currentIndex + 1} / {words.length}
+                </p>
+              </div>
             </div>
+            <button
+              onClick={() => setShowSettings(true)}
+              className="clay-icon p-2 hover:scale-110 transition-transform"
+              title="听写设置"
+            >
+              <Settings className="w-5 h-5 text-gray-700" />
+            </button>
           </div>
         </div>
       </header>
@@ -655,6 +758,123 @@ export default function DictationPage() {
           )}
         </div>
       </main>
+
+      {/* Settings Modal */}
+      {showSettings && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/50"
+            onClick={() => setShowSettings(false)}
+          ></div>
+
+          {/* Modal */}
+          <div className="clay-card-xl p-6 max-w-md w-full relative z-10">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-2xl font-bold text-gradient-lilac">⚙️ 听写设置</h2>
+              <button
+                onClick={() => setShowSettings(false)}
+                className="clay-icon p-2 hover:scale-110 transition-transform"
+                title="关闭"
+              >
+                <X className="w-5 h-5 text-gray-700" />
+              </button>
+            </div>
+
+            {/* 练习顺序 */}
+            <div className="mb-6">
+              <label className="block text-sm font-bold text-gray-700 mb-3">
+                🎲 练习顺序
+              </label>
+              <div className="space-y-2">
+                <label className="flex items-center gap-3 p-3 clay-card cursor-pointer hover:scale-[1.01] transition-transform">
+                  <input
+                    type="radio"
+                    name="shuffleOrder"
+                    checked={!shuffleOrder}
+                    onChange={() => setShuffleOrder(false)}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm text-gray-700">按顺序（默认）</span>
+                </label>
+                <label className="flex items-center gap-3 p-3 clay-card cursor-pointer hover:scale-[1.01] transition-transform">
+                  <input
+                    type="radio"
+                    name="shuffleOrder"
+                    checked={shuffleOrder}
+                    onChange={() => setShuffleOrder(true)}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm text-gray-700">随机乱序</span>
+                </label>
+              </div>
+            </div>
+
+            {/* 答对后自动移出错词 */}
+            <div className="mb-6">
+              <label className="block text-sm font-bold text-gray-700 mb-3">
+                ✅ 答对后自动移出错词
+              </label>
+
+              {/* 开关 */}
+              <div className="mb-3">
+                <label className="flex items-center gap-3 p-3 clay-card cursor-pointer hover:scale-[1.01] transition-transform">
+                  <input
+                    type="checkbox"
+                    checked={autoRemoveFromMistakes}
+                    onChange={(e) => setAutoRemoveFromMistakes(e.target.checked)}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm text-gray-700">启用自动移除</span>
+                </label>
+              </div>
+
+              {/* 阈值选择 */}
+              {autoRemoveFromMistakes && (
+                <div className="space-y-2">
+                  <label className="block text-xs text-gray-600">连续答对次数</label>
+                  <select
+                    value={consecutiveCorrectThreshold}
+                    onChange={(e) => setConsecutiveCorrectThreshold(Number(e.target.value))}
+                    className="w-full px-4 py-2 clay-card text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#9B8CB5]"
+                  >
+                    <option value={1}>连续答对 1 次</option>
+                    <option value={2}>连续答对 2 次</option>
+                    <option value={3}>连续答对 3 次（推荐）</option>
+                    <option value={5}>连续答对 5 次</option>
+                    <option value={10}>连续答对 10 次</option>
+                  </select>
+                </div>
+              )}
+
+              {/* 提示信息 */}
+              <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-xs text-blue-700">
+                  💡 <strong>提示：</strong>开启后，连续答对指定次数的单词会自动从错词本中移除，标记为"认识"。
+                </p>
+              </div>
+            </div>
+
+            {/* Buttons */}
+            <div className="flex gap-3 pt-4 border-t border-gray-200">
+              <button
+                onClick={handleSaveSettings}
+                disabled={!settingsLoaded}
+                className="flex-1 clay-button-primary px-4 py-3 text-sm font-bold disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                保存设置
+              </button>
+              <button
+                onClick={() => setShowSettings(false)}
+                className="flex-1 clay-button-secondary px-4 py-3 text-sm font-bold"
+              >
+                取消
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <style>{`
         @keyframes shake {

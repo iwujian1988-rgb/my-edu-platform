@@ -3,6 +3,10 @@ import { NextRequest, NextResponse } from 'next/server'
 
 type UserPreference = {
   hide_chinese: boolean
+  hide_definition: boolean
+  shuffle_order: boolean
+  auto_remove_from_mistakes: boolean
+  consecutive_correct_threshold: number
 }
 
 // GET /api/user-preferences?book_id=xxx
@@ -24,7 +28,7 @@ export async function GET(request: NextRequest) {
     // 获取用户对这本书的偏好设置
     const { data: preferences } = await supabase
       .from('user_book_preferences')
-      .select('hide_chinese')
+      .select('*')
       .eq('user_id', user.id)
       .eq('book_id', bookId)
       .maybeSingle()
@@ -32,7 +36,11 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       data: {
-        hide_chinese: (preferences as UserPreference | null)?.hide_chinese || false
+        hide_chinese: (preferences as UserPreference | null)?.hide_chinese || false,
+        hide_definition: (preferences as UserPreference | null)?.hide_definition || false,
+        shuffle_order: (preferences as UserPreference | null)?.shuffle_order || false,
+        auto_remove_from_mistakes: (preferences as UserPreference | null)?.auto_remove_from_mistakes || false,
+        consecutive_correct_threshold: (preferences as UserPreference | null)?.consecutive_correct_threshold || 3
       }
     })
   } catch (error) {
@@ -83,35 +91,54 @@ export async function POST(request: NextRequest) {
     const user = userData.user
 
     const body = await request.json()
-    const { book_id, hide_chinese } = body
+    const {
+      book_id,
+      hide_chinese,
+      hide_definition,
+      shuffle_order,
+      auto_remove_from_mistakes,
+      consecutive_correct_threshold
+    } = body
 
-    console.log('Request body:', { book_id, hide_chinese })
+    console.log('Request body:', {
+      book_id,
+      hide_chinese,
+      hide_definition,
+      shuffle_order,
+      auto_remove_from_mistakes,
+      consecutive_correct_threshold
+    })
 
-    if (!book_id || typeof hide_chinese !== 'boolean') {
-      console.error('POST /api/user-preferences: Invalid request body', body)
+    if (!book_id) {
+      console.error('POST /api/user-preferences: book_id is required')
       return NextResponse.json(
-        { error: 'book_id and hide_chinese (boolean) are required' },
+        { error: 'book_id is required' },
         { status: 400 }
       )
     }
 
-    console.log('Saving preferences for user:', user.email, { book_id, hide_chinese })
+    // 构建更新对象，只包含提供的字段
+    const updateData: any = {
+      user_id: user.id,
+      book_id,
+      updated_at: new Date().toISOString()
+    }
+
+    if (typeof hide_chinese === 'boolean') updateData.hide_chinese = hide_chinese
+    if (typeof hide_definition === 'boolean') updateData.hide_definition = hide_definition
+    if (typeof shuffle_order === 'boolean') updateData.shuffle_order = shuffle_order
+    if (typeof auto_remove_from_mistakes === 'boolean') updateData.auto_remove_from_mistakes = auto_remove_from_mistakes
+    if (typeof consecutive_correct_threshold === 'number') updateData.consecutive_correct_threshold = consecutive_correct_threshold
+
+    console.log('Saving preferences for user:', user.email, updateData)
 
     // 使用 UPSERT 保存或更新偏好设置
     const { data: preferencesData, error } = await supabase
       .from('user_book_preferences')
-      .upsert(
-        {
-          user_id: user.id,
-          book_id,
-          hide_chinese,
-          updated_at: new Date().toISOString()
-        } as any,
-        {
-          onConflict: 'user_id,book_id',
-          ignoreDuplicates: false
-        }
-      )
+      .upsert(updateData, {
+        onConflict: 'user_id,book_id',
+        ignoreDuplicates: false
+      })
       .select()
       .single()
 

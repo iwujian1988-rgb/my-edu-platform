@@ -34,7 +34,7 @@ export async function GET(request: NextRequest) {
     // 查询单词状态
     const { data: wordProgress, error: progressError } = await supabase
       .from('word_progress')
-      .select('word_id, status, practice_count, correct_count, last_practiced_at')
+      .select('word_id, status, practice_count, correct_count, last_practiced_at, match_count, fail_count')
       .eq('user_id', user.id)
       .eq('book_id', bookId)
 
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
 
     // 解析请求体
     const body = await request.json()
-    const { word_id, book_id, status } = body
+    const { word_id, book_id, status, consecutive_correct_count, match_count, fail_count } = body
 
     // 验证必需参数
     if (!word_id || !book_id || !status) {
@@ -95,22 +95,37 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // 构建更新对象
+    const updateData: any = {
+      user_id: user.id,
+      word_id,
+      book_id,
+      status,
+      updated_at: new Date().toISOString()
+    }
+
+    // 如果提供了consecutive_correct_count，则更新该字段
+    if (typeof consecutive_correct_count === 'number') {
+      updateData.consecutive_correct_count = consecutive_correct_count
+    }
+
+    // 如果提供了match_count，则更新该字段（消消乐匹配成功计数）
+    if (typeof match_count === 'number') {
+      updateData.match_count = match_count
+    }
+
+    // 如果提供了fail_count，则更新该字段（消消乐匹配失败计数）
+    if (typeof fail_count === 'number') {
+      updateData.fail_count = fail_count
+    }
+
     // 使用 UPSERT 保存或更新单词状态
     const { data: progressData, error: upsertError } = await supabase
       .from('word_progress')
-      .upsert(
-        {
-          user_id: user.id,
-          word_id,
-          book_id,
-          status,
-          updated_at: new Date().toISOString()
-        } as any,
-        {
-          onConflict: 'user_id,word_id,book_id',
-          ignoreDuplicates: false
-        }
-      )
+      .upsert(updateData, {
+        onConflict: 'user_id,word_id,book_id',
+        ignoreDuplicates: false
+      })
       .select()
 
     if (upsertError) {

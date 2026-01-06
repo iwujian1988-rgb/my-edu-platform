@@ -14,7 +14,7 @@ interface Word {
   example_sentence: string
   example_sentence_en: string
   part_of_speech: string
-  status: 'known' | 'fuzzy' | 'unknown'
+  status: 'known' | 'fuzzy' | 'unknown' | 'new'
 }
 
 interface WordCardProps {

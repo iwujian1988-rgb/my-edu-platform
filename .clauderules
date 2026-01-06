@@ -1,0 +1,256 @@
+# AI 开发规则 - 小语笔记项目
+
+> **重要**: 在开发任何新功能或页面之前，必须先阅读并遵循以下规则
+
+## 🎯 核心设计原则
+
+### 设计风格
+- **风格**: Educational Platform（现代教育平台）
+- **配色**: 浅米色背景 (#F8F5F2) + 绿色主按钮 (#4CAF50) + 蓝色副按钮 (#87CEEB)
+- **字体**: Fredoka (标题) + Nunito (正文)
+- **布局策略**: iPad First（优先考虑平板横屏体验）
+
+### 必读文档（开发前必读）
+```
+1. DESIGN_SYSTEM.md - 完整设计系统
+2. DEVELOPMENT_GUIDE.md - 开发指南
+3. ui_design.md - 设计规范
+```
+
+## 📋 开发新页面时的强制规则
+
+### 1. 布局规则（iPad First）
+```tsx
+// ✅ 必须这样做
+- 使用响应式网格: grid-cols-1 md:grid-cols-2 lg:grid-cols-3
+- 平板横屏充分利用屏幕宽度
+- 避免 max-w-md 等窄容器
+- 使用 max-w-7xl 或全宽
+
+// ❌ 禁止这样做
+- 在平板上使用窄容器
+- 固定宽度布局
+- 不考虑平板体验
+```
+
+### 2. 组件使用规则
+```tsx
+// ✅ 优先使用可复用组件
+import { SplitLayout } from '@/components/layout/SplitLayout'
+import { PageContainer } from '@/components/layout/PageContainer'
+import { FormInput } from '@/components/form/FormInput'
+import { PrimaryButton } from '@/components/form/PrimaryButton'
+import { SecondaryButton } from '@/components/form/SecondaryButton'
+import { FeatureCard } from '@/components/display/FeatureCard'
+
+// ❌ 不要重复创建这些组件
+```
+
+### 3. 样式规则
+```tsx
+// 背景色
+backgroundColor: '#F8F5F2' (浅米色)
+
+// 主按钮（绿色）
+className="clay-button-primary"
+或
+<PrimaryButton>
+
+// 副按钮（蓝色）
+className="clay-button-secondary"
+或
+<SecondaryButton>
+
+// 卡片
+className="clay-card"
+
+// 图标容器
+className="clay-icon"
+```
+
+### 4. 触摸目标规则
+```tsx
+// 所有按钮最小高度
+min-height: 56px (推荐 64px)
+
+// 所有输入框最小高度
+min-height: 56px
+
+// 所有可点击元素
+min-height: 48px
+```
+
+### 5. 字号规则
+```tsx
+// 平板设备
+基础字号: text-lg (18px)
+主标题: text-5xl (48px)
+二级标题: text-4xl (36px)
+正文: text-base (16px) 或 text-lg (18px)
+
+// 标题自动使用 Fredoka 字体
+// 正文自动使用 Nunito 字体
+```
+
+## 🔄 标准开发流程
+
+### Step 1: 阅读文档
+在编写任何代码前，先执行：
+```bash
+# 读取设计系统
+cat DESIGN_SYSTEM.md
+
+# 读取开发指南
+cat DEVELOPMENT_GUIDE.md
+```
+
+### Step 2: 选择合适的模板
+```
+登录/注册页 → SplitLayout
+仪表盘页 → PageContainer + CardGrid
+列表页 → PageContainer + FilterBar
+详情页 → PageContainer
+```
+
+### Step 3: 使用可复用组件
+```tsx
+// 总是优先使用组件库中的组件
+// 不要手动编写相同的样式
+```
+
+### Step 4: 检查清单
+开发完成后，确认：
+- [ ] 使用了正确的颜色（绿/蓝/浅米）
+- [ ] 使用了正确的组件
+- [ ] iPad 横屏充分利用屏幕
+- [ ] 所有触摸目标 ≥ 56px
+- [ ] 平板上字号 ≥ text-lg
+
+## 🚨 禁止事项
+
+### ❌ 禁止的做法
+```tsx
+// 1. 禁止使用非标准颜色
+<button className="bg-red-500">
+<button className="bg-blue-500">
+
+// 正确做法
+<PrimaryButton>
+<SecondaryButton>
+
+// 2. 禁止使用窄容器
+<div className="max-w-md mx-auto">
+
+// 正确做法
+<div className="w-full max-w-7xl mx-auto">
+
+// 3. 禁止触摸目标太小
+<button className="h-8 px-2">
+
+// 正确做法
+<button className="min-h-[56px] px-6 py-4">
+
+// 4. 禁止字号太小
+<p className="text-sm">
+
+// 正确做法（平板）
+<p className="text-lg">
+
+// 5. 禁止不使用组件库
+手动编写所有样式
+
+// 正确做法
+使用 @/components 中的组件
+```
+
+## 📂 组件库位置
+
+```
+/src/components/
+  layout/
+    - SplitLayout.tsx (左右分栏)
+    - PageContainer.tsx (页面容器)
+  form/
+    - FormInput.tsx (输入框)
+    - PrimaryButton.tsx (主按钮)
+    - SecondaryButton.tsx (副按钮)
+  display/
+    - FeatureCard.tsx (功能卡片)
+```
+
+## 🎨 配色速查
+
+```
+主绿色: #4CAF50
+副蓝色: #87CEEB
+强调橙: #FF8C61
+背景色: #F8F5F2
+卡片色: #FFFFFF
+边框色: #E2E8F0
+文字色: #2D3748
+```
+
+## 📱 响应式断点
+
+```
+Mobile:    < 768px
+Tablet:     768px - 1024px
+Desktop:   1024px - 1280px
+Large:     > 1280px
+```
+
+## ✅ 代码模板
+
+### 登录页模板
+```tsx
+import { SplitLayout } from '@/components/layout/SplitLayout'
+import { FormInput } from '@/components/form/FormInput'
+import { PrimaryButton } from '@/components/form/PrimaryButton'
+
+export default function LoginPage() {
+  return (
+    <div style={{ backgroundColor: '#F8F5F2' }}>
+      <SplitLayout
+        left={<BrandSection />}
+        right={<AuthForm />}
+      />
+    </div>
+  )
+}
+```
+
+### 仪表盘页模板
+```tsx
+import { PageContainer } from '@/components/layout/PageContainer'
+
+export default function Dashboard() {
+  return (
+    <PageContainer>
+      <h1 className="text-4xl font-black mb-8">标题</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* 内容 */}
+      </div>
+    </PageContainer>
+  )
+}
+```
+
+## 🔍 参考实现
+
+在开发新功能前，查看这些文件的实现：
+- `src/app/login/page.tsx` - 登录页（SplitLayout 示例）
+- `src/app/study/page.tsx` - 学习中心
+- `src/app/page.tsx` - 首页
+
+## 📖 需要更多信息？
+
+查看完整文档：
+- `DESIGN_SYSTEM.md` - 详细设计规范
+- `DEVELOPMENT_GUIDE.md` - 开发指南
+- `DESIGN_GUIDE_README.md` - 快速参考
+
+---
+
+**记住**: 使用组件库 = 自动符合规范
+**优先**: SplitLayout, PageContainer, FormInput, PrimaryButton
+**禁止**: 重复创建已有组件

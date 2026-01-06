@@ -14,7 +14,7 @@ interface Word {
   example_sentence: string
   example_sentence_en: string
   part_of_speech: string
-  status: 'known' | 'fuzzy' | 'unknown'
+  status: 'known' | 'fuzzy' | 'unknown' | 'new'
   theme?: string
   scene?: string
 }
@@ -52,7 +52,7 @@ export function WordList({ initialWords, bookId, globalHideChinese = false }: Wo
   }
 
   const [words, setWords] = useState<Word[]>(initialWords)
-  const [wordProgress, setWordProgress] = useState<Record<string, 'known' | 'fuzzy' | 'unknown'>>({})
+  const [wordProgress, setWordProgress] = useState<Record<string, 'known' | 'fuzzy' | 'unknown' | 'new'>>({})
   const [isSaving, setIsSaving] = useState(false)
   const [initialized, setInitialized] = useState(false)
 
@@ -111,15 +111,16 @@ export function WordList({ initialWords, bookId, globalHideChinese = false }: Wo
           const { data } = await response.json()
 
           // 构建单词状态映射
-          const statusMap: Record<string, 'known' | 'fuzzy' | 'unknown'> = {}
-          const dbStatusMap: Record<string, 'known' | 'fuzzy' | 'unknown'> = {
+          const statusMap: Record<string, 'known' | 'fuzzy' | 'unknown' | 'new'> = {}
+          const dbStatusMap: Record<string, 'known' | 'fuzzy' | 'unknown' | 'new'> = {
             'known': 'known',
             'vague': 'fuzzy',
-            'unknown': 'unknown'
+            'unknown': 'unknown',
+            'new': 'new'
           }
 
           Object.entries(data).forEach(([wordId, progress]: [string, any]) => {
-            statusMap[wordId] = dbStatusMap[progress.status] || 'unknown'
+            statusMap[wordId] = dbStatusMap[progress.status] || 'new'
           })
 
           setWordProgress(statusMap)

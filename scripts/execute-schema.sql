@@ -1,0 +1,19 @@
+-- ============================================
+-- Supabase Schema 执行脚本
+-- 复制此文件内容到 Supabase SQL Editor 执行
+-- ============================================
+--
+-- 快速链接: https://supabase.com/dashboard/project/snnrjnpcmdsdlyldvvps/sql/new
+--
+-- 步骤:
+-- 1. 打开上面的链接
+-- 2. 复制 supabase/schema.sql 的全部内容
+-- 3. 粘贴到 SQL Editor
+-- 4. 点击 Run 按钮
+--
+-- 或点击下方链接直接打开 SQL Editor:
+-- https://supabase.com/dashboard/project/snnrjnpcmdsdlyldvvps/sql/new
+--
+-- ============================================
+
+-- 提示: 请执行主 schema 文件: supabase/schema.sql

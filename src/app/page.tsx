@@ -2,6 +2,7 @@ import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { BookOpen, GraduationCap, Sparkles, Trophy, Target, Zap, Users, TrendingUp, Star, Clock, Award, ArrowRight, Calendar, XCircle, Plus } from 'lucide-react'
+import { BookCoverImage } from '@/components/BookCoverImage'
 
 // Mock 数据（Supabase 无数据时使用）
 const mockBooks = [
@@ -11,6 +12,7 @@ const mockBooks = [
     description: '大学英语四级必备词汇',
     word_count: 4500,
     cover_color: 'from-green-400 to-green-500',
+    cover_url: null,
     progress: 75,
     status: 'learning'
   },
@@ -20,6 +22,7 @@ const mockBooks = [
     description: '大学英语六级核心词汇',
     word_count: 6000,
     cover_color: 'from-blue-400 to-blue-500',
+    cover_url: null,
     progress: 45,
     status: 'learning'
   },
@@ -29,6 +32,7 @@ const mockBooks = [
     description: '雅思考试必备词汇',
     word_count: 8000,
     cover_color: 'from-purple-400 to-purple-500',
+    cover_url: null,
     progress: 0,
     status: 'not_started'
   },
@@ -38,6 +42,7 @@ const mockBooks = [
     description: '托福考试核心词汇',
     word_count: 8000,
     cover_color: 'from-orange-400 to-orange-500',
+    cover_url: null,
     progress: 20,
     status: 'learning'
   }
@@ -67,7 +72,8 @@ export default async function Home() {
           name: book.title,
           description: book.description || '',
           word_count: book.total_words || 0,
-          cover_color: 'from-green-400 to-green-500', // 默认颜色，后续可从 cover_url 提取
+          cover_color: book.cover_color || 'from-green-400 to-green-500', // 保留颜色作为备用
+          cover_url: book.cover_url || null, // AI 生成的封面 URL
           progress: 0, // 暂无进度数据
           status: 'not_started'
         }))
@@ -226,10 +232,12 @@ export default async function Home() {
                     className="group"
                   >
                     <div className="clay-card p-5 md:p-6 h-full hover:scale-105 transition-transform cursor-pointer">
-                      {/* 封面 */}
-                      <div className={`w-full h-32 rounded-xl mb-4 bg-gradient-to-br ${book.cover_color || 'from-green-400 to-green-500'} flex items-center justify-center`}>
-                        <BookOpen className="w-12 h-12 text-white/90" />
-                      </div>
+                      {/* 封面 - 优先显示 AI 生成的封面，否则显示渐变背景 */}
+                      <BookCoverImage
+                        coverUrl={book.cover_url}
+                        title={book.name}
+                        coverColor={book.cover_color || 'from-green-400 to-green-500'}
+                      />
 
                       {/* 内容 */}
                       <h4 className="text-lg font-black text-gray-900 mb-2 group-hover:text-purple-600 transition-colors">
