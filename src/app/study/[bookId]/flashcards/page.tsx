@@ -409,20 +409,20 @@ export default function FlashcardsPage() {
           </div>
 
           {/* Card */}
-          <div className="relative mb-4" style={{ height: '360px' }}>
+          <div className="relative mb-4 mx-auto" style={{ width: '100%', maxWidth: '512px', height: '320px' }}>
             {/* Preview Card - 下一个单词的预览 */}
             {currentIndex < words.length - 1 && (
               <div
-                className="absolute inset-0 clay-card-xl p-8 flex flex-col items-center justify-center pointer-events-none"
+                className="clay-card-xl p-8 pointer-events-none absolute top-0 left-0 right-0"
                 style={{
+                  height: '320px',
                   opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 0.4 : 0,
                   transform: `translateZ(-50px)`,
                   transition: 'opacity 0.3s ease-out',
-                  zIndex: 0,
-                  height: '360px'
+                  zIndex: 0
                 }}
               >
-                <div className="text-center w-full">
+                <div className="flex flex-col items-center justify-center h-full">
                   {/* Word */}
                   <h2 className="text-5xl font-black text-gray-900 mb-4">
                     {words[currentIndex + 1]?.word}
@@ -455,9 +455,10 @@ export default function FlashcardsPage() {
               </div>
             )}
 
+            {/* Current Card */}
             <div
               ref={cardRef}
-              className="clay-card-xl p-8 cursor-pointer flex items-center justify-center relative absolute inset-0"
+              className="clay-card-xl p-8 cursor-pointer absolute top-0 left-0 right-0"
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
               onMouseUp={handleDragEnd}
@@ -467,6 +468,7 @@ export default function FlashcardsPage() {
               onTouchEnd={handleDragEnd}
               onClick={handleFlip}
               style={{
+                height: '320px',
                 perspective: '1000px',
                 transform: `translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
                 transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out',
@@ -474,7 +476,7 @@ export default function FlashcardsPage() {
               }}
             >
               <div
-                className="w-full"
+                className="flex flex-col items-center justify-center h-full"
                 style={{
                   transformStyle: 'preserve-3d',
                   transition: 'transform 0.6s',
