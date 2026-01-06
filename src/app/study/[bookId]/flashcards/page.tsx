@@ -379,7 +379,7 @@ export default function FlashcardsPage() {
       <main className="container mx-auto px-4 py-2">
         <div className="max-w-xl mx-auto">
           {/* Progress Bar */}
-          <div className="mb-3">
+          <div className="mb-2">
             <div className="flex justify-between text-sm text-gray-600 font-semibold mb-2">
               <span>学习进度</span>
               <span>{Math.round((currentIndex / words.length) * 100)}%</span>
@@ -393,7 +393,7 @@ export default function FlashcardsPage() {
           </div>
 
           {/* 操作提示 */}
-          <div className="grid grid-cols-3 gap-4 mb-4 text-center">
+          <div className="grid grid-cols-3 gap-4 mb-2 text-center">
             <div>
               <p className="text-xs text-gray-500 mb-1">← 左滑</p>
               <p className="text-sm font-semibold text-green-700">认识</p>
@@ -409,7 +409,7 @@ export default function FlashcardsPage() {
           </div>
 
           {/* Card */}
-          <div className="relative mb-4" style={{ height: '380px' }}>
+          <div className="relative mb-4" style={{ height: '360px' }}>
             {/* Preview Card - 下一个单词的预览 */}
             {currentIndex < words.length - 1 && (
               <div
@@ -418,7 +418,8 @@ export default function FlashcardsPage() {
                   opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 0.4 : 0,
                   transform: `translateZ(-50px)`,
                   transition: 'opacity 0.3s ease-out',
-                  zIndex: 0
+                  zIndex: 0,
+                  height: '360px'
                 }}
               >
                 <div className="text-center w-full">
@@ -456,8 +457,7 @@ export default function FlashcardsPage() {
 
             <div
               ref={cardRef}
-              className="clay-card-xl p-8 cursor-pointer min-h-[350px] flex items-center justify-center relative"
-              style={{ minHeight: '320px' }}
+              className="clay-card-xl p-8 cursor-pointer flex items-center justify-center relative absolute inset-0"
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
               onMouseUp={handleDragEnd}
