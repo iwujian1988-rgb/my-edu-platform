@@ -311,17 +311,34 @@ export default function FlashcardsPage() {
             {/* Preview Card - 下一个单词的预览 */}
             {(Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50) && currentIndex < words.length - 1 && (
               <div
-                className="absolute inset-0 clay-card-xl p-8 flex items-center justify-center pointer-events-none"
+                className="absolute inset-0 clay-card-xl p-8 flex flex-col items-center justify-center pointer-events-none"
                 style={{
-                  opacity: 0.15,
-                  transform: `translate(${dragOffset.x > 0 ? '20px' : '-20px'}, ${dragOffset.y > 0 ? '20px' : '-20px'})`,
+                  opacity: 0.2,
+                  transform: `translate(${dragOffset.x > 0 ? '30px' : '-30px'}, ${dragOffset.y > 0 ? '30px' : '-30px'})`,
                   transition: 'transform 0.3s ease-out'
                 }}
               >
-                <div className="text-center">
-                  <h2 className="text-5xl font-black text-gray-900">
+                <div className="text-center w-full">
+                  {/* Word */}
+                  <h2 className="text-5xl font-black text-gray-900 mb-4">
                     {words[currentIndex + 1]?.word}
                   </h2>
+
+                  {/* Phonetic */}
+                  {words[currentIndex + 1]?.phonetic && (
+                    <p className="text-xl text-gray-600 font-semibold mb-6">
+                      {words[currentIndex + 1]?.phonetic}
+                    </p>
+                  )}
+
+                  {/* Part of Speech */}
+                  {words[currentIndex + 1]?.part_of_speech && (
+                    <div className="mb-6">
+                      <span className="inline-block clay-badge bg-purple-100 text-purple-800 px-4 py-2 font-bold text-sm">
+                        {words[currentIndex + 1]?.part_of_speech}
+                      </span>
+                    </div>
+                  )}
                 </div>
               </div>
             )}
@@ -459,90 +476,6 @@ export default function FlashcardsPage() {
                 </div>
               </div>
             </div>
-          </div>
-
-          {/* Control Buttons */}
-          <div className="grid grid-cols-3 gap-4 mb-6">
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                handleStatus('known')
-              }}
-              className="group py-4 px-6 font-semibold flex flex-col items-center gap-2 transition-all duration-200"
-              style={{
-                background: 'linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%)',
-                borderRadius: '0.75rem',
-                border: '2px solid #b8dabc',
-                boxShadow: '0 2px 4px rgba(40, 167, 69, 0.1)',
-                color: '#155724'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 4px 8px rgba(40, 167, 69, 0.15)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 2px 4px rgba(40, 167, 69, 0.1)'
-              }}
-            >
-              <span className="text-3xl">✓</span>
-              <span className="text-sm">认识</span>
-              <span className="text-xs opacity-60">⬅️ 左滑</span>
-            </button>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                handleStatus('vague')
-              }}
-              className="group py-4 px-6 font-semibold flex flex-col items-center gap-2 transition-all duration-200"
-              style={{
-                background: 'linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%)',
-                borderRadius: '0.75rem',
-                border: '2px solid #f0d43a',
-                boxShadow: '0 2px 4px rgba(255, 193, 7, 0.1)',
-                color: '#856404'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 4px 8px rgba(255, 193, 7, 0.15)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 2px 4px rgba(255, 193, 7, 0.1)'
-              }}
-            >
-              <span className="text-3xl">?</span>
-              <span className="text-sm">模糊</span>
-              <span className="text-xs opacity-60">↑ 上滑</span>
-            </button>
-
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                handleStatus('unknown')
-              }}
-              className="group py-4 px-6 font-semibold flex flex-col items-center gap-2 transition-all duration-200"
-              style={{
-                background: 'linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%)',
-                borderRadius: '0.75rem',
-                border: '2px solid #f1b0b7',
-                boxShadow: '0 2px 4px rgba(220, 53, 69, 0.1)',
-                color: '#721c24'
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)'
-                e.currentTarget.style.boxShadow = '0 4px 8px rgba(220, 53, 69, 0.15)'
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)'
-                e.currentTarget.style.boxShadow = '0 2px 4px rgba(220, 53, 69, 0.1)'
-              }}
-            >
-              <span className="text-3xl">✗</span>
-              <span className="text-sm">不认识</span>
-              <span className="text-xs opacity-60">➡️ 右滑</span>
-            </button>
           </div>
 
           {/* Complete Message */}
