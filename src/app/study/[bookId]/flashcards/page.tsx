@@ -376,7 +376,7 @@ export default function FlashcardsPage() {
       </header>
 
       {/* Flashcard */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-4">
         <div className="max-w-xl mx-auto">
           {/* Progress Bar */}
           <div className="mb-4">
