@@ -393,7 +393,7 @@ export default function FlashcardsPage() {
           </div>
 
           {/* 操作提示 */}
-          <div className="grid grid-cols-3 gap-4 mb-0 text-center">
+          <div className="grid grid-cols-3 gap-4 -mb-2 text-center">
             <div>
               <p className="text-xs text-gray-500 mb-1">← 左滑</p>
               <p className="text-sm font-semibold text-green-700">认识</p>
