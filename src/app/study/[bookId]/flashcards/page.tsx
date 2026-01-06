@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
-import { ArrowLeft, RotateCw, Volume2, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowLeft, Volume2 } from 'lucide-react'
 import Link from 'next/link'
 
 type Word = {
@@ -113,43 +113,16 @@ export default function FlashcardsPage() {
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
 
-  // 自动朗读新单词
-  useEffect(() => {
-    if (currentWord && !loading) {
-      // 延迟500ms后自动朗读，让用户先看到单词
-      const timer = setTimeout(() => {
-        speak(currentWord.word)
-      }, 500)
-
-      return () => clearTimeout(timer)
+  // Text-to-speech (使用useCallback避免依赖问题)
+  const speak = useCallback((text: string) => {
+    if ('speechSynthesis' in window && text) {
+      speechSynthesis.cancel() // 停止之前的朗读
+      const utterance = new SpeechSynthesisUtterance(text)
+      utterance.lang = 'en-US'
+      utterance.rate = 0.9
+      speechSynthesis.speak(utterance)
     }
-  }, [currentIndex, currentWord, loading])
-
-  // 键盘快捷键
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowLeft') {
-        // ⬅️ 认识
-        e.preventDefault()
-        handleStatus('known')
-      } else if (e.key === 'ArrowUp') {
-        // ↑ 模糊
-        e.preventDefault()
-        handleStatus('vague')
-      } else if (e.key === 'ArrowRight') {
-        // ➡️ 不认识
-        e.preventDefault()
-        handleStatus('unknown')
-      } else if (e.key === 'ArrowDown') {
-        // ⬇️ 翻转查看详情
-        e.preventDefault()
-        handleFlip()
-      }
-    }
-
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentWord, currentIndex])
+  }, [])
 
   // Handle card flip
   const handleFlip = () => {
@@ -185,16 +158,43 @@ export default function FlashcardsPage() {
     }
   }
 
-  // Text-to-speech
-  const speak = (text: string) => {
-    if ('speechSynthesis' in window && text) {
-      speechSynthesis.cancel() // 停止之前的朗读
-      const utterance = new SpeechSynthesisUtterance(text)
-      utterance.lang = 'en-US'
-      utterance.rate = 0.9
-      speechSynthesis.speak(utterance)
+  // 自动朗读新单词
+  useEffect(() => {
+    if (currentWord && !loading) {
+      // 延迟500ms后自动朗读，让用户先看到单词
+      const timer = setTimeout(() => {
+        speak(currentWord.word)
+      }, 500)
+
+      return () => clearTimeout(timer)
     }
-  }
+  }, [currentIndex, currentWord, loading, speak])
+
+  // 键盘快捷键
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        // ⬅️ 认识
+        e.preventDefault()
+        handleStatus('known')
+      } else if (e.key === 'ArrowUp') {
+        // ↑ 模糊
+        e.preventDefault()
+        handleStatus('vague')
+      } else if (e.key === 'ArrowRight') {
+        // ➡️ 不认识
+        e.preventDefault()
+        handleStatus('unknown')
+      } else if (e.key === 'ArrowDown') {
+        // ⬇️ 翻转查看详情
+        e.preventDefault()
+        handleFlip()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [currentWord, currentIndex])
 
   // 拖拽开始
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
@@ -300,7 +300,7 @@ export default function FlashcardsPage() {
 
       {/* Flashcard */}
       <main className="container mx-auto px-4 py-8">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-xl mx-auto">
           {/* Progress Bar */}
           <div className="mb-6">
             <div className="flex justify-between text-sm text-gray-600 font-semibold mb-2">
@@ -318,7 +318,7 @@ export default function FlashcardsPage() {
           {/* Card */}
           <div
             ref={cardRef}
-            className="clay-card-xl p-8 mb-6 cursor-pointer min-h-[400px] flex items-center justify-center relative"
+            className="clay-card-xl p-8 mb-6 cursor-pointer min-h-[350px] flex items-center justify-center relative"
             onMouseDown={handleDragStart}
             onMouseMove={handleDragMove}
             onMouseUp={handleDragEnd}
@@ -443,13 +443,13 @@ export default function FlashcardsPage() {
             <button
               onClick={(e) => {
                 e.stopPropagation()
-                handleStatus('unknown')
+                handleStatus('known')
               }}
-              className="clay-button-red py-4 font-black flex flex-col items-center gap-2"
+              className="clay-button-green py-4 font-black flex flex-col items-center gap-2"
             >
-              <span className="text-2xl">✗</span>
-              <span>不认识</span>
-              <span className="text-xs text-gray-600">➡️ 或 右滑</span>
+              <span className="text-2xl">✓</span>
+              <span>认识</span>
+              <span className="text-xs text-gray-600">⬅️ 或 左滑</span>
             </button>
 
             <button
@@ -467,57 +467,13 @@ export default function FlashcardsPage() {
             <button
               onClick={(e) => {
                 e.stopPropagation()
-                handleStatus('known')
+                handleStatus('unknown')
               }}
-              className="clay-button-green py-4 font-black flex flex-col items-center gap-2"
+              className="clay-button-red py-4 font-black flex flex-col items-center gap-2"
             >
-              <span className="text-2xl">✓</span>
-              <span>认识</span>
-              <span className="text-xs text-gray-600">⬅️ 或 左滑</span>
-            </button>
-          </div>
-
-          {/* Navigation */}
-          <div className="flex justify-between mb-6">
-            <button
-              onClick={() => {
-                setIsFlipped(false)
-                if (currentIndex > 0) setCurrentIndex(prev => prev - 1)
-              }}
-              disabled={currentIndex === 0}
-              className="clay-button-secondary px-6 py-3 font-bold disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-            >
-              <ChevronLeft className="w-5 h-5" />
-              上一张
-            </button>
-
-            <button
-              onClick={() => {
-                setIsFlipped(false)
-                if (Math.random() < 0.5) {
-                  setCurrentIndex(Math.floor(Math.random() * words.length))
-                } else {
-                  if (currentIndex < words.length - 1) {
-                    setCurrentIndex(prev => prev + 1)
-                  }
-                }
-              }}
-              className="clay-button-primary px-6 py-3 font-bold flex items-center gap-2"
-            >
-              <RotateCw className="w-5 h-5" />
-              随机
-            </button>
-
-            <button
-              onClick={() => {
-                setIsFlipped(false)
-                if (currentIndex < words.length - 1) setCurrentIndex(prev => prev + 1)
-              }}
-              disabled={currentIndex === words.length - 1}
-              className="clay-button-secondary px-6 py-3 font-bold disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-            >
-              下一张
-              <ChevronRight className="w-5 h-5" />
+              <span className="text-2xl">✗</span>
+              <span>不认识</span>
+              <span className="text-xs text-gray-600">➡️ 或 右滑</span>
             </button>
           </div>
 
