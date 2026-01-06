@@ -74,10 +74,39 @@ IP/设备限流：单IP 1小时限3次；单设备24小时限1次。
 排序：默认（Excel导入顺序）、随机打乱。
 状态筛选：全部、未标注、认识、不认识、模糊。
 5.3 单词列表容器 (Word List)
-显示内容：单词、音标、释义、搭配、例句、操作区。
+显示内容：单词、音标、**词性**、释义、搭配、例句、操作区。
+
+**词性显示规范** [新增]:
+- 数据存储：数据库存储英文词性（如 "noun"、"verb"、"adjective" 或缩写 "n"、"v"、"adj"）
+- 前端显示：必须映射为中文词性（如"名词"、"动词"、"形容词"）
+- 词性映射表：
+  - noun / n → 名词
+  - verb / v → 动词
+  - adjective / adj → 形容词
+  - adverb / adv → 副词
+  - pronoun / pron → 代词
+  - preposition / prep → 介词
+  - conjunction / conj → 连词
+  - article / art → 冠词
+  - auxiliary verb → 助动词
+  - modal verb → 情态动词
+  - transitive verb → 及物动词
+  - intransitive verb → 不及物动词
+  - 其他词性 → 保持原样显示（用于扩展）
+- 显示样式：紫色圆角徽章，位于音标右侧
+
 交互细节：
 发音：Web Speech API，支持单词/搭配/例句发音。
-中文显隐：一键切换释义可见性。
+中文显隐：支持两种方式切换中文释义可见性（用于测试自己是否掌握）。
+1. **全局隐藏（推荐）**：页面顶部右上角的"隐藏中文"按钮，针对当前用户+当前单词书生效，设置会持久化保存到数据库。下次访问该书时自动应用该设置。
+2. **本地隐藏（单次）**：每个单词卡片上的"隐藏中文"按钮，仅影响当前卡片，刷新页面后恢复默认。
+- **全局隐藏生效后**：
+  - 显示：单词（英文）、音标、词性（中文）、释义英文、"💡 搭配:"标签+搭配英文、"📝 例句:"标签+例句英文
+  - 隐藏：释义中文、搭配中文、例句中文
+  - 按钮状态：显示为"显示中文"，带"全局生效"徽章
+- **显示中文时**：
+  - 显示：所有内容（中英文都显示）
+- **始终显示**：单词（英文）、音标、词性（中文）、功能标签（"💡 搭配:"、"📝 例句:"）、操作按钮、状态按钮
 状态标记：点击圆点选择 认识(绿)/模糊(黄)/不认识(红)。
 5.4 单词状态核心逻辑 [新增关键逻辑]
 为解决同一单词在不同书籍中释义不同但状态需同步的问题，采用 “内容局部化，状态全局化” 策略：
@@ -142,6 +171,118 @@ Definition (释义): 必填，本书特定的中文释义。
 Theme (主题): 选填，对应筛选标签（如：商务）。
 Scene (场景): 选填，对应子标签（如：会议）。
 层级处理：后端解析Excel时，自动根据 Theme 和 Scene 字段构建或关联标签树。
+9.2 用户偏好设置 [新增章节]
+为提供个性化学习体验，系统支持用户偏好设置的持久化存储。
+
+9.2.1 数据库设计
+表名：`user_book_preferences`
+
+字段说明：
+- `id`: UUID，主键
+- `user_id`: UUID，用户ID（外键关联 auth.users）
+- `book_id`: TEXT，词书ID（支持UUID或slug格式）
+- `hide_chinese`: BOOLEAN，是否隐藏中文释义（默认false）
+- `created_at`: TIMESTAMPTZ，创建时间
+- `updated_at`: TIMESTAMPTZ，更新时间（自动更新触发器）
+
+索引设计：
+- 复合唯一索引：`(user_id, book_id)` - 确保每个用户对每本书只有一条偏好记录
+- 单列索引：`user_id` 和 `book_id` - 提升查询性能
+
+设计决策：
+- `book_id` 使用 TEXT 而非 UUID：支持多种ID格式（UUID、slug、自定义字符串），提高灵活性
+- 级联删除：用户删除时自动清理其偏好设置
+
+9.2.2 API 接口设计
+
+**GET /api/user-preferences?book_id=xxx**
+- 功能：获取用户对某本书的偏好设置
+- 认证：必须登录（Supabase Auth）
+- 响应：
+  ```json
+  {
+    "success": true,
+    "data": {
+      "hide_chinese": false
+    }
+  }
+  ```
+- 默认值：若无记录，返回 `hide_chinese: false`
+
+**POST /api/user-preferences**
+- 功能：保存/更新用户偏好设置
+- 认证：必须登录
+- 请求体：
+  ```json
+  {
+    "book_id": "demo-book-1",
+    "hide_chinese": true
+  }
+  ```
+- 响应：
+  ```json
+  {
+    "success": true,
+    "data": {
+      "id": "uuid",
+      "user_id": "user-uuid",
+      "book_id": "demo-book-1",
+      "hide_chinese": true,
+      "created_at": "2026-01-06T...",
+      "updated_at": "2026-01-06T..."
+    }
+  }
+  ```
+- 操作：使用 UPSERT（插入或更新），确保幂等性
+
+9.2.3 前端实现逻辑
+
+**组件层级：**
+```
+BookDetailPage (Server Component)
+  └── BookDetailPageClient (Client Component)
+      ├── GlobalHideButton (全局按钮)
+      └── WordList
+          └── WordCard[] (所有卡片)
+```
+
+**状态管理：**
+1. GlobalHideButton 组件加载时：
+   - 调用 GET `/api/user-preferences?book_id=xxx` 获取当前设置
+   - 更新按钮状态（显示"隐藏中文"或"显示中文"）
+
+2. 用户点击全局按钮时：
+   - 调用 POST `/api/user-preferences` 保存设置
+   - 更新本地状态
+   - 通过 `onHideChange` 回调通知父组件
+   - 父组件将 `globalHideChinese` 传递给 WordList 和所有 WordCard
+
+3. WordCard 组件：
+   - 接收 `globalHideChinese` 属性
+   - 计算最终显示状态：`shouldShowChinese = !globalHideChinese && showDefinition`
+   - 全局设置优先于本地按钮
+
+**优先级逻辑：**
+- 全局设置 > 本地设置
+- 若 `globalHideChinese = true`，所有卡片强制隐藏中文，本地按钮失效
+- 若 `globalHideChinese = false`，本地按钮可单独控制每个卡片
+
+9.2.4 用户体验优化
+
+**视觉反馈：**
+- 全局隐藏激活时：按钮显示紫色背景 + "全局生效"徽章
+- 保存中状态：按钮显示"保存中..."并禁用
+- 错误提示：401时弹出提示"请先登录"
+
+**数据隔离：**
+- 用户隔离：不同用户的设置互不影响
+- 书籍隔离：同一用户对不同书籍的设置独立存储
+
+**性能优化：**
+- 使用 UPSERT 避免重复查询
+- 索引优化查询性能
+- 前端乐观更新，提升响应速度
+
 10. 非功能性需求 (NFR) [新增章节]
 10.1 浏览器兼容性
 核心依赖：Web Speech API (TTS)。

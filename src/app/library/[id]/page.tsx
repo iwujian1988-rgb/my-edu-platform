@@ -1,8 +1,6 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
-import Link from 'next/link'
-import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, EyeOff } from 'lucide-react'
-import { WordList } from '@/components/WordList'
+import { BookDetailPageClient } from '@/components/BookDetailPageClient'
 
 // Mock 数据 - 单词列表
 const mockWords = [
@@ -12,9 +10,9 @@ const mockWords = [
     phonetic: '/əˈdʒendə/',
     definition: 'n. 议程，日程表',
     definition_en: 'A list of items to be discussed at a meeting',
-    collocation: 'set the agenda',
+    collocation: '制定议程',
     collocation_en: 'set the agenda',
-    example_sentence: 'Could you please send me the agenda before the meeting?',
+    example_sentence: '请在会议前把议程发给我好吗？',
     example_sentence_en: 'Could you please send me the agenda before the meeting?',
     part_of_speech: 'noun',
     status: 'unknown' // unknown, known, fuzzy
@@ -25,9 +23,9 @@ const mockWords = [
     phonetic: '/ˈkɒmprəmaɪz/',
     definition: 'n. 妥协，折中；v. 妥协，让步',
     definition_en: 'An agreement made between two sides where each gives up something',
-    collocation: 'reach a compromise',
+    collocation: '达成妥协',
     collocation_en: 'reach a compromise',
-    example_sentence: 'We need to reach a compromise that satisfies both parties.',
+    example_sentence: '我们需要达成一个让双方都满意的妥协。',
     example_sentence_en: 'We need to reach a compromise that satisfies both parties.',
     part_of_speech: 'noun, verb',
     status: 'known'
@@ -38,9 +36,9 @@ const mockWords = [
     phonetic: '/əˈbriːvieɪt/',
     definition: 'v. 缩写，缩短',
     definition_en: 'To shorten a word or phrase',
-    collocation: 'abbreviate information',
+    collocation: '缩写信息',
     collocation_en: 'abbreviate information',
-    example_sentence: 'Please abbreviate the report to one page.',
+    example_sentence: '请把报告缩写成一页。',
     example_sentence_en: 'Please abbreviate the report to one page.',
     part_of_speech: 'verb',
     status: 'fuzzy'
@@ -51,9 +49,9 @@ const mockWords = [
     phonetic: '/ˈæpɪtaɪzər/',
     definition: 'n. 开胃菜',
     definition_en: 'A small dish served before the main course',
-    collocation: 'order an appetizer',
+    collocation: '点开胃菜',
     collocation_en: 'order an appetizer',
-    example_sentence: 'I would like to order the soup as an appetizer.',
+    example_sentence: '我想点这个汤作为开胃菜。',
     example_sentence_en: 'I would like to order the soup as an appetizer.',
     part_of_speech: 'noun',
     status: 'unknown'
@@ -151,112 +149,11 @@ export default async function BookDetailPage({
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
-      {/* Header */}
-      <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
-        <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
-          <div className="flex items-center justify-between">
-            {/* Logo & Back */}
-            <div className="flex items-center gap-3">
-              <Link
-                href="/"
-                className="flex items-center justify-center w-10 h-10 rounded-xl hover:bg-gray-100 transition-colors"
-              >
-                <ArrowLeft className="w-5 h-5 text-gray-700" />
-              </Link>
-              <div className="flex items-center gap-3">
-                <div className="flex items-center justify-center w-10 h-10 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl">
-                  <BookOpen className="w-5 h-5 text-white" />
-                </div>
-                <div>
-                  <h1 className="text-lg font-bold text-gray-900">{book.title || '未命名词书'}</h1>
-                  <p className="text-xs text-gray-500">{words.length} 个单词</p>
-                </div>
-              </div>
-              {/* 演示数据提示 */}
-              {useMockData && (
-                <div className="hidden md:block px-3 py-1 bg-yellow-100 border border-yellow-300 rounded-full">
-                  <span className="text-xs font-semibold text-yellow-800">演示数据</span>
-                </div>
-              )}
-            </div>
-
-            {/* User */}
-            <div className="flex items-center gap-3">
-              <span className="text-xs text-gray-600 hidden sm:block">{user.email}</span>
-              <Link
-                href="/logout"
-                className="px-4 py-2 text-sm font-bold text-gray-700 border-2 border-gray-200 rounded-xl hover:border-red-300 hover:text-red-600 transition-all"
-              >
-                退出
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="px-3 sm:px-4 md:px-6 py-6 md:py-8">
-        <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
-
-          {/* 顶部筛选栏 */}
-          <section className="clay-card p-4 md:p-6 mb-6">
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              {/* 左侧：主题/场景筛选 */}
-              <div className="flex items-center gap-3 flex-wrap">
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-purple-300 transition-colors">
-                  <span className="text-sm font-semibold text-gray-700">全部主题</span>
-                  <ChevronDown className="w-4 h-4 text-gray-500" />
-                </div>
-                <div className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-200 cursor-pointer hover:border-purple-300 transition-colors">
-                  <span className="text-sm font-semibold text-gray-700">全部场景</span>
-                  <ChevronDown className="w-4 h-4 text-gray-500" />
-                </div>
-              </div>
-
-              {/* 右侧：排序与筛选 */}
-              <div className="flex items-center gap-3">
-                <button className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-200 text-sm font-semibold text-gray-700 hover:border-purple-300 hover:text-purple-600 transition-all">
-                  <Shuffle className="w-4 h-4" />
-                  随机
-                </button>
-                <button className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-200 text-sm font-semibold text-gray-700 hover:border-purple-300 hover:text-purple-600 transition-all">
-                  <Filter className="w-4 h-4" />
-                  筛选
-                </button>
-                <button className="flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-gray-200 text-sm font-semibold text-gray-700 hover:border-purple-300 hover:text-purple-600 transition-all">
-                  <EyeOff className="w-4 h-4" />
-                  隐藏释义
-                </button>
-              </div>
-            </div>
-          </section>
-
-          {/* 单词列表 */}
-          <WordList initialWords={words} />
-
-          {/* 底部控制栏 - 仅在单词数 > 50 时显示 */}
-          {words.length > 50 && (
-            <section className="clay-card p-4 md:p-6 mt-6">
-              <div className="flex items-center justify-between">
-                <div className="text-sm text-gray-600">
-                  显示 1-50 / 共 {words.length} 个单词
-                </div>
-                <div className="flex items-center gap-2">
-                  <button className="px-4 py-2 rounded-xl border-2 border-gray-200 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-50" disabled>
-                    上一页
-                  </button>
-                  <span className="text-sm font-semibold text-gray-900">1 / 2</span>
-                  <button className="px-4 py-2 rounded-xl bg-gradient-to-r from-green-400 to-green-500 text-white text-sm font-semibold hover:shadow-lg transition-all">
-                    下一页
-                  </button>
-                </div>
-              </div>
-            </section>
-          )}
-
-        </div>
-      </main>
-    </div>
+    <BookDetailPageClient
+      book={book}
+      words={words}
+      user={user}
+      useMockData={useMockData}
+    />
   )
 }
