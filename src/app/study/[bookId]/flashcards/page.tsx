@@ -273,27 +273,18 @@ export default function FlashcardsPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 px-4 py-4">
         <div className="max-w-4xl mx-auto">
-          <div className="clay-card px-6 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <Link href={`/library/${bookId}`}>
-                <button className="clay-icon p-2 hover:scale-110 transition-transform">
-                  <ArrowLeft className="w-5 h-5 text-gray-700" />
-                </button>
-              </Link>
-              <div>
-                <h1 className="text-lg font-bold text-gradient-lilac">{bookTitle}</h1>
-                <p className="text-xs text-gray-600 font-semibold">
-                  卡片背单词 • {scopeLabel} • {currentIndex + 1} / {words.length}
-                </p>
-              </div>
+          <div className="clay-card px-6 py-4 flex items-center gap-4">
+            <Link href={`/library/${bookId}`}>
+              <button className="clay-icon p-2 hover:scale-110 transition-transform">
+                <ArrowLeft className="w-5 h-5 text-gray-700" />
+              </button>
+            </Link>
+            <div>
+              <h1 className="text-lg font-bold text-gradient-lilac">{bookTitle}</h1>
+              <p className="text-xs text-gray-600 font-semibold">
+                卡片背单词 • {scopeLabel} • {currentIndex + 1} / {words.length}
+              </p>
             </div>
-            <button
-              onClick={() => speak(currentWord?.word || '')}
-              className="clay-icon p-2 hover:scale-110 transition-transform"
-              title="朗读单词"
-            >
-              <Volume2 className="w-5 h-5 text-[#9B8CB5]" />
-            </button>
           </div>
         </div>
       </header>
@@ -333,6 +324,22 @@ export default function FlashcardsPage() {
               transition: dragStart ? 'none' : 'transform 0.3s ease-out'
             }}
           >
+            {/* 播放按钮 - 卡片正面右上角 */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation()
+                speak(currentWord?.word || '')
+              }}
+              className="absolute top-4 right-4 z-10 clay-icon p-3 hover:scale-110 transition-transform shadow-lg hover:shadow-xl"
+              style={{
+                background: 'rgba(255, 255, 255, 0.95)',
+                border: '2px solid #c9b896'
+              }}
+              title="朗读单词"
+            >
+              <Volume2 className="w-6 h-6 text-[#9B8CB5]" />
+            </button>
+
             <div
               className="w-full"
               style={{

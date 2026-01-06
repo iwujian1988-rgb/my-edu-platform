@@ -240,49 +240,100 @@ h1, h2, h3, h4, h5, h6 {
    EXTRA LARGE PAPER CARD (用于单词卡片)
    ============================================ */
 .clay-card-xl {
-  background: linear-gradient(145deg, #ffffff 0%, #fdfbf7 100%);
-  border: 3px solid #d4d4d4;
-  border-radius: 1.5rem;
+  background:
+    /* 纸张底色 */
+    linear-gradient(135deg, #fffcf5 0%, #f9f6ec 50%, #f5f0e3 100%);
+  border: 2px solid #c9b896;
+  border-radius: 1.25rem;
   box-shadow:
-    /* 外层阴影 - 营造浮起效果 */
-    0 20px 40px rgba(0, 0, 0, 0.1),
-    0 8px 16px rgba(0, 0, 0, 0.08),
-    /* 内阴影 - 营造厚度和立体感 */
-    inset 0 2px 4px rgba(255, 255, 255, 0.9),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.05),
-    /* 边缘高光 */
-    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    /* 多层阴影营造真实的浮起效果 */
+    0 2px 1px rgba(0, 0, 0, 0.05),
+    0 4px 2px rgba(0, 0, 0, 0.08),
+    0 8px 4px rgba(0, 0, 0, 0.1),
+    0 16px 8px rgba(0, 0, 0, 0.12),
+    0 32px 16px rgba(0, 0, 0, 0.14),
+    /* 内阴影 - 模拟纸张边缘的厚度 */
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 2px rgba(139, 115, 85, 0.05),
+    /* 顶部高光 */
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.4) inset;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  overflow: hidden;
 }
 
 /* 悬浮效果 */
 .clay-card-xl:hover {
-  transform: translateY(-4px) scale(1.01);
+  transform: translateY(-6px) scale(1.01);
   box-shadow:
-    0 25px 50px rgba(0, 0, 0, 0.15),
-    0 12px 24px rgba(0, 0, 0, 0.1),
-    inset 0 2px 4px rgba(255, 255, 255, 0.9),
-    inset 0 -2px 4px rgba(0, 0, 0, 0.05),
-    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+    0 4px 2px rgba(0, 0, 0, 0.06),
+    0 8px 4px rgba(0, 0, 0, 0.1),
+    0 16px 8px rgba(0, 0, 0, 0.14),
+    0 32px 16px rgba(0, 0, 0, 0.18),
+    0 48px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.05),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.3),
+    inset -1px -1px 2px rgba(139, 115, 85, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.6) inset,
+    0 -1px 0 1px rgba(255, 255, 255, 0.4) inset;
 }
 
-/* 纸张纹理效果 */
+/* 纸张纹理效果 - 更逼真 */
 .clay-card-xl::before {
   content: '';
   position: absolute;
   inset: 0;
-  border-radius: 1.5rem;
+  border-radius: 1.25rem;
+  pointer-events: none;
+  opacity: 0.4;
   background-image:
+    /* 细微的横向纹理 */
     repeating-linear-gradient(
       0deg,
-      transparent,
+      transparent 0px,
+      transparent 1px,
+      rgba(0, 0, 0, 0.008) 1px,
+      rgba(0, 0, 0, 0.008) 2px
+    ),
+    /* 随机噪点纹理 */
+    repeating-linear-gradient(
+      90deg,
+      transparent 0px,
+      transparent 1px,
+      rgba(0, 0, 0, 0.005) 1px,
+      rgba(0, 0, 0, 0.005) 3px
+    ),
+    /* 整体纹理叠加 */
+    repeating-linear-gradient(
+      45deg,
+      transparent 0px,
       transparent 2px,
-      rgba(0, 0, 0, 0.01) 2px,
-      rgba(0, 0, 0, 0.01) 4px
+      rgba(139, 115, 85, 0.01) 2px,
+      rgba(139, 115, 85, 0.01) 4px
     );
+}
+
+/* 纸张边缘磨损效果 */
+.clay-card-xl::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.25rem;
   pointer-events: none;
-  opacity: 0.5;
+  box-shadow:
+    inset 0 0 20px rgba(139, 115, 85, 0.03),
+    inset 0 0 40px rgba(139, 115, 85, 0.02);
+  opacity: 0.6;
+}
+
+/* 卡片内部容器 - 确保内容在纹理之上 */
+.clay-card-xl > * {
+  position: relative;
+  z-index: 1;
 }
 
 .clay-icon {
