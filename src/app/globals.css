@@ -236,6 +236,55 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px);
 }
 
+/* ============================================
+   EXTRA LARGE PAPER CARD (用于单词卡片)
+   ============================================ */
+.clay-card-xl {
+  background: linear-gradient(145deg, #ffffff 0%, #fdfbf7 100%);
+  border: 3px solid #d4d4d4;
+  border-radius: 1.5rem;
+  box-shadow:
+    /* 外层阴影 - 营造浮起效果 */
+    0 20px 40px rgba(0, 0, 0, 0.1),
+    0 8px 16px rgba(0, 0, 0, 0.08),
+    /* 内阴影 - 营造厚度和立体感 */
+    inset 0 2px 4px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05),
+    /* 边缘高光 */
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+/* 悬浮效果 */
+.clay-card-xl:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow:
+    0 25px 50px rgba(0, 0, 0, 0.15),
+    0 12px 24px rgba(0, 0, 0, 0.1),
+    inset 0 2px 4px rgba(255, 255, 255, 0.9),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.05),
+    0 0 0 1px rgba(255, 255, 255, 0.5) inset;
+}
+
+/* 纸张纹理效果 */
+.clay-card-xl::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.01) 2px,
+      rgba(0, 0, 0, 0.01) 4px
+    );
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .clay-icon {
   background: #F7FAFC;
   border: 2px solid #E2E8F0;
