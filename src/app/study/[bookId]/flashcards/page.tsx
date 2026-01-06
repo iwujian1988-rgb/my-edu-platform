@@ -393,7 +393,7 @@ export default function FlashcardsPage() {
           </div>
 
           {/* 操作提示 */}
-          <div className="grid grid-cols-3 gap-4 mb-2 text-center">
+          <div className="grid grid-cols-3 gap-4 mb-1 text-center">
             <div>
               <p className="text-xs text-gray-500 mb-1">← 左滑</p>
               <p className="text-sm font-semibold text-green-700">认识</p>
@@ -409,13 +409,13 @@ export default function FlashcardsPage() {
           </div>
 
           {/* Card */}
-          <div className="relative mb-4 mx-auto" style={{ width: '100%', maxWidth: '800px', height: '800px' }}>
+          <div className="relative mb-1 mx-auto" style={{ width: '100%', maxWidth: '800px', height: '450px' }}>
             {/* Preview Card - 下一个单词的预览 */}
             {currentIndex < words.length - 1 && (
               <div
                 className="clay-card-xl p-8 pointer-events-none absolute top-0 left-0 right-0"
                 style={{
-                  height: '800px',
+                  height: '450px',
                   opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 0.4 : 0,
                   transform: `translateZ(-50px)`,
                   transition: 'opacity 0.3s ease-out',
@@ -468,7 +468,7 @@ export default function FlashcardsPage() {
               onTouchEnd={handleDragEnd}
               onClick={handleFlip}
               style={{
-                height: '800px',
+                height: '450px',
                 perspective: '1000px',
                 transform: `translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
                 transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out',
