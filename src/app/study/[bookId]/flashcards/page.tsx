@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
-import { ArrowLeft, RotateCw, Volume2, X, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ArrowLeft, RotateCw, Volume2, ChevronLeft, ChevronRight } from 'lucide-react'
 import Link from 'next/link'
 
 type Word = {
@@ -28,10 +28,9 @@ export default function FlashcardsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const bookId = params.bookId as string
-  const scope = searchParams.get('scope') || 'filtered' // 'filtered' or 'all'
+  const scope = searchParams.get('scope') || 'filtered'
 
   const [words, setWords] = useState<Word[]>([])
-  const [allWords, setAllWords] = useState<Word[]>([]) // 存储全书单词
   const [wordProgress, setWordProgress] = useState<Record<string, WordProgress>>({})
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isFlipped, setIsFlipped] = useState(false)
@@ -39,22 +38,24 @@ export default function FlashcardsPage() {
   const [bookTitle, setBookTitle] = useState('')
   const [scopeLabel, setScopeLabel] = useState('')
 
+  // 拖拽相关状态
+  const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null)
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
+  const cardRef = useRef<HTMLDivElement>(null)
+
   // Fetch words and progress
   useEffect(() => {
     async function fetchData() {
       try {
-        // Fetch book details
         const bookRes = await fetch(`/api/books/${bookId}`)
         if (!bookRes.ok) throw new Error('Failed to fetch book')
         const bookData = await bookRes.json()
         setBookTitle(bookData.data.title)
 
-        // Build query parameters for words API
         const params = new URLSearchParams()
         params.set('bookId', bookId)
 
         if (scope === 'filtered') {
-          // Add filter parameters from URL
           const theme = searchParams.get('theme')
           const scene = searchParams.get('scene')
           const status = searchParams.get('status')
@@ -64,13 +65,10 @@ export default function FlashcardsPage() {
           if (status && status !== 'all') params.set('status', status)
         }
 
-        // Fetch words with filters
         const wordsRes = await fetch(`/api/words?${params.toString()}`)
         if (!wordsRes.ok) throw new Error('Failed to fetch words')
         const wordsData = await wordsRes.json()
 
-        // Store all words for reference
-        setAllWords(wordsData.data)
         setWords(wordsData.data)
 
         // Generate scope label
@@ -97,7 +95,6 @@ export default function FlashcardsPage() {
           setScopeLabel(parts.length > 0 ? parts.join(' - ') : '全部')
         }
 
-        // Fetch progress
         const progressRes = await fetch(`/api/word-progress?book_id=${bookId}`)
         if (progressRes.ok) {
           const progressData = await progressRes.json()
@@ -116,6 +113,44 @@ export default function FlashcardsPage() {
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
 
+  // 自动朗读新单词
+  useEffect(() => {
+    if (currentWord && !loading) {
+      // 延迟500ms后自动朗读，让用户先看到单词
+      const timer = setTimeout(() => {
+        speak(currentWord.word)
+      }, 500)
+
+      return () => clearTimeout(timer)
+    }
+  }, [currentIndex, currentWord, loading])
+
+  // 键盘快捷键
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'ArrowLeft') {
+        // ⬅️ 认识
+        e.preventDefault()
+        handleStatus('known')
+      } else if (e.key === 'ArrowUp') {
+        // ↑ 模糊
+        e.preventDefault()
+        handleStatus('vague')
+      } else if (e.key === 'ArrowRight') {
+        // ➡️ 不认识
+        e.preventDefault()
+        handleStatus('unknown')
+      } else if (e.key === 'ArrowDown') {
+        // ⬇️ 翻转查看详情
+        e.preventDefault()
+        handleFlip()
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [currentWord, currentIndex])
+
   // Handle card flip
   const handleFlip = () => {
     setIsFlipped(!isFlipped)
@@ -126,7 +161,6 @@ export default function FlashcardsPage() {
     if (!currentWord) return
 
     try {
-      // Save status
       await fetch('/api/word-progress', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -137,13 +171,11 @@ export default function FlashcardsPage() {
         })
       })
 
-      // Update local state
       setWordProgress(prev => ({
         ...prev,
         [currentWord.id]: { word_id: currentWord.id, status }
       }))
 
-      // Move to next word
       setIsFlipped(false)
       if (currentIndex < words.length - 1) {
         setCurrentIndex(prev => prev + 1)
@@ -155,12 +187,61 @@ export default function FlashcardsPage() {
 
   // Text-to-speech
   const speak = (text: string) => {
-    if ('speechSynthesis' in window) {
+    if ('speechSynthesis' in window && text) {
+      speechSynthesis.cancel() // 停止之前的朗读
       const utterance = new SpeechSynthesisUtterance(text)
       utterance.lang = 'en-US'
       utterance.rate = 0.9
       speechSynthesis.speak(utterance)
     }
+  }
+
+  // 拖拽开始
+  const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY
+
+    setDragStart({ x: clientX, y: clientY })
+  }
+
+  // 拖拽中
+  const handleDragMove = (e: React.MouseEvent | React.TouchEvent) => {
+    if (!dragStart) return
+
+    const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
+    const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY
+
+    const deltaX = clientX - dragStart.x
+    const deltaY = clientY - dragStart.y
+
+    setDragOffset({ x: deltaX, y: deltaY })
+  }
+
+  // 拖拽结束
+  const handleDragEnd = () => {
+    if (!dragStart) return
+
+    const threshold = 100 // 拖拽阈值（像素）
+
+    // 左滑：认识
+    if (dragOffset.x < -threshold && Math.abs(dragOffset.y) < threshold) {
+      handleStatus('known')
+    }
+    // 右滑：不认识
+    else if (dragOffset.x > threshold && Math.abs(dragOffset.y) < threshold) {
+      handleStatus('unknown')
+    }
+    // 上滑：翻转查看详情
+    else if (dragOffset.y < -threshold && Math.abs(dragOffset.x) < threshold) {
+      handleFlip()
+    }
+    // 下滑：翻转回正面
+    else if (dragOffset.y > threshold && Math.abs(dragOffset.x) < threshold) {
+      if (isFlipped) handleFlip()
+    }
+
+    setDragStart(null)
+    setDragOffset({ x: 0, y: 0 })
   }
 
   if (loading) {
@@ -194,7 +275,7 @@ export default function FlashcardsPage() {
         <div className="max-w-4xl mx-auto">
           <div className="clay-card px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Link href={`/study/${bookId}/practice`}>
+              <Link href={`/library/${bookId}`}>
                 <button className="clay-icon p-2 hover:scale-110 transition-transform">
                   <ArrowLeft className="w-5 h-5 text-gray-700" />
                 </button>
@@ -236,9 +317,21 @@ export default function FlashcardsPage() {
 
           {/* Card */}
           <div
+            ref={cardRef}
             className="clay-card-xl p-8 mb-6 cursor-pointer min-h-[400px] flex items-center justify-center relative"
+            onMouseDown={handleDragStart}
+            onMouseMove={handleDragMove}
+            onMouseUp={handleDragEnd}
+            onMouseLeave={handleDragEnd}
+            onTouchStart={handleDragStart}
+            onTouchMove={handleDragMove}
+            onTouchEnd={handleDragEnd}
             onClick={handleFlip}
-            style={{ perspective: '1000px' }}
+            style={{
+              perspective: '1000px',
+              transform: `translate(${dragOffset.x}px, ${dragOffset.y}px)`,
+              transition: dragStart ? 'none' : 'transform 0.3s ease-out'
+            }}
           >
             <div
               className="w-full"
@@ -294,7 +387,7 @@ export default function FlashcardsPage() {
 
                 {/* Hint */}
                 <p className="text-gray-500 font-semibold mt-8">
-                  点击卡片查看释义 👆
+                  点击卡片或按⬇️查看释义 👆
                 </p>
               </div>
 
@@ -346,34 +439,46 @@ export default function FlashcardsPage() {
           </div>
 
           {/* Control Buttons */}
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-4 mb-6">
             <button
-              onClick={() => handleStatus('unknown')}
+              onClick={(e) => {
+                e.stopPropagation()
+                handleStatus('unknown')
+              }}
               className="clay-button-red py-4 font-black flex flex-col items-center gap-2"
             >
-              <X className="w-6 h-6" />
+              <span className="text-2xl">✗</span>
               <span>不认识</span>
+              <span className="text-xs text-gray-600">➡️ 或 右滑</span>
             </button>
 
             <button
-              onClick={() => handleStatus('vague')}
+              onClick={(e) => {
+                e.stopPropagation()
+                handleStatus('vague')
+              }}
               className="clay-button-yellow py-4 font-black flex flex-col items-center gap-2"
             >
               <span className="text-2xl">?</span>
               <span>模糊</span>
+              <span className="text-xs text-gray-600">↑</span>
             </button>
 
             <button
-              onClick={() => handleStatus('known')}
+              onClick={(e) => {
+                e.stopPropagation()
+                handleStatus('known')
+              }}
               className="clay-button-green py-4 font-black flex flex-col items-center gap-2"
             >
               <span className="text-2xl">✓</span>
               <span>认识</span>
+              <span className="text-xs text-gray-600">⬅️ 或 左滑</span>
             </button>
           </div>
 
           {/* Navigation */}
-          <div className="flex justify-between mt-6">
+          <div className="flex justify-between mb-6">
             <button
               onClick={() => {
                 setIsFlipped(false)
@@ -418,7 +523,7 @@ export default function FlashcardsPage() {
 
           {/* Complete Message */}
           {currentIndex === words.length - 1 && (
-            <div className="clay-card-lilac p-6 mt-6 text-center">
+            <div className="clay-card-lilac p-6 text-center">
               <h3 className="text-2xl font-bold text-gradient-lilac mb-2">
                 🎉 太棒了！
               </h3>
