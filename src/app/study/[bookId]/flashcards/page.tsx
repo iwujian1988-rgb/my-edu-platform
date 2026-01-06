@@ -158,9 +158,9 @@ export default function FlashcardsPage() {
     }
   }
 
-  // 自动朗读新单词
+  // 自动朗读新单词 - 只在索引变化时触发
   useEffect(() => {
-    if (currentWord && !loading) {
+    if (currentWord && !loading && !isFlipped) {
       // 延迟500ms后自动朗读，让用户先看到单词
       const timer = setTimeout(() => {
         speak(currentWord.word)
@@ -168,7 +168,7 @@ export default function FlashcardsPage() {
 
       return () => clearTimeout(timer)
     }
-  }, [currentIndex, currentWord, loading, speak])
+  }, [currentIndex]) // 只依赖currentIndex
 
   // 键盘快捷键
   useEffect(() => {
@@ -307,140 +307,156 @@ export default function FlashcardsPage() {
           </div>
 
           {/* Card */}
-          <div
-            ref={cardRef}
-            className="clay-card-xl p-8 mb-6 cursor-pointer min-h-[350px] flex items-center justify-center relative"
-            onMouseDown={handleDragStart}
-            onMouseMove={handleDragMove}
-            onMouseUp={handleDragEnd}
-            onMouseLeave={handleDragEnd}
-            onTouchStart={handleDragStart}
-            onTouchMove={handleDragMove}
-            onTouchEnd={handleDragEnd}
-            onClick={handleFlip}
-            style={{
-              perspective: '1000px',
-              transform: `translate(${dragOffset.x}px, ${dragOffset.y}px)`,
-              transition: dragStart ? 'none' : 'transform 0.3s ease-out'
-            }}
-          >
-            {/* 播放按钮 - 卡片正面右上角 */}
-            <button
-              onClick={(e) => {
-                e.stopPropagation()
-                speak(currentWord?.word || '')
-              }}
-              className="absolute top-4 right-4 z-10 clay-icon p-3 hover:scale-110 transition-transform shadow-lg hover:shadow-xl"
-              style={{
-                background: 'rgba(255, 255, 255, 0.95)',
-                border: '2px solid #c9b896'
-              }}
-              title="朗读单词"
-            >
-              <Volume2 className="w-6 h-6 text-[#9B8CB5]" />
-            </button>
-
-            <div
-              className="w-full"
-              style={{
-                transformStyle: 'preserve-3d',
-                transition: 'transform 0.6s',
-                transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
-              }}
-            >
-              {/* Front - Word */}
-              <div className="text-center" style={{ backfaceVisibility: 'hidden' }}>
-                {/* Status Badge */}
-                {progress && (
-                  <div className="mb-4">
-                    {progress.status === 'known' && (
-                      <span className="clay-badge bg-green-100 text-green-800 px-4 py-2 font-bold">
-                        ✓ 已认识
-                      </span>
-                    )}
-                    {progress.status === 'vague' && (
-                      <span className="clay-badge bg-yellow-100 text-yellow-800 px-4 py-2 font-bold">
-                        ? 模糊
-                      </span>
-                    )}
-                    {progress.status === 'unknown' && (
-                      <span className="clay-badge bg-red-100 text-red-800 px-4 py-2 font-bold">
-                        ✗ 不认识
-                      </span>
-                    )}
-                  </div>
-                )}
-
-                {/* Word */}
-                <h2 className="text-5xl font-black text-gray-900 mb-4">
-                  {currentWord.word}
-                </h2>
-
-                {/* Phonetic */}
-                {currentWord.phonetic && (
-                  <p className="text-xl text-gray-600 font-semibold mb-6">
-                    {currentWord.phonetic}
-                  </p>
-                )}
-
-                {/* Part of Speech */}
-                {currentWord.part_of_speech && (
-                  <div className="mb-6">
-                    <span className="inline-block clay-badge bg-purple-100 text-purple-800 px-4 py-2 font-bold text-sm">
-                      {currentWord.part_of_speech}
-                    </span>
-                  </div>
-                )}
-
-                {/* Hint */}
-                <p className="text-gray-500 font-semibold mt-8">
-                  点击卡片或按⬇️查看释义 👆
-                </p>
-              </div>
-
-              {/* Back - Definition */}
+          <div className="relative mb-6" style={{ height: '400px' }}>
+            {/* Preview Card - 下一个单词的预览 */}
+            {(Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50) && currentIndex < words.length - 1 && (
               <div
-                className="text-center"
+                className="absolute inset-0 clay-card-xl p-8 flex items-center justify-center pointer-events-none"
                 style={{
-                  backfaceVisibility: 'hidden',
-                  transform: 'rotateY(180deg)'
+                  opacity: 0.15,
+                  transform: `translate(${dragOffset.x > 0 ? '20px' : '-20px'}, ${dragOffset.y > 0 ? '20px' : '-20px'})`,
+                  transition: 'transform 0.3s ease-out'
                 }}
               >
-                {/* Definition */}
-                <div className="mb-6">
-                  <p className="text-sm text-gray-500 font-semibold mb-2">英文释义</p>
-                  <p className="text-lg text-gray-800 font-bold">
-                    {currentWord.definition_en}
+                <div className="text-center">
+                  <h2 className="text-5xl font-black text-gray-900">
+                    {words[currentIndex + 1]?.word}
+                  </h2>
+                </div>
+              </div>
+            )}
+
+            <div
+              ref={cardRef}
+              className="clay-card-xl p-8 cursor-pointer min-h-[350px] flex items-center justify-center relative"
+              onMouseDown={handleDragStart}
+              onMouseMove={handleDragMove}
+              onMouseUp={handleDragEnd}
+              onMouseLeave={handleDragEnd}
+              onTouchStart={handleDragStart}
+              onTouchMove={handleDragMove}
+              onTouchEnd={handleDragEnd}
+              onClick={handleFlip}
+              style={{
+                perspective: '1000px',
+                transform: `translate(${dragOffset.x}px, ${dragOffset.y}px)`,
+                transition: dragStart ? 'none' : 'transform 0.3s ease-out'
+              }}
+            >
+              <div
+                className="w-full"
+                style={{
+                  transformStyle: 'preserve-3d',
+                  transition: 'transform 0.6s',
+                  transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+                }}
+              >
+                {/* Front - Word */}
+                <div className="text-center" style={{ backfaceVisibility: 'hidden' }}>
+                  {/* Status Badge */}
+                  {progress && (
+                    <div className="mb-4">
+                      {progress.status === 'known' && (
+                        <span className="clay-badge bg-green-100 text-green-800 px-4 py-2 font-bold">
+                          ✓ 已认识
+                        </span>
+                      )}
+                      {progress.status === 'vague' && (
+                        <span className="clay-badge bg-yellow-100 text-yellow-800 px-4 py-2 font-bold">
+                          ? 模糊
+                        </span>
+                      )}
+                      {progress.status === 'unknown' && (
+                        <span className="clay-badge bg-red-100 text-red-800 px-4 py-2 font-bold">
+                          ✗ 不认识
+                        </span>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Word */}
+                  <h2 className="text-5xl font-black text-gray-900 mb-4">
+                    {currentWord.word}
+                  </h2>
+
+                  {/* Phonetic */}
+                  {currentWord.phonetic && (
+                    <p className="text-xl text-gray-600 font-semibold mb-6">
+                      {currentWord.phonetic}
+                    </p>
+                  )}
+
+                  {/* Part of Speech */}
+                  {currentWord.part_of_speech && (
+                    <div className="mb-6">
+                      <span className="inline-block clay-badge bg-purple-100 text-purple-800 px-4 py-2 font-bold text-sm">
+                        {currentWord.part_of_speech}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Play Button - 居中显示 */}
+                  <button
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      speak(currentWord?.word || '')
+                    }}
+                    className="hover:scale-110 transition-transform text-gray-400 hover:text-gray-600"
+                    title="朗读单词"
+                  >
+                    <Volume2 className="w-12 h-12" />
+                  </button>
+
+                  {/* Hint */}
+                  <p className="text-gray-500 font-semibold mt-6">
+                    点击卡片或按⬇️查看释义 👆
                   </p>
                 </div>
 
-                {/* Chinese Definition */}
-                <div className="mb-6">
-                  <p className="text-sm text-gray-500 font-semibold mb-2">中文释义</p>
-                  <p className="text-xl text-gray-900 font-bold">
-                    {currentWord.definition}
-                  </p>
-                </div>
-
-                {/* Collocation */}
-                {currentWord.collocation && (
+                {/* Back - Definition */}
+                <div
+                  className="text-center"
+                  style={{
+                    backfaceVisibility: 'hidden',
+                    transform: 'rotateY(180deg)'
+                  }}
+                >
+                  {/* Definition */}
                   <div className="mb-6">
-                    <p className="text-sm text-gray-500 font-semibold mb-2">搭配</p>
-                    <p className="text-base text-gray-800">
-                      {currentWord.collocation}
+                    <p className="text-sm text-gray-500 font-semibold mb-2">英文释义</p>
+                    <p className="text-lg text-gray-800 font-bold">
+                      {currentWord.definition_en}
                     </p>
                   </div>
-                )}
 
-                {/* Example */}
-                {currentWord.example_sentence && (
-                  <div className="text-left bg-gray-50 rounded-xl p-4">
-                    <p className="text-sm text-gray-500 font-semibold mb-2">例句</p>
-                    <p className="text-base text-gray-800">
-                      {currentWord.example_sentence}
+                  {/* Chinese Definition */}
+                  <div className="mb-6">
+                    <p className="text-sm text-gray-500 font-semibold mb-2">中文释义</p>
+                    <p className="text-xl text-gray-900 font-bold">
+                      {currentWord.definition}
                     </p>
                   </div>
-                )}
+
+                  {/* Collocation */}
+                  {currentWord.collocation && (
+                    <div className="mb-6">
+                      <p className="text-sm text-gray-500 font-semibold mb-2">搭配</p>
+                      <p className="text-base text-gray-800">
+                        {currentWord.collocation}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Example */}
+                  {currentWord.example_sentence && (
+                    <div className="text-left bg-gray-50 rounded-xl p-4">
+                      <p className="text-sm text-gray-500 font-semibold mb-2">例句</p>
+                      <p className="text-base text-gray-800">
+                        {currentWord.example_sentence}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
           </div>
@@ -452,11 +468,26 @@ export default function FlashcardsPage() {
                 e.stopPropagation()
                 handleStatus('known')
               }}
-              className="clay-button-green py-4 font-black flex flex-col items-center gap-2"
+              className="group py-4 px-6 font-semibold flex flex-col items-center gap-2 transition-all duration-200"
+              style={{
+                background: 'linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%)',
+                borderRadius: '0.75rem',
+                border: '2px solid #b8dabc',
+                boxShadow: '0 2px 4px rgba(40, 167, 69, 0.1)',
+                color: '#155724'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 4px 8px rgba(40, 167, 69, 0.15)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 2px 4px rgba(40, 167, 69, 0.1)'
+              }}
             >
-              <span className="text-2xl">✓</span>
-              <span>认识</span>
-              <span className="text-xs text-gray-600">⬅️ 或 左滑</span>
+              <span className="text-3xl">✓</span>
+              <span className="text-sm">认识</span>
+              <span className="text-xs opacity-60">⬅️ 左滑</span>
             </button>
 
             <button
@@ -464,11 +495,26 @@ export default function FlashcardsPage() {
                 e.stopPropagation()
                 handleStatus('vague')
               }}
-              className="clay-button-yellow py-4 font-black flex flex-col items-center gap-2"
+              className="group py-4 px-6 font-semibold flex flex-col items-center gap-2 transition-all duration-200"
+              style={{
+                background: 'linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%)',
+                borderRadius: '0.75rem',
+                border: '2px solid #f0d43a',
+                boxShadow: '0 2px 4px rgba(255, 193, 7, 0.1)',
+                color: '#856404'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 4px 8px rgba(255, 193, 7, 0.15)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 2px 4px rgba(255, 193, 7, 0.1)'
+              }}
             >
-              <span className="text-2xl">?</span>
-              <span>模糊</span>
-              <span className="text-xs text-gray-600">↑</span>
+              <span className="text-3xl">?</span>
+              <span className="text-sm">模糊</span>
+              <span className="text-xs opacity-60">↑ 上滑</span>
             </button>
 
             <button
@@ -476,11 +522,26 @@ export default function FlashcardsPage() {
                 e.stopPropagation()
                 handleStatus('unknown')
               }}
-              className="clay-button-red py-4 font-black flex flex-col items-center gap-2"
+              className="group py-4 px-6 font-semibold flex flex-col items-center gap-2 transition-all duration-200"
+              style={{
+                background: 'linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%)',
+                borderRadius: '0.75rem',
+                border: '2px solid #f1b0b7',
+                boxShadow: '0 2px 4px rgba(220, 53, 69, 0.1)',
+                color: '#721c24'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-2px)'
+                e.currentTarget.style.boxShadow = '0 4px 8px rgba(220, 53, 69, 0.15)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)'
+                e.currentTarget.style.boxShadow = '0 2px 4px rgba(220, 53, 69, 0.1)'
+              }}
             >
-              <span className="text-2xl">✗</span>
-              <span>不认识</span>
-              <span className="text-xs text-gray-600">➡️ 或 右滑</span>
+              <span className="text-3xl">✗</span>
+              <span className="text-sm">不认识</span>
+              <span className="text-xs opacity-60">➡️ 右滑</span>
             </button>
           </div>
 
