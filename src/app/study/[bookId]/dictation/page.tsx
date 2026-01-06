@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
-import { ArrowLeft, Volume2, RotateCw } from 'lucide-react'
+import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw } from 'lucide-react'
 import Link from 'next/link'
 
 type Word = {
@@ -43,6 +43,10 @@ export default function DictationPage() {
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
   const [countdown, setCountdown] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
+  const [isPaused, setIsPaused] = useState(false)
+  const [showDefinition, setShowDefinition] = useState(true) // 默认显示中文释义
+  const [definitionPreferenceLoaded, setDefinitionPreferenceLoaded] = useState(false)
+  const [hasPlayedOnce, setHasPlayedOnce] = useState(false) // 追踪是否已经播放过一次
   const inputRef = useRef<HTMLInputElement>(null)
   const speechTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
@@ -103,8 +107,24 @@ export default function DictationPage() {
           const progressData = await progressRes.json()
           setWordProgress(progressData.data || {})
         }
+
+        // 获取用户偏好（听写模式中文释义设置）
+        try {
+          const prefRes = await fetch(`/api/user-preferences?book_id=${bookId}`)
+          if (prefRes.ok) {
+            const prefData = await prefRes.json()
+            if (prefData.data && prefData.data.hide_definition !== undefined) {
+              setShowDefinition(!prefData.data.hide_definition)
+            }
+          }
+        } catch (error) {
+          console.error('Error fetching preferences:', error)
+        }
+
+        setDefinitionPreferenceLoaded(true)
       } catch (error) {
         console.error('Error fetching data:', error)
+        setDefinitionPreferenceLoaded(true)
       } finally {
         setLoading(false)
       }
@@ -116,8 +136,45 @@ export default function DictationPage() {
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
 
-  // Text-to-speech with循环播放
-  const speak = useCallback((text: string, loop = false) => {
+  // 保存中文释义偏好设置
+  const saveDefinitionPreference = useCallback(async (show: boolean) => {
+    try {
+      await fetch('/api/user-preferences', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          book_id: bookId,
+          hide_definition: !show
+        })
+      })
+    } catch (error) {
+      console.error('Error saving preference:', error)
+    }
+  }, [bookId])
+
+  // 切换中文释义显示
+  const handleToggleDefinition = useCallback(() => {
+    const newShowDefinition = !showDefinition
+    setShowDefinition(newShowDefinition)
+    if (definitionPreferenceLoaded) {
+      saveDefinitionPreference(newShowDefinition)
+    }
+  }, [showDefinition, definitionPreferenceLoaded, saveDefinitionPreference])
+
+  // 自动聚焦输入框
+  useEffect(() => {
+    if (currentWord && !loading && !feedback) {
+      // 延迟聚焦，确保DOM已渲染
+      const timer = setTimeout(() => {
+        inputRef.current?.focus()
+      }, 100)
+
+      return () => clearTimeout(timer)
+    }
+  }, [currentIndex, currentWord, loading, feedback])
+
+  // Text-to-speech - 只播放一次
+  const speak = useCallback((text: string) => {
     if ('speechSynthesis' in window && text) {
       speechSynthesis.cancel()
 
@@ -126,45 +183,80 @@ export default function DictationPage() {
       utterance.rate = 0.8 // 稍慢便于听写
       utterance.pitch = 1.0
 
+      utterance.onstart = () => {
+        setIsPlaying(true)
+        setIsPaused(false)
+      }
+
       utterance.onend = () => {
-        if (loop && isPlaying) {
-          // 延迟2秒后再次播放
-          speechTimeoutRef.current = setTimeout(() => {
-            if (isPlaying) {
-              speechSynthesis.speak(utterance)
-            }
-          }, 2000)
-        }
+        setIsPlaying(false)
+        setIsPaused(false)
+      }
+
+      utterance.onerror = () => {
+        setIsPlaying(false)
+        setIsPaused(false)
       }
 
       speechSynthesis.speak(utterance)
     }
-  }, [isPlaying])
+  }, [])
 
-  // 开始/停止循环播放
+  // 自动播放一次（不循环）
   useEffect(() => {
     if (currentWord && !loading && !feedback) {
-      setIsPlaying(true)
-      speak(currentWord.word, true)
-    }
+      // 延迟500ms后自动播放
+      const timer = setTimeout(() => {
+        speak(currentWord.word)
+        setHasPlayedOnce(true)
+      }, 500)
 
-    return () => {
-      if (speechTimeoutRef.current) {
-        clearTimeout(speechTimeoutRef.current)
-      }
-      speechSynthesis.cancel()
+      return () => clearTimeout(timer)
     }
   }, [currentIndex, currentWord, loading, feedback, speak])
 
-  // 用户开始输入时停止循环播放
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (isPlaying) {
-      setIsPlaying(false)
-      speechSynthesis.cancel()
-      if (speechTimeoutRef.current) {
-        clearTimeout(speechTimeoutRef.current)
-      }
+  // 输入框焦点处理：失焦后再次聚焦时自动播放
+  const handleInputFocus = () => {
+    // 只有在已经播放过一次（不是页面刚加载）且当前没有播放时才重新播放
+    if (hasPlayedOnce && !isPlaying && !feedback && currentWord) {
+      speak(currentWord.word)
     }
+  }
+
+  // 手动重新播放
+  const handleReplay = () => {
+    if (currentWord) {
+      speak(currentWord.word)
+    }
+  }
+
+  // 暂停/继续播放
+  const handleTogglePause = () => {
+    if (isPaused) {
+      // 继续
+      speechSynthesis.resume()
+      setIsPaused(false)
+    } else {
+      // 暂停
+      speechSynthesis.pause()
+      setIsPaused(true)
+    }
+  }
+
+  // 返回上一个单词
+  const handlePrevious = () => {
+    if (currentIndex > 0) {
+      setUserInput('')
+      setFeedback(null)
+      setShowCorrectAnswer(false)
+      setCountdown(0)
+      setHasPlayedOnce(false) // 重置播放标记
+      setCurrentIndex(prev => prev - 1)
+    }
+  }
+
+  // 用户输入
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserInput(e.target.value)
     setFeedback(null)
   }
@@ -210,6 +302,26 @@ export default function DictationPage() {
       setShowCorrectAnswer(true)
       playSound('wrong')
 
+      // 自动标记为"不认识"
+      try {
+        await fetch('/api/word-progress', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            word_id: currentWord.id,
+            book_id: bookId,
+            status: 'unknown'
+          })
+        })
+
+        setWordProgress(prev => ({
+          ...prev,
+          [currentWord.id]: { word_id: currentWord.id, status: 'unknown' }
+        }))
+      } catch (error) {
+        console.error('Error saving progress:', error)
+      }
+
       // 倒计时2s后切题
       setCountdown(2)
       let count = 2
@@ -230,6 +342,7 @@ export default function DictationPage() {
     setFeedback(null)
     setShowCorrectAnswer(false)
     setCountdown(0)
+    setHasPlayedOnce(false) // 重置播放标记
 
     if (currentIndex < words.length - 1) {
       setCurrentIndex(prev => prev + 1)
@@ -238,7 +351,6 @@ export default function DictationPage() {
 
   // 播放音效
   const playSound = (type: 'correct' | 'wrong') => {
-    // 使用Web Audio API生成简单音效
     const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
 
     const oscillator = audioContext.createOscillator()
@@ -248,7 +360,7 @@ export default function DictationPage() {
     gainNode.connect(audioContext.destination)
 
     if (type === 'correct') {
-      // Ding音效：高频正弦波
+      // 正确：清脆的叮声
       oscillator.frequency.value = 800
       oscillator.type = 'sine'
       gainNode.gain.setValueAtTime(0.3, audioContext.currentTime)
@@ -256,21 +368,13 @@ export default function DictationPage() {
       oscillator.start(audioContext.currentTime)
       oscillator.stop(audioContext.currentTime + 0.5)
     } else {
-      // Buzz音效：低频锯齿波
-      oscillator.frequency.value = 150
-      oscillator.type = 'sawtooth'
-      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime)
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3)
+      // 错误：温和的滴声（较低频率，正弦波）
+      oscillator.frequency.value = 400
+      oscillator.type = 'sine'
+      gainNode.gain.setValueAtTime(0.2, audioContext.currentTime)
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2)
       oscillator.start(audioContext.currentTime)
-      oscillator.stop(audioContext.currentTime + 0.3)
-    }
-  }
-
-  // 手动重新播放
-  const handleReplay = () => {
-    if (currentWord) {
-      setIsPlaying(true)
-      speak(currentWord.word, true)
+      oscillator.stop(audioContext.currentTime + 0.2)
     }
   }
 
@@ -310,9 +414,12 @@ export default function DictationPage() {
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F5F2' }}>
         <div className="clay-card p-8 text-center">
           <p className="text-lg text-gray-700 font-semibold">暂无单词数据</p>
-          <Link href={`/library/${bookId}`} className="clay-button-primary inline-block mt-4 px-6 py-3">
+          <button
+            onClick={() => router.push(`/library/${bookId}`)}
+            className="clay-button-primary inline-block mt-4 px-6 py-3"
+          >
             返回词书详情
-          </Link>
+          </button>
         </div>
       </div>
     )
@@ -324,11 +431,13 @@ export default function DictationPage() {
       <header className="sticky top-0 z-50 px-4 py-4">
         <div className="max-w-4xl mx-auto">
           <div className="clay-card px-6 py-4 flex items-center gap-4">
-            <Link href={`/library/${bookId}`}>
-              <button className="clay-icon p-2 hover:scale-110 transition-transform">
-                <ArrowLeft className="w-5 h-5 text-gray-700" />
-              </button>
-            </Link>
+            <button
+              onClick={() => router.push(`/library/${bookId}`)}
+              className="clay-icon p-2 hover:scale-110 transition-transform"
+              title="返回"
+            >
+              <ArrowLeft className="w-5 h-5 text-gray-700" />
+            </button>
             <div>
               <h1 className="text-lg font-bold text-gradient-lilac">{bookTitle}</h1>
               <p className="text-xs text-gray-600 font-semibold">
@@ -383,10 +492,75 @@ export default function DictationPage() {
             <div className="flex justify-center mb-6">
               <button
                 onClick={handleReplay}
-                className="clay-icon p-4 hover:scale-110 transition-transform shadow-lg hover:shadow-xl"
+                disabled={isPlaying && !isPaused}
+                className="clay-icon p-4 hover:scale-110 transition-transform shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 title="重新播放"
               >
-                <Volume2 className="w-8 h-8 text-[#9B8CB5]" />
+                <Volume2 className="w-12 h-12 text-[#9B8CB5]" />
+              </button>
+              {isPlaying && !isPaused && (
+                <div className="absolute mt-16">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 bg-[#9B8CB5] rounded-full animate-pulse"></div>
+                    <span className="text-sm text-gray-600 font-semibold">播放中...</span>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 中文释义显示区域 */}
+            <div className="mb-6">
+              <div className="flex items-center justify-center gap-2 mb-3">
+                <span className="text-sm text-gray-600">中文释义</span>
+                <button
+                  onClick={handleToggleDefinition}
+                  className="text-xs text-gray-500 hover:text-gray-700 transition-colors underline decoration-dotted"
+                  title={showDefinition ? '隐藏中文释义' : '显示中文释义'}
+                >
+                  {showDefinition ? '隐藏' : '显示'}
+                </button>
+              </div>
+              {showDefinition ? (
+                <p className="text-center text-lg font-semibold text-gray-700 py-2">
+                  {currentWord.definition}
+                </p>
+              ) : (
+                <p className="text-center text-base text-gray-400 py-2 border-b border-dashed border-gray-300">
+                  （已隐藏）
+                </p>
+              )}
+            </div>
+
+            {/* 控制按钮区 - 纯icon样式 */}
+            <div className="flex items-center justify-center gap-6 mb-6">
+              <button
+                onClick={handlePrevious}
+                disabled={currentIndex === 0}
+                className="clay-icon p-2 hover:scale-110 transition-transform disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
+                title="上一个单词"
+              >
+                <SkipBack className="w-5 h-5 text-gray-600" />
+              </button>
+
+              <button
+                onClick={handleTogglePause}
+                disabled={!isPlaying}
+                className="clay-icon p-2 hover:scale-110 transition-transform disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
+                title={isPaused ? '继续播放' : '暂停播放'}
+              >
+                {isPaused ? (
+                  <Play className="w-5 h-5 text-[#4CAF50]" />
+                ) : (
+                  <Pause className="w-5 h-5 text-[#4CAF50]" />
+                )}
+              </button>
+
+              <button
+                onClick={handleReplay}
+                className="clay-icon p-2 hover:scale-110 transition-transform"
+                title="再读一遍"
+              >
+                <RotateCcw className="w-5 h-5 text-gray-600" />
               </button>
             </div>
 
@@ -397,6 +571,7 @@ export default function DictationPage() {
                 type="text"
                 value={userInput}
                 onChange={handleInputChange}
+                onFocus={handleInputFocus}
                 onKeyPress={(e) => {
                   if (e.key === 'Enter') {
                     handleSubmit()
@@ -407,7 +582,7 @@ export default function DictationPage() {
                   feedback === 'correct'
                     ? 'border-green-500 bg-green-50 text-green-800'
                     : feedback === 'wrong'
-                    ? 'border-red-500 bg-red-50 text-red-800 animate-shake'
+                    ? 'border-red-500 bg-red-50 text-red-800 animate-shake-input'
                     : 'border-gray-300 bg-white focus:border-[#9B8CB5]'
                 }`}
                 placeholder="输入你听到的单词..."
@@ -470,9 +645,12 @@ export default function DictationPage() {
               <p className="text-gray-700 font-semibold mb-4">
                 你已经完成了所有单词的听写练习
               </p>
-              <Link href={`/library/${bookId}`} className="clay-button-primary inline-block px-6 py-3 font-bold">
+              <button
+                onClick={() => router.push(`/library/${bookId}`)}
+                className="clay-button-primary inline-block px-6 py-3 font-bold"
+              >
                 返回词书详情
-              </Link>
+              </button>
             </div>
           )}
         </div>

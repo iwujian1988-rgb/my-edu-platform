@@ -2,6 +2,11 @@ import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { BookDetailPageClient } from '@/components/BookDetailPageClient'
 
+type Chapter = {
+  id: string
+  title: string
+}
+
 // Mock 数据 - 单词列表
 const mockWords = [
   {
@@ -15,7 +20,7 @@ const mockWords = [
     example_sentence: '请在会议前把议程发给我好吗？',
     example_sentence_en: 'Could you please send me the agenda before the meeting?',
     part_of_speech: 'noun',
-    status: 'unknown' // unknown, known, fuzzy
+    status: 'unknown' as const
   },
   {
     id: '2',
@@ -28,7 +33,7 @@ const mockWords = [
     example_sentence: '我们需要达成一个让双方都满意的妥协。',
     example_sentence_en: 'We need to reach a compromise that satisfies both parties.',
     part_of_speech: 'noun, verb',
-    status: 'known'
+    status: 'known' as const
   },
   {
     id: '3',
@@ -41,7 +46,7 @@ const mockWords = [
     example_sentence: '请把报告缩写成一页。',
     example_sentence_en: 'Please abbreviate the report to one page.',
     part_of_speech: 'verb',
-    status: 'fuzzy'
+    status: 'fuzzy' as const
   },
   {
     id: '4',
@@ -54,7 +59,7 @@ const mockWords = [
     example_sentence: '我想点这个汤作为开胃菜。',
     example_sentence_en: 'I would like to order the soup as an appetizer.',
     part_of_speech: 'noun',
-    status: 'unknown'
+    status: 'unknown' as const
   },
 ]
 
@@ -100,7 +105,7 @@ export default async function BookDetailPage({
         .order('order_index', { ascending: true })
 
       if (chaptersData && chaptersData.length > 0) {
-        const chapterIds = chaptersData.map(c => c.id)
+        const chapterIds = chaptersData.map((c: Chapter) => c.id)
 
         // 获取所有单词
         const { data: wordsData } = await supabase
@@ -122,7 +127,7 @@ export default async function BookDetailPage({
             example_sentence: w.example_sentence || '',
             example_sentence_en: w.example_sentence_en || '',
             part_of_speech: w.part_of_speech || '',
-            status: 'unknown' // TODO: 从 user_word_progress 表获取
+            status: 'unknown' as 'known' | 'unknown' | 'fuzzy' // TODO: 从 user_word_progress 表获取
           }))
         } else {
           console.log('No words found in database, using mock data')

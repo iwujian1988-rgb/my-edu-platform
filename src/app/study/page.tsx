@@ -4,6 +4,11 @@ import { BookOpen, User, Calendar, Trophy, Target, Sparkles, LogOut } from 'luci
 import { logout } from '../login/actions'
 import { Metadata } from 'next'
 
+type UserProfile = {
+  phone_number?: string
+  [key: string]: any
+}
+
 export const metadata: Metadata = {
   title: '学习中心 - 小语笔记',
   description: '小语笔记学习中心，选择单词书开始学习',
@@ -44,7 +49,7 @@ export default async function StudyPage() {
               <div>
                 <h1 className="text-2xl font-bold text-gradient-lilac">小语笔记</h1>
                 <p className="text-xs text-gray-600 font-semibold">
-                  ✨ 欢迎回来，{profile?.phone_number || user.email}
+                  ✨ 欢迎回来，{(profile as UserProfile | null)?.phone_number || user.email}
                 </p>
               </div>
             </div>
@@ -145,17 +150,17 @@ export default async function StudyPage() {
               <div className="space-y-3">
                 <div className="clay-badge px-4 py-3">
                   <p className="text-sm font-bold text-gray-800">
-                    <span className="text-gray-600">手机号:</span> {profile?.phone_number || '未设置'}
+                    <span className="text-gray-600">手机号:</span> {(profile as UserProfile | null)?.phone_number || '未设置'}
                   </p>
                 </div>
                 <div className="clay-badge px-4 py-3">
                   <p className="text-sm font-bold text-gray-800">
-                    <span className="text-gray-600">注册时间:</span> {new Date(profile?.created_at || '').toLocaleDateString('zh-CN')}
+                    <span className="text-gray-600">注册时间:</span> {new Date((profile as UserProfile | null)?.created_at || '').toLocaleDateString('zh-CN')}
                   </p>
                 </div>
                 <div className="clay-badge px-4 py-3">
                   <p className="text-sm font-bold text-gray-800">
-                    <span className="text-gray-600">上次登录:</span> {new Date(profile?.last_login_at || '').toLocaleDateString('zh-CN')}
+                    <span className="text-gray-600">上次登录:</span> {new Date((profile as UserProfile | null)?.last_login_at || '').toLocaleDateString('zh-CN')}
                   </p>
                 </div>
               </div>

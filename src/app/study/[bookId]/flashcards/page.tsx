@@ -43,7 +43,12 @@ export default function FlashcardsPage() {
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const [keyboardAnimation, setKeyboardAnimation] = useState<{ x: number; rotate: number } | null>(null)
   const [isCardSwitching, setIsCardSwitching] = useState(false)
+  const [hasUserInteracted, setHasUserInteracted] = useState(false)
+  const hasUserInteractedRef = useRef(false) // 使用 ref 避免状态更新延迟
+  const [isSpeechInitialized, setIsSpeechInitialized] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
+  const voicesRef = useRef<SpeechSynthesisVoice[]>([])
+  const isSpeakingRef = useRef(false) // 追踪当前是否正在播放
 
   // 批量保存相关状态
   const pendingSaveRef = useRef<Record<string, 'known' | 'vague' | 'unknown'>>({})
@@ -119,16 +124,142 @@ export default function FlashcardsPage() {
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
 
-  // Text-to-speech (使用useCallback避免依赖问题)
-  const speak = useCallback((text: string) => {
-    if ('speechSynthesis' in window && text) {
-      speechSynthesis.cancel() // 停止之前的朗读
-      const utterance = new SpeechSynthesisUtterance(text)
-      utterance.lang = 'en-US'
-      utterance.rate = 0.9
-      speechSynthesis.speak(utterance)
+  // 初始化语音合成 - 需要在用户交互后调用
+  const initializeSpeech = useCallback(() => {
+    if (!('speechSynthesis' in window)) {
+      console.warn('Browser does not support speech synthesis')
+      return false
+    }
+
+    console.log('🔧 Initializing speech synthesis...')
+
+    // 尝试获取语音列表来初始化引擎
+    try {
+      const voices = speechSynthesis.getVoices()
+      voicesRef.current = voices
+      console.log('Available voices:', voices.length)
+      voices.forEach((v, i) => console.log(`  ${i}: ${v.name} (${v.lang})`))
+
+      setIsSpeechInitialized(true)
+      console.log('✅ Speech synthesis initialized')
+      return true
+    } catch (error) {
+      console.error('❌ Error initializing speech synthesis:', error)
+      return false
+    }
+  }, [setIsSpeechInitialized])
+
+  // 实际播放音频的函数
+  const playSpeech = useCallback((text: string) => {
+    console.log('🎵 playSpeech called with:', text)
+
+    if (!('speechSynthesis' in window)) {
+      console.warn('Browser does not support speech synthesis')
+      return
+    }
+
+    // 直接取消任何正在播放的内容并播放新的
+    speechSynthesis.cancel()
+    isSpeakingRef.current = false
+
+    // 等待cancel完成
+    setTimeout(() => {
+      speakNow(text)
+    }, 100)
+  }, [])
+
+  // 实际执行播放的函数
+  const speakNow = useCallback((text: string) => {
+    console.log('🎤 speakNow called for:', text)
+
+    // 创建utterance - 不设置voice，让Chrome自动选择
+    const utterance = new SpeechSynthesisUtterance(text)
+    utterance.lang = 'en-US'
+    utterance.rate = 1.0
+    utterance.pitch = 1.0
+    utterance.volume = 1.0
+
+    // 重要：不要设置voice属性，让Chrome自动处理
+
+    utterance.onstart = () => {
+      console.log('✅✅✅ Speech STARTED ✅✅✅ for:', text)
+      isSpeakingRef.current = true
+    }
+
+    utterance.onend = () => {
+      console.log('✅ Speech ENDED for:', text)
+      isSpeakingRef.current = false
+    }
+
+    utterance.onerror = (event) => {
+      console.error('❌ Speech error:', event.error)
+      console.error('Error details:', event)
+      isSpeakingRef.current = false
+    }
+
+    console.log('📢 Speaking (auto voice)...')
+    speechSynthesis.speak(utterance)
+
+    // 检查状态
+    setTimeout(() => {
+      const isSpeaking = speechSynthesis.speaking
+      const pending = speechSynthesis.pending
+      const paused = speechSynthesis.paused
+      console.log('🔍 300ms check - speaking:', isSpeaking, 'pending:', pending, 'paused:', paused)
+
+      if (isSpeaking && !isSpeakingRef.current) {
+        console.log('⚠️ API says speaking but onstart not fired - Chrome bug detected')
+        isSpeakingRef.current = true
+      }
+
+      if (!isSpeaking && !pending) {
+        console.error('❌ Not speaking and nothing pending - TTS may be disabled')
+        console.error('Please check: chrome://settings/content/speech')
+      }
+    }, 300)
+  }, [])
+
+  // 在组件加载时预加载语音列表
+  useEffect(() => {
+    if ('speechSynthesis' in window) {
+      // 尝试获取语音列表
+      const voices = speechSynthesis.getVoices()
+      voicesRef.current = voices
+      console.log('Preloaded voices:', voices.length)
+
+      // 监听语音列表加载完成事件
+      const handleVoicesChanged = () => {
+        const updatedVoices = speechSynthesis.getVoices()
+        voicesRef.current = updatedVoices
+        console.log('Voices changed event, total voices:', updatedVoices.length)
+        setIsSpeechInitialized(true)
+      }
+
+      speechSynthesis.onvoiceschanged = handleVoicesChanged
+
+      return () => {
+        speechSynthesis.onvoiceschanged = null
+      }
     }
   }, [])
+
+  // Text-to-speech (使用useCallback避免依赖问题)
+  const speak = useCallback((text: string) => {
+    console.log('========== speak called ==========')
+    console.log('Text:', text)
+
+    if (!text) {
+      console.warn('No text provided for speech')
+      return
+    }
+
+    if (!('speechSynthesis' in window)) {
+      console.warn('Browser does not support speech synthesis')
+      return
+    }
+
+    playSpeech(text)
+  }, [playSpeech])
 
   // 批量保存函数
   const flushPendingSaves = useCallback(async () => {
@@ -158,12 +289,23 @@ export default function FlashcardsPage() {
 
   // Handle card flip
   const handleFlip = useCallback(() => {
+    // 标记用户已经交互（同步更新 ref 和状态）
+    hasUserInteractedRef.current = true
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true)
+    }
     setIsFlipped(!isFlipped)
-  }, [isFlipped])
+  }, [isFlipped, hasUserInteracted])
 
   // Handle word status
   const handleStatus = useCallback((status: 'known' | 'vague' | 'unknown') => {
     if (!currentWord) return
+
+    // 立即标记用户已经交互（同步更新 ref 和状态）
+    hasUserInteractedRef.current = true
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true)
+    }
 
     // 1. 立即更新本地状态（乐观更新）
     setWordProgress(prev => ({
@@ -183,45 +325,73 @@ export default function FlashcardsPage() {
       saveTimerRef.current = null
     }, 3000)
 
-    // 4. 触发键盘动画
-    let animationOffset = { x: 0, rotate: 0 }
-    if (status === 'known') {
-      animationOffset = { x: -150, rotate: -15 }
-    } else if (status === 'vague') {
-      animationOffset = { x: 0, rotate: 0 }
-    } else if (status === 'unknown') {
-      animationOffset = { x: 150, rotate: 15 }
-    }
-    setKeyboardAnimation(animationOffset)
+    // 4. 设置切换状态，立即隐藏当前卡片
     setIsCardSwitching(true)
-
     setIsFlipped(false)
 
-    // 5. 立即执行动画和切换，不等待保存
+    // 5. 清除拖动状态，防止回弹
+    setDragStart(null)
+    setDragOffset({ x: 0, y: 0 })
+    setKeyboardAnimation(null)
+
+    // 6. 延迟后切换到下一个单词
     setTimeout(() => {
-      setKeyboardAnimation(null)
-      setIsCardSwitching(false)
       if (currentIndex < words.length - 1) {
         setCurrentIndex(prev => prev + 1)
       }
-    }, 300)
-  }, [currentWord, currentIndex, words.length, flushPendingSaves])
+      // 清除切换状态，显示新卡片
+      setTimeout(() => {
+        setIsCardSwitching(false)
+      }, 50)
+    }, 200)
+  }, [currentWord, currentIndex, words.length, flushPendingSaves, hasUserInteracted])
 
-  // 自动朗读新单词 - 只在索引变化时触发
+  // 自动朗读新单词 - 当卡片切换完成后自动朗读
   useEffect(() => {
-    if (currentWord && !loading && !isFlipped) {
-      // 延迟500ms后自动朗读，让用户先看到单词
-      const timer = setTimeout(() => {
-        speak(currentWord.word)
-      }, 500)
+    console.log('Auto-speak useEffect triggered:', {
+      hasCurrentWord: !!currentWord,
+      currentWord: currentWord?.word,
+      loading,
+      isFlipped,
+      isCardSwitching,
+      hasUserInteractedRef: hasUserInteractedRef.current,
+      hasUserInteracted: hasUserInteracted,
+      isSpeakingRef: isSpeakingRef.current
+    })
 
-      return () => clearTimeout(timer)
+    // 只在卡片完全显示后（非切换状态）且用户已经交互过后自动朗读
+    // 使用 ref 检查，避免状态更新延迟
+    if (currentWord && !loading && !isFlipped && !isCardSwitching && hasUserInteractedRef.current && !isSpeakingRef.current) {
+      console.log('Auto-speak conditions met, scheduling for:', currentWord.word)
+      // 延迟800ms后自动朗读，确保用户交互完成且卡片已稳定
+      const timer = setTimeout(() => {
+        // 再次检查用户交互状态和播放状态
+        if (hasUserInteractedRef.current && !isSpeakingRef.current) {
+          console.log('Auto-speak executing speak() for:', currentWord.word)
+          speak(currentWord.word)
+        } else {
+          console.log('Auto-speak canceled: hasUserInteractedRef=', hasUserInteractedRef.current, 'isSpeakingRef=', isSpeakingRef.current)
+        }
+      }, 800)
+
+      return () => {
+        console.log('Auto-speak timeout cleared')
+        clearTimeout(timer)
+      }
+    } else {
+      console.log('Auto-speak conditions not met')
     }
-  }, [currentIndex]) // 只依赖currentIndex
+  }, [currentIndex, currentWord, isCardSwitching, loading, isFlipped, hasUserInteracted, speak])
 
   // 键盘快捷键
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
+      // 标记用户已经交互（同步更新 ref）
+      hasUserInteractedRef.current = true
+      if (!hasUserInteracted) {
+        setHasUserInteracted(true)
+      }
+
       if (e.key === 'ArrowLeft') {
         // ⬅️ 认识
         e.preventDefault()
@@ -243,7 +413,7 @@ export default function FlashcardsPage() {
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [handleStatus, handleFlip])
+  }, [handleStatus, handleFlip, hasUserInteracted])
 
   // 页面卸载或隐藏时保存待保存的数据
   useEffect(() => {
@@ -265,8 +435,10 @@ export default function FlashcardsPage() {
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload)
       document.removeEventListener('visibilitychange', handleVisibilityChange)
-      // 组件卸载时保存
-      if (Object.keys(pendingSaveRef.current).length > 0) {
+      // 组件卸载时保存（如果还有未保存的数据）
+      const pending = pendingSaveRef.current
+      if (Object.keys(pending).length > 0) {
+        console.log('Component unmounting, saving pending data:', pending)
         flushPendingSaves()
       }
     }
@@ -274,6 +446,12 @@ export default function FlashcardsPage() {
 
   // 拖拽开始
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
+    // 标记用户已经交互（同步更新 ref 和状态）
+    hasUserInteractedRef.current = true
+    if (!hasUserInteracted) {
+      setHasUserInteracted(true)
+    }
+
     const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX
     const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY
 
@@ -314,15 +492,22 @@ export default function FlashcardsPage() {
     // 右滑：-45° 到 45°
     if (angle > -45 && angle <= 45) {
       handleStatus('unknown')
+      return
     }
     // 下滑：45° 到 135°
     else if (angle > 45 && angle <= 135) {
       // 下滑时如果卡片在背面，翻回正面
-      if (isFlipped) handleFlip()
+      if (isFlipped) {
+        handleFlip()
+      }
+      setDragStart(null)
+      setDragOffset({ x: 0, y: 0 })
+      return
     }
     // 左滑：135° 到 225°（-135° 到 -180° 和 135° 到 180°）
     else if (angle > 135 || angle <= -135) {
       handleStatus('known')
+      return
     }
     // 上滑：-135° 到 -45°
     else if (angle > -135 && angle <= -45) {
@@ -349,9 +534,12 @@ export default function FlashcardsPage() {
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F5F2' }}>
         <div className="clay-card p-8 text-center">
           <p className="text-lg text-gray-700 font-semibold">暂无单词数据</p>
-          <Link href={`/library/${bookId}`} className="clay-button-primary inline-block mt-4 px-6 py-3">
+          <button
+            onClick={() => router.push(`/library/${bookId}`)}
+            className="clay-button-primary inline-block mt-4 px-6 py-3"
+          >
             返回词书详情
-          </Link>
+          </button>
         </div>
       </div>
     )
@@ -363,11 +551,20 @@ export default function FlashcardsPage() {
       <header className="sticky top-0 z-50 px-4 py-4">
         <div className="max-w-4xl mx-auto">
           <div className="clay-card px-6 py-4 flex items-center gap-4">
-            <Link href={`/library/${bookId}`}>
-              <button className="clay-icon p-2 hover:scale-110 transition-transform">
-                <ArrowLeft className="w-5 h-5 text-gray-700" />
-              </button>
-            </Link>
+            <button
+              onClick={() => {
+                // 立即跳转，在后台保存数据
+                router.push(`/library/${bookId}`)
+                // 不等待保存完成，让它在后台执行
+                setTimeout(() => {
+                  flushPendingSaves()
+                }, 100)
+              }}
+              className="clay-icon p-2 hover:scale-110 transition-transform"
+              title="返回"
+            >
+              <ArrowLeft className="w-5 h-5 text-gray-700" />
+            </button>
             <div>
               <h1 className="text-lg font-bold text-gradient-lilac">{bookTitle}</h1>
               <p className="text-xs text-gray-600 font-semibold">
@@ -412,7 +609,7 @@ export default function FlashcardsPage() {
           </div>
 
           {/* Card */}
-          <div className="relative mb-1 mx-auto" style={{ width: '100%', maxWidth: '800px', height: '800px' }}>
+          <div className="relative mx-auto" style={{ width: '100%', maxWidth: '672px', height: '800px' }}>
             {/* Current Card */}
             <div
               ref={cardRef}
@@ -426,7 +623,10 @@ export default function FlashcardsPage() {
               onTouchEnd={handleDragEnd}
               onClick={handleFlip}
               style={{
-                top: '-800px',
+                position: 'absolute',
+                top: '0',
+                left: '0',
+                right: '0',
                 height: '800px',
                 perspective: '1000px',
                 opacity: (dragStart || keyboardAnimation || isCardSwitching) ? 0 : 1,
@@ -491,6 +691,15 @@ export default function FlashcardsPage() {
                   <button
                     onClick={(e) => {
                       e.stopPropagation()
+                      console.log('🔘 Play button clicked')
+
+                      // 标记用户已经交互（同步更新 ref）
+                      hasUserInteractedRef.current = true
+                      if (!hasUserInteracted) {
+                        setHasUserInteracted(true)
+                      }
+
+                      // 直接调用封装好的 speak 函数
                       speak(currentWord?.word || '')
                     }}
                     className="hover:scale-110 transition-transform text-gray-400 hover:text-gray-600"
@@ -555,45 +764,79 @@ export default function FlashcardsPage() {
             {/* Preview Card - 下一个单词的预览 */}
             {currentIndex < words.length - 1 && (
               <div
-                className="clay-card-xl p-8 pointer-events-none absolute top-0 left-0 right-0"
+                className="clay-card-xl p-8 pointer-events-none absolute left-0 right-0"
                 style={{
+                  position: 'absolute',
+                  top: '0',
+                  left: '0',
+                  right: '0',
                   height: '800px',
                   opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 1 : 0,
-                  transform: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? `translateZ(0px) scale(1)` : `translateZ(-50px) scale(1)`,
-                  transition: 'all 0.3s ease-out',
+                  transition: 'opacity 0.3s ease-out',
                   zIndex: 0,
                   perspective: '1000px'
                 }}
               >
-                <div className="flex flex-col items-center justify-center h-full">
-                  {/* Word */}
-                  <h2 className="text-5xl font-black text-gray-900 mb-4">
-                    {words[currentIndex + 1]?.word}
-                  </h2>
+                <div
+                  className="flex flex-col items-center justify-center h-full"
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    transition: 'transform 0.6s',
+                    transform: 'rotateY(0deg)'
+                  }}
+                >
+                  {/* Front - Word */}
+                  <div className="text-center" style={{ backfaceVisibility: 'hidden' }}>
+                    {/* Word */}
+                    <h2 className="text-5xl font-black text-gray-900 mb-4">
+                      {words[currentIndex + 1]?.word}
+                    </h2>
 
-                  {/* Phonetic */}
-                  {words[currentIndex + 1]?.phonetic && (
-                    <p className="text-xl text-gray-600 font-semibold mb-6">
-                      {words[currentIndex + 1]?.phonetic}
-                    </p>
-                  )}
+                    {/* Phonetic */}
+                    {words[currentIndex + 1]?.phonetic && (
+                      <p className="text-xl text-gray-600 font-semibold mb-6">
+                        {words[currentIndex + 1]?.phonetic}
+                      </p>
+                    )}
 
-                  {/* Part of Speech */}
-                  {words[currentIndex + 1]?.part_of_speech && (
-                    <div className="mb-6">
-                      <span className="inline-block clay-badge bg-purple-100 text-purple-800 px-4 py-2 font-bold text-sm">
-                        {words[currentIndex + 1]?.part_of_speech}
-                      </span>
-                    </div>
-                  )}
+                    {/* Part of Speech */}
+                    {words[currentIndex + 1]?.part_of_speech && (
+                      <div className="mb-6">
+                        <span className="inline-block clay-badge bg-purple-100 text-purple-800 px-4 py-2 font-bold text-sm">
+                          {words[currentIndex + 1]?.part_of_speech}
+                        </span>
+                      </div>
+                    )}
 
-                  {/* Play Button */}
-                  <button
-                    className="hover:scale-110 transition-transform text-gray-300"
-                    title="朗读单词"
-                  >
-                    <Volume2 className="w-12 h-12" />
-                  </button>
+                    {/* Play Button */}
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation()
+                        console.log('🔘 Preview Play button clicked')
+
+                        // 标记用户已经交互（同步更新 ref）
+                        hasUserInteractedRef.current = true
+                        if (!hasUserInteracted) {
+                          setHasUserInteracted(true)
+                        }
+
+                        // 先初始化语音合成
+                        if (!isSpeechInitialized) {
+                          console.log('Initializing speech on first click...')
+                          initializeSpeech()
+                        }
+
+                        // 然后播放音频
+                        setTimeout(() => {
+                          speak(words[currentIndex + 1]?.word || '')
+                        }, 150)
+                      }}
+                      className="hover:scale-110 transition-transform text-gray-300"
+                      title="朗读单词"
+                    >
+                      <Volume2 className="w-12 h-12" />
+                    </button>
+                  </div>
                 </div>
               </div>
             )}
@@ -608,9 +851,12 @@ export default function FlashcardsPage() {
               <p className="text-gray-700 font-semibold mb-4">
                 你已经完成了所有单词的学习
               </p>
-              <Link href={`/library/${bookId}`} className="clay-button-primary inline-block px-6 py-3 font-bold">
+              <button
+                onClick={() => router.push(`/library/${bookId}`)}
+                className="clay-button-primary inline-block px-6 py-3 font-bold"
+              >
                 返回词书详情
-              </Link>
+              </button>
             </div>
           )}
         </div>

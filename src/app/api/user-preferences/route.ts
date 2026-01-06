@@ -1,6 +1,10 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 
+type UserPreference = {
+  hide_chinese: boolean
+}
+
 // GET /api/user-preferences?book_id=xxx
 // 获取用户对某本书的偏好设置
 export async function GET(request: NextRequest) {
@@ -28,7 +32,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({
       success: true,
       data: {
-        hide_chinese: preferences?.hide_chinese || false
+        hide_chinese: (preferences as UserPreference | null)?.hide_chinese || false
       }
     })
   } catch (error) {
@@ -102,7 +106,7 @@ export async function POST(request: NextRequest) {
           book_id,
           hide_chinese,
           updated_at: new Date().toISOString()
-        },
+        } as any,
         {
           onConflict: 'user_id,book_id',
           ignoreDuplicates: false

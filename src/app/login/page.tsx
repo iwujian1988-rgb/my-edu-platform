@@ -42,16 +42,14 @@ export default function LoginPage() {
       const result = await login(loginData)
       if (result.error) {
         setError(result.error)
+        setLoading(false)
       } else {
-        setSuccess('登录成功！正在跳转...')
-        setTimeout(() => {
-          router.push('/')
-          router.refresh()
-        }, 1000)
+        // 立即跳转，不等待
+        router.push('/')
+        router.refresh()
       }
     } catch (err: any) {
       setError(err.message || '登录失败，请重试')
-    } finally {
       setLoading(false)
     }
   }
@@ -88,16 +86,14 @@ export default function LoginPage() {
       const result = await signup(signupData)
       if (result.error) {
         setError(result.error)
+        setLoading(false)
       } else {
-        setSuccess('注册成功！正在跳转...')
-        setTimeout(() => {
-          router.push('/')
-          router.refresh()
-        }, 1000)
+        // 立即跳转，不等待
+        router.push('/')
+        router.refresh()
       }
     } catch (err: any) {
       setError(err.message || '注册失败，请重试')
-    } finally {
       setLoading(false)
     }
   }

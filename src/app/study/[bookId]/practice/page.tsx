@@ -4,6 +4,17 @@ import Link from 'next/link'
 import { ArrowLeft, BookOpen, Volume2, Gamepad2, CreditCard } from 'lucide-react'
 import { Metadata } from 'next'
 
+type ChapterWithWords = {
+  id: string
+  title: string
+  words?: any[]
+}
+
+type Book = {
+  title: string
+  [key: string]: any
+}
+
 interface PageProps {
   params: Promise<{ bookId: string }>
 }
@@ -34,6 +45,8 @@ export default async function PracticeModePage({ params }: PageProps) {
     redirect('/library')
   }
 
+  const typedBook = book as Book
+
   // Get chapters with words
   const { data: chapters } = await supabase
     .from('chapters')
@@ -49,7 +62,7 @@ export default async function PracticeModePage({ params }: PageProps) {
     `)
     .eq('book_id', bookId)
 
-  const totalWords = chapters?.reduce((sum, ch) => sum + (ch.words?.length || 0), 0) || 0
+  const totalWords = chapters?.reduce((sum: number, ch: ChapterWithWords) => sum + (ch.words?.length || 0), 0) || 0
 
   const practiceModes = [
     {
@@ -100,7 +113,7 @@ export default async function PracticeModePage({ params }: PageProps) {
                 <BookOpen className="w-5 h-5 text-[#9B8CB5]" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-gradient-lilac">{book.title}</h1>
+                <h1 className="text-xl font-bold text-gradient-lilac">{typedBook.title}</h1>
                 <p className="text-xs text-gray-600 font-semibold">
                   共 {totalWords} 个单词
                 </p>

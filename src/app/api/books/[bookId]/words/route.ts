@@ -1,6 +1,10 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 
+type Chapter = {
+  id: string
+}
+
 /**
  * GET /api/books/[bookId]/words
  * 获取单词书的所有单词
@@ -31,7 +35,7 @@ export async function GET(
       })
     }
 
-    const chapterIds = chapters.map(ch => ch.id)
+    const chapterIds = chapters.map((ch: Chapter) => ch.id)
 
     // Get all words for these chapters
     const { data: words, error: wordsError } = await supabase

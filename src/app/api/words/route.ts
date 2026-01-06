@@ -1,6 +1,18 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 
+type ThemeData = {
+  id: string
+}
+
+type SceneData = {
+  id: string
+}
+
+type Chapter = {
+  id: string
+}
+
 /**
  * GET /api/words?bookId=xxx&theme=xxx&scene=xxx&status=xxx
  * 获取单词书的所有单词，支持筛选
@@ -34,7 +46,7 @@ export async function GET(request: NextRequest) {
         .single()
 
       if (themeData) {
-        chaptersQuery = chaptersQuery.eq('theme_id', themeData.id)
+        chaptersQuery = chaptersQuery.eq('theme_id', (themeData as ThemeData).id)
       }
     }
 
@@ -48,7 +60,7 @@ export async function GET(request: NextRequest) {
         .single()
 
       if (sceneData) {
-        chaptersQuery = chaptersQuery.eq('scene_id', sceneData.id)
+        chaptersQuery = chaptersQuery.eq('scene_id', (sceneData as SceneData).id)
       }
     }
 
@@ -66,7 +78,7 @@ export async function GET(request: NextRequest) {
       })
     }
 
-    const chapterIds = chapters.map(ch => ch.id)
+    const chapterIds = chapters.map((ch: Chapter) => ch.id)
 
     // Get all words for these chapters
     let wordsQuery = supabase
@@ -95,8 +107,8 @@ export async function GET(request: NextRequest) {
           .eq('book_id', bookId)
 
         if (progress) {
-          const progressMap = new Map(progress.map(p => [p.word_id, p.status]))
-          filteredWords = filteredWords.filter(word => {
+          const progressMap = new Map(progress.map((p: any) => [p.word_id, p.status]))
+          filteredWords = filteredWords.filter((word: any) => {
             const wordStatus = progressMap.get(word.id)
             if (status === 'unknown') {
               return !wordStatus || wordStatus === 'unknown'

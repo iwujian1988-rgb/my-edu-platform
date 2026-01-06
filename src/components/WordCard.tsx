@@ -26,9 +26,28 @@ interface WordCardProps {
 }
 
 export function WordCard({ word, index, onStatusChange, isSaving = false, globalHideChinese = false }: WordCardProps) {
-  const [showDefinition, setShowDefinition] = useState(true)
+  // 初始状态根据全局设置：如果全局隐藏，则默认不显示；否则显示
+  const [showDefinition, setShowDefinition] = useState(!globalHideChinese)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
+
+  // 调试：渲染时输出
+  console.log(`🎨 [WordCard ${index}] Rendering with status:`, word.status, `| word.id:`, word.id)
+
+  // 调试：检查按钮颜色是否正确
+  const isKnown = word.status === 'known'
+  const buttonClass = `flex flex-col items-center gap-0.5 transition-all ${
+    word.status === 'known'
+      ? 'text-green-600'
+      : 'text-gray-300 hover:text-green-400'
+  }`
+  console.log(`  ✓ Button color check: isKnown=${isKnown}`)
+  console.log(`  📝 Button className:`, buttonClass)
+
+  // 同步全局设置变化到本地状态
+  useEffect(() => {
+    setShowDefinition(!globalHideChinese)
+  }, [globalHideChinese])
 
   // Refs for detecting overflow
   const collocationRef = useRef<HTMLDivElement>(null)
@@ -38,7 +57,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
 
   // Check for overflow on mount and when content changes
   useEffect(() => {
-    const checkOverflow = (ref: React.RefObject<HTMLDivElement>, setter: React.Dispatch<React.SetStateAction<boolean>>) => {
+    const checkOverflow = (ref: React.RefObject<HTMLDivElement | null>, setter: React.Dispatch<React.SetStateAction<boolean>>) => {
       if (ref.current) {
         const isOverflow = ref.current.scrollHeight > 96 // max-h-24 = 96px
         setter(isOverflow)
@@ -85,18 +104,53 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
       'transitive verb': 'vt及物动词',
       'intransitive verb': 'vi不及物动词',
     }
-    return posMap[pos.toLowerCase()] || pos
+
+    // 处理多个词性（逗号分隔）
+    return pos
+      .split(',')
+      .map(p => {
+        const trimmed = p.trim().toLowerCase()
+        return posMap[trimmed] || trimmed
+      })
+      .join(', ')
   }
 
   // 发音功能 - 支持单词、搭配、例句
   const handleSpeak = (text: string) => {
     if ('speechSynthesis' in window) {
-      setIsPlaying(true)
+      console.log('🔊 WordCard: Speaking', text)
+
+      // 创建utterance - 让Chrome自动选择voice
       const utterance = new SpeechSynthesisUtterance(text)
       utterance.lang = 'en-US'
-      utterance.rate = 0.8
-      utterance.onend = () => setIsPlaying(false)
+      utterance.rate = 1.0
+      utterance.pitch = 1.0
+      utterance.volume = 1.0
+
+      utterance.onstart = () => {
+        console.log('✅ WordCard: Speech STARTED for', text)
+        setIsPlaying(true)
+      }
+
+      utterance.onend = () => {
+        console.log('✅ WordCard: Speech ENDED for', text)
+        setIsPlaying(false)
+      }
+
+      utterance.onerror = (event) => {
+        console.error('❌ WordCard: Speech error', event.error)
+        setIsPlaying(false)
+      }
+
       speechSynthesis.speak(utterance)
+
+      // 检查状态
+      setTimeout(() => {
+        console.log('🔊 WordCard 300ms check - speaking:', speechSynthesis.speaking)
+        if (!speechSynthesis.speaking) {
+          console.error('❌ WordCard: TTS may be disabled - check chrome://settings/content/speech')
+        }
+      }, 300)
     }
   }
 
@@ -105,9 +159,11 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
     onStatusChange(word.id, status)
   }
 
-  // 计算是否显示中文（全局设置优先，然后是本地设置）
-  // 逻辑改进：当全局隐藏时，本地按钮可以强制显示中文
-  const shouldShowChinese = showDefinition && !globalHideChinese
+  // 计算是否显示中文：本地按钮完全控制，可以覆盖全局设置
+  const shouldShowChinese = showDefinition
+
+  // 计算实际隐藏状态（用于按钮图标显示）
+  const actualHide = !showDefinition
 
   // 本地按钮点击逻辑：切换本地显示状态
   const handleToggleLocal = () => {
@@ -115,7 +171,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
   }
 
   return (
-    <div className="clay-card p-5 md:p-6 hover:scale-[1.01] transition-transform flex flex-col">
+    <div className="clay-card p-5 md:p-6 hover:scale-[1.01] transition-transform flex flex-col" suppressHydrationWarning>
       <div className="flex gap-3 flex-1">
         {/* 左侧：序号 */}
         <div className="flex flex-col items-center pt-1 flex-shrink-0">
@@ -153,9 +209,9 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
             <button
               onClick={handleToggleLocal}
               className="flex items-center gap-1 px-1.5 py-0.5 rounded text-xs text-gray-300 hover:text-gray-500 transition-colors flex-shrink-0 self-start"
-              title={showDefinition ? "隐藏中文" : "显示中文"}
+              title={actualHide ? "显示中文" : "隐藏中文"}
             >
-              {showDefinition ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
+              {actualHide ? <Eye className="w-3 h-3" /> : <EyeOff className="w-3 h-3" />}
             </button>
           </div>
 
@@ -288,11 +344,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
             <div className="flex gap-1.5">
               <button
                 onClick={() => handleStatusChange('known')}
-                className={`flex flex-col items-center gap-0.5 transition-all ${
-                  word.status === 'known'
-                    ? 'text-green-600'
-                    : 'text-gray-300 hover:text-green-400'
-                }`}
+                className={buttonClass}
                 title="认识"
               >
                 <div className={`w-5 h-5 rounded-full border-2 transition-all ${
@@ -335,11 +387,6 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                 <span className="text-xs leading-none">不认识</span>
               </button>
             </div>
-
-            {/* 提示文本 */}
-            {globalHideChinese && (
-              <span className="text-xs text-gray-300">全局隐藏中</span>
-            )}
           </div>
         </div>
       </div>

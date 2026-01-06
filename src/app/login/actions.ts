@@ -40,11 +40,14 @@ export async function login(formData: { phone: string; password: string }) {
     // Update last login
     await supabase
       .from('users')
+      // @ts-ignore - Supabase type inference issue
       .update({ last_login_at: new Date().toISOString() })
       .eq('id', data.user.id)
 
     revalidatePath('/', 'layout')
-    return { success: true }
+    revalidatePath('/study', 'layout')
+
+    return { success: true, redirect: '/' }
   } catch (error: any) {
     console.error('Login error:', error)
     return { error: error.message || '登录失败，请重试' }
@@ -83,12 +86,12 @@ export async function signup(formData: {
     }
 
     // Check if code has reached max uses
-    if (codeData.used_count >= codeData.max_uses) {
+    if ((codeData as any).used_count >= (codeData as any).max_uses) {
       return { error: '邀请码使用次数已达上限' }
     }
 
     // Check if code has expired
-    if (codeData.expires_at && new Date(codeData.expires_at) < new Date()) {
+    if ((codeData as any).expires_at && new Date((codeData as any).expires_at) < new Date()) {
       return { error: '邀请码已过期' }
     }
 
@@ -125,6 +128,7 @@ export async function signup(formData: {
     }
 
     // Step 5: Sync to public.users table
+    // @ts-ignore - Supabase type inference issue
     const { error: dbError } = await supabase.from('users').insert({
       id: authData.user.id,
       phone_number: phone,
@@ -139,6 +143,7 @@ export async function signup(formData: {
     }
 
     // Step 6: Initialize user quota
+    // @ts-ignore - Supabase type inference issue
     await supabase.from('user_quotas').insert({
       user_id: authData.user.id,
       daily_smart_import_limit: 500,
@@ -148,11 +153,14 @@ export async function signup(formData: {
     // Step 7: Update invitation code usage
     await supabase
       .from('invitation_codes')
-      .update({ used_count: codeData.used_count + 1 })
+      // @ts-ignore - Supabase type inference issue
+      .update({ used_count: (codeData as any).used_count + 1 })
       .eq('code', invitationCode)
 
     revalidatePath('/', 'layout')
-    return { success: true }
+    revalidatePath('/study', 'layout')
+
+    return { success: true, redirect: '/' }
   } catch (error: any) {
     console.error('Signup error:', error)
     return { error: error.message || '注册失败，请重试' }

@@ -1,6 +1,14 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 
+type WordProgressItem = {
+  word_id: string
+  status: string
+  practice_count?: number
+  correct_count?: number
+  last_practiced_at?: string
+}
+
 /**
  * GET /api/word-progress?book_id=xxx
  * 获取指定词书的单词状态
@@ -37,7 +45,7 @@ export async function GET(request: NextRequest) {
 
     // 转换为 Map 格式方便前端使用
     const progressMap: Record<string, any> = {}
-    wordProgress?.forEach(item => {
+    wordProgress?.forEach((item: any) => {
       progressMap[item.word_id] = item
     })
 
@@ -97,7 +105,7 @@ export async function POST(request: NextRequest) {
           book_id,
           status,
           updated_at: new Date().toISOString()
-        },
+        } as any,
         {
           onConflict: 'user_id,word_id,book_id',
           ignoreDuplicates: false
@@ -158,7 +166,7 @@ export async function PUT(request: NextRequest) {
     // 批量插入/更新
     const { data: progressData, error: upsertError } = await supabase
       .from('word_progress')
-      .upsert(records, {
+      .upsert(records as any, {
         onConflict: 'user_id,word_id,book_id',
         ignoreDuplicates: false
       })
