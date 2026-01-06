@@ -42,6 +42,7 @@ export default function FlashcardsPage() {
   const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null)
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const [keyboardAnimation, setKeyboardAnimation] = useState<{ x: number; rotate: number } | null>(null)
+  const [isCardSwitching, setIsCardSwitching] = useState(false)
   const cardRef = useRef<HTMLDivElement>(null)
 
   // 批量保存相关状态
@@ -192,12 +193,14 @@ export default function FlashcardsPage() {
       animationOffset = { x: 150, rotate: 15 }
     }
     setKeyboardAnimation(animationOffset)
+    setIsCardSwitching(true)
 
     setIsFlipped(false)
 
     // 5. 立即执行动画和切换，不等待保存
     setTimeout(() => {
       setKeyboardAnimation(null)
+      setIsCardSwitching(false)
       if (currentIndex < words.length - 1) {
         setCurrentIndex(prev => prev + 1)
       }
@@ -410,52 +413,6 @@ export default function FlashcardsPage() {
 
           {/* Card */}
           <div className="relative mb-1 mx-auto" style={{ width: '100%', maxWidth: '800px', height: '800px' }}>
-            {/* Preview Card - 下一个单词的预览 */}
-            {currentIndex < words.length - 1 && (
-              <div
-                className="clay-card-xl p-8 pointer-events-none absolute top-0 left-0 right-0"
-                style={{
-                  height: '800px',
-                  opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 1 : 0,
-                  transform: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? `translateZ(0px) scale(1)` : `translateZ(-50px) scale(1)`,
-                  transition: 'all 0.3s ease-out',
-                  zIndex: 0,
-                  perspective: '1000px'
-                }}
-              >
-                <div className="flex flex-col items-center justify-center h-full">
-                  {/* Word */}
-                  <h2 className="text-5xl font-black text-gray-900 mb-4">
-                    {words[currentIndex + 1]?.word}
-                  </h2>
-
-                  {/* Phonetic */}
-                  {words[currentIndex + 1]?.phonetic && (
-                    <p className="text-xl text-gray-600 font-semibold mb-6">
-                      {words[currentIndex + 1]?.phonetic}
-                    </p>
-                  )}
-
-                  {/* Part of Speech */}
-                  {words[currentIndex + 1]?.part_of_speech && (
-                    <div className="mb-6">
-                      <span className="inline-block clay-badge bg-purple-100 text-purple-800 px-4 py-2 font-bold text-sm">
-                        {words[currentIndex + 1]?.part_of_speech}
-                      </span>
-                    </div>
-                  )}
-
-                  {/* Play Button */}
-                  <button
-                    className="hover:scale-110 transition-transform text-gray-300"
-                    title="朗读单词"
-                  >
-                    <Volume2 className="w-12 h-12" />
-                  </button>
-                </div>
-              </div>
-            )}
-
             {/* Current Card */}
             <div
               ref={cardRef}
@@ -472,9 +429,9 @@ export default function FlashcardsPage() {
                 top: '-800px',
                 height: '800px',
                 perspective: '1000px',
-                opacity: (dragStart || keyboardAnimation) ? 0 : 1,
+                opacity: (dragStart || keyboardAnimation || isCardSwitching) ? 0 : 1,
                 transform: `translateZ(0px) translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
-                transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out, opacity 0.3s ease-out' : 'transform 0.3s ease-out, opacity 0.3s ease-out',
+                transition: dragStart || keyboardAnimation || isCardSwitching ? 'transform 0.3s ease-out, opacity 0.3s ease-out' : 'transform 0.3s ease-out, opacity 0.3s ease-out',
                 zIndex: 10
               }}
             >
@@ -594,6 +551,52 @@ export default function FlashcardsPage() {
                 </div>
               </div>
             </div>
+
+            {/* Preview Card - 下一个单词的预览 */}
+            {currentIndex < words.length - 1 && (
+              <div
+                className="clay-card-xl p-8 pointer-events-none absolute top-0 left-0 right-0"
+                style={{
+                  height: '800px',
+                  opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 1 : 0,
+                  transform: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? `translateZ(0px) scale(1)` : `translateZ(-50px) scale(1)`,
+                  transition: 'all 0.3s ease-out',
+                  zIndex: 0,
+                  perspective: '1000px'
+                }}
+              >
+                <div className="flex flex-col items-center justify-center h-full">
+                  {/* Word */}
+                  <h2 className="text-5xl font-black text-gray-900 mb-4">
+                    {words[currentIndex + 1]?.word}
+                  </h2>
+
+                  {/* Phonetic */}
+                  {words[currentIndex + 1]?.phonetic && (
+                    <p className="text-xl text-gray-600 font-semibold mb-6">
+                      {words[currentIndex + 1]?.phonetic}
+                    </p>
+                  )}
+
+                  {/* Part of Speech */}
+                  {words[currentIndex + 1]?.part_of_speech && (
+                    <div className="mb-6">
+                      <span className="inline-block clay-badge bg-purple-100 text-purple-800 px-4 py-2 font-bold text-sm">
+                        {words[currentIndex + 1]?.part_of_speech}
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Play Button */}
+                  <button
+                    className="hover:scale-110 transition-transform text-gray-300"
+                    title="朗读单词"
+                  >
+                    <Volume2 className="w-12 h-12" />
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
 
           {/* Complete Message */}
