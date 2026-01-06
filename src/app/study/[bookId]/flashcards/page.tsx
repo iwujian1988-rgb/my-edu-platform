@@ -411,13 +411,14 @@ export default function FlashcardsPage() {
           {/* Card */}
           <div className="relative mb-6" style={{ height: '400px' }}>
             {/* Preview Card - 下一个单词的预览 */}
-            {(Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50) && currentIndex < words.length - 1 && (
+            {currentIndex < words.length - 1 && (
               <div
                 className="absolute inset-0 clay-card-xl p-8 flex flex-col items-center justify-center pointer-events-none"
                 style={{
-                  opacity: 0.2,
-                  transform: `translate(${dragOffset.x > 0 ? '30px' : '-30px'}, ${dragOffset.y > 0 ? '30px' : '-30px'})`,
-                  transition: 'transform 0.3s ease-out'
+                  opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 0.4 : 0,
+                  transform: `translateZ(-50px)`,
+                  transition: 'opacity 0.3s ease-out',
+                  zIndex: 0
                 }}
               >
                 <div className="text-center w-full">
@@ -441,6 +442,14 @@ export default function FlashcardsPage() {
                       </span>
                     </div>
                   )}
+
+                  {/* Play Button */}
+                  <button
+                    className="hover:scale-110 transition-transform text-gray-300"
+                    title="朗读单词"
+                  >
+                    <Volume2 className="w-12 h-12" />
+                  </button>
                 </div>
               </div>
             )}
@@ -459,7 +468,8 @@ export default function FlashcardsPage() {
               style={{
                 perspective: '1000px',
                 transform: `translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
-                transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out'
+                transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out',
+                zIndex: 10
               }}
             >
               <div
