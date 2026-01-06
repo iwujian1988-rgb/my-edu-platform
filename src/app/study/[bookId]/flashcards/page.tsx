@@ -293,7 +293,7 @@ export default function FlashcardsPage() {
       <main className="container mx-auto px-4 py-8">
         <div className="max-w-xl mx-auto">
           {/* Progress Bar */}
-          <div className="mb-6">
+          <div className="mb-4">
             <div className="flex justify-between text-sm text-gray-600 font-semibold mb-2">
               <span>学习进度</span>
               <span>{Math.round((currentIndex / words.length) * 100)}%</span>
@@ -303,6 +303,22 @@ export default function FlashcardsPage() {
                 className="bg-gradient-to-r from-[#9B8CB5] to-[#B8A5D6] h-full transition-all duration-300"
                 style={{ width: `${(currentIndex / words.length) * 100}%` }}
               ></div>
+            </div>
+          </div>
+
+          {/* 操作提示 */}
+          <div className="grid grid-cols-3 gap-3 mb-4 text-center">
+            <div className="clay-card p-2">
+              <p className="text-xs text-gray-500">← 左滑</p>
+              <p className="text-sm font-semibold text-green-700">认识</p>
+            </div>
+            <div className="clay-card p-2">
+              <p className="text-xs text-gray-500">↑ 上滑</p>
+              <p className="text-sm font-semibold text-yellow-700">模糊</p>
+            </div>
+            <div className="clay-card p-2">
+              <p className="text-xs text-gray-500">→ 右滑</p>
+              <p className="text-sm font-semibold text-red-700">不认识</p>
             </div>
           </div>
 
@@ -475,22 +491,6 @@ export default function FlashcardsPage() {
                   )}
                 </div>
               </div>
-            </div>
-          </div>
-
-          {/* 操作提示 */}
-          <div className="grid grid-cols-3 gap-3 mb-6 text-center">
-            <div className="clay-card p-3">
-              <p className="text-xs text-gray-500">⬅️ 左滑</p>
-              <p className="text-sm font-semibold text-green-700">认识</p>
-            </div>
-            <div className="clay-card p-3">
-              <p className="text-xs text-gray-500">↑ 上滑</p>
-              <p className="text-sm font-semibold text-yellow-700">模糊</p>
-            </div>
-            <div className="clay-card p-3">
-              <p className="text-xs text-gray-500">➡️ 右滑</p>
-              <p className="text-sm font-semibold text-red-700">不认识</p>
             </div>
           </div>
 
