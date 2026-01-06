@@ -409,7 +409,7 @@ export default function FlashcardsPage() {
           </div>
 
           {/* Card */}
-          <div className="relative mb-4 mx-auto" style={{ width: '100%', maxWidth: '512px', height: '320px' }}>
+          <div className="relative mb-4 mx-auto" style={{ width: '100%', maxWidth: '800px', height: '320px' }}>
             {/* Preview Card - 下一个单词的预览 */}
             {currentIndex < words.length - 1 && (
               <div
