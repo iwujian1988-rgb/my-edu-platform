@@ -336,6 +336,25 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 1;
 }
 
+.clay-card-lilac {
+  background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 50%, #e9d5ff 100%);
+  border: 2px solid #c4b5fd;
+  border-radius: 0.75rem;
+  box-shadow:
+    0 2px 4px rgba(155, 140, 181, 0.1),
+    0 4px 8px rgba(155, 140, 181, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.clay-card-lilac:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 4px 8px rgba(155, 140, 181, 0.15),
+    0 8px 16px rgba(155, 140, 181, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
 .clay-icon {
   background: #F7FAFC;
   border: 2px solid #E2E8F0;
@@ -411,6 +430,72 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 4px 8px rgba(255, 140, 97, 0.3);
 }
 
+.clay-button-green {
+  background: linear-gradient(135deg, #4CAF50 0%, #45A049 100%);
+  color: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 4px rgba(76, 175, 80, 0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.clay-button-green:hover {
+  background: linear-gradient(135deg, #45A049 0%, #3D8B40 100%);
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.3);
+  transform: translateY(-1px);
+}
+
+.clay-button-yellow {
+  background: linear-gradient(135deg, #FFC107 0%, #FFA000 100%);
+  color: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 4px rgba(255, 193, 7, 0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.clay-button-yellow:hover {
+  background: linear-gradient(135deg, #FFA000 0%, #FF8F00 100%);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+  transform: translateY(-1px);
+}
+
+.clay-button-red {
+  background: linear-gradient(135deg, #F44336 0%, #E53935 100%);
+  color: #FFFFFF;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  border: none;
+  box-shadow: 0 2px 4px rgba(244, 67, 54, 0.2);
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.clay-button-red:hover {
+  background: linear-gradient(135deg, #E53935 0%, #D32F2F 100%);
+  box-shadow: 0 4px 8px rgba(244, 67, 54, 0.3);
+  transform: translateY(-1px);
+}
+
 .clay-float {
   animation: float 3s ease-in-out infinite;
 }
@@ -434,6 +519,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .text-gradient-purple {
+  background: linear-gradient(135deg, #9B8CB5 0%, #B8A8D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-lilac {
   background: linear-gradient(135deg, #9B8CB5 0%, #B8A8D4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
