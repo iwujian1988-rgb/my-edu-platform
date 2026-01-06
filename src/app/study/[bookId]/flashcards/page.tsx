@@ -417,7 +417,7 @@ export default function FlashcardsPage() {
                 style={{
                   height: '800px',
                   opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 1 : 0,
-                  transform: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? `translateZ(-50px) scale(1.05)` : `translateZ(-50px) scale(1)`,
+                  transform: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? `translateZ(0px) scale(1)` : `translateZ(-50px) scale(1)`,
                   transition: 'all 0.3s ease-out',
                   zIndex: 0,
                   perspective: '1000px'
@@ -472,8 +472,9 @@ export default function FlashcardsPage() {
                 top: '-800px',
                 height: '800px',
                 perspective: '1000px',
+                opacity: (dragStart || keyboardAnimation) ? 0 : 1,
                 transform: `translateZ(0px) translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
-                transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out' : 'transform 0.3s ease-out',
+                transition: dragStart || keyboardAnimation ? 'transform 0.3s ease-out, opacity 0.3s ease-out' : 'transform 0.3s ease-out, opacity 0.3s ease-out',
                 zIndex: 10
               }}
             >
@@ -486,7 +487,7 @@ export default function FlashcardsPage() {
                 }}
               >
                 {/* Front - Word */}
-                <div className="text-center" style={{ backfaceVisibility: 'hidden', transition: 'opacity 0.3s ease-out', opacity: (Math.abs(dragOffset.x) > 50 || Math.abs(dragOffset.y) > 50 || keyboardAnimation) ? 0.3 : 1 }}>
+                <div className="text-center" style={{ backfaceVisibility: 'hidden' }}>
                   {/* Status Badge */}
                   {progress && (
                     <div className="mb-4">
