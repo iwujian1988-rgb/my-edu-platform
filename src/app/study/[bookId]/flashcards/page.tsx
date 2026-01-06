@@ -478,6 +478,22 @@ export default function FlashcardsPage() {
             </div>
           </div>
 
+          {/* 操作提示 */}
+          <div className="grid grid-cols-3 gap-3 mb-6 text-center">
+            <div className="clay-card p-3">
+              <p className="text-xs text-gray-500">⬅️ 左滑</p>
+              <p className="text-sm font-semibold text-green-700">认识</p>
+            </div>
+            <div className="clay-card p-3">
+              <p className="text-xs text-gray-500">↑ 上滑</p>
+              <p className="text-sm font-semibold text-yellow-700">模糊</p>
+            </div>
+            <div className="clay-card p-3">
+              <p className="text-xs text-gray-500">➡️ 右滑</p>
+              <p className="text-sm font-semibold text-red-700">不认识</p>
+            </div>
+          </div>
+
           {/* Complete Message */}
           {currentIndex === words.length - 1 && (
             <div className="clay-card-lilac p-6 text-center">
