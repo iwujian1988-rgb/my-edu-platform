@@ -376,8 +376,8 @@ export default function FlashcardsPage() {
       </header>
 
       {/* Flashcard */}
-      <main className="container mx-auto px-4 py-4">
-        <div className="max-w-xl mx-auto">
+      <main className="container mx-auto px-4" style={{ minHeight: 'calc(100vh - 80px)', display: 'flex', flexDirection: 'column' }}>
+        <div className="max-w-xl mx-auto flex-1 flex flex-col justify-center" style={{ paddingTop: '1rem' }}>
           {/* Progress Bar */}
           <div className="mb-4">
             <div className="flex justify-between text-sm text-gray-600 font-semibold mb-2">
