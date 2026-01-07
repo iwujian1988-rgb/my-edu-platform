@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { Volume2, Eye, EyeOff } from 'lucide-react'
+import { speak, initializeTTS, stopSpeaking } from '@/lib/speech'
 
 interface Word {
   id: string
@@ -115,47 +116,39 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
       .join(', ')
   }
 
-  // 发音功能 - 支持单词、搭配、例句
-  const handleSpeak = (text: string) => {
-    if ('speechSynthesis' in window) {
-      console.log('🔊 WordCard: Speaking', text)
+  // 发音功能 - 支持单词、搭配、例句（使用新的TTS工具）
+  const handleSpeak = async (text: string) => {
+    // 确保TTS已初始化
+    if (!(await initializeTTS())) {
+      console.warn('⚠️ WordCard: TTS initialization failed')
+      return
+    }
 
-      // 创建utterance - 让Chrome自动选择voice
-      const utterance = new SpeechSynthesisUtterance(text)
-      utterance.lang = 'en-US'
-      utterance.rate = 1.0
-      utterance.pitch = 1.0
-      utterance.volume = 1.0
+    setIsPlaying(true)
 
-      utterance.onstart = () => {
+    // 使用新的speak函数
+    speak(text, {
+      lang: 'en-US',
+      rate: 1.0,
+      pitch: 1.0,
+      volume: 1.0,
+      onStart: () => {
         console.log('✅ WordCard: Speech STARTED for', text)
-        setIsPlaying(true)
-      }
-
-      utterance.onend = () => {
+      },
+      onEnd: () => {
         console.log('✅ WordCard: Speech ENDED for', text)
         setIsPlaying(false)
-      }
-
-      utterance.onerror = (event) => {
+      },
+      onError: (event) => {
         console.error('❌ WordCard: Speech error', event.error)
         setIsPlaying(false)
       }
-
-      speechSynthesis.speak(utterance)
-
-      // 检查状态
-      setTimeout(() => {
-        console.log('🔊 WordCard 300ms check - speaking:', speechSynthesis.speaking)
-        if (!speechSynthesis.speaking) {
-          console.error('❌ WordCard: TTS may be disabled - check chrome://settings/content/speech')
-        }
-      }, 300)
-    }
+    })
   }
 
   // 状态标记
   const handleStatusChange = (status: 'known' | 'fuzzy' | 'unknown') => {
+    console.log('🔘 WordCard: Button clicked', { wordId: word.id, status })
     onStatusChange(word.id, status)
   }
 

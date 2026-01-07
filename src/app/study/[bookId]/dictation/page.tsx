@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw, Settings, X } from 'lucide-react'
 import Link from 'next/link'
+import { speak as speakText, initializeTTS, pauseSpeaking, resumeSpeaking } from '@/lib/speech'
 
 // 辅助函数：Fisher-Yates 洗牌算法
 function shuffleArray<T>(array: T[]): T[] {
@@ -240,32 +241,37 @@ export default function DictationPage() {
     }
   }, [currentIndex, currentWord, loading, feedback])
 
-  // Text-to-speech - 只播放一次
-  const speak = useCallback((text: string) => {
-    if ('speechSynthesis' in window && text) {
-      speechSynthesis.cancel()
+  // Text-to-speech - 使用新的TTS工具
+  const speak = useCallback(async (text: string) => {
+    // 确保TTS已初始化
+    if (!(await initializeTTS())) {
+      console.warn('⚠️ Dictation: TTS initialization failed')
+      return
+    }
 
-      const utterance = new SpeechSynthesisUtterance(text)
-      utterance.lang = 'en-US'
-      utterance.rate = 0.8 // 稍慢便于听写
-      utterance.pitch = 1.0
+    if (text) {
+      setIsPlaying(true)
+      setIsPaused(false)
 
-      utterance.onstart = () => {
-        setIsPlaying(true)
-        setIsPaused(false)
-      }
-
-      utterance.onend = () => {
-        setIsPlaying(false)
-        setIsPaused(false)
-      }
-
-      utterance.onerror = () => {
-        setIsPlaying(false)
-        setIsPaused(false)
-      }
-
-      speechSynthesis.speak(utterance)
+      speakText(text, {
+        lang: 'en-US',
+        rate: 0.8, // 稍慢便于听写
+        pitch: 1.0,
+        volume: 1.0,
+        onStart: () => {
+          console.log('✅ Dictation: Speech STARTED')
+        },
+        onEnd: () => {
+          console.log('✅ Dictation: Speech ENDED')
+          setIsPlaying(false)
+          setIsPaused(false)
+        },
+        onError: () => {
+          console.error('❌ Dictation: Speech error')
+          setIsPlaying(false)
+          setIsPaused(false)
+        }
+      })
     }
   }, [])
 
@@ -297,15 +303,15 @@ export default function DictationPage() {
     }
   }
 
-  // 暂停/继续播放
+  // 暂停/继续播放 - 使用新的TTS工具
   const handleTogglePause = () => {
     if (isPaused) {
       // 继续
-      speechSynthesis.resume()
+      resumeSpeaking()
       setIsPaused(false)
     } else {
       // 暂停
-      speechSynthesis.pause()
+      pauseSpeaking()
       setIsPaused(true)
     }
   }

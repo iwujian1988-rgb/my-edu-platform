@@ -114,7 +114,7 @@ export function WordList({ initialWords, bookId, globalHideChinese = false }: Wo
           const statusMap: Record<string, 'known' | 'fuzzy' | 'unknown' | 'new'> = {}
           const dbStatusMap: Record<string, 'known' | 'fuzzy' | 'unknown' | 'new'> = {
             'known': 'known',
-            'vague': 'fuzzy',
+            'fuzzy': 'fuzzy',
             'unknown': 'unknown',
             'new': 'new'
           }
@@ -144,17 +144,60 @@ export function WordList({ initialWords, bookId, globalHideChinese = false }: Wo
 
   // 处理状态变更并保存
   const handleStatusChange = useCallback(async (wordId: string, status: 'known' | 'fuzzy' | 'unknown') => {
-    // 立即保存到 localStorage
+    console.log('🚀 WordList.handleStatusChange called:', { wordId, status, bookId })
+
+    // 立即保存到 localStorage（乐观更新）
     const localKey = `word-progress-${bookId}`
     const localData = localStorage.getItem(localKey) || '{}'
     const statusMap = JSON.parse(localData)
     statusMap[wordId] = status
     localStorage.setItem(localKey, JSON.stringify(statusMap))
+    console.log('💾 Saved to localStorage')
 
-    // 直接更新状态
+    // 立即更新UI
     setWords(prevWords => prevWords.map(w =>
       w.id === wordId ? { ...w, status } : w
     ))
+
+    // 保存到数据库
+    setIsSaving(true)
+    try {
+      const response = await fetch('/api/word-progress', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          word_id: wordId,
+          book_id: bookId,
+          status: status
+        })
+      })
+
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error('❌ Failed to save word progress:')
+        console.error('  Status:', response.status)
+        console.error('  StatusText:', response.statusText)
+        console.error('  Response:', errorText)
+        try {
+          const errorData = JSON.parse(errorText)
+          console.error('  Parsed Error:', errorData)
+        } catch (e) {
+          console.error('  (Could not parse as JSON)')
+        }
+      } else {
+        const result = await response.json()
+        console.log('✅ Word progress saved:', result)
+      }
+    } catch (error) {
+      console.error('❌ Exception in handleStatusChange:', error)
+      console.error('  Error name:', (error as any)?.name)
+      console.error('  Error message:', (error as any)?.message)
+      console.error('  Error stack:', (error as any)?.stack)
+    } finally {
+      setIsSaving(false)
+    }
   }, [bookId])
 
   return (

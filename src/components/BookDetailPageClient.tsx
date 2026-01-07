@@ -1,12 +1,14 @@
 'use client'
 
-import { useState, useMemo, useEffect } from 'react'
-import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb } from 'lucide-react'
+import { useState, useMemo, useEffect, useRef } from 'react'
+import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle } from 'lucide-react'
 import Link from 'next/link'
+import { useSearchParams, useRouter } from 'next/navigation'
 import { WordList } from '@/components/WordList'
 import { GlobalHideButton } from '@/components/GlobalHideButton'
 import { ScopeSelectorModal } from '@/components/ScopeSelectorModal'
 import { BookIcon } from '@/components/BookIcon'
+import { saveResumeState } from '@/lib/resumeState'
 
 interface Word {
   id: string
@@ -29,6 +31,8 @@ interface Book {
   title: string
   description: string
   total_words: number
+  is_official?: boolean
+  created_by?: string
 }
 
 interface BookDetailPageClientProps {
@@ -42,6 +46,8 @@ type SortOrder = 'default' | 'random'
 type StatusFilter = 'all' | 'new' | 'known' | 'fuzzy' | 'unknown'
 
 export function BookDetailPageClient({ book, words, user, useMockData }: BookDetailPageClientProps) {
+  const searchParams = useSearchParams()
+
   const [globalHideChinese, setGlobalHideChinese] = useState(false)
   const [sortOrder, setSortOrder] = useState<SortOrder>('default')
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
@@ -52,10 +58,44 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
   const [showThemeMenu, setShowThemeMenu] = useState(false)
   const [showSceneMenu, setShowSceneMenu] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
+  const [hasRestoredState, setHasRestoredState] = useState(false)
+  const isRestoringRef = useRef(false) // 用于标记是否正在恢复状态
 
   // 范围选择对话框状态
   const [showScopeModal, setShowScopeModal] = useState(false)
   const [selectedPracticeMode, setSelectedPracticeMode] = useState<'flashcards' | 'dictation' | 'match-game'>('flashcards')
+
+  // 删除词库状态
+  const [showDeleteConfirm1, setShowDeleteConfirm1] = useState(false)
+  const [showDeleteConfirm2, setShowDeleteConfirm2] = useState(false)
+  const [isDeleting, setIsDeleting] = useState(false)
+  const [deleteError, setDeleteError] = useState('')
+  const router = useRouter()
+
+  // 处理删除词库
+  const handleDeleteBook = async () => {
+    setIsDeleting(true)
+    setDeleteError('')
+
+    try {
+      const response = await fetch(`/api/books/${book.id}`, {
+        method: 'DELETE'
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || '删除失败')
+      }
+
+      // 删除成功，跳转到首页
+      router.push('/')
+    } catch (error: any) {
+      setDeleteError(error.message)
+      setIsDeleting(false)
+      setShowDeleteConfirm2(false)
+    }
+  }
 
   // 随机选择一条学习小贴士
   const tips = [
@@ -70,6 +110,53 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
     setRandomTip(tips[Math.floor(Math.random() * tips.length)])
   }, [])
 
+  // ⭐ 保存当前浏览状态（筛选条件 + 页码）
+  const saveCurrentState = async () => {
+    // 如果正在恢复状态，不保存
+    if (isRestoringRef.current) {
+      console.log('⏭️ Skipping save during restoration')
+      return
+    }
+
+    console.log('💾 Saving word list state:', {
+      theme: selectedTheme,
+      scenario: selectedScene,
+      status: statusFilter,
+      page: currentPage
+    })
+
+    await saveResumeState(book.id, 'word-list', {
+      filters: {
+        theme: selectedTheme,
+        scenario: selectedScene,
+        status: statusFilter
+      },
+      page: currentPage
+    })
+  }
+
+  // ⭐ 当筛选条件或页码改变时保存状态
+  useEffect(() => {
+    // 如果正在恢复状态，不保存
+    if (isRestoringRef.current) return
+
+    // 使用更短的防抖时间（100ms），确保用户快速操作也能保存
+    const timeoutId = setTimeout(() => {
+      saveCurrentState()
+    }, 100)
+
+    return () => clearTimeout(timeoutId)
+  }, [selectedTheme, selectedScene, statusFilter, currentPage])
+
+  // ⭐ 页面卸载时立即保存状态
+  useEffect(() => {
+    return () => {
+      // 组件卸载时立即保存（不使用 beforeunload）
+      console.log('💾 Saving state on unmount')
+      saveCurrentState()
+    }
+  }, [selectedTheme, selectedScene, statusFilter, currentPage])
+
   const WORDS_PER_PAGE = 50
 
   // 监听滚动，显示/隐藏回到顶部按钮
@@ -81,6 +168,51 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  // ⭐ 恢复上次浏览状态（从 URL 参数）
+  useEffect(() => {
+    const theme = searchParams.get('theme')
+    const scene = searchParams.get('scenario')
+    const status = searchParams.get('status')
+    const page = searchParams.get('page')
+
+    // 如果 URL 带有参数，说明是从"继续学习"跳转过来的
+    if (theme || scene || status || page) {
+      console.log('📍 Restoring browsing state from URL:', { theme, scene, status, page })
+
+      // 标记开始恢复状态
+      isRestoringRef.current = true
+
+      // 批量设置状态
+      const updates: Promise<void>[] = []
+      if (theme && theme !== 'all') {
+        updates.push(Promise.resolve().then(() => setSelectedTheme(theme)))
+      }
+      if (scene && scene !== 'all') {
+        updates.push(Promise.resolve().then(() => setSelectedScene(scene)))
+      }
+      if (status && status !== 'all') {
+        updates.push(Promise.resolve().then(() => setStatusFilter(status as StatusFilter)))
+      }
+      if (page) {
+        updates.push(Promise.resolve().then(() => setCurrentPage(parseInt(page))))
+      }
+
+      // 等待所有状态设置完成
+      Promise.all(updates).then(() => {
+        // 延迟标记恢复完成，确保 React 已经处理完状态更新
+        setTimeout(() => {
+          isRestoringRef.current = false
+          setHasRestoredState(true)
+          console.log('✅ State restoration completed')
+        }, 200)
+      })
+    } else {
+      // 没有 URL 参数，直接标记为已恢复
+      isRestoringRef.current = false
+      setHasRestoredState(true)
+    }
+  }, [searchParams])
 
   // 滚动到顶部
   const scrollToTop = () => {
@@ -279,9 +411,109 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
               )}
             </div>
 
-            {/* User */}
+            {/* User & Actions */}
             <div className="flex items-center gap-3">
               <span className="text-sm text-slate-600 hidden sm:block">{user.email}</span>
+
+              {/* 删除词库按钮 - 仅自定义词库显示 */}
+              {!book.is_official && book.created_by === user.id && (
+                <>
+                  <button
+                    onClick={() => setShowDeleteConfirm1(true)}
+                    className="px-4 py-2 text-sm font-semibold text-red-600 border-2 border-red-200 rounded-xl hover:border-red-400 hover:bg-red-50 transition-all duration-200 flex items-center gap-2"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                    <span className="hidden sm:inline">删除词库</span>
+                  </button>
+
+                  {/* 第一次确认对话框 */}
+                  {showDeleteConfirm1 && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" style={{ marginTop: '10vh' }}>
+                      <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
+                            <AlertTriangle className="w-6 h-6 text-amber-600" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-bold text-slate-900 mb-2">确定删除词库？</h3>
+                            <p className="text-sm text-slate-600 mb-4">
+                              您即将删除自定义词库「{book.title}」，此操作不可撤销。
+                            </p>
+                            <div className="flex gap-3">
+                              <button
+                                onClick={() => {
+                                  setShowDeleteConfirm1(false)
+                                  setShowDeleteConfirm2(true)
+                                }}
+                                className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors"
+                              >
+                                确定删除
+                              </button>
+                              <button
+                                onClick={() => setShowDeleteConfirm1(false)}
+                                className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
+                              >
+                                取消
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 第二次确认对话框 */}
+                  {showDeleteConfirm2 && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" style={{ marginTop: '10vh' }}>
+                      <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
+                            <AlertTriangle className="w-6 h-6 text-red-600" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-lg font-bold text-slate-900 mb-2">最后确认</h3>
+                            <p className="text-sm text-slate-600 mb-4">
+                              删除后，所有单词、学习进度、练习记录都将被永久删除，无法恢复！
+                            </p>
+                            {deleteError && (
+                              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl">
+                                <p className="text-sm text-red-600">{deleteError}</p>
+                              </div>
+                            )}
+                            <div className="flex gap-3">
+                              <button
+                                onClick={handleDeleteBook}
+                                disabled={isDeleting}
+                                className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                              >
+                                {isDeleting ? (
+                                  <>
+                                    <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                                    删除中...
+                                  </>
+                                ) : (
+                                  '确认删除'
+                                )}
+                              </button>
+                              <button
+                                onClick={() => {
+                                  setShowDeleteConfirm2(false)
+                                  setDeleteError('')
+                                }}
+                                disabled={isDeleting}
+                                className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors disabled:opacity-50"
+                              >
+                                取消
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
+
               <Link
                 href="/logout"
                 className="px-4 py-2 text-sm font-semibold text-slate-700 border-2 border-slate-200 rounded-xl hover:border-red-300 hover:text-red-600 hover:bg-red-50 transition-all duration-200"

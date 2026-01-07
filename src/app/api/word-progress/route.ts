@@ -71,15 +71,19 @@ export async function POST(request: NextRequest) {
     const { data: { user }, error: userError } = await supabase.auth.getUser()
 
     if (userError || !user) {
+      console.error('❌ POST /api/word-progress - Unauthorized:', userError)
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
     // 解析请求体
     const body = await request.json()
+    console.log('📝 POST /api/word-progress - Request body:', body)
+
     const { word_id, book_id, status, consecutive_correct_count, match_count, fail_count } = body
 
     // 验证必需参数
     if (!word_id || !book_id || !status) {
+      console.error('❌ POST /api/word-progress - Missing required params:', { word_id, book_id, status })
       return NextResponse.json(
         { error: 'word_id, book_id, and status are required' },
         { status: 400 }
@@ -87,8 +91,9 @@ export async function POST(request: NextRequest) {
     }
 
     // 验证状态值
-    const validStatuses = ['new', 'known', 'vague', 'unknown']
+    const validStatuses = ['new', 'known', 'fuzzy', 'unknown']
     if (!validStatuses.includes(status)) {
+      console.error('❌ POST /api/word-progress - Invalid status:', status)
       return NextResponse.json(
         { error: `status must be one of: ${validStatuses.join(', ')}` },
         { status: 400 }
@@ -103,6 +108,8 @@ export async function POST(request: NextRequest) {
       status,
       updated_at: new Date().toISOString()
     }
+
+    console.log('✅ Ready to upsert word progress:', updateData)
 
     // 如果提供了consecutive_correct_count，则更新该字段
     if (typeof consecutive_correct_count === 'number') {
@@ -129,9 +136,48 @@ export async function POST(request: NextRequest) {
       .select()
 
     if (upsertError) {
-      console.error('Error saving word progress:', upsertError)
-      return NextResponse.json({ error: 'Failed to save word progress' }, { status: 500 })
+      console.error('❌ POST /api/word-progress - Database error:', upsertError)
+      return NextResponse.json({ error: 'Failed to save word progress', details: upsertError }, { status: 500 })
     }
+
+    // 手动处理错题本逻辑（绕过触发器的 RLS 问题）
+    try {
+      if (status === 'unknown' || status === 'fuzzy') {
+        // 添加到错题本
+        await supabase
+          .from('mistakes')
+          .upsert({
+            user_id: user.id,
+            word_id,
+            book_id,
+            wrong_count: 1,
+            last_wrong_at: new Date().toISOString(),
+            is_resolved: false
+          } as any, {
+            onConflict: 'user_id,word_id,book_id',
+            ignoreDuplicates: false
+          })
+      } else if (status === 'known') {
+        // 标记错题已解决
+        await supabase
+          .from('mistakes')
+          // @ts-ignore - Supabase type inference issue
+          .update({
+            is_resolved: true,
+            updated_at: new Date().toISOString()
+          })
+          .match({
+            user_id: user.id,
+            word_id,
+            book_id
+          })
+      }
+    } catch (mistakesError) {
+      // 错题本操作失败不影响主流程，只记录日志
+      console.error('⚠️ POST /api/word-progress - Mistakes update failed:', mistakesError)
+    }
+
+    console.log('✅ POST /api/word-progress - Success:', progressData?.[0])
 
     return NextResponse.json({
       success: true,
@@ -139,8 +185,8 @@ export async function POST(request: NextRequest) {
     })
 
   } catch (error) {
-    console.error('Error in POST /api/word-progress:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    console.error('❌ Error in POST /api/word-progress:', error)
+    return NextResponse.json({ error: 'Internal server error', details: error }, { status: 500 })
   }
 }
 

@@ -162,7 +162,9 @@ export default async function BookDetailPage({
       id: id,
       title: 'CET-4 核心词汇（演示）',
       description: '大学英语四级必备词汇 - 这是一个演示页面，实际使用时将从数据库加载',
-      total_words: words.length
+      total_words: words.length,
+      is_official: true, // Mock数据视为官方词库
+      created_by: undefined
     }
   }
 

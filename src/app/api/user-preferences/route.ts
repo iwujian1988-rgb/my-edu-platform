@@ -40,7 +40,8 @@ export async function GET(request: NextRequest) {
         hide_definition: (preferences as UserPreference | null)?.hide_definition || false,
         shuffle_order: (preferences as UserPreference | null)?.shuffle_order || false,
         auto_remove_from_mistakes: (preferences as UserPreference | null)?.auto_remove_from_mistakes || false,
-        consecutive_correct_threshold: (preferences as UserPreference | null)?.consecutive_correct_threshold || 3
+        consecutive_correct_threshold: (preferences as UserPreference | null)?.consecutive_correct_threshold || 3,
+        last_resume_state: (preferences as any)?.last_resume_state || null
       }
     })
   } catch (error) {
@@ -97,7 +98,8 @@ export async function POST(request: NextRequest) {
       hide_definition,
       shuffle_order,
       auto_remove_from_mistakes,
-      consecutive_correct_threshold
+      consecutive_correct_threshold,
+      last_resume_state
     } = body
 
     console.log('Request body:', {
@@ -106,7 +108,8 @@ export async function POST(request: NextRequest) {
       hide_definition,
       shuffle_order,
       auto_remove_from_mistakes,
-      consecutive_correct_threshold
+      consecutive_correct_threshold,
+      last_resume_state
     })
 
     if (!book_id) {
@@ -129,6 +132,7 @@ export async function POST(request: NextRequest) {
     if (typeof shuffle_order === 'boolean') updateData.shuffle_order = shuffle_order
     if (typeof auto_remove_from_mistakes === 'boolean') updateData.auto_remove_from_mistakes = auto_remove_from_mistakes
     if (typeof consecutive_correct_threshold === 'number') updateData.consecutive_correct_threshold = consecutive_correct_threshold
+    if (last_resume_state && typeof last_resume_state === 'object') updateData.last_resume_state = last_resume_state
 
     console.log('Saving preferences for user:', user.email, updateData)
 

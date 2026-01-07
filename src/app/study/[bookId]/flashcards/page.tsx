@@ -4,6 +4,8 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { ArrowLeft, Volume2 } from 'lucide-react'
 import Link from 'next/link'
+import { speak as speakText, initializeTTS } from '@/lib/speech'
+import { saveResumeState } from '@/lib/resumeState'
 
 type Word = {
   id: string
@@ -82,6 +84,16 @@ export default function FlashcardsPage() {
 
         setWords(wordsData.data)
 
+        // ⭐ 恢复上次学习位置（从 URL 参数）
+        const indexParam = searchParams.get('index')
+        if (indexParam) {
+          const restoredIndex = parseInt(indexParam)
+          if (restoredIndex >= 0 && restoredIndex < wordsData.data.length) {
+            console.log('📍 Restoring flashcard position:', restoredIndex + 1)
+            setCurrentIndex(restoredIndex)
+          }
+        }
+
         // Generate scope label
         if (scope === 'all') {
           setScopeLabel('全书')
@@ -121,130 +133,24 @@ export default function FlashcardsPage() {
     fetchData()
   }, [bookId, scope, searchParams])
 
+  // ⭐ 页面卸载时保存当前卡片位置
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      saveResumeState(bookId, 'flashcards', {
+        index: currentIndex,
+        totalWords: words.length
+      })
+    }
+
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+  }, [bookId, currentIndex, words.length])
+
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
 
-  // 初始化语音合成 - 需要在用户交互后调用
-  const initializeSpeech = useCallback(() => {
-    if (!('speechSynthesis' in window)) {
-      console.warn('Browser does not support speech synthesis')
-      return false
-    }
-
-    console.log('🔧 Initializing speech synthesis...')
-
-    // 尝试获取语音列表来初始化引擎
-    try {
-      const voices = speechSynthesis.getVoices()
-      voicesRef.current = voices
-      console.log('Available voices:', voices.length)
-      voices.forEach((v, i) => console.log(`  ${i}: ${v.name} (${v.lang})`))
-
-      setIsSpeechInitialized(true)
-      console.log('✅ Speech synthesis initialized')
-      return true
-    } catch (error) {
-      console.error('❌ Error initializing speech synthesis:', error)
-      return false
-    }
-  }, [setIsSpeechInitialized])
-
-  // 实际播放音频的函数
-  const playSpeech = useCallback((text: string) => {
-    console.log('🎵 playSpeech called with:', text)
-
-    if (!('speechSynthesis' in window)) {
-      console.warn('Browser does not support speech synthesis')
-      return
-    }
-
-    // 直接取消任何正在播放的内容并播放新的
-    speechSynthesis.cancel()
-    isSpeakingRef.current = false
-
-    // 等待cancel完成
-    setTimeout(() => {
-      speakNow(text)
-    }, 100)
-  }, [])
-
-  // 实际执行播放的函数
-  const speakNow = useCallback((text: string) => {
-    console.log('🎤 speakNow called for:', text)
-
-    // 创建utterance - 不设置voice，让Chrome自动选择
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.lang = 'en-US'
-    utterance.rate = 1.0
-    utterance.pitch = 1.0
-    utterance.volume = 1.0
-
-    // 重要：不要设置voice属性，让Chrome自动处理
-
-    utterance.onstart = () => {
-      console.log('✅✅✅ Speech STARTED ✅✅✅ for:', text)
-      isSpeakingRef.current = true
-    }
-
-    utterance.onend = () => {
-      console.log('✅ Speech ENDED for:', text)
-      isSpeakingRef.current = false
-    }
-
-    utterance.onerror = (event) => {
-      console.error('❌ Speech error:', event.error)
-      console.error('Error details:', event)
-      isSpeakingRef.current = false
-    }
-
-    console.log('📢 Speaking (auto voice)...')
-    speechSynthesis.speak(utterance)
-
-    // 检查状态
-    setTimeout(() => {
-      const isSpeaking = speechSynthesis.speaking
-      const pending = speechSynthesis.pending
-      const paused = speechSynthesis.paused
-      console.log('🔍 300ms check - speaking:', isSpeaking, 'pending:', pending, 'paused:', paused)
-
-      if (isSpeaking && !isSpeakingRef.current) {
-        console.log('⚠️ API says speaking but onstart not fired - Chrome bug detected')
-        isSpeakingRef.current = true
-      }
-
-      if (!isSpeaking && !pending) {
-        console.error('❌ Not speaking and nothing pending - TTS may be disabled')
-        console.error('Please check: chrome://settings/content/speech')
-      }
-    }, 300)
-  }, [])
-
-  // 在组件加载时预加载语音列表
-  useEffect(() => {
-    if ('speechSynthesis' in window) {
-      // 尝试获取语音列表
-      const voices = speechSynthesis.getVoices()
-      voicesRef.current = voices
-      console.log('Preloaded voices:', voices.length)
-
-      // 监听语音列表加载完成事件
-      const handleVoicesChanged = () => {
-        const updatedVoices = speechSynthesis.getVoices()
-        voicesRef.current = updatedVoices
-        console.log('Voices changed event, total voices:', updatedVoices.length)
-        setIsSpeechInitialized(true)
-      }
-
-      speechSynthesis.onvoiceschanged = handleVoicesChanged
-
-      return () => {
-        speechSynthesis.onvoiceschanged = null
-      }
-    }
-  }, [])
-
-  // Text-to-speech (使用useCallback避免依赖问题)
-  const speak = useCallback((text: string) => {
+  // Text-to-speech (使用新的TTS工具)
+  const speak = useCallback(async (text: string) => {
     console.log('========== speak called ==========')
     console.log('Text:', text)
 
@@ -253,13 +159,20 @@ export default function FlashcardsPage() {
       return
     }
 
-    if (!('speechSynthesis' in window)) {
-      console.warn('Browser does not support speech synthesis')
+    // 确保TTS已初始化
+    if (!(await initializeTTS())) {
+      console.warn('⚠️ TTS initialization failed')
       return
     }
 
-    playSpeech(text)
-  }, [playSpeech])
+    // 使用新的speak函数
+    speakText(text, {
+      lang: 'en-US',
+      rate: 0.8,
+      pitch: 1.0,
+      volume: 1.0
+    })
+  }, [])
 
   // 批量保存函数
   const flushPendingSaves = useCallback(async () => {
@@ -337,14 +250,21 @@ export default function FlashcardsPage() {
     // 6. 延迟后切换到下一个单词
     setTimeout(() => {
       if (currentIndex < words.length - 1) {
-        setCurrentIndex(prev => prev + 1)
+        const nextIndex = currentIndex + 1
+        setCurrentIndex(nextIndex)
+
+        // ⭐ 保存学习进度
+        saveResumeState(bookId, 'flashcards', {
+          index: nextIndex,
+          totalWords: words.length
+        })
       }
       // 清除切换状态，显示新卡片
       setTimeout(() => {
         setIsCardSwitching(false)
       }, 50)
     }, 200)
-  }, [currentWord, currentIndex, words.length, flushPendingSaves, hasUserInteracted])
+  }, [currentWord, currentIndex, words.length, flushPendingSaves, hasUserInteracted, bookId])
 
   // 自动朗读新单词 - 当卡片切换完成后自动朗读
   useEffect(() => {
@@ -608,6 +528,20 @@ export default function FlashcardsPage() {
             </div>
           </div>
 
+          {/* 用户未交互提示 - Chrome TTS 限制 */}
+          {!hasUserInteracted && (
+            <div
+              className="clay-card p-6 text-center mb-4 cursor-pointer hover:shadow-lg transition-shadow"
+              onClick={() => {
+                hasUserInteractedRef.current = true
+                setHasUserInteracted(true)
+              }}
+            >
+              <p className="text-lg font-semibold text-gray-700 mb-2">👆 点击此处开始学习</p>
+              <p className="text-sm text-gray-500">首次点击激活语音功能</p>
+            </div>
+          )}
+
           {/* Card */}
           <div className="relative mx-auto" style={{ width: '100%', maxWidth: '672px', height: '800px' }}>
             {/* Current Card */}
@@ -823,7 +757,7 @@ export default function FlashcardsPage() {
                         // 先初始化语音合成
                         if (!isSpeechInitialized) {
                           console.log('Initializing speech on first click...')
-                          initializeSpeech()
+                          initializeTTS()
                         }
 
                         // 然后播放音频
