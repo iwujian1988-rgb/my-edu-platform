@@ -116,6 +116,39 @@ export async function middleware(request: NextRequest) {
   }
 
   // ========================================
+  // Admin Routes - Require Admin Authentication
+  // ========================================
+
+  if (pathname.startsWith('/admin')) {
+    // /admin/login doesn't require authentication
+    if (pathname.startsWith('/admin/login')) {
+      return supabaseResponse
+    }
+
+    // All other /admin routes require admin authentication
+    if (!session) {
+      const redirectUrl = new URL('/admin/login', request.url)
+      redirectUrl.searchParams.set('redirect', pathname)
+      return NextResponse.redirect(redirectUrl)
+    }
+
+    // Check if user is an administrator
+    const { data: admin, error } = await supabase
+      .from('administrators')
+      .select('*')
+      .eq('user_id', session.user.id)
+      .eq('is_active', true)
+      .single()
+
+    if (error || !admin) {
+      // User is logged in but not an admin
+      const redirectUrl = new URL('/admin/login', request.url)
+      redirectUrl.searchParams.set('error', 'not_admin')
+      return NextResponse.redirect(redirectUrl)
+    }
+  }
+
+  // ========================================
   // Daily Quota Reset Check
   // ========================================
   

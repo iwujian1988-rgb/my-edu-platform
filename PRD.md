@@ -16,9 +16,9 @@
 [L1] 单词库大厅 (Library Hub)
 
 ├── [A] 个人学习区 (My Dashboard)
-├── 智能继续学习
+├── 继续学习
 ├── 错题本 (Mistakes Book)
-├── 生词日历
+├── 学习日历
 └── 新建自定义词库
 └── [B] 词库资源列表 (All Books List)
 ├── 筛选栏 (Tabs: 全部/考试/场景/教材)
@@ -57,7 +57,7 @@ IP/设备限流：单IP 1小时限3次；单设备24小时限1次。
 冲突解决：以服务器端接收到的“最后操作时间戳”为准，自动覆盖旧数据。
 4. [L1] 单词库大厅 (Library Hub)
 4.1 个人学习区
-智能继续学习卡片：展示上次学习进度。若无数据，按钮置灰，文案：“您还未开始学习，请开始学吧！”
+继续学习卡片：展示上次学习的词书及进度百分比。点击后直接进入该词书的详情页，用户可从详情页选择练习模式。若无学习记录，显示占位状态，文案："您还未开始学习，请选择一本词书开始吧！"
 功能入口卡片：
 错题本：显示错题总数。
 生词日历：显示今日新增词数。
@@ -757,14 +757,30 @@ API说明：调用第三方API将用户输入的英文单词自动匹配释义�
 删除词库 [新增]：
 需执行 3次确认 流程：点击删除 -> 弹窗“确定删除？” -> 弹窗“数据不可恢复！” -> 弹窗“最后确认” -> 执行删除。
 空状态：显示插画 + 文案“打造你的专属单词书” + 按钮“立即创建”。
-8. [L5] 生词日历与错题本
-生词日历：热力图展示每日新增生词；支持导出图片/Excel。
-错题本：
-数据源：标记为"未标注"、"不认识"或"模糊"的单词。
+8. [L5] 学习日历与错题本
+**学习日历**：
+- 数据源：`word_progress` 表的 `created_at` 字段
+- 统计范围：所有状态的单词（known, fuzzy, unknown, new）
+- 核心逻辑：记录用户每日学习活动，展示学习轨迹
+- 功能特性：
+  - GitHub 风格热力图：过去 365 天的学习记录
+  - 5 级颜色梯度：根据每日学习数量动态着色（浅绿 → 深绿）
+  - 统计指标：
+    - **累计单词**：总共学习过的单词数
+    - **连续学习**：连续有学习记录的天数
+    - **今日学习**：今天标记的单词数量
+- 设计理念：
+  - 正面激励：学习越多，格子越绿
+  - 活动记录：反映真实学习活动，不限于"错词"
+  - 类似 GitHub 贡献图：展示学习坚持度
+
+**错题本**：
+数据源：仅显示标记为"不认识"或"模糊"的单词（不包括"未标注"状态）。
+设计理念：错题本聚焦于用户真正遇到过问题的单词，而不是所有未标记的单词。
 空状态 [新增]：
 图标：奖杯插画。
-文案：“太棒了！你消灭了所有错题。”
-按钮：“去背新单词”。
+文案："太棒了！你消灭了所有错题。"
+按钮："去背新单词"。
 9. 后台数据与资源管理 (Backend & Data) [新增章节]
 9.1 官方词库导入规范
 官方词库不开发后台UI，采用 Excel 离线导入 模式。
@@ -904,3 +920,630 @@ BookDetailPage (Server Component)
 文案：“未找到相关内容”。
 操作：提供“意见反馈”链接。
 全局搜索：规划于 v3.3 版本上线，本期暂不开发。
+---
+
+## 功能实现记录 (Development Log)
+
+### 2026-01-07 - 个人学习区功能完成 ✅
+
+#### 实现模块
+1. **首页个人学习区** (`src/app/page.tsx`)
+   - 继续学习：显示上次学习的词书及进度，点击进入词书详情页
+   - 错题本：显示待复习单词数量
+   - 学习日历：显示今日新增单词数
+   - 新建自定义词库：功能开发中占位页面
+
+2. **错题本页面** (`/mistakes`) ✅
+   - 数据源：`status IN ('unknown', 'fuzzy')` **[修订]**
+   - **核心逻辑说明**：
+     - `unknown`：明确标记为不认识的单词
+     - `fuzzy`：标记为模糊的单词
+     - **不包括 `new`（未标注）状态**
+   - 设计决策 [2026-01-07 修订]：
+     - 原PRD设计包括 `new` 状态，目的是提醒用户学习所有未掌握的单词
+     - 但根据实际需求，错题本应聚焦于"真正的错题"（用户已经标记过的单词）
+     - `new` 状态的单词数量通常很多，会稀释错题本的焦点
+     - 用户可以通过"练习模式"来学习未标注的单词，错题本用于复习重点难点
+   - 显示：单词卡片 + 所属词书标签 + 状态标记功能
+   - 空状态：奖杯插画 + "太棒了！你消灭了所有错题。"
+
+3. **学习日历页面** (`/calendar`) ✅
+   - GitHub风格热力图（过去365天）
+   - 统计卡片：累计单词、连续学习天数、今日学习
+   - 5级颜色梯度显示学习密度
+   - 数据源：所有学习记录（不限状态）
+
+4. **继续学习** (首页卡片) ✅
+   - 显示上次学习的词书名称和进度百分比
+   - 点击直接跳转到词书详情页 (`/library/${bookId}`)
+   - 用户从详情页选择练习模式（听写、卡片、消消乐）
+   - 无学习记录时显示占位状态
+
+5. **自定义词库创建** (`/library/new`) 🚧
+   - 占位页面，功能开发中
+
+#### 技术实现
+- 使用 Server Components 和 Server Actions
+- Supabase 实时数据查询
+- Claymorphism 设计风格
+- 完全响应式设计
+
+#### 相关文件
+- `src/app/page.tsx` - 首页（个人学习区）
+- `src/app/mistakes/page.tsx` - 错题本页面
+- `src/app/calendar/page.tsx` - 生词日历页面
+- `src/app/study/page.tsx` - 简化重定向页面（重定向到首页）
+- `src/app/library/new/page.tsx` - 自定义词库创建
+- `src/components/VocabularyCalendarClient.tsx` - 日历热力图组件
+
+#### 错题本与练习模式的关系
+- **练习模式筛选**：`status != 'new'` （只练习标记过的单词）
+- **错题本筛选**：`status IN ('unknown', 'fuzzy')` （只显示错题，不包括未标注单词）**[修订]**
+
+---
+
+### 2026-01-07 - 错题本交互优化完成 ✅
+
+#### 问题诊断与修复
+1. **RLS 策略问题修复**
+   - 问题：`vocabulary_calendar` 表的 RLS 策略阻止了单词进度保存
+   - 错误：`new row violates row-level security policy for table "vocabulary_calendar"`
+   - 解决：为 `vocabulary_calendar` 表添加正确的 RLS 策略（INSERT/UPDATE/SELECT/DELETE）
+   - 相关文件：`supabase/migrations/FIX_VOCABULARY_CALENDAR_RLS_COMPLETE.sql`
+
+2. **历史数据同步**
+   - 问题：修复前标记的单词只保存在 localStorage，未同步到数据库
+   - 解决：创建浏览器控制台同步脚本，批量上传历史数据
+   - 相关文件：`SYNC_LOCALSTORAGE_TO_DB.js`
+
+#### 交互体验优化
+**错题本页面升级** (`src/app/mistakes/page.tsx` + `src/components/MistakesClient.tsx`) ✅
+
+1. **架构重构**：
+   - 从纯服务器组件改为混合架构
+   - 服务器组件：数据获取（`page.tsx`）
+   - 客户端组件：交互逻辑（`MistakesClient.tsx`）
+
+2. **即时删除功能**：
+   - 点击"认识"按钮后，单词立即从列表中消失
+   - 无需刷新页面
+   - 乐观更新 + 后台保存
+
+3. **优雅动画效果**：
+   - 删除动画：向右滑出（`translate-x-full`）
+   - 淡出效果（`opacity-0`）
+   - 缩小效果（`scale-95`）
+   - 动画时长：400ms（`duration-300`）
+   - 缓动函数：`ease-out`
+
+4. **用户体验提升**：
+   - 状态管理：使用 `useState` 管理单词列表和删除状态
+   - 防止重复操作：`removingIds` Set 跟踪正在删除的单词
+   - 平滑过渡：CSS transition 实现流畅动画
+
+#### 技术实现细节
+```typescript
+// 客户端状态管理
+const [words, setWords] = useState<MistakeWord[]>(initialWords)
+const [removingIds, setRemovingIds] = useState<Set<string>>(new Set())
+
+// 删除流程
+if (status === 'known') {
+  // 1. 标记为删除中（触发动画）
+  setRemovingIds(prev => new Set([...prev, wordId]))
+
+  // 2. 等待动画完成
+  await new Promise(resolve => setTimeout(resolve, 400))
+
+  // 3. 从列表中移除
+  setWords(prev => prev.filter(w => w.id !== wordId))
+
+  // 4. 后台保存到数据库
+  await fetch('/api/word-progress', { ... })
+}
+```
+
+#### CSS 动画类
+```css
+/* 正常状态 */
+.opacity-100.translate-x-0.scale-100 {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* 删除状态 */
+.opacity-0.translate-x-full.scale-95 {
+  opacity: 0;
+  transform: translateX(100%) scale(0.95);
+}
+
+/* 过渡效果 */
+.transition-all.duration-300.ease-out {
+  transition: all 300ms ease-out;
+}
+```
+
+#### 相关文件
+- `src/app/mistakes/page.tsx` - 服务器组件（数据获取）
+- `src/components/MistakesClient.tsx` - 客户端组件（交互逻辑）**[新增]**
+- `supabase/migrations/FIX_VOCABULARY_CALENDAR_RLS_COMPLETE.sql` - RLS 策略修复
+- `SYNC_LOCALSTORAGE_TO_DB.js` - 历史数据同步脚本
+
+#### 测试验证
+- ✅ 点击"认识"后单词立即消失
+- ✅ 动画流畅，无卡顿
+- ✅ 数据正确保存到数据库
+- ✅ 刷新页面后状态保持一致
+- ✅ 错题本数量实时更新
+
+#### 未来优化方向
+- 添加撤销功能（误点"认识"后可恢复）
+- 批量操作（全选标记为"认识"）
+- 筛选功能（按词书、状态筛选）
+
+---
+
+### 2026-01-07 - "继续学习"功能简化 ✅
+
+#### 问题背景
+用户反馈"智能继续学习"功能存在问题：
+- 点击后出现404错误
+- 跳转到空白页面
+- 首页控制台报错：`NEXT_REDIRECT` error
+- 用户体验不流畅
+
+#### 问题原因分析
+原设计采用多级重定向链：
+1. 首页 → `/study` (重定向页面)
+2. `/study` → `/study/${bookId}` (404 - 该路由不存在)
+3. 期望 → `/study/${bookId}/practice` (练习页面选择页)
+
+问题：
+- `/study/${bookId}` 路由不存在，导致404
+- 复杂的重定向逻辑导致 NEXT_REDIRECT 错误
+- 用户需要经过多次跳转才能开始学习
+
+#### 解决方案：简化架构
+完全移除中间重定向层，直接跳转到词书详情页：
+
+**修改前：**
+```
+首页"智能继续学习" → /study → (重定向逻辑) → /study/${bookId}/practice → 404错误
+```
+
+**修改后：**
+```
+首页"继续学习" → /library/${bookId} → 词书详情页（已有练习模式卡片）
+```
+
+#### 技术实现
+
+**1. 首页 (`src/app/page.tsx`)**
+- 获取用户最近学习的词书及进度
+- 显示词书名称和进度百分比
+- 链接改为直接跳转：`href={`/library/${lastStudyBook.id}`}`
+- 无学习记录时显示占位状态
+
+```typescript
+// 计算学习进度
+const { data: bookProgress } = await supabase
+  .from('word_progress')
+  .select('status')
+  .eq('user_id', user.id)
+  .eq('book_id', lastBookId)
+
+const learnedCount = bookProgress.filter(p => p.status !== 'new').length
+const progress = bookData.total_words > 0
+  ? Math.round((learnedCount / bookData.total_words) * 100)
+  : 0
+
+lastStudyBook = {
+  id: bookData.id,
+  title: bookData.title,
+  progress
+}
+```
+
+**2. 学习页面 (`src/app/study/page.tsx`)**
+- 简化为直接重定向到首页
+- 移除所有复杂逻辑和数据库查询
+- 用户从首页的"继续学习"卡片进入学习
+
+```typescript
+export default async function StudyPage() {
+  redirect('/') // 简单直接
+}
+```
+
+#### 用户体验优化
+1. **减少跳转次数**：从3次减少到1次
+2. **更清晰**：用户直接进入词书详情页，可以看到所有可用练习模式
+3. **更灵活**：用户可以选择听写、卡片背单词、消消乐等不同练习模式
+4. **更稳定**：消除重定向链和 NEXT_REDIRECT 错误
+
+#### 相关文件修改
+- `src/app/page.tsx` - 清理重复代码，修正"继续学习"链接
+- `src/app/study/page.tsx` - 简化为直接重定向
+- `PRD.md` - 更新功能描述，移除"智能"前缀
+
+#### 测试验证
+- ✅ 首页加载无错误
+- ✅ 点击"继续学习"直接进入词书详情页
+- ✅ 进度百分比正确显示
+- ✅ 无学习记录时占位状态正常
+- ✅ 消除 NEXT_REDIRECT 控制台错误
+
+---
+
+### 2026-01-07 - "继续学习"状态保存功能 ✅
+
+#### 功能概述
+实现智能学习状态保存和恢复，让用户可以无缝继续上次的学习进度。支持4个学习模式的状态记忆。
+
+#### 实现场景
+
+**1. 单词列表浏览**
+- **保存时机**：
+  - 用户改变筛选条件（主题、场景、状态）
+  - 用户翻页
+  - 用户离开页面（点击返回/关闭浏览器）
+- **保存内容**：
+  - 当前筛选条件（theme, scenario, status）
+  - 当前页码
+- **恢复逻辑**：
+  - 首页"继续学习"跳转到 `/library/{bookId}?theme=xxx&scenario=xxx&page=xxx`
+  - 自动应用筛选条件
+  - 自动跳转到对应页码
+
+**2. 卡片背单词**
+- **保存时机**：
+  - 每次切换到下一个卡片
+  - 用户离开页面
+- **保存内容**：
+  - 当前卡片索引
+  - 总单词数
+- **恢复逻辑**：
+  - 首页"继续学习"跳转到 `/study/{bookId}/flashcards?index=15`
+  - 直接显示第15个单词
+  - 提示："继续从第16个单词学习"
+
+**3. 听写模式**（原理同卡片模式）
+- **保存时机**：
+  - 每次提交答案后
+  - 每次跳过后
+  - 用户离开页面
+- **保存内容**：
+  - 当前单词索引
+  - 总单词数
+- **恢复逻辑**：
+  - 跳转到 `/study/{bookId}/dictation?index=8`
+  - 从第8个词继续听写
+
+**4. 消消乐**（Phase 2，待实现）
+- 保存游戏局状态
+- 保存单词列表
+
+#### 技术实现
+
+**数据库层**（`supabase/migrations/20260107_add_resume_state.sql`）
+```sql
+ALTER TABLE user_book_preferences
+ADD COLUMN IF NOT EXISTS last_resume_state JSONB DEFAULT '{}'::jsonb;
+```
+
+**数据结构**
+```typescript
+interface ResumeState {
+  mode: 'word-list' | 'flashcards' | 'dictation' | 'match-game'
+  bookId: string
+  bookTitle?: string
+  updatedAt: number
+  context?: {
+    // word-list
+    filters?: { theme?: string; scenario?: string; status?: string }
+    page?: number
+
+    // flashcards/dictation
+    index?: number
+    totalWords?: number
+
+    // match-game
+    sessionId?: string
+    wordIds?: string[]
+  }
+}
+```
+
+**工具函数**（`src/lib/resumeState.ts`）
+```typescript
+// 保存学习状态
+export async function saveResumeState(
+  bookId: string,
+  mode: ResumeMode,
+  context: ResumeState['context']
+)
+
+// 读取学习状态
+export async function getResumeState(bookId: string): Promise<ResumeState | null>
+```
+
+**首页智能跳转**（`src/app/page.tsx`）
+```typescript
+// 根据不同模式生成不同的跳转URL
+if (resumeState?.mode === 'word-list') {
+  // 带筛选参数和页码
+  continueURL = `/library/${bookId}?theme=${theme}&page=${page}`
+} else if (resumeState?.mode === 'flashcards') {
+  // 带卡片索引
+  continueURL = `/study/${bookId}/flashcards?index=${index}`
+} else if (resumeState?.mode === 'dictation') {
+  // 带单词索引
+  continueURL = `/study/${bookId}/dictation?index=${index}`
+}
+```
+
+**单词列表状态保存**（`src/components/BookDetailPageClient.tsx`）
+```typescript
+// 当筛选条件或页码改变时保存
+useEffect(() => {
+  const timeoutId = setTimeout(() => {
+    saveResumeState(book.id, 'word-list', {
+      filters: { theme: selectedTheme, scenario: selectedScene, status: statusFilter },
+      page: currentPage
+    })
+  }, 500) // 防抖，避免频繁保存
+
+  return () => clearTimeout(timeoutId)
+}, [selectedTheme, selectedScene, statusFilter, currentPage])
+
+// 页面卸载时保存
+useEffect(() => {
+  const handleBeforeUnload = () => {
+    saveResumeState(book.id, 'word-list', { /* ... */ })
+  }
+
+  window.addEventListener('beforeunload', handleBeforeUnload)
+  return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+}, [/* dependencies */])
+```
+
+**卡片背单词状态保存**（`src/app/study/[bookId]/flashcards/page.tsx`）
+```typescript
+// 恢复位置
+const indexParam = searchParams.get('index')
+if (indexParam) {
+  const restoredIndex = parseInt(indexParam)
+  setCurrentIndex(restoredIndex)
+}
+
+// 切换卡片时保存
+setTimeout(() => {
+  if (currentIndex < words.length - 1) {
+    const nextIndex = currentIndex + 1
+    setCurrentIndex(nextIndex)
+
+    // 保存进度
+    saveResumeState(bookId, 'flashcards', {
+      index: nextIndex,
+      totalWords: words.length
+    })
+  }
+}, 200)
+
+// 页面卸载时保存
+useEffect(() => {
+  const handleBeforeUnload = () => {
+    saveResumeState(bookId, 'flashcards', {
+      index: currentIndex,
+      totalWords: words.length
+    })
+  }
+
+  window.addEventListener('beforeunload', handleBeforeUnload)
+  return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+}, [bookId, currentIndex, words.length])
+```
+
+#### 用户体验亮点
+
+**1. 无感知保存**
+- 用户正常学习过程中自动保存
+- 不需要手动点击"保存"按钮
+- 使用防抖技术避免频繁写入
+
+**2. 智能恢复**
+- 点击"继续学习"直接回到上次位置
+- 自动应用筛选条件
+- 显示友好提示
+
+**3. 优雅降级**
+- 如果单词列表变化，回到第一个单词
+- 如果书籍被删除，回到首页
+- 不会报错或白屏
+
+#### 边界情况处理
+
+**Q1: 用户快速切换怎么办？**
+```typescript
+// 使用防抖，500ms内只保存一次
+const timeoutId = setTimeout(() => {
+  saveResumeState(...)
+}, 500)
+```
+
+**Q2: 用户返回后又重新进入？**
+```
+if (用户点击"继续学习") {
+  从上次位置继续 ✅
+}
+else if (用户主动进入某个模式) {
+  从头开始（这是用户的选择）✅
+}
+```
+
+**Q3: 页面刷新时怎么办？**
+```typescript
+// beforeunload 事件会触发，保存当前状态
+window.addEventListener('beforeunload', handleBeforeUnload)
+```
+
+#### 代码改动总结
+
+| 模块 | 文件 | 改动内容 | 代码量 |
+|------|------|---------|--------|
+| **基础设施** | | | |
+| 数据库迁移 | `supabase/migrations/20260107_add_resume_state.sql` | 添加 JSONB 字段 | ~10行 |
+| 工具函数 | `src/lib/resumeState.ts` | saveResumeState, getResumeState | ~70行 |
+| API改造 | `src/app/api/user-preferences/route.ts` | 支持 JSON 字段读写 | ~10行 |
+| **各模式** | | | |
+| 单词列表 | `src/components/BookDetailPageClient.tsx` | 状态保存+恢复逻辑 | ~40行 |
+| 卡片模式 | `src/app/study/[bookId]/flashcards/page.tsx` | 索引保存+恢复 | ~30行 |
+| 首页 | `src/app/page.tsx` | 智能跳转逻辑 | ~40行 |
+
+**总计：**
+- 代码量：~200行
+- 开发时间：约4小时
+
+#### 数据库迁移步骤
+
+**重要：请在 Supabase SQL Editor 中执行以下SQL**
+
+```sql
+-- 添加学习状态恢复字段
+ALTER TABLE user_book_preferences
+ADD COLUMN IF NOT EXISTS last_resume_state JSONB DEFAULT '{}'::jsonb;
+
+-- 添加注释
+COMMENT ON COLUMN user_book_preferences.last_resume_state IS '用户最后的学习状态，用于恢复学习位置';
+```
+
+详细说明请参考：`MIGRATION_INSTRUCTIONS.md`
+
+#### 测试验证
+
+**测试场景1：单词列表**
+1. 打开词书详情页
+2. 筛选：主题=旅游，状态=未标注
+3. 翻到第3页
+4. 点击返回，回到首页
+5. 点击"继续学习"
+6. ✅ 应该自动应用筛选，显示第3页
+
+**测试场景2：卡片背单词**
+1. 进入卡片背单词模式
+2. 学到第15个单词
+3. 点击返回，回到首页
+4. 点击"继续学习"
+5. ✅ 应该直接显示第15个单词
+
+**测试场景3：听写模式**
+1. 进入听写模式
+2. 听写到第8个词
+3. 点击返回，回到首页
+4. 点击"继续学习"
+5. ✅ 应该从第8个词继续听写
+
+#### 未来优化方向
+
+**Phase 2 功能**（待实现）：
+1. 听写模式状态保存（同卡片模式）
+2. 消消乐游戏局恢复
+3. 滚动位置记忆
+
+**可选增强**：
+1. 显示详细统计（正确率、用时等）
+2. 智能建议（正确率低时建议先复习）
+3. 历史记录查看（可以回到上周的学习状态）
+
+
+
+### 2026-01-07 - 错题本功能完善 ✅
+
+**需求**: 为错题本添加筛选、排序、统计功能，提高学习效率
+
+**实现内容**:
+
+**1. 统计卡片** (`src/components/MistakesClient.tsx`)
+- ✅ 顶部显示3个统计卡片 **[修订]**
+  - 待复习总数
+  - 不认识单词数（红色）
+  - 模糊单词数（黄色）
+- 实时统计，动态更新
+
+**2. 筛选功能**
+- ✅ **按词书筛选**:
+  - 下拉菜单选择词书
+  - 显示每个词书的单词数量
+  - 支持查看全部或单一词书
+- ✅ **按状态筛选**:
+  - 全部 / 不认识 / 模糊 **[修订]**
+  - 显示每个状态的单词数量
+
+**3. 排序功能**
+- ✅ **默认排序**: 按添加顺序
+- ✅ **按词书排序**: 词书名称字母顺序
+- ✅ **按状态排序**: 不认识 → 模糊 **[修订]**
+
+**4. UI优化**
+- ✅ 筛选栏显示当前结果数
+- ✅ 无结果时的友好提示
+- ✅ 响应式设计，支持移动端
+
+**文件修改**:
+- `src/components/MistakesClient.tsx` - 添加筛选、排序、统计功能 (~100行)
+
+**使用场景**:
+1. 用户进入错题本，立即看到统计概览
+2. 想重点复习某个词书 → 按词书筛选
+3. 想先攻克"不认识"的单词 → 按状态筛选
+4. 想按词书系统复习 → 按词书排序
+
+**用户体验提升**:
+- ✅ 一目了然的统计信息
+- ✅ 灵活的筛选和排序
+- ✅ 更高效的学习路径
+
+---
+
+### 2026-01-07 - 错题本数据范围修订 ✅
+
+**背景**: 原PRD设计错题本包括 `new`（未标注）状态，但根据实际需求需要调整
+
+**修订内容**:
+
+**1. 数据源调整**
+- **修订前**: `status IN ('unknown', 'fuzzy', 'new')`
+- **修订后**: `status IN ('unknown', 'fuzzy')`
+- **变更原因**:
+  - 错题本应聚焦于"真正的错题"（用户明确标记过的单词）
+  - `new` 状态的单词数量通常很多（可能数百个），会稀释错题本的焦点
+  - 用户需要的是重点难点复习工具，而不是"所有未学单词列表"
+
+**2. 设计理念更新**
+- **定位调整**: 从"需要学习的单词" → "需要复习的错题"
+- **职责分离**:
+  - **练习模式**：学习未标注的单词（`new` 状态）
+  - **错题本**：复习已标记的错题（`unknown` + `fuzzy`）
+
+**3. 影响范围**
+- **后端查询**: `src/app/mistakes/page.tsx:38` - 数据库查询修改
+- **前端统计**: `src/components/MistakesClient.tsx:53` - 统计卡片从4个减少到3个
+- **筛选选项**: 移除"未标注"筛选选项
+- **排序逻辑**: 移除 `new` 状态的排序
+
+**4. 用户价值**
+- ✅ 错题本更聚焦，避免被大量未标注单词淹没
+- ✅ 用户可以专注于真正的难点复习
+- ✅ 符合"错题本"的字面含义和用户期望
+
+**文件修改**:
+- `PRD.md` - 更新错题本定义（第777-778行、第936-948行、第979-981行）
+- `src/app/mistakes/page.tsx` - 查询条件修改
+- `src/components/MistakesClient.tsx` - 统计和筛选逻辑修改
+
+**决策记录**:
+- 决策时间: 2026-01-07
+- 决策理由: 用户体验优先，错题本应聚焦于真正的错题复习
+- 影响评估: 正面，提升错题本的实用性和聚焦度
+
+

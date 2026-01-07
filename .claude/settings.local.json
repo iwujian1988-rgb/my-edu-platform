@@ -37,7 +37,16 @@
       "Skill(ui-ux-pro-max)",
       "Bash(python3:*)",
       "Bash(ping:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "Bash(rm:*)",
+      "Bash(npx supabase db reset:*)",
+      "Bash(npx supabase migration push:*)",
+      "Bash(npx supabase db push:*)",
+      "Bash(start test-resultsresume-learning-smoke--继续学-0c044-核心场景1-第2页-→-返回-→-继续-→-应在第2页-chromiumtest-failed-1.png)",
+      "Bash(npm run test:*)",
+      "Bash(python:*)",
+      "Bash(npm run build)",
+      "Bash(if exist \"nul\" del \"nul\")"
     ]
   }
 }

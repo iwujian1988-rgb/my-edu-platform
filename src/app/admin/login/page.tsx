@@ -10,12 +10,15 @@ import { AdminLoginForm } from '@/components/admin/AdminLoginForm'
 export default async function AdminLoginPage({
   searchParams
 }: {
-  searchParams: { redirect?: string }
+  searchParams: Promise<{ redirect?: string }>
 }) {
+  // 解析 searchParams
+  const params = await searchParams
+
   // 如果已登录，重定向到管理后台首页或指定页面
   const admin = await getCurrentAdmin()
   if (admin) {
-    redirect(searchParams.redirect || '/admin/dashboard')
+    redirect(params.redirect || '/admin/dashboard')
   }
 
   return (
@@ -35,7 +38,7 @@ export default async function AdminLoginPage({
         </div>
 
         {/* 登录表单 */}
-        <AdminLoginForm redirectTo={searchParams.redirect} />
+        <AdminLoginForm redirectTo={params.redirect} />
 
         {/* 页脚信息 */}
         <div className="mt-8 text-center">

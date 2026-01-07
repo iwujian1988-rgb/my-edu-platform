@@ -87,21 +87,21 @@
   },
   "suites": [
     {
-      "title": "setup\\register-test-user.spec.ts",
-      "file": "setup/register-test-user.spec.ts",
+      "title": "check-user.spec.ts",
+      "file": "check-user.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "测试环境准备",
-          "file": "setup/register-test-user.spec.ts",
-          "line": 10,
+          "title": "用户状态检查",
+          "file": "check-user.spec.ts",
+          "line": 7,
           "column": 6,
           "specs": [
             {
-              "title": "注册测试账号 13800138000",
-              "ok": false,
+              "title": "尝试注册新账号",
+              "ok": true,
               "tags": [],
               "tests": [
                 {
@@ -114,135 +114,30 @@
                     {
                       "workerIndex": 0,
                       "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 2822,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"/study\"\u001b[39m\nReceived string:    \u001b[31m\"http://localhost:3000/login\"\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"/study\"\u001b[39m\nReceived string:    \u001b[31m\"http://localhost:3000/login\"\u001b[39m\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts:52:24",
-                        "location": {
-                          "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts",
-                          "column": 24,
-                          "line": 52
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[90m// 验证跳转到 study 页面\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     expect(page\u001b[33m.\u001b[39murl())\u001b[33m.\u001b[39mtoContain(\u001b[32m'/study'\u001b[39m)\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[90m// 登出，为后续测试准备\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"退出登录\")'\u001b[39m)\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts",
-                            "column": 24,
-                            "line": 52
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"/study\"\u001b[39m\nReceived string:    \u001b[31m\"http://localhost:3000/login\"\u001b[39m\n\n  50 |\n  51 |     // 验证跳转到 study 页面\n> 52 |     expect(page.url()).toContain('/study')\n     |                        ^\n  53 |\n  54 |     // 登出，为后续测试准备\n  55 |     await page.click('button:has-text(\"退出登录\")')\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts:52:24"
-                        }
-                      ],
+                      "status": "passed",
+                      "duration": 4741,
+                      "errors": [],
                       "stdout": [
                         {
-                          "text": "⚠️ 状态未知，已截图\n"
+                          "text": "当前URL: http://localhost:3000/login\n"
                         },
                         {
-                          "text": "当前URL: http://localhost:3000/login\n"
+                          "text": "❓ 注册结果未知\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-05T13:16:53.659Z",
+                      "startTime": "2026-01-07T03:10:46.415Z",
                       "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\setup-register-test-user-测试环境准备-注册测试账号-13800138000-chromium\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\setup-register-test-user-测试环境准备-注册测试账号-13800138000-chromium\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\setup-register-test-user-测试环境准备-注册测试账号-13800138000-chromium\\error-context.md"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts",
-                        "column": 24,
-                        "line": 52
-                      }
-                    },
-                    {
-                      "workerIndex": 1,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 2887,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"/study\"\u001b[39m\nReceived string:    \u001b[31m\"http://localhost:3000/login\"\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"/study\"\u001b[39m\nReceived string:    \u001b[31m\"http://localhost:3000/login\"\u001b[39m\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts:52:24",
-                        "location": {
-                          "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts",
-                          "column": 24,
-                          "line": 52
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 50 |\u001b[39m\n \u001b[90m 51 |\u001b[39m     \u001b[90m// 验证跳转到 study 页面\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 52 |\u001b[39m     expect(page\u001b[33m.\u001b[39murl())\u001b[33m.\u001b[39mtoContain(\u001b[32m'/study'\u001b[39m)\n \u001b[90m    |\u001b[39m                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 53 |\u001b[39m\n \u001b[90m 54 |\u001b[39m     \u001b[90m// 登出，为后续测试准备\u001b[39m\n \u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'button:has-text(\"退出登录\")'\u001b[39m)\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts",
-                            "column": 24,
-                            "line": 52
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"/study\"\u001b[39m\nReceived string:    \u001b[31m\"http://localhost:3000/login\"\u001b[39m\n\n  50 |\n  51 |     // 验证跳转到 study 页面\n> 52 |     expect(page.url()).toContain('/study')\n     |                        ^\n  53 |\n  54 |     // 登出，为后续测试准备\n  55 |     await page.click('button:has-text(\"退出登录\")')\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts:52:24"
-                        }
-                      ],
-                      "stdout": [
-                        {
-                          "text": "⚠️ 状态未知，已截图\n"
-                        },
-                        {
-                          "text": "当前URL: http://localhost:3000/login\n"
-                        }
-                      ],
-                      "stderr": [],
-                      "retry": 1,
-                      "startTime": "2026-01-05T13:16:57.267Z",
-                      "annotations": [],
-                      "attachments": [
-                        {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\setup-register-test-user-测试环境准备-注册测试账号-13800138000-chromium-retry1\\test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\setup-register-test-user-测试环境准备-注册测试账号-13800138000-chromium-retry1\\video.webm"
-                        },
-                        {
-                          "name": "error-context",
-                          "contentType": "text/markdown",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\setup-register-test-user-测试环境准备-注册测试账号-13800138000-chromium-retry1\\error-context.md"
-                        },
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\setup-register-test-user-测试环境准备-注册测试账号-13800138000-chromium-retry1\\trace.zip"
-                        }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\setup\\register-test-user.spec.ts",
-                        "column": 24,
-                        "line": 52
-                      }
+                      "attachments": []
                     }
                   ],
-                  "status": "unexpected"
+                  "status": "expected"
                 }
               ],
-              "id": "c991bf4b557716491b99-a1157168c55fe70e3715",
-              "file": "setup/register-test-user.spec.ts",
-              "line": 11,
+              "id": "4f4e0aef81cb28d7358d-6a75e82a925725e9ef4d",
+              "file": "check-user.spec.ts",
+              "line": 8,
               "column": 7
             }
           ]
@@ -252,11 +147,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-05T13:16:51.043Z",
-    "duration": 9507.171,
-    "expected": 0,
+    "startTime": "2026-01-07T03:10:43.680Z",
+    "duration": 9075.757,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }
