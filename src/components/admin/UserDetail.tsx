@@ -32,12 +32,12 @@ interface InvitationCode {
   id: string
   code: string
   created_at: string
-} | null
+}
 
 interface UserDetailProps {
   user: User
   stats: Stats
-  invitationCode: InvitationCode
+  invitationCode: InvitationCode | null
 }
 
 export function UserDetail({ user, stats, invitationCode }: UserDetailProps) {
