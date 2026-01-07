@@ -71,7 +71,7 @@ export async function POST(request: NextRequest) {
       .from('invitation_codes')
       .insert(codes.map(c => ({
         ...c,
-        created_by_admin_id: admin.id
+        created_by_admin: admin.id
       })))
       .select()
 
