@@ -59,6 +59,25 @@ export async function createClient() {
 }
 
 /**
+ * Create admin client that bypasses RLS using service role key
+ * WARNING: Only use for admin operations that need to bypass RLS
+ */
+export async function createAdminClient() {
+  const { createClient: createDirectClient } = await import('@supabase/supabase-js')
+
+  return createDirectClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      auth: {
+        autoRefreshToken: false,
+        persistSession: false
+      }
+    }
+  )
+}
+
+/**
  * Alias for createClient - use in Server Actions for better code clarity
  *
  * @example
