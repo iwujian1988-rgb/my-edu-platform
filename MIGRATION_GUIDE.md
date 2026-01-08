@@ -77,6 +77,26 @@
 
 ---
 
+### 6. words 表章节可选改造
+**文件**: `supabase/migrations/20260108_make_words_chapter_optional.sql`
+
+**功能**:
+- 支持无章节的单词书（单词手册模式）
+- 将 `words.chapter_id` 改为可选（允许 NULL）
+- 添加 `words.book_id` 字段（用于无章节模式）
+- 为已有数据填充 `book_id`
+- 创建性能优化索引
+
+**变更**:
+- `words.chapter_id`: NOT NULL → NULL ✓
+- `words.book_id`: 新增字段（UUID，引用 books.id）
+
+**支持模式**:
+1. **有章节模式（教材）**: `chapter_id` 非空，`book_id` 可选
+2. **无章节模式（单词手册）**: `chapter_id` 为空，`book_id` 必填
+
+---
+
 ## 🚀 执行步骤
 
 ### 方法 1: 使用 Supabase CLI（推荐）
@@ -111,6 +131,7 @@ psql -h db.xxx.supabase.co -U postgres -d postgres < supabase/migrations/2026010
 psql -h db.xxx.supabase.co -U postgres -d postgres < supabase/migrations/20260106_modify_invitation_codes_table.sql
 psql -h db.xxx.supabase.co -U postgres -d postgres < supabase/migrations/20260106_add_user_ban_fields.sql
 psql -h db.xxx.supabase.co -U postgres -d postgres < supabase/migrations/20260106_add_book_review_fields.sql
+psql -h db.xxx.supabase.co -U postgres -d postgres < supabase/migrations/20260108_make_words_chapter_optional.sql
 ```
 
 ---
@@ -166,7 +187,29 @@ WHERE table_name = 'invitation_codes'
 
 -- 预期结果：1行，created_by_admin 字段
 
--- 5. 检查初始管理员数据
+-- 5. 检查 words 表新增字段和修改
+SELECT
+  column_name,
+  data_type,
+  is_nullable
+FROM information_schema.columns
+WHERE table_name = 'words'
+  AND column_name IN ('chapter_id', 'book_id')
+ORDER BY column_name;
+
+-- 预期结果：
+-- - chapter_id: is_nullable = 'YES'（已改为可选）
+-- - book_id: 新增字段，is_nullable = 'YES'
+
+-- 6. 验证 book_id 索引是否创建
+SELECT indexname
+FROM pg_indexes
+WHERE tablename = 'words'
+  AND indexname = 'words_book_id_idx';
+
+-- 预期结果：1行，索引已创建
+
+-- 7. 检查初始管理员数据
 SELECT * FROM administrators WHERE email = 'admin@xiaoyu.com';
 
 -- 预期结果：1行，超级管理员记录
@@ -281,7 +324,12 @@ ALTER TABLE books DROP COLUMN IF EXISTS reviewed_at;
 
 ALTER TABLE invitation_codes DROP COLUMN IF EXISTS created_by_admin;
 
--- 3. 删除新增的视图
+-- 3. 回滚 words 表变更（⚠️ 会丢失无章节模式的单词数据）
+ALTER TABLE words DROP COLUMN IF EXISTS book_id;
+ALTER TABLE words ALTER COLUMN chapter_id SET NOT NULL;
+DROP INDEX IF EXISTS words_book_id_idx;
+
+-- 4. 删除新增的视图
 DROP VIEW IF EXISTS invitation_codes_with_creator;
 DROP VIEW IF EXISTS books_pending_review;
 
@@ -303,6 +351,7 @@ Migration 执行完成后，你将拥有：
 - ✅ 用户封禁功能
 - ✅ 词库审核功能
 - ✅ 管理员创建邀请码功能
+- ✅ 无章节单词书支持（单词手册模式）
 
 **下一步**: 开始开发管理后台功能！
 
