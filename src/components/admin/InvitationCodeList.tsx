@@ -13,15 +13,11 @@ import { formatDate } from '@/lib/utils'
 interface InvitationCode {
   id: string
   code: string
-  note: string | null
   max_uses: number
   used_count: number
-  used_by: string | null
+  is_active: boolean
   created_at: string
-  used_at: string | null
   expires_at: string | null
-  disabled_at: string | null
-  created_by_admin_id: string | null
 }
 
 interface InvitationCodeListProps {
@@ -158,7 +154,7 @@ export function InvitationCodeList({
                       {/* 备注 */}
                       <td className="py-4 px-6">
                         <span className="text-gray-600 font-semibold">
-                          {code.note || '-'}
+                          -
                         </span>
                       </td>
 
@@ -171,7 +167,7 @@ export function InvitationCodeList({
                             </span>
                             <span className="text-gray-500">次使用</span>
                           </div>
-                          {code.used_by && (
+                          {code.used_count > 0 && (
                             <div className="flex items-center gap-1 text-xs text-gray-500">
                               <User size={12} />
                               <span>已被使用</span>
@@ -182,12 +178,12 @@ export function InvitationCodeList({
 
                       {/* 状态 */}
                       <td className="py-4 px-6">
-                        {code.disabled_at ? (
+                        {!code.is_active ? (
                           <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 rounded-full border-[2px] border-red-200">
                             <Ban className="text-red-600" size={16} />
                             <span className="text-sm font-bold text-red-600">已禁用</span>
                           </div>
-                        ) : code.used_by ? (
+                        ) : code.used_count > 0 ? (
                           <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 rounded-full border-[2px] border-blue-200">
                             <Check className="text-blue-600" size={16} />
                             <span className="text-sm font-bold text-blue-600">已使用</span>
@@ -210,7 +206,7 @@ export function InvitationCodeList({
                       {/* 操作按钮 */}
                       <td className="py-4 px-6">
                         <div className="flex items-center justify-end gap-2">
-                          <DisableButton codeId={code.id} code={code.code} isDisabled={!!code.disabled_at} />
+                          <DisableButton codeId={code.id} code={code.code} isDisabled={!code.is_active} />
                           <DeleteButton codeId={code.id} code={code.code} />
                         </div>
                       </td>
@@ -231,11 +227,11 @@ export function InvitationCodeList({
                       </code>
                       <CopyButton code={code.code} />
                     </div>
-                    {code.disabled_at ? (
+                    {!code.is_active ? (
                       <div className="px-2 py-1 bg-red-50 rounded-full border-[2px] border-red-200 ml-2">
                         <span className="text-xs font-bold text-red-600">已禁用</span>
                       </div>
-                    ) : code.used_by ? (
+                    ) : code.used_count > 0 ? (
                       <div className="px-2 py-1 bg-blue-50 rounded-full border-[2px] border-blue-200 ml-2">
                         <span className="text-xs font-bold text-blue-600">已使用</span>
                       </div>
@@ -246,8 +242,8 @@ export function InvitationCodeList({
                     )}
                   </div>
 
-                  {code.note && (
-                    <p className="text-sm text-gray-600 mb-2 font-semibold">备注: {code.note}</p>
+                  {false && (
+                    <p className="text-sm text-gray-600 mb-2 font-semibold">备注</p>
                   )}
 
                   <div className="text-sm text-gray-600 mb-3 font-semibold">
@@ -257,7 +253,7 @@ export function InvitationCodeList({
                   <div className="flex items-center justify-between pt-3 border-t border-gray-200">
                     <span className="text-xs text-gray-500">{formatDate(code.created_at)}</span>
                     <div className="flex gap-2">
-                      <DisableButton codeId={code.id} code={code.code} isDisabled={!!code.disabled_at} />
+                      <DisableButton codeId={code.id} code={code.code} isDisabled={!code.is_active} />
                       <DeleteButton codeId={code.id} code={code.code} />
                     </div>
                   </div>

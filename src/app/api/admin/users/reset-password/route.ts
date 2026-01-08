@@ -43,7 +43,7 @@ export async function POST(request: NextRequest) {
     // 使用 Supabase Admin API 生成密码重置链接
     const { data: resetData, error: resetError } = await supabase.auth.admin.generateLink({
       type: 'recovery',
-      email: user.email
+      email: (user as any).email
     })
 
     if (resetError) {
@@ -57,8 +57,8 @@ export async function POST(request: NextRequest) {
       'user',
       userId,
       {
-        user_email: user.email,
-        user_nickname: user.nickname
+        user_email: (user as any).email,
+        user_nickname: (user as any).nickname
       }
     )
 

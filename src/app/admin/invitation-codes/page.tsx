@@ -3,7 +3,7 @@
  * 显示邀请码列表、创建新邀请码、禁用邀请码等功能
  */
 
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
 import { InvitationCodeList } from '@/components/admin/InvitationCodeList'
 import { CreateInvitationCodeButton } from '@/components/admin/CreateInvitationCodeButton'
@@ -14,7 +14,8 @@ export default async function AdminInvitationCodesPage({
   searchParams: Promise<{ page?: string; search?: string; status?: string }>
 }) {
   const admin = await requireAdmin()
-  const supabase = await createClient()
+  // 使用 admin client 绕过 RLS 限制
+  const supabase = await createAdminClient()
 
   // 解析搜索参数
   const params = await searchParams
@@ -33,16 +34,16 @@ export default async function AdminInvitationCodesPage({
 
   // 搜索条件
   if (search) {
-    query = query.or(`code.ilike.%${search}%,note.ilike.%${search}%`)
+    query = query.or(`code.ilike.%${search}%`)
   }
 
   // 状态筛选
   if (status === 'unused') {
-    query = query.is('used_by', null)
+    query = query.eq('used_count', 0)
   } else if (status === 'used') {
-    query = query.not('used_by', 'is', null)
+    query = query.gt('used_count', 0)
   } else if (status === 'disabled') {
-    query = query.not('disabled_at', 'is', null)
+    query = query.eq('is_active', false)
   }
 
   // 分页查询

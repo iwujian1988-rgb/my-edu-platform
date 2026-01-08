@@ -3,7 +3,7 @@
  * POST /api/admin/invitation-codes/disable
  */
 
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
 import { logAdminAction } from '@/lib/admin-auth'
 import { NextRequest, NextResponse } from 'next/server'
@@ -20,7 +20,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: '缺少邀请码ID' }, { status: 400 })
     }
 
-    const supabase = await createClient()
+    const supabase = await createAdminClient()
 
     // 检查邀请码是否存在
     const { data: code, error: codeError } = await supabase
@@ -34,11 +34,9 @@ export async function POST(request: NextRequest) {
     }
 
     // 禁用/启用邀请码
-    const { error: updateError } = await supabase
+    const { error: updateError } = await (supabase as any)
       .from('invitation_codes')
-      .update({
-        disabled_at: isDisabled ? new Date().toISOString() : null
-      })
+      .update({ is_active: !isDisabled })
       .eq('id', codeId)
 
     if (updateError) {
@@ -52,8 +50,8 @@ export async function POST(request: NextRequest) {
       'invitation_code',
       codeId,
       {
-        code: code.code,
-        note: code.note
+        code: (code as any).code,
+        note: (code as any).note
       }
     )
 

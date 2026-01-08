@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 封禁/解封用户
-    const { error: updateError } = await supabase
+    const { error: updateError } = await (supabase as any)
       .from('users')
       .update({
         banned_at: isBanned ? new Date().toISOString() : null,
@@ -53,8 +53,8 @@ export async function POST(request: NextRequest) {
       'user',
       userId,
       {
-        user_email: user.email,
-        user_nickname: user.nickname,
+        user_email: (user as any).email,
+        user_nickname: (user as any).nickname,
         reason
       }
     )

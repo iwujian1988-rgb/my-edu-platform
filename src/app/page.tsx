@@ -2,6 +2,8 @@ import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { BookOpen, Target, Calendar, Plus, GraduationCap, Zap, LayoutGrid, Cat, LogOut, ChevronRight, Sparkles, ArrowRight, Trophy, TrendingUp, Star } from 'lucide-react'
+import { PermissionWarningBanner } from '@/components/PermissionDisplay'
+import { getUserPermissions } from '@/lib/permissions'
 
 // Mock 数据（Supabase 无数据时使用）
 const mockBooks = [
@@ -55,6 +57,11 @@ export default async function Home() {
   if (user) {
     const supabase = await createClient()
 
+    // 获取用户权限
+    const userPermissions = await getUserPermissions()
+    const hasAllBooks = (userPermissions?.bookPermissions.includes('*') || userPermissions?.bookPermissions.includes('全部')) || false
+    const userBookIds = userPermissions?.bookPermissions || []
+
     // 获取词书数据
     let books = mockBooks
 
@@ -65,17 +72,22 @@ export default async function Home() {
         .order('created_at', { ascending: false })
 
       if (booksData && booksData.length > 0) {
-        // 映射数据库字段到组件需要的格式
-        books = booksData.map((book: any) => ({
-          id: book.id,
-          name: book.title,
-          description: book.description || '',
-          word_count: book.total_words || 0,
-          cover_color: book.cover_color || 'from-green-400 to-green-500', // 保留颜色作为备用
-          cover_url: book.cover_url || null, // AI 生成的封面 URL
-          progress: 0, // 暂无进度数据
-          status: 'not_started'
-        }))
+        // 映射数据库字段到组件需要的格式，并根据权限过滤
+        books = booksData
+          .filter((book: any) => {
+            // 如果用户有全部权限，或者有该书的权限，则显示
+            return hasAllBooks || userBookIds.includes(book.id)
+          })
+          .map((book: any) => ({
+            id: book.id,
+            name: book.title,
+            description: book.description || '',
+            word_count: book.total_words || 0,
+            cover_color: book.cover_color || 'from-green-400 to-green-500', // 保留颜色作为备用
+            cover_url: book.cover_url || null, // AI 生成的封面 URL
+            progress: 0, // 暂无进度数据
+            status: 'not_started'
+          }))
       }
     } catch (error) {
       console.error('Error fetching data:', error)
@@ -212,6 +224,9 @@ export default async function Home() {
               退出登录
             </Link>
           </header>
+
+          {/* Permission Warning Banner */}
+          <PermissionWarningBanner />
 
           {/* 2. 个人学习区 (Stats) */}
           <section className="mb-10">

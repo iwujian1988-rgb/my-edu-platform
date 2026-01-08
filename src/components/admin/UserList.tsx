@@ -13,14 +13,18 @@ import { formatDate } from '@/lib/utils'
 interface User {
   id: string
   email: string
-  nickname: string
+  full_name: string | null
   avatar_url: string | null
   created_at: string
   last_login_at: string | null
   banned_at: string | null
   banned_reason: string | null
-  learning_days: number
-  words_learned: number
+  invitation_code_id: string | null
+}
+
+interface Package {
+  id: string
+  name: string
 }
 
 interface UserListProps {
@@ -30,6 +34,10 @@ interface UserListProps {
   totalPages: number
   search: string
   status: string
+  packages: Package[]
+  packageFilter: string
+  startDate: string
+  endDate: string
 }
 
 export function UserList({
@@ -38,15 +46,25 @@ export function UserList({
   currentPage,
   totalPages,
   search,
-  status
+  status,
+  packages,
+  packageFilter,
+  startDate,
+  endDate
 }: UserListProps) {
   const [searchQuery, setSearchQuery] = useState(search)
   const [statusFilter, setStatusFilter] = useState(status)
+  const [selectedPackage, setSelectedPackage] = useState(packageFilter)
+  const [dateStart, setDateStart] = useState(startDate)
+  const [dateEnd, setDateEnd] = useState(endDate)
 
   const handleSearch = () => {
     const params = new URLSearchParams()
     if (searchQuery) params.set('search', searchQuery)
     if (statusFilter) params.set('status', statusFilter)
+    if (selectedPackage) params.set('package', selectedPackage)
+    if (dateStart) params.set('startDate', dateStart)
+    if (dateEnd) params.set('endDate', dateEnd)
     window.location.href = `/admin/users?${params.toString()}`
   }
 
@@ -81,6 +99,34 @@ export function UserList({
             <option value="banned">已封禁</option>
           </select>
 
+          {/* 套餐筛选 */}
+          <select
+            value={selectedPackage}
+            onChange={(e) => setSelectedPackage(e.target.value)}
+            className="px-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-purple-500 focus:outline-none font-semibold bg-white"
+          >
+            <option value="">全部套餐</option>
+            {packages.map(pkg => (
+              <option key={pkg.id} value={pkg.id}>{pkg.name}</option>
+            ))}
+          </select>
+
+          {/* 注册时间筛选 */}
+          <input
+            type="date"
+            value={dateStart}
+            onChange={(e) => setDateStart(e.target.value)}
+            className="px-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-blue-500 focus:outline-none font-semibold"
+            placeholder="开始日期"
+          />
+          <input
+            type="date"
+            value={dateEnd}
+            onChange={(e) => setDateEnd(e.target.value)}
+            className="px-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-blue-500 focus:outline-none font-semibold"
+            placeholder="结束日期"
+          />
+
           {/* 搜索按钮 */}
           <button
             onClick={handleSearch}
@@ -114,6 +160,22 @@ export function UserList({
               </span>
             </div>
           )}
+          {selectedPackage && (
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400">|</span>
+              <span className="font-semibold text-purple-600">
+                套餐: {packages.find(p => p.id === selectedPackage)?.name || selectedPackage}
+              </span>
+            </div>
+          )}
+          {(dateStart || dateEnd) && (
+            <div className="flex items-center gap-2">
+              <span className="text-gray-400">|</span>
+              <span className="font-semibold text-blue-600">
+                注册时间: {dateStart || '开始'} - {dateEnd || '结束'}
+              </span>
+            </div>
+          )}
         </div>
       </div>
 
@@ -133,7 +195,6 @@ export function UserList({
                 <thead className="bg-gray-50 border-b-[2px] border-gray-200">
                   <tr>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">用户</th>
-                    <th className="text-left py-4 px-6 font-bold text-gray-700">学习数据</th>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">注册时间</th>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">状态</th>
                     <th className="text-right py-4 px-6 font-bold text-gray-700">操作</th>
@@ -146,27 +207,15 @@ export function UserList({
                       <td className="py-4 px-6">
                         <div className="flex items-center gap-3">
                           <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                            {user.nickname?.charAt(0)?.toUpperCase() || user.email.charAt(0).toUpperCase()}
+                            {user.full_name?.charAt(0)?.toUpperCase() || user.email.charAt(0).toUpperCase()}
                           </div>
                           <div>
-                            <p className="font-bold text-gray-800">{user.nickname || '未设置昵称'}</p>
+                            <p className="font-bold text-gray-800">{user.full_name || '未设置昵称'}</p>
                             <p className="text-sm text-gray-500 flex items-center gap-1">
                               <Mail size={12} />
                               {user.email}
                             </p>
                           </div>
-                        </div>
-                      </td>
-
-                      {/* 学习数据 */}
-                      <td className="py-4 px-6">
-                        <div className="space-y-1">
-                          <p className="text-sm font-semibold text-gray-700">
-                            学习 <span className="text-green-600">{user.learning_days}</span> 天
-                          </p>
-                          <p className="text-sm font-semibold text-gray-700">
-                            掌握 <span className="text-blue-600">{user.words_learned}</span> 个单词
-                          </p>
                         </div>
                       </td>
 
@@ -219,10 +268,10 @@ export function UserList({
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
-                        {user.nickname?.charAt(0)?.toUpperCase() || user.email.charAt(0).toUpperCase()}
+                        {user.full_name?.charAt(0)?.toUpperCase() || user.email.charAt(0).toUpperCase()}
                       </div>
                       <div>
-                        <p className="font-bold text-gray-800">{user.nickname || '未设置昵称'}</p>
+                        <p className="font-bold text-gray-800">{user.full_name || '未设置昵称'}</p>
                         <p className="text-sm text-gray-500">{user.email}</p>
                       </div>
                     </div>
@@ -235,17 +284,6 @@ export function UserList({
                         <span className="text-xs font-bold text-green-600">正常</span>
                       </div>
                     )}
-                  </div>
-
-                  <div className="grid grid-cols-2 gap-2 mb-3 text-sm">
-                    <div>
-                      <span className="text-gray-500">学习天数</span>
-                      <p className="font-bold text-green-600">{user.learning_days}</p>
-                    </div>
-                    <div>
-                      <span className="text-gray-500">掌握单词</span>
-                      <p className="font-bold text-blue-600">{user.words_learned}</p>
-                    </div>
                   </div>
 
                   <div className="flex items-center justify-between pt-3 border-t border-gray-200">
@@ -273,7 +311,7 @@ export function UserList({
                   </p>
                   <div className="flex gap-2">
                     <Link
-                      href={`/admin/users?page=${Math.max(1, currentPage - 1)}&search=${search}&status=${status}`}
+                      href={`/admin/users?page=${Math.max(1, currentPage - 1)}&search=${search}&status=${status}&package=${packageFilter}&startDate=${startDate}&endDate=${endDate}`}
                       className={`px-4 py-2 rounded-lg font-bold transition-all ${
                         currentPage === 1
                           ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
@@ -286,7 +324,7 @@ export function UserList({
                       {currentPage} / {totalPages}
                     </span>
                     <Link
-                      href={`/admin/users?page=${Math.min(totalPages, currentPage + 1)}&search=${search}&status=${status}`}
+                      href={`/admin/users?page=${Math.min(totalPages, currentPage + 1)}&search=${search}&status=${status}&package=${packageFilter}&startDate=${startDate}&endDate=${endDate}`}
                       className={`px-4 py-2 rounded-lg font-bold transition-all ${
                         currentPage === totalPages
                           ? 'bg-gray-100 text-gray-400 cursor-not-allowed'

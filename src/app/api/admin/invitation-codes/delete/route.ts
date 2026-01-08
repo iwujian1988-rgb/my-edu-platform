@@ -39,9 +39,9 @@ export async function POST(request: NextRequest) {
       'invitation_code',
       codeId,
       {
-        code: code.code,
-        note: code.note,
-        used_count: code.used_count
+        code: (code as any).code,
+        note: (code as any).note,
+        used_count: (code as any).used_count
       }
     )
 

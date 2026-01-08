@@ -4,14 +4,15 @@
  */
 
 import Link from 'next/link'
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
 import { DashboardStats } from '@/components/admin/DashboardStats'
 import { RecentActivity } from '@/components/admin/RecentActivity'
 
 export default async function AdminDashboard() {
   const admin = await requireAdmin()
-  const supabase = await createClient()
+  // 使用 admin client 绕过 RLS 限制
+  const supabase = await createAdminClient()
 
   // 获取核心统计数据
   const [
@@ -20,7 +21,9 @@ export default async function AdminDashboard() {
     { count: activeUsers },
     { count: totalInvitationCodes },
     { count: usedInvitationCodes },
-    { count: pendingReviews }
+    { count: pendingReviews },
+    totalPackagesData,
+    activeInvitationCodesData
   ] = await Promise.all([
     // 用户总数
     supabase.from('users').select('id', { count: 'exact', head: true }),
@@ -45,8 +48,28 @@ export default async function AdminDashboard() {
     supabase
       .from('books')
       .select('id', { count: 'exact', head: true })
-      .eq('review_status', 'pending')
+      .eq('review_status', 'pending'),
+    // 套餐总数
+    supabase.from('invitation_packages').select('id', { count: 'exact', head: true }),
+    // 有效邀请码数
+    supabase.from('invitation_codes').select('id', { count: 'exact', head: true }).eq('is_active', true)
   ])
+
+  // 统计各套餐使用情况
+  const { data: packageStats } = await supabase
+    .from('invitation_codes')
+    .select('package_id, invitation_packages!inner(name)')
+    .eq('is_active', true)
+
+  const totalPackages = (totalPackagesData as { count: number | null })?.count || 0
+  const activeInvitationCodes = (activeInvitationCodesData as { count: number | null })?.count || 0
+
+  // 统计权限过期用户
+  const { count: expiredPermissionsCount } = await supabase
+    .from('users')
+    .select('id', { count: 'exact', head: true })
+    .not('permission_expires_at', 'is', null)
+    .lt('permission_expires_at', new Date().toISOString())
 
   // 计算邀请码使用率
   const invitationUsageRate = totalInvitationCodes
@@ -74,7 +97,11 @@ export default async function AdminDashboard() {
     invitationUsageRate,
     usedInvitationCodes: usedInvitationCodes || 0,
     totalInvitationCodes: totalInvitationCodes || 0,
-    pendingReviews: pendingReviews || 0
+    pendingReviews: pendingReviews || 0,
+    totalPackages,
+    activeInvitationCodes,
+    expiredPermissionsCount: expiredPermissionsCount || 0,
+    packageUsage: packageStats || []
   }
 
   return (

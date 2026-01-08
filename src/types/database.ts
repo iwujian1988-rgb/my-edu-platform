@@ -2,7 +2,7 @@
  * TypeScript Type Definitions for 小语笔记 Database Schema
  *
  * This file contains type definitions matching the PostgreSQL schema.
- * Updated: 2026-01-06 - Added admin tables and ban/review fields
+ * Updated: 2026-01-08 - Added invitation_packages table, made words.chapter_id optional
  */
 
 export type Database = {
@@ -27,6 +27,11 @@ export type Database = {
         Row: InvitationCode
         Insert: InvitationCodeInsert
         Update: InvitationCodeUpdate
+      }
+      invitation_packages: {
+        Row: InvitationPackage
+        Insert: InvitationPackageInsert
+        Update: InvitationPackageUpdate
       }
       user_quotas: {
         Row: UserQuota
@@ -83,6 +88,12 @@ export type Database = {
         Insert: UserBookPreferenceInsert
         Update: UserBookPreferenceUpdate
       }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
     }
     Enums: {
       book_category: 'exam' | 'scenario' | 'textbook' | 'custom'
@@ -185,6 +196,26 @@ export type UserQuotaInsert = Omit<UserQuota, 'id' | 'created_at' | 'updated_at'
 export type UserQuotaUpdate = Partial<UserQuotaInsert>
 
 // ============================================
+// Invitation Packages
+// ============================================
+
+export type InvitationPackage = {
+  id: string
+  name: string
+  description: string | null
+  validity_days: number | null
+  feature_permissions: string[]
+  book_permissions: string[]  // book_id数组，或["*"]表示全部
+  is_active: boolean
+  sort_order: number
+  created_at: string
+  updated_at: string
+}
+
+export type InvitationPackageInsert = Omit<InvitationPackage, 'id' | 'created_at' | 'updated_at'>
+export type InvitationPackageUpdate = Partial<InvitationPackageInsert>
+
+// ============================================
 // Content Classification
 // ============================================
 
@@ -268,7 +299,8 @@ export type ChapterUpdate = Partial<ChapterInsert>
 
 export interface Word {
   id: string
-  chapter_id: string
+  chapter_id: string | null  // 可选，支持无章节模式
+  book_id: string            // 新增，用于无章节模式
   word: string
   phonetic: string | null
   definition: string
@@ -288,7 +320,8 @@ export interface Word {
 }
 
 export interface WordInsert {
-  chapter_id: string
+  chapter_id?: string | null  // 可选
+  book_id: string
   word: string
   phonetic?: string | null
   definition: string

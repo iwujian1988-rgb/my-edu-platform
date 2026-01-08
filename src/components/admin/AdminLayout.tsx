@@ -21,7 +21,8 @@ import {
   Menu,
   X,
   LogOut,
-  Cat
+  Cat,
+  Package
 } from 'lucide-react'
 import { AdminUser } from '@/lib/admin-auth'
 
@@ -205,7 +206,13 @@ function getMenuItemsByRole(role: AdminUser['role']) {
       roles: ['super_admin', 'content_admin', 'support']
     },
     {
-      path: '/admin/books',
+      path: '/admin/packages',
+      icon: Package,
+      label: '套餐管理',
+      roles: ['super_admin', 'content_admin']
+    },
+    {
+      path: '/admin/word-books',
       icon: BookOpen,
       label: '词库管理',
       roles: ['super_admin', 'content_admin']
@@ -253,7 +260,8 @@ function getPageTitle(pathname: string): string {
     '/admin/dashboard': '仪表盘',
     '/admin/users': '用户管理',
     '/admin/invitation-codes': '邀请码管理',
-    '/admin/books': '词库管理',
+    '/admin/packages': '套餐管理',
+    '/admin/word-books': '词库管理',
     '/admin/reviews': '审核管理',
     '/admin/statistics': '数据统计',
     '/admin/administrators': '管理员管理',

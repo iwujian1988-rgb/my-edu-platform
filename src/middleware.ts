@@ -25,153 +25,168 @@ export async function middleware(request: NextRequest) {
     request,
   })
 
-  const supabase = createServerClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          return request.cookies.get(name)?.value
-        },
-        set(name: string, value: string, options: any) {
-          request.cookies.set({
-            name,
-            value,
-            ...options,
-          })
-          supabaseResponse = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
-          })
-          supabaseResponse.cookies.set({
-            name,
-            value,
-            ...options,
-          })
-        },
-        remove(name: string, options: any) {
-          request.cookies.delete({
-            name,
-            ...options,
-          })
-          supabaseResponse = NextResponse.next({
-            request: {
-              headers: request.headers,
-            },
-          })
-          supabaseResponse.cookies.delete({
-            name,
-            ...options,
-          })
-        },
-      },
-    }
-  )
-
-  // Refresh session if expired - required for Server Components
-  // https://supabase.com/docs/guides/auth/server-side/nextjs#refresh-session
-  const {
-    data: { session },
-  } = await supabase.auth.getSession()
-
   const { pathname } = request.nextUrl
 
-  // ========================================
-  // Protected Routes - Require Authentication
-  // ========================================
-  
-  const protectedRoutes = [
-    '/dashboard',
-    '/study',
-    '/books',
-    '/practice',
-    '/mistakes',
-    '/calendar',
-    '/profile',
-    '/custom',
-  ]
+  try {
+    const supabase = createServerClient<Database>(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          get(name: string) {
+            return request.cookies.get(name)?.value
+          },
+          set(name: string, value: string, options: any) {
+            request.cookies.set({
+              name,
+              value,
+              ...options,
+            })
+            supabaseResponse = NextResponse.next({
+              request: {
+                headers: request.headers,
+              },
+            })
+            supabaseResponse.cookies.set({
+              name,
+              value,
+              ...options,
+            })
+          },
+          remove(name: string, options: any) {
+            request.cookies.delete({
+              name,
+              ...options,
+            })
+            supabaseResponse = NextResponse.next({
+              request: {
+                headers: request.headers,
+              },
+            })
+            supabaseResponse.cookies.delete({
+              name,
+              value,
+              ...options,
+            })
+          },
+        },
+      }
+    )
 
-  // Check if current path is a protected route
-  const isProtectedRoute = protectedRoutes.some(route => 
-    pathname === route || pathname.startsWith(`${route}/`)
-  )
+    // Refresh session if expired - required for Server Components
+    // https://supabase.com/docs/guides/auth/server-side/nextjs#refresh-session
+    const {
+      data: { session },
+    } = await supabase.auth.getSession()
 
-  // Redirect to login if trying to access protected route without session
-  if (isProtectedRoute && !session) {
-    const redirectUrl = new URL('/login', request.url)
-    redirectUrl.searchParams.set('redirect', pathname)
-    return NextResponse.redirect(redirectUrl)
-  }
+    // ========================================
+    // Protected Routes - Require Authentication
+    // ========================================
 
-  // ========================================
-  // Auth Routes - Redirect if Already Logged In
-  // ========================================
+    const protectedRoutes = [
+      '/dashboard',
+      '/study',
+      '/books',
+      '/practice',
+      '/mistakes',
+      '/calendar',
+      '/profile',
+      '/custom',
+    ]
 
-  const authRoutes = ['/login', '/register']
+    // Check if current path is a protected route
+    const isProtectedRoute = protectedRoutes.some(route =>
+      pathname === route || pathname.startsWith(`${route}/`)
+    )
 
-  // Redirect to home if already logged in and trying to access auth routes
-  if (authRoutes.includes(pathname) && session) {
-    return NextResponse.redirect(new URL('/', request.url))
-  }
-
-  // ========================================
-  // Admin Routes - Require Admin Authentication
-  // ========================================
-
-  if (pathname.startsWith('/admin')) {
-    // /admin/login doesn't require authentication
-    if (pathname.startsWith('/admin/login')) {
-      return supabaseResponse
-    }
-
-    // All other /admin routes require admin authentication
-    if (!session) {
-      const redirectUrl = new URL('/admin/login', request.url)
+    // Redirect to login if trying to access protected route without session
+    if (isProtectedRoute && !session) {
+      const redirectUrl = new URL('/login', request.url)
       redirectUrl.searchParams.set('redirect', pathname)
       return NextResponse.redirect(redirectUrl)
     }
 
-    // Check if user is an administrator
-    const { data: admin, error } = await supabase
-      .from('administrators')
-      .select('*')
-      .eq('user_id', session.user.id)
-      .eq('is_active', true)
-      .single()
+    // ========================================
+    // Auth Routes - Redirect if Already Logged In
+    // ========================================
 
-    if (error || !admin) {
-      // User is logged in but not an admin
-      const redirectUrl = new URL('/admin/login', request.url)
-      redirectUrl.searchParams.set('error', 'not_admin')
-      return NextResponse.redirect(redirectUrl)
+    const authRoutes = ['/login', '/register']
+
+    // Redirect to home if already logged in and trying to access auth routes
+    if (authRoutes.includes(pathname) && session) {
+      return NextResponse.redirect(new URL('/', request.url))
     }
-  }
 
-  // ========================================
-  // Daily Quota Reset Check
-  // ========================================
-  
-  // If user is logged in, check if daily quota needs to be reset
-  if (session && pathname.startsWith('/api/')) {
-    const today = new Date().toISOString().split('T')[0]
-    
-    // This will trigger the reset_daily_quota trigger if needed
-    await supabase
-      .from('user_quotas')
-      .select('last_reset_date')
-      .eq('user_id', session.user.id)
-      .single()
-  }
+    // ========================================
+    // Admin Routes - Require Admin Authentication
+    // ========================================
 
-  return supabaseResponse
+    if (pathname.startsWith('/admin')) {
+      // /admin/login doesn't require authentication
+      if (pathname.startsWith('/admin/login')) {
+        return supabaseResponse
+      }
+
+      // All other /admin routes require admin authentication
+      if (!session) {
+        const redirectUrl = new URL('/admin/login', request.url)
+        redirectUrl.searchParams.set('redirect', pathname)
+        return NextResponse.redirect(redirectUrl)
+      }
+
+      // Check if user is an administrator
+      // Use maybeSingle() instead of single() to avoid error when no rows returned
+      const { data: admin, error } = await supabase
+        .from('administrators')
+        .select('*')
+        .eq('user_id', session.user.id)
+        .eq('is_active', true)
+        .maybeSingle()  // Changed from single() to maybeSingle()
+
+      if (error || !admin) {
+        // User is logged in but not an admin
+        const redirectUrl = new URL('/admin/login', request.url)
+        redirectUrl.searchParams.set('error', 'not_admin')
+        return NextResponse.redirect(redirectUrl)
+      }
+    }
+
+    // ========================================
+    // Daily Quota Reset Check
+    // ========================================
+
+    // If user is logged in, check if daily quota needs to be reset
+    if (session && pathname.startsWith('/api/')) {
+      const today = new Date().toISOString().split('T')[0]
+
+      // This will trigger the reset_daily_quota trigger if needed
+      await supabase
+        .from('user_quotas')
+        .select('last_reset_date')
+        .eq('user_id', session.user.id)
+        .maybeSingle()  // Changed from single() to maybeSingle()
+    }
+
+    return supabaseResponse
+  } catch (error) {
+    // Log error for debugging
+    console.error('Middleware error:', error)
+
+    // For admin login, allow access even if middleware fails
+    if (pathname.startsWith('/admin/login')) {
+      return NextResponse.next()
+    }
+
+    // For other routes, return the response as-is
+    return supabaseResponse
+  }
 }
 
 /**
  * Matcher configuration
- * 
+ *
  * Defines which routes the middleware should run on.
- * 
+ *
  * Skip:
  * - _next/static (static files)
  * - _next/image (image optimization files)

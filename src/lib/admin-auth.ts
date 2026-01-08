@@ -217,22 +217,50 @@ export async function adminLogin(
   email: string,
   password: string
 ): Promise<{ success: boolean; error?: string; admin?: AdminUser }> {
-  try {
-    const supabase = await createClient()
+  const supabase = await createClient()
 
-    // 1. 使用 Supabase Auth 登录
-    const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
-      email,
-      password
-    })
+  // 1. 使用 Supabase Auth 登录（带重试机制）
+  let retries = 3
+  let authData: any = null
+  let authError: any = null
 
-    if (authError || !authData.user) {
-      return {
-        success: false,
-        error: '邮箱或密码错误'
+  while (retries > 0) {
+    try {
+      const result = await supabase.auth.signInWithPassword({
+        email,
+        password
+      })
+
+      if (result.data?.user && !result.error) {
+        authData = result.data
+        authError = null
+        break // 成功，退出重试
       }
+
+      authError = result.error
+      if (authError) {
+        console.warn(`Login attempt failed, ${retries - 1} retries left:`, authError.message)
+      }
+    } catch (err: any) {
+      authError = err
+      console.warn(`Login error, ${retries - 1} retries left:`, err.message)
     }
 
+    retries--
+    if (retries > 0) {
+      // 等待1秒后重试
+      await new Promise(resolve => setTimeout(resolve, 1000))
+    }
+  }
+
+  if (authError || !authData?.user) {
+    return {
+      success: false,
+      error: '邮箱或密码错误'
+    }
+  }
+
+  try {
     // 2. 检查是否是管理员
     const { data: admin, error: adminError } = await supabase
       .from('administrators')
@@ -347,3 +375,30 @@ export function getPermissionDisplayName(permission: Permission): string {
   }
   return permissionNames[permission] || permission
 }
+
+/**
+ * API路由专用的管理员验证错误类
+ */
+export class UnauthorizedError extends Error {
+  constructor(message: string = 'UNAUTHORIZED') {
+    super(message)
+    this.name = 'UnauthorizedError'
+  }
+}
+
+/**
+ * API路由专用：要求管理员登录
+ * 与requireAdmin()不同，此函数不使用redirect()，适合API路由
+ * @throws UnauthorizedError 如果未登录
+ * @returns 管理员用户对象
+ */
+export async function requireAdminForAPI(): Promise<AdminUser> {
+  const admin = await getCurrentAdmin()
+
+  if (!admin) {
+    throw new UnauthorizedError()
+  }
+
+  return admin
+}
+
