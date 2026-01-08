@@ -39,3 +39,75 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# temporary test and debug scripts
+test-*.js
+check-*.js
+fix-*.js
+verify-*.js
+run-*.js
+browser-*.js
+*-test-*.js
+
+# test reports
+test-results/
+*.test-report.json
+*.test-report.md
+playwright-report/
+
+# temporary debug files
+.session-cookie
+nul
+test-debug-content.png
+
+# debug and test pages
+/src/app/admin/test-*/
+/src/app/admin/users-debug/
+/src/app/api/admin/*-test/
+/src/app/api/debug/
+/src/app/api/test/
+
+# e2e test debug files
+e2e/*debug*.ts
+
+# temporary SQL files
+ENABLE_BAN_FEATURE*.sql
+ENABLE_BAN_FEATURE_GUIDE.html
+FINAL_BAN_FIX*.sql
+FINAL_BAN_FIX_GUIDE.html
+fix_ban.sql
+check-admin.sql
+
+# temporary documentation (uncommitted reports and guides)
+ADMIN_SYSTEM_COMPREHENSIVE_TEST.md
+COMPREHENSIVE_TEST_COVERAGE_REPORT.md
+COMPREHENSIVE_TEST_PLAN.md
+DATABASE_SCHEMA_ISSUES_REPORT.md
+ENABLE_BAN_FEATURE_GUIDE.html
+FINAL_BAN_FIX_GUIDE.html
+FINAL_COMPREHENSIVE_TEST_REPORT.md
+FINAL_TEST_REPORT.md
+HONEYPOT_EXAMPLE.md
+INVITATION_AND_PACKAGES_SUMMARY.md
+INVITATION_AND_PACKAGES_TEST_REPORT.md
+MANUAL_TEST_GUIDE.md
+PERMISSION_TEST_REPORT.md
+PRD_COMPREHENSIVE_GAP_ANALYSIS.md
+PRD_VS_IMPLEMENTATION_BACKEND.md
+PRD_VS_IMPLEMENTATION_FRONTEND.md
+PRIORITY_ADJUSTMENT_PLAN.md
+PROJECT_MASTER_VIEW.md
+TESTING_PROGRESS.md
+TEST_EXECUTION_REPORT.md
+TEST_PLAN_ADMIN_TO_FRONTEND.md
+TEST_PLAN_FULL.md
+TEST_PLAN_INVITATION_AND_PACKAGES.md
+TEST_PROGRESS_REPORT.md
+TEST_REPORT_FINAL.md
+UNDEVELOPED_FEATURES.md
+USER_MANAGEMENT_TEST_REPORT.md
+WORD_BOOK_MODULE_SUMMARY.md
+BUG_FIX_SESSION.md
+
+# scripts directory
+/scripts/
