@@ -6,6 +6,8 @@ import { ArrowLeft, Volume2 } from 'lucide-react'
 import Link from 'next/link'
 import { speak as speakText, initializeTTS } from '@/lib/speech'
 import { saveResumeState } from '@/lib/resumeState'
+import { PermissionGate } from '@/components/PermissionDisplay'
+import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
 
 type Word = {
   id: string
@@ -466,7 +468,8 @@ export default function FlashcardsPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+    <PermissionGate feature={FEATURE_PERMISSIONS.FLASHCARDS} bookId={bookId}>
+      <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
       {/* Header */}
       <header className="sticky top-0 z-50 px-4 py-4">
         <div className="max-w-4xl mx-auto">
@@ -796,5 +799,6 @@ export default function FlashcardsPage() {
         </div>
       </main>
     </div>
+    </PermissionGate>
   )
 }

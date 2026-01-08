@@ -5,6 +5,8 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw, Settings, X } from 'lucide-react'
 import Link from 'next/link'
 import { speak as speakText, initializeTTS, pauseSpeaking, resumeSpeaking } from '@/lib/speech'
+import { PermissionGate } from '@/components/PermissionDisplay'
+import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
 
 // 辅助函数：Fisher-Yates 洗牌算法
 function shuffleArray<T>(array: T[]): T[] {
@@ -526,7 +528,8 @@ export default function DictationPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+    <PermissionGate feature={FEATURE_PERMISSIONS.DICTATION} bookId={bookId}>
+      <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
       {/* Header */}
       <header className="sticky top-0 z-50 px-4 py-4">
         <div className="max-w-4xl mx-auto">
@@ -893,5 +896,6 @@ export default function DictationPage() {
         }
       `}</style>
     </div>
+    </PermissionGate>
   )
 }

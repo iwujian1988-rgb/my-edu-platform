@@ -4,6 +4,8 @@ import { useState, useEffect, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { ArrowLeft, RotateCw } from 'lucide-react'
 import Link from 'next/link'
+import { PermissionGate } from '@/components/PermissionDisplay'
+import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
 
 type Word = {
   id: string
@@ -571,7 +573,8 @@ export default function MatchGamePage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+    <PermissionGate feature={FEATURE_PERMISSIONS.MATCH_GAME} bookId={bookId}>
+      <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
       {/* Header */}
       <header className="sticky top-0 z-50 px-4 py-4">
         <div className="max-w-4xl mx-auto">
@@ -875,5 +878,6 @@ export default function MatchGamePage() {
         </div>
       </main>
     </div>
+    </PermissionGate>
   )
 }

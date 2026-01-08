@@ -1,5 +1,55 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import { getUserPermissions } from '@/lib/permissions'
 import { NextResponse } from 'next/server'
+
+/**
+ * GET /api/books
+ * 获取词库列表（带权限过滤）
+ */
+export async function GET(request: Request) {
+  const user = await getCurrentUser()
+
+  if (!user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
+  try {
+    const supabase = await createClient()
+
+    // 获取所有词库
+    const { data: books, error } = await supabase
+      .from('books')
+      .select('*')
+      .order('created_at', { ascending: false })
+
+    if (error) {
+      console.error('Error fetching books:', error)
+      return NextResponse.json({ error: '获取词库失败' }, { status: 500 })
+    }
+
+    // 获取用户权限
+    const userPermissions = await getUserPermissions()
+
+    // 根据权限过滤词库
+    let filteredBooks = books || []
+    if (userPermissions) {
+      const hasAllBooks = userPermissions.bookPermissions.includes('*') ||
+                          userPermissions.bookPermissions.includes('全部')
+      const userBookIds = userPermissions.bookPermissions
+
+      if (!hasAllBooks) {
+        // 只返回用户有权限的词库
+        filteredBooks = books.filter(book => userBookIds.includes(book.id))
+      }
+      // 如果 hasAllBooks 为 true，返回所有词库
+    }
+
+    return NextResponse.json(filteredBooks)
+  } catch (error) {
+    console.error('Error in GET /api/books:', error)
+    return NextResponse.json({ error: '服务器错误' }, { status: 500 })
+  }
+}
 
 export async function POST(request: Request) {
   const user = await getCurrentUser()

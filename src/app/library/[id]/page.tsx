@@ -1,6 +1,7 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { BookDetailPageClient } from '@/components/BookDetailPageClient'
+import { hasBookPermission } from '@/lib/permissions'
 
 type Chapter = {
   id: string
@@ -72,6 +73,12 @@ export default async function BookDetailPage({
   const user = await getCurrentUser()
   if (!user) {
     redirect('/login?redirect=' + encodeURIComponent(`/library/${id}`))
+  }
+
+  // Check if user has permission to access this book
+  const hasPermission = await hasBookPermission(user.id, id)
+  if (!hasPermission) {
+    redirect('/?no-permission=true')
   }
 
   const supabase = await createClient()
