@@ -30,7 +30,12 @@ export default function CreateWordPage() {
     word: '',
     phonetic: '',
     definition: '',
-    example: '',
+    definition_en: '',
+    collocation: '',
+    collocation_en: '',
+    example_sentence: '',
+    example_sentence_en: '',
+    part_of_speech: '',
     chapter_id: preSelectedChapterId || '',
     order_index: 1,
   })
@@ -123,7 +128,12 @@ export default function CreateWordPage() {
             word: formData.word.trim(),
             phonetic: formData.phonetic.trim() || null,
             definition: formData.definition.trim(),
-            example: formData.example.trim() || null,
+            definition_en: formData.definition_en.trim() || null,
+            collocation: formData.collocation.trim() || null,
+            collocation_en: formData.collocation_en.trim() || null,
+            example_sentence: formData.example_sentence.trim() || null,
+            example_sentence_en: formData.example_sentence_en.trim() || null,
+            part_of_speech: formData.part_of_speech.trim() || null,
             chapter_id: formData.chapter_id,
             order_index: formData.order_index,
           }),
@@ -235,17 +245,42 @@ export default function CreateWordPage() {
             />
           </div>
 
-          {/* 释义 */}
+          {/* 词性 */}
           <div>
             <label className="block text-sm font-bold text-gray-700 mb-2">
-              释义 <span className="text-red-500">*</span>
+              词性
+            </label>
+            <select
+              name="part_of_speech"
+              value={formData.part_of_speech}
+              onChange={handleChange}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            >
+              <option value="">请选择词性</option>
+              <option value="n.">名词 (n.)</option>
+              <option value="v.">动词 (v.)</option>
+              <option value="adj.">形容词 (adj.)</option>
+              <option value="adv.">副词 (adv.)</option>
+              <option value="pron.">代词 (pron.)</option>
+              <option value="prep.">介词 (prep.)</option>
+              <option value="conj.">连词 (conj.)</option>
+              <option value="interj.">感叹词 (interj.)</option>
+              <option value="num.">数词 (num.)</option>
+              <option value="art.">冠词 (art.)</option>
+            </select>
+          </div>
+
+          {/* 中文释义 */}
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              中文释义 <span className="text-red-500">*</span>
             </label>
             <textarea
               name="definition"
               value={formData.definition}
               onChange={handleChange}
               placeholder="例如：你好；问候"
-              rows={3}
+              rows={2}
               className={`w-full px-4 py-3 border-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 ${
                 errors.definition ? 'border-red-500' : 'border-gray-300'
               }`}
@@ -255,17 +290,77 @@ export default function CreateWordPage() {
             )}
           </div>
 
-          {/* 例句 */}
+          {/* 英文释义 */}
           <div>
             <label className="block text-sm font-bold text-gray-700 mb-2">
-              例句
+              英文释义
             </label>
             <textarea
-              name="example"
-              value={formData.example}
+              name="definition_en"
+              value={formData.definition_en}
               onChange={handleChange}
-              placeholder="例如：Hello, how are you?"
-              rows={3}
+              placeholder="例如：a greeting; an expression of welcome"
+              rows={2}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+
+          {/* 搭配（中文） */}
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              搭配（中文）
+            </label>
+            <textarea
+              name="collocation"
+              value={formData.collocation}
+              onChange={handleChange}
+              placeholder="例如：问候某人、打招呼"
+              rows={2}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+
+          {/* 搭配（英文） */}
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              搭配（英文）
+            </label>
+            <textarea
+              name="collocation_en"
+              value={formData.collocation_en}
+              onChange={handleChange}
+              placeholder="例如：say hello to someone, greet someone"
+              rows={2}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+
+          {/* 例句（中文） */}
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              例句（中文）
+            </label>
+            <textarea
+              name="example_sentence"
+              value={formData.example_sentence}
+              onChange={handleChange}
+              placeholder="例如：你好，最近怎么样？"
+              rows={2}
+              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
+
+          {/* 例句（英文） */}
+          <div>
+            <label className="block text-sm font-bold text-gray-700 mb-2">
+              例句（英文）
+            </label>
+            <textarea
+              name="example_sentence_en"
+              value={formData.example_sentence_en}
+              onChange={handleChange}
+              placeholder="例如：Hello, how are you recently?"
+              rows={2}
               className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             />
           </div>
