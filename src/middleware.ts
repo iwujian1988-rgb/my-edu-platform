@@ -65,7 +65,6 @@ export async function middleware(request: NextRequest) {
             })
             supabaseResponse.cookies.delete({
               name,
-              value,
               ...options,
             })
           },
