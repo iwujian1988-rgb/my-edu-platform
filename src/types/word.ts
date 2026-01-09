@@ -114,5 +114,6 @@ export interface ExcelImportResult {
   total: number
   imported: number
   skipped: number
+  chaptersCreated?: number
   errors: ExcelImportError[]
 }

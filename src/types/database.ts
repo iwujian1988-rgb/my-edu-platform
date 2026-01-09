@@ -97,7 +97,7 @@ export type Database = {
     }
     Enums: {
       book_category: 'exam' | 'scenario' | 'textbook' | 'custom'
-      word_status: 'new' | 'known' | 'vague' | 'unknown'
+      word_status: 'new' | 'known' | 'fuzzy' | 'unknown'
       difficulty_level: 'beginner' | 'intermediate' | 'advanced'
       practice_mode: 'dictation' | 'match_game' | 'flashcard'
       admin_role: 'super_admin' | 'content_admin' | 'support'
@@ -397,7 +397,7 @@ export interface VocabularyCalendar {
   word_id: string
   book_id: string
   date: string
-  status: 'unknown' | 'vague'
+  status: 'unknown' | 'fuzzy'
   created_at: string
 }
 
@@ -406,7 +406,7 @@ export interface VocabularyCalendarInsert {
   word_id: string
   book_id: string
   date: string
-  status: 'unknown' | 'vague'
+  status: 'unknown' | 'fuzzy'
 }
 
 export type VocabularyCalendarUpdate = Partial<VocabularyCalendarInsert>

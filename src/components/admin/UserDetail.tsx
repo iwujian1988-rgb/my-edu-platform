@@ -7,7 +7,7 @@
  */
 
 import { useState } from 'react'
-import { Mail, Calendar, Shield, Ban, ShieldAlert, Key, Clock, BookOpen, TrendingUp, Settings, X } from 'lucide-react'
+import { Mail, Calendar, Shield, Ban, ShieldAlert, Key, Clock, BookOpen, TrendingUp, Settings, X, Eye, EyeOff } from 'lucide-react'
 import { formatDate } from '@/lib/utils'
 
 interface User {
@@ -18,7 +18,8 @@ interface User {
   created_at: string
   last_login_at: string | null
   banned_at: string | null
-  banned_reason: string | null
+  ban_reason: string | null
+  is_banned: boolean | null
   feature_permissions: string[] | null
   book_permissions: string[] | null
   permission_expires_at: string | null
@@ -70,6 +71,8 @@ const FEATURE_PERMISSIONS = [
 export function UserDetail({ user, stats, invitationCode, allBooks, userPackage }: UserDetailProps) {
   const [loading, setLoading] = useState(false)
   const [showPermissionModal, setShowPermissionModal] = useState(false)
+  const [tempPassword, setTempPassword] = useState<string | null>(null)
+  const [showTempPassword, setShowTempPassword] = useState(false)
 
   // 辅助函数：将UUID转换为书名
   const getBookName = (bookId: string) => {
@@ -105,7 +108,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
   const expirationInfo = getExpirationInfo()
 
   const handleResetPassword = async () => {
-    if (!confirm('确定要重置该用户的密码吗？重置后需要用户下次登录时设置新密码。')) return
+    if (!confirm(`确定要重置用户 ${user.full_name || user.email} 的密码吗？\n\n重置后会生成一个临时密码，旧密码将立即失效！`)) return
 
     setLoading(true)
     try {
@@ -116,7 +119,9 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
       })
 
       if (response.ok) {
-        alert('密码重置成功，用户下次登录时需要设置新密码')
+        const data = await response.json()
+        // 保存临时密码到状态，显示在自定义对话框中
+        setTempPassword(data.tempPassword)
       } else {
         const data = await response.json()
         alert(data.error || '操作失败')
@@ -126,6 +131,18 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
       alert('操作失败，请稍后重试')
     } finally {
       setLoading(false)
+    }
+  }
+
+  const copyPassword = async () => {
+    if (tempPassword) {
+      try {
+        await navigator.clipboard.writeText(tempPassword.trim())
+        alert('✅ 密码已复制到剪贴板！\n\n请直接粘贴使用，不要手动输入')
+      } catch (err) {
+        console.error('复制失败:', err)
+        alert('复制失败，请手动复制密码')
+      }
     }
   }
 
@@ -150,7 +167,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
           </div>
 
           {/* 状态标签 */}
-          {user.banned_at ? (
+          {user.is_banned ? (
             <div className="flex items-center gap-2 px-4 py-2 bg-red-50 rounded-full border-[2px] border-red-200">
               <Ban className="text-red-600" size={20} />
               <span className="font-bold text-red-600">已封禁</span>
@@ -193,12 +210,12 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
             </div>
           )}
 
-          {user.banned_at && (
+          {user.is_banned && (
             <div className="flex items-center gap-3 p-4 bg-red-50 rounded-xl border-[2px] border-red-200">
               <Ban className="text-red-600" size={20} />
               <div>
                 <p className="text-sm text-red-600 font-semibold">封禁原因</p>
-                <p className="font-bold text-gray-800">{user.banned_reason || '未填写原因'}</p>
+                <p className="font-bold text-gray-800">{user.ban_reason || '未填写原因'}</p>
               </div>
             </div>
           )}
@@ -242,7 +259,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
             {loading ? '处理中...' : '重置密码'}
           </button>
 
-          <BanUserButton userId={user.id} isBanned={!!user.banned_at} />
+          <BanUserButton userId={user.id} isBanned={!!user.is_banned} />
         </div>
 
         {/* 权限信息 */}
@@ -360,6 +377,77 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
           </div>
         )}
       </div>
+
+      {/* 密码重置成功对话框 */}
+      {tempPassword && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
+            <div className="p-6">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                  <Key className="text-green-600" size={24} />
+                </div>
+                <div>
+                  <h2 className="text-xl font-bold text-gray-800">密码重置成功</h2>
+                  <p className="text-sm text-gray-500">用户：{user.full_name || user.email}</p>
+                </div>
+              </div>
+
+              <div className="bg-blue-50 rounded-xl p-4 border-[2px] border-blue-200 mb-4">
+                <p className="text-sm font-semibold text-blue-600 mb-2">临时密码（12位字母数字）</p>
+                <div className="flex items-center gap-2">
+                  <div className="flex-1 bg-white px-4 py-3 rounded-lg border-[2px] border-blue-300 font-mono text-lg font-bold text-gray-800 flex items-center justify-between">
+                    <span className="tracking-wider">
+                      {showTempPassword ? tempPassword : '•'.repeat(12)}
+                    </span>
+                    <button
+                      type="button"
+                      onClick={() => setShowTempPassword(!showTempPassword)}
+                      className="ml-2 hover:opacity-70 transition-opacity p-1"
+                      title={showTempPassword ? "隐藏密码" : "显示密码"}
+                    >
+                      {showTempPassword ? (
+                        <EyeOff className="w-5 h-5 text-gray-600" />
+                      ) : (
+                        <Eye className="w-5 h-5 text-gray-600" />
+                      )}
+                    </button>
+                  </div>
+                  <button
+                    onClick={copyPassword}
+                    className="px-4 py-3 bg-blue-500 text-white rounded-lg font-bold hover:bg-blue-600 transition-colors flex items-center gap-2 whitespace-nowrap"
+                    title="复制密码"
+                  >
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                    </svg>
+                    复制
+                  </button>
+                </div>
+              </div>
+
+              <div className="bg-yellow-50 rounded-xl p-4 border-[2px] border-yellow-200 mb-4">
+                <p className="text-sm text-gray-700">
+                  <span className="font-bold text-yellow-700">⚠️ 重要提示：</span>
+                </p>
+                <ul className="text-sm text-gray-600 mt-2 space-y-2 list-disc list-inside">
+                  <li><span className="font-bold text-red-600">点击"复制"按钮，然后在前台登录页面直接粘贴</span></li>
+                  <li>请勿手动输入密码，避免复制时多空格或字符错误</li>
+                  <li>旧密码已立即失效，用户只能使用此临时密码登录</li>
+                  <li>用户登录后可以在个人中心修改密码</li>
+                </ul>
+              </div>
+
+              <button
+                onClick={() => setTempPassword(null)}
+                className="w-full px-6 py-3 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition-colors"
+              >
+                我已复制，关闭
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 权限管理对话框 */}
       {showPermissionModal && (

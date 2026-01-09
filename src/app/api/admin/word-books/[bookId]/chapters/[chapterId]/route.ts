@@ -171,11 +171,25 @@ export async function DELETE(
       )
     }
 
-    // 检查章节下是否有单词
-    if (existingChapter.word_count > 0) {
+    // 检查章节下是否有单词（直接查询words表确保准确性）
+    const { count: wordCount, error: countError } = await supabase
+      .from('words')
+      .select('*', { count: 'exact', head: true })
+      .eq('chapter_id', chapterId)
+
+    if (countError) {
+      console.error('Error counting words in chapter:', countError)
+      return NextResponse.json(
+        { error: '检查章节单词失败' },
+        { status: 500 }
+      )
+    }
+
+    if (wordCount && wordCount > 0) {
       return NextResponse.json(
         {
-          error: '该章节下还有单词，无法删除。请先删除章节下的所有单词，或将单词移动到其他章节。'
+          error: `该章节下还有 ${wordCount} 个单词，无法删除。请先将这些单词移动到其他章节，或删除这些单词。`,
+          wordCount: wordCount
         },
         { status: 400 }
       )

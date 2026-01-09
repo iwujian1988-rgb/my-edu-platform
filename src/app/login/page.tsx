@@ -1,17 +1,19 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import { useRouter } from 'next/navigation'
-import { GraduationCap, Eye, EyeOff, Mail, Lock, Ticket, Sparkles, BookOpen, Trophy, Target, Zap } from 'lucide-react'
+import { useState, useEffect, Suspense } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
+import { GraduationCap, Eye, EyeOff, Mail, Lock, Ticket, Sparkles, BookOpen, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
 import { login, signup } from './actions'
 
-export default function LoginPage() {
+function LoginForm() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const [activeTab, setActiveTab] = useState<'login' | 'signup'>('login')
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
+  const [showForgotPassword, setShowForgotPassword] = useState(false)
 
   // 设置页面标题
   useEffect(() => {
@@ -28,9 +30,32 @@ export default function LoginPage() {
   const [signupData, setSignupData] = useState({
     phone: '',
     password: '',
-    confirmPassword: '',
     invitationCode: ''
   })
+
+  // 实时验证错误信息
+  const [fieldErrors, setFieldErrors] = useState({
+    phone: '',
+    password: ''
+  })
+
+  // 验证手机号格式
+  const validatePhone = (phone: string) => {
+    if (!phone) return ''
+    if (!/^[0-9]{11}$/.test(phone)) {
+      return '请输入正确的11位手机号'
+    }
+    return ''
+  }
+
+  // 验证密码长度
+  const validatePassword = (password: string) => {
+    if (!password) return ''
+    if (password.length < 6) {
+      return '密码长度至少为6位'
+    }
+    return ''
+  }
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -44,7 +69,7 @@ export default function LoginPage() {
         setError(result.error)
         setLoading(false)
       } else {
-        // 立即跳转，不等待
+        // 立即跳转
         router.push('/')
         router.refresh()
       }
@@ -60,11 +85,6 @@ export default function LoginPage() {
     setSuccess('')
 
     // Validation
-    if (signupData.password !== signupData.confirmPassword) {
-      setError('两次输入的密码不一致')
-      return
-    }
-
     if (signupData.password.length < 6) {
       setError('密码长度至少为6位')
       return
@@ -296,6 +316,8 @@ export default function LoginPage() {
                           onClick={() => setShowPassword(!showPassword)}
                           className="ml-3 hover:opacity-70 transition-opacity p-2"
                           style={{ color: '#4CAF50' }}
+                          data-testid="password-toggle-button"
+                          aria-label={showPassword ? "隐藏密码" : "显示密码"}
                         >
                           {showPassword ? (
                             <EyeOff className="w-6 h-6" />
@@ -304,6 +326,18 @@ export default function LoginPage() {
                           )}
                         </button>
                       </div>
+                    </div>
+
+                    {/* 忘记密码链接 */}
+                    <div className="text-right">
+                      <button
+                        type="button"
+                        onClick={() => setShowForgotPassword(true)}
+                        className="text-sm font-semibold text-green-600 hover:text-green-700 transition-colors flex items-center gap-1 ml-auto"
+                      >
+                        <HelpCircle className="w-4 h-4" />
+                        忘记密码？
+                      </button>
                     </div>
 
                     <button
@@ -334,12 +368,23 @@ export default function LoginPage() {
                         <input
                           type="tel"
                           value={signupData.phone}
-                          onChange={(e) => setSignupData({ ...signupData, phone: e.target.value })}
+                          onChange={(e) => {
+                            setSignupData({ ...signupData, phone: e.target.value })
+                            setFieldErrors({ ...fieldErrors, phone: '' })
+                          }}
+                          onBlur={(e) => {
+                            setFieldErrors({ ...fieldErrors, phone: validatePhone(e.target.value) })
+                          }}
                           placeholder="请输入11位手机号"
                           className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
                           required
                         />
                       </div>
+                      {fieldErrors.phone && (
+                        <p className="mt-2 text-sm font-semibold text-red-500" data-testid="phone-error">
+                          {fieldErrors.phone}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -351,7 +396,13 @@ export default function LoginPage() {
                         <input
                           type={showPassword ? 'text' : 'password'}
                           value={signupData.password}
-                          onChange={(e) => setSignupData({ ...signupData, password: e.target.value })}
+                          onChange={(e) => {
+                            setSignupData({ ...signupData, password: e.target.value })
+                            setFieldErrors({ ...fieldErrors, password: '' })
+                          }}
+                          onBlur={(e) => {
+                            setFieldErrors({ ...fieldErrors, password: validatePassword(e.target.value) })
+                          }}
                           placeholder="至少6位密码"
                           className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
                           required
@@ -361,6 +412,8 @@ export default function LoginPage() {
                           onClick={() => setShowPassword(!showPassword)}
                           className="ml-3 hover:opacity-70 transition-opacity p-2"
                           style={{ color: '#87CEEB' }}
+                          data-testid="password-toggle-button"
+                          aria-label={showPassword ? "隐藏密码" : "显示密码"}
                         >
                           {showPassword ? (
                             <EyeOff className="w-6 h-6" />
@@ -369,23 +422,11 @@ export default function LoginPage() {
                           )}
                         </button>
                       </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
-                        <Lock className="w-5 h-5 text-blue-600" />
-                        确认密码
-                      </label>
-                      <div className="clay-icon px-5 py-4" style={{ minHeight: '56px' }}>
-                        <input
-                          type="password"
-                          value={signupData.confirmPassword}
-                          onChange={(e) => setSignupData({ ...signupData, confirmPassword: e.target.value })}
-                          placeholder="再次输入密码"
-                          className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
-                          required
-                        />
-                      </div>
+                      {fieldErrors.password && (
+                        <p className="mt-2 text-sm font-semibold text-red-500" data-testid="password-error">
+                          {fieldErrors.password}
+                        </p>
+                      )}
                     </div>
 
                     <div>
@@ -443,6 +484,29 @@ export default function LoginPage() {
         </div>
       </div>
 
+      {/* 忘记密码提示对话框 */}
+      {showForgotPassword && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
+                <HelpCircle className="w-8 h-8 text-blue-600" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-3">忘记密码？</h3>
+              <p className="text-gray-600 font-semibold text-lg mb-6">
+                请联系店铺客服进行密码重置
+              </p>
+              <button
+                onClick={() => setShowForgotPassword(false)}
+                className="w-full px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl font-bold hover:shadow-lg transition-all"
+              >
+                我知道了
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
       <style jsx>{`
         @keyframes blob {
           0%, 100% { transform: translate(0, 0) scale(1); }
@@ -454,5 +518,13 @@ export default function LoginPage() {
         }
       `}</style>
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={<div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F5F2' }}>加载中...</div>}>
+      <LoginForm />
+    </Suspense>
   )
 }

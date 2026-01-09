@@ -18,7 +18,8 @@ interface User {
   created_at: string
   last_login_at: string | null
   banned_at: string | null
-  banned_reason: string | null
+  ban_reason: string | null
+  is_banned: boolean | null
   invitation_code_id: string | null
 }
 
@@ -229,7 +230,7 @@ export function UserList({
 
                       {/* 状态 */}
                       <td className="py-4 px-6">
-                        {user.banned_at ? (
+                        {user.is_banned ? (
                           <div className="inline-flex items-center gap-2 px-3 py-1 bg-red-50 rounded-full border-[2px] border-red-200">
                             <Ban className="text-red-600" size={16} />
                             <span className="text-sm font-bold text-red-600">已封禁</span>
@@ -252,7 +253,7 @@ export function UserList({
                           >
                             <Eye size={18} />
                           </Link>
-                          <BanUserButton userId={user.id} isBanned={!!user.banned_at} />
+                          <BanUserButton userId={user.id} isBanned={!!user.is_banned} />
                         </div>
                       </td>
                     </tr>
@@ -275,7 +276,7 @@ export function UserList({
                         <p className="text-sm text-gray-500">{user.email}</p>
                       </div>
                     </div>
-                    {user.banned_at ? (
+                    {user.is_banned ? (
                       <div className="px-2 py-1 bg-red-50 rounded-full border-[2px] border-red-200">
                         <span className="text-xs font-bold text-red-600">已封禁</span>
                       </div>
@@ -295,7 +296,7 @@ export function UserList({
                       >
                         <Eye size={18} />
                       </Link>
-                      <BanUserButton userId={user.id} isBanned={!!user.banned_at} />
+                      <BanUserButton userId={user.id} isBanned={!!user.is_banned} />
                     </div>
                   </div>
                 </div>

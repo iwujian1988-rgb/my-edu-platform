@@ -3,7 +3,7 @@
  * POST /api/admin/users/ban
  */
 
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
 import { logAdminAction } from '@/lib/admin-auth'
 import { NextRequest, NextResponse } from 'next/server'
@@ -20,7 +20,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: '缺少用户ID' }, { status: 400 })
     }
 
-    const supabase = await createClient()
+    // 使用 admin client 绕过 RLS 限制
+    const supabase = await createAdminClient()
 
     // 检查用户是否存在
     const { data: user, error: userError } = await supabase
@@ -37,8 +38,9 @@ export async function POST(request: NextRequest) {
     const { error: updateError } = await (supabase as any)
       .from('users')
       .update({
-        banned_at: isBanned ? new Date().toISOString() : null,
-        banned_reason: isBanned ? reason : null
+        is_banned: isBanned,
+        ban_reason: isBanned ? reason : null,
+        banned_at: isBanned ? new Date().toISOString() : null
       })
       .eq('id', userId)
 

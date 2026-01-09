@@ -24,6 +24,8 @@ interface Word {
   status: 'known' | 'fuzzy' | 'unknown' | 'new'
   theme?: string
   scene?: string
+  chapter?: string
+  chapter_id?: string | null
 }
 
 interface Book {
@@ -39,13 +41,12 @@ interface BookDetailPageClientProps {
   book: Book
   words: Word[]
   user: any
-  useMockData: boolean
 }
 
 type SortOrder = 'default' | 'random'
 type StatusFilter = 'all' | 'new' | 'known' | 'fuzzy' | 'unknown'
 
-export function BookDetailPageClient({ book, words, user, useMockData }: BookDetailPageClientProps) {
+export function BookDetailPageClient({ book, words, user }: BookDetailPageClientProps) {
   const searchParams = useSearchParams()
 
   const [globalHideChinese, setGlobalHideChinese] = useState(false)
@@ -55,8 +56,10 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
   const [currentPage, setCurrentPage] = useState(1)
   const [selectedTheme, setSelectedTheme] = useState<string>('all')
   const [selectedScene, setSelectedScene] = useState<string>('all')
+  const [selectedChapter, setSelectedChapter] = useState<string>('all')
   const [showThemeMenu, setShowThemeMenu] = useState(false)
   const [showSceneMenu, setShowSceneMenu] = useState(false)
+  const [showChapterMenu, setShowChapterMenu] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
   const [hasRestoredState, setHasRestoredState] = useState(false)
   const isRestoringRef = useRef(false) // 用于标记是否正在恢复状态
@@ -121,6 +124,7 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
     console.log('💾 Saving word list state:', {
       theme: selectedTheme,
       scenario: selectedScene,
+      chapter: selectedChapter,
       status: statusFilter,
       page: currentPage
     })
@@ -129,6 +133,7 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
       filters: {
         theme: selectedTheme,
         scenario: selectedScene,
+        chapter: selectedChapter,
         status: statusFilter
       },
       page: currentPage
@@ -146,7 +151,7 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
     }, 100)
 
     return () => clearTimeout(timeoutId)
-  }, [selectedTheme, selectedScene, statusFilter, currentPage])
+  }, [selectedTheme, selectedScene, selectedChapter, statusFilter, currentPage])
 
   // ⭐ 页面卸载时立即保存状态
   useEffect(() => {
@@ -155,7 +160,7 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
       console.log('💾 Saving state on unmount')
       saveCurrentState()
     }
-  }, [selectedTheme, selectedScene, statusFilter, currentPage])
+  }, [selectedTheme, selectedScene, selectedChapter, statusFilter, currentPage])
 
   const WORDS_PER_PAGE = 50
 
@@ -173,12 +178,13 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
   useEffect(() => {
     const theme = searchParams.get('theme')
     const scene = searchParams.get('scenario')
+    const chapter = searchParams.get('chapter')
     const status = searchParams.get('status')
     const page = searchParams.get('page')
 
     // 如果 URL 带有参数，说明是从"继续学习"跳转过来的
-    if (theme || scene || status || page) {
-      console.log('📍 Restoring browsing state from URL:', { theme, scene, status, page })
+    if (theme || scene || chapter || status || page) {
+      console.log('📍 Restoring browsing state from URL:', { theme, scene, chapter, status, page })
 
       // 标记开始恢复状态
       isRestoringRef.current = true
@@ -190,6 +196,9 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
       }
       if (scene && scene !== 'all') {
         updates.push(Promise.resolve().then(() => setSelectedScene(scene)))
+      }
+      if (chapter && chapter !== 'all') {
+        updates.push(Promise.resolve().then(() => setSelectedChapter(chapter)))
       }
       if (status && status !== 'all') {
         updates.push(Promise.resolve().then(() => setStatusFilter(status as StatusFilter)))
@@ -219,19 +228,29 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  // 提取所有唯一的主题和场景
-  const { uniqueThemes, uniqueScenes } = useMemo(() => {
+  // 提取所有唯一的主题、场景和章节
+  const { uniqueThemes, uniqueScenes, uniqueChapters } = useMemo(() => {
     const themes = new Set<string>()
     const scenes = new Set<string>()
+    const chaptersMap = new Map<string | null, { id: string; title: string; order_index: number }>()
 
     words.forEach(word => {
       if (word.theme) themes.add(word.theme)
       if (word.scene) scenes.add(word.scene)
+      // 收集章节信息（使用 chapter_id 作为唯一标识）
+      if (word.chapter_id && word.chapter) {
+        chaptersMap.set(word.chapter_id, {
+          id: word.chapter_id,
+          title: word.chapter,
+          order_index: 0 // 这里可以后续从 word 中获取 order_index
+        })
+      }
     })
 
     return {
       uniqueThemes: Array.from(themes).sort(),
-      uniqueScenes: Array.from(scenes).sort()
+      uniqueScenes: Array.from(scenes).sort(),
+      uniqueChapters: Array.from(chaptersMap.values()).sort((a, b) => a.order_index - b.order_index)
     }
   }, [words])
 
@@ -278,17 +297,22 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
       }
     }
 
-    // 1. 主题筛选
+    // 1. 章节筛选
+    if (selectedChapter !== 'all') {
+      result = result.filter(word => word.chapter_id === selectedChapter)
+    }
+
+    // 2. 主题筛选
     if (selectedTheme !== 'all') {
       result = result.filter(word => word.theme === selectedTheme)
     }
 
-    // 2. 场景筛选
+    // 3. 场景筛选
     if (selectedScene !== 'all') {
       result = result.filter(word => word.scene === selectedScene)
     }
 
-    // 3. 状态筛选 - 使用 localStorage 中的状态（优先）或原始状态
+    // 4. 状态筛选 - 使用 localStorage 中的状态（优先）或原始状态
     if (statusFilter !== 'all') {
       result = result.filter(word => {
         // 优先使用 localStorage 中保存的状态
@@ -298,14 +322,14 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
       })
     }
 
-    // 4. 排序
+    // 5. 排序
     if (sortOrder === 'random') {
       result = shuffleArray(result)
     }
 
     console.log(`✅ [Filter] Filtered to ${result.length} words (statusFilter=${statusFilter})`)
     return result
-  }, [words, selectedTheme, selectedScene, statusFilter, sortOrder, book.id])
+  }, [words, selectedChapter, selectedTheme, selectedScene, statusFilter, sortOrder, book.id])
 
   // 分页逻辑 - 仅在PC端使用分页，移动端/平板端显示所有单词
   const totalPages = Math.ceil(filteredWords.length / WORDS_PER_PAGE)
@@ -403,12 +427,6 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                   <p className="text-xs text-slate-500">{words.length} 个单词</p>
                 </div>
               </div>
-              {/* 演示数据提示 */}
-              {useMockData && (
-                <div className="hidden md:block px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-full">
-                  <span className="text-xs font-semibold text-amber-700">演示数据</span>
-                </div>
-              )}
             </div>
 
             {/* User & Actions */}
@@ -727,6 +745,62 @@ export function BookDetailPageClient({ book, words, user, useMockData }: BookDet
                     </>
                   )}
                 </div>
+
+                {/* 章节选择器 - 仅当有章节时显示 */}
+                {uniqueChapters.length > 0 && (
+                  <div className="relative">
+                    <button
+                      onClick={() => setShowChapterMenu(!showChapterMenu)}
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                        selectedChapter !== 'all'
+                          ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
+                          : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-slate-50'
+                      }`}
+                    >
+                      <span>{selectedChapter === 'all' ? '全部章节' : uniqueChapters.find(c => c.id === selectedChapter)?.title || '全部章节'}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showChapterMenu ? 'rotate-180' : ''}`} />
+                    </button>
+
+                    {/* 章节下拉菜单 */}
+                    {showChapterMenu && (
+                      <>
+                        <div
+                          className="fixed inset-0 z-10"
+                          onClick={() => setShowChapterMenu(false)}
+                        />
+                        <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-200 z-20 max-h-80 overflow-y-auto">
+                          <button
+                            onClick={() => {
+                              setSelectedChapter('all')
+                              setShowChapterMenu(false)
+                            }}
+                            className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                              selectedChapter === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                            }`}
+                          >
+                            全部章节
+                            {selectedChapter === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
+                          </button>
+                          {uniqueChapters.map(chapter => (
+                            <button
+                              key={chapter.id}
+                              onClick={() => {
+                                setSelectedChapter(chapter.id)
+                                setShowChapterMenu(false)
+                              }}
+                              className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
+                                selectedChapter === chapter.id ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                              }`}
+                            >
+                              {chapter.title}
+                              {selectedChapter === chapter.id && <ChevronDown className="w-4 h-4 rotate-180" />}
+                            </button>
+                          ))}
+                        </div>
+                      </>
+                    )}
+                  </div>
+                )}
               </div>
 
               {/* 右侧：排序与筛选 */}

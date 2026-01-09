@@ -26,8 +26,8 @@ interface Word {
   definition: string | null
   definition_en: string | null
   part_of_speech: string | null
-  chapter_id: string
-  chapter?: {
+  chapter_id: string | null
+  chapters?: {  // API返回的是chapters（复数）
     id: string
     title: string
     order_index: number
@@ -269,12 +269,12 @@ export default function WordsListPage() {
                       </div>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                      {word.chapter ? (
+                      {word.chapters ? (
                         <Link
-                          href={`/admin/word-books/${bookId}/chapters/${word.chapter.id}`}
+                          href={`/admin/word-books/${bookId}/chapters/${word.chapters.id}`}
                           className="text-purple-600 hover:text-purple-800 hover:underline"
                         >
-                          第{word.chapter.order_index}章 - {word.chapter.title}
+                          第{word.chapters.order_index}章 - {word.chapters.title}
                         </Link>
                       ) : (
                         <span className="text-gray-400">未分类</span>

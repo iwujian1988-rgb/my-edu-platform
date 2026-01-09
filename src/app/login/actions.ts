@@ -110,6 +110,27 @@ export async function login(formData: { phone: string; password: string }) {
       return { error: '手机号或密码错误' }
     }
 
+    // 检查用户是否被封禁
+    const { data: userData, error: userError } = await supabase
+      .from('users')
+      .select('is_banned, ban_reason')
+      .eq('id', data.user.id)
+      .single()
+
+    if (userError) {
+      console.error('Error checking ban status:', userError)
+      return { error: '登录失败，请重试' }
+    }
+
+    if ((userData as any)?.is_banned) {
+      // 登出已封禁的用户
+      await supabase.auth.signOut()
+
+      return {
+        error: '你的账号被封禁 可联系店铺客服'
+      }
+    }
+
     // Update last login
     await supabase
       .from('users')
@@ -153,11 +174,11 @@ export async function signup(formData: {
 
     if (!codeCheckResult.allowed) {
       if (codeCheckResult.reason === 'LOCKED' || codeCheckResult.reason === 'TOO_MANY_ATTEMPTS') {
-        const retryAfter = codeCheckResult.retryAfter
-          ? `请在 ${retryAfter.getHours()}:${retryAfter.getMinutes().toString().padStart(2, '0')} 后重试`
+        const retryMsg = codeCheckResult.retryAfter
+          ? `请在 ${codeCheckResult.retryAfter.toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })} 后重试`
           : '请稍后重试'
-        console.log('[Signup] Blocked - Returning error:', `邀请码验证失败次数过多，${retryAfter}`)
-        return { error: `邀请码验证失败次数过多，${retryAfter}` }
+        console.log('[Signup] Blocked - Returning error:', `邀请码验证失败次数过多，${retryMsg}`)
+        return { error: `邀请码验证失败次数过多，${retryMsg}` }
       }
     }
 
@@ -180,10 +201,10 @@ export async function signup(formData: {
 
       // 如果被锁定，返回锁定错误
       if (failureResult.locked) {
-        const retryAfter = failureResult.retryAfter
-          ? `请在 ${failureResult.retryAfter.getHours()}:${failureResult.retryAfter.getMinutes().toString().padStart(2, '0')} 后重试`
+        const retryMsg = failureResult.retryAfter
+          ? `请在 ${failureResult.retryAfter.toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })} 后重试`
           : '请稍后重试'
-        return { error: `邀请码验证失败次数过多，${retryAfter}` }
+        return { error: `邀请码验证失败次数过多，${retryMsg}` }
       }
 
       return { error: '邀请码无效或已失效' }
@@ -214,10 +235,10 @@ export async function signup(formData: {
     // Step 3.5: Check IP/device rate limit (单IP 1小时限3次，单设备24小时限1次)
     const rateLimitCheck = await checkRegistrationRateLimit(ipAddress, userAgent)
     if (!rateLimitCheck.allowed) {
-      const retryAfter = rateLimitCheck.retryAfter
-        ? `请在 ${retryAfter.getHours()}:${retryAfter.getMinutes().toString().padStart(2, '0')} 后重试`
+      const retryMsg = rateLimitCheck.retryAfter
+        ? `请在 ${rateLimitCheck.retryAfter.toLocaleString('zh-CN', { month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit' })} 后重试`
         : '请稍后重试'
-      return { error: `注册尝试过于频繁，${retryAfter}` }
+      return { error: `注册尝试过于频繁，${retryMsg}` }
     }
 
     // Step 4: Create Auth user
@@ -248,7 +269,6 @@ export async function signup(formData: {
       phone_number: phone,
       full_name: authData.user.user_metadata?.full_name || authData.user.user_metadata?.name || null,
       avatar_url: authData.user.user_metadata?.avatar_url || null,
-      password_hash: '', // Not storing password hash, managed by Supabase Auth
       metadata: { invitation_code_used: invitationCode }
     })
 

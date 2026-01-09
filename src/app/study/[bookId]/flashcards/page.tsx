@@ -24,7 +24,7 @@ type Word = {
 
 type WordProgress = {
   word_id: string
-  status: 'new' | 'known' | 'vague' | 'unknown'
+  status: 'new' | 'known' | 'fuzzy' | 'unknown'
 }
 
 export default function FlashcardsPage() {
@@ -55,7 +55,7 @@ export default function FlashcardsPage() {
   const isSpeakingRef = useRef(false) // 追踪当前是否正在播放
 
   // 批量保存相关状态
-  const pendingSaveRef = useRef<Record<string, 'known' | 'vague' | 'unknown'>>({})
+  const pendingSaveRef = useRef<Record<string, 'known' | 'fuzzy' | 'unknown'>>({})
   const saveTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   // Fetch words and progress
@@ -213,7 +213,7 @@ export default function FlashcardsPage() {
   }, [isFlipped, hasUserInteracted])
 
   // Handle word status
-  const handleStatus = useCallback((status: 'known' | 'vague' | 'unknown') => {
+  const handleStatus = useCallback((status: 'known' | 'fuzzy' | 'unknown') => {
     if (!currentWord) return
 
     // 立即标记用户已经交互（同步更新 ref 和状态）
@@ -321,7 +321,7 @@ export default function FlashcardsPage() {
       } else if (e.key === 'ArrowUp') {
         // ↑ 模糊
         e.preventDefault()
-        handleStatus('vague')
+        handleStatus('fuzzy')
       } else if (e.key === 'ArrowRight') {
         // ➡️ 不认识
         e.preventDefault()
@@ -337,17 +337,38 @@ export default function FlashcardsPage() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [handleStatus, handleFlip, hasUserInteracted])
 
-  // 页面卸载或隐藏时保存待保存的数据
+  // 页面卸载或隐藏时保存待保存的数据和当前学习位置
   useEffect(() => {
     const handleBeforeUnload = () => {
+      // ⭐ 立即保存当前学习位置（防止浏览器返回丢失状态）
+      if (words.length > 0 && currentIndex >= 0) {
+        console.log('📍 Saving current position on beforeunload:', currentIndex + 1)
+        saveResumeState(bookId, 'flashcards', {
+          index: currentIndex,
+          totalWords: words.length
+        })
+      }
+
+      // 保存待保存的学习进度
       if (Object.keys(pendingSaveRef.current).length > 0) {
         flushPendingSaves()
       }
     }
 
     const handleVisibilityChange = () => {
-      if (document.hidden && Object.keys(pendingSaveRef.current).length > 0) {
-        flushPendingSaves()
+      if (document.hidden) {
+        // ⭐ 页面隐藏时也保存当前学习位置
+        if (words.length > 0 && currentIndex >= 0) {
+          console.log('📍 Saving current position on visibility change:', currentIndex + 1)
+          saveResumeState(bookId, 'flashcards', {
+            index: currentIndex,
+            totalWords: words.length
+          })
+        }
+
+        if (Object.keys(pendingSaveRef.current).length > 0) {
+          flushPendingSaves()
+        }
       }
     }
 
@@ -357,14 +378,24 @@ export default function FlashcardsPage() {
     return () => {
       window.removeEventListener('beforeunload', handleBeforeUnload)
       document.removeEventListener('visibilitychange', handleVisibilityChange)
-      // 组件卸载时保存（如果还有未保存的数据）
+
+      // ⭐ 组件卸载时保存当前学习位置（最重要）
+      if (words.length > 0 && currentIndex >= 0) {
+        console.log('📍 Component unmounting, saving position:', currentIndex + 1)
+        saveResumeState(bookId, 'flashcards', {
+          index: currentIndex,
+          totalWords: words.length
+        })
+      }
+
+      // 保存待保存的学习进度
       const pending = pendingSaveRef.current
       if (Object.keys(pending).length > 0) {
         console.log('Component unmounting, saving pending data:', pending)
         flushPendingSaves()
       }
     }
-  }, [flushPendingSaves])
+  }, [flushPendingSaves, bookId, currentIndex, words.length])
 
   // 拖拽开始
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {
@@ -457,10 +488,10 @@ export default function FlashcardsPage() {
         <div className="clay-card p-8 text-center">
           <p className="text-lg text-gray-700 font-semibold">暂无单词数据</p>
           <button
-            onClick={() => router.push(`/library/${bookId}`)}
+            onClick={() => router.push('/')}
             className="clay-button-primary inline-block mt-4 px-6 py-3"
           >
-            返回词书详情
+            返回首页
           </button>
         </div>
       </div>
@@ -476,15 +507,22 @@ export default function FlashcardsPage() {
           <div className="clay-card px-6 py-4 flex items-center gap-4">
             <button
               onClick={() => {
-                // 立即跳转，在后台保存数据
-                router.push(`/library/${bookId}`)
-                // 不等待保存完成，让它在后台执行
+                // ⭐ 立即跳转到首页（统一返回路径）
+                router.push('/')
+                // 在后台保存数据
                 setTimeout(() => {
                   flushPendingSaves()
+                  // 保存当前学习位置
+                  if (words.length > 0 && currentIndex >= 0) {
+                    saveResumeState(bookId, 'flashcards', {
+                      index: currentIndex,
+                      totalWords: words.length
+                    })
+                  }
                 }, 100)
               }}
               className="clay-icon p-2 hover:scale-110 transition-transform"
-              title="返回"
+              title="返回首页"
             >
               <ArrowLeft className="w-5 h-5 text-gray-700" />
             </button>
@@ -590,7 +628,7 @@ export default function FlashcardsPage() {
                           ✓ 已认识
                         </span>
                       )}
-                      {progress.status === 'vague' && (
+                      {progress.status === 'fuzzy' && (
                         <span className="clay-badge bg-yellow-100 text-yellow-800 px-4 py-2 font-bold">
                           ? 模糊
                         </span>
@@ -789,10 +827,10 @@ export default function FlashcardsPage() {
                 你已经完成了所有单词的学习
               </p>
               <button
-                onClick={() => router.push(`/library/${bookId}`)}
+                onClick={() => router.push('/')}
                 className="clay-button-primary inline-block px-6 py-3 font-bold"
               >
-                返回词书详情
+                返回首页
               </button>
             </div>
           )}

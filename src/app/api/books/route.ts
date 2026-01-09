@@ -16,10 +16,11 @@ export async function GET(request: Request) {
   try {
     const supabase = await createClient()
 
-    // 获取所有词库
+    // 获取所有已上架的词库
     const { data: books, error } = await supabase
       .from('books')
       .select('*')
+      .eq('is_published', true) // 只获取已上架的词库
       .order('created_at', { ascending: false })
 
     if (error) {

@@ -5,6 +5,7 @@ import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw, Settings, X } from 'lucide-react'
 import Link from 'next/link'
 import { speak as speakText, initializeTTS, pauseSpeaking, resumeSpeaking } from '@/lib/speech'
+import { saveResumeState } from '@/lib/resumeState'
 import { PermissionGate } from '@/components/PermissionDisplay'
 import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
 
@@ -33,7 +34,7 @@ type Word = {
 
 type WordProgress = {
   word_id: string
-  status: 'new' | 'known' | 'vague' | 'unknown'
+  status: 'new' | 'known' | 'fuzzy' | 'unknown'
 }
 
 export default function DictationPage() {
@@ -169,6 +170,50 @@ export default function DictationPage() {
 
     fetchData()
   }, [bookId, scope, searchParams])
+
+  // ⭐ 页面卸载或隐藏时保存当前学习位置
+  useEffect(() => {
+    const handleBeforeUnload = () => {
+      // 立即保存当前学习位置（防止浏览器返回丢失状态）
+      if (words.length > 0 && currentIndex >= 0) {
+        console.log('📍 Dictation: Saving current position on beforeunload:', currentIndex + 1)
+        saveResumeState(bookId, 'dictation', {
+          index: currentIndex,
+          totalWords: words.length
+        })
+      }
+    }
+
+    const handleVisibilityChange = () => {
+      if (document.hidden) {
+        // 页面隐藏时也保存当前学习位置
+        if (words.length > 0 && currentIndex >= 0) {
+          console.log('📍 Dictation: Saving current position on visibility change:', currentIndex + 1)
+          saveResumeState(bookId, 'dictation', {
+            index: currentIndex,
+            totalWords: words.length
+          })
+        }
+      }
+    }
+
+    window.addEventListener('beforeunload', handleBeforeUnload)
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+
+      // ⭐ 组件卸载时保存当前学习位置（最重要）
+      if (words.length > 0 && currentIndex >= 0) {
+        console.log('📍 Dictation: Component unmounting, saving position:', currentIndex + 1)
+        saveResumeState(bookId, 'dictation', {
+          index: currentIndex,
+          totalWords: words.length
+        })
+      }
+    }
+  }, [bookId, currentIndex, words.length])
 
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
@@ -381,7 +426,7 @@ export default function DictationPage() {
           ...prev,
           [currentWord.id]: {
             word_id: currentWord.id,
-            status: finalStatus as 'new' | 'known' | 'vague' | 'unknown',
+            status: finalStatus as 'new' | 'known' | 'fuzzy' | 'unknown',
             consecutive_correct_count: newConsecutiveCount
           }
         }))
@@ -447,7 +492,15 @@ export default function DictationPage() {
     setHasPlayedOnce(false) // 重置播放标记
 
     if (currentIndex < words.length - 1) {
-      setCurrentIndex(prev => prev + 1)
+      const nextIndex = currentIndex + 1
+      setCurrentIndex(nextIndex)
+
+      // ⭐ 保存学习进度
+      console.log('📍 Dictation: Moving to next word, saving position:', nextIndex + 1)
+      saveResumeState(bookId, 'dictation', {
+        index: nextIndex,
+        totalWords: words.length
+      })
     }
   }
 
@@ -517,10 +570,10 @@ export default function DictationPage() {
         <div className="clay-card p-8 text-center">
           <p className="text-lg text-gray-700 font-semibold">暂无单词数据</p>
           <button
-            onClick={() => router.push(`/library/${bookId}`)}
+            onClick={() => router.push('/')}
             className="clay-button-primary inline-block mt-4 px-6 py-3"
           >
-            返回词书详情
+            返回首页
           </button>
         </div>
       </div>
@@ -536,9 +589,12 @@ export default function DictationPage() {
           <div className="clay-card px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
-                onClick={() => router.push(`/library/${bookId}`)}
+                onClick={() => {
+                  // ⭐ 直接返回首页（统一返回路径）
+                  router.push('/')
+                }}
                 className="clay-icon p-2 hover:scale-110 transition-transform"
-                title="返回"
+                title="返回首页"
               >
                 <ArrowLeft className="w-5 h-5 text-gray-700" />
               </button>
@@ -587,7 +643,7 @@ export default function DictationPage() {
                     ✓ 已认识
                   </span>
                 )}
-                {progress.status === 'vague' && (
+                {progress.status === 'fuzzy' && (
                   <span className="clay-badge bg-yellow-100 text-yellow-800 px-4 py-2 font-bold">
                     ? 模糊
                   </span>
@@ -758,10 +814,10 @@ export default function DictationPage() {
                 你已经完成了所有单词的听写练习
               </p>
               <button
-                onClick={() => router.push(`/library/${bookId}`)}
+                onClick={() => router.push('/')}
                 className="clay-button-primary inline-block px-6 py-3 font-bold"
               >
-                返回词书详情
+                返回首页
               </button>
             </div>
           )}

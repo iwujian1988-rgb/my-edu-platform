@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { ArrowLeft, RotateCw } from 'lucide-react'
 import Link from 'next/link'
@@ -22,7 +22,7 @@ type Word = {
 
 type WordProgress = {
   word_id: string
-  status: 'new' | 'known' | 'vague' | 'unknown'
+  status: 'new' | 'known' | 'fuzzy' | 'unknown'
   match_count?: number  // 消消乐匹配成功次数
   fail_count?: number   // 消消乐匹配失败次数
 }
@@ -78,6 +78,21 @@ export default function MatchGamePage() {
   const [allCompleted, setAllCompleted] = useState(false)  // 是否全部通关
   const [pendingDifficulty, setPendingDifficulty] = useState<number | null>(null)  // 待切换的难度（下一轮生效）
   const [unknownWordsPool, setUnknownWordsPool] = useState<Word[]>([])  // 所有未认识的单词池
+
+  // AbortController用于取消进行中的API请求
+  const abortControllerRef = useRef<AbortController | null>(null)
+
+  // Cleanup effect: 在组件挂载时创建AbortController，卸载时取消所有pending请求
+  useEffect(() => {
+    // 创建新的AbortController
+    abortControllerRef.current = new AbortController()
+
+    // Cleanup函数：组件卸载时执行
+    return () => {
+      // 取消所有pending的API请求
+      abortControllerRef.current?.abort()
+    }
+  }, []) // 空依赖数组，只在挂载/卸载时执行
 
   // 智能累积阈值配置
   const MATCH_THRESHOLD = 2  // 匹配成功2次标记为认识
@@ -229,6 +244,44 @@ export default function MatchGamePage() {
     setAllCompleted(false)  // 重置通关状态
   }, [unknownWordsPool, selectedDifficulty, currentRound])  // ✅ 在单词池、难度或轮次变化时重新初始化
 
+  // 保存单词进度到数据库（带重试机制和cleanup）
+  const saveWordProgress = useCallback(async (data: any, retries = 2, signal?: AbortSignal) => {
+    for (let i = 0; i < retries; i++) {
+      // 检查是否被中止
+      if (signal?.aborted) {
+        throw new Error('请求被中止')
+      }
+
+      try {
+        const response = await fetch('/api/word-progress', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+          signal: signal // 添加中止信号
+        })
+
+        if (!response.ok) {
+          const errorText = await response.text()
+          throw new Error(`HTTP ${response.status}: ${errorText}`)
+        }
+
+        return await response.json()
+      } catch (err: any) {
+        // 如果是中止错误，直接抛出
+        if (err.name === 'AbortError') {
+          throw err
+        }
+
+        console.error(`保存失败（尝试 ${i + 1}/${retries}）:`, err)
+        if (i === retries - 1) {
+          throw err
+        }
+        // 等待后重试（指数退避）
+        await new Promise(resolve => setTimeout(resolve, 1000 * (i + 1)))
+      }
+    }
+  }, [bookId]) // 添加bookId依赖
+
   // 点击卡片
   const handleCardClick = useCallback((clickedCard: Card) => {
     if (isProcessing || clickedCard.isMatched) {
@@ -271,7 +324,7 @@ export default function MatchGamePage() {
       const cardsToExplode = cards.filter(c => c.wordText === selectedCard.wordText)
       setExplodingCards(new Set(cardsToExplode.map(c => c.id)))
 
-      setTimeout(() => {
+      setTimeout(async () => {
         // 消除所有相同单词的卡片（从当前游戏中移除，给用户即时反馈）
         const matchedCards = cards.map(card =>
           card.wordText === selectedCard.wordText ? { ...card, isMatched: true, isSelected: false } : card
@@ -283,7 +336,14 @@ export default function MatchGamePage() {
 
         // 智能累积：更新单词匹配计数
         const matchedWordCards = cards.filter(c => c.wordText === selectedCard.wordText && c.type === 'word')
-        matchedWordCards.forEach(card => {
+
+        // 使用Set去重，避免重复API调用
+        const processedWordIds = new Set<string>()
+
+        for (const card of matchedWordCards) {
+          if (processedWordIds.has(card.wordId)) continue
+          processedWordIds.add(card.wordId)
+
           const currentProgress = wordProgress[card.wordId]
           const currentMatchCount = currentProgress?.match_count || 0
           const newMatchCount = currentMatchCount + 1
@@ -298,19 +358,32 @@ export default function MatchGamePage() {
             }
           }))
 
-          // 判断是否达到认识阈值
-          if (newMatchCount >= MATCH_THRESHOLD && currentStatus !== 'known') {
+          // 判断是否达到认识阈值（改进的状态转换逻辑）
+          let shouldMarkAsKnown = false
+
+          if (currentStatus === 'unknown') {
+            // 不认识的单词需要更多次匹配（3次）
+            shouldMarkAsKnown = newMatchCount >= 3
+          } else if (currentStatus === 'fuzzy') {
+            // 模糊的单词需要2次
+            shouldMarkAsKnown = newMatchCount >= 2
+          } else {
+            // new状态需要2次
+            shouldMarkAsKnown = newMatchCount >= MATCH_THRESHOLD
+          }
+
+          if (shouldMarkAsKnown && currentStatus !== 'known') {
             // 达到阈值，标记为认识
-            fetch('/api/word-progress', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
+            try {
+              setToastMessage(`💾 正在保存"${card.wordText}"...`)
+
+              await saveWordProgress({
                 word_id: card.wordId,
                 book_id: bookId,
                 status: 'known',
                 match_count: newMatchCount
-              })
-            }).then(() => {
+              }, 2, abortControllerRef.current?.signal) // 传递abort signal
+
               // 标记为已掌握
               if (card.wordText) {
                 setMasteredWords(prev => {
@@ -320,27 +393,46 @@ export default function MatchGamePage() {
                   return prev
                 })
               }
-              setToastMessage(`🎉 已掌握"${card.wordText}"！`)
+
+              setToastMessage(`✅ 已掌握"${card.wordText}"！`)
               setTimeout(() => setToastMessage(null), 2000)
-            }).catch(err => console.error('Failed to save word progress:', err))
+            } catch (err: any) {
+              // 如果是中止错误，不显示toast（静默处理）
+              if (err.name === 'AbortError') {
+                console.log('请求已被取消')
+                return
+              }
+              console.error('保存失败:', err)
+              setToastMessage(`⚠️ "${card.wordText}"保存失败，请重试`)
+              setTimeout(() => setToastMessage(null), 3000)
+            }
           } else {
             // 未达到阈值，仅更新计数，下次游戏还会随机出现
-            const remaining = MATCH_THRESHOLD - newMatchCount
-            setToastMessage(`✅ 匹配成功！再匹配${remaining}次即可掌握`)
-            setTimeout(() => setToastMessage(null), 2000)
+            const remaining = currentStatus === 'unknown'
+              ? 3 - newMatchCount
+              : MATCH_THRESHOLD - newMatchCount
 
-            fetch('/api/word-progress', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
+            try {
+              await saveWordProgress({
                 word_id: card.wordId,
                 book_id: bookId,
                 status: currentStatus,
                 match_count: newMatchCount
-              })
-            }).catch(err => console.error('Failed to save word progress:', err))
+              }, 2, abortControllerRef.current?.signal) // 传递abort signal
+
+              setToastMessage(`✅ 匹配成功！再匹配${remaining}次即可掌握`)
+              setTimeout(() => setToastMessage(null), 2000)
+            } catch (err: any) {
+              // 如果是中止错误，静默处理
+              if (err.name === 'AbortError') {
+                console.log('请求已被取消')
+                return
+              }
+              console.error('保存失败:', err)
+              // 静默失败，不影响游戏体验
+            }
           }
-        })
+        }
 
         // 计算实际消除了多少对（可能不止一对）
         const matchedCount = cards.filter(c => c.wordText === selectedCard.wordText).length / 2
@@ -385,9 +477,11 @@ export default function MatchGamePage() {
       // 匹配失败
       playSound('wrong')
 
-      // 更新失败计数（仅更新选中的卡片，因为用户点击的那张可能是尝试猜测）
-      if (selectedCard.type === 'word') {
-        const currentProgress = wordProgress[selectedCard.wordId]
+      // 找到对应单词的wordId（无论点击顺序）
+      const targetWordId = selectedCard.type === 'word' ? selectedCard.wordId : clickedCard.wordId
+
+      if (targetWordId) {
+        const currentProgress = wordProgress[targetWordId]
         const currentFailCount = currentProgress?.fail_count || 0
         const newFailCount = currentFailCount + 1
         const currentStatus = currentProgress?.status || 'new'
@@ -395,37 +489,46 @@ export default function MatchGamePage() {
         // 更新本地状态
         setWordProgress(prev => ({
           ...prev,
-          [selectedCard.wordId]: {
-            ...prev[selectedCard.wordId],
+          [targetWordId]: {
+            ...prev[targetWordId],
             fail_count: newFailCount
           }
         }))
 
-        // 判断是否达到不认识阈值（比较宽松）
-        if (newFailCount >= FAIL_THRESHOLD && currentStatus === 'new') {
+        // 判断是否达到不认识阈值（改进的逻辑：fuzzy也会变成unknown）
+        const shouldMarkAsUnknown = newFailCount >= FAIL_THRESHOLD &&
+          (currentStatus === 'new' || currentStatus === 'fuzzy')
+
+        if (shouldMarkAsUnknown) {
           // 达到阈值，标记为不认识
-          fetch('/api/word-progress', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              word_id: selectedCard.wordId,
-              book_id: bookId,
-              status: 'unknown',
-              fail_count: newFailCount
-            })
-          }).catch(err => console.error('Failed to save word progress:', err))
+          saveWordProgress({
+            word_id: targetWordId,
+            book_id: bookId,
+            status: 'unknown',
+            fail_count: newFailCount
+          }, 2, abortControllerRef.current?.signal).catch(err => {
+            // 如果是中止错误，静默处理
+            if (err instanceof Error && err.name === 'AbortError') {
+              console.log('请求已被取消')
+              return
+            }
+            console.error('保存失败:', err)
+          })
         } else {
           // 未达到阈值，仅更新计数
-          fetch('/api/word-progress', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              word_id: selectedCard.wordId,
-              book_id: bookId,
-              status: currentStatus,
-              fail_count: newFailCount
-            })
-          }).catch(err => console.error('Failed to save word progress:', err))
+          saveWordProgress({
+            word_id: targetWordId,
+            book_id: bookId,
+            status: currentStatus,
+            fail_count: newFailCount
+          }, 2, abortControllerRef.current?.signal).catch(err => {
+            // 如果是中止错误，静默处理
+            if (err instanceof Error && err.name === 'AbortError') {
+              console.log('请求已被取消')
+              return
+            }
+            console.error('保存失败:', err)
+          })
         }
       }
 
@@ -441,7 +544,7 @@ export default function MatchGamePage() {
         setIsProcessing(false)
       }, 500)
     }
-  }, [cards, selectedCard, isProcessing])
+  }, [cards, selectedCard, isProcessing, wordProgress, bookId, saveWordProgress, MATCH_THRESHOLD, FAIL_THRESHOLD, currentRound, totalRounds, masteredWords])
 
   // 播放音效
   const playSound = (type: 'match' | 'wrong' | 'win') => {

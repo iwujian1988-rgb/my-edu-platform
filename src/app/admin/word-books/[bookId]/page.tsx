@@ -113,6 +113,41 @@ export default function WordBookDetailPage() {
     }
   }
 
+  // 切换发布状态（上架/下架）
+  const handleTogglePublish = async () => {
+    if (!book) return
+
+    const action = book.is_published ? '下架' : '上架'
+    if (!confirm(`确定要${action}单词书"${book.title}"吗？`)) {
+      return
+    }
+
+    try {
+      const response = await fetch(`/api/admin/word-books/${bookId}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          is_published: !book.is_published
+        })
+      })
+
+      if (!response.ok) throw new Error(`${action}失败`)
+
+      // 更新本地状态
+      setBook({
+        ...book,
+        is_published: !book.is_published
+      })
+
+      alert(`${action}成功`)
+    } catch (error) {
+      console.error(`${action}单词书失败:`, error)
+      alert(`${action}失败，请稍后重试`)
+    }
+  }
+
   useEffect(() => {
     if (bookId) {
       fetchBookDetail()
@@ -327,29 +362,94 @@ export default function WordBookDetailPage() {
 
           {viewMode === 'words' && (
             <div>
-              <div className="flex items-center justify-between mb-4">
-                <h2 className="text-xl font-bold">单词列表</h2>
-                <Link
-                  href={`/admin/word-books/${bookId}/words/create`}
-                  className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]"
-                >
-                  <Plus size={18} />
-                  <span>添加单词</span>
-                </Link>
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-xl font-bold">单词管理</h2>
+                  <p className="text-sm text-gray-500 mt-1">
+                    共 {book.total_words} 个单词
+                  </p>
+                </div>
+                <div className="flex gap-3">
+                  <Link
+                    href={`/admin/word-books/${bookId}/words/create`}
+                    className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]"
+                  >
+                    <Plus size={18} />
+                    <span>添加单词</span>
+                  </Link>
+                  <Link
+                    href={`/admin/word-books/${bookId}/import`}
+                    className="flex items-center gap-2 px-4 py-2 bg-white text-black border-2 border-black rounded-lg hover:bg-gray-50 transition-colors shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]"
+                  >
+                    <Upload size={18} />
+                    <span>Excel导入</span>
+                  </Link>
+                </div>
               </div>
 
-              <div className="text-center py-12 text-gray-500">
-                <FileText className="mx-auto mb-4 text-gray-300" size={48} />
-                <p className="text-lg font-medium mb-2">单词管理</p>
-                <p className="text-sm">请先在"章节管理"中创建章节，然后可以在章节中管理单词</p>
-                <Link
-                  href={`/admin/word-books/${bookId}/chapters/create`}
-                  className="inline-flex items-center gap-2 mt-4 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors"
-                >
-                  <Plus size={18} />
-                  创建第一个章节
-                </Link>
+              <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl border-2 border-black p-8 text-center">
+                <FileText className="mx-auto mb-4 text-black" size={64} />
+                <h3 className="text-2xl font-bold text-gray-900 mb-2">单词管理中心</h3>
+                <p className="text-gray-600 mb-6">
+                  {book.total_words > 0
+                    ? `该词库包含 ${book.total_words} 个单词，点击下方按钮查看和管理所有单词`
+                    : '该词库还没有单词，请先创建章节，然后添加单词'
+                  }
+                </p>
+
+                {book.total_words > 0 ? (
+                  <Link
+                    href={`/admin/word-books/${bookId}/words`}
+                    className="inline-flex items-center gap-2 px-8 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] text-lg"
+                  >
+                    <List size={20} />
+                    查看所有单词
+                  </Link>
+                ) : (
+                  <div className="space-y-3">
+                    <Link
+                      href={`/admin/word-books/${bookId}/chapters/create`}
+                      className="inline-flex items-center gap-2 px-6 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]"
+                    >
+                      <Plus size={18} />
+                      创建第一个章节
+                    </Link>
+                    <div className="text-sm text-gray-500">
+                      或者使用 Excel 批量导入章节和单词
+                    </div>
+                  </div>
+                )}
               </div>
+
+              {/* 快速操作提示 */}
+              {book.total_words > 0 && (
+                <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <Link
+                    href={`/admin/word-books/${bookId}/words?chapterId=`}
+                    className="p-4 bg-white rounded-lg border-2 border-black hover:bg-gray-50 transition-colors"
+                  >
+                    <List size={24} className="mb-2" />
+                    <h4 className="font-medium mb-1">查看单词列表</h4>
+                    <p className="text-sm text-gray-500">浏览和搜索所有单词</p>
+                  </Link>
+                  <Link
+                    href={`/admin/word-books/${bookId}/chapters`}
+                    className="p-4 bg-white rounded-lg border-2 border-black hover:bg-gray-50 transition-colors"
+                  >
+                    <BookOpen size={24} className="mb-2" />
+                    <h4 className="font-medium mb-1">按章节管理</h4>
+                    <p className="text-sm text-gray-500">按章节查看和整理单词</p>
+                  </Link>
+                  <Link
+                    href={`/admin/word-books/${bookId}/import`}
+                    className="p-4 bg-white rounded-lg border-2 border-black hover:bg-gray-50 transition-colors"
+                  >
+                    <Upload size={24} className="mb-2" />
+                    <h4 className="font-medium mb-1">批量导入</h4>
+                    <p className="text-sm text-gray-500">使用Excel批量添加单词</p>
+                  </Link>
+                </div>
+              )}
             </div>
           )}
 
@@ -365,6 +465,7 @@ export default function WordBookDetailPage() {
                     </p>
                   </div>
                   <button
+                    onClick={handleTogglePublish}
                     className={`px-4 py-2 rounded-lg border-2 border-black transition-colors ${
                       book.is_published
                         ? 'bg-gray-200 hover:bg-gray-300'

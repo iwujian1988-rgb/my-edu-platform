@@ -21,12 +21,12 @@ export default async function CalendarPage() {
   let streak = 0
 
   try {
-    // 获取过去365天的数据
+    // 获取过去365天的数据（使用 updated_at 反映学习活动）
     const { data: wordsData } = await supabase
       .from('word_progress')
-      .select('created_at')
+      .select('updated_at')
       .eq('user_id', user.id)
-      .order('created_at', { ascending: true })
+      .order('updated_at', { ascending: true })
 
     if (wordsData) {
       totalWords = wordsData.length
@@ -35,7 +35,7 @@ export default async function CalendarPage() {
       const dateMap = new Map<string, number>()
 
       wordsData.forEach((word: any) => {
-        const date = new Date(word.created_at)
+        const date = new Date(word.updated_at)
         const dateStr = date.toISOString().split('T')[0] // YYYY-MM-DD
         dateMap.set(dateStr, (dateMap.get(dateStr) || 0) + 1)
       })

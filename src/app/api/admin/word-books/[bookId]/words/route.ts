@@ -41,10 +41,10 @@ export async function GET(
     const sortBy = searchParams.get('sortBy') || 'order_index'
     const sortOrder = searchParams.get('sortOrder') || 'asc'
 
-    // 构建查询
+    // 构建查询（JOIN章节信息）
     let query = supabase
       .from('words')
-      .select('*', { count: 'exact' })
+      .select('*, chapters(id, title, order_index)', { count: 'exact' })
       .eq('book_id', bookId)
 
     // 按章节筛选

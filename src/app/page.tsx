@@ -5,50 +5,6 @@ import { BookOpen, Target, Calendar, Plus, GraduationCap, Zap, LayoutGrid, Cat, 
 import { PermissionWarningBanner } from '@/components/PermissionDisplay'
 import { getUserPermissions } from '@/lib/permissions'
 
-// Mock 数据（Supabase 无数据时使用）
-const mockBooks = [
-  {
-    id: '1',
-    name: 'CET-4 核心词汇',
-    description: '大学英语四级必备词汇',
-    word_count: 4500,
-    cover_color: 'from-green-400 to-green-500',
-    cover_url: null,
-    progress: 75,
-    status: 'learning'
-  },
-  {
-    id: '2',
-    name: 'CET-6 高频词汇',
-    description: '大学英语六级核心词汇',
-    word_count: 6000,
-    cover_color: 'from-blue-400 to-blue-500',
-    cover_url: null,
-    progress: 45,
-    status: 'learning'
-  },
-  {
-    id: '3',
-    name: 'IELTS 雅思词汇',
-    description: '雅思考试必备词汇',
-    word_count: 8000,
-    cover_color: 'from-purple-400 to-purple-500',
-    cover_url: null,
-    progress: 0,
-    status: 'not_started'
-  },
-  {
-    id: '4',
-    name: 'TOEFL 托福词汇',
-    description: '托福考试核心词汇',
-    word_count: 8000,
-    cover_color: 'from-orange-400 to-orange-500',
-    cover_url: null,
-    progress: 20,
-    status: 'learning'
-  }
-]
-
 export default async function Home() {
   // 获取用户信息
   const user = await getCurrentUser()
@@ -62,8 +18,8 @@ export default async function Home() {
     const hasAllBooks = (userPermissions?.bookPermissions.includes('*') || userPermissions?.bookPermissions.includes('全部')) || false
     const userBookIds = userPermissions?.bookPermissions || []
 
-    // 获取词书数据
-    let books = mockBooks
+    // 获取词书数据（只从数据库获取）
+    let books: any[] = []
 
     try {
       const { data: booksData } = await supabase
@@ -83,9 +39,9 @@ export default async function Home() {
             name: book.title,
             description: book.description || '',
             word_count: book.total_words || 0,
-            cover_color: book.cover_color || 'from-green-400 to-green-500', // 保留颜色作为备用
-            cover_url: book.cover_url || null, // AI 生成的封面 URL
-            progress: 0, // 暂无进度数据
+            cover_color: book.cover_color || 'from-green-400 to-green-500',
+            cover_url: book.cover_url || null,
+            progress: 0,
             status: 'not_started'
           }))
       }
@@ -127,7 +83,14 @@ export default async function Home() {
             .eq('book_id', lastBookId)
 
           if (bookProgress) {
-            const learnedCount = bookProgress.filter((p: any) => p.status !== 'new').length
+            // 只统计"认识"的单词作为学习进度
+            // known: 认识（计入进度）
+            // fuzzy: 模糊（部分掌握，也可计入）
+            // unknown: 不认识（不应计入进度）
+            // new: 未标注（不应计入进度）
+            const learnedCount = bookProgress.filter((p: any) =>
+              p.status === 'known' || p.status === 'fuzzy'
+            ).length
             const progress = (bookData as any).total_words > 0
               ? Math.round((learnedCount / (bookData as any).total_words) * 100)
               : 0
@@ -185,14 +148,15 @@ export default async function Home() {
 
       mistakesCount = mistakesData?.length || 0
 
-      // 获取今日新增生词数量
+      // 获取今日新增生词数量（今天有学习活动的单词）
       const today = new Date()
       today.setHours(0, 0, 0, 0)
       const { data: todayWords } = await supabase
         .from('word_progress')
         .select('id')
         .eq('user_id', user.id)
-        .gte('created_at', today.toISOString())
+        .gte('updated_at', today.toISOString())  // 使用 updated_at 而不是 created_at
+        .eq('status', 'new')  // 只统计今天新遇到的单词
 
       todayNewWordsCount = todayWords?.length || 0
     } catch (error) {
@@ -204,7 +168,7 @@ export default async function Home() {
       <div className="min-h-screen bg-[#FDFBF7] text-black font-sans p-6 md:p-8">
         <div className="max-w-7xl mx-auto">
           {/* 1. Header - 换成了猫咪 Logo */}
-          <header className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4">
+          <header className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4" data-testid="user-menu">
             <div className="flex items-center gap-4">
               {/* Logo Box: 绿色底 + 猫咪图标 */}
               <div className="w-12 h-12 bg-[#2ECC71] border-[3px] border-black rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_#000]">

@@ -3,7 +3,7 @@
  * POST /api/admin/users/reset-password
  */
 
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
 import { logAdminAction } from '@/lib/admin-auth'
 import { NextRequest, NextResponse } from 'next/server'
@@ -20,7 +20,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: '缺少用户ID' }, { status: 400 })
     }
 
-    const supabase = await createClient()
+    // 使用 admin client 绕过 RLS 限制
+    const supabase = await createAdminClient()
 
     // 检查用户是否存在
     const { data: user, error: userError } = await supabase
@@ -33,22 +34,28 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: '用户不存在' }, { status: 404 })
     }
 
-    // 获取对应的 auth.user 记录
-    const { data: authUser, error: authError } = await supabase.auth.admin.getUserById(userId)
-
-    if (authError || !authUser) {
-      return NextResponse.json({ error: '用户认证信息不存在' }, { status: 404 })
+    // 生成安全的随机临时密码（包含大小写字母、数字和特殊字符）
+    const generateTempPassword = () => {
+      const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%'
+      let password = ''
+      for (let i = 0; i < 12; i++) {
+        password += chars.charAt(Math.floor(Math.random() * chars.length))
+      }
+      return password
     }
 
-    // 使用 Supabase Admin API 生成密码重置链接
-    const { data: resetData, error: resetError } = await supabase.auth.admin.generateLink({
-      type: 'recovery',
-      email: (user as any).email
-    })
+    const tempPassword = generateTempPassword()
 
-    if (resetError) {
-      console.error('Error generating password reset link:', resetError)
-      return NextResponse.json({ error: '生成重置链接失败' }, { status: 500 })
+    // 使用 Supabase Admin API 直接更新用户密码
+    // 这会使旧密码立即失效
+    const { data: updateData, error: updateError } = await supabase.auth.admin.updateUserById(
+      userId,
+      { password: tempPassword }
+    )
+
+    if (updateError) {
+      console.error('Error resetting password:', updateError)
+      return NextResponse.json({ error: '重置密码失败' }, { status: 500 })
     }
 
     // 记录操作日志
@@ -58,14 +65,15 @@ export async function POST(request: NextRequest) {
       userId,
       {
         user_email: (user as any).email,
-        user_nickname: (user as any).nickname
+        user_nickname: (user as any).full_name
       }
     )
 
     return NextResponse.json({
       success: true,
-      message: '密码重置链接已生成',
-      resetLink: resetData.properties?.action_link
+      message: `密码已重置！新临时密码：${tempPassword}`,
+      tempPassword: tempPassword,
+      userPhone: (user as any).phone_number
     })
   } catch (error: any) {
     console.error('Error in reset-password API:', error)

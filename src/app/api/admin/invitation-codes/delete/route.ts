@@ -3,7 +3,7 @@
  * POST /api/admin/invitation-codes/delete
  */
 
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
 import { logAdminAction } from '@/lib/admin-auth'
 import { NextRequest, NextResponse } from 'next/server'
@@ -20,7 +20,8 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: '缺少邀请码ID' }, { status: 400 })
     }
 
-    const supabase = await createClient()
+    // 使用 admin client 绕过 RLS 限制
+    const supabase = await createAdminClient()
 
     // 检查邀请码是否存在
     const { data: code, error: codeError } = await supabase

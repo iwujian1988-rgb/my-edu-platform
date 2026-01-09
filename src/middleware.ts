@@ -111,8 +111,8 @@ export async function middleware(request: NextRequest) {
 
     const authRoutes = ['/login', '/register']
 
-    // Redirect to home if already logged in and trying to access auth routes
-    if (authRoutes.includes(pathname) && session) {
+    // If user is already logged in and trying to access auth routes, redirect to home
+    if (session && authRoutes.includes(pathname)) {
       return NextResponse.redirect(new URL('/', request.url))
     }
 

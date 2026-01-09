@@ -2,6 +2,10 @@
 
 /**
  * Excel 批量导入单词页面
+ * 改进版：
+ * 1. 章节选择可选（Excel有Chapter字段可自动创建）
+ * 2. 完整的Excel模板（所有字段+说明）
+ * 3. 显示行数限制提示
  */
 
 import { useState, useEffect } from 'react'
@@ -15,6 +19,7 @@ import {
   CheckCircle,
   XCircle,
   AlertCircle,
+  Info,
 } from 'lucide-react'
 
 interface Chapter {
@@ -40,14 +45,17 @@ export default function ImportWordsPage() {
   const [chapters, setChapters] = useState<Chapter[]>([])
 
   const [selectedFile, setSelectedFile] = useState<File | null>(null)
-  const [selectedChapterId, setSelectedChapterId] = useState('')
+  const [selectedChapterId, setSelectedChapterId] = useState<string>('')
+  const [autoCreateChapter, setAutoCreateChapter] = useState(false)
 
   const [importResult, setImportResult] = useState<{
     success: boolean
     message: string
     imported?: number
     failed?: number
+    skipped?: number
     errors?: ImportError[]
+    chaptersCreated?: number
   } | null>(null)
 
   // 获取章节列表
@@ -66,10 +74,6 @@ export default function ImportWordsPage() {
       }
       const data = await response.json()
       setChapters(data.data.chapters || [])
-
-      if (data.data.chapters?.length > 0) {
-        setSelectedChapterId(data.data.chapters[0].id)
-      }
     } catch (error: any) {
       console.error('获取章节列表失败:', error)
       alert(error.message || '获取章节列表失败')
@@ -96,29 +100,77 @@ export default function ImportWordsPage() {
     setImportResult(null)
   }
 
+  /**
+   * 下载改进的Excel模板
+   * 包含所有字段、必填说明、中文含义
+   */
   const handleDownloadTemplate = () => {
-    // 创建模板数据
+    // 创建完整的模板数据
     const template = [
+      // 第一行：字段英文名
       [
-        '单词*',
-        '音标',
-        '释义*',
-        '例句',
-        '排序序号'
+        'Chapter',
+        'Word*',
+        'Phonetic',
+        'Definition*',
+        'Definition EN',
+        'Part of Speech',
+        'Collocation',
+        'Collocation EN',
+        'Example Sentence',
+        'Example EN'
       ],
+      // 第二行：字段中文名 + 说明
       [
-        'hello',
-        '/həˈloʊ/',
-        '你好；问候',
-        'Hello, how are you?',
-        '1'
+        '章节（可选，留空则不归入任何章节）',
+        '单词*（必填）',
+        '音标（可选）',
+        '中文释义*（必填）',
+        '英文释义（可选）',
+        '词性（可选，如：n./v./adj./adv.）',
+        '搭配（中文，可选）',
+        '搭配（英文，可选）',
+        '例句（中文，可选）',
+        '例句（英文，可选）'
       ],
+      // 第三行：示例数据1
       [
-        'world',
-        '/wɜːrld/',
-        '世界；地球',
-        'Welcome to the world of English.',
-        '2'
+        '第一章',
+        'agenda',
+        '/əˈdʒendə/',
+        '议程，日程表',
+        'A list of items to be discussed at a meeting',
+        'n.',
+        '制定议程',
+        'set the agenda',
+        '请在会议前把议程发给我好吗？',
+        'Could you please send me the agenda before the meeting?'
+      ],
+      // 第四行：示例数据2
+      [
+        '第一章',
+        'compromise',
+        '/ˈkɒmprəmaɪz/',
+        '妥协，折中',
+        'An agreement where each side gives up something',
+        'n./v.',
+        '达成妥协',
+        'reach a compromise',
+        '我们需要达成一个让双方都满意的妥协。',
+        'We need to reach a compromise that satisfies both parties.'
+      ],
+      // 第五行：示例数据3（演示Chapter为空的情况）
+      [
+        '',
+        'meeting',
+        '/ˈmiːtɪŋ/',
+        '会议，会面',
+        'A gathering of people for discussion',
+        'n.',
+        '',
+        '',
+        '',
+        ''
       ]
     ]
 
@@ -128,7 +180,7 @@ export default function ImportWordsPage() {
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.download = '单词导入模板.csv'
+    link.download = `单词导入模板-${new Date().toISOString().slice(0, 10)}.csv`
     link.click()
     URL.revokeObjectURL(url)
   }
@@ -139,9 +191,22 @@ export default function ImportWordsPage() {
       return
     }
 
-    if (!selectedChapterId) {
-      alert('请选择目标章节')
+    // 验证：如果选择了章节，不能同时启用自动创建
+    if (selectedChapterId && autoCreateChapter) {
+      alert('请选择一种方式：要么选择现有章节，要么启用自动创建章节')
       return
+    }
+
+    // 验证：如果没选章节也没启用自动创建，提示用户
+    if (!selectedChapterId && !autoCreateChapter) {
+      const confirmed = confirm(
+        '您没有选择章节，也没有启用自动创建。\n\n' +
+        '导入时：\n' +
+        '- 有Chapter字段的单词会自动创建章节\n' +
+        '- 没有Chapter字段的单词不归入任何章节（chapter_id为null）\n\n' +
+        '是否继续？'
+      )
+      if (!confirmed) return
     }
 
     try {
@@ -149,7 +214,11 @@ export default function ImportWordsPage() {
 
       const formData = new FormData()
       formData.append('file', selectedFile)
-      formData.append('chapter_id', selectedChapterId)
+
+      // 只有选择了章节才添加chapter_id（留空表示使用Excel中的Chapter字段）
+      if (selectedChapterId) {
+        formData.append('chapter_id', selectedChapterId)
+      }
 
       const response = await fetch(
         `/api/admin/word-books/${bookId}/import`,
@@ -168,9 +237,11 @@ export default function ImportWordsPage() {
       setImportResult({
         success: true,
         message: '导入完成',
-        imported: data.data.imported,
-        failed: data.data.failed,
-        errors: data.data.errors,
+        imported: data.result.imported,
+        failed: data.result.failed,
+        skipped: data.result.skipped,
+        errors: data.result.errors,
+        chaptersCreated: data.result.chaptersCreated
       })
     } catch (error: any) {
       console.error('导入失败:', error)
@@ -212,7 +283,7 @@ export default function ImportWordsPage() {
   }
 
   return (
-    <div className="p-6 max-w-4xl">
+    <div className="p-6 max-w-5xl">
       {/* 顶部导航 */}
       <div className="flex items-center gap-4 mb-6">
         <Link
@@ -226,53 +297,123 @@ export default function ImportWordsPage() {
             Excel 批量导入
           </h1>
           <p className="text-sm text-gray-500">
-            从 Excel 文件批量导入单词
+            从 Excel 文件批量导入单词（支持自动创建章节）
           </p>
         </div>
       </div>
 
       <div className="space-y-6">
-        {/* 使用说明 */}
+        {/* 使用说明和限制 */}
         <div className="bg-blue-50 border-2 border-blue-200 rounded-xl p-6">
           <h2 className="text-lg font-bold text-blue-900 mb-3">
-            使用说明
+            📖 使用说明
           </h2>
-          <ol className="list-decimal list-inside space-y-2 text-blue-800">
-            <li>下载 Excel 模板文件</li>
-            <li>按照模板格式填写单词信息（带 * 的字段为必填）</li>
-            <li>选择要导入到的章节</li>
+          <ol className="list-decimal list-inside space-y-2 text-blue-800 mb-4">
+            <li>下载 Excel 模板文件（包含完整的字段说明和示例）</li>
+            <li>按照模板格式填写单词信息</li>
+            <li>选择章节分配方式：
+              <ul className="list-disc list-inside ml-6 mt-1 text-sm">
+                <li><strong>方式1</strong>：选择现有章节（所有单词导入到该章节）</li>
+                <li><strong>方式2</strong>：使用Excel中的Chapter字段自动创建章节</li>
+              </ul>
+            </li>
             <li>上传填写好的 Excel 文件</li>
             <li>系统会自动验证数据并导入</li>
           </ol>
           <button
             onClick={handleDownloadTemplate}
-            className="mt-4 flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             <Download size={18} />
-            下载模板
+            下载完整模板（包含字段说明）
           </button>
+        </div>
+
+        {/* 限制说明 */}
+        <div className="bg-amber-50 border-2 border-amber-200 rounded-xl p-6">
+          <h2 className="text-lg font-bold text-amber-900 mb-3">
+            <Info className="inline mr-2" size={20} />
+            限制和要求
+          </h2>
+          <ul className="space-y-2 text-amber-800">
+            <li>• <strong>文件格式</strong>：仅支持 .xlsx 或 .xls 格式</li>
+            <li>• <strong>行数限制</strong>：单次最多导入 <strong className="text-amber-900">100,000</strong> 行</li>
+            <li>• <strong>必填字段</strong>：Word（单词）、Definition（中文释义）</li>
+            <li>• <strong>可选字段</strong>：Chapter、Phonetic、Definition EN、Part of Speech、Collocation、Example Sentence等</li>
+            <li>• <strong>Chapter字段</strong>：如填写，会自动创建新章节；留空则 chapter_id 为 null（不归入任何章节）</li>
+            <li>• <strong>重复检测</strong>：同一章节内的重复单词会被跳过</li>
+          </ul>
         </div>
 
         {/* 导入表单 */}
         <div className="bg-white rounded-xl border-2 border-black shadow-[3px_3px_0px_0px_#000] p-6">
           <form onSubmit={(e) => e.preventDefault()} className="space-y-6">
-            {/* 选择章节 */}
+            {/* 章节分配方式 */}
             <div>
-              <label className="block text-sm font-bold text-gray-700 mb-2">
-                目标章节 <span className="text-red-500">*</span>
+              <label className="block text-sm font-bold text-gray-700 mb-3">
+                章节分配方式
               </label>
-              <select
-                value={selectedChapterId}
-                onChange={(e) => setSelectedChapterId(e.target.value)}
-                className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-              >
-                <option value="">请选择章节</option>
-                {chapters.map((chapter) => (
-                  <option key={chapter.id} value={chapter.id}>
-                    第{chapter.order_index}章 - {chapter.title}
-                  </option>
-                ))}
-              </select>
+              <div className="space-y-3">
+                {/* 选项1：选择现有章节 */}
+                <div className="flex items-start gap-3 p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 transition-colors">
+                  <input
+                    type="radio"
+                    id="select-chapter"
+                    name="chapter-mode"
+                    checked={!autoCreateChapter}
+                    onChange={() => {
+                      setAutoCreateChapter(false)
+                    }}
+                    className="mt-1"
+                  />
+                  <div className="flex-1">
+                    <label htmlFor="select-chapter" className="cursor-pointer">
+                      <span className="font-medium text-gray-900">导入到现有章节</span>
+                      <p className="text-sm text-gray-500 mt-1">
+                        所有单词将导入到选定的章节
+                      </p>
+                    </label>
+                    <select
+                      value={selectedChapterId}
+                      onChange={(e) => setSelectedChapterId(e.target.value)}
+                      disabled={autoCreateChapter}
+                      className="mt-2 w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 disabled:bg-gray-100 disabled:cursor-not-allowed"
+                    >
+                      <option value="">请选择章节</option>
+                      {chapters.map((chapter) => (
+                        <option key={chapter.id} value={chapter.id}>
+                          第{chapter.order_index}章 - {chapter.title}
+                        </option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+
+                {/* 选项2：自动创建章节 */}
+                <div className="flex items-start gap-3 p-4 border-2 border-gray-200 rounded-lg hover:border-green-500 transition-colors">
+                  <input
+                    type="radio"
+                    id="auto-create"
+                    name="chapter-mode"
+                    checked={autoCreateChapter}
+                    onChange={(e) => {
+                      setAutoCreateChapter(e.target.checked)
+                      if (e.target.checked) {
+                        setSelectedChapterId('')
+                      }
+                    }}
+                    className="mt-1"
+                  />
+                  <div className="flex-1">
+                    <label htmlFor="auto-create" className="cursor-pointer">
+                      <span className="font-medium text-gray-900">使用Excel中的Chapter字段自动创建章节</span>
+                      <p className="text-sm text-gray-500 mt-1">
+                        根据Excel中的Chapter列自动创建新章节，没有Chapter字段的单词不归入任何章节（chapter_id为null）
+                      </p>
+                    </label>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* 文件上传 */}
@@ -330,7 +471,7 @@ export default function ImportWordsPage() {
               </Link>
               <button
                 onClick={handleImport}
-                disabled={!selectedFile || !selectedChapterId || uploading}
+                disabled={!selectedFile || uploading}
                 className="flex items-center gap-2 px-6 py-3 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Upload size={20} />
@@ -368,11 +509,21 @@ export default function ImportWordsPage() {
                 {importResult.success && importResult.imported !== undefined && (
                   <div className="text-green-800 space-y-1">
                     <p>
-                      成功导入 <strong>{importResult.imported}</strong> 个单词
+                      ✅ 成功导入 <strong>{importResult.imported}</strong> 个单词
                     </p>
+                    {importResult.skipped && importResult.skipped > 0 && (
+                      <p>
+                        ⏭️ 跳过重复 <strong>{importResult.skipped}</strong> 个
+                      </p>
+                    )}
                     {importResult.failed && importResult.failed > 0 && (
                       <p>
-                        失败 <strong>{importResult.failed}</strong> 个
+                        ❌ 失败 <strong>{importResult.failed}</strong> 个
+                      </p>
+                    )}
+                    {importResult.chaptersCreated && importResult.chaptersCreated > 0 && (
+                      <p>
+                        📖 自动创建 <strong>{importResult.chaptersCreated}</strong> 个章节
                       </p>
                     )}
                   </div>
@@ -386,7 +537,7 @@ export default function ImportWordsPage() {
                       </p>
                     </div>
                     <button
-                                                      onClick={handleDownloadErrors}
+                      onClick={handleDownloadErrors}
                       className="px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors"
                     >
                       下载错误报告

@@ -111,42 +111,14 @@ export async function POST(
       )
     }
 
-    // 获取或创建"默认章节"（用于Chapter为空的单词）
-    let defaultChapterId: string | null = null
-
-    // 检查是否有Chapter为空的行
-    const hasEmptyChapter = validRows.some(row => !row.chapter)
-
-    if (hasEmptyChapter) {
-      const { data: existingDefaultChapter } = await supabase
-        .from('chapters')
-        .select('id')
-        .eq('book_id', bookId)
-        .eq('title', '默认章节')
-        .single()
-
-      if (existingDefaultChapter) {
-        defaultChapterId = existingDefaultChapter.id
-      } else {
-        // 创建默认章节
-        const { data: newDefaultChapter } = await supabase
-          .from('chapters')
-          .insert({
-            book_id: bookId,
-            title: '默认章节',
-            order_index: 0,
-            word_count: 0
-          })
-          .select('id')
-          .single()
-
-        defaultChapterId = newDefaultChapter?.id || null
-      }
-    }
-
     // 分批插入有效数据
+    // 注意：不再创建"默认章节"，没有章节的单词 chapter_id 直接为 null
     let importedCount = 0
     let skippedCount = 0
+    let chaptersCreated = 0
+
+    // 用于追踪已创建的章节，避免重复计数
+    const createdChapters = new Set<string>()
 
     for (let i = 0; i < validRows.length; i += BATCH_SIZE) {
       const batch = validRows.slice(i, i + BATCH_SIZE)
@@ -154,45 +126,61 @@ export async function POST(
       // 准备批量插入数据
       const wordsToInsert = await Promise.all(
         batch.map(async (row) => {
-          // 如果Chapter为空，使用默认章节
+          // 如果Chapter为空，chapter_id 为 null
           // 如果Chapter不为空，获取或创建章节
-          let chapterId = defaultChapterId
+          let chapterId: string | null = null
 
           if (row.chapter) {
-            // 查找现有章节
+            // 标准化章节名称：去除前后空格
+            const normalizedChapter = row.chapter.trim()
+
+            // 查找现有章节（使用标准化后的名称）
             const { data: existingChapter } = await supabase
               .from('chapters')
               .select('id')
               .eq('book_id', bookId)
-              .eq('title', row.chapter)
+              .eq('title', normalizedChapter)
               .single()
 
             if (existingChapter) {
               chapterId = existingChapter.id
             } else {
-              // 创建新章节
+              // 创建新章节（使用标准化后的名称）
               const { data: newChapter } = await supabase
                 .from('chapters')
                 .insert({
                   book_id: bookId,
-                  title: row.chapter,
+                  title: normalizedChapter,
                   word_count: 0
                 })
                 .select('id')
                 .single()
 
               chapterId = newChapter?.id || null
+
+              // 记录新创建的章节
+              if (chapterId && !createdChapters.has(chapterId)) {
+                createdChapters.add(chapterId)
+                chaptersCreated++
+              }
             }
           }
 
           // 检查是否已存在相同的单词（同一章节内）
-          const { data: existingWord } = await supabase
+          // 注意：Supabase查询null值需要使用.is()而不是.eq()
+          const query = supabase
             .from('words')
             .select('id')
             .eq('book_id', bookId)
-            .eq('chapter_id', chapterId)
             .eq('word', row.word)
-            .single()
+
+          if (chapterId === null) {
+            query.is('chapter_id', null)
+          } else {
+            query.eq('chapter_id', chapterId)
+          }
+
+          const { data: existingWord } = await query.single()
 
           if (existingWord) {
             skippedCount++
@@ -290,6 +278,7 @@ export async function POST(
       total: rows.length,
       imported: importedCount,
       skipped: skippedCount,
+      chaptersCreated: chaptersCreated,
       errors: errors
     }
 
