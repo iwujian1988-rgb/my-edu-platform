@@ -19,7 +19,8 @@ import {
   Upload,
   MoreVertical,
   ChevronDown,
-  Power
+  Power,
+  List
 } from 'lucide-react'
 
 interface WordBook {
@@ -343,6 +344,13 @@ export default function WordBooksPage() {
                           title="查看详情"
                         >
                           <Eye size={18} />
+                        </Link>
+                        <Link
+                          href={`/admin/word-books/${book.id}/words`}
+                          className="p-2 text-gray-600 hover:text-purple-600 hover:bg-purple-50 rounded-lg transition-colors"
+                          title="查看单词"
+                        >
+                          <List size={18} />
                         </Link>
                         <button
                           onClick={() => handleToggleShelf(book.id, book.title, book.is_published)}

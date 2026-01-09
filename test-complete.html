@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>完整API测试 - 快速版</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { color: #333; margin-bottom: 20px; }
+        .test-section {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-section h2 { color: #555; margin-bottom: 15px; font-size: 18px; }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        button:hover { background: #0056b3; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        button.run-all { background: #28a745; padding: 15px 30px; font-size: 16px; font-weight: bold; }
+        button.run-all:hover { background: #218838; }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            font-size: 12px;
+            white-space: pre-wrap;
+            word-break: break-all;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        .result.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+        .result.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+        .result.info { background: #d1ecf1; color: #0c5460; border: 1px solid #bee5eb; }
+        #summary {
+            background: #fff3cd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border: 2px solid #ffc107;
+        }
+        #summary h2 { color: #856404; margin-bottom: 10px; }
+        .stats { display: flex; gap: 20px; margin-top: 10px; }
+        .stat { font-size: 24px; font-weight: bold; }
+        .stat.pass { color: #28a745; }
+        .stat.fail { color: #dc3545; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 完整API测试 - 快速版</h1>
+
+        <div id="summary">
+            <h2>测试总结</h2>
+            <div class="stats">
+                <div>总计: <span id="total">0</span></div>
+                <div class="stat pass">✅ 通过: <span id="passed">0</span></div>
+                <div class="stat fail">❌ 失败: <span id="failed">0</span></div>
+            </div>
+            <div style="margin-top: 10px; font-size: 14px;">
+                通过率: <span id="rate">0%</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h2>⚡ 快速测试 - 一键运行所有测试</h2>
+            <button class="run-all" onclick="runAllTests()">🚀 运行所有测试</button>
+            <div id="all-result" class="result" style="display: none;"></div>
+        </div>
+    </div>
+
+    <script>
+        const BASE_URL = '';
+        const SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NzU4ODUzOCwiZXhwIjoyMDgzMTY0NTM4fQ.fZviA_1KwAfuLxSAxgPcF6JQUVlzvyboVxSjlxrq2hc';
+        const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1ODg1MzgsImV4cCI6MjA4MzE2NDUzOH0.1rUusdU-SyWMYNiiAfjrDtSFlcxlwn4FOv0X8bJC7Sk';
+
+        let testResults = { total: 0, passed: 0, failed: 0, details: [] };
+        let testPackageId = null;
+
+        function updateSummary() {
+            document.getElementById('total').textContent = testResults.total;
+            document.getElementById('passed').textContent = testResults.passed;
+            document.getElementById('failed').textContent = testResults.failed;
+            const rate = testResults.total > 0 ? ((testResults.passed / testResults.total) * 100).toFixed(1) : 0;
+            document.getElementById('rate').textContent = rate + '%';
+        }
+
+        function showResult(elementId, message, type) {
+            const el = document.getElementById(elementId);
+            el.textContent = message;
+            el.className = 'result ' + type;
+            el.style.display = 'block';
+        }
+
+        async function apiCall(method, endpoint, body = null) {
+            const headers = {
+                'Authorization': `Bearer ${SERVICE_ROLE_KEY}`,
+                'apikey': ANON_KEY,
+                'Content-Type': 'application/json'
+            };
+
+            const options = { method, headers };
+            if (body) options.body = JSON.stringify(body);
+
+            const response = await fetch(endpoint, options);
+            const data = await response.json();
+
+            return { status: response.status, success: response.status >= 200 && response.status < 300, data };
+        }
+
+        function recordTest(name, success, details) {
+            testResults.total++;
+            if (success) testResults.passed++;
+            else testResults.failed++;
+
+            testResults.details.push({ name, success, details });
+            updateSummary();
+
+            const icon = success ? '✅' : '❌';
+            const status = success ? '通过' : '失败';
+            return `[${icon}] ${name}: ${status}\n${details}`;
+        }
+
+        async function runAllTests() {
+            const resultEl = document.getElementById('all-result');
+            resultEl.textContent = '正在运行所有测试...\n请稍候（约30秒）';
+            resultEl.className = 'result info';
+            resultEl.style.display = 'block';
+
+            // 重置
+            testResults = { total: 0, passed: 0, failed: 0, details: [] };
+            updateSummary();
+
+            const output = [];
+            const results = [];
+
+            try {
+                output.push('\n========== 第一部分：套餐管理测试 ==========\n');
+
+                // 测试1: 获取套餐列表
+                output.push('测试1: 获取套餐列表...');
+                const r1 = await apiCall('GET', '/api/admin/packages-test');
+                results.push({ name: '获取套餐列表', result: r1 });
+                output.push(r1.success ? `✅ 通过 (${r1.data.packages.length}个套餐)` : `❌ 失败`);
+                output.push('');
+
+                // 测试2: 创建套餐
+                output.push('测试2: 创建套餐...');
+                const r2 = await apiCall('POST', '/api/admin/packages-test', {
+                    name: 'API测试套餐',
+                    description: '通过完整API测试创建',
+                    validity_days: 30,
+                    feature_permissions: ['match_game', 'flashcard'],
+                    book_permissions: ['cet4'],
+                    is_active: true,
+                    sort_order: 9999
+                });
+                results.push({ name: '创建套餐', result: r2 });
+                if (r2.success) {
+                    testPackageId = r2.data.package.id;
+                    output.push(`✅ 通过 (ID: ${testPackageId})`);
+                } else {
+                    output.push(`❌ 失败: ${JSON.stringify(r2.data)}`);
+                }
+                output.push('');
+
+                if (testPackageId) {
+                    // 测试3: 更新套餐
+                    output.push('测试3: 更新套餐...');
+                    const r3 = await apiCall('PUT', `/api/admin/packages-test/${testPackageId}`, {
+                        name: 'API测试套餐（已更新）',
+                        validity_days: 60
+                    });
+                    results.push({ name: '更新套餐', result: r3 });
+                    output.push(r3.success ? '✅ 通过' : `❌ 失败`);
+                    output.push('');
+
+                    // 测试4: 禁用套餐
+                    output.push('测试4: 禁用套餐...');
+                    const r4 = await apiCall('PUT', `/api/admin/packages-test/${testPackageId}`, {
+                        is_active: false
+                    });
+                    results.push({ name: '禁用套餐', result: r4 });
+                    output.push(r4.success ? '✅ 通过' : `❌ 失败`);
+                    output.push('');
+
+                    // 测试5: 启用套餐
+                    output.push('测试5: 启用套餐...');
+                    const r5 = await apiCall('PUT', `/api/admin/packages-test/${testPackageId}`, {
+                        is_active: true
+                    });
+                    results.push({ name: '启用套餐', result: r5 });
+                    output.push(r5.success ? '✅ 通过' : `❌ 失败`);
+                    output.push('');
+                }
+
+                output.push('\n========== 第二部分：邀请码管理测试 ==========\n');
+
+                // 测试6: 创建邀请码（关联套餐）
+                if (testPackageId) {
+                    output.push('测试6: 创建邀请码（关联套餐）...');
+                    const r6 = await apiCall('POST', '/api/admin/invitation-codes-test/create', {
+                        count: 1,
+                        package_id: testPackageId,
+                        description: 'API测试邀请码'
+                    });
+                    results.push({ name: '创建邀请码(关联)', result: r6 });
+                    if (r6.success) {
+                        const code = r6.data.codes[0];
+                        output.push(`✅ 通过 (${code.code})`);
+                        output.push(`   继承权限: ${code.feature_permissions.length}个功能`);
+                    } else {
+                        output.push(`❌ 失败: ${JSON.stringify(r6.data)}`);
+                    }
+                    output.push('');
+                }
+
+                // 测试7: 创建邀请码（无套餐）
+                output.push('测试7: 创建邀请码（无套餐）...');
+                const r7 = await apiCall('POST', '/api/admin/invitation-codes-test/create', {
+                    count: 1,
+                    package_id: null,
+                    description: 'API测试邀请码（无套餐）'
+                });
+                results.push({ name: '创建邀请码(无套餐)', result: r7 });
+                if (r7.success) {
+                    const code = r7.data.codes[0];
+                    output.push(`✅ 通过 (${code.code})`);
+                } else {
+                    output.push(`❌ 失败: ${JSON.stringify(r7.data)}`);
+                }
+                output.push('');
+
+                // 测试8: 批量创建邀请码
+                if (testPackageId) {
+                    output.push('测试8: 批量创建邀请码...');
+                    const r8 = await apiCall('POST', '/api/admin/invitation-codes-test/create', {
+                        count: 5,
+                        package_id: testPackageId,
+                        description: '批量测试'
+                    });
+                    results.push({ name: '批量创建邀请码', result: r8 });
+                    if (r8.success) {
+                        output.push(`✅ 通过 (创建${r8.data.codes.length}个)`);
+                        const codes = r8.data.codes.map(c => c.code).join(', ');
+                        output.push(`   邀请码: ${codes}`);
+                    } else {
+                        output.push(`❌ 失败: ${JSON.stringify(r8.data)}`);
+                    }
+                    output.push('');
+                }
+
+                output.push('\n========== 第三部分：数据一致性测试 ==========\n');
+
+                // 测试9: 删除套餐（验证级联）
+                if (testPackageId) {
+                    output.push('测试9: 删除套餐（验证级联）...');
+                    const r9 = await apiCall('DELETE', `/api/admin/packages-test/${testPackageId}`);
+                    results.push({ name: '删除套餐', result: r9 });
+                    output.push(r9.success ? '✅ 通过 (套餐已删除)' : `❌ 失败`);
+                    output.push('   说明: 邀请码的package_id应被设为null');
+                }
+
+                // 统计结果
+                output.push('\n========== 测试总结 ==========\n');
+                const passed = results.filter(r => r.result.success).length;
+                const total = results.length;
+                const rate = ((passed / total) * 100).toFixed(1);
+
+                output.push(`总计: ${total}个测试`);
+                output.push(`通过: ${passed}个`);
+                output.push(`失败: ${total - passed}个`);
+                output.push(`通过率: ${rate}%`);
+
+                if (passed === total) {
+                    output.push('\n🎉 所有测试通过！API功能正常！');
+                    showResult('all-result', output.join('\n'), 'success');
+                } else {
+                    output.push('\n⚠️ 部分测试失败');
+                    showResult('all-result', output.join('\n'), 'error');
+                }
+
+                // 更新统计
+                results.forEach(r => {
+                    recordTest(r.name, r.result.success, `状态码: ${r.result.status}`);
+                });
+
+            } catch (error) {
+                output.push(`\n❌ 测试出错: ${error.message}`);
+                output.push(`堆栈: ${error.stack}`);
+                showResult('all-result', output.join('\n'), 'error');
+            }
+        }
+    </script>
+</body>
+</html>

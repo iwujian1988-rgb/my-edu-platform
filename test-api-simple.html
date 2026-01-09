@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>简单API测试</title>
+</head>
+<body>
+    <h1>API测试</h1>
+    <button onclick="testAPI()">测试API</button>
+    <pre id="result"></pre>
+
+    <script>
+        async function testAPI() {
+            const result = document.getElementById('result');
+            result.textContent = '正在测试...';
+
+            try {
+                // 测试1: 获取套餐列表
+                result.textContent = '\n测试1: GET /api/admin/packages\n';
+                const response1 = await fetch('http://localhost:3005/api/admin/packages', {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NzU4ODUzOCwiZXhwIjoyMDgzMTY0NTM4fQ.fZviA_1KwAfuLxSAxgPcF6JQUVlzvyboVxSjlxrq2hc',
+                        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1ODg1MzgsImV4cCI6MjA4MzE2NDUzOH0.1rUusdU-SyWMYNiiAfjrDtSFlcxlwn4FOv0X8bJC7Sk'
+                    }
+                });
+
+                result.textContent += `状态码: ${response1.status}\n`;
+                const data1 = await response1.json();
+                result.textContent += `响应: ${JSON.stringify(data1, null, 2)}\n\n`;
+
+                // 测试2: 创建套餐
+                result.textContent += '测试2: POST /api/admin/packages\n';
+                const response2 = await fetch('http://localhost:3005/api/admin/packages', {
+                    method: 'POST',
+                    headers: {
+                        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NzU4ODUzOCwiZXhwIjoyMDgzMTY0NTM4fQ.fZviA_1KwAfuLxSAxgPcF6JQUVlzvyboVxSjlxrq2hc',
+                        'apikey': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1ODg1MzgsImV4cCI6MjA4MzE2NDUzOH0.1rUusdU-SyWMYNiiAfjrDtSFlcxlwn4FOv0X8bJC7Sk',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        name: '简单测试套餐',
+                        description: '测试',
+                        validity_days: 30,
+                        feature_permissions: ['match_game'],
+                        book_permissions: ['cet4'],
+                        is_active: true,
+                        sort_order: 9999
+                    })
+                });
+
+                result.textContent += `状态码: ${response2.status}\n`;
+                const data2 = await response2.json();
+                result.textContent += `响应: ${JSON.stringify(data2, null, 2)}\n`;
+
+            } catch (error) {
+                result.textContent += `\n错误: ${error.message}\n`;
+                result.textContent += `堆栈: ${error.stack}\n`;
+            }
+        }
+    </script>
+</body>
+</html>

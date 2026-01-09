@@ -46,7 +46,24 @@
       "Bash(npm run test:*)",
       "Bash(python:*)",
       "Bash(npm run build)",
-      "Bash(if exist \"nul\" del \"nul\")"
+      "Bash(if exist \"nul\" del \"nul\")",
+      "Bash(cmd.exe:*)",
+      "Bash(powershell.exe:*)",
+      "Bash(node test-manual:*)",
+      "Bash(node scripts/check-users:*)",
+      "Bash(node:*)",
+      "Bash(set:*)",
+      "Bash(grep:*)",
+      "Bash(done)",
+      "Bash(find:*)",
+      "Bash(if not exist test-results mkdir test-results)",
+      "Bash(npm install:*)",
+      "Bash(start:*)",
+      "Bash(notepad fix_ban.sql)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(where supabase)",
+      "Bash(powershell:*)",
+      "Bash(git ls-tree:*)"
     ]
   }
 }

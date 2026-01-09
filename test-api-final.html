@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>快速API测试</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 800px; margin: 0 auto; background: white; padding: 20px; border-radius: 8px; }
+        button { background: #28a745; color: white; border: none; padding: 15px 30px; font-size: 18px; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #218838; }
+        .result { margin-top: 20px; padding: 15px; border-radius: 4px; font-family: monospace; white-space: pre-wrap; }
+        .success { background: #d4edda; }
+        .error { background: #f8d7da; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 完整API测试</h1>
+        <button onclick="runAllTests()">运行所有测试</button>
+        <div id="result" class="result" style="display:none;"></div>
+    </div>
+
+    <script>
+        const SERVICE_ROLE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc2NzU4ODUzOCwiZXhwIjoyMDgzMTY0NTM4fQ.fZviA_1KwAfuLxSAxgPcF6JQUVlzvyboVxSjlxrq2hc';
+        const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1ODg1MzgsImV4cCI6MjA4MzE2NDUzOH0.1rUusdU-SyWMYNiiAfjrDtSFlcxlwn4FOv0X8bJC7Sk';
+
+        async function apiCall(method, endpoint, body = null) {
+            const headers = {
+                'Authorization': `Bearer ${SERVICE_ROLE_KEY}`,
+                'apikey': ANON_KEY,
+                'Content-Type': 'application/json'
+            };
+            const options = { method, headers };
+            if (body) options.body = JSON.stringify(body);
+            const response = await fetch(endpoint, options);
+            const data = await response.json();
+            return { status: response.status, success: response.status >= 200 && response.status < 300, data };
+        }
+
+        async function runAllTests() {
+            const result = document.getElementById('result');
+            result.style.display = 'block';
+            result.textContent = '正在运行测试...\n\n';
+            result.className = 'result';
+
+            const output = [];
+            let passCount = 0;
+            let failCount = 0;
+
+            try {
+                output.push('========== 套餐管理测试 ==========\n');
+
+                // 测试1: 获取套餐列表
+                output.push('1. 获取套餐列表...');
+                const r1 = await apiCall('GET', '/api/admin/packages');
+                if (r1.success) {
+                    passCount++;
+                    output.push('   ✅ 通过\n');
+                } else {
+                    failCount++;
+                    output.push(`   ❌ 失败: ${JSON.stringify(r1.data)}\n`);
+                }
+
+                // 测试2: 创建套餐
+                output.push('2. 创建套餐...');
+                const r2 = await apiCall('POST', '/api/admin/packages', {
+                    name: 'API测试套餐',
+                    description: '快速测试',
+                    validity_days: 30,
+                    feature_permissions: ['match_game'],
+                    book_permissions: ['cet4'],
+                    is_active: true,
+                    sort_order: 8888
+                });
+                if (r2.success) {
+                    passCount++;
+                    const pkgId = r2.data.package.id;
+                    output.push(`   ✅ 通过 (ID: ${pkgId})\n`);
+
+                    // 测试3: 更新套餐
+                    output.push('3. 更新套餐...');
+                    const r3 = await apiCall('PUT', `/api/admin/packages/${pkgId}`, { name: '已更新' });
+                    if (r3.success) {
+                        passCount++;
+                        output.push('   ✅ 通过\n');
+                    } else {
+                        failCount++;
+                        output.push(`   ❌ 失败\n`);
+                    }
+
+                    // 测试4: 创建邀请码
+                    output.push('4. 创建邀请码（关联套餐）...');
+                    const r4 = await apiCall('POST', '/api/admin/invitation-codes/create', {
+                        count: 1,
+                        package_id: pkgId,
+                        description: '测试'
+                    });
+                    if (r4.success) {
+                        passCount++;
+                        output.push(`   ✅ 通过 (${r4.data.codes[0].code})\n`);
+                    } else {
+                        failCount++;
+                        output.push(`   ❌ 失败\n`);
+                    }
+
+                    // 测试5: 批量创建邀请码
+                    output.push('5. 批量创建邀请码...');
+                    const r5 = await apiCall('POST', '/api/admin/invitation-codes/create', {
+                        count: 3,
+                        package_id: pkgId,
+                        description: '批量测试'
+                    });
+                    if (r5.success) {
+                        passCount++;
+                        output.push(`   ✅ 通过 (创建${r5.data.codes.length}个)\n`);
+                    } else {
+                        failCount++;
+                        output.push(`   ❌ 失败\n`);
+                    }
+
+                    // 测试6: 删除套餐
+                    output.push('6. 删除套餐...');
+                    const r6 = await apiCall('DELETE', `/api/admin/packages/${pkgId}`);
+                    if (r6.success) {
+                        passCount++;
+                        output.push('   ✅ 通过\n');
+                    } else {
+                        failCount++;
+                        output.push(`   ❌ 失败\n`);
+                    }
+                } else {
+                    failCount++;
+                    output.push(`   ❌ 失败: ${JSON.stringify(r2.data)}\n`);
+                }
+
+                // 创建邀请码（无套餐）
+                output.push('7. 创建邀请码（无套餐）...');
+                const r7 = await apiCall('POST', '/api/admin/invitation-codes/create', {
+                    count: 1,
+                    package_id: null,
+                    description: '无套餐测试'
+                });
+                if (r7.success) {
+                    passCount++;
+                    output.push(`   ✅ 通过\n`);
+                } else {
+                    failCount++;
+                    output.push(`   ❌ 失败\n`);
+                }
+
+                output.push('\n========== 测试总结 ==========\n');
+                output.push(`总计: ${passCount + failCount}个\n`);
+                output.push(`通过: ${passCount}个\n`);
+                output.push(`失败: ${failCount}个\n`);
+                output.push(`通过率: ${((passCount / (passCount + failCount)) * 100).toFixed(1)}%\n`);
+
+                if (failCount === 0) {
+                    output.push('\n🎉 所有测试通过！');
+                    result.classList.add('success');
+                } else {
+                    output.push('\n⚠️ 部分测试失败');
+                    result.classList.add('error');
+                }
+
+                result.textContent = output.join('\n');
+
+            } catch (error) {
+                result.textContent = `错误: ${error.message}\n${error.stack}`;
+                result.classList.add('error');
+            }
+        }
+    </script>
+</body>
+</html>

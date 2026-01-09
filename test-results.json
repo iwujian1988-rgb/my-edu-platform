@@ -77,30 +77,30 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.57.0",
-    "workers": 7,
+    "workers": 1,
     "webServer": {
       "command": "npm run dev",
-      "url": "http://localhost:3000",
+      "url": "http://localhost:3002",
       "reuseExistingServer": true,
       "timeout": 120000
     }
   },
   "suites": [
     {
-      "title": "check-user.spec.ts",
-      "file": "check-user.spec.ts",
+      "title": "admin-login-debug.spec.ts",
+      "file": "admin-login-debug.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "用户状态检查",
-          "file": "check-user.spec.ts",
-          "line": 7,
+          "title": "管理员登录调试",
+          "file": "admin-login-debug.spec.ts",
+          "line": 12,
           "column": 6,
           "specs": [
             {
-              "title": "尝试注册新账号",
+              "title": "步骤1: 访问登录页面",
               "ok": true,
               "tags": [],
               "tests": [
@@ -115,19 +115,40 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 4741,
+                      "duration": 2385,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "当前URL: http://localhost:3000/login\n"
+                          "text": "\n=================================\n"
                         },
                         {
-                          "text": "❓ 注册结果未知\n"
+                          "text": "步骤1: 访问管理员登录页面\n"
+                        },
+                        {
+                          "text": "=================================\n"
+                        },
+                        {
+                          "text": "✅ 页面访问成功\n"
+                        },
+                        {
+                          "text": "  URL: http://localhost:3002/admin/login\n"
+                        },
+                        {
+                          "text": "  状态码: \u001b[33m500\u001b[39m\n"
+                        },
+                        {
+                          "text": "✅ 页面加载完成\n"
+                        },
+                        {
+                          "text": "  页面标题: \n"
+                        },
+                        {
+                          "text": "  页面内容长度: \u001b[33m2818\u001b[39m\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-07T03:10:46.415Z",
+                      "startTime": "2026-01-08T02:19:56.942Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -135,9 +156,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "4f4e0aef81cb28d7358d-6a75e82a925725e9ef4d",
-              "file": "check-user.spec.ts",
-              "line": 8,
+              "id": "e0dc5f924e1793e20e14-5f4a9fb10834dc0d7add",
+              "file": "admin-login-debug.spec.ts",
+              "line": 14,
               "column": 7
             }
           ]
@@ -147,8 +168,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-07T03:10:43.680Z",
-    "duration": 9075.757,
+    "startTime": "2026-01-08T02:19:53.602Z",
+    "duration": 7004.783,
     "expected": 1,
     "skipped": 0,
     "unexpected": 0,
