@@ -16,10 +16,13 @@ export interface WordBook {
   description?: string
   category: WordBookCategory
   is_official: boolean
+  is_published: boolean
   total_words: number
   total_chapters: number
   cover_url?: string
   difficulty_level?: number
+  learner_count?: number
+  completion_rate?: number
   created_at: string
   updated_at: string
 }

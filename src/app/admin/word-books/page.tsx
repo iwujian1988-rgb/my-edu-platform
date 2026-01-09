@@ -34,6 +34,9 @@ interface WordBook {
   is_published: boolean
   created_at: string
   review_status: 'pending' | 'approved' | 'rejected'
+  cover_url: string | null
+  learner_count: number
+  completion_rate: number
 }
 
 interface PaginationInfo {
@@ -299,9 +302,17 @@ export default function WordBooksPage() {
                   <tr key={book.id} className="hover:bg-gray-50 transition-colors">
                     <td className="px-6 py-4">
                       <div className="flex items-start gap-3">
-                        <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0">
-                          <BookOpen className="text-white" size={20} />
-                        </div>
+                        {book.cover_url ? (
+                          <img
+                            src={book.cover_url}
+                            alt={book.title}
+                            className="w-12 h-12 rounded-lg border-2 border-black object-cover flex-shrink-0"
+                          />
+                        ) : (
+                          <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0">
+                            <BookOpen className="text-white" size={20} />
+                          </div>
+                        )}
                         <div className="flex-1 min-w-0">
                           <p className="text-sm font-bold text-gray-900 truncate mb-1">
                             {book.title}
@@ -332,6 +343,16 @@ export default function WordBooksPage() {
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                       <p className="font-medium">{book.total_words} 个单词</p>
                       <p className="text-xs text-gray-500">{book.total_chapters} 个章节</p>
+                      {book.learner_count > 0 && (
+                        <p className="text-xs text-gray-600 mt-1">
+                          <span className="font-medium text-blue-600">{book.learner_count}</span> 人学习
+                        </p>
+                      )}
+                      {book.completion_rate > 0 && (
+                        <p className="text-xs text-gray-600">
+                          完成率 <span className="font-medium text-green-600">{book.completion_rate.toFixed(1)}%</span>
+                        </p>
+                      )}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                       {new Date(book.created_at).toLocaleDateString('zh-CN')}
