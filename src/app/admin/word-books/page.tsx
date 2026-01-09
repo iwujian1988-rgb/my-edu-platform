@@ -18,7 +18,8 @@ import {
   Eye,
   Upload,
   MoreVertical,
-  ChevronDown
+  ChevronDown,
+  Power
 } from 'lucide-react'
 
 interface WordBook {
@@ -60,6 +61,16 @@ const REVIEW_STATUS_COLORS = {
   rejected: 'bg-red-100 text-red-800'
 }
 
+const SHELF_STATUS_MAP = {
+  true: '上架',
+  false: '下架'
+}
+
+const SHELF_STATUS_COLORS = {
+  true: 'bg-green-100 text-green-800 border-green-300',
+  false: 'bg-gray-100 text-gray-800 border-gray-300'
+}
+
 export default function WordBooksPage() {
   const router = useRouter()
   const [books, setBooks] = useState<WordBook[]>([])
@@ -72,6 +83,7 @@ export default function WordBooksPage() {
   const [loading, setLoading] = useState(true)
   const [search, setSearch] = useState('')
   const [categoryFilter, setCategoryFilter] = useState<string>('')
+  const [shelfFilter, setShelfFilter] = useState<string>('')
   const [sortBy, setSortBy] = useState('created_at')
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
 
@@ -88,6 +100,7 @@ export default function WordBooksPage() {
 
       if (search) params.append('search', search)
       if (categoryFilter) params.append('category', categoryFilter)
+      if (shelfFilter) params.append('is_published', shelfFilter)
 
       const response = await fetch(`/api/admin/word-books?${params}`)
       if (!response.ok) throw new Error('获取单词书列表失败')
@@ -124,9 +137,37 @@ export default function WordBooksPage() {
     }
   }
 
+  // 切换上架/下架状态
+  const handleToggleShelf = async (id: string, title: string, currentStatus: boolean) => {
+    const newStatus = !currentStatus
+    const action = newStatus ? '上架' : '下架'
+
+    if (!confirm(`确定要${action}单词书"${title}"吗？`)) {
+      return
+    }
+
+    try {
+      const response = await fetch(`/api/admin/word-books/${id}`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ is_published: newStatus })
+      })
+
+      if (!response.ok) throw new Error(`${action}失败`)
+
+      alert(`${action}成功！`)
+      fetchBooks() // 重新获取列表
+    } catch (error) {
+      console.error(`${action}单词书失败:`, error)
+      alert(`${action}失败，请稍后重试`)
+    }
+  }
+
   useEffect(() => {
     fetchBooks()
-  }, [pagination.page, search, categoryFilter, sortBy, sortOrder])
+  }, [pagination.page, search, categoryFilter, shelfFilter, sortBy, sortOrder])
 
   return (
     <div className="p-6">
@@ -179,6 +220,20 @@ export default function WordBooksPage() {
             <option value="scenario">场景</option>
             <option value="textbook">教材</option>
             <option value="custom">自定义</option>
+          </select>
+
+          {/* 上架/下架筛选 */}
+          <select
+            value={shelfFilter}
+            onChange={(e) => {
+              setShelfFilter(e.target.value)
+              setPagination(prev => ({ ...prev, page: 1 }))
+            }}
+            className="px-4 py-2 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white"
+          >
+            <option value="">全部状态</option>
+            <option value="true">已上架</option>
+            <option value="false">已下架</option>
           </select>
 
           {/* 排序 */}
@@ -268,11 +323,8 @@ export default function WordBooksPage() {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex flex-col gap-1">
-                        <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${REVIEW_STATUS_COLORS[book.review_status]}`}>
-                          {REVIEW_STATUS_MAP[book.review_status]}
-                        </span>
-                        <span className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium ${book.is_published ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'}`}>
-                          {book.is_published ? '已发布' : '草稿'}
+                        <span className={`inline-flex items-center px-3 py-1 rounded text-xs font-bold border-2 ${SHELF_STATUS_COLORS[book.is_published]}`}>
+                          {SHELF_STATUS_MAP[book.is_published]}
                         </span>
                       </div>
                     </td>
@@ -292,6 +344,17 @@ export default function WordBooksPage() {
                         >
                           <Eye size={18} />
                         </Link>
+                        <button
+                          onClick={() => handleToggleShelf(book.id, book.title, book.is_published)}
+                          className={`p-2 rounded-lg transition-colors ${
+                            book.is_published
+                              ? 'text-orange-600 hover:text-orange-700 hover:bg-orange-50'
+                              : 'text-green-600 hover:text-green-700 hover:bg-green-50'
+                          }`}
+                          title={book.is_published ? '下架' : '上架'}
+                        >
+                          <Power size={18} />
+                        </button>
                         <Link
                           href={`/admin/word-books/${book.id}/edit`}
                           className="p-2 text-gray-600 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
