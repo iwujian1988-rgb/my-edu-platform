@@ -187,7 +187,14 @@ export default function WordBooksPage() {
             className="flex items-center gap-2 px-4 py-2 bg-black text-white rounded-lg hover:bg-gray-800 transition-colors border-2 border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]"
           >
             <Plus size={20} />
-            <span>新建单词书</span>
+            <span>创建词库</span>
+          </Link>
+          <Link
+            href="/admin/word-books/import"
+            className="flex items-center gap-2 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors border-2 border-green-800 shadow-[3px_3px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px]"
+          >
+            <Upload size={20} />
+            <span>Excel导入</span>
           </Link>
         </div>
       </div>
@@ -306,11 +313,11 @@ export default function WordBooksPage() {
                           <img
                             src={book.cover_url}
                             alt={book.title}
-                            className="w-12 h-12 rounded-lg border-2 border-black object-cover flex-shrink-0"
+                            className="w-[60px] h-[60px] rounded-lg border-2 border-black object-cover flex-shrink-0"
                           />
                         ) : (
-                          <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0">
-                            <BookOpen className="text-white" size={20} />
+                          <div className="w-[60px] h-[60px] bg-gradient-to-br from-green-400 to-green-600 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0">
+                            <BookOpen className="text-white" size={24} />
                           </div>
                         )}
                         <div className="flex-1 min-w-0">
