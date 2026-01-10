@@ -1,14 +1,21 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import { getUserPermissions } from '@/lib/permissions'
 import { NextRequest, NextResponse } from 'next/server'
 
 /**
  * GET /api/books/[bookId]
- * 获取单词书详情
+ * 获取单词书详情（带权限检查）
  */
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ bookId: string }> }
 ) {
+  const user = await getCurrentUser()
+
+  if (!user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
   try {
     const { bookId } = await params
     const supabase = await createClient()
@@ -22,6 +29,34 @@ export async function GET(
     if (error) {
       console.error('Error fetching book:', error)
       return NextResponse.json({ error: 'Book not found' }, { status: 404 })
+    }
+
+    // 🔒 安全检查：自定义词库权限验证
+    const bookData = book as any
+
+    // 如果是自定义词库（非官方），检查是否为创建者
+    if (bookData.is_official === false && bookData.created_by) {
+      if (bookData.created_by !== user.id) {
+        return NextResponse.json(
+          { error: 'Forbidden: You can only access your own custom books' },
+          { status: 403 }
+        )
+      }
+    }
+
+    // 官方词库：检查用户权限
+    if (bookData.is_official === true) {
+      const userPermissions = await getUserPermissions()
+      const hasAllBooks = userPermissions?.bookPermissions.includes('*') ||
+                          userPermissions?.bookPermissions.includes('全部')
+      const userBookIds = userPermissions?.bookPermissions || []
+
+      if (!hasAllBooks && !userBookIds.includes(bookId)) {
+        return NextResponse.json(
+          { error: 'Forbidden: You do not have permission to access this book' },
+          { status: 403 }
+        )
+      }
     }
 
     return NextResponse.json({

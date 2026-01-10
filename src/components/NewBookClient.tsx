@@ -34,14 +34,25 @@ export function NewBookClient({ userId }: { userId: string }) {
   // 错误和成功消息
   const [error, setError] = useState('')
   const [success, setSuccess] = useState('')
+  const [info, setInfo] = useState('') // 修复P2-3: 分离提示信息
+
+  // 修复P1-2: 配额加载状态
+  const [quotaLoading, setQuotaLoading] = useState(false)
 
   // 获取配额
   useEffect(() => {
     if (step === 'import') {
+      setQuotaLoading(true) // 修复P1-2: 开始加载
       fetch('/api/smart-import')
         .then(res => res.json())
-        .then(data => setQuota(data))
-        .catch(err => console.error('Failed to fetch quota:', err))
+        .then(data => {
+          setQuota(data)
+          setQuotaLoading(false) // 修复P1-2: 加载完成
+        })
+        .catch(err => {
+          console.error('Failed to fetch quota:', err)
+          setQuotaLoading(false) // 修复P1-2: 加载失败
+        })
     }
   }, [step])
 
@@ -69,7 +80,7 @@ export function NewBookClient({ userId }: { userId: string }) {
       setTimeout(() => {
         setSuccess('')
         setStep('import')
-      }, 1500)
+      }, 3000) // 修复P2-1: 延长到3秒，让用户看清楚
     } catch (err: any) {
       setError(err.message)
     } finally {
@@ -104,12 +115,13 @@ export function NewBookClient({ userId }: { userId: string }) {
     setWords([...words, ...newWords])
     setWordInput('')
 
-    // 显示添加结果
+    // 修复P2-3: 使用info状态显示提示信息（而不是error）
     if (duplicateWords.length > 0) {
-      setError(`添加了 ${newWords.length} 个单词，${duplicateWords.length} 个重复已跳过`)
-      setTimeout(() => setError(''), 3000)
+      setInfo(`添加了 ${newWords.length} 个单词，${duplicateWords.length} 个重复已跳过`)
+      setTimeout(() => setInfo(''), 3000)
     } else {
-      setError('')
+      setInfo(`成功添加 ${newWords.length} 个单词`)
+      setTimeout(() => setInfo(''), 2000)
     }
   }
 
@@ -162,12 +174,11 @@ export function NewBookClient({ userId }: { userId: string }) {
         limit: quota ? quota.limit : 500
       })
 
-      // 清空单词列表
-      setWords([])
-      setWordInput('')
-
+      // 修复P1-3: 延迟清空单词列表，在跳转后再清空
       setTimeout(() => {
         setStep('success')
+        setWords([]) // 在跳转后清空
+        setWordInput('')
       }, 2000)
     } catch (err: any) {
       setError(err.message)
@@ -207,6 +218,10 @@ export function NewBookClient({ userId }: { userId: string }) {
               disabled={loading}
               maxLength={100}
             />
+            {/* 修复P2-6: 添加输入字数统计 */}
+            <div className="text-xs text-gray-500 text-right mt-1">
+              {title.length}/100
+            </div>
           </div>
 
           <div>
@@ -222,6 +237,10 @@ export function NewBookClient({ userId }: { userId: string }) {
               rows={3}
               maxLength={500}
             />
+            {/* 修复P3-11: 添加textarea字符统计 */}
+            <div className="text-xs text-gray-500 text-right mt-1">
+              {description.length}/500
+            </div>
           </div>
 
           {/* 错误提示 */}
@@ -229,6 +248,14 @@ export function NewBookClient({ userId }: { userId: string }) {
             <div className="flex items-start gap-2 p-3 bg-red-50 border-2 border-red-200 rounded-xl">
               <AlertCircle className="w-5 h-5 text-red-600 flex-shrink-0 mt-0.5" />
               <p className="text-sm text-red-900">{error}</p>
+            </div>
+          )}
+
+          {/* 修复P2-3: 添加info提示显示（蓝色背景，用于提示而非错误） */}
+          {info && (
+            <div className="flex items-start gap-2 p-3 bg-blue-50 border-2 border-blue-200 rounded-xl">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-blue-900">{info}</p>
             </div>
           )}
 
@@ -266,8 +293,15 @@ export function NewBookClient({ userId }: { userId: string }) {
   if (step === 'import') {
     return (
       <div className="space-y-6">
-        {/* 配额显示 */}
-        {quota && (
+        {/* 修复P1-2: 配额显示 - 添加加载状态 */}
+        {quotaLoading ? (
+          <div className="clay-card p-4 bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-200">
+            <div className="flex items-center justify-center">
+              <div className="w-5 h-5 border-2 border-purple-600 border-t-transparent rounded-full animate-spin mr-3" />
+              <p className="text-sm font-bold text-purple-900">加载配额中...</p>
+            </div>
+          </div>
+        ) : quota && (
           <div className="clay-card p-4 bg-gradient-to-r from-purple-50 to-blue-50 border-2 border-purple-200">
             <div className="flex items-center justify-between">
               <div>
@@ -301,9 +335,15 @@ export function NewBookClient({ userId }: { userId: string }) {
               rows={6}
             />
             <div className="flex items-center justify-between mt-3">
-              <p className="text-xs text-gray-500">
-                支持批量粘贴，自动识别分隔符
-              </p>
+              <div className="flex items-center gap-3">
+                {/* 修复P3-11: 添加字符统计 */}
+                <p className="text-xs text-gray-500">
+                  {wordInput.length} 字符
+                </p>
+                <p className="text-xs text-gray-500">
+                  支持批量粘贴，自动识别分隔符
+                </p>
+              </div>
               <button
                 type="button"
                 onClick={handleAddWord}
@@ -322,9 +362,14 @@ export function NewBookClient({ userId }: { userId: string }) {
                 <h3 className="text-sm font-bold text-gray-900">
                   待导入单词 ({words.length})
                 </h3>
+                {/* 修复P2-2: 添加清空列表确认提示 */}
                 <button
                   type="button"
-                  onClick={() => setWords([])}
+                  onClick={() => {
+                    if (window.confirm(`确定要清空 ${words.length} 个单词吗？`)) {
+                      setWords([])
+                    }
+                  }}
                   className="text-xs text-red-600 hover:text-red-700 font-semibold"
                 >
                   清空列表
@@ -358,6 +403,14 @@ export function NewBookClient({ userId }: { userId: string }) {
             </div>
           )}
 
+          {/* 修复P2-3: 添加info提示显示（蓝色背景，用于提示而非错误） */}
+          {info && (
+            <div className="flex items-start gap-2 p-3 bg-blue-50 border-2 border-blue-200 rounded-xl">
+              <Check className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-blue-900">{info}</p>
+            </div>
+          )}
+
           {/* 成功提示 */}
           {success && (
             <div className="flex items-start gap-2 p-3 bg-green-50 border-2 border-green-200 rounded-xl">
@@ -368,17 +421,23 @@ export function NewBookClient({ userId }: { userId: string }) {
 
           {/* 操作按钮 */}
           <div className="flex gap-3">
+            {/* 修复P0: 移除"上一步"按钮 - 词库已创建，不允许返回 */}
+            {/* 原因：返回会导致bookId混乱，用户可能重复创建词库 */}
             <button
               type="button"
-              onClick={() => setStep('create')}
+              onClick={() => {
+                if (window.confirm('确定要放弃当前词库吗？这将返回首页。')) {
+                  router.push('/')
+                }
+              }}
               className="flex-1 py-4 border-2 border-gray-300 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-colors"
             >
-              上一步
+              取消
             </button>
             <button
               type="button"
               onClick={handleSmartImport}
-              disabled={loading || words.length === 0}
+              disabled={loading || words.length === 0 || (quota && words.length > quota.remaining)}
               className="flex-1 py-4 bg-gradient-to-r from-purple-500 to-purple-600 text-white font-bold rounded-xl hover:from-purple-600 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
             >
               {loading ? (
@@ -428,6 +487,30 @@ export function NewBookClient({ userId }: { userId: string }) {
             <p className="text-xs text-yellow-700 mt-1">仅保存单词</p>
           </div>
         </div>
+
+        {/* 修复P2-5: 显示详细导入结果 */}
+        {importResults.length > 0 && (
+          <div className="mb-8 max-w-md mx-auto">
+            <h3 className="text-sm font-bold text-gray-900 mb-3">导入结果详情</h3>
+            <div className="max-h-60 overflow-y-auto border-2 border-gray-200 rounded-xl p-3">
+              {importResults.slice(0, 20).map((result, index) => (
+                <div key={index} className="flex items-center justify-between py-2 border-b border-gray-100 last:border-0">
+                  <span className="text-sm font-mono">{result.word}</span>
+                  {result.success ? (
+                    <Check className="w-4 h-4 text-green-600 flex-shrink-0" title="成功获取释义" />
+                  ) : (
+                    <AlertCircle className="w-4 h-4 text-yellow-600 flex-shrink-0" title="仅保存单词，未获取释义" />
+                  )}
+                </div>
+              ))}
+              {importResults.length > 20 && (
+                <p className="text-xs text-gray-500 text-center pt-2">
+                  还有 {importResults.length - 20} 个单词...
+                </p>
+              )}
+            </div>
+          </div>
+        )}
 
         {/* 下一步操作 */}
         <div className="flex flex-col sm:flex-row gap-3 justify-center">

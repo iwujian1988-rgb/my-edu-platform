@@ -1,4 +1,5 @@
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import { getUserPermissions } from '@/lib/permissions'
 import { NextRequest, NextResponse } from 'next/server'
 
 type ThemeData = {
@@ -15,9 +16,15 @@ type Chapter = {
 
 /**
  * GET /api/words?bookId=xxx&theme=xxx&scene=xxx&status=xxx
- * 获取单词书的所有单词，支持筛选
+ * 获取单词书的所有单词，支持筛选（带权限检查）
  */
 export async function GET(request: NextRequest) {
+  const user = await getCurrentUser()
+
+  if (!user) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+  }
+
   try {
     const searchParams = request.nextUrl.searchParams
     const bookId = searchParams.get('bookId')
@@ -30,6 +37,44 @@ export async function GET(request: NextRequest) {
     }
 
     const supabase = await createClient()
+
+    // 🔒 安全检查：先检查词库权限
+    const { data: book, error: bookError } = await supabase
+      .from('books')
+      .select('id, is_official, created_by')
+      .eq('id', bookId)
+      .single()
+
+    if (bookError || !book) {
+      return NextResponse.json({ error: 'Book not found or access denied' }, { status: 404 })
+    }
+
+    const bookData = book as any
+
+    // 自定义词库：检查是否为创建者
+    if (bookData.is_official === false && bookData.created_by) {
+      if (bookData.created_by !== user.id) {
+        return NextResponse.json(
+          { error: 'Forbidden: You can only access words from your own custom books' },
+          { status: 403 }
+        )
+      }
+    }
+
+    // 官方词库：检查用户权限
+    if (bookData.is_official === true) {
+      const userPermissions = await getUserPermissions()
+      const hasAllBooks = userPermissions?.bookPermissions.includes('*') ||
+                          userPermissions?.bookPermissions.includes('全部')
+      const userBookIds = userPermissions?.bookPermissions || []
+
+      if (!hasAllBooks && !userBookIds.includes(bookId)) {
+        return NextResponse.json(
+          { error: 'Forbidden: You do not have permission to access this book' },
+          { status: 403 }
+        )
+      }
+    }
 
     // Get all chapters for this book
     let chaptersQuery = supabase

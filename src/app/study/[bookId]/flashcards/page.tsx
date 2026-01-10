@@ -543,12 +543,12 @@ export default function FlashcardsPage() {
           <div className="mb-2">
             <div className="flex justify-between text-sm text-gray-600 font-semibold mb-2">
               <span>学习进度</span>
-              <span>{Math.round((currentIndex / words.length) * 100)}%</span>
+              <span>{Math.round(((currentIndex + 1) / words.length) * 100)}%</span>
             </div>
             <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
               <div
                 className="bg-gradient-to-r from-[#9B8CB5] to-[#B8A5D6] h-full transition-all duration-300"
-                style={{ width: `${(currentIndex / words.length) * 100}%` }}
+                style={{ width: `${((currentIndex + 1) / words.length) * 100}%` }}
               ></div>
             </div>
           </div>

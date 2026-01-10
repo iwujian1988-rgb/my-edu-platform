@@ -31,19 +31,44 @@ export async function GET(request: Request) {
     // 获取用户权限
     const userPermissions = await getUserPermissions()
 
-    // 根据权限过滤词库
-    let filteredBooks = books || []
-    if (userPermissions) {
-      const hasAllBooks = userPermissions.bookPermissions.includes('*') ||
-                          userPermissions.bookPermissions.includes('全部')
-      const userBookIds = userPermissions.bookPermissions
+    // 🔒 安全修复：默认只返回公共词库，必须显式授权才能看到其他词库
+    let filteredBooks = []
 
-      if (!hasAllBooks) {
-        // 只返回用户有权限的词库
-        filteredBooks = books.filter(book => userBookIds.includes(book.id))
-      }
-      // 如果 hasAllBooks 为 true，返回所有词库
+    // 如果权限获取失败，只返回公共词库（created_by为null）
+    if (!userPermissions) {
+      filteredBooks = (books || []).filter(book => !book.created_by)
+      return NextResponse.json(filteredBooks)
     }
+
+    const hasAllBooks = userPermissions.bookPermissions.includes('*') ||
+                        userPermissions.bookPermissions.includes('全部')
+    const userBookIds = userPermissions.bookPermissions
+
+    // 根据权限过滤词库
+    filteredBooks = (books || []).filter(book => {
+      // 规则1：自定义词库（非官方且有创建者） - 只返回创建者自己的
+      if (book.is_official === false && book.created_by) {
+        return book.created_by === user.id
+      }
+
+      // 规则2：官方词库（is_official为true） - 根据用户权限过滤
+      if (book.is_official === true) {
+        return hasAllBooks || userBookIds.includes(book.id)
+      }
+
+      // 规则3：is_official为null或undefined的情况 - 检查created_by
+      if (book.is_official === null || book.is_official === undefined) {
+        // 如果有创建者，只返回创建者自己的
+        if (book.created_by) {
+          return book.created_by === user.id
+        }
+        // 如果没有创建者（公共词库），所有人可见
+        return true
+      }
+
+      // 规则4：其他情况（如is_official=false但created_by为null） - 默认不可见
+      return false
+    })
 
     return NextResponse.json(filteredBooks)
   } catch (error) {

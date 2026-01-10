@@ -1,9 +1,11 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
-import { BookOpen, Target, Calendar, Plus, GraduationCap, Zap, LayoutGrid, Cat, LogOut, ChevronRight, Sparkles, ArrowRight, Trophy, TrendingUp, Star } from 'lucide-react'
+import { BookOpen, Target, Calendar, Plus, GraduationCap, Zap, LayoutGrid, Cat, LogOut, ChevronRight, Sparkles, ArrowRight, Trophy, TrendingUp, Star, Clock } from 'lucide-react'
 import { PermissionWarningBanner } from '@/components/PermissionDisplay'
 import { getUserPermissions } from '@/lib/permissions'
+import { DashboardContent } from '@/components/DashboardContent'
+import { AppSidebar } from '@/components/AppSidebar'
 
 export default async function Home() {
   // 获取用户信息
@@ -163,233 +165,18 @@ export default async function Home() {
       console.error('Error fetching user learning data:', error)
     }
 
-    // 显示工作台内容
+    // 显示工作台内容 - Premium Neo-Brutalism Design
     return (
-      <div className="min-h-screen bg-[#FDFBF7] text-black font-sans p-6 md:p-8">
-        <div className="max-w-7xl mx-auto">
-          {/* 1. Header - 换成了猫咪 Logo */}
-          <header className="flex flex-col md:flex-row justify-between items-center mb-10 gap-4" data-testid="user-menu">
-            <div className="flex items-center gap-4">
-              {/* Logo Box: 绿色底 + 猫咪图标 */}
-              <div className="w-12 h-12 bg-[#2ECC71] border-[3px] border-black rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_#000]">
-                <Cat size={28} strokeWidth={3} className="text-black" />
-              </div>
-              <div>
-                <h1 className="text-2xl font-black tracking-tight">喵喵笔记</h1>
-                <p className="text-xs font-bold text-gray-500 font-mono">{user.email}</p>
-              </div>
-            </div>
-
-            <Link
-              href="/logout"
-              className="px-5 py-2 bg-white border-[3px] border-black rounded-xl font-bold text-sm hover:bg-red-50 hover:-translate-y-0.5 transition-all flex items-center gap-2 shadow-[2px_2px_0px_0px_#000]"
-            >
-              <LogOut size={18} strokeWidth={3} />
-              退出登录
-            </Link>
-          </header>
-
-          {/* Permission Warning Banner */}
-          <PermissionWarningBanner />
-
-          {/* 2. 个人学习区 (Stats) */}
-          <section className="mb-10">
-            <h2 className="text-xl font-black mb-6 flex items-center gap-2">
-              <Target size={28} strokeWidth={3} className="text-[#FF6B6B]" />
-              个人学习区
-            </h2>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Stat Card 1 - 继续学习 */}
-              {lastStudyBook ? (
-                <Link href={lastStudyBook.continueURL} className="group">
-                  <div className="bg-white border-[3px] border-black rounded-2xl p-5 shadow-[4px_4px_0px_0px_#000] flex flex-col justify-between h-48 hover:-translate-y-1 transition-transform cursor-pointer">
-                    {/* 顶部：图标盒 + 状态标 */}
-                    <div className="flex justify-between items-start">
-                      {/* 悬浮图标盒 */}
-                      <div className="w-12 h-12 rounded-xl border-[3px] border-black flex items-center justify-center bg-[#2ECC71]">
-                        <Target size={24} strokeWidth={3} className="text-black" />
-                      </div>
-                      <span className="bg-black text-white text-[10px] font-bold px-2 py-1 rounded">
-                        进行中
-                      </span>
-                    </div>
-
-                    {/* 底部：数据展示 */}
-                    <div>
-                      <p className="text-gray-500 font-bold text-xs mb-1">当前学习进度</p>
-                      <div className="flex items-baseline gap-2">
-                        {/* 超大数字 */}
-                        <h3 className="text-5xl font-black tracking-tighter">{lastStudyBook.progress}%</h3>
-                        <span className="text-sm font-bold border-b-2 border-black pb-0.5 line-clamp-1">{lastStudyBook.title}</span>
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              ) : (
-                <div className="bg-white border-[3px] border-black rounded-2xl p-5 shadow-[4px_4px_0px_0px_#000] flex flex-col justify-between h-48 opacity-60">
-                  {/* 顶部：图标盒 */}
-                  <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 rounded-xl border-[3px] border-black flex items-center justify-center bg-gray-200">
-                      <Target size={24} strokeWidth={3} className="text-gray-400" />
-                    </div>
-                  </div>
-
-                  {/* 底部：数据展示 */}
-                  <div>
-                    <p className="text-gray-500 font-bold text-xs mb-1">未开始学习</p>
-                    <div className="flex items-baseline gap-2">
-                      <h3 className="text-5xl font-black tracking-tighter text-gray-400">--%</h3>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Stat Card 2 - 错题本 */}
-              <Link href="/mistakes" className="group">
-                <div className="bg-white border-[3px] border-black rounded-2xl p-5 shadow-[4px_4px_0px_0px_#000] flex flex-col justify-between h-48 hover:-translate-y-1 transition-transform cursor-pointer">
-                  {/* 顶部：图标盒 */}
-                  <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 rounded-xl border-[3px] border-black flex items-center justify-center bg-[#FF6B6B]">
-                      <BookOpen size={24} strokeWidth={3} className="text-black" />
-                    </div>
-                  </div>
-
-                  {/* 底部：数据展示 */}
-                  <div>
-                    <p className="text-gray-500 font-bold text-xs mb-1">错题本待复习</p>
-                    <div className="flex items-baseline gap-2">
-                      <h3 className="text-5xl font-black tracking-tighter">{mistakesCount}</h3>
-                      <span className="text-sm font-bold border-b-2 border-black pb-0.5">词</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-
-              {/* Stat Card 3 - 今日学习 */}
-              <Link href="/calendar" className="group">
-                <div className="bg-white border-[3px] border-black rounded-2xl p-5 shadow-[4px_4px_0px_0px_#000] flex flex-col justify-between h-48 hover:-translate-y-1 transition-transform cursor-pointer">
-                  {/* 顶部：图标盒 */}
-                  <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 rounded-xl border-[3px] border-black flex items-center justify-center bg-[#4ECDC4]">
-                      <Calendar size={24} strokeWidth={3} className="text-black" />
-                    </div>
-                  </div>
-
-                  {/* 底部：数据展示 */}
-                  <div>
-                    <p className="text-gray-500 font-bold text-xs mb-1">今日新增单词</p>
-                    <div className="flex items-baseline gap-2">
-                      <h3 className="text-5xl font-black tracking-tighter">{todayNewWordsCount}</h3>
-                      <span className="text-sm font-bold border-b-2 border-black pb-0.5">词</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          </section>
-
-          {/* 3. 新建按钮 - 左侧加了一个白色圆圈包裹的加号 */}
-          <section className="mb-12">
-            <Link href="/library/new">
-              <button className="w-full md:w-auto bg-[#2ECC71] text-black font-bold px-2 py-2 rounded-xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] flex items-center gap-4 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000] transition-all pr-8">
-                <div className="w-12 h-12 bg-white border-[3px] border-black rounded-lg flex items-center justify-center">
-                  <Plus size={24} strokeWidth={4} />
-                </div>
-                <div className="flex flex-col items-start">
-                  <span className="text-lg font-black">新建自定义词库</span>
-                  <span className="text-xs font-bold opacity-70">打造你的专属单词书</span>
-                </div>
-              </button>
-            </Link>
-          </section>
-
-          {/* 4. 词库资源 (Resources) */}
-          <section>
-            <div className="flex flex-col sm:flex-row justify-between items-end mb-6 gap-4">
-              <h2 className="text-xl font-black flex items-center gap-2">
-                <BookOpen size={28} strokeWidth={3} className="text-[#2ECC71]" />
-                词库资源
-              </h2>
-              <div className="flex gap-2 overflow-x-auto pb-1">
-                <button className="px-4 py-1.5 rounded-full border-[2px] border-black text-sm font-bold bg-black text-white shadow-[2px_2px_0px_0px_#888]">全部</button>
-                <button className="px-4 py-1.5 rounded-full border-[2px] border-black text-sm font-bold bg-white hover:bg-gray-50 transition-colors cursor-pointer">考试</button>
-                <button className="px-4 py-1.5 rounded-full border-[2px] border-black text-sm font-bold bg-white hover:bg-gray-50 transition-colors cursor-pointer">场景</button>
-                <button className="px-4 py-1.5 rounded-full border-[2px] border-black text-sm font-bold bg-white hover:bg-gray-50 transition-colors cursor-pointer">教材</button>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {books.map((book, index) => {
-                const cardThemes = [
-                  { color: 'bg-[#A29BFE]', icon: GraduationCap, tag: '考试' },  // Soft Lavender
-                  { color: 'bg-[#FAB1A0]', icon: Zap, tag: '场景' },      // Creamy Coral
-                  { color: 'bg-[#FF7675]', icon: LayoutGrid, tag: '场景' },    // Muted Rose
-                  { color: 'bg-[#00CEC9]', icon: BookOpen, tag: '教材' },      // Robin's Egg Teal
-                ]
-                const theme = cardThemes[index % cardThemes.length]
-                const IconComponent = theme.icon
-
-                return (
-                  <Link
-                    key={book.id}
-                    href={`/library/${book.id}`}
-                    className="group"
-                  >
-                    <div className="bg-white border-[3px] border-black rounded-2xl shadow-[4px_4px_0px_0px_#000] flex flex-col overflow-hidden group hover:-translate-y-1 transition-all h-full cursor-pointer">
-                      {/* 1. 顶部窄条纹 (Header Strip) - 高度固定 h-20 */}
-                      <div className={`h-20 border-b-[3px] border-black flex items-center justify-center relative ${theme.color}`}>
-                        {book.cover_url ? (
-                          <img
-                            src={book.cover_url}
-                            alt={book.name}
-                            className="w-full h-full object-cover"
-                          />
-                        ) : (
-                          <IconComponent size={32} color="white" strokeWidth={3} className="drop-shadow-md group-hover:scale-110 transition-transform" />
-                        )}
-                        {/* 右上角标签 */}
-                        {!book.cover_url && (
-                          <div className="absolute top-2 right-2 bg-white border-[2px] border-black px-2 py-0.5 text-[10px] font-bold rounded">
-                            {theme.tag}
-                          </div>
-                        )}
-                      </div>
-
-                      {/* 2. 内容区域 */}
-                      <div className="p-4 flex-1 flex flex-col">
-                        <h3 className="text-lg font-black mb-1 leading-tight">{book.name || '未命名词书'}</h3>
-                        <p className="text-xs text-gray-500 font-bold mb-4 line-clamp-1">{book.description || '暂无描述'}</p>
-
-                        {/* 3. 底部栏：左侧胶囊标签 + 右侧小黑按钮 */}
-                        <div className="mt-auto flex items-center justify-between">
-                          <span className="px-3 py-1 rounded-full border-[2px] border-black text-xs font-bold bg-white">
-                            {book.word_count?.toLocaleString() || 0} 词
-                          </span>
-
-                          {/* 这里的按钮是关键！黑色小方块 */}
-                          <button className="w-10 h-10 bg-black rounded-lg flex items-center justify-center text-white hover:bg-[#00CEC9] hover:text-black hover:scale-110 transition-all">
-                            <Plus size={20} strokeWidth={3} />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </Link>
-                )
-              })}
-            </div>
-          </section>
-
-          {/* Footer */}
-          <footer className="mt-16 mb-8">
-            <div className="bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-2xl px-8 py-6 text-center">
-              <p className="text-sm text-gray-600 font-bold">
-                🎓 喵喵笔记 © 2026 · 让英语学习更简单、更有趣
-              </p>
-            </div>
-          </footer>
-        </div>
-      </div>
+      <>
+        <AppSidebar />
+        <DashboardContent
+          books={books}
+          lastStudyBook={lastStudyBook}
+          mistakesCount={mistakesCount}
+          todayNewWordsCount={todayNewWordsCount}
+          userEmail={user.email}
+        />
+      </>
     )
   }
 
