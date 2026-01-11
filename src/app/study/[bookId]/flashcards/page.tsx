@@ -13,6 +13,8 @@ type Word = {
   id: string
   word: string
   phonetic: string
+  uk_phonetic?: string
+  us_phonetic?: string
   definition: string
   definition_en: string
   collocation: string
@@ -647,10 +649,18 @@ export default function FlashcardsPage() {
                   </h2>
 
                   {/* Phonetic */}
-                  {currentWord.phonetic && (
-                    <p className="text-xl text-gray-600 font-semibold mb-6">
-                      {currentWord.phonetic}
-                    </p>
+                  {(currentWord.uk_phonetic || currentWord.us_phonetic || currentWord.phonetic) && (
+                    <div className="text-xl text-gray-600 font-semibold mb-6 space-y-1">
+                      {currentWord.uk_phonetic && (
+                        <p className="text-base">UK {currentWord.uk_phonetic}</p>
+                      )}
+                      {currentWord.us_phonetic && (
+                        <p className="text-base">US {currentWord.us_phonetic}</p>
+                      )}
+                      {!currentWord.uk_phonetic && !currentWord.us_phonetic && currentWord.phonetic && (
+                        <p>{currentWord.phonetic}</p>
+                      )}
+                    </div>
                   )}
 
                   {/* Part of Speech */}
@@ -768,10 +778,18 @@ export default function FlashcardsPage() {
                     </h2>
 
                     {/* Phonetic */}
-                    {words[currentIndex + 1]?.phonetic && (
-                      <p className="text-xl text-gray-600 font-semibold mb-6">
-                        {words[currentIndex + 1]?.phonetic}
-                      </p>
+                    {(words[currentIndex + 1]?.uk_phonetic || words[currentIndex + 1]?.us_phonetic || words[currentIndex + 1]?.phonetic) && (
+                      <div className="text-xl text-gray-600 font-semibold mb-6 space-y-1">
+                        {words[currentIndex + 1]?.uk_phonetic && (
+                          <p className="text-base">UK {words[currentIndex + 1]?.uk_phonetic}</p>
+                        )}
+                        {words[currentIndex + 1]?.us_phonetic && (
+                          <p className="text-base">US {words[currentIndex + 1]?.us_phonetic}</p>
+                        )}
+                        {!words[currentIndex + 1]?.uk_phonetic && !words[currentIndex + 1]?.us_phonetic && words[currentIndex + 1]?.phonetic && (
+                          <p>{words[currentIndex + 1]?.phonetic}</p>
+                        )}
+                      </div>
                     )}
 
                     {/* Part of Speech */}

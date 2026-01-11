@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { BookOpen, ArrowRight, GraduationCap } from 'lucide-react'
 
 interface Book {

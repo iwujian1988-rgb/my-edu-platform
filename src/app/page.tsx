@@ -57,17 +57,35 @@ export default async function Home() {
     let todayNewWordsCount = 0
 
     try {
-      // 获取用户的学习进度（找最近学习过的书）
-      const { data: progressData } = await supabase
-        .from('word_progress')
-        .select('book_id')
+      // 获取用户最近访问的词库（优先使用 last_accessed_at）
+      const { data: recentPrefs, error: prefsError } = await supabase
+        .from('user_book_preferences')
+        .select('book_id, last_accessed_at')
         .eq('user_id', user.id)
-        .not('status', 'eq', 'new')
-        .order('updated_at', { ascending: false })
+        .not('last_accessed_at', 'is', null)
+        .order('last_accessed_at', { ascending: false })
         .limit(1)
 
-      if (progressData && progressData.length > 0) {
-        const lastBookId = (progressData as any)[0].book_id
+      let lastBookId = null
+
+      // 优先使用最近访问记录
+      if (recentPrefs && recentPrefs.length > 0) {
+        lastBookId = (recentPrefs as any)[0].book_id
+      } else {
+        // 如果没有访问记录，回退到查找有学习进度的词库
+        const { data: progressData } = await supabase
+          .from('word_progress')
+          .select('book_id')
+          .eq('user_id', user.id)
+          .order('updated_at', { ascending: false })
+          .limit(1)
+
+        if (progressData && progressData.length > 0) {
+          lastBookId = (progressData as any)[0].book_id
+        }
+      }
+
+      if (lastBookId) {
 
         // 获取该书信息和用户的学习状态
         const { data: bookData } = await supabase

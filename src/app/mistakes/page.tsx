@@ -8,6 +8,8 @@ interface MistakeWord {
   id: string
   word: string
   phonetic: string
+  uk_phonetic?: string
+  us_phonetic?: string
   definition: string
   definition_en: string
   collocation: string
@@ -45,7 +47,7 @@ export default async function MistakesPage() {
 
       const { data: wordsData } = await supabase
         .from('words')
-        .select('id, word, phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech')
+        .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech')
         .in('id', wordIds)
 
       if (wordsData) {
@@ -65,6 +67,8 @@ export default async function MistakesPage() {
             id: word.id,
             word: word.word,
             phonetic: word.phonetic || '',
+            uk_phonetic: word.uk_phonetic || undefined,
+            us_phonetic: word.us_phonetic || undefined,
             definition: word.definition || '',
             definition_en: word.definition_en || '',
             collocation: word.collocation || '',

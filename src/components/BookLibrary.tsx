@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { BookOpen, ArrowRight, GraduationCap } from 'lucide-react'
 
 type TabType = 'recent' | 'my' | 'all'
@@ -192,27 +193,6 @@ export function BookLibrary({ userBooks, userEmail }: BookLibraryProps) {
     } else {
       setLoading(false)
     }
-  }, [activeTab])
-
-  // 当页面重新可见时（如浏览器返回），刷新"最近"标签页的数据
-  useVisibilityChange(() => {
-    if (activeTab === 'recent') {
-      console.log('页面重新可见，刷新最近访问数据...')
-      fetchRecentBooks()
-    }
-  }, [activeTab])
-
-  // 监听路由变化（使用focus事件）
-  useEffect(() => {
-    const handleFocus = () => {
-      console.log('页面获得焦点，检查是否需要刷新...')
-      if (activeTab === 'recent') {
-        fetchRecentBooks()
-      }
-    }
-
-    window.addEventListener('focus', handleFocus)
-    return () => window.removeEventListener('focus', handleFocus)
   }, [activeTab])
 
   // 根据当前 Tab 获取显示的词库

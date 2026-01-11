@@ -23,6 +23,8 @@ type Word = {
   id: string
   word: string
   phonetic: string
+  uk_phonetic?: string
+  us_phonetic?: string
   definition: string
   definition_en: string
   collocation: string
@@ -313,8 +315,8 @@ export default function DictationPage() {
           setIsPlaying(false)
           setIsPaused(false)
         },
-        onError: () => {
-          console.error('❌ Dictation: Speech error')
+        onError: (event?: SpeechSynthesisErrorEvent) => {
+          console.error('❌ Dictation: Speech error', event?.error)
           setIsPlaying(false)
           setIsPaused(false)
         }
@@ -774,8 +776,18 @@ export default function DictationPage() {
                 <p className="text-base">
                   正确拼写：<span className="font-black text-xl">{currentWord.word}</span>
                 </p>
-                {currentWord.phonetic && (
-                  <p className="text-sm mt-1">音标：{currentWord.phonetic}</p>
+                {(currentWord.uk_phonetic || currentWord.us_phonetic || currentWord.phonetic) && (
+                  <div className="text-sm mt-1 space-y-0.5">
+                    {currentWord.uk_phonetic && (
+                      <p className="text-xs text-gray-600">UK {currentWord.uk_phonetic}</p>
+                    )}
+                    {currentWord.us_phonetic && (
+                      <p className="text-xs text-gray-500">US {currentWord.us_phonetic}</p>
+                    )}
+                    {!currentWord.uk_phonetic && !currentWord.us_phonetic && currentWord.phonetic && (
+                      <p className="text-xs">音标：{currentWord.phonetic}</p>
+                    )}
+                  </div>
                 )}
                 {countdown > 0 && (
                   <p className="text-sm mt-2">{countdown}秒后自动切换...</p>

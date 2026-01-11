@@ -12,32 +12,42 @@ export async function GET() {
 
     const supabase = await createClient()
 
-    // 获取用户最近访问的8个词库
-    const { data: recentPrefs, error } = await supabase
+    // 第一步：获取用户最近访问的8个词库ID
+    const { data: recentPrefs, error: prefsError } = await supabase
       .from('user_book_preferences')
-      .select(`
-        book_id,
-        last_accessed_at,
-        books (
-          id,
-          title,
-          description,
-          total_words,
-          cover_url,
-          cover_color
-        )
-      `)
+      .select('book_id, last_accessed_at')
       .eq('user_id', user.id)
       .not('last_accessed_at', 'is', null)
       .order('last_accessed_at', { ascending: false })
       .limit(8)
 
-    if (error) throw error
+    if (prefsError) throw prefsError
 
-    const books = recentPrefs?.map((pref: any) => ({
-      ...pref.books,
-      last_accessed_at: pref.last_accessed_at
-    })) || []
+    // 如果没有访问记录，返回空数组
+    if (!recentPrefs || recentPrefs.length === 0) {
+      return NextResponse.json({ books: [] })
+    }
+
+    // 第二步：根据book_id查询书籍信息
+    const bookIds = recentPrefs.map((pref: any) => pref.book_id)
+    const { data: booksData, error: booksError } = await supabase
+      .from('books')
+      .select('id, title, description, total_words, cover_url, cover_color')
+      .in('id', bookIds)
+
+    if (booksError) throw booksError
+
+    // 合并数据，保持最近访问的顺序
+    const booksMap = new Map((booksData || []).map((book: any) => [book.id, book]))
+    const books = recentPrefs
+      .map((pref: any) => {
+        const book = booksMap.get(pref.book_id)
+        return book ? {
+          ...book,
+          last_accessed_at: pref.last_accessed_at
+        } : null
+      })
+      .filter((book: any) => book !== null)
 
     return NextResponse.json({ books })
   } catch (error: any) {

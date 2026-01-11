@@ -8,6 +8,8 @@ interface Word {
   id: string
   word: string
   phonetic: string
+  uk_phonetic?: string
+  us_phonetic?: string
   definition: string
   definition_en: string
   collocation: string
@@ -74,39 +76,44 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
     return () => clearTimeout(timer)
   }, [word.collocation_en, word.example_sentence_en, showDefinition])
 
-  // 词性映射：英文 → 英文+中文格式
+  // 词性映射：保持纯英文缩写格式
   const getPartOfSpeechLabel = (pos: string): string => {
     const posMap: Record<string, string> = {
-      'noun': 'n名词',
-      'verb': 'v动词',
-      'adjective': 'adj形容词',
-      'adverb': 'adv副词',
-      'pronoun': 'pron代词',
-      'preposition': 'prep介词',
-      'conjunction': 'conj连词',
-      'interjection': 'int感叹词',
-      'article': 'art冠词',
-      'numeral': 'num数词',
-      // 常见缩写
-      'n': 'n名词',
-      'v': 'v动词',
-      'adj': 'adj形容词',
-      'adv': 'adv副词',
-      'pron': 'pron代词',
-      'prep': 'prep介词',
-      'conj': 'conj连词',
-      'int': 'int感叹词',
-      'art': 'art冠词',
-      'num': 'num数词',
-      // 其他常见词性
-      'auxiliary verb': 'aux助动词',
-      'modal verb': 'modal情态动词',
-      'phrasal verb': 'phr短语动词',
-      'transitive verb': 'vt及物动词',
-      'intransitive verb': 'vi不及物动词',
+      // 全称转换为缩写
+      'noun': 'n',
+      'verb': 'v',
+      'adjective': 'adj',
+      'adverb': 'adv',
+      'pronoun': 'pron',
+      'preposition': 'prep',
+      'conjunction': 'conj',
+      'interjection': 'int',
+      'article': 'art',
+      'numeral': 'num',
+      'auxiliary verb': 'aux',
+      'modal verb': 'modal',
+      'phrasal verb': 'phr',
+      'transitive verb': 'vt',
+      'intransitive verb': 'vi',
+      // 缩写保持不变
+      'n': 'n',
+      'v': 'v',
+      'vt': 'vt',
+      'vi': 'vi',
+      'adj': 'adj',
+      'adv': 'adv',
+      'pron': 'pron',
+      'prep': 'prep',
+      'conj': 'conj',
+      'int': 'int',
+      'art': 'art',
+      'num': 'num',
+      'aux': 'aux',
+      'modal': 'modal',
+      'phr': 'phr',
     }
 
-    // 处理多个词性（逗号分隔）
+    // 处理多个词性（逗号分隔），转换为统一缩写格式
     return pos
       .split(',')
       .map(p => {
@@ -191,7 +198,19 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                 </button>
               </div>
               <div className="flex items-center gap-3 flex-wrap">
-                <span className="text-sm text-gray-600 font-mono">{word.phonetic}</span>
+                {/* 显示音标：优先显示英标和美标 */}
+                {word.uk_phonetic || word.us_phonetic ? (
+                  <>
+                    {word.uk_phonetic && (
+                      <span className="text-xs text-gray-600 font-mono">UK {word.uk_phonetic}</span>
+                    )}
+                    {word.us_phonetic && (
+                      <span className="text-xs text-gray-500 font-mono">US {word.us_phonetic}</span>
+                    )}
+                  </>
+                ) : (
+                  <span className="text-sm text-gray-600 font-mono">{word.phonetic}</span>
+                )}
                 <span className="px-2 py-1 text-xs font-semibold text-purple-600 bg-purple-50 rounded-full">
                   {getPartOfSpeechLabel(word.part_of_speech)}
                 </span>
@@ -214,12 +233,12 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
             <div className="mb-3">
               <p className="text-sm text-gray-600 mb-1">{word.definition_en}</p>
               {shouldShowChinese ? (
-                <p className="text-sm text-gray-600">
-                  中文：{word.definition}
+                <p className="text-xs text-gray-500">
+                  {word.definition}
                 </p>
               ) : (
-                <p className="text-sm text-gray-400">
-                  中文：______________________
+                <p className="text-xs text-gray-400">
+                  ______________________
                 </p>
               )}
             </div>
@@ -246,11 +265,6 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                       <Volume2 className="w-4 h-4" />
                     </button>
                   </div>
-                  {shouldShowChinese ? (
-                    <p className="text-xs text-blue-700 mt-1">中文：{word.collocation}</p>
-                  ) : (
-                    <p className="text-xs text-blue-400 mt-1">中文：______________________</p>
-                  )}
                 </div>
                 {/* 半透明遮罩 + 展开按钮 - 仅在内容溢出且未展开时显示 */}
                 {collocationOverflow && !isExpanded && (
@@ -300,9 +314,9 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                     </button>
                   </div>
                   {shouldShowChinese ? (
-                    <p className="text-xs text-gray-600 mt-1">中文：{word.example_sentence}</p>
+                    <p className="text-xs text-gray-600 mt-1">{word.example_sentence}</p>
                   ) : (
-                    <p className="text-xs text-gray-400 mt-1">中文：______________________</p>
+                    <p className="text-xs text-gray-400 mt-1">______________________</p>
                   )}
                 </div>
                 {/* 半透明遮罩 + 展开按钮 - 仅在内容溢出且未展开时显示 */}

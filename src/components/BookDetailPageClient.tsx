@@ -14,6 +14,8 @@ interface Word {
   id: string
   word: string
   phonetic: string
+  uk_phonetic?: string
+  us_phonetic?: string
   definition: string
   definition_en: string
   collocation: string

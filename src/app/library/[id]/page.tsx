@@ -89,6 +89,8 @@ export default async function BookDetailPage({
           id: w.id,
           word: w.word,
           phonetic: w.phonetic || '',
+          uk_phonetic: w.uk_phonetic || undefined,
+          us_phonetic: w.us_phonetic || undefined,
           definition: w.definition || '',
           definition_en: w.definition_en || '',
           collocation: w.collocation || '',
