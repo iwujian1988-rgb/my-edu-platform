@@ -34,50 +34,55 @@ export function usePermissions() {
 
   useEffect(() => {
     async function fetchPermissions() {
-      const supabase = createClient()
-      const { data: { user } } = await supabase.auth.getUser()
+      try {
+        const supabase = createClient()
+        const { data: { user } } = await supabase.auth.getUser()
 
-      if (!user) {
+        if (!user) {
+          setPermissions(prev => ({ ...prev, isLoading: false }))
+          return
+        }
+
+        const { data, error } = await supabase
+          .from('users')
+          .select('feature_permissions, book_permissions, permission_expires_at')
+          .eq('id', user.id)
+          .single()
+
+        if (error || !data) {
+          console.error('Failed to fetch permissions:', error)
+          setPermissions(prev => ({ ...prev, isLoading: false }))
+          return
+        }
+
+        // Check expiration
+        let isExpired = false
+        let isExpiringSoon = false
+        let daysUntilExpiry = null
+
+        const userData = data as any
+
+        if (userData.permission_expires_at) {
+          const expiresAt = new Date(userData.permission_expires_at)
+          const now = new Date()
+          daysUntilExpiry = Math.floor((expiresAt.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+          isExpired = daysUntilExpiry < 0
+          isExpiringSoon = daysUntilExpiry >= 0 && daysUntilExpiry <= 7
+        }
+
+        setPermissions({
+          featurePermissions: userData.feature_permissions || [],
+          bookPermissions: userData.book_permissions || [],
+          permissionExpiresAt: userData.permission_expires_at,
+          isExpired,
+          isExpiringSoon,
+          daysUntilExpiry,
+          isLoading: false
+        })
+      } catch (err) {
+        console.error('Error fetching permissions:', err)
         setPermissions(prev => ({ ...prev, isLoading: false }))
-        return
       }
-
-      const { data, error } = await supabase
-        .from('users')
-        .select('feature_permissions, book_permissions, permission_expires_at')
-        .eq('id', user.id)
-        .single()
-
-      if (error || !data) {
-        console.error('Failed to fetch permissions:', error)
-        setPermissions(prev => ({ ...prev, isLoading: false }))
-        return
-      }
-
-      // Check expiration
-      let isExpired = false
-      let isExpiringSoon = false
-      let daysUntilExpiry = null
-
-      const userData = data as any
-
-      if (userData.permission_expires_at) {
-        const expiresAt = new Date(userData.permission_expires_at)
-        const now = new Date()
-        daysUntilExpiry = Math.floor((expiresAt.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
-        isExpired = daysUntilExpiry < 0
-        isExpiringSoon = daysUntilExpiry >= 0 && daysUntilExpiry <= 7
-      }
-
-      setPermissions({
-        featurePermissions: userData.feature_permissions || [],
-        bookPermissions: userData.book_permissions || [],
-        permissionExpiresAt: userData.permission_expires_at,
-        isExpired,
-        isExpiringSoon,
-        daysUntilExpiry,
-        isLoading: false
-      })
     }
 
     fetchPermissions()

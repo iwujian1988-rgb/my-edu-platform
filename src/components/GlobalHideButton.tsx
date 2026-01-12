@@ -74,16 +74,20 @@ export function GlobalHideButton({ bookId, onHideChange }: GlobalHideButtonProps
     <button
       onClick={handleToggle}
       disabled={isLoading}
-      className={`flex items-center gap-2 px-4 py-2 rounded-xl border-2 text-sm font-semibold transition-all ${
+      className={`${
         hideChinese
-          ? 'bg-purple-50 border-purple-400 text-purple-700'
-          : 'border-gray-200 text-gray-700 hover:border-purple-300 hover:text-purple-600'
-      } disabled:opacity-50`}
+          ? 'bg-[#B4F416] border-black text-black shadow-none translate-y-[2px]'
+          : 'bg-white border-black text-black hover:bg-gray-50 shadow-[2px_2px_0px_0px_#000]'
+      } disabled:opacity-50 transition-all duration-200
+        // 移动端：紧凑图标按钮
+        w-9 h-9 rounded-lg border-2 flex items-center justify-center md:w-auto md:px-4 md:py-2.5 md:flex md:items-center md:gap-2`}
     >
-      {hideChinese ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
-      {isLoading ? '保存中...' : hideChinese ? '显示中文' : '隐藏中文'}
+      {hideChinese ? <EyeOff className="w-4 h-4 md:w-4 md:h-4" strokeWidth={2.5} /> : <Eye className="w-4 h-4 md:w-4 md:h-4" strokeWidth={2.5} />}
+      <span className="hidden md:inline text-sm">
+        {isLoading ? '保存中...' : hideChinese ? '显示中文' : '隐藏中文'}
+      </span>
       {hideChinese && (
-        <span className="ml-1 px-2 py-0.5 text-xs bg-purple-200 rounded-full">
+        <span className="ml-1 px-2 py-0.5 text-xs bg-black text-white rounded-full hidden md:inline-block">
           全局生效
         </span>
       )}

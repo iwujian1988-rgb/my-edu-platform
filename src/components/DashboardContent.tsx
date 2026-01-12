@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Target, Calendar, BookOpen, Plus, ArrowRight, Cat, LogOut, GraduationCap } from 'lucide-react'
 import { PermissionWarningBanner } from './PermissionDisplay'
 import { BookLibrary } from './BookLibrary'
+import EmptyState from './EmptyState'
 
 interface DashboardContentProps {
   books: any[]
@@ -124,17 +125,7 @@ export function DashboardContent({
                 </div>
               </Link>
             ) : (
-              <div className="bg-white border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] lg:shadow-[4px_4px_0px_0px_#000] opacity-60 flex flex-col lg:flex-row items-start lg:items-center gap-3 p-4 lg:p-4 h-full lg:h-auto">
-                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gray-200 border-2 border-black rounded-lg flex items-center justify-center shrink-0">
-                  <Target size={22} className="text-gray-400 lg:w-6 lg:h-6" strokeWidth={2} />
-                </div>
-                <div className="flex flex-col justify-center">
-                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-1">最近学习</p>
-                  <div className="flex items-baseline gap-1 leading-none">
-                    <span className="text-lg lg:text-xl font-black text-gray-400">您还未开始学习</span>
-                  </div>
-                </div>
-              </div>
+              <EmptyState />
             )}
 
             {/* StatBox 2 - 错题本待复习 */}

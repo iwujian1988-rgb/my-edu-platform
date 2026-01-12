@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
-import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw, Settings, X } from 'lucide-react'
+import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw, Settings, X, Trash2 } from 'lucide-react'
 import Link from 'next/link'
 import { speak as speakText, initializeTTS, pauseSpeaking, resumeSpeaking } from '@/lib/speech'
 import { saveResumeState } from '@/lib/resumeState'
@@ -64,6 +64,11 @@ export default function DictationPage() {
   const [definitionPreferenceLoaded, setDefinitionPreferenceLoaded] = useState(false)
   const [hasPlayedOnce, setHasPlayedOnce] = useState(false) // 追踪是否已经播放过一次
 
+  // 手写相关状态 - 隐形手写层
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+  const isDrawingRef = useRef(false)
+  const lastPosRef = useRef({ x: 0, y: 0 })
+
   // 用户设置
   const [shuffleOrder, setShuffleOrder] = useState(false)
   const [autoRemoveFromMistakes, setAutoRemoveFromMistakes] = useState(false)
@@ -74,17 +79,99 @@ export default function DictationPage() {
   const inputRef = useRef<HTMLInputElement>(null)
   const speechTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
+  // 隐形手写层初始化 - 全屏 Canvas + 智能手写笔检测
+  useEffect(() => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    // 1. 设置 Canvas 为全屏尺寸
+    const resizeCanvas = () => {
+      canvas.width = window.innerWidth
+      canvas.height = window.innerHeight
+
+      // 重置 context 样式
+      ctx.lineCap = 'round'
+      ctx.lineJoin = 'round'
+      ctx.lineWidth = 3
+      ctx.strokeStyle = '#2563EB' // 蓝色墨水
+    }
+
+    window.addEventListener('resize', resizeCanvas)
+    resizeCanvas() // 初始化
+
+    // 2. 全局事件监听 - 智能区分手指和手写笔
+    const handlePointerDown = (e: PointerEvent) => {
+      // 只激活手写笔 (pen)
+      if (e.pointerType === 'pen') {
+        e.preventDefault() // 阻止滚动和点击
+        isDrawingRef.current = true
+        lastPosRef.current = { x: e.clientX, y: e.clientY }
+      }
+      // 如果是 touch 或 mouse，不做任何事，让事件穿透到 UI 元素
+    }
+
+    const handlePointerMove = (e: PointerEvent) => {
+      if (!isDrawingRef.current) return
+      if (e.pointerType !== 'pen') return
+
+      e.preventDefault()
+
+      ctx.beginPath()
+      ctx.moveTo(lastPosRef.current.x, lastPosRef.current.y)
+      ctx.lineTo(e.clientX, e.clientY)
+      ctx.stroke()
+
+      lastPosRef.current = { x: e.clientX, y: e.clientY }
+    }
+
+    const handlePointerUp = () => {
+      isDrawingRef.current = false
+    }
+
+    // 添加全局监听器，使用 { passive: false } 允许 preventDefault
+    window.addEventListener('pointerdown', handlePointerDown, { passive: false as any })
+    window.addEventListener('pointermove', handlePointerMove, { passive: false as any })
+    window.addEventListener('pointerup', handlePointerUp)
+    window.addEventListener('pointercancel', handlePointerUp)
+
+    return () => {
+      window.removeEventListener('resize', resizeCanvas)
+      window.removeEventListener('pointerdown', handlePointerDown)
+      window.removeEventListener('pointermove', handlePointerMove)
+      window.removeEventListener('pointerup', handlePointerUp)
+      window.removeEventListener('pointercancel', handlePointerUp)
+    }
+  }, [])
+
+  // 清除画布
+  const clearCanvas = () => {
+    const canvas = canvasRef.current
+    const ctx = canvas?.getContext('2d')
+    if (canvas && ctx) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+    }
+  }
+
   // Fetch words and progress
   useEffect(() => {
     async function fetchData() {
+      console.log('🔄 [Dictation] Starting data fetch...', { bookId, scope })
       try {
+        console.log('📚 [Dictation] Fetching book info...')
         const bookRes = await fetch(`/api/books/${bookId}`)
+        console.log('📚 [Dictation] Book response status:', bookRes.status)
         if (!bookRes.ok) throw new Error('Failed to fetch book')
         const bookData = await bookRes.json()
+        console.log('📚 [Dictation] Book data received:', bookData.data?.title)
         setBookTitle(bookData.data.title)
 
         const params = new URLSearchParams()
         params.set('bookId', bookId)
+        params.set('page', '1')
+        params.set('pageSize', '10000') // dictation模式需要加载所有单词
 
         if (scope === 'filtered') {
           const theme = searchParams.get('theme')
@@ -96,15 +183,21 @@ export default function DictationPage() {
           if (status && status !== 'all') params.set('status', status)
         }
 
+        console.log('📝 [Dictation] Fetching words...', params.toString())
         const wordsRes = await fetch(`/api/words?${params.toString()}`)
+        console.log('📝 [Dictation] Words response status:', wordsRes.status)
         if (!wordsRes.ok) throw new Error('Failed to fetch words')
         const wordsData = await wordsRes.json()
+        console.log('📝 [Dictation] Words data received, count:', wordsData.data?.length)
 
         // 获取用户偏好（包括乱序、自动删除等设置）
         try {
+          console.log('⚙️ [Dictation] Fetching user preferences...')
           const prefRes = await fetch(`/api/user-preferences?book_id=${bookId}`)
+          console.log('⚙️ [Dictation] Preferences response status:', prefRes.status)
           if (prefRes.ok) {
             const prefData = await prefRes.json()
+            console.log('⚙️ [Dictation] Preferences data received:', prefData.data)
             if (prefData.data) {
               // 中文释义设置
               if (prefData.data.hide_definition !== undefined) {
@@ -121,12 +214,14 @@ export default function DictationPage() {
                 ? shuffleArray([...wordsData.data])
                 : wordsData.data
 
+              console.log('✅ [Dictation] Setting words:', wordsToSet.length, 'items')
               setWords(wordsToSet)
             }
           }
         } catch (error) {
-          console.error('Error fetching preferences:', error)
+          console.error('❌ [Dictation] Error fetching preferences:', error)
           // 如果获取偏好失败，使用原始顺序
+          console.log('📝 [Dictation] Using original word order')
           setWords(wordsData.data)
         }
 
@@ -585,14 +680,45 @@ export default function DictationPage() {
   return (
     <PermissionGate feature={FEATURE_PERMISSIONS.DICTATION} bookId={bookId}>
       <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+
+        {/* --- 隐形手写层 --- */}
+        {/* pointer-events-none 确保手指能穿透到按钮 */}
+        <canvas
+          ref={canvasRef}
+          className="fixed inset-0 z-50 pointer-events-none"
+        />
+
+        {/* --- 固定清空按钮 --- */}
+        {/* 右下角固定，用于清除手写墨水 */}
+        <button
+          onClick={clearCanvas}
+          className="fixed bottom-6 right-6 z-[60] w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center shadow-[3px_3px_0px_0px_#000] active:translate-y-1 active:shadow-none transition-all hover:bg-red-50 text-red-500"
+          title="清除手写"
+        >
+          <Trash2 size={20} />
+        </button>
       {/* Header */}
       <header className="sticky top-0 z-50 px-4 py-4">
         <div className="max-w-4xl mx-auto">
           <div className="clay-card px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <button
-                onClick={() => {
-                  // ⭐ 直接返回首页（统一返回路径）
+                onClick={async () => {
+                  // ⭐ 先保存数据，再跳转
+                  console.log('🔙 Dictation back button: Saving data before navigation...')
+
+                  // 1. 立即保存当前学习位置
+                  if (words.length > 0 && currentIndex >= 0) {
+                    saveResumeState(bookId, 'dictation', {
+                      index: currentIndex,
+                      totalWords: words.length
+                    })
+                  }
+
+                  // 2. 等待一下确保保存完成
+                  await new Promise(resolve => setTimeout(resolve, 200))
+
+                  // 3. 跳转回首页
                   router.push('/')
                 }}
                 className="clay-icon p-2 hover:scale-110 transition-transform"
@@ -734,7 +860,7 @@ export default function DictationPage() {
               </button>
             </div>
 
-            {/* Input Area */}
+            {/* Input Area - 键盘输入（手写笔可直接在屏幕上书写） */}
             <div className="mb-6">
               <input
                 ref={inputRef}
@@ -761,6 +887,9 @@ export default function DictationPage() {
                 autoCorrect="off"
                 spellCheck={false}
               />
+              <p className="text-center text-xs text-gray-500 mt-2 font-medium">
+                💡 支持手写笔直接在屏幕上书写
+              </p>
             </div>
 
             {/* Feedback */}

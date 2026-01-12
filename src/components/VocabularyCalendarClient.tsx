@@ -71,15 +71,15 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
     return weeks
   }, [dailyData])
 
-  const getCellColor = (level: number): string => {
+  const getCellColor = (level: number): { bg: string; border: string } => {
     switch (level) {
-      case 0: return 'bg-gray-100'
-      case 1: return 'bg-green-200'
-      case 2: return 'bg-green-300'
-      case 3: return 'bg-green-500'
-      case 4: return 'bg-green-600'
-      case 5: return 'bg-green-800'
-      default: return 'bg-gray-100'
+      case 0: return { bg: '#F3F4F6', border: '#D1D5DB' }
+      case 1: return { bg: '#BBF7D0', border: '#86EFAC' }
+      case 2: return { bg: '#86EFAC', border: '#22C55E' }
+      case 3: return { bg: '#22C55E', border: '#15803D' }
+      case 4: return { bg: '#15803D', border: '#166534' }
+      case 5: return { bg: '#166534', border: '#14532D' }
+      default: return { bg: '#F3F4F6', border: '#D1D5DB' }
     }
   }
 
@@ -89,21 +89,21 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
   return (
     <div className="w-full overflow-x-auto">
       <div className="min-w-[800px]">
-        {/* 月份标签 */}
-        <div className="flex mb-2 ml-8">
+        {/* 月份标签 - Neo-Brutalism */}
+        <div className="flex mb-3 ml-8">
           {calendarData.length > 0 && (
             <>
               <div className="flex-1">
-                <span className="text-xs text-gray-500">{months[new Date(calendarData[0][0]?.date || new Date()).getMonth()]}</span>
+                <span className="text-xs font-black text-gray-700">{months[new Date(calendarData[0][0]?.date || new Date()).getMonth()]}</span>
               </div>
               <div className="flex-1">
-                <span className="text-xs text-gray-500">{months[Math.min(4, 11)]}</span>
+                <span className="text-xs font-black text-gray-700">{months[Math.min(4, 11)]}</span>
               </div>
               <div className="flex-1">
-                <span className="text-xs text-gray-500">{months[Math.min(8, 11)]}</span>
+                <span className="text-xs font-black text-gray-700">{months[Math.min(8, 11)]}</span>
               </div>
               <div className="flex-1">
-                <span className="text-xs text-gray-500">{months[11]}</span>
+                <span className="text-xs font-black text-gray-700">{months[11]}</span>
               </div>
             </>
           )}
@@ -115,7 +115,7 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
           <div className="flex flex-col gap-1 mr-2">
             {weekDays.map((day, index) => (
               <div key={index} className="h-3 flex items-center justify-center">
-                {index % 2 === 1 && <span className="text-xs text-gray-400">{day}</span>}
+                {index % 2 === 1 && <span className="text-xs font-bold text-gray-500">{day}</span>}
               </div>
             ))}
           </div>
@@ -123,13 +123,20 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
           {/* 周数据 */}
           {calendarData.map((week, weekIndex) => (
             <div key={weekIndex} className="flex flex-col gap-1">
-              {week.map((day, dayIndex) => (
-                <div
-                  key={`${weekIndex}-${dayIndex}`}
-                  className={`w-3 h-3 rounded-sm ${getCellColor(day.level)} transition-all hover:ring-2 hover:ring-purple-400`}
-                  title={day.date ? `${day.date}: ${day.count} 个单词` : ''}
-                />
-              ))}
+              {week.map((day, dayIndex) => {
+                const colors = getCellColor(day.level)
+                return (
+                  <div
+                    key={`${weekIndex}-${dayIndex}`}
+                    className="w-3 h-3 rounded-sm transition-all hover:scale-125 hover:z-10"
+                    style={{
+                      backgroundColor: colors.bg,
+                      border: day.level > 0 ? '1px solid #000000' : '1px solid ' + colors.border,
+                    }}
+                    title={day.date ? `${day.date}: ${day.count} 个单词` : ''}
+                  />
+                )
+              })}
             </div>
           ))}
         </div>

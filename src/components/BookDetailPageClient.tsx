@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useMemo, useEffect, useRef } from 'react'
-import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle } from 'lucide-react'
+import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle, Layers, Headphones, Gamepad2 } from 'lucide-react'
 import Link from 'next/link'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { WordList } from '@/components/WordList'
@@ -9,6 +9,55 @@ import { GlobalHideButton } from '@/components/GlobalHideButton'
 import { ScopeSelectorModal } from '@/components/ScopeSelectorModal'
 import { BookIcon } from '@/components/BookIcon'
 import { saveResumeState } from '@/lib/resumeState'
+
+// 单词卡片骨架屏组件
+function WordCardSkeleton() {
+  return (
+    <div className="w-full bg-white rounded-xl border-3 border-black overflow-hidden relative">
+      {/* 顶部：序号 + 单词 + 音标 + 发音按钮 */}
+      <div className="flex items-start gap-3 p-4 border-b-2 border-slate-100">
+        {/* 序号 */}
+        <div className="w-8 h-8 bg-slate-200 rounded-lg animate-pulse flex-shrink-0"></div>
+
+        <div className="flex-1">
+          {/* 单词 */}
+          <div className="h-7 bg-slate-200 rounded w-32 animate-pulse mb-2"></div>
+
+          {/* 音标 */}
+          <div className="h-4 bg-slate-200 rounded w-48 animate-pulse"></div>
+        </div>
+
+        {/* 发音按钮 */}
+        <div className="w-8 h-8 bg-slate-200 rounded-lg animate-pulse flex-shrink-0"></div>
+      </div>
+
+      {/* 中部：释义区域 */}
+      <div className="p-4 space-y-2 flex-1">
+        {/* 词性 */}
+        <div className="h-4 bg-slate-200 rounded w-12 animate-pulse"></div>
+
+        {/* 中文释义 */}
+        <div className="h-5 bg-slate-200 rounded w-full animate-pulse"></div>
+        <div className="h-5 bg-slate-200 rounded w-3/4 animate-pulse"></div>
+
+        {/* 英文释义 */}
+        <div className="h-4 bg-slate-200 rounded w-full animate-pulse mt-3"></div>
+        <div className="h-4 bg-slate-200 rounded w-2/3 animate-pulse"></div>
+
+        {/* 搭配 */}
+        <div className="h-4 bg-slate-200 rounded w-5/6 animate-pulse mt-3"></div>
+        <div className="h-4 bg-slate-200 rounded w-1/2 animate-pulse"></div>
+      </div>
+
+      {/* 底部：按钮 */}
+      <div className="flex gap-2 p-4 pt-2">
+        <div className="flex-1 h-10 bg-slate-200 rounded-lg animate-pulse"></div>
+        <div className="flex-1 h-10 bg-slate-200 rounded-lg animate-pulse"></div>
+        <div className="flex-1 h-10 bg-slate-200 rounded-lg animate-pulse"></div>
+      </div>
+    </div>
+  )
+}
 
 interface Word {
   id: string
@@ -30,6 +79,11 @@ interface Word {
   chapter_id?: string | null
 }
 
+interface Chapter {
+  id: string
+  title: string
+}
+
 interface Book {
   id: string
   title: string
@@ -41,15 +95,20 @@ interface Book {
 
 interface BookDetailPageClientProps {
   book: Book
-  words: Word[]
+  chapters: Chapter[]
   user: any
 }
 
 type SortOrder = 'default' | 'random'
 type StatusFilter = 'all' | 'new' | 'known' | 'fuzzy' | 'unknown'
 
-export function BookDetailPageClient({ book, words, user }: BookDetailPageClientProps) {
+export function BookDetailPageClient({ book, chapters, user }: BookDetailPageClientProps) {
   const searchParams = useSearchParams()
+
+  // 单词列表状态（客户端分页加载）
+  const [words, setWords] = useState<Word[]>([])
+  const [isLoading, setIsLoading] = useState(true)
+  const [totalWords, setTotalWords] = useState(0) // 总单词数
 
   const [globalHideChinese, setGlobalHideChinese] = useState(false)
   const [sortOrder, setSortOrder] = useState<SortOrder>('default')
@@ -109,6 +168,28 @@ export function BookDetailPageClient({ book, words, user }: BookDetailPageClient
     '• 标记"不认识"的单词会自动加入错题本'
   ]
   const [randomTip, setRandomTip] = useState(tips[0]) // 初始值固定，避免hydration错误
+
+  // 从API获取单词（分页加载）
+  useEffect(() => {
+    const fetchWords = async () => {
+      setIsLoading(true)
+      try {
+        // 获取当前页的单词
+        const response = await fetch(
+          `/api/words?bookId=${book.id}&status=all&page=${currentPage}&pageSize=50`
+        )
+        const data = await response.json()
+        setWords(data.data || [])
+        setTotalWords(data.total || book.total_words || 5862) // 从API返回获取总数
+      } catch (error) {
+        console.error('Failed to fetch words:', error)
+        setWords([])
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    fetchWords()
+  }, [book.id, currentPage]) // 当页码变化时重新加载
 
   // 在客户端随机选择
   useEffect(() => {
@@ -333,10 +414,10 @@ export function BookDetailPageClient({ book, words, user }: BookDetailPageClient
     return result
   }, [words, selectedChapter, selectedTheme, selectedScene, statusFilter, sortOrder, book.id])
 
-  // 分页逻辑 - 仅在PC端使用分页，移动端/平板端显示所有单词
-  const totalPages = Math.ceil(filteredWords.length / WORDS_PER_PAGE)
-  const startIndex = (currentPage - 1) * WORDS_PER_PAGE
-  const endIndex = startIndex + WORDS_PER_PAGE
+  // 分页逻辑 - 使用totalWords而不是filteredWords.length
+  const totalPages = Math.ceil(totalWords / WORDS_PER_PAGE)
+  const startIndex = (currentPage - 1) * WORDS_PER_PAGE + 1
+  const endIndex = Math.min(currentPage * WORDS_PER_PAGE, totalWords)
 
   // 检测是否为移动端/平板端（通过窗口宽度）
   // 初始值设为true，确保在服务端渲染时也能显示所有单词
@@ -357,8 +438,8 @@ export function BookDetailPageClient({ book, words, user }: BookDetailPageClient
     return () => window.removeEventListener('resize', checkDevice)
   }, [])
 
-  // 移动端/平板端显示所有单词，PC端使用分页
-  const paginatedWords = isMobileOrTablet ? filteredWords : filteredWords.slice(startIndex, endIndex)
+  // API已分页，words就是当前页的数据，直接使用filteredWords
+  const paginatedWords = filteredWords
 
   // 调试日志
   console.log('📊 Word display:', {
@@ -426,7 +507,7 @@ export function BookDetailPageClient({ book, words, user }: BookDetailPageClient
                 <BookIcon title={book.title || 'Book'} size="md" />
                 <div>
                   <h1 className="text-lg font-bold text-slate-900">{book.title || '未命名词书'}</h1>
-                  <p className="text-xs text-slate-500">{words.length} 个单词</p>
+                  <p className="text-xs text-slate-500">{totalWords || book.total_words || '-'} 个单词</p>
                 </div>
               </div>
             </div>
@@ -546,93 +627,82 @@ export function BookDetailPageClient({ book, words, user }: BookDetailPageClient
       </header>
 
       {/* Main Content */}
-      <main className="px-4 sm:px-6 lg:px-8 py-8">
+      <main className="px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="w-full mx-auto max-w-7xl">
 
-          {/* 练习模式 + 学习小贴士 */}
-          <div className="flex flex-col md:flex-row gap-4 mb-6 items-end">
-            {/* 练习模式按钮 - 左侧 */}
-            <div className="flex gap-3">
-              {/* 卡片背单词 */}
-              <button
-                onClick={() => handlePracticeModeClick('flashcards')}
-                className="group flex-1 md:flex-none hover:scale-[1.02] transition-transform duration-200"
-                style={{ width: 'auto', minWidth: '160px' }}
-              >
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 hover:border-indigo-200 p-4 h-full flex flex-col items-center text-center transition-all duration-300 cursor-pointer">
-                  {/* 原创CSS图标 - 卡片翻转 */}
-                  <div className="relative w-10 h-10 mb-2">
-                    <div className="absolute inset-0 border-2 border-indigo-500 rounded-lg"></div>
-                    <div className="absolute inset-0 border-2 border-indigo-500 rounded-lg transform rotate-180 opacity-50"></div>
-                    <div className="absolute inset-2 bg-indigo-100 rounded flex items-center justify-center">
-                      <span className="text-indigo-600 font-bold text-lg">F</span>
-                    </div>
-                  </div>
-
-                  <h3 className="text-sm font-bold text-slate-900 mb-2">
-                    卡片背单词
-                  </h3>
-                </div>
-              </button>
-
-              {/* 听写模式 */}
-              <button
-                onClick={() => handlePracticeModeClick('dictation')}
-                className="group flex-1 md:flex-none hover:scale-[1.02] transition-transform duration-200"
-                style={{ width: 'auto', minWidth: '160px' }}
-              >
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 hover:border-emerald-200 p-4 h-full flex flex-col items-center text-center transition-all duration-300 cursor-pointer">
-                  {/* 原创CSS图标 - 声音波 */}
-                  <div className="relative w-10 h-10 flex items-center justify-center mb-2">
-                    <div className="flex items-end gap-0.5">
-                      <div className="w-1 h-3 bg-emerald-500 rounded-full"></div>
-                      <div className="w-1 h-5 bg-emerald-500 rounded-full"></div>
-                      <div className="w-1 h-7 bg-emerald-500 rounded-full"></div>
-                      <div className="w-1 h-5 bg-emerald-500 rounded-full"></div>
-                      <div className="w-1 h-3 bg-emerald-500 rounded-full"></div>
-                    </div>
-                  </div>
-
-                  <h3 className="text-sm font-bold text-slate-900 mb-2">
-                    听写模式
-                  </h3>
-                </div>
-              </button>
-
-              {/* 消消乐 */}
-              <button
-                onClick={() => handlePracticeModeClick('match-game')}
-                className="group flex-1 md:flex-none hover:scale-[1.02] transition-transform duration-200"
-                style={{ width: 'auto', minWidth: '160px' }}
-              >
-                <div className="bg-white rounded-xl shadow-sm hover:shadow-md border border-slate-100 hover:border-rose-200 p-4 h-full flex flex-col items-center text-center transition-all duration-300 cursor-pointer">
-                  {/* 原创CSS图标 - 拼图块 */}
-                  <div className="relative w-10 h-10 mb-2">
-                    <div className="absolute top-0 left-0 w-4 h-4 border-2 border-rose-500 rounded"></div>
-                    <div className="absolute top-0 right-0 w-4 h-4 border-2 border-rose-500 rounded"></div>
-                    <div className="absolute bottom-0 left-0 w-4 h-4 border-2 border-rose-500 rounded"></div>
-                    <div className="absolute bottom-0 right-0 w-4 h-4 border-2 border-rose-500 rounded"></div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-2 h-2 bg-rose-500 rounded-sm"></div>
-                    </div>
-                  </div>
-
-                  <h3 className="text-sm font-bold text-slate-900 mb-2">
-                    消消乐
-                  </h3>
-                </div>
-              </button>
-            </div>
-
-            {/* 学习小贴士 - 右侧 */}
-            <div className="md:ml-auto text-right">
-              <h3 className="text-sm font-semibold text-slate-600 mb-2 flex items-center gap-2 justify-end">
-                学习小贴士
-                <Lightbulb className="w-4 h-4 text-slate-500" />
-              </h3>
-              <p className="text-xs text-slate-500 leading-relaxed">{randomTip}</p>
-            </div>
+          {/* 学习小贴士 - 移到顶部（移动端优先） */}
+          <div className="mb-2 md:mb-3 text-right">
+            <h3 className="text-xs md:text-sm font-black text-black mb-1 md:mb-2 flex items-center gap-1 md:gap-2 justify-end">
+              <Lightbulb className="w-3 h-3 md:w-4 md:h-4 text-[#FACC15]" strokeWidth={2.5} />
+              学习小贴士
+            </h3>
+            <p className="text-[10px] md:text-xs font-bold text-gray-600 leading-relaxed text-right">{randomTip}</p>
           </div>
+
+          {/* 游戏模式选择区域 - 强制硬核风格（响应式优化） */}
+          <section className="flex md:grid md:grid-cols-3 gap-1.5 md:gap-6 mb-4 md:mb-6 overflow-x-auto pb-4 md:pb-0 snap-x no-scrollbar px-1">
+
+            {/* 1. 卡片背单词 */}
+            <button
+              onClick={() => handlePracticeModeClick('flashcards')}
+              className="snap-center flex-shrink-0 w-[28vw] md:w-auto relative group h-12 md:h-28 flex items-center px-1.5 md:px-6 gap-1.5 md:gap-5 overflow-hidden transition-all"
+              style={{
+                backgroundColor: '#B4F416',
+                border: '3px solid #000000',
+                borderRadius: '10px',
+                boxShadow: '4px 4px 0px 0px #000000',
+              }}
+            >
+              <div className="p-1 md:p-3 rounded-lg border-2 border-black bg-white text-black shrink-0">
+                <Layers className="w-3.5 h-3.5 md:w-6 md:h-6" strokeWidth={2.5} />
+              </div>
+              <div className="text-left z-10">
+                <h3 className="text-[11px] md:text-xl font-black text-black leading-none tracking-tight">卡片背单词</h3>
+                <p className="text-[8px] md:text-sm font-bold text-black/70 mt-0.5 md:mt-1 uppercase tracking-wide">Flashcards</p>
+              </div>
+              <Layers className="absolute -right-1 -bottom-3 text-black/10 rotate-12 w-10 h-10 md:w-24 md:h-24 hidden md:block" />
+            </button>
+
+            {/* 2. 听写模式 */}
+            <button
+              onClick={() => handlePracticeModeClick('dictation')}
+              className="snap-center flex-shrink-0 w-[28vw] md:w-auto relative group h-12 md:h-28 flex items-center px-1.5 md:px-6 gap-1.5 md:gap-5 overflow-hidden transition-all"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '3px solid #000000',
+                borderRadius: '10px',
+                boxShadow: '4px 4px 0px 0px #000000',
+              }}
+            >
+              <div className="p-1 md:p-3 rounded-lg border-2 border-black bg-[#3B82F6] text-white shrink-0">
+                <Headphones className="w-3.5 h-3.5 md:w-6 md:h-6" strokeWidth={2.5} />
+              </div>
+              <div className="text-left z-10">
+                <h3 className="text-[11px] md:text-xl font-black text-black leading-none tracking-tight">听写模式</h3>
+                <p className="text-[8px] md:text-sm font-bold text-black/60 mt-0.5 md:mt-1 uppercase tracking-wide">Dictation</p>
+              </div>
+            </button>
+
+            {/* 3. 消消乐 */}
+            <button
+              onClick={() => handlePracticeModeClick('match-game')}
+              className="snap-center flex-shrink-0 w-[28vw] md:w-auto relative group h-12 md:h-28 flex items-center px-1.5 md:px-6 gap-1.5 md:gap-5 overflow-hidden transition-all"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '3px solid #000000',
+                borderRadius: '10px',
+                boxShadow: '4px 4px 0px 0px #000000',
+              }}
+            >
+              <div className="p-1 md:p-3 rounded-lg border-2 border-black bg-[#FF6B6B] text-white shrink-0">
+                <Gamepad2 className="w-3.5 h-3.5 md:w-6 md:h-6" strokeWidth={2.5} />
+              </div>
+              <div className="text-left z-10">
+                <h3 className="text-[11px] md:text-xl font-black text-black leading-none tracking-tight">消消乐</h3>
+                <p className="text-[8px] md:text-sm font-bold text-black/60 mt-0.5 md:mt-1 uppercase tracking-wide">Match Game</p>
+              </div>
+            </button>
+          </section>
 
           {/* 顶部筛选栏 */}
           <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-6">
@@ -920,19 +990,27 @@ export function BookDetailPageClient({ book, words, user }: BookDetailPageClient
 
           {/* 单词列表 */}
           <div>
-            <WordList
-              initialWords={paginatedWords}
-              bookId={book.id}
-              globalHideChinese={globalHideChinese}
-            />
+            {isLoading ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {[...Array(6)].map((_, index) => (
+                  <WordCardSkeleton key={index} />
+                ))}
+              </div>
+            ) : (
+              <WordList
+                initialWords={paginatedWords}
+                bookId={book.id}
+                globalHideChinese={globalHideChinese}
+              />
+            )}
           </div>
 
           {/* 底部控制栏 - 仅在PC端且单词数 > 50 时显示 */}
-          {!isMobileOrTablet && filteredWords.length > WORDS_PER_PAGE && (
+          {!isMobileOrTablet && totalWords > WORDS_PER_PAGE && (
             <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mt-6 hidden md:block">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="text-sm text-slate-600">
-                  显示 <span className="font-semibold text-slate-900">{startIndex + 1}-{Math.min(endIndex, filteredWords.length)}</span> / 共 <span className="font-semibold text-slate-900">{filteredWords.length}</span> 个单词
+                  显示 <span className="font-semibold text-slate-900">{startIndex}-{endIndex}</span> / 共 <span className="font-semibold text-slate-900">{totalWords}</span> 个单词
                 </div>
                 <div className="flex items-center gap-2">
                   <button
@@ -974,6 +1052,7 @@ export function BookDetailPageClient({ book, words, user }: BookDetailPageClient
         isOpen={showScopeModal}
         onClose={() => setShowScopeModal(false)}
         bookId={book.id}
+        bookTitle={book.title || '未命名词书'}
         practiceMode={selectedPracticeMode}
         filteredCount={filteredWords.length}
         totalCount={words.length}

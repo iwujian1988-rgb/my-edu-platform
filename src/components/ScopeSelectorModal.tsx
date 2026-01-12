@@ -3,11 +3,13 @@
 import React from 'react'
 import { Check, X } from 'lucide-react'
 import { useRouter } from 'next/navigation'
+import { FlashcardScopeDialog } from './FlashcardScopeDialog'
 
 interface ScopeSelectorModalProps {
   isOpen: boolean
   onClose: () => void
   bookId: string
+  bookTitle: string
   practiceMode: 'flashcards' | 'dictation' | 'match-game'
   filteredCount: number
   totalCount: number
@@ -25,6 +27,7 @@ export function ScopeSelectorModal({
   isOpen,
   onClose,
   bookId,
+  bookTitle,
   practiceMode,
   filteredCount,
   totalCount,
@@ -35,6 +38,16 @@ export function ScopeSelectorModal({
   const [selectedScope, setSelectedScope] = React.useState<ScopeType>(
     filteredCount > 0 ? 'filtered' : 'all'
   )
+
+  // 如果是 flashcards 模式，使用新的 FlashcardScopeDialog
+  if (practiceMode === 'flashcards') {
+    return <FlashcardScopeDialog
+      bookId={bookId}
+      bookTitle={bookTitle}
+      isOpen={isOpen}
+      onClose={onClose}
+    />
+  }
 
   const handleConfirm = () => {
     const scope = selectedScope === 'filtered' ? 'filtered' : 'all'

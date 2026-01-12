@@ -150,7 +150,7 @@ export function PermissionGate({ feature, bookId, fallback, children }: Permissi
   const { featurePermissions, bookPermissions, isExpired, isLoading } = usePermissions()
 
   if (isLoading) {
-    return <div className="text-gray-500">检查权限中...</div>
+    return <div className="text-gray-500 p-4 text-center">检查权限中...</div>
   }
 
   if (isExpired) {

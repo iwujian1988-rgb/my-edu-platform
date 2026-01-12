@@ -64,7 +64,7 @@ export default async function Home() {
         .eq('user_id', user.id)
         .not('last_accessed_at', 'is', null)
         .order('last_accessed_at', { ascending: false })
-        .limit(1)
+        .limit(6)
 
       let lastBookId = null
 
@@ -138,9 +138,10 @@ export default async function Home() {
 
               continueURL = `/library/${lastBookId}${params.toString() ? `?${params.toString()}` : ''}`
             } else if (resumeState?.mode === 'flashcards') {
-              // 卡片模式：带索引
+              // 卡片模式：带范围和索引
+              const scope = resumeState.context?.scope || 'unknown'
               const index = resumeState.context?.index || 0
-              continueURL = `/study/${lastBookId}/flashcards?index=${index}`
+              continueURL = `/study/${lastBookId}/flashcards?scope=${scope}&shuffle=true&index=${index}`
             } else if (resumeState?.mode === 'dictation') {
               // 听写模式：带索引
               const index = resumeState.context?.index || 0

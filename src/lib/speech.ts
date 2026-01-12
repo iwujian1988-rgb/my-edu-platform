@@ -170,17 +170,25 @@ export function speak(text: string, options: SpeakOptions = {}): boolean {
 
     if (options.onError) {
       utterance.onerror = (event) => {
-        // "interrupted" 和 "canceled" 是正常的（因为我们主动cancel）
-        if (event.error !== 'interrupted' && event.error !== 'canceled') {
+        // 这些错误是正常的，不需要记录为错误
+        const normalErrors = ['interrupted', 'canceled', 'not-allowed']
+        if (!normalErrors.includes(event.error)) {
           console.error('❌ TTS: Speech error', event.error)
+        } else if (event.error === 'not-allowed') {
+          // 静默处理 - 这是预期的行为（用户还未交互）
+          console.log('🔇 TTS: Speech not allowed (waiting for user interaction)')
         }
         options.onError?.(event)
       }
     } else {
       utterance.onerror = (event) => {
-        // "interrupted" 和 "canceled" 是正常的
-        if (event.error !== 'interrupted' && event.error !== 'canceled') {
+        // 这些错误是正常的，不需要记录为错误
+        const normalErrors = ['interrupted', 'canceled', 'not-allowed']
+        if (!normalErrors.includes(event.error)) {
           console.error('❌ TTS: Speech error', event.error)
+        } else if (event.error === 'not-allowed') {
+          // 静默处理 - 这是预期的行为（用户还未交互）
+          console.log('🔇 TTS: Speech not allowed (waiting for user interaction)')
         }
       }
     }

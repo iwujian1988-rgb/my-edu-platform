@@ -8,6 +8,103 @@
   --font-mono: var(--font-mono);
 }
 
+/* ============================================
+   NEO-BRUTALISM CUSTOM UTILITIES
+   ============================================ */
+
+/* Background colors */
+.bg-neo-bg {
+  background-color: #f8f9fa;
+}
+
+/* Text colors */
+.text-neo-black {
+  color: #000000;
+}
+.text-neo-red {
+  color: #FF6B6B;
+}
+
+/* Border colors */
+.border-neo-black {
+  border-color: #000000;
+}
+.border-neo-blue {
+  border-color: #3B82F6;
+}
+.border-neo-red {
+  border-color: #FF6B6B;
+}
+
+/* Shadow utilities - Neo-Brutalism Hard Shadows */
+.shadow-neo-sm {
+  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+}
+.shadow-neo-md {
+  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+}
+.shadow-neo-lg {
+  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+}
+.shadow-neo-green {
+  box-shadow: 4px 4px 0px 0px #B4F416;
+}
+.shadow-neo-yellow {
+  box-shadow: 4px 4px 0px 0px #FACC15;
+}
+.shadow-neo-red {
+  box-shadow: 4px 4px 0px 0px #FF6B6B;
+}
+.shadow-neo-blue {
+  box-shadow: 4px 4px 0px 0px #3B82F6;
+}
+
+/* Background color utilities */
+.bg-neo-green {
+  background-color: #B4F416;
+}
+.bg-neo-blue {
+  background-color: #3B82F6;
+}
+.bg-neo-yellow {
+  background-color: #FACC15;
+}
+.bg-neo-red {
+  background-color: #FF6B6B;
+}
+
+/* Border width utilities */
+.border-b-3 {
+  border-bottom-width: 3px;
+}
+.border-t-3 {
+  border-top-width: 3px;
+}
+.border-l-3 {
+  border-left-width: 3px;
+}
+.border-r-3 {
+  border-right-width: 3px;
+}
+.border-3 {
+  border-width: 3px;
+}
+
+/* Scrollbar utilities */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+.no-scrollbar::-webkit-scrollbar-track {
+  display: none;
+}
+.no-scrollbar::-webkit-scrollbar-thumb {
+  display: none;
+}
+
 :root {
   /* Educational Platform Color Palette */
   --background: #F8F5F2; /* Light beige background */

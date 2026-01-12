@@ -90,39 +90,84 @@ export default async function CalendarPage() {
       </header>
 
       {/* Main Content */}
-      <main className="px-3 sm:px-4 md:px-6 py-6 md:py-8">
+      <main className="px-3 sm:px-4 md:px-6 pt-12 pb-6 md:pb-8">
         <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
 
-          {/* Stats Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-            <div className="clay-card p-6">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 clay-card clay-icon flex items-center justify-center">
-                  <CalendarIcon className="w-5 h-5 text-blue-600" />
+          {/* Stats Cards - Neo-Brutalism */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 md:gap-4 mb-4 md:mb-6">
+            {/* 累计单词 */}
+            <div
+              className="p-4 md:p-6"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '3px solid #000000',
+                borderRadius: '12px',
+                boxShadow: '4px 4px 0px 0px #000000',
+              }}
+            >
+              <div className="flex items-center gap-2 md:gap-3 mb-2">
+                <div
+                  className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg"
+                  style={{
+                    backgroundColor: '#EFF6FF',
+                    border: '2px solid #000000',
+                  }}
+                >
+                  <CalendarIcon className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#1D4ED8' }} strokeWidth={2.5} />
                 </div>
-                <span className="text-sm font-semibold text-gray-600">累计单词</span>
+                <span className="text-xs md:text-sm font-black text-gray-600">累计单词</span>
               </div>
-              <p className="text-3xl font-black text-gray-900">{totalWords}</p>
+              <p className="text-2xl md:text-3xl font-black text-gray-900">{totalWords}</p>
             </div>
 
-            <div className="clay-card p-6">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 clay-card clay-icon flex items-center justify-center">
-                  <TrendingUp className="w-5 h-5 text-green-600" />
+            {/* 连续学习 */}
+            <div
+              className="p-4 md:p-6"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '3px solid #000000',
+                borderRadius: '12px',
+                boxShadow: '4px 4px 0px 0px #B4F416',
+              }}
+            >
+              <div className="flex items-center gap-2 md:gap-3 mb-2">
+                <div
+                  className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg"
+                  style={{
+                    backgroundColor: '#F0FDF4',
+                    border: '2px solid #000000',
+                  }}
+                >
+                  <TrendingUp className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#15803D' }} strokeWidth={2.5} />
                 </div>
-                <span className="text-sm font-semibold text-gray-600">连续学习</span>
+                <span className="text-xs md:text-sm font-black text-gray-600">连续学习</span>
               </div>
-              <p className="text-3xl font-black text-gray-900">{streak} 天</p>
+              <p className="text-2xl md:text-3xl font-black text-gray-900">{streak} 天</p>
             </div>
 
-            <div className="clay-card p-6">
-              <div className="flex items-center gap-3 mb-2">
-                <div className="w-10 h-10 clay-card clay-icon flex items-center justify-center">
-                  <CalendarIcon className="w-5 h-5 text-purple-600" />
+            {/* 今日学习 */}
+            <div
+              className="p-4 md:p-6"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '3px solid #000000',
+                borderRadius: '12px',
+                boxShadow: '4px 4px 0px 0px #FACC15',
+              }}
+            >
+              <div className="flex items-center gap-2 md:gap-3 mb-2">
+                <div
+                  className="w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg"
+                  style={{
+                    backgroundColor: '#F3E8FF',
+                    border: '2px solid #000000',
+                  }}
+                >
+                  <CalendarIcon className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#7C3AED' }} strokeWidth={2.5} />
                 </div>
-                <span className="text-sm font-semibold text-gray-600">今日学习</span>
+                <span className="text-xs md:text-sm font-black text-gray-600">今日学习</span>
               </div>
-              <p className="text-3xl font-black text-gray-900">
+              <p className="text-2xl md:text-3xl font-black text-gray-900">
                 {dailyData.length > 0 && dailyData[dailyData.length - 1]?.date === new Date().toISOString().split('T')[0]
                   ? dailyData[dailyData.length - 1].count
                   : 0}
@@ -130,22 +175,38 @@ export default async function CalendarPage() {
             </div>
           </div>
 
-          {/* Calendar Heatmap */}
-          <div className="clay-card p-6 mb-6">
+          {/* Calendar Heatmap - Neo-Brutalism */}
+          <div
+            className="p-4 md:p-6 mb-4 md:mb-6"
+            style={{
+              backgroundColor: '#ffffff',
+              border: '3px solid #000000',
+              borderRadius: '12px',
+              boxShadow: '4px 4px 0px 0px #000000',
+            }}
+          >
             <VocabularyCalendarClient dailyData={dailyData} />
           </div>
 
-          {/* Legend */}
-          <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
-            <span>少</span>
+          {/* Legend - Neo-Brutalism */}
+          <div
+            className="flex items-center justify-center gap-3 md:gap-4 py-3 px-4"
+            style={{
+              backgroundColor: '#ffffff',
+              border: '3px solid #000000',
+              borderRadius: '12px',
+              boxShadow: '3px 3px 0px 0px #000000',
+            }}
+          >
+            <span className="text-xs md:text-sm font-black text-gray-600">少</span>
             <div className="flex gap-1">
-              <div className="w-4 h-4 rounded bg-gray-200"></div>
-              <div className="w-4 h-4 rounded bg-green-200"></div>
-              <div className="w-4 h-4 rounded bg-green-400"></div>
-              <div className="w-4 h-4 rounded bg-green-600"></div>
-              <div className="w-4 h-4 rounded bg-green-800"></div>
+              <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#F3F4F6' }}></div>
+              <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#BBF7D0' }}></div>
+              <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#86EFAC' }}></div>
+              <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#22C55E' }}></div>
+              <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#15803D' }}></div>
             </div>
-            <span>多</span>
+            <span className="text-xs md:text-sm font-black text-gray-600">多</span>
           </div>
 
         </div>

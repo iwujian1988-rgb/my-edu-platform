@@ -111,7 +111,7 @@ export default async function MistakesPage() {
       </header>
 
       {/* Main Content */}
-      <main className="px-3 sm:px-4 md:px-6 py-6 md:py-8">
+      <main className="px-3 sm:px-4 md:px-6 pt-12 pb-6 md:pb-8">
         <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
 
           {/* Mistakes List - 现在包含空状态逻辑 */}

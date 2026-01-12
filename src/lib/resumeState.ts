@@ -20,6 +20,9 @@ export interface ResumeState {
     }
     page?: number
 
+    // flashcards 模式
+    scope?: string
+
     // flashcards/dictation 模式
     index?: number
     totalWords?: number

@@ -75,6 +75,16 @@ const config: Config = {
           800: '#1f2937',
           900: '#111827',
         },
+        // Neo-Brutalism Palette
+        neo: {
+          bg: '#f8f9fa',
+          black: '#000000',
+          white: '#ffffff',
+          green: '#B4F416',
+          blue: '#3B82F6',
+          yellow: '#FACC15',
+          red: '#FF6B6B',
+        },
       },
       fontFamily: {
         sans: [
@@ -102,9 +112,21 @@ const config: Config = {
       borderRadius: {
         '4xl': '2rem',
       },
+      borderWidth: {
+        '3': '3px',
+      },
       boxShadow: {
         'card': '0 1px 3px rgba(0, 0, 0, 0.1)',
         'card-hover': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+        // Neo-Brutalism Hard Shadows
+        'neo-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+        'neo-md': '4px 4px 0px 0px rgba(0,0,0,1)',
+        'neo-lg': '6px 6px 0px 0px rgba(0,0,0,1)',
+        // Status shadows (colored)
+        'neo-green': '4px 4px 0px 0px #B4F416',
+        'neo-yellow': '4px 4px 0px 0px #FACC15',
+        'neo-red': '4px 4px 0px 0px #FF6B6B',
+        'neo-blue': '4px 4px 0px 0px #3B82F6',
       },
       animation: {
         'fade-in': 'fadeIn 300ms ease-out',

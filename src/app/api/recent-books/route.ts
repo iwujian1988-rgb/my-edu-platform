@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { getCurrentUser } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
 
-// GET - 获取用户最近访问的词库（最多8个）
+// GET - 获取用户最近访问的词库（最多6个）
 export async function GET() {
   try {
     const user = await getCurrentUser()
@@ -12,14 +12,14 @@ export async function GET() {
 
     const supabase = await createClient()
 
-    // 第一步：获取用户最近访问的8个词库ID
+    // 第一步：获取用户最近访问的6个词库ID
     const { data: recentPrefs, error: prefsError } = await supabase
       .from('user_book_preferences')
       .select('book_id, last_accessed_at')
       .eq('user_id', user.id)
       .not('last_accessed_at', 'is', null)
       .order('last_accessed_at', { ascending: false })
-      .limit(8)
+      .limit(6)
 
     if (prefsError) throw prefsError
 

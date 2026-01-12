@@ -37,7 +37,7 @@ export default defineConfig({
   // 全局设置
   use: {
     // 基础 URL
-    baseURL: 'http://localhost:3002',
+    baseURL: 'http://localhost:3000',
 
     // 收集失败测试的跟踪信息
     trace: 'on-first-retry',
@@ -82,10 +82,11 @@ export default defineConfig({
   ],
 
   // 启动开发服务器
-  webServer: {
-    command: 'npm run dev',
-    url: 'http://localhost:3002',
-    reuseExistingServer: !process.env.CI,
-    timeout: 120 * 1000,
-  },
+  // 注意: 服务器已在端口 3006 运行，测试将直接使用
+  // webServer: {
+  //   command: 'npm run dev',
+  //   url: 'http://localhost:3006',
+  //   reuseExistingServer: !process.env.CI,
+  //   timeout: 120 * 1000,
+  // },
 })

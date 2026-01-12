@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useMemo } from 'react'
-import { WordCard } from './WordCard'
-import { Trophy, BookOpen, Filter, ArrowDown, TrendingUp } from 'lucide-react'
+import { useState, useMemo, useEffect } from 'react'
+import { VocabularyCard } from './VocabularyCard'
+import { Trophy, BookOpen, Filter, Check, ChevronDown, Lightbulb, TrendingUp } from 'lucide-react'
 import Link from 'next/link'
 
 interface MistakeWord {
@@ -38,7 +38,9 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
   const [selectedBook, setSelectedBook] = useState<string>('all')
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
   const [sortBy, setSortBy] = useState<SortOption>('default')
+  const [showBookMenu, setShowBookMenu] = useState(false)
   const [showFilterMenu, setShowFilterMenu] = useState(false)
+  const [showSortMenu, setShowSortMenu] = useState(false)
 
   // 获取所有唯一的词书
   const uniqueBooks = useMemo(() => {
@@ -133,10 +135,32 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
     }
   }
 
+  // 学习小贴士 - 避免hydration错误
+  const randomTips = [
+    '复习错题时，先看英文释义，回忆不起来再看中文',
+    '标记为"认识"的单词会从错题本中移除',
+    '建议每天复习错题，巩固记忆效果',
+    '可以按词书或状态筛选错题'
+  ]
+  const [randomTip, setRandomTip] = useState(randomTips[0]) // 初始值固定，避免hydration错误
+
+  // 在客户端随机选择
+  useEffect(() => {
+    setRandomTip(randomTips[Math.floor(Math.random() * randomTips.length)])
+  }, [])
+
   // 空状态组件
   if (filteredAndSortedWords.length === 0 && words.length > 0) {
     return (
-      <div className="clay-card p-12 text-center">
+      <div
+        className="p-12 text-center"
+        style={{
+          backgroundColor: '#ffffff',
+          border: '3px solid #000000',
+          borderRadius: '12px',
+          boxShadow: '4px 4px 0px 0px #000000',
+        }}
+      >
         <Trophy className="w-16 h-16 mx-auto mb-4 text-gray-300" />
         <h3 className="text-xl font-bold text-gray-700 mb-2">没有符合条件的单词</h3>
         <p className="text-gray-500">请尝试调整筛选条件</p>
@@ -147,8 +171,16 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
   // 真正的空状态（没有错题）
   if (words.length === 0) {
     return (
-      <div className="clay-card p-12 text-center relative overflow-hidden">
-        {/* 礼花效果容器 */}
+      <div
+        className="p-12 text-center relative overflow-hidden"
+        style={{
+          backgroundColor: '#ffffff',
+          border: '3px solid #000000',
+          borderRadius: '12px',
+          boxShadow: '4px 4px 0px 0px #000000',
+        }}
+      >
+        {/* 礼花效果 */}
         <div className="absolute inset-0 pointer-events-none">
           {/* 左上礼花 */}
           <div className="absolute top-10 left-10">
@@ -216,7 +248,12 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
         <div className="mb-8 relative z-10">
           {/* 外圈装饰 */}
           <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-32 h-32 rounded-full bg-gradient-to-br from-yellow-100 to-yellow-200 animate-pulse" />
+            <div
+              className="w-32 h-32 rounded-full animate-pulse"
+              style={{
+                background: 'linear-gradient(to bottom right, #FEF9C3, #FEF08A)',
+              }}
+            />
           </div>
 
           {/* 星星装饰 */}
@@ -246,7 +283,11 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-xl hover:from-green-600 hover:to-green-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105 relative z-10"
+          className="inline-flex items-center gap-2 px-8 py-4 font-bold text-white rounded-xl transition-all transform hover:scale-105 relative z-10"
+          style={{
+            background: 'linear-gradient(to right, #22c55e, #16a34a)',
+            boxShadow: '4px 4px 0px 0px #000000',
+          }}
         >
           <BookOpen className="w-5 h-5" />
           去背新单词
@@ -257,105 +298,427 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
 
   return (
     <div>
-      {/* 统计卡片 */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-        <div className="clay-card p-4">
-          <div className="text-2xl md:text-3xl font-black text-gray-900">{stats.total}</div>
-          <div className="text-sm text-gray-500 mt-1">待复习总数</div>
+      {/* 学习小贴士 */}
+      <div className="mb-1 md:mb-2 text-right">
+        <h3 className="text-xs md:text-sm font-black text-black mb-0.5 md:mb-1 flex items-center gap-1 md:gap-2 justify-end">
+          <Lightbulb className="w-3 h-3 md:w-4 md:h-4 text-[#FACC15]" strokeWidth={2.5} />
+          学习小贴士
+        </h3>
+        <p className="text-[10px] md:text-xs font-bold text-gray-600 leading-relaxed text-right">{randomTip}</p>
+      </div>
+
+      {/* 统计卡片 - Neo-Brutalism */}
+      <div
+        className="grid grid-cols-3 gap-2 md:gap-4 mb-2 md:mb-3"
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+        }}
+      >
+        <div
+          className="p-3 md:p-4 text-center"
+          style={{
+            backgroundColor: '#ffffff',
+            border: '3px solid #000000',
+            borderRadius: '12px',
+            boxShadow: '4px 4px 0px 0px #000000',
+          }}
+        >
+          <div className="text-xl md:text-3xl font-black text-gray-900">{stats.total}</div>
+          <div className="text-[10px] md:text-sm text-gray-500 mt-1">待复习总数</div>
         </div>
-        <div className="clay-card p-4">
-          <div className="text-2xl md:text-3xl font-black text-red-600">{stats.unknown}</div>
-          <div className="text-sm text-gray-500 mt-1">不认识</div>
+        <div
+          className="p-3 md:p-4 text-center"
+          style={{
+            backgroundColor: '#ffffff',
+            border: '3px solid #000000',
+            borderRadius: '12px',
+            boxShadow: '4px 4px 0px 0px #FF6B6B',
+          }}
+        >
+          <div className="text-xl md:text-3xl font-black text-red-600">{stats.unknown}</div>
+          <div className="text-[10px] md:text-sm text-gray-500 mt-1">不认识</div>
         </div>
-        <div className="clay-card p-4">
-          <div className="text-2xl md:text-3xl font-black text-yellow-600">{stats.fuzzy}</div>
-          <div className="text-sm text-gray-500 mt-1">模糊</div>
+        <div
+          className="p-3 md:p-4 text-center"
+          style={{
+            backgroundColor: '#ffffff',
+            border: '3px solid #000000',
+            borderRadius: '12px',
+            boxShadow: '4px 4px 0px 0px #FACC15',
+          }}
+        >
+          <div className="text-xl md:text-3xl font-black text-yellow-600">{stats.fuzzy}</div>
+          <div className="text-[10px] md:text-sm text-gray-500 mt-1">模糊</div>
         </div>
       </div>
 
-      {/* 筛选和排序栏 */}
-      <div className="clay-card p-4 mb-6">
-        <div className="flex flex-wrap items-center gap-4">
-          {/* 按词书筛选 */}
-          <div className="flex items-center gap-2">
-            <label className="text-sm font-semibold text-gray-700">词书:</label>
-            <select
-              value={selectedBook}
-              onChange={(e) => setSelectedBook(e.target.value)}
-              className="px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+      {/* 筛选栏 - 移动端优化为图标按钮 */}
+      <section
+        className="flex items-center justify-between gap-2 lg:gap-3 mb-3 md:mb-4 p-2 md:p-3"
+        style={{
+          backgroundColor: '#ffffff',
+          border: '3px solid #000000',
+          borderRadius: '12px',
+          boxShadow: '4px 4px 0px 0px #000000',
+        }}
+      >
+        {/* 移动端+平板：紧凑图标按钮 */}
+        <div className="flex items-center gap-1.5 lg:hidden">
+          {/* 词书选择器 - 移动端图标 */}
+          <div className="relative">
+            <button
+              onClick={() => setShowBookMenu(!showBookMenu)}
+              className={`w-9 h-9 rounded-lg border-2 flex items-center justify-center transition-all duration-200 ${
+                selectedBook !== 'all'
+                  ? 'bg-[#3B82F6] border-black text-black shadow-none translate-y-[2px]'
+                  : 'bg-white border-black text-black shadow-[2px_2px_0px_0px_#000]'
+              }`}
             >
-              <option value="all">全部 ({stats.total})</option>
-              {uniqueBooks.map(book => {
-                const count = initialWords.filter(w => w.book_id === book.id).length
-                return (
-                  <option key={book.id} value={book.id}>
-                    {book.title} ({count})
-                  </option>
-                )
-              })}
-            </select>
+              <BookOpen className="w-4 h-4" strokeWidth={2.5} />
+            </button>
+
+            {/* 移动端下拉菜单 */}
+            {showBookMenu && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setShowBookMenu(false)} />
+                <div className="absolute left-0 mt-2 w-48 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 max-h-80 overflow-y-auto">
+                  <button
+                    onClick={() => { setSelectedBook('all'); setShowBookMenu(false) }}
+                    className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
+                      selectedBook === 'all' ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    全部词书 ({stats.total})
+                    {selectedBook === 'all' && <Check className="w-3 h-3" strokeWidth={3} />}
+                  </button>
+                  {uniqueBooks.map(book => {
+                    const count = initialWords.filter(w => w.book_id === book.id).length
+                    return (
+                      <button
+                        key={book.id}
+                        onClick={() => { setSelectedBook(book.id); setShowBookMenu(false) }}
+                        className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 last:border-b-0 ${
+                          selectedBook === book.id ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                        }`}
+                      >
+                        <span className="truncate flex-1">{book.title}</span>
+                        <span className="text-gray-400">({count})</span>
+                        {selectedBook === book.id && <Check className="w-3 h-3" strokeWidth={3} />}
+                      </button>
+                    )
+                  })}
+                </div>
+              </>
+            )}
           </div>
 
-          {/* 按状态筛选 */}
-          <div className="flex items-center gap-2">
-            <label className="text-sm font-semibold text-gray-700">状态:</label>
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value as StatusFilter)}
-              className="px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+          {/* 状态筛选 - 移动端图标 */}
+          <div className="relative">
+            <button
+              onClick={() => setShowFilterMenu(!showFilterMenu)}
+              className={`w-9 h-9 rounded-lg border-2 flex items-center justify-center transition-all duration-200 ${
+                statusFilter !== 'all'
+                  ? 'bg-gray-900 border-black text-white shadow-none translate-y-[2px]'
+                  : 'bg-white border-black text-black shadow-[2px_2px_0px_0px_#000]'
+              }`}
             >
-              <option value="all">全部</option>
-              <option value="unknown">不认识 ({stats.unknown})</option>
-              <option value="fuzzy">模糊 ({stats.fuzzy})</option>
-            </select>
+              <Filter className="w-4 h-4" strokeWidth={2.5} />
+            </button>
+
+            {/* 移动端筛选菜单 */}
+            {showFilterMenu && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setShowFilterMenu(false)} />
+                <div className="absolute right-0 mt-2 w-36 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 overflow-hidden">
+                  <button
+                    onClick={() => { setStatusFilter('all'); setShowFilterMenu(false) }}
+                    className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
+                      statusFilter === 'all' ? 'bg-gray-900 text-white' : 'text-gray-700'
+                    }`}
+                  >
+                    全部
+                    {statusFilter === 'all' && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+                  </button>
+                  <button
+                    onClick={() => { setStatusFilter('unknown'); setShowFilterMenu(false) }}
+                    className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
+                      statusFilter === 'unknown' ? 'bg-[#FF6B6B] text-white' : 'text-gray-700'
+                    }`}
+                  >
+                    不认识
+                    {statusFilter === 'unknown' && <Check className="w-3 h-3 text-white" strokeWidth={3} />}
+                  </button>
+                  <button
+                    onClick={() => { setStatusFilter('fuzzy'); setShowFilterMenu(false) }}
+                    className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer ${
+                      statusFilter === 'fuzzy' ? 'bg-[#FACC15] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    模糊
+                    {statusFilter === 'fuzzy' && <Check className="w-3 h-3 text-black" strokeWidth={3} />}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
 
-          {/* 排序 */}
-          <div className="flex items-center gap-2">
-            <label className="text-sm font-semibold text-gray-700">排序:</label>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as SortOption)}
-              className="px-3 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-purple-500"
+          {/* 排序 - 移动端图标 */}
+          <div className="relative">
+            <button
+              onClick={() => setShowSortMenu(!showSortMenu)}
+              className={`w-9 h-9 rounded-lg border-2 flex items-center justify-center transition-all duration-200 ${
+                sortBy !== 'default'
+                  ? 'bg-[#3B82F6] border-black text-black shadow-none translate-y-[2px]'
+                  : 'bg-white border-black text-black shadow-[2px_2px_0px_0px_#000]'
+              }`}
             >
-              <option value="default">默认</option>
-              <option value="book">按词书</option>
-              <option value="status">按状态</option>
-            </select>
+              <TrendingUp className="w-4 h-4" strokeWidth={2.5} />
+            </button>
+
+            {/* 移动端排序菜单 */}
+            {showSortMenu && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setShowSortMenu(false)} />
+                <div className="absolute right-0 mt-2 w-32 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 overflow-hidden">
+                  <button
+                    onClick={() => { setSortBy('default'); setShowSortMenu(false) }}
+                    className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
+                      sortBy === 'default' ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    默认
+                    {sortBy === 'default' && <Check className="w-3 h-3" strokeWidth={3} />}
+                  </button>
+                  <button
+                    onClick={() => { setSortBy('book'); setShowSortMenu(false) }}
+                    className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
+                      sortBy === 'book' ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    按词书
+                    {sortBy === 'book' && <Check className="w-3 h-3" strokeWidth={3} />}
+                  </button>
+                  <button
+                    onClick={() => { setSortBy('status'); setShowSortMenu(false) }}
+                    className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer ${
+                      sortBy === 'status' ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    按状态
+                    {sortBy === 'status' && <Check className="w-3 h-3" strokeWidth={3} />}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
 
           {/* 结果数 */}
-          <div className="ml-auto text-sm text-gray-500">
+          <div className="ml-auto text-[10px] md:text-xs text-gray-500 font-black">
+            {filteredAndSortedWords.length} 个单词
+          </div>
+        </div>
+
+        {/* 桌面端：完整按钮 */}
+        <div className="hidden lg:flex lg:flex-row lg:items-center gap-4 w-full">
+          {/* 词书选择器 */}
+          <div className="relative">
+            <button
+              onClick={() => setShowBookMenu(!showBookMenu)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
+                selectedBook !== 'all'
+                  ? 'bg-[#3B82F6] border-black text-black shadow-none translate-y-[2px]'
+                  : 'bg-white border-black text-black hover:bg-gray-50 shadow-[2px_2px_0px_0px_#000]'
+              }`}
+            >
+              <span>{selectedBook === 'all' ? '全部词书' : uniqueBooks.find(b => b.id === selectedBook)?.title || '全部词书'}</span>
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showBookMenu ? 'rotate-180' : ''}`} strokeWidth={2.5} />
+            </button>
+
+            {/* 桌面端下拉菜单 */}
+            {showBookMenu && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setShowBookMenu(false)} />
+                <div className="absolute left-0 mt-2 w-56 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 max-h-80 overflow-y-auto">
+                  <button
+                    onClick={() => { setSelectedBook('all'); setShowBookMenu(false) }}
+                    className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
+                      selectedBook === 'all' ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    全部词书 ({stats.total})
+                    {selectedBook === 'all' && <ChevronDown className="w-4 h-4 rotate-180" strokeWidth={2.5} />}
+                  </button>
+                  {uniqueBooks.map(book => {
+                    const count = initialWords.filter(w => w.book_id === book.id).length
+                    return (
+                      <button
+                        key={book.id}
+                        onClick={() => { setSelectedBook(book.id); setShowBookMenu(false) }}
+                        className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 last:border-b-0 ${
+                          selectedBook === book.id ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                        }`}
+                      >
+                        <span className="truncate">{book.title}</span>
+                        <span className="text-gray-400">({count})</span>
+                        {selectedBook === book.id && <ChevronDown className="w-4 h-4 rotate-180" strokeWidth={2.5} />}
+                      </button>
+                    )
+                  })}
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* 状态筛选 */}
+          <div className="relative">
+            <button
+              onClick={() => setShowFilterMenu(!showFilterMenu)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
+                statusFilter !== 'all'
+                  ? 'bg-gray-900 border-black text-white shadow-none translate-y-[2px]'
+                  : 'bg-white border-black text-black hover:bg-gray-50 shadow-[2px_2px_0px_0px_#000]'
+              }`}
+            >
+              <Filter className="w-4 h-4" strokeWidth={2.5} />
+              {statusFilter === 'all' ? '全部状态' : statusFilter === 'unknown' ? '不认识' : '模糊'}
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showFilterMenu ? 'rotate-180' : ''}`} strokeWidth={2.5} />
+            </button>
+
+            {/* 桌面端筛选菜单 */}
+            {showFilterMenu && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setShowFilterMenu(false)} />
+                <div className="absolute left-0 mt-2 w-40 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 overflow-hidden">
+                  <button
+                    onClick={() => { setStatusFilter('all'); setShowFilterMenu(false) }}
+                    className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
+                      statusFilter === 'all' ? 'bg-gray-900 text-white' : 'text-gray-700'
+                    }`}
+                  >
+                    全部
+                    {statusFilter === 'all' && <ChevronDown className="w-4 h-4 rotate-180" strokeWidth={2.5} />}
+                  </button>
+                  <button
+                    onClick={() => { setStatusFilter('unknown'); setShowFilterMenu(false) }}
+                    className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
+                      statusFilter === 'unknown' ? 'bg-[#FF6B6B] text-white' : 'text-gray-700'
+                    }`}
+                  >
+                    不认识
+                    {statusFilter === 'unknown' && <ChevronDown className="w-4 h-4 rotate-180" strokeWidth={2.5} />}
+                  </button>
+                  <button
+                    onClick={() => { setStatusFilter('fuzzy'); setShowFilterMenu(false) }}
+                    className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer ${
+                      statusFilter === 'fuzzy' ? 'bg-[#FACC15] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    模糊
+                    {statusFilter === 'fuzzy' && <ChevronDown className="w-4 h-4 rotate-180 text-black" strokeWidth={2.5} />}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* 排序 */}
+          <div className="relative">
+            <button
+              onClick={() => setShowSortMenu(!showSortMenu)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
+                sortBy !== 'default'
+                  ? 'bg-[#3B82F6] border-black text-black shadow-none translate-y-[2px]'
+                  : 'bg-white border-black text-black hover:bg-gray-50 shadow-[2px_2px_0px_0px_#000]'
+              }`}
+            >
+              <TrendingUp className="w-4 h-4" strokeWidth={2.5} />
+              {sortBy === 'default' ? '默认排序' : sortBy === 'book' ? '按词书' : '按状态'}
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showSortMenu ? 'rotate-180' : ''}`} strokeWidth={2.5} />
+            </button>
+
+            {/* 桌面端排序菜单 */}
+            {showSortMenu && (
+              <>
+                <div className="fixed inset-0 z-10" onClick={() => setShowSortMenu(false)} />
+                <div className="absolute left-0 mt-2 w-40 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 overflow-hidden">
+                  <button
+                    onClick={() => { setSortBy('default'); setShowSortMenu(false) }}
+                    className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
+                      sortBy === 'default' ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    默认
+                    {sortBy === 'default' && <ChevronDown className="w-4 h-4 rotate-180" strokeWidth={2.5} />}
+                  </button>
+                  <button
+                    onClick={() => { setSortBy('book'); setShowSortMenu(false) }}
+                    className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
+                      sortBy === 'book' ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    按词书
+                    {sortBy === 'book' && <ChevronDown className="w-4 h-4 rotate-180" strokeWidth={2.5} />}
+                  </button>
+                  <button
+                    onClick={() => { setSortBy('status'); setShowSortMenu(false) }}
+                    className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer ${
+                      sortBy === 'status' ? 'bg-[#3B82F6] text-black' : 'text-gray-700'
+                    }`}
+                  >
+                    按状态
+                    {sortBy === 'status' && <ChevronDown className="w-4 h-4 rotate-180" strokeWidth={2.5} />}
+                  </button>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* 结果数 */}
+          <div className="ml-auto text-sm text-gray-500 font-black">
             显示 <span className="font-bold text-gray-900">{filteredAndSortedWords.length}</span> 个单词
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* 单词列表 */}
-      <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 md:gap-6">
+      {/* 单词列表 - 响应式网格 */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 pb-20">
         {filteredAndSortedWords.map((word, index) => {
         const isRemoving = removingIds.has(word.id)
 
         return (
           <div
             key={word.id}
-            className={`relative transition-all duration-300 ease-out ${
+            className="relative"
+          >
+            <div className={`h-full transition-all duration-300 ease-out ${
               isRemoving
                 ? 'opacity-0 translate-x-full scale-95'
                 : 'opacity-100 translate-x-0 scale-100'
             }`}
           >
-            <WordCard
+            <VocabularyCard
               word={word}
               index={index}
               onStatusChange={handleStatusChange}
+              isSaving={false}
+              globalHideChinese={false}
             />
-            {/* 书名标签 */}
-            <div className="absolute top-2 right-2 px-2 py-1 bg-purple-100 text-purple-700 text-xs font-semibold rounded-full z-10">
+            {/* 书名标签 - Neo-Brutalism - 移到卡片外部上方 */}
+            <div
+              className="absolute -top-3 left-2 px-2 py-1 text-xs font-black rounded-lg z-20"
+              style={{
+                backgroundColor: '#F3E8FF',
+                border: '2px solid #000000',
+                color: '#7C3AED',
+                boxShadow: '2px 2px 0px 0px #000000'
+              }}
+            >
               {word.book_title}
             </div>
           </div>
-        )
+        </div>
+      )
       })}
       </div>
     </div>
