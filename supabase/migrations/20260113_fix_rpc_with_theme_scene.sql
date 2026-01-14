@@ -1,5 +1,5 @@
--- 修复 get_book_words_paginated_optimized 函数的返回类型
--- 使用 RETURNS TABLE 显式定义返回列，而不是 RETURNS SETOF record
+-- 修复RPC函数 - 正确地JOIN获取theme和scene
+-- Fix RPC function to properly JOIN chapters, themes, and scenes
 
 DROP FUNCTION IF EXISTS get_book_words_paginated_optimized(UUID, INTEGER, INTEGER);
 
@@ -21,10 +21,10 @@ RETURNS TABLE (
   example_sentence TEXT,
   example_sentence_en TEXT,
   part_of_speech TEXT,
-  theme TEXT,
-  scene TEXT,
   chapter TEXT,
   chapter_id UUID,
+  theme TEXT,
+  scene TEXT,
   order_index INTEGER
 )
 LANGUAGE plpgsql
@@ -47,18 +47,20 @@ BEGIN
     w.example_sentence,
     w.example_sentence_en,
     w.part_of_speech,
-    w.theme,
-    w.scene,
-    w.chapter,
+    c.title AS chapter,          -- 章节标题
     w.chapter_id,
+    t.name AS theme,             -- 主题名称（可能为NULL）
+    s.name AS scene,             -- 场景名称（可能为NULL）
     w.order_index
   FROM words w
-  INNER JOIN chapters c ON w.chapter_id = c.id
-  WHERE c.book_id = book_uuid
+  LEFT JOIN chapters c ON w.chapter_id = c.id
+  LEFT JOIN themes t ON c.theme_id = t.id
+  LEFT JOIN scenes s ON c.scene_id = s.id
+  WHERE w.book_id = book_uuid
   ORDER BY w.order_index ASC
   LIMIT limit_val
   OFFSET offset_val;
 END;
 $$;
 
-COMMENT ON FUNCTION get_book_words_paginated_optimized IS '优化的分页查询，返回列表需要的所有字段，使用RETURNS TABLE明确返回类型';
+COMMENT ON FUNCTION get_book_words_paginated_optimized IS '优化的分页查询，JOIN获取theme和scene名称';

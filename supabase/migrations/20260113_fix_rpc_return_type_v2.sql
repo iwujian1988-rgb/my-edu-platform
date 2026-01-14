@@ -1,5 +1,5 @@
 -- 修复 get_book_words_paginated_optimized 函数的返回类型
--- 使用 RETURNS TABLE 显式定义返回列，而不是 RETURNS SETOF record
+-- 将 RETURNS SETOF record 改为 RETURNS TABLE 以便 Supabase 客户端正确调用
 
 DROP FUNCTION IF EXISTS get_book_words_paginated_optimized(UUID, INTEGER, INTEGER);
 

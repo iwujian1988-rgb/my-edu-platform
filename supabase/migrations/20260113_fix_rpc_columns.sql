@@ -1,5 +1,5 @@
--- 修复 get_book_words_paginated_optimized 函数的返回类型
--- 使用 RETURNS TABLE 显式定义返回列，而不是 RETURNS SETOF record
+-- Fix RPC function - remove non-existent theme and scene columns
+-- 修复 get_book_words_paginated_optimized 函数，移除不存在的 theme 和 scene 列
 
 DROP FUNCTION IF EXISTS get_book_words_paginated_optimized(UUID, INTEGER, INTEGER);
 
@@ -21,8 +21,6 @@ RETURNS TABLE (
   example_sentence TEXT,
   example_sentence_en TEXT,
   part_of_speech TEXT,
-  theme TEXT,
-  scene TEXT,
   chapter TEXT,
   chapter_id UUID,
   order_index INTEGER
@@ -47,18 +45,15 @@ BEGIN
     w.example_sentence,
     w.example_sentence_en,
     w.part_of_speech,
-    w.theme,
-    w.scene,
     w.chapter,
     w.chapter_id,
     w.order_index
   FROM words w
-  INNER JOIN chapters c ON w.chapter_id = c.id
-  WHERE c.book_id = book_uuid
+  WHERE w.book_id = book_uuid
   ORDER BY w.order_index ASC
   LIMIT limit_val
   OFFSET offset_val;
 END;
 $$;
 
-COMMENT ON FUNCTION get_book_words_paginated_optimized IS '优化的分页查询，返回列表需要的所有字段，使用RETURNS TABLE明确返回类型';
+COMMENT ON FUNCTION get_book_words_paginated_optimized IS '优化的分页查询，返回列表需要的所有字段，使用book_id直接查询';
