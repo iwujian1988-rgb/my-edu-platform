@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import { Volume2, EyeOff, Lightbulb, FileText, Check, HelpCircle, X, ChevronDown } from 'lucide-react'
 import { speak, initializeTTS, stopSpeaking } from '@/lib/speech'
+import { useScreenOrientation } from '@/hooks/useScreenOrientation'  // 🆕 用于检测竖屏模式
 
 interface Word {
   id: string
@@ -29,12 +30,18 @@ interface VocabularyCardProps {
 }
 
 const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalHideChinese = false }: VocabularyCardProps) => {
+  // 🆕 检测屏幕方向
+  const { isPortrait } = useScreenOrientation()
+
   // 兼容数据中的 'fuzzy' 或 'unsure'
   const initialStatus = word.status === 'fuzzy' ? 'unsure' : (word.status === 'known' ? 'known' : (word.status === 'unknown' ? 'unknown' : 'unknown'))
   const [status, setStatus] = useState(initialStatus)
   const [showDefinition, setShowDefinition] = useState(!globalHideChinese)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false) // 展开/收起状态
+
+  // 🆕 根据屏幕方向设置卡片高度
+  const cardHeight = isPortrait ? '300px' : '380px'  // 竖屏降低约20%
 
   // 同步状态变化
   useEffect(() => {
@@ -96,8 +103,8 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
       backgroundColor: '#ffffff',
       transition: 'all 0.2s ease',
       position: 'relative',
-      height: isExpanded ? 'auto' : '380px',  // 展开时自适应，收起时固定
-      minHeight: isExpanded ? '380px' : undefined,
+      height: isExpanded ? 'auto' : cardHeight,  // 🆕 使用动态高度
+      minHeight: isExpanded ? cardHeight : undefined,  // 🆕 使用动态高度
       display: 'flex',
       flexDirection: 'column',
     };
@@ -193,6 +200,8 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   return (
     // ⚠️ 注意：这里移除了大部分 Tailwind 类名，全靠 style 属性控制，防止冲突
     <div
+      data-testid="word-card"
+      data-word-id={word.id}
       className="w-full p-5 flex flex-col"
       style={getCardStyle()}
     >

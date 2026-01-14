@@ -25,9 +25,11 @@ interface WordListProps {
   initialWords: Word[]
   bookId: string
   globalHideChinese?: boolean
+  visibleCount?: number  // 🆕 可见的卡片数量
+  onVisibleChange?: () => void  // 🆕 当需要显示更多卡片时触发
 }
 
-export function WordList({ initialWords, bookId, globalHideChinese = false }: WordListProps) {
+export function WordList({ initialWords, bookId, globalHideChinese = false, visibleCount, onVisibleChange }: WordListProps) {
   // 组件初始化时立即从 localStorage 读取状态
   const getInitialState = () => {
     if (typeof window === 'undefined') {
@@ -61,6 +63,53 @@ export function WordList({ initialWords, bookId, globalHideChinese = false }: Wo
   // 使用 ref 避免循环更新
   const isUpdatingRef = useRef(false)
   const updatingWordRef = useRef<string | null>(null)
+
+  // 🚀 Intersection Observer 用于渐进式渲染
+  const observerTargetRef = useRef<HTMLDivElement>(null)
+  const observerRef = useRef<IntersectionObserver | null>(null)
+
+  // 设置Intersection Observer
+  useEffect(() => {
+    // 如果没有提供visibleCount或onVisibleChange，不需要Intersection Observer
+    if (visibleCount === undefined || onVisibleChange === undefined) {
+      return
+    }
+
+    // 如果已经显示了所有单词，不需要Intersection Observer
+    if (visibleCount >= words.length) {
+      return
+    }
+
+    // 创建Intersection Observer
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        const [entry] = entries
+        if (entry.isIntersecting) {
+          console.log('🎯 [Progressive] Trigger card visible, loading more...')
+          onVisibleChange()
+        }
+      },
+      {
+        // 当卡片进入视口时触发（提前触发，避免用户看到空白）
+        rootMargin: '0px 0px 200px 0px'
+      }
+    )
+
+    // 观察倒数第二个卡片
+    const targetIndex = Math.max(0, visibleCount - 2)
+    const targetCard = document.querySelector(`[data-word-index="${targetIndex}"]`)
+    if (targetCard) {
+      observerRef.current.observe(targetCard)
+      console.log('🎯 [Progressive] Observing card at index:', targetIndex)
+    }
+
+    // 清理函数
+    return () => {
+      if (observerRef.current) {
+        observerRef.current.disconnect()
+      }
+    }
+  }, [visibleCount, words.length, onVisibleChange])
 
   // 当 initialWords 变化（筛选/排序）时，更新 words 但保留已标记的状态
   useEffect(() => {
@@ -203,16 +252,17 @@ export function WordList({ initialWords, bookId, globalHideChinese = false }: Wo
   }, [bookId])
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 pb-20">
-      {words.map((word, index) => (
-        <VocabularyCard
-          key={word.id}
-          word={word}
-          index={index}
-          onStatusChange={handleStatusChange}
-          isSaving={isSaving}
-          globalHideChinese={globalHideChinese}
-        />
+    <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4 md:gap-6 pb-20">
+      {words.slice(0, visibleCount ?? words.length).map((word, index) => (
+        <div key={word.id} data-word-index={index}>  {/* 🆕 用于Intersection Observer */}
+          <VocabularyCard
+            word={word}
+            index={index}
+            onStatusChange={handleStatusChange}
+            isSaving={isSaving}
+            globalHideChinese={globalHideChinese}
+          />
+        </div>
       ))}
     </section>
   )
