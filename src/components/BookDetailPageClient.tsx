@@ -1,14 +1,21 @@
 'use client'
 
-import { useState, useMemo, useEffect, useRef } from 'react'
-import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle, Layers, Headphones, Gamepad2 } from 'lucide-react'
+import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
+import { useRouter } from 'next/navigation'
+import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle, Layers, Headphones, Gamepad2, RotateCcw } from 'lucide-react'
 import Link from 'next/link'
-import { useSearchParams, useRouter } from 'next/navigation'
 import { WordList } from '@/components/WordList'
 import { GlobalHideButton } from '@/components/GlobalHideButton'
 import { ScopeSelectorModal } from '@/components/ScopeSelectorModal'
 import { BookIcon } from '@/components/BookIcon'
-import { saveResumeState } from '@/lib/resumeState'
+
+// ✅ 导入新的Hooks和工具函数
+import { useBookFilters, type BookFilters } from '@/hooks/useBookFilters'
+import { useWordData } from '@/hooks/useWordData'
+import { useScreenOrientation } from '@/hooks/useScreenOrientation'
+import { WORDS_PER_PAGE, TIPS, getFilterLabel, type StatusFilter } from '@/lib/wordListUtils'
+import { getReadingProgress, type ReadingProgress } from '@/lib/readingProgress'
+import type { Word } from '@/hooks/useWordData'
 
 // 单词卡片骨架屏组件
 function WordCardSkeleton() {
@@ -59,26 +66,6 @@ function WordCardSkeleton() {
   )
 }
 
-interface Word {
-  id: string
-  word: string
-  phonetic: string
-  uk_phonetic?: string
-  us_phonetic?: string
-  definition: string
-  definition_en: string
-  collocation: string
-  collocation_en: string
-  example_sentence: string
-  example_sentence_en: string
-  part_of_speech: string
-  status: 'known' | 'fuzzy' | 'unknown' | 'new'
-  theme?: string
-  scene?: string
-  chapter?: string
-  chapter_id?: string | null
-}
-
 interface Chapter {
   id: string
   title: string
@@ -97,33 +84,304 @@ interface BookDetailPageClientProps {
   book: Book
   chapters: Chapter[]
   user: any
+  // 🆕 服务端传递的初始数据
+  initialWords?: Word[]
+  initialTotal?: number
 }
 
 type SortOrder = 'default' | 'random'
-type StatusFilter = 'all' | 'new' | 'known' | 'fuzzy' | 'unknown'
 
-export function BookDetailPageClient({ book, chapters, user }: BookDetailPageClientProps) {
-  const searchParams = useSearchParams()
+export function BookDetailPageClient({
+  book,
+  chapters,
+  user,
+  initialWords = [],
+  initialTotal
+}: BookDetailPageClientProps) {
+  const router = useRouter()
 
-  // 单词列表状态（客户端分页加载）
-  const [words, setWords] = useState<Word[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [totalWords, setTotalWords] = useState(0) // 总单词数
+  // ✅ 使用新的Hooks管理状态（传入bookId以支持断点续读）
+  const { filters, setPage, setTheme, setScenario, setChapter, setStatus, updateFilters } = useBookFilters(book.id)
 
+  // 🆕 传递初始数据给useWordData，避免首次加载时调用API
+  const { words, totalWords, hasMore, isLoading, isLoadingMore } = useWordData({
+    book,
+    isPortrait: false,
+    initialData: initialWords,
+    initialTotal: initialTotal
+  })
+
+  const { isPortrait } = useScreenOrientation()
+
+  // 本地UI状态（不需要持久化到URL）
   const [globalHideChinese, setGlobalHideChinese] = useState(false)
   const [sortOrder, setSortOrder] = useState<SortOrder>('default')
-  const [statusFilter, setStatusFilter] = useState<StatusFilter>('all')
   const [showFilterMenu, setShowFilterMenu] = useState(false)
-  const [currentPage, setCurrentPage] = useState(1)
-  const [selectedTheme, setSelectedTheme] = useState<string>('all')
-  const [selectedScene, setSelectedScene] = useState<string>('all')
-  const [selectedChapter, setSelectedChapter] = useState<string>('all')
   const [showThemeMenu, setShowThemeMenu] = useState(false)
   const [showSceneMenu, setShowSceneMenu] = useState(false)
   const [showChapterMenu, setShowChapterMenu] = useState(false)
   const [showScrollTop, setShowScrollTop] = useState(false)
-  const [hasRestoredState, setHasRestoredState] = useState(false)
-  const isRestoringRef = useRef(false) // 用于标记是否正在恢复状态
+
+  // ⚡ UX优化：本地立即loading状态，用于点击翻页按钮时立即显示骨架屏
+  const [isPageChanging, setIsPageChanging] = useState(false)
+  const [showSkeleton, setShowSkeleton] = useState(false)
+  const skeletonStartTimeRef = useRef<number>(0)
+  const loadingPageRef = useRef<number | null>(null)  // 🔥 新思路：记录正在加载的页码
+  const initializedRef = useRef(false)
+
+  // 🚀 渐进式渲染：控制初始显示的卡片数量
+  const initialVisibleCount = isPortrait ? 6 : 12  // 竖屏6个，横屏12个
+  const [visibleCount, setVisibleCount] = useState(initialVisibleCount)
+
+  // 🔥 初始化：记录第一页的数据标识
+  useEffect(() => {
+    if (!initializedRef.current && words.length > 0 && filters.page === 1) {
+      console.log('🔥 [Init] Initializing with page 1 data, first word id:', words[0]?.id)
+      loadingPageRef.current = 1  // 记录当前已加载的页码
+      firstWordIdRef.current = words[0].id  // 🔥 同时初始化 firstWordIdRef，避免首次翻页时为null
+      initializedRef.current = true
+    }
+  }, [words, filters.page])
+
+  // 当翻页或数据变化时重置可见数量
+  useEffect(() => {
+    if (!isLoading && !isPageChanging) {
+      setVisibleCount(initialVisibleCount)
+    }
+  }, [filters.page, isLoading, isPageChanging, initialVisibleCount])
+
+  // 🆕 骨架屏显示逻辑：点击翻页时立即显示
+  useEffect(() => {
+    if (isPageChanging) {
+      console.log('🎯 [Skeleton] Page changing to', filters.page, ', showing skeleton')
+      setShowSkeleton(true)
+      skeletonStartTimeRef.current = Date.now()
+      // 不在这里设置 loadingPageRef，而是在数据真正更新时设置
+    }
+  }, [isPageChanging, filters.page])
+
+  // 🔥 数据到达检测：通过比较 words 的第一个元素来判断数据是否更新
+  const firstWordIdRef = useRef<string | null>(null)
+  const skeletonTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const toastTimerRef = useRef<NodeJS.Timeout | null>(null)
+
+  // 渐进式显示更多卡片（由WordList触发）
+  const handleLoadMoreVisible = useCallback(() => {
+    setVisibleCount(prev => Math.min(prev + 2, words.length))
+  }, [words.length])
+
+  // 断点续读状态
+  const [showRestoreToast, setShowRestoreToast] = useState(false)
+  const [restoredPage, setRestoredPage] = useState<number | null>(null)
+  const [showRestoreConfirm, setShowRestoreConfirm] = useState(false)
+  const [savedProgress, setSavedProgress] = useState<ReadingProgress | null>(null)
+
+  // 🔥 数据到达检测：通过比较 words 的第一个元素来判断数据是否更新
+  // 必须放在状态声明之后，因为依赖 restoredPage 和 showRestoreToast
+  useEffect(() => {
+    // 如果不在翻页状态，重置firstWordIdRef
+    if (!isPageChanging && !showSkeleton && words.length > 0) {
+      firstWordIdRef.current = words[0].id
+      return
+    }
+
+    // 如果正在显示骨架屏，检查数据是否更新
+    if (showSkeleton && words.length > 0) {
+      const currentFirstWordId = words[0].id
+
+      // 如果第一个单词的ID改变了，说明新数据已到达
+      if (currentFirstWordId !== firstWordIdRef.current) {
+        console.log('🎯 [Skeleton] New data detected! Old word ID:', firstWordIdRef.current, ', New word ID:', currentFirstWordId, ', Page:', filters.page)
+
+        const elapsedTime = Date.now() - skeletonStartTimeRef.current
+        const remainingTime = Math.max(0, 800 - elapsedTime)
+
+        // 更新firstWordIdRef
+        firstWordIdRef.current = currentFirstWordId
+        loadingPageRef.current = filters.page  // 记录已加载的页码
+
+        // 🔥 如果是断点续读场景，此时显示Toast提示
+        if (restoredPage !== null && !showRestoreToast) {
+          console.log('🎉 [Resume] Data arrived, showing restore toast for page:', restoredPage)
+          setShowRestoreToast(true)
+
+          // 3秒后自动隐藏Toast
+          toastTimerRef.current = setTimeout(() => {
+            console.log('⏱️ [Resume] Hiding restore toast')
+            setShowRestoreToast(false)
+            setRestoredPage(null)  // 清除恢复页码，避免影响下次
+          }, 3000)
+        }
+
+        // 🔥 处理骨架屏隐藏（普通翻页和断点续读都需要）
+        if (remainingTime === 0) {
+          console.log('🎯 [Skeleton] Hiding skeleton immediately')
+          setShowSkeleton(false)
+          setIsPageChanging(false)
+        } else {
+          console.log('🎯 [Skeleton] Waiting for remaining', remainingTime, 'ms')
+          skeletonTimerRef.current = setTimeout(() => {
+            console.log('🎯 [Skeleton] Min display time elapsed, hiding skeleton')
+            setShowSkeleton(false)
+            setIsPageChanging(false)
+          }, remainingTime)
+        }
+
+        // 清理函数
+        return () => {
+          if (skeletonTimerRef.current) {
+            clearTimeout(skeletonTimerRef.current)
+            skeletonTimerRef.current = null
+          }
+          if (toastTimerRef.current) {
+            clearTimeout(toastTimerRef.current)
+            toastTimerRef.current = null
+          }
+        }
+      } else {
+        console.log('🎯 [Skeleton] Still waiting for new data... (current word ID unchanged:', currentFirstWordId, ')')
+      }
+    }
+  }, [showSkeleton, words, filters.page, isPageChanging, restoredPage, showRestoreToast])
+
+  // ⭐ 断点续读：检查并显示恢复提示
+  useEffect(() => {
+    const checkAndRestoreProgress = async () => {
+      console.log('🔍 [Resume] Checking reading progress for book:', book.id)
+
+      // 如果URL已经有参数，说明用户已经在浏览，不需要恢复
+      const urlParams = new URLSearchParams(window.location.search)
+      if (urlParams.has('page') || urlParams.has('theme') || urlParams.has('status')) {
+        console.log('⏭️ [Resume] URL has params, skipping restore')
+        return
+      }
+
+      // 检查是否有保存的进度
+      const progress = await getReadingProgress(book.id)
+      console.log('📖 [Resume] Saved progress:', progress)
+
+      if (!progress) {
+        console.log('ℹ️ [Resume] No saved progress found')
+        return
+      }
+
+      // 验证进度数据的完整性
+      if (!progress.page || progress.page <= 1) {
+        console.log('ℹ️ [Resume] Page is 1 or invalid, no need to restore')
+        return
+      }
+
+      // ⭐ 保存进度到状态，但不立即恢复，等待用户确认
+      console.log('📍 [Resume] Found progress, showing confirm dialog for page:', progress.page)
+      setSavedProgress(progress)
+      setShowRestoreConfirm(true)
+    }
+
+    checkAndRestoreProgress()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [book.id]) // 只在组件挂载时执行一次
+
+  // 处理用户确认恢复
+  const handleConfirmRestore = () => {
+    console.log('🔥 [Resume] handleConfirmRestore called, savedProgress:', savedProgress)
+    if (!savedProgress || !savedProgress.page) {
+      console.log('❌ [Resume] No saved progress or invalid page, aborting')
+      return
+    }
+
+    console.log('✅ [Resume] User confirmed, restoring to page:', savedProgress.page)
+
+    // ⭐ 使用批量更新，避免逐个设置触发页码重置
+    const filtersToRestore: Partial<BookFilters> = {
+      page: savedProgress.page
+    }
+
+    // 安全地添加筛选条件（仅在值存在且不为 'all' 时）
+    if (savedProgress.theme && savedProgress.theme !== 'all') {
+      filtersToRestore.theme = savedProgress.theme
+    }
+    if (savedProgress.scenario && savedProgress.scenario !== 'all') {
+      filtersToRestore.scenario = savedProgress.scenario
+    }
+    if (savedProgress.chapter && savedProgress.chapter !== 'all') {
+      filtersToRestore.chapter = savedProgress.chapter
+    }
+    if (savedProgress.status && savedProgress.status !== 'all') {
+      filtersToRestore.status = savedProgress.status as StatusFilter
+    }
+
+    console.log('🔄 [Resume] Calling updateFilters with:', filtersToRestore)
+
+    // 🔥 修复：先设置 isPageChanging = true，确保显示骨架屏而不是旧单词
+    setIsPageChanging(true)
+
+    // 先隐藏确认对话框
+    setShowRestoreConfirm(false)
+
+    // ✅ 批量恢复所有筛选条件，不会重置页码
+    updateFilters(filtersToRestore)
+
+    console.log('✅ [Resume] updateFilters called successfully, isPageChanging set to true')
+
+    // 🔥 保存要恢复的页码，但不立即显示Toast
+    // Toast将在数据真正到达后显示（在数据到达检测useEffect中）
+    setRestoredPage(savedProgress.page)
+  }
+
+  // 处理用户取消恢复
+  const handleCancelRestore = () => {
+    console.log('❌ [Resume] User cancelled restore')
+    setShowRestoreConfirm(false)
+    setSavedProgress(null)
+  }
+
+  // 生成恢复进度的提示文案
+  const getRestoreMessage = (progress: ReadingProgress): string => {
+    if (!progress.page) {
+      return '您上次有学习进度，是否继续？'
+    }
+
+    const parts: string[] = []
+
+    // 如果有筛选条件，优先显示筛选条件
+    if (progress.status && progress.status !== 'all') {
+      const statusLabels: Record<string, string> = {
+        'new': '新词',
+        'known': '认识',
+        'fuzzy': '模糊',
+        'unknown': '不认识'
+      }
+      parts.push(statusLabels[progress.status] || progress.status)
+    }
+
+    if (progress.chapter && progress.chapter !== 'all') {
+      parts.push(`章节: ${progress.chapter}`)
+    }
+
+    if (progress.theme && progress.theme !== 'all') {
+      parts.push(`主题: ${progress.theme}`)
+    }
+
+    if (progress.scenario && progress.scenario !== 'all') {
+      parts.push(`场景: ${progress.scenario}`)
+    }
+
+    // 如果有筛选条件，显示"筛选条件 + 页码"
+    if (parts.length > 0) {
+      if (progress.page > 1) {
+        return `您上次在学习"${parts.join(' - ')}"（第${progress.page}页），是否继续？`
+      } else {
+        return `您上次在学习"${parts.join(' - ')}"，是否继续？`
+      }
+    }
+
+    // 如果没有筛选条件，只显示页码
+    if (progress.page > 1) {
+      return `您上次学习到第 ${progress.page} 页，是否继续学习？`
+    }
+
+    return '您上次有学习进度，是否继续？'
+  }
 
   // 范围选择对话框状态
   const [showScopeModal, setShowScopeModal] = useState(false)
@@ -134,7 +392,6 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
   const [showDeleteConfirm2, setShowDeleteConfirm2] = useState(false)
   const [isDeleting, setIsDeleting] = useState(false)
   const [deleteError, setDeleteError] = useState('')
-  const router = useRouter()
 
   // 处理删除词库
   const handleDeleteBook = async () => {
@@ -161,93 +418,18 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
     }
   }
 
-  // 随机选择一条学习小贴士
-  const tips = [
-    '• 建议每天学习20-30个单词，保持连续性',
-    '• 尝试不同练习模式，找到最适合你的方式',
-    '• 标记"不认识"的单词会自动加入错题本'
-  ]
-  const [randomTip, setRandomTip] = useState(tips[0]) // 初始值固定，避免hydration错误
+  // 随机学习提示
+  const [randomTip, setRandomTip] = useState(TIPS[0])
 
-  // 从API获取单词（分页加载）
-  useEffect(() => {
-    const fetchWords = async () => {
-      setIsLoading(true)
-      try {
-        // 获取当前页的单词
-        const response = await fetch(
-          `/api/words?bookId=${book.id}&status=all&page=${currentPage}&pageSize=50`
-        )
-        const data = await response.json()
-        setWords(data.data || [])
-        setTotalWords(data.total || book.total_words || 5862) // 从API返回获取总数
-      } catch (error) {
-        console.error('Failed to fetch words:', error)
-        setWords([])
-      } finally {
-        setIsLoading(false)
-      }
-    }
-    fetchWords()
-  }, [book.id, currentPage]) // 当页码变化时重新加载
+  // ✅ 改进：使用新Hooks后，URL恢复和数据获取已由Hooks处理，不需要额外代码
 
-  // 在客户端随机选择
+  // 随机选择学习提示
   useEffect(() => {
-    setRandomTip(tips[Math.floor(Math.random() * tips.length)])
+    setRandomTip(TIPS[Math.floor(Math.random() * TIPS.length)])
   }, [])
 
-  // ⭐ 保存当前浏览状态（筛选条件 + 页码）
-  const saveCurrentState = async () => {
-    // 如果正在恢复状态，不保存
-    if (isRestoringRef.current) {
-      console.log('⏭️ Skipping save during restoration')
-      return
-    }
-
-    console.log('💾 Saving word list state:', {
-      theme: selectedTheme,
-      scenario: selectedScene,
-      chapter: selectedChapter,
-      status: statusFilter,
-      page: currentPage
-    })
-
-    await saveResumeState(book.id, 'word-list', {
-      filters: {
-        theme: selectedTheme,
-        scenario: selectedScene,
-        chapter: selectedChapter,
-        status: statusFilter
-      },
-      page: currentPage
-    })
-  }
-
-  // ⭐ 当筛选条件或页码改变时保存状态
-  useEffect(() => {
-    // 如果正在恢复状态，不保存
-    if (isRestoringRef.current) return
-
-    // 使用更短的防抖时间（100ms），确保用户快速操作也能保存
-    const timeoutId = setTimeout(() => {
-      saveCurrentState()
-    }, 100)
-
-    return () => clearTimeout(timeoutId)
-  }, [selectedTheme, selectedScene, selectedChapter, statusFilter, currentPage])
-
-  // ⭐ 页面卸载时立即保存状态
-  useEffect(() => {
-    return () => {
-      // 组件卸载时立即保存（不使用 beforeunload）
-      console.log('💾 Saving state on unmount')
-      saveCurrentState()
-    }
-  }, [selectedTheme, selectedScene, selectedChapter, statusFilter, currentPage])
-
-  const WORDS_PER_PAGE = 50
-
-  // 监听滚动，显示/隐藏回到顶部按钮
+  // ⚡ UX优化：当数据加载完成时，清除立即loading状态
+  // 监听滚动位置
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 400)
@@ -257,61 +439,51 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // ⭐ 恢复上次浏览状态（从 URL 参数）
-  useEffect(() => {
-    const theme = searchParams.get('theme')
-    const scene = searchParams.get('scenario')
-    const chapter = searchParams.get('chapter')
-    const status = searchParams.get('status')
-    const page = searchParams.get('page')
+  // ✅ 改进：统一的筛选和翻页处理函数
+  const handleThemeChange = (theme: string) => {
+    setTheme(theme)
+    setShowThemeMenu(false)
+  }
 
-    // 如果 URL 带有参数，说明是从"继续学习"跳转过来的
-    if (theme || scene || chapter || status || page) {
-      console.log('📍 Restoring browsing state from URL:', { theme, scene, chapter, status, page })
+  const handleSceneChange = (scene: string) => {
+    setScenario(scene)
+    setShowSceneMenu(false)
+  }
 
-      // 标记开始恢复状态
-      isRestoringRef.current = true
+  const handleChapterChange = (chapter: string) => {
+    setChapter(chapter)
+    setShowChapterMenu(false)
+  }
 
-      // 批量设置状态
-      const updates: Promise<void>[] = []
-      if (theme && theme !== 'all') {
-        updates.push(Promise.resolve().then(() => setSelectedTheme(theme)))
-      }
-      if (scene && scene !== 'all') {
-        updates.push(Promise.resolve().then(() => setSelectedScene(scene)))
-      }
-      if (chapter && chapter !== 'all') {
-        updates.push(Promise.resolve().then(() => setSelectedChapter(chapter)))
-      }
-      if (status && status !== 'all') {
-        updates.push(Promise.resolve().then(() => setStatusFilter(status as StatusFilter)))
-      }
-      if (page) {
-        updates.push(Promise.resolve().then(() => setCurrentPage(parseInt(page))))
-      }
+  const handleStatusChange = (status: StatusFilter) => {
+    setStatus(status)
+    setShowFilterMenu(false)
+  }
 
-      // 等待所有状态设置完成
-      Promise.all(updates).then(() => {
-        // 延迟标记恢复完成，确保 React 已经处理完状态更新
-        setTimeout(() => {
-          isRestoringRef.current = false
-          setHasRestoredState(true)
-          console.log('✅ State restoration completed')
-        }, 200)
-      })
-    } else {
-      // 没有 URL 参数，直接标记为已恢复
-      isRestoringRef.current = false
-      setHasRestoredState(true)
-    }
-  }, [searchParams])
+  // 翻页处理：切换页面并滚动到顶部（PC和竖屏都使用）
+  const handlePageChange = (newPage: number) => {
+    console.log('📄 Page change to', newPage, '- Setting isPageChanging to true')
+    // ⚡ 立即显示骨架屏（乐观UI）- 同步更新确保立即生效
+    setIsPageChanging(true)
+    console.log('📄 isPageChanging set to true (will be reset when data loads)')
+    console.log('📄 Calling setPage')
+    setPage(newPage)
+    console.log('📄 Scrolling to top')
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
+  // 打开范围选择对话框
+  const handlePracticeModeClick = (mode: 'flashcards' | 'dictation' | 'match-game') => {
+    setSelectedPracticeMode(mode)
+    setShowScopeModal(true)
+  }
 
   // 滚动到顶部
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  // 提取所有唯一的主题、场景和章节
+  // ✅ 改进：提取所有唯一的主题、场景和章节
   const { uniqueThemes, uniqueScenes, uniqueChapters } = useMemo(() => {
     const themes = new Set<string>()
     const scenes = new Set<string>()
@@ -339,19 +511,19 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
 
   // 根据选中的主题筛选场景
   const availableScenes = useMemo(() => {
-    if (selectedTheme === 'all') {
+    if (filters.theme === 'all') {
       return uniqueScenes
     }
     const scenesInTheme = new Set<string>()
     words.forEach(word => {
-      if (word.theme === selectedTheme && word.scene) {
+      if (word.theme === filters.theme && word.scene) {
         scenesInTheme.add(word.scene)
       }
     })
     return Array.from(scenesInTheme).sort()
-  }, [selectedTheme, words, uniqueScenes])
+  }, [filters.theme, words, uniqueScenes])
 
-  // 随机打乱数组
+  // 随机打乱数组（本地工具函数）
   const shuffleArray = <T,>(array: T[]): T[] => {
     const shuffled = [...array]
     for (let i = shuffled.length - 1; i > 0; i--) {
@@ -361,139 +533,93 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
     return shuffled
   }
 
-  // 应用筛选和排序
-  const filteredWords = useMemo(() => {
+  // ✅ 注意：words已经是useWordData Hook中筛选过的结果
+  // 这里只需要做额外的客户端随机排序
+  // 🔥 修复：当 isPageChanging 为 true 时，返回空数组，避免显示旧数据
+  const displayWords = useMemo(() => {
+    // 如果正在翻页，返回空数组
+    if (isPageChanging) {
+      console.log('🔥 [displayWords] Page changing, returning empty array')
+      return []
+    }
+
     let result = [...words]
 
-    // 从 localStorage 读取用户标记的状态（如果存在）
-    let localStorageStatus: Record<string, 'known' | 'fuzzy' | 'unknown'> = {}
-    if (typeof window !== 'undefined') {
-      try {
-        const localKey = `word-progress-${book.id}`
-        const localData = localStorage.getItem(localKey)
-        if (localData) {
-          localStorageStatus = JSON.parse(localData)
-          console.log('📦 [Filter] Using localStorage status:', localStorageStatus)
-        }
-      } catch (error) {
-        console.error('Failed to read localStorage for filtering:', error)
-      }
-    }
-
-    // 1. 章节筛选
-    if (selectedChapter !== 'all') {
-      result = result.filter(word => word.chapter_id === selectedChapter)
-    }
-
-    // 2. 主题筛选
-    if (selectedTheme !== 'all') {
-      result = result.filter(word => word.theme === selectedTheme)
-    }
-
-    // 3. 场景筛选
-    if (selectedScene !== 'all') {
-      result = result.filter(word => word.scene === selectedScene)
-    }
-
-    // 4. 状态筛选 - 使用 localStorage 中的状态（优先）或原始状态
-    if (statusFilter !== 'all') {
-      result = result.filter(word => {
-        // 优先使用 localStorage 中保存的状态
-        const actualStatus = localStorageStatus[word.id] || word.status
-
-        return actualStatus === statusFilter
-      })
-    }
-
-    // 5. 排序
     if (sortOrder === 'random') {
       result = shuffleArray(result)
     }
 
-    console.log(`✅ [Filter] Filtered to ${result.length} words (statusFilter=${statusFilter})`)
+    console.log('🔥 [displayWords] Returning', result.length, 'words')
     return result
-  }, [words, selectedChapter, selectedTheme, selectedScene, statusFilter, sortOrder, book.id])
+  }, [words, sortOrder, isPageChanging])
 
-  // 分页逻辑 - 使用totalWords而不是filteredWords.length
+  // 分页逻辑
   const totalPages = Math.ceil(totalWords / WORDS_PER_PAGE)
-  const startIndex = (currentPage - 1) * WORDS_PER_PAGE + 1
-  const endIndex = Math.min(currentPage * WORDS_PER_PAGE, totalWords)
+  const startIndex = (filters.page - 1) * WORDS_PER_PAGE + 1
+  const endIndex = Math.min(filters.page * WORDS_PER_PAGE, totalWords)
 
-  // 检测是否为移动端/平板端（通过窗口宽度）
-  // 初始值设为true，确保在服务端渲染时也能显示所有单词
-  const [isMobileOrTablet, setIsMobileOrTablet] = useState(true)
-
-  useEffect(() => {
-    const checkDevice = () => {
-      const isMobile = window.innerWidth <= 1024 // lg断点是1024px，包含1024px
-      setIsMobileOrTablet(isMobile)
-      console.log('📱 Device check:', window.innerWidth, 'isMobile:', isMobile)
-    }
-
-    // 初始检测
-    checkDevice()
-
-    // 监听窗口大小变化
-    window.addEventListener('resize', checkDevice)
-    return () => window.removeEventListener('resize', checkDevice)
-  }, [])
-
-  // API已分页，words就是当前页的数据，直接使用filteredWords
-  const paginatedWords = filteredWords
-
-  // 调试日志
-  console.log('📊 Word display:', {
-    isMobileOrTablet,
-    totalWords: filteredWords.length,
-    displayWords: paginatedWords.length,
-    startIndex,
-    endIndex
-  })
-
-  // 重置页码当筛选条件改变时
-  useEffect(() => {
-    setCurrentPage(1)
-  }, [statusFilter, sortOrder, selectedTheme, selectedScene])
-
-  // 当主题改变时，重置场景选择
-  useEffect(() => {
-    setSelectedScene('all')
-  }, [selectedTheme])
-
-  // 获取筛选标签文本
-  const getFilterLabel = () => {
-    const labels: Record<StatusFilter, string> = {
-      'all': '全部',
-      'new': '未标注',
-      'known': '认识',
-      'fuzzy': '模糊',
-      'unknown': '不认识'
-    }
-    return labels[statusFilter]
-  }
+  // ✅ 改进：删除了旧的筛选重置useEffect，新Hooks已自动处理
 
   // 生成筛选描述文本
   const getFilterDescription = () => {
     const parts = []
-    if (selectedTheme !== 'all') parts.push(selectedTheme)
-    if (selectedScene !== 'all') parts.push(selectedScene)
-    if (statusFilter !== 'all') parts.push(getFilterLabel())
+    if (filters.theme !== 'all') parts.push(filters.theme)
+    if (filters.scenario !== 'all') parts.push(filters.scenario)
+    if (filters.status !== 'all') parts.push(getFilterLabel(filters.status))
 
     if (parts.length === 0) return '全部单词'
     return parts.join(' - ')
   }
 
-  // 打开范围选择对话框
-  const handlePracticeModeClick = (mode: 'flashcards' | 'dictation' | 'match-game') => {
-    setSelectedPracticeMode(mode)
-    setShowScopeModal(true)
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+      {/* ⭐ 断点续读确认对话框 */}
+      {showRestoreConfirm && savedProgress && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" style={{ marginTop: '10vh' }}>
+          <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center">
+                <RotateCcw className="w-6 h-6 text-indigo-600" />
+              </div>
+              <div className="flex-1">
+                <h3 className="text-lg font-bold text-slate-900 mb-2">发现学习进度</h3>
+                <p className="text-sm text-slate-600 mb-4">
+                  {getRestoreMessage(savedProgress)}
+                </p>
+                <div className="flex gap-3">
+                  <button
+                    onClick={handleCancelRestore}
+                    className="flex-1 px-4 py-2 text-sm font-semibold text-slate-700 border-2 border-slate-200 rounded-xl hover:border-slate-300 hover:bg-slate-50 transition-all duration-200"
+                  >
+                    从头开始
+                  </button>
+                  <button
+                    onClick={handleConfirmRestore}
+                    className="flex-1 px-4 py-2 text-sm font-semibold text-white bg-gradient-to-r from-indigo-500 to-purple-600 rounded-xl hover:from-indigo-600 hover:to-purple-700 shadow-md hover:shadow-lg transition-all duration-200"
+                  >
+                    继续学习
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ⭐ 断点续读Toast提示 */}
+      {showRestoreToast && restoredPage && (
+        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-in slide-in-from-top fade-in duration-300">
+          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-3">
+            <RotateCcw className="w-5 h-5" />
+            <span className="font-semibold">
+              已恢复到第 {restoredPage} 页
+            </span>
+          </div>
+        </div>
+      )}
       {/* Header */}
       <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-lg border-b border-slate-200 shadow-sm">
-        <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="w-full mx-auto max-w-[1800px] px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             {/* Logo & Back */}
             <div className="flex items-center gap-4">
@@ -628,7 +754,7 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
 
       {/* Main Content */}
       <main className="px-4 sm:px-6 lg:px-8 pt-16 pb-8">
-        <div className="w-full mx-auto max-w-7xl">
+        <div className="w-full mx-auto max-w-[1800px]">
 
           {/* 学习小贴士 - 移到顶部（移动端优先） */}
           <div className="mb-2 md:mb-3 text-right">
@@ -714,12 +840,12 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                   <button
                     onClick={() => setShowThemeMenu(!showThemeMenu)}
                     className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                      selectedTheme !== 'all'
+                      filters.theme !== 'all'
                         ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
                         : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-slate-50'
                     }`}
                   >
-                    <span>{selectedTheme === 'all' ? '全部主题' : selectedTheme}</span>
+                    <span>{filters.theme === 'all' ? '全部主题' : filters.theme}</span>
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showThemeMenu ? 'rotate-180' : ''}`} />
                   </button>
 
@@ -732,30 +858,24 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                       />
                       <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-200 z-20 max-h-80 overflow-y-auto">
                         <button
-                          onClick={() => {
-                            setSelectedTheme('all')
-                            setShowThemeMenu(false)
-                          }}
+                          onClick={() => handleThemeChange('all')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                            selectedTheme === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                            filters.theme === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                           }`}
                         >
                           全部主题
-                          {selectedTheme === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
+                          {filters.theme === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
                         </button>
                         {uniqueThemes.map(theme => (
                           <button
                             key={theme}
-                            onClick={() => {
-                              setSelectedTheme(theme)
-                              setShowThemeMenu(false)
-                            }}
+                            onClick={() => handleThemeChange(theme)}
                             className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                              selectedTheme === theme ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                              filters.theme === theme ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                             }`}
                           >
                             {theme}
-                            {selectedTheme === theme && <ChevronDown className="w-4 h-4 rotate-180" />}
+                            {filters.theme === theme && <ChevronDown className="w-4 h-4 rotate-180" />}
                           </button>
                         ))}
                       </div>
@@ -769,12 +889,12 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                     onClick={() => setShowSceneMenu(!showSceneMenu)}
                     disabled={availableScenes.length === 0}
                     className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 ${
-                      selectedScene !== 'all'
+                      filters.scenario !== 'all'
                         ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
                         : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-slate-50'
                     } ${availableScenes.length === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                   >
-                    <span>{selectedScene === 'all' ? '全部场景' : selectedScene}</span>
+                    <span>{filters.scenario === 'all' ? '全部场景' : filters.scenario}</span>
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showSceneMenu ? 'rotate-180' : ''}`} />
                   </button>
 
@@ -787,30 +907,24 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                       />
                       <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-200 z-20 max-h-80 overflow-y-auto">
                         <button
-                          onClick={() => {
-                            setSelectedScene('all')
-                            setShowSceneMenu(false)
-                          }}
+                          onClick={() => handleSceneChange('all')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                            selectedScene === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                            filters.scenario === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                           }`}
                         >
                           全部场景
-                          {selectedScene === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
+                          {filters.scenario === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
                         </button>
                         {availableScenes.map(scene => (
                           <button
                             key={scene}
-                            onClick={() => {
-                              setSelectedScene(scene)
-                              setShowSceneMenu(false)
-                            }}
+                            onClick={() => handleSceneChange(scene)}
                             className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                              selectedScene === scene ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                              filters.scenario === scene ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                             }`}
                           >
                             {scene}
-                            {selectedScene === scene && <ChevronDown className="w-4 h-4 rotate-180" />}
+                            {filters.scenario === scene && <ChevronDown className="w-4 h-4 rotate-180" />}
                           </button>
                         ))}
                       </div>
@@ -824,12 +938,12 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                     <button
                       onClick={() => setShowChapterMenu(!showChapterMenu)}
                       className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                        selectedChapter !== 'all'
+                        filters.chapter !== 'all'
                           ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
                           : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:bg-slate-50'
                       }`}
                     >
-                      <span>{selectedChapter === 'all' ? '全部章节' : uniqueChapters.find(c => c.id === selectedChapter)?.title || '全部章节'}</span>
+                      <span>{filters.chapter === 'all' ? '全部章节' : uniqueChapters.find(c => c.id === filters.chapter)?.title || '全部章节'}</span>
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showChapterMenu ? 'rotate-180' : ''}`} />
                     </button>
 
@@ -842,30 +956,24 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                         />
                         <div className="absolute left-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-200 z-20 max-h-80 overflow-y-auto">
                           <button
-                            onClick={() => {
-                              setSelectedChapter('all')
-                              setShowChapterMenu(false)
-                            }}
+                            onClick={() => handleChapterChange('all')}
                             className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                              selectedChapter === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                              filters.chapter === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                             }`}
                           >
                             全部章节
-                            {selectedChapter === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
+                            {filters.chapter === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
                           </button>
                           {uniqueChapters.map(chapter => (
                             <button
                               key={chapter.id}
-                              onClick={() => {
-                                setSelectedChapter(chapter.id)
-                                setShowChapterMenu(false)
-                              }}
+                              onClick={() => handleChapterChange(chapter.id)}
                               className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                                selectedChapter === chapter.id ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                                filters.chapter === chapter.id ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                               }`}
                             >
                               {chapter.title}
-                              {selectedChapter === chapter.id && <ChevronDown className="w-4 h-4 rotate-180" />}
+                              {filters.chapter === chapter.id && <ChevronDown className="w-4 h-4 rotate-180" />}
                             </button>
                           ))}
                         </div>
@@ -901,13 +1009,13 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                   <button
                     onClick={() => setShowFilterMenu(!showFilterMenu)}
                     className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                      statusFilter !== 'all'
+                      filters.status !== 'all'
                         ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
                         : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50'
                     }`}
                   >
                     <Filter className="w-4 h-4" />
-                    {getFilterLabel()}
+                    {getFilterLabel(filters.status)}
                     <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showFilterMenu ? 'rotate-180' : ''}`} />
                   </button>
 
@@ -921,64 +1029,49 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                       />
                       <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-slate-200 z-20 overflow-hidden">
                         <button
-                          onClick={() => {
-                            setStatusFilter('all')
-                            setShowFilterMenu(false)
-                          }}
+                          onClick={() => handleStatusChange('all')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                            statusFilter === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                            filters.status === 'all' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                           }`}
                         >
                           全部
-                          {statusFilter === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
+                          {filters.status === 'all' && <ChevronDown className="w-4 h-4 rotate-180" />}
                         </button>
                         <button
-                          onClick={() => {
-                            setStatusFilter('new')
-                            setShowFilterMenu(false)
-                          }}
+                          onClick={() => handleStatusChange('new')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                            statusFilter === 'new' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
+                            filters.status === 'new' ? 'bg-indigo-50 text-indigo-700' : 'text-slate-700'
                           }`}
                         >
                           未标注
-                          {statusFilter === 'new' && <ChevronDown className="w-4 h-4 rotate-180" />}
+                          {filters.status === 'new' && <ChevronDown className="w-4 h-4 rotate-180" />}
                         </button>
                         <button
-                          onClick={() => {
-                            setStatusFilter('known')
-                            setShowFilterMenu(false)
-                          }}
+                          onClick={() => handleStatusChange('known')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                            statusFilter === 'known' ? 'bg-emerald-50 text-emerald-700' : 'text-slate-700'
+                            filters.status === 'known' ? 'bg-emerald-50 text-emerald-700' : 'text-slate-700'
                           }`}
                         >
                           认识
-                          {statusFilter === 'known' && <ChevronDown className="w-4 h-4 rotate-180 text-emerald-600" />}
+                          {filters.status === 'known' && <ChevronDown className="w-4 h-4 rotate-180 text-emerald-600" />}
                         </button>
                         <button
-                          onClick={() => {
-                            setStatusFilter('fuzzy')
-                            setShowFilterMenu(false)
-                          }}
+                          onClick={() => handleStatusChange('fuzzy')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                            statusFilter === 'fuzzy' ? 'bg-amber-50 text-amber-700' : 'text-slate-700'
+                            filters.status === 'fuzzy' ? 'bg-amber-50 text-amber-700' : 'text-slate-700'
                           }`}
                         >
                           模糊
-                          {statusFilter === 'fuzzy' && <ChevronDown className="w-4 h-4 rotate-180 text-amber-600" />}
+                          {filters.status === 'fuzzy' && <ChevronDown className="w-4 h-4 rotate-180 text-amber-600" />}
                         </button>
                         <button
-                          onClick={() => {
-                            setStatusFilter('unknown')
-                            setShowFilterMenu(false)
-                          }}
+                          onClick={() => handleStatusChange('unknown')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
-                            statusFilter === 'unknown' ? 'bg-rose-50 text-rose-700' : 'text-slate-700'
+                            filters.status === 'unknown' ? 'bg-rose-50 text-rose-700' : 'text-slate-700'
                           }`}
                         >
                           不认识
-                          {statusFilter === 'unknown' && <ChevronDown className="w-4 h-4 rotate-180 text-rose-600" />}
+                          {filters.status === 'unknown' && <ChevronDown className="w-4 h-4 rotate-180 text-rose-600" />}
                         </button>
                       </div>
                     </>
@@ -989,43 +1082,54 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
           </section>
 
           {/* 单词列表 */}
-          <div>
-            {isLoading ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {[...Array(6)].map((_, index) => (
-                  <WordCardSkeleton key={index} />
-                ))}
-              </div>
+          <div className="relative min-h-[400px]">
+            {/* ⚡ UX优化：首次加载或翻页时显示骨架屏（至少显示1200ms） */}
+            {/* 🔥 修复：当isPageChanging为true时，即使skeleton隐藏也要继续显示skeleton，避免旧数据闪现 */}
+            {(isLoading && filters.page === 1) || showSkeleton || isPageChanging ? (
+              <>
+                {console.log('🎨 Rendering skeleton loader, isLoading:', isLoading, 'showSkeleton:', showSkeleton, 'isPageChanging:', isPageChanging, 'skeleton count:', initialVisibleCount)}
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
+                  {[...Array(initialVisibleCount)].map((_, index) => (
+                    <WordCardSkeleton key={`skeleton-${index}`} />
+                  ))}
+                </div>
+              </>
             ) : (
-              <WordList
-                initialWords={paginatedWords}
-                bookId={book.id}
-                globalHideChinese={globalHideChinese}
-              />
+              <>
+                <WordList
+                  initialWords={displayWords}
+                  bookId={book.id}
+                  globalHideChinese={globalHideChinese}
+                  visibleCount={visibleCount}
+                  onVisibleChange={handleLoadMoreVisible}
+                />
+              </>
             )}
           </div>
 
-          {/* 底部控制栏 - 仅在PC端且单词数 > 50 时显示 */}
-          {!isMobileOrTablet && totalWords > WORDS_PER_PAGE && (
-            <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mt-6 hidden md:block">
+          {/* 底部控制栏 - PC和竖屏都显示，翻页时也显示 */}
+          {/* 🔥 修复：只要有数据或正在翻页或显示骨架屏就显示，避免底部栏闪烁 */}
+          {(displayWords.length > 0 || isPageChanging || showSkeleton) && (
+            <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-4 md:p-6 mt-6">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="text-sm text-slate-600">
                   显示 <span className="font-semibold text-slate-900">{startIndex}-{endIndex}</span> / 共 <span className="font-semibold text-slate-900">{totalWords}</span> 个单词
                 </div>
                 <div className="flex items-center gap-2">
                   <button
-                    onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
-                    disabled={currentPage === 1}
+                    onClick={() => handlePageChange(Math.max(1, filters.page - 1))}
+                    disabled={filters.page === 1}
                     className="px-4 py-2.5 rounded-xl border-2 border-slate-200 text-sm font-semibold text-slate-700 hover:bg-slate-50 hover:border-slate-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white transition-all duration-200"
                   >
                     上一页
                   </button>
                   <span className="text-sm font-bold text-slate-900 px-3 py-2.5 bg-slate-50 rounded-xl">
-                    {currentPage} / {totalPages}
+                    {filters.page} / {totalPages}
                   </span>
                   <button
-                    onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
-                    disabled={currentPage === totalPages}
+                    data-testid="next-page-button"
+                    onClick={() => handlePageChange(Math.min(totalPages, filters.page + 1))}
+                    disabled={filters.page === totalPages}
                     className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-sm font-semibold hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                   >
                     下一页
@@ -1036,7 +1140,8 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
           )}
 
           {/* 筛选结果为空时的提示 */}
-          {filteredWords.length === 0 && (
+          {/* 🔥 修复：只有在非翻页状态且骨架屏不显示时，才显示"没有找到单词"提示 */}
+          {displayWords.length === 0 && !isPageChanging && !showSkeleton && (
             <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-12 text-center">
               <Filter className="w-16 h-16 mx-auto mb-4 text-slate-300" />
               <h3 className="text-xl font-bold text-slate-700 mb-2">没有找到符合条件的单词</h3>
@@ -1054,13 +1159,13 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
         bookId={book.id}
         bookTitle={book.title || '未命名词书'}
         practiceMode={selectedPracticeMode}
-        filteredCount={filteredWords.length}
+        filteredCount={displayWords.length}
         totalCount={words.length}
         filterDescription={getFilterDescription()}
         filterParams={{
-          theme: selectedTheme,
-          scene: selectedScene,
-          status: statusFilter
+          theme: filters.theme,
+          scene: filters.scenario,
+          status: filters.status
         }}
       />
 
