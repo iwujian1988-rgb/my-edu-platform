@@ -64,16 +64,28 @@ function LoginForm() {
     setLoading(true)
 
     try {
+      console.log('[Login] 尝试登录:', loginData.phone)
       const result = await login(loginData)
+      console.log('[Login] 登录结果:', result)
+
       if (result.error) {
+        console.error('[Login] 登录失败:', result.error)
         setError(result.error)
         setLoading(false)
       } else {
-        // 立即跳转
-        router.push('/')
+        // 检查是否有redirect参数
+        const redirectTo = searchParams.get('redirect')
+        console.log('[Login] 登录成功，redirect参数:', redirectTo)
+
+        // 立即跳转到目标页面或首页
+        const targetUrl = redirectTo || '/'
+        console.log('[Login] 跳转到:', targetUrl)
+
+        router.push(targetUrl)
         router.refresh()
       }
     } catch (err: any) {
+      console.error('[Login] 异常:', err)
       setError(err.message || '登录失败，请重试')
       setLoading(false)
     }

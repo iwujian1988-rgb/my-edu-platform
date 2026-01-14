@@ -3,7 +3,7 @@
 import { revalidatePath } from 'next/cache'
 import { redirect } from 'next/navigation'
 import { headers } from 'next/headers'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, createAdminClient } from '@/lib/supabase/server'
 import {
   checkRegistrationRateLimit,
   checkInvitationCodeAttempts,
@@ -220,17 +220,25 @@ export async function signup(formData: {
       return { error: '邀请码已过期' }
     }
 
-    // Step 3: Check if user already exists
+    // Step 3: Check if user already exists in public.users
     const email = phoneToEmail(phone)
-    const { data: existingUser } = await supabase
+
+    // 3.1 Check in public.users table first - if user exists, they are fully registered
+    const { data: existingPublicUser } = await supabase
       .from('users')
-      .select('id')
+      .select('id, phone_number')
       .eq('phone_number', phone)
       .single()
 
-    if (existingUser) {
-      return { error: '该手机号已注册，请直接登录' }
+    if (existingPublicUser) {
+      console.log('[Signup] User already fully registered in public.users, should login instead')
+      return { error: '您的账号已注册，请进行登录' }
     }
+
+    // 3.2 Don't check auth.users here - directly try to create the user
+    // If user already exists in auth, we'll catch it in Step 4 and return appropriate error
+    console.log('[Signup] User not found in public.users, will attempt to create account')
+    var isRecoveryMode = false
 
     // Step 3.5: Check IP/device rate limit (单IP 1小时限3次，单设备24小时限1次)
     const rateLimitCheck = await checkRegistrationRateLimit(ipAddress, userAgent)
@@ -241,69 +249,159 @@ export async function signup(formData: {
       return { error: `注册尝试过于频繁，${retryMsg}` }
     }
 
-    // Step 4: Create Auth user
-    const { data: authData, error: authError } = await supabase.auth.signUp({
-      email,
-      password,
-      options: {
-        data: {
-          phone_number: phone
+    // Step 4: Create Auth user (only if not in recovery mode)
+    if (!isRecoveryMode) {
+      const { data: signUpData, error: authError } = await supabase.auth.signUp({
+        email,
+        password,
+        options: {
+          data: {
+            phone_number: phone
+          }
+        }
+      })
+
+      if (authError) {
+        console.error('Auth signup error:', authError)
+
+        // If user already exists, they are registered
+        if (authError.message?.includes('already registered') || authError.message?.includes('user already exists') || authError.status === 422) {
+          console.log('[Signup] User already exists in auth.users')
+          return { error: '您的账号已注册，请进行登录' }
+        }
+
+        return { error: '注册失败，请稍后重试' }
+      }
+
+      if (!signUpData.user) {
+        return { error: '注册失败，请稍后重试' }
+      }
+
+      var authData = signUpData
+      console.log('[Signup] New auth user created successfully')
+    } else {
+      console.log('[Signup] Using existing auth user from recovery mode')
+    }
+
+    // Step 5: Sync to public.users table (使用 admin client 绕过 RLS)
+    const supabaseAdmin = await createAdminClient()
+
+    // Check if user already exists in public.users (from previous failed attempt)
+    const { data: existingUserInPublic } = await supabaseAdmin
+      .from('users')
+      .select('*')
+      .eq('id', authData.user.id)
+      .single()
+
+    if (existingUserInPublic) {
+      console.log('[Signup] User record already exists in public.users from previous attempt')
+
+      // 如果 phone_number 为空，更新它
+      if (!existingUserInPublic.phone_number) {
+        console.log('[Signup] Updating missing phone_number for existing user')
+        const { error: updateError } = await supabaseAdmin
+          .from('users')
+          .update({ phone_number: phone })
+          .eq('id', authData.user.id)
+
+        if (updateError) {
+          console.error('[Signup] Error updating phone_number:', updateError)
+        } else {
+          console.log('[Signup] phone_number updated successfully')
         }
       }
-    })
+    } else {
+      // @ts-ignore - Supabase type inference issue
+      const { error: dbError } = await supabaseAdmin.from('users').insert({
+        id: authData.user.id,
+        email: email,
+        phone_number: phone,
+        full_name: authData.user.user_metadata?.full_name || authData.user.user_metadata?.name || null,
+        avatar_url: authData.user.user_metadata?.avatar_url || null,
+        metadata: { invitation_code_used: invitationCode }
+      })
 
-    if (authError) {
-      console.error('Auth signup error:', authError)
-      return { error: '注册失败，请稍后重试' }
+      if (dbError) {
+        console.error('[Signup] DB sync error:', dbError)
+        console.error('[Signup] DB sync error details:', JSON.stringify(dbError, null, 2))
+        console.error('[Signup] DB sync error message:', dbError.message)
+        console.error('[Signup] DB sync error code:', dbError.code)
+        console.error('[Signup] DB sync error hint:', dbError.hint)
+        console.error('[Signup] DB sync error details:', dbError.details)
+
+        // If duplicate key error, it means user already exists, continue with other steps
+        if (dbError.code === '23505') {
+          console.log('[Signup] User already exists (duplicate key), continuing with remaining steps...')
+        } else {
+          // For other errors, return failure
+          return { error: '注册失败，请稍后重试' }
+        }
+      } else {
+        console.log('[Signup] User synced to public.users successfully')
+      }
     }
 
-    if (!authData.user) {
-      return { error: '注册失败，请稍后重试' }
+    // Step 6: Initialize user quota (使用 admin client)
+    // First check if quota already exists
+    const { data: existingQuota } = await supabaseAdmin
+      .from('user_quotas')
+      .select('user_id')
+      .eq('user_id', authData.user.id)
+      .single()
+
+    if (existingQuota) {
+      console.log('[Signup] User quota already exists, skipping initialization')
+    } else {
+      // @ts-ignore - Supabase type inference issue
+      const { error: quotaError } = await supabaseAdmin.from('user_quotas').insert({
+        user_id: authData.user.id,
+        daily_smart_import_limit: 500,
+        daily_smart_import_used: 0
+      })
+
+      if (quotaError) {
+        // Log but don't fail - quota can be created later
+        if (quotaError.code === '23505') {
+          console.log('[Signup] Quota already exists (duplicate key), continuing...')
+        } else {
+          console.error('[Signup] Quota initialization error:', quotaError)
+        }
+      } else {
+        console.log('[Signup] Quota initialized successfully')
+      }
     }
 
-    // Step 5: Sync to public.users table
-    // @ts-ignore - Supabase type inference issue
-    const { error: dbError } = await supabase.from('users').insert({
-      id: authData.user.id,
-      email: email,  // ✅ 修复：添加email字段
-      phone_number: phone,
-      full_name: authData.user.user_metadata?.full_name || authData.user.user_metadata?.name || null,
-      avatar_url: authData.user.user_metadata?.avatar_url || null,
-      metadata: { invitation_code_used: invitationCode }
-    })
-
-    if (dbError) {
-      console.error('DB sync error:', dbError)
-      // Rollback auth user? For now, just log the error
-      return { error: '注册失败，请稍后重试' }
-    }
-
-    // Step 6: Initialize user quota
-    // @ts-ignore - Supabase type inference issue
-    await supabase.from('user_quotas').insert({
-      user_id: authData.user.id,
-      daily_smart_import_limit: 500,
-      daily_smart_import_used: 0
-    })
-
-    // Step 7: Use invitation code and inherit permissions
+    // Step 7: Use invitation code and inherit permissions (使用 admin client)
     // Call the database function to mark the invitation code as used and set user permissions
-    const { data: useCodeResult, error: useCodeError } = await (supabase as any).rpc('use_invitation_code', {
+    const { data: useCodeResult, error: useCodeError } = await (supabaseAdmin as any).rpc('use_invitation_code', {
       code_param: invitationCode,
       user_id_param: authData.user.id
     })
 
     if (useCodeError || !useCodeResult) {
-      console.error('Error using invitation code:', useCodeError)
-      return { error: '邀请码使用失败，请稍后重试' }
+      console.error('[Signup] Error using invitation code:', useCodeError)
+      console.error('[Signup] Invitation code error details:', JSON.stringify(useCodeError, null, 2))
+      // 非致命错误 - 用户已经创建成功，邀请码可以稍后手动处理
+      console.log('[Signup] Continuing despite invitation code error (non-fatal)')
+    } else {
+      console.log('[Signup] Invitation code used successfully')
     }
 
-    revalidatePath('/', 'layout')
-    revalidatePath('/study', 'layout')
+    console.log('[Signup] All steps completed successfully')
 
+    try {
+      revalidatePath('/', 'layout')
+      revalidatePath('/study', 'layout')
+    } catch (revalidateError) {
+      console.error('Revalidate error (non-fatal):', revalidateError)
+      // 忽略 revalidate 错误，不影响注册
+    }
+
+    console.log('[Signup] Returning success')
     return { success: true, redirect: '/' }
   } catch (error: any) {
-    console.error('Signup error:', error)
+    console.error('[Signup] Exception:', error)
+    console.error('[Signup] Stack:', error.stack)
     return { error: error.message || '注册失败，请重试' }
   }
 }

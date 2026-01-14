@@ -1,7 +1,12 @@
 import { redirect } from 'next/navigation'
-import { logout } from '../login/actions'
+import { createClient } from '@/lib/supabase/server'
 
 export async function GET() {
-  await logout()
+  const supabase = await createClient()
+
+  // Sign out from Supabase Auth
+  await supabase.auth.signOut()
+
+  // Redirect to login page
   redirect('/login')
 }
