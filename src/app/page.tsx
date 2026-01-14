@@ -106,7 +106,7 @@ export default async function Home() {
             // 只统计"认识"的单词作为学习进度
             // known: 认识（计入进度）
             // fuzzy: 模糊（部分掌握，也可计入）
-            // unknown: 不认识（不应计入进度）
+            // unknown: 不认识（不应计入）
             // new: 未标注（不应计入进度）
             const learnedCount = bookProgress.filter((p: any) =>
               p.status === 'known' || p.status === 'fuzzy'
@@ -684,7 +684,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="clay-card px-8 py-6 text-center">
             <p className="text-gray-600 font-semibold">
-              🎓 喵喵笔记 © 2026 · 让英语学习更简单、更有趣
+              © 2025 喵喵笔记 · 智能英语学习平台 · Made with ❤️
             </p>
           </div>
         </div>
