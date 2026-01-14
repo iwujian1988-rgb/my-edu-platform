@@ -10,6 +10,9 @@ export default defineConfig({
   // 测试文件位置
   testDir: './e2e',
 
+  // 全局setup（测试前执行登录）
+  globalSetup: './e2e/global-setup.ts',
+
   // 测试超时时间（毫秒）
   timeout: 30 * 1000,
 
@@ -47,6 +50,9 @@ export default defineConfig({
 
     // 视频录制
     video: 'retain-on-failure',
+
+    // 保持localStorage和cookies在测试之间（重要！）
+    storageState: 'e2e/.auth/admin-storage-state.json',
 
     // 操作超时
     actionTimeout: 10000,
