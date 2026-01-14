@@ -26,17 +26,27 @@ export async function GET(request: NextRequest) {
     // 获取查询参数
     const searchParams = request.nextUrl.searchParams
     const bookId = searchParams.get('book_id')
+    const wordIdsParam = searchParams.get('word_ids')
 
     if (!bookId) {
       return NextResponse.json({ error: 'book_id is required' }, { status: 400 })
     }
 
-    // 查询单词状态
-    const { data: wordProgress, error: progressError } = await supabase
+    // 构建查询
+    let query = supabase
       .from('word_progress')
       .select('word_id, status, practice_count, correct_count, last_practiced_at, match_count, fail_count')
       .eq('user_id', user.id)
       .eq('book_id', bookId)
+
+    // 如果指定了word_ids，只查询单词的进度
+    if (wordIdsParam) {
+      const wordIds = wordIdsParam.split(',')
+      query = query.in('word_id', wordIds)
+    }
+
+    // 查询单词状态
+    const { data: wordProgress, error: progressError } = await query
 
     if (progressError) {
       console.error('Error fetching word progress:', progressError)

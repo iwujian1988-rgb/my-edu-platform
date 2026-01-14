@@ -132,7 +132,11 @@ export async function POST(request: NextRequest) {
     if (typeof shuffle_order === 'boolean') updateData.shuffle_order = shuffle_order
     if (typeof auto_remove_from_mistakes === 'boolean') updateData.auto_remove_from_mistakes = auto_remove_from_mistakes
     if (typeof consecutive_correct_threshold === 'number') updateData.consecutive_correct_threshold = consecutive_correct_threshold
-    if (last_resume_state && typeof last_resume_state === 'object') updateData.last_resume_state = last_resume_state
+    // 修复：允许保存 last_resume_state，包括显式设置的 null（用于清除状态）
+    if ('last_resume_state' in body) {
+      updateData.last_resume_state = last_resume_state
+      console.log('📝 Will save last_resume_state:', last_resume_state)
+    }
 
     console.log('Saving preferences for user:', user.email, updateData)
 

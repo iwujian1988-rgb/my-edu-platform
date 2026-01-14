@@ -1,11 +1,10 @@
-import { createClient, getCurrentUser, createAdminClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 
 /**
  * GET /api/words/stats?bookId=xxx
- * 获取单词书各状态的统计数据（仅返回统计数字，不返回单词内容）
- *
- * 使用直接SQL COUNT查询，性能极高
+ * 快速获取单词书的统计数据（不返回实际单词数据）
+ * 用于 FlashcardStatsBar 显示各状态的单词分布
  */
 export async function GET(request: NextRequest) {
   const user = await getCurrentUser()
@@ -24,68 +23,65 @@ export async function GET(request: NextRequest) {
 
     const supabase = await createClient()
 
-    // 1. 快速检查词库权限
-    const { data: book, error: bookError } = await supabase
-      .from('books')
-      .select('id, is_official, created_by, total_words')
-      .eq('id', bookId)
-      .single()
+    // 并行检查：权限 + 单词书信息 + 用户进度统计
+    const [bookResult, progressResult] = await Promise.all([
+      // 检查词库权限并获取总单词数
+      supabase
+        .from('books')
+        .select('id, is_official, created_by, total_words')
+        .eq('id', bookId)
+        .single(),
+      // 获取所有用户进度数据
+      supabase
+        .from('word_progress')
+        .select('word_id, status')
+        .eq('user_id', user.id)
+        .eq('book_id', bookId)
+    ])
 
+    // 权限检查
+    const { data: book, error: bookError } = bookResult
     if (bookError || !book) {
       console.error('❌ Book not found:', { bookId, bookError })
       return NextResponse.json({ error: 'Book not found or access denied' }, { status: 404 })
     }
 
+    const bookData = book as any
+
     // 自定义词库：检查是否为创建者
-    if (book.is_official === false && book.created_by !== user.id) {
-      return NextResponse.json(
-        { error: 'Forbidden: You can only access stats from your own custom books' },
-        { status: 403 }
-      )
+    if (bookData.is_official === false && bookData.created_by) {
+      if (bookData.created_by !== user.id) {
+        return NextResponse.json(
+          { error: 'Forbidden: You can only access words from your own custom books' },
+          { status: 403 }
+        )
+      }
     }
 
-    // 2. 使用 Admin Client 执行高效的 COUNT 查询（绕过 RLS，提升性能）
-    const adminClient = await createAdminClient()
-
-    // 并行查询所有状态的单词数量（使用 COUNT，不返回单词数据）
-    const [unknownResult, fuzzyResult, knownResult] = await Promise.all([
-      // 各状态的单词数量
-      adminClient
-        .from('word_progress')
-        .select('id', { count: 'exact', head: true })
-        .eq('user_id', user.id)
-        .eq('book_id', bookId)
-        .eq('status', 'unknown'),
-
-      adminClient
-        .from('word_progress')
-        .select('id', { count: 'exact', head: true })
-        .eq('user_id', user.id)
-        .eq('book_id', bookId)
-        .eq('status', 'fuzzy'),
-
-      adminClient
-        .from('word_progress')
-        .select('id', { count: 'exact', head: true })
-        .eq('user_id', user.id)
-        .eq('book_id', bookId)
-        .eq('status', 'known')
-    ])
-
-    const markedCount = (unknownResult.count || 0) + (fuzzyResult.count || 0) + (knownResult.count || 0)
-    const totalWords = book.total_words || 0
-    const newCount = Math.max(0, totalWords - markedCount)
-
+    // 统计各状态的单词数量
+    const totalWords = bookData.total_words || 0
     const stats = {
       total: totalWords,
-      unknown: unknownResult.count || 0,
-      fuzzy: fuzzyResult.count || 0,
-      known: knownResult.count || 0,
-      new: newCount,
-      all: totalWords
+      all: totalWords,
+      unknown: 0,
+      fuzzy: 0,
+      known: 0,
+      new: totalWords // 默认都是未标注
     }
 
-    console.log('📊 Word stats:', stats)
+    if (progressResult.data && progressResult.data.length > 0) {
+      const progressSet = new Set(progressResult.data.map((p: any) => p.word_id))
+      stats.new = totalWords - progressSet.size // 减去有进度的单词数
+
+      // 统计各状态的数量
+      progressResult.data.forEach((p: any) => {
+        if (p.status === 'unknown') stats.unknown++
+        else if (p.status === 'fuzzy') stats.fuzzy++
+        else if (p.status === 'known') stats.known++
+      })
+    }
+
+    console.log(`📊 Stats for book ${bookId}:`, stats)
 
     return NextResponse.json({
       success: true,
