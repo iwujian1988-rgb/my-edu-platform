@@ -865,25 +865,41 @@ Mobile端：自动调用系统软键盘。
 
 **实时统计色块** [详细设计]：
 - 位置：顶部导航栏下方、进度条上方
-- 布局：横向排列的色块，每个色块显示状态和百分比
-- 交互：点击色块弹出确认对话框，确认后切换到对应范围
+- 布局：
+  - **横向进度条**：显示各状态单词的分布比例，每个颜色段的宽度按实际百分比显示
+  - **图例行**：显示各状态的图标、名称和数量
+- 交互：
+  - 点击进度条中的颜色段或图例按钮，弹出确认对话框
+  - 确认后切换到对应范围
 - 确认对话框内容：
   - 标题："切换学习范围"
   - 内容："确定要切换到'{新范围}'吗？\n当前进度将被保存，可以随时返回。"
   - 按钮：[取消] [确认切换]
 - 示例布局：
   ```
-  [████████████░░░░] 25%
-  [✓ 认识 60%] [? 模糊 20%] [✗ 不认识 15%] [+ 未标注 5%]
-     绿色          黄色           红色           灰色
+  ┌─────────────────────────────────────────┐
+  │ ████████░░░░░░░███████░░░░░███░░░░░░░░░░░ │ ← 横向进度条
+  │  绿色60%   黄色20%  红色15%   灰色5%    │
+  └─────────────────────────────────────────┘
+  [✓ 认识(120)] [? 模糊(40)] [✗ 不认识(30)] [+ 未标注(10)] ← 图例
   ```
+- 颜色映射：
+  - 认识：绿色 (#B4F416)
+  - 模糊：黄色 (#FACC15)
+  - 不认识：红色 (#FF6B6B)
+  - 未标注：灰色 (#9CA3AF)
 
-**完成状态**：
-- 当到达当前范围最后一张单词时，显示完成卡片：
+**完成状态** [更新]：
+- 当用户标记完当前范围的最后一个单词时，显示完成对话框（模态弹窗）：
   - 标题："🎉 太棒了！"
-  - 文案："你已经完成了'{范围名称}'所有单词的学习"
-  - 当前范围统计数据（可选显示）
-  - 按钮："返回词书详情" / "选择其他范围"
+  - 文案："你已经完成了'{范围名称}'范围的所有单词学习！"
+  - 副标题："接下来你想做什么？"
+  - 三个操作按钮：
+    1. **🔄 重新学习这个范围** - 重置到第一个单词（index=0），可重新开始学习当前范围
+    2. **📚 选择其他范围** - 打开范围选择对话框，切换到不同的学习范围
+    3. **返回首页** - 返回到应用首页
+- 适用范围：所有范围（all/unknown/fuzzy/known/new）
+- 对话框样式：Neo-Brutalism设计，带遮罩层，点击遮罩关闭对话框
 
 **数据获取** [更新]：
 - API: GET /api/words?bookId={bookId}&status={status}
@@ -1402,6 +1418,217 @@ export default async function StudyPage() {
 
 ---
 
+### 2026-01-13 - 学习状态恢复对话框功能 ✅
+
+#### 功能概述
+在学习状态自动保存的基础上，增加用户选择对话框功能。当用户返回词库时，系统会询问是否"继续学习"还是"从头开始"，给用户更多控制权。
+
+#### 实现场景
+
+**对话框显示条件**：
+- 同一个词库（bookId相同）
+- 同一个模式（word-list）
+- 24小时内的学习进度
+- 页码 > 1（避免第1页的打扰）
+- 不是通过URL参数访问的（URL参数优先级更高）
+
+**对话框设计**：
+```
+┌─────────────────────────────────┐
+│  🔄 继续上次的学习进度？          │
+│  上次学习到第 3 页               │
+│                                  │
+│  上次的学习设置：                 │
+│  • 筛选：未标注                   │
+│  • 主题：购物                     │
+│  • 章节：第1章                   │
+│                                  │
+│  [从头开始]    [继续学习]         │
+└─────────────────────────────────┘
+```
+
+**用户选择**：
+
+1. **从头开始**：
+   - 不恢复任何状态
+   - 使用默认的第1页
+   - 使用默认的筛选条件（全部）
+   - 对话框关闭
+
+2. **继续学习**：
+   - 恢复保存的页码（比如第3页）
+   - 恢复保存的筛选条件（主题、场景、状态、章节）
+   - 自动加载对应页的数据
+   - 对话框关闭
+
+#### 技术实现
+
+**1. 新增状态变量** (`BookDetailPageClient.tsx`)
+```typescript
+const [showResumeDialog, setShowResumeDialog] = useState(false)
+const [resumeState, setResumeState] = useState<any>(null)
+const [hasRestoredState, setHasRestoredState] = useState(false)
+const isRestoringRef = useRef(false)
+```
+
+**2. 检查恢复状态** (useEffect, 延迟500ms)
+```typescript
+useEffect(() => {
+  // 如果URL参数已经恢复了状态，就不再检查保存的状态
+  if (searchParams.has('theme') || searchParams.has('page')) {
+    return
+  }
+
+  const checkResumeState = async () => {
+    const savedState = await getResumeState(book.id, 'word-list')
+
+    if (savedState && savedState.context) {
+      // 检查状态是否是最近的（24小时内）
+      const hoursSince = (Date.now() - savedState.updatedAt) / (1000 * 60 * 60)
+
+      if (hoursSince < 24 && savedState.context.page && savedState.context.page > 1) {
+        setResumeState(savedState)
+        setShowResumeDialog(true)
+      }
+    }
+  }
+
+  // 延迟检查，避免与URL参数恢复冲突
+  setTimeout(() => {
+    checkResumeState()
+  }, 500)
+}, [book.id, searchParams])
+```
+
+**3. 恢复状态处理函数**
+```typescript
+const handleResume = () => {
+  if (!resumeState || !resumeState.context) return
+
+  isRestoringRef.current = true
+
+  // 恢复筛选条件
+  if (resumeState.context.filters) {
+    const { theme, scenario, status, chapter } = resumeState.context.filters
+
+    if (theme && theme !== 'all') setSelectedTheme(theme)
+    if (scenario && scenario !== 'all') setSelectedScene(scenario)
+    if (status && status !== 'all') setStatusFilter(status as StatusFilter)
+    if (chapter && chapter !== 'all') setSelectedChapter(chapter)
+  }
+
+  // 恢复页码
+  if (resumeState.context.page) {
+    setCurrentPage(resumeState.context.page)
+  }
+
+  setShowResumeDialog(false)
+
+  // 延迟标记恢复完成
+  setTimeout(() => {
+    isRestoringRef.current = false
+    setHasRestoredState(true)
+  }, 200)
+}
+
+const handleStartFresh = () => {
+  setShowResumeDialog(false)
+  setHasRestoredState(true)
+  // 不恢复状态，使用默认的第1页
+}
+```
+
+**4. 对话框UI**
+```tsx
+{showResumeDialog && resumeState && (
+  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+    <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6">
+      {/* 图标和标题 */}
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-12 h-12 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 flex items-center justify-center">
+          <RotateCcw className="w-6 h-6 text-white" />
+        </div>
+        <div>
+          <h3>继续上次的学习进度？</h3>
+          <p>上次学习到第 {resumeState.context?.page} 页</p>
+        </div>
+      </div>
+
+      {/* 显示筛选条件 */}
+      {resumeState.context?.filters && (
+        <div className="bg-slate-50 rounded-xl p-3 mb-4">
+          <div className="font-semibold">上次的学习设置：</div>
+          {filters.map(f => <div key={f.key}>• {f.label}: {f.value}</div>)}
+        </div>
+      )}
+
+      {/* 按钮 */}
+      <div className="flex gap-3">
+        <button onClick={handleStartFresh}>从头开始</button>
+        <button onClick={handleResume}>继续学习</button>
+      </div>
+    </div>
+  </div>
+)}
+```
+
+#### 优先级规则
+
+**优先级从高到低**：
+1. **URL参数**（最高优先级）
+   - 如果URL带有 `?theme=xxx&page=3`
+   - 直接从URL恢复，不显示对话框
+
+2. **用户选择对话框**（次优先级）
+   - 检查数据库中是否有保存的状态
+   - 如果有且符合条件，显示对话框
+   - 用户选择后执行对应的操作
+
+3. **默认状态**（最低优先级）
+   - 第1页
+   - 全部筛选条件
+
+#### 用户体验优化
+
+**为什么不用自动恢复？**
+- 用户可能想从头开始
+- 给用户选择权更友好
+- 避免强制恢复造成困惑
+
+**为什么用对话框？**
+- 清晰的用户提示
+- 用户可以选择
+- 显示详细信息（页码、筛选条件）
+
+**为什么有24小时限制？**
+- 太久之前的学习进度可能不相关
+- 避免频繁打扰用户
+- 可以后续添加设置让用户自定义
+
+**为什么延迟500ms检查？**
+- 避免与URL参数恢复冲突
+- 让页面先完成URL参数的恢复
+- 提升用户体验（不会立即弹出对话框）
+
+#### 已知限制
+
+1. **24小时限制**：只有24小时内的学习进度会提示
+2. **只在第2页及以后提示**：如果用户只看了第1页，不提示
+3. **同一词库同一模式**：不同词库、不同模式之间不恢复
+4. **筛选保存是客户端的**：页面、状态筛选保存，但单词列表本身不保存
+
+#### 文件修改
+
+| 文件 | 改动内容 | 代码量 |
+|------|---------|--------|
+| `src/lib/resumeState.ts` | 添加 `getResumeState` 函数 | ~40行 |
+| `src/components/BookDetailPageClient.tsx` | 对话框UI + 恢复逻辑 | ~100行 |
+| `PRD.md` | 文档更新 | - |
+
+**总计**：约140行新增代码
+
+---
+
 ### 2026-01-07 - "继续学习"状态保存功能 ✅
 
 #### 功能概述
@@ -1829,6 +2056,52 @@ COMMENT ON COLUMN user_book_preferences.last_resume_state IS '用户最后的学
 
 **文件更新**:
 - `PRD.md` - 更新版本至 v3.3.0，添加权限控制章节
+
+---
+
+### 2026-01-14 - 翻页体验优化：渐进式渲染 [计划中]
+
+**需求背景**：当前翻页时一次性渲染21个单词卡片，导致首屏渲染慢，页面卡顿。需要优化为渐进式渲染，提升用户体验。
+
+**优化内容**：
+
+**1. PC/Pad横屏模式**：
+- ✅ 点击翻页按钮后立即显示12个骨架屏卡片
+- ✅ 数据返回后（21条已加载），只渲染前12个真实卡片
+- ✅ 用户向下滚动时，使用Intersection Observer逐步显示剩余9个卡片
+- ✅ 每次滚动到倒数第2个卡片时，显示下一批2个卡片
+- ✅ 直到显示全部21个卡片或用户看到翻页按钮
+
+**2. 竖屏模式**：
+- ✅ 一行显示2个单词（保持不变）
+- ✅ 卡片高度降低约20%（优化竖屏空间）
+- ✅ 点击翻页后显示6个骨架屏卡片
+- ✅ 数据返回后，只渲染前6个真实卡片
+- ✅ 用户下滑时，使用Intersection Observer逐步显示剩余15个卡片
+- ✅ 每次滚动到倒数第2个卡片时，显示下一批2个卡片
+- ✅ 直到显示全部21个卡片或用户看到翻页按钮
+
+**3. 技术实现要点**：
+- ✅ 使用Intersection Observer API（性能优于scroll事件）
+- ✅ 骨架屏数量与初始渲染数量一致
+- ✅ 数据已全部加载，只是延迟渲染DOM节点
+- ✅ 渐进式显示时保持平滑过渡（无闪烁）
+
+**4. 性能优势**：
+- ✅ 首屏渲染快（只渲染可见卡片）
+- ✅ 页面不卡顿（DOM节点分批创建）
+- ✅ 滚动流畅（Intersection Observer性能）
+- ✅ 用户无感知延迟（数据已预加载）
+
+**文件修改计划**：
+- `src/components/BookDetailPageClient.tsx` - 添加渐进式渲染逻辑 (~150行)
+- `src/components/WordList.tsx` - 支持可控的渐进式渲染 (~50行)
+- `src/components/VocabularyCard.tsx` - 降低竖屏卡片高度 (~20行)
+- `PRD.md` - 更新需求文档（本节）
+
+**总计**：
+- 代码量：~220行新增
+- 开发时间：约4小时
 
 ---
 

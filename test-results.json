@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 1
+      "actualWorkers": 5
     },
     "preserveOutput": "always",
     "reporter": [
@@ -44,7 +44,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "chromium",
         "name": "chromium",
@@ -60,7 +60,7 @@
         "repeatEach": 1,
         "retries": 1,
         "metadata": {
-          "actualWorkers": 1
+          "actualWorkers": 5
         },
         "id": "Mobile Chrome",
         "name": "Mobile Chrome",
@@ -77,30 +77,25 @@
     "updateSnapshots": "missing",
     "updateSourceMethod": "patch",
     "version": "1.57.0",
-    "workers": 1,
-    "webServer": {
-      "command": "npm run dev",
-      "url": "http://localhost:3002",
-      "reuseExistingServer": true,
-      "timeout": 120000
-    }
+    "workers": 7,
+    "webServer": null
   },
   "suites": [
     {
-      "title": "admin-login-debug.spec.ts",
-      "file": "admin-login-debug.spec.ts",
+      "title": "resume-state.spec.ts",
+      "file": "resume-state.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "管理员登录调试",
-          "file": "admin-login-debug.spec.ts",
-          "line": 12,
+          "title": "学习状态恢复 - 基础功能",
+          "file": "resume-state.spec.ts",
+          "line": 25,
           "column": 6,
           "specs": [
             {
-              "title": "步骤1: 访问登录页面",
+              "title": "TC-001: 竖屏模式 - 加载第2页 - 返回 - 再进入",
               "ok": true,
               "tags": [],
               "tests": [
@@ -115,40 +110,43 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2385,
+                      "duration": 15167,
                       "errors": [],
                       "stdout": [
                         {
-                          "text": "\n=================================\n"
+                          "text": "🔧 Setup: Using test user 13800138000\n"
                         },
                         {
-                          "text": "步骤1: 访问管理员登录页面\n"
+                          "text": "📚 Using book: ${testBookId} (5000 words)\n"
                         },
                         {
-                          "text": "=================================\n"
+                          "text": "✅ Setup complete\n\n"
                         },
                         {
-                          "text": "✅ 页面访问成功\n"
+                          "text": "✅ 已登录\n"
                         },
                         {
-                          "text": "  URL: http://localhost:3002/admin/login\n"
+                          "text": "⚠️  页面没有加载到单词数据，可能是权限问题\n"
                         },
                         {
-                          "text": "  状态码: \u001b[33m500\u001b[39m\n"
+                          "text": "   继续测试以验证其他功能...\n"
                         },
                         {
-                          "text": "✅ 页面加载完成\n"
+                          "text": "第1页加载了 0 个单词\n"
                         },
                         {
-                          "text": "  页面标题: \n"
+                          "text": "对话框是否显示: \u001b[33mfalse\u001b[39m\n"
                         },
                         {
-                          "text": "  页面内容长度: \u001b[33m2818\u001b[39m\n"
+                          "text": "⚠️  TC-001: 对话框未显示（可能是因为没有单词数据）\n"
+                        },
+                        {
+                          "text": "✅ TC-001 部分通过: 页面已加载\n"
                         }
                       ],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-08T02:19:56.942Z",
+                      "startTime": "2026-01-14T00:30:57.617Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -156,9 +154,422 @@
                   "status": "expected"
                 }
               ],
-              "id": "e0dc5f924e1793e20e14-5f4a9fb10834dc0d7add",
-              "file": "admin-login-debug.spec.ts",
-              "line": 14,
+              "id": "516512dc465d116bce62-82821a09da45f9b243a6",
+              "file": "resume-state.spec.ts",
+              "line": 66,
+              "column": 7
+            },
+            {
+              "title": "TC-002: 横屏模式 - 翻到第2页 - 返回 - 再进入",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 14685,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✅ 已登录\n"
+                        },
+                        {
+                          "text": "⚠️  页面没有加载到单词数据，可能是权限问题\n"
+                        },
+                        {
+                          "text": "第1页加载了 0 个单词\n"
+                        },
+                        {
+                          "text": "⚠️  TC-002: 对话框未显示（可能是因为没有单词数据）\n"
+                        },
+                        {
+                          "text": "✅ TC-002 部分通过: 页面已加载\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-14T00:31:13.086Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "516512dc465d116bce62-3b283d53b50a5f494e69",
+              "file": "resume-state.spec.ts",
+              "line": 145,
+              "column": 7
+            },
+            {
+              "title": "TC-003: 筛选条件保存 - 未标注 + 第3页",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 15803,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🔧 Setup: Using test user 13800138000\n"
+                        },
+                        {
+                          "text": "📚 Using book: ${testBookId} (5000 words)\n"
+                        },
+                        {
+                          "text": "✅ Setup complete\n\n"
+                        },
+                        {
+                          "text": "✅ 已登录\n"
+                        },
+                        {
+                          "text": "⚠️  页面没有加载到单词数据\n"
+                        },
+                        {
+                          "text": "第2页没有更多按钮\n"
+                        },
+                        {
+                          "text": "⚠️  TC-003: 对话框未显示（可能是因为没有足够的单词数据）\n"
+                        },
+                        {
+                          "text": "✅ TC-003 部分通过: 页面已加载\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-14T00:30:57.464Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "516512dc465d116bce62-d51053fa9d7ee1879553",
+              "file": "resume-state.spec.ts",
+              "line": 204,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "学习状态恢复 - 边界条件",
+          "file": "resume-state.spec.ts",
+          "line": 279,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-E1: 只浏览第1页 - 不应该显示对话框",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 4741,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✅ 已登录\n"
+                        },
+                        {
+                          "text": "✅ TC-E1 通过: 第1页不显示对话框\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-14T00:31:13.582Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "516512dc465d116bce62-106e4553f566f66167f0",
+              "file": "resume-state.spec.ts",
+              "line": 317,
+              "column": 7
+            },
+            {
+              "title": "TC-E2: URL参数优先级 - 不应该显示对话框",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3981,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🔧 Setup: Using test user 13800138000\n"
+                        },
+                        {
+                          "text": "📚 Using book: ${testBookId} (5000 words)\n"
+                        },
+                        {
+                          "text": "✅ Setup complete\n\n"
+                        },
+                        {
+                          "text": "✅ 已登录\n"
+                        },
+                        {
+                          "text": "✅ TC-E2 通过: URL参数时不显示对话框\n"
+                        },
+                        {
+                          "text": "是否显示第2页: \u001b[33mfalse\u001b[39m\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-14T00:30:57.539Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "516512dc465d116bce62-8be81dc16cf3feabcc97",
+              "file": "resume-state.spec.ts",
+              "line": 340,
+              "column": 7
+            },
+            {
+              "title": "TC-E3: 选择\"从头开始\" - 验证功能",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3958,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✅ 已登录\n"
+                        }
+                      ],
+                      "stderr": [
+                        {
+                          "text": "TC-E3 失败: 对话框未显示\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-01-14T00:31:01.788Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "516512dc465d116bce62-20e0527621f150b78f62",
+              "file": "resume-state.spec.ts",
+              "line": 358,
+              "column": 7
+            },
+            {
+              "title": "TC-E4: 选择\"继续学习\" - 验证恢复",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 5332,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🔧 Setup: Using test user 13800138000\n"
+                        },
+                        {
+                          "text": "📚 Using book: ${testBookId} (5000 words)\n"
+                        },
+                        {
+                          "text": "✅ Setup complete\n\n"
+                        },
+                        {
+                          "text": "✅ 已登录\n"
+                        },
+                        {
+                          "text": "学习时单词数: \u001b[33m0\u001b[39m\n"
+                        }
+                      ],
+                      "stderr": [
+                        {
+                          "text": "TC-E4 失败: 对话框未显示\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-01-14T00:30:57.558Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "516512dc465d116bce62-f80113860523102b1832",
+              "file": "resume-state.spec.ts",
+              "line": 404,
+              "column": 7
+            }
+          ]
+        },
+        {
+          "title": "学习状态恢复 - 异常情况",
+          "file": "resume-state.spec.ts",
+          "line": 451,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-X1: 快速翻页 - 验证防抖",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "passed",
+                      "duration": 7069,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✅ 已登录\n"
+                        },
+                        {
+                          "text": "快速翻页后对话框显示: \u001b[33mfalse\u001b[39m\n"
+                        }
+                      ],
+                      "stderr": [
+                        {
+                          "text": "TC-X1 失败: 对话框未显示\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2026-01-14T00:31:03.186Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "516512dc465d116bce62-446dd4df66a027a78648",
+              "file": "resume-state.spec.ts",
+              "line": 489,
+              "column": 7
+            },
+            {
+              "title": "TC-X2: 网络延迟 - 验证超时处理",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 17846,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🔧 Setup: Using test user 13800138000\n"
+                        },
+                        {
+                          "text": "📚 Using book: ${testBookId} (5000 words)\n"
+                        },
+                        {
+                          "text": "✅ Setup complete\n\n"
+                        },
+                        {
+                          "text": "✅ 已登录\n"
+                        },
+                        {
+                          "text": "页面内容: 小语笔记智能英语学习平台🎯 AI 智能推荐根据学习水平智能推荐最适合的单词，告别无效学习🏆 成就系统完成学习目标解锁成就，让学习像游戏一样有趣⚡ 间隔重复科学的记忆曲线算法，在最佳时机复习，记忆更持久500+精选课程10万+词汇总量98%满意度小语笔记✨ 开启你的英语学习之旅 ✨登录注册手机号密码忘记密码？登录🎓 登录即表示您同意我们的服务条款和隐私政策self.__next_r=\"IUBQYRNlPoB-ks5jYbWxG\"(self.__next_f=self.__next_f||[]).push([0])self.__next_f.push([1,\"7:I[\\\"[project]/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"SegmentViewNode\\\"]\\n9:\\\"$Sreact.fragment\\\"\\n19:I[\\\"[project]/node_modules/next/dist/client/components/layout-router.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"default\\\"]\\n1b:I[\\\"[project]/node_modules/next/dist/client/components/render-from-template-context.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"default\\\"]\\n2f:I[\\\"[project]/node_modules/next/dist/client/components/client-page.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"ClientPageRoot\\\"]\\n30:I[\\\"[project]/src/app/login/page.tsx [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/src_app_layout_tsx_1cf6b850._.js\\\",\\\"/_next/static/chunks/src_app_login_c749cb60._.js\\\",\\\"/_next/static/chunks/node_modules_0b0100b7._.js\\\",\\\"/_next/static/chunks/src_app_login_page_tsx_c78d2fc1._.js\\\"],\\\"default\\\"]\\n37:I[\\\"[project]/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"OutletBoundary\\\"]\\n39:\\\"$Sreact.suspense\\\"\\n42:I[\\\"[project]/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"ViewportBoundary\\\"]\\n49:I[\\\"[project]/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"MetadataBoundary\\\"]\\n4f:I[\\\"[project]/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_client_components_builtin_global-error_1cf6b850.js\\\"],\\\"default\\\"]\\n57:I[\\\"[project]/node_modules/next/dist/lib/metadata/generate/icon-mark.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"IconMark\\\"]\\n:HL[\\\"/_next/static/chunks/%5Broot-of-the-server%5D__150683c6._.css\\\",\\\"style\\\"]\\n:HL[\\\"/_next/static/media/07454f8ad8aaac57-s.p.fc65572f.woff2\\\",\\\"font\\\",{\\\"crossOrigin\\\":\\\"\\\",\\\"type\\\":\\\"font/woff2\\\"}]\\n:HL[\\\"/_next/static/media/5d52bd6c4cb3f315-s.p.610fd2a3.woff2\\\",\\\"font\\\",{\\\"crossOrigin\\\":\\\"\\\",\\\"type\\\":\\\"font/woff2\\\"}]\\n:N1768350672099.146\\n3:\\\"$EObject.defineProperty(()=\\u003e{ctx.componentMod.preloadStyle(fullHref,ctx.renderOpts.crossOrigin,ctx.nonce)},\\\\\\\"name\\\\\\\",{value:\\\\\\\"\\\\\\\"})\\\"\\n4:\\\"$EObject.defineProperty(()=\\u003e{ctx.componentMod.preloadFont(href,type,ctx.renderOpts.crossOrigin,ctx.nonce)},\\\\\\\"name\\\\\\\",{value:\\\\\\\"\\\\\\\"})\\\"\\n5:\\\"$EObject.defineProperty(()=\\u003e{ctx.componentMod.preloadFont(href,type,ctx.renderOpts.crossOrigin,ctx.nonce)},\\\\\\\"name\\\\\\\",{value:\\\\\\\"\\\\\\\"})\\\"\\n2:{\\\"name\\\":\\\"Preloads\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"preloadCallbacks\\\":[\\\"$3\\\",\\\"$4\\\",\\\"$5\\\"]}}\\n6:[]\\n8:[]\\na:[[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false]]\\nb:[[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false]]\\ne:I[\\\"[project]/node_modules/next/dist/client/components/layout-router.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"default\\\"]\\n11:I[\\\"[project]/node_modules/next/dist/client/components/render-from-template-context.js [app-client] (ecmascript)\\\",[\\\"/_next/static/chunks/node_modules_next_dist_be32b49c._.js\\\",\\\"/_next/static/chunks/src_app_favicon_ico_mjs_81d86e48._.js\\\"],\\\"default\\\"]\\n12:{}\\n13:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n10:{\\\"children\\\":[\\\"$\\\",\\\"$L11\\\",null,\\\"$12\\\",null,\\\"$13\\\",1]}\\n14:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\nf:{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorSt\"])self.__next_f.push([1,\"yles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$9\\\",null,\\\"$10\\\",null,\\\"$14\\\",0],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$Y\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":\\\"$Y\\\"}\\n15:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\nd:{\\\"name\\\":\\\"RootLayout\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"children\\\":[\\\"$\\\",\\\"$Le\\\",null,\\\"$f\\\",null,\\\"$15\\\",1],\\\"params\\\":\\\"$Y\\\"}}\\n16:[[\\\"RootLayout\\\",\\\"D:\\\\\\\\claude_work\\\\\\\\yingyu\\\\\\\\my-edu-platform\\\\\\\\.next\\\\\\\\dev\\\\\\\\server\\\\\\\\chunks\\\\\\\\ssr\\\\\\\\[root-of-the-server]__fed42efa._.js\\\",79,263,78,1,false]]\\n17:[[\\\"RootLayout\\\",\\\"D:\\\\\\\\claude_work\\\\\\\\yingyu\\\\\\\\my-edu-platform\\\\\\\\.next\\\\\\\\dev\\\\\\\\server\\\\\\\\chunks\\\\\\\\ssr\\\\\\\\[root-of-the-server]__fed42efa._.js\\\",82,270,78,1,false]]\\n18:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n1a:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n1c:[]\\n1e:{\\\"name\\\":\\\"NotFound\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n1f:{\\\"name\\\":\\\"HTTPAccessErrorFallback\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$1e\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"status\\\":404,\\\"message\\\":\\\"This page could not be found.\\\"}}\\n20:[]\\n21:[]\\n22:[]\\n23:[]\\n24:[]\\n25:[]\\n26:[]\\n27:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n28:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n29:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n2a:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n2b:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n2c:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n2d:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n2e:[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n31:[[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n32:[[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n33:[[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]]\\n35:{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true],[\\\"Promise.all\\\",\\\"\\\",0,0,0,0,true]],\\\"props\\\":{}}\\n36:[]\\n38:[]\\n3b:[]\\n\"])self.__next_f.push([1,\"3e:\\\"$EObject.defineProperty(function(type,config,children){for(var propName,i=2;i\\u003carguments.length;i++)validateChildKeys(arguments[i]);i={};var key=null;if(null!=config)for(propName in didWarnAboutOldJSXRuntime||!(\\\\\\\"__self\\\\\\\"in config)||\\\\\\\"key\\\\\\\"in config||(didWarnAboutOldJSXRuntime=!0,console.warn(\\\\\\\"Your app (or one of its dependencies) is using an outdated JSX transform. Update to the modern JSX transform for faster performance: https://react.dev/link/new-jsx-transform\\\\\\\")),hasValidKey(config)\\u0026\\u0026(checkKeyStringCoercion(config.key),key=\\\\\\\"\\\\\\\"+config.key),config)hasOwnProperty.call(config,propName)\\u0026\\u0026\\\\\\\"key\\\\\\\"!==propName\\u0026\\u0026\\\\\\\"__self\\\\\\\"!==propName\\u0026\\u0026\\\\\\\"__source\\\\\\\"!==propName\\u0026\\u0026(i[propName]=config[propName]);var childrenLength=arguments.length-2;if(1===childrenLength)i.children=children;else if(1\\u003cchildrenLength){for(var childArray=Array(childrenLength),_i=0;_i\\u003cchildrenLength;_i++)childArray[_i]=arguments[_i+2];Object.freeze\\u0026\\u0026Object.freeze(childArray),i.children=childArray}if(type\\u0026\\u0026type.defaultProps)for(propName in childrenLength=type.defaultProps)void 0===i[propName]\\u0026\\u0026(i[propName]=childrenLength[propName]);return key\\u0026\\u0026function(props,displayName){function warnAboutAccessingKey(){specialPropKeyWarningShown||(specialPropKeyWarningShown=!0,console.error(\\\\\\\"%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)\\\\\\\",displayName))}warnAboutAccessingKey.isReactWarning=!0,Object.defineProperty(props,\\\\\\\"key\\\\\\\",{get:warnAboutAccessingKey,configurable:!0})}(i,\\\\\\\"function\\\\\\\"==typeof type?type.displayName||type.name||\\\\\\\"Unknown\\\\\\\":type),(propName=1e4\\u003eReactSharedInternals.recentlyCreatedOwnerStacks++)?(childArray=Error.stackTraceLimit,Error.stackTraceLimit=10,childrenLength=Error(\\\\\\\"react-stack-top-frame\\\\\\\"),Error.stackTraceLimit=childArray):childrenLength=unknownOwnerDebugStack,ReactElement(type,key,i,getOwner(),childrenLength,propName?createTask(getTaskName(type)):unknownOwnerDebugTask)},\\\\\\\"name\\\\\\\",{value:\\\\\\\"\\\\\\\"})\\\"\\n\"])self.__next_f.push([1,\"3d:{\\\"name\\\":\\\"NonIndex\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{\\\"createElement\\\":\\\"$3e\\\",\\\"pagePath\\\":\\\"/login\\\",\\\"statusCode\\\":200,\\\"isPossibleServerAction\\\":false}}\\n40:{\\\"name\\\":\\\"ViewportWrapper\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n41:[]\\n44:{\\\"name\\\":\\\"Next.Viewport\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$40\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n46:{\\\"name\\\":\\\"MetadataWrapper\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n47:[]\\n48:[]\\n4a:[]\\n4c:{\\\"name\\\":\\\"Next.Metadata\\\",\\\"key\\\":null,\\\"env\\\":\\\"Server\\\",\\\"owner\\\":\\\"$46\\\",\\\"stack\\\":[],\\\"props\\\":{}}\\n4d:[]\\n50:[]\\n51:[]\\n52:[]\\n53:[]\\n54:[]\\n55:[[\\\"Array.map\\\",\\\"\\\",0,0,0,0,false]]\\n56:[]\\n1:D{\\\"time\\\":0.2338000014424324}\\n1:D\\\"$2\\\"\\n1:D{\\\"time\\\":0.2721000015735626}\\n1:null\\nc:D{\\\"time\\\":0.7822999954223633}\\nc:D\\\"$d\\\"\\nc:D{\\\"time\\\":0.9468999952077866}\\n1d:D{\\\"time\\\":1.0912000015377998}\\n1d:D\\\"$1e\\\"\\n1d:D{\\\"time\\\":1.1460999995470047}\\n1d:D\\\"$1f\\\"\\n1d:D{\\\"time\\\":1.2850999981164932}\\n1d:[[\\\"$\\\",\\\"title\\\",null,{\\\"children\\\":\\\"404: This page could not be found.\\\"},\\\"$1f\\\",\\\"$20\\\",1],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"fontFamily\\\":\\\"system-ui,\\\\\\\"Segoe UI\\\\\\\",Roboto,Helvetica,Arial,sans-serif,\\\\\\\"Apple Color Emoji\\\\\\\",\\\\\\\"Segoe UI Emoji\\\\\\\"\\\",\\\"height\\\":\\\"100vh\\\",\\\"textAlign\\\":\\\"center\\\",\\\"display\\\":\\\"flex\\\",\\\"flexDirection\\\":\\\"column\\\",\\\"alignItems\\\":\\\"center\\\",\\\"justifyContent\\\":\\\"center\\\"},\\\"children\\\":[\\\"$\\\",\\\"div\\\",null,{\\\"children\\\":[[\\\"$\\\",\\\"style\\\",null,{\\\"dangerouslySetInnerHTML\\\":{\\\"__html\\\":\\\"body{color:#000;background:#fff;margin:0}.next-error-h1{border-right:1px solid rgba(0,0,0,.3)}@media (prefers-color-scheme:dark){body{color:#fff;background:#000}.next-error-h1{border-right:1px solid rgba(255,255,255,.3)}}\\\"}},\\\"$1f\\\",\\\"$23\\\",1],[\\\"$\\\",\\\"h1\\\",null,{\\\"className\\\":\\\"next-error-h1\\\",\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\",\\\"margin\\\":\\\"0 20px 0 0\\\",\\\"padding\\\":\\\"0 23px 0 0\\\",\\\"fontSize\\\":24,\\\"fontWeight\\\":500,\\\"verticalAlign\\\":\\\"top\\\",\\\"lineHeight\\\":\\\"49px\\\"},\\\"children\\\":404},\\\"$1f\\\",\\\"$24\\\",1],[\\\"$\\\",\\\"div\\\",null,{\\\"style\\\":{\\\"display\\\":\\\"inline-block\\\"},\\\"children\\\":[\\\"$\\\",\\\"h2\\\",null,{\\\"style\\\":{\\\"fontSize\\\":14,\\\"fontWeight\\\":400,\\\"lineHeight\\\":\\\"49px\\\",\\\"margin\\\":0},\\\"children\\\":\\\"This page could not be found.\\\"},\\\"$1f\\\",\\\"$26\\\",1]},\\\"$1f\\\",\\\"$25\\\",1]]},\\\"$1f\\\",\\\"$22\\\",1]},\\\"$1f\\\",\\\"$21\\\",1]]\\nc:[\\\"$\\\",\\\"html\\\",null,{\\\"lang\\\":\\\"zh-CN\\\",\\\"className\\\":\\\"nunito_47e2ea80-module__KI4bmG__variable fredoka_ec43d434-module__I7C3Ba__variable\\\",\\\"children\\\":[\\\"$\\\",\\\"body\\\",null,{\\\"className\\\":\\\"nunito_47e2ea80-module__KI4bmG__className antialiased\\\",\\\"children\\\":[\\\"$\\\",\\\"$L19\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L1b\\\",null,{},null,\\\"$1a\\\",1],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":[\\\"$\\\",\\\"$L7\\\",\\\"c-not-found\\\",{\\\"type\\\":\\\"not-found\\\",\\\"pagePath\\\":\\\"__next_builtin__not-found.js\\\",\\\"children\\\":[\\\"$1d\\\",[]]},null,\\\"$1c\\\",0],\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":[[\\\"$\\\",\\\"$L7\\\",null,{\\\"type\\\":\\\"boundary:not-found\\\",\\\"pagePath\\\":\\\"__next_builtin__not-found.js@boundary\\\"},null,\\\"$27\\\",1],\\\"$undefined\\\",\\\"$undefined\\\",[\\\"$\\\",\\\"$L7\\\",null,{\\\"type\\\":\\\"boundary:global-error\\\",\\\"pagePath\\\":\\\"__next_builtin__global-error.js\\\"},null,\\\"$28\\\",1]]},null,\\\"$18\\\",1]},\\\"$d\\\",\\\"$17\\\",1]},\\\"$d\\\",\\\"$16\\\",1]\\n34:D{\\\"time\\\":2.5031999945640564}\\n34:D\\\"$35\\\"\\n34:D{\\\"time\\\":4.221400000154972}\\n34:[\\\"$\\\",\\\"$L37\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$39\\\",null,{\\\"name\\\":\\\"Next.MetadataOutlet\\\",\\\"children\\\":\\\"$@3a\\\"},\\\"$35\\\",\\\"$38\\\",1]},\\\"$35\\\",\\\"$36\\\",1]\\n3c:D{\\\"time\\\":4.659599997103214}\\n3c:D\\\"$3d\\\"\\n3c:D{\\\"time\\\":4.675599999725819}\\n3c:null\\n3f:D{\\\"time\\\":4.7245999947190285}\\n3f:D\\\"$40\\\"\\n3f:D{\\\"time\\\":4.839199997484684}\\n43:D{\\\"time\\\":4.9121999964118}\\n43:D\\\"$44\\\"\\n3f:[\\\"$\\\",\\\"$L42\\\",null,{\\\"children\\\":\\\"$L43\\\"},\\\"$40\\\",\\\"$41\\\",1]\\n45:D{\\\"time\\\":5.372099995613098}\\n45:D\\\"$46\\\"\\n45:D{\\\"time\\\":5.470399998128414}\\n4b:D{\\\"time\\\":5.558600001037121}\\n4b:D\\\"$4c\\\"\\n45:[\\\"$\\\",\\\"div\\\",null,{\\\"hidden\\\":true,\\\"children\\\":[\\\"$\\\",\\\"$L49\\\",null,{\\\"children\\\":[\\\"$\\\",\\\"$39\\\",null,{\\\"name\\\":\\\"Next.Metadata\\\",\\\"children\\\":\\\"$L4b\\\"},\\\"$46\\\",\\\"$4a\\\",1]},\\\"$46\\\",\\\"$48\\\",1]},\\\"$46\\\",\\\"$47\\\",1]\\n4e:[]\\n\"])self.__next_f.push([1,\"0:{\\\"P\\\":\\\"$1\\\",\\\"b\\\":\\\"development\\\",\\\"c\\\":[\\\"\\\",\\\"login?redirect=%2Flibrary%2F003b4ce0-c3f9-407a-a7d6-5e80ada4eae5\\\"],\\\"q\\\":\\\"?redirect=%2Flibrary%2F003b4ce0-c3f9-407a-a7d6-5e80ada4eae5\\\",\\\"i\\\":false,\\\"f\\\":[[[\\\"\\\",{\\\"children\\\":[\\\"login\\\",{\\\"children\\\":[\\\"__PAGE__?{\\\\\\\"redirect\\\\\\\":\\\\\\\"/library/003b4ce0-c3f9-407a-a7d6-5e80ada4eae5\\\\\\\"}\\\",{}]}]},\\\"$undefined\\\",\\\"$undefined\\\",true],[[\\\"$\\\",\\\"$L7\\\",\\\"layout\\\",{\\\"type\\\":\\\"layout\\\",\\\"pagePath\\\":\\\"layout.tsx\\\",\\\"children\\\":[\\\"$\\\",\\\"$9\\\",\\\"c\\\",{\\\"children\\\":[[[\\\"$\\\",\\\"link\\\",\\\"0\\\",{\\\"rel\\\":\\\"stylesheet\\\",\\\"href\\\":\\\"/_next/static/chunks/%5Broot-of-the-server%5D__150683c6._.css\\\",\\\"precedence\\\":\\\"next_static/chunks/[root-of-the-server]__150683c6._.css\\\",\\\"crossOrigin\\\":\\\"$undefined\\\",\\\"nonce\\\":\\\"$undefined\\\"},null,\\\"$a\\\",0],[\\\"$\\\",\\\"script\\\",\\\"script-0\\\",{\\\"src\\\":\\\"/_next/static/chunks/src_app_layout_tsx_1cf6b850._.js\\\",\\\"async\\\":true,\\\"nonce\\\":\\\"$undefined\\\"},null,\\\"$b\\\",0]],\\\"$c\\\"]},null,\\\"$8\\\",1]},null,\\\"$6\\\",0],{\\\"children\\\":[[\\\"$\\\",\\\"$9\\\",\\\"c\\\",{\\\"children\\\":[null,[\\\"$\\\",\\\"$L19\\\",null,{\\\"parallelRouterKey\\\":\\\"children\\\",\\\"error\\\":\\\"$undefined\\\",\\\"errorStyles\\\":\\\"$undefined\\\",\\\"errorScripts\\\":\\\"$undefined\\\",\\\"template\\\":[\\\"$\\\",\\\"$L1b\\\",null,{},null,\\\"$2b\\\",1],\\\"templateStyles\\\":\\\"$undefined\\\",\\\"templateScripts\\\":\\\"$undefined\\\",\\\"notFound\\\":\\\"$undefined\\\",\\\"forbidden\\\":\\\"$undefined\\\",\\\"unauthorized\\\":\\\"$undefined\\\",\\\"segmentViewBoundaries\\\":[\\\"$undefined\\\",\\\"$undefined\\\",\\\"$undefined\\\",\\\"$undefined\\\"]},null,\\\"$2a\\\",1]]},null,\\\"$29\\\",0],{\\\"children\\\":[[\\\"$\\\",\\\"$9\\\",\\\"c\\\",{\\\"children\\\":[[\\\"$\\\",\\\"$L7\\\",\\\"c-page\\\",{\\\"type\\\":\\\"page\\\",\\\"pagePath\\\":\\\"login/page.tsx\\\",\\\"children\\\":[\\\"$\\\",\\\"$L2f\\\",null,{\\\"Component\\\":\\\"$30\\\",\\\"serverProvidedParams\\\":{\\\"searchParams\\\":{\\\"redirect\\\":\\\"/library/003b4ce0-c3f9-407a-a7d6-5e80ada4eae5\\\"},\\\"params\\\":{},\\\"promises\\\":null}},null,\\\"$2e\\\",1]},null,\\\"$2d\\\",1],[[\\\"$\\\",\\\"script\\\",\\\"script-0\\\",{\\\"src\\\":\\\"/_next/static/chunks/src_app_login_c749cb60._.js\\\",\\\"async\\\":true,\\\"nonce\\\":\\\"$undefined\\\"},null,\\\"$31\\\",0],[\\\"$\\\",\\\"script\\\",\\\"script-1\\\",{\\\"src\\\":\\\"/_next/static/chunks/node_modules_0b0100b7._.js\\\",\\\"async\\\":true,\\\"nonce\\\":\\\"$undefined\\\"},null,\\\"$32\\\",0],[\\\"$\\\",\\\"script\\\",\\\"script-2\\\",{\\\"src\\\":\\\"/_next/static/chunks/src_app_login_page_tsx_c78d2fc1._.js\\\",\\\"async\\\":true,\\\"nonce\\\":\\\"$undefined\\\"},null,\\\"$33\\\",0]],\\\"$34\\\"]},null,\\\"$2c\\\",0],{},null,false,false]},null,false,false]},null,false,false],[\\\"$\\\",\\\"$9\\\",\\\"h\\\",{\\\"children\\\":[\\\"$3c\\\",\\\"$3f\\\",\\\"$45\\\",[\\\"$\\\",\\\"meta\\\",null,{\\\"name\\\":\\\"next-size-adjust\\\",\\\"content\\\":\\\"\\\"},null,\\\"$4d\\\",1]]},null,\\\"$3b\\\",0],false]],\\\"m\\\":\\\"$W4e\\\",\\\"G\\\":[\\\"$4f\\\",[\\\"$\\\",\\\"$L7\\\",\\\"ge-svn\\\",{\\\"type\\\":\\\"global-error\\\",\\\"pagePath\\\":\\\"__next_builtin__global-error.js\\\",\\\"children\\\":[]},null,\\\"$50\\\",0]],\\\"S\\\":false}\\n\"])self.__next_f.push([1,\"43:D{\\\"time\\\":7.993000000715256}\\n43:[[\\\"$\\\",\\\"meta\\\",\\\"0\\\",{\\\"charSet\\\":\\\"utf-8\\\"},\\\"$35\\\",\\\"$51\\\",0],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"viewport\\\",\\\"content\\\":\\\"width=device-width, initial-scale=1\\\"},\\\"$35\\\",\\\"$52\\\",0]]\\n3a:D{\\\"time\\\":8.569199994206429}\\n3a:null\\n4b:D{\\\"time\\\":8.580199994146824}\\n4b:[[\\\"$\\\",\\\"title\\\",\\\"0\\\",{\\\"children\\\":\\\"小语笔记 - 英语学习平台\\\"},\\\"$35\\\",\\\"$53\\\",0],[\\\"$\\\",\\\"meta\\\",\\\"1\\\",{\\\"name\\\":\\\"description\\\",\\\"content\\\":\\\"小语笔记 - 智能英语单词学习平台，采用 Claymorphism 设计风格\\\"},\\\"$35\\\",\\\"$54\\\",0],[\\\"$\\\",\\\"link\\\",\\\"2\\\",{\\\"rel\\\":\\\"icon\\\",\\\"href\\\":\\\"/favicon.ico?favicon.0b3bf435.ico\\\",\\\"sizes\\\":\\\"256x256\\\",\\\"type\\\":\\\"image/x-icon\\\"},\\\"$35\\\",\\\"$55\\\",0],[\\\"$\\\",\\\"$L57\\\",\\\"3\\\",{},\\\"$35\\\",\\\"$56\\\",0]]\\n\"])\n"
+                        },
+                        {
+                          "text": "⚠️ TC-X2: 单词加载超时，但页面已加载\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-01-14T00:30:57.616Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "516512dc465d116bce62-8b6ac4c76bc757f66df3",
+              "file": "resume-state.spec.ts",
+              "line": 525,
               "column": 7
             }
           ]
@@ -168,9 +579,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-08T02:19:53.602Z",
-    "duration": 7004.783,
-    "expected": 1,
+    "startTime": "2026-01-14T00:30:56.864Z",
+    "duration": 31152.707,
+    "expected": 9,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
