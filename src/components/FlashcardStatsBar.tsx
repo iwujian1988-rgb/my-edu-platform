@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { CheckCircle, HelpCircle, AlertCircle, Plus } from 'lucide-react'
 
 interface StatsData {
@@ -15,41 +15,48 @@ interface FlashcardStatsBarProps {
   bookId: string
   currentScope: string
   onScopeChange: (newScope: string) => void
+  initialStats?: StatsData // 初始统计数据（从父组件传入，避免首次加载）
+  onWordMarked?: (oldStatus: string | null, newStatus: string) => void // 单词标记回调
 }
 
-export function FlashcardStatsBar({ bookId, currentScope, onScopeChange }: FlashcardStatsBarProps) {
-  const [stats, setStats] = useState<StatsData | null>(null)
-  const [loading, setLoading] = useState(true)
+export function FlashcardStatsBar({
+  bookId,
+  currentScope,
+  onScopeChange,
+  initialStats,
+  onWordMarked
+}: FlashcardStatsBarProps) {
+  const [stats, setStats] = useState<StatsData | null>(initialStats || null)
+  const [loading, setLoading] = useState(!initialStats) // 如果有初始数据，不需要loading
   const [showConfirmDialog, setShowConfirmDialog] = useState(false)
   const [pendingScope, setPendingScope] = useState<string | null>(null)
 
-  // 获取统计数据
+  // 前端缓存：标记单词时的增量更新
+  const pendingUpdatesRef = useRef<{ oldStatus: string | null; newStatus: string }[]>([])
+  const syncTimerRef = useRef<NodeJS.Timeout | null>(null)
+
+  // 获取统计数据（只在没有初始数据时才请求）
   useEffect(() => {
+    if (initialStats) {
+      setStats(initialStats)
+      setLoading(false)
+      return
+    }
+
     async function fetchStats() {
       try {
-        const [allRes, unknownRes, fuzzyRes, knownRes, newRes] = await Promise.all([
-          fetch(`/api/words?bookId=${bookId}&status=all`),
-          fetch(`/api/words?bookId=${bookId}&status=unknown`),
-          fetch(`/api/words?bookId=${bookId}&status=fuzzy`),
-          fetch(`/api/words?bookId=${bookId}&status=known`),
-          fetch(`/api/words?bookId=${bookId}&status=new`)
-        ])
+        const response = await fetch(`/api/words/stats?bookId=${bookId}`)
+        const result = await response.json()
 
-        const [allData, unknownData, fuzzyData, knownData, newData] = await Promise.all([
-          allRes.json(),
-          unknownRes.json(),
-          fuzzyRes.json(),
-          knownRes.json(),
-          newRes.json()
-        ])
-
-        setStats({
-          total: allData.total || 0,
-          unknown: unknownData.total || 0,
-          fuzzy: fuzzyData.total || 0,
-          known: knownData.total || 0,
-          new: newData.total || 0
-        })
+        if (result.success && result.data) {
+          setStats({
+            total: result.data.total || 0,
+            unknown: result.data.unknown || 0,
+            fuzzy: result.data.fuzzy || 0,
+            known: result.data.known || 0,
+            new: result.data.new || 0
+          })
+        }
       } catch (error) {
         console.error('Error fetching stats:', error)
       } finally {
@@ -58,7 +65,66 @@ export function FlashcardStatsBar({ bookId, currentScope, onScopeChange }: Flash
     }
 
     fetchStats()
-  }, [bookId])
+  }, [bookId, initialStats])
+
+  // ⚡ 前端即时更新：标记单词时立即更新显示
+  useEffect(() => {
+    const handleWordMarked = (oldStatus: string | null, newStatus: string) => {
+      setStats(prev => {
+        if (!prev) return prev
+
+        const updated = { ...prev }
+
+        // 从旧状态减1
+        if (oldStatus && oldStatus !== 'all') {
+          updated[oldStatus as keyof StatsData] = Math.max(0, (updated[oldStatus as keyof StatsData] || 0) - 1)
+        }
+
+        // 给新状态加1
+        if (newStatus !== 'all') {
+          updated[newStatus as keyof StatsData] = (updated[newStatus as keyof StatsData] || 0) + 1
+        }
+
+        return updated
+      })
+    }
+
+    // 监听来自父组件的标记事件
+    if (onWordMarked) {
+      // 这里需要父组件通过某种方式通知我们
+      // 暂时先通过全局事件或者直接调用这个函数
+    }
+  }, [onWordMarked])
+
+  // 暴露更新方法给父组件
+  useEffect(() => {
+    if (onWordMarked) {
+      // 父组件会调用这个方法
+      window.updateFlashcardStats = (oldStatus: string | null, newStatus: string) => {
+        setStats(prev => {
+          if (!prev) return prev
+
+          const updated = { ...prev }
+
+          // 从旧状态减1
+          if (oldStatus && oldStatus !== 'all') {
+            updated[oldStatus as keyof StatsData] = Math.max(0, (updated[oldStatus as keyof StatsData] || 0) - 1)
+          }
+
+          // 给新状态加1
+          if (newStatus !== 'all') {
+            updated[newStatus as keyof StatsData] = (updated[newStatus as keyof StatsData] || 0) + 1
+          }
+
+          return updated
+        })
+      }
+    }
+
+    return () => {
+      delete window.updateFlashcardStats
+    }
+  }, [onWordMarked])
 
   const handleScopeClick = (scopeValue: string) => {
     if (scopeValue === currentScope) return
@@ -90,46 +156,39 @@ export function FlashcardStatsBar({ bookId, currentScope, onScopeChange }: Flash
   return (
     <>
       <div className="w-full">
-        {/* 统计色块 */}
-        <div className="flex items-center gap-1 mb-1">
-          {Object.entries(scopeInfo).map(([key, info]) => {
-            const count = stats[key as keyof StatsData] || 0
-            const percentage = stats.total > 0 ? (count / stats.total) * 100 : 0
+        {/* 📊 状态统计 - 清晰显示各状态单词分布 */}
+        <div className="text-center mb-2">
+          <p className="text-xs font-bold text-gray-500 mb-2">学习状态分布（点击切换范围）</p>
+          <div className="flex items-center justify-center gap-2 text-xs flex-wrap">
+            {Object.entries(scopeInfo).map(([key, info]) => {
+              const count = stats[key as keyof StatsData] || 0
+              const percentage = stats.total > 0 ? (count / stats.total) * 100 : 0
+              const isActive = currentScope === key
 
-            return (
-              <button
-                key={key}
-                onClick={() => handleScopeClick(key)}
-                className={`
-                  relative flex-1 h-8 rounded border-2 border-black transition-all
-                  flex items-center justify-center gap-1 font-black text-xs
-                  ${currentScope === key ? 'shadow-[2px_2px_0px_0px_#000]' : 'opacity-80 hover:opacity-100'}
-                `}
-                style={{
-                  backgroundColor: info.color,
-                  minWidth: percentage > 0 ? `${percentage}%` : '40px'
-                }}
-                title={`${info.label}: ${count}个 (${Math.round(percentage)}%)`}
-              >
-                {count > 0 && (
-                  <>
-                    {info.icon}
-                    <span className="hidden sm:inline">{Math.round(percentage)}%</span>
-                  </>
-                )}
-              </button>
-            )
-          })}
-        </div>
+              // 只显示有单词的状态
+              if (count === 0) return null
 
-        {/* 当前范围标签 */}
-        <div className="flex items-center justify-between text-xs font-bold text-gray-600 px-1">
-          <span>
-            当前范围: <span className="font-mono uppercase">{currentScope}</span>
-          </span>
-          <span>
-            总计: <span className="font-mono">{stats.total}</span>
-          </span>
+              return (
+                <button
+                  key={key}
+                  onClick={() => handleScopeClick(key)}
+                  className={`
+                    flex items-center gap-1 px-2 py-1 rounded border transition-all
+                    ${isActive
+                      ? 'border-black bg-white shadow-[2px_2px_0px_0px_#000] font-bold'
+                      : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'}
+                  `}
+                  title={`切换到${info.label}：${count}个单词 (${Math.round(percentage)}%)`}
+                >
+                  <span style={{ color: info.color }}>{info.icon}</span>
+                  <span>{info.label}</span>
+                  <span className="font-mono font-semibold" style={{ color: info.color }}>
+                    {count}
+                  </span>
+                </button>
+              )
+            })}
+          </div>
         </div>
       </div>
 

@@ -9,6 +9,7 @@ import { saveResumeState } from '@/lib/resumeState'
 import { PermissionGate } from '@/components/PermissionDisplay'
 import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
 import { FlashcardStatsBar } from '@/components/FlashcardStatsBar'
+import { FlashcardScopeDialog } from '@/components/FlashcardScopeDialog'
 
 type Word = {
   id: string
@@ -46,6 +47,14 @@ export default function FlashcardsPage() {
   const [loading, setLoading] = useState(true)
   const [bookTitle, setBookTitle] = useState('')
   const [currentScope, setCurrentScope] = useState(scope)
+  const [showCompleteDialog, setShowCompleteDialog] = useState(false)
+  const [showScopeSelectDialog, setShowScopeSelectDialog] = useState(false)
+  const [loadingMore, setLoadingMore] = useState(false)
+  const [hasMore, setHasMore] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [scopeStats, setScopeStats] = useState<any>(null) // 保存统计数据供对话框使用
+  const [totalWordsInScope, setTotalWordsInScope] = useState(0) // 保存当前范围的总单词数（不是当前加载的）
+  const [waitingForLoad, setWaitingForLoad] = useState(false) // 是否在等待加载更多
 
   // 拖拽相关状态
   const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null)
@@ -62,6 +71,10 @@ export default function FlashcardsPage() {
   // 批量保存相关状态
   const pendingSaveRef = useRef<Record<string, 'known' | 'fuzzy' | 'unknown'>>({})
   const saveTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const loadMoreWordsRef = useRef<(() => Promise<void>) | null>(null)
+  const isChangingScopeRef = useRef(false) // 追踪是否正在切换范围
+  const nextWordTimerRef = useRef<NodeJS.Timeout | null>(null) // 追踪 handleNextWord 的定时器
+  const hasDraggedRef = useRef(false) // 追踪是否真正拖拽了（区分点击和拖拽）
 
   // 范围名称映射
   const scopeLabelMap: Record<string, string> = {
@@ -76,27 +89,52 @@ export default function FlashcardsPage() {
   useEffect(() => {
     async function fetchData() {
       try {
-        // 🚀 性能优化：并行请求 book info, words, progress, saved position
-        // flashcards模式需要加载所有单词，不使用分页
-        const [bookRes, wordsRes, progressRes, savedProgressRes] = await Promise.all([
-          fetch(`/api/books/${bookId}`),
-          fetch(`/api/words?bookId=${bookId}&status=${scope}&shuffle=${shuffle}&page=1&pageSize=10000`),
-          fetch(`/api/word-progress?book_id=${bookId}`),
-          fetch(`/api/flashcard-progress?bookId=${bookId}&scopeType=${scope}`)
+        // 🚀 性能优化：跳过books API调用，直接加载单词数据
+        const [wordsRes, savedProgressRes, statsRes] = await Promise.all([
+          fetch(`/api/words?bookId=${bookId}&status=${scope}&shuffle=${shuffle}&page=1&pageSize=50`),
+          fetch(`/api/flashcard-progress?bookId=${bookId}&scopeType=${scope}`),
+          fetch(`/api/words/stats?bookId=${bookId}`) // 获取真实的统计数据
         ])
-
-        if (!bookRes.ok) throw new Error('Failed to fetch book')
-        const bookData = await bookRes.json()
-        setBookTitle(bookData.data.title)
 
         if (!wordsRes.ok) throw new Error('Failed to fetch words')
         const wordsData = await wordsRes.json()
-        setWords(wordsData.data || [])
+        const loadedWords = wordsData.data || []
+        setWords(loadedWords)
 
-        // 获取用户进度
-        if (progressRes.ok) {
-          const progressData = await progressRes.json()
-          setWordProgress(progressData.data || {})
+        // 从 stats API 获取真实的总数（比 wordsData.count 更准确）
+        let finalTotal = 0
+        if (statsRes.ok) {
+          const statsData = await statsRes.json()
+          if (statsData.success && statsData.data) {
+            const scopeTotal = statsData.data[scope] || 0
+            finalTotal = scopeTotal
+            // 保存统计数据供对话框使用
+            setScopeStats(statsData.data)
+            console.log(`📊 Total words in scope '${scope}': ${scopeTotal}`)
+          }
+        }
+
+        // 如果 stats API 失败或返回0，fallback 到 wordsData.count
+        if (finalTotal === 0 && wordsData.count !== undefined) {
+          finalTotal = wordsData.count
+          console.log(`📊 Fallback: using wordsData.count: ${wordsData.count}`)
+        }
+
+        setTotalWordsInScope(finalTotal)
+
+        // 设置书名（从API返回）
+        if (wordsData.bookTitle) {
+          setBookTitle(wordsData.bookTitle)
+        }
+
+        // 只获取当前加载单词的进度（不是全部单词）
+        if (loadedWords.length > 0) {
+          const wordIds = loadedWords.map((w: Word) => w.id)
+          const progressRes = await fetch(`/api/word-progress?book_id=${bookId}&word_ids=${wordIds.join(',')}`)
+          if (progressRes.ok) {
+            const progressData = await progressRes.json()
+            setWordProgress(progressData.data || {})
+          }
         }
 
         // 恢复上次学习位置（从进度记录）
@@ -105,16 +143,16 @@ export default function FlashcardsPage() {
           const savedProgress = await savedProgressRes.json()
           if (savedProgress.data && savedProgress.data.currentIndex !== undefined) {
             const savedIndex = savedProgress.data.currentIndex
-            const wordsLength = wordsData.data?.length || 0
+            const wordsLength = loadedWords?.length || 0
 
-            // 确保索引有效：如果超出范围，调整到最后一个单词
+            // 确保索引有效：如果超出范围，调整到可用范围
             if (savedIndex >= 0 && savedIndex < wordsLength) {
               restoredIndex = savedIndex
               console.log('📍 Restoring flashcard position:', restoredIndex + 1)
             } else if (savedIndex >= wordsLength && wordsLength > 0) {
-              // 保存的索引超出当前列表范围，调整到最后一个单词
+              // 保存的索引超出当前加载的单词范围，调整到最后一个
               restoredIndex = wordsLength - 1
-              console.log('⚠️ Saved index out of range, adjusted to last word:', restoredIndex + 1)
+              console.log('⚠️ Saved index out of loaded range, adjusted to last loaded word:', restoredIndex + 1)
             } else {
               // 当前列表为空或其他异常情况
               restoredIndex = 0
@@ -129,8 +167,13 @@ export default function FlashcardsPage() {
         saveResumeState(bookId, 'flashcards', {
           scope,
           index: restoredIndex,
-          totalWords: wordsData.data?.length || 0
+          totalWords: loadedWords?.length || 0
         })
+
+        // 设置是否有更多单词可加载
+        if (loadedWords && loadedWords.length < 50) {
+          setHasMore(false)
+        }
 
         setCurrentScope(scope)
       } catch (error) {
@@ -142,6 +185,72 @@ export default function FlashcardsPage() {
 
     fetchData()
   }, [bookId, scope, shuffle])
+
+  // 🔄 懒加载：当接近末尾时自动加载更多单词
+  useEffect(() => {
+    if (loading || loadingMore || !hasMore) return
+
+    const remaining = words.length - currentIndex
+    const loadThreshold = 5 // 还剩5个单词时加载下一批
+
+    if (remaining <= loadThreshold) {
+      loadMoreWords()
+    }
+  }, [currentIndex, words.length])
+
+  // 🔄 当加载更多完成后，自动前进到下一个单词
+  useEffect(() => {
+    if (waitingForLoad && !loadingMore && words.length > currentIndex + 1) {
+      console.log('✅ New words loaded, auto-advancing...')
+      setCurrentIndex(prev => prev + 1)
+      setWaitingForLoad(false)
+    }
+  }, [waitingForLoad, loadingMore, words.length, currentIndex])
+
+  // 加载更多单词
+  const loadMoreWords = useCallback(async () => {
+    if (loadingMore || !hasMore) return
+
+    setLoadingMore(true)
+    try {
+      const nextPage = currentPage + 1
+      const response = await fetch(
+        `/api/words?bookId=${bookId}&status=${scope}&shuffle=${shuffle}&page=${nextPage}&pageSize=50`
+      )
+
+      if (!response.ok) throw new Error('Failed to load more words')
+
+      const data = await response.json()
+
+      if (data.data && data.data.length > 0) {
+        const newWords = data.data
+        setWords(prev => [...prev, ...newWords])
+        setCurrentPage(nextPage)
+
+        // 获取新加载单词的进度
+        const wordIds = newWords.map((w: Word) => w.id)
+        const progressRes = await fetch(`/api/word-progress?book_id=${bookId}&word_ids=${wordIds.join(',')}`)
+        if (progressRes.ok) {
+          const progressData = await progressRes.json()
+          setWordProgress(prev => ({ ...prev, ...(progressData.data || {}) }))
+        }
+
+        // 如果返回的单词数少于50，说明没有更多了
+        if (newWords.length < 50) {
+          setHasMore(false)
+        }
+      } else {
+        setHasMore(false)
+      }
+    } catch (error) {
+      console.error('Error loading more words:', error)
+    } finally {
+      setLoadingMore(false)
+    }
+  }, [loadingMore, hasMore, currentPage, bookId, scope, shuffle])
+
+  // 保存 loadMoreWords 到 ref，供 handleNextWord 使用
+  loadMoreWordsRef.current = loadMoreWords
 
   // ⭐ 页面卸载时保存当前卡片位置
   useEffect(() => {
@@ -230,12 +339,73 @@ export default function FlashcardsPage() {
 
   // 范围切换处理
   const handleScopeChange = useCallback((newScope: string) => {
+    // 设置标志，防止显示完成对话框
+    isChangingScopeRef.current = true
+
+    // 清除待执行的定时器（防止切换范围后触发完成对话框）
+    if (nextWordTimerRef.current) {
+      clearTimeout(nextWordTimerRef.current)
+      nextWordTimerRef.current = null
+    }
+
+    // 隐藏完成对话框（如果显示的话）
+    if (showCompleteDialog) {
+      setShowCompleteDialog(false)
+    }
+
+    // 重置分页状态
+    setWords([])
+    setCurrentPage(1)
+    setHasMore(true)
+    setLoadingMore(false)
+    setWaitingForLoad(false)
+
     // 跳转到新范围
     router.push(`/study/${bookId}/flashcards?scope=${newScope}&shuffle=true`)
-  }, [bookId, router])
+  }, [bookId, router, showCompleteDialog])
+
+  // 完成后重新学习当前范围
+  const handleRestartScope = useCallback(() => {
+    // 重置到第一个单词（不需要重新加载，单词已在内存中）
+    setCurrentIndex(0)
+    setIsFlipped(false)
+    setShowCompleteDialog(false)
+    // 重置懒加载状态，让用户可以再次加载更多
+    setLoadingMore(false)
+    // 如果单词列表为空，才需要重新加载
+    if (words.length === 0) {
+      setLoading(true)
+    }
+  }, [words.length])
+
+  // 完成后选择其他范围
+  const handleSelectOtherScope = useCallback(async () => {
+    setShowCompleteDialog(false)
+
+    // 先获取统计数据（如果还没有的话）
+    if (!scopeStats) {
+      try {
+        const response = await fetch(`/api/words/stats?bookId=${bookId}`)
+        const result = await response.json()
+        if (result.success && result.data) {
+          setScopeStats(result.data)
+        }
+      } catch (error) {
+        console.error('Error fetching stats:', error)
+      }
+    }
+
+    setShowScopeSelectDialog(true)
+  }, [bookId, scopeStats])
 
   // Handle card flip
   const handleFlip = useCallback(() => {
+    // 如果刚刚拖拽过（移动距离 > 10px），不触发翻转
+    if (hasDraggedRef.current) {
+      console.log('🚫 Dragged, skipping flip')
+      return
+    }
+
     // 标记用户已经交互（同步更新 ref 和状态）
     hasUserInteractedRef.current = true
     if (!hasUserInteracted) {
@@ -255,10 +425,40 @@ export default function FlashcardsPage() {
     }
 
     // 1. 立即更新本地状态（乐观更新）
+    const oldProgress = wordProgress[currentWord.id]
+    const oldStatus = oldProgress?.status || null
+
     setWordProgress(prev => ({
       ...prev,
       [currentWord.id]: { word_id: currentWord.id, status }
     }))
+
+    // ⚡ 立即更新底部统计显示（前端缓存，延迟同步）
+    if (window.updateFlashcardStats) {
+      window.updateFlashcardStats(oldStatus, status)
+    }
+
+    // 同时更新 scopeStats（用于对话框显示）
+    setScopeStats(prev => {
+      if (!prev) return prev
+
+      const updated = { ...prev }
+
+      // 从旧状态减1
+      if (oldStatus && oldStatus !== 'all') {
+        updated[oldStatus] = Math.max(0, (updated[oldStatus] || 0) - 1)
+      }
+
+      // 给新状态加1
+      if (status !== 'all') {
+        updated[status] = (updated[status] || 0) + 1
+      }
+
+      return updated
+    })
+
+    // 不再需要 setStatsRefreshKey，因为我们直接更新了前端缓存
+    // setStatsRefreshKey(Date.now())
 
     // 2. 添加到待保存队列
     pendingSaveRef.current[currentWord.id] = status
@@ -282,27 +482,67 @@ export default function FlashcardsPage() {
     setKeyboardAnimation(null)
 
     // 6. 延迟后切换到下一个单词
-    setTimeout(() => {
-      if (currentIndex < words.length - 1) {
-        const nextIndex = currentIndex + 1
-        setCurrentIndex(nextIndex)
+    // 清除之前的定时器（防止在切换范围时触发）
+    if (nextWordTimerRef.current) {
+      clearTimeout(nextWordTimerRef.current)
+    }
 
-        // ⭐ 保存学习进度（两种方式）
-        saveResumeState(bookId, 'flashcards', {
-          scope,
-          index: nextIndex,
-          totalWords: words.length
-        })
+    nextWordTimerRef.current = setTimeout(() => {
+      // 🎯 判断逻辑：只有当真的完成所有单词时才显示完成对话框
+      const reachedTotalEnd = totalWordsInScope > 0 && currentIndex >= totalWordsInScope - 1
+      const reachedLoadedEnd = currentIndex >= words.length - 1
 
-        // 保存flashcard范围进度
-        saveFlashcardProgress(nextIndex)
+      // 如果正在切换范围，不显示完成对话框
+      if (isChangingScopeRef.current) {
+        console.log('🔄 Changing scope, skipping complete dialog')
+        isChangingScopeRef.current = false
+        setIsCardSwitching(false)
+        return
       }
+
+      if (reachedLoadedEnd && !hasMore) {
+        // 没有更多单词可加载，且已到达当前列表末尾
+        // 这时才显示完成对话框
+        setShowCompleteDialog(true)
+        setIsCardSwitching(false)
+        return
+      }
+
+      if (reachedLoadedEnd && hasMore) {
+        // 到达当前加载的末尾，但还有更多单词
+        // 等待懒加载完成，不要前进
+        console.log('⏳ At end of loaded words, waiting for lazy load...')
+        setWaitingForLoad(true)
+        setIsCardSwitching(false)
+
+        // 如果懒加载还没触发，手动触发一次
+        if (!loadingMore && loadMoreWordsRef.current) {
+          console.log('🔄 Manually triggering load more...')
+          loadMoreWordsRef.current()
+        }
+        return
+      }
+
+      // 正常情况：切换到下一个单词
+      const nextIndex = currentIndex + 1
+      setCurrentIndex(nextIndex)
+
+      // ⭐ 保存学习进度（两种方式）
+      saveResumeState(bookId, 'flashcards', {
+        scope,
+        index: nextIndex,
+        totalWords: words.length
+      })
+
+      // 保存flashcard范围进度
+      saveFlashcardProgress(nextIndex)
+
       // 清除切换状态，显示新卡片
       setTimeout(() => {
         setIsCardSwitching(false)
       }, 50)
     }, 200)
-  }, [currentWord, currentIndex, words.length, flushPendingSaves, hasUserInteracted, bookId, scope, saveFlashcardProgress])
+  }, [currentWord, currentIndex, words.length, flushPendingSaves, hasUserInteracted, bookId, scope, saveFlashcardProgress, hasMore])
 
   // 自动朗读新单词 - 当卡片切换完成后自动朗读
   useEffect(() => {
@@ -445,6 +685,7 @@ export default function FlashcardsPage() {
     const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY
 
     setDragStart({ x: clientX, y: clientY })
+    hasDraggedRef.current = false // 重置拖拽标志
   }
 
   // 拖拽中
@@ -462,6 +703,12 @@ export default function FlashcardsPage() {
     const deltaX = clientX - dragStart.x
     const deltaY = clientY - dragStart.y
 
+    // 如果移动距离 > 10px，标记为拖拽
+    const distance = Math.sqrt(deltaX ** 2 + deltaY ** 2)
+    if (distance > 10) {
+      hasDraggedRef.current = true
+    }
+
     setDragOffset({ x: deltaX, y: deltaY })
   }
 
@@ -471,6 +718,11 @@ export default function FlashcardsPage() {
 
     const distance = Math.sqrt(dragOffset.x ** 2 + dragOffset.y ** 2)
     const threshold = 50 // 最小滑动距离（像素）
+
+    // 延迟重置拖拽标志（让 onClick 有机会检查）
+    setTimeout(() => {
+      hasDraggedRef.current = false
+    }, 0)
 
     // 如果滑动距离太小，视为点击
     if (distance < threshold) {
@@ -511,7 +763,7 @@ export default function FlashcardsPage() {
     else if (angle > -135 && angle <= -45) {
       setDragStart(null)
       setDragOffset({ x: 0, y: 0 })
-      handleFlip()
+      handleStatus('fuzzy')
       return
     }
 
@@ -534,7 +786,7 @@ export default function FlashcardsPage() {
     return (
       <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
         <div
-          className="p-8 text-center"
+          className="p-8 text-center max-w-md mx-auto"
           style={{
             backgroundColor: '#ffffff',
             border: '3px solid #000',
@@ -542,14 +794,37 @@ export default function FlashcardsPage() {
             boxShadow: '4px 4px 0px 0px #000',
           }}
         >
-          <p className="text-lg text-gray-900 font-black mb-4">暂无单词数据</p>
-          <button
-            onClick={() => router.push('/')}
-            className="inline-block px-6 py-3 font-black bg-[#B4F416] border-2 border-black rounded-lg shadow-[3px_3px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
-          >
-            返回首页
-          </button>
+          <h2 className="text-2xl font-black text-gray-900 mb-4">🎉 太棒了！</h2>
+          <p className="text-lg text-gray-700 font-bold mb-2">
+            你已经完成了 <span className="font-mono">{scopeLabelMap[currentScope]}</span> 范围的所有单词
+          </p>
+          <p className="text-sm text-gray-500 font-semibold mb-6">
+            接下来你想做什么？
+          </p>
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={() => setShowScopeSelectDialog(true)}
+              className="w-full px-6 py-3 font-black bg-blue-100 border-2 border-black rounded-lg hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+            >
+              📚 选择其他范围
+            </button>
+            <button
+              onClick={() => router.push('/')}
+              className="w-full px-6 py-3 font-black bg-[#B4F416] border-2 border-black rounded-lg hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
+            >
+              返回首页
+            </button>
+          </div>
         </div>
+
+        {/* 范围选择对话框 */}
+        <FlashcardScopeDialog
+          bookId={bookId}
+          bookTitle={bookTitle}
+          isOpen={showScopeSelectDialog}
+          onClose={() => setShowScopeSelectDialog(false)}
+          initialStats={scopeStats}
+        />
       </div>
     )
   }
@@ -569,25 +844,9 @@ export default function FlashcardsPage() {
             <button
               className="w-12 h-12 flex items-center justify-center bg-white rounded-xl transition-transform active:translate-y-1"
               style={{ border: '3px solid #000', boxShadow: '4px 4px 0px 0px #000' }}
-              onClick={async () => {
-                // ⭐ 先保存数据，再跳转
-                console.log('🔙 Back button: Saving data before navigation...')
-
-                // 1. 立即保存当前学习位置
-                if (words.length > 0 && currentIndex >= 0) {
-                  saveResumeState(bookId, 'flashcards', {
-                    index: currentIndex,
-                    totalWords: words.length
-                  })
-                }
-
-                // 2. 保存待保存的学习进度
-                flushPendingSaves()
-
-                // 3. 等待一下确保保存完成，然后跳转
-                await new Promise(resolve => setTimeout(resolve, 200))
-
-                // 4. 跳转回首页
+              onClick={() => {
+                // ⚡ 立即跳转，不等待保存
+                // 保存由 beforeunload/visibilitychange/unmount 事件处理
                 router.push('/')
               }}
             >
@@ -602,7 +861,7 @@ export default function FlashcardsPage() {
                 <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Currently Studying</span>
                 <span className="text-sm md:text-base font-black truncate">{bookTitle}</span>
               </div>
-              <div className="ml-auto font-black text-lg">{currentIndex + 1} / {words.length}</div>
+              <div className="ml-auto font-black text-lg">{currentIndex + 1} / {totalWordsInScope || words.length}</div>
             </div>
           </div>
 
@@ -610,23 +869,14 @@ export default function FlashcardsPage() {
           <div className="max-w-2xl mx-auto mb-4">
             <div className="flex justify-between text-xs font-bold mb-1 px-1">
               <span>PROGRESS</span>
-              <span>{Math.round(((currentIndex + 1) / words.length) * 100)}%</span>
+              <span>{Math.round(((currentIndex + 1) / (totalWordsInScope || words.length)) * 100)}%</span>
             </div>
             <div className="w-full h-6 bg-white rounded-full overflow-hidden relative" style={{ border: '3px solid #000' }}>
               <div
                 className="h-full bg-[#B4F416]"
-                style={{ width: `${((currentIndex + 1) / words.length) * 100}%`, borderRight: '3px solid #000' }}
+                style={{ width: `${((currentIndex + 1) / (totalWordsInScope || words.length)) * 100}%`, borderRight: '3px solid #000' }}
               />
             </div>
-          </div>
-
-          {/* 2.5 统计色块 - 可点击切换范围 */}
-          <div className="max-w-2xl mx-auto mb-4">
-            <FlashcardStatsBar
-              bookId={bookId}
-              currentScope={currentScope}
-              onScopeChange={handleScopeChange}
-            />
           </div>
 
           {/* 3. Swipe Instructions - Visual Cues (Neo-Brutalism) */}
@@ -648,22 +898,34 @@ export default function FlashcardsPage() {
 
         {/* 用户未交互提示 - Neo-Brutalism */}
         {!hasUserInteracted && (
-          <div
-            className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-6 text-center cursor-pointer z-20"
-            style={{
-              backgroundColor: '#ffffff',
-              border: '3px solid #000',
-              borderRadius: '12px',
-              boxShadow: '4px 4px 0px 0px #000',
-            }}
-            onClick={() => {
-              hasUserInteractedRef.current = true
-              setHasUserInteracted(true)
-            }}
-          >
-            <p className="text-lg font-black text-gray-900 mb-2">👆 点击此处开始学习</p>
-            <p className="text-sm font-bold text-gray-600">首次点击激活语音功能</p>
-          </div>
+          <>
+            {/* 半透明毛玻璃遮罩 - 覆盖整个屏幕 */}
+            <div
+              className="fixed inset-0 z-10"
+              style={{
+                backdropFilter: 'blur(8px)',
+                WebkitBackdropFilter: 'blur(8px)',
+                backgroundColor: 'rgba(255, 255, 255, 0.6)'
+              }}
+            />
+            {/* 提示框 */}
+            <div
+              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-6 text-center cursor-pointer z-20"
+              style={{
+                backgroundColor: '#ffffff',
+                border: '3px solid #000',
+                borderRadius: '12px',
+                boxShadow: '4px 4px 0px 0px #000',
+              }}
+              onClick={() => {
+                hasUserInteractedRef.current = true
+                setHasUserInteracted(true)
+              }}
+            >
+              <p className="text-lg font-black text-gray-900 mb-2">👆 点击此处开始学习</p>
+              <p className="text-sm font-bold text-gray-600">首次点击激活语音功能</p>
+            </div>
+          </>
         )}
 
         {/* 4. THE MAIN CARD - 重构版本 */}
@@ -936,7 +1198,8 @@ export default function FlashcardsPage() {
         </div>
 
         {/* Complete Message - Neo-Brutalism */}
-        {currentIndex === words.length - 1 && (
+        {/* 注释：不再自动显示完成消息，只通过showCompleteDialog对话框显示 */}
+        {/* {currentIndex === words.length - 1 && !showCompleteDialog && (
           <div className="text-center pb-8">
             <div
               className="inline-block p-6"
@@ -961,7 +1224,79 @@ export default function FlashcardsPage() {
               </button>
             </div>
           </div>
+        )} */}
+
+        {/* 统计色块 - 低调样式，放在卡片下方 */}
+        <div className="max-w-2xl mx-auto mt-4 mb-6">
+          <FlashcardStatsBar
+            bookId={bookId}
+            currentScope={currentScope}
+            onScopeChange={handleScopeChange}
+            initialStats={scopeStats}
+          />
+          {loadingMore && (
+            <div className="text-center mt-2 text-xs text-blue-600 font-bold animate-pulse">
+              📚 加载更多单词... ({words.length}/{totalWordsInScope || words.length})
+            </div>
+          )}
+          {waitingForLoad && !loadingMore && (
+            <div className="text-center mt-2 text-xs text-orange-600 font-bold animate-pulse">
+              ⏳ 等待加载...
+            </div>
+          )}
+        </div>
+
+        {/* Completion Dialog - Modal */}
+        {showCompleteDialog && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
+            onClick={() => setShowCompleteDialog(false)}
+          >
+            <div
+              className="bg-white rounded-xl border-[3px] border-black shadow-[8px_8px_0px_0px_#000] w-full max-w-md p-6"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <h3 className="text-2xl font-black mb-4 text-center">
+                🎉 太棒了！
+              </h3>
+              <p className="text-gray-700 font-semibold mb-2 text-center">
+                你已经完成了 <span className="font-mono font-bold">{scopeLabelMap[currentScope]}</span> 范围的所有单词学习！
+              </p>
+              <p className="text-sm text-gray-500 font-semibold mb-6 text-center">
+                接下来你想做什么？
+              </p>
+              <div className="flex flex-col gap-3">
+                <button
+                  onClick={handleRestartScope}
+                  className="w-full px-4 py-3 bg-[#B4F416] border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+                >
+                  🔄 重新学习这个范围
+                </button>
+                <button
+                  onClick={handleSelectOtherScope}
+                  className="w-full px-4 py-3 bg-blue-100 border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+                >
+                  📚 选择其他范围
+                </button>
+                <button
+                  onClick={() => router.push('/')}
+                  className="w-full px-4 py-3 bg-gray-100 border-2 border-black rounded-lg font-bold hover:bg-gray-200 transition-colors"
+                >
+                  返回首页
+                </button>
+              </div>
+            </div>
+          </div>
         )}
+
+        {/* Scope Selection Dialog */}
+        <FlashcardScopeDialog
+          bookId={bookId}
+          bookTitle={bookTitle}
+          isOpen={showScopeSelectDialog}
+          onClose={() => setShowScopeSelectDialog(false)}
+          initialStats={scopeStats}
+        />
       </div>
     </PermissionGate>
   )
