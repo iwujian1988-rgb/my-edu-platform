@@ -1,0 +1,72 @@
+/**
+ * API Client Helper
+ *
+ * 提供带认证的fetch功能，用于客户端组件调用API路由
+ */
+
+import { createClient } from '@supabase/supabase-js'
+
+let cachedToken: string | null = null
+let tokenExpireTime: number = 0
+
+/**
+ * 获取当前用户的access token
+ * 使用缓存避免频繁调用
+ */
+export async function getAccessToken(): Promise<string | null> {
+  // 检查缓存是否有效（token有效期通常1小时，我们缓存50分钟）
+  if (cachedToken && Date.now() < tokenExpireTime) {
+    return cachedToken
+  }
+
+  try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+
+    const { data: { session } } = await supabase.auth.getSession()
+
+    if (session?.access_token) {
+      cachedToken = session.access_token
+      tokenExpireTime = Date.now() + (50 * 60 * 1000) // 50分钟后过期
+      return session.access_token
+    }
+
+    return null
+  } catch (error) {
+    console.error('Failed to get access token:', error)
+    return null
+  }
+}
+
+/**
+ * 发起带认证的API请求
+ * 自动添加Authorization header和credentials
+ */
+export async function authenticatedFetch(url: string, options: RequestInit = {}): Promise<Response> {
+  const token = await getAccessToken()
+
+  const headers: HeadersInit = {
+    ...options.headers,
+  }
+
+  // 添加Authorization header（优先级更高）
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`
+  }
+
+  return fetch(url, {
+    ...options,
+    headers,
+    credentials: 'include'  // 同时携带cookies
+  })
+}
+
+/**
+ * 清除token缓存（登出时调用）
+ */
+export function clearTokenCache() {
+  cachedToken = null
+  tokenExpireTime = 0
+}
