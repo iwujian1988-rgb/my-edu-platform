@@ -109,5 +109,20 @@ USER_MANAGEMENT_TEST_REPORT.md
 WORD_BOOK_MODULE_SUMMARY.md
 BUG_FIX_SESSION.md
 
-# scripts directory
+# scripts directory (保留监控脚本)
 /scripts/
+!scripts/memory-monitor.js
+!scripts/memory-check.js
+!scripts/health-check.js
+!scripts/dev-safe-start.js
+!scripts/cleanup.js
+
+# PM2 日志文件
+/logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# PM2 进程文件
+.pm2/

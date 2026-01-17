@@ -127,6 +127,11 @@ const config: Config = {
         'neo-yellow': '4px 4px 0px 0px #FACC15',
         'neo-red': '4px 4px 0px 0px #FF6B6B',
         'neo-blue': '4px 4px 0px 0px #3B82F6',
+        // Hard Shadow System (Updated 2026-01-14)
+        'hard-sm': '2px 2px 0px 0px rgba(0,0,0,1)',
+        'hard-md': '3px 3px 0px 0px rgba(0,0,0,1)',
+        'hard-lg': '6px 6px 0px 0px rgba(0,0,0,1)',
+        'hard-green': '3px 3px 0px 0px #ccff00',
       },
       animation: {
         'fade-in': 'fadeIn 300ms ease-out',
