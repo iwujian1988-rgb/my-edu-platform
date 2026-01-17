@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { Volume2, Eye, EyeOff } from 'lucide-react'
 import { speak, initializeTTS, stopSpeaking } from '@/lib/speech'
+import { stripHtmlTags } from '@/lib/utils/text'
 
 interface Word {
   id: string
@@ -302,7 +303,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                 >
                   <div className="flex items-start justify-between">
                     <p className="text-sm text-gray-800 flex-1">
-                      📝 例句: {word.example_sentence_en}
+                      📝 例句: {stripHtmlTags(word.example_sentence_en)}
                     </p>
                     <button
                       onClick={() => handleSpeak(word.example_sentence_en)}
@@ -314,7 +315,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                     </button>
                   </div>
                   {shouldShowChinese ? (
-                    <p className="text-xs text-gray-600 mt-1">{word.example_sentence}</p>
+                    <p className="text-xs text-gray-600 mt-1">{stripHtmlTags(word.example_sentence)}</p>
                   ) : (
                     <p className="text-xs text-gray-400 mt-1">______________________</p>
                   )}

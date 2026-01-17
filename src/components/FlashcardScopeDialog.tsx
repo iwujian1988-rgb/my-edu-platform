@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { BookOpen, TrendingUp, AlertCircle, HelpCircle, CheckCircle, Plus } from 'lucide-react'
+import { ChevronRight, AlertCircle, HelpCircle, CheckCircle2, BookOpen, Clock, X } from 'lucide-react'
+
+type FlashcardScopeType = 'all' | 'unknown' | 'fuzzy' | 'known' | 'new'
 
 interface ScopeOption {
-  value: 'all' | 'unknown' | 'fuzzy' | 'known' | 'new'
+  value: FlashcardScopeType
   label: string
-  description: string
-  icon: React.ReactNode
-  color: string
-  bgColor: string
+  count: number
+  disabled: boolean
 }
 
 interface WordStats {
@@ -22,12 +22,114 @@ interface WordStats {
   all: number
 }
 
+interface FlashcardProgress {
+  scopeType: FlashcardScopeType
+  currentIndex: number
+  totalWords: number
+  lastStudyTime?: number
+}
+
 interface FlashcardScopeDialogProps {
   bookId: string
   bookTitle: string
   isOpen: boolean
   onClose: () => void
-  initialStats?: WordStats // 预加载的统计数据
+  initialStats?: WordStats
+}
+
+/**
+ * 状态样式映射
+ * 为每个学习状态定义独特的视觉标识
+ */
+const statusStyles = {
+  unknown: {
+    bg: 'bg-red-100',
+    border: 'border-red-500',
+    text: 'text-red-600',
+    iconBg: 'bg-red-400',
+    icon: AlertCircle
+  },
+  fuzzy: {
+    bg: 'bg-yellow-100',
+    border: 'border-yellow-500',
+    text: 'text-yellow-700',
+    iconBg: 'bg-yellow-400',
+    icon: HelpCircle
+  },
+  known: {
+    bg: 'bg-green-100',
+    border: 'border-green-500',
+    text: 'text-green-700',
+    iconBg: 'bg-[#CCFF00]',
+    icon: CheckCircle2
+  },
+  default: {
+    bg: 'bg-white',
+    border: 'border-black',
+    text: 'text-black',
+    iconBg: 'bg-gray-200',
+    icon: BookOpen
+  }
+}
+
+/**
+ * 获取状态描述
+ */
+const getStatusDescription = (value: FlashcardScopeType): string => {
+  switch (value) {
+    case 'all': return '挑战所有单词，勇闯巅峰'
+    case 'unknown': return '攻克难点，变生为熟'
+    case 'fuzzy': return '巩固基础，熟能生巧'
+    case 'known': return '复习旧识，温故知新'
+    case 'new': return '标注未知，制定计划'
+    default: return ''
+  }
+}
+
+/**
+ * 格式化断点续做信息
+ */
+function formatResumeInfo(progress: FlashcardProgress): string {
+  // 防御性检查：确保数据完整
+  if (typeof progress.currentIndex !== 'number') {
+    return '学习进度未知'
+  }
+
+  const scopeLabels: Record<FlashcardScopeType, string> = {
+    all: '全部单词',
+    unknown: '不认识的',
+    fuzzy: '模糊的',
+    known: '认识的',
+    new: '未标注的'
+  }
+
+  const scopeLabel = scopeLabels[progress.scopeType] || progress.scopeType || '未知范围'
+  const currentIndex = progress.currentIndex + 1
+  const totalWords = progress.totalWords || 0
+
+  return `${scopeLabel}，第 ${currentIndex} 张${totalWords > 0 ? ` / 共 ${totalWords} 张` : ''}`
+}
+
+/**
+ * 计算时间差
+ */
+function formatTimeAgo(lastStudyTime?: number): string {
+  if (!lastStudyTime) return '未知时间'
+
+  const now = Date.now()
+  const diff = now - lastStudyTime
+
+  const minutes = Math.floor(diff / 60000)
+  const hours = Math.floor(diff / 3600000)
+  const days = Math.floor(diff / 86400000)
+
+  if (minutes < 1) return '刚刚'
+  if (minutes < 60) return `${minutes} 分钟前`
+  if (hours < 24) return `${hours} 小时前`
+  if (days < 7) return `${days} 天前`
+
+  const date = new Date(lastStudyTime)
+  return `${date.getMonth() + 1}月${date.getDate()}日`
 }
 
 export function FlashcardScopeDialog({
@@ -39,245 +141,252 @@ export function FlashcardScopeDialog({
 }: FlashcardScopeDialogProps) {
   const router = useRouter()
   const [stats, setStats] = useState<WordStats | null>(initialStats || null)
-  const [loading, setLoading] = useState(!initialStats) // 如果有预加载数据，不需要loading
-  const [selectedScope, setSelectedScope] = useState<string | null>(null)
+  const [recentProgress, setRecentProgress] = useState<FlashcardProgress | null>(null)
+  const [loading, setLoading] = useState(!initialStats)
 
-  // 获取各状态的单词数量统计（只有在没有预加载数据时才请求）
+  // 获取统计数据和最近进度
   useEffect(() => {
     if (initialStats) {
       setStats(initialStats)
       setLoading(false)
-      return
     }
 
-    async function fetchStats() {
+    async function fetchData() {
       try {
-        // 使用专门的统计API，只返回数量，不返回单词数据
-        const response = await fetch(`/api/words/stats?bookId=${bookId}`)
-        const result = await response.json()
+        // 并行请求统计数据和所有范围的进度
+        const [statsRes, ...progressResps] = await Promise.all([
+          fetch(`/api/words/stats?bookId=${bookId}`),
+          // 获取所有范围的进度
+          fetch(`/api/flashcard-progress?bookId=${bookId}&scopeType=unknown`),
+          fetch(`/api/flashcard-progress?bookId=${bookId}&scopeType=new`),
+          fetch(`/api/flashcard-progress?bookId=${bookId}&scopeType=fuzzy`),
+          fetch(`/api/flashcard-progress?bookId=${bookId}&scopeType=known`),
+          fetch(`/api/flashcard-progress?bookId=${bookId}&scopeType=all`)
+        ])
 
-        if (result.success && result.data) {
-          setStats(result.data)
-        } else {
-          // API返回失败，使用默认值
-          setStats({ total: 0, all: 0, known: 0, fuzzy: 0, unknown: 0, new: 0 })
+        // 处理统计数据
+        if (statsRes.ok && !initialStats) {
+          const statsResult = await statsRes.json()
+          if (statsResult.success && statsResult.data) {
+            setStats(statsResult.data)
+          }
+        }
+
+        // 处理所有进度，找到最近学习的一个
+        const scopeTypes: FlashcardScopeType[] = ['unknown', 'new', 'fuzzy', 'known', 'all']
+        let latestProgress: FlashcardProgress | null = null
+        let latestTime = 0
+
+        for (let i = 0; i < scopeTypes.length; i++) {
+          const resp = progressResps[i]
+          if (resp.ok) {
+            const progressResult = await resp.json()
+            if (progressResult.data && progressResult.data.currentIndex !== undefined) {
+              const studyTime = progressResult.data.lastStudyTime || 0
+              if (studyTime > latestTime) {
+                latestTime = studyTime
+                latestProgress = {
+                  scopeType: progressResult.data.scopeType || scopeTypes[i],
+                  currentIndex: progressResult.data.currentIndex,
+                  totalWords: progressResult.data.totalWords || 0,
+                  lastStudyTime: studyTime
+                }
+              }
+            }
+          }
+        }
+
+        if (latestProgress) {
+          setRecentProgress(latestProgress)
         }
       } catch (error) {
-        console.error('Error fetching word stats:', error)
-        // 出错时使用默认值，确保界面不会卡住
-        setStats({ total: 0, all: 0, known: 0, fuzzy: 0, unknown: 0, new: 0 })
+        console.error('Error fetching data:', error)
       } finally {
         setLoading(false)
       }
     }
 
     if (isOpen) {
-      setLoading(true)
-      fetchStats()
+      fetchData()
     }
   }, [bookId, isOpen, initialStats])
 
-  const scopeOptions: ScopeOption[] = [
+  // 构建范围选项
+  const scopeOptions: ScopeOption[] = stats ? [
     {
       value: 'unknown',
       label: '不认识的',
-      description: '重点攻克陌生单词',
-      icon: <AlertCircle size={18} />,
-      color: '#FF6B6B',
-      bgColor: 'bg-red-50'
+      count: stats.unknown || 0,
+      disabled: (stats.unknown || 0) === 0
     },
     {
       value: 'new',
-      label: '未标注',
-      description: '从零开始学习',
-      icon: <Plus size={18} />,
-      color: '#9CA3AF',
-      bgColor: 'bg-gray-50'
+      label: '未标注的',
+      count: stats.new || 0,
+      disabled: (stats.new || 0) === 0
     },
     {
       value: 'fuzzy',
       label: '模糊的',
-      description: '巩固不太熟悉的单词',
-      icon: <HelpCircle size={18} />,
-      color: '#FACC15',
-      bgColor: 'bg-yellow-50'
+      count: stats.fuzzy || 0,
+      disabled: (stats.fuzzy || 0) === 0
     },
     {
       value: 'known',
-      label: '认识',
-      description: '复习已掌握的单词',
-      icon: <CheckCircle size={18} />,
-      color: '#B4F416',
-      bgColor: 'bg-green-50'
+      label: '认识的',
+      count: stats.known || 0,
+      disabled: (stats.known || 0) === 0
     },
     {
       value: 'all',
       label: '全部单词',
-      description: '全面复习所有内容',
-      icon: <BookOpen size={18} />,
-      color: '#3B82F6',
-      bgColor: 'bg-blue-50'
+      count: stats.all || 0,
+      disabled: (stats.all || 0) === 0
     }
-  ]
+  ] : []
 
-  const handleScopeSelect = async (scopeValue: string) => {
-    setSelectedScope(scopeValue)
-
-    // 保存选择到进度记录（用于"继续学习"功能）
-    try {
-      await fetch('/api/flashcard-progress', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          bookId,
-          scopeType: scopeValue,
-          currentIndex: 0,
-          totalWords: 0
-        })
-      })
-    } catch (error) {
-      console.error('Error saving scope selection:', error)
-    }
-
+  const handleScopeSelect = async (scopeValue: FlashcardScopeType) => {
     // 跳转到flashcards页面
     router.push(`/study/${bookId}/flashcards?scope=${scopeValue}&shuffle=true`)
     onClose()
   }
 
-  // 重置进度功能
-  const resetProgress = async () => {
-    try {
-      const response = await fetch('/api/word-progress/reset', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ bookId })
-      })
-
-      if (response.ok) {
-        alert('进度已重置！所有单词都变回"未标注"状态。')
-        window.location.reload()
-      } else {
-        const error = await response.json()
-        alert('重置失败：' + (error.error || '未知错误'))
-      }
-    } catch (error) {
-      console.error('Error resetting progress:', error)
-      alert('重置失败，请重试')
-    }
+  // 加载状态
+  if (loading) {
+    return (
+      isOpen && (
+        <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+          <div className="bg-white border-2 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8">
+            <div className="flex flex-col items-center">
+              <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-black border-t-[#ccff00] mb-6"></div>
+              <p className="font-black text-lg">加载学习数据...</p>
+            </div>
+          </div>
+        </div>
+      )
+    )
   }
 
   if (!isOpen) return null
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4"
-      onClick={onClose}
-    >
-      <div
-        className="bg-white rounded-xl border-[3px] border-black shadow-[8px_8px_0px_0px_#000] w-full max-w-md"
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header */}
-        <div className="p-4 border-b-[2px] border-black">
-          <div className="flex items-center justify-between mb-1">
-            <h2 className="text-lg font-black">选择学习范围</h2>
-            <button
-              onClick={onClose}
-              className="w-8 h-8 flex items-center justify-center bg-gray-100 border-2 border-black rounded-lg hover:bg-gray-200 transition-colors text-sm"
-            >
-              ✕
-            </button>
-          </div>
-          <p className="text-gray-600 text-xs font-semibold truncate">{bookTitle}</p>
+    <div className="fixed inset-0 bg-gray-800/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
+      {/* Main Container - Neo-Brutalism 风格 */}
+      <div className="w-full max-w-md bg-white border-2 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col max-h-[90vh]">
+
+        {/* Header - #f4f4f5 背景 */}
+        <div className="p-6 border-b-2 border-black bg-[#f4f4f5] flex justify-between items-center">
+          <h2 className="text-2xl font-black italic">选择学习范围</h2>
+          <button
+            onClick={onClose}
+            className="w-10 h-10 flex items-center justify-center border-2 border-black rounded-lg hover:bg-red-400 hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all shadow-[2px_2px_0px_0px_#000] active:translate-x-0 active:translate-y-0 active:shadow-none"
+            aria-label="关闭"
+          >
+            <X className="w-6 h-6" strokeWidth={2.5} />
+          </button>
         </div>
 
-        {/* Content */}
-        <div className="p-4">
-          {loading ? (
-            <div className="text-center py-8">
-              <div className="inline-block w-8 h-8 border-4 border-black border-t-transparent rounded-full animate-spin mb-3"></div>
-              <p className="text-gray-900 text-sm font-bold">加载中...</p>
+        {/* ✨ 继续上次学习卡片 ✨ */}
+        {recentProgress && recentProgress.currentIndex >= 0 && (
+          <div className="p-4 bg-gradient-to-r from-[#ccff00] to-[#b8e600] border-b-2 border-black">
+            <div className="flex items-center justify-between">
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <Clock className="w-4 h-4 text-black" strokeWidth={2.5} />
+                  <span className="text-xs font-bold text-black">
+                    {formatTimeAgo(recentProgress.lastStudyTime)}
+                  </span>
+                </div>
+                <p className="text-sm font-black text-black mb-1">
+                  继续上次学习
+                </p>
+                <p className="text-xs font-bold text-gray-700">
+                  {formatResumeInfo(recentProgress)}
+                </p>
+              </div>
+              <button
+                onClick={() => handleScopeSelect(recentProgress.scopeType)}
+                className="px-4 py-2 bg-black text-white font-black text-sm rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all"
+              >
+                继续
+              </button>
             </div>
-          ) : stats ? (
-            <div className="grid grid-cols-1 gap-2">
-              {scopeOptions.map((option) => {
-                const count = Number(stats[option.value] || 0)
-                const percentage = stats.total > 0 ? Math.round((count / stats.total) * 100) : 0
-                const isDisabled = count === 0
+          </div>
+        )}
 
-                return (
-                  <button
-                    key={option.value}
-                    onClick={() => !isDisabled && handleScopeSelect(option.value)}
-                    disabled={isDisabled}
-                    className={`
-                      relative p-3 rounded-lg border-2 transition-all text-left
-                      ${option.bgColor} border-black
-                      ${isDisabled
-                        ? 'opacity-40 cursor-not-allowed grayscale'
-                        : 'hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none cursor-pointer'
-                      }
-                    `}
-                  >
-                    <div className="flex items-center gap-2">
-                      <div className="flex-shrink-0" style={{ color: option.color }}>
-                        {option.icon}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-1">
-                          <h3 className="font-bold text-sm">{option.label}</h3>
-                          <span className="font-mono font-bold text-sm" style={{ color: option.color }}>
-                            {count}
-                          </span>
-                        </div>
-                        <div className="flex items-center gap-2">
-                          {/* 进度条 */}
-                          <div className="flex-1 h-2 bg-white border border-black rounded overflow-hidden">
-                            <div
-                              className="h-full transition-all duration-300"
-                              style={{
-                                width: `${percentage}%`,
-                                backgroundColor: option.color
-                              }}
-                            />
-                          </div>
-                          <span className="text-xs text-gray-600 font-mono whitespace-nowrap">
-                            {percentage}%
-                          </span>
-                        </div>
-                        {isDisabled && (
-                          <p className="text-[10px] text-red-600 font-bold mt-1">暂无单词</p>
-                        )}
-                      </div>
-                    </div>
-                  </button>
-                )
-              })}
-            </div>
-          ) : (
-            <div className="text-center py-8 text-red-600">
-              <p className="font-bold text-sm">加载失败，请重试</p>
-            </div>
-          )}
+        {/* Scrollable List - 关卡卡片列表 */}
+        <div className="p-4 overflow-y-auto space-y-3">
+          {scopeOptions.map((option) => {
+            // 根据状态获取样式
+            const style = option.value === 'unknown' || option.value === 'fuzzy' || option.value === 'known'
+              ? statusStyles[option.value]
+              : statusStyles.default
+            const Icon = style.icon
+
+            return (
+              <button
+                key={option.value}
+                onClick={() => !option.disabled && handleScopeSelect(option.value)}
+                disabled={option.disabled}
+                className={`
+                  w-full flex items-center justify-between p-4 bg-white border-2 rounded-xl transition-all
+                  ${option.disabled
+                    ? 'border-gray-300 opacity-50 cursor-not-allowed'
+                    : 'border-black cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+                  }
+                `}
+              >
+                {/* 左侧：图标框 */}
+                <div className={`w-12 h-12 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0 ${option.disabled ? 'bg-gray-200' : style.iconBg}`}>
+                  <Icon className={`w-6 h-6 ${option.disabled ? 'text-gray-400' : 'text-black'}`} strokeWidth={2.5} />
+                </div>
+
+                {/* 中间：标题和描述 */}
+                <div className="flex-1 ml-4 text-left">
+                  <div className={`font-black text-lg ${option.disabled ? 'text-gray-400' : 'text-black'}`}>
+                    {option.label}
+                  </div>
+                  <div className={`text-sm font-bold mt-1 ${option.disabled ? 'text-gray-400' : 'text-gray-600'}`}>
+                    {getStatusDescription(option.value)}
+                  </div>
+                </div>
+
+                {/* 右侧：数字和箭头 */}
+                <div className="flex items-center gap-3">
+                  {/* 数字标签 */}
+                  <div className={`
+                    w-14 h-14 flex items-center justify-center text-2xl font-black border-2 border-black rounded-lg
+                    ${option.disabled
+                      ? 'bg-gray-200 text-gray-400'
+                      : option.value === 'all'
+                      ? 'bg-black text-white'
+                      : option.value === 'unknown'
+                      ? 'bg-red-500 text-white'
+                      : option.value === 'fuzzy'
+                      ? 'bg-yellow-400 text-black'
+                      : option.value === 'known'
+                      ? 'bg-[#CCFF00] text-black'
+                      : 'bg-gray-300 text-black'
+                    }
+                  `}>
+                    {option.count}
+                  </div>
+
+                  {/* 右箭头 */}
+                  {!option.disabled && (
+                    <ChevronRight className="w-6 h-6 text-black flex-shrink-0" strokeWidth={2.5} />
+                  )}
+                </div>
+              </button>
+            )
+          })}
         </div>
 
-        {/* Footer */}
-        <div className="p-3 border-t-[2px] border-black bg-gray-50">
-          <div className="flex items-center justify-between gap-2">
-            <p className="text-xs text-gray-600 font-semibold flex-1">
-              💡 选择范围后可随时切换
-            </p>
-            <button
-              onClick={() => {
-                if (confirm('确定要重置所有学习进度吗？这将清除所有单词的学习记录，不可恢复！')) {
-                  resetProgress()
-                }
-              }}
-              className="text-xs text-red-600 font-bold hover:underline"
-            >
-              重置进度
-            </button>
-          </div>
+        {/* 底部提示 */}
+        <div className="p-4 border-t-2 border-black bg-[#f4f4f5]">
+          <p className="text-center text-sm font-bold text-gray-700">
+            🎮 选择范围开始学习，掌握每一个单词！
+          </p>
         </div>
       </div>
     </div>

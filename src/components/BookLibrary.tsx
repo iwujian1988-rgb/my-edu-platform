@@ -5,53 +5,31 @@ import Link from 'next/link'
 import { BookOpen, ArrowRight } from 'lucide-react'
 import { BookCard } from '@/components/BookCard'
 import { getBookCategory, getCategoryLabel, type CoverType } from '@/components/FilterableBookGrid'
+import type { Book } from '@/types/book'
 
 type TabType = 'recent' | 'my' | 'all'
-
-interface Book {
-  id: string
-  title: string
-  description: string
-  total_words: number
-  cover_url?: string
-  cover_color?: string
-  isRecent?: boolean
-  category?: string
-  coverType?: CoverType
-  code?: string
-  categoryLabel?: string
-  created_by?: string
-}
 
 interface BookLibraryProps {
   userBooks: Book[]
   userEmail: string
+  userId?: string  // ✅ 添加用户ID
+  recentBooks?: Book[]  // 🔧 性能优化：从服务端传递最近访问的词库
 }
 
-export function BookLibrary({ userBooks, userEmail }: BookLibraryProps) {
+export function BookLibrary({ userBooks, userEmail, userId, recentBooks: initialRecentBooks = [] }: BookLibraryProps) {
   const [activeTab, setActiveTab] = useState<TabType>('recent')
-  const [recentBooks, setRecentBooks] = useState<Book[]>([])
-  const [loading, setLoading] = useState(true)
+  const [recentBooks, setRecentBooks] = useState<Book[]>(initialRecentBooks)
+  const [loading, setLoading] = useState(false)  // 🔧 性能优化：已经有数据，不需要loading
 
-  // 获取最近访问的词库
-  const fetchRecentBooks = async () => {
-    setLoading(true)
-    try {
-      const response = await fetch('/api/recent-books')
-      const data = await response.json()
-      setRecentBooks(data.books || [])
-    } catch (error) {
-      console.error('Failed to fetch recent books:', error)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  // 初始加载和 tab 切换时获取数据
+  // 🔧 性能优化：使用传入的最近访问数据，避免重复请求
   useEffect(() => {
-    if (activeTab === 'recent') {
-      fetchRecentBooks()
-    } else {
+    setRecentBooks(initialRecentBooks)
+    setLoading(false)
+  }, [initialRecentBooks])
+
+  // Tab 切换时更新 loading 状态
+  useEffect(() => {
+    if (activeTab !== 'recent') {
       setLoading(false)
     }
   }, [activeTab])
@@ -137,7 +115,11 @@ export function BookLibrary({ userBooks, userEmail }: BookLibraryProps) {
       case 'recent':
         return enrichedRecentBooks
       case 'my':
-        return enrichedUserBooks.filter(book => book.created_by === userEmail)
+        // ✅ 修复：使用userId而不是userEmail进行比较
+        return enrichedUserBooks.filter(book => {
+          if (!userId) return false
+          return book.created_by === userId
+        })
       case 'all':
         return enrichedUserBooks
       default:

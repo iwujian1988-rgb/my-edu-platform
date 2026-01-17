@@ -1,8 +1,11 @@
 'use client'
 
+import { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Home, Library, Dumbbell, Settings, Cat } from 'lucide-react'
+import { BookSelectorModal } from './BookSelectorModal'
+import type { Book } from '@/types/book'
 
 interface NavItem {
   label: string
@@ -11,15 +14,22 @@ interface NavItem {
   comingSoon?: boolean
 }
 
+interface AppSidebarProps {
+  books?: Book[]
+  userId?: string
+  scopeStatsMap?: Record<string, any>  // 🔧 性能优化：缓存统计信息
+}
+
 const navItems: NavItem[] = [
   { label: '工作台', href: '/', icon: Home },
   { label: '系统词库', href: '/library', icon: Library },
-  { label: '肌肉训练', href: '/training', icon: Dumbbell, comingSoon: true },
+  { label: '肌肉训练', href: '/practice', icon: Dumbbell },
   { label: '账号设置', href: '/settings', icon: Settings, comingSoon: true },
 ]
 
-export function AppSidebar() {
+export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
   const pathname = usePathname()
+  const [showBookSelector, setShowBookSelector] = useState(false)
 
   return (
     <>
@@ -42,6 +52,7 @@ export function AppSidebar() {
           {navItems.map((item) => {
             const isActive = pathname === item.href
             const Icon = item.icon
+            const isMuscleTraining = item.label === '肌肉训练'
 
             if (item.comingSoon) {
               return (
@@ -55,6 +66,24 @@ export function AppSidebar() {
                     敬请期待
                   </span>
                 </div>
+              )
+            }
+
+            // 肌肉训练：打开弹层
+            if (isMuscleTraining && books && books.length > 0) {
+              return (
+                <button
+                  key={item.href}
+                  onClick={() => setShowBookSelector(true)}
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border-[3px] transition-all font-bold ${
+                    isActive
+                      ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
+                      : 'bg-white border-black hover:bg-gray-50 hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#000]'
+                  }`}
+                >
+                  <Icon size={24} strokeWidth={2} className={isActive ? 'text-black' : 'text-gray-600'} />
+                  <span className={isActive ? 'text-black' : 'text-gray-700'}>{item.label}</span>
+                </button>
               )
             }
 
@@ -84,6 +113,16 @@ export function AppSidebar() {
           </div>
         </div>
       </aside>
+
+      {/* BookSelector Modal - 只在有books时显示 */}
+      {showBookSelector && books && books.length > 0 && (
+        <BookSelectorModal
+          books={books}
+          onClose={() => setShowBookSelector(false)}
+          userId={userId}
+          initialScopeStats={scopeStatsMap}
+        />
+      )}
     </>
   )
 }

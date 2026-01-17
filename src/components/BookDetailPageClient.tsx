@@ -2,12 +2,16 @@
 
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle, Layers, Headphones, Gamepad2, RotateCcw } from 'lucide-react'
+import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle, Layers, Headphones, Gamepad2, RotateCcw, List, Sparkles, Edit3, Grid3x3, Dumbbell } from 'lucide-react'
 import Link from 'next/link'
 import { WordList } from '@/components/WordList'
 import { GlobalHideButton } from '@/components/GlobalHideButton'
 import { ScopeSelectorModal } from '@/components/ScopeSelectorModal'
 import { BookIcon } from '@/components/BookIcon'
+import { ChapterManagementDialog } from '@/components/ChapterManagementDialog'
+import { SmartImportDialog } from '@/components/SmartImportDialog'
+import { WordTableEditor } from '@/components/WordTableEditor'
+import { BatchActionBar } from '@/components/BatchActionBar'
 
 // ✅ 导入新的Hooks和工具函数
 import { useBookFilters, type BookFilters } from '@/hooks/useBookFilters'
@@ -385,13 +389,29 @@ export function BookDetailPageClient({
 
   // 范围选择对话框状态
   const [showScopeModal, setShowScopeModal] = useState(false)
-  const [selectedPracticeMode, setSelectedPracticeMode] = useState<'flashcards' | 'dictation' | 'match-game'>('flashcards')
+  const [selectedPracticeMode, setSelectedPracticeMode] = useState<'flashcards' | 'dictation' | 'match-game' | 'typing'>('flashcards')
 
   // 删除词库状态
   const [showDeleteConfirm1, setShowDeleteConfirm1] = useState(false)
   const [showDeleteConfirm2, setShowDeleteConfirm2] = useState(false)
   const [isDeleting, setIsDeleting] = useState(false)
   const [deleteError, setDeleteError] = useState('')
+
+  // 章节管理状态
+  const [showChapterManagement, setShowChapterManagement] = useState(false)
+
+  // 智能导入状态
+  const [showSmartImport, setShowSmartImport] = useState(false)
+
+  // 视图模式状态
+  type ViewMode = 'learning' | 'editing'
+  const [viewMode, setViewMode] = useState<ViewMode>('learning')
+
+  // 批量选择状态
+  const [selectedWordIds, setSelectedWordIds] = useState<Set<string>>(new Set())
+
+  // WordTableEditor 刷新触发器
+  const [wordTableRefreshKey, setWordTableRefreshKey] = useState(0)
 
   // 处理删除词库
   const handleDeleteBook = async () => {
@@ -472,10 +492,22 @@ export function BookDetailPageClient({
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  // 打开范围选择对话框
-  const handlePracticeModeClick = (mode: 'flashcards' | 'dictation' | 'match-game') => {
-    setSelectedPracticeMode(mode)
-    setShowScopeModal(true)
+  // 打开范围选择对话框（或直接跳转到听写页面）
+  const handlePracticeModeClick = (mode: 'flashcards' | 'dictation' | 'match-game' | 'typing') => {
+    if (mode === 'dictation') {
+      // 听写模式：直接跳转到听写页面，由页面内部自动弹出范围选择对话框
+      router.push(`/study/${book.id}/dictation`)
+    } else if (mode === 'typing') {
+      // 打字练习：直接跳转到打字练习页面，由页面内部自动弹出范围选择对话框
+      router.push(`/study/${book.id}/typing`)
+    } else if (mode === 'match-game') {
+      // 消消乐：暂未实现
+      alert('消消乐功能正在开发中，敬请期待！')
+    } else {
+      // 卡片背单词：弹出范围选择对话框
+      setSelectedPracticeMode(mode)
+      setShowScopeModal(true)
+    }
   }
 
   // 滚动到顶部
@@ -766,7 +798,9 @@ export function BookDetailPageClient({
           </div>
 
           {/* 游戏模式选择区域 - 强制硬核风格（响应式优化） */}
-          <section className="flex md:grid md:grid-cols-3 gap-1.5 md:gap-6 mb-4 md:mb-6 overflow-x-auto pb-4 md:pb-0 snap-x no-scrollbar px-1">
+          {/* 练习模式入口 - 仅学习模式显示 */}
+          {viewMode === 'learning' && (
+          <section className="flex md:grid md:grid-cols-4 gap-1.5 md:gap-6 mb-4 md:mb-6 overflow-x-auto pb-4 md:pb-0 snap-x no-scrollbar px-1">
 
             {/* 1. 卡片背单词 */}
             <button
@@ -828,12 +862,37 @@ export function BookDetailPageClient({
                 <p className="text-[8px] md:text-sm font-bold text-black/60 mt-0.5 md:mt-1 uppercase tracking-wide">Match Game</p>
               </div>
             </button>
+
+            {/* 4. 打字练习（肌肉训练）- 暂时注释，避免重复 */}
+            {/*
+            <button
+              onClick={() => handlePracticeModeClick('typing')}
+              className="snap-center flex-shrink-0 w-[28vw] md:w-auto relative group h-12 md:h-28 flex items-center px-1.5 md:px-6 gap-1.5 md:gap-5 overflow-hidden transition-all"
+              style={{
+                backgroundColor: '#B4F416',
+                border: '3px solid #000000',
+                borderRadius: '10px',
+                boxShadow: '4px 4px 0px 0px #000000',
+              }}
+            >
+              <div className="p-1 md:p-3 rounded-lg border-2 border-black bg-[#1E293B] text-[#B4F416] shrink-0">
+                <Dumbbell className="w-3.5 h-3.5 md:w-6 md:h-6" strokeWidth={2.5} />
+              </div>
+              <div className="text-left z-10">
+                <h3 className="text-[11px] md:text-xl font-black text-black leading-none tracking-tight">打字练习</h3>
+                <p className="text-[8px] md:text-sm font-bold text-black/70 mt-0.5 md:mt-1 uppercase tracking-wide">Typing</p>
+              </div>
+              <Dumbbell className="absolute -right-1 -bottom-3 text-black/10 rotate-12 w-10 h-10 md:w-24 md:h-24 hidden md:block" />
+            </button>
+            */}
           </section>
+          )}
 
           {/* 顶部筛选栏 */}
           <section className="bg-white rounded-2xl shadow-sm border border-slate-200 p-6 mb-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-              {/* 左侧：主题/场景筛选 */}
+              {/* 左侧：主题/场景筛选 - 仅学习模式显示 */}
+              {viewMode === 'learning' && (
               <div className="flex items-center gap-3 flex-wrap">
                 {/* 主题选择器 */}
                 <div className="relative">
@@ -982,42 +1041,98 @@ export function BookDetailPageClient({
                   </div>
                 )}
               </div>
+              )}
 
               {/* 右侧：排序与筛选 */}
               <div className="flex items-center gap-3">
-                {/* 全局隐藏中文按钮 */}
-                <GlobalHideButton
-                  bookId={book.id}
-                  onHideChange={setGlobalHideChinese}
-                />
-
-                {/* 随机按钮 */}
-                <button
-                  onClick={() => setSortOrder(sortOrder === 'default' ? 'random' : 'default')}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                    sortOrder === 'random'
-                      ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
-                      : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50'
-                  }`}
-                >
-                  <Shuffle className="w-4 h-4" />
-                  随机
-                </button>
-
-                {/* 筛选按钮 + 下拉菜单 */}
-                <div className="relative">
+                {/* 视图模式切换 - 仅自定义词库显示 */}
+                {!book.is_official && (
                   <button
-                    onClick={() => setShowFilterMenu(!showFilterMenu)}
+                    onClick={() => {
+                      setViewMode(viewMode === 'learning' ? 'editing' : 'learning')
+                      setSelectedWordIds(new Set())
+                    }}
+                    className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 ${
+                      viewMode === 'editing'
+                        ? 'border-purple-400 bg-purple-50 text-purple-700 shadow-sm'
+                        : 'border-slate-200 text-slate-700 hover:border-purple-300 hover:bg-slate-50'
+                    }`}
+                    title={viewMode === 'learning' ? '切换到编辑模式' : '切换到编辑词库'}
+                  >
+                    {viewMode === 'editing' ? (
+                      <>
+                        <Edit3 className="w-4 h-4" />
+                        <span className="hidden sm:inline">恢复学习</span>
+                      </>
+                    ) : (
+                      <>
+                        <Grid3x3 className="w-4 h-4" />
+                        <span className="hidden sm:inline">编辑词库</span>
+                      </>
+                    )}
+                  </button>
+                )}
+
+                {/* 章节管理按钮 - 仅编辑模式下显示 */}
+                {viewMode === 'editing' && !book.is_official && (
+                  <button
+                    onClick={() => setShowChapterManagement(true)}
+                    className="px-4 py-2 text-sm font-semibold text-indigo-600 border-2 border-indigo-200 rounded-xl hover:border-indigo-400 hover:bg-indigo-50 transition-all duration-200 flex items-center gap-2"
+                  >
+                    <List className="w-4 h-4" />
+                    <span className="hidden sm:inline">章节管理</span>
+                  </button>
+                )}
+
+                {/* 智能导入按钮 - 仅编辑模式下显示 */}
+                {viewMode === 'editing' && !book.is_official && (
+                  <button
+                    onClick={() => setShowSmartImport(true)}
+                    className="px-4 py-2 text-sm font-semibold text-purple-600 border-2 border-purple-200 rounded-xl hover:border-purple-400 hover:bg-purple-50 transition-all duration-200 flex items-center gap-2"
+                  >
+                    <Sparkles className="w-4 h-4" />
+                    <span className="hidden sm:inline">智能导入</span>
+                  </button>
+                )}
+
+                {/* 全局隐藏中文按钮 - 仅学习模式显示 */}
+                {viewMode === 'learning' && (
+                  <GlobalHideButton
+                    bookId={book.id}
+                    onHideChange={setGlobalHideChinese}
+                  />
+                )}
+
+                {/* 随机按钮 - 仅学习模式显示 */}
+                {viewMode === 'learning' && (
+                  <button
+                    onClick={() => setSortOrder(sortOrder === 'default' ? 'random' : 'default')}
                     className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                      filters.status !== 'all'
+                      sortOrder === 'random'
                         ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
                         : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50'
                     }`}
                   >
-                    <Filter className="w-4 h-4" />
-                    {getFilterLabel(filters.status)}
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showFilterMenu ? 'rotate-180' : ''}`} />
+                    <Shuffle className="w-4 h-4" />
+                    随机
                   </button>
+                )}
+
+                {/* 筛选按钮 + 下拉菜单 - 仅学习模式显示 */}
+                {viewMode === 'learning' && (
+                  <div className="relative">
+                    <button
+                      onClick={() => setShowFilterMenu(!showFilterMenu)}
+                      className={`flex items-center gap-2 px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                        filters.status !== 'all'
+                          ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
+                          : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50'
+                      }`}
+                    >
+                      <Filter className="w-4 h-4" />
+                      {getFilterLabel(filters.status)}
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${showFilterMenu ? 'rotate-180' : ''}`} />
+                    </button>
 
                   {/* 筛选下拉菜单 */}
                   {showFilterMenu && (
@@ -1076,32 +1191,55 @@ export function BookDetailPageClient({
                       </div>
                     </>
                   )}
-                </div>
+                  </div>
+                )}
               </div>
             </div>
           </section>
 
           {/* 单词列表 */}
           <div className="relative min-h-[400px]">
-            {/* ⚡ UX优化：首次加载或翻页时显示骨架屏（至少显示1200ms） */}
-            {/* 🔥 修复：当isPageChanging为true时，即使skeleton隐藏也要继续显示skeleton，避免旧数据闪现 */}
-            {(isLoading && filters.page === 1) || showSkeleton || isPageChanging ? (
+            {/* 学习模式：卡片视图 */}
+            {viewMode === 'learning' ? (
               <>
-                {console.log('🎨 Rendering skeleton loader, isLoading:', isLoading, 'showSkeleton:', showSkeleton, 'isPageChanging:', isPageChanging, 'skeleton count:', initialVisibleCount)}
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
-                  {[...Array(initialVisibleCount)].map((_, index) => (
-                    <WordCardSkeleton key={`skeleton-${index}`} />
-                  ))}
-                </div>
+                {/* ⚡ UX优化：首次加载或翻页时显示骨架屏（至少显示1200ms） */}
+                {/* 🔥 修复：当isPageChanging为true时，即使skeleton隐藏也要继续显示skeleton，避免旧数据闪现 */}
+                {(isLoading && filters.page === 1) || showSkeleton || isPageChanging ? (
+                  <>
+                    {console.log('🎨 Rendering skeleton loader, isLoading:', isLoading, 'showSkeleton:', showSkeleton, 'isPageChanging:', isPageChanging, 'skeleton count:', initialVisibleCount)}
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-4">
+                      {[...Array(initialVisibleCount)].map((_, index) => (
+                        <WordCardSkeleton key={`skeleton-${index}`} />
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    <WordList
+                      initialWords={displayWords}
+                      bookId={book.id}
+                      globalHideChinese={globalHideChinese}
+                      visibleCount={visibleCount}
+                      onVisibleChange={handleLoadMoreVisible}
+                    />
+                  </>
+                )}
               </>
             ) : (
+              /* 编辑模式：表格视图 */
               <>
-                <WordList
-                  initialWords={displayWords}
+                <WordTableEditor
+                  key={wordTableRefreshKey}
                   bookId={book.id}
-                  globalHideChinese={globalHideChinese}
-                  visibleCount={visibleCount}
-                  onVisibleChange={handleLoadMoreVisible}
+                  chapters={chapters}
+                  onWordUpdated={() => {
+                    // 刷新单词列表
+                    setWordTableRefreshKey(prev => prev + 1)
+                  }}
+                  onWordDeleted={() => {
+                    // 刷新单词列表
+                    setWordTableRefreshKey(prev => prev + 1)
+                  }}
                 />
               </>
             )}
@@ -1168,6 +1306,42 @@ export function BookDetailPageClient({
           status: filters.status
         }}
       />
+
+      {/* 章节管理对话框 */}
+      <ChapterManagementDialog
+        isOpen={showChapterManagement}
+        onClose={() => setShowChapterManagement(false)}
+        bookId={book.id}
+        bookTitle={book.title || '未命名词书'}
+        isOfficial={book.is_official || false}
+      />
+
+      {/* 智能导入对话框 */}
+      <SmartImportDialog
+        isOpen={showSmartImport}
+        onClose={() => setShowSmartImport(false)}
+        bookId={book.id}
+        bookTitle={book.title || '未命名词书'}
+        chapters={chapters}
+        onSuccess={() => {
+          // 刷新 WordTableEditor 以显示新添加的单词
+          setWordTableRefreshKey(prev => prev + 1)
+        }}
+      />
+
+      {/* 批量操作栏 - 仅在学习模式下显示 */}
+      {viewMode === 'learning' && selectedWordIds.size > 0 && (
+        <BatchActionBar
+          selectedCount={selectedWordIds.size}
+          onClear={() => setSelectedWordIds(new Set())}
+          bookId={book.id}
+          chapters={chapters}
+          onSuccess={() => {
+            // 刷新页面
+            router.refresh()
+          }}
+        />
+      )}
 
       {/* 回到顶部按钮 */}
       {showScrollTop && (

@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { ArrowRight } from 'lucide-react'
-import type { Book, CoverType } from '@/components/FilterableBookGrid'
+import type { Book } from '@/types/book'
+import type { CoverType } from '@/components/FilterableBookGrid'
 
 export function BookCard({ book, index }: { book: Book; index: number }) {
   const router = useRouter()

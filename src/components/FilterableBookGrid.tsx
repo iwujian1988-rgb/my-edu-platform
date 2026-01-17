@@ -3,21 +3,12 @@
 import React, { useState, useMemo } from 'react'
 import { BookCard } from '@/components/BookCard'
 import { Search, Flame, BookOpen, Trophy, Zap, Globe } from 'lucide-react'
+import type { Book } from '@/types/book'
 
+// 重新导出类型以保持兼容性
+export type { Book } from '@/types/book'
 export type BookCategory = 'all' | 'hot' | 'domestic' | 'international' | 'k12' | 'university'
 export type CoverType = 'cn' | 'global' | 'k12' | 'uni'
-
-interface Book {
-  id: string
-  title: string
-  description: string
-  total_words: number
-  cover_color: string
-  cover_url: string | null
-  isRecent?: boolean
-  category?: BookCategory
-  coverType?: CoverType
-}
 
 interface FilterableBookGridProps {
   books: Book[]
