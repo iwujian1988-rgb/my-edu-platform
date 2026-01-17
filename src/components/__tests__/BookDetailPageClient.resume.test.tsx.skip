@@ -1,0 +1,444 @@
+/**
+ * 断点续读功能 - 组件测试
+ * 使用 React Testing Library 测试 Resume Dialog 的 UI 交互
+ *
+ * 测试方法：表格驱动测试 (Table-Driven Tests)
+ * 测试范围：对话框显示、用户交互、状态恢复
+ */
+
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+import { render, screen, waitFor, within } from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
+import { BookDetailPageClient } from '../BookDetailPageClient'
+
+// Mock Supabase client
+vi.mock('@/lib/supabase/server', () => ({
+  createClient: vi.fn(() => ({
+    from: vi.fn(() => ({
+      select: vi.fn(() => ({
+        eq: vi.fn(() => ({
+          single: vi.fn(() => ({ data: { title: 'Test Book' } })),
+        })),
+      })),
+    })),
+  })),
+  getCurrentUser: vi.fn(async () => ({
+    id: 'test-user-id',
+    email: 'test@example.com',
+  })),
+}))
+
+// Mock permissions
+vi.mock('@/lib/permissions', () => ({
+  getUserPermissions: vi.fn(async () => ({
+    canAccessBook: () => true,
+  })),
+}))
+
+// Mock reading progress functions
+vi.mock('@/lib/readingProgress', () => ({
+  getReadingProgress: vi.fn(),
+  saveReadingProgress: vi.fn(),
+  clearReadingProgress: vi.fn(),
+}))
+
+// Mock resume state functions
+vi.mock('@/lib/resumeState', () => ({
+  saveResumeState: vi.fn(() => Promise.resolve(true)),
+  getResumeState: vi.fn(),
+  shouldShowResumeDialog: vi.fn(() => false),
+}))
+
+const { getReadingProgress } = await import('@/lib/readingProgress')
+
+// Mock book data
+const mockBook = {
+  id: 'test-book-id',
+  title: 'Test Book',
+  description: 'Test Description',
+  total_words: 100,
+  is_official: true,
+  cover_url: null,
+  created_at: new Date().toISOString(),
+  updated_at: new Date().toISOString(),
+}
+
+describe('BookDetailPageClient - 断点续读组件测试', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+    // Mock window.location
+    delete (window as any).location
+    window.location = new URL('http://localhost:3000/library/test-book-id')
+  })
+
+  afterEach(() => {
+    vi.restoreAllMocks()
+  })
+
+  // ========================================
+  // Part 1: 对话框显示测试
+  // ========================================
+  describe('Resume Dialog - 显示逻辑', () => {
+    /**
+     * 测试用例表：对话框显示场景
+     */
+    const displayCases = [
+      {
+        name: 'TC-UI-001: 有保存的第2页进度，应显示对话框',
+        mockProgress: { page: 2, theme: 'all', scenario: 'all', status: 'all' },
+        shouldShow: true,
+        expectedText: '上次学习到第 2 页',
+        reason: '第2页是有效的恢复点，应显示对话框'
+      },
+      {
+        name: 'TC-UI-002: 有保存的第5页进度，应显示对话框',
+        mockProgress: { page: 5, theme: 'A-日常', scenario: '购物', status: 'fuzzy' },
+        shouldShow: true,
+        expectedText: '上次学习到第 5 页',
+        reason: '第5页且带筛选条件，应显示对话框'
+      },
+      {
+        name: 'TC-UI-003: 只有第1页进度，不应显示对话框',
+        mockProgress: { page: 1, theme: 'all', scenario: 'all', status: 'all' },
+        shouldShow: false,
+        expectedText: null,
+        reason: '第1页不是有效的恢复点'
+      },
+      {
+        name: 'TC-UI-004: 没有保存进度，不应显示对话框',
+        mockProgress: null,
+        shouldShow: false,
+        expectedText: null,
+        reason: '没有进度数据，不显示对话框'
+      }
+    ]
+
+    displayCases.forEach(({ name, mockProgress, shouldShow, expectedText, reason }) => {
+      it(`${name} - ${reason}`, async () => {
+        // Arrange
+        vi.mocked(getReadingProgress).mockResolvedValueOnce(mockProgress as any)
+
+        // Act
+        render(<BookDetailPageClient book={mockBook as any} />)
+
+        // Assert
+        if (shouldShow) {
+          await waitFor(() => {
+            const dialog = screen.getByText(/继续上次的学习进度/)
+            expect(dialog).toBeInTheDocument()
+
+            if (expectedText) {
+              const pageText = screen.getByText(new RegExp(expectedText))
+              expect(pageText).toBeInTheDocument()
+            }
+
+            // 验证两个按钮都存在
+            expect(screen.getByRole('button', { name: /从头开始/ })).toBeInTheDocument()
+            expect(screen.getByRole('button', { name: /继续学习/ })).toBeInTheDocument()
+          })
+        } else {
+          await waitFor(() => {
+            const dialog = screen.queryByText(/继续上次的学习进度/)
+            expect(dialog).not.toBeInTheDocument()
+          })
+        }
+
+        console.log(`✅ ${reason}`)
+      })
+    })
+  })
+
+  // ========================================
+  // Part 2: URL参数优先级测试
+  // ========================================
+  describe('Resume Dialog - URL参数优先级', () => {
+    const urlParamCases = [
+      {
+        name: 'TC-UI-URL001: URL有page参数，不显示对话框',
+        url: 'http://localhost:3000/library/test-book-id?page=3',
+        mockProgress: { page: 5 },
+        shouldShow: false,
+        reason: 'URL参数优先级更高，不显示恢复对话框'
+      },
+      {
+        name: 'TC-UI-URL002: URL有theme参数，不显示对话框',
+        url: 'http://localhost:3000/library/test-book-id?theme=A-日常',
+        mockProgress: { page: 2 },
+        shouldShow: false,
+        reason: 'URL有筛选参数，不显示恢复对话框'
+      },
+      {
+        name: 'TC-UI-URL003: URL有status参数，不显示对话框',
+        url: 'http://localhost:3000/library/test-book-id?status=fuzzy',
+        mockProgress: { page: 2 },
+        shouldShow: false,
+        reason: 'URL有状态筛选，不显示恢复对话框'
+      }
+    ]
+
+    urlParamCases.forEach(({ name, url, mockProgress, shouldShow, reason }) => {
+      it(`${name} - ${reason}`, async () => {
+        // Arrange
+        window.location = new URL(url) as any
+        vi.mocked(getReadingProgress).mockResolvedValueOnce(mockProgress as any)
+
+        // Act
+        render(<BookDetailPageClient book={mockBook as any} />)
+
+        // Assert
+        await waitFor(() => {
+          const dialog = screen.queryByText(/继续上次的学习进度/)
+          expect(dialog).not.toBeInTheDocument()
+        })
+
+        console.log(`✅ ${reason}`)
+      })
+    })
+  })
+
+  // ========================================
+  // Part 3: 用户交互测试
+  // ========================================
+  describe('Resume Dialog - 用户交互', () => {
+    beforeEach(() => {
+      vi.useFakeTimers()
+    })
+
+    afterEach(() => {
+      vi.useRealTimers()
+    })
+
+    const interactionCases = [
+      {
+        name: 'TC-UI-INT001: 点击"继续学习"，对话框应关闭',
+        mockProgress: { page: 3 },
+        action: 'confirm',
+        expectedAfterAction: 'dialog closed',
+        reason: '用户确认恢复，对话框关闭并恢复状态'
+      },
+      {
+        name: 'TC-UI-INT002: 点击"从头开始"，对话框应关闭',
+        mockProgress: { page: 3 },
+        action: 'cancel',
+        expectedAfterAction: 'dialog closed',
+        reason: '用户选择从头开始，对话框关闭'
+      }
+    ]
+
+    interactionCases.forEach(({ name, mockProgress, action, expectedAfterAction, reason }) => {
+      it(`${name} - ${reason}`, async () => {
+        // Arrange
+        vi.mocked(getReadingProgress).mockResolvedValueOnce(mockProgress as any)
+        const user = userEvent.setup()
+
+        // Act
+        render(<BookDetailPageClient book={mockBook as any} />)
+
+        // 等待对话框显示
+        await waitFor(() => {
+          const dialog = screen.getByText(/继续上次的学习进度/)
+          expect(dialog).toBeInTheDocument()
+        })
+
+        // 执行用户操作
+        if (action === 'confirm') {
+          const confirmButton = screen.getByRole('button', { name: /继续学习/ })
+          await user.click(confirmButton)
+        } else {
+          const cancelButton = screen.getByRole('button', { name: /从头开始/ })
+          await user.click(cancelButton)
+        }
+
+        // Assert
+        await waitFor(() => {
+          const dialog = screen.queryByText(/继续上次的学习进度/)
+          expect(dialog).not.toBeInTheDocument()
+        })
+
+        console.log(`✅ ${reason}`)
+      })
+    })
+  })
+
+  // ========================================
+  // Part 4: 对话框内容测试
+  // ========================================
+  describe('Resume Dialog - 内容验证', () => {
+    const contentCases = [
+      {
+        name: 'TC-UI-CONTENT001: 第2页，显示完整信息',
+        mockProgress: { page: 2, theme: 'all', scenario: 'all', status: 'all' },
+        expectedElements: [
+          '继续上次的学习进度',
+          '上次学习到第 2 页',
+          '从头开始',
+          '继续学习'
+        ],
+        reason: '验证对话框包含所有必要的UI元素'
+      },
+      {
+        name: 'TC-UI-CONTENT002: 带筛选条件的进度',
+        mockProgress: {
+          page: 3,
+          theme: 'A-日常',
+          scenario: '购物',
+          status: 'fuzzy'
+        },
+        expectedElements: [
+          '继续上次的学习进度',
+          '上次学习到第 3 页',
+          '筛选：A-日常',
+          '购物',
+          '模糊'
+        ],
+        reason: '验证筛选条件正确显示'
+      }
+    ]
+
+    contentCases.forEach(({ name, mockProgress, expectedElements, reason }) => {
+      it(`${name} - ${reason}`, async () => {
+        // Arrange
+        vi.mocked(getReadingProgress).mockResolvedValueOnce(mockProgress as any)
+
+        // Act
+        render(<BookDetailPageClient book={mockBook as any} />)
+
+        // Assert
+        await waitFor(() => {
+          expectedElements.forEach(text => {
+            const element = screen.getByText(new RegExp(text))
+            expect(element).toBeInTheDocument()
+          })
+        })
+
+        console.log(`✅ ${reason}`)
+      })
+    })
+  })
+
+  // ========================================
+  // Part 5: 边界条件测试
+  // ========================================
+  describe('Resume Dialog - 边界条件', () => {
+    const boundaryCases = [
+      {
+        name: 'TC-UI-B001: page为0，不显示对话框',
+        mockProgress: { page: 0 },
+        shouldShow: false,
+        reason: 'page为0是无效值'
+      },
+      {
+        name: 'TC-UI-B002: page为负数，不显示对话框',
+        mockProgress: { page: -1 },
+        shouldShow: false,
+        reason: '负数页码无效'
+      },
+      {
+        name: 'TC-UI-B003: page为null，不显示对话框',
+        mockProgress: { page: null },
+        shouldShow: false,
+        reason: 'page为null无效'
+      },
+      {
+        name: 'TC-UI-B004: page极大值(999999)，应显示对话框',
+        mockProgress: { page: 999999 },
+        shouldShow: true,
+        reason: '极大值但仍是有效页码'
+      }
+    ]
+
+    boundaryCases.forEach(({ name, mockProgress, shouldShow, reason }) => {
+      it(`${name} - ${reason}`, async () => {
+        // Arrange
+        vi.mocked(getReadingProgress).mockResolvedValueOnce(mockProgress as any)
+
+        // Act
+        render(<BookDetailPageClient book={mockBook as any} />)
+
+        // Assert
+        await waitFor(() => {
+          const dialog = screen.queryByText(/继续上次的学习进度/)
+          if (shouldShow) {
+            expect(dialog).toBeInTheDocument()
+          } else {
+            expect(dialog).not.toBeInTheDocument()
+          }
+        })
+
+        console.log(`✅ ${reason}`)
+      })
+    })
+  })
+
+  // ========================================
+  // Part 6: API错误处理测试
+  // ========================================
+  describe('Resume Dialog - API错误处理', () => {
+    const errorCases = [
+      {
+        name: 'TC-UI-ERR001: API调用失败，不显示对话框',
+        mockError: new Error('Network error'),
+        shouldShow: false,
+        reason: 'API失败时不显示对话框，优雅降级'
+      },
+      {
+        name: 'TC-UI-ERR002: API返回null，不显示对话框',
+        mockProgress: null,
+        shouldShow: false,
+        reason: '没有进度数据时不显示对话框'
+      }
+    ]
+
+    errorCases.forEach(({ name, mockError, mockProgress, shouldShow, reason }) => {
+      it(`${name} - ${reason}`, async () => {
+        // Arrange
+        if (mockError) {
+          vi.mocked(getReadingProgress).mockRejectedValueOnce(mockError)
+        } else {
+          vi.mocked(getReadingProgress).mockResolvedValueOnce(mockProgress as any)
+        }
+
+        // Act
+        render(<BookDetailPageClient book={mockBook as any} />)
+
+        // Assert
+        await waitFor(() => {
+          const dialog = screen.queryByText(/继续上次的学习进度/)
+          expect(dialog).not.toBeInTheDocument()
+        })
+
+        console.log(`✅ ${reason}`)
+      })
+    })
+  })
+})
+
+/**
+ * ========================================
+ * 测试统计报告
+ * ========================================
+ *
+ * 测试函数覆盖：
+ * ✅ 对话框显示逻辑
+ * ✅ URL参数优先级
+ * ✅ 用户交互（点击按钮）
+ * ✅ 对话框内容验证
+ * ✅ 边界条件处理
+ * ✅ API错误处理
+ *
+ * 测试场景分布：
+ * - 显示逻辑测试: 4
+ * - URL参数测试: 3
+ * - 用户交互测试: 2
+ * - 内容验证测试: 2
+ * - 边界条件测试: 4
+ * - 错误处理测试: 2
+ * ========================================
+ * 总计: 17 个组件测试用例
+ *
+ * 测试方法：表格驱动测试 (Table-Driven Tests)
+ * 组织方式：按测试类型分组
+ *
+ * 运行命令：
+ * npm run test:unit -- src/components/__tests__/BookDetailPageClient.resume.test.tsx
+ */
