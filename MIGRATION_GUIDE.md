@@ -360,3 +360,181 @@ Migration 执行完成后，你将拥有：
 **文档状态**: ✅ 已完成
 **创建人**: Claude
 **更新日期**: 2026-01-06
+
+---
+
+## 🆕 打字练习（肌肉训练）功能迁移
+
+**文件**: `supabase/migrations/20260116005439_add_typing_practice_support.sql`
+
+**创建日期**: 2026-01-16
+**版本**: v1.0.0
+
+### 功能说明
+
+添加打字练习（肌肉训练）功能的数据库支持，包括：
+
+1. 扩展 `learning_records.practice_mode` 支持 `typing` 模式
+2. `word_progress` 表新增拼写统计字段
+3. `mistakes` 表新增拼写错误统计字段
+4. 添加性能优化索引
+
+### 执行步骤
+
+**方式 1: 通过 Supabase Dashboard（推荐）⭐**
+
+1. 登录 Supabase Dashboard
+2. 进入 **SQL Editor**
+3. 点击 "New Query"
+4. 复制 `supabase/migrations/20260116005439_add_typing_practice_support.sql` 全部内容
+5. 粘贴到编辑器
+6. 点击 "Run" 执行
+
+**方式 2: 通过 Supabase CLI**
+
+```bash
+cd D:\claude_work\yingyu\my-edu-platform
+supabase link
+supabase db push
+```
+
+**方式 3: 通过 psql**
+
+```bash
+psql "postgresql://postgres:[password]@db.[project-ref].supabase.co:5432/postgres" \
+  -f supabase/migrations/20260116005439_add_typing_practice_support.sql
+```
+
+### 验证迁移成功
+
+```sql
+-- 验证 learning_records 表
+SELECT column_name, data_type, is_nullable, column_default
+FROM information_schema.columns
+WHERE table_name = 'learning_records' AND column_name = 'practice_mode';
+
+-- 预期结果：data_type = text
+
+-- 验证 word_progress 表
+SELECT column_name, data_type, is_nullable, column_default
+FROM information_schema.columns
+WHERE table_name = 'word_progress'
+  AND column_name IN ('typing_correct_count', 'typing_total_attempts', 'version')
+ORDER BY column_name;
+
+-- 预期结果：3行，包含新增字段
+
+-- 验证 mistakes 表
+SELECT column_name, data_type, is_nullable, column_default
+FROM information_schema.columns
+WHERE table_name = 'mistakes' AND column_name = 'typing_wrong_count';
+
+-- 预期结果：1行，typing_wrong_count 字段
+
+-- 验证索引
+SELECT indexname, tablename
+FROM pg_indexes
+WHERE indexname LIKE '%typing%'
+ORDER BY indexname;
+
+-- 预期结果：3个索引
+-- idx_learning_records_typing_mode
+-- idx_mistakes_typing_wrong_count
+-- idx_mistakes_user_resolved
+```
+
+### 迁移内容详解
+
+#### 1. 扩展 `learning_records.practice_mode` 字段
+
+**变更前**: TEXT，约束 `('dictation', 'match_game', 'flashcard', NULL)`
+**变更后**: TEXT，约束 `('dictation', 'match_game', 'flashcard', 'typing', NULL)`
+
+**影响**: 历史数据不受影响，向后兼容
+
+#### 2. 新增 `word_progress` 字段
+
+| 字段名 | 类型 | 默认值 | 说明 | 约束 |
+|-------|------|--------|------|------|
+| `typing_correct_count` | INTEGER | 0 | 打字练习正确次数 | ≥ 0 |
+| `typing_total_attempts` | INTEGER | 0 | 打字练习总尝试次数 | ≥ 0, ≤ 10000, ≥ correct_count |
+| `version` | INTEGER | 1 | 乐观锁版本号 | - |
+
+#### 3. 新增 `mistakes` 字段
+
+| 字段名 | 类型 | 默认值 | 说明 | 约束 |
+|-------|------|--------|------|------|
+| `typing_wrong_count` | INTEGER | 0 | 打字练习拼写错误次数 | ≥ 0, ≤ 1000 |
+
+#### 4. 新增索引
+
+| 索引名 | 表名 | 字段 | 用途 |
+|-------|------|------|------|
+| `idx_learning_records_typing_mode` | learning_records | (user_id, book_id, practice_mode) WHERE practice_mode = 'typing' | 优化打字练习记录查询 |
+| `idx_mistakes_typing_wrong_count` | mistakes | (user_id, book_id, typing_wrong_count) WHERE typing_wrong_count > 0 | 优化拼写错题查询 |
+| `idx_mistakes_user_resolved` | mistakes | (user_id, book_id, is_resolved) | 优化已解决/未解决错题查询 |
+
+### 回滚方案
+
+如果迁移失败，执行以下 SQL 回滚：
+
+```sql
+-- 回滚步骤 1：删除新字段
+ALTER TABLE word_progress DROP COLUMN IF EXISTS typing_correct_count;
+ALTER TABLE word_progress DROP COLUMN IF EXISTS typing_total_attempts;
+ALTER TABLE mistakes DROP COLUMN IF EXISTS typing_wrong_count;
+
+-- 回滚步骤 2：恢复枚举约束
+ALTER TABLE learning_records DROP CONSTRAINT IF EXISTS learning_records_practice_mode_check;
+ALTER TABLE learning_records ADD CONSTRAINT learning_records_practice_mode_check
+CHECK (practice_mode IN ('dictation', 'match_game', 'flashcard', NULL));
+
+-- 回滚步骤 3：删除索引
+DROP INDEX IF EXISTS idx_learning_records_typing_mode;
+DROP INDEX IF EXISTS idx_mistakes_typing_wrong_count;
+DROP INDEX IF EXISTS idx_mistakes_user_resolved;
+
+-- 回滚步骤 4：删除 version 字段（可选）
+ALTER TABLE word_progress DROP COLUMN IF EXISTS version;
+```
+
+### 常见问题
+
+**Q1: 迁移失败，提示 "constraint already exists"**
+
+```sql
+-- 先删除旧约束
+DROP CONSTRAINT IF EXISTS learning_records_practice_mode_check;
+-- 然后重新执行迁移
+```
+
+**Q2: 迁移失败，提示 "column already exists"**
+
+```sql
+-- 检查是否已手动添加过字段
+\d word_progress
+\d mistakes
+
+-- 如果已存在，先删除字段再执行迁移
+ALTER TABLE word_progress DROP COLUMN IF EXISTS typing_correct_count;
+ALTER TABLE word_progress DROP COLUMN IF EXISTS typing_total_attempts;
+ALTER TABLE mistakes DROP COLUMN IF EXISTS typing_wrong_count;
+```
+
+**Q3: 迁移成功但应用报错**
+
+检查应用代码是否已更新以支持新字段。参考技术文档 `typejishu.md` 中的接口定义。
+
+---
+
+## ✅ 打字练习迁移完成检查清单
+
+- [ ] `learning_records.practice_mode` 支持 'typing'
+- [ ] `word_progress` 有 3 个新字段
+- [ ] `mistakes` 有 `typing_wrong_count` 字段
+- [ ] 3 个索引已创建
+- [ ] 历史数据未受影响
+- [ ] 应用程序可以正常连接数据库
+- [ ] 开始开发打字练习功能！
+
+**下一步**: 开始开发后端 API 接口！
