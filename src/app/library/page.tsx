@@ -7,8 +7,9 @@ import { getUserPermissions } from '@/lib/permissions'
 export default async function LibraryPage() {
   const user = await getCurrentUser()
 
+  // Middleware 会处理未登录用户的重定向，这里确保有用户
   if (!user) {
-    redirect('/login')
+    return null
   }
 
   const supabase = await createClient()
@@ -47,7 +48,11 @@ export default async function LibraryPage() {
       // 根据权限过滤
       books = booksData
         .filter((book: any) => {
-          return hasAllBooks || userBookIds.includes(book.id)
+          // 显示条件：
+          // 1. 用户有全部权限
+          // 2. 用户有该书的权限
+          // 3. 用户自己创建的自定义词本（created_by === user.id）
+          return hasAllBooks || userBookIds.includes(book.id) || book.created_by === user.id
         })
         .map((book: any) => ({
           id: book.id,

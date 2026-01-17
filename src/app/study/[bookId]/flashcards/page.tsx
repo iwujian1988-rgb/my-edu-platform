@@ -10,6 +10,7 @@ import { PermissionGate } from '@/components/PermissionDisplay'
 import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
 import { FlashcardStatsBar } from '@/components/FlashcardStatsBar'
 import { FlashcardScopeDialog } from '@/components/FlashcardScopeDialog'
+import { validateScope, validateHashIndex } from '@/lib/urlValidation'
 
 type Word = {
   id: string
@@ -36,19 +37,37 @@ export default function FlashcardsPage() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const bookId = params.bookId as string
+
+  // ⭐ 智能跳转逻辑：检测 resume 参数
+  const isFromHomepageResume = searchParams.get('resume') === 'true'
+
   // 新的scope参数: all | unknown | fuzzy | known | new
-  const scope = searchParams.get('scope') || 'unknown'
+  // 如果从首页进入，使用 URL 参数中的 scope；否则使用默认值 'unknown'
+  const scopeParam = searchParams.get('scope')
+  const scope = isFromHomepageResume ? validateScope(scopeParam) : (searchParams.get('scope') || 'unknown')
   const shuffle = searchParams.get('shuffle') === 'true'
+
+  // ⭐ Hash 定位：从 URL hash 中获取索引（如 #word-10）
+  const initialHashIndex = isFromHomepageResume ? validateHashIndex(window.location.hash) : undefined
 
   const [words, setWords] = useState<Word[]>([])
   const [wordProgress, setWordProgress] = useState<Record<string, WordProgress>>({})
-  const [currentIndex, setCurrentIndex] = useState(0)
+  // ⭐ 如果从首页进入且有 hash 索引，使用 hash 索引作为初始位置（但不超过已加载的单词数）
+  const [currentIndex, setCurrentIndex] = useState(() => {
+    if (initialHashIndex !== undefined && initialHashIndex > 0) {
+      // 注意：words 初始为空，这里只是设置初始值
+      // 实际的有效值会在 hash 定位 useEffect 中修正
+      return initialHashIndex
+    }
+    return 0
+  })
   const [isFlipped, setIsFlipped] = useState(false)
   const [loading, setLoading] = useState(true)
   const [bookTitle, setBookTitle] = useState('')
   const [currentScope, setCurrentScope] = useState(scope)
   const [showCompleteDialog, setShowCompleteDialog] = useState(false)
-  const [showScopeSelectDialog, setShowScopeSelectDialog] = useState(false)
+  // ⭐ 从首页进入时不显示对话框，从书架进入时显示对话框
+  const [showScopeSelectDialog, setShowScopeSelectDialog] = useState(!isFromHomepageResume)
   const [loadingMore, setLoadingMore] = useState(false)
   const [hasMore, setHasMore] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
@@ -252,7 +271,7 @@ export default function FlashcardsPage() {
   // 保存 loadMoreWords 到 ref，供 handleNextWord 使用
   loadMoreWordsRef.current = loadMoreWords
 
-  // ⭐ 页面卸载时保存当前卡片位置
+  // ⭐ 页面卸载时保存当前卡片位置并清理所有 timer
   useEffect(() => {
     const handleBeforeUnload = () => {
       saveResumeState(bookId, 'flashcards', {
@@ -262,11 +281,67 @@ export default function FlashcardsPage() {
     }
 
     window.addEventListener('beforeunload', handleBeforeUnload)
-    return () => window.removeEventListener('beforeunload', handleBeforeUnload)
+
+    return () => {
+      window.removeEventListener('beforeunload', handleBeforeUnload)
+
+      // 清理所有 timer
+      if (saveTimerRef.current) {
+        clearTimeout(saveTimerRef.current)
+        saveTimerRef.current = null
+      }
+      if (nextWordTimerRef.current) {
+        clearTimeout(nextWordTimerRef.current)
+        nextWordTimerRef.current = null
+      }
+    }
   }, [bookId, currentIndex, words.length])
+
+  // ⭐ Hash 定位逻辑：从首页进入时，自动滚动到指定位置（只执行一次）
+  useEffect(() => {
+    if (isFromHomepageResume && initialHashIndex !== undefined && !loading && words.length > 0) {
+      console.log('[Flashcards] Hash positioning: scrolling to word', initialHashIndex + 1)
+
+      // 确保 hash 索引在有效范围内
+      const validIndex = Math.min(initialHashIndex, words.length - 1)
+
+      // 如果当前索引与有效索引不匹配，调整到有效位置
+      if (currentIndex !== validIndex) {
+        console.log(`[Flashcards] Adjusting index from ${currentIndex} to ${validIndex} (words.length: ${words.length})`)
+        setCurrentIndex(validIndex)
+      }
+
+      // 使用 scrollIntoView 定位到当前卡片（如果有 id）
+      // 由于使用的是 hash 定位，浏览器会自动处理滚动
+      // 这里我们确保组件已经渲染完成
+      const timer = setTimeout(() => {
+        const element = document.getElementById(`word-${validIndex}`)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          console.log('[Flashcards] Scrolled to word element:', validIndex + 1)
+        }
+      }, 100)
+
+      return () => clearTimeout(timer)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isFromHomepageResume, initialHashIndex, loading, words.length]) // 移除 currentIndex 依赖，避免无限循环
 
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
+
+  // 安全检查：如果 currentWord 不存在，显示加载或错误
+  if (!currentWord && !loading) {
+    console.error('[Flashcards] currentWord is undefined!', { currentIndex, wordsLength: words.length, initialHashIndex })
+    return (
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
+        <div className="text-center">
+          <p className="text-lg font-bold text-gray-900 mb-2">加载中...</p>
+          <p className="text-sm text-gray-600">正在准备单词卡片</p>
+        </div>
+      </div>
+    )
+  }
 
   // Text-to-speech (使用新的TTS工具)
   const speak = useCallback(async (text: string) => {

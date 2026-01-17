@@ -1,23 +1,40 @@
+// src/app/study/[bookId]/dictation/page.tsx
+// 对应方案：Neo-Brutalism 设计稿 1:1 还原
+
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
-import { ArrowLeft, Volume2, SkipBack, Pause, Play, RotateCcw, Settings, X, Trash2 } from 'lucide-react'
+import {
+  ArrowLeft,
+  X,
+  Eye,
+  EyeOff,
+  PlusSquare,
+  ChevronDown,
+  SkipBack,
+  SkipForward,
+  Play,
+  Pause,
+  CornerDownLeft,
+  Volume2
+} from 'lucide-react'
 import Link from 'next/link'
-import { speak as speakText, initializeTTS, pauseSpeaking, resumeSpeaking } from '@/lib/speech'
-import { saveResumeState } from '@/lib/resumeState'
+import { speak as speakText, pauseSpeaking } from '@/lib/speech'
 import { PermissionGate } from '@/components/PermissionDisplay'
 import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
+import { validateScope, validateHashIndex } from '@/lib/urlValidation'
 
-// 辅助函数：Fisher-Yates 洗牌算法
-function shuffleArray<T>(array: T[]): T[] {
-  const shuffled = [...array]
-  for (let i = shuffled.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
-  }
-  return shuffled
-}
+// Hooks
+import { useDictationStats } from '@/hooks/useDictationStats'
+import { useDictationProgress } from '@/hooks/useDictationProgress'
+import { useDictationWords } from '@/hooks/useDictationWords'
+import { useDictationPageState } from '@/hooks/useDictationPageState'
+import { useDictationProgressService } from '@/hooks/useProgressService'
+import { useResumeState } from '@/hooks/useResumeState'
+import { DictationScopeDialog } from '@/components/DictationScopeDialog'
+import { DictationCompleteDialog } from '@/components/DictationCompleteDialog'
+import { DictationScopeType, DICTATION_SCOPE_LABELS } from '@/types/dictation'
 
 type Word = {
   id: string
@@ -34,1055 +51,815 @@ type Word = {
   part_of_speech: string
 }
 
-type WordProgress = {
-  word_id: string
-  status: 'new' | 'known' | 'fuzzy' | 'unknown'
-}
-
+/**
+ * 听写主页面（Neo-Brutalism 设计稿 1:1 还原）
+ */
 export default function DictationPage() {
   const params = useParams()
   const router = useRouter()
   const searchParams = useSearchParams()
   const bookId = params.bookId as string
-  const scope = searchParams.get('scope') || 'filtered'
 
-  const [words, setWords] = useState<Word[]>([])
-  const [wordProgress, setWordProgress] = useState<Record<string, WordProgress>>({})
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [loading, setLoading] = useState(true)
-  const [bookTitle, setBookTitle] = useState('')
-  const [scopeLabel, setScopeLabel] = useState('')
+  // ⭐ 智能跳转逻辑：检测 resume 参数
+  const isFromHomepageResume = searchParams.get('resume') === 'true'
 
-  // 听写相关状态
+  // 状态管理
+  const [isPlaying, setIsPlaying] = useState(false)
+  const [hideChinese, setHideChinese] = useState(false)
+  const [autoAddToMistakes, setAutoAddToMistakes] = useState(true)
+  // ⭐ 从首页进入时不显示对话框，从书架进入时显示对话框
+  const [showScopeDialog, setShowScopeDialog] = useState(!isFromHomepageResume)
+  const [showCompleteDialog, setShowCompleteDialog] = useState(false)
+
+  // ⭐ Hash 定位：从 URL hash 中获取索引（如 #word-10）
+  const initialHashIndex = isFromHomepageResume ? validateHashIndex(window.location.hash) : undefined
+  const [currentIndex, setCurrentIndex] = useState(initialHashIndex !== undefined ? initialHashIndex : 0)
+
   const [userInput, setUserInput] = useState('')
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
-  const [countdown, setCountdown] = useState(0)
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [isPaused, setIsPaused] = useState(false)
-  const [showDefinition, setShowDefinition] = useState(true) // 默认显示中文释义
-  const [definitionPreferenceLoaded, setDefinitionPreferenceLoaded] = useState(false)
-  const [hasPlayedOnce, setHasPlayedOnce] = useState(false) // 追踪是否已经播放过一次
 
-  // 手写相关状态 - 隐形手写层
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-  const isDrawingRef = useRef(false)
-  const lastPosRef = useRef({ x: 0, y: 0 })
+  // ⭐ 如果从首页进入，使用 URL 参数中的 scope；否则使用默认值 'all'
+  const scopeParam = searchParams.get('scope')
+  const [scopeType, setScopeType] = useState<DictationScopeType>(
+    isFromHomepageResume ? (validateScope(scopeParam) as DictationScopeType) : 'all'
+  )
+  const [hasSelectedScope, setHasSelectedScope] = useState(isFromHomepageResume) // ⭐ 从首页进入时标记为已选择
 
-  // 用户设置
-  const [shuffleOrder, setShuffleOrder] = useState(false)
-  const [autoRemoveFromMistakes, setAutoRemoveFromMistakes] = useState(false)
-  const [consecutiveCorrectThreshold, setConsecutiveCorrectThreshold] = useState(3)
-  const [showSettings, setShowSettings] = useState(false) // 设置面板显示状态
-  const [settingsLoaded, setSettingsLoaded] = useState(false)
+  // Hooks
+  const { stats, loading: statsLoading, getScopeOptions } = useDictationStats(bookId)
+  // ⚡️ 关键修改：初始不加载单词，等用户选择范围后再加载
+  const { words, loading: wordsLoading } = useDictationWords(bookId, scopeType, false)
 
+  // 使用新的进度服务（支持断点续做）
+  const { saveProgress: saveNewProgress, markWord } = useDictationProgressService(bookId)
+  const { resumeState: recentProgress, loading: resumeLoading } = useResumeState(bookId)
+
+  // 旧的进度hook（用于恢复状态，但不保存）
+  const { progress } = useDictationProgress(bookId, scopeType, words.length)
+  const { pageState, canOperate, executeOperation } = useDictationPageState()
+
+  /**
+   * 保存进度的包装函数，兼容旧接口
+   */
+  const saveProgress = useCallback(async (currentIndex: number) => {
+    console.log('[Dictation Page] saveProgress called:', { scopeType, currentIndex, totalWords: words.length })
+    // 使用新的进度服务，保存完整的断点续做数据
+    await saveNewProgress(scopeType, currentIndex, words.length, words[currentIndex] ? {
+      id: words[currentIndex].id,
+      word: words[currentIndex].word
+    } : undefined)
+  }, [scopeType, words, saveNewProgress])
+
+  // Refs
   const inputRef = useRef<HTMLInputElement>(null)
-  const speechTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  // 隐形手写层初始化 - 全屏 Canvas + 智能手写笔检测
+  // ⭐ Hash 定位逻辑：从首页进入时，自动跳转到指定位置
   useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
+    if (isFromHomepageResume && initialHashIndex !== undefined && !wordsLoading && words.length > 0) {
+      console.log('[Dictation] Hash positioning: jumping to word', initialHashIndex + 1)
 
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    // 1. 设置 Canvas 为全屏尺寸
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-
-      // 重置 context 样式
-      ctx.lineCap = 'round'
-      ctx.lineJoin = 'round'
-      ctx.lineWidth = 3
-      ctx.strokeStyle = '#2563EB' // 蓝色墨水
-    }
-
-    window.addEventListener('resize', resizeCanvas)
-    resizeCanvas() // 初始化
-
-    // 2. 全局事件监听 - 智能区分手指和手写笔
-    const handlePointerDown = (e: PointerEvent) => {
-      // 只激活手写笔 (pen)
-      if (e.pointerType === 'pen') {
-        e.preventDefault() // 阻止滚动和点击
-        isDrawingRef.current = true
-        lastPosRef.current = { x: e.clientX, y: e.clientY }
+      // 如果当前索引与 hash 不匹配，调整到 hash 位置
+      if (currentIndex !== initialHashIndex) {
+        setCurrentIndex(initialHashIndex)
       }
-      // 如果是 touch 或 mouse，不做任何事，让事件穿透到 UI 元素
+
+      // 使用 scrollIntoView 定位到当前题目
+      const timer = setTimeout(() => {
+        const element = document.getElementById(`word-${initialHashIndex}`)
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+          console.log('[Dictation] Scrolled to word element:', initialHashIndex + 1)
+        }
+      }, 100)
+
+      return () => clearTimeout(timer)
     }
+  }, [isFromHomepageResume, initialHashIndex, wordsLoading, words.length, currentIndex])
+  const hasPlayedOnceRef = useRef(false)
+  const shouldLoadWordsRef = useRef(false) // 控制是否应该加载单词
 
-    const handlePointerMove = (e: PointerEvent) => {
-      if (!isDrawingRef.current) return
-      if (e.pointerType !== 'pen') return
+  // 初始化进度（只在页面加载时恢复一次，后续更新不影响）
+  const hasInitializedRef = useRef(false)
 
-      e.preventDefault()
-
-      ctx.beginPath()
-      ctx.moveTo(lastPosRef.current.x, lastPosRef.current.y)
-      ctx.lineTo(e.clientX, e.clientY)
-      ctx.stroke()
-
-      lastPosRef.current = { x: e.clientX, y: e.clientY }
+  useEffect(() => {
+    // 只在首次加载进度时恢复，避免在切词时被覆盖
+    if (progress && !hasInitializedRef.current && progress.currentIndex > 0 && progress.currentIndex < words.length) {
+      console.log(`📋 恢复进度: ${progress.currentIndex}`)
+      setCurrentIndex(progress.currentIndex)
+      hasInitializedRef.current = true
+    } else if (progress && progress.currentIndex === 0 && !hasInitializedRef.current) {
+      // 如果进度是0，也标记为已初始化
+      hasInitializedRef.current = true
     }
+  }, [progress, words.length])
 
-    const handlePointerUp = () => {
-      isDrawingRef.current = false
+  // 自动显示范围选择对话框（不加载单词）
+  useEffect(() => {
+    // 只加载统计数据，不加载单词列表
+    // ⭐ 只有在非首页恢复时才自动显示对话框
+    if (!statsLoading && stats && stats.all > 0 && !isFromHomepageResume) {
+      setShowScopeDialog(true)
     }
+  }, [statsLoading, stats, isFromHomepageResume])
 
-    // 添加全局监听器，使用 { passive: false } 允许 preventDefault
-    window.addEventListener('pointerdown', handlePointerDown, { passive: false as any })
-    window.addEventListener('pointermove', handlePointerMove, { passive: false as any })
-    window.addEventListener('pointerup', handlePointerUp)
-    window.addEventListener('pointercancel', handlePointerUp)
+  const currentWord = words[currentIndex]
 
-    return () => {
-      window.removeEventListener('resize', resizeCanvas)
-      window.removeEventListener('pointerdown', handlePointerDown)
-      window.removeEventListener('pointermove', handlePointerMove)
-      window.removeEventListener('pointerup', handlePointerUp)
-      window.removeEventListener('pointercancel', handlePointerUp)
-    }
-  }, [])
+  // 标记用户是否首次交互（用于控制首次播放）
+  const hasUserInteractedRef = useRef(false)
 
-  // 清除画布
-  const clearCanvas = () => {
-    const canvas = canvasRef.current
-    const ctx = canvas?.getContext('2d')
-    if (canvas && ctx) {
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
+  // 播放单词发音
+  const playWordAudio = async () => {
+    if (!currentWord) return
+
+    setIsPlaying(true)
+    try {
+      await speakText(currentWord.word, {
+        lang: 'en-US',
+        rate: 0.8,
+        pitch: 1.0,
+        volume: 1.0,
+        onEnd: () => {
+          setIsPlaying(false)
+        },
+        onError: () => {
+          setIsPlaying(false)
+        }
+      })
+    } catch (error) {
+      console.error('播放发音失败:', error)
+      setIsPlaying(false)
     }
   }
 
-  // Fetch words and progress
+  // 暂停播放
+  const handlePause = () => {
+    pauseSpeaking()
+    setIsPlaying(false)
+  }
+
+  // 上一个单词
+  const handlePrevious = async () => {
+    if (!canOperate || currentIndex <= 0) return
+
+    await executeOperation(
+      '切题',
+      'saving',
+      async () => {
+        await saveProgress(currentIndex)
+        setFeedback(null)
+        setShowCorrectAnswer(false)
+        setUserInput('')
+        hasPlayedOnceRef.current = false
+
+        const prevIndex = currentIndex - 1
+        setCurrentIndex(prevIndex)
+      }
+    )
+  }
+
+  // 自动播放TTS（只在用户选择范围后才触发）
   useEffect(() => {
-    async function fetchData() {
-      console.log('🔄 [Dictation] Starting data fetch...', { bookId, scope })
-      try {
-        console.log('📚 [Dictation] Fetching book info...')
-        const bookRes = await fetch(`/api/books/${bookId}`)
-        console.log('📚 [Dictation] Book response status:', bookRes.status)
-        if (!bookRes.ok) throw new Error('Failed to fetch book')
-        const bookData = await bookRes.json()
-        console.log('📚 [Dictation] Book data received:', bookData.data?.title)
-        setBookTitle(bookData.data.title)
+    // ⚡️ 关键修改：只有用户选择范围后，才自动播放
+    if (currentWord && !wordsLoading && !feedback && hasSelectedScope) {
+      const timer = setTimeout(() => {
+        playWordAudio()
+      }, 500)
 
-        const params = new URLSearchParams()
-        params.set('bookId', bookId)
-        params.set('page', '1')
-        params.set('pageSize', '10000') // dictation模式需要加载所有单词
-
-        if (scope === 'filtered') {
-          const theme = searchParams.get('theme')
-          const scene = searchParams.get('scene')
-          const status = searchParams.get('status')
-
-          if (theme && theme !== 'all') params.set('theme', theme)
-          if (scene && scene !== 'all') params.set('scene', scene)
-          if (status && status !== 'all') params.set('status', status)
-        }
-
-        console.log('📝 [Dictation] Fetching words...', params.toString())
-        const wordsRes = await fetch(`/api/words?${params.toString()}`)
-        console.log('📝 [Dictation] Words response status:', wordsRes.status)
-        if (!wordsRes.ok) throw new Error('Failed to fetch words')
-        const wordsData = await wordsRes.json()
-        console.log('📝 [Dictation] Words data received, count:', wordsData.data?.length)
-
-        // 获取用户偏好（包括乱序、自动删除等设置）
-        try {
-          console.log('⚙️ [Dictation] Fetching user preferences...')
-          const prefRes = await fetch(`/api/user-preferences?book_id=${bookId}`)
-          console.log('⚙️ [Dictation] Preferences response status:', prefRes.status)
-          if (prefRes.ok) {
-            const prefData = await prefRes.json()
-            console.log('⚙️ [Dictation] Preferences data received:', prefData.data)
-            if (prefData.data) {
-              // 中文释义设置
-              if (prefData.data.hide_definition !== undefined) {
-                setShowDefinition(!prefData.data.hide_definition)
-              }
-
-              // 听写设置
-              setShuffleOrder(prefData.data.shuffle_order || false)
-              setAutoRemoveFromMistakes(prefData.data.auto_remove_from_mistakes || false)
-              setConsecutiveCorrectThreshold(prefData.data.consecutive_correct_threshold || 3)
-
-              // 应用乱序设置
-              const wordsToSet = prefData.data.shuffle_order
-                ? shuffleArray([...wordsData.data])
-                : wordsData.data
-
-              console.log('✅ [Dictation] Setting words:', wordsToSet.length, 'items')
-              setWords(wordsToSet)
-            }
-          }
-        } catch (error) {
-          console.error('❌ [Dictation] Error fetching preferences:', error)
-          // 如果获取偏好失败，使用原始顺序
-          console.log('📝 [Dictation] Using original word order')
-          setWords(wordsData.data)
-        }
-
-        setDefinitionPreferenceLoaded(true)
-        setSettingsLoaded(true)
-
-        // Generate scope label
-        if (scope === 'all') {
-          setScopeLabel('全书')
-        } else {
-          const parts = []
-          const theme = searchParams.get('theme')
-          const scene = searchParams.get('scene')
-          const status = searchParams.get('status')
-
-          if (theme && theme !== 'all') parts.push(theme)
-          if (scene && scene !== 'all') parts.push(scene)
-          if (status && status !== 'all') {
-            const statusMap: Record<string, string> = {
-              'new': '未标注',
-              'known': '认识',
-              'fuzzy': '模糊',
-              'unknown': '不认识'
-            }
-            parts.push(statusMap[status] || status)
-          }
-
-          setScopeLabel(parts.length > 0 ? parts.join(' - ') : '全部')
-        }
-
-        const progressRes = await fetch(`/api/word-progress?book_id=${bookId}`)
-        if (progressRes.ok) {
-          const progressData = await progressRes.json()
-          setWordProgress(progressData.data || {})
-        }
-      } catch (error) {
-        console.error('Error fetching data:', error)
-        setDefinitionPreferenceLoaded(true)
-      } finally {
-        setLoading(false)
-      }
+      return () => clearTimeout(timer)
     }
+  }, [currentIndex, currentWord, wordsLoading, feedback, hasSelectedScope])
 
-    fetchData()
-  }, [bookId, scope, searchParams])
+  // 输入框焦点处理
+  const handleInputFocus = () => {
+    if (hasPlayedOnceRef.current && !isPlaying && !feedback && currentWord) {
+      playWordAudio()
+    }
+  }
 
-  // ⭐ 页面卸载或隐藏时保存当前学习位置
+  // 自动聚焦输入框：切词后自动聚焦
   useEffect(() => {
-    const handleBeforeUnload = () => {
-      // 立即保存当前学习位置（防止浏览器返回丢失状态）
-      if (words.length > 0 && currentIndex >= 0) {
-        console.log('📍 Dictation: Saving current position on beforeunload:', currentIndex + 1)
-        saveResumeState(bookId, 'dictation', {
-          index: currentIndex,
-          totalWords: words.length
-        })
-      }
-    }
-
-    const handleVisibilityChange = () => {
-      if (document.hidden) {
-        // 页面隐藏时也保存当前学习位置
-        if (words.length > 0 && currentIndex >= 0) {
-          console.log('📍 Dictation: Saving current position on visibility change:', currentIndex + 1)
-          saveResumeState(bookId, 'dictation', {
-            index: currentIndex,
-            totalWords: words.length
-          })
-        }
-      }
-    }
-
-    window.addEventListener('beforeunload', handleBeforeUnload)
-    document.addEventListener('visibilitychange', handleVisibilityChange)
-
-    return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload)
-      document.removeEventListener('visibilitychange', handleVisibilityChange)
-
-      // ⭐ 组件卸载时保存当前学习位置（最重要）
-      if (words.length > 0 && currentIndex >= 0) {
-        console.log('📍 Dictation: Component unmounting, saving position:', currentIndex + 1)
-        saveResumeState(bookId, 'dictation', {
-          index: currentIndex,
-          totalWords: words.length
-        })
-      }
-    }
-  }, [bookId, currentIndex, words.length])
-
-  const currentWord = words[currentIndex]
-  const progress = currentWord ? wordProgress[currentWord.id] : null
-
-  // 保存中文释义偏好设置
-  const saveDefinitionPreference = useCallback(async (show: boolean) => {
-    try {
-      await fetch('/api/user-preferences', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          book_id: bookId,
-          hide_definition: !show
-        })
-      })
-    } catch (error) {
-      console.error('Error saving preference:', error)
-    }
-  }, [bookId])
-
-  // 切换中文释义显示
-  const handleToggleDefinition = useCallback(() => {
-    const newShowDefinition = !showDefinition
-    setShowDefinition(newShowDefinition)
-    if (definitionPreferenceLoaded) {
-      saveDefinitionPreference(newShowDefinition)
-    }
-  }, [showDefinition, definitionPreferenceLoaded, saveDefinitionPreference])
-
-  // 保存听写设置
-  const handleSaveSettings = useCallback(async () => {
-    try {
-      const response = await fetch('/api/user-preferences', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          book_id: bookId,
-          shuffle_order: shuffleOrder,
-          auto_remove_from_mistakes: autoRemoveFromMistakes,
-          consecutive_correct_threshold: consecutiveCorrectThreshold
-        })
-      })
-
-      if (response.ok) {
-        // 保存成功，关闭设置面板
-        setShowSettings(false)
-
-        // 如果刚刚启用了乱序，需要重新打乱当前单词列表
-        // 注意：这里不重新打乱已经学习过的单词，只影响当前会话
-        // 如果用户想立即应用乱序，可以重新进入页面
-        console.log('✅ 听写设置已保存')
-      } else {
-        const errorData = await response.json()
-        console.error('❌ 保存设置失败:', errorData.error)
-        alert(`保存设置失败：${errorData.error || '未知错误'}`)
-      }
-    } catch (error) {
-      console.error('❌ 保存设置时发生错误:', error)
-      alert('保存设置时发生错误，请重试')
-    }
-  }, [bookId, shuffleOrder, autoRemoveFromMistakes, consecutiveCorrectThreshold])
-
-  // 自动聚焦输入框
-  useEffect(() => {
-    if (currentWord && !loading && !feedback) {
-      // 延迟聚焦，确保DOM已渲染
+    if (currentWord && !wordsLoading && feedback === null && inputRef.current) {
+      // 延迟 100ms 确保渲染完成
       const timer = setTimeout(() => {
         inputRef.current?.focus()
       }, 100)
 
       return () => clearTimeout(timer)
     }
-  }, [currentIndex, currentWord, loading, feedback])
+  }, [currentIndex, currentWord, wordsLoading, feedback])
 
-  // Text-to-speech - 使用新的TTS工具
-  const speak = useCallback(async (text: string) => {
-    // 确保TTS已初始化
-    if (!(await initializeTTS())) {
-      console.warn('⚠️ Dictation: TTS initialization failed')
-      return
+  // 播放反馈音效（正确/错误）
+  const playSound = (type: 'correct' | 'wrong') => {
+    if (type === 'correct') {
+      playCorrectSound()
+    } else {
+      playErrorSound()
     }
+  }
 
-    if (text) {
-      setIsPlaying(true)
-      setIsPaused(false)
+  // ⭐ 音效系统 - 复用 AudioContext
+  const audioContextRef = useRef<AudioContext | null>(null)
 
-      speakText(text, {
-        lang: 'en-US',
-        rate: 0.8, // 稍慢便于听写
-        pitch: 1.0,
-        volume: 1.0,
-        onStart: () => {
-          console.log('✅ Dictation: Speech STARTED')
-        },
-        onEnd: () => {
-          console.log('✅ Dictation: Speech ENDED')
-          setIsPlaying(false)
-          setIsPaused(false)
-        },
-        onError: (event?: SpeechSynthesisErrorEvent) => {
-          console.error('❌ Dictation: Speech error', event?.error)
-          setIsPlaying(false)
-          setIsPaused(false)
-        }
-      })
+  // 组件卸载时关闭 AudioContext
+  useEffect(() => {
+    return () => {
+      if (audioContextRef.current && audioContextRef.current.state !== 'closed') {
+        audioContextRef.current.close().catch(err => {
+          console.warn('[Dictation] Failed to close AudioContext:', err)
+        })
+      }
     }
   }, [])
 
-  // 自动播放一次（不循环）
-  useEffect(() => {
-    if (currentWord && !loading && !feedback) {
-      // 延迟500ms后自动播放
-      const timer = setTimeout(() => {
-        speak(currentWord.word)
-        setHasPlayedOnce(true)
-      }, 500)
-
-      return () => clearTimeout(timer)
+  const getAudioContext = () => {
+    if (!audioContextRef.current) {
+      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
     }
-  }, [currentIndex, currentWord, loading, feedback, speak])
+    if (audioContextRef.current.state === 'suspended') {
+      audioContextRef.current.resume()
+    }
+    return audioContextRef.current
+  }
 
-  // 输入框焦点处理：失焦后再次聚焦时自动播放
-  const handleInputFocus = () => {
-    // 只有在已经播放过一次（不是页面刚加载）且当前没有播放时才重新播放
-    if (hasPlayedOnce && !isPlaying && !feedback && currentWord) {
-      speak(currentWord.word)
+  // ⭐ 老式打字机音效 - 多层声音叠加
+  const playTypewriterSound = () => {
+    try {
+      const audioContext = getAudioContext()
+      const now = audioContext.currentTime
+
+      // 第一层：敲击声（高频短促）
+      const clickOsc = audioContext.createOscillator()
+      const clickGain = audioContext.createGain()
+      clickOsc.type = 'square'
+      clickOsc.frequency.setValueAtTime(1500, now)
+      clickOsc.frequency.exponentialRampToValueAtTime(800, now + 0.01)
+      clickGain.gain.setValueAtTime(0.15, now)
+      clickGain.gain.exponentialRampToValueAtTime(0.01, now + 0.02)
+
+      // 第二层：金属回响（中频）
+      const metalOsc = audioContext.createOscillator()
+      const metalGain = audioContext.createGain()
+      metalOsc.type = 'triangle'
+      metalOsc.frequency.setValueAtTime(2000, now)
+      metalOsc.frequency.exponentialRampToValueAtTime(1200, now + 0.03)
+      metalGain.gain.setValueAtTime(0.08, now)
+      metalGain.gain.exponentialRampToValueAtTime(0.01, now + 0.04)
+
+      // 第三层：机身震动（低频）
+      const bodyOsc = audioContext.createOscillator()
+      const bodyGain = audioContext.createGain()
+      bodyOsc.type = 'sine'
+      bodyOsc.frequency.setValueAtTime(200, now)
+      bodyGain.gain.setValueAtTime(0.2, now)
+      bodyGain.gain.exponentialRampToValueAtTime(0.01, now + 0.06)
+
+      // 连接节点
+      clickOsc.connect(clickGain).connect(audioContext.destination)
+      metalOsc.connect(metalGain).connect(audioContext.destination)
+      bodyOsc.connect(bodyGain).connect(audioContext.destination)
+
+      // 播放
+      clickOsc.start(now)
+      clickOsc.stop(now + 0.02)
+      metalOsc.start(now + 0.005)
+      metalOsc.stop(now + 0.045)
+      bodyOsc.start(now)
+      bodyOsc.stop(now + 0.06)
+
+    } catch (error) {
+      console.error('打字机音效播放失败:', error)
     }
   }
 
-  // 手动重新播放
-  const handleReplay = () => {
-    if (currentWord) {
-      speak(currentWord.word)
+  // ⭐ 错误音效 - 有质感的嗡嗡声
+  const playErrorSound = () => {
+    try {
+      const audioContext = getAudioContext()
+      const now = audioContext.currentTime
+
+      // 主振荡器：低频嗡嗡声
+      const osc1 = audioContext.createOscillator()
+      const gain1 = audioContext.createGain()
+      osc1.type = 'sawtooth'
+      osc1.frequency.setValueAtTime(150, now)
+      osc1.frequency.linearRampToValueAtTime(100, now + 0.3)
+      gain1.gain.setValueAtTime(0.2, now)
+      gain1.gain.exponentialRampToValueAtTime(0.01, now + 0.3)
+
+      // 调制振荡器：增加粗糙感
+      const osc2 = audioContext.createOscillator()
+      const gain2 = audioContext.createGain()
+      osc2.type = 'square'
+      osc2.frequency.setValueAtTime(30, now)
+      gain2.gain.setValueAtTime(0.05, now)
+      gain2.gain.exponentialRampToValueAtTime(0.01, now + 0.2)
+
+      // 连接
+      osc1.connect(gain1).connect(audioContext.destination)
+      osc2.connect(gain2).connect(audioContext.destination)
+
+      // 播放
+      osc1.start(now)
+      osc1.stop(now + 0.3)
+      osc2.start(now)
+      osc2.stop(now + 0.2)
+
+    } catch (error) {
+      console.error('错误音效播放失败:', error)
     }
   }
 
-  // 暂停/继续播放 - 使用新的TTS工具
-  const handleTogglePause = () => {
-    if (isPaused) {
-      // 继续
-      resumeSpeaking()
-      setIsPaused(false)
-    } else {
-      // 暂停
-      pauseSpeaking()
-      setIsPaused(true)
+  // ⭐ 正确音效 - 清脆的叮声
+  const playCorrectSound = () => {
+    try {
+      const audioContext = getAudioContext()
+      const now = audioContext.currentTime
+
+      // 高频正弦波
+      const osc = audioContext.createOscillator()
+      const gain = audioContext.createGain()
+      osc.type = 'sine'
+      osc.frequency.setValueAtTime(800, now)
+      osc.frequency.exponentialRampToValueAtTime(1200, now + 0.1)
+      gain.gain.setValueAtTime(0.15, now)
+      gain.gain.exponentialRampToValueAtTime(0.01, now + 0.15)
+
+      osc.connect(gain).connect(audioContext.destination)
+      osc.start(now)
+      osc.stop(now + 0.15)
+
+    } catch (error) {
+      console.error('正确音效播放失败:', error)
     }
   }
 
-  // 返回上一个单词
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setUserInput('')
-      setFeedback(null)
-      setShowCorrectAnswer(false)
-      setCountdown(0)
-      setHasPlayedOnce(false) // 重置播放标记
-      setCurrentIndex(prev => prev - 1)
+  // 防抖：使用 ref 存储最后播放时间
+  const lastPlayTimeRef = useRef(0)
+
+  const playTypewriterSoundThrottled = () => {
+    const now = Date.now()
+    if (now - lastPlayTimeRef.current > 80) {
+      lastPlayTimeRef.current = now
+      playTypewriterSound()
     }
   }
 
-  // 用户输入
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setUserInput(e.target.value)
-    setFeedback(null)
+  // Tab键提示首字母
+  const handleTabKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Tab' && currentWord) {
+      e.preventDefault()
+      const firstLetter = currentWord.word.charAt(0).toLowerCase()
+      setUserInput(prev => prev + firstLetter)
+    }
   }
 
   // 提交答案
   const handleSubmit = async () => {
-    if (!currentWord || !userInput.trim()) return
+    if (!currentWord) return
 
-    const isCorrect = userInput.trim().toLowerCase() === currentWord.word.toLowerCase()
+    // 检查是否为空输入
+    const isEmptyInput = userInput.trim() === ''
+    const isCorrect = !isEmptyInput && userInput.trim().toLowerCase() === currentWord.word.toLowerCase()
 
     if (isCorrect) {
-      // 正确
       setFeedback('correct')
       playSound('correct')
 
-      // 保存状态为"认识" + 处理连续答对计数
-      try {
-        const currentProgress = wordProgress[currentWord.id]
-        let newConsecutiveCount = (currentProgress as any)?.consecutive_correct_count || 0
-        newConsecutiveCount += 1
+      // ✅ 更新单词状态：答对 → known
+      // 使用乐观更新策略：先更新UI，后台静默更新API
+      markWord(currentWord.id, 'new', 'known').catch(error => {
+        console.warn('[Dictation] 更新单词状态失败:', error)
+      })
 
-        // 检查是否需要从错词本移除
-        let finalStatus = 'known'
-        if (autoRemoveFromMistakes && currentProgress && currentProgress.status !== 'known') {
-          // 如果开启了自动移除，且连续答对次数达到阈值，则移出错词本
-          if (newConsecutiveCount >= consecutiveCorrectThreshold) {
-            finalStatus = 'known' // 从错词本移除，标记为"认识"
-            console.log(`✅ 单词 "${currentWord.word}" 连续答对 ${newConsecutiveCount} 次，从错词本移除`)
-          } else {
-            finalStatus = currentProgress.status // 保持原状态，继续在错词本中
-          }
-        }
-
-        // 保存进度和计数
-        await fetch('/api/word-progress', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            word_id: currentWord.id,
-            book_id: bookId,
-            status: finalStatus,
-            consecutive_correct_count: newConsecutiveCount
-          })
-        })
-
-        setWordProgress(prev => ({
-          ...prev,
-          [currentWord.id]: {
-            word_id: currentWord.id,
-            status: finalStatus as 'new' | 'known' | 'fuzzy' | 'unknown',
-            consecutive_correct_count: newConsecutiveCount
-          }
-        }))
-      } catch (error) {
-        console.error('Error saving progress:', error)
-      }
-
-      // 0.5s后切题
-      setTimeout(() => {
-        moveToNext()
+      // 答对：快速反馈后进入下一个（500ms）
+      setTimeout(async () => {
+        await handleNext()
       }, 500)
     } else {
-      // 错误
+      // 空输入或答错都显示错误反馈
       setFeedback('wrong')
       setShowCorrectAnswer(true)
       playSound('wrong')
 
-      // 自动标记为"不认识" + 重置连续答对计数
-      try {
-        await fetch('/api/word-progress', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            word_id: currentWord.id,
-            book_id: bookId,
-            status: 'unknown',
-            consecutive_correct_count: 0 // 重置连续答对计数
-          })
+      // ✅ 只有在有输入的情况下才更新单词状态：答错 → unknown
+      // 空输入不更新状态（不算答题）
+      if (!isEmptyInput) {
+        markWord(currentWord.id, 'new', 'unknown').catch(error => {
+          console.warn('[Dictation] 更新单词状态失败:', error)
         })
 
-        setWordProgress(prev => ({
-          ...prev,
-          [currentWord.id]: {
-            word_id: currentWord.id,
-            status: 'unknown',
-            consecutive_correct_count: 0
-          }
-        }))
-      } catch (error) {
-        console.error('Error saving progress:', error)
+        if (autoAddToMistakes) {
+          console.log('自动加入错题本:', currentWord.word)
+        }
       }
 
-      // 倒计时2s后切题
-      setCountdown(2)
-      let count = 2
-      const timer = setInterval(() => {
-        count--
-        setCountdown(count)
-        if (count <= 0) {
-          clearInterval(timer)
-          moveToNext()
-        }
-      }, 1000)
+      // 答错：显示答案后，用户可以：
+      // 1. 立即按回车跳过（输入框保持可用）
+      // 2. 点击"下一个"按钮
+      // 3. 等待 3 秒后自动切题（给用户足够时间看答案）
+      setTimeout(async () => {
+        await handleNext()
+      }, 3000)
     }
   }
 
-  // 移动到下一个单词
-  const moveToNext = () => {
+  // 在显示错误答案时，按回车可以立即跳过
+  const handleKeyPressInErrorState = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter' && feedback === 'wrong' && showCorrectAnswer) {
+      e.preventDefault()
+      handleNext()
+    }
+  }
+
+  // 下一个单词
+  const handleNext = async () => {
+    if (!canOperate) {
+      console.warn('⚠️ 无法切题：正在保存中或切换中')
+      return
+    }
+
+    await executeOperation(
+      '切题',
+      'saving',
+      async () => {
+        // 计算下一个索引
+        const nextIndex = currentIndex + 1
+
+        // 检查是否完成
+        if (nextIndex >= words.length) {
+          setShowCompleteDialog(true)
+          // 保存完成状态
+          await saveProgress(currentIndex)
+          return
+        }
+
+        // ⭐ 关键修复：先切换索引，再保存进度（保存的是下一个词的索引）
+        setCurrentIndex(nextIndex)
+        await saveProgress(nextIndex)
+
+        // 重置所有状态
+        setFeedback(null)
+        setShowCorrectAnswer(false)
+        setUserInput('')
+        hasPlayedOnceRef.current = false
+
+        console.log(`📖 切换单词: ${currentIndex} → ${nextIndex}, 总数: ${words.length}`)
+      }
+    )
+  }
+
+  // 切换范围
+  const handleScopeChange = async (newScope: DictationScopeType) => {
+    if (!canOperate) {
+      console.warn('⚠️ 无法切换范围：正在保存中')
+      return
+    }
+
+    await executeOperation(
+      '切换范围',
+      'switching',
+      async () => {
+        await saveProgress(currentIndex)
+        setScopeType(newScope)
+        setCurrentIndex(0)
+        setShowScopeDialog(false)
+
+        // ⭐ 触发单词加载和自动播放（用户选择范围后才加载）
+        setHasSelectedScope(true)
+        shouldLoadWordsRef.current = true
+      }
+    )
+  }
+
+  // 重新开始
+  const handleRestart = () => {
+    setShowCompleteDialog(false)
+    setCurrentIndex(0)
     setUserInput('')
     setFeedback(null)
     setShowCorrectAnswer(false)
-    setCountdown(0)
-    setHasPlayedOnce(false) // 重置播放标记
-
-    if (currentIndex < words.length - 1) {
-      const nextIndex = currentIndex + 1
-      setCurrentIndex(nextIndex)
-
-      // ⭐ 保存学习进度
-      console.log('📍 Dictation: Moving to next word, saving position:', nextIndex + 1)
-      saveResumeState(bookId, 'dictation', {
-        index: nextIndex,
-        totalWords: words.length
-      })
-    }
   }
 
-  // 播放音效
-  const playSound = (type: 'correct' | 'wrong') => {
-    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
-
-    const oscillator = audioContext.createOscillator()
-    const gainNode = audioContext.createGain()
-
-    oscillator.connect(gainNode)
-    gainNode.connect(audioContext.destination)
-
-    if (type === 'correct') {
-      // 正确：清脆的叮声
-      oscillator.frequency.value = 800
-      oscillator.type = 'sine'
-      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime)
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.5)
-      oscillator.start(audioContext.currentTime)
-      oscillator.stop(audioContext.currentTime + 0.5)
-    } else {
-      // 错误：温和的滴声（较低频率，正弦波）
-      oscillator.frequency.value = 400
-      oscillator.type = 'sine'
-      gainNode.gain.setValueAtTime(0.2, audioContext.currentTime)
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2)
-      oscillator.start(audioContext.currentTime)
-      oscillator.stop(audioContext.currentTime + 0.2)
-    }
+  // 返回
+  const handleBack = () => {
+    router.push(`/library/${bookId}`)
   }
 
-  // 键盘快捷键
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Enter' && !feedback) {
-        e.preventDefault()
-        handleSubmit()
-      }
-    }
+  // 返回首页
+  const handleHome = () => {
+    router.push('/')
+  }
 
-    window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [currentWord, userInput, feedback])
-
-  // 自动聚焦输入框
-  useEffect(() => {
-    if (currentWord && !loading) {
-      inputRef.current?.focus()
-    }
-  }, [currentIndex, currentWord, loading])
-
-  if (loading) {
+  // 加载状态
+  if (statsLoading || wordsLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F5F2' }}>
+      <div className="min-h-screen bg-[#f4f4f5] flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-block w-12 h-12 border-4 border-[#9B8CB5] border-t-transparent rounded-full animate-spin"></div>
-          <p className="mt-4 text-gray-600 font-semibold">加载中...</p>
+          <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-black border-t-[#ccff00] mb-6 mx-auto"></div>
+          <p className="text-black font-black text-lg">加载中...</p>
         </div>
       </div>
     )
   }
 
-  if (words.length === 0) {
-    return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F5F2' }}>
-        <div className="clay-card p-8 text-center">
-          <p className="text-lg text-gray-700 font-semibold">暂无单词数据</p>
-          <button
-            onClick={() => router.push('/')}
-            className="clay-button-primary inline-block mt-4 px-6 py-3"
-          >
-            返回首页
-          </button>
-        </div>
-      </div>
-    )
-  }
+  // 计算进度
+  const progressPercent = words.length > 0 ? ((currentIndex + 1) / words.length) * 100 : 0
 
   return (
-    <PermissionGate feature={FEATURE_PERMISSIONS.DICTATION} bookId={bookId}>
-      <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+    <>
+      {/* 最外层容器：响应式背景切换 */}
+      <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 transition-colors bg-gray-100 lg:bg-white font-sans text-slate-900 py-8">
 
-        {/* --- 隐形手写层 --- */}
-        {/* pointer-events-none 确保手指能穿透到按钮 */}
-        <canvas
-          ref={canvasRef}
-          className="fixed inset-0 z-50 pointer-events-none"
-        />
+        {/* ================= HEADER ================= */}
+        {/* ================= 顶部控制区 (试卷头风格) ================= */}
+        <div className="w-full max-w-5xl mx-auto px-6 pt-6">
 
-        {/* --- 固定清空按钮 --- */}
-        {/* 右下角固定，用于清除手写墨水 */}
-        <button
-          onClick={clearCanvas}
-          className="fixed bottom-6 right-6 z-[60] w-12 h-12 bg-white border-2 border-black rounded-full flex items-center justify-center shadow-[3px_3px_0px_0px_#000] active:translate-y-1 active:shadow-none transition-all hover:bg-red-50 text-red-500"
-          title="清除手写"
-        >
-          <Trash2 size={20} />
-        </button>
-      {/* Header */}
-      <header className="sticky top-0 z-50 px-4 py-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="clay-card px-6 py-4 flex items-center justify-between">
+          {/* 第一行：导航与统计 (两端对齐) */}
+          <div className="flex justify-between items-start mb-6">
+            {/* 左侧：返回与标题 */}
             <div className="flex items-center gap-4">
-              <button
-                onClick={async () => {
-                  // ⭐ 先保存数据，再跳转
-                  console.log('🔙 Dictation back button: Saving data before navigation...')
-
-                  // 1. 立即保存当前学习位置
-                  if (words.length > 0 && currentIndex >= 0) {
-                    saveResumeState(bookId, 'dictation', {
-                      index: currentIndex,
-                      totalWords: words.length
-                    })
-                  }
-
-                  // 2. 等待一下确保保存完成
-                  await new Promise(resolve => setTimeout(resolve, 200))
-
-                  // 3. 跳转回首页
-                  router.push('/')
-                }}
-                className="clay-icon p-2 hover:scale-110 transition-transform"
-                title="返回首页"
+              <Link
+                href={`/library/${bookId}`}
+                className="w-12 h-12 bg-white border-2 border-black rounded-xl flex items-center justify-center shadow-[4px_4px_0px_0px_#000] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000] transition-all"
               >
-                <ArrowLeft className="w-5 h-5 text-gray-700" />
-              </button>
-              <div>
-                <h1 className="text-lg font-bold text-gradient-lilac">{bookTitle}</h1>
-                <p className="text-xs text-gray-600 font-semibold">
-                  听写模式 • {scopeLabel} • {currentIndex + 1} / {words.length}
-                </p>
-              </div>
+                <ArrowLeft size={24} strokeWidth={2.5} />
+              </Link>
+              <h1 className="text-2xl font-black italic tracking-tighter hidden sm:block">听写练习</h1>
             </div>
-            <button
-              onClick={() => setShowSettings(true)}
-              className="clay-icon p-2 hover:scale-110 transition-transform"
-              title="听写设置"
-            >
-              <Settings className="w-5 h-5 text-gray-700" />
-            </button>
-          </div>
-        </div>
-      </header>
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
-        <div className="max-w-2xl mx-auto">
-          {/* Progress Bar */}
-          <div className="mb-6">
-            <div className="flex justify-between text-sm text-gray-600 font-semibold mb-2">
-              <span>学习进度</span>
-              <span>{Math.round(((currentIndex + 1) / words.length) * 100)}%</span>
-            </div>
-            <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
-              <div
-                className="bg-gradient-to-r from-[#4CAF50] to-[#66BB6A] h-full transition-all duration-300"
-                style={{ width: `${((currentIndex + 1) / words.length) * 100}%` }}
-              ></div>
-            </div>
-          </div>
-
-          {/* Dictation Card */}
-          <div className="clay-card-xl p-8 mb-6">
-            {/* Status Badge */}
-            {progress && (
-              <div className="mb-4 text-center">
-                {progress.status === 'known' && (
-                  <span className="clay-badge bg-green-100 text-green-800 px-4 py-2 font-bold">
-                    ✓ 已认识
-                  </span>
-                )}
-                {progress.status === 'fuzzy' && (
-                  <span className="clay-badge bg-yellow-100 text-yellow-800 px-4 py-2 font-bold">
-                    ? 模糊
-                  </span>
-                )}
-                {progress.status === 'unknown' && (
-                  <span className="clay-badge bg-red-100 text-red-800 px-4 py-2 font-bold">
-                    ✗ 不认识
-                  </span>
-                )}
-              </div>
-            )}
-
-            {/* Play Button */}
-            <div className="flex justify-center mb-6">
-              <button
-                onClick={handleReplay}
-                disabled={isPlaying && !isPaused}
-                className="clay-icon p-4 hover:scale-110 transition-transform shadow-lg hover:shadow-xl disabled:opacity-50 disabled:cursor-not-allowed"
-                title="重新播放"
-              >
-                <Volume2 className="w-12 h-12 text-[#9B8CB5]" />
-              </button>
-              {isPlaying && !isPaused && (
-                <div className="absolute mt-16">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 bg-[#9B8CB5] rounded-full animate-pulse"></div>
-                    <span className="text-sm text-gray-600 font-semibold">播放中...</span>
-                  </div>
+            {/* 右侧：统计卡片与退出 */}
+            <div className="flex gap-2 items-center">
+              {/* Stats Box (4列: 未标注 | 不认识 | 模糊 | 认识) */}
+              <div className="flex border-2 border-black rounded-lg bg-white overflow-hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+                <div className="px-3 py-1.5 border-r-2 border-black flex flex-col items-center min-w-[55px]">
+                  <span className="text-[9px] text-gray-400 font-bold">未标注</span>
+                  <span className="text-lg font-black text-gray-400 leading-none">{stats?.new || 0}</span>
                 </div>
-              )}
-            </div>
-
-            {/* 中文释义显示区域 */}
-            <div className="mb-6">
-              <div className="flex items-center justify-center gap-2 mb-3">
-                <span className="text-sm text-gray-600">中文释义</span>
-                <button
-                  onClick={handleToggleDefinition}
-                  className="text-xs text-gray-500 hover:text-gray-700 transition-colors underline decoration-dotted"
-                  title={showDefinition ? '隐藏中文释义' : '显示中文释义'}
-                >
-                  {showDefinition ? '隐藏' : '显示'}
-                </button>
+                <div className="px-3 py-1.5 border-r-2 border-black flex flex-col items-center min-w-[55px]">
+                  <span className="text-[9px] text-gray-500 font-bold">不认识</span>
+                  <span className="text-lg font-black text-red-500 leading-none">{stats?.unknown || 0}</span>
+                </div>
+                <div className="px-3 py-1.5 border-r-2 border-black flex flex-col items-center min-w-[55px]">
+                  <span className="text-[9px] text-gray-500 font-bold">模糊</span>
+                  <span className="text-lg font-black text-yellow-500 leading-none">{stats?.fuzzy || 0}</span>
+                </div>
+                <div className="px-3 py-1.5 flex flex-col items-center min-w-[55px]">
+                  <span className="text-[9px] text-gray-500 font-bold">认识</span>
+                  <span className="text-lg font-black text-green-600 leading-none">{stats?.known || 0}</span>
+                </div>
               </div>
-              {showDefinition ? (
-                <p className="text-center text-lg font-semibold text-gray-700 py-2">
-                  {currentWord.definition}
-                </p>
-              ) : (
-                <p className="text-center text-base text-gray-400 py-2 border-b border-dashed border-gray-300">
-                  （已隐藏）
-                </p>
-              )}
-            </div>
 
-            {/* 控制按钮区 - 纯icon样式 */}
-            <div className="flex items-center justify-center gap-6 mb-6">
-              <button
-                onClick={handlePrevious}
-                disabled={currentIndex === 0}
-                className="clay-icon p-2 hover:scale-110 transition-transform disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
-                title="上一个单词"
-              >
-                <SkipBack className="w-5 h-5 text-gray-600" />
-              </button>
-
-              <button
-                onClick={handleTogglePause}
-                disabled={!isPlaying}
-                className="clay-icon p-2 hover:scale-110 transition-transform disabled:opacity-30 disabled:cursor-not-allowed disabled:hover:scale-100"
-                title={isPaused ? '继续播放' : '暂停播放'}
-              >
-                {isPaused ? (
-                  <Play className="w-5 h-5 text-[#4CAF50]" />
-                ) : (
-                  <Pause className="w-5 h-5 text-[#4CAF50]" />
-                )}
-              </button>
-
-              <button
-                onClick={handleReplay}
-                className="clay-icon p-2 hover:scale-110 transition-transform"
-                title="再读一遍"
-              >
-                <RotateCcw className="w-5 h-5 text-gray-600" />
-              </button>
-            </div>
-
-            {/* Input Area - 键盘输入（手写笔可直接在屏幕上书写） */}
-            <div className="mb-6">
-              <input
-                ref={inputRef}
-                type="text"
-                value={userInput}
-                onChange={handleInputChange}
-                onFocus={handleInputFocus}
-                onKeyPress={(e) => {
-                  if (e.key === 'Enter') {
-                    handleSubmit()
-                  }
-                }}
-                disabled={feedback !== null}
-                className={`w-full px-6 py-4 text-xl font-bold text-center border-2 rounded-xl outline-none transition-all ${
-                  feedback === 'correct'
-                    ? 'border-green-500 bg-green-50 text-green-800'
-                    : feedback === 'wrong'
-                    ? 'border-red-500 bg-red-50 text-red-800 animate-shake-input'
-                    : 'border-gray-300 bg-white focus:border-[#9B8CB5]'
-                }`}
-                placeholder="输入你听到的单词..."
-                autoComplete="off"
-                autoCapitalize="off"
-                autoCorrect="off"
-                spellCheck={false}
-              />
-              <p className="text-center text-xs text-gray-500 mt-2 font-medium">
-                💡 支持手写笔直接在屏幕上书写
-              </p>
-            </div>
-
-            {/* Feedback */}
-            {feedback === 'correct' && (
-              <div className="text-center text-green-700 font-bold text-lg mb-4">
-                ✓ 正确！太棒了！
-              </div>
-            )}
-
-            {feedback === 'wrong' && (
-              <div className="text-center text-red-700 font-semibold mb-4">
-                <p className="text-lg font-bold mb-2">✗ 拼写错误</p>
-                <p className="text-base">
-                  正确拼写：<span className="font-black text-xl">{currentWord.word}</span>
-                </p>
-                {(currentWord.uk_phonetic || currentWord.us_phonetic || currentWord.phonetic) && (
-                  <div className="text-sm mt-1 space-y-0.5">
-                    {currentWord.uk_phonetic && (
-                      <p className="text-xs text-gray-600">UK {currentWord.uk_phonetic}</p>
-                    )}
-                    {currentWord.us_phonetic && (
-                      <p className="text-xs text-gray-500">US {currentWord.us_phonetic}</p>
-                    )}
-                    {!currentWord.uk_phonetic && !currentWord.us_phonetic && currentWord.phonetic && (
-                      <p className="text-xs">音标：{currentWord.phonetic}</p>
-                    )}
-                  </div>
-                )}
-                {countdown > 0 && (
-                  <p className="text-sm mt-2">{countdown}秒后自动切换...</p>
-                )}
-              </div>
-            )}
-
-            {/* Submit Button */}
-            {feedback === null && (
-              <div className="text-center">
-                <button
-                  onClick={handleSubmit}
-                  disabled={!userInput.trim()}
-                  className="clay-button-primary px-8 py-4 text-lg font-bold disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  提交答案 (Enter)
-                </button>
-              </div>
-            )}
-
-            {/* Hint */}
-            {feedback === null && !userInput && (
-              <p className="text-center text-gray-500 font-semibold mt-4">
-                💡 听到单词后输入拼写，按Enter提交
-              </p>
-            )}
-          </div>
-
-          {/* Complete Message */}
-          {currentIndex === words.length - 1 && feedback === 'correct' && (
-            <div className="clay-card-lilac p-6 text-center">
-              <h3 className="text-2xl font-bold text-gradient-lilac mb-2">
-                🎉 太棒了！
-              </h3>
-              <p className="text-gray-700 font-semibold mb-4">
-                你已经完成了所有单词的听写练习
-              </p>
+              {/* 退出按钮 */}
               <button
                 onClick={() => router.push('/')}
-                className="clay-button-primary inline-block px-6 py-3 font-bold"
+                className="w-10 h-10 bg-white border-2 border-black rounded-lg flex items-center justify-center hover:bg-gray-50"
               >
-                返回首页
-              </button>
-            </div>
-          )}
-        </div>
-      </main>
-
-      {/* Settings Modal */}
-      {showSettings && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-          {/* Backdrop */}
-          <div
-            className="absolute inset-0 bg-black/50"
-            onClick={() => setShowSettings(false)}
-          ></div>
-
-          {/* Modal */}
-          <div className="clay-card-xl p-6 max-w-md w-full relative z-10">
-            {/* Header */}
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold text-gradient-lilac">⚙️ 听写设置</h2>
-              <button
-                onClick={() => setShowSettings(false)}
-                className="clay-icon p-2 hover:scale-110 transition-transform"
-                title="关闭"
-              >
-                <X className="w-5 h-5 text-gray-700" />
-              </button>
-            </div>
-
-            {/* 练习顺序 */}
-            <div className="mb-6">
-              <label className="block text-sm font-bold text-gray-700 mb-3">
-                🎲 练习顺序
-              </label>
-              <div className="space-y-2">
-                <label className="flex items-center gap-3 p-3 clay-card cursor-pointer hover:scale-[1.01] transition-transform">
-                  <input
-                    type="radio"
-                    name="shuffleOrder"
-                    checked={!shuffleOrder}
-                    onChange={() => setShuffleOrder(false)}
-                    className="w-4 h-4"
-                  />
-                  <span className="text-sm text-gray-700">按顺序（默认）</span>
-                </label>
-                <label className="flex items-center gap-3 p-3 clay-card cursor-pointer hover:scale-[1.01] transition-transform">
-                  <input
-                    type="radio"
-                    name="shuffleOrder"
-                    checked={shuffleOrder}
-                    onChange={() => setShuffleOrder(true)}
-                    className="w-4 h-4"
-                  />
-                  <span className="text-sm text-gray-700">随机乱序</span>
-                </label>
-              </div>
-            </div>
-
-            {/* 答对后自动移出错词 */}
-            <div className="mb-6">
-              <label className="block text-sm font-bold text-gray-700 mb-3">
-                ✅ 答对后自动移出错词
-              </label>
-
-              {/* 开关 */}
-              <div className="mb-3">
-                <label className="flex items-center gap-3 p-3 clay-card cursor-pointer hover:scale-[1.01] transition-transform">
-                  <input
-                    type="checkbox"
-                    checked={autoRemoveFromMistakes}
-                    onChange={(e) => setAutoRemoveFromMistakes(e.target.checked)}
-                    className="w-4 h-4"
-                  />
-                  <span className="text-sm text-gray-700">启用自动移除</span>
-                </label>
-              </div>
-
-              {/* 阈值选择 */}
-              {autoRemoveFromMistakes && (
-                <div className="space-y-2">
-                  <label className="block text-xs text-gray-600">连续答对次数</label>
-                  <select
-                    value={consecutiveCorrectThreshold}
-                    onChange={(e) => setConsecutiveCorrectThreshold(Number(e.target.value))}
-                    className="w-full px-4 py-2 clay-card text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-[#9B8CB5]"
-                  >
-                    <option value={1}>连续答对 1 次</option>
-                    <option value={2}>连续答对 2 次</option>
-                    <option value={3}>连续答对 3 次（推荐）</option>
-                    <option value={5}>连续答对 5 次</option>
-                    <option value={10}>连续答对 10 次</option>
-                  </select>
-                </div>
-              )}
-
-              {/* 提示信息 */}
-              <div className="mt-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
-                <p className="text-xs text-blue-700">
-                  💡 <strong>提示：</strong>开启后，连续答对指定次数的单词会自动从错词本中移除，标记为"认识"。
-                </p>
-              </div>
-            </div>
-
-            {/* Buttons */}
-            <div className="flex gap-3 pt-4 border-t border-gray-200">
-              <button
-                onClick={handleSaveSettings}
-                disabled={!settingsLoaded}
-                className="flex-1 clay-button-primary px-4 py-3 text-sm font-bold disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                保存设置
-              </button>
-              <button
-                onClick={() => setShowSettings(false)}
-                className="flex-1 clay-button-secondary px-4 py-3 text-sm font-bold"
-              >
-                取消
+                <X size={20} strokeWidth={2.5} />
               </button>
             </div>
           </div>
+
+          {/* 第二行：功能设置栏 (工具栏) */}
+          <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+            {/* 左侧：范围选择器 */}
+            <div className="flex flex-col gap-1">
+              <button
+                onClick={() => setShowScopeDialog(true)}
+                className="flex items-center justify-between gap-3 px-4 py-2 bg-white border-2 border-black rounded-lg font-bold shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none transition-all min-w-[140px]"
+              >
+                <span>{DICTATION_SCOPE_LABELS[scopeType]}</span>
+                <ChevronDown size={16} />
+              </button>
+            </div>
+
+            {/* 右侧：功能按钮组 */}
+            <div className="flex gap-3">
+              <button
+                onClick={() => setHideChinese(!hideChinese)}
+                className={`flex items-center gap-2 px-4 py-2 border-2 rounded-lg font-bold text-sm transition-all ${
+                  hideChinese
+                    ? 'bg-[#ccff00] border-black shadow-[2px_2px_0px_0px_#000]'
+                    : 'bg-white border-black hover:bg-gray-50'
+                }`}
+              >
+                {hideChinese ? <EyeOff size={16} /> : <Eye size={16} />}
+                隐藏中文
+              </button>
+              <button
+                onClick={() => setAutoAddToMistakes(!autoAddToMistakes)}
+                className={`flex items-center gap-2 px-4 py-2 border-2 rounded-lg font-bold text-sm transition-all ${
+                  autoAddToMistakes
+                    ? 'bg-[#ccff00] border-black shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none'
+                    : 'bg-white border-black hover:bg-gray-50'
+                }`}
+              >
+                <PlusSquare size={16} />
+                错题入本
+              </button>
+            </div>
+          </div>
+
+          {/* ✨ 注入灵魂：试卷分割虚线 ✨ */}
+          <div className="w-full border-b-2 border-dashed border-gray-300 mt-4 mb-12"></div>
+
+        </div>
+
+        {/* ================= MAIN CARD ================= */}
+        {currentWord && (
+          <div
+            data-word={currentWord.word}
+            className="w-full max-w-[800px] bg-white border-2 border-black rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden min-h-[400px] flex flex-col lg:border-none lg:shadow-none lg:rounded-none lg:bg-transparent lg:w-full lg:max-w-full lg:min-h-0"
+          >
+
+            {/* Top Progress Bar */}
+            <div className="absolute top-0 left-0 w-full h-1.5 bg-gray-100">
+              <div className="h-full bg-[#ccff00] transition-all duration-300" style={{ width: `${progressPercent}%` }}></div>
+            </div>
+
+            {/* ================= 中间核心内容区 ================= */}
+            <div className="flex-1 w-full flex flex-col items-center justify-center gap-10 mt-8 p-8 md:p-12">
+
+              {/* 1. 进度胶囊：加个阴影，更有质感 */}
+              <div className="bg-black text-white px-5 py-1.5 rounded-full text-sm font-bold tracking-widest shadow-[4px_4px_0px_0px_#ccff00]">
+                {currentIndex + 1} / {words.length}
+              </div>
+
+              {/* 2. 单词释义：关键修改！限制最大宽度，增加行高 */}
+              {!hideChinese && (
+                <div className="w-full max-w-2xl px-4">
+                  <h2 className="text-2xl md:text-3xl font-black text-center leading-relaxed text-slate-800 break-words">
+                    {currentWord.definition}
+                    {currentWord.example_sentence && (
+                      <>
+                        <br className="hidden md:block"/>
+                        <span className="text-lg font-bold text-gray-600 mt-4 block">
+                          {currentWord.example_sentence}
+                        </span>
+                      </>
+                    )}
+                  </h2>
+                </div>
+              )}
+
+              {/* 3. 播放器：稍微放大 */}
+              <div className="transform scale-110">
+                {/* Play Controls */}
+                <div className="flex items-center gap-12">
+                  <button
+                    onClick={handlePrevious}
+                    disabled={!canOperate || currentIndex <= 0}
+                    className={`transition-colors ${
+                      !canOperate || currentIndex <= 0
+                        ? 'text-gray-300 cursor-not-allowed'
+                        : 'text-gray-400 hover:text-black'
+                    }`}
+                  >
+                    <SkipBack size={28} strokeWidth={2.5} />
+                  </button>
+
+                  <button
+                    onClick={isPlaying ? handlePause : playWordAudio}
+                    className="w-20 h-20 bg-[#ccff00] border-2 border-black rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all"
+                  >
+                    {isPlaying ? (
+                      <Pause size={36} fill="black" className="ml-0" />
+                    ) : (
+                      <Play size={36} fill="black" className="ml-1" />
+                    )}
+                  </button>
+
+                  <button
+                    onClick={handleNext}
+                    disabled={!canOperate}
+                    className={`transition-colors ${
+                      !canOperate
+                        ? 'text-gray-300 cursor-not-allowed'
+                        : 'text-gray-400 hover:text-black'
+                    }`}
+                  >
+                    <SkipForward size={28} strokeWidth={2.5} />
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+            {/* ================= 沉浸式输入区 v2.0 (宽敞版) ================= */}
+            <div className="w-full max-w-4xl mx-auto flex flex-col items-center mt-8 mb-2">
+
+              {/* 1. 输入线：独占一行，没有任何阻挡 */}
+              <div className="w-full px-8 relative group">
+                  <input
+                    ref={inputRef}
+                    type="text"
+                    value={userInput}
+                    onChange={(e) => {
+                      setUserInput(e.target.value)
+                      // ⭐ 触发打字机音效（只在有新输入且没有反馈时）
+                      if (e.target.value && feedback === null) {
+                        playTypewriterSoundThrottled()
+                      }
+                    }}
+                    onKeyPress={(e) => {
+                      if (feedback === 'wrong' && showCorrectAnswer) {
+                        handleKeyPressInErrorState(e)
+                      } else if (e.key === 'Enter') {
+                        handleSubmit()
+                      }
+                    }}
+                    onKeyDown={handleTabKeyPress}
+                    onFocus={handleInputFocus}
+                    placeholder="在此书写..."
+                    disabled={feedback === 'correct'}
+                    className="w-full py-4 text-3xl font-black text-center bg-transparent border-b-4 border-gray-200 focus:border-black focus:outline-none transition-all placeholder:text-gray-300 placeholder:font-bold placeholder:text-2xl"
+                    style={{ caretColor: '#ccff00' }}
+                    autoFocus
+                  />
+                  {/* 动态底线动画 */}
+                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-black transition-all duration-500 ease-out group-focus-within:w-full group-focus-within:left-0"></div>
+                </div>
+
+                {/* 2. 操作区：下移，与书写区分离 */}
+                <div className="h-16 mt-6 flex items-center justify-center">
+                  {/* 这里的回车键可以做成：只有当用户输入了内容才显示高亮，否则是灰色的 */}
+                  <button
+                    onClick={handleSubmit}
+                    disabled={userInput.trim() === '' || feedback !== null}
+                    className={`flex items-center gap-2 px-6 py-3 text-white border-2 border-black rounded-full transition-all ${
+                      userInput.trim() === '' || feedback !== null
+                        ? 'bg-gray-300 cursor-not-allowed'
+                        : 'bg-black shadow-[4px_4px_0px_0px_#ccff00] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#ccff00] active:translate-y-[4px] active:shadow-none'
+                    }`}
+                  >
+                    <span className="text-sm font-bold">提交</span>
+                    <CornerDownLeft size={18} strokeWidth={3} />
+                  </button>
+                </div>
+
+              </div>
+
+              {/* Feedback Messages */}
+              {feedback === 'correct' && (
+                <div className="mt-4 text-center">
+                  <p className="text-green-600 font-black text-lg">✓ 正确！</p>
+                </div>
+              )}
+
+              {feedback === 'wrong' && showCorrectAnswer && (
+                <div className="mt-4 text-center">
+                  <p className="text-red-600 font-black text-lg mb-2">✗ 拼写错误</p>
+                  <p className="text-gray-700 font-bold mb-1">
+                    正确拼写：<span className="font-black text-xl">{currentWord.word}</span>
+                  </p>
+                  <p className="text-xs text-gray-500 font-semibold">
+                    💡 按回车立即跳过，或等待 3 秒自动跳过
+                  </p>
+                </div>
+              )}
+
+          </div>
+        )}
+
+        {/* ================= FOOTER ================= */}
+        <div className="mt-12">
+          <div className="px-5 py-2 bg-[#fffbeb] border border-[#fcd34d] text-[#b45309] rounded-lg text-xs font-medium">
+            iPad 用户: 请打开「随手写」并切换至当前语种的输入法
+          </div>
+        </div>
+
+      </div>
+
+      {/* Dialogs */}
+      <DictationScopeDialog
+        isOpen={showScopeDialog}
+        onClose={() => setShowScopeDialog(false)}
+        onSelectScope={handleScopeChange}
+        scopeOptions={getScopeOptions()}
+        loading={statsLoading || resumeLoading}
+        recentProgress={recentProgress}
+      />
+
+      <DictationCompleteDialog
+        isOpen={showCompleteDialog}
+        scopeType={scopeType}
+        scopeLabel={DICTATION_SCOPE_LABELS[scopeType]}
+        completedCount={currentIndex + 1}
+        totalCount={words.length}
+        onRestart={handleRestart}
+        onBack={handleBack}
+        onHome={handleHome}
+      />
+
+      {/* Page Status Indicator */}
+      {!canOperate && (
+        <div className="fixed bottom-6 right-6 bg-[#ccff00] border-2 border-black text-black px-6 py-3 rounded-lg shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] font-black">
+          正在{pageState === 'saving' ? '保存' : '切换'}...
         </div>
       )}
 
-      <style>{`
+      {/* CSS Animations */}
+      <style jsx>{`
         @keyframes shake {
           0%, 100% { transform: translateX(0); }
           10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
@@ -1092,7 +869,6 @@ export default function DictationPage() {
           animation: shake 0.5s ease-in-out;
         }
       `}</style>
-    </div>
-    </PermissionGate>
+    </>
   )
 }
