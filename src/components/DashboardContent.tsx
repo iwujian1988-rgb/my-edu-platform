@@ -1,17 +1,21 @@
 'use client'
 
 import Link from 'next/link'
-import { Target, Calendar, BookOpen, Plus, ArrowRight, Cat, LogOut, GraduationCap } from 'lucide-react'
+import { Target, Calendar, BookOpen, Plus, Cat, LogOut, GraduationCap, PenTool, Gamepad2 } from 'lucide-react'
 import { PermissionWarningBanner } from './PermissionDisplay'
 import { BookLibrary } from './BookLibrary'
 import EmptyState from './EmptyState'
+import { ProgressCardProps, MODE_CONFIG, SCOPE_LABELS } from '@/types/progress'
+import { formatTimeAgo } from '@/lib/timeUtils'
 
 interface DashboardContentProps {
   books: any[]
-  lastStudyBook: { id: string; title: string; progress: number; continueURL: string } | null
+  progressCards?: ProgressCardProps[]  // 添加可选
   mistakesCount: number
   todayNewWordsCount: number
   userEmail: string
+  userId?: string  // ✅ 添加用户ID
+  recentBooks?: any[]  // 🔧 性能优化：从服务端传递最近访问的词库
 }
 
 // --- 1. 修正后的统计块 (加了边框，加粗了外轮廓) ---
@@ -50,6 +54,60 @@ function StatBox({
   return <Link href={href}>{content}</Link>
 }
 
+// --- 3. 进度卡片组件（支持多本书）---
+function ProgressCardComponent(props: ProgressCardProps) {
+  const { bookTitle, mode, progress, scopeType, currentIndex, totalWords, lastStudyTime, continueURL } = props
+
+  // 获取模式配置
+  const modeConfig = MODE_CONFIG[mode]
+  const ModeIcon = modeConfig.icon
+  const modeLabel = modeConfig.label
+  const modeColor = modeConfig.color
+
+  // 范围标签
+  const scopeLabel = SCOPE_LABELS[scopeType]
+
+  // 时间标签
+  const timeLabel = formatTimeAgo(lastStudyTime)
+
+  return (
+    <Link href={continueURL} className="group">
+      <div className="bg-white border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] lg:shadow-[4px_4px_0px_0px_#000] flex flex-col gap-3 p-4 h-full hover:-translate-y-1 transition-transform cursor-pointer">
+        {/* Header: 书名 + 模式图标 */}
+        <div className="flex items-start justify-between gap-2">
+          <div className="flex-1 min-w-0">
+            <h3 className="font-black text-base text-black leading-tight mb-1 truncate">{bookTitle}</h3>
+            <div className="flex items-center gap-2 text-xs text-gray-600 font-semibold">
+              <span className="flex items-center gap-1">
+                <ModeIcon size={12} className={modeColor.replace('bg-', 'text-')} />
+                {modeLabel}
+              </span>
+              <span>•</span>
+              <span>{scopeLabel}</span>
+            </div>
+          </div>
+          <div className={`w-10 h-10 ${modeColor} border-2 border-black rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
+            <ModeIcon size={20} className="text-white" strokeWidth={2.5} />
+          </div>
+        </div>
+
+        {/* Progress: 进度百分比 + 位置信息 */}
+        <div>
+          <div className="flex items-baseline gap-1 leading-none mb-2">
+            <span className="text-3xl lg:text-4xl font-black text-black">{progress}</span>
+            <span className="text-sm font-bold text-black">%</span>
+          </div>
+          <div className="flex items-center gap-2 text-xs text-gray-600 font-semibold">
+            <span>{currentIndex + 1}/{totalWords}</span>
+            <span>•</span>
+            <span>{timeLabel}</span>
+          </div>
+        </div>
+      </div>
+    </Link>
+  )
+}
+
 // --- 2. 修正后的新建按钮 (白底黑圈) ---
 function CreateButton() {
   return (
@@ -71,10 +129,12 @@ function CreateButton() {
 
 export function DashboardContent({
   books,
-  lastStudyBook,
+  progressCards = [],  // 添加默认值
   mistakesCount,
   todayNewWordsCount,
-  userEmail
+  userEmail,
+  userId,
+  recentBooks = []  // 🔧 性能优化：默认空数组
 }: DashboardContentProps) {
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-black font-sans p-4 md:p-8 lg:ml-64">
@@ -108,22 +168,11 @@ export function DashboardContent({
         <section className="mb-8 md:mb-12">
           {/* Mobile: 2x2 Grid | Desktop: 1x4 Row */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
-            {/* StatBox 1 - 最近学习 */}
-            {lastStudyBook ? (
-              <Link href={lastStudyBook.continueURL} className="group">
-                <div className="bg-white border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] lg:shadow-[4px_4px_0px_0px_#000] flex flex-col lg:flex-row items-start lg:items-center gap-3 p-4 lg:p-4 h-full lg:h-auto hover:-translate-y-1 transition-transform cursor-pointer">
-                  <div className="w-10 h-10 lg:w-12 lg:h-12 bg-[#B4F416] border-2 border-black rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
-                    <Target size={22} className="text-black lg:w-6 lg:h-6" strokeWidth={2} />
-                  </div>
-                  <div className="flex flex-col justify-center">
-                    <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wider leading-none mb-1">最近学习</p>
-                    <div className="flex items-baseline gap-1 leading-none">
-                      <span className="text-3xl lg:text-4xl font-black text-black">{lastStudyBook.progress}%</span>
-                      <span className="text-xs font-bold text-black hidden lg:inline-block truncate max-w-[100px]">{lastStudyBook.title}</span>
-                    </div>
-                  </div>
-                </div>
-              </Link>
+            {/* StatBox 1-N - 最近学习进度卡片（最多3本） */}
+            {progressCards.length > 0 ? (
+              progressCards.slice(0, 3).map((card, index) => (
+                <ProgressCardComponent key={card.bookId} {...card} />
+              ))
             ) : (
               <EmptyState />
             )}
@@ -154,7 +203,7 @@ export function DashboardContent({
         </section>
 
         {/* 3. Library Grid - 书架 (三个 Tab) */}
-        <BookLibrary userBooks={books} userEmail={userEmail} />
+        <BookLibrary userBooks={books} userEmail={userEmail} userId={userId} recentBooks={recentBooks} />
 
         {/* Footer */}
         <footer className="mt-12 md:mt-16 mb-8">

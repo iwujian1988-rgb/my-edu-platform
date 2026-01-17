@@ -40,7 +40,7 @@ export default defineConfig({
   // 全局设置
   use: {
     // 基础 URL
-    baseURL: 'http://localhost:3000',
+    baseURL: 'http://localhost:3003',
 
     // 收集失败测试的跟踪信息
     trace: 'on-first-retry',

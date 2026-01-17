@@ -154,13 +154,7 @@ export function shouldShowResumeDialog(state: ResumeState | null): boolean {
     return false
   }
 
-  const page = state.context.page
-  const hoursSince = Date.now() - state.updatedAt
-
-  // 检查条件
-  const RESUME_STATE_EXPIRY_MS = 24 * 60 * 60 * 1000 // 24小时
-  const isRecent = hoursSince < RESUME_STATE_EXPIRY_MS
-  const isValidPage = page != null && page > 1
-
-  return isRecent && isValidPage
+  // ✅ 移除时间限制：永久保存用户进度
+  // ✅ 支持所有模式：word-list, flashcards, dictation, match-game
+  return true
 }
