@@ -21,10 +21,6 @@ import type { Database } from '@/types/database'
  * @returns NextResponse with updated auth cookies
  */
 export async function middleware(request: NextRequest) {
-  let supabaseResponse = NextResponse.next({
-    request,
-  })
-
   const { pathname } = request.nextUrl
 
   try {
@@ -42,28 +38,9 @@ export async function middleware(request: NextRequest) {
               value,
               ...options,
             })
-            supabaseResponse = NextResponse.next({
-              request: {
-                headers: request.headers,
-              },
-            })
-            supabaseResponse.cookies.set({
-              name,
-              value,
-              ...options,
-            })
           },
           remove(name: string, options: any) {
             request.cookies.delete({
-              name,
-              ...options,
-            })
-            supabaseResponse = NextResponse.next({
-              request: {
-                headers: request.headers,
-              },
-            })
-            supabaseResponse.cookies.delete({
               name,
               ...options,
             })
@@ -123,7 +100,9 @@ export async function middleware(request: NextRequest) {
     if (pathname.startsWith('/admin')) {
       // /admin/login doesn't require authentication
       if (pathname.startsWith('/admin/login')) {
-        return supabaseResponse
+        return NextResponse.next({
+          request: { headers: request.headers }
+        })
       }
 
       // All other /admin routes require admin authentication
@@ -140,7 +119,7 @@ export async function middleware(request: NextRequest) {
         .select('*')
         .eq('user_id', session.user.id)
         .eq('is_active', true)
-        .maybeSingle()  // Changed from single() to maybeSingle()
+        .maybeSingle()
 
       if (error || !admin) {
         // User is logged in but not an admin
@@ -163,10 +142,20 @@ export async function middleware(request: NextRequest) {
         .from('user_quotas')
         .select('last_reset_date')
         .eq('user_id', session.user.id)
-        .maybeSingle()  // Changed from single() to maybeSingle()
+        .maybeSingle()
     }
 
-    return supabaseResponse
+    // Build response with updated cookies
+    const response = NextResponse.next({
+      request: { headers: request.headers }
+    })
+
+    // Copy all cookies from request to response
+    request.cookies.getAll().forEach(cookie => {
+      response.cookies.set(cookie.name, cookie.value)
+    })
+
+    return response
   } catch (error) {
     // Log error for debugging
     console.error('Middleware error:', error)
@@ -177,7 +166,9 @@ export async function middleware(request: NextRequest) {
     }
 
     // For other routes, return the response as-is
-    return supabaseResponse
+    return NextResponse.next({
+      request: { headers: request.headers }
+    })
   }
 }
 

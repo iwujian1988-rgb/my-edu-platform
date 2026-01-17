@@ -45,7 +45,8 @@ export async function loginUser(
  */
 export async function loginTestUser(page: Page, userKey: 'USER1' | 'USER2' | 'BANNED' = 'USER1') {
   const user = TEST_USERS[userKey];
-  return loginUser(page, user.phone || user.email, user.password);
+  // 使用类型断言，因为测试数据中至少有一个字段存在
+  return loginUser(page, (user as any).phone || (user as any).email, user.password);
 }
 
 /**
