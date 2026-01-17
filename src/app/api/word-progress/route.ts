@@ -1,5 +1,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
+import { cacheService } from '@/lib/cache/redis'
+import { withTimeout, safeJsonParse } from '@/lib/timeout'
 
 type WordProgressItem = {
   word_id: string
@@ -46,7 +48,12 @@ export async function GET(request: NextRequest) {
     }
 
     // 查询单词状态
-    const { data: wordProgress, error: progressError } = await query
+    // ✅ 修复：添加超时保护
+    const { data: wordProgress, error: progressError } = await withTimeout(
+      query,
+      10000,  // 10秒超时
+      'Word progress query timeout'
+    )
 
     if (progressError) {
       console.error('Error fetching word progress:', progressError)
@@ -85,8 +92,11 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    // 解析请求体
-    const body = await request.json()
+    // ✅ 修复：使用安全的JSON解析，带超时和大小限制
+    const body = await safeJsonParse(request, {
+      timeout: 5000,   // 5秒超时
+      maxSize: 1024 * 1024  // 最大1MB
+    })
     console.log('📝 POST /api/word-progress - Request body:', body)
 
     const { word_id, book_id, status, consecutive_correct_count, match_count, fail_count } = body
@@ -137,13 +147,18 @@ export async function POST(request: NextRequest) {
     }
 
     // 使用 UPSERT 保存或更新单词状态
-    const { data: progressData, error: upsertError } = await supabase
-      .from('word_progress')
-      .upsert(updateData, {
-        onConflict: 'user_id,word_id,book_id',
-        ignoreDuplicates: false
-      })
-      .select()
+    // ✅ 修复：添加超时保护
+    const { data: progressData, error: upsertError } = await withTimeout(
+      supabase
+        .from('word_progress')
+        .upsert(updateData, {
+          onConflict: 'user_id,word_id,book_id',
+          ignoreDuplicates: false
+        })
+        .select(),
+      10000,  // 10秒超时
+      'Word progress upsert timeout'
+    )
 
     if (upsertError) {
       console.error('❌ POST /api/word-progress - Database error:', upsertError)
@@ -188,6 +203,9 @@ export async function POST(request: NextRequest) {
     }
 
     console.log('✅ POST /api/word-progress - Success:', progressData?.[0])
+
+    // 对应方案：Section 5.1.2 - 失效相关缓存
+    await cacheService.invalidateStats(user.id, book_id)
 
     return NextResponse.json({
       success: true,
@@ -246,6 +264,13 @@ export async function PUT(request: NextRequest) {
     if (upsertError) {
       console.error('Error batch updating word progress:', upsertError)
       return NextResponse.json({ error: 'Failed to batch update word progress' }, { status: 500 })
+    }
+
+    // 对应方案：Section 5.1.2 - 批量更新后失效相关缓存
+    // 获取所有受影响的book_id
+    const affectedBookIds = new Set(updates.map((u: any) => u.book_id))
+    for (const bookId of Array.from(affectedBookIds)) {
+      await cacheService.invalidateStats(user.id, bookId)
     }
 
     return NextResponse.json({

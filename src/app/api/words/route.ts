@@ -1,6 +1,7 @@
 import { createClient, getCurrentUser, createAdminClient } from '@/lib/supabase/server'
 import { getUserPermissions } from '@/lib/permissions'
 import { NextRequest, NextResponse } from 'next/server'
+import { withTimeout, safeLoop } from '@/lib/timeout'
 
 /**
  * GET /api/words?bookId=xxx&status=xxx&shuffle=true
@@ -59,20 +60,25 @@ export async function GET(request: NextRequest) {
     const supabase = await createClient()
 
     // 🔒 并行检查：权限检查 + 获取用户进度数据（总是获取以附加status）
-    const [bookResult, progressResult] = await Promise.all([
-      // 检查词库权限并获取书名
-      supabase
-        .from('books')
-        .select('id, is_official, created_by, title, total_words')
-        .eq('id', bookId)
-        .single(),
-      // 总是获取用户进度（用于附加status到每个单词）
-      supabase
-        .from('word_progress')
-        .select('word_id, status')
-        .eq('user_id', user.id)
-        .eq('book_id', bookId)
-    ])
+    // ✅ 修复：添加超时保护
+    const [bookResult, progressResult] = await withTimeout(
+      Promise.all([
+        // 检查词库权限并获取书名
+        supabase
+          .from('books')
+          .select('id, is_official, created_by, title, total_words')
+          .eq('id', bookId)
+          .single(),
+        // 总是获取用户进度（用于附加status到每个单词）
+        supabase
+          .from('word_progress')
+          .select('word_id, status')
+          .eq('user_id', user.id)
+          .eq('book_id', bookId)
+      ]),
+      15000,  // 15秒超时
+      'Database query timeout'
+    )
 
     // 权限检查
     const { data: book, error: bookError } = bookResult
@@ -259,32 +265,55 @@ export async function GET(request: NextRequest) {
         let maxIterations = 10 // 防止无限循环
         let iterations = 0
 
-        // 持续加载直到凑齐一页或没有更多数据
-        while (finalWords.length < pageSize && loadedCount >= pageSize && iterations < maxIterations) {
-          iterations++
-          if (iterations > 3) {
-            console.log(`⚠️  Warning: Loading iteration ${iterations}, may indicate performance issue`)
+        // ✅ 修复：使用safeLoop替代while循环，添加超时保护
+        await safeLoop(
+          async () => {
+            // 如果已经凑齐一页，停止循环
+            if (finalWords.length >= pageSize) {
+              return false  // 停止
+            }
+
+            // 如果上次加载的数据少于pageSize，说明没有更多数据了
+            if (loadedCount < pageSize) {
+              return false  // 停止
+            }
+
+            iterations++
+            if (iterations > 3) {
+              console.log(`⚠️  Warning: Loading iteration ${iterations}, may indicate performance issue`)
+            }
+            console.log(`🔄 Loading more words to fill page (${finalWords.length}/${pageSize} so far)`)
+
+            const { data: moreWords, error: moreError } = await withTimeout(
+              supabase
+                .from('words')
+                .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech')
+                .in('chapter_id', chapterIds)
+                .order('order_index', { ascending: true })
+                .range(currentOffset, currentOffset + pageSize - 1),
+              10000,  // 10秒超时
+              'Loading more words timeout'
+            )
+
+            if (moreError || !moreWords || moreWords.length === 0) {
+              console.log('✅ No more words available')
+              return false  // 停止循环
+            }
+
+            // 筛选并添加
+            const newFilteredWords = moreWords.filter((w: any) => !allProgressIds.has(w.id))
+            finalWords = [...finalWords, ...newFilteredWords]
+            loadedCount = moreWords.length
+            currentOffset += pageSize
+
+            return true  // 继续循环
+          },
+          {
+            maxIterations: 5,  // ✅ 减少最大迭代次数
+            timeout: 30000,    // ✅ 添加总超时30秒
+            iterationDelay: 0
           }
-          console.log(`🔄 Loading more words to fill page (${finalWords.length}/${pageSize} so far)`)
-
-          const { data: moreWords, error: moreError } = await supabase
-            .from('words')
-            .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech')
-            .in('chapter_id', chapterIds)
-            .order('order_index', { ascending: true })
-            .range(currentOffset, currentOffset + pageSize - 1)
-
-          if (moreError || !moreWords || moreWords.length === 0) {
-            console.log('✅ No more words available')
-            break
-          }
-
-          // 筛选并添加
-          const newFilteredWords = moreWords.filter((w: any) => !allProgressIds.has(w.id))
-          finalWords = [...finalWords, ...newFilteredWords]
-          loadedCount = moreWords.length
-          currentOffset += pageSize
-        }
+        )
 
         // 计算总数：从全部单词中减去有进度记录的
         const totalNewWords = (count || 0) - allProgressIds.size

@@ -1,9 +1,27 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
+import { z } from 'zod'
+import { fromZodError } from 'zod-validation-error'
+
+// 对应方案：Section 4.1.2 - Zod Schema: 支持mode参数
+const GetProgressSchema = z.object({
+  bookId: z.string().min(1, 'bookId不能为空').uuid('bookId格式错误'),
+  scopeType: z.enum(['all', 'unknown', 'fuzzy', 'known', 'new']),
+  mode: z.enum(['flashcards', 'dictation']).default('flashcards')
+})
+
+const PostProgressSchema = z.object({
+  bookId: z.string().min(1, 'bookId不能为空').uuid('bookId格式错误'),
+  scopeType: z.enum(['all', 'unknown', 'fuzzy', 'known', 'new']),
+  mode: z.enum(['flashcards', 'dictation']).default('flashcards'),
+  currentIndex: z.number().int().min(0, 'currentIndex不能为负数'),
+  totalWords: z.number().int().min(0, 'totalWords不能为负数')
+})
 
 /**
- * Flashcard进度数据结构
- * key: flashcard_progress_{bookId}_{scopeType}
+ * Flashcard/Dictation进度数据结构
+ * 对应方案：Section 4.1.2 - 支持两种模式
+ * key: {mode}_progress_{bookId}_{scopeType}
  * value: {
  *   currentIndex: number
  *   totalWords: number
@@ -13,28 +31,28 @@ import { NextRequest, NextResponse } from 'next/server'
  */
 
 /**
- * GET /api/flashcard-progress?bookId=xxx&scopeType=xxx
- * 获取指定范围的flashcard学习进度
+ * GET /api/flashcard-progress?bookId=xxx&scopeType=xxx&mode=flashcards|dictation
+ * 对应方案：Section 4.1.2 - 获取指定范围和模式的学习进度
  */
 export async function GET(request: NextRequest) {
   const user = await getCurrentUser()
 
   if (!user) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    return NextResponse.json({
+      success: false,
+      error: '未授权访问',
+      code: 'UNAUTHORIZED'
+    }, { status: 401 })
   }
 
   try {
-    const searchParams = request.nextUrl.searchParams
-    const bookId = searchParams.get('bookId')
-    const scopeType = searchParams.get('scopeType')
-
-    if (!bookId) {
-      return NextResponse.json({ error: 'bookId is required' }, { status: 400 })
-    }
+    // 对应方案：Section 4.1.2 - 使用Zod验证
+    const searchParams = Object.fromEntries(request.nextUrl.searchParams)
+    const { bookId, scopeType, mode } = GetProgressSchema.parse(searchParams)
 
     const supabase = await createClient()
 
-    // 从 user_book_preferences 表获取进度
+    // 对应方案：Section 3.1 - 从user_book_preferences表获取进度
     const { data: preferences, error } = await supabase
       .from('user_book_preferences')
       .select('preferences')
@@ -43,7 +61,7 @@ export async function GET(request: NextRequest) {
       .maybeSingle()
 
     if (error) {
-      // 如果没有记录，返回默认进度
+      // 如果没有记录，返回null
       return NextResponse.json({
         success: true,
         data: null
@@ -51,63 +69,61 @@ export async function GET(request: NextRequest) {
     }
 
     const allPreferences = (preferences as any)?.preferences || {}
-    const progressKey = scopeType
-      ? `flashcard_progress_${bookId}_${scopeType}`
-      : null
 
-    // 如果指定了scopeType，返回该范围的进度
-    if (scopeType && progressKey) {
-      const progress = allPreferences[progressKey] || null
-      return NextResponse.json({
-        success: true,
-        data: progress
-      })
-    }
-
-    // 如果没有指定scopeType，返回所有范围的进度
-    const allProgress = Object.keys(allPreferences)
-      .filter(key => key.startsWith(`flashcard_progress_${bookId}_`))
-      .reduce((acc: any, key) => {
-        acc[key] = allPreferences[key]
-        return acc
-      }, {})
+    // 对应方案：Section 4.1.2 - 根据mode构建不同的progressKey
+    const progressKey = `${mode}_progress_${bookId}_${scopeType}`
+    const progress = allPreferences[progressKey] || null
 
     return NextResponse.json({
       success: true,
-      data: allProgress
+      data: progress
     })
+
   } catch (error) {
-    console.error('Error in GET /api/flashcard-progress:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    // 对应方案：Section 4.1.2 - Zod错误处理
+    if (error instanceof z.ZodError) {
+      return NextResponse.json({
+        success: false,
+        error: fromZodError(error).message,
+        code: 'INVALID_PARAMS',
+        details: (error as any).errors
+      }, { status: 400 })
+    }
+
+    console.error('❌ [Progress GET] 服务器错误:', error)
+    return NextResponse.json({
+      success: false,
+      error: '服务器内部错误',
+      code: 'INTERNAL_ERROR'
+    }, { status: 500 })
   }
 }
 
 /**
  * POST /api/flashcard-progress
- * 保存/更新flashcard学习进度
+ * 对应方案：Section 4.1.2 - 保存/更新学习进度（支持flashcards和dictation两种模式）
  */
 export async function POST(request: NextRequest) {
   const user = await getCurrentUser()
 
   if (!user) {
-    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    return NextResponse.json({
+      success: false,
+      error: '未授权访问',
+      code: 'UNAUTHORIZED'
+    }, { status: 401 })
   }
 
   try {
+    // 对应方案：Section 4.1.2 - 使用Zod验证
     const body = await request.json()
-    const { bookId, scopeType, currentIndex, totalWords } = body
-
-    if (!bookId || !scopeType || currentIndex === undefined) {
-      return NextResponse.json(
-        { error: 'bookId, scopeType, and currentIndex are required' },
-        { status: 400 }
-      )
-    }
+    const { bookId, scopeType, mode, currentIndex, totalWords } =
+      PostProgressSchema.parse(body)
 
     const supabase = await createClient()
 
-    // 构建进度数据
-    const progressKey = `flashcard_progress_${bookId}_${scopeType}`
+    // 对应方案：Section 4.1.2 - 根据mode构建不同的progressKey
+    const progressKey = `${mode}_progress_${bookId}_${scopeType}`
     const progressData = {
       currentIndex,
       totalWords: totalWords || 0,
@@ -115,7 +131,7 @@ export async function POST(request: NextRequest) {
       scopeType
     }
 
-    // 获取现有preferences
+    // 对应方案：Section 3.1 - 获取现有preferences
     const { data: existing } = await supabase
       .from('user_book_preferences')
       .select('preferences')
@@ -125,14 +141,15 @@ export async function POST(request: NextRequest) {
 
     const currentPreferences = (existing as any)?.preferences || {}
 
-    // 更新进度
+    // 对应方案：Section 3.1 - 更新进度
     const updatedPreferences = {
       ...currentPreferences,
       [progressKey]: progressData
     }
 
-    // 保存到数据库
-    const { error } = await (supabase.from('user_book_preferences') as any)
+    // 对应方案：Section 3.1 - 保存到数据库
+    const { error } = await supabase
+      .from('user_book_preferences')
       .upsert({
         user_id: user.id,
         book_id: bookId,
@@ -142,16 +159,35 @@ export async function POST(request: NextRequest) {
       })
 
     if (error) {
-      console.error('Error saving flashcard progress:', error)
-      return NextResponse.json({ error: 'Failed to save progress' }, { status: 500 })
+      console.error('❌ [Progress POST] 保存失败:', error)
+      return NextResponse.json({
+        success: false,
+        error: '保存进度失败',
+        code: 'INTERNAL_ERROR'
+      }, { status: 500 })
     }
 
     return NextResponse.json({
       success: true,
       data: progressData
     })
+
   } catch (error) {
-    console.error('Error in POST /api/flashcard-progress:', error)
-    return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
+    // 对应方案：Section 4.1.2 - Zod错误处理
+    if (error instanceof z.ZodError) {
+      return NextResponse.json({
+        success: false,
+        error: fromZodError(error).message,
+        code: 'INVALID_PARAMS',
+        details: (error as any).errors
+      }, { status: 400 })
+    }
+
+    console.error('❌ [Progress POST] 服务器错误:', error)
+    return NextResponse.json({
+      success: false,
+      error: '服务器内部错误',
+      code: 'INTERNAL_ERROR'
+    }, { status: 500 })
   }
 }

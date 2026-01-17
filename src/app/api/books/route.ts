@@ -44,29 +44,19 @@ export async function GET(request: Request) {
                         userPermissions.bookPermissions.includes('全部')
     const userBookIds = userPermissions.bookPermissions
 
-    // 根据权限过滤词库
+    // ✅ 简化：根据权限过滤词库
     filteredBooks = (books || []).filter(book => {
-      // 规则1：自定义词库（非官方且有创建者） - 只返回创建者自己的
-      if (book.is_official === false && book.created_by) {
+      // 规则1：自定义词库（is_official=false）- 只显示创建者自己的
+      if (book.is_official === false) {
         return book.created_by === user.id
       }
 
-      // 规则2：官方词库（is_official为true） - 根据用户权限过滤
+      // 规则2：官方词库（is_official=true）- 根据用户权限过滤
       if (book.is_official === true) {
         return hasAllBooks || userBookIds.includes(book.id)
       }
 
-      // 规则3：is_official为null或undefined的情况 - 检查created_by
-      if (book.is_official === null || book.is_official === undefined) {
-        // 如果有创建者，只返回创建者自己的
-        if (book.created_by) {
-          return book.created_by === user.id
-        }
-        // 如果没有创建者（公共词库），所有人可见
-        return true
-      }
-
-      // 规则4：其他情况（如is_official=false但created_by为null） - 默认不可见
+      // 规则3：未标记词库 - 默认不可见（安全优先）
       return false
     })
 
@@ -115,6 +105,7 @@ export async function POST(request: Request) {
         cover_color: selectedColor,
         category: 'custom', // 自定义词库的category
         is_official: false, // 标记为非官方词库
+        is_published: true, // ✅ 修复：自动发布，让创建者能看到
         total_words: 0,
         total_chapters: 0,
         created_by: user.id

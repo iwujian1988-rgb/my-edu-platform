@@ -32,7 +32,7 @@ export async function GET() {
     const bookIds = recentPrefs.map((pref: any) => pref.book_id)
     const { data: booksData, error: booksError } = await supabase
       .from('books')
-      .select('id, title, description, total_words, cover_url, cover_color')
+      .select('id, title, description, total_words, cover_url, cover_color, created_by, is_official')
       .in('id', bookIds)
 
     if (booksError) throw booksError

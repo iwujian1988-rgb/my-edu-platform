@@ -1,9 +1,16 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { NextResponse } from 'next/server'
+import { retryWithBackoff, parseYoudaoResponse, sleep } from '@/lib/utils/retry'
+import { getCachedWordData, cacheWordData, isRedisAvailable } from '@/lib/utils/cache'
 
 /**
- * 智能录入API
+ * 智能录入API（重构版）
  * 调用免费词典API获取单词释义、音标等信息
+ * 新增功能：
+ * - Redis缓存（30天TTL）
+ * - 指数退避重试
+ * - 支持选择章节
+ * - 提取英式和美式音标
  * 限制：每日500词配额
  */
 export async function POST(request: Request) {
@@ -15,7 +22,7 @@ export async function POST(request: Request) {
 
   try {
     const body = await request.json()
-    const { words, bookId } = body
+    const { words, bookId, chapterId } = body // 新增：支持选择章节
 
     if (!Array.isArray(words) || words.length === 0) {
       return NextResponse.json({ error: '单词列表不能为空' }, { status: 400 })
@@ -83,6 +90,20 @@ export async function POST(request: Request) {
       }, { status: 403 })
     }
 
+    // 🔒 安全检查4：验证目标章节（如果提供了）
+    if (chapterId) {
+      const { data: targetChapter } = await supabase
+        .from('chapters')
+        .select('id, book_id')
+        .eq('id', chapterId)
+        .eq('book_id', bookId)
+        .maybeSingle()
+
+      if (!targetChapter) {
+        return NextResponse.json({ error: '指定的章节不存在' }, { status: 404 })
+      }
+    }
+
     // 1. 检查今日已使用的配额
     const todayStr = new Date().toISOString().split('T')[0]
 
@@ -104,7 +125,10 @@ export async function POST(request: Request) {
       }, { status: 429 })
     }
 
-    // 2. 调用有道词典API获取单词信息
+    // 2. 检查Redis是否可用
+    const cacheAvailable = await isRedisAvailable()
+
+    // 3. 调用有道词典API获取单词信息（带缓存和重试）
     const results = []
 
     // 🔒 安全性：使用Promise.allSettle并发调用，设置超时
@@ -117,86 +141,68 @@ export async function POST(request: Request) {
       const batchResults = await Promise.allSettled(
         batch.map(async (word) => {
           try {
-            // 🔒 安全性：添加超时控制
-            const controller = new AbortController()
-            const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT)
-
-            const response = await fetch(
-              `https://dict.youdao.com/jsonapi?q=${encodeURIComponent(word)}`,
-              {
-                signal: controller.signal,
-                headers: {
-                  'User-Agent': 'Mozilla/5.0 (compatible; EducationalApp/1.0)' // 避免被识别为脚本
-                }
-              }
-            )
-
-            clearTimeout(timeoutId)
-
-            if (!response.ok) {
-              throw new Error(`API返回${response.status}`)
-            }
-
-            const data = await response.json()
-
-            // 🔒 安全性：验证API返回的数据结构
-            if (!data || typeof data !== 'object') {
-              throw new Error('API返回格式错误')
-            }
-
-            // 提取基础信息
-            const simple = data.simple?.word?.[0]
-            const ec = data.ec?.word?.[0]
-            const ee = data.ee?.word?.[0]
-            const blng = data.blng_sents_part?.['sentence-pair']?.[0]
-            const phrs = data.phrs?.phrs?.[0]
-            const syno = data.syno?.synos?.[0]
-
-            // 音标（优先使用美式音标）
-            const phonetic = simple?.usphone || simple?.ukphone || ''
-
-            // 中文释义（从ec中提取）
-            const definition = ec?.trs?.[0]?.tr?.[0]?.l?.i?.[0] || ''
-
-            // 英文释义（从ee中提取）
-            let definition_en = ''
-            if (ee?.trs) {
-              for (const tr of ee.trs) {
-                if (tr.tr?.[0]?.l?.i) {
-                  definition_en = tr.tr[0].l.i
-                  break
-                }
+            // ✅ 新增：检查缓存
+            if (cacheAvailable) {
+              const cached = await getCachedWordData(word)
+              if (cached) {
+                console.log(`✅ [Cache Hit] ${word}`)
+                return cached
               }
             }
 
-            // 词性
-            const partOfSpeech = syno?.syno?.pos || ''
+            // ✅ 新增：使用重试机制调用API
+            const data = await retryWithBackoff(async () => {
+              const controller = new AbortController()
+              const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT)
 
-            // 例句（中英文）
-            const exampleSentence = blng?.['sentence-translation'] || ''
-            const exampleSentenceEn = blng?.['sentence-eng'] || blng?.sentence || ''
+              try {
+                const response = await fetch(
+                  `https://dict.youdao.com/jsonapi?q=${encodeURIComponent(word)}`,
+                  {
+                    signal: controller.signal,
+                    headers: {
+                      'User-Agent': 'Mozilla/5.0 (compatible; EducationalApp/1.0)'
+                    }
+                  }
+                )
 
-            // 搭配
-            const collocationEn = phrs?.phr?.headword?.l?.i || ''
-            const collocation = phrs?.phr?.trs?.[0]?.tr?.[0]?.l?.i || ''
+                clearTimeout(timeoutId)
 
-            return {
-              word: word.trim(),
-              phonetic: phonetic.replace(/\//g, ''), // 移除音标符号
-              definition: definition,
-              definition_en: definition_en,
-              collocation: collocation,
-              collocation_en: collocationEn,
-              example_sentence: exampleSentence,
-              example_sentence_en: exampleSentenceEn,
-              part_of_speech: partOfSpeech,
-              success: true
+                if (!response.ok) {
+                  throw new Error(`API返回${response.status}`)
+                }
+
+                const jsonData = await response.json()
+
+                // 🔒 安全性：验证API返回的数据结构
+                if (!jsonData || typeof jsonData !== 'object') {
+                  throw new Error('API返回格式错误')
+                }
+
+                return jsonData
+              } catch (fetchError: any) {
+                clearTimeout(timeoutId)
+                throw fetchError
+              }
+            }, 3) // 最多重试3次
+
+            // 解析响应
+            const parsed = parseYoudaoResponse(data, word)
+
+            // ✅ 新增：写入缓存
+            if (cacheAvailable) {
+              await cacheWordData(word, parsed)
             }
+
+            return parsed
+
           } catch (error: any) {
             console.error(`Error fetching word "${word}":`, error.message)
             return {
               word: word.trim(),
               phonetic: '',
+              uk_phonetic: '',
+              us_phonetic: '',
               definition: '',
               definition_en: '',
               collocation: '',
@@ -220,47 +226,55 @@ export async function POST(request: Request) {
       })
     }
 
-    // 3. 检查是否已有章节，如果有则复用，否则创建新章节
-    const { data: existingChapter } = await supabase
-      .from('chapters')
-      .select('id')
-      .eq('book_id', bookId)
-      .order('created_at', { ascending: false })
-      .limit(1)
+    // 4. 查找或使用指定章节
+    let finalChapterId = chapterId
 
-    let chapterId = existingChapter?.[0]?.id
-
-    if (!chapterId) {
-      // 创建默认章节
-      console.log(`[DEBUG] Creating chapter for book ${bookId}`)
-
-      const { data: chapterData, error: chapterError } = await supabase
+    if (!finalChapterId) {
+      // 如果没有指定章节，查找或创建默认章节
+      const { data: existingChapter } = await supabase
         .from('chapters')
-        .insert({
-          book_id: bookId,
-          title: '默认章节',
-          order_index: 1,
-          word_count: results.length
-        } as any)
-        .select()
-        .single()
+        .select('id')
+        .eq('book_id', bookId)
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .maybeSingle()
 
-      if (chapterError || !chapterData) {
-        console.error('[ERROR] Failed to create chapter:', chapterError)
-        return NextResponse.json({ error: '创建章节失败' }, { status: 500 })
+      finalChapterId = existingChapter?.id
+
+      if (!finalChapterId) {
+        // 创建默认章节
+        console.log(`[DEBUG] Creating chapter for book ${bookId}`)
+
+        const { data: chapterData, error: chapterError } = await supabase
+          .from('chapters')
+          .insert({
+            book_id: bookId,
+            title: '默认章节',
+            order_index: 1,
+            word_count: results.length,
+            is_default: true
+          } as any)
+          .select()
+          .single()
+
+        if (chapterError || !chapterData) {
+          console.error('[ERROR] Failed to create chapter:', chapterError)
+          return NextResponse.json({ error: '创建章节失败' }, { status: 500 })
+        }
+
+        finalChapterId = (chapterData as any).id
+        console.log(`[DEBUG] Default chapter created successfully with ID: ${finalChapterId}`)
       }
-
-      chapterId = (chapterData as any).id
-      console.log(`[DEBUG] Chapter created successfully with ID: ${chapterId}`)
-    } else {
-      console.log(`[DEBUG] Reusing existing chapter: ${chapterId}`)
     }
 
-    // 4. 批量插入到words表
+    // 5. 批量插入到words表
     const wordsToInsert = results.map((result, index) => ({
-      chapter_id: chapterId,
+      book_id: bookId,
+      chapter_id: finalChapterId,
       word: result.word,
       phonetic: result.phonetic,
+      uk_phonetic: result.uk_phonetic, // ✅ 新增：英式音标
+      us_phonetic: result.us_phonetic, // ✅ 新增：美式音标
       definition: result.definition,
       definition_en: result.definition_en,
       collocation: result.collocation,
@@ -268,7 +282,7 @@ export async function POST(request: Request) {
       example_sentence: result.example_sentence,
       example_sentence_en: result.example_sentence_en,
       part_of_speech: result.part_of_speech,
-      order_index: bookData.total_words + index + 1 // 追加到现有单词后
+      order_index: bookData.total_words + index + 1
     }))
 
     const { data: insertedWords, error: insertError } = await supabase
@@ -281,20 +295,24 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: '保存单词失败' }, { status: 500 })
     }
 
-    // 5. 更新词库统计
+    // 6. 更新词库统计
     const newTotalWords = bookData.total_words + results.length
-    const newTotalChapters = 1 // 简化处理，假设只有一个章节
 
     await supabase
       .from('books')
       .update({
         total_words: newTotalWords,
-        total_chapters: newTotalChapters,
-        is_published: true // 🔒 修复：自动发布，让用户能看到
+        is_published: true
       })
       .eq('id', bookId)
 
-    // 6. 更新配额
+    // 更新章节单词计数
+    await supabase.rpc('increment_chapter_word_count', {
+      chapter_uuid: finalChapterId,
+      increment_by: results.length
+    })
+
+    // 7. 更新配额
     const { error: quotaUpdateError } = await supabase
       .from('smart_import_quota')
       .upsert({
@@ -308,13 +326,15 @@ export async function POST(request: Request) {
 
     if (quotaUpdateError) {
       console.error('Error updating quota:', quotaUpdateError)
-      // ⚠️ 注意：配额更新失败不影响操作，但应该记录日志
     }
 
     return NextResponse.json({
       success: true,
       words: insertedWords,
-      remaining: DAILY_LIMIT - (todayUsed + uniqueWords.length)
+      imported: insertedWords?.length || 0,
+      remaining: DAILY_LIMIT - (todayUsed + uniqueWords.length),
+      chapterId: finalChapterId,
+      message: `已导入${insertedWords?.length || 0}个单词`
     })
   } catch (error: any) {
     console.error('Error in POST /api/smart-import:', error)
