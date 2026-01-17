@@ -22,7 +22,7 @@ export default async function AdminUserDetailPage({
 
   // 获取用户详细信息
   const { data: user, error } = await supabase
-    .from('users')
+    .from('users') as any
     .select('*')
     .eq('id', userId)
     .single()

@@ -49,13 +49,13 @@ export default async function AdminUsersPage({
 
     // 查询使用这些邀请码的用户
     query = supabase
-      .from('users')
+      .from('users') as any
       .select('*', { count: 'exact', head: false })
       .in('invitation_code_id', codeIds.length > 0 ? codeIds : ['__none__'])
   } else {
     // 不筛选套餐时，查询所有用户（包括没有邀请码的用户）
     query = supabase
-      .from('users')
+      .from('users') as any
       .select('*', { count: 'exact', head: false })
   }
 
@@ -102,7 +102,7 @@ export default async function AdminUsersPage({
   let totalCount = count
   if (!totalCount && users) {
     const { count: manualCount } = await supabase
-      .from('users')
+      .from('users') as any
       .select('*', { count: 'exact', head: true })
 
     totalCount = manualCount || 0

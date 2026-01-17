@@ -26,10 +26,10 @@ export default async function AdminDashboard() {
     activeInvitationCodesData
   ] = await Promise.all([
     // 用户总数
-    supabase.from('users').select('id', { count: 'exact', head: true }),
+    supabase.from('users') as any.select('id', { count: 'exact', head: true }),
     // 今日新增用户
     supabase
-      .from('users')
+      .from('users') as any
       .select('id', { count: 'exact', head: true })
       .gte('created_at', new Date().toISOString().split('T')[0]),
     // 7日内活跃用户
@@ -66,7 +66,7 @@ export default async function AdminDashboard() {
 
   // 统计权限过期用户
   const { count: expiredPermissionsCount } = await supabase
-    .from('users')
+    .from('users') as any
     .select('id', { count: 'exact', head: true })
     .not('permission_expires_at', 'is', null)
     .lt('permission_expires_at', new Date().toISOString())
