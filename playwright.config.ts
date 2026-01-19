@@ -24,11 +24,11 @@ export default defineConfig({
   // 失败时重试次数
   retries: 1,
 
-  // 并行执行测试
-  fullyParallel: true,
+  // 并行执行测试 - 改为false避免数据竞争
+  fullyParallel: false,
 
   // 在 CI 环境中禁止并行
-  // workers: process.env.CI ? 1 : undefined,
+  workers: 1,  // 串行执行，避免数据竞争
 
   // 测试报告
   reporter: [
@@ -39,7 +39,7 @@ export default defineConfig({
 
   // 全局设置
   use: {
-    // 基础 URL
+    // 基础 URL（与dev server端口匹配）
     baseURL: 'http://localhost:3003',
 
     // 收集失败测试的跟踪信息

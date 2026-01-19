@@ -12,6 +12,65 @@ import { FlashcardStatsBar } from '@/components/FlashcardStatsBar'
 import { FlashcardScopeDialog } from '@/components/FlashcardScopeDialog'
 import { validateScope, validateHashIndex } from '@/lib/urlValidation'
 
+// ⭐ sessionStorage 工具函数
+const SESSION_STORAGE_KEY = (bookId: string) => `flashcards_position_${bookId}`
+const SESSION_EXPIRY_MS = 5 * 60 * 1000 // 5分钟
+
+interface SessionPosition {
+  bookId: string
+  index: number
+  scope: string
+  timestamp: number
+}
+
+function saveSessionPosition(bookId: string, index: number, scope: string) {
+  try {
+    const position: SessionPosition = {
+      bookId,
+      index,
+      scope,
+      timestamp: Date.now()
+    }
+    sessionStorage.setItem(SESSION_STORAGE_KEY(bookId), JSON.stringify(position))
+  } catch (e) {
+    console.warn('Failed to save session position:', e)
+  }
+}
+
+function getSessionPosition(bookId: string): SessionPosition | null {
+  try {
+    const data = sessionStorage.getItem(SESSION_STORAGE_KEY(bookId))
+    if (!data) return null
+
+    const position: SessionPosition = JSON.parse(data)
+
+    // 检查是否过期（5分钟）
+    const isExpired = Date.now() - position.timestamp > SESSION_EXPIRY_MS
+    if (isExpired) {
+      sessionStorage.removeItem(SESSION_STORAGE_KEY(bookId))
+      return null
+    }
+
+    // 检查bookId是否匹配
+    if (position.bookId !== bookId) {
+      return null
+    }
+
+    return position
+  } catch (e) {
+    console.warn('Failed to get session position:', e)
+    return null
+  }
+}
+
+function clearSessionPosition(bookId: string) {
+  try {
+    sessionStorage.removeItem(SESSION_STORAGE_KEY(bookId))
+  } catch (e) {
+    console.warn('Failed to clear session position:', e)
+  }
+}
+
 type Word = {
   id: string
   word: string
@@ -52,13 +111,23 @@ export default function FlashcardsPage() {
 
   const [words, setWords] = useState<Word[]>([])
   const [wordProgress, setWordProgress] = useState<Record<string, WordProgress>>({})
-  // ⭐ 如果从首页进入且有 hash 索引，使用 hash 索引作为初始位置（但不超过已加载的单词数）
+  // ⭐ 初始化索引：优先级 sessionStorage > hash > 0
   const [currentIndex, setCurrentIndex] = useState(() => {
+    // 1. 优先从 sessionStorage 读取（刷新恢复）
+    const sessionPosition = getSessionPosition(bookId)
+    if (sessionPosition && sessionPosition.scope === scope) {
+      console.log('📍 Restoring from sessionStorage:', sessionPosition.index + 1)
+      return sessionPosition.index
+    }
+
+    // 2. 其次使用 hash 索引（从首页进入）
     if (initialHashIndex !== undefined && initialHashIndex > 0) {
       // 注意：words 初始为空，这里只是设置初始值
       // 实际的有效值会在 hash 定位 useEffect 中修正
       return initialHashIndex
     }
+
+    // 3. 默认从第一个开始
     return 0
   })
   const [isFlipped, setIsFlipped] = useState(false)
@@ -271,20 +340,9 @@ export default function FlashcardsPage() {
   // 保存 loadMoreWords 到 ref，供 handleNextWord 使用
   loadMoreWordsRef.current = loadMoreWords
 
-  // ⭐ 页面卸载时保存当前卡片位置并清理所有 timer
+  // ⭐ 清理 timer 的 useEffect（beforeunload中的位置保存已由实时保存处理）
   useEffect(() => {
-    const handleBeforeUnload = () => {
-      saveResumeState(bookId, 'flashcards', {
-        index: currentIndex,
-        totalWords: words.length
-      })
-    }
-
-    window.addEventListener('beforeunload', handleBeforeUnload)
-
     return () => {
-      window.removeEventListener('beforeunload', handleBeforeUnload)
-
       // 清理所有 timer
       if (saveTimerRef.current) {
         clearTimeout(saveTimerRef.current)
@@ -295,37 +353,65 @@ export default function FlashcardsPage() {
         nextWordTimerRef.current = null
       }
     }
-  }, [bookId, currentIndex, words.length])
+  }, [])
 
-  // ⭐ Hash 定位逻辑：从首页进入时，自动滚动到指定位置（只执行一次）
+  // ⭐ Hash 定位逻辑：处理 URL hash 索引（从首页进入或直接访问URL）
   useEffect(() => {
-    if (isFromHomepageResume && initialHashIndex !== undefined && !loading && words.length > 0) {
-      console.log('[Flashcards] Hash positioning: scrolling to word', initialHashIndex + 1)
+    // 只要不是loading且有hash，就处理hash定位
+    if (!loading && words.length > 0) {
+      const currentHash = window.location.hash
+      const hashIndex = validateHashIndex(currentHash)
 
-      // 确保 hash 索引在有效范围内
-      const validIndex = Math.min(initialHashIndex, words.length - 1)
+      if (hashIndex !== undefined) {
+        console.log('[Flashcards] Hash positioning: scrolling to word', hashIndex + 1)
 
-      // 如果当前索引与有效索引不匹配，调整到有效位置
-      if (currentIndex !== validIndex) {
-        console.log(`[Flashcards] Adjusting index from ${currentIndex} to ${validIndex} (words.length: ${words.length})`)
-        setCurrentIndex(validIndex)
-      }
+        // 确保 hash 索引在有效范围内
+        const validIndex = Math.min(hashIndex, words.length - 1)
 
-      // 使用 scrollIntoView 定位到当前卡片（如果有 id）
-      // 由于使用的是 hash 定位，浏览器会自动处理滚动
-      // 这里我们确保组件已经渲染完成
-      const timer = setTimeout(() => {
-        const element = document.getElementById(`word-${validIndex}`)
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-          console.log('[Flashcards] Scrolled to word element:', validIndex + 1)
+        // 如果当前索引与有效索引不匹配，调整到有效位置
+        if (currentIndex !== validIndex) {
+          console.log(`[Flashcards] Adjusting index from ${currentIndex} to ${validIndex} (words.length: ${words.length})`)
+          setCurrentIndex(validIndex)
+
+          // ⭐ 如果索引被调整，同步更新URL hash（避免测试失败）
+          if (hashIndex !== validIndex) {
+            const newHash = `#word-${validIndex}`
+            window.history.replaceState(null, '', newHash)
+            console.log(`[Flashcards] Updated URL hash from #word-${hashIndex} to ${newHash}`)
+          }
         }
-      }, 100)
 
-      return () => clearTimeout(timer)
+        // 使用 scrollIntoView 定位到当前卡片（如果有 id）
+        const timer = setTimeout(() => {
+          const element = document.getElementById(`word-${validIndex}`)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'center' })
+            console.log('[Flashcards] Scrolled to word element:', validIndex + 1)
+          }
+        }, 100)
+
+        return () => clearTimeout(timer)
+      }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isFromHomepageResume, initialHashIndex, loading, words.length]) // 移除 currentIndex 依赖，避免无限循环
+  }, [loading, words.length]) // 移除 currentIndex 依赖，避免无限循环
+
+  // ⭐ 实时保存当前位置到 sessionStorage（用于刷新恢复）
+  useEffect(() => {
+    if (!loading && words.length > 0) {
+      // 保存当前索引到 sessionStorage
+      saveSessionPosition(bookId, currentIndex, currentScope)
+      console.log('💾 Saved to sessionStorage:', currentIndex + 1, 'scope:', currentScope)
+
+      // ⭐⭐⭐ 同时立即保存到服务器（resume_state）- 解决关闭浏览器丢失进度的问题
+      saveResumeState(bookId, 'flashcards', {
+        index: currentIndex,
+        scope: currentScope,
+        totalWords: words.length
+      })
+      console.log('💾 Saved to resume_state:', currentIndex + 1)
+    }
+  }, [currentIndex, currentScope, bookId, loading, words.length])
 
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
@@ -369,7 +455,7 @@ export default function FlashcardsPage() {
   }, [])
 
   // 批量保存函数
-  const flushPendingSaves = useCallback(async () => {
+  const flushPendingSaves = useCallback(async (options?: { keepalive?: boolean }) => {
     const pending = { ...pendingSaveRef.current }
     if (Object.keys(pending).length === 0) return
 
@@ -383,7 +469,9 @@ export default function FlashcardsPage() {
             word_id: wordId,
             book_id: bookId,
             status
-          })
+          }),
+          // ⭐ 使用 keepalive 确保页面卸载时请求能完成
+          keepalive: options?.keepalive ?? false
         })
       )
 
@@ -688,37 +776,21 @@ export default function FlashcardsPage() {
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [handleStatus, handleFlip, hasUserInteracted])
 
-  // 页面卸载或隐藏时保存待保存的数据和当前学习位置
+  // 页面卸载或隐藏时保存待保存的数据（单词进度）
+  // ⭐ 注意：当前位置已通过实时保存处理，这里只需保存pending的单词进度
   useEffect(() => {
     const handleBeforeUnload = () => {
-      // ⭐ 立即保存当前学习位置（防止浏览器返回丢失状态）
-      if (words.length > 0 && currentIndex >= 0) {
-        console.log('📍 Saving current position on beforeunload:', currentIndex + 1)
-        saveResumeState(bookId, 'flashcards', {
-          index: currentIndex,
-          totalWords: words.length
-        })
-      }
-
-      // 保存待保存的学习进度
+      // ⭐ 立即保存待保存的学习进度（使用 keepalive 确保请求完成）
       if (Object.keys(pendingSaveRef.current).length > 0) {
-        flushPendingSaves()
+        flushPendingSaves({ keepalive: true })
       }
     }
 
     const handleVisibilityChange = () => {
       if (document.hidden) {
-        // ⭐ 页面隐藏时也保存当前学习位置
-        if (words.length > 0 && currentIndex >= 0) {
-          console.log('📍 Saving current position on visibility change:', currentIndex + 1)
-          saveResumeState(bookId, 'flashcards', {
-            index: currentIndex,
-            totalWords: words.length
-          })
-        }
-
+        // ⭐ 页面隐藏时也立即保存（使用 keepalive）
         if (Object.keys(pendingSaveRef.current).length > 0) {
-          flushPendingSaves()
+          flushPendingSaves({ keepalive: true })
         }
       }
     }
@@ -730,23 +802,14 @@ export default function FlashcardsPage() {
       window.removeEventListener('beforeunload', handleBeforeUnload)
       document.removeEventListener('visibilitychange', handleVisibilityChange)
 
-      // ⭐ 组件卸载时保存当前学习位置（最重要）
-      if (words.length > 0 && currentIndex >= 0) {
-        console.log('📍 Component unmounting, saving position:', currentIndex + 1)
-        saveResumeState(bookId, 'flashcards', {
-          index: currentIndex,
-          totalWords: words.length
-        })
-      }
-
-      // 保存待保存的学习进度
+      // ⭐ 组件卸载时立即保存待保存的学习进度（使用 keepalive）
       const pending = pendingSaveRef.current
       if (Object.keys(pending).length > 0) {
         console.log('Component unmounting, saving pending data:', pending)
-        flushPendingSaves()
+        flushPendingSaves({ keepalive: true })
       }
     }
-  }, [flushPendingSaves, bookId, currentIndex, words.length])
+  }, [flushPendingSaves])
 
   // 拖拽开始
   const handleDragStart = (e: React.MouseEvent | React.TouchEvent) => {

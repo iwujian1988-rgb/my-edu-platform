@@ -462,21 +462,25 @@ export function BookDetailPageClient({
   // ✅ 改进：统一的筛选和翻页处理函数
   const handleThemeChange = (theme: string) => {
     setTheme(theme)
+    setPage(1)  // ⭐ 切换主题筛选时重置到第1页
     setShowThemeMenu(false)
   }
 
   const handleSceneChange = (scene: string) => {
     setScenario(scene)
+    setPage(1)  // ⭐ 切换场景筛选时重置到第1页
     setShowSceneMenu(false)
   }
 
   const handleChapterChange = (chapter: string) => {
     setChapter(chapter)
+    setPage(1)  // ⭐ 切换章节筛选时重置到第1页
     setShowChapterMenu(false)
   }
 
   const handleStatusChange = (status: StatusFilter) => {
     setStatus(status)
+    setPage(1)  // ⭐ 切换筛选时重置到第1页
     setShowFilterMenu(false)
   }
 

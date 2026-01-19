@@ -8,6 +8,10 @@ import { DashboardContent } from '@/components/DashboardContent'
 import { AppSidebar } from '@/components/AppSidebar'
 import type { ProgressCardProps } from '@/types/progress'
 
+// ✅ 添加ISR缓存，15秒重新验证一次
+// 这可以显著减少数据库查询次数和服务器负载
+export const revalidate = 15
+
 export default async function Home() {
   // 获取用户信息
   const user = await getCurrentUser()
@@ -72,10 +76,10 @@ export default async function Home() {
         recentProgressResult,
         typingRecentResult
       ] = await Promise.all([
-        // 查询1：获取用户最近访问的词库（限制为3个）
+        // 查询1：获取用户最近访问的词库（限制为3个）- 包含 last_resume_state
         supabase
           .from('user_book_preferences')
-          .select('book_id, last_accessed_at')
+          .select('book_id, last_accessed_at, last_resume_state')
           .eq('user_id', user.id)
           .not('last_accessed_at', 'is', null)
           .order('last_accessed_at', { ascending: false })
@@ -118,23 +122,25 @@ export default async function Home() {
       mistakesCount = mistakesData?.length || 0
       todayNewWordsCount = todayWords?.length || 0
 
-      // 🔍 调试：打印原始数据
-      console.log('=== 首页数据调试 ===')
-      console.log('用户ID:', user.id)
-      console.log('recentPrefs (user_book_preferences):', recentPrefs?.length || 0, '条')
-      console.log('typingRecent (typing_recent_practice):', typingRecent?.length || 0, '条')
-      console.log('recentProgress (word_progress):', recentProgress?.length || 0, '条')
-      if (recentProgress && recentProgress.length > 0) {
-        const uniqueBooks = new Map()
-        for (const row of recentProgress) {
-          if (!uniqueBooks.has(row.book_id)) {
-            uniqueBooks.set(row.book_id, row.updated_at)
+      // 🔍 调试：打印原始数据（仅开发环境）
+      if (process.env.NODE_ENV === 'development') {
+        console.log('=== 首页数据调试 ===')
+        console.log('用户ID:', user.id)
+        console.log('recentPrefs (user_book_preferences):', recentPrefs?.length || 0, '条')
+        console.log('typingRecent (typing_recent_practice):', typingRecent?.length || 0, '条')
+        console.log('recentProgress (word_progress):', recentProgress?.length || 0, '条')
+        if (recentProgress && recentProgress.length > 0) {
+          const uniqueBooks = new Map()
+          for (const row of recentProgress) {
+            if (!uniqueBooks.has(row.book_id)) {
+              uniqueBooks.set(row.book_id, row.updated_at)
+            }
           }
+          console.log('  - 唯一词库数:', uniqueBooks.size, '个')
+          console.log('  - 前3个词库ID:', Array.from(uniqueBooks.keys()).slice(0, 3))
         }
-        console.log('  - 唯一词库数:', uniqueBooks.size, '个')
-        console.log('  - 前3个词库ID:', Array.from(uniqueBooks.keys()).slice(0, 3))
+        console.log('==================')
       }
-      console.log('==================')
 
       // 🔧 性能优化：批量获取所有词库的学习进度统计
       if (books.length > 0) {
@@ -217,21 +223,29 @@ export default async function Home() {
           .select('id, title, description, total_words, cover_url, cover_color')
           .in('id', recentBookIds)
 
-        console.log('📖 书籍查询结果:')
-        console.log('   - 成功:', recentBooksData?.length || 0, '本')
-        console.log('   - 错误:', booksError?.message || '无')
+        if (process.env.NODE_ENV === 'development') {
+          console.log('📖 书籍查询结果:')
+          console.log('   - 成功:', recentBooksData?.length || 0, '本')
+          console.log('   - 错误:', booksError?.message || '无')
+        }
 
         // 合并数据，保持最近访问的顺序
         const booksMap = new Map((recentBooksData || []).map((book: any) => [book.id, book]))
-        console.log('📚 booksMap 构建:', booksMap.size, '个条目')
+        if (process.env.NODE_ENV === 'development') {
+          console.log('📚 booksMap 构建:', booksMap.size, '个条目')
+        }
 
         // 根据数据源使用相应的顺序
         if (recentPrefs && recentPrefs.length > 0) {
-          console.log('🔄 使用 user_book_preferences 顺序，映射', recentPrefs.length, '条记录')
+          if (process.env.NODE_ENV === 'development') {
+            console.log('🔄 使用 user_book_preferences 顺序，映射', recentPrefs.length, '条记录')
+          }
           const mappedBooks = recentPrefs
             .map((pref: any) => {
               const book = booksMap.get(pref.book_id)
-              console.log('   - 映射', pref.book_id, ':', book ? '✅ 找到' : '❌ 未找到')
+              if (process.env.NODE_ENV === 'development') {
+                console.log('   - 映射', pref.book_id, ':', book ? '✅ 找到' : '❌ 未找到')
+              }
               return book ? {
                 id: book.id,
                 title: book.title,
@@ -239,7 +253,8 @@ export default async function Home() {
                 total_words: book.total_words,
                 cover_url: book.cover_url,
                 cover_color: book.cover_color,
-                last_accessed_at: pref.last_accessed_at
+                last_accessed_at: pref.last_accessed_at,
+                last_resume_state: pref.last_resume_state  // ✅ 保留 resume_state
               } : null
             })
             .filter((book: any) => book !== null)
@@ -319,15 +334,8 @@ export default async function Home() {
       if (recentBooks && recentBooks.length > 0) {
         console.log('🔄 开始转换 recentBooks 为 progressCards...')
 
-        // 获取这些书籍的 resume_state 和进度信息
+        // 获取每本书的学习进度统计（recentBooks 已包含 last_resume_state）
         const bookIds = recentBooks.map((b: any) => b.id)
-        const { data: userPrefsData } = await supabase
-          .from('user_book_preferences')
-          .select('book_id, last_resume_state')
-          .eq('user_id', user.id)
-          .in('book_id', bookIds)
-
-        // 获取每本书的学习进度统计
         const { data: progressStatsData } = await supabase
           .from('word_progress')
           .select('book_id, status')
@@ -347,12 +355,9 @@ export default async function Home() {
           }
         }
 
-        // 构建 resume_state 映射
-        const prefsMap = new Map(userPrefsData?.map(p => [p.book_id, p.last_resume_state]) || [])
-
-        // 转换为 ProgressCard 格式
+        // 转换为 ProgressCard 格式（直接使用 recentBooks 中的 last_resume_state）
         progressCards = recentBooks.slice(0, 3).map((book: any) => {
-          const resumeState = prefsMap.get(book.id)
+          const resumeState = book.last_resume_state  // ✅ 直接使用，无需额外查询
           const stats = statsMap[book.id] || { known: 0, fuzzy: 0, total: 0 }
           const totalWords = book.total_words || 0
 
@@ -360,10 +365,17 @@ export default async function Home() {
           const learnedCount = stats.known + stats.fuzzy
           const progress = totalWords > 0 ? Math.round((learnedCount / totalWords) * 100) : 0
 
-          // 从 resume_state 获取模式信息，默认为 typing
-          const mode = resumeState?.mode || 'typing'
-          let scopeType = resumeState?.context?.scope || 'unknown'
-          const currentIndex = resumeState?.context?.index || 0
+          // 🔧 检查 resumeState 是否为有效对象（不是 null、undefined 或空对象）
+          // ✅ 修复：即使 mode 为 undefined，只要有 context 数据就应该视为有效
+          const hasValidResumeState = resumeState &&
+            typeof resumeState === 'object' &&
+            Object.keys(resumeState).length > 0 &&
+            (resumeState.mode || resumeState.context)
+
+          // 从 resume_state 获取模式信息（mode 可能是 undefined，使用默认值）
+          const mode = resumeState?.mode || 'word-list'
+          let scopeType = resumeState?.context?.scope || resumeState?.context?.scopeType || 'all'
+          const currentIndex = resumeState?.context?.index || resumeState?.context?.currentIndex || 0
 
           // 🔧 检查所选 scope 是否有单词，如果没有则回退到 'all'
           const bookScopeStats = scopeStatsMap[book.id]
@@ -376,21 +388,56 @@ export default async function Home() {
           }
 
           // 生成 continue URL
-          let continueURL = `/library/${book.id}`
-          if (resumeState?.mode === 'word-list') {
-            continueURL = `/library/${book.id}`
-          } else if (resumeState?.mode === 'flashcards') {
-            // ✅ 使用 hash 传递 index（修复断点跳转）
-            const hash = `#word-${currentIndex}`
-            continueURL = `/study/${book.id}/flashcards?scope=${scopeType}&shuffle=true${hash}`
-          } else if (resumeState?.mode === 'dictation') {
-            // ✅ 使用 hash 传递 index，并添加 scope（修复断点跳转）
-            const hash = `#word-${currentIndex}`
-            continueURL = `/study/${book.id}/dictation?scope=${scopeType}${hash}`
-          } else if (resumeState?.mode === 'typing') {
-            // ⚠️ 打字游戏暂不支持断点续做，只传 scope
-            continueURL = `/practice?bookId=${book.id}&scope=${scopeType}`
+          // ✅ 修复：即使没有 resume_state，只要这本书在 user_book_preferences 中，就应该能访问
+          let continueURL = `/library/${book.id}`  // 默认跳转到词书详情页
+
+          if (hasValidResumeState) {
+            if (mode === 'word-list') {
+              // ✅ 修复：word-list模式需要传递页码和筛选条件
+              const params = new URLSearchParams()
+              const contextPage = resumeState.context?.page
+              const contextStatus = resumeState.context?.status || resumeState.context?.scope
+              const contextTheme = resumeState.context?.theme
+              const contextScenario = resumeState.context?.scenario
+
+              if (contextPage && contextPage > 1) {
+                params.set('page', String(contextPage))
+              }
+              if (contextStatus && contextStatus !== 'all') {
+                params.set('status', contextStatus)
+              }
+              if (contextTheme && contextTheme !== 'all') {
+                params.set('theme', contextTheme)
+              }
+              if (contextScenario && contextScenario !== 'all') {
+                params.set('scenario', contextScenario)
+              }
+
+              const queryString = params.toString()
+              continueURL = `/library/${book.id}${queryString ? `?${queryString}` : ''}`
+            } else if (mode === 'flashcards') {
+              // ✅ 使用 hash 传递 index（修复断点跳转）
+              const hash = `#word-${currentIndex}`
+              continueURL = `/study/${book.id}/flashcards?scope=${scopeType}&shuffle=true${hash}`
+            } else if (mode === 'dictation') {
+              // ✅ 使用 hash 传递 index，并添加 scope（修复断点跳转）
+              const hash = `#word-${currentIndex}`
+              continueURL = `/study/${book.id}/dictation?scope=${scopeType}${hash}`
+            } else if (mode === 'typing') {
+              // ⚠️ 打字游戏暂不支持断点续做，只传 scope
+              continueURL = `/practice?bookId=${book.id}&scope=${scopeType}`
+            }
           }
+
+          // 🔍 调试日志：打印 continueURL 生成信息
+          console.log('🔗 生成 continueURL:', {
+            bookId: book.id.slice(0, 8),
+            bookTitle: book.title,
+            hasValidResumeState,
+            mode,
+            scopeType,
+            continueURL
+          })
 
           return {
             bookId: book.id,

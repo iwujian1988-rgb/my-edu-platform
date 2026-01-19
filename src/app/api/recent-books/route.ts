@@ -12,10 +12,10 @@ export async function GET() {
 
     const supabase = await createClient()
 
-    // 第一步：获取用户最近访问的6个词库ID
+    // 第一步：获取用户最近访问的6个词库ID和resume_state
     const { data: recentPrefs, error: prefsError } = await supabase
       .from('user_book_preferences')
-      .select('book_id, last_accessed_at')
+      .select('book_id, last_accessed_at, last_resume_state')
       .eq('user_id', user.id)
       .not('last_accessed_at', 'is', null)
       .order('last_accessed_at', { ascending: false })
@@ -25,7 +25,7 @@ export async function GET() {
 
     // 如果没有访问记录，返回空数组
     if (!recentPrefs || recentPrefs.length === 0) {
-      return NextResponse.json({ books: [] })
+      return NextResponse.json({ success: true, data: [] })
     }
 
     // 第二步：根据book_id查询书籍信息
@@ -42,14 +42,29 @@ export async function GET() {
     const books = recentPrefs
       .map((pref: any) => {
         const book = booksMap.get(pref.book_id)
-        return book ? {
-          ...book,
-          last_accessed_at: pref.last_accessed_at
-        } : null
+        if (!book) return null
+
+        // 从 last_resume_state 中提取 mode
+        const resumeState = pref.last_resume_state as any
+        const mode = resumeState?.mode || 'word-list'
+
+        return {
+          bookId: book.id,
+          bookTitle: book.title,
+          description: book.description,
+          totalWords: book.total_words,
+          coverUrl: book.cover_url,
+          coverColor: book.cover_color,
+          createdBy: book.created_by,
+          isOfficial: book.is_official,
+          mode: mode,
+          lastAccessedAt: pref.last_accessed_at,
+          resumeState: resumeState
+        }
       })
       .filter((book: any) => book !== null)
 
-    return NextResponse.json({ books })
+    return NextResponse.json({ success: true, data: books })
   } catch (error: any) {
     console.error('Error fetching recent books:', error)
     return NextResponse.json(
