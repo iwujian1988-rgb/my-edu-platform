@@ -4,7 +4,6 @@ import type { NextConfig } from "next";
 // 开发环境：启用 HTTP 代理
 // ========================================
 // 使用 undici 的 ProxyAgent 让全局 fetch 走代理
-// TODO: 生产环境部署到阿里云香港后可以移除此代码
 if (process.env.NODE_ENV === 'development') {
   const { setGlobalDispatcher, ProxyAgent } = require('undici')
 
