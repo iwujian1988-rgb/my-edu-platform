@@ -258,7 +258,7 @@ class DictationService {
             status: scopeType,
             shuffle: shuffle.toString(),
             page: '1',
-            pageSize: '10000'
+            pageSize: '10000'  // 听写模式需要加载所有单词
           })
 
           const response = await fetch(

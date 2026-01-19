@@ -65,11 +65,17 @@ function phoneToEmail(phone: string): string {
 export async function login(formData: { phone: string; password: string }) {
   const { phone, password } = formData
 
+  // 🔍 调试日志
+  console.log('[Login Action] 收到的数据:', JSON.stringify({ phone, password: '***' }))
+  console.log('[Login Action] formData 类型:', typeof formData)
+  console.log('[Login Action] formData 原始:', JSON.stringify(formData))
+
   try {
     const supabase = await createClient()
 
     // Convert phone to fake email
     const email = phoneToEmail(phone)
+    console.log('[Login Action] 转换后的 email:', email)
 
     // Sign in with Supabase Auth (带重试机制)
     let retries = 3

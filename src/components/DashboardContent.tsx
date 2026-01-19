@@ -56,7 +56,21 @@ function StatBox({
 
 // --- 3. 进度卡片组件（支持多本书）---
 function ProgressCardComponent(props: ProgressCardProps) {
-  const { bookTitle, mode, progress, scopeType, currentIndex, totalWords, lastStudyTime, continueURL } = props
+  const { bookTitle, mode, progress, scopeType, currentIndex, totalWords, lastStudyTime, continueURL, bookId } = props
+
+  // 🔧 防御性检查：确保 continueURL 有效
+  const safeContinueURL = (continueURL && continueURL.startsWith('/') && continueURL !== '/')
+    ? continueURL
+    : '/library'  // ✅ 使用词库列表页作为备用（避免权限问题）
+
+  // 🔍 调试日志
+  if (continueURL !== safeContinueURL) {
+    console.warn('⚠️ continueURL 无效，使用备用URL:', {
+      bookId,
+      original: continueURL,
+      safe: safeContinueURL
+    })
+  }
 
   // 获取模式配置
   const modeConfig = MODE_CONFIG[mode]
@@ -71,7 +85,12 @@ function ProgressCardComponent(props: ProgressCardProps) {
   const timeLabel = formatTimeAgo(lastStudyTime)
 
   return (
-    <Link href={continueURL} className="group">
+    <Link
+      href={safeContinueURL}
+      className="group"
+      data-testid="progress-card"
+      data-book-id={bookId}
+    >
       <div className="bg-white border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] lg:shadow-[4px_4px_0px_0px_#000] flex flex-col gap-3 p-4 h-full hover:-translate-y-1 transition-transform cursor-pointer">
         {/* Header: 书名 + 模式图标 */}
         <div className="flex items-start justify-between gap-2">

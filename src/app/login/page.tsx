@@ -65,29 +65,42 @@ function LoginForm() {
 
     try {
       console.log('[Login] 尝试登录:', loginData.phone)
-      const result = await login(loginData)
+
+      // 添加超时处理 (10秒)
+      const timeoutPromise = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error('登录超时，请检查网络连接')), 10000)
+      )
+
+      const result = await Promise.race([
+        login(loginData),
+        timeoutPromise
+      ]) as any
+
       console.log('[Login] 登录结果:', result)
 
       if (result.error) {
         console.error('[Login] 登录失败:', result.error)
         setError(result.error)
         setLoading(false)
-      } else {
-        // 检查是否有redirect参数
-        const redirectTo = searchParams.get('redirect')
-        console.log('[Login] 登录成功，redirect参数:', redirectTo)
-
-        // 立即跳转到目标页面或首页
-        const targetUrl = redirectTo || '/'
-        console.log('[Login] 跳转到:', targetUrl)
-
-        router.push(targetUrl)
-        router.refresh()
+        return  // ✅ 修复: 防止表单作为GET提交，避免凭据暴露在URL中
       }
-    } catch (err: any) {
+
+      // 登录成功，检查是否有redirect参数
+      const redirectTo = searchParams.get('redirect')
+      console.log('[Login] 登录成功，redirect参数:', redirectTo)
+
+      // 立即跳转到目标页面或首页
+      const targetUrl = redirectTo || '/'
+      console.log('[Login] 跳转到:', targetUrl)
+
+      router.push(targetUrl)
+      router.refresh()
+    } catch (err: unknown) {
       console.error('[Login] 异常:', err)
-      setError(err.message || '登录失败，请重试')
+      const message = err instanceof Error ? err.message : '登录失败，请重试'
+      setError(message)
       setLoading(false)
+      return  // ✅ 修复: 防止异常后表单作为GET提交
     }
   }
 
@@ -119,14 +132,17 @@ function LoginForm() {
       if (result.error) {
         setError(result.error)
         setLoading(false)
-      } else {
-        // 立即跳转，不等待
-        router.push('/')
-        router.refresh()
+        return  // ✅ 修复: 防止表单作为GET提交
       }
-    } catch (err: any) {
-      setError(err.message || '注册失败，请重试')
+
+      // 注册成功，立即跳转
+      router.push('/')
+      router.refresh()
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : '注册失败，请重试'
+      setError(message)
       setLoading(false)
+      return  // ✅ 修复: 防止异常后表单作为GET提交
     }
   }
 
@@ -305,6 +321,8 @@ function LoginForm() {
                           placeholder="请输入手机号"
                           className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
                           required
+                          data-testid="phone-input"
+                          name="phone"
                         />
                       </div>
                     </div>
@@ -322,6 +340,8 @@ function LoginForm() {
                           placeholder="请输入密码"
                           className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
                           required
+                          data-testid="password-input"
+                          name="password"
                         />
                         <button
                           type="button"
@@ -357,6 +377,7 @@ function LoginForm() {
                       disabled={loading}
                       className="w-full clay-button-primary text-lg py-5 shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       style={{ minHeight: '64px' }}
+                      data-testid="login-submit-button"
                     >
                       {loading ? (
                         <>⏳ 登录中...</>
@@ -390,6 +411,8 @@ function LoginForm() {
                           placeholder="请输入11位手机号"
                           className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
                           required
+                          data-testid="signup-phone-input"
+                          name="phone"
                         />
                       </div>
                       {fieldErrors.phone && (
@@ -418,6 +441,8 @@ function LoginForm() {
                           placeholder="至少6位密码"
                           className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
                           required
+                          data-testid="signup-password-input"
+                          name="password"
                         />
                         <button
                           type="button"
@@ -454,14 +479,19 @@ function LoginForm() {
                           placeholder="请输入邀请码"
                           className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg uppercase"
                           required
+                          data-testid="signup-invitation-code-input"
+                          name="invitationCode"
                         />
                       </div>
-                      <div className="mt-3 flex items-start gap-2 px-2">
-                        <Sparkles className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#4CAF50' }} />
-                        <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                          测试邀请码：<span className="font-bold" style={{ color: '#4CAF50' }}>TEST1234</span>, <span className="font-bold" style={{ color: '#87CEEB' }}>DEMO2024</span>, <span className="font-bold" style={{ color: '#FF8C61' }}>BETA5000</span>
-                        </p>
-                      </div>
+                      {/* 仅在开发环境显示测试邀请码 */}
+                      {process.env.NODE_ENV === 'development' && (
+                        <div className="mt-3 flex items-start gap-2 px-2">
+                          <Sparkles className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#4CAF50' }} />
+                          <p className="text-sm text-gray-600 font-medium leading-relaxed">
+                            测试邀请码（仅开发环境）：<span className="font-bold" style={{ color: '#4CAF50' }}>TEST1234</span>, <span className="font-bold" style={{ color: '#87CEEB' }}>DEMO2024</span>, <span className="font-bold" style={{ color: '#FF8C61' }}>BETA5000</span>
+                          </p>
+                        </div>
+                      )}
                     </div>
 
                     <button
@@ -469,6 +499,7 @@ function LoginForm() {
                       disabled={loading}
                       className="w-full clay-button-secondary text-lg py-5 shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                       style={{ minHeight: '64px' }}
+                      data-testid="signup-submit-button"
                     >
                       {loading ? (
                         <>⏳ 注册中...</>
