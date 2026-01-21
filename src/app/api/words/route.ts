@@ -59,9 +59,9 @@ export async function GET(request: NextRequest) {
 
     const supabase = await createClient()
 
-    // 🔒 并行检查：权限检查 + 获取用户进度数据（总是获取以附加status）
+    // 🔒 并行检查：权限检查 + 获取用户进度数据 + 检查theme/scene数据
     // ✅ 修复：添加超时保护
-    const [bookResult, progressResult] = await withTimeout(
+    const [bookResult, progressResult, chaptersResult] = await withTimeout(
       Promise.all([
         // 检查词库权限并获取书名
         supabase
@@ -74,6 +74,11 @@ export async function GET(request: NextRequest) {
           .from('word_progress')
           .select('word_id, status')
           .eq('user_id', user.id)
+          .eq('book_id', bookId),
+        // 🔥 检查书籍的章节是否有theme/scene数据
+        supabase
+          .from('chapters')
+          .select('theme_id, scene_id')
           .eq('book_id', bookId)
       ]),
       15000,  // 15秒超时
@@ -105,6 +110,13 @@ export async function GET(request: NextRequest) {
     // 保存book信息供后面使用
     const bookTitle = bookData.title || 'Unknown Book'
     const totalWordsFromBook = bookData.total_words
+
+    // 🔥 检查书籍是否有theme/scene数据
+    const chapters = chaptersResult.data || []
+    const hasThemeData = chapters.some((ch: any) => ch.theme_id !== null && ch.theme_id !== undefined)
+    const hasSceneData = chapters.some((ch: any) => ch.scene_id !== null && ch.scene_id !== undefined)
+
+    console.log(`📊 [Theme/Scene] Book ${bookId}: hasTheme=${hasThemeData}, hasScene=${hasSceneData}`)
 
     // 尝试使用优化的分页RPC函数（更快，返回更少字段）
     const offset = (page - 1) * pageSize
@@ -242,10 +254,18 @@ export async function GET(request: NextRequest) {
 
         // ⚡ 优化：直接查询带分页，避免获取所有单词
         // 获取当前页的单词（已经考虑分页）
+        // 🔥 修复：关联 chapters 表获取 theme 和 scene
         const chapterIds = chaptersData.map((c: any) => c.id)
+
+        // 先获取章节的 theme_id 和 scene_id 映射
+        const chaptersMap = new Map(chaptersData.map((c: any) => [
+          c.id,
+          { theme_id: c.theme_id, scene_id: c.scene_id }
+        ]))
+
         const { data: pagedWords, error: pagedError, count } = await supabase
           .from('words')
-          .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech', { count: 'exact' })
+          .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id', { count: 'exact' })
           .in('chapter_id', chapterIds)
           .order('order_index', { ascending: true })
           .range(offset, offset + pageSize - 1)
@@ -255,8 +275,18 @@ export async function GET(request: NextRequest) {
           return NextResponse.json({ error: 'Failed to fetch words' }, { status: 500 })
         }
 
+        // 🔥 为每个单词附加 theme 和 scene（从章节获取）
+        const wordsWithThemeScene = (pagedWords || []).map((w: any) => {
+          const chapterInfo = chaptersMap.get(w.chapter_id)
+          return {
+            ...w,
+            theme: chapterInfo?.theme_id || null,
+            scene: chapterInfo?.scene_id || null
+          }
+        })
+
         // 客户端筛选：过滤出没有进度记录的单词
-        const filteredPagedWords = (pagedWords || []).filter((w: any) => !allProgressIds.has(w.id))
+        const filteredPagedWords = wordsWithThemeScene.filter((w: any) => !allProgressIds.has(w.id))
 
         // 如果当前页筛选后没有足够的单词，需要加载更多来填补
         let finalWords = filteredPagedWords
@@ -287,7 +317,7 @@ export async function GET(request: NextRequest) {
             const { data: moreWords, error: moreError } = await withTimeout(
               supabase
                 .from('words')
-                .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech')
+                .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id')
                 .in('chapter_id', chapterIds)
                 .order('order_index', { ascending: true })
                 .range(currentOffset, currentOffset + pageSize - 1),
@@ -301,7 +331,15 @@ export async function GET(request: NextRequest) {
             }
 
             // 筛选并添加
-            const newFilteredWords = moreWords.filter((w: any) => !allProgressIds.has(w.id))
+            const moreWordsWithThemeScene = moreWords.map((w: any) => {
+              const chapterInfo = chaptersMap.get(w.chapter_id)
+              return {
+                ...w,
+                theme: chapterInfo?.theme_id || null,
+                scene: chapterInfo?.scene_id || null
+              }
+            })
+            const newFilteredWords = moreWordsWithThemeScene.filter((w: any) => !allProgressIds.has(w.id))
             finalWords = [...finalWords, ...newFilteredWords]
             loadedCount = moreWords.length
             currentOffset += pageSize
@@ -326,17 +364,23 @@ export async function GET(request: NextRequest) {
         // 其他状态：使用原来的逻辑
         const { data: chaptersData } = await supabase
           .from('chapters')
-          .select('id')
+          .select('id, theme_id, scene_id')
           .eq('book_id', bookId)
 
         if (!chaptersData) {
           return NextResponse.json({ error: 'Failed to fetch chapters' }, { status: 500 })
         }
 
+        // 🔥 创建章节映射，用于附加 theme 和 scene
+        const chaptersMapFallback = new Map(chaptersData.map((c: any) => [
+          c.id,
+          { theme_id: c.theme_id, scene_id: c.scene_id }
+        ]))
+
         const chapterIdsFallback = chaptersData.map((c: any) => c.id)
         const { data: fallbackWords, error: fallbackError } = await supabase
           .from('words')
-          .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech')
+          .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id')
           .in('chapter_id', chapterIdsFallback)
           .order('order_index', { ascending: true })
           .range(offset, offset + pageSize - 1)
@@ -346,7 +390,15 @@ export async function GET(request: NextRequest) {
           return NextResponse.json({ error: 'Failed to fetch words' }, { status: 500 })
         }
 
-        words = fallbackWords
+        // 🔥 为每个单词附加 theme 和 scene
+        words = fallbackWords.map((w: any) => {
+          const chapterInfo = chaptersMapFallback.get(w.chapter_id)
+          return {
+            ...w,
+            theme: chapterInfo?.theme_id || null,
+            scene: chapterInfo?.scene_id || null
+          }
+        })
         console.log('✅ Fallback query result, fields:', words?.[0] ? Object.keys(words[0]) : 'no data')
       }
     }
@@ -435,7 +487,9 @@ export async function GET(request: NextRequest) {
       pageSize,
       total: totalWordsFromBook || 5862,
       count: count,  // 用于统计显示的实际单词数
-      bookTitle: bookTitle  // 返回书名供前端使用
+      bookTitle: bookTitle,  // 返回书名供前端使用
+      hasThemeData,  // 🔥 书籍是否有theme数据
+      hasSceneData   // 🔥 书籍是否有scene数据
     })
   } catch (error) {
     console.error('Error in GET /api/words:', error)

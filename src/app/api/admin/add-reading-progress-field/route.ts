@@ -6,7 +6,7 @@ export async function GET() {
 
   try {
     // 执行 SQL 添加字段
-    const { error } = await supabase.rpc('exec_sql', {
+    const { error } = await (supabase as any).rpc('exec_sql', {
       sql: `
         ALTER TABLE user_book_preferences
         ADD COLUMN IF NOT EXISTS last_reading_progress JSONB;

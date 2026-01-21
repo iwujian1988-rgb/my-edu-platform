@@ -57,6 +57,7 @@ export default function MatchGamePage() {
   const [allWords, setAllWords] = useState<Word[]>([])
   const [wordProgress, setWordProgress] = useState<Record<string, WordProgress>>({})
   const [loading, setLoading] = useState(true)
+  const [loadingMessage, setLoadingMessage] = useState<string>('')  // 加载提示信息
   const [bookTitle, setBookTitle] = useState('')
   const [scopeLabel, setScopeLabel] = useState('')
 
@@ -100,10 +101,47 @@ export default function MatchGamePage() {
 
   // 难度选项配置
   const DIFFICULTY_OPTIONS = [
-    { pairs: 4, cards: 8, name: '轻松', time: '约3-5分钟', color: 'from-green-50 to-green-100', borderColor: 'border-green-300' },
-    { pairs: 10, cards: 20, name: '中等', time: '约8-10分钟', color: 'from-blue-50 to-blue-100', borderColor: 'border-blue-300' },
-    { pairs: 20, cards: 40, name: '困难', time: '约15-20分钟', color: 'from-purple-50 to-purple-100', borderColor: 'border-purple-300' },
+    { pairs: 4, cards: 8, name: '轻松', time: '约3-5分钟', color: 'from-green-50 to-green-100', borderColor: 'border-green-300', batchSize: 100 },
+    { pairs: 10, cards: 20, name: '中等', time: '约8-10分钟', color: 'from-blue-50 to-blue-100', borderColor: 'border-blue-300', batchSize: 300 },
+    { pairs: 20, cards: 40, name: '困难', time: '约15-20分钟', color: 'from-purple-50 to-purple-100', borderColor: 'border-purple-300', batchSize: 600 },
   ]
+
+  // 根据难度确定每次加载的单词数量
+  const getBatchSize = (difficulty: number | null) => {
+    const option = DIFFICULTY_OPTIONS.find(opt => opt.pairs === difficulty)
+    return option?.batchSize || 100  // 默认100
+  }
+
+  // 当前已加载的单词总数（用于分批加载）
+  const [loadedWordsCount, setLoadedWordsCount] = useState(0)
+  const [totalWordsCount, setTotalWordsCount] = useState(0)  // 书中总单词数
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
+
+  // 加载单词数据（支持分批懒加载）
+  const loadWords = useCallback(async (difficulty: number | null, offset: number = 0, isInitialLoad: boolean = false) => {
+    try {
+      const batchSize = getBatchSize(difficulty)
+
+      const params = new URLSearchParams()
+      params.set('bookId', bookId)
+      params.set('page', String(Math.floor(offset / batchSize) + 1))
+      params.set('pageSize', String(batchSize))
+
+      // 根据难度加载足够的单词
+      const wordsRes = await fetch(`/api/words?${params.toString()}`)
+      if (!wordsRes.ok) throw new Error('Failed to fetch words')
+      const wordsData = await wordsRes.json()
+
+      return {
+        words: wordsData.data,
+        totalCount: wordsData.total || wordsData.data.length,
+        hasMore: wordsData.data.length === batchSize
+      }
+    } catch (error) {
+      console.error('Error loading words:', error)
+      return { words: [], totalCount: 0, hasMore: false }
+    }
+  }, [bookId])
 
   // Fetch words and progress
   useEffect(() => {
@@ -115,52 +153,28 @@ export default function MatchGamePage() {
           setSelectedDifficulty(parseInt(savedDifficulty))
         }
 
+        setLoadingMessage('正在加载词书信息...')
         const bookRes = await fetch(`/api/books/${bookId}`)
         if (!bookRes.ok) throw new Error('Failed to fetch book')
         const bookData = await bookRes.json()
         setBookTitle(bookData.data.title)
 
-        const params = new URLSearchParams()
-        params.set('bookId', bookId)
+        // 首次加载：根据默认难度加载第一批单词
+        const initialDifficulty = parseInt(savedDifficulty || '4')
+        const batchSize = getBatchSize(initialDifficulty)
+        setLoadingMessage(`正在加载单词...（预计 ${Math.ceil(batchSize / 100)} × 100 个）`)
 
-        if (scope === 'filtered') {
-          const theme = searchParams.get('theme')
-          const scene = searchParams.get('scene')
-          const status = searchParams.get('status')
+        const { words: initialWords, totalCount: totalWordsCount } = await loadWords(initialDifficulty, 0, true)
 
-          if (theme && theme !== 'all') params.set('theme', theme)
-          if (scene && scene !== 'all') params.set('scene', scene)
-          if (status && status !== 'all') params.set('status', status)
-        }
+        setAllWords(initialWords)
+        setLoadedWordsCount(initialWords.length)
+        setTotalWordsCount(totalWordsCount)  // 保存总单词数
 
-        const wordsRes = await fetch(`/api/words?${params.toString()}`)
-        if (!wordsRes.ok) throw new Error('Failed to fetch words')
-        const wordsData = await wordsRes.json()
-
-        setAllWords(wordsData.data)
-
-        // Generate scope label
-        if (scope === 'all') {
-          setScopeLabel('全书')
+        // 生成范围标签：显示加载的单词数量
+        if (totalWordsCount <= batchSize) {
+          setScopeLabel(`全书 ${totalWordsCount} 个单词`)
         } else {
-          const parts = []
-          const theme = searchParams.get('theme')
-          const scene = searchParams.get('scene')
-          const status = searchParams.get('status')
-
-          if (theme && theme !== 'all') parts.push(theme)
-          if (scene && scene !== 'all') parts.push(scene)
-          if (status && status !== 'all') {
-            const statusMap: Record<string, string> = {
-              'new': '未标注',
-              'known': '认识',
-              'fuzzy': '模糊',
-              'unknown': '不认识'
-            }
-            parts.push(statusMap[status] || status)
-          }
-
-          setScopeLabel(parts.length > 0 ? parts.join(' - ') : '全部')
+          setScopeLabel(`随机复习 ${initialWords.length} 个单词`)
         }
 
         const progressRes = await fetch(`/api/word-progress?book_id=${bookId}`)
@@ -171,15 +185,19 @@ export default function MatchGamePage() {
         }
 
         // 首次加载：构建未认识单词池
-        const unknownWords = wordsData.data.filter((word: Word) => {
+        const unknownWords = initialWords.filter((word: Word) => {
           const progress = progressData?.data?.[word.id]
           return !progress || progress.status !== 'known'
         })
         setUnknownWordsPool(unknownWords)
+
+        // 保存总单词数，用于懒加载判断
+        setLoadedWordsCount(initialWords.length)
       } catch (error) {
         console.error('Error fetching data:', error)
       } finally {
         setLoading(false)
+        setLoadingMessage('')  // 清除加载提示
       }
     }
 
@@ -190,9 +208,45 @@ export default function MatchGamePage() {
   useEffect(() => {
     if (unknownWordsPool.length === 0 || selectedDifficulty === null) return
 
-    // 计算总轮次
-    const totalRoundsCount = Math.ceil(unknownWordsPool.length / selectedDifficulty)
-    setTotalRounds(totalRoundsCount)
+    // 检查是否需要加载更多单词（单词池少于所需数量的2倍）
+    const checkAndLoadMore = async () => {
+      const batchSize = getBatchSize(selectedDifficulty)
+      const minRequiredWords = selectedDifficulty * 2  // 至少够2轮
+
+      // 如果当前单词池少于最小需求，且还没加载完所有单词
+      if (unknownWordsPool.length < minRequiredWords && loadedWordsCount < allWords.length) {
+        console.log('🔄 Loading more words...')
+        setIsLoadingMore(true)
+
+        try {
+          const { words: moreWords } = await loadWords(selectedDifficulty, loadedWordsCount)
+
+          if (moreWords.length > 0) {
+            // 过滤新加载的单词
+            const newUnknownWords = moreWords.filter((word: Word) => {
+              const progress = wordProgress[word.id]
+              return !progress || progress.status !== 'known'
+            })
+
+            // 追加到单词池
+            setUnknownWordsPool(prev => [...prev, ...newUnknownWords])
+            setAllWords(prev => [...prev, ...moreWords])
+            setLoadedWordsCount(prev => prev + moreWords.length)
+
+            console.log(`✅ Loaded ${moreWords.length} more words, ${newUnknownWords.length} are unknown`)
+          } else {
+            console.log('ℹ️ No more words to load')
+          }
+        } catch (error) {
+          console.error('Error loading more words:', error)
+        } finally {
+          setIsLoadingMore(false)
+        }
+      }
+    }
+
+    // 异步检查并加载更多单词（不在初始化时调用，避免循环触发）
+    // checkAndLoadMore() // ❌ 移除：每次轮次变化都会调用，导致重复加载
 
     // 单词去重：同一单词只保留一个释义（避免多义词问题）
     const wordMap = new Map<string, Word>()
@@ -242,7 +296,16 @@ export default function MatchGamePage() {
     setCards(shuffledCards)
     setShowDifficultySelect(false)  // 隐藏难度选择，显示游戏
     setAllCompleted(false)  // 重置通关状态
-  }, [unknownWordsPool, selectedDifficulty, currentRound])  // ✅ 在单词池、难度或轮次变化时重新初始化
+  }, [unknownWordsPool, selectedDifficulty])  // ✅ 只在单词池或难度变化时重新初始化
+
+  // 单独处理轮次变化 - 避免循环触发
+  useEffect(() => {
+    if (selectedDifficulty !== null && !showDifficultySelect && currentRound > 0 && unknownWordsPool.length > 0) {
+      // 当前端已经选择了难度且不在难度选择界面时，才初始化游戏
+      initializeGame()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentRound])  // ✅ 只监听 currentRound 变化，故意忽略 initializeGame
 
   // 保存单词进度到数据库（带重试机制和cleanup）
   const saveWordProgress = useCallback(async (data: any, retries = 2, signal?: AbortSignal) => {
@@ -546,48 +609,126 @@ export default function MatchGamePage() {
     }
   }, [cards, selectedCard, isProcessing, wordProgress, bookId, saveWordProgress, MATCH_THRESHOLD, FAIL_THRESHOLD, currentRound, totalRounds, masteredWords])
 
-  // 播放音效
+  // 播放音效 - 游戏级音效
   const playSound = (type: 'match' | 'wrong' | 'win') => {
     const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
-
-    const oscillator = audioContext.createOscillator()
-    const gainNode = audioContext.createGain()
-
-    oscillator.connect(gainNode)
-    gainNode.connect(audioContext.destination)
+    const masterGain = audioContext.createGain()
+    masterGain.connect(audioContext.destination)
+    masterGain.gain.value = 0.4  // 总体音量
 
     if (type === 'match') {
-      // 匹配成功音效：两个连续的音符
-      oscillator.frequency.setValueAtTime(523.25, audioContext.currentTime) // C5
-      oscillator.frequency.setValueAtTime(659.25, audioContext.currentTime + 0.1) // E5
-      oscillator.type = 'sine'
-      gainNode.gain.setValueAtTime(0.3, audioContext.currentTime)
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3)
-      oscillator.start(audioContext.currentTime)
-      oscillator.stop(audioContext.currentTime + 0.3)
-    } else if (type === 'wrong') {
-      // 匹配失败音效：低频锯齿波
-      oscillator.frequency.value = 150
-      oscillator.type = 'sawtooth'
-      gainNode.gain.setValueAtTime(0.2, audioContext.currentTime)
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2)
-      oscillator.start(audioContext.currentTime)
-      oscillator.stop(audioContext.currentTime + 0.2)
-    } else if (type === 'win') {
-      // 胜利音效：上升的琶音
-      const notes = [523.25, 659.25, 783.99, 1046.50] // C5, E5, G5, C6
+      // ✨ 匹配成功：愉悦的和弦（大调三和弦）
+      const notes = [523.25, 659.25, 783.99]  // C5, E5, G5
+      const now = audioContext.currentTime
+
       notes.forEach((freq, i) => {
         const osc = audioContext.createOscillator()
         const gain = audioContext.createGain()
+
         osc.connect(gain)
-        gain.connect(audioContext.destination)
-        osc.frequency.value = freq
+        gain.connect(masterGain)
+
         osc.type = 'sine'
-        gain.gain.setValueAtTime(0.3, audioContext.currentTime + i * 0.1)
-        gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + i * 0.1 + 0.2)
-        osc.start(audioContext.currentTime + i * 0.1)
-        osc.stop(audioContext.currentTime + i * 0.1 + 0.2)
+        osc.frequency.value = freq
+
+        // 每个音符略微错开，形成琶音效果
+        const startTime = now + i * 0.05
+        const duration = 0.4
+
+        gain.gain.setValueAtTime(0, startTime)
+        gain.gain.linearRampToValueAtTime(0.3, startTime + 0.02)
+        gain.gain.exponentialRampToValueAtTime(0.01, startTime + duration)
+
+        osc.start(startTime)
+        osc.stop(startTime + duration)
       })
+
+      // 添加高音装饰音
+      const highOsc = audioContext.createOscillator()
+      const highGain = audioContext.createGain()
+      highOsc.connect(highGain)
+      highGain.connect(masterGain)
+      highOsc.type = 'triangle'
+      highOsc.frequency.value = 1046.50  // C6
+      highGain.gain.setValueAtTime(0.1, now + 0.1)
+      highGain.gain.exponentialRampToValueAtTime(0.01, now + 0.35)
+      highOsc.start(now + 0.1)
+      highOsc.stop(now + 0.35)
+
+    } else if (type === 'wrong') {
+      // ❌ 匹配失败：柔和的错误提示音
+      const now = audioContext.currentTime
+
+      // 主音：低沉但不刺耳
+      const osc1 = audioContext.createOscillator()
+      const gain1 = audioContext.createGain()
+      osc1.connect(gain1)
+      gain1.connect(masterGain)
+      osc1.type = 'triangle'
+      osc1.frequency.setValueAtTime(196.00, now)  // G3
+      gain1.gain.setValueAtTime(0.3, now)
+      gain1.gain.exponentialRampToValueAtTime(0.01, now + 0.25)
+      osc1.start(now)
+      osc1.stop(now + 0.25)
+
+      // 和音：五度
+      const osc2 = audioContext.createOscillator()
+      const gain2 = audioContext.createGain()
+      osc2.connect(gain2)
+      gain2.connect(masterGain)
+      osc2.type = 'triangle'
+      osc2.frequency.setValueAtTime(293.66, now)  // D4
+      gain2.gain.setValueAtTime(0.2, now)
+      gain2.gain.exponentialRampToValueAtTime(0.01, now + 0.25)
+      osc2.start(now)
+      osc2.stop(now + 0.25)
+
+    } else if (type === 'win') {
+      // 🎉 胜利：激昂的旋律
+      const now = audioContext.currentTime
+      const melody = [
+        { freq: 523.25, start: 0, duration: 0.15 },      // C5
+        { freq: 659.25, start: 0.1, duration: 0.15 },   // E5
+        { freq: 783.99, start: 0.2, duration: 0.15 },    // G5
+        { freq: 1046.50, start: 0.3, duration: 0.3 },    // C6
+        { freq: 783.99, start: 0.5, duration: 0.15 },    // G5
+        { freq: 1046.50, start: 0.6, duration: 0.4 },    // C6
+      ]
+
+      melody.forEach(({ freq, start, duration }) => {
+        const osc = audioContext.createOscillator()
+        const gain = audioContext.createGain()
+
+        osc.connect(gain)
+        gain.connect(masterGain)
+
+        osc.type = 'sine'
+        osc.frequency.value = freq
+
+        const startTime = now + start
+        gain.gain.setValueAtTime(0, startTime)
+        gain.gain.linearRampToValueAtTime(0.35, startTime + 0.02)
+        gain.gain.exponentialRampToValueAtTime(0.01, startTime + duration)
+
+        osc.start(startTime)
+        osc.stop(startTime + duration)
+      })
+
+      // 添加和弦伴奏
+      const chordFreqs = [261.63, 329.63, 392.00]  // C4, E4, G4
+      for (let i = 0; i < chordFreqs.length; i++) {
+        const freq = chordFreqs[i]
+        const chordOsc = audioContext.createOscillator()
+        const chordGain = audioContext.createGain()
+        chordOsc.connect(chordGain)
+        chordGain.connect(masterGain)
+        chordOsc.type = 'triangle'
+        chordOsc.frequency.value = freq
+        chordGain.gain.setValueAtTime(0.15, now)
+        chordGain.gain.exponentialRampToValueAtTime(0.01, now + 0.8)
+        chordOsc.start(now)
+        chordOsc.stop(now + 0.8)
+      }
     }
   }
 
@@ -608,34 +749,118 @@ export default function MatchGamePage() {
   }
 
   // 处理难度选择
-  const handleDifficultySelect = (pairs: number) => {
+  const handleDifficultySelect = async (pairs: number) => {
     setSelectedDifficulty(pairs)
     // 保存到 localStorage
     localStorage.setItem(`match-game-difficulty-${bookId}`, pairs.toString())
-  }
 
-  // 根据难度动态计算卡片宽度，控制在2-3行内
-  const getCardWidth = () => {
-    if (selectedDifficulty === 4) {
-      // 轻松模式：8张卡片，2行，每行4张
-      return { width: 'calc(25% - 16px)', minWidth: '180px', maxWidth: '250px' }
-    } else if (selectedDifficulty === 10) {
-      // 中等模式：20张卡片，2-3行，每行7-10张
-      return { width: 'calc(14.28% - 16px)', minWidth: '130px', maxWidth: '180px' }
-    } else {
-      // 困难模式：40张卡片，3-4行，每行10-13张
-      return { width: 'calc(9.09% - 16px)', minWidth: '110px', maxWidth: '150px' }
+    // 根据新难度重新加载单词
+    try {
+      setLoading(true)
+      const batchSize = getBatchSize(pairs)
+      setLoadingMessage(`正在加载单词...（预计 ${Math.ceil(batchSize / 100)} × 100 个）`)
+
+      const { words: newWords, totalCount: newTotalCount } = await loadWords(pairs, 0, true)
+
+      setAllWords(newWords)
+      setLoadedWordsCount(newWords.length)
+      setTotalWordsCount(newTotalCount)
+
+      // 重新过滤未认识单词
+      const unknownWords = newWords.filter((word: Word) => {
+        const progress = wordProgress[word.id]
+        return !progress || progress.status !== 'known'
+      })
+      setUnknownWordsPool(unknownWords)
+
+      // 计算总轮次（只在这里计算一次，之后不再改变）
+      const totalRoundsCount = Math.ceil(unknownWords.length / pairs)
+      setTotalRounds(totalRoundsCount)
+
+      // 更新标签
+      if (newTotalCount <= batchSize) {
+        setScopeLabel(`全书 ${newTotalCount} 个单词`)
+      } else {
+        setScopeLabel(`随机复习 ${newWords.length} 个单词`)
+      }
+
+      // 重置游戏状态
+      setCards([])
+      setSelectedCard(null)
+      setMatchedPairs(0)
+      setMoves(0)
+      setGameWon(false)
+      setCurrentRound(1)
+
+      console.log(`✅ Loaded ${newWords.length} words for difficulty ${pairs}`)
+    } catch (error) {
+      console.error('Error loading words for new difficulty:', error)
+      setToastMessage('加载单词失败，请重试')
+      setTimeout(() => setToastMessage(null), 3000)
+    } finally {
+      setLoading(false)
+      setLoadingMessage('')  // 清除加载提示
     }
   }
 
-  const cardWidth = getCardWidth()
+  // 计算网格布局：确保卡片排列成矩形，支持响应式
+  const getGridLayout = () => {
+    const totalCards = cards.length
+    if (totalCards === 0) return { rows: 0, cols: 0, gap: '8px' }
+
+    // 根据卡片数量计算最优的行列排列（接近正方形）
+    if (totalCards === 8) {
+      // 轻松模式：2行 × 4列
+      return { rows: 2, cols: 4, gap: '8px' }
+    } else if (totalCards === 20) {
+      // 中等模式：4行 × 5列
+      return { rows: 4, cols: 5, gap: '6px' }
+    } else if (totalCards === 40) {
+      // 困难模式：5行 × 8列
+      return { rows: 5, cols: 8, gap: '4px' }
+    } else {
+      // 其他情况：计算最接近正方形的排列
+      const sqrt = Math.sqrt(totalCards)
+      const cols = Math.ceil(sqrt)
+      const rows = Math.ceil(totalCards / cols)
+      return { rows, cols, gap: totalCards > 20 ? '4px' : '6px' }
+    }
+  }
+
+  const gridLayout = getGridLayout()
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F5F2' }}>
-        <div className="text-center">
-          <div className="inline-block w-12 h-12 border-4 border-[#9B8CB5] border-t-transparent rounded-full animate-spin"></div>
-          <p className="mt-4 text-gray-600 font-semibold">加载中...</p>
+      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="text-center px-6">
+          {/* 卡片翻转动画 */}
+          <div className="relative w-20 h-20 mx-auto mb-6">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl border-4 border-black shadow-[4px_4px_0px_0px_#000] animate-pulse"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="text-3xl">🎮</span>
+            </div>
+          </div>
+
+          {/* 主加载文字 */}
+          <p className="text-xl font-black mb-2" style={{ color: 'var(--text-primary)' }}>单词消消乐</p>
+          <p className="text-lg font-semibold mb-4" style={{ color: 'var(--text-secondary)' }}>正在准备游戏卡片...</p>
+
+          {/* 详细加载信息 */}
+          {loadingMessage && (
+            <div className="inline-block px-4 py-2 rounded-lg border-2 border-purple-300 shadow-[2px_2px_0px_0px_#000] mb-4" style={{ backgroundColor: 'var(--card-bg)' }}>
+              <p className="text-sm text-purple-700 font-semibold">{loadingMessage}</p>
+            </div>
+          )}
+
+          {/* 加载提示 */}
+          <div className="flex flex-col gap-2 items-center">
+            <div className="flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: '0ms' }}></div>
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: '150ms' }}></div>
+              <div className="w-2 h-2 bg-green-500 rounded-full animate-bounce" style={{ animationDelay: '300ms' }}></div>
+            </div>
+            <p className="text-xs mt-2" style={{ color: 'var(--text-tertiary)' }}>首次加载可能需要几秒钟，请稍候...</p>
+          </div>
         </div>
       </div>
     )
@@ -649,9 +874,9 @@ export default function MatchGamePage() {
 
   if (allWords.length > 0 && unknownWords.length < 3) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F5F2' }}>
+      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="clay-card p-8 text-center max-w-md">
-          <p className="text-lg text-gray-700 font-semibold mb-4">
+          <p className="text-lg font-semibold mb-4" style={{ color: 'var(--text-secondary)' }}>
             单词数量太少啦，先去背几个单词再来玩吧！
           </p>
           <Link href={`/library/${bookId}`} className="clay-button-primary inline-block px-6 py-3">
@@ -664,9 +889,9 @@ export default function MatchGamePage() {
 
   if (allWords.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F5F2' }}>
+      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="clay-card p-8 text-center">
-          <p className="text-lg text-gray-700 font-semibold">暂无单词数据</p>
+          <p className="text-lg font-semibold" style={{ color: 'var(--text-secondary)' }}>暂无单词数据</p>
           <Link href={`/library/${bookId}`} className="clay-button-primary inline-block mt-4 px-6 py-3">
             返回词书详情
           </Link>
@@ -676,22 +901,23 @@ export default function MatchGamePage() {
   }
 
   return (
-    <PermissionGate feature={FEATURE_PERMISSIONS.MATCH_GAME} bookId={bookId}>
-      <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
-      {/* Header */}
-      <header className="sticky top-0 z-50 px-4 py-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="clay-card px-6 py-4 flex items-center justify-between">
-            <div className="flex items-center gap-4">
+    // <PermissionGate feature={FEATURE_PERMISSIONS.MATCH_GAME} bookId={bookId}>
+    <>
+      <div className="min-h-screen flex flex-col transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      {/* Header - 沉浸式半透明 */}
+      <header className="sticky top-0 z-50 px-4 py-2 transition-colors duration-300" style={{ background: 'rgba(255, 255, 255, 0.95)', backgroundColor: 'var(--card-bg)' }}>
+        <div className="max-w-7xl mx-auto">
+          <div className="px-3 py-1.5 flex items-center justify-between shadow-[3px_3px_0px_0px_#000] border-3 border-black backdrop-blur-sm transition-colors duration-300" style={{ borderRadius: '12px', backgroundColor: 'var(--card-bg)' }}>
+            <div className="flex items-center gap-2">
               <Link href={`/library/${bookId}`}>
-                <button className="clay-icon p-2 hover:scale-110 transition-transform">
-                  <ArrowLeft className="w-5 h-5 text-gray-700" />
+                <button className="p-1 transition-colors border-3 border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5" style={{ borderRadius: '10px', backgroundColor: 'var(--bg-tertiary)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'}>
+                  <ArrowLeft className="w-3.5 h-3.5" strokeWidth={3} style={{ color: 'var(--text-primary)' }} />
                 </button>
               </Link>
-              <div>
-                <h1 className="text-lg font-bold text-gradient-lilac">{bookTitle}</h1>
-                <p className="text-xs text-gray-600 font-semibold">
-                  消消乐 • {scopeLabel} • {cards.length / 2}对单词
+              <div className="hidden sm:block">
+                <h1 className="text-base font-black" style={{ color: 'var(--text-primary)' }}>{bookTitle}</h1>
+                <p className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>
+                  消消乐 • {scopeLabel}
                 </p>
               </div>
             </div>
@@ -717,7 +943,8 @@ export default function MatchGamePage() {
                       setMasteredWords([])
                     }
                   }}
-                  className="clay-card px-3 py-2 text-sm font-semibold text-gray-700 border border-gray-300 rounded-lg cursor-pointer hover:shadow-md transition-shadow"
+                  className="px-2 py-1 text-xs font-bold text-gray-900 bg-white border-3 border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] cursor-pointer hover:-translate-y-0.5 transition-all"
+                  style={{ borderRadius: '10px' }}
                   title="切换难度（立即生效）"
                 >
                   {DIFFICULTY_OPTIONS.map(option => (
@@ -729,10 +956,13 @@ export default function MatchGamePage() {
               )}
               <button
                 onClick={handleRestart}
-                className="clay-icon p-2 hover:scale-110 transition-transform"
+                className="p-1 transition-colors border-3 border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5"
+                style={{ borderRadius: '10px', backgroundColor: 'var(--bg-tertiary)' }}
                 title="重新开始"
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'}
               >
-                <RotateCw className="w-5 h-5 text-gray-700" />
+                <RotateCw className="w-3.5 h-3.5" strokeWidth={3} style={{ color: 'var(--text-primary)' }} />
               </button>
             </div>
           </div>
@@ -740,14 +970,14 @@ export default function MatchGamePage() {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-4 py-8">
+      <main className="container mx-auto px-4 py-2 flex-1 flex flex-col justify-center">
         <div className="max-w-7xl mx-auto">
           {/* 难度选择界面 */}
           {showDifficultySelect && (
             <div className="flex flex-col items-center justify-center min-h-[60vh]">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-gray-800 mb-2">选择游戏难度</h2>
-                <p className="text-gray-600">选择适合你的学习强度</p>
+                <h2 className="text-3xl font-bold mb-2" style={{ color: 'var(--text-primary)' }}>选择游戏难度</h2>
+                <p style={{ color: 'var(--text-secondary)' }}>选择适合你的学习强度</p>
               </div>
 
               <div className="flex flex-wrap justify-center gap-6 mb-8">
@@ -756,19 +986,24 @@ export default function MatchGamePage() {
                     key={option.pairs}
                     onClick={() => handleDifficultySelect(option.pairs)}
                     className={`
-                      relative group clay-card px-8 py-10 text-center transition-all duration-200
-                      hover:scale-105 hover:shadow-xl
-                      ${selectedDifficulty === option.pairs ? 'ring-4 ring-offset-2 ring-purple-400' : ''}
-                      bg-gradient-to-br ${option.color} border-2 ${option.borderColor}
+                      relative group transition-all duration-200
+                      hover:scale-105 hover:-translate-y-1
+                      ${selectedDifficulty === option.pairs ? 'shadow-[8px_8px_0px_0px_#000] scale-105' : 'shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000]'}
+                      bg-gradient-to-br ${option.color} border-4 ${option.borderColor}
                     `}
-                    style={{ minWidth: '200px' }}
+                    style={{
+                      minWidth: '220px',
+                      borderRadius: '16px'
+                    }}
                   >
-                    <div className="text-5xl mb-3">🎮</div>
-                    <h3 className="text-2xl font-bold text-gray-800 mb-2">{option.name}</h3>
-                    <p className="text-lg text-gray-700 font-semibold mb-2">{option.cards} 张卡片</p>
-                    <p className="text-sm text-gray-600">{option.time}</p>
+                    <div className="px-8 py-10 text-center">
+                      <div className="text-6xl mb-4">🎮</div>
+                      <h3 className="text-3xl font-black text-gray-900 mb-3">{option.name}</h3>
+                      <p className="text-xl font-bold text-gray-800 mb-3">{option.cards} 张卡片</p>
+                      <p className="text-base text-gray-700 font-semibold">{option.time}</p>
+                    </div>
                     {selectedDifficulty === option.pairs && (
-                      <div className="absolute -top-3 -right-3 bg-purple-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold">
+                      <div className="absolute -top-3 -right-3 bg-yellow-400 text-black border-4 border-black rounded-full w-10 h-10 flex items-center justify-center text-xl font-black shadow-[2px_2px_0px_0px_#000]">
                         ✓
                       </div>
                     )}
@@ -776,7 +1011,7 @@ export default function MatchGamePage() {
                 ))}
               </div>
 
-              <div className="text-center text-sm text-gray-500">
+              <div className="text-center text-sm" style={{ color: 'var(--text-tertiary)' }}>
                 <p>💡 提示：我们会记住你的选择，下次直接开始</p>
               </div>
             </div>
@@ -785,36 +1020,45 @@ export default function MatchGamePage() {
           {/* 游戏内容 - 只在难度选择后显示 */}
           {!showDifficultySelect && cards.length > 0 && (
             <>
-              {/* Stats */}
-              <div className="flex justify-center items-center gap-8 mb-6 text-gray-600">
+              {/* Stats - 沉浸式半透明 */}
+              <div className="flex justify-center items-center gap-2 sm:gap-3 mb-8 px-2">
                 {/* 轮次进度 - 突出显示 */}
-                <div className="clay-card px-6 py-3 bg-gradient-to-r from-purple-50 to-pink-50 border-2 border-purple-300">
-                  <p className="text-xs text-purple-600 mb-1 font-bold">游戏进度</p>
-                  <p className="text-2xl font-bold text-purple-700">第 {currentRound} / {totalRounds} 轮</p>
+                <div className="bg-white/70 backdrop-blur-sm px-2 py-1 border-3 border-purple-400 shadow-[3px_3px_0px_0px_#000]" style={{ borderRadius: '8px' }}>
+                  <p className="text-xs text-purple-800 font-black">第 {currentRound} / {totalRounds} 轮</p>
                 </div>
 
-                <div className="w-px h-12 bg-gray-300"></div>
+                <div className="w-px h-5 bg-gray-400/50"></div>
 
-                <div className="text-center">
-                  <p className="text-xs text-gray-500 mb-1">已配对</p>
-                  <p className="text-lg font-semibold text-gray-700">{matchedPairs} / {cards.length / 2}</p>
+                <div className="text-center px-1">
+                  <p className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>已配对</p>
+                  <p className="text-sm font-black" style={{ color: 'var(--text-primary)' }}>{matchedPairs} / {cards.length / 2}</p>
                 </div>
-                <div className="w-px h-8 bg-gray-300"></div>
-                <div className="text-center">
-                  <p className="text-xs text-gray-500 mb-1">步数</p>
-                  <p className="text-lg font-semibold text-gray-700">{moves}</p>
+                <div className="w-px h-5 bg-gray-400/50"></div>
+                <div className="text-center px-1">
+                  <p className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>步数</p>
+                  <p className="text-sm font-black" style={{ color: 'var(--text-primary)' }}>{moves}</p>
                 </div>
-                <div className="w-px h-8 bg-gray-300"></div>
-                <div className="text-center">
-                  <p className="text-xs text-gray-500 mb-1">剩余</p>
-                  <p className="text-lg font-semibold text-gray-700">{cards.length / 2 - matchedPairs}</p>
+                <div className="w-px h-5 bg-gray-400/50"></div>
+                <div className="text-center px-1">
+                  <p className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>剩余</p>
+                  <p className="text-sm font-black" style={{ color: 'var(--text-primary)' }}>{cards.length / 2 - matchedPairs}</p>
                 </div>
+
+                {/* 加载更多单词提示 */}
+                {isLoadingMore && (
+                  <>
+                    <div className="w-px h-5 bg-gray-400/50"></div>
+                    <div className="bg-blue-100/70 backdrop-blur-sm px-2 py-1 border-3 border-blue-400 shadow-[2px_2px_0px_0px_#000] animate-pulse" style={{ borderRadius: '8px' }}>
+                      <p className="text-xs text-blue-800 font-black">加载中...</p>
+                    </div>
+                  </>
+                )}
+
                 {masteredWords.length > 0 && (
                   <>
-                    <div className="w-px h-8 bg-gray-300"></div>
-                    <div className="text-center">
-                      <p className="text-xs text-purple-600 mb-1">✨ 本次掌握</p>
-                      <p className="text-lg font-semibold text-purple-700">{masteredWords.length}</p>
+                    <div className="w-px h-5 bg-gray-400/50"></div>
+                    <div className="bg-green-100/70 backdrop-blur-sm px-2 py-1 border-3 border-green-400 shadow-[2px_2px_0px_0px_#000]" style={{ borderRadius: '8px' }}>
+                      <p className="text-xs text-green-800 font-black">✨ {masteredWords.length}</p>
                     </div>
                   </>
                 )}
@@ -822,44 +1066,72 @@ export default function MatchGamePage() {
 
           {/* Toast 提示消息 */}
           {toastMessage && (
-            <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50">
-              <div className="clay-card px-6 py-3 text-center shadow-lg animate-bounce">
-                <p className="text-sm font-semibold text-gray-700">{toastMessage}</p>
+            <div className="fixed top-16 left-1/2 transform -translate-x-1/2 z-50">
+              <div className="backdrop-blur-sm px-4 py-2 text-center border-3 border-black shadow-[4px_4px_0px_0px_#000] transition-colors duration-300" style={{ borderRadius: '12px', backgroundColor: 'var(--card-bg)' }}>
+                <p className="text-sm font-black" style={{ color: 'var(--text-primary)' }}>{toastMessage}</p>
               </div>
             </div>
           )}
 
-          {/* Game Board */}
-          <div className="flex flex-wrap justify-center gap-4 mb-6">
+          {/* Game Board - CSS Grid 布局 */}
+          <div
+            className="grid mb-10 justify-items-center w-full px-2 sm:px-4"
+            style={{
+              gridTemplateColumns: `repeat(${gridLayout.cols}, 1fr)`,
+              gridTemplateRows: `repeat(${gridLayout.rows}, 1fr)`,
+              gap: gridLayout.gap,
+              maxWidth: '1400px',
+              margin: '0 auto'
+            }}
+          >
             {cards.map((card) => (
               <div
                 key={card.id}
-                className="relative flex-shrink-0"
+                className="relative w-full"
                 style={{
-                  ...cardWidth,
+                  aspectRatio: '1 / 1',
+                  maxHeight: 'min(110px, 12vh)',
                   visibility: card.isMatched ? 'hidden' : 'visible'
                 }}
               >
-                {/* 卡片主体 */}
+                {/* 卡片主体 - Neo-Brutalism 风格 */}
                 <button
                   onClick={() => handleCardClick(card)}
                   disabled={isProcessing || card.isMatched}
                   style={{
-                    height: '100px',
-                    minHeight: '100px',
+                    borderRadius: '12px'
                   }}
                   className={`
-                    relative w-full rounded-2xl font-semibold text-center p-4
-                    ${explodingCards.has(card.id) ? 'scale-150 opacity-0 transition-all duration-300' : 'transition-transform duration-150'}
+                    relative w-full h-full font-bold text-center p-1.5 sm:p-2 md:p-3 transition-all duration-200
+                    ${explodingCards.has(card.id) ? 'scale-150 opacity-0' : ''}
                     ${card.isSelected
-                      ? `ring-4 ring-offset-2 shadow-xl scale-105 ${card.type === 'word' ? 'ring-purple-400' : 'ring-emerald-400'}`
-                      : `shadow-md hover:shadow-lg ${card.type === 'word' ? 'from-purple-50 to-purple-100' : 'from-emerald-50 to-emerald-100'} bg-gradient-to-br`
+                      ? `shadow-[6px_6px_0px_0px_#000] scale-105 z-10 ${
+                          card.type === 'word'
+                            ? 'bg-gradient-to-br from-purple-100 to-purple-200'
+                            : 'bg-gradient-to-br from-green-100 to-green-200'
+                        }`
+                      : `shadow-[4px_4px_0px_0px_#000] hover:shadow-[5px_5px_0px_0px_#000] hover:-translate-y-1 hover:scale-[1.03] ${
+                          card.type === 'word'
+                            ? 'bg-gradient-to-br from-purple-50 to-purple-100'
+                            : 'bg-gradient-to-br from-green-50 to-green-100'
+                        }`
+                    }
+                    ${card.isSelected
+                      ? 'border-4 border-yellow-400'
+                      : card.type === 'word'
+                        ? 'border-4 border-purple-300'
+                        : 'border-4 border-green-300'
                     }
                     ${!isProcessing && !explodingCards.has(card.id) && !card.isMatched ? 'cursor-pointer' : 'cursor-not-allowed'}
                   `}
                 >
                   <div className="flex items-center justify-center h-full w-full overflow-hidden">
-                    <span className={card.type === 'word' ? 'text-lg font-bold text-purple-900' : 'text-base font-semibold text-emerald-900'} style={{
+                    <span className={`
+                      ${card.type === 'word'
+                        ? 'text-xs sm:text-sm md:text-base lg:text-lg font-black text-purple-900'
+                        : 'text-xs sm:text-xs md:text-sm lg:text-base font-bold text-green-900'
+                      }
+                    `} style={{
                       display: '-webkit-box',
                       WebkitLineClamp: 2,
                       WebkitBoxOrient: 'vertical',
@@ -876,24 +1148,9 @@ export default function MatchGamePage() {
             ))}
           </div>
 
-          {/* 记忆规则说明 - 科学依据 */}
-          <div className="flex justify-center mb-8">
-            <div className="clay-card px-5 py-3" style={{ maxWidth: '520px' }}>
-              <div className="text-center">
-                <p className="text-xs text-gray-600 mb-1">
-                  <span className="font-semibold">规则：</span>成功匹配 <span className="font-bold text-gray-800">{MATCH_THRESHOLD}次</span> → 认识 |
-                  失败 <span className="font-bold text-gray-800">{FAIL_THRESHOLD}次</span> → 不认识
-                </p>
-                <p className="text-xs text-gray-500">
-                  原因：符合记忆曲线，重复可将短期记忆转化为长期记忆
-                </p>
-              </div>
-            </div>
-          </div>
-
           {/* 像素风格通关界面（全部完成） */}
           {allCompleted && (
-            <div className="relative">
+            <div className="relative mb-4">
               {/* 像素风格背景 */}
               <div className="absolute inset-0 bg-gradient-to-b from-purple-900 via-indigo-900 to-blue-900 opacity-95 rounded-2xl"></div>
 
@@ -976,11 +1233,40 @@ export default function MatchGamePage() {
               </div>
             </div>
           )}
+
+          {/* 记忆规则说明 - 移到通关界面后面，只在游戏进行中显示 */}
+          {!allCompleted && (
+            <div className="flex flex-col items-center gap-3 px-4 mb-6">
+              {/* 单词来源说明 */}
+              {totalWordsCount > getBatchSize(selectedDifficulty) ? (
+                <div className="bg-blue-50/70 backdrop-blur-sm px-3 py-1.5 border-2 border-blue-300/50 text-center" style={{ borderRadius: '8px' }}>
+                  <p className="text-xs text-blue-700">
+                    💡 <span className="font-bold">随机复习</span>：从未认识单词中随机抽取 • 自动加载更多
+                  </p>
+                </div>
+              ) : (
+                <div className="bg-purple-50/70 backdrop-blur-sm px-3 py-1.5 border-2 border-purple-300/50 text-center" style={{ borderRadius: '8px' }}>
+                  <p className="text-xs text-purple-700">
+                    📚 <span className="font-bold">全书复习</span>：共 {totalWordsCount} 个单词
+                  </p>
+                </div>
+              )}
+
+              {/* 游戏规则说明 */}
+              <div className="backdrop-blur-sm px-3 py-1.5 border-2 text-center transition-colors duration-300" style={{ borderRadius: '8px', backgroundColor: 'rgba(255, 255, 255, 0.5)', borderColor: 'var(--border)' }}>
+                <p className="text-xs" style={{ color: 'var(--text-secondary)' }}>
+                  <span className="font-bold">规则：</span>成功匹配 <span className="font-black" style={{ color: 'var(--text-primary)' }}>{MATCH_THRESHOLD}次</span> → 认识 •
+                  失败 <span className="font-black" style={{ color: 'var(--text-primary)' }}>{FAIL_THRESHOLD}次</span> → 不认识
+                </p>
+              </div>
+            </div>
+          )}
             </>
           )}
         </div>
       </main>
     </div>
-    </PermissionGate>
+    </>
+    // </PermissionGate>
   )
 }

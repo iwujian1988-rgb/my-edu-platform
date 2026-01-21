@@ -16,8 +16,7 @@ interface SoundEffectPanelProps {
   onChange: (settings: SoundSettings) => void
 }
 
-// 🔧 性能优化：使用React.memo避免不必要的重渲染
-export const SoundEffectPanel = React.memo(function SoundEffectPanel({ isOpen, onClose, settings, onChange }: SoundEffectPanelProps) {
+export function SoundEffectPanel({ isOpen, onClose, settings, onChange }: SoundEffectPanelProps) {
   if (!isOpen) return null
 
   return (
@@ -138,4 +137,4 @@ export const SoundEffectPanel = React.memo(function SoundEffectPanel({ isOpen, o
       )}
     </AnimatePresence>
   )
-})
+}

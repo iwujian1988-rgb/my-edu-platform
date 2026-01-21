@@ -49,14 +49,15 @@ export async function GET() {
         const mode = resumeState?.mode || 'word-list'
 
         return {
-          bookId: book.id,
-          bookTitle: book.title,
+          id: book.id,
+          title: book.title,
+          name: book.title,
           description: book.description,
-          totalWords: book.total_words,
-          coverUrl: book.cover_url,
-          coverColor: book.cover_color,
-          createdBy: book.created_by,
-          isOfficial: book.is_official,
+          total_words: book.total_words,
+          cover_url: book.cover_url,
+          cover_color: book.cover_color,
+          created_by: book.created_by,
+          is_official: book.is_official,
           mode: mode,
           lastAccessedAt: pref.last_accessed_at,
           resumeState: resumeState

@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     const startTime = Date.now()
 
     // 调用 RPC 函数
-    const { data, error } = await supabase.rpc('get_user_progress_cards', {
+    const { data, error } = await (supabase as any).rpc('get_user_progress_cards', {
       p_user_id: user.id
     })
 

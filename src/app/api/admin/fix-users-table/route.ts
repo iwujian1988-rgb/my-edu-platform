@@ -33,7 +33,7 @@ export async function POST(request: NextRequest) {
     `
 
     // 使用 rpc 执行原始 SQL
-    const { data, error } = await supabase.rpc('exec_sql', { sql_query: sql })
+    const { data, error } = await (supabase as any).rpc('exec_sql', { sql_query: sql })
 
     if (error) {
       // 如果 rpc 不存在，直接返回 SQL 让用户手动执行

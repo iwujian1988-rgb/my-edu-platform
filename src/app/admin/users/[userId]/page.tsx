@@ -21,8 +21,8 @@ export default async function AdminUserDetailPage({
   const { userId } = await params
 
   // 获取用户详细信息
-  const { data: user, error } = await supabase
-    .from('users') as any
+  const { data: user, error } = await (supabase
+    .from('users') as any)
     .select('*')
     .eq('id', userId)
     .single()
@@ -66,11 +66,11 @@ export default async function AdminUserDetailPage({
 
   // 获取套餐信息（如果邀请码有关联的套餐）
   let userPackage = null
-  if (invitationCode?.package_id) {
+  if ((invitationCode as any)?.package_id) {
     const { data: pkg } = await supabase
       .from('invitation_packages')
       .select('*')
-      .eq('id', invitationCode.package_id)
+      .eq('id', (invitationCode as any).package_id)
       .single()
 
     userPackage = pkg

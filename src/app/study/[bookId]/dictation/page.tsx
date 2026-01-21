@@ -569,7 +569,7 @@ export default function DictationPage() {
   return (
     <>
       {/* 最外层容器：响应式背景切换 */}
-      <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 transition-colors bg-gray-100 lg:bg-white font-sans text-slate-900 py-8">
+      <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 transition-colors duration-300 font-sans py-8" style={{ backgroundColor: 'var(--bg-secondary)', color: 'var(--text-primary)' }}>
 
         {/* ================= HEADER ================= */}
         {/* ================= 顶部控制区 (试卷头风格) ================= */}
@@ -581,31 +581,32 @@ export default function DictationPage() {
             <div className="flex items-center gap-4">
               <Link
                 href={`/library/${bookId}`}
-                className="w-12 h-12 bg-white border-2 border-black rounded-xl flex items-center justify-center shadow-[4px_4px_0px_0px_#000] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000] transition-all"
+                className="w-12 h-12 rounded-xl flex items-center justify-center shadow-[4px_4px_0px_0px_#000] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000] transition-all border-2 border-black"
+                style={{ backgroundColor: 'var(--card-bg)' }}
               >
-                <ArrowLeft size={24} strokeWidth={2.5} />
+                <ArrowLeft size={24} strokeWidth={2.5} style={{ color: 'var(--text-primary)' }} />
               </Link>
-              <h1 className="text-2xl font-black italic tracking-tighter hidden sm:block">听写练习</h1>
+              <h1 className="text-2xl font-black italic tracking-tighter hidden sm:block" style={{ color: 'var(--text-primary)' }}>听写练习</h1>
             </div>
 
             {/* 右侧：统计卡片与退出 */}
             <div className="flex gap-2 items-center">
               {/* Stats Box (4列: 未标注 | 不认识 | 模糊 | 认识) */}
-              <div className="flex border-2 border-black rounded-lg bg-white overflow-hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+              <div className="flex border-2 border-black rounded-lg overflow-hidden shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <div className="px-3 py-1.5 border-r-2 border-black flex flex-col items-center min-w-[55px]">
-                  <span className="text-[9px] text-gray-400 font-bold">未标注</span>
-                  <span className="text-lg font-black text-gray-400 leading-none">{stats?.new || 0}</span>
+                  <span className="text-[9px] font-bold" style={{ color: 'var(--text-tertiary)' }}>未标注</span>
+                  <span className="text-lg font-black leading-none" style={{ color: 'var(--text-tertiary)' }}>{stats?.new || 0}</span>
                 </div>
                 <div className="px-3 py-1.5 border-r-2 border-black flex flex-col items-center min-w-[55px]">
-                  <span className="text-[9px] text-gray-500 font-bold">不认识</span>
+                  <span className="text-[9px] font-bold" style={{ color: 'var(--text-tertiary)' }}>不认识</span>
                   <span className="text-lg font-black text-red-500 leading-none">{stats?.unknown || 0}</span>
                 </div>
                 <div className="px-3 py-1.5 border-r-2 border-black flex flex-col items-center min-w-[55px]">
-                  <span className="text-[9px] text-gray-500 font-bold">模糊</span>
+                  <span className="text-[9px] font-bold" style={{ color: 'var(--text-tertiary)' }}>模糊</span>
                   <span className="text-lg font-black text-yellow-500 leading-none">{stats?.fuzzy || 0}</span>
                 </div>
                 <div className="px-3 py-1.5 flex flex-col items-center min-w-[55px]">
-                  <span className="text-[9px] text-gray-500 font-bold">认识</span>
+                  <span className="text-[9px] font-bold" style={{ color: 'var(--text-tertiary)' }}>认识</span>
                   <span className="text-lg font-black text-green-600 leading-none">{stats?.known || 0}</span>
                 </div>
               </div>
@@ -613,9 +614,12 @@ export default function DictationPage() {
               {/* 退出按钮 */}
               <button
                 onClick={() => router.push('/')}
-                className="w-10 h-10 bg-white border-2 border-black rounded-lg flex items-center justify-center hover:bg-gray-50"
+                className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center transition-colors duration-300"
+                style={{ backgroundColor: 'var(--card-bg)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--card-bg)'}
               >
-                <X size={20} strokeWidth={2.5} />
+                <X size={20} strokeWidth={2.5} style={{ color: 'var(--text-primary)' }} />
               </button>
             </div>
           </div>
@@ -626,7 +630,8 @@ export default function DictationPage() {
             <div className="flex flex-col gap-1">
               <button
                 onClick={() => setShowScopeDialog(true)}
-                className="flex items-center justify-between gap-3 px-4 py-2 bg-white border-2 border-black rounded-lg font-bold shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none transition-all min-w-[140px]"
+                className="flex items-center justify-between gap-3 px-4 py-2 border-2 border-black rounded-lg font-bold shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none transition-all min-w-[140px] transition-colors duration-300"
+                style={{ backgroundColor: 'var(--card-bg)', color: 'var(--text-primary)' }}
               >
                 <span>{DICTATION_SCOPE_LABELS[scopeType]}</span>
                 <ChevronDown size={16} />
@@ -637,22 +642,36 @@ export default function DictationPage() {
             <div className="flex gap-3">
               <button
                 onClick={() => setHideChinese(!hideChinese)}
-                className={`flex items-center gap-2 px-4 py-2 border-2 rounded-lg font-bold text-sm transition-all ${
+                className={`flex items-center gap-2 px-4 py-2 border-2 rounded-lg font-bold text-sm transition-all transition-colors duration-300 ${
                   hideChinese
                     ? 'bg-[#ccff00] border-black shadow-[2px_2px_0px_0px_#000]'
-                    : 'bg-white border-black hover:bg-gray-50'
+                    : 'border-black'
                 }`}
+                style={hideChinese ? {} : { backgroundColor: 'var(--card-bg)', color: 'var(--text-primary)' }}
+                onMouseEnter={(e) => {
+                  if (!hideChinese) e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'
+                }}
+                onMouseLeave={(e) => {
+                  if (!hideChinese) e.currentTarget.style.backgroundColor = 'var(--card-bg)'
+                }}
               >
                 {hideChinese ? <EyeOff size={16} /> : <Eye size={16} />}
                 隐藏中文
               </button>
               <button
                 onClick={() => setAutoAddToMistakes(!autoAddToMistakes)}
-                className={`flex items-center gap-2 px-4 py-2 border-2 rounded-lg font-bold text-sm transition-all ${
+                className={`flex items-center gap-2 px-4 py-2 border-2 rounded-lg font-bold text-sm transition-all transition-colors duration-300 ${
                   autoAddToMistakes
                     ? 'bg-[#ccff00] border-black shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none'
-                    : 'bg-white border-black hover:bg-gray-50'
+                    : 'border-black'
                 }`}
+                style={autoAddToMistakes ? {} : { backgroundColor: 'var(--card-bg)', color: 'var(--text-primary)' }}
+                onMouseEnter={(e) => {
+                  if (!autoAddToMistakes) e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'
+                }}
+                onMouseLeave={(e) => {
+                  if (!autoAddToMistakes) e.currentTarget.style.backgroundColor = 'var(--card-bg)'
+                }}
               >
                 <PlusSquare size={16} />
                 错题入本
@@ -661,7 +680,7 @@ export default function DictationPage() {
           </div>
 
           {/* ✨ 注入灵魂：试卷分割虚线 ✨ */}
-          <div className="w-full border-b-2 border-dashed border-gray-300 mt-4 mb-12"></div>
+          <div className="w-full border-b-2 border-dashed mt-4 mb-12" style={{ borderColor: 'var(--border)' }}></div>
 
         </div>
 
@@ -669,11 +688,12 @@ export default function DictationPage() {
         {currentWord && (
           <div
             data-word={currentWord.word}
-            className="w-full max-w-[800px] bg-white border-2 border-black rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden min-h-[400px] flex flex-col lg:border-none lg:shadow-none lg:rounded-none lg:bg-transparent lg:w-full lg:max-w-full lg:min-h-0"
+            className="w-full max-w-[800px] border-2 border-black rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden min-h-[400px] flex flex-col lg:border-none lg:shadow-none lg:rounded-none lg:bg-transparent lg:w-full lg:max-w-full lg:min-h-0 transition-colors duration-300"
+            style={{ backgroundColor: 'var(--card-bg)' }}
           >
 
             {/* Top Progress Bar */}
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-gray-100">
+            <div className="absolute top-0 left-0 w-full h-1.5" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
               <div className="h-full bg-[#ccff00] transition-all duration-300" style={{ width: `${progressPercent}%` }}></div>
             </div>
 
@@ -688,12 +708,12 @@ export default function DictationPage() {
               {/* 2. 单词释义：关键修改！限制最大宽度，增加行高 */}
               {!hideChinese && (
                 <div className="w-full max-w-2xl px-4">
-                  <h2 className="text-2xl md:text-3xl font-black text-center leading-relaxed text-slate-800 break-words">
+                  <h2 className="text-2xl md:text-3xl font-black text-center leading-relaxed break-words" style={{ color: 'var(--text-primary)' }}>
                     {currentWord.definition}
                     {currentWord.example_sentence && (
                       <>
                         <br className="hidden md:block"/>
-                        <span className="text-lg font-bold text-gray-600 mt-4 block">
+                        <span className="text-lg font-bold mt-4 block" style={{ color: 'var(--text-secondary)' }}>
                           {currentWord.example_sentence}
                         </span>
                       </>
@@ -709,11 +729,20 @@ export default function DictationPage() {
                   <button
                     onClick={handlePrevious}
                     disabled={!canOperate || currentIndex <= 0}
-                    className={`transition-colors ${
+                    className={`transition-colors duration-300 ${
                       !canOperate || currentIndex <= 0
-                        ? 'text-gray-300 cursor-not-allowed'
-                        : 'text-gray-400 hover:text-black'
+                        ? 'cursor-not-allowed'
+                        : ''
                     }`}
+                    style={{
+                      color: (!canOperate || currentIndex <= 0) ? 'var(--text-tertiary)' : 'var(--text-secondary)'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (canOperate && currentIndex > 0) e.currentTarget.style.color = 'var(--text-primary)'
+                    }}
+                    onMouseLeave={(e) => {
+                      if (canOperate && currentIndex > 0) e.currentTarget.style.color = 'var(--text-secondary)'
+                    }}
                   >
                     <SkipBack size={28} strokeWidth={2.5} />
                   </button>
@@ -732,11 +761,20 @@ export default function DictationPage() {
                   <button
                     onClick={handleNext}
                     disabled={!canOperate}
-                    className={`transition-colors ${
+                    className={`transition-colors duration-300 ${
                       !canOperate
-                        ? 'text-gray-300 cursor-not-allowed'
-                        : 'text-gray-400 hover:text-black'
+                        ? 'cursor-not-allowed'
+                        : ''
                     }`}
+                    style={{
+                      color: !canOperate ? 'var(--text-tertiary)' : 'var(--text-secondary)'
+                    }}
+                    onMouseEnter={(e) => {
+                      if (canOperate) e.currentTarget.style.color = 'var(--text-primary)'
+                    }}
+                    onMouseLeave={(e) => {
+                      if (canOperate) e.currentTarget.style.color = 'var(--text-secondary)'
+                    }}
                   >
                     <SkipForward size={28} strokeWidth={2.5} />
                   </button>
@@ -772,8 +810,10 @@ export default function DictationPage() {
                     onFocus={handleInputFocus}
                     placeholder="在此书写..."
                     disabled={feedback === 'correct'}
-                    className="w-full py-4 text-3xl font-black text-center bg-transparent border-b-4 border-gray-200 focus:border-black focus:outline-none transition-all placeholder:text-gray-300 placeholder:font-bold placeholder:text-2xl"
-                    style={{ caretColor: '#ccff00' }}
+                    className="w-full py-4 text-3xl font-black text-center bg-transparent border-b-4 focus:outline-none transition-all placeholder:font-bold placeholder:text-2xl"
+                    style={{ caretColor: '#ccff00', borderColor: 'var(--border)', color: 'var(--text-primary)' }}
+                    onFocus={(e) => e.currentTarget.style.borderColor = 'var(--text-primary)'}
+                    onBlur={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
                     autoFocus
                   />
                   {/* 动态底线动画 */}
@@ -809,10 +849,10 @@ export default function DictationPage() {
               {feedback === 'wrong' && showCorrectAnswer && (
                 <div className="mt-4 text-center">
                   <p className="text-red-600 font-black text-lg mb-2">✗ 拼写错误</p>
-                  <p className="text-gray-700 font-bold mb-1">
+                  <p className="font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>
                     正确拼写：<span className="font-black text-xl">{currentWord.word}</span>
                   </p>
-                  <p className="text-xs text-gray-500 font-semibold">
+                  <p className="text-xs font-semibold" style={{ color: 'var(--text-tertiary)' }}>
                     💡 按回车立即跳过，或等待 3 秒自动跳过
                   </p>
                 </div>

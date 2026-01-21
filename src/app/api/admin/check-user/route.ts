@@ -29,19 +29,19 @@ export async function GET(request: NextRequest) {
 
     // 2. 检查 auth.users
     const { data: { users }, error: authError } = await supabase.auth.admin.listUsers()
-    const authUser = users?.find(u => u.email === email)
+    const authUser = (users as any[])?.find((u: any) => u.email === email)
 
     return NextResponse.json({
       phone,
       email,
       publicUser: publicUser ? {
         exists: true,
-        id: publicUser.id,
-        email: publicUser.email,
-        phone_number: publicUser.phone_number,
-        created_at: publicUser.created_at,
-        is_banned: publicUser.is_banned,
-        ban_reason: publicUser.ban_reason
+        id: (publicUser as any).id,
+        email: (publicUser as any).email,
+        phone_number: (publicUser as any).phone_number,
+        created_at: (publicUser as any).created_at,
+        is_banned: (publicUser as any).is_banned,
+        ban_reason: (publicUser as any).ban_reason
       } : {
         exists: false,
         error: publicError?.message

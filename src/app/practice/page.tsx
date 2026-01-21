@@ -123,7 +123,7 @@ const DEFAULT_STATISTICS: Statistics = {
 
 // ==================== 主组件 ====================
 
-export default function QwertyPracticePage() {
+function QwertyPracticePage() {
   // 获取 URL 参数
   const searchParams = useSearchParams()
   const urlBookId = searchParams.get('bookId')
@@ -132,12 +132,14 @@ export default function QwertyPracticePage() {
   // ==================== 数据加载 ====================
   const [isLoading, setIsLoading] = useState(true)
   const [loadError, setLoadError] = useState<string | null>(null)
+  const [typewriterText, setTypewriterText] = useState('')  // 打字机效果文字
   const [availableDicts, setAvailableDicts] = useState<Dict[]>([])
   const [books, setBooks] = useState<Book[]>([])
   const [scopeStatsMap, setScopeStatsMap] = useState<Record<string, any>>({})  // 🔧 性能优化：缓存统计数据
   const [showBookSelector, setShowBookSelector] = useState(false)
   const [userId, setUserId] = useState<string | undefined>(undefined)
   const [showStartOverlay, setShowStartOverlay] = useState(true) // 开始遮罩
+  const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200) // 窗口宽度
 
   // ==================== 应用状态 ====================
   const [state, setState] = useState<AppState>({
@@ -187,6 +189,10 @@ export default function QwertyPracticePage() {
   // ==================== AudioContext 实例（复用）====================
   const audioContextRef = useRef<AudioContext | null>(null)
 
+  // ==================== 按键音效音频缓存（使用真实音频文件）====================
+  const keySoundAudioRef = useRef<HTMLAudioElement | null>(null)
+  const successSoundRef = useRef<HTMLAudioElement | null>(null)  // 🎵 单词完成奖励音效
+
   // ==================== 错题本 Hook ====================
   const mistakeBook = useMistakeBook()
 
@@ -223,6 +229,16 @@ export default function QwertyPracticePage() {
       showStartOverlay
     })
   }, [currentDict, state.currentIndex, currentWord, state.userInput, state.isPlaying, state.startTime, showStartOverlay])
+
+  // ==================== 窗口大小监听（响应式字号）====================
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   // ==================== 辅助函数 ====================
 
@@ -428,7 +444,16 @@ export default function QwertyPracticePage() {
   useEffect(() => {
     async function loadData() {
       try {
+        // ⚠️ 修复：每次开始加载数据时，确保显示开始遮罩并重置游戏状态
+        setShowStartOverlay(true)
         setIsLoading(true)
+        // 确保游戏状态为暂停，防止用户在加载过程中就开始输入
+        setState((prev) => ({
+          ...prev,
+          isPlaying: false,
+          startTime: null,
+          userInput: '',
+        }))
 
         // 如果 URL 中没有 bookId，获取books列表并显示选择器
         if (!urlBookId) {
@@ -738,84 +763,95 @@ export default function QwertyPracticePage() {
     return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`
   }, [])
 
-  // ==================== 按键音效播放 ====================
+  // ==================== 打字机效果 ====================
+  const startOverlayText = [
+    '准备好了吗？Are You Ready?',
+    '按 ENTER 或点击下方开始',
+    '开始练习 Start Practice'
+  ]
+
+  useEffect(() => {
+    if (!showStartOverlay || isLoading) return
+
+    let currentIndex = 0
+    let fullText = ''
+
+    // 打字机效果：逐句显示（不是逐词）
+    const typeNextSentence = () => {
+      if (currentIndex < startOverlayText.length) {
+        const sentence = startOverlayText[currentIndex]
+        fullText += (currentIndex > 0 ? '\n' : '') + sentence
+        setTypewriterText(fullText)
+        currentIndex++
+        setTimeout(typeNextSentence, 600) // 每600ms显示一句
+      }
+    }
+
+    // 开始打字机效果
+    setTypewriterText('')
+    setTimeout(typeNextSentence, 500) // 延迟500ms开始
+
+    return () => {
+      setTypewriterText('')
+    }
+  }, [showStartOverlay, isLoading])
+
+  // ==================== 按键音效播放（使用真实音频文件）====================
   const playKeySound = useCallback((isCorrect: boolean) => {
     if (typeof window === 'undefined') return // SSR兼容
 
     try {
-      // 初始化或复用 AudioContext
-      if (!audioContextRef.current) {
-        const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext
-        if (!AudioContextClass) return
-        audioContextRef.current = new AudioContextClass()
+      // 初始化音频缓存（使用真实音频文件）
+      if (!keySoundAudioRef.current) {
+        const audio = new Audio('/sounds/keyboard.wav')
+        audio.preload = 'auto'  // 预加载音频
+        keySoundAudioRef.current = audio
       }
 
-      const audioContext = audioContextRef.current
+      const audio = keySoundAudioRef.current
       const volume = state.soundSettings.keyVolume / 100
 
-      // 打字机声音 - 模拟老式打字机的"咔嗒"声
-      if (state.soundSettings.keySoundType === 'typewriter') {
-        // 创建两个振荡器来模拟打字机的复杂声音
-        const osc1 = audioContext.createOscillator()
-        const osc2 = audioContext.createOscillator()
-        const gainNode = audioContext.createGain()
+      // 设置音量并播放
+      audio.volume = volume
+      audio.currentTime = 0  // 重置到开头，支持快速连续播放
 
-        osc1.connect(gainNode)
-        osc2.connect(gainNode)
-        gainNode.connect(audioContext.destination)
-
-        // 第一个振荡器 - 高频咔嗒声
-        osc1.type = 'square'
-        osc1.frequency.setValueAtTime(isCorrect ? 1200 : 600, audioContext.currentTime)
-        osc1.frequency.exponentialRampToValueAtTime(isCorrect ? 800 : 400, audioContext.currentTime + 0.02)
-
-        // 第二个振荡器 - 低频撞击声
-        osc2.type = 'triangle'
-        osc2.frequency.setValueAtTime(isCorrect ? 200 : 150, audioContext.currentTime)
-
-        // 音量包络 - 快速上升然后快速衰减
-        gainNode.gain.setValueAtTime(0, audioContext.currentTime)
-        gainNode.gain.linearRampToValueAtTime(volume * 0.4, audioContext.currentTime + 0.005)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05)
-
-        osc1.start(audioContext.currentTime)
-        osc2.start(audioContext.currentTime)
-        osc1.stop(audioContext.currentTime + 0.05)
-        osc2.stop(audioContext.currentTime + 0.05)
-
-        // 清理
-        setTimeout(() => {
-          osc1.disconnect()
-          osc2.disconnect()
-          gainNode.disconnect()
-        }, 100)
-      } else {
-        // 原有的柔和声音和机械声音
-        const oscillator = audioContext.createOscillator()
-        const gainNode = audioContext.createGain()
-
-        oscillator.connect(gainNode)
-        gainNode.connect(audioContext.destination)
-
-        oscillator.frequency.value = isCorrect ? 800 : 300
-        oscillator.type = state.soundSettings.keySoundType === 'mech' ? 'square' : 'sine'
-
-        gainNode.gain.setValueAtTime(volume * 0.3, audioContext.currentTime)
-        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.05)
-
-        oscillator.start(audioContext.currentTime)
-        oscillator.stop(audioContext.currentTime + 0.05)
-
-        // 清理振荡器和增益节点
-        setTimeout(() => {
-          oscillator.disconnect()
-          gainNode.disconnect()
-        }, 100)
-      }
+      // 使用 play() 方法播放
+      audio.play().catch((error) => {
+        console.warn('[KeySound] Play failed:', error)
+      })
     } catch (error) {
       console.warn('[KeySound] Failed to play:', error)
     }
-  }, [state.soundSettings.keyVolume, state.soundSettings.keySoundType])
+  }, [state.soundSettings.keyVolume])
+
+  // ==================== 单词完成奖励音效 ====================
+  const playSuccessSound = useCallback(() => {
+    if (typeof window === 'undefined') return
+
+    try {
+      // 使用 Web Audio API 生成成功提示音（清脆的"叮"声）
+      const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
+      const oscillator = audioContext.createOscillator()
+      const gainNode = audioContext.createGain()
+
+      oscillator.connect(gainNode)
+      gainNode.connect(audioContext.destination)
+
+      // 设置音调（高音A5，明亮）
+      oscillator.frequency.setValueAtTime(880, audioContext.currentTime)
+      oscillator.frequency.exponentialRampToValueAtTime(1760, audioContext.currentTime + 0.1)
+
+      // 设置音量包络（快速淡入淡出，"叮"的效果）
+      gainNode.gain.setValueAtTime(0, audioContext.currentTime)
+      gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.02)
+      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3)
+
+      oscillator.start(audioContext.currentTime)
+      oscillator.stop(audioContext.currentTime + 0.3)
+    } catch (error) {
+      console.warn('[SuccessSound] Failed to play:', error)
+    }
+  }, [])
 
   // ==================== 键盘处理 ====================
   const handleKeyPress = useCallback(
@@ -827,15 +863,21 @@ export default function QwertyPracticePage() {
         startTime: state.startTime
       })
 
-      // ========== 开始遮罩状态下按ENTER开始 ==========
-      if (showStartOverlay && e.key === 'Enter') {
-        console.log('[KeyPress] ENTER pressed on start overlay - dismissing')
-        e.preventDefault()
-        setShowStartOverlay(false)
-        setState((prev) => {
-          console.log('[KeyPress] Updating state:', { ...prev, isPlaying: true, startTime: Date.now() })
-          return { ...prev, isPlaying: true, startTime: Date.now() }
-        })
+      // ========== ⚠️ 重要防御：开始遮罩状态下阻止所有输入（除了Enter）==========
+      if (showStartOverlay) {
+        if (e.key === 'Enter') {
+          console.log('[KeyPress] ENTER pressed on start overlay - dismissing')
+          e.preventDefault()
+          setShowStartOverlay(false)
+          setState((prev) => {
+            console.log('[KeyPress] Updating state:', { ...prev, isPlaying: true, startTime: Date.now() })
+            return { ...prev, isPlaying: true, startTime: Date.now() }
+          })
+        } else {
+          // 阻止所有其他按键，防止用户在开始之前就输入
+          console.log('[KeyPress] Blocking key press while showing start overlay')
+          e.preventDefault()
+        }
         return
       }
 
@@ -1068,6 +1110,9 @@ export default function QwertyPracticePage() {
   // ==================== 单词完成检测 ====================
   useEffect(() => {
     if (state.userInput === currentWord?.word && state.userInput.length > 0) {
+      // 🎵 播放单词完成奖励音效
+      playSuccessSound()
+
       const timer = setTimeout(() => {
         setState((prev) => {
           if (!currentDict) return prev
@@ -1109,7 +1154,7 @@ export default function QwertyPracticePage() {
 
       return () => clearTimeout(timer)
     }
-  }, [state.userInput, currentWord, currentDict, state.loopCount, state.currentWordCompletionCount])
+  }, [state.userInput, currentWord, currentDict, state.loopCount, state.currentWordCompletionCount, playSuccessSound])
 
   // ==================== 单词切换时重置连续错误计数 ====================
   useEffect(() => {
@@ -1131,14 +1176,164 @@ export default function QwertyPracticePage() {
     }
   }, [state.userInput, currentWordStr])
 
-  // ==================== 加载状态 ====================
+  // ==================== 加载状态（Neo-Brutalism 游戏化，响应式，黑暗模式）====================
   if (isLoading) {
+    // 检测系统黑暗模式
+    const isSystemDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
+
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50">
-        <div className="text-center">
-          <div className="inline-block w-12 h-12 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-          <p className="mt-4 text-gray-600 font-semibold">加载词库中...</p>
+      <div className={`min-h-screen flex items-center justify-center relative overflow-hidden px-4 transition-colors duration-300 ${
+        isSystemDark ? 'bg-gray-950' : 'bg-neo-bg'
+      }`}>
+        {/* Neo-Brutalism 几何装饰背景 */}
+        <div className={`absolute inset-0 overflow-hidden ${isSystemDark ? 'opacity-5' : 'opacity-10'}`}>
+          {/* 网格线 */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: isSystemDark
+              ? 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)'
+              : 'linear-gradient(#000 1px, transparent 1px), linear-gradient(90deg, #000 1px, transparent 1px)',
+            backgroundSize: '40px 40px'
+          }}></div>
+
+          {/* 装饰性方块 */}
+          <div className={`absolute top-20 left-20 w-20 h-20 border-4 shadow-neo-md hidden sm:block ${
+            isSystemDark ? 'border-gray-700 bg-lime-900/30' : 'border-black bg-yellow-400'
+          }`}></div>
+          <div className={`absolute top-40 right-32 w-16 h-16 border-4 shadow-neo-md hidden sm:block ${
+            isSystemDark ? 'border-gray-700 bg-blue-900/30' : 'border-black bg-yellow-400'
+          }`}></div>
+          <div className={`absolute bottom-32 left-40 w-24 h-24 border-4 shadow-neo-md hidden sm:block ${
+            isSystemDark ? 'border-gray-700 bg-purple-900/30' : 'border-black bg-blue-400'
+          }`}></div>
+          <div className={`absolute bottom-20 right-20 w-12 h-12 border-4 shadow-neo-md hidden sm:block ${
+            isSystemDark ? 'border-gray-700 bg-rose-900/30' : 'border-black bg-red-400'
+          }`}></div>
         </div>
+
+        {/* 加载内容卡片 */}
+        <motion.div
+          className={`relative z-10 border-4 shadow-neo-lg p-6 sm:p-8 md:p-12 max-w-lg w-full mx-4 transition-colors duration-300 ${
+            isSystemDark
+              ? 'bg-gray-900 border-gray-700'
+              : 'bg-white border-black'
+          }`}
+          initial={{ scale: 0.9, opacity: 0, rotate: -2 }}
+          animate={{ scale: 1, opacity: 1, rotate: 0 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          {/* 标题栏 */}
+          <div className={`border-b-4 pb-4 sm:pb-6 mb-6 sm:mb-8 ${
+            isSystemDark ? 'border-gray-700' : 'border-black'
+          }`}>
+            <motion.h1
+              className={`text-2xl sm:text-3xl md:text-4xl font-black mb-2 ${
+                isSystemDark ? 'text-lime-100' : 'text-neo-black'
+              }`}
+              animate={{ x: [0, -5, 5, -5, 0] }}
+              transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 1 }}
+            >
+              加载中...
+            </motion.h1>
+            <p className={`text-base sm:text-lg font-semibold ${
+              isSystemDark ? 'text-gray-400' : 'text-gray-600'
+            }`}>
+              正在准备打字练习词库
+            </p>
+          </div>
+
+          {/* 游戏化进度展示 */}
+          <div className="space-y-4 sm:space-y-6">
+            {/* 跳动的方块动画 - 黑暗模式优化 */}
+            <div className="flex justify-center gap-2 sm:gap-3">
+              {(isSystemDark
+                ? ['bg-lime-500', 'bg-blue-500', 'bg-rose-500', 'bg-purple-500']
+                : ['bg-yellow-400', 'bg-blue-400', 'bg-red-400', 'bg-green-400']
+              ).map((color, index) => (
+                <motion.div
+                  key={index}
+                  className={`w-8 h-8 sm:w-12 sm:h-12 border-3 shadow-neo-sm ${color} ${
+                    isSystemDark ? 'border-gray-600' : 'border-black'
+                  }`}
+                  animate={{
+                    y: [0, -15, 0],
+                    rotate: [0, 5, -5, 0],
+                  }}
+                  transition={{
+                    duration: 0.8,
+                    repeat: Infinity,
+                    delay: index * 0.15,
+                    ease: "easeInOut"
+                  }}
+                />
+              ))}
+            </div>
+
+            {/* Neo-Brutalism 进度条 */}
+            <div className="space-y-2">
+              <div className="flex justify-between text-sm font-bold">
+                <span className={isSystemDark ? 'text-gray-200' : 'text-neo-black'}>加载进度</span>
+                <motion.span
+                  className={isSystemDark ? 'text-gray-400' : 'text-neo-black'}
+                  animate={{ opacity: [0.5, 1, 0.5] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  准备中...
+                </motion.span>
+              </div>
+              <div className={`h-4 sm:h-6 border-3 shadow-neo-sm relative overflow-hidden ${
+                isSystemDark
+                  ? 'border-gray-600 bg-gray-800'
+                  : 'border-black bg-gray-100'
+              }`}>
+                <motion.div
+                  className={`h-full ${
+                    isSystemDark
+                      ? 'bg-gradient-to-r from-lime-500 via-blue-500 to-rose-500'
+                      : 'bg-gradient-to-r from-yellow-400 via-blue-400 to-red-400'
+                  }`}
+                  initial={{ width: 0 }}
+                  animate={{ width: '100%' }}
+                  transition={{ duration: 2.5, ease: "easeInOut" }}
+                />
+              </div>
+            </div>
+
+            {/* 提示框 */}
+            <motion.div
+              className={`border-3 shadow-neo-sm p-3 sm:p-4 ${
+                isSystemDark
+                  ? 'bg-gray-800 border-gray-600'
+                  : 'bg-yellow-100 border-black'
+              }`}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3, duration: 0.5 }}
+            >
+              <p className={`text-xs sm:text-sm font-bold flex items-center gap-2 ${
+                isSystemDark ? 'text-gray-200' : 'text-neo-black'
+              }`}>
+                <span className="text-lg sm:text-xl">💡</span>
+                <span>提示：准备好开始练习了吗？</span>
+              </p>
+            </motion.div>
+          </div>
+
+          {/* 底部装饰 */}
+          <div className={`mt-6 sm:mt-8 pt-4 sm:pt-6 border-t-4 flex justify-between items-center ${
+            isSystemDark ? 'border-gray-700' : 'border-black'
+          }`}>
+            <div className={`text-xs font-bold ${isSystemDark ? 'text-gray-500' : 'text-gray-500'}`}>
+              WORD PRACTICE
+            </div>
+            <motion.div
+              className={`w-6 h-6 sm:w-8 sm:h-8 border-3 shadow-neo-sm ${
+                isSystemDark ? 'border-gray-600 bg-lime-500' : 'border-black bg-neo-black'
+              }`}
+              animate={{ rotate: 360 }}
+              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+            />
+          </div>
+        </motion.div>
       </div>
     )
   }
@@ -1147,7 +1342,7 @@ export default function QwertyPracticePage() {
   // 如果显示词库选择器，渲染一个包含Modal的页面
   if (showBookSelector) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-gray-900 dark:via-slate-900 dark:to-gray-900 transition-colors duration-300">
         {books.length > 0 && (
           <BookSelectorModal
             books={books}
@@ -1207,10 +1402,41 @@ export default function QwertyPracticePage() {
       style={{
         background: state.displaySettings.darkMode
           ? 'linear-gradient(135deg, #1a1a2e 0%, #16213e 100%)'
-          : 'linear-gradient(to bottom right, #f9fafb, #f3e8ff, #eff6ff)',
+          : `
+            linear-gradient(135deg,
+              rgba(99, 102, 241, 0.15) 0%,
+              rgba(168, 85, 247, 0.15) 25%,
+              rgba(236, 72, 153, 0.15) 50%,
+              rgba(239, 68, 68, 0.15) 75%,
+              rgba(249, 115, 22, 0.15) 100%
+            )
+          `,
         color: state.displaySettings.darkMode ? '#ffffff' : '#1f2937',
       }}
     >
+      {/* Liquid flow effect layer - only in light mode */}
+      {!state.displaySettings.darkMode && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'linear-gradient(45deg, rgba(255, 107, 107, 0.1), rgba(254, 202, 87, 0.1), rgba(72, 219, 251, 0.1), rgba(255, 159, 243, 0.1), rgba(84, 160, 255, 0.1))',
+            backgroundSize: '400% 400%',
+            animation: 'liquidFlow 20s ease infinite',
+          }}
+        />
+      )}
+
+      {/* Glassmorphism overlay - only in light mode */}
+      {!state.displaySettings.darkMode && (
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            background: 'radial-gradient(circle at center, transparent 0%, rgba(255, 255, 255, 0.1) 100%)',
+          }}
+        />
+      )}
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 
@@ -1420,8 +1646,8 @@ export default function QwertyPracticePage() {
       </div>
 
       {/* ==================== 主内容区 ==================== */}
-      <main className="flex flex-col items-center justify-center px-4 h-[calc(100vh-120px)] relative" style={{ paddingTop: '8vh' }}>
-        {/* 上方左右切换按钮 - 绝对定位固定在屏幕两侧（放大1.5倍） */}
+      <main className={`flex flex-col items-center justify-center h-[calc(100vh-120px)] relative ${windowWidth < 768 ? 'px-2' : 'px-4'}`} style={{ paddingTop: windowWidth < 768 ? '4vh' : '8vh' }}>
+        {/* 上方左右切换按钮 - 固定在屏幕两侧 */}
         {/* 上一个单词按钮 - 左侧固定 */}
         {state.currentIndex > 0 && currentDict && (
           <button
@@ -1437,8 +1663,8 @@ export default function QwertyPracticePage() {
             className="fixed z-30 flex flex-col items-start gap-3 group transition-all hover:scale-105"
             style={{
               left: '32px',
-              top: '35%',
-              transform: 'translateY(-50%) scale(1.5)',
+              top: '30%',
+              transform: 'translateY(-50%)',
               transformOrigin: 'center left',
             }}
             title="上一个单词"
@@ -1478,8 +1704,8 @@ export default function QwertyPracticePage() {
             className="fixed z-30 flex flex-col items-end gap-3 group transition-all hover:scale-105"
             style={{
               right: '32px',
-              top: '35%',
-              transform: 'translateY(-50%) scale(1.5)',
+              top: '30%',
+              transform: 'translateY(-50%)',
               transformOrigin: 'center right',
             }}
             title="下一个单词"
@@ -1506,7 +1732,7 @@ export default function QwertyPracticePage() {
 
         {/* 单词卡片 */}
         <div
-          className="text-center max-w-6xl w-full py-6 flex flex-col items-center justify-center transition-all duration-300"
+          className={`text-center max-w-6xl w-full flex flex-col items-center justify-center transition-all duration-300 ${windowWidth < 768 ? 'py-2' : 'py-6'}`}
           style={{
             filter: state.isPaused ? 'blur(8px)' : 'blur(0px)',
           }}
@@ -1516,13 +1742,13 @@ export default function QwertyPracticePage() {
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mb-8 flex items-center justify-center gap-3"
+              className={`flex items-center justify-center ${windowWidth < 768 ? 'mb-4 gap-2' : 'mb-8 gap-3'}`}
             >
               <span
                 className="inline-block px-4 py-2 rounded-lg tracking-wider"
                 style={{
                   color: state.displaySettings.darkMode ? '#60a5fa' : '#3b82f6',
-                  fontSize: `${state.displaySettings.foreignFontSize * 0.4}px`, // 动态字号
+                  fontSize: `${state.displaySettings.foreignFontSize * 0.4 * (windowWidth < 768 ? 0.7 : windowWidth < 1024 ? 0.85 : 1)}px`, // 响应式字号
                   fontWeight: 400,
                   backgroundColor: state.displaySettings.darkMode ? 'rgba(59, 130, 246, 0.1)' : 'rgba(59, 130, 246, 0.05)',
                   fontFamily: 'Inter, "PingFang SC", "Microsoft YaHei", sans-serif',
@@ -1560,9 +1786,9 @@ export default function QwertyPracticePage() {
           )}
 
           {/* 英文单词 - 统一超大字体，绝对视觉中心 */}
-          <div className="mb-16 flex items-center justify-center">
+          <div className={`mb-16 flex items-center justify-center ${windowWidth < 768 ? 'px-4 overflow-x-auto' : ''}`}>
             {/* 当前单词 - 动态字号槽位下划线设计 */}
-            <div className="flex items-end justify-center">
+            <div className="flex items-end justify-center" style={{ maxWidth: windowWidth < 768 ? '100%' : 'auto' }}>
               <AnimatePresence mode="popLayout">
                 {currentWord?.word.split('').map((char, index) => {
                   const isInput = index < state.userInput.length
@@ -1571,13 +1797,29 @@ export default function QwertyPracticePage() {
 
                   // 动态字号计算（基础字号 + 设置值）
                   const fontSize = state.displaySettings.foreignFontSize // 20-100
-                  const scaledFontSize = fontSize * 2.5 // 放大到 50-250px 范围
+                  const baseScaledFontSize = fontSize * 2.5 // 放大到 50-250px 范围
 
-                  // 等比例缩放相关尺寸
-                  const slotWidth = scaledFontSize * 0.75 // 槽位宽度
+                  // 响应式缩放系数
+                  let responsiveScale = 1.0
+                  if (windowWidth < 768) {
+                    // 移动端（竖屏）：缩小到 45%
+                    responsiveScale = 0.45
+                  } else if (windowWidth < 1024) {
+                    // 平板：缩小到 70%
+                    responsiveScale = 0.7
+                  }
+                  // 桌面端：100% 不变
+
+                  const scaledFontSize = baseScaledFontSize * responsiveScale
+
+                  // 等比例缩放相关尺寸（移动端优化）
+                  const isMobile = windowWidth < 768
+                  const slotWidthRatio = isMobile ? 0.55 : 0.75 // 移动端槽位更窄
+                  const slotWidth = scaledFontSize * slotWidthRatio // 槽位宽度
                   const slotHeight = scaledFontSize * 1.3125 // 槽位高度
                   const paddingBelow = scaledFontSize * 0.1875 // 字母与下划线间距
-                  const gapBetween = scaledFontSize * 0.125 // 字母间距
+                  const gapRatio = isMobile ? 0.04 : 0.125 // 移动端间距更小
+                  const gapBetween = scaledFontSize * gapRatio // 字母间距
                   const borderWidth = scaledFontSize * 0.03125 // 下划线粗细
 
                   return (
@@ -1591,7 +1833,7 @@ export default function QwertyPracticePage() {
                       exit={{ scale: 0.9, opacity: 0 }}
                       className="flex flex-col items-center justify-end"
                       style={{
-                        marginRight: `${gapBetween}px`, // 动态间距
+                        marginRight: index < currentWord.word.length - 1 ? `${gapBetween}px` : '0px', // 最后一个字母没有右边距
                         borderBottom: `${borderWidth}px solid ${isCurrent ? '#94a3b8' : '#94a3b8'}`, // 统一使用 slate-400 中灰色
                         width: `${slotWidth}px`,
                         height: `${slotHeight}px`,
@@ -1609,7 +1851,7 @@ export default function QwertyPracticePage() {
                           display: 'inline-block',
                           paddingBottom: `${paddingBelow}px`, // 动态间距
                           color: isInput
-                            ? (isCorrect ? '#34d399' : '#f87171')
+                            ? (isCorrect ? '#16a34a' : '#f87171')
                             : (isCurrent ? '#94a3b8' : '#cbd5e1'), // 使用更清晰的中灰色
                           textAlign: 'center',
                         }}
@@ -1630,9 +1872,9 @@ export default function QwertyPracticePage() {
 
           {/* 中文释义 - 固定高度占位，防止布局跳动 */}
           <div
-            className="mb-12 transition-all duration-300"
+            className={`${windowWidth < 768 ? 'mb-6' : 'mb-12'} transition-all duration-300`}
             style={{
-              minHeight: '60px',
+              minHeight: windowWidth < 768 ? '40px' : '60px',
             }}
           >
             {state.learningMode.showTranslation && currentTrans ? (
@@ -1642,7 +1884,7 @@ export default function QwertyPracticePage() {
                 className="tracking-wide"
                 style={{
                   color: state.displaySettings.darkMode ? '#9ca3af' : '#64748b', // slate-500
-                  fontSize: `${state.displaySettings.chineseFontSize * 1.2}px`, // 动态字号
+                  fontSize: `${state.displaySettings.chineseFontSize * 1.2 * (windowWidth < 768 ? 0.7 : windowWidth < 1024 ? 0.85 : 1)}px`, // 响应式字号
                   fontWeight: 400,
                   lineHeight: 1.6,
                   fontFamily: '"PingFang SC", "Microsoft YaHei", sans-serif',
@@ -1656,7 +1898,7 @@ export default function QwertyPracticePage() {
           </div>
 
           {/* 极简进度点 */}
-          <div className="flex justify-center gap-1.5 mb-8">
+          <div className={`flex justify-center ${windowWidth < 768 ? 'gap-1 mb-4' : 'gap-1.5 mb-8'}`}>
             {currentWord?.word.split('').map((_, index) => {
               let dotColor = 'bg-gray-200'
               if (index < state.userInput.length) {
@@ -1889,43 +2131,114 @@ export default function QwertyPracticePage() {
       />
 
       {/* ==================== 开始遮罩 ==================== */}
-      {showStartOverlay && (() => {
-        console.log('[StartOverlay] Rendering start overlay')
-        return null
-      })() && (
+      {showStartOverlay && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-          {/* 苹果液态玻璃风格背景 */}
+          {/* 液态半透明背景 - 黑暗模式适配 */}
           <div
-            className="absolute inset-0 backdrop-blur-2xl"
+            className="absolute inset-0"
             style={{
-              background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%)',
-              backgroundColor: 'rgba(0, 0, 0, 0.3)',
+              background: state.displaySettings.darkMode
+                ? `
+                  linear-gradient(135deg,
+                    rgba(26, 26, 46, 0.95) 0%,
+                    rgba(22, 33, 62, 0.95) 50%,
+                    rgba(15, 23, 42, 0.95) 100%
+                  )
+                `
+                : `
+                  linear-gradient(135deg,
+                    rgba(99, 102, 241, 0.4) 0%,
+                    rgba(168, 85, 247, 0.4) 25%,
+                    rgba(236, 72, 153, 0.4) 50%,
+                    rgba(239, 68, 68, 0.4) 75%,
+                    rgba(249, 115, 22, 0.4) 100%
+                  )
+                `,
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
             }}
           />
 
-          {/* 内容 - 纯文字 */}
+          {/* 液态流动效果 - 仅浅色模式 */}
+          {!state.displaySettings.darkMode && (
+            <div
+              className="absolute inset-0 opacity-30"
+              style={{
+                background: 'linear-gradient(45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3, #54a0ff)',
+                backgroundSize: '400% 400%',
+                animation: 'liquidFlow 15s ease infinite',
+              }}
+            />
+          )}
+
+          {/* 额外的半透明叠加层 - 黑暗模式加深 */}
+          <div
+            className="absolute inset-0"
+            style={{
+              background: state.displaySettings.darkMode
+                ? 'radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.5) 100%)'
+                : 'radial-gradient(circle at center, transparent 0%, rgba(0, 0, 0, 0.3) 100%)',
+            }}
+          />
+
+          {/* 内容 - 打字机效果展示中英对照（响应式，居中） */}
           <motion.div
             initial={{ scale: 0.95, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
-            className="relative z-10 text-center space-y-8"
+            className="relative z-10 text-center space-y-8 px-4 sm:space-y-12 max-w-4xl mx-auto"
           >
-            <div className="space-y-4">
-              <h2 className="text-5xl font-bold text-white drop-shadow-2xl" style={{
-                textShadow: '0 2px 20px rgba(0, 0, 0, 0.5)',
-                letterSpacing: '-0.02em',
-              }}>
-                准备好了吗？
-              </h2>
-              <p className="text-xl text-white/90 drop-shadow-lg" style={{
-                textShadow: '0 1px 10px rgba(0, 0, 0, 0.3)',
-              }}>
-                按 <span className="inline-block px-3 py-1 bg-white/20 backdrop-blur-md rounded-lg font-mono text-sm mx-1 border border-white/30">ENTER</span> 或点击下方开始
-              </p>
+            {/* 打字机文字区域 - 按换行符分隔显示 */}
+            <div className="space-y-4 sm:space-y-8">
+              {typewriterText.split('\n').map((line, index) => {
+                // 第一句：标题（大字，响应式）
+                if (index === 0) {
+                  return (
+                    <motion.h2
+                      key={index}
+                      className="text-4xl sm:text-5xl md:text-6xl font-black text-white leading-tight"
+                      style={{
+                        textShadow: '0 4px 30px rgba(0, 0, 0, 0.6)',
+                        letterSpacing: '0.02em',
+                      }}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      {line || '准备好了吗？'}
+                    </motion.h2>
+                  )
+                }
+                // 第二句：说明（中等，响应式）
+                if (index === 1) {
+                  return (
+                    <motion.p
+                      key={index}
+                      className="text-lg sm:text-xl md:text-2xl text-white/95 font-medium drop-shadow-lg leading-relaxed"
+                      style={{
+                        textShadow: '0 2px 15px rgba(0, 0, 0, 0.4)',
+                      }}
+                      initial={{ opacity: 0, y: 15 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4 }}
+                    >
+                      {line || ''}
+                    </motion.p>
+                  )
+                }
+                // 第三句：按钮文本（隐藏，只用于判断按钮显示时机）
+                return null
+              })}
             </div>
 
-            {/* 文字按钮 */}
-            <button
+            {/* 开始按钮 - 等打字机效果完成后显示（响应式，黑暗模式适配） */}
+            <motion.button
+              initial={{ opacity: 0, y: 20 }}
+              animate={{
+                opacity: typewriterText.split('\n').length >= 3 ? 1 : 0,
+                y: typewriterText.split('\n').length >= 3 ? 0 : 20
+              }}
+              transition={{ duration: 0.5, delay: 0.2 }}
               onClick={() => {
                 console.log('[StartButton] Clicked - dismissing overlay')
                 setShowStartOverlay(false)
@@ -1934,14 +2247,23 @@ export default function QwertyPracticePage() {
                   return { ...prev, isPlaying: true, startTime: Date.now() }
                 })
               }}
-              className="text-2xl font-semibold text-white/95 hover:text-white transition-all duration-200 hover:scale-110 drop-shadow-lg cursor-pointer"
+              className={`px-8 py-4 sm:px-12 sm:py-5 backdrop-blur-md border-3 rounded-2xl text-2xl sm:text-3xl font-black transition-all duration-300 hover:scale-105 active:scale-95 cursor-pointer ${
+                state.displaySettings.darkMode
+                  ? 'bg-lime-500/20 border-lime-400/40 text-lime-100 hover:bg-lime-500/30 hover:border-lime-400/60'
+                  : 'bg-white/20 border-white/40 text-white hover:bg-white/30'
+              }`}
               style={{
-                textShadow: '0 2px 20px rgba(0, 0, 0, 0.5)',
+                textShadow: state.displaySettings.darkMode
+                  ? '0 3px 25px rgba(180, 244, 22, 0.5)'
+                  : '0 3px 25px rgba(0, 0, 0, 0.5)',
                 letterSpacing: '0.05em',
+                boxShadow: state.displaySettings.darkMode
+                  ? '0 10px 40px rgba(180, 244, 22, 0.3), 0 0 20px rgba(180, 244, 22, 0.2)'
+                  : '0 10px 40px rgba(0, 0, 0, 0.3)',
               }}
             >
               开始练习
-            </button>
+            </motion.button>
           </motion.div>
         </div>
       )}
@@ -1956,5 +2278,23 @@ export default function QwertyPracticePage() {
         />
       )}
     </div>
+  )
+}
+
+// ==================== Suspense边界包裹 ====================
+import { Suspense } from 'react'
+
+export default function PracticePageWrapper() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <p className="text-gray-600">加载中...</p>
+        </div>
+      </div>
+    }>
+      <QwertyPracticePage />
+    </Suspense>
   )
 }

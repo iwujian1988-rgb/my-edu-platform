@@ -14,7 +14,12 @@ export default async function AdminDashboard() {
   // 使用 admin client 绕过 RLS 限制
   const supabase = await createAdminClient()
 
-  // 获取核心统计数据
+  // ⚠️ 添加超时保护，避免查询hang住
+  const timeoutPromise = new Promise((_, reject) =>
+    setTimeout(() => reject(new Error('Query timeout')), 8000) // 8秒超时
+  )
+
+  // 获取核心统计数据（添加超时保护）
   const [
     { count: totalUsers },
     { count: todayNewUsers },
@@ -26,33 +31,65 @@ export default async function AdminDashboard() {
     activeInvitationCodesData
   ] = await Promise.all([
     // 用户总数
-    supabase.from('users') as any.select('id', { count: 'exact', head: true }),
+    Promise.race([
+      (supabase.from('users') as any).select('id', { count: 'exact', head: true }),
+      timeoutPromise
+    ]),
     // 今日新增用户
-    supabase
-      .from('users') as any
-      .select('id', { count: 'exact', head: true })
-      .gte('created_at', new Date().toISOString().split('T')[0]),
+    Promise.race([
+      (supabase.from('users') as any)
+        .select('id', { count: 'exact', head: true })
+        .gte('created_at', new Date().toISOString().split('T')[0]),
+      timeoutPromise
+    ]),
     // 7日内活跃用户
-    supabase
-      .from('learning_records')
-      .select('id', { count: 'exact', head: true })
-      .gte('created_at', new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()),
+    Promise.race([
+      supabase
+        .from('learning_records')
+        .select('id', { count: 'exact', head: true })
+        .gte('created_at', new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString()),
+      timeoutPromise
+    ]),
     // 邀请码总数
-    supabase.from('invitation_codes').select('id', { count: 'exact', head: true }),
+    Promise.race([
+      supabase.from('invitation_codes').select('id', { count: 'exact', head: true }),
+      timeoutPromise
+    ]),
     // 已使用的邀请码数
-    supabase
-      .from('invitation_codes')
-      .select('id', { count: 'exact', head: true })
-      .gt('used_count', 0),
+    Promise.race([
+      supabase
+        .from('invitation_codes')
+        .select('id', { count: 'exact', head: true })
+        .gt('used_count', 0),
+      timeoutPromise
+    ]),
     // 待审核词库
-    supabase
-      .from('books')
-      .select('id', { count: 'exact', head: true })
-      .eq('review_status', 'pending'),
+    Promise.race([
+      supabase
+        .from('books')
+        .select('id', { count: 'exact', head: true })
+        .eq('review_status', 'pending'),
+      timeoutPromise
+    ]),
     // 套餐总数
-    supabase.from('invitation_packages').select('id', { count: 'exact', head: true }),
+    Promise.race([
+      supabase.from('invitation_packages').select('id', { count: 'exact', head: true }),
+      timeoutPromise
+    ]),
     // 有效邀请码数
-    supabase.from('invitation_codes').select('id', { count: 'exact', head: true }).eq('is_active', true)
+    Promise.race([
+      supabase.from('invitation_codes').select('id', { count: 'exact', head: true }).eq('is_active', true),
+      timeoutPromise
+    ])
+  ]).catch(() => [
+    { count: 0 },
+    { count: 0 },
+    { count: 0 },
+    { count: 0 },
+    { count: 0 },
+    { count: 0 },
+    { count: 0 },
+    { count: 0 }
   ])
 
   // 统计各套餐使用情况
@@ -65,8 +102,8 @@ export default async function AdminDashboard() {
   const activeInvitationCodes = (activeInvitationCodesData as { count: number | null })?.count || 0
 
   // 统计权限过期用户
-  const { count: expiredPermissionsCount } = await supabase
-    .from('users') as any
+  const { count: expiredPermissionsCount } = await (supabase
+    .from('users') as any)
     .select('id', { count: 'exact', head: true })
     .not('permission_expires_at', 'is', null)
     .lt('permission_expires_at', new Date().toISOString())

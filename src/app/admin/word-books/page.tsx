@@ -342,8 +342,8 @@ export default function WordBooksPage() {
                     </td>
                     <td className="px-6 py-4">
                       <div className="flex flex-col gap-1">
-                        <span className={`inline-flex items-center px-3 py-1 rounded text-xs font-bold border-2 ${SHELF_STATUS_COLORS[book.is_published]}`}>
-                          {SHELF_STATUS_MAP[book.is_published]}
+                        <span className={`inline-flex items-center px-3 py-1 rounded text-xs font-bold border-2 ${(SHELF_STATUS_COLORS as any)[String(book.is_published)]}`}>
+                          {(SHELF_STATUS_MAP as any)[String(book.is_published)]}
                         </span>
                       </div>
                     </td>

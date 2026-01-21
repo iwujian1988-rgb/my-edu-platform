@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import "./globals.css";
+import { SoundEffects } from "@/components/SoundEffects";
+import { ThemeProvider } from "@/contexts/ThemeContext";
+import { LoadingOverlay } from "@/components/LoadingOverlay";
 
 // SKILL typography.csv line 6: Playful Creative for Educational apps
 // Fredoka for headings (Display) + Nunito for body (Sans)
@@ -19,8 +22,8 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "小语笔记 - 英语学习平台",
-  description: "小语笔记 - 智能英语单词学习平台，采用 Claymorphism 设计风格",
+  title: "MAX笔记 - 英语学习平台",
+  description: "MAX笔记 - 智能英语单词学习平台，采用 Neo-Brutalism 设计风格",
 };
 
 export default function RootLayout({
@@ -29,9 +32,47 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className={`${nunito.variable} ${fredoka.variable}`}>
-      <body className={`${nunito.className} antialiased`}>
-        {children}
+    <html lang="zh-CN" className={`${nunito.variable} ${fredoka.variable}`} suppressHydrationWarning>
+      <head>
+        {/* 🔥 防止主题闪烁：在页面渲染前就设置正确的主题 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const themeMode = localStorage.getItem('themeMode') || 'auto';
+                  const hour = new Date().getHours();
+                  const isNight = hour >= 18 || hour < 6;
+                  const isDark = themeMode === 'dark' || (themeMode === 'auto' && isNight);
+
+                  if (isDark) {
+                    document.documentElement.classList.add('dark');
+                    document.documentElement.style.setProperty('--bg-primary', '#111827');
+                    document.documentElement.style.setProperty('--bg-secondary', '#1f2937');
+                    document.documentElement.style.setProperty('--bg-tertiary', '#374151');
+                    document.documentElement.style.setProperty('--text-primary', '#f9fafb');
+                    document.documentElement.style.setProperty('--text-secondary', '#d1d5db');
+                    document.documentElement.style.setProperty('--text-tertiary', '#9ca3af');
+                    document.documentElement.style.setProperty('--accent', '#818cf8');
+                    document.documentElement.style.setProperty('--border', '#374151');
+                    document.documentElement.style.setProperty('--card-bg', '#1f2937');
+                  } else {
+                    document.documentElement.classList.remove('dark');
+                  }
+                } catch (e) {
+                  console.error('Theme init error:', e);
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className={`${nunito.className} antialiased`} suppressHydrationWarning>
+        <ThemeProvider>
+          <SoundEffects />
+          <LoadingOverlay />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

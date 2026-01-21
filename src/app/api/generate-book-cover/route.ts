@@ -1,9 +1,23 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import type { Database } from '@/types/database'
 
-// Google AI API 配置
-const GOOGLE_AI_API_KEY = process.env.GOOGLE_AI_API_KEY || 'AIzaSyDLgSsF-BM_71cfRco9nEA0J_s38rQu8CA'
+// API 配置
+const API_TIMEOUT = 30000 // 30秒超时
+
+/**
+ * 验证管理员权限
+ */
+async function checkAdminPermission() {
+  const user = await getCurrentUser()
+  if (!user) {
+    return { authorized: false, error: '未登录' }
+  }
+
+  // TODO: 添加更严格的管理员权限检查
+  // 这里可以检查用户是否有管理员角色
+  return { authorized: true, user }
+}
 
 /**
  * 生成书籍封面图片
@@ -12,6 +26,25 @@ const GOOGLE_AI_API_KEY = process.env.GOOGLE_AI_API_KEY || 'AIzaSyDLgSsF-BM_71cf
  */
 export async function POST(request: NextRequest) {
   try {
+    // 验证管理员权限
+    const authCheck = await checkAdminPermission()
+    if (!authCheck.authorized) {
+      return NextResponse.json(
+        { success: false, error: authCheck.error },
+        { status: 401 }
+      )
+    }
+
+    // 验证 API Key
+    const GOOGLE_AI_API_KEY = process.env.GOOGLE_AI_API_KEY
+    if (!GOOGLE_AI_API_KEY) {
+      console.error('❌ Google AI API Key 未配置')
+      return NextResponse.json(
+        { success: false, error: 'AI 封面功能未启用，请联系管理员配置 API Key' },
+        { status: 503 }
+      )
+    }
+
     const { bookId, bookName } = await request.json()
 
     if (!bookId || !bookName) {
@@ -49,71 +82,90 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const response = await fetch(imageUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(requestBody)
-    })
+    // 创建超时控制器
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), API_TIMEOUT)
 
-    if (!response.ok) {
-      const errorText = await response.text()
-      console.error('❌ Gemini API 错误:', response.status, errorText)
-      throw new Error(`Gemini API error: ${response.status} - ${errorText}`)
-    }
-
-    const imageData = await response.json()
-
-    console.log('🔍 Gemini API Response:', JSON.stringify(imageData, null, 2))
-
-    // 检查返回的图片数据
-    if (!imageData.candidates || imageData.candidates.length === 0) {
-      throw new Error('No content generated from Gemini API')
-    }
-
-    // 获取图片数据 (从 parts 中提取)
-    const parts = imageData.candidates[0].content.parts
-    const imagePart = parts.find((part: any) => part.inlineData)
-
-    if (!imagePart || !imagePart.inlineData) {
-      console.error('Available parts:', JSON.stringify(parts, null, 2))
-      throw new Error('No image data found in response')
-    }
-
-    const base64Image = imagePart.inlineData.data
-    const mimeType = imagePart.inlineData.mimeType || 'image/png'
-
-    // 构建 data URL
-    const dataUrl = `data:${mimeType};base64,${base64Image}`
-
-    console.log(`✅ Gemini 图片生成成功: ${dataUrl.substring(0, 100)}...`)
-
-    // 更新数据库
-    const supabase = await createClient()
-    const { error: upsertError } = await supabase
-      .from('books')
-      .upsert({
-        id: bookId,
-        cover_url: dataUrl
-      } as any, {
-        onConflict: 'id',
-        ignoreDuplicates: false
+    try {
+      const response = await fetch(imageUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(requestBody),
+        signal: controller.signal
       })
 
-    if (upsertError) {
-      console.error('❌ 更新数据库失败:', upsertError)
-    }
+      clearTimeout(timeoutId)
 
-    return NextResponse.json({
-      success: true,
-      data: {
-        coverUrl: dataUrl,
-        bookId,
-        bookName,
-        prompt
+      if (!response.ok) {
+        const errorText = await response.text()
+        console.error('❌ Gemini API 错误:', response.status, errorText)
+        throw new Error(`Gemini API error: ${response.status} - ${errorText}`)
       }
-    })
+
+      const imageData = await response.json()
+
+      console.log('🔍 Gemini API Response:', JSON.stringify(imageData, null, 2))
+
+      // 检查返回的图片数据
+      if (!imageData.candidates || imageData.candidates.length === 0) {
+        throw new Error('No content generated from Gemini API')
+      }
+
+      // 获取图片数据 (从 parts 中提取)
+      const parts = imageData.candidates[0].content.parts
+      const imagePart = parts.find((part: any) => part.inlineData)
+
+      if (!imagePart || !imagePart.inlineData) {
+        console.error('Available parts:', JSON.stringify(parts, null, 2))
+        throw new Error('No image data found in response')
+      }
+
+      const base64Image = imagePart.inlineData.data
+      const mimeType = imagePart.inlineData.mimeType || 'image/png'
+
+      // 构建 data URL
+      const dataUrl = `data:${mimeType};base64,${base64Image}`
+
+      console.log(`✅ Gemini 图片生成成功: ${dataUrl.substring(0, 100)}...`)
+
+      // 更新数据库
+      const supabase = await createClient()
+      const { error: upsertError } = await supabase
+        .from('books')
+        .upsert({
+          id: bookId,
+          cover_url: dataUrl
+        } as any, {
+          onConflict: 'id',
+          ignoreDuplicates: false
+        })
+
+      if (upsertError) {
+        console.error('❌ 更新数据库失败:', upsertError)
+      }
+
+      return NextResponse.json({
+        success: true,
+        data: {
+          coverUrl: dataUrl,
+          bookId,
+          bookName,
+          prompt
+        }
+      })
+    } catch (fetchError: any) {
+      clearTimeout(timeoutId)
+
+      // 处理超时错误
+      if (fetchError.name === 'AbortError') {
+        console.error('❌ Gemini API 请求超时')
+        throw new Error('AI 生成超时，请稍后重试')
+      }
+
+      throw fetchError
+    }
 
   } catch (error) {
     console.error('❌ 生成封面错误:', error)
@@ -133,6 +185,24 @@ export async function POST(request: NextRequest) {
  */
 export async function PATCH(request: NextRequest) {
   try {
+    // 验证管理员权限
+    const authCheck = await checkAdminPermission()
+    if (!authCheck.authorized) {
+      return NextResponse.json(
+        { success: false, error: authCheck.error },
+        { status: 401 }
+      )
+    }
+
+    // 验证 API Key
+    const GOOGLE_AI_API_KEY = process.env.GOOGLE_AI_API_KEY
+    if (!GOOGLE_AI_API_KEY) {
+      return NextResponse.json(
+        { success: false, error: 'AI 封面功能未启用，请联系管理员配置 API Key' },
+        { status: 503 }
+      )
+    }
+
     const supabase = await createClient()
 
     // 获取所有没有封面或需要重新生成的书籍

@@ -12,7 +12,7 @@ export async function DELETE(request: NextRequest) {
     const supabase = await createAdminClient()
 
     // 调用 RPC 函数删除测试用户
-    const { data, error } = await supabase.rpc('delete_test_users')
+    const { data, error } = await (supabase as any).rpc('delete_test_users')
 
     if (error) {
       console.error('Error deleting test users:', error)

@@ -45,17 +45,17 @@ export default async function AdminUsersPage({
       .select('id')
       .eq('package_id', packageFilter)
 
-    const codeIds = packageCodes?.map(c => c.id) || []
+    const codeIds = packageCodes?.map((c: any) => c.id) || []
 
     // 查询使用这些邀请码的用户
-    query = supabase
-      .from('users') as any
+    query = (supabase
+      .from('users') as any)
       .select('*', { count: 'exact', head: false })
       .in('invitation_code_id', codeIds.length > 0 ? codeIds : ['__none__'])
   } else {
     // 不筛选套餐时，查询所有用户（包括没有邀请码的用户）
-    query = supabase
-      .from('users') as any
+    query = (supabase
+      .from('users') as any)
       .select('*', { count: 'exact', head: false })
   }
 
@@ -101,8 +101,8 @@ export default async function AdminUsersPage({
   // 如果 count 查询失败，手动查询总数
   let totalCount = count
   if (!totalCount && users) {
-    const { count: manualCount } = await supabase
-      .from('users') as any
+    const { count: manualCount } = await (supabase
+      .from('users') as any)
       .select('*', { count: 'exact', head: true })
 
     totalCount = manualCount || 0

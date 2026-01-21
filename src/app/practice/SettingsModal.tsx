@@ -427,14 +427,24 @@ function DisplaySettingsTab({
 
 function DataSettingsTab({ onResetProgress }: { onResetProgress: () => void }) {
   const [exportProgress, setExportProgress] = useState(0)
+  // 🔧 内存泄露修复：使用 ref 保存 interval 引用，便于清理
+  const exportIntervalRef = useRef<NodeJS.Timeout | null>(null)
 
   const handleExport = () => {
+    // 清理之前的 interval（防止多次点击）
+    if (exportIntervalRef.current) {
+      clearInterval(exportIntervalRef.current)
+    }
+
     // 模拟导出进度
     setExportProgress(0)
-    const interval = setInterval(() => {
+    exportIntervalRef.current = setInterval(() => {
       setExportProgress((prev) => {
         if (prev >= 100) {
-          clearInterval(interval)
+          if (exportIntervalRef.current) {
+            clearInterval(exportIntervalRef.current)
+            exportIntervalRef.current = null
+          }
           return 100
         }
         return prev + 10
@@ -453,6 +463,16 @@ function DataSettingsTab({ onResetProgress }: { onResetProgress: () => void }) {
       URL.revokeObjectURL(url)
     }
   }
+
+  // 🔧 内存泄露修复：组件卸载时清理 interval
+  useEffect(() => {
+    return () => {
+      if (exportIntervalRef.current) {
+        clearInterval(exportIntervalRef.current)
+        exportIntervalRef.current = null
+      }
+    }
+  }, [])
 
   const handleImport = () => {
     // 触发文件选择

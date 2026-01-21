@@ -37,7 +37,7 @@ export async function GET(request: Request) {
   const { data: usersWithCode, error: usersWithCodeError } = await supabase
     .from('users')
     .select('*')
-    .eq('invitation_code_id', invitationCode.id)
+    .eq('invitation_code_id', (invitationCode as any).id)
 
   if (usersWithCodeError) {
     return NextResponse.json({ error: usersWithCodeError.message }, { status: 500 })
@@ -45,13 +45,13 @@ export async function GET(request: Request) {
 
   return NextResponse.json({
     invitationCode: {
-      id: invitationCode.id,
-      code: invitationCode.code,
-      package_id: invitationCode.package_id,
-      book_permissions: invitationCode.book_permissions,
-      feature_permissions: invitationCode.feature_permissions,
-      used_count: invitationCode.used_count,
-      used_by: invitationCode.used_by
+      id: (invitationCode as any).id,
+      code: (invitationCode as any).code,
+      package_id: (invitationCode as any).package_id,
+      book_permissions: (invitationCode as any).book_permissions,
+      feature_permissions: (invitationCode as any).feature_permissions,
+      used_count: (invitationCode as any).used_count,
+      used_by: (invitationCode as any).used_by
     },
     usersWithThisCode: usersWithCode,
     recentUsers: recentUsers

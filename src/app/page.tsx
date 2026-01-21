@@ -1,4 +1,4 @@
-import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import { createClient, getCurrentUser, getUserProfile } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { BookOpen, Target, Calendar, Plus, GraduationCap, Zap, LayoutGrid, Cat, LogOut, ChevronRight, Sparkles, ArrowRight, Trophy, TrendingUp, Star, Clock } from 'lucide-react'
@@ -7,10 +7,12 @@ import { getUserPermissions } from '@/lib/permissions'
 import { DashboardContent } from '@/components/DashboardContent'
 import { AppSidebar } from '@/components/AppSidebar'
 import type { ProgressCardProps } from '@/types/progress'
+import { DashboardClient } from '@/components/DashboardClient'
+import { getAllBooks } from '@/lib/books-server'
 
-// ✅ 添加ISR缓存，15秒重新验证一次
-// 这可以显著减少数据库查询次数和服务器负载
-export const revalidate = 15
+// ✅ 添加ISR缓存，10秒重新验证一次
+// 结合客户端轮询，既保证实时性又降低服务器负载
+export const revalidate = 10
 
 export default async function Home() {
   // 获取用户信息
@@ -22,39 +24,18 @@ export default async function Home() {
 
     // 获取用户权限
     const userPermissions = await getUserPermissions()
-    const hasAllBooks = (userPermissions?.bookPermissions.includes('*') || userPermissions?.bookPermissions.includes('全部')) || false
     const userBookIds = userPermissions?.bookPermissions || []
+    const hasAllBooks = userBookIds.includes('*') || userBookIds.includes('全部')
 
-    // 获取词书数据（只从数据库获取）
-    let books: any[] = []
+    // 获取用户资料（包含手机号）
+    const userProfile = await getUserProfile()
+    const userPhone = userProfile?.phone_number || user.email || '未设置'
 
-    try {
-      const { data: booksData } = await supabase
-        .from('books')
-        .select('*')
-        .order('created_at', { ascending: false })
+    // 🚀 使用统一的缓存函数获取词书数据
+    // 这会使用 React cache 机制，避免重复查询数据库
+    const books = await getAllBooks(user.id, userPermissions)
 
-      if (booksData && booksData.length > 0) {
-        // 映射数据库字段到组件需要的格式，并根据权限过滤
-        books = booksData
-          .filter((book: any) => {
-            // 如果用户有全部权限，或者有该书的权限，则显示
-            return hasAllBooks || userBookIds.includes(book.id)
-          })
-          .map((book: any) => ({
-            id: book.id,
-            title: book.title,  // ✅ 保留 title 字段
-            description: book.description || '',
-            total_words: book.total_words || 0,  // ✅ 保留 total_words 字段
-            cover_color: book.cover_color || 'from-green-400 to-green-500',
-            cover_url: book.cover_url || null,
-            progress: 0,
-            status: 'not_started'
-          }))
-      }
-    } catch (error) {
-      console.error('Error fetching data:', error)
-    }
+    console.log(`[Homepage] Loaded ${books.length} books`)
 
     // 获取用户学习数据
     let lastStudyBook = null as { id: string; title: string; progress: number; continueURL: string } | null
@@ -65,130 +46,66 @@ export default async function Home() {
     let progressCards: ProgressCardProps[] = []  // 🔧 转换后的进度卡片数据
 
     try {
-      // 🔧 性能优化：并行执行独立的查询
+      // 🔥 极致性能优化：首页只加载必要数据，统计数据由客户端异步加载
       const today = new Date()
       today.setHours(0, 0, 0, 0)
+      const todayStart = new Date(today.getTime() - today.getTimezoneOffset() * 60000).toISOString().split('T')[0] + 'T00:00:00Z'
 
       const [
         recentPrefsResult,
-        mistakesResult,
-        todayWordsResult,
-        recentProgressResult,
-        typingRecentResult
+        recentProgressResult
       ] = await Promise.all([
-        // 查询1：获取用户最近访问的词库（限制为3个）- 包含 last_resume_state
+        // 查询1：获取用户最近访问的词库（限制为3个）
         supabase
           .from('user_book_preferences')
-          .select('book_id, last_accessed_at, last_resume_state')
+          .select('book_id, last_accessed_at, last_resume_state, last_reading_progress')
           .eq('user_id', user.id)
           .not('last_accessed_at', 'is', null)
           .order('last_accessed_at', { ascending: false })
           .limit(3),
 
-        // 查询2：获取错题数量（状态为 unknown 或 fuzzy 的单词）
+        // 查询2：获取最近学习进度（前20条，用于确定最近学习的书籍）
         supabase
           .from('word_progress')
-          .select('id')
-          .eq('user_id', user.id)
-          .in('status', ['unknown', 'fuzzy']),
-
-        // 查询3：获取今日新增生词数量
-        supabase
-          .from('word_progress')
-          .select('id')
-          .eq('user_id', user.id)
-          .gte('updated_at', today.toISOString())
-          .eq('status', 'new'),
-
-        // 查询4：从学习进度表获取最近学习的词库（作为备用）
-        supabase
-          .from('word_progress')
-          .select('book_id, updated_at')
+          .select('book_id, status, created_at, updated_at')
           .eq('user_id', user.id)
           .order('updated_at', { ascending: false })
-          .limit(10),
-
-        // 查询5：获取打字练习最近记录（作为额外备用）
-        supabase
-          .rpc('get_typing_recent_practice', { p_user_id: user.id })
+          .limit(20)
       ])
 
+      // 🔥 性能优化：RPC 查询设置1秒超时，不阻塞首页加载
+      // 如果超时或失败，使用空数据，不影响其他功能
+      let typingRecentResult = { data: null, error: null }
+      const rpcPromise = supabase.rpc('get_typing_recent_practice', { p_user_id: user.id })
+        .then(result => {
+          typingRecentResult = result
+          return result
+        })
+        .catch(error => {
+          console.warn('[Homepage] RPC query failed:', error?.message || 'Unknown error')
+          return { data: null, error }
+        })
+
+      // ⏱️ 设置1秒超时
+      const timeoutPromise = new Promise(resolve =>
+        setTimeout(() => resolve({ data: null, error: { message: 'Timeout' } }), 1000)
+      )
+
+      // 等待 RPC 完成（最多1秒）
+      await Promise.race([rpcPromise, timeoutPromise])
+
+      // 处理查询结果
       const recentPrefs = recentPrefsResult.data
-      const mistakesData = mistakesResult.data
-      const todayWords = todayWordsResult.data
-      const recentProgress = recentProgressResult.data
       const typingRecent = typingRecentResult.data
+      const recentProgress = recentProgressResult.data || []
 
-      mistakesCount = mistakesData?.length || 0
-      todayNewWordsCount = todayWords?.length || 0
-
-      // 🔍 调试：打印原始数据（仅开发环境）
-      if (process.env.NODE_ENV === 'development') {
-        console.log('=== 首页数据调试 ===')
-        console.log('用户ID:', user.id)
-        console.log('recentPrefs (user_book_preferences):', recentPrefs?.length || 0, '条')
-        console.log('typingRecent (typing_recent_practice):', typingRecent?.length || 0, '条')
-        console.log('recentProgress (word_progress):', recentProgress?.length || 0, '条')
-        if (recentProgress && recentProgress.length > 0) {
-          const uniqueBooks = new Map()
-          for (const row of recentProgress) {
-            if (!uniqueBooks.has(row.book_id)) {
-              uniqueBooks.set(row.book_id, row.updated_at)
-            }
-          }
-          console.log('  - 唯一词库数:', uniqueBooks.size, '个')
-          console.log('  - 前3个词库ID:', Array.from(uniqueBooks.keys()).slice(0, 3))
-        }
-        console.log('==================')
-      }
-
-      // 🔧 性能优化：批量获取所有词库的学习进度统计
-      if (books.length > 0) {
-        const bookIds = books.map((b: any) => b.id)
-        const { data: allProgressData } = await supabase
-          .from('word_progress')
-          .select('book_id, status')
-          .eq('user_id', user.id)
-          .in('book_id', bookIds)
-
-        // 在内存中计算每个词库的统计
-        scopeStatsMap = {}
-        const bookStats: Record<string, { unknown: number, fuzzy: number, known: number }> = {}
-
-        if (allProgressData) {
-          for (const row of allProgressData) {
-            if (!bookStats[row.book_id]) {
-              bookStats[row.book_id] = { unknown: 0, fuzzy: 0, known: 0 }
-            }
-            if (row.status === 'unknown') bookStats[row.book_id].unknown++
-            else if (row.status === 'fuzzy') bookStats[row.book_id].fuzzy++
-            else if (row.status === 'known') bookStats[row.book_id].known++
-          }
-        }
-
-        // 为每个词库生成统计信息
-        for (const book of books) {
-          const stats = bookStats[book.id] || { unknown: 0, fuzzy: 0, known: 0 }
-          const totalWords = book.total_words || 0
-          scopeStatsMap[book.id] = {
-            all: totalWords,
-            unknown: stats.unknown,
-            fuzzy: stats.fuzzy,
-            known: stats.known,
-            new: Math.max(0, totalWords - stats.unknown - stats.fuzzy - stats.known),
-            mistakes: 0  // 暂不缓存错题数
-          }
-        }
-      }
-
-      // 🔧 性能优化：如果有最近访问记录，获取完整的书籍信息
+      // 🔧 性能优化：先确定最近访问的书籍ID列表
       // 优先级: user_book_preferences > typing_recent_practice > word_progress
       let recentBookIds: string[] = []
 
       if (recentPrefs && recentPrefs.length > 0) {
         // 使用 user_book_preferences 的数据
         recentBookIds = recentPrefs.map((pref: any) => pref.book_id)
-        console.log('📋 使用 user_book_preferences 数据源')
       } else if (typingRecent && typingRecent.length > 0) {
         // 使用 typing_recent_practice 的数据
         const uniqueBooks = new Map<string, string>()
@@ -199,7 +116,6 @@ export default async function Home() {
           }
         }
         recentBookIds = Array.from(uniqueBooks.keys())
-        console.log('⌨️ 使用 typing_recent_practice 数据源')
       } else if (recentProgress && recentProgress.length > 0) {
         // 从 word_progress 提取最近学习的词库（去重，取前3个）
         const uniqueBooks = new Map<string, string>()
@@ -210,42 +126,62 @@ export default async function Home() {
           }
         }
         recentBookIds = Array.from(uniqueBooks.keys())
-        console.log('📖 使用 word_progress 数据源')
       }
 
-      console.log('🔍 recentBookIds 提取结果:', recentBookIds.length, '个')
-      console.log('   book_ids:', recentBookIds)
+      // 🔍 调试：打印关键数据
+      console.log('=== 首页数据加载 ===', {
+        recentPrefs: recentPrefs?.length,
+        typingRecent: typingRecent?.length,
+        recentProgress: recentProgress?.length,
+        recentBookIds,
+        mistakesCount,
+        todayNewWordsCount
+      })
 
+      // 🔥 性能优化：只为最近访问的3本书查询统计信息
+      scopeStatsMap = {}
+      const bookStats: Record<string, { unknown: number, fuzzy: number, known: number }> = {}
+
+      if (books.length > 0 && recentBookIds.length > 0) {
+        // 使用 recentProgress 中的数据计算统计（只统计最近访问的书籍）
+        for (const row of recentProgress) {
+          if (!recentBookIds.includes(row.book_id)) continue
+
+          if (!bookStats[row.book_id]) {
+            bookStats[row.book_id] = { unknown: 0, fuzzy: 0, known: 0 }
+          }
+          if (row.status === 'unknown') bookStats[row.book_id].unknown++
+          else if (row.status === 'fuzzy') bookStats[row.book_id].fuzzy++
+          else if (row.status === 'known') bookStats[row.book_id].known++
+        }
+
+        // 只为最近访问的书籍生成统计信息
+        for (const bookId of recentBookIds) {
+          const stats = bookStats[bookId] || { unknown: 0, fuzzy: 0, known: 0 }
+          const book = books.find((b: any) => b.id === bookId)
+          const totalWords = book?.total_words || 0
+          scopeStatsMap[bookId] = {
+            all: totalWords,
+            unknown: stats.unknown,
+            fuzzy: stats.fuzzy,
+            known: stats.known,
+            new: Math.max(0, totalWords - stats.unknown - stats.fuzzy - stats.known),
+            mistakes: 0  // 暂不缓存错题数
+          }
+        }
+      }
+
+      // 🔥 性能优化：直接使用前面查询过的 books 数组，不再重复查询数据库
+      // 从 books 数组中筛选出最近访问的书籍
       if (recentBookIds.length > 0) {
-        console.log('📖 开始查询书籍详情...')
-        const { data: recentBooksData, error: booksError } = await supabase
-          .from('books')
-          .select('id, title, description, total_words, cover_url, cover_color')
-          .in('id', recentBookIds)
-
-        if (process.env.NODE_ENV === 'development') {
-          console.log('📖 书籍查询结果:')
-          console.log('   - 成功:', recentBooksData?.length || 0, '本')
-          console.log('   - 错误:', booksError?.message || '无')
-        }
-
-        // 合并数据，保持最近访问的顺序
-        const booksMap = new Map((recentBooksData || []).map((book: any) => [book.id, book]))
-        if (process.env.NODE_ENV === 'development') {
-          console.log('📚 booksMap 构建:', booksMap.size, '个条目')
-        }
+        // 创建 books 的 Map 以便快速查找
+        const booksMap = new Map(books.map((book: any) => [book.id, book]))
 
         // 根据数据源使用相应的顺序
         if (recentPrefs && recentPrefs.length > 0) {
-          if (process.env.NODE_ENV === 'development') {
-            console.log('🔄 使用 user_book_preferences 顺序，映射', recentPrefs.length, '条记录')
-          }
           const mappedBooks = recentPrefs
             .map((pref: any) => {
               const book = booksMap.get(pref.book_id)
-              if (process.env.NODE_ENV === 'development') {
-                console.log('   - 映射', pref.book_id, ':', book ? '✅ 找到' : '❌ 未找到')
-              }
               return book ? {
                 id: book.id,
                 title: book.title,
@@ -254,15 +190,13 @@ export default async function Home() {
                 cover_url: book.cover_url,
                 cover_color: book.cover_color,
                 last_accessed_at: pref.last_accessed_at,
-                last_resume_state: pref.last_resume_state  // ✅ 保留 resume_state
+                last_resume_state: pref.last_resume_state,
+                last_reading_progress: pref.last_reading_progress  // ✅ 添加阅读进度
               } : null
             })
             .filter((book: any) => book !== null)
           recentBooks = mappedBooks
-          console.log('   - 过滤后:', recentBooks.length, '本有效书籍')
         } else if (typingRecent && typingRecent.length > 0) {
-          // 使用 typing_recent_practice 的顺序
-          console.log('🔄 使用 typing_recent_practice 顺序')
           const uniqueBooks = new Map<string, string>()
           for (const row of typingRecent) {
             if (!uniqueBooks.has(row.book_id)) {
@@ -271,11 +205,9 @@ export default async function Home() {
             }
           }
 
-          console.log('   - uniqueBooks:', uniqueBooks.size, '个唯一词库')
           const mappedBooks = Array.from(uniqueBooks.entries())
             .map(([bookId, practiceAt]) => {
               const book = booksMap.get(bookId)
-              console.log('   - 映射', bookId, ':', book ? '✅ 找到' : '❌ 未找到')
               return book ? {
                 id: book.id,
                 title: book.title,
@@ -288,10 +220,7 @@ export default async function Home() {
             })
             .filter((book: any) => book !== null)
           recentBooks = mappedBooks
-          console.log('   - 过滤后:', recentBooks.length, '本有效书籍')
         } else {
-          // 使用 recentProgress 的顺序
-          console.log('🔄 使用 recentProgress 顺序')
           const uniqueBooks = new Map<string, string>()
           for (const row of recentProgress!) {
             if (!uniqueBooks.has(row.book_id)) {
@@ -299,12 +228,10 @@ export default async function Home() {
             }
           }
 
-          console.log('   - uniqueBooks:', uniqueBooks.size, '个唯一词库')
           const mappedBooks = Array.from(uniqueBooks.entries())
             .slice(0, 3)
             .map(([bookId, updatedAt]) => {
               const book = booksMap.get(bookId)
-              console.log('   - 映射', bookId, ':', book ? '✅ 找到' : '❌ 未找到')
               return book ? {
                 id: book.id,
                 title: book.title,
@@ -317,47 +244,30 @@ export default async function Home() {
             })
             .filter((book: any) => book !== null)
           recentBooks = mappedBooks
-          console.log('   - 过滤后:', recentBooks.length, '本有效书籍')
         }
       }
 
-      // 🔍 调试：打印最终 recentBooks 数据
-      console.log('📚 最终 recentBooks 数据:', recentBooks.length || 0, '条')
-      if (recentBooks && recentBooks.length > 0) {
-        recentBooks.forEach((book, i) => {
-          console.log(`  ${i + 1}. ${book.title} (${book.id})`)
-        })
-      }
-      console.log('==================\n')
+      console.log('=== recentBooks 生成了 ===', { length: recentBooks.length, books: recentBooks.map(b => ({ id: b.id, title: b.title })) })
 
       // 🔧 转换 recentBooks 为 progressCards 格式
       if (recentBooks && recentBooks.length > 0) {
-        console.log('🔄 开始转换 recentBooks 为 progressCards...')
 
-        // 获取每本书的学习进度统计（recentBooks 已包含 last_resume_state）
-        const bookIds = recentBooks.map((b: any) => b.id)
-        const { data: progressStatsData } = await supabase
-          .from('word_progress')
-          .select('book_id, status')
-          .eq('user_id', user.id)
-          .in('book_id', bookIds)
-
-        // 构建统计映射
+        // ✅ 性能优化：使用前面已经查询过的 scopeStatsMap，避免重复查询
         const statsMap: Record<string, { known: number, fuzzy: number, total: number }> = {}
-        if (progressStatsData) {
-          for (const row of progressStatsData) {
-            if (!statsMap[row.book_id]) {
-              statsMap[row.book_id] = { known: 0, fuzzy: 0, total: 0 }
-            }
-            if (row.status === 'known') statsMap[row.book_id].known++
-            else if (row.status === 'fuzzy') statsMap[row.book_id].fuzzy++
-            statsMap[row.book_id].total++
+        for (const bookId in scopeStatsMap) {
+          const stats = scopeStatsMap[bookId]
+          statsMap[bookId] = {
+            known: stats.known || 0,
+            fuzzy: stats.fuzzy || 0,
+            total: (stats.known || 0) + (stats.fuzzy || 0) + (stats.unknown || 0)
           }
         }
 
-        // 转换为 ProgressCard 格式（直接使用 recentBooks 中的 last_resume_state）
+        // 转换为 ProgressCard 格式（直接使用 recentBooks 中的 last_resume_state 和 last_reading_progress）
         progressCards = recentBooks.slice(0, 3).map((book: any) => {
-          const resumeState = book.last_resume_state  // ✅ 直接使用，无需额外查询
+          const resumeState = book.last_resume_state  // 断点续做状态（练习模式）
+          const readingProgress = book.last_reading_progress  // 阅读进度（浏览页码）
+
           const stats = statsMap[book.id] || { known: 0, fuzzy: 0, total: 0 }
           const totalWords = book.total_words || 0
 
@@ -365,16 +275,22 @@ export default async function Home() {
           const learnedCount = stats.known + stats.fuzzy
           const progress = totalWords > 0 ? Math.round((learnedCount / totalWords) * 100) : 0
 
-          // 🔧 检查 resumeState 是否为有效对象（不是 null、undefined 或空对象）
-          // ✅ 修复：即使 mode 为 undefined，只要有 context 数据就应该视为有效
+          // 🔧 检查是否有有效的状态
+          // 优先使用 readingProgress（浏览页码），其次使用 resumeState（练习模式）
+          const hasValidReadingProgress = readingProgress &&
+            typeof readingProgress === 'object' &&
+            Object.keys(readingProgress).length > 0
+
           const hasValidResumeState = resumeState &&
             typeof resumeState === 'object' &&
             Object.keys(resumeState).length > 0 &&
             (resumeState.mode || resumeState.context)
 
-          // 从 resume_state 获取模式信息（mode 可能是 undefined，使用默认值）
-          const mode = resumeState?.mode || 'word-list'
-          let scopeType = resumeState?.context?.scope || resumeState?.context?.scopeType || 'all'
+          // 从 reading_progress 或 resume_state 获取模式信息
+          // ✅ 关键修复：如果有 readingProgress（浏览记录），说明是 word-list 模式
+          // 否则使用 resumeState.mode（练习模式）
+          const mode = hasValidReadingProgress ? 'word-list' : (resumeState?.mode || 'word-list')
+          let scopeType = resumeState?.context?.scope || resumeState?.context?.scopeType || readingProgress?.status || 'all'
           const currentIndex = resumeState?.context?.index || resumeState?.context?.currentIndex || 0
 
           // 🔧 检查所选 scope 是否有单词，如果没有则回退到 'all'
@@ -382,39 +298,20 @@ export default async function Home() {
           if (bookScopeStats && scopeType !== 'all') {
             const scopeWordCount = bookScopeStats[scopeType] || 0
             if (scopeWordCount === 0) {
-              console.log(`⚠️ 书籍 ${book.title} 的 ${scopeType} 范围没有单词，回退到 'all'`)
               scopeType = 'all'
             }
           }
 
           // 生成 continue URL
-          // ✅ 修复：即使没有 resume_state，只要这本书在 user_book_preferences 中，就应该能访问
+          // ✅ 对于 word-list 模式，不添加参数到URL，让恢复对话框自然触发
+          // 对于练习模式（flashcards/dictation/typing），直接跳转到断点
           let continueURL = `/library/${book.id}`  // 默认跳转到词书详情页
 
-          if (hasValidResumeState) {
+          if (hasValidReadingProgress || hasValidResumeState) {
             if (mode === 'word-list') {
-              // ✅ 修复：word-list模式需要传递页码和筛选条件
-              const params = new URLSearchParams()
-              const contextPage = resumeState.context?.page
-              const contextStatus = resumeState.context?.status || resumeState.context?.scope
-              const contextTheme = resumeState.context?.theme
-              const contextScenario = resumeState.context?.scenario
-
-              if (contextPage && contextPage > 1) {
-                params.set('page', String(contextPage))
-              }
-              if (contextStatus && contextStatus !== 'all') {
-                params.set('status', contextStatus)
-              }
-              if (contextTheme && contextTheme !== 'all') {
-                params.set('theme', contextTheme)
-              }
-              if (contextScenario && contextScenario !== 'all') {
-                params.set('scenario', contextScenario)
-              }
-
-              const queryString = params.toString()
-              continueURL = `/library/${book.id}${queryString ? `?${queryString}` : ''}`
+              // ✅ word-list模式：不添加任何参数，让页面显示恢复对话框
+              // 用户可以选择"继续学习"或"从头开始"
+              continueURL = `/library/${book.id}`
             } else if (mode === 'flashcards') {
               // ✅ 使用 hash 传递 index（修复断点跳转）
               const hash = `#word-${currentIndex}`
@@ -429,16 +326,6 @@ export default async function Home() {
             }
           }
 
-          // 🔍 调试日志：打印 continueURL 生成信息
-          console.log('🔗 生成 continueURL:', {
-            bookId: book.id.slice(0, 8),
-            bookTitle: book.title,
-            hasValidResumeState,
-            mode,
-            scopeType,
-            continueURL
-          })
-
           return {
             bookId: book.id,
             bookTitle: book.title,
@@ -447,17 +334,14 @@ export default async function Home() {
             scopeType,
             currentIndex,
             totalWords,
+            learnedCount,  // ✅ 添加已学习词数
             lastStudyTime: new Date(book.last_accessed_at || Date.now()).getTime(),
             continueURL
           }
         })
-
-        console.log('✅ 转换完成，生成', progressCards.length, '个 progressCards')
-        progressCards.forEach((card, i) => {
-          console.log(`  ${i + 1}. ${card.bookTitle} - ${card.mode} (${card.progress}%)`)
-        })
-        console.log('')
       }
+
+      console.log('=== progressCards 生成了 ===', { length: progressCards.length, cards: progressCards.map(c => ({ bookId: c.bookId, mode: c.mode, progress: c.progress })) })
 
       let lastBookId = null
 
@@ -467,64 +351,24 @@ export default async function Home() {
       } else if (recentProgress && recentProgress.length > 0) {
         // 使用 word_progress 中的最新记录
         lastBookId = (recentProgress as any)[0].book_id
-      } else {
-        // 如果都没有，回退到查找有学习进度的词库
-        const { data: progressData } = await supabase
-          .from('word_progress')
-          .select('book_id')
-          .eq('user_id', user.id)
-          .order('updated_at', { ascending: false })
-          .limit(1)
-
-        if (progressData && progressData.length > 0) {
-          lastBookId = (progressData as any)[0].book_id
-        }
       }
 
       if (lastBookId) {
-        // 🔧 性能优化：并行获取该书信息和用户的学习状态
-        const [bookDataResult, bookProgressResult, userPrefsResult] = await Promise.all([
-          // 获取该书信息
-          supabase
-            .from('books')
-            .select('id, title, total_words')
-            .eq('id', lastBookId)
-            .single(),
+        // 🔥 性能优化：直接使用已查询的数据，不再重复查询数据库
+        const book = books.find((b: any) => b.id === lastBookId)
+        const bookProgress = recentProgress.filter(p => p.book_id === lastBookId)
+        const userPref = recentPrefs?.find((p: any) => p.book_id === lastBookId)
 
-          // 计算该书的学习进度
-          supabase
-            .from('word_progress')
-            .select('status')
-            .eq('user_id', user.id)
-            .eq('book_id', lastBookId),
-
-          // 获取用户最后的学习状态
-          supabase
-            .from('user_book_preferences')
-            .select('last_resume_state')
-            .eq('user_id', user.id)
-            .eq('book_id', lastBookId)
-            .maybeSingle()
-        ])
-
-        const bookData = bookDataResult.data
-        const bookProgress = bookProgressResult.data
-        const userPrefs = userPrefsResult.data
-
-        if (bookData && bookProgress) {
+        if (book && bookProgress.length > 0) {
           // 只统计"认识"的单词作为学习进度
-          // known: 认识（计入进度）
-          // fuzzy: 模糊（部分掌握，也可计入）
-          // unknown: 不认识（不应计入）
-          // new: 未标注（不应计入进度）
           const learnedCount = bookProgress.filter((p: any) =>
             p.status === 'known' || p.status === 'fuzzy'
           ).length
-          const progress = (bookData as any).total_words > 0
-            ? Math.round((learnedCount / (bookData as any).total_words) * 100)
+          const progress = book.total_words > 0
+            ? Math.round((learnedCount / book.total_words) * 100)
             : 0
 
-          const resumeState = (userPrefs as any)?.last_resume_state
+          const resumeState = userPref?.last_resume_state
           let continueURL = `/library/${lastBookId}` // 默认跳转到词书详情页
 
           // ⭐ 根据学习模式生成不同的跳转 URL
@@ -549,11 +393,9 @@ export default async function Home() {
             continueURL = `/study/${lastBookId}/dictation?index=${index}`
           }
 
-          console.log('📍 Resume state:', { mode: resumeState?.mode, continueURL })
-
           lastStudyBook = {
-            id: (bookData as any).id,
-            title: (bookData as any).title,
+            id: book.id,
+            title: book.title,
             progress,
             continueURL
           }
@@ -565,19 +407,16 @@ export default async function Home() {
 
     // 显示工作台内容 - Premium Neo-Brutalism Design
     return (
-      <>
-        <AppSidebar books={books} userId={user.id} scopeStatsMap={scopeStatsMap} />
-        <DashboardContent
-          books={books}
-          progressCards={progressCards}
-          lastStudyBook={lastStudyBook}
-          mistakesCount={mistakesCount}
-          todayNewWordsCount={todayNewWordsCount}
-          userEmail={user.email}
-          userId={user.id}
-          recentBooks={recentBooks}
-        />
-      </>
+      <DashboardClient
+        books={books}
+        userId={user.id}
+        scopeStatsMap={scopeStatsMap}
+        progressCards={progressCards}
+        lastStudyBook={lastStudyBook}
+        // 🔥 性能优化：移除统计数字，让客户端异步加载
+        userPhone={userPhone}
+        recentBooks={recentBooks}
+      />
     )
   }
 
@@ -593,7 +432,7 @@ export default async function Home() {
                 <GraduationCap className="w-7 h-7 text-purple-600" />
               </div>
               <div>
-                <h1 className="text-2xl font-bold text-gradient-purple">喵喵笔记</h1>
+                <h1 className="text-2xl font-bold text-gradient-purple">MAX笔记</h1>
                 <p className="text-xs text-gray-600 font-semibold">✨ 智能英语学习平台</p>
               </div>
             </div>
@@ -716,7 +555,7 @@ export default async function Home() {
             <div className="text-center mb-12">
               <span className="clay-badge text-sm mb-4 inline-block text-purple-600">Chapter 2</span>
               <h2 className="text-4xl md:text-5xl font-black mb-4 text-gradient-purple">
-                喵喵笔记，重新定义单词学习
+                MAX笔记，重新定义单词学习
               </h2>
               <p className="text-lg text-gray-600 font-semibold max-w-2xl mx-auto">
                 科学的学习方法 + 有趣的学习体验 = 高效的记忆效果
@@ -1066,7 +905,7 @@ export default async function Home() {
         <div className="max-w-7xl mx-auto">
           <div className="clay-card px-8 py-6 text-center">
             <p className="text-gray-600 font-semibold">
-              © 2025 喵喵笔记 · 智能英语学习平台 · Made with ❤️
+              © 2026 MAX笔记 · 智能英语学习平台 · Made with ❤️
             </p>
           </div>
         </div>

@@ -30,7 +30,7 @@ export default async function AdminLoginPage({
             <span className="text-4xl">🐱</span>
           </div>
           <h1 className="text-3xl font-black text-gray-800 mb-2" style={{ fontFamily: 'Fredoka, sans-serif' }}>
-            喵喵笔记管理后台
+            MAX笔记管理后台
           </h1>
           <p className="text-gray-600 font-semibold">
             管理员登录
@@ -43,7 +43,7 @@ export default async function AdminLoginPage({
         {/* 页脚信息 */}
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-500 font-semibold">
-            © 2026 喵喵笔记 · 管理后台
+            © 2026 MAX笔记 · 管理后台
           </p>
         </div>
       </div>

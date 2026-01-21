@@ -17,7 +17,7 @@ function LoginForm() {
 
   // 设置页面标题
   useEffect(() => {
-    document.title = '登录 / 注册 - 小语笔记'
+    document.title = '登录 / 注册 - MAX笔记'
   }, [])
 
   // Login form state
@@ -168,7 +168,7 @@ function LoginForm() {
                 <GraduationCap className="w-16 h-16 text-green-600" />
               </div>
               <h1 className="text-5xl lg:text-6xl font-black mb-4" style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                小语笔记
+                MAX笔记
               </h1>
               <p className="text-2xl lg:text-3xl font-bold text-gray-700">
                 智能英语学习平台
@@ -242,7 +242,7 @@ function LoginForm() {
                 <GraduationCap className="w-12 h-12 text-green-600" />
               </div>
               <h1 className="text-4xl font-black mb-2" style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
-                小语笔记
+                MAX笔记
               </h1>
               <p className="text-lg font-bold text-gray-700">
                 ✨ 开启你的英语学习之旅 ✨

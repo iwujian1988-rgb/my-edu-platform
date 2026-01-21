@@ -20,7 +20,7 @@ interface PageProps {
 }
 
 export const metadata: Metadata = {
-  title: '选择练习模式 - 小语笔记',
+  title: '选择练习模式 - MAX笔记',
   description: '选择你喜欢的练习模式开始学习',
 }
 

@@ -420,10 +420,10 @@ export default function FlashcardsPage() {
   if (!currentWord && !loading) {
     console.error('[Flashcards] currentWord is undefined!', { currentIndex, wordsLength: words.length, initialHashIndex })
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
+      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="text-center">
-          <p className="text-lg font-bold text-gray-900 mb-2">加载中...</p>
-          <p className="text-sm text-gray-600">正在准备单词卡片</p>
+          <p className="text-lg font-bold mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>加载中...</p>
+          <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>正在准备单词卡片</p>
         </div>
       </div>
     )
@@ -911,10 +911,10 @@ export default function FlashcardsPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
+      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="text-center">
           <div className="inline-block w-12 h-12 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
-          <p className="mt-4 text-gray-900 font-black">加载中...</p>
+          <p className="mt-4 font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>加载中...</p>
         </div>
       </div>
     )
@@ -922,33 +922,35 @@ export default function FlashcardsPage() {
 
   if (words.length === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#F8F9FA' }}>
+      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div
-          className="p-8 text-center max-w-md mx-auto"
+          className="p-8 text-center max-w-md mx-auto transition-colors duration-300"
           style={{
-            backgroundColor: '#ffffff',
+            backgroundColor: 'var(--card-bg)',
             border: '3px solid #000',
             borderRadius: '12px',
             boxShadow: '4px 4px 0px 0px #000',
           }}
         >
-          <h2 className="text-2xl font-black text-gray-900 mb-4">🎉 太棒了！</h2>
-          <p className="text-lg text-gray-700 font-bold mb-2">
+          <h2 className="text-2xl font-black mb-4 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>🎉 太棒了！</h2>
+          <p className="text-lg font-bold mb-2 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
             你已经完成了 <span className="font-mono">{scopeLabelMap[currentScope]}</span> 范围的所有单词
           </p>
-          <p className="text-sm text-gray-500 font-semibold mb-6">
+          <p className="text-sm font-semibold mb-6 transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>
             接下来你想做什么？
           </p>
           <div className="flex flex-col gap-3">
             <button
               onClick={() => setShowScopeSelectDialog(true)}
-              className="w-full px-6 py-3 font-black bg-blue-100 border-2 border-black rounded-lg hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+              className="w-full px-6 py-3 font-black border-2 border-black rounded-lg hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+              style={{ backgroundColor: '#dbeafe' }}
             >
               📚 选择其他范围
             </button>
             <button
               onClick={() => router.push('/')}
-              className="w-full px-6 py-3 font-black bg-[#B4F416] border-2 border-black rounded-lg hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
+              className="w-full px-6 py-3 font-black border-2 border-black rounded-lg hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
+              style={{ backgroundColor: '#B4F416' }}
             >
               返回首页
             </button>
@@ -970,18 +972,19 @@ export default function FlashcardsPage() {
   return (
     <PermissionGate feature={FEATURE_PERMISSIONS.FLASHCARDS} bookId={bookId}>
       <div
-        className="min-h-screen bg-[#F8F9FA] relative overflow-hidden"
+        className="min-h-screen relative overflow-hidden transition-colors duration-300"
         style={{
+          backgroundColor: 'var(--bg-primary)',
           touchAction: 'none',
           overscrollBehavior: 'none'
         }}
       >
         {/* 1. Header Section - Neo-Brutalism */}
-        <header className="sticky top-0 z-50 px-4 py-4 bg-[#F8F9FA]">
+        <header className="sticky top-0 z-50 px-4 py-4 transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
           <div className="max-w-2xl mx-auto flex items-center gap-4 mb-4">
             <button
-              className="w-12 h-12 flex items-center justify-center bg-white rounded-xl transition-transform active:translate-y-1"
-              style={{ border: '3px solid #000', boxShadow: '4px 4px 0px 0px #000' }}
+              className="w-12 h-12 flex items-center justify-center rounded-xl transition-transform active:translate-y-1 transition-colors duration-300"
+              style={{ border: '3px solid #000', boxShadow: '4px 4px 0px 0px #000', backgroundColor: 'var(--card-bg)' }}
               onClick={() => {
                 // ⚡ 立即跳转，不等待保存
                 // 保存由 beforeunload/visibilitychange/unmount 事件处理
@@ -992,27 +995,27 @@ export default function FlashcardsPage() {
             </button>
 
             <div
-              className="flex-1 h-12 flex items-center px-4 bg-white rounded-xl overflow-hidden"
-              style={{ border: '3px solid #000', boxShadow: '4px 4px 0px 0px #000' }}
+              className="flex-1 h-12 flex items-center px-4 rounded-xl overflow-hidden transition-colors duration-300"
+              style={{ border: '3px solid #000', boxShadow: '4px 4px 0px 0px #000', backgroundColor: 'var(--card-bg)' }}
             >
               <div className="flex flex-col">
-                <span className="text-xs font-bold text-gray-500 uppercase tracking-wider">Currently Studying</span>
-                <span className="text-sm md:text-base font-black truncate">{bookTitle}</span>
+                <span className="text-xs font-bold uppercase tracking-wider transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>Currently Studying</span>
+                <span className="text-sm md:text-base font-black truncate transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{bookTitle}</span>
               </div>
-              <div className="ml-auto font-black text-lg">{currentIndex + 1} / {totalWordsInScope || words.length}</div>
+              <div className="ml-auto font-black text-lg transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{currentIndex + 1} / {totalWordsInScope || words.length}</div>
             </div>
           </div>
 
           {/* 2. Progress Bar - Neo-Brutalism */}
           <div className="max-w-2xl mx-auto mb-4">
-            <div className="flex justify-between text-xs font-bold mb-1 px-1">
+            <div className="flex justify-between text-xs font-bold mb-1 px-1 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
               <span>PROGRESS</span>
               <span>{Math.round(((currentIndex + 1) / (totalWordsInScope || words.length)) * 100)}%</span>
             </div>
-            <div className="w-full h-6 bg-white rounded-full overflow-hidden relative" style={{ border: '3px solid #000' }}>
+            <div className="w-full h-6 rounded-full overflow-hidden relative transition-colors duration-300" style={{ border: '3px solid #000', backgroundColor: 'var(--card-bg)' }}>
               <div
-                className="h-full bg-[#B4F416]"
-                style={{ width: `${((currentIndex + 1) / (totalWordsInScope || words.length)) * 100}%`, borderRight: '3px solid #000' }}
+                className="h-full transition-colors duration-300"
+                style={{ width: `${((currentIndex + 1) / (totalWordsInScope || words.length)) * 100}%`, borderRight: '3px solid #000', backgroundColor: '#B4F416' }}
               />
             </div>
           </div>
@@ -1020,16 +1023,16 @@ export default function FlashcardsPage() {
           {/* 3. Swipe Instructions - Visual Cues (Neo-Brutalism) */}
           <div className="max-w-md mx-auto grid grid-cols-3 gap-2">
             <div className="flex flex-col items-center gap-1">
-              <div className="px-3 py-1 bg-[#B4F416] border-2 border-black rounded-lg text-xs font-black shadow-[2px_2px_0px_0px_#000]">← LEFT</div>
-              <span className="text-[10px] font-bold">认识</span>
+              <div className="px-3 py-1 border-2 border-black rounded-lg text-xs font-black shadow-[2px_2px_0px_0px_#000] transition-colors duration-300" style={{ backgroundColor: '#B4F416' }}>← LEFT</div>
+              <span className="text-[10px] font-bold transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>认识</span>
             </div>
             <div className="flex flex-col items-center gap-1">
-              <div className="px-3 py-1 bg-[#FACC15] border-2 border-black rounded-lg text-xs font-black shadow-[2px_2px_0px_0px_#000]">↑ UP</div>
-              <span className="text-[10px] font-bold">模糊</span>
+              <div className="px-3 py-1 border-2 border-black rounded-lg text-xs font-black shadow-[2px_2px_0px_0px_#000] transition-colors duration-300" style={{ backgroundColor: '#FACC15' }}>↑ UP</div>
+              <span className="text-[10px] font-bold transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>模糊</span>
             </div>
             <div className="flex flex-col items-center gap-1">
-              <div className="px-3 py-1 bg-[#FF6B6B] border-2 border-black rounded-lg text-xs font-black text-white shadow-[2px_2px_0px_0px_#000]">RIGHT →</div>
-              <span className="text-[10px] font-bold">不认识</span>
+              <div className="px-3 py-1 border-2 border-black rounded-lg text-xs font-black text-white shadow-[2px_2px_0px_0px_#000] transition-colors duration-300" style={{ backgroundColor: '#FF6B6B' }}>RIGHT →</div>
+              <span className="text-[10px] font-bold transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>不认识</span>
             </div>
           </div>
         </header>
@@ -1048,9 +1051,9 @@ export default function FlashcardsPage() {
             />
             {/* 提示框 */}
             <div
-              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-6 text-center cursor-pointer z-20"
+              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full max-w-md p-6 text-center cursor-pointer z-20 transition-colors duration-300"
               style={{
-                backgroundColor: '#ffffff',
+                backgroundColor: 'var(--card-bg)',
                 border: '3px solid #000',
                 borderRadius: '12px',
                 boxShadow: '4px 4px 0px 0px #000',
@@ -1060,8 +1063,8 @@ export default function FlashcardsPage() {
                 setHasUserInteracted(true)
               }}
             >
-              <p className="text-lg font-black text-gray-900 mb-2">👆 点击此处开始学习</p>
-              <p className="text-sm font-bold text-gray-600">首次点击激活语音功能</p>
+              <p className="text-lg font-black mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>👆 点击此处开始学习</p>
+              <p className="text-sm font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>首次点击激活语音功能</p>
             </div>
           </>
         )}
@@ -1072,7 +1075,7 @@ export default function FlashcardsPage() {
             {/* Current Card */}
             <div
               ref={cardRef}
-              className="bg-white rounded-3xl flex flex-col p-6 text-center cursor-grab active:cursor-grabbing"
+              className="rounded-3xl flex flex-col p-6 text-center cursor-grab active:cursor-grabbing transition-colors duration-300"
               style={{
                 position: 'absolute',
                 top: 0,
@@ -1087,6 +1090,7 @@ export default function FlashcardsPage() {
                 transition: dragStart || keyboardAnimation || isCardSwitching ? 'transform 0.3s ease-out, opacity 0.3s ease-out' : 'transform 0.15s ease-out, opacity 0.3s ease-out',
                 zIndex: 10,
                 touchAction: 'none', // 阻止移动端的默认滚动行为
+                backgroundColor: 'var(--card-bg)',
               }}
               onMouseDown={handleDragStart}
               onMouseMove={handleDragMove}
@@ -1137,11 +1141,11 @@ export default function FlashcardsPage() {
                   {/* Main Content - flex distribution */}
                   <div style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.5rem' }}>
                     {/* Word */}
-                    <h1 className="text-5xl md:text-6xl font-black tracking-tight text-center">{currentWord.word}</h1>
+                    <h1 className="text-5xl md:text-6xl font-black tracking-tight text-center transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{currentWord.word}</h1>
 
                     {/* Phonetic + Button */}
                     <div className="flex items-center gap-4 justify-center">
-                      <span className="font-mono text-lg text-gray-600">
+                      <span className="font-mono text-lg transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                         {currentWord.us_phonetic || currentWord.uk_phonetic || currentWord.phonetic}
                       </span>
                       <button
@@ -1160,7 +1164,7 @@ export default function FlashcardsPage() {
                     </div>
 
                     {/* Part of Speech */}
-                    <span className="inline-block px-3 py-1.5 bg-gray-100 border-2 border-black rounded text-sm font-bold">
+                    <span className="inline-block px-3 py-1.5 border-2 border-black rounded text-sm font-bold transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-primary)' }}>
                       {currentWord.part_of_speech || 'n.'}
                     </span>
                   </div>
@@ -1194,8 +1198,8 @@ export default function FlashcardsPage() {
                     {/* English Definition */}
                     {currentWord.definition_en && (
                       <div className="mb-4">
-                        <p className="text-sm text-gray-500 font-bold mb-1">英文释义</p>
-                        <p className="text-base text-gray-900 font-black leading-snug break-words">
+                        <p className="text-sm font-bold mb-1 transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>英文释义</p>
+                        <p className="text-base font-black leading-snug break-words transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                           {currentWord.definition_en}
                         </p>
                       </div>
@@ -1204,8 +1208,8 @@ export default function FlashcardsPage() {
                     {/* Chinese Definition */}
                     {currentWord.definition && (
                       <div className="mb-4">
-                        <p className="text-sm text-gray-500 font-bold mb-1">中文释义</p>
-                        <p className="text-base text-gray-900 font-black leading-snug break-words">
+                        <p className="text-sm font-bold mb-1 transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>中文释义</p>
+                        <p className="text-base font-black leading-snug break-words transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                           {currentWord.definition}
                         </p>
                       </div>
@@ -1214,8 +1218,8 @@ export default function FlashcardsPage() {
                     {/* English Collocation */}
                     {currentWord.collocation_en && (
                       <div className="mb-4">
-                        <p className="text-sm text-gray-500 font-bold mb-1">英文搭配</p>
-                        <p className="text-sm text-gray-800 font-semibold leading-snug break-words">
+                        <p className="text-sm font-bold mb-1 transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>英文搭配</p>
+                        <p className="text-sm font-semibold leading-snug break-words transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                           {currentWord.collocation_en}
                         </p>
                       </div>
@@ -1224,8 +1228,8 @@ export default function FlashcardsPage() {
                     {/* Chinese Collocation */}
                     {currentWord.collocation && (
                       <div className="mb-4">
-                        <p className="text-sm text-gray-500 font-bold mb-1">搭配</p>
-                        <p className="text-sm text-gray-800 font-semibold leading-snug break-words">
+                        <p className="text-sm font-bold mb-1 transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>搭配</p>
+                        <p className="text-sm font-semibold leading-snug break-words transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                           {currentWord.collocation}
                         </p>
                       </div>
@@ -1234,15 +1238,15 @@ export default function FlashcardsPage() {
                     {/* English Example */}
                     {currentWord.example_sentence_en && (
                       <div
-                        className="p-3 mb-4"
+                        className="p-3 mb-4 transition-colors duration-300"
                         style={{
-                          backgroundColor: '#F3F4F6',
+                          backgroundColor: 'var(--bg-tertiary)',
                           border: '2px solid #000',
                           borderRadius: '8px',
                         }}
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <p className="text-sm text-gray-500 font-bold">英文例句</p>
+                          <p className="text-sm font-bold transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>英文例句</p>
                           <button
                             onClick={(e) => {
                               e.stopPropagation()
@@ -1253,7 +1257,7 @@ export default function FlashcardsPage() {
                             <Volume2 size={14} strokeWidth={2.5} />
                           </button>
                         </div>
-                        <p className="text-sm text-gray-900 font-semibold leading-snug break-words">
+                        <p className="text-sm font-semibold leading-snug break-words transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                           {currentWord.example_sentence_en}
                         </p>
                       </div>
@@ -1262,15 +1266,15 @@ export default function FlashcardsPage() {
                     {/* Chinese Example */}
                     {currentWord.example_sentence && (
                       <div
-                        className="p-3"
+                        className="p-3 transition-colors duration-300"
                         style={{
-                          backgroundColor: '#F3F4F6',
+                          backgroundColor: 'var(--bg-tertiary)',
                           border: '2px solid #000',
                           borderRadius: '8px',
                         }}
                       >
                         <div className="flex items-center justify-between mb-1">
-                          <p className="text-sm text-gray-500 font-bold">例句</p>
+                          <p className="text-sm font-bold transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>例句</p>
                           <button
                             onClick={(e) => {
                               e.stopPropagation()
@@ -1281,7 +1285,7 @@ export default function FlashcardsPage() {
                             <Volume2 size={14} strokeWidth={2.5} />
                           </button>
                         </div>
-                        <p className="text-sm text-gray-900 font-semibold leading-snug break-words">
+                        <p className="text-sm font-semibold leading-snug break-words transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                           {currentWord.example_sentence}
                         </p>
                       </div>
@@ -1300,7 +1304,7 @@ export default function FlashcardsPage() {
             {/* Preview Card - 下一个单词的预览 */}
             {currentIndex < words.length - 1 && (
               <div
-                className="bg-white rounded-3xl flex flex-col items-center justify-center p-6 text-center pointer-events-none"
+                className="rounded-3xl flex flex-col items-center justify-center p-6 text-center pointer-events-none transition-colors duration-300"
                 style={{
                   position: 'absolute',
                   top: 0,
@@ -1313,20 +1317,21 @@ export default function FlashcardsPage() {
                   transition: 'opacity 0.3s ease-out',
                   zIndex: 5,
                   transform: 'scale(0.95)',
+                  backgroundColor: 'var(--card-bg)'
                 }}
               >
-                <h2 className="text-4xl md:text-5xl font-black text-gray-900 mb-3">
+                <h2 className="text-4xl md:text-5xl font-black mb-3 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                   {words[currentIndex + 1]?.word}
                 </h2>
 
                 <div className="flex items-center gap-2 mb-4 justify-center">
-                  <span className="font-mono text-base text-gray-300">
+                  <span className="font-mono text-base transition-colors duration-300" style={{ color: '#d1d5db' }}>
                     {words[currentIndex + 1]?.us_phonetic || words[currentIndex + 1]?.uk_phonetic || words[currentIndex + 1]?.phonetic}
                   </span>
                 </div>
 
                 <div className="mb-4">
-                  <span className="inline-block px-2 py-1 bg-gray-100 border-2 border-black rounded text-xs font-bold">
+                  <span className="inline-block px-2 py-1 border-2 border-black rounded text-xs font-bold transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-primary)' }}>
                     {words[currentIndex + 1]?.part_of_speech || 'n.'}
                   </span>
                 </div>
@@ -1391,34 +1396,38 @@ export default function FlashcardsPage() {
             onClick={() => setShowCompleteDialog(false)}
           >
             <div
-              className="bg-white rounded-xl border-[3px] border-black shadow-[8px_8px_0px_0px_#000] w-full max-w-md p-6"
+              className="rounded-xl border-[3px] border-black shadow-[8px_8px_0px_0px_#000] w-full max-w-md p-6 transition-colors duration-300"
+              style={{ backgroundColor: 'var(--card-bg)' }}
               onClick={(e) => e.stopPropagation()}
             >
-              <h3 className="text-2xl font-black mb-4 text-center">
+              <h3 className="text-2xl font-black mb-4 text-center transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                 🎉 太棒了！
               </h3>
-              <p className="text-gray-700 font-semibold mb-2 text-center">
+              <p className="font-semibold mb-2 text-center transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                 你已经完成了 <span className="font-mono font-bold">{scopeLabelMap[currentScope]}</span> 范围的所有单词学习！
               </p>
-              <p className="text-sm text-gray-500 font-semibold mb-6 text-center">
+              <p className="text-sm font-semibold mb-6 text-center transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>
                 接下来你想做什么？
               </p>
               <div className="flex flex-col gap-3">
                 <button
                   onClick={handleRestartScope}
-                  className="w-full px-4 py-3 bg-[#B4F416] border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+                  className="w-full px-4 py-3 border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+                  style={{ backgroundColor: '#B4F416' }}
                 >
                   🔄 重新学习这个范围
                 </button>
                 <button
                   onClick={handleSelectOtherScope}
-                  className="w-full px-4 py-3 bg-blue-100 border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+                  className="w-full px-4 py-3 border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all flex items-center justify-center gap-2"
+                  style={{ backgroundColor: '#dbeafe' }}
                 >
                   📚 选择其他范围
                 </button>
                 <button
                   onClick={() => router.push('/')}
-                  className="w-full px-4 py-3 bg-gray-100 border-2 border-black rounded-lg font-bold hover:bg-gray-200 transition-colors"
+                  className="w-full px-4 py-3 border-2 border-black rounded-lg font-bold transition-colors hover:opacity-80"
+                  style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)' }}
                 >
                   返回首页
                 </button>

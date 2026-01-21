@@ -37,6 +37,16 @@ export function Tooltip({ content, shortcut, children, position = 'top' }: Toolt
     setIsVisible(false)
   }
 
+  // 🔧 内存泄露修复：组件卸载时清理所有 timeout
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+        timeoutRef.current = null
+      }
+    }
+  }, [])
+
   // 检测边界并调整对齐方式
   useEffect(() => {
     if (isVisible && containerRef.current && tooltipRef.current) {

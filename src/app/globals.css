@@ -2,6 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================
+   防止主题闪烁
+   在 JavaScript 执行前就应用基础样式
+   ======================================== */
+
+:root {
+  /* 默认浅色主题变量 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --accent: #6366f1;
+  --border: #e5e7eb;
+  --card-bg: #ffffff;
+}
+
+/* 深色主题变量 */
+.dark {
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --accent: #818cf8;
+  --border: #374151;
+  --card-bg: #1f2937;
+}
+
+/* 防止未加载时的闪烁 */
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -106,6 +144,21 @@
   display: none;
 }
 
+/* Scrollbar hide (alias) */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+.scrollbar-hide::-webkit-scrollbar-track {
+  display: none;
+}
+.scrollbar-hide::-webkit-scrollbar-thumb {
+  display: none;
+}
+
 :root {
   /* Educational Platform Color Palette */
   --background: #F8F5F2; /* Light beige background */
@@ -134,15 +187,60 @@
 
   /* Radius */
   --radius: 0.75rem;
+
+  /* 主题变量 - 日间模式默认值 */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-tertiary: #9ca3af;
+  --accent: #6366f1;
+  --card-bg: #ffffff;
+}
+
+/* 深色主题 - 第二组变量 */
+.dark {
+  --background: #1f2937;
+  --foreground: #f9fafb;
+
+  --primary: #4CAF50;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #87CEEB;
+  --secondary-foreground: #f9fafb;
+
+  --card: #1f2937;
+  --card-foreground: #f9fafb;
+
+  --muted: #374151;
+  --muted-foreground: #d1d5db;
+
+  --border: #374151;
+  --input: #374151;
+  --ring: #4CAF50;
+
+  --bg-primary: #111827;
+  --bg-secondary: #1f2937;
+  --bg-tertiary: #374151;
+  --text-primary: #f9fafb;
+  --text-secondary: #d1d5db;
+  --text-tertiary: #9ca3af;
+  --accent: #818cf8;
+  --card-bg: #1f2937;
 }
 
 * {
   border-color: var(--border);
+  /* 平滑过渡 - 主题切换时所有颜色都平滑过渡 */
+  transition-property: background-color, color, border-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
 }
 
 body {
-  background-color: var(--background);
-  color: var(--foreground);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
   /* English fonts (Nunito) + Chinese fonts (PingFang SC, Microsoft YaHei, Noto Sans SC) */
   font-family: var(--font-nunito), 'Nunito', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', 'Source Han Sans SC', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 600;
@@ -725,4 +823,72 @@ h1, h2, h3, h4, h5, h6 {
 
 .animate-fall {
   animation: fall linear forwards;
+}
+
+/* ============================================
+   游戏化加载页面动画
+   ============================================ */
+
+/* Blob 动画 - 背景装饰球体 */
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
+}
+
+.animation-delay-4000 {
+  animation-delay: 4s;
+}
+
+/* 脉冲动画 */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Border-3 工具类（Tailwind 默认没有）*/
+.border-3 {
+  border-width: 3px;
+}
+
+/* 液态流动背景动画 */
+@keyframes liquidFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-liquidFlow {
+  animation: liquidFlow 15s ease infinite;
 }

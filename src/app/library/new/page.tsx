@@ -11,17 +11,22 @@ export default async function NewBookPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
-      {/* Header */}
-      <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div className="min-h-screen bg-neo-bg">
+      {/* Header - Neo-Brutalism Style */}
+      <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4">
         <div className="w-full mx-auto" style={{ maxWidth: '800px' }}>
-          <div className="flex items-center gap-4">
-            <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
-              <ArrowLeft className="w-6 h-6" />
+          <div className="bg-white border-3 border-neo-black shadow-neo-md px-4 md:px-6 py-3 md:py-4 flex items-center gap-3 md:gap-4">
+            <Link href="/" className="bg-neo-bg border-2 border-neo-black p-2 hover:scale-110 transition-transform shadow-neo-sm">
+              <ArrowLeft className="w-5 h-5 md:w-6 md:h-6" />
             </Link>
-            <div>
-              <h1 className="text-2xl md:text-3xl font-black text-gray-900">新建自定义词库</h1>
-              <p className="text-sm text-gray-500 mt-1">创建你自己的专属单词书</p>
+            <div className="flex items-center gap-3">
+              <div className="bg-neo-blue border-2 border-neo-black p-2 shadow-neo-sm">
+                <BookOpen className="w-6 h-6 md:w-7 md:h-7 text-white" />
+              </div>
+              <div>
+                <h1 className="text-xl md:text-2xl font-black text-neo-black">新建自定义词库</h1>
+                <p className="text-xs md:text-sm text-gray-600 font-bold mt-0.5">✨ 创建你自己的专属单词书</p>
+              </div>
             </div>
           </div>
         </div>

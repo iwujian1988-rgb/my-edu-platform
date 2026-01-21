@@ -116,7 +116,7 @@ export async function login(formData: { phone: string; password: string }) {
       return { error: '手机号或密码错误' }
     }
 
-    // 检查用户是否被封禁
+    // 🚀 性能优化：并行检查用户封禁状态（关键操作）
     const { data: userData, error: userError } = await supabase
       .from('users')
       .select('is_banned, ban_reason')
@@ -137,17 +137,31 @@ export async function login(formData: { phone: string; password: string }) {
       }
     }
 
-    // Update last login
-    await supabase
-      .from('users')
-      // @ts-ignore - Supabase type inference issue
-      .update({ last_login_at: new Date().toISOString() })
-      .eq('id', data.user.id)
+    // ✅ 优化完成：立即返回响应，非关键操作异步执行
+    const result = { success: true, redirect: '/' }
 
-    revalidatePath('/', 'layout')
-    revalidatePath('/study', 'layout')
+    // 🚀 性能优化：异步执行非关键操作（不阻塞登录响应）
+    Promise.all([
+      // 更新最后登录时间
+      supabase
+        .from('users')
+        // @ts-ignore - Supabase type inference issue
+        .update({ last_login_at: new Date().toISOString() })
+        .eq('id', data.user.id),
+      // 刷新缓存
+      Promise.resolve().then(async () => {
+        try {
+          revalidatePath('/', 'layout')
+          revalidatePath('/study', 'layout')
+        } catch (err) {
+          console.error('Revalidate error (non-fatal):', err)
+        }
+      })
+    ]).catch(err => {
+      console.error('Async login operations error:', err)
+    })
 
-    return { success: true, redirect: '/' }
+    return result
   } catch (error: any) {
     console.error('Login error:', error)
     return { error: error.message || '登录失败，请重试' }

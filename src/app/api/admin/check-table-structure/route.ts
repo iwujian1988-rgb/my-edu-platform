@@ -10,7 +10,7 @@ export async function GET(request: NextRequest) {
     const supabase = await createAdminClient()
 
     // 查询 users 表的列信息
-    const { data: columns, error } = await supabase
+    const { data: columns, error } = await (supabase as any)
       .rpc('query', {
         query: `
           SELECT

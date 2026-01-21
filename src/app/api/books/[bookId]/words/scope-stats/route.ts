@@ -37,30 +37,47 @@ export async function GET(
       return NextResponse.json({ error: '无权访问此词库' }, { status: 403 })
     }
 
-    // ⚡ 超高性能：单次查询获取所有统计
+    // ⚡ 性能优化：使用数据库聚合函数，避免拉取所有数据
     const totalWords = book.total_words || 0
 
-    // 单次聚合查询获取所有状态统计
-    const { data: progressData } = await supabase
-      .from('word_progress')
-      .select('status')
-      .eq('book_id', bookId)
+    // 并行执行两个查询（利用数据库索引）
+    const [progressResult, mistakesResult] = await Promise.all([
+      // 使用 RPC 聚合函数统计各状态单词数（数据库级别统计）
+      supabase.rpc('count_words_by_status', { p_book_id: bookId }),
+      // 同时查询错题数
+      supabase
+        .from('mistakes')
+        .select('*', { count: 'exact', head: true })
+        .eq('book_id', bookId)
+    ])
 
-    // 在内存中统计（数据量小，速度快）
-    const stats = { unknown: 0, fuzzy: 0, known: 0 }
-    if (progressData) {
-      for (const row of progressData) {
-        if (row.status === 'unknown') stats.unknown++
-        else if (row.status === 'fuzzy') stats.fuzzy++
-        else if (row.status === 'known') stats.known++
+    // 处理统计结果
+    let stats = { unknown: 0, fuzzy: 0, known: 0 }
+
+    if (progressResult.data && typeof progressResult.data === 'object') {
+      stats = {
+        unknown: (progressResult.data as any).unknown || 0,
+        fuzzy: (progressResult.data as any).fuzzy || 0,
+        known: (progressResult.data as any).known || 0
+      }
+    } else {
+      // 如果 RPC 不可用，回退到原方案（但限制数量）
+      const { data: progressData } = await supabase
+        .from('word_progress')
+        .select('status')
+        .eq('book_id', bookId)
+        .limit(10000) // 安全限制
+
+      if (progressData) {
+        for (const row of progressData) {
+          if (row.status === 'unknown') stats.unknown++
+          else if (row.status === 'fuzzy') stats.fuzzy++
+          else if (row.status === 'known') stats.known++
+        }
       }
     }
 
-    // 单次查询获取错题数
-    const { count: mistakes } = await supabase
-      .from('mistakes')
-      .select('*', { count: 'exact', head: true })
-      .eq('book_id', bookId)
+    const mistakes = mistakesResult.count
 
     const newCount = Math.max(0, totalWords - stats.unknown - stats.fuzzy - stats.known)
 
