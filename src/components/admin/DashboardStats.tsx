@@ -94,7 +94,7 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
               </tr>
             </thead>
             <tbody>
-              {stats.trendData.reverse().map((item) => (
+              {stats.trendData.map((item) => (
                 <tr key={item.date} className="border-b border-gray-200 hover:bg-gray-50">
                   <td className="py-3 px-4 text-gray-800 font-semibold">{item.date}</td>
                   <td className="py-3 px-4 text-right">
