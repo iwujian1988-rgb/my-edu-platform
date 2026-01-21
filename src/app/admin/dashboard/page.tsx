@@ -70,10 +70,10 @@ export default async function AdminDashboard() {
     rawTrendData = rawTrendData.data
   }
 
-  // 确保是数组
+  // 确保是数组并映射字段
   const trendData = (Array.isArray(rawTrendData) ? rawTrendData : []).map((item: any) => ({
-    date: item.trend_date,
-    count: item.trend_count
+    date: item.trend_date || item.date,
+    count: item.trend_count || item.count || 0
   }))
 
   // 统计数据

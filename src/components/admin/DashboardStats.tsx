@@ -12,18 +12,6 @@ interface DashboardStatsProps {
 }
 
 export function DashboardStats({ stats }: DashboardStatsProps) {
-  // 调试日志
-  console.log('🎨 [DashboardStats] 接收到的stats.trendData:', stats.trendData.slice(0, 5))
-
-  // 计算最大值，确保是数字类型
-  const maxCount = Math.max(
-    ...stats.trendData.map(d => Number(d.count) || 0),
-    1
-  )
-
-  console.log('📊 [DashboardStats] maxCount:', maxCount, '类型:', typeof maxCount)
-  console.log('📊 [DashboardStats] 前5个item的count:', stats.trendData.slice(0, 5).map(d => ({ count: d.count, type: typeof d.count })))
-
   return (
     <div className="space-y-6">
       {/* 用户统计卡片 - 3列布局 */}
@@ -83,7 +71,7 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
         </div>
       </div>
 
-      {/* 注册走势图 - 最简单版本 */}
+      {/* 注册走势表 - 简单可靠 */}
       <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-indigo-100 rounded-xl border-[2px] border-indigo-300 flex items-center justify-center">
@@ -95,63 +83,40 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
           </div>
         </div>
 
-        {/* 超简单柱状图 */}
-        <div style={{ height: '200px', display: 'flex', alignItems: 'flex-end', gap: '4px', borderBottom: '2px solid #d1d5db', paddingLeft: '10px' }}>
-          {stats.trendData.map((item, index) => {
-            const height = item.count > 0 ? (item.count / maxCount) * 100 : 5
-            const isToday = index === stats.trendData.length - 1
-
-            return (
-              <div
-                key={item.date}
-                style={{
-                  flex: 1,
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  minWidth: '10px'
-                }}
-              >
-                {/* 柱子 */}
-                <div
-                  title={`${item.date}: ${item.count}人`}
-                  style={{
-                    width: '100%',
-                    height: `${height}%`,
-                    minHeight: '10px',
-                    backgroundColor: isToday ? '#22c55e' : '#818cf8',
-                    borderRadius: '4px 4px 0 0',
-                    transition: 'opacity 0.2s'
-                  }}
-                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
-                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
-                />
-              </div>
-            )
-          })}
-        </div>
-
-        {/* X轴标签 */}
-        <div style={{ display: 'flex', gap: '4px', marginTop: '8px', paddingLeft: '10px' }}>
-          {stats.trendData.map((item, index) => {
-            const showLabel = index % 5 === 0 || index === stats.trendData.length - 1
-            if (!showLabel) return <div key={item.date} style={{ flex: 1 }} />
-
-            return (
-              <div
-                key={item.date}
-                style={{
-                  flex: 1,
-                  fontSize: '12px',
-                  color: '#6b7280',
-                  textAlign: 'center',
-                  fontWeight: 600
-                }}
-              >
-                {item.date.slice(5).replace('-', '/')}
-              </div>
-            )
-          })}
+        {/* 简单表格 */}
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b-2 border-gray-300">
+                <th className="text-left py-3 px-4 font-bold text-gray-700">日期</th>
+                <th className="text-right py-3 px-4 font-bold text-gray-700">新增用户</th>
+                <th className="text-left py-3 px-4 font-bold text-gray-700">状态</th>
+              </tr>
+            </thead>
+            <tbody>
+              {stats.trendData.reverse().map((item) => (
+                <tr key={item.date} className="border-b border-gray-200 hover:bg-gray-50">
+                  <td className="py-3 px-4 text-gray-800 font-semibold">{item.date}</td>
+                  <td className="py-3 px-4 text-right">
+                    <span className={`inline-block px-3 py-1 rounded-lg font-bold ${
+                      item.count > 0
+                        ? 'bg-green-100 text-green-700'
+                        : 'bg-gray-100 text-gray-500'
+                    }`}>
+                      {item.count} 人
+                    </span>
+                  </td>
+                  <td className="py-3 px-4">
+                    {item.count > 0 ? (
+                      <span className="text-green-600 font-bold">✓ 有数据</span>
+                    ) : (
+                      <span className="text-gray-400">—</span>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
