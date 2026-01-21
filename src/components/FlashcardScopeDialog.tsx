@@ -256,10 +256,10 @@ export function FlashcardScopeDialog({
     return (
       isOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="bg-white border-2 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8">
+          <div className="border-2 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
             <div className="flex flex-col items-center">
               <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-black border-t-[#ccff00] mb-6"></div>
-              <p className="font-black text-lg">加载学习数据...</p>
+              <p className="font-black text-lg transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>加载学习数据...</p>
             </div>
           </div>
         </div>
@@ -272,11 +272,11 @@ export function FlashcardScopeDialog({
   return (
     <div className="fixed inset-0 bg-gray-800/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
       {/* Main Container - Neo-Brutalism 风格 */}
-      <div className="w-full max-w-md bg-white border-2 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col max-h-[90vh]">
+      <div className="w-full max-w-md border-2 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col max-h-[90vh] transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
 
-        {/* Header - #f4f4f5 背景 */}
-        <div className="p-6 border-b-2 border-black bg-[#f4f4f5] flex justify-between items-center">
-          <h2 className="text-2xl font-black italic">选择学习范围</h2>
+        {/* Header - 使用主题变量背景 */}
+        <div className="p-6 border-b-2 border-black flex justify-between items-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
+          <h2 className="text-2xl font-black italic transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>选择学习范围</h2>
           <button
             onClick={onClose}
             className="w-10 h-10 flex items-center justify-center border-2 border-black rounded-lg hover:bg-red-400 hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-x-[2px] hover:-translate-y-[2px] transition-all shadow-[2px_2px_0px_0px_#000] active:translate-x-0 active:translate-y-0 active:shadow-none"
@@ -300,7 +300,7 @@ export function FlashcardScopeDialog({
                 <p className="text-sm font-black text-black mb-1">
                   继续上次学习
                 </p>
-                <p className="text-xs font-bold text-gray-700">
+                <p className="text-xs font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                   {formatResumeInfo(recentProgress)}
                 </p>
               </div>
@@ -329,24 +329,24 @@ export function FlashcardScopeDialog({
                 onClick={() => !option.disabled && handleScopeSelect(option.value)}
                 disabled={option.disabled}
                 className={`
-                  w-full flex items-center justify-between p-4 bg-white border-2 rounded-xl transition-all
-                  ${option.disabled
-                    ? 'border-gray-300 opacity-50 cursor-not-allowed'
-                    : 'border-black cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
-                  }
+                  w-full flex items-center justify-between p-4 border-2 rounded-xl transition-all
                 `}
+                style={option.disabled
+                  ? { borderColor: '#d1d5db', opacity: '0.5', cursor: 'not-allowed', backgroundColor: 'var(--card-bg)' }
+                  : { borderColor: '#000', cursor: 'pointer', boxShadow: '4px 4px 0px 0px rgba(0,0,0,1)', backgroundColor: 'var(--card-bg)' }
+                }
               >
                 {/* 左侧：图标框 */}
-                <div className={`w-12 h-12 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0 ${option.disabled ? 'bg-gray-200' : style.iconBg}`}>
-                  <Icon className={`w-6 h-6 ${option.disabled ? 'text-gray-400' : 'text-black'}`} strokeWidth={2.5} />
+                <div className={`w-12 h-12 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0 transition-colors duration-300`} style={option.disabled ? { backgroundColor: 'var(--bg-tertiary)' } : { backgroundColor: style.iconBg }}>
+                  <Icon className={`w-6 h-6`} style={option.disabled ? { color: '#9ca3af' } : { color: '#000' }} strokeWidth={2.5} />
                 </div>
 
                 {/* 中间：标题和描述 */}
                 <div className="flex-1 ml-4 text-left">
-                  <div className={`font-black text-lg ${option.disabled ? 'text-gray-400' : 'text-black'}`}>
+                  <div className={`font-black text-lg`} style={option.disabled ? { color: '#9ca3af' } : { color: 'var(--text-primary)' }}>
                     {option.label}
                   </div>
-                  <div className={`text-sm font-bold mt-1 ${option.disabled ? 'text-gray-400' : 'text-gray-600'}`}>
+                  <div className={`text-sm font-bold mt-1`} style={option.disabled ? { color: '#9ca3af' } : { color: 'var(--text-secondary)' }}>
                     {getStatusDescription(option.value)}
                   </div>
                 </div>
@@ -356,19 +356,19 @@ export function FlashcardScopeDialog({
                   {/* 数字标签 */}
                   <div className={`
                     w-14 h-14 flex items-center justify-center text-2xl font-black border-2 border-black rounded-lg
-                    ${option.disabled
-                      ? 'bg-gray-200 text-gray-400'
-                      : option.value === 'all'
-                      ? 'bg-black text-white'
-                      : option.value === 'unknown'
-                      ? 'bg-red-500 text-white'
-                      : option.value === 'fuzzy'
-                      ? 'bg-yellow-400 text-black'
-                      : option.value === 'known'
-                      ? 'bg-[#CCFF00] text-black'
-                      : 'bg-gray-300 text-black'
-                    }
-                  `}>
+                  `}
+                  style={option.disabled
+                    ? { backgroundColor: 'var(--bg-tertiary)', color: '#9ca3af' }
+                    : option.value === 'all'
+                    ? { backgroundColor: '#000', color: '#fff' }
+                    : option.value === 'unknown'
+                    ? { backgroundColor: '#ef4444', color: '#fff' }
+                    : option.value === 'fuzzy'
+                    ? { backgroundColor: '#facc15', color: '#000' }
+                    : option.value === 'known'
+                    ? { backgroundColor: '#CCFF00', color: '#000' }
+                    : { backgroundColor: '#d1d5db', color: '#000' }
+                  }>
                     {option.count}
                   </div>
 
@@ -383,8 +383,8 @@ export function FlashcardScopeDialog({
         </div>
 
         {/* 底部提示 */}
-        <div className="p-4 border-t-2 border-black bg-[#f4f4f5]">
-          <p className="text-center text-sm font-bold text-gray-700">
+        <div className="p-4 border-t-2 border-black transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
+          <p className="text-center text-sm font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
             🎮 选择范围开始学习，掌握每一个单词！
           </p>
         </div>

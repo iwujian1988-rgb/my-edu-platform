@@ -11,12 +11,12 @@ type TabType = 'recent' | 'my' | 'all'
 
 interface BookLibraryProps {
   userBooks: Book[]
-  userEmail: string
+  userPhone: string
   userId?: string  // ✅ 添加用户ID
   recentBooks?: Book[]  // 🔧 性能优化：从服务端传递最近访问的词库
 }
 
-export function BookLibrary({ userBooks, userEmail, userId, recentBooks: initialRecentBooks = [] }: BookLibraryProps) {
+export function BookLibrary({ userBooks, userPhone, userId, recentBooks: initialRecentBooks = [] }: BookLibraryProps) {
   const [activeTab, setActiveTab] = useState<TabType>('recent')
   const [recentBooks, setRecentBooks] = useState<Book[]>(initialRecentBooks)
   const [loading, setLoading] = useState(false)  // 🔧 性能优化：已经有数据，不需要loading
@@ -93,7 +93,12 @@ export function BookLibrary({ userBooks, userEmail, userId, recentBooks: initial
 
   // 为最近访问的书籍添加完整的显示信息
   const enrichedRecentBooks = useMemo(() => {
-    return recentBooks.map(book => {
+    return recentBooks
+      .filter(book => {
+        // 🔍 只过滤掉完全无效的书籍（既没有 title/name，也没有 id）
+        return book && (book.title || book.name || book.id)
+      })
+      .map(book => {
       // 兼容 name 和 title 两种字段
       const bookTitle = book.title || book.name || ''
       const category = getBookCategory(bookTitle)
@@ -140,29 +145,39 @@ export function BookLibrary({ userBooks, userEmail, userId, recentBooks: initial
         <div className="flex gap-2">
           <button
             onClick={() => setActiveTab('recent')}
-            className={`px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all ${
+            className={`px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all duration-300 ${
               activeTab === 'recent'
                 ? 'bg-[#B4F416] border-black text-black shadow-[2px_2px_0px_0px_#000]'
-                : 'bg-white border-black text-gray-600 hover:bg-gray-50'
+                : 'border-black hover:bg-opacity-80'
             }`}
+            style={{
+              backgroundColor: activeTab === 'recent' ? undefined : 'var(--card-bg)',
+              color: activeTab === 'recent' ? undefined : 'var(--text-secondary)'
+            }}
           >
             最近
           </button>
           <button
             onClick={() => setActiveTab('my')}
-            className={`px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all ${
+            className={`px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all duration-300 ${
               activeTab === 'my'
                 ? 'bg-[#B4F416] border-black text-black shadow-[2px_2px_0px_0px_#000]'
-                : 'bg-white border-black text-gray-600 hover:bg-gray-50'
+                : 'border-black hover:bg-opacity-80'
             }`}
+            style={{
+              backgroundColor: activeTab === 'my' ? undefined : 'var(--card-bg)',
+              color: activeTab === 'my' ? undefined : 'var(--text-secondary)'
+            }}
           >
             我的
           </button>
           <Link
             href="/library"
-            className={`px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all ${
-              'bg-white border-black text-gray-600 hover:bg-gray-50 hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-            }`}
+            className="px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all duration-300 border-black hover:bg-opacity-80 hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5"
+            style={{
+              backgroundColor: 'var(--card-bg)',
+              color: 'var(--text-secondary)'
+            }}
           >
             全部 →
           </Link>
@@ -172,19 +187,19 @@ export function BookLibrary({ userBooks, userEmail, userId, recentBooks: initial
       {/* 词库列表 */}
       {loading && activeTab === 'recent' ? (
         <div className="text-center py-12">
-          <p className="text-gray-500 font-bold">加载中...</p>
+          <p className="font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>加载中...</p>
         </div>
       ) : displayBooks.length === 0 ? (
-        <div className="text-center py-12 bg-white border-[3px] border-black rounded-xl">
+        <div className="text-center py-12 border-[3px] border-black rounded-xl transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
           {activeTab === 'recent' && (
             <>
-              <p className="text-gray-500 font-bold mb-4">还没有访问过任何词库</p>
-              <p className="text-sm text-gray-400">从"我的"或"全部"中选择一个词库开始学习吧！</p>
+              <p className="font-bold mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>还没有访问过任何词库</p>
+              <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>从"我的"或"全部"中选择一个词库开始学习吧！</p>
             </>
           )}
           {activeTab === 'my' && (
             <>
-              <p className="text-gray-500 font-bold mb-4">还没有创建任何自定义词库</p>
+              <p className="font-bold mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>还没有创建任何自定义词库</p>
               <Link
                 href="/library/new"
                 className="inline-block px-6 py-2 bg-[#B4F416] border-[3px] border-black rounded-xl font-bold hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
@@ -195,8 +210,8 @@ export function BookLibrary({ userBooks, userEmail, userId, recentBooks: initial
           )}
           {activeTab === 'all' && (
             <>
-              <p className="text-gray-500 font-bold mb-4">还没有可用的词库</p>
-              <p className="text-sm text-gray-400">请联系管理员获取词库权限</p>
+              <p className="font-bold mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>还没有可用的词库</p>
+              <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>请联系管理员获取词库权限</p>
             </>
           )}
         </div>

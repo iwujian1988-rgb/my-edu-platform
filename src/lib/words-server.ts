@@ -108,11 +108,19 @@ export async function getWordsForBookServer(
       console.log('🔍 [Server] Trying optimized RPC...')
 
       try {
-        const result = await supabase.rpc('get_book_words_paginated_optimized', {
-          book_uuid: bookId,
-          offset_val: offset,
-          limit_val: pageSize
-        })
+        // ⚠️ 添加超时保护，避免RPC调用hang住
+        const timeoutPromise = new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('RPC timeout')), 5000) // 5秒超时
+        )
+
+        const result = await Promise.race([
+          supabase.rpc('get_book_words_paginated_optimized', {
+            book_uuid: bookId,
+            offset_val: offset,
+            limit_val: pageSize
+          }),
+          timeoutPromise
+        ]) as any
 
         words = result.data
         wordsError = result.error
@@ -126,9 +134,10 @@ export async function getWordsForBookServer(
             status: statusMap.get(word.id) || 'new'
           }))
         }
-      } catch (e) {
-        console.log('⚠️ [Server] RPC exception:', e)
-        wordsError = { message: 'RPC exception' }
+      } catch (e: any) {
+        console.log('⚠️ [Server] RPC exception:', e.message)
+        // RPC失败或超时，使用fallback
+        wordsError = { message: e.message || 'RPC exception' }
       }
     }
 

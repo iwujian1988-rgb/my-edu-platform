@@ -140,12 +140,16 @@ interface BookSelectorModalProps {
 }
 
 export function BookSelectorModal({ books, onClose, userId, initialScopeStats }: BookSelectorModalProps) {
+  // Mobile responsive modal with two-step wizard
   const router = useRouter()
   const [selectedBook, setSelectedBook] = useState<Book | null>(null)
   const [selectedScope, setSelectedScope] = useState<string>('all')
   const [searchQuery, setSearchQuery] = useState('')
   const [recentRecords, setRecentRecords] = useState<RecentRecord[]>([])
   const [scopeWordCounts, setScopeWordCounts] = useState<Record<string, number>>({})
+
+  // 📱 移动端分步交互：step 1 = 选择词库, step 2 = 选择范围
+  const [mobileStep, setMobileStep] = useState<1 | 2>(1)
 
   // 获取最近打字记录（限制为3个）
   useEffect(() => {
@@ -218,6 +222,18 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
     )
   }, [books, searchQuery])
 
+  // 📱 移动端：选择词库后进入第二步
+  const handleMobileSelectBook = (book: Book) => {
+    setSelectedBook(book)
+    setMobileStep(2)
+  }
+
+  // 📱 移动端：返回第一步
+  const handleMobileBack = () => {
+    setMobileStep(1)
+    setSelectedScope('all')
+  }
+
   // 开始学习
   const handleStartLearning = async () => {
     if (!selectedBook) return
@@ -244,37 +260,122 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
   }
 
   return (
-    <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4"
-      style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}
-      onClick={onClose}
-    >
-      {/* 主弹窗容器 */}
-      <div
-        className="relative bg-white overflow-hidden"
-        style={{
-          width: '900px',
-          height: '600px',
-          borderRadius: '12px',
-          boxShadow: '4px 4px 0px 0px #000',
-          border: '3px solid #000',
+    <>
+      {/* 📱 移动端：全屏分步式交互 */}
+      <div className="lg:hidden fixed inset-0 z-50 bg-white flex flex-col">
+        {/* 移动端头部 */}
+        <div className="flex items-center justify-between p-4 border-b-2 border-black bg-[#B4F416]">
+          {mobileStep === 2 && (
+            <button onClick={handleMobileBack} className="p-2 mr-2 border-2 border-black bg-white rounded-lg">
+              ← 返回
+            </button>
+          )}
+          <h2 className="font-black text-lg flex-1 text-center">
+            {mobileStep === 1 ? '选择词库' : '选择范围'}
+          </h2>
+          <button onClick={onClose} className="p-2 border-2 border-black bg-white rounded-lg">
+            ✕
+          </button>
+        </div>
+
+        {/* 移动端内容区 */}
+        <div className="flex-1 overflow-y-auto p-4">
+          {mobileStep === 1 ? (
+            <>
+              {/* 第一步：词库列表 */}
+              <input
+                type="text"
+                placeholder="搜索词库..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full h-12 border-2 border-black rounded-lg px-4 mb-4 font-bold"
+              />
+              <div className="space-y-3">
+                {filteredBooks.map((book) => (
+                  <button
+                    key={book.id}
+                    onClick={() => handleMobileSelectBook(book)}
+                    className="w-full p-4 border-2 border-black rounded-lg bg-white hover:bg-[#B4F416] text-left"
+                  >
+                    <div className="font-black text-base">{book.title}</div>
+                    <div className="font-mono text-xs text-gray-600 mt-1">
+                      {book.total_words?.toLocaleString() || 0} 词
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </>
+          ) : (
+            <>
+              {/* 第二步：选择范围 */}
+              <div className="mb-4 p-3 bg-gray-50 border-2 border-black rounded-lg">
+                <div className="font-black text-sm">{selectedBook?.title}</div>
+              </div>
+              <div className="grid grid-cols-2 gap-3">
+                {SCOPE_OPTIONS.map((scope) => {
+                  const wordCount = scopeWordCounts[scope.key] ?? 0
+                  const isSelected = selectedScope === scope.key
+                  return (
+                    <button
+                      key={scope.key}
+                      onClick={() => setSelectedScope(scope.key)}
+                      disabled={wordCount === 0}
+                      className={`p-4 border-2 border-black rounded-lg flex flex-col items-center gap-2 ${
+                        isSelected ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]' : 'bg-white'
+                      } ${wordCount === 0 ? 'opacity-50' : ''}`}
+                    >
+                      <ScopeIcon type={scope.key} isSelected={isSelected} />
+                      <div className="font-black text-sm">{scope.label}</div>
+                      <div className="font-mono text-xs text-gray-600">
+                        {wordCount} 词
+                      </div>
+                    </button>
+                  )
+                })}
+              </div>
+              <button
+                onClick={handleStartLearning}
+                disabled={!selectedBook || scopeWordCounts[selectedScope] === 0}
+                className="w-full mt-4 h-14 bg-[#B4F416] border-2 border-black rounded-lg font-black text-lg disabled:bg-gray-300 disabled:cursor-not-allowed shadow-[3px_3px_0px_0px_#000]"
+              >
+                开始学习 →
+              </button>
+            </>
+          )}
+        </div>
+      </div>
+
+      {/* 💻 PC端：弹层（居中+黑暗模式适配） */}
+      <div className="hidden lg:block fixed inset-0 z-50 flex items-center justify-center p-4">
+        {/* 背景遮罩 - 黑暗模式适配 */}
+        <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" onClick={onClose} />
+
+        {/* 主弹窗容器 - 黑暗模式适配 */}
+        <div
+          className="relative bg-white dark:bg-gray-800 overflow-hidden border-2 border-gray-200 dark:border-gray-700"
+          style={{
+            width: '900px',
+            height: '600px',
+            borderRadius: '12px',
+            boxShadow: '4px 4px 0px 0px #000',
+            border: '3px solid #000',
           display: 'flex',
         }}
         onClick={(e) => e.stopPropagation()}
       >
-        {/* 关闭按钮 */}
+        {/* 关闭按钮 - 黑暗模式适配 */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 cursor-pointer hover:bg-red-50 transition-all rounded-lg w-10 h-10 flex items-center justify-center border-2 border-black bg-white hover:translate-y-0.5 active:translate-y-0 shadow-[2px_2px_0px_0px_#000] active:shadow-none"
+          className="absolute top-4 right-4 z-10 cursor-pointer hover:bg-red-50 dark:hover:bg-red-900/30 transition-all rounded-lg w-10 h-10 flex items-center justify-center border-2 border-black dark:border-gray-600 bg-white dark:bg-gray-700 hover:translate-y-0.5 active:translate-y-0 shadow-[2px_2px_0px_0px_#000] dark:shadow-none active:shadow-none"
         >
-          <X style={{ width: '20px', height: '20px', color: '#000' }} strokeWidth={2.5} />
+          <X style={{ width: '20px', height: '20px', color: '#000' }} className="dark:text-white" strokeWidth={2.5} />
         </button>
 
-        {/* 左侧：词库列表 */}
+        {/* 左侧：词库列表 - 黑暗模式适配 */}
         <div
+          className="bg-white dark:bg-gray-800"
           style={{
             width: '320px',
-            background: '#fff',
             borderRight: '3px solid #000',
             display: 'flex',
             flexDirection: 'column',
@@ -284,6 +385,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
           {/* 搜索框 */}
           <div style={{ position: 'relative', marginBottom: '20px' }}>
             <Search
+              className="text-gray-900 dark:text-gray-300"
               style={{
                 position: 'absolute',
                 left: '14px',
@@ -291,7 +393,6 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
                 transform: 'translateY(-50%)',
                 width: '20px',
                 height: '20px',
-                color: '#000',
               }}
             />
             <input
@@ -299,7 +400,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
               placeholder="搜索词库"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-12 border-2 border-black rounded-lg pl-12 pr-4 text-base font-bold outline-none bg-white placeholder:text-gray-400 transition-all focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] focus:placeholder:text-black"
+              className="w-full h-12 border-2 border-black dark:border-gray-600 rounded-lg pl-12 pr-4 text-base font-bold outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-all focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] dark:focus:bg-lime-500/20 focus:placeholder:text-black dark:focus:placeholder:text-lime-400"
               style={{
                 fontFamily: 'monospace',
               }}
@@ -311,7 +412,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
             <>
               <div style={{ marginBottom: '16px' }}>
                 <div
-                  className="font-black text-sm mb-3 text-black"
+                  className="font-black text-sm mb-3 text-gray-900 dark:text-gray-100"
                   style={{ letterSpacing: '0.05em' }}
                 >
                   最近学习
@@ -346,17 +447,17 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
                           router.push(`/practice?bookId=${book.id}&scope=${record.scope}`)
                         }
                       }}
-                      className="w-full flex items-center justify-between p-3 mb-2 bg-white border-2 border-black rounded-lg cursor-pointer transition-all hover:bg-gray-200 hover:-translate-y-0.5 active:translate-y-0 shadow-[2px_2px_0px_0px_#000] active:shadow-none"
+                      className="w-full flex items-center justify-between p-3 mb-2 bg-white dark:bg-gray-700 border-2 border-black dark:border-gray-600 rounded-lg cursor-pointer transition-all hover:bg-gray-200 dark:hover:bg-gray-600 hover:-translate-y-0.5 active:translate-y-0 shadow-[2px_2px_0px_0px_#000] active:shadow-none"
                     >
                       <div className="flex flex-col flex-1 text-left">
-                        <div className="font-black text-sm text-black">
+                        <div className="font-black text-sm text-gray-900 dark:text-gray-100">
                           {record.book_title}
                         </div>
-                        <div className="font-mono text-xs text-gray-600 mt-1">
+                        <div className="font-mono text-xs text-gray-600 dark:text-gray-400 mt-1">
                           {scopeLabel}
                         </div>
                       </div>
-                      <div className="w-7 h-7 flex items-center justify-center bg-black text-white rounded">
+                      <div className="w-7 h-7 flex items-center justify-center bg-black dark:bg-lime-500 text-white rounded">
                         <ArrowRight className="w-4 h-4" strokeWidth={3} />
                       </div>
                     </button>
@@ -374,7 +475,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
 
           {/* 全部词库标题 */}
           <div
-            className="font-black text-sm mb-3 text-black"
+            className="font-black text-sm mb-3 text-gray-900 dark:text-gray-100"
             style={{ letterSpacing: '0.05em' }}
           >
             全部词库
@@ -394,19 +495,19 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
                 onClick={() => setSelectedBook(book)}
                 className={`w-full p-4 border-2 rounded-lg mb-3 cursor-pointer transition-all text-left hover:-translate-y-0.5 active:translate-y-0 ${
                   selectedBook?.id === book.id
-                    ? 'bg-[#B4F416] border-black shadow-[2px_2px_0px_0px_#000] active:shadow-none'
-                    : 'bg-white border-black hover:bg-gray-200'
+                    ? 'bg-[#B4F416] dark:bg-lime-500/30 border-black dark:border-lime-400 shadow-[2px_2px_0px_0px_#000] dark:shadow-none active:shadow-none'
+                    : 'bg-white dark:bg-gray-700 border-black dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className="font-black text-base text-black leading-tight">
+                  <div className="font-black text-base text-gray-900 dark:text-gray-100 leading-tight">
                     {book.title || '未命名'}
                   </div>
                   {selectedBook?.id === book.id && (
-                    <Check style={{ width: '20px', height: '20px', color: '#000' }} strokeWidth={3} />
+                    <Check style={{ width: '20px', height: '20px', color: '#000' }} className="dark:text-lime-400" strokeWidth={3} />
                   )}
                 </div>
-                <div className="font-mono text-xs text-gray-600 mt-2">
+                <div className="font-mono text-xs text-gray-600 dark:text-gray-400 mt-2">
                   ${book.total_words?.toLocaleString() || 0} words
                 </div>
               </button>
@@ -414,19 +515,19 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
           </div>
         </div>
 
-        {/* 右侧：配置区域 */}
+        {/* 右侧：配置区域 - 黑暗模式适配 */}
         <div
+          className="bg-gray-50 dark:bg-gray-900/50"
           style={{
             flex: 1,
             padding: '28px',
             display: 'flex',
             flexDirection: 'column',
-            background: '#fafafa',
           }}
         >
           {/* 标题：请先选择词库 */}
           <div
-            className="font-black text-2xl mb-5 text-black"
+            className="font-black text-2xl mb-5 text-gray-900 dark:text-gray-100"
             style={{ letterSpacing: '-0.02em' }}
           >
             选择学习范围
@@ -435,28 +536,28 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
           {/* 顶部选中信息 */}
           {selectedBook ? (
             <div
-              className="flex items-center gap-4 mb-5 pb-4 border-b-2 border-black"
+              className="flex items-center gap-4 mb-5 pb-4 border-b-2 border-black dark:border-gray-600"
             >
               <div
-                className="w-16 h-16 bg-[#B4F416] border-2 border-black rounded-lg flex items-center justify-center font-black text-3xl text-black"
+                className="w-16 h-16 bg-[#B4F416] dark:bg-lime-500/30 border-2 border-black dark:border-lime-400 rounded-lg flex items-center justify-center font-black text-3xl text-black dark:text-lime-400"
               >
                 {getBookCode(selectedBook.title)}
               </div>
               <div>
-                <h2 className="font-black text-lg text-black leading-tight m-0">
+                <h2 className="font-black text-lg text-gray-900 dark:text-gray-100 leading-tight m-0">
                   {selectedBook.title}
                 </h2>
-                <p className="font-mono text-sm text-gray-600 m-0 mt-1.5">
+                <p className="font-mono text-sm text-gray-600 dark:text-gray-400 m-0 mt-1.5">
                   {selectedBook.total_words?.toLocaleString() || 0} 个单词
                 </p>
               </div>
             </div>
           ) : (
             <div
-              className="flex items-center gap-4 mb-5 pb-4 border-b-2 border-black"
+              className="flex items-center gap-4 mb-5 pb-4 border-b-2 border-black dark:border-gray-600"
               style={{ minHeight: '88px' }}
             >
-              <p className="font-bold text-base text-gray-500">
+              <p className="font-bold text-base text-gray-500 dark:text-gray-400">
                 ← 请先选择词库
               </p>
             </div>
@@ -519,5 +620,6 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
         </div>
       </div>
     </div>
+    </>
   )
 }

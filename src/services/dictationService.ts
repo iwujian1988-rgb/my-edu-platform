@@ -287,9 +287,10 @@ class DictationService {
           this.abortControllers.delete(key)
         }
       } catch (error) {
-        // 对应方案：Section 6.3 - 如果是AbortError，不重试
+        // 如果是AbortError，说明请求被取消，这是正常的，直接返回空数组
         if (error instanceof Error && error.name === 'AbortError') {
-          throw error
+          console.log('ℹ️ [DictationService] 请求被取消')
+          return []
         }
 
         attemptCount++

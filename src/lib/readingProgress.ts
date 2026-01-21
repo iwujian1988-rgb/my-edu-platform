@@ -22,6 +22,7 @@ export interface ReadingProgress {
 
 /**
  * 保存阅读进度到数据库
+ * 🔥 优化：使用 upsert 且不阻塞（fire-and-forget）
  */
 export async function saveReadingProgress(progress: ReadingProgress): Promise<void> {
   console.log('🔥 [saveReadingProgress] Starting save for book:', progress.bookId, 'page:', progress.page)
@@ -35,40 +36,27 @@ export async function saveReadingProgress(progress: ReadingProgress): Promise<vo
 
     console.log('✅ [saveReadingProgress] User authenticated:', user.id)
 
-    // 先尝试更新，如果记录不存在则插入
-    console.log('🔄 [saveReadingProgress] Attempting update...')
-    const { error: updateError } = await (supabase
+    // 🔥 优化：使用 upsert 代替先update后insert，减少一次数据库往返
+    const { error } = await (supabase
       .from('user_book_preferences') as any)
-      .update({
+      .upsert({
+        user_id: user.id,
+        book_id: progress.bookId,
         last_reading_progress: progress,
         updated_at: new Date().toISOString()
+      }, {
+        onConflict: 'user_id,book_id'
       })
-      .eq('user_id', user.id)
-      .eq('book_id', progress.bookId)
 
-    // 如果更新失败（记录不存在），则插入新记录
-    if (updateError) {
-      console.log('⚠️ [saveReadingProgress] Update failed, trying insert. Error:', updateError)
-      const { error: insertError } = await supabase
-        .from('user_book_preferences')
-        .insert({
-          user_id: user.id,
-          book_id: progress.bookId,
-          last_reading_progress: progress
-        })
-
-      if (insertError) {
-        // 只在有实质错误时打印（忽略空对象和权限错误）
-        const hasErrorDetails = insertError.message || insertError.code || insertError.hint
-        const isEmptyError = Object.keys(insertError).length === 0
-        if (hasErrorDetails && !isEmptyError) {
-          console.error('❌ [saveReadingProgress] Failed to insert:', insertError)
-        }
-      } else {
-        console.log('✅ [saveReadingProgress] Inserted successfully:', progress)
+    if (error) {
+      // 只在有实质错误时打印（忽略空对象和权限错误）
+      const hasErrorDetails = error.message || error.code || error.hint
+      const isEmptyError = Object.keys(error).length === 0
+      if (hasErrorDetails && !isEmptyError) {
+        console.error('❌ [saveReadingProgress] Failed to upsert:', error)
       }
     } else {
-      console.log('✅ [saveReadingProgress] Updated successfully:', progress)
+      console.log('✅ [saveReadingProgress] Upserted successfully:', progress)
     }
   } catch (error) {
     // 捕获异常，静默处理

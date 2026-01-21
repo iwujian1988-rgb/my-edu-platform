@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { Volume2, Eye, EyeOff } from 'lucide-react'
 import { speak, initializeTTS, stopSpeaking } from '@/lib/speech'
 import { stripHtmlTags } from '@/lib/utils/text'
+import { useTheme } from '@/contexts/ThemeContext'
 
 interface Word {
   id: string
@@ -30,6 +31,12 @@ interface WordCardProps {
 }
 
 export function WordCard({ word, index, onStatusChange, isSaving = false, globalHideChinese = false }: WordCardProps) {
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
+
+  // 调试日志
+  console.log(`🎨 [WordCard ${word.word}] theme:`, theme, 'isDark:', isDark)
+
   // 初始状态根据全局设置：如果全局隐藏，则默认不显示；否则显示
   const [showDefinition, setShowDefinition] = useState(!globalHideChinese)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -172,11 +179,18 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
   }
 
   return (
-    <div className="clay-card p-5 md:p-6 hover:scale-[1.01] transition-transform flex flex-col" suppressHydrationWarning>
+    <div
+      className={`p-5 md:p-6 hover:scale-[1.01] transition-transform flex flex-col border-2 transition-all duration-300 ${
+        isDark
+          ? 'rounded-xl border-[#B4F264]/20 bg-gradient-to-br from-[#B4F264]/3 to-[#B4F416]/5 hover:from-[#B4F264]/5 hover:to-[#B4F416]/8 hover:border-[#B4F264]/30 hover:shadow-[0_0_20px_rgba(180,244,22,0.08)]'
+          : 'clay-card'
+      }`}
+      suppressHydrationWarning
+    >
       <div className="flex gap-3 flex-1">
         {/* 左侧：序号 */}
         <div className="flex flex-col items-center pt-1 flex-shrink-0">
-          <span className="text-xs font-bold text-gray-300">{index + 1}</span>
+          <span className={`text-xs font-bold transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-300'}`}>{index + 1}</span>
         </div>
 
         {/* 右侧：单词内容 */}
@@ -185,7 +199,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
           <div className="flex items-start justify-between gap-3 mb-3">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
-                <h3 className="text-2xl md:text-3xl font-black text-gray-900">
+                <h3 className={`text-2xl md:text-3xl font-black transition-colors duration-300 ${isDark ? 'text-white' : 'text-gray-900'}`}>
                   {word.word}
                 </h3>
                 {/* 单词发音按钮 - 小图标 */}
@@ -203,16 +217,18 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                 {word.uk_phonetic || word.us_phonetic ? (
                   <>
                     {word.uk_phonetic && (
-                      <span className="text-xs text-gray-600 font-mono">UK {word.uk_phonetic}</span>
+                      <span className={`text-xs font-mono transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>UK {word.uk_phonetic}</span>
                     )}
                     {word.us_phonetic && (
-                      <span className="text-xs text-gray-500 font-mono">US {word.us_phonetic}</span>
+                      <span className={`text-xs font-mono transition-colors duration-300 ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>US {word.us_phonetic}</span>
                     )}
                   </>
                 ) : (
-                  <span className="text-sm text-gray-600 font-mono">{word.phonetic}</span>
+                  <span className={`text-sm font-mono transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{word.phonetic}</span>
                 )}
-                <span className="px-2 py-1 text-xs font-semibold text-purple-600 bg-purple-50 rounded-full">
+                <span className={`px-2 py-1 text-xs font-semibold rounded-full transition-colors duration-300 ${
+                  isDark ? 'bg-purple-500/20 text-purple-300 border border-purple-500/30' : 'text-purple-600 bg-purple-50'
+                }`}>
                   {getPartOfSpeechLabel(word.part_of_speech)}
                 </span>
               </div>
@@ -232,9 +248,9 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
           <div className="flex-1 overflow-y-auto">
             {/* 释义 - 中文可切换显示，英文始终显示 */}
             <div className="mb-3">
-              <p className="text-sm text-gray-600 mb-1">{word.definition_en}</p>
+              <p className={`text-sm mb-1 transition-colors duration-300 ${isDark ? 'text-gray-300' : 'text-gray-600'}`}>{word.definition_en}</p>
               {shouldShowChinese ? (
-                <p className="text-xs text-gray-500">
+                <p className={`text-xs transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-500'}`}>
                   {word.definition}
                 </p>
               ) : (
@@ -249,12 +265,16 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
               <div className="mb-3 relative">
                 <div
                   ref={collocationRef}
-                  className={`p-3 rounded-xl bg-blue-50 border border-blue-200 transition-all duration-200 ${
+                  className={`p-3 rounded-xl border transition-all duration-200 ${
                     !isExpanded && collocationOverflow ? 'max-h-24 overflow-hidden' : ''
+                  } ${
+                    isDark
+                      ? 'bg-blue-500/10 border-blue-500/20'
+                      : 'bg-blue-50 border-blue-200'
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <p className="text-sm text-blue-900 font-semibold">
+                    <p className={`text-sm font-semibold transition-colors duration-300 ${isDark ? 'text-blue-200' : 'text-blue-900'}`}>
                       💡 搭配: {word.collocation_en}
                     </p>
                     <button

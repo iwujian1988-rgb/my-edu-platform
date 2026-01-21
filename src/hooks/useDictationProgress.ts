@@ -26,6 +26,7 @@ export function useDictationProgress(
   // 对应方案：Section 6.6.2 - 加载进度
   useEffect(() => {
     let mounted = true
+    let aborted = false
 
     async function fetchProgress() {
       // 对应方案：防御性编程 - 参数校验
@@ -37,7 +38,8 @@ export function useDictationProgress(
       try {
         const data = await dictationService.getProgress(bookId, scopeType)
 
-        if (!mounted) return
+        // 对应方案：如果组件已卸载或请求被取消，不更新状态
+        if (!mounted || aborted) return
 
         if (data) {
           setProgress(data)
@@ -50,11 +52,17 @@ export function useDictationProgress(
           })
         }
       } catch (err) {
+        // 对应方案：如果是AbortError，说明请求被取消，这是正常的
+        if (err instanceof Error && err.name === 'AbortError') {
+          console.log('ℹ️ [useDictationProgress] 请求被取消')
+          return
+        }
+
         console.error('❌ [useDictationProgress] 获取进度失败:', err)
-        if (!mounted) return
+        if (!mounted || aborted) return
         setError(err as Error)
       } finally {
-        if (mounted) {
+        if (mounted && !aborted) {
           setLoading(false)
         }
       }
@@ -64,6 +72,7 @@ export function useDictationProgress(
 
     return () => {
       mounted = false
+      aborted = true
     }
   }, [bookId, scopeType])
 

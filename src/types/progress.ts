@@ -3,7 +3,7 @@
  * 用于首页"继续学习"区域展示最近学习记录
  */
 
-import { Target, BookOpen, PenTool, Gamepad2, Keyboard } from 'lucide-react'
+import { Layers, List, Keyboard, Zap, Gamepad2 } from 'lucide-react'
 
 /**
  * 学习模式类型
@@ -33,6 +33,8 @@ export interface ProgressCard {
   currentIndex: number
   /** 总单词数 */
   totalWords: number
+  /** 已学习词数 (认识+模糊) */
+  learnedCount?: number
   /** 最后学习时间戳 */
   lastStudyTime: number
   /** 继续学习的完整URL */
@@ -49,33 +51,43 @@ export interface ProgressCardProps extends ProgressCard {
 
 /**
  * 学习模式配置
- * 用于显示图标和中文名称
+ * 工业风 Neo-Brutalism 设计
  */
 export const MODE_CONFIG = {
   'word-list': {
-    icon: BookOpen,
+    icon: List,
     label: '单词表',
-    color: 'bg-blue-500'
+    color: 'bg-blue-500',
+    light: 'bg-blue-50',
+    textColor: 'text-blue-700'
   },
   'flashcards': {
-    icon: Target, // CreditCard -> Target for consistency
+    icon: Layers,
     label: '卡片',
-    color: 'bg-purple-500'
+    color: 'bg-purple-500',
+    light: 'bg-purple-50',
+    textColor: 'text-purple-700'
   },
   'dictation': {
-    icon: PenTool,
+    icon: Keyboard,
     label: '默写',
-    color: 'bg-green-500'
+    color: 'bg-green-500',
+    light: 'bg-green-50',
+    textColor: 'text-green-700'
   },
   'match-game': {
     icon: Gamepad2,
     label: '消消乐',
-    color: 'bg-pink-500'
+    color: 'bg-pink-500',
+    light: 'bg-pink-50',
+    textColor: 'text-pink-700'
   },
   'typing': {
-    icon: Keyboard,
+    icon: Zap,
     label: '打字练习',
-    color: 'bg-orange-500'
+    color: 'bg-[#ccff00]', // 荧光绿
+    light: 'bg-[#f7ffcc]',
+    textColor: 'text-lime-700'
   }
 } as const
 

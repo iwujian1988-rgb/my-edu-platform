@@ -43,6 +43,8 @@ export async function getAccessToken(): Promise<string | null> {
 /**
  * 发起带认证的API请求
  * 自动添加Authorization header和credentials
+ * @param url - 请求URL
+ * @param options - fetch选项（支持signal用于取消请求）
  */
 export async function authenticatedFetch(url: string, options: RequestInit = {}): Promise<Response> {
   const token = await getAccessToken()
@@ -59,7 +61,8 @@ export async function authenticatedFetch(url: string, options: RequestInit = {})
   return fetch(url, {
     ...options,
     headers,
-    credentials: 'include'  // 同时携带cookies
+    credentials: 'include',  // 同时携带cookies
+    signal: options.signal  // 🔥 支持AbortSignal
   })
 }
 

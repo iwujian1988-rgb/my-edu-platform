@@ -80,7 +80,7 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
               </div>
               <div>
                 <h1 className="text-xl font-black text-gray-800" style={{ fontFamily: 'Fredoka, sans-serif' }}>
-                  喵喵笔记
+                  MAX笔记
                 </h1>
                 <p className="text-xs text-gray-500 font-semibold">管理后台</p>
               </div>

@@ -149,7 +149,7 @@ export function FlashcardStatsBar({
 
   if (loading || !stats) {
     return (
-      <div className="w-full h-12 bg-gray-100 border-2 border-black rounded-lg animate-pulse" />
+      <div className="w-full h-12 border-2 border-black rounded-lg animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }} />
     )
   }
 
@@ -158,7 +158,7 @@ export function FlashcardStatsBar({
       <div className="w-full">
         {/* 📊 状态统计 - 清晰显示各状态单词分布 */}
         <div className="text-center mb-2">
-          <p className="text-xs font-bold text-gray-500 mb-2">学习状态分布（点击切换范围）</p>
+          <p className="text-xs font-bold mb-2 transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>学习状态分布（点击切换范围）</p>
           <div className="flex items-center justify-center gap-2 text-xs flex-wrap">
             {Object.entries(scopeInfo).map(([key, info]) => {
               const count = stats[key as keyof StatsData] || 0
@@ -174,14 +174,15 @@ export function FlashcardStatsBar({
                   onClick={() => handleScopeClick(key)}
                   className={`
                     flex items-center gap-1 px-2 py-1 rounded border transition-all
-                    ${isActive
-                      ? 'border-black bg-white shadow-[2px_2px_0px_0px_#000] font-bold'
-                      : 'border-gray-200 hover:border-gray-300 hover:bg-gray-50'}
                   `}
+                  style={isActive
+                    ? { borderColor: '#000', backgroundColor: 'var(--card-bg)', boxShadow: '2px 2px 0px 0px #000', fontWeight: 'bold' }
+                    : { borderColor: 'var(--border)', backgroundColor: 'transparent' }
+                  }
                   title={`切换到${info.label}：${count}个单词 (${Math.round(percentage)}%)`}
                 >
                   <span style={{ color: info.color }}>{info.icon}</span>
-                  <span>{info.label}</span>
+                  <span className="transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{info.label}</span>
                   <span className="font-mono font-semibold" style={{ color: info.color }}>
                     {count}
                   </span>
@@ -199,25 +200,28 @@ export function FlashcardStatsBar({
           onClick={() => setShowConfirmDialog(false)}
         >
           <div
-            className="bg-white rounded-xl border-[3px] border-black shadow-[8px_8px_0px_0px_#000] w-full max-w-md p-6"
+            className="rounded-xl border-[3px] border-black shadow-[8px_8px_0px_0px_#000] w-full max-w-md p-6 transition-colors duration-300"
+            style={{ backgroundColor: 'var(--card-bg)' }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h3 className="text-xl font-black mb-4">切换学习范围</h3>
-            <p className="text-gray-700 font-semibold mb-6">
+            <h3 className="text-xl font-black mb-4 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>切换学习范围</h3>
+            <p className="font-semibold mb-6 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
               确定要切换到 <span className="font-mono font-bold">{pendingScope}</span> 范围吗？
               <br />
-              <span className="text-sm text-gray-500">当前进度将被保存，可以随时返回。</span>
+              <span className="text-sm transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>当前进度将被保存，可以随时返回。</span>
             </p>
             <div className="flex gap-3">
               <button
                 onClick={() => setShowConfirmDialog(false)}
-                className="flex-1 px-4 py-2 bg-gray-100 border-2 border-black rounded-lg font-bold hover:bg-gray-200 transition-colors"
+                className="flex-1 px-4 py-2 border-2 border-black rounded-lg font-bold transition-colors hover:opacity-80"
+                style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)' }}
               >
                 取消
               </button>
               <button
                 onClick={confirmScopeChange}
-                className="flex-1 px-4 py-2 bg-[#B4F416] border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
+                className="flex-1 px-4 py-2 border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
+                style={{ backgroundColor: '#B4F416' }}
               >
                 确认切换
               </button>

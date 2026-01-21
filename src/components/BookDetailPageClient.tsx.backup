@@ -20,6 +20,8 @@ import { useScreenOrientation } from '@/hooks/useScreenOrientation'
 import { WORDS_PER_PAGE, TIPS, getFilterLabel, type StatusFilter } from '@/lib/wordListUtils'
 import { getReadingProgress, type ReadingProgress } from '@/lib/readingProgress'
 import type { Word } from '@/hooks/useWordData'
+import { useTheme } from '@/contexts/ThemeContext'
+import { useLoading } from '@/components/LoadingOverlay'
 
 // 单词卡片骨架屏组件
 function WordCardSkeleton() {
@@ -108,7 +110,7 @@ export function BookDetailPageClient({
   const { filters, setPage, setTheme, setScenario, setChapter, setStatus, updateFilters } = useBookFilters(book.id)
 
   // 🆕 传递初始数据给useWordData，避免首次加载时调用API
-  const { words, totalWords, hasMore, isLoading, isLoadingMore } = useWordData({
+  const { words, totalWords, hasMore, isLoading, isLoadingMore, hasThemeData, hasSceneData } = useWordData({
     book,
     isPortrait: false,
     initialData: initialWords,
@@ -117,9 +119,19 @@ export function BookDetailPageClient({
 
   const { isPortrait } = useScreenOrientation()
 
-  // ✅ 检查数据中是否有主题/场景字段
-  const hasThemeData = words.some(word => word.theme)
-  const hasSceneData = words.some(word => word.scene)
+  // 🌙 获取主题
+  const { theme } = useTheme()
+  const isDark = theme === 'dark'
+
+  // 📦 获取加载控制
+  const { hideLoading } = useLoading()
+
+  // 初始加载完成后隐藏加载动画
+  useEffect(() => {
+    if (!isLoading && words.length > 0) {
+      hideLoading()
+    }
+  }, [isLoading, words.length, hideLoading])
 
   // 本地UI状态（不需要持久化到URL）
   const [globalHideChinese, setGlobalHideChinese] = useState(false)
@@ -193,43 +205,93 @@ export function BookDetailPageClient({
       return
     }
 
-    // 如果正在显示骨架屏，检查数据是否更新
-    if (showSkeleton && words.length > 0) {
-      const currentFirstWordId = words[0].id
+    // 🔥 修复：如果正在显示骨架屏，检查数据是否更新 OR 加载完成（包括空结果）
+    if (showSkeleton) {
+      // 场景1: 有数据到达
+      if (words.length > 0) {
+        const currentFirstWordId = words[0].id
 
-      // 如果第一个单词的ID改变了，说明新数据已到达
-      if (currentFirstWordId !== firstWordIdRef.current) {
-        console.log('🎯 [Skeleton] New data detected! Old word ID:', firstWordIdRef.current, ', New word ID:', currentFirstWordId, ', Page:', filters.page)
+        // 如果第一个单词的ID改变了，说明新数据已到达
+        if (currentFirstWordId !== firstWordIdRef.current) {
+          console.log('🎯 [Skeleton] New data detected! Old word ID:', firstWordIdRef.current, ', New word ID:', currentFirstWordId, ', Page:', filters.page)
+
+          const elapsedTime = Date.now() - skeletonStartTimeRef.current
+          const remainingTime = Math.max(0, 800 - elapsedTime)
+
+          // 更新firstWordIdRef
+          firstWordIdRef.current = currentFirstWordId
+          loadingPageRef.current = filters.page  // 记录已加载的页码
+
+          // 🔥 如果是断点续读场景，此时显示Toast提示
+          if (restoredPage !== null && !showRestoreToast) {
+            console.log('🎉 [Resume] Data arrived, showing restore toast for page:', restoredPage)
+            setShowRestoreToast(true)
+
+            // 3秒后自动隐藏Toast
+            toastTimerRef.current = setTimeout(() => {
+              console.log('⏱️ [Resume] Hiding restore toast')
+              setShowRestoreToast(false)
+              setRestoredPage(null)  // 清除恢复页码，避免影响下次
+            }, 3000)
+          }
+
+          // 🔥 处理骨架屏隐藏（普通翻页和断点续读都需要）
+          if (remainingTime === 0) {
+            console.log('🎯 [Skeleton] Hiding skeleton immediately')
+            setShowSkeleton(false)
+            setIsPageChanging(false)
+          } else {
+            console.log('🎯 [Skeleton] Waiting for remaining', remainingTime, 'ms')
+            skeletonTimerRef.current = setTimeout(() => {
+              console.log('🎯 [Skeleton] Min display time elapsed, hiding skeleton')
+              setShowSkeleton(false)
+              setIsPageChanging(false)
+            }, remainingTime)
+          }
+
+          // 清理函数
+          return () => {
+            if (skeletonTimerRef.current) {
+              clearTimeout(skeletonTimerRef.current)
+              skeletonTimerRef.current = null
+            }
+            if (toastTimerRef.current) {
+              clearTimeout(toastTimerRef.current)
+              toastTimerRef.current = null
+            }
+          }
+        } else {
+          console.log('🎯 [Skeleton] Still waiting for new data... (current word ID unchanged:', currentFirstWordId, ')')
+        }
+      } else {
+        // 🔥 场景2: 数据加载完成，但是空结果（0个词）
+        // 即使返回空结果，也应该隐藏骨架屏
+        console.log('🎯 [Skeleton] No words returned (empty result), but data load completed')
+        console.log('🎯 [Skeleton] Current page:', filters.page, 'Expected page:', loadingPageRef.current)
 
         const elapsedTime = Date.now() - skeletonStartTimeRef.current
-        const remainingTime = Math.max(0, 800 - elapsedTime)
+        const remainingTime = Math.max(0, 800 - elapsedTime)  // 与正常情况保持一致
 
-        // 更新firstWordIdRef
-        firstWordIdRef.current = currentFirstWordId
-        loadingPageRef.current = filters.page  // 记录已加载的页码
-
-        // 🔥 如果是断点续读场景，此时显示Toast提示
+        // 🔥 如果是断点续读场景，即使返回空结果也应该显示Toast
         if (restoredPage !== null && !showRestoreToast) {
-          console.log('🎉 [Resume] Data arrived, showing restore toast for page:', restoredPage)
+          console.log('🎉 [Resume] Empty result arrived, but showing restore toast for page:', restoredPage)
           setShowRestoreToast(true)
 
           // 3秒后自动隐藏Toast
           toastTimerRef.current = setTimeout(() => {
             console.log('⏱️ [Resume] Hiding restore toast')
             setShowRestoreToast(false)
-            setRestoredPage(null)  // 清除恢复页码，避免影响下次
+            setRestoredPage(null)
           }, 3000)
         }
 
-        // 🔥 处理骨架屏隐藏（普通翻页和断点续读都需要）
         if (remainingTime === 0) {
-          console.log('🎯 [Skeleton] Hiding skeleton immediately')
+          console.log('🎯 [Skeleton] Hiding skeleton (empty result)')
           setShowSkeleton(false)
           setIsPageChanging(false)
         } else {
-          console.log('🎯 [Skeleton] Waiting for remaining', remainingTime, 'ms')
           skeletonTimerRef.current = setTimeout(() => {
-            console.log('🎯 [Skeleton] Min display time elapsed, hiding skeleton')
+            console.log('🎯 [Skeleton] Min display time elapsed, hiding skeleton (empty result)')
             setShowSkeleton(false)
             setIsPageChanging(false)
           }, remainingTime)
@@ -246,11 +308,9 @@ export function BookDetailPageClient({
             toastTimerRef.current = null
           }
         }
-      } else {
-        console.log('🎯 [Skeleton] Still waiting for new data... (current word ID unchanged:', currentFirstWordId, ')')
       }
     }
-  }, [showSkeleton, words, filters.page, isPageChanging, restoredPage, showRestoreToast])
+  }, [showSkeleton, words, filters.page, isPageChanging, restoredPage, showRestoreToast, isLoading])
 
   // ⭐ 断点续读：检查并显示恢复提示
   useEffect(() => {
@@ -260,34 +320,17 @@ export function BookDetailPageClient({
       console.log('🔍 [Resume] Search params:', window.location.search)
 
       // 如果URL已经有参数，说明用户已经在浏览，不需要恢复
-      // 🔥 修复：只有当URL有**非默认值**的参数时，才跳过恢复
-      // 因为默认值（page=1, status=all等）可能是浏览器自动补全的，不应该阻止恢复
       const urlParams = new URLSearchParams(window.location.search)
-      const page = urlParams.get('page')
-      const status = urlParams.get('status')
-      const theme = urlParams.get('theme')
-      const scenario = urlParams.get('scenario')
-      const chapter = urlParams.get('chapter')
-
-      const hasNonDefaultParams =
-        (page && page !== '1') ||
-        (status && status !== 'all') ||
-        (theme && theme !== 'all') ||
-        (scenario && scenario !== 'all') ||
-        (chapter && chapter !== 'all')
-
-      if (hasNonDefaultParams) {
-        console.log('⏭️ [Resume] URL has non-default params, skipping restore. Params:', {
-          page,
-          status,
-          theme,
-          scenario,
-          chapter
+      if (urlParams.has('page') || urlParams.has('theme') || urlParams.has('status') || urlParams.has('scenario') || urlParams.has('chapter')) {
+        console.log('⏭️ [Resume] URL has params, skipping restore. Params:', {
+          page: urlParams.get('page'),
+          theme: urlParams.get('theme'),
+          status: urlParams.get('status'),
+          scenario: urlParams.get('scenario'),
+          chapter: urlParams.get('chapter')
         })
         return
       }
-
-      console.log('✅ [Resume] URL has only default params or empty, proceeding with restore')
 
       // 检查是否有保存的进度
       console.log('📖 [Resume] Calling getReadingProgress...')
@@ -523,30 +566,26 @@ export function BookDetailPageClient({
 
   // ✅ 改进：统一的筛选和翻页处理函数
   const handleThemeChange = (theme: string) => {
-    console.log('🔄 Theme change:', theme, '- resetting isPageChanging')
-    setIsPageChanging(false)  // 🔥 确保显示新数据
     setTheme(theme)
+    setPage(1)  // ⭐ 切换主题筛选时重置到第1页
     setShowThemeMenu(false)
   }
 
   const handleSceneChange = (scene: string) => {
-    console.log('🔄 Scene change:', scene, '- resetting isPageChanging')
-    setIsPageChanging(false)  // 🔥 确保显示新数据
     setScenario(scene)
+    setPage(1)  // ⭐ 切换场景筛选时重置到第1页
     setShowSceneMenu(false)
   }
 
   const handleChapterChange = (chapter: string) => {
-    console.log('🔄 Chapter change:', chapter, '- resetting isPageChanging')
-    setIsPageChanging(false)  // 🔥 确保显示新数据
     setChapter(chapter)
+    setPage(1)  // ⭐ 切换章节筛选时重置到第1页
     setShowChapterMenu(false)
   }
 
   const handleStatusChange = (status: StatusFilter) => {
-    console.log('🔄 Status change:', status, '- resetting isPageChanging')
-    setIsPageChanging(false)  // 🔥 确保显示新数据
     setStatus(status)
+    setPage(1)  // ⭐ 切换筛选时重置到第1页
     setShowFilterMenu(false)
   }
 
@@ -651,6 +690,7 @@ export function BookDetailPageClient({
       result = shuffleArray(result)
     }
 
+    console.log('🔥 [displayWords] Returning', result.length, 'words')
     return result
   }, [words, sortOrder, isPageChanging])
 

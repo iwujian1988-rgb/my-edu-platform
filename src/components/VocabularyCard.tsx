@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Volume2, EyeOff, Lightbulb, FileText, Check, HelpCircle, X, ChevronDown } from 'lucide-react'
 import { speak, initializeTTS, stopSpeaking } from '@/lib/speech'
 import { useScreenOrientation } from '@/hooks/useScreenOrientation'  // 🆕 用于检测竖屏模式
+import { useTheme } from '@/contexts/ThemeContext'
 
 interface Word {
   id: string
@@ -33,6 +34,9 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   // 🆕 检测屏幕方向
   const { isPortrait } = useScreenOrientation()
 
+  // 🌙 检测主题
+  const { theme } = useTheme()
+
   // 兼容数据中的 'fuzzy' 或 'unsure'
   const initialStatus = word.status === 'fuzzy' ? 'unsure' : (word.status === 'known' ? 'known' : (word.status === 'unknown' ? 'unknown' : 'unknown'))
   const [status, setStatus] = useState(initialStatus)
@@ -41,7 +45,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   const [isExpanded, setIsExpanded] = useState(false) // 展开/收起状态
 
   // 🆕 根据屏幕方向设置卡片高度
-  const cardHeight = isPortrait ? '300px' : '380px'  // 竖屏降低约20%
+  const cardHeight = isPortrait ? '380px' : '380px'  // 竖屏与横屏一致高度
 
   // 同步状态变化
   useEffect(() => {
@@ -95,47 +99,34 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
 
   // 🔒 样式生成器：强制分离边框和阴影
   const getCardStyle = () => {
-    // 基础样式：所有卡片通用的部分
-    // 🔥 核心：这里写死了 border 是黑色，绝对不会变！
-    const base = {
-      border: '3px solid #000000',
-      borderRadius: '0.75rem',     // rounded-xl
-      backgroundColor: '#ffffff',
-      transition: 'all 0.2s ease',
-      position: 'relative',
-      height: isExpanded ? 'auto' : cardHeight,  // 🆕 使用动态高度
-      minHeight: isExpanded ? cardHeight : undefined,  // 🆕 使用动态高度
-      display: 'flex',
-      flexDirection: 'column',
-    };
-
     // 动态样式：只改变阴影颜色 (boxShadow)
     switch (status) {
       case 'known':
         return {
-          ...base,
           boxShadow: `6px 6px 0px 0px ${COLORS.known}`, // 🟢 只有阴影变绿
           transform: 'translate(-2px, -2px)'
         };
       case 'unsure':
       case 'fuzzy':
         return {
-          ...base,
           boxShadow: `6px 6px 0px 0px ${COLORS.unsure}`, // 🟡 只有阴影变黄
           transform: 'translate(-2px, -2px)'
         };
       case 'unknown':
         return {
-          ...base,
           boxShadow: `6px 6px 0px 0px ${COLORS.unknown}`, // 🔴 只有阴影变红
           transform: 'translate(-2px, -2px)'
         };
       default:
         return {
-          ...base,
           boxShadow: '4px 4px 0px 0px #000000', // ⚫ 默认黑影
         };
     }
+  };
+
+  // 获取卡片容器类名
+  const getCardClassName = () => {
+    return 'w-full p-5 flex flex-col border-[3px] border-black rounded-xl transition-all duration-200 relative dark:bg-gray-800 bg-white';
   };
 
   // 词性映射：保持纯英文缩写格式
@@ -189,7 +180,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
 
   // 检测内容是否需要展开（简单判断文本长度）
   const needsExpansion = () => {
-    const defLength = data.definition.length
+    const defLength = data.definition?.length || 0
     const colLength = data.collocation?.length || 0
     const sentLength = data.sentence?.length || 0
     // 降低阈值：释义超过30字符，或搭配/例句较长时显示展开按钮
@@ -202,26 +193,33 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
     <div
       data-testid="word-card"
       data-word-id={word.id}
-      className="w-full p-5 flex flex-col"
-      style={getCardStyle()}
+      className={getCardClassName()}
+      style={{
+        ...getCardStyle(),
+        height: isExpanded ? 'auto' : cardHeight,
+        minHeight: isExpanded ? cardHeight : undefined,
+        display: 'flex',
+        flexDirection: 'column',
+      }}
     >
 
       {/* 顶部区域 */}
-      <div className="flex justify-between items-start mb-4 border-b-2 border-dashed border-gray-200 pb-3">
+      <div className={`flex justify-between items-start mb-4 border-b-2 border-dashed pb-3 transition-colors duration-300 dark:border-gray-700 border-gray-200`}>
         <div className="flex-1">
-          <div className="flex items-center gap-2 flex-wrap">
-            <h2 className="text-3xl font-black text-black tracking-tight">{data.word}</h2>
+          <div className="flex items-center gap-1.5 md:gap-2 flex-wrap">
+            <h2 className="text-2xl md:text-3xl font-black tracking-tight transition-colors duration-300 dark:text-white text-black">{data.word}</h2>
             <button
               onClick={handleSpeak}
-              className="w-8 h-8 flex items-center justify-center rounded-full border-2 border-black hover:bg-[#B4F416] transition-colors shrink-0"
+              className="w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full border-2 border-black hover:bg-[#B4F416] transition-colors shrink-0"
             >
-              <Volume2 size={16} strokeWidth={2.5} />
+              <Volume2 size={12} className="md:hidden" strokeWidth={2.5} />
+              <Volume2 size={16} className="hidden md:block" strokeWidth={2.5} />
             </button>
           </div>
           <div className="flex items-center gap-2 mt-1">
-            <span className="font-serif text-gray-500 font-bold">{data.phonetic}</span>
+            <span className="font-serif font-bold transition-colors duration-300 dark:text-slate-400 text-gray-600">{data.phonetic}</span>
             {data.pos && (
-              <span className="text-xs font-black bg-gray-100 border border-black px-1.5 py-0.5 rounded text-black">
+              <span className="text-xs font-black border px-1.5 py-0.5 rounded transition-colors duration-300 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 bg-gray-100 border-black text-black">
                 {data.pos}
               </span>
             )}
@@ -229,7 +227,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
         </div>
         <button
           onClick={() => setShowDefinition(!showDefinition)}
-          className="text-gray-300 hover:text-black transition-colors"
+          className="transition-colors duration-300 dark:text-gray-500 dark:hover:text-gray-300 text-gray-300 hover:text-black"
         >
           <EyeOff size={20} strokeWidth={2.5} />
         </button>
@@ -238,27 +236,39 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
       {/* 中间释义 - 可展开/收起 */}
       <div className={`flex-1 space-y-2 mb-3 relative ${!isExpanded ? 'overflow-hidden' : ''}`}>
         {/* 释义 - 根据展开状态显示不同行数 */}
-        <p className={`text-sm font-bold text-gray-700 leading-snug ${isExpanded ? '' : 'line-clamp-2'}`}>
+        <p className={`text-sm font-bold leading-snug transition-colors duration-300 ${isExpanded ? '' : 'line-clamp-2'} dark:text-slate-200 text-gray-700`}>
           {data.definition}
         </p>
 
         <div className="space-y-1.5">
           {data.collocation && (
-            <div className="bg-[#EFF6FF] border-2 border-black rounded-lg p-1.5 flex gap-1.5 items-start">
-              <Lightbulb size={14} className="text-[#1D4ED8] shrink-0 mt-0.5" strokeWidth={2.5} />
+            <div className="border-2 border-black rounded-lg p-1.5 flex gap-1.5 items-start transition-colors duration-300 dark:bg-blue-900/30 bg-blue-50">
+              <Lightbulb
+                size={14}
+                className="shrink-0 mt-0.5 transition-colors duration-300 dark:text-blue-400 text-blue-700"
+                strokeWidth={2.5}
+              />
               <div className="text-xs leading-snug flex-1">
-                <span className="font-black text-[#1D4ED8] block mb-0.5 text-[10px]">搭配</span>
-                <span className={`font-medium text-gray-900 ${isExpanded ? '' : 'line-clamp-1'}`}>{data.collocation}</span>
+                <span className="font-black block mb-0.5 text-[10px] transition-colors duration-300 dark:text-blue-400 text-blue-700">搭配</span>
+                <span className={`font-medium ${isExpanded ? '' : 'line-clamp-1'} transition-colors duration-300 dark:text-slate-200 text-gray-900`}>
+                  {data.collocation}
+                </span>
               </div>
             </div>
           )}
 
           {data.sentence && (
-            <div className="bg-[#F0FDF4] border-2 border-black rounded-lg p-1.5 flex gap-1.5 items-start">
-              <FileText size={14} className="text-[#15803D] shrink-0 mt-0.5" strokeWidth={2.5} />
+            <div className="border-2 border-black rounded-lg p-1.5 flex gap-1.5 items-start transition-colors duration-300 dark:bg-green-900/30 bg-green-50">
+              <FileText
+                size={14}
+                className="shrink-0 mt-0.5 transition-colors duration-300 dark:text-green-400 text-green-700"
+                strokeWidth={2.5}
+              />
               <div className="text-xs leading-snug flex-1">
-                <span className="font-black text-[#15803D] block mb-0.5 text-[10px]">例句</span>
-                <span className={`font-medium text-gray-900 ${isExpanded ? '' : 'line-clamp-2'}`}>{data.sentence}</span>
+                <span className="font-black block mb-0.5 text-[10px] transition-colors duration-300 dark:text-green-400 text-green-700">例句</span>
+                <span className={`font-medium ${isExpanded ? '' : 'line-clamp-2'} transition-colors duration-300 dark:text-slate-200 text-gray-900`}>
+                  {data.sentence}
+                </span>
               </div>
             </div>
           )}
@@ -266,12 +276,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
 
         {/* 渐变遮罩 - 只在收起状态且内容需要展开时显示 */}
         {!isExpanded && needsExpansion() && (
-          <div
-            className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none"
-            style={{
-              background: 'linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.9))',
-            }}
-          />
+          <div className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none transition-colors duration-300 dark:bg-gradient-to-b dark:from-transparent dark:to-gray-900/95 bg-gradient-to-b from-transparent to-white/90" />
         )}
       </div>
 
@@ -279,7 +284,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
       {needsExpansion() && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center justify-center gap-1 py-1.5 text-xs font-black text-gray-600 hover:text-black transition-colors border-t border-gray-100"
+          className="flex items-center justify-center gap-1 py-1.5 text-xs font-black transition-colors border-t dark:text-gray-400 dark:hover:text-gray-200 dark:border-gray-700 text-gray-600 hover:text-black border-gray-100"
         >
           <span>{isExpanded ? '收起内容' : '查看更多'}</span>
           <ChevronDown size={14} className={`transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`} strokeWidth={2.5} />
@@ -287,7 +292,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
       )}
 
       {/* 底部按钮组 */}
-      <div className="grid grid-cols-3 gap-2 pt-2 border-t-2 border-gray-100">
+      <div className={`grid grid-cols-3 gap-2 pt-2 border-t-2 transition-colors duration-300 dark:border-gray-700 border-gray-100`}>
         <StatusButton
           active={status === 'known'}
           onClick={() => handleStatusChangeInternal('known')}
@@ -334,10 +339,7 @@ const StatusButton = ({ active, onClick, activeColor, icon: Icon, label }: {
     <button
       onClick={onClick}
       style={style}
-      className={`
-        flex flex-col items-center justify-center py-2 rounded-lg border-2 transition-all duration-150
-        ${!active ? 'bg-white border-gray-200 text-gray-400 hover:border-black hover:text-black hover:bg-gray-50' : ''}
-      `}
+      className="flex flex-col items-center justify-center py-2 rounded-lg border-2 transition-all duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 dark:hover:border-gray-400 dark:hover:text-gray-200 dark:hover:bg-gray-700 bg-white border-gray-200 text-gray-400 hover:border-black hover:text-black hover:bg-gray-50"
     >
       <Icon size={18} strokeWidth={3} />
       <span className="text-[10px] font-black mt-0.5">{label}</span>
