@@ -6,6 +6,7 @@
  */
 
 import { Users, UserPlus, TrendingUp } from 'lucide-react'
+import { useEffect } from 'react'
 
 interface DashboardStatsProps {
   stats: {
@@ -17,8 +18,21 @@ interface DashboardStatsProps {
 }
 
 export function DashboardStats({ stats }: DashboardStatsProps) {
+  // 调试日志
+  useEffect(() => {
+    console.log('🎨 [DashboardStats Client] 收到的props:', {
+      totalUsers: stats.totalUsers,
+      yesterdayNewUsers: stats.yesterdayNewUsers,
+      todayNewUsers: stats.todayNewUsers,
+      trendDataLength: stats.trendData.length,
+      trendDataSample: stats.trendData.slice(0, 3)
+    })
+  }, [stats])
+
   // 计算走势图的最大值（用于归一化高度）
   const maxCount = Math.max(...stats.trendData.map(d => d.count), 1)
+
+  console.log('📊 [DashboardStats Client] maxCount:', maxCount, 'trendData:', stats.trendData.length)
 
   return (
     <div className="space-y-6">
