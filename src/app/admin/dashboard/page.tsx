@@ -62,8 +62,8 @@ export default async function AdminDashboard() {
     null
   ])
 
-  // 转换走势图数据（RPC返回的是 trend_date 和 trend_count）
-  const trendData = ((registrationTrendData as any)?.data || []).map((item: any) => ({
+  // 转换走势图数据（RPC直接返回数组，不是 {data: [...]} 结构）
+  const trendData = ((registrationTrendData as any) || []).map((item: any) => ({
     date: item.trend_date,
     count: item.trend_count
   }))
