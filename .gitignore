@@ -126,3 +126,12 @@ yarn-error.log*
 
 # PM2 进程文件
 .pm2/
+
+# 大型数据文件和备份（数据在 Supabase 云数据库）
+*.csv
+*.tar.gz
+*.zip
+*.7z
+backup-*.json
+ecdict*
+stardict*
