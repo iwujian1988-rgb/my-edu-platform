@@ -59,6 +59,7 @@ export const MODE_CONFIG = {
     label: '单词表',
     color: 'bg-blue-500',
     light: 'bg-blue-50',
+    dark: 'dark:bg-blue-900/30',
     textColor: 'text-blue-700'
   },
   'flashcards': {
@@ -66,6 +67,7 @@ export const MODE_CONFIG = {
     label: '卡片',
     color: 'bg-purple-500',
     light: 'bg-purple-50',
+    dark: 'dark:bg-purple-900/30',
     textColor: 'text-purple-700'
   },
   'dictation': {
@@ -73,6 +75,7 @@ export const MODE_CONFIG = {
     label: '默写',
     color: 'bg-green-500',
     light: 'bg-green-50',
+    dark: 'dark:bg-green-900/30',
     textColor: 'text-green-700'
   },
   'match-game': {
@@ -80,6 +83,7 @@ export const MODE_CONFIG = {
     label: '消消乐',
     color: 'bg-pink-500',
     light: 'bg-pink-50',
+    dark: 'dark:bg-pink-900/30',
     textColor: 'text-pink-700'
   },
   'typing': {
@@ -87,6 +91,7 @@ export const MODE_CONFIG = {
     label: '打字练习',
     color: 'bg-[#ccff00]', // 荧光绿
     light: 'bg-[#f7ffcc]',
+    dark: 'dark:bg-lime-900/30',
     textColor: 'text-lime-700'
   }
 } as const

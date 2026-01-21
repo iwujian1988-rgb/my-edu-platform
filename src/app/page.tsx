@@ -276,7 +276,6 @@ export default async function Home() {
           const progress = totalWords > 0 ? Math.round((learnedCount / totalWords) * 100) : 0
 
           // 🔧 检查是否有有效的状态
-          // 优先使用 readingProgress（浏览页码），其次使用 resumeState（练习模式）
           const hasValidReadingProgress = readingProgress &&
             typeof readingProgress === 'object' &&
             Object.keys(readingProgress).length > 0
@@ -286,10 +285,39 @@ export default async function Home() {
             Object.keys(resumeState).length > 0 &&
             (resumeState.mode || resumeState.context)
 
-          // 从 reading_progress 或 resume_state 获取模式信息
-          // ✅ 关键修复：如果有 readingProgress（浏览记录），说明是 word-list 模式
-          // 否则使用 resumeState.mode（练习模式）
-          const mode = hasValidReadingProgress ? 'word-list' : (resumeState?.mode || 'word-list')
+          // ✅ 根据最后更新时间决定使用哪个模式
+          // resumeState 有 updatedAt，readingProgress 可能没有
+          // 如果 resumeState.mode 存在且不是 word-list，说明是练习模式
+          // 如果 readingProgress 存在，说明是浏览模式（word-list）
+          const resumeStateTime = resumeState?.updatedAt || 0
+          const readingProgressTime = readingProgress?.updatedAt || readingProgress?.timestamp || 0
+
+          let mode: 'word-list' | 'flashcards' | 'dictation' | 'match-game' | 'typing' = 'word-list'
+
+          if (hasValidResumeState && hasValidReadingProgress) {
+            // 两个都有：比较更新时间
+            if (resumeStateTime > 0 && readingProgressTime > 0) {
+              // 都有时间戳：使用更晚的
+              mode = resumeStateTime >= readingProgressTime
+                ? (resumeState?.mode || 'word-list')
+                : 'word-list'
+            } else if (resumeStateTime > 0) {
+              // 只有 resumeState 有时间戳
+              mode = resumeState?.mode || 'word-list'
+            } else {
+              // 都没有时间戳：优先使用练习模式（如果有）
+              mode = (resumeState?.mode && resumeState.mode !== 'word-list')
+                ? resumeState.mode
+                : 'word-list'
+            }
+          } else if (hasValidResumeState) {
+            // 只有 resumeState
+            mode = resumeState?.mode || 'word-list'
+          } else if (hasValidReadingProgress) {
+            // 只有 readingProgress
+            mode = 'word-list'
+          }
+          // 都没有：默认 word-list
           let scopeType = resumeState?.context?.scope || resumeState?.context?.scopeType || readingProgress?.status || 'all'
           const currentIndex = resumeState?.context?.index || resumeState?.context?.currentIndex || 0
 

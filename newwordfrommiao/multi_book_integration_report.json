@@ -1,0 +1,138 @@
+{
+  "integration_info": {
+    "timestamp": "2026-01-14T12:09:07.102063",
+    "status": "completed",
+    "backup_file": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\src\\assets\\data\\backups\\frontend_data_before_multi_book_20260114_120906.json",
+    "total_books": 8,
+    "total_chapters": 453,
+    "total_words": 22503
+  },
+  "books_summary": [
+    {
+      "id": "book_master_2026",
+      "title": "Master Vocabulary 2026",
+      "total_words": 10827,
+      "total_chapters": 217,
+      "type": "exam",
+      "category": "postgraduate"
+    },
+    {
+      "id": "book_cet4",
+      "title": "CET-4 Core Vocabulary",
+      "total_words": 3849,
+      "total_chapters": 77,
+      "type": "exam",
+      "category": "cet4"
+    },
+    {
+      "id": "book_cet6",
+      "title": "CET-6 Core Vocabulary",
+      "total_words": 1956,
+      "total_chapters": 40,
+      "type": "exam",
+      "category": "cet6"
+    },
+    {
+      "id": "book_ielts",
+      "title": "IELTS Vocabulary",
+      "total_words": 1833,
+      "total_chapters": 37,
+      "type": "exam",
+      "category": "ielts"
+    },
+    {
+      "id": "book_toefl",
+      "title": "TOEFL Vocabulary",
+      "total_words": 2940,
+      "total_chapters": 59,
+      "type": "exam",
+      "category": "toefl"
+    },
+    {
+      "id": "book_k12",
+      "title": "US K-12 Foundation",
+      "total_words": 413,
+      "total_chapters": 9,
+      "type": "k12",
+      "category": "primary"
+    },
+    {
+      "id": "book_livestream",
+      "title": "Livestream Shopping Pro",
+      "total_words": 500,
+      "total_chapters": 10,
+      "type": "scene",
+      "category": "ecommerce"
+    },
+    {
+      "id": "book_nail_salon",
+      "title": "Nail Salon Professional",
+      "total_words": 185,
+      "total_chapters": 4,
+      "type": "scene",
+      "category": "business"
+    }
+  ],
+  "data_quality": {
+    "total_words_converted": 22503,
+    "empty_definitions": 11973,
+    "pending_translations": 11925,
+    "completion_rate": "46.79%"
+  },
+  "statistics": {
+    "book_master_2026": {
+      "status": "success",
+      "words_converted": 10827,
+      "chapters_created": 217,
+      "title": "Master Vocabulary 2026"
+    },
+    "book_cet4": {
+      "status": "success",
+      "words_converted": 3849,
+      "chapters_created": 77,
+      "title": "CET-4 Core Vocabulary"
+    },
+    "book_cet6": {
+      "status": "success",
+      "words_converted": 1956,
+      "chapters_created": 40,
+      "title": "CET-6 Core Vocabulary"
+    },
+    "book_ielts": {
+      "status": "success",
+      "words_converted": 1833,
+      "chapters_created": 37,
+      "title": "IELTS Vocabulary"
+    },
+    "book_toefl": {
+      "status": "success",
+      "words_converted": 2940,
+      "chapters_created": 59,
+      "title": "TOEFL Vocabulary"
+    },
+    "book_k12": {
+      "status": "success",
+      "words_converted": 413,
+      "chapters_created": 9,
+      "title": "US K-12 Foundation"
+    },
+    "book_livestream": {
+      "status": "success",
+      "words_converted": 500,
+      "chapters_created": 10,
+      "title": "Livestream Shopping Pro"
+    },
+    "book_nail_salon": {
+      "status": "success",
+      "words_converted": 185,
+      "chapters_created": 4,
+      "title": "Nail Salon Professional"
+    }
+  },
+  "output_files": {
+    "books": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\xiaoyu-english-v3\\frontend\\src\\data\\books.json",
+    "chapters": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\xiaoyu-english-v3\\frontend\\src\\data\\chapters.json",
+    "words": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\xiaoyu-english-v3\\frontend\\src\\data\\words.json",
+    "report": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\xiaoyu-english-v3\\frontend\\src\\data\\multi_book_integration_report.json"
+  }
+}

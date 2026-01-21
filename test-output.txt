@@ -1,0 +1,296 @@
+
+Running 13 tests using 7 workers
+
+  ✓   3 [chromium] › e2e\scenarios\user-registration.spec.ts:49:7 › 用户注册流程 › REG-03: 手机号格式实时验证 (2.1s)
+  ✓   5 [chromium] › e2e\scenarios\user-registration.spec.ts:36:7 › 用户注册流程 › REG-02: URL携带邀请码参数自动填入 (2.0s)
+  ✓   2 [chromium] › e2e\scenarios\user-registration.spec.ts:23:7 › 用户注册流程 › REG-01: 访问注册页面 (2.1s)
+  ✓   6 [chromium] › e2e\scenarios\user-registration.spec.ts:100:7 › 用户注册流程 › REG-05: 密码长度验证 (2.2s)
+  ✓   7 [chromium] › e2e\scenarios\user-registration.spec.ts:67:7 › 用户注册流程 › REG-04: 密码显示/隐藏切换 (3.0s)
+  ✓  10 [chromium] › e2e\scenarios\user-registration.spec.ts:199:7 › 用户注册流程 › REG-10: 表单必填项验证 (1.6s)
+  ✓   1 [chromium] › e2e\scenarios\user-registration.spec.ts:140:7 › 用户注册流程 › REG-07: 邀请码验证 - 过期邀请码 (4.5s)
+  ✓  12 [chromium] › e2e\scenarios\user-registration.spec.ts:239:7 › 用户注册流程 › REG-12: 注册按钮loading状态 (1.4s)
+  ✓  11 [chromium] › e2e\scenarios\user-registration.spec.ts:214:7 › 用户注册流程 › REG-11: 密码符合长度要求 (3.4s)
+  ✘   4 [chromium] › e2e\scenarios\user-registration.spec.ts:121:7 › 用户注册流程 › REG-06: 邀请码验证 - 无效邀请码 (7.4s)
+  ✘   9 [chromium] › e2e\scenarios\user-registration.spec.ts:180:7 › 用户注册流程 › REG-09: 手机号已存在提示 (6.9s)
+  ✘   8 [chromium] › e2e\scenarios\user-registration.spec.ts:159:7 › 用户注册流程 › REG-08: 成功注册跳转首页 (11.7s)
+  ✘  13 [chromium] › e2e\scenarios\user-registration.spec.ts:258:7 › 用户注册流程 › REG-13: 注册后权限继承 (11.6s)
+  ✘  14 [chromium] › e2e\scenarios\user-registration.spec.ts:121:7 › 用户注册流程 › REG-06: 邀请码验证 - 无效邀请码 (retry #1) (7.0s)
+  ✘  15 [chromium] › e2e\scenarios\user-registration.spec.ts:180:7 › 用户注册流程 › REG-09: 手机号已存在提示 (retry #1) (7.2s)
+  ✘  16 [chromium] › e2e\scenarios\user-registration.spec.ts:159:7 › 用户注册流程 › REG-08: 成功注册跳转首页 (retry #1) (12.3s)
+  ✘  17 [chromium] › e2e\scenarios\user-registration.spec.ts:258:7 › 用户注册流程 › REG-13: 注册后权限继承 (retry #1) (12.1s)
+
+
+  1) [chromium] › e2e\scenarios\user-registration.spec.ts:121:7 › 用户注册流程 › REG-06: 邀请码验证 - 无效邀请码 ───
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('text=邀请码无效或已失效')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('text=邀请码无效或已失效')[22m
+
+
+      135 |     // 验证显示错误提示（匹配实际的错误消息）
+      136 |     const errorMessage = page.locator('text=邀请码无效或已失效');
+    > 137 |     await expect(errorMessage).toBeVisible({ timeout: 5000 });
+          |                                ^
+      138 |   });
+      139 |
+      140 |   test('REG-07: 邀请码验证 - 过期邀请码', async ({ page }) => {
+        at D:\claude_work\yingyu\my-edu-platform\e2e\scenarios\user-registration.spec.ts:137:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-06-邀请码验证---无效邀请码-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-06-邀请码验证---无效邀请码-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-user-registration-用户注册流程-REG-06-邀请码验证---无效邀请码-chromium\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('text=邀请码无效或已失效')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('text=邀请码无效或已失效')[22m
+
+
+      135 |     // 验证显示错误提示（匹配实际的错误消息）
+      136 |     const errorMessage = page.locator('text=邀请码无效或已失效');
+    > 137 |     await expect(errorMessage).toBeVisible({ timeout: 5000 });
+          |                                ^
+      138 |   });
+      139 |
+      140 |   test('REG-07: 邀请码验证 - 过期邀请码', async ({ page }) => {
+        at D:\claude_work\yingyu\my-edu-platform\e2e\scenarios\user-registration.spec.ts:137:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-06-邀请码验证---无效邀请码-chromium-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-06-邀请码验证---无效邀请码-chromium-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-user-registration-用户注册流程-REG-06-邀请码验证---无效邀请码-chromium-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-06-邀请码验证---无效邀请码-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-user-registration-用户注册流程-REG-06-邀请码验证---无效邀请码-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › e2e\scenarios\user-registration.spec.ts:159:7 › 用户注册流程 › REG-08: 成功注册跳转首页 ────────
+
+    TimeoutError: page.waitForURL: Timeout 10000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "/" until "load"
+    ============================================================
+
+      172 |
+      173 |     // 验证：实际实现是跳转到首页（不是登录页）
+    > 174 |     await page.waitForURL('/', { timeout: 10000 });
+          |                ^
+      175 |
+      176 |     // 验证当前在首页
+      177 |     await expect(page).toHaveURL('/');
+        at D:\claude_work\yingyu\my-edu-platform\e2e\scenarios\user-registration.spec.ts:174:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-08-成功注册跳转首页-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-08-成功注册跳转首页-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-user-registration-用户注册流程-REG-08-成功注册跳转首页-chromium\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    TimeoutError: page.waitForURL: Timeout 10000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "/" until "load"
+    ============================================================
+
+      172 |
+      173 |     // 验证：实际实现是跳转到首页（不是登录页）
+    > 174 |     await page.waitForURL('/', { timeout: 10000 });
+          |                ^
+      175 |
+      176 |     // 验证当前在首页
+      177 |     await expect(page).toHaveURL('/');
+        at D:\claude_work\yingyu\my-edu-platform\e2e\scenarios\user-registration.spec.ts:174:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-08-成功注册跳转首页-chromium-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-08-成功注册跳转首页-chromium-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-user-registration-用户注册流程-REG-08-成功注册跳转首页-chromium-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-08-成功注册跳转首页-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-user-registration-用户注册流程-REG-08-成功注册跳转首页-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › e2e\scenarios\user-registration.spec.ts:180:7 › 用户注册流程 › REG-09: 手机号已存在提示 ────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('text=该手机号已注册')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('text=该手机号已注册')[22m
+
+
+      194 |     // 验证显示手机号已存在错误（匹配实际的错误消息）
+      195 |     const errorMessage = page.locator('text=该手机号已注册');
+    > 196 |     await expect(errorMessage).toBeVisible({ timeout: 5000 });
+          |                                ^
+      197 |   });
+      198 |
+      199 |   test('REG-10: 表单必填项验证', async ({ page }) => {
+        at D:\claude_work\yingyu\my-edu-platform\e2e\scenarios\user-registration.spec.ts:196:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-09-手机号已存在提示-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-09-手机号已存在提示-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-user-registration-用户注册流程-REG-09-手机号已存在提示-chromium\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: locator('text=该手机号已注册')
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for locator('text=该手机号已注册')[22m
+
+
+      194 |     // 验证显示手机号已存在错误（匹配实际的错误消息）
+      195 |     const errorMessage = page.locator('text=该手机号已注册');
+    > 196 |     await expect(errorMessage).toBeVisible({ timeout: 5000 });
+          |                                ^
+      197 |   });
+      198 |
+      199 |   test('REG-10: 表单必填项验证', async ({ page }) => {
+        at D:\claude_work\yingyu\my-edu-platform\e2e\scenarios\user-registration.spec.ts:196:32
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-09-手机号已存在提示-chromium-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-09-手机号已存在提示-chromium-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-user-registration-用户注册流程-REG-09-手机号已存在提示-chromium-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-09-手机号已存在提示-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-user-registration-用户注册流程-REG-09-手机号已存在提示-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › e2e\scenarios\user-registration.spec.ts:258:7 › 用户注册流程 › REG-13: 注册后权限继承 ─────────
+
+    TimeoutError: page.waitForURL: Timeout 10000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "/" until "load"
+    ============================================================
+
+      272 |
+      273 |     // 等待跳转到首页
+    > 274 |     await page.waitForURL('/', { timeout: 10000 });
+          |                ^
+      275 |
+      276 |     // 验证：用户应该已经登录
+      277 |     // 检查页面是否有登录后的元素（如用户菜单、词库列表等）
+        at D:\claude_work\yingyu\my-edu-platform\e2e\scenarios\user-registration.spec.ts:274:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-13-注册后权限继承-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-13-注册后权限继承-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-user-registration-用户注册流程-REG-13-注册后权限继承-chromium\error-context.md
+
+    Retry #1 ───────────────────────────────────────────────────────────────────────────────────────
+
+    TimeoutError: page.waitForURL: Timeout 10000ms exceeded.
+    =========================== logs ===========================
+    waiting for navigation to "/" until "load"
+    ============================================================
+
+      272 |
+      273 |     // 等待跳转到首页
+    > 274 |     await page.waitForURL('/', { timeout: 10000 });
+          |                ^
+      275 |
+      276 |     // 验证：用户应该已经登录
+      277 |     // 检查页面是否有登录后的元素（如用户菜单、词库列表等）
+        at D:\claude_work\yingyu\my-edu-platform\e2e\scenarios\user-registration.spec.ts:274:16
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-13-注册后权限继承-chromium-retry1\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-13-注册后权限继承-chromium-retry1\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results\scenarios-user-registration-用户注册流程-REG-13-注册后权限继承-chromium-retry1\error-context.md
+
+    attachment #4: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results\scenarios-user-registration-用户注册流程-REG-13-注册后权限继承-chromium-retry1\trace.zip
+    Usage:
+
+        npx playwright show-trace test-results\scenarios-user-registration-用户注册流程-REG-13-注册后权限继承-chromium-retry1\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4 failed
+    [chromium] › e2e\scenarios\user-registration.spec.ts:121:7 › 用户注册流程 › REG-06: 邀请码验证 - 无效邀请码 ────
+    [chromium] › e2e\scenarios\user-registration.spec.ts:159:7 › 用户注册流程 › REG-08: 成功注册跳转首页 ─────────
+    [chromium] › e2e\scenarios\user-registration.spec.ts:180:7 › 用户注册流程 › REG-09: 手机号已存在提示 ─────────
+    [chromium] › e2e\scenarios\user-registration.spec.ts:258:7 › 用户注册流程 › REG-13: 注册后权限继承 ──────────
+  9 passed (31.8s)

@@ -1,0 +1,31 @@
+-- 在 Supabase SQL Editor 中执行这些函数
+
+-- 函数1：统计错题数量（unknown 和 fuzzy 状态）
+CREATE OR REPLACE FUNCTION count_mistakes(p_user_id UUID)
+RETURNS INTEGER AS $$
+BEGIN
+  RETURN (
+    SELECT COUNT(*)
+    FROM word_progress
+    WHERE user_id = p_user_id
+    AND status IN ('unknown', 'fuzzy')
+  );
+END;
+$$ LANGUAGE plpgsql STABLE;
+
+-- 函数2：统计今日新词数量
+CREATE OR REPLACE FUNCTION count_today_new_words(p_user_id UUID, p_today DATE)
+RETURNS INTEGER AS $$
+BEGIN
+  RETURN (
+    SELECT COUNT(*)
+    FROM word_progress
+    WHERE user_id = p_user_id
+    AND DATE(created_at) >= p_today
+  );
+END;
+$$ LANGUAGE plpgsql STABLE;
+
+-- 测试函数
+-- SELECT count_mistakes('7078b0aa-d06a-4209-b669-1a0d4985c8ea');
+-- SELECT count_today_new_words('7078b0aa-d06a-4209-b669-1a0d4985c8ea', CURRENT_DATE);

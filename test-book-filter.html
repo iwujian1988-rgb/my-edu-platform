@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试词本过滤</title>
+</head>
+<body>
+    <h1>词本过滤测试</h1>
+    <pre id="result"></pre>
+
+    <script type="module">
+        const userId = '7078b0aa-d06a-4209-b669-1a0d4985c8ea';
+        const supabaseUrl = 'https://snnrjnpcmdsdlyldvvps.supabase.co';
+        const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1ODg1MzgsImV4cCI6MjA4MzE2NDUzOH0.1rUusdU-SyWMYNiiAfjrDtSFlcxlwn4FOv0X8bJC7Sk';
+
+        // 获取所有词本
+        const response = await fetch(`${supabaseUrl}/rest/v1/books?select=*&order=created_at.desc`, {
+            headers: {
+                'apikey': supabaseKey,
+                'Authorization': `Bearer ${supabaseKey}`
+            }
+        });
+
+        const booksData = await response.json();
+
+        // 模拟首页的过滤逻辑（修复后）
+        const hasAllBooks = false;
+        const userBookIds = [];
+
+        const filteredBooks = booksData.filter(book => {
+            return hasAllBooks || userBookIds.includes(book.id) || book.created_by === userId;
+        });
+
+        const result = {
+            总词本数: booksData.length,
+            过滤后词本数: filteredBooks.length,
+            过滤条件: {
+                hasAllBooks,
+                userBookIds,
+                userId
+            },
+            过滤后的词本: filteredBooks.map(b => ({
+                title: b.title,
+                created_by: b.created_by,
+                is_user_created: b.created_by === userId
+            }))
+        };
+
+        document.getElementById('result').textContent = JSON.stringify(result, null, 2);
+    </script>
+</body>
+</html>

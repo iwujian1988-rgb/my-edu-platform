@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>修复未发布的词库</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      font-size: 16px;
+      background: #B4F416;
+      border: 3px solid black;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    button:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 4px 4px 0 #000;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      white-space: pre-wrap;
+    }
+    .success {
+      background: #d4edda;
+      border: 2px solid #c3e6cb;
+      color: #155724;
+    }
+    .error {
+      background: #f8d7da;
+      border: 2px solid #f5c6cb;
+      color: #721c24;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 修复未发布的自定义词库</h1>
+
+  <p>此工具将修复所有未发布的自定义词库（将 is_published 设置为 true）</p>
+
+  <button onclick="fixBooks()">✅ 开始修复</button>
+
+  <div id="result"></div>
+
+  <script>
+    async function fixBooks() {
+      const resultDiv = document.getElementById('result');
+      resultDiv.className = '';
+      resultDiv.textContent = '⏳ 正在修复...';
+
+      try {
+        const response = await fetch('/api/debug/fix-unpublished-books');
+        const data = await response.json();
+
+        if (response.ok) {
+          resultDiv.className = 'success';
+          resultDiv.textContent = `✅ ${data.message}\n\n修复的词库数量: ${data.count}\n\n` +
+            (data.books ? JSON.stringify(data.books, null, 2) : '');
+        } else {
+          resultDiv.className = 'error';
+          resultDiv.textContent = `❌ 修复失败\n\n${JSON.stringify(data, null, 2)}`;
+        }
+      } catch (error) {
+        resultDiv.className = 'error';
+        resultDiv.textContent = `❌ 错误: ${error.message}`;
+      }
+    }
+  </script>
+</body>
+</html>

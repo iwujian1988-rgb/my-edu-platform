@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加阅读进度字段 - 数据库迁移</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .status {
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .status.pending {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+        }
+        .status.success {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .status.error {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .sql-box {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+        .sql-box pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+            transition: transform 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        .instructions {
+            background: #e7f3ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .instructions h2 {
+            margin-top: 0;
+            color: #0066cc;
+        }
+        .instructions ol {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .instructions li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .copy-btn:hover {
+            background: #0052a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 添加阅读进度字段 - 数据库迁移</h1>
+
+        <div id="status" class="status pending">
+            <strong>⚠️ 待执行</strong>
+            <p>需要在数据库中添加 <code>last_reading_progress</code> 字段到 <code>user_book_preferences</code> 表。</p>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 执行步骤</h2>
+            <ol>
+                <li>登录到你的 <a href="https://supabase.com/dashboard" target="_blank">Supabase 控制台</a></li>
+                <li>选择你的项目</li>
+                <li>点击左侧菜单的 <strong>"SQL Editor"</strong></li>
+                <li>点击 <strong>"New query"</strong></li>
+                <li>复制下面的 SQL 代码并粘贴到编辑器中</li>
+                <li>点击右下角的 <strong>"Run"</strong> 按钮执行</li>
+                <li>执行成功后，返回此页面点击"验证迁移"按钮</li>
+            </ol>
+        </div>
+
+        <div class="sql-box">
+            <button class="copy-btn" onclick="copySQL()">📋 复制 SQL</button>
+            <pre id="sql-code">-- 为 user_book_preferences 表添加阅读进度字段
+ALTER TABLE user_book_preferences
+ADD COLUMN IF NOT EXISTS last_reading_progress JSONB;
+
+-- 添加字段注释
+COMMENT ON COLUMN user_book_preferences.last_reading_progress IS '保存用户最后的阅读进度，包含页码和筛选条件';
+
+-- 创建索引以提升查询性能
+CREATE INDEX IF NOT EXISTS idx_user_book_preferences_reading_progress_book_id
+ON user_book_preferences ((last_reading_progress->>'bookId'))
+WHERE last_reading_progress IS NOT NULL;</pre>
+        </div>
+
+        <div>
+            <button onclick="testMigration()">✅ 验证迁移</button>
+            <a href="/library" class="button" style="text-decoration: none;">
+                <button type="button">📖 返回词书列表</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function copySQL() {
+            const sqlCode = document.getElementById('sql-code').innerText;
+            navigator.clipboard.writeText(sqlCode).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.textContent = '✅ 已复制!';
+                setTimeout(() => {
+                    btn.textContent = '📋 复制 SQL';
+                }, 2000);
+            });
+        }
+
+        async function testMigration() {
+            const statusDiv = document.getElementById('status');
+            statusDiv.className = 'status pending';
+            statusDiv.innerHTML = '<strong>⏳ 正在验证...</strong><p>请稍候...</p>';
+
+            try {
+                const response = await fetch('/api/admin/add-reading-progress-field');
+                const data = await response.json();
+
+                if (data.success) {
+                    statusDiv.className = 'status success';
+                    statusDiv.innerHTML = '<strong>✅ 迁移成功!</strong><p>' + data.message + '</p>';
+                } else {
+                    statusDiv.className = 'status error';
+                    statusDiv.innerHTML = '<strong>❌ 迁移尚未完成</strong><p>' + data.error + '</p>';
+                }
+            } catch (error) {
+                statusDiv.className = 'status error';
+                statusDiv.innerHTML = '<strong>❌ 验证失败</strong><p>' + error.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>

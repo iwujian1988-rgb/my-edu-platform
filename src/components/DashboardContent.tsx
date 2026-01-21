@@ -2,12 +2,42 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useRouter } from 'next/navigation'
 import { Target, Calendar, BookOpen, Plus, GraduationCap } from 'lucide-react'
 import { PermissionWarningBanner } from './PermissionDisplay'
 import { BookLibrary } from './BookLibrary'
 import EmptyState from './EmptyState'
 import { ProgressCardProps, MODE_CONFIG, SCOPE_LABELS } from '@/types/progress'
 import { formatTimeAgo } from '@/lib/timeUtils'
+import { useLoading } from '@/components/LoadingOverlay'
+
+/**
+ * 客户端专用的时间显示组件
+ * 避免 hydration 不匹配错误
+ */
+function TimeLabel({ timestamp }: { timestamp: number }) {
+  const [timeLabel, setTimeLabel] = useState<string>('加载中')
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    setTimeLabel(formatTimeAgo(timestamp))
+
+    // 每分钟更新一次
+    const interval = setInterval(() => {
+      setTimeLabel(formatTimeAgo(timestamp))
+    }, 60000)
+
+    return () => clearInterval(interval)
+  }, [timestamp])
+
+  // 在服务器端和首次客户端渲染前显示占位符
+  if (!mounted) {
+    return <span className="opacity-0">加载中</span>
+  }
+
+  return <span>{timeLabel}</span>
+}
 
 // 20条英语学习鸡汤文
 const MOTIVATIONAL_QUOTES = [
@@ -60,6 +90,13 @@ function StatBox({
   color: string
   href: string
 }) {
+  const { showLoading } = useLoading()
+
+  const handleClick = () => {
+    // 立即显示 loading，给用户即时反馈
+    showLoading()
+  }
+
   const content = (
     <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 rounded-xl shadow-[3px_3px_0px_0px_#000] dark:shadow-none lg:shadow-[4px_4px_0px_0px_#000] lg:dark:shadow-none flex flex-col lg:flex-row items-start lg:items-center gap-3 p-4 lg:p-4 h-full lg:h-auto hover:-translate-y-1 transition-transform cursor-pointer group">
       <div className={`w-10 h-10 lg:w-12 lg:h-12 ${color} border-2 border-black dark:border-gray-600 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
@@ -76,12 +113,22 @@ function StatBox({
     </div>
   )
 
-  return <Link href={href}>{content}</Link>
+  return (
+    <Link href={href} onClick={handleClick}>
+      {content}
+    </Link>
+  )
 }
 
 // --- 3. 工业风进度卡片组件 (Industrial Neo-Brutalism) ---
 function ProgressCardComponent(props: ProgressCardProps) {
   const { bookTitle, mode, progress, scopeType, currentIndex, totalWords, learnedCount, lastStudyTime, continueURL, bookId } = props
+  const { showLoading } = useLoading()
+
+  const handleClick = () => {
+    // 立即显示 loading，给用户即时反馈
+    showLoading()
+  }
 
   // 获取模式配置
   const modeConfig = MODE_CONFIG[mode]
@@ -89,12 +136,10 @@ function ProgressCardComponent(props: ProgressCardProps) {
   const modeLabel = modeConfig.label
   const themeColor = modeConfig.color
   const themeLight = modeConfig.light
+  const themeDark = modeConfig.dark
 
   // 范围标签
   const scopeLabel = SCOPE_LABELS[scopeType]
-
-  // 时间标签
-  const timeLabel = formatTimeAgo(lastStudyTime)
 
   // 构建副标题：模式 + 范围
   const subText = `${modeLabel} · ${scopeLabel}`
@@ -105,6 +150,7 @@ function ProgressCardComponent(props: ProgressCardProps) {
   return (
     <Link
       href={continueURL}
+      onClick={handleClick}
       className="group block"
       data-testid="progress-card"
       data-book-id={bookId}
@@ -150,7 +196,7 @@ function ProgressCardComponent(props: ProgressCardProps) {
               </div>
 
               {/* 右上角图标 (实体按键风格) */}
-              <div className={`w-9 h-9 border-2 border-black dark:border-gray-600 rounded shadow-[2px_2px_0px_0px_#000] dark:shadow-none flex items-center justify-center shrink-0 ${themeLight}`}>
+              <div className={`w-9 h-9 border-2 border-black dark:border-gray-600 rounded shadow-[2px_2px_0px_0px_#000] dark:shadow-none flex items-center justify-center shrink-0 ${themeLight} ${themeDark}`}>
                 <ModeIcon className="w-5 h-5 text-black dark:text-white" strokeWidth={2} />
               </div>
             </div>
@@ -172,7 +218,7 @@ function ProgressCardComponent(props: ProgressCardProps) {
                 </div>
                 <div className="text-[10px] font-bold text-gray-400 dark:text-gray-500 flex items-center justify-end gap-1">
                   <div className={`w-1.5 h-1.5 rounded-full ${themeColor}`}></div>
-                  {timeLabel}
+                  <TimeLabel timestamp={lastStudyTime} />
                 </div>
               </div>
             </div>

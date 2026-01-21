@@ -1,0 +1,3125 @@
+{
+  "total": 520,
+  "words": [
+    {
+      "id": "0a0b5edc-ac88-4133-9fae-612bf5fd1d90",
+      "word": "accident",
+      "definition": "事故；意外； 意外事件；机遇",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "353c266d-7364-4a29-933f-26acfc94c9df",
+      "word": "actor",
+      "definition": "男演员；行动者；作用物",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "7100e593-d0f4-4fa5-94ff-dd0ac4a38692",
+      "word": "address",
+      "definition": "【n.】地址；演讲；致辞；说话的技巧；称呼【vt.】演说；从事；忙于；写姓名地址；向…致辞；与…说话；提出；处理",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "4da31b61-e073-4522-a3b5-d523c0c24a59",
+      "word": "advertisement",
+      "definition": "广告，宣传",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "e86930c0-6358-4cac-b29b-3cd5ea289f5f",
+      "word": "aeroplane",
+      "definition": "飞机（等于airplane）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "b9da6e45-1de7-4633-9701-dc926a02ce5f",
+      "word": "afternoon",
+      "definition": "午后，下午",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "ce941bd8-fe9e-4921-bb55-b2bfe2e3f44b",
+      "word": "afterwards",
+      "definition": "后来；然后",
+      "part_of_speech": "adv."
+    },
+    {
+      "id": "78677a29-0a78-47df-8f2e-22de6f85c6fd",
+      "word": "air",
+      "definition": "【n.】空气，大气；天空；样子；曲调【vt.】使通风，晾干；夸耀【vi.】通风",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "f63e346a-df45-4961-a772-4a164f5b2564",
+      "word": "airport",
+      "definition": "机场；航空站",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "7ac26e28-086f-4a0f-abd7-f06df51b1d14",
+      "word": "ambulance",
+      "definition": "救护车；战时流动医院",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "aace3f7e-5b13-4bc5-a89a-f33bbdca5876",
+      "word": "apartment",
+      "definition": "公寓；房间",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a0f735b3-feeb-4748-865e-c8d45fe93408",
+      "word": "appointment",
+      "definition": "任命；约定；任命的职位",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "4449cdcb-5f08-4ffe-b981-e645bb63fb63",
+      "word": "April",
+      "definition": "四月",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "eca47437-36e5-4f89-8d21-8e7a5055dc7d",
+      "word": "arrive",
+      "definition": "到达；成功；达成；出生",
+      "part_of_speech": "vi."
+    },
+    {
+      "id": "bc9b5dbc-85fd-452c-b150-b87278f69903",
+      "word": "art",
+      "definition": "【n.】艺术；美术；艺术品【v.】是（be的变体）【adj.】艺术的；艺术品的",
+      "part_of_speech": "n., v., adj."
+    },
+    {
+      "id": "dfd622df-6fd9-41c9-bb4f-e7f1627fa322",
+      "word": "artist",
+      "definition": "艺术家；美术家（尤指画家）；大师",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "b2ebd1c2-e131-4ba4-a993-0bdd7ce782b9",
+      "word": "as well as",
+      "definition": "【na.】和…一样；…不用说；也；既…又；和...一样",
+      "part_of_speech": "na."
+    },
+    {
+      "id": "5d17fafa-5988-4cd4-b4aa-e44b1b427146",
+      "word": "assistant",
+      "definition": "【n.】助手，助理，助教【adj.】辅助的，助理的；有帮助的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "94a11968-b30a-4c35-95b9-c0ce22531a0f",
+      "word": "August",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "b7a29b14-f506-45d1-bdae-257386d2d3b5",
+      "word": "autumn",
+      "definition": "【n.】秋天；成熟期；渐衰期，凋落期【adj.】秋天的，秋季的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "8379a34a-333f-443a-b07d-239a97aab3eb",
+      "word": "bag",
+      "definition": "【n.】袋；猎获物；（俚）一瓶啤酒【vt.】猎获；把…装入袋中；占据，私吞；使膨大【vi.】松垂",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "28bab057-b014-415c-b224-e8abf560ab88",
+      "word": "band",
+      "definition": "【n.】带，环； 波段；(演奏流行音乐的) 乐队【n.】n.乐队；队；一群【vi.】用带绑扎；给...镶边",
+      "part_of_speech": "n., n., vi."
+    },
+    {
+      "id": "2ade1a01-70b2-4d16-92c4-23c576e9a15f",
+      "word": "bank",
+      "definition": "【n.】银行；岸；浅滩；储库【vt.】将…存入银行；倾斜转弯【vi.】堆积；倾斜转弯",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "958c8b8d-d92f-4723-9694-f838f823b79d",
+      "word": "barbecue",
+      "definition": "【n.】烤肉；吃烤肉的野宴【vt.】烧烤；烤肉",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "4b5d38ca-cdb0-4efb-b445-11ebf1450bcd",
+      "word": "baseball",
+      "definition": "棒球；棒球运动",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "9138e414-487f-45e0-aab6-870e77237727",
+      "word": "basketball",
+      "definition": "篮球；篮球运动",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a563c88b-32a3-4041-9069-4cd24c373675",
+      "word": "bathroom",
+      "definition": "浴室；厕所；盥洗室",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "1e364150-df12-4561-a66e-f15488191802",
+      "word": "beach",
+      "definition": "【n.】海滩；湖滨【vt.】将…拖上岸【vi.】搁浅；定居",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "7c984679-4f59-4157-be20-93e22bee0828",
+      "word": "beautiful",
+      "definition": "【adj.】美丽的；出色地；出色的；迷人的；迷人地",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "f3dafb1f-4120-479c-bc5d-dbe39e50a1d6",
+      "word": "bedroom",
+      "definition": "【n.】卧室【adj.】两性关系的；城郊住宅区的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "a9af1682-3e44-40d6-93d4-86f3a6c4e47f",
+      "word": "beginner",
+      "definition": "初学者；新手；创始人",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "5bf8b0b6-5d81-419d-9115-7368db2971d2",
+      "word": "belt",
+      "definition": "【n.】带；腰带；地带【vt.】用带子系住；用皮带抽打【vi.】猛击",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "d16ff249-d005-40be-8e4f-0318e4a83233",
+      "word": "bicycle",
+      "definition": "【n.】自行车【vt.】骑自行车运送【vi.】骑脚踏车",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "8b470f51-62fe-42ed-9fa0-545b79352e07",
+      "word": "bike",
+      "definition": "【n.】自行车；脚踏车【vi.】骑自行车（或摩托车）",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "af9deeef-88b9-432e-9993-bc2dac39f4c0",
+      "word": "bill",
+      "definition": "【n.】法案；广告；账单； 票据；钞票；清单【vt.】宣布；开账单；用海报宣传",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "e37a8ca9-0353-4b29-97df-a0dd21c72863",
+      "word": "biscuit",
+      "definition": "小点心，饼干",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "72772069-ba9f-4a3c-a719-c3b95136adf1",
+      "word": "black",
+      "definition": "【n.】黑色；黑人；黑颜料【adj.】黑色的；黑人的；邪恶的【vt.】使变黑；把鞋油等涂在…上；把（眼眶）打成青肿【vi.】变黑",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "42ae1930-7ea5-4b18-b915-b6168726a3e7",
+      "word": "blanket",
+      "definition": "【n.】毛毯，毯子；毯状物，覆盖层【adj.】总括的，全体的；没有限制的【vt.】覆盖，掩盖；用毯覆盖",
+      "part_of_speech": "n., adj., vt."
+    },
+    {
+      "id": "9ac1a55f-88c1-4720-8c1f-863600094ae0",
+      "word": "blonde",
+      "definition": "【n.】白肤金发碧眼的女人【adj.】亚麻色的；金色的；白皙的；白肤金发碧眼的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "f07ec2e4-fdad-4a2f-a6e7-29acead91f7b",
+      "word": "blouse",
+      "definition": "【n.】宽松的上衣；女装衬衫【vt.】使…宽松下垂【vi.】宽松下垂",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "ce73b675-e97e-43c0-809d-01c6ae870b1a",
+      "word": "blue",
+      "definition": "【adj.】蓝色的；沮丧的，忧郁的；下流的【n.】蓝色；（美国海、陆、空三军穿的）蓝色制服；蓝颜料；布鲁斯（歌曲）（一种伤感的美国黑人民歌【vi.】变成蓝色，呈蓝色【vt.】把…染成蓝色；使成蓝色；给…用上蓝剂；用上蓝剂于",
+      "part_of_speech": "adj., n., vi., vt."
+    },
+    {
+      "id": "ffd76908-3934-4acf-9711-2aec7aafa38f",
+      "word": "board",
+      "definition": "【n.】董事会；木板；甲板；膳食【vt.】上（飞机、车、船等）；用板盖上；给提供膳宿【vi.】寄宿",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "85f39cf5-0f6f-4469-94a4-d17752473afc",
+      "word": "boat",
+      "definition": "【n.】小船；轮船【vi.】划船",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "e6e44cdd-90b8-4579-ac04-c0e281d83050",
+      "word": "boil",
+      "definition": "【n.】沸腾，煮沸；疖子【vt.】煮沸，烧开；使…激动；使…蒸发【vi.】煮沸，沸腾；激动，激昂",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "ce05d4f6-cca8-469e-b0e9-c1fe907104bd",
+      "word": "book",
+      "definition": "【n.】书籍；卷；帐簿；名册；工作簿【vt.】预订；登记",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "d6a75004-3458-4a13-91a6-802918e6d21d",
+      "word": "bookshelf",
+      "definition": "书架",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "580a8918-b73f-4818-83c9-8d2bae96f7fc",
+      "word": "bookshop",
+      "definition": "书店",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "de81dff5-32f3-49f4-8535-92cc7ac9ec5e",
+      "word": "boot",
+      "definition": "【n.】靴子；踢；汽车行李箱【vt.】引导；踢；解雇；使穿靴",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "8b273976-299f-4b02-982f-abfd65c12b16",
+      "word": "boring",
+      "definition": "【n.】钻孔【adj.】无聊的；令人厌烦的【v.】钻孔；使厌烦；挖空（bore的ing形式）",
+      "part_of_speech": "n., adj., v."
+    },
+    {
+      "id": "2984b37c-d168-4334-892e-649bb4bff2d5",
+      "word": "bottle",
+      "definition": "【n.】瓶子；一瓶的容量【vt.】控制；把…装入瓶中【vi.】（街头艺人演出后）收拢钱币",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "05322e59-513e-4a5d-9d2a-acc687856512",
+      "word": "bottom",
+      "definition": "【n.】底部；末端；臀部；尽头【adj.】底部的【vt.】装底；测量深浅；查明真相【vi.】到达底部；建立基础",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "18c56c9d-365a-4d69-be23-d15ff7db38a4",
+      "word": "bowl",
+      "definition": "【n.】碗；木球；大酒杯【vt.】投球；旋转；平稳快速移动【vi.】玩保龄球；滑动；平稳快速移动",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "3b0f257e-70d5-4086-bc6f-5595e59fe17c",
+      "word": "brake",
+      "definition": "【n.】闸，刹车；阻碍【vt.】刹车【vi.】刹车",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "e32fab51-4a39-41d3-8b08-dbf6c0b3df36",
+      "word": "break",
+      "definition": "【vi.】打破；折断；弄坏；削弱【vt.】（使）破；打破（纪录）；（常指好天气）突变；开始【vi.】（嗓音）突变；突破；破晓；（价格）突然下跌【n.】破裂；间断；（持续一段时间的状况的）改变；间歇",
+      "part_of_speech": "vi., vt., vi., n."
+    },
+    {
+      "id": "c38e662c-e050-4bc7-918c-1b68c59daa67",
+      "word": "breakfast",
+      "definition": "【n.】早餐；早饭【vt.】为…供应早餐【vi.】吃早餐",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "13202814-51c8-49c2-89b7-8478b4603bda",
+      "word": "bridge",
+      "definition": "【n.】桥；桥牌；桥接器；船桥【vt.】架桥；渡过",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "16ba48ec-1ced-4b15-a17a-6499783e1d83",
+      "word": "brother",
+      "definition": "【n.】兄弟；同事；战友【int.】我的老兄！",
+      "part_of_speech": "n., int."
+    },
+    {
+      "id": "cbca8502-2d4c-4cb2-a047-b923b9ea449f",
+      "word": "brown",
+      "definition": "【n.】褐色，棕色【adj.】棕色的，褐色的；太阳晒黑的【vt.】使变成褐色【vi.】变成褐色",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "0ba1340b-2722-4b97-97d5-00a07801c029",
+      "word": "building",
+      "definition": "【n.】建筑；建筑物【v.】建筑；建立；增加（build的ing形式）",
+      "part_of_speech": "n., v."
+    },
+    {
+      "id": "c0277ead-a1d5-4560-b3e9-3b6162370976",
+      "word": "burger",
+      "definition": "汉堡包",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "15fdfa19-406a-459a-89d6-cb31e79e525e",
+      "word": "burn",
+      "definition": "【n.】灼伤，烧伤；烙印【vt.】燃烧；烧毁，灼伤；激起…的愤怒【vi.】燃烧；烧毁；发热",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "79d675ac-4cfc-4d09-815b-300c19127568",
+      "word": "bus station",
+      "definition": "【n.】公共汽车站；（尤指）长途汽车站；公车站；公交车站；巴士站",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "437b93a5-7da6-4179-844f-6fbac9fa7f57",
+      "word": "businessman",
+      "definition": "商人",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "1ad81582-189d-4182-8b3a-6f89d7307809",
+      "word": "butter",
+      "definition": "【n.】黄油；奶油；奉承话【vt.】涂黄油于；讨好",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "10b8c940-9c28-40f2-a6e6-eb1869a76004",
+      "word": "café",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "05086535-d5fe-479a-9d79-6020548ef791",
+      "word": "cake",
+      "definition": "【n.】蛋糕；块状物；利益总额【vt.】使结块【vi.】结成块状",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "1514fc42-11f6-4e6a-a6bc-21fa70491a8f",
+      "word": "camera",
+      "definition": "照相机；摄影机",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "cbd1c659-8531-4eaa-a646-ba53068759e8",
+      "word": "camp",
+      "definition": "【n.】露营【vt.】扎营；使扎营【vi.】露营；扎营",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "2149e9f0-573e-4a50-a0b8-cd90ac73d589",
+      "word": "campsite",
+      "definition": "营地",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "3f1df99b-b876-4398-a61b-3ffc652a79d3",
+      "word": "canal",
+      "definition": "【n.】运河； 水道； 管道；灌溉水渠【vt.】在…开凿运河",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "250cc6b5-1bc0-487a-ba5f-c46a179e370d",
+      "word": "cancer",
+      "definition": "巨蟹座",
+      "part_of_speech": ""
+    },
+    {
+      "id": "6ad654a7-eb2b-4a1c-a9e7-3c9aa72c716c",
+      "word": "card",
+      "definition": "【n.】卡片；纸牌；明信片【vt.】记于卡片上",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "266d57cf-fffd-4d00-8a24-3c6ae6111c15",
+      "word": "carrot",
+      "definition": "【n.】胡萝卜；诱饵",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "00a11a62-2653-4d0b-9ca5-0495caa36c82",
+      "word": "carry",
+      "definition": "【n.】运载； 进位；射程【vi.】能达到；被携带；被搬运【vt.】拿，扛；携带；支持；搬运",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "2eebfd52-d96b-4a69-8225-200601bc60ca",
+      "word": "cash",
+      "definition": "【n.】现款，现金【vt.】将…兑现；支付现款",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "29b2d6bc-051a-4471-a823-83a67ecd3253",
+      "word": "cassette",
+      "definition": "盒式磁带；暗盒；珠宝箱；片匣",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "1dc059d3-309e-4e83-8d12-c367cc22fa7b",
+      "word": "cassette player",
+      "definition": "【un.】盒式放音机；卡式录音机；盒式录音机；录放机",
+      "part_of_speech": "un."
+    },
+    {
+      "id": "abab0578-4e26-4652-b618-3a0fa783cd7c",
+      "word": "cassette recorder",
+      "definition": "【un.】盒式磁带录音机；盒式录音机；卡式录音机；磁带卡录音机",
+      "part_of_speech": "un."
+    },
+    {
+      "id": "df95ebe6-fa57-4ba7-a1b7-85d8d4216dcb",
+      "word": "castle",
+      "definition": "【n.】城堡；象棋中的车【vt.】置…于城堡中；筑城堡防御",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "988006a0-9e0b-40ae-8a6c-4746f2f1ebca",
+      "word": "catch",
+      "definition": "【n.】捕捉；捕获物；窗钩【vt.】赶上；抓住；感染；了解【vi.】赶上；抓住",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "1e9654b9-5ca4-4830-9faf-33c2c693df2f",
+      "word": "cathedral",
+      "definition": "大教堂",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "e0818875-5a48-4604-b8b3-dbd8c24ff883",
+      "word": "centimeter",
+      "definition": "厘米； 公分",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "5dbdbf12-897e-4010-b0f0-f624be3dc9e3",
+      "word": "centre",
+      "definition": "【n.】中心【adj.】中央的【vt.】集中；将…放在中央【vi.】以…为中心",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "7b42860a-eb85-45a8-82d3-084e843b58dd",
+      "word": "chair",
+      "definition": "【n.】椅子；讲座；（会议的）主席位；大学教授的职位【vt.】担任（会议的）主席；使…入座；使就任要职",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "38999d71-3990-4f56-877b-e0c6a85854b4",
+      "word": "change",
+      "definition": "【n.】变化；找回的零钱【vt.】改变；交换【vi.】改变；兑换",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "2ece5592-505e-4e38-83e6-0093a21b0e49",
+      "word": "cheap",
+      "definition": "【adj.】便宜的；小气的；不值钱的【adv.】便宜地",
+      "part_of_speech": "adj., adv."
+    },
+    {
+      "id": "e8dcced7-1c1b-4f88-a3a5-1be87f033b57",
+      "word": "check",
+      "definition": "【n.】<美>支票；制止，抑制；检验，核对【vi.】核实，查核；中止；打勾；将一军【vt.】检查，核对；制止，抑制；在…上打勾",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "14981d88-6ad7-4ac0-a517-2678d534dd3b",
+      "word": "cheese",
+      "definition": "【n.】奶酪；干酪；要人【adj.】叛变的；胆小的【vt.】停止",
+      "part_of_speech": "n., adj., vt."
+    },
+    {
+      "id": "b45efa72-fbbc-4b0d-b503-2ed63992145b",
+      "word": "chemist",
+      "definition": "化学家；化学工作者；药剂师；炼金术士",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "d048f585-97ee-40d0-8d84-9f0410d786b0",
+      "word": "cheque",
+      "definition": "支票",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "cfa5df9a-f90a-491a-9f2e-dd3254a20840",
+      "word": "chicken",
+      "definition": "【n.】鸡肉；小鸡；胆小鬼，懦夫【adj.】鸡肉的；胆怯的；幼小的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "8e114570-b9dc-4440-a9f4-ce8bb667688f",
+      "word": "child",
+      "definition": "儿童，小孩，孩子；产物；子孙；幼稚的人；弟子",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "fe7fb737-f804-4dac-aafd-3b594b7647cc",
+      "word": "chips",
+      "definition": "炸土豆条；小木片；（作赌注用的）圆形筹码；缺口（chip的复数形式）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "dcd13261-1883-48c3-b968-0e30da1cb9a7",
+      "word": "chocolate",
+      "definition": "【n.】巧克力，巧克力糖；巧克力色【adj.】巧克力色的；巧克力口味的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "d1057a39-7394-4cdd-90cd-163469df6d87",
+      "word": "church",
+      "definition": "【n.】教堂；礼拜；教派【adj.】教会的；礼拜的【vt.】领…到教堂接受宗教仪式",
+      "part_of_speech": "n., adj., vt."
+    },
+    {
+      "id": "4c25348c-2696-4c37-aa4d-13362335de94",
+      "word": "cinema",
+      "definition": "电影；电影院；电影业，电影制作术",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "1c70e92a-36f5-46eb-9ecd-70e4a25b69bd",
+      "word": "city",
+      "definition": "【n.】城市，都市【adj.】城市的；都会的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "121e5ab5-f59f-4f28-bd08-35478c64ef88",
+      "word": "cleaner",
+      "definition": "清洁剂；清洁工；干洗店；干洗商；洗洁器",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "69e32366-4d81-4f9f-ab6d-463160ef1b26",
+      "word": "clever",
+      "definition": "聪明的；机灵的；熟练的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "04931605-a818-4d34-b521-54b32258e864",
+      "word": "climb",
+      "definition": "【n.】爬；攀登【vi.】爬；攀登；上升【vt.】爬；攀登；上升",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "b88c5b06-541e-42f1-b6d8-33daf6351623",
+      "word": "closed",
+      "definition": "【v.】关；结束；接近（close的过去分词）【adj.】关着的；不公开的",
+      "part_of_speech": "v., adj."
+    },
+    {
+      "id": "69527a52-5479-4114-834b-0fdc45c1de1e",
+      "word": "clothes",
+      "definition": "衣服",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "051ea56b-4899-4934-acf7-327e020a0c32",
+      "word": "cloud",
+      "definition": "【n.】云；阴云；云状物；一大群；黑斑【vt.】使混乱；以云遮敝；使忧郁；玷污【vi.】阴沉；乌云密布",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "4e4209eb-fabd-462d-abab-7702993765da",
+      "word": "club",
+      "definition": "【n.】俱乐部，社团；夜总会；棍棒；（扑克牌中的）梅花【adj.】俱乐部的【vt.】用棍棒打；募集【vi.】集资；组成俱乐部",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "9a917fa3-2a2d-478e-940b-9403df952f73",
+      "word": "coach",
+      "definition": "【n.】教练；旅客车厢；长途公车；四轮大马车【vt.】训练；指导【vi.】作指导；接受辅导；坐马车旅行【n.】蔻驰（皮革品牌）",
+      "part_of_speech": "n., vt., vi., n."
+    },
+    {
+      "id": "895b44fa-1396-4fea-b90d-34faba8ec96a",
+      "word": "coat",
+      "definition": "【n.】外套【vt.】覆盖…的表面",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "4a76783b-7cf5-444a-a01b-3b79d6c02180",
+      "word": "coffee",
+      "definition": "咖啡；咖啡豆；咖啡色",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "54804b96-15d1-493c-b22a-721f2edf6c03",
+      "word": "cold",
+      "definition": "【n.】寒冷；感冒【adj.】寒冷的；冷淡的，不热情的；失去知觉的【adv.】完全地",
+      "part_of_speech": "n., adj., adv."
+    },
+    {
+      "id": "584e30a4-307f-4d44-81fa-e2eafee35186",
+      "word": "colleague",
+      "definition": "同事，同僚",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "ff4bdaa2-3daa-4b83-9ec4-f2d9a1be6091",
+      "word": "college",
+      "definition": "大学；学院；学会",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "81737719-bdf6-4241-aea8-8c4783bd86b5",
+      "word": "comb",
+      "definition": "【n.】梳子；蜂巢；鸡冠【vt.】梳头发；梳毛【vi.】（浪）涌起",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "7dcc445c-e54c-431b-a58d-aeb4d89ab861",
+      "word": "comfortable",
+      "definition": "【n.】盖被【adj.】舒适的，舒服的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "c299a297-68bb-4307-bd94-d620ef198dce",
+      "word": "company",
+      "definition": "【n.】公司；陪伴，同伴；连队【vt.】陪伴【vi.】交往",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "7fe488b5-004f-4b48-85dc-e0edf4f63081",
+      "word": "competition",
+      "definition": "竞争；比赛，竞赛",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "241eef40-d6ee-4392-9acd-f3099200a56a",
+      "word": "computer",
+      "definition": "计算机；电脑；电子计算机",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a378eee5-2e6f-4d60-a842-439981446e60",
+      "word": "concert",
+      "definition": "【n.】音乐会；一致；和谐【adj.】音乐会用的；在音乐会上演出的【vt.】使协调；协同安排【vi.】协调；协力",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "73c1ba1c-6b51-4ecd-960e-40190755bd54",
+      "word": "conversation",
+      "definition": "交谈，会话；社交；交往，交际；会谈；（人与计算机的）人机对话",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "25c016b2-4675-4426-9921-32bca933016c",
+      "word": "cook",
+      "definition": "【n.】厨师，厨子【vt.】烹调，煮【vi.】烹调，做菜",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "c5c204d0-a6c7-473a-aac5-e102b98acbc2",
+      "word": "cooker",
+      "definition": "炊具；烹饪用水果；窜改者",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "3daa2e67-8744-4d07-9cfa-9eef22939269",
+      "word": "corner",
+      "definition": "【n.】角落，拐角处；地区，偏僻处；困境，窘境【vt.】垄断；迫至一隅；使陷入绝境；把…难住【vi.】囤积；相交成角",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "519f0883-ed66-4688-a90f-7de11ce79372",
+      "word": "cost",
+      "definition": "【n.】费用，代价，成本；损失【vt.】花费；使付出；使花许多钱【vi.】花费",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "8b5f5df5-0b8f-4697-8316-a85fead513ef",
+      "word": "country",
+      "definition": "【n.】国家，国土；国民；乡下，农村；乡村；故乡【adj.】祖国的，故乡的；地方的，乡村的；国家的；粗鲁的；乡村音乐的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "68935cdb-33d6-4273-8719-a31c0b4e8ecb",
+      "word": "countryside",
+      "definition": "农村，乡下；乡下的全体居民",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "6cf4d5e8-734c-456a-af74-2fd0aaccef63",
+      "word": "course",
+      "definition": "【n.】科目；课程；过程；进程；道路；路线，航向；一道菜【vt.】追赶；跑过【vi.】指引航线；快跑",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "37490254-a251-4de7-93a4-a037180783e4",
+      "word": "cousin",
+      "definition": "堂兄弟姊妹；表兄弟姊妹",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "765dce30-4416-4c90-90bc-075188e5e736",
+      "word": "cream",
+      "definition": "奶油，乳脂；精华；面霜；乳酪",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "18a679ad-a08d-4a00-9342-08be43da3e7c",
+      "word": "credit card",
+      "definition": "【n.】信用卡；贷记卡；申请信用卡；意思是信用卡",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "74fd55d6-b72c-48a9-afad-b2b883527ab6",
+      "word": "cross",
+      "definition": "【n.】交叉，十字；十字架，十字形物【adj.】交叉的，相反的；乖戾的；生气的【vt.】杂交；渡过；使相交【vi.】交叉；杂交；横过",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "d9545e03-6620-4bff-bb86-72a090543bc5",
+      "word": "crossroads",
+      "definition": "十字路口；交叉路口；聚会的中心地点（crossroad的复数形式）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "df4b1f00-5b8a-4f14-87b9-b30e2f6b0103",
+      "word": "crowded",
+      "definition": "【adj.】拥挤的；塞满的【v.】拥挤（crowd的过去分词）",
+      "part_of_speech": "adj., v."
+    },
+    {
+      "id": "2dda0ac6-d5ba-4271-a43d-7db7bd540dc1",
+      "word": "cupboard",
+      "definition": "碗柜；食橱",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "9113ec4b-705a-4e35-b1ea-ef3293b160b2",
+      "word": "customer",
+      "definition": "顾客；家伙",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "4d08ca27-ad67-452a-86e2-c163097296ff",
+      "word": "dad",
+      "definition": "爸爸；爹爹",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "26e03ab1-5184-4d6c-8f13-93cfe1dd5ae2",
+      "word": "dangerous",
+      "definition": "【adj.】危险的；危险地",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "2cf42e83-a694-48ce-968a-828160c476bd",
+      "word": "dark",
+      "definition": "【n.】黑暗；夜；黄昏；模糊【adj.】黑暗的，深色的；模糊的；无知的；忧郁的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "91c9c48b-9cf7-446f-895a-6fb868b99466",
+      "word": "daughter",
+      "definition": "【n.】女儿； 子代【adj.】女儿的；子代的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "2d18f7ee-5274-478e-8ccc-a892aa35f771",
+      "word": "dead",
+      "definition": "【n.】死者【adj.】无生命的；呆板的；废弃了的【adv.】完全地",
+      "part_of_speech": "n., adj., adv."
+    },
+    {
+      "id": "3b3b5c8c-6740-4b2e-b147-54a582d8442b",
+      "word": "December",
+      "definition": "十二月",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "d4fd517b-939d-4b1c-9422-000dc6b523e6",
+      "word": "degree",
+      "definition": "程度，等级；度；学位；阶层",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "8e60ad8a-9229-4e82-b568-4abaeaba2138",
+      "word": "delay",
+      "definition": "【n.】延期；耽搁；被耽搁或推迟的时间【vt.】延期；耽搁【vi.】延期；耽搁",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "d1a31909-f758-4a2f-887d-4bbd15c90dce",
+      "word": "dentist",
+      "definition": "【n.】牙科医生；牙医诊所",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "7eb7454b-a5fc-4681-b99a-050fd8aef5ba",
+      "word": "department store",
+      "definition": "【n.】百货公司；大百货商店；百货商场；百货店；百货大楼",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "6b6d8fd8-6ca7-4ecd-b0cf-b2371c879ba3",
+      "word": "dictionary",
+      "definition": "字典；词典",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a6f09d31-23b1-4e00-ae2c-a3c505a0f42a",
+      "word": "die",
+      "definition": "【n.】冲模，钢模；骰子【vi.】死亡；凋零；熄灭【vt.】死，死于…",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "e1a30255-ddd1-4f87-aaaf-4eada3932350",
+      "word": "difficult",
+      "definition": "困难的；不随和的；执拗的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "e3174156-c4f0-4fc9-9b9d-172e6de00d35",
+      "word": "dining room",
+      "definition": "【n.】饭厅；餐厅；食堂；餐室；厨房",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "ec2f33f0-3fd5-4fbb-ad61-89ff0a12c41a",
+      "word": "dinner",
+      "definition": "晚餐，晚宴；宴会；正餐",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "583b1e1c-0b6f-4022-abf8-e3b744904f4b",
+      "word": "diploma",
+      "definition": "【n.】毕业证书，学位证书；公文，文书；奖状【vt.】发给…毕业文凭",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "5d30d1be-0cab-4dc6-b81a-f44672c810a7",
+      "word": "disco",
+      "definition": "迪斯科舞厅；的士高",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "bf38cc6e-5dee-4fec-97e5-bffaa536b355",
+      "word": "dish",
+      "definition": "【n.】盘；餐具；一盘食物；外貌有吸引力的人【vt.】盛于碟盘中；分发；使某人的希望破灭；说（某人）的闲话【vi.】成碟状；闲谈",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "5bf5362b-5c23-4ac5-9a11-d35013d8e568",
+      "word": "doctor",
+      "definition": "【vt.】修理；篡改，伪造；为…治病；授以博士学位【n.】医生；博士【vi.】就医；行医",
+      "part_of_speech": "vt., n., vi."
+    },
+    {
+      "id": "df09286c-7629-4352-ab9f-2dee4c3c335c",
+      "word": "dollar",
+      "definition": "美元",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "1fa91d44-854c-4381-a82a-dbb30ba0a2ec",
+      "word": "downstairs",
+      "definition": "【n.】楼下【adj.】楼下的【adv.】在楼下",
+      "part_of_speech": "n., adj., adv."
+    },
+    {
+      "id": "6b615323-eff7-49f7-8a05-c7180ed2f67d",
+      "word": "dress",
+      "definition": "【n.】连衣裙；女装【vt.】给…穿衣【vi.】穿衣",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "b3b5726d-c4b6-4762-bcb7-fc513716c581",
+      "word": "drink",
+      "definition": "【n.】酒，饮料；喝酒【vt.】喝，饮；吸收；举杯庆贺【vi.】喝酒；饮水；干杯",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "1b85b24b-40e3-46dd-b538-ca8aebe406cc",
+      "word": "driver",
+      "definition": "驾驶员；驱动程序；起子；传动器",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "0b0bc325-1750-4803-bdeb-16f5a85c10f7",
+      "word": "driving licence",
+      "definition": "【n.】驾照；驾驶执照；驾驶许可证；驾驶证；汽车驾驶执照",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a718d3b6-53b5-4bc4-99c1-fa69f7bd40ba",
+      "word": "drum",
+      "definition": "【n.】鼓；鼓声【vi.】击鼓；大力争取【vt.】击鼓；大力争取",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "4d2e07ae-ff71-4a75-b506-1b9d97e98ea4",
+      "word": "earn",
+      "definition": "赚，赚得；获得，挣得；使得到；博得",
+      "part_of_speech": "vt."
+    },
+    {
+      "id": "386316b4-8d67-45ea-b964-0a2cd81c1009",
+      "word": "east",
+      "definition": "【n.】东方；东风；东方国家【adj.】东方的；向东的；从东方来的【adv.】向东方，在东方",
+      "part_of_speech": "n., adj., adv."
+    },
+    {
+      "id": "2d07fa94-5a4a-4e0c-80be-345378d1f9da",
+      "word": "email",
+      "definition": "【n.】电子信函【vt.】给…发电子邮件",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "2bad01fc-d5e2-48b1-b359-ace1944a04f4",
+      "word": "engine",
+      "definition": "引擎，发动机；机车，火车头；工具",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "2472f296-39a8-43a3-a9e4-d1881c85c83e",
+      "word": "engineer",
+      "definition": "【n.】工程师；工兵；火车司机【vt.】设计；策划；精明地处理【vi.】设计；建造",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "b4ba1cb5-e1a0-4671-9725-693cc093f037",
+      "word": "entrance",
+      "definition": "【n.】入口；进入【vt.】使出神，使入迷",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "ddfd1b8c-081a-4110-9e27-03b9e1fc403c",
+      "word": "Euro",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "beed84b1-11c1-4f1f-94c1-a397c7564e55",
+      "word": "evening",
+      "definition": "【n.】晚上；傍晚；（联欢性的）晚会；后期【adj.】在晚上的；为晚上的；晚上用的【int.】晚上好（等于good evening）",
+      "part_of_speech": "n., adj., int."
+    },
+    {
+      "id": "20308e1e-73a3-496d-a85e-1f8565c825cf",
+      "word": "exam",
+      "definition": "考试；测验",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "13b93acc-bad3-47b9-a72b-e37249068211",
+      "word": "examination",
+      "definition": "考试；检查；查问",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "4e13a39c-3d84-4190-bd3d-8a1a47637139",
+      "word": "example",
+      "definition": "【n.】例子；榜样【vt.】作为…的例子；为…做出榜样【vi.】举例",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "59fbd9d1-41eb-45f8-a1f3-a518648cb72e",
+      "word": "excellent",
+      "definition": "卓越的；极好的；杰出的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "a6376097-56a4-468f-94ef-591a1d818d97",
+      "word": "exhibition",
+      "definition": "展览，显示；展览会；展览品",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "eb3fa403-7b76-4589-b96f-28fefcf9f25a",
+      "word": "exit",
+      "definition": "【n.】出口，通道；退场【vi.】退出；离去",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "330f882f-4ab2-45fa-8e87-70da0f9f8fae",
+      "word": "expensive",
+      "definition": "昂贵的；花钱的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "38354b97-be75-4baf-a005-3a98e6f0b962",
+      "word": "factory",
+      "definition": "工厂；制造厂；代理店",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "2a2f0cb6-44b7-4e24-beec-47253d45ec71",
+      "word": "fail",
+      "definition": "【n.】不及格【vi.】失败，不及格；破产；缺乏；衰退【vt.】不及格；使失望；忘记；舍弃",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "21088ce6-b01b-4aa7-b481-065f1474d393",
+      "word": "fall",
+      "definition": "【n.】下降；秋天；瀑布【adj.】秋天的【vi.】落下；变成；来临；减弱【vt.】砍倒；击倒",
+      "part_of_speech": "n., adj., vi., vt."
+    },
+    {
+      "id": "07fa48f7-f594-4a89-abcf-4d63aee529bb",
+      "word": "family",
+      "definition": "【n.】家庭；亲属；家族；子女；科；语族；族【adj.】家庭的；家族的；适合于全家的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "7d591330-563c-4124-b8f2-07b129ccbf21",
+      "word": "famous",
+      "definition": "著名的；极好的，非常令人满意的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "7e65c82f-185c-4216-89ef-7dd54a8d3df0",
+      "word": "farm",
+      "definition": "【n.】农场；农家；畜牧场【vt.】养殖；耕种；佃出（土地）【vi.】种田，务农；经营农场",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "5d28c847-3417-43de-b44e-602f1e4644c1",
+      "word": "father",
+      "definition": "【n.】父亲，爸爸；神父；祖先；前辈【vt.】发明，创立；当…的父亲",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "40c391f3-d6d2-4df0-b388-00905671313c",
+      "word": "February",
+      "definition": "二月",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "909edc1e-b546-4c52-b102-cbbcd55abb0a",
+      "word": "feel",
+      "definition": "【n.】感觉；触摸【vi.】觉得；摸索【vt.】感觉；认为；触摸；试探",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "51fd5b3f-3798-4a6e-a01f-b72c59e941bf",
+      "word": "field",
+      "definition": "【n.】领域；牧场；旷野；战场；运动场【adj.】扫描场；田赛的；野生的【vt.】把暴晒于场上；使上场【vi.】担任场外队员",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "6e07d091-6e40-496a-9e80-1558d1853e01",
+      "word": "fire",
+      "definition": "【n.】火；火灾；炮火；炉火；热情；激情；磨难【vt.】点燃；解雇；开除；使发光；烧制；激动；放枪【vi.】着火；射击；开枪；激动；烧火",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "c32294f7-579c-4f31-9e4d-c6233e4515c4",
+      "word": "flat",
+      "definition": "【n.】平地；公寓；平面【adj.】平的；单调的；不景气的；干脆的；平坦的；扁平的；浅的【vi.】逐渐变平；以降调唱（或奏）【vt.】使变平；使（音调）下降，尤指降半音【adv.】（尤指贴着另一表面）平直地；断然地；水平地；直接地，完全地",
+      "part_of_speech": "n., adj., vi., vt., adv."
+    },
+    {
+      "id": "b960b5b4-63b1-4a78-8244-f2ea14ac5612",
+      "word": "flight",
+      "definition": "【n.】飞行；班机；逃走【vt.】射击；使惊飞【vi.】迁徙",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "a360a505-e52b-4958-bb9a-2af5d8a0f2d3",
+      "word": "floor",
+      "definition": "【n.】地板，地面；楼层；基底；议员席【vt.】铺地板；打倒，击倒；（被困难）难倒",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "b96fba3c-dc9c-4073-9728-fa73e02113d1",
+      "word": "flower",
+      "definition": "【n.】花；精华；开花植物【vt.】使开花；用花装饰【vi.】成熟，发育；开花；繁荣；旺盛",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "f0b0572f-3741-467c-92aa-20369a1c3b38",
+      "word": "fog",
+      "definition": "【n.】雾；烟雾，尘雾；迷惑【vt.】使模糊；使困惑；以雾笼罩【vi.】被雾笼罩；变模糊",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "e935ff32-278d-4d7b-a247-f37694e20fcf",
+      "word": "foggy",
+      "definition": "有雾的；模糊的，朦胧的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "373197df-f623-4852-b13c-4e7f7f30b761",
+      "word": "football",
+      "definition": "【n.】足球，橄榄球【vi.】踢足球；打橄榄球",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "d0dce113-fc06-4148-ae6b-ec2112cb075a",
+      "word": "for sale",
+      "definition": "【na.】出售(的)；待售；供出售；出售的",
+      "part_of_speech": "na."
+    },
+    {
+      "id": "485a5ba1-aa75-407b-b075-fd77185d23ed",
+      "word": "forest",
+      "definition": "【n.】森林【vt.】植树于，使成为森林",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "59c23f75-e5e5-49f7-9ca1-f352b0722af6",
+      "word": "fork",
+      "definition": "【n.】叉；餐叉；耙【vt.】叉起；使成叉状【vi.】分叉；分歧",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "a130f2d0-d13e-488e-8b8f-fa781c596c66",
+      "word": "form",
+      "definition": "【n.】形式，形状；形态，外形；方式；表格【vt.】构成，组成；排列，组织；产生，塑造【vi.】形成，构成；排列",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "2513b203-f15e-4ea0-a8a4-683428b3f5f5",
+      "word": "Friday",
+      "definition": "星期五",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "1e26e5b7-14c0-40a6-8533-f29987754193",
+      "word": "fridge",
+      "definition": "电冰箱",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "6fce3e49-8148-4109-ab42-b96791812b4a",
+      "word": "fried",
+      "definition": "【adj.】油炸的，油煎的；喝醉了的【v.】油炸（fry的过去分词）",
+      "part_of_speech": "adj., v."
+    },
+    {
+      "id": "d22261c7-553d-48a4-afee-f98625db6309",
+      "word": "friend",
+      "definition": "朋友；助手；赞助者",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "acfd4254-437f-42ba-8e40-a0d8e8d050c7",
+      "word": "fruit",
+      "definition": "【n.】水果；产物【vt.】使……结果实【vi.】结果实",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "7d21d5ab-99b0-4129-afd3-d674e72714da",
+      "word": "furniture",
+      "definition": "家具；设备；储藏物",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "cca9428d-d350-4918-a4e5-5228f02feb48",
+      "word": "game",
+      "definition": "【n.】游戏；比赛【adj.】勇敢的【vi.】赌博",
+      "part_of_speech": "n., adj., vi."
+    },
+    {
+      "id": "5c1ea681-d864-4772-b6c7-671d72dec2f7",
+      "word": "garage",
+      "definition": "【n.】车库；汽车修理厂；飞机库【vt.】把……送入车库；把（汽车）开进车库",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "5f6c1868-85c1-4ead-b6e1-6e6e185c3bc7",
+      "word": "garden",
+      "definition": "【n.】花园；菜园【vt.】栽培花木【vi.】从事园艺；在园中种植",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "599ecf05-249d-4d37-b7d6-ab0ab87b6d8c",
+      "word": "gate",
+      "definition": "【n.】大门；出入口；门道【vt.】给…装大门",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "4465e2b3-2247-4a14-a863-9665ac303890",
+      "word": "Geography",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "64d3ec6e-8486-46af-a1e7-dde97848fb64",
+      "word": "glasses",
+      "definition": "【n.】眼镜；玻璃（glass的复数形式）；双筒望远镜【v.】把…装入玻璃容器内；给…装上玻璃（glass的第三人称单数形式）",
+      "part_of_speech": "n., v."
+    },
+    {
+      "id": "53bfbeb2-7ad5-4f67-b31b-dec0363511c5",
+      "word": "golf",
+      "definition": "【n.】高尔夫球；高尔夫球运动【vi.】打高尔夫球",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "31ac9108-f809-40ba-840e-71e93189b4b9",
+      "word": "gram",
+      "definition": "克；鹰嘴豆（用作饲料）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "885f3ff5-7ab0-467e-b247-76af14f79973",
+      "word": "gramme",
+      "definition": "克",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "b348332c-f89f-4bd0-bd5b-68f46dc92037",
+      "word": "grandchild",
+      "definition": "孙子；孙女；外孙；外孙女",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "c1403bc0-0275-46b3-bc0a-144679652705",
+      "word": "granddaughter",
+      "definition": "孙女；外孙女",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "6d66a9cf-bb07-4485-9156-ec671ee80772",
+      "word": "grandfather",
+      "definition": "【n.】祖父；始祖【vt.】不受新规定限制",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "a55e0e40-2017-42f4-85ea-c75a8c49ec17",
+      "word": "grandmother",
+      "definition": "【n.】祖母；女祖先【vt.】当…的祖母【vi.】当祖母",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "0401859d-999a-46e4-af39-b2c82ca4e15d",
+      "word": "grandparent",
+      "definition": "祖父母；祖父或祖母；外祖父母；外祖父或外祖母",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "62c34681-b710-47ef-9cf8-56572c443f60",
+      "word": "grandson",
+      "definition": "孙子；外孙",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "d0bf6591-c9d0-46f1-ab17-a9b9cad2e2c8",
+      "word": "grape",
+      "definition": "葡萄；葡萄酒；葡萄树；葡萄色",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a2accfa4-a420-450c-aa90-d4f4b45b6c32",
+      "word": "grass",
+      "definition": "【n.】草；草地，草坪【vt.】放牧；使……长满草；使……吃草【vi.】长草",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "89a3e0ea-31f0-44f1-9c96-5bb821057d61",
+      "word": "green",
+      "definition": "【n.】绿色；青春【adj.】绿色的；青春的【vt.】使…变绿色【vi.】变绿色",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "358d72dd-ab55-4373-8c8a-5d35d1b0b53b",
+      "word": "grey",
+      "definition": "【n.】灰色【adj.】灰色的；灰白的【vt.】使变成灰色；使变老【vi.】变成灰色；老化",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "4ebc4110-ca04-4100-880a-0fc056b4b6ae",
+      "word": "grill",
+      "definition": "【n.】烤架，铁格子；烤肉【vi.】拷问，严加盘问【vt.】烧，烤；",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "7631ddb4-16e4-4d29-a483-6bca2248fbb4",
+      "word": "grilled",
+      "definition": "【adj.】烤的；有格子的【v.】炙烤（grill的过去式和过去分词）",
+      "part_of_speech": "adj., v."
+    },
+    {
+      "id": "d0bc7260-51d2-4826-af8d-ccc683d80a66",
+      "word": "grow",
+      "definition": "【vi.】发展；生长；渐渐变得…【vt.】使生长；种植；扩展",
+      "part_of_speech": "vi., vt."
+    },
+    {
+      "id": "3b54f122-72c2-4e77-9669-fd8eec7b2dfc",
+      "word": "guest",
+      "definition": "【n.】客人，宾客；顾客【adj.】客人的；特邀的，客座的【vt.】款待，招待【vi.】作客，寄宿",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "282cdb60-408c-4ac8-b2aa-cfc6fc21b20a",
+      "word": "guesthouse",
+      "definition": "宾馆；小型家庭旅馆",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "8e9141b8-4659-4d77-939b-10262445868b",
+      "word": "guide",
+      "definition": "【n.】指南；向导；入门书【vt.】引导；带领；操纵【vi.】担任向导",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "b4c8e566-3820-464e-9087-1d2cdde23f86",
+      "word": "guidebook",
+      "definition": "旅行指南；指导手册",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "73a543ee-f9c2-44dd-bbf7-0d4c98419c10",
+      "word": "guitar",
+      "definition": "【n.】吉他，六弦琴【vi.】弹吉他",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "8175c752-df4d-4b32-a2ea-9ee7879f3c5d",
+      "word": "hall",
+      "definition": "过道，门厅，走廊；会堂；食堂；学生宿舍；大厅，前厅；娱乐中心，会所",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "ee10f4d5-fe86-4d27-9e27-20e885b22ef0",
+      "word": "hat",
+      "definition": "【n.】帽子【vt.】给……戴上帽子【vi.】供应帽子；制造帽子",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "ec425a7d-f932-49c8-ab6a-1a6d1eca9833",
+      "word": "heart attack",
+      "definition": "【n.】心脏病发作；心肌梗塞；心脏病突发；突发性心脏病",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "5e5e4f3d-db81-4f8b-aa45-06cea9ddbaec",
+      "word": "helicopter",
+      "definition": "【n.】直升飞机【vt.】由直升机运送【vi.】乘直升飞机",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "3c758146-450d-4bbe-ba5e-e892142521d7",
+      "word": "hill",
+      "definition": "小山；丘陵；斜坡；山冈",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "8f418635-b5a8-42b1-94bb-3ed22a86359c",
+      "word": "History",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "9a6a0fee-45f9-40e2-8f98-090f1da2d892",
+      "word": "hobby",
+      "definition": "嗜好；业余爱好",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "18c00f01-a7c7-4d79-a1f5-4171f0d79b44",
+      "word": "hockey",
+      "definition": "曲棍球；冰球",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "12829d0d-929b-4635-9f86-eb95e07a3d6c",
+      "word": "holiday",
+      "definition": "【n.】假日；节日；休息日【vi.】外出度假",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "c2304812-489d-4292-9ef3-ff37710a4597",
+      "word": "homework",
+      "definition": "家庭作业，课外作业",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "e10267a5-1201-474e-b3a2-7b12e630f8ac",
+      "word": "hospital",
+      "definition": "医院",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "2fa1ab62-0b84-4d0f-af72-6a652765f6d8",
+      "word": "hot",
+      "definition": "【adj.】热的；辣的；热情的；激动的；紧迫的【vt.】增加；给…加温【adv.】热；紧迫地【vi.】变热",
+      "part_of_speech": "adj., vt., adv., vi."
+    },
+    {
+      "id": "13d27ecf-8bfa-405c-9048-f28ef3d263e9",
+      "word": "hotel",
+      "definition": "【n.】旅馆，饭店；客栈【vt.】使…在饭店下榻【vi.】进行旅馆式办公",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "25805795-0412-4716-b635-ccf8223003ba",
+      "word": "hungry",
+      "definition": "饥饿的；渴望的；荒年的；不毛的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "0c3b880a-15a3-4f63-ae65-c605b5eb2f84",
+      "word": "hurry",
+      "definition": "【n.】匆忙，急忙【v.】仓促（做某事）；催促；（朝某方向）迅速移动；迅速处理",
+      "part_of_speech": "n., v."
+    },
+    {
+      "id": "9d506fbc-8710-496a-9106-61951bb7ccb2",
+      "word": "hurt",
+      "definition": "【n.】痛苦；危害；痛苦的原因【vt.】使受伤；损害；使疼痛；使痛心【adj.】受伤的；痛苦的；受损的【vi.】感到疼痛；有坏处；带来痛苦",
+      "part_of_speech": "n., vt., adj., vi."
+    },
+    {
+      "id": "96bb799c-2597-4e65-861b-9988e5decce9",
+      "word": "husband",
+      "definition": "【n.】丈夫【vt.】节约地使用（或管理）",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "4eb64f84-493b-47b9-bbbc-6d08980f9a10",
+      "word": "ice",
+      "definition": "【n.】冰；冰淇淋；矜持；（俚）钻石【adj.】冰的【vt.】冰镇；结冰【vi.】结冰",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "63b60096-f968-4708-a407-09d70a16af1f",
+      "word": "ice cream",
+      "definition": "【n.】冰淇淋；冰激凌；雪糕；冰激淋",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "6b23b4ba-adbf-44eb-8f20-b2508088826b",
+      "word": "improve",
+      "definition": "【vt.】改善，增进；提高…的价值【vi.】增加；变得更好",
+      "part_of_speech": "vt., vi."
+    },
+    {
+      "id": "f65c69e0-bfe5-4614-8e74-eb5a4f5eb7e5",
+      "word": "information",
+      "definition": "信息，资料；知识；情报；通知",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "4a4dea61-16a0-4e3a-858c-b3425cace2c3",
+      "word": "instruction",
+      "definition": "指令，命令；指示；教导；用法说明",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "184a92e8-c0a5-4769-8bac-0f2a908979e8",
+      "word": "instructions",
+      "definition": "指令；说明（instruction的复数形式）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "e335693e-1530-479f-863c-17b12b56ec81",
+      "word": "insurance",
+      "definition": "保险；保险费；保险契约；赔偿金",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "1e65af7c-c533-49e3-b05a-0be595bbdd2c",
+      "word": "internet",
+      "definition": "因特网",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "da4b49ff-1efa-4bc4-8f74-87afe842dfca",
+      "word": "island",
+      "definition": "【n.】岛；岛屿；安全岛；岛状物【adj.】岛的【vt.】孤立；使成岛状",
+      "part_of_speech": "n., adj., vt."
+    },
+    {
+      "id": "9dd29757-5126-4720-a6f3-b0a99379ac7b",
+      "word": "jacket",
+      "definition": "【n.】羽绒滑雪衫；西装短外套；短上衣，夹克；土豆皮；书籍的护封；文件套，公文夹【vt.】给…穿夹克；给…装护套；给…包上护封；打",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "50829bb0-0568-464e-9b9b-f582351a6c36",
+      "word": "jam",
+      "definition": "【n.】果酱；拥挤；困境；扣篮【vt.】使堵塞；挤进，使塞满；混杂；压碎【vi.】堵塞；轧住",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "96afcadc-50d8-444e-ae64-059a241aee41",
+      "word": "January",
+      "definition": "一月",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "213a7b64-fd7e-489d-97b2-d769b16efd2e",
+      "word": "jeans",
+      "definition": "牛仔裤；工装裤",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "67c30a51-0344-4af3-9918-36e2fae27278",
+      "word": "journalist",
+      "definition": "新闻工作者；报人；记日志者",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "fe499ea7-0568-4053-828b-312f343846f3",
+      "word": "journey",
+      "definition": "【n.】旅行；行程【vi.】旅行",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "a4748561-56d0-4d60-9fc7-bfd9c2f8a30c",
+      "word": "juice",
+      "definition": "（水果）汁，液；果汁",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "9a57a99e-7f5f-4e4d-b359-6a7d55e00638",
+      "word": "July",
+      "definition": "七月",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "76c4aa82-58a0-48f2-b73f-afaf976aa62d",
+      "word": "June",
+      "definition": "六月；琼（人名，来源于拉丁语，含义是“年轻气盛的六月”）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a84b8d94-ac1a-4e99-b363-2aa494cd36b2",
+      "word": "kilo",
+      "definition": "千克",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "f1a4a537-b87a-4dc1-a307-50a4de02be58",
+      "word": "kilometre",
+      "definition": "公里； 千米",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "e4a4d918-3f46-4727-b09f-8467ca8a27a9",
+      "word": "kitchen",
+      "definition": "厨房；炊具；炊事人员",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "cd4b1d78-de41-4d2b-8445-5960f3c65e90",
+      "word": "knife",
+      "definition": "【n.】刀；匕首【vt.】用刀切；（口）伤害【vi.】劈开；划过",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "b01a230d-151b-4a6a-8eb2-7960494304cd",
+      "word": "lake",
+      "definition": "【n.】湖；深红色颜料；胭脂红【vt.】（使）血球溶解【vi.】（使）血球溶解",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "fa8bb70d-4063-4592-937e-f4876b9384d9",
+      "word": "language",
+      "definition": "语言；语言文字；表达能力",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "2a0bde24-f7a1-4ef4-8ef2-f8016fbc27fe",
+      "word": "learn",
+      "definition": "【vt.】学习；得知；认识到【vi.】学习；获悉",
+      "part_of_speech": "vt., vi."
+    },
+    {
+      "id": "b7c296c7-0b43-4dc0-ab41-292daa3dc58e",
+      "word": "leather",
+      "definition": "【n.】皮革；皮革制品【vt.】用皮革包盖；抽打【adj.】皮的；皮革制的",
+      "part_of_speech": "n., vt., adj."
+    },
+    {
+      "id": "2dc00677-6e2f-4085-8a7f-2bc562c53bbe",
+      "word": "leave",
+      "definition": "【vt.】离开；留下；遗忘；委托【vi.】离开，出发；留下【n.】许可，同意；休假",
+      "part_of_speech": "vt., vi., n."
+    },
+    {
+      "id": "5fd4ec05-7531-4a03-a610-c078fd1682bf",
+      "word": "left",
+      "definition": "【adj.】左边的；左派的；剩下的【adv.】在左面【n.】左边；左派；激进分子【v.】离开（leave的过去式）",
+      "part_of_speech": "adj., adv., n., v."
+    },
+    {
+      "id": "82390c0f-4ac0-4f19-a25d-40922b4cf8e7",
+      "word": "lemon",
+      "definition": "【adj.】柠檬色的【n.】柠檬",
+      "part_of_speech": "adj., n."
+    },
+    {
+      "id": "4f22d192-f97b-487a-bccc-85bf04fee6b6",
+      "word": "lemonade",
+      "definition": "柠檬水",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "b6d0c81f-171c-4c6d-99af-cf316722c9f1",
+      "word": "level",
+      "definition": "【n.】水平；标准；水平面【adj.】水平的；平坦的；同高的【vi.】瞄准；拉平；变得平坦【vt.】使同等；对准；弄平",
+      "part_of_speech": "n., adj., vi., vt."
+    },
+    {
+      "id": "79497e5e-2c91-42a8-b53f-5f8280973876",
+      "word": "library",
+      "definition": "图书馆，藏书室；文库",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "f5320b8f-972f-4de1-975f-330fe500fbe4",
+      "word": "licence",
+      "definition": "【n.】许可证，执照；特许【vt.】特许，许可；发给执照",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "a343f68d-d9c5-4aa8-a86d-ef5d1917eb8e",
+      "word": "lie down",
+      "definition": "【v.】躺下；不反抗；屈服；顺从；躺下不干；躺下来；躺倒",
+      "part_of_speech": "v."
+    },
+    {
+      "id": "47c725c2-ec64-4b59-b366-4613dfb0f4c5",
+      "word": "lift",
+      "definition": "【vt.】举起；提升；鼓舞；空运；抄袭【vi.】消散；升起；耸立【n.】电梯；举起；起重机；搭车",
+      "part_of_speech": "vt., vi., n."
+    },
+    {
+      "id": "ac26dbbb-ee2f-49ae-9149-94e912edbe6d",
+      "word": "light",
+      "definition": "【n.】光；光线；灯；打火机；领悟；浅色；天窗【adj.】轻的；浅色的；明亮的；轻松的；容易的；清淡的【vi.】点着；变亮；着火【vt.】照亮；点燃；着火【adv.】轻地；清楚地；轻便地",
+      "part_of_speech": "n., adj., vi., vt., adv."
+    },
+    {
+      "id": "eb2c3d80-07cb-4ec5-b65f-05db3fb266cc",
+      "word": "litre",
+      "definition": "公升（米制容量单位）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "1630e620-3029-4fa0-8512-dc45b9eb9bbd",
+      "word": "living room",
+      "definition": "【n.】客厅；起居室；客厅系列；起居定；小客厅",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "5e233c71-b55d-4c50-bfad-5019804a3f37",
+      "word": "lorry",
+      "definition": "（英）卡车； 货车；运料车",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "5d751ced-8ae0-4b2e-b09e-9df03dacce08",
+      "word": "love",
+      "definition": "【n.】恋爱；亲爱的；酷爱；喜爱的事物；爱情，爱意；疼爱；热爱；爱人，所爱之物【v.】爱，热爱；爱戴；赞美，称赞；喜爱；喜好；喜欢；爱慕",
+      "part_of_speech": "n., v."
+    },
+    {
+      "id": "d1e8dd70-bf64-47b2-807f-dd16114dc5e2",
+      "word": "luck",
+      "definition": "【n.】运气；幸运；带来好运的东西【vi.】靠运气，走运；凑巧碰上",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "034e54d9-83e3-4e2b-a206-564039a540dd",
+      "word": "luggage",
+      "definition": "行李；皮箱",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "577ad087-8486-47d3-bc17-0bc307eaabf3",
+      "word": "machine",
+      "definition": "【n.】机械，机器；机构；机械般工作的人【vt.】用机器制造",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "df8f2081-aea1-4aef-a627-9662af39788c",
+      "word": "magazine",
+      "definition": "杂志；弹药库；胶卷盒",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "539a7407-34c1-4632-bf49-61f8920854ba",
+      "word": "main course",
+      "definition": "【abbr.】(=mainsail)主要课程；主菜；主食；主餐；主帆",
+      "part_of_speech": "abbr."
+    },
+    {
+      "id": "055b33fc-983a-47cd-8fbb-7baf9246de5a",
+      "word": "March",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "ba681374-4e25-43fa-8d9e-2a487f186565",
+      "word": "market",
+      "definition": "【n.】市场；行情；股票市场；市面；集市；销路；商店【vt.】在市场上出售【vi.】做买卖",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "7c5fa06a-6549-424a-9021-3cd7bba6078b",
+      "word": "married",
+      "definition": "【adj.】已婚的，有配偶的；婚姻的，夫妇的；密切结合的【n.】已婚者【v.】结婚，与…结婚（marry的过去式）",
+      "part_of_speech": "adj., n., v."
+    },
+    {
+      "id": "ba3c015d-4a03-415a-b427-8e9e1add68dd",
+      "word": "Mathematics",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "c33ecb32-9769-4c49-ada9-06900e6eac29",
+      "word": "May",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "67b8a36d-3c88-4927-92b5-5a360bae4f06",
+      "word": "meal",
+      "definition": "【n.】一餐，一顿饭；膳食【vi.】进餐",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "587a0af9-dcab-47f1-bff1-cf318eab6650",
+      "word": "meat",
+      "definition": "肉，肉类（食用）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "56dabfd5-386b-41d7-8ae4-ec09e7c28e01",
+      "word": "mechanic",
+      "definition": "【n.】技工，机修工【adj.】手工的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "8e22ae96-8676-45f3-97e9-1990ecac5522",
+      "word": "medicine",
+      "definition": "【n.】药；医学；内科；巫术【vt.】用药物治疗；给…用药",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "4279b8c4-54e8-4beb-8285-c5e665d10dee",
+      "word": "member",
+      "definition": "成员；会员；议员",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "de0fd24a-a3d1-4ee0-8889-813992f2b704",
+      "word": "menu",
+      "definition": "【n.】菜单；饭菜",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "15bade8b-6fe6-4b14-ae7c-024e227962ed",
+      "word": "message",
+      "definition": "【n.】消息；差使；启示；预言；广告词【vi.】报信，报告； 报文【vt.】通知",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "40ec0500-0dd9-43cf-b639-b33800cad4f6",
+      "word": "midnight",
+      "definition": "【n.】午夜，半夜12点钟【adj.】半夜的；漆黑的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "1f37a6a2-0a88-406b-bb4e-3dfe295ef73b",
+      "word": "mile",
+      "definition": "英里；一英里赛跑；较大的距离",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "0a9497d7-9203-49e6-82ca-1b3de89e55d0",
+      "word": "mineral",
+      "definition": "【n.】矿物；（英）矿泉水；无机物；苏打水（常用复数表示）【adj.】矿物的；矿质的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "67564a54-bfa3-4e0f-98c5-7b4aa0fc4cf4",
+      "word": "minute",
+      "definition": "【n.】分，分钟；片刻，一会儿；备忘录，笔记；会议记录【vt.】将…记录下来【adj.】微小的，详细的",
+      "part_of_speech": "n., vt., adj."
+    },
+    {
+      "id": "5903c75f-53b5-4d45-b48a-fb0230db9bcf",
+      "word": "mirror",
+      "definition": "【n.】镜子；真实的写照；榜样【vt.】反射；反映",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "16f93e4c-85c8-4844-91cf-4defc01bd00c",
+      "word": "mobile",
+      "definition": "【adj.】可移动的；机动的；易变的；非固定的【n.】运动物体",
+      "part_of_speech": "adj., n."
+    },
+    {
+      "id": "21dd76b3-9ba3-49cc-8a7e-3d49b3f05b37",
+      "word": "mobile phone",
+      "definition": "【n.】手机；移动电话；手机号码；行动电话；手提电话",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "60aab209-5bb7-4093-b445-5a30b3e68664",
+      "word": "moment",
+      "definition": "片刻，瞬间，时刻；重要，契机",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a28f7ed9-71e5-4a59-a826-7efc11dcc425",
+      "word": "Monday",
+      "definition": "星期一",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "fdf3eccc-8444-4b7c-8832-c21c94d2aea7",
+      "word": "moon",
+      "definition": "【n.】月亮；月球；月光；卫星【vi.】闲荡；出神【vt.】虚度",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "037b2932-f1ee-4244-bde7-4ea73e287057",
+      "word": "morning",
+      "definition": "早晨；黎明；初期",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "357798d5-fa94-4169-9d84-1cb8cb64e07d",
+      "word": "mother",
+      "definition": "【n.】母亲；大娘；女修道院院长【vt.】生下；养育；像母亲般关怀或照管【adj.】母亲的；出生地的",
+      "part_of_speech": "n., vt., adj."
+    },
+    {
+      "id": "bf22579d-7843-453f-82ff-c65c7506e280",
+      "word": "motorway",
+      "definition": "高速公路，汽车高速公路",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "69027edb-f3cd-4a03-a3a3-48e59746fb87",
+      "word": "mountain",
+      "definition": "山；山脉",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "d09f1f3c-295d-4b4a-b486-29282a245dda",
+      "word": "mouse",
+      "definition": "【n.】鼠标；老鼠；胆小羞怯的人【vt.】探出【vi.】捕鼠；窥探",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "81a48b95-73ad-4f60-b13d-191d657c728f",
+      "word": "Mr.",
+      "definition": "先生",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "9f720d40-941d-46d4-936d-8d3947abc415",
+      "word": "Mrs.",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "0bacbe21-5a48-4c15-955f-e28e0721162c",
+      "word": "Ms.",
+      "definition": "女士",
+      "part_of_speech": ""
+    },
+    {
+      "id": "a5ff2c17-efc1-4bb3-bd28-0da3da2f49a4",
+      "word": "mum",
+      "definition": "【adj.】沉默的【n.】妈妈（口语）；沉默；菊花【vi.】演哑剧【int.】别说话",
+      "part_of_speech": "adj., n., vi., int."
+    },
+    {
+      "id": "8f9acc49-91d4-4de7-8881-707e7508a2f2",
+      "word": "museum",
+      "definition": "博物馆",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "9b8d0492-139a-4e5f-bb3c-d0eaed7602c0",
+      "word": "neighbour",
+      "definition": "【n.】n. 邻居;同胞；仁慈的人【vt.】邻接【vi.】住在邻近；毗邻；友善，和睦【adj.】邻居的；邻近的",
+      "part_of_speech": "n., vt., vi., adj."
+    },
+    {
+      "id": "4892159a-411d-47bc-ac82-a107df90636b",
+      "word": "newsagent",
+      "definition": "报刊经销商",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a3d3bead-0490-4b4d-b4d7-25526a317abc",
+      "word": "newspaper",
+      "definition": "【n.】报纸；报社；旧报纸",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "afeb8ff5-9916-4136-a9de-492b353ad15f",
+      "word": "night",
+      "definition": "【n.】夜晚，晚上；黑暗，黑夜【adj.】夜晚的，夜间的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "bee88938-8c44-4f48-9e34-1c4d7389c498",
+      "word": "noon",
+      "definition": "中午；正午；全盛期",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "fff678ba-f962-432e-8163-c4eb77a824d8",
+      "word": "north",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "2ccf9e5c-18c9-4505-951d-5656511c4000",
+      "word": "note",
+      "definition": "【n.】笔记；音符；票据；注解；纸币；便笺；照会；调子【vt.】注意；记录；注解",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "728170e3-4f9b-4ed3-848b-a159c3204c45",
+      "word": "November",
+      "definition": "十一月",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "f4830b5d-3e96-415e-9e3a-bcfe219816a7",
+      "word": "nurse",
+      "definition": "【vt.】看护，护理；照顾；培养；给…喂奶【vi.】照料，护理；喂奶；当保姆【n.】护士；奶妈，保姆",
+      "part_of_speech": "vt., vi., n."
+    },
+    {
+      "id": "13867dc1-4b77-4fcc-a439-df3e548ed04b",
+      "word": "occupation",
+      "definition": "职业；占有；消遣；占有期",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "bbeac8ae-5966-4114-9847-86efce994852",
+      "word": "October",
+      "definition": "十月",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "fe0a390c-ce7a-45ad-a7a5-624e04b67662",
+      "word": "omelette",
+      "definition": "煎蛋卷",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "f965bcc7-9c3b-4633-995b-f47fb6584de5",
+      "word": "onion",
+      "definition": "洋葱；洋葱头",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "70052ccc-daff-4270-bba3-36448e62e78e",
+      "word": "opera",
+      "definition": "歌剧；歌剧院；歌剧团",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "9996011a-14aa-4ee7-acdc-55824cfb695d",
+      "word": "orange",
+      "definition": "【adj.】橙色的；橘色的【n.】橙；橙色；桔子",
+      "part_of_speech": "adj., n."
+    },
+    {
+      "id": "72399b9f-b99a-4613-8365-3df556451c78",
+      "word": "outdoor",
+      "definition": "户外的；露天的；野外的（等于out-of-door）",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "1743a63e-ad25-4b46-b92c-6db7277e52a8",
+      "word": "pack",
+      "definition": "【n.】包装；一群；背包；包裹；一副【vt.】包装；压紧；捆扎；挑选；塞满【vi.】挤；包装货物；被包装；群集",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "ff06dbee-e971-4822-9ce2-51e0a07fc30b",
+      "word": "pain",
+      "definition": "【n.】疼痛；努力【vt.】使…痛苦；使…烦恼【vi.】感到疼痛；引起疼痛",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "538307f1-282f-413c-9c88-135ec12e6983",
+      "word": "painter",
+      "definition": "画家；油漆匠",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "e1fe784c-35d2-4bce-ac33-41734f2100de",
+      "word": "park",
+      "definition": "【n.】公园； 停车场【vt.】停放；放置；寄存【vi.】停放车辆",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "cc5a8636-2303-47d2-806c-ae1a40e6e16e",
+      "word": "party",
+      "definition": "【n.】政党，党派；聚会，派对；当事人【vi.】参加社交聚会",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "f1c0ea3a-2de8-4cbc-a3df-8dcce3ba589a",
+      "word": "passenger",
+      "definition": "旅客；乘客；过路人；碍手碍脚的人",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "7e6e61d5-8f0a-46fe-b3ce-cbf51b3a7d72",
+      "word": "passport",
+      "definition": "护照，通行证；手段",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "fdead652-2a92-4850-8c3f-bccd7cf1c012",
+      "word": "pasta",
+      "definition": "意大利面食；面团",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "09199241-a636-4510-a1e8-d9d1021b8854",
+      "word": "pay for",
+      "definition": "【na.】付开销；赔偿(损失)；(为某种过失)付出代价；吃亏；付款；付钱；支付",
+      "part_of_speech": "na."
+    },
+    {
+      "id": "277fe0f8-0cc4-4d3a-9907-bed153921d93",
+      "word": "pen-friend",
+      "definition": "通信朋友, 笔友",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "8f698869-793f-463b-b2c7-183298824896",
+      "word": "pence",
+      "definition": "便士（penny的复数）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "97f3e8ad-f0cc-44e4-b722-4cd3e5b3175d",
+      "word": "pennies",
+      "definition": "便士（penny的复数）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "c36307da-a121-4c6d-a092-c7d7f41c8740",
+      "word": "penny",
+      "definition": "（美）分；便士",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "b149fa22-c53c-44a7-b061-32e54557653d",
+      "word": "pepper",
+      "definition": "【n.】胡椒；辣椒；胡椒粉【vt.】加胡椒粉于；使布满",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "35aa7e9d-60fb-44f5-b144-f0f54c06ead9",
+      "word": "petrol",
+      "definition": "（英）汽油",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "f630809d-89e7-4bca-b151-bc62dabb7044",
+      "word": "petrol station",
+      "definition": "【n.】汽车加油站；汽油站；加油站泵；英语加油站",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "18b995f3-ec80-43f7-83e2-0a1ceb97b3f0",
+      "word": "pharmacy",
+      "definition": "药房；配药学，药剂学；制药业；一批备用药品",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "71e98a83-6e9a-4f57-9729-b37b387fae77",
+      "word": "photographer",
+      "definition": "摄影师；照相师",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "81ee855b-3ab6-431a-88bf-ae91cf5302d8",
+      "word": "photography",
+      "definition": "摄影；摄影术",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "aafe1e42-46fd-4592-b13b-98f93b6db9e0",
+      "word": "picnic",
+      "definition": "【n.】野餐【vi.】去野餐",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "66c2b47a-8bc0-407e-b92c-e7f7ec2da495",
+      "word": "pillow",
+      "definition": "【n.】枕头【vt.】垫；枕于…；使…靠在【vi.】枕着头；靠在枕上",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "0845ca07-3566-4f8c-86f9-8c242ed44fe9",
+      "word": "pilot",
+      "definition": "【n.】飞行员；领航员【adj.】试点的【v.】驾驶；领航；试用",
+      "part_of_speech": "n., adj., v."
+    },
+    {
+      "id": "873354af-ed21-40b5-ab2d-bae067e36e79",
+      "word": "pink",
+      "definition": "【n.】粉红色；化身，典范；石竹花；头面人物【adj.】粉红的；比较激进的；石竹科的；脸色发红的【vt.】扎，刺，戳；使…变粉红色；使…面红耳赤【vi.】变粉红色",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "bd4e6dcb-1cae-4cd9-aee2-4355dd6ee2ac",
+      "word": "pizza",
+      "definition": "比萨饼（一种涂有乳酪核番茄酱的意大利式有馅烘饼）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a26a21a1-caef-4fdb-beeb-2dc62013ec80",
+      "word": "plane",
+      "definition": "【n.】飞机；平面；程度，水平【adj.】平的；平面的【vt.】刨平；用刨子刨；掠过水面【vi.】刨；乘飞机旅行；翱翔",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "2bc96644-baae-4723-a0f6-d38a138119d2",
+      "word": "plant",
+      "definition": "【n.】工厂，车间；植物；设备；庄稼【vt.】种植；培养；栽培；安置【vi.】种植",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "62c124d0-ec98-4077-b359-ef015114e0bd",
+      "word": "plate",
+      "definition": "【n.】碟；金属板；金属牌；感光底片【vt.】电镀；给…装甲",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "c6d36f70-3f4c-4069-8f84-20a140d9267a",
+      "word": "platform",
+      "definition": "平台；月台，站台；坛；讲台",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "e222ee62-aa32-4235-ac10-492f933a6658",
+      "word": "pocket",
+      "definition": "【n.】口袋；钱；容器【adj.】小型的，袖珍的；金钱上的【vt.】隐藏；忍受；将…放入衣袋【vi.】形成袋或囊",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "2bba2354-bece-47aa-a6ae-b0f15980344c",
+      "word": "police car",
+      "definition": "警车；警察巡逻车；普通警车",
+      "part_of_speech": ""
+    },
+    {
+      "id": "bbfe7d9b-0788-4579-9b10-fc9189f559ab",
+      "word": "pool",
+      "definition": "【n.】联营；撞球；水塘；共同资金【vt.】合伙经营【vi.】联营，合伙经营",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "de1747a9-d3dd-48df-87e1-76b87c8c18d5",
+      "word": "post office",
+      "definition": "【n.】邮局；邮政部门；邮政系统；邮差敲门游戏（儿童用假托的信件换取亲吻）；邮政局；邮电局；邮政署",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a3453dec-47e3-46ba-80d7-2282a0aae349",
+      "word": "postcard",
+      "definition": "明信片",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "29620366-c651-4bfc-bfa5-f4f29e19e873",
+      "word": "poster",
+      "definition": "海报，广告；招贴",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a7a2861c-9e29-4ac8-a105-a944ea7ba3c0",
+      "word": "potato",
+      "definition": "土豆， 马铃薯",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "077916ee-779a-4104-87cd-2dc621b39c91",
+      "word": "pound",
+      "definition": "【n.】英镑；重击，重击声；兽栏；拘留所【vt.】捣烂；敲打；监禁，拘留【vi.】连续重击，猛击",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "0c4220cd-4a08-4bea-8c64-e7e4cc466690",
+      "word": "practice",
+      "definition": "【n.】实践；练习；惯例【vt.】练习；实习；实行【vi.】练习；实习；实行",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "e6882dac-8853-417a-9ef3-32ede4018fe0",
+      "word": "practise",
+      "definition": "【vi.】练习，实践；实施，实行；从事【vt.】练习，实践；实施，实行",
+      "part_of_speech": "vi., vt."
+    },
+    {
+      "id": "c65b28a6-a614-414d-89a1-0a055506e4be",
+      "word": "present",
+      "definition": "【n.】现在；礼物；瞄准【adj.】现在的；出席的【vt.】提出；介绍；呈现；赠送【vi.】举枪瞄准",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "d41214b0-edc0-4712-8794-bf2583cd9aed",
+      "word": "price",
+      "definition": "【n.】价格；价值；代价【vt.】给……定价；问……的价格",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "86cafd64-c954-4edf-a1c2-6a52e76012f6",
+      "word": "prize",
+      "definition": "【n.】奖品；奖赏；战利品【adj.】获奖的【vt.】珍视；捕获；估价",
+      "part_of_speech": "n., adj., vt."
+    },
+    {
+      "id": "7fcdf4ff-dc90-4446-bb2c-15e24e1c8a57",
+      "word": "problem",
+      "definition": "【n.】难题；引起麻烦的人【adj.】成问题的；难处理的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "2e177704-d87b-4e78-b010-1e5e2b0b50cb",
+      "word": "programme",
+      "definition": "【n.】计划，规划；节目；程序【vt.】规划；拟…计划【vi.】编程序；制作节目",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "03b8862c-923a-42a1-88e1-3af452ed4686",
+      "word": "project",
+      "definition": "【n.】工程；计划；事业【vt.】设计；计划；发射；放映【vi.】设计；计划；表达；投射",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "c5a3edff-761f-4f3f-9639-7235ec8d7f5a",
+      "word": "pupil",
+      "definition": "学生； 瞳孔；未成年人",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "def2656a-8185-460c-a7f9-0764e78e242e",
+      "word": "purple",
+      "definition": "【n.】紫色；紫袍【adj.】紫色的；帝王的；华而不实的【vt.】使成紫色【vi.】变成紫色",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "e19d0043-b4a4-4f90-b025-0f54c0dc2712",
+      "word": "purse",
+      "definition": "【n.】(女士)手提袋；(国家、家庭、团体等的) 财力【vt.】（嘴巴）皱起，使缩拢；撅嘴",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "f73d2b69-6b72-4ce0-bc95-26b7839cdf0f",
+      "word": "quarter",
+      "definition": "【num.】四分之一【n.】四分之一；地区；季度；一刻钟；两角五分；节【vt.】将…四等分；供某人住宿【vi.】住宿；驻扎",
+      "part_of_speech": "num., n., vt., vi."
+    },
+    {
+      "id": "ea4097c6-e41e-4531-a7b4-2e4d06b2300c",
+      "word": "race",
+      "definition": "【n.】属，种；种族，人种；家庭，门第【vt.】使参加比赛；和…竞赛；使急走，使全速行进【vi.】比速度，参加竞赛；全速行进",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "73853e9b-f0f8-4c00-b703-bbe16006661c",
+      "word": "railway",
+      "definition": "【n.】（英）铁路；轨道；铁道部门【vi.】乘火车旅行",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "061d2afb-abdd-4f3f-92fb-0e39d69dc5ec",
+      "word": "rain",
+      "definition": "【n.】雨；下雨；雨天；雨季【vt.】大量地给；使大量落下【vi.】下雨；降雨",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "f3a3fa03-9cbf-4fc3-a3a4-bc579c978a49",
+      "word": "raincoat",
+      "definition": "（美）雨衣",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "b4322040-ad48-4588-8de7-75553864deea",
+      "word": "receptionist",
+      "definition": "接待员；传达员",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "52e762f3-4024-4037-bcd4-6fdfd0e05ca9",
+      "word": "red",
+      "definition": "【n.】红色，红颜料；赤字【adj.】红色的；红肿的，充血的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "be9e2392-4f9d-4baf-b675-8bd278029f2b",
+      "word": "remember",
+      "definition": "【vi.】记得，记起【vt.】记得；牢记；纪念；代…问好",
+      "part_of_speech": "vi., vt."
+    },
+    {
+      "id": "3e56ad0b-f485-499e-9ef0-52e0addeae28",
+      "word": "restaurant",
+      "definition": "餐馆； 饭店",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "164a586a-8c07-4d44-b685-16122922679c",
+      "word": "riding",
+      "definition": "【n.】骑马；骑术【v.】骑；乘坐（ride的现在分词）",
+      "part_of_speech": "n., v."
+    },
+    {
+      "id": "0d39529f-b60d-414d-a453-c9bb7cf9615a",
+      "word": "river",
+      "definition": "河，江",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "ac5190d1-9797-43f3-ba6e-9d62623f8003",
+      "word": "roast",
+      "definition": "【n.】烤肉；烘烤【adj.】烘烤的；烤过的【vt.】烤，焙；烘，烘烤；暴露于某种热力下以得温暖【vi.】烤；烘",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "20889ac6-8858-4e37-b275-855a9cd54308",
+      "word": "roof",
+      "definition": "【n.】屋顶；最高处，顶部；最高限度【vt.】给…盖屋顶，覆盖",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "06f6a3d4-2d95-44ef-927e-410d9fd4d2a2",
+      "word": "roundabout",
+      "definition": "【n.】迂回路线；环状交叉路口【adj.】迂回的，绕道的；圆滚滚的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "4634a220-a80d-476d-91a8-a61a87463cb8",
+      "word": "ruin",
+      "definition": "【n.】废墟；毁坏；灭亡【vt.】毁灭；使破产【vi.】破产；堕落；被毁灭",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "af64f994-b795-49c4-8d05-68faab5fd879",
+      "word": "sailing",
+      "definition": "【n.】航行，航海；启航；航海术【v.】航行，起航（sail的现在分词形式）【adj.】航行的",
+      "part_of_speech": "n., v., adj."
+    },
+    {
+      "id": "540542c9-23eb-487a-8b4f-b878e7bae0bd",
+      "word": "salad",
+      "definition": "色拉；尤指莴苣",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "9d33f4f5-26e3-4b70-a686-7a4ae54178ac",
+      "word": "salt",
+      "definition": "【n.】盐；风趣，刺激性【adj.】咸水的；含盐的，咸味的；盐腌的；猥亵的【vt.】用盐腌；给…加盐；将盐撒在道路上使冰或雪融化",
+      "part_of_speech": "n., adj., vt."
+    },
+    {
+      "id": "e823ac90-c74f-46a1-b8e2-ce5d7f35e011",
+      "word": "sandwich",
+      "definition": "【n.】三明治；夹心面包【vt.】夹入；挤进；把...做成三明治",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "49d8e832-83b6-4a18-8210-cd38ee0a76dc",
+      "word": "Saturday",
+      "definition": "星期六",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "a91ee79e-267c-449a-8ea9-d8cc29350182",
+      "word": "school",
+      "definition": "【n.】学校；学院；学派；鱼群【vt.】教育",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "d4ac4f39-b97e-42e6-bee2-d74086db5435",
+      "word": "Science",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "7a092525-ad94-4d05-adbd-b8672b7865a3",
+      "word": "sea",
+      "definition": "海；海洋；许多；大量",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "9360e51e-f102-4b64-89bb-59ad2fb93010",
+      "word": "second",
+      "definition": "【num.】第二【n.】秒；第二名；瞬间；二等品【adj.】第二的；次要的；附加的【vt.】支持【adv.】第二；其次；居第二位",
+      "part_of_speech": "num., n., adj., vt., adv."
+    },
+    {
+      "id": "137812cb-359f-4206-b37c-57942151b354",
+      "word": "secretary",
+      "definition": "秘书；书记；部长；大臣",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "8541bb14-049a-4e24-8a95-b3145fd57399",
+      "word": "September",
+      "definition": "九月",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "ff0d3a5c-9dd6-459d-b52f-831ec03eb339",
+      "word": "shirt",
+      "definition": "衬衫；汗衫，内衣",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "3934043c-b746-4534-ab5c-0c2f234194b5",
+      "word": "shoe",
+      "definition": "【n.】鞋；蹄铁；外胎【vt.】给……穿上鞋；穿……鞋",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "f2dcbb60-5e51-4e2e-9bf7-a2f54d74b3ea",
+      "word": "shop assistant",
+      "definition": "【n.】店员；售货员；营业员；商店里的店员；店务助理",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "15a0b7d1-ca85-43a2-93c9-644b1d7b2d23",
+      "word": "shorts",
+      "definition": "短裤",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "52b6e197-eefd-4064-9cce-465dd8ef4ac6",
+      "word": "shower",
+      "definition": "【n.】淋浴；（倾泻般出现的）一阵，一大批；阵雨【vt.】大量地给予；把……弄湿【vi.】淋浴；下阵雨",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "9b0229d9-eb0c-46e8-8b7d-0ac223420625",
+      "word": "sick",
+      "definition": "【adj.】厌恶的；病态的；不舒服；渴望的；恶心的 ；生病的【n.】病人【vt.】使狗去咬；呕吐；追击",
+      "part_of_speech": "adj., n., vt."
+    },
+    {
+      "id": "a7a20c88-2217-453b-a916-22eb396f7318",
+      "word": "sitting room",
+      "definition": "【na.】起居室；客厅；起居空间；休息室",
+      "part_of_speech": "na."
+    },
+    {
+      "id": "4a3a6def-3201-4f9c-afba-ef841f5d6bfb",
+      "word": "skiing",
+      "definition": "【n.】滑雪运动；滑雪术【v.】滑雪（ski的ing形式）",
+      "part_of_speech": "n., v."
+    },
+    {
+      "id": "93722396-5441-45a4-a153-6dc860c73b78",
+      "word": "skirt",
+      "definition": "【n.】裙子【vt.】绕过，回避；位于…边缘【vi.】沿边走，绕开；环绕",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "0abd1ec7-5d04-4e68-a67d-bb429d4fb79b",
+      "word": "sky",
+      "definition": "【n.】天空；顶点【vt.】把…投向空中；把…挂得过高【vi.】踢或击高空球；把桨叶翘得过高；飞涨",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "8e9e4156-0ca1-4414-b2b0-c1109c1fddef",
+      "word": "slice",
+      "definition": "【n.】薄片；部分；菜刀，火铲【vt.】切下；把…分成部分；将…切成薄片【vi.】切开；割破",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "4f5154c0-c2ea-438d-a7f9-72ce86d54f98",
+      "word": "snack",
+      "definition": "【n.】小吃，快餐；一份，部分【vi.】吃快餐，吃点心",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "46ff8ef8-6e84-41d2-8138-d28df57c4b52",
+      "word": "snow",
+      "definition": "【n.】雪，积雪；下雪【vt.】使纷纷落下；使变白【vi.】降雪",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "bab8144d-0c41-4a3a-a029-d224c592f8a3",
+      "word": "soap",
+      "definition": "【n.】肥皂【vt.】将肥皂涂在……上；对……拍马屁（俚语）【vi.】用肥皂擦洗",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "2ab12661-063e-4c08-a6a8-6ea72fa8f6e9",
+      "word": "sofa",
+      "definition": "沙发；长椅",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "8fd9bccc-534c-42c8-8ffb-9e4faed2df5d",
+      "word": "soup",
+      "definition": "【n.】汤，羹；马力【vt.】加速；增加马力",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "ea430411-4127-4ba0-8aef-2fc0eda6406d",
+      "word": "south",
+      "definition": "【n.】南方，南边；南部【adj.】南的，南方的【adv.】在南方，向南方",
+      "part_of_speech": "n., adj., adv."
+    },
+    {
+      "id": "24f9ebae-4b27-4ae1-9997-f28aef72eac3",
+      "word": "space",
+      "definition": "【n.】空间；太空；距离【vt.】隔开【vi.】留间隔",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "b57ca229-b48e-4668-9fee-203d2e6ef514",
+      "word": "spell",
+      "definition": "【n.】符咒；一段时间；魅力【vi.】拼字；轮替【vt.】拼，拼写；意味着；招致；拼成；迷住；轮值",
+      "part_of_speech": "n., vi., vt."
+    },
+    {
+      "id": "0533b2b8-95f1-43e8-932f-44897969b799",
+      "word": "spelt",
+      "definition": "【n.】斯佩耳特小麦【v.】拼写（spell的过去式）",
+      "part_of_speech": "n., v."
+    },
+    {
+      "id": "667e3834-33bc-4219-96ce-506283950609",
+      "word": "sports centre",
+      "definition": "体育运动中心, 运动场",
+      "part_of_speech": ""
+    },
+    {
+      "id": "27529bc2-37a6-4637-b028-80b985279398",
+      "word": "spring",
+      "definition": "【n.】春天；弹簧；泉水；活力；跳跃【adj.】春天的【vt.】使跳起；使爆炸；突然提出；使弹开【vi.】生长；涌出；跃出；裂开",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "dd8b34e3-5952-4fd6-aad1-fc18cf04751e",
+      "word": "square",
+      "definition": "【n.】平方；广场；正方形【adj.】平方的；正方形的；直角的；正直的【vt.】使成方形；与…一致【vi.】一致；成方形【adv.】成直角地",
+      "part_of_speech": "n., adj., vt., vi., adv."
+    },
+    {
+      "id": "2b389d8c-c71b-4c3b-a7cf-41f53310ac09",
+      "word": "stadium",
+      "definition": "体育场；露天大型运动场",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "d2885bd8-e66c-4388-8717-55fc3fe2f169",
+      "word": "staff",
+      "definition": "【n.】职员；参谋；棒；支撑【adj.】职员的；行政工作的【vt.】供给人员；给…配备职员【vi.】雇用工作人员",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "c076b278-6a8c-4616-89d7-58e7d99e93db",
+      "word": "star",
+      "definition": "【n.】星，恒星；明星；星形物【adj.】明星的，主角的；星形的【vt.】用星号标于；由…主演，由…担任主角【vi.】担任主角",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "8ce932cc-d01a-4325-9c1c-2c0bbad1b1b3",
+      "word": "steak",
+      "definition": "牛排；肉排；鱼排",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "3f19b22e-b757-4c3c-8c17-fa47df268e05",
+      "word": "storm",
+      "definition": "【n.】暴风雨；大动荡【vt.】猛攻；怒骂【vi.】起风暴；横冲直撞；狂怒咆哮",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "8a749ce0-a469-4676-be52-b5d400af2df0",
+      "word": "subject",
+      "definition": "【n.】主题；科目； 主语；国民【adj.】服从的；易患…的；受制于…的【vt.】使…隶属；使屈从于…",
+      "part_of_speech": "n., adj., vt."
+    },
+    {
+      "id": "6c4ed0f8-d6db-4fc5-b1c0-cbafd2cd2fb4",
+      "word": "sugar",
+      "definition": "【n.】糖；食糖；甜言蜜语【vt.】加糖于；粉饰【vi.】形成糖",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "c158baf1-1176-483d-bf7c-809590bca494",
+      "word": "suit",
+      "definition": "【n.】诉讼；恳求；套装，西装；一套外衣【vt.】适合；使适应【vi.】合适；相称",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "5d2aa589-a8cd-4cb2-80a3-01dc3594d7f9",
+      "word": "suitcase",
+      "definition": "手提箱；衣箱",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "78395b2d-1d66-4b3e-a7cd-b0b3d09bc157",
+      "word": "summer",
+      "definition": "【n.】夏季；全盛时期【adj.】夏季的【vi.】避暑；过夏天",
+      "part_of_speech": "n., adj., vi."
+    },
+    {
+      "id": "5d7b7c6c-027e-4450-8458-85fad2ed2c4e",
+      "word": "sun",
+      "definition": "【n.】太阳【vt.】使晒【vi.】晒太阳",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "db2218f6-cb14-4c65-9d7c-11d90f2fb4f2",
+      "word": "Sunday",
+      "definition": "星期日；礼拜日",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "34c0744b-ee1e-4b13-9d9a-3b1edced2579",
+      "word": "sunny",
+      "definition": "阳光充足的，和煦的；快活的；性情开朗的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "de6b3a35-ca5d-4450-907b-f2376a367da6",
+      "word": "supermarket",
+      "definition": "超级市场；自助售货商店",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "bd4f548c-c014-4eb4-a2b6-7c7af0487121",
+      "word": "surname",
+      "definition": "【n.】姓，姓氏；绰号，别名【vt.】给…起别名；给…姓氏",
+      "part_of_speech": "n., vt."
+    },
+    {
+      "id": "e4b4c7d3-b705-4d4f-840a-3738496ba47b",
+      "word": "sweater",
+      "definition": "毛线衣，运动衫；大量出汗的人，发汗剂",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "2c7c56a3-ba7a-47d0-b479-3980c1c1a9cd",
+      "word": "sweet",
+      "definition": "【n.】糖果；乐趣；芳香；宝贝【adj.】甜的；悦耳的；芳香的；亲切的；（俚）酷毙了",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "f2c8812f-3613-404d-8a5f-d77fd177845b",
+      "word": "swimming",
+      "definition": "【n.】游泳；目眩【adj.】游泳的；游泳用的；善于游泳的；晕眩的【v.】游泳；漂浮；旋转（swim的ing形式）",
+      "part_of_speech": "n., adj., v."
+    },
+    {
+      "id": "a6da4190-621d-498e-99c3-f63a8472466a",
+      "word": "T-shirt",
+      "definition": "短袖圆领汗衫",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "c4b3f807-94f4-4c46-ab5b-b51c03efa4c9",
+      "word": "table tennis",
+      "definition": "【n.】乒乓球运动；桌球；桌上网球；打乒乓球",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "41f7b563-529c-41dc-9eda-b74df6041975",
+      "word": "team",
+      "definition": "【n.】队；组【vt.】使合作【vi.】合作",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "872ec5c8-6d80-4357-ad6a-6e68560bd271",
+      "word": "teenager",
+      "definition": "十几岁的青少年；十三岁到十九岁的少年",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "560dcbed-6cb7-488e-829d-495dd3167eb3",
+      "word": "temperature",
+      "definition": "温度；体温；气温；发烧",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "d0ae5ee7-f302-4d7d-a4d4-784348b87a9c",
+      "word": "tent",
+      "definition": "【n.】帐篷；住处；帷幕【vt.】用帐篷遮盖；使在帐篷里住宿【vi.】住帐蓬；暂时居住",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "c42c046c-be01-4ec6-a4af-edbc90ffeced",
+      "word": "terrible",
+      "definition": "【adj.】可怕的；很糟的；令人讨厌的【adv.】很，非常",
+      "part_of_speech": "adj., adv."
+    },
+    {
+      "id": "c8be23ee-3efe-4a09-892b-eb7b420a246c",
+      "word": "theatre",
+      "definition": "电影院，戏院；戏剧；阶梯式讲堂",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "ecba021e-e61e-4db1-87c1-2f92dc4e0a97",
+      "word": "thirsty",
+      "definition": "口渴的，口干的；渴望的，热望的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "c87ef8cc-54f5-427a-8d09-83593c733915",
+      "word": "through",
+      "definition": "【prep.】通过；穿过；凭借【adj.】直达的；过境的；完结的【adv.】彻底；从头至尾",
+      "part_of_speech": "prep., adj., adv."
+    },
+    {
+      "id": "7b3b5166-64ac-4a59-a763-b8420337ae6e",
+      "word": "throw",
+      "definition": "【n.】投掷；冒险【vt.】投；抛；掷【vi.】抛；投掷",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "fd936cf4-4897-4af7-b526-c17bd639d475",
+      "word": "thunderstorm",
+      "definition": "雷暴；雷暴雨；大雷雨",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "3c56c55e-518d-48b7-a26f-a8116d1bce61",
+      "word": "Thursday",
+      "definition": "星期四",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "2e0847a8-e38c-49f3-a655-872f233ab750",
+      "word": "ticket",
+      "definition": "加标签于；指派；对…开出交通违规罚单",
+      "part_of_speech": "vt."
+    },
+    {
+      "id": "cb015939-db69-4613-8a17-5d3b86c28961",
+      "word": "tights",
+      "definition": "紧身裤袜",
+      "part_of_speech": ""
+    },
+    {
+      "id": "9fda8e24-e36f-4004-9bac-72052b239c84",
+      "word": "tired",
+      "definition": "【v.】疲倦；对…腻烦（tire的过去分词形式）【adj.】疲倦的；厌倦的，厌烦的",
+      "part_of_speech": "v., adj."
+    },
+    {
+      "id": "61abd4d8-6983-4910-b429-b847919403af",
+      "word": "toilet",
+      "definition": "【n.】厕所，盥洗室；梳妆，打扮【vt.】给…梳妆打扮【vi.】梳妆，打扮",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "165214cc-054c-4d1d-b6fa-f51a861370a6",
+      "word": "tomato",
+      "definition": "番茄，西红柿",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "cae7e81f-9014-49d0-9666-6c4aabfcdfdc",
+      "word": "tonight",
+      "definition": "【n.】今晚【adv.】在今晚",
+      "part_of_speech": "n., adv."
+    },
+    {
+      "id": "e5dd077e-a6bf-493c-a9e5-a3d63c2a4325",
+      "word": "toothbrush",
+      "definition": "牙刷",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "c4166414-8750-4185-b2a5-160e4c72fa7c",
+      "word": "tour",
+      "definition": "【n.】旅游，旅行；巡回演出【vt.】旅行，在……旅游；在……作巡回演出【vi.】旅行，旅游；作巡回演出",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "b367561d-41f1-43a3-9330-a2b9ff23474a",
+      "word": "tour guide",
+      "definition": "【un.】导游；导游人员；导游员；观光导游",
+      "part_of_speech": "un."
+    },
+    {
+      "id": "1fefb1ba-d9ee-4481-94a6-3f08008d49ea",
+      "word": "tourist",
+      "definition": "【n.】旅行者，观光客【adj.】旅游的【vt.】在旅行参观【vi.】旅游；观光【adv.】坐旅游车厢；坐经济舱",
+      "part_of_speech": "n., adj., vt., vi., adv."
+    },
+    {
+      "id": "535d2d89-4fae-4906-b4cc-a6eee0f4af97",
+      "word": "tourist information centre",
+      "definition": "",
+      "part_of_speech": ""
+    },
+    {
+      "id": "86672d1d-2d97-49c3-8c9b-6d170fa4dec9",
+      "word": "traffic",
+      "definition": "【n.】交通；运输；贸易； 通信量【vt.】用…作交换；在…通行【vi.】交易，买卖",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "40175b34-0b66-46c2-9aaf-31ca12831e85",
+      "word": "traffic lights",
+      "definition": "【n.】交通信号灯；红绿灯；交通灯；交通指挥灯；交通指示灯",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "616aba8d-c0d5-4c8b-ba47-451b9a4d5819",
+      "word": "trainer",
+      "definition": "助理教练；训练员；驯马师；飞行练习器；运动鞋",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "d6e1c1f4-b233-4c4f-8641-462c9969b388",
+      "word": "trainers",
+      "definition": "运动鞋； 训练员；练习器（trainer的复数）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "18b4e3f6-9ebb-443b-8d5d-9eeb9f2b31d4",
+      "word": "travel agency",
+      "definition": "【n.】旅行社；旅游公司；旅行代理店；中国旅行社",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "55ecf58f-f8a4-4344-b5ef-fa6992bed6dd",
+      "word": "tree",
+      "definition": "【n.】树；木料；树状物【vt.】把...赶上树【vi.】爬上树；逃上树",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "74f61900-e6a3-47a4-8f1e-ca58711e40a0",
+      "word": "trousers",
+      "definition": "裤子，长裤",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "42feab89-ce48-41ae-ac31-ceab9b54cece",
+      "word": "try on",
+      "definition": "【na.】试穿；搞恶作剧(以试探能否被容忍)；耍花招；试试看；试穿衣物；试衣服",
+      "part_of_speech": "na."
+    },
+    {
+      "id": "f3e591e6-55d5-44b3-a01b-65285c87463b",
+      "word": "Tuesday",
+      "definition": "星期二",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "6548ef9f-cfd0-468a-8a9f-a1ee1f7a2ba6",
+      "word": "umbrella",
+      "definition": "雨伞；保护伞；庇护；伞形结构",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "82209100-3bb1-480d-9973-fd2426efe6f5",
+      "word": "underground",
+      "definition": "【n.】地下；地铁；地道；地下组织；秘密活动；先锋派团体【adj.】地下的；秘密的；先锋派的【adv.】在地下；秘密地",
+      "part_of_speech": "n., adj., adv."
+    },
+    {
+      "id": "5b0f849d-99a8-4734-bcec-5204b6f99a6b",
+      "word": "uniform",
+      "definition": "【n.】制服【adj.】统一的；一致的；相同的；均衡的；始终如一的【vt.】使穿制服；使成一样",
+      "part_of_speech": "n., adj., vt."
+    },
+    {
+      "id": "11311cc8-3c46-4ec4-a4ca-dd6422944b01",
+      "word": "university",
+      "definition": "大学；综合性大学；大学校舍",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "afe42eb9-e767-4b90-8c57-b02b506174a9",
+      "word": "vegetable",
+      "definition": "【n.】蔬菜；植物；植物人【adj.】蔬菜的；植物的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "8fde3040-d418-4cae-a5e8-6466615b53d8",
+      "word": "village",
+      "definition": "村庄；村民；（动物的）群落",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "6d69fddd-088b-4afc-ae37-67b950b47a04",
+      "word": "visit",
+      "definition": "【n.】访问；参观；逗留【vt.】访问；参观；视察【vi.】访问；暂住；闲谈",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "6529804a-5622-4119-9c31-488be3a69ba3",
+      "word": "visitor",
+      "definition": "访问者，参观者；视察者；候鸟",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "bcc10c79-cac2-44b1-b484-cb0433ff4d6a",
+      "word": "volleyball",
+      "definition": "排球",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "f2ae2b52-78e1-4d82-a762-ed150116d84d",
+      "word": "waiter",
+      "definition": "服务员，侍者",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "20f3fccf-e50b-4c93-aa6f-c0ee88289855",
+      "word": "waitress",
+      "definition": "【n.】女服务员；女侍者【vi.】做女服务生",
+      "part_of_speech": "n., vi."
+    },
+    {
+      "id": "f2de395d-d349-4481-9a34-5c8bff5745cc",
+      "word": "wallet",
+      "definition": "钱包，皮夹",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "71c98697-be9a-4f64-914c-3ad7997d4a0a",
+      "word": "warm",
+      "definition": "【n.】取暖；加热【adj.】温暖的；热情的【vt.】使…兴奋；使…温暖；使…感兴趣【vi.】同情；激动；变温暖",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "f4fddfab-e28b-44b4-bb76-65916dcfdb2c",
+      "word": "watch",
+      "definition": "【n.】手表；监视；守护；值班人【vt.】观察；注视；看守；警戒【vi.】观看，注视；守侯，看守",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "2a9cb9f1-4f22-48f9-b6df-276c15432499",
+      "word": "water",
+      "definition": "【n.】水；海水；雨水；海域，大片的水【vt.】使湿；供以水；给…浇水【vi.】加水；流泪；流口水",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "c8f718ce-c966-4fdf-97a4-7132c354dc74",
+      "word": "wear",
+      "definition": "【n.】衣物；磨损；耐久性【v.】穿着；用旧；耗损；面露",
+      "part_of_speech": "n., v."
+    },
+    {
+      "id": "c7cd1010-04c8-4c9e-abd0-e1b94c25ddf2",
+      "word": "weather",
+      "definition": "【n.】天气；气象；气候；处境【vt.】经受住；使风化；侵蚀；使受风吹雨打【adj.】露天的；迎风的【vi.】风化；受侵蚀；经受风雨",
+      "part_of_speech": "n., vt., adj., vi."
+    },
+    {
+      "id": "c14a21bf-0ed8-4651-94ee-d7617359cb6f",
+      "word": "website",
+      "definition": "网站（全球资讯网的主机站）",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "84babfad-a6e4-4f9d-80c1-61d967f6b45d",
+      "word": "Wednesday",
+      "definition": "星期三",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "2e111702-41de-4125-9b7e-3605ba663b08",
+      "word": "week",
+      "definition": "周，星期",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "4a3acf71-23ab-45b5-b853-a3f2c8992828",
+      "word": "weekend",
+      "definition": "【n.】周末，周末休假；周末聚会【adj.】周末的，周末用的【vi.】度周末",
+      "part_of_speech": "n., adj., vi."
+    },
+    {
+      "id": "ce182182-5d95-4fb1-b85f-9d540a89dbb3",
+      "word": "west",
+      "definition": "【n.】西；西方；西部【adj.】西方的；朝西的【adv.】在西方；向西方；自西方",
+      "part_of_speech": "n., adj., adv."
+    },
+    {
+      "id": "e529f097-9c15-41e4-bcaa-d54513907320",
+      "word": "wet",
+      "definition": "【n.】雨天；湿气【adj.】潮湿的；有雨的【vt.】弄湿【vi.】变湿",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "437d50d3-f8a6-4b36-9ab2-ec2bca0ebf5b",
+      "word": "wheel",
+      "definition": "【n.】车轮；方向盘；转动【vt.】转动；使变换方向；给…装轮子【vi.】旋转；突然转变方向；盘旋飞行",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "71549ede-94ed-4429-baf2-7bbf16123038",
+      "word": "white",
+      "definition": "【n.】白色；洁白；白种人【adj.】白色的；白种的；纯洁的",
+      "part_of_speech": "n., adj."
+    },
+    {
+      "id": "54df4e34-738c-461c-aa2f-ca9db594e704",
+      "word": "wife",
+      "definition": "妻子，已婚妇女；夫人",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "0870bc15-4cbc-48cf-9e0d-a6e23d886f75",
+      "word": "wind",
+      "definition": "【vi.】缠绕；上发条；吹响号角【n.】风；呼吸；气味；卷绕【vt.】缠绕；上发条；使弯曲；吹号角；绕住或缠住某人",
+      "part_of_speech": "vi., n., vt."
+    },
+    {
+      "id": "c7f1fb9e-3e0d-4af6-9263-75c32dadb3f8",
+      "word": "windy",
+      "definition": "多风的，有风的；腹胀的；吹牛的",
+      "part_of_speech": "adj."
+    },
+    {
+      "id": "fafe2fef-fbb7-4dcf-a677-daf6de807e06",
+      "word": "winner",
+      "definition": "胜利者",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "43bf6ca8-d865-4481-9dae-8269c5e9d648",
+      "word": "winter",
+      "definition": "【n.】冬季；年岁；萧条期【adj.】冬天的；越冬的【vi.】过冬",
+      "part_of_speech": "n., adj., vi."
+    },
+    {
+      "id": "aa909d65-6000-4e8a-9cc5-d74c074f82fc",
+      "word": "wood",
+      "definition": "【n.】木材；木制品；树林【vt.】植林于；给…添加木柴【vi.】收集木材",
+      "part_of_speech": "n., vt., vi."
+    },
+    {
+      "id": "cf952c13-41b4-4cb5-8a6b-b91c78099be1",
+      "word": "wool",
+      "definition": "羊毛；毛线；绒线；毛织品；毛料衣物",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "458182c1-5578-4361-8e58-6f6616e6ee16",
+      "word": "world",
+      "definition": "世界；领域；世俗；全人类；物质生活",
+      "part_of_speech": "n."
+    },
+    {
+      "id": "201ae0e6-f0f7-4760-9fea-dc44bf7445dd",
+      "word": "yellow",
+      "definition": "【n.】黄色；黄种人；黄色颜料【adj.】黄色的；黄皮肤的【vt.】使变黄或发黄【vi.】变黄或发黄",
+      "part_of_speech": "n., adj., vt., vi."
+    },
+    {
+      "id": "fd5f38b5-78ab-4abe-829d-44ea7a136e8a",
+      "word": "zoo",
+      "definition": "动物园; <美俚>（铁路货车的最后一节）守车; <美俚>核粒子园",
+      "part_of_speech": "n."
+    }
+  ]
+}

@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>执行打字练习功能迁移</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      max-width: 900px;
+      width: 100%;
+      padding: 40px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 28px;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+
+    .steps {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .steps h2 {
+      color: #495057;
+      margin-bottom: 15px;
+      font-size: 18px;
+    }
+
+    .steps ol {
+      margin-left: 20px;
+      color: #495057;
+      line-height: 1.8;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      flex: 1;
+      padding: 15px 30px;
+      font-size: 16px;
+      font-weight: 600;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: #28a745;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #218838;
+      transform: translateY(-2px);
+    }
+
+    .sql-box {
+      background: #1e1e1e;
+      border-radius: 12px;
+      padding: 20px;
+      margin-top: 20px;
+      position: relative;
+    }
+
+    .sql-box pre {
+      color: #d4d4d4;
+      font-family: 'Consolas', 'Monaco', monospace;
+      font-size: 13px;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .copy-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .copy-btn:hover {
+      background: rgba(255, 255, 255, 0.2);
+    }
+
+    .success {
+      background: #d4edda;
+      color: #155724;
+      padding: 12px 20px;
+      border-radius: 8px;
+      margin-top: 15px;
+      display: none;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .info-box {
+      background: #e7f3ff;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      color: #0c5460;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 打字练习功能迁移</h1>
+    <p class="subtitle">数据库迁移SQL执行助手</p>
+
+    <div class="steps">
+      <h2>📋 执行步骤：</h2>
+      <ol>
+        <li>点击下方"复制SQL"按钮</li>
+        <li>点击"打开Supabase SQL编辑器"按钮</li>
+        <li>在SQL编辑器中粘贴（Ctrl+V）</li>
+        <li>点击"Run"按钮执行迁移</li>
+        <li>看到"Success"表示迁移成功！</li>
+      </ol>
+    </div>
+
+    <div class="button-group">
+      <button class="btn-primary" onclick="copySQL()">
+        📋 复制SQL到剪贴板
+      </button>
+      <button class="btn-secondary" onclick="openSupabase()">
+        🔗 打开Supabase SQL编辑器
+      </button>
+    </div>
+
+    <div class="success" id="successMsg">
+      ✅ SQL已复制到剪贴板！
+    </div>
+
+    <div class="sql-box">
+      <button class="copy-btn" onclick="copySQL()">复制</button>
+      <pre id="sqlContent"></pre>
+    </div>
+
+    <div class="info-box">
+      <strong>💡 提示：</strong> 如果执行失败，请检查：
+      <ul style="margin-left: 20px; margin-top: 8px;">
+        <li>是否已登录Supabase</li>
+        <li>是否有足够的权限</li>
+        <li>相关表（users, books）是否已存在</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const sql = `-- ============================================================================
+-- 最近打字记录功能
+-- 版本: v1.0.0
+-- 日期: 2026-01-16
+-- 说明: 存储用户最近的打字练习配置（词库+范围），方便快速继续
+-- ============================================================================
+
+-- ----------------------------------------------------------------------------
+-- 新增表：typing_recent_practice
+-- ----------------------------------------------------------------------------
+-- 说明：记录用户最近使用的词库+范围组合，最多保留10条
+CREATE TABLE IF NOT EXISTS typing_recent_practice (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  user_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  book_id UUID NOT NULL REFERENCES books(id) ON DELETE CASCADE,
+  scope TEXT NOT NULL, -- all, new, known, fuzzy, unknown, mistakes
+  last_practice_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  practice_count INTEGER DEFAULT 1 NOT NULL, -- 练习次数
+  created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
+);
+
+-- 添加索引
+CREATE INDEX IF NOT EXISTS idx_typing_recent_practice_user_book
+ON typing_recent_practice(user_id, book_id, scope);
+
+CREATE INDEX IF NOT EXISTS idx_typing_recent_practice_last_practice
+ON typing_recent_practice(user_id, last_practice_at DESC);
+
+-- 添加注释
+COMMENT ON TABLE typing_recent_practice IS '用户最近的打字练习配置记录（词库+范围）';
+COMMENT ON COLUMN typing_recent_practice.user_id IS '用户ID';
+COMMENT ON COLUMN typing_recent_practice.book_id IS '词库ID';
+COMMENT ON COLUMN typing_recent_practice.scope IS '学习范围：all(全部) | new(生词) | known(已掌握) | fuzzy(模糊) | unknown(陌生) | mistakes(错词)';
+COMMENT ON COLUMN typing_recent_practice.last_practice_at IS '最后练习时间';
+COMMENT ON COLUMN typing_recent_practice.practice_count IS '该配置的练习次数统计';
+
+-- 启用RLS
+ALTER TABLE typing_recent_practice ENABLE ROW LEVEL SECURITY;
+
+-- RLS策略：用户只能查看自己的记录
+CREATE POLICY "Users can view own recent typing practice"
+ON typing_recent_practice FOR SELECT
+USING (auth.uid() = user_id);
+
+-- RLS策略：用户可以插入自己的记录
+CREATE POLICY "Users can insert own recent typing practice"
+ON typing_recent_practice FOR INSERT
+WITH CHECK (auth.uid() = user_id);
+
+-- RLS策略：用户可以更新自己的记录
+CREATE POLICY "Users can update own recent typing practice"
+ON typing_recent_practice FOR UPDATE
+USING (auth.uid() = user_id);
+
+-- RLS策略：用户可以删除自己的记录
+CREATE POLICY "Users can delete own recent typing practice"
+ON typing_recent_practice FOR DELETE
+USING (auth.uid() = user_id);
+
+-- ----------------------------------------------------------------------------
+-- 自动更新 updated_at 触发器
+-- ----------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION update_typing_recent_practice_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER typing_recent_practice_updated_at
+BEFORE UPDATE ON typing_recent_practice
+FOR EACH ROW
+EXECUTE FUNCTION update_typing_recent_practice_updated_at();
+
+-- ----------------------------------------------------------------------------
+-- 函数：记录或更新最近打字练习配置
+-- ----------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION save_typing_recent_practice(
+  p_user_id UUID,
+  p_book_id UUID,
+  p_scope TEXT
+)
+RETURNS UUID AS $$
+DECLARE
+  v_record_id UUID;
+BEGIN
+  -- 查找是否已存在相同配置
+  SELECT id INTO v_record_id
+  FROM typing_recent_practice
+  WHERE user_id = p_user_id
+    AND book_id = p_book_id
+    AND scope = p_scope;
+
+  IF v_record_id IS NOT NULL THEN
+    -- 更新现有记录
+    UPDATE typing_recent_practice
+    SET
+      last_practice_at = NOW(),
+      practice_count = practice_count + 1
+    WHERE id = v_record_id;
+
+    RETURN v_record_id;
+  ELSE
+    -- 插入新记录
+    INSERT INTO typing_recent_practice (user_id, book_id, scope)
+    VALUES (p_user_id, p_book_id, p_scope)
+    RETURNING id INTO v_record_id;
+
+    -- 限制每个用户最多保留10条记录，删除最旧的
+    DELETE FROM typing_recent_practice
+    WHERE user_id = p_user_id
+      AND id NOT IN (
+        SELECT id
+        FROM typing_recent_practice
+        WHERE user_id = p_user_id
+        ORDER BY last_practice_at DESC
+        LIMIT 10
+      );
+
+    RETURN v_record_id;
+  END IF;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+COMMENT ON FUNCTION save_typing_recent_practice IS '保存或更新用户最近的打字练习配置（词库+范围）';
+
+-- ----------------------------------------------------------------------------
+-- 函数：获取用户最近的打字练习配置（最多5条）
+-- ----------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION get_typing_recent_practice(p_user_id UUID)
+RETURNS TABLE (
+  id UUID,
+  book_id UUID,
+  book_title TEXT,
+  scope TEXT,
+  last_practice_at TIMESTAMPTZ,
+  practice_count INTEGER
+) AS $$
+BEGIN
+  RETURN QUERY
+  SELECT
+    trp.id,
+    trp.book_id,
+    COALESCE(b.title, b.name, '未命名词库') AS book_title,
+    trp.scope,
+    trp.last_practice_at,
+    trp.practice_count
+  FROM typing_recent_practice trp
+  JOIN books b ON trp.book_id = b.id
+  WHERE trp.user_id = p_user_id
+  ORDER BY trp.last_practice_at DESC
+  LIMIT 5;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+COMMENT ON FUNCTION get_typing_recent_practice IS '获取用户最近的5条打字练习配置记录';
+
+-- 授权
+GRANT USAGE ON SCHEMA public TO authenticated;
+GRANT EXECUTE ON FUNCTION save_typing_recent_practice TO authenticated;
+GRANT EXECUTE ON FUNCTION get_typing_recent_practice TO authenticated;`;
+
+    // 显示SQL
+    document.getElementById('sqlContent').textContent = sql;
+
+    function copySQL() {
+      navigator.clipboard.writeText(sql).then(() => {
+        const successMsg = document.getElementById('successMsg');
+        successMsg.style.display = 'block';
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+        }, 2000);
+      }).catch(err => {
+        alert('复制失败，请手动复制SQL内容');
+      });
+    }
+
+    function openSupabase() {
+      window.open('https://snnrjnpcmdsdlyldvvps.supabase.co/project/default/sql', '_blank');
+    }
+  </script>
+</body>
+</html>

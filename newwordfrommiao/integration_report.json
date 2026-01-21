@@ -1,0 +1,31 @@
+{
+  "conversion_info": {
+    "timestamp": "2026-01-14T11:56:54.127712",
+    "status": "completed",
+    "backup_file": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\src\\assets\\data\\backups\\master_pool_before_frontend_integration_20260114_115653.json"
+  },
+  "book_summary": {
+    "id": "book_master_2026",
+    "title": "Master Vocabulary 2026",
+    "total_words": 10827,
+    "total_chapters": 217
+  },
+  "data_quality": {
+    "total_words_converted": 10827,
+    "empty_definitions": 0,
+    "empty_examples": 8582,
+    "pending_translations": 8818,
+    "completion_rate": "100.00%"
+  },
+  "output_files": {
+    "books": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\xiaoyu-english-v3\\frontend\\src\\data\\books.json",
+    "chapters": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\xiaoyu-english-v3\\frontend\\src\\data\\chapters.json",
+    "words": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\xiaoyu-english-v3\\frontend\\src\\data\\words.json",
+    "report": "D:\\CodeWorld\\Claude\\英语网站单词库项目\\xiaoyu-english-v3\\frontend\\src\\data\\integration_report.json"
+  },
+  "configuration": {
+    "words_per_chapter": 50,
+    "audio_path_template": "/assets/audio/{word}.mp3",
+    "fallback_translation": "Translation pending..."
+  }
+}

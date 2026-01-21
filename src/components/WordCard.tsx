@@ -31,8 +31,8 @@ interface WordCardProps {
 }
 
 export function WordCard({ word, index, onStatusChange, isSaving = false, globalHideChinese = false }: WordCardProps) {
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
+  const { theme, mounted } = useTheme()
+  const isDark = mounted && theme === 'dark'
 
   // 调试日志
   console.log(`🎨 [WordCard ${word.word}] theme:`, theme, 'isDark:', isDark)

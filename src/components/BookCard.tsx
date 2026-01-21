@@ -9,10 +9,11 @@ import { useLoading } from '@/components/LoadingOverlay'
 
 export function BookCard({ book, index }: { book: Book; index: number }) {
   const router = useRouter()
-  const { theme } = useTheme()
+  const { theme, mounted } = useTheme()
   const { showLoading, hideLoading } = useLoading()
 
-  const isDark = theme === 'dark'
+  // 服务器端和首次渲染使用浅色模式
+  const isDark = mounted && theme === 'dark'
 
   // 记录点击到最近访问并跳转
   const handleClick = async () => {

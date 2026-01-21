@@ -128,7 +128,17 @@
       "Bash(lsof:*)",
       "Bash(kill:*)",
       "Bash(cmd //c \"taskkill /F /IM node.exe\")",
-      "Bash(npx playwright codegen:*)"
+      "Bash(npx playwright codegen:*)",
+      "Bash(select -First 1)",
+      "Bash(npx playwright install:*)",
+      "Bash(Get-Process node -ErrorAction SilentlyContinue)",
+      "Bash(powershell -Command:*)",
+      "Bash(dir srcapplibrary)",
+      "Bash(mkdir:*)",
+      "Bash(cp:*)",
+      "Bash(do [ -f \"$f\" ])",
+      "Bash(xargs kill:*)",
+      "Bash(powershell -Command \"Stop-Process -Id 16068 -Force\")"
     ]
   }
 }

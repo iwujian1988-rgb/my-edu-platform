@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>执行打字练习功能数据库迁移</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 1.1em;
+      opacity: 0.9;
+    }
+    .content {
+      padding: 40px;
+    }
+    .step {
+      margin-bottom: 40px;
+      padding: 30px;
+      border: 2px solid #e0e0e0;
+      border-radius: 15px;
+      background: #f9f9f9;
+    }
+    .step-number {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      background: #667eea;
+      color: white;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+      margin-right: 15px;
+    }
+    .step-title {
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .sql-box {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 20px;
+      border-radius: 10px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.9em;
+      overflow-x: auto;
+      white-space: pre;
+      margin: 20px 0;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .btn {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1em;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin: 10px;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+    .btn-secondary {
+      background: #f0f0f0;
+      color: #333;
+    }
+    .success {
+      background: #d4edda;
+      border-color: #c3e6cb;
+      color: #155724;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    .info {
+      background: #d1ecf1;
+      border-color: #bee5eb;
+      color: #0c5460;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+    code {
+      background: #f4f4f4;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: #e83e8c;
+    }
+    .checkbox-group {
+      margin: 20px 0;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+    }
+    .checkbox-item input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🚀 打字练习功能数据库迁移</h1>
+      <p>Typing Practice Feature - Database Migration</p>
+    </div>
+
+    <div class="content">
+      <div class="info">
+        <strong>ℹ️ 迁移说明：</strong><br>
+        此迁移将为 <code>learning_records</code>、<code>word_progress</code>、<code>mistakes</code> 表添加打字练习功能所需的新字段和索引。<br>
+        预计执行时间：< 5 秒 | 零停机时间 | 向后兼容
+      </div>
+
+      <!-- 步骤 1 -->
+      <div class="step">
+        <div class="step-title">
+          <span class="step-number">1</span>
+          打开 Supabase Dashboard SQL Editor
+        </div>
+        <p>点击下方按钮打开 Supabase Dashboard 的 SQL Editor：</p>
+        <br>
+        <a href="https://app.supabase.com/project/snnrjnpcmdsdlyldvvps/sql/new" target="_blank" class="btn">
+          🔗 打开 SQL Editor
+        </a>
+      </div>
+
+      <!-- 步骤 2 -->
+      <div class="step">
+        <div class="step-title">
+          <span class="step-number">2</span>
+          复制 SQL 迁移脚本
+        </div>
+        <p>点击下方按钮复制完整的 SQL 脚本：</p>
+        <br>
+        <button class="btn" onclick="copySQL()">
+          📋 复制 SQL 脚本
+        </button>
+        <button class="btn btn-secondary" onclick="downloadSQL()">
+          💾 下载为 .sql 文件
+        </button>
+
+        <div class="sql-box" id="sqlContent">-- ============================================================================
+-- 打字练习（肌肉训练）功能数据库迁移
+-- 版本: v1.0.0
+-- 日期: 2026-01-16
+-- 说明: 扩展数据库以支持打字练习模式
+-- ============================================================================
+
+-- ----------------------------------------------------------------------------
+-- 变更 1: 扩展 learning_records 表的 practice_mode 字段
+-- ----------------------------------------------------------------------------
+
+-- 步骤 1: 将 ENUM 改为 TEXT（支持扩展）
+ALTER TABLE learning_records
+ALTER COLUMN practice_mode TYPE TEXT USING practice_mode::TEXT;
+
+-- 步骤 2: 删除旧的约束（如果存在）
+ALTER TABLE learning_records
+DROP CONSTRAINT IF EXISTS learning_records_practice_mode_check;
+
+-- 步骤 3: 添加新的约束（包含 'typing'）
+ALTER TABLE learning_records
+ADD CONSTRAINT learning_records_practice_mode_check
+CHECK (practice_mode IN ('dictation', 'match_game', 'flashcard', 'typing', NULL));
+
+-- 步骤 4: 添加注释
+COMMENT ON COLUMN learning_records.practice_mode IS '练习模式: dictation(听写) | match_game(消消乐) | flashcard(卡片) | typing(打字练习/肌肉训练) | NULL(其他模式)';
+
+-- ----------------------------------------------------------------------------
+-- 变更 2: 修改 word_progress 表（新增拼写统计字段）
+-- ----------------------------------------------------------------------------
+
+-- 添加拼写正确次数字段
+ALTER TABLE word_progress
+ADD COLUMN IF NOT EXISTS typing_correct_count INTEGER DEFAULT 0 NOT NULL;
+
+COMMENT ON COLUMN word_progress.typing_correct_count IS '打字练习拼写正确次数（仅统计 typing 模式）';
+
+-- 添加拼写总尝试次数字段
+ALTER TABLE word_progress
+ADD COLUMN IF NOT EXISTS typing_total_attempts INTEGER DEFAULT 0 NOT NULL;
+
+COMMENT ON COLUMN word_progress.typing_total_attempts IS '打字练习总尝试次数（仅统计 typing 模式）';
+
+-- 添加数据完整性约束
+ALTER TABLE word_progress
+DROP CONSTRAINT IF EXISTS word_progress_typing_stats_check;
+
+ALTER TABLE word_progress
+ADD CONSTRAINT word_progress_typing_stats_check
+CHECK (typing_correct_count >= 0 AND typing_total_attempts >= 0);
+
+ALTER TABLE word_progress
+DROP CONSTRAINT IF EXISTS word_progress_typing_attempts_check;
+
+ALTER TABLE word_progress
+ADD CONSTRAINT word_progress_typing_attempts_check
+CHECK (typing_total_attempts >= typing_correct_count);
+
+-- 添加上限约束（防止无限循环导致溢出）
+ALTER TABLE word_progress
+DROP CONSTRAINT IF EXISTS word_progress_typing_total_attempts_limit_check;
+
+ALTER TABLE word_progress
+ADD CONSTRAINT word_progress_typing_total_attempts_limit_check
+CHECK (typing_total_attempts <= 10000);
+
+-- 添加 version 字段（用于乐观锁）
+ALTER TABLE word_progress
+ADD COLUMN IF NOT EXISTS version INTEGER DEFAULT 1;
+
+COMMENT ON COLUMN word_progress.version IS '乐观锁版本号，每次更新自动递增';
+
+-- ----------------------------------------------------------------------------
+-- 变更 3: 修改 mistakes 表（新增拼写错误统计字段）
+-- ----------------------------------------------------------------------------
+
+-- 添加拼写错误次数字段
+ALTER TABLE mistakes
+ADD COLUMN IF NOT EXISTS typing_wrong_count INTEGER DEFAULT 0 NOT NULL;
+
+COMMENT ON COLUMN mistakes.typing_wrong_count IS '打字练习拼写错误次数（连续错误累积）';
+
+-- 添加数据完整性约束
+ALTER TABLE mistakes
+DROP CONSTRAINT IF EXISTS mistakes_typing_wrong_count_check;
+
+ALTER TABLE mistakes
+ADD CONSTRAINT mistakes_typing_wrong_count_check
+CHECK (typing_wrong_count >= 0);
+
+-- 添加上限约束（防止恶意或异常数据）
+ALTER TABLE mistakes
+DROP CONSTRAINT IF EXISTS mistakes_typing_wrong_count_limit_check;
+
+ALTER TABLE mistakes
+ADD CONSTRAINT mistakes_typing_wrong_count_limit_check
+CHECK (typing_wrong_count <= 1000);
+
+-- ----------------------------------------------------------------------------
+-- 变更 4: 添加索引（优化查询性能）
+-- ----------------------------------------------------------------------------
+
+-- 优化打字练习记录查询
+CREATE INDEX IF NOT EXISTS idx_learning_records_typing_mode
+ON learning_records(user_id, book_id, practice_mode)
+WHERE practice_mode = 'typing';
+
+-- 优化错题本查询（拼写错误）
+CREATE INDEX IF NOT EXISTS idx_mistakes_typing_wrong_count
+ON mistakes(user_id, book_id, typing_wrong_count)
+WHERE typing_wrong_count > 0;
+
+-- 优化错题本查询（已解决/未解决）
+CREATE INDEX IF NOT EXISTS idx_mistakes_user_resolved
+ON mistakes(user_id, book_id, is_resolved);
+
+-- ============================================================================
+-- 迁移完成！
+-- ============================================================================</div>
+      </div>
+
+      <!-- 步骤 3 -->
+      <div class="step">
+        <div class="step-title">
+          <span class="step-number">3</span>
+          执行 SQL 脚本
+        </div>
+        <ol style="line-height: 2;">
+          <li>在 Supabase SQL Editor 中，粘贴刚才复制的 SQL 脚本</li>
+          <li>检查右下角选择了正确的数据库（通常是 <code>postgres</code>）</li>
+          <li>点击右下角的 <code>▶ Run</code> 按钮执行</li>
+          <li>等待执行完成（应该会显示 <code>Success</code>）</li>
+        </ol>
+      </div>
+
+      <!-- 步骤 4 -->
+      <div class="step">
+        <div class="step-title">
+          <span class="step-number">4</span>
+          验证迁移结果
+        </div>
+        <p>在 SQL Editor 中运行以下验证查询：</p>
+
+        <div class="sql-box">-- 验证 word_progress 表字段
+SELECT column_name, data_type, column_default
+FROM information_schema.columns
+WHERE table_name = 'word_progress'
+  AND column_name IN ('typing_correct_count', 'typing_total_attempts', 'version')
+ORDER BY column_name;
+
+-- 验证 mistakes 表字段
+SELECT column_name, data_type, column_default
+FROM information_schema.columns
+WHERE table_name = 'mistakes'
+  AND column_name = 'typing_wrong_count';</div>
+
+        <p>应该看到类似以下结果：</p>
+        <div class="sql_box" style="background: #f0f0f0; color: #333; padding: 15px; border-radius: 10px;">
+          <strong>word_progress 表：</strong><br>
+          • typing_correct_count | integer | 0<br>
+          • typing_total_attempts | integer | 0<br>
+          • version | integer | 1<br><br>
+          <strong>mistakes 表：</strong><br>
+          • typing_wrong_count | integer | 0
+        </div>
+      </div>
+
+      <!-- 完成确认 -->
+      <div class="step">
+        <div class="step-title">
+          <span class="step-number">✓</span>
+          迁移完成确认
+        </div>
+
+        <div class="checkbox-group">
+          <label class="checkbox-item">
+            <input type="checkbox" id="check1" onchange="checkCompletion()">
+            已成功执行 SQL 脚本
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="check2" onchange="checkCompletion()">
+            验证查询显示所有新字段已创建
+          </label>
+          <label class="checkbox-item">
+            <input type="checkbox" id="check3" onchange="checkCompletion()">
+            没有错误提示
+          </label>
+        </div>
+
+        <div id="successMessage" class="success" style="display: none;">
+          <strong>🎉 恭喜！数据库迁移已完成！</strong><br><br>
+          现在可以启动开发服务器测试打字练习功能了：<br>
+          <code>npm run dev</code><br><br>
+          然后访问：<a href="http://localhost:3000/typing" target="_blank" style="color: #667eea;">http://localhost:3000/typing</a>
+        </div>
+      </div>
+
+      <!-- 回滚说明 -->
+      <div class="step">
+        <div class="step-title">
+          <span style="background: #6c757d;">?</span>
+          需要回滚？
+        </div>
+        <p>如果遇到问题，可以执行以下回滚脚本：</p>
+        <button class="btn btn-secondary" onclick="copyRollback()">
+          📋 复制回滚脚本
+        </button>
+
+        <div class="sql-box" id="rollbackContent">-- 回滚脚本（仅在需要时执行）
+-- 警告：这将删除打字练习功能的所有数据！
+
+-- 删除索引
+DROP INDEX IF EXISTS idx_learning_records_typing_mode;
+DROP INDEX IF EXISTS idx_mistakes_typing_wrong_count;
+DROP INDEX IF EXISTS idx_mistakes_user_resolved;
+
+-- 删除 word_progress 表字段
+ALTER TABLE word_progress DROP COLUMN IF EXISTS typing_correct_count;
+ALTER TABLE word_progress DROP COLUMN IF EXISTS typing_total_attempts;
+ALTER TABLE word_progress DROP COLUMN IF EXISTS version;
+
+-- 删除 word_progress 表约束
+ALTER TABLE word_progress DROP CONSTRAINT IF EXISTS word_progress_typing_stats_check;
+ALTER TABLE word_progress DROP CONSTRAINT IF EXISTS word_progress_typing_attempts_check;
+ALTER TABLE word_progress DROP CONSTRAINT IF EXISTS word_progress_typing_total_attempts_limit_check;
+
+-- 删除 mistakes 表字段
+ALTER TABLE mistakes DROP COLUMN IF EXISTS typing_wrong_count;
+ALTER TABLE mistakes DROP CONSTRAINT IF EXISTS mistakes_typing_wrong_count_check;
+ALTER TABLE mistakes DROP CONSTRAINT IF EXISTS mistakes_typing_wrong_count_limit_check;
+
+-- 恢复 learning_records 表约束（保留 TEXT 类型）
+ALTER TABLE learning_records DROP CONSTRAINT IF EXISTS learning_records_practice_mode_check;
+ALTER TABLE learning_records
+ADD CONSTRAINT learning_records_practice_mode_check
+CHECK (practice_mode IN ('dictation', 'match_game', 'flashcard', NULL));</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copySQL() {
+      const sql = document.getElementById('sqlContent').innerText;
+      navigator.clipboard.writeText(sql).then(() => {
+        alert('✅ SQL 脚本已复制到剪贴板！');
+      });
+    }
+
+    function downloadSQL() {
+      const sql = document.getElementById('sqlContent').innerText;
+      const blob = new Blob([sql], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'typing-practice-migration.sql';
+      a.click();
+      URL.revokeObjectURL(url);
+      alert('✅ SQL 文件已下载！');
+    }
+
+    function copyRollback() {
+      const sql = document.getElementById('rollbackContent').innerText;
+      navigator.clipboard.writeText(sql).then(() => {
+        alert('✅ 回滚脚本已复制到剪贴板！');
+      });
+    }
+
+    function checkCompletion() {
+      const check1 = document.getElementById('check1').checked;
+      const check2 = document.getElementById('check2').checked;
+      const check3 = document.getElementById('check3').checked;
+
+      if (check1 && check2 && check3) {
+        document.getElementById('successMessage').style.display = 'block';
+      } else {
+        document.getElementById('successMessage').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

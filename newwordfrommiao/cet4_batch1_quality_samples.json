@@ -1,0 +1,139 @@
+{
+  "generated_at": "2026-01-11T19:40:44.152602",
+  "samples": [
+    {
+      "word": "abandon",
+      "word_entry": {
+        "word": "abandon",
+        "word_id": "mp_abandon",
+        "phonetic": {
+          "kk": "ә'bændәn",
+          "mw": "ә'bændәn",
+          "ipa": ""
+        },
+        "definitions": [
+          {
+            "part_of_speech": "unknown",
+            "meaning_cn": "",
+            "meaning_en_simple": "",
+            "examples": []
+          }
+        ],
+        "word_formation": {},
+        "academic_features": {},
+        "sight_word_features": {},
+        "metadata": {},
+        "tags": [
+          "cet4",
+          "exam",
+          "undergraduate"
+        ]
+      },
+      "examples": [
+        {
+          "sentence_en": "We had to abandon the legacy platform after the Q3 security audit revealed critical vulnerabilities.",
+          "sentence_cn": "在第三季度安全审计发现关键漏洞后，我们不得不放弃这个遗留平台。",
+          "style": "2026_silicon_valley_business",
+          "register": "professional"
+        },
+        {
+          "sentence_en": "The central bank's sudden decision to abandon its inflation target has sent shockwaves through global markets.",
+          "sentence_cn": "央行突然放弃通胀目标的决定在全球市场引发了震动。",
+          "style": "economist_deep_reporting",
+          "register": "journalistic"
+        }
+      ]
+    },
+    {
+      "word": "abstract",
+      "word_entry": {
+        "word": "abstract",
+        "word_id": "mp_abstract",
+        "phonetic": {
+          "kk": "'æbstrækt",
+          "mw": "'æbstrækt",
+          "ipa": ""
+        },
+        "definitions": [
+          {
+            "part_of_speech": "unknown",
+            "meaning_cn": "",
+            "meaning_en_simple": "",
+            "examples": []
+          }
+        ],
+        "word_formation": {},
+        "academic_features": {},
+        "sight_word_features": {},
+        "metadata": {},
+        "tags": [
+          "cet4",
+          "exam",
+          "undergraduate"
+        ]
+      },
+      "examples": [
+        {
+          "sentence_en": "The abstract for our AI research paper was accepted by the NeurIPS committee ahead of schedule.",
+          "sentence_cn": "我们 AI 研究论文的摘要提前被 NeurIPS 委员会接受了。",
+          "style": "2026_silicon_valley_business",
+          "register": "academic_professional"
+        },
+        {
+          "sentence_en": "The concept of algorithmic bias has moved from abstract academic theory to a concrete concern affecting millions.",
+          "sentence_cn": "算法偏见这一概念已从抽象的学术理论转变为影响数百万人的现实关切。",
+          "style": "nyt_deep_dive",
+          "register": "analytical"
+        }
+      ]
+    },
+    {
+      "word": "accumulate",
+      "word_entry": {
+        "word": "accumulate",
+        "word_id": "mp_accumulate",
+        "phonetic": {
+          "kk": "ә'kju:mjuleit",
+          "mw": "ә'kju:mjuleit",
+          "ipa": ""
+        },
+        "definitions": [
+          {
+            "part_of_speech": "unknown",
+            "meaning_cn": "",
+            "meaning_en_simple": "",
+            "examples": []
+          }
+        ],
+        "word_formation": {},
+        "academic_features": {},
+        "sight_word_features": {},
+        "metadata": {},
+        "tags": [
+          "cet4",
+          "daily",
+          "exam",
+          "family",
+          "parent_child",
+          "scenario",
+          "undergraduate"
+        ]
+      },
+      "examples": [
+        {
+          "sentence_en": "Our startup managed to accumulate 50,000 active users within six months of launching the MVP.",
+          "sentence_cn": "我们初创公司在推出最小可行产品后的六个月内积累了 5 万活跃用户。",
+          "style": "2026_silicon_valley_startup",
+          "register": "business"
+        },
+        {
+          "sentence_en": "Evidence continues to accumulate that climate change is accelerating faster than previously predicted.",
+          "sentence_cn": "越来越多的证据表明，气候变化加速的速度比之前预测的更快。",
+          "style": "economist_climate_reporting",
+          "register": "analytical"
+        }
+      ]
+    }
+  ],
+  "status": "pending_approval"
+}

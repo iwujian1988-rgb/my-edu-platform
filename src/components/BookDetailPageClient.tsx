@@ -12,6 +12,7 @@ import { ChapterManagementDialog } from '@/components/ChapterManagementDialog'
 import { SmartImportDialog } from '@/components/SmartImportDialog'
 import { WordTableEditor } from '@/components/WordTableEditor'
 import { BatchActionBar } from '@/components/BatchActionBar'
+import { useLoading } from '@/components/LoadingOverlay'
 
 // ✅ 导入新的Hooks和工具函数
 import { useBookFilters, type BookFilters } from '@/hooks/useBookFilters'
@@ -103,6 +104,12 @@ export function BookDetailPageClient({
   initialTotal
 }: BookDetailPageClientProps) {
   const router = useRouter()
+  const { showLoading } = useLoading()
+
+  const handleBack = () => {
+    // 立即显示 loading，给用户即时反馈
+    showLoading()
+  }
 
   // ✅ 使用新的Hooks管理状态（传入bookId以支持断点续读）
   const { filters, setPage, setTheme, setScenario, setChapter, setStatus, updateFilters } = useBookFilters(book.id)
@@ -180,6 +187,7 @@ export function BookDetailPageClient({
 
   // 断点续读状态
   const [showRestoreToast, setShowRestoreToast] = useState(false)
+  const [toastOpacity, setToastOpacity] = useState(1)  // 添加透明度状态
   const [restoredPage, setRestoredPage] = useState<number | null>(null)
   const [showRestoreConfirm, setShowRestoreConfirm] = useState(false)
   const [savedProgress, setSavedProgress] = useState<ReadingProgress | null>(null)
@@ -212,12 +220,19 @@ export function BookDetailPageClient({
         if (restoredPage !== null && !showRestoreToast) {
           console.log('🎉 [Resume] Data arrived, showing restore toast for page:', restoredPage)
           setShowRestoreToast(true)
+          setToastOpacity(1)  // 重置透明度
 
-          // 3秒后自动隐藏Toast
+          // 3秒后开始淡出
           toastTimerRef.current = setTimeout(() => {
-            console.log('⏱️ [Resume] Hiding restore toast')
-            setShowRestoreToast(false)
-            setRestoredPage(null)  // 清除恢复页码，避免影响下次
+            console.log('⏱️ [Resume] Starting fade out')
+            // 先淡出（500ms）
+            setToastOpacity(0)
+
+            // 淡出完成后完全隐藏
+            setTimeout(() => {
+              setShowRestoreToast(false)
+              setRestoredPage(null)  // 清除恢复页码，避免影响下次
+            }, 500)
           }, 3000)
         }
 
@@ -718,7 +733,10 @@ export function BookDetailPageClient({
 
       {/* ⭐ 断点续读Toast提示 */}
       {showRestoreToast && restoredPage && (
-        <div className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-in slide-in-from-top fade-in duration-300">
+        <div
+          className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-in slide-in-from-top fade-in duration-300"
+          style={{ opacity: toastOpacity, transition: 'opacity 500ms ease-out' }}
+        >
           <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-3">
             <RotateCcw className="w-5 h-5" />
             <span className="font-semibold">
@@ -735,6 +753,7 @@ export function BookDetailPageClient({
             <div className="flex items-center gap-4">
               <Link
                 href="/"
+                onClick={handleBack}
                 className="flex items-center justify-center w-10 h-10 rounded-xl transition-colors duration-200 hover:opacity-80"
                 style={{ backgroundColor: 'var(--bg-tertiary)' }}
               >

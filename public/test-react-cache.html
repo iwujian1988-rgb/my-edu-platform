@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>React缓存测试 - 实际应用</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    h1 { color: #4CAF50; }
+    h2 { color: #2196F3; margin-top: 30px; }
+    .test-section {
+      background: #2a2a2a;
+      padding: 20px;
+      margin: 15px 0;
+      border-radius: 8px;
+      border-left: 4px solid #4CAF50;
+    }
+    .log {
+      background: #1e1e1e;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      font-family: monospace;
+      white-space: pre-wrap;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .success { color: #4CAF50; }
+    .error { color: #f44336; }
+    .info { color: #2196F3; }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover { background: #45a049; }
+    button:disabled { background: #666; cursor: not-allowed; }
+    .cache-display {
+      background: #1e1e1e;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    .step {
+      margin: 15px 0;
+      padding: 15px;
+      background: #333;
+      border-radius: 4px;
+    }
+    .step-number {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background: #4CAF50;
+      color: white;
+      text-align: center;
+      line-height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: 2px solid #4CAF50;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 React Hook缓存测试 - 实际应用验证</h1>
+
+  <div class="test-section">
+    <h2>测试说明</h2>
+    <p>这个测试通过iframe加载实际的React应用，验证useWordData hook的缓存逻辑。</p>
+    <p><strong>测试书籍</strong>: PEP初中8年级 (9f1e6332-979d-4632-a8f6-8bd35246b28d)</p>
+    <p><strong>该书有1条"认识"状态的记录</strong></p>
+  </div>
+
+  <div class="test-section">
+    <h2>测试步骤</h2>
+
+    <div class="step">
+      <span class="step-number">1</span>
+      <strong>清除缓存</strong>
+      <button onclick="clearCache()">清除SessionStorage缓存</button>
+    </div>
+
+    <div class="step">
+      <span class="step-number">2</span>
+      <strong>打开实际应用</strong>
+      <button onclick="openApp()">打开书籍详情页 (新窗口)</button>
+      <p>或者直接在下方iframe中测试</p>
+    </div>
+
+    <div class="step">
+      <span class="step-number">3</span>
+      <strong>在应用中操作</strong>
+      <ol>
+        <li>等待页面加载完成，查看Console日志</li>
+        <li>观察第一次加载: 应该看到 <code class="info">✅ [Track] Page 1-all marked as loaded</code></li>
+        <li>点击"认识"筛选按钮</li>
+        <li>观察是否调用API: 应该看到 <code class="info">📖 Fetching words (page 1, status=known)</code></li>
+        <li>观察缓存标记: 应该看到 <code class="success">✅ [Track] Page 1-known marked as loaded</code></li>
+        <li>再次点击"认识"筛选按钮</li>
+        <li>观察是否跳过API: 应该看到 <code class="success">✅ [Skip] Page 1-known already loaded</code></li>
+      </ol>
+    </div>
+
+    <div class="step">
+      <span class="step-number">4</span>
+      <strong>检查缓存</strong>
+      <button onclick="checkCache()">检查SessionStorage缓存</button>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>SessionStorage缓存检查</h2>
+    <div id="cache-result" class="cache-display">点击上方按钮检查缓存...</div>
+  </div>
+
+  <div class="test-section">
+    <h2>Console日志</h2>
+    <p>在iframe中打开页面后，按F12查看Console日志，寻找以下关键日志：</p>
+    <div class="log">
+<span class="info">📖 Fetching words (page 1, append: false, isPortrait: false)</span>
+<span class="success">✅ [Track] Page 1-all marked as loaded (persisted to sessionStorage)</span>
+<span class="info">📖 Fetching words (page 1, append: false, isPortrait: false)</span>
+<span class="success">✅ [Track] Page 1-known marked as loaded (persisted to sessionStorage)</span>
+<span class="success">✅ [Skip] Page 1-known already loaded, skipping API call</span>
+    </div>
+  </div>
+
+  <div class="test-section">
+    <h2>在iframe中测试</h2>
+    <button onclick="loadInIframe()">在iframe中加载书籍详情页</button>
+    <div id="iframe-container"></div>
+  </div>
+
+  <script>
+    const TEST_BOOK_ID = '9f1e6332-979d-4632-a8f6-8bd35246b28d';
+    const CACHE_KEY = `loadedPages-${TEST_BOOK_ID}`;
+
+    function clearCache() {
+      sessionStorage.removeItem(CACHE_KEY);
+      document.getElementById('cache-result').innerHTML = '<span class="success">✅ 缓存已清除</span>';
+      alert('缓存已清除，请刷新应用页面重新测试');
+    }
+
+    function checkCache() {
+      const cacheData = sessionStorage.getItem(CACHE_KEY);
+      const resultDiv = document.getElementById('cache-result');
+
+      if (!cacheData) {
+        resultDiv.innerHTML = '<span class="error">❌ 缓存为空</span>';
+        return;
+      }
+
+      const cacheArray = JSON.parse(cacheData);
+
+      let html = '<span class="info">📦 缓存内容:</span>\n\n';
+
+      // 检查格式
+      const hasCorrectFormat = cacheArray.some(key => key.includes('-'));
+
+      cacheArray.forEach(key => {
+        const isCorrect = key.includes('-');
+        const colorClass = isCorrect ? 'success' : 'error';
+        html += `<span class="${colorClass}">${isCorrect ? '✅' : '❌'} ${key}</span>\n`;
+      });
+
+      html += '\n';
+
+      if (hasCorrectFormat) {
+        html += '<span class="success">✅ 缓存key格式正确 (包含"-")</span>\n';
+      } else {
+        html += '<span class="error">❌ 缓存key格式错误 (应该包含"-")</span>\n';
+      }
+
+      const uniqueKeys = new Set(cacheArray);
+      html += `<span class="info">📊 不同的缓存key数量: ${uniqueKeys.size}</span>\n`;
+
+      if (uniqueKeys.size >= 2) {
+        html += '<span class="success">✅ 有不同的page-status组合，修复成功!</span>\n';
+      } else {
+        html += '<span class="error">⚠️ 只有1个缓存key，可能测试不完整</span>\n';
+      }
+
+      resultDiv.innerHTML = `<pre>${html}</pre>`;
+    }
+
+    function openApp() {
+      window.open(`/library/${TEST_BOOK_ID}`, '_blank');
+    }
+
+    function loadInIframe() {
+      const container = document.getElementById('iframe-container');
+      container.innerHTML = `<iframe src="/library/${TEST_BOOK_ID}"></iframe>`;
+    }
+
+    // 页面加载时检查缓存
+    window.onload = () => {
+      checkCache();
+    };
+  </script>
+</body>
+</html>

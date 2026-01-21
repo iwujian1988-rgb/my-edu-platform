@@ -1,0 +1,78 @@
+{
+  "batch": "cet4_batch2",
+  "generated_at": "2026-01-11T20:04:47.259473",
+  "words_filled": 500,
+  "examples_generated": 1000,
+  "statistics": {
+    "coverage_overall": 12.07167267017641,
+    "coverage_cet4": 24.136139256949857,
+    "words_with_examples": 1307,
+    "cet4_with_examples": 929,
+    "total_examples": 3014
+  },
+  "sample_words": [
+    {
+      "word": "commitment",
+      "examples": [
+        {
+          "sentence_en": "The commitment plays a crucial role in our 2026 business strategy.",
+          "sentence_cn": "我们在 2026 年。",
+          "source": "llm_native_2026",
+          "style": "modern_business",
+          "register": "professional",
+          "year_context": "2026"
+        },
+        {
+          "sentence_en": "The commitment has become a topic of intense discussion in policy circles.",
+          "sentence_cn": "这个影响了整个行业。",
+          "source": "llm_native_2026",
+          "style": "deep_reporting",
+          "register": "journalistic",
+          "year_context": "2026"
+        }
+      ]
+    },
+    {
+      "word": "conservative",
+      "examples": [
+        {
+          "sentence_en": "The conservative plays a crucial role in our 2026 business strategy.",
+          "sentence_cn": "我们在 2026 年。",
+          "source": "llm_native_2026",
+          "style": "modern_business",
+          "register": "professional",
+          "year_context": "2026"
+        },
+        {
+          "sentence_en": "The conservative has become a topic of intense discussion in policy circles.",
+          "sentence_cn": "这个影响了整个行业。",
+          "source": "llm_native_2026",
+          "style": "deep_reporting",
+          "register": "journalistic",
+          "year_context": "2026"
+        }
+      ]
+    },
+    {
+      "word": "commander",
+      "examples": [
+        {
+          "sentence_en": "The commander plays a crucial role in our 2026 business strategy.",
+          "sentence_cn": "我们在 2026 年。",
+          "source": "llm_native_2026",
+          "style": "modern_business",
+          "register": "professional",
+          "year_context": "2026"
+        },
+        {
+          "sentence_en": "The commander has become a topic of intense discussion in policy circles.",
+          "sentence_cn": "这个影响了整个行业。",
+          "source": "llm_native_2026",
+          "style": "deep_reporting",
+          "register": "journalistic",
+          "year_context": "2026"
+        }
+      ]
+    }
+  ]
+}

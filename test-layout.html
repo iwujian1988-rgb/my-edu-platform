@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  .flex { display: flex; }
+  .gap-2 { gap: 0.5rem; }
+  .flex-1 { flex: 1; }
+</style>
+</head>
+<body>
+  <h3>Test 1: 数字和文本应该同行</h3>
+  <div class="flex gap-2">
+    <span>1.</span>
+    <span class="flex-1">a food made from roasted ground cacao beans</span>
+  </div>
+  
+  <h3>Test 2: 长文本应该换行</h3>
+  <div class="flex gap-2">
+    <span>1.</span>
+    <span class="flex-1">a food made from roasted ground cacao beans that are grown in tropical regions and processed into various products including cocoa powder and chocolate bars</span>
+  </div>
+</body>
+</html>

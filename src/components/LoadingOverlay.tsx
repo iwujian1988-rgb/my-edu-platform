@@ -32,8 +32,8 @@ export function LoadingOverlay() {
   const [quoteIndex, setQuoteIndex] = useState(0)
   const pathname = usePathname()
   const searchParams = useSearchParams()
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
+  const { theme, mounted } = useTheme()
+  const isDark = mounted && theme === 'dark'
   const timeoutRef = useRef<NodeJS.Timeout>()
 
   // 初始化完成后显示
@@ -70,12 +70,17 @@ export function LoadingOverlay() {
     }
   }, [])
 
-  // 路由变化时自动隐藏加载层
+  // 路由变化时自动显示并延迟隐藏加载层
   useEffect(() => {
+    // 立即显示加载动画
+    setIsLoading(true)
+    // 随机选择一条激励文案
+    setQuoteIndex(Math.floor(Math.random() * motivationalQuotes.length))
+
     // 路由变化后延迟隐藏
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 300)
+    }, 500)  // 增加到500ms，确保用户能看到加载动画
 
     return () => clearTimeout(timer)
   }, [pathname, searchParams])

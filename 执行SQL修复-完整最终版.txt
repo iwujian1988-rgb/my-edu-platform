@@ -1,0 +1,143 @@
+================================================================================
+【完整最终修复】修复两个RPC函数 + theme/scene支持
+================================================================================
+
+-- 1. 修复优化的RPC函数（带theme/scene）
+DROP FUNCTION IF EXISTS get_book_words_paginated_optimized(UUID, INTEGER, INTEGER);
+
+CREATE OR REPLACE FUNCTION get_book_words_paginated_optimized(
+  book_uuid UUID,
+  offset_val INTEGER DEFAULT 0,
+  limit_val INTEGER DEFAULT 50
+)
+RETURNS TABLE (
+  id UUID,
+  word TEXT,
+  phonetic TEXT,
+  uk_phonetic TEXT,
+  us_phonetic TEXT,
+  definition TEXT,
+  definition_en TEXT,
+  collocation TEXT,
+  collocation_en TEXT,
+  example_sentence TEXT,
+  example_sentence_en TEXT,
+  part_of_speech TEXT,
+  chapter TEXT,
+  chapter_id UUID,
+  theme TEXT,
+  scene TEXT,
+  order_index INTEGER
+)
+LANGUAGE plpgsql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+BEGIN
+  RETURN QUERY
+  SELECT
+    w.id,
+    w.word::text,
+    w.phonetic::text,
+    w.uk_phonetic::text,
+    w.us_phonetic::text,
+    w.definition::text,
+    w.definition_en::text,
+    w.collocation::text,
+    w.collocation_en::text,
+    w.example_sentence::text,
+    w.example_sentence_en::text,
+    w.part_of_speech::text,
+    c.title::text,
+    w.chapter_id,
+    COALESCE(t.name::text, '')::text as theme,
+    COALESCE(s.name::text, '')::text as scene,
+    w.order_index
+  FROM words w
+  LEFT JOIN chapters c ON w.chapter_id = c.id
+  LEFT JOIN themes t ON c.theme_id = t.id
+  LEFT JOIN scenes s ON c.scene_id = s.id
+  WHERE w.book_id = book_uuid
+  ORDER BY w.order_index ASC
+  LIMIT limit_val
+  OFFSET offset_val;
+END;
+$$;
+
+-- 2. 修复标准RPC函数（也使用book_id直接查询）
+DROP FUNCTION IF EXISTS get_book_words_paginated(UUID, INTEGER, INTEGER);
+
+CREATE OR REPLACE FUNCTION get_book_words_paginated(
+  book_uuid UUID,
+  offset_val INTEGER DEFAULT 0,
+  limit_val INTEGER DEFAULT 50
+)
+RETURNS TABLE (
+  id UUID,
+  word TEXT,
+  phonetic TEXT,
+  uk_phonetic TEXT,
+  us_phonetic TEXT,
+  definition TEXT,
+  definition_en TEXT,
+  collocation TEXT,
+  collocation_en TEXT,
+  example_sentence TEXT,
+  example_sentence_en TEXT,
+  part_of_speech TEXT,
+  chapter TEXT,
+  chapter_id UUID,
+  theme TEXT,
+  scene TEXT,
+  order_index INTEGER
+)
+LANGUAGE plpgsql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+BEGIN
+  RETURN QUERY
+  SELECT
+    w.id,
+    w.word::text,
+    w.phonetic::text,
+    w.uk_phonetic::text,
+    w.us_phonetic::text,
+    w.definition::text,
+    w.definition_en::text,
+    w.collocation::text,
+    w.collocation_en::text,
+    w.example_sentence::text,
+    w.example_sentence_en::text,
+    w.part_of_speech::text,
+    c.title::text,
+    w.chapter_id,
+    COALESCE(t.name::text, '')::text as theme,
+    COALESCE(s.name::text, '')::text as scene,
+    w.order_index
+  FROM words w
+  LEFT JOIN chapters c ON w.chapter_id = c.id
+  LEFT JOIN themes t ON c.theme_id = t.id
+  LEFT JOIN scenes s ON c.scene_id = s.id
+  WHERE w.book_id = book_uuid
+  ORDER BY w.order_index ASC
+  LIMIT limit_val
+  OFFSET offset_val;
+END;
+$$;
+
+-- 添加注释
+COMMENT ON FUNCTION get_book_words_paginated_optimized IS '优化的分页查询，JOIN获取theme和scene名称';
+COMMENT ON FUNCTION get_book_words_paginated IS '标准分页查询，JOIN获取theme和scene名称';
+
+================================================================================
+修复内容：
+1. get_book_words_paginated_optimized - 优化的RPC函数
+2. get_book_words_paginated - 标准RPC函数
+两个函数都：
+- 使用book_id直接查询words表
+- LEFT JOIN获取chapter, theme, scene
+- 返回完整的字段包括theme和scene
+================================================================================

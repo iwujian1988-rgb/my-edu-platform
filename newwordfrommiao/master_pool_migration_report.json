@@ -1,0 +1,384 @@
+{
+  "generated_at": "2026-01-11T18:26:13.396271",
+  "statistics": {
+    "total_unique_words": 10827,
+    "total_sources_processed": 11,
+    "overlap_analysis": {
+      "total_overlapping_words": 1744,
+      "overlap_percentage": 16.107878452018102,
+      "distribution": {
+        "3": 103,
+        "4": 26,
+        "5": 18,
+        "2": 514,
+        "1": 1083
+      },
+      "top_overlapping_words": [
+        {
+          "word": "go",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "one",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "all",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "black",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "brown",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "good",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "on",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "say",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "as",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "fly",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "give",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "let",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "carry",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "cut",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "keep",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "idea",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "example",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "group",
+          "sources": [
+            "ecommerce",
+            "us_k12_foundation",
+            "grade1_sight_words",
+            "parent_child",
+            "native_speaker_core"
+          ],
+          "count": 5
+        },
+        {
+          "word": "come",
+          "sources": [
+            "native_speaker_core",
+            "parent_child",
+            "us_k12_foundation",
+            "grade1_sight_words"
+          ],
+          "count": 4
+        },
+        {
+          "word": "get",
+          "sources": [
+            "native_speaker_core",
+            "parent_child",
+            "us_k12_foundation",
+            "grade1_sight_words"
+          ],
+          "count": 4
+        }
+      ]
+    }
+  },
+  "tag_usage": {
+    "exam": 10578,
+    "undergraduate": 5805,
+    "academic": 4832,
+    "study_abroad": 4773,
+    "cet4": 3849,
+    "toefl": 2940,
+    "cet6": 1956,
+    "ielts": 1833,
+    "daily": 1427,
+    "scenario": 1377,
+    "family": 1218,
+    "parent_child": 1218,
+    "k12": 607,
+    "business": 546,
+    "ecommerce": 546,
+    "us_education": 515,
+    "foundation": 388,
+    "grade1": 318,
+    "sight_word": 318,
+    "core": 244,
+    "native_speaker": 244,
+    "grade3": 87,
+    "morphology": 87,
+    "word_formation": 87,
+    "high_school": 61,
+    "tier2": 61
+  },
+  "sources": {
+    "cet4": {
+      "path": "src/assets/data/cet4_words.json",
+      "tags": [
+        "cet4",
+        "exam",
+        "undergraduate"
+      ],
+      "original_count": 3849,
+      "priority": 1
+    },
+    "cet6": {
+      "path": "src/assets/data/cet6_words.json",
+      "tags": [
+        "cet6",
+        "exam",
+        "undergraduate"
+      ],
+      "original_count": 1956,
+      "priority": 2
+    },
+    "ielts": {
+      "path": "src/assets/data/ielts_words.json",
+      "tags": [
+        "ielts",
+        "exam",
+        "study_abroad",
+        "academic"
+      ],
+      "original_count": 1833,
+      "priority": 3
+    },
+    "toefl": {
+      "path": "src/assets/data/toefl_words.json",
+      "tags": [
+        "toefl",
+        "exam",
+        "study_abroad",
+        "academic"
+      ],
+      "original_count": 2940,
+      "priority": 3
+    },
+    "us_k12_foundation": {
+      "path": "src/assets/data/us_k12_foundation.json",
+      "tags": [
+        "k12",
+        "us_education",
+        "foundation"
+      ],
+      "original_count": 413,
+      "priority": 4
+    },
+    "native_speaker_core": {
+      "path": "src/assets/scenarios/native_speaker_core_optimized.json",
+      "tags": [
+        "native_speaker",
+        "core",
+        "daily"
+      ],
+      "original_count": 245,
+      "priority": 5
+    },
+    "ecommerce": {
+      "path": "src/assets/scenarios/scenario_ecommerce_500.json",
+      "tags": [
+        "scenario",
+        "ecommerce",
+        "business"
+      ],
+      "original_count": 546,
+      "priority": 6
+    },
+    "parent_child": {
+      "path": "src/assets/scenarios/scenario_parent_child_1000.json",
+      "tags": [
+        "scenario",
+        "parent_child",
+        "family",
+        "daily"
+      ],
+      "original_count": 1218,
+      "priority": 6
+    },
+    "grade1_sight_words": {
+      "path": "src/assets/levels/us_k12/grade1_sight_words.json",
+      "tags": [
+        "k12",
+        "grade1",
+        "sight_word",
+        "us_education"
+      ],
+      "original_count": 318,
+      "priority": 7
+    },
+    "grade3_morphology": {
+      "path": "src/assets/levels/us_k12/grade3_morphology.json",
+      "tags": [
+        "k12",
+        "grade3",
+        "morphology",
+        "word_formation"
+      ],
+      "original_count": 89,
+      "priority": 7
+    },
+    "academic_tier2": {
+      "path": "src/assets/levels/us_k12/academic_tier2.json",
+      "tags": [
+        "k12",
+        "academic",
+        "tier2",
+        "high_school"
+      ],
+      "original_count": 61,
+      "priority": 7
+    }
+  }
+}

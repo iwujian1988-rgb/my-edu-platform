@@ -65,7 +65,16 @@ export function CreateInvitationCodeButton() {
 
       if (response.ok) {
         const data = await response.json()
-        alert(`成功创建 ${data.codes.length} 个邀请码！\n\n${data.codes.map((c: any) => c.code).join('\n')}`)
+
+        // 创建成功，询问是否导出
+        const shouldExport = confirm(
+          `成功创建 ${data.codes.length} 个邀请码！\n\n是否立即导出为 Excel 文件？\n\n（包含邀请码、套餐名称、注册链接）`
+        )
+
+        if (shouldExport) {
+          await exportCodes(data.codes.map((c: any) => c.id))
+        }
+
         setShowModal(false)
         setDescription('')
         setCount(1)
@@ -79,6 +88,39 @@ export function CreateInvitationCodeButton() {
       alert('创建失败，请稍后重试')
     } finally {
       setLoading(false)
+    }
+  }
+
+  // 导出邀请码为 Excel
+  const exportCodes = async (codeIds: string[]) => {
+    try {
+      const response = await fetch('/api/admin/invitation-codes/export', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ codes: codeIds })
+      })
+
+      if (response.ok) {
+        // 下载文件
+        const blob = await response.blob()
+        const url = window.URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        const filename = `invitation_codes_${new Date().getTime()}.xlsx`
+        a.download = filename
+        document.body.appendChild(a)
+        a.click()
+        window.URL.revokeObjectURL(url)
+        document.body.removeChild(a)
+
+        alert('导出成功！')
+      } else {
+        const errorData = await response.json()
+        alert(`导出失败: ${errorData.error || '未知错误'}`)
+      }
+    } catch (error) {
+      console.error('Error exporting codes:', error)
+      alert('导出失败，请稍后重试')
     }
   }
 

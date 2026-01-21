@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习状态恢复诊断</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    h1 { color: #333; }
+    .section {
+      background: #f5f5f5;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+    .success { color: green; }
+    .error { color: red; }
+    .info { color: blue; }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    pre {
+      background: #fff;
+      padding: 10px;
+      border-radius: 3px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔍 学习状态恢复诊断工具</h1>
+
+  <div class="section">
+    <h3>步骤1: 获取当前用户的词库列表</h3>
+    <button onclick="getBooks()">获取词库列表</button>
+    <pre id="books-result">点击按钮查看结果...</pre>
+  </div>
+
+  <div class="section">
+    <h3>步骤1.5: 从URL获取当前词库ID</h3>
+    <button onclick="getBookIdFromURL()">从当前页面获取book_id</button>
+    <pre id="url-book-result">点击按钮查看结果...</pre>
+  </div>
+
+  <div class="section">
+    <h3>步骤2: 检查指定词库的恢复状态</h3>
+    <input type="text" id="bookId" placeholder="输入词库ID" style="width: 300px; padding: 8px;">
+    <button onclick="checkResumeState()">检查恢复状态</button>
+    <pre id="resume-result">等待输入...</pre>
+  </div>
+
+  <div class="section">
+    <h3>步骤3: 手动测试保存状态</h3>
+    <input type="text" id="testBookId" placeholder="输入词库ID" style="width: 200px; padding: 8px;">
+    <input type="number" id="testPage" placeholder="页码" value="2" style="width: 100px; padding: 8px;">
+    <button onclick="testSaveState()">保存测试状态</button>
+    <pre id="save-result">等待输入...</pre>
+  </div>
+
+  <div class="section">
+    <h3>步骤4: 清除恢复状态</h3>
+    <input type="text" id="clearBookId" placeholder="输入词库ID" style="width: 300px; padding: 8px;">
+    <button onclick="clearResumeState()">清除状态</button>
+    <pre id="clear-result">等待输入...</pre>
+  </div>
+
+  <div class="section">
+    <h3>步骤5: 检查当前URL参数</h3>
+    <button onclick="checkURLParams()">检查URL参数</button>
+    <pre id="url-result">点击按钮查看结果...</pre>
+  </div>
+
+  <script>
+    function getBookIdFromURL() {
+      const result = document.getElementById('url-book-result');
+
+      // 尝试从当前URL获取book_id
+      const currentUrl = window.location.href;
+      const urlMatch = currentUrl.match(/\/study\/([a-f0-9-]+)/);
+
+      if (urlMatch) {
+        const bookId = urlMatch[1];
+        result.innerHTML = `<div class="success">✓ 从URL提取到book_id: ${bookId}</div>`;
+
+        // 自动填充到所有输入框
+        document.getElementById('bookId').value = bookId;
+        document.getElementById('testBookId').value = bookId;
+        document.getElementById('clearBookId').value = bookId;
+
+        result.innerHTML += `<div class="info">ℹ️ 已自动填充到所有输入框</div>`;
+      } else {
+        result.innerHTML = `<div class="error">✗ 当前URL不在词库详情页面</div>`;
+        result.innerHTML += `<div>当前URL: ${currentUrl}</div>`;
+      }
+    }
+
+    async function getBooks() {
+      const result = document.getElementById('books-result');
+      result.textContent = '正在获取...';
+
+      try {
+        const response = await fetch('/api/books');
+        const data = await response.json();
+
+        result.innerHTML = `<div class="success">✓ 成功获取 ${data.books?.length || 0} 个词库</div>\n` +
+          `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+
+        // 自动填充第一个词库ID
+        if (data.books && data.books.length > 0) {
+          document.getElementById('bookId').value = data.books[0].id;
+          document.getElementById('testBookId').value = data.books[0].id;
+          document.getElementById('clearBookId').value = data.books[0].id;
+        }
+      } catch (error) {
+        result.innerHTML = `<div class="error">✗ 错误: ${error.message}</div>`;
+      }
+    }
+
+    async function checkResumeState() {
+      const bookId = document.getElementById('bookId').value.trim();
+      const result = document.getElementById('resume-result');
+
+      if (!bookId) {
+        result.innerHTML = '<div class="error">✗ 请输入词库ID</div>';
+        return;
+      }
+
+      result.textContent = '正在检查...';
+
+      try {
+        const response = await fetch(`/api/user-preferences?book_id=${bookId}`);
+        const data = await response.json();
+
+        result.innerHTML = `<div class="info">📊 原始响应数据:</div>\n` +
+          `<pre>${JSON.stringify(data, null, 2)}</pre>\n`;
+
+        if (data.last_resume_state) {
+          const state = data.last_resume_state;
+          const hoursSince = (Date.now() - state.updatedAt) / (1000 * 60 * 60);
+          const page = state.context?.page;
+
+          result.innerHTML += `<div class="success">✓ 找到恢复状态</div>\n` +
+            `<div>页码: ${page || '无'}</div>\n` +
+            `<div>距现在: ${hoursSince.toFixed(2)} 小时</div>\n` +
+            `<div>是否在24小时内: ${hoursSince < 24 ? '是 ✓' : '否 ✗'}</div>\n` +
+            `<div>页码是否>1: ${page && page > 1 ? '是 ✓' : '否 ✗'}</div>\n` +
+            `<div class="${hoursSince < 24 && page && page > 1 ? 'success' : 'error'}">\n` +
+            `对话框应该显示: ${hoursSince < 24 && page && page > 1 ? '是 ✓' : '否 ✗'}\n` +
+            `</div>`;
+        } else {
+          result.innerHTML += `<div class="error">✗ 没有找到恢复状态</div>`;
+        }
+      } catch (error) {
+        result.innerHTML = `<div class="error">✗ 错误: ${error.message}</div>`;
+      }
+    }
+
+    async function testSaveState() {
+      const bookId = document.getElementById('testBookId').value.trim();
+      const page = parseInt(document.getElementById('testPage').value);
+      const result = document.getElementById('save-result');
+
+      if (!bookId || !page) {
+        result.innerHTML = '<div class="error">✗ 请输入词库ID和页码</div>';
+        return;
+      }
+
+      result.textContent = '正在保存...';
+
+      try {
+        const response = await fetch('/api/user-preferences', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            book_id: bookId,
+            last_resume_state: {
+              mode: 'word-list',
+              bookId: bookId,
+              updatedAt: Date.now(),
+              context: {
+                filters: {
+                  theme: 'all',
+                  scenario: 'all',
+                  chapter: 'all',
+                  status: 'all'
+                },
+                page: page
+              }
+            }
+          })
+        });
+
+        const data = await response.json();
+
+        if (response.ok) {
+          result.innerHTML = `<div class="success">✓ 成功保存测试状态 (第 ${page} 页)</div>\n` +
+            `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+        } else {
+          result.innerHTML = `<div class="error">✗ 保存失败: ${JSON.stringify(data)}</div>`;
+        }
+      } catch (error) {
+        result.innerHTML = `<div class="error">✗ 错误: ${error.message}</div>`;
+      }
+    }
+
+    async function clearResumeState() {
+      const bookId = document.getElementById('clearBookId').value.trim();
+      const result = document.getElementById('clear-result');
+
+      if (!bookId) {
+        result.innerHTML = '<div class="error">✗ 请输入词库ID</div>';
+        return;
+      }
+
+      result.textContent = '正在清除...';
+
+      try {
+        const response = await fetch('/api/user-preferences', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            book_id: bookId,
+            last_resume_state: null
+          })
+        });
+
+        const data = await response.json();
+
+        result.innerHTML = `<div class="success">✓ 成功清除状态</div>\n` +
+          `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+      } catch (error) {
+        result.innerHTML = `<div class="error">✗ 错误: ${error.message}</div>`;
+      }
+    }
+
+    function checkURLParams() {
+      const params = new URLSearchParams(window.location.search);
+      const result = document.getElementById('url-result');
+
+      const allParams = {};
+      for (const [key, value] of params.entries()) {
+        allParams[key] = value;
+      }
+
+      const hasTheme = params.has('theme');
+      const hasPage = params.has('page');
+
+      result.innerHTML = `<div>当前URL: ${window.location.href}</div>\n` +
+        `<div>所有参数: ${JSON.stringify(allParams)}</div>\n` +
+        `<div class="${hasTheme || hasPage ? 'error' : 'success'}">\n` +
+        `有URL参数阻止显示对话框: ${hasTheme || hasPage ? '是 ✗ (theme或page参数存在)' : '否 ✓'}\n` +
+        `</div>`;
+    }
+  </script>
+</body>
+</html>

@@ -32,9 +32,9 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
   const pathname = usePathname()
   const router = useRouter()
   const [showBookSelector, setShowBookSelector] = useState(false)
-  const { theme } = useTheme()
+  const { theme, mounted } = useTheme()
   const { showLoading } = useLoading()
-  const isDark = theme === 'dark'
+  const isDark = mounted && theme === 'dark'
 
   // 处理导航点击，立即显示加载状态
   const handleNavigation = (href: string) => {

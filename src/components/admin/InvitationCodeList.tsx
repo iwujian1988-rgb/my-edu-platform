@@ -6,7 +6,7 @@
  */
 
 import { useState } from 'react'
-import { Search, Ticket, Copy, Trash2, Ban, Check, User } from 'lucide-react'
+import { Search, Ticket, Copy, Trash2, Ban, Check, User, Download } from 'lucide-react'
 import Link from 'next/link'
 import { formatDate } from '@/lib/utils'
 
@@ -39,12 +39,64 @@ export function InvitationCodeList({
 }: InvitationCodeListProps) {
   const [searchQuery, setSearchQuery] = useState(search)
   const [statusFilter, setStatusFilter] = useState(status)
+  const [exporting, setExporting] = useState(false)
 
   const handleSearch = () => {
     const params = new URLSearchParams()
     if (searchQuery) params.set('search', searchQuery)
     if (statusFilter) params.set('status', statusFilter)
     window.location.href = `/admin/invitation-codes?${params.toString()}`
+  }
+
+  // 批量导出当前页的邀请码
+  const handleExportCurrentPage = async () => {
+    if (codes.length === 0) {
+      alert('当前页没有邀请码可导出')
+      return
+    }
+
+    const confirmed = confirm(`确定要导出当前页的 ${codes.length} 个邀请码吗？`)
+    if (!confirmed) return
+
+    setExporting(true)
+    try {
+      await exportCodes(codes.map((c) => c.id))
+    } finally {
+      setExporting(false)
+    }
+  }
+
+  // 导出邀请码为 Excel
+  const exportCodes = async (codeIds: string[]) => {
+    try {
+      const response = await fetch('/api/admin/invitation-codes/export', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ codes: codeIds })
+      })
+
+      if (response.ok) {
+        // 下载文件
+        const blob = await response.blob()
+        const url = window.URL.createObjectURL(blob)
+        const a = document.createElement('a')
+        a.href = url
+        const filename = `invitation_codes_${new Date().getTime()}.xlsx`
+        a.download = filename
+        document.body.appendChild(a)
+        a.click()
+        window.URL.revokeObjectURL(url)
+        document.body.removeChild(a)
+
+        alert('导出成功！')
+      } else {
+        const errorData = await response.json()
+        alert(`导出失败: ${errorData.error || '未知错误'}`)
+      }
+    } catch (error) {
+      console.error('Error exporting codes:', error)
+      alert('导出失败，请稍后重试')
+    }
   }
 
   return (
@@ -85,6 +137,16 @@ export function InvitationCodeList({
             className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
           >
             搜索
+          </button>
+
+          {/* 批量导出按钮 */}
+          <button
+            onClick={handleExportCurrentPage}
+            disabled={exporting || codes.length === 0}
+            className="px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+          >
+            <Download size={20} />
+            {exporting ? '导出中...' : '导出当前页'}
           </button>
         </div>
 

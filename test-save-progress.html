@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试断点续做保存</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-2xl mx-auto bg-white rounded-lg shadow-lg p-6">
+        <h1 class="text-2xl font-bold mb-4">测试断点续做功能</h1>
+
+        <div class="space-y-4">
+            <div>
+                <h2 class="text-lg font-semibold mb-2">步骤 1: 检查登录状态</h2>
+                <button onclick="checkAuth()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                    检查登录
+                </button>
+                <pre id="auth-result" class="mt-2 p-2 bg-gray-100 rounded text-sm"></pre>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-semibold mb-2">步骤 2: 保存进度</h2>
+                <button onclick="saveProgress()" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                    保存测试进度
+                </button>
+                <pre id="save-result" class="mt-2 p-2 bg-gray-100 rounded text-sm"></pre>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-semibold mb-2">步骤 3: 读取进度</h2>
+                <button onclick="loadProgress()" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">
+                    读取进度
+                </button>
+                <pre id="load-result" class="mt-2 p-2 bg-gray-100 rounded text-sm"></pre>
+            </div>
+
+            <div>
+                <h2 class="text-lg font-semibold mb-2">步骤 4: 查看数据库记录</h2>
+                <button onclick="checkDatabase()" class="bg-orange-500 text-white px-4 py-2 rounded hover:bg-orange-600">
+                    检查数据库
+                </button>
+                <pre id="db-result" class="mt-2 p-2 bg-gray-100 rounded text-sm"></pre>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const TEST_BOOK_ID = '003b4ce0-c3f9-407a-a7d6-5e80ada4eae5'
+
+        function log(elementId, message) {
+            const el = document.getElementById(elementId)
+            el.textContent = message
+            console.log(message)
+        }
+
+        async function checkAuth() {
+            try {
+                const response = await fetch('/api/user-preferences?book_id=' + TEST_BOOK_ID)
+                const result = await response.json()
+
+                if (response.ok) {
+                    log('auth-result', '✅ 已登录\n' + JSON.stringify(result, null, 2))
+                } else {
+                    log('auth-result', '❌ 未登录: ' + result.error)
+                }
+            } catch (error) {
+                log('auth-result', '❌ 错误: ' + error.message)
+            }
+        }
+
+        async function saveProgress() {
+            const data = {
+                bookId: TEST_BOOK_ID,
+                preference: {
+                    last_resume_state: {
+                        mode: 'dictation',
+                        bookId: TEST_BOOK_ID,
+                        updatedAt: Date.now(),
+                        context: {
+                            scopeType: 'all',
+                            currentIndex: 1,
+                            totalWords: 5862,
+                            currentWord: {
+                                id: 'test-word-id',
+                                word: 'scholar'
+                            }
+                        }
+                    }
+                }
+            }
+
+            log('save-result', '正在保存...\n' + JSON.stringify(data, null, 2))
+
+            try {
+                const response = await fetch('/api/user-preferences', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                })
+
+                const result = await response.json()
+
+                if (response.ok) {
+                    log('save-result', '✅ 保存成功!\n' + JSON.stringify(result, null, 2))
+                } else {
+                    log('save-result', '❌ 保存失败: ' + JSON.stringify(result, null, 2))
+                }
+            } catch (error) {
+                log('save-result', '❌ 错误: ' + error.message)
+            }
+        }
+
+        async function loadProgress() {
+            try {
+                const response = await fetch('/api/user-preferences?book_id=' + TEST_BOOK_ID)
+                const result = await response.json()
+
+                if (response.ok && result.data) {
+                    const resumeState = result.data.last_resume_state
+                    if (resumeState) {
+                        log('load-result', '✅ 找到断点续做状态:\n' + JSON.stringify(resumeState, null, 2))
+                    } else {
+                        log('load-result', '⚠️  没有断点续做状态\n完整数据:\n' + JSON.stringify(result, null, 2))
+                    }
+                } else {
+                    log('load-result', '❌ 读取失败: ' + JSON.stringify(result))
+                }
+            } catch (error) {
+                log('load-result', '❌ 错误: ' + error.message)
+            }
+        }
+
+        async function checkDatabase() {
+            log('db-result', '请在 Supabase Dashboard 的 Table Editor 中查看 user_book_preferences 表\n\n预期数据:\n' + JSON.stringify({
+                user_id: '<你的用户ID>',
+                book_id: TEST_BOOK_ID,
+                last_resume_state: {
+                    mode: 'dictation',
+                    bookId: TEST_BOOK_ID,
+                    context: {
+                        scopeType: 'all',
+                        currentIndex: 1,
+                        totalWords: 5862
+                    }
+                }
+            }, null, 2))
+        }
+
+        // 页面加载时自动检查登录状态
+        window.onload = () => checkAuth()
+    </script>
+</body>
+</html>

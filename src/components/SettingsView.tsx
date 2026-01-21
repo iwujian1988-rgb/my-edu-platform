@@ -11,9 +11,9 @@ export function SettingsView() {
   console.log('SettingsView rendered')
   const [activeTab, setActiveTab] = useState<SettingsTab>('appearance')
   const [showPasswordDialog, setShowPasswordDialog] = useState(false)
-  const { theme, themeMode, setThemeMode } = useTheme()
+  const { theme, themeMode, setThemeMode, mounted } = useTheme()
   const router = useRouter()
-  const isDark = theme === 'dark'
+  const isDark = mounted && theme === 'dark'
 
   const handleLogout = async () => {
     try {

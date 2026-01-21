@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Resume API</title>
+</head>
+<body>
+    <h1>Test Resume API</h1>
+    <button onclick="testSave()">Save Resume State</button>
+    <button onclick="testLoad()">Load Resume State</button>
+    <pre id="output"></pre>
+
+    <script>
+        const TEST_BOOK_ID = '003b4ce0-c3f9-407a-a7d6-5e80ada4eae5'
+
+        function log(message) {
+            const output = document.getElementById('output')
+            output.textContent += new Date().toISOString() + ' - ' + message + '\n'
+        }
+
+        async function testSave() {
+            log('=== Saving Resume State ===')
+
+            const data = {
+                bookId: TEST_BOOK_ID,
+                preference: {
+                    last_resume_state: {
+                        mode: 'dictation',
+                        bookId: TEST_BOOK_ID,
+                        updatedAt: Date.now(),
+                        context: {
+                            scopeType: 'all',
+                            currentIndex: 1,
+                            totalWords: 5862,
+                            currentWord: {
+                                id: 'test-word-id',
+                                word: 'scholar'
+                            }
+                        }
+                    }
+                }
+            }
+
+            log('Sending data: ' + JSON.stringify(data, null, 2))
+
+            try {
+                const response = await fetch('/api/user-preferences', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                })
+
+                log('Response status: ' + response.status)
+
+                const result = await response.json()
+                log('Response data: ' + JSON.stringify(result, null, 2))
+            } catch (error) {
+                log('Error: ' + error.message)
+            }
+        }
+
+        async function testLoad() {
+            log('=== Loading Resume State ===')
+
+            try {
+                const response = await fetch(`/api/user-preferences?book_id=${TEST_BOOK_ID}`)
+                const result = await response.json()
+
+                log('Response: ' + JSON.stringify(result, null, 2))
+
+                if (result.data?.last_resume_state) {
+                    log('Resume state found: ' + JSON.stringify(result.data.last_resume_state, null, 2))
+                } else {
+                    log('No resume state found')
+                }
+            } catch (error) {
+                log('Error: ' + error.message)
+            }
+        }
+    </script>
+</body>
+</html>

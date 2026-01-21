@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自定义词库管理系统 - 产品原型</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: #F8F5F2;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    .header {
+      background: white;
+      border-bottom: 2px solid #e5e7eb;
+      padding: 16px 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .header-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .book-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: #1f2937;
+    }
+
+    .view-mode-badge {
+      background: #3b82f6;
+      color: white;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    /* Main Content */
+    .main-content {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      background: white;
+      border: 2px solid #1f2937;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .filter-select {
+      padding: 8px 12px;
+      border: 2px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+    }
+
+    .filter-select:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+
+    .search-box {
+      flex: 1;
+      display: flex;
+      gap: 8px;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 2px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .search-btn {
+      padding: 8px 16px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    /* Action Bar */
+    .action-bar {
+      background: white;
+      border: 2px solid #1f2937;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: 2px solid #1f2937;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+
+    .btn:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 2px 2px 0 #1f2937;
+    }
+
+    .btn-primary {
+      background: #B4F416;
+      color: #1f2937;
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #1f2937;
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    /* Table */
+    .table-container {
+      background: white;
+      border: 2px solid #1f2937;
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .data-table thead {
+      background: #f3f4f6;
+      border-bottom: 2px solid #1f2937;
+    }
+
+    .data-table th {
+      padding: 12px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 14px;
+      color: #374151;
+    }
+
+    .data-table tbody tr {
+      border-bottom: 1px solid #e5e7eb;
+      transition: background 0.2s;
+    }
+
+    .data-table tbody tr:hover {
+      background: #f9fafb;
+    }
+
+    .data-table tbody tr.selected {
+      background: #dbeafe;
+    }
+
+    .data-table td {
+      padding: 12px;
+      font-size: 14px;
+    }
+
+    /* Table Inputs */
+    .table-input {
+      width: 100%;
+      padding: 6px 8px;
+      border: 2px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      transition: all 0.2s;
+    }
+
+    .table-input:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+
+    .table-input.saved {
+      animation: savedFlash 0.2s ease;
+    }
+
+    @keyframes savedFlash {
+      0% { border-color: #22c55e; }
+      100% { border-color: #d1d5db; }
+    }
+
+    .table-select {
+      width: 100%;
+      padding: 6px 8px;
+      border: 2px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+    }
+
+    /* Checkbox */
+    .checkbox {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+
+    /* Action Buttons in Table */
+    .action-btn {
+      padding: 4px 8px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .action-btn:hover {
+      transform: scale(1.2);
+    }
+
+    /* Batch Operation Bar */
+    .batch-bar {
+      background: white;
+      border: 2px solid #1f2937;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      display: none;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .batch-bar.show {
+      display: flex;
+    }
+
+    /* Pagination */
+    .pagination {
+      background: white;
+      border: 2px solid #1f2937;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .pagination-btn {
+      padding: 8px 16px;
+      border: 2px solid #d1d5db;
+      background: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+
+    .pagination-btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Keyboard Shortcuts */
+    .shortcuts {
+      text-align: center;
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 12px;
+    }
+
+    /* Dialog */
+    .dialog-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dialog-overlay.show {
+      display: flex;
+    }
+
+    .dialog {
+      background: white;
+      border: 3px solid #1f2937;
+      border-radius: 16px;
+      box-shadow: 4px 4px 0 #1f2937;
+      max-width: 600px;
+      width: 90%;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+
+    .dialog-header {
+      padding: 20px;
+      border-bottom: 2px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dialog-title {
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dialog-close {
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #6b7280;
+    }
+
+    .dialog-body {
+      padding: 20px;
+    }
+
+    .dialog-footer {
+      padding: 20px;
+      border-top: 2px solid #e5e7eb;
+      display: flex;
+      justify-content: flex-end;
+      gap: 12px;
+    }
+
+    /* Chapter List */
+    .chapter-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chapter-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px;
+      border: 2px solid #e5e7eb;
+      border-radius: 12px;
+      background: white;
+      transition: all 0.2s;
+    }
+
+    .chapter-item:hover {
+      border-color: #3b82f6;
+      box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
+    }
+
+    .chapter-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chapter-icon {
+      font-size: 24px;
+    }
+
+    .chapter-name {
+      font-weight: 600;
+      font-size: 16px;
+    }
+
+    .chapter-count {
+      color: #6b7280;
+      font-size: 14px;
+    }
+
+    .chapter-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    /* Form */
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 10px 12px;
+      border: 2px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: #3b82f6;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: #22c55e;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      display: none;
+      align-items: center;
+      gap: 8px;
+      z-index: 2000;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateX(400px);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    .toast.show {
+      display: flex;
+    }
+
+    /* Stats */
+    .stats {
+      background: #f3f4f6;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      font-size: 14px;
+      color: #6b7280;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-content">
+      <div>
+        <div class="book-title">我的自定义词库</div>
+        <div style="color: #6b7280; font-size: 14px; margin-top: 4px;">280个单词 · 4个章节</div>
+      </div>
+      <span class="view-mode-badge">📊 编辑模式</span>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <select class="filter-select" id="chapterFilter">
+        <option value="">全部章节</option>
+        <option value="default">默认章节</option>
+        <option value="1">第1章 基础词汇</option>
+        <option value="2">第2章 进阶词汇</option>
+        <option value="3">第3章 高级词汇</option>
+      </select>
+
+      <select class="filter-select" id="statusFilter">
+        <option value="">全部状态</option>
+        <option value="new">未标注</option>
+        <option value="known">认识</option>
+        <option value="fuzzy">模糊</option>
+        <option value="unknown">不认识</option>
+      </select>
+
+      <select class="filter-select" id="limitFilter">
+        <option value="10">10词/页</option>
+        <option value="20">20词/页</option>
+        <option value="50" selected>50词/页</option>
+        <option value="100">100词/页</option>
+      </select>
+
+      <div class="search-box">
+        <input type="text" class="search-input" placeholder="🔍 搜索单词..." id="searchInput">
+        <button class="search-btn" onclick="handleSearch()">搜索</button>
+      </div>
+    </div>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button class="btn btn-primary" onclick="openBatchAddDialog()">
+        <span>+</span> 批量添加单词
+      </button>
+      <button class="btn btn-secondary" onclick="openChapterManagement()">
+        <span>📁</span> 管理章节
+      </button>
+      <button class="btn btn-secondary" onclick="saveAll()">
+        <span>💾</span> 保存所有修改
+      </button>
+      <button class="btn btn-secondary" onclick="location.reload()">
+        <span>↻</span> 刷新
+      </button>
+    </div>
+
+    <!-- Table -->
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th width="50px"><input type="checkbox" class="checkbox" id="selectAll" onclick="toggleSelectAll()"></th>
+            <th width="120px">章节</th>
+            <th width="150px">单词</th>
+            <th width="150px">音标</th>
+            <th width="100px">词性</th>
+            <th width="200px">中文释义</th>
+            <th width="100px">操作</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Dynamic content -->
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Batch Operation Bar -->
+    <div class="batch-bar" id="batchBar">
+      <span>已选 <strong id="selectedCount">0</strong> 个单词</span>
+      <button class="btn btn-danger" onclick="batchDelete()">
+        <span>🗑️</span> 批量删除
+      </button>
+      <button class="btn btn-secondary" onclick="batchMoveChapter()">
+        <span>📁</span> 移动到章节...
+      </button>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+      <button class="pagination-btn" onclick="prevPage()">← 上一页</button>
+      <span>第 <strong id="currentPage">1</strong> / <strong id="totalPages">10</strong> 页</span>
+      <button class="pagination-btn" onclick="nextPage()">下一页 →</button>
+      <span style="color: #6b7280; font-size: 14px;">共 500 个单词</span>
+    </div>
+
+    <!-- Keyboard Shortcuts -->
+    <div class="shortcuts">
+      💡 快捷键：↑↓切换行 | Enter保存 | Esc取消 | Space选中
+    </div>
+  </div>
+
+  <!-- Chapter Management Dialog -->
+  <div class="dialog-overlay" id="chapterDialog">
+    <div class="dialog">
+      <div class="dialog-header">
+        <div class="dialog-title">
+          <span>📚</span> 章节管理
+        </div>
+        <button class="dialog-close" onclick="closeChapterManagement()">×</button>
+      </div>
+      <div class="dialog-body">
+        <button class="btn btn-primary" style="width: 100%; margin-bottom: 20px;" onclick="openNewChapterDialog()">
+          <span>+</span> 新建章节
+        </button>
+
+        <div class="chapter-list" id="chapterList">
+          <!-- Dynamic content -->
+        </div>
+
+        <div class="stats">
+          总计：280个单词 / 4个章节
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- New Chapter Dialog -->
+  <div class="dialog-overlay" id="newChapterDialog">
+    <div class="dialog">
+      <div class="dialog-header">
+        <div class="dialog-title">
+          <span>📖</span> 新建章节
+        </div>
+        <button class="dialog-close" onclick="closeNewChapterDialog()">×</button>
+      </div>
+      <div class="dialog-body">
+        <div class="form-group">
+          <label class="form-label">章节名称 *</label>
+          <input type="text" class="form-input" id="newChapterName" placeholder="第4章">
+        </div>
+        <div class="form-group">
+          <label class="form-label">排序位置</label>
+          <select class="form-input" id="newChapterOrder">
+            <option value="0">作为第1章</option>
+            <option value="1">在第1章之后</option>
+            <option value="2">在第2章之后</option>
+            <option value="3">在第3章之后</option>
+            <option value="4" selected>作为最后一章</option>
+          </select>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button class="btn btn-secondary" onclick="closeNewChapterDialog()">取消</button>
+        <button class="btn btn-primary" onclick="createChapter()">创建</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Batch Add Words Dialog -->
+  <div class="dialog-overlay" id="batchAddDialog">
+    <div class="dialog">
+      <div class="dialog-header">
+        <div class="dialog-title">
+          <span>📥</span> 批量添加单词
+        </div>
+        <button class="dialog-close" onclick="closeBatchAddDialog()">×</button>
+      </div>
+      <div class="dialog-body">
+        <div class="form-group">
+          <label class="form-label">选择章节 *</label>
+          <select class="form-input" id="batchAddChapter">
+            <option value="">默认章节</option>
+            <option value="1">第1章 基础词汇</option>
+            <option value="2">第2章 进阶词汇</option>
+            <option value="3">第3章 高级词汇</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">输入单词（每行一个，支持逗号、空格分隔）</label>
+          <textarea class="form-input" rows="8" id="batchAddWords" placeholder="apple&#10;banana&#10;orange"></textarea>
+        </div>
+        <div style="color: #6b7280; font-size: 14px;">
+          💡 支持：英文单词，每行一个或用逗号分隔
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button class="btn btn-secondary" onclick="closeBatchAddDialog()">取消</button>
+        <button class="btn btn-primary" onclick="batchAddWords()">智能识别并导入</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast">
+    <span id="toastIcon">✓</span>
+    <span id="toastMessage">保存成功</span>
+  </div>
+
+  <script>
+    // Sample Data
+    const sampleWords = [
+      { id: 1, chapter: '默认章节', word: 'agenda', phonetic: '/əˈdʒendə/', pos: 'n名词', definition: '议程，日程表' },
+      { id: 2, chapter: '第1章', word: 'compromise', phonetic: '/ˈkɒmprəmaɪz/', pos: 'v动词', definition: '妥协，折中' },
+      { id: 3, chapter: '第2章', word: 'abbreviate', phonetic: '/əˈbriːvieɪt/', pos: 'v动词', definition: '缩写，缩短' },
+      { id: 4, chapter: '第3章', word: 'accomplish', phonetic: '/əˈkʌmplɪʃ/', pos: 'v动词', definition: '完成，实现' },
+      { id: 5, chapter: '默认章节', word: 'brilliant', phonetic: '/ˈbrɪliənt/', pos: 'adj形容词', definition: '杰出的，明亮的' },
+      { id: 6, chapter: '第1章', word: 'calculate', phonetic: '/ˈkælkjʊleɪt/', pos: 'v动词', definition: '计算，估计' },
+      { id: 7, chapter: '第2章', word: 'decision', phonetic: '/dɪˈsɪʒn/', pos: 'n名词', definition: '决定，决心' },
+      { id: 8, chapter: '第3章', word: 'efficient', phonetic: '/ɪˈfɪʃnt/', pos: 'adj形容词', definition: '高效的，有能力的' },
+      { id: 9, chapter: '默认章节', word: 'familiar', phonetic: '/fəˈmɪliə/', pos: 'adj形容词', definition: '熟悉的，常见的' },
+      { id: 10, chapter: '第1章', word: 'generate', phonetic: '/ˈdʒenəreɪt/', pos: 'v动词', definition: '产生，发生' },
+    ];
+
+    const chapters = [
+      { id: 'default', name: '默认章节', count: 120 },
+      { id: '1', name: '第1章 基础词汇', count: 50 },
+      { id: '2', name: '第2章 进阶词汇', count: 80 },
+      { id: '3', name: '第3章 高级词汇', count: 30 },
+    ];
+
+    let selectedWords = new Set();
+    let currentPage = 1;
+
+    // Initialize
+    document.addEventListener('DOMContentLoaded', () => {
+      renderTable();
+      renderChapterList();
+    });
+
+    // Render Table
+    function renderTable() {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = '';
+
+      sampleWords.forEach((word, index) => {
+        const row = document.createElement('tr');
+        row.dataset.id = word.id;
+        row.innerHTML = `
+          <td>
+            <input type="checkbox" class="checkbox" onchange="toggleSelect(${word.id})">
+          </td>
+          <td>
+            <select class="table-select" onchange="saveChange(this, ${word.id}, 'chapter')">
+              <option value="default" ${word.chapter === '默认章节' ? 'selected' : ''}>默认章节</option>
+              <option value="1" ${word.chapter === '第1章' ? 'selected' : ''}>第1章</option>
+              <option value="2" ${word.chapter === '第2章' ? 'selected' : ''}>第2章</option>
+              <option value="3" ${word.chapter === '第3章' ? 'selected' : ''}>第3章</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="table-input" value="${word.word}" onchange="saveChange(this, ${word.id}, 'word')">
+          </td>
+          <td>
+            <input type="text" class="table-input" value="${word.phonetic}" style="font-family: monospace;" onchange="saveChange(this, ${word.id}, 'phonetic')">
+          </td>
+          <td>
+            <select class="table-select" onchange="saveChange(this, ${word.id}, 'pos')">
+              <option value="n名词" ${word.pos === 'n名词' ? 'selected' : ''}>n名词</option>
+              <option value="v动词" ${word.pos === 'v动词' ? 'selected' : ''}>v动词</option>
+              <option value="adj形容词" ${word.pos === 'adj形容词' ? 'selected' : ''}>adj形容词</option>
+              <option value="adv副词" ${word.pos === 'adv副词' ? 'selected' : ''}>adv副词</option>
+            </select>
+          </td>
+          <td>
+            <input type="text" class="table-input" value="${word.definition}" onchange="saveChange(this, ${word.id}, 'definition')">
+          </td>
+          <td>
+            <button class="action-btn" onclick="editWord(${word.id})" title="编辑">✏️</button>
+            <button class="action-btn" onclick="deleteWord(${word.id})" title="删除">🗑️</button>
+          </td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+
+    // Render Chapter List
+    function renderChapterList() {
+      const list = document.getElementById('chapterList');
+      list.innerHTML = '';
+
+      chapters.forEach(chapter => {
+        const item = document.createElement('div');
+        item.className = 'chapter-item';
+        item.innerHTML = `
+          <div class="chapter-info">
+            <span class="chapter-icon">📖</span>
+            <div>
+              <div class="chapter-name">${chapter.name}</div>
+              <div class="chapter-count">${chapter.count}词</div>
+            </div>
+          </div>
+          <div class="chapter-actions">
+            ${chapter.id !== 'default' ? `
+              <button class="action-btn" onclick="editChapter('${chapter.id}')" title="编辑">✏️</button>
+              <button class="action-btn" onclick="deleteChapter('${chapter.id}')" title="删除">🗑️</button>
+            ` : `
+              <span style="color: #9ca3af; font-size: 12px;">默认章节</span>
+            `}
+          </div>
+        `;
+        list.appendChild(item);
+      });
+    }
+
+    // Save Change
+    function saveChange(input, id, field) {
+      // Visual feedback
+      input.classList.add('saved');
+      setTimeout(() => input.classList.remove('saved'), 200);
+
+      // Show toast
+      showToast('✓ 已保存');
+    }
+
+    // Toggle Select
+    function toggleSelect(id) {
+      if (selectedWords.has(id)) {
+        selectedWords.delete(id);
+      } else {
+        selectedWords.add(id);
+      }
+      updateBatchBar();
+    }
+
+    // Toggle Select All
+    function toggleSelectAll() {
+      const checkbox = document.getElementById('selectAll');
+      const checkboxes = document.querySelectorAll('#tableBody input[type="checkbox"]');
+
+      checkboxes.forEach(cb => {
+        cb.checked = checkbox.checked;
+        const id = parseInt(cb.closest('tr').dataset.id);
+        if (checkbox.checked) {
+          selectedWords.add(id);
+        } else {
+          selectedWords.delete(id);
+        }
+      });
+
+      updateBatchBar();
+    }
+
+    // Update Batch Bar
+    function updateBatchBar() {
+      const bar = document.getElementById('batchBar');
+      const count = document.getElementById('selectedCount');
+
+      count.textContent = selectedWords.size;
+
+      if (selectedWords.size > 0) {
+        bar.classList.add('show');
+      } else {
+        bar.classList.remove('show');
+      }
+    }
+
+    // Edit Word
+    function editWord(id) {
+      showToast('✏️ 编辑单词: ' + id);
+    }
+
+    // Delete Word
+    function deleteWord(id) {
+      if (confirm('确定删除此单词？')) {
+        if (confirm('数据不可恢复！')) {
+          showToast('🗑️ 已删除单词');
+        }
+      }
+    }
+
+    // Batch Delete
+    function batchDelete() {
+      if (confirm(`确定删除 ${selectedWords.size} 个单词？`)) {
+        if (confirm('数据不可恢复！')) {
+          showToast(`🗑️ 已删除 ${selectedWords.size} 个单词`);
+          selectedWords.clear();
+          updateBatchBar();
+        }
+      }
+    }
+
+    // Batch Move Chapter
+    function batchMoveChapter() {
+      showToast(`📁 移动 ${selectedWords.size} 个单词到章节...`);
+    }
+
+    // Save All
+    function saveAll() {
+      showToast('💾 保存所有修改');
+    }
+
+    // Search
+    function handleSearch() {
+      const query = document.getElementById('searchInput').value;
+      showToast(`🔍 搜索: ${query}`);
+    }
+
+    // Pagination
+    function prevPage() {
+      if (currentPage > 1) {
+        currentPage--;
+        document.getElementById('currentPage').textContent = currentPage;
+        showToast('← 上一页');
+      }
+    }
+
+    function nextPage() {
+      if (currentPage < 10) {
+        currentPage++;
+        document.getElementById('currentPage').textContent = currentPage;
+        showToast('下一页 →');
+      }
+    }
+
+    // Chapter Management
+    function openChapterManagement() {
+      document.getElementById('chapterDialog').classList.add('show');
+    }
+
+    function closeChapterManagement() {
+      document.getElementById('chapterDialog').classList.remove('show');
+    }
+
+    // New Chapter
+    function openNewChapterDialog() {
+      document.getElementById('newChapterDialog').classList.add('show');
+    }
+
+    function closeNewChapterDialog() {
+      document.getElementById('newChapterDialog').classList.remove('show');
+    }
+
+    function createChapter() {
+      const name = document.getElementById('newChapterName').value;
+      if (!name) {
+        alert('请输入章节名称');
+        return;
+      }
+      showToast(`✓ 已创建章节: ${name}`);
+      closeNewChapterDialog();
+    }
+
+    function editChapter(id) {
+      showToast(`✏️ 编辑章节: ${id}`);
+    }
+
+    function deleteChapter(id) {
+      if (confirm('确定删除此章节？')) {
+        if (confirm('章节中的单词将移到默认章节，确定继续？')) {
+          showToast('🗑️ 已删除章节');
+        }
+      }
+    }
+
+    // Batch Add Words
+    function openBatchAddDialog() {
+      document.getElementById('batchAddDialog').classList.add('show');
+    }
+
+    function closeBatchAddDialog() {
+      document.getElementById('batchAddDialog').classList.remove('show');
+    }
+
+    function batchAddWords() {
+      const words = document.getElementById('batchAddWords').value;
+      if (!words.trim()) {
+        alert('请输入单词');
+        return;
+      }
+      showToast(`📥 已导入单词`);
+      closeBatchAddDialog();
+    }
+
+    // Toast
+    function showToast(message) {
+      const toast = document.getElementById('toast');
+      const toastMessage = document.getElementById('toastMessage');
+      toastMessage.textContent = message;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', (e) => {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA') {
+        return;
+      }
+
+      switch(e.key) {
+        case 'ArrowUp':
+          e.preventDefault();
+          showToast('↑ 移到上一行');
+          break;
+        case 'ArrowDown':
+          e.preventDefault();
+          showToast('↓ 移到下一行');
+          break;
+        case 'Enter':
+          e.preventDefault();
+          showToast('Enter 保存');
+          break;
+        case 'Escape':
+          e.preventDefault();
+          showToast('Esc 取消');
+          break;
+        case ' ':
+          e.preventDefault();
+          showToast('Space 选中行');
+          break;
+      }
+    });
+  </script>
+</body>
+</html>

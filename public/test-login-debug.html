@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录调试测试</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+        .test-section h2 {
+            margin-top: 0;
+            color: #4CAF50;
+            font-size: 18px;
+        }
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+        .result.success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        .result.error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        .result.info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        .info-box {
+            background: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔍 登录功能调试测试</h1>
+
+        <div class="info-box">
+            <strong>测试说明：</strong><br>
+            这个页面会测试两种登录方式：<br>
+            1. Server Action（当前生产环境使用）<br>
+            2. API POST 请求（传统方式）
+        </div>
+
+        <!-- 测试1: Server Action -->
+        <div class="test-section">
+            <h2>测试 1: Server Action 登录（当前方式）</h2>
+            <input type="tel" id="sa-phone" placeholder="手机号" value="15652936305">
+            <input type="password" id="sa-password" placeholder="密码" value="wj5236016">
+            <button onclick="testServerAction()">测试 Server Action 登录</button>
+            <div id="sa-result" class="result" style="display:none;"></div>
+        </div>
+
+        <!-- 测试2: API POST -->
+        <div class="test-section">
+            <h2>测试 2: API POST 登录（传统方式）</h2>
+            <input type="tel" id="api-phone" placeholder="手机号" value="15652936305">
+            <input type="password" id="api-password" placeholder="密码" value="wj5236016">
+            <button onclick="testApiLogin()">测试 API 登录</button>
+            <div id="api-result" class="result" style="display:none;"></div>
+        </div>
+
+        <!-- 测试3: 直接 Supabase Auth -->
+        <div class="test-section">
+            <h2>测试 3: 直接调用 Supabase Auth</h2>
+            <input type="tel" id="direct-phone" placeholder="手机号" value="15652936305">
+            <input type="password" id="direct-password" placeholder="密码" value="wj5236016">
+            <button onclick="testDirectSupabase()">测试直接登录</button>
+            <div id="direct-result" class="result" style="display:none;"></div>
+        </div>
+    </div>
+
+    <script type="module">
+        // 从环境变量获取配置（需要从服务器注入）
+        const SUPABASE_URL = 'https://snnrjnpcmdsdlyldvvps.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNubnJqbnBjbWRzZGx5bGR2dnBzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1ODg1MzgsImV4cCI6MjA4MzE2NDUzOH0.1rUusdU-SyWMYNiiAfjrDtSFlcxlwn4FOv0X8bJC7Sk';
+
+        function phoneToEmail(phone) {
+            return `${phone}@phone.xiaoyu.com`;
+        }
+
+        function showResult(elementId, message, type = 'info') {
+            const el = document.getElementById(elementId);
+            el.style.display = 'block';
+            el.className = `result ${type}`;
+            el.textContent = message;
+        }
+
+        // 测试1: Server Action
+        window.testServerAction = async function() {
+            const phone = document.getElementById('sa-phone').value;
+            const password = document.getElementById('sa-password').value;
+
+            showResult('sa-result', '正在测试 Server Action...', 'info');
+
+            try {
+                // Server Action 需要通过表单提交或 fetch 调用
+                const formData = new FormData();
+                formData.append('phone', phone);
+                formData.append('password', password);
+
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    body: JSON.stringify({ phone, password }),
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                });
+
+                // 注意：Server Actions 通常不通过普通的 /login 路由
+                // 这里可能需要调整
+                const result = await response.text();
+                showResult('sa-result', `Server Action 响应:\n${result}`, 'success');
+            } catch (error) {
+                showResult('sa-result', `Server Action 错误:\n${error.message}\n\n注意: Server Actions 需要通过特殊的机制调用，不是普通的 API 路由`, 'error');
+            }
+        };
+
+        // 测试2: API POST 登录
+        window.testApiLogin = async function() {
+            const phone = document.getElementById('api-phone').value;
+            const password = document.getElementById('api-password').value;
+
+            showResult('api-result', '正在测试 API 登录...', 'info');
+
+            try {
+                const response = await fetch('/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ phone, password }),
+                });
+
+                const result = await response.json();
+                showResult('api-result', `API 登录结果:\n${JSON.stringify(result, null, 2)}`, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult('api-result', `API 登录错误:\n${error.message}\n\n注意: /api/auth/login 路由可能不存在，需要创建`, 'error');
+            }
+        };
+
+        // 测试3: 直接调用 Supabase Auth
+        window.testDirectSupabase = async function() {
+            const phone = document.getElementById('direct-phone').value;
+            const password = document.getElementById('direct-password').value;
+
+            showResult('direct-result', '正在直接调用 Supabase Auth...', 'info');
+
+            try {
+                const email = phoneToEmail(phone);
+                showResult('direct-result', `转换后的 Email: ${email}\n\n正在登录...`, 'info');
+
+                const response = await fetch(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const result = await response.json();
+                showResult('direct-result', `Supabase Auth 直接登录结果:\n${JSON.stringify(result, null, 2)}`, response.ok ? 'success' : 'error');
+            } catch (error) {
+                showResult('direct-result', `Supabase Auth 错误:\n${error.message}`, 'error');
+            }
+        };
+
+        // 页面加载时显示信息
+        console.log('Supabase URL:', SUPABASE_URL);
+        console.log('Supabase Key:', SUPABASE_ANON_KEY ? '已设置' : '未设置');
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+{
+  "cet4": {
+    "name": "CET4",
+    "total": 3849,
+    "has_phonetic": 3837,
+    "no_phonetic": 12,
+    "phonetic_coverage": "99.69%"
+  },
+  "cet6": {
+    "name": "CET6",
+    "total": 1956,
+    "has_phonetic": 1937,
+    "no_phonetic": 19,
+    "phonetic_coverage": "99.03%"
+  },
+  "ielts": {
+    "name": "IELTS",
+    "total": 1833,
+    "has_phonetic": 1592,
+    "no_phonetic": 241,
+    "phonetic_coverage": "86.85%"
+  },
+  "toefl": {
+    "name": "TOEFL",
+    "total": 2940,
+    "has_phonetic": 2840,
+    "no_phonetic": 100,
+    "phonetic_coverage": "96.60%"
+  }
+}

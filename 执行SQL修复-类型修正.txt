@@ -1,0 +1,62 @@
+================================================================================
+【修正版】修复字段类型不匹配问题
+================================================================================
+
+-- 删除旧函数
+DROP FUNCTION IF EXISTS get_book_words_paginated_optimized(UUID, INTEGER, INTEGER);
+
+-- 创建新函数（修正类型）
+CREATE OR REPLACE FUNCTION get_book_words_paginated_optimized(
+  book_uuid UUID,
+  offset_val INTEGER DEFAULT 0,
+  limit_val INTEGER DEFAULT 50
+)
+RETURNS SETOF record  -- 使用SETOF record而不是RETURNS TABLE
+LANGUAGE plpgsql
+STABLE
+SECURITY DEFINER
+SET search_path = public
+AS $$
+DECLARE
+  rec record;
+BEGIN
+  RETURN QUERY
+  SELECT
+    w.id::text as id,
+    w.word::text as word,
+    w.phonetic::text as phonetic,
+    w.uk_phonetic::text as uk_phonetic,
+    w.us_phonetic::text as us_phonetic,
+    w.definition::text as definition,
+    w.definition_en::text as definition_en,
+    w.collocation::text as collocation,
+    w.collocation_en::text as collocation_en,
+    w.example_sentence::text as example_sentence,
+    w.example_sentence_en::text as example_sentence_en,
+    w.part_of_speech::text as part_of_speech,
+    c.title::text as chapter,
+    w.chapter_id::text as chapter_id,
+    t.name::text as theme,
+    s.name::text as scene,
+    w.order_index::int as order_index
+  FROM words w
+  LEFT JOIN chapters c ON w.chapter_id = c.id
+  LEFT JOIN themes t ON c.theme_id = t.id
+  LEFT JOIN scenes s ON c.scene_id = s.id
+  WHERE w.book_id = book_uuid
+  ORDER BY w.order_index ASC
+  LIMIT limit_val
+  OFFSET offset_val;
+END;
+$$;
+
+COMMENT ON FUNCTION get_book_words_paginated_optimized IS '优化的分页查询，JOIN获取theme和scene名称';
+
+================================================================================
+执行步骤：
+1. 访问: https://supabase.com/dashboard/project/snnrjnpcmdsdlyldvvps/sql
+2. 复制上面所有SQL内容
+3. 粘贴到SQL编辑器
+4. 点击 "Run" 按钮
+5. 看到执行成功后，告诉我"Success"
+================================================================================

@@ -2,22 +2,21 @@
 
 import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { GraduationCap, Eye, EyeOff, Mail, Lock, Ticket, Sparkles, BookOpen, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
-import { login, signup } from './actions'
+import Link from 'next/link'
+import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
+import { login } from './actions'
 
 function LoginForm() {
   const router = useRouter()
   const searchParams = useSearchParams()
-  const [activeTab, setActiveTab] = useState<'login' | 'signup'>('login')
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
-  const [success, setSuccess] = useState('')
   const [showForgotPassword, setShowForgotPassword] = useState(false)
 
   // 设置页面标题
   useEffect(() => {
-    document.title = '登录 / 注册 - MAX笔记'
+    document.title = '登录 - MAX笔记'
   }, [])
 
   // Login form state
@@ -26,41 +25,9 @@ function LoginForm() {
     password: ''
   })
 
-  // Signup form state
-  const [signupData, setSignupData] = useState({
-    phone: '',
-    password: '',
-    invitationCode: ''
-  })
-
-  // 实时验证错误信息
-  const [fieldErrors, setFieldErrors] = useState({
-    phone: '',
-    password: ''
-  })
-
-  // 验证手机号格式
-  const validatePhone = (phone: string) => {
-    if (!phone) return ''
-    if (!/^[0-9]{11}$/.test(phone)) {
-      return '请输入正确的11位手机号'
-    }
-    return ''
-  }
-
-  // 验证密码长度
-  const validatePassword = (password: string) => {
-    if (!password) return ''
-    if (password.length < 6) {
-      return '密码长度至少为6位'
-    }
-    return ''
-  }
-
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setError('')
-    setSuccess('')
     setLoading(true)
 
     try {
@@ -98,48 +65,6 @@ function LoginForm() {
     } catch (err: unknown) {
       console.error('[Login] 异常:', err)
       const message = err instanceof Error ? err.message : '登录失败，请重试'
-      setError(message)
-      setLoading(false)
-      return  // ✅ 修复: 防止异常后表单作为GET提交
-    }
-  }
-
-  const handleSignup = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError('')
-    setSuccess('')
-
-    // Validation
-    if (signupData.password.length < 6) {
-      setError('密码长度至少为6位')
-      return
-    }
-
-    if (!/^[0-9]{11}$/.test(signupData.phone)) {
-      setError('请输入正确的11位手机号')
-      return
-    }
-
-    if (!signupData.invitationCode) {
-      setError('请输入邀请码')
-      return
-    }
-
-    setLoading(true)
-
-    try {
-      const result = await signup(signupData)
-      if (result.error) {
-        setError(result.error)
-        setLoading(false)
-        return  // ✅ 修复: 防止表单作为GET提交
-      }
-
-      // 注册成功，立即跳转
-      router.push('/')
-      router.refresh()
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : '注册失败，请重试'
       setError(message)
       setLoading(false)
       return  // ✅ 修复: 防止异常后表单作为GET提交
@@ -251,268 +176,112 @@ function LoginForm() {
 
             {/* Auth Card */}
             <div className="clay-card p-8 lg:p-12">
-              {/* Tabs */}
-              <div className="flex gap-3 mb-8 p-2 rounded-2xl" style={{
-                background: '#F7FAFC',
-                border: '2px solid #E2E8F0'
-              }}>
-                <button
-                  onClick={() => { setActiveTab('login'); setError(''); setSuccess('') }}
-                  className={`flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 min-h-[56px] ${
-                    activeTab === 'login'
-                      ? 'text-white shadow-lg'
-                      : 'text-gray-500 hover:text-green-600'
-                  }`}
-                  style={
-                    activeTab === 'login' ? {
-                      background: 'linear-gradient(135deg, #4CAF50 0%, #45A049 100%)',
-                      boxShadow: '0 4px 8px rgba(76, 175, 80, 0.3)'
-                    } : {}
-                  }
-                >
-                  登录
-                </button>
-                <button
-                  onClick={() => { setActiveTab('signup'); setError(''); setSuccess('') }}
-                  className={`flex-1 py-4 px-6 rounded-xl font-bold text-lg transition-all duration-300 min-h-[56px] ${
-                    activeTab === 'signup'
-                      ? 'text-gray-800 shadow-lg'
-                      : 'text-gray-500 hover:text-blue-600'
-                  }`}
-                  style={
-                    activeTab === 'signup' ? {
-                      background: 'linear-gradient(135deg, #87CEEB 0%, #7DD3E8 100%)',
-                      boxShadow: '0 4px 8px rgba(135, 206, 235, 0.3)'
-                    } : {}
-                  }
-                >
-                  注册
-                </button>
+              {/* Title */}
+              <div className="mb-8">
+                <h2 className="text-3xl font-black text-gray-800 mb-2">欢迎回来</h2>
+                <p className="text-base font-semibold text-gray-600">登录你的账号继续学习</p>
               </div>
 
-              {/* Forms */}
-              <div>
-                {/* Error & Success Messages */}
-                {error && (
-                  <div className="mb-6 p-4 rounded-2xl border-l-4" style={{ backgroundColor: '#FFF5EE', borderColor: '#FF8C61' }}>
-                    <p className="text-base font-semibold" style={{ color: '#FF8C61' }}>⚠️ {error}</p>
+              {/* Error Message */}
+              {error && (
+                <div className="mb-6 p-4 rounded-2xl border-l-4" style={{ backgroundColor: '#FFF5EE', borderColor: '#FF8C61' }}>
+                  <p className="text-base font-semibold" style={{ color: '#FF8C61' }}>⚠️ {error}</p>
+                </div>
+              )}
+
+              {/* Login Form */}
+              <form onSubmit={handleLogin} className="space-y-6">
+                <div>
+                  <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
+                    <Mail className="w-5 h-5 text-green-600" />
+                    手机号
+                  </label>
+                  <div className="clay-icon px-5 py-4" style={{ minHeight: '56px' }}>
+                    <input
+                      type="tel"
+                      value={loginData.phone}
+                      onChange={(e) => setLoginData({ ...loginData, phone: e.target.value })}
+                      placeholder="请输入手机号"
+                      className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
+                      required
+                      data-testid="phone-input"
+                      name="phone"
+                    />
                   </div>
-                )}
+                </div>
 
-                {success && (
-                  <div className="mb-6 p-4 rounded-2xl border-l-4" style={{ backgroundColor: '#F0FFF4', borderColor: '#4CAF50' }}>
-                    <p className="text-base font-semibold" style={{ color: '#4CAF50' }}>🎉 {success}</p>
-                  </div>
-                )}
-
-                {activeTab === 'login' ? (
-                  /* Login Form */
-                  <form onSubmit={handleLogin} className="space-y-6">
-                    <div>
-                      <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
-                        <Mail className="w-5 h-5 text-green-600" />
-                        手机号
-                      </label>
-                      <div className="clay-icon px-5 py-4" style={{ minHeight: '56px' }}>
-                        <input
-                          type="tel"
-                          value={loginData.phone}
-                          onChange={(e) => setLoginData({ ...loginData, phone: e.target.value })}
-                          placeholder="请输入手机号"
-                          className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
-                          required
-                          data-testid="phone-input"
-                          name="phone"
-                        />
-                      </div>
-                    </div>
-
-                    <div>
-                      <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
-                        <Lock className="w-5 h-5 text-green-600" />
-                        密码
-                      </label>
-                      <div className="clay-icon px-5 py-4 flex items-center" style={{ minHeight: '56px' }}>
-                        <input
-                          type={showPassword ? 'text' : 'password'}
-                          value={loginData.password}
-                          onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
-                          placeholder="请输入密码"
-                          className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
-                          required
-                          data-testid="password-input"
-                          name="password"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => setShowPassword(!showPassword)}
-                          className="ml-3 hover:opacity-70 transition-opacity p-2"
-                          style={{ color: '#4CAF50' }}
-                          data-testid="password-toggle-button"
-                          aria-label={showPassword ? "隐藏密码" : "显示密码"}
-                        >
-                          {showPassword ? (
-                            <EyeOff className="w-6 h-6" />
-                          ) : (
-                            <Eye className="w-6 h-6" />
-                          )}
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* 忘记密码链接 */}
-                    <div className="text-right">
-                      <button
-                        type="button"
-                        onClick={() => setShowForgotPassword(true)}
-                        className="text-sm font-semibold text-green-600 hover:text-green-700 transition-colors flex items-center gap-1 ml-auto"
-                      >
-                        <HelpCircle className="w-4 h-4" />
-                        忘记密码？
-                      </button>
-                    </div>
-
+                <div>
+                  <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
+                    <Lock className="w-5 h-5 text-green-600" />
+                    密码
+                  </label>
+                  <div className="clay-icon px-5 py-4 flex items-center" style={{ minHeight: '56px' }}>
+                    <input
+                      type={showPassword ? 'text' : 'password'}
+                      value={loginData.password}
+                      onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
+                      placeholder="请输入密码"
+                      className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
+                      required
+                      data-testid="password-input"
+                      name="password"
+                    />
                     <button
-                      type="submit"
-                      disabled={loading}
-                      className="w-full clay-button-primary text-lg py-5 shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                      style={{ minHeight: '64px' }}
-                      data-testid="login-submit-button"
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="ml-3 hover:opacity-70 transition-opacity p-2"
+                      style={{ color: '#4CAF50' }}
+                      data-testid="password-toggle-button"
+                      aria-label={showPassword ? "隐藏密码" : "显示密码"}
                     >
-                      {loading ? (
-                        <>⏳ 登录中...</>
+                      {showPassword ? (
+                        <EyeOff className="w-6 h-6" />
                       ) : (
-                        <>
-                          <Sparkles className="w-6 h-6" />
-                          登录
-                        </>
+                        <Eye className="w-6 h-6" />
                       )}
                     </button>
-                  </form>
-                ) : (
-                  /* Signup Form */
-                  <form onSubmit={handleSignup} className="space-y-5">
-                    <div>
-                      <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
-                        <Mail className="w-5 h-5 text-blue-600" />
-                        手机号
-                      </label>
-                      <div className="clay-icon px-5 py-4" style={{ minHeight: '56px' }}>
-                        <input
-                          type="tel"
-                          value={signupData.phone}
-                          onChange={(e) => {
-                            setSignupData({ ...signupData, phone: e.target.value })
-                            setFieldErrors({ ...fieldErrors, phone: '' })
-                          }}
-                          onBlur={(e) => {
-                            setFieldErrors({ ...fieldErrors, phone: validatePhone(e.target.value) })
-                          }}
-                          placeholder="请输入11位手机号"
-                          className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
-                          required
-                          data-testid="signup-phone-input"
-                          name="phone"
-                        />
-                      </div>
-                      {fieldErrors.phone && (
-                        <p className="mt-2 text-sm font-semibold text-red-500" data-testid="phone-error">
-                          {fieldErrors.phone}
-                        </p>
-                      )}
-                    </div>
+                  </div>
+                </div>
 
-                    <div>
-                      <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
-                        <Lock className="w-5 h-5 text-blue-600" />
-                        密码
-                      </label>
-                      <div className="clay-icon px-5 py-4 flex items-center" style={{ minHeight: '56px' }}>
-                        <input
-                          type={showPassword ? 'text' : 'password'}
-                          value={signupData.password}
-                          onChange={(e) => {
-                            setSignupData({ ...signupData, password: e.target.value })
-                            setFieldErrors({ ...fieldErrors, password: '' })
-                          }}
-                          onBlur={(e) => {
-                            setFieldErrors({ ...fieldErrors, password: validatePassword(e.target.value) })
-                          }}
-                          placeholder="至少6位密码"
-                          className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
-                          required
-                          data-testid="signup-password-input"
-                          name="password"
-                        />
-                        <button
-                          type="button"
-                          onClick={() => setShowPassword(!showPassword)}
-                          className="ml-3 hover:opacity-70 transition-opacity p-2"
-                          style={{ color: '#87CEEB' }}
-                          data-testid="password-toggle-button"
-                          aria-label={showPassword ? "隐藏密码" : "显示密码"}
-                        >
-                          {showPassword ? (
-                            <EyeOff className="w-6 h-6" />
-                          ) : (
-                            <Eye className="w-6 h-6" />
-                          )}
-                        </button>
-                      </div>
-                      {fieldErrors.password && (
-                        <p className="mt-2 text-sm font-semibold text-red-500" data-testid="password-error">
-                          {fieldErrors.password}
-                        </p>
-                      )}
-                    </div>
+                {/* 忘记密码链接 */}
+                <div className="text-right">
+                  <button
+                    type="button"
+                    onClick={() => setShowForgotPassword(true)}
+                    className="text-sm font-semibold text-green-600 hover:text-green-700 transition-colors flex items-center gap-1 ml-auto"
+                  >
+                    <HelpCircle className="w-4 h-4" />
+                    忘记密码？
+                  </button>
+                </div>
 
-                    <div>
-                      <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
-                        <Ticket className="w-5 h-5 text-blue-600" />
-                        邀请码 <span style={{ color: '#87CEEB' }}>*</span>
-                      </label>
-                      <div className="clay-icon px-5 py-4" style={{ minHeight: '56px' }}>
-                        <input
-                          type="text"
-                          value={signupData.invitationCode}
-                          onChange={(e) => setSignupData({ ...signupData, invitationCode: e.target.value.toUpperCase() })}
-                          placeholder="请输入邀请码"
-                          className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg uppercase"
-                          required
-                          data-testid="signup-invitation-code-input"
-                          name="invitationCode"
-                        />
-                      </div>
-                      {/* 仅在开发环境显示测试邀请码 */}
-                      {process.env.NODE_ENV === 'development' && (
-                        <div className="mt-3 flex items-start gap-2 px-2">
-                          <Sparkles className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#4CAF50' }} />
-                          <p className="text-sm text-gray-600 font-medium leading-relaxed">
-                            测试邀请码（仅开发环境）：<span className="font-bold" style={{ color: '#4CAF50' }}>TEST1234</span>, <span className="font-bold" style={{ color: '#87CEEB' }}>DEMO2024</span>, <span className="font-bold" style={{ color: '#FF8C61' }}>BETA5000</span>
-                          </p>
-                        </div>
-                      )}
-                    </div>
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full clay-button-primary text-lg py-5 shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  style={{ minHeight: '64px' }}
+                  data-testid="login-submit-button"
+                >
+                  {loading ? (
+                    <>⏳ 登录中...</>
+                  ) : (
+                    <>
+                      <Sparkles className="w-6 h-6" />
+                      登录
+                    </>
+                  )}
+                </button>
 
-                    <button
-                      type="submit"
-                      disabled={loading}
-                      className="w-full clay-button-secondary text-lg py-5 shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                      style={{ minHeight: '64px' }}
-                      data-testid="signup-submit-button"
-                    >
-                      {loading ? (
-                        <>⏳ 注册中...</>
-                      ) : (
-                        <>
-                          <Sparkles className="w-6 h-6" />
-                          注册
-                        </>
-                      )}
-                    </button>
-                  </form>
-                )}
-              </div>
+                {/* 注册链接 */}
+                <div className="text-center">
+                  <p className="text-gray-600 font-semibold">
+                    没有账号？
+                    <Link href="/register" className="text-green-600 hover:text-green-700 font-bold ml-1">
+                      立即注册
+                    </Link>
+                  </p>
+                </div>
+              </form>
             </div>
 
             {/* Footer */}

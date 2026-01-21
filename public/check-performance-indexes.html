@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Check Performance Indexes</title>
+  <style>
+    body { font-family: monospace; padding: 20px; }
+    .sql-block { background: #f4f4f4; padding: 15px; margin: 10px 0; border-left: 4px solid #333; }
+    button { padding: 10px 20px; margin: 5px; font-size: 14px; }
+    #result { margin-top: 20px; white-space: pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>Performance Index Checker</h1>
+
+  <div class="sql-block">
+    <h3>Step 1: Check Current Indexes</h3>
+    <code>
+      SELECT<br>
+      &nbsp;&nbsp;tablename,<br>
+      &nbsp;&nbsp;indexname,<br>
+      &nbsp;&nbsp;indexdef<br>
+      FROM pg_indexes<br>
+      WHERE tablename IN ('word_progress', 'user_book_preferences')<br>
+      ORDER BY tablename, indexname;
+    </code>
+    <br><br>
+    <button onclick="checkIndexes()">Run in Supabase SQL Editor</button>
+  </div>
+
+  <div class="sql-block">
+    <h3>Step 2: Create Missing Indexes (if needed)</h3>
+    <code>
+      -- word_progress 表的复合索引<br>
+      CREATE INDEX IF NOT EXISTS idx_word_progress_user_updated<br>
+      ON word_progress(user_id, updated_at DESC);<br>
+      <br>
+      CREATE INDEX IF NOT EXISTS idx_word_progress_user_created<br>
+      ON word_progress(user_id, created_at DESC);<br>
+      <br>
+      CREATE INDEX IF NOT EXISTS idx_word_progress_user_status<br>
+      ON word_progress(user_id, status);<br>
+      <br>
+      -- user_book_preferences 表的复合索引<br>
+      CREATE INDEX IF NOT EXISTS idx_user_book_prefs_user_accessed<br>
+      ON user_book_preferences(user_id, last_accessed_at DESC);
+    </code>
+    <br>
+    <button onclick="createIndexes()">Create Indexes</button>
+  </div>
+
+  <div class="sql-block">
+    <h3>Step 3: Verify Index Usage</h3>
+    <code>
+      EXPLAIN ANALYZE<br>
+      SELECT book_id, status, created_at, updated_at<br>
+      FROM word_progress<br>
+      WHERE user_id = 'your-user-id'<br>
+      ORDER BY updated_at DESC<br>
+      LIMIT 100;
+    </code>
+    <br>
+    <button onclick="verifyIndexes()">Verify Query Plan</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    function checkIndexes() {
+      document.getElementById('result').innerHTML = `
+        <h3>Instructions:</h3>
+        <ol>
+          <li>Go to your Supabase dashboard</li>
+          <li>Click on SQL Editor</li>
+          <li>Paste and run the query above</li>
+          <li>Look for indexes on (user_id, updated_at) or similar</li>
+        </ol>
+      `;
+    }
+
+    function createIndexes() {
+      alert('Copy the SQL commands and run them in Supabase SQL Editor. This should significantly improve query performance!');
+    }
+
+    function verifyIndexes() {
+      document.getElementById('result').innerHTML = `
+        <h3>How to verify:</h3>
+        <p>Replace 'your-user-id' with an actual user ID from your database, then run the EXPLAIN ANALYZE query.</p>
+        <p><strong>Good sign:</strong> You see "Index Scan" instead of "Seq Scan"</p>
+        <p><strong>Bad sign:</strong> You see "Seq Scan" (sequential scan) - means no index is being used</p>
+      `;
+    }
+
+    // Auto-run check
+    checkIndexes();
+  </script>
+</body>
+</html>

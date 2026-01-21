@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>登录测试</title>
+</head>
+<body>
+    <h1>登录测试</h1>
+    <p>测试账号密码是否正确：</p>
+    <ul>
+        <li>手机号：15652936305</li>
+        <li>密码：wj5236016</li>
+    </ul>
+    <p><a href="/login">点击这里测试登录</a></p>
+    <hr>
+    <h2>测试步骤：</h2>
+    <ol>
+        <li>点击上面的链接</li>
+        <li>输入手机号和密码</li>
+        <li>点击登录按钮</li>
+        <li>观察URL是否变成 login?phone=xxx&password=xxx</li>
+        <li>检查是否能成功登录</li>
+    </ol>
+    <hr>
+    <p id="result">等待测试...</p>
+    <script>
+        // 检查当前登录状态
+        fetch('/api/auth/user')
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('result').innerHTML =
+                    data.user ? '<strong style="color:green">✅ 已登录: ' + JSON.stringify(data.user) + '</strong>'
+                            : '<strong style="color:red">❌ 未登录</strong>';
+            })
+            .catch(err => {
+                document.getElementById('result').innerHTML = '<strong style="color:red">❌ 错误: ' + err.message + '</strong>';
+            });
+    </script>
+</body>
+</html>

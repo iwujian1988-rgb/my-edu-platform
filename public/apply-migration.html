@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>应用数据库 Migration - 进度卡片功能</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      color: #666;
+      margin-bottom: 30px;
+      font-size: 14px;
+    }
+    .warning {
+      background: #fff3cd;
+      border: 1px solid #ffc107;
+      border-radius: 8px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .warning h3 {
+      color: #856404;
+      margin-bottom: 10px;
+    }
+    .warning p {
+      color: #856404;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-primary {
+      background: #3b82f6;
+      color: white;
+    }
+    .btn-primary:hover {
+      background: #2563eb;
+    }
+    .btn-success {
+      background: #10b981;
+      color: white;
+    }
+    .btn-success:hover {
+      background: #059669;
+    }
+    .btn-test {
+      background: #f59e0b;
+      color: white;
+    }
+    .btn-test:hover {
+      background: #d97706;
+    }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+    .result.success {
+      background: #d1fae5;
+      border: 1px solid #10b981;
+      color: #065f46;
+    }
+    .result.error {
+      background: #fee2e2;
+      border: 1px solid #ef4444;
+      color: #991b1b;
+    }
+    .result pre {
+      background: white;
+      padding: 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      margin-top: 10px;
+      font-size: 12px;
+    }
+    .loading {
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 2px solid #f3f3f3;
+      border-top: 2px solid #3b82f6;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .steps {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+    }
+    .steps h2 {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #333;
+    }
+    .steps ol {
+      padding-left: 20px;
+    }
+    .steps li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+      color: #555;
+    }
+    .code {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 应用数据库 Migration</h1>
+    <p class="subtitle">首页多进度卡片功能 - RPC函数和索引</p>
+
+    <div class="warning">
+      <h3>⚠️ 注意事项</h3>
+      <p>
+        此页面将创建数据库RPC函数和索引。请确保：
+        <br>1. 你已登录到正确的 Supabase 项目
+        <br>2. 数据库有足够的权限执行 DDL 操作
+        <br>3. 生产环境建议先在测试环境验证
+      </p>
+    </div>
+
+    <div class="steps">
+      <h2>📋 执行步骤</h2>
+      <ol>
+        <li>点击下方"应用 Migration"按钮</li>
+        <li>等待创建 RPC 函数 <span class="code">get_user_progress_cards</span></li>
+        <li>等待创建索引优化查询性能</li>
+        <li>点击"测试 RPC 函数"验证功能</li>
+        <li>查看测试结果确认成功</li>
+      </ol>
+    </div>
+
+    <div class="button-group">
+      <button class="btn-primary" onclick="applyMigration()">
+        <span id="apply-text">✅ 应用 Migration</span>
+      </button>
+      <button class="btn-test" onclick="testRPC()">
+        <span id="test-text">🧪 测试 RPC 函数</span>
+      </button>
+    </div>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script>
+    async function applyMigration() {
+      const resultDiv = document.getElementById('result');
+      const applyText = document.getElementById('apply-text');
+
+      resultDiv.style.display = 'none';
+      applyText.innerHTML = '<div class="loading"></div> 应用中...';
+
+      try {
+        // 读取 migration 文件
+        const response = await fetch('/supabase/migrations/20260114_add_get_progress_cards_rpc.sql');
+        const sql = await response.text();
+
+        // 调用 API 应用 migration
+        const applyResponse = await fetch('/api/admin/apply-migration', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sql })
+        });
+
+        const result = await applyResponse.json();
+
+        resultDiv.style.display = 'block';
+        if (result.success) {
+          resultDiv.className = 'result success';
+          resultDiv.innerHTML = `
+            <h3>✅ Migration 应用成功！</h3>
+            <p>${result.message}</p>
+            <pre>${JSON.stringify(result.data, null, 2)}</pre>
+          `;
+          applyText.innerHTML = '✅ 已应用';
+        } else {
+          resultDiv.className = 'result error';
+          resultDiv.innerHTML = `
+            <h3>❌ Migration 应用失败</h3>
+            <p>${result.error}</p>
+            <pre>请检查：<br>1. 数据库连接配置<br>2. 数据库用户权限<br>3. SQL 语法错误</pre>
+          `;
+          applyText.innerHTML = '❌ 失败';
+        }
+      } catch (error) {
+        resultDiv.style.display = 'block';
+        resultDiv.className = 'result error';
+        resultDiv.innerHTML = `
+          <h3>❌ 发生错误</h3>
+          <pre>${error.message}</pre>
+        `;
+        applyText.innerHTML = '❌ 错误';
+      }
+    }
+
+    async function testRPC() {
+      const resultDiv = document.getElementById('result');
+      const testText = document.getElementById('test-text');
+
+      resultDiv.style.display = 'none';
+      testText.innerHTML = '<div class="loading"></div> 测试中...';
+
+      try {
+        const response = await fetch('/api/admin/test-progress-rpc', {
+          method: 'POST'
+        });
+
+        const result = await response.json();
+
+        resultDiv.style.display = 'block';
+        if (result.success) {
+          resultDiv.className = 'result success';
+          resultDiv.innerHTML = `
+            <h3>✅ RPC 函数测试成功！</h3>
+            <p>返回 ${result.data.length} 条进度卡片</p>
+            <pre>性能指标：${result.performance}ms</pre>
+            <pre>${JSON.stringify(result.data, null, 2)}</pre>
+          `;
+          testText.innerHTML = '✅ 测试通过';
+        } else {
+          resultDiv.className = 'result error';
+          resultDiv.innerHTML = `
+            <h3>❌ RPC 函数测试失败</h3>
+            <p>${result.error}</p>
+          `;
+          testText.innerHTML = '❌ 测试失败';
+        }
+      } catch (error) {
+        resultDiv.style.display = 'block';
+        resultDiv.className = 'result error';
+        resultDiv.innerHTML = `
+          <h3>❌ 发生错误</h3>
+          <pre>${error.message}</pre>
+        `;
+        testText.innerHTML = '❌ 错误';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>诊断 Supabase Auth</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .card {
+      background: white;
+      border: 3px solid #000;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 8px 8px 0 0 #000;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #4CAF50;
+      color: white;
+      border: 3px solid #000;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    button:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .result {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      font-family: monospace;
+      font-size: 13px;
+      max-height: 600px;
+      overflow-y: auto;
+    }
+    .check-item {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border-left: 4px solid #ccc;
+    }
+    .check-passed {
+      background: #d4edda;
+      border-left-color: #28a745;
+    }
+    .check-failed {
+      background: #f8d7da;
+      border-left-color: #dc3545;
+    }
+    .check-running {
+      background: #fff3cd;
+      border-left-color: #ffc107;
+    }
+    .check-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .check-details {
+      margin-left: 20px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1🔍 Supabase Auth 诊断工具</h1>
+    <p style="margin-bottom: 20px; color: #666;">
+      点击下面的按钮开始诊断，会检查 Supabase Auth 服务的各项功能。
+    </p>
+    <button id="testBtn" onclick="runDiagnostics()">开始诊断</button>
+    <div id="result" style="display: none;"></div>
+  </div>
+
+  <script>
+    async function runDiagnostics() {
+      const btn = document.getElementById('testBtn')
+      const resultDiv = document.getElementById('result')
+
+      btn.disabled = true
+      btn.textContent = '诊断中...'
+      resultDiv.style.display = 'none'
+
+      try {
+        const response = await fetch('/api/admin/diagnose-auth')
+        const data = await response.json()
+
+        resultDiv.style.display = 'block'
+
+        let html = '<div style="background: #f0f0f0; padding: 15px; border-radius: 8px; margin-bottom: 20px;">'
+        html += `<strong>诊断时间：</strong>${data.timestamp}\n`
+        html += `</div>`
+
+        if (data.checks) {
+          data.checks.forEach(check => {
+            const statusClass = check.status === 'passed' ? 'check-passed' :
+                               check.status === 'failed' ? 'check-failed' : 'check-running'
+            const statusIcon = check.status === 'passed' ? '✅' :
+                              check.status === 'failed' ? '❌' : '⏳'
+
+            html += `<div class="check-item ${statusClass}">`
+            html += `<div class="check-name">${statusIcon} ${check.name}</div>`
+
+            if (check.error) {
+              html += `<div class="check-details" style="color: #dc3545;"><strong>错误：</strong>${check.error}</div>`
+            }
+
+            if (check.userCount !== undefined) {
+              html += `<div class="check-details"><strong>用户数量：</strong>${check.userCount}</div>`
+            }
+
+            if (check.users) {
+              html += `<div class="check-details"><strong>最近用户：</strong><br/>`
+              check.users.forEach(u => {
+                html += `  - ${u.email} (${u.confirmed ? '已确认' : '未确认'})<br/>`
+              })
+              html += `</div>`
+            }
+
+            if (check.createdUserId) {
+              html += `<div class="check-details"><strong>创建的用户ID：</strong>${check.createdUserId}</div>`
+            }
+
+            if (check.details) {
+              html += `<div class="check-details"><strong>详细信息：</strong><br/>${JSON.stringify(check.details, null, 2)}</div>`
+            }
+
+            html += `</div>`
+          })
+        }
+
+        if (data.error) {
+          html += `<div class="check-item check-failed">`
+          html += `<div class="check-name">💥 全局错误</div>`
+          html += `<div class="check-details">${data.error}</div>`
+          if (data.stack) {
+            html += `<div class="check-details" style="margin-top: 10px; font-size: 11px;">${data.stack}</div>`
+          }
+          html += `</div>`
+        }
+
+        resultDiv.innerHTML = html
+        btn.textContent = '✓ 诊断完成'
+        btn.style.background = '#B4F416'
+
+      } catch (error) {
+        resultDiv.style.display = 'block'
+        resultDiv.innerHTML = `<div class="check-item check-failed"><strong>网络错误：</strong>${error.message}</div>`
+        btn.disabled = false
+        btn.textContent = '重试'
+      }
+    }
+  </script>
+</body>
+</html>

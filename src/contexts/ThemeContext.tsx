@@ -9,11 +9,15 @@ interface ThemeContextType {
   themeMode: ThemeMode
   setThemeMode: (mode: ThemeMode) => void
   isNightTime: boolean
+  mounted: boolean // 🔥 添加 mounted 状态，避免 hydration 不匹配
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
+  // 🔥 添加 mounted 状态，确保服务器端和客户端首次渲染一致
+  const [mounted, setMounted] = useState(false)
+
   // 🔥 从 localStorage 读取保存的主题模式，如果没有则默认为 'auto'
   const [themeMode, setThemeMode] = useState<ThemeMode>(() => {
     if (typeof window !== 'undefined') {
@@ -48,6 +52,11 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   })
 
   const [isNightTime, setIsNightTime] = useState(checkNightTime())
+
+  // 🔥 组件挂载后设置 mounted
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   // 💾 保存 themeMode 到 localStorage
   useEffect(() => {
@@ -114,7 +123,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   }, [theme])
 
   return (
-    <ThemeContext.Provider value={{ theme, themeMode, setThemeMode, isNightTime }}>
+    <ThemeContext.Provider value={{ theme, themeMode, setThemeMode, isNightTime, mounted }}>
       {children}
     </ThemeContext.Provider>
   )

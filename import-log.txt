@@ -1,0 +1,753 @@
+
+📚 开始导入生产词库...
+
+找到 45 个词库文件
+
+
+======================================================================
+处理: 14天攻克KET核心词汇.json
+======================================================================
+  书名: 14天攻克KET核心词汇
+  词汇量: 520
+  ✅ 创建书籍: 21d022cb-bc31-4172-91e4-54b4b4406d5a
+  发现 14 个章节
+  ✅ 创建 14 个章节
+  开始插入 520 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 14天攻克KET核心词汇
+     - 章节: 14
+     - 单词: 0
+
+======================================================================
+处理: 2022 PETS第五级教材.json
+======================================================================
+  书名: 2022 PETS第五级教材
+  词汇量: 520
+  ✅ 创建书籍: 3924b5aa-8a7f-4cf1-b6c0-feab858d0cb1
+  发现 16 个章节
+  ✅ 创建 16 个章节
+  开始插入 520 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 2022 PETS第五级教材
+     - 章节: 16
+     - 单词: 0
+
+======================================================================
+处理: 2022PETS第三级教材.json
+======================================================================
+  书名: 2022PETS第三级教材
+  词汇量: 938
+  ✅ 创建书籍: 42c1c2a9-01be-4d40-ab2e-00617261ef2e
+  发现 20 个章节
+  ✅ 创建 20 个章节
+  开始插入 938 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 2022PETS第三级教材
+     - 章节: 20
+     - 单词: 0
+
+======================================================================
+处理: 2022PETS第四级教材.json
+======================================================================
+  书名: 2022PETS第四级教材
+  词汇量: 649
+  ✅ 创建书籍: 2d101a25-eb66-4556-ae6c-9e6223311a4f
+  发现 15 个章节
+  ✅ 创建 15 个章节
+  开始插入 649 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 2022PETS第四级教材
+     - 章节: 15
+     - 单词: 0
+
+======================================================================
+处理: 2022年专升本英语核心词汇.json
+======================================================================
+  书名: 2022年专升本英语核心词汇
+  词汇量: 3421
+  ✅ 创建书籍: 20778726-c40d-455b-b9a6-eb92782ce85f
+  发现 26 个章节
+  ✅ 创建 26 个章节
+  开始插入 3421 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 2022年专升本英语核心词汇
+     - 章节: 26
+     - 单词: 0
+
+======================================================================
+处理: BEC_enhanced.json
+======================================================================
+  书名: BEC (Enhanced)
+  词汇量: 6028
+  ❌ 创建书籍失败: new row for relation "books" violates check constraint "books_category_check"
+
+======================================================================
+处理: BEC_merged.json
+======================================================================
+  书名: BEC
+  词汇量: 3638
+  ❌ 创建书籍失败: new row for relation "books" violates check constraint "books_category_check"
+
+======================================================================
+处理: CET-4_enhanced.json
+======================================================================
+  书名: CET-4 (Enhanced)
+  词汇量: 4544
+  ✅ 创建书籍: f0395950-5309-4153-a849-8797ff7183ec
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 4544 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 CET-4 (Enhanced)
+     - 章节: 1
+     - 单词: 0
+
+======================================================================
+处理: CET-4_merged.json
+======================================================================
+  书名: CET-4
+  词汇量: 4216
+  ✅ 创建书籍: 899b56eb-0607-46bb-b57b-2b3d89cce284
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 4216 个单词...
+  进度: 500/4216
+  进度: 1000/4216
+  进度: 1500/4216
+  进度: 2000/4216
+  进度: 2500/4216
+  进度: 3000/4216
+  进度: 3500/4216
+  进度: 4000/4216
+  进度: 4216/4216
+
+  ✅ 成功导入 CET-4
+     - 章节: 1
+     - 单词: 4216
+
+======================================================================
+处理: CET-6_enhanced.json
+======================================================================
+  书名: CET-6 (Enhanced)
+  词汇量: 3998
+  ✅ 创建书籍: 685ab011-7b68-4204-8c6c-681b632038f5
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 3998 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 CET-6 (Enhanced)
+     - 章节: 1
+     - 单词: 0
+
+======================================================================
+处理: CET-6_merged.json
+======================================================================
+  书名: CET-6
+  词汇量: 3481
+  ✅ 创建书籍: bec1713f-36dd-474f-9dd6-e36c8a451393
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 3481 个单词...
+  进度: 500/3481
+  进度: 1000/3481
+  进度: 1500/3481
+  进度: 2000/3481
+  进度: 2500/3481
+  进度: 3000/3481
+  进度: 3481/3481
+
+  ✅ 成功导入 CET-6
+     - 章节: 1
+     - 单词: 3481
+
+======================================================================
+处理: FCE_merged.json
+======================================================================
+  书名: FCE
+  词汇量: 3500
+  ✅ 创建书籍: 6d593664-e798-4211-9bfa-2a865f1e5050
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 3500 个单词...
+  进度: 500/3500
+  进度: 1000/3500
+  进度: 1500/3500
+  进度: 2000/3500
+  进度: 2500/3500
+  进度: 3000/3500
+  进度: 3500/3500
+
+  ✅ 成功导入 FCE
+     - 章节: 1
+     - 单词: 3500
+
+======================================================================
+处理: FCE核心词 巧记速练.json
+======================================================================
+  书名: FCE核心词 巧记速练
+  词汇量: 3864
+  ✅ 创建书籍: 42d2c92d-c0b0-4dd9-b206-a08d3ed24a7d
+  发现 51 个章节
+  ✅ 创建 51 个章节
+  开始插入 3864 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 FCE核心词 巧记速练
+     - 章节: 51
+     - 单词: 0
+
+======================================================================
+处理: GMAT_enhanced.json
+======================================================================
+  书名: GMAT (Enhanced)
+  词汇量: 3883
+  ✅ 创建书籍: aa580e18-9fb6-44a2-9b79-28f7e5dc31a6
+  发现 67 个章节
+  ✅ 创建 67 个章节
+  开始插入 3883 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 GMAT (Enhanced)
+     - 章节: 67
+     - 单词: 0
+
+======================================================================
+处理: GMAT_merged.json
+======================================================================
+  书名: GMAT
+  词汇量: 3883
+  ✅ 创建书籍: ff62e214-43bc-4763-9e6c-9eec62b3f23b
+  发现 67 个章节
+  ✅ 创建 67 个章节
+  开始插入 3883 个单词...
+  进度: 500/3883
+  进度: 1000/3883
+  进度: 1500/3883
+  进度: 2000/3883
+  进度: 2500/3883
+  进度: 3000/3883
+  进度: 3500/3883
+  进度: 3883/3883
+
+  ✅ 成功导入 GMAT
+     - 章节: 67
+     - 单词: 3883
+
+======================================================================
+处理: GRE_enhanced.json
+======================================================================
+  书名: GRE (Enhanced)
+  词汇量: 11067
+  ✅ 创建书籍: 2a179c89-a6d9-4266-abfe-d05539e601fe
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 11067 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 GRE (Enhanced)
+     - 章节: 1
+     - 单词: 0
+
+======================================================================
+处理: GRE_merged.json
+======================================================================
+  书名: GRE
+  词汇量: 10101
+  ✅ 创建书籍: 7add3255-4545-4990-968e-13180302d6d9
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 10101 个单词...
+  进度: 500/10101
+  进度: 1000/10101
+  进度: 1500/10101
+  进度: 2000/10101
+  进度: 2500/10101
+  进度: 3000/10101
+  进度: 3500/10101
+  进度: 4000/10101
+  进度: 4500/10101
+  进度: 5000/10101
+  进度: 5500/10101
+  进度: 6000/10101
+  进度: 6500/10101
+  进度: 7000/10101
+  进度: 7500/10101
+  进度: 8000/10101
+  进度: 8500/10101
+  进度: 9000/10101
+  进度: 9500/10101
+  进度: 10000/10101
+  进度: 10101/10101
+
+  ✅ 成功导入 GRE
+     - 章节: 1
+     - 单词: 10101
+
+======================================================================
+处理: IELTS_enhanced.json
+======================================================================
+  书名: IELTS (Enhanced)
+  词汇量: 6905
+  ✅ 创建书籍: 9fbc6ae9-e718-4fd8-8a94-88f479039d1a
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 6905 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 IELTS (Enhanced)
+     - 章节: 1
+     - 单词: 0
+
+======================================================================
+处理: IELTS_merged.json
+======================================================================
+  书名: IELTS
+  词汇量: 3427
+  ✅ 创建书籍: 35b2f9cd-9bd3-4d79-8853-dee6fa870059
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 3427 个单词...
+  进度: 500/3427
+  进度: 1000/3427
+  进度: 1500/3427
+  进度: 2000/3427
+  进度: 2500/3427
+  进度: 3000/3427
+  进度: 3427/3427
+
+  ✅ 成功导入 IELTS
+     - 章节: 1
+     - 单词: 3427
+
+======================================================================
+处理: KET_merged.json
+======================================================================
+  书名: KET
+  词汇量: 1344
+  ✅ 创建书籍: 8997a16f-6f4c-4da4-90da-4ed0c9940903
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 1344 个单词...
+  进度: 500/1344
+  进度: 1000/1344
+  进度: 1344/1344
+
+  ✅ 成功导入 KET
+     - 章节: 1
+     - 单词: 1344
+
+======================================================================
+处理: PEP初中7年级_merged.json
+======================================================================
+  书名: PEP初中7年级
+  词汇量: 884
+  ✅ 创建书籍: d7a36417-8b7f-4052-bf9c-919031a07858
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 884 个单词...
+  进度: 500/884
+  进度: 884/884
+
+  ✅ 成功导入 PEP初中7年级
+     - 章节: 1
+     - 单词: 884
+
+======================================================================
+处理: PEP初中8年级_merged.json
+======================================================================
+  书名: PEP初中8年级
+  词汇量: 885
+  ✅ 创建书籍: 674a6b8f-ada8-48e1-8c95-a3f9fd7db53c
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 885 个单词...
+  进度: 500/885
+  进度: 885/885
+
+  ✅ 成功导入 PEP初中8年级
+     - 章节: 1
+     - 单词: 885
+
+======================================================================
+处理: PEP初中9年级_merged.json
+======================================================================
+  书名: PEP初中9年级
+  词汇量: 551
+  ✅ 创建书籍: 52c3cbc4-7407-4eb4-9e7d-d0d2c8c30249
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 551 个单词...
+  进度: 500/551
+  进度: 551/551
+
+  ✅ 成功导入 PEP初中9年级
+     - 章节: 1
+     - 单词: 551
+
+======================================================================
+处理: PEP小学3年级_merged.json
+======================================================================
+  书名: PEP小学3年级
+  词汇量: 136
+  ✅ 创建书籍: 2bc9d262-fd33-4a3b-a87b-3d4f685d7034
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 136 个单词...
+  进度: 136/136
+
+  ✅ 成功导入 PEP小学3年级
+     - 章节: 1
+     - 单词: 136
+
+======================================================================
+处理: PEP小学4年级_merged.json
+======================================================================
+  书名: PEP小学4年级
+  词汇量: 188
+  ✅ 创建书籍: 5987eb35-73e8-40f2-aa55-773ed2833233
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 188 个单词...
+  进度: 188/188
+
+  ✅ 成功导入 PEP小学4年级
+     - 章节: 1
+     - 单词: 188
+
+======================================================================
+处理: PEP小学5年级_merged.json
+======================================================================
+  书名: PEP小学5年级
+  词汇量: 287
+  ✅ 创建书籍: 6ab81d5b-4df7-4fd2-8b24-f03df5168071
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 287 个单词...
+  进度: 287/287
+
+  ✅ 成功导入 PEP小学5年级
+     - 章节: 1
+     - 单词: 287
+
+======================================================================
+处理: PEP小学6年级_merged.json
+======================================================================
+  书名: PEP小学6年级
+  词汇量: 238
+  ✅ 创建书籍: 654f67a7-3ed3-4bdc-902b-f9a6bb89c4f3
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 238 个单词...
+  进度: 238/238
+
+  ✅ 成功导入 PEP小学6年级
+     - 章节: 1
+     - 单词: 238
+
+======================================================================
+处理: PEP高中英语_merged.json
+======================================================================
+  书名: PEP高中英语
+  词汇量: 3877
+  ✅ 创建书籍: e20ded2f-97a5-4b55-8218-17ccbf40edf1
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 3877 个单词...
+  进度: 500/3877
+  进度: 1000/3877
+  进度: 1500/3877
+  进度: 2000/3877
+  进度: 2500/3877
+  进度: 3000/3877
+  进度: 3500/3877
+  进度: 3877/3877
+
+  ✅ 成功导入 PEP高中英语
+     - 章节: 1
+     - 单词: 3877
+
+======================================================================
+处理: PETS3_merged.json
+======================================================================
+  书名: PETS3
+  词汇量: 4000
+  ✅ 创建书籍: cd01eed0-e511-4ff2-bb57-2a89ca7983e2
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 4000 个单词...
+  进度: 500/4000
+  进度: 1000/4000
+  进度: 1500/4000
+  进度: 2000/4000
+  进度: 2500/4000
+  进度: 3000/4000
+  进度: 3500/4000
+  进度: 4000/4000
+
+  ✅ 成功导入 PETS3
+     - 章节: 1
+     - 单词: 4000
+
+======================================================================
+处理: PET_merged.json
+======================================================================
+  书名: PET
+  词汇量: 3082
+  ✅ 创建书籍: 28ea3370-09bd-44ac-9df2-e60af0b86b8a
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 3082 个单词...
+  进度: 500/3082
+  进度: 1000/3082
+  进度: 1500/3082
+  进度: 2000/3082
+  进度: 2500/3082
+  进度: 3000/3082
+  进度: 3082/3082
+
+  ✅ 成功导入 PET
+     - 章节: 1
+     - 单词: 3082
+
+======================================================================
+处理: PTE_merged.json
+======================================================================
+  书名: PTE
+  词汇量: 1531
+  ✅ 创建书籍: 3a678b6f-6394-4e1f-a8a9-1de3d88b56c8
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 1531 个单词...
+  进度: 500/1531
+  进度: 1000/1531
+  进度: 1500/1531
+  进度: 1531/1531
+
+  ✅ 成功导入 PTE
+     - 章节: 1
+     - 单词: 1531
+
+======================================================================
+处理: SAT_enhanced.json
+======================================================================
+  书名: SAT (Enhanced)
+  词汇量: 8363
+  ✅ 创建书籍: 1d1a82b7-e9c1-4423-a007-d553824e2535
+  发现 40 个章节
+  ✅ 创建 40 个章节
+  开始插入 8363 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 SAT (Enhanced)
+     - 章节: 40
+     - 单词: 0
+
+======================================================================
+处理: SAT_merged.json
+======================================================================
+  书名: SAT
+  词汇量: 6445
+  ✅ 创建书籍: 2dfb256d-7778-4b65-8763-fa158c2eeccc
+  发现 40 个章节
+  ✅ 创建 40 个章节
+  开始插入 6445 个单词...
+  进度: 500/6445
+  进度: 1000/6445
+  进度: 1500/6445
+  进度: 2000/6445
+  进度: 2500/6445
+  进度: 3000/6445
+  进度: 3500/6445
+  进度: 4000/6445
+  进度: 4500/6445
+  进度: 5000/6445
+  进度: 5500/6445
+  进度: 6000/6445
+  进度: 6445/6445
+
+  ✅ 成功导入 SAT
+     - 章节: 40
+     - 单词: 6445
+
+======================================================================
+处理: TOEFL_enhanced.json
+======================================================================
+  书名: TOEFL (Enhanced)
+  词汇量: 11168
+  ✅ 创建书籍: 659add8d-c2b1-431e-acd1-b6d1f5eef10e
+  发现 24 个章节
+  ✅ 创建 24 个章节
+  开始插入 11168 个单词...
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+  ❌ 插入批次失败: null value in column "id" of relation "words" violates not-null constraint
+
+  ✅ 成功导入 TOEFL (Enhanced)
+     - 章节: 24
+     - 单词: 0
+
+======================================================================
+处理: TOEFL_merged.json
+======================================================================
+  书名: TOEFL
+  词汇量: 10238
+  ✅ 创建书籍: bf9420b6-8765-4e48-affe-020d43badbb9
+  发现 24 个章节
+  ✅ 创建 24 个章节
+  开始插入 10238 个单词...
+  进度: 500/10238
+  进度: 1000/10238
+  进度: 1500/10238
+  进度: 2000/10238
+  进度: 2500/10238
+  进度: 3000/10238
+  进度: 3500/10238
+  进度: 4000/10238
+  进度: 4500/10238
+  进度: 5000/10238
+  进度: 5500/10238
+  进度: 6000/10238
+  进度: 6500/10238
+  进度: 7000/10238
+  进度: 7500/10238
+  进度: 8000/10238
+  进度: 8500/10238
+  进度: 9000/10238
+  进度: 9500/10238
+  进度: 10000/10238
+  进度: 10238/10238
+
+  ✅ 成功导入 TOEFL
+     - 章节: 24
+     - 单词: 10238
+
+======================================================================
+处理: 专业英语八级_merged.json
+======================================================================
+  书名: 专业英语八级
+  词汇量: 25078
+  ✅ 创建书籍: 690d0185-9193-4c95-aaa2-92fc32758230
+  发现 1 个章节
+  ✅ 创建 1 个章节
+  开始插入 25078 个单词...
+  进度: 500/25078
+  进度: 1000/25078
+  进度: 1500/25078

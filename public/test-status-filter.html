@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>状态筛选测试</title>
+  <style>
+    body {
+      font-family: monospace;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #1a1a1a;
+      color: #e0e0e0;
+    }
+    .log {
+      background: #2a2a2a;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      border-left: 3px solid #4CAF50;
+    }
+    .error {
+      border-left-color: #f44336;
+    }
+    .success {
+      border-left-color: #4CAF50;
+    }
+    .info {
+      border-left-color: #2196F3;
+    }
+    h1 {
+      color: #4CAF50;
+    }
+    .test-result {
+      margin: 20px 0;
+      padding: 15px;
+      background: #2a2a2a;
+      border-radius: 4px;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #cache-display {
+      background: #1e1e1e;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>状态筛选缓存测试</h1>
+
+  <div class="test-result">
+    <h2>测试书籍</h2>
+    <p>ID: 9f1e6332-979d-4632-a8f6-8bd35246b28d (PEP初中8年级)</p>
+    <p>该书有1条"认识"状态的记录</p>
+  </div>
+
+  <div class="test-result">
+    <h2>操作面板</h2>
+    <button onclick="testStatusFilter()">运行测试</button>
+    <button onclick="showCache()">显示缓存</button>
+    <button onclick="clearCache()">清除缓存</button>
+  </div>
+
+  <div class="test-result">
+    <h2>测试日志</h2>
+    <div id="logs"></div>
+  </div>
+
+  <div class="test-result">
+    <h2>SessionStorage缓存</h2>
+    <div id="cache-display"></div>
+  </div>
+
+  <script>
+    const TEST_BOOK_ID = '9f1e6332-979d-4632-a8f6-8bd35246b28d';
+
+    function log(message, type = 'info') {
+      const logsDiv = document.getElementById('logs');
+      const logDiv = document.createElement('div');
+      logDiv.className = `log ${type}`;
+      logDiv.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      logsDiv.appendChild(logDiv);
+      console.log(message);
+    }
+
+    async function testStatusFilter() {
+      document.getElementById('logs').innerHTML = '';
+      log('开始测试状态筛选功能...', 'info');
+
+      // 读取当前缓存
+      const cacheKey = `loadedPages-${TEST_BOOK_ID}`;
+      const existingCache = JSON.parse(sessionStorage.getItem(cacheKey) || '[]');
+      log(`现有缓存: ${existingCache.join(', ') || '(空)'}`, 'info');
+
+      // 模拟API调用 - 监控fetch
+      const apiCalls = [];
+      const originalFetch = window.fetch;
+
+      window.fetch = function(...args) {
+        const url = args[0];
+        if (typeof url === 'string' && url.includes('/api/words')) {
+          const urlObj = new URL(url, window.location.origin);
+          const status = urlObj.searchParams.get('status');
+          const page = urlObj.searchParams.get('page');
+          const cacheKeyValue = `${page}-${status}`;
+          apiCalls.push(cacheKeyValue);
+          log(`📡 API调用: status=${status}, page=${page} (缓存key: ${cacheKeyValue})`, 'success');
+        }
+        return originalFetch.apply(this, args);
+      };
+
+      // 测试1: 获取所有单词 (status=all)
+      log('\n测试1: 获取所有单词 (status=all)', 'info');
+      try {
+        const response = await fetch(`/api/words?bookId=${TEST_BOOK_ID}&status=all&page=1&pageSize=21`);
+        const data = await response.json();
+        log(`  ✅ 返回 ${data.data?.length || 0} 个单词`, data.data?.length > 0 ? 'success' : 'info');
+      } catch (e) {
+        log(`  ❌ 错误: ${e.message}`, 'error');
+      }
+
+      // 检查缓存
+      const cacheAfterAll = JSON.parse(sessionStorage.getItem(cacheKey) || '[]');
+      log(`  缓存: ${cacheAfterAll.join(', ')}`, 'info');
+
+      // 测试2: 获取"认识"的单词 (status=known)
+      log('\n测试2: 获取"认识"的单词 (status=known)', 'info');
+      try {
+        const response = await fetch(`/api/words?bookId=${TEST_BOOK_ID}&status=known&page=1&pageSize=21`);
+        const data = await response.json();
+        log(`  ✅ 返回 ${data.data?.length || 0} 个单词`, 'info');
+      } catch (e) {
+        log(`  ❌ 错误: ${e.message}`, 'error');
+      }
+
+      // 检查缓存
+      const cacheAfterKnown = JSON.parse(sessionStorage.getItem(cacheKey) || '[]');
+      log(`  缓存: ${cacheAfterKnown.join(', ')}`, 'info');
+
+      // 测试3: 再次获取"认识"的单词 (应该命中缓存)
+      log('\n测试3: 再次获取"认识"的单词 (应该命中缓存)', 'info');
+      const apiCallsBeforeThird = apiCalls.length;
+      try {
+        const response = await fetch(`/api/words?bookId=${TEST_BOOK_ID}&status=known&page=1&pageSize=21`);
+        const data = await response.json();
+        log(`  ✅ 返回 ${data.data?.length || 0} 个单词`, 'info');
+      } catch (e) {
+        log(`  ❌ 错误: ${e.message}`, 'error');
+      }
+
+      const newApiCalls = apiCalls.length - apiCallsBeforeThird;
+      log(`  ${newApiCalls === 0 ? '✅ 没有新的API调用 (缓存命中)' : '❌ 发起了新的API调用 (缓存未命中)'}`, newApiCalls === 0 ? 'success' : 'error');
+
+      // 恢复原始fetch
+      window.fetch = originalFetch;
+
+      // 验证缓存key格式
+      log('\n验证缓存key格式:', 'info');
+      const finalCache = JSON.parse(sessionStorage.getItem(cacheKey) || '[]');
+      const hasCorrectFormat = finalCache.some(key => key.includes('-'));
+      if (hasCorrectFormat) {
+        log(`  ✅ 缓存key格式正确 (包含"-"): ${finalCache.join(', ')}`, 'success');
+      } else {
+        log(`  ❌ 缓存key格式错误 (应该包含"-"): ${finalCache.join(', ')}`, 'error');
+      }
+
+      // 检查是否有不同的page-status组合
+      const uniqueKeys = new Set(finalCache);
+      log(`  不同的缓存key数量: ${uniqueKeys.size}`, 'info');
+
+      if (uniqueKeys.size >= 2) {
+        log(`  ✅ 有不同的page-status组合，说明修复成功`, 'success');
+      } else {
+        log(`  ⚠️ 只有1个缓存key，可能没有正确测试`, 'error');
+      }
+
+      log('\n========================================', 'info');
+      log('测试完成', 'success');
+      log('========================================', 'info');
+
+      showCache();
+    }
+
+    function showCache() {
+      const cacheKey = `loadedPages-${TEST_BOOK_ID}`;
+      const cache = JSON.parse(sessionStorage.getItem(cacheKey) || '[]');
+      document.getElementById('cache-display').textContent =
+        cache.length > 0 ? cache.join('\n') : '(缓存为空)';
+    }
+
+    function clearCache() {
+      const cacheKey = `loadedPages-${TEST_BOOK_ID}`;
+      sessionStorage.removeItem(cacheKey);
+      log('缓存已清除', 'info');
+      showCache();
+    }
+
+    // 页面加载时显示缓存
+    window.onload = () => {
+      showCache();
+    };
+  </script>
+</body>
+</html>

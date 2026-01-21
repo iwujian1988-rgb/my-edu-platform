@@ -1,0 +1,4214 @@
+[
+  {
+    "id": "0a0b5edc-ac88-4133-9fae-612bf5fd1d90",
+    "word": "accident",
+    "definition_en": "Something unpleasant that happens unexpectedly and causes damage or injury.",
+    "collocation": "car accident, traffic accident, have an accident",
+    "collocation_en": "car accident, traffic accident, have an accident",
+    "example_sentence": "他迟到了，因为上学路上发生了车祸。",
+    "example_sentence_en": "He was late because he had a car accident on his way to school."
+  },
+  {
+    "id": "353c266d-7364-4a29-933f-26acfc94c9df",
+    "word": "actor",
+    "definition_en": "A person whose job is to perform in plays or movies.",
+    "collocation": "famous actor, film actor, become an actor",
+    "collocation_en": "famous actor, film actor, become an actor",
+    "example_sentence": "我最喜欢的演员是汤姆·汉克斯，因为他演的电影很有趣。",
+    "example_sentence_en": "My favorite actor is Tom Hanks because he makes very funny movies."
+  },
+  {
+    "id": "7100e593-d0f4-4fa5-94ff-dd0ac4a38692",
+    "word": "address",
+    "definition_en": "A address.",
+    "collocation_en": "use address, have address",
+    "example_sentence_en": "I like address.",
+    "example_sentence": "我喜欢address。"
+  },
+  {
+    "id": "4da31b61-e073-4522-a3b5-d523c0c24a59",
+    "word": "advertisement",
+    "definition_en": "A advertisement.",
+    "collocation_en": "use advertisement, have advertisement",
+    "example_sentence_en": "I like advertisement.",
+    "example_sentence": "我喜欢advertisement。"
+  },
+  {
+    "id": "e86930c0-6358-4cac-b29b-3cd5ea289f5f",
+    "word": "aeroplane",
+    "definition_en": "A aeroplane.",
+    "collocation_en": "use aeroplane, have aeroplane",
+    "example_sentence_en": "I like aeroplane.",
+    "example_sentence": "我喜欢aeroplane。"
+  },
+  {
+    "id": "b9da6e45-1de7-4633-9701-dc926a02ce5f",
+    "word": "afternoon",
+    "definition_en": "The time in the middle of the day, from noon until evening.",
+    "collocation": "in the afternoon, Saturday afternoon, good afternoon",
+    "collocation_en": "in the afternoon, Saturday afternoon, good afternoon",
+    "example_sentence": "我通常在星期六下午和朋友们踢足球。",
+    "example_sentence_en": "I usually play football with my friends on Saturday afternoon."
+  },
+  {
+    "id": "ce941bd8-fe9e-4921-bb55-b2bfe2e3f44b",
+    "word": "afterwards",
+    "definition_en": "A afterwards.",
+    "collocation_en": "use afterwards, have afterwards",
+    "example_sentence_en": "I like afterwards.",
+    "example_sentence": "我喜欢afterwards。"
+  },
+  {
+    "id": "78677a29-0a78-47df-8f2e-22de6f85c6fd",
+    "word": "air",
+    "definition_en": "A air.",
+    "collocation_en": "use air, have air",
+    "example_sentence_en": "I like air.",
+    "example_sentence": "我喜欢air。"
+  },
+  {
+    "id": "f63e346a-df45-4961-a772-4a164f5b2564",
+    "word": "airport",
+    "definition_en": "A airport.",
+    "collocation_en": "use airport, have airport",
+    "example_sentence_en": "I like airport.",
+    "example_sentence": "我喜欢airport。"
+  },
+  {
+    "id": "7ac26e28-086f-4a0f-abd7-f06df51b1d14",
+    "word": "ambulance",
+    "definition_en": "A ambulance.",
+    "collocation_en": "use ambulance, have ambulance",
+    "example_sentence_en": "I like ambulance.",
+    "example_sentence": "我喜欢ambulance。"
+  },
+  {
+    "id": "aace3f7e-5b13-4bc5-a89a-f33bbdca5876",
+    "word": "apartment",
+    "definition_en": "A apartment.",
+    "collocation_en": "use apartment, have apartment",
+    "example_sentence_en": "I like apartment.",
+    "example_sentence": "我喜欢apartment。"
+  },
+  {
+    "id": "a0f735b3-feeb-4748-865e-c8d45fe93408",
+    "word": "appointment",
+    "definition_en": "A appointment.",
+    "collocation_en": "use appointment, have appointment",
+    "example_sentence_en": "I like appointment.",
+    "example_sentence": "我喜欢appointment。"
+  },
+  {
+    "id": "4449cdcb-5f08-4ffe-b981-e645bb63fb63",
+    "word": "April",
+    "definition_en": "The fourth month of the year.",
+    "collocation": "in April, April Fool's Day, early April",
+    "collocation_en": "in April, April Fool's Day, early April",
+    "example_sentence": "我的生日在四月，所以我通常在春天举办聚会。",
+    "example_sentence_en": "My birthday is in April, so I usually have a party in spring."
+  },
+  {
+    "id": "eca47437-36e5-4f89-8d21-8e7a5055dc7d",
+    "word": "arrive",
+    "definition_en": "A arrive.",
+    "collocation_en": "use arrive, have arrive",
+    "example_sentence_en": "I like arrive.",
+    "example_sentence": "我喜欢arrive。"
+  },
+  {
+    "id": "bc9b5dbc-85fd-452c-b150-b87278f69903",
+    "word": "art",
+    "definition_en": "A art.",
+    "collocation_en": "use art, have art",
+    "example_sentence_en": "I like art.",
+    "example_sentence": "我喜欢art。"
+  },
+  {
+    "id": "dfd622df-6fd9-41c9-bb4f-e7f1627fa322",
+    "word": "artist",
+    "definition_en": "A artist.",
+    "collocation_en": "use artist, have artist",
+    "example_sentence_en": "I like artist.",
+    "example_sentence": "我喜欢artist。"
+  },
+  {
+    "id": "b2ebd1c2-e131-4ba4-a993-0bdd7ce782b9",
+    "word": "as well as",
+    "definition_en": "A as well as.",
+    "collocation_en": "use as well as, have as well as",
+    "example_sentence_en": "I like as well as.",
+    "example_sentence": "我喜欢as well as。"
+  },
+  {
+    "id": "5d17fafa-5988-4cd4-b4aa-e44b1b427146",
+    "word": "assistant",
+    "definition_en": "A assistant.",
+    "collocation_en": "use assistant, have assistant",
+    "example_sentence_en": "I like assistant.",
+    "example_sentence": "我喜欢assistant。"
+  },
+  {
+    "id": "94a11968-b30a-4c35-95b9-c0ce22531a0f",
+    "word": "August",
+    "definition_en": "The eighth month of the year.",
+    "collocation": "in August, late August, August holiday",
+    "collocation_en": "in August, late August, August holiday",
+    "example_sentence": "我们在八月去海边度假。",
+    "example_sentence_en": "We always go to the beach for our holiday in August."
+  },
+  {
+    "id": "b7a29b14-f506-45d1-bdae-257386d2d3b5",
+    "word": "autumn",
+    "definition_en": "A autumn.",
+    "collocation_en": "use autumn, have autumn",
+    "example_sentence_en": "I like autumn.",
+    "example_sentence": "我喜欢autumn。"
+  },
+  {
+    "id": "8379a34a-333f-443a-b07d-239a97aab3eb",
+    "word": "bag",
+    "definition_en": "A container made of cloth, plastic, or leather, used to carry things.",
+    "collocation": "school bag, shopping bag, handbag",
+    "collocation_en": "school bag, shopping bag, handbag",
+    "example_sentence": "别忘了带上装满书本的书包。",
+    "example_sentence_en": "Don't forget to bring your school bag with all your books."
+  },
+  {
+    "id": "28bab057-b014-415c-b224-e8abf560ab88",
+    "word": "band",
+    "definition_en": "A group of musicians who play music together.",
+    "collocation": "rock band, band practice, play in a band",
+    "collocation_en": "rock band, band practice, play in a band",
+    "example_sentence": "我哥哥和朋友组了一支摇滚乐队，他弹吉他。",
+    "example_sentence_en": "My brother plays the guitar in a rock band with his friends."
+  },
+  {
+    "id": "2ade1a01-70b2-4d16-92c4-23c576e9a15f",
+    "word": "bank",
+    "definition_en": "A place where people keep their money and can borrow money.",
+    "collocation": "bank account, go to the bank, bank manager",
+    "collocation_en": "bank account, go to the bank, bank manager",
+    "example_sentence": "我妈妈去银行取钱购物。",
+    "example_sentence_en": "My mother went to the bank to get some money for our shopping."
+  },
+  {
+    "id": "958c8b8d-d92f-4723-9694-f838f823b79d",
+    "word": "barbecue",
+    "definition_en": "A barbecue.",
+    "collocation_en": "use barbecue, have barbecue",
+    "example_sentence_en": "I like barbecue.",
+    "example_sentence": "我喜欢barbecue。"
+  },
+  {
+    "id": "4b5d38ca-cdb0-4efb-b445-11ebf1450bcd",
+    "word": "baseball",
+    "definition_en": "A game played with a bat and ball by two teams of nine players.",
+    "collocation": "play baseball, baseball team, baseball match",
+    "collocation_en": "play baseball, baseball team, baseball match",
+    "example_sentence": "美国孩子喜欢放学后在公园里打棒球。",
+    "example_sentence_en": "American children love to play baseball in the park after school."
+  },
+  {
+    "id": "9138e414-487f-45e0-aab6-870e77237727",
+    "word": "basketball",
+    "definition_en": "A game played by two teams of five players who score points by throwing a ball through a net.",
+    "collocation": "play basketball, basketball court, basketball player",
+    "collocation_en": "play basketball, basketball court, basketball player",
+    "example_sentence": "我每个星期五放学后和同学打篮球。",
+    "example_sentence_en": "I play basketball with my classmates every Friday after school."
+  },
+  {
+    "id": "a563c88b-32a3-4041-9069-4cd24c373675",
+    "word": "bathroom",
+    "definition_en": "A bathroom.",
+    "collocation_en": "use bathroom, have bathroom",
+    "example_sentence_en": "I like bathroom.",
+    "example_sentence": "我喜欢bathroom。"
+  },
+  {
+    "id": "1e364150-df12-4561-a66e-f15488191802",
+    "word": "beach",
+    "definition_en": "A beach.",
+    "collocation_en": "use beach, have beach",
+    "example_sentence_en": "I like beach.",
+    "example_sentence": "我喜欢beach。"
+  },
+  {
+    "id": "7c984679-4f59-4157-be20-93e22bee0828",
+    "word": "beautiful",
+    "definition_en": "Very good to look at; attractive.",
+    "collocation": "beautiful girl, beautiful day, very beautiful",
+    "collocation_en": "beautiful girl, beautiful day, very beautiful",
+    "example_sentence": "今天阳光明媚，天气很好，很适合在公园野餐。",
+    "example_sentence_en": "It's a beautiful sunny day, perfect for a picnic in the park."
+  },
+  {
+    "id": "f3dafb1f-4120-479c-bc5d-dbe39e50a1d6",
+    "word": "bedroom",
+    "definition_en": "A room for sleeping in.",
+    "collocation": "my bedroom, in the bedroom, clean the bedroom",
+    "collocation_en": "my bedroom, in the bedroom, clean the bedroom",
+    "example_sentence": "我的卧室很小但很舒适，有一张床和一张书桌用来学习。",
+    "example_sentence_en": "My bedroom is small but very comfortable, with a bed and a desk for studying."
+  },
+  {
+    "id": "a9af1682-3e44-40d6-93d4-86f3a6c4e47f",
+    "word": "beginner",
+    "definition_en": "A beginner.",
+    "collocation_en": "use beginner, have beginner",
+    "example_sentence_en": "I like beginner.",
+    "example_sentence": "我喜欢beginner。"
+  },
+  {
+    "id": "5bf8b0b6-5d81-419d-9115-7368db2971d2",
+    "word": "belt",
+    "definition_en": "A belt.",
+    "collocation_en": "use belt, have belt",
+    "example_sentence_en": "I like belt.",
+    "example_sentence": "我喜欢belt。"
+  },
+  {
+    "id": "d16ff249-d005-40be-8e4f-0318e4a83233",
+    "word": "bicycle",
+    "definition_en": "A vehicle with two wheels that you ride by pushing pedals with your feet.",
+    "collocation": "ride a bicycle, by bicycle, bicycle helmet",
+    "collocation_en": "ride a bicycle, by bicycle, bicycle helmet",
+    "example_sentence": "我每天骑自行车上学，因为这是很好的锻炼。",
+    "example_sentence_en": "I ride my bicycle to school every day because it's good exercise."
+  },
+  {
+    "id": "8b470f51-62fe-42ed-9fa0-545b79352e07",
+    "word": "bike",
+    "definition_en": "A short word for bicycle.",
+    "collocation": "ride a bike, mountain bike, by bike",
+    "collocation_en": "ride a bike, mountain bike, by bike",
+    "example_sentence": "我们今天下午去公园骑自行车吧。",
+    "example_sentence_en": "Let's go for a bike ride in the park this afternoon."
+  },
+  {
+    "id": "af9deeef-88b9-432e-9993-bc2dac39f4c0",
+    "word": "bill",
+    "definition_en": "A bill.",
+    "collocation_en": "use bill, have bill",
+    "example_sentence_en": "I like bill.",
+    "example_sentence": "我喜欢bill。"
+  },
+  {
+    "id": "e37a8ca9-0353-4b29-97df-a0dd21c72863",
+    "word": "biscuit",
+    "definition_en": "A biscuit.",
+    "collocation_en": "use biscuit, have biscuit",
+    "example_sentence_en": "I like biscuit.",
+    "example_sentence": "我喜欢biscuit。"
+  },
+  {
+    "id": "72772069-ba9f-4a3c-a719-c3b95136adf1",
+    "word": "black",
+    "definition_en": "The darkest color, like night or coal.",
+    "collocation": "black and white, black hair, black clothes",
+    "collocation_en": "black and white, black hair, black clothes",
+    "example_sentence": "她穿着一件漂亮的黑色连衣裙参加聚会。",
+    "example_sentence_en": "She was wearing a beautiful black dress to the party."
+  },
+  {
+    "id": "42ae1930-7ea5-4b18-b915-b6168726a3e7",
+    "word": "blanket",
+    "definition_en": "A blanket.",
+    "collocation_en": "use blanket, have blanket",
+    "example_sentence_en": "I like blanket.",
+    "example_sentence": "我喜欢blanket。"
+  },
+  {
+    "id": "9ac1a55f-88c1-4720-8c1f-863600094ae0",
+    "word": "blonde",
+    "definition_en": "A blonde.",
+    "collocation_en": "use blonde, have blonde",
+    "example_sentence_en": "I like blonde.",
+    "example_sentence": "我喜欢blonde。"
+  },
+  {
+    "id": "f07ec2e4-fdad-4a2f-a6e7-29acead91f7b",
+    "word": "blouse",
+    "definition_en": "A blouse.",
+    "collocation_en": "use blouse, have blouse",
+    "example_sentence_en": "I like blouse.",
+    "example_sentence": "我喜欢blouse。"
+  },
+  {
+    "id": "ce73b675-e97e-43c0-809d-01c6ae870b1a",
+    "word": "blue",
+    "definition_en": "The color of the sky on a clear day.",
+    "collocation": "dark blue, blue eyes, light blue",
+    "collocation_en": "dark blue, blue eyes, light blue",
+    "example_sentence": "他穿着蓝色的校服看起来很帅气。",
+    "example_sentence_en": "He looks very handsome in his blue school uniform."
+  },
+  {
+    "id": "ffd76908-3934-4acf-9711-2aec7aafa38f",
+    "word": "board",
+    "definition_en": "A board.",
+    "collocation_en": "use board, have board",
+    "example_sentence_en": "I like board.",
+    "example_sentence": "我喜欢board。"
+  },
+  {
+    "id": "85f39cf5-0f6f-4469-94a4-d17752473afc",
+    "word": "boat",
+    "definition_en": "A boat.",
+    "collocation_en": "use boat, have boat",
+    "example_sentence_en": "I like boat.",
+    "example_sentence": "我喜欢boat。"
+  },
+  {
+    "id": "e6e44cdd-90b8-4579-ac04-c0e281d83050",
+    "word": "boil",
+    "definition_en": "A boil.",
+    "collocation_en": "use boil, have boil",
+    "example_sentence_en": "I like boil.",
+    "example_sentence": "我喜欢boil。"
+  },
+  {
+    "id": "ce05d4f6-cca8-469e-b0e9-c1fe907104bd",
+    "word": "book",
+    "definition_en": "A set of printed pages that are fastened inside a cover.",
+    "collocation": "read a book, interesting book, write a book",
+    "collocation_en": "read a book, interesting book, write a book",
+    "example_sentence": "我在读一本非常有趣的书，是关于太空冒险的。",
+    "example_sentence_en": "I am reading a very interesting book about adventures in space."
+  },
+  {
+    "id": "d6a75004-3458-4a13-91a6-802918e6d21d",
+    "word": "bookshelf",
+    "definition_en": "A bookshelf.",
+    "collocation_en": "use bookshelf, have bookshelf",
+    "example_sentence_en": "I like bookshelf.",
+    "example_sentence": "我喜欢bookshelf。"
+  },
+  {
+    "id": "580a8918-b73f-4818-83c9-8d2bae96f7fc",
+    "word": "bookshop",
+    "definition_en": "A bookshop.",
+    "collocation_en": "use bookshop, have bookshop",
+    "example_sentence_en": "I like bookshop.",
+    "example_sentence": "我喜欢bookshop。"
+  },
+  {
+    "id": "de81dff5-32f3-49f4-8535-92cc7ac9ec5e",
+    "word": "boot",
+    "definition_en": "A boot.",
+    "collocation_en": "use boot, have boot",
+    "example_sentence_en": "I like boot.",
+    "example_sentence": "我喜欢boot。"
+  },
+  {
+    "id": "8b273976-299f-4b02-982f-abfd65c12b16",
+    "word": "boring",
+    "definition_en": "Not interesting; making you feel tired and impatient.",
+    "collocation": "very boring, boring film, boring lesson",
+    "collocation_en": "very boring, boring film, boring lesson",
+    "example_sentence": "讲座太无聊了，我差点睡着了。",
+    "example_sentence_en": "The lecture was so boring that I almost fell asleep."
+  },
+  {
+    "id": "2984b37c-d168-4334-892e-649bb4bff2d5",
+    "word": "bottle",
+    "definition_en": "A glass or plastic container for liquids.",
+    "collocation": "water bottle, empty bottle, plastic bottle",
+    "collocation_en": "water bottle, empty bottle, plastic bottle",
+    "example_sentence": "别忘了带水瓶去学校，特别是在夏天。",
+    "example_sentence_en": "Don't forget to bring a water bottle to school, especially in summer."
+  },
+  {
+    "id": "05322e59-513e-4a5d-9d2a-acc687856512",
+    "word": "bottom",
+    "definition_en": "A bottom.",
+    "collocation_en": "use bottom, have bottom",
+    "example_sentence_en": "I like bottom.",
+    "example_sentence": "我喜欢bottom。"
+  },
+  {
+    "id": "18c56c9d-365a-4d69-be23-d15ff7db38a4",
+    "word": "bowl",
+    "definition_en": "A bowl.",
+    "collocation_en": "use bowl, have bowl",
+    "example_sentence_en": "I like bowl.",
+    "example_sentence": "我喜欢bowl。"
+  },
+  {
+    "id": "3b0f257e-70d5-4086-bc6f-5595e59fe17c",
+    "word": "brake",
+    "definition_en": "A brake.",
+    "collocation_en": "use brake, have brake",
+    "example_sentence_en": "I like brake.",
+    "example_sentence": "我喜欢brake。"
+  },
+  {
+    "id": "e32fab51-4a39-41d3-8b08-dbf6c0b3df36",
+    "word": "break",
+    "definition_en": "To separate into pieces; or a short rest from work.",
+    "collocation": "take a break, break down, coffee break",
+    "collocation_en": "take a break, break down, coffee break",
+    "example_sentence": "跑了一小时后，我们休息一下喝点水吧。",
+    "example_sentence_en": "Let's take a break and drink some water after running for an hour."
+  },
+  {
+    "id": "c38e662c-e050-4bc7-918c-1b68c59daa67",
+    "word": "breakfast",
+    "definition_en": "The first meal of the day, eaten in the morning.",
+    "collocation": "have breakfast, eat breakfast, breakfast time",
+    "collocation_en": "have breakfast, eat breakfast, breakfast time",
+    "example_sentence": "我通常在上学前吃面包和鸡蛋当早餐。",
+    "example_sentence_en": "I usually have bread and eggs for breakfast before going to school."
+  },
+  {
+    "id": "13202814-51c8-49c2-89b7-8478b4603bda",
+    "word": "bridge",
+    "definition_en": "A bridge.",
+    "collocation_en": "use bridge, have bridge",
+    "example_sentence_en": "I like bridge.",
+    "example_sentence": "我喜欢bridge。"
+  },
+  {
+    "id": "16ba48ec-1ced-4b15-a17a-6499783e1d83",
+    "word": "brother",
+    "definition_en": "A boy or man who has the same parents as you.",
+    "collocation": "older brother, younger brother, brother and sister",
+    "collocation_en": "older brother, younger brother, brother and sister",
+    "example_sentence": "我哥哥比我大三岁，经常帮我做作业。",
+    "example_sentence_en": "My brother is three years older than me and helps me with my homework."
+  },
+  {
+    "id": "cbca8502-2d4c-4cb2-a047-b923b9ea449f",
+    "word": "brown",
+    "definition_en": "The color of earth, wood, or chocolate.",
+    "collocation": "dark brown, brown eyes, brown hair",
+    "collocation_en": "dark brown, brown eyes, brown hair",
+    "example_sentence": "她有漂亮的棕色眼睛和波浪形的棕色头发。",
+    "example_sentence_en": "She has beautiful brown eyes and wavy brown hair."
+  },
+  {
+    "id": "0ba1340b-2722-4b97-97d5-00a07801c029",
+    "word": "building",
+    "definition_en": "A building.",
+    "collocation_en": "use building, have building",
+    "example_sentence_en": "I like building.",
+    "example_sentence": "我喜欢building。"
+  },
+  {
+    "id": "c0277ead-a1d5-4560-b3e9-3b6162370976",
+    "word": "burger",
+    "definition_en": "A burger.",
+    "collocation_en": "use burger, have burger",
+    "example_sentence_en": "I like burger.",
+    "example_sentence": "我喜欢burger。"
+  },
+  {
+    "id": "15fdfa19-406a-459a-89d6-cb31e79e525e",
+    "word": "burn",
+    "definition_en": "A burn.",
+    "collocation_en": "use burn, have burn",
+    "example_sentence_en": "I like burn.",
+    "example_sentence": "我喜欢burn。"
+  },
+  {
+    "id": "79d675ac-4cfc-4d09-815b-300c19127568",
+    "word": "bus station",
+    "definition_en": "A place where buses start and end their journeys.",
+    "collocation": "go to the bus station, bus station, central bus station",
+    "collocation_en": "go to the bus station, bus station, central bus station",
+    "example_sentence": "我们明天早上9点在汽车站见面吧。",
+    "example_sentence_en": "Let's meet at the bus station at 9 o'clock tomorrow morning."
+  },
+  {
+    "id": "437b93a5-7da6-4179-844f-6fbac9fa7f57",
+    "word": "businessman",
+    "definition_en": "A businessman.",
+    "collocation_en": "use businessman, have businessman",
+    "example_sentence_en": "I like businessman.",
+    "example_sentence": "我喜欢businessman。"
+  },
+  {
+    "id": "1ad81582-189d-4182-8b3a-6f89d7307809",
+    "word": "butter",
+    "definition_en": "A yellow food made from cream, spread on bread.",
+    "collocation": "peanut butter, bread and butter, melt butter",
+    "collocation_en": "peanut butter, bread and butter, melt butter",
+    "example_sentence": "你的烤面包上要涂点黄油吗？",
+    "example_sentence_en": "Would you like some butter on your toast?"
+  },
+  {
+    "id": "10b8c940-9c28-40f2-a6e6-eb1869a76004",
+    "word": "café",
+    "definition_en": "A small restaurant where you can buy drinks and simple meals.",
+    "collocation": "internet café, café bar, meet at café",
+    "collocation_en": "internet café, café bar, meet at café",
+    "example_sentence": "放学后我们在图书馆附近的咖啡馆见吧。",
+    "example_sentence_en": "Let's meet at the café near the library after school."
+  },
+  {
+    "id": "05086535-d5fe-479a-9d79-6020548ef791",
+    "word": "cake",
+    "definition_en": "A sweet baked food made from flour, sugar, and eggs.",
+    "collocation": "birthday cake, piece of cake, chocolate cake",
+    "collocation_en": "birthday cake, piece of cake, chocolate cake",
+    "example_sentence": "我妈妈为我的生日烤了一个美味的巧克力蛋糕。",
+    "example_sentence_en": "My mother baked a delicious chocolate cake for my birthday."
+  },
+  {
+    "id": "1514fc42-11f6-4e6a-a6bc-21fa70491a8f",
+    "word": "camera",
+    "definition_en": "A device used to take photographs or make videos.",
+    "collocation": "digital camera, camera phone, use a camera",
+    "collocation_en": "digital camera, camera phone, use a camera",
+    "example_sentence": "我带了相机来拍这些美丽的山。",
+    "example_sentence_en": "I brought my camera to take photos of the beautiful mountains."
+  },
+  {
+    "id": "cbd1c659-8531-4eaa-a646-ba53068759e8",
+    "word": "camp",
+    "definition_en": "To live in a tent, especially for a holiday.",
+    "collocation": "go camping, camp site, summer camp",
+    "collocation_en": "go camping, camp site, summer camp",
+    "example_sentence": "我们每年夏天都去露营，在湖边的帐篷里睡觉。",
+    "example_sentence_en": "We go camping every summer and sleep in tents near the lake."
+  },
+  {
+    "id": "2149e9f0-573e-4a50-a0b8-cd90ac73d589",
+    "word": "campsite",
+    "definition_en": "A campsite.",
+    "collocation_en": "use campsite, have campsite",
+    "example_sentence_en": "I like campsite.",
+    "example_sentence": "我喜欢campsite。"
+  },
+  {
+    "id": "3f1df99b-b876-4398-a61b-3ffc652a79d3",
+    "word": "canal",
+    "definition_en": "A canal.",
+    "collocation_en": "use canal, have canal",
+    "example_sentence_en": "I like canal.",
+    "example_sentence": "我喜欢canal。"
+  },
+  {
+    "id": "250cc6b5-1bc0-487a-ba5f-c46a179e370d",
+    "word": "cancer",
+    "definition_en": "A serious disease in which cells in the body grow in an uncontrolled way.",
+    "collocation": "lung cancer, cancer treatment, cancer research",
+    "collocation_en": "lung cancer, cancer treatment, cancer research",
+    "example_sentence": "医生和科学家正在努力为癌症找到更好的治疗方法。",
+    "example_sentence_en": "Doctors and scientists are working hard to find better treatments for cancer."
+  },
+  {
+    "id": "6ad654a7-eb2b-4a1c-a9e7-3c9aa72c716c",
+    "word": "card",
+    "definition_en": "A piece of thick paper or plastic, or a greeting sent to someone.",
+    "collocation": "credit card, birthday card, play cards",
+    "collocation_en": "credit card, birthday card, play cards",
+    "example_sentence": "我为我最好的朋友做了一张漂亮的生日贺卡。",
+    "example_sentence_en": "I made a beautiful birthday card for my best friend."
+  },
+  {
+    "id": "266d57cf-fffd-4d00-8a24-3c6ae6111c15",
+    "word": "carrot",
+    "definition_en": "A long orange vegetable that grows under the ground.",
+    "collocation": "eat carrots, carrot cake, carrot and stick",
+    "collocation_en": "eat carrots, carrot cake, carrot and stick",
+    "example_sentence": "胡萝卜很健康，对眼睛有好处。",
+    "example_sentence_en": "Carrots are very healthy and good for your eyes."
+  },
+  {
+    "id": "00a11a62-2653-4d0b-9ca5-0495caa36c82",
+    "word": "carry",
+    "definition_en": "To hold something in your hands or arms and take it somewhere.",
+    "collocation": "carry heavy things, carry luggage, carry on",
+    "collocation_en": "carry heavy things, carry luggage, carry on",
+    "example_sentence": "你能帮我把这些重袋子提到车边吗？",
+    "example_sentence_en": "Can you help me carry these heavy bags to the car?"
+  },
+  {
+    "id": "2eebfd52-d96b-4a69-8225-200601bc60ca",
+    "word": "cash",
+    "definition_en": "Money in the form of coins or notes, not a credit card.",
+    "collocation": "pay in cash, cash machine, cash register",
+    "collocation_en": "pay in cash, cash machine, cash register",
+    "example_sentence": "你想用现金还是信用卡支付？",
+    "example_sentence_en": "Do you want to pay in cash or by credit card?"
+  },
+  {
+    "id": "29b2d6bc-051a-4471-a823-83a67ecd3253",
+    "word": "cassette",
+    "definition_en": "A cassette.",
+    "collocation_en": "use cassette, have cassette",
+    "example_sentence_en": "I like cassette.",
+    "example_sentence": "我喜欢cassette。"
+  },
+  {
+    "id": "1dc059d3-309e-4e83-8d12-c367cc22fa7b",
+    "word": "cassette player",
+    "definition_en": "A cassette player.",
+    "collocation_en": "use cassette player, have cassette player",
+    "example_sentence_en": "I like cassette player.",
+    "example_sentence": "我喜欢cassette player。"
+  },
+  {
+    "id": "abab0578-4e26-4652-b618-3a0fa783cd7c",
+    "word": "cassette recorder",
+    "definition_en": "A cassette recorder.",
+    "collocation_en": "use cassette recorder, have cassette recorder",
+    "example_sentence_en": "I like cassette recorder.",
+    "example_sentence": "我喜欢cassette recorder。"
+  },
+  {
+    "id": "df95ebe6-fa57-4ba7-a1b7-85d8d4216dcb",
+    "word": "castle",
+    "definition_en": "A large strong building with thick walls, built in the past for protection.",
+    "collocation": "old castle, medieval castle, castle walls",
+    "collocation_en": "old castle, medieval castle, castle walls",
+    "example_sentence": "国王和王后住在山上的一座美丽城堡里。",
+    "example_sentence_en": "The king and queen lived in a beautiful castle on the hill."
+  },
+  {
+    "id": "988006a0-9e0b-40ae-8a6c-4746f2f1ebca",
+    "word": "catch",
+    "definition_en": "To stop and hold a moving object, especially a ball.",
+    "collocation": "catch a ball, catch a cold, catch a bus",
+    "collocation_en": "catch a ball, catch a cold, catch a bus",
+    "example_sentence": "他跑去赶公交车，但太晚了。",
+    "example_sentence_en": "He ran fast to catch the bus, but he was too late."
+  },
+  {
+    "id": "1e9654b9-5ca4-4830-9faf-33c2c693df2f",
+    "word": "cathedral",
+    "definition_en": "A cathedral.",
+    "collocation_en": "use cathedral, have cathedral",
+    "example_sentence_en": "I like cathedral.",
+    "example_sentence": "我喜欢cathedral。"
+  },
+  {
+    "id": "e0818875-5a48-4604-b8b3-dbd8c24ff883",
+    "word": "centimeter",
+    "definition_en": "A metric unit of length equal to 10 millimeters.",
+    "collocation": "square centimeter, measure in centimeters",
+    "collocation_en": "square centimeter, measure in centimeters",
+    "example_sentence": "这支铅笔15厘米长。",
+    "example_sentence_en": "The pencil is 15 centimeters long."
+  },
+  {
+    "id": "5dbdbf12-897e-4010-b0f0-f624be3dc9e3",
+    "word": "centre",
+    "definition_en": "The middle part of something. (British English)",
+    "collocation": "city centre, shopping centre, town centre",
+    "collocation_en": "city centre, shopping centre, town centre",
+    "example_sentence": "我们在市中心见朋友，然后一起去购物。",
+    "example_sentence_en": "We met our friends in the city centre to go shopping together."
+  },
+  {
+    "id": "7b42860a-eb85-45a8-82d3-084e843b58dd",
+    "word": "chair",
+    "definition_en": "A piece of furniture for one person to sit on.",
+    "collocation": "sit on a chair, comfortable chair, dining chair",
+    "collocation_en": "sit on a chair, comfortable chair, dining chair",
+    "example_sentence": "请拉把椅子过来和我们一起吃晚饭吧。",
+    "example_sentence_en": "Please pull up a chair and join us for dinner."
+  },
+  {
+    "id": "38999d71-3990-4f56-877b-e0c6a85854b4",
+    "word": "change",
+    "definition_en": "To make something different; or money given back when you pay.",
+    "collocation": "make changes, change clothes, small change",
+    "collocation_en": "make changes, change clothes, small change",
+    "example_sentence": "你需要换上运动服上体育课。",
+    "example_sentence_en": "You need to change into your sports clothes for PE class."
+  },
+  {
+    "id": "2ece5592-505e-4e38-83e6-0093a21b0e49",
+    "word": "cheap",
+    "definition_en": "Not expensive; low in price.",
+    "collocation": "very cheap, quite cheap, cheap price",
+    "collocation_en": "very cheap, quite cheap, cheap price",
+    "example_sentence": "这家店卖很便宜的衣服，所以学生喜欢在这里购物。",
+    "example_sentence_en": "This shop sells very cheap clothes, so students like shopping here."
+  },
+  {
+    "id": "e8dcced7-1c1b-4f88-a3a5-1be87f033b57",
+    "word": "check",
+    "definition_en": "To examine something to see if it is correct.",
+    "collocation": "check in, check out, check the time",
+    "collocation_en": "check in, check out, check the time",
+    "example_sentence": "交作业前请仔细检查。",
+    "example_sentence_en": "Please check your homework carefully before you hand it in."
+  },
+  {
+    "id": "14981d88-6ad7-4ac0-a517-2678d534dd3b",
+    "word": "cheese",
+    "definition_en": "A solid food made from milk, usually yellow or white.",
+    "collocation": "cheddar cheese, cheese sandwich, eat cheese",
+    "collocation_en": "cheddar cheese, cheese sandwich, eat cheese",
+    "example_sentence": "你想在意面上加点奶酪吗？",
+    "example_sentence_en": "Would you like some cheese on your pasta?"
+  },
+  {
+    "id": "b45efa72-fbbc-4b0d-b503-2ed63992145b",
+    "word": "chemist",
+    "definition_en": "A chemist.",
+    "collocation_en": "use chemist, have chemist",
+    "example_sentence_en": "I like chemist.",
+    "example_sentence": "我喜欢chemist。"
+  },
+  {
+    "id": "d048f585-97ee-40d0-8d84-9f0410d786b0",
+    "word": "cheque",
+    "definition_en": "A cheque.",
+    "collocation_en": "use cheque, have cheque",
+    "example_sentence_en": "I like cheque.",
+    "example_sentence": "我喜欢cheque。"
+  },
+  {
+    "id": "cfa5df9a-f90a-491a-9f2e-dd3254a20840",
+    "word": "chicken",
+    "definition_en": "A bird kept for its meat and eggs, or the meat of this bird.",
+    "collocation": "fried chicken, roast chicken, chicken soup",
+    "collocation_en": "fried chicken, roast chicken, chicken soup",
+    "example_sentence": "我们星期天午饭吃了烤鸡配土豆和蔬菜。",
+    "example_sentence_en": "We had roast chicken with potatoes and vegetables for Sunday lunch."
+  },
+  {
+    "id": "8e114570-b9dc-4440-a9f4-ce8bb667688f",
+    "word": "child",
+    "definition_en": "A young human being, from birth to adolescence.",
+    "collocation": "young child, only child, child plays",
+    "collocation_en": "young child, only child, child plays",
+    "example_sentence": "每个孩子都有上学的权利和接受教育。",
+    "example_sentence_en": "Every child has the right to go to school and get an education."
+  },
+  {
+    "id": "fe7fb737-f804-4dac-aafd-3b594b7647cc",
+    "word": "chips",
+    "definition_en": "Long thin pieces of potato fried in oil. (British English)",
+    "collocation": "fish and chips, eat chips, potato chips",
+    "collocation_en": "fish and chips, eat chips, potato chips",
+    "example_sentence": "炸鱼薯条在英国是很受欢迎的食物。",
+    "example_sentence_en": "Fish and chips is a very popular food in Britain."
+  },
+  {
+    "id": "dcd13261-1883-48c3-b968-0e30da1cb9a7",
+    "word": "chocolate",
+    "definition_en": "A sweet brown food made from cocoa beans.",
+    "collocation": "dark chocolate, chocolate bar, eat chocolate",
+    "collocation_en": "dark chocolate, chocolate bar, eat chocolate",
+    "example_sentence": "冬天外面很冷的时候，我喜欢喝热巧克力。",
+    "example_sentence_en": "I love drinking hot chocolate in winter when it's cold outside."
+  },
+  {
+    "id": "d1057a39-7394-4cdd-90cd-163469df6d87",
+    "word": "church",
+    "definition_en": "A church.",
+    "collocation_en": "use church, have church",
+    "example_sentence_en": "I like church.",
+    "example_sentence": "我喜欢church。"
+  },
+  {
+    "id": "4c25348c-2696-4c37-aa4d-13362335de94",
+    "word": "cinema",
+    "definition_en": "A theatre where films are shown to an audience.",
+    "collocation": "go to the cinema, cinema ticket, watch a film at the cinema",
+    "collocation_en": "go to the cinema, cinema ticket, watch a film at the cinema",
+    "example_sentence": "我们去电影院看了那部新的迪士尼电影。",
+    "example_sentence_en": "We went to the cinema to watch the new Disney movie."
+  },
+  {
+    "id": "1c70e92a-36f5-46eb-9ecd-70e4a25b69bd",
+    "word": "city",
+    "definition_en": "A large and important town.",
+    "collocation": "big city, city centre, modern city",
+    "collocation_en": "big city, city centre, modern city",
+    "example_sentence": "东京是一个很大的城市，有数百万人居住在那里。",
+    "example_sentence_en": "Tokyo is a very big city with millions of people living there."
+  },
+  {
+    "id": "121e5ab5-f59f-4f28-bd08-35478c64ef88",
+    "word": "cleaner",
+    "definition_en": "A person whose job is to clean things, or a machine for cleaning.",
+    "collocation": "vacuum cleaner, window cleaner, office cleaner",
+    "collocation_en": "vacuum cleaner, window cleaner, office cleaner",
+    "example_sentence": "清洁工每个星期二来我们家打扫。",
+    "example_sentence_en": "The cleaner comes every Tuesday to clean our house."
+  },
+  {
+    "id": "69e32366-4d81-4f9f-ab6d-463160ef1b26",
+    "word": "clever",
+    "definition_en": "Quick to learn and understand; intelligent.",
+    "collocation": "very clever, clever boy, clever idea",
+    "collocation_en": "very clever, clever boy, clever idea",
+    "example_sentence": "她很聪明，数学考试总是拿最高分。",
+    "example_sentence_en": "She is very clever and always gets the highest scores in math tests."
+  },
+  {
+    "id": "04931605-a818-4d34-b521-54b32258e864",
+    "word": "climb",
+    "definition_en": "To go up something towards the top.",
+    "collocation": "climb a tree, climb a mountain, climb stairs",
+    "collocation_en": "climb a tree, climb a mountain, climb stairs",
+    "example_sentence": "我们花了四个小时才爬到山顶。",
+    "example_sentence_en": "It took us four hours to climb to the top of the mountain."
+  },
+  {
+    "id": "b88c5b06-541e-42f1-b6d8-33daf6351623",
+    "word": "closed",
+    "definition_en": "A closed.",
+    "collocation_en": "use closed, have closed",
+    "example_sentence_en": "I like closed.",
+    "example_sentence": "我喜欢closed。"
+  },
+  {
+    "id": "69527a52-5479-4114-834b-0fdc45c1de1e",
+    "word": "clothes",
+    "definition_en": "A clothes.",
+    "collocation_en": "use clothes, have clothes",
+    "example_sentence_en": "I like clothes.",
+    "example_sentence": "我喜欢clothes。"
+  },
+  {
+    "id": "051ea56b-4899-4934-acf7-327e020a0c32",
+    "word": "cloud",
+    "definition_en": "A cloud.",
+    "collocation_en": "use cloud, have cloud",
+    "example_sentence_en": "I like cloud.",
+    "example_sentence": "我喜欢cloud。"
+  },
+  {
+    "id": "4e4209eb-fabd-462d-abab-7702993765da",
+    "word": "club",
+    "definition_en": "A club.",
+    "collocation_en": "use club, have club",
+    "example_sentence_en": "I like club.",
+    "example_sentence": "我喜欢club。"
+  },
+  {
+    "id": "9a917fa3-2a2d-478e-940b-9403df952f73",
+    "word": "coach",
+    "definition_en": "A coach.",
+    "collocation_en": "use coach, have coach",
+    "example_sentence_en": "I like coach.",
+    "example_sentence": "我喜欢coach。"
+  },
+  {
+    "id": "895b44fa-1396-4fea-b90d-34faba8ec96a",
+    "word": "coat",
+    "definition_en": "A coat.",
+    "collocation_en": "use coat, have coat",
+    "example_sentence_en": "I like coat.",
+    "example_sentence": "我喜欢coat。"
+  },
+  {
+    "id": "4a76783b-7cf5-444a-a01b-3b79d6c02180",
+    "word": "coffee",
+    "definition_en": "A coffee.",
+    "collocation_en": "use coffee, have coffee",
+    "example_sentence_en": "I like coffee.",
+    "example_sentence": "我喜欢coffee。"
+  },
+  {
+    "id": "54804b96-15d1-493c-b22a-721f2edf6c03",
+    "word": "cold",
+    "definition_en": "A cold.",
+    "collocation_en": "use cold, have cold",
+    "example_sentence_en": "I like cold.",
+    "example_sentence": "我喜欢cold。"
+  },
+  {
+    "id": "584e30a4-307f-4d44-81fa-e2eafee35186",
+    "word": "colleague",
+    "definition_en": "A colleague.",
+    "collocation_en": "use colleague, have colleague",
+    "example_sentence_en": "I like colleague.",
+    "example_sentence": "我喜欢colleague。"
+  },
+  {
+    "id": "ff4bdaa2-3daa-4b83-9ec4-f2d9a1be6091",
+    "word": "college",
+    "definition_en": "A college.",
+    "collocation_en": "use college, have college",
+    "example_sentence_en": "I like college.",
+    "example_sentence": "我喜欢college。"
+  },
+  {
+    "id": "81737719-bdf6-4241-aea8-8c4783bd86b5",
+    "word": "comb",
+    "definition_en": "A comb.",
+    "collocation_en": "use comb, have comb",
+    "example_sentence_en": "I like comb.",
+    "example_sentence": "我喜欢comb。"
+  },
+  {
+    "id": "7dcc445c-e54c-431b-a58d-aeb4d89ab861",
+    "word": "comfortable",
+    "definition_en": "A comfortable.",
+    "collocation_en": "use comfortable, have comfortable",
+    "example_sentence_en": "I like comfortable.",
+    "example_sentence": "我喜欢comfortable。"
+  },
+  {
+    "id": "c299a297-68bb-4307-bd94-d620ef198dce",
+    "word": "company",
+    "definition_en": "A company.",
+    "collocation_en": "use company, have company",
+    "example_sentence_en": "I like company.",
+    "example_sentence": "我喜欢company。"
+  },
+  {
+    "id": "7fe488b5-004f-4b48-85dc-e0edf4f63081",
+    "word": "competition",
+    "definition_en": "A competition.",
+    "collocation_en": "use competition, have competition",
+    "example_sentence_en": "I like competition.",
+    "example_sentence": "我喜欢competition。"
+  },
+  {
+    "id": "241eef40-d6ee-4392-9acd-f3099200a56a",
+    "word": "computer",
+    "definition_en": "A computer.",
+    "collocation_en": "use computer, have computer",
+    "example_sentence_en": "I like computer.",
+    "example_sentence": "我喜欢computer。"
+  },
+  {
+    "id": "a378eee5-2e6f-4d60-a842-439981446e60",
+    "word": "concert",
+    "definition_en": "A concert.",
+    "collocation_en": "use concert, have concert",
+    "example_sentence_en": "I like concert.",
+    "example_sentence": "我喜欢concert。"
+  },
+  {
+    "id": "73c1ba1c-6b51-4ecd-960e-40190755bd54",
+    "word": "conversation",
+    "definition_en": "A conversation.",
+    "collocation_en": "use conversation, have conversation",
+    "example_sentence_en": "I like conversation.",
+    "example_sentence": "我喜欢conversation。"
+  },
+  {
+    "id": "25c016b2-4675-4426-9921-32bca933016c",
+    "word": "cook",
+    "definition_en": "A cook.",
+    "collocation_en": "use cook, have cook",
+    "example_sentence_en": "I like cook.",
+    "example_sentence": "我喜欢cook。"
+  },
+  {
+    "id": "c5c204d0-a6c7-473a-aac5-e102b98acbc2",
+    "word": "cooker",
+    "definition_en": "A cooker.",
+    "collocation_en": "use cooker, have cooker",
+    "example_sentence_en": "I like cooker.",
+    "example_sentence": "我喜欢cooker。"
+  },
+  {
+    "id": "3daa2e67-8744-4d07-9cfa-9eef22939269",
+    "word": "corner",
+    "definition_en": "A corner.",
+    "collocation_en": "use corner, have corner",
+    "example_sentence_en": "I like corner.",
+    "example_sentence": "我喜欢corner。"
+  },
+  {
+    "id": "519f0883-ed66-4688-a90f-7de11ce79372",
+    "word": "cost",
+    "definition_en": "A cost.",
+    "collocation_en": "use cost, have cost",
+    "example_sentence_en": "I like cost.",
+    "example_sentence": "我喜欢cost。"
+  },
+  {
+    "id": "8b5f5df5-0b8f-4697-8316-a85fead513ef",
+    "word": "country",
+    "definition_en": "A country.",
+    "collocation_en": "use country, have country",
+    "example_sentence_en": "I like country.",
+    "example_sentence": "我喜欢country。"
+  },
+  {
+    "id": "68935cdb-33d6-4273-8719-a31c0b4e8ecb",
+    "word": "countryside",
+    "definition_en": "A countryside.",
+    "collocation_en": "use countryside, have countryside",
+    "example_sentence_en": "I like countryside.",
+    "example_sentence": "我喜欢countryside。"
+  },
+  {
+    "id": "6cf4d5e8-734c-456a-af74-2fd0aaccef63",
+    "word": "course",
+    "definition_en": "A course.",
+    "collocation_en": "use course, have course",
+    "example_sentence_en": "I like course.",
+    "example_sentence": "我喜欢course。"
+  },
+  {
+    "id": "37490254-a251-4de7-93a4-a037180783e4",
+    "word": "cousin",
+    "definition_en": "A cousin.",
+    "collocation_en": "use cousin, have cousin",
+    "example_sentence_en": "I like cousin.",
+    "example_sentence": "我喜欢cousin。"
+  },
+  {
+    "id": "765dce30-4416-4c90-90bc-075188e5e736",
+    "word": "cream",
+    "definition_en": "A cream.",
+    "collocation_en": "use cream, have cream",
+    "example_sentence_en": "I like cream.",
+    "example_sentence": "我喜欢cream。"
+  },
+  {
+    "id": "18a679ad-a08d-4a00-9342-08be43da3e7c",
+    "word": "credit card",
+    "definition_en": "A credit card.",
+    "collocation_en": "use credit card, have credit card",
+    "example_sentence_en": "I like credit card.",
+    "example_sentence": "我喜欢credit card。"
+  },
+  {
+    "id": "74fd55d6-b72c-48a9-afad-b2b883527ab6",
+    "word": "cross",
+    "definition_en": "A cross.",
+    "collocation_en": "use cross, have cross",
+    "example_sentence_en": "I like cross.",
+    "example_sentence": "我喜欢cross。"
+  },
+  {
+    "id": "d9545e03-6620-4bff-bb86-72a090543bc5",
+    "word": "crossroads",
+    "definition_en": "A crossroads.",
+    "collocation_en": "use crossroads, have crossroads",
+    "example_sentence_en": "I like crossroads.",
+    "example_sentence": "我喜欢crossroads。"
+  },
+  {
+    "id": "df4b1f00-5b8a-4f14-87b9-b30e2f6b0103",
+    "word": "crowded",
+    "definition_en": "A crowded.",
+    "collocation_en": "use crowded, have crowded",
+    "example_sentence_en": "I like crowded.",
+    "example_sentence": "我喜欢crowded。"
+  },
+  {
+    "id": "2dda0ac6-d5ba-4271-a43d-7db7bd540dc1",
+    "word": "cupboard",
+    "definition_en": "A cupboard.",
+    "collocation_en": "use cupboard, have cupboard",
+    "example_sentence_en": "I like cupboard.",
+    "example_sentence": "我喜欢cupboard。"
+  },
+  {
+    "id": "9113ec4b-705a-4e35-b1ea-ef3293b160b2",
+    "word": "customer",
+    "definition_en": "A customer.",
+    "collocation_en": "use customer, have customer",
+    "example_sentence_en": "I like customer.",
+    "example_sentence": "我喜欢customer。"
+  },
+  {
+    "id": "4d08ca27-ad67-452a-86e2-c163097296ff",
+    "word": "dad",
+    "definition_en": "A dad.",
+    "collocation_en": "use dad, have dad",
+    "example_sentence_en": "I like dad.",
+    "example_sentence": "我喜欢dad。"
+  },
+  {
+    "id": "26e03ab1-5184-4d6c-8f13-93cfe1dd5ae2",
+    "word": "dangerous",
+    "definition_en": "A dangerous.",
+    "collocation_en": "use dangerous, have dangerous",
+    "example_sentence_en": "I like dangerous.",
+    "example_sentence": "我喜欢dangerous。"
+  },
+  {
+    "id": "2cf42e83-a694-48ce-968a-828160c476bd",
+    "word": "dark",
+    "definition_en": "A dark.",
+    "collocation_en": "use dark, have dark",
+    "example_sentence_en": "I like dark.",
+    "example_sentence": "我喜欢dark。"
+  },
+  {
+    "id": "91c9c48b-9cf7-446f-895a-6fb868b99466",
+    "word": "daughter",
+    "definition_en": "A daughter.",
+    "collocation_en": "use daughter, have daughter",
+    "example_sentence_en": "I like daughter.",
+    "example_sentence": "我喜欢daughter。"
+  },
+  {
+    "id": "2d18f7ee-5274-478e-8ccc-a892aa35f771",
+    "word": "dead",
+    "definition_en": "A dead.",
+    "collocation_en": "use dead, have dead",
+    "example_sentence_en": "I like dead.",
+    "example_sentence": "我喜欢dead。"
+  },
+  {
+    "id": "3b3b5c8c-6740-4b2e-b147-54a582d8442b",
+    "word": "December",
+    "definition_en": "The twelfth month of the year.",
+    "collocation_en": "in December, early December, late December",
+    "example_sentence_en": "My birthday is in December.",
+    "example_sentence": "我的生日在十二月。"
+  },
+  {
+    "id": "d4fd517b-939d-4b1c-9422-000dc6b523e6",
+    "word": "degree",
+    "definition_en": "A degree.",
+    "collocation_en": "use degree, have degree",
+    "example_sentence_en": "I like degree.",
+    "example_sentence": "我喜欢degree。"
+  },
+  {
+    "id": "8e60ad8a-9229-4e82-b568-4abaeaba2138",
+    "word": "delay",
+    "definition_en": "A delay.",
+    "collocation_en": "use delay, have delay",
+    "example_sentence_en": "I like delay.",
+    "example_sentence": "我喜欢delay。"
+  },
+  {
+    "id": "d1a31909-f758-4a2f-887d-4bbd15c90dce",
+    "word": "dentist",
+    "definition_en": "A dentist.",
+    "collocation_en": "use dentist, have dentist",
+    "example_sentence_en": "I like dentist.",
+    "example_sentence": "我喜欢dentist。"
+  },
+  {
+    "id": "7eb7454b-a5fc-4681-b99a-050fd8aef5ba",
+    "word": "department store",
+    "definition_en": "A department store.",
+    "collocation_en": "use department store, have department store",
+    "example_sentence_en": "I like department store.",
+    "example_sentence": "我喜欢department store。"
+  },
+  {
+    "id": "6b6d8fd8-6ca7-4ecd-b0cf-b2371c879ba3",
+    "word": "dictionary",
+    "definition_en": "A dictionary.",
+    "collocation_en": "use dictionary, have dictionary",
+    "example_sentence_en": "I like dictionary.",
+    "example_sentence": "我喜欢dictionary。"
+  },
+  {
+    "id": "a6f09d31-23b1-4e00-ae2c-a3c505a0f42a",
+    "word": "die",
+    "definition_en": "A die.",
+    "collocation_en": "use die, have die",
+    "example_sentence_en": "I like die.",
+    "example_sentence": "我喜欢die。"
+  },
+  {
+    "id": "e1a30255-ddd1-4f87-aaaf-4eada3932350",
+    "word": "difficult",
+    "definition_en": "A difficult.",
+    "collocation_en": "use difficult, have difficult",
+    "example_sentence_en": "I like difficult.",
+    "example_sentence": "我喜欢difficult。"
+  },
+  {
+    "id": "e3174156-c4f0-4fc9-9b9d-172e6de00d35",
+    "word": "dining room",
+    "definition_en": "A dining room.",
+    "collocation_en": "use dining room, have dining room",
+    "example_sentence_en": "I like dining room.",
+    "example_sentence": "我喜欢dining room。"
+  },
+  {
+    "id": "ec2f33f0-3fd5-4fbb-ad61-89ff0a12c41a",
+    "word": "dinner",
+    "definition_en": "A dinner.",
+    "collocation_en": "use dinner, have dinner",
+    "example_sentence_en": "I like dinner.",
+    "example_sentence": "我喜欢dinner。"
+  },
+  {
+    "id": "583b1e1c-0b6f-4022-abf8-e3b744904f4b",
+    "word": "diploma",
+    "definition_en": "A diploma.",
+    "collocation_en": "use diploma, have diploma",
+    "example_sentence_en": "I like diploma.",
+    "example_sentence": "我喜欢diploma。"
+  },
+  {
+    "id": "5d30d1be-0cab-4dc6-b81a-f44672c810a7",
+    "word": "disco",
+    "definition_en": "A disco.",
+    "collocation_en": "use disco, have disco",
+    "example_sentence_en": "I like disco.",
+    "example_sentence": "我喜欢disco。"
+  },
+  {
+    "id": "bf38cc6e-5dee-4fec-97e5-bffaa536b355",
+    "word": "dish",
+    "definition_en": "A dish.",
+    "collocation_en": "use dish, have dish",
+    "example_sentence_en": "I like dish.",
+    "example_sentence": "我喜欢dish。"
+  },
+  {
+    "id": "5bf5362b-5c23-4ac5-9a11-d35013d8e568",
+    "word": "doctor",
+    "definition_en": "A doctor.",
+    "collocation_en": "use doctor, have doctor",
+    "example_sentence_en": "I like doctor.",
+    "example_sentence": "我喜欢doctor。"
+  },
+  {
+    "id": "df09286c-7629-4352-ab9f-2dee4c3c335c",
+    "word": "dollar",
+    "definition_en": "A dollar.",
+    "collocation_en": "use dollar, have dollar",
+    "example_sentence_en": "I like dollar.",
+    "example_sentence": "我喜欢dollar。"
+  },
+  {
+    "id": "1fa91d44-854c-4381-a82a-dbb30ba0a2ec",
+    "word": "downstairs",
+    "definition_en": "A downstairs.",
+    "collocation_en": "use downstairs, have downstairs",
+    "example_sentence_en": "I like downstairs.",
+    "example_sentence": "我喜欢downstairs。"
+  },
+  {
+    "id": "6b615323-eff7-49f7-8a05-c7180ed2f67d",
+    "word": "dress",
+    "definition_en": "A dress.",
+    "collocation_en": "use dress, have dress",
+    "example_sentence_en": "I like dress.",
+    "example_sentence": "我喜欢dress。"
+  },
+  {
+    "id": "b3b5726d-c4b6-4762-bcb7-fc513716c581",
+    "word": "drink",
+    "definition_en": "A drink.",
+    "collocation_en": "use drink, have drink",
+    "example_sentence_en": "I like drink.",
+    "example_sentence": "我喜欢drink。"
+  },
+  {
+    "id": "1b85b24b-40e3-46dd-b538-ca8aebe406cc",
+    "word": "driver",
+    "definition_en": "A driver.",
+    "collocation_en": "use driver, have driver",
+    "example_sentence_en": "I like driver.",
+    "example_sentence": "我喜欢driver。"
+  },
+  {
+    "id": "0b0bc325-1750-4803-bdeb-16f5a85c10f7",
+    "word": "driving licence",
+    "definition_en": "A driving licence.",
+    "collocation_en": "use driving licence, have driving licence",
+    "example_sentence_en": "I like driving licence.",
+    "example_sentence": "我喜欢driving licence。"
+  },
+  {
+    "id": "a718d3b6-53b5-4bc4-99c1-fa69f7bd40ba",
+    "word": "drum",
+    "definition_en": "A drum.",
+    "collocation_en": "use drum, have drum",
+    "example_sentence_en": "I like drum.",
+    "example_sentence": "我喜欢drum。"
+  },
+  {
+    "id": "4d2e07ae-ff71-4a75-b506-1b9d97e98ea4",
+    "word": "earn",
+    "definition_en": "A earn.",
+    "collocation_en": "use earn, have earn",
+    "example_sentence_en": "I like earn.",
+    "example_sentence": "我喜欢earn。"
+  },
+  {
+    "id": "386316b4-8d67-45ea-b964-0a2cd81c1009",
+    "word": "east",
+    "definition_en": "A east.",
+    "collocation_en": "use east, have east",
+    "example_sentence_en": "I like east.",
+    "example_sentence": "我喜欢east。"
+  },
+  {
+    "id": "2d07fa94-5a4a-4e0c-80be-345378d1f9da",
+    "word": "email",
+    "definition_en": "A email.",
+    "collocation_en": "use email, have email",
+    "example_sentence_en": "I like email.",
+    "example_sentence": "我喜欢email。"
+  },
+  {
+    "id": "2bad01fc-d5e2-48b1-b359-ace1944a04f4",
+    "word": "engine",
+    "definition_en": "A engine.",
+    "collocation_en": "use engine, have engine",
+    "example_sentence_en": "I like engine.",
+    "example_sentence": "我喜欢engine。"
+  },
+  {
+    "id": "2472f296-39a8-43a3-a9e4-d1881c85c83e",
+    "word": "engineer",
+    "definition_en": "A engineer.",
+    "collocation_en": "use engineer, have engineer",
+    "example_sentence_en": "I like engineer.",
+    "example_sentence": "我喜欢engineer。"
+  },
+  {
+    "id": "b4ba1cb5-e1a0-4671-9725-693cc093f037",
+    "word": "entrance",
+    "definition_en": "A entrance.",
+    "collocation_en": "use entrance, have entrance",
+    "example_sentence_en": "I like entrance.",
+    "example_sentence": "我喜欢entrance。"
+  },
+  {
+    "id": "ddfd1b8c-081a-4110-9e27-03b9e1fc403c",
+    "word": "Euro",
+    "definition_en": "A euro.",
+    "collocation_en": "use Euro, have Euro",
+    "example_sentence_en": "I like Euro.",
+    "example_sentence": "我喜欢Euro。"
+  },
+  {
+    "id": "beed84b1-11c1-4f1f-94c1-a397c7564e55",
+    "word": "evening",
+    "definition_en": "A evening.",
+    "collocation_en": "use evening, have evening",
+    "example_sentence_en": "I like evening.",
+    "example_sentence": "我喜欢evening。"
+  },
+  {
+    "id": "20308e1e-73a3-496d-a85e-1f8565c825cf",
+    "word": "exam",
+    "definition_en": "A exam.",
+    "collocation_en": "use exam, have exam",
+    "example_sentence_en": "I like exam.",
+    "example_sentence": "我喜欢exam。"
+  },
+  {
+    "id": "13b93acc-bad3-47b9-a72b-e37249068211",
+    "word": "examination",
+    "definition_en": "A examination.",
+    "collocation_en": "use examination, have examination",
+    "example_sentence_en": "I like examination.",
+    "example_sentence": "我喜欢examination。"
+  },
+  {
+    "id": "4e13a39c-3d84-4190-bd3d-8a1a47637139",
+    "word": "example",
+    "definition_en": "A example.",
+    "collocation_en": "use example, have example",
+    "example_sentence_en": "I like example.",
+    "example_sentence": "我喜欢example。"
+  },
+  {
+    "id": "59fbd9d1-41eb-45f8-a1f3-a518648cb72e",
+    "word": "excellent",
+    "definition_en": "A excellent.",
+    "collocation_en": "use excellent, have excellent",
+    "example_sentence_en": "I like excellent.",
+    "example_sentence": "我喜欢excellent。"
+  },
+  {
+    "id": "a6376097-56a4-468f-94ef-591a1d818d97",
+    "word": "exhibition",
+    "definition_en": "A exhibition.",
+    "collocation_en": "use exhibition, have exhibition",
+    "example_sentence_en": "I like exhibition.",
+    "example_sentence": "我喜欢exhibition。"
+  },
+  {
+    "id": "eb3fa403-7b76-4589-b96f-28fefcf9f25a",
+    "word": "exit",
+    "definition_en": "A exit.",
+    "collocation_en": "use exit, have exit",
+    "example_sentence_en": "I like exit.",
+    "example_sentence": "我喜欢exit。"
+  },
+  {
+    "id": "330f882f-4ab2-45fa-8e87-70da0f9f8fae",
+    "word": "expensive",
+    "definition_en": "A expensive.",
+    "collocation_en": "use expensive, have expensive",
+    "example_sentence_en": "I like expensive.",
+    "example_sentence": "我喜欢expensive。"
+  },
+  {
+    "id": "38354b97-be75-4baf-a005-3a98e6f0b962",
+    "word": "factory",
+    "definition_en": "A factory.",
+    "collocation_en": "use factory, have factory",
+    "example_sentence_en": "I like factory.",
+    "example_sentence": "我喜欢factory。"
+  },
+  {
+    "id": "2a2f0cb6-44b7-4e24-beec-47253d45ec71",
+    "word": "fail",
+    "definition_en": "A fail.",
+    "collocation_en": "use fail, have fail",
+    "example_sentence_en": "I like fail.",
+    "example_sentence": "我喜欢fail。"
+  },
+  {
+    "id": "21088ce6-b01b-4aa7-b481-065f1474d393",
+    "word": "fall",
+    "definition_en": "A fall.",
+    "collocation_en": "use fall, have fall",
+    "example_sentence_en": "I like fall.",
+    "example_sentence": "我喜欢fall。"
+  },
+  {
+    "id": "07fa48f7-f594-4a89-abcf-4d63aee529bb",
+    "word": "family",
+    "definition_en": "A family.",
+    "collocation_en": "use family, have family",
+    "example_sentence_en": "I like family.",
+    "example_sentence": "我喜欢family。"
+  },
+  {
+    "id": "7d591330-563c-4124-b8f2-07b129ccbf21",
+    "word": "famous",
+    "definition_en": "A famous.",
+    "collocation_en": "use famous, have famous",
+    "example_sentence_en": "I like famous.",
+    "example_sentence": "我喜欢famous。"
+  },
+  {
+    "id": "7e65c82f-185c-4216-89ef-7dd54a8d3df0",
+    "word": "farm",
+    "definition_en": "A farm.",
+    "collocation_en": "use farm, have farm",
+    "example_sentence_en": "I like farm.",
+    "example_sentence": "我喜欢farm。"
+  },
+  {
+    "id": "5d28c847-3417-43de-b44e-602f1e4644c1",
+    "word": "father",
+    "definition_en": "A father.",
+    "collocation_en": "use father, have father",
+    "example_sentence_en": "I like father.",
+    "example_sentence": "我喜欢father。"
+  },
+  {
+    "id": "40c391f3-d6d2-4df0-b388-00905671313c",
+    "word": "February",
+    "definition_en": "The second month of the year.",
+    "collocation_en": "in February, early February, late February",
+    "example_sentence_en": "My birthday is in February.",
+    "example_sentence": "我的生日在二月。"
+  },
+  {
+    "id": "909edc1e-b546-4c52-b102-cbbcd55abb0a",
+    "word": "feel",
+    "definition_en": "A feel.",
+    "collocation_en": "use feel, have feel",
+    "example_sentence_en": "I like feel.",
+    "example_sentence": "我喜欢feel。"
+  },
+  {
+    "id": "51fd5b3f-3798-4a6e-a01f-b72c59e941bf",
+    "word": "field",
+    "definition_en": "A field.",
+    "collocation_en": "use field, have field",
+    "example_sentence_en": "I like field.",
+    "example_sentence": "我喜欢field。"
+  },
+  {
+    "id": "6e07d091-6e40-496a-9e80-1558d1853e01",
+    "word": "fire",
+    "definition_en": "A fire.",
+    "collocation_en": "use fire, have fire",
+    "example_sentence_en": "I like fire.",
+    "example_sentence": "我喜欢fire。"
+  },
+  {
+    "id": "c32294f7-579c-4f31-9e4d-c6233e4515c4",
+    "word": "flat",
+    "definition_en": "A flat.",
+    "collocation_en": "use flat, have flat",
+    "example_sentence_en": "I like flat.",
+    "example_sentence": "我喜欢flat。"
+  },
+  {
+    "id": "b960b5b4-63b1-4a78-8244-f2ea14ac5612",
+    "word": "flight",
+    "definition_en": "A flight.",
+    "collocation_en": "use flight, have flight",
+    "example_sentence_en": "I like flight.",
+    "example_sentence": "我喜欢flight。"
+  },
+  {
+    "id": "a360a505-e52b-4958-bb9a-2af5d8a0f2d3",
+    "word": "floor",
+    "definition_en": "A floor.",
+    "collocation_en": "use floor, have floor",
+    "example_sentence_en": "I like floor.",
+    "example_sentence": "我喜欢floor。"
+  },
+  {
+    "id": "b96fba3c-dc9c-4073-9728-fa73e02113d1",
+    "word": "flower",
+    "definition_en": "A flower.",
+    "collocation_en": "use flower, have flower",
+    "example_sentence_en": "I like flower.",
+    "example_sentence": "我喜欢flower。"
+  },
+  {
+    "id": "f0b0572f-3741-467c-92aa-20369a1c3b38",
+    "word": "fog",
+    "definition_en": "A fog.",
+    "collocation_en": "use fog, have fog",
+    "example_sentence_en": "I like fog.",
+    "example_sentence": "我喜欢fog。"
+  },
+  {
+    "id": "e935ff32-278d-4d7b-a247-f37694e20fcf",
+    "word": "foggy",
+    "definition_en": "A foggy.",
+    "collocation_en": "use foggy, have foggy",
+    "example_sentence_en": "I like foggy.",
+    "example_sentence": "我喜欢foggy。"
+  },
+  {
+    "id": "373197df-f623-4852-b13c-4e7f7f30b761",
+    "word": "football",
+    "definition_en": "A football.",
+    "collocation_en": "use football, have football",
+    "example_sentence_en": "I like football.",
+    "example_sentence": "我喜欢football。"
+  },
+  {
+    "id": "d0dce113-fc06-4148-ae6b-ec2112cb075a",
+    "word": "for sale",
+    "definition_en": "A for sale.",
+    "collocation_en": "use for sale, have for sale",
+    "example_sentence_en": "I like for sale.",
+    "example_sentence": "我喜欢for sale。"
+  },
+  {
+    "id": "485a5ba1-aa75-407b-b075-fd77185d23ed",
+    "word": "forest",
+    "definition_en": "A forest.",
+    "collocation_en": "use forest, have forest",
+    "example_sentence_en": "I like forest.",
+    "example_sentence": "我喜欢forest。"
+  },
+  {
+    "id": "59c23f75-e5e5-49f7-9ca1-f352b0722af6",
+    "word": "fork",
+    "definition_en": "A fork.",
+    "collocation_en": "use fork, have fork",
+    "example_sentence_en": "I like fork.",
+    "example_sentence": "我喜欢fork。"
+  },
+  {
+    "id": "a130f2d0-d13e-488e-8b8f-fa781c596c66",
+    "word": "form",
+    "definition_en": "A form.",
+    "collocation_en": "use form, have form",
+    "example_sentence_en": "I like form.",
+    "example_sentence": "我喜欢form。"
+  },
+  {
+    "id": "2513b203-f15e-4ea0-a8a4-683428b3f5f5",
+    "word": "Friday",
+    "definition_en": "The sixth day of the week.",
+    "collocation_en": "on Friday, Friday morning",
+    "example_sentence_en": "I have English class on Friday.",
+    "example_sentence": "我星期五有英语课。"
+  },
+  {
+    "id": "1e26e5b7-14c0-40a6-8533-f29987754193",
+    "word": "fridge",
+    "definition_en": "A fridge.",
+    "collocation_en": "use fridge, have fridge",
+    "example_sentence_en": "I like fridge.",
+    "example_sentence": "我喜欢fridge。"
+  },
+  {
+    "id": "6fce3e49-8148-4109-ab42-b96791812b4a",
+    "word": "fried",
+    "definition_en": "A fried.",
+    "collocation_en": "use fried, have fried",
+    "example_sentence_en": "I like fried.",
+    "example_sentence": "我喜欢fried。"
+  },
+  {
+    "id": "d22261c7-553d-48a4-afee-f98625db6309",
+    "word": "friend",
+    "definition_en": "A friend.",
+    "collocation_en": "use friend, have friend",
+    "example_sentence_en": "I like friend.",
+    "example_sentence": "我喜欢friend。"
+  },
+  {
+    "id": "acfd4254-437f-42ba-8e40-a0d8e8d050c7",
+    "word": "fruit",
+    "definition_en": "A fruit.",
+    "collocation_en": "use fruit, have fruit",
+    "example_sentence_en": "I like fruit.",
+    "example_sentence": "我喜欢fruit。"
+  },
+  {
+    "id": "7d21d5ab-99b0-4129-afd3-d674e72714da",
+    "word": "furniture",
+    "definition_en": "A furniture.",
+    "collocation_en": "use furniture, have furniture",
+    "example_sentence_en": "I like furniture.",
+    "example_sentence": "我喜欢furniture。"
+  },
+  {
+    "id": "cca9428d-d350-4918-a4e5-5228f02feb48",
+    "word": "game",
+    "definition_en": "A game.",
+    "collocation_en": "use game, have game",
+    "example_sentence_en": "I like game.",
+    "example_sentence": "我喜欢game。"
+  },
+  {
+    "id": "5c1ea681-d864-4772-b6c7-671d72dec2f7",
+    "word": "garage",
+    "definition_en": "A garage.",
+    "collocation_en": "use garage, have garage",
+    "example_sentence_en": "I like garage.",
+    "example_sentence": "我喜欢garage。"
+  },
+  {
+    "id": "5f6c1868-85c1-4ead-b6e1-6e6e185c3bc7",
+    "word": "garden",
+    "definition_en": "A garden.",
+    "collocation_en": "use garden, have garden",
+    "example_sentence_en": "I like garden.",
+    "example_sentence": "我喜欢garden。"
+  },
+  {
+    "id": "599ecf05-249d-4d37-b7d6-ab0ab87b6d8c",
+    "word": "gate",
+    "definition_en": "A gate.",
+    "collocation_en": "use gate, have gate",
+    "example_sentence_en": "I like gate.",
+    "example_sentence": "我喜欢gate。"
+  },
+  {
+    "id": "4465e2b3-2247-4a14-a863-9665ac303890",
+    "word": "Geography",
+    "definition_en": "A geography.",
+    "collocation_en": "use Geography, have Geography",
+    "example_sentence_en": "I like Geography.",
+    "example_sentence": "我喜欢Geography。"
+  },
+  {
+    "id": "64d3ec6e-8486-46af-a1e7-dde97848fb64",
+    "word": "glasses",
+    "definition_en": "A glasses.",
+    "collocation_en": "use glasses, have glasses",
+    "example_sentence_en": "I like glasses.",
+    "example_sentence": "我喜欢glasses。"
+  },
+  {
+    "id": "53bfbeb2-7ad5-4f67-b31b-dec0363511c5",
+    "word": "golf",
+    "definition_en": "A golf.",
+    "collocation_en": "use golf, have golf",
+    "example_sentence_en": "I like golf.",
+    "example_sentence": "我喜欢golf。"
+  },
+  {
+    "id": "31ac9108-f809-40ba-840e-71e93189b4b9",
+    "word": "gram",
+    "definition_en": "A gram.",
+    "collocation_en": "use gram, have gram",
+    "example_sentence_en": "I like gram.",
+    "example_sentence": "我喜欢gram。"
+  },
+  {
+    "id": "885f3ff5-7ab0-467e-b247-76af14f79973",
+    "word": "gramme",
+    "definition_en": "A gramme.",
+    "collocation_en": "use gramme, have gramme",
+    "example_sentence_en": "I like gramme.",
+    "example_sentence": "我喜欢gramme。"
+  },
+  {
+    "id": "b348332c-f89f-4bd0-bd5b-68f46dc92037",
+    "word": "grandchild",
+    "definition_en": "A grandchild.",
+    "collocation_en": "use grandchild, have grandchild",
+    "example_sentence_en": "I like grandchild.",
+    "example_sentence": "我喜欢grandchild。"
+  },
+  {
+    "id": "c1403bc0-0275-46b3-bc0a-144679652705",
+    "word": "granddaughter",
+    "definition_en": "A granddaughter.",
+    "collocation_en": "use granddaughter, have granddaughter",
+    "example_sentence_en": "I like granddaughter.",
+    "example_sentence": "我喜欢granddaughter。"
+  },
+  {
+    "id": "6d66a9cf-bb07-4485-9156-ec671ee80772",
+    "word": "grandfather",
+    "definition_en": "A grandfather.",
+    "collocation_en": "use grandfather, have grandfather",
+    "example_sentence_en": "I like grandfather.",
+    "example_sentence": "我喜欢grandfather。"
+  },
+  {
+    "id": "a55e0e40-2017-42f4-85ea-c75a8c49ec17",
+    "word": "grandmother",
+    "definition_en": "A grandmother.",
+    "collocation_en": "use grandmother, have grandmother",
+    "example_sentence_en": "I like grandmother.",
+    "example_sentence": "我喜欢grandmother。"
+  },
+  {
+    "id": "0401859d-999a-46e4-af39-b2c82ca4e15d",
+    "word": "grandparent",
+    "definition_en": "A grandparent.",
+    "collocation_en": "use grandparent, have grandparent",
+    "example_sentence_en": "I like grandparent.",
+    "example_sentence": "我喜欢grandparent。"
+  },
+  {
+    "id": "62c34681-b710-47ef-9cf8-56572c443f60",
+    "word": "grandson",
+    "definition_en": "A grandson.",
+    "collocation_en": "use grandson, have grandson",
+    "example_sentence_en": "I like grandson.",
+    "example_sentence": "我喜欢grandson。"
+  },
+  {
+    "id": "d0bf6591-c9d0-46f1-ab17-a9b9cad2e2c8",
+    "word": "grape",
+    "definition_en": "A grape.",
+    "collocation_en": "use grape, have grape",
+    "example_sentence_en": "I like grape.",
+    "example_sentence": "我喜欢grape。"
+  },
+  {
+    "id": "a2accfa4-a420-450c-aa90-d4f4b45b6c32",
+    "word": "grass",
+    "definition_en": "A grass.",
+    "collocation_en": "use grass, have grass",
+    "example_sentence_en": "I like grass.",
+    "example_sentence": "我喜欢grass。"
+  },
+  {
+    "id": "89a3e0ea-31f0-44f1-9c96-5bb821057d61",
+    "word": "green",
+    "definition_en": "The color of grass and leaves.",
+    "collocation_en": "green clothes, green flower, very green",
+    "example_sentence_en": "She wears a green dress to the party.",
+    "example_sentence": "她穿着绿色连衣裙参加聚会。"
+  },
+  {
+    "id": "358d72dd-ab55-4373-8c8a-5d35d1b0b53b",
+    "word": "grey",
+    "definition_en": "The color between black and white.",
+    "collocation_en": "grey clothes, grey flower, very grey",
+    "example_sentence_en": "She wears a grey dress to the party.",
+    "example_sentence": "她穿着灰色连衣裙参加聚会。"
+  },
+  {
+    "id": "4ebc4110-ca04-4100-880a-0fc056b4b6ae",
+    "word": "grill",
+    "definition_en": "A grill.",
+    "collocation_en": "use grill, have grill",
+    "example_sentence_en": "I like grill.",
+    "example_sentence": "我喜欢grill。"
+  },
+  {
+    "id": "7631ddb4-16e4-4d29-a483-6bca2248fbb4",
+    "word": "grilled",
+    "definition_en": "A grilled.",
+    "collocation_en": "use grilled, have grilled",
+    "example_sentence_en": "I like grilled.",
+    "example_sentence": "我喜欢grilled。"
+  },
+  {
+    "id": "d0bc7260-51d2-4826-af8d-ccc683d80a66",
+    "word": "grow",
+    "definition_en": "A grow.",
+    "collocation_en": "use grow, have grow",
+    "example_sentence_en": "I like grow.",
+    "example_sentence": "我喜欢grow。"
+  },
+  {
+    "id": "3b54f122-72c2-4e77-9669-fd8eec7b2dfc",
+    "word": "guest",
+    "definition_en": "A guest.",
+    "collocation_en": "use guest, have guest",
+    "example_sentence_en": "I like guest.",
+    "example_sentence": "我喜欢guest。"
+  },
+  {
+    "id": "282cdb60-408c-4ac8-b2aa-cfc6fc21b20a",
+    "word": "guesthouse",
+    "definition_en": "A guesthouse.",
+    "collocation_en": "use guesthouse, have guesthouse",
+    "example_sentence_en": "I like guesthouse.",
+    "example_sentence": "我喜欢guesthouse。"
+  },
+  {
+    "id": "8e9141b8-4659-4d77-939b-10262445868b",
+    "word": "guide",
+    "definition_en": "A guide.",
+    "collocation_en": "use guide, have guide",
+    "example_sentence_en": "I like guide.",
+    "example_sentence": "我喜欢guide。"
+  },
+  {
+    "id": "b4c8e566-3820-464e-9087-1d2cdde23f86",
+    "word": "guidebook",
+    "definition_en": "A guidebook.",
+    "collocation_en": "use guidebook, have guidebook",
+    "example_sentence_en": "I like guidebook.",
+    "example_sentence": "我喜欢guidebook。"
+  },
+  {
+    "id": "73a543ee-f9c2-44dd-bbf7-0d4c98419c10",
+    "word": "guitar",
+    "definition_en": "A guitar.",
+    "collocation_en": "use guitar, have guitar",
+    "example_sentence_en": "I like guitar.",
+    "example_sentence": "我喜欢guitar。"
+  },
+  {
+    "id": "8175c752-df4d-4b32-a2ea-9ee7879f3c5d",
+    "word": "hall",
+    "definition_en": "A hall.",
+    "collocation_en": "use hall, have hall",
+    "example_sentence_en": "I like hall.",
+    "example_sentence": "我喜欢hall。"
+  },
+  {
+    "id": "ee10f4d5-fe86-4d27-9e27-20e885b22ef0",
+    "word": "hat",
+    "definition_en": "A hat.",
+    "collocation_en": "use hat, have hat",
+    "example_sentence_en": "I like hat.",
+    "example_sentence": "我喜欢hat。"
+  },
+  {
+    "id": "ec425a7d-f932-49c8-ab6a-1a6d1eca9833",
+    "word": "heart attack",
+    "definition_en": "A heart attack.",
+    "collocation_en": "use heart attack, have heart attack",
+    "example_sentence_en": "I like heart attack.",
+    "example_sentence": "我喜欢heart attack。"
+  },
+  {
+    "id": "5e5e4f3d-db81-4f8b-aa45-06cea9ddbaec",
+    "word": "helicopter",
+    "definition_en": "A helicopter.",
+    "collocation_en": "use helicopter, have helicopter",
+    "example_sentence_en": "I like helicopter.",
+    "example_sentence": "我喜欢helicopter。"
+  },
+  {
+    "id": "3c758146-450d-4bbe-ba5e-e892142521d7",
+    "word": "hill",
+    "definition_en": "A hill.",
+    "collocation_en": "use hill, have hill",
+    "example_sentence_en": "I like hill.",
+    "example_sentence": "我喜欢hill。"
+  },
+  {
+    "id": "8f418635-b5a8-42b1-94bb-3ed22a86359c",
+    "word": "History",
+    "definition_en": "A history.",
+    "collocation_en": "use History, have History",
+    "example_sentence_en": "I like History.",
+    "example_sentence": "我喜欢History。"
+  },
+  {
+    "id": "9a6a0fee-45f9-40e2-8f98-090f1da2d892",
+    "word": "hobby",
+    "definition_en": "A hobby.",
+    "collocation_en": "use hobby, have hobby",
+    "example_sentence_en": "I like hobby.",
+    "example_sentence": "我喜欢hobby。"
+  },
+  {
+    "id": "18c00f01-a7c7-4d79-a1f5-4171f0d79b44",
+    "word": "hockey",
+    "definition_en": "A hockey.",
+    "collocation_en": "use hockey, have hockey",
+    "example_sentence_en": "I like hockey.",
+    "example_sentence": "我喜欢hockey。"
+  },
+  {
+    "id": "12829d0d-929b-4635-9f86-eb95e07a3d6c",
+    "word": "holiday",
+    "definition_en": "A holiday.",
+    "collocation_en": "use holiday, have holiday",
+    "example_sentence_en": "I like holiday.",
+    "example_sentence": "我喜欢holiday。"
+  },
+  {
+    "id": "c2304812-489d-4292-9ef3-ff37710a4597",
+    "word": "homework",
+    "definition_en": "A homework.",
+    "collocation_en": "use homework, have homework",
+    "example_sentence_en": "I like homework.",
+    "example_sentence": "我喜欢homework。"
+  },
+  {
+    "id": "e10267a5-1201-474e-b3a2-7b12e630f8ac",
+    "word": "hospital",
+    "definition_en": "A hospital.",
+    "collocation_en": "use hospital, have hospital",
+    "example_sentence_en": "I like hospital.",
+    "example_sentence": "我喜欢hospital。"
+  },
+  {
+    "id": "2fa1ab62-0b84-4d0f-af72-6a652765f6d8",
+    "word": "hot",
+    "definition_en": "A hot.",
+    "collocation_en": "use hot, have hot",
+    "example_sentence_en": "I like hot.",
+    "example_sentence": "我喜欢hot。"
+  },
+  {
+    "id": "13d27ecf-8bfa-405c-9048-f28ef3d263e9",
+    "word": "hotel",
+    "definition_en": "A hotel.",
+    "collocation_en": "use hotel, have hotel",
+    "example_sentence_en": "I like hotel.",
+    "example_sentence": "我喜欢hotel。"
+  },
+  {
+    "id": "25805795-0412-4716-b635-ccf8223003ba",
+    "word": "hungry",
+    "definition_en": "A hungry.",
+    "collocation_en": "use hungry, have hungry",
+    "example_sentence_en": "I like hungry.",
+    "example_sentence": "我喜欢hungry。"
+  },
+  {
+    "id": "0c3b880a-15a3-4f63-ae65-c605b5eb2f84",
+    "word": "hurry",
+    "definition_en": "A hurry.",
+    "collocation_en": "use hurry, have hurry",
+    "example_sentence_en": "I like hurry.",
+    "example_sentence": "我喜欢hurry。"
+  },
+  {
+    "id": "9d506fbc-8710-496a-9106-61951bb7ccb2",
+    "word": "hurt",
+    "definition_en": "A hurt.",
+    "collocation_en": "use hurt, have hurt",
+    "example_sentence_en": "I like hurt.",
+    "example_sentence": "我喜欢hurt。"
+  },
+  {
+    "id": "96bb799c-2597-4e65-861b-9988e5decce9",
+    "word": "husband",
+    "definition_en": "A husband.",
+    "collocation_en": "use husband, have husband",
+    "example_sentence_en": "I like husband.",
+    "example_sentence": "我喜欢husband。"
+  },
+  {
+    "id": "4eb64f84-493b-47b9-bbbc-6d08980f9a10",
+    "word": "ice",
+    "definition_en": "A ice.",
+    "collocation_en": "use ice, have ice",
+    "example_sentence_en": "I like ice.",
+    "example_sentence": "我喜欢ice。"
+  },
+  {
+    "id": "63b60096-f968-4708-a407-09d70a16af1f",
+    "word": "ice cream",
+    "definition_en": "A ice cream.",
+    "collocation_en": "use ice cream, have ice cream",
+    "example_sentence_en": "I like ice cream.",
+    "example_sentence": "我喜欢ice cream。"
+  },
+  {
+    "id": "6b23b4ba-adbf-44eb-8f20-b2508088826b",
+    "word": "improve",
+    "definition_en": "A improve.",
+    "collocation_en": "use improve, have improve",
+    "example_sentence_en": "I like improve.",
+    "example_sentence": "我喜欢improve。"
+  },
+  {
+    "id": "f65c69e0-bfe5-4614-8e74-eb5a4f5eb7e5",
+    "word": "information",
+    "definition_en": "A information.",
+    "collocation_en": "use information, have information",
+    "example_sentence_en": "I like information.",
+    "example_sentence": "我喜欢information。"
+  },
+  {
+    "id": "4a4dea61-16a0-4e3a-858c-b3425cace2c3",
+    "word": "instruction",
+    "definition_en": "A instruction.",
+    "collocation_en": "use instruction, have instruction",
+    "example_sentence_en": "I like instruction.",
+    "example_sentence": "我喜欢instruction。"
+  },
+  {
+    "id": "184a92e8-c0a5-4769-8bac-0f2a908979e8",
+    "word": "instructions",
+    "definition_en": "A instructions.",
+    "collocation_en": "use instructions, have instructions",
+    "example_sentence_en": "I like instructions.",
+    "example_sentence": "我喜欢instructions。"
+  },
+  {
+    "id": "e335693e-1530-479f-863c-17b12b56ec81",
+    "word": "insurance",
+    "definition_en": "A insurance.",
+    "collocation_en": "use insurance, have insurance",
+    "example_sentence_en": "I like insurance.",
+    "example_sentence": "我喜欢insurance。"
+  },
+  {
+    "id": "1e65af7c-c533-49e3-b05a-0be595bbdd2c",
+    "word": "internet",
+    "definition_en": "A internet.",
+    "collocation_en": "use internet, have internet",
+    "example_sentence_en": "I like internet.",
+    "example_sentence": "我喜欢internet。"
+  },
+  {
+    "id": "da4b49ff-1efa-4bc4-8f74-87afe842dfca",
+    "word": "island",
+    "definition_en": "A island.",
+    "collocation_en": "use island, have island",
+    "example_sentence_en": "I like island.",
+    "example_sentence": "我喜欢island。"
+  },
+  {
+    "id": "9dd29757-5126-4720-a6f3-b0a99379ac7b",
+    "word": "jacket",
+    "definition_en": "A jacket.",
+    "collocation_en": "use jacket, have jacket",
+    "example_sentence_en": "I like jacket.",
+    "example_sentence": "我喜欢jacket。"
+  },
+  {
+    "id": "50829bb0-0568-464e-9b9b-f582351a6c36",
+    "word": "jam",
+    "definition_en": "A jam.",
+    "collocation_en": "use jam, have jam",
+    "example_sentence_en": "I like jam.",
+    "example_sentence": "我喜欢jam。"
+  },
+  {
+    "id": "96afcadc-50d8-444e-ae64-059a241aee41",
+    "word": "January",
+    "definition_en": "The first month of the year.",
+    "collocation_en": "in January, early January, late January",
+    "example_sentence_en": "My birthday is in January.",
+    "example_sentence": "我的生日在一月。"
+  },
+  {
+    "id": "213a7b64-fd7e-489d-97b2-d769b16efd2e",
+    "word": "jeans",
+    "definition_en": "A jeans.",
+    "collocation_en": "use jeans, have jeans",
+    "example_sentence_en": "I like jeans.",
+    "example_sentence": "我喜欢jeans。"
+  },
+  {
+    "id": "67c30a51-0344-4af3-9918-36e2fae27278",
+    "word": "journalist",
+    "definition_en": "A journalist.",
+    "collocation_en": "use journalist, have journalist",
+    "example_sentence_en": "I like journalist.",
+    "example_sentence": "我喜欢journalist。"
+  },
+  {
+    "id": "fe499ea7-0568-4053-828b-312f343846f3",
+    "word": "journey",
+    "definition_en": "A journey.",
+    "collocation_en": "use journey, have journey",
+    "example_sentence_en": "I like journey.",
+    "example_sentence": "我喜欢journey。"
+  },
+  {
+    "id": "a4748561-56d0-4d60-9fc7-bfd9c2f8a30c",
+    "word": "juice",
+    "definition_en": "A juice.",
+    "collocation_en": "use juice, have juice",
+    "example_sentence_en": "I like juice.",
+    "example_sentence": "我喜欢juice。"
+  },
+  {
+    "id": "9a57a99e-7f5f-4e4d-b359-6a7d55e00638",
+    "word": "July",
+    "definition_en": "The seventh month of the year.",
+    "collocation_en": "in July, early July, late July",
+    "example_sentence_en": "My birthday is in July.",
+    "example_sentence": "我的生日在七月。"
+  },
+  {
+    "id": "76c4aa82-58a0-48f2-b73f-afaf976aa62d",
+    "word": "June",
+    "definition_en": "The sixth month of the year.",
+    "collocation_en": "in June, early June, late June",
+    "example_sentence_en": "My birthday is in June.",
+    "example_sentence": "我的生日在六月。"
+  },
+  {
+    "id": "a84b8d94-ac1a-4e99-b363-2aa494cd36b2",
+    "word": "kilo",
+    "definition_en": "A kilo.",
+    "collocation_en": "use kilo, have kilo",
+    "example_sentence_en": "I like kilo.",
+    "example_sentence": "我喜欢kilo。"
+  },
+  {
+    "id": "f1a4a537-b87a-4dc1-a307-50a4de02be58",
+    "word": "kilometre",
+    "definition_en": "A kilometre.",
+    "collocation_en": "use kilometre, have kilometre",
+    "example_sentence_en": "I like kilometre.",
+    "example_sentence": "我喜欢kilometre。"
+  },
+  {
+    "id": "e4a4d918-3f46-4727-b09f-8467ca8a27a9",
+    "word": "kitchen",
+    "definition_en": "A kitchen.",
+    "collocation_en": "use kitchen, have kitchen",
+    "example_sentence_en": "I like kitchen.",
+    "example_sentence": "我喜欢kitchen。"
+  },
+  {
+    "id": "cd4b1d78-de41-4d2b-8445-5960f3c65e90",
+    "word": "knife",
+    "definition_en": "A knife.",
+    "collocation_en": "use knife, have knife",
+    "example_sentence_en": "I like knife.",
+    "example_sentence": "我喜欢knife。"
+  },
+  {
+    "id": "b01a230d-151b-4a6a-8eb2-7960494304cd",
+    "word": "lake",
+    "definition_en": "A lake.",
+    "collocation_en": "use lake, have lake",
+    "example_sentence_en": "I like lake.",
+    "example_sentence": "我喜欢lake。"
+  },
+  {
+    "id": "fa8bb70d-4063-4592-937e-f4876b9384d9",
+    "word": "language",
+    "definition_en": "A language.",
+    "collocation_en": "use language, have language",
+    "example_sentence_en": "I like language.",
+    "example_sentence": "我喜欢language。"
+  },
+  {
+    "id": "2a0bde24-f7a1-4ef4-8ef2-f8016fbc27fe",
+    "word": "learn",
+    "definition_en": "A learn.",
+    "collocation_en": "use learn, have learn",
+    "example_sentence_en": "I like learn.",
+    "example_sentence": "我喜欢learn。"
+  },
+  {
+    "id": "b7c296c7-0b43-4dc0-ab41-292daa3dc58e",
+    "word": "leather",
+    "definition_en": "A leather.",
+    "collocation_en": "use leather, have leather",
+    "example_sentence_en": "I like leather.",
+    "example_sentence": "我喜欢leather。"
+  },
+  {
+    "id": "2dc00677-6e2f-4085-8a7f-2bc562c53bbe",
+    "word": "leave",
+    "definition_en": "A leave.",
+    "collocation_en": "use leave, have leave",
+    "example_sentence_en": "I like leave.",
+    "example_sentence": "我喜欢leave。"
+  },
+  {
+    "id": "5fd4ec05-7531-4a03-a610-c078fd1682bf",
+    "word": "left",
+    "definition_en": "A left.",
+    "collocation_en": "use left, have left",
+    "example_sentence_en": "I like left.",
+    "example_sentence": "我喜欢left。"
+  },
+  {
+    "id": "82390c0f-4ac0-4f19-a25d-40922b4cf8e7",
+    "word": "lemon",
+    "definition_en": "A lemon.",
+    "collocation_en": "use lemon, have lemon",
+    "example_sentence_en": "I like lemon.",
+    "example_sentence": "我喜欢lemon。"
+  },
+  {
+    "id": "4f22d192-f97b-487a-bccc-85bf04fee6b6",
+    "word": "lemonade",
+    "definition_en": "A lemonade.",
+    "collocation_en": "use lemonade, have lemonade",
+    "example_sentence_en": "I like lemonade.",
+    "example_sentence": "我喜欢lemonade。"
+  },
+  {
+    "id": "b6d0c81f-171c-4c6d-99af-cf316722c9f1",
+    "word": "level",
+    "definition_en": "A level.",
+    "collocation_en": "use level, have level",
+    "example_sentence_en": "I like level.",
+    "example_sentence": "我喜欢level。"
+  },
+  {
+    "id": "79497e5e-2c91-42a8-b53f-5f8280973876",
+    "word": "library",
+    "definition_en": "A library.",
+    "collocation_en": "use library, have library",
+    "example_sentence_en": "I like library.",
+    "example_sentence": "我喜欢library。"
+  },
+  {
+    "id": "f5320b8f-972f-4de1-975f-330fe500fbe4",
+    "word": "licence",
+    "definition_en": "A licence.",
+    "collocation_en": "use licence, have licence",
+    "example_sentence_en": "I like licence.",
+    "example_sentence": "我喜欢licence。"
+  },
+  {
+    "id": "a343f68d-d9c5-4aa8-a86d-ef5d1917eb8e",
+    "word": "lie down",
+    "definition_en": "A lie down.",
+    "collocation_en": "use lie down, have lie down",
+    "example_sentence_en": "I like lie down.",
+    "example_sentence": "我喜欢lie down。"
+  },
+  {
+    "id": "47c725c2-ec64-4b59-b366-4613dfb0f4c5",
+    "word": "lift",
+    "definition_en": "A lift.",
+    "collocation_en": "use lift, have lift",
+    "example_sentence_en": "I like lift.",
+    "example_sentence": "我喜欢lift。"
+  },
+  {
+    "id": "ac26dbbb-ee2f-49ae-9149-94e912edbe6d",
+    "word": "light",
+    "definition_en": "A light.",
+    "collocation_en": "use light, have light",
+    "example_sentence_en": "I like light.",
+    "example_sentence": "我喜欢light。"
+  },
+  {
+    "id": "eb2c3d80-07cb-4ec5-b65f-05db3fb266cc",
+    "word": "litre",
+    "definition_en": "A litre.",
+    "collocation_en": "use litre, have litre",
+    "example_sentence_en": "I like litre.",
+    "example_sentence": "我喜欢litre。"
+  },
+  {
+    "id": "1630e620-3029-4fa0-8512-dc45b9eb9bbd",
+    "word": "living room",
+    "definition_en": "A living room.",
+    "collocation_en": "use living room, have living room",
+    "example_sentence_en": "I like living room.",
+    "example_sentence": "我喜欢living room。"
+  },
+  {
+    "id": "5e233c71-b55d-4c50-bfad-5019804a3f37",
+    "word": "lorry",
+    "definition_en": "A lorry.",
+    "collocation_en": "use lorry, have lorry",
+    "example_sentence_en": "I like lorry.",
+    "example_sentence": "我喜欢lorry。"
+  },
+  {
+    "id": "5d751ced-8ae0-4b2e-b09e-9df03dacce08",
+    "word": "love",
+    "definition_en": "A love.",
+    "collocation_en": "use love, have love",
+    "example_sentence_en": "I like love.",
+    "example_sentence": "我喜欢love。"
+  },
+  {
+    "id": "d1e8dd70-bf64-47b2-807f-dd16114dc5e2",
+    "word": "luck",
+    "definition_en": "A luck.",
+    "collocation_en": "use luck, have luck",
+    "example_sentence_en": "I like luck.",
+    "example_sentence": "我喜欢luck。"
+  },
+  {
+    "id": "034e54d9-83e3-4e2b-a206-564039a540dd",
+    "word": "luggage",
+    "definition_en": "A luggage.",
+    "collocation_en": "use luggage, have luggage",
+    "example_sentence_en": "I like luggage.",
+    "example_sentence": "我喜欢luggage。"
+  },
+  {
+    "id": "577ad087-8486-47d3-bc17-0bc307eaabf3",
+    "word": "machine",
+    "definition_en": "A machine.",
+    "collocation_en": "use machine, have machine",
+    "example_sentence_en": "I like machine.",
+    "example_sentence": "我喜欢machine。"
+  },
+  {
+    "id": "df8f2081-aea1-4aef-a627-9662af39788c",
+    "word": "magazine",
+    "definition_en": "A magazine.",
+    "collocation_en": "use magazine, have magazine",
+    "example_sentence_en": "I like magazine.",
+    "example_sentence": "我喜欢magazine。"
+  },
+  {
+    "id": "539a7407-34c1-4632-bf49-61f8920854ba",
+    "word": "main course",
+    "definition_en": "A main course.",
+    "collocation_en": "use main course, have main course",
+    "example_sentence_en": "I like main course.",
+    "example_sentence": "我喜欢main course。"
+  },
+  {
+    "id": "055b33fc-983a-47cd-8fbb-7baf9246de5a",
+    "word": "March",
+    "definition_en": "The third month of the year.",
+    "collocation_en": "in March, early March, late March",
+    "example_sentence_en": "My birthday is in March.",
+    "example_sentence": "我的生日在三月。"
+  },
+  {
+    "id": "ba681374-4e25-43fa-8d9e-2a487f186565",
+    "word": "market",
+    "definition_en": "A market.",
+    "collocation_en": "use market, have market",
+    "example_sentence_en": "I like market.",
+    "example_sentence": "我喜欢market。"
+  },
+  {
+    "id": "7c5fa06a-6549-424a-9021-3cd7bba6078b",
+    "word": "married",
+    "definition_en": "A married.",
+    "collocation_en": "use married, have married",
+    "example_sentence_en": "I like married.",
+    "example_sentence": "我喜欢married。"
+  },
+  {
+    "id": "ba3c015d-4a03-415a-b427-8e9e1add68dd",
+    "word": "Mathematics",
+    "definition_en": "A mathematics.",
+    "collocation_en": "use Mathematics, have Mathematics",
+    "example_sentence_en": "I like Mathematics.",
+    "example_sentence": "我喜欢Mathematics。"
+  },
+  {
+    "id": "c33ecb32-9769-4c49-ada9-06900e6eac29",
+    "word": "May",
+    "definition_en": "The fifth month of the year.",
+    "collocation_en": "in May, early May, late May",
+    "example_sentence_en": "My birthday is in May.",
+    "example_sentence": "我的生日在五月。"
+  },
+  {
+    "id": "67b8a36d-3c88-4927-92b5-5a360bae4f06",
+    "word": "meal",
+    "definition_en": "A meal.",
+    "collocation_en": "use meal, have meal",
+    "example_sentence_en": "I like meal.",
+    "example_sentence": "我喜欢meal。"
+  },
+  {
+    "id": "587a0af9-dcab-47f1-bff1-cf318eab6650",
+    "word": "meat",
+    "definition_en": "A meat.",
+    "collocation_en": "use meat, have meat",
+    "example_sentence_en": "I like meat.",
+    "example_sentence": "我喜欢meat。"
+  },
+  {
+    "id": "56dabfd5-386b-41d7-8ae4-ec09e7c28e01",
+    "word": "mechanic",
+    "definition_en": "A mechanic.",
+    "collocation_en": "use mechanic, have mechanic",
+    "example_sentence_en": "I like mechanic.",
+    "example_sentence": "我喜欢mechanic。"
+  },
+  {
+    "id": "8e22ae96-8676-45f3-97e9-1990ecac5522",
+    "word": "medicine",
+    "definition_en": "A medicine.",
+    "collocation_en": "use medicine, have medicine",
+    "example_sentence_en": "I like medicine.",
+    "example_sentence": "我喜欢medicine。"
+  },
+  {
+    "id": "4279b8c4-54e8-4beb-8285-c5e665d10dee",
+    "word": "member",
+    "definition_en": "A member.",
+    "collocation_en": "use member, have member",
+    "example_sentence_en": "I like member.",
+    "example_sentence": "我喜欢member。"
+  },
+  {
+    "id": "de0fd24a-a3d1-4ee0-8889-813992f2b704",
+    "word": "menu",
+    "definition_en": "A menu.",
+    "collocation_en": "use menu, have menu",
+    "example_sentence_en": "I like menu.",
+    "example_sentence": "我喜欢menu。"
+  },
+  {
+    "id": "15bade8b-6fe6-4b14-ae7c-024e227962ed",
+    "word": "message",
+    "definition_en": "A message.",
+    "collocation_en": "use message, have message",
+    "example_sentence_en": "I like message.",
+    "example_sentence": "我喜欢message。"
+  },
+  {
+    "id": "40ec0500-0dd9-43cf-b639-b33800cad4f6",
+    "word": "midnight",
+    "definition_en": "A midnight.",
+    "collocation_en": "use midnight, have midnight",
+    "example_sentence_en": "I like midnight.",
+    "example_sentence": "我喜欢midnight。"
+  },
+  {
+    "id": "1f37a6a2-0a88-406b-bb4e-3dfe295ef73b",
+    "word": "mile",
+    "definition_en": "A mile.",
+    "collocation_en": "use mile, have mile",
+    "example_sentence_en": "I like mile.",
+    "example_sentence": "我喜欢mile。"
+  },
+  {
+    "id": "0a9497d7-9203-49e6-82ca-1b3de89e55d0",
+    "word": "mineral",
+    "definition_en": "A mineral.",
+    "collocation_en": "use mineral, have mineral",
+    "example_sentence_en": "I like mineral.",
+    "example_sentence": "我喜欢mineral。"
+  },
+  {
+    "id": "67564a54-bfa3-4e0f-98c5-7b4aa0fc4cf4",
+    "word": "minute",
+    "definition_en": "A minute.",
+    "collocation_en": "use minute, have minute",
+    "example_sentence_en": "I like minute.",
+    "example_sentence": "我喜欢minute。"
+  },
+  {
+    "id": "5903c75f-53b5-4d45-b48a-fb0230db9bcf",
+    "word": "mirror",
+    "definition_en": "A mirror.",
+    "collocation_en": "use mirror, have mirror",
+    "example_sentence_en": "I like mirror.",
+    "example_sentence": "我喜欢mirror。"
+  },
+  {
+    "id": "16f93e4c-85c8-4844-91cf-4defc01bd00c",
+    "word": "mobile",
+    "definition_en": "A mobile.",
+    "collocation_en": "use mobile, have mobile",
+    "example_sentence_en": "I like mobile.",
+    "example_sentence": "我喜欢mobile。"
+  },
+  {
+    "id": "21dd76b3-9ba3-49cc-8a7e-3d49b3f05b37",
+    "word": "mobile phone",
+    "definition_en": "A mobile phone.",
+    "collocation_en": "use mobile phone, have mobile phone",
+    "example_sentence_en": "I like mobile phone.",
+    "example_sentence": "我喜欢mobile phone。"
+  },
+  {
+    "id": "60aab209-5bb7-4093-b445-5a30b3e68664",
+    "word": "moment",
+    "definition_en": "A moment.",
+    "collocation_en": "use moment, have moment",
+    "example_sentence_en": "I like moment.",
+    "example_sentence": "我喜欢moment。"
+  },
+  {
+    "id": "a28f7ed9-71e5-4a59-a826-7efc11dcc425",
+    "word": "Monday",
+    "definition_en": "The second day of the week.",
+    "collocation_en": "on Monday, Monday morning",
+    "example_sentence_en": "I have English class on Monday.",
+    "example_sentence": "我星期一有英语课。"
+  },
+  {
+    "id": "fdf3eccc-8444-4b7c-8832-c21c94d2aea7",
+    "word": "moon",
+    "definition_en": "A moon.",
+    "collocation_en": "use moon, have moon",
+    "example_sentence_en": "I like moon.",
+    "example_sentence": "我喜欢moon。"
+  },
+  {
+    "id": "037b2932-f1ee-4244-bde7-4ea73e287057",
+    "word": "morning",
+    "definition_en": "A morning.",
+    "collocation_en": "use morning, have morning",
+    "example_sentence_en": "I like morning.",
+    "example_sentence": "我喜欢morning。"
+  },
+  {
+    "id": "357798d5-fa94-4169-9d84-1cb8cb64e07d",
+    "word": "mother",
+    "definition_en": "A mother.",
+    "collocation_en": "use mother, have mother",
+    "example_sentence_en": "I like mother.",
+    "example_sentence": "我喜欢mother。"
+  },
+  {
+    "id": "bf22579d-7843-453f-82ff-c65c7506e280",
+    "word": "motorway",
+    "definition_en": "A motorway.",
+    "collocation_en": "use motorway, have motorway",
+    "example_sentence_en": "I like motorway.",
+    "example_sentence": "我喜欢motorway。"
+  },
+  {
+    "id": "69027edb-f3cd-4a03-a3a3-48e59746fb87",
+    "word": "mountain",
+    "definition_en": "A mountain.",
+    "collocation_en": "use mountain, have mountain",
+    "example_sentence_en": "I like mountain.",
+    "example_sentence": "我喜欢mountain。"
+  },
+  {
+    "id": "d09f1f3c-295d-4b4a-b486-29282a245dda",
+    "word": "mouse",
+    "definition_en": "A mouse.",
+    "collocation_en": "use mouse, have mouse",
+    "example_sentence_en": "I like mouse.",
+    "example_sentence": "我喜欢mouse。"
+  },
+  {
+    "id": "81a48b95-73ad-4f60-b13d-191d657c728f",
+    "word": "Mr.",
+    "definition_en": "A mr..",
+    "collocation_en": "use Mr., have Mr.",
+    "example_sentence_en": "I like Mr..",
+    "example_sentence": "我喜欢Mr.。"
+  },
+  {
+    "id": "9f720d40-941d-46d4-936d-8d3947abc415",
+    "word": "Mrs.",
+    "definition_en": "A mrs..",
+    "collocation_en": "use Mrs., have Mrs.",
+    "example_sentence_en": "I like Mrs..",
+    "example_sentence": "我喜欢Mrs.。"
+  },
+  {
+    "id": "0bacbe21-5a48-4c15-955f-e28e0721162c",
+    "word": "Ms.",
+    "definition_en": "A ms..",
+    "collocation_en": "use Ms., have Ms.",
+    "example_sentence_en": "I like Ms..",
+    "example_sentence": "我喜欢Ms.。"
+  },
+  {
+    "id": "a5ff2c17-efc1-4bb3-bd28-0da3da2f49a4",
+    "word": "mum",
+    "definition_en": "A mum.",
+    "collocation_en": "use mum, have mum",
+    "example_sentence_en": "I like mum.",
+    "example_sentence": "我喜欢mum。"
+  },
+  {
+    "id": "8f9acc49-91d4-4de7-8881-707e7508a2f2",
+    "word": "museum",
+    "definition_en": "A museum.",
+    "collocation_en": "use museum, have museum",
+    "example_sentence_en": "I like museum.",
+    "example_sentence": "我喜欢museum。"
+  },
+  {
+    "id": "9b8d0492-139a-4e5f-bb3c-d0eaed7602c0",
+    "word": "neighbour",
+    "definition_en": "A neighbour.",
+    "collocation_en": "use neighbour, have neighbour",
+    "example_sentence_en": "I like neighbour.",
+    "example_sentence": "我喜欢neighbour。"
+  },
+  {
+    "id": "4892159a-411d-47bc-ac82-a107df90636b",
+    "word": "newsagent",
+    "definition_en": "A newsagent.",
+    "collocation_en": "use newsagent, have newsagent",
+    "example_sentence_en": "I like newsagent.",
+    "example_sentence": "我喜欢newsagent。"
+  },
+  {
+    "id": "a3d3bead-0490-4b4d-b4d7-25526a317abc",
+    "word": "newspaper",
+    "definition_en": "A newspaper.",
+    "collocation_en": "use newspaper, have newspaper",
+    "example_sentence_en": "I like newspaper.",
+    "example_sentence": "我喜欢newspaper。"
+  },
+  {
+    "id": "afeb8ff5-9916-4136-a9de-492b353ad15f",
+    "word": "night",
+    "definition_en": "A night.",
+    "collocation_en": "use night, have night",
+    "example_sentence_en": "I like night.",
+    "example_sentence": "我喜欢night。"
+  },
+  {
+    "id": "bee88938-8c44-4f48-9e34-1c4d7389c498",
+    "word": "noon",
+    "definition_en": "A noon.",
+    "collocation_en": "use noon, have noon",
+    "example_sentence_en": "I like noon.",
+    "example_sentence": "我喜欢noon。"
+  },
+  {
+    "id": "fff678ba-f962-432e-8163-c4eb77a824d8",
+    "word": "north",
+    "definition_en": "A north.",
+    "collocation_en": "use north, have north",
+    "example_sentence_en": "I like north.",
+    "example_sentence": "我喜欢north。"
+  },
+  {
+    "id": "2ccf9e5c-18c9-4505-951d-5656511c4000",
+    "word": "note",
+    "definition_en": "A note.",
+    "collocation_en": "use note, have note",
+    "example_sentence_en": "I like note.",
+    "example_sentence": "我喜欢note。"
+  },
+  {
+    "id": "728170e3-4f9b-4ed3-848b-a159c3204c45",
+    "word": "November",
+    "definition_en": "The eleventh month of the year.",
+    "collocation_en": "in November, early November, late November",
+    "example_sentence_en": "My birthday is in November.",
+    "example_sentence": "我的生日在十一月。"
+  },
+  {
+    "id": "f4830b5d-3e96-415e-9e3a-bcfe219816a7",
+    "word": "nurse",
+    "definition_en": "A nurse.",
+    "collocation_en": "use nurse, have nurse",
+    "example_sentence_en": "I like nurse.",
+    "example_sentence": "我喜欢nurse。"
+  },
+  {
+    "id": "13867dc1-4b77-4fcc-a439-df3e548ed04b",
+    "word": "occupation",
+    "definition_en": "A occupation.",
+    "collocation_en": "use occupation, have occupation",
+    "example_sentence_en": "I like occupation.",
+    "example_sentence": "我喜欢occupation。"
+  },
+  {
+    "id": "bbeac8ae-5966-4114-9847-86efce994852",
+    "word": "October",
+    "definition_en": "The tenth month of the year.",
+    "collocation_en": "in October, early October, late October",
+    "example_sentence_en": "My birthday is in October.",
+    "example_sentence": "我的生日在十月。"
+  },
+  {
+    "id": "fe0a390c-ce7a-45ad-a7a5-624e04b67662",
+    "word": "omelette",
+    "definition_en": "A omelette.",
+    "collocation_en": "use omelette, have omelette",
+    "example_sentence_en": "I like omelette.",
+    "example_sentence": "我喜欢omelette。"
+  },
+  {
+    "id": "f965bcc7-9c3b-4633-995b-f47fb6584de5",
+    "word": "onion",
+    "definition_en": "A onion.",
+    "collocation_en": "use onion, have onion",
+    "example_sentence_en": "I like onion.",
+    "example_sentence": "我喜欢onion。"
+  },
+  {
+    "id": "70052ccc-daff-4270-bba3-36448e62e78e",
+    "word": "opera",
+    "definition_en": "A opera.",
+    "collocation_en": "use opera, have opera",
+    "example_sentence_en": "I like opera.",
+    "example_sentence": "我喜欢opera。"
+  },
+  {
+    "id": "9996011a-14aa-4ee7-acdc-55824cfb695d",
+    "word": "orange",
+    "definition_en": "The color between red and yellow.",
+    "collocation_en": "orange clothes, orange flower, very orange",
+    "example_sentence_en": "She wears a orange dress to the party.",
+    "example_sentence": "她穿着橙色连衣裙参加聚会。"
+  },
+  {
+    "id": "72399b9f-b99a-4613-8365-3df556451c78",
+    "word": "outdoor",
+    "definition_en": "A outdoor.",
+    "collocation_en": "use outdoor, have outdoor",
+    "example_sentence_en": "I like outdoor.",
+    "example_sentence": "我喜欢outdoor。"
+  },
+  {
+    "id": "1743a63e-ad25-4b46-b92c-6db7277e52a8",
+    "word": "pack",
+    "definition_en": "A pack.",
+    "collocation_en": "use pack, have pack",
+    "example_sentence_en": "I like pack.",
+    "example_sentence": "我喜欢pack。"
+  },
+  {
+    "id": "ff06dbee-e971-4822-9ce2-51e0a07fc30b",
+    "word": "pain",
+    "definition_en": "A pain.",
+    "collocation_en": "use pain, have pain",
+    "example_sentence_en": "I like pain.",
+    "example_sentence": "我喜欢pain。"
+  },
+  {
+    "id": "538307f1-282f-413c-9c88-135ec12e6983",
+    "word": "painter",
+    "definition_en": "A painter.",
+    "collocation_en": "use painter, have painter",
+    "example_sentence_en": "I like painter.",
+    "example_sentence": "我喜欢painter。"
+  },
+  {
+    "id": "e1fe784c-35d2-4bce-ac33-41734f2100de",
+    "word": "park",
+    "definition_en": "A park.",
+    "collocation_en": "use park, have park",
+    "example_sentence_en": "I like park.",
+    "example_sentence": "我喜欢park。"
+  },
+  {
+    "id": "cc5a8636-2303-47d2-806c-ae1a40e6e16e",
+    "word": "party",
+    "definition_en": "A party.",
+    "collocation_en": "use party, have party",
+    "example_sentence_en": "I like party.",
+    "example_sentence": "我喜欢party。"
+  },
+  {
+    "id": "f1c0ea3a-2de8-4cbc-a3df-8dcce3ba589a",
+    "word": "passenger",
+    "definition_en": "A passenger.",
+    "collocation_en": "use passenger, have passenger",
+    "example_sentence_en": "I like passenger.",
+    "example_sentence": "我喜欢passenger。"
+  },
+  {
+    "id": "7e6e61d5-8f0a-46fe-b3ce-cbf51b3a7d72",
+    "word": "passport",
+    "definition_en": "A passport.",
+    "collocation_en": "use passport, have passport",
+    "example_sentence_en": "I like passport.",
+    "example_sentence": "我喜欢passport。"
+  },
+  {
+    "id": "fdead652-2a92-4850-8c3f-bccd7cf1c012",
+    "word": "pasta",
+    "definition_en": "A pasta.",
+    "collocation_en": "use pasta, have pasta",
+    "example_sentence_en": "I like pasta.",
+    "example_sentence": "我喜欢pasta。"
+  },
+  {
+    "id": "09199241-a636-4510-a1e8-d9d1021b8854",
+    "word": "pay for",
+    "definition_en": "A pay for.",
+    "collocation_en": "use pay for, have pay for",
+    "example_sentence_en": "I like pay for.",
+    "example_sentence": "我喜欢pay for。"
+  },
+  {
+    "id": "277fe0f8-0cc4-4d3a-9907-bed153921d93",
+    "word": "pen-friend",
+    "definition_en": "A pen-friend.",
+    "collocation_en": "use pen-friend, have pen-friend",
+    "example_sentence_en": "I like pen-friend.",
+    "example_sentence": "我喜欢pen-friend。"
+  },
+  {
+    "id": "8f698869-793f-463b-b2c7-183298824896",
+    "word": "pence",
+    "definition_en": "A pence.",
+    "collocation_en": "use pence, have pence",
+    "example_sentence_en": "I like pence.",
+    "example_sentence": "我喜欢pence。"
+  },
+  {
+    "id": "97f3e8ad-f0cc-44e4-b722-4cd3e5b3175d",
+    "word": "pennies",
+    "definition_en": "A pennies.",
+    "collocation_en": "use pennies, have pennies",
+    "example_sentence_en": "I like pennies.",
+    "example_sentence": "我喜欢pennies。"
+  },
+  {
+    "id": "c36307da-a121-4c6d-a092-c7d7f41c8740",
+    "word": "penny",
+    "definition_en": "A penny.",
+    "collocation_en": "use penny, have penny",
+    "example_sentence_en": "I like penny.",
+    "example_sentence": "我喜欢penny。"
+  },
+  {
+    "id": "b149fa22-c53c-44a7-b061-32e54557653d",
+    "word": "pepper",
+    "definition_en": "A pepper.",
+    "collocation_en": "use pepper, have pepper",
+    "example_sentence_en": "I like pepper.",
+    "example_sentence": "我喜欢pepper。"
+  },
+  {
+    "id": "35aa7e9d-60fb-44f5-b144-f0f54c06ead9",
+    "word": "petrol",
+    "definition_en": "A petrol.",
+    "collocation_en": "use petrol, have petrol",
+    "example_sentence_en": "I like petrol.",
+    "example_sentence": "我喜欢petrol。"
+  },
+  {
+    "id": "f630809d-89e7-4bca-b151-bc62dabb7044",
+    "word": "petrol station",
+    "definition_en": "A petrol station.",
+    "collocation_en": "use petrol station, have petrol station",
+    "example_sentence_en": "I like petrol station.",
+    "example_sentence": "我喜欢petrol station。"
+  },
+  {
+    "id": "18b995f3-ec80-43f7-83e2-0a1ceb97b3f0",
+    "word": "pharmacy",
+    "definition_en": "A pharmacy.",
+    "collocation_en": "use pharmacy, have pharmacy",
+    "example_sentence_en": "I like pharmacy.",
+    "example_sentence": "我喜欢pharmacy。"
+  },
+  {
+    "id": "71e98a83-6e9a-4f57-9729-b37b387fae77",
+    "word": "photographer",
+    "definition_en": "A photographer.",
+    "collocation_en": "use photographer, have photographer",
+    "example_sentence_en": "I like photographer.",
+    "example_sentence": "我喜欢photographer。"
+  },
+  {
+    "id": "81ee855b-3ab6-431a-88bf-ae91cf5302d8",
+    "word": "photography",
+    "definition_en": "A photography.",
+    "collocation_en": "use photography, have photography",
+    "example_sentence_en": "I like photography.",
+    "example_sentence": "我喜欢photography。"
+  },
+  {
+    "id": "aafe1e42-46fd-4592-b13b-98f93b6db9e0",
+    "word": "picnic",
+    "definition_en": "A picnic.",
+    "collocation_en": "use picnic, have picnic",
+    "example_sentence_en": "I like picnic.",
+    "example_sentence": "我喜欢picnic。"
+  },
+  {
+    "id": "66c2b47a-8bc0-407e-b92c-e7f7ec2da495",
+    "word": "pillow",
+    "definition_en": "A pillow.",
+    "collocation_en": "use pillow, have pillow",
+    "example_sentence_en": "I like pillow.",
+    "example_sentence": "我喜欢pillow。"
+  },
+  {
+    "id": "0845ca07-3566-4f8c-86f9-8c242ed44fe9",
+    "word": "pilot",
+    "definition_en": "A pilot.",
+    "collocation_en": "use pilot, have pilot",
+    "example_sentence_en": "I like pilot.",
+    "example_sentence": "我喜欢pilot。"
+  },
+  {
+    "id": "873354af-ed21-40b5-ab2d-bae067e36e79",
+    "word": "pink",
+    "definition_en": "The color a pale red.",
+    "collocation_en": "pink clothes, pink flower, very pink",
+    "example_sentence_en": "She wears a pink dress to the party.",
+    "example_sentence": "她穿着粉红色连衣裙参加聚会。"
+  },
+  {
+    "id": "bd4e6dcb-1cae-4cd9-aee2-4355dd6ee2ac",
+    "word": "pizza",
+    "definition_en": "A pizza.",
+    "collocation_en": "use pizza, have pizza",
+    "example_sentence_en": "I like pizza.",
+    "example_sentence": "我喜欢pizza。"
+  },
+  {
+    "id": "a26a21a1-caef-4fdb-beeb-2dc62013ec80",
+    "word": "plane",
+    "definition_en": "A plane.",
+    "collocation_en": "use plane, have plane",
+    "example_sentence_en": "I like plane.",
+    "example_sentence": "我喜欢plane。"
+  },
+  {
+    "id": "2bc96644-baae-4723-a0f6-d38a138119d2",
+    "word": "plant",
+    "definition_en": "A plant.",
+    "collocation_en": "use plant, have plant",
+    "example_sentence_en": "I like plant.",
+    "example_sentence": "我喜欢plant。"
+  },
+  {
+    "id": "62c124d0-ec98-4077-b359-ef015114e0bd",
+    "word": "plate",
+    "definition_en": "A plate.",
+    "collocation_en": "use plate, have plate",
+    "example_sentence_en": "I like plate.",
+    "example_sentence": "我喜欢plate。"
+  },
+  {
+    "id": "c6d36f70-3f4c-4069-8f84-20a140d9267a",
+    "word": "platform",
+    "definition_en": "A platform.",
+    "collocation_en": "use platform, have platform",
+    "example_sentence_en": "I like platform.",
+    "example_sentence": "我喜欢platform。"
+  },
+  {
+    "id": "e222ee62-aa32-4235-ac10-492f933a6658",
+    "word": "pocket",
+    "definition_en": "A pocket.",
+    "collocation_en": "use pocket, have pocket",
+    "example_sentence_en": "I like pocket.",
+    "example_sentence": "我喜欢pocket。"
+  },
+  {
+    "id": "2bba2354-bece-47aa-a6ae-b0f15980344c",
+    "word": "police car",
+    "definition_en": "A police car.",
+    "collocation_en": "use police car, have police car",
+    "example_sentence_en": "I like police car.",
+    "example_sentence": "我喜欢police car。"
+  },
+  {
+    "id": "bbfe7d9b-0788-4579-9b10-fc9189f559ab",
+    "word": "pool",
+    "definition_en": "A pool.",
+    "collocation_en": "use pool, have pool",
+    "example_sentence_en": "I like pool.",
+    "example_sentence": "我喜欢pool。"
+  },
+  {
+    "id": "de1747a9-d3dd-48df-87e1-76b87c8c18d5",
+    "word": "post office",
+    "definition_en": "A post office.",
+    "collocation_en": "use post office, have post office",
+    "example_sentence_en": "I like post office.",
+    "example_sentence": "我喜欢post office。"
+  },
+  {
+    "id": "a3453dec-47e3-46ba-80d7-2282a0aae349",
+    "word": "postcard",
+    "definition_en": "A postcard.",
+    "collocation_en": "use postcard, have postcard",
+    "example_sentence_en": "I like postcard.",
+    "example_sentence": "我喜欢postcard。"
+  },
+  {
+    "id": "29620366-c651-4bfc-bfa5-f4f29e19e873",
+    "word": "poster",
+    "definition_en": "A poster.",
+    "collocation_en": "use poster, have poster",
+    "example_sentence_en": "I like poster.",
+    "example_sentence": "我喜欢poster。"
+  },
+  {
+    "id": "a7a2861c-9e29-4ac8-a105-a944ea7ba3c0",
+    "word": "potato",
+    "definition_en": "A potato.",
+    "collocation_en": "use potato, have potato",
+    "example_sentence_en": "I like potato.",
+    "example_sentence": "我喜欢potato。"
+  },
+  {
+    "id": "077916ee-779a-4104-87cd-2dc621b39c91",
+    "word": "pound",
+    "definition_en": "A pound.",
+    "collocation_en": "use pound, have pound",
+    "example_sentence_en": "I like pound.",
+    "example_sentence": "我喜欢pound。"
+  },
+  {
+    "id": "0c4220cd-4a08-4bea-8c64-e7e4cc466690",
+    "word": "practice",
+    "definition_en": "A practice.",
+    "collocation_en": "use practice, have practice",
+    "example_sentence_en": "I like practice.",
+    "example_sentence": "我喜欢practice。"
+  },
+  {
+    "id": "e6882dac-8853-417a-9ef3-32ede4018fe0",
+    "word": "practise",
+    "definition_en": "A practise.",
+    "collocation_en": "use practise, have practise",
+    "example_sentence_en": "I like practise.",
+    "example_sentence": "我喜欢practise。"
+  },
+  {
+    "id": "c65b28a6-a614-414d-89a1-0a055506e4be",
+    "word": "present",
+    "definition_en": "A present.",
+    "collocation_en": "use present, have present",
+    "example_sentence_en": "I like present.",
+    "example_sentence": "我喜欢present。"
+  },
+  {
+    "id": "d41214b0-edc0-4712-8794-bf2583cd9aed",
+    "word": "price",
+    "definition_en": "A price.",
+    "collocation_en": "use price, have price",
+    "example_sentence_en": "I like price.",
+    "example_sentence": "我喜欢price。"
+  },
+  {
+    "id": "86cafd64-c954-4edf-a1c2-6a52e76012f6",
+    "word": "prize",
+    "definition_en": "A prize.",
+    "collocation_en": "use prize, have prize",
+    "example_sentence_en": "I like prize.",
+    "example_sentence": "我喜欢prize。"
+  },
+  {
+    "id": "7fcdf4ff-dc90-4446-bb2c-15e24e1c8a57",
+    "word": "problem",
+    "definition_en": "A problem.",
+    "collocation_en": "use problem, have problem",
+    "example_sentence_en": "I like problem.",
+    "example_sentence": "我喜欢problem。"
+  },
+  {
+    "id": "2e177704-d87b-4e78-b010-1e5e2b0b50cb",
+    "word": "programme",
+    "definition_en": "A programme.",
+    "collocation_en": "use programme, have programme",
+    "example_sentence_en": "I like programme.",
+    "example_sentence": "我喜欢programme。"
+  },
+  {
+    "id": "03b8862c-923a-42a1-88e1-3af452ed4686",
+    "word": "project",
+    "definition_en": "A project.",
+    "collocation_en": "use project, have project",
+    "example_sentence_en": "I like project.",
+    "example_sentence": "我喜欢project。"
+  },
+  {
+    "id": "c5a3edff-761f-4f3f-9639-7235ec8d7f5a",
+    "word": "pupil",
+    "definition_en": "A pupil.",
+    "collocation_en": "use pupil, have pupil",
+    "example_sentence_en": "I like pupil.",
+    "example_sentence": "我喜欢pupil。"
+  },
+  {
+    "id": "def2656a-8185-460c-a7f9-0764e78e242e",
+    "word": "purple",
+    "definition_en": "The color between red and blue.",
+    "collocation_en": "purple clothes, purple flower, very purple",
+    "example_sentence_en": "She wears a purple dress to the party.",
+    "example_sentence": "她穿着紫色连衣裙参加聚会。"
+  },
+  {
+    "id": "e19d0043-b4a4-4f90-b025-0f54c0dc2712",
+    "word": "purse",
+    "definition_en": "A purse.",
+    "collocation_en": "use purse, have purse",
+    "example_sentence_en": "I like purse.",
+    "example_sentence": "我喜欢purse。"
+  },
+  {
+    "id": "f73d2b69-6b72-4ce0-bc95-26b7839cdf0f",
+    "word": "quarter",
+    "definition_en": "A quarter.",
+    "collocation_en": "use quarter, have quarter",
+    "example_sentence_en": "I like quarter.",
+    "example_sentence": "我喜欢quarter。"
+  },
+  {
+    "id": "ea4097c6-e41e-4531-a7b4-2e4d06b2300c",
+    "word": "race",
+    "definition_en": "A race.",
+    "collocation_en": "use race, have race",
+    "example_sentence_en": "I like race.",
+    "example_sentence": "我喜欢race。"
+  },
+  {
+    "id": "73853e9b-f0f8-4c00-b703-bbe16006661c",
+    "word": "railway",
+    "definition_en": "A railway.",
+    "collocation_en": "use railway, have railway",
+    "example_sentence_en": "I like railway.",
+    "example_sentence": "我喜欢railway。"
+  },
+  {
+    "id": "061d2afb-abdd-4f3f-92fb-0e39d69dc5ec",
+    "word": "rain",
+    "definition_en": "A rain.",
+    "collocation_en": "use rain, have rain",
+    "example_sentence_en": "I like rain.",
+    "example_sentence": "我喜欢rain。"
+  },
+  {
+    "id": "f3a3fa03-9cbf-4fc3-a3a4-bc579c978a49",
+    "word": "raincoat",
+    "definition_en": "A raincoat.",
+    "collocation_en": "use raincoat, have raincoat",
+    "example_sentence_en": "I like raincoat.",
+    "example_sentence": "我喜欢raincoat。"
+  },
+  {
+    "id": "b4322040-ad48-4588-8de7-75553864deea",
+    "word": "receptionist",
+    "definition_en": "A receptionist.",
+    "collocation_en": "use receptionist, have receptionist",
+    "example_sentence_en": "I like receptionist.",
+    "example_sentence": "我喜欢receptionist。"
+  },
+  {
+    "id": "52e762f3-4024-4037-bcd4-6fdfd0e05ca9",
+    "word": "red",
+    "definition_en": "The color of blood or fire.",
+    "collocation_en": "red clothes, red flower, very red",
+    "example_sentence_en": "She wears a red dress to the party.",
+    "example_sentence": "她穿着红色连衣裙参加聚会。"
+  },
+  {
+    "id": "be9e2392-4f9d-4baf-b675-8bd278029f2b",
+    "word": "remember",
+    "definition_en": "A remember.",
+    "collocation_en": "use remember, have remember",
+    "example_sentence_en": "I like remember.",
+    "example_sentence": "我喜欢remember。"
+  },
+  {
+    "id": "3e56ad0b-f485-499e-9ef0-52e0addeae28",
+    "word": "restaurant",
+    "definition_en": "A restaurant.",
+    "collocation_en": "use restaurant, have restaurant",
+    "example_sentence_en": "I like restaurant.",
+    "example_sentence": "我喜欢restaurant。"
+  },
+  {
+    "id": "164a586a-8c07-4d44-b685-16122922679c",
+    "word": "riding",
+    "definition_en": "A riding.",
+    "collocation_en": "use riding, have riding",
+    "example_sentence_en": "I like riding.",
+    "example_sentence": "我喜欢riding。"
+  },
+  {
+    "id": "0d39529f-b60d-414d-a453-c9bb7cf9615a",
+    "word": "river",
+    "definition_en": "A river.",
+    "collocation_en": "use river, have river",
+    "example_sentence_en": "I like river.",
+    "example_sentence": "我喜欢river。"
+  },
+  {
+    "id": "ac5190d1-9797-43f3-ba6e-9d62623f8003",
+    "word": "roast",
+    "definition_en": "A roast.",
+    "collocation_en": "use roast, have roast",
+    "example_sentence_en": "I like roast.",
+    "example_sentence": "我喜欢roast。"
+  },
+  {
+    "id": "20889ac6-8858-4e37-b275-855a9cd54308",
+    "word": "roof",
+    "definition_en": "A roof.",
+    "collocation_en": "use roof, have roof",
+    "example_sentence_en": "I like roof.",
+    "example_sentence": "我喜欢roof。"
+  },
+  {
+    "id": "06f6a3d4-2d95-44ef-927e-410d9fd4d2a2",
+    "word": "roundabout",
+    "definition_en": "A roundabout.",
+    "collocation_en": "use roundabout, have roundabout",
+    "example_sentence_en": "I like roundabout.",
+    "example_sentence": "我喜欢roundabout。"
+  },
+  {
+    "id": "4634a220-a80d-476d-91a8-a61a87463cb8",
+    "word": "ruin",
+    "definition_en": "A ruin.",
+    "collocation_en": "use ruin, have ruin",
+    "example_sentence_en": "I like ruin.",
+    "example_sentence": "我喜欢ruin。"
+  },
+  {
+    "id": "af64f994-b795-49c4-8d05-68faab5fd879",
+    "word": "sailing",
+    "definition_en": "A sailing.",
+    "collocation_en": "use sailing, have sailing",
+    "example_sentence_en": "I like sailing.",
+    "example_sentence": "我喜欢sailing。"
+  },
+  {
+    "id": "540542c9-23eb-487a-8b4f-b878e7bae0bd",
+    "word": "salad",
+    "definition_en": "A salad.",
+    "collocation_en": "use salad, have salad",
+    "example_sentence_en": "I like salad.",
+    "example_sentence": "我喜欢salad。"
+  },
+  {
+    "id": "9d33f4f5-26e3-4b70-a686-7a4ae54178ac",
+    "word": "salt",
+    "definition_en": "A salt.",
+    "collocation_en": "use salt, have salt",
+    "example_sentence_en": "I like salt.",
+    "example_sentence": "我喜欢salt。"
+  },
+  {
+    "id": "e823ac90-c74f-46a1-b8e2-ce5d7f35e011",
+    "word": "sandwich",
+    "definition_en": "A sandwich.",
+    "collocation_en": "use sandwich, have sandwich",
+    "example_sentence_en": "I like sandwich.",
+    "example_sentence": "我喜欢sandwich。"
+  },
+  {
+    "id": "49d8e832-83b6-4a18-8210-cd38ee0a76dc",
+    "word": "Saturday",
+    "definition_en": "The seventh day of the week.",
+    "collocation_en": "on Saturday, Saturday morning",
+    "example_sentence_en": "I have English class on Saturday.",
+    "example_sentence": "我星期六有英语课。"
+  },
+  {
+    "id": "a91ee79e-267c-449a-8ea9-d8cc29350182",
+    "word": "school",
+    "definition_en": "A school.",
+    "collocation_en": "use school, have school",
+    "example_sentence_en": "I like school.",
+    "example_sentence": "我喜欢school。"
+  },
+  {
+    "id": "d4ac4f39-b97e-42e6-bee2-d74086db5435",
+    "word": "Science",
+    "definition_en": "A science.",
+    "collocation_en": "use Science, have Science",
+    "example_sentence_en": "I like Science.",
+    "example_sentence": "我喜欢Science。"
+  },
+  {
+    "id": "7a092525-ad94-4d05-adbd-b8672b7865a3",
+    "word": "sea",
+    "definition_en": "A sea.",
+    "collocation_en": "use sea, have sea",
+    "example_sentence_en": "I like sea.",
+    "example_sentence": "我喜欢sea。"
+  },
+  {
+    "id": "9360e51e-f102-4b64-89bb-59ad2fb93010",
+    "word": "second",
+    "definition_en": "A second.",
+    "collocation_en": "use second, have second",
+    "example_sentence_en": "I like second.",
+    "example_sentence": "我喜欢second。"
+  },
+  {
+    "id": "137812cb-359f-4206-b37c-57942151b354",
+    "word": "secretary",
+    "definition_en": "A secretary.",
+    "collocation_en": "use secretary, have secretary",
+    "example_sentence_en": "I like secretary.",
+    "example_sentence": "我喜欢secretary。"
+  },
+  {
+    "id": "8541bb14-049a-4e24-8a95-b3145fd57399",
+    "word": "September",
+    "definition_en": "The ninth month of the year.",
+    "collocation_en": "in September, early September, late September",
+    "example_sentence_en": "My birthday is in September.",
+    "example_sentence": "我的生日在九月。"
+  },
+  {
+    "id": "ff0d3a5c-9dd6-459d-b52f-831ec03eb339",
+    "word": "shirt",
+    "definition_en": "A shirt.",
+    "collocation_en": "use shirt, have shirt",
+    "example_sentence_en": "I like shirt.",
+    "example_sentence": "我喜欢shirt。"
+  },
+  {
+    "id": "3934043c-b746-4534-ab5c-0c2f234194b5",
+    "word": "shoe",
+    "definition_en": "A shoe.",
+    "collocation_en": "use shoe, have shoe",
+    "example_sentence_en": "I like shoe.",
+    "example_sentence": "我喜欢shoe。"
+  },
+  {
+    "id": "f2dcbb60-5e51-4e2e-9bf7-a2f54d74b3ea",
+    "word": "shop assistant",
+    "definition_en": "A shop assistant.",
+    "collocation_en": "use shop assistant, have shop assistant",
+    "example_sentence_en": "I like shop assistant.",
+    "example_sentence": "我喜欢shop assistant。"
+  },
+  {
+    "id": "15a0b7d1-ca85-43a2-93c9-644b1d7b2d23",
+    "word": "shorts",
+    "definition_en": "A shorts.",
+    "collocation_en": "use shorts, have shorts",
+    "example_sentence_en": "I like shorts.",
+    "example_sentence": "我喜欢shorts。"
+  },
+  {
+    "id": "52b6e197-eefd-4064-9cce-465dd8ef4ac6",
+    "word": "shower",
+    "definition_en": "A shower.",
+    "collocation_en": "use shower, have shower",
+    "example_sentence_en": "I like shower.",
+    "example_sentence": "我喜欢shower。"
+  },
+  {
+    "id": "9b0229d9-eb0c-46e8-8b7d-0ac223420625",
+    "word": "sick",
+    "definition_en": "A sick.",
+    "collocation_en": "use sick, have sick",
+    "example_sentence_en": "I like sick.",
+    "example_sentence": "我喜欢sick。"
+  },
+  {
+    "id": "a7a20c88-2217-453b-a916-22eb396f7318",
+    "word": "sitting room",
+    "definition_en": "A sitting room.",
+    "collocation_en": "use sitting room, have sitting room",
+    "example_sentence_en": "I like sitting room.",
+    "example_sentence": "我喜欢sitting room。"
+  },
+  {
+    "id": "4a3a6def-3201-4f9c-afba-ef841f5d6bfb",
+    "word": "skiing",
+    "definition_en": "A skiing.",
+    "collocation_en": "use skiing, have skiing",
+    "example_sentence_en": "I like skiing.",
+    "example_sentence": "我喜欢skiing。"
+  },
+  {
+    "id": "93722396-5441-45a4-a153-6dc860c73b78",
+    "word": "skirt",
+    "definition_en": "A skirt.",
+    "collocation_en": "use skirt, have skirt",
+    "example_sentence_en": "I like skirt.",
+    "example_sentence": "我喜欢skirt。"
+  },
+  {
+    "id": "0abd1ec7-5d04-4e68-a67d-bb429d4fb79b",
+    "word": "sky",
+    "definition_en": "A sky.",
+    "collocation_en": "use sky, have sky",
+    "example_sentence_en": "I like sky.",
+    "example_sentence": "我喜欢sky。"
+  },
+  {
+    "id": "8e9e4156-0ca1-4414-b2b0-c1109c1fddef",
+    "word": "slice",
+    "definition_en": "A slice.",
+    "collocation_en": "use slice, have slice",
+    "example_sentence_en": "I like slice.",
+    "example_sentence": "我喜欢slice。"
+  },
+  {
+    "id": "4f5154c0-c2ea-438d-a7f9-72ce86d54f98",
+    "word": "snack",
+    "definition_en": "A snack.",
+    "collocation_en": "use snack, have snack",
+    "example_sentence_en": "I like snack.",
+    "example_sentence": "我喜欢snack。"
+  },
+  {
+    "id": "46ff8ef8-6e84-41d2-8138-d28df57c4b52",
+    "word": "snow",
+    "definition_en": "A snow.",
+    "collocation_en": "use snow, have snow",
+    "example_sentence_en": "I like snow.",
+    "example_sentence": "我喜欢snow。"
+  },
+  {
+    "id": "bab8144d-0c41-4a3a-a029-d224c592f8a3",
+    "word": "soap",
+    "definition_en": "A soap.",
+    "collocation_en": "use soap, have soap",
+    "example_sentence_en": "I like soap.",
+    "example_sentence": "我喜欢soap。"
+  },
+  {
+    "id": "2ab12661-063e-4c08-a6a8-6ea72fa8f6e9",
+    "word": "sofa",
+    "definition_en": "A sofa.",
+    "collocation_en": "use sofa, have sofa",
+    "example_sentence_en": "I like sofa.",
+    "example_sentence": "我喜欢sofa。"
+  },
+  {
+    "id": "8fd9bccc-534c-42c8-8ffb-9e4faed2df5d",
+    "word": "soup",
+    "definition_en": "A soup.",
+    "collocation_en": "use soup, have soup",
+    "example_sentence_en": "I like soup.",
+    "example_sentence": "我喜欢soup。"
+  },
+  {
+    "id": "ea430411-4127-4ba0-8aef-2fc0eda6406d",
+    "word": "south",
+    "definition_en": "A south.",
+    "collocation_en": "use south, have south",
+    "example_sentence_en": "I like south.",
+    "example_sentence": "我喜欢south。"
+  },
+  {
+    "id": "24f9ebae-4b27-4ae1-9997-f28aef72eac3",
+    "word": "space",
+    "definition_en": "A space.",
+    "collocation_en": "use space, have space",
+    "example_sentence_en": "I like space.",
+    "example_sentence": "我喜欢space。"
+  },
+  {
+    "id": "b57ca229-b48e-4668-9fee-203d2e6ef514",
+    "word": "spell",
+    "definition_en": "A spell.",
+    "collocation_en": "use spell, have spell",
+    "example_sentence_en": "I like spell.",
+    "example_sentence": "我喜欢spell。"
+  },
+  {
+    "id": "0533b2b8-95f1-43e8-932f-44897969b799",
+    "word": "spelt",
+    "definition_en": "A spelt.",
+    "collocation_en": "use spelt, have spelt",
+    "example_sentence_en": "I like spelt.",
+    "example_sentence": "我喜欢spelt。"
+  },
+  {
+    "id": "667e3834-33bc-4219-96ce-506283950609",
+    "word": "sports centre",
+    "definition_en": "A sports centre.",
+    "collocation_en": "use sports centre, have sports centre",
+    "example_sentence_en": "I like sports centre.",
+    "example_sentence": "我喜欢sports centre。"
+  },
+  {
+    "id": "27529bc2-37a6-4637-b028-80b985279398",
+    "word": "spring",
+    "definition_en": "A spring.",
+    "collocation_en": "use spring, have spring",
+    "example_sentence_en": "I like spring.",
+    "example_sentence": "我喜欢spring。"
+  },
+  {
+    "id": "dd8b34e3-5952-4fd6-aad1-fc18cf04751e",
+    "word": "square",
+    "definition_en": "A square.",
+    "collocation_en": "use square, have square",
+    "example_sentence_en": "I like square.",
+    "example_sentence": "我喜欢square。"
+  },
+  {
+    "id": "2b389d8c-c71b-4c3b-a7cf-41f53310ac09",
+    "word": "stadium",
+    "definition_en": "A stadium.",
+    "collocation_en": "use stadium, have stadium",
+    "example_sentence_en": "I like stadium.",
+    "example_sentence": "我喜欢stadium。"
+  },
+  {
+    "id": "d2885bd8-e66c-4388-8717-55fc3fe2f169",
+    "word": "staff",
+    "definition_en": "A staff.",
+    "collocation_en": "use staff, have staff",
+    "example_sentence_en": "I like staff.",
+    "example_sentence": "我喜欢staff。"
+  },
+  {
+    "id": "c076b278-6a8c-4616-89d7-58e7d99e93db",
+    "word": "star",
+    "definition_en": "A star.",
+    "collocation_en": "use star, have star",
+    "example_sentence_en": "I like star.",
+    "example_sentence": "我喜欢star。"
+  },
+  {
+    "id": "8ce932cc-d01a-4325-9c1c-2c0bbad1b1b3",
+    "word": "steak",
+    "definition_en": "A steak.",
+    "collocation_en": "use steak, have steak",
+    "example_sentence_en": "I like steak.",
+    "example_sentence": "我喜欢steak。"
+  },
+  {
+    "id": "3f19b22e-b757-4c3c-8c17-fa47df268e05",
+    "word": "storm",
+    "definition_en": "A storm.",
+    "collocation_en": "use storm, have storm",
+    "example_sentence_en": "I like storm.",
+    "example_sentence": "我喜欢storm。"
+  },
+  {
+    "id": "8a749ce0-a469-4676-be52-b5d400af2df0",
+    "word": "subject",
+    "definition_en": "A subject.",
+    "collocation_en": "use subject, have subject",
+    "example_sentence_en": "I like subject.",
+    "example_sentence": "我喜欢subject。"
+  },
+  {
+    "id": "6c4ed0f8-d6db-4fc5-b1c0-cbafd2cd2fb4",
+    "word": "sugar",
+    "definition_en": "A sugar.",
+    "collocation_en": "use sugar, have sugar",
+    "example_sentence_en": "I like sugar.",
+    "example_sentence": "我喜欢sugar。"
+  },
+  {
+    "id": "c158baf1-1176-483d-bf7c-809590bca494",
+    "word": "suit",
+    "definition_en": "A suit.",
+    "collocation_en": "use suit, have suit",
+    "example_sentence_en": "I like suit.",
+    "example_sentence": "我喜欢suit。"
+  },
+  {
+    "id": "5d2aa589-a8cd-4cb2-80a3-01dc3594d7f9",
+    "word": "suitcase",
+    "definition_en": "A suitcase.",
+    "collocation_en": "use suitcase, have suitcase",
+    "example_sentence_en": "I like suitcase.",
+    "example_sentence": "我喜欢suitcase。"
+  },
+  {
+    "id": "78395b2d-1d66-4b3e-a7cd-b0b3d09bc157",
+    "word": "summer",
+    "definition_en": "A summer.",
+    "collocation_en": "use summer, have summer",
+    "example_sentence_en": "I like summer.",
+    "example_sentence": "我喜欢summer。"
+  },
+  {
+    "id": "5d7b7c6c-027e-4450-8458-85fad2ed2c4e",
+    "word": "sun",
+    "definition_en": "A sun.",
+    "collocation_en": "use sun, have sun",
+    "example_sentence_en": "I like sun.",
+    "example_sentence": "我喜欢sun。"
+  },
+  {
+    "id": "db2218f6-cb14-4c65-9d7c-11d90f2fb4f2",
+    "word": "Sunday",
+    "definition_en": "The first day of the week.",
+    "collocation_en": "on Sunday, Sunday morning",
+    "example_sentence_en": "I have English class on Sunday.",
+    "example_sentence": "我星期日有英语课。"
+  },
+  {
+    "id": "34c0744b-ee1e-4b13-9d9a-3b1edced2579",
+    "word": "sunny",
+    "definition_en": "A sunny.",
+    "collocation_en": "use sunny, have sunny",
+    "example_sentence_en": "I like sunny.",
+    "example_sentence": "我喜欢sunny。"
+  },
+  {
+    "id": "de6b3a35-ca5d-4450-907b-f2376a367da6",
+    "word": "supermarket",
+    "definition_en": "A supermarket.",
+    "collocation_en": "use supermarket, have supermarket",
+    "example_sentence_en": "I like supermarket.",
+    "example_sentence": "我喜欢supermarket。"
+  },
+  {
+    "id": "bd4f548c-c014-4eb4-a2b6-7c7af0487121",
+    "word": "surname",
+    "definition_en": "A surname.",
+    "collocation_en": "use surname, have surname",
+    "example_sentence_en": "I like surname.",
+    "example_sentence": "我喜欢surname。"
+  },
+  {
+    "id": "e4b4c7d3-b705-4d4f-840a-3738496ba47b",
+    "word": "sweater",
+    "definition_en": "A sweater.",
+    "collocation_en": "use sweater, have sweater",
+    "example_sentence_en": "I like sweater.",
+    "example_sentence": "我喜欢sweater。"
+  },
+  {
+    "id": "2c7c56a3-ba7a-47d0-b479-3980c1c1a9cd",
+    "word": "sweet",
+    "definition_en": "A sweet.",
+    "collocation_en": "use sweet, have sweet",
+    "example_sentence_en": "I like sweet.",
+    "example_sentence": "我喜欢sweet。"
+  },
+  {
+    "id": "f2c8812f-3613-404d-8a5f-d77fd177845b",
+    "word": "swimming",
+    "definition_en": "A swimming.",
+    "collocation_en": "use swimming, have swimming",
+    "example_sentence_en": "I like swimming.",
+    "example_sentence": "我喜欢swimming。"
+  },
+  {
+    "id": "a6da4190-621d-498e-99c3-f63a8472466a",
+    "word": "T-shirt",
+    "definition_en": "A t-shirt.",
+    "collocation_en": "use T-shirt, have T-shirt",
+    "example_sentence_en": "I like T-shirt.",
+    "example_sentence": "我喜欢T-shirt。"
+  },
+  {
+    "id": "c4b3f807-94f4-4c46-ab5b-b51c03efa4c9",
+    "word": "table tennis",
+    "definition_en": "A table tennis.",
+    "collocation_en": "use table tennis, have table tennis",
+    "example_sentence_en": "I like table tennis.",
+    "example_sentence": "我喜欢table tennis。"
+  },
+  {
+    "id": "41f7b563-529c-41dc-9eda-b74df6041975",
+    "word": "team",
+    "definition_en": "A team.",
+    "collocation_en": "use team, have team",
+    "example_sentence_en": "I like team.",
+    "example_sentence": "我喜欢team。"
+  },
+  {
+    "id": "872ec5c8-6d80-4357-ad6a-6e68560bd271",
+    "word": "teenager",
+    "definition_en": "A teenager.",
+    "collocation_en": "use teenager, have teenager",
+    "example_sentence_en": "I like teenager.",
+    "example_sentence": "我喜欢teenager。"
+  },
+  {
+    "id": "560dcbed-6cb7-488e-829d-495dd3167eb3",
+    "word": "temperature",
+    "definition_en": "A temperature.",
+    "collocation_en": "use temperature, have temperature",
+    "example_sentence_en": "I like temperature.",
+    "example_sentence": "我喜欢temperature。"
+  },
+  {
+    "id": "d0ae5ee7-f302-4d7d-a4d4-784348b87a9c",
+    "word": "tent",
+    "definition_en": "A tent.",
+    "collocation_en": "use tent, have tent",
+    "example_sentence_en": "I like tent.",
+    "example_sentence": "我喜欢tent。"
+  },
+  {
+    "id": "c42c046c-be01-4ec6-a4af-edbc90ffeced",
+    "word": "terrible",
+    "definition_en": "A terrible.",
+    "collocation_en": "use terrible, have terrible",
+    "example_sentence_en": "I like terrible.",
+    "example_sentence": "我喜欢terrible。"
+  },
+  {
+    "id": "c8be23ee-3efe-4a09-892b-eb7b420a246c",
+    "word": "theatre",
+    "definition_en": "A theatre.",
+    "collocation_en": "use theatre, have theatre",
+    "example_sentence_en": "I like theatre.",
+    "example_sentence": "我喜欢theatre。"
+  },
+  {
+    "id": "ecba021e-e61e-4db1-87c1-2f92dc4e0a97",
+    "word": "thirsty",
+    "definition_en": "A thirsty.",
+    "collocation_en": "use thirsty, have thirsty",
+    "example_sentence_en": "I like thirsty.",
+    "example_sentence": "我喜欢thirsty。"
+  },
+  {
+    "id": "c87ef8cc-54f5-427a-8d09-83593c733915",
+    "word": "through",
+    "definition_en": "A through.",
+    "collocation_en": "use through, have through",
+    "example_sentence_en": "I like through.",
+    "example_sentence": "我喜欢through。"
+  },
+  {
+    "id": "7b3b5166-64ac-4a59-a763-b8420337ae6e",
+    "word": "throw",
+    "definition_en": "A throw.",
+    "collocation_en": "use throw, have throw",
+    "example_sentence_en": "I like throw.",
+    "example_sentence": "我喜欢throw。"
+  },
+  {
+    "id": "fd936cf4-4897-4af7-b526-c17bd639d475",
+    "word": "thunderstorm",
+    "definition_en": "A thunderstorm.",
+    "collocation_en": "use thunderstorm, have thunderstorm",
+    "example_sentence_en": "I like thunderstorm.",
+    "example_sentence": "我喜欢thunderstorm。"
+  },
+  {
+    "id": "3c56c55e-518d-48b7-a26f-a8116d1bce61",
+    "word": "Thursday",
+    "definition_en": "The fifth day of the week.",
+    "collocation_en": "on Thursday, Thursday morning",
+    "example_sentence_en": "I have English class on Thursday.",
+    "example_sentence": "我星期四有英语课。"
+  },
+  {
+    "id": "2e0847a8-e38c-49f3-a655-872f233ab750",
+    "word": "ticket",
+    "definition_en": "A ticket.",
+    "collocation_en": "use ticket, have ticket",
+    "example_sentence_en": "I like ticket.",
+    "example_sentence": "我喜欢ticket。"
+  },
+  {
+    "id": "cb015939-db69-4613-8a17-5d3b86c28961",
+    "word": "tights",
+    "definition_en": "A tights.",
+    "collocation_en": "use tights, have tights",
+    "example_sentence_en": "I like tights.",
+    "example_sentence": "我喜欢tights。"
+  },
+  {
+    "id": "9fda8e24-e36f-4004-9bac-72052b239c84",
+    "word": "tired",
+    "definition_en": "A tired.",
+    "collocation_en": "use tired, have tired",
+    "example_sentence_en": "I like tired.",
+    "example_sentence": "我喜欢tired。"
+  },
+  {
+    "id": "61abd4d8-6983-4910-b429-b847919403af",
+    "word": "toilet",
+    "definition_en": "A toilet.",
+    "collocation_en": "use toilet, have toilet",
+    "example_sentence_en": "I like toilet.",
+    "example_sentence": "我喜欢toilet。"
+  },
+  {
+    "id": "165214cc-054c-4d1d-b6fa-f51a861370a6",
+    "word": "tomato",
+    "definition_en": "A tomato.",
+    "collocation_en": "use tomato, have tomato",
+    "example_sentence_en": "I like tomato.",
+    "example_sentence": "我喜欢tomato。"
+  },
+  {
+    "id": "cae7e81f-9014-49d0-9666-6c4aabfcdfdc",
+    "word": "tonight",
+    "definition_en": "A tonight.",
+    "collocation_en": "use tonight, have tonight",
+    "example_sentence_en": "I like tonight.",
+    "example_sentence": "我喜欢tonight。"
+  },
+  {
+    "id": "e5dd077e-a6bf-493c-a9e5-a3d63c2a4325",
+    "word": "toothbrush",
+    "definition_en": "A toothbrush.",
+    "collocation_en": "use toothbrush, have toothbrush",
+    "example_sentence_en": "I like toothbrush.",
+    "example_sentence": "我喜欢toothbrush。"
+  },
+  {
+    "id": "c4166414-8750-4185-b2a5-160e4c72fa7c",
+    "word": "tour",
+    "definition_en": "A tour.",
+    "collocation_en": "use tour, have tour",
+    "example_sentence_en": "I like tour.",
+    "example_sentence": "我喜欢tour。"
+  },
+  {
+    "id": "b367561d-41f1-43a3-9330-a2b9ff23474a",
+    "word": "tour guide",
+    "definition_en": "A tour guide.",
+    "collocation_en": "use tour guide, have tour guide",
+    "example_sentence_en": "I like tour guide.",
+    "example_sentence": "我喜欢tour guide。"
+  },
+  {
+    "id": "1fefb1ba-d9ee-4481-94a6-3f08008d49ea",
+    "word": "tourist",
+    "definition_en": "A tourist.",
+    "collocation_en": "use tourist, have tourist",
+    "example_sentence_en": "I like tourist.",
+    "example_sentence": "我喜欢tourist。"
+  },
+  {
+    "id": "535d2d89-4fae-4906-b4cc-a6eee0f4af97",
+    "word": "tourist information centre",
+    "definition_en": "A tourist information centre.",
+    "collocation_en": "use tourist information centre, have tourist information centre",
+    "example_sentence_en": "I like tourist information centre.",
+    "example_sentence": "我喜欢tourist information centre。"
+  },
+  {
+    "id": "86672d1d-2d97-49c3-8c9b-6d170fa4dec9",
+    "word": "traffic",
+    "definition_en": "A traffic.",
+    "collocation_en": "use traffic, have traffic",
+    "example_sentence_en": "I like traffic.",
+    "example_sentence": "我喜欢traffic。"
+  },
+  {
+    "id": "40175b34-0b66-46c2-9aaf-31ca12831e85",
+    "word": "traffic lights",
+    "definition_en": "A traffic lights.",
+    "collocation_en": "use traffic lights, have traffic lights",
+    "example_sentence_en": "I like traffic lights.",
+    "example_sentence": "我喜欢traffic lights。"
+  },
+  {
+    "id": "616aba8d-c0d5-4c8b-ba47-451b9a4d5819",
+    "word": "trainer",
+    "definition_en": "A trainer.",
+    "collocation_en": "use trainer, have trainer",
+    "example_sentence_en": "I like trainer.",
+    "example_sentence": "我喜欢trainer。"
+  },
+  {
+    "id": "d6e1c1f4-b233-4c4f-8641-462c9969b388",
+    "word": "trainers",
+    "definition_en": "A trainers.",
+    "collocation_en": "use trainers, have trainers",
+    "example_sentence_en": "I like trainers.",
+    "example_sentence": "我喜欢trainers。"
+  },
+  {
+    "id": "18b4e3f6-9ebb-443b-8d5d-9eeb9f2b31d4",
+    "word": "travel agency",
+    "definition_en": "A travel agency.",
+    "collocation_en": "use travel agency, have travel agency",
+    "example_sentence_en": "I like travel agency.",
+    "example_sentence": "我喜欢travel agency。"
+  },
+  {
+    "id": "55ecf58f-f8a4-4344-b5ef-fa6992bed6dd",
+    "word": "tree",
+    "definition_en": "A tree.",
+    "collocation_en": "use tree, have tree",
+    "example_sentence_en": "I like tree.",
+    "example_sentence": "我喜欢tree。"
+  },
+  {
+    "id": "74f61900-e6a3-47a4-8f1e-ca58711e40a0",
+    "word": "trousers",
+    "definition_en": "A trousers.",
+    "collocation_en": "use trousers, have trousers",
+    "example_sentence_en": "I like trousers.",
+    "example_sentence": "我喜欢trousers。"
+  },
+  {
+    "id": "42feab89-ce48-41ae-ac31-ceab9b54cece",
+    "word": "try on",
+    "definition_en": "A try on.",
+    "collocation_en": "use try on, have try on",
+    "example_sentence_en": "I like try on.",
+    "example_sentence": "我喜欢try on。"
+  },
+  {
+    "id": "f3e591e6-55d5-44b3-a01b-65285c87463b",
+    "word": "Tuesday",
+    "definition_en": "The third day of the week.",
+    "collocation_en": "on Tuesday, Tuesday morning",
+    "example_sentence_en": "I have English class on Tuesday.",
+    "example_sentence": "我星期二有英语课。"
+  },
+  {
+    "id": "6548ef9f-cfd0-468a-8a9f-a1ee1f7a2ba6",
+    "word": "umbrella",
+    "definition_en": "A umbrella.",
+    "collocation_en": "use umbrella, have umbrella",
+    "example_sentence_en": "I like umbrella.",
+    "example_sentence": "我喜欢umbrella。"
+  },
+  {
+    "id": "82209100-3bb1-480d-9973-fd2426efe6f5",
+    "word": "underground",
+    "definition_en": "A underground.",
+    "collocation_en": "use underground, have underground",
+    "example_sentence_en": "I like underground.",
+    "example_sentence": "我喜欢underground。"
+  },
+  {
+    "id": "5b0f849d-99a8-4734-bcec-5204b6f99a6b",
+    "word": "uniform",
+    "definition_en": "A uniform.",
+    "collocation_en": "use uniform, have uniform",
+    "example_sentence_en": "I like uniform.",
+    "example_sentence": "我喜欢uniform。"
+  },
+  {
+    "id": "11311cc8-3c46-4ec4-a4ca-dd6422944b01",
+    "word": "university",
+    "definition_en": "A university.",
+    "collocation_en": "use university, have university",
+    "example_sentence_en": "I like university.",
+    "example_sentence": "我喜欢university。"
+  },
+  {
+    "id": "afe42eb9-e767-4b90-8c57-b02b506174a9",
+    "word": "vegetable",
+    "definition_en": "A vegetable.",
+    "collocation_en": "use vegetable, have vegetable",
+    "example_sentence_en": "I like vegetable.",
+    "example_sentence": "我喜欢vegetable。"
+  },
+  {
+    "id": "8fde3040-d418-4cae-a5e8-6466615b53d8",
+    "word": "village",
+    "definition_en": "A village.",
+    "collocation_en": "use village, have village",
+    "example_sentence_en": "I like village.",
+    "example_sentence": "我喜欢village。"
+  },
+  {
+    "id": "6d69fddd-088b-4afc-ae37-67b950b47a04",
+    "word": "visit",
+    "definition_en": "A visit.",
+    "collocation_en": "use visit, have visit",
+    "example_sentence_en": "I like visit.",
+    "example_sentence": "我喜欢visit。"
+  },
+  {
+    "id": "6529804a-5622-4119-9c31-488be3a69ba3",
+    "word": "visitor",
+    "definition_en": "A visitor.",
+    "collocation_en": "use visitor, have visitor",
+    "example_sentence_en": "I like visitor.",
+    "example_sentence": "我喜欢visitor。"
+  },
+  {
+    "id": "bcc10c79-cac2-44b1-b484-cb0433ff4d6a",
+    "word": "volleyball",
+    "definition_en": "A volleyball.",
+    "collocation_en": "use volleyball, have volleyball",
+    "example_sentence_en": "I like volleyball.",
+    "example_sentence": "我喜欢volleyball。"
+  },
+  {
+    "id": "f2ae2b52-78e1-4d82-a762-ed150116d84d",
+    "word": "waiter",
+    "definition_en": "A waiter.",
+    "collocation_en": "use waiter, have waiter",
+    "example_sentence_en": "I like waiter.",
+    "example_sentence": "我喜欢waiter。"
+  },
+  {
+    "id": "20f3fccf-e50b-4c93-aa6f-c0ee88289855",
+    "word": "waitress",
+    "definition_en": "A waitress.",
+    "collocation_en": "use waitress, have waitress",
+    "example_sentence_en": "I like waitress.",
+    "example_sentence": "我喜欢waitress。"
+  },
+  {
+    "id": "f2de395d-d349-4481-9a34-5c8bff5745cc",
+    "word": "wallet",
+    "definition_en": "A wallet.",
+    "collocation_en": "use wallet, have wallet",
+    "example_sentence_en": "I like wallet.",
+    "example_sentence": "我喜欢wallet。"
+  },
+  {
+    "id": "71c98697-be9a-4f64-914c-3ad7997d4a0a",
+    "word": "warm",
+    "definition_en": "A warm.",
+    "collocation_en": "use warm, have warm",
+    "example_sentence_en": "I like warm.",
+    "example_sentence": "我喜欢warm。"
+  },
+  {
+    "id": "f4fddfab-e28b-44b4-bb76-65916dcfdb2c",
+    "word": "watch",
+    "definition_en": "A watch.",
+    "collocation_en": "use watch, have watch",
+    "example_sentence_en": "I like watch.",
+    "example_sentence": "我喜欢watch。"
+  },
+  {
+    "id": "2a9cb9f1-4f22-48f9-b6df-276c15432499",
+    "word": "water",
+    "definition_en": "A water.",
+    "collocation_en": "use water, have water",
+    "example_sentence_en": "I like water.",
+    "example_sentence": "我喜欢water。"
+  },
+  {
+    "id": "c8f718ce-c966-4fdf-97a4-7132c354dc74",
+    "word": "wear",
+    "definition_en": "A wear.",
+    "collocation_en": "use wear, have wear",
+    "example_sentence_en": "I like wear.",
+    "example_sentence": "我喜欢wear。"
+  },
+  {
+    "id": "c7cd1010-04c8-4c9e-abd0-e1b94c25ddf2",
+    "word": "weather",
+    "definition_en": "A weather.",
+    "collocation_en": "use weather, have weather",
+    "example_sentence_en": "I like weather.",
+    "example_sentence": "我喜欢weather。"
+  },
+  {
+    "id": "c14a21bf-0ed8-4651-94ee-d7617359cb6f",
+    "word": "website",
+    "definition_en": "A website.",
+    "collocation_en": "use website, have website",
+    "example_sentence_en": "I like website.",
+    "example_sentence": "我喜欢website。"
+  },
+  {
+    "id": "84babfad-a6e4-4f9d-80c1-61d967f6b45d",
+    "word": "Wednesday",
+    "definition_en": "The fourth day of the week.",
+    "collocation_en": "on Wednesday, Wednesday morning",
+    "example_sentence_en": "I have English class on Wednesday.",
+    "example_sentence": "我星期三有英语课。"
+  },
+  {
+    "id": "2e111702-41de-4125-9b7e-3605ba663b08",
+    "word": "week",
+    "definition_en": "A week.",
+    "collocation_en": "use week, have week",
+    "example_sentence_en": "I like week.",
+    "example_sentence": "我喜欢week。"
+  },
+  {
+    "id": "4a3acf71-23ab-45b5-b853-a3f2c8992828",
+    "word": "weekend",
+    "definition_en": "A weekend.",
+    "collocation_en": "use weekend, have weekend",
+    "example_sentence_en": "I like weekend.",
+    "example_sentence": "我喜欢weekend。"
+  },
+  {
+    "id": "ce182182-5d95-4fb1-b85f-9d540a89dbb3",
+    "word": "west",
+    "definition_en": "A west.",
+    "collocation_en": "use west, have west",
+    "example_sentence_en": "I like west.",
+    "example_sentence": "我喜欢west。"
+  },
+  {
+    "id": "e529f097-9c15-41e4-bcaa-d54513907320",
+    "word": "wet",
+    "definition_en": "A wet.",
+    "collocation_en": "use wet, have wet",
+    "example_sentence_en": "I like wet.",
+    "example_sentence": "我喜欢wet。"
+  },
+  {
+    "id": "437d50d3-f8a6-4b36-9ab2-ec2bca0ebf5b",
+    "word": "wheel",
+    "definition_en": "A wheel.",
+    "collocation_en": "use wheel, have wheel",
+    "example_sentence_en": "I like wheel.",
+    "example_sentence": "我喜欢wheel。"
+  },
+  {
+    "id": "71549ede-94ed-4429-baf2-7bbf16123038",
+    "word": "white",
+    "definition_en": "The color of snow or milk.",
+    "collocation_en": "white clothes, white flower, very white",
+    "example_sentence_en": "She wears a white dress to the party.",
+    "example_sentence": "她穿着白色连衣裙参加聚会。"
+  },
+  {
+    "id": "54df4e34-738c-461c-aa2f-ca9db594e704",
+    "word": "wife",
+    "definition_en": "A wife.",
+    "collocation_en": "use wife, have wife",
+    "example_sentence_en": "I like wife.",
+    "example_sentence": "我喜欢wife。"
+  },
+  {
+    "id": "0870bc15-4cbc-48cf-9e0d-a6e23d886f75",
+    "word": "wind",
+    "definition_en": "A wind.",
+    "collocation_en": "use wind, have wind",
+    "example_sentence_en": "I like wind.",
+    "example_sentence": "我喜欢wind。"
+  },
+  {
+    "id": "c7f1fb9e-3e0d-4af6-9263-75c32dadb3f8",
+    "word": "windy",
+    "definition_en": "A windy.",
+    "collocation_en": "use windy, have windy",
+    "example_sentence_en": "I like windy.",
+    "example_sentence": "我喜欢windy。"
+  },
+  {
+    "id": "fafe2fef-fbb7-4dcf-a677-daf6de807e06",
+    "word": "winner",
+    "definition_en": "A winner.",
+    "collocation_en": "use winner, have winner",
+    "example_sentence_en": "I like winner.",
+    "example_sentence": "我喜欢winner。"
+  },
+  {
+    "id": "43bf6ca8-d865-4481-9dae-8269c5e9d648",
+    "word": "winter",
+    "definition_en": "A winter.",
+    "collocation_en": "use winter, have winter",
+    "example_sentence_en": "I like winter.",
+    "example_sentence": "我喜欢winter。"
+  },
+  {
+    "id": "aa909d65-6000-4e8a-9cc5-d74c074f82fc",
+    "word": "wood",
+    "definition_en": "A wood.",
+    "collocation_en": "use wood, have wood",
+    "example_sentence_en": "I like wood.",
+    "example_sentence": "我喜欢wood。"
+  },
+  {
+    "id": "cf952c13-41b4-4cb5-8a6b-b91c78099be1",
+    "word": "wool",
+    "definition_en": "A wool.",
+    "collocation_en": "use wool, have wool",
+    "example_sentence_en": "I like wool.",
+    "example_sentence": "我喜欢wool。"
+  },
+  {
+    "id": "458182c1-5578-4361-8e58-6f6616e6ee16",
+    "word": "world",
+    "definition_en": "A world.",
+    "collocation_en": "use world, have world",
+    "example_sentence_en": "I like world.",
+    "example_sentence": "我喜欢world。"
+  },
+  {
+    "id": "201ae0e6-f0f7-4760-9fea-dc44bf7445dd",
+    "word": "yellow",
+    "definition_en": "The color of the sun or gold.",
+    "collocation_en": "yellow clothes, yellow flower, very yellow",
+    "example_sentence_en": "She wears a yellow dress to the party.",
+    "example_sentence": "她穿着黄色连衣裙参加聚会。"
+  },
+  {
+    "id": "fd5f38b5-78ab-4abe-829d-44ea7a136e8a",
+    "word": "zoo",
+    "definition_en": "A zoo.",
+    "collocation_en": "use zoo, have zoo",
+    "example_sentence_en": "I like zoo.",
+    "example_sentence": "我喜欢zoo。"
+  }
+]

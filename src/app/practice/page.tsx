@@ -27,7 +27,7 @@
 
 "use client"
 
-import React, { useState, useEffect, useCallback, useRef, useMemo } from 'react'
+import React, { useState, useEffect, useCallback, useRef, useMemo, Suspense } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
@@ -140,6 +140,10 @@ function QwertyPracticePage() {
   const [userId, setUserId] = useState<string | undefined>(undefined)
   const [showStartOverlay, setShowStartOverlay] = useState(true) // 开始遮罩
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200) // 窗口宽度
+  const [controlBarExpanded, setControlBarExpanded] = useState(false) // 控制栏展开状态（默认折叠）
+
+  // ==================== mounted 状态（防止 hydration mismatch）====================
+  const [mounted, setMounted] = useState(false)
 
   // ==================== 应用状态 ====================
   const [state, setState] = useState<AppState>({
@@ -213,22 +217,6 @@ function QwertyPracticePage() {
 
   const currentTrans = currentWord?.trans || ''
   const currentWordStr = currentWord?.word || '' // 用于依赖项的稳定字符串
-
-  // 调试日志：检查当前状态
-  useEffect(() => {
-    console.log('[Debug] State check:', {
-      currentDict: currentDict?.id,
-      currentDictName: currentDict?.name,
-      currentDictDescription: currentDict?.description,
-      dictWordsLength: currentDict?.words?.length,
-      currentIndex: state.currentIndex,
-      currentWord: currentWord?.word,
-      userInput: state.userInput,
-      isPlaying: state.isPlaying,
-      startTime: state.startTime,
-      showStartOverlay
-    })
-  }, [currentDict, state.currentIndex, currentWord, state.userInput, state.isPlaying, state.startTime, showStartOverlay])
 
   // ==================== 窗口大小监听（响应式字号）====================
   useEffect(() => {
@@ -829,25 +817,37 @@ function QwertyPracticePage() {
     if (typeof window === 'undefined') return
 
     try {
-      // 使用 Web Audio API 生成成功提示音（清脆的"叮"声）
+      // 使用 Web Audio API 生成学习奖励音效（三音符上升琶音，更有成就感）
       const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
-      const oscillator = audioContext.createOscillator()
-      const gainNode = audioContext.createGain()
 
-      oscillator.connect(gainNode)
-      gainNode.connect(audioContext.destination)
+      // 创建三个振荡器，形成大三和弦琶音
+      const notes = [
+        { freq: 523.25, startTime: 0, duration: 0.15 },      // C5
+        { freq: 659.25, startTime: 0.1, duration: 0.15 },    // E5
+        { freq: 783.99, startTime: 0.2, duration: 0.25 }     // G5
+      ]
 
-      // 设置音调（高音A5，明亮）
-      oscillator.frequency.setValueAtTime(880, audioContext.currentTime)
-      oscillator.frequency.exponentialRampToValueAtTime(1760, audioContext.currentTime + 0.1)
+      notes.forEach(({ freq, startTime, duration }) => {
+        const oscillator = audioContext.createOscillator()
+        const gainNode = audioContext.createGain()
 
-      // 设置音量包络（快速淡入淡出，"叮"的效果）
-      gainNode.gain.setValueAtTime(0, audioContext.currentTime)
-      gainNode.gain.linearRampToValueAtTime(0.3, audioContext.currentTime + 0.02)
-      gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3)
+        oscillator.connect(gainNode)
+        gainNode.connect(audioContext.destination)
 
-      oscillator.start(audioContext.currentTime)
-      oscillator.stop(audioContext.currentTime + 0.3)
+        // 使用正弦波，声音更温暖
+        oscillator.type = 'sine'
+
+        // 设置音调
+        oscillator.frequency.setValueAtTime(freq, audioContext.currentTime + startTime)
+
+        // 设置音量包络（柔和的淡入淡出）
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime + startTime)
+        gainNode.gain.linearRampToValueAtTime(0.25, audioContext.currentTime + startTime + 0.02)
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + startTime + duration)
+
+        oscillator.start(audioContext.currentTime + startTime)
+        oscillator.stop(audioContext.currentTime + startTime + duration)
+      })
     } catch (error) {
       console.warn('[SuccessSound] Failed to play:', error)
     }
@@ -983,8 +983,13 @@ function QwertyPracticePage() {
         if (state.userInput.length >= currentWord.word.length) return
 
         const targetChar = currentWord.word[state.userInput.length]
+
+        // ✅ 特殊符号宽松匹配：如果目标字符是特殊符号，任何输入都算正确
+        const isSpecialChar = /^[\-']$/.test(targetChar)
         // 注意：空格比较时需要原样比较，不转小写
-        const isCorrect = (e.key === ' ' && targetChar === ' ') || (e.key !== ' ' && e.key.toLowerCase() === targetChar.toLowerCase())
+        const isCorrect = isSpecialChar || // 特殊符号：任意字符都算对
+          (e.key === ' ' && targetChar === ' ') ||
+          (e.key !== ' ' && e.key.toLowerCase() === targetChar.toLowerCase())
 
         if (state.soundSettings.keySound) {
           playKeySound(isCorrect)
@@ -1109,13 +1114,50 @@ function QwertyPracticePage() {
 
   // ==================== 单词完成检测 ====================
   useEffect(() => {
-    if (state.userInput === currentWord?.word && state.userInput.length > 0) {
+    // ✅ 防御性检查：确保 currentWord 和 currentDict 存在
+    if (!currentWord?.word || !currentDict?.words) {
+      console.warn('[WordComplete] Missing currentWord or currentDict', { currentWord, currentDict })
+      return
+    }
+
+    // ✅ 单词完成判断：考虑特殊符号的宽松匹配
+    // 规则：如果输入长度等于单词长度，且所有非特殊符号位置都匹配，则视为完成
+    const wordLength = currentWord.word.length
+    const isLengthMatch = state.userInput.length === wordLength
+
+    if (!isLengthMatch) return
+
+    // 检查是否所有非特殊符号位置都正确输入
+    let allNonSpecialCharsCorrect = true
+    for (let i = 0; i < wordLength; i++) {
+      const targetChar = currentWord.word[i]
+      const inputChar = state.userInput[i]
+
+      // 跳过特殊符号（它们允许任意输入）
+      if (/^[\-']$/.test(targetChar)) {
+        continue
+      }
+
+      // 检查非特殊符号是否正确
+      if (inputChar?.toLowerCase() !== targetChar?.toLowerCase()) {
+        allNonSpecialCharsCorrect = false
+        break
+      }
+    }
+
+    if (allNonSpecialCharsCorrect) {
+      console.log('[WordComplete] Word completed:', currentWord.word, 'input:', state.userInput)
+
       // 🎵 播放单词完成奖励音效
       playSuccessSound()
 
       const timer = setTimeout(() => {
         setState((prev) => {
-          if (!currentDict) return prev
+          // ✅ 防御性检查
+          if (!currentDict || !currentDict.words || currentDict.words.length === 0) {
+            console.error('[WordComplete] Invalid dictionary state')
+            return prev
+          }
 
           // 循环逻辑
           const targetLoopCount = prev.loopCount === 0 ? Infinity : prev.loopCount
@@ -1123,6 +1165,7 @@ function QwertyPracticePage() {
 
           // 如果还未达到循环次数，重置当前单词继续练习
           if (newCompletionCount < targetLoopCount) {
+            console.log('[WordComplete] Looping same word, count:', newCompletionCount)
             return {
               ...prev,
               userInput: '',
@@ -1133,7 +1176,10 @@ function QwertyPracticePage() {
 
           // 达到循环次数，移动到下一个单词并重置完成次数
           const nextIndex = prev.currentIndex + 1
+          console.log('[WordComplete] Moving to next word:', nextIndex, 'total:', currentDict.words.length)
+
           if (nextIndex >= currentDict.words.length) {
+            console.log('[WordComplete] Reached end, wrapping to start')
             return {
               ...prev,
               currentIndex: 0,
@@ -1154,7 +1200,7 @@ function QwertyPracticePage() {
 
       return () => clearTimeout(timer)
     }
-  }, [state.userInput, currentWord, currentDict, state.loopCount, state.currentWordCompletionCount, playSuccessSound])
+  }, [state.userInput, currentWordStr, currentDict, state.loopCount, state.currentWordCompletionCount, playSuccessSound])
 
   // ==================== 单词切换时重置连续错误计数 ====================
   useEffect(() => {
@@ -1176,9 +1222,26 @@ function QwertyPracticePage() {
     }
   }, [state.userInput, currentWordStr])
 
+  // ==================== mounted 状态初始化 ====================
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   // ==================== 加载状态（Neo-Brutalism 游戏化，响应式，黑暗模式）====================
   if (isLoading) {
-    // 检测系统黑暗模式
+    // 客户端未 mounted 时显示占位，避免 hydration mismatch
+    if (!mounted) {
+      return (
+        <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <p className="text-gray-600">加载中...</p>
+          </div>
+        </div>
+      )
+    }
+
+    // 客户端已 mounted，现在可以安全检测系统黑暗模式
     const isSystemDark = typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
 
     return (
@@ -1457,10 +1520,19 @@ function QwertyPracticePage() {
         }
       `}</style>
 
-      {/* ==================== 右上角"灵动岛"控制栏 ==================== */}
-      <div className="fixed top-6 right-6 z-50">
-        <div className="bg-white/90 backdrop-blur-md shadow-xl rounded-2xl px-3 py-2 flex items-center gap-1.5">
-          {/* 1. 单词类：词典选择按钮 */}
+      {/* ==================== 右上角设置按钮 ==================== */}
+      <button
+        onClick={() => setControlBarExpanded(!controlBarExpanded)}
+        className="fixed top-6 right-6 z-50 w-12 h-12 bg-white/90 backdrop-blur-md shadow-xl rounded-full flex items-center justify-center text-gray-600 hover:text-gray-800 hover:scale-105 transition-all"
+        title="设置"
+      >
+        <Settings size={20} />
+      </button>
+
+      {/* ==================== 控制面板（点击设置按钮显示） ==================== */}
+      {controlBarExpanded && (
+        <div className="fixed top-6 right-20 z-50 bg-white/90 backdrop-blur-md shadow-xl rounded-2xl px-3 py-2 flex items-center gap-1.5">
+          {/* 1. 词典选择按钮 */}
           <button
             onClick={() => setShowBookSelector(true)}
             className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
@@ -1476,32 +1548,7 @@ function QwertyPracticePage() {
           {/* 分隔线 */}
           <div className="w-px h-5 bg-gray-300"></div>
 
-          {/* 2. 声音类：发音设置（可展开） */}
-          <button
-            onClick={togglePronunciationPanel}
-            className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg hover:bg-gray-100 transition-colors"
-            title="发音设置"
-          >
-            <Volume2 size={14} className="text-blue-600" />
-            <ChevronDown size={10} className="text-gray-400" />
-          </button>
-
-          {/* 3. 声音类：音效设置（可展开） */}
-          <button
-            onClick={toggleSoundEffectPanel}
-            className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg hover:bg-gray-100 transition-colors"
-            title="音效设置"
-          >
-            <div className="w-5 h-5 rounded-full bg-gradient-to-r from-purple-500 to-purple-600 flex items-center justify-center">
-              <span className="text-white text-xs">♪</span>
-            </div>
-            <ChevronDown size={10} className="text-gray-400" />
-          </button>
-
-          {/* 分隔线 */}
-          <div className="w-px h-5 bg-gray-300"></div>
-
-          {/* 4. 显示类：默写模式 */}
+          {/* 2. 默写模式 */}
           <button
             onClick={() =>
               setState((prev) => ({
@@ -1522,7 +1569,7 @@ function QwertyPracticePage() {
             )}
           </button>
 
-          {/* 5. 显示类：释义显示 */}
+          {/* 3. 释义显示 */}
           <button
             onClick={() =>
               setState((prev) => ({
@@ -1543,7 +1590,7 @@ function QwertyPracticePage() {
             )}
           </button>
 
-          {/* 6. 显示类：明暗切换 */}
+          {/* 4. 明暗切换 */}
           <button
             onClick={() =>
               setState((prev) => ({
@@ -1567,23 +1614,7 @@ function QwertyPracticePage() {
           {/* 分隔线 */}
           <div className="w-px h-5 bg-gray-300"></div>
 
-          {/* 7. 功能类：循环设置（可展开） */}
-          <button
-            onClick={toggleLoopPanel}
-            className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg hover:bg-gray-100 transition-colors"
-            title="循环设置"
-          >
-            <Repeat size={14} className="text-green-600" />
-            <span className="text-xs font-medium text-gray-600">
-              {state.loopCount === 0 ? '∞' : `×${state.loopCount}`}
-            </span>
-            <ChevronDown size={10} className="text-gray-400" />
-          </button>
-
-          {/* 分隔线 */}
-          <div className="w-px h-5 bg-gray-300"></div>
-
-          {/* 8. 功能类：错题本 */}
+          {/* 5. 错题本 */}
           <button
             onClick={() => {
               closeAllSubPanels()
@@ -1595,7 +1626,7 @@ function QwertyPracticePage() {
             <AlertCircle size={16} className="text-red-500" />
           </button>
 
-          {/* 9. 功能类：数据统计 */}
+          {/* 6. 数据统计 */}
           <button
             onClick={() => {
               closeAllSubPanels()
@@ -1610,7 +1641,7 @@ function QwertyPracticePage() {
           {/* 分隔线 */}
           <div className="w-px h-5 bg-gray-300"></div>
 
-          {/* 10. 功能类：设置按钮 */}
+          {/* 7. 设置按钮 */}
           <button
             onClick={() => {
               closeAllSubPanels()
@@ -1622,10 +1653,7 @@ function QwertyPracticePage() {
             <Settings size={16} />
           </button>
 
-          {/* 分隔线 */}
-          <div className="w-px h-5 bg-gray-300"></div>
-
-          {/* 11. 暂停按钮（只在已开始且未暂停时显示） */}
+          {/* 8. 暂停按钮（只在已开始且未暂停时显示） */}
           {state.startTime && !state.isPaused && (
             <button
               onClick={() => {
@@ -1643,7 +1671,7 @@ function QwertyPracticePage() {
             </button>
           )}
         </div>
-      </div>
+      )}
 
       {/* ==================== 主内容区 ==================== */}
       <main className={`flex flex-col items-center justify-center h-[calc(100vh-120px)] relative ${windowWidth < 768 ? 'px-2' : 'px-4'}`} style={{ paddingTop: windowWidth < 768 ? '4vh' : '8vh' }}>
@@ -1737,6 +1765,226 @@ function QwertyPracticePage() {
             filter: state.isPaused ? 'blur(8px)' : 'blur(0px)',
           }}
         >
+          {/* ==================== 完成奖励动画 ==================== */}
+          {!currentWord && currentDict && state.currentIndex >= currentDict.words.length && (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="w-full max-w-2xl mx-auto"
+            >
+              {/* Neo-Brutalism 完成卡片 */}
+              <div className={`relative border-4 shadow-2xl p-8 sm:p-12 ${
+                state.displaySettings.darkMode
+                  ? 'bg-gray-900 border-yellow-500'
+                  : 'bg-white border-black'
+              }`}>
+                {/* 装饰性背景元素 */}
+                <div className={`absolute inset-0 overflow-hidden rounded-lg ${
+                  state.displaySettings.darkMode ? 'opacity-20' : 'opacity-10'
+                }`}>
+                  <div className="absolute top-4 left-4 w-16 h-16 border-4 border-yellow-400 rotate-12"></div>
+                  <div className="absolute bottom-4 right-4 w-20 h-20 border-4 border-blue-400 -rotate-12"></div>
+                  <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 h-32 border-4 border-green-400 rounded-full"></div>
+                </div>
+
+                {/* 主内容 */}
+                <div className="relative z-10">
+                  {/* 胜利奖杯图标 - 动画 */}
+                  <motion.div
+                    initial={{ y: -100, opacity: 0, rotate: -180 }}
+                    animate={{ y: 0, opacity: 1, rotate: 0 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 200,
+                      damping: 15,
+                      delay: 0.2
+                    }}
+                    className="flex justify-center mb-8"
+                  >
+                    <div className={`w-24 h-24 sm:w-32 sm:h-32 rounded-full flex items-center justify-center ${
+                      state.displaySettings.darkMode
+                        ? 'bg-gradient-to-br from-yellow-400 to-orange-500 shadow-lg shadow-yellow-500/50'
+                        : 'bg-gradient-to-br from-yellow-400 to-orange-500 shadow-lg'
+                    }`}>
+                      <svg className="w-12 h-12 sm:w-16 sm:h-16 text-white" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                      </svg>
+                    </div>
+                  </motion.div>
+
+                  {/* 完成标题 */}
+                  <motion.h1
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                    className={`text-3xl sm:text-4xl md:text-5xl font-black mb-4 ${
+                      state.displaySettings.darkMode ? 'text-yellow-400' : 'text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-orange-500'
+                    }`}
+                  >
+                    🎉 恭喜完成！
+                  </motion.h1>
+
+                  {/* 副标题 */}
+                  <motion.p
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.5 }}
+                    className={`text-lg sm:text-xl font-semibold mb-8 ${
+                      state.displaySettings.darkMode ? 'text-gray-300' : 'text-gray-600'
+                    }`}
+                  >
+                    {currentDict?.name || currentDict?.description || '当前词库'} 全部练习完成
+                  </motion.p>
+
+                  {/* 统计数据卡片 */}
+                  <motion.div
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ delay: 0.6 }}
+                    className={`grid grid-cols-2 gap-4 mb-8 ${
+                      state.displaySettings.darkMode ? 'text-gray-200' : 'text-gray-700'
+                    }`}
+                  >
+                    <div className={`p-4 rounded-lg border-3 ${
+                      state.displaySettings.darkMode
+                        ? 'bg-gray-800 border-gray-600'
+                        : 'bg-gradient-to-br from-blue-50 to-indigo-50 border-black'
+                    }`}>
+                      <div className="text-2xl sm:text-3xl font-black text-blue-500">
+                        {state.statistics.correctCount}
+                      </div>
+                      <div className="text-xs sm:text-sm font-semibold">正确字符</div>
+                    </div>
+                    <div className={`p-4 rounded-lg border-3 ${
+                      state.displaySettings.darkMode
+                        ? 'bg-gray-800 border-gray-600'
+                        : 'bg-gradient-to-br from-green-50 to-emerald-50 border-black'
+                    }`}>
+                      <div className="text-2xl sm:text-3xl font-black text-green-500">
+                        {calculateAccuracy()}%
+                      </div>
+                      <div className="text-xs sm:text-sm font-semibold">准确率</div>
+                    </div>
+                    <div className={`p-4 rounded-lg border-3 ${
+                      state.displaySettings.darkMode
+                        ? 'bg-gray-800 border-gray-600'
+                        : 'bg-gradient-to-br from-purple-50 to-pink-50 border-black'
+                    }`}>
+                      <div className="text-2xl sm:text-3xl font-black text-purple-500">
+                        {calculateWPM()}
+                      </div>
+                      <div className="text-xs sm:text-sm font-semibold">WPM</div>
+                    </div>
+                    <div className={`p-4 rounded-lg border-3 ${
+                      state.displaySettings.darkMode
+                        ? 'bg-gray-800 border-gray-600'
+                        : 'bg-gradient-to-br from-orange-50 to-amber-50 border-black'
+                    }`}>
+                      <div className="text-2xl sm:text-3xl font-black text-orange-500">
+                        {formatTime(elapsedTime)}
+                      </div>
+                      <div className="text-xs sm:text-sm font-semibold">用时</div>
+                    </div>
+                  </motion.div>
+
+                  {/* 彩色庆祝方块动画 */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.8 }}
+                    className="flex justify-center gap-2 mb-8"
+                  >
+                    {['bg-yellow-400', 'bg-blue-400', 'bg-green-400', 'bg-red-400', 'bg-purple-400'].map((color, index) => (
+                      <motion.div
+                        key={index}
+                        className={`w-10 h-10 sm:w-12 sm:h-12 border-3 ${
+                          state.displaySettings.darkMode ? 'border-gray-600' : 'border-black'
+                        } ${color}`}
+                        animate={{
+                          y: [0, -20, 0],
+                          rotate: [0, 360],
+                          scale: [1, 1.2, 1],
+                        }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                          delay: index * 0.1,
+                          ease: "easeInOut"
+                        }}
+                      />
+                    ))}
+                  </motion.div>
+
+                  {/* 操作按钮 */}
+                  <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.9 }}
+                    className="flex flex-col sm:flex-row gap-3 justify-center"
+                  >
+                    <button
+                      onClick={() => {
+                        setState(prev => ({
+                          ...prev,
+                          currentIndex: 0,
+                          userInput: '',
+                          charErrorCount: [],
+                          currentWordCompletionCount: 0,
+                          statistics: DEFAULT_STATISTICS,
+                          startTime: null,
+                          isPaused: false,
+                        }))
+                        setElapsedTime(0)
+                      }}
+                      className={`px-6 py-3 sm:px-8 sm:py-4 font-bold rounded-lg border-3 shadow-lg transition-all hover:scale-105 active:scale-95 ${
+                        state.displaySettings.darkMode
+                          ? 'bg-blue-600 border-blue-400 text-white hover:bg-blue-500'
+                          : 'bg-black text-white border-black hover:bg-gray-800'
+                      }`}
+                    >
+                      🔄 重新练习
+                    </button>
+                    <button
+                      onClick={() => setShowBookSelector(true)}
+                      className={`px-6 py-3 sm:px-8 sm:py-4 font-bold rounded-lg border-3 shadow-lg transition-all hover:scale-105 active:scale-95 ${
+                        state.displaySettings.darkMode
+                          ? 'bg-gray-700 border-gray-500 text-gray-200 hover:bg-gray-600'
+                          : 'bg-white text-black border-black hover:bg-gray-50'
+                      }`}
+                    >
+                      📚 切换词库
+                    </button>
+                  </motion.div>
+                </div>
+
+                {/* 庆祝彩带效果 */}
+                {[...Array(20)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    className="absolute"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: '-10px',
+                      width: '10px',
+                      height: '10px',
+                      backgroundColor: ['#FFD700', '#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'][Math.floor(Math.random() * 6)],
+                    }}
+                    animate={{
+                      y: [0, window.innerHeight],
+                      rotate: [0, 720],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      delay: Math.random() * 2,
+                      ease: "easeInOut"
+                    }}
+                  />
+                ))}
+              </div>
+            </motion.div>
+          )}
+
           {/* 音标显示 - 全时显示，默写模式下不隐藏 */}
           {currentWord?.phonetic && (
             <motion.div
@@ -1788,39 +2036,65 @@ function QwertyPracticePage() {
           {/* 英文单词 - 统一超大字体，绝对视觉中心 */}
           <div className={`mb-16 flex items-center justify-center ${windowWidth < 768 ? 'px-4 overflow-x-auto' : ''}`}>
             {/* 当前单词 - 动态字号槽位下划线设计 */}
-            <div className="flex items-end justify-center" style={{ maxWidth: windowWidth < 768 ? '100%' : 'auto' }}>
+            <div
+              className="flex items-end justify-center"
+              style={{
+                maxWidth: windowWidth < 768 ? 'calc(100vw - 32px)' : 'calc(100vw - 200px)',
+                // 根据屏幕宽度计算最大可用宽度，避免单词超出屏幕
+              }}
+            >
               <AnimatePresence mode="popLayout">
                 {currentWord?.word.split('').map((char, index) => {
                   const isInput = index < state.userInput.length
                   const isCurrent = index === state.userInput.length
-                  const isCorrect = isInput && state.userInput[index]?.toLowerCase() === char?.toLowerCase()
+
+                  // ✅ 特殊符号宽松匹配：如果目标字符是特殊符号，任何输入都算正确
+                  const isSpecialChar = /^[\-']$/.test(char)
+                  const isCorrect = isInput && (
+                    isSpecialChar || // 特殊符号：任意字符都算对
+                    state.userInput[index]?.toLowerCase() === char?.toLowerCase()
+                  )
 
                   // 动态字号计算（基础字号 + 设置值）
                   const fontSize = state.displaySettings.foreignFontSize // 20-100
                   const baseScaledFontSize = fontSize * 2.5 // 放大到 50-250px 范围
 
-                  // 响应式缩放系数
+                  // ✅ 智能响应式字号：根据屏幕宽度和单词长度动态计算
+                  const wordLength = currentWord.word.length
+                  const availableWidth = windowWidth < 768
+                    ? windowWidth - 32 // 移动端减去padding
+                    : windowWidth - 200 // 桌面端减去左右按钮和边距
+
+                  // 计算每个字符平均可用宽度
+                  const avgCharWidth = availableWidth / wordLength
+
+                  // 根据字符宽度计算合适的字号（确保字符不重叠）
+                  // 字符宽度大约是字号的 0.6 倍
+                  let optimalFontSize = Math.min(baseScaledFontSize, avgCharWidth / 0.6)
+
+                  // 应用响应式缩放系数作为上限
                   let responsiveScale = 1.0
                   if (windowWidth < 768) {
-                    // 移动端（竖屏）：缩小到 45%
                     responsiveScale = 0.45
                   } else if (windowWidth < 1024) {
-                    // 平板：缩小到 70%
                     responsiveScale = 0.7
                   }
-                  // 桌面端：100% 不变
 
-                  const scaledFontSize = baseScaledFontSize * responsiveScale
+                  // 最终字号 = min(智能计算字号, 响应式上限字号)
+                  const scaledFontSize = Math.min(optimalFontSize, baseScaledFontSize * responsiveScale)
 
-                  // 等比例缩放相关尺寸（移动端优化）
+                  // 确保最小字号，避免太小看不清
+                  const finalFontSize = Math.max(scaledFontSize, windowWidth < 768 ? 24 : 32)
+
+                  // 等比例缩放相关尺寸（基于最终字号）
                   const isMobile = windowWidth < 768
                   const slotWidthRatio = isMobile ? 0.55 : 0.75 // 移动端槽位更窄
-                  const slotWidth = scaledFontSize * slotWidthRatio // 槽位宽度
-                  const slotHeight = scaledFontSize * 1.3125 // 槽位高度
-                  const paddingBelow = scaledFontSize * 0.1875 // 字母与下划线间距
+                  const slotWidth = finalFontSize * slotWidthRatio // 槽位宽度
+                  const slotHeight = finalFontSize * 1.3125 // 槽位高度
+                  const paddingBelow = finalFontSize * 0.1875 // 字母与下划线间距
                   const gapRatio = isMobile ? 0.04 : 0.125 // 移动端间距更小
-                  const gapBetween = scaledFontSize * gapRatio // 字母间距
-                  const borderWidth = scaledFontSize * 0.03125 // 下划线粗细
+                  const gapBetween = finalFontSize * gapRatio // 字母间距
+                  const borderWidth = finalFontSize * 0.03125 // 下划线粗细
 
                   return (
                     <motion.div
@@ -1845,7 +2119,7 @@ function QwertyPracticePage() {
                         className="inline-block transition-all duration-150"
                         style={{
                           fontFamily: "'Roboto', 'Inter', 'PingFang SC', 'Microsoft YaHei', sans-serif",
-                          fontSize: `${scaledFontSize}px`, // 动态字号
+                          fontSize: `${finalFontSize}px`, // 使用智能计算的字号
                           fontWeight: 500,
                           lineHeight: 1,
                           display: 'inline-block',
@@ -2282,8 +2556,6 @@ function QwertyPracticePage() {
 }
 
 // ==================== Suspense边界包裹 ====================
-import { Suspense } from 'react'
-
 export default function PracticePageWrapper() {
   return (
     <Suspense fallback={

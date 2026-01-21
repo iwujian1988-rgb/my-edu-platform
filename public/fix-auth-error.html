@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>修复 Auth 错误</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .card {
+      background: white;
+      border: 3px solid #000;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 8px 8px 0 0 #000;
+      margin-bottom: 20px;
+    }
+    h1 { font-size: 24px; font-weight: bold; margin-bottom: 20px; }
+    h2 { font-size: 18px; font-weight: bold; margin: 15px 0 10px; }
+    button {
+      width: 100%;
+      padding: 15px;
+      background: #4CAF50;
+      color: white;
+      border: 3px solid #000;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 10px 0;
+    }
+    button:hover { background: #45a049; }
+    button:disabled { background: #ccc; cursor: not-allowed; }
+    button.danger { background: #FF6B6B; }
+    button.danger:hover { background: #ff5252; }
+    .result {
+      margin-top: 20px;
+      padding: 15px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      font-family: monospace;
+      font-size: 13px;
+      white-space: pre-wrap;
+      max-height: 400px;
+      overflow-y: auto;
+    }
+    .status { padding: 10px; margin: 10px 0; border-radius: 8px; font-weight: bold; }
+    .success { background: #d4edda; color: #155724; }
+    .error { background: #f8d7da; color: #721c24; }
+    .warning { background: #fff3cd; color: #856404; }
+    code {
+      background: #f0f0f0;
+      padding: 15px;
+      display: block;
+      border-radius: 8px;
+      margin: 10px 0;
+      font-family: monospace;
+      font-size: 12px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🔧 修复 Supabase Auth 错误</h1>
+
+    <div class="warning status">
+      ⚠️ 错误原因：public.users 表缺少 updated_at 字段
+    </div>
+
+    <h2>步骤 1：诊断问题</h2>
+    <button onclick="diagnose()">诊断表结构</button>
+    <div id="diagnoseResult" class="result" style="display: none;"></div>
+
+    <h2>步骤 2：修复方案</h2>
+    <p>打开 Supabase Dashboard 执行 SQL：</p>
+    <button onclick="window.open('https://supabase.com/dashboard', '_blank')" class="danger">
+      打开 Supabase Dashboard →
+    </button>
+    <p style="font-size: 14px; color: #666; margin: 10px 0;">
+      1. 选择项目<br>
+      2. 点击左侧菜单的 "SQL Editor"<br>
+      3. 点击 "New query"<br>
+      4. 粘贴下面的 SQL 并点击 "Run"
+    </p>
+
+    <h2>修复 SQL：</h2>
+    <code id="sqlCode">-- 添加 updated_at 字段到 public.users 表
+ALTER TABLE public.users
+ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT NOW();
+
+-- 创建自动更新函数
+CREATE OR REPLACE FUNCTION public.handle_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+  NEW.updated_at = NOW();
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- 创建触发器
+DROP TRIGGER IF EXISTS set_updated_at ON public.users;
+CREATE TRIGGER set_updated_at
+  BEFORE UPDATE ON public.users
+  FOR EACH ROW
+  EXECUTE FUNCTION public.handle_updated_at();
+
+-- 验证字段已添加
+SELECT column_name, data_type
+FROM information_schema.columns
+WHERE table_schema = 'public'
+  AND table_name = 'users'
+  AND column_name = 'updated_at';</code>
+
+    <h2>步骤 3：验证修复</h2>
+    <button onclick="testSignup()">测试注册功能</button>
+    <div id="testResult" class="result" style="display: none;"></div>
+  </div>
+
+  <script>
+    async function diagnose() {
+      const resultDiv = document.getElementById('diagnoseResult')
+      resultDiv.style.display = 'block'
+      resultDiv.textContent = '正在诊断...'
+
+      try {
+        // 尝试创建一个测试用户来检测错误
+        const response = await fetch('/api/admin/test-register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            phone: '99999999999',
+            password: 'test123456',
+            invitationCode: 'TEST1234'
+          })
+        })
+
+        const data = await response.json()
+
+        if (data.logs && data.logs.join('\n').includes('updated_at')) {
+          resultDiv.innerHTML = '<div class="status error">❌ 确认问题：缺少 updated_at 字段</div>' +
+            '\n\n详细日志：\n' + data.logs.join('\n')
+        } else if (data.success) {
+          resultDiv.innerHTML = '<div class="status success">✅ 没有发现问题，注册功能正常</div>'
+        } else {
+          resultDiv.innerHTML = '<div class="status warning">⚠️ 未能确定问题，请查看日志</div>\n\n' +
+            JSON.stringify(data, null, 2)
+        }
+      } catch (error) {
+        resultDiv.textContent = '错误：' + error.message
+      }
+    }
+
+    async function testSignup() {
+      const resultDiv = document.getElementById('testResult')
+      resultDiv.style.display = 'block'
+      resultDiv.textContent = '正在测试注册功能...'
+
+      try {
+        const response = await fetch('/api/admin/test-register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            phone: '19876543210',
+            password: 'test123456',
+            invitationCode: 'TEST1234'
+          })
+        })
+
+        const data = await response.json()
+
+        if (data.success) {
+          resultDiv.innerHTML = '<div class="status success">✅ 注册功能正常！问题已修复</div>' +
+            '\n\n' + data.logs.join('\n')
+        } else {
+          resultDiv.innerHTML = '<div class="status error">❌ 注册仍然失败</div>\n\n' +
+            '错误：' + data.error + '\n\n' +
+            '详细日志：\n' + data.logs.join('\n')
+        }
+      } catch (error) {
+        resultDiv.textContent = '错误：' + error.message
+      }
+    }
+
+    // 复制 SQL 到剪贴板
+    document.getElementById('sqlCode').addEventListener('click', function() {
+      navigator.clipboard.writeText(this.textContent).then(() => {
+        alert('SQL 已复制到剪贴板！')
+      })
+    })
+  </script>
+</body>
+</html>

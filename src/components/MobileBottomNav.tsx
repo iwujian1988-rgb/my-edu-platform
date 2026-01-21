@@ -31,9 +31,9 @@ interface MobileBottomNavProps {
 export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBottomNavProps) {
   const pathname = usePathname()
   const router = useRouter()
-  const { theme } = useTheme()
+  const { theme, mounted } = useTheme()
   const { showLoading } = useLoading()
-  const isDark = theme === 'dark'
+  const isDark = mounted && theme === 'dark'
   const [showBookSelector, setShowBookSelector] = useState(false)
 
   // 处理导航点击，立即显示加载状态

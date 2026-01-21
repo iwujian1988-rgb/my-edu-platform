@@ -161,8 +161,10 @@ function sortBooks(books: Book[]): Book[] {
 
 export function FilterableBookGrid({ books }: FilterableBookGridProps) {
   const [activeCategory, setActiveCategory] = useState<BookCategory>('all')
-  const { theme } = useTheme()
-  const isDark = theme === 'dark'
+  const { theme, mounted } = useTheme()
+
+  // 服务器端和首次渲染使用浅色模式
+  const isDark = mounted && theme === 'dark'
 
   // 智能排序后的词库列表
   const sortedBooks = useMemo(() => sortBooks(books), [books])

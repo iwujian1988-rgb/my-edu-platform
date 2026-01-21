@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-01-13T15:12:21.307945",
+  "total_words": 176,
+  "source_breakdown": {
+    "from_master_pool": 81,
+    "professional_terms": 95,
+    "new_additions": 95
+  },
+  "platforms_covered": [
+    "TikTok",
+    "YouTube",
+    "Instagram"
+  ],
+  "category_distribution": {
+    "general": 81,
+    "促单_抓手词": 20,
+    "互动_留人词": 20,
+    "产品展示_痛点词": 20,
+    "信任_背书词": 20,
+    "平台专用_TikTok": 5,
+    "平台专用_YouTube": 5,
+    "平台专用_Instagram": 5
+  },
+  "level_distribution": {
+    "4": 51,
+    "2": 71,
+    "3": 21,
+    "1": 22,
+    "5": 11
+  },
+  "conversion_power_distribution": {
+    "medium": 86,
+    "high": 90
+  }
+}
