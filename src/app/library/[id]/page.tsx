@@ -6,10 +6,13 @@ import { getWordsForBookServer } from '@/lib/words-server'
 
 export default async function BookDetailPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ id: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
 }) {
   const { id } = await params
+  const paramsObj = await searchParams
   const user = await getCurrentUser()
   if (!user) {
     redirect('/login?redirect=' + encodeURIComponent(`/library/${id}`))
@@ -40,8 +43,14 @@ export default async function BookDetailPage({
     .eq('book_id', id)
     .order('order_index', { ascending: true })
 
-  // 🆕 在服务端获取第一页单词数据（解决客户端认证问题）
-  const initialWordsData = await getWordsForBookServer(id, user, 1, 21, 'all')
+  // 🔥 从URL参数读取status和page，而不是硬编码
+  const statusParam = (typeof paramsObj.status === 'string' ? paramsObj.status : null) || 'all'
+  const pageParam = parseInt(typeof paramsObj.page === 'string' ? paramsObj.page : '1', 10) || 1
+
+  console.log(`📖 [Server Page] URL params - status: ${statusParam}, page: ${pageParam}`)
+
+  // 🆕 在服务端获取单词数据（根据URL参数）
+  const initialWordsData = await getWordsForBookServer(id, user, pageParam, 21, statusParam)
 
   // 如果获取失败，返回空数组但不阻止页面渲染
   const initialWords = initialWordsData.success ? initialWordsData.words : []
@@ -54,7 +63,6 @@ export default async function BookDetailPage({
       book={book}
       chapters={chapters || []}
       user={user}
-      // 🆕 传递初始数据，避免客户端需要再次调用API
       initialWords={initialWords}
       initialTotal={initialTotal}
     />

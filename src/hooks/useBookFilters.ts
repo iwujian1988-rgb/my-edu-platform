@@ -37,9 +37,6 @@ const DEFAULT_FILTERS: BookFilters = {
 
 /**
  * 从URL参数恢复筛选状态
- *
- * @param searchParams - URLSearchParams对象
- * @returns 恢复后的筛选状态
  */
 function restoreFiltersFromURL(searchParams: URLSearchParams): BookFilters {
   return {
@@ -53,16 +50,13 @@ function restoreFiltersFromURL(searchParams: URLSearchParams): BookFilters {
 
 /**
  * 主Hook：管理词书筛选状态
- *
- * @param bookId - 词书ID（用于保存阅读进度）
- * @returns 筛选状态和操作函数
  */
 export function useBookFilters(bookId?: string) {
   const searchParams = useSearchParams()
   const { updateURL } = useUpdateURL()
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
-  // 状态
+  // 状态 - 从URL恢复
   const [filters, setFilters] = useState<BookFilters>(() =>
     restoreFiltersFromURL(searchParams)
   )
@@ -145,44 +139,27 @@ export function useBookFilters(bookId?: string) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [bookId]) // 只依赖 bookId，不再依赖 filters
 
-  // ⭐ 核心逻辑1：URL参数改变时恢复状态
+  // ⭐ 监听URL变化，同步filters状态（不用key时需要）
   useEffect(() => {
     const restoredFilters = restoreFiltersFromURL(searchParams)
-
-    // 只更新非默认值，避免不必要的重渲染
-    if (restoredFilters.page !== 1 && restoredFilters.page !== filters.page) {
-      setFilters(prev => ({ ...prev, page: restoredFilters.page }))
-    }
-    if (restoredFilters.theme !== 'all' && restoredFilters.theme !== filters.theme) {
-      setFilters(prev => ({ ...prev, theme: restoredFilters.theme }))
-    }
-    if (restoredFilters.scenario !== 'all' && restoredFilters.scenario !== filters.scenario) {
-      setFilters(prev => ({ ...prev, scenario: restoredFilters.scenario }))
-    }
-    if (restoredFilters.chapter !== 'all' && restoredFilters.chapter !== filters.chapter) {
-      setFilters(prev => ({ ...prev, chapter: restoredFilters.chapter }))
-    }
-    if (restoredFilters.status !== 'all' && restoredFilters.status !== filters.status) {
-      setFilters(prev => ({ ...prev, status: restoredFilters.status }))
-    }
+    setFilters(restoredFilters)
   }, [searchParams])
 
-  // ⭐ 核心逻辑2：更新筛选条件并同步到URL
+  // ⭐ 核心逻辑：更新筛选条件并同步到URL
   const updateFilter = <K extends keyof BookFilters>(
     key: K,
     value: BookFilters[K]
   ) => {
     console.log(`🔄 Updating filter: ${key} = ${value}`)
 
-    // 更新状态
-    setFilters(prev => ({ ...prev, [key]: value }))
-
-    // 同步到URL
-    updateURL({
-      [key]: value,
-      // 筛选条件改变时重置页码
-      page: key === 'page' ? value : 1
-    })
+    // 🔥 如果不是page参数改变，需要重置page为1
+    if (key !== 'page') {
+      setFilters(prev => ({ ...prev, [key]: value, page: 1 }))
+      updateURL({ [key]: value, page: 1 })
+    } else {
+      setFilters(prev => ({ ...prev, [key]: value }))
+      updateURL({ [key]: value })
+    }
   }
 
   // ⭐ 批量更新筛选条件（用于恢复进度）

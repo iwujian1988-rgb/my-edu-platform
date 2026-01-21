@@ -63,25 +63,27 @@ export function useWordData({
   const { filters } = useBookFilters()
 
   // 状态
-  // 🆕 使用初始数据作为初始值
   const [words, setWords] = useState<Word[]>(initialData || [])
-  const [isLoading, setIsLoading] = useState(!initialData || initialData.length === 0)  // 🆕 如果有初始数据则不loading
+  const [isLoading, setIsLoading] = useState(!initialData || initialData.length === 0)
   const [isLoadingMore, setIsLoadingMore] = useState(false)
   const [hasMore, setHasMore] = useState(true)
-  const [totalWords, setTotalWords] = useState(initialTotal || book.total_words)  // 🆕 使用initialTotal
+  const [totalWords, setTotalWords] = useState(initialTotal || book.total_words)
 
-  // 🆕 标记是否已经加载过初始数据（安全处理undefined）
-  const hasInitialData = initialData && initialData.length > 0
-  const initialDataLoadedRef = useRef(hasInitialData)
+  // 🔥 监听SSR数据的变化，同步更新words状态
+  const prevInitialDataRef = useRef<Word[] | undefined>(initialData)
+  useEffect(() => {
+    // 检查initialData是否真的改变了（比较第一个单词的ID）
+    const prevFirstId = prevInitialDataRef.current?.[0]?.id
+    const currFirstId = initialData?.[0]?.id
 
-  // 🆕 调试日志
-  console.log(`🔍 [useWordData] Initial state:`, {
-    hasInitialData,
-    initialDataLength: initialData?.length || 0,
-    wordsLength: words.length,
-    isLoading,
-    filtersPage: filters.page
-  })
+    if (currFirstId && currFirstId !== prevFirstId) {
+      console.log('🔄 [SSR Data Changed] Updating words state:', initialData?.length, 'words')
+      setWords(initialData || [])
+      setTotalWords(initialTotal || book.total_words)
+      setIsLoading(false)
+      prevInitialDataRef.current = initialData
+    }
+  }, [initialData, initialTotal])
 
   // ⭐ 优化：立即响应page变化，在useEffect执行前就显示loading
   const previousPageRef = useRef(filters.page)
@@ -100,12 +102,12 @@ export function useWordData({
     previousPageRef.current = filters.page
   }, [filters.page, isPortrait])
 
-  // ⭐ 核心逻辑1：从API获取单词
+  // ⭐ 核心逻辑：从API获取单词
   useEffect(() => {
     const fetchWords = async () => {
-      // 🆕 优化：如果是第一页且已有初始数据，跳过API调用
-      if (filters.page === 1 && initialDataLoadedRef.current) {
-        console.log(`✅ [Skip] Using initial data for page 1, skipping API call`)
+      // 如果是第一页且有SSR数据，跳过API调用
+      if (filters.page === 1 && initialData && initialData.length > 0) {
+        console.log(`✅ [Skip] Using SSR data for page 1`)
         setIsLoading(false)
         return
       }
@@ -114,9 +116,7 @@ export function useWordData({
       // 横屏模式：替换加载（每次都替换）
       const append = isPortrait && filters.page > 1
 
-      console.log(`📖 Fetching words (page ${filters.page}, append: ${append}, isPortrait: ${isPortrait})`)
-
-      // 注意：loading状态已在page变化时立即设置（乐观UI），这里不再重复设置
+      console.log(`📖 Fetching words (page ${filters.page}, append: ${append})`)
 
       try {
         // 构建API参数
@@ -127,23 +127,10 @@ export function useWordData({
           pageSize: '21'
         })
 
-        // 使用authenticatedFetch，它会自动添加Authorization header和credentials
         const response = await authenticatedFetch(`/api/words?${params}`)
 
-        // 检查HTTP状态
         if (!response.ok) {
-          const errorText = await response.text()
-          console.error(`❌ API request failed (${response.status}):`, errorText)
-
-          if (response.status === 401) {
-            console.error('❌ Authentication failed - user may not be logged in')
-          } else if (response.status === 403) {
-            console.error('❌ Authorization failed - user may not have permission to access this book')
-          } else if (response.status === 404) {
-            console.error('❌ Book not found')
-          }
-
-          // 设置为空数组，避免页面崩溃
+          console.error(`❌ API request failed (${response.status})`)
           if (!append) {
             setWords([])
             setTotalWords(0)
@@ -152,29 +139,17 @@ export function useWordData({
         }
 
         const data = await response.json()
-        console.log(`✅ API response:`, { success: data.success, dataLength: data.data?.length, total: data.total })
 
         if (append) {
-          // 竖屏追加模式：添加到现有列表
-          setWords(prev => {
-            const newWords = [...prev, ...(data.data || [])]
-            console.log(`➕ Words appended: ${prev.length} -> ${newWords.length}`)
-
-            // 检查是否还有更多
-            const totalCount = data.count || data.total || book.total_words || 0
-            if (newWords.length >= totalCount || (data.data || []).length < 21) {
-              console.log('🚫 No more words (loaded all or last page)')
-              setHasMore(false)
-            }
-
-            return newWords
-          })
+          setWords(prev => [...prev, ...(data.data || [])])
+          const totalCount = data.count || data.total || book.total_words || 0
+          if (words.length + (data.data || []).length >= totalCount) {
+            setHasMore(false)
+          }
         } else {
-          // 横屏替换模式/竖屏第一页：重新加载
           setWords(data.data || [])
           setTotalWords(data.count || data.total || book.total_words || 0)
           setHasMore(true)
-          console.log(`🔄 Words replaced: ${data.data?.length || 0} words, total: ${data.count || data.total}`)
         }
       } catch (error) {
         console.error('❌ Failed to fetch words:', error)
@@ -184,12 +159,11 @@ export function useWordData({
       } finally {
         setIsLoading(false)
         setIsLoadingMore(false)
-        console.log(`✅ Fetch complete (page ${filters.page})`)
       }
     }
 
     fetchWords()
-  }, [book.id, filters.page, filters.status, isPortrait, book.total_words]) // 🆕 不需要initialData作为依赖，它只在初始化时使用
+  }, [book.id, filters.page, filters.status, isPortrait]) // 🔥 移除initialData依赖
 
   // ⭐ 核心逻辑2：客户端筛选（章节/主题/场景）
   const filteredWords = useMemo(() => {
