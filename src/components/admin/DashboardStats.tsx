@@ -1,10 +1,5 @@
 'use client'
 
-/**
- * 仪表盘统计卡片组件
- * 显示用户核心指标和注册走势图
- */
-
 import { Users, UserPlus, TrendingUp } from 'lucide-react'
 
 interface DashboardStatsProps {
@@ -17,7 +12,6 @@ interface DashboardStatsProps {
 }
 
 export function DashboardStats({ stats }: DashboardStatsProps) {
-  // 计算走势图的最大值（用于归一化高度）
   const maxCount = Math.max(...stats.trendData.map(d => d.count), 1)
 
   return (
@@ -79,7 +73,7 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
         </div>
       </div>
 
-      {/* 注册走势图 */}
+      {/* 注册走势图 - 最简单版本 */}
       <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 bg-indigo-100 rounded-xl border-[2px] border-indigo-300 flex items-center justify-center">
@@ -91,68 +85,63 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
           </div>
         </div>
 
-        {/* 纯CSS柱状图 */}
-        <div className="relative">
-          {/* Y轴标签 */}
-          <div className="absolute left-0 top-0 bottom-8 w-12 flex flex-col justify-between text-xs text-gray-500 font-semibold">
-            <span>{maxCount}</span>
-            <span>{Math.floor(maxCount / 2)}</span>
-            <span>0</span>
-          </div>
+        {/* 超简单柱状图 */}
+        <div style={{ height: '200px', display: 'flex', alignItems: 'flex-end', gap: '4px', borderBottom: '2px solid #d1d5db', paddingLeft: '10px' }}>
+          {stats.trendData.map((item, index) => {
+            const height = item.count > 0 ? (item.count / maxCount) * 100 : 5
+            const isToday = index === stats.trendData.length - 1
 
-          {/* 图表区域 */}
-          <div className="ml-14">
-            {/* 柱状图 */}
-            <div className="flex items-end gap-1 h-40 border-b border-l border-gray-300 pl-2 bg-gray-50">
-              {stats.trendData.map((item, index) => {
-                const heightPercent = (item.count / maxCount) * 100
-                const isToday = index === stats.trendData.length - 1
+            return (
+              <div
+                key={item.date}
+                style={{
+                  flex: 1,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  minWidth: '10px'
+                }}
+              >
+                {/* 柱子 */}
+                <div
+                  title={`${item.date}: ${item.count}人`}
+                  style={{
+                    width: '100%',
+                    height: `${height}%`,
+                    minHeight: '10px',
+                    backgroundColor: isToday ? '#22c55e' : '#818cf8',
+                    borderRadius: '4px 4px 0 0',
+                    transition: 'opacity 0.2s'
+                  }}
+                  onMouseEnter={(e) => e.currentTarget.style.opacity = '0.8'}
+                  onMouseLeave={(e) => e.currentTarget.style.opacity = '1'}
+                />
+              </div>
+            )
+          })}
+        </div>
 
-                return (
-                  <div
-                    key={item.date}
-                    className="flex-1 flex flex-col items-center group relative"
-                    style={{ minWidth: '8px' }}
-                  >
-                    {/* 柱子 - 最小高度8%，让基线更明显 */}
-                    <div
-                      className={`w-full rounded-t-sm transition-all hover:opacity-80 ${
-                        isToday ? 'bg-green-500' : 'bg-indigo-400'
-                      }`}
-                      style={{
-                        height: `${Math.max(heightPercent, 8)}%`,
-                        minHeight: '2px'
-                      }}
-                      title={`${item.date}: ${item.count}人`}
-                    />
+        {/* X轴标签 */}
+        <div style={{ display: 'flex', gap: '4px', marginTop: '8px', paddingLeft: '10px' }}>
+          {stats.trendData.map((item, index) => {
+            const showLabel = index % 5 === 0 || index === stats.trendData.length - 1
+            if (!showLabel) return <div key={item.date} style={{ flex: 1 }} />
 
-                    {/* Tooltip */}
-                    <div className="absolute bottom-full mb-2 hidden group-hover:block bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10">
-                      {item.date.slice(5)}: {item.count}人
-                    </div>
-                  </div>
-                )
-              })}
-            </div>
-
-            {/* X轴标签（每隔5天显示一次） */}
-            <div className="flex gap-1 mt-2 pl-2">
-              {stats.trendData.map((item, index) => {
-                const showLabel = index % 5 === 0 || index === stats.trendData.length - 1
-                if (!showLabel) return <div key={item.date} className="flex-1" />
-
-                return (
-                  <div
-                    key={item.date}
-                    className="flex-1 text-xs text-gray-500 font-semibold text-center"
-                    style={{ minWidth: '8px' }}
-                  >
-                    {item.date.slice(5).replace('-', '/')}
-                  </div>
-                )
-              })}
-            </div>
-          </div>
+            return (
+              <div
+                key={item.date}
+                style={{
+                  flex: 1,
+                  fontSize: '12px',
+                  color: '#6b7280',
+                  textAlign: 'center',
+                  fontWeight: 600
+                }}
+              >
+                {item.date.slice(5).replace('-', '/')}
+              </div>
+            )
+          })}
         </div>
       </div>
     </div>
