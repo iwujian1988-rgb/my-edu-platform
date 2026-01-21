@@ -1,6 +1,9 @@
 -- 获取注册走势数据（最近N天每日新增用户）
 -- 修复：避免列名歧义
 
+-- 先删除旧函数（因为返回类型改变了）
+DROP FUNCTION IF EXISTS get_registration_trend(integer);
+
 CREATE OR REPLACE FUNCTION get_registration_trend(days_count INTEGER DEFAULT 30)
 RETURNS TABLE(
   reg_date DATE,
