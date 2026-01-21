@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import { withSentryConfig } from "@sentry/nextjs";
 
 // ========================================
 // 开发环境：启用 HTTP 代理（访问Supabase）
@@ -104,4 +105,21 @@ const nextConfig: NextConfig = {
   output: 'standalone',
 };
 
-export default nextConfig;
+// Sentry 配置
+const sentryWebpackPluginOptions = {
+  // 组织 slug 和项目 slug 在 Sentry 中
+  silent: true, // 禁止在构建时打印 Sentry 日志
+
+  // 上传 Source Maps 以获得更好的错误堆栈信息
+  // 对于所有环境（开发、生产、预览）
+  uploadSourceMaps: true,
+
+  // 验证配置正确性
+  validate: true,
+
+  // 其他配置选项
+  // dryRun: process.env.NODE_ENV !== 'production', // 非生产环境不上传
+};
+
+// 包装配置以使用 Sentry
+export default withSentryConfig(nextConfig, sentryWebpackPluginOptions);
