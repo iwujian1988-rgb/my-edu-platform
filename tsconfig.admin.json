@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": false,
+    "noImplicitAny": false
+  },
+  "include": [
+    "src/app/admin/**/*.ts",
+    "src/app/admin/**/*.tsx",
+    "src/app/api/admin/**/*.ts"
+  ]
+}
