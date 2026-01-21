@@ -63,11 +63,18 @@ export default async function AdminDashboard() {
   ])
 
   // 转换走势图数据（处理可能的多种返回格式）
+  console.log('🔍 [Dashboard] RPC返回的原始数据:', JSON.stringify(registrationTrendData, null, 2))
+
   let rawTrendData = registrationTrendData as any
 
   // 如果是 {data: [...]} 格式，提取 data
   if (rawTrendData && rawTrendData.data && Array.isArray(rawTrendData.data)) {
+    console.log('✅ 检测到 {data: [...]} 格式')
     rawTrendData = rawTrendData.data
+  } else if (Array.isArray(rawTrendData)) {
+    console.log('✅ 检测到数组格式')
+  } else {
+    console.log('⚠️ 未知格式，将使用空数组')
   }
 
   // 确保是数组
@@ -75,6 +82,11 @@ export default async function AdminDashboard() {
     date: item.trend_date,
     count: item.trend_count
   }))
+
+  console.log('📊 最终走势图数据:', trendData.length, '条')
+  if (trendData.length > 0) {
+    console.log('   前3条:', trendData.slice(0, 3))
+  }
 
   // 统计数据
   const stats = {
