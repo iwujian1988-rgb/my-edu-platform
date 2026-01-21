@@ -1,51 +1,42 @@
 -- 获取注册走势数据（最近N天每日新增用户）
--- 修复：避免列名歧义
+-- 完全重写，避免所有歧义问题
 
--- 先删除旧函数（因为返回类型改变了）
 DROP FUNCTION IF EXISTS get_registration_trend(integer);
 
 CREATE OR REPLACE FUNCTION get_registration_trend(days_count INTEGER DEFAULT 30)
 RETURNS TABLE(
-  reg_date DATE,
-  user_count BIGINT
+  trend_date DATE,
+  trend_count BIGINT
 )
 LANGUAGE plpgsql
 AS $$
 DECLARE
-  start_date DATE := CURRENT_DATE - (days_count - 1);
-  loop_date DATE := start_date;
+  current_date_var DATE := CURRENT_DATE - (days_count - 1);
 BEGIN
-  -- 临时表存储结果（使用明确的列名）
-  CREATE TEMP TABLE IF NOT EXISTS temp_registration_trend (
-    reg_date DATE,
-    user_count BIGINT
+  CREATE TEMP TABLE IF NOT EXISTS temp_results (
+    result_date DATE,
+    result_count BIGINT
   );
 
-  -- 清空临时表
-  TRUNCATE temp_registration_trend;
+  TRUNCATE temp_results;
 
-  -- 循环生成每天的统计数据
-  WHILE loop_date <= CURRENT_DATE LOOP
-    INSERT INTO temp_registration_trend (reg_date, user_count)
-    SELECT
-      loop_date,
-      COUNT(*)::BIGINT
+  WHILE current_date_var <= CURRENT_DATE LOOP
+    INSERT INTO temp_results (result_date, result_count)
+    SELECT current_date_var, COUNT(*)::BIGINT
     FROM users
-    WHERE created_at >= loop_date
-      AND created_at < loop_date + INTERVAL '1 day';
+    WHERE created_at >= current_date_var
+      AND created_at < current_date_var + INTERVAL '1 day';
 
-    loop_date := loop_date + INTERVAL '1 day';
+    current_date_var := current_date_var + 1;
   END LOOP;
 
-  -- 返回结果
   RETURN QUERY
-  SELECT reg_date, user_count
-  FROM temp_registration_trend
-  ORDER BY reg_date;
+  SELECT result_date, result_count
+  FROM temp_results
+  ORDER BY result_date;
 
-  -- 清理临时表
-  DROP TABLE IF EXISTS temp_registration_trend;
+  DROP TABLE temp_results;
 END;
 $$;
 
-COMMENT ON FUNCTION get_registration_trend IS '获取最近N天的注册走势数据（日期和每日新增用户数）';
+COMMENT ON FUNCTION get_registration_trend IS '获取最近N天的注册走势数据';

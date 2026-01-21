@@ -62,10 +62,10 @@ export default async function AdminDashboard() {
     null
   ])
 
-  // 转换走势图数据（RPC返回的是 reg_date 和 user_count）
+  // 转换走势图数据（RPC返回的是 trend_date 和 trend_count）
   const trendData = ((registrationTrendData as any)?.data || []).map((item: any) => ({
-    date: item.reg_date,
-    count: item.user_count
+    date: item.trend_date,
+    count: item.trend_count
   }))
 
   // 统计数据
