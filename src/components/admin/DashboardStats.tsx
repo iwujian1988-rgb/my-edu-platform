@@ -12,7 +12,17 @@ interface DashboardStatsProps {
 }
 
 export function DashboardStats({ stats }: DashboardStatsProps) {
-  const maxCount = Math.max(...stats.trendData.map(d => d.count), 1)
+  // 调试日志
+  console.log('🎨 [DashboardStats] 接收到的stats.trendData:', stats.trendData.slice(0, 5))
+
+  // 计算最大值，确保是数字类型
+  const maxCount = Math.max(
+    ...stats.trendData.map(d => Number(d.count) || 0),
+    1
+  )
+
+  console.log('📊 [DashboardStats] maxCount:', maxCount, '类型:', typeof maxCount)
+  console.log('📊 [DashboardStats] 前5个item的count:', stats.trendData.slice(0, 5).map(d => ({ count: d.count, type: typeof d.count })))
 
   return (
     <div className="space-y-6">
