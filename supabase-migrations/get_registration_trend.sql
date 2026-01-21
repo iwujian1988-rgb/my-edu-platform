@@ -1,10 +1,10 @@
 -- 获取注册走势数据（最近N天每日新增用户）
--- 简化实现：直接使用SQL生成日期序列和统计
+-- 修复：避免列名歧义
 
 CREATE OR REPLACE FUNCTION get_registration_trend(days_count INTEGER DEFAULT 30)
 RETURNS TABLE(
-  date DATE,
-  count BIGINT
+  reg_date DATE,
+  user_count BIGINT
 )
 LANGUAGE plpgsql
 AS $$
@@ -12,10 +12,10 @@ DECLARE
   start_date DATE := CURRENT_DATE - (days_count - 1);
   loop_date DATE := start_date;
 BEGIN
-  -- 临时表存储结果
+  -- 临时表存储结果（使用明确的列名）
   CREATE TEMP TABLE IF NOT EXISTS temp_registration_trend (
-    date DATE,
-    count BIGINT
+    reg_date DATE,
+    user_count BIGINT
   );
 
   -- 清空临时表
@@ -23,7 +23,7 @@ BEGIN
 
   -- 循环生成每天的统计数据
   WHILE loop_date <= CURRENT_DATE LOOP
-    INSERT INTO temp_registration_trend (date, count)
+    INSERT INTO temp_registration_trend (reg_date, user_count)
     SELECT
       loop_date,
       COUNT(*)::BIGINT
@@ -36,9 +36,9 @@ BEGIN
 
   -- 返回结果
   RETURN QUERY
-  SELECT date, count
+  SELECT reg_date, user_count
   FROM temp_registration_trend
-  ORDER BY date;
+  ORDER BY reg_date;
 
   -- 清理临时表
   DROP TABLE IF EXISTS temp_registration_trend;
