@@ -62,8 +62,16 @@ export default async function AdminDashboard() {
     null
   ])
 
-  // 转换走势图数据（RPC直接返回数组，不是 {data: [...]} 结构）
-  const trendData = ((registrationTrendData as any) || []).map((item: any) => ({
+  // 转换走势图数据（处理可能的多种返回格式）
+  let rawTrendData = registrationTrendData as any
+
+  // 如果是 {data: [...]} 格式，提取 data
+  if (rawTrendData && rawTrendData.data && Array.isArray(rawTrendData.data)) {
+    rawTrendData = rawTrendData.data
+  }
+
+  // 确保是数组
+  const trendData = (Array.isArray(rawTrendData) ? rawTrendData : []).map((item: any) => ({
     date: item.trend_date,
     count: item.trend_count
   }))
