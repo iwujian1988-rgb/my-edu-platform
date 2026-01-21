@@ -6,7 +6,6 @@
  */
 
 import { Users, UserPlus, TrendingUp } from 'lucide-react'
-import { useEffect } from 'react'
 
 interface DashboardStatsProps {
   stats: {
@@ -18,30 +17,11 @@ interface DashboardStatsProps {
 }
 
 export function DashboardStats({ stats }: DashboardStatsProps) {
-  // 调试日志
-  useEffect(() => {
-    console.log('🎨 [DashboardStats Client] 收到的props:', {
-      totalUsers: stats.totalUsers,
-      yesterdayNewUsers: stats.yesterdayNewUsers,
-      todayNewUsers: stats.todayNewUsers,
-      trendDataLength: stats.trendData.length,
-      trendDataSample: stats.trendData.slice(0, 3)
-    })
-  }, [stats])
-
   // 计算走势图的最大值（用于归一化高度）
   const maxCount = Math.max(...stats.trendData.map(d => d.count), 1)
 
-  console.log('📊 [DashboardStats Client] maxCount:', maxCount, 'trendData:', stats.trendData.length)
-
   return (
     <div className="space-y-6">
-      {/* 调试：显示数据接收状态 */}
-      <div className="bg-yellow-50 p-2 rounded text-xs">
-        调试信息: 收到 {stats.trendData.length} 条走势数据，最大值 {maxCount}，
-        非零数据 {stats.trendData.filter(d => d.count > 0).length} 天
-      </div>
-
       {/* 用户统计卡片 - 3列布局 */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* 昨日新增 */}
@@ -109,10 +89,6 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
             <h3 className="text-xl font-bold text-gray-800">注册走势</h3>
             <p className="text-sm text-gray-600 font-semibold">最近30天每日新增用户</p>
           </div>
-          {/* 调试信息 */}
-          <div className="ml-auto text-xs bg-gray-100 px-2 py-1 rounded">
-            数据: {stats.trendData.length}天 | 最大值: {maxCount}人
-          </div>
         </div>
 
         {/* 纯CSS柱状图 */}
@@ -126,11 +102,6 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
 
           {/* 图表区域 */}
           <div className="ml-14">
-            {/* 调试：显示正在渲染 */}
-            <div className="text-xs text-gray-500 mb-2">
-              正在渲染 {stats.trendData.length} 个柱子，其中 {stats.trendData.filter(d => d.count > 0).length} 个有数据
-            </div>
-
             {/* 柱状图 */}
             <div className="flex items-end gap-1 h-40 border-b border-l border-gray-300 pl-2 bg-gray-50">
               {stats.trendData.map((item, index) => {
@@ -143,13 +114,13 @@ export function DashboardStats({ stats }: DashboardStatsProps) {
                     className="flex-1 flex flex-col items-center group relative"
                     style={{ minWidth: '8px' }}
                   >
-                    {/* 柱子 */}
+                    {/* 柱子 - 最小高度8%，让基线更明显 */}
                     <div
                       className={`w-full rounded-t-sm transition-all hover:opacity-80 ${
                         isToday ? 'bg-green-500' : 'bg-indigo-400'
                       }`}
                       style={{
-                        height: `${Math.max(heightPercent, 2)}%`,
+                        height: `${Math.max(heightPercent, 8)}%`,
                         minHeight: '2px'
                       }}
                       title={`${item.date}: ${item.count}人`}
