@@ -34,8 +34,7 @@ import type { Database } from '@/types/database'
  * ```
  */
 export function createClient() {
-  // 🔧 使用 @supabase/supabase-js 而不是 @supabase/ssr
-  // 原因：@supabase/ssr 的 createBrowserClient 在浏览器端不会存储 refresh-token
+  // 🔧 混合方案：使用 @supabase/supabase-js + 手动同步cookies
   const client = createSupabaseClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -44,18 +43,32 @@ export function createClient() {
         persistSession: true,
         autoRefreshToken: true,
         detectSessionInUrl: true,
+        storage: window.localStorage, // 使用localStorage存储session
       },
     }
   )
 
-  // 🔍 Debug: 监听session变化
+  // 🔧 关键：监听session变化，同步到cookies
   if (typeof window !== 'undefined') {
     client.auth.onAuthStateChange((event, session) => {
-      console.log('🔔 [Auth]', {
+      console.log('🔔 [Auth Event]', {
         event,
         hasAccessToken: !!session?.access_token,
         hasRefreshToken: !!session?.refresh_token,
       })
+
+      // 同步到cookies（供服务端API使用）
+      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
+        if (session?.access_token) {
+          // 设置access_token cookie
+          document.cookie = `sb-snnrjnpcmdsdlyldvvps-auth-token=${session.access_token}; path=/; secure=true; samesite=lax`
+          console.log('✅ [Cookie Sync] access_token synced to cookie')
+        }
+      } else if (event === 'SIGNED_OUT') {
+        // 清除cookies
+        document.cookie = 'sb-snnrjnpcmdsdlyldvvps-auth-token=; path=/; max-age=0'
+        console.log('🗑️ [Cookie Sync] cookies cleared')
+      }
     })
   }
 
