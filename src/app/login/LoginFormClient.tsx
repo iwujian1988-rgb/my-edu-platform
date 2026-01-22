@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
-import { createClient } from '@/lib/supabase/client'
 
 export default function LoginFormClient() {
   const router = useRouter()
@@ -33,18 +32,22 @@ export default function LoginFormClient() {
     try {
       console.log('[Login] 尝试登录:', loginData.phone)
 
-      // 🔧 Fix: 使用客户端 Supabase 完成登录，确保cookies被正确设置
-      const supabase = createClient()
-      const email = `${loginData.phone}@phone.xiaoyu.com`
-
-      const { data, error: signInError } = await supabase.auth.signInWithPassword({
-        email,
-        password: loginData.password,
+      // 🔧 Fix: 使用服务端API登录，确保cookies被正确设置
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({
+          phone: loginData.phone,
+          password: loginData.password,
+        }),
       })
 
-      if (signInError || !data.user) {
-        console.error('[Login] 登录失败:', signInError)
-        setError('手机号或密码错误')
+      const data = await response.json()
+
+      if (!response.ok) {
+        console.error('[Login] 登录失败:', data.error)
+        setError(data.error || '登录失败')
         setLoading(false)
         return
       }
@@ -59,18 +62,8 @@ export default function LoginFormClient() {
           totalCookies: allCookies.length,
           authCookiesCount: authCookies.length,
           authCookies: authCookies,
-          hasAuthToken: authCookies.some(c => c.includes('auth-token')),
-          hasRefreshToken: authCookies.some(c => c.includes('refresh-token')),
         })
       }
-
-      // 检查用户是否被封禁（需要额外调用API）
-      const checkBanResponse = await fetch('/api/auth/check-ban', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-      })
-      // 即使检查失败也不影响登录流程
 
       // 登录成功，检查是否有redirect参数
       const redirectTo = searchParams.get('redirect')
