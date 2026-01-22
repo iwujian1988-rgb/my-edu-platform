@@ -9,6 +9,9 @@ interface DailyData {
   count: number
 }
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 export default async function CalendarPage() {
   const user = await getCurrentUser()
   if (!user) {

@@ -7,6 +7,9 @@ import { redirect } from 'next/navigation'
 import { requireAdmin } from '@/lib/admin-auth'
 import PackageListClient from '@/components/admin/PackageListClient'
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 export default async function PackagesPage() {
   // 验证管理员权限
   try {

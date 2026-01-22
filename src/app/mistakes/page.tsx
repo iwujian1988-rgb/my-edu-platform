@@ -4,6 +4,9 @@ import Link from 'next/link'
 import { Trophy, ArrowLeft, BookOpen } from 'lucide-react'
 import { MistakesClient } from '@/components/MistakesClient'
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 interface MistakeWord {
   id: string
   word: string

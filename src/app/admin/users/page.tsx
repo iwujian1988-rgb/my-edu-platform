@@ -7,6 +7,9 @@ import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
 import { UserList } from '@/components/admin/UserList'
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 export default async function AdminUsersPage({
   searchParams
 }: {

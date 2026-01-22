@@ -4,8 +4,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs'
-import { cookies } from 'next/headers'
+import { createClient } from '@/lib/supabase/server'
 
 interface ErrorLog {
   type: 'javascript' | 'network' | 'hydration' | 'performance'
@@ -28,7 +27,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 方案1：存储到数据库（Supabase）
-    const supabase = createRouteHandlerClient({ cookies })
+    const supabase = await createClient()
 
     // 批量插入日志
     const { data, error } = await supabase
@@ -90,7 +89,7 @@ export async function GET(request: NextRequest) {
     const type = searchParams.get('type')
     const userId = searchParams.get('userId')
 
-    const supabase = createRouteHandlerClient({ cookies })
+    const supabase = await createClient()
 
     let query = supabase
       .from('error_logs')

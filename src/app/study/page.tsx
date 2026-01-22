@@ -1,5 +1,8 @@
 import { redirect } from 'next/navigation'
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 // 简化的重定向页面
 export default async function StudyPage() {
   // 直接重定向到首页

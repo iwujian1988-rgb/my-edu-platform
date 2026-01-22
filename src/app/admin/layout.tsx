@@ -9,6 +9,9 @@
 import { getCurrentAdmin } from '@/lib/admin-auth'
 import { AdminLayoutComponent } from '@/components/admin/AdminLayout'
 
+// 强制动态渲染，因为使用了 cookies
+export const dynamic = 'force-dynamic'
+
 export default async function AdminRootLayout({
   children
 }: {

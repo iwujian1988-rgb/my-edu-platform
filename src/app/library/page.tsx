@@ -3,6 +3,10 @@ import { redirect } from 'next/navigation'
 import { LibraryClient } from '@/components/LibraryClient'
 import { getAllBooks } from '@/lib/books-server'
 import { getUserPermissions } from '@/lib/permissions'
+import { Suspense } from 'react'
+
+// 强制动态渲染，因为子组件使用了 useRouter
+export const dynamic = 'force-dynamic'
 
 export default async function LibraryPage() {
   const user = await getCurrentUser()
@@ -50,6 +54,8 @@ export default async function LibraryPage() {
   console.log(`[Library Page] Loaded ${booksWithRecentFlag.length} books (${recentBookIds.length} recent)`)
 
   return (
-    <LibraryClient books={booksWithRecentFlag} />
+    <Suspense fallback={<div className="text-center py-12">Loading...</div>}>
+      <LibraryClient books={booksWithRecentFlag} />
+    </Suspense>
   )
 }

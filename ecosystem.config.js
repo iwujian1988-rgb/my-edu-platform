@@ -1,7 +1,7 @@
 /**
- * PM2 配置文件 - 2GB内存优化版 ✅
- * 适用于：2 vCPU + 2GB 内存
- * 优势：内存翻倍，可以运行2个实例（高可用）
+ * PM2 配置文件 - 4GB内存优化版 ✅
+ * 适用于：2 vCPU + 4GB 内存
+ * 优势：内存充足，稳定运行
  */
 
 module.exports = {
@@ -14,13 +14,14 @@ module.exports = {
       script: 'npm',
       args: 'start',
 
-      // ✅ 2GB内存可以支持2个实例（高可用）
-      instances: 2,
-      exec_mode: 'cluster',
+      // ✅ 单实例模式（稳定优先）
+      // 4GB内存足够运行一个稳定实例
+      instances: 1,
+      exec_mode: 'fork',
 
-      // ✅ 内存监控阈值（提高到900MB）
-      // 原因：2GB总内存，系统需要400MB，每个实例可以用900MB
-      max_memory_restart: '900M',
+      // ✅ 内存监控阈值（提高到1.5GB）
+      // 4GB总内存，系统需要500MB，应用可以用1.5GB
+      max_memory_restart: '1500M',
 
       // 最小运行时间
       min_uptime: '60s',
@@ -29,8 +30,8 @@ module.exports = {
       env: {
         NODE_ENV: 'production',
         PORT: 3000,
-        // ✅ 提高堆内存限制到1GB
-        NODE_OPTIONS: '--max-old-space-size=1024'
+        // ✅ 提高堆内存限制到1.5GB
+        NODE_OPTIONS: '--max-old-space-size=1536'
       },
 
       // 日志配置

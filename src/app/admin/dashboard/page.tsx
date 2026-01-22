@@ -7,6 +7,9 @@ import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
 import { DashboardStats } from '@/components/admin/DashboardStats'
 
+// 强制动态渲染，避免静态预渲染问题
+export const dynamic = 'force-dynamic'
+
 export default async function AdminDashboard() {
   const admin = await requireAdmin()
   // 使用 admin client 绕过 RLS 限制

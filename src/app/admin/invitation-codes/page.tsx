@@ -8,6 +8,9 @@ import { requireAdmin } from '@/lib/admin-auth'
 import { InvitationCodeList } from '@/components/admin/InvitationCodeList'
 import { CreateInvitationCodeButton } from '@/components/admin/CreateInvitationCodeButton'
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 export default async function AdminInvitationCodesPage({
   searchParams
 }: {

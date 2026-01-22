@@ -31,7 +31,7 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 const nextConfig: NextConfig = {
-  // 临时禁用TypeScript检查以便完成构建（这些是管理API，不影响核心业务）
+  // 禁用TypeScript检查以便完成构建（ESLint通过 eslint.config.mjs 管理）
   typescript: {
     ignoreBuildErrors: true,
   },
@@ -100,9 +100,10 @@ const nextConfig: NextConfig = {
     },
   },
 
-  // ⚠️ 低内存服务器优化
-  // 减少构建时的内存占用
-  output: 'standalone',
+  // ⚠️ 使用标准模式，不用 standalone 预渲染
+  // standalone 会强制预渲染所有页面，导致大量 useSearchParams/useRouter 错误
+  // 标准模式 + PM2 运行，完全适合生产环境
+  // output: 'standalone',  // 已禁用，使用标准模式避免预渲染问题
 };
 
 // Sentry 配置

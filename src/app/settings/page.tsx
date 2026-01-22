@@ -4,6 +4,9 @@ import { SettingsPageClient } from '@/components/SettingsPageClient'
 import { getAllBooks } from '@/lib/books-server'
 import { getUserPermissions } from '@/lib/permissions'
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 // 设置页面 - 服务端组件
 //
 // 🚀 性能优化：

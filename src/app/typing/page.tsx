@@ -4,6 +4,9 @@ import { getUserPermissions } from '@/lib/permissions'
 import Link from 'next/link'
 import { Dumbbell, ArrowRight, Home } from 'lucide-react'
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 /**
  * 打字练习入口页 - 词书列表
  * Route: /typing

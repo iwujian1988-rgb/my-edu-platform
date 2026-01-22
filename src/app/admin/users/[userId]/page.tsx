@@ -8,6 +8,9 @@ import { requireAdmin } from '@/lib/admin-auth'
 import { notFound } from 'next/navigation'
 import { UserDetail } from '@/components/admin/UserDetail'
 
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
+
 export default async function AdminUserDetailPage({
   params
 }: {

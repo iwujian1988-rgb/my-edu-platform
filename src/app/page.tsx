@@ -10,9 +10,8 @@ import type { ProgressCardProps } from '@/types/progress'
 import { DashboardClient } from '@/components/DashboardClient'
 import { getAllBooks } from '@/lib/books-server'
 
-// ✅ 添加ISR缓存，10秒重新验证一次
-// 结合客户端轮询，既保证实时性又降低服务器负载
-export const revalidate = 10
+// 强制动态渲染
+export const dynamic = 'force-dynamic'
 
 export default async function Home() {
   // 获取用户信息

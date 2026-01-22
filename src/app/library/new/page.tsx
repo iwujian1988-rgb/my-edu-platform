@@ -3,6 +3,10 @@ import { redirect } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowLeft, BookOpen, Sparkles, Plus, X, Check, AlertCircle } from 'lucide-react'
 import { NewBookClient } from '@/components/NewBookClient'
+import { Suspense } from 'react'
+
+// 强制动态渲染，因为子组件使用了 useRouter
+export const dynamic = 'force-dynamic'
 
 export default async function NewBookPage() {
   const user = await getCurrentUser()
@@ -35,7 +39,9 @@ export default async function NewBookPage() {
       {/* Main Content */}
       <main className="px-3 sm:px-4 md:px-6 py-6 md:py-8">
         <div className="w-full mx-auto" style={{ maxWidth: '800px' }}>
-          <NewBookClient userId={user.id} />
+          <Suspense fallback={<div className="text-center py-12">Loading...</div>}>
+            <NewBookClient userId={user.id} />
+          </Suspense>
         </div>
       </main>
     </div>
