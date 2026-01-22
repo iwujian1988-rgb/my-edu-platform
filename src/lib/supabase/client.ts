@@ -36,28 +36,7 @@ import type { Database } from '@/types/database'
 export function createClient() {
   return createBrowserClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        get(name: string) {
-          const cookie = document.cookie
-            .split('; ')
-            .find((row) => row.startsWith(`${name}=`))
-          return cookie ? cookie.split('=')[1] : undefined
-        },
-        set(name: string, value: string, options: any) {
-          // 🔧 Fix: 强制 secure: false 以支持 HTTP 环境
-          document.cookie = `${name}=${value}; path=/; ${
-            options?.maxAge ? `max-age=${options.maxAge};` : ''
-          }${options?.domain ? `domain=${options.domain};` : ''} SameSite=Lax`
-        },
-        remove(name: string, options: any) {
-          document.cookie = `${name}=; path=/; max-age=0${
-            options?.domain ? `; domain=${options.domain}` : ''
-          }`
-        },
-      },
-    }
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 }
 
