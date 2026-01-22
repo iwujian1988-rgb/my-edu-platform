@@ -150,9 +150,9 @@ export async function middleware(request: NextRequest) {
       request: { headers: request.headers }
     })
 
-    // Copy all cookies from request to response
+    // Copy all cookies from request to response (preserving all properties)
     request.cookies.getAll().forEach(cookie => {
-      response.cookies.set(cookie.name, cookie.value)
+      response.cookies.set(cookie)
     })
 
     return response
