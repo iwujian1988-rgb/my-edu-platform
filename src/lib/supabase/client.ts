@@ -7,13 +7,13 @@
  * - Client-side data fetching and real-time subscriptions
  *
  * Key differences from server.ts:
- * - Uses createBrowserClient (not createServerClient)
+ * - Uses @supabase/supabase-js (not @supabase/ssr)
  * - Can be used in Client Components and useEffect hooks
  * - Supports real-time subscriptions
- * - Does NOT have access to server-side cookies
+ * - Properly stores refresh tokens in browser cookies
  */
 
-import { createBrowserClient } from '@supabase/ssr'
+import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import type { Database } from '@/types/database'
 
 /**
@@ -34,68 +34,39 @@ import type { Database } from '@/types/database'
  * ```
  */
 export function createClient() {
-  // 🔧 最小化自定义cookies配置，确保token能被正确存储
-  const client = createBrowserClient<Database>(
+  // 🔧 使用 @supabase/supabase-js 而不是 @supabase/ssr
+  // 原因：@supabase/ssr 的 createBrowserClient 在浏览器端不会存储 refresh-token
+  // @supabase/supabase-js 的 createClient 会正确存储 refresh-token
+  const client = createSupabaseClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
-      cookies: {
-        get(name: string) {
-          if (typeof document === 'undefined') return ''
-          const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'))
-          if (match) return match[2]
-          return ''
-        },
-        set(name: string, value: string, options: any) {
-          // 🔍 Debug日志
-          if (typeof window !== 'undefined' && name.includes('sb-')) {
-            console.log('🍪 [Set]', {
-              name,
-              value: value.substring(0, 20) + '...',
-              hasRefreshToken: name.includes('refresh-token'),
-            })
-          }
-
-          // 直接使用document.cookie，保持所有原始options
-          let cookieString = `${name}=${value}`
-
-          // 处理所有可能的options属性
-          if (options) {
-            if (options.maxAge !== undefined) cookieString += `; Max-Age=${options.maxAge}`
-            if (options.domain) cookieString += `; Domain=${options.domain}`
-            if (options.path) cookieString += `; Path=${options.path}`
-            if (options.expires) cookieString += `; Expires=${options.expires.toUTCString()}`
-            if (options.sameSite) cookieString += `; SameSite=${options.sameSite}`
-            if (options.secure) cookieString += `; Secure`
-            if (options.httpOnly) cookieString += `; HttpOnly`
-          }
-
-          document.cookie = cookieString
-
-          // 验证是否设置成功
-          if (typeof window !== 'undefined' && name.includes('sb-')) {
-            const verify = document.cookie.includes(`${name}=`)
-            console.log('✅ [Verify]', {
-              name,
-              setSuccessfully: verify,
-            })
-          }
-        },
-        remove(name: string, options: any) {
-          document.cookie = `${name}=; Max-Age=0; ${options?.path ? `Path=${options.path}` : 'Path=/'}`
-        },
+      // 🔍 Debug: 监听所有auth事件
+      auth: {
+        debug: true, // 开启详细日志
+        persistSession: true, // 持久化session
+        storage: window.localStorage, // 使用localStorage作为辅助存储
+        autoRefreshToken: true, // 自动刷新token
+        detectSessionInUrl: true, // 从URL检测session
+        flowType: 'pkce', // 使用PKCE流程（更安全）
       },
     }
   )
 
-  // 🔍 Debug: 监听session变化
+  // 🔍 Debug: 监听session变化和token刷新
   if (typeof window !== 'undefined') {
     client.auth.onAuthStateChange((event, session) => {
-      console.log('🔔 [Auth State]', {
+      console.log('🔔 [Auth Event]', {
         event,
         hasAccessToken: !!session?.access_token,
         hasRefreshToken: !!session?.refresh_token,
+        expiresAt: session?.expires_at,
       })
+    })
+
+    // 监听token刷新事件
+    client.auth.onTokenRefreshed(() => {
+      console.log('🔄 [Token Refreshed] Token has been refreshed')
     })
   }
 
