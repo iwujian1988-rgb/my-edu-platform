@@ -74,11 +74,17 @@ export async function POST(request: NextRequest) {
 
     // Update last login time (async, don't wait)
     const supabaseAdmin = await createAdminClient()
-    supabaseAdmin
-      .from('users')
-      .update({ last_login_at: new Date().toISOString() })
-      .eq('id', data.user.id)
-      .catch(err => console.error('[API Login] Failed to update last_login_at:', err))
+    // 🔧 Fix: Supabase query doesn't have .catch(), use void to run as fire-and-forget
+    void (async () => {
+      try {
+        await supabaseAdmin
+          .from('users')
+          .update({ last_login_at: new Date().toISOString() })
+          .eq('id', data.user.id)
+      } catch (err) {
+        console.error('[API Login] Failed to update last_login_at:', err)
+      }
+    })()
 
     console.log('[API Login] Login completed successfully')
 
