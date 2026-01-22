@@ -38,30 +38,41 @@ export async function middleware(request: NextRequest) {
             return request.cookies.get(name)?.value
           },
           set(name: string, value: string, options: any) {
-            // Set on request for subsequent reads in this middleware execution
+            // 🔧 Fix: 强制 secure: false 以支持 HTTP
+            const cookieOptions = {
+              ...options,
+              secure: false,  // HTTP 环境必须为 false
+              sameSite: 'lax',
+            }
+
+            // Set on request for subsequent reads
             request.cookies.set({
               name,
               value,
-              ...options,
+              ...cookieOptions,
             })
             // IMPORTANT: Also set on response so cookies are sent to browser
             response.cookies.set({
               name,
               value,
-              ...options,
+              ...cookieOptions,
             })
           },
           remove(name: string, options: any) {
-            // Remove from request
+            const cookieOptions = {
+              ...options,
+              secure: false,
+            }
+
             request.cookies.delete({
               name,
-              ...options,
+              ...cookieOptions,
             })
-            // IMPORTANT: Also remove from response
+            // Also remove from response
             response.cookies.set({
               name,
               value: '',
-              ...options,
+              ...cookieOptions,
               maxAge: 0,
             })
           },

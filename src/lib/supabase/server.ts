@@ -40,18 +40,28 @@ export async function createClient() {
         },
         set(name: string, value: string, options: any) {
           try {
-            // 🔍 Debug: Log cookie setting attempts
-            console.log('[createClient] Setting cookie:', name, 'options:', JSON.stringify(options))
-            cookieStore.set({ name, value, ...options })
-            console.log('[createClient] Cookie set successfully:', name)
+            // 🔧 Fix: 强制 secure: false 以支持 HTTP
+            cookieStore.set({
+              name,
+              value,
+              ...options,
+              secure: false,  // HTTP 环境必须为 false
+              sameSite: 'lax',
+              httpOnly: true,
+            })
+            console.log('[createClient] Set cookie:', name, 'secure:', false)
           } catch (error) {
-            // 🔍 Debug: Log cookie setting failures
             console.error('[createClient] Failed to set cookie:', name, 'error:', error)
           }
         },
         remove(name: string, options: any) {
           try {
-            cookieStore.set({ name, value: '', ...options })
+            cookieStore.set({
+              name,
+              value: '',
+              ...options,
+              secure: false,
+            })
           } catch (error) {
             console.error('[createClient] Failed to remove cookie:', name, 'error:', error)
           }
