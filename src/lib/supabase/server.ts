@@ -40,17 +40,20 @@ export async function createClient() {
         },
         set(name: string, value: string, options: any) {
           try {
+            // 🔍 Debug: Log cookie setting attempts
+            console.log('[createClient] Setting cookie:', name, 'options:', JSON.stringify(options))
             cookieStore.set({ name, value, ...options })
-          } catch {
-            // set() can fail in Server Components but that's okay
-            // The cookie will be set in the middleware instead
+            console.log('[createClient] Cookie set successfully:', name)
+          } catch (error) {
+            // 🔍 Debug: Log cookie setting failures
+            console.error('[createClient] Failed to set cookie:', name, 'error:', error)
           }
         },
         remove(name: string, options: any) {
           try {
             cookieStore.set({ name, value: '', ...options })
-          } catch {
-            // remove() can fail in Server Components but that's okay
+          } catch (error) {
+            console.error('[createClient] Failed to remove cookie:', name, 'error:', error)
           }
         },
       },
