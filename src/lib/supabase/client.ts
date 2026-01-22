@@ -7,17 +7,19 @@
  * - Client-side data fetching and real-time subscriptions
  *
  * Key differences from server.ts:
- * - Uses @supabase/supabase-js (not @supabase/ssr)
- * - Can be used in Client Components and useEffect hooks
- * - Supports real-time subscriptions
- * - Properly stores refresh tokens in browser cookies
+ * - Uses @supabase/ssr createBrowserClient (not @supabase/supabase-js)
+ * - Automatically handles session storage in cookies
+ * - Compatible with server-side @supabase/ssr createServerClient
  */
 
-import { createClient as createSupabaseClient } from '@supabase/supabase-js'
+import { createBrowserClient } from '@supabase/ssr'
 import type { Database } from '@/types/database'
 
 /**
  * Creates a Supabase client for browser/client component usage
+ *
+ * IMPORTANT: Uses @supabase/ssr to ensure cookie-based session storage
+ * that is compatible with server-side createServerClient
  *
  * @example
  * ```tsx
@@ -34,66 +36,14 @@ import type { Database } from '@/types/database'
  * ```
  */
 export function createClient() {
-  // 🔧 混合方案：使用 @supabase/supabase-js + 手动同步cookies
-  const client = createSupabaseClient<Database>(
+  return createBrowserClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-        detectSessionInUrl: true,
-        storage: window.localStorage, // 使用localStorage存储session
-      },
+        flowType: 'pkce', // 使用PKCE flow以支持SSR
+      }
     }
   )
-
-  // 🔧 关键：监听session变化，同步到cookies
-  if (typeof window !== 'undefined') {
-    client.auth.onAuthStateChange((event, session) => {
-      console.log('🔔 [Auth Event]', {
-        event,
-        hasAccessToken: !!session?.access_token,
-        hasRefreshToken: !!session?.refresh_token,
-      })
-
-      // 同步到cookies（供服务端API使用）
-      if (event === 'SIGNED_IN' || event === 'TOKEN_REFRESHED') {
-        if (session?.access_token) {
-          // 设置access_token cookie
-          document.cookie = `sb-snnrjnpcmdsdlyldvvps-auth-token=${session.access_token}; path=/; secure=true; samesite=lax`
-          console.log('✅ [Cookie Sync] access_token synced to cookie')
-        }
-      } else if (event === 'SIGNED_OUT') {
-        // 清除cookies
-        document.cookie = 'sb-snnrjnpcmdsdlyldvvps-auth-token=; path=/; max-age=0'
-        console.log('🗑️ [Cookie Sync] cookies cleared')
-      }
-    })
-  }
-
-  return client
 }
 
-/**
- * Singleton instance for browser client
- * Use this if you need to reference the same client instance across multiple components
- */
-let browserClientInstance: ReturnType<typeof createSupabaseClient<Database>> | null = null
-
-export function getBrowserClient() {
-  if (!browserClientInstance) {
-    browserClientInstance = createSupabaseClient<Database>(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-      {
-        auth: {
-          persistSession: true,
-          autoRefreshToken: true,
-          detectSessionInUrl: true,
-        },
-      }
-    )
-  }
-  return browserClientInstance
-}

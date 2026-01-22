@@ -4,7 +4,7 @@
  * 提供带认证的fetch功能，用于客户端组件调用API路由
  */
 
-import { createClient as createBrowserClient } from '@/lib/supabase/client'
+import { createClient } from '@/lib/supabase/client'
 
 let cachedToken: string | null = null
 let tokenExpireTime: number = 0
@@ -21,9 +21,9 @@ export async function getAccessToken(): Promise<string | null> {
   }
 
   try {
-    // 🔧 Fix: 使用浏览器客户端（createBrowserClient）而不是 supabase-js
-    // 因为登录方案使用的是 createBrowserClient，session 存储在 cookies 中
-    const supabase = createBrowserClient()
+    // 🔧 Fix: 使用浏览器客户端（createClient from client.ts）
+    // 客户端使用 @supabase/ssr，session 自动存储在 cookies 中
+    const supabase = createClient()
 
     console.log('🔍 [API] 调用 getSession()...')
 

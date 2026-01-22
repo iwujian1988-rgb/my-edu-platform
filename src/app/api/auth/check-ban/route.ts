@@ -3,10 +3,26 @@ import { createClient } from '@/lib/supabase/server'
 
 export async function POST(request: NextRequest) {
   try {
+    // 🔍 Debug: 检查请求中的cookies
+    const cookies = request.cookies.getAll()
+    const authCookies = cookies.filter(c => c.name.includes('sb-'))
+    console.log('🍪 [check-ban API] Cookies:', {
+      total: cookies.length,
+      authCookies: authCookies.map(c => c.name),
+      hasAuthTokenCookie: authCookies.some(c => c.name.includes('auth-token'))
+    })
+
     const supabase = await createClient()
-    const { data: { user } } = await supabase.auth.getUser()
+    const { data: { user }, error: getUserError } = await supabase.auth.getUser()
+
+    console.log('👤 [check-ban API] getUser result:', {
+      hasUser: !!user,
+      userId: user?.id,
+      error: getUserError?.message
+    })
 
     if (!user) {
+      console.warn('⚠️ [check-ban API] No user found')
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
@@ -23,6 +39,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json({ success: true })
   } catch (error) {
+    console.error('❌ [check-ban API] Error:', error)
     // 即使检查失败也不影响登录
     return NextResponse.json({ success: true })
   }
