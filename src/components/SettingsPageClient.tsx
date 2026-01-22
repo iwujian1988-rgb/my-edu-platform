@@ -14,7 +14,7 @@ interface SettingsPageClientProps {
 
 export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
   const router = useRouter()
-  const { theme, themeMode, setThemeMode } = useTheme()
+  const { theme, themeMode, setThemeMode, mounted } = useTheme()
   const [showPasswordModal, setShowPasswordModal] = useState(false)
 
   return (
@@ -61,57 +61,74 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
             </div>
 
             {/* 主题切换按钮 */}
-            <div className="grid grid-cols-3 gap-3">
-              <button
-                onClick={() => setThemeMode('light')}
-                className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
-                  themeMode === 'light'
-                    ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
-                    : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                }`}
-                style={{ backgroundColor: themeMode === 'light' ? undefined : 'var(--bg-tertiary)' }}
-              >
-                <Sun className="w-5 h-5 mx-auto mb-1" strokeWidth={2.5} />
-                <span className={themeMode === 'light' ? 'text-black' : ''} style={{ color: themeMode === 'light' ? undefined : 'var(--text-primary)' }}>明亮</span>
-              </button>
+            {!mounted ? (
+              <div className="grid grid-cols-3 gap-3">
+                {[1, 2, 3].map((i) => (
+                  <div
+                    key={i}
+                    className="px-4 py-3 border-[3px] border-black rounded-xl font-black text-sm"
+                    style={{ backgroundColor: 'var(--bg-tertiary)' }}
+                  >
+                    <div className="w-5 h-5 mx-auto mb-1 opacity-50" />
+                    <span className="opacity-50">加载中</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="grid grid-cols-3 gap-3">
+                <button
+                  onClick={() => setThemeMode('light')}
+                  className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
+                    themeMode === 'light'
+                      ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
+                      : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                  }`}
+                  style={{ backgroundColor: themeMode === 'light' ? undefined : 'var(--bg-tertiary)' }}
+                >
+                  <Sun className="w-5 h-5 mx-auto mb-1" strokeWidth={2.5} />
+                  <span className={themeMode === 'light' ? 'text-black' : ''} style={{ color: themeMode === 'light' ? undefined : 'var(--text-primary)' }}>明亮</span>
+                </button>
 
-              <button
-                onClick={() => setThemeMode('dark')}
-                className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
-                  themeMode === 'dark'
-                    ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
-                    : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                }`}
-                style={{ backgroundColor: themeMode === 'dark' ? undefined : 'var(--bg-tertiary)' }}
-              >
-                <Moon className="w-5 h-5 mx-auto mb-1" strokeWidth={2.5} />
-                <span className={themeMode === 'dark' ? 'text-black' : ''} style={{ color: themeMode === 'dark' ? undefined : 'var(--text-primary)' }}>黑暗</span>
-              </button>
+                <button
+                  onClick={() => setThemeMode('dark')}
+                  className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
+                    themeMode === 'dark'
+                      ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
+                      : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                  }`}
+                  style={{ backgroundColor: themeMode === 'dark' ? undefined : 'var(--bg-tertiary)' }}
+                >
+                  <Moon className="w-5 h-5 mx-auto mb-1" strokeWidth={2.5} />
+                  <span className={themeMode === 'dark' ? 'text-black' : ''} style={{ color: themeMode === 'dark' ? undefined : 'var(--text-primary)' }}>黑暗</span>
+                </button>
 
-              <button
-                onClick={() => setThemeMode('auto')}
-                className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
-                  themeMode === 'auto'
-                    ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
-                    : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                }`}
-                style={{ backgroundColor: themeMode === 'auto' ? undefined : 'var(--bg-tertiary)' }}
-              >
-                <Monitor className="w-5 h-5 mx-auto mb-1" strokeWidth={2.5} />
-                <span className={themeMode === 'auto' ? 'text-black' : ''} style={{ color: themeMode === 'auto' ? undefined : 'var(--text-primary)' }}>自动</span>
-              </button>
-            </div>
+                <button
+                  onClick={() => setThemeMode('auto')}
+                  className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
+                    themeMode === 'auto'
+                      ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
+                      : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                  }`}
+                  style={{ backgroundColor: themeMode === 'auto' ? undefined : 'var(--bg-tertiary)' }}
+                >
+                  <Monitor className="w-5 h-5 mx-auto mb-1" strokeWidth={2.5} />
+                  <span className={themeMode === 'auto' ? 'text-black' : ''} style={{ color: themeMode === 'auto' ? undefined : 'var(--text-primary)' }}>自动</span>
+                </button>
+              </div>
+            )}
 
             {/* 当前主题说明 */}
-            <div className="mt-4 p-3 border-[2px] border-black rounded-lg text-xs font-bold" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)' }}>
-              {themeMode === 'auto' ? (
-                <span>自动模式：18:00-6:00 使用黑暗主题，其他时间使用明亮主题</span>
-              ) : themeMode === 'dark' ? (
-                <span>当前使用黑暗主题</span>
-              ) : (
-                <span>当前使用明亮主题</span>
-              )}
-            </div>
+            {mounted && (
+              <div className="mt-4 p-3 border-[2px] border-black rounded-lg text-xs font-bold" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)' }}>
+                {themeMode === 'auto' ? (
+                  <span>自动模式：18:00-6:00 使用黑暗主题，其他时间使用明亮主题</span>
+                ) : themeMode === 'dark' ? (
+                  <span>当前使用黑暗主题</span>
+                ) : (
+                  <span>当前使用明亮主题</span>
+                )}
+              </div>
+            )}
           </div>
 
           {/* 账号设置部分标题 */}

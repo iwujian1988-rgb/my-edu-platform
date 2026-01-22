@@ -14,7 +14,7 @@ import { useState, useEffect } from 'react'
  * 4. 平滑过渡动画
  */
 export function ThemeToggleV2() {
-  const { theme, themeMode, setThemeMode, isNightTime } = useTheme()
+  const { theme, themeMode, setThemeMode, isNightTime, mounted } = useTheme()
   const [showMenu, setShowMenu] = useState(false)
 
   // 从 localStorage 读取用户偏好
@@ -38,6 +38,12 @@ export function ThemeToggleV2() {
     const currentIndex = modes.indexOf(themeMode)
     const nextMode = modes[(currentIndex + 1) % modes.length]
     handleSetTheme(nextMode)
+  }
+
+  if (!mounted) {
+    return (
+      <div className="relative w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 shadow-sm opacity-50" />
+    )
   }
 
   return (

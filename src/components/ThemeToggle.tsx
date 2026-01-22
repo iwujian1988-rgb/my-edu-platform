@@ -12,13 +12,28 @@ import { useTheme } from '@/contexts/ThemeContext'
  * - 夜间：强制夜间模式
  */
 export function ThemeToggle() {
-  const { themeMode, setThemeMode, isNightTime } = useTheme()
+  const { themeMode, setThemeMode, isNightTime, mounted } = useTheme()
 
   const modes = [
     { value: 'auto' as const, icon: Monitor, label: '自动' },
     { value: 'light' as const, icon: Sun, label: '日间' },
     { value: 'dark' as const, icon: Moon, label: '夜间' },
   ]
+
+  if (!mounted) {
+    return (
+      <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+        {modes.map((mode) => (
+          <div
+            key={mode.value}
+            className="relative flex items-center justify-center w-10 h-10 rounded-md opacity-50"
+          >
+            <mode.icon className="w-5 h-5 text-gray-500" />
+          </div>
+        ))}
+      </div>
+    )
+  }
 
   return (
     <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
