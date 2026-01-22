@@ -49,13 +49,24 @@ export async function middleware(request: NextRequest) {
       }
     )
 
-    // Verify user session - required for Server Components
-    // Use getUser() to validate session with Supabase Auth server
-    // https://supabase.com/docs/guides/auth/server-side/nextjs#refresh-session
+    // 🔍 Debug: Log user authentication status
     const {
       data: { user },
       error: getUserError,
     } = await supabase.auth.getUser()
+
+    // Debug log for protected routes
+    if (pathname.startsWith('/library') || pathname.startsWith('/study')) {
+      const allCookies = request.cookies.getAll()
+      const authCookies = allCookies.filter(c => c.name.includes('sb-'))
+      console.log('🔍 [Middleware Debug]', {
+        pathname,
+        hasUser: !!user,
+        userId: user?.id,
+        authCookiesCount: authCookies.length,
+        error: getUserError?.message
+      })
+    }
 
     // ========================================
     // Protected Routes - Require Authentication
