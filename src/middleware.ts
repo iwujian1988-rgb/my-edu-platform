@@ -24,6 +24,10 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   try {
+    // 🔧 Fix: 检测协议（HTTPS或HTTP）
+    const protocol = request.headers.get('x-forwarded-proto') || request.url.split('://')[0]
+    const isHttps = protocol === 'https'
+
     // 🔧 Fix: Create response first so we can set cookies on it
     const response = NextResponse.next({
       request: { headers: request.headers }
@@ -38,10 +42,10 @@ export async function middleware(request: NextRequest) {
             return request.cookies.get(name)?.value
           },
           set(name: string, value: string, options: any) {
-            // 🔧 Fix: 强制 secure: false 以支持 HTTP
+            // 🔧 Fix: 根据协议设置secure属性（HTTPS必须为true，HTTP必须为false）
             const cookieOptions = {
               ...options,
-              secure: false,  // HTTP 环境必须为 false
+              secure: isHttps,  // HTTPS环境下必须为true
               sameSite: 'lax',
             }
 
@@ -61,7 +65,7 @@ export async function middleware(request: NextRequest) {
           remove(name: string, options: any) {
             const cookieOptions = {
               ...options,
-              secure: false,
+              secure: isHttps,  // 使用相同的协议检测
             }
 
             request.cookies.delete({

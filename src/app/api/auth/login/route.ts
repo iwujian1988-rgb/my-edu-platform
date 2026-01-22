@@ -89,12 +89,17 @@ export async function POST(request: NextRequest) {
 
     console.log('[API Login] Login completed successfully')
 
+    // 🔧 Fix: 检测协议（HTTPS或HTTP）
+    const protocol = request.headers.get('x-forwarded-proto') || request.url.split('://')[0]
+    const isHttps = protocol === 'https'
+
     // 🔧 Fix: 手动将所有cookies附加到响应中
     // Route Handler中cookies().set()不会自动序列化到response
     const cookieStore = await cookies()
     const allCookies = cookieStore.getAll()
 
     console.log('[API Login] Cookies to attach to response:', allCookies.map(c => ({ name: c.name, value: c.value?.substring(0, 20) + '...' })))
+    console.log('[API Login] Protocol:', protocol, 'isHttps:', isHttps)
 
     const response = NextResponse.json({
       success: true,
@@ -110,8 +115,12 @@ export async function POST(request: NextRequest) {
         name: cookie.name,
         value: cookie.value,
         ...cookie,
-        secure: false,  // 确保HTTP环境下工作
+        secure: isHttps,  // HTTPS环境下必须为true
+        sameSite: 'lax',
+        httpOnly: true,
+        path: '/',
       })
+      console.log(`[API Login] Setting cookie: ${cookie.name}, secure: ${isHttps}`)
     })
 
     console.log('[API Login] Response cookies set, returning')
