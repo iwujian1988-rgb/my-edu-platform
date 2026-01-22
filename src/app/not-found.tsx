@@ -27,13 +27,6 @@ export default function NotFound() {
             <Home className="w-5 h-5" />
             返回首页
           </Link>
-          <button
-            onClick={() => window.history.back()}
-            className="flex items-center gap-2 px-6 py-3 bg-white text-gray-800 font-bold rounded-xl border-2 border-gray-300 hover:bg-gray-50 transition-colors"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            返回上页
-          </button>
         </div>
       </div>
     </div>
