@@ -51,6 +51,19 @@ export default function LoginFormClient() {
 
       console.log('[Login] 登录成功:', data.user.id)
 
+      // 🔍 Debug: 检查登录后的cookies
+      if (typeof document !== 'undefined') {
+        const allCookies = document.cookie.split(';').map(c => c.trim())
+        const authCookies = allCookies.filter(c => c.includes('sb-'))
+        console.log('🍪 [Login] 登录后的Cookies:', {
+          totalCookies: allCookies.length,
+          authCookiesCount: authCookies.length,
+          authCookies: authCookies,
+          hasAuthToken: authCookies.some(c => c.includes('auth-token')),
+          hasRefreshToken: authCookies.some(c => c.includes('refresh-token')),
+        })
+      }
+
       // 检查用户是否被封禁（需要额外调用API）
       const checkBanResponse = await fetch('/api/auth/check-ban', {
         method: 'POST',

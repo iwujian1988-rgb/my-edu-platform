@@ -36,7 +36,83 @@ import type { Database } from '@/types/database'
 export function createClient() {
   return createBrowserClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          if (typeof document === 'undefined') return ''
+          const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'))
+          if (match) return match[2]
+          return ''
+        },
+        set(name: string, value: string, options: any) {
+          // 🔧 Critical fix for HTTP environments
+          // Browser security policy blocks cookies with 'Secure' attribute in HTTP (non-localhost)
+          // We force secure: false for HTTP IP addresses while preserving it for localhost/HTTPS
+
+          const isLocal = typeof location !== 'undefined' && location.hostname === 'localhost'
+          const isHttps = typeof location !== 'undefined' && location.protocol === 'https:'
+
+          // Only allow secure: true for localhost or HTTPS environments
+          const forceSecure = isLocal || isHttps
+
+          const cookieOptions = {
+            ...options,
+            secure: forceSecure,
+            sameSite: 'lax',
+            path: '/',
+          }
+
+          // Manually construct cookie string to ensure complete control
+          let cookieString = `${name}=${encodeURIComponent(value)}`
+
+          if (cookieOptions.maxAge) {
+            cookieString += `; Max-Age=${cookieOptions.maxAge}`
+          }
+
+          if (cookieOptions.domain) {
+            cookieString += `; Domain=${cookieOptions.domain}`
+          }
+
+          if (cookieOptions.path) {
+            cookieString += `; Path=${cookieOptions.path}`
+          }
+
+          if (cookieOptions.expires) {
+            cookieString += `; Expires=${cookieOptions.expires.toUTCString()}`
+          }
+
+          if (cookieOptions.sameSite) {
+            cookieString += `; SameSite=${cookieOptions.sameSite}`
+          }
+
+          // Only add 'Secure' attribute when explicitly allowed
+          if (cookieOptions.secure) {
+            cookieString += `; Secure`
+          }
+
+          // Debug logging to track cookie behavior
+          if (typeof window !== 'undefined' && name.includes('sb-')) {
+            console.log('🍪 [Client Cookie Set]', {
+              name,
+              secure: forceSecure,
+              isLocal,
+              isHttps,
+              hostname: typeof location !== 'undefined' ? location.hostname : 'unknown'
+            })
+          }
+
+          document.cookie = cookieString
+        },
+        remove(name: string, options: any) {
+          document.cookie = `${name}=; Max-Age=0; Path=/`
+
+          if (typeof window !== 'undefined' && name.includes('sb-')) {
+            console.log('🗑️ [Client Cookie Remove]', { name })
+          }
+        },
+      },
+    }
   )
 }
 
@@ -50,7 +126,75 @@ export function getBrowserClient() {
   if (!browserClientInstance) {
     browserClientInstance = createBrowserClient<Database>(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        cookies: {
+          get(name: string) {
+            if (typeof document === 'undefined') return ''
+            const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'))
+            if (match) return match[2]
+            return ''
+          },
+          set(name: string, value: string, options: any) {
+            // 🔧 Critical fix for HTTP environments
+            const isLocal = typeof location !== 'undefined' && location.hostname === 'localhost'
+            const isHttps = typeof location !== 'undefined' && location.protocol === 'https:'
+            const forceSecure = isLocal || isHttps
+
+            const cookieOptions = {
+              ...options,
+              secure: forceSecure,
+              sameSite: 'lax',
+              path: '/',
+            }
+
+            let cookieString = `${name}=${encodeURIComponent(value)}`
+
+            if (cookieOptions.maxAge) {
+              cookieString += `; Max-Age=${cookieOptions.maxAge}`
+            }
+
+            if (cookieOptions.domain) {
+              cookieString += `; Domain=${cookieOptions.domain}`
+            }
+
+            if (cookieOptions.path) {
+              cookieString += `; Path=${cookieOptions.path}`
+            }
+
+            if (cookieOptions.expires) {
+              cookieString += `; Expires=${cookieOptions.expires.toUTCString()}`
+            }
+
+            if (cookieOptions.sameSite) {
+              cookieString += `; SameSite=${cookieOptions.sameSite}`
+            }
+
+            if (cookieOptions.secure) {
+              cookieString += `; Secure`
+            }
+
+            if (typeof window !== 'undefined' && name.includes('sb-')) {
+              console.log('🍪 [Singleton Cookie Set]', {
+                name,
+                secure: forceSecure,
+                isLocal,
+                isHttps,
+                hostname: typeof location !== 'undefined' ? location.hostname : 'unknown'
+              })
+            }
+
+            document.cookie = cookieString
+          },
+          remove(name: string, options: any) {
+            document.cookie = `${name}=; Max-Age=0; Path=/`
+
+            if (typeof window !== 'undefined' && name.includes('sb-')) {
+              console.log('🗑️ [Singleton Cookie Remove]', { name })
+            }
+          },
+        },
+      }
     )
   }
   return browserClientInstance

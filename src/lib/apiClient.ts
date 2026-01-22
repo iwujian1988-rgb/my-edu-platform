@@ -16,6 +16,7 @@ let tokenExpireTime: number = 0
 export async function getAccessToken(): Promise<string | null> {
   // 检查缓存是否有效（token有效期通常1小时，我们缓存50分钟）
   if (cachedToken && Date.now() < tokenExpireTime) {
+    console.log('🔑 [API] 使用缓存的token')
     return cachedToken
   }
 
@@ -24,17 +25,29 @@ export async function getAccessToken(): Promise<string | null> {
     // 因为登录方案使用的是 createBrowserClient，session 存储在 cookies 中
     const supabase = createBrowserClient()
 
+    console.log('🔍 [API] 调用 getSession()...')
+
     const { data: { session } } = await supabase.auth.getSession()
+
+    console.log('🔍 [API] getSession() 返回:', {
+      hasSession: !!session,
+      hasAccessToken: !!session?.access_token,
+      hasRefreshToken: !!session?.refresh_token,
+      userId: session?.user?.id,
+      expiresAt: session?.expires_at,
+    })
 
     if (session?.access_token) {
       cachedToken = session.access_token
       tokenExpireTime = Date.now() + (50 * 60 * 1000) // 50分钟后过期
+      console.log('✅ [API] Token获取成功')
       return session.access_token
     }
 
+    console.warn('⚠️ [API] Session不存在或无access_token')
     return null
   } catch (error) {
-    console.error('Failed to get access token:', error)
+    console.error('❌ [API] 获取token失败:', error)
     return null
   }
 }
