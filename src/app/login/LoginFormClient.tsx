@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
 
 export default function LoginFormClient() {
   const router = useRouter()
@@ -32,41 +33,37 @@ export default function LoginFormClient() {
     try {
       console.log('[Login] 尝试登录:', loginData.phone)
 
-      // 添加超时处理 (10秒)
-      const timeoutPromise = new Promise((_, reject) =>
-        setTimeout(() => reject(new Error('登录超时，请检查网络连接')), 10000)
-      )
+      // 🔧 Fix: 使用客户端 Supabase 完成登录，确保cookies被正确设置
+      const supabase = createClient()
+      const email = `${loginData.phone}@phone.xiaoyu.com`
 
-      // 🔧 Fix: 调用 API 路由而不是 Server Action
-      const result = await Promise.race([
-        fetch('/api/auth/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(loginData),
-          credentials: 'include', // 携带 cookies
-        }).then(res => res.json()),
-        timeoutPromise
-      ]) as any
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
+        email,
+        password: loginData.password,
+      })
 
-      console.log('[Login] 登录结果:', result)
-
-      if (result.error) {
-        console.error('[Login] 登录失败:', result.error)
-        setError(result.error)
+      if (signInError || !data.user) {
+        console.error('[Login] 登录失败:', signInError)
+        setError('手机号或密码错误')
         setLoading(false)
-        return  // ✅ 修复: 防止表单作为GET提交，避免凭据暴露在URL中
+        return
       }
+
+      console.log('[Login] 登录成功:', data.user.id)
+
+      // 检查用户是否被封禁（需要额外调用API）
+      const checkBanResponse = await fetch('/api/auth/check-ban', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+      })
+      // 即使检查失败也不影响登录流程
 
       // 登录成功，检查是否有redirect参数
       const redirectTo = searchParams.get('redirect')
-      console.log('[Login] 登录成功，redirect参数:', redirectTo)
-
-      // 立即跳转到目标页面或首页
       const targetUrl = redirectTo || '/'
-      console.log('[Login] 跳转到:', targetUrl)
 
+      console.log('[Login] 跳转到:', targetUrl)
       router.push(targetUrl)
       router.refresh()
     } catch (err: unknown) {
@@ -74,7 +71,6 @@ export default function LoginFormClient() {
       const message = err instanceof Error ? err.message : '登录失败，请重试'
       setError(message)
       setLoading(false)
-      return  // ✅ 修复: 防止异常后表单作为GET提交
     }
   }
 
