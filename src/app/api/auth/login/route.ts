@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/server'
+import { cookies } from 'next/headers'
 
 // Phone to fake email conversion
 function phoneToEmail(phone: string): string {
@@ -88,13 +89,33 @@ export async function POST(request: NextRequest) {
 
     console.log('[API Login] Login completed successfully')
 
-    return NextResponse.json({
+    // 🔧 Fix: 手动将所有cookies附加到响应中
+    // Route Handler中cookies().set()不会自动序列化到response
+    const cookieStore = await cookies()
+    const allCookies = cookieStore.getAll()
+
+    console.log('[API Login] Cookies to attach to response:', allCookies.map(c => ({ name: c.name, value: c.value?.substring(0, 20) + '...' })))
+
+    const response = NextResponse.json({
       success: true,
       user: {
         id: data.user.id,
         email: data.user.email,
       }
     })
+
+    // 手动将每个cookie设置到response中
+    allCookies.forEach(cookie => {
+      response.cookies.set({
+        name: cookie.name,
+        value: cookie.value,
+        ...cookie,
+        secure: false,  // 确保HTTP环境下工作
+      })
+    })
+
+    console.log('[API Login] Response cookies set, returning')
+    return response
 
   } catch (error: any) {
     console.error('[API Login] Exception:', error)
