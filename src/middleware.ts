@@ -49,11 +49,13 @@ export async function middleware(request: NextRequest) {
       }
     )
 
-    // Refresh session if expired - required for Server Components
+    // Verify user session - required for Server Components
+    // Use getUser() to validate session with Supabase Auth server
     // https://supabase.com/docs/guides/auth/server-side/nextjs#refresh-session
     const {
-      data: { session },
-    } = await supabase.auth.getSession()
+      data: { user },
+      error: getUserError,
+    } = await supabase.auth.getUser()
 
     // ========================================
     // Protected Routes - Require Authentication
@@ -75,8 +77,8 @@ export async function middleware(request: NextRequest) {
       pathname === route || pathname.startsWith(`${route}/`)
     )
 
-    // Redirect to login if trying to access protected route without session
-    if (isProtectedRoute && !session) {
+    // Redirect to login if trying to access protected route without user
+    if (isProtectedRoute && !user) {
       const redirectUrl = new URL('/login', request.url)
       redirectUrl.searchParams.set('redirect', pathname)
       return NextResponse.redirect(redirectUrl)
@@ -89,7 +91,7 @@ export async function middleware(request: NextRequest) {
     const authRoutes = ['/login', '/register']
 
     // If user is already logged in and trying to access auth routes, redirect to home
-    if (session && authRoutes.includes(pathname)) {
+    if (user && authRoutes.includes(pathname)) {
       return NextResponse.redirect(new URL('/', request.url))
     }
 
@@ -106,7 +108,7 @@ export async function middleware(request: NextRequest) {
       }
 
       // All other /admin routes require admin authentication
-      if (!session) {
+      if (!user) {
         const redirectUrl = new URL('/admin/login', request.url)
         redirectUrl.searchParams.set('redirect', pathname)
         return NextResponse.redirect(redirectUrl)
@@ -117,7 +119,7 @@ export async function middleware(request: NextRequest) {
       const { data: admin, error } = await supabase
         .from('administrators')
         .select('*')
-        .eq('user_id', session.user.id)
+        .eq('user_id', user.id)
         .eq('is_active', true)
         .maybeSingle()
 
@@ -134,14 +136,14 @@ export async function middleware(request: NextRequest) {
     // ========================================
 
     // If user is logged in, check if daily quota needs to be reset
-    if (session && pathname.startsWith('/api/')) {
+    if (user && pathname.startsWith('/api/')) {
       const today = new Date().toISOString().split('T')[0]
 
       // This will trigger the reset_daily_quota trigger if needed
       await supabase
         .from('user_quotas')
         .select('last_reset_date')
-        .eq('user_id', session.user.id)
+        .eq('user_id', user.id)
         .maybeSingle()
     }
 
