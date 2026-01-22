@@ -92,8 +92,6 @@ interface BookDetailPageClientProps {
   // 🆕 服务端传递的初始数据
   initialWords?: Word[]
   initialTotal?: number
-  // 🔧 新增：是否需要登录检查
-  requireLogin?: boolean
 }
 
 type SortOrder = 'default' | 'random'
@@ -103,37 +101,10 @@ export function BookDetailPageClient({
   chapters,
   user,
   initialWords = [],
-  initialTotal,
-  requireLogin = false
+  initialTotal
 }: BookDetailPageClientProps) {
   const router = useRouter()
   const { showLoading } = useLoading()
-
-  // 🔧 客户端登录检查
-  useEffect(() => {
-    if (requireLogin) {
-      // 检查客户端是否有session
-      const checkAuth = async () => {
-        try {
-          const { createClient } = await import('@/lib/supabase/client')
-          const supabase = createClient()
-          const { data: { session } } = await supabase.auth.getSession()
-
-          if (!session) {
-            // 没有session，重定向到登录页
-            router.push('/login?redirect=' + encodeURIComponent(`/library/${book?.id}`))
-          } else {
-            // 有session，刷新页面重新加载
-            router.refresh()
-          }
-        } catch (error) {
-          console.error('[Login Check] Error:', error)
-        }
-      }
-
-      checkAuth()
-    }
-  }, [requireLogin, book?.id, router])
 
   const handleBack = () => {
     // 立即显示 loading，给用户即时反馈

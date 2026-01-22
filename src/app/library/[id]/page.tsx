@@ -13,21 +13,9 @@ export default async function BookDetailPage({
 }) {
   const { id } = await params
   const paramsObj = await searchParams
-
-  // 🔧 Fix: 服务端获取用户失败时，不立即重定向
-  // 让客户端组件处理登录检查
   const user = await getCurrentUser()
-
-  // 如果没有用户，返回一个带有登录检查的客户端组件
   if (!user) {
-    return <BookDetailPageClient
-      book={null as any}
-      chapters={[]}
-      user={null}
-      initialWords={[]}
-      initialTotal={0}
-      requireLogin={true}
-    />
+    redirect('/login?redirect=' + encodeURIComponent(`/library/${id}`))
   }
 
   const supabase = await createClient()
