@@ -53,7 +53,7 @@ export function createClient() {
     }
   )
 
-  // 🔍 Debug: 监听session变化和token刷新
+  // 🔍 Debug: 监听session变化
   if (typeof window !== 'undefined') {
     client.auth.onAuthStateChange((event, session) => {
       console.log('🔔 [Auth Event]', {
@@ -62,11 +62,6 @@ export function createClient() {
         hasRefreshToken: !!session?.refresh_token,
         expiresAt: session?.expires_at,
       })
-    })
-
-    // 监听token刷新事件
-    client.auth.onTokenRefreshed(() => {
-      console.log('🔄 [Token Refreshed] Token has been refreshed')
     })
   }
 
