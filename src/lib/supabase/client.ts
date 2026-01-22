@@ -34,20 +34,65 @@ import type { Database } from '@/types/database'
  * ```
  */
 export function createClient() {
-  // 🔧 测试：完全使用Supabase默认行为，不提供任何自定义cookies配置
-  // 这样我们可以看到Supabase SDK在HTTPS环境下的默认行为
+  // 🔧 最小化自定义cookies配置，确保token能被正确存储
   const client = createBrowserClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-    // ⚠️ 不传递任何cookies配置，使用Supabase默认行为
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        get(name: string) {
+          if (typeof document === 'undefined') return ''
+          const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'))
+          if (match) return match[2]
+          return ''
+        },
+        set(name: string, value: string, options: any) {
+          // 🔍 Debug日志
+          if (typeof window !== 'undefined' && name.includes('sb-')) {
+            console.log('🍪 [Set]', {
+              name,
+              value: value.substring(0, 20) + '...',
+              hasRefreshToken: name.includes('refresh-token'),
+            })
+          }
+
+          // 直接使用document.cookie，保持所有原始options
+          let cookieString = `${name}=${value}`
+
+          // 处理所有可能的options属性
+          if (options) {
+            if (options.maxAge !== undefined) cookieString += `; Max-Age=${options.maxAge}`
+            if (options.domain) cookieString += `; Domain=${options.domain}`
+            if (options.path) cookieString += `; Path=${options.path}`
+            if (options.expires) cookieString += `; Expires=${options.expires.toUTCString()}`
+            if (options.sameSite) cookieString += `; SameSite=${options.sameSite}`
+            if (options.secure) cookieString += `; Secure`
+            if (options.httpOnly) cookieString += `; HttpOnly`
+          }
+
+          document.cookie = cookieString
+
+          // 验证是否设置成功
+          if (typeof window !== 'undefined' && name.includes('sb-')) {
+            const verify = document.cookie.includes(`${name}=`)
+            console.log('✅ [Verify]', {
+              name,
+              setSuccessfully: verify,
+            })
+          }
+        },
+        remove(name: string, options: any) {
+          document.cookie = `${name}=; Max-Age=0; ${options?.path ? `Path=${options.path}` : 'Path=/'}`
+        },
+      },
+    }
   )
 
   // 🔍 Debug: 监听session变化
   if (typeof window !== 'undefined') {
     client.auth.onAuthStateChange((event, session) => {
-      console.log('🔔 [Auth State Change]', {
+      console.log('🔔 [Auth State]', {
         event,
-        hasSession: !!session,
         hasAccessToken: !!session?.access_token,
         hasRefreshToken: !!session?.refresh_token,
       })
