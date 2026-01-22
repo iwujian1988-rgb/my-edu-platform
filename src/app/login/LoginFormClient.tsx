@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
+import { createClient } from '@/lib/supabase/client'
 
 export default function LoginFormClient() {
   const router = useRouter()
@@ -31,8 +32,26 @@ export default function LoginFormClient() {
 
     try {
       console.log('[Login] 尝试登录:', loginData.phone)
+      const email = `${loginData.phone}@phone.xiaoyu.com`
 
-      // 🔧 Fix: 使用服务端API登录，确保cookies被正确设置
+      // 🔧 Fix: 同时使用客户端和服务端登录
+      // 1. 客户端登录：设置localStorage的session
+      const supabase = createClient()
+      const { data: clientData, error: clientError } = await supabase.auth.signInWithPassword({
+        email,
+        password: loginData.password,
+      })
+
+      if (clientError || !clientData.user) {
+        console.error('[Login] 客户端登录失败:', clientError)
+        setError('手机号或密码错误')
+        setLoading(false)
+        return
+      }
+
+      console.log('[Login] 客户端登录成功:', clientData.user.id)
+
+      // 2. 服务端登录：设置cookies（供服务端渲染使用）
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -43,25 +62,26 @@ export default function LoginFormClient() {
         }),
       })
 
-      const data = await response.json()
+      const serverData = await response.json()
 
       if (!response.ok) {
-        console.error('[Login] 登录失败:', data.error)
-        setError(data.error || '登录失败')
-        setLoading(false)
-        return
+        console.warn('[Login] 服务端登录失败（但客户端成功）:', serverData.error)
+        // 服务端失败不影响客户端登录
+      } else {
+        console.log('[Login] 服务端登录也成功')
       }
 
-      console.log('[Login] 登录成功:', data.user.id)
-
-      // 🔍 Debug: 检查登录后的cookies
+      // 🔍 Debug: 检查登录后的cookies和localStorage
       if (typeof document !== 'undefined') {
         const allCookies = document.cookie.split(';').map(c => c.trim())
         const authCookies = allCookies.filter(c => c.includes('sb-'))
-        console.log('🍪 [Login] 登录后的Cookies:', {
+
+        const localStorageSession = localStorage.getItem(`sb-${process.env.NEXT_PUBLIC_SUPABASE_URL?.split('//')[1]}-auth-token`)
+
+        console.log('🍪 [Login] 登录后的状态:', {
           totalCookies: allCookies.length,
           authCookiesCount: authCookies.length,
-          authCookies: authCookies,
+          hasLocalStorageSession: !!localStorageSession,
         })
       }
 

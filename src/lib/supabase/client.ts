@@ -7,19 +7,19 @@
  * - Client-side data fetching and real-time subscriptions
  *
  * Key differences from server.ts:
- * - Uses @supabase/ssr createBrowserClient (not @supabase/supabase-js)
- * - Automatically handles session storage in cookies
- * - Compatible with server-side @supabase/ssr createServerClient
+ * - Uses @supabase/supabase-js (not @supabase/ssr)
+ * - Session stored in localStorage
+ * - Works independently of server-side cookies
  */
 
-import { createBrowserClient } from '@supabase/ssr'
+import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import type { Database } from '@/types/database'
 
 /**
  * Creates a Supabase client for browser/client component usage
  *
- * IMPORTANT: Uses @supabase/ssr to ensure cookie-based session storage
- * that is compatible with server-side createServerClient
+ * IMPORTANT: Uses @supabase/supabase-js with localStorage storage.
+ * This avoids cookie format compatibility issues with @supabase/ssr.
  *
  * @example
  * ```tsx
@@ -36,13 +36,16 @@ import type { Database } from '@/types/database'
  * ```
  */
 export function createClient() {
-  return createBrowserClient<Database>(
+  return createSupabaseClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       auth: {
-        flowType: 'pkce', // 使用PKCE flow以支持SSR
-      }
+        persistSession: true,
+        autoRefreshToken: true,
+        detectSessionInUrl: true,
+        storage: window.localStorage,
+      },
     }
   )
 }
