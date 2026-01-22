@@ -56,6 +56,19 @@ export function createClient() {
           // Only allow secure: true for localhost or HTTPS environments
           const forceSecure = isLocal || isHttps
 
+          // 🔍 Debug: 输出完整options以便调试
+          if (typeof window !== 'undefined' && name.includes('sb-')) {
+            console.log('🍪 [Set Cookie Raw]', {
+              name,
+              originalOptions: options,
+              isLocal,
+              isHttps,
+              forceSecure,
+              hostname: typeof location !== 'undefined' ? location.hostname : 'unknown',
+              protocol: typeof location !== 'undefined' ? location.protocol : 'unknown'
+            })
+          }
+
           const cookieOptions = {
             ...options,
             secure: forceSecure,
@@ -70,6 +83,7 @@ export function createClient() {
             cookieString += `; Max-Age=${cookieOptions.maxAge}`
           }
 
+          // ⚠️ 注意：domain可能导致cookie设置失败
           if (cookieOptions.domain) {
             cookieString += `; Domain=${cookieOptions.domain}`
           }
