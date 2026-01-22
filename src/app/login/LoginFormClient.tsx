@@ -34,8 +34,8 @@ export default function LoginFormClient() {
       console.log('[Login] 尝试登录:', loginData.phone)
       const email = `${loginData.phone}@phone.xiaoyu.com`
 
-      // 🔧 Fix: 同时使用客户端和服务端登录
-      // 1. 客户端登录：设置localStorage的session
+      // 🔧 Fix: 只使用客户端登录（localStorage）
+      // 避免客户端和服务端同时登录导致冲突
       const supabase = createClient()
       const { data: clientData, error: clientError } = await supabase.auth.signInWithPassword({
         email,
@@ -43,45 +43,24 @@ export default function LoginFormClient() {
       })
 
       if (clientError || !clientData.user) {
-        console.error('[Login] 客户端登录失败:', clientError)
+        console.error('[Login] 登录失败:', clientError)
         setError('手机号或密码错误')
         setLoading(false)
         return
       }
 
-      console.log('[Login] 客户端登录成功:', clientData.user.id)
+      console.log('[Login] 登录成功:', clientData.user.id)
 
-      // 2. 服务端登录：设置cookies（供服务端渲染使用）
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify({
-          phone: loginData.phone,
-          password: loginData.password,
-        }),
-      })
-
-      const serverData = await response.json()
-
-      if (!response.ok) {
-        console.warn('[Login] 服务端登录失败（但客户端成功）:', serverData.error)
-        // 服务端失败不影响客户端登录
-      } else {
-        console.log('[Login] 服务端登录也成功')
-      }
-
-      // 🔍 Debug: 检查登录后的cookies和localStorage
+      // 🔍 Debug: 检查登录后的localStorage
       if (typeof document !== 'undefined') {
-        const allCookies = document.cookie.split(';').map(c => c.trim())
-        const authCookies = allCookies.filter(c => c.includes('sb-'))
-
-        const localStorageSession = localStorage.getItem(`sb-${process.env.NEXT_PUBLIC_SUPABASE_URL?.split('//')[1]}-auth-token`)
+        // @supabase/supabase-js 的localStorage key格式
+        const storageKey = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/auth-token`
+        const localStorageSession = localStorage.getItem(storageKey)
 
         console.log('🍪 [Login] 登录后的状态:', {
-          totalCookies: allCookies.length,
-          authCookiesCount: authCookies.length,
+          storageKey,
           hasLocalStorageSession: !!localStorageSession,
+          sessionKeys: Object.keys(localStorage).filter(k => k.includes('supabase')),
         })
       }
 
