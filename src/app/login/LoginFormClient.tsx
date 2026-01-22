@@ -197,7 +197,12 @@ export default function LoginFormClient() {
               )}
 
               {/* Login Form */}
-              <form onSubmit={handleLogin} className="space-y-6">
+              <form
+                onSubmit={handleLogin}
+                className="space-y-6"
+                method="post"  // 🔒 安全：强制POST，防止密码暴露在URL
+                action={undefined}  // 🔒 安全：禁用默认action
+              >
                 <div>
                   <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
                     <Mail className="w-5 h-5 text-green-600" />
