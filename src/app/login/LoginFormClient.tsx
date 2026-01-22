@@ -51,16 +51,41 @@ export default function LoginFormClient() {
 
       console.log('[Login] 登录成功:', clientData.user.id)
 
+      // 🔧 Fix: 等待session保存到localStorage
+      // 使用onAuthStateChange确认session已保存
+      await new Promise<void>((resolve) => {
+        const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+          if (event === 'SIGNED_IN' && session) {
+            console.log('[Login] Session已保存到localStorage')
+            subscription.unsubscribe()
+            resolve()
+          }
+        })
+
+        // 超时保护（2秒后无论如何继续）
+        setTimeout(() => {
+          subscription.unsubscribe()
+          console.warn('[Login] 等待session保存超时，继续执行')
+          resolve()
+        }, 2000)
+      })
+
       // 🔍 Debug: 检查登录后的localStorage
       if (typeof document !== 'undefined') {
         // @supabase/supabase-js 的localStorage key格式
-        const storageKey = `${process.env.NEXT_PUBLIC_SUPABASE_URL}/auth-token`
-        const localStorageSession = localStorage.getItem(storageKey)
+        // 格式是: sb-{project_ref}-auth-token
+        const projectRef = process.env.NEXT_PUBLIC_SUPABASE_URL?.split('//')[1]
+        const storageKey = `sb-${projectRef}-auth-token`
+
+        // 检查所有相关的localStorage keys
+        const allKeys = Object.keys(localStorage)
+        const sbKeys = allKeys.filter(k => k.includes('sb-') || k.includes('supabase'))
 
         console.log('🍪 [Login] 登录后的状态:', {
           storageKey,
-          hasLocalStorageSession: !!localStorageSession,
-          sessionKeys: Object.keys(localStorage).filter(k => k.includes('supabase')),
+          hasLocalStorageSession: !!localStorage.getItem(storageKey),
+          allLocalStorageKeys: allKeys,
+          sbKeys: sbKeys,
         })
       }
 
