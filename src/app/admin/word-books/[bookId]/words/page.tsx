@@ -86,7 +86,12 @@ export default function WordsListPage() {
 
       const data = await response.json()
       setWords(data.data || [])
-      setPagination(data.pagination || pagination)
+      setPagination({
+        page: data.page,
+        pageSize: data.pageSize,
+        total: data.total,
+        totalPages: data.totalPages
+      })
     } catch (error) {
       console.error('获取单词列表失败:', error)
       alert('获取单词列表失败，请稍后重试')
