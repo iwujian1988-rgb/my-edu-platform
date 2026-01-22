@@ -32,62 +32,32 @@ export default function LoginFormClient() {
 
     try {
       console.log('[Login] 尝试登录:', loginData.phone)
+
+      // 🔧 Fix: 使用客户端 Supabase 完成登录，确保cookies被正确设置
+      const supabase = createClient()
       const email = `${loginData.phone}@phone.xiaoyu.com`
 
-      // 🔧 Fix: 只使用客户端登录（localStorage）
-      // 避免客户端和服务端同时登录导致冲突
-      const supabase = createClient()
-      const { data: clientData, error: clientError } = await supabase.auth.signInWithPassword({
+      const { data, error: signInError } = await supabase.auth.signInWithPassword({
         email,
         password: loginData.password,
       })
 
-      if (clientError || !clientData.user) {
-        console.error('[Login] 登录失败:', clientError)
+      if (signInError || !data.user) {
+        console.error('[Login] 登录失败:', signInError)
         setError('手机号或密码错误')
         setLoading(false)
         return
       }
 
-      console.log('[Login] 登录成功:', clientData.user.id)
+      console.log('[Login] 登录成功:', data.user.id)
 
-      // 🔧 Fix: 等待session保存到localStorage
-      // 使用onAuthStateChange确认session已保存
-      await new Promise<void>((resolve) => {
-        const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
-          if (event === 'SIGNED_IN' && session) {
-            console.log('[Login] Session已保存到localStorage')
-            subscription.unsubscribe()
-            resolve()
-          }
-        })
-
-        // 超时保护（2秒后无论如何继续）
-        setTimeout(() => {
-          subscription.unsubscribe()
-          console.warn('[Login] 等待session保存超时，继续执行')
-          resolve()
-        }, 2000)
+      // 检查用户是否被封禁（需要额外调用API）
+      const checkBanResponse = await fetch('/api/auth/check-ban', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
       })
-
-      // 🔍 Debug: 检查登录后的localStorage
-      if (typeof document !== 'undefined') {
-        // @supabase/supabase-js 的localStorage key格式
-        // 格式是: sb-{project_ref}-auth-token
-        const projectRef = process.env.NEXT_PUBLIC_SUPABASE_URL?.split('//')[1]
-        const storageKey = `sb-${projectRef}-auth-token`
-
-        // 检查所有相关的localStorage keys
-        const allKeys = Object.keys(localStorage)
-        const sbKeys = allKeys.filter(k => k.includes('sb-') || k.includes('supabase'))
-
-        console.log('🍪 [Login] 登录后的状态:', {
-          storageKey,
-          hasLocalStorageSession: !!localStorage.getItem(storageKey),
-          allLocalStorageKeys: allKeys,
-          sbKeys: sbKeys,
-        })
-      }
+      // 即使检查失败也不影响登录流程
 
       // 登录成功，检查是否有redirect参数
       const redirectTo = searchParams.get('redirect')

@@ -7,19 +7,17 @@
  * - Client-side data fetching and real-time subscriptions
  *
  * Key differences from server.ts:
- * - Uses @supabase/supabase-js (not @supabase/ssr)
- * - Session stored in localStorage
- * - Works independently of server-side cookies
+ * - Uses createBrowserClient (not createServerClient)
+ * - Can be used in Client Components and useEffect hooks
+ * - Supports real-time subscriptions
+ * - Does NOT have access to server-side cookies
  */
 
-import { createClient as createSupabaseClient } from '@supabase/supabase-js'
+import { createBrowserClient } from '@supabase/ssr'
 import type { Database } from '@/types/database'
 
 /**
  * Creates a Supabase client for browser/client component usage
- *
- * IMPORTANT: Uses @supabase/supabase-js with localStorage storage.
- * This avoids cookie format compatibility issues with @supabase/ssr.
  *
  * @example
  * ```tsx
@@ -36,17 +34,24 @@ import type { Database } from '@/types/database'
  * ```
  */
 export function createClient() {
-  return createSupabaseClient<Database>(
+  return createBrowserClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      auth: {
-        persistSession: true,
-        autoRefreshToken: true,
-        detectSessionInUrl: true,
-        storage: window.localStorage,
-      },
-    }
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 }
 
+/**
+ * Singleton instance for browser client
+ * Use this if you need to reference the same client instance across multiple components
+ */
+let browserClientInstance: ReturnType<typeof createBrowserClient<Database>> | null = null
+
+export function getBrowserClient() {
+  if (!browserClientInstance) {
+    browserClientInstance = createBrowserClient<Database>(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+    )
+  }
+  return browserClientInstance
+}
