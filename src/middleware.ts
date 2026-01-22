@@ -24,6 +24,11 @@ export async function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   try {
+    // 🔧 Fix: Create response first so we can set cookies on it
+    const response = NextResponse.next({
+      request: { headers: request.headers }
+    })
+
     const supabase = createServerClient<Database>(
       process.env.NEXT_PUBLIC_SUPABASE_URL!,
       process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -33,16 +38,31 @@ export async function middleware(request: NextRequest) {
             return request.cookies.get(name)?.value
           },
           set(name: string, value: string, options: any) {
+            // Set on request for subsequent reads in this middleware execution
             request.cookies.set({
+              name,
+              value,
+              ...options,
+            })
+            // IMPORTANT: Also set on response so cookies are sent to browser
+            response.cookies.set({
               name,
               value,
               ...options,
             })
           },
           remove(name: string, options: any) {
+            // Remove from request
             request.cookies.delete({
               name,
               ...options,
+            })
+            // IMPORTANT: Also remove from response
+            response.cookies.set({
+              name,
+              value: '',
+              ...options,
+              maxAge: 0,
             })
           },
         },
@@ -113,9 +133,8 @@ export async function middleware(request: NextRequest) {
     if (pathname.startsWith('/admin')) {
       // /admin/login doesn't require authentication
       if (pathname.startsWith('/admin/login')) {
-        return NextResponse.next({
-          request: { headers: request.headers }
-        })
+        // Return the response with cookies (for any session updates)
+        return response
       }
 
       // All other /admin routes require admin authentication
@@ -158,30 +177,24 @@ export async function middleware(request: NextRequest) {
         .maybeSingle()
     }
 
-    // Build response with updated cookies
-    const response = NextResponse.next({
-      request: { headers: request.headers }
-    })
-
-    // Copy all cookies from request to response (preserving all properties)
-    request.cookies.getAll().forEach(cookie => {
-      response.cookies.set(cookie)
-    })
-
+    // Return response with cookies already set by the set() callback above
     return response
   } catch (error) {
     // Log error for debugging
     console.error('Middleware error:', error)
 
+    // Create a basic response for error cases
+    const errorResponse = NextResponse.next({
+      request: { headers: request.headers }
+    })
+
     // For admin login, allow access even if middleware fails
     if (pathname.startsWith('/admin/login')) {
-      return NextResponse.next()
+      return errorResponse
     }
 
     // For other routes, return the response as-is
-    return NextResponse.next({
-      request: { headers: request.headers }
-    })
+    return errorResponse
   }
 }
 
