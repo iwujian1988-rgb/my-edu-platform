@@ -30,13 +30,26 @@ import type { Database } from '@/types/database'
 export async function createClient() {
   const cookieStore = await cookies()
 
+  // 🔍 Debug: 记录所有Supabase相关的cookies
+  const allCookies = cookieStore.getAll()
+  const sbCookies = allCookies.filter(c => c.name.includes('sb-'))
+  console.log('🍪 [Server Client] All cookies:', {
+    total: allCookies.length,
+    sbCookies: sbCookies.map(c => ({ name: c.name, hasValue: !!c.value }))
+  })
+
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         get(name: string) {
-          return cookieStore.get(name)?.value
+          const value = cookieStore.get(name)?.value
+          // 🔍 Debug: 记录每次读取cookie的请求
+          if (name.includes('sb-')) {
+            console.log(`🔍 [Server Client] Reading cookie: ${name}, found: ${!!value}`)
+          }
+          return value
         },
         set(name: string, value: string, options: any) {
           try {
@@ -131,6 +144,13 @@ export async function getCurrentUser() {
     data: { user },
     error,
   } = await supabase.auth.getUser()
+
+  console.log('👤 [getCurrentUser] Result:', {
+    hasUser: !!user,
+    userId: user?.id,
+    error: error?.message,
+    errorName: error?.name
+  })
 
   if (error || !user) {
     return null
