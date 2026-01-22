@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
-import { login } from './actions'
 
 export default function LoginFormClient() {
   const router = useRouter()
@@ -38,8 +37,16 @@ export default function LoginFormClient() {
         setTimeout(() => reject(new Error('登录超时，请检查网络连接')), 10000)
       )
 
+      // 🔧 Fix: 调用 API 路由而不是 Server Action
       const result = await Promise.race([
-        login(loginData),
+        fetch('/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(loginData),
+          credentials: 'include', // 携带 cookies
+        }).then(res => res.json()),
         timeoutPromise
       ]) as any
 
