@@ -112,10 +112,12 @@ BUG_FIX_SESSION.md
 # scripts directory (保留监控脚本)
 /scripts/
 !scripts/memory-monitor.js
+!scripts/memory-monitor.sh
 !scripts/memory-check.js
 !scripts/health-check.js
 !scripts/dev-safe-start.js
 !scripts/cleanup.js
+!scripts/deploy.sh
 
 # PM2 日志文件
 /logs/
