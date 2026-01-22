@@ -1,0 +1,83 @@
+# 轻量级生产环境 Dockerfile
+# 针对 2GB 内存服务器优化
+# 构建时间: ~5-8 分钟
+# 镜像大小: ~200MB
+
+# ===================== 阶段 1: 依赖安装 =====================
+FROM node:18-alpine AS deps
+
+# 设置工作目录
+WORKDIR /app
+
+# 复制依赖文件
+COPY package*.json ./
+
+# 安装生产依赖（节省空间和时间）
+RUN npm ci --only=production && \
+    npm cache clean --force
+
+# ===================== 阶段 2: 构建阶段 =====================
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+# 复制依赖
+COPY --from=deps /app/node_modules ./node_modules
+COPY . .
+
+# 设置构建环境变量
+ENV NODE_ENV=production \
+    NEXT_TELEMETRY_DISABLED=1 \
+    # 禁用源码映射（生产不需要）
+    NODE_OPTIONS="--max-old-space-size=2048"
+
+# 构建 Next.js 应用
+RUN npm run build
+
+# ===================== 阶段 3: 运行阶段 =====================
+FROM node:18-alpine AS runner
+
+# 安装必要的系统工具
+RUN apk add --no-cache \
+    dumb-init \
+    curl
+
+# 创建非 root 用户（安全最佳实践）
+RUN addgroup -g 1001 -S nodejs && \
+    adduser -S nextjs -u 1001
+
+# 设置工作目录
+WORKDIR /app
+
+# 复制构建产物
+COPY --from=builder /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
+
+# 设置环境变量（优化内存）
+ENV NODE_ENV=production \
+    NODE_OPTIONS="--max-old-space-size=1400 \
+                  --optimize-for-size \
+                  --gc-global \
+                  --expose-gc" \
+    PORT=3000 \
+    # 禁用 Next.js 遥测
+    NEXT_TELEMETRY_DISABLED=1 \
+    # 生产环境优化
+    NODE_ENV=production
+
+# 切换到非 root 用户
+USER nextjs
+
+# 暴露端口
+EXPOSE 3000
+
+# 健康检查
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
+    CMD curl -f http://localhost:3000/api/health || exit 1
+
+# 使用 dumb-init 启动（正确的信号处理）
+ENTRYPOINT ["dumb-init", "--"]
+
+# 启动应用
+CMD ["node", "server.js"]
