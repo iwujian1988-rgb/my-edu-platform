@@ -105,9 +105,11 @@ export function useWordData({
   // ⭐ 核心逻辑：从API获取单词
   useEffect(() => {
     const fetchWords = async () => {
-      // 如果是第一页且有SSR数据，跳过API调用
-      if (filters.page === 1 && initialData && initialData.length > 0) {
-        console.log(`✅ [Skip] Using SSR data for page 1`)
+      // 🔥 修复：只在首次加载且status是'all'时使用SSR数据
+      const isFirstLoadWithDefaultFilter = filters.page === 1 && filters.status === 'all' && initialData && initialData.length > 0
+
+      if (isFirstLoadWithDefaultFilter) {
+        console.log(`✅ [Skip] Using SSR data for page 1 with default filter`)
         setIsLoading(false)
         return
       }
@@ -116,7 +118,7 @@ export function useWordData({
       // 横屏模式：替换加载（每次都替换）
       const append = isPortrait && filters.page > 1
 
-      console.log(`📖 Fetching words (page ${filters.page}, append: ${append})`)
+      console.log(`📖 Fetching words (page ${filters.page}, status: ${filters.status}, append: ${append})`)
 
       try {
         // 构建API参数
