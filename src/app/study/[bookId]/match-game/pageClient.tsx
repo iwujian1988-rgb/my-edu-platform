@@ -126,16 +126,22 @@ export default function MatchGamePageClient() {
       params.set('bookId', bookId)
       params.set('page', String(Math.floor(offset / batchSize) + 1))
       params.set('pageSize', String(batchSize))
+      params.set('status', 'all')  // 🔥 修复：添加 status 参数，获取所有状态的单词
 
       // 根据难度加载足够的单词
       const wordsRes = await fetch(`/api/words?${params.toString()}`)
       if (!wordsRes.ok) throw new Error('Failed to fetch words')
       const wordsData = await wordsRes.json()
 
+      if (!wordsData.success) {
+        console.error('API returned unsuccessful:', wordsData)
+        return { words: [], totalCount: 0, hasMore: false }
+      }
+
       return {
-        words: wordsData.data,
-        totalCount: wordsData.total || wordsData.data.length,
-        hasMore: wordsData.data.length === batchSize
+        words: wordsData.data || [],
+        totalCount: wordsData.total || wordsData.count || wordsData.data?.length || 0,
+        hasMore: (wordsData.data?.length || 0) === batchSize
       }
     } catch (error) {
       console.error('Error loading words:', error)

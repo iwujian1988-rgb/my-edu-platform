@@ -870,24 +870,25 @@ export default function DictationPageClient() {
           </div>
 
           {/* 第二行：功能设置栏 (工具栏) */}
-          <div className="flex flex-wrap items-center justify-between gap-4 mb-2">
+          <div className="flex items-center justify-between gap-2 sm:gap-4 mb-2">
             {/* 左侧：范围选择器 */}
-            <div className="flex flex-col gap-1">
+            <div className="flex-shrink-0">
               <button
                 onClick={() => setShowScopeDialog(true)}
-                className="flex items-center justify-between gap-3 px-4 py-2 border-2 border-black rounded-lg font-bold shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none transition-all min-w-[140px] transition-colors duration-300"
+                className="flex items-center justify-between gap-2 px-3 py-2 border-2 border-black rounded-lg font-bold shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none transition-all transition-colors duration-300 sm:min-w-[140px]"
                 style={{ backgroundColor: 'var(--card-bg)', color: 'var(--text-primary)' }}
               >
-                <span>{DICTATION_SCOPE_LABELS[scopeType]}</span>
-                <ChevronDown size={16} />
+                <span className="hidden sm:inline">{DICTATION_SCOPE_LABELS[scopeType]}</span>
+                <span className="sm:hidden">{scopeType === 'all' ? '全部' : scopeType === 'unknown' ? '不认识' : scopeType === 'fuzzy' ? '模糊' : scopeType === 'known' ? '认识' : '新词'}</span>
+                <ChevronDown size={16} className="flex-shrink-0" />
               </button>
             </div>
 
             {/* 右侧：功能按钮组 */}
-            <div className="flex gap-3">
+            <div className="flex items-center gap-2 flex-1 justify-end">
               <button
                 onClick={() => setHideChinese(!hideChinese)}
-                className={`flex items-center gap-2 px-4 py-2 border-2 rounded-lg font-bold text-sm transition-all transition-colors duration-300 ${
+                className={`flex items-center gap-1.5 px-2 py-2 border-2 rounded-lg font-bold text-xs sm:text-sm sm:gap-2 sm:px-4 transition-all transition-colors duration-300 whitespace-nowrap ${
                   hideChinese
                     ? 'bg-[#ccff00] border-black shadow-[2px_2px_0px_0px_#000]'
                     : 'border-black'
@@ -900,12 +901,13 @@ export default function DictationPageClient() {
                   if (!hideChinese) e.currentTarget.style.backgroundColor = 'var(--card-bg)'
                 }}
               >
-                {hideChinese ? <EyeOff size={16} /> : <Eye size={16} />}
-                隐藏中文
+                {hideChinese ? <EyeOff size={14} className="sm:w-4 sm:h-4" /> : <Eye size={14} className="sm:w-4 sm:h-4" />}
+                <span className="hidden sm:inline">隐藏中文</span>
+                <span className="sm:hidden">隐藏</span>
               </button>
               <button
                 onClick={() => setAutoAddToMistakes(!autoAddToMistakes)}
-                className={`flex items-center gap-2 px-4 py-2 border-2 rounded-lg font-bold text-sm transition-all transition-colors duration-300 ${
+                className={`flex items-center gap-1.5 px-2 py-2 border-2 rounded-lg font-bold text-xs sm:text-sm sm:gap-2 sm:px-4 transition-all transition-colors duration-300 whitespace-nowrap ${
                   autoAddToMistakes
                     ? 'bg-[#ccff00] border-black shadow-[2px_2px_0px_0px_#000] hover:translate-y-[1px] hover:shadow-none'
                     : 'border-black'
@@ -918,8 +920,9 @@ export default function DictationPageClient() {
                   if (!autoAddToMistakes) e.currentTarget.style.backgroundColor = 'var(--card-bg)'
                 }}
               >
-                <PlusSquare size={16} />
-                错题入本
+                <PlusSquare size={14} className="sm:w-4 sm:h-4" />
+                <span className="hidden sm:inline">错题入本</span>
+                <span className="sm:hidden">错题</span>
               </button>
             </div>
           </div>

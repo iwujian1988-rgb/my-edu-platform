@@ -173,7 +173,7 @@ export function DictationScopeDialog({
                 <p className="text-sm font-black text-black mb-1">
                   继续上次学习
                 </p>
-                <p className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>
+                <p className="text-xs font-bold text-black/80">
                   {formatResumeInfo(recentProgress)}
                 </p>
               </div>
@@ -235,7 +235,7 @@ export function DictationScopeDialog({
                 <div className="flex items-center gap-3">
                   {/* 数字标签 */}
                   <div className={`
-                    w-14 h-14 flex items-center justify-center text-2xl font-black border-2 border-black rounded-lg
+                    min-w-14 h-14 px-2 flex items-center justify-center text-xl font-black border-2 border-black rounded-lg
                     ${option.disabled
                       ? 'bg-gray-200 text-gray-400'
                       : option.value === 'all'
