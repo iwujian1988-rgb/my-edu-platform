@@ -34,29 +34,11 @@ import type { Database } from '@/types/database'
  * ```
  */
 export function createClient() {
-  // 🔧 Fix: 在 HTTPS 环境下必须设置 secure: true
-  const isHttps = typeof window !== 'undefined' && window.location.protocol === 'https:'
-
-  // 🔍 Debug: 验证代码是否被执行
-  if (typeof window !== 'undefined') {
-    console.log('🔍 [createClient] Creating Supabase client with cookie options:', {
-      isHttps,
-      protocol: window.location.protocol,
-      hostname: window.location.hostname,
-      secure: isHttps
-    })
-  }
-
   return createBrowserClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
-      cookieOptions: {
-        // 根据 HTTPS/HTTP 动态设置 secure 属性
-        secure: isHttps,
-        sameSite: 'lax',
-      },
-      isSingleton: true,  // 🔧 FIX: 启用单例模式，避免多实例冲突
+      isSingleton: true,
     }
   )
 }
