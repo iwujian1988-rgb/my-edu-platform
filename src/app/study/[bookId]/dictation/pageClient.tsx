@@ -77,7 +77,11 @@ export default function DictationPageClient() {
   // 支持两种格式：
   // 1. Hash 格式：/study/[bookId]/dictation#word-50
   // 2. 查询参数格式：/study/[bookId]/dictation?resume=true&index=50
+  // 🔥 SSR 安全：只在浏览器环境执行
   const getIndexFromURL = () => {
+    // 🔥 SSR 安全检查
+    if (typeof window === 'undefined') return undefined
+
     // 优先从 hash 获取（最高优先级）
     const hashIndex = validateHashIndex(window.location.hash)
     if (hashIndex !== undefined && hashIndex > 0) {
@@ -439,6 +443,9 @@ export default function DictationPageClient() {
   }, [])
 
   const getAudioContext = () => {
+    // 🔥 SSR 安全检查
+    if (typeof window === 'undefined') return null
+
     if (!audioContextRef.current) {
       audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
     }
@@ -452,6 +459,7 @@ export default function DictationPageClient() {
   const playTypewriterSound = () => {
     try {
       const audioContext = getAudioContext()
+      if (!audioContext) return  // 🔥 SSR 安全检查
       const now = audioContext.currentTime
 
       // 第一层：敲击声（高频短促）
@@ -502,6 +510,7 @@ export default function DictationPageClient() {
   const playErrorSound = () => {
     try {
       const audioContext = getAudioContext()
+      if (!audioContext) return  // 🔥 SSR 安全检查
       const now = audioContext.currentTime
 
       // 主振荡器：低频嗡嗡声
@@ -540,6 +549,7 @@ export default function DictationPageClient() {
   const playCorrectSound = () => {
     try {
       const audioContext = getAudioContext()
+      if (!audioContext) return  // 🔥 SSR 安全检查
       const now = audioContext.currentTime
 
       // 高频正弦波
