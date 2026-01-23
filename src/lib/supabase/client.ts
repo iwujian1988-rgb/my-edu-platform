@@ -55,7 +55,6 @@ export function createClient() {
         // 根据 HTTPS/HTTP 动态设置 secure 属性
         secure: isHttps,
         sameSite: 'lax',
-        path: '/',
       },
       isSingleton: true,  // 🔧 FIX: 启用单例模式，避免多实例冲突
     }
