@@ -9,7 +9,8 @@
 
 import { createClient } from '@/lib/supabase/client'
 
-const supabase = createClient()
+// ❌ 移除模块级单例，改为每次调用时创建
+// const supabase = createClient()
 
 export interface ReadingProgress {
   bookId: string
@@ -28,6 +29,8 @@ export async function saveReadingProgress(progress: ReadingProgress): Promise<vo
   console.log('🔥 [saveReadingProgress] Starting save for book:', progress.bookId, 'page:', progress.page)
 
   try {
+    // 🔧 Fix: 每次调用时创建新的client，确保使用最新的session
+    const supabase = createClient()
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) {
       console.log('❌ [saveReadingProgress] No user logged in')
@@ -71,9 +74,27 @@ export async function getReadingProgress(bookId: string): Promise<ReadingProgres
   console.log('🔍 [getReadingProgress] Fetching progress for book:', bookId)
 
   try {
-    const { data: { user } } = await supabase.auth.getUser()
-    if (!user) {
-      console.log('❌ [getReadingProgress] No user logged in')
+    // 🔧 Fix: 每次调用时创建新的client，确保使用最新的session
+    const supabase = createClient()
+
+    // 🔍 Debug: Check session state before getUser call
+    const { data: sessionData } = await supabase.auth.getSession()
+    console.log('🔍 [getReadingProgress] Session before getUser:', {
+      hasSession: !!sessionData.session,
+      hasAccessToken: !!sessionData.session?.access_token
+    })
+
+    const { data: { user }, error: userError } = await supabase.auth.getUser()
+
+    console.log('🔍 [getReadingProgress] getUser result:', {
+      hasUser: !!user,
+      userId: user?.id,
+      error: userError?.message,
+      errorName: userError?.name
+    })
+
+    if (userError || !user) {
+      console.log('❌ [getReadingProgress] No user logged in, error:', userError?.message)
       // 用户未登录，静默返回
       return null
     }
@@ -133,6 +154,8 @@ export async function getReadingProgress(bookId: string): Promise<ReadingProgres
  */
 export async function clearReadingProgress(bookId: string): Promise<void> {
   try {
+    // 🔧 Fix: 每次调用时创建新的client，确保使用最新的session
+    const supabase = createClient()
     const { data: { user } } = await supabase.auth.getUser()
     if (!user) return
 
