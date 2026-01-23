@@ -135,8 +135,14 @@ export default function FlashcardsPageClient() {
   const [bookTitle, setBookTitle] = useState('')
   const [currentScope, setCurrentScope] = useState(scope)
   const [showCompleteDialog, setShowCompleteDialog] = useState(false)
-  // ⭐ 从首页进入时不显示对话框，从书架进入时显示对话框
-  const [showScopeSelectDialog, setShowScopeSelectDialog] = useState(!isFromHomepageResume)
+
+  // 🔥 关键修复：判断是否应该显示范围选择对话框
+  // 逻辑：如果sessionStorage有学习进度（刷新恢复），则不显示对话框；否则显示对话框
+  const sessionPosition = getSessionPosition(bookId)
+  const hasLearningProgress = sessionPosition && sessionPosition.scope === scope
+  const shouldShowDialog = !isFromHomepageResume && !hasLearningProgress
+  const [showScopeSelectDialog, setShowScopeSelectDialog] = useState(shouldShowDialog)
+
   const [loadingMore, setLoadingMore] = useState(false)
   const [hasMore, setHasMore] = useState(true)
   const [currentPage, setCurrentPage] = useState(1)
