@@ -80,6 +80,7 @@ export default function DictationPageClient() {
   const [userInput, setUserInput] = useState('')
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
+  const [targetIndex, setTargetIndex] = useState<number | null>(null)  // 🔥 进度恢复的目标索引（等待懒加载）
 
   // ⭐ 如果从首页进入，使用 URL 参数中的 scope；否则使用默认值 'all'
   const scopeParam = searchParams.get('scope')
@@ -154,20 +155,97 @@ export default function DictationPageClient() {
   const hasPlayedOnceRef = useRef(false)
   const shouldLoadWordsRef = useRef(false) // 控制是否应该加载单词
 
-  // 初始化进度（只在页面加载时恢复一次，后续更新不影响）
+  // 🔥 初始化进度（严格版本，解决所有边界问题）
+  // 逻辑说明：
+  // 1. 只在非首页恢复时，从进度数据恢复
+  // 2. 使用 totalWords 判断进度有效性（而不是 words.length）
+  // 3. 如果索引超出已加载范围，设置 targetIndex 等待懒加载
   const hasInitializedRef = useRef(false)
+  const hasUserStartedRef = useRef(false)  // 检测用户是否已经开始学习
+  const prevScopeRef = useRef<DictationScopeType | null>(null)  // 追踪 scope 变化
 
+  // 🔥 阶段1：确定目标索引或立即恢复
   useEffect(() => {
-    // 只在首次加载进度时恢复，避免在切词时被覆盖
-    if (progress && !hasInitializedRef.current && progress.currentIndex > 0 && progress.currentIndex < words.length) {
-      console.log(`📋 恢复进度: ${progress.currentIndex}`)
-      setCurrentIndex(progress.currentIndex)
-      hasInitializedRef.current = true
-    } else if (progress && progress.currentIndex === 0 && !hasInitializedRef.current) {
-      // 如果进度是0，也标记为已初始化
-      hasInitializedRef.current = true
+    // 检测 scope 是否变化
+    if (prevScopeRef.current !== scopeType) {
+      console.log(`🔄 [Scope Changed] ${prevScopeRef.current} → ${scopeType}, 重置初始化状态`)
+      hasInitializedRef.current = false
+      hasUserStartedRef.current = false
+      setTargetIndex(null)
+      prevScopeRef.current = scopeType
     }
-  }, [progress, words.length])
+
+    // 如果是从首页恢复，跳过进度恢复逻辑（由 hash 定位处理）
+    if (isFromHomepageResume) {
+      hasInitializedRef.current = true
+      return
+    }
+
+    // 🔥 防止在用户已经开始学习后恢复进度（避免覆盖用户操作）
+    if (hasUserStartedRef.current) {
+      console.log('⚠️ [Progress Restore] 用户已开始学习，跳过进度恢复并清除待恢复索引')
+      setTargetIndex(null)  // 🔥 关键修复：清除 targetIndex，防止后续覆盖
+      hasInitializedRef.current = true
+      return
+    }
+
+    // 只在首次加载进度时恢复
+    if (progress && !hasInitializedRef.current && totalWords > 0) {
+      // 类型安全检查
+      const savedIndex = Number(progress.currentIndex)
+      if (isNaN(savedIndex) || !isFinite(savedIndex)) {
+        console.error(`❌ [Progress Restore] 无效的进度索引: ${progress.currentIndex}，从头开始`)
+        hasInitializedRef.current = true
+        return
+      }
+
+      const isValidIndex = savedIndex >= 0 && savedIndex < totalWords
+
+      if (isValidIndex) {
+        if (savedIndex < words.length) {
+          // ✅ 在已加载范围内，立即恢复
+          console.log(`📋 [Progress Restore] 立即恢复: ${savedIndex}/${totalWords} (已加载: ${words.length})`)
+          setCurrentIndex(savedIndex)
+          hasInitializedRef.current = true
+        } else {
+          // ⏳ 索引超出当前加载范围，设置目标索引等待懒加载
+          console.log(`⏳ [Progress Restore] 设置目标索引: ${savedIndex}, 已加载: ${words.length}/${totalWords}`)
+          setTargetIndex(savedIndex)
+          hasInitializedRef.current = true
+        }
+      } else {
+        console.warn(`⚠️ [Progress Restore] 进度索引超出范围: ${savedIndex}/${totalWords}，从头开始`)
+        hasInitializedRef.current = true
+      }
+    }
+  }, [progress, totalWords, isFromHomepageResume, scopeType, words.length])
+
+  // 🔥 阶段2：等待懒加载完成后恢复
+  useEffect(() => {
+    if (targetIndex !== null && targetIndex < words.length) {
+      // 🔥 关键修复：再次检查用户是否已经开始学习
+      if (hasUserStartedRef.current) {
+        console.log('⚠️ [Progress Restore] 用户已开始学习，取消待恢复索引')
+        setTargetIndex(null)
+        return
+      }
+      console.log(`📋 [Progress Restore] 懒加载完成，恢复到索引: ${targetIndex} (已加载: ${words.length})`)
+      setCurrentIndex(targetIndex)
+      setTargetIndex(null)
+    }
+  }, [targetIndex, words.length])
+
+  // 🔥 追踪用户是否已经开始学习（答题或切题）
+  useEffect(() => {
+    if (currentIndex > 0 || feedback !== null) {
+      hasUserStartedRef.current = true
+      // 🔥 关键修复：清除待恢复索引
+      if (targetIndex !== null) {
+        console.log('⚠️ [Progress Restore] 用户开始学习，清除待恢复索引')
+        setTargetIndex(null)
+      }
+    }
+  }, [currentIndex, feedback, targetIndex])
 
   // 自动显示范围选择对话框（不加载单词）
   useEffect(() => {
@@ -577,7 +655,10 @@ export default function DictationPageClient() {
         setCurrentIndex(0)
         setShowScopeDialog(false)
 
-        // ⭐ 触发单词加载和自动播放（用户选择范围后才加载）
+        // 🔥 重置所有学习状态（确保新 scope 不会受旧状态影响）
+        setFeedback(null)
+        setUserInput('')
+        setShowCorrectAnswer(false)
         setHasSelectedScope(true)
         shouldLoadWordsRef.current = true
       }
