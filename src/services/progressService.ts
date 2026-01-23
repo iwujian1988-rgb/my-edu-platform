@@ -83,9 +83,18 @@ export class LocalStorageBackup {
   private readonly STATS_KEY_PREFIX = 'dictation_stats'
 
   /**
+   * 检查是否在浏览器环境
+   */
+  private isBrowser(): boolean {
+    return typeof window !== 'undefined' && typeof localStorage !== 'undefined'
+  }
+
+  /**
    * 保存进度数据到本地存储
    */
   saveProgress(data: ProgressData): void {
+    if (!this.isBrowser()) return  // 🔥 SSR 安全检查
+
     try {
       const key = `${this.PROGRESS_KEY_PREFIX}:${data.bookId}:${data.scopeType}`
       localStorage.setItem(key, JSON.stringify(data))
@@ -99,6 +108,8 @@ export class LocalStorageBackup {
    * 从本地存储加载进度数据
    */
   loadProgress(bookId: string, scopeType: string): ProgressData | null {
+    if (!this.isBrowser()) return null  // 🔥 SSR 安全检查
+
     try {
       const key = `${this.PROGRESS_KEY_PREFIX}:${bookId}:${scopeType}`
       const data = localStorage.getItem(key)
@@ -115,6 +126,8 @@ export class LocalStorageBackup {
    * 保存任务队列到本地存储
    */
   saveQueue(queue: Task[]): void {
+    if (!this.isBrowser()) return  // 🔥 SSR 安全检查
+
     try {
       localStorage.setItem(this.QUEUE_KEY, JSON.stringify(queue))
     } catch (error) {
@@ -126,6 +139,8 @@ export class LocalStorageBackup {
    * 从本地存储加载任务队列
    */
   loadQueue(): Task[] {
+    if (!this.isBrowser()) return []  // 🔥 SSR 安全检查
+
     try {
       const data = localStorage.getItem(this.QUEUE_KEY)
       if (!data) return []
@@ -141,6 +156,8 @@ export class LocalStorageBackup {
    * 清空任务队列
    */
   clearQueue(): void {
+    if (!this.isBrowser()) return  // 🔥 SSR 安全检查
+
     try {
       localStorage.removeItem(this.QUEUE_KEY)
     } catch (error) {
@@ -152,6 +169,8 @@ export class LocalStorageBackup {
    * 保存统计数据到本地存储
    */
   saveStats(bookId: string, stats: StatsData): void {
+    if (!this.isBrowser()) return  // 🔥 SSR 安全检查
+
     try {
       const key = `${this.STATS_KEY_PREFIX}:${bookId}`
       localStorage.setItem(key, JSON.stringify(stats))
@@ -164,6 +183,8 @@ export class LocalStorageBackup {
    * 从本地存储加载统计数据
    */
   loadStats(bookId: string): StatsData | null {
+    if (!this.isBrowser()) return null  // 🔥 SSR 安全检查
+
     try {
       const key = `${this.STATS_KEY_PREFIX}:${bookId}`
       const data = localStorage.getItem(key)
@@ -177,6 +198,7 @@ export class LocalStorageBackup {
   }
 }
 
+// ==================== ProgressService ====================
 // ==================== RetryManager ====================
 
 /**
