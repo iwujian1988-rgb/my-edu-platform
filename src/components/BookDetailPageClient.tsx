@@ -192,7 +192,7 @@ export function BookDetailPageClient({
   const [showRestoreConfirm, setShowRestoreConfirm] = useState(false)
   const [savedProgress, setSavedProgress] = useState<ReadingProgress | null>(null)
 
-  // 🔥 数据到达检测：通过比较 words 的第一个元素来判断数据是否更新
+  // 🔥 数据到达检测：通过比较 words 的第一个元素和筛选条件来判断数据是否更新
   // 必须放在状态声明之后，因为依赖 restoredPage 和 showRestoreToast
   useEffect(() => {
     // 如果不在翻页状态，重置firstWordIdRef
@@ -205,8 +205,25 @@ export function BookDetailPageClient({
     if (showSkeleton && words.length > 0) {
       const currentFirstWordId = words[0].id
 
-      // 如果第一个单词的ID改变了，说明新数据已到达
-      if (currentFirstWordId !== firstWordIdRef.current) {
+      // 🔥 改进检测逻辑：不仅要检查firstWordId，还要检查筛选条件是否变化
+      // 当恢复进度时（如status从all变为known），firstWordId可能相同但数据已更新
+      const isFirstWordIdChanged = currentFirstWordId !== firstWordIdRef.current
+      const isLoadingPageChanged = loadingPageRef.current !== filters.page
+
+      // 如果有新数据到达（ID变化 OR 页码变化 OR 数据从空变为有）
+      const isDataArrived = isFirstWordIdChanged || isLoadingPageChanged
+
+      console.log('🎯 [Skeleton] Checking data arrival:', {
+        isFirstWordIdChanged,
+        isLoadingPageChanged,
+        isDataArrived,
+        currentFirstWordId,
+        prevFirstWordId: firstWordIdRef.current,
+        loadingPage: loadingPageRef.current,
+        currentPage: filters.page
+      })
+
+      if (isDataArrived) {
         console.log('🎯 [Skeleton] New data detected! Old word ID:', firstWordIdRef.current, ', New word ID:', currentFirstWordId, ', Page:', filters.page)
 
         const elapsedTime = Date.now() - skeletonStartTimeRef.current
@@ -262,7 +279,7 @@ export function BookDetailPageClient({
           }
         }
       } else {
-        console.log('🎯 [Skeleton] Still waiting for new data... (current word ID unchanged:', currentFirstWordId, ')')
+        console.log('🎯 [Skeleton] Still waiting for new data... (firstWordId unchanged:', currentFirstWordId, ', loadingPage:', loadingPageRef.current, ', currentPage:', filters.page, ')')
       }
     }
   }, [showSkeleton, words, filters.page, isPageChanging, restoredPage, showRestoreToast])
