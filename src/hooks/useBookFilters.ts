@@ -48,6 +48,10 @@ function restoreFiltersFromURL(searchParams: URLSearchParams): BookFilters {
   }
 }
 
+// 🔥 全局标志：防止 React StrictMode 双重挂载导致重复初始化
+// 在客户端是持久的，能跨越组件实例
+const globalInitFlags = new Map<string, boolean>()
+
 /**
  * 主Hook：管理词书筛选状态
  */
@@ -55,6 +59,11 @@ export function useBookFilters(bookId?: string) {
   const searchParams = useSearchParams()
   const { updateURL } = useUpdateURL()
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+  // 🔥 使用全局标志 + ref 组合，防止重复初始化
+  const key = bookId || 'default'
+  const isGloballyInitialized = globalInitFlags.get(key)
+  const isInitializedRef = useRef(isGloballyInitialized || false)
 
   // 状态 - 从URL恢复
   const [filters, setFilters] = useState<BookFilters>(() =>
@@ -90,6 +99,14 @@ export function useBookFilters(bookId?: string) {
 
   // 监听filters变化，自动保存
   useEffect(() => {
+    // 🔧 跳过首次初始化时的保存（避免覆盖真实进度）
+    if (!isInitializedRef.current) {
+      isInitializedRef.current = true
+      globalInitFlags.set(key, true) // 🔥 设置全局标志
+      console.log('🔄 [useBookFilters] First initialization, skipping save')
+      return
+    }
+
     console.log('🔄 [useBookFilters] Filters changed:', filters)
     saveProgress(filters)
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -102,6 +119,14 @@ export function useBookFilters(bookId?: string) {
   useEffect(() => {
     filtersRef.current = filters
   }, [filters])
+
+  // 🔥 组件卸载时清理全局标志（确保下次进入同一本书时能正常初始化）
+  useEffect(() => {
+    return () => {
+      console.log('🧹 [useBookFilters] Cleanup - clearing global flag for:', key)
+      globalInitFlags.delete(key)
+    }
+  }, [key])
 
   // 监听页面卸载和beforeunload事件
   useEffect(() => {
@@ -140,8 +165,21 @@ export function useBookFilters(bookId?: string) {
   }, [bookId]) // 只依赖 bookId，不再依赖 filters
 
   // ⭐ 监听URL变化，同步filters状态（不用key时需要）
+  // 🔥 修复：跳过首次初始化，避免覆盖断点续读进度
   useEffect(() => {
+    // 🔧 如果URL为空或只有默认参数，不覆盖filters（让断点续读逻辑处理）
+    const hasParams = Array.from(searchParams.keys()).some(key => {
+      const value = searchParams.get(key)
+      return value && value !== '1' && value !== 'all'
+    })
+
+    if (!hasParams) {
+      console.log('🔍 [useBookFilters] URL has no params, skipping restore to allow resume logic')
+      return
+    }
+
     const restoredFilters = restoreFiltersFromURL(searchParams)
+    console.log('🔍 [useBookFilters] Restoring from URL:', restoredFilters)
     setFilters(restoredFilters)
   }, [searchParams])
 
@@ -150,7 +188,7 @@ export function useBookFilters(bookId?: string) {
     key: K,
     value: BookFilters[K]
   ) => {
-    console.log(`🔄 Updating filter: ${key} = ${value}`)
+    console.log(`🔄 [useBookFilters] updateFilter called: ${key} = ${value}, bookId = ${bookId}`)
 
     // 🔥 如果不是page参数改变，需要重置page为1
     if (key !== 'page') {

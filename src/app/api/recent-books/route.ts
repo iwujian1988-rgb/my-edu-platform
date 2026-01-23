@@ -29,7 +29,13 @@ export async function GET() {
     }
 
     // 第二步：根据book_id查询书籍信息
-    const bookIds = recentPrefs.map((pref: any) => pref.book_id)
+    // 🔧 过滤掉空字符串的book_id，避免UUID类型错误
+    const bookIds = recentPrefs.map((pref: any) => pref.book_id).filter((id: string) => id && id !== '')
+
+    if (bookIds.length === 0) {
+      return NextResponse.json({ success: true, data: [] })
+    }
+
     const { data: booksData, error: booksError } = await supabase
       .from('books')
       .select('id, title, description, total_words, cover_url, cover_color, created_by, is_official')

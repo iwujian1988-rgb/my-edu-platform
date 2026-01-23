@@ -267,6 +267,25 @@ export function BookDetailPageClient({
     }
   }, [showSkeleton, words, filters.page, isPageChanging, restoredPage, showRestoreToast])
 
+  // 🆕 记录访问：更新 last_accessed_at，确保首页"最近学习"能显示
+  useEffect(() => {
+    const recordAccess = async () => {
+      console.log('📍 [RecordAccess] Recording book access for:', book.id, 'page:', filters.page)
+      try {
+        await fetch('/api/recent-books', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ bookId: book.id })
+        })
+        console.log('✅ [RecordAccess] Book access recorded successfully')
+      } catch (error) {
+        console.error('❌ [RecordAccess] Failed to record book access:', error)
+      }
+    }
+
+    recordAccess()
+  }, [book.id, filters.page]) // 🔥 监听 book.id 和 filters.page 变化（进入或翻页时都记录）
+
   // ⭐ 断点续读：检查并显示恢复提示
   useEffect(() => {
     const checkAndRestoreProgress = async () => {

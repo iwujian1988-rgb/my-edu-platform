@@ -46,6 +46,19 @@ export async function saveReadingProgress(progress: ReadingProgress): Promise<vo
         user_id: user.id,
         book_id: progress.bookId,
         last_reading_progress: progress,
+        // 🔥 同时更新 last_resume_state，以便首页"最近学习"模块能显示进度
+        last_resume_state: {
+          mode: 'word-list',
+          bookId: progress.bookId,
+          updatedAt: Date.now(),
+          context: {
+            page: progress.page,
+            theme: progress.theme,
+            scenario: progress.scenario,
+            chapter: progress.chapter,
+            status: progress.status
+          }
+        },
         updated_at: new Date().toISOString()
       }, {
         onConflict: 'user_id,book_id'
