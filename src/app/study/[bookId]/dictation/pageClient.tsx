@@ -91,7 +91,7 @@ export default function DictationPageClient() {
   // Hooks
   const { stats, loading: statsLoading, getScopeOptions } = useDictationStats(bookId)
   // ⚡️ 关键修改：初始不加载单词，等用户选择范围后再加载
-  const { words, loading: wordsLoading } = useDictationWords(bookId, scopeType, false)
+  const { words, loading: wordsLoading, error: wordsError } = useDictationWords(bookId, scopeType, false)
 
   // 使用新的进度服务（支持断点续做）
   const { saveProgress: saveNewProgress, markWord } = useDictationProgressService(bookId)

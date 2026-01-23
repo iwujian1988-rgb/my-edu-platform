@@ -258,7 +258,7 @@ class DictationService {
             status: scopeType,
             shuffle: shuffle.toString(),
             page: '1',
-            pageSize: '10000'  // 听写模式需要加载所有单词
+            pageSize: '200'  // 🔧 修复：改为分页加载，避免数据过大导致 ERR_INCOMPLETE_CHUNKED_ENCODING
           })
 
           const response = await fetch(
