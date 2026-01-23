@@ -54,8 +54,10 @@ export function createClient() {
       cookieOptions: {
         // 根据 HTTPS/HTTP 动态设置 secure 属性
         secure: isHttps,
+        sameSite: 'lax',
+        path: '/',
       },
-      isSingleton: false,  // 🔧 Fix: 禁用单例模式，每次创建新实例
+      isSingleton: true,  // 🔧 FIX: 启用单例模式，避免多实例冲突
     }
   )
 }
