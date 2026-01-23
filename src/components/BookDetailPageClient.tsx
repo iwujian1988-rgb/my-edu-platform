@@ -876,13 +876,16 @@ export function BookDetailPageClient({
                 </>
               )}
 
-              <Link
-                href="/logout"
+              <button
+                onClick={async () => {
+                  await supabase.auth.signOut()
+                  router.push('/login')
+                }}
                 className="px-4 py-2 text-sm font-semibold border-2 rounded-xl transition-all duration-200 hover:opacity-80"
                 style={{ color: 'var(--text-secondary)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-tertiary)' }}
               >
                 退出
-              </Link>
+              </button>
             </div>
           </div>
         </div>
