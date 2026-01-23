@@ -73,9 +73,34 @@ export default function DictationPageClient() {
   const [showScopeDialog, setShowScopeDialog] = useState(!isFromHomepageResume)
   const [showCompleteDialog, setShowCompleteDialog] = useState(false)
 
-  // ⭐ Hash 定位：从 URL hash 中获取索引（如 #word-10）
-  const initialHashIndex = isFromHomepageResume ? validateHashIndex(window.location.hash) : undefined
-  const [currentIndex, setCurrentIndex] = useState(initialHashIndex !== undefined ? initialHashIndex : 0)
+  // ⭐ 进度恢复：从 URL 参数或 hash 中获取索引（优化版本）
+  // 支持两种格式：
+  // 1. Hash 格式：/study/[bookId]/dictation#word-50
+  // 2. 查询参数格式：/study/[bookId]/dictation?resume=true&index=50
+  const getIndexFromURL = () => {
+    // 优先从 hash 获取（最高优先级）
+    const hashIndex = validateHashIndex(window.location.hash)
+    if (hashIndex !== undefined && hashIndex > 0) {
+      return hashIndex
+    }
+
+    // 从查询参数获取（容错）
+    const indexParam = searchParams.get('index')
+    if (indexParam) {
+      const parsedIndex = parseInt(indexParam, 10)
+      if (!isNaN(parsedIndex) && parsedIndex > 0) {
+        return parsedIndex
+      }
+    }
+
+    return undefined
+  }
+
+  // 🔥 性能优化：缓存结果，避免调用两次
+  const restoredIndex = getIndexFromURL()
+  const shouldRestoreIndex = isFromHomepageResume && restoredIndex !== undefined
+  const initialIndex = shouldRestoreIndex ? restoredIndex : undefined
+  const [currentIndex, setCurrentIndex] = useState(initialIndex !== undefined ? initialIndex : 0)
 
   const [userInput, setUserInput] = useState('')
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)

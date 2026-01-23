@@ -415,9 +415,18 @@ export default async function Home() {
             const index = resumeState.context?.index || 0
             continueURL = `/study/${lastBookId}/flashcards?scope=${scope}&shuffle=true&index=${index}`
           } else if (resumeState?.mode === 'dictation') {
-            // 听写模式：带索引
-            const index = resumeState.context?.index || 0
-            continueURL = `/study/${lastBookId}/dictation?index=${index}`
+            // 🔥 听写模式：使用正确的字段名，同时兼容 Flashcards 的字段名
+            // 优先使用新字段（currentIndex/scopeType），降级到旧字段（index/scope）
+            const currentIndex = resumeState.context?.currentIndex || resumeState.context?.index || 0
+            const scopeType = resumeState.context?.scopeType || resumeState.context?.scope || 'all'
+
+            // 🔥 只有在有明确进度时才添加参数（避免冗余的 index=0）
+            if (currentIndex > 0) {
+              continueURL = `/study/${lastBookId}/dictation?resume=true&scope=${scopeType}&index=${currentIndex}#word-${currentIndex}`
+            } else {
+              // 第一次学习，不添加冗余参数
+              continueURL = `/study/${lastBookId}/dictation`
+            }
           }
 
           lastStudyBook = {
