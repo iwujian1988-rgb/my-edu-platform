@@ -260,10 +260,9 @@ export function BookDetailPageClient({
       if (isDataArrived) {
         console.log('🎯 [Skeleton] New data detected! Old word ID:', firstWordIdRef.current, ', New word ID:', currentFirstWordId, ', Page:', filters.page)
 
-        const elapsedTime = Date.now() - skeletonStartTimeRef.current
-        const remainingTime = Math.max(0, 800 - elapsedTime)
-
-        // 更新引用
+        // 更新引用（先保存旧值用于判断）
+        const oldFilters = { ...lastLoadedFiltersRef.current }
+        const oldPage = loadingPageRef.current
         firstWordIdRef.current = currentFirstWordId
         loadingPageRef.current = filters.page
         lastLoadedFiltersRef.current = {
@@ -272,6 +271,40 @@ export function BookDetailPageClient({
           scenario: filters.scenario,
           chapter: filters.chapter
         }
+
+        // 🔥 关键修复：检测是否是纯筛选变化（页码未变，筛选条件变化）
+        // 筛选变化通常很快，应该立即显示数据，不需要等待最小显示时间
+        const isFilterOnlyChange = areFiltersChanged && !isLoadingPageChanged && filters.page === oldPage
+
+        if (isFilterOnlyChange) {
+          console.log('🎯 [Skeleton] Filter-only change detected, hiding skeleton immediately')
+
+          // 立即隐藏skeleton和重置isPageChanging，让数据马上显示
+          setShowSkeleton(false)
+          setIsPageChanging(false)
+
+          // 🔥 处理断点续读Toast提示
+          if (restoredPage !== null && !showRestoreToast) {
+            console.log('🎉 [Resume] Data arrived, showing restore toast for page:', restoredPage)
+            setShowRestoreToast(true)
+            setToastOpacity(1)
+
+            toastTimerRef.current = setTimeout(() => {
+              console.log('⏱️ [Resume] Starting fade out')
+              setToastOpacity(0)
+              setTimeout(() => {
+                setShowRestoreToast(false)
+                setRestoredPage(null)
+              }, 500)
+            }, 3000)
+          }
+
+          return
+        }
+
+        // 翻页场景：等待最小显示时间（避免闪烁）
+        const elapsedTime = Date.now() - skeletonStartTimeRef.current
+        const remainingTime = Math.max(0, 800 - elapsedTime)
 
         // 🔥 如果是断点续读场景，此时显示Toast提示
         if (restoredPage !== null && !showRestoreToast) {
