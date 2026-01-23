@@ -90,8 +90,21 @@ export default function DictationPageClient() {
 
   // Hooks
   const { stats, loading: statsLoading, getScopeOptions } = useDictationStats(bookId)
-  // ⚡️ 关键修改：初始不加载单词，等用户选择范围后再加载
-  const { words, loading: wordsLoading, error: wordsError } = useDictationWords(bookId, scopeType, false)
+  // ⚡️ 关键修改：使用带懒加载的hook
+  const { words, loading: wordsLoading, error: wordsError, totalWords, loadMore, hasMore, isLoadingMoreRef } = useDictationWords(bookId, scopeType, false)
+
+  // 🔥 懒加载：当接近末尾时自动加载下一批
+  // 🔥 修复：直接使用 hook 返回的 ref，避免同步问题
+  useEffect(() => {
+    const loadThreshold = 10  // 还剩10个单词时加载
+    const remaining = words.length - currentIndex
+
+    // 🔥 检查 isLoadingMoreRef.current（同步值），而不是 state（异步值）
+    if (remaining <= loadThreshold && hasMore && !isLoadingMoreRef.current && !wordsLoading) {
+      console.log(`🔄 [Dictation] 接近末尾，加载更多单词（还剩${remaining}个）`)
+      loadMore()
+    }
+  }, [currentIndex, words.length, hasMore, wordsLoading, loadMore])
 
   // 使用新的进度服务（支持断点续做）
   const { saveProgress: saveNewProgress, markWord } = useDictationProgressService(bookId)
@@ -166,6 +179,26 @@ export default function DictationPageClient() {
   }, [statsLoading, stats, isFromHomepageResume])
 
   const currentWord = words[currentIndex]
+
+  // 🔥 边界检查：如果 currentWord 不存在，显示错误
+  if (!currentWord && !wordsLoading && !error) {
+    return (
+      <div className="min-h-screen bg-[#f4f4f5] flex items-center justify-center">
+        <div className="text-center">
+          <p className="text-red-600 font-black text-lg mb-4">单词加载失败</p>
+          <p className="text-sm text-gray-600 mb-4">
+            当前索引 {currentIndex + 1} 超出范围（共 {words.length} 个单词）
+          </p>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-6 py-2 bg-black text-white rounded-lg font-bold"
+          >
+            重新加载
+          </button>
+        </div>
+      </div>
+    )
+  }
 
   // 标记用户是否首次交互（用于控制首次播放）
   const hasUserInteractedRef = useRef(false)
@@ -488,10 +521,27 @@ export default function DictationPageClient() {
         // 计算下一个索引
         const nextIndex = currentIndex + 1
 
-        // 检查是否完成
-        if (nextIndex >= words.length) {
+        // 检查是否完成（检查是否到达总数的末尾）
+        const isComplete = totalWords > 0 && nextIndex >= totalWords
+        const reachedLoadedEnd = nextIndex >= words.length
+
+        if (isComplete) {
+          // 真正完成了所有单词
           setShowCompleteDialog(true)
-          // 保存完成状态
+          await saveProgress(currentIndex)
+          return
+        }
+
+        if (reachedLoadedEnd && hasMore) {
+          // 到达已加载的末尾，但还有更多单词
+          // 等待懒加载完成，不要前进
+          console.log('⏳ [Dictation] At end of loaded words, waiting for lazy load...')
+          return
+        }
+
+        if (reachedLoadedEnd && !hasMore) {
+          // 没有更多单词了，显示完成
+          setShowCompleteDialog(true)
           await saveProgress(currentIndex)
           return
         }
@@ -565,8 +615,8 @@ export default function DictationPageClient() {
     )
   }
 
-  // 计算进度
-  const progressPercent = words.length > 0 ? ((currentIndex + 1) / words.length) * 100 : 0
+  // 计算进度（使用真实的总数）
+  const progressPercent = totalWords > 0 ? ((currentIndex + 1) / totalWords) * 100 : 0
 
   return (
     <>
@@ -702,9 +752,9 @@ export default function DictationPageClient() {
             {/* ================= 中间核心内容区 ================= */}
             <div className="flex-1 w-full flex flex-col items-center justify-center gap-10 mt-8 p-8 md:p-12">
 
-              {/* 1. 进度胶囊：加个阴影，更有质感 */}
+              {/* 1. 进度胶囊：显示真实进度 */}
               <div className="bg-black text-white px-5 py-1.5 rounded-full text-sm font-bold tracking-widest shadow-[4px_4px_0px_0px_#ccff00]">
-                {currentIndex + 1} / {words.length}
+                {currentIndex + 1} / {totalWords || words.length}
               </div>
 
               {/* 2. 单词释义：关键修改！限制最大宽度，增加行高 */}

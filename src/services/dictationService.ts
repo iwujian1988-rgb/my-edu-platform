@@ -232,12 +232,27 @@ class DictationService {
     scopeType: DictationScopeType,
     shuffle: boolean = false
   ): Promise<any[]> {
+    const result = await this.getWordsWithTotal(bookId, scopeType, shuffle, 1, 200)
+    return result.data
+  }
+
+  /**
+   * 获取单词列表（带总数和分页）
+   * 对应方案：听写模式懒加载
+   */
+  async getWordsWithTotal(
+    bookId: string,
+    scopeType: DictationScopeType,
+    shuffle: boolean = false,
+    page: number = 1,
+    pageSize: number = 200
+  ): Promise<{ data: any[]; total: number }> {
     // 对应方案：防御性编程 - 参数校验
     if (!bookId || !scopeType) {
       throw new Error('bookId和scopeType不能为空')
     }
 
-    const key = `words:${bookId}:${scopeType}`
+    const key = `words:${bookId}:${scopeType}:${page}`
     let attemptCount = 0
 
     while (attemptCount < this.MAX_RETRIES) {
@@ -257,8 +272,8 @@ class DictationService {
             bookId,
             status: scopeType,
             shuffle: shuffle.toString(),
-            page: '1',
-            pageSize: '200'  // 🔧 修复：改为分页加载，避免数据过大导致 ERR_INCOMPLETE_CHUNKED_ENCODING
+            page: page.toString(),
+            pageSize: pageSize.toString()
           })
 
           const response = await fetch(
@@ -276,13 +291,20 @@ class DictationService {
             throw new Error(errorData.error || '获取单词列表失败')
           }
 
-          const data = await response.json()
+          const result = await response.json()
 
-          if (!data.success) {
+          if (!result.success) {
             throw new Error('获取单词列表失败')
           }
 
-          return data.data || []
+          // 返回数据和总数
+          // 🔥 关键修复：使用 count 而不是 total
+          // total = 整本书的总单词数（比如5000）
+          // count = 当前筛选范围的实际单词数（比如"不认识的"只有200个）
+          return {
+            data: result.data || [],
+            total: result.count || result.total || 0
+          }
         } finally {
           this.abortControllers.delete(key)
         }
@@ -290,7 +312,7 @@ class DictationService {
         // 如果是AbortError，说明请求被取消，这是正常的，直接返回空数组
         if (error instanceof Error && error.name === 'AbortError') {
           console.log('ℹ️ [DictationService] 请求被取消')
-          return []
+          return { data: [], total: 0 }
         }
 
         attemptCount++
@@ -302,7 +324,7 @@ class DictationService {
 
         // 对应方案：Section 6.3 - 指数退避
         const delay = this.BASE_DELAY * Math.pow(2, attemptCount - 1)
-        console.warn(`⚠️ [getWords] 第${attemptCount}次重试... 延迟${delay}ms`)
+        console.warn(`⚠️ [getWordsWithTotal] 第${attemptCount}次重试... 延迟${delay}ms`)
         await new Promise(resolve => setTimeout(resolve, delay))
       }
     }
