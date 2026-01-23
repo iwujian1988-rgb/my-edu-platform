@@ -119,13 +119,41 @@ export default function DictationPageClient() {
    * 保存进度的包装函数，兼容旧接口
    */
   const saveProgress = useCallback(async (currentIndex: number) => {
-    console.log('[Dictation Page] saveProgress called:', { scopeType, currentIndex, totalWords: words.length })
-    // 使用新的进度服务，保存完整的断点续做数据
-    await saveNewProgress(scopeType, currentIndex, words.length, words[currentIndex] ? {
-      id: words[currentIndex].id,
-      word: words[currentIndex].word
+    // 🔥 改进的守卫子句：只有在确实无法保存时才阻止
+    // 允许 totalWords = 0 的情况保存（用于调试和容错）
+    if (words.length === 0 && !wordsLoading) {
+      // words 为空且不在加载中，可能是筛选结果为空
+      console.warn('[Dictation Page] saveProgress skipped: no words loaded and not loading')
+      return
+    }
+
+    // 🔥 关键修复：使用 totalWords 而不是 words.length
+    // totalWords 是真实的总数（固定值，例如 3000）
+    // words.length 是当前已加载的数量（动态值，例如 50 → 100 → 150）
+    console.log('[Dictation Page] saveProgress called:', {
+      scopeType,
+      currentIndex,
+      totalWords: totalWords || words.length, // 🔥 容错：如果 totalWords 为 0，使用 words.length
+      loadedWords: words.length
+    })
+
+    // 🔥 安全访问 currentWord，处理索引超出范围的情况
+    const currentWord = (currentIndex >= 0 && currentIndex < words.length)
+      ? words[currentIndex]
+      : undefined
+
+    if (currentIndex >= words.length && words.length > 0) {
+      console.warn(`[Dictation Page] currentIndex ${currentIndex} exceeds loaded words ${words.length}, currentWord will be undefined`)
+    }
+
+    // 🔥 优先使用 totalWords，如果为 0 则回退到 words.length
+    const effectiveTotalWords = totalWords > 0 ? totalWords : words.length
+
+    await saveNewProgress(scopeType, currentIndex, effectiveTotalWords, currentWord ? {
+      id: currentWord.id,
+      word: currentWord.word
     } : undefined)
-  }, [scopeType, words, saveNewProgress])
+  }, [scopeType, totalWords, words, wordsLoading, saveNewProgress])
 
   // Refs
   const inputRef = useRef<HTMLInputElement>(null)
