@@ -72,6 +72,8 @@ export default function DictationPageClient() {
   // ⭐ 从首页进入时不显示对话框，从书架进入时显示对话框
   const [showScopeDialog, setShowScopeDialog] = useState(!isFromHomepageResume)
   const [showCompleteDialog, setShowCompleteDialog] = useState(false)
+  const navigatingRef = useRef(false)  // 🔥 同步检查，防止双击
+  const [isNavigating, setIsNavigating] = useState(false)  // 🔥 视觉反馈，触发重渲染
 
   // ⭐ 进度恢复：从 URL 参数或 hash 中获取索引（优化版本）
   // 支持两种格式：
@@ -737,15 +739,52 @@ export default function DictationPageClient() {
     setShowCorrectAnswer(false)
   }
 
-  // 返回
-  const handleBack = () => {
-    router.push(`/library/${bookId}`)
+  // 🔥 安全导航：保存进度后跳转（ref + state 双重保护）
+  const safeNavigate = async (to: string) => {
+    // 双重检查：ref（同步）防止双击
+    if (navigatingRef.current) {
+      console.warn('[Dictation] Navigation already in progress, ignoring click')
+      return
+    }
+
+    // 同时更新两者
+    navigatingRef.current = true  // 🔥 同步检查
+    setIsNavigating(true)  // 🔥 触发重渲染，按钮变灰
+
+    try {
+      // 先保存进度
+      console.log(`[Dictation] Saving progress before navigating to ${to}...`)
+      await saveProgress(currentIndex)
+      console.log('[Dictation] ✅ Progress saved successfully')
+
+      // 导航
+      router.push(to)
+    } catch (error) {
+      // 保存失败：记录错误但仍然导航（用户体验优先）
+      console.error('[Dictation] ❌ Failed to save progress:', error)
+      router.push(to)
+    } finally {
+      // 🔥 延迟重置（确保导航已开始）
+      setTimeout(() => {
+        navigatingRef.current = false
+        setIsNavigating(false)  // 🔥 恢复按钮状态
+      }, 100)
+    }
   }
 
+  // 返回
+  const handleBack = () => safeNavigate(`/library/${bookId}`)
+
   // 返回首页
-  const handleHome = () => {
-    router.push('/')
-  }
+  const handleHome = () => safeNavigate('/')
+
+  // 🔥 组件卸载时重置导航标志（防止内存泄漏）
+  useEffect(() => {
+    return () => {
+      navigatingRef.current = false
+      setIsNavigating(false)
+    }
+  }, [])
 
   // 加载状态
   if (statsLoading || wordsLoading) {
@@ -775,13 +814,14 @@ export default function DictationPageClient() {
           <div className="flex justify-between items-start mb-6">
             {/* 左侧：返回与标题 */}
             <div className="flex items-center gap-4">
-              <Link
-                href={`/library/${bookId}`}
-                className="w-12 h-12 rounded-xl flex items-center justify-center shadow-[4px_4px_0px_0px_#000] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_#000] transition-all border-2 border-black"
+              <button
+                onClick={handleBack}
+                disabled={isNavigating}
+                className="w-12 h-12 rounded-xl flex items-center justify-center shadow-[4px_4px_0px_0px_#000] border-2 border-black transition-all duration-200 hover:translate-y-[2px] disabled:hover:translate-y-0 hover:shadow-[2px_2px_0px_0px_#000] disabled:hover:shadow-[4px_4px_0px_0px_#000] disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ backgroundColor: 'var(--card-bg)' }}
               >
                 <ArrowLeft size={24} strokeWidth={2.5} style={{ color: 'var(--text-primary)' }} />
-              </Link>
+              </button>
               <h1 className="text-2xl font-black italic tracking-tighter hidden sm:block" style={{ color: 'var(--text-primary)' }}>听写练习</h1>
             </div>
 
@@ -809,11 +849,20 @@ export default function DictationPageClient() {
 
               {/* 退出按钮 */}
               <button
-                onClick={() => router.push('/')}
-                className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center transition-colors duration-300"
+                onClick={handleHome}
+                disabled={isNavigating}
+                className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 style={{ backgroundColor: 'var(--card-bg)' }}
-                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'}
-                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--card-bg)'}
+                onMouseEnter={(e) => {
+                  if (!isNavigating) {
+                    e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!isNavigating) {
+                    e.currentTarget.style.backgroundColor = 'var(--card-bg)'
+                  }
+                }}
               >
                 <X size={20} strokeWidth={2.5} style={{ color: 'var(--text-primary)' }} />
               </button>
