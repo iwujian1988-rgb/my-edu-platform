@@ -148,15 +148,21 @@ export function BookDetailPageClient({
   const initialVisibleCount = isPortrait ? 6 : 12  // 竖屏6个，横屏12个
   const [visibleCount, setVisibleCount] = useState(initialVisibleCount)
 
-  // 🔥 初始化：记录第一页的数据标识
+  // 🔥 初始化：记录第一页的数据标识和筛选条件
   useEffect(() => {
     if (!initializedRef.current && words.length > 0 && filters.page === 1) {
       console.log('🔥 [Init] Initializing with page 1 data, first word id:', words[0]?.id)
       loadingPageRef.current = 1  // 记录当前已加载的页码
       firstWordIdRef.current = words[0].id  // 🔥 同时初始化 firstWordIdRef，避免首次翻页时为null
+      lastLoadedFiltersRef.current = {  // 🔥 初始化筛选条件记录
+        status: filters.status,
+        theme: filters.theme,
+        scenario: filters.scenario,
+        chapter: filters.chapter
+      }
       initializedRef.current = true
     }
-  }, [words, filters.page])
+  }, [words, filters.page, filters.status, filters.theme, filters.scenario, filters.chapter])
 
   // 当翻页或数据变化时重置可见数量
   useEffect(() => {
@@ -192,6 +198,19 @@ export function BookDetailPageClient({
   const [showRestoreConfirm, setShowRestoreConfirm] = useState(false)
   const [savedProgress, setSavedProgress] = useState<ReadingProgress | null>(null)
 
+  // 🔥 记录上次加载时的筛选条件，用于检测数据是否更新
+  const lastLoadedFiltersRef = useRef<{
+    status: string
+    theme: string
+    scenario: string
+    chapter: string
+  }>({
+    status: 'all',
+    theme: 'all',
+    scenario: 'all',
+    chapter: 'all'
+  })
+
   // 🔥 数据到达检测：通过比较 words 的第一个元素和筛选条件来判断数据是否更新
   // 必须放在状态声明之后，因为依赖 restoredPage 和 showRestoreToast
   useEffect(() => {
@@ -210,17 +229,32 @@ export function BookDetailPageClient({
       const isFirstWordIdChanged = currentFirstWordId !== firstWordIdRef.current
       const isLoadingPageChanged = loadingPageRef.current !== filters.page
 
-      // 如果有新数据到达（ID变化 OR 页码变化 OR 数据从空变为有）
-      const isDataArrived = isFirstWordIdChanged || isLoadingPageChanged
+      // 🔥 检查筛选条件是否变化
+      const areFiltersChanged =
+        lastLoadedFiltersRef.current.status !== filters.status ||
+        lastLoadedFiltersRef.current.theme !== filters.theme ||
+        lastLoadedFiltersRef.current.scenario !== filters.scenario ||
+        lastLoadedFiltersRef.current.chapter !== filters.chapter
+
+      // 如果有新数据到达（ID变化 OR 页码变化 OR 筛选条件变化）
+      const isDataArrived = isFirstWordIdChanged || isLoadingPageChanged || areFiltersChanged
 
       console.log('🎯 [Skeleton] Checking data arrival:', {
         isFirstWordIdChanged,
         isLoadingPageChanged,
+        areFiltersChanged,
         isDataArrived,
         currentFirstWordId,
         prevFirstWordId: firstWordIdRef.current,
         loadingPage: loadingPageRef.current,
-        currentPage: filters.page
+        currentPage: filters.page,
+        lastFilters: lastLoadedFiltersRef.current,
+        currentFilters: {
+          status: filters.status,
+          theme: filters.theme,
+          scenario: filters.scenario,
+          chapter: filters.chapter
+        }
       })
 
       if (isDataArrived) {
@@ -229,9 +263,15 @@ export function BookDetailPageClient({
         const elapsedTime = Date.now() - skeletonStartTimeRef.current
         const remainingTime = Math.max(0, 800 - elapsedTime)
 
-        // 更新firstWordIdRef
+        // 更新引用
         firstWordIdRef.current = currentFirstWordId
-        loadingPageRef.current = filters.page  // 记录已加载的页码
+        loadingPageRef.current = filters.page
+        lastLoadedFiltersRef.current = {
+          status: filters.status,
+          theme: filters.theme,
+          scenario: filters.scenario,
+          chapter: filters.chapter
+        }
 
         // 🔥 如果是断点续读场景，此时显示Toast提示
         if (restoredPage !== null && !showRestoreToast) {
@@ -279,10 +319,25 @@ export function BookDetailPageClient({
           }
         }
       } else {
-        console.log('🎯 [Skeleton] Still waiting for new data... (firstWordId unchanged:', currentFirstWordId, ', loadingPage:', loadingPageRef.current, ', currentPage:', filters.page, ')')
+        console.log('🎯 [Skeleton] Still waiting for new data...', {
+          firstWordId: currentFirstWordId,
+          loadingPage: loadingPageRef.current,
+          currentPage: filters.page,
+          lastFilters: lastLoadedFiltersRef.current,
+          currentFilters: {
+            status: filters.status,
+            theme: filters.theme,
+            scenario: filters.scenario,
+            chapter: filters.chapter
+          },
+          areFiltersChanged: lastLoadedFiltersRef.current.status !== filters.status ||
+                           lastLoadedFiltersRef.current.theme !== filters.theme ||
+                           lastLoadedFiltersRef.current.scenario !== filters.scenario ||
+                           lastLoadedFiltersRef.current.chapter !== filters.chapter
+        })
       }
     }
-  }, [showSkeleton, words, filters.page, isPageChanging, restoredPage, showRestoreToast])
+  }, [showSkeleton, words, filters.page, filters.status, filters.theme, filters.scenario, filters.chapter, isPageChanging, restoredPage, showRestoreToast])
 
   // 🆕 记录访问：更新 last_accessed_at，确保首页"最近学习"能显示
   useEffect(() => {
