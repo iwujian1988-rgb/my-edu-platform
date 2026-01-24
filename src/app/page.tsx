@@ -347,12 +347,14 @@ export default async function Home() {
               continueURL = `/library/${book.id}`
             } else if (mode === 'flashcards') {
               // ✅ 使用 hash 传递 index（修复断点跳转）
+              // 🔥 修复：移除 shuffle=true，避免每次刷新都重新打乱顺序导致 index 失效
               const hash = `#word-${currentIndex}`
-              continueURL = `/study/${book.id}/flashcards?scope=${scopeType}&shuffle=true${hash}`
+              continueURL = `/study/${book.id}/flashcards?scope=${scopeType}${hash}`
             } else if (mode === 'dictation') {
               // ✅ 使用 hash 传递 index，并添加 scope（修复断点跳转）
+              // 🔥 修复：添加 resume=true 参数，确保页面能正确恢复进度
               const hash = `#word-${currentIndex}`
-              continueURL = `/study/${book.id}/dictation?scope=${scopeType}${hash}`
+              continueURL = `/study/${book.id}/dictation?scope=${scopeType}&resume=true${hash}`
             } else if (mode === 'typing') {
               // ⚠️ 打字游戏暂不支持断点续做，只传 scope
               continueURL = `/practice?bookId=${book.id}&scope=${scopeType}`

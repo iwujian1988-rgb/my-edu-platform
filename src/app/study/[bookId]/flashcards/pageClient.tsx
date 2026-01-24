@@ -121,7 +121,8 @@ export default function FlashcardsPageClient() {
     }
 
     // 2. 其次使用 hash 索引（从首页进入）
-    if (initialHashIndex !== undefined && initialHashIndex > 0) {
+    // 🔥 修复：移除 > 0 检查，允许 index=0（第1个单词）也能恢复
+    if (initialHashIndex !== undefined) {
       // 注意：words 初始为空，这里只是设置初始值
       // 实际的有效值会在 hash 定位 useEffect 中修正
       return initialHashIndex
