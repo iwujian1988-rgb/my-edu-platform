@@ -127,59 +127,70 @@ export default function DictationPageClient() {
     return undefined
   }
 
-  // 🔥 关键修复：使用 useState 惰性初始化，只在组件挂载时执行一次
-  // 避免每次渲染都重新计算 getIndexFromURL()，导致组件反复重新挂载
-  const [currentIndex, setCurrentIndex] = useState<number>(() => {
-    // 📋 输入参数日志
-    console.log('🔍 [Dictation初始化] 开始计算初始索引', {
-      isFromHomepageResume,
-      urlHash: typeof window !== 'undefined' ? window.location.hash : 'SSR',
-      urlSearch: searchParams?.toString()
+  // 🔥 关键修复：解决 Next.js 客户端导航时序问题
+  // 问题：在组件初始化时，window.location 可能还是首页的值
+  // 方案：先设置为 0，然后在 useEffect 中检查并更新
+  const [currentIndex, setCurrentIndex] = useState<number>(0)
+  const hasCheckedRef = useRef(false)
+
+  // 🔥 使用 useEffect 延迟读取 URL，确保 Next.js 导航完成
+  useEffect(() => {
+    if (!isFromHomepageResume || hasCheckedRef.current) {
+      return
+    }
+
+    console.log('🔍 [useEffect] 检查 URL 导航状态', {
+      pathname: typeof window !== 'undefined' ? window.location.pathname : 'SSR',
+      href: typeof window !== 'undefined' ? window.location.href : 'SSR'
     })
 
-    // 🛡️ Guard Clause 1: 非首页恢复模式，直接使用默认值
-    if (!isFromHomepageResume) {
-      console.log('✅ [Dictation初始化] 非首页模式，使用默认索引 0')
-      return 0
+    // 🔥 检查是否还在首页（说明 Next.js 导航未完成）
+    const isStillOnHomepage = typeof window !== 'undefined' && window.location.pathname === '/'
+
+    if (isStillOnHomepage) {
+      console.log('⚠️ [useEffect] 检测到仍在首页，延迟 50ms 后重试')
+
+      // 延迟重试
+      const timer = setTimeout(() => {
+        console.log('🔍 [useEffect] 延迟检查:', window.location.href)
+
+        const restoredIndex = getIndexFromURL()
+
+        if (restoredIndex !== undefined && Number.isFinite(restoredIndex) && restoredIndex >= 0) {
+          const MAX_SAFE_INDEX = 1000000
+          if (restoredIndex <= MAX_SAFE_INDEX) {
+            console.log('✅ [useEffect] 延迟检查成功恢复索引:', restoredIndex)
+            hasInitializedFromURL.current = true
+            setCurrentIndex(restoredIndex)
+            hasCheckedRef.current = true
+            return
+          }
+        }
+
+        console.log('⚠️ [useEffect] 延迟检查仍无法恢复索引')
+        hasCheckedRef.current = true
+      }, 50)
+
+      return () => clearTimeout(timer)
     }
 
-    // 🔧 尝试从 URL 恢复索引
-    try {
-      const restoredIndex = getIndexFromURL()
+    // 🔥 已经不在首页，立即读取
+    const restoredIndex = getIndexFromURL()
 
-      // 🛡️ Guard Clause 2: restoredIndex 为 undefined 或无效
-      if (restoredIndex === undefined || !Number.isFinite(restoredIndex)) {
-        console.log('⚠️ [Dictation初始化] 无法从URL恢复索引，使用默认值 0', { restoredIndex })
-        return 0
-      }
-
-      // 🛡️ Guard Clause 3: 边界检查（负数）
-      if (restoredIndex < 0) {
-        console.warn('⚠️ [Dictation初始化] 恢复索引为负数，重置为 0', { restoredIndex })
-        return 0
-      }
-
-      // 🛡️ Guard Clause 4: 边界检查（超大值，防止数组越界）
+    if (restoredIndex !== undefined && Number.isFinite(restoredIndex) && restoredIndex >= 0) {
       const MAX_SAFE_INDEX = 1000000
-      if (restoredIndex > MAX_SAFE_INDEX) {
-        console.warn('⚠️ [Dictation初始化] 恢复索引超出安全范围，重置为 0', { restoredIndex, max: MAX_SAFE_INDEX })
-        return 0
+      if (restoredIndex <= MAX_SAFE_INDEX) {
+        console.log('✅ [useEffect] 成功恢复索引:', restoredIndex)
+        hasInitializedFromURL.current = true
+        setCurrentIndex(restoredIndex)
+        hasCheckedRef.current = true
+        return
       }
-
-      // ✅ 成功恢复索引
-      console.log('✅ [Dictation初始化] 成功从URL恢复索引:', restoredIndex)
-
-      // 🔥 方案C：设置标志，防止进度恢复逻辑覆盖从URL恢复的索引
-      hasInitializedFromURL.current = true
-
-      return restoredIndex
-
-    } catch (error) {
-      // 🚨 异常处理：任何错误都回退到默认值
-      console.error('❌ [Dictation初始化] 恢复索引时发生异常，使用默认值 0', error)
-      return 0
     }
-  })
+
+    console.log('⚠️ [useEffect] 无法恢复索引，使用默认值 0')
+    hasCheckedRef.current = true
+  }, [isFromHomepageResume])
 
   const [userInput, setUserInput] = useState('')
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
