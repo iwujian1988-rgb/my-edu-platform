@@ -75,6 +75,10 @@ export default function DictationPageClient() {
   const navigatingRef = useRef(false)  // 🔥 同步检查，防止双击
   const [isNavigating, setIsNavigating] = useState(false)  // 🔥 视觉反馈，触发重渲染
 
+  // 🔥 Refs 定义（必须在 useState 之前，因为初始化函数会立即执行）
+  const hasInitializedFromURL = useRef(false)  // 🔥 标记是否从URL初始化过（方案C）
+  const shouldSkipProgressRestore = useRef(false)  // 🔥 标记是否跳过进度恢复（用户通过对话框指定了索引）
+
   // ⭐ 进度恢复：从 URL 参数或 hash 中获取索引（优化版本）
   // 支持两种格式：
   // 1. Hash 格式：/study/[bookId]/dictation#word-50
@@ -143,6 +147,10 @@ export default function DictationPageClient() {
 
       // ✅ 成功恢复索引
       console.log('✅ [Dictation初始化] 成功从URL恢复索引:', restoredIndex)
+
+      // 🔥 方案C：设置标志，防止进度恢复逻辑覆盖从URL恢复的索引
+      hasInitializedFromURL.current = true
+
       return restoredIndex
 
     } catch (error) {
@@ -156,7 +164,6 @@ export default function DictationPageClient() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
   const [targetIndex, setTargetIndex] = useState<number | null>(null)  // 🔥 进度恢复的目标索引（等待懒加载）
-  const shouldSkipProgressRestore = useRef(false)  // 🔥 标记是否跳过进度恢复（用户通过对话框指定了索引）
 
   // ⭐ 如果从首页进入，使用 URL 参数中的 scope；否则使用默认值 'all'
   const scopeParam = searchParams.get('scope')
@@ -291,6 +298,14 @@ export default function DictationPageClient() {
       console.log('⚠️ [Progress Restore] 用户通过对话框指定了索引，跳过自动恢复')
       hasInitializedRef.current = true
       shouldSkipProgressRestore.current = false  // 重置标志
+      return
+    }
+
+    // 🔥 方案C：如果从URL初始化过，跳过进度恢复逻辑
+    // 防止进度恢复逻辑覆盖从URL恢复的索引
+    if (hasInitializedFromURL.current) {
+      console.log('⚠️ [Progress Restore] 已从URL初始化，跳过自动恢复')
+      hasInitializedRef.current = true
       return
     }
 
