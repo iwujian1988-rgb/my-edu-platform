@@ -86,23 +86,36 @@ export default function DictationPageClient() {
   // 🔥 SSR 安全：只在浏览器环境执行
   const getIndexFromURL = () => {
     // 🔥 SSR 安全检查
-    if (typeof window === 'undefined') return undefined
+    if (typeof window === 'undefined') {
+      console.log('⚠️ [getIndexFromURL] SSR环境，返回undefined')
+      return undefined
+    }
+
+    const hash = window.location.hash
+    console.log('🔍 [getIndexFromURL] 当前hash:', hash)
 
     // 优先从 hash 获取（最高优先级）
-    const hashIndex = validateHashIndex(window.location.hash)
+    const hashIndex = validateHashIndex(hash)
+    console.log('🔍 [getIndexFromURL] validateHashIndex结果:', hashIndex, 'hash:', hash)
+
     if (hashIndex !== undefined && hashIndex > 0) {
+      console.log('✅ [getIndexFromURL] 从hash成功获取索引:', hashIndex)
       return hashIndex
     }
 
     // 从查询参数获取（容错）
     const indexParam = searchParams.get('index')
+    console.log('🔍 [getIndexFromURL] index参数:', indexParam, 'searchParams:', searchParams.toString())
+
     if (indexParam) {
       const parsedIndex = parseInt(indexParam, 10)
       if (!isNaN(parsedIndex) && parsedIndex > 0) {
+        console.log('✅ [getIndexFromURL] 从查询参数成功获取索引:', parsedIndex)
         return parsedIndex
       }
     }
 
+    console.log('⚠️ [getIndexFromURL] 无法获取索引，返回undefined')
     return undefined
   }
 
