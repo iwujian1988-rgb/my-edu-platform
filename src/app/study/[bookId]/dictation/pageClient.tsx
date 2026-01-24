@@ -5,7 +5,7 @@
 
 
 
-import { useState, useEffect, useRef, useCallback } from 'react'
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import {
   ArrowLeft,
@@ -102,8 +102,9 @@ export default function DictationPageClient() {
     return undefined
   }
 
-  // 🔥 性能优化：缓存结果，避免调用两次
-  const restoredIndex = getIndexFromURL()
+  // 🔥 关键修复：使用 useMemo 缓存 getIndexFromURL() 的结果
+  // 避免每次渲染都重新计算，导致组件反复重新挂载
+  const restoredIndex = useMemo(() => getIndexFromURL(), [searchParams])
   const shouldRestoreIndex = isFromHomepageResume && restoredIndex !== undefined
   const initialIndex = shouldRestoreIndex ? restoredIndex : undefined
   const [currentIndex, setCurrentIndex] = useState(initialIndex !== undefined ? initialIndex : 0)
@@ -120,6 +121,7 @@ export default function DictationPageClient() {
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
   const [targetIndex, setTargetIndex] = useState<number | null>(null)  // 🔥 进度恢复的目标索引（等待懒加载）
+  const shouldSkipProgressRestore = useRef(false)  // 🔥 标记是否跳过进度恢复（用户通过对话框指定了索引）
 
   // ⭐ 如果从首页进入，使用 URL 参数中的 scope；否则使用默认值 'all'
   const scopeParam = searchParams.get('scope')
@@ -250,6 +252,15 @@ export default function DictationPageClient() {
     // 如果是从首页恢复，跳过进度恢复逻辑（由 hash 定位处理）
     if (isFromHomepageResume) {
       hasInitializedRef.current = true
+      return
+    }
+
+    // 🔥 关键修复：如果用户通过对话框指定了索引，跳过进度恢复
+    // 这样可以防止进度恢复逻辑覆盖 handleScopeChange 设置的 targetIndex
+    if (shouldSkipProgressRestore.current) {
+      console.log('⚠️ [Progress Restore] 用户通过对话框指定了索引，跳过自动恢复')
+      hasInitializedRef.current = true
+      shouldSkipProgressRestore.current = false  // 重置标志
       return
     }
 
@@ -724,6 +735,15 @@ export default function DictationPageClient() {
       return
     }
 
+    console.log('🔍 [handleScopeChange] 收到参数:', { newScope, targetIndex })
+
+    // 🔥 关键修复：如果有 targetIndex，标记跳过进度恢复
+    // 这样可以防止进度恢复逻辑覆盖用户指定的索引
+    if (targetIndex !== undefined) {
+      shouldSkipProgressRestore.current = true
+      console.log('🔍 [handleScopeChange] 设置跳过进度恢复标志 (targetIndex:', targetIndex, ')')
+    }
+
     // 🔥 简单验证：如果提供了 targetIndex，使用它；否则从 0 开始
     let index = 0
     if (targetIndex !== undefined &&
@@ -731,6 +751,7 @@ export default function DictationPageClient() {
         Number.isInteger(targetIndex) &&
         targetIndex >= 0) {
       index = targetIndex
+      console.log('🔍 [handleScopeChange] 使用 targetIndex:', index)
     }
 
     await executeOperation(
