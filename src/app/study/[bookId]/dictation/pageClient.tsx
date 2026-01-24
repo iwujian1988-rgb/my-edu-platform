@@ -108,6 +108,14 @@ export default function DictationPageClient() {
   const initialIndex = shouldRestoreIndex ? restoredIndex : undefined
   const [currentIndex, setCurrentIndex] = useState(initialIndex !== undefined ? initialIndex : 0)
 
+  // 🔥 Debug: Log initial state
+  console.log(`🔍 [Dictation] Initial state:`, {
+    isFromHomepageResume,
+    restoredIndex,
+    initialIndex,
+    currentIndex: initialIndex !== undefined ? initialIndex : 0
+  })
+
   const [userInput, setUserInput] = useState('')
   const [feedback, setFeedback] = useState<'correct' | 'wrong' | null>(null)
   const [showCorrectAnswer, setShowCorrectAnswer] = useState(false)
