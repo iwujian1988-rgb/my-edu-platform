@@ -92,7 +92,15 @@ export default function DictationPageClient() {
     }
 
     const hash = window.location.hash
-    console.log('🔍 [getIndexFromURL] 当前hash:', hash)
+    const href = window.location.href
+    const search = window.location.search
+
+    console.log('🔍 [getIndexFromURL] 完整URL状态:', {
+      hash,
+      search,
+      href,
+      timestamp: Date.now()
+    })
 
     // 优先从 hash 获取（最高优先级）
     const hashIndex = validateHashIndex(hash)
