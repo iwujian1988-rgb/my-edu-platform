@@ -5,7 +5,7 @@
 
 
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import {
   ArrowLeft,
@@ -102,19 +102,54 @@ export default function DictationPageClient() {
     return undefined
   }
 
-  // 🔥 关键修复：使用 useMemo 缓存 getIndexFromURL() 的结果
-  // 避免每次渲染都重新计算，导致组件反复重新挂载
-  const restoredIndex = useMemo(() => getIndexFromURL(), [searchParams])
-  const shouldRestoreIndex = isFromHomepageResume && restoredIndex !== undefined
-  const initialIndex = shouldRestoreIndex ? restoredIndex : undefined
-  const [currentIndex, setCurrentIndex] = useState(initialIndex !== undefined ? initialIndex : 0)
+  // 🔥 关键修复：使用 useState 惰性初始化，只在组件挂载时执行一次
+  // 避免每次渲染都重新计算 getIndexFromURL()，导致组件反复重新挂载
+  const [currentIndex, setCurrentIndex] = useState<number>(() => {
+    // 📋 输入参数日志
+    console.log('🔍 [Dictation初始化] 开始计算初始索引', {
+      isFromHomepageResume,
+      urlHash: typeof window !== 'undefined' ? window.location.hash : 'SSR',
+      urlSearch: searchParams?.toString()
+    })
 
-  // 🔥 Debug: Log initial state
-  console.log(`🔍 [Dictation] Initial state:`, {
-    isFromHomepageResume,
-    restoredIndex,
-    initialIndex,
-    currentIndex: initialIndex !== undefined ? initialIndex : 0
+    // 🛡️ Guard Clause 1: 非首页恢复模式，直接使用默认值
+    if (!isFromHomepageResume) {
+      console.log('✅ [Dictation初始化] 非首页模式，使用默认索引 0')
+      return 0
+    }
+
+    // 🔧 尝试从 URL 恢复索引
+    try {
+      const restoredIndex = getIndexFromURL()
+
+      // 🛡️ Guard Clause 2: restoredIndex 为 undefined 或无效
+      if (restoredIndex === undefined || !Number.isFinite(restoredIndex)) {
+        console.log('⚠️ [Dictation初始化] 无法从URL恢复索引，使用默认值 0', { restoredIndex })
+        return 0
+      }
+
+      // 🛡️ Guard Clause 3: 边界检查（负数）
+      if (restoredIndex < 0) {
+        console.warn('⚠️ [Dictation初始化] 恢复索引为负数，重置为 0', { restoredIndex })
+        return 0
+      }
+
+      // 🛡️ Guard Clause 4: 边界检查（超大值，防止数组越界）
+      const MAX_SAFE_INDEX = 1000000
+      if (restoredIndex > MAX_SAFE_INDEX) {
+        console.warn('⚠️ [Dictation初始化] 恢复索引超出安全范围，重置为 0', { restoredIndex, max: MAX_SAFE_INDEX })
+        return 0
+      }
+
+      // ✅ 成功恢复索引
+      console.log('✅ [Dictation初始化] 成功从URL恢复索引:', restoredIndex)
+      return restoredIndex
+
+    } catch (error) {
+      // 🚨 异常处理：任何错误都回退到默认值
+      console.error('❌ [Dictation初始化] 恢复索引时发生异常，使用默认值 0', error)
+      return 0
+    }
   })
 
   const [userInput, setUserInput] = useState('')
