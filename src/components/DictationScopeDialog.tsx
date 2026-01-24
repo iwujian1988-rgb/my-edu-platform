@@ -99,6 +99,20 @@ function formatResumeInfo(resumeState: ResumeState): string {
 }
 
 /**
+ * 获取模式标签
+ */
+function getModeLabel(mode: string): string {
+  const modeLabels: Record<string, string> = {
+    'word-list': '单词列表',
+    'dictation': '听写',
+    'flashcard': '卡片背单词',
+    'match-game': '消消乐',
+    'typing': '打字练习'
+  }
+  return modeLabels[mode] || mode
+}
+
+/**
  * 计算时间差
  */
 function formatTimeAgo(timestamp: number): string {
@@ -174,7 +188,10 @@ export function DictationScopeDialog({
                   继续上次学习
                 </p>
                 <p className="text-xs font-bold text-black/80">
-                  {formatResumeInfo(recentProgress)}
+                  {recentProgress.mode === 'dictation'
+                    ? formatResumeInfo(recentProgress)
+                    : `上次在${getModeLabel(recentProgress.mode)}模式学习，点击开始新的听写练习`
+                  }
                 </p>
               </div>
               <button
@@ -183,7 +200,8 @@ export function DictationScopeDialog({
                   const context = recentProgress?.context
                   const currentIndex = context?.currentIndex
 
-                  if (context &&
+                  if (recentProgress.mode === 'dictation' &&
+                      context &&
                       typeof currentIndex === 'number' &&
                       Number.isFinite(currentIndex) &&
                       currentIndex >= 0) {
@@ -192,9 +210,14 @@ export function DictationScopeDialog({
 
                   onClose()
                 }}
-                className="px-4 py-2 bg-black text-white font-black text-sm rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all"
+                className={`px-4 py-2 font-black text-sm rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all ${
+                  recentProgress.mode === 'dictation'
+                    ? 'bg-black text-white'
+                    : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                }`}
+                disabled={recentProgress.mode !== 'dictation'}
               >
-                继续
+                {recentProgress.mode === 'dictation' ? '继续' : '不可用'}
               </button>
             </div>
           </div>

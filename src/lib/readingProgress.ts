@@ -40,25 +40,13 @@ export async function saveReadingProgress(progress: ReadingProgress): Promise<vo
     console.log('✅ [saveReadingProgress] User authenticated:', user.id)
 
     // 🔥 优化：使用 upsert 代替先update后insert，减少一次数据库往返
+    // 🔥 修复：只更新 last_reading_progress，不覆盖 last_resume_state（避免覆盖练习模式进度）
     const { error } = await (supabase
       .from('user_book_preferences') as any)
       .upsert({
         user_id: user.id,
         book_id: progress.bookId,
         last_reading_progress: progress,
-        // 🔥 同时更新 last_resume_state，以便首页"最近学习"模块能显示进度
-        last_resume_state: {
-          mode: 'word-list',
-          bookId: progress.bookId,
-          updatedAt: Date.now(),
-          context: {
-            page: progress.page,
-            theme: progress.theme,
-            scenario: progress.scenario,
-            chapter: progress.chapter,
-            status: progress.status
-          }
-        },
         updated_at: new Date().toISOString()
       }, {
         onConflict: 'user_id,book_id'

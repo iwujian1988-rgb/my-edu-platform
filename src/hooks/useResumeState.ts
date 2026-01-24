@@ -103,10 +103,10 @@ export function useResumeState(bookId: string): UseResumeStateReturn {
       if (result.success && result.data?.last_resume_state) {
         const state = result.data.last_resume_state
 
-        // 检查是否是听写模式的进度
-        if (state.mode === 'dictation') {
-          setResumeState(state)
-        }
+        // 🔥 修复：移除 mode 检查，允许显示任何模式的进度
+        // 因为不同模式（word-list, dictation, flashcards）会相互覆盖，
+        // 但我们应该显示最近的学习进度，让用户知道"上次你在学什么"
+        setResumeState(state)
       }
     } catch (err) {
       if (!isMountedRef.current) return

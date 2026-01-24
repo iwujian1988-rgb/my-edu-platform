@@ -115,9 +115,14 @@ export default function DictationPageClient() {
 
   // ⭐ 如果从首页进入，使用 URL 参数中的 scope；否则使用默认值 'all'
   const scopeParam = searchParams.get('scope')
-  const [scopeType, setScopeType] = useState<DictationScopeType>(
-    isFromHomepageResume ? (validateScope(scopeParam) as DictationScopeType) : 'all'
-  )
+  const [scopeType, setScopeType] = useState<DictationScopeType>(() => {
+    // 🔥 修复：不要默认使用 'all'，优先使用 URL 参数或 recentProgress
+    if (isFromHomepageResume && scopeParam) {
+      return validateScope(scopeParam) as DictationScopeType
+    }
+    // 🔥 如果没有 URL 参数，暂时使用 'all'，但对话框会显示让用户重新选择
+    return 'all'
+  })
   const [hasSelectedScope, setHasSelectedScope] = useState(isFromHomepageResume) // ⭐ 从首页进入时标记为已选择
 
   // Hooks

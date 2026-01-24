@@ -284,6 +284,14 @@ export default async function Home() {
             Object.keys(resumeState).length > 0 &&
             (resumeState.mode || resumeState.context)
 
+          // 🔥 修复：检查是否是残留的 word-list mode 数据（修复前产生的）
+          // 如果 resumeState.mode 是 'word-list'，说明是修复前的残留数据，应该忽略
+          const isLegacyWordListData = resumeState?.mode === 'word-list'
+
+          // 🔥 修复：如果是残留的 word-list 数据，视为无效的 resumeState
+          // 这样后续逻辑就会优先使用 readingProgress
+          const hasValidPracticeMode = hasValidResumeState && !isLegacyWordListData
+
           // ✅ 根据最后更新时间决定使用哪个模式
           // resumeState 有 updatedAt，readingProgress 可能没有
           // 如果 resumeState.mode 存在且不是 word-list，说明是练习模式
@@ -293,7 +301,7 @@ export default async function Home() {
 
           let mode: 'word-list' | 'flashcards' | 'dictation' | 'match-game' | 'typing' = 'word-list'
 
-          if (hasValidResumeState && hasValidReadingProgress) {
+          if (hasValidPracticeMode && hasValidReadingProgress) {
             // 两个都有：比较更新时间
             if (resumeStateTime > 0 && readingProgressTime > 0) {
               // 都有时间戳：使用更晚的
@@ -304,16 +312,14 @@ export default async function Home() {
               // 只有 resumeState 有时间戳
               mode = resumeState?.mode || 'word-list'
             } else {
-              // 都没有时间戳：优先使用练习模式（如果有）
-              mode = (resumeState?.mode && resumeState.mode !== 'word-list')
-                ? resumeState.mode
-                : 'word-list'
+              // 都没有时间戳：优先使用练习模式
+              mode = resumeState?.mode || 'word-list'
             }
-          } else if (hasValidResumeState) {
-            // 只有 resumeState
+          } else if (hasValidPracticeMode) {
+            // 只有练习模式
             mode = resumeState?.mode || 'word-list'
           } else if (hasValidReadingProgress) {
-            // 只有 readingProgress
+            // 只有 readingProgress 或残留的 word-list 数据
             mode = 'word-list'
           }
           // 都没有：默认 word-list
