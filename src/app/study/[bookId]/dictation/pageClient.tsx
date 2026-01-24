@@ -279,7 +279,7 @@ export default function DictationPageClient() {
     }
   }, [progress, totalWords, isFromHomepageResume, scopeType, words.length])
 
-  // 🔥 阶段2：等待懒加载完成后恢复
+  // 🔥 阶段2：等待懒加载完成后恢复（从进度数据）
   useEffect(() => {
     if (targetIndex !== null && targetIndex < words.length) {
       // 🔥 关键修复：再次检查用户是否已经开始学习
@@ -705,22 +705,35 @@ export default function DictationPageClient() {
   }
 
   // 切换范围
-  const handleScopeChange = async (newScope: DictationScopeType) => {
+  const handleScopeChange = async (newScope: DictationScopeType, targetIndex?: number) => {
     if (!canOperate) {
       console.warn('⚠️ 无法切换范围：正在保存中')
       return
+    }
+
+    // 🔥 简单验证：如果提供了 targetIndex，使用它；否则从 0 开始
+    let index = 0
+    if (targetIndex !== undefined &&
+        Number.isFinite(targetIndex) &&
+        Number.isInteger(targetIndex) &&
+        targetIndex >= 0) {
+      index = targetIndex
     }
 
     await executeOperation(
       '切换范围',
       'switching',
       async () => {
-        await saveProgress(currentIndex)
+        // 🔥 只在手动选择范围时（非恢复模式）保存当前进度
+        if (targetIndex === undefined) {
+          await saveProgress(currentIndex)
+        }
+
         setScopeType(newScope)
-        setCurrentIndex(0)
+        setCurrentIndex(index)
         setShowScopeDialog(false)
 
-        // 🔥 重置所有学习状态（确保新 scope 不会受旧状态影响）
+        // 🔥 重置所有学习状态
         setFeedback(null)
         setUserInput('')
         setShowCorrectAnswer(false)

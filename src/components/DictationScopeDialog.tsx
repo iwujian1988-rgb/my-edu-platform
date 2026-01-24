@@ -17,7 +17,7 @@ interface ScopeOption {
 interface DictationScopeDialogProps {
   isOpen: boolean
   onClose: () => void
-  onSelectScope: (scope: DictationScopeType) => void
+  onSelectScope: (scope: DictationScopeType, targetIndex?: number) => void
   scopeOptions: ScopeOption[]
   loading?: boolean
   recentProgress?: ResumeState | null
@@ -179,7 +179,17 @@ export function DictationScopeDialog({
               </div>
               <button
                 onClick={() => {
-                  onSelectScope(recentProgress.context.scopeType)
+                  // 🔥 简单验证：如果数据有效，传递 currentIndex；否则关闭对话框
+                  const context = recentProgress?.context
+                  const currentIndex = context?.currentIndex
+
+                  if (context &&
+                      typeof currentIndex === 'number' &&
+                      Number.isFinite(currentIndex) &&
+                      currentIndex >= 0) {
+                    onSelectScope(context.scopeType, currentIndex)
+                  }
+
                   onClose()
                 }}
                 className="px-4 py-2 bg-black text-white font-black text-sm rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all"
