@@ -239,28 +239,23 @@ export default function DictationPageClient() {
   // Refs
   const inputRef = useRef<HTMLInputElement>(null)
 
-  // ⭐ Hash 定位逻辑：从首页进入时，自动跳转到指定位置
+  // ⭐ Hash 定位逻辑：从首页进入时，自动滚动到指定位置
   useEffect(() => {
-    if (isFromHomepageResume && restoredIndex !== undefined && !wordsLoading && words.length > 0) {
-      console.log('[Dictation] Hash positioning: jumping to word', restoredIndex + 1)
-
-      // 如果当前索引与 hash 不匹配，调整到 hash 位置
-      if (currentIndex !== restoredIndex) {
-        setCurrentIndex(restoredIndex)
-      }
+    if (isFromHomepageResume && !wordsLoading && words.length > 0) {
+      console.log('[Dictation] Hash positioning: scrolling to word', currentIndex + 1)
 
       // 使用 scrollIntoView 定位到当前题目
       const timer = setTimeout(() => {
-        const element = document.getElementById(`word-${restoredIndex}`)
+        const element = document.getElementById(`word-${currentIndex}`)
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-          console.log('[Dictation] Scrolled to word element:', restoredIndex + 1)
+          console.log('[Dictation] Scrolled to word element:', currentIndex + 1)
         }
       }, 100)
 
       return () => clearTimeout(timer)
     }
-  }, [isFromHomepageResume, restoredIndex, wordsLoading, words.length, currentIndex])
+  }, [isFromHomepageResume, wordsLoading, words.length, currentIndex])
   const hasPlayedOnceRef = useRef(false)
   const shouldLoadWordsRef = useRef(false) // 控制是否应该加载单词
 
