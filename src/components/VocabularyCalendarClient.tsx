@@ -171,7 +171,7 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
     <div className="w-full overflow-x-auto" ref={scrollContainerRef}>
       {/* 滑动提示 */}
       <div className="text-center mb-3">
-        <p className="text-xs text-gray-500">
+        <p className="text-xs transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
           ← Swipe left to see history · Swipe right for recent →
         </p>
       </div>
@@ -183,13 +183,15 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
           return (
             <>
               {/* 年份标签行 */}
-              <div className="flex mb-1 ml-8 items-end h-5">
+              <div className="flex mb-1 items-end h-5">
+                {/* 占位符：对齐星期标签列 */}
+                <div className="w-8 mr-2 flex-shrink-0"></div>
                 {calendarData.map((week, weekIndex) => {
                   const yearLabel = yearLabels.find(l => l.weekIndex === weekIndex)
                   return (
                     <div key={weekIndex} className="flex-1 min-w-[12px] flex items-end">
                       {yearLabel && (
-                        <span className="text-xs font-black text-gray-400">
+                        <span className="text-xs font-black transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                           {yearLabel.year}
                         </span>
                       )}
@@ -199,13 +201,15 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
               </div>
 
               {/* 月份标签行 */}
-              <div className="flex mb-4 ml-8 items-end h-6">
+              <div className="flex mb-4 items-end h-6">
+                {/* 占位符：对齐星期标签列 */}
+                <div className="w-8 mr-2 flex-shrink-0"></div>
                 {calendarData.map((week, weekIndex) => {
                   const monthLabel = monthLabels.find(l => l.weekIndex === weekIndex)
                   return (
                     <div key={weekIndex} className="flex-1 min-w-[12px] flex items-end">
                       {monthLabel && (
-                        <span className="text-sm font-bold text-gray-800 whitespace-nowrap">
+                        <span className="text-sm font-bold whitespace-nowrap transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                           {monthLabel.label}
                         </span>
                       )}
@@ -223,7 +227,7 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
           <div className="flex flex-col gap-1 mr-2">
             {weekDays.map((day, index) => (
               <div key={index} className="h-3 flex items-center justify-center">
-                {index % 2 === 1 && <span className="text-xs font-bold text-gray-500">{day}</span>}
+                {index % 2 === 1 && <span className="text-xs font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>{day}</span>}
               </div>
             ))}
           </div>

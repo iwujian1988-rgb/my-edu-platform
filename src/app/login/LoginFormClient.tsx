@@ -75,67 +75,92 @@ export default function LoginFormClient() {
   }
 
   return (
-    <div className="min-h-screen flex relative overflow-hidden" style={{ backgroundColor: '#F8F5F2' }}>
-      {/* Animated Background Decorations */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-64 h-64 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob float-animation" style={{ backgroundColor: '#E6E6FA' }} />
-        <div className="absolute top-40 right-20 w-72 h-72 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob float-animation" style={{ backgroundColor: '#FDBCB4', animationDelay: '1s' }} />
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob float-animation" style={{ backgroundColor: '#ADD8E6', animationDelay: '2s' }} />
-        <div className="absolute bottom-40 right-1/4 w-64 h-64 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob float-animation" style={{ backgroundColor: '#98FF98', animationDelay: '3s' }} />
-      </div>
+    <div className="min-h-screen flex transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
 
       {/* Main Content - Split Layout for iPad */}
-      <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-2 min-h-screen">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-2 min-h-screen">
 
         {/* Left Side - Brand Section (iPad Landscape: 50% width) */}
-        <div className="hidden lg:flex flex-col justify-center items-center p-12 lg:p-16 relative">
-          <div className="max-w-xl w-full space-y-8">
+        <div className="hidden lg:flex flex-col justify-center items-center p-8 lg:p-12 xl:p-16 relative">
+          <div className="max-w-xl w-full space-y-6 lg:space-y-8">
             {/* Logo */}
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-32 h-32 clay-card clay-icon mb-8 float-animation">
-                <GraduationCap className="w-16 h-16 text-green-600" />
+              <div
+                className="inline-flex items-center justify-center w-24 h-24 lg:w-32 lg:h-32 mb-6 lg:mb-8 transition-all duration-300"
+                style={{
+                  backgroundColor: '#B4F416',
+                  border: '3px solid #000000',
+                  borderRadius: '16px',
+                  boxShadow: '4px 4px 0px 0px #000000'
+                }}
+              >
+                <GraduationCap className="w-12 h-12 lg:w-16 lg:h-16" style={{ color: '#000000' }} strokeWidth={2.5} />
               </div>
-              <h1 className="text-5xl lg:text-6xl font-black mb-4" style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              <h1 className="text-4xl lg:text-5xl xl:text-6xl font-black mb-2 lg:mb-4 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                 MAX笔记
               </h1>
-              <p className="text-2xl lg:text-3xl font-bold text-gray-700">
+              <p className="text-xl lg:text-2xl xl:text-3xl font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                 智能英语学习平台
               </p>
             </div>
 
             {/* Feature Highlights */}
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 clay-icon flex items-center justify-center">
-                  <Target className="w-7 h-7 text-blue-600" />
+            <div className="space-y-4 lg:space-y-6">
+              <div className="flex items-start gap-3 lg:gap-4">
+                <div
+                  className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center transition-all duration-300"
+                  style={{
+                    backgroundColor: '#ADD8E6',
+                    border: '3px solid #000000',
+                    borderRadius: '10px',
+                    boxShadow: '2px 2px 0px 0px #000000'
+                  }}
+                >
+                  <Target className="w-6 h-6 lg:w-7 lg:h-7" style={{ color: '#3B82F6' }} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">🎯 AI 智能推荐</h3>
-                  <p className="text-base text-gray-600 font-medium leading-relaxed">
+                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>🎯 AI 智能推荐</h3>
+                  <p className="text-sm lg:text-base font-semibold leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                     根据学习水平智能推荐最适合的单词，告别无效学习
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 clay-icon flex items-center justify-center">
-                  <Trophy className="w-7 h-7 text-orange-600" />
+              <div className="flex items-start gap-3 lg:gap-4">
+                <div
+                  className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center transition-all duration-300"
+                  style={{
+                    backgroundColor: '#FDBCB4',
+                    border: '3px solid #000000',
+                    borderRadius: '10px',
+                    boxShadow: '2px 2px 0px 0px #000000'
+                  }}
+                >
+                  <Trophy className="w-6 h-6 lg:w-7 lg:h-7" style={{ color: '#FF8C61' }} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">🏆 成就系统</h3>
-                  <p className="text-base text-gray-600 font-medium leading-relaxed">
+                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>🏆 成就系统</h3>
+                  <p className="text-sm lg:text-base font-semibold leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                     完成学习目标解锁成就，让学习像游戏一样有趣
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="flex-shrink-0 w-14 h-14 clay-icon flex items-center justify-center">
-                  <Zap className="w-7 h-7 text-green-600" />
+              <div className="flex items-start gap-3 lg:gap-4">
+                <div
+                  className="flex-shrink-0 w-12 h-12 lg:w-14 lg:h-14 flex items-center justify-center transition-all duration-300"
+                  style={{
+                    backgroundColor: '#BBF7D0',
+                    border: '3px solid #000000',
+                    borderRadius: '10px',
+                    boxShadow: '2px 2px 0px 0px #000000'
+                  }}
+                >
+                  <Zap className="w-6 h-6 lg:w-7 lg:h-7" style={{ color: '#22C55E' }} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">⚡ 间隔重复</h3>
-                  <p className="text-base text-gray-600 font-medium leading-relaxed">
+                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>⚡ 间隔重复</h3>
+                  <p className="text-sm lg:text-base font-semibold leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                     科学的记忆曲线算法，在最佳时机复习，记忆更持久
                   </p>
                 </div>
@@ -143,74 +168,124 @@ export default function LoginFormClient() {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 pt-6">
-              <div className="text-center clay-card p-4">
-                <div className="text-3xl font-black text-green-600 mb-1">500+</div>
-                <p className="text-sm font-semibold text-gray-700">精选课程</p>
+            <div className="grid grid-cols-3 gap-3 lg:gap-4 pt-4 lg:pt-6">
+              <div
+                className="text-center p-3 lg:p-4 transition-all duration-300"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  border: '3px solid #000000',
+                  borderRadius: '10px',
+                  boxShadow: '2px 2px 0px 0px #000000'
+                }}
+              >
+                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#22C55E' }}>500+</div>
+                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>精选课程</p>
               </div>
-              <div className="text-center clay-card p-4">
-                <div className="text-3xl font-black text-blue-600 mb-1">10万+</div>
-                <p className="text-sm font-semibold text-gray-700">词汇总量</p>
+              <div
+                className="text-center p-3 lg:p-4 transition-all duration-300"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  border: '3px solid #000000',
+                  borderRadius: '10px',
+                  boxShadow: '2px 2px 0px 0px #000000'
+                }}
+              >
+                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#3B82F6' }}>10万+</div>
+                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>词汇总量</p>
               </div>
-              <div className="text-center clay-card p-4">
-                <div className="text-3xl font-black text-orange-600 mb-1">98%</div>
-                <p className="text-sm font-semibold text-gray-700">满意度</p>
+              <div
+                className="text-center p-3 lg:p-4 transition-all duration-300"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  border: '3px solid #000000',
+                  borderRadius: '10px',
+                  boxShadow: '2px 2px 0px 0px #000000'
+                }}
+              >
+                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#FF8C61' }}>98%</div>
+                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>满意度</p>
               </div>
             </div>
           </div>
         </div>
 
         {/* Right Side - Auth Form (iPad Landscape: 50% width) */}
-        <div className="flex flex-col justify-center p-6 lg:p-12 xl:p-16">
-          <div className="w-full max-w-2xl mx-auto">
+        <div className="flex flex-col justify-center p-4 sm:p-6 md:p-8 lg:p-12 xl:p-16">
+          <div className="w-full max-w-md md:max-w-lg lg:max-w-xl mx-auto">
 
             {/* Mobile/Tablet Logo - Only visible on small screens */}
-            <div className="lg:hidden text-center mb-8">
-              <div className="inline-flex items-center justify-center w-24 h-24 clay-card clay-icon mb-6 float-animation">
-                <GraduationCap className="w-12 h-12 text-green-600" />
+            <div className="lg:hidden text-center mb-6 md:mb-8">
+              <div
+                className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 mb-4 md:mb-6 transition-all duration-300"
+                style={{
+                  backgroundColor: '#B4F416',
+                  border: '3px solid #000000',
+                  borderRadius: '12px',
+                  boxShadow: '3px 3px 0px 0px #000000'
+                }}
+              >
+                <GraduationCap className="w-8 h-8 md:w-10 md:h-10" style={{ color: '#000000' }} strokeWidth={2.5} />
               </div>
-              <h1 className="text-4xl font-black mb-2" style={{ background: 'linear-gradient(135deg, #4CAF50 0%, #66BB6A 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>
+              <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-1 md:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                 MAX笔记
               </h1>
-              <p className="text-lg font-bold text-gray-700">
+              <p className="text-sm md:text-base lg:text-lg font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                 ✨ 开启你的英语学习之旅 ✨
               </p>
             </div>
 
             {/* Auth Card */}
-            <div className="clay-card p-8 lg:p-12">
+            <div
+              className="p-5 md:p-6 lg:p-8 xl:p-12 transition-all duration-300"
+              style={{
+                backgroundColor: 'var(--card-bg)',
+                border: '3px solid #000000',
+                borderRadius: '16px',
+                boxShadow: '6px 6px 0px 0px #000000'
+              }}
+            >
               {/* Title */}
-              <div className="mb-8">
-                <h2 className="text-3xl font-black text-gray-800 mb-2">欢迎回来</h2>
-                <p className="text-base font-semibold text-gray-600">登录你的账号继续学习</p>
+              <div className="mb-5 md:mb-6 lg:mb-8">
+                <h2 className="text-2xl md:text-3xl font-black mb-1 md:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>欢迎回来</h2>
+                <p className="text-sm md:text-base font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>登录你的账号继续学习</p>
               </div>
 
               {/* Error Message */}
               {error && (
-                <div className="mb-6 p-4 rounded-2xl border-l-4" style={{ backgroundColor: '#FFF5EE', borderColor: '#FF8C61' }}>
-                  <p className="text-base font-semibold" style={{ color: '#FF8C61' }}>⚠️ {error}</p>
+                <div className="mb-4 md:mb-6 p-3 md:p-4 transition-all duration-300" style={{ backgroundColor: '#FFF5EE', border: '3px solid #FF8C61', borderRadius: '10px' }}>
+                  <p className="text-sm md:text-base font-semibold" style={{ color: '#FF8C61' }}>⚠️ {error}</p>
                 </div>
               )}
 
               {/* Login Form */}
               <form
                 onSubmit={handleLogin}
-                className="space-y-6"
-                method="post"  // 🔒 安全：强制POST，防止密码暴露在URL
-                action={undefined}  // 🔒 安全：禁用默认action
+                className="space-y-4 md:space-y-5 lg:space-y-6"
+                method="post"
+                action={undefined}
               >
                 <div>
-                  <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
-                    <Mail className="w-5 h-5 text-green-600" />
+                  <label className="block text-sm md:text-base font-black mb-2 md:mb-3 flex items-center gap-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
+                    <Mail className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#22C55E' }} strokeWidth={2.5} />
                     手机号
                   </label>
-                  <div className="clay-icon px-5 py-4" style={{ minHeight: '56px' }}>
+                  <div
+                    className="px-4 md:px-5 py-3 md:py-4 flex items-center transition-all duration-300"
+                    style={{
+                      backgroundColor: '#F3F4F6',
+                      border: '3px solid #000000',
+                      borderRadius: '10px',
+                      minHeight: '48px'
+                    }}
+                  >
                     <input
                       type="tel"
                       value={loginData.phone}
                       onChange={(e) => setLoginData({ ...loginData, phone: e.target.value })}
                       placeholder="请输入手机号"
-                      className="w-full bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
+                      className="flex-1 bg-transparent border-none outline-none transition-colors duration-300 text-base md:text-lg font-semibold placeholder:font-normal"
+                      style={{ color: 'var(--text-primary)' }}
+                      stylePlaceholder={{ color: 'var(--text-secondary)' }}
                       required
                       data-testid="phone-input"
                       name="phone"
@@ -219,17 +294,26 @@ export default function LoginFormClient() {
                 </div>
 
                 <div>
-                  <label className="block text-base font-bold text-gray-700 mb-3 flex items-center gap-2">
-                    <Lock className="w-5 h-5 text-green-600" />
+                  <label className="block text-sm md:text-base font-black mb-2 md:mb-3 flex items-center gap-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
+                    <Lock className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#22C55E' }} strokeWidth={2.5} />
                     密码
                   </label>
-                  <div className="clay-icon px-5 py-4 flex items-center" style={{ minHeight: '56px' }}>
+                  <div
+                    className="px-4 md:px-5 py-3 md:py-4 flex items-center transition-all duration-300"
+                    style={{
+                      backgroundColor: '#F3F4F6',
+                      border: '3px solid #000000',
+                      borderRadius: '10px',
+                      minHeight: '48px'
+                    }}
+                  >
                     <input
                       type={showPassword ? 'text' : 'password'}
                       value={loginData.password}
                       onChange={(e) => setLoginData({ ...loginData, password: e.target.value })}
                       placeholder="请输入密码"
-                      className="flex-1 bg-transparent border-none outline-none text-gray-800 placeholder-gray-400 font-semibold text-lg"
+                      className="flex-1 bg-transparent border-none outline-none transition-colors duration-300 text-base md:text-lg font-semibold placeholder:font-normal"
+                      style={{ color: 'var(--text-primary)' }}
                       required
                       data-testid="password-input"
                       name="password"
@@ -237,15 +321,15 @@ export default function LoginFormClient() {
                     <button
                       type="button"
                       onClick={() => setShowPassword(!showPassword)}
-                      className="ml-3 hover:opacity-70 transition-opacity p-2"
-                      style={{ color: '#4CAF50' }}
+                      className="ml-2 md:ml-3 hover:opacity-70 transition-opacity p-1.5 md:p-2"
+                      style={{ color: '#22C55E' }}
                       data-testid="password-toggle-button"
                       aria-label={showPassword ? "隐藏密码" : "显示密码"}
                     >
                       {showPassword ? (
-                        <EyeOff className="w-6 h-6" />
+                        <EyeOff className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
                       ) : (
-                        <Eye className="w-6 h-6" />
+                        <Eye className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
                       )}
                     </button>
                   </div>
@@ -256,9 +340,10 @@ export default function LoginFormClient() {
                   <button
                     type="button"
                     onClick={() => setShowForgotPassword(true)}
-                    className="text-sm font-semibold text-green-600 hover:text-green-700 transition-colors flex items-center gap-1 ml-auto"
+                    className="text-xs md:text-sm font-black flex items-center gap-1 ml-auto transition-colors duration-300"
+                    style={{ color: '#22C55E' }}
                   >
-                    <HelpCircle className="w-4 h-4" />
+                    <HelpCircle className="w-3 h-3 md:w-4 md:h-4" strokeWidth={2.5} />
                     忘记密码？
                   </button>
                 </div>
@@ -266,15 +351,21 @@ export default function LoginFormClient() {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full clay-button-primary text-lg py-5 shadow-lg hover:shadow-xl transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
-                  style={{ minHeight: '64px' }}
+                  className="w-full text-base md:text-lg font-black py-3 md:py-4 lg:py-5 flex items-center justify-center gap-2 md:gap-3 transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed text-white"
+                  style={{
+                    backgroundColor: '#22C55E',
+                    border: '3px solid #000000',
+                    borderRadius: '12px',
+                    boxShadow: '4px 4px 0px 0px #000000',
+                    minHeight: '52px'
+                  }}
                   data-testid="login-submit-button"
                 >
                   {loading ? (
                     <>⏳ 登录中...</>
                   ) : (
                     <>
-                      <Sparkles className="w-6 h-6" />
+                      <Sparkles className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
                       登录
                     </>
                   )}
@@ -282,9 +373,9 @@ export default function LoginFormClient() {
 
                 {/* 注册链接 */}
                 <div className="text-center">
-                  <p className="text-gray-600 font-semibold">
+                  <p className="text-sm md:text-base font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                     没有账号？
-                    <Link href="/register" className="text-green-600 hover:text-green-700 font-bold ml-1">
+                    <Link href="/register" className="font-black ml-1 transition-colors duration-300" style={{ color: '#22C55E' }}>
                       立即注册
                     </Link>
                   </p>
@@ -293,9 +384,17 @@ export default function LoginFormClient() {
             </div>
 
             {/* Footer */}
-            <div className="mt-6 text-center">
-              <div className="badge inline-block">
-                <p className="text-base text-gray-700 font-semibold">
+            <div className="mt-4 md:mt-6 text-center">
+              <div
+                className="inline-block px-3 md:px-4 py-2 md:py-3 transition-all duration-300"
+                style={{
+                  backgroundColor: 'var(--card-bg)',
+                  border: '3px solid #000000',
+                  borderRadius: '10px',
+                  boxShadow: '2px 2px 0px 0px #000000'
+                }}
+              >
+                <p className="text-xs md:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                   🎓 登录即表示您同意我们的服务条款和隐私政策
                 </p>
               </div>
@@ -307,18 +406,40 @@ export default function LoginFormClient() {
       {/* 忘记密码提示对话框 */}
       {showForgotPassword && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8">
+          <div
+            className="w-full max-w-md p-6 md:p-8 transition-all duration-300"
+            style={{
+              backgroundColor: 'var(--card-bg)',
+              border: '3px solid #000000',
+              borderRadius: '16px',
+              boxShadow: '6px 6px 0px 0px #000000'
+            }}
+          >
             <div className="text-center">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-4">
-                <HelpCircle className="w-8 h-8 text-blue-600" />
+              <div
+                className="inline-flex items-center justify-center w-12 h-12 md:w-16 md:h-16 mb-4 md:mb-6 transition-all duration-300"
+                style={{
+                  backgroundColor: '#ADD8E6',
+                  border: '3px solid #000000',
+                  borderRadius: '12px',
+                  boxShadow: '3px 3px 0px 0px #000000'
+                }}
+              >
+                <HelpCircle className="w-6 h-6 md:w-8 md:h-8" style={{ color: '#3B82F6' }} strokeWidth={2.5} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-800 mb-3">忘记密码？</h3>
-              <p className="text-gray-600 font-semibold text-lg mb-6">
+              <h3 className="text-xl md:text-2xl font-black mb-2 md:mb-3 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>忘记密码？</h3>
+              <p className="text-sm md:text-base lg:text-lg font-semibold mb-5 md:mb-6 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                 请联系店铺客服进行密码重置
               </p>
               <button
                 onClick={() => setShowForgotPassword(false)}
-                className="w-full px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl font-bold hover:shadow-lg transition-all"
+                className="w-full px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-black text-white transition-all duration-300"
+                style={{
+                  backgroundColor: '#22C55E',
+                  border: '3px solid #000000',
+                  borderRadius: '10px',
+                  boxShadow: '3px 3px 0px 0px #000000'
+                }}
               >
                 我知道了
               </button>
@@ -326,17 +447,6 @@ export default function LoginFormClient() {
           </div>
         </div>
       )}
-
-      <style jsx>{`
-        @keyframes blob {
-          0%, 100% { transform: translate(0, 0) scale(1); }
-          33% { transform: translate(30px, -50px) scale(1.1); }
-          66% { transform: translate(-20px, 20px) scale(0.9); }
-        }
-        .animate-blob {
-          animation: blob 7s infinite;
-        }
-      `}</style>
     </div>
   )
 }

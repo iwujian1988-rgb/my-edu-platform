@@ -88,17 +88,17 @@ export default async function CalendarPage() {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+    <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       {/* Header */}
-      <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 backdrop-blur-md border-b transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
         <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/" className="transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
               <ArrowLeft className="w-6 h-6" />
             </Link>
             <div>
-              <h1 className="text-2xl md:text-3xl font-black text-gray-900">学习日历</h1>
-              <p className="text-sm text-gray-500 mt-1">
+              <h1 className="text-2xl md:text-3xl font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>学习日历</h1>
+              <p className="text-sm mt-1 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                 累计学习 {totalWords} 个单词 • 连续学习 {streak} 天
               </p>
             </div>
@@ -114,9 +114,9 @@ export default async function CalendarPage() {
           <div className="grid grid-cols-3 gap-2 md:gap-4 mb-4 md:mb-6">
             {/* 累计单词 */}
             <div
-              className="p-2 md:p-6"
+              className="p-2 md:p-6 transition-colors duration-300"
               style={{
-                backgroundColor: '#ffffff',
+                backgroundColor: 'var(--card-bg)',
                 border: '3px solid #000000',
                 borderRadius: '12px',
                 boxShadow: '4px 4px 0px 0px #000000',
@@ -132,16 +132,16 @@ export default async function CalendarPage() {
                 >
                   <CalendarIcon className="w-3 h-3 md:w-5 md:h-5" style={{ color: '#1D4ED8' }} strokeWidth={2.5} />
                 </div>
-                <span className="text-[10px] md:text-sm font-black text-gray-600 hidden sm:block">累计单词</span>
+                <span className="text-[10px] md:text-sm font-black hidden sm:block transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>累计单词</span>
               </div>
-              <p className="text-lg md:text-3xl font-black text-gray-900">{totalWords}</p>
+              <p className="text-lg md:text-3xl font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{totalWords}</p>
             </div>
 
             {/* 连续学习 */}
             <div
-              className="p-2 md:p-6"
+              className="p-2 md:p-6 transition-colors duration-300"
               style={{
-                backgroundColor: '#ffffff',
+                backgroundColor: 'var(--card-bg)',
                 border: '3px solid #000000',
                 borderRadius: '12px',
                 boxShadow: '4px 4px 0px 0px #B4F416',
@@ -157,16 +157,16 @@ export default async function CalendarPage() {
                 >
                   <TrendingUp className="w-3 h-3 md:w-5 md:h-5" style={{ color: '#15803D' }} strokeWidth={2.5} />
                 </div>
-                <span className="text-[10px] md:text-sm font-black text-gray-600 hidden sm:block">连续学习</span>
+                <span className="text-[10px] md:text-sm font-black hidden sm:block transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>连续学习</span>
               </div>
-              <p className="text-lg md:text-3xl font-black text-gray-900">{streak} 天</p>
+              <p className="text-lg md:text-3xl font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{streak} 天</p>
             </div>
 
             {/* 今日学习 */}
             <div
-              className="p-2 md:p-6"
+              className="p-2 md:p-6 transition-colors duration-300"
               style={{
-                backgroundColor: '#ffffff',
+                backgroundColor: 'var(--card-bg)',
                 border: '3px solid #000000',
                 borderRadius: '12px',
                 boxShadow: '4px 4px 0px 0px #FACC15',
@@ -182,9 +182,9 @@ export default async function CalendarPage() {
                 >
                   <CalendarIcon className="w-3 h-3 md:w-5 md:h-5" style={{ color: '#7C3AED' }} strokeWidth={2.5} />
                 </div>
-                <span className="text-[10px] md:text-sm font-black text-gray-600 hidden sm:block">今日学习</span>
+                <span className="text-[10px] md:text-sm font-black hidden sm:block transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>今日学习</span>
               </div>
-              <p className="text-lg md:text-3xl font-black text-gray-900">
+              <p className="text-lg md:text-3xl font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                 {(() => {
                   const today = new Date()
                   const todayStr = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`
@@ -197,9 +197,9 @@ export default async function CalendarPage() {
 
           {/* Calendar Heatmap - Neo-Brutalism */}
           <div
-            className="p-4 md:p-6 mb-4 md:mb-6"
+            className="p-4 md:p-6 mb-4 md:mb-6 transition-colors duration-300"
             style={{
-              backgroundColor: '#ffffff',
+              backgroundColor: 'var(--card-bg)',
               border: '3px solid #000000',
               borderRadius: '12px',
               boxShadow: '4px 4px 0px 0px #000000',
@@ -210,15 +210,15 @@ export default async function CalendarPage() {
 
           {/* Legend - Neo-Brutalism */}
           <div
-            className="flex items-center justify-center gap-3 md:gap-4 py-3 px-4 mb-4 md:mb-6"
+            className="flex items-center justify-center gap-3 md:gap-4 py-3 px-4 mb-4 md:mb-6 transition-colors duration-300"
             style={{
-              backgroundColor: '#ffffff',
+              backgroundColor: 'var(--card-bg)',
               border: '3px solid #000000',
               borderRadius: '12px',
               boxShadow: '3px 3px 0px 0px #000000',
             }}
           >
-            <span className="text-xs md:text-sm font-black text-gray-600">少</span>
+            <span className="text-xs md:text-sm font-black transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>少</span>
             <div className="flex gap-1">
               <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#F3F4F6' }}></div>
               <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#BBF7D0' }}></div>
@@ -226,7 +226,7 @@ export default async function CalendarPage() {
               <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#22C55E' }}></div>
               <div className="w-4 h-4 rounded-sm border-2 border-black" style={{ backgroundColor: '#15803D' }}></div>
             </div>
-            <span className="text-xs md:text-sm font-black text-gray-600">多</span>
+            <span className="text-xs md:text-sm font-black transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>多</span>
           </div>
 
         </div>
@@ -236,6 +236,7 @@ export default async function CalendarPage() {
       <div className="px-3 sm:px-4 md:px-6 pb-6">
         <div className="w-full mx-auto py-3 px-4 text-center" style={{ maxWidth: '1400px' }}>
           <div
+            className="transition-colors duration-300"
             style={{
               backgroundColor: '#FEF3C7',
               border: '3px solid #000000',
@@ -243,7 +244,7 @@ export default async function CalendarPage() {
               boxShadow: '3px 3px 0px 0px #000000',
             }}
           >
-            <p className="text-[10px] md:text-xs font-black text-gray-700 leading-relaxed">
+            <p className="text-[10px] md:text-xs font-black leading-relaxed" style={{ color: '#78350F' }}>
               📅 统计规则：按单词首次标记时间计算，每天每词只计1次，复习旧词不重复计数
             </p>
           </div>
