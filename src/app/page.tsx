@@ -559,8 +559,28 @@ export default async function Home() {
   }
 
   // 未登录，显示 Landing Page
+  // 🔍 时间判断：18:00-6:00 自动显示黑暗模式
+  const now = new Date()
+  const hour = now.getHours()
+  const shouldUseDarkMode = hour >= 18 || hour < 6
+
+  // 为暗色模式设置CSS变量
+  const rootStyle = shouldUseDarkMode ? {
+    '--bg-secondary': '#1a1a1a',
+    '--card-bg': '#2a2a2a',
+    '--text-primary': '#ffffff',
+    '--text-secondary': '#a0a0a0',
+    '--border': '#333333',
+    '--bg-tertiary': '#333333',
+    backgroundColor: '#1a1a1a',
+    color: '#ffffff'
+  } : {
+    backgroundColor: 'var(--bg-secondary)',
+    color: 'var(--text-primary)'
+  }
+
   return (
-    <div className="min-h-screen flex flex-col transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <div className="min-h-screen flex flex-col transition-colors duration-300" style={rootStyle}>
       {/* Header - Neo-Brutalism Navbar */}
       <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 backdrop-blur-md border-b transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
         <div className="max-w-7xl mx-auto">
