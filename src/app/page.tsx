@@ -424,6 +424,17 @@ export default async function Home() {
             ...card,
             _uniqueKey: `${card.bookId}-${card.mode}` // 添加唯一标识符
           }))
+
+        // 🔍 调试：打印展平后的卡片数据
+        console.log('=== 展平后的卡片数据 ===', {
+          总卡片数: flattenedCards.length,
+          展示卡片数: progressCards.length,
+          卡片详情: flattenedCards.map(c => ({
+            书名: c.bookTitle,
+            模式: c.mode,
+            时间: new Date(c.lastStudyTime).toLocaleString('zh-CN')
+          }))
+        })
       }
 
       console.log('=== progressCards 生成了 ===', { length: progressCards.length, cards: progressCards.map(c => ({ bookId: c.bookId, mode: c.mode, progress: c.progress })) })
