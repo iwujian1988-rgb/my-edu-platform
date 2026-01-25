@@ -92,17 +92,17 @@ export default async function MistakesPage() {
 
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#F8F5F2' }}>
+    <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       {/* Header */}
-      <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <header className="sticky top-0 z-50 px-3 sm:px-4 md:px-6 py-3 md:py-4 backdrop-blur-md border-b transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
         <div className="w-full mx-auto" style={{ maxWidth: '1400px' }}>
           <div className="flex items-center gap-4">
-            <Link href="/" className="text-gray-600 hover:text-gray-900 transition-colors">
+            <Link href="/" className="transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
               <ArrowLeft className="w-6 h-6" />
             </Link>
             <div>
-              <h1 className="text-2xl md:text-3xl font-black text-gray-900">错题本</h1>
-              <p className="text-sm text-gray-500 mt-1">
+              <h1 className="text-2xl md:text-3xl font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>错题本</h1>
+              <p className="text-sm mt-1 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                 {mistakeWords.length > 0
                   ? `共 ${mistakeWords.length} 个待复习单词`
                   : '暂无错题'
