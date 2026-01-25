@@ -661,11 +661,11 @@ export default async function Home() {
             </div>
 
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 md:mb-6 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-              英语学习，从此不同
+              外语学习，简单高效
             </h1>
 
             <p className="text-lg md:text-xl lg:text-2xl font-semibold mb-6 md:mb-8 max-w-3xl mx-auto transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-              📚 告别死记硬背 · 🎯 AI 智能推荐 · 🏆 成就系统激励
+              📚 多种学习模式 · ⚡ 科学复习系统 · 📊 实时进度追踪
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3 md:gap-4 mb-6 md:mb-8">
@@ -858,15 +858,19 @@ export default async function Home() {
                   <Target className="w-6 h-6 md:w-8 md:h-8" style={{ color: '#3B82F6' }} strokeWidth={2.5} />
                 </div>
                 <h3 className="text-xl md:text-2xl font-black mb-2 md:mb-3 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                  🎯 AI 智能推荐
+                  🎯 多种学习模式
                 </h3>
                 <p className="text-sm md:text-base font-semibold mb-3 md:mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                  根据你的学习水平，智能推荐最适合的单词，告别无效学习
+                  单词列表、拼写练习、听写、闪卡等多种模式，告别死记硬背
                 </p>
-                <div className="w-full h-2 md:h-3 mb-2 rounded-full transition-all duration-300" style={{ backgroundColor: '#ffffff', border: '2px solid #000000' }}>
-                  <div className="h-full rounded-full" style={{ width: '85%', backgroundColor: '#3B82F6' }}></div>
+                <div className="flex flex-wrap gap-2">
+                  {['列表', '拼写', '听写', '闪卡'].map((mode) => (
+                    <span key={mode} className="px-3 py-1 text-xs font-black border-[2px] border-black rounded-lg" style={{ backgroundColor: '#ffffff', color: '#3B82F6' }}>
+                      {mode}
+                    </span>
+                  ))}
                 </div>
-                <p className="text-xs md:text-sm font-black mt-2" style={{ color: '#3B82F6' }}>学习效率提升 85%</p>
+                <p className="text-xs md:text-sm font-black mt-2" style={{ color: '#3B82F6' }}>4种学习模式</p>
               </div>
 
               <div
@@ -890,20 +894,22 @@ export default async function Home() {
                   <Trophy className="w-6 h-6 md:w-8 md:h-8" style={{ color: '#FF8C61' }} strokeWidth={2.5} />
                 </div>
                 <h3 className="text-xl md:text-2xl font-black mb-2 md:mb-3 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                  🏆 成就系统
+                  🏆 学习进度追踪
                 </h3>
                 <p className="text-sm md:text-base font-semibold mb-3 md:mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                  完成学习目标解锁成就，让学习像游戏一样有趣
+                  实时记录学习成果，轻松查看每日学习情况和连续天数
                 </p>
-                <div className="flex items-center gap-1 md:gap-2">
-                  {[...Array(3)].map((_, i) => (
-                    <Trophy key={i} className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#FF8C61' }} strokeWidth={2.5} />
-                  ))}
-                  {[...Array(2)].map((_, i) => (
-                    <Trophy key={i} className="w-4 h-4 md:w-5 md:h-5" style={{ color: '#E5E7EB' }} strokeWidth={2.5} />
-                  ))}
+                <div className="grid grid-cols-2 gap-2">
+                  <div className="px-3 py-2 text-center border-[2px] border-black rounded-lg" style={{ backgroundColor: '#ffffff' }}>
+                    <div className="text-lg font-black" style={{ color: '#FF8C61' }}>12</div>
+                    <div className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>连续天数</div>
+                  </div>
+                  <div className="px-3 py-2 text-center border-[2px] border-black rounded-lg" style={{ backgroundColor: '#ffffff' }}>
+                    <div className="text-lg font-black" style={{ color: '#FF8C61' }}>85%</div>
+                    <div className="text-xs font-semibold" style={{ color: 'var(--text-secondary)' }}>正确率</div>
+                  </div>
                 </div>
-                <p className="text-xs md:text-sm font-black mt-2" style={{ color: '#FF8C61' }}>连续学习 7 天</p>
+                <p className="text-xs md:text-sm font-black mt-2" style={{ color: '#FF8C61' }}>实时进度统计</p>
               </div>
 
               <div
@@ -927,22 +933,22 @@ export default async function Home() {
                   <Zap className="w-6 h-6 md:w-8 md:h-8" style={{ color: '#22C55E' }} strokeWidth={2.5} />
                 </div>
                 <h3 className="text-xl md:text-2xl font-black mb-2 md:mb-3 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                  ⚡ 间隔重复
+                  ⚡ 科学复习
                 </h3>
                 <p className="text-sm md:text-base font-semibold mb-3 md:mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                  科学的记忆曲线算法，在最佳时机复习，记忆更持久
+                  错题本自动收集，针对性复习不会的单词，提高学习效率
                 </p>
-                <div className="space-y-1 md:space-y-2">
-                  <div className="flex items-center gap-2 text-xs md:text-sm">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 px-3 py-2 border-[2px] border-black rounded-lg" style={{ backgroundColor: '#ffffff' }}>
                     <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#22C55E' }}></div>
-                    <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>今天：20 词</span>
+                    <span className="text-xs font-black" style={{ color: 'var(--text-primary)' }}>错题自动收集</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs md:text-sm">
+                  <div className="flex items-center gap-2 px-3 py-2 border-[2px] border-black rounded-lg" style={{ backgroundColor: '#ffffff' }}>
                     <div className="w-2 h-2 rounded-full" style={{ backgroundColor: '#9B8CB5' }}></div>
-                    <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>复习：50 词</span>
+                    <span className="text-xs font-black" style={{ color: 'var(--text-primary)' }}>针对性强化练习</span>
                   </div>
                 </div>
-                <p className="text-xs md:text-sm font-black mt-2" style={{ color: '#22C55E' }}>记忆保持率提升 3 倍</p>
+                <p className="text-xs md:text-sm font-black mt-2" style={{ color: '#22C55E' }}>效率提升明显</p>
               </div>
             </div>
           </section>
@@ -1197,7 +1203,7 @@ export default async function Home() {
                   ))}
                 </div>
                 <p className="text-sm md:text-base font-semibold mb-3 md:mb-4 leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                  "AI 智能推荐太准了！总是能找到我不会的单词，再也不浪费时间在已经掌握的词汇上。"
+                  "多种学习模式很实用！单词列表、拼写练习、听写模式让记单词不再枯燥，效率提升了很多。"
                 </p>
                 <div className="flex items-center gap-2 md:gap-3">
                   <div
@@ -1233,7 +1239,7 @@ export default async function Home() {
                   ))}
                 </div>
                 <p className="text-sm md:text-base font-semibold mb-3 md:mb-4 leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                  "成就系统让我每天都有动力学习！连续学习 30 天，词汇量提升了一倍，太有成就感了！"
+                  "进度追踪功能很棒！能清楚看到每天的学习情况，连续学习让我养成了好习惯，词汇量稳步提升。"
                 </p>
                 <div className="flex items-center gap-2 md:gap-3">
                   <div
@@ -1269,7 +1275,7 @@ export default async function Home() {
                   ))}
                 </div>
                 <p className="text-sm md:text-base font-semibold mb-3 md:mb-4 leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
-                  "界面设计很漂亮，Neo-Brutalism 风格很有趣，用起来很开心。间隔重复算法让记忆效果特别好！"
+                  "界面设计很漂亮，Neo-Brutalism 风格很有趣。错题本自动收集不会的单词，针对性练习让记忆更牢固！"
                 </p>
                 <div className="flex items-center gap-2 md:gap-3">
                   <div
@@ -1358,15 +1364,15 @@ export default async function Home() {
               <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6 text-xs md:text-sm font-semibold text-black">
                 <span className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4" style={{ color: '#22C55E' }} strokeWidth={2.5} />
-                  完全免费
+                  完全免费使用
                 </span>
                 <span className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4" style={{ color: '#9B8CB5' }} strokeWidth={2.5} />
-                  无需信用卡
+                  多种学习模式
                 </span>
                 <span className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4" style={{ color: '#E8B4A0' }} strokeWidth={2.5} />
-                  随时取消
+                  随时随地学习
                 </span>
               </div>
             </div>
