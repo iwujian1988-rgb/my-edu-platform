@@ -11,8 +11,6 @@ interface DashboardClientProps {
   userId: string
   scopeStatsMap: Record<string, any>
   progressCards: ProgressCardProps[]
-  lastStudyBook: any
-  recentStudyBooks?: Array<{ id: string; title: string; progress: number; continueURL: string; mode: string }>
   mistakesCount?: number  // 🔧 改为可选
   todayNewWordsCount?: number  // 🔧 改为可选
   userPhone: string
@@ -24,8 +22,6 @@ export function DashboardClient({
   userId,
   scopeStatsMap,
   progressCards,
-  lastStudyBook,
-  recentStudyBooks,
   mistakesCount,
   todayNewWordsCount,
   userPhone,
@@ -41,9 +37,6 @@ export function DashboardClient({
       <DashboardContent
         books={books}
         progressCards={progressCards}
-        lastStudyBook={lastStudyBook}
-        recentStudyBooks={recentStudyBooks}
-        // 🔥 性能优化：不传递统计数字，让DashboardContent异步加载
         userPhone={userPhone}
         userId={userId}
         recentBooks={recentBooks}
