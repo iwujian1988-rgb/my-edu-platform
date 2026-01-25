@@ -184,18 +184,19 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
             <>
               {/* 年份标签行 */}
               <div className="flex mb-1 items-end h-5">
-                {/* 占位符：对齐星期标签列 - 使用相同的结构和宽度 */}
+                {/* 星期标签占位列 - 7个div，高度与网格行一致 */}
                 <div className="flex flex-col gap-1 mr-2">
                   {weekDays.map((_, index) => (
                     <div key={index} className="h-3"></div>
                   ))}
                 </div>
+                {/* 每个周占一列 */}
                 {calendarData.map((week, weekIndex) => {
                   const yearLabel = yearLabels.find(l => l.weekIndex === weekIndex)
                   return (
-                    <div key={weekIndex} className="flex-1 min-w-[12px] flex items-end">
+                    <div key={weekIndex} className="flex-1 flex items-center justify-center" style={{ minWidth: '12px' }}>
                       {yearLabel && (
-                        <span className="text-xs font-black transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
+                        <span className="text-xs font-black transition-colors duration-300 whitespace-nowrap" style={{ color: 'var(--text-secondary)' }}>
                           {yearLabel.year}
                         </span>
                       )}
@@ -206,18 +207,19 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
 
               {/* 月份标签行 */}
               <div className="flex mb-4 items-end h-6">
-                {/* 占位符：对齐星期标签列 - 使用相同的结构和宽度 */}
+                {/* 星期标签占位列 - 7个div，高度与网格行一致 */}
                 <div className="flex flex-col gap-1 mr-2">
                   {weekDays.map((_, index) => (
                     <div key={index} className="h-3"></div>
                   ))}
                 </div>
+                {/* 每个周占一列 */}
                 {calendarData.map((week, weekIndex) => {
                   const monthLabel = monthLabels.find(l => l.weekIndex === weekIndex)
                   return (
-                    <div key={weekIndex} className="flex-1 min-w-[12px] flex items-end">
+                    <div key={weekIndex} className="flex-1 flex items-center justify-center" style={{ minWidth: '12px' }}>
                       {monthLabel && (
-                        <span className="text-sm font-bold whitespace-nowrap transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
+                        <span className="text-sm font-bold transition-colors duration-300 whitespace-nowrap" style={{ color: 'var(--text-primary)' }}>
                           {monthLabel.label}
                         </span>
                       )}
@@ -225,63 +227,59 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
                   )
                 })}
               </div>
+
+              {/* 日历网格 */}
+              <div className="flex gap-1">
+                {/* 星期标签列 */}
+                <div className="flex flex-col gap-1 mr-2">
+                  {weekDays.map((day, index) => (
+                    <div key={index} className="h-3 flex items-center justify-center">
+                      {index % 2 === 1 && <span className="text-xs font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>{day}</span>}
+                    </div>
+                  ))}
+                </div>
+
+                {/* 周数据列 */}
+                {calendarData.map((week, weekIndex) => {
+                  const isYearChange = yearChangeWeeks.includes(weekIndex)
+
+                  return (
+                    <div key={weekIndex} className="relative flex-1" style={{ minWidth: '12px' }}>
+                      {/* 年份分隔线 */}
+                      {isYearChange && (
+                        <div
+                          className="absolute left-0 top-0 bottom-0 w-px"
+                          style={{
+                            background: 'linear-gradient(to bottom, transparent, #e5e7eb 20%, #e5e7eb 80%, transparent)',
+                            transform: 'translateX(-50%)'
+                          }}
+                        />
+                      )}
+
+                      {/* 周数据列 */}
+                      <div className="flex flex-col gap-1">
+                        {week.map((day, dayIndex) => {
+                          const colors = getCellColor(day.level)
+                          return (
+                            <div
+                              key={`${weekIndex}-${dayIndex}`}
+                              className="w-3 h-3 rounded-sm transition-all hover:scale-125 hover:z-10 mx-auto"
+                              style={{
+                                backgroundColor: colors.bg,
+                                border: day.level > 0 ? '1px solid #000000' : '1px solid ' + colors.border,
+                              }}
+                              title={day.date ? `${day.date}: ${day.count} words` : ''}
+                            />
+                          )
+                        })}
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
             </>
           )
         })()}
-
-        {/* 日历网格 */}
-        <div className="flex gap-1">
-          {/* 星期标签 */}
-          <div className="flex flex-col gap-1 mr-2">
-            {weekDays.map((day, index) => (
-              <div key={index} className="h-3 flex items-center justify-center">
-                {index % 2 === 1 && <span className="text-xs font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>{day}</span>}
-              </div>
-            ))}
-          </div>
-
-          {/* 周数据 */}
-          {(() => {
-            const { yearChangeWeeks } = getMonthLabels()
-
-            return calendarData.map((week, weekIndex) => {
-              const isYearChange = yearChangeWeeks.includes(weekIndex)
-
-              return (
-                <div key={weekIndex} className="relative">
-                  {/* 年份分隔线 */}
-                  {isYearChange && (
-                    <div
-                      className="absolute left-0 top-0 bottom-0 w-px"
-                      style={{
-                        background: 'linear-gradient(to bottom, transparent, #e5e7eb 20%, #e5e7eb 80%, transparent)',
-                        transform: 'translateX(-50%)'
-                      }}
-                    />
-                  )}
-
-                  {/* 周数据列 */}
-                  <div className="flex flex-col gap-1">
-                    {week.map((day, dayIndex) => {
-                      const colors = getCellColor(day.level)
-                      return (
-                        <div
-                          key={`${weekIndex}-${dayIndex}`}
-                          className="w-3 h-3 rounded-sm transition-all hover:scale-125 hover:z-10"
-                          style={{
-                            backgroundColor: colors.bg,
-                            border: day.level > 0 ? '1px solid #000000' : '1px solid ' + colors.border,
-                          }}
-                          title={day.date ? `${day.date}: ${day.count} words` : ''}
-                        />
-                      )
-                    })}
-                  </div>
-                </div>
-              )
-            })
-          })()}
-        </div>
       </div>
     </div>
   )
