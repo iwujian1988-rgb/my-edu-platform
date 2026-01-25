@@ -18,6 +18,7 @@
   --accent: #6366f1;
   --border: #e5e7eb;
   --card-bg: #ffffff;
+  --input-bg: #F3F4F6;
 }
 
 /* 深色主题变量 */
@@ -31,6 +32,7 @@
   --accent: #818cf8;
   --border: #374151;
   --card-bg: #1f2937;
+  --input-bg: #2a2a2a;
 }
 
 /* 防止未加载时的闪烁 */
@@ -197,6 +199,7 @@ body {
   --text-tertiary: #9ca3af;
   --accent: #6366f1;
   --card-bg: #ffffff;
+  --input-bg: #F3F4F6;
 }
 
 /* 深色主题 - 第二组变量 */
@@ -228,6 +231,7 @@ body {
   --text-tertiary: #9ca3af;
   --accent: #818cf8;
   --card-bg: #1f2937;
+  --input-bg: #2a2a2a;
 }
 
 * {

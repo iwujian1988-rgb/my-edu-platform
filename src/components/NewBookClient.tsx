@@ -227,7 +227,7 @@ export function NewBookClient({ userId }: { userId: string }) {
               onChange={(e) => setTitle(e.target.value)}
               placeholder="例如：雅思高频词汇"
               className="w-full px-4 py-3 border-2 border-black focus:outline-none transition-colors font-bold"
-              style={{ backgroundColor: '#F3F4F6', color: 'var(--text-primary)' }}
+              style={{ backgroundColor: 'var(--input-bg, #F3F4F6)', color: 'var(--text-primary)' }}
               disabled={loading}
               maxLength={100}
             />
@@ -246,7 +246,7 @@ export function NewBookClient({ userId }: { userId: string }) {
               onChange={(e) => setDescription(e.target.value)}
               placeholder="简要描述这个词库的用途..."
               className="w-full px-4 py-3 border-2 border-black focus:outline-none resize-none transition-colors font-bold"
-              style={{ backgroundColor: '#F3F4F6', color: 'var(--text-primary)' }}
+              style={{ backgroundColor: 'var(--input-bg, #F3F4F6)', color: 'var(--text-primary)' }}
               disabled={loading}
               rows={3}
               maxLength={500}
@@ -382,7 +382,7 @@ export function NewBookClient({ userId }: { userId: string }) {
               onChange={(e) => setWordInput(e.target.value)}
               placeholder={`apple, banana, orange\n\n或每行一个单词：\napple\nbanana\norange`}
               className="w-full px-4 py-3 border-2 border-black focus:outline-none resize-none font-mono text-sm transition-colors font-bold"
-              style={{ backgroundColor: '#F3F4F6', color: 'var(--text-primary)' }}
+              style={{ backgroundColor: 'var(--input-bg, #F3F4F6)', color: 'var(--text-primary)' }}
               rows={6}
             />
             <div className="flex items-center justify-between mt-3">

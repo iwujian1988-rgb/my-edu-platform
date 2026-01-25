@@ -1034,7 +1034,7 @@ export default async function Home() {
                     <span className="text-xs md:text-sm font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>今日进度</span>
                     <span className="text-xs md:text-sm font-black" style={{ color: '#9B8CB5' }}>75%</span>
                   </div>
-                  <div className="w-full h-2 md:h-3 rounded-full transition-all duration-300" style={{ backgroundColor: '#F3F4F6', border: '2px solid #000000' }}>
+                  <div className="w-full h-2 md:h-3 rounded-full transition-all duration-300" style={{ backgroundColor: 'var(--input-bg, #F3F4F6)', border: '2px solid #000000' }}>
                     <div className="h-full rounded-full" style={{ width: '75%', backgroundColor: '#22C55E' }}></div>
                   </div>
                 </div>

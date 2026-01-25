@@ -272,7 +272,7 @@ export default function LoginFormClient() {
                   <div
                     className="px-4 md:px-5 py-3 md:py-4 flex items-center transition-all duration-300"
                     style={{
-                      backgroundColor: '#F3F4F6',
+                      backgroundColor: 'var(--input-bg, #F3F4F6)',
                       border: '3px solid #000000',
                       borderRadius: '10px',
                       minHeight: '48px'
@@ -301,7 +301,7 @@ export default function LoginFormClient() {
                   <div
                     className="px-4 md:px-5 py-3 md:py-4 flex items-center transition-all duration-300"
                     style={{
-                      backgroundColor: '#F3F4F6',
+                      backgroundColor: 'var(--input-bg, #F3F4F6)',
                       border: '3px solid #000000',
                       borderRadius: '10px',
                       minHeight: '48px'
