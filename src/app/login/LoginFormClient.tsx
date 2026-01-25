@@ -216,7 +216,7 @@ export default function LoginFormClient() {
             {/* Mobile/Tablet Logo - Only visible on small screens */}
             <div className="lg:hidden text-center mb-6 md:mb-8">
               <div
-                className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 mb-4 md:mb-6 transition-all duration-300"
+                className="inline-flex items-center justify-center w-16 h-16 md:w-24 md:h-24 transition-all duration-300"
                 style={{
                   backgroundColor: '#B4F416',
                   border: '3px solid #000000',
@@ -224,7 +224,7 @@ export default function LoginFormClient() {
                   boxShadow: '3px 3px 0px 0px #000000'
                 }}
               >
-                <GraduationCap className="w-8 h-8 md:w-10 md:h-10" style={{ color: '#000000' }} strokeWidth={2.5} />
+                <GraduationCap className="w-8 h-8 md:w-12 md:h-12" style={{ color: '#000000' }} strokeWidth={2.5} />
               </div>
               <h1 className="text-2xl md:text-3xl lg:text-4xl font-black mb-1 md:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
                 MAX笔记
