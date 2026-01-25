@@ -451,6 +451,69 @@ export default async function Home() {
                 continueURL
               })
             }
+
+            // 4. ⭐ 特殊处理：last_reading_progress 字段（单词列表阅读进度）
+            // 该字段独立存储单词列表的阅读进度，需要单独处理
+            // 🛡️ [卫语句] 检查是否已经存在 word-list 卡片（避免重复）
+            const hasWordListCard = flattenedCards.some(c => c.bookId === book.id && c.mode === 'word-list')
+
+            if (!hasWordListCard && readingProgress) {
+              // 🛡️ [边界检查] 确保 readingProgress 是有效对象
+              if (typeof readingProgress === 'object' && Object.keys(readingProgress).length > 0) {
+                // 📋 [边界检查] 检查是否有实际进度（非默认状态）
+                const hasProgress =
+                  (readingProgress.page && readingProgress.page > 1) ||
+                  (readingProgress.status && readingProgress.status !== 'all') ||
+                  (readingProgress.theme && readingProgress.theme !== 'all') ||
+                  (readingProgress.scenario && readingProgress.scenario !== 'all') ||
+                  (readingProgress.chapter && readingProgress.chapter !== 'all')
+
+                if (hasProgress) {
+                  const lastAccessedAt = book.last_accessed_at
+                  const accessedTime = lastAccessedAt ? new Date(lastAccessedAt).getTime() : Date.now()
+
+                  // 🎯 生成 continue URL（携带筛选参数）
+                  const params = new URLSearchParams()
+                  if (readingProgress.page && readingProgress.page > 1) {
+                    params.set('page', readingProgress.page.toString())
+                  }
+                  if (readingProgress.status && readingProgress.status !== 'all') {
+                    params.set('status', readingProgress.status)
+                  }
+                  if (readingProgress.theme && readingProgress.theme !== 'all') {
+                    params.set('theme', readingProgress.theme)
+                  }
+                  if (readingProgress.scenario && readingProgress.scenario !== 'all') {
+                    params.set('scenario', readingProgress.scenario)
+                  }
+                  if (readingProgress.chapter && readingProgress.chapter !== 'all') {
+                    params.set('chapter', readingProgress.chapter)
+                  }
+
+                  const queryString = params.toString()
+                  const continueURL = `/library/${book.id}${queryString ? '?' + queryString : ''}`
+
+                  console.log(`✅ [展平] 从last_reading_progress添加word-list: ${book.title} (page:${readingProgress.page}, ${new Date(accessedTime).toLocaleString('zh-CN')})`)
+
+                  flattenedCards.push({
+                    bookId: book.id,
+                    bookTitle: book.title,
+                    mode: 'word-list',
+                    progress,
+                    scopeType: readingProgress.status || 'all',
+                    currentIndex: (readingProgress.page || 1) * 20, // 粗略估计
+                    totalWords,
+                    learnedCount,
+                    lastStudyTime: accessedTime,
+                    continueURL
+                  })
+                } else {
+                  console.log(`⏭️ [展平] 跳过 ${book.title} 的 last_reading_progress：无实际进度`)
+                }
+              } else {
+                console.log(`⏭️ [展平] 跳过 ${book.title} 的 last_reading_progress：无效数据`)
+              }
+            }
           }
 
           // 4. 按 lastStudyTime 降序排序，取前3个
