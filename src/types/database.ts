@@ -441,6 +441,21 @@ export type LearningRecordUpdate = Partial<LearningRecordInsert>
 // User Preferences
 // ============================================
 
+/**
+ * 学习模式摘要项
+ * 用于 last_resume_summary 字段，存储每个模式的学习进度摘要
+ */
+export interface ResumeSummaryItem {
+  /** 最后更新时间戳（毫秒） */
+  updatedAt: number
+  /** 学习范围类型：'all' | 'unknown' | 'fuzzy' | 'known' | 'new' */
+  scopeType: string
+  /** 当前学习索引（0-based） */
+  currentIndex: number
+  /** 总单词数 */
+  totalWords: number
+}
+
 export interface UserBookPreference {
   id: string
   user_id: string
@@ -448,6 +463,10 @@ export interface UserBookPreference {
   hide_chinese: boolean
   created_at: string
   updated_at: string
+  /** 最后恢复状态（单一对象，用于跳转恢复） */
+  last_resume_state?: any
+  /** 多模式学习摘要（Key-Value结构，用于首页展示） */
+  last_resume_summary?: Record<string, ResumeSummaryItem>
 }
 
 export interface UserBookPreferenceInsert {

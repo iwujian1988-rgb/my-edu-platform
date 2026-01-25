@@ -111,8 +111,15 @@ export function BookDetailPageClient({
     showLoading()
   }
 
+  // 🛡️ [卫语句] 防止在进度恢复检查完成前保存，避免覆盖真实进度
+  const [resumeCheckCompleted, setResumeCheckCompleted] = useState(false)
+
   // ✅ 使用新的Hooks管理状态（传入bookId以支持断点续读）
-  const { filters, setPage, setTheme, setScenario, setChapter, setStatus, updateFilters } = useBookFilters(book.id)
+  // 🚫 [关键修复] 在进度恢复检查完成前，禁止自动保存
+  const { filters, setPage, setTheme, setScenario, setChapter, setStatus, updateFilters } = useBookFilters(
+    book.id,
+    { shouldSave: resumeCheckCompleted }
+  )
 
   // 🆕 传递初始数据给useWordData，避免首次加载时调用API
   const { words, totalWords, hasMore, isLoading, isLoadingMore } = useWordData({
@@ -398,73 +405,90 @@ export function BookDetailPageClient({
       console.log('🔍 [Resume] Current URL:', window.location.href)
       console.log('🔍 [Resume] Search params:', window.location.search)
 
-      // 如果URL已经有参数，说明用户已经在浏览，不需要恢复
-      // 🔥 修复：只有当URL有**非默认值**的参数时，才跳过恢复
-      // 因为默认值（page=1, status=all等）可能是浏览器自动补全的，不应该阻止恢复
-      const urlParams = new URLSearchParams(window.location.search)
-      const page = urlParams.get('page')
-      const status = urlParams.get('status')
-      const theme = urlParams.get('theme')
-      const scenario = urlParams.get('scenario')
-      const chapter = urlParams.get('chapter')
+      try {
+        // 如果URL已经有参数，说明用户已经在浏览，不需要恢复
+        // 🔥 修复：只有当URL有**非默认值**的参数时，才跳过恢复
+        // 因为默认值（page=1, status=all等）可能是浏览器自动补全的，不应该阻止恢复
+        const urlParams = new URLSearchParams(window.location.search)
+        const page = urlParams.get('page')
+        const status = urlParams.get('status')
+        const theme = urlParams.get('theme')
+        const scenario = urlParams.get('scenario')
+        const chapter = urlParams.get('chapter')
 
-      const hasNonDefaultParams =
-        (page && page !== '1') ||
-        (status && status !== 'all') ||
-        (theme && theme !== 'all') ||
-        (scenario && scenario !== 'all') ||
-        (chapter && chapter !== 'all')
+        const hasNonDefaultParams =
+          (page && page !== '1') ||
+          (status && status !== 'all') ||
+          (theme && theme !== 'all') ||
+          (scenario && scenario !== 'all') ||
+          (chapter && chapter !== 'all')
 
-      if (hasNonDefaultParams) {
-        console.log('⏭️ [Resume] URL has non-default params, skipping restore. Params:', {
-          page,
-          status,
-          theme,
-          scenario,
-          chapter
-        })
-        return
-      }
-
-      console.log('✅ [Resume] URL has only default params or empty, proceeding with restore')
-
-      // 检查是否有保存的进度
-      console.log('📖 [Resume] Calling getReadingProgress...')
-      const progress = await getReadingProgress(book.id)
-      console.log('📖 [Resume] Saved progress result:', progress)
-      console.log('📖 [Resume] Progress type:', typeof progress)
-      console.log('📖 [Resume] Progress keys:', progress ? Object.keys(progress) : 'N/A')
-
-      if (!progress) {
-        console.log('ℹ️ [Resume] No saved progress found')
-        return
-      }
-
-      // 验证进度数据的完整性
-      console.log('📖 [Resume] Progress data:', JSON.stringify(progress, null, 2))
-
-      // 🔥 修复：即使 page 是 1 或 undefined，只要有其他筛选条件，也应该显示对话框
-      const hasOtherFilters = (progress.theme && progress.theme !== 'all') ||
-                               (progress.scenario && progress.scenario !== 'all') ||
-                               (progress.chapter && progress.chapter !== 'all') ||
-                               (progress.status && progress.status !== 'all')
-
-      if (!progress.page || progress.page <= 1) {
-        if (!hasOtherFilters) {
-          console.log('ℹ️ [Resume] Page is', progress.page, 'and no other filters - no need to restore')
+        if (hasNonDefaultParams) {
+          console.log('⏭️ [Resume] URL has non-default params, skipping restore. Params:', {
+            page,
+            status,
+            theme,
+            scenario,
+            chapter
+          })
+          console.log('✅ [Resume] 进度检查完成（URL已有参数），启用自动保存')
+          setResumeCheckCompleted(true)
           return
         }
-        console.log('ℹ️ [Resume] Page is', progress.page, 'but has other filters - showing dialog anyway')
-      }
 
-      // ⭐ 保存进度到状态，但不立即恢复，等待用户确认
-      console.log('📍 [Resume] Found progress page:', progress.page, '- showing confirm dialog')
-      console.log('📍 [Resume] Calling setSavedProgress and setShowRestoreConfirm(true)')
-      setSavedProgress(progress)
-      setShowRestoreConfirm(true)
-      // 🔥 设置标志，防止自动保存覆盖之前的进度
-      sessionStorage.setItem('restore-dialog-showing', 'true')
-      console.log('✅ [Resume] State setters called. Dialog should appear.')
+        console.log('✅ [Resume] URL has only default params or empty, proceeding with restore')
+
+        // 检查是否有保存的进度
+        console.log('📖 [Resume] Calling getReadingProgress...')
+        const progress = await getReadingProgress(book.id)
+        console.log('📖 [Resume] Saved progress result:', progress)
+        console.log('📖 [Resume] Progress type:', typeof progress)
+        console.log('📖 [Resume] Progress keys:', progress ? Object.keys(progress) : 'N/A')
+
+        if (!progress) {
+          console.log('ℹ️ [Resume] No saved progress found')
+          console.log('✅ [Resume] 进度检查完成（无保存进度），启用自动保存')
+          setResumeCheckCompleted(true)
+          return
+        }
+
+        // 验证进度数据的完整性
+        console.log('📖 [Resume] Progress data:', JSON.stringify(progress, null, 2))
+
+        // 🔥 修复：即使 page 是 1 或 undefined，只要有其他筛选条件，也应该显示对话框
+        const hasOtherFilters = (progress.theme && progress.theme !== 'all') ||
+                                 (progress.scenario && progress.scenario !== 'all') ||
+                                 (progress.chapter && progress.chapter !== 'all') ||
+                                 (progress.status && progress.status !== 'all')
+
+        if (!progress.page || progress.page <= 1) {
+          if (!hasOtherFilters) {
+            console.log('ℹ️ [Resume] Page is', progress.page, 'and no other filters - no need to restore')
+            console.log('✅ [Resume] 进度检查完成（page<=1且无其他筛选），启用自动保存')
+            setResumeCheckCompleted(true)
+            return
+          }
+          console.log('ℹ️ [Resume] Page is', progress.page, 'but has other filters - showing dialog anyway')
+        }
+
+        // ⭐ 保存进度到状态，但不立即恢复，等待用户确认
+        console.log('📍 [Resume] Found progress page:', progress.page, '- showing confirm dialog')
+        console.log('📍 [Resume] Calling setSavedProgress and setShowRestoreConfirm(true)')
+        setSavedProgress(progress)
+        setShowRestoreConfirm(true)
+        // 🔥 设置标志，防止自动保存覆盖之前的进度
+        sessionStorage.setItem('restore-dialog-showing', 'true')
+        console.log('✅ [Resume] State setters called. Dialog should appear.')
+
+        // 🚫 [关键修复] 显示对话框时，暂时不启用自动保存
+        // 等用户确认或取消后再启用
+        console.log('⏸️ [Resume] 显示恢复对话框，保持自动保存禁用状态')
+      } catch (error) {
+        // 📋 [异常处理] 发生错误时，也要启用自动保存，避免永久禁用
+        console.error('❌ [Resume] 进度检查过程中发生错误:', error)
+        console.log('✅ [Resume] 发生错误，仍需启用自动保存以避免功能失效')
+        setResumeCheckCompleted(true)
+      }
     }
 
     checkAndRestoreProgress()
@@ -521,6 +545,10 @@ export function BookDetailPageClient({
     // 🔥 清除标志，恢复自动保存
     sessionStorage.removeItem('restore-dialog-showing')
 
+    // ✅ [关键修复] 用户确认后，启用自动保存
+    console.log('✅ [Resume] 用户已确认恢复进度，启用自动保存')
+    setResumeCheckCompleted(true)
+
     // ✅ 批量恢复所有筛选条件，不会重置页码
     updateFilters(filtersToRestore)
 
@@ -538,6 +566,10 @@ export function BookDetailPageClient({
     setSavedProgress(null)
     // 🔥 清除标志，恢复自动保存
     sessionStorage.removeItem('restore-dialog-showing')
+
+    // ✅ [关键修复] 用户取消后，也启用自动保存（用户选择从头开始）
+    console.log('✅ [Resume] 用户已取消恢复，启用自动保存')
+    setResumeCheckCompleted(true)
   }
 
   // 生成恢复进度的提示文案

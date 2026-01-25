@@ -399,7 +399,7 @@ export function DashboardContent({
                 <div className="overflow-x-auto pb-4 -mx-4 px-4">
                   <div className="flex gap-4" style={{ width: 'max-content' }}>
                     {progressCards.map((card, index) => (
-                      <div key={card.bookId} className="w-[calc(100vw-2rem)] max-w-[360px]">
+                      <div key={card._uniqueKey || card.bookId} className="w-[calc(100vw-2rem)] max-w-[360px]">
                         <ProgressCardComponent {...card} />
                       </div>
                     ))}
@@ -414,7 +414,7 @@ export function DashboardContent({
               {/* Desktop: 3列网格，卡片固定宽度，左对齐 */}
               <div className="hidden lg:flex lg:gap-6">
                 {progressCards.slice(0, 3).map((card, index) => (
-                  <div key={card.bookId} className="w-[340px] max-w-[340px]">
+                  <div key={card._uniqueKey || card.bookId} className="w-[340px] max-w-[340px]">
                     <ProgressCardComponent {...card} />
                   </div>
                 ))}

@@ -136,6 +136,37 @@ export async function POST(request: NextRequest) {
     if ('last_resume_state' in body) {
       updateData.last_resume_state = last_resume_state
       console.log('📝 Will save last_resume_state:', last_resume_state)
+
+      // ⭐ Phase 2: 双写策略 - 同时更新 last_resume_summary
+      // 仅当 last_resume_state 不为 null 时更新摘要
+      if (last_resume_state && typeof last_resume_state === 'object') {
+        const mode = last_resume_state?.mode
+        const context = last_resume_state?.context
+
+        // Step A: 读取现有摘要数据
+        const { data: existingPref } = await supabase
+          .from('user_book_preferences')
+          .select('last_resume_summary')
+          .eq('user_id', user.id)
+          .eq('book_id', book_id)
+          .maybeSingle()
+
+        // Step B: 准备现有摘要（空对象作为默认值）
+        const existingSummary = (existingPref as any)?.last_resume_summary || {}
+
+        // Step C: 合并更新（Map操作 - 天然去重）
+        const newSummary = { ...existingSummary } // 浅拷贝，防止副作用
+        newSummary[mode] = {
+          updatedAt: last_resume_state.updatedAt || Date.now(),
+          scopeType: context?.scopeType || context?.scope || 'all',
+          currentIndex: context?.currentIndex ?? context?.index ?? 0,
+          totalWords: context?.totalWords || 0
+        }
+
+        // Step D: 添加到更新对象
+        updateData.last_resume_summary = newSummary
+        console.log('📝 Will save last_resume_summary:', newSummary)
+      }
     }
 
     console.log('Saving preferences for user:', user.email, updateData)

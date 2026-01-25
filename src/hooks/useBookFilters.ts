@@ -53,9 +53,20 @@ function restoreFiltersFromURL(searchParams: URLSearchParams): BookFilters {
 const globalInitFlags = new Map<string, boolean>()
 
 /**
- * 主Hook：管理词书筛选状态
+ * Hook 选项配置
  */
-export function useBookFilters(bookId?: string) {
+interface UseBookFiltersOptions {
+  /** 是否允许自动保存阅读进度（用于防止覆盖真实进度） */
+  shouldSave?: boolean
+}
+
+/**
+ * 主Hook：管理词书筛选状态
+ *
+ * @param bookId - 词书ID（可选，用于保存进度）
+ * @param options - 配置选项
+ */
+export function useBookFilters(bookId?: string, options?: UseBookFiltersOptions) {
   const searchParams = useSearchParams()
   const { updateURL } = useUpdateURL()
   const saveTimeoutRef = useRef<NodeJS.Timeout | null>(null)
@@ -65,6 +76,16 @@ export function useBookFilters(bookId?: string) {
   const isGloballyInitialized = globalInitFlags.get(key)
   const isInitializedRef = useRef(isGloballyInitialized || false)
 
+  // 📋 [边界检查] 记录配置选项
+  useEffect(() => {
+    console.log('🔧 [useBookFilters] 初始化配置:', {
+      bookId: bookId || 'none',
+      key,
+      shouldSave: options?.shouldSave ?? true,
+      isGloballyInitialized
+    })
+  }, [bookId, key, options?.shouldSave, isGloballyInitialized])
+
   // 状态 - 从URL恢复
   const [filters, setFilters] = useState<BookFilters>(() =>
     restoreFiltersFromURL(searchParams)
@@ -72,7 +93,19 @@ export function useBookFilters(bookId?: string) {
 
   // ⭐ 自动保存阅读进度
   const saveProgress = (currentFilters: BookFilters) => {
-    if (!bookId) return
+    // 📋 [防御性编程] 边界检查
+    if (!bookId) {
+      console.warn('⚠️ [useBookFilters] saveProgress: bookId 为空，跳过保存')
+      return
+    }
+
+    // 🛡️ [卫语句] 检查是否允许保存
+    const allowSave = options?.shouldSave ?? true // 默认允许
+    if (!allowSave) {
+      console.log('🚫 [useBookFilters] saveProgress: 外部禁止保存 (shouldSave=false)，跳过保存')
+      console.log('   当前状态:', currentFilters)
+      return
+    }
 
     console.log('💾 [useBookFilters] saveProgress called with:', currentFilters)
 
@@ -134,6 +167,20 @@ export function useBookFilters(bookId?: string) {
       const currentFilters = filtersRef.current
       console.log('👋 [useBookFilters] beforeUnload triggered, filters:', currentFilters)
 
+      // 🛡️ [卫语句] 检查是否允许保存（防止在进度恢复检查完成前保存）
+      const allowSave = options?.shouldSave ?? true // 默认允许
+      if (!allowSave) {
+        console.log('🚫 [useBookFilters] beforeUnload: 外部禁止保存 (shouldSave=false)，跳过保存')
+        console.log('   当前状态:', currentFilters)
+        return
+      }
+
+      // 📋 [边界检查] bookId 为空时不保存
+      if (!bookId) {
+        console.log('⚠️ [useBookFilters] beforeUnload: bookId 为空，跳过保存')
+        return
+      }
+
       if (saveTimeoutRef.current) {
         console.log('⏰ [useBookFilters] Clearing timeout on beforeunload')
         clearTimeout(saveTimeoutRef.current)
@@ -162,7 +209,7 @@ export function useBookFilters(bookId?: string) {
       handleBeforeUnload()
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [bookId]) // 只依赖 bookId，不再依赖 filters
+  }, [bookId, options?.shouldSave]) // 🔥 添加 shouldSave 到依赖，确保 handleBeforeUnmount 能访问最新值
 
   // ⭐ 监听URL变化，同步filters状态（不用key时需要）
   // 🔥 修复：跳过首次初始化，避免覆盖断点续读进度
