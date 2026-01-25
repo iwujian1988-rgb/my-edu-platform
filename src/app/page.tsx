@@ -269,6 +269,14 @@ export default async function Home() {
         // 这样可以跨书籍展示最近学习，支持同一本书的多个模式同时显示
         const flattenedCards: any[] = []
 
+        console.log('📚 [首页展平] 开始处理 recentBooks:', recentBooks.map(b => ({
+          id: b.id,
+          title: b.title,
+          有last_resume_state: !!b.last_resume_state,
+          有last_resume_summary: !!b.last_resume_summary,
+          summary_keys: b.last_resume_summary ? Object.keys(b.last_resume_summary) : []
+        })))
+
         for (const book of recentBooks) {
           const stats = statsMap[book.id] || { known: 0, fuzzy: 0, total: 0 }
           const totalWords = book.total_words || 0
@@ -349,6 +357,8 @@ export default async function Home() {
               continueURL = `/practice?bookId=${book.id}&scope=${finalScopeType}`
             }
 
+            console.log(`✅ [展平] 添加当前活动模式: ${book.title} - ${currentMode} (${new Date(currentModeTime).toLocaleString('zh-CN')})`)
+
             flattenedCards.push({
               bookId: book.id,
               bookTitle: book.title,
@@ -366,6 +376,11 @@ export default async function Home() {
           // 3. 展平 last_resume_summary，为每个模式生成独立卡片
           const resumeSummary = book.last_resume_summary || {}
           const supportedModes = ['word-list', 'flashcards', 'dictation', 'match-game', 'typing']
+
+          console.log(`📖 [展平] 处理 ${book.title} 的 last_resume_summary:`, {
+            模式数量: Object.keys(resumeSummary).length,
+            模式列表: Object.keys(resumeSummary)
+          })
 
           for (const mode of supportedModes) {
             const summary = resumeSummary[mode]
@@ -400,6 +415,8 @@ export default async function Home() {
             } else if (mode === 'typing') {
               continueURL = `/practice?bookId=${book.id}&scope=${finalScopeType}`
             }
+
+            console.log(`✅ [展平] 从summary添加: ${book.title} - ${mode} (${new Date(updatedAt).toLocaleString('zh-CN')})`)
 
             flattenedCards.push({
               bookId: book.id,
