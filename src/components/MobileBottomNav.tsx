@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Home, Library, Dumbbell, Settings } from 'lucide-react'
+import { Home, Library, Dumbbell, Settings, Mic } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
 import { useLoading } from './LoadingOverlay'
 import { BookSelectorModal } from './BookSelectorModal'
@@ -13,12 +13,15 @@ interface NavItem {
   href: string
   icon: any
   isPractice?: boolean // 标记是否为练习按钮
+  disabled?: boolean // 标记是否禁用
+  disabledMessage?: string // 禁用时显示的提示信息
 }
 
 const navItems: NavItem[] = [
   { label: '工作台', href: '/', icon: Home },
   { label: '词库', href: '/library', icon: Library },
   { label: '练习', href: '/practice', icon: Dumbbell, isPractice: true },
+  { label: '演说家', href: '/speaker', icon: Mic, disabled: true, disabledMessage: '功能开发中，敬请期待！' },
   { label: '设置', icon: Settings }, // 特殊处理
 ]
 
@@ -61,9 +64,40 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
             const Icon = item.icon
             const isSettings = item.label === '设置'
             const isPractice = item.isPractice
+            const isDisabled = item.disabled
 
             // 判断是否激活
             const isActive = isSettings ? pathname === '/settings' : pathname === item.href
+
+            // 禁用项（演说家）
+            if (isDisabled) {
+              return (
+                <button
+                  key={item.label}
+                  onClick={() => alert(item.disabledMessage || '功能开发中，敬请期待！')}
+                  className="flex-1 flex flex-col items-center justify-center py-3 px-2 opacity-50 transition-all duration-200"
+                  suppressHydrationWarning
+                >
+                  <div className="relative mb-2">
+                    <div
+                      className="w-12 h-12 rounded-lg border-[2px] border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] transition-all duration-200"
+                      style={{
+                        backgroundColor: 'var(--bg-secondary)',
+                        color: 'var(--text-secondary)',
+                      }}
+                    >
+                      <Icon className="w-6 h-6" strokeWidth={2.5} />
+                    </div>
+                  </div>
+                  <span
+                    className="text-xs font-black"
+                    style={{ color: 'var(--text-secondary)' }}
+                  >
+                    {item.label}
+                  </span>
+                </button>
+              )
+            }
 
             // 练习按钮：打开弹层（如果有books）
             if (isPractice) {

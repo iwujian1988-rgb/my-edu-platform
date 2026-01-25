@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Home, Library, Dumbbell, Settings, Cat } from 'lucide-react'
+import { Home, Library, Dumbbell, Settings, Cat, Mic } from 'lucide-react'
 import { BookSelectorModal } from './BookSelectorModal'
 import type { Book } from '@/types/book'
 import { useTheme } from '@/contexts/ThemeContext'
@@ -25,6 +25,7 @@ const navItems: NavItem[] = [
   { label: '工作台', href: '/', icon: Home },
   { label: '系统词库', href: '/library', icon: Library },
   { label: '肌肉训练', href: '/practice', icon: Dumbbell },
+  { label: '演说家', href: '/speaker', icon: Mic, comingSoon: true },
   { label: '系统设置', href: '/settings', icon: Settings },
 ]
 
@@ -70,16 +71,18 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
 
             if (item.comingSoon) {
               return (
-                <div
+                <button
                   key={item.href}
-                  className="flex items-center gap-3 px-4 py-3 rounded-xl border-[3px] border-black bg-gray-100 opacity-60 cursor-not-allowed relative"
+                  onClick={() => alert('功能开发中，敬请期待！')}
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border-[3px] border-black opacity-60 hover:opacity-80 transition-all relative cursor-not-allowed"
+                  style={{ backgroundColor: 'var(--card-bg)' }}
                 >
-                  <Icon size={24} strokeWidth={2} className="text-gray-400" />
-                  <span className="font-bold text-gray-400">{item.label}</span>
-                  <span className="absolute right-3 text-[10px] font-bold text-gray-400 bg-gray-200 px-2 py-0.5 rounded-md border border-gray-300">
+                  <Icon size={24} strokeWidth={2} style={{ color: 'var(--text-secondary)' }} />
+                  <span className="font-bold" style={{ color: 'var(--text-secondary)' }}>{item.label}</span>
+                  <span className="absolute right-3 text-[10px] font-bold px-2 py-0.5 rounded-md border-[2px]" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)', borderColor: 'var(--border)' }}>
                     敬请期待
                   </span>
-                </div>
+                </button>
               )
             }
 
