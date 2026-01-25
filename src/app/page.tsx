@@ -139,6 +139,17 @@ export default async function Home() {
         todayNewWordsCount
       })
 
+      // 🔍 调试：详细打印 recentPrefs 的内容
+      if (recentPrefs && recentPrefs.length > 0) {
+        console.log('📚 [recentPrefs 详细]:', recentPrefs.map((p: any) => ({
+          book_id: p.book_id,
+          last_accessed_at: p.last_accessed_at,
+          有last_resume_state: !!p.last_resume_state,
+          有last_resume_summary: !!p.last_resume_summary,
+          summary_keys: p.last_resume_summary ? Object.keys(p.last_resume_summary) : []
+        })))
+      }
+
       // 🔥 性能优化：只为最近访问的3本书查询统计信息
       scopeStatsMap = {}
       const bookStats: Record<string, { unknown: number, fuzzy: number, known: number }> = {}
