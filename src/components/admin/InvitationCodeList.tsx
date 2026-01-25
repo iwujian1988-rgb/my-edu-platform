@@ -6,7 +6,7 @@
  */
 
 import { useState } from 'react'
-import { Search, Ticket, Copy, Trash2, Ban, Check, User, Download } from 'lucide-react'
+import { Search, Ticket, Copy, Trash2, Ban, Check, User, Download, CheckSquare2, Square, Link2 } from 'lucide-react'
 import Link from 'next/link'
 import { formatDate } from '@/lib/utils'
 
@@ -40,6 +40,33 @@ export function InvitationCodeList({
   const [searchQuery, setSearchQuery] = useState(search)
   const [statusFilter, setStatusFilter] = useState(status)
   const [exporting, setExporting] = useState(false)
+  const [selectedCodes, setSelectedCodes] = useState<Set<string>>(new Set())
+
+  // 全选/取消全选
+  const handleSelectAll = () => {
+    if (selectedCodes.size === codes.length) {
+      // 如果已全选，则取消全选
+      setSelectedCodes(new Set())
+    } else {
+      // 全选当前页
+      setSelectedCodes(new Set(codes.map(c => c.id)))
+    }
+  }
+
+  // 单选
+  const handleSelectCode = (codeId: string) => {
+    const newSelected = new Set(selectedCodes)
+    if (newSelected.has(codeId)) {
+      newSelected.delete(codeId)
+    } else {
+      newSelected.add(codeId)
+    }
+    setSelectedCodes(newSelected)
+  }
+
+  // 判断是否全选
+  const isAllSelected = codes.length > 0 && selectedCodes.size === codes.length
+  const isSomeSelected = selectedCodes.size > 0
 
   const handleSearch = () => {
     const params = new URLSearchParams()
@@ -48,19 +75,19 @@ export function InvitationCodeList({
     window.location.href = `/admin/invitation-codes?${params.toString()}`
   }
 
-  // 批量导出当前页的邀请码
-  const handleExportCurrentPage = async () => {
-    if (codes.length === 0) {
-      alert('当前页没有邀请码可导出')
+  // 批量导出选中的邀请码
+  const handleExportSelected = async () => {
+    if (selectedCodes.size === 0) {
+      alert('请先选择要导出的邀请码')
       return
     }
 
-    const confirmed = confirm(`确定要导出当前页的 ${codes.length} 个邀请码吗？`)
+    const confirmed = confirm(`确定要导出选中的 ${selectedCodes.size} 个邀请码吗？`)
     if (!confirmed) return
 
     setExporting(true)
     try {
-      await exportCodes(codes.map((c) => c.id))
+      await exportCodes(Array.from(selectedCodes))
     } finally {
       setExporting(false)
     }
@@ -141,12 +168,12 @@ export function InvitationCodeList({
 
           {/* 批量导出按钮 */}
           <button
-            onClick={handleExportCurrentPage}
-            disabled={exporting || codes.length === 0}
+            onClick={handleExportSelected}
+            disabled={exporting || selectedCodes.size === 0}
             className="px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             <Download size={20} />
-            {exporting ? '导出中...' : '导出当前页'}
+            {exporting ? '导出中...' : `导出选中 (${selectedCodes.size})`}
           </button>
         </div>
 
@@ -192,6 +219,19 @@ export function InvitationCodeList({
               <table className="w-full">
                 <thead className="bg-gray-50 border-b-[2px] border-gray-200">
                   <tr>
+                    <th className="text-center py-4 px-6 font-bold text-gray-700 w-16">
+                      <button
+                        onClick={handleSelectAll}
+                        className="flex items-center justify-center w-full"
+                        title={isAllSelected ? '取消全选' : '全选'}
+                      >
+                        {isAllSelected ? (
+                          <CheckSquare2 className="text-blue-600" size={20} />
+                        ) : (
+                          <Square className="text-gray-400" size={20} />
+                        )}
+                      </button>
+                    </th>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">邀请码</th>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">备注</th>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">使用情况</th>
@@ -202,7 +242,22 @@ export function InvitationCodeList({
                 </thead>
                 <tbody className="divide-y divide-gray-200">
                   {codes.map((code) => (
-                    <tr key={code.id} className="hover:bg-gray-50 transition-colors">
+                    <tr key={code.id} className={`hover:bg-gray-50 transition-colors ${selectedCodes.has(code.id) ? 'bg-blue-50' : ''}`}>
+                      {/* 复选框 */}
+                      <td className="py-4 px-6 text-center">
+                        <button
+                          onClick={() => handleSelectCode(code.id)}
+                          className="flex items-center justify-center w-full"
+                          title={selectedCodes.has(code.id) ? '取消选择' : '选择'}
+                        >
+                          {selectedCodes.has(code.id) ? (
+                            <CheckSquare2 className="text-blue-600" size={18} />
+                          ) : (
+                            <Square className="text-gray-400" size={18} />
+                          )}
+                        </button>
+                      </td>
+
                       {/* 邀请码 */}
                       <td className="py-4 px-6">
                         <div className="flex items-center gap-2">
@@ -268,6 +323,7 @@ export function InvitationCodeList({
                       {/* 操作按钮 */}
                       <td className="py-4 px-6">
                         <div className="flex items-center justify-end gap-2">
+                          <CopyLinkButton code={code.code} />
                           <DisableButton codeId={code.id} code={code.code} isDisabled={!code.is_active} />
                           <DeleteButton codeId={code.id} code={code.code} />
                         </div>
@@ -281,10 +337,23 @@ export function InvitationCodeList({
             {/* 移动端卡片 */}
             <div className="md:hidden space-y-4 p-4">
               {codes.map((code) => (
-                <div key={code.id} className="bg-gray-50 rounded-xl p-4 border-[2px] border-gray-200">
-                  <div className="flex items-start justify-between mb-3">
-                    <div className="flex items-center gap-2 flex-1">
-                      <code className="px-3 py-1 bg-white rounded-lg font-mono font-bold text-gray-800">
+                <div key={code.id} className={`rounded-xl p-4 border-[2px] transition-colors ${selectedCodes.has(code.id) ? 'bg-blue-50 border-blue-300' : 'bg-gray-50 border-gray-200'}`}>
+                  <div className="flex items-start gap-3 mb-3">
+                    {/* 复选框 */}
+                    <button
+                      onClick={() => handleSelectCode(code.id)}
+                      className="flex-shrink-0 mt-1"
+                      title={selectedCodes.has(code.id) ? '取消选择' : '选择'}
+                    >
+                      {selectedCodes.has(code.id) ? (
+                        <CheckSquare2 className="text-blue-600" size={18} />
+                      ) : (
+                        <Square className="text-gray-400" size={18} />
+                      )}
+                    </button>
+
+                    <div className="flex items-center gap-2 flex-1 min-w-0">
+                      <code className="px-3 py-1 bg-white rounded-lg font-mono font-bold text-gray-800 text-sm">
                         {code.code}
                       </code>
                       <CopyButton code={code.code} />
@@ -315,6 +384,7 @@ export function InvitationCodeList({
                   <div className="flex items-center justify-between pt-3 border-t border-gray-200">
                     <span className="text-xs text-gray-500">{formatDate(code.created_at)}</span>
                     <div className="flex gap-2">
+                      <CopyLinkButton code={code.code} />
                       <DisableButton codeId={code.id} code={code.code} isDisabled={!code.is_active} />
                       <DeleteButton codeId={code.id} code={code.code} />
                     </div>
@@ -486,6 +556,34 @@ function DeleteButton({ codeId, code }: { codeId: string; code: string }) {
       ) : (
         <Trash2 size={18} />
       )}
+    </button>
+  )
+}
+
+/**
+ * 复制邀请链接按钮
+ */
+function CopyLinkButton({ code }: { code: string }) {
+  const [copied, setCopied] = useState(false)
+
+  const handleCopyLink = () => {
+    const registerUrl = `https://maxnote.top/register?code=${code}`
+    navigator.clipboard.writeText(registerUrl)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+
+  return (
+    <button
+      onClick={handleCopyLink}
+      className={`p-2 rounded-lg transition-colors ${
+        copied
+          ? 'text-green-600 hover:bg-green-50'
+          : 'text-blue-600 hover:bg-blue-50'
+      }`}
+      title={copied ? '已复制链接' : '复制邀请链接'}
+    >
+      <Link2 size={18} />
     </button>
   )
 }

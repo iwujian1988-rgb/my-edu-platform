@@ -102,23 +102,38 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
               {menuItems.map((item) => {
                 const isActive = pathname === item.path
                 const Icon = item.icon
+                const isDisabled = (item as any).disabled === true
 
                 return (
                   <li key={item.path}>
-                    <Link
-                      href={item.path}
-                      onClick={() => setSidebarOpen(false)}
-                      className={`
-                      flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all
-                      ${isActive
-                        ? 'bg-green-500 text-white shadow-[3px_3px_0px_0px_#000]'
-                        : 'text-gray-700 hover:bg-gray-100'
-                      }
-                    `}
-                    >
-                      <Icon size={20} strokeWidth={2.5} />
-                      <span>{item.label}</span>
-                    </Link>
+                    {isDisabled ? (
+                      <button
+                        onClick={() => {
+                          alert('功能开发中，敬请期待！')
+                          setSidebarOpen(false)
+                        }}
+                        className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-gray-400 cursor-not-allowed transition-all"
+                        title="功能开发中"
+                      >
+                        <Icon size={20} strokeWidth={2.5} />
+                        <span>{item.label}</span>
+                      </button>
+                    ) : (
+                      <Link
+                        href={item.path}
+                        onClick={() => setSidebarOpen(false)}
+                        className={`
+                        flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all
+                        ${isActive
+                          ? 'bg-green-500 text-white shadow-[3px_3px_0px_0px_#000]'
+                          : 'text-gray-700 hover:bg-gray-100'
+                        }
+                      `}
+                      >
+                        <Icon size={20} strokeWidth={2.5} />
+                        <span>{item.label}</span>
+                      </Link>
+                    )}
                   </li>
                 )
               })}
@@ -221,31 +236,36 @@ function getMenuItemsByRole(role: AdminUser['role']) {
       path: '/admin/reviews',
       icon: CheckSquare,
       label: '审核管理',
-      roles: ['super_admin', 'content_admin']
+      roles: ['super_admin', 'content_admin'],
+      disabled: true
     },
     {
       path: '/admin/statistics',
       icon: BarChart,
       label: '数据统计',
-      roles: ['super_admin', 'content_admin', 'support']
+      roles: ['super_admin', 'content_admin', 'support'],
+      disabled: true
     },
     {
       path: '/admin/administrators',
       icon: Shield,
       label: '管理员管理',
-      roles: ['super_admin']
+      roles: ['super_admin'],
+      disabled: true
     },
     {
       path: '/admin/settings',
       icon: Settings,
       label: '系统设置',
-      roles: ['super_admin']
+      roles: ['super_admin'],
+      disabled: true
     },
     {
       path: '/admin/audit-logs',
       icon: FileText,
       label: '操作日志',
-      roles: ['super_admin', 'support']
+      roles: ['super_admin', 'support'],
+      disabled: true
     }
   ]
 

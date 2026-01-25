@@ -59,8 +59,8 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 获取前台 URL
-    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+    // 获取前台 URL（优先使用环境变量，否则使用线上地址）
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://maxnote.top'
 
     // 准备 Excel 数据
     const excelData = codesData.map((code: any) => {
