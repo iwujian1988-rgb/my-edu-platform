@@ -119,9 +119,9 @@ export default function LoginFormClient() {
                   <Target className="w-6 h-6 lg:w-7 lg:h-7" style={{ color: '#3B82F6' }} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>🎯 AI 智能推荐</h3>
+                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>🎯 多种学习模式</h3>
                   <p className="text-sm lg:text-base font-semibold leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                    根据学习水平智能推荐最适合的单词，告别无效学习
+                    单词列表、拼写练习、听写、闪卡等多种模式，告别死记硬背
                   </p>
                 </div>
               </div>
@@ -139,9 +139,9 @@ export default function LoginFormClient() {
                   <Trophy className="w-6 h-6 lg:w-7 lg:h-7" style={{ color: '#FF8C61' }} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>🏆 成就系统</h3>
+                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>🏆 学习进度追踪</h3>
                   <p className="text-sm lg:text-base font-semibold leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                    完成学习目标解锁成就，让学习像游戏一样有趣
+                    实时记录学习成果，轻松查看每日学习情况和连续天数
                   </p>
                 </div>
               </div>
@@ -159,9 +159,9 @@ export default function LoginFormClient() {
                   <Zap className="w-6 h-6 lg:w-7 lg:h-7" style={{ color: '#22C55E' }} strokeWidth={2.5} />
                 </div>
                 <div>
-                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>⚡ 间隔重复</h3>
+                  <h3 className="text-lg lg:text-xl font-black mb-1 lg:mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>⚡ 科学复习</h3>
                   <p className="text-sm lg:text-base font-semibold leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                    科学的记忆曲线算法，在最佳时机复习，记忆更持久
+                    错题本自动收集，针对性复习不会的单词，提高学习效率
                   </p>
                 </div>
               </div>
@@ -178,8 +178,8 @@ export default function LoginFormClient() {
                   boxShadow: '2px 2px 0px 0px #000000'
                 }}
               >
-                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#22C55E' }}>500+</div>
-                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>精选课程</p>
+                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#22C55E' }}>丰富</div>
+                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>学习模式</p>
               </div>
               <div
                 className="text-center p-3 lg:p-4 transition-all duration-300"
@@ -190,8 +190,8 @@ export default function LoginFormClient() {
                   boxShadow: '2px 2px 0px 0px #000000'
                 }}
               >
-                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#3B82F6' }}>10万+</div>
-                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>词汇总量</p>
+                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#3B82F6' }}>实时</div>
+                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>进度统计</p>
               </div>
               <div
                 className="text-center p-3 lg:p-4 transition-all duration-300"
@@ -202,8 +202,8 @@ export default function LoginFormClient() {
                   boxShadow: '2px 2px 0px 0px #000000'
                 }}
               >
-                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#FF8C61' }}>98%</div>
-                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>满意度</p>
+                <div className="text-2xl lg:text-3xl font-black mb-1" style={{ color: '#FF8C61' }}>便捷</div>
+                <p className="text-xs lg:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>错题管理</p>
               </div>
             </div>
           </div>

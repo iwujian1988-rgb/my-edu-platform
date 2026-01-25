@@ -184,8 +184,12 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
             <>
               {/* 年份标签行 */}
               <div className="flex mb-1 items-end h-5">
-                {/* 占位符：对齐星期标签列 */}
-                <div className="w-8 mr-2 flex-shrink-0"></div>
+                {/* 占位符：对齐星期标签列 - 使用相同的结构和宽度 */}
+                <div className="flex flex-col gap-1 mr-2">
+                  {weekDays.map((_, index) => (
+                    <div key={index} className="h-3"></div>
+                  ))}
+                </div>
                 {calendarData.map((week, weekIndex) => {
                   const yearLabel = yearLabels.find(l => l.weekIndex === weekIndex)
                   return (
@@ -202,8 +206,12 @@ export function VocabularyCalendarClient({ dailyData }: VocabularyCalendarClient
 
               {/* 月份标签行 */}
               <div className="flex mb-4 items-end h-6">
-                {/* 占位符：对齐星期标签列 */}
-                <div className="w-8 mr-2 flex-shrink-0"></div>
+                {/* 占位符：对齐星期标签列 - 使用相同的结构和宽度 */}
+                <div className="flex flex-col gap-1 mr-2">
+                  {weekDays.map((_, index) => (
+                    <div key={index} className="h-3"></div>
+                  ))}
+                </div>
                 {calendarData.map((week, weekIndex) => {
                   const monthLabel = monthLabels.find(l => l.weekIndex === weekIndex)
                   return (

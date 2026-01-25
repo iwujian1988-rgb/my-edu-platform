@@ -300,11 +300,11 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
     <div>
       {/* 学习小贴士 */}
       <div className="mb-1 md:mb-2 text-right">
-        <h3 className="text-xs md:text-sm font-black text-black mb-0.5 md:mb-1 flex items-center gap-1 md:gap-2 justify-end">
-          <Lightbulb className="w-3 h-3 md:w-4 md:h-4 text-[#FACC15]" strokeWidth={2.5} />
+        <h3 className="text-xs md:text-sm font-black mb-0.5 md:mb-1 flex items-center gap-1 md:gap-2 justify-end transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
+          <Lightbulb className="w-3 h-3 md:w-4 md:h-4" style={{ color: '#FACC15' }} strokeWidth={2.5} />
           学习小贴士
         </h3>
-        <p className="text-[10px] md:text-xs font-bold text-gray-600 leading-relaxed text-right">{randomTip}</p>
+        <p className="text-[10px] md:text-xs font-bold leading-relaxed text-right transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>{randomTip}</p>
       </div>
 
       {/* 统计卡片 - Neo-Brutalism */}
@@ -316,48 +316,48 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
         }}
       >
         <div
-          className="p-3 md:p-4 text-center"
+          className="p-3 md:p-4 text-center transition-colors duration-300"
           style={{
-            backgroundColor: '#ffffff',
+            backgroundColor: 'var(--card-bg)',
             border: '3px solid #000000',
             borderRadius: '12px',
             boxShadow: '4px 4px 0px 0px #000000',
           }}
         >
-          <div className="text-xl md:text-3xl font-black text-gray-900">{stats.total}</div>
-          <div className="text-[10px] md:text-sm text-gray-500 mt-1">待复习总数</div>
+          <div className="text-xl md:text-3xl font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{stats.total}</div>
+          <div className="text-[10px] md:text-sm mt-1 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>待复习总数</div>
         </div>
         <div
-          className="p-3 md:p-4 text-center"
+          className="p-3 md:p-4 text-center transition-colors duration-300"
           style={{
-            backgroundColor: '#ffffff',
+            backgroundColor: 'var(--card-bg)',
             border: '3px solid #000000',
             borderRadius: '12px',
             boxShadow: '4px 4px 0px 0px #FF6B6B',
           }}
         >
-          <div className="text-xl md:text-3xl font-black text-red-600">{stats.unknown}</div>
-          <div className="text-[10px] md:text-sm text-gray-500 mt-1">不认识</div>
+          <div className="text-xl md:text-3xl font-black" style={{ color: '#DC2626' }}>{stats.unknown}</div>
+          <div className="text-[10px] md:text-sm mt-1 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>不认识</div>
         </div>
         <div
-          className="p-3 md:p-4 text-center"
+          className="p-3 md:p-4 text-center transition-colors duration-300"
           style={{
-            backgroundColor: '#ffffff',
+            backgroundColor: 'var(--card-bg)',
             border: '3px solid #000000',
             borderRadius: '12px',
             boxShadow: '4px 4px 0px 0px #FACC15',
           }}
         >
-          <div className="text-xl md:text-3xl font-black text-yellow-600">{stats.fuzzy}</div>
-          <div className="text-[10px] md:text-sm text-gray-500 mt-1">模糊</div>
+          <div className="text-xl md:text-3xl font-black" style={{ color: '#CA8A04' }}>{stats.fuzzy}</div>
+          <div className="text-[10px] md:text-sm mt-1 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>模糊</div>
         </div>
       </div>
 
       {/* 筛选栏 - 移动端优化为图标按钮 */}
       <section
-        className="flex items-center justify-between gap-2 lg:gap-3 mb-3 md:mb-4 p-2 md:p-3"
+        className="flex items-center justify-between gap-2 lg:gap-3 mb-3 md:mb-4 p-2 md:p-3 transition-colors duration-300"
         style={{
-          backgroundColor: '#ffffff',
+          backgroundColor: 'var(--card-bg)',
           border: '3px solid #000000',
           borderRadius: '12px',
           boxShadow: '4px 4px 0px 0px #000000',
@@ -382,7 +382,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showBookMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowBookMenu(false)} />
-                <div className="absolute left-0 mt-2 w-48 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 max-h-80 overflow-y-auto">
+                <div className="absolute left-0 mt-2 w-48 rounded-xl z-20 max-h-80 overflow-y-auto transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setSelectedBook('all'); setShowBookMenu(false) }}
                     className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
@@ -430,7 +430,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showFilterMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowFilterMenu(false)} />
-                <div className="absolute right-0 mt-2 w-36 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 overflow-hidden">
+                <div className="absolute right-0 mt-2 w-36 rounded-xl z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setStatusFilter('all'); setShowFilterMenu(false) }}
                     className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
@@ -480,7 +480,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showSortMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowSortMenu(false)} />
-                <div className="absolute right-0 mt-2 w-32 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 overflow-hidden">
+                <div className="absolute right-0 mt-2 w-32 rounded-xl z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setSortBy('default'); setShowSortMenu(false) }}
                     className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
@@ -539,7 +539,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showBookMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowBookMenu(false)} />
-                <div className="absolute left-0 mt-2 w-56 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 max-h-80 overflow-y-auto">
+                <div className="absolute left-0 mt-2 w-56 rounded-xl z-20 max-h-80 overflow-y-auto transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setSelectedBook('all'); setShowBookMenu(false) }}
                     className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
@@ -589,7 +589,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showFilterMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowFilterMenu(false)} />
-                <div className="absolute left-0 mt-2 w-40 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 overflow-hidden">
+                <div className="absolute left-0 mt-2 w-40 rounded-xl z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setStatusFilter('all'); setShowFilterMenu(false) }}
                     className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
@@ -641,7 +641,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showSortMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowSortMenu(false)} />
-                <div className="absolute left-0 mt-2 w-40 bg-white border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded-xl z-20 overflow-hidden">
+                <div className="absolute left-0 mt-2 w-40 rounded-xl z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setSortBy('default'); setShowSortMenu(false) }}
                     className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${

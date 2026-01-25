@@ -136,8 +136,8 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
             <h2 className="text-2xl font-black" style={{ color: 'var(--text-primary)' }}>账号设置</h2>
           </div>
 
-          {/* 修改密码 */}
-          <div
+          {/* 修改密码 - 暂时注销 */}
+          {/* <div
             className="border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
             style={{ backgroundColor: 'var(--card-bg)' }}
           >
@@ -164,7 +164,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
                 修改
               </button>
             </div>
-          </div>
+          </div> */}
 
           {/* 联系客服 */}
           <div
@@ -188,7 +188,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
                 </div>
               </div>
               <button
-                onClick={() => window.open('mailto:support@example.com', '_blank')}
+                onClick={() => alert('请联系购买平台客服')}
                 className="px-6 py-3 bg-[#B4F416] border-[3px] border-black rounded-xl font-black text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
               >
                 联系
