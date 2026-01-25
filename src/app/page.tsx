@@ -55,14 +55,15 @@ export default async function Home() {
         recentPrefsResult,
         recentProgressResult
       ] = await Promise.all([
-        // 查询1：获取用户最近访问的词库（限制为3个）
+        // 查询1：获取用户最近访问的词库（限制为10个，支持跨书籍多模式展示）
+        // 🔥 新逻辑：展平 last_resume_summary 后排序，所以需要查询更多书籍
         supabase
           .from('user_book_preferences')
           .select('book_id, last_accessed_at, last_resume_state, last_resume_summary, last_reading_progress')
           .eq('user_id', user.id)
           .not('last_accessed_at', 'is', null)
           .order('last_accessed_at', { ascending: false })
-          .limit(3),
+          .limit(10),
 
         // 查询2：获取最近学习进度（前20条，用于确定最近学习的书籍）
         supabase
@@ -264,17 +265,19 @@ export default async function Home() {
           }
         }
 
-        // 转换为 ProgressCard 格式（直接使用 recentBooks 中的 last_resume_state 和 last_reading_progress）
-        progressCards = recentBooks.slice(0, 3).map((book: any) => {
-          const resumeState = book.last_resume_state  // 断点续做状态（练习模式）
-          const readingProgress = book.last_reading_progress  // 阅读进度（浏览页码）
+        // 🔥 新逻辑：展平 last_resume_summary，为每个有进度记录的模式生成独立卡片
+        // 这样可以跨书籍展示最近学习，支持同一本书的多个模式同时显示
+        const flattenedCards: any[] = []
 
+        for (const book of recentBooks) {
           const stats = statsMap[book.id] || { known: 0, fuzzy: 0, total: 0 }
           const totalWords = book.total_words || 0
-
-          // 计算学习进度
           const learnedCount = stats.known + stats.fuzzy
           const progress = totalWords > 0 ? Math.round((learnedCount / totalWords) * 100) : 0
+
+          // 1. 优先处理 last_resume_state（当前活动的模式）
+          const resumeState = book.last_resume_state
+          const readingProgress = book.last_reading_progress
 
           // 🔧 检查是否有有效的状态
           const hasValidReadingProgress = readingProgress &&
@@ -287,95 +290,140 @@ export default async function Home() {
             (resumeState.mode || resumeState.context)
 
           // 🔥 修复：检查是否是残留的 word-list mode 数据（修复前产生的）
-          // 如果 resumeState.mode 是 'word-list'，说明是修复前的残留数据，应该忽略
           const isLegacyWordListData = resumeState?.mode === 'word-list'
-
-          // 🔥 修复：如果是残留的 word-list 数据，视为无效的 resumeState
-          // 这样后续逻辑就会优先使用 readingProgress
           const hasValidPracticeMode = hasValidResumeState && !isLegacyWordListData
 
-          // ✅ 根据最后更新时间决定使用哪个模式
-          // resumeState 有 updatedAt，readingProgress 可能没有
-          // 如果 resumeState.mode 存在且不是 word-list，说明是练习模式
-          // 如果 readingProgress 存在，说明是浏览模式（word-list）
-          const resumeStateTime = resumeState?.updatedAt || 0
-          const readingProgressTime = readingProgress?.updatedAt || readingProgress?.timestamp || 0
+          let currentMode: 'word-list' | 'flashcards' | 'dictation' | 'match-game' | 'typing' = 'word-list'
+          let currentModeTime = 0
 
-          let mode: 'word-list' | 'flashcards' | 'dictation' | 'match-game' | 'typing' = 'word-list'
+          // 确定当前活动的模式
+          if (hasValidPracticeMode || hasValidReadingProgress) {
+            const resumeStateTime = resumeState?.updatedAt || 0
+            const readingProgressTime = readingProgress?.updatedAt || readingProgress?.timestamp || 0
 
-          if (hasValidPracticeMode && hasValidReadingProgress) {
-            // 两个都有：比较更新时间
-            if (resumeStateTime > 0 && readingProgressTime > 0) {
-              // 都有时间戳：使用更晚的
-              mode = resumeStateTime >= readingProgressTime
-                ? (resumeState?.mode || 'word-list')
-                : 'word-list'
-            } else if (resumeStateTime > 0) {
-              // 只有 resumeState 有时间戳
-              mode = resumeState?.mode || 'word-list'
-            } else {
-              // 都没有时间戳：优先使用练习模式
-              mode = resumeState?.mode || 'word-list'
-            }
-          } else if (hasValidPracticeMode) {
-            // 只有练习模式
-            mode = resumeState?.mode || 'word-list'
-          } else if (hasValidReadingProgress) {
-            // 只有 readingProgress 或残留的 word-list 数据
-            mode = 'word-list'
-          }
-          // 都没有：默认 word-list
-          let scopeType = resumeState?.context?.scope || resumeState?.context?.scopeType || readingProgress?.status || 'all'
-          const currentIndex = resumeState?.context?.index || resumeState?.context?.currentIndex || 0
-
-          // 🔧 检查所选 scope 是否有单词，如果没有则回退到 'all'
-          const bookScopeStats = scopeStatsMap[book.id]
-          if (bookScopeStats && scopeType !== 'all') {
-            const scopeWordCount = bookScopeStats[scopeType] || 0
-            if (scopeWordCount === 0) {
-              scopeType = 'all'
+            if (hasValidPracticeMode && hasValidReadingProgress) {
+              if (resumeStateTime > 0 && readingProgressTime > 0) {
+                currentMode = resumeStateTime >= readingProgressTime
+                  ? (resumeState?.mode || 'word-list')
+                  : 'word-list'
+                currentModeTime = Math.max(resumeStateTime, readingProgressTime)
+              } else if (resumeStateTime > 0) {
+                currentMode = resumeState?.mode || 'word-list'
+                currentModeTime = resumeStateTime
+              }
+            } else if (hasValidPracticeMode) {
+              currentMode = resumeState?.mode || 'word-list'
+              currentModeTime = resumeStateTime
+            } else if (hasValidReadingProgress) {
+              currentMode = 'word-list'
+              currentModeTime = readingProgressTime
             }
           }
 
-          // 生成 continue URL
-          // ✅ 对于 word-list 模式，不添加参数到URL，让恢复对话框自然触发
-          // 对于练习模式（flashcards/dictation/typing），直接跳转到断点
-          let continueURL = `/library/${book.id}`  // 默认跳转到词书详情页
+          // 2. 添加当前活动模式的卡片
+          if (currentModeTime > 0) {
+            const scopeType = resumeState?.context?.scope || resumeState?.context?.scopeType || readingProgress?.status || 'all'
+            const currentIndex = resumeState?.context?.index || resumeState?.context?.currentIndex || 0
 
-          if (hasValidReadingProgress || hasValidResumeState) {
+            // 检查所选 scope 是否有单词
+            const bookScopeStats = scopeStatsMap[book.id]
+            let finalScopeType = scopeType
+            if (bookScopeStats && scopeType !== 'all') {
+              const scopeWordCount = bookScopeStats[scopeType] || 0
+              if (scopeWordCount === 0) {
+                finalScopeType = 'all'
+              }
+            }
+
+            // 生成 continue URL
+            let continueURL = `/library/${book.id}`
+            if (currentMode === 'word-list') {
+              continueURL = `/library/${book.id}`
+            } else if (currentMode === 'flashcards') {
+              const hash = `#word-${currentIndex}`
+              continueURL = `/study/${book.id}/flashcards?scope=${finalScopeType}${hash}`
+            } else if (currentMode === 'dictation') {
+              const hash = `#word-${currentIndex}`
+              continueURL = `/study/${book.id}/dictation?scope=${finalScopeType}&resume=true${hash}`
+            } else if (currentMode === 'typing') {
+              continueURL = `/practice?bookId=${book.id}&scope=${finalScopeType}`
+            }
+
+            flattenedCards.push({
+              bookId: book.id,
+              bookTitle: book.title,
+              mode: currentMode,
+              progress,
+              scopeType: finalScopeType,
+              currentIndex,
+              totalWords,
+              learnedCount,
+              lastStudyTime: currentModeTime,
+              continueURL
+            })
+          }
+
+          // 3. 展平 last_resume_summary，为每个模式生成独立卡片
+          const resumeSummary = book.last_resume_summary || {}
+          const supportedModes = ['word-list', 'flashcards', 'dictation', 'match-game', 'typing']
+
+          for (const mode of supportedModes) {
+            const summary = resumeSummary[mode]
+            if (!summary) continue
+
+            // 跳过当前活动模式（已经添加过了）
+            if (mode === currentMode) continue
+
+            const { updatedAt, scopeType, currentIndex, totalWords: summaryTotalWords } = summary
+            if (!updatedAt) continue
+
+            // 检查所选 scope 是否有单词
+            const bookScopeStats = scopeStatsMap[book.id]
+            let finalScopeType = scopeType
+            if (bookScopeStats && scopeType !== 'all') {
+              const scopeWordCount = bookScopeStats[scopeType] || 0
+              if (scopeWordCount === 0) {
+                finalScopeType = 'all'
+              }
+            }
+
+            // 生成 continue URL
+            let continueURL = `/library/${book.id}`
             if (mode === 'word-list') {
-              // ✅ word-list模式：不添加任何参数，让页面显示恢复对话框
-              // 用户可以选择"继续学习"或"从头开始"
               continueURL = `/library/${book.id}`
             } else if (mode === 'flashcards') {
-              // ✅ 使用 hash 传递 index（修复断点跳转）
-              // 🔥 修复：移除 shuffle=true，避免每次刷新都重新打乱顺序导致 index 失效
               const hash = `#word-${currentIndex}`
-              continueURL = `/study/${book.id}/flashcards?scope=${scopeType}${hash}`
+              continueURL = `/study/${book.id}/flashcards?scope=${finalScopeType}${hash}`
             } else if (mode === 'dictation') {
-              // ✅ 使用 hash 传递 index，并添加 scope（修复断点跳转）
-              // 🔥 修复：添加 resume=true 参数，确保页面能正确恢复进度
               const hash = `#word-${currentIndex}`
-              continueURL = `/study/${book.id}/dictation?scope=${scopeType}&resume=true${hash}`
+              continueURL = `/study/${book.id}/dictation?scope=${finalScopeType}&resume=true${hash}`
             } else if (mode === 'typing') {
-              // ⚠️ 打字游戏暂不支持断点续做，只传 scope
-              continueURL = `/practice?bookId=${book.id}&scope=${scopeType}`
+              continueURL = `/practice?bookId=${book.id}&scope=${finalScopeType}`
             }
-          }
 
-          return {
-            bookId: book.id,
-            bookTitle: book.title,
-            mode,
-            progress,
-            scopeType,
-            currentIndex,
-            totalWords,
-            learnedCount,  // ✅ 添加已学习词数
-            lastStudyTime: new Date(book.last_accessed_at || Date.now()).getTime(),
-            continueURL
+            flattenedCards.push({
+              bookId: book.id,
+              bookTitle: book.title,
+              mode: mode as any,
+              progress,
+              scopeType: finalScopeType,
+              currentIndex,
+              totalWords: summaryTotalWords || totalWords,
+              learnedCount,
+              lastStudyTime: updatedAt,
+              continueURL
+            })
           }
-        })
+        }
+
+        // 4. 按 lastStudyTime 降序排序，取前3个
+        progressCards = flattenedCards
+          .sort((a, b) => b.lastStudyTime - a.lastStudyTime)
+          .slice(0, 3)
+          .map(card => ({
+            ...card,
+            _uniqueKey: `${card.bookId}-${card.mode}` // 添加唯一标识符
+          }))
       }
 
       console.log('=== progressCards 生成了 ===', { length: progressCards.length, cards: progressCards.map(c => ({ bookId: c.bookId, mode: c.mode, progress: c.progress })) })
