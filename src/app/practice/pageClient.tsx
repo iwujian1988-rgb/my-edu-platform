@@ -58,7 +58,6 @@ import {
 import { SettingsModal } from './SettingsModal'
 import { ShortcutsModal } from './ShortcutsModal'
 import { Popover } from './Popover'
-import { getTTSEngine } from './tts-engine'
 import { PronunciationPanel } from './PronunciationPanel'
 import { useTTS } from '@/hooks/use-tts'
 import { SoundEffectPanel } from './SoundEffectPanel'
@@ -195,9 +194,6 @@ function QwertyPracticePage() {
   // ==================== 计时器状态 ====================
   const [elapsedTime, setElapsedTime] = useState(0)
   const timerRef = useRef<NodeJS.Timeout | null>(null)
-
-  // ==================== TTS 引擎初始化 ====================
-  const ttsEngine = useRef(getTTSEngine())
 
   // ==================== 使用高质量TTS Hook ====================
   // 动态映射 pronunciationScheme 到 type 参数
@@ -856,7 +852,6 @@ function QwertyPracticePage() {
         clearInterval(timerRef.current)
         timerRef.current = null
       }
-      ttsEngine.current.cancel()
 
       // 清理 AudioContext
       if (audioContextRef.current) {
