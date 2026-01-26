@@ -210,6 +210,23 @@ function QwertyPracticePage() {
     showFallbackToast: false  // 不显示toast，避免干扰打字
   })
 
+  // ==================== 防挫败机制状态 ====================
+  const [isSpecialReviewMode, setIsSpecialReviewMode] = useState(false)
+  const [specialReviewWords, setSpecialReviewWords] = useState<string[]>([])
+
+  // ==================== 当前数据（必须在 useEffect 之前定义）====================
+  const currentDict = availableDicts.find((d) => d.id === state.currentDict) || availableDicts[0]
+
+  const currentWord = useMemo(() => {
+    if (isSpecialReviewMode) {
+      return currentDict?.words.find((w) => w.word === specialReviewWords[state.currentIndex])
+    }
+    return currentDict?.words?.[state.currentIndex]
+  }, [isSpecialReviewMode, specialReviewWords, state.currentIndex, currentDict])
+
+  const currentTrans = currentWord?.trans || ''
+  const currentWordStr = currentWord?.word || ''
+
   // ==================== 音频预加载：提前加载未来2-3个单词 ====================
   useEffect(() => {
     // ========== 边界检查 ==========
@@ -275,24 +292,6 @@ function QwertyPracticePage() {
 
   // ==================== 错题本 Hook ====================
   const mistakeBook = useMistakeBook()
-
-  // ==================== 防挫败机制状态 ====================
-  const [isSpecialReviewMode, setIsSpecialReviewMode] = useState(false) // 是否为错题专项练习模式
-  const [specialReviewWords, setSpecialReviewWords] = useState<string[]>([]) // 专项练习单词列表
-
-  // ==================== 当前数据（必须在 useCallback 之前定义）====================
-  const currentDict = availableDicts.find((d) => d.id === state.currentDict) || availableDicts[0]
-
-  // 使用 useMemo 缓存当前单词，避免对象引用变化
-  const currentWord = useMemo(() => {
-    if (isSpecialReviewMode) {
-      return currentDict?.words.find((w) => w.word === specialReviewWords[state.currentIndex])
-    }
-    return currentDict?.words[state.currentIndex]
-  }, [isSpecialReviewMode, specialReviewWords, state.currentIndex, currentDict])
-
-  const currentTrans = currentWord?.trans || ''
-  const currentWordStr = currentWord?.word || '' // 用于依赖项的稳定字符串
 
   // ==================== 窗口大小监听（响应式字号）====================
   useEffect(() => {
