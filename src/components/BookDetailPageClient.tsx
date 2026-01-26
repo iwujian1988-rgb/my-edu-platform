@@ -1168,12 +1168,12 @@ export function BookDetailPageClient({
             */}
 
             {/* 学习小贴士 - 左对齐，底部对齐 */}
-            <div className="flex flex-col items-start gap-1 shrink-0">
+            <div className="flex flex-col items-start gap-1 shrink-0 max-w-[200px] md:max-w-[250px]">
               <div className="flex items-start gap-1.5">
                 <Lightbulb className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#FACC15] shrink-0 mt-0.5 dark:text-yellow-400 dark:drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" strokeWidth={2.5} />
-                <div className="flex flex-col gap-1">
+                <div className="flex flex-col gap-1 min-w-0">
                   <p className="text-[10px] md:text-xs font-bold text-gray-600 dark:text-gray-400 leading-tight">学习小贴士</p>
-                  <p className="text-[10px] md:text-xs font-bold text-gray-600 dark:text-gray-400 leading-tight whitespace-nowrap">{randomTip}</p>
+                  <p className="text-[10px] md:text-xs font-bold text-gray-600 dark:text-gray-400 leading-tight">{randomTip}</p>
                 </div>
               </div>
             </div>
