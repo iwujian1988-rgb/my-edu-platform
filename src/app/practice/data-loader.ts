@@ -70,9 +70,10 @@ export async function loadAPIDict(bookId: string, scope?: string, startIndex?: n
 
     // 根据startIndex决定初始加载的单词数量和页码
     // 如果从中间开始学习，需要加载该位置附近的单词
-    const initialSize = 500
-    const offset = startIndex && startIndex > 250 ? Math.max(0, startIndex - 250) : 0
-    const pageSize = startIndex && startIndex > 250 ? 500 : initialSize
+    // ✅ 优化：降低初始加载数量避免超时，通过渐进式加载补充
+    const initialSize = 50
+    const offset = startIndex && startIndex > 25 ? Math.max(0, startIndex - 25) : 0
+    const pageSize = startIndex && startIndex > 25 ? 50 : initialSize
     // API使用page参数（从1开始），不是offset
     const page = Math.floor(offset / pageSize) + 1
 

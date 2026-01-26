@@ -141,6 +141,12 @@ function QwertyPracticePage() {
   const [showBookSelector, setShowBookSelector] = useState(false)
   const [userId, setUserId] = useState<string | undefined>(undefined)
   const [showStartOverlay, setShowStartOverlay] = useState(true) // 开始遮罩
+
+  // ✅ 渐进式加载状态
+  const [isLoadingMore, setIsLoadingMore] = useState(false)
+  const [loadedWordCount, setLoadedWordCount] = useState(0) // 已加载的单词总数
+  const [totalWordCount, setTotalWordCount] = useState(0) // 词库总单词数（如果知道的话）
+  const isLoadingMoreRef = useRef(false) // 防止重复加载
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1200) // 窗口宽度
   const [controlBarExpanded, setControlBarExpanded] = useState(false) // 控制栏展开状态（默认折叠）
 
@@ -569,6 +575,9 @@ function QwertyPracticePage() {
 
         console.log('[Loading] About to set isLoading to false')
         setIsLoading(false)
+
+        // ✅ 初始化渐进式加载状态
+        setLoadedWordCount(finalDict.words.length)
         console.log('[Loading] isLoading set to false - component should re-render')
       } catch (error) {
         console.error('Error loading data:', error)
@@ -579,6 +588,64 @@ function QwertyPracticePage() {
 
     loadData()
   }, [urlBookId, urlScope])
+
+  // ✅ 渐进式加载：当接近已加载单词末尾时，自动加载下一批
+  const loadMoreWords = useCallback(async () => {
+    // 防止重复加载
+    if (isLoadingMoreRef.current || isLoadingMore) {
+      console.log('[渐进式加载] 已在加载中，跳过')
+      return
+    }
+
+    const currentDict = availableDicts[0]
+    if (!currentDict) return
+
+    const startIndex = loadedWordCount
+    console.log('[渐进式加载] 开始加载更多单词，从索引:', startIndex)
+
+    isLoadingMoreRef.current = true
+    setIsLoadingMore(true)
+
+    try {
+      // 加载下一批50个单词
+      const moreDict = await loadDict(urlBookId, urlScope, startIndex)
+
+      if (moreDict.words.length > 0) {
+        // 追加新单词到现有词库
+        const updatedDict = {
+          ...currentDict,
+          words: [...currentDict.words, ...moreDict.words]
+        }
+
+        setAvailableDicts([updatedDict])
+        setLoadedWordCount(startIndex + moreDict.words.length)
+
+        console.log('[渐进式加载] 成功加载', moreDict.words.length, '个单词，总计', loadedWordCount + moreDict.words.length)
+      } else {
+        console.log('[渐进式加载] 没有更多单词了')
+        setTotalWordCount(loadedWordCount) // 设置总数
+      }
+    } catch (error) {
+      console.error('[渐进式加载] 加载失败:', error)
+    } finally {
+      isLoadingMoreRef.current = false
+      setIsLoadingMore(false)
+    }
+  }, [availableDicts, loadedWordCount, urlBookId, urlScope, isLoadingMore])
+
+  // 监听currentIndex，当接近已加载单词末尾时触发加载
+  useEffect(() => {
+    if (!availableDicts[0]) return
+
+    const currentDict = availableDicts[0]
+    const wordsRemaining = currentDict.words.length - state.currentIndex
+
+    // 当剩余单词少于10个时，触发自动加载
+    if (wordsRemaining <= 10 && wordsRemaining > 0 && !isLoadingMore && !isLoadingMoreRef.current) {
+      console.log('[渐进式加载] 剩余', wordsRemaining, '个单词，触发加载')
+      loadMoreWords()
+    }
+  }, [state.currentIndex, availableDicts, isLoadingMore, loadMoreWords])
 
   // ==================== localStorage 持久化 ====================
 
