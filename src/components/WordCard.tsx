@@ -2,7 +2,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { Volume2, Eye, EyeOff } from 'lucide-react'
-import { speak, initializeTTS, stopSpeaking } from '@/lib/speech'
+import { useTTS } from '@/hooks/use-tts'
 import { stripHtmlTags } from '@/lib/utils/text'
 import { useTheme } from '@/contexts/ThemeContext'
 
@@ -20,6 +20,7 @@ interface Word {
   example_sentence_en: string
   part_of_speech: string
   status: 'known' | 'fuzzy' | 'unknown' | 'new'
+  audio_url?: string | null
 }
 
 interface WordCardProps {
@@ -34,12 +35,14 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
   const { theme, mounted } = useTheme()
   const isDark = mounted && theme === 'dark'
 
+  // 使用 TTS Hook
+  const { play, isPlaying, isLoading } = useTTS({ type: '2' })
+
   // 调试日志
   console.log(`🎨 [WordCard ${word.word}] theme:`, theme, 'isDark:', isDark)
 
   // 初始状态根据全局设置：如果全局隐藏，则默认不显示；否则显示
   const [showDefinition, setShowDefinition] = useState(!globalHideChinese)
-  const [isPlaying, setIsPlaying] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false)
 
   // 调试：渲染时输出
@@ -131,34 +134,13 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
       .join(', ')
   }
 
-  // 发音功能 - 支持单词、搭配、例句（使用新的TTS工具）
-  const handleSpeak = async (text: string) => {
-    // 确保TTS已初始化
-    if (!(await initializeTTS())) {
-      console.warn('⚠️ WordCard: TTS initialization failed')
-      return
+  // 发音功能 - 使用新的 TTS Hook
+  const handleSpeak = async (text: string, audioUrl?: string | null) => {
+    try {
+      await play(text, audioUrl)
+    } catch (error) {
+      console.error('❌ WordCard: 播放失败', error)
     }
-
-    setIsPlaying(true)
-
-    // 使用新的speak函数
-    speak(text, {
-      lang: 'en-US',
-      rate: 1.0,
-      pitch: 1.0,
-      volume: 1.0,
-      onStart: () => {
-        console.log('✅ WordCard: Speech STARTED for', text)
-      },
-      onEnd: () => {
-        console.log('✅ WordCard: Speech ENDED for', text)
-        setIsPlaying(false)
-      },
-      onError: (event) => {
-        console.error('❌ WordCard: Speech error', event.error)
-        setIsPlaying(false)
-      }
-    })
   }
 
   // 状态标记
@@ -204,9 +186,11 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                 </h3>
                 {/* 单词发音按钮 - 小图标 */}
                 <button
-                  onClick={() => handleSpeak(word.word)}
-                  disabled={isPlaying}
-                  className="text-gray-400 hover:text-gray-600 transition-colors"
+                  onClick={() => handleSpeak(word.word, word.audio_url)}
+                  disabled={isLoading}
+                  className={`transition-colors ${
+                    isPlaying ? 'text-green-600' : 'text-gray-400 hover:text-gray-600'
+                  }`}
                   title="朗读单词"
                 >
                   <Volume2 className="w-4 h-4" />
@@ -279,8 +263,10 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                     </p>
                     <button
                       onClick={() => handleSpeak(word.collocation_en)}
-                      disabled={isPlaying}
-                      className="text-blue-400 hover:text-blue-600 transition-colors"
+                      disabled={isLoading}
+                      className={`transition-colors ${
+                        isPlaying ? 'text-green-600' : 'text-blue-400 hover:text-blue-600'
+                      }`}
                       title="朗读搭配"
                     >
                       <Volume2 className="w-4 h-4" />
@@ -327,8 +313,10 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                     </p>
                     <button
                       onClick={() => handleSpeak(word.example_sentence_en)}
-                      disabled={isPlaying}
-                      className="text-green-400 hover:text-green-600 transition-colors flex-shrink-0 ml-2"
+                      disabled={isLoading}
+                      className={`transition-colors flex-shrink-0 ml-2 ${
+                        isPlaying ? 'text-green-600' : 'text-green-400 hover:text-green-600'
+                      }`}
                       title="朗读例句"
                     >
                       <Volume2 className="w-4 h-4" />

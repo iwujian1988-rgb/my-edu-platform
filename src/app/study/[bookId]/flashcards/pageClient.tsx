@@ -4,7 +4,7 @@ import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import { ArrowLeft, Volume2, ArrowDown } from 'lucide-react'
 import Link from 'next/link'
-import { speak as speakText, initializeTTS } from '@/lib/speech'
+import { useTTS } from '@/hooks/use-tts'
 import { saveResumeState } from '@/lib/resumeState'
 import { PermissionGate } from '@/components/PermissionDisplay'
 import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
@@ -84,6 +84,7 @@ type Word = {
   example_sentence: string
   example_sentence_en: string
   part_of_speech: string
+  audio_url?: string | null
 }
 
 type WordProgress = {
@@ -96,6 +97,9 @@ export default function FlashcardsPageClient() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const bookId = params.bookId as string
+
+  // 使用 TTS Hook
+  const { play: speak, isPlaying, isLoading } = useTTS({ type: '2', showFallbackToast: false })
 
   // ⭐ 智能跳转逻辑：检测 resume 参数
   const isFromHomepageResume = searchParams.get('resume') === 'true'
@@ -436,31 +440,6 @@ export default function FlashcardsPageClient() {
     )
   }
 
-  // Text-to-speech (使用新的TTS工具)
-  const speak = useCallback(async (text: string) => {
-    console.log('========== speak called ==========')
-    console.log('Text:', text)
-
-    if (!text) {
-      console.warn('No text provided for speech')
-      return
-    }
-
-    // 确保TTS已初始化
-    if (!(await initializeTTS())) {
-      console.warn('⚠️ TTS initialization failed')
-      return
-    }
-
-    // 使用新的speak函数
-    speakText(text, {
-      lang: 'en-US',
-      rate: 0.8,
-      pitch: 1.0,
-      volume: 1.0
-    })
-  }, [])
-
   // 批量保存函数
   const flushPendingSaves = useCallback(async (options?: { keepalive?: boolean }) => {
     const pending = { ...pendingSaveRef.current }
@@ -736,7 +715,7 @@ export default function FlashcardsPageClient() {
         // 再次检查用户交互状态和播放状态
         if (hasUserInteractedRef.current && !isSpeakingRef.current) {
           console.log('Auto-speak executing speak() for:', currentWord.word)
-          speak(currentWord.word)
+          speak(currentWord.word, currentWord.audio_url)
         } else {
           console.log('Auto-speak canceled: hasUserInteractedRef=', hasUserInteractedRef.current, 'isSpeakingRef=', isSpeakingRef.current)
         }
@@ -1162,7 +1141,7 @@ export default function FlashcardsPageClient() {
                           if (!hasUserInteracted) {
                             setHasUserInteracted(true)
                           }
-                          speak(currentWord?.word || '')
+                          speak(currentWord?.word || '', currentWord?.audio_url)
                         }}
                         className="w-10 h-10 flex items-center justify-center bg-[#B4F416] border-2 border-black rounded-full shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
                       >
@@ -1257,7 +1236,7 @@ export default function FlashcardsPageClient() {
                           <button
                             onClick={(e) => {
                               e.stopPropagation()
-                              speak(currentWord.example_sentence_en || '')
+                              speak(currentWord.example_sentence_en || '', null)
                             }}
                             className="w-7 h-7 flex items-center justify-center bg-[#B4F416] border-2 border-black rounded-md shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
                           >
@@ -1285,7 +1264,7 @@ export default function FlashcardsPageClient() {
                           <button
                             onClick={(e) => {
                               e.stopPropagation()
-                              speak(currentWord.example_sentence || '')
+                              speak(currentWord.example_sentence || '', null)
                             }}
                             className="w-7 h-7 flex items-center justify-center bg-[#B4F416] border-2 border-black rounded-md shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
                           >

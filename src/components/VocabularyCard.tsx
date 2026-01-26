@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { Volume2, EyeOff, Lightbulb, FileText, Check, HelpCircle, X, ChevronDown } from 'lucide-react'
-import { speak, initializeTTS, stopSpeaking } from '@/lib/speech'
+import { useTTS } from '@/hooks/use-tts'
 import { useScreenOrientation } from '@/hooks/useScreenOrientation'  // 🆕 用于检测竖屏模式
 import { useTheme } from '@/contexts/ThemeContext'
 
@@ -20,6 +20,7 @@ interface Word {
   example_sentence_en: string
   part_of_speech: string
   status: 'known' | 'fuzzy' | 'unknown' | 'new'
+  audio_url?: string | null
 }
 
 interface VocabularyCardProps {
@@ -37,11 +38,13 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   // 🌙 检测主题
   const { theme } = useTheme()
 
+  // 使用 TTS Hook
+  const { play, isPlaying, isLoading } = useTTS({ type: '2' })
+
   // 兼容数据中的 'fuzzy' 或 'unsure'
   const initialStatus = word.status === 'fuzzy' ? 'unsure' : (word.status === 'known' ? 'known' : (word.status === 'unknown' ? 'unknown' : 'unknown'))
   const [status, setStatus] = useState(initialStatus)
   const [showDefinition, setShowDefinition] = useState(!globalHideChinese)
-  const [isPlaying, setIsPlaying] = useState(false)
   const [isExpanded, setIsExpanded] = useState(false) // 展开/收起状态
 
   // 🆕 根据屏幕方向设置卡片高度
@@ -58,26 +61,12 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
     setShowDefinition(!globalHideChinese)
   }, [globalHideChinese])
 
-  // 初始化 TTS
-  useEffect(() => {
-    initializeTTS()
-  }, [])
-
-  // 播放单词发音
+  // 播放单词发音 - 使用 TTS Hook
   const handleSpeak = async () => {
-    if (isPlaying) {
-      stopSpeaking()
-      setIsPlaying(false)
-      return
-    }
-
-    setIsPlaying(true)
     try {
-      await speak(word.word)
+      await play(word.word, word.audio_url)
     } catch (error) {
-      console.error('TTS error:', error)
-    } finally {
-      setIsPlaying(false)
+      console.error('❌ VocabularyCard: 播放失败', error)
     }
   }
 
@@ -210,7 +199,10 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
             <h2 className="text-2xl md:text-3xl font-black tracking-tight transition-colors duration-300 dark:text-white text-black">{data.word}</h2>
             <button
               onClick={handleSpeak}
-              className="w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full border-2 border-black hover:bg-[#B4F416] transition-colors shrink-0"
+              disabled={isLoading}
+              className={`w-5 h-5 md:w-8 md:h-8 flex items-center justify-center rounded-full border-2 border-black transition-all shrink-0 ${
+                isPlaying ? 'bg-[#B4F416]' : 'hover:bg-[#B4F416]'
+              }`}
             >
               <Volume2 size={12} className="md:hidden" strokeWidth={2.5} />
               <Volume2 size={16} className="hidden md:block" strokeWidth={2.5} />

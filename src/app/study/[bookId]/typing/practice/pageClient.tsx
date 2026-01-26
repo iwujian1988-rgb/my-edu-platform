@@ -11,7 +11,6 @@ import { createClient } from '@/lib/supabase/client'
 import { useTypingStore, type ScopeType, type Word } from '@/stores/typingStore'
 import { ArrowLeft, Settings, X, Volume2, RotateCcw, SkipForward, CheckCircle2 } from 'lucide-react'
 import Link from 'next/link'
-import { speak } from '@/lib/speech'
 
 /**
  * 打字练习核心页面
@@ -114,13 +113,33 @@ export default function TypingPracticePageClient() {
 
       // 检查是否完全正确
       if (userInput.toLowerCase() === targetWord) {
-        // 播放发音
-        const lang = settings.pronunciationScheme === 'uk' ? 'en-GB' : 'en-US'
-        speak(currentWord.word, {
-          lang,
-          rate: settings.wordSpeed,
-          volume: settings.wordVolume / 100,
-        })
+        // 播放发音（调用混合TTS API）
+        const type = settings.pronunciationScheme === 'uk' ? '1' : '2'
+        const apiUrl = `/api/tts?text=${encodeURIComponent(currentWord.word)}&type=${type}`
+
+        // 异步播放，不阻塞主流程
+        fetch(apiUrl)
+          .then(response => {
+            if (response.ok) {
+              return response.blob()
+            }
+            throw new Error('API request failed')
+          })
+          .then(blob => {
+            const audioUrl = URL.createObjectURL(blob)
+            const audio = new Audio(audioUrl)
+            audio.play().catch(err => console.error('播放失败:', err))
+            audio.onended = () => URL.revokeObjectURL(audioUrl)
+          })
+          .catch(err => {
+            console.warn('TTS API 失败，使用浏览器TTS:', err)
+            // Fallback: 使用浏览器原生 TTS
+            const utterance = new SpeechSynthesisUtterance(currentWord.word)
+            utterance.lang = type === '1' ? 'en-GB' : 'en-US'
+            utterance.rate = settings.wordSpeed
+            utterance.volume = settings.wordVolume / 100
+            window.speechSynthesis.speak(utterance)
+          })
       }
     }
   }, [currentSession.userInput, currentSession.words, currentSession.currentWordIndex, settings])

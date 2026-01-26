@@ -108,24 +108,17 @@ export class TTSEngine {
   }
 
   /**
-   * 播放语音
+   * 播放语音（使用混合TTS策略）
+   *
+   * 策略：
+   * 1. 优先调用 /api/tts（有道API + OSS缓存）
+   * 2. 失败时回退到 Web Speech API
    *
    * @param text - 要朗读的文本
    * @param options - TTS 配置选项
    * @returns Promise，朗读完成时 resolve
    */
   async speak(text: string, options: Partial<TTSOptions> = {}): Promise<void> {
-    if (!this.synth) {
-      console.warn('[TTSEngine] Browser does not support speechSynthesis')
-      return
-    }
-
-    // 取消当前正在播放的语音（避免重叠）
-    this.synth.cancel()
-
-    // 创建语音实例
-    const utterance = new SpeechSynthesisUtterance(text)
-
     // 应用配置
     const config: TTSOptions = {
       volume: options.volume ?? 1.0,
@@ -134,32 +127,95 @@ export class TTSEngine {
       locale: options.locale ?? 'auto',
     }
 
-    utterance.volume = Math.max(0, Math.min(1, config.volume))
-    utterance.rate = Math.max(0.1, Math.min(10, config.rate))
-    utterance.pitch = Math.max(0, Math.min(2, config.pitch))
+    // 将 locale 转换为 type 参数（1=英音, 2=美音）
+    const type = config.locale === 'uk' ? '1' : '2'
 
-    // 选择声音
-    const voice = this.selectVoice(config.locale)
-    if (voice) {
-      utterance.voice = voice
+    console.log(`[TTSEngine] 播放语音: "${text}" (type=${type})`)
+
+    try {
+      // 策略 1: 调用 /api/tts（有道API + OSS缓存）
+      const apiUrl = `/api/tts?text=${encodeURIComponent(text)}&type=${type}`
+      console.log(`[TTSEngine] 尝试从 API 获取: ${apiUrl}`)
+
+      const response = await fetch(apiUrl)
+
+      if (response.ok) {
+        console.log(`[TTSEngine] API 响应成功，播放音频`)
+
+        // 播放音频
+        const blob = await response.blob()
+        const audioUrl = URL.createObjectURL(blob)
+
+        return new Promise((resolve, reject) => {
+          const audio = new Audio(audioUrl)
+
+          audio.onended = () => {
+            this.isSpeaking = false
+            URL.revokeObjectURL(audioUrl)
+            console.log(`[TTSEngine] 音频播放完成`)
+            resolve()
+          }
+
+          audio.onerror = (event) => {
+            this.isSpeaking = false
+            URL.revokeObjectURL(audioUrl)
+            console.error(`[TTSEngine] 音频播放失败，回退到 Web Speech API`, event)
+            reject(new Error('Audio playback failed'))
+          }
+
+          this.isSpeaking = true
+          audio.play().catch((err) => {
+            this.isSpeaking = false
+            URL.revokeObjectURL(audioUrl)
+            console.error(`[TTSEngine] audio.play() 失败，回退到 Web Speech API`, err)
+            reject(err)
+          })
+        })
+      } else {
+        throw new Error(`API request failed: ${response.status}`)
+      }
+    } catch (error) {
+      console.warn(`[TTSEngine] API 请求失败，回退到 Web Speech API:`, error)
+
+      // 策略 2: 回退到 Web Speech API
+      if (!this.synth) {
+        console.warn('[TTSEngine] Browser does not support speechSynthesis')
+        return
+      }
+
+      // 取消当前正在播放的语音（避免重叠）
+      this.synth.cancel()
+
+      // 创建语音实例
+      const utterance = new SpeechSynthesisUtterance(text)
+
+      utterance.volume = Math.max(0, Math.min(1, config.volume))
+      utterance.rate = Math.max(0.1, Math.min(10, config.rate))
+      utterance.pitch = Math.max(0, Math.min(2, config.pitch))
+
+      // 选择声音
+      const voice = this.selectVoice(config.locale)
+      if (voice) {
+        utterance.voice = voice
+      }
+
+      // 返回 Promise（异步不阻塞主线程）
+      return new Promise((resolve) => {
+        utterance.onend = () => {
+          this.isSpeaking = false
+          resolve()
+        }
+
+        utterance.onerror = (event) => {
+          this.isSpeaking = false
+          console.error('[TTSEngine] Speech error:', event.error)
+          resolve() // 即使错误也 resolve，避免阻塞
+        }
+
+        this.isSpeaking = true
+        this.synth!.speak(utterance)
+      })
     }
-
-    // 返回 Promise（异步不阻塞主线程）
-    return new Promise((resolve) => {
-      utterance.onend = () => {
-        this.isSpeaking = false
-        resolve()
-      }
-
-      utterance.onerror = (event) => {
-        this.isSpeaking = false
-        console.error('[TTSEngine] Speech error:', event.error)
-        resolve() // 即使错误也 resolve，避免阻塞
-      }
-
-      this.isSpeaking = true
-      this.synth!.speak(utterance)
-    })
   }
 
   /**

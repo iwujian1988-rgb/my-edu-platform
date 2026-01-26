@@ -1,0 +1,107 @@
+/**
+ * 阿里云 OSS 客户端工具
+ * 用于上传和管理 TTS 音频文件
+ */
+
+import OSS from 'ali-oss'
+
+// OSS 客户端单例
+let ossClient: OSS | null = null
+
+/**
+ * 获取 OSS 客户端实例（单例模式）
+ */
+export function getOSSClient(): OSS {
+  if (!ossClient) {
+    const config = {
+      region: process.env.ALIYUN_OSS_REGION,
+      accessKeyId: process.env.ALIYUN_OSS_ACCESS_KEY_ID,
+      accessKeySecret: process.env.ALIYUN_OSS_ACCESS_KEY_SECRET,
+      bucket: process.env.ALIYUN_OSS_BUCKET,
+    }
+
+    // 验证必需配置
+    if (!config.region || !config.accessKeyId || !config.accessKeySecret || !config.bucket) {
+      throw new Error('OSS 配置不完整，请检查环境变量')
+    }
+
+    ossClient = new OSS(config)
+  }
+
+  return ossClient
+}
+
+/**
+ * 生成安全的文件名（移除特殊字符）
+ * @param text - 原始文本
+ * @param type - 发音类型 (1=英音, 2=美音)
+ * @returns 安全的文件名
+ */
+export function generateSafeFileName(text: string, type: string): string {
+  // 移除特殊字符，只保留字母、数字、连字符和空格
+  let safeName = text.toLowerCase()
+    .replace(/[^a-z0-9\s-]/g, '_')  // 特殊字符替换为下划线
+    .replace(/\s+/g, '_')            // 空格替换为下划线
+    .substring(0, 100)                // 限制长度为100字符
+
+  // 添加类型后缀
+  const typeSuffix = type === '1' ? 'uk' : 'us'
+
+  return `${safeName}_${typeSuffix}.mp3`
+}
+
+/**
+ * 上传音频到 OSS
+ * @param buffer - 音频数据 Buffer
+ * @param fileName - 文件名
+ * @returns OSS 文件公开访问的完整 URL
+ */
+export async function uploadAudioToOSS(
+  buffer: Buffer,
+  fileName: string
+): Promise<string> {
+  try {
+    const client = getOSSClient()
+
+    // 上传到 /audio/ 目录
+    const objectKey = `audio/${fileName}`
+
+    console.log(`📤 [OSS] 上传音频: ${objectKey} (${buffer.length} bytes)`)
+
+    const result = await client.put(objectKey, buffer)
+
+    console.log(`✅ [OSS] 上传成功: ${result.url}`)
+
+    // 构建完整的公开访问 URL
+    // 格式: https://{bucket}.{region}.aliyuncs.com/{objectKey}
+    const publicUrl = `https://${client.options.bucket}.${client.options.region}.aliyuncs.com/${objectKey}`
+
+    console.log(`✅ [OSS] 公开 URL: ${publicUrl}`)
+
+    return publicUrl
+  } catch (error) {
+    console.error('❌ [OSS] 上传失败:', error)
+    throw error
+  }
+}
+
+/**
+ * 异步上传音频（不阻塞响应）
+ * @param buffer - 音频数据
+ * @param fileName - 文件名
+ * @returns Promise<string> OSS URL
+ */
+export async function uploadAudioAsync(
+  buffer: Buffer,
+  fileName: string
+): Promise<string> {
+  return uploadAudioToOSS(buffer, fileName)
+}
+
+/**
+ * 确保音频目录存在（OSS 不需要预先创建目录）
+ */
+export function ensureAudioDirectory(): void {
+  // OSS 不需要预先创建目录，直接上传即可
+  console.log('✅ [OSS] 音频目录准备就绪: /audio/')
+}
