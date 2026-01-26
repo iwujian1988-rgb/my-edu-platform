@@ -22,10 +22,10 @@ import {
   Volume2
 } from 'lucide-react'
 import Link from 'next/link'
-import { speak as speakText, pauseSpeaking } from '@/lib/speech'
 import { PermissionGate } from '@/components/PermissionDisplay'
 import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
 import { validateScope, validateHashIndex } from '@/lib/urlValidation'
+import { useTTS } from '@/hooks/use-tts'
 
 // Hooks
 import { useDictationStats } from '@/hooks/useDictationStats'
@@ -51,6 +51,7 @@ type Word = {
   example_sentence: string
   example_sentence_en: string
   part_of_speech: string
+  audio_url?: string | null  // TTS音频URL（OSS缓存）
 }
 
 /**
@@ -208,6 +209,12 @@ export default function DictationPageClient() {
     return 'all'
   })
   const [hasSelectedScope, setHasSelectedScope] = useState(isFromHomepageResume) // ⭐ 从首页进入时标记为已选择
+
+  // TTS Hook（有道API + OSS缓存）
+  const { play: speak, stop: stopSpeaking, isPlaying: ttsIsPlaying, isLoading: ttsIsLoading } = useTTS({
+    type: '2', // 美音
+    showFallbackToast: false // 听写页面不需要显示fallback提示
+  })
 
   // Hooks
   const { stats, loading: statsLoading, getScopeOptions } = useDictationStats(bookId)
@@ -447,18 +454,9 @@ export default function DictationPageClient() {
 
     setIsPlaying(true)
     try {
-      await speakText(currentWord.word, {
-        lang: 'en-US',
-        rate: 0.8,
-        pitch: 1.0,
-        volume: 1.0,
-        onEnd: () => {
-          setIsPlaying(false)
-        },
-        onError: () => {
-          setIsPlaying(false)
-        }
-      })
+      // 使用新的 TTS Hook（有道API + OSS缓存 + Web Speech降级）
+      await speak(currentWord.word, currentWord.audio_url)
+      setIsPlaying(false)
     } catch (error) {
       console.error('播放发音失败:', error)
       setIsPlaying(false)
@@ -467,7 +465,7 @@ export default function DictationPageClient() {
 
   // 暂停播放
   const handlePause = () => {
-    pauseSpeaking()
+    stopSpeaking()
     setIsPlaying(false)
   }
 

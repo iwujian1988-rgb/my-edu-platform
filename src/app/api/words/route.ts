@@ -265,7 +265,7 @@ export async function GET(request: NextRequest) {
 
         const { data: pagedWords, error: pagedError, count } = await supabase
           .from('words')
-          .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id', { count: 'exact' })
+          .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id, audio_url', { count: 'exact' })
           .in('chapter_id', chapterIds)
           .order('order_index', { ascending: true })
           .range(offset, offset + pageSize - 1)
@@ -317,7 +317,7 @@ export async function GET(request: NextRequest) {
             const { data: moreWords, error: moreError } = await withTimeout(
               supabase
                 .from('words')
-                .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id')
+                .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id, audio_url')
                 .in('chapter_id', chapterIds)
                 .order('order_index', { ascending: true })
                 .range(currentOffset, currentOffset + pageSize - 1),
@@ -380,7 +380,7 @@ export async function GET(request: NextRequest) {
         const chapterIdsFallback = chaptersData.map((c: any) => c.id)
         const { data: fallbackWords, error: fallbackError } = await supabase
           .from('words')
-          .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id')
+          .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id, audio_url')
           .in('chapter_id', chapterIdsFallback)
           .order('order_index', { ascending: true })
           .range(offset, offset + pageSize - 1)
