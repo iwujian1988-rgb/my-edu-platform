@@ -50,26 +50,45 @@ export async function loadLocalDict(): Promise<Dict> {
  */
 export async function loadAPIDict(bookId: string, scope?: string, startIndex?: number): Promise<Dict> {
   try {
-    // 获取单词书信息
-    const bookRes = await fetch(`/api/books/${bookId}`)
-    if (!bookRes.ok) throw new Error('Failed to fetch book')
-    const bookData = await bookRes.json()
+    console.log('[API Dict] 开始加载词库数据', { bookId, scope, startIndex })
 
-    // 根据startIndex决定初始加载的单词数量
+    // 获取单词书信息（添加超时）
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 30000) // 30秒超时
+
+    const bookRes = await fetch(`/api/books/${bookId}`, {
+      signal: controller.signal
+    })
+    clearTimeout(timeoutId)
+
+    if (!bookRes.ok) {
+      console.error('[API Dict] 获取单词书信息失败', { status: bookRes.status })
+      throw new Error('Failed to fetch book')
+    }
+    const bookData = await bookRes.json()
+    console.log('[API Dict] 单词书信息获取成功', { title: bookData.title })
+
+    // 根据startIndex决定初始加载的单词数量和页码
     // 如果从中间开始学习，需要加载该位置附近的单词
     const initialSize = 500
     const offset = startIndex && startIndex > 250 ? Math.max(0, startIndex - 250) : 0
     const pageSize = startIndex && startIndex > 250 ? 500 : initialSize
+    // API使用page参数（从1开始），不是offset
+    const page = Math.floor(offset / pageSize) + 1
 
     // 获取单词列表 - 根据不同范围加载
     let wordsRes
     if (scope === 'mistakes') {
-      console.error('[数据加载] 开始加载错题本数据', { bookId })
+      console.log('[API Dict] 开始加载错题本数据', { bookId })
 
       // 1. 用户认证检查（卫语句 + JSON解析保护）
-      const userRes = await fetch('/api/auth/user')
+      const userController = new AbortController()
+      const userTimeoutId = setTimeout(() => userController.abort(), 10000) // 10秒超时
+      const userRes = await fetch('/api/auth/user', { signal: userController.signal })
+      clearTimeout(userTimeoutId)
+
       if (!userRes.ok) {
-        console.error('[数据加载] 用户认证失败', { status: userRes.status })
+        console.error('[API Dict] 用户认证失败', { status: userRes.status })
         throw new Error('用户未登录，请先登录')
       }
 
@@ -77,21 +96,27 @@ export async function loadAPIDict(bookId: string, scope?: string, startIndex?: n
       try {
         userData = await userRes.json()
       } catch (parseError) {
-        console.error('[数据加载] 用户数据JSON解析失败', { parseError })
+        console.error('[API Dict] 用户数据JSON解析失败', { parseError })
         throw new Error('用户数据格式错误')
       }
 
       if (!userData || !userData.id) {
-        console.error('[数据加载] 用户数据无效', { userData })
+        console.error('[API Dict] 用户数据无效', { userData })
         throw new Error('用户数据无效')
       }
 
-      console.error('[数据加载] 用户认证通过', { userId: userData.id })
+      console.log('[API Dict] 用户认证通过', { userId: userData.id })
 
       // 2. 获取错题列表（卫语句 + JSON解析保护）
-      const mistakesRes = await fetch(`/api/mistakes?bookId=${bookId}`)
+      const mistakesController = new AbortController()
+      const mistakesTimeoutId = setTimeout(() => mistakesController.abort(), 20000) // 20秒超时
+      const mistakesRes = await fetch(`/api/mistakes?bookId=${bookId}`, {
+        signal: mistakesController.signal
+      })
+      clearTimeout(mistakesTimeoutId)
+
       if (!mistakesRes.ok) {
-        console.error('[数据加载] 错题API调用失败', { status: mistakesRes.status })
+        console.error('[API Dict] 错题API调用失败', { status: mistakesRes.status })
         throw new Error('获取错题列表失败，请稍后重试')
       }
 
@@ -99,21 +124,21 @@ export async function loadAPIDict(bookId: string, scope?: string, startIndex?: n
       try {
         mistakesData = await mistakesRes.json()
       } catch (parseError) {
-        console.error('[数据加载] 错题数据JSON解析失败', { parseError })
+        console.error('[API Dict] 错题数据JSON解析失败', { parseError })
         throw new Error('错题数据格式错误')
       }
 
       if (!mistakesData || !Array.isArray(mistakesData.data)) {
-        console.error('[数据加载] 错题数据格式错误', { mistakesData })
+        console.error('[API Dict] 错题数据格式错误', { mistakesData })
         throw new Error('错题数据格式错误')
       }
 
       const wordIds = mistakesData.data.map((m: any) => m.word_id).filter(Boolean)
-      console.error('[数据加载] 错题数据解析成功', { totalMistakes: mistakesData.data.length, validWordIds: wordIds.length })
+      console.log('[API Dict] 错题数据解析成功', { totalMistakes: mistakesData.data.length, validWordIds: wordIds.length })
 
       // 3. 边界检查：无错题时返回空词库（而非抛异常）
       if (wordIds.length === 0) {
-        console.warn('[数据加载] 当前词库暂无错题记录，返回空词库')
+        console.warn('[API Dict] 当前词库暂无错题记录，返回空词库')
         return {
           id: bookId,
           name: bookData.title,
@@ -123,10 +148,16 @@ export async function loadAPIDict(bookId: string, scope?: string, startIndex?: n
       }
 
       // 4. 批量获取单词详情（卫语句 + JSON解析保护）
-      console.error('[数据加载] 开始获取错题详情', { wordIdsCount: wordIds.length })
-      const wordsRes = await fetch(`/api/words?bookId=${bookId}&wordIds=${wordIds.join(',')}`)
+      console.log('[API Dict] 开始获取错题详情', { wordIdsCount: wordIds.length })
+      const wordsController = new AbortController()
+      const wordsTimeoutId = setTimeout(() => wordsController.abort(), 30000) // 30秒超时
+      wordsRes = await fetch(`/api/words?bookId=${bookId}&wordIds=${wordIds.join(',')}`, {
+        signal: wordsController.signal
+      })
+      clearTimeout(wordsTimeoutId)
+
       if (!wordsRes.ok) {
-        console.error('[数据加载] 单词详情API调用失败', { status: wordsRes.status })
+        console.error('[API Dict] 单词详情API调用失败', { status: wordsRes.status })
         throw new Error('获取单词详情失败，请稍后重试')
       }
 
@@ -134,18 +165,18 @@ export async function loadAPIDict(bookId: string, scope?: string, startIndex?: n
       try {
         wordsData = await wordsRes.json()
       } catch (parseError) {
-        console.error('[数据加载] 单词数据JSON解析失败', { parseError })
+        console.error('[API Dict] 单词数据JSON解析失败', { parseError })
         throw new Error('单词数据格式错误')
       }
 
       // 5. 数据格式验证
       const wordsArray = wordsData.data || wordsData
       if (!Array.isArray(wordsArray)) {
-        console.error('[数据加载] 单词数据格式错误', { wordsData })
+        console.error('[API Dict] 单词数据格式错误', { wordsData })
         throw new Error('单词数据格式错误')
       }
 
-      console.error('[数据加载] 错题本数据加载完成', { wordsCount: wordsArray.length })
+      console.log('[API Dict] 错题本数据加载完成', { wordsCount: wordsArray.length })
 
       // 转换为打字练习所需的格式
       const words: Word[] = wordsArray.map(convertAPIWordToWord)
@@ -158,14 +189,30 @@ export async function loadAPIDict(bookId: string, scope?: string, startIndex?: n
       }
     } else if (scope === 'new' || scope === 'known' || scope === 'fuzzy' || scope === 'unknown') {
       // 根据学习状态筛选
-      wordsRes = await fetch(`/api/books/${bookId}/words?scope=${scope}&pageSize=${pageSize}&offset=${offset}`)
+      console.log('[API Dict] 加载特定范围单词', { scope, pageSize, page })
+      const wordsController = new AbortController()
+      const wordsTimeoutId = setTimeout(() => wordsController.abort(), 60000) // 60秒超时，因为可能需要复杂查询
+      wordsRes = await fetch(`/api/books/${bookId}/words?scope=${scope}&pageSize=${pageSize}&page=${page}`, {
+        signal: wordsController.signal
+      })
+      clearTimeout(wordsTimeoutId)
     } else {
       // 全部单词 - 优化：根据起始位置加载单词
-      wordsRes = await fetch(`/api/books/${bookId}/words?pageSize=${pageSize}&offset=${offset}`)
+      console.log('[API Dict] 加载全部单词', { pageSize, page })
+      const wordsController = new AbortController()
+      const wordsTimeoutId = setTimeout(() => wordsController.abort(), 60000) // 60秒超时
+      wordsRes = await fetch(`/api/books/${bookId}/words?pageSize=${pageSize}&page=${page}`, {
+        signal: wordsController.signal
+      })
+      clearTimeout(wordsTimeoutId)
     }
 
-    if (!wordsRes.ok) throw new Error('Failed to fetch words')
+    if (!wordsRes.ok) {
+      console.error('[API Dict] 获取单词列表失败', { status: wordsRes.status })
+      throw new Error('Failed to fetch words')
+    }
     const wordsData: any = await wordsRes.json()
+    console.log('[API Dict] 单词列表获取成功', { wordsCount: wordsData.data?.length || 0 })
 
     // 转换为打字练习所需的格式
     const words: Word[] = (wordsData.data || wordsData).map(convertAPIWordToWord)
