@@ -106,6 +106,14 @@ const nextConfig: NextConfig = {
   // output: 'standalone',  // 已禁用，使用标准模式避免预渲染问题
 };
 
+// PWA 配置（仅生产环境）
+const withPWA = require("@ducanh2912/next-pwa")({
+  dest: 'public',
+  register: true,
+  skipWaiting: true,
+  disable: process.env.NODE_ENV !== 'production',
+});
+
 // Sentry 配置
 const sentryWebpackPluginOptions = {
   // 组织 slug 和项目 slug 在 Sentry 中
@@ -122,5 +130,8 @@ const sentryWebpackPluginOptions = {
   // dryRun: process.env.NODE_ENV !== 'production', // 非生产环境不上传
 };
 
-// 包装配置以使用 Sentry
-export default withSentryConfig(nextConfig, sentryWebpackPluginOptions);
+// 先包装 PWA，再包装 Sentry
+export default withSentryConfig(
+  withPWA(nextConfig),
+  sentryWebpackPluginOptions
+);

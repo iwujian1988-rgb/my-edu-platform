@@ -4,6 +4,7 @@ import "./globals.css";
 import { SoundEffects } from "@/components/SoundEffects";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LoadingOverlay } from "@/components/LoadingOverlay";
+import { InstallPWAButton } from "@/components/InstallPWAButton";
 
 // SKILL typography.csv line 6: Playful Creative for Educational apps
 // Fredoka for headings (Display) + Nunito for body (Sans)
@@ -23,7 +24,8 @@ const nunito = Nunito({
 
 export const metadata: Metadata = {
   title: "MAX笔记 - 英语学习平台",
-  description: "MAX笔记 - 智能英语单词学习平台，采用 Neo-Brutalism 设计风格",
+  description: "MAX笔记 - 智能外语学习平台，采用 Neo-Brutalism 设计风格",
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -72,6 +74,7 @@ export default function RootLayout({
           <SoundEffects />
           <LoadingOverlay />
           {children}
+          <InstallPWAButton />
         </ThemeProvider>
       </body>
     </html>

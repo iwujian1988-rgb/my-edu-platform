@@ -112,7 +112,7 @@ const DEFAULT_ADVANCED_SETTINGS: AdvancedSettings = {
 const DEFAULT_DISPLAY_SETTINGS: DisplaySettings = {
   foreignFontSize: 52, // 调整为52，乘以2.5后为130px，接近原始的128px
   chineseFontSize: 18,
-  darkMode: false,
+  darkMode: 'auto', // 自动跟随系统主题
 }
 
 const DEFAULT_STATISTICS: Statistics = {

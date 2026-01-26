@@ -94,12 +94,17 @@ export interface AdvancedSettings {
 // ==================== 显示设置类型 ====================
 
 /**
+ * 主题模式
+ */
+export type ThemeMode = 'light' | 'dark' | 'auto'
+
+/**
  * 显示设置
  */
 export interface DisplaySettings {
   foreignFontSize: number           // 外语字体大小 (20-100px)
   chineseFontSize: number           // 中文字体大小 (12-50px)
-  darkMode: boolean                 // 深色模式
+  darkMode: ThemeMode               // 主题模式（light=明亮, dark=黑夜, auto=跟随系统）
 }
 
 // ==================== 统计数据类型 ====================

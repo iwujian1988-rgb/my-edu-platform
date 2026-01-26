@@ -137,3 +137,9 @@ yarn-error.log*
 backup-*.json
 ecdict*
 stardict*
+
+# PWA 构建产物（由 @ducanh2912/next-pwa 自动生成）
+/public/sw.js
+/public/sw.js.map
+/public/workbox-*.js
+/public/worker-*.js
