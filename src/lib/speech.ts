@@ -283,10 +283,12 @@ export function getEnglishVoice(): SpeechSynthesisVoice | null {
 }
 
 /**
- * React Hook: 使用TTS
+ * React Hook: 使用Web Speech API TTS
  * 自动在首次用户交互时初始化TTS
+ *
+ * 注意：此函数已重命名为 useWebSpeechTTS，避免与 @/hooks/use-tts 冲突
  */
-export function useTTS() {
+export function useWebSpeechTTS() {
   const [initialized, setInitialized] = useState(isTTSInitialized)
 
   useEffect(() => {
