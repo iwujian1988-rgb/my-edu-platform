@@ -1,6 +1,6 @@
 import type { NextConfig } from "next";
 import { withSentryConfig } from "@sentry/nextjs";
-import withPWAConfig from "@ducanh2912/next-pwa";
+import withPWA from "@ducanh2912/next-pwa";
 
 // ========================================
 // 开发环境：启用 HTTP 代理（访问Supabase）
@@ -108,7 +108,7 @@ const nextConfig: NextConfig = {
 };
 
 // PWA 配置（仅生产环境）
-const withPWA = withPWAConfig({
+const pwaConfig = withPWA({
   dest: 'public',
   register: true,
   skipWaiting: true,
@@ -133,6 +133,6 @@ const sentryWebpackPluginOptions = {
 
 // 先包装 PWA，再包装 Sentry
 export default withSentryConfig(
-  withPWA(nextConfig),
+  pwaConfig(nextConfig),
   sentryWebpackPluginOptions
 );
