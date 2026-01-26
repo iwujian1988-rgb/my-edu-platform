@@ -37,29 +37,57 @@ export async function POST() {
 
     console.error(`🔍 找到 ${wrongUrls.length} 条错误URL记录（仅显示前10条）`)
 
-    // 2. 批量清空所有错误URL
-    const { data: updateResult, error: updateError } = await supabase
-      .from('words')
-      .update({ audio_url: null })
-      .like('audio_url', '%dict.youdao.com%')
-      .select('id')
+    // 2. 分批清空错误URL（避免超时）
+    let totalCleaned = 0
+    let batchSize = 1000
+    let hasMore = true
+    let round = 0
 
-    if (updateError) {
-      console.error('❌ 清理失败:', updateError)
-      return NextResponse.json(
-        { error: '清理失败', details: updateError },
-        { status: 500 }
-      )
+    while (hasMore) {
+      round++
+      console.error(`🔄 第 ${round} 轮清理开始...`)
+
+      const { data: updateResult, error: updateError } = await supabase
+        .from('words')
+        .update({ audio_url: null })
+        .like('audio_url', '%dict.youdao.com%')
+        .limit(batchSize)
+        .select('id')
+
+      if (updateError) {
+        console.error('❌ 清理失败:', updateError)
+        return NextResponse.json(
+          { error: '清理失败', details: updateError },
+          { status: 500 }
+        )
+      }
+
+      const cleanedCount = updateResult?.length || 0
+      totalCleaned += cleanedCount
+
+      console.error(`✅ 第 ${round} 轮清理 ${cleanedCount} 条，累计 ${totalCleaned} 条`)
+
+      // 如果返回的记录数小于批次大小，说明已经清理完了
+      if (cleanedCount < batchSize) {
+        hasMore = false
+        console.error('✅ 清理完成！')
+      }
+
+      // 避免无限循环的安全保护
+      if (totalCleaned > 150000) {
+        console.error('⚠️  清理数量超过15万条，强制停止')
+        hasMore = false
+      }
+
+      // 避免过载，每轮之间稍作延迟
+      await new Promise(resolve => setTimeout(resolve, 100))
     }
-
-    const cleanedCount = updateResult?.length || 0
-
-    console.error(`✅ 成功清理 ${cleanedCount} 条错误URL记录`)
 
     return NextResponse.json({
       success: true,
-      message: `成功清理 ${cleanedCount} 条错误URL`,
-      cleanedCount,
+      message: `成功清理 ${totalCleaned} 条错误URL`,
+      cleanedCount: totalCleaned,
+      rounds: round,
       examples: wrongUrls.slice(0, 5)  // 返回前5条作为示例
     })
 
