@@ -64,16 +64,97 @@ export async function loadAPIDict(bookId: string, scope?: string, startIndex?: n
     // 获取单词列表 - 根据不同范围加载
     let wordsRes
     if (scope === 'mistakes') {
-      // 获取拼写错题
-      const { data: { user } } = await (await fetch('/api/auth/user')).json()
-      if (user) {
-        const mistakesRes = await fetch(`/api/mistakes?bookId=${bookId}`)
-        if (!mistakesRes.ok) throw new Error('Failed to fetch mistakes')
-        const mistakesData = await mistakesRes.json()
-        const wordIds = mistakesData.data?.map((m: any) => m.word_id) || []
-        wordsRes = await fetch(`/api/words?bookId=${bookId}&wordIds=${wordIds.join(',')}`)
-      } else {
-        throw new Error('User not authenticated')
+      console.error('[数据加载] 开始加载错题本数据', { bookId })
+
+      // 1. 用户认证检查（卫语句 + JSON解析保护）
+      const userRes = await fetch('/api/auth/user')
+      if (!userRes.ok) {
+        console.error('[数据加载] 用户认证失败', { status: userRes.status })
+        throw new Error('用户未登录，请先登录')
+      }
+
+      let userData
+      try {
+        userData = await userRes.json()
+      } catch (parseError) {
+        console.error('[数据加载] 用户数据JSON解析失败', { parseError })
+        throw new Error('用户数据格式错误')
+      }
+
+      if (!userData || !userData.id) {
+        console.error('[数据加载] 用户数据无效', { userData })
+        throw new Error('用户数据无效')
+      }
+
+      console.error('[数据加载] 用户认证通过', { userId: userData.id })
+
+      // 2. 获取错题列表（卫语句 + JSON解析保护）
+      const mistakesRes = await fetch(`/api/mistakes?bookId=${bookId}`)
+      if (!mistakesRes.ok) {
+        console.error('[数据加载] 错题API调用失败', { status: mistakesRes.status })
+        throw new Error('获取错题列表失败，请稍后重试')
+      }
+
+      let mistakesData
+      try {
+        mistakesData = await mistakesRes.json()
+      } catch (parseError) {
+        console.error('[数据加载] 错题数据JSON解析失败', { parseError })
+        throw new Error('错题数据格式错误')
+      }
+
+      if (!mistakesData || !Array.isArray(mistakesData.data)) {
+        console.error('[数据加载] 错题数据格式错误', { mistakesData })
+        throw new Error('错题数据格式错误')
+      }
+
+      const wordIds = mistakesData.data.map((m: any) => m.word_id).filter(Boolean)
+      console.error('[数据加载] 错题数据解析成功', { totalMistakes: mistakesData.data.length, validWordIds: wordIds.length })
+
+      // 3. 边界检查：无错题时返回空词库（而非抛异常）
+      if (wordIds.length === 0) {
+        console.warn('[数据加载] 当前词库暂无错题记录，返回空词库')
+        return {
+          id: bookId,
+          name: bookData.title,
+          description: '暂无错题记录',
+          words: [],
+        }
+      }
+
+      // 4. 批量获取单词详情（卫语句 + JSON解析保护）
+      console.error('[数据加载] 开始获取错题详情', { wordIdsCount: wordIds.length })
+      const wordsRes = await fetch(`/api/words?bookId=${bookId}&wordIds=${wordIds.join(',')}`)
+      if (!wordsRes.ok) {
+        console.error('[数据加载] 单词详情API调用失败', { status: wordsRes.status })
+        throw new Error('获取单词详情失败，请稍后重试')
+      }
+
+      let wordsData
+      try {
+        wordsData = await wordsRes.json()
+      } catch (parseError) {
+        console.error('[数据加载] 单词数据JSON解析失败', { parseError })
+        throw new Error('单词数据格式错误')
+      }
+
+      // 5. 数据格式验证
+      const wordsArray = wordsData.data || wordsData
+      if (!Array.isArray(wordsArray)) {
+        console.error('[数据加载] 单词数据格式错误', { wordsData })
+        throw new Error('单词数据格式错误')
+      }
+
+      console.error('[数据加载] 错题本数据加载完成', { wordsCount: wordsArray.length })
+
+      // 转换为打字练习所需的格式
+      const words: Word[] = wordsArray.map(convertAPIWordToWord)
+
+      return {
+        id: bookId,
+        name: bookData.title,
+        description: bookData.description || '切换词库',
+        words: words,
       }
     } else if (scope === 'new' || scope === 'known' || scope === 'fuzzy' || scope === 'unknown') {
       // 根据学习状态筛选
