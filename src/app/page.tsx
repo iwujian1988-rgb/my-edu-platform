@@ -53,15 +53,14 @@ export default async function Home() {
         recentPrefsResult,
         recentProgressResult
       ] = await Promise.all([
-        // 查询1：获取用户最近访问的词库（限制为10个，支持跨书籍多模式展示）
-        // 🔥 新逻辑：展平 last_resume_summary 后排序，所以需要查询更多书籍
+        // 查询1：获取用户最近访问的词库（限制为6个）
         supabase
           .from('user_book_preferences')
           .select('book_id, last_accessed_at, last_resume_state, last_resume_summary, last_reading_progress')
           .eq('user_id', user.id)
           .not('last_accessed_at', 'is', null)
           .order('last_accessed_at', { ascending: false })
-          .limit(10),
+          .limit(6),
 
         // 查询2：获取最近学习进度（前20条，用于确定最近学习的书籍）
         supabase

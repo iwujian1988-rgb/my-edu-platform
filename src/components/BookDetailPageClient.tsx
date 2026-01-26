@@ -22,6 +22,44 @@ import { WORDS_PER_PAGE, TIPS, getFilterLabel, type StatusFilter } from '@/lib/w
 import { getReadingProgress, type ReadingProgress } from '@/lib/readingProgress'
 import type { Word } from '@/hooks/useWordData'
 
+/**
+ * 手机号/邮箱打码函数
+ * @param phoneOrEmail - 手机号或邮箱
+ * @returns 打码后的字符串，如：156****1234
+ */
+function maskSensitiveInfo(phoneOrEmail: string | undefined): string {
+  if (!phoneOrEmail) return ''
+
+  // 如果是手机号格式（纯数字）
+  if (/^\d+$/.test(phoneOrEmail)) {
+    if (phoneOrEmail.length === 11) {
+      // 11位手机号：保留前3位和后4位
+      return phoneOrEmail.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2')
+    } else {
+      // 其他数字：保留前3位和后2位
+      return phoneOrEmail.replace(/(\d{3})\d+(?=\d{2}$)/, '$1****')
+    }
+  }
+
+  // 如果是邮箱格式
+  if (phoneOrEmail.includes('@')) {
+    const [localPart, domain] = phoneOrEmail.split('@')
+    if (localPart && localPart.length > 3) {
+      // 保留前3位，其余打码
+      const maskedLocal = localPart.substring(0, 3) + '****'
+      return maskedLocal + '@' + domain
+    }
+    return phoneOrEmail
+  }
+
+  // 其他情况：保留前3位，其余打码
+  if (phoneOrEmail.length > 3) {
+    return phoneOrEmail.substring(0, 3) + '****'
+  }
+
+  return phoneOrEmail
+}
+
 // 单词卡片骨架屏组件
 function WordCardSkeleton() {
   return (
@@ -926,7 +964,7 @@ export function BookDetailPageClient({
 
             {/* User & Actions */}
             <div className="flex items-center gap-3">
-              <span className="text-sm hidden sm:block transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>{user.email?.split('@')[0]}</span>
+              <span className="text-sm hidden sm:block transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>{maskSensitiveInfo(user.email?.split('@')[0])}</span>
 
               {/* 删除词库按钮 - 仅自定义词库显示 */}
               {!book.is_official && book.created_by === user.id && (
@@ -1048,46 +1086,26 @@ export function BookDetailPageClient({
       </header>
 
       {/* Main Content */}
-      <main className="px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+      <main className="px-4 sm:px-6 lg:px-8 pt-8 pb-8">
         <div className="w-full mx-auto max-w-[1800px]">
-
-          {/* 学习小贴士 - 竖屏模式与按钮同行，PC端独立显示 */}
-          <div className="mb-1 md:mb-3">
-            {/* 竖屏模式：与按钮同行 */}
-            <div className="flex md:hidden items-center gap-2 mb-2">
-              <div className="flex-1" />
-              <div className="flex items-center gap-1.5 text-right">
-                <Lightbulb className="w-3.5 h-3.5 text-[#FACC15] shrink-0 dark:text-yellow-400 dark:drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" strokeWidth={2.5} />
-                <p className="text-[10px] font-bold text-gray-600 dark:text-gray-400 leading-tight">{randomTip}</p>
-              </div>
-            </div>
-
-            {/* PC端：独立显示 */}
-            <div className="hidden md:block text-right">
-              <h3 className="text-sm font-black text-black dark:text-gray-100 mb-2 flex items-center gap-2 justify-end">
-                <Lightbulb className="w-4 h-4 text-[#FACC15] dark:text-yellow-400 dark:drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" strokeWidth={2.5} />
-                学习小贴士
-              </h3>
-              <p className="text-xs font-bold text-gray-600 dark:text-gray-400 leading-relaxed text-right">{randomTip}</p>
-            </div>
-          </div>
 
           {/* 游戏模式选择区域 - 强制硬核风格（响应式优化） */}
           {/* 练习模式入口 - 仅学习模式显示 */}
           {viewMode === 'learning' && (
-          <section className="flex md:grid md:grid-cols-4 gap-2 md:gap-6 mb-4 md:mb-6 overflow-x-auto pb-4 md:pb-0 snap-x no-scrollbar px-1">
+          <div className="mb-4 md:mb-6">
+            <section className="flex md:grid md:grid-cols-4 gap-2 md:gap-6 overflow-x-auto pb-4 md:pb-0 snap-x no-scrollbar px-1 items-end">
 
             {/* 1. 卡片背单词 */}
             <button
               onClick={() => handlePracticeModeClick('flashcards')}
-              className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-28 md:h-28 flex items-center px-2 md:px-6 gap-2 md:gap-5 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-[#B4F416] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-emerald-900 dark:to-gray-900 dark:hover:from-emerald-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] dark:hover:scale-105"
+              className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-20 md:h-24 lg:h-28 flex items-center px-2 md:px-6 gap-1.5 md:gap-3 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-[#B4F416] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-emerald-900 dark:to-gray-900 dark:hover:from-emerald-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] dark:hover:scale-105"
             >
               <div className="p-1.5 md:p-3 rounded-lg border-2 border-black shrink-0 transition-colors duration-200 bg-white text-black dark:bg-emerald-500/20 dark:border-emerald-400 dark:text-emerald-400">
                 <Layers className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
               </div>
               <div className="text-left z-10">
-                <h3 className="text-[10px] md:text-base lg:text-xl font-black leading-none tracking-tight transition-colors duration-200 text-black dark:text-white dark:drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]">卡片背单词</h3>
-                <p className="text-[8px] md:text-xs lg:text-sm font-bold mt-0.5 md:mt-1 uppercase tracking-wide transition-colors duration-200 text-black/70 dark:text-emerald-300/80">Flashcards</p>
+                <h3 className="text-[10px] md:text-sm lg:text-xl font-black leading-none tracking-tight whitespace-nowrap transition-colors duration-200 text-black dark:text-white dark:drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]">卡片背单词</h3>
+                <p className="text-[8px] md:text-[10px] lg:text-sm font-bold mt-0.5 md:mt-1 uppercase tracking-wide transition-colors duration-200 text-black/70 dark:text-emerald-300/80">Flashcards</p>
               </div>
               <Layers className="absolute -right-1 -bottom-3 text-black/10 rotate-12 w-10 h-10 md:w-24 md:h-24 hidden dark:hidden md:block" />
               {/* 暗黑模式发光效果 */}
@@ -1097,14 +1115,14 @@ export function BookDetailPageClient({
             {/* 2. 听写模式 */}
             <button
               onClick={() => handlePracticeModeClick('dictation')}
-              className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-28 md:h-28 flex items-center px-2 md:px-6 gap-2 md:gap-5 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-blue-900 dark:to-gray-900 dark:hover:from-blue-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] dark:hover:scale-105"
+              className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-20 md:h-24 lg:h-28 flex items-center px-2 md:px-6 gap-1.5 md:gap-3 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-blue-900 dark:to-gray-900 dark:hover:from-blue-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] dark:hover:scale-105"
             >
               <div className="p-1.5 md:p-3 rounded-lg border-2 border-black bg-[#3B82F6] text-white shrink-0 dark:bg-blue-500/20 dark:border-blue-400 dark:text-blue-400">
                 <Headphones className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
               </div>
               <div className="text-left z-10">
-                <h3 className="text-[10px] md:text-base lg:text-xl font-black leading-none tracking-tight transition-colors duration-200 text-black dark:text-white dark:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">听写模式</h3>
-                <p className="text-[8px] md:text-xs lg:text-sm font-bold mt-0.5 md:mt-1 uppercase tracking-wide transition-colors duration-200 text-black/60 dark:text-blue-300/80">Dictation</p>
+                <h3 className="text-[10px] md:text-sm lg:text-xl font-black leading-none tracking-tight whitespace-nowrap transition-colors duration-200 text-black dark:text-white dark:drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">听写模式</h3>
+                <p className="text-[8px] md:text-[10px] lg:text-sm font-bold mt-0.5 md:mt-1 uppercase tracking-wide transition-colors duration-200 text-black/60 dark:text-blue-300/80">Dictation</p>
               </div>
               {/* 暗黑模式发光效果 */}
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 via-blue-500/10 to-blue-500/0 dark:opacity-100 opacity-0 transition-opacity duration-300" />
@@ -1113,14 +1131,14 @@ export function BookDetailPageClient({
             {/* 3. 消消乐 */}
             <button
               onClick={() => handlePracticeModeClick('match-game')}
-              className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-28 md:h-28 flex items-center px-2 md:px-6 gap-2 md:gap-5 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-rose-900 dark:to-gray-900 dark:hover:from-rose-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(244,63,94,0.5)] dark:hover:scale-105"
+              className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-20 md:h-24 lg:h-28 flex items-center px-2 md:px-6 gap-1.5 md:gap-3 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-rose-900 dark:to-gray-900 dark:hover:from-rose-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(244,63,94,0.5)] dark:hover:scale-105"
             >
               <div className="p-1.5 md:p-3 rounded-lg border-2 border-black bg-[#FF6B6B] text-white shrink-0 dark:bg-rose-500/20 dark:border-rose-400 dark:text-rose-400">
                 <Gamepad2 className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
               </div>
               <div className="text-left z-10">
-                <h3 className="text-[10px] md:text-base lg:text-xl font-black leading-none tracking-tight transition-colors duration-200 text-black dark:text-white dark:drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]">消消乐</h3>
-                <p className="text-[8px] md:text-xs lg:text-sm font-bold mt-0.5 md:mt-1 uppercase tracking-wide transition-colors duration-200 text-black/60 dark:text-rose-300/80">Match Game</p>
+                <h3 className="text-[10px] md:text-sm lg:text-xl font-black leading-none tracking-tight whitespace-nowrap transition-colors duration-200 text-black dark:text-white dark:drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]">消消乐</h3>
+                <p className="text-[8px] md:text-[10px] lg:text-sm font-bold mt-0.5 md:mt-1 uppercase tracking-wide transition-colors duration-200 text-black/60 dark:text-rose-300/80">Match Game</p>
               </div>
               {/* 暗黑模式发光效果 */}
               <div className="absolute inset-0 bg-gradient-to-r from-rose-500/0 via-rose-500/10 to-rose-500/0 dark:opacity-100 opacity-0 transition-opacity duration-300" />
@@ -1148,7 +1166,19 @@ export function BookDetailPageClient({
               <Dumbbell className="absolute -right-1 -bottom-3 text-black/10 rotate-12 w-10 h-10 md:w-24 md:h-24 hidden md:block" />
             </button>
             */}
+
+            {/* 学习小贴士 - 左对齐，底部对齐 */}
+            <div className="flex flex-col items-start gap-1 shrink-0">
+              <div className="flex items-start gap-1.5">
+                <Lightbulb className="w-3.5 h-3.5 md:w-4 md:h-4 text-[#FACC15] shrink-0 mt-0.5 dark:text-yellow-400 dark:drop-shadow-[0_0_8px_rgba(250,204,21,0.5)]" strokeWidth={2.5} />
+                <div className="flex flex-col gap-1">
+                  <p className="text-[10px] md:text-xs font-bold text-gray-600 dark:text-gray-400 leading-tight">学习小贴士</p>
+                  <p className="text-[10px] md:text-xs font-bold text-gray-600 dark:text-gray-400 leading-tight whitespace-nowrap">{randomTip}</p>
+                </div>
+              </div>
+            </div>
           </section>
+          </div>
           )}
 
           {/* 顶部筛选栏 */}

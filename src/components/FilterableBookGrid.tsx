@@ -326,17 +326,18 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
         </div>
 
         {/* --- 筛选工具栏 (Control Bar) --- */}
-        <div className="flex flex-wrap gap-1.5 sm:gap-2 md:gap-3 p-1">
+        <div className="p-1">
           <div className="font-mono text-[10px] md:text-xs w-full mb-1 select-none transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>
             // SELECT_CATEGORY_FILTER:
           </div>
+          <div className="flex gap-1.5 sm:gap-2 md:gap-3 overflow-x-auto pb-2 scrollbar-hide">
           {CATEGORY_TABS.map((tab) => (
             <button
               key={tab.value}
               onClick={() => setActiveCategory(tab.value)}
               className={`
                 relative px-2 py-1 sm:px-3 sm:py-1.5 md:px-5 md:py-2.5 font-bold text-[10px] sm:text-xs md:text-sm border-2 rounded-md sm:rounded-lg transition-all duration-200
-                flex items-center gap-1 sm:gap-1.5 md:gap-2
+                flex items-center gap-1 sm:gap-1.5 md:gap-2 whitespace-nowrap
                 ${activeCategory === tab.value
                   ? 'bg-[#B4F416] border-black text-black shadow-none translate-x-[1px] translate-y-[1px] sm:translate-x-[1.5px] sm:translate-y-[1.5px] md:translate-x-[2px] md:translate-y-[2px]'
                   : isDark
@@ -370,6 +371,7 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
               )}
             </button>
           ))}
+          </div>
         </div>
 
       </div>
