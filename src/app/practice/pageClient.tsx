@@ -219,21 +219,26 @@ function QwertyPracticePage() {
     // ========== 边界检查 ==========
     if (!currentWord || !currentDict) return
     if (!currentWord.word) return
+    if (!currentDict.words || !Array.isArray(currentDict.words)) return
+
+    // 🔥 修复：捕获当前值，避免闭包中使用过时的引用
+    const currentIndexValue = state.currentIndex
+    const currentWords = currentDict.words
 
     // 预加载接下来3个单词的音频
     const preloadNextWords = async () => {
-      console.log(`[预加载] 当前单词: "${currentWord.word}" (索引: ${state.currentIndex})`)
+      console.log(`[预加载] 当前单词: "${currentWord.word}" (索引: ${currentIndexValue})`)
 
       for (let i = 1; i <= 3; i++) {
-        const nextIndex = state.currentIndex + i
+        const nextIndex = currentIndexValue + i
 
         // ========== 边界检查：防止越界 ==========
-        if (nextIndex >= currentDict.words.length) {
+        if (!currentWords || nextIndex >= currentWords.length) {
           console.log(`[预加载] 已到达词库末尾，跳过索引 ${nextIndex}`)
           break
         }
 
-        const nextWord = currentDict.words[nextIndex]
+        const nextWord = currentWords[nextIndex]
 
         // ========== 边界检查：单词有效性 ==========
         if (!nextWord || !nextWord.word) {
@@ -243,6 +248,8 @@ function QwertyPracticePage() {
 
         try {
           console.log(`[预加载] 开始加载第 ${nextIndex + 1} 个单词: "${nextWord.word}"`)
+
+          // 🔥 修复：直接使用单词数据，避免依赖外部状态
           await preloadWordAudio(nextWord.word, nextWord.audio_url)
           console.log(`[预加载] ✅ 第 ${nextIndex + 1} 个单词加载完成`)
         } catch (error) {
@@ -1805,7 +1812,7 @@ function QwertyPracticePage() {
       <main className={`flex flex-col items-center justify-center h-[calc(100vh-120px)] relative ${windowWidth < 768 ? 'px-2' : 'px-4'}`} style={{ paddingTop: windowWidth < 768 ? '4vh' : '8vh' }}>
         {/* 上方左右切换按钮 - 固定在屏幕两侧 */}
         {/* 上一个单词按钮 - 左侧固定 */}
-        {state.currentIndex > 0 && currentDict && (
+        {state.currentIndex > 0 && currentDict && currentDict.words && (
           <button
             onClick={() => {
               setState((prev) => ({
@@ -1838,7 +1845,7 @@ function QwertyPracticePage() {
                     backgroundClip: 'text',
                   }}
                 >
-                  {currentDict.words[state.currentIndex - 1]?.word}
+                  {currentDict.words[state.currentIndex - 1]?.word || ''}
                 </p>
               </div>
             </div>
@@ -1846,7 +1853,7 @@ function QwertyPracticePage() {
         )}
 
         {/* 下一个单词按钮 - 右侧固定 */}
-        {currentDict && state.currentIndex < currentDict.words.length - 1 && (
+        {currentDict && currentDict.words && state.currentIndex < currentDict.words.length - 1 && (
           <button
             onClick={() => {
               setState((prev) => ({
@@ -1878,7 +1885,7 @@ function QwertyPracticePage() {
                     backgroundClip: 'text',
                   }}
                 >
-                  {currentDict.words[state.currentIndex + 1]?.word}
+                  {currentDict.words[state.currentIndex + 1]?.word || ''}
                 </p>
               </div>
               <ChevronRight size={32} className="text-gray-300 group-hover:text-gray-500" />
