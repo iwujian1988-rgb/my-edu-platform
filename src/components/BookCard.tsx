@@ -92,11 +92,11 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
     return 'text-black'
   }
 
-  // 根据文字长度自动调整字号（整体缩小，手机端更小）
+  // 根据文字长度自动调整字号（适配3列布局）
   const getFontSize = (code: string): string => {
-    if (code.length > 5) return 'text-xl md:text-xl lg:text-2xl'
-    if (code.length > 3) return 'text-2xl md:text-2xl lg:text-3xl'
-    return 'text-3xl md:text-3xl lg:text-4xl'
+    if (code.length > 5) return 'text-xl md:text-2xl lg:text-2xl'
+    if (code.length > 3) return 'text-2xl md:text-3xl lg:text-3xl'
+    return 'text-3xl md:text-4xl lg:text-4xl'
   }
 
   const code = book.code || book.title?.substring(0, 3).toUpperCase() || 'BK'

@@ -285,7 +285,6 @@ export default function LoginFormClient() {
                       placeholder="请输入手机号"
                       className="flex-1 bg-transparent border-none outline-none transition-colors duration-300 text-base md:text-lg font-semibold placeholder:font-normal"
                       style={{ color: 'var(--text-primary)' }}
-                      stylePlaceholder={{ color: 'var(--text-secondary)' }}
                       required
                       data-testid="phone-input"
                       name="phone"
