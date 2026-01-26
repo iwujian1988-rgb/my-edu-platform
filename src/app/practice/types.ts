@@ -15,6 +15,7 @@ export interface Word {
   trans: string          // 中文释义
   category?: string      // 分类（可选）
   phonetic?: string      // 音标（可选）
+  audio_url?: string | null  // 音频URL（可选）
 }
 
 // ==================== 词库数据类型 ====================
@@ -212,6 +213,7 @@ export interface APIWord {
   part_of_speech?: string
   collocation?: string
   example_sentence?: string
+  audio_url?: string | null
 }
 
 /**
@@ -223,6 +225,7 @@ export function convertAPIWordToWord(apiWord: APIWord): Word {
     word: apiWord.word,
     trans: apiWord.definition,
     phonetic: apiWord.phonetic,
+    audio_url: apiWord.audio_url,
   }
 }
 

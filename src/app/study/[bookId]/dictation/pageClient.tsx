@@ -973,7 +973,7 @@ export default function DictationPageClient() {
               <button
                 onClick={handleHome}
                 disabled={isNavigating}
-                className="w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="relative w-10 h-10 border-2 border-black rounded-lg flex items-center justify-center transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed overflow-hidden"
                 style={{ backgroundColor: 'var(--card-bg)' }}
                 onMouseEnter={(e) => {
                   if (!isNavigating) {
@@ -986,7 +986,13 @@ export default function DictationPageClient() {
                   }
                 }}
               >
-                <X size={20} strokeWidth={2.5} style={{ color: 'var(--text-primary)' }} />
+                {isNavigating ? (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="w-4 h-4 border-2 border-black border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                ) : (
+                  <X size={20} strokeWidth={2.5} style={{ color: 'var(--text-primary)' }} />
+                )}
               </button>
             </div>
           </div>

@@ -60,6 +60,7 @@ import { ShortcutsModal } from './ShortcutsModal'
 import { Popover } from './Popover'
 import { getTTSEngine } from './tts-engine'
 import { PronunciationPanel } from './PronunciationPanel'
+import { useTTS } from '@/hooks/use-tts'
 import { SoundEffectPanel } from './SoundEffectPanel'
 import { LoopPanel } from './LoopPanel'
 import { MistakesPanel } from './MistakesPanel'
@@ -197,6 +198,70 @@ function QwertyPracticePage() {
 
   // ==================== TTS 引擎初始化 ====================
   const ttsEngine = useRef(getTTSEngine())
+
+  // ==================== 使用高质量TTS Hook ====================
+  // 动态映射 pronunciationScheme 到 type 参数
+  const pronunciationType: '1' | '2' = useMemo(() => {
+    switch (state.soundSettings.pronunciationScheme) {
+      case 'uk': return '1'  // 英音
+      case 'us': return '2'  // 美音
+      default: return '2'    // auto 默认美音
+    }
+  }, [state.soundSettings.pronunciationScheme])
+
+  const { play: playWordAudio, isPlaying: isAudioPlaying, preload: preloadWordAudio } = useTTS({
+    type: pronunciationType,
+    showFallbackToast: false  // 不显示toast，避免干扰打字
+  })
+
+  // ==================== 音频预加载：提前加载未来2-3个单词 ====================
+  useEffect(() => {
+    // ========== 边界检查 ==========
+    if (!currentWord || !currentDict) return
+    if (!currentWord.word) return
+
+    // 预加载接下来3个单词的音频
+    const preloadNextWords = async () => {
+      console.log(`[预加载] 当前单词: "${currentWord.word}" (索引: ${state.currentIndex})`)
+
+      for (let i = 1; i <= 3; i++) {
+        const nextIndex = state.currentIndex + i
+
+        // ========== 边界检查：防止越界 ==========
+        if (nextIndex >= currentDict.words.length) {
+          console.log(`[预加载] 已到达词库末尾，跳过索引 ${nextIndex}`)
+          break
+        }
+
+        const nextWord = currentDict.words[nextIndex]
+
+        // ========== 边界检查：单词有效性 ==========
+        if (!nextWord || !nextWord.word) {
+          console.warn(`[预加载] 第${nextIndex}个单词无效，跳过`)
+          continue
+        }
+
+        try {
+          console.log(`[预加载] 开始加载第 ${nextIndex + 1} 个单词: "${nextWord.word}"`)
+          await preloadWordAudio(nextWord.word, nextWord.audio_url)
+          console.log(`[预加载] ✅ 第 ${nextIndex + 1} 个单词加载完成`)
+        } catch (error) {
+          // 预加载失败不影响主功能，静默处理
+          console.warn(`[预加载] ⚠️ 第 ${nextIndex + 1} 个单词加载失败（忽略）:`, error)
+        }
+      }
+
+      console.log(`[预加载] ========== 预加载批次完成 ==========`)
+    }
+
+    // 延迟500ms预加载，避免影响当前单词的播放性能
+    const timer = setTimeout(preloadNextWords, 500)
+
+    return () => {
+      clearTimeout(timer)
+      console.log(`[预加载] 清理定时器`)
+    }
+  }, [currentWordStr, state.currentIndex, currentDict, preloadWordAudio])
 
   // ==================== AudioContext 实例（复用）====================
   const audioContextRef = useRef<AudioContext | null>(null)
@@ -392,14 +457,10 @@ function QwertyPracticePage() {
 
   // 播放错题发音
   const playMistakePronunciation = useCallback(
-    (word: string) => {
-      ttsEngine.current.speak(word, {
-        volume: state.soundSettings.wordVolume / 100,
-        rate: state.soundSettings.wordSpeed,
-        locale: state.soundSettings.pronunciationScheme,
-      })
+    async (word: string) => {
+      await playWordAudio(word, null)  // 错题没有audio_url，传null
     },
-    [state.soundSettings.wordVolume, state.soundSettings.wordSpeed, state.soundSettings.pronunciationScheme]
+    [playWordAudio]
   )
 
   // 练习特定错题
@@ -1054,7 +1115,8 @@ function QwertyPracticePage() {
         const targetChar = currentWord.word[state.userInput.length]
 
         // ✅ 特殊符号宽松匹配：如果目标字符是特殊符号，任何输入都算正确
-        const isSpecialChar = /^[\-']$/.test(targetChar)
+        // 🔧 修复：添加更多特殊符号（标点、数学符号等）
+        const isSpecialChar = /^[\-'\s=;,.()（）【】\[\]{}、，。；：！？""''""«»〈〉《》]/.test(targetChar)
         // 注意：空格比较时需要原样比较，不转小写
         const isCorrect = isSpecialChar || // 特殊符号：任意字符都算对
           (e.key === ' ' && targetChar === ' ') ||
@@ -1171,15 +1233,11 @@ function QwertyPracticePage() {
   // ==================== 新单词出现时播放 TTS 发音 ====================
   useEffect(() => {
     if (currentWord && state.startTime && !state.isPaused && state.soundSettings.wordPronunciation) {
-      ttsEngine.current.speakWord(currentWord.word, {
-        volume: state.soundSettings.wordVolume / 100,
-        rate: state.soundSettings.wordSpeed,
-        locale: state.soundSettings.pronunciationScheme,
-      }).catch((error) => {
+      playWordAudio(currentWord.word, currentWord.audio_url).catch((error) => {
         console.warn('[TTS] Word pronunciation failed:', error)
       })
     }
-  }, [currentWordStr, state.startTime, state.isPaused, state.soundSettings.wordPronunciation, state.soundSettings.wordVolume, state.soundSettings.wordSpeed, state.soundSettings.pronunciationScheme, currentWord])
+  }, [currentWordStr, state.startTime, state.isPaused, state.soundSettings.wordPronunciation, playWordAudio, currentWord])
 
   // ==================== 单词完成检测 ====================
   useEffect(() => {
@@ -1202,8 +1260,9 @@ function QwertyPracticePage() {
       const targetChar = currentWord.word[i]
       const inputChar = state.userInput[i]
 
-      // 跳过特殊符号（它们允许任意输入）
-      if (/^[\-']$/.test(targetChar)) {
+      // 🔧 修复：跳过特殊符号（它们允许任意输入）
+      // 包含：标点、数学符号、中英文标点等
+      if (/^[\-'\s=;,.()（）【】\[\]{}、，。；：！？""''""«»〈〉《》]/.test(targetChar)) {
         continue
       }
 
@@ -2077,11 +2136,7 @@ function QwertyPracticePage() {
               <button
                 onClick={() => {
                   if (currentWord) {
-                    ttsEngine.current.speakWord(currentWord.word, {
-                      volume: state.soundSettings.wordVolume / 100,
-                      rate: state.soundSettings.wordSpeed,
-                      locale: state.soundSettings.pronunciationScheme,
-                    })
+                    playWordAudio(currentWord.word, currentWord.audio_url)
                   }
                 }}
                 className="p-2 rounded-full hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-all duration-200 active:scale-95"
@@ -2118,7 +2173,8 @@ function QwertyPracticePage() {
                   const isCurrent = index === state.userInput.length
 
                   // ✅ 特殊符号宽松匹配：如果目标字符是特殊符号，任何输入都算正确
-                  const isSpecialChar = /^[\-']$/.test(char)
+                  // 🔧 修复：添加更多特殊符号（标点、数学符号等）
+                  const isSpecialChar = /^[\-'\s=;,.()（）【】\[\]{}、，。；：！？""''""«»〈〉《》]/.test(char)
                   const isCorrect = isInput && (
                     isSpecialChar || // 特殊符号：任意字符都算对
                     state.userInput[index]?.toLowerCase() === char?.toLowerCase()
