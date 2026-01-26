@@ -34,41 +34,23 @@ export async function createClient() {
   // 在 Next.js server component 中无法直接获取协议，使用环境变量判断
   const isHttps = process.env.NODE_ENV === 'production'
 
-  // 🔍 Debug: 记录所有Supabase相关的cookies
-  const allCookies = cookieStore.getAll()
-  const sbCookies = allCookies.filter(c => c.name.includes('sb-'))
+  // 🔍 Debug: 仅在开发环境记录日志（生产环境禁用以提升性能）
+  const isDev = process.env.NODE_ENV === 'development'
 
-  // 🔍 详细记录每个 cookie 的信息
-  const authCookie = sbCookies.find(c => c.name.includes('auth-token') && !c.name.includes('.'))
+  if (isDev) {
+    const allCookies = cookieStore.getAll()
+    const sbCookies = allCookies.filter(c => c.name.includes('sb-'))
 
-  let decodedToken = null
-  if (authCookie?.value) {
-    try {
-      // 移除 base64- 前缀并解码
-      const base64Value = authCookie.value.replace('base64-', '')
-      decodedToken = JSON.parse(Buffer.from(base64Value, 'base64').toString())
-    } catch (e) {
-      console.error('Failed to decode token:', e.message)
-    }
+    console.log('🍪 [Server Client] Cookie info:', {
+      total: allCookies.length,
+      sbCookies: sbCookies.map(c => ({
+        name: c.name,
+        hasValue: !!c.value,
+        valueLength: c.value?.length || 0,
+      })),
+      isHttps
+    })
   }
-
-  console.log('🍪 [Server Client] Detailed cookie info:', {
-    total: allCookies.length,
-    sbCookies: sbCookies.map(c => ({
-      name: c.name,
-      hasValue: !!c.value,
-      valueLength: c.value?.length || 0,
-    })),
-    authCookieFound: !!authCookie,
-    authCookieValueLength: authCookie?.value?.length || 0,
-    isHttps,
-    decodedToken: decodedToken ? {
-      hasAccessToken: !!decodedToken.access_token,
-      hasRefreshToken: !!decodedToken.refresh_token,
-      expiresAt: decodedToken.expires_at,
-      tokenLength: decodedToken.access_token?.length
-    } : null
-  })
 
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -77,10 +59,12 @@ export async function createClient() {
       cookies: {
         get(name: string) {
           const value = cookieStore.get(name)?.value
-          // 🔍 Debug: 记录每次读取cookie的请求
-          if (name.includes('sb-')) {
+
+          // 🔍 仅在开发环境记录cookie读取
+          if (isDev && name.includes('sb-')) {
             console.log(`🔍 [Server Client] Reading cookie: ${name}, found: ${!!value}`)
           }
+
           return value
         },
         set(name: string, value: string, options: any) {
@@ -94,22 +78,26 @@ export async function createClient() {
               sameSite: 'lax',
               httpOnly: true,
             })
-            console.log('[createClient] Set cookie:', name, 'secure:', isHttps)
+
+            if (isDev) {
+              console.log('[createClient] Set cookie:', name, 'secure:', isHttps)
+            }
           } catch (error) {
             console.error('[createClient] Failed to set cookie:', name, 'error:', error)
           }
         },
         remove(name: string, options: any) {
           try {
-            // 🔍 Debug: 记录所有 cookie 删除操作
-            if (name.includes('sb-')) {
-              console.log('🚨 [createClient] ATTEMPTING TO REMOVE COOKIE:', name)
-              console.trace('🚨 Cookie removal call stack:')
+            // 🔍 仅在开发环境记录cookie删除
+            if (isDev && name.includes('sb-')) {
+              console.log('🚨 [createClient] Attempting to remove cookie:', name)
             }
 
             // 🔧 临时阻止删除 auth-token 相关的 cookies
             if (name.includes('auth-token')) {
-              console.log('🛑 [createClient] BLOCKED removal of auth cookie:', name)
+              if (isDev) {
+                console.log('🛑 [createClient] BLOCKED removal of auth cookie:', name)
+              }
               return  // 阻止删除
             }
 
@@ -182,31 +170,31 @@ export { createClient as createClientForActions }
  * ```
  */
 export async function getCurrentUser() {
-  console.log('🔍 [getCurrentUser] Starting...')
+  const isDev = process.env.NODE_ENV === 'development'
+
+  if (isDev) {
+    console.log('🔍 [getCurrentUser] Starting...')
+  }
 
   const supabase = await createClient()
-
-  console.log('🔍 [getCurrentUser] supabase client created, calling getUser()...')
 
   const {
     data: { user },
     error,
   } = await supabase.auth.getUser()
 
-  console.log('👤 [getCurrentUser] Result:', {
-    hasUser: !!user,
-    userId: user?.id,
-    error: error?.message,
-    errorName: error?.name,
-    errorStack: error?.stack
-  })
+  if (isDev) {
+    console.log('👤 [getCurrentUser] Result:', {
+      hasUser: !!user,
+      userId: user?.id,
+      error: error?.message
+    })
+  }
 
   if (error || !user) {
-    console.log('❌ [getCurrentUser] Returning null due to error or no user')
     return null
   }
 
-  console.log('✅ [getCurrentUser] Returning user:', user.id)
   return user
 }
 

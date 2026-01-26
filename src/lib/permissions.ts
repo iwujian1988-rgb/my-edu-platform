@@ -181,7 +181,20 @@ export async function getUserPermissions() {
     return null
   }
 
-  const expirationCheck = await checkPermissionExpiration()
+  // 🔥 优化：直接计算过期检查，避免重复查询数据库
+  let expirationCheck = { isExpired: false, isExpiringSoon: false, daysUntilExpiry: null }
+
+  if (profile.permission_expires_at) {
+    const expiresAt = new Date(profile.permission_expires_at)
+    const now = new Date()
+    const daysUntilExpiry = Math.floor((expiresAt.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+
+    expirationCheck = {
+      isExpired: daysUntilExpiry < 0,
+      isExpiringSoon: daysUntilExpiry >= 0 && daysUntilExpiry <= 7,
+      daysUntilExpiry
+    }
+  }
 
   return {
     featurePermissions: profile.feature_permissions || [],

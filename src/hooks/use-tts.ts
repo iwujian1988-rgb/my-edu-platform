@@ -258,6 +258,10 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
 
   /**
    * 🆕 预加载音频（后台静默加载，不播放）
+   *
+   * ⚠️ 重要：只预加载 OSS URL（可被浏览器 HTTP 缓存）
+   * API 音频不预加载（Blob URL 无法缓存，预加载无意义）
+   *
    * @param text - 要预加载的单词
    * @param audioUrl - 可选的音频URL
    * @returns Promise<void>
@@ -266,64 +270,42 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
     async (text: string, audioUrl?: string | null): Promise<void> => {
       // ========== 边界检查 ==========
       if (!text || text.trim() === '') {
-        console.warn(`⚠️ [useTTS Preload] 文本为空，跳过预加载`)
+        return
+      }
+
+      // 🔥 只预加载 OSS URL（可被浏览器 HTTP 缓存）
+      // API 音频是动态生成的 Blob URL，无法被缓存，预加载无意义
+      if (!audioUrl || audioUrl.trim() === '') {
         return
       }
 
       // 生成缓存键
-      const cacheKey = audioUrl || `api:${text}:${type}`
+      const cacheKey = audioUrl
 
       // 检查是否已预加载过
       if (preloadedCacheRef.current.has(cacheKey)) {
-        console.log(`✅ [useTTS Preload] 已缓存，跳过: "${text}"`)
         return
       }
 
-      console.log(`🔄 [useTTS Preload] 预加载: text="${text}", audioUrl=${audioUrl || 'none'}`)
-
       try {
-        // 策略1: 如果有OSS URL，直接预加载
-        if (audioUrl && audioUrl.trim() !== '') {
-          // 静默加载音频（不播放）
-          const audio = new Audio(audioUrl)
+        // 静默加载 OSS 音频（触发浏览器 HTTP 缓存）
+        const audio = new Audio(audioUrl)
 
-          // 监听加载完成
-          audio.onloadeddata = () => {
-            if (isMountedRef.current) {
-              preloadedCacheRef.current.add(cacheKey)
-              console.log(`✅ [useTTS Preload] OSS音频缓存成功: "${text}" (${audio.duration}s)`)
-            }
+        // 监听加载完成
+        audio.onloadeddata = () => {
+          if (isMountedRef.current) {
+            preloadedCacheRef.current.add(cacheKey)
           }
-
-          audio.onerror = () => {
-            console.warn(`⚠️ [useTTS Preload] OSS音频加载失败，将使用API: "${text}"`)
-            // OSS失败，尝试从API加载
-            fetchFromAPI(text).catch(() => {
-              // API也失败，静默处理
-              console.warn(`⚠️ [useTTS Preload] API音频也失败了: "${text}"`)
-            })
-          }
-
-          // 触发加载（但不播放）
-          audio.load()
-          return
         }
 
-        // 策略2: 从API预加载
-        console.log(`📡 [useTTS Preload] 从API预加载: "${text}"`)
-        await fetchFromAPI(text)
-
-        // 标记为已预加载
-        if (isMountedRef.current) {
-          preloadedCacheRef.current.add(cacheKey)
-          console.log(`✅ [useTTS Preload] API音频缓存成功: "${text}"`)
-        }
+        // 🔥 关键：只加载不播放
+        // 这会触发浏览器下载并缓存音频文件
+        audio.load()
       } catch (error) {
         // 预加载失败不影响主功能，静默处理
-        console.warn(`⚠️ [useTTS Preload] 预加载失败（静默忽略）: "${text}"`, error)
       }
     },
-    [type, playAudioFile, fetchFromAPI]
+    [] // 不依赖任何其他函数
   )
 
   /**
