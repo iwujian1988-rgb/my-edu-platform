@@ -55,7 +55,7 @@ export default async function AdminDashboard() {
     ]),
     // 获取最近30天的注册走势数据
     Promise.race([
-      supabase.rpc('get_registration_trend', { days_count: 30 }),
+      (supabase.rpc as any)('get_registration_trend', { days_count: 30 }),
       timeoutPromise
     ])
   ]).catch(() => [

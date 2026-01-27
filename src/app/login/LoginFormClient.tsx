@@ -394,7 +394,7 @@ export default function LoginFormClient() {
                 }}
               >
                 <p className="text-xs md:text-sm font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                  🎓 登录即表示您同意我们的服务条款和隐私政策
+                  🎓 登录即表示您同意我们的<Link href="/privacy" className="underline hover:text-[#22C55E] transition-colors">服务条款和隐私政策</Link>
                 </p>
               </div>
             </div>

@@ -109,23 +109,23 @@ export async function GET(request: Request) {
     .eq('code', code)
     .single()
 
-  if (codeError) {
-    return NextResponse.json({ error: codeError.message }, { status: 500 })
+  if (codeError || !invitationCode) {
+    return NextResponse.json({ error: codeError?.message || 'Invitation code not found' }, { status: 500 })
   }
 
   // Query users who used this invitation code
   const { data: users, error: usersError } = await supabase
     .from('users')
     .select('*')
-    .eq('invitation_code_id', invitationCode?.id)
+    .eq('invitation_code_id', (invitationCode as any).id)
 
   if (usersError) {
     return NextResponse.json({ error: usersError.message }, { status: 500 })
   }
 
   return NextResponse.json({
-    invitationCode,
+    invitationCode: invitationCode || null,
     users: users || [],
-    package: invitationCode?.package
+    package: (invitationCode as any)?.package || null
   })
 }

@@ -55,10 +55,10 @@ export async function GET(request: NextRequest) {
     try {
       const { data: { users }, error } = await supabase.auth.admin.listUsers()
       if (!error && users) {
-        const recentUsers = users
-          .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+        const recentUsers = (users as any)
+          .sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
           .slice(0, 5)
-          .map(u => ({
+          .map((u: any) => ({
             id: u.id,
             email: u.email,
             created_at: u.created_at,

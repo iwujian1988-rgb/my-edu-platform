@@ -40,7 +40,7 @@ export async function GET(
       )
     }
 
-    const bookIds = packageData.book_permissions || []
+    const bookIds = (packageData as any).book_permissions || []
 
     // 如果是通配符"*"，返回所有单词书
     if (bookIds.length === 1 && bookIds[0] === '*') {
@@ -163,8 +163,8 @@ export async function POST(
     }
 
     // 更新套餐的book_permissions
-    const { error: updateError } = await supabase
-      .from('invitation_packages')
+    const { error: updateError } = await (supabase
+      .from('invitation_packages') as any)
       .update({ book_permissions: newBookPermissions })
       .eq('id', id)
 
@@ -182,8 +182,8 @@ export async function POST(
       'invitation_package',
       id,
       {
-        package_name: packageData.name,
-        old_book_permissions: packageData.book_permissions,
+        package_name: (packageData as any).name,
+        old_book_permissions: (packageData as any).book_permissions,
         new_book_permissions: newBookPermissions,
         is_all: isAll
       }

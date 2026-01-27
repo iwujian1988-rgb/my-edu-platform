@@ -113,12 +113,12 @@ export async function POST(
         .limit(1)
         .single()
 
-      orderIndex = (lastChapter?.order_index || 0) + 1
+      orderIndex = ((lastChapter as any)?.order_index || 0) + 1
     }
 
     // 创建新章节
-    const { data: newChapter, error: createError } = await supabase
-      .from('chapters')
+    const { data: newChapter, error: createError } = await (supabase
+      .from('chapters') as any)
       .insert({
         book_id: bookId,
         title: body.title,

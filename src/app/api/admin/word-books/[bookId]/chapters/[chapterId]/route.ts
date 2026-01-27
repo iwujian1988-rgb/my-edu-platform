@@ -99,8 +99,8 @@ export async function PATCH(
     if (body.scene_id !== undefined) updateData.scene_id = body.scene_id
 
     // 更新章节
-    const { data: updatedChapter, error: updateError } = await supabase
-      .from('chapters')
+    const { data: updatedChapter, error: updateError } = await (supabase
+      .from('chapters') as any)
       .update(updateData)
       .eq('id', chapterId)
       .select()
@@ -215,8 +215,8 @@ export async function DELETE(
       .select('id')
       .eq('book_id', bookId)
 
-    await supabase
-      .from('books')
+    await (supabase
+      .from('books') as any)
       .update({ total_chapters: allChapters?.length || 0 })
       .eq('id', bookId)
 
@@ -227,8 +227,8 @@ export async function DELETE(
       chapterId,
       {
         book_id: bookId,
-        title: existingChapter.title,
-        word_count: existingChapter.word_count
+        title: (existingChapter as any).title,
+        word_count: (existingChapter as any).word_count
       }
     )
 

@@ -15,7 +15,7 @@ export async function POST() {
     console.error('🔄 开始清理错误的有道API URL（使用原生SQL）...')
 
     // 使用原生SQL直接执行（速度快，不会超时）
-    const { data: updateResult, error: updateError } = await supabase.rpc('exec_sql', {
+    const { data: updateResult, error: updateError } = await (supabase.rpc as any)('exec_sql', {
       sql: `UPDATE words SET audio_url = NULL WHERE audio_url LIKE '%dict.youdao.com%'`
     })
 

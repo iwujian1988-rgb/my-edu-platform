@@ -87,8 +87,8 @@ export async function POST(request: NextRequest) {
 
     // 标记为已导出
     const now = new Date().toISOString()
-    await supabase
-      .from('invitation_codes')
+    await (supabase
+      .from('invitation_codes') as any)
       .update({ is_exported: true, exported_at: now })
       .in('id', codes)
 

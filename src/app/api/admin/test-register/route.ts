@@ -37,7 +37,7 @@ export async function POST(request: NextRequest) {
       })
     }
 
-    logs.push(`✅ 邀请码有效: max_uses=${codeData.max_uses}, used_count=${codeData.used_count}`)
+    logs.push(`✅ 邀请码有效: max_uses=${(codeData as any).max_uses}, used_count=${(codeData as any).used_count}`)
 
     // Step 2: 检查用户是否已存在
     logs.push(`\n🔍 Step 2: 检查用户是否已存在...`)
@@ -48,7 +48,7 @@ export async function POST(request: NextRequest) {
       .single()
 
     if (existingUser) {
-      logs.push(`❌ 用户已存在: id=${existingUser.id}`)
+      logs.push(`❌ 用户已存在: id=${(existingUser as any).id}`)
       return NextResponse.json({
         success: false,
         error: '该手机号已注册，请直接登录',
@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
 
     // Step 4: 同步到 public.users
     logs.push(`\n🔍 Step 4: 同步到 public.users...`)
-    const { error: dbError } = await supabase.from('users').insert({
+    const { error: dbError } = await (supabase.from('users') as any).insert({
       id: authData.user.id,
       email: email,
       phone_number: phone,
@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
 
     // Step 5: 初始化用户配额
     logs.push(`\n🔍 Step 5: 初始化用户配额...`)
-    const { error: quotaError } = await supabase.from('user_quotas').insert({
+    const { error: quotaError } = await (supabase.from('user_quotas') as any).insert({
       user_id: authData.user.id,
       daily_smart_import_limit: 500,
       daily_smart_import_used: 0
