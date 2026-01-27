@@ -4,14 +4,18 @@
  * PWA 安装按钮组件
  * 固定在右上角，支持自动安装和手动安装指引
  * 遵循项目 Neo-Brutalism 设计风格
+ *
+ * ⚠️ 注意：此组件只在登录后的首页显示
  */
 
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { usePathname } from 'next/navigation'
 import { usePWAInstall } from '@/hooks/usePWAInstall'
-import { Download, X } from 'lucide-react'
+import { Download } from 'lucide-react'
 import { InstallInstructions } from './InstallInstructions'
+import { createClient } from '@/lib/supabase/client'
 
 export function InstallPWAButton() {
   const {
@@ -22,10 +26,30 @@ export function InstallPWAButton() {
   } = usePWAInstall()
 
   const [showInstructions, setShowInstructions] = useState(false)
-  const [dismissed, setDismissed] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const pathname = usePathname()
 
-  // 已安装或被用户关闭时不显示
-  if (isInstalled || dismissed) {
+  // 检查用户登录状态
+  useEffect(() => {
+    const checkAuth = async () => {
+      try {
+        const supabase = createClient()
+        const { data: { session } } = await supabase.auth.getSession()
+        setIsLoggedIn(!!session)
+      } catch (error) {
+        console.error('检查登录状态失败:', error)
+        setIsLoggedIn(false)
+      }
+    }
+
+    checkAuth()
+  }, [])
+
+  // 只在登录后的首页（/ 或 /dashboard）显示
+  const shouldShow = isLoggedIn && (pathname === '/' || pathname === '/dashboard')
+
+  // 已安装或不满足显示条件时不显示
+  if (isInstalled || !shouldShow) {
     return null
   }
 
@@ -57,17 +81,10 @@ export function InstallPWAButton() {
     setShowInstructions(false)
   }
 
-  /**
-   * 完全隐藏按钮（用户不想安装）
-   */
-  const handleDismiss = () => {
-    setDismissed(true)
-  }
-
   return (
     <>
       {/* 右上角固定按钮 */}
-      <div className="fixed top-4 right-4 z-50 flex items-center gap-2">
+      <div className="fixed top-4 right-4 z-50">
         {/* 主安装按钮 */}
         <div className="relative group">
           <button
@@ -88,16 +105,6 @@ export function InstallPWAButton() {
             <div className="absolute -top-2 right-4 w-4 h-4 bg-white border-t-2 border-l-2 border-black transform rotate-45" />
           </div>
         </div>
-
-        {/* 关闭按钮 */}
-        <button
-          onClick={handleDismiss}
-          className="p-2 border-2 border-black rounded-lg hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-x-[3px] hover:-translate-y-[3px] transition-all shadow-[1px_1px_0px_0px_#000] active:translate-x-0 active:translate-y-0 active:shadow-none"
-          style={{ backgroundColor: 'var(--card-bg)', color: 'var(--text-primary)' }}
-          aria-label="关闭"
-        >
-          <X className="w-4 h-4" strokeWidth={2.5} />
-        </button>
       </div>
 
       {/* 安装指引模态框 */}

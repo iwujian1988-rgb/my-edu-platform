@@ -26,6 +26,11 @@ export const metadata: Metadata = {
   title: "MAX笔记 - 英语学习平台",
   description: "MAX笔记 - 智能外语学习平台，采用 Neo-Brutalism 设计风格",
   manifest: "/manifest.json",
+  icons: {
+    icon: "/icons/icon-192.png",
+    shortcut: "/icons/icon-192.png",
+    apple: "/icons/icon-192.png",
+  },
 };
 
 export default function RootLayout({

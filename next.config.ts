@@ -12,6 +12,15 @@ const withPWA = withPWAInit({
   swcMinify: true,
   // ⚠️ 关键点：暂时设置为 false，强制生成 sw.js，排除环境变量干扰
   disable: false,
+  // PWA 图标配置
+  icon: true,
+  icons: {
+    iconSize: [192, 512],
+    iconPath: "/icons/icon-192.png",
+    maskIconPath: "/icons/icon-192.png",
+    appleIconPath: "/icons/icon-192.png",
+    faviconPath: "/icons/icon-192.png",
+  },
   workboxOptions: {
     disableDevLogs: true,
   },

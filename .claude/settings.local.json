@@ -138,7 +138,8 @@
       "Bash(cp:*)",
       "Bash(do [ -f \"$f\" ])",
       "Bash(xargs kill:*)",
-      "Bash(powershell -Command \"Stop-Process -Id 16068 -Force\")"
+      "Bash(powershell -Command \"Stop-Process -Id 16068 -Force\")",
+      "Bash(npx next build:*)"
     ]
   }
 }
