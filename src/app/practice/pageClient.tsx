@@ -141,6 +141,7 @@ function QwertyPracticePage() {
   const [showBookSelector, setShowBookSelector] = useState(false)
   const [userId, setUserId] = useState<string | undefined>(undefined)
   const [showStartOverlay, setShowStartOverlay] = useState(true) // 开始遮罩
+  const [globalOffset, setGlobalOffset] = useState(0) // 🔥 记录当前加载数据的全局起始位置
 
   // ✅ 渐进式加载状态
   const [isLoadingMore, setIsLoadingMore] = useState(false)
@@ -591,57 +592,71 @@ function QwertyPracticePage() {
 
         console.log('[Practice] Loading data for:', urlBookId, urlScope)
 
-        // 并行执行：获取进度和加载词库数据（先加载默认位置）
-        const [progressData, fullDict] = await Promise.all([
-          // 获取进度
-          fetch(`/api/typing/progress?bookId=${urlBookId}&scope=${urlScope}`)
-            .then(res => res.ok ? res.json() : { hasProgress: false, savedIndex: null })
-            .catch(() => ({ hasProgress: false, savedIndex: null })),
-          // 加载词库（从位置0开始，快速响应）
-          loadDict(urlBookId, urlScope, undefined)
-        ])
-
-        let savedIndex = null
-        let finalDict = fullDict
-
-        // 如果有保存的进度且超出当前加载范围，重新加载
-        if (progressData?.hasProgress && progressData.savedIndex !== null) {
-          savedIndex = progressData.savedIndex
-          console.log('[TypingProgress] Found saved progress:', savedIndex)
-
-          // 如果savedIndex超出当前加载范围，重新加载对应位置
-          if (savedIndex >= fullDict.words.length) {
-            console.log('[Practice] Reloading dict at saved index:', savedIndex)
-            finalDict = await loadDict(urlBookId, urlScope, savedIndex)
+        // 1. 从 localStorage 获取用户进度（保存的是全局位置）
+        const savedProgressKey = `practice_progress_${urlBookId}_${urlScope}`
+        const savedProgress = localStorage.getItem(savedProgressKey)
+        let globalIndex = 0
+        if (savedProgress) {
+          const parsed = parseInt(savedProgress)
+          if (!isNaN(parsed)) {
+            globalIndex = parsed
+            console.log('[Practice] Found saved progress from localStorage:', globalIndex)
           }
         }
 
-        // 更新状态
-        setAvailableDicts([finalDict])
-        setState((prev) => ({
-          ...prev,
-          currentDict: urlBookId,
-          currentIndex: savedIndex !== null ? savedIndex : 0,
-        }))
+        // 🔥【核心逻辑 A】计算"倒车"距离
+        // 策略：总是往回倒 25 个词加载，这样用户能看到"前文"
+        // 比如用户学到 61，我们就从 61-25=36 开始加载
+        const contextPadding = 25
+        const apiOffset = Math.max(0, globalIndex - contextPadding)
 
-        console.log('[Practice] Data loaded successfully, total words:', finalDict.words.length, 'currentIndex:', savedIndex !== null ? savedIndex : 0)
+        console.log(`[Practice] Loading with context. GlobalIndex: ${globalIndex}, Offset: ${apiOffset}`)
 
-        // 添加调试：检查加载完成后的状态
-        console.log('[DEBUG] After loading:', {
-          dictId: finalDict.id,
-          dictName: finalDict.name,
-          wordsCount: finalDict.words.length,
-          word0: finalDict.words[0],
-          currentIndex: savedIndex !== null ? savedIndex : 0,
-          currentWordAtStart: finalDict.words[savedIndex !== null ? savedIndex : 0]
-        })
+        // 2. 加载词库数据（带 offset 参数）
+        const finalDict = await loadDict(urlBookId, urlScope, apiOffset)
 
-        console.log('[Loading] About to set isLoading to false')
+        if (finalDict.words && finalDict.words.length > 0) {
+          // 🔥【核心逻辑 B】计算相对坐标
+          // 例子：
+          // 全局进度 globalIndex = 61
+          // API 起始点 apiOffset = 36
+          // 那么在当前返回的数组中，用户的目标词下标 = 61 - 36 = 25
+          let relativeIndex = globalIndex - apiOffset
+
+          // 安全检查：如果计算出的位置超过了当前返回的数据长度
+          // (比如书快读完了，后面没词了)，就停在最后一个词
+          if (relativeIndex >= finalDict.words.length) {
+            console.warn("进度超出当前数据范围，重置为最后一个单词")
+            relativeIndex = Math.max(0, finalDict.words.length - 1)
+          }
+
+          // 保存 globalOffset 到 state，用于后续保存进度
+          setGlobalOffset(apiOffset)
+
+          // 更新状态
+          setAvailableDicts([finalDict])
+          setState((prev) => ({
+            ...prev,
+            currentDict: urlBookId,
+            currentIndex: relativeIndex, // ✅ 这里存的是相对位置
+          }))
+
+          console.log('[Practice] Data loaded successfully:', {
+            totalWords: finalDict.words.length,
+            globalIndex,
+            apiOffset,
+            relativeIndex,
+            currentWord: finalDict.words[relativeIndex]
+          })
+        } else {
+          console.error("没有获取到单词数据")
+          setLoadError('词库数据为空，请刷新重试')
+        }
+
         setIsLoading(false)
 
         // ✅ 初始化渐进式加载状态
         setLoadedWordCount(finalDict.words.length)
-        console.log('[Loading] isLoading set to false - component should re-render')
       } catch (error) {
         console.error('Error loading data:', error)
         setLoadError(`加载失败: ${error instanceof Error ? error.message : '未知错误'}`)
@@ -739,15 +754,23 @@ function QwertyPracticePage() {
 
   // 保存当前进度到 localStorage 和服务器
   useEffect(() => {
-    // 保存到 localStorage（使用防抖）
-    const progressToSave = {
-      currentDict: state.currentDict,
-      currentIndex: state.currentIndex,
-    }
-    storageManager.save('sagevocab-progress', progressToSave, 1000)
+    // 如果有URL参数（bookId和scope），保存进度
+    if (urlBookId && urlScope && state.currentIndex >= 0) {
+      // 🔥 计算全局位置 = globalOffset + currentIndex（相对位置）
+      const globalIndex = globalOffset + state.currentIndex
+      const savedProgressKey = `practice_progress_${urlBookId}_${urlScope}`
 
-    // 如果有URL参数（bookId和scope），同时保存到服务器
-    if (urlBookId && urlScope && currentDict && state.currentIndex >= 0) {
+      // 保存全局位置到 localStorage
+      localStorage.setItem(savedProgressKey, globalIndex.toString())
+
+      console.log('[Practice] Saving progress:', {
+        globalOffset,
+        currentIndex: state.currentIndex,
+        globalIndex,
+        key: savedProgressKey
+      })
+
+      // 同时保存到服务器（也保存全局位置）
       const saveToServer = async () => {
         try {
           await fetch('/api/typing/save-progress', {
@@ -756,8 +779,8 @@ function QwertyPracticePage() {
             body: JSON.stringify({
               bookId: urlBookId,
               scope: urlScope,
-              index: state.currentIndex,
-              totalWords: currentDict.words.length
+              index: globalIndex,
+              totalWords: currentDict?.words.length || 0
             })
           })
         } catch (error) {
@@ -769,7 +792,7 @@ function QwertyPracticePage() {
       const timeoutId = setTimeout(saveToServer, 1000)
       return () => clearTimeout(timeoutId)
     }
-  }, [state.currentDict, state.currentIndex, urlBookId, urlScope, currentDict])
+  }, [state.currentIndex, globalOffset, urlBookId, urlScope, currentDict])
 
   // 加载设置从 localStorage（仅在组件挂载时执行一次）
   useEffect(() => {
