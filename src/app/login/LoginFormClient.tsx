@@ -43,13 +43,33 @@ export default function LoginFormClient() {
       })
 
       if (signInError || !data.user) {
-        console.error('[Login] 登录失败:', signInError)
+        // 静默处理认证错误，不显示为系统错误
+        // signInError 是预期的业务异常（密码错误），不是系统Bug
         setError('手机号或密码错误')
         setLoading(false)
         return
       }
 
       console.log('[Login] 登录成功:', data.user.id)
+
+      // 🔥 关键修复：等待 session 稳定后再跳转
+      // Supabase 的 cookie 设置是异步的，需要等待确保服务端能读取到
+      console.log('[Login] 等待 session 稳定...')
+
+      // 等待 800ms 让 cookies 完全设置
+      await new Promise(resolve => setTimeout(resolve, 800))
+
+      // 验证 session 真的可用（服务端能读取到用户）
+      const { data: { user: verifiedUser }, error: verifyError } = await supabase.auth.getUser()
+
+      if (verifyError || !verifiedUser) {
+        console.error('[Login] ❌ Session 验证失败:', verifyError)
+        setError('登录状态验证失败，请重试')
+        setLoading(false)
+        return
+      }
+
+      console.log('[Login] ✅ Session 验证成功:', verifiedUser.id)
 
       // 检查用户是否被封禁（需要额外调用API）
       const checkBanResponse = await fetch('/api/auth/check-ban', {
@@ -64,8 +84,10 @@ export default function LoginFormClient() {
       const targetUrl = redirectTo || '/'
 
       console.log('[Login] 跳转到:', targetUrl)
-      router.push(targetUrl)
-      router.refresh()
+
+      // 🔥 使用 window.location.href 强制完整页面重新加载
+      // 这会触发 middleware 和 SSR，确保服务端读取到最新的 cookies
+      window.location.href = targetUrl
     } catch (err: unknown) {
       console.error('[Login] 异常:', err)
       const message = err instanceof Error ? err.message : '登录失败，请重试'
