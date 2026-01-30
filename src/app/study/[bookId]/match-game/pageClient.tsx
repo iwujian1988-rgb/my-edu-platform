@@ -101,15 +101,15 @@ export default function MatchGamePageClient() {
 
   // 难度选项配置
   const DIFFICULTY_OPTIONS = [
-    { pairs: 4, cards: 8, name: '轻松', time: '约3-5分钟', color: 'from-green-50 to-green-100', borderColor: 'border-green-300', batchSize: 100 },
-    { pairs: 10, cards: 20, name: '中等', time: '约8-10分钟', color: 'from-blue-50 to-blue-100', borderColor: 'border-blue-300', batchSize: 300 },
-    { pairs: 20, cards: 40, name: '困难', time: '约15-20分钟', color: 'from-purple-50 to-purple-100', borderColor: 'border-purple-300', batchSize: 600 },
+    { pairs: 4, cards: 8, name: '轻松', time: '约3-5分钟', color: 'from-green-50 to-green-100', borderColor: 'border-green-300', batchSize: 50 },
+    { pairs: 10, cards: 20, name: '中等', time: '约8-10分钟', color: 'from-blue-50 to-blue-100', borderColor: 'border-blue-300', batchSize: 100 },
+    { pairs: 20, cards: 40, name: '困难', time: '约15-20分钟', color: 'from-purple-50 to-purple-100', borderColor: 'border-purple-300', batchSize: 200 },
   ]
 
   // 根据难度确定每次加载的单词数量
   const getBatchSize = (difficulty: number | null) => {
     const option = DIFFICULTY_OPTIONS.find(opt => opt.pairs === difficulty)
-    return option?.batchSize || 100  // 默认100
+    return option?.batchSize || 50  // 默认50
   }
 
   // 当前已加载的单词总数（用于分批加载）
