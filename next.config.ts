@@ -6,8 +6,8 @@ const withPWAInit = require("@ducanh2912/next-pwa").default || require("@ducanh2
 // 2. 初始化配置
 const withPWA = withPWAInit({
   dest: "public",
-  cacheOnFrontEndNav: true,
-  aggressiveFrontEndNavCaching: true,
+  cacheOnFrontEndNav: false,
+  aggressiveFrontEndNavCaching: false,
   reloadOnOnline: true,
   swcMinify: true,
   // ⚠️ 关键点：暂时设置为 false，强制生成 sw.js，排除环境变量干扰
@@ -23,6 +23,19 @@ const withPWA = withPWAInit({
   },
   workboxOptions: {
     disableDevLogs: true,
+    // ✅ 明确排除 API 请求的缓存
+    runtimeCaching: [
+      {
+        urlPattern: /^https:\/\/.*\/api\/.*/,
+        handler: 'NetworkOnly',  // API 请求不走缓存
+        options: {
+          cacheName: 'api-cache',
+          expiration: {
+            maxEntries: 0,  // 不缓存
+          },
+        },
+      },
+    ],
   },
 });
 

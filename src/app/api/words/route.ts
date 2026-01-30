@@ -13,6 +13,9 @@ import { withTimeout, safeLoop } from '@/lib/timeout'
  * - status: 可选，筛选状态 (all|unknown|fuzzy|known|new)
  * - shuffle: 可选，是否乱序（默认false）
  */
+// ✅ 禁用缓存，确保每次都获取最新数据
+export const dynamic = 'force-dynamic'
+
 export async function GET(request: NextRequest) {
   // 尝试从cookies获取用户（标准方式）
   let user = await getCurrentUser()
@@ -490,6 +493,12 @@ export async function GET(request: NextRequest) {
       bookTitle: bookTitle,  // 返回书名供前端使用
       hasThemeData,  // 🔥 书籍是否有theme数据
       hasSceneData   // 🔥 书籍是否有scene数据
+    }, {
+      headers: {
+        'Cache-Control': 'no-store, no-cache, must-revalidate',
+        'Pragma': 'no-cache',
+        'Expires': '0',
+      },
     })
   } catch (error) {
     console.error('Error in GET /api/words:', error)
