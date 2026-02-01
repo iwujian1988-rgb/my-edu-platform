@@ -8,9 +8,10 @@ import { MobileBottomNav } from './MobileBottomNav'
 
 interface LibraryClientProps {
   books: any[]
+  userId?: string
 }
 
-export function LibraryClient({ books }: LibraryClientProps) {
+export function LibraryClient({ books, userId }: LibraryClientProps) {
   const [view, setView] = useState<'dashboard' | 'settings'>('dashboard')
 
   useEffect(() => {

@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { Target, Calendar, BookOpen, Plus, Cat } from 'lucide-react'
+import { Target, Calendar, BookOpen, Plus } from 'lucide-react'
 import { PermissionWarningBanner } from './PermissionDisplay'
 import { BookLibrary } from './BookLibrary'
 import EmptyState from './EmptyState'
@@ -384,11 +384,9 @@ export function DashboardContent({
         {/* 1. Header */}
         <header className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-10 gap-4">
           <div className="flex items-center gap-4 w-full md:w-auto">
-            {/* Logo Box - 仅在移动端和平板竖屏显示 */}
-            <div className="block md:block lg:hidden w-12 h-12 md:w-14 md:h-14 bg-[#B4F416] border-[3px] border-black rounded flex items-center justify-center shadow-[3px_3px_0px_0px_#000] flex-shrink-0 p-0">
-              <div className="flex items-center justify-center w-full h-full">
-                <Cat size={28} strokeWidth={3} className="text-black" />
-              </div>
+            {/* Logo - 仅在移动端和平板竖屏显示 */}
+            <div className="block md:block lg:hidden w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+              <img src="/icons/icon-512.png" alt="MAX笔记" className="w-full h-full object-contain" />
             </div>
             <div>
               {/* 标题 - 仅在移动端和平板竖屏显示 */}

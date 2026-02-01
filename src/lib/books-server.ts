@@ -45,10 +45,10 @@ export const getAllBooks = cache(async (
 
   const supabase = await createClient()
 
-  // 1. 获取基础词书数据
+  // 1. 获取基础词书数据 - 只查询需要的字段以提升性能
   const { data: booksData, error: booksError } = await supabase
     .from('books')
-    .select('*')
+    .select('id, title, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
     .order('created_at', { ascending: false })
 
   if (booksError) {

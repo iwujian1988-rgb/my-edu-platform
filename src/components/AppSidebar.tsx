@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Home, Library, Dumbbell, Settings, Cat, Mic } from 'lucide-react'
+import { Home, Library, Dumbbell, Settings, Mic } from 'lucide-react'
 import { BookSelectorModal } from './BookSelectorModal'
 import type { Book } from '@/types/book'
 import { useTheme } from '@/contexts/ThemeContext'
@@ -52,8 +52,8 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
         <div className="p-6 border-b-[3px] border-black transition-colors duration-300"
              style={{ backgroundColor: 'var(--card-bg)' }}>
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-[#B4F416] border-[3px] border-black rounded flex items-center justify-center shadow-[3px_3px_0px_0px_#000]">
-              <Cat size={28} strokeWidth={3} className="text-black" />
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img src="/icons/icon-512.png" alt="MAX笔记" className="w-full h-full object-contain" />
             </div>
             <div>
               <h1 className="text-2xl font-black tracking-tight">MAX笔记</h1>
