@@ -118,7 +118,7 @@ export function BookIcon({ title, size = 'md' }: BookIconProps) {
   }
 
   return (
-    <div className={`${sizeClasses[size]} bg-gradient-to-br ${gradient} rounded-xl shadow-sm flex items-center justify-center`}>
+    <div className={`${sizeClasses[size]} bg-gradient-to-br ${gradient} rounded shadow-sm flex items-center justify-center`}>
       <IconComponent size={iconSize[size]} className="text-white" strokeWidth={2} />
     </div>
   )

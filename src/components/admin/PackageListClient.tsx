@@ -162,7 +162,7 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         {filteredPackages.map(pkg => (
           <div
             key={pkg.id}
-            className="bg-white rounded-lg shadow p-4 border border-gray-200"
+            className="bg-white rounded shadow p-4 border border-gray-200"
           >
             <div className="flex items-start justify-between">
               <div className="flex-1">
@@ -380,7 +380,7 @@ function PackageFormModal({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
         <div className="p-6">
           <h2 className="text-xl font-bold mb-4">
             {pkg ? '编辑套餐' : '创建套餐'}

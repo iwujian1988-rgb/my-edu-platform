@@ -266,6 +266,22 @@ export async function PUT(request: NextRequest) {
       return NextResponse.json({ error: 'Failed to batch update word progress' }, { status: 500 })
     }
 
+    // ✨ v4.0 新增：更新复习计划和今日任务
+    try {
+      for (const update of updates) {
+        await updateReviewScheduleAndTodayTask(
+          user.id,
+          update.word_id,
+          update.book_id,
+          update.status,
+          supabase
+        )
+      }
+    } catch (taskError) {
+      // 非关键错误，不影响主流程
+      console.warn('⚠️ Failed to update review schedule/today task:', taskError)
+    }
+
     // 对应方案：Section 5.1.2 - 批量更新后失效相关缓存
     // 获取所有受影响的book_id
     const affectedBookIds = new Set(updates.map((u: any) => u.book_id))
@@ -284,3 +300,149 @@ export async function PUT(request: NextRequest) {
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
   }
 }
+
+// ============================================
+// 辅助函数：集成学习计划系统
+// ============================================
+
+/**
+ * 更新复习计划和今日任务进度
+ * ✨ v4.0 新增
+ */
+async function updateReviewScheduleAndTodayTask(
+  userId: string,
+  wordId: string,
+  bookId: string,
+  status: 'known' | 'fuzzy' | 'unknown',
+  supabase: any
+): Promise<void> {
+  // 1. 更新复习计划表 (review_schedule)
+  const nextReviewDate = new Date()
+
+  if (status === 'known') {
+    // 获取当前复习次数
+    const { data: scheduleData } = await supabase
+      .from('review_schedule')
+      .select('review_count')
+      .eq('user_id', userId)
+      .eq('word_id', wordId)
+      .eq('book_id', bookId)
+      .maybeSingle()
+
+    const currentReviewCount = scheduleData?.review_count || 0
+
+    // 计算下次复习间隔（艾宾浩斯遗忘曲线：7/15/30天）
+    const intervals = [7, 15, 30]
+    const nextInterval = intervals[Math.min(currentReviewCount, intervals.length - 1)]
+
+    nextReviewDate.setDate(nextReviewDate.getDate() + nextInterval)
+
+    const year = nextReviewDate.getFullYear()
+    const month = String(nextReviewDate.getMonth() + 1).padStart(2, '0')
+    const day = String(nextReviewDate.getDate()).padStart(2, '0')
+    const nextReviewDateStr = `${year}-${month}-${day}`
+
+    await supabase
+      .from('review_schedule')
+      .upsert({
+        user_id: userId,
+        word_id: wordId,
+        book_id: bookId,
+        review_count: currentReviewCount + 1,
+        next_review_date: nextReviewDateStr,
+        interval_days: nextInterval,
+        updated_at: new Date().toISOString()
+      }, {
+        onConflict: 'user_id,word_id,book_id'
+      })
+  } else {
+    // fuzzy 或 unknown，重置为 7 天后复习
+    nextReviewDate.setDate(nextReviewDate.getDate() + 7)
+
+    const year = nextReviewDate.getFullYear()
+    const month = String(nextReviewDate.getMonth() + 1).padStart(2, '0')
+    const day = String(nextReviewDate.getDate()).padStart(2, '0')
+    const nextReviewDateStr = `${year}-${month}-${day}`
+
+    await supabase
+      .from('review_schedule')
+      .upsert({
+        user_id: userId,
+        word_id: wordId,
+        book_id: bookId,
+        review_count: 0,
+        next_review_date: nextReviewDateStr,
+        interval_days: 7,
+        updated_at: new Date().toISOString()
+      }, {
+        onConflict: 'user_id,word_id,book_id'
+      })
+  }
+
+  // 2. 检查并更新今日任务
+  const now = new Date()
+  const year = now.getFullYear()
+  const month = String(now.getMonth() + 1).padStart(2, '0')
+  const day = String(now.getDate()).padStart(2, '0')
+  const today = `${year}-${month}-${day}`
+
+  const { data: todayTask } = await supabase
+    .from('daily_task_records')
+    .select('*')
+    .eq('user_id', userId)
+    .eq('book_id', bookId)
+    .eq('task_date', today)
+    .maybeSingle()
+
+  if (todayTask) {
+    // 检查单词是否在今日任务中
+    const newWords = Array.isArray(todayTask.new_words)
+      ? todayTask.new_words.map((w: any) => typeof w === 'string' ? w : w.word_id || w.id)
+      : []
+    const reviewWords = Array.isArray(todayTask.review_words)
+      ? todayTask.review_words.map((w: any) => typeof w === 'string' ? w : w.word_id || w.id)
+      : []
+    const allWords = [...newWords, ...reviewWords]
+
+    if (allWords.includes(wordId)) {
+      // 更新完成单词列表
+      let completed = Array.isArray(todayTask.completed_words)
+        ? todayTask.completed_words
+        : []
+
+      if (status === 'known') {
+        // 标记为"认识"，添加到完成列表
+        if (!completed.includes(wordId)) {
+          completed.push(wordId)
+        }
+      } else {
+        // 标记为"fuzzy"或"unknown"，从完成列表移除
+        completed = completed.filter((id: string) => id !== wordId)
+      }
+
+      // 计算未完成的词 ✨ v4.0
+      const uncompleted = allWords.filter((id: string) => !completed.includes(id))
+
+      // 检查是否全部完成
+      const allCompleted = completed.length === allWords.length
+
+      const updateData: any = {
+        completed_words: completed,
+        uncompleted_words: uncompleted, // ✨ v4.0 新增
+        all_completed: allCompleted,
+        updated_at: new Date().toISOString()
+      }
+
+      // 如果全部完成，记录完成时间
+      if (allCompleted && !todayTask.all_completed) {
+        updateData.completed_at = new Date().toISOString()
+      }
+
+      await supabase
+        .from('daily_task_records')
+        .update(updateData)
+        .eq('id', todayTask.id)
+    }
+  }
+}
+

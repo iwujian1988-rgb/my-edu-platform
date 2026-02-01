@@ -149,7 +149,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
   return (
     <div className="space-y-6">
       {/* 基本信息 */}
-      <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
+      <div className="bg-white rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
         <div className="flex items-start justify-between mb-6">
           <div className="flex items-center gap-4">
             <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-black text-3xl">
@@ -182,7 +182,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
 
         {/* 账户信息 */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+          <div className="flex items-center gap-3 p-4 bg-gray-50 rounded">
             <Calendar className="text-gray-600" size={20} />
             <div>
               <p className="text-sm text-gray-500 font-semibold">注册时间</p>
@@ -190,7 +190,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
             </div>
           </div>
 
-          <div className="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+          <div className="flex items-center gap-3 p-4 bg-gray-50 rounded">
             <Clock className="text-gray-600" size={20} />
             <div>
               <p className="text-sm text-gray-500 font-semibold">最后登录</p>
@@ -201,7 +201,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
           </div>
 
           {invitationCode && (
-            <div className="flex items-center gap-3 p-4 bg-blue-50 rounded-xl border-[2px] border-blue-200">
+            <div className="flex items-center gap-3 p-4 bg-blue-50 rounded border-[2px] border-blue-200">
               <Key className="text-blue-600" size={20} />
               <div>
                 <p className="text-sm text-blue-600 font-semibold">注册邀请码</p>
@@ -211,7 +211,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
           )}
 
           {user.is_banned && (
-            <div className="flex items-center gap-3 p-4 bg-red-50 rounded-xl border-[2px] border-red-200">
+            <div className="flex items-center gap-3 p-4 bg-red-50 rounded border-[2px] border-red-200">
               <Ban className="text-red-600" size={20} />
               <div>
                 <p className="text-sm text-red-600 font-semibold">封禁原因</p>
@@ -221,7 +221,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
           )}
 
           {userPackage && (
-            <div className="flex items-center gap-3 p-4 bg-purple-50 rounded-xl border-[2px] border-purple-200 md:col-span-2">
+            <div className="flex items-center gap-3 p-4 bg-purple-50 rounded border-[2px] border-purple-200 md:col-span-2">
               <TrendingUp className="text-purple-600" size={20} />
               <div className="flex-1">
                 <p className="text-sm text-purple-600 font-semibold">套餐信息</p>
@@ -244,7 +244,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
         <div className="mt-6 flex flex-wrap gap-3">
           <button
             onClick={() => setShowPermissionModal(true)}
-            className="flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
+            className="flex items-center gap-2 px-4 py-2 bg-purple-500 text-white rounded border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
           >
             <Settings size={18} />
             权限管理
@@ -253,7 +253,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
           <button
             onClick={handleResetPassword}
             disabled={loading}
-            className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 px-4 py-2 bg-blue-500 text-white rounded border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Key size={18} />
             {loading ? '处理中...' : '重置密码'}
@@ -263,7 +263,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
         </div>
 
         {/* 权限信息 */}
-        <div className="mt-6 p-4 bg-gray-50 rounded-xl">
+        <div className="mt-6 p-4 bg-gray-50 rounded">
           <h4 className="font-bold text-gray-800 mb-3">当前权限</h4>
           <div className="space-y-2 text-sm">
             <div>
@@ -295,42 +295,42 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
       </div>
 
       {/* 学习统计 */}
-      <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
+      <div className="bg-white rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
         <h3 className="text-xl font-bold text-gray-800 mb-6 flex items-center gap-2">
           <TrendingUp className="text-green-600" size={24} />
           学习统计
         </h3>
 
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-          <div className="bg-green-50 rounded-xl p-4 border-[2px] border-green-200 text-center">
+          <div className="bg-green-50 rounded p-4 border-[2px] border-green-200 text-center">
             <p className="text-3xl font-black text-green-600" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               {stats.learningDays}
             </p>
             <p className="text-sm font-semibold text-gray-600 mt-2">学习天数</p>
           </div>
 
-          <div className="bg-blue-50 rounded-xl p-4 border-[2px] border-blue-200 text-center">
+          <div className="bg-blue-50 rounded p-4 border-[2px] border-blue-200 text-center">
             <p className="text-3xl font-black text-blue-600" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               {stats.totalWords}
             </p>
             <p className="text-sm font-semibold text-gray-600 mt-2">总单词数</p>
           </div>
 
-          <div className="bg-emerald-50 rounded-xl p-4 border-[2px] border-emerald-200 text-center">
+          <div className="bg-emerald-50 rounded p-4 border-[2px] border-emerald-200 text-center">
             <p className="text-3xl font-black text-emerald-600" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               {stats.wordsLearned}
             </p>
             <p className="text-sm font-semibold text-gray-600 mt-2">已掌握</p>
           </div>
 
-          <div className="bg-yellow-50 rounded-xl p-4 border-[2px] border-yellow-200 text-center">
+          <div className="bg-yellow-50 rounded p-4 border-[2px] border-yellow-200 text-center">
             <p className="text-3xl font-black text-yellow-600" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               {stats.wordsFuzzy}
             </p>
             <p className="text-sm font-semibold text-gray-600 mt-2">模糊</p>
           </div>
 
-          <div className="bg-red-50 rounded-xl p-4 border-[2px] border-red-200 text-center">
+          <div className="bg-red-50 rounded p-4 border-[2px] border-red-200 text-center">
             <p className="text-3xl font-black text-red-600" style={{ fontFamily: 'Fredoka, sans-serif' }}>
               {stats.wordsUnknown}
             </p>
@@ -381,7 +381,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
       {/* 密码重置成功对话框 */}
       {tempPassword && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-          <div className="bg-white rounded-lg shadow-xl max-w-md w-full">
+          <div className="bg-white rounded shadow-xl max-w-md w-full">
             <div className="p-6">
               <div className="flex items-center gap-3 mb-4">
                 <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
@@ -393,10 +393,10 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
                 </div>
               </div>
 
-              <div className="bg-blue-50 rounded-xl p-4 border-[2px] border-blue-200 mb-4">
+              <div className="bg-blue-50 rounded p-4 border-[2px] border-blue-200 mb-4">
                 <p className="text-sm font-semibold text-blue-600 mb-2">临时密码（12位字母数字）</p>
                 <div className="flex items-center gap-2">
-                  <div className="flex-1 bg-white px-4 py-3 rounded-lg border-[2px] border-blue-300 font-mono text-lg font-bold text-gray-800 flex items-center justify-between">
+                  <div className="flex-1 bg-white px-4 py-3 rounded border-[2px] border-blue-300 font-mono text-lg font-bold text-gray-800 flex items-center justify-between">
                     <span className="tracking-wider">
                       {showTempPassword ? tempPassword : '•'.repeat(12)}
                     </span>
@@ -415,7 +415,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
                   </div>
                   <button
                     onClick={copyPassword}
-                    className="px-4 py-3 bg-blue-500 text-white rounded-lg font-bold hover:bg-blue-600 transition-colors flex items-center gap-2 whitespace-nowrap"
+                    className="px-4 py-3 bg-blue-500 text-white rounded font-bold hover:bg-blue-600 transition-colors flex items-center gap-2 whitespace-nowrap"
                     title="复制密码"
                   >
                     <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -426,7 +426,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
                 </div>
               </div>
 
-              <div className="bg-yellow-50 rounded-xl p-4 border-[2px] border-yellow-200 mb-4">
+              <div className="bg-yellow-50 rounded p-4 border-[2px] border-yellow-200 mb-4">
                 <p className="text-sm text-gray-700">
                   <span className="font-bold text-yellow-700">⚠️ 重要提示：</span>
                 </p>
@@ -440,7 +440,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
 
               <button
                 onClick={() => setTempPassword(null)}
-                className="w-full px-6 py-3 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 transition-colors"
+                className="w-full px-6 py-3 bg-green-500 text-white rounded font-bold hover:bg-green-600 transition-colors"
               >
                 我已复制，关闭
               </button>
@@ -504,7 +504,7 @@ function BanUserButton({ userId, isBanned }: { userId: string; isBanned: boolean
     <button
       onClick={handleBan}
       disabled={loading}
-      className={`flex items-center gap-2 px-4 py-2 rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
+      className={`flex items-center gap-2 px-4 py-2 rounded border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
         isBanned
           ? 'bg-green-500 text-white'
           : 'bg-red-500 text-white'
@@ -610,7 +610,7 @@ function PermissionModal({
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+      <div className="bg-white rounded shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
         <div className="sticky top-0 bg-white p-6 border-b flex items-center justify-between">
           <h2 className="text-2xl font-bold">权限管理 - {user.full_name || user.email}</h2>
           <button onClick={onClose} className="p-2 hover:bg-gray-100 rounded">
@@ -620,7 +620,7 @@ function PermissionModal({
 
         <div className="p-6 space-y-6">
           {/* 当前权限 */}
-          <div className="bg-gray-50 rounded-xl p-4">
+          <div className="bg-gray-50 rounded p-4">
             <h3 className="font-bold mb-2">当前权限</h3>
             <div className="text-sm space-y-1">
               <p><strong>功能权限：</strong>{(user.feature_permissions || []).length} 项</p>
@@ -648,7 +648,7 @@ function PermissionModal({
               {FEATURE_PERMISSIONS.map(perm => (
                 <label
                   key={perm.id}
-                  className={`flex items-center gap-2 p-3 rounded-lg border-2 cursor-pointer transition-colors ${
+                  className={`flex items-center gap-2 p-3 rounded border-2 cursor-pointer transition-colors ${
                     featurePermissions.includes(perm.id)
                       ? 'border-blue-500 bg-blue-50'
                       : 'border-gray-300 hover:border-gray-400'
@@ -671,7 +671,7 @@ function PermissionModal({
             <h3 className="font-bold mb-3">单词书权限</h3>
             <div className="space-y-2">
               {/* 全部单词书选项 */}
-              <label className={`flex items-center gap-2 p-3 rounded-lg border-2 cursor-pointer transition-colors ${
+              <label className={`flex items-center gap-2 p-3 rounded border-2 cursor-pointer transition-colors ${
                 bookPermissions.includes('*')
                   ? 'border-green-500 bg-green-50'
                   : 'border-gray-300 hover:border-gray-400'
@@ -691,7 +691,7 @@ function PermissionModal({
                   {allBooks.map(book => (
                     <label
                       key={book.id}
-                      className={`flex items-center gap-2 p-2 rounded-lg border cursor-pointer transition-colors text-sm ${
+                      className={`flex items-center gap-2 p-2 rounded border cursor-pointer transition-colors text-sm ${
                         bookPermissions.includes(book.id)
                           ? 'border-green-500 bg-green-50'
                           : 'border-gray-300 hover:border-gray-400'
@@ -768,7 +768,7 @@ function PermissionModal({
             <textarea
               value={changeReason}
               onChange={e => setChangeReason(e.target.value)}
-              className="w-full px-4 py-3 border-2 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-3 border-2 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               rows={3}
               placeholder="请说明修改权限的原因..."
               required
@@ -780,14 +780,14 @@ function PermissionModal({
         <div className="sticky bottom-0 bg-white p-6 border-t flex justify-end gap-3">
           <button
             onClick={onClose}
-            className="px-6 py-2 bg-gray-200 text-gray-700 rounded-xl font-bold hover:bg-gray-300"
+            className="px-6 py-2 bg-gray-200 text-gray-700 rounded font-bold hover:bg-gray-300"
             disabled={loading}
           >
             取消
           </button>
           <button
             onClick={handleSubmit}
-            className="px-6 py-2 bg-purple-500 text-white rounded-xl font-bold hover:bg-purple-600 disabled:opacity-50"
+            className="px-6 py-2 bg-purple-500 text-white rounded font-bold hover:bg-purple-600 disabled:opacity-50"
             disabled={loading}
           >
             {loading ? '保存中...' : '保存'}

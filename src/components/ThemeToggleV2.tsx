@@ -110,7 +110,7 @@ export function ThemeToggleV2() {
             className="
               absolute right-0 top-12 z-50
               w-40 bg-white dark:bg-gray-800
-              rounded-lg shadow-lg
+              rounded shadow-lg
               border border-gray-200 dark:border-gray-700
               overflow-hidden
               animate-in fade-in slide-in-from-top-2 duration-200

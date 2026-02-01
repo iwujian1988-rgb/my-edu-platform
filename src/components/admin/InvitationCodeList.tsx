@@ -129,7 +129,7 @@ export function InvitationCodeList({
   return (
     <div className="space-y-6">
       {/* 搜索和筛选 */}
-      <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
+      <div className="bg-white rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
         <div className="flex flex-col md:flex-row gap-4">
           {/* 搜索框 */}
           <div className="flex-1">
@@ -141,7 +141,7 @@ export function InvitationCodeList({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                className="w-full pl-10 pr-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-green-500 focus:outline-none font-semibold"
+                className="w-full pl-10 pr-4 py-3 rounded border-[2px] border-gray-300 focus:border-green-500 focus:outline-none font-semibold"
               />
             </div>
           </div>
@@ -150,7 +150,7 @@ export function InvitationCodeList({
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-green-500 focus:outline-none font-semibold bg-white"
+            className="px-4 py-3 rounded border-[2px] border-gray-300 focus:border-green-500 focus:outline-none font-semibold bg-white"
           >
             <option value="">全部邀请码</option>
             <option value="unused">未使用</option>
@@ -161,7 +161,7 @@ export function InvitationCodeList({
           {/* 搜索按钮 */}
           <button
             onClick={handleSearch}
-            className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
+            className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
           >
             搜索
           </button>
@@ -170,7 +170,7 @@ export function InvitationCodeList({
           <button
             onClick={handleExportSelected}
             disabled={exporting || selectedCodes.size === 0}
-            className="px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+            className="px-6 py-3 bg-gradient-to-r from-blue-400 to-blue-600 text-white rounded border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
           >
             <Download size={20} />
             {exporting ? '导出中...' : `导出选中 (${selectedCodes.size})`}
@@ -205,7 +205,7 @@ export function InvitationCodeList({
       </div>
 
       {/* 邀请码表格 */}
-      <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] overflow-hidden">
+      <div className="bg-white rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] overflow-hidden">
         {codes.length === 0 ? (
           <div className="text-center py-12">
             <Ticket className="mx-auto text-gray-300 mb-4" size={48} />
@@ -261,7 +261,7 @@ export function InvitationCodeList({
                       {/* 邀请码 */}
                       <td className="py-4 px-6">
                         <div className="flex items-center gap-2">
-                          <code className="px-3 py-1 bg-gray-100 rounded-lg font-mono font-bold text-gray-800">
+                          <code className="px-3 py-1 bg-gray-100 rounded font-mono font-bold text-gray-800">
                             {code.code}
                           </code>
                           <CopyButton code={code.code} />
@@ -337,7 +337,7 @@ export function InvitationCodeList({
             {/* 移动端卡片 */}
             <div className="md:hidden space-y-4 p-4">
               {codes.map((code) => (
-                <div key={code.id} className={`rounded-xl p-4 border-[2px] transition-colors ${selectedCodes.has(code.id) ? 'bg-blue-50 border-blue-300' : 'bg-gray-50 border-gray-200'}`}>
+                <div key={code.id} className={`rounded p-4 border-[2px] transition-colors ${selectedCodes.has(code.id) ? 'bg-blue-50 border-blue-300' : 'bg-gray-50 border-gray-200'}`}>
                   <div className="flex items-start gap-3 mb-3">
                     {/* 复选框 */}
                     <button
@@ -353,7 +353,7 @@ export function InvitationCodeList({
                     </button>
 
                     <div className="flex items-center gap-2 flex-1 min-w-0">
-                      <code className="px-3 py-1 bg-white rounded-lg font-mono font-bold text-gray-800 text-sm">
+                      <code className="px-3 py-1 bg-white rounded font-mono font-bold text-gray-800 text-sm">
                         {code.code}
                       </code>
                       <CopyButton code={code.code} />
@@ -403,7 +403,7 @@ export function InvitationCodeList({
                   <div className="flex gap-2">
                     <Link
                       href={`/admin/invitation-codes?page=${Math.max(1, currentPage - 1)}&search=${search}&status=${status}`}
-                      className={`px-4 py-2 rounded-lg font-bold transition-all ${
+                      className={`px-4 py-2 rounded font-bold transition-all ${
                         currentPage === 1
                           ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                           : 'bg-white border-[2px] border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
@@ -411,12 +411,12 @@ export function InvitationCodeList({
                     >
                       上一页
                     </Link>
-                    <span className="px-4 py-2 bg-green-500 text-white rounded-lg font-bold">
+                    <span className="px-4 py-2 bg-green-500 text-white rounded font-bold">
                       {currentPage} / {totalPages}
                     </span>
                     <Link
                       href={`/admin/invitation-codes?page=${Math.min(totalPages, currentPage + 1)}&search=${search}&status=${status}`}
-                      className={`px-4 py-2 rounded-lg font-bold transition-all ${
+                      className={`px-4 py-2 rounded font-bold transition-all ${
                         currentPage === totalPages
                           ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                           : 'bg-white border-[2px] border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
@@ -494,7 +494,7 @@ function DisableButton({ codeId, code, isDisabled }: { codeId: string; code: str
     <button
       onClick={handleToggle}
       disabled={loading}
-      className={`p-2 rounded-lg transition-colors ${
+      className={`p-2 rounded transition-colors ${
         isDisabled
           ? 'text-green-600 hover:bg-green-50'
           : 'text-red-600 hover:bg-red-50'
@@ -548,7 +548,7 @@ function DeleteButton({ codeId, code }: { codeId: string; code: string }) {
     <button
       onClick={handleDelete}
       disabled={loading}
-      className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+      className="p-2 text-red-600 hover:bg-red-50 rounded transition-colors"
       title="删除邀请码"
     >
       {loading ? (
@@ -576,7 +576,7 @@ function CopyLinkButton({ code }: { code: string }) {
   return (
     <button
       onClick={handleCopyLink}
-      className={`p-2 rounded-lg transition-colors ${
+      className={`p-2 rounded transition-colors ${
         copied
           ? 'text-green-600 hover:bg-green-50'
           : 'text-blue-600 hover:bg-blue-50'

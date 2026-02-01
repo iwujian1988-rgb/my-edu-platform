@@ -157,7 +157,7 @@ export function BatchActionBar({
             <div className="flex items-center gap-3">
               {/* 错误消息 */}
               {error && (
-                <div className="flex items-center gap-2 px-3 py-2 bg-red-50 border border-red-200 rounded-xl">
+                <div className="flex items-center gap-2 px-3 py-2 bg-red-50 border border-red-200 rounded">
                   <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
                   <span className="text-sm text-red-600">{error}</span>
                 </div>
@@ -165,7 +165,7 @@ export function BatchActionBar({
 
               {/* 成功消息 */}
               {success && (
-                <div className="flex items-center gap-2 px-3 py-2 bg-green-50 border border-green-200 rounded-xl">
+                <div className="flex items-center gap-2 px-3 py-2 bg-green-50 border border-green-200 rounded">
                   <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                   <span className="text-sm text-green-700">{success}</span>
                 </div>
@@ -178,7 +178,7 @@ export function BatchActionBar({
                   setError('')
                 }}
                 disabled={isProcessing}
-                className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                className="px-4 py-2 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
               >
                 {isProcessing ? (
                   <>
@@ -200,7 +200,7 @@ export function BatchActionBar({
                   setError('')
                 }}
                 disabled={isProcessing}
-                className="px-4 py-2 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                className="px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
               >
                 {isProcessing ? (
                   <>
@@ -222,7 +222,7 @@ export function BatchActionBar({
       {/* 移动到章节对话框 */}
       {showMoveDialog && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+          <div className="bg-white rounded shadow-xl w-full max-w-md p-6">
             <h3 className="text-lg font-bold text-slate-900 mb-4">移动到章节</h3>
             <p className="text-sm text-slate-600 mb-4">
               将选中的 {selectedCount} 个单词移动到：
@@ -235,7 +235,7 @@ export function BatchActionBar({
                 value={targetChapterId}
                 onChange={(e) => setTargetChapterId(e.target.value)}
                 disabled={isProcessing}
-                className="w-full px-4 py-2.5 border-2 border-slate-200 rounded-xl focus:border-indigo-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full px-4 py-2.5 border-2 border-slate-200 rounded focus:border-indigo-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <option value="">默认章节</option>
                 {chapters.map(chapter => (
@@ -246,7 +246,7 @@ export function BatchActionBar({
               </select>
             </div>
             {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2">
+              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded flex items-center gap-2">
                 <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
                 <p className="text-sm text-red-600">{error}</p>
               </div>
@@ -259,14 +259,14 @@ export function BatchActionBar({
                   setTargetChapterId('')
                 }}
                 disabled={isProcessing}
-                className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
                 取消
               </button>
               <button
                 onClick={handleBatchMove}
                 disabled={isProcessing}
-                className="flex-1 px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+                className="flex-1 px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
               >
                 {isProcessing ? (
                   <>
@@ -288,7 +288,7 @@ export function BatchActionBar({
       {/* 删除确认对话框 */}
       {showDeleteConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+          <div className="bg-white rounded shadow-xl w-full max-w-md p-6">
             <div className="flex items-start gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
                 <Trash2 className="w-6 h-6 text-red-600" />
@@ -300,7 +300,7 @@ export function BatchActionBar({
                   此操作不可撤销，确定要继续吗？
                 </p>
                 {error && (
-                  <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2">
+                  <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
                     <p className="text-sm text-red-600">{error}</p>
                   </div>
@@ -312,14 +312,14 @@ export function BatchActionBar({
                       setError('')
                     }}
                     disabled={isProcessing}
-                    className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                    className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                   >
                     取消
                   </button>
                   <button
                     onClick={handleBatchDelete}
                     disabled={isProcessing}
-                    className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+                    className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
                   >
                     {isProcessing ? (
                       <>

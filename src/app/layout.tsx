@@ -1,3 +1,6 @@
+// 🔧 日志控制（必须在最前面引入）
+import '@/lib/disable-logs'
+
 import type { Metadata } from "next";
 import { Fredoka, Nunito } from "next/font/google";
 import "./globals.css";

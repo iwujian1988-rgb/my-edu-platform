@@ -23,8 +23,8 @@ function ScopeIcon({ type, isSelected }: { type: string; isSelected: boolean }) 
     case 'all':
       return (
         <div className="relative">
-          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded-md`} />
-          <div className={`relative bg-gray-100 border-2 border-black ${iconSize} rounded-md flex items-center justify-center`}>
+          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded`} />
+          <div className={`relative bg-gray-100 border-2 border-black ${iconSize} rounded flex items-center justify-center`}>
             <List className="w-4 h-4 text-black" strokeWidth={3} />
           </div>
         </div>
@@ -33,8 +33,8 @@ function ScopeIcon({ type, isSelected }: { type: string; isSelected: boolean }) 
     case 'unknown':
       return (
         <div className="relative">
-          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded-md`} />
-          <div className={`relative bg-red-100 border-2 border-black ${iconSize} rounded-md flex items-center justify-center`}>
+          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded`} />
+          <div className={`relative bg-red-100 border-2 border-black ${iconSize} rounded flex items-center justify-center`}>
             <XIcon className="w-4 h-4 text-red-600" strokeWidth={3.5} />
           </div>
         </div>
@@ -43,8 +43,8 @@ function ScopeIcon({ type, isSelected }: { type: string; isSelected: boolean }) 
     case 'fuzzy':
       return (
         <div className="relative">
-          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded-md`} />
-          <div className={`relative bg-yellow-100 border-2 border-black ${iconSize} rounded-md flex items-center justify-center`}>
+          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded`} />
+          <div className={`relative bg-yellow-100 border-2 border-black ${iconSize} rounded flex items-center justify-center`}>
             <Star className="w-4 h-4 text-yellow-600 fill-yellow-600" strokeWidth={3} />
           </div>
         </div>
@@ -53,8 +53,8 @@ function ScopeIcon({ type, isSelected }: { type: string; isSelected: boolean }) 
     case 'new':
       return (
         <div className="relative">
-          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded-md`} />
-          <div className={`relative bg-blue-100 border-2 border-black ${iconSize} rounded-md flex items-center justify-center`}>
+          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded`} />
+          <div className={`relative bg-blue-100 border-2 border-black ${iconSize} rounded flex items-center justify-center`}>
             <FilePlus className="w-4 h-4 text-blue-600" strokeWidth={3} />
           </div>
         </div>
@@ -63,8 +63,8 @@ function ScopeIcon({ type, isSelected }: { type: string; isSelected: boolean }) 
     case 'known':
       return (
         <div className="relative">
-          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded-md`} />
-          <div className={`relative bg-green-100 border-2 border-black ${iconSize} rounded-md flex items-center justify-center`}>
+          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded`} />
+          <div className={`relative bg-green-100 border-2 border-black ${iconSize} rounded flex items-center justify-center`}>
             <CheckCircle2 className="w-4 h-4 text-green-600" strokeWidth={3} />
           </div>
         </div>
@@ -73,8 +73,8 @@ function ScopeIcon({ type, isSelected }: { type: string; isSelected: boolean }) 
     case 'mistakes':
       return (
         <div className="relative">
-          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded-md`} />
-          <div className={`relative bg-purple-100 border-2 border-black ${iconSize} rounded-md flex items-center justify-center`}>
+          <div className={`absolute inset-0 bg-black translate-x-1 translate-y-1 ${iconSize} rounded`} />
+          <div className={`relative bg-purple-100 border-2 border-black ${iconSize} rounded flex items-center justify-center`}>
             <BookX className="w-4 h-4 text-purple-600" strokeWidth={3} />
           </div>
         </div>
@@ -266,14 +266,14 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
         {/* 移动端头部 */}
         <div className="flex items-center justify-between p-4 border-b-2 border-black bg-[#B4F416] dark:bg-lime-600">
           {mobileStep === 2 && (
-            <button onClick={handleMobileBack} className="p-2 mr-2 border-2 border-black bg-white dark:bg-gray-800 rounded-lg text-black dark:text-white">
+            <button onClick={handleMobileBack} className="p-2 mr-2 border-2 border-black bg-white dark:bg-gray-800 rounded text-black dark:text-white">
               ← 返回
             </button>
           )}
           <h2 className="font-black text-lg flex-1 text-center text-black dark:text-white">
             {mobileStep === 1 ? '选择词库' : '选择范围'}
           </h2>
-          <button onClick={onClose} className="p-2 border-2 border-black bg-white dark:bg-gray-800 rounded-lg text-black dark:text-white">
+          <button onClick={onClose} className="p-2 border-2 border-black bg-white dark:bg-gray-800 rounded text-black dark:text-white">
             ✕
           </button>
         </div>
@@ -321,7 +321,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
                                 router.push(`/practice?bookId=${book.id}&scope=${record.scope}`)
                               }
                             }}
-                            className="w-full flex items-center justify-between p-3 border-2 border-black dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+                            className="w-full flex items-center justify-between p-3 border-2 border-black dark:border-gray-600 rounded bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
                           >
                             <div className="flex flex-col flex-1 text-left">
                               <div className="font-black text-sm text-gray-900 dark:text-gray-100">
@@ -352,7 +352,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
                     <button
                       key={book.id}
                       onClick={() => handleMobileSelectBook(book)}
-                      className="w-full p-4 border-2 border-black dark:border-gray-600 rounded-lg bg-white dark:bg-gray-800 hover:bg-[#B4F416] dark:hover:bg-lime-500/20 text-left transition-all"
+                      className="w-full p-4 border-2 border-black dark:border-gray-600 rounded bg-white dark:bg-gray-800 hover:bg-[#B4F416] dark:hover:bg-lime-500/20 text-left transition-all"
                     >
                       <div className="font-black text-base text-gray-900 dark:text-gray-100">{book.title}</div>
                       <div className="font-mono text-xs text-gray-600 dark:text-gray-400 mt-1">
@@ -366,7 +366,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
           ) : (
             <>
               {/* 第二步：选择范围 */}
-              <div className="mb-4 p-3 bg-gray-50 dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-lg">
+              <div className="mb-4 p-3 bg-gray-50 dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded">
                 <div className="font-black text-sm text-gray-900 dark:text-gray-100">{selectedBook?.title}</div>
               </div>
               <div className="grid grid-cols-2 gap-3">
@@ -378,7 +378,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
                       key={scope.key}
                       onClick={() => setSelectedScope(scope.key)}
                       disabled={wordCount === 0}
-                      className={`p-4 border-2 border-black dark:border-gray-600 rounded-lg flex flex-col items-center gap-2 transition-all ${
+                      className={`p-4 border-2 border-black dark:border-gray-600 rounded flex flex-col items-center gap-2 transition-all ${
                         isSelected ? 'bg-[#B4F416] dark:bg-lime-500/30 shadow-[2px_2px_0px_0px_#000]' : 'bg-white dark:bg-gray-800'
                       } ${wordCount === 0 ? 'opacity-50' : ''}`}
                     >
@@ -394,7 +394,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
               <button
                 onClick={handleStartLearning}
                 disabled={!selectedBook || scopeWordCounts[selectedScope] === 0}
-                className="w-full mt-4 h-14 bg-[#B4F416] dark:bg-lime-500 border-2 border-black dark:border-gray-600 rounded-lg font-black text-lg text-black dark:text-white disabled:bg-gray-300 dark:disabled:bg-gray-700 disabled:cursor-not-allowed shadow-[3px_3px_0px_0px_#000]"
+                className="w-full mt-4 h-14 bg-[#B4F416] dark:bg-lime-500 border-2 border-black dark:border-gray-600 rounded font-black text-lg text-black dark:text-white disabled:bg-gray-300 dark:disabled:bg-gray-700 disabled:cursor-not-allowed shadow-[3px_3px_0px_0px_#000]"
               >
                 开始学习 →
               </button>
@@ -424,7 +424,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
         {/* 关闭按钮 - 黑暗模式适配 */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-10 cursor-pointer hover:bg-red-50 dark:hover:bg-red-900/30 transition-all rounded-lg w-10 h-10 flex items-center justify-center border-2 border-black dark:border-gray-600 bg-white dark:bg-gray-700 hover:translate-y-0.5 active:translate-y-0 shadow-[2px_2px_0px_0px_#000] dark:shadow-none active:shadow-none"
+          className="absolute top-4 right-4 z-10 cursor-pointer hover:bg-red-50 dark:hover:bg-red-900/30 transition-all rounded w-10 h-10 flex items-center justify-center border-2 border-black dark:border-gray-600 bg-white dark:bg-gray-700 hover:translate-y-0.5 active:translate-y-0 shadow-[2px_2px_0px_0px_#000] dark:shadow-none active:shadow-none"
         >
           <X style={{ width: '20px', height: '20px', color: '#000' }} className="dark:text-white" strokeWidth={2.5} />
         </button>
@@ -458,7 +458,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
               placeholder="搜索词库"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-12 border-2 border-black dark:border-gray-600 rounded-lg pl-12 pr-4 text-base font-bold outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-all focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] dark:focus:bg-lime-500/20 focus:placeholder:text-black dark:focus:placeholder:text-lime-400"
+              className="w-full h-12 border-2 border-black dark:border-gray-600 rounded pl-12 pr-4 text-base font-bold outline-none bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 transition-all focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] dark:focus:bg-lime-500/20 focus:placeholder:text-black dark:focus:placeholder:text-lime-400"
               style={{
                 fontFamily: 'monospace',
               }}
@@ -505,7 +505,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
                           router.push(`/practice?bookId=${book.id}&scope=${record.scope}`)
                         }
                       }}
-                      className="w-full flex items-center justify-between p-3 mb-2 bg-white dark:bg-gray-700 border-2 border-black dark:border-gray-600 rounded-lg cursor-pointer transition-all hover:bg-gray-200 dark:hover:bg-gray-600 hover:-translate-y-0.5 active:translate-y-0 shadow-[2px_2px_0px_0px_#000] active:shadow-none"
+                      className="w-full flex items-center justify-between p-3 mb-2 bg-white dark:bg-gray-700 border-2 border-black dark:border-gray-600 rounded cursor-pointer transition-all hover:bg-gray-200 dark:hover:bg-gray-600 hover:-translate-y-0.5 active:translate-y-0 shadow-[2px_2px_0px_0px_#000] active:shadow-none"
                     >
                       <div className="flex flex-col flex-1 text-left">
                         <div className="font-black text-sm text-gray-900 dark:text-gray-100">
@@ -551,7 +551,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
               <button
                 key={book.id}
                 onClick={() => setSelectedBook(book)}
-                className={`w-full p-4 border-2 rounded-lg mb-3 cursor-pointer transition-all text-left hover:-translate-y-0.5 active:translate-y-0 ${
+                className={`w-full p-4 border-2 rounded mb-3 cursor-pointer transition-all text-left hover:-translate-y-0.5 active:translate-y-0 ${
                   selectedBook?.id === book.id
                     ? 'bg-[#B4F416] dark:bg-lime-500/30 border-black dark:border-lime-400 shadow-[2px_2px_0px_0px_#000] dark:shadow-none active:shadow-none'
                     : 'bg-white dark:bg-gray-700 border-black dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600'
@@ -597,7 +597,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
               className="flex items-center gap-4 mb-5 pb-4 border-b-2 border-black dark:border-gray-600"
             >
               <div
-                className="w-16 h-16 bg-[#B4F416] dark:bg-lime-500/30 border-2 border-black dark:border-lime-400 rounded-lg flex items-center justify-center font-black text-3xl text-black dark:text-lime-400"
+                className="w-16 h-16 bg-[#B4F416] dark:bg-lime-500/30 border-2 border-black dark:border-lime-400 rounded flex items-center justify-center font-black text-3xl text-black dark:text-lime-400"
               >
                 {getBookCode(selectedBook.title)}
               </div>
@@ -635,7 +635,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
                   key={scope.key}
                   onClick={() => !isDisabled && setSelectedScope(scope.key)}
                   disabled={isDisabled}
-                  className={`p-4 border-2 rounded-lg flex flex-col items-center gap-3 transition-all hover:-translate-y-0.5 active:translate-y-0 ${
+                  className={`p-4 border-2 rounded flex flex-col items-center gap-3 transition-all hover:-translate-y-0.5 active:translate-y-0 ${
                     isDisabled
                       ? 'bg-gray-100 border-gray-300 cursor-not-allowed opacity-50'
                       : isSelected
@@ -665,7 +665,7 @@ export function BookSelectorModal({ books, onClose, userId, initialScopeStats }:
             <button
               onClick={handleStartLearning}
               disabled={!selectedBook || (scopeWordCounts[selectedScope] ?? 0) === 0}
-              className={`w-full h-14 border-2 rounded-lg font-black text-lg cursor-pointer flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 active:translate-y-0 ${
+              className={`w-full h-14 border-2 rounded font-black text-lg cursor-pointer flex items-center justify-center gap-2 transition-all hover:-translate-y-0.5 active:translate-y-0 ${
                 !selectedBook || (scopeWordCounts[selectedScope] ?? 0) === 0
                   ? 'bg-gray-300 border-gray-400 text-gray-500 cursor-not-allowed'
                   : 'bg-[#B4F416] border-black text-black shadow-[3px_3px_0px_0px_#000] active:shadow-none'

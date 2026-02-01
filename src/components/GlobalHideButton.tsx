@@ -80,7 +80,7 @@ export function GlobalHideButton({ bookId, onHideChange }: GlobalHideButtonProps
           : 'bg-white border-black text-black hover:bg-gray-50 shadow-[2px_2px_0px_0px_#000]'
       } disabled:opacity-50 transition-all duration-200
         // 移动端：紧凑图标按钮
-        w-9 h-9 rounded-lg border-2 flex items-center justify-center md:w-auto md:px-4 md:py-2.5 md:flex md:items-center md:gap-2`}
+        w-9 h-9 rounded border-2 flex items-center justify-center md:w-auto md:px-4 md:py-2.5 md:flex md:items-center md:gap-2`}
     >
       {hideChinese ? <EyeOff className="w-4 h-4 md:w-4 md:h-4" strokeWidth={2.5} /> : <Eye className="w-4 h-4 md:w-4 md:h-4" strokeWidth={2.5} />}
       <span className="hidden md:inline text-sm">

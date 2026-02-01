@@ -104,7 +104,7 @@ export function ScopeSelectorModal({
             onClick={() => !isFilteredDisabled && setSelectedScope('filtered')}
             disabled={isFilteredDisabled}
             className={`
-              w-full p-4 rounded-xl border-2 text-left transition-all
+              w-full p-4 rounded border-2 text-left transition-all
               ${selectedScope === 'filtered' && !isFilteredDisabled
                 ? 'border-green-400 bg-green-50 shadow-lg'
                 : 'border-gray-200 hover:border-purple-300'
@@ -137,7 +137,7 @@ export function ScopeSelectorModal({
             onClick={() => !isTotalDisabled && setSelectedScope('all')}
             disabled={isTotalDisabled}
             className={`
-              w-full p-4 rounded-xl border-2 text-left transition-all
+              w-full p-4 rounded border-2 text-left transition-all
               ${selectedScope === 'all' && !isTotalDisabled
                 ? 'border-green-400 bg-green-50 shadow-lg'
                 : 'border-gray-200 hover:border-purple-300'
@@ -170,14 +170,14 @@ export function ScopeSelectorModal({
         <div className="flex gap-3">
           <button
             onClick={onClose}
-            className="flex-1 px-6 py-3 border-2 border-gray-200 text-gray-700 font-bold rounded-xl hover:bg-gray-50 transition-colors"
+            className="flex-1 px-6 py-3 border-2 border-gray-200 text-gray-700 font-bold rounded hover:bg-gray-50 transition-colors"
           >
             取消
           </button>
           <button
             onClick={handleConfirm}
             disabled={(selectedScope === 'filtered' && isFilteredDisabled) || (selectedScope === 'all' && isTotalDisabled)}
-            className="flex-1 px-6 py-3 bg-gradient-to-r from-green-400 to-green-500 text-white font-bold rounded-xl hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+            className="flex-1 px-6 py-3 bg-gradient-to-r from-green-400 to-green-500 text-white font-bold rounded hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
             确认开始
           </button>

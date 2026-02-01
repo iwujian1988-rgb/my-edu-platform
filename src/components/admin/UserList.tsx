@@ -72,7 +72,7 @@ export function UserList({
   return (
     <div className="space-y-6">
       {/* 搜索和筛选 */}
-      <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
+      <div className="bg-white rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
         <div className="flex flex-col md:flex-row gap-4">
           {/* 搜索框 */}
           <div className="flex-1">
@@ -84,7 +84,7 @@ export function UserList({
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 onKeyDown={(e) => e.key === 'Enter' && handleSearch()}
-                className="w-full pl-10 pr-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-green-500 focus:outline-none font-semibold"
+                className="w-full pl-10 pr-4 py-3 rounded border-[2px] border-gray-300 focus:border-green-500 focus:outline-none font-semibold"
               />
             </div>
           </div>
@@ -93,7 +93,7 @@ export function UserList({
           <select
             value={statusFilter}
             onChange={(e) => setStatusFilter(e.target.value)}
-            className="px-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-green-500 focus:outline-none font-semibold bg-white"
+            className="px-4 py-3 rounded border-[2px] border-gray-300 focus:border-green-500 focus:outline-none font-semibold bg-white"
           >
             <option value="">全部用户</option>
             <option value="active">正常用户</option>
@@ -104,7 +104,7 @@ export function UserList({
           <select
             value={selectedPackage}
             onChange={(e) => setSelectedPackage(e.target.value)}
-            className="px-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-purple-500 focus:outline-none font-semibold bg-white"
+            className="px-4 py-3 rounded border-[2px] border-gray-300 focus:border-purple-500 focus:outline-none font-semibold bg-white"
           >
             <option value="">全部套餐</option>
             {packages.map(pkg => (
@@ -117,21 +117,21 @@ export function UserList({
             type="date"
             value={dateStart}
             onChange={(e) => setDateStart(e.target.value)}
-            className="px-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-blue-500 focus:outline-none font-semibold"
+            className="px-4 py-3 rounded border-[2px] border-gray-300 focus:border-blue-500 focus:outline-none font-semibold"
             placeholder="开始日期"
           />
           <input
             type="date"
             value={dateEnd}
             onChange={(e) => setDateEnd(e.target.value)}
-            className="px-4 py-3 rounded-xl border-[2px] border-gray-300 focus:border-blue-500 focus:outline-none font-semibold"
+            className="px-4 py-3 rounded border-[2px] border-gray-300 focus:border-blue-500 focus:outline-none font-semibold"
             placeholder="结束日期"
           />
 
           {/* 搜索按钮 */}
           <button
             onClick={handleSearch}
-            className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
+            className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
           >
             搜索
           </button>
@@ -181,7 +181,7 @@ export function UserList({
       </div>
 
       {/* 用户表格 */}
-      <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] overflow-hidden">
+      <div className="bg-white rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] overflow-hidden">
         {users.length === 0 ? (
           <div className="text-center py-12">
             <Shield className="mx-auto text-gray-300 mb-4" size={48} />
@@ -248,7 +248,7 @@ export function UserList({
                         <div className="flex items-center justify-end gap-2">
                           <Link
                             href={`/admin/users/${user.id}`}
-                            className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                            className="p-2 text-blue-600 hover:bg-blue-50 rounded transition-colors"
                             title="查看详情"
                           >
                             <Eye size={18} />
@@ -265,7 +265,7 @@ export function UserList({
             {/* 移动端卡片 */}
             <div className="md:hidden space-y-4 p-4">
               {users.map((user) => (
-                <div key={user.id} className="bg-gray-50 rounded-xl p-4 border-[2px] border-gray-200">
+                <div key={user.id} className="bg-gray-50 rounded p-4 border-[2px] border-gray-200">
                   <div className="flex items-start justify-between mb-3">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center text-white font-bold text-lg">
@@ -292,7 +292,7 @@ export function UserList({
                     <div className="flex gap-2">
                       <Link
                         href={`/admin/users/${user.id}`}
-                        className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg"
+                        className="p-2 text-blue-600 hover:bg-blue-50 rounded"
                       >
                         <Eye size={18} />
                       </Link>
@@ -313,7 +313,7 @@ export function UserList({
                   <div className="flex gap-2">
                     <Link
                       href={`/admin/users?page=${Math.max(1, currentPage - 1)}&search=${search}&status=${status}&package=${packageFilter}&startDate=${startDate}&endDate=${endDate}`}
-                      className={`px-4 py-2 rounded-lg font-bold transition-all ${
+                      className={`px-4 py-2 rounded font-bold transition-all ${
                         currentPage === 1
                           ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                           : 'bg-white border-[2px] border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
@@ -321,12 +321,12 @@ export function UserList({
                     >
                       上一页
                     </Link>
-                    <span className="px-4 py-2 bg-green-500 text-white rounded-lg font-bold">
+                    <span className="px-4 py-2 bg-green-500 text-white rounded font-bold">
                       {currentPage} / {totalPages}
                     </span>
                     <Link
                       href={`/admin/users?page=${Math.min(totalPages, currentPage + 1)}&search=${search}&status=${status}&package=${packageFilter}&startDate=${startDate}&endDate=${endDate}`}
-                      className={`px-4 py-2 rounded-lg font-bold transition-all ${
+                      className={`px-4 py-2 rounded font-bold transition-all ${
                         currentPage === totalPages
                           ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
                           : 'bg-white border-[2px] border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
@@ -384,7 +384,7 @@ function BanUserButton({ userId, isBanned }: { userId: string; isBanned: boolean
     <button
       onClick={handleBan}
       disabled={loading}
-      className={`p-2 rounded-lg transition-colors ${
+      className={`p-2 rounded transition-colors ${
         isBanned
           ? 'text-green-600 hover:bg-green-50'
           : 'text-red-600 hover:bg-red-50'

@@ -228,7 +228,7 @@ export function ChapterManagementDialog({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[80vh] overflow-hidden flex flex-col">
+      <div className="bg-white rounded shadow-xl w-full max-w-2xl max-h-[80vh] overflow-hidden flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-200">
           <div>
@@ -237,7 +237,7 @@ export function ChapterManagementDialog({
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-slate-100 rounded-xl transition-colors"
+            className="p-2 hover:bg-slate-100 rounded transition-colors"
             disabled={isSaving}
           >
             <X className="w-5 h-5 text-slate-500" />
@@ -246,7 +246,7 @@ export function ChapterManagementDialog({
 
         {/* Error Message */}
         {error && (
-          <div className="mx-6 mt-4 p-3 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2">
+          <div className="mx-6 mt-4 p-3 bg-red-50 border border-red-200 rounded flex items-center gap-2">
             <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
             <p className="text-sm text-red-600">{error}</p>
           </div>
@@ -270,13 +270,13 @@ export function ChapterManagementDialog({
                   {chapters.map((chapter, index) => (
                     <div
                       key={chapter.id}
-                      className="flex items-center gap-3 p-3 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors group"
+                      className="flex items-center gap-3 p-3 bg-slate-50 rounded hover:bg-slate-100 transition-colors group"
                     >
                       {/* Drag Handle (visual only) */}
                       <GripVertical className="w-5 h-5 text-slate-400 cursor-grab" />
 
                       {/* Order Badge */}
-                      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-white rounded-lg text-sm font-bold text-slate-700 border border-slate-200">
+                      <span className="flex-shrink-0 w-8 h-8 flex items-center justify-center bg-white rounded text-sm font-bold text-slate-700 border border-slate-200">
                         {index + 1}
                       </span>
 
@@ -303,7 +303,7 @@ export function ChapterManagementDialog({
                           <button
                             onClick={() => startEdit(chapter)}
                             disabled={chapter.is_default || isSaving}
-                            className="p-2 hover:bg-white rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="p-2 hover:bg-white rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             title="编辑章节"
                           >
                             <Edit className="w-4 h-4 text-slate-600" />
@@ -311,7 +311,7 @@ export function ChapterManagementDialog({
                           <button
                             onClick={() => startDelete(chapter)}
                             disabled={chapter.is_default || isSaving}
-                            className="p-2 hover:bg-red-50 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="p-2 hover:bg-red-50 rounded transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                             title="删除章节"
                           >
                             <Trash2 className="w-4 h-4 text-red-600" />
@@ -338,7 +338,7 @@ export function ChapterManagementDialog({
                       onChange={(e) => setNewChapterTitle(e.target.value)}
                       placeholder="输入章节标题"
                       maxLength={50}
-                      className="flex-1 px-4 py-2.5 border-2 border-slate-200 rounded-xl focus:border-indigo-400 focus:outline-none"
+                      className="flex-1 px-4 py-2.5 border-2 border-slate-200 rounded focus:border-indigo-400 focus:outline-none"
                       autoFocus
                       disabled={isSaving}
                       onKeyPress={(e) => {
@@ -350,7 +350,7 @@ export function ChapterManagementDialog({
                     <button
                       onClick={editingChapter ? handleUpdateChapter : handleCreateChapter}
                       disabled={isSaving || !newChapterTitle.trim()}
-                      className="px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+                      className="px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
                     >
                       {isSaving ? (
                         <>
@@ -367,7 +367,7 @@ export function ChapterManagementDialog({
                     <button
                       onClick={cancelEdit}
                       disabled={isSaving}
-                      className="px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                      className="px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                     >
                       取消
                     </button>
@@ -385,7 +385,7 @@ export function ChapterManagementDialog({
                       setNewChapterTitle('')
                       setError('')
                     }}
-                    className="w-full px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
+                    className="w-full px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 transition-colors flex items-center justify-center gap-2"
                   >
                     <Plus className="w-4 h-4" />
                     创建新章节
@@ -399,7 +399,7 @@ export function ChapterManagementDialog({
         {/* Delete Confirmation Dialog */}
         {showDeleteConfirm && chapterToDelete && (
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center p-4">
-            <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-6">
+            <div className="bg-white rounded shadow-xl w-full max-w-md p-6">
               <h3 className="text-lg font-bold text-slate-900 mb-2">确认删除章节</h3>
               <p className="text-sm text-slate-600 mb-4">
                 您即将删除章节「{chapterToDelete.title}」。
@@ -422,14 +422,14 @@ export function ChapterManagementDialog({
                     setChapterToDelete(null)
                   }}
                   disabled={isSaving}
-                  className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+                  className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
                 >
                   取消
                 </button>
                 <button
                   onClick={handleDeleteChapter}
                   disabled={isSaving}
-                  className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+                  className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded hover:bg-red-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
                 >
                   {isSaving ? (
                     <>

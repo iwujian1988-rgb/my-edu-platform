@@ -39,9 +39,12 @@ export function usePermissions() {
         const { data: { user } } = await supabase.auth.getUser()
 
         if (!user) {
+          console.log('[usePermissions] No user found')
           setPermissions(prev => ({ ...prev, isLoading: false }))
           return
         }
+
+        console.log('[usePermissions] Fetching permissions for user:', user.id)
 
         const { data, error } = await supabase
           .from('users')
@@ -50,10 +53,16 @@ export function usePermissions() {
           .single()
 
         if (error || !data) {
-          console.error('Failed to fetch permissions:', error)
+          console.error('[usePermissions] Failed to fetch permissions:', error)
           setPermissions(prev => ({ ...prev, isLoading: false }))
           return
         }
+
+        console.log('[usePermissions] ✅ Permissions loaded:', {
+          featurePermissions: data.feature_permissions,
+          bookPermissions: data.book_permissions,
+          expiresAt: data.permission_expires_at
+        })
 
         // Check expiration
         let isExpired = false

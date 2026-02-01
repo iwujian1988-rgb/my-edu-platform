@@ -52,7 +52,7 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
         <div className="p-6 border-b-[3px] border-black transition-colors duration-300"
              style={{ backgroundColor: 'var(--card-bg)' }}>
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-[#B4F416] border-[3px] border-black rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_#000]">
+            <div className="w-12 h-12 bg-[#B4F416] border-[3px] border-black rounded flex items-center justify-center shadow-[3px_3px_0px_0px_#000]">
               <Cat size={28} strokeWidth={3} className="text-black" />
             </div>
             <div>
@@ -74,12 +74,12 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
                 <button
                   key={item.href}
                   onClick={() => alert('功能开发中，敬请期待！')}
-                  className="w-full flex items-center gap-3 px-4 py-3 rounded-xl border-[3px] border-black opacity-60 hover:opacity-80 transition-all relative cursor-not-allowed"
+                  className="w-full flex items-center gap-3 px-4 py-3 rounded border-[3px] border-black opacity-60 hover:opacity-80 transition-all relative cursor-not-allowed"
                   style={{ backgroundColor: 'var(--card-bg)' }}
                 >
                   <Icon size={24} strokeWidth={2} style={{ color: 'var(--text-secondary)' }} />
                   <span className="font-bold" style={{ color: 'var(--text-secondary)' }}>{item.label}</span>
-                  <span className="absolute right-3 text-[10px] font-bold px-2 py-0.5 rounded-md border-[2px]" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)', borderColor: 'var(--border)' }}>
+                  <span className="absolute right-3 text-[10px] font-bold px-2 py-0.5 rounded border-[2px]" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)', borderColor: 'var(--border)' }}>
                     敬请期待
                   </span>
                 </button>
@@ -92,7 +92,7 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
                 <button
                   key={item.href}
                   onClick={() => setShowBookSelector(true)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border-[3px] transition-all font-bold duration-300 ${
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded border-[3px] transition-all font-bold duration-300 ${
                     isActive
                       ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
                       : 'border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#000]'
@@ -114,7 +114,7 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
                 <button
                   key={item.href}
                   onClick={() => handleNavigation(item.href)}
-                  className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border-[3px] transition-all font-bold duration-300 ${
+                  className={`w-full flex items-center gap-3 px-4 py-3 rounded border-[3px] transition-all font-bold duration-300 ${
                     isActive
                       ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
                       : 'border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#000]'
@@ -135,7 +135,7 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
               <button
                 key={item.href}
                 onClick={() => handleNavigation(item.href)}
-                className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border-[3px] transition-all font-bold duration-300 ${
+                className={`w-full flex items-center gap-3 px-4 py-3 rounded border-[3px] transition-all font-bold duration-300 ${
                   isActive
                     ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
                     : 'border-black hover:-translate-y-0.5 hover:shadow-[3px_3px_0px_0px_#000] active:scale-95'
@@ -154,7 +154,7 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
 
         {/* Footer */}
         <div className="p-4 border-t-[3px] border-black">
-          <div className="border-[3px] border-black rounded-xl p-4 transition-colors duration-300"
+          <div className="border-[3px] border-black rounded p-4 transition-colors duration-300"
                style={{ backgroundColor: 'var(--bg-tertiary)' }}>
             <p className="text-xs font-bold text-center transition-colors duration-300"
                style={{ color: 'var(--text-secondary)' }}>

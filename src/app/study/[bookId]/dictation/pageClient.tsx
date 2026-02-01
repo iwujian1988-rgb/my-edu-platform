@@ -1064,7 +1064,7 @@ export default function DictationPageClient() {
         {currentWord && (
           <div
             data-word={currentWord.word}
-            className="w-full max-w-[800px] border-2 border-black rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden min-h-[400px] flex flex-col lg:border-none lg:shadow-none lg:rounded-none lg:bg-transparent lg:w-full lg:max-w-full lg:min-h-0 transition-colors duration-300"
+            className="w-full max-w-[800px] border-2 border-black rounded-2xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] relative overflow-hidden min-h-[400px] flex flex-col lg:border-none lg:shadow-none lg:rounded lg:bg-transparent lg:w-full lg:max-w-full lg:min-h-0 transition-colors duration-300"
             style={{ backgroundColor: 'var(--card-bg)' }}
           >
 

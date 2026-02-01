@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习计划词选择逻辑可视化</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 14px;
+        }
+        .section {
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 24px;
+            color: #333;
+            border-left: 4px solid #667eea;
+            padding-left: 15px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        .box {
+            background: white;
+            border: 2px solid #667eea;
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            min-width: 200px;
+            position: relative;
+        }
+        .box-decision {
+            background: #fff9e6;
+            border: 2px solid #ffd700;
+            border-radius: 20px;
+            padding: 15px 25px;
+            text-align: center;
+            min-width: 200px;
+        }
+        .box-result {
+            background: #e8f5e9;
+            border: 2px solid #4caf50;
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            min-width: 200px;
+        }
+        .box-error {
+            background: #ffebee;
+            border: 2px solid #f44336;
+            border-radius: 8px;
+            padding: 15px 25px;
+            text-align: center;
+            min-width: 200px;
+        }
+        .arrow {
+            color: #667eea;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .label {
+            font-size: 12px;
+            color: #999;
+            margin-left: 10px;
+        }
+        .diagram {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        .table-container {
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background: #667eea;
+            color: white;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        .highlight {
+            background: #fff9c4 !important;
+            font-weight: bold;
+        }
+        .example-box {
+            background: #f5f5f5;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .example-title {
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-right: 5px;
+        }
+        .status-known {
+            background: #4caf50;
+            color: white;
+        }
+        .status-fuzzy {
+            background: #ff9800;
+            color: white;
+        }
+        .status-unknown {
+            background: #f44336;
+            color: white;
+        }
+        .status-new {
+            background: #2196f3;
+            color: white;
+        }
+        .legend {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 学习计划词选择逻辑可视化</h1>
+        <p class="subtitle">理解哪些词会被选入学习计划，以及它们会如何流转</p>
+
+        <!-- 场景1：首次创建学习计划 -->
+        <div class="section">
+            <h2 class="section-title">场景1：首次创建学习计划</h2>
+
+            <div class="diagram">
+                <div class="box">
+                    <strong>📖 单词书</strong>
+                    <div style="font-size: 14px; color: #666; margin-top: 8px;">
+                        共 4500 个词
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box-decision">
+                    <strong>🔍 筛选逻辑</strong>
+                    <div style="font-size: 13px; color: #666; margin-top: 8px;">
+                        查询 word_progress 表<br>
+                        找"没有记录"的词
+                    </div>
+                </div>
+                <div class="arrow">→</div>
+                <div class="box-result">
+                    <strong>✅ 新学词队列</strong>
+                    <div style="font-size: 14px; color: #666; margin-top: 8px;">
+                        随机抽取 20 个<br>
+                        <span style="color: #4caf50;">(从未标记过的词)</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">📝 举例</div>
+                <table>
+                    <tr>
+                        <th>单词</th>
+                        <th>word_progress 表</th>
+                        <th>是否会被选中？</th>
+                        <th>原因</th>
+                    </tr>
+                    <tr>
+                        <td>abandon</td>
+                        <td><span class="status-badge status-known">有记录</span></td>
+                        <td class="highlight">❌ 不会</td>
+                        <td>在单词列表中标记过</td>
+                    </tr>
+                    <tr class="highlight">
+                        <td>ability</td>
+                        <td><span class="status-badge status-new">无记录</span></td>
+                        <td>✅ 会</td>
+                        <td>从未学过</td>
+                    </tr>
+                    <tr>
+                        <td>abnormal</td>
+                        <td><span class="status-badge status-fuzzy">有记录</span></td>
+                        <td class="highlight">❌ 不会</td>
+                        <td>标记过"模糊"</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <!-- 场景2：每日生成任务 -->
+        <div class="section">
+            <h2 class="section-title">场景2：每天生成今日任务</h2>
+
+            <div class="flowchart">
+                <div class="box">
+                    <strong>📅 第 5 天</strong>
+                    <div style="font-size: 13px; color: #666; margin-top: 5px;">
+                        设置：每天新学 20 个，最多学 50 个
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+
+                <div class="box-decision">
+                    <strong>步骤1：查询复习词</strong>
+                    <div style="font-size: 13px; color: #666; margin-top: 5px;">
+                        review_schedule 表中<br>
+                        next_review_date ≤ 今天的词
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+
+                <div class="box-result">
+                    <strong>📚 找到 8 个复习词</strong>
+                    <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                        5个是7天前标记的<br>
+                        3个是过期的
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+
+                <div class="box-decision">
+                    <strong>步骤2：计算剩余名额</strong>
+                    <div style="font-size: 13px; color: #666; margin-top: 5px;">
+                        50 - 8 = <strong style="color: #667eea; font-size: 18px;">42</strong>
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+
+                <div class="box-decision">
+                    <strong>步骤3：计算新学词数量</strong>
+                    <div style="font-size: 13px; color: #666; margin-top: 5px;">
+                        min(20, 42) = <strong style="color: #4caf50; font-size: 18px;">20</strong>
+                    </div>
+                </div>
+                <div class="arrow">↓</div>
+
+                <div class="box-result">
+                    <strong>✅ 今日任务：28 个词</strong>
+                    <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                        <span style="color: #ff9800;">8个复习</span> +
+                        <span style="color: #4caf50;">20个新学</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">⚠️ 特殊情况：复习词过多</div>
+                <div style="font-size: 14px; color: #666;">
+                    如果某天有 <strong>60 个词</strong>需要复习，但你设置每天最多学 50 个：
+                    <div style="margin-top: 10px; padding: 10px; background: #ffebee; border-radius: 4px;">
+                        <strong>复习词 = 50 个</strong>（取前50个最紧急的）<br>
+                        <strong style="color: #f44336;">新学词 = 0 个</strong>（因为没名额了）
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 场景3：词的流转 -->
+        <div class="section">
+            <h2 class="section-title">场景3：标记后的词如何流转</h2>
+
+            <div class="diagram" style="align-items: flex-start;">
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">📊 词的状态流转图</h3>
+                    <div class="flowchart">
+                        <div class="box" style="border-color: #2196f3;">
+                            <strong>新学词</strong>
+                            <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                                word_progress 表无记录
+                            </div>
+                        </div>
+                        <div class="arrow">↓ 用户标记</div>
+                        <div class="box-decision" style="border-color: #ff9800;">
+                            <strong>标记状态？</strong>
+                        </div>
+                    </div>
+
+                    <div class="diagram">
+                        <div>
+                            <div class="arrow">↙ 认识</div>
+                            <div class="box-result" style="border-color: #4caf50;">
+                                <strong>known</strong>
+                                <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                                    安排 7/15/30 天后复习
+                                </div>
+                            </div>
+                            <div class="arrow">↓ 7/15/30天后</div>
+                            <div class="box" style="border-color: #ff9800;">
+                                <strong>进入复习队列</strong>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="arrow">↘ 模糊/不认识</div>
+                            <div class="box-error" style="border-color: #f44336;">
+                                <strong>fuzzy / unknown</strong>
+                                <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                                    重置为 7 天后复习
+                                </div>
+                            </div>
+                            <div class="arrow">↓ 7天后</div>
+                            <div class="box" style="border-color: #ff9800;">
+                                <strong>进入复习队列</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="flex: 1; min-width: 300px;">
+                    <h3 style="color: #667eea; margin-bottom: 15px;">🔄 今日学习循环</h3>
+                    <div class="flowchart">
+                        <div class="box-result">
+                            <strong>今日任务：28个词</strong>
+                            <div style="font-size: 12px; color: #666; margin-top: 5px;">
+                                8个复习 + 20个新学
+                            </div>
+                        </div>
+                        <div class="arrow">↓ 开始学习</div>
+                        <div class="box">
+                            <strong>当前词：abandon</strong>
+                        </div>
+                        <div class="arrow">↓ 标记</div>
+                        <div class="box-decision" style="border-color: #ff9800;">
+                            <strong>什么状态？</strong>
+                        </div>
+                    </div>
+
+                    <div class="diagram">
+                        <div>
+                            <div class="arrow">↙ 认识</div>
+                            <div class="box-result" style="border-color: #4caf50; min-width: 150px;">
+                                <strong>✅ 完成</strong>
+                                <div style="font-size: 11px; color: #666; margin-top: 5px;">
+                                    移出队列<br>
+                                    下个词
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="arrow">↘ 不认识</div>
+                            <div class="box-error" style="border-color: #f44336; min-width: 150px;">
+                                <strong>🔄 循环</strong>
+                                <div style="font-size: 11px; color: #666; margin-top: 5px;">
+                                    移到队尾<br>
+                                    稍后再出现
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 场景4：边界情况 -->
+        <div class="section">
+            <h2 class="section-title">场景4：边界情况与问题</h2>
+
+            <div class="example-box">
+                <div class="example-title">⚠️ 问题1：标记过一次就永远不再是"新学词"</div>
+                <table>
+                    <tr>
+                        <th style="width: 25%;">场景</th>
+                        <th style="width: 35%;">发生了什么</th>
+                        <th style="width: 40%;">结果</th>
+                    </tr>
+                    <tr>
+                        <td>用户A</td>
+                        <td>在单词列表中标记了100个词（各种状态）</td>
+                        <td class="highlight">创建学习计划时，这100个词被跳过，永远不会再作为"新学词"</td>
+                    </tr>
+                    <tr>
+                        <td>用户B</td>
+                        <td>创建学习计划后，偶尔去单词列表标记词</td>
+                        <td class="highlight">被标记的词不会再出现在学习计划的"新学词"中</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">⚠️ 问题2：可能某天全是复习词</div>
+                <div style="font-size: 14px; color: #666;">
+                    <strong>场景</strong>：用户大量标记"模糊/不认识"<br>
+                    <strong>结果</strong>：
+                    <div style="margin-top: 10px;">
+                        • 第1-3天：每天标记20个新词为"不认识"<br>
+                        • 第10天：这60个词全部进入复习队列<br>
+                        • <strong style="color: #f44336;">当天任务：50个复习词 + 0个新学词</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="example-box">
+                <div class="example-title">⚠️ 问题3：首次创建可能"没词可学"</div>
+                <div style="font-size: 14px; color: #666;">
+                    <strong>场景</strong>：用户在单词列表里把所有4500个词都标记过一次<br>
+                    <strong>结果</strong>：
+                    <div style="margin-top: 10px; padding: 10px; background: #ffebee; border-radius: 4px;">
+                        <strong>新学词 = 0 个</strong>（找不到"没学过"的词）<br>
+                        <strong>复习词 = 0 个</strong>（首次创建，review_schedule 表为空）<br>
+                        <strong style="color: #f44336;">系统显示：今日没有学习任务</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 总结 -->
+        <div class="section">
+            <h2 class="section-title">📌 核心规则总结</h2>
+
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th style="width: 20%;">规则</th>
+                        <th style="width: 30%;">判断依据</th>
+                        <th style="width: 50%;">说明</th>
+                    </tr>
+                    <tr>
+                        <td><strong>新学词</strong></td>
+                        <td><code>word_progress</code> 表</td>
+                        <td>只有"没有记录"的词才会被选为新学词</td>
+                    </tr>
+                    <tr>
+                        <td><strong>复习词</strong></td>
+                        <td><code>review_schedule</code> 表</td>
+                        <td><code>next_review_date ≤ 今天</code> 的词都要复习</td>
+                    </tr>
+                    <tr>
+                        <td><strong>词的状态</strong></td>
+                        <td>不影响"是否学过"的判断</td>
+                        <td>不管标记 known/fuzzy/unknown，都算"学过"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>复习优先</strong></td>
+                        <td>受 <code>daily_max_words</code> 限制</td>
+                        <td>复习词过多时，新学词可能为 0</td>
+                    </tr>
+                    <tr>
+                        <td><strong>今日任务</strong></td>
+                        <td>生成后不再变化</td>
+                        <td>修改学习计划参数，明天的任务才会变化</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #4caf50;"></div>
+                    <span>认识 (known)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #ff9800;"></div>
+                    <span>模糊 (fuzzy)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #f44336;"></div>
+                    <span>不认识 (unknown)</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #2196f3;"></div>
+                    <span>新词 (new)</span>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding: 20px; background: #f5f5f5; border-radius: 8px;">
+            <strong style="color: #667eea;">💡 建议</strong>
+            <div style="font-size: 14px; color: #666; margin-top: 10px;">
+                不要随意在单词列表中标记不熟悉的词，因为标记过的词不会再作为"新学词"出现在学习计划中。<br>
+                推荐通过"学习计划"来系统地学习新词。
+            </div>
+        </div>
+    </div>
+</body>
+</html>

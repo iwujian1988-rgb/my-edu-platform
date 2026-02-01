@@ -75,7 +75,7 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
           {/* Logo 区域 */}
           <div className="p-6 border-b-[2px] border-gray-200">
             <Link href="/admin/dashboard" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl border-[3px] border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded border-[3px] border-black shadow-[3px_3px_0px_0px_#000] flex items-center justify-center">
                 <Cat size={24} className="text-white" strokeWidth={3} />
               </div>
               <div>
@@ -89,7 +89,7 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
 
           {/* 管理员信息 */}
           <div className="p-4 border-b-[2px] border-gray-200">
-            <div className="bg-green-50 rounded-xl p-3 border-[2px] border-green-200">
+            <div className="bg-green-50 rounded p-3 border-[2px] border-green-200">
               <p className="text-sm font-bold text-gray-800">{admin.name}</p>
               <p className="text-xs text-gray-600">{getRoleDisplayName(admin.role)}</p>
               <p className="text-xs text-gray-500 mt-1">{admin.email}</p>
@@ -112,7 +112,7 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
                           alert('功能开发中，敬请期待！')
                           setSidebarOpen(false)
                         }}
-                        className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-gray-400 cursor-not-allowed transition-all"
+                        className="w-full flex items-center gap-3 px-4 py-3 rounded font-semibold text-gray-400 cursor-not-allowed transition-all"
                         title="功能开发中"
                       >
                         <Icon size={20} strokeWidth={2.5} />
@@ -123,7 +123,7 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
                         href={item.path}
                         onClick={() => setSidebarOpen(false)}
                         className={`
-                        flex items-center gap-3 px-4 py-3 rounded-xl font-semibold transition-all
+                        flex items-center gap-3 px-4 py-3 rounded font-semibold transition-all
                         ${isActive
                           ? 'bg-green-500 text-white shadow-[3px_3px_0px_0px_#000]'
                           : 'text-gray-700 hover:bg-gray-100'
@@ -144,7 +144,7 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
           <div className="p-4 border-t-[2px] border-gray-200 space-y-2">
             <button
               onClick={handleLogout}
-              className="w-full flex items-center gap-3 px-4 py-3 rounded-xl font-semibold text-red-600 hover:bg-red-50 transition-all"
+              className="w-full flex items-center gap-3 px-4 py-3 rounded font-semibold text-red-600 hover:bg-red-50 transition-all"
             >
               <LogOut size={20} strokeWidth={2.5} />
               <span>退出登录</span>
@@ -162,7 +162,7 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
               {/* 移动端菜单按钮 */}
               <button
                 onClick={() => setSidebarOpen(!sidebarOpen)}
-                className="lg:hidden p-2 rounded-xl hover:bg-gray-100 transition-colors"
+                className="lg:hidden p-2 rounded hover:bg-gray-100 transition-colors"
               >
                 {sidebarOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -179,7 +179,7 @@ export function AdminLayoutComponent({ admin, children }: AdminLayoutProps) {
                 <Link
                   href="/"
                   target="_blank"
-                  className="hidden sm:inline-flex px-4 py-2 bg-gradient-to-br from-blue-400 to-blue-600 text-white font-semibold rounded-xl border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all text-sm"
+                  className="hidden sm:inline-flex px-4 py-2 bg-gradient-to-br from-blue-400 to-blue-600 text-white font-semibold rounded border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all text-sm"
                 >
                   查看前台
                 </Link>

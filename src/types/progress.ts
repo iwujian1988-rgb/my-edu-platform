@@ -8,7 +8,7 @@ import { Layers, List, Keyboard, Zap, Gamepad2 } from 'lucide-react'
 /**
  * 学习模式类型
  */
-export type LearningMode = 'word-list' | 'flashcards' | 'dictation' | 'match-game' | 'typing'
+export type LearningMode = 'word-list' | 'flashcards' | 'flashcards-daily-task' | 'dictation' | 'match-game' | 'typing'
 
 /**
  * 学习范围类型
@@ -69,6 +69,14 @@ export const MODE_CONFIG = {
     light: 'bg-purple-50',
     dark: 'dark:bg-purple-900/30',
     textColor: 'text-purple-700'
+  },
+  'flashcards-daily-task': {
+    icon: Layers,
+    label: '今日任务',
+    color: 'bg-indigo-500',
+    light: 'bg-indigo-50',
+    dark: 'dark:bg-indigo-900/30',
+    textColor: 'text-indigo-700'
   },
   'dictation': {
     icon: Keyboard,

@@ -2,7 +2,7 @@
 
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle, Layers, Headphones, Gamepad2, RotateCcw, List, Sparkles, Edit3, Grid3x3, Dumbbell } from 'lucide-react'
+import { BookOpen, ArrowLeft, Filter, Shuffle, ChevronDown, Lightbulb, Trash2, AlertTriangle, Layers, Headphones, Gamepad2, RotateCcw, List, Sparkles, Edit3, Grid3x3, Dumbbell, Play } from 'lucide-react'
 import Link from 'next/link'
 import { WordList } from '@/components/WordList'
 import { GlobalHideButton } from '@/components/GlobalHideButton'
@@ -63,11 +63,11 @@ function maskSensitiveInfo(phoneOrEmail: string | undefined): string {
 // 单词卡片骨架屏组件
 function WordCardSkeleton() {
   return (
-    <div className="w-full rounded-xl border-3 border-black overflow-hidden relative transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
+    <div className="w-full rounded border-3 border-black overflow-hidden relative transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
       {/* 顶部：序号 + 单词 + 音标 + 发音按钮 */}
       <div className="flex items-start gap-3 p-4 border-b-2 transition-colors duration-300" style={{ borderColor: 'var(--border)' }}>
         {/* 序号 */}
-        <div className="w-8 h-8 rounded-lg animate-pulse flex-shrink-0 transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
+        <div className="w-8 h-8 rounded animate-pulse flex-shrink-0 transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
 
         <div className="flex-1">
           {/* 单词 */}
@@ -78,7 +78,7 @@ function WordCardSkeleton() {
         </div>
 
         {/* 发音按钮 */}
-        <div className="w-8 h-8 rounded-lg animate-pulse flex-shrink-0 transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
+        <div className="w-8 h-8 rounded animate-pulse flex-shrink-0 transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
       </div>
 
       {/* 中部：释义区域 */}
@@ -101,9 +101,9 @@ function WordCardSkeleton() {
 
       {/* 底部：按钮 */}
       <div className="flex gap-2 p-4 pt-2">
-        <div className="flex-1 h-10 rounded-lg animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
-        <div className="flex-1 h-10 rounded-lg animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
-        <div className="flex-1 h-10 rounded-lg animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
+        <div className="flex-1 h-10 rounded animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
+        <div className="flex-1 h-10 rounded animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
+        <div className="flex-1 h-10 rounded animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }}></div>
       </div>
     </div>
   )
@@ -890,7 +890,7 @@ export function BookDetailPageClient({
           <div className="absolute inset-0 bg-black/50 backdrop-blur-sm" />
 
           {/* 对话框内容 - 居中 */}
-          <div className="relative z-10 rounded-2xl shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700">
+          <div className="relative z-10 rounded shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700">
             <div className="flex items-start gap-4">
               {/* 图标 - 黑暗模式适配 */}
               <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-indigo-100 dark:bg-indigo-900/30">
@@ -908,13 +908,13 @@ export function BookDetailPageClient({
                 <div className="flex gap-3">
                   <button
                     onClick={handleCancelRestore}
-                    className="flex-1 px-4 py-2 text-sm font-semibold border-2 rounded-xl transition-all duration-200 hover:opacity-80 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700"
+                    className="flex-1 px-4 py-2 text-sm font-semibold border-2 rounded transition-all duration-200 hover:opacity-80 border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700"
                   >
                     从头开始
                   </button>
                   <button
                     onClick={handleConfirmRestore}
-                    className="flex-1 px-4 py-2 text-sm font-semibold text-white rounded-xl shadow-md hover:shadow-lg transition-all duration-200 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700"
+                    className="flex-1 px-4 py-2 text-sm font-semibold text-white rounded shadow-md hover:shadow-lg transition-all duration-200 bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700"
                   >
                     继续学习
                   </button>
@@ -931,7 +931,7 @@ export function BookDetailPageClient({
           className="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 animate-in slide-in-from-top fade-in duration-300"
           style={{ opacity: toastOpacity, transition: 'opacity 500ms ease-out' }}
         >
-          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded-xl shadow-lg flex items-center gap-3">
+          <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white px-6 py-3 rounded shadow-lg flex items-center gap-3">
             <RotateCcw className="w-5 h-5" />
             <span className="font-semibold">
               已恢复到第 {restoredPage} 页
@@ -948,7 +948,7 @@ export function BookDetailPageClient({
               <Link
                 href="/"
                 onClick={handleBack}
-                className="flex items-center justify-center w-10 h-10 rounded-xl transition-colors duration-200 hover:opacity-80"
+                className="flex items-center justify-center w-10 h-10 rounded transition-colors duration-200 hover:opacity-80"
                 style={{ backgroundColor: 'var(--bg-tertiary)' }}
               >
                 <ArrowLeft className="w-5 h-5 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }} />
@@ -971,7 +971,7 @@ export function BookDetailPageClient({
                 <>
                   <button
                     onClick={() => setShowDeleteConfirm1(true)}
-                    className="px-4 py-2 text-sm font-semibold border-2 rounded-xl transition-all duration-200 flex items-center gap-2 hover:opacity-80"
+                    className="px-4 py-2 text-sm font-semibold border-2 rounded transition-all duration-200 flex items-center gap-2 hover:opacity-80"
                     style={{ color: '#dc2626', borderColor: '#fecaca', backgroundColor: '#fef2f2' }}
                   >
                     <Trash2 className="w-4 h-4" />
@@ -981,7 +981,7 @@ export function BookDetailPageClient({
                   {/* 第一次确认对话框 */}
                   {showDeleteConfirm1 && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" style={{ marginTop: '10vh' }}>
-                      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
+                      <div className="rounded shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: '#fef3c7' }}>
                             <AlertTriangle className="w-6 h-6" style={{ color: '#d97706' }} />
@@ -997,14 +997,14 @@ export function BookDetailPageClient({
                                   setShowDeleteConfirm1(false)
                                   setShowDeleteConfirm2(true)
                                 }}
-                                className="flex-1 px-4 py-2.5 text-white font-semibold rounded-xl transition-colors hover:opacity-90"
+                                className="flex-1 px-4 py-2.5 text-white font-semibold rounded transition-colors hover:opacity-90"
                                 style={{ backgroundColor: '#dc2626' }}
                               >
                                 确定删除
                               </button>
                               <button
                                 onClick={() => setShowDeleteConfirm1(false)}
-                                className="flex-1 px-4 py-2.5 border-2 font-semibold rounded-xl transition-colors hover:opacity-80"
+                                className="flex-1 px-4 py-2.5 border-2 font-semibold rounded transition-colors hover:opacity-80"
                                 style={{ color: 'var(--text-secondary)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-tertiary)' }}
                               >
                                 取消
@@ -1019,7 +1019,7 @@ export function BookDetailPageClient({
                   {/* 第二次确认对话框 */}
                   {showDeleteConfirm2 && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" style={{ marginTop: '10vh' }}>
-                      <div className="rounded-2xl shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
+                      <div className="rounded shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: '#fecaca' }}>
                             <AlertTriangle className="w-6 h-6" style={{ color: '#dc2626' }} />
@@ -1030,7 +1030,7 @@ export function BookDetailPageClient({
                               删除后，所有单词、学习进度、练习记录都将被永久删除，无法恢复！
                             </p>
                             {deleteError && (
-                              <div className="mb-4 p-3 rounded-xl transition-colors duration-300" style={{ backgroundColor: '#fef2f2', borderColor: '#fecaca' }}>
+                              <div className="mb-4 p-3 rounded transition-colors duration-300" style={{ backgroundColor: '#fef2f2', borderColor: '#fecaca' }}>
                                 <p className="text-sm" style={{ color: '#dc2626' }}>{deleteError}</p>
                               </div>
                             )}
@@ -1038,7 +1038,7 @@ export function BookDetailPageClient({
                               <button
                                 onClick={handleDeleteBook}
                                 disabled={isDeleting}
-                                className="flex-1 px-4 py-2.5 text-white font-semibold rounded-xl transition-colors hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                className="flex-1 px-4 py-2.5 text-white font-semibold rounded transition-colors hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 style={{ backgroundColor: '#dc2626' }}
                               >
                                 {isDeleting ? (
@@ -1056,7 +1056,7 @@ export function BookDetailPageClient({
                                   setDeleteError('')
                                 }}
                                 disabled={isDeleting}
-                                className="flex-1 px-4 py-2.5 border-2 font-semibold rounded-xl transition-colors hover:opacity-80 disabled:opacity-50"
+                                className="flex-1 px-4 py-2.5 border-2 font-semibold rounded transition-colors hover:opacity-80 disabled:opacity-50"
                                 style={{ color: 'var(--text-secondary)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-tertiary)' }}
                               >
                                 取消
@@ -1075,7 +1075,7 @@ export function BookDetailPageClient({
                   await supabase.auth.signOut()
                   router.push('/login')
                 }}
-                className="px-4 py-2 text-sm font-semibold border-2 rounded-xl transition-all duration-200 hover:opacity-80"
+                className="px-4 py-2 text-sm font-semibold border-2 rounded transition-all duration-200 hover:opacity-80"
                 style={{ color: 'var(--text-secondary)', borderColor: 'var(--border)', backgroundColor: 'var(--bg-tertiary)' }}
               >
                 退出
@@ -1100,7 +1100,7 @@ export function BookDetailPageClient({
               onClick={() => handlePracticeModeClick('flashcards')}
               className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-20 md:h-24 lg:h-28 flex items-center px-2 md:px-6 gap-1.5 md:gap-3 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-[#B4F416] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-emerald-900 dark:to-gray-900 dark:hover:from-emerald-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(16,185,129,0.5)] dark:hover:scale-105"
             >
-              <div className="p-1.5 md:p-3 rounded-lg border-2 border-black shrink-0 transition-colors duration-200 bg-white text-black dark:bg-emerald-500/20 dark:border-emerald-400 dark:text-emerald-400">
+              <div className="p-1.5 md:p-3 rounded border-2 border-black shrink-0 transition-colors duration-200 bg-white text-black dark:bg-emerald-500/20 dark:border-emerald-400 dark:text-emerald-400">
                 <Layers className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
               </div>
               <div className="text-left z-10">
@@ -1117,7 +1117,7 @@ export function BookDetailPageClient({
               onClick={() => handlePracticeModeClick('dictation')}
               className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-20 md:h-24 lg:h-28 flex items-center px-2 md:px-6 gap-1.5 md:gap-3 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-blue-900 dark:to-gray-900 dark:hover:from-blue-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(59,130,246,0.5)] dark:hover:scale-105"
             >
-              <div className="p-1.5 md:p-3 rounded-lg border-2 border-black bg-[#3B82F6] text-white shrink-0 dark:bg-blue-500/20 dark:border-blue-400 dark:text-blue-400">
+              <div className="p-1.5 md:p-3 rounded border-2 border-black bg-[#3B82F6] text-white shrink-0 dark:bg-blue-500/20 dark:border-blue-400 dark:text-blue-400">
                 <Headphones className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
               </div>
               <div className="text-left z-10">
@@ -1133,7 +1133,7 @@ export function BookDetailPageClient({
               onClick={() => handlePracticeModeClick('match-game')}
               className="snap-center flex-shrink-0 w-[30vw] md:w-auto relative group h-20 md:h-24 lg:h-28 flex items-center px-2 md:px-6 gap-1.5 md:gap-3 overflow-hidden transition-all duration-200 border-[3px] border-black rounded-[10px] shadow-[4px_4px_0px_0px_#000000] bg-white hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[6px_6px_0px_0px_#000000] hover:translate-x-[-2px] hover:translate-y-[-2px] dark:bg-gradient-to-br dark:from-rose-900 dark:to-gray-900 dark:hover:from-rose-800 dark:hover:to-gray-800 dark:hover:shadow-[0_0_20px_rgba(244,63,94,0.5)] dark:hover:scale-105"
             >
-              <div className="p-1.5 md:p-3 rounded-lg border-2 border-black bg-[#FF6B6B] text-white shrink-0 dark:bg-rose-500/20 dark:border-rose-400 dark:text-rose-400">
+              <div className="p-1.5 md:p-3 rounded border-2 border-black bg-[#FF6B6B] text-white shrink-0 dark:bg-rose-500/20 dark:border-rose-400 dark:text-rose-400">
                 <Gamepad2 className="w-5 h-5 md:w-6 md:h-6" strokeWidth={2.5} />
               </div>
               <div className="text-left z-10">
@@ -1156,7 +1156,7 @@ export function BookDetailPageClient({
                 boxShadow: '4px 4px 0px 0px #000000',
               }}
             >
-              <div className="p-1 md:p-3 rounded-lg border-2 border-black bg-[#1E293B] text-[#B4F416] shrink-0">
+              <div className="p-1 md:p-3 rounded border-2 border-black bg-[#1E293B] text-[#B4F416] shrink-0">
                 <Dumbbell className="w-3.5 h-3.5 md:w-6 md:h-6" strokeWidth={2.5} />
               </div>
               <div className="text-left z-10">
@@ -1182,7 +1182,7 @@ export function BookDetailPageClient({
           )}
 
           {/* 顶部筛选栏 */}
-          <section className="rounded-2xl shadow-sm border p-3 md:p-6 mb-6 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
+          <section className="rounded shadow-sm border p-3 md:p-6 mb-6 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 md:gap-4">
               {/* 左侧：主题/场景筛选 - 仅学习模式显示，且仅在有数据时显示 */}
               {viewMode === 'learning' && (
@@ -1192,7 +1192,7 @@ export function BookDetailPageClient({
                 <div className="relative">
                   <button
                     onClick={() => setShowThemeMenu(!showThemeMenu)}
-                    className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded-lg md:rounded-xl border-2 text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded md:rounded border-2 text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                       filters.theme !== 'all'
                         ? 'shadow-sm dark:border-[#B4F264] dark:bg-[#B4F264] dark:text-black border-[#818cf8] bg-[#e0e7ff] text-[#4338ca]'
                         : 'dark:border-[#B4F264]/30 dark:bg-[#B4F264]/10 dark:text-[#B4F264] border-[var(--border)] text-[var(--text-secondary)] bg-transparent'
@@ -1209,7 +1209,7 @@ export function BookDetailPageClient({
                         className="fixed inset-0 z-10"
                         onClick={() => setShowThemeMenu(false)}
                       />
-                      <div className="absolute left-0 mt-2 w-48 rounded-xl shadow-xl border z-20 max-h-80 overflow-y-auto transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
+                      <div className="absolute left-0 mt-2 w-48 rounded shadow-xl border z-20 max-h-80 overflow-y-auto transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
                         <button
                           onClick={() => handleThemeChange('all')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer hover:bg-[var(--bg-secondary)] ${
@@ -1247,7 +1247,7 @@ export function BookDetailPageClient({
                   <button
                     onClick={() => setShowSceneMenu(!showSceneMenu)}
                     disabled={availableScenes.length === 0}
-                    className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded-lg md:rounded-xl border-2 text-xs md:text-sm font-semibold transition-all duration-200 ${
+                    className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded md:rounded border-2 text-xs md:text-sm font-semibold transition-all duration-200 ${
                       availableScenes.length === 0 ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'
                     } ${
                       filters.scenario !== 'all'
@@ -1266,7 +1266,7 @@ export function BookDetailPageClient({
                         className="fixed inset-0 z-10"
                         onClick={() => setShowSceneMenu(false)}
                       />
-                      <div className="absolute left-0 mt-2 w-48 rounded-xl shadow-xl border z-20 max-h-80 overflow-y-auto transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
+                      <div className="absolute left-0 mt-2 w-48 rounded shadow-xl border z-20 max-h-80 overflow-y-auto transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
                         <button
                           onClick={() => handleSceneChange('all')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer hover:bg-[var(--bg-secondary)] ${
@@ -1303,7 +1303,7 @@ export function BookDetailPageClient({
                   <div className="relative">
                     <button
                       onClick={() => setShowChapterMenu(!showChapterMenu)}
-                      className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded-lg md:rounded-xl border-2 text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                      className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded md:rounded border-2 text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                         filters.chapter !== 'all'
                           ? 'dark:border-[#B4F264] dark:bg-[#B4F264] dark:text-black border-[#818cf8] bg-[#e0e7ff] text-[#4338ca]'
                           : 'dark:border-[#B4F264]/30 dark:bg-[#B4F264]/10 dark:text-[#B4F264] border-[var(--border)] text-[var(--text-secondary)] bg-transparent'
@@ -1320,7 +1320,7 @@ export function BookDetailPageClient({
                           className="fixed inset-0 z-10"
                           onClick={() => setShowChapterMenu(false)}
                         />
-                        <div className="absolute left-0 mt-2 w-48 rounded-xl shadow-xl border z-20 max-h-80 overflow-y-auto transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
+                        <div className="absolute left-0 mt-2 w-48 rounded shadow-xl border z-20 max-h-80 overflow-y-auto transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
                           <button
                             onClick={() => handleChapterChange('all')}
                             className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between transition-colors cursor-pointer hover:bg-[var(--bg-secondary)] ${
@@ -1363,7 +1363,7 @@ export function BookDetailPageClient({
                       setViewMode(viewMode === 'learning' ? 'editing' : 'learning')
                       setSelectedWordIds(new Set())
                     }}
-                    className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded-lg md:rounded-xl border-2 text-xs md:text-sm font-semibold transition-all duration-200 ${
+                    className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded md:rounded border-2 text-xs md:text-sm font-semibold transition-all duration-200 ${
                       viewMode === 'editing'
                         ? 'border-purple-400 bg-purple-50 text-purple-700 shadow-sm'
                         : 'border-slate-200 text-slate-700 hover:border-purple-300 hover:bg-slate-50'
@@ -1388,7 +1388,7 @@ export function BookDetailPageClient({
                 {viewMode === 'editing' && !book.is_official && (
                   <button
                     onClick={() => setShowChapterManagement(true)}
-                    className="px-2 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-semibold text-indigo-600 border-2 border-indigo-200 rounded-lg md:rounded-xl hover:border-indigo-400 hover:bg-indigo-50 transition-all duration-200 flex items-center gap-1.5 md:gap-2"
+                    className="px-2 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-semibold text-indigo-600 border-2 border-indigo-200 rounded md:rounded hover:border-indigo-400 hover:bg-indigo-50 transition-all duration-200 flex items-center gap-1.5 md:gap-2"
                   >
                     <List className="w-3.5 h-3.5 md:w-4 md:h-4" />
                     <span className="hidden sm:inline">章节管理</span>
@@ -1399,7 +1399,7 @@ export function BookDetailPageClient({
                 {viewMode === 'editing' && !book.is_official && (
                   <button
                     onClick={() => setShowSmartImport(true)}
-                    className="px-2 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-semibold text-purple-600 border-2 border-purple-200 rounded-lg md:rounded-xl hover:border-purple-400 hover:bg-purple-50 transition-all duration-200 flex items-center gap-1.5 md:gap-2"
+                    className="px-2 md:px-4 py-1.5 md:py-2 text-xs md:text-sm font-semibold text-purple-600 border-2 border-purple-200 rounded md:rounded hover:border-purple-400 hover:bg-purple-50 transition-all duration-200 flex items-center gap-1.5 md:gap-2"
                   >
                     <Sparkles className="w-3.5 h-3.5 md:w-4 md:h-4" />
                     <span className="hidden sm:inline">智能导入</span>
@@ -1418,7 +1418,7 @@ export function BookDetailPageClient({
                 {viewMode === 'learning' && (
                   <button
                     onClick={() => setSortOrder(sortOrder === 'default' ? 'random' : 'default')}
-                    className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded-lg md:rounded-xl border-2 text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded md:rounded border-2 text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                       sortOrder === 'random'
                         ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
                         : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50'
@@ -1434,7 +1434,7 @@ export function BookDetailPageClient({
                   <div className="relative">
                     <button
                       onClick={() => setShowFilterMenu(!showFilterMenu)}
-                      className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded-lg md:rounded-xl border-2 text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                      className={`flex items-center gap-1.5 md:gap-2 px-2 md:px-4 py-1.5 md:py-2.5 rounded md:rounded border-2 text-xs md:text-sm font-semibold transition-all duration-200 cursor-pointer ${
                         filters.status !== 'all'
                           ? 'border-indigo-400 bg-indigo-50 text-indigo-700 shadow-sm'
                           : 'border-slate-200 text-slate-700 hover:border-indigo-300 hover:text-indigo-600 hover:bg-slate-50'
@@ -1453,7 +1453,7 @@ export function BookDetailPageClient({
                         className="fixed inset-0 z-10"
                         onClick={() => setShowFilterMenu(false)}
                       />
-                      <div className="absolute right-0 mt-2 w-40 bg-white rounded-xl shadow-xl border border-slate-200 z-20 overflow-hidden">
+                      <div className="absolute right-0 mt-2 w-40 bg-white rounded shadow-xl border border-slate-200 z-20 overflow-hidden">
                         <button
                           onClick={() => handleStatusChange('all')}
                           className={`w-full px-4 py-3 text-left text-sm font-semibold flex items-center justify-between hover:bg-slate-50 transition-colors cursor-pointer ${
@@ -1559,7 +1559,7 @@ export function BookDetailPageClient({
           {/* 底部控制栏 - PC和竖屏都显示，翻页时也显示 */}
           {/* 🔥 修复：只要有数据或正在翻页或显示骨架屏就显示，避免底部栏闪烁 */}
           {(displayWords.length > 0 || isPageChanging || showSkeleton) && (
-            <section className="rounded-2xl shadow-sm border p-4 md:p-6 mt-6 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
+            <section className="rounded shadow-sm border p-4 md:p-6 mt-6 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div className="text-sm transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
                   显示 <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{startIndex}-{endIndex}</span> / 共 <span className="font-semibold transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{totalWords}</span> 个单词
@@ -1568,19 +1568,19 @@ export function BookDetailPageClient({
                   <button
                     onClick={() => handlePageChange(Math.max(1, filters.page - 1))}
                     disabled={filters.page === 1}
-                    className="px-4 py-2.5 rounded-xl border-2 text-sm font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-80"
+                    className="px-4 py-2.5 rounded border-2 text-sm font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed hover:opacity-80"
                     style={{ borderColor: 'var(--border)', color: 'var(--text-secondary)', backgroundColor: 'var(--bg-tertiary)' }}
                   >
                     上一页
                   </button>
-                  <span className="text-sm font-bold px-3 py-2.5 rounded-xl transition-colors duration-300" style={{ color: 'var(--text-primary)', backgroundColor: 'var(--bg-tertiary)' }}>
+                  <span className="text-sm font-bold px-3 py-2.5 rounded transition-colors duration-300" style={{ color: 'var(--text-primary)', backgroundColor: 'var(--bg-tertiary)' }}>
                     {filters.page} / {totalPages}
                   </span>
                   <button
                     data-testid="next-page-button"
                     onClick={() => handlePageChange(Math.min(totalPages, filters.page + 1))}
                     disabled={filters.page === totalPages}
-                    className="px-4 py-2.5 rounded-xl text-white text-sm font-semibold hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
+                    className="px-4 py-2.5 rounded text-white text-sm font-semibold hover:shadow-md disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-200"
                     style={{ background: 'linear-gradient(to right, #6366f1, #a855f7)' }}
                   >
                     下一页
@@ -1593,7 +1593,7 @@ export function BookDetailPageClient({
           {/* 筛选结果为空时的提示 */}
           {/* 🔥 修复：只有在非翻页状态且骨架屏不显示时，才显示"没有找到单词"提示 */}
           {displayWords.length === 0 && !isPageChanging && !showSkeleton && (
-            <section className="rounded-2xl shadow-sm border p-12 text-center transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
+            <section className="rounded shadow-sm border p-12 text-center transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)', borderColor: 'var(--border)' }}>
               <Filter className="w-16 h-16 mx-auto mb-4 transition-colors duration-300" style={{ color: '#cbd5e1' }} />
               <h3 className="text-xl font-bold mb-2 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>没有找到符合条件的单词</h3>
               <p className="transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>请尝试切换筛选条件</p>

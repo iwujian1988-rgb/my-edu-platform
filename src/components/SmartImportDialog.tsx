@@ -154,11 +154,11 @@ export function SmartImportDialog({
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-      <div className="bg-white rounded-2xl shadow-xl w-full max-w-2xl max-h-[80vh] overflow-hidden flex flex-col">
+      <div className="bg-white rounded shadow-xl w-full max-w-2xl max-h-[80vh] overflow-hidden flex flex-col">
         {/* Header */}
         <div className="flex items-center justify-between p-6 border-b border-slate-200">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-indigo-100 rounded-xl">
+            <div className="p-2 bg-indigo-100 rounded">
               <Sparkles className="w-5 h-5 text-indigo-600" />
             </div>
             <div>
@@ -168,7 +168,7 @@ export function SmartImportDialog({
           </div>
           <button
             onClick={onClose}
-            className="p-2 hover:bg-slate-100 rounded-xl transition-colors"
+            className="p-2 hover:bg-slate-100 rounded transition-colors"
             disabled={isImporting}
           >
             <X className="w-5 h-5 text-slate-500" />
@@ -179,7 +179,7 @@ export function SmartImportDialog({
         <div className="flex-1 overflow-y-auto p-6 space-y-4">
           {/* 配额提示 */}
           {quota && (
-            <div className="p-4 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded-xl">
+            <div className="p-4 bg-gradient-to-r from-indigo-50 to-purple-50 border border-indigo-200 rounded">
               <div className="flex items-center justify-between mb-2">
                 <span className="text-sm font-semibold text-indigo-900">今日配额使用情况</span>
                 <span className="text-2xl font-bold text-indigo-600">
@@ -207,7 +207,7 @@ export function SmartImportDialog({
               value={selectedChapterId}
               onChange={(e) => setSelectedChapterId(e.target.value)}
               disabled={isImporting}
-              className="w-full px-4 py-2.5 border-2 border-slate-200 rounded-xl focus:border-indigo-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full px-4 py-2.5 border-2 border-slate-200 rounded focus:border-indigo-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <option value="">自动创建默认章节</option>
               {chapters.map(chapter => (
@@ -232,7 +232,7 @@ export function SmartImportDialog({
               placeholder="输入要导入的单词，用逗号或换行分隔&#10;例如: apple, banana, orange"
               rows={10}
               disabled={isImporting}
-              className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:border-indigo-400 focus:outline-none font-mono text-sm disabled:opacity-50 disabled:cursor-not-allowed resize-none"
+              className="w-full px-4 py-3 border-2 border-slate-200 rounded focus:border-indigo-400 focus:outline-none font-mono text-sm disabled:opacity-50 disabled:cursor-not-allowed resize-none"
             />
             <div className="flex items-center justify-between mt-2">
               <p className="text-xs text-slate-500">
@@ -248,7 +248,7 @@ export function SmartImportDialog({
 
           {/* Error Message */}
           {error && (
-            <div className="p-3 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2">
+            <div className="p-3 bg-red-50 border border-red-200 rounded flex items-center gap-2">
               <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
               <p className="text-sm text-red-600">{error}</p>
             </div>
@@ -256,7 +256,7 @@ export function SmartImportDialog({
 
           {/* Import Results */}
           {importResults.length > 0 && (
-            <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
+            <div className="p-4 bg-green-50 border border-green-200 rounded">
               <div className="flex items-center gap-2 mb-3">
                 <CheckCircle className="w-5 h-5 text-green-600" />
                 <span className="font-semibold text-green-900">导入成功</span>
@@ -268,13 +268,13 @@ export function SmartImportDialog({
                 {importResults.slice(0, 20).map((result, index) => (
                   <span
                     key={index}
-                    className="px-2 py-1 bg-white rounded-lg text-sm font-medium text-slate-700 border border-green-200"
+                    className="px-2 py-1 bg-white rounded text-sm font-medium text-slate-700 border border-green-200"
                   >
                     {result.word}
                   </span>
                 ))}
                 {importResults.length > 20 && (
-                  <span className="px-2 py-1 bg-green-100 rounded-lg text-sm font-semibold text-green-700">
+                  <span className="px-2 py-1 bg-green-100 rounded text-sm font-semibold text-green-700">
                     +{importResults.length - 20} 更多
                   </span>
                 )}
@@ -289,14 +289,14 @@ export function SmartImportDialog({
             <button
               onClick={onClose}
               disabled={isImporting}
-              className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded hover:bg-slate-100 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               取消
             </button>
             <button
               onClick={handleImport}
               disabled={!canImport}
-              className="flex-1 px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded-xl hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+              className="flex-1 px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
             >
               {isImporting ? (
                 <>

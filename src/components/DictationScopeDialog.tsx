@@ -149,7 +149,7 @@ export function DictationScopeDialog({
     return (
       isOpen && (
         <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
-          <div className="border-2 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
+          <div className="border-2 border-black rounded shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] p-8 transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
             <div className="flex flex-col items-center">
               <div className="inline-block animate-spin rounded-full h-16 w-16 border-4 border-black border-t-[#ccff00] mb-6"></div>
               <p className="font-black text-lg" style={{ color: 'var(--text-primary)' }}>加载关卡数据...</p>
@@ -166,7 +166,7 @@ export function DictationScopeDialog({
   return (
     <div className="fixed inset-0 bg-gray-800/50 backdrop-blur-sm flex items-center justify-center p-4 z-50">
       {/* Main Container - 游戏关卡选择器风格 */}
-      <div className="w-full max-w-md border-2 border-black rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col max-h-[90vh] transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
+      <div className="w-full max-w-md border-2 border-black rounded shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] overflow-hidden flex flex-col max-h-[90vh] transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
 
         {/* Header - #f4f4f5 背景 */}
         <div className="p-6 border-b-2 border-black flex items-center" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
@@ -210,7 +210,7 @@ export function DictationScopeDialog({
 
                   onClose()
                 }}
-                className={`px-4 py-2 font-black text-sm rounded-lg shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all ${
+                className={`px-4 py-2 font-black text-sm rounded shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all ${
                   recentProgress.mode === 'dictation'
                     ? 'bg-black text-white'
                     : 'bg-gray-300 text-gray-500 cursor-not-allowed'
@@ -238,7 +238,7 @@ export function DictationScopeDialog({
                 onClick={() => !option.disabled && onSelectScope(option.value)}
                 disabled={option.disabled}
                 className={`
-                  w-full flex items-center justify-between p-4 border-2 rounded-xl transition-all transition-colors duration-300
+                  w-full flex items-center justify-between p-4 border-2 rounded transition-all transition-colors duration-300
                   ${option.disabled
                     ? 'opacity-50 cursor-not-allowed'
                     : 'border-black cursor-pointer shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
@@ -250,7 +250,7 @@ export function DictationScopeDialog({
                 }}
               >
                 {/* 左侧：图标框 */}
-                <div className={`w-12 h-12 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0 ${option.disabled ? '' : style.iconBg}`} style={option.disabled ? { backgroundColor: 'var(--bg-tertiary)' } : {}}>
+                <div className={`w-12 h-12 rounded border-2 border-black flex items-center justify-center flex-shrink-0 ${option.disabled ? '' : style.iconBg}`} style={option.disabled ? { backgroundColor: 'var(--bg-tertiary)' } : {}}>
                   <Icon className={`w-6 h-6 ${option.disabled ? '' : 'text-black'}`} strokeWidth={2.5} style={option.disabled ? { color: 'var(--text-tertiary)' } : {}} />
                 </div>
 
@@ -268,7 +268,7 @@ export function DictationScopeDialog({
                 <div className="flex items-center gap-3">
                   {/* 数字标签 */}
                   <div className={`
-                    min-w-14 h-14 px-2 flex items-center justify-center text-xl font-black border-2 border-black rounded-lg
+                    min-w-14 h-14 px-2 flex items-center justify-center text-xl font-black border-2 border-black rounded
                     ${option.disabled
                       ? 'bg-gray-200 text-gray-400'
                       : option.value === 'all'

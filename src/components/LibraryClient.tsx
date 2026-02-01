@@ -39,7 +39,7 @@ export function LibraryClient({ books }: LibraryClientProps) {
         <div className="lg:ml-64 pb-20 lg:pb-0">
           {books.length === 0 ? (
             <div className="min-h-screen p-8 transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-              <div className="max-w-7xl mx-auto text-center py-16 border-[3px] border-black rounded-xl transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
+              <div className="max-w-7xl mx-auto text-center py-16 border-[3px] border-black rounded transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <p className="font-bold mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>还没有可用的词库</p>
                 <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>请联系管理员获取词库访问权限</p>
               </div>

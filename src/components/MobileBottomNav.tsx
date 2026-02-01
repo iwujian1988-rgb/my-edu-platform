@@ -80,7 +80,7 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
                 >
                   <div className="relative mb-2">
                     <div
-                      className="w-12 h-12 rounded-lg border-[2px] border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] transition-all duration-200"
+                      className="w-12 h-12 rounded border-[2px] border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] transition-all duration-200"
                       style={{
                         backgroundColor: 'var(--bg-secondary)',
                         color: 'var(--text-secondary)',
@@ -112,10 +112,10 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
                     {/* Neo-Brutalism 图标容器 */}
                     <div className={`relative mb-2 transition-all duration-200 ${isActive ? '-translate-y-1' : ''}`}>
                       {isActive && (
-                        <div className="absolute inset-0 bg-[#B4F416] rounded-lg translate-y-1 translate-x-1" />
+                        <div className="absolute inset-0 bg-[#B4F416] rounded translate-y-1 translate-x-1" />
                       )}
                       <div
-                        className={`relative w-12 h-12 rounded-lg border-[2px] border-black flex items-center justify-center transition-all duration-200 ${
+                        className={`relative w-12 h-12 rounded border-[2px] border-black flex items-center justify-center transition-all duration-200 ${
                           isActive ? 'shadow-[2px_2px_0px_0px_#000]' : 'shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)]'
                         }`}
                         style={{
@@ -147,7 +147,7 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
                   >
                     <div className="relative mb-2">
                       <div
-                        className="w-12 h-12 rounded-lg border-[2px] border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] transition-all duration-200"
+                        className="w-12 h-12 rounded border-[2px] border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] transition-all duration-200"
                         style={{
                           backgroundColor: 'var(--bg-secondary)',
                           color: 'var(--text-secondary)',
@@ -179,10 +179,10 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
                 {/* Neo-Brutalism 图标容器 */}
                 <div className={`relative mb-2 transition-all duration-200 ${isActive ? '-translate-y-1' : ''}`}>
                   {isActive && (
-                    <div className="absolute inset-0 bg-[#B4F416] rounded-lg translate-y-1 translate-x-1" />
+                    <div className="absolute inset-0 bg-[#B4F416] rounded translate-y-1 translate-x-1" />
                   )}
                   <div
-                    className={`relative w-12 h-12 rounded-lg border-[2px] border-black flex items-center justify-center transition-all duration-200 ${
+                    className={`relative w-12 h-12 rounded border-[2px] border-black flex items-center justify-center transition-all duration-200 ${
                       isActive ? 'shadow-[2px_2px_0px_0px_#000]' : 'shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)]'
                     }`}
                     style={{
@@ -216,10 +216,10 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
               {/* Neo-Brutalism 图标容器 */}
               <div className={`relative mb-2 transition-all duration-200 ${isActive ? '-translate-y-1' : ''}`}>
                 {isActive && (
-                  <div className="absolute inset-0 bg-[#B4F416] rounded-lg translate-y-1 translate-x-1" />
+                  <div className="absolute inset-0 bg-[#B4F416] rounded translate-y-1 translate-x-1" />
                 )}
                 <div
-                  className={`relative w-12 h-12 rounded-lg border-[2px] border-black flex items-center justify-center transition-all duration-200 ${
+                  className={`relative w-12 h-12 rounded border-[2px] border-black flex items-center justify-center transition-all duration-200 ${
                     isActive ? 'shadow-[2px_2px_0px_0px_#000]' : 'shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)]'
                   }`}
                   style={{

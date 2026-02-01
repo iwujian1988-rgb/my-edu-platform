@@ -138,10 +138,12 @@ export function BookLibrary({ userBooks, userPhone, userId, recentBooks: initial
     <section>
       {/* Tab 切换按钮 */}
       <div className="flex items-center justify-between mb-6">
-        <h2 className="text-xl md:text-2xl font-black flex items-center gap-2">
-          <BookOpen size={28} strokeWidth={3} className="text-[#B4F416]" />
-          词库资源
-        </h2>
+        <div className="flex items-center gap-3">
+          <div className="w-4 h-8 bg-[#B4F416] border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000]"></div>
+          <h2 className="text-xl font-black text-black dark:text-white tracking-tighter uppercase italic">
+            词库资源
+          </h2>
+        </div>
         <div className="flex gap-2">
           <button
             onClick={() => setActiveTab('recent')}
@@ -190,7 +192,7 @@ export function BookLibrary({ userBooks, userPhone, userId, recentBooks: initial
           <p className="font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>加载中...</p>
         </div>
       ) : displayBooks.length === 0 ? (
-        <div className="text-center py-12 border-[3px] border-black rounded-xl transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
+        <div className="text-center py-12 border-[3px] border-black rounded transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
           {activeTab === 'recent' && (
             <>
               <p className="font-bold mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>还没有访问过任何词库</p>
@@ -202,7 +204,7 @@ export function BookLibrary({ userBooks, userPhone, userId, recentBooks: initial
               <p className="font-bold mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>还没有创建任何自定义词库</p>
               <Link
                 href="/library/new"
-                className="inline-block px-6 py-2 bg-[#B4F416] border-[3px] border-black rounded-xl font-bold hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+                className="inline-block px-6 py-2 bg-[#B4F416] border-[3px] border-black rounded font-bold hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
               >
                 创建我的第一个词库
               </Link>

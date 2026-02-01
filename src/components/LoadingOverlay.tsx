@@ -108,8 +108,8 @@ export function LoadingOverlay() {
               {/* 旋转图标 */}
               <div className="relative">
                 {/* 背景脉冲 */}
-                <div className="absolute inset-0 bg-black/20 rounded-2xl animate-ping" />
-                <div className="relative w-20 h-20 md:w-24 md:h-24 bg-black text-[#B4F416] rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#B4F416] flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/20 rounded animate-ping" />
+                <div className="relative w-20 h-20 md:w-24 md:h-24 bg-black text-[#B4F416] rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#B4F416] flex items-center justify-center">
                   <Icon className="w-10 h-10 md:w-12 md:h-12 animate-pulse" strokeWidth={3} />
                 </div>
               </div>
@@ -123,7 +123,7 @@ export function LoadingOverlay() {
               </div>
 
               {/* 中文翻译 */}
-              <div className="px-6 py-3 bg-white border-[3px] border-black shadow-[3px_3px_0px_0px_#000] rounded-xl">
+              <div className="px-6 py-3 bg-white border-[3px] border-black shadow-[3px_3px_0px_0px_#000] rounded">
                 <p className="text-base md:text-lg font-bold text-black">
                   {quote.cn}
                 </p>

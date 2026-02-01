@@ -164,7 +164,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
     <div
       className={`p-5 md:p-6 hover:scale-[1.01] transition-transform flex flex-col border-2 transition-all duration-300 ${
         isDark
-          ? 'rounded-xl border-[#B4F264]/20 bg-gradient-to-br from-[#B4F264]/3 to-[#B4F416]/5 hover:from-[#B4F264]/5 hover:to-[#B4F416]/8 hover:border-[#B4F264]/30 hover:shadow-[0_0_20px_rgba(180,244,22,0.08)]'
+          ? 'rounded border-[#B4F264]/20 bg-gradient-to-br from-[#B4F264]/3 to-[#B4F416]/5 hover:from-[#B4F264]/5 hover:to-[#B4F416]/8 hover:border-[#B4F264]/30 hover:shadow-[0_0_20px_rgba(180,244,22,0.08)]'
           : 'clay-card'
       }`}
       suppressHydrationWarning
@@ -249,7 +249,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
               <div className="mb-3 relative">
                 <div
                   ref={collocationRef}
-                  className={`p-3 rounded-xl border transition-all duration-200 ${
+                  className={`p-3 rounded border transition-all duration-200 ${
                     !isExpanded && collocationOverflow ? 'max-h-24 overflow-hidden' : ''
                   } ${
                     isDark
@@ -303,7 +303,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
               <div className="mb-3 relative">
                 <div
                   ref={exampleRef}
-                  className={`p-3 rounded-xl bg-green-50 border border-green-200 transition-all duration-200 ${
+                  className={`p-3 rounded bg-green-50 border border-green-200 transition-all duration-200 ${
                     !isExpanded && exampleOverflow ? 'max-h-24 overflow-hidden' : ''
                   }`}
                 >

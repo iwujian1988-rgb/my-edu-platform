@@ -23,10 +23,10 @@ export function DictationStatsBar({
   // 对应方案：防御性编程 - 加载状态（硬核风格）
   if (loading || !stats) {
     return (
-      <div className="bg-white border-[3px] border-black rounded-xl shadow-[4px_4px_0px_0px_#000] p-4 animate-pulse">
+      <div className="bg-white border-[3px] border-black rounded shadow-[4px_4px_0px_0px_#000] p-4 animate-pulse">
         <div className="flex space-x-2">
           {[1, 2, 3, 4, 5].map(i => (
-            <div key={i} className="flex-1 h-16 bg-gray-300 rounded-lg border-[3px] border-black"></div>
+            <div key={i} className="flex-1 h-16 bg-gray-300 rounded border-[3px] border-black"></div>
           ))}
         </div>
       </div>
@@ -54,7 +54,7 @@ export function DictationStatsBar({
   const totalWords = stats.all
 
   return (
-    <div className="bg-white border-2 border-black rounded-xl shadow-[4px_4px_0px_0px_#000] p-4">
+    <div className="bg-white border-2 border-black rounded shadow-[4px_4px_0px_0px_#000] p-4">
       {/* 统计标题 */}
       <div className="text-sm font-black mb-4">
         单词统计：共 <span className="text-[#CCFF00] bg-black px-2 py-0.5 rounded">{totalWords}</span> 词
@@ -73,7 +73,7 @@ export function DictationStatsBar({
               key={scopeType}
               onClick={() => isClickable && count > 0 && onScopeClick(scopeType)}
               disabled={!isClickable || count === 0}
-              className={`relative p-3 border-2 rounded-lg transition-all ${
+              className={`relative p-3 border-2 rounded transition-all ${
                 count === 0
                   ? 'opacity-40 cursor-not-allowed border-gray-300 bg-gray-100'
                   : isClickable

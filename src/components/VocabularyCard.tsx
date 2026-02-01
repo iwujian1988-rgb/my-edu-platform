@@ -115,7 +115,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
 
   // 获取卡片容器类名
   const getCardClassName = () => {
-    return 'w-full p-5 flex flex-col border-[3px] border-black rounded-xl transition-all duration-200 relative dark:bg-gray-800 bg-white';
+    return 'w-full p-5 flex flex-col border-[3px] border-black rounded transition-all duration-200 relative dark:bg-gray-800 bg-white';
   };
 
   // 词性映射：保持纯英文缩写格式
@@ -234,7 +234,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
 
         <div className="space-y-1.5">
           {data.collocation && (
-            <div className="border-2 border-black rounded-lg p-1.5 flex gap-1.5 items-start transition-colors duration-300 dark:bg-blue-900/30 bg-blue-50">
+            <div className="border-2 border-black rounded p-1.5 flex gap-1.5 items-start transition-colors duration-300 dark:bg-blue-900/30 bg-blue-50">
               <Lightbulb
                 size={14}
                 className="shrink-0 mt-0.5 transition-colors duration-300 dark:text-blue-400 text-blue-700"
@@ -250,7 +250,7 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
           )}
 
           {data.sentence && (
-            <div className="border-2 border-black rounded-lg p-1.5 flex gap-1.5 items-start transition-colors duration-300 dark:bg-green-900/30 bg-green-50">
+            <div className="border-2 border-black rounded p-1.5 flex gap-1.5 items-start transition-colors duration-300 dark:bg-green-900/30 bg-green-50">
               <FileText
                 size={14}
                 className="shrink-0 mt-0.5 transition-colors duration-300 dark:text-green-400 text-green-700"
@@ -331,7 +331,7 @@ const StatusButton = ({ active, onClick, activeColor, icon: Icon, label }: {
     <button
       onClick={onClick}
       style={style}
-      className="flex flex-col items-center justify-center py-2 rounded-lg border-2 transition-all duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 dark:hover:border-gray-400 dark:hover:text-gray-200 dark:hover:bg-gray-700 bg-white border-gray-200 text-gray-400 hover:border-black hover:text-black hover:bg-gray-50"
+      className="flex flex-col items-center justify-center py-2 rounded border-2 transition-all duration-150 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-400 dark:hover:border-gray-400 dark:hover:text-gray-200 dark:hover:bg-gray-700 bg-white border-gray-200 text-gray-400 hover:border-black hover:text-black hover:bg-gray-50"
     >
       <Icon size={18} strokeWidth={3} />
       <span className="text-[10px] font-black mt-0.5">{label}</span>

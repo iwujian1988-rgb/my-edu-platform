@@ -1,0 +1,23 @@
+{
+  "extends": ["next/core-web-vitals"],
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "CallExpression[callee.object.name='console'][callee.property.name=/^(log|info|debug)$/]",
+        "message": "使用 logger 代替 console.log/info/debug，防止生产环境内存泄漏。如果必须使用，请添加 eslint-disable 注释说明原因。"
+      }
+    ],
+    "no-unused-vars": "warn",
+    "@typescript-eslint/no-unused-vars": ["warn", {
+      "argsIgnorePattern": "^_",
+      "varsIgnorePattern": "^_"
+    }],
+    "no-unreachable": "error",
+    "no-constant-condition": "warn",
+    "no-duplicate-imports": "error",
+    "no-var": "error",
+    "prefer-const": "warn"
+  }
+}

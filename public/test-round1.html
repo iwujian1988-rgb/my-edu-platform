@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>学习计划模块 - 第一轮测试用例</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      opacity: 0.9;
+      font-size: 14px;
+    }
+
+    .stats-bar {
+      background: #f8f9fa;
+      padding: 20px 30px;
+      display: flex;
+      gap: 30px;
+      border-bottom: 2px solid #e9ecef;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      color: #495057;
+    }
+
+    .stat-value {
+      background: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      font-size: 18px;
+      min-width: 50px;
+      text-align: center;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .stat-value.total { background: #e9ecef; color: #495057; }
+    .stat-value.passed { background: #28a745; color: white; }
+    .stat-value.failed { background: #dc3545; color: white; }
+    .stat-value.skipped { background: #ffc107; color: #495057; }
+    .stat-value.progress { background: #17a2b8; color: white; }
+
+    .test-list {
+      padding: 30px;
+    }
+
+    .test-case {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-left: 4px solid #dee2e6;
+      transition: all 0.3s ease;
+    }
+
+    .test-case:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+
+    .test-case.status-passed {
+      border-left-color: #28a745;
+      background: #d4edda;
+    }
+
+    .test-case.status-failed {
+      border-left-color: #dc3545;
+      background: #f8d7da;
+    }
+
+    .test-case.status-skipped {
+      border-left-color: #ffc107;
+      background: #fff3cd;
+    }
+
+    .test-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .test-title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+    }
+
+    .test-id {
+      background: #667eea;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .test-name {
+      font-size: 18px;
+      font-weight: 600;
+      color: #212529;
+    }
+
+    .priority-badge {
+      background: #dc3545;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .priority-badge.p0 { background: #dc3545; }
+    .priority-badge.p1 { background: #ffc107; color: #495057; }
+    .priority-badge.p2 { background: #6c757d; }
+
+    .test-content {
+      margin-bottom: 15px;
+    }
+
+    .test-section {
+      margin-bottom: 15px;
+    }
+
+    .test-section h4 {
+      color: #495057;
+      font-size: 14px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .test-steps {
+      background: white;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #495057;
+    }
+
+    .test-expect {
+      background: white;
+      padding: 12px;
+      border-radius: 6px;
+      font-size: 14px;
+      line-height: 1.8;
+      color: #28a745;
+    }
+
+    .status-selector {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .status-btn {
+      padding: 10px 20px;
+      border: 2px solid #dee2e6;
+      background: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.2s ease;
+      font-size: 14px;
+    }
+
+    .status-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+
+    .status-btn.passed { color: #28a745; border-color: #28a745; }
+    .status-btn.passed:hover, .status-btn.passed.active {
+      background: #28a745;
+      color: white;
+    }
+
+    .status-btn.failed { color: #dc3545; border-color: #dc3545; }
+    .status-btn.failed:hover, .status-btn.failed.active {
+      background: #dc3545;
+      color: white;
+    }
+
+    .status-btn.skipped { color: #ffc107; border-color: #ffc107; }
+    .status-btn.skipped:hover, .status-btn.skipped.active {
+      background: #ffc107;
+      color: #495057;
+    }
+
+    .result-input {
+      width: 100%;
+      margin-top: 15px;
+      display: none;
+    }
+
+    .result-input.active {
+      display: block;
+    }
+
+    .result-input textarea {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #dee2e6;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 14px;
+      resize: vertical;
+      min-height: 80px;
+      transition: border-color 0.2s ease;
+    }
+
+    .result-input textarea:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    .result-input label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: 600;
+      color: #495057;
+      font-size: 14px;
+    }
+
+    .footer {
+      background: #f8f9fa;
+      padding: 30px;
+      border-top: 2px solid #e9ecef;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn-primary {
+      background: #667eea;
+      color: white;
+    }
+
+    .btn-success {
+      background: #28a745;
+      color: white;
+    }
+
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+
+    .info-box {
+      background: #e7f3ff;
+      border-left: 4px solid #2196F3;
+      padding: 15px;
+      margin: 20px 30px;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #0c5460;
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin: 5px 0;
+      font-size: 14px;
+    }
+
+    .checkbox-item input[type="checkbox"] {
+      margin-top: 3px;
+    }
+
+    @media (max-width: 768px) {
+      .stats-bar {
+        gap: 15px;
+      }
+
+      .test-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .status-selector {
+        width: 100%;
+      }
+
+      .status-btn {
+        flex: 1;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📋 学习计划模块 - 第一轮测试用例</h1>
+      <p>测试目标：验证P0核心功能能否正常跑通 | 测试范围：基础流程 + 核心业务逻辑</p>
+    </div>
+
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">总用例:</span>
+        <span class="stat-value total" id="totalCount">10</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">通过:</span>
+        <span class="stat-value passed" id="passedCount">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">失败:</span>
+        <span class="stat-value failed" id="failedCount">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">跳过:</span>
+        <span class="stat-value skipped" id="skippedCount">0</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">进度:</span>
+        <span class="stat-value progress" id="progressPercent">0%</span>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <strong>💡 使用说明</strong>
+      1. 按照测试用例步骤执行测试<br>
+      2. 每个用例测试完成后，点击下方的"通过/失败/跳过"按钮<br>
+      3. 如果失败，请在"实际结果"输入框中描述问题<br>
+      4. 测试完成后点击底部的"生成测试报告"按钮，将结果复制给开发人员
+    </div>
+
+    <div class="test-list" id="testList">
+      <!-- 测试用例将通过JavaScript生成 -->
+    </div>
+
+    <div class="footer">
+      <button class="btn btn-primary" onclick="generateReport()">
+        📊 生成测试报告
+      </button>
+      <button class="btn btn-success" onclick="exportJSON()">
+        💾 导出JSON
+      </button>
+      <button class="btn btn-secondary" onclick="resetAll()">
+        🔄 重置所有
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const testCases = [
+      {
+        id: "TC-001",
+        title: "创建学习计划",
+        priority: "P0",
+        steps: [
+          "访问单词书详情页",
+          "点击'开始学习计划'按钮",
+          "验证显示：单词书名称、总词数、默认值（新学20/最多50）",
+          "修改设置：每天新学=10，每天最多学习=30",
+          "点击'开始学习计划'按钮"
+        ],
+        expects: [
+          "页面跳转到今日任务页",
+          "数据库learning_plans表中新增记录",
+          "daily_new_words = 10",
+          "daily_max_words = 30",
+          "status = 'active'",
+          "start_date = 今天"
+        ]
+      },
+      {
+        id: "TC-002",
+        title: "生成今日任务",
+        priority: "P0",
+        steps: [
+          "在今日任务页面检查显示的数据",
+          "记录今日新学词数量、复习词数量、总词数",
+          "查询数据库验证daily_task_records表"
+        ],
+        expects: [
+          "页面显示正确的新词和复习词数量",
+          "数据库中存在今日任务记录",
+          "task_date = 今天",
+          "new_words是JSON数组，包含新学词ID",
+          "review_words是JSON数组（首次应为空）",
+          "plan_day = 1",
+          "all_completed = false"
+        ]
+      },
+      {
+        id: "TC-003",
+        title: "卡片学习模式 - 标记'认识'",
+        priority: "P0",
+        steps: [
+          "点击'卡片背单词'模式",
+          "点击'开始学习'按钮",
+          "验证显示：单词、音标、复习/新学标签、进度",
+          "点击卡片翻转",
+          "点击'😊 认识'按钮",
+          "查询数据库：word_status、review_schedule、daily_task_records"
+        ],
+        expects: [
+          "单词标记'认识'后从队列移除",
+          "显示下一个单词",
+          "进度更新为 (1/X 已完成)",
+          "word_status.current_status = 'known'",
+          "review_schedule.next_review_date = 今天+7天",
+          "review_schedule.review_count = 1",
+          "completed_words包含该词ID"
+        ]
+      },
+      {
+        id: "TC-004",
+        title: "卡片学习模式 - 标记'不认识'",
+        priority: "P0",
+        steps: [
+          "当前显示某个单词",
+          "点击翻转",
+          "点击'😕 不认识'按钮",
+          "继续学习后续单词",
+          "观察该单词是否再次出现"
+        ],
+        expects: [
+          "单词移到队列末尾",
+          "显示下一个单词",
+          "进度不增加",
+          "review_schedule.review_count = 0（重置）",
+          "review_schedule.next_review_date = 今天+7天",
+          "队列全部循环后，该单词再次出现"
+        ]
+      },
+      {
+        id: "TC-005",
+        title: "完成今日任务",
+        priority: "P0",
+        steps: [
+          "继续学习，将所有单词标记为'认识'",
+          "观察最后一个单词标记后的行为",
+          "查询数据库daily_task_records"
+        ],
+        expects: [
+          "所有单词标记'认识'后自动跳转到完成页",
+          "或显示'🎉 完成今日任务'按钮",
+          "all_completed = true",
+          "completed_at有值",
+          "completed_words数组长度 = 总词数"
+        ]
+      },
+      {
+        id: "TC-006",
+        title: "中途退出后恢复",
+        priority: "P0",
+        steps: [
+          "学习过程中标记3个单词为'认识'",
+          "关闭浏览器/返回首页",
+          "重新进入今日任务页",
+          "观察显示的状态",
+          "点击'开始学习'验证是否从第4个词开始"
+        ],
+        expects: [
+          "今日任务页显示进度：3/X 已完成",
+          "点击'开始学习'后从第4个词开始",
+          "前3个已标记的单词不再出现",
+          "completed_words包含这3个词ID"
+        ]
+      },
+      {
+        id: "TC-007",
+        title: "第二天生成任务（包含复习词）",
+        priority: "P0",
+        steps: [
+          "模拟第二天（修改系统日期或使用测试工具）",
+          "重新进入今日任务页",
+          "观察显示的复习词和新学词数量",
+          "查询数据库对比两天的任务"
+        ],
+        expects: [
+          "显示复习词（第一天的词）",
+          "显示新学词（新的10个）",
+          "复习词和新学词混合在队列中",
+          "review_words包含昨天标记为'认识'的词ID",
+          "plan_day = 2"
+        ]
+      },
+      {
+        id: "TC-008",
+        title: "复习词间隔计算（7-15-30天）",
+        priority: "P0",
+        steps: [
+          "查询某个已标记多次的单词的review_schedule",
+          "验证review_count为不同值时的next_review_date",
+          "review_count=1 → 今天+7天",
+          "review_count=2 → 今天+15天",
+          "review_count=3 → 今天+30天"
+        ],
+        expects: [
+          "第1次标记'认识'：7天后复习",
+          "第2次标记'认识'：15天后复习",
+          "第3次标记'认识'：30天后复习",
+          "interval_days字段正确记录"
+        ]
+      },
+      {
+        id: "TC-009",
+        title: "复习词过多时的截断逻辑",
+        priority: "P1",
+        steps: [
+          "手动插入50个到期复习词到数据库",
+          "设置每天最多学习=30",
+          "重新生成今日任务",
+          "检查今日任务的复习词数量"
+        ],
+        expects: [
+          "今日任务只包含30个复习词",
+          "剩余20个词留到后续任务",
+          "界面可能有提示：'复习词较多，建议调整学习量'"
+        ]
+      },
+      {
+        id: "TC-010",
+        title: "边界值测试 - 极端设置",
+        priority: "P1",
+        steps: [
+          "尝试创建计划：每天新学=1，最多=1",
+          "尝试创建计划：每天新学=100，最多=100",
+          "尝试设置：每天新学=50，最多=10（应被拒绝）"
+        ],
+        expects: [
+          "最小值1可以正常创建",
+          "最大值100可以正常创建",
+          "每天最多<每天新学时，按钮置灰或提示错误",
+          "预计天数计算正确"
+        ]
+      }
+    ];
+
+    // 存储测试结果
+    let testResults = {};
+
+    // 初始化测试结果
+    testCases.forEach(tc => {
+      testResults[tc.id] = {
+        status: null,
+        actualResult: '',
+        expects: tc.expects.map(() => false)
+      };
+    });
+
+    // 渲染测试用例
+    function renderTestCases() {
+      const container = document.getElementById('testList');
+      container.innerHTML = testCases.map(tc => `
+        <div class="test-case" id="case-${tc.id}">
+          <div class="test-header">
+            <div class="test-title">
+              <span class="test-id">${tc.id}</span>
+              <span class="test-name">${tc.title}</span>
+              <span class="priority-badge ${tc.priority.toLowerCase()}">${tc.priority}</span>
+            </div>
+            <div class="status-selector">
+              <button class="status-btn passed" onclick="setStatus('${tc.id}', 'passed')">✅ 通过</button>
+              <button class="status-btn failed" onclick="setStatus('${tc.id}', 'failed')">❌ 失败</button>
+              <button class="status-btn skipped" onclick="setStatus('${tc.id}', 'skipped')">⏭️ 跳过</button>
+            </div>
+          </div>
+
+          <div class="test-content">
+            <div class="test-section">
+              <h4>📝 测试步骤</h4>
+              <div class="test-steps">
+                ${tc.steps.map((step, i) => `${i + 1}. ${step}`).join('<br>')}
+              </div>
+            </div>
+
+            <div class="test-section">
+              <h4>✅ 预期结果</h4>
+              <div class="test-expect">
+                ${tc.expects.map((exp, i) => `
+                  <div class="checkbox-item">
+                    <input type="checkbox" id="${tc.id}-expect-${i}" onchange="toggleExpect('${tc.id}', ${i})">
+                    <label for="${tc.id}-expect-${i}">${exp}</label>
+                  </div>
+                `).join('')}
+              </div>
+            </div>
+
+            <div class="result-input" id="result-${tc.id}">
+              <label>📋 实际结果 / 问题描述：</label>
+              <textarea
+                placeholder="如果测试失败，请描述实际结果和遇到的问题..."
+                onchange="updateActualResult('${tc.id}', this.value)"
+              ></textarea>
+            </div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // 设置测试状态
+    function setStatus(testId, status) {
+      const testCase = document.getElementById(`case-${testId}`);
+      const resultInput = document.getElementById(`result-${testId}`);
+
+      // 更新按钮状态
+      testCase.querySelectorAll('.status-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+      event.target.classList.add('active');
+
+      // 更新卡片样式
+      testCase.classList.remove('status-passed', 'status-failed', 'status-skipped');
+      testCase.classList.add(`status-${status}`);
+
+      // 更新结果
+      testResults[testId].status = status;
+
+      // 如果失败，显示输入框
+      if (status === 'failed') {
+        resultInput.classList.add('active');
+      } else {
+        resultInput.classList.remove('active');
+      }
+
+      updateStats();
+    }
+
+    // 切换预期结果勾选
+    function toggleExpect(testId, index) {
+      testResults[testId].expects[index] = !testResults[testId].expects[index];
+    }
+
+    // 更新实际结果
+    function updateActualResult(testId, value) {
+      testResults[testId].actualResult = value;
+    }
+
+    // 更新统计
+    function updateStats() {
+      let passed = 0, failed = 0, skipped = 0, total = testCases.length;
+
+      Object.values(testResults).forEach(result => {
+        if (result.status === 'passed') passed++;
+        if (result.status === 'failed') failed++;
+        if (result.status === 'skipped') skipped++;
+      });
+
+      document.getElementById('passedCount').textContent = passed;
+      document.getElementById('failedCount').textContent = failed;
+      document.getElementById('skippedCount').textContent = skipped;
+      document.getElementById('progressPercent').textContent =
+        Math.round(((passed + failed + skipped) / total) * 100) + '%';
+    }
+
+    // 生成测试报告
+    function generateReport() {
+      let passed = 0, failed = 0, skipped = 0;
+
+      let report = `# 学习计划模块 - 第一轮测试报告\n\n`;
+      report += `**测试时间**: ${new Date().toLocaleString('zh-CN')}\n\n`;
+      report += `**测试人员**: _______________\n\n`;
+
+      Object.entries(testResults).forEach(([testId, result]) => {
+        if (result.status === 'passed') passed++;
+        if (result.status === 'failed') failed++;
+        if (result.status === 'skipped') skipped++;
+      });
+
+      report += `## 测试结果统计\n\n`;
+      report += `- ✅ 通过: ${passed}\n`;
+      report += `- ❌ 失败: ${failed}\n`;
+      report += `- ⏭️ 跳过: ${skipped}\n`;
+      report += `- 📊 总计: ${testCases.length}\n`;
+      report += `- 📈 通过率: ${Math.round((passed / testCases.length) * 100)}%\n\n`;
+
+      if (failed > 0) {
+        report += `## ❌ 失败用例详情\n\n`;
+
+        Object.entries(testResults).forEach(([testId, result]) => {
+          if (result.status === 'failed') {
+            const tc = testCases.find(t => t.id === testId);
+            report += `### ${testId} - ${tc.title}\n\n`;
+            report += `**优先级**: ${tc.priority}\n\n`;
+            report += `**问题描述**:\n${result.actualResult || '未提供详细描述'}\n\n`;
+
+            const passedExpects = result.expects.filter(e => e).length;
+            const totalExpects = result.expects.length;
+            report += `**预期结果验证**: ${passedExpects}/${totalExpects} 通过\n\n`;
+
+            if (passedExpects < totalExpects) {
+              report += `**失败的预期**:\n`;
+              tc.expects.forEach((exp, i) => {
+                if (!result.expects[i]) {
+                  report += `- ❌ ${exp}\n`;
+                }
+              });
+              report += `\n`;
+            }
+
+            report += `---\n\n`;
+          }
+        });
+      }
+
+      if (passed > 0) {
+        report += `## ✅ 通过的用例\n\n`;
+        Object.entries(testResults).forEach(([testId, result]) => {
+          if (result.status === 'passed') {
+            const tc = testCases.find(t => t.id === testId);
+            report += `- ${testId}: ${tc.title}\n`;
+          }
+        });
+        report += `\n`;
+      }
+
+      if (skipped > 0) {
+        report += `## ⏭️ 跳过的用例\n\n`;
+        Object.entries(testResults).forEach(([testId, result]) => {
+          if (result.status === 'skipped') {
+            const tc = testCases.find(t => t.id === testId);
+            report += `- ${testId}: ${tc.title}\n`;
+          }
+        });
+        report += `\n`;
+      }
+
+      report += `## 测试结论\n\n`;
+      if (failed === 0 && passed >= 8) {
+        report += `✅ **测试通过** - 核心功能运行正常，可以进入下一阶段测试\n\n`;
+      } else if (failed > 0) {
+        report += `⚠️ **条件通过** - 存在 ${failed} 个失败用例，需要修复后重新测试\n\n`;
+      } else {
+        report += `❌ **测试不通过** - 通过率不足，需要修复关键问题\n\n`;
+      }
+
+      // 复制到剪贴板
+      navigator.clipboard.writeText(report).then(() => {
+        alert('✅ 测试报告已生成并复制到剪贴板！\n\n请粘贴给开发人员。');
+      }).catch(() => {
+        // 如果复制失败，显示报告
+        const win = window.open('', '_blank');
+        win.document.write('<pre>' + report + '</pre>');
+      });
+    }
+
+    // 导出JSON
+    function exportJSON() {
+      const data = {
+        testDate: new Date().toISOString(),
+        summary: {
+          total: testCases.length,
+          passed: 0,
+          failed: 0,
+          skipped: 0
+        },
+        results: testResults
+      };
+
+      Object.values(testResults).forEach(result => {
+        if (result.status === 'passed') data.summary.passed++;
+        if (result.status === 'failed') data.summary.failed++;
+        if (result.status === 'skipped') data.summary.skipped++;
+      });
+
+      const json = JSON.stringify(data, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `test-results-${new Date().toISOString().split('T')[0]}.json`;
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    // 重置所有
+    function resetAll() {
+      if (confirm('确定要重置所有测试结果吗？')) {
+        location.reload();
+      }
+    }
+
+    // 初始化
+    renderTestCases();
+  </script>
+</body>
+</html>

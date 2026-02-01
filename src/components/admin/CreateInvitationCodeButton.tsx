@@ -130,7 +130,7 @@ export function CreateInvitationCodeButton() {
     <>
       <button
         onClick={() => setShowModal(true)}
-        className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded-xl border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
+        className="px-6 py-3 bg-gradient-to-r from-green-400 to-green-600 text-white rounded border-[2px] border-black font-bold hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-1 transition-all"
       >
         + 创建邀请码
       </button>
@@ -138,7 +138,7 @@ export function CreateInvitationCodeButton() {
       {/* 创建邀请码对话框 */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <div className="bg-white rounded-lg shadow-xl max-w-md w-full p-6">
+          <div className="bg-white rounded shadow-xl max-w-md w-full p-6">
             <h2 className="text-xl font-bold mb-4">创建邀请码</h2>
 
             <div className="space-y-4">

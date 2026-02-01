@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { Target, Calendar, BookOpen, Plus, Cat } from 'lucide-react'
@@ -10,6 +10,8 @@ import EmptyState from './EmptyState'
 import { ProgressCardProps, MODE_CONFIG, SCOPE_LABELS } from '@/types/progress'
 import { formatTimeAgo } from '@/lib/timeUtils'
 import { useLoading } from '@/components/LoadingOverlay'
+import { useTheme } from '@/contexts/ThemeContext'
+import { LearningPlanWorkspace } from './learning-plan'
 
 /**
  * 客户端专用的时间显示组件
@@ -74,13 +76,13 @@ interface DashboardContentProps {
   recentBooks?: any[]  // 🔧 性能优化：从服务端传递最近访问的词库
 }
 
-// --- 1. 修正后的统计块 (加了边框，加粗了外轮廓) ---
+// --- 1. StatBox (统一黑夜模式边框) ---
 function StatBox({
   icon: Icon,
   label,
   value,
   unit,
-  color,
+  color, // 传入的颜色类名，例如 "bg-[#FF6B6B]"
   href
 }: {
   icon: any
@@ -98,160 +100,146 @@ function StatBox({
   }
 
   const content = (
-    <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 rounded-xl shadow-[3px_3px_0px_0px_#000] dark:shadow-none lg:shadow-[4px_4px_0px_0px_#000] lg:dark:shadow-none flex flex-col lg:flex-row items-start lg:items-center gap-3 p-4 lg:p-4 h-full lg:h-auto hover:-translate-y-1 transition-transform cursor-pointer group">
-      <div className={`w-10 h-10 lg:w-12 lg:h-12 ${color} border-2 border-black dark:border-gray-600 rounded-lg flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
-        <Icon size={22} className="text-black dark:text-white lg:w-6 lg:h-6" strokeWidth={2} />
-      </div>
+    <div className="
+      relative h-full
+      bg-white dark:bg-[#1e293b] // 🌙 统一卡片底色
+      border-[3px] border-black dark:border-slate-700 // 🌙 统一边框：Slate-700
+      shadow-[4px_4px_0px_0px_#000] dark:shadow-none
 
-      <div className="flex flex-col justify-center">
-        <p className="text-[10px] font-bold uppercase tracking-wider leading-none mb-1 text-gray-400 dark:text-gray-500">{label}</p>
-        <div className="flex items-baseline gap-1 leading-none">
-          <span className="text-3xl lg:text-4xl font-black text-gray-900 dark:text-gray-100">{value}</span>
-          <span className="text-xs font-bold text-gray-900 dark:text-gray-100">{unit}</span>
+      hover:translate-x-[2px] hover:translate-y-[2px]
+      hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-none
+      transition-all duration-200 group
+      flex flex-col justify-center p-4
+    ">
+      <div className="flex items-center gap-3">
+        <div className={`
+          w-12 h-12 shrink-0
+          border-[3px] border-black dark:border-slate-800 // 🌙 图标边框再深一点
+          flex items-center justify-center
+          shadow-[2px_2px_0px_0px_#000] dark:shadow-none
+          ${color}
+        `}>
+          <Icon className="w-6 h-6 text-black" strokeWidth={3} />
+        </div>
+        <div className="flex flex-col">
+          <span className="text-xs font-black text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1">
+            {label}
+          </span>
+          <div className="flex items-baseline gap-1 leading-none">
+            <span className="text-3xl font-black text-black dark:text-slate-100">
+              {value}
+            </span>
+            <span className="text-xs font-bold text-gray-400 dark:text-slate-500">
+              {unit}
+            </span>
+          </div>
         </div>
       </div>
     </div>
   )
 
   return (
-    <Link href={href} onClick={handleClick}>
+    <Link href={href} onClick={handleClick} className="block h-full">
       {content}
     </Link>
   )
 }
 
-// --- 3. 工业风进度卡片组件 (Industrial Neo-Brutalism) ---
-function ProgressCardComponent(props: ProgressCardProps) {
-  const { bookTitle, mode, progress, scopeType, currentIndex, totalWords, learnedCount, lastStudyTime, continueURL, bookId } = props
+// --- 3. ProgressCardComponent (浏览记录 - 统一边框，降低高度弱化) ---
+function ProgressCardComponent(props: ProgressCardProps & { isFirstCard?: boolean }) {
+  const { bookTitle, mode, progress, totalWords, learnedCount, lastStudyTime, continueURL, bookId } = props
   const { showLoading } = useLoading()
+  const { theme, mounted } = useTheme()
+  const isDark = mounted && theme === 'dark'
 
   const handleClick = () => {
-    // 立即显示 loading，给用户即时反馈
     showLoading()
   }
 
   // 获取模式配置
   const modeConfig = MODE_CONFIG[mode]
   const ModeIcon = modeConfig.icon
-  const modeLabel = modeConfig.label
   const themeColor = modeConfig.color
-  const themeLight = modeConfig.light
-  const themeDark = modeConfig.dark
-
-  // 范围标签
-  const scopeLabel = SCOPE_LABELS[scopeType]
-
-  // 构建副标题：模式 + 范围
-  const subText = `${modeLabel} · ${scopeLabel}`
-
-  // 生成任务编号 (基于 bookId 的 hash，保持一致性)
-  const taskNumber = `TASK-${String(bookId?.slice(0, 2) || '01').toUpperCase()}`
 
   return (
-    <Link
-      href={continueURL}
-      onClick={handleClick}
-      className="group block"
-      data-testid="progress-card"
-      data-book-id={bookId}
-    >
-      <div className="group relative w-full h-44 cursor-pointer active:scale-95 transition-transform">
-        {/* A. 阴影层 (深色偏移，模拟厚度) */}
-        <div className="absolute inset-0 bg-gray-900 dark:bg-black rounded-xl translate-x-2 translate-y-2 transition-transform group-hover:translate-x-3 group-hover:translate-y-3" />
+    <Link href={continueURL} onClick={handleClick} className="group block" data-testid="progress-card" data-book-id={bookId}>
+      <div className={`
+        relative w-full cursor-pointer overflow-hidden flex flex-col transition-all duration-200
+        bg-white dark:bg-[#1e293b] // 🌙 统一卡片底色
 
-        {/* B. 卡片主体 */}
-        <div className="relative h-full bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 rounded-xl overflow-hidden flex flex-col transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5">
+        // 🌙 统一边框逻辑：无论是不是 FirstCard，在黑夜模式下都统一用 Slate-700
+        border-[3px] border-black dark:border-slate-700
 
-          {/* --- 顶部 Header: 工业编号栏 --- */}
-          <div className="h-9 border-b-2 border-black dark:border-gray-600 flex items-center justify-between px-3 bg-gray-50 dark:bg-gray-700">
-            {/* 装饰性编号 */}
-            <span className="font-mono text-[10px] font-bold text-gray-400 dark:text-gray-500 tracking-widest">
-              {taskNumber}
+        shadow-[6px_6px_0px_0px_#000] dark:shadow-none
+
+        hover:translate-x-[2px] hover:translate-y-[2px]
+        hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-none
+        dark:hover:bg-[#334155] // Hover 变亮一点
+        min-h-[110px] rounded-sm // 🌟 降低高度：从 140px -> 110px
+      `}>
+        {/* ... 内容保持不变，只改内部文字颜色 ... */}
+        <div className="p-2 flex flex-col h-full">
+          <div className="flex items-start justify-between mb-1.5">
+            <h3 className="font-black text-sm text-black dark:text-slate-100 line-clamp-1">{bookTitle}</h3>
+            <span className="px-1.5 py-0.5 bg-gray-100 dark:bg-[#0f172a] text-[9px] font-bold text-gray-600 dark:text-slate-400 rounded-sm">
+              {mode}
             </span>
-            {/* 装饰性螺丝钉 */}
-            <div className="flex gap-1.5">
-              <div className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></div>
-              <div className="w-1 h-1 rounded-full bg-gray-300 dark:bg-gray-600"></div>
-            </div>
           </div>
 
-          {/* --- 中间 Content: 核心信息 --- */}
-          <div className="p-4 flex-1 flex flex-col justify-between relative">
-
-            {/* 1. 标题与右上角按键 */}
-            <div className="flex justify-between items-start">
-              <div className="flex-1 min-w-0 pr-2">
-                {/* 标题 - 粗体无衬线 */}
-                <h3 className="text-xl font-black text-black dark:text-white leading-none tracking-tight truncate">
-                  {bookTitle}
-                </h3>
-
-                {/* 模式标签 (Badge 风格) */}
-                <div className="mt-2 inline-flex items-center px-1.5 py-0.5 border border-black dark:border-gray-600 rounded bg-gray-100 dark:bg-gray-700">
-                  <ModeIcon className="w-3 h-3 mr-1 text-gray-600 dark:text-gray-300" strokeWidth={2.5} />
-                  <span className="text-[10px] font-bold text-gray-600 dark:text-gray-300 uppercase tracking-wide">
-                    {subText}
-                  </span>
-                </div>
-              </div>
-
-              {/* 右上角图标 (实体按键风格) */}
-              <div className={`w-9 h-9 border-2 border-black dark:border-gray-600 rounded shadow-[2px_2px_0px_0px_#000] dark:shadow-none flex items-center justify-center shrink-0 ${themeLight} ${themeDark}`}>
-                <ModeIcon className="w-5 h-5 text-black dark:text-white" strokeWidth={2} />
-              </div>
+          <div className="mt-auto">
+            <div className="flex justify-between items-end mb-1">
+              <span className="text-xl font-black text-black dark:text-slate-100">{progress}%</span>
+              <span className="text-[9px] font-mono text-gray-500 dark:text-slate-500">{learnedCount}/{totalWords}</span>
             </div>
-
-            {/* 2. 底部数据区 (精密仪表盘风格) */}
-            <div className="flex items-end justify-between mt-2">
-              {/* 左侧：巨大百分比 */}
-              <div className="flex flex-col">
-                <span className="text-[10px] font-bold text-gray-400 dark:text-gray-500 font-mono mb-[-2px]">PROGRESS</span>
-                <div className="text-4xl font-black text-black dark:text-white leading-none">
-                  {progress}<span className="text-lg ml-1">%</span>
-                </div>
-              </div>
-
-              {/* 右侧：详细数据 (等宽字体) */}
-              <div className="text-right">
-                <div className="font-mono text-xs font-bold text-black dark:text-white bg-gray-100 dark:bg-gray-700 px-1 border border-gray-200 dark:border-gray-600 rounded mb-1">
-                  {learnedCount ?? 0} / {totalWords}
-                </div>
-                <div className="text-[10px] font-bold text-gray-400 dark:text-gray-500 flex items-center justify-end gap-1">
-                  <div className={`w-1.5 h-1.5 rounded-full ${themeColor}`}></div>
-                  <TimeLabel timestamp={lastStudyTime} />
-                </div>
-              </div>
+            {/* 进度条槽 */}
+            <div className="h-1 bg-gray-100 dark:bg-[#0f172a] rounded-full overflow-hidden">
+              <div className="h-full bg-[#B4F416]" style={{width: `${Math.max(progress, 5)}%`}}></div>
             </div>
-
+            {/* 时间标签 */}
+            <div className="mt-1 flex items-center gap-1 text-[8px] font-bold text-gray-400 dark:text-slate-600">
+              <div className="w-1 h-1 rounded-full bg-purple-500"></div>
+              <TimeLabel timestamp={lastStudyTime} />
+            </div>
           </div>
-
-          {/* 底部进度条 - 绝对定位贴边 */}
-          <div className="absolute bottom-0 left-0 w-full h-1.5 bg-gray-100 dark:bg-gray-700 border-t-2 border-black dark:border-gray-600">
-            <div
-              className="h-full border-r-2 border-black dark:border-gray-600 transition-all duration-500"
-              style={{ width: `${progress}%`, backgroundColor: mode === 'typing' ? '#ccff00' : '#000' }}
-            />
-          </div>
-
         </div>
       </div>
     </Link>
   )
 }
 
-// --- 2. 修正后的新建按钮 (白底黑圈) ---
+// --- 2. CreateButton (统一黑夜模式边框) ---
 function CreateButton() {
-  return (
-    <Link href="/library/new">
-      <button className="w-full bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 rounded-xl shadow-[3px_3px_0px_0px_#000] dark:shadow-none lg:shadow-[4px_4px_0px_0px_#000] lg:dark:shadow-none flex flex-col lg:flex-row items-start lg:items-center justify-between p-4 lg:p-4 h-full lg:h-auto gap-3 hover:-translate-y-1 transition-transform group relative overflow-hidden">
-        <div className="relative z-10 text-left">
-          <h3 className="font-black text-lg leading-none mb-1 text-gray-900 dark:text-gray-100">新建词库</h3>
-          <p className="text-[10px] font-bold text-gray-600 dark:text-gray-400">自定义单词书</p>
-        </div>
+  const { showLoading } = useLoading()
 
-        {/* 圆形按钮 */}
-        <div className="relative z-10 w-10 h-10 lg:w-12 lg:h-12 border-2 border-black dark:border-gray-600 rounded-full flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform bg-[#B4F416]">
-          <Plus size={24} strokeWidth={3} className="text-black dark:text-white" />
+  const handleClick = () => {
+    showLoading()
+  }
+
+  return (
+    <Link href="/library/new" onClick={handleClick} className="block h-full">
+      <button className="
+        w-full h-full
+        bg-white dark:bg-[#1e293b] // 🌙 统一卡片底色
+        border-[3px] border-black dark:border-slate-700 // 🌙 统一边框
+        shadow-[4px_4px_0px_0px_#000] dark:shadow-none
+
+        hover:translate-x-[2px] hover:translate-y-[2px]
+        hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-none
+        transition-all duration-200 group
+        p-4 flex items-center justify-between
+      ">
+        <div className="text-left">
+          <h3 className="text-base font-black text-black dark:text-slate-100 leading-tight">新建词库</h3>
+          <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mt-1">CUSTOM DECK</p>
+        </div>
+        <div className="
+          w-10 h-10 shrink-0 bg-[#B4F416]
+          border-[3px] border-black dark:border-slate-800 // 🌙 图标边框
+          flex items-center justify-center
+          shadow-[2px_2px_0px_0px_#000] dark:shadow-none
+          group-hover:rotate-90 transition-transform duration-300
+        ">
+          <Plus className="w-5 h-5 text-black" strokeWidth={3} />
         </div>
       </button>
     </Link>
@@ -275,6 +263,23 @@ export function DashboardContent({
   const [mistakesCount, setMistakesCount] = useState(initialMistakesCount ?? 0)
   const [todayNewWordsCount, setTodayNewWordsCount] = useState(initialTodayNewWordsCount ?? 0)
   const [statsLoading, setStatsLoading] = useState(!initialMistakesCount || !initialTodayNewWordsCount)
+
+  // 🔧 动态高度对齐：获取右侧面板高度并传递给左侧
+  const rightPanelRef = useRef<HTMLDivElement>(null)
+  const [rightPanelHeight, setRightPanelHeight] = useState<number | null>(null)
+
+  useEffect(() => {
+    // 等待 DOM 完全渲染后再获取高度
+    const timer = setTimeout(() => {
+      if (rightPanelRef.current) {
+        const height = rightPanelRef.current.offsetHeight
+        console.log('[DashboardContent] 右侧面板高度:', height)
+        setRightPanelHeight(height)
+      }
+    }, 100) // 延迟100ms确保DOM渲染完成
+
+    return () => clearTimeout(timer)
+  }, [statsLoading]) // 依赖statsLoading，确保数据加载完后再测量
 
   // 🔄 实时更新：客户端轮询最近访问的词库
   const [liveRecentBooks, setLiveRecentBooks] = useState(recentBooks)
@@ -302,13 +307,21 @@ export function DashboardContent({
         ])
 
         if (mistakesRes.ok) {
-          const data = await mistakesRes.json()
-          setMistakesCount(data.count || 0)
+          try {
+            const data = await mistakesRes.json()
+            setMistakesCount(data.count || 0)
+          } catch (e) {
+            console.error('[Dashboard] Failed to parse mistakes response:', e)
+          }
         }
 
         if (todayRes.ok) {
-          const data = await todayRes.json()
-          setTodayNewWordsCount(data.count || 0)
+          try {
+            const data = await todayRes.json()
+            setTodayNewWordsCount(data.count || 0)
+          } catch (e) {
+            console.error('[Dashboard] Failed to parse today-new response:', e)
+          }
         }
       } catch (error) {
         console.error('[Dashboard] Failed to load stats:', error)
@@ -327,10 +340,14 @@ export function DashboardContent({
       try {
         const res = await fetch('/api/recent-books')
         if (res.ok) {
-          const data = await res.json()
-          if (data.success && data.data) {
-            setLiveRecentBooks(data.data)
-            console.log('🔄 [Dashboard] 更新最近访问:', data.data.length, '本书')
+          try {
+            const data = await res.json()
+            if (data.success && data.data) {
+              setLiveRecentBooks(data.data)
+              console.log('🔄 [Dashboard] 更新最近访问:', data.data.length, '本书')
+            }
+          } catch (e) {
+            console.error('[Dashboard] Failed to parse recent-books response:', e)
           }
         }
       } catch (error) {
@@ -355,12 +372,11 @@ export function DashboardContent({
 
   return (
     <div
-      className="min-h-screen font-sans p-4 md:p-8 lg:ml-64 transition-colors duration-300"
+      className="min-h-screen font-sans p-4 md:p-8 lg:ml-64 transition-colors duration-300 bg-[#f0f0f0] dark:bg-[#0f172a]"
       style={{
-        backgroundColor: 'var(--bg-secondary)',
         color: 'var(--text-primary)',
-        backgroundImage: 'radial-gradient(var(--border) 1px, transparent 1px)',
-        backgroundSize: '20px 20px'
+        backgroundImage: 'radial-gradient(#888 1px, transparent 1px)',
+        backgroundSize: '24px 24px'
       }}
     >
       <div className="max-w-7xl mx-auto">
@@ -368,7 +384,7 @@ export function DashboardContent({
         <header className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-10 gap-4">
           <div className="flex items-center gap-4 w-full md:w-auto">
             {/* Logo Box - 仅在移动端和平板竖屏显示 */}
-            <div className="block md:block lg:hidden w-12 h-12 md:w-14 md:h-14 bg-[#B4F416] border-[3px] border-black rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_#000] flex-shrink-0 p-0">
+            <div className="block md:block lg:hidden w-12 h-12 md:w-14 md:h-14 bg-[#B4F416] border-[3px] border-black rounded flex items-center justify-center shadow-[3px_3px_0px_0px_#000] flex-shrink-0 p-0">
               <div className="flex items-center justify-center w-full h-full">
                 <Cat size={28} strokeWidth={3} className="text-black" />
               </div>
@@ -386,23 +402,102 @@ export function DashboardContent({
         {/* Permission Warning Banner */}
         <PermissionWarningBanner />
 
-        {/* 2. Top Section - 控制台 (两行布局) */}
-        <section className="mb-6 sm:mb-8 md:mb-12">
-          {/* 第一行：移动端可横向滑动的最近学习卡片，桌面端显示3个 */}
+        {/* 2. Top Section - 控制台 (增强间距呼吸感) */}
+        <section className="mb-8 sm:mb-10 md:mb-14">
+          {/* 第一行：每日计划（左）+ 我的学习（右） */}
+          <div className="mb-8 grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+            {/* 左侧：每日计划（占8列） */}
+            <div className="lg:col-span-8">
+              <LearningPlanWorkspace books={books} />
+            </div>
+
+            {/* 右侧：我的学习（占4列） */}
+            <div className="lg:col-span-4 flex flex-col">
+              {/* 区域标题：我的学习（加装饰方块） */}
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-4 h-8 bg-[#B4F416] border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000]"></div>
+                <h2 className="text-xl font-black text-black dark:text-white tracking-tighter uppercase italic">
+                  我的学习
+                </h2>
+              </div>
+
+              {/* 移动端：三个卡片横向排列 */}
+              <div className="lg:hidden grid grid-cols-3 gap-3">
+                <div className="h-28">
+                  <StatBox
+                    icon={BookOpen}
+                    label="错题本"
+                    value={statsLoading ? '...' : mistakesCount}
+                    unit="词"
+                    color="bg-[#FF6B6B]"
+                    href="/mistakes"
+                  />
+                </div>
+
+                <div className="h-28">
+                  <StatBox
+                    icon={Calendar}
+                    label="今日新增"
+                    value={statsLoading ? '...' : todayNewWordsCount}
+                    unit="词"
+                    color="bg-[#4CC9F0]"
+                    href="/calendar"
+                  />
+                </div>
+
+                <div className="h-28">
+                  <CreateButton />
+                </div>
+              </div>
+
+              {/* PC/Pad：三个按钮垂直排列 */}
+              <div className="hidden lg:flex flex-col gap-4">
+                <div className="h-28">
+                  <StatBox
+                    icon={BookOpen}
+                    label="错题本"
+                    value={statsLoading ? '...' : mistakesCount}
+                    unit="词"
+                    color="bg-[#FF6B6B]"
+                    href="/mistakes"
+                  />
+                </div>
+
+                <div className="h-28">
+                  <StatBox
+                    icon={Calendar}
+                    label="今日新增"
+                    value={statsLoading ? '...' : todayNewWordsCount}
+                    unit="词"
+                    color="bg-[#4CC9F0]"
+                    href="/calendar"
+                  />
+                </div>
+
+                <div className="h-28">
+                  <CreateButton />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 第二行：移动端可横向滑动的浏览记录卡片，桌面端显示6个（可横向滚动） */}
           {progressCards.length > 0 ? (
-            <div className="mb-6">
-              {/* 区域标题：最近学习 */}
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-1 h-6 bg-black dark:bg-gray-100"></div>
-                <h2 className="text-xl font-black text-gray-900 dark:text-gray-100 tracking-tight">最近学习</h2>
+            <div className="mb-8">
+              {/* 区域标题：浏览记录（加装饰方块） */}
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-4 h-8 bg-[#B4F416] border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000]"></div>
+                <h2 className="text-xl font-black text-black dark:text-white tracking-tighter uppercase italic">
+                  浏览记录
+                </h2>
               </div>
               {/* Mobile: 横向滚动容器 */}
               <div className="lg:hidden relative">
                 <div className="overflow-x-auto pb-4 -mx-4 px-4">
-                  <div className="flex gap-4" style={{ width: 'max-content' }}>
+                  <div className="flex gap-3" style={{ width: 'max-content' }}>
                     {progressCards.map((card, index) => (
                       <div key={card._uniqueKey || card.bookId} className="w-[calc(100vw-2rem)] max-w-[360px]">
-                        <ProgressCardComponent {...card} />
+                        <ProgressCardComponent {...card} isFirstCard={index === 0} />
                       </div>
                     ))}
                   </div>
@@ -413,81 +508,139 @@ export function DashboardContent({
                 />
               </div>
 
-              {/* Desktop: 3列网格，卡片固定宽度，左对齐 */}
-              <div className="hidden lg:flex lg:gap-6">
-                {progressCards.slice(0, 3).map((card, index) => (
-                  <div key={card._uniqueKey || card.bookId} className="w-[340px] max-w-[340px]">
-                    <ProgressCardComponent {...card} />
-                  </div>
-                ))}
+              {/* Desktop: 横向滚动容器，显示6个卡片 */}
+              <div
+                className="hidden lg:block relative group"
+                onMouseEnter={() => {
+                  // 鼠标进入时显示箭头
+                  const container = (window as any).desktopBrowseScrollRef as HTMLDivElement
+                  if (!container) return
+
+                  const scrollLeft = container.scrollLeft
+                  const scrollWidth = container.scrollWidth
+                  const clientWidth = container.clientWidth
+
+                  const leftBtn = (window as any).desktopBrowseLeftBtn
+                  const rightBtn = (window as any).desktopBrowseRightBtn
+
+                  if (leftBtn) {
+                    leftBtn.style.opacity = scrollLeft > 0 ? '1' : '0'
+                    leftBtn.style.pointerEvents = scrollLeft > 0 ? 'auto' : 'none'
+                  }
+
+                  if (rightBtn) {
+                    rightBtn.style.opacity = scrollLeft < scrollWidth - clientWidth - 1 ? '1' : '0'
+                    rightBtn.style.pointerEvents = scrollLeft < scrollWidth - clientWidth - 1 ? 'auto' : 'none'
+                  }
+                }}
+                onMouseLeave={() => {
+                  // 鼠标离开时隐藏所有箭头
+                  const leftBtn = (window as any).desktopBrowseLeftBtn
+                  const rightBtn = (window as any).desktopBrowseRightBtn
+
+                  if (leftBtn) {
+                    leftBtn.style.opacity = '0'
+                    leftBtn.style.pointerEvents = 'none'
+                  }
+
+                  if (rightBtn) {
+                    rightBtn.style.opacity = '0'
+                    rightBtn.style.pointerEvents = 'none'
+                  }
+                }}
+              >
+                <div
+                  ref={(el) => {
+                    if (el) {
+                      (window as any).desktopBrowseScrollRef = el
+                    }
+                  }}
+                  className="flex gap-4 overflow-x-auto scroll-smooth pb-4"
+                  style={{
+                    scrollbarWidth: 'none', // Firefox
+                    msOverflowStyle: 'none' // IE/Edge
+                  }}
+                  onScroll={(e) => {
+                    const target = e.target as HTMLDivElement
+                    const scrollLeft = target.scrollLeft
+                    const scrollWidth = target.scrollWidth
+                    const clientWidth = target.clientWidth
+
+                    // 控制左右箭头的显示/隐藏（仅在鼠标悬停时）
+                    const leftBtn = (window as any).desktopBrowseLeftBtn
+                    const rightBtn = (window as any).desktopBrowseRightBtn
+
+                    if (leftBtn) {
+                      leftBtn.style.opacity = scrollLeft > 0 ? '1' : '0'
+                      leftBtn.style.pointerEvents = scrollLeft > 0 ? 'auto' : 'none'
+                    }
+
+                    if (rightBtn) {
+                      rightBtn.style.opacity = scrollLeft < scrollWidth - clientWidth - 1 ? '1' : '0'
+                      rightBtn.style.pointerEvents = scrollLeft < scrollWidth - clientWidth - 1 ? 'auto' : 'none'
+                    }
+                  }}
+                >
+                  <style jsx>{`
+                    div::-webkit-scrollbar {
+                      display: none;
+                    }
+                  `}</style>
+                  {progressCards.map((card, index) => (
+                    <div key={card._uniqueKey || card.bookId} className="w-[250px] max-w-[250px] flex-shrink-0">
+                      <ProgressCardComponent {...card} isFirstCard={index === 0} />
+                    </div>
+                  ))}
+                </div>
+
+                {/* 左箭头按钮 */}
+                <button
+                  ref={(el) => {
+                    if (el) {
+                      (window as any).desktopBrowseLeftBtn = el
+                    }
+                  }}
+                  onClick={() => {
+                    const container = (window as any).desktopBrowseScrollRef as HTMLDivElement
+                    if (container) {
+                      container.scrollBy({ left: -264, behavior: 'smooth' }) // 卡片宽度(250) + 间距(4) + 边框(10)
+                    }
+                  }}
+                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-10 w-10 h-10 bg-white dark:bg-slate-800 border-[3px] border-black dark:border-slate-600 rounded shadow-[4px_4px_0px_0px_#000] dark:shadow-none flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 hover:bg-[#B4F416] hover:-translate-x-2"
+                  style={{ opacity: 0, pointerEvents: 'none' }}
+                >
+                  <svg className="w-5 h-5 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+
+                {/* 右箭头按钮 */}
+                <button
+                  ref={(el) => {
+                    if (el) {
+                      (window as any).desktopBrowseRightBtn = el
+                    }
+                  }}
+                  onClick={() => {
+                    const container = (window as any).desktopBrowseScrollRef as HTMLDivElement
+                    if (container) {
+                      container.scrollBy({ left: 264, behavior: 'smooth' })
+                    }
+                  }}
+                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-10 w-10 h-10 bg-white dark:bg-slate-800 border-[3px] border-black dark:border-slate-600 rounded shadow-[4px_4px_0px_0px_#000] dark:shadow-none flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 hover:bg-[#B4F416] hover:translate-x-2"
+                  style={{ opacity: 0, pointerEvents: 'none' }}
+                >
+                  <svg className="w-5 h-5 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
               </div>
             </div>
           ) : (
-            <div className="mb-6">
+            <div className="mb-8">
               <EmptyState />
             </div>
           )}
-
-          {/* 第二行：错题本、今日新增、新建词库 */}
-          <div>
-            {/* 区域标题：我的学习 */}
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-1 h-6 bg-black dark:bg-gray-100"></div>
-              <h2 className="text-xl font-black text-gray-900 dark:text-gray-100 tracking-tight">我的学习</h2>
-            </div>
-            {/* 移动端：三个卡片一屏显示 */}
-            <div className="lg:hidden grid grid-cols-3 gap-3">
-              {/* StatBox 1 - 错题本待复习 */}
-              <StatBox
-                icon={BookOpen}
-                label="错题本待复习"
-                value={statsLoading ? '...' : mistakesCount}
-                unit="词"
-                color="bg-[#FF6B6B]"
-                href="/mistakes"
-              />
-
-              {/* StatBox 2 - 今日新增单词 */}
-              <StatBox
-                icon={Calendar}
-                label="今日新增单词"
-                value={statsLoading ? '...' : todayNewWordsCount}
-                unit="词"
-                color="bg-[#4ECDC4]"
-                href="/calendar"
-              />
-
-              {/* Create Button - 全品牌色 */}
-              <CreateButton />
-            </div>
-
-            {/* PC/Pad：固定宽度2/3，居左显示 */}
-            <div className="hidden lg:flex lg:gap-6">
-              <div className="w-[227px] max-w-[227px]">
-                <StatBox
-                  icon={BookOpen}
-                  label="错题本待复习"
-                  value={statsLoading ? '...' : mistakesCount}
-                  unit="词"
-                  color="bg-[#FF6B6B]"
-                  href="/mistakes"
-                />
-              </div>
-              <div className="w-[227px] max-w-[227px]">
-                <StatBox
-                  icon={Calendar}
-                  label="今日新增单词"
-                  value={statsLoading ? '...' : todayNewWordsCount}
-                  unit="词"
-                  color="bg-[#4ECDC4]"
-                  href="/calendar"
-                />
-              </div>
-              <div className="w-[227px] max-w-[227px]">
-                <CreateButton />
-              </div>
-            </div>
-          </div>
         </section>
 
         {/* 3. Library Grid - 书架 (三个 Tab) */}
@@ -500,7 +653,7 @@ export function DashboardContent({
 
         {/* Footer */}
         <footer className="mt-12 md:mt-16 mb-8">
-          <div className="bg-white dark:bg-gray-800 border-[3px] border-black shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] rounded-xl px-6 md:px-8 py-4 md:py-6 text-center transition-colors duration-300">
+          <div className="bg-white dark:bg-gray-800 border-[3px] border-black shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] rounded px-6 md:px-8 py-4 md:py-6 text-center transition-colors duration-300">
             <p className="text-xs md:text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors duration-300">
               🎓 MAX笔记 © 2026 · 智能英语学习平台
             </p>

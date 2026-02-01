@@ -39,13 +39,13 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
         <div className="space-y-4 md:space-y-6">
           {/* 外观设置 */}
           <div
-            className="border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
+            className="border-[3px] border-black rounded shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
             style={{ backgroundColor: 'var(--card-bg)' }}
           >
             <div className="flex items-start justify-between gap-4 mb-6">
               <div className="flex items-start gap-4">
                 <div
-                  className="w-12 h-12 md:w-14 md:h-14 bg-[#9333EA] border-[2px] border-black rounded-lg flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000]"
+                  className="w-12 h-12 md:w-14 md:h-14 bg-[#9333EA] border-[2px] border-black rounded flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000]"
                 >
                   <Palette size={24} className="text-white" strokeWidth={2.5} />
                 </div>
@@ -66,7 +66,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
                 {[1, 2, 3].map((i) => (
                   <div
                     key={i}
-                    className="px-4 py-3 border-[3px] border-black rounded-xl font-black text-sm"
+                    className="px-4 py-3 border-[3px] border-black rounded font-black text-sm"
                     style={{ backgroundColor: 'var(--bg-tertiary)' }}
                   >
                     <div className="w-5 h-5 mx-auto mb-1 opacity-50" />
@@ -78,7 +78,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
               <div className="grid grid-cols-3 gap-3">
                 <button
                   onClick={() => setThemeMode('light')}
-                  className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
+                  className={`px-4 py-3 border-[3px] rounded font-black text-sm transition-all ${
                     themeMode === 'light'
                       ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
                       : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
@@ -91,7 +91,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
 
                 <button
                   onClick={() => setThemeMode('dark')}
-                  className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
+                  className={`px-4 py-3 border-[3px] rounded font-black text-sm transition-all ${
                     themeMode === 'dark'
                       ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
                       : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
@@ -104,7 +104,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
 
                 <button
                   onClick={() => setThemeMode('auto')}
-                  className={`px-4 py-3 border-[3px] rounded-xl font-black text-sm transition-all ${
+                  className={`px-4 py-3 border-[3px] rounded font-black text-sm transition-all ${
                     themeMode === 'auto'
                       ? 'bg-[#B4F416] border-black shadow-[3px_3px_0px_0px_#000] -translate-y-0.5'
                       : 'border-black hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
@@ -119,7 +119,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
 
             {/* 当前主题说明 */}
             {mounted && (
-              <div className="mt-4 p-3 border-[2px] border-black rounded-lg text-xs font-bold" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)' }}>
+              <div className="mt-4 p-3 border-[2px] border-black rounded text-xs font-bold" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)' }}>
                 {themeMode === 'auto' ? (
                   <span>自动模式：18:00-6:00 使用黑暗主题，其他时间使用明亮主题</span>
                 ) : themeMode === 'dark' ? (
@@ -138,13 +138,13 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
 
           {/* 修改密码 - 暂时注销 */}
           {/* <div
-            className="border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
+            className="border-[3px] border-black rounded shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
             style={{ backgroundColor: 'var(--card-bg)' }}
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-4">
                 <div
-                  className="w-12 h-12 md:w-14 md:h-14 bg-[#FF6B6B] border-[2px] border-black rounded-lg flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000]"
+                  className="w-12 h-12 md:w-14 md:h-14 bg-[#FF6B6B] border-[2px] border-black rounded flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000]"
                 >
                   <Lock size={24} className="text-white" strokeWidth={2.5} />
                 </div>
@@ -159,7 +159,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
               </div>
               <button
                 onClick={() => setShowPasswordModal(true)}
-                className="px-6 py-3 bg-[#B4F416] border-[3px] border-black rounded-xl font-black text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
+                className="px-6 py-3 bg-[#B4F416] border-[3px] border-black rounded font-black text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
               >
                 修改
               </button>
@@ -168,13 +168,13 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
 
           {/* 联系客服 */}
           <div
-            className="border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
+            className="border-[3px] border-black rounded shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
             style={{ backgroundColor: 'var(--card-bg)' }}
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-4">
                 <div
-                  className="w-12 h-12 md:w-14 md:h-14 bg-[#4ECDC4] border-[2px] border-black rounded-lg flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000]"
+                  className="w-12 h-12 md:w-14 md:h-14 bg-[#4ECDC4] border-[2px] border-black rounded flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000]"
                 >
                   <Headphones size={24} className="text-white" strokeWidth={2.5} />
                 </div>
@@ -189,7 +189,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
               </div>
               <button
                 onClick={() => alert('请联系购买平台客服')}
-                className="px-6 py-3 bg-[#B4F416] border-[3px] border-black rounded-xl font-black text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
+                className="px-6 py-3 bg-[#B4F416] border-[3px] border-black rounded font-black text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
               >
                 联系
               </button>
@@ -198,13 +198,13 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
 
           {/* 退出登录 */}
           <div
-            className="border-[3px] border-black rounded-xl shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
+            className="border-[3px] border-black rounded shadow-[3px_3px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] p-6 md:p-8 transition-all duration-300 hover:-translate-y-1"
             style={{ backgroundColor: 'var(--card-bg)' }}
           >
             <div className="flex items-start justify-between gap-4">
               <div className="flex items-start gap-4">
                 <div
-                  className="w-12 h-12 md:w-14 md:h-14 bg-[#FFB800] border-[2px] border-black rounded-lg flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000]"
+                  className="w-12 h-12 md:w-14 md:h-14 bg-[#FFB800] border-[2px] border-black rounded flex items-center justify-center shrink-0 shadow-[2px_2px_0px_0px_#000]"
                 >
                   <LogOut size={24} className="text-black" strokeWidth={2.5} />
                 </div>
@@ -219,7 +219,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
               </div>
               <button
                 onClick={() => router.push('/logout')}
-                className="px-6 py-3 bg-[#FF6B6B] border-[3px] border-black rounded-xl font-black text-white text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
+                className="px-6 py-3 bg-[#FF6B6B] border-[3px] border-black rounded font-black text-white text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
               >
                 退出
               </button>
@@ -255,7 +255,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
               </div>
               <button
                 onClick={() => setShowPasswordModal(false)}
-                className="w-10 h-10 bg-white border-2 border-black rounded-lg flex items-center justify-center hover:bg-gray-100 transition-colors"
+                className="w-10 h-10 bg-white border-2 border-black rounded flex items-center justify-center hover:bg-gray-100 transition-colors"
               >
                 <X size={20} className="text-black" strokeWidth={2.5} />
               </button>
@@ -268,7 +268,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
                 <input
                   type="password"
                   placeholder="请输入当前密码"
-                  className="w-full px-4 py-3 border-[2px] border-black rounded-lg focus:outline-none focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] transition-all text-black font-bold"
+                  className="w-full px-4 py-3 border-[2px] border-black rounded focus:outline-none focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] transition-all text-black font-bold"
                   style={{ backgroundColor: '#fff' }}
                 />
               </div>
@@ -278,7 +278,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
                 <input
                   type="password"
                   placeholder="请输入新密码"
-                  className="w-full px-4 py-3 border-[2px] border-black rounded-lg focus:outline-none focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] transition-all text-black font-bold"
+                  className="w-full px-4 py-3 border-[2px] border-black rounded focus:outline-none focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] transition-all text-black font-bold"
                   style={{ backgroundColor: '#fff' }}
                 />
               </div>
@@ -288,13 +288,13 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
                 <input
                   type="password"
                   placeholder="请再次输入新密码"
-                  className="w-full px-4 py-3 border-[2px] border-black rounded-lg focus:outline-none focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] transition-all text-black font-bold"
+                  className="w-full px-4 py-3 border-[2px] border-black rounded focus:outline-none focus:shadow-[2px_2px_0px_0px_#000] focus:bg-[#B4F416] transition-all text-black font-bold"
                   style={{ backgroundColor: '#fff' }}
                 />
               </div>
 
               {/* 提示信息 */}
-              <div className="p-4 border-[2px] border-black rounded-lg" style={{ backgroundColor: '#FEF3C7' }}>
+              <div className="p-4 border-[2px] border-black rounded" style={{ backgroundColor: '#FEF3C7' }}>
                 <div className="flex items-start gap-2">
                   <MessageCircle size={16} className="text-black mt-0.5 shrink-0" strokeWidth={2.5} />
                   <p className="text-xs font-bold text-black leading-relaxed">
@@ -307,7 +307,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
               <div className="flex gap-3 pt-2">
                 <button
                   onClick={() => setShowPasswordModal(false)}
-                  className="flex-1 px-6 py-3 border-[3px] border-black rounded-xl font-black text-sm hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
+                  className="flex-1 px-6 py-3 border-[3px] border-black rounded font-black text-sm hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
                   style={{ backgroundColor: '#fff', color: '#000' }}
                 >
                   取消
@@ -317,7 +317,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
                     alert('请通过客服渠道修改密码')
                     setShowPasswordModal(false)
                   }}
-                  className="flex-1 px-6 py-3 bg-[#B4F416] border-[3px] border-black rounded-xl font-black text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
+                  className="flex-1 px-6 py-3 bg-[#B4F416] border-[3px] border-black rounded font-black text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
                 >
                   确认
                 </button>

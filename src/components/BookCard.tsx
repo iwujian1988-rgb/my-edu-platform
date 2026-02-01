@@ -109,15 +109,12 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
     <div className="group block" onClick={handleClick} suppressHydrationWarning>
       <div className="relative w-full cursor-pointer">
 
-        {/* 1. 整体阴影 (黑色硬块) */}
-        <div className={`absolute inset-0 rounded-lg md:rounded-xl translate-x-1.5 md:translate-x-2 translate-y-1.5 md:translate-y-2 transition-transform group-hover:translate-x-2 group-hover:translate-y-2 md:group-hover:translate-x-3 md:group-hover:translate-y-3 ${isDark ? 'bg-gray-950' : 'bg-black'}`} />
-
-        {/* 2. 卡片容器 */}
-        <div className={`relative rounded-lg md:rounded-xl border-[2px] md:border-[3px] overflow-hidden flex flex-col h-full transition-all duration-300 ${
+        {/* 卡片容器 */}
+        <div className={`relative rounded border-[3px] overflow-hidden flex flex-col h-full transition-all duration-200 ${
           isDark
-            ? 'bg-gray-900 border-gray-700 hover:border-gray-500 hover:scale-[1.02] hover:-translate-y-1'
-            : 'bg-white border-black hover:scale-[1.02] hover:-translate-y-1'
-        } ${glowClass}`}>
+            ? 'bg-gray-900 border-gray-700 hover:border-gray-500 hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+            : 'bg-white border-black hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
+        } shadow-[4px_4px_0px_0px_#000] ${glowClass}`}>
 
           {/* --- 上半部分：封面区 --- */}
           <div className={`aspect-[4/3] relative flex flex-col items-center justify-center border-b-[2px] md:border-b-[3px] p-2 md:p-3 lg:p-4 ${colorClass} ${
@@ -127,7 +124,7 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
             {/* 分类标签 + 最近标记 */}
             <div className="absolute top-2 left-2 md:top-2.5 md:left-2.5 lg:top-3 lg:left-3 flex gap-1 md:gap-1.5 z-20">
               {book.categoryLabel && (
-                <span className={`px-1.5 py-0.5 md:px-1.5 md:py-0.5 lg:px-2 lg:py-0.5 border text-[8px] md:text-[9px] lg:text-[10px] font-black uppercase shadow-[2px_2px_0px_0px_#000] ${
+                <span className={`px-1.5 py-0.5 md:px-1.5 md:py-0.5 lg:px-2 lg:py-0.5 border text-[8px] md:text-[9px] lg:text-[10px] font-black uppercase shadow-[2px_2px_0px_0px_#000] rounded ${
                   isDark
                     ? 'border-gray-600 bg-gray-800/80 text-gray-200'
                     : 'border-black bg-white text-black'
@@ -136,11 +133,11 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
                 </span>
               )}
               {book.isRecent && (
-                <span className={`text-[8px] md:text-[9px] lg:text-[10px] font-bold px-1.5 py-0.5 md:px-1.5 md:py-0.5 lg:px-2 lg:py-0.5 border-2 shadow-[2px_2px_0px_0px_#000] ${
+                <span className={`text-[8px] md:text-[9px] lg:text-[10px] font-bold px-1.5 py-0.5 md:px-1.5 md:py-0.5 lg:px-2 lg:py-0.5 border-2 shadow-[2px_2px_0px_0px_#000] rounded ${
                   isDark
                     ? 'bg-yellow-500/20 border-yellow-600 text-yellow-300'
                     : 'bg-[#FFB800] border-black text-black'
-                } rounded-md`}>
+                }`}>
                   最近
                 </span>
               )}
@@ -157,7 +154,7 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
               </h1>
 
               {/* 中间的标签 */}
-              <div className={`mt-1.5 md:mt-1.5 lg:mt-2 px-2 py-0.5 md:px-2 md:py-0.5 lg:px-3 lg:py-1 text-[10px] md:text-[10px] lg:text-xs font-bold uppercase tracking-widest transform -rotate-2 group-hover:rotate-0 transition-transform ${
+              <div className={`mt-1.5 md:mt-1.5 lg:mt-2 px-2 py-0.5 md:px-2 md:py-0.5 lg:px-3 lg:py-1 text-[10px] md:text-[10px] lg:text-xs font-bold uppercase tracking-widest transform -rotate-2 group-hover:rotate-0 transition-transform rounded ${
                 isDark
                   ? 'bg-gray-800 text-gray-200 border border-gray-600 shadow-[0_0_10px_rgba(180,244,22,0.2)]'
                   : 'bg-black text-white'
@@ -220,7 +217,7 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
                 <span>{book.total_words?.toLocaleString() || 0} words</span>
               </div>
               {book.description && (
-                <p className={`text-[10px] md:text-[11px] lg:text-xs line-clamp-1 md:line-clamp-2 mt-1 ${
+                <p className={`text-[10px] md:text-[11px] lg:text-xs line-clamp-2 min-h-[2.5em] mt-1 ${
                   isDark ? 'text-gray-500' : 'text-gray-400'
                 }`}>{book.description}</p>
               )}
@@ -233,7 +230,7 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
               }`}>
                 $ ENTER
               </div>
-              <button className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 flex items-center justify-center border-2 rounded-lg transition-all shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none group ${
+              <button className={`w-6 h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 flex items-center justify-center border-2 rounded transition-all shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none group ${
                 isDark
                   ? 'border-gray-600 hover:border-lime-400 hover:bg-lime-400/10 text-gray-300 hover:text-lime-400'
                   : 'border-black hover:bg-[#B4F416] hover:text-black text-black'

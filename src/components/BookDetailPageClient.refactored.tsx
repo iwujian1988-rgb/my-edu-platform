@@ -38,14 +38,14 @@ import { WORDS_PER_PAGE, TIPS, getFilterLabel, type StatusFilter, type SortOrder
 // 单词卡片骨架屏组件
 function WordCardSkeleton() {
   return (
-    <div className="w-full bg-white rounded-xl border-3 border-black overflow-hidden relative">
+    <div className="w-full bg-white rounded border-3 border-black overflow-hidden relative">
       <div className="flex items-start gap-3 p-4 border-b-2 border-slate-100">
-        <div className="w-8 h-8 bg-slate-200 rounded-lg animate-pulse flex-shrink-0"></div>
+        <div className="w-8 h-8 bg-slate-200 rounded animate-pulse flex-shrink-0"></div>
         <div className="flex-1">
           <div className="h-7 bg-slate-200 rounded w-32 animate-pulse mb-2"></div>
           <div className="h-4 bg-slate-200 rounded w-48 animate-pulse"></div>
         </div>
-        <div className="w-8 h-8 bg-slate-200 rounded-lg animate-pulse flex-shrink-0"></div>
+        <div className="w-8 h-8 bg-slate-200 rounded animate-pulse flex-shrink-0"></div>
       </div>
       <div className="p-4 space-y-2 flex-1">
         <div className="h-4 bg-slate-200 rounded w-12 animate-pulse"></div>
@@ -57,9 +57,9 @@ function WordCardSkeleton() {
         <div className="h-4 bg-slate-200 rounded w-1/2 animate-pulse"></div>
       </div>
       <div className="flex gap-2 p-4 pt-2">
-        <div className="flex-1 h-10 bg-slate-200 rounded-lg animate-pulse"></div>
-        <div className="flex-1 h-10 bg-slate-200 rounded-lg animate-pulse"></div>
-        <div className="flex-1 h-10 bg-slate-200 rounded-lg animate-pulse"></div>
+        <div className="flex-1 h-10 bg-slate-200 rounded animate-pulse"></div>
+        <div className="flex-1 h-10 bg-slate-200 rounded animate-pulse"></div>
+        <div className="flex-1 h-10 bg-slate-200 rounded animate-pulse"></div>
       </div>
     </div>
   )
@@ -240,7 +240,7 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
             <div className="flex items-center gap-4">
               <Link
                 href="/"
-                className="flex items-center justify-center w-10 h-10 rounded-xl hover:bg-slate-100 transition-colors duration-200"
+                className="flex items-center justify-center w-10 h-10 rounded hover:bg-slate-100 transition-colors duration-200"
               >
                 <ArrowLeft className="w-5 h-5 text-slate-700" />
               </Link>
@@ -261,7 +261,7 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                 <>
                   <button
                     onClick={() => setShowDeleteConfirm1(true)}
-                    className="px-4 py-2 text-sm font-semibold text-red-600 border-2 border-red-200 rounded-xl hover:border-red-400 hover:bg-red-50 transition-all duration-200 flex items-center gap-2"
+                    className="px-4 py-2 text-sm font-semibold text-red-600 border-2 border-red-200 rounded hover:border-red-400 hover:bg-red-50 transition-all duration-200 flex items-center gap-2"
                   >
                     <Trash2 className="w-4 h-4" />
                     <span className="hidden sm:inline">删除词库</span>
@@ -270,7 +270,7 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                   {/* 删除确认对话框 - 保持原样 */}
                   {showDeleteConfirm1 && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" style={{ marginTop: '10vh' }}>
-                      <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
+                      <div className="bg-white rounded shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center">
                             <AlertTriangle className="w-6 h-6 text-amber-600" />
@@ -286,13 +286,13 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                                   setShowDeleteConfirm1(false)
                                   setShowDeleteConfirm2(true)
                                 }}
-                                className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors"
+                                className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition-colors"
                               >
                                 确定删除
                               </button>
                               <button
                                 onClick={() => setShowDeleteConfirm1(false)}
-                                className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
+                                className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded hover:bg-slate-50 transition-colors"
                               >
                                 取消
                               </button>
@@ -305,7 +305,7 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
 
                   {showDeleteConfirm2 && (
                     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm" style={{ marginTop: '10vh' }}>
-                      <div className="bg-white rounded-2xl shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
+                      <div className="bg-white rounded shadow-xl max-w-md w-full p-6 animate-in fade-in zoom-in duration-200">
                         <div className="flex items-start gap-4">
                           <div className="flex-shrink-0 w-12 h-12 rounded-full bg-red-100 flex items-center justify-center">
                             <AlertTriangle className="w-6 h-6 text-red-600" />
@@ -316,7 +316,7 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                               删除后无法恢复！真的要删除「{book.title}」吗？
                             </p>
                             {deleteError && (
-                              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
+                              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded">
                                 <p className="text-sm text-red-600">{deleteError}</p>
                               </div>
                             )}
@@ -324,7 +324,7 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                               <button
                                 onClick={handleDeleteBook}
                                 disabled={isDeleting}
-                                className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded-xl hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                                className="flex-1 px-4 py-2.5 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                               >
                                 {isDeleting ? '删除中...' : '确认删除'}
                               </button>
@@ -334,7 +334,7 @@ export function BookDetailPageClient({ book, chapters, user }: BookDetailPageCli
                                   setIsDeleting(false)
                                   setDeleteError('')
                                 }}
-                                className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded-xl hover:bg-slate-50 transition-colors"
+                                className="flex-1 px-4 py-2.5 border-2 border-slate-200 text-slate-700 font-semibold rounded hover:bg-slate-50 transition-colors"
                                 disabled={isDeleting}
                               >
                                 取消

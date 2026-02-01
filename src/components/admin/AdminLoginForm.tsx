@@ -54,11 +54,11 @@ export function AdminLoginForm({ redirectTo }: AdminLoginFormProps) {
   }
 
   return (
-    <div className="bg-white rounded-3xl border-[3px] border-black shadow-[8px_8px_0px_0px_#000] p-8">
+    <div className="bg-white rounded border-[3px] border-black shadow-[8px_8px_0px_0px_#000] p-8">
       <form onSubmit={handleSubmit} className="space-y-6">
         {/* 错误提示 */}
         {error && (
-          <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4">
+          <div className="bg-red-50 border-2 border-red-300 rounded p-4">
             <p className="text-red-700 font-semibold text-sm">{error}</p>
           </div>
         )}
@@ -74,7 +74,7 @@ export function AdminLoginForm({ redirectTo }: AdminLoginFormProps) {
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full px-4 py-3 rounded-xl border-[3px] border-black font-semibold text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-green-200 transition-all"
+            className="w-full px-4 py-3 rounded border-[3px] border-black font-semibold text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-green-200 transition-all"
             placeholder="admin@example.com"
             disabled={isPending}
           />
@@ -92,7 +92,7 @@ export function AdminLoginForm({ redirectTo }: AdminLoginFormProps) {
               required
               value={formData.password}
               onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-              className="w-full px-4 py-3 pr-12 rounded-xl border-[3px] border-black font-semibold text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-green-200 transition-all"
+              className="w-full px-4 py-3 pr-12 rounded border-[3px] border-black font-semibold text-gray-800 placeholder:text-gray-400 focus:outline-none focus:ring-4 focus:ring-green-200 transition-all"
               placeholder="••••••••"
               disabled={isPending}
             />
@@ -111,7 +111,7 @@ export function AdminLoginForm({ redirectTo }: AdminLoginFormProps) {
         <button
           type="submit"
           disabled={isPending}
-          className="w-full bg-gradient-to-br from-green-400 to-green-600 text-white font-bold py-4 px-6 rounded-xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-[4px_4px_0px_0px_#000] disabled:translate-y-0"
+          className="w-full bg-gradient-to-br from-green-400 to-green-600 text-white font-bold py-4 px-6 rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[6px_6px_0px_0px_#000] hover:-translate-y-0.5 transition-all disabled:opacity-50 disabled:cursor-not-allowed disabled:shadow-[4px_4px_0px_0px_#000] disabled:translate-y-0"
         >
           {isPending ? '登录中...' : '登录'}
         </button>

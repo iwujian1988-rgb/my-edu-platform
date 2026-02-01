@@ -34,9 +34,13 @@ export async function createClient() {
   // 在 Next.js server component 中无法直接获取协议，使用环境变量判断
   const isHttps = process.env.NODE_ENV === 'production'
 
-  // 🔍 Debug: 仅在开发环境记录日志（生产环境禁用以提升性能）
-  const isDev = process.env.NODE_ENV === 'development'
+  // 🔍 Debug: 禁用开发环境日志以避免内存泄漏
+  // const isDev = process.env.NODE_ENV === 'development'
 
+  // 🔧 临时禁用以解决内存泄漏问题
+  const isDev = false
+
+  /* // 已禁用：日志输出导致内存泄漏
   if (isDev) {
     const allCookies = cookieStore.getAll()
     const sbCookies = allCookies.filter(c => c.name.includes('sb-'))
@@ -51,6 +55,7 @@ export async function createClient() {
       isHttps
     })
   }
+  */
 
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -60,10 +65,11 @@ export async function createClient() {
         get(name: string) {
           const value = cookieStore.get(name)?.value
 
-          // 🔍 仅在开发环境记录cookie读取
+          /* // 已禁用：日志输出导致内存泄漏
           if (isDev && name.includes('sb-')) {
             console.log(`🔍 [Server Client] Reading cookie: ${name}, found: ${!!value}`)
           }
+          */
 
           return value
         },
@@ -79,25 +85,30 @@ export async function createClient() {
               httpOnly: true,
             })
 
+            /* // 已禁用：日志输出导致内存泄漏
             if (isDev) {
               console.log('[createClient] Set cookie:', name, 'secure:', isHttps)
             }
+            */
           } catch (error) {
             console.error('[createClient] Failed to set cookie:', name, 'error:', error)
           }
         },
         remove(name: string, options: any) {
           try {
-            // 🔍 仅在开发环境记录cookie删除
+            /* // 已禁用：日志输出导致内存泄漏
             if (isDev && name.includes('sb-')) {
               console.log('🚨 [createClient] Attempting to remove cookie:', name)
             }
+            */
 
             // 🔧 临时阻止删除 auth-token 相关的 cookies
             if (name.includes('auth-token')) {
+              /* // 已禁用：日志输出导致内存泄漏
               if (isDev) {
                 console.log('🛑 [createClient] BLOCKED removal of auth cookie:', name)
               }
+              */
               return  // 阻止删除
             }
 
@@ -170,11 +181,13 @@ export { createClient as createClientForActions }
  * ```
  */
 export async function getCurrentUser() {
+  /* // 已禁用：日志输出导致内存泄漏
   const isDev = process.env.NODE_ENV === 'development'
 
   if (isDev) {
     console.log('🔍 [getCurrentUser] Starting...')
   }
+  */
 
   const supabase = await createClient()
 
@@ -183,6 +196,7 @@ export async function getCurrentUser() {
     error,
   } = await supabase.auth.getUser()
 
+  /* // 已禁用：日志输出导致内存泄漏
   if (isDev) {
     console.log('👤 [getCurrentUser] Result:', {
       hasUser: !!user,
@@ -190,6 +204,7 @@ export async function getCurrentUser() {
       error: error?.message
     })
   }
+  */
 
   if (error || !user) {
     return null

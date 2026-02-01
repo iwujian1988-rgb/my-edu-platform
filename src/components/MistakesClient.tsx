@@ -283,7 +283,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
         </p>
         <Link
           href="/"
-          className="inline-flex items-center gap-2 px-8 py-4 font-bold text-white rounded-xl transition-all transform hover:scale-105 relative z-10"
+          className="inline-flex items-center gap-2 px-8 py-4 font-bold text-white rounded transition-all transform hover:scale-105 relative z-10"
           style={{
             background: 'linear-gradient(to right, #22c55e, #16a34a)',
             boxShadow: '4px 4px 0px 0px #000000',
@@ -369,7 +369,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
           <div className="relative">
             <button
               onClick={() => setShowBookMenu(!showBookMenu)}
-              className={`w-9 h-9 rounded-lg border-2 flex items-center justify-center transition-all duration-200 ${
+              className={`w-9 h-9 rounded border-2 flex items-center justify-center transition-all duration-200 ${
                 selectedBook !== 'all'
                   ? 'bg-[#3B82F6] border-black text-black shadow-none translate-y-[2px]'
                   : 'bg-white border-black text-black shadow-[2px_2px_0px_0px_#000]'
@@ -382,7 +382,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showBookMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowBookMenu(false)} />
-                <div className="absolute left-0 mt-2 w-48 rounded-xl z-20 max-h-80 overflow-y-auto transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="absolute left-0 mt-2 w-48 rounded z-20 max-h-80 overflow-y-auto transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setSelectedBook('all'); setShowBookMenu(false) }}
                     className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
@@ -417,7 +417,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
           <div className="relative">
             <button
               onClick={() => setShowFilterMenu(!showFilterMenu)}
-              className={`w-9 h-9 rounded-lg border-2 flex items-center justify-center transition-all duration-200 ${
+              className={`w-9 h-9 rounded border-2 flex items-center justify-center transition-all duration-200 ${
                 statusFilter !== 'all'
                   ? 'bg-gray-900 border-black text-white shadow-none translate-y-[2px]'
                   : 'bg-white border-black text-black shadow-[2px_2px_0px_0px_#000]'
@@ -430,7 +430,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showFilterMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowFilterMenu(false)} />
-                <div className="absolute right-0 mt-2 w-36 rounded-xl z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="absolute right-0 mt-2 w-36 rounded z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setStatusFilter('all'); setShowFilterMenu(false) }}
                     className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
@@ -467,7 +467,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
           <div className="relative">
             <button
               onClick={() => setShowSortMenu(!showSortMenu)}
-              className={`w-9 h-9 rounded-lg border-2 flex items-center justify-center transition-all duration-200 ${
+              className={`w-9 h-9 rounded border-2 flex items-center justify-center transition-all duration-200 ${
                 sortBy !== 'default'
                   ? 'bg-[#3B82F6] border-black text-black shadow-none translate-y-[2px]'
                   : 'bg-white border-black text-black shadow-[2px_2px_0px_0px_#000]'
@@ -480,7 +480,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showSortMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowSortMenu(false)} />
-                <div className="absolute right-0 mt-2 w-32 rounded-xl z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="absolute right-0 mt-2 w-32 rounded z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setSortBy('default'); setShowSortMenu(false) }}
                     className={`w-full px-3 py-2 text-left text-xs font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b border-gray-100 ${
@@ -525,7 +525,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
           <div className="relative">
             <button
               onClick={() => setShowBookMenu(!showBookMenu)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
                 selectedBook !== 'all'
                   ? 'bg-[#3B82F6] border-black text-black shadow-none translate-y-[2px]'
                   : 'bg-white border-black text-black hover:bg-gray-50 shadow-[2px_2px_0px_0px_#000]'
@@ -539,7 +539,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showBookMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowBookMenu(false)} />
-                <div className="absolute left-0 mt-2 w-56 rounded-xl z-20 max-h-80 overflow-y-auto transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="absolute left-0 mt-2 w-56 rounded z-20 max-h-80 overflow-y-auto transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setSelectedBook('all'); setShowBookMenu(false) }}
                     className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
@@ -574,7 +574,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
           <div className="relative">
             <button
               onClick={() => setShowFilterMenu(!showFilterMenu)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
                 statusFilter !== 'all'
                   ? 'bg-gray-900 border-black text-white shadow-none translate-y-[2px]'
                   : 'bg-white border-black text-black hover:bg-gray-50 shadow-[2px_2px_0px_0px_#000]'
@@ -589,7 +589,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showFilterMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowFilterMenu(false)} />
-                <div className="absolute left-0 mt-2 w-40 rounded-xl z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="absolute left-0 mt-2 w-40 rounded z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setStatusFilter('all'); setShowFilterMenu(false) }}
                     className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
@@ -626,7 +626,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
           <div className="relative">
             <button
               onClick={() => setShowSortMenu(!showSortMenu)}
-              className={`flex items-center gap-2 px-4 py-2.5 rounded-lg border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
+              className={`flex items-center gap-2 px-4 py-2.5 rounded border-2 text-sm font-black transition-all duration-200 cursor-pointer ${
                 sortBy !== 'default'
                   ? 'bg-[#3B82F6] border-black text-black shadow-none translate-y-[2px]'
                   : 'bg-white border-black text-black hover:bg-gray-50 shadow-[2px_2px_0px_0px_#000]'
@@ -641,7 +641,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             {showSortMenu && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setShowSortMenu(false)} />
-                <div className="absolute left-0 mt-2 w-40 rounded-xl z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="absolute left-0 mt-2 w-40 rounded z-20 overflow-hidden transition-colors duration-300 border-[3px] border-black shadow-[4px_4px_0px_0px_#000]" style={{ backgroundColor: 'var(--card-bg)' }}>
                   <button
                     onClick={() => { setSortBy('default'); setShowSortMenu(false) }}
                     className={`w-full px-4 py-3 text-left text-sm font-black flex items-center justify-between hover:bg-gray-50 transition-colors cursor-pointer border-b-2 border-gray-100 ${
@@ -706,7 +706,7 @@ export function MistakesClient({ initialWords }: MistakesClientProps) {
             />
             {/* 书名标签 - Neo-Brutalism - 移到卡片外部上方 */}
             <div
-              className="absolute -top-3 left-2 px-2 py-1 text-xs font-black rounded-lg z-20"
+              className="absolute -top-3 left-2 px-2 py-1 text-xs font-black rounded z-20"
               style={{
                 backgroundColor: '#F3E8FF',
                 border: '2px solid #000000',

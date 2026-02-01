@@ -38,7 +38,7 @@ export function SettingsView() {
       <div className="lg:hidden flex gap-2 mb-4">
         <button
           onClick={() => setActiveTab('appearance')}
-          className={`flex-1 px-4 py-3 rounded-xl border-2 transition-all font-bold duration-200 ${
+          className={`flex-1 px-4 py-3 rounded border-2 transition-all font-bold duration-200 ${
             activeTab === 'appearance'
               ? isDark
                 ? 'bg-[#B4F264] border-[#B4F264] text-black shadow-md'
@@ -53,7 +53,7 @@ export function SettingsView() {
         </button>
         <button
           onClick={() => setActiveTab('account')}
-          className={`flex-1 px-4 py-3 rounded-xl border-2 transition-all font-bold duration-200 ${
+          className={`flex-1 px-4 py-3 rounded border-2 transition-all font-bold duration-200 ${
             activeTab === 'account'
               ? isDark
                 ? 'bg-[#B4F264] border-[#B4F264] text-black shadow-md'
@@ -74,7 +74,7 @@ export function SettingsView() {
           <nav className="space-y-2">
             <button
               onClick={() => setActiveTab('appearance')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border-2 transition-all font-bold duration-200 ${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded border-2 transition-all font-bold duration-200 ${
                 activeTab === 'appearance'
                   ? isDark
                     ? 'bg-[#B4F264] border-[#B4F264] text-black shadow-md'
@@ -92,7 +92,7 @@ export function SettingsView() {
 
             <button
               onClick={() => setActiveTab('account')}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl border-2 transition-all font-bold duration-200 ${
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded border-2 transition-all font-bold duration-200 ${
                 activeTab === 'account'
                   ? isDark
                     ? 'bg-[#B4F264] border-[#B4F264] text-black shadow-md'
@@ -113,7 +113,7 @@ export function SettingsView() {
         {/* 右侧内容区 */}
         <main className="flex-1 min-w-0">
           {activeTab === 'appearance' && (
-            <div className="rounded-2xl border-2 p-6 space-y-4 transition-colors duration-300"
+            <div className="rounded border-2 p-6 space-y-4 transition-colors duration-300"
                  style={{ backgroundColor: 'var(--card-bg)', borderColor: isDark ? 'var(--border)' : '#000' }}>
               <h2 className="text-xl font-black mb-4" style={{ color: 'var(--text-primary)' }}>外观</h2>
 
@@ -134,7 +134,7 @@ export function SettingsView() {
                         setThemeMode(mode.value)
                         localStorage.setItem('themeMode', mode.value)
                       }}
-                      className={`relative px-4 py-4 rounded-xl border-2 transition-all ${
+                      className={`relative px-4 py-4 rounded border-2 transition-all ${
                         themeMode === mode.value
                           ? isDark
                             ? 'border-[#B4F264] bg-[#B4F264]/20'
@@ -163,7 +163,7 @@ export function SettingsView() {
                 <div className="text-sm font-bold mb-2" style={{ color: 'var(--text-primary)' }}>
                   当前主题
                 </div>
-                <div className="px-4 py-3 rounded-lg inline-block" style={{
+                <div className="px-4 py-3 rounded inline-block" style={{
                   backgroundColor: isDark ? 'rgba(0,0,0,0.3)' : 'rgba(0,0,0,0.05)',
                 }}>
                   <span className="text-base font-semibold" style={{ color: 'var(--text-primary)' }}>
@@ -177,12 +177,12 @@ export function SettingsView() {
           {activeTab === 'account' && (
             <div className="space-y-4">
               {/* 修改密码 */}
-              <div className="rounded-2xl border-2 p-6 transition-colors duration-300 hover:shadow-lg cursor-pointer"
+              <div className="rounded border-2 p-6 transition-colors duration-300 hover:shadow-lg cursor-pointer"
                    style={{ backgroundColor: 'var(--card-bg)', borderColor: isDark ? 'var(--border)' : '#000' }}
                    onClick={() => setShowPasswordDialog(true)}>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg flex items-center justify-center"
+                    <div className="w-12 h-12 rounded flex items-center justify-center"
                          style={{ backgroundColor: isDark ? 'rgba(180, 244, 100, 0.1)' : 'bg-gray-100' }}>
                       <Lock className="w-6 h-6" style={{ color: isDark ? '#B4F264' : '#6b7280' }} />
                     </div>
@@ -198,7 +198,7 @@ export function SettingsView() {
               {/* 退出登录 */}
               <button
                 onClick={handleLogout}
-                className="w-full rounded-2xl border-2 p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
+                className="w-full rounded border-2 p-6 transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
                 style={{
                   backgroundColor: '#FEF2F2',
                   borderColor: '#FECACA',
@@ -207,7 +207,7 @@ export function SettingsView() {
               >
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-red-100 flex items-center justify-center">
+                    <div className="w-12 h-12 rounded bg-red-100 flex items-center justify-center">
                       <LogOut className="w-6 h-6 text-red-600" />
                     </div>
                     <div className="text-left">
@@ -226,7 +226,7 @@ export function SettingsView() {
       {/* 修改密码对话框 */}
       {showPasswordDialog && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="rounded-2xl shadow-xl max-w-md w-full p-8 animate-in fade-in zoom-in duration-200"
+          <div className="rounded shadow-xl max-w-md w-full p-8 animate-in fade-in zoom-in duration-200"
                style={{ backgroundColor: 'var(--card-bg)' }}>
             <div className="text-center">
               <div className="w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center"
@@ -237,7 +237,7 @@ export function SettingsView() {
               <p className="text-base mb-6" style={{ color: 'var(--text-secondary)' }}>请联系客服修改密码</p>
               <button
                 onClick={() => setShowPasswordDialog(false)}
-                className="px-6 py-3 rounded-xl font-bold transition-all duration-200 w-full"
+                className="px-6 py-3 rounded font-bold transition-all duration-200 w-full"
                 style={{
                   backgroundColor: '#B4F416',
                   color: '#000000',

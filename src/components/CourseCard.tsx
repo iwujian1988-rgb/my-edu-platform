@@ -73,10 +73,10 @@ export function CourseCard({
     >
       <div className="group relative w-full h-44 cursor-pointer active:scale-95 transition-transform">
         {/* A. 阴影层 (深色偏移，模拟厚度) */}
-        <div className="absolute inset-0 bg-gray-900 rounded-xl translate-x-2 translate-y-2 transition-transform group-hover:translate-x-3 group-hover:translate-y-3" />
+        <div className="absolute inset-0 bg-gray-900 rounded translate-x-2 translate-y-2 transition-transform group-hover:translate-x-3 group-hover:translate-y-3" />
 
         {/* B. 卡片主体 */}
-        <div className="relative h-full bg-white border-2 border-black rounded-xl overflow-hidden flex flex-col transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5">
+        <div className="relative h-full bg-white border-2 border-black rounded overflow-hidden flex flex-col transition-transform group-hover:-translate-y-0.5 group-hover:-translate-x-0.5">
 
           {/* --- 顶部 Header: 工业编号栏 --- */}
           <div className="h-9 border-b-2 border-black flex items-center justify-between px-3 bg-gray-50">

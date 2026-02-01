@@ -69,12 +69,12 @@ export function BookCover({ code, title, type }: BookCoverProps) {
   return (
     <div className="relative w-full aspect-[3/4] group cursor-pointer">
       {/* 阴影层 */}
-      <div className="absolute inset-0 bg-black rounded-xl translate-x-2 translate-y-2 -z-10" />
+      <div className="absolute inset-0 bg-black rounded translate-x-2 translate-y-2 -z-10" />
 
       {/* 封面主体 */}
       <div
         className={`
-          relative w-full h-full rounded-xl overflow-hidden
+          relative w-full h-full rounded overflow-hidden
           border-[3px] border-black
           transition-transform duration-200
           group-hover:-translate-y-1

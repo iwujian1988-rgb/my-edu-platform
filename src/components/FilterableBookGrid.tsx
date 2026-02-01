@@ -217,8 +217,8 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
       <div className="max-w-7xl mx-auto mb-8">
         {/* 搜索框：硬核风格 */}
         {/* <div className="relative group hidden md:block">
-          <div className="absolute inset-0 bg-black translate-x-1 translate-y-1 rounded-lg" />
-          <div className="relative flex items-center border-2 border-black rounded-lg px-3 py-2 w-64 transition-colors duration-300"
+          <div className="absolute inset-0 bg-black translate-x-1 translate-y-1 rounded" />
+          <div className="relative flex items-center border-2 border-black rounded px-3 py-2 w-64 transition-colors duration-300"
                style={{ backgroundColor: 'var(--card-bg)' }}>
             <Search size={18} className="mr-2 transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }} />
             <input
@@ -234,10 +234,10 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
         {/* --- Hero Banner：展示平台优势 - 网格线框风格 --- */}
         <div className="relative w-full h-32 md:h-40 mb-4 md:mb-6">
           {/* 阴影 */}
-          <div className="absolute inset-0 bg-black/50 rounded-xl translate-x-2 translate-y-2" />
+          <div className="absolute inset-0 bg-black/50 rounded translate-x-2 translate-y-2" />
 
           {/* 卡片主体：深色背景 + 酸性绿边框 */}
-          <div className={`relative rounded-xl border-[2px] md:border-[3px] overflow-hidden flex flex-col justify-between p-4 md:p-6 group transition-colors duration-300 ${
+          <div className={`relative rounded border-[2px] md:border-[3px] overflow-hidden flex flex-col justify-between p-4 md:p-6 group transition-colors duration-300 ${
             isDark
               ? 'bg-[#09090B] border-[#BEF264]'
               : 'bg-[#B4F416] border-black'
@@ -274,7 +274,7 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
               </div>
 
               {/* 右侧图标 */}
-              <div className={`w-12 h-12 border flex items-center justify-center rounded-lg ${
+              <div className={`w-12 h-12 border flex items-center justify-center rounded ${
                 isDark
                   ? 'border-[#BEF264] bg-[#BEF264]/10'
                   : 'bg-black text-[#B4F416] border-black'
@@ -309,7 +309,7 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
 
         {/* --- 终端风格状态栏 --- */}
         <div className="mb-6 hidden md:block">
-          <div className="bg-black text-white font-mono text-xs px-4 py-2 border-2 border-black rounded-lg flex items-center justify-between shadow-[3px_3px_0px_0px_#B4F416]">
+          <div className="bg-black text-white font-mono text-xs px-4 py-2 border-2 border-black rounded flex items-center justify-between shadow-[3px_3px_0px_0px_#B4F416]">
             <div className="flex items-center gap-4">
               <span className="text-[#B4F416] font-black">▶</span>
               <span>STATUS: <span className="text-[#B4F416]">ONLINE</span></span>
@@ -336,7 +336,7 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
               key={tab.value}
               onClick={() => setActiveCategory(tab.value)}
               className={`
-                relative px-2 py-1 sm:px-3 sm:py-1.5 md:px-5 md:py-2.5 font-bold text-[10px] sm:text-xs md:text-sm border-2 rounded-md sm:rounded-lg transition-all duration-200
+                relative px-2 py-1 sm:px-3 sm:py-1.5 md:px-5 md:py-2.5 font-bold text-[10px] sm:text-xs md:text-sm border-2 rounded sm:rounded transition-all duration-200
                 flex items-center gap-1 sm:gap-1.5 md:gap-2 whitespace-nowrap
                 ${activeCategory === tab.value
                   ? 'bg-[#B4F416] border-black text-black shadow-none translate-x-[1px] translate-y-[1px] sm:translate-x-[1.5px] sm:translate-y-[1.5px] md:translate-x-[2px] md:translate-y-[2px]'
@@ -379,7 +379,7 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
       {/* --- 列表区域 --- */}
       <div className="max-w-7xl mx-auto px-2 sm:px-0">
         {filteredBooks.length === 0 ? (
-          <div className="text-center py-16 border-[3px] border-black rounded-xl relative overflow-hidden transition-colors duration-300"
+          <div className="text-center py-16 border-[3px] border-black rounded relative overflow-hidden transition-colors duration-300"
                style={{ backgroundColor: 'var(--card-bg)' }}>
             {/* 终端风格的空状态 */}
             <div className="font-mono text-xs md:text-sm">

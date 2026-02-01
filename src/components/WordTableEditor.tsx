@@ -211,7 +211,7 @@ export function WordTableEditor({
           type="text"
           value={editingData.example_sentence || ''}
           onChange={(e) => updateEditingData('example_sentence', e.target.value)}
-          className="w-full px-2 py-1 border-2 border-indigo-300 rounded-lg focus:border-indigo-500 focus:outline-none text-sm"
+          className="w-full px-2 py-1 border-2 border-indigo-300 rounded focus:border-indigo-500 focus:outline-none text-sm"
         />
       )
     }
@@ -236,7 +236,7 @@ export function WordTableEditor({
           type="text"
           value={editingData[field] || ''}
           onChange={(e) => updateEditingData(field, e.target.value)}
-          className={`w-full px-2 py-1 border-2 border-indigo-300 rounded-lg focus:border-indigo-500 focus:outline-none text-sm ${className}`}
+          className={`w-full px-2 py-1 border-2 border-indigo-300 rounded focus:border-indigo-500 focus:outline-none text-sm ${className}`}
           autoFocus={field === 'word'}
         />
       )
@@ -250,7 +250,7 @@ export function WordTableEditor({
   }
 
   return (
-    <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+    <div className="bg-white rounded shadow-sm border border-slate-200 overflow-hidden">
       {/* 工具栏 */}
       <div className="p-4 border-b border-slate-200">
         <div className="flex items-center gap-4">
@@ -265,7 +265,7 @@ export function WordTableEditor({
                 setPage(1)
               }}
               placeholder="搜索单词..."
-              className="w-full pl-10 pr-4 py-2 border-2 border-slate-200 rounded-xl focus:border-indigo-400 focus:outline-none"
+              className="w-full pl-10 pr-4 py-2 border-2 border-slate-200 rounded focus:border-indigo-400 focus:outline-none"
             />
           </div>
 
@@ -273,7 +273,7 @@ export function WordTableEditor({
           <div className="relative">
             <button
               onClick={() => setShowChapterFilter(!showChapterFilter)}
-              className="flex items-center gap-2 px-4 py-2 border-2 border-slate-200 rounded-xl hover:border-indigo-300 transition-colors"
+              className="flex items-center gap-2 px-4 py-2 border-2 border-slate-200 rounded hover:border-indigo-300 transition-colors"
             >
               <Filter className="w-4 h-4 text-slate-500" />
               <span className="text-sm font-semibold text-slate-700">
@@ -290,7 +290,7 @@ export function WordTableEditor({
                   className="fixed inset-0 z-10"
                   onClick={() => setShowChapterFilter(false)}
                 />
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-xl shadow-xl border border-slate-200 z-20 max-h-80 overflow-y-auto">
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded shadow-xl border border-slate-200 z-20 max-h-80 overflow-y-auto">
                   <button
                     onClick={() => {
                       setSelectedChapterId('')
@@ -322,7 +322,7 @@ export function WordTableEditor({
 
       {/* Error Message */}
       {error && (
-        <div className="mx-4 mt-4 p-3 bg-red-50 border border-red-200 rounded-xl flex items-center gap-2">
+        <div className="mx-4 mt-4 p-3 bg-red-50 border border-red-200 rounded flex items-center gap-2">
           <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0" />
           <p className="text-sm text-red-600">{error}</p>
         </div>
@@ -386,7 +386,7 @@ export function WordTableEditor({
                       <select
                         value={editingData.chapter_id || ''}
                         onChange={(e) => updateEditingData('chapter_id', e.target.value || null)}
-                        className="px-2 py-1 border-2 border-indigo-300 rounded-lg focus:border-indigo-500 focus:outline-none text-sm"
+                        className="px-2 py-1 border-2 border-indigo-300 rounded focus:border-indigo-500 focus:outline-none text-sm"
                       >
                         <option value="">默认章节</option>
                         {chapters.map(chapter => (
@@ -405,7 +405,7 @@ export function WordTableEditor({
                         <button
                           onClick={saveEdit}
                           disabled={isSaving}
-                          className="p-1.5 bg-green-100 text-green-600 rounded-lg hover:bg-green-200 transition-colors disabled:opacity-50"
+                          className="p-1.5 bg-green-100 text-green-600 rounded hover:bg-green-200 transition-colors disabled:opacity-50"
                           title="保存"
                         >
                           <Save className="w-4 h-4" />
@@ -413,7 +413,7 @@ export function WordTableEditor({
                         <button
                           onClick={cancelEdit}
                           disabled={isSaving}
-                          className="p-1.5 bg-red-100 text-red-600 rounded-lg hover:bg-red-200 transition-colors disabled:opacity-50"
+                          className="p-1.5 bg-red-100 text-red-600 rounded hover:bg-red-200 transition-colors disabled:opacity-50"
                           title="取消"
                         >
                           <X className="w-4 h-4" />
@@ -422,7 +422,7 @@ export function WordTableEditor({
                     ) : (
                       <button
                         onClick={() => startEdit(word)}
-                        className="p-1.5 bg-indigo-100 text-indigo-600 rounded-lg hover:bg-indigo-200 transition-colors"
+                        className="p-1.5 bg-indigo-100 text-indigo-600 rounded hover:bg-indigo-200 transition-colors"
                         title="编辑"
                       >
                         <Edit className="w-4 h-4" />
@@ -446,17 +446,17 @@ export function WordTableEditor({
             <button
               onClick={() => setPage(Math.max(1, page - 1))}
               disabled={page === 1}
-              className="px-3 py-1.5 border-2 border-slate-200 text-sm font-semibold text-slate-700 rounded-lg hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-3 py-1.5 border-2 border-slate-200 text-sm font-semibold text-slate-700 rounded hover:bg-slate-50 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               上一页
             </button>
-            <span className="text-sm font-bold text-slate-900 px-3 py-1.5 bg-slate-100 rounded-lg">
+            <span className="text-sm font-bold text-slate-900 px-3 py-1.5 bg-slate-100 rounded">
               {page} / {totalPages}
             </span>
             <button
               onClick={() => setPage(Math.min(totalPages, page + 1))}
               disabled={page === totalPages}
-              className="px-3 py-1.5 bg-indigo-600 text-white text-sm font-semibold rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              className="px-3 py-1.5 bg-indigo-600 text-white text-sm font-semibold rounded hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               下一页
             </button>

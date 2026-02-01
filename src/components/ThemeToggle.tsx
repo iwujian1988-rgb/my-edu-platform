@@ -22,11 +22,11 @@ export function ThemeToggle() {
 
   if (!mounted) {
     return (
-      <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+      <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded p-1">
         {modes.map((mode) => (
           <div
             key={mode.value}
-            className="relative flex items-center justify-center w-10 h-10 rounded-md opacity-50"
+            className="relative flex items-center justify-center w-10 h-10 rounded opacity-50"
           >
             <mode.icon className="w-5 h-5 text-gray-500" />
           </div>
@@ -36,7 +36,7 @@ export function ThemeToggle() {
   }
 
   return (
-    <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+    <div className="flex items-center gap-2 bg-gray-100 dark:bg-gray-800 rounded p-1">
       {modes.map((mode) => {
         const Icon = mode.icon
         const isActive = themeMode === mode.value
@@ -47,7 +47,7 @@ export function ThemeToggle() {
             onClick={() => setThemeMode(mode.value)}
             className={`
               relative flex items-center justify-center
-              w-10 h-10 rounded-md
+              w-10 h-10 rounded
               transition-all duration-200
               ${isActive
                 ? 'bg-white dark:bg-gray-700 shadow-sm'

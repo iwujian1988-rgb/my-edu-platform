@@ -149,7 +149,7 @@ export function FlashcardStatsBar({
 
   if (loading || !stats) {
     return (
-      <div className="w-full h-12 border-2 border-black rounded-lg animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }} />
+      <div className="w-full h-12 border-2 border-black rounded animate-pulse transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)' }} />
     )
   }
 
@@ -200,7 +200,7 @@ export function FlashcardStatsBar({
           onClick={() => setShowConfirmDialog(false)}
         >
           <div
-            className="rounded-xl border-[3px] border-black shadow-[8px_8px_0px_0px_#000] w-full max-w-md p-6 transition-colors duration-300"
+            className="rounded border-[3px] border-black shadow-[8px_8px_0px_0px_#000] w-full max-w-md p-6 transition-colors duration-300"
             style={{ backgroundColor: 'var(--card-bg)' }}
             onClick={(e) => e.stopPropagation()}
           >
@@ -213,14 +213,14 @@ export function FlashcardStatsBar({
             <div className="flex gap-3">
               <button
                 onClick={() => setShowConfirmDialog(false)}
-                className="flex-1 px-4 py-2 border-2 border-black rounded-lg font-bold transition-colors hover:opacity-80"
+                className="flex-1 px-4 py-2 border-2 border-black rounded font-bold transition-colors hover:opacity-80"
                 style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-secondary)' }}
               >
                 取消
               </button>
               <button
                 onClick={confirmScopeChange}
-                className="flex-1 px-4 py-2 border-2 border-black rounded-lg font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
+                className="flex-1 px-4 py-2 border-2 border-black rounded font-bold hover:shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
                 style={{ backgroundColor: '#B4F416' }}
               >
                 确认切换

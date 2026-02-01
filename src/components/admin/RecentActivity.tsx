@@ -23,7 +23,7 @@ interface RecentActivityProps {
 
 export function RecentActivity({ logs }: RecentActivityProps) {
   return (
-    <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
+    <div className="bg-white rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-xl font-bold text-gray-800">最近活动</h3>
         <Link
@@ -43,7 +43,7 @@ export function RecentActivity({ logs }: RecentActivityProps) {
           {logs.map((log) => (
             <div
               key={log.id}
-              className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border-[2px] border-gray-200"
+              className="flex items-start gap-4 p-4 bg-gray-50 rounded border-[2px] border-gray-200"
             >
               <div className="w-10 h-10 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">
                 {log.administrator?.name?.charAt(0) || 'A'}

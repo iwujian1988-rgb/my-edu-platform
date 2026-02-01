@@ -23,7 +23,7 @@ export function PermissionWarningBanner() {
 
   if (isExpired) {
     return (
-      <div className="bg-red-50 border-[3px] border-red-300 rounded-xl p-4 mb-6">
+      <div className="bg-red-50 border-[3px] border-red-300 rounded p-4 mb-6">
         <div className="flex items-start gap-3">
           <XCircle className="text-red-600 size-5 flex-shrink-0 mt-0.5" />
           <div className="flex-1">
@@ -40,7 +40,7 @@ export function PermissionWarningBanner() {
 
   if (isExpiringSoon) {
     return (
-      <div className="bg-yellow-50 border-[3px] border-yellow-300 rounded-xl p-4 mb-6">
+      <div className="bg-yellow-50 border-[3px] border-yellow-300 rounded p-4 mb-6">
         <div className="flex items-start gap-3">
           <Clock className="text-yellow-600 size-5 flex-shrink-0 mt-0.5" />
           <div className="flex-1">
@@ -75,7 +75,7 @@ export function PermissionInfoCard() {
   const hasUnlimited = !permissionExpiresAt
 
   return (
-    <div className="bg-white rounded-2xl border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
+    <div className="bg-white rounded border-[3px] border-black shadow-[4px_4px_0px_0px_#000] p-6">
       <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center gap-2">
         <CheckCircle2 className="text-green-600" size={24} />
         我的权限
@@ -105,7 +105,7 @@ export function PermissionInfoCard() {
             featurePermissions.map((permission) => (
               <span
                 key={permission}
-                className="px-3 py-1 bg-blue-100 text-blue-800 rounded-lg text-sm font-semibold border-[2px] border-blue-300"
+                className="px-3 py-1 bg-blue-100 text-blue-800 rounded text-sm font-semibold border-[2px] border-blue-300"
               >
                 {getPermissionLabel(permission)}
               </span>
@@ -121,7 +121,7 @@ export function PermissionInfoCard() {
           {bookPermissions.length === 0 ? (
             <span className="text-gray-400 text-sm">暂无词库权限</span>
           ) : hasAllBooks ? (
-            <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-lg text-sm font-semibold border-[2px] border-purple-300">
+            <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded text-sm font-semibold border-[2px] border-purple-300">
               全部词库
             </span>
           ) : (
@@ -149,16 +149,28 @@ interface PermissionGateProps {
 export function PermissionGate({ feature, bookId, fallback, children }: PermissionGateProps) {
   const { featurePermissions, bookPermissions, isExpired, isLoading } = usePermissions()
 
+  console.log('[PermissionGate] Checking:', {
+    feature,
+    bookId,
+    featurePermissions,
+    bookPermissions,
+    isExpired,
+    isLoading
+  })
+
   if (isLoading) {
     return <div className="text-gray-500 p-4 text-center">检查权限中...</div>
   }
 
   if (isExpired) {
+    console.log('[PermissionGate] ❌ Permission expired')
     return fallback || <PermissionExpiredMessage />
   }
 
   // Check feature permission
   if (feature && !featurePermissions.includes(feature)) {
+    console.log('[PermissionGate] ❌ Missing feature permission:', feature)
+    console.log('[PermissionGate] Available permissions:', featurePermissions)
     return fallback || <NoPermissionMessage feature={feature} />
   }
 
@@ -166,10 +178,13 @@ export function PermissionGate({ feature, bookId, fallback, children }: Permissi
   if (bookId) {
     const hasAllBooks = bookPermissions.includes('*') || bookPermissions.includes('全部')
     if (!hasAllBooks && !bookPermissions.includes(bookId)) {
+      console.log('[PermissionGate] ❌ Missing book permission for:', bookId)
+      console.log('[PermissionGate] Available book permissions:', bookPermissions)
       return fallback || <NoBookPermissionMessage />
     }
   }
 
+  console.log('[PermissionGate] ✅ All checks passed')
   return <>{children}</>
 }
 
@@ -178,7 +193,7 @@ export function PermissionGate({ feature, bookId, fallback, children }: Permissi
  */
 function NoPermissionMessage({ feature }: { feature: string }) {
   return (
-    <div className="bg-gray-50 border-[3px] border-gray-300 rounded-xl p-8 text-center">
+    <div className="bg-gray-50 border-[3px] border-gray-300 rounded p-8 text-center">
       <Lock className="text-gray-400 size-12 mx-auto mb-4" />
       <h3 className="text-lg font-bold text-gray-800 mb-2">暂无权限</h3>
       <p className="text-gray-600 text-sm">
@@ -194,7 +209,7 @@ function NoPermissionMessage({ feature }: { feature: string }) {
  */
 function NoBookPermissionMessage() {
   return (
-    <div className="bg-gray-50 border-[3px] border-gray-300 rounded-xl p-8 text-center">
+    <div className="bg-gray-50 border-[3px] border-gray-300 rounded p-8 text-center">
       <Lock className="text-gray-400 size-12 mx-auto mb-4" />
       <h3 className="text-lg font-bold text-gray-800 mb-2">暂无权限</h3>
       <p className="text-gray-600 text-sm">
@@ -209,7 +224,7 @@ function NoBookPermissionMessage() {
  */
 function PermissionExpiredMessage() {
   return (
-    <div className="bg-red-50 border-[3px] border-red-300 rounded-xl p-8 text-center">
+    <div className="bg-red-50 border-[3px] border-red-300 rounded p-8 text-center">
       <AlertCircle className="text-red-600 size-12 mx-auto mb-4" />
       <h3 className="text-lg font-bold text-red-800 mb-2">权限已过期</h3>
       <p className="text-red-700 text-sm">
