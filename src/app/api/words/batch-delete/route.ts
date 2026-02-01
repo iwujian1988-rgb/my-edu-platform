@@ -6,6 +6,7 @@ import { NextResponse } from 'next/server'
  * 批量删除多个单词
  * 权限要求：词库创建者
  * 幂等性：支持（重复请求不会报错）
+ * 行为：显式删除 word_progress 记录，不依赖数据库级联
  */
 export async function POST(request: Request) {
   const user = await getCurrentUser()
@@ -34,12 +35,13 @@ export async function POST(request: Request) {
     const supabase = await createClient()
 
     // ===== 查询单词所属词库（用于权限检查） =====
-    const { data: words, error } = await supabase
+    const { data: words, error: wordsError } = await supabase
       .from('words')
       .select('id, book_id, chapter_id')
       .in('id', wordIds)
 
-    if (error) {
+    if (wordsError) {
+      console.error('查询单词失败:', wordsError)
       return NextResponse.json({ error: '查询单词失败' }, { status: 500 })
     }
 
@@ -51,17 +53,33 @@ export async function POST(request: Request) {
     const bookIds = [...new Set(words.map((w: any) => w.book_id))]
 
     // 检查所有单词是否属于用户创建的词库
-    const { data: books } = await supabase
+    const { data: books, error: booksError } = await supabase
       .from('books')
       .select('id, created_by')
       .in('id', bookIds)
+
+    if (booksError) {
+      console.error('查询词库失败:', booksError)
+      return NextResponse.json({ error: '查询词库失败' }, { status: 500 })
+    }
 
     const hasPermission = books?.every((book: any) => book.created_by === user.id)
     if (!hasPermission) {
       return NextResponse.json({ error: '您只能删除自己词库中的单词' }, { status: 403 })
     }
 
-    // ===== 批量删除（支持部分成功） =====
+    // ===== 显式删除 word_progress 记录（先删除进度，再删除单词） =====
+    const { error: progressDeleteError } = await supabase
+      .from('word_progress')
+      .delete()
+      .in('word_id', wordIds)
+
+    if (progressDeleteError) {
+      console.error('批量删除单词进度失败:', progressDeleteError)
+      // 非关键错误，继续执行
+    }
+
+    // ===== 批量删除单词 =====
     const results = {
       deleted: 0,
       failed: 0,
@@ -71,7 +89,6 @@ export async function POST(request: Request) {
     // 使用 Promise.allSettled 并行删除
     const deletePromises = wordIds.map(async (wordId) => {
       try {
-        // 每个单词独立事务
         const { error } = await supabase
           .from('words')
           .delete()
@@ -96,24 +113,30 @@ export async function POST(request: Request) {
 
     await Promise.allSettled(deletePromises)
 
-    // ===== 更新词库统计（异步，不阻塞） =====
-    setImmediate(async () => {
-      for (const bookId of bookIds) {
+    // ===== 更新词库统计 =====
+    for (const bookId of bookIds) {
+      try {
         // 重新统计词库单词数
         const { count } = await supabase
           .from('words')
           .select('*', { count: 'exact', head: true })
           .eq('book_id', bookId)
 
-        await supabase
+        const { error: updateError } = await supabase
           .from('books')
           .update({
             total_words: count || 0,
             updated_at: new Date().toISOString()
           })
           .eq('id', bookId)
+
+        if (updateError) {
+          console.error(`更新词库 ${bookId} 统计失败:`, updateError)
+        }
+      } catch (error) {
+        console.error(`更新词库 ${bookId} 统计异常:`, error)
       }
-    })
+    }
 
     return NextResponse.json({
       success: true,
@@ -121,6 +144,9 @@ export async function POST(request: Request) {
     })
   } catch (error) {
     console.error('Error in POST /api/words/batch-delete:', error)
-    return NextResponse.json({ error: '服务器错误' }, { status: 500 })
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : '服务器错误' },
+      { status: 500 }
+    )
   }
 }

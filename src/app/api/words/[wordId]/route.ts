@@ -124,7 +124,7 @@ export async function PUT(
  * DELETE /api/words/{wordId}
  * 删除单个单词
  * 权限要求：词库创建者
- * 行为：级联删除 word_progress 记录
+ * 行为：显式删除 word_progress 记录，不依赖数据库级联
  */
 export async function DELETE(
   request: Request,
@@ -147,54 +147,82 @@ export async function DELETE(
       .eq('id', wordId)
       .single()
 
-    if (wordError || !word) {
+    if (wordError) {
+      console.error('查询单词失败:', wordError)
+      return NextResponse.json({ error: '单词不存在' }, { status: 404 })
+    }
+
+    if (!word) {
       return NextResponse.json({ error: '单词不存在' }, { status: 404 })
     }
 
     // ===== 权限检查 =====
-    const { data: book } = await supabase
+    const { data: book, error: bookError } = await supabase
       .from('books')
       .select('id, created_by, total_words')
       .eq('id', word.book_id)
       .single()
 
-    if (!book || (book as any).created_by !== user.id) {
+    if (bookError || !book) {
+      return NextResponse.json({ error: '词库不存在' }, { status: 404 })
+    }
+
+    if (book.created_by !== user.id) {
       return NextResponse.json({ error: '权限不足' }, { status: 403 })
     }
 
-    const bookData = book as any
+    // ===== 显式删除 word_progress 记录 =====
+    const { error: progressDeleteError } = await supabase
+      .from('word_progress')
+      .delete()
+      .eq('word_id', wordId)
 
-    // ===== 删除单词（会级联删除 word_progress） =====
+    if (progressDeleteError) {
+      console.error('删除单词进度失败:', progressDeleteError)
+      // 非关键错误，继续执行
+    }
+
+    // ===== 删除单词 =====
     const { error: deleteError } = await supabase
       .from('words')
       .delete()
       .eq('id', wordId)
 
     if (deleteError) {
-      console.error('Error deleting word:', deleteError)
+      console.error('删除单词失败:', deleteError)
       return NextResponse.json({ error: '删除单词失败' }, { status: 500 })
     }
 
     // ===== 更新词库统计 =====
-    await supabase
+    const { error: updateBookError } = await supabase
       .from('books')
       .update({
-        total_words: Math.max(0, bookData.total_words - 1),
+        total_words: Math.max(0, book.total_words - 1),
         updated_at: new Date().toISOString()
       })
       .eq('id', word.book_id)
 
+    if (updateBookError) {
+      console.error('更新词库统计失败:', updateBookError)
+      // 非关键错误，继续执行
+    }
+
     // ===== 更新章节统计 =====
     if (word.chapter_id) {
-      const { count: newWordCount } = await supabase
+      const { count } = await supabase
         .from('words')
         .select('*', { count: 'exact', head: true })
         .eq('chapter_id', word.chapter_id)
 
-      await supabase
+      const { error: updateChapterError } = await supabase
         .from('chapters')
         .update({ word_count: count || 0 })
         .eq('id', word.chapter_id)
+
+      if (updateChapterError) {
+        console.error('更新章节统计失败:', updateChapterError)
+        // 非关键错误，继续执行
+      }
     }
 
     return NextResponse.json({
@@ -203,6 +231,9 @@ export async function DELETE(
     })
   } catch (error) {
     console.error('Error in DELETE /api/words/[wordId]:', error)
-    return NextResponse.json({ error: '服务器错误' }, { status: 500 })
+    return NextResponse.json(
+      { error: error instanceof Error ? error.message : '服务器错误' },
+      { status: 500 }
+    )
   }
 }

@@ -45,8 +45,8 @@ export function InstallPWAButton() {
     checkAuth()
   }, [])
 
-  // 只在登录后的首页（/ 或 /dashboard）显示
-  const shouldShow = isLoggedIn && (pathname === '/' || pathname === '/dashboard')
+  // 只在登录后的首页（/）显示，其他页面不显示
+  const shouldShow = isLoggedIn && pathname === '/'
 
   // 已安装或不满足显示条件时不显示
   if (isInstalled || !shouldShow) {
@@ -85,26 +85,15 @@ export function InstallPWAButton() {
     <>
       {/* 右上角固定按钮 */}
       <div className="fixed top-4 right-4 z-50">
-        {/* 主安装按钮 */}
-        <div className="relative group">
-          <button
-            onClick={handleInstallClick}
-            className="flex items-center gap-2 px-4 py-2 bg-[#CCFF00] border-2 border-black text-black rounded-lg hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-x-[4px] hover:-translate-y-[4px] transition-all font-black shadow-[2px_2px_0px_0px_#000] active:translate-x-0 active:translate-y-0 active:shadow-none text-sm"
-            aria-label="安装应用"
-          >
-            <Download className="w-4 h-4" strokeWidth={2.5} />
-            <span>安装到桌面</span>
-          </button>
-
-          {/* Hover 提示 */}
-          <div className="absolute top-full right-0 mt-2 w-64 p-3 bg-white border-2 border-black rounded-lg shadow-[4px_4px_0px_0px_#000] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-            <p className="text-xs font-bold text-black leading-relaxed">
-              一键安装后可在您的桌面找到入口，方便下次学习
-            </p>
-            {/* 小三角 */}
-            <div className="absolute -top-2 right-4 w-4 h-4 bg-white border-t-2 border-l-2 border-black transform rotate-45" />
-          </div>
-        </div>
+        {/* 主安装按钮 - 无悬停交互 */}
+        <button
+          onClick={handleInstallClick}
+          className="flex items-center gap-2 px-4 py-2 bg-[#CCFF00] border-2 border-black text-black rounded shadow-[2px_2px_0px_0px_#000] active:translate-x-0 active:translate-y-0 active:shadow-none font-black text-sm transition-none"
+          aria-label="安装应用"
+        >
+          <Download className="w-4 h-4" strokeWidth={2.5} />
+          <span>安装到桌面</span>
+        </button>
       </div>
 
       {/* 安装指引模态框 */}

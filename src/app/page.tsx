@@ -147,38 +147,7 @@ export default async function Home() {
         })))
       }
 
-      // 🔥 性能优化：只为最近访问的3本书查询统计信息
-      scopeStatsMap = {}
-      const bookStats: Record<string, { unknown: number, fuzzy: number, known: number }> = {}
-
-      if (books.length > 0 && recentBookIds.length > 0) {
-        // 使用 recentProgress 中的数据计算统计（只统计最近访问的书籍）
-        for (const row of recentProgress) {
-          if (!recentBookIds.includes(row.book_id)) continue
-
-          if (!bookStats[row.book_id]) {
-            bookStats[row.book_id] = { unknown: 0, fuzzy: 0, known: 0 }
-          }
-          if (row.status === 'unknown') bookStats[row.book_id].unknown++
-          else if (row.status === 'fuzzy') bookStats[row.book_id].fuzzy++
-          else if (row.status === 'known') bookStats[row.book_id].known++
-        }
-
-        // 只为最近访问的书籍生成统计信息
-        for (const bookId of recentBookIds) {
-          const stats = bookStats[bookId] || { unknown: 0, fuzzy: 0, known: 0 }
-          const book = books.find((b: any) => b.id === bookId)
-          const totalWords = book?.total_words || 0
-          scopeStatsMap[bookId] = {
-            all: totalWords,
-            unknown: stats.unknown,
-            fuzzy: stats.fuzzy,
-            known: stats.known,
-            new: Math.max(0, totalWords - stats.unknown - stats.fuzzy - stats.known),
-            mistakes: 0  // 暂不缓存错题数
-          }
-        }
-      }
+      // 🔥 统计信息生成逻辑已移到 recentBooks 生成之后（第262行）
 
       // 🔥 性能优化：直接使用前面查询过的 books 数组，不再重复查询数据库
       // 从 books 数组中筛选出最近访问的书籍
@@ -258,6 +227,60 @@ export default async function Home() {
       }
 
       console.log('=== recentBooks 生成了 ===', { length: recentBooks.length, books: recentBooks.map(b => ({ id: b.id, title: b.title })) })
+
+      // 🔥 为显示的书籍查询完整的学习进度统计数据
+      scopeStatsMap = {}
+      const bookStats: Record<string, { unknown: number, fuzzy: number, known: number }> = {}
+
+      if (books.length > 0 && recentBooks && recentBooks.length > 0) {
+        // 提取需要统计的书籍ID
+        const booksToStat = recentBooks.map((b: any) => b.id)
+
+        // 查询这些书籍的完整 word_progress 数据（不限制数量）
+        const { data: bookProgressData, error: progressError } = await supabase
+          .from('word_progress')
+          .select('book_id, status')
+          .eq('user_id', user.id)
+          .in('book_id', booksToStat)
+
+        if (progressError) {
+          console.error('查询书籍进度统计失败:', progressError)
+        } else {
+          // 统计每本书的学习数据
+          for (const row of bookProgressData || []) {
+            if (!bookStats[row.book_id]) {
+              bookStats[row.book_id] = { unknown: 0, fuzzy: 0, known: 0 }
+            }
+            if (row.status === 'unknown') bookStats[row.book_id].unknown++
+            else if (row.status === 'fuzzy') bookStats[row.book_id].fuzzy++
+            else if (row.status === 'known') bookStats[row.book_id].known++
+          }
+
+          // 为每本书生成统计信息
+          for (const book of recentBooks) {
+            const stats = bookStats[book.id] || { unknown: 0, fuzzy: 0, known: 0 }
+            const totalWords = book.total_words || 0
+            scopeStatsMap[book.id] = {
+              all: totalWords,
+              unknown: stats.unknown,
+              fuzzy: stats.fuzzy,
+              known: stats.known,
+              new: Math.max(0, totalWords - stats.unknown - stats.fuzzy - stats.known),
+              mistakes: 0
+            }
+          }
+
+          console.log('=== scopeStatsMap 生成完成 ===', {
+            booksCount: Object.keys(scopeStatsMap).length,
+            stats: Object.entries(scopeStatsMap).map(([bookId, stats]) => ({
+              bookId,
+              known: stats.known,
+              fuzzy: stats.fuzzy,
+              total: stats.all
+            }))
+          })
+        }
+      }
 
       // 🔧 转换 recentBooks 为 progressCards 格式
       if (recentBooks && recentBooks.length > 0) {
@@ -515,10 +538,10 @@ export default async function Home() {
             }
           }
 
-          // 4. 按 lastStudyTime 降序排序，取前3个
+          // 4. 按 lastStudyTime 降序排序，取前6个
           progressCards = flattenedCards
             .sort((a, b) => b.lastStudyTime - a.lastStudyTime)
-            .slice(0, 3)
+            .slice(0, 6)
             .map(card => ({
               ...card,
               _uniqueKey: `${card.bookId}-${card.mode}` // 添加唯一标识符
@@ -590,7 +613,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#B4F416',
                   border: '3px solid #000000',
-                  borderRadius: '10px',
+                  borderRadius: '4px',
                   boxShadow: '3px 3px 0px 0px #000000'
                 }}
               >
@@ -608,7 +631,7 @@ export default async function Home() {
                 style={{
                   color: 'var(--text-primary)',
                   border: '3px solid #000000',
-                  borderRadius: '10px',
+                  borderRadius: '4px',
                   backgroundColor: 'var(--card-bg)',
                   boxShadow: '2px 2px 0px 0px #000000'
                 }}
@@ -621,7 +644,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#FF8C61',
                   border: '3px solid #000000',
-                  borderRadius: '10px',
+                  borderRadius: '4px',
                   boxShadow: '3px 3px 0px 0px #000000'
                 }}
               >
@@ -643,7 +666,7 @@ export default async function Home() {
             style={{
               backgroundColor: 'var(--card-bg)',
               border: '3px solid #000000',
-              borderRadius: '16px',
+              borderRadius: '4px',
               boxShadow: '6px 6px 0px 0px #000000'
             }}
           >
@@ -652,7 +675,7 @@ export default async function Home() {
               style={{
                 backgroundColor: '#B4F416',
                 border: '3px solid #000000',
-                borderRadius: '12px',
+                borderRadius: '4px',
                 boxShadow: '4px 4px 0px 0px #000000'
               }}
             >
@@ -674,7 +697,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#FF8C61',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -689,7 +712,7 @@ export default async function Home() {
                   color: 'var(--text-primary)',
                   backgroundColor: 'var(--card-bg)',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -713,7 +736,7 @@ export default async function Home() {
                   color: 'var(--text-primary)',
                   backgroundColor: '#FACC15',
                   border: '3px solid #000000',
-                  borderRadius: '10px',
+                  borderRadius: '4px',
                   boxShadow: '3px 3px 0px 0px #000000'
                 }}
               >Chapter 1</span>
@@ -731,7 +754,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#FFB6D9',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -740,7 +763,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#ffffff',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '2px 2px 0px 0px #000000'
                   }}
                 >
@@ -759,7 +782,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#E9D5FF',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -768,7 +791,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#ffffff',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '2px 2px 0px 0px #000000'
                   }}
                 >
@@ -787,7 +810,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#FDBCB4',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -796,7 +819,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#ffffff',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '2px 2px 0px 0px #000000'
                   }}
                 >
@@ -823,7 +846,7 @@ export default async function Home() {
                   color: 'var(--text-primary)',
                   backgroundColor: '#B4F416',
                   border: '3px solid #000000',
-                  borderRadius: '10px',
+                  borderRadius: '4px',
                   boxShadow: '3px 3px 0px 0px #000000'
                 }}
               >Chapter 2</span>
@@ -841,7 +864,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#ADD8E6',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -850,7 +873,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#ffffff',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '2px 2px 0px 0px #000000'
                   }}
                 >
@@ -877,7 +900,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#FDBCB4',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -886,7 +909,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#ffffff',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '2px 2px 0px 0px #000000'
                   }}
                 >
@@ -916,7 +939,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#BBF7D0',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -925,7 +948,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#ffffff',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '2px 2px 0px 0px #000000'
                   }}
                 >
@@ -963,7 +986,7 @@ export default async function Home() {
                   color: 'var(--text-primary)',
                   backgroundColor: '#FACC15',
                   border: '3px solid #000000',
-                  borderRadius: '10px',
+                  borderRadius: '4px',
                   boxShadow: '3px 3px 0px 0px #000000'
                 }}
               >Chapter 3</span>
@@ -982,7 +1005,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: 'var(--card-bg)',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -993,7 +1016,7 @@ export default async function Home() {
                     style={{
                       backgroundColor: '#B4F416',
                       border: '3px solid #000000',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       boxShadow: '2px 2px 0px 0px #000000'
                     }}
                   >
@@ -1007,7 +1030,7 @@ export default async function Home() {
                     style={{
                       backgroundColor: '#FACC15',
                       border: '3px solid #000000',
-                      borderRadius: '10px',
+                      borderRadius: '4px',
                       boxShadow: '2px 2px 0px 0px #000000'
                     }}
                   >
@@ -1019,7 +1042,7 @@ export default async function Home() {
                     style={{
                       backgroundColor: '#B4F416',
                       border: '3px solid #000000',
-                      borderRadius: '10px',
+                      borderRadius: '4px',
                       boxShadow: '2px 2px 0px 0px #000000'
                     }}
                   >
@@ -1051,7 +1074,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#E9D5FF',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '3px 3px 0px 0px #000000'
                   }}
                 >
@@ -1061,7 +1084,7 @@ export default async function Home() {
                       style={{
                         backgroundColor: '#ffffff',
                         border: '2px solid #000000',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         boxShadow: '1px 1px 0px 0px #000000'
                       }}
                     >
@@ -1082,7 +1105,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#FFB6D9',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '3px 3px 0px 0px #000000'
                   }}
                 >
@@ -1092,7 +1115,7 @@ export default async function Home() {
                       style={{
                         backgroundColor: '#ffffff',
                         border: '2px solid #000000',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         boxShadow: '1px 1px 0px 0px #000000'
                       }}
                     >
@@ -1113,7 +1136,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#BBF7D0',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '3px 3px 0px 0px #000000'
                   }}
                 >
@@ -1123,7 +1146,7 @@ export default async function Home() {
                       style={{
                         backgroundColor: '#ffffff',
                         border: '2px solid #000000',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         boxShadow: '1px 1px 0px 0px #000000'
                       }}
                     >
@@ -1144,7 +1167,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#ADD8E6',
                     border: '3px solid #000000',
-                    borderRadius: '10px',
+                    borderRadius: '4px',
                     boxShadow: '3px 3px 0px 0px #000000'
                   }}
                 >
@@ -1154,7 +1177,7 @@ export default async function Home() {
                       style={{
                         backgroundColor: '#ffffff',
                         border: '2px solid #000000',
-                        borderRadius: '6px',
+                        borderRadius: '4px',
                         boxShadow: '1px 1px 0px 0px #000000'
                       }}
                     >
@@ -1192,7 +1215,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#FEF3C7',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -1210,7 +1233,7 @@ export default async function Home() {
                     style={{
                       backgroundColor: '#ffffff',
                       border: '2px solid #000000',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       boxShadow: '2px 2px 0px 0px #000000'
                     }}
                   >
@@ -1228,7 +1251,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#FFB6D9',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -1246,7 +1269,7 @@ export default async function Home() {
                     style={{
                       backgroundColor: '#ffffff',
                       border: '2px solid #000000',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       boxShadow: '2px 2px 0px 0px #000000'
                     }}
                   >
@@ -1264,7 +1287,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#ADD8E6',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -1282,7 +1305,7 @@ export default async function Home() {
                     style={{
                       backgroundColor: '#ffffff',
                       border: '2px solid #000000',
-                      borderRadius: '8px',
+                      borderRadius: '4px',
                       boxShadow: '2px 2px 0px 0px #000000'
                     }}
                   >
@@ -1306,7 +1329,7 @@ export default async function Home() {
               style={{
                 backgroundColor: '#FF8C61',
                 border: '3px solid #000000',
-                borderRadius: '16px',
+                borderRadius: '4px',
                 boxShadow: '6px 6px 0px 0px #000000'
               }}
             >
@@ -1315,7 +1338,7 @@ export default async function Home() {
                 style={{
                   backgroundColor: '#ffffff',
                   border: '3px solid #000000',
-                  borderRadius: '12px',
+                  borderRadius: '4px',
                   boxShadow: '4px 4px 0px 0px #000000'
                 }}
               >
@@ -1337,7 +1360,7 @@ export default async function Home() {
                   style={{
                     backgroundColor: '#B4F416',
                     border: '3px solid #000000',
-                    borderRadius: '12px',
+                    borderRadius: '4px',
                     boxShadow: '4px 4px 0px 0px #000000'
                   }}
                 >
@@ -1352,7 +1375,7 @@ export default async function Home() {
                     color: '#000000',
                     backgroundColor: '#ffffff',
                     border: '3px solid #000000',
-                    borderRadius: '12px',
+                    borderRadius: '4px',
                     boxShadow: '4px 4px 0px 0px #000000'
                   }}
                 >
@@ -1384,7 +1407,7 @@ export default async function Home() {
               style={{
                 backgroundColor: 'var(--card-bg)',
                 border: '3px solid #000000',
-                borderRadius: '12px',
+                borderRadius: '4px',
                 boxShadow: '3px 3px 0px 0px #000000'
               }}
             >
@@ -1397,7 +1420,7 @@ export default async function Home() {
               style={{
                 backgroundColor: 'var(--card-bg)',
                 border: '3px solid #000000',
-                borderRadius: '12px',
+                borderRadius: '4px',
                 boxShadow: '3px 3px 0px 0px #000000'
               }}
             >
@@ -1410,7 +1433,7 @@ export default async function Home() {
               style={{
                 backgroundColor: 'var(--card-bg)',
                 border: '3px solid #000000',
-                borderRadius: '12px',
+                borderRadius: '4px',
                 boxShadow: '3px 3px 0px 0px #000000'
               }}
             >
@@ -1423,7 +1446,7 @@ export default async function Home() {
               style={{
                 backgroundColor: 'var(--card-bg)',
                 border: '3px solid #000000',
-                borderRadius: '12px',
+                borderRadius: '4px',
                 boxShadow: '3px 3px 0px 0px #000000'
               }}
             >
@@ -1443,7 +1466,7 @@ export default async function Home() {
             style={{
               backgroundColor: 'var(--card-bg)',
               border: '3px solid #000000',
-              borderRadius: '12px',
+              borderRadius: '4px',
               boxShadow: '3px 3px 0px 0px #000000'
             }}
           >

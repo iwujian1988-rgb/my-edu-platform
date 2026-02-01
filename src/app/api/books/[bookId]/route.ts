@@ -156,13 +156,24 @@ export async function DELETE(
         .in('chapter_id', chapterIds)
     }
 
-    // 7. 删除所有章节
+    // 7. 删除该书的所有用户偏好设置（必须在删除书之前，否则会因外键约束失败）
+    const { error: prefsDeleteError } = await supabase
+      .from('user_book_preferences')
+      .delete()
+      .eq('book_id', bookId)
+
+    if (prefsDeleteError) {
+      console.error('删除用户偏好设置失败:', prefsDeleteError)
+      // 非关键错误，继续执行
+    }
+
+    // 8. 删除所有章节
     await supabase
       .from('chapters')
       .delete()
       .eq('book_id', bookId)
 
-    // 8. 删除词库
+    // 9. 删除词库
     const { error: deleteError } = await supabase
       .from('books')
       .delete()
@@ -172,13 +183,6 @@ export async function DELETE(
       console.error('Error deleting book:', deleteError)
       return NextResponse.json({ error: '删除词库失败' }, { status: 500 })
     }
-
-    // 9. 删除用户偏好设置
-    await supabase
-      .from('user_book_preferences')
-      .delete()
-      .eq('user_id', user.id)
-      .eq('book_id', bookId)
 
     return NextResponse.json({
       success: true,
