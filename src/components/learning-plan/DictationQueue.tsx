@@ -25,7 +25,6 @@ interface Word {
 interface Props {
   initialWords: Word[]
   bookId: string
-  onSwitchMode: () => void
   onComplete: () => void
   totalOriginalWords?: number  // 🔧 新增：原始总单词数
   completedOriginalWords?: number  // 🔧 新增：已完成单词数
@@ -34,7 +33,6 @@ interface Props {
 export function DictationQueue({
   initialWords,
   bookId,
-  onSwitchMode,
   onComplete,
   totalOriginalWords,
   completedOriginalWords
@@ -482,13 +480,6 @@ export function DictationQueue({
               </h1>
             </div>
           </div>
-
-          <button
-            onClick={onSwitchMode}
-            className="px-3 py-2 text-sm font-bold rounded border-2 border-black dark:border-slate-600 bg-[#B4F416] dark:bg-[#86efac] text-black flex items-center gap-1 transition-all shadow-[2px_2px_0px_0px_#000] dark:shadow-none hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[1px_1px_0px_0px_#000] dark:hover:shadow-none active:translate-x-[2px] active:translate-y-[2px] active:shadow-none"
-          >
-            🃏 切换到卡片
-          </button>
         </div>
 
         {/* 进度条 */}

@@ -103,10 +103,6 @@ export default function LearningFlowClient({
     }
   }
 
-  const handleSwitchMode = () => {
-    setMode(prev => prev === 'flashcard' ? 'dictation' : 'flashcard')
-  }
-
   const handleComplete = async () => {
     // 🔥 先刷新路由数据（更新首页的今日任务进度）
     router.refresh()
@@ -138,7 +134,6 @@ export default function LearningFlowClient({
         <FlashcardQueue
           initialWords={words}
           bookId={bookId}
-          onSwitchMode={handleSwitchMode}
           onComplete={handleComplete}
           totalOriginalWords={totalOriginalWords}
           completedOriginalWords={completedOriginalWords}
@@ -147,7 +142,6 @@ export default function LearningFlowClient({
         <DictationQueue
           initialWords={words}
           bookId={bookId}
-          onSwitchMode={handleSwitchMode}
           onComplete={handleComplete}
           totalOriginalWords={totalOriginalWords}
           completedOriginalWords={completedOriginalWords}
