@@ -3,6 +3,8 @@ import { createClient } from '@/lib/supabase/server'
 import { Suspense } from 'react'
 import PlanSelectClient from './pageClient'
 
+export const dynamic = 'force-dynamic'
+
 interface PageProps {
   searchParams: Promise<{
     bookId?: string
