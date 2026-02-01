@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import { Suspense } from 'react'
 import DailyTaskClient from './pageClient'
 
 interface PageProps {
@@ -23,5 +24,9 @@ export default async function DailyTaskPage({ searchParams }: PageProps) {
     redirect('/')
   }
 
-  return <DailyTaskClient bookId={bookId} />
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <DailyTaskClient bookId={bookId} />
+    </Suspense>
+  )
 }

@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import { Suspense } from 'react'
 import PlanSelectClient from './pageClient'
 
 interface PageProps {
@@ -23,5 +24,9 @@ export default async function PlanSelectPage({ searchParams }: PageProps) {
     redirect('/')
   }
 
-  return <PlanSelectClient bookId={bookId} />
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PlanSelectClient bookId={bookId} />
+    </Suspense>
+  )
 }

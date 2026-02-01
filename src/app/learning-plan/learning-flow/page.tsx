@@ -1,5 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createClient } from '@/lib/supabase/server'
+import { Suspense } from 'react'
 import LearningFlowClient from './pageClient'
 
 interface PageProps {
@@ -24,5 +25,9 @@ export default async function LearningFlowPage({ searchParams }: PageProps) {
     redirect('/')
   }
 
-  return <LearningFlowClient bookId={bookId} initialMode={mode || 'flashcard'} />
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <LearningFlowClient bookId={bookId} initialMode={mode || 'flashcard'} />
+    </Suspense>
+  )
 }
