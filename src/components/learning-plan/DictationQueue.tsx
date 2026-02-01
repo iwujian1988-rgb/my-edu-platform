@@ -564,7 +564,7 @@ export function DictationQueue({
                 onKeyDown={handleTabKeyPress}
                 placeholder="在此书写..."
                 disabled={feedback === 'correct'}
-                className="w-full py-4 text-3xl font-black text-center bg-transparent border-b-4 border-gray-300 dark:border-slate-600 focus:outline-none focus:border-black dark:focus:border-slate-400 transition-all placeholder:font-bold placeholder:text-2xl placeholder:text-gray-400 dark:placeholder:text-slate-600 text-gray-900 dark:text-white"
+                className="w-full py-4 text-3xl font-black text-center bg-transparent border-b-4 border-gray-300 dark:border-slate-600 focus:outline-none focus:border-black dark:focus:border-slate-400 transition-all placeholder:font-bold placeholder:text-2xl placeholder:text-gray-400 dark:placeholder:text-slate-600 focus:placeholder:opacity-0 text-gray-900 dark:text-white"
                 autoFocus
               />
               {/* 动态底线动画 */}

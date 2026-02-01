@@ -1186,7 +1186,7 @@ export default function DictationPageClient() {
                     onFocus={handleInputFocus}
                     placeholder="在此书写..."
                     disabled={feedback === 'correct'}
-                    className="w-full py-4 text-3xl font-black text-center bg-transparent border-b-4 focus:outline-none transition-all placeholder:font-bold placeholder:text-2xl"
+                    className="w-full py-4 text-3xl font-black text-center bg-transparent border-b-4 focus:outline-none transition-all placeholder:font-bold placeholder:text-2xl focus:placeholder:opacity-0"
                     style={{ caretColor: '#ccff00', borderColor: 'var(--border)', color: 'var(--text-primary)' }}
                     onFocus={(e) => e.currentTarget.style.borderColor = 'var(--text-primary)'}
                     onBlur={(e) => e.currentTarget.style.borderColor = 'var(--border)'}
