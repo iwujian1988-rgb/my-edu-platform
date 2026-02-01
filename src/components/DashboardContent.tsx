@@ -102,8 +102,8 @@ function StatBox({
   const content = (
     <div className="
       relative h-full
-      bg-white dark:bg-[#1e293b] // 🌙 统一卡片底色
-      border-[3px] border-black dark:border-slate-700 // 🌙 统一边框：Slate-700
+      bg-white dark:bg-gray-900 // 🌙 统一卡片底色（与系统词库一致）
+      border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
       shadow-[4px_4px_0px_0px_#000] dark:shadow-none
 
       hover:translate-x-[2px] hover:translate-y-[2px]
@@ -114,7 +114,7 @@ function StatBox({
       <div className="flex items-center gap-3">
         <div className={`
           w-12 h-12 shrink-0
-          border-[3px] border-black dark:border-slate-800 // 🌙 图标边框再深一点
+          border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
           flex items-center justify-center
           shadow-[2px_2px_0px_0px_#000] dark:shadow-none
           ${color}
@@ -165,16 +165,16 @@ function ProgressCardComponent(props: ProgressCardProps & { isFirstCard?: boolea
     <Link href={continueURL} onClick={handleClick} className="group block" data-testid="progress-card" data-book-id={bookId}>
       <div className={`
         relative w-full cursor-pointer overflow-hidden flex flex-col transition-all duration-200
-        bg-white dark:bg-[#1e293b] // 🌙 统一卡片底色
+        bg-white dark:bg-gray-900 // 🌙 统一卡片底色（与系统词库一致）
 
-        // 🌙 统一边框逻辑：无论是不是 FirstCard，在黑夜模式下都统一用 Slate-700
-        border-[3px] border-black dark:border-slate-700
+        // 🌙 统一边框逻辑（与系统词库一致）
+        border-[3px] border-black dark:border-gray-700
 
         shadow-[6px_6px_0px_0px_#000] dark:shadow-none
 
         hover:translate-x-[2px] hover:translate-y-[2px]
         hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-none
-        dark:hover:bg-[#334155] // Hover 变亮一点
+        dark:hover:bg-gray-800 // Hover 变亮一点（与系统词库一致）
         min-h-[110px] rounded-sm // 🌟 降低高度：从 140px -> 110px
       `}>
         {/* ... 内容保持不变，只改内部文字颜色 ... */}
@@ -219,8 +219,8 @@ function CreateButton() {
     <Link href="/library/new" onClick={handleClick} className="block h-full">
       <button className="
         w-full h-full
-        bg-white dark:bg-[#1e293b] // 🌙 统一卡片底色
-        border-[3px] border-black dark:border-slate-700 // 🌙 统一边框
+        bg-white dark:bg-gray-900 // 🌙 统一卡片底色（与系统词库一致）
+        border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
         shadow-[4px_4px_0px_0px_#000] dark:shadow-none
 
         hover:translate-x-[2px] hover:translate-y-[2px]
@@ -234,7 +234,7 @@ function CreateButton() {
         </div>
         <div className="
           w-10 h-10 shrink-0 bg-[#B4F416]
-          border-[3px] border-black dark:border-slate-800 // 🌙 图标边框
+          border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
           flex items-center justify-center
           shadow-[2px_2px_0px_0px_#000] dark:shadow-none
           group-hover:rotate-90 transition-transform duration-300
@@ -372,7 +372,7 @@ export function DashboardContent({
 
   return (
     <div
-      className="min-h-screen font-sans p-4 md:p-8 lg:ml-64 transition-colors duration-300 bg-[#f0f0f0] dark:bg-[#0f172a]"
+      className="min-h-screen font-sans p-4 md:p-8 lg:ml-64 transition-colors duration-300 bg-[#f0f0f0] dark:bg-[#111827]"
       style={{
         color: 'var(--text-primary)',
         backgroundImage: 'radial-gradient(#888 1px, transparent 1px)',

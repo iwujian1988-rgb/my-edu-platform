@@ -320,7 +320,7 @@ export function LearningPlanWorkspace({ books }: { books: BookData[] }) {
 
             <button
               onClick={handleOpenCreateDialog}
-              className="px-8 py-4 text-base md:text-lg font-black text-black dark:text-white border-[3px] border-black dark:border-white bg-[#B4F416] rounded shadow-[6px_6px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all duration-200 flex items-center gap-3 justify-center uppercase"
+              className="w-full px-8 py-4 text-base md:text-lg font-black text-black dark:text-white border-[3px] border-black dark:border-white bg-[#B4F416] rounded shadow-[6px_6px_0px_0px_#000] hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[6px] active:translate-y-[6px] active:shadow-none transition-all duration-200 flex items-center gap-3 justify-center uppercase"
             >
               <Sparkles className="w-5 h-5" strokeWidth={3} />
               <span>创建学习计划</span>
