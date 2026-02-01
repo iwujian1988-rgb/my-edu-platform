@@ -102,7 +102,7 @@ function StatBox({
   const content = (
     <div className="
       relative h-full
-      bg-white dark:bg-gray-900 // 🌙 统一卡片底色（与系统词库一致）
+      bg-white dark:bg-gray-800 // 🌙 统一卡片底色（与系统词库一致）
       border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
       shadow-[4px_4px_0px_0px_#000] dark:shadow-none
 
@@ -165,7 +165,7 @@ function ProgressCardComponent(props: ProgressCardProps & { isFirstCard?: boolea
     <Link href={continueURL} onClick={handleClick} className="group block" data-testid="progress-card" data-book-id={bookId}>
       <div className={`
         relative w-full cursor-pointer overflow-hidden flex flex-col transition-all duration-200
-        bg-white dark:bg-gray-900 // 🌙 统一卡片底色（与系统词库一致）
+        bg-white dark:bg-gray-800 // 🌙 统一卡片底色（与系统词库一致）
 
         // 🌙 统一边框逻辑（与系统词库一致）
         border-[3px] border-black dark:border-gray-700
@@ -181,7 +181,7 @@ function ProgressCardComponent(props: ProgressCardProps & { isFirstCard?: boolea
         <div className="p-2 flex flex-col h-full">
           <div className="flex items-start justify-between mb-1.5">
             <h3 className="font-black text-sm text-black dark:text-slate-100 line-clamp-1">{bookTitle}</h3>
-            <span className="px-1.5 py-0.5 bg-gray-100 dark:bg-[#0f172a] text-[9px] font-bold text-gray-600 dark:text-slate-400 rounded-sm">
+            <span className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 text-[9px] font-bold text-gray-600 dark:text-slate-400 rounded-sm">
               {mode}
             </span>
           </div>
@@ -192,7 +192,7 @@ function ProgressCardComponent(props: ProgressCardProps & { isFirstCard?: boolea
               <span className="text-[9px] font-mono text-gray-500 dark:text-slate-500">{learnedCount}/{totalWords}</span>
             </div>
             {/* 进度条槽 */}
-            <div className="h-1 bg-gray-100 dark:bg-[#0f172a] rounded-full overflow-hidden">
+            <div className="h-1 bg-gray-100 dark:bg-gray-700 rounded-full overflow-hidden">
               <div className="h-full bg-[#B4F416]" style={{width: `${Math.max(progress, 5)}%`}}></div>
             </div>
             {/* 时间标签 */}
@@ -219,7 +219,7 @@ function CreateButton() {
     <Link href="/library/new" onClick={handleClick} className="block h-full">
       <button className="
         w-full h-full
-        bg-white dark:bg-gray-900 // 🌙 统一卡片底色（与系统词库一致）
+        bg-white dark:bg-gray-800 // 🌙 统一卡片底色（与系统词库一致）
         border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
         shadow-[4px_4px_0px_0px_#000] dark:shadow-none
 
