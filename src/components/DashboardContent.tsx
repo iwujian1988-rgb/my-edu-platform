@@ -372,11 +372,12 @@ export function DashboardContent({
 
   return (
     <div
-      className="min-h-screen font-sans p-4 md:p-8 lg:ml-64 transition-colors duration-300 bg-[#f0f0f0] dark:bg-[#111827]"
+      className="min-h-screen font-sans p-4 md:p-8 lg:ml-64 transition-colors duration-300"
       style={{
+        backgroundColor: 'var(--bg-secondary)',
         color: 'var(--text-primary)',
-        backgroundImage: 'radial-gradient(#888 1px, transparent 1px)',
-        backgroundSize: '24px 24px'
+        backgroundImage: 'radial-gradient(var(--border) 1px, transparent 1px)',
+        backgroundSize: '20px 20px'
       }}
     >
       <div className="max-w-7xl mx-auto">
