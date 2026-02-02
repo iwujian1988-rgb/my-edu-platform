@@ -2,28 +2,11 @@
 import '@/lib/disable-logs'
 
 import type { Metadata } from "next";
-import { Fredoka, Nunito } from "next/font/google";
 import "./globals.css";
 import { SoundEffects } from "@/components/SoundEffects";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import { LoadingOverlay } from "@/components/LoadingOverlay";
 import { InstallPWAButton } from "@/components/InstallPWAButton";
-
-// SKILL typography.csv line 6: Playful Creative for Educational apps
-// Fredoka for headings (Display) + Nunito for body (Sans)
-const fredoka = Fredoka({
-  weight: ['400', '500', '600', '700'],
-  subsets: ["latin"],
-  variable: "--font-fredoka",
-  display: 'swap',
-});
-
-const nunito = Nunito({
-  weight: ['400', '500', '600', '700', '800'],
-  subsets: ["latin"],
-  variable: "--font-nunito",
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: "MAX笔记 - 英语学习平台",
@@ -42,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className={`${nunito.variable} ${fredoka.variable}`} suppressHydrationWarning>
+    <html lang="zh-CN" suppressHydrationWarning>
       <head>
         {/* 🔥 防止主题闪烁：在页面渲染前就设置正确的主题 */}
         <script

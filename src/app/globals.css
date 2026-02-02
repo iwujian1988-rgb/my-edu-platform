@@ -19,6 +19,10 @@
   --border: #e5e7eb;
   --card-bg: #ffffff;
   --input-bg: #F3F4F6;
+
+  /* 🔧 系统字体（替代 Google Fonts） */
+  --font-fredoka: 'Varela Round', 'Nunito', 'Segoe UI', system-ui, sans-serif;
+  --font-nunito: 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 /* 深色主题变量 */
