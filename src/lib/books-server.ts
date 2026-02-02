@@ -129,9 +129,9 @@ function normalizeBookData(book: any): BookData {
   })()
 
   // ✅ 生成显示标题（大字）：title 前 6 个字
-  const displayTitle = book.title.length > 6
+  const displayTitle = book.title && book.title.length > 6
     ? book.title.substring(0, 6) + '...'
-    : book.title
+    : (book.title || '未命名')
 
   // ✅ 生成显示缩写（小字）：abbreviation 前 4 个字母
   const displayAbbr = book.abbreviation

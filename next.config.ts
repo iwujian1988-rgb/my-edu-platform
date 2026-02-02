@@ -47,6 +47,15 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+
+  // ✅ 修复 Next.js 16 Turbopack 配置冲突
+  webpack: (config, { isServer }) => {
+    // 禁用 webpack 以使用 Turbopack
+    return config
+  },
+
+  // 明确启用 Turbopack
+  turbopack: {},
 };
 
 export default withPWA(nextConfig);
