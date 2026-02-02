@@ -60,7 +60,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${nunito.className} antialiased`} suppressHydrationWarning>
+      <body className="antialiased" suppressHydrationWarning>
         <ThemeProvider>
           <SoundEffects />
           <LoadingOverlay />
