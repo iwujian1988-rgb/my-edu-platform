@@ -14,6 +14,7 @@ import { createClient } from '@/lib/supabase/server'
 export interface BookData {
   id: string
   title: string
+  abbreviation?: string // 英文缩写（如 "CET-4", "IELTS"）
   description?: string
   total_words?: number
   cover_color?: string
@@ -22,8 +23,7 @@ export interface BookData {
   is_official?: boolean
   coverType?: 'cn' | 'global' | 'k12' | 'uni'
   categoryLabel?: string
-  code?: string
-  // 可以根据需要添加更多字段
+  code?: string // 封面大字代码（如 "CET", "IEL", "TOE"）
 }
 
 /**
@@ -48,7 +48,7 @@ export const getAllBooks = cache(async (
   // 1. 获取基础词书数据 - 只查询需要的字段以提升性能
   const { data: booksData, error: booksError } = await supabase
     .from('books')
-    .select('id, title, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
     .order('created_at', { ascending: false })
 
   if (booksError) {
@@ -102,18 +102,34 @@ export const getAllBooks = cache(async (
  * 确保返回的数据结构一致，添加必要的辅助字段
  */
 function normalizeBookData(book: any): BookData {
-  // 从 description 提取分类标签（如果有）
-  const categoryLabel = book.category_label || extractCategoryLabel(book.description)
+  // ✅ 直接计算，不访问不存在的数据库字段
+  const categoryLabel = extractCategoryLabel(book.description)
+  const coverType = determineCoverType(book.title, book.description)
 
-  // 从 title 提取 code（如果没有）
-  const code = book.code || book.title?.substring(0, 3).toUpperCase() || 'BK'
-
-  // 确定封面类型
-  const coverType = book.cover_type || determineCoverType(book.title, book.description)
+  // ✅ 使用 abbreviation 生成 code（如果数据库有）
+  const code = (() => {
+    if (book.abbreviation) {
+      // "CET-4" → "CET", "IELTS" → "IEL"
+      const match = book.abbreviation.match(/^([A-Z]+-?[A-Z]*)/)
+      if (match) {
+        return match[1].replace('-', '').substring(0, 3).toUpperCase()
+      }
+      return book.abbreviation.substring(0, 3).toUpperCase()
+    }
+    if (book.title) {
+      const titlePrefix = book.title.substring(0, 3).toUpperCase()
+      // 检查是否是纯字母（避免中文字符）
+      if (/^[A-Z-]+$/.test(titlePrefix)) {
+        return titlePrefix.replace('-', '')
+      }
+    }
+    return 'BK'
+  })()
 
   return {
     id: book.id,
     title: book.title,
+    abbreviation: book.abbreviation,
     description: book.description || '',
     total_words: book.total_words || 0,
     cover_color: book.cover_color || 'from-green-400 to-green-500',
@@ -201,7 +217,7 @@ export const getBookById = cache(async (
 
   const { data: book, error } = await supabase
     .from('books')
-    .select('*')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
     .eq('id', bookId)
     .single()
 
@@ -259,7 +275,7 @@ export const getBooksByIds = cache(async (
 
   const { data: books, error } = await supabase
     .from('books')
-    .select('*')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
     .in('id', bookIds)
 
   if (error) {
