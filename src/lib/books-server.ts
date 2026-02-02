@@ -24,6 +24,8 @@ export interface BookData {
   coverType?: 'cn' | 'global' | 'k12' | 'uni'
   categoryLabel?: string
   code?: string // 封面大字代码（如 "CET", "IEL", "TOE"）
+  displayTitle?: string // 封面大字显示标题（前6个字）
+  displayAbbr?: string // 小字标签显示缩写（前4个字母）
 }
 
 /**
@@ -126,6 +128,16 @@ function normalizeBookData(book: any): BookData {
     return 'BK'
   })()
 
+  // ✅ 生成显示标题（大字）：title 前 6 个字
+  const displayTitle = book.title.length > 6
+    ? book.title.substring(0, 6) + '...'
+    : book.title
+
+  // ✅ 生成显示缩写（小字）：abbreviation 前 4 个字母
+  const displayAbbr = book.abbreviation
+    ? book.abbreviation.substring(0, 4).toUpperCase()
+    : ''
+
   return {
     id: book.id,
     title: book.title,
@@ -138,7 +150,9 @@ function normalizeBookData(book: any): BookData {
     is_official: book.is_official,
     coverType,
     categoryLabel,
-    code
+    code,
+    displayTitle,
+    displayAbbr
   }
 }
 

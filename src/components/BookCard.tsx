@@ -143,24 +143,26 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
               )}
             </div>
 
-            {/* 核心大字 - 向下移动避免遮盖标签 */}
+            {/* 核心大字 - 显示 displayTitle（前6个字） */}
             <div className="flex flex-col items-center justify-center mt-4 md:mt-5 lg:mt-6">
               <h1 className={`${fontSize} font-black tracking-tighter leading-none z-10 transition-all duration-300 ${
                 isDark
                   ? `${labelColor} drop-shadow-[0_0_20px_rgba(180,244,22,0.4)] group-hover:drop-shadow-[0_0_30px_rgba(180,244,22,0.7)] group-hover:scale-110`
                   : 'text-black drop-shadow-[4px_4px_0px_#fff] group-hover:scale-105'
               }`}>
-                {code}
+                {book.displayTitle || book.title || '未命名'}
               </h1>
 
-              {/* 中间的标签 */}
-              <div className={`mt-1.5 md:mt-1.5 lg:mt-2 px-2 py-0.5 md:px-2 md:py-0.5 lg:px-3 lg:py-1 text-[10px] md:text-[10px] lg:text-xs font-bold uppercase tracking-widest transform -rotate-2 group-hover:rotate-0 transition-transform rounded ${
-                isDark
-                  ? 'bg-gray-800 text-gray-200 border border-gray-600 shadow-[0_0_10px_rgba(180,244,22,0.2)]'
-                  : 'bg-black text-white'
-              }`}>
-                {book.title || '未命名'}
-              </div>
+              {/* 中间的标签 - 显示 displayAbbr（前4个字母） */}
+              {book.displayAbbr && (
+                <div className={`mt-1.5 md:mt-1.5 lg:mt-2 px-2 py-0.5 md:px-2 md:py-0.5 lg:px-3 lg:py-1 text-[10px] md:text-[10px] lg:text-xs font-bold uppercase tracking-widest transform -rotate-2 group-hover:rotate-0 transition-transform rounded ${
+                  isDark
+                    ? 'bg-gray-800 text-gray-200 border border-gray-600 shadow-[0_0_10px_rgba(180,244,22,0.2)]'
+                    : 'bg-black text-white'
+                }`}>
+                  {book.displayAbbr}
+                </div>
+              )}
             </div>
 
             {/* 背景纹理 */}
