@@ -16,22 +16,20 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
   const isDark = mounted && theme === 'dark'
 
   // 记录点击到最近访问并跳转
-  const handleClick = async () => {
+  const handleClick = () => {
     // 显示加载动画
     showLoading()
 
-    try {
-      // 记录访问
-      await fetch('/api/recent-books', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ bookId: book.id })
-      })
-    } catch (error) {
+    // ⚡ 性能优化：非阻塞式记录访问，不等待API响应
+    fetch('/api/recent-books', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ bookId: book.id })
+    }).catch(error => {
       console.error('Failed to record book access:', error)
-    }
+    })
 
-    // 跳转到词库详情页
+    // 立即跳转，不等待API调用完成
     router.push(`/library/${book.id}`)
   }
 

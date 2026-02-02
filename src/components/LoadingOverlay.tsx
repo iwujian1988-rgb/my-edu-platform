@@ -77,10 +77,10 @@ export function LoadingOverlay() {
     // 随机选择一条激励文案
     setQuoteIndex(Math.floor(Math.random() * motivationalQuotes.length))
 
-    // 路由变化后延迟隐藏（优化：减少延迟，提升响应速度）
+    // 路由变化后延迟隐藏（极致优化：最小化延迟）
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 200)  // 优化：从500ms减少到200ms，提升返回按钮响应速度
+    }, 100)  // 极致优化：从200ms减少到100ms，进一步提升响应速度
 
     return () => clearTimeout(timer)
   }, [pathname, searchParams])
