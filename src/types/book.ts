@@ -11,7 +11,6 @@ export type CoverType = 'cn' | 'global' | 'k12' | 'uni'
  *
  * @field id - 词库ID (UUID)
  * @field title - 词库标题
- * @field abbreviation - 英文缩写 (如 "CET-4", "IELTS")
  * @field description - 词库描述
  * @field total_words - 总单词数
  * @field cover_url - 封面URL (可选)
@@ -28,7 +27,6 @@ export type CoverType = 'cn' | 'global' | 'k12' | 'uni'
 export interface Book {
   id: string
   title: string
-  abbreviation?: string
   description: string
   total_words: number
   cover_url: string | null

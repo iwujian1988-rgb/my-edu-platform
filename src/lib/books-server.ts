@@ -14,7 +14,6 @@ import { createClient } from '@/lib/supabase/server'
 export interface BookData {
   id: string
   title: string
-  abbreviation?: string
   description?: string
   total_words?: number
   cover_color?: string
@@ -49,7 +48,7 @@ export const getAllBooks = cache(async (
   // 1. 获取基础词书数据 - 只查询需要的字段以提升性能
   const { data: booksData, error: booksError } = await supabase
     .from('books')
-    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
+    .select('id, title, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
     .order('created_at', { ascending: false })
 
   if (booksError) {
@@ -115,7 +114,6 @@ function normalizeBookData(book: any): BookData {
   return {
     id: book.id,
     title: book.title,
-    abbreviation: book.abbreviation,
     description: book.description || '',
     total_words: book.total_words || 0,
     cover_color: book.cover_color || 'from-green-400 to-green-500',
