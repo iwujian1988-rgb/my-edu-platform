@@ -24,6 +24,11 @@ interface SessionPosition {
 }
 
 function saveSessionPosition(bookId: string, index: number, scope: string) {
+  // 🔥 关键修复：检查是否在客户端环境（避免 SSR 崩溃）
+  if (typeof window === 'undefined') {
+    return
+  }
+
   try {
     const position: SessionPosition = {
       bookId,
@@ -38,6 +43,11 @@ function saveSessionPosition(bookId: string, index: number, scope: string) {
 }
 
 function getSessionPosition(bookId: string): SessionPosition | null {
+  // 🔥 关键修复：检查是否在客户端环境（避免 SSR 崩溃）
+  if (typeof window === 'undefined') {
+    return null
+  }
+
   try {
     const data = sessionStorage.getItem(SESSION_STORAGE_KEY(bookId))
     if (!data) return null
@@ -64,6 +74,11 @@ function getSessionPosition(bookId: string): SessionPosition | null {
 }
 
 function clearSessionPosition(bookId: string) {
+  // 🔥 关键修复：检查是否在客户端环境（避免 SSR 崩溃）
+  if (typeof window === 'undefined') {
+    return
+  }
+
   try {
     sessionStorage.removeItem(SESSION_STORAGE_KEY(bookId))
   } catch (e) {

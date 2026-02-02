@@ -93,14 +93,13 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
   }
 
   // 根据文字长度自动调整字号（适配3列布局）
-  const getFontSize = (code: string): string => {
-    if (code.length > 5) return 'text-xl md:text-2xl lg:text-2xl'
-    if (code.length > 3) return 'text-2xl md:text-3xl lg:text-3xl'
+  const getFontSize = (title: string): string => {
+    if (title.length > 4) return 'text-xl md:text-2xl lg:text-2xl'
+    if (title.length > 2) return 'text-2xl md:text-3xl lg:text-3xl'
     return 'text-3xl md:text-4xl lg:text-4xl'
   }
 
-  const code = book.code || book.title?.substring(0, 3).toUpperCase() || 'BK'
-  const fontSize = getFontSize(code)
+  const fontSize = getFontSize(book.title || '')
   const colorClass = getColorClass(book.coverType)
   const glowClass = getGlowClass(book.coverType)
   const labelColor = getLabelColor(book.coverType)
@@ -143,23 +142,23 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
               )}
             </div>
 
-            {/* 核心大字 - 向下移动避免遮盖标签 */}
+            {/* 核心大字 - 中文标题 */}
             <div className="flex flex-col items-center justify-center mt-4 md:mt-5 lg:mt-6">
               <h1 className={`${fontSize} font-black tracking-tighter leading-none z-10 transition-all duration-300 ${
                 isDark
                   ? `${labelColor} drop-shadow-[0_0_20px_rgba(180,244,22,0.4)] group-hover:drop-shadow-[0_0_30px_rgba(180,244,22,0.7)] group-hover:scale-110`
                   : 'text-black drop-shadow-[4px_4px_0px_#fff] group-hover:scale-105'
               }`}>
-                {code}
+                {book.title || '未命名'}
               </h1>
 
-              {/* 中间的标签 */}
-              <div className={`mt-1.5 md:mt-1.5 lg:mt-2 px-2 py-0.5 md:px-2 md:py-0.5 lg:px-3 lg:py-1 text-[10px] md:text-[10px] lg:text-xs font-bold uppercase tracking-widest transform -rotate-2 group-hover:rotate-0 transition-transform rounded ${
+              {/* 英文缩写 + 关键词标签 */}
+              <div className={`mt-1.5 md:mt-1.5 lg:mt-2 px-2 py-0.5 md:px-2 md:py-0.5 lg:px-3 lg:py-1 text-[10px] md:text-[10px] lg:text-xs font-medium tracking-wide transform -rotate-2 group-hover:rotate-0 transition-transform rounded ${
                 isDark
                   ? 'bg-gray-800 text-gray-200 border border-gray-600 shadow-[0_0_10px_rgba(180,244,22,0.2)]'
                   : 'bg-black text-white'
               }`}>
-                {book.title || '未命名'}
+                {book.abbreviation ? `${book.abbreviation} · 考试词汇` : '词汇'}
               </div>
             </div>
 
