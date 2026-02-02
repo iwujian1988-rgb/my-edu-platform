@@ -16,11 +16,10 @@ export default async function LibraryPage() {
     return null
   }
 
-  // 并行获取用户权限和词书数据，提升性能
-  const [userPermissions, books] = await Promise.all([
-    getUserPermissions(),
-    getAllBooks(user.id, userPermissions)
-  ])
+  // 🔥 修复：改为串行获取，避免 Promise.all 导致的变量引用问题
+  // b47f698 优化尝试并行执行，但 userPermissions 在解构前不存在
+  const userPermissions = await getUserPermissions()
+  const books = await getAllBooks(user.id, userPermissions)
 
   console.log(`[Library Page] Loaded ${books.length} books`)
 
