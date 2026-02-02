@@ -53,10 +53,10 @@ export function LoadingOverlay() {
         // 随机选择一条激励文案
         setQuoteIndex(Math.floor(Math.random() * motivationalQuotes.length))
       } else {
-        // 延迟隐藏，确保页面内容已渲染
+        // 优化：减少延迟隐藏时间，提升响应速度
         timeoutRef.current = setTimeout(() => {
           setIsLoading(false)
-        }, 200)
+        }, 100)
       }
     }
 
@@ -77,10 +77,10 @@ export function LoadingOverlay() {
     // 随机选择一条激励文案
     setQuoteIndex(Math.floor(Math.random() * motivationalQuotes.length))
 
-    // 路由变化后延迟隐藏
+    // 路由变化后延迟隐藏（优化：减少延迟，提升响应速度）
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 500)  // 增加到500ms，确保用户能看到加载动画
+    }, 200)  // 优化：从500ms减少到200ms，提升返回按钮响应速度
 
     return () => clearTimeout(timer)
   }, [pathname, searchParams])
