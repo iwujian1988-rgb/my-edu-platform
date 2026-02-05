@@ -105,8 +105,14 @@ export function useWordData({
   // ⭐ 核心逻辑：从API获取单词
   useEffect(() => {
     const fetchWords = async () => {
-      // 🔥 修复：只在首次加载且status是'all'时使用SSR数据
-      const isFirstLoadWithDefaultFilter = filters.page === 1 && filters.status === 'all' && initialData && initialData.length > 0
+      // 🔥 修复：只在首次加载、无章节筛选、且status是'all'时使用SSR数据
+      // 💡 关键：当用户选择章节后，initialData不再有效，必须从API获取新数据
+      const isFirstLoadWithDefaultFilter =
+        filters.page === 1 &&
+        filters.status === 'all' &&
+        filters.chapter === 'all' &&  // 🔧 FIX: 只有无章节筛选时才使用SSR数据
+        initialData &&
+        initialData.length > 0
 
       if (isFirstLoadWithDefaultFilter) {
         console.log(`✅ [Skip] Using SSR data for page 1 with default filter`)
