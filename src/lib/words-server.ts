@@ -35,6 +35,7 @@ export interface Word {
  * @param page - 页码（默认1）
  * @param pageSize - 每页数量（默认21）
  * @param status - 状态筛选 (all|unknown|fuzzy|known|new，默认all)
+ * @param chapterId - 章节筛选（默认'all'表示所有章节）
  * @returns 单词数据和总数
  */
 export async function getWordsForBookServer(
@@ -42,7 +43,8 @@ export async function getWordsForBookServer(
   user: any,
   page: number = 1,
   pageSize: number = 21,
-  status: string = 'all'
+  status: string = 'all',
+  chapterId: string = 'all'
 ): Promise<{
   words: Word[]
   total: number
@@ -51,7 +53,7 @@ export async function getWordsForBookServer(
   error?: string
 }> {
   try {
-    console.log(`📖 [Server] Fetching words for book ${bookId}, page ${page}, status ${status}`)
+    console.log(`📖 [Server] Fetching words for book ${bookId}, page ${page}, status ${status}, chapter ${chapterId}`)
 
     const supabase = await createClient()
 
@@ -146,10 +148,18 @@ export async function getWordsForBookServer(
       console.log('🔍 [Server] Using fallback query...')
 
       // 获取chapters
-      const { data: chaptersData } = await supabase
+      // 🔧 FIX: 支持章节筛选
+      const chaptersQuery = supabase
         .from('chapters')
         .select('id')
-        .eq('book_id', bookId)
+
+      if (chapterId !== 'all') {
+        chaptersQuery.eq('id', chapterId)
+      } else {
+        chaptersQuery.eq('book_id', bookId)
+      }
+
+      const { data: chaptersData } = await chaptersQuery
 
       if (!chaptersData) {
         return {

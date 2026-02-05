@@ -43,14 +43,15 @@ export default async function BookDetailPage({
     .eq('book_id', id)
     .order('order_index', { ascending: true })
 
-  // 🔥 从URL参数读取status和page，而不是硬编码
+  // 🔥 从URL参数读取status、page和chapter
   const statusParam = (typeof paramsObj.status === 'string' ? paramsObj.status : null) || 'all'
   const pageParam = parseInt(typeof paramsObj.page === 'string' ? paramsObj.page : '1', 10) || 1
+  const chapterParam = (typeof paramsObj.chapter === 'string' ? paramsObj.chapter : null) || 'all'
 
-  console.log(`📖 [Server Page] URL params - status: ${statusParam}, page: ${pageParam}`)
+  console.log(`📖 [Server Page] URL params - status: ${statusParam}, page: ${pageParam}, chapter: ${chapterParam}`)
 
-  // 🆕 在服务端获取单词数据（根据URL参数）
-  const initialWordsData = await getWordsForBookServer(id, user, pageParam, 21, statusParam)
+  // 🆕 在服务端获取单词数据（根据URL参数，包含章节筛选）
+  const initialWordsData = await getWordsForBookServer(id, user, pageParam, 21, statusParam, chapterParam)
 
   // 如果获取失败，返回空数组但不阻止页面渲染
   const initialWords = initialWordsData.success ? initialWordsData.words : []
