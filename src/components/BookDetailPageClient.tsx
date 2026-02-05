@@ -159,6 +159,9 @@ export function BookDetailPageClient({
     { shouldSave: resumeCheckCompleted }
   )
 
+  // 🔧 FIX: 保存所有单词的完整列表，用于计算筛选选项
+  const [allWords, setAllWords] = useState<Word[]>(initialWords)
+
   // 🆕 传递初始数据给useWordData，避免首次加载时调用API
   const { words, totalWords, hasMore, isLoading, isLoadingMore } = useWordData({
     book,
@@ -168,6 +171,14 @@ export function BookDetailPageClient({
   })
 
   const { isPortrait } = useScreenOrientation()
+
+  // 🔧 FIX: 监听 words 变化，更新 allWords（只在首次加载或筛选重置时）
+  useEffect(() => {
+    if (initialWords.length > 0 && allWords.length === 0) {
+      setAllWords(initialWords)
+      console.log('📚 [AllWords] Initialized:', initialWords.length, 'words')
+    }
+  }, [initialWords])
 
   // ✅ 检查数据中是否有主题/场景字段
   const hasThemeData = words.some(word => word.theme)
@@ -795,30 +806,28 @@ export function BookDetailPageClient({
   }
 
   // ✅ 改进：提取所有唯一的主题、场景和章节
+  // 🔧 FIX: 章节直接使用服务端传递的 chapters prop，主题/场景从 words 提取
   const { uniqueThemes, uniqueScenes, uniqueChapters } = useMemo(() => {
     const themes = new Set<string>()
     const scenes = new Set<string>()
-    const chaptersMap = new Map<string | null, { id: string; title: string; order_index: number }>()
 
+    // 🔧 FIX: 从 words 中提取主题和场景（这些仍然需要从单词数据获取）
     words.forEach(word => {
       if (word.theme) themes.add(word.theme)
       if (word.scene) scenes.add(word.scene)
-      // 收集章节信息（使用 chapter_id 作为唯一标识）
-      if (word.chapter_id && word.chapter) {
-        chaptersMap.set(word.chapter_id, {
-          id: word.chapter_id,
-          title: word.chapter,
-          order_index: 0 // 这里可以后续从 word 中获取 order_index
-        })
-      }
     })
 
     return {
       uniqueThemes: Array.from(themes).sort(),
       uniqueScenes: Array.from(scenes).sort(),
-      uniqueChapters: Array.from(chaptersMap.values()).sort((a, b) => a.order_index - b.order_index)
+      // 🔥 直接使用服务端传递的所有章节，不受筛选影响
+      uniqueChapters: chapters.map(ch => ({
+        id: ch.id,
+        title: ch.title,
+        order_index: ch.order_index || 0
+      }))
     }
-  }, [words])
+  }, [words, chapters])  // 🔧 FIX: 依赖 words（用于主题/场景）和 chapters（用于章节）
 
   // 根据选中的主题筛选场景
   const availableScenes = useMemo(() => {

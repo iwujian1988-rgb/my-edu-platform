@@ -55,6 +55,7 @@ export async function GET(request: NextRequest) {
     const shuffle = searchParams.get('shuffle') === 'true'
     const page = parseInt(searchParams.get('page') || '1')
     const pageSize = parseInt(searchParams.get('pageSize') || '50')
+    const chapterId = searchParams.get('chapterId') || 'all'  // 🔧 FIX: 添加章节筛选参数
 
     if (!bookId) {
       return NextResponse.json({ error: 'bookId is required' }, { status: 400 })
@@ -79,10 +80,17 @@ export async function GET(request: NextRequest) {
           .eq('user_id', user.id)
           .eq('book_id', bookId),
         // 🔥 检查书籍的章节是否有theme/scene数据
-        supabase
-          .from('chapters')
-          .select('theme_id, scene_id')
-          .eq('book_id', bookId)
+        // 🔧 FIX: 添加章节筛选
+        chapterId !== 'all'
+          ? supabase
+              .from('chapters')
+              .select('theme_id, scene_id')
+              .eq('book_id', bookId)
+              .eq('id', chapterId)
+          : supabase
+              .from('chapters')
+              .select('theme_id, scene_id')
+              .eq('book_id', bookId)
       ]),
       15000,  // 15秒超时
       'Database query timeout'
@@ -246,10 +254,18 @@ export async function GET(request: NextRequest) {
         const allProgressIds = new Set(progressResult.data?.map((p: any) => p.word_id) || [])
 
         // 获取所有chapters
-        const { data: chaptersData } = await supabase
+        // 🔧 FIX: 添加章节筛选
+        const chaptersQuery = supabase
           .from('chapters')
-          .select('id')
-          .eq('book_id', bookId)
+          .select('id, theme_id, scene_id')
+
+        if (chapterId !== 'all') {
+          chaptersQuery.eq('id', chapterId)
+        } else {
+          chaptersQuery.eq('book_id', bookId)
+        }
+
+        const { data: chaptersData } = await chaptersQuery
 
         if (!chaptersData) {
           return NextResponse.json({ error: 'Failed to fetch chapters' }, { status: 500 })
@@ -365,10 +381,18 @@ export async function GET(request: NextRequest) {
         console.log(`✅ Returning page ${page} with ${words.length} unmarked words (total: ${statusTotalCount})`)
       } else {
         // 其他状态：使用原来的逻辑
-        const { data: chaptersData } = await supabase
+        // 🔧 FIX: 添加章节筛选
+        const chaptersQuery = supabase
           .from('chapters')
           .select('id, theme_id, scene_id')
-          .eq('book_id', bookId)
+
+        if (chapterId !== 'all') {
+          chaptersQuery.eq('id', chapterId)
+        } else {
+          chaptersQuery.eq('book_id', bookId)
+        }
+
+        const { data: chaptersData } = await chaptersQuery
 
         if (!chaptersData) {
           return NextResponse.json({ error: 'Failed to fetch chapters' }, { status: 500 })

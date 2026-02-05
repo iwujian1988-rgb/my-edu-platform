@@ -118,7 +118,7 @@ export function useWordData({
       // 横屏模式：替换加载（每次都替换）
       const append = isPortrait && filters.page > 1
 
-      console.log(`📖 Fetching words (page ${filters.page}, status: ${filters.status}, append: ${append})`)
+      console.log(`📖 Fetching words (page ${filters.page}, status: ${filters.status}, chapter: ${filters.chapter}, append: ${append})`)
 
       try {
         // 构建API参数
@@ -128,6 +128,11 @@ export function useWordData({
           page: filters.page.toString(),
           pageSize: '21'
         })
+
+        // 🔧 FIX: 添加章节筛选参数
+        if (filters.chapter !== 'all') {
+          params.append('chapterId', filters.chapter)
+        }
 
         const response = await authenticatedFetch(`/api/words?${params}`)
 
@@ -165,23 +170,23 @@ export function useWordData({
     }
 
     fetchWords()
-  }, [book.id, filters.page, filters.status, isPortrait]) // 🔥 移除initialData依赖
+  }, [book.id, filters.page, filters.status, filters.chapter, filters.theme, filters.scenario, isPortrait]) // 🔧 FIX: 添加章节/主题/场景筛选依赖
 
-  // ⭐ 核心逻辑2：客户端筛选（章节/主题/场景）
+  // ⭐ 核心逻辑2：客户端筛选（只处理主题/场景，章节已由服务端处理）
   const filteredWords = useMemo(() => {
     let result = [...words]
 
-    // 1. 章节筛选
-    if (filters.chapter !== 'all') {
-      result = result.filter(word => word.chapter_id === filters.chapter)
-    }
+    // 🔧 FIX: 章节筛选已由服务端处理，这里不再筛选
+    // if (filters.chapter !== 'all') {
+    //   result = result.filter(word => word.chapter_id === filters.chapter)
+    // }
 
-    // 2. 主题筛选
+    // 1. 主题筛选
     if (filters.theme !== 'all') {
       result = result.filter(word => word.theme === filters.theme)
     }
 
-    // 3. 场景筛选
+    // 2. 场景筛选
     if (filters.scenario !== 'all') {
       result = result.filter(word => word.scene === filters.scenario)
     }
