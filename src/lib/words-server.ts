@@ -22,6 +22,7 @@ export interface Word {
   example_sentence_en?: string
   part_of_speech?: string
   chapter?: string
+  chapter_id?: string | null  // 🔧 添加章节ID字段
   theme?: string
   scene?: string
   status?: 'new' | 'unknown' | 'fuzzy' | 'known'
@@ -175,7 +176,7 @@ export async function getWordsForBookServer(
       // 查询words
       const { data: fallbackWords, error: fallbackError } = await supabase
         .from('words')
-        .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech')
+        .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id')
         .in('chapter_id', chapterIds)
         .order('order_index', { ascending: true })
         .range(offset, offset + pageSize - 1)
@@ -191,10 +192,11 @@ export async function getWordsForBookServer(
         }
       }
 
+      // 🔥 保留chapter_id字段（用于验证和调试），chapter设为空（fallback不查询章节标题）
       words = fallbackWords?.map((word: any) => ({
         ...word,
         status: statusMap.get(word.id) || 'new',
-        chapter: '',  // fallback不包含这些字段
+        chapter: '',  // fallback不查询章节标题，保持空字符串
         theme: '',
         scene: ''
       })) || []
