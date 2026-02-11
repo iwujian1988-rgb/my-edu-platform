@@ -48,6 +48,14 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
 
+  // ✅ 增加 API Route 和 Server Action 的 body 大小限制（支持大音频文件上传）
+  experimental: {
+    serverActions: {
+      bodySizeLimit: '50mb',
+    },
+  },
+  middlewareClientMaxBodySize: '50mb',
+
   // ✅ 修复 Next.js 16 Turbopack 配置冲突
   webpack: (config, { isServer }) => {
     // 禁用 webpack 以使用 Turbopack
