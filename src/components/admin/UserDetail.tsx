@@ -22,6 +22,7 @@ interface User {
   is_banned: boolean | null
   feature_permissions: string[] | null
   book_permissions: string[] | null
+  language_packages: string[] | null
   permission_expires_at: string | null
   invitation_code_id: string | null
 }
@@ -49,7 +50,10 @@ interface Package {
   id: string
   name: string
   description: string | null
+  validity_days: number | null
   duration_days: number | null
+  feature_permissions: string[] | null
+  is_active: boolean
 }
 
 interface UserDetailProps {
@@ -65,7 +69,18 @@ const FEATURE_PERMISSIONS = [
   { id: 'flashcard', name: '卡片背单词' },
   { id: 'dictation', name: '听写模式' },
   { id: 'custom_book', name: '自定义词库' },
-  { id: 'review_mode', name: '复习模式' }
+  { id: 'review_mode', name: '复习模式' },
+  { id: 'speaker', name: '雯姐学习法' }
+]
+
+// 语言包选项（雯姐学习法）
+const LANGUAGE_PACKAGES = [
+  { id: 'en', name: '英语', flag: '🇬🇧' },
+  { id: 'pl', name: '波兰语', flag: '🇵🇱' },
+  { id: 'es', name: '西班牙语', flag: '🇪🇸' },
+  { id: 'fr', name: '法语', flag: '🇫🇷' },
+  { id: 'de', name: '德语', flag: '🇩🇪' },
+  { id: 'ja', name: '日语', flag: '🇯🇵' }
 ]
 
 export function UserDetail({ user, stats, invitationCode, allBooks, userPackage }: UserDetailProps) {
@@ -224,18 +239,31 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
             <div className="flex items-center gap-3 p-4 bg-purple-50 rounded border-[2px] border-purple-200 md:col-span-2">
               <TrendingUp className="text-purple-600" size={20} />
               <div className="flex-1">
-                <p className="text-sm text-purple-600 font-semibold">套餐信息</p>
-                <p className="font-bold text-gray-800">{userPackage.name}</p>
+                <p className="text-sm text-purple-600 font-semibold">所属套餐</p>
+                <p className="font-bold text-gray-800 text-lg">{userPackage.name}</p>
                 {userPackage.description && (
-                  <p className="text-sm text-gray-600">{userPackage.description}</p>
+                  <p className="text-sm text-gray-600 mt-1">{userPackage.description}</p>
                 )}
-              </div>
-              {userPackage.duration_days && (
-                <div className="text-right">
-                  <p className="text-sm text-gray-500">有效期</p>
-                  <p className="font-bold text-purple-600">{userPackage.duration_days}天</p>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  <span className={`px-2 py-0.5 rounded text-xs font-medium ${userPackage.is_active ? 'bg-green-100 text-green-700' : 'bg-gray-200 text-gray-600'}`}>
+                    {userPackage.is_active ? '✓ 已启用' : '已停用'}
+                  </span>
+                  {userPackage.validity_days ? (
+                    <span className="px-2 py-0.5 rounded text-xs font-medium bg-blue-100 text-blue-700">
+                      {userPackage.validity_days}天有效期
+                    </span>
+                  ) : (
+                    <span className="px-2 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-700">
+                      永久有效
+                    </span>
+                  )}
+                  {userPackage.feature_permissions && userPackage.feature_permissions.length > 0 && (
+                    <span className="px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-700">
+                      {userPackage.feature_permissions.length}项功能
+                    </span>
+                  )}
                 </div>
-              )}
+              </div>
             </div>
           )}
         </div>
@@ -264,13 +292,31 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage 
 
         {/* 权限信息 */}
         <div className="mt-6 p-4 bg-gray-50 rounded">
-          <h4 className="font-bold text-gray-800 mb-3">当前权限</h4>
+          <div className="flex items-center justify-between mb-3">
+            <h4 className="font-bold text-gray-800">当前权限</h4>
+            {/* 权限来源标识 */}
+            {user.feature_permissions && user.feature_permissions.length > 0 ? (
+              <span className="px-2 py-0.5 bg-purple-100 text-purple-700 text-xs font-medium rounded border border-purple-200">
+                🎯 用户自定义
+              </span>
+            ) : userPackage ? (
+              <span className="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs font-medium rounded border border-blue-200">
+                📦 套餐默认
+              </span>
+            ) : (
+              <span className="px-2 py-0.5 bg-gray-200 text-gray-600 text-xs font-medium rounded border border-gray-300">
+                ⚠️ 无权限
+              </span>
+            )}
+          </div>
           <div className="space-y-2 text-sm">
             <div>
               <span className="text-gray-600">功能权限：</span>
               <span className="font-medium">
                 {user.feature_permissions && user.feature_permissions.length > 0
                   ? user.feature_permissions.map(p => FEATURE_PERMISSIONS.find(f => f.id === p)?.name || p).join(', ')
+                  : userPackage
+                  ? '(使用套餐默认权限)'
                   : '无'}
               </span>
             </div>
@@ -548,6 +594,9 @@ function PermissionModal({
   const [bookPermissions, setBookPermissions] = useState<string[]>(
     user.book_permissions || []
   )
+  const [languagePackages, setLanguagePackages] = useState<string[]>(
+    user.language_packages || []
+  )
   const [expiresIn, setExpiresIn] = useState<string>('365')
   const [changeReason, setChangeReason] = useState('')
 
@@ -572,6 +621,14 @@ function PermissionModal({
     })
   }
 
+  const toggleLanguagePackage = (langId: string) => {
+    setLanguagePackages(prev =>
+      prev.includes(langId)
+        ? prev.filter(l => l !== langId)
+        : [...prev, langId]
+    )
+  }
+
   const handleSubmit = async () => {
     if (!changeReason.trim()) {
       alert('请填写变更原因')
@@ -588,6 +645,7 @@ function PermissionModal({
         body: JSON.stringify({
           feature_permissions: featurePermissions,
           book_permissions: bookPermissions,
+          language_packages: languagePackages,
           permission_expires_at,
           change_reason: changeReason
         })
@@ -638,6 +696,21 @@ function PermissionModal({
                 }
               </p>
               <p><strong>到期时间：</strong>{user.permission_expires_at ? formatDate(user.permission_expires_at) : '永久'}</p>
+            </div>
+          </div>
+
+          {/* 权限说明 */}
+          <div className="bg-blue-50 border border-blue-200 rounded p-4">
+            <div className="flex items-start gap-3">
+              <div className="text-blue-600 mt-0.5">ℹ️</div>
+              <div className="flex-1 text-sm text-blue-900">
+                <p className="font-bold mb-1">权限优先级说明</p>
+                <ul className="space-y-1 text-blue-800">
+                  <li>• <strong>用户自定义权限</strong>（下方勾选）优先级最高</li>
+                  <li>• 如果用户没有自定义权限，则使用<strong>套餐默认权限</strong></li>
+                  <li>• 清空下方所有勾选，将恢复为使用套餐权限</li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -710,6 +783,37 @@ function PermissionModal({
               )}
             </div>
           </div>
+
+          {/* 语言包（雯姐学习法） */}
+          {featurePermissions.includes('speaker') && (
+            <div className="mt-4 p-4 bg-purple-50 rounded border-2 border-purple-200">
+              <h3 className="font-bold mb-3 text-purple-900">🌍 雯姐学习法 - 语言包</h3>
+              <p className="text-xs text-purple-700 mb-3">
+                选择该用户可使用的语言包，保存后立即生效
+              </p>
+              <div className="grid grid-cols-2 gap-2">
+                {LANGUAGE_PACKAGES.map(lang => (
+                  <label
+                    key={lang.id}
+                    className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer transition-all ${
+                      languagePackages.includes(lang.id)
+                        ? 'bg-purple-100 border-purple-500 shadow-sm'
+                        : 'bg-white border-purple-300 hover:bg-purple-50'
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={languagePackages.includes(lang.id)}
+                      onChange={() => toggleLanguagePackage(lang.id)}
+                      className="rounded"
+                    />
+                    <span className="text-lg">{lang.flag}</span>
+                    <span className="text-sm font-medium">{lang.name}</span>
+                  </label>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* 有效期 */}
           <div>

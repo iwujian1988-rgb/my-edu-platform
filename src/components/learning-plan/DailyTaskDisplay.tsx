@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
-import { CheckCircle, Zap, RotateCcw, AlertCircle, X, Trash2, Edit } from 'lucide-react'
+import { CheckCircle, Zap, RotateCcw, AlertCircle, X, Trash2, Edit, HelpCircle } from 'lucide-react'
 import { toast } from 'sonner'
 import { useTheme } from '@/contexts/ThemeContext'
-import type { TodayTaskResponse, LearningPlan } from '@/types/learning-plan'
+import type { TodayTaskResponse, LearningPlan, LearningPlanPhase } from '@/types/learning-plan'
 import { deleteLearningPlan } from '@/services/learning-plan'
 
 interface Props {
@@ -173,13 +173,28 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
   }
 
   useEffect(() => {
-    fetchTodayTask()
-  // 🔥 监听路由变化和计划变化：当从学习完成页面返回首页时，自动刷新数据
-  }, [bookId, planId, pathname])
+    let isMounted = true
+
+    const loadTask = async () => {
+      if (!isMounted) return
+      await fetchTodayTask(false, false)
+    }
+
+    loadTask()
+
+    return () => {
+      isMounted = false
+    }
+  // 🔥 只在 bookId 或 planId 变化时才重新请求
+  }, [bookId, planId])
 
   // 🔥 监听窗口焦点：当用户从其他标签页返回时，自动刷新数据（仅在缓存过期时）
   useEffect(() => {
+    let isMounted = true
+
     const handleFocus = () => {
+      if (!isMounted) return
+
       const now = Date.now()
       const cacheAge = now - lastFetchTimeRef.current
 
@@ -193,7 +208,10 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
     }
 
     window.addEventListener('focus', handleFocus)
-    return () => window.removeEventListener('focus', handleFocus)
+    return () => {
+      isMounted = false
+      window.removeEventListener('focus', handleFocus)
+    }
   }, [bookId, planId])
 
   // 🔧 修复：确保 completed_words, new_words, review_words 是数组
@@ -209,13 +227,31 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
   const newWordsArray = normalizeToArray(taskData?.new_words)
   const reviewWordsArray = normalizeToArray(taskData?.review_words)
 
+  // [Upgrade] 两阶段系统：新增字段统计
+  const markedWordsArray = normalizeToArray(taskData?.marked_words)
+  const knownWordsArray = normalizeToArray(taskData?.known_words)
+
   // 计算进度
-  const completedCount = completedWordsArray.length
+  const completedCount = completedWordsArray.length  // [Legacy] v4.0: 已标记"认识"的词
+  const markedCount = markedWordsArray.length      // [Upgrade] 两阶段: 已标记（任何状态）的词
+  const knownCount = knownWordsArray.length        // [Upgrade] 两阶段: 已标记"认识"的词
+
   const totalCount = taskData?.total_words || 0
   const newWordsCount = newWordsArray.length
   const reviewWordsCount = reviewWordsArray.length
-  const realProgress = totalCount > 0 ? Math.round((completedCount / totalCount) * 100) : 0
-  const isAllCompleted = taskData?.all_completed || false
+
+  // [Upgrade] 两阶段系统：优先使用 marked_count 计算进度
+  const primaryCount = markedCount > 0 ? markedCount : completedCount
+  const realProgress = totalCount > 0 ? Math.round((primaryCount / totalCount) * 100) : 0
+
+  // [Upgrade] 两阶段系统：完成检测逻辑（根据阶段使用不同字段）
+  const currentPhase = taskData?.phase || 'legacy'
+  const isAllCompleted =
+    currentPhase === 'review'
+      ? false  // [Upgrade] 复习阶段：永不完成
+      : currentPhase === 'learning'
+        ? taskData?.all_marked || false  // [Upgrade] 学习阶段：全部标记过
+        : taskData?.all_completed || false  // [Legacy] v4.0: 全部标记为"认识"
 
   // 🔍 调试日志
   console.log('[DailyTaskDisplay] 进度计算:', {
@@ -316,13 +352,17 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
 
         {/* A. 内部 Header: Day & 删除按钮 */}
         <div className="flex items-center justify-between">
-          {/* 预估结束时间 */}
-          {plan?.estimated_end_date && (
-            <div className="text-[9px] font-mono font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wide">
-              预估结束：{new Date(plan.estimated_end_date).toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' })}
-            </div>
-          )}
+          {/* 左侧：预估结束时间 */}
+          <div className="flex items-center gap-2">
+            {/* 预估结束时间 */}
+            {plan?.estimated_end_date && (
+              <div className="text-[9px] font-mono font-bold text-gray-400 dark:text-slate-500 uppercase tracking-wide">
+                预估结束：{new Date(plan.estimated_end_date).toLocaleDateString('zh-CN', { month: 'short', day: 'numeric' })}
+              </div>
+            )}
+          </div>
 
+          {/* 右侧：标签和操作按钮 */}
           <div className="flex items-center gap-2">
             <div className={`
               px-2 py-0.5 text-xs font-black border border-transparent
@@ -330,6 +370,28 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
             `}>
               DAY {taskData?.plan_day || 1}
             </div>
+
+            {/* [Upgrade] 两阶段系统：复习阶段标签 */}
+            {taskData?.phase === 'review' && (
+              <div className="px-2 py-0.5 text-[9px] font-black bg-purple-500 text-white rounded animate-pulse">
+                复习阶段
+              </div>
+            )}
+
+            {/* 记忆曲线帮助按钮 */}
+            <button
+              onClick={() => router.push('/guide/memory-curve')}
+              className="
+                p-1.5 rounded
+                text-gray-400 dark:text-gray-600
+                hover:text-green-600 dark:hover:text-green-400
+                hover:bg-green-50 dark:hover:bg-green-900/20
+                transition-all duration-200
+              "
+              title="了解记忆曲线原理"
+            >
+              <HelpCircle className="w-3.5 h-3.5" strokeWidth={2} />
+            </button>
 
             {/* 编辑按钮 */}
             <button
@@ -391,7 +453,12 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
           <div className="flex justify-between items-end mb-1.5 px-0.5">
             <span className="text-[10px] font-bold text-gray-400 dark:text-slate-600 uppercase">今日进度</span>
             <span className="text-[10px] font-mono font-bold text-gray-500 dark:text-slate-400">
-              {completedCount} / {totalCount} ({realProgress}%)
+              {/* [Upgrade] 两阶段系统：优先显示已标记格式，保留旧格式作为 fallback */}
+              {markedCount > 0 ? (
+                <>{primaryCount} / {totalCount} 已标记 ({knownCount}个认识)</>
+              ) : (
+                <>{completedCount} / {totalCount} ({realProgress}%)</>
+              )}
             </span>
           </div>
 
@@ -430,7 +497,11 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
                 <>
                   <Zap size={18} strokeWidth={3} fill="currentColor" className="text-black" />
                   <span className="text-sm font-black uppercase tracking-wide text-black">
-                    {animatedProgress > 0 ? '继续学习' : '开始专注学习'}
+                    {/* [Upgrade] 两阶段系统：根据阶段显示不同提示文本 */}
+                    {currentPhase === 'review'
+                      ? (animatedProgress > 0 ? '继续复习' : '开始复习')
+                      : (animatedProgress > 0 ? '继续学习' : '开始专注学习')
+                    }
                   </span>
                 </>
               )}

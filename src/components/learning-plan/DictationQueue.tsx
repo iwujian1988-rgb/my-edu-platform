@@ -12,6 +12,7 @@ import {
 import { markWord } from '@/services/learning-plan'
 import { useLearningPlanTTS } from '@/hooks/useLearningPlanTTS'
 import { useTheme } from '@/contexts/ThemeContext'
+import type { LearningPlanPhase } from '@/types/learning-plan'
 
 interface Word {
   id: string
@@ -26,8 +27,10 @@ interface Props {
   initialWords: Word[]
   bookId: string
   onComplete: () => void
-  totalOriginalWords?: number  // 🔧 新增：原始总单词数
-  completedOriginalWords?: number  // 🔧 新增：已完成单词数
+  totalOriginalWords?: number
+  completedOriginalWords?: number
+  phase?: LearningPlanPhase
+  isConsolidateMode?: boolean  // [Upgrade] 巩固模式
 }
 
 export function DictationQueue({
@@ -35,7 +38,9 @@ export function DictationQueue({
   bookId,
   onComplete,
   totalOriginalWords,
-  completedOriginalWords
+  completedOriginalWords,
+  phase = 'legacy',
+  isConsolidateMode = false  // [Upgrade] 巩固模式
 }: Props) {
   const router = useRouter()
   const { theme, mounted } = useTheme()
@@ -340,24 +345,30 @@ export function DictationQueue({
     // 🔥 先立即更新UI（乐观更新）
     const status = isCorrect ? 'known' : 'fuzzy'  // 🔧 改为 fuzzy，不是 unknown
 
-    if (status === 'known') {
-      // ✅ 答对：移出队列，显示反馈，1秒后切题
-      const nextWordId = queue.length > 1 ? queue[1]?.id : null  // 🔧 提前获取下一个单词ID
+    // [Upgrade] 两阶段系统：根据阶段使用不同的完成逻辑
+    if (phase === 'learning' || phase === 'review') {
+      // [Upgrade] 两阶段系统：任何标记都算完成（移出队列）
+      const nextWordId = queue.length > 1 ? queue[1]?.id : null
 
       // 🔧 设置切题标志（防止自动播放乱序）
       isTransitioningRef.current = true
-      console.log('[DictationQueue] 🔒 开始切题，锁定自动播放')
+      console.log('[DictationQueue] 🔒 两阶段系统 - 开始切题，锁定自动播放')
 
       setCompleted(prev => [...prev, wordBeingTested])
       setQueue(prev => prev.filter(w => w !== wordBeingTested))
-      console.log('[DictationQueue] ✅ Correct! Progress:', completed.length + 1, '/', totalCount)
+      console.log('[DictationQueue] ✅ 两阶段系统 - Progress:', completed.length + 1, '/', totalCount)
 
-      setFeedback('correct')
-      playCorrectSound()
+      setFeedback(isCorrect ? 'correct' : 'wrong')
+      setShowCorrectAnswer(!isCorrect)
+      if (isCorrect) {
+        playCorrectSound()
+      } else {
+        playErrorSound()
+      }
 
-      // 🔧 1秒后自动切题
+      // 1-3秒后自动切题（答对1秒，答错3秒）
       setTimeout(() => {
-        console.log('[DictationQueue] ✅ 答对切题:', {
+        console.log('[DictationQueue] ✅ 两阶段系统 - 切题:', {
           userInput,
           oldQueue: queue.length,
           completed: completed.length,
@@ -366,41 +377,75 @@ export function DictationQueue({
         setUserInput('')
         setFeedback(null)
         setShowCorrectAnswer(false)
-        // 🔧 不再需要 setCurrentIndex，因为始终使用 queue[0]
         setMarking(false)
 
-        // 🔧 解锁自动播放（给 React 一点时间重新渲染）
+        // 🔧 解锁自动播放
         setTimeout(() => {
           isTransitioningRef.current = false
           console.log('[DictationQueue] 🔓 切题完成，解锁自动播放')
         }, 100)
-      }, 1000)
+      }, isCorrect ? 1000 : 3000)
     } else {
-      // ❌ 答错：移到队尾，显示正确答案，3秒后切题
-      // 🔧 答错时不锁定（因为3秒足够队列更新完成，不应阻止自动播放）
-      setQueue(prev => {
-        const newQueue = [...prev]
-        const index = newQueue.findIndex(w => w === wordBeingTested)
-        if (index !== -1) {
-          const [word] = newQueue.splice(index, 1)
-          return [...newQueue, word]
-        }
-        return newQueue
-      })
-      console.log('[DictationQueue] ❌ Wrong! Word moved to end of queue')
+      // [Legacy] v4.0：只有"认识"才完成
+      if (status === 'known') {
+        // ✅ 答对：移出队列，显示反馈，1秒后切题
+        const nextWordId = queue.length > 1 ? queue[1]?.id : null
 
-      setFeedback('wrong')
-      setShowCorrectAnswer(true)
-      playErrorSound()
+        // 🔧 设置切题标志（防止自动播放乱序）
+        isTransitioningRef.current = true
+        console.log('[DictationQueue] 🔒 Legacy - 开始切题，锁定自动播放')
 
-      // 3秒后自动切题
-      setTimeout(() => {
-        setUserInput('')
-        setFeedback(null)
-        setShowCorrectAnswer(false)
-        // 🔧 不再需要 setCurrentIndex，因为始终使用 queue[0]
-        setMarking(false)
-      }, 3000)
+        setCompleted(prev => [...prev, wordBeingTested])
+        setQueue(prev => prev.filter(w => w !== wordBeingTested))
+        console.log('[DictationQueue] ✅ Legacy - Correct! Progress:', completed.length + 1, '/', totalCount)
+
+        setFeedback('correct')
+        playCorrectSound()
+
+        // 🔧 1秒后自动切题
+        setTimeout(() => {
+          console.log('[DictationQueue] ✅ Legacy - 答对切题:', {
+            userInput,
+            oldQueue: queue.length,
+            completed: completed.length,
+            下一个单词: nextWordId
+          })
+          setUserInput('')
+          setFeedback(null)
+          setShowCorrectAnswer(false)
+          setMarking(false)
+
+          // 🔧 解锁自动播放
+          setTimeout(() => {
+            isTransitioningRef.current = false
+            console.log('[DictationQueue] 🔓 切题完成，解锁自动播放')
+          }, 100)
+        }, 1000)
+      } else {
+        // ❌ 答错：移到队尾，显示正确答案，3秒后切题
+        setQueue(prev => {
+          const newQueue = [...prev]
+          const index = newQueue.findIndex(w => w === wordBeingTested)
+          if (index !== -1) {
+            const [word] = newQueue.splice(index, 1)
+            return [...newQueue, word]
+          }
+          return newQueue
+        })
+        console.log('[DictationQueue] ❌ Legacy - Wrong! Word moved to end of queue')
+
+        setFeedback('wrong')
+        setShowCorrectAnswer(true)
+        playErrorSound()
+
+        // 3秒后自动切题
+        setTimeout(() => {
+          setUserInput('')
+          setFeedback(null)
+          setShowCorrectAnswer(false)
+          setMarking(false)
+        }, 3000)
+      }
     }
 
     // 🌐 后台调用API（不阻塞UI）
@@ -417,11 +462,26 @@ export function DictationQueue({
     })
 
     // 检查是否全部完成
-    if (status === 'known' && completed.length + 1 === totalCount) {
-      toast.success('🎉 太棒了！今日任务全部完成！')
-      setTimeout(() => {
-        onComplete()
-      }, 1500)
+    // [Upgrade] 两阶段系统：根据阶段使用不同的完成检测逻辑
+    const willCompleteAll = completed.length + 1 === totalCount
+    if (phase === 'review') {
+      // [Upgrade] 复习阶段：永不完成（不显示完成提示）
+    } else if (phase === 'learning') {
+      // [Upgrade] 学习阶段：全部处理过即完成（任何状态）
+      if (willCompleteAll) {
+        toast.success('🎉 学习阶段完成！所有单词都已标记过')
+        setTimeout(() => {
+          onComplete()
+        }, 1500)
+      }
+    } else {
+      // [Legacy] v4.0：只有全部标记为"认识"才算完成
+      if (status === 'known' && willCompleteAll) {
+        toast.success('🎉 太棒了！今日任务全部完成！')
+        setTimeout(() => {
+          onComplete()
+        }, 1500)
+      }
     }
   }
 
@@ -482,29 +542,33 @@ export function DictationQueue({
           </div>
         </div>
 
-        {/* 进度条 */}
-        <div className="max-w-2xl mx-auto mb-2">
-          <div className="flex justify-between text-xs mb-1 text-gray-500 dark:text-gray-400">
-            <span>{completedCount + initialCompletedCount}/{totalCount} 已完成</span>
-            <span className="font-mono">{((completedCount + initialCompletedCount) / totalCount * 100).toFixed(0)}%</span>
+        {/* 进度条 - [Upgrade] 巩固模式下隐藏 */}
+        {!isConsolidateMode && (
+          <div className="max-w-2xl mx-auto mb-2">
+            <div className="flex justify-between text-xs mb-1 text-gray-500 dark:text-gray-400">
+              <span>{completedCount + initialCompletedCount}/{totalCount} 已完成</span>
+              <span className="font-mono">{((completedCount + initialCompletedCount) / totalCount * 100).toFixed(0)}%</span>
+            </div>
+            <div className="w-full h-2 rounded-full overflow-hidden bg-gray-200 dark:bg-slate-800">
+              <div
+                className="h-full bg-[#B4F416] transition-all duration-300"
+                style={{ width: `${((completedCount + initialCompletedCount) / totalCount * 100)}%` }}
+              />
+            </div>
           </div>
-          <div className="w-full h-2 rounded-full overflow-hidden bg-gray-200 dark:bg-slate-800">
-            <div
-              className="h-full bg-[#B4F416] transition-all duration-300"
-              style={{ width: `${((completedCount + initialCompletedCount) / totalCount * 100)}%` }}
-            />
-          </div>
-        </div>
+        )}
 
-        {/* 队列状态 */}
-        <div className="max-w-2xl mx-auto flex items-center gap-3 text-xs">
-          <div className="flex items-center gap-1 px-2 py-1 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400">
-            <span className="font-mono">✅ 已完成: {completedCount + initialCompletedCount}</span>
+        {/* 队列状态 - [Upgrade] 巩固模式下隐藏 */}
+        {!isConsolidateMode && (
+          <div className="max-w-2xl mx-auto flex items-center gap-3 text-xs">
+            <div className="flex items-center gap-1 px-2 py-1 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400">
+              <span className="font-mono">✅ 已完成: {completedCount + initialCompletedCount}</span>
+            </div>
+            <div className="flex items-center gap-1 px-2 py-1 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400">
+              <span className="font-mono">🔄 循环中: {queue.length}</span>
+            </div>
           </div>
-          <div className="flex items-center gap-1 px-2 py-1 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400">
-            <span className="font-mono">🔄 循环中: {queue.length}</span>
-          </div>
-        </div>
+        )}
       </div>
 
       {/* 听写区域 */}

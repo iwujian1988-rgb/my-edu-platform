@@ -32,6 +32,11 @@ interface StatsData {
   streakDays: number
   tomorrowNewWords: number
   tomorrowReviewWords: number
+  // [Upgrade] 两阶段系统：未掌握单词统计
+  fuzzyWords?: number
+  unknownWords?: number
+  notMasteredCount?: number
+  hasUnmasteredWords?: boolean
 }
 
 export default function LearningCompleteClient() {
@@ -72,10 +77,36 @@ export default function LearningCompleteClient() {
 
       const task = taskResponse.data
 
+      // [Upgrade] 两阶段系统：使用 marked_words 计算进度
+      const normalizeToArray = <T>(value: T[] | Record<string, T> | undefined | null): T[] => {
+        if (!value) return []
+        if (Array.isArray(value)) return value
+        return Object.values(value)
+      }
+
+      const completedWordsArray = normalizeToArray(task.completed_words)
+      const markedWordsArray = normalizeToArray(task.marked_words)
+      const fuzzyWordsArray = normalizeToArray(task.fuzzy_words)
+      const unknownWordsArray = normalizeToArray(task.unknown_words)
+
+      const newWordsArray = normalizeToArray(task.new_words)
+      const reviewWordsArray = normalizeToArray(task.review_words)
+
       // 计算今日完成的单词数
-      const totalCompleted = task.completed_words.length
-      const newCompleted = task.new_words.filter(w => task.completed_words.includes(w.id)).length
-      const reviewCompleted = task.review_words.filter(w => task.completed_words.includes(w.id)).length
+      const totalCompleted = markedWordsArray.length  // [Upgrade] 两阶段：使用 marked_words
+      const newCompleted = newWordsArray.filter(w => {
+        const wordId = typeof w === 'string' ? w : w.id
+        return completedWordsArray.includes(wordId)
+      }).length
+      const reviewCompleted = reviewWordsArray.filter(w => {
+        const wordId = typeof w === 'string' ? w : w.id
+        return completedWordsArray.includes(wordId)
+      }).length
+
+      // [Upgrade] 两阶段系统：未掌握单词统计
+      const fuzzyCount = fuzzyWordsArray.length
+      const unknownCount = unknownWordsArray.length
+      const notMasteredCount = fuzzyCount + unknownCount
 
       // 学习进度数据
       const progressData = progressResponse.data || {
@@ -102,7 +133,12 @@ export default function LearningCompleteClient() {
         remainingWords: progressData.totalWords - progressData.learnedWords,
         streakDays: progressData.streakDays,
         tomorrowNewWords,
-        tomorrowReviewWords
+        tomorrowReviewWords,
+        // [Upgrade] 两阶段系统：未掌握单词
+        fuzzyWords: fuzzyCount,
+        unknownWords: unknownCount,
+        notMasteredCount,
+        hasUnmasteredWords: notMasteredCount > 0
       })
     } catch (error: any) {
       console.error('Failed to load stats:', error)
@@ -166,14 +202,76 @@ export default function LearningCompleteClient() {
             <Trophy className="w-14 h-14 text-white" />
           </div>
 
-          <h1 className="text-3xl md:text-4xl font-black" style={{ color: 'var(--text-primary)' }}>
-            🎉 今日任务完成！
-          </h1>
-
           <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
-            太棒了！所有单词都标记"认识"了
+            {stats.hasUnmasteredWords
+              ? `今日学习已完成！但还有 ${stats.notMasteredCount} 个单词需要巩固`
+              : '太棒了！所有单词都标记"认识"了'
+            }
           </p>
         </div>
+
+        {/* [Upgrade] 巩固模式入口卡片 */}
+        {stats.hasUnmasteredWords && (
+          <div className="p-6 border-2 rounded-xl" style={{
+            backgroundColor: 'var(--card-bg)',
+            borderColor: '#f59e0b',
+            borderWidth: '3px'
+          }}>
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center">
+                <span className="text-2xl">💪</span>
+              </div>
+              <div className="flex-1">
+                <h2 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                  继续巩固学习
+                </h2>
+                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                  专注学习未掌握的单词
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 dark:bg-slate-800 rounded-lg p-4 mb-4 space-y-2">
+              <div className="flex justify-between items-center text-sm">
+                <span style={{ color: 'var(--text-secondary)' }}>模糊单词</span>
+                <span className="font-mono font-bold" style={{ color: '#f59e0b' }}>
+                  {stats.fuzzyWords} 个
+                </span>
+              </div>
+              <div className="flex justify-between items-center text-sm">
+                <span style={{ color: 'var(--text-secondary)' }}>不认识单词</span>
+                <span className="font-mono font-bold" style={{ color: '#ef4444' }}>
+                  {stats.unknownWords} 个
+                </span>
+              </div>
+              <div className="pt-2 border-t text-xs" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
+                建议继续学习这些单词，加强记忆效果
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-3">
+              <button
+                onClick={() => {
+                  window.location.href = `/learning-plan/learning-flow?bookId=${bookId}&mode=flashcard&consolidate=true`
+                }}
+                className="px-4 py-3 text-sm font-bold text-black rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+              >
+                <span>🃏</span>
+                <span>卡片巩固</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  window.location.href = `/learning-plan/learning-flow?bookId=${bookId}&mode=dictation&consolidate=true`
+                }}
+                className="px-4 py-3 text-sm font-bold text-black rounded-xl bg-gradient-to-r from-blue-400 to-indigo-500 hover:from-blue-500 hover:to-indigo-600 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
+              >
+                <span>✍️</span>
+                <span>默写巩固</span>
+              </button>
+            </div>
+          </div>
+        )}
 
         {/* 统计卡片 */}
         <div className="grid grid-cols-2 gap-4">
@@ -193,20 +291,22 @@ export default function LearningCompleteClient() {
             </div>
           </div>
 
-          <div className="p-6 border-2 rounded-xl text-center" style={{
-            backgroundColor: 'var(--card-bg)',
-            borderColor: 'var(--border)'
-          }}>
-            <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: '#f59e0b' }}>
-              {stats.streakDays}
+          {stats.streakDays > 0 && (
+            <div className="p-6 border-2 rounded-xl text-center" style={{
+              backgroundColor: 'var(--card-bg)',
+              borderColor: 'var(--border)'
+            }}>
+              <div className="text-3xl md:text-4xl font-black mb-2" style={{ color: '#f59e0b' }}>
+                {stats.streakDays}
+              </div>
+              <div className="text-sm font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>
+                连续打卡
+              </div>
+              <div className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
+                天
+              </div>
             </div>
-            <div className="text-sm font-bold mb-1" style={{ color: 'var(--text-secondary)' }}>
-              连续打卡
-            </div>
-            <div className="text-xs font-mono" style={{ color: 'var(--text-muted)' }}>
-              天
-            </div>
-          </div>
+          )}
         </div>
 
         {/* 学习计划进度 */}
@@ -309,77 +409,6 @@ export default function LearningCompleteClient() {
               )
             })}
           </div>
-        </div>
-
-        {/* 明日预告 */}
-        <div className="p-6 border-2 rounded-xl" style={{
-          backgroundColor: 'var(--card-bg)',
-          borderColor: 'var(--border)'
-        }}>
-          <div className="flex items-center gap-2 mb-4">
-            <Calendar className="w-5 h-5" style={{ color: '#6366f1' }} />
-            <h2 className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
-              📅 明日预告
-            </h2>
-          </div>
-
-          <div className="space-y-3">
-            <div className="flex justify-between items-center">
-              <span style={{ color: 'var(--text-secondary)' }}>学习日期</span>
-              <span className="font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-                第 {stats.planDay + 1} 天
-              </span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span style={{ color: 'var(--text-secondary)' }}>新学单词</span>
-              <span className="font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-                ~{stats.tomorrowNewWords} 个
-              </span>
-            </div>
-            <div className="flex justify-between items-center">
-              <span style={{ color: 'var(--text-secondary)' }}>复习单词</span>
-              <span className="font-mono font-bold" style={{ color: 'var(--text-primary)' }}>
-                {stats.tomorrowReviewWords} 个
-              </span>
-            </div>
-            <div className="pt-2 border-t text-xs" style={{ borderColor: 'var(--border)', color: 'var(--text-muted)' }}>
-              * 复习词基于今天标记"认识"的单词
-            </div>
-          </div>
-        </div>
-
-        {/* 操作按钮 */}
-        <div className="space-y-3 pt-4">
-          <button
-            onClick={async () => {
-              // 🔥 刷新路由数据（确保首页显示最新的今日任务进度）
-              router.refresh()
-              // 等待刷新生效
-              await new Promise(resolve => setTimeout(resolve, 100))
-              // 然后返回首页
-              router.push('/')
-            }}
-            className="w-full px-6 py-4 text-base font-bold text-white rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl flex items-center justify-center gap-2"
-          >
-            <Home className="w-5 h-5" />
-            <span>返回首页</span>
-          </button>
-
-          <button
-            onClick={() => {
-              // TODO: 实现分享功能
-              toast.info('分享功能开发中...')
-            }}
-            className="w-full px-6 py-4 text-base font-bold rounded-xl border-2 transition-all hover:opacity-80 flex items-center justify-center gap-2"
-            style={{
-              borderColor: 'var(--border)',
-              backgroundColor: 'var(--card-bg)',
-              color: 'var(--text-primary)'
-            }}
-          >
-            <Share2 className="w-5 h-5" />
-            <span>分享成就</span>
-          </button>
         </div>
 
       </div>

@@ -368,9 +368,58 @@ export async function POST(request: NextRequest) {
         // 检查是否全部完成
         allCompleted = completed.length === allWords.length
 
+        // [Upgrade] 两阶段系统：维护新的标记字段
+        let marked = Array.isArray(todayTask.marked_words)
+          ? todayTask.marked_words
+          : []
+        let known = Array.isArray(todayTask.known_words)
+          ? todayTask.known_words
+          : []
+        let fuzzy = Array.isArray(todayTask.fuzzy_words)
+          ? todayTask.fuzzy_words
+          : []
+        let unknown = Array.isArray(todayTask.unknown_words)
+          ? todayTask.unknown_words
+          : []
+
+        // 根据状态更新对应的字段
+        // 先从所有列表中移除该词
+        marked = marked.filter((id: string) => id !== wordId)
+        known = known.filter((id: string) => id !== wordId)
+        fuzzy = fuzzy.filter((id: string) => id !== wordId)
+        unknown = unknown.filter((id: string) => id !== wordId)
+
+        // 添加到 marked（任何状态都算已标记）
+        if (!marked.includes(wordId)) {
+          marked.push(wordId)
+        }
+
+        // 根据状态添加到对应列表
+        if (status === 'known') {
+          if (!known.includes(wordId)) {
+            known.push(wordId)
+          }
+        } else if (status === 'fuzzy') {
+          if (!fuzzy.includes(wordId)) {
+            fuzzy.push(wordId)
+          }
+        } else if (status === 'unknown') {
+          if (!unknown.includes(wordId)) {
+            unknown.push(wordId)
+          }
+        }
+
+        // [Upgrade] 两阶段系统：检查是否全部标记过
+        const allMarked = marked.length === allWords.length
+
         const updateData: any = {
           completed_words: completed,
+          marked_words: marked,
+          known_words: known,
+          fuzzy_words: fuzzy,
+          unknown_words: unknown,
           all_completed: allCompleted,
+          all_marked: allMarked,  // [Upgrade] 两阶段系统
           updated_at: new Date().toISOString()
         }
 

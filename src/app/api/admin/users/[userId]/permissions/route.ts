@@ -19,6 +19,7 @@ export async function PUT(
     const {
       feature_permissions,
       book_permissions,
+      language_packages,
       permission_expires_at,
       change_reason
     } = body
@@ -32,7 +33,7 @@ export async function PUT(
     // 获取用户当前权限
     const { data: currentUser } = await supabase
       .from('users')
-      .select('feature_permissions, book_permissions, permission_expires_at')
+      .select('feature_permissions, book_permissions, language_packages, permission_expires_at')
       .eq('id', userId)
       .single()
 
@@ -46,6 +47,7 @@ export async function PUT(
       .update({
         feature_permissions: feature_permissions || [],
         book_permissions: book_permissions || [],
+        language_packages: language_packages || [],
         permission_expires_at: permission_expires_at || null
       })
       .eq('id', userId)
@@ -80,11 +82,13 @@ export async function PUT(
         change_reason,
         old_permissions: {
           feature_count: ((currentUser as any).feature_permissions || []).length,
-          book_count: ((currentUser as any).book_permissions || []).length
+          book_count: ((currentUser as any).book_permissions || []).length,
+          language_count: ((currentUser as any).language_packages || []).length
         },
         new_permissions: {
           feature_count: (feature_permissions || []).length,
-          book_count: (book_permissions || []).length
+          book_count: (book_permissions || []).length,
+          language_count: (language_packages || []).length
         }
       }
     )

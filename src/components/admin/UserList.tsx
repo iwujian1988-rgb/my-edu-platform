@@ -21,6 +21,10 @@ interface User {
   ban_reason: string | null
   is_banned: boolean | null
   invitation_code_id: string | null
+  invitation_packages: {
+    id: string
+    name: string
+  } | null
 }
 
 interface Package {
@@ -196,6 +200,7 @@ export function UserList({
                 <thead className="bg-gray-50 border-b-[2px] border-gray-200">
                   <tr>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">用户</th>
+                    <th className="text-left py-4 px-6 font-bold text-gray-700">所属套餐</th>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">注册时间</th>
                     <th className="text-left py-4 px-6 font-bold text-gray-700">状态</th>
                     <th className="text-right py-4 px-6 font-bold text-gray-700">操作</th>
@@ -218,6 +223,17 @@ export function UserList({
                             </p>
                           </div>
                         </div>
+                      </td>
+
+                      {/* 套餐信息 */}
+                      <td className="py-4 px-6">
+                        {user.invitation_packages ? (
+                          <span className="inline-flex items-center px-3 py-1 bg-purple-50 rounded-full border-[2px] border-purple-200">
+                            <span className="text-sm font-bold text-purple-700">{user.invitation_packages.name}</span>
+                          </span>
+                        ) : (
+                          <span className="text-sm text-gray-400">无套餐</span>
+                        )}
                       </td>
 
                       {/* 注册时间 */}
@@ -284,6 +300,17 @@ export function UserList({
                       <div className="px-2 py-1 bg-green-50 rounded-full border-[2px] border-green-200">
                         <span className="text-xs font-bold text-green-600">正常</span>
                       </div>
+                    )}
+                  </div>
+
+                  {/* 套餐信息 */}
+                  <div className="mb-3">
+                    {user.invitation_packages ? (
+                      <span className="inline-flex items-center px-2 py-1 bg-purple-50 rounded-full border-[2px] border-purple-200">
+                        <span className="text-xs font-bold text-purple-700">{user.invitation_packages.name}</span>
+                      </span>
+                    ) : (
+                      <span className="text-xs text-gray-400">无套餐</span>
                     )}
                   </div>
 

@@ -224,8 +224,8 @@ export async function PUT(request: NextRequest) {
 
     // 更新学习计划 ✨ v4.0
     const updatedPlan = await updatePlanServer(user.id, planId, {
-      daily_new_words: dailyNewWords,
-      review_ratio: reviewRatio
+      dailyNewWords,
+      reviewRatio
     })
 
     return NextResponse.json({

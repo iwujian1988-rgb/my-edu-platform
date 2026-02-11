@@ -14,6 +14,11 @@ import type {
   TodayTaskResponse,
   CreateLearningPlanRequest
 } from '@/types/learning-plan'
+// [Upgrade] 两阶段系统：导入 Strategy 模式
+import {
+  getPhaseStrategyForUser,
+  type PhaseStrategy
+} from '@/lib/learning-plan-strategies'
 
 // ============================================
 // 核心函数：创建学习计划
@@ -57,13 +62,23 @@ export async function createLearningPlan(
       total_words: book.total_words,
       start_date: new Date().toISOString(),
       estimated_end_date: null, // ✨ v4.0: 动态计算
-      status: 'active'
+      status: 'active',
+      phase: 'learning'  // [Upgrade] 两阶段系统：默认启用学习阶段
     })
     .select()
     .single()
 
   if (planError || !plan) {
     throw new Error(`创建学习计划失败: ${planError?.message}`)
+  }
+
+  // ✨ 自动生成今日任务（提升用户体验）
+  try {
+    await generateTodayTask(userId, request.bookId)
+    console.log('[createLearningPlan] ✅ 自动生成今日任务成功')
+  } catch (error: any) {
+    // 生成任务失败不影响计划创建，只记录错误
+    console.error('[createLearningPlan] ⚠️ 自动生成今日任务失败:', error)
   }
 
   return plan as LearningPlan
@@ -131,11 +146,14 @@ export async function generateTodayTask(
     return await enrichTodayTaskWithWords(userId, bookId, existingTask as DailyTaskRecord)
   }
 
+  // [Upgrade] 两阶段系统：获取用户对应的策略
+  const strategy: PhaseStrategy = await getPhaseStrategyForUser(userId, bookId)
+
   // ✨ v4.0 新逻辑：固定数量的新学词
   const newWordsCount = learningPlan.daily_new_words
 
-  // 3. 获取新学单词（从未学过的，只看 known 状态）
-  const newWords = await getNewWordsForPlan(userId, bookId, newWordsCount)
+  // 3. [Upgrade] 两阶段系统：通过 Strategy 获取新学单词（支持新旧逻辑）
+  const newWords = await strategy.getNewWords(userId, bookId, newWordsCount)
 
   // 4. 查询昨天未完成的词（优先作为今天的复习词）✨ v4.0
   const yesterday = new Date(now)
@@ -162,10 +180,10 @@ export async function generateTodayTask(
   const expectedReviewCount = newWordsCount * learningPlan.review_ratio
   const remainingReviewSlots = expectedReviewCount - yesterdayUncompletedWords.length
 
-  // 6. 只获取需要的复习词数量（避免查询大量数据）✨ v4.0 优化
+  // 6. [Upgrade] 两阶段系统：通过 Strategy 获取复习词（支持新旧逻辑）
   const dueReviewWordsLimit = Math.max(0, remainingReviewSlots)
   const allDueReviewWords = dueReviewWordsLimit > 0
-    ? await getDueReviewWords(userId, bookId, dueReviewWordsLimit)
+    ? await strategy.getReviewWords(userId, bookId, dueReviewWordsLimit)
     : []
 
   // 7. 合并复习词（昨天未完成的优先）✨ v4.0
@@ -176,6 +194,19 @@ export async function generateTodayTask(
 
   // 8. 最终复习词（二次保险，确保不超过预期数量）✨ v4.0 优化
   const limitedReviewWords = allReviewWords.slice(0, expectedReviewCount)
+
+  // [Upgrade] 两阶段系统：检测是否需要切换到复习阶段
+  if (learningPlan.phase === 'learning' || learningPlan.phase === 'legacy') {
+    const isCompleted = await strategy.isCompleted(userId, bookId)
+    if (isCompleted) {
+      console.log('[generateTodayTask] 学习阶段完成，切换到复习阶段')
+      // 调用数据库函数切换阶段
+      await supabase.rpc('transition_to_review_phase', {
+        p_user_id: userId,
+        p_book_id: bookId
+      })
+    }
+  }
 
   // 8. 计算是第几天（查询之前的任务数量 + 1）
   const { count: previousTasksCount } = await supabase
@@ -243,6 +274,8 @@ export async function generateTodayTask(
 
 /**
  * 为今日任务添加单词详情（优化版本 - 并行查询）
+ *
+ * [Upgrade] 两阶段系统：添加新字段（phase, marked_words, known_words, etc.）
  */
 async function enrichTodayTaskWithWords(
   userId: string,
@@ -251,6 +284,17 @@ async function enrichTodayTaskWithWords(
 ): Promise<TodayTaskResponse> {
   const supabase = await createClient()
 
+  // [Upgrade] 两阶段系统：查询当前阶段
+  const { data: plan } = await supabase
+    .from('learning_plans')
+    .select('phase')
+    .eq('user_id', userId)
+    .eq('book_id', bookId)
+    .eq('status', 'active')
+    .single()
+
+  const currentPhase = plan?.phase || 'legacy'
+
   // 合并所有单词 ID
   const allWordIds = [...task.new_words, ...task.review_words]
 
@@ -258,19 +302,31 @@ async function enrichTodayTaskWithWords(
     return {
       ...task,
       new_words: [],
-      review_words: []
+      review_words: [],
+      // [Upgrade] 两阶段系统：添加新字段
+      phase: currentPhase,
+      marked_words: [],
+      known_words: [],
+      fuzzy_words: [],
+      unknown_words: []
     }
   }
 
+  // 🔧 计算今天的时间范围（用于统计今日学习记录）
+  const todayStart = new Date()
+  todayStart.setHours(0, 0, 0, 0)
+  const todayEnd = new Date()
+  todayEnd.setHours(23, 59, 59, 999)
+
   // ⚡ 性能优化：并行查询所有需要的数据
-  const [wordsResult, progressResult, scheduleResult] = await Promise.all([
+  const [wordsResult, progressResult, scheduleResult, todayProgressResult] = await Promise.all([
     // 查询单词详情
     supabase
       .from('words')
       .select('id, word, phonetic, definition, example_sentence')
       .in('id', allWordIds),
 
-    // 查询单词状态
+    // 查询单词状态（所有历史记录，用于显示单词的当前状态）
     supabase
       .from('word_progress')
       .select('word_id, status, practice_count')
@@ -284,7 +340,17 @@ async function enrichTodayTaskWithWords(
       .select('word_id, review_count, next_review_date')
       .eq('user_id', userId)
       .eq('book_id', bookId)
+      .in('word_id', allWordIds),
+
+    // 🔧 FIX: 只查询今天创建的学习记录（用于统计今日已标记）
+    supabase
+      .from('word_progress')
+      .select('word_id, status')
+      .eq('user_id', userId)
+      .eq('book_id', bookId)
       .in('word_id', allWordIds)
+      .gte('created_at', todayStart.toISOString())
+      .lte('created_at', todayEnd.toISOString())
   ])
 
   const { data: words, error: wordsError } = wordsResult
@@ -295,6 +361,21 @@ async function enrichTodayTaskWithWords(
   // 构建映射
   const progressMap = new Map(progressResult.data?.map(p => [p.word_id, p]) || [])
   const scheduleMap = new Map(scheduleResult.data?.map(s => [s.word_id, s]) || [])
+
+  // [Upgrade] 两阶段系统：统计各状态的单词ID（只统计今天的学习记录）
+  const markedWordIds: string[] = []
+  const knownWordIds: string[] = []
+  const fuzzyWordIds: string[] = []
+  const unknownWordIds: string[] = []
+
+  // 🔧 FIX: 只统计今天创建的学习记录，而不是所有历史记录
+  // 这样可以避免：今天第一次使用，但显示"15/35 已标记"的问题
+  todayProgressResult.data?.forEach(p => {
+    markedWordIds.push(p.word_id)
+    if (p.status === 'known') knownWordIds.push(p.word_id)
+    else if (p.status === 'fuzzy') fuzzyWordIds.push(p.word_id)
+    else if (p.status === 'unknown') unknownWordIds.push(p.word_id)
+  })
 
   // 组装新学词
   const newWordsWithStatus: WordWithStatus[] = task.new_words
@@ -341,7 +422,13 @@ async function enrichTodayTaskWithWords(
   return {
     ...task,
     new_words: newWordsWithStatus,
-    review_words: reviewWordsWithStatus
+    review_words: reviewWordsWithStatus,
+    // [Upgrade] 两阶段系统：添加新字段（保持向后兼容）
+    phase: currentPhase,
+    marked_words: markedWordIds,
+    known_words: knownWordIds,
+    fuzzy_words: fuzzyWordIds,
+    unknown_words: unknownWordIds
   }
 }
 

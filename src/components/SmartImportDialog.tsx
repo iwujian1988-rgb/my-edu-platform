@@ -34,6 +34,7 @@ export function SmartImportDialog({
   const [wordsText, setWordsText] = useState('')
   const [selectedChapterId, setSelectedChapterId] = useState<string>('')
   const [isImporting, setIsImporting] = useState(false)
+  const [importProgress, setImportProgress] = useState('正在连接服务器...')
   const [importResults, setImportResults] = useState<ImportResult[]>([])
   const [quota, setQuota] = useState<{ used: number; remaining: number; limit: number } | null>(null)
   const [error, setError] = useState('')
@@ -57,30 +58,37 @@ export function SmartImportDialog({
       setWordsText('')
       setImportResults([])
       setError('')
+      setImportProgress('')
       setSelectedChapterId('')
     }
   }, [isOpen])
 
-  // 解析输入的单词
-  const parseWords = (): string[] => {
+  // 解析输入的单词（支持中英文逗号、换行符）
+  const parseWords = (): { unique: string[]; original: string[]; duplicateCount: number } => {
     const words = wordsText
-      .split(/[,\n\r]+/)
+      .split(/[,\uFF0C\n\r]+/)  // , 英文逗号, \uFF0C 中文逗号, \n\r 换行符
       .map(w => w.trim().toLowerCase())
       .filter(w => w.length > 0)
 
     // 去重
-    return Array.from(new Set(words))
+    const unique = Array.from(new Set(words))
+    return {
+      unique,
+      original: words,
+      duplicateCount: words.length - unique.length
+    }
   }
 
   // 验证单词格式
   const validateWord = (word: string): boolean => {
-    // 只允许字母和连字符
-    return /^[a-z][a-z-]*[a-z]$|^[a-z]$/.test(word)
+    // 允许单词、词组（字母、连字符、空格、单引号）
+    // 至少包含一个字母，可以包含连字符、空格和单引号
+    return /^[a-z][a-z\- '\s]*[a-z]$|^[a-z]$/.test(word) && word.trim().length > 0
   }
 
   // 执行导入
   const handleImport = async () => {
-    const words = parseWords()
+    const { unique: words, duplicateCount } = parseWords()
 
     if (words.length === 0) {
       setError('请输入至少一个单词')
@@ -101,6 +109,7 @@ export function SmartImportDialog({
     }
 
     setIsImporting(true)
+    setImportProgress(`正在导入 ${words.length} 个单词...`)
     setError('')
     setImportResults([])
 
@@ -121,25 +130,31 @@ export function SmartImportDialog({
         throw new Error(data.error || '导入失败')
       }
 
-      // 生成导入结果
+      // 🔧 修复：显示实际导入的数量，而不是请求数量
+      const imported = data.imported || 0
       const results: ImportResult[] = words.map(word => ({
         word,
         success: true
       }))
 
+      console.log(`[SmartImport] 请求: ${words.length}个, 实际导入: ${imported}个`)
+
+      setImportProgress(`正在保存到数据库...`)
       setImportResults(results)
 
       // 更新配额
       await fetchQuota()
 
-      // 如果成功,3秒后关闭对话框
+      // 如果成功,2秒后关闭对话框
       if (data.success) {
+        setImportProgress('导入完成！')
         setTimeout(() => {
           onSuccess?.()
           onClose()
         }, 2000)
       }
     } catch (err: any) {
+      setImportProgress('导入失败')
       setError(err.message)
     } finally {
       setIsImporting(false)
@@ -148,8 +163,15 @@ export function SmartImportDialog({
 
   if (!isOpen) return null
 
-  const words = parseWords()
-  const isValid = words.length > 0 && words.length <= 100
+  const { unique: words, original, duplicateCount } = parseWords()
+  const isValid = words.length > 0 && words.length <= 500
+
+  // 🔧 调试：检查按钮为什么被禁用
+  const disableReason = !quota ? '正在加载配额...'
+    : !isValid ? words.length === 0 ? '请输入单词' : words.length > 500 ? '超过500个限制' : '格式错误'
+    : words.length > (quota?.remaining || 0) ? `超过今日配额（剩余${quota?.remaining}个）`
+    : isImporting ? '导入中...' : ''
+
   const canImport = isValid && !isImporting && quota && words.length <= quota.remaining
 
   return (
@@ -235,12 +257,19 @@ export function SmartImportDialog({
               className="w-full px-4 py-3 border-2 border-slate-200 rounded focus:border-indigo-400 focus:outline-none font-mono text-sm disabled:opacity-50 disabled:cursor-not-allowed resize-none"
             />
             <div className="flex items-center justify-between mt-2">
-              <p className="text-xs text-slate-500">
-                已识别 {words.length} 个单词（最多100个）
-              </p>
-              {words.length > 100 && (
+              <div className="flex flex-col gap-1">
+                <p className="text-xs text-slate-500">
+                  已识别 {words.length} 个单词（最多500个）
+                </p>
+                {duplicateCount > 0 && (
+                  <p className="text-xs text-amber-600">
+                    ⚠️ 检测到 {duplicateCount} 个重复，已自动去重（输入{original.length}个）
+                  </p>
+                )}
+              </div>
+              {words.length > 500 && (
                 <p className="text-xs text-red-600 font-semibold">
-                  超过限制，请减少到100个以内
+                  超过限制，请减少到500个以内
                 </p>
               )}
             </div>
@@ -254,6 +283,26 @@ export function SmartImportDialog({
             </div>
           )}
 
+          {/* Import Progress */}
+          {isImporting && (
+            <div className="p-4 bg-blue-50 border border-blue-200 rounded">
+              <div className="flex items-center gap-3">
+                <Loader2 className="w-5 h-5 text-blue-600 animate-spin" />
+                <div className="flex-1">
+                  <p className="text-sm font-semibold text-blue-900 mb-1">
+                    正在处理中...
+                  </p>
+                  <p className="text-xs text-blue-700">
+                    {importProgress}
+                  </p>
+                  <p className="text-xs text-blue-600 mt-1">
+                    大约需要 1-2 分钟，请耐心等待
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* Import Results */}
           {importResults.length > 0 && (
             <div className="p-4 bg-green-50 border border-green-200 rounded">
@@ -261,7 +310,7 @@ export function SmartImportDialog({
                 <CheckCircle className="w-5 h-5 text-green-600" />
                 <span className="font-semibold text-green-900">导入成功</span>
                 <span className="text-sm text-green-700">
-                  ({importResults.length} 个单词)
+                  (已识别 {importResults.length} 个单词，正在保存...)
                 </span>
               </div>
               <div className="flex flex-wrap gap-2">
@@ -297,11 +346,17 @@ export function SmartImportDialog({
               onClick={handleImport}
               disabled={!canImport}
               className="flex-1 px-4 py-2.5 bg-indigo-600 text-white font-semibold rounded hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2"
+              title={disableReason || undefined}
             >
               {isImporting ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
                   导入中...
+                </>
+              ) : disableReason ? (
+                <>
+                  <Upload className="w-4 h-4" />
+                  {disableReason}
                 </>
               ) : (
                 <>

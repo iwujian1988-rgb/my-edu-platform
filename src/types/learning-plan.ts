@@ -15,8 +15,16 @@
 export type LearningPlanStatus = 'active' | 'paused' | 'completed' | 'delayed'
 
 /**
+ * 学习计划阶段枚举
+ *
+ * [Upgrade] 两阶段系统：新增阶段概念
+ */
+export type LearningPlanPhase = 'legacy' | 'learning' | 'review'
+
+/**
  * 学习计划实体（对应 learning_plans 表）
  * 版本: v4.0
+ * [Upgrade] 两阶段系统：添加 phase 字段
  */
 export interface LearningPlan {
   id: string
@@ -29,6 +37,9 @@ export interface LearningPlan {
   estimated_end_date?: string  // 预计结束日期（动态更新） ✨ v4.0
   actual_end_date?: string     // 实际完成日期
   status: LearningPlanStatus   // 计划状态
+  phase?: LearningPlanPhase    // [Upgrade] 两阶段系统：学习阶段（可选，默认 legacy）
+  learning_phase_completed_at?: string  // [Upgrade] 学习阶段完成时间
+  review_phase_started_at?: string      // [Upgrade] 复习阶段开始时间
   created_at: string           // 创建时间（ISO 8601）
   updated_at: string           // 更新时间（ISO 8601）
 }
@@ -46,12 +57,26 @@ export interface CreateLearningPlanRequest {
 /**
  * 学习计划进度统计
  * 版本: v4.0
+ * [Upgrade] 两阶段系统：添加新字段（marked_words, phase, etc.）
  */
 export interface LearningPlanProgress {
   plan_id: string
   total_words: number
-  learned_words: number
-  progress_percentage: number
+
+  // [Legacy] v4.0 字段（保持兼容）
+  learned_words: number          // 只统计 known
+  progress_percentage: number   // 基于 learned_words
+
+  // [Upgrade] 两阶段系统：新增字段
+  phase?: LearningPlanPhase           // 当前阶段（legacy/learning/review）
+  marked_words?: number              // 统计所有标记过的词
+  marked_percentage?: number         // 基于 marked_words 的进度
+  known_words?: number               // 统计 known
+  fuzzy_words?: number               // 统计 fuzzy
+  unknown_words?: number             // 统计 unknown
+  learning_phase_completed_at?: string // 学习阶段完成时间
+  review_phase_started_at?: string   // 复习阶段开始时间
+
   total_tasks: number
   completed_tasks: number
   streak_days: number          // 连续打卡天数
@@ -125,6 +150,8 @@ export interface DailyTaskRecord {
 
 /**
  * 今日任务响应（包含单词详情）
+ *
+ * [Upgrade] 两阶段系统：添加新字段（phase, marked_words, known_words, etc.）
  */
 export interface TodayTaskResponse {
   id: string
@@ -137,6 +164,14 @@ export interface TodayTaskResponse {
   all_completed: boolean
   started_at?: string
   completed_at?: string
+
+  // [Upgrade] 两阶段系统：新增字段
+  phase?: LearningPlanPhase           // 当前阶段（legacy/learning/review）
+  marked_words?: string[]             // 已标记（任何状态）的词ID
+  known_words?: string[]              // 已标记"认识"的词ID
+  fuzzy_words?: string[]              // 已标记"模糊"的词ID
+  unknown_words?: string[]            // 已标记"不认识"的词ID
+  all_marked?: boolean                // 是否全部标记过（两阶段系统的完成标志）
 }
 
 /**

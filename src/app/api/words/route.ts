@@ -142,13 +142,22 @@ export async function GET(request: NextRequest) {
       console.log('🔍 Trying optimized RPC...')
 
       try {
+        // 🔧 FIX: 传递filter_chapter_id参数到RPC函数
+        const rpcParams: any = {
+          book_uuid: bookId,
+          offset_val: offset,
+          limit_val: pageSize
+        }
+
+        // 如果指定了章节筛选，添加filter_chapter_id参数
+        if (chapterId !== 'all') {
+          rpcParams.filter_chapter_id = chapterId
+          console.log('🔍 [RPC] Adding chapter filter:', chapterId)
+        }
+
         const result = await (supabase.rpc as any)(
           'get_book_words_paginated_optimized',
-          {
-            book_uuid: bookId,
-            offset_val: offset,
-            limit_val: pageSize
-          }
+          rpcParams
         )
         console.log('📦 Optimized RPC result:', { error: result.error, dataLength: result.data?.length })
         words = result.data
@@ -165,13 +174,22 @@ export async function GET(request: NextRequest) {
       if (status !== 'new') {
         console.log('🔍 Trying standard RPC...')
         try {
+          // 🔧 FIX: 传递filter_chapter_id参数到RPC函数
+          const rpcParams: any = {
+            book_uuid: bookId,
+            offset_val: offset,
+            limit_val: pageSize
+          }
+
+          // 如果指定了章节筛选，添加filter_chapter_id参数
+          if (chapterId !== 'all') {
+            rpcParams.filter_chapter_id = chapterId
+            console.log('🔍 [RPC Standard] Adding chapter filter:', chapterId)
+          }
+
           const result = await (supabase.rpc as any)(
             'get_book_words_paginated',
-            {
-              book_uuid: bookId,
-              offset_val: offset,
-              limit_val: pageSize
-            }
+            rpcParams
           )
           words = result.data
           wordsError = result.error

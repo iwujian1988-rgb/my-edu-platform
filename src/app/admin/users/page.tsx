@@ -28,7 +28,7 @@ export default async function AdminUsersPage({
   const startDate = params.startDate || ''
   const endDate = params.endDate || ''
 
-  // 获取所有套餐用于筛选器
+  // 获取所有套餐用于筛选器和显示
   const { data: packages } = await supabase
     .from('invitation_packages')
     .select('id, name')
@@ -39,10 +39,10 @@ export default async function AdminUsersPage({
   const to = from + pageSize - 1
 
   // 构建查询
-  // 注意：当需要套餐筛选时，先获取符合条件的用户ID，再查询用户详情
+  // 通过 invitation_codes 表间接查询套餐
   let query: any
   if (packageFilter) {
-    // 套餐筛选时，使用子查询方式：先找到使用该套餐的邀请码，再找用户
+    // 套餐筛选：先找到使用该套餐的邀请码，再找用户
     const { data: packageCodes } = await supabase
       .from('invitation_codes')
       .select('id')
@@ -50,13 +50,12 @@ export default async function AdminUsersPage({
 
     const codeIds = packageCodes?.map((c: any) => c.id) || []
 
-    // 查询使用这些邀请码的用户
     query = (supabase
       .from('users') as any)
       .select('*', { count: 'exact', head: false })
       .in('invitation_code_id', codeIds.length > 0 ? codeIds : ['__none__'])
   } else {
-    // 不筛选套餐时，查询所有用户（包括没有邀请码的用户）
+    // 不筛选套餐时，查询所有用户
     query = (supabase
       .from('users') as any)
       .select('*', { count: 'exact', head: false })
@@ -101,6 +100,25 @@ export default async function AdminUsersPage({
     console.error('=================================')
   }
 
+  // 获取所有邀请码ID，然后批量获取套餐信息
+  const codeIds = (users || []).map((u: any) => u.invitation_code_id).filter(Boolean)
+  const { data: codes } = codeIds.length > 0 ? await supabase
+    .from('invitation_codes')
+    .select('id, package_id')
+    .in('id', codeIds) : { data: [] }
+
+  // 创建邀请码到套餐的映射
+  const codeToPackageMap = new Map((codes || []).map((c: any) => [c.id, c.package_id]))
+
+  // 为每个用户添加套餐信息
+  const usersWithPackages = (users || []).map((user: any) => {
+    const packageId = user.invitation_code_id ? codeToPackageMap.get(user.invitation_code_id) : null
+    return {
+      ...user,
+      invitation_packages: packageId ? (packages || []).find((p: any) => p.id === packageId) : null
+    }
+  })
+
   // 如果 count 查询失败，手动查询总数
   let totalCount = count
   if (!totalCount && users) {
@@ -127,7 +145,7 @@ export default async function AdminUsersPage({
 
       {/* 用户列表 */}
       <UserList
-        users={users || []}
+        users={usersWithPackages}
         totalUsers={totalCount || 0}
         currentPage={page}
         totalPages={totalPages}

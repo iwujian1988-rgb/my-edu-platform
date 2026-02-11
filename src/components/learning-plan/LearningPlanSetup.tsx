@@ -325,14 +325,14 @@ export function LearningPlanSetup({ bookId, bookTitle, totalWords, editingPlan, 
           </div>
         </div>
 
-        {/* 预计完成天数 - Neo-Brutalism */}
+        {/* [Upgrade] 两阶段系统：学习阶段预计完成时间 - Neo-Brutalism */}
         <div className={`p-4 border-2 border-black dark:border-slate-600 ${
           isDark ? 'bg-[#1e293b]' : 'bg-white'
         } shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] dark:shadow-none`}>
           <h3 className={`text-xs sm:text-sm font-black uppercase tracking-wider mb-3 ${
             isDark ? 'text-gray-200' : 'text-black'
           }`}>
-            预计完成时间
+            学习阶段预计完成时间
           </h3>
           <div className="space-y-3">
             <div className="flex items-center justify-between">
@@ -350,6 +350,16 @@ export function LearningPlanSetup({ bookId, bookTitle, totalWords, editingPlan, 
               <span className="text-base font-black text-black dark:text-white">
                 {estimated} 天
               </span>
+            </div>
+            {/* [Upgrade] 两阶段系统：添加说明 */}
+            <div className={`pt-2 border-t ${isDark ? 'border-slate-600' : 'border-gray-200'}`}>
+              <p className={`text-[10px] leading-relaxed ${isDark ? 'text-slate-400' : 'text-gray-500'}`}>
+                💡 <strong className="font-semibold">两阶段学习系统：</strong>
+                <br />
+                • 学习阶段：所有词标记过一次（任意状态都算）
+                <br />
+                • 复习阶段：完成后自动进入，持续巩固记忆
+              </p>
             </div>
             <div className={`pt-2 border-t text-[10px] font-mono ${
               isDark ? 'border-slate-700 text-slate-600' : 'border-gray-200 text-gray-500'

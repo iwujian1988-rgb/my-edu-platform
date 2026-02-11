@@ -143,3 +143,7 @@ stardict*
 /public/sw.js.map
 /public/workbox-*.js
 /public/worker-*.js
+
+# Speaker audio files (too large for GitHub)
+public/audio/speaker/
+speak/*/*.mp3

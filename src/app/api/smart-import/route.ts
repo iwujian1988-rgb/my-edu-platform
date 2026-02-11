@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     }
 
     // 🔒 输入验证：限制每次导入的单词数量
-    const MAX_WORDS_PER_IMPORT = 100
+    const MAX_WORDS_PER_IMPORT = 500
     if (words.length > MAX_WORDS_PER_IMPORT) {
       return NextResponse.json({
         error: `每次最多导入${MAX_WORDS_PER_IMPORT}个单词`,
@@ -43,21 +43,21 @@ export async function POST(request: Request) {
     }
 
     // 🔒 输入验证：单词去重和格式验证
+    const originalCount = words.length
     const uniqueWords = [...new Set(words.map(w => w.trim()).filter(w => w.length > 0))]
-    if (uniqueWords.length !== words.length) {
-      return NextResponse.json({
-        error: `单词列表包含重复，已自动去重为${uniqueWords.length}个`,
-        original: words.length,
-        unique: uniqueWords.length
-      }, { status: 400 })
+    const duplicateCount = originalCount - uniqueWords.length
+
+    // 如果有重复，记录但继续处理
+    if (duplicateCount > 0) {
+      console.log(`[SmartImport] 检测到重复: ${originalCount}个输入，${duplicateCount}个重复，${uniqueWords.length}个唯一`)
     }
 
-    // 验证单词格式（只允许字母和连字符）
-    const wordRegex = /^[a-zA-Z\-]+$/
+    // 验证单词格式（允许字母、连字符、空格、单引号）
+    const wordRegex = /^[a-zA-Z\- ']+$/
     const invalidWords = uniqueWords.filter(w => !wordRegex.test(w))
     if (invalidWords.length > 0) {
       return NextResponse.json({
-        error: '单词格式不正确，只允许英文字母和连字符(-)',
+        error: '单词格式不正确，只允许英文字母、连字符(-)、空格和单引号',
         invalidWords: invalidWords.slice(0, 5) // 只显示前5个
       }, { status: 400 })
     }
@@ -130,13 +130,17 @@ export async function POST(request: Request) {
 
     // 3. 调用有道词典API获取单词信息（带缓存和重试）
     const results = []
+    const totalBatches = Math.ceil(uniqueWords.length / MAX_CONCURRENT)
 
     // 🔒 安全性：使用Promise.allSettle并发调用，设置超时
-    const API_TIMEOUT = 5000 // 5秒超时
-    const MAX_CONCURRENT = 10 // 最多并发10个请求
+    const API_TIMEOUT = 6000 // 6秒超时（降低以提高响应速度）
+    const MAX_CONCURRENT = 20 // 最多并发20个请求（提升吞吐量）
 
     for (let i = 0; i < uniqueWords.length; i += MAX_CONCURRENT) {
       const batch = uniqueWords.slice(i, i + MAX_CONCURRENT)
+      const currentBatch = Math.floor(i / MAX_CONCURRENT) + 1
+
+      console.log(`[SmartImport] 进度: ${currentBatch}/${totalBatches} 批次`)
 
       const batchResults = await Promise.allSettled(
         batch.map(async (word) => {
@@ -290,21 +294,45 @@ export async function POST(request: Request) {
       .insert(wordsToInsert as any)
       .select()
 
+    console.log('[SmartImport] 插入结果:', {
+      请求插入: wordsToInsert.length,
+      实际插入: insertedWords?.length || 0,
+      error: insertError?.message
+    })
+
     if (insertError) {
-      console.error('Error inserting words:', insertError)
-      return NextResponse.json({ error: '保存单词失败' }, { status: 500 })
+      console.error('[SmartImport] 插入失败详情:', insertError)
+      return NextResponse.json({ error: '保存单词失败', details: insertError.message }, { status: 500 })
+    }
+
+    if (!insertedWords || insertedWords.length === 0) {
+      console.error('[SmartImport] 插入返回为空')
+      return NextResponse.json({ error: '插入失败：未返回数据' }, { status: 500 })
     }
 
     // 6. 更新词库统计
     const newTotalWords = bookData.total_words + results.length
 
-    await supabase
+    console.log('[SmartImport] 更新词库统计:', {
+      bookId,
+      原总数: bookData.total_words,
+      新增: results.length,
+      新总数: newTotalWords
+    })
+
+    const { error: updateError } = await supabase
       .from('books')
       .update({
         total_words: newTotalWords,
         is_published: true
       })
       .eq('id', bookId)
+
+    if (updateError) {
+      console.error('[SmartImport] 更新词库统计失败:', updateError)
+    } else {
+      console.log('[SmartImport] 词库统计更新成功')
+    }
 
     // 更新章节单词计数
     await supabase.rpc('increment_chapter_word_count', {
@@ -334,7 +362,11 @@ export async function POST(request: Request) {
       imported: insertedWords?.length || 0,
       remaining: DAILY_LIMIT - (todayUsed + uniqueWords.length),
       chapterId: finalChapterId,
-      message: `已导入${insertedWords?.length || 0}个单词`
+      message: `已导入${insertedWords?.length || 0}个单词`,
+      // 添加去重信息
+      originalCount,
+      duplicateCount,
+      uniqueCount: uniqueWords.length
     })
   } catch (error: any) {
     console.error('Error in POST /api/smart-import:', error)

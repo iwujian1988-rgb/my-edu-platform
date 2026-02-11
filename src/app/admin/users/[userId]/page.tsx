@@ -67,7 +67,7 @@ export default async function AdminUserDetailPage({
     .from('books')
     .select('id, title')
 
-  // 获取套餐信息（如果邀请码有关联的套餐）
+  // 获取套餐信息（通过 invitation_code）
   let userPackage = null
   if ((invitationCode as any)?.package_id) {
     const { data: pkg } = await supabase

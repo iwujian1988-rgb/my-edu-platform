@@ -291,6 +291,8 @@ export function DashboardContent({
 
   // 🚀 异步加载统计数据（如果服务端没有提供）
   useEffect(() => {
+    let isMounted = true
+
     if (initialMistakesCount !== undefined && initialTodayNewWordsCount !== undefined) {
       // 服务端已提供，无需再次加载
       return
@@ -298,6 +300,7 @@ export function DashboardContent({
 
     const loadStats = async () => {
       try {
+        if (!isMounted) return
         setStatsLoading(true)
 
         // 并行加载两个统计数据
@@ -306,35 +309,45 @@ export function DashboardContent({
           fetch('/api/stats/today-new')
         ])
 
+        if (!isMounted) return
+
         if (mistakesRes.ok) {
           try {
             const data = await mistakesRes.json()
-            setMistakesCount(data.count || 0)
+            if (isMounted) setMistakesCount(data.count || 0)
           } catch (e) {
-            console.error('[Dashboard] Failed to parse mistakes response:', e)
+            if (isMounted) console.error('[Dashboard] Failed to parse mistakes response:', e)
           }
         }
+
+        if (!isMounted) return
 
         if (todayRes.ok) {
           try {
             const data = await todayRes.json()
-            setTodayNewWordsCount(data.count || 0)
+            if (isMounted) setTodayNewWordsCount(data.count || 0)
           } catch (e) {
-            console.error('[Dashboard] Failed to parse today-new response:', e)
+            if (isMounted) console.error('[Dashboard] Failed to parse today-new response:', e)
           }
         }
       } catch (error) {
-        console.error('[Dashboard] Failed to load stats:', error)
+        if (isMounted) console.error('[Dashboard] Failed to load stats:', error)
       } finally {
-        setStatsLoading(false)
+        if (isMounted) setStatsLoading(false)
       }
     }
 
     loadStats()
+
+    return () => {
+      isMounted = false
+    }
   }, [initialMistakesCount, initialTodayNewWordsCount])
 
   // 🔄 实时轮询：每30秒获取最近访问的词库
   useEffect(() => {
+    let isMounted = true
+
     // 使用 Page Visibility API，只在页面可见时轮询
     const loadRecentBooks = async () => {
       try {
@@ -342,16 +355,17 @@ export function DashboardContent({
         if (res.ok) {
           try {
             const data = await res.json()
+            if (!isMounted) return
             if (data.success && data.data) {
               setLiveRecentBooks(data.data)
               console.log('🔄 [Dashboard] 更新最近访问:', data.data.length, '本书')
             }
           } catch (e) {
-            console.error('[Dashboard] Failed to parse recent-books response:', e)
+            if (isMounted) console.error('[Dashboard] Failed to parse recent-books response:', e)
           }
         }
       } catch (error) {
-        console.error('[Dashboard] 轮询最近访问失败:', error)
+        if (isMounted) console.error('[Dashboard] 轮询最近访问失败:', error)
       }
     }
 
@@ -361,13 +375,16 @@ export function DashboardContent({
     // 设置定时器：每30秒轮询一次
     const interval = setInterval(() => {
       // 只在页面可见时轮询
-      if (!document.hidden) {
+      if (!document.hidden && isMounted) {
         loadRecentBooks()
       }
     }, 30000) // 30秒
 
     // 清理函数
-    return () => clearInterval(interval)
+    return () => {
+      isMounted = false
+      clearInterval(interval)
+    }
   }, []) // 空依赖数组，只在组件挂载时执行一次
 
   return (
@@ -554,11 +571,7 @@ export function DashboardContent({
                       (window as any).desktopBrowseScrollRef = el
                     }
                   }}
-                  className="flex gap-4 overflow-x-auto scroll-smooth pb-4"
-                  style={{
-                    scrollbarWidth: 'none', // Firefox
-                    msOverflowStyle: 'none' // IE/Edge
-                  }}
+                  className="flex gap-4 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
                   onScroll={(e) => {
                     const target = e.target as HTMLDivElement
                     const scrollLeft = target.scrollLeft
@@ -580,11 +593,6 @@ export function DashboardContent({
                     }
                   }}
                 >
-                  <style jsx>{`
-                    div::-webkit-scrollbar {
-                      display: none;
-                    }
-                  `}</style>
                   {progressCards.map((card, index) => (
                     <div key={card._uniqueKey || card.bookId} className="w-[250px] max-w-[250px] flex-shrink-0">
                       <ProgressCardComponent {...card} isFirstCard={index === 0} />

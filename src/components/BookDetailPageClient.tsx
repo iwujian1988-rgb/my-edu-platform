@@ -430,6 +430,8 @@ export function BookDetailPageClient({
 
   // 🆕 记录访问：更新 last_accessed_at，确保首页"最近学习"能显示
   useEffect(() => {
+    let isMounted = true
+
     const recordAccess = async () => {
       console.log('📍 [RecordAccess] Recording book access for:', book.id, 'page:', filters.page)
       try {
@@ -438,17 +440,23 @@ export function BookDetailPageClient({
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ bookId: book.id })
         })
-        console.log('✅ [RecordAccess] Book access recorded successfully')
+        if (isMounted) console.log('✅ [RecordAccess] Book access recorded successfully')
       } catch (error) {
-        console.error('❌ [RecordAccess] Failed to record book access:', error)
+        if (isMounted) console.error('❌ [RecordAccess] Failed to record book access:', error)
       }
     }
 
     recordAccess()
+
+    return () => {
+      isMounted = false
+    }
   }, [book.id, filters.page]) // 🔥 监听 book.id 和 filters.page 变化（进入或翻页时都记录）
 
   // ⭐ 断点续读：检查并显示恢复提示
   useEffect(() => {
+    let isMounted = true
+
     const checkAndRestoreProgress = async () => {
       console.log('🔍 [Resume] ========== START checking reading progress for book:', book.id)
       console.log('🔍 [Resume] Current URL:', window.location.href)
@@ -481,7 +489,7 @@ export function BookDetailPageClient({
             chapter
           })
           console.log('✅ [Resume] 进度检查完成（URL已有参数），启用自动保存')
-          setResumeCheckCompleted(true)
+          if (isMounted) setResumeCheckCompleted(true)
           return
         }
 
@@ -494,10 +502,12 @@ export function BookDetailPageClient({
         console.log('📖 [Resume] Progress type:', typeof progress)
         console.log('📖 [Resume] Progress keys:', progress ? Object.keys(progress) : 'N/A')
 
+        if (!isMounted) return
+
         if (!progress) {
           console.log('ℹ️ [Resume] No saved progress found')
           console.log('✅ [Resume] 进度检查完成（无保存进度），启用自动保存')
-          setResumeCheckCompleted(true)
+          if (isMounted) setResumeCheckCompleted(true)
           return
         }
 
@@ -514,17 +524,21 @@ export function BookDetailPageClient({
           if (!hasOtherFilters) {
             console.log('ℹ️ [Resume] Page is', progress.page, 'and no other filters - no need to restore')
             console.log('✅ [Resume] 进度检查完成（page<=1且无其他筛选），启用自动保存')
-            setResumeCheckCompleted(true)
+            if (isMounted) setResumeCheckCompleted(true)
             return
           }
           console.log('ℹ️ [Resume] Page is', progress.page, 'but has other filters - showing dialog anyway')
         }
 
+        if (!isMounted) return
+
         // ⭐ 保存进度到状态，但不立即恢复，等待用户确认
         console.log('📍 [Resume] Found progress page:', progress.page, '- showing confirm dialog')
         console.log('📍 [Resume] Calling setSavedProgress and setShowRestoreConfirm(true)')
-        setSavedProgress(progress)
-        setShowRestoreConfirm(true)
+        if (isMounted) {
+          setSavedProgress(progress)
+          setShowRestoreConfirm(true)
+        }
         // 🔥 设置标志，防止自动保存覆盖之前的进度
         sessionStorage.setItem('restore-dialog-showing', 'true')
         console.log('✅ [Resume] State setters called. Dialog should appear.')
@@ -536,11 +550,15 @@ export function BookDetailPageClient({
         // 📋 [异常处理] 发生错误时，也要启用自动保存，避免永久禁用
         console.error('❌ [Resume] 进度检查过程中发生错误:', error)
         console.log('✅ [Resume] 发生错误，仍需启用自动保存以避免功能失效')
-        setResumeCheckCompleted(true)
+        if (isMounted) setResumeCheckCompleted(true)
       }
     }
 
     checkAndRestoreProgress()
+
+    return () => {
+      isMounted = false
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [book.id]) // 只在组件挂载时执行一次
 
@@ -641,7 +659,9 @@ export function BookDetailPageClient({
     }
 
     if (progress.chapter && progress.chapter !== 'all') {
-      parts.push(`章节: ${progress.chapter}`)
+      const chapter = chapters.find(ch => ch.id === progress.chapter)
+      const chapterLabel = chapter ? chapter.title : progress.chapter
+      parts.push(`章节: ${chapterLabel}`)
     }
 
     if (progress.theme && progress.theme !== 'all') {

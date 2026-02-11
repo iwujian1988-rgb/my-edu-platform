@@ -12,6 +12,7 @@ import {
 import { markWord } from '@/services/learning-plan'
 import { useLearningPlanTTS } from '@/hooks/useLearningPlanTTS'
 import { useTheme } from '@/contexts/ThemeContext'
+import type { LearningPlanPhase } from '@/types/learning-plan'
 
 interface Word {
   id: string
@@ -34,6 +35,8 @@ interface Props {
   onComplete: () => void
   totalOriginalWords?: number  // 🔧 新增：原始总单词数
   completedOriginalWords?: number  // 🔧 新增：已完成单词数
+  phase?: LearningPlanPhase  // [Upgrade] 两阶段系统：学习阶段
+  isConsolidateMode?: boolean  // [Upgrade] 巩固模式：专注学习未掌握的单词
 }
 
 type WordStatus = 'known' | 'fuzzy' | 'unknown'
@@ -43,7 +46,9 @@ export function FlashcardQueue({
   bookId,
   onComplete,
   totalOriginalWords,
-  completedOriginalWords
+  completedOriginalWords,
+  phase = 'legacy',  // [Upgrade] 两阶段系统：默认 legacy 保持向后兼容
+  isConsolidateMode = false  // [Upgrade] 巩固模式
 }: Props) {
   const router = useRouter()
   const { theme, mounted } = useTheme()
@@ -60,6 +65,10 @@ export function FlashcardQueue({
   // UI 状态
   const [flipped, setFlipped] = useState(false)
   const [marking, setMarking] = useState(false)
+
+  // [Upgrade] 巩固模式状态
+  const [showConsolidateModal, setShowConsolidateModal] = useState(false)
+  const [unmasteredCount, setUnmasteredCount] = useState(0)
 
   // 拖拽相关状态
   const [dragStart, setDragStart] = useState<{ x: number; y: number } | null>(null)
@@ -156,27 +165,38 @@ export function FlashcardQueue({
 
     try {
       // 🔥 先立即更新UI（乐观更新）
-      if (status === 'known') {
-        // 移出队列
+      // [Upgrade] 两阶段系统：根据阶段使用不同的完成逻辑
+      if (phase === 'learning' || phase === 'review') {
+        // [Upgrade] 两阶段系统：任何标记都算完成（移出队列）
         setCompleted(prev => {
           const newCompleted = [...prev, currentWord]
-          console.log('[FlashcardQueue] ✅ 已完成:', newCompleted.length, '/', totalCount)
+          console.log('[FlashcardQueue] ✅ 两阶段系统 - 已完成:', newCompleted.length, '/', totalCount)
           return newCompleted
         })
-        // ✅ 使用 currentWord 引用，避免 stale closure
         setQueue(prev => prev.filter(w => w !== currentWord))
       } else {
-        // 移到队尾
-        setQueue(prev => {
-          const newQueue = [...prev]
-          const index = newQueue.findIndex(w => w === currentWord)
-          if (index !== -1) {
-            const [word] = newQueue.splice(index, 1)
-            return [...newQueue, word]
-          }
-          return newQueue
-        })
-        console.log('[FlashcardQueue] ⏸️ 移到队尾，继续学习')
+        // [Legacy] v4.0：只有"认识"才完成
+        if (status === 'known') {
+          // 移出队列
+          setCompleted(prev => {
+            const newCompleted = [...prev, currentWord]
+            console.log('[FlashcardQueue] ✅ Legacy - 已完成:', newCompleted.length, '/', totalCount)
+            return newCompleted
+          })
+          setQueue(prev => prev.filter(w => w !== currentWord))
+        } else {
+          // 移到队尾
+          setQueue(prev => {
+            const newQueue = [...prev]
+            const index = newQueue.findIndex(w => w === currentWord)
+            if (index !== -1) {
+              const [word] = newQueue.splice(index, 1)
+              return [...newQueue, word]
+            }
+            return newQueue
+          })
+          console.log('[FlashcardQueue] ⏸️ Legacy - 移到队尾，继续学习')
+        }
       }
       setCurrentIndex(0)
 
@@ -209,16 +229,49 @@ export function FlashcardQueue({
       })
 
       // 检查是否全部完成
-      if (status === 'known') {
-        const newCompletedLength = completed.length + 1
+      // [Upgrade] 两阶段系统：根据阶段使用不同的完成检测逻辑
+      const newCompletedLength = completed.length + 1
+      if (isConsolidateMode) {
+        // [Upgrade] 巩固模式：全部完成
         if (newCompletedLength === totalCount) {
-          toast.success('🎉 太棒了！今日任务全部完成！')
+          toast.success('🎉 巩固完成！所有单词都已复习过')
           setTimeout(() => {
             onComplete()
           }, 1500)
+        }
+      } else if (phase === 'review') {
+        // [Upgrade] 复习阶段：永不完成（只显示进度）
+        console.log('[FlashcardQueue] Progress (review):', newCompletedLength, '/', totalCount)
+      } else if (phase === 'learning') {
+        // [Upgrade] 学习阶段：全部处理过即完成（任何状态）
+        if (newCompletedLength === totalCount) {
+          // [Upgrade] 巩固模式：检查是否有未掌握的单词
+          if (status !== 'known') {
+            // 最后一个单词标记为 fuzzy 或 unknown
+            setUnmasteredCount(1)
+            setShowConsolidateModal(true)
+          } else {
+            // 全部标记为 known，直接完成
+            toast.success('🎉 学习阶段完成！所有单词都已标记过')
+            setTimeout(() => {
+              onComplete()
+            }, 1500)
+          }
         } else {
-          // 显示进度提示
-          console.log('[FlashcardQueue] Progress:', newCompletedLength, '/', totalCount)
+          console.log('[FlashcardQueue] Progress (learning):', newCompletedLength, '/', totalCount)
+        }
+      } else {
+        // [Legacy] v4.0：只有标记为"认识"才计入完成
+        if (status === 'known') {
+          if (newCompletedLength === totalCount) {
+            toast.success('🎉 太棒了！今日任务全部完成！')
+            setTimeout(() => {
+              onComplete()
+            }, 1500)
+          } else {
+            // 显示进度提示
+            console.log('[FlashcardQueue] Progress (legacy):', newCompletedLength, '/', totalCount)
+          }
         }
       }
     } catch (error: any) {
@@ -329,38 +382,50 @@ export function FlashcardQueue({
           </div>
         </div>
 
-        {/* 进度条 */}
-        <div className="max-w-2xl mx-auto mb-2">
-          <div className="flex justify-between text-xs mb-1 text-gray-500 dark:text-gray-400">
-            <span>{completedCount + initialCompletedCount}/{totalCount} 已完成</span>
-            <span className="font-mono">{((completedCount + initialCompletedCount) / totalCount * 100).toFixed(0)}%</span>
+        {/* 进度条 - [Upgrade] 巩固模式下隐藏 */}
+        {!isConsolidateMode && (
+          <div className="max-w-2xl mx-auto mb-2">
+            <div className="flex justify-between text-xs mb-1 text-gray-500 dark:text-gray-400">
+              <span>{completedCount + initialCompletedCount}/{totalCount} 已完成</span>
+              <span className="font-mono">{((completedCount + initialCompletedCount) / totalCount * 100).toFixed(0)}%</span>
+            </div>
+            <div className="w-full h-2 rounded-full overflow-hidden bg-gray-200 dark:bg-slate-800">
+              <div
+                className="h-full bg-[#B4F416] transition-all duration-300"
+                style={{ width: `${((completedCount + initialCompletedCount) / totalCount * 100)}%` }}
+              />
+            </div>
           </div>
-          <div className="w-full h-2 rounded-full overflow-hidden bg-gray-200 dark:bg-slate-800">
-            <div
-              className="h-full bg-[#B4F416] transition-all duration-300"
-              style={{ width: `${((completedCount + initialCompletedCount) / totalCount * 100)}%` }}
-            />
-          </div>
-        </div>
+        )}
 
         {/* 任务说明 */}
         <div className="max-w-2xl mx-auto mb-2">
           <p className="text-xs text-center text-gray-500 dark:text-gray-400">
-            💡 认识→完成，模糊/不认识→继续
+            {/* [Upgrade] 巩固模式提示 */}
+            {isConsolidateMode
+              ? '💡 巩固模式：专注学习未掌握的单词'
+              : phase === 'review'
+                ? '💡 复习阶段：巩固记忆，永不结束'
+                : phase === 'learning'
+                  ? '💡 学习阶段：任意标记都算学过，全部标记即完成'
+                  : '💡 认识→完成，模糊/不认识→继续'  // [Legacy] v4.0
+            }
           </p>
         </div>
 
-        {/* 队列状态 */}
-        <div className="max-w-2xl mx-auto flex items-center justify-center gap-3 text-xs">
-          <div className="flex items-center gap-1 px-2 py-1 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400">
-            <span className="font-mono">✅ 已完成: {completedCount + initialCompletedCount}</span>
-          </div>
-          {queue.length > 0 && (
-            <div className="flex items-center gap-1 px-2 py-1 rounded bg-yellow-100 dark:bg-slate-800 text-yellow-700 dark:text-yellow-400">
-              <span className="font-mono">🔄 待学习: {queue.length}</span>
+        {/* 队列状态 - [Upgrade] 巩固模式下隐藏 */}
+        {!isConsolidateMode && (
+          <div className="max-w-2xl mx-auto flex items-center justify-center gap-3 text-xs">
+            <div className="flex items-center gap-1 px-2 py-1 rounded bg-gray-100 dark:bg-slate-800 text-gray-600 dark:text-gray-400">
+              <span className="font-mono">✅ 已完成: {completedCount + initialCompletedCount}</span>
             </div>
-          )}
-        </div>
+            {queue.length > 0 && (
+              <div className="flex items-center gap-1 px-2 py-1 rounded bg-yellow-100 dark:bg-slate-800 text-yellow-700 dark:text-yellow-400">
+                <span className="font-mono">🔄 待学习: {queue.length}</span>
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       {/* 卡片区域 */}
@@ -595,6 +660,93 @@ export function FlashcardQueue({
           </div>
         </div>
       </div>
+
+      {/* [Upgrade] 巩固模式弹窗 */}
+      {showConsolidateModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+          onClick={() => setShowConsolidateModal(false)}
+        >
+          <div
+            className={`
+              relative w-full max-w-md mx-4
+              border-[3px] border-black dark:border-slate-600
+              bg-white dark:bg-[#0f172a]
+              shadow-[8px_8px_0px_0px_#000] dark:shadow-none
+              p-6
+            `}
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* 图标 */}
+            <div className="text-center mb-4">
+              <div className="w-16 h-16 mx-auto mb-3 rounded-full bg-yellow-100 dark:bg-yellow-900/30 flex items-center justify-center">
+                <span className="text-4xl">💪</span>
+              </div>
+              <h3 className="text-xl font-black text-black dark:text-white mb-2">
+                学习已完成！
+              </h3>
+              <p className="text-sm text-gray-600 dark:text-gray-400">
+                您已完成今日学习，但还有未完全掌握的单词
+              </p>
+            </div>
+
+            {/* 统计信息 */}
+            <div className="bg-gray-50 dark:bg-slate-800 rounded-lg p-4 mb-4 space-y-2">
+              <div className="flex justify-between items-center text-sm">
+                <span className="text-gray-600 dark:text-gray-400">未掌握单词</span>
+                <span className="font-mono font-bold text-orange-600 dark:text-orange-400">
+                  {unmasteredCount} 个
+                </span>
+              </div>
+              <div className="text-xs text-gray-500 dark:text-gray-500 text-center">
+                这些单词被标记为"模糊"或"不认识"
+              </div>
+            </div>
+
+            {/* 按钮 */}
+            <div className="space-y-3">
+              <button
+                onClick={() => {
+                  setShowConsolidateModal(false)
+                  // 刷新页面并添加巩固模式参数
+                  router.refresh()
+                  setTimeout(() => {
+                    window.location.href = `/learning-plan/learning-flow?bookId=${bookId}&mode=flashcard&consolidate=true`
+                  }, 100)
+                }}
+                className={`
+                  w-full p-3 text-base font-black
+                  border-[3px] border-black dark:border-slate-600
+                  bg-[#B4F416] dark:bg-[#86efac]
+                  shadow-[4px_4px_0px_0px_#000] dark:shadow-none
+                  hover:translate-x-[1px] hover:translate-y-[1px]
+                  hover:shadow-[2px_2px_0px_0px_#000]
+                  active:translate-x-[2px] active:translate-y-[2px] active:shadow-none
+                  transition-all duration-200
+                `}
+              >
+                继续巩固（推荐）
+              </button>
+
+              <button
+                onClick={() => {
+                  setShowConsolidateModal(false)
+                  setTimeout(() => {
+                    onComplete()
+                  }, 300)
+                }}
+                className="
+                  w-full p-3 text-sm font-bold text-gray-600 dark:text-gray-400
+                  hover:text-black dark:hover:text-slate-300
+                  transition-colors
+                "
+              >
+                稍后再说
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 操作提示 */}
       <div className="max-w-2xl mx-auto px-4 mt-4">

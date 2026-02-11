@@ -13,7 +13,8 @@ const FEATURE_PERMISSIONS = [
   { id: 'flashcard', name: '卡片背单词' },
   { id: 'dictation', name: '听写模式' },
   { id: 'custom_book', name: '自定义词库' },
-  { id: 'review_mode', name: '复习模式' }
+  { id: 'review_mode', name: '复习模式' },
+  { id: 'speaker', name: '雯姐学习法' }
 ]
 
 // 单词书权限选项
@@ -28,6 +29,16 @@ const BOOK_PERMISSIONS = [
   { id: '*', name: '全部单词书' }
 ]
 
+// 语言包选项（雯姐学习法）
+const LANGUAGE_PACKAGES = [
+  { id: 'en', name: '英语', flag: '🇬🇧' },
+  { id: 'pl', name: '波兰语', flag: '🇵🇱' },
+  { id: 'es', name: '西班牙语', flag: '🇪🇸' },
+  { id: 'fr', name: '法语', flag: '🇫🇷' },
+  { id: 'de', name: '德语', flag: '🇩🇪' },
+  { id: 'ja', name: '日语', flag: '🇯🇵' }
+]
+
 interface Package {
   id: string
   name: string
@@ -35,6 +46,7 @@ interface Package {
   validity_days: number | null
   feature_permissions: string[]
   book_permissions: string[]
+  language_packages: string[]  // 新增：语言包列表
   is_active: boolean
   sort_order: number
   created_at: string
@@ -309,6 +321,7 @@ function PackageFormModal({
     validity_days: pkg?.validity_days || 365,
     feature_permissions: pkg?.feature_permissions || [],
     book_permissions: pkg?.book_permissions || [],
+    language_packages: pkg?.language_packages || [],  // 新增
     is_active: pkg?.is_active ?? true,
     sort_order: pkg?.sort_order || 0
   })
@@ -346,6 +359,16 @@ function PackageFormModal({
         book_permissions: newPermissions
       }
     })
+  }
+
+  // 切换语言包权限（新增）
+  const toggleLanguagePackage = (langId: string) => {
+    setFormData(prev => ({
+      ...prev,
+      language_packages: prev.language_packages.includes(langId)
+        ? prev.language_packages.filter(l => l !== langId)
+        : [...prev.language_packages, langId]
+    }))
   }
 
   // 提交表单
@@ -500,6 +523,39 @@ function PackageFormModal({
                 ))}
               </div>
             </div>
+
+            {/* 雯姐学习法语言包（新增） */}
+            {formData.feature_permissions.includes('speaker') && (
+              <div className="mt-4 p-4 bg-purple-50 rounded border-2 border-purple-200">
+                <label className="block text-sm font-medium text-purple-900 mb-2">
+                  🌍 雯姐学习法 - 语言包配置
+                </label>
+                <p className="text-xs text-purple-700 mb-3">
+                  选择该套餐包含的语言包，用户购买套餐后自动获得
+                </p>
+                <div className="grid grid-cols-2 gap-2">
+                  {LANGUAGE_PACKAGES.map(lang => (
+                    <label
+                      key={lang.id}
+                      className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer transition-all ${
+                        formData.language_packages.includes(lang.id)
+                          ? 'bg-purple-100 border-purple-500 shadow-sm'
+                          : 'bg-white border-purple-300 hover:bg-purple-50'
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.language_packages.includes(lang.id)}
+                        onChange={() => toggleLanguagePackage(lang.id)}
+                        className="rounded"
+                      />
+                      <span className="text-lg">{lang.flag}</span>
+                      <span className="text-sm font-medium">{lang.name}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
 
             {/* 其他选项 */}
             <div className="grid grid-cols-2 gap-4">

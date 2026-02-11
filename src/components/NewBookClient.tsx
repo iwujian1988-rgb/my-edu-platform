@@ -41,18 +41,25 @@ export function NewBookClient({ userId }: { userId: string }) {
 
   // 获取配额
   useEffect(() => {
+    let isMounted = true
+
     if (step === 'import') {
-      setQuotaLoading(true) // 修复P1-2: 开始加载
+      if (isMounted) setQuotaLoading(true) // 修复P1-2: 开始加载
       fetch('/api/smart-import')
         .then(res => res.json())
         .then(data => {
+          if (!isMounted) return
           setQuota(data)
           setQuotaLoading(false) // 修复P1-2: 加载完成
         })
         .catch(err => {
-          console.error('Failed to fetch quota:', err)
-          setQuotaLoading(false) // 修复P1-2: 加载失败
+          if (isMounted) console.error('Failed to fetch quota:', err)
+          if (isMounted) setQuotaLoading(false) // 修复P1-2: 加载失败
         })
+    }
+
+    return () => {
+      isMounted = false
     }
   }, [step])
 
@@ -92,9 +99,9 @@ export function NewBookClient({ userId }: { userId: string }) {
   const handleAddWord = () => {
     if (!wordInput.trim()) return
 
-    // 支持多种分隔符：换行、逗号、空格
+    // 支持多种分隔符：换行、中英文逗号（不拆分空格，支持词组）
     const splitWords = wordInput
-      .split(/[\n,\s]+/)
+      .split(/[,\uFF0C\n\r]+/)
       .map(w => w.trim())
       .filter(w => w.length > 0)
 
@@ -374,7 +381,7 @@ export function NewBookClient({ userId }: { userId: string }) {
             <label className="block text-sm font-black mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
               添加单词
               <span className="block text-xs font-bold mt-1 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                支持每行一个、逗号或空格分隔
+                支持每行一个、中英文逗号分隔
               </span>
             </label>
             <textarea

@@ -1,44 +1,142 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Home, Library, Dumbbell, Settings, Mic } from 'lucide-react'
 import { BookSelectorModal } from './BookSelectorModal'
 import type { Book } from '@/types/book'
 import { useTheme } from '@/contexts/ThemeContext'
 import { useLoading } from './LoadingOverlay'
+import { createClient } from '@/lib/supabase/client'
 
 interface NavItem {
   label: string
   href: string
   icon: any
   comingSoon?: boolean
+  requiresPermission?: string  // 需要的权限标识，如 'speaker'
 }
 
 interface AppSidebarProps {
   books?: Book[]
   userId?: string
   scopeStatsMap?: Record<string, any>  // 🔧 性能优化：缓存统计信息
+  userPermissions?: string[]  // 用户权限列表，用于判断是否显示特定功能
 }
 
 const navItems: NavItem[] = [
   { label: '工作台', href: '/', icon: Home },
   { label: '系统词库', href: '/library', icon: Library },
   { label: '肌肉训练', href: '/practice', icon: Dumbbell },
-  { label: '演说家', href: '/speaker', icon: Mic, comingSoon: true },
+  { label: '雯姐学习法', href: '/speaker', icon: Mic, requiresPermission: 'speaker' },
   { label: '系统设置', href: '/settings', icon: Settings },
 ]
 
-export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
+export function AppSidebar({ books, userId, scopeStatsMap, userPermissions: propUserPermissions }: AppSidebarProps) {
   const pathname = usePathname()
   const router = useRouter()
   const [showBookSelector, setShowBookSelector] = useState(false)
+  const [userPermissions, setUserPermissions] = useState<string[]>(propUserPermissions || [])
   const { theme, mounted } = useTheme()
   const { showLoading } = useLoading()
   const isDark = mounted && theme === 'dark'
 
+  // 获取用户权限
+  // 优先级：用户自己设置的权限 > 套餐默认权限（通过 invitation_code 获取）
+  useEffect(() => {
+    let isMounted = true
+
+    const fetchUserPermissions = async () => {
+      if (!userId) return
+
+      try {
+        const supabase = createClient()
+        const { data, error } = await supabase
+          .from('users')
+          .select('feature_permissions, invitation_code_id')
+          .eq('id', userId)
+          .single()
+
+        if (error) {
+          if (isMounted) console.error('[AppSidebar] 获取用户权限失败:', error)
+          return
+        }
+
+        if (!isMounted) return
+
+        // 优先使用用户自己设置的权限（管理员在用户管理中单独设置的）
+        if (data?.feature_permissions && data.feature_permissions.length > 0) {
+          if (isMounted) {
+            setUserPermissions(data.feature_permissions)
+            console.log('[AppSidebar] 使用用户自定义权限:', data.feature_permissions)
+          }
+          return
+        }
+
+        // 如果用户没有单独设置权限，则通过 invitation_code 获取套餐权限
+        if (data?.invitation_code_id) {
+          const { data: codeData } = await supabase
+            .from('invitation_codes')
+            .select('package_id')
+            .eq('id', data.invitation_code_id)
+            .single()
+
+          if (!isMounted) return
+
+          if (codeData?.package_id) {
+            const { data: packageData } = await supabase
+              .from('invitation_packages')
+              .select('feature_permissions')
+              .eq('id', codeData.package_id)
+              .single()
+
+            if (!isMounted) return
+
+            if (packageData?.feature_permissions) {
+              if (isMounted) {
+                setUserPermissions(packageData.feature_permissions)
+                console.log('[AppSidebar] 使用套餐权限:', packageData.feature_permissions)
+              }
+            }
+          }
+        }
+      } catch (error) {
+        if (isMounted) console.error('[AppSidebar] 获取权限失败:', error)
+      }
+    }
+
+    fetchUserPermissions()
+
+    return () => {
+      isMounted = false
+    }
+  }, [userId])
+
+  // 检查用户是否有特定权限
+  const hasPermission = (permission: string) => {
+    // 🔥 优化1：如果用户已经在对应页面，说明肯定有权限
+    if (permission === 'speaker' && pathname === '/speaker') {
+      return true
+    }
+    // 🔥 优化2：权限还没加载完成（空数组 + 已登录），暂时显示所有菜单
+    // 避免菜单闪烁，权限加载后会自动过滤
+    if (userPermissions.length === 0 && userId) {
+      return true
+    }
+    // 如果有明确的权限列表，按权限列表判断
+    if (userPermissions.length > 0) {
+      return userPermissions.includes(permission)
+    }
+    // 服务端渲染或未登录状态，不显示需要权限的菜单
+    return false
+  }
+
   // 处理导航点击，立即显示加载状态
   const handleNavigation = (href: string) => {
+    // 防止在当前页面重复导航导致死循环
+    if (pathname === href) {
+      return
+    }
     showLoading()
     router.push(href)
   }
@@ -64,6 +162,11 @@ export function AppSidebar({ books, userId, scopeStatsMap }: AppSidebarProps) {
         {/* Navigation */}
         <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
           {navItems.map((item) => {
+            // 如果菜单项需要特定权限，而用户没有该权限，则不显示
+            if (item.requiresPermission && !hasPermission(item.requiresPermission)) {
+              return null
+            }
+
             const isActive = pathname === item.href
             const Icon = item.icon
             const isMuscleTraining = item.label === '肌肉训练'

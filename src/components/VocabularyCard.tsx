@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { Volume2, EyeOff, Lightbulb, FileText, Check, HelpCircle, X, ChevronDown } from 'lucide-react'
 import { useTTS } from '@/hooks/use-tts'
 import { useScreenOrientation } from '@/hooks/useScreenOrientation'  // 🆕 用于检测竖屏模式
@@ -46,6 +46,8 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   const [status, setStatus] = useState(initialStatus)
   const [showDefinition, setShowDefinition] = useState(!globalHideChinese)
   const [isExpanded, setIsExpanded] = useState(false) // 展开/收起状态
+  const [needsExpansion, setNeedsExpansion] = useState(false) // 是否需要展开按钮
+  const contentRef = useRef<HTMLDivElement>(null) // 内容区域ref
 
   // 🆕 根据屏幕方向设置卡片高度
   const cardHeight = isPortrait ? '380px' : '380px'  // 竖屏与横屏一致高度
@@ -60,6 +62,34 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   useEffect(() => {
     setShowDefinition(!globalHideChinese)
   }, [globalHideChinese])
+
+  // 检测内容是否溢出，决定是否显示"查看更多"按钮
+  useEffect(() => {
+    const checkOverflow = () => {
+      if (!contentRef.current) return
+      const element = contentRef.current
+      // 如果scrollHeight > clientHeight，说明内容被截断了
+      const isOverflowing = element.scrollHeight > element.clientHeight
+      setNeedsExpansion(isOverflowing)
+    }
+
+    // 初始检测
+    checkOverflow()
+
+    // 监听窗口大小变化、内容变化等
+    const resizeObserver = new ResizeObserver(checkOverflow)
+    if (contentRef.current) {
+      resizeObserver.observe(contentRef.current)
+    }
+
+    // 当切换展开/收起状态时重新检测
+    const timeoutId = setTimeout(checkOverflow, 100)
+
+    return () => {
+      resizeObserver.disconnect()
+      clearTimeout(timeoutId)
+    }
+  }, [isExpanded, showDefinition, word.definition, word.definition_en, word.collocation, word.example_sentence, word.example_sentence_en])
 
   // 播放单词发音 - 使用 TTS Hook
   const handleSpeak = async () => {
@@ -167,16 +197,6 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
     sentence: word.example_sentence_en || word.example_sentence,
   }
 
-  // 检测内容是否需要展开（简单判断文本长度）
-  const needsExpansion = () => {
-    const defLength = data.definition?.length || 0
-    const colLength = data.collocation?.length || 0
-    const sentLength = data.sentence?.length || 0
-    // 降低阈值：释义超过30字符，或搭配/例句较长时显示展开按钮
-    // 因为line-clamp-2大约能显示30-40个中文字符
-    return defLength > 30 || colLength > 25 || sentLength > 30
-  }
-
   return (
     // ⚠️ 注意：这里移除了大部分 Tailwind 类名，全靠 style 属性控制，防止冲突
     <div
@@ -226,7 +246,10 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
       </div>
 
       {/* 中间释义 - 可展开/收起 */}
-      <div className={`flex-1 space-y-2 mb-3 relative ${!isExpanded ? 'overflow-hidden' : ''}`}>
+      <div
+        ref={contentRef}
+        className={`flex-1 space-y-2 mb-3 relative ${!isExpanded ? 'overflow-hidden' : ''}`}
+      >
         {/* 释义 - 根据展开状态显示不同行数 */}
         <p className={`text-sm font-bold leading-snug transition-colors duration-300 ${isExpanded ? '' : 'line-clamp-2'} dark:text-slate-200 text-gray-700`}>
           {data.definition}
@@ -267,13 +290,13 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
         </div>
 
         {/* 渐变遮罩 - 只在收起状态且内容需要展开时显示 */}
-        {!isExpanded && needsExpansion() && (
+        {!isExpanded && needsExpansion && (
           <div className="absolute bottom-0 left-0 right-0 h-12 pointer-events-none transition-colors duration-300 dark:bg-gradient-to-b dark:from-transparent dark:to-gray-900/95 bg-gradient-to-b from-transparent to-white/90" />
         )}
       </div>
 
       {/* 展开/收起按钮 - 只在内容需要展开时显示 */}
-      {needsExpansion() && (
+      {needsExpansion && (
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="flex items-center justify-center gap-1 py-1.5 text-xs font-black transition-colors border-t dark:text-gray-400 dark:hover:text-gray-200 dark:border-gray-700 text-gray-600 hover:text-black border-gray-100"
