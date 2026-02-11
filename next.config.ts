@@ -48,10 +48,10 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
 
-  // ✅ 增加 Server Action 的 body 大小限制（支持大音频文件上传）
+  // ✅ 增加 Server Action 的 body 大小限制（支持大音频文件上传，使用字节数）
   experimental: {
     serverActions: {
-      bodySizeLimit: '50mb',
+      bodySizeLimit: 50 * 1024 * 1024, // 50MB in bytes
     },
   },
 
