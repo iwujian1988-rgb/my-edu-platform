@@ -15,6 +15,11 @@ import { analyzeArticle } from '@/lib/speaker-auto-analysis'
 // ========================================
 export async function POST(request: NextRequest) {
   try {
+    // 调试日志
+    const contentType = request.headers.get('content-type')
+    console.log('[UPLOAD-JSON] Content-Type:', contentType)
+    console.log('[UPLOAD-JSON] Headers:', Object.fromEntries(request.headers.entries()))
+
     const formData = await request.formData()
     const files = formData.getAll('files') as File[]
 
