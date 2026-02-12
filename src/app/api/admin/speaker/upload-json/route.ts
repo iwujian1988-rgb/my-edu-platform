@@ -50,7 +50,7 @@ export async function POST(request: NextRequest) {
         if (file.size > maxSize) {
           errors.push({
             fileName: file.name,
-            error: '文件大小超过限制（最大 5MB）'
+            error: '文件大小超过限制（最大 50MB）'
           })
           continue
         }
@@ -111,17 +111,23 @@ export async function POST(request: NextRequest) {
 
         console.log(`[JSON解析] 分析结果 - 难度: ${analysis.level}, 分类: ${analysis.category}, 图片: ${analysis.suggestedImage}`)
 
-        // 处理 level：确保是 1-5 之间的整数
-        let finalLevel: number
+        // ============================================================
+        // 核心修复逻辑：Level 处理（白名单机制）
+        // ============================================================
+        let finalLevel: number = analysis.level // 默认使用 AI 建议值
+
         if (meta.level !== undefined && meta.level !== null) {
-          const numLevel = typeof meta.level === 'number' ? meta.level : parseInt(meta.level as string)
-          if (!isNaN(numLevel)) {
-            finalLevel = Math.max(1, Math.min(5, Math.round(numLevel)))
+          // 尝试转为数字
+          const num = Number(meta.level)
+
+          // 只有当它是整数，且严格在 1-5 之间时，才采纳
+          if (Number.isInteger(num) && num >= 1 && num <= 5) {
+            finalLevel = num
           } else {
+            // 不满足条件（非整数、越界、NaN 等），统统丢弃并使用 AI 建议
+            console.warn(`[JSON解析] meta.level 无效 (${meta.level})，自动修正为 AI 建议: ${analysis.level}`)
             finalLevel = analysis.level
           }
-        } else {
-          finalLevel = analysis.level
         }
 
         // 添加到解析结果
@@ -219,11 +225,6 @@ function validateJsonData(jsonData: any): { valid: boolean; error?: string } {
   // 检查 meta 字段（可选但推荐）
   if (jsonData.meta) {
     const meta = jsonData.meta
-
-    // 验证 level（如果存在）
-    if (meta.level !== undefined && ![1, 2, 3, 4, 5].includes(meta.level)) {
-      return { valid: false, error: 'meta.level 必须是 1、2、3、4 或 5' }
-    }
 
     // 验证 language（如果存在）
     const validLanguages = ['en', 'pl', 'es', 'fr', 'de', 'ja']
