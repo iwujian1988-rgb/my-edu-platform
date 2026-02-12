@@ -107,24 +107,28 @@ export async function POST(request: NextRequest) {
     }
 
     // ============================================================
-    // 验证 level 值（白名单机制）
+    // 验证并修正 level 值（自动修正机制）
     // ============================================================
     let finalLevel: number
 
     if (body.level !== undefined && body.level !== null) {
       const num = Number(body.level)
 
-      // 只有当它是整数，且严格在 1-5 之间时，才采纳
-      if (Number.isInteger(num) && num >= 1 && num <= 5) {
-        finalLevel = num
-      } else {
-        // 不满足条件（非整数、越界、NaN 等），返回错误
-        console.warn(`[文章创建] level 值无效 (${body.level})，必须是 1-5 的整数`)
+      // 只有完全无法解析时才报错
+      if (isNaN(num)) {
+        console.warn(`[文章创建] level 值无法解析 (${body.level})`)
         return NextResponse.json(
-          { error: 'level 必须是 1、2、3、4 或 5 的整数', details: `收到的值: ${body.level}` },
+          { error: 'level 必须是数字', details: `收到的值: ${body.level}` },
           { status: 400 }
         )
       }
+
+      // 自动修正：四舍五入 -> 限制在 1-5 范围内
+      finalLevel = Math.round(num)
+      if (finalLevel < 1) finalLevel = 1
+      if (finalLevel > 5) finalLevel = 5
+
+      console.log(`[文章创建] level 自动修正: ${body.level} -> ${finalLevel}`)
     } else {
       return NextResponse.json(
         { error: '缺少必需字段: level' },
