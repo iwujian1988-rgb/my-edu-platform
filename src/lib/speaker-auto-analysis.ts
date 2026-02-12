@@ -331,8 +331,9 @@ export function autoDetectLevel(
     vocabScore * 0.35 +           // 词汇复杂度 35%
     durationScore * 0.10          // 时长 10%
 
-  // 四舍五入到整数等级
-  const level = Math.round(weightedScore) as DifficultyLevel
+  // 四舍五入到整数等级，并限制在 1-5 范围内
+  const rawLevel = Math.round(weightedScore)
+  const level = Math.max(1, Math.min(5, rawLevel)) as DifficultyLevel
 
   // 计算置信度（0-1）
   // 分数越接近整数边界（x.5），置信度越低
