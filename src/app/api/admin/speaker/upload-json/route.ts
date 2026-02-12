@@ -111,11 +111,24 @@ export async function POST(request: NextRequest) {
 
         console.log(`[JSON解析] 分析结果 - 难度: ${analysis.level}, 分类: ${analysis.category}, 图片: ${analysis.suggestedImage}`)
 
+        // 处理 level：确保是 1-5 之间的整数
+        let finalLevel: number
+        if (meta.level !== undefined && meta.level !== null) {
+          const numLevel = typeof meta.level === 'number' ? meta.level : parseInt(meta.level as string)
+          if (!isNaN(numLevel)) {
+            finalLevel = Math.max(1, Math.min(5, Math.round(numLevel)))
+          } else {
+            finalLevel = analysis.level
+          }
+        } else {
+          finalLevel = analysis.level
+        }
+
         // 添加到解析结果
         parsedArticles.push({
           fileName: file.name,
           meta: {
-            level: meta.level || analysis.level,  // 使用 AI 建议的难度
+            level: finalLevel,  // 使用验证后的 level
             language: meta.language || language,
             category: meta.category || analysis.category,  // 使用 AI 建议的分类
             title: title,
