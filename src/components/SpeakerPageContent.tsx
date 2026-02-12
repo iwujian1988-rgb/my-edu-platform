@@ -11,7 +11,7 @@ import { ARTICLE_CATEGORIES } from '@/types/speaker'
 import React from 'react'
 
 interface FilterState {
-  level: 'all' | 1 | 2 | 3
+  level: 'all' | 1 | 2 | 3 | 4 | 5
   category: ArticleCategory | 'all'
 }
 
@@ -228,6 +228,18 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                   `}
                 >
                   L3
+                </button>
+                <button
+                  onClick={() => setFilter({ ...filter, level: 4 })}
+                  className="px-4 py-2 rounded-sm text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[6px_6px_0px_#000] dark:shadow-[6px_6px_0px_#666] hover:shadow-[4px_4px_0px_#000] dark:hover:shadow-[4px_4px_0px_#666] hover:-translate-y-1 transition-all duration-150 text-black dark:text-white"
+                >
+                  L4
+                </button>
+                <button
+                  onClick={() => setFilter({ ...filter, level: 5 })}
+                  className="px-4 py-2 rounded-sm text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[6px_6px_0px_#000] dark:shadow-[6px_6px_0px_#666] hover:shadow-[4px_4px_0px_#000] dark:hover:shadow-[4px_4px_0px_#666] hover:-translate-y-1 transition-all duration-150 text-black dark:text-white"
+                >
+                  L5
                 </button>
               </div>
             </div>

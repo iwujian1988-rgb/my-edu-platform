@@ -30,23 +30,19 @@ export function SpeakerCard({ article, showStatus = true }: SpeakerCardProps) {
 
   // 获取难度等级的标签样式（贴纸效果）
   const getLevelBadge = (level: number) => {
-    if (level === 1) {
-      return (
-        <div className="px-3 py-1 bg-yellow-400 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-2">
-          <span className="text-xs font-black tracking-tight">L1</span>
-        </div>
-      )
+    const badges = {
+      1: { color: 'bg-yellow-400', rotate: '-rotate-2' },
+      2: { color: 'bg-[#B4F416]', rotate: 'rotate-1' },
+      3: { color: 'bg-purple-400', rotate: '-rotate-1' },
+      4: { color: 'bg-orange-400', rotate: 'rotate-2' },
+      5: { color: 'bg-red-400', rotate: '-rotate-2' }
     }
-    if (level === 2) {
-      return (
-        <div className="px-3 py-1 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform rotate-1">
-          <span className="text-xs font-black tracking-tight">L2</span>
-        </div>
-      )
-    }
+
+    const badge = badges[level as keyof typeof badges] || badges[3]
+
     return (
-      <div className="px-3 py-1 bg-purple-400 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
-        <span className="text-xs font-black tracking-tight">L3</span>
+      <div className={`px-3 py-1 ${badge.color} border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform ${badge.rotate}`}>
+        <span className="text-xs font-black tracking-tight">L{level}</span>
       </div>
     )
   }

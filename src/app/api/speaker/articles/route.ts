@@ -56,11 +56,11 @@ export async function GET(request: Request) {
     let level: SpeakerLevel | undefined
     if (levelParam) {
       const levelNum = parseInt(levelParam, 10)
-      // 支持 Level 1, 2, 3
-      if (levelNum !== 1 && levelNum !== 2 && levelNum !== 3) {
+      // 支持 Level 1, 2, 3, 4, 5
+      if (levelNum !== 1 && levelNum !== 2 && levelNum !== 3 && levelNum !== 4 && levelNum !== 5) {
         console.warn('[Speaker API] ⚠️ 无效的难度等级:', levelParam)
         return NextResponse.json(
-          { error: 'INVALID_LEVEL', message: '难度等级必须是 1、2 或 3' },
+          { error: 'INVALID_LEVEL', message: '难度等级必须是 1、2、3、4 或 5' },
           { status: 400 }
         )
       }
