@@ -49,7 +49,15 @@ export async function getSpeakerArticles(
     let query = supabase
       .from('speaker_articles')
       .select('*')
-      .eq('status', (params?.status || 'active') as SpeakerArticleStatus)
+
+    // 状态过滤：如果未指定，默认查询 published 和 active
+    const statusFilter = params?.status
+    if (statusFilter) {
+      query = query.eq('status', statusFilter as SpeakerArticleStatus)
+    } else {
+      // 默认显示已发布（published）和活跃（active）的文章
+      query = query.in('status', ['published', 'active'] as SpeakerArticleStatus[])
+    }
 
     // 可选：按难度等级过滤
     if (params?.level) {

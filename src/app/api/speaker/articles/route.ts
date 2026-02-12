@@ -42,7 +42,7 @@ export async function GET(request: Request) {
     const languageParam = searchParams.get('language')
     const categoryParam = searchParams.get('category')
     const limitParam = searchParams.get('limit')
-    const statusParam = searchParams.get('status') || 'active'
+    const statusParam = searchParams.get('status') // 移除默认值，让 data 层处理
 
     console.log('[Speaker API] 查询参数:', {
       level: levelParam,
