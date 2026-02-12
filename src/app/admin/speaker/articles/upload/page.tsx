@@ -3,6 +3,7 @@
 /**
  * Speaker 批量导入页面
  * 功能：批量上传 JSON 文件和音频文件，预览并导入文章
+ * 上传方式：前端直传 OSS（ali-oss SDK）+ 进度条
  */
 
 import { useState } from 'react'
@@ -19,7 +20,7 @@ import {
   Loader2
 } from 'lucide-react'
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, ARTICLE_CATEGORIES } from '@/types/speaker'
-import { uploadAudio as uploadAudioAction } from '@/app/api/admin/speaker/upload-audio/action'
+import OSS from 'ali-oss'
 
 interface ParsedArticle {
   fileName: string
@@ -51,6 +52,11 @@ interface ParsedArticle {
   audioFile?: File
 }
 
+// 上传进度类型
+interface UploadProgress {
+  [key: number]: number // 文章索引 -> 进度百分比 (0-100)
+}
+
 const LEVEL_MAP = {
   1: 'Level 1',
   2: 'Level 2',
@@ -66,8 +72,8 @@ export default function SpeakerUploadPage() {
   const [parsedArticles, setParsedArticles] = useState<ParsedArticle[]>([])
   const [errors, setErrors] = useState<Array<{ fileName: string; error: string }>>([])
   const [uploading, setUploading] = useState(false)
-  // 修复类型：索引应该是数字（文章索引），而不是字符串
   const [audioUrls, setAudioUrls] = useState<Record<number, string>>({})
+  const [uploadProgress, setUploadProgress] = useState<UploadProgress>({})
 
   // 处理 JSON 文件选择
   const handleJsonFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,22 +91,76 @@ export default function SpeakerUploadPage() {
     setParsedArticles(updatedArticles)
   }
 
-  // 上传音频文件（使用 Server Action 绕过 10MB 限制）
+  // 上传音频文件到 OSS（前端直传，带进度条）
   const uploadAudio = async (file: File, index: number): Promise<string> => {
-    const formData = new FormData()
-    formData.append('file', file)
+    try {
+      // 1. 获取 STS Token
+      console.log('[OSS上传] 正在获取 STS Token...')
+      const tokenRes = await fetch('/api/admin/speaker/oss-token', {
+        method: 'POST',
+      })
 
-    const result = await uploadAudioAction(formData)
+      if (!tokenRes.ok) {
+        const errorData = await tokenRes.json()
+        throw new Error(errorData.error || '获取 OSS 凭证失败')
+      }
 
-    if (!result.success) {
-      throw new Error(result.error || '上传失败')
+      const tokenData = await tokenRes.json()
+      console.log('[OSS上传] STS Token 获取成功')
+
+      // 2. 初始化 OSS 客户端（使用临时凭证）
+      const client = new OSS({
+        region: tokenData.region,
+        accessKeyId: tokenData.accessKeyId,
+        accessKeySecret: tokenData.accessKeySecret,
+        stsToken: tokenData.stsToken,
+        bucket: tokenData.bucket,
+        secure: true, // 使用 HTTPS
+      })
+
+      // 3. 生成唯一文件名
+      const date = new Date()
+      const datePath = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}`
+      const timestamp = Date.now()
+      const filename = `speaker/${datePath}/${timestamp}-${file.name}`
+
+      console.log(`[OSS上传] 开始上传: ${filename} (${(file.size / 1024 / 1024).toFixed(2)} MB)`)
+
+      // 4. 上传文件（带进度回调）
+      const result = await client.put(filename, file, {
+        progress: (p: number) => {
+          // p 是上传进度 (0-1)
+          const percent = Math.round(p * 100)
+          console.log(`[OSS上传] 上传进度: ${percent}%`)
+          setUploadProgress(prev => ({ ...prev, [index]: percent }))
+        },
+      })
+
+      console.log(`[OSS上传] 上传成功: ${result.url}`)
+
+      // 5. 清除进度条
+      setUploadProgress(prev => {
+        const newProgress = { ...prev }
+        delete newProgress[index]
+        return newProgress
+      })
+
+      // 6. 更新 audioUrls
+      setAudioUrls(prev => ({
+        ...prev,
+        [index]: result.url
+      }))
+
+      return result.url
+    } catch (error: any) {
+      console.error('[OSS上传] 失败:', error)
+      setUploadProgress(prev => {
+        const newProgress = { ...prev }
+        delete newProgress[index]
+        return newProgress
+      })
+      throw error
     }
-    // 修复：正确更新 audioUrls 状态
-    setAudioUrls(prev => ({
-      ...prev,
-      [index]: result.data.url
-    }))
-    return result.data.url
   }
 
   // 移除音频
@@ -666,6 +726,22 @@ export default function SpeakerUploadPage() {
                         </div>
                       ) : (
                         <div className="space-y-2">
+                          {/* 进度条 */}
+                          {uploadProgress[index] !== undefined && (
+                            <div className="space-y-1">
+                              <div className="flex items-center justify-between text-sm">
+                                <span className="text-gray-700">上传进度</span>
+                                <span className="font-bold text-purple-600">{uploadProgress[index]}%</span>
+                              </div>
+                              <div className="w-full bg-gray-200 rounded-full h-3 overflow-hidden">
+                                <div
+                                  className="h-full bg-gradient-to-r from-purple-500 to-pink-500 transition-all duration-300"
+                                  style={{ width: `${uploadProgress[index]}%` }}
+                                />
+                              </div>
+                            </div>
+                          )}
+
                           <div className="flex items-center gap-2">
                             <input
                               type="file"
@@ -677,6 +753,7 @@ export default function SpeakerUploadPage() {
                                 }
                               }}
                               className="flex-1 px-3 py-2 border-2 border-black rounded-lg text-sm"
+                              disabled={uploadProgress[index] !== undefined}
                             />
                             <button
                               onClick={async () => {
@@ -697,10 +774,14 @@ export default function SpeakerUploadPage() {
                                   setUploading(false)
                                 }
                               }}
-                              disabled={!article.audioFile || uploading}
+                              disabled={!article.audioFile || uploading || uploadProgress[index] !== undefined}
                               className="px-4 py-2 bg-green-600 text-white text-sm rounded-lg hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                              {uploading ? '上传中...' : '上传到OSS'}
+                              {uploadProgress[index] !== undefined
+                                ? `${uploadProgress[index]}%`
+                                : uploading
+                                ? '上传中...'
+                                : '上传到OSS'}
                             </button>
                           </div>
                           <input
