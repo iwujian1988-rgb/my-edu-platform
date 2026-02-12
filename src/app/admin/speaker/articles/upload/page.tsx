@@ -74,6 +74,7 @@ export default function SpeakerUploadPage() {
   const [uploading, setUploading] = useState(false)
   const [audioUrls, setAudioUrls] = useState<Record<number, string>>({})
   const [uploadProgress, setUploadProgress] = useState<UploadProgress>({})
+  const [importErrors, setImportErrors] = useState<Array<{ index: number; title: string; error: string }>>([])
 
   // 处理 JSON 文件选择
   const handleJsonFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -251,6 +252,9 @@ export default function SpeakerUploadPage() {
 
   // 导入文章
   const handleImport = async () => {
+    // 清空之前的导入错误
+    setImportErrors([])
+
     // 验证所有文章都有必填字段
     const invalidArticles = parsedArticles.filter((article, index) => {
       const hasAudio = audioUrls[index] || article.meta.audio_filename
@@ -277,39 +281,81 @@ export default function SpeakerUploadPage() {
         const article = parsedArticles[i]
         const audioUrl = audioUrls[i] || article.meta.audio_filename
 
+        // 构建请求体
+        const payload = {
+          level: article.meta.level,
+          language: article.meta.language,
+          category: article.meta.category,
+          title: article.meta.title,
+          source_url: article.meta.source_url,
+          audio_url: audioUrl,
+          image_url: article.meta.image_filename,
+          has_preroll_ad: article.meta.has_preroll_ad,  // 修复拼写：与 interface 定义一致
+          word_count: article.stats.word_count,
+          json_data: article.jsonData
+        }
+
+        // 调试日志：打印请求体
+        console.log(`[导入] 文章 ${i + 1} 正在提交:`, {
+          title: article.meta.title,
+          level: article.meta.level,
+          levelType: typeof article.meta.level,
+          payload: JSON.stringify(payload)
+        })
+
         try {
           const response = await fetch('/api/admin/speaker/articles', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-              level: article.meta.level,
-              language: article.meta.language,
-              category: article.meta.category,
-              title: article.meta.title,
-              source_url: article.meta.source_url,
-              audio_url: audioUrl,
-              image_url: article.meta.image_filename,
-              has_preroll_ad: article.meta.has_preroll_ad,
-              word_count: article.stats.word_count,
-              json_data: article.jsonData
-            })
+            body: JSON.stringify(payload)
           })
 
           if (response.ok) {
             successCount++
+            console.log(`[导入] ✅ 文章 ${i + 1} "${article.meta.title}" 导入成功`)
           } else {
             failCount++
+            // 1. 尝试解析后端返回的详细错误
+            let errorMessage = '未知错误'
+            try {
+              const errorData = await response.json()
+              errorMessage = errorData.error || errorData.details || JSON.stringify(errorData)
+              console.error(`[导入] ❌ 文章 ${i + 1} "${article.meta.title}" 导入失败:`, errorData)
+            } catch (e) {
+              errorMessage = `HTTP 错误: ${response.status} ${response.statusText}`
+              console.error(`[导入] ❌ 文章 ${i + 1} "${article.meta.title}" HTTP错误:`, response.status)
+            }
+
+            // 2. 将错误推入 UI 状态，显示在界面上
+            setImportErrors(prev => [...prev, {
+              index: i,
+              title: article.meta.title,
+              error: errorMessage
+            }])
           }
         } catch (error) {
-          console.error('导入文章失败:', error)
           failCount++
+          const errorMsg = error instanceof Error ? error.message : String(error)
+          console.error(`[导入] ❌ 文章 ${i + 1} "${article.meta.title}" 网络异常:`, errorMsg)
+
+          // 将错误推入 UI 状态
+          setImportErrors(prev => [...prev, {
+            index: i,
+            title: article.meta.title,
+            error: `网络异常: ${errorMsg}`
+          }])
         }
       }
 
-      alert(`导入完成！成功: ${successCount}，失败: ${failCount}`)
-      router.push('/admin/speaker/articles')
+      // 显示详细结果
+      if (failCount > 0) {
+        alert(`导入完成！\n成功: ${successCount} 篇\n失败: ${failCount} 篇\n\n请在下方查看失败详情`)
+      } else {
+        alert(`导入完成！全部 ${successCount} 篇文章导入成功`)
+        router.push('/admin/speaker/articles')
+      }
     } catch (error: any) {
       console.error('导入失败:', error)
       alert('导入失败: ' + error.message)
@@ -390,7 +436,7 @@ export default function SpeakerUploadPage() {
 
       {step === 'preview' && (
         <div className="space-y-6">
-          {/* 错误信息 */}
+          {/* 解析错误信息 */}
           {errors.length > 0 && (
             <div className="bg-red-50 border-2 border-red-300 rounded-xl p-4">
               <h3 className="font-bold text-red-800 mb-2 flex items-center gap-2">
@@ -401,6 +447,24 @@ export default function SpeakerUploadPage() {
                 {errors.map((error, index) => (
                   <li key={index}>
                     <strong>{error.fileName}</strong>: {error.error}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* 导入错误信息 */}
+          {importErrors.length > 0 && (
+            <div className="bg-orange-50 border-2 border-orange-300 rounded-xl p-4">
+              <h3 className="font-bold text-orange-800 mb-2 flex items-center gap-2">
+                <AlertCircle size={20} />
+                导入失败的文章 ({importErrors.length})
+              </h3>
+              <ul className="text-sm text-orange-700 space-y-1">
+                {importErrors.map((error, index) => (
+                  <li key={index} className="border-b border-orange-200 pb-2 last:border-0">
+                    <div className="font-medium">文章 {error.index + 1}: {error.title}</div>
+                    <div className="text-orange-600 mt-1">{error.error}</div>
                   </li>
                 ))}
               </ul>

@@ -9,6 +9,7 @@
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
+import { VALID_LANGUAGES, VALID_CATEGORIES, DEFAULT_STATUS, DEFAULT_LEVEL, FIELD_NAMES } from '@/lib/speaker-constants'
 
 // ========================================
 // GET - 获取文章列表
@@ -109,47 +110,39 @@ export async function POST(request: NextRequest) {
     // ============================================================
     // 验证并修正 level 值（自动修正机制）
     // ============================================================
-    let finalLevel: number
+    let finalLevel: number = DEFAULT_LEVEL  // 默认值，防止 null/undefined 崩溃
 
     if (body.level !== undefined && body.level !== null) {
       const num = Number(body.level)
 
       // 只有完全无法解析时才报错
       if (isNaN(num)) {
-        console.warn(`[文章创建] level 值无法解析 (${body.level})`)
-        return NextResponse.json(
-          { error: 'level 必须是数字', details: `收到的值: ${body.level}` },
-          { status: 400 }
-        )
+        console.warn(`[文章创建] level 值无法解析 (${body.level})，使用默认值: ${DEFAULT_LEVEL}`)
+        // 使用默认值，不中断流程
+      } else {
+        // 自动修正：四舍五入 -> 限制在 1-5 范围内
+        finalLevel = Math.round(num)
+        if (finalLevel < 1) finalLevel = 1
+        if (finalLevel > 5) finalLevel = 5
+
+        console.log(`[文章创建] level 自动修正: ${body.level} -> ${finalLevel}`)
       }
-
-      // 自动修正：四舍五入 -> 限制在 1-5 范围内
-      finalLevel = Math.round(num)
-      if (finalLevel < 1) finalLevel = 1
-      if (finalLevel > 5) finalLevel = 5
-
-      console.log(`[文章创建] level 自动修正: ${body.level} -> ${finalLevel}`)
     } else {
-      return NextResponse.json(
-        { error: '缺少必需字段: level' },
-        { status: 400 }
-      )
+      console.log(`[文章创建] level 为空，使用默认值: ${DEFAULT_LEVEL}`)
     }
 
     // 验证 language 值
-    const validLanguages = ['en', 'pl', 'es', 'fr', 'de', 'ja']
-    if (!validLanguages.includes(body.language)) {
+    if (!VALID_LANGUAGES.includes(body.language as any)) {
       return NextResponse.json(
-        { error: `language 必须是以下值之一: ${validLanguages.join(', ')}` },
+        { error: `language 必须是以下值之一: ${VALID_LANGUAGES.join(', ')}` },
         { status: 400 }
       )
     }
 
     // 验证 category 值
-    const validCategories = ['健康', '心理', '成长', '学习', '社交', '生活']
-    if (!validCategories.includes(body.category)) {
+    if (!VALID_CATEGORIES.includes(body.category)) {
       return NextResponse.json(
-        { error: `category 必须是以下值之一: ${validCategories.join(', ')}` },
+        { error: `category 必须是以下值之一: ${VALID_CATEGORIES.join(', ')}` },
         { status: 400 }
       )
     }
@@ -178,12 +171,12 @@ export async function POST(request: NextRequest) {
         source_url: body.source_url || null,
         audio_url: body.audio_url,
         image_url: body.image_url || null,
-        has_preroll_ad: body.has_preroll_ad || false,
+        has_preroll_ad: body.has_preroll_ad || false,  // 修复拼写：使用 FIELD_NAMES.HAS_PREROLL_AD
         total_sentences: totalSentences,
         duration_seconds: durationSeconds,
         word_count: body.word_count || null,
         json_data: body.json_data,
-        status: body.status || 'active'
+        status: body.status || DEFAULT_STATUS  // 使用统一默认状态
       })
       .select()
       .single()

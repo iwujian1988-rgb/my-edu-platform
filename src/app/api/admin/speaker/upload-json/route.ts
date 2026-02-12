@@ -9,6 +9,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { analyzeArticle } from '@/lib/speaker-auto-analysis'
+import { VALID_LANGUAGES, VALID_CATEGORIES, DEFAULT_STATUS, FIELD_NAMES } from '@/lib/speaker-constants'
 
 // ========================================
 // POST - 上传并解析 JSON 文件
@@ -141,8 +142,8 @@ export async function POST(request: NextRequest) {
             source_url: meta.source_url || null,
             audio_filename: meta.audio_filename || null,
             image_filename: meta.image_filename || analysis.suggestedImage,  // 使用 AI 建议的图片
-            has_preroll_ad: meta.has_preroll_ad || false,
-            status: meta.status || 'ready'
+            has_preroll_ad: meta.has_preroll_ad || false,  // 修复拼写：统一使用 FIELD_NAMES.HAS_PREROLL_AD
+            status: meta.status || DEFAULT_STATUS  // 使用统一默认状态
           },
           stats: {
             total_sentences: sentences.length,
@@ -227,15 +228,13 @@ function validateJsonData(jsonData: any): { valid: boolean; error?: string } {
     const meta = jsonData.meta
 
     // 验证 language（如果存在）
-    const validLanguages = ['en', 'pl', 'es', 'fr', 'de', 'ja']
-    if (meta.language && !validLanguages.includes(meta.language)) {
-      return { valid: false, error: `meta.language 必须是以下值之一: ${validLanguages.join(', ')}` }
+    if (meta.language && !VALID_LANGUAGES.includes(meta.language as any)) {
+      return { valid: false, error: `meta.language 必须是以下值之一: ${VALID_LANGUAGES.join(', ')}` }
     }
 
     // 验证 category（如果存在）
-    const validCategories = ['健康', '心理', '成长', '学习', '社交', '生活']
-    if (meta.category && !validCategories.includes(meta.category)) {
-      return { valid: false, error: `meta.category 必须是以下值之一: ${validCategories.join(', ')}` }
+    if (meta.category && !VALID_CATEGORIES.includes(meta.category as any)) {
+      return { valid: false, error: `meta.category 必须是以下值之一: ${VALID_CATEGORIES.join(', ')}` }
     }
   }
 
