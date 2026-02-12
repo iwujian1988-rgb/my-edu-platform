@@ -131,6 +131,30 @@ export async function POST(request: NextRequest) {
       console.log(`[文章创建] level 为空，使用默认值: ${DEFAULT_LEVEL}`)
     }
 
+    // ============================================================
+    // 对所有可能的数字字段进行类型安全转换
+    // ============================================================
+    const safeNumber = (value: any, fieldName: string): number => {
+      if (value === undefined || value === null || value === '') {
+        console.log(`[文章创建] ${fieldName} 为空，使用默认值 0`)
+        return 0
+      }
+      const num = Number(value)
+      if (isNaN(num)) {
+        console.warn(`[文章创建] ${fieldName} 值无法解析 (${value})，使用默认值 0`)
+        return 0
+      }
+      const rounded = Math.round(num)
+      const result = Math.max(0, rounded)  // 确保非负数
+      console.log(`[文章创建] ${fieldName} 自动转换: ${value} -> ${result}`)
+      return result
+    }
+
+    // 对传入的数字字段进行安全转换
+    const durationInt = safeNumber(body.duration_seconds, 'duration_seconds')
+    const viewCountInt = safeNumber(body.view_count, 'view_count')  // view_count 字段处理
+    const wordCountInt = safeNumber(body.word_count, 'word_count')
+
     // 验证 language 值
     if (!VALID_LANGUAGES.includes(body.language as any)) {
       return NextResponse.json(
@@ -152,13 +176,7 @@ export async function POST(request: NextRequest) {
     const totalSentences = sentences.length
 
     // 计算时长（从 sentences 的最后一个 end_time）
-    let durationSeconds = null
-    if (sentences.length > 0) {
-      const lastSentence = sentences[sentences.length - 1]
-      if (lastSentence.end_time) {
-        durationSeconds = lastSentence.end_time
-      }
-    }
+    let durationSeconds = durationInt  // 使用转换后的整数值
 
     // 插入文章数据
     const { data: article, error: articleError } = await supabase
@@ -173,8 +191,9 @@ export async function POST(request: NextRequest) {
         image_url: body.image_url || null,
         has_preroll_ad: body.has_preroll_ad || false,  // 修复拼写：使用 FIELD_NAMES.HAS_PREROLL_AD
         total_sentences: totalSentences,
-        duration_seconds: durationSeconds,
-        word_count: body.word_count || null,
+        duration_seconds: durationSeconds,  // 使用转换后的整数值
+        word_count: wordCountInt,  // ✅ 使用转换后的整数值，防止 "953.07" 类错误
+        view_count: viewCountInt,  // ✅ 使用转换后的整数值，防止类似错误
         json_data: body.json_data,
         status: body.status || DEFAULT_STATUS  // 使用统一默认状态
       })
