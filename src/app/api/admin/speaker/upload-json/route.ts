@@ -45,8 +45,8 @@ export async function POST(request: NextRequest) {
           continue
         }
 
-        // 验证文件大小（限制 5MB）
-        const maxSize = 5 * 1024 * 1024 // 5MB
+        // 验证文件大小（限制 50MB）
+        const maxSize = 50 * 1024 * 1024 // 50MB
         if (file.size > maxSize) {
           errors.push({
             fileName: file.name,
