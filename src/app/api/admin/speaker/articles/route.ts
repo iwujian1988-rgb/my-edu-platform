@@ -89,7 +89,7 @@ export async function GET(request: NextRequest) {
 }
 
 // ========================================
-// POST - 创建新文章
+// POST - 创建新文章（防御性增强版）
 // ========================================
 export async function POST(request: NextRequest) {
   try {
@@ -108,55 +108,74 @@ export async function POST(request: NextRequest) {
     }
 
     // ============================================================
-    // 验证并修正 level 值（自动修正机制）
+    // 🔒 脏数据过滤器：防御性增强
     // ============================================================
-    let finalLevel: number = DEFAULT_LEVEL  // 默认值，防止 null/undefined 崩溃
+    const sanitizedBody = {
+      level: body.level !== undefined && body.level !== null && body.level !== '' ? body.level : null,
+      language: body.language !== undefined && body.language !== null && body.language !== '' ? body.language : null,
+      category: body.category !== undefined && body.category !== null && body.category !== '' ? body.category : null,
+      title: body.title !== undefined && body.title !== null && body.title !== '' ? body.title : null,
+      audio_url: body.audio_url !== undefined && body.audio_url !== null && body.audio_url !== '' ? body.audio_url : null,
+      json_data: body.json_data !== undefined && body.json_data !== null && body.json_data !== '' ? body.json_data : null
+    }
 
-    if (body.level !== undefined && body.level !== null) {
-      const num = Number(body.level)
-
-      // 只有完全无法解析时才报错
-      if (isNaN(num)) {
-        console.warn(`[文章创建] level 值无法解析 (${body.level})，使用默认值: ${DEFAULT_LEVEL}`)
-        // 使用默认值，不中断流程
-      } else {
-        // 自动修正：四舍五入 -> 限制在 1-5 范围内
-        finalLevel = Math.round(num)
-        if (finalLevel < 1) finalLevel = 1
-        if (finalLevel > 5) finalLevel = 5
-
-        console.log(`[文章创建] level 自动修正: ${body.level} -> ${finalLevel}`)
-      }
-    } else {
-      console.log(`[文章创建] level 为空，使用默认值: ${DEFAULT_LEVEL}`)
+    // 检查是否有空的必填字段
+    const emptyRequiredFields = Object.keys(sanitizedBody).filter(key => sanitizedBody[key] === null)
+    if (emptyRequiredFields.length > 0) {
+      console.error('[API] 必填字段为空:', emptyRequiredFields)
+      return NextResponse.json(
+        {
+          error: '必填字段不能为空',
+          details: `以下字段为空或空字符串: ${emptyRequiredFields.join(', ')}`
+        },
+        { status: 400 }
+      )
     }
 
     // ============================================================
-    // 对所有可能的数字字段进行类型安全转换
+    // 🔒 全量类型清洗（所有数字字段强制转换）
     // ============================================================
-    const safeNumber = (value: any, fieldName: string): number => {
+    const sanitizeNumber = (value: any, fieldName: string): number => {
       if (value === undefined || value === null || value === '') {
-        console.log(`[文章创建] ${fieldName} 为空，使用默认值 0`)
+        console.warn(`[字段清洗] ${fieldName} 为空/undefined，使用默认值 0`)
         return 0
       }
       const num = Number(value)
       if (isNaN(num)) {
-        console.warn(`[文章创建] ${fieldName} 值无法解析 (${value})，使用默认值 0`)
+        console.warn(`[字段清洗] ${fieldName} 值无法解析 (${value})，使用默认值 0`)
         return 0
       }
+      // 强制转换为整数，防止 "953.07" 类错误
       const rounded = Math.round(num)
       const result = Math.max(0, rounded)  // 确保非负数
-      console.log(`[文章创建] ${fieldName} 自动转换: ${value} -> ${result}`)
+      console.log(`[字段清洗] ${fieldName} 类型转换: ${value} (${typeof value}) -> ${result}`)
       return result
     }
 
-    // 对传入的数字字段进行安全转换
-    const durationInt = safeNumber(body.duration_seconds, 'duration_seconds')
-    const viewCountInt = safeNumber(body.view_count, 'view_count')  // view_count 字段处理
-    const wordCountInt = safeNumber(body.word_count, 'word_count')
+    // 验证并修正 level 值（使用 sanitizedBody）
+    let finalLevel: number = DEFAULT_LEVEL
+    if (sanitizedBody.level !== null) {
+      const num = Number(sanitizedBody.level)
+      if (isNaN(num)) {
+        console.warn(`[文章创建] level 无法解析 (${sanitizedBody.level})，使用默认值: ${DEFAULT_LEVEL}`)
+        finalLevel = DEFAULT_LEVEL
+      } else {
+        finalLevel = Math.round(num)
+        if (finalLevel < 1) finalLevel = 1
+        if (finalLevel > 5) finalLevel = 5
+        console.log(`[文章创建] level 自动修正: ${sanitizedBody.level} -> ${finalLevel}`)
+      }
+    } else {
+      console.log(`[文章创建] level 为空，使用默认值: ${DEFAULT_LEVEL}`)
+      finalLevel = DEFAULT_LEVEL
+    }
+
+    // 验证并修正其他数字字段
+    const durationInt = sanitizeNumber(sanitizedBody.duration_seconds, 'duration_seconds')
+    const wordCountInt = sanitizeNumber(sanitizedBody.word_count, 'word_count')
 
     // 验证 language 值
-    if (!VALID_LANGUAGES.includes(body.language as any)) {
+    if (!VALID_LANGUAGES.includes(sanitizedBody.language as any)) {
       return NextResponse.json(
         { error: `language 必须是以下值之一: ${VALID_LANGUAGES.join(', ')}` },
         { status: 400 }
@@ -164,38 +183,73 @@ export async function POST(request: NextRequest) {
     }
 
     // 验证 category 值
-    if (!VALID_CATEGORIES.includes(body.category)) {
+    if (!VALID_CATEGORIES.includes(sanitizedBody.category)) {
       return NextResponse.json(
         { error: `category 必须是以下值之一: ${VALID_CATEGORIES.join(', ')}` },
         { status: 400 }
       )
     }
 
-    // 提取 sentences 数据
-    const sentences = body.json_data?.sentences || []
+    // ============================================================
+    // JSON 结构深度校验：防止僵尸文章
+    // ============================================================
+    // 校验 sentences 数据结构
+    if (!sanitizedBody.json_data || typeof sanitizedBody.json_data !== 'object') {
+      return NextResponse.json(
+        {
+          error: 'json_data 格式错误',
+          details: 'json_data 必须是包含 sentences 属性的对象，不能是字符串或其他类型'
+        },
+        { status: 400 }
+      )
+    }
+
+    if (!Array.isArray(sanitizedBody.json_data.sentences)) {
+      return NextResponse.json(
+        {
+          error: 'sentences 数据格式错误',
+          details: 'sentences 必须是数组类型，且不能为空'
+        },
+        { status: 400 }
+      )
+    }
+
+    if (sanitizedBody.json_data.sentences.length === 0) {
+      return NextResponse.json(
+        {
+          error: 'sentences 不能为空',
+          details: '文章必须至少包含一个句子'
+        },
+        { status: 400 }
+      )
+    }
+
+    // 提取 sentences 数据（已通过校验）
+    const sentences = sanitizedBody.json_data.sentences
     const totalSentences = sentences.length
 
     // 计算时长（从 sentences 的最后一个 end_time）
     let durationSeconds = durationInt  // 使用转换后的整数值
 
     // 插入文章数据
-    const { data: article, error: articleError } = await supabase
+    let article: any = null  // 保存文章ID，用于回滚
+
+    const { data: articleData, error: articleError } = await supabase
       .from('speaker_articles')
       .insert({
         level: finalLevel,  // 使用验证后的 level
-        language: body.language,
-        category: body.category,
-        title: body.title,
-        source_url: body.source_url || null,
-        audio_url: body.audio_url,
-        image_url: body.image_url || null,
-        has_preroll_ad: body.has_preroll_ad || false,  // 修复拼写：使用 FIELD_NAMES.HAS_PREROLL_AD
+        language: sanitizedBody.language,
+        category: sanitizedBody.category,
+        title: sanitizedBody.title,
+        source_url: sanitizedBody.source_url || null,
+        audio_url: sanitizedBody.audio_url,
+        image_url: sanitizedBody.image_url || null,
+        has_preroll_ad: sanitizedBody.has_preroll_ad || false,  // 修复拼写：使用 FIELD_NAMES.HAS_PREROLL_AD
         total_sentences: totalSentences,
         duration_seconds: durationSeconds,  // 使用转换后的整数值
         word_count: wordCountInt,  // ✅ 使用转换后的整数值，防止 "953.07" 类错误
-        view_count: viewCountInt,  // ✅ 使用转换后的整数值，防止类似错误
-        json_data: body.json_data,
-        status: body.status || DEFAULT_STATUS  // 使用统一默认状态
+        json_data: sanitizedBody.json_data,
+        status: sanitizedBody.status || DEFAULT_STATUS  // 使用统一默认状态
       })
       .select()
       .single()
@@ -208,13 +262,16 @@ export async function POST(request: NextRequest) {
       )
     }
 
+    // 保存成功后才赋值，用于可能的回滚
+    article = articleData
+
     // 插入句子数据
     if (sentences.length > 0) {
       const sentencesToInsert = sentences.map((s: any, index: number) => ({
         article_id: article.id,
         sentence_index: index,
         text: s.text,
-        text_en: s.text,
+        text_en: s.text_en || s.text,  // 优先使用前端传来的英文翻译，防止数据丢失
         start_time: s.start_time || null,
         end_time: s.end_time || null
       }))
@@ -225,8 +282,30 @@ export async function POST(request: NextRequest) {
 
       if (sentencesError) {
         console.error('[API] 插入句子失败:', sentencesError)
-        // 不中断流程，继续返回文章数据
+
+        // ============================================================
+        // 手动回滚：删除僵尸文章，防止数据不一致
+        // ============================================================
+        console.warn('[API] 句子插入失败，执行回滚，删除文章以防止数据不一致')
+
+        const { error: deleteError } = await supabase
+          .from('speaker_articles')
+          .delete()
+          .eq('id', article.id)
+
+        if (deleteError) {
+          console.error('[API] 回滚失败:', deleteError)
+          // 回滚也失败，记录错误但继续
+        } else {
+          console.log(`[API] 回滚成功：已删除文章 ID ${article.id}`)
+          // 删除引用，避免返回已被删除的文章数据
+          article = null
+        }
+      } else {
+        console.log(`[API] ✅ 成功插入 ${sentences.length} 个句子`)
       }
+    } else {
+      console.warn('[API] 文章没有句子数据，跳过句子插入')
     }
 
     // 重新验证缓存
