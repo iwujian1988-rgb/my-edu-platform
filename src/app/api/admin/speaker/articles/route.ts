@@ -3,13 +3,52 @@
  *
  * 功能：
  * - GET: 获取文章列表（支持筛选、分页、排序）
- * - POST: 创建新文章（支持 JSON 导入）
+ * - POST: 创建新文章（使用 Zod 强校验）
  */
 
 import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
-import { VALID_LANGUAGES, VALID_CATEGORIES, DEFAULT_STATUS, DEFAULT_LEVEL, FIELD_NAMES } from '@/lib/speaker-constants'
+import { z } from 'zod'
+
+// ========================================
+// Zod Schema - 强校验
+// ========================================
+
+const sentenceSchema = z.object({
+  speaker: z.string().optional(),
+  text: z.string().min(1, '句子文本不能为空'),
+  text_en: z.string().optional(), // 英文翻译（可选）
+  start_time: z.number().nullable().optional(),
+  end_time: z.number().nullable().optional()
+})
+
+const uploadSchema = z.object({
+  level: z.union([z.string(), z.number()]).transform(val => {
+    const num = Number(val)
+    if (isNaN(num) || num < 1 || num > 5) {
+      return 3 // 默认 Level 3
+    }
+    return Math.round(num)
+  }).default(3),
+
+  language: z.string().min(1, '语言不能为空').default('en'),
+  category: z.string().min(1, '分类不能为空').default('心理'),
+
+  title: z.string().min(1, '标题不能为空'),
+  source_url: z.string().nullable().optional(),
+  audio_url: z.string().min(1, '音频 URL 不能为空'),
+  image_url: z.string().nullable().optional(),
+  has_preroll_ad: z.boolean().optional().default(false),
+
+  json_data: z.object({
+    sentences: z.array(sentenceSchema).min(1, '至少需要一个句子'),
+    meta: z.any().optional()
+  }),
+
+  word_count: z.number().optional(), // 可选，后端会计算
+  duration_seconds: z.number().optional() // 可选，后端会计算
+})
 
 // ========================================
 // GET - 获取文章列表
@@ -89,167 +128,106 @@ export async function GET(request: NextRequest) {
 }
 
 // ========================================
-// POST - 创建新文章（防御性增强版）
+// POST - 创建新文章（重构版）
 // ========================================
 export async function POST(request: NextRequest) {
+  const supabase = await createClient()
+
   try {
-    const supabase = await createClient()
+    // ============================================================
+    // 1. 权限检查
+    // ============================================================
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+
+    if (authError || !user) {
+      console.error('[API] 未授权访问')
+      return NextResponse.json(
+        { error: '未授权访问' },
+        { status: 401 }
+      )
+    }
+
+    // ============================================================
+    // 2. 解析与校验
+    // ============================================================
     const body = await request.json()
+    const parseResult = uploadSchema.safeParse(body)
 
-    // 验证必需字段
-    const requiredFields = ['level', 'language', 'category', 'title', 'audio_url', 'json_data']
-    const missingFields = requiredFields.filter(field => !body[field])
-
-    if (missingFields.length > 0) {
-      return NextResponse.json(
-        { error: '缺少必需字段', fields: missingFields },
-        { status: 400 }
-      )
-    }
-
-    // ============================================================
-    // 🔒 脏数据过滤器：防御性增强
-    // ============================================================
-    const sanitizedBody = {
-      level: body.level !== undefined && body.level !== null && body.level !== '' ? body.level : null,
-      language: body.language !== undefined && body.language !== null && body.language !== '' ? body.language : null,
-      category: body.category !== undefined && body.category !== null && body.category !== '' ? body.category : null,
-      title: body.title !== undefined && body.title !== null && body.title !== '' ? body.title : null,
-      audio_url: body.audio_url !== undefined && body.audio_url !== null && body.audio_url !== '' ? body.audio_url : null,
-      json_data: body.json_data !== undefined && body.json_data !== null && body.json_data !== '' ? body.json_data : null
-    }
-
-    // 检查是否有空的必填字段
-    const emptyRequiredFields = Object.keys(sanitizedBody).filter(key => sanitizedBody[key] === null)
-    if (emptyRequiredFields.length > 0) {
-      console.error('[API] 必填字段为空:', emptyRequiredFields)
+    if (!parseResult.success) {
+      console.error('[API] 校验失败:', parseResult.error.format())
       return NextResponse.json(
         {
-          error: '必填字段不能为空',
-          details: `以下字段为空或空字符串: ${emptyRequiredFields.join(', ')}`
+          error: '数据校验失败',
+          details: parseResult.error.format()
         },
         { status: 400 }
       )
     }
 
-    // ============================================================
-    // 🔒 全量类型清洗（所有数字字段强制转换）
-    // ============================================================
-    const sanitizeNumber = (value: any, fieldName: string): number => {
-      if (value === undefined || value === null || value === '') {
-        console.warn(`[字段清洗] ${fieldName} 为空/undefined，使用默认值 0`)
-        return 0
-      }
-      const num = Number(value)
-      if (isNaN(num)) {
-        console.warn(`[字段清洗] ${fieldName} 值无法解析 (${value})，使用默认值 0`)
-        return 0
-      }
-      // 强制转换为整数，防止 "953.07" 类错误
-      const rounded = Math.round(num)
-      const result = Math.max(0, rounded)  // 确保非负数
-      console.log(`[字段清洗] ${fieldName} 类型转换: ${value} (${typeof value}) -> ${result}`)
-      return result
-    }
+    const data = parseResult.data
+    const sentences = data.json_data.sentences
 
-    // 验证并修正 level 值（使用 sanitizedBody）
-    let finalLevel: number = DEFAULT_LEVEL
-    if (sanitizedBody.level !== null) {
-      const num = Number(sanitizedBody.level)
-      if (isNaN(num)) {
-        console.warn(`[文章创建] level 无法解析 (${sanitizedBody.level})，使用默认值: ${DEFAULT_LEVEL}`)
-        finalLevel = DEFAULT_LEVEL
-      } else {
-        finalLevel = Math.round(num)
-        if (finalLevel < 1) finalLevel = 1
-        if (finalLevel > 5) finalLevel = 5
-        console.log(`[文章创建] level 自动修正: ${sanitizedBody.level} -> ${finalLevel}`)
-      }
-    } else {
-      console.log(`[文章创建] level 为空，使用默认值: ${DEFAULT_LEVEL}`)
-      finalLevel = DEFAULT_LEVEL
-    }
-
-    // 验证并修正其他数字字段
-    const durationInt = sanitizeNumber(sanitizedBody.duration_seconds, 'duration_seconds')
-    const wordCountInt = sanitizeNumber(sanitizedBody.word_count, 'word_count')
-
-    // 验证 language 值
-    if (!VALID_LANGUAGES.includes(sanitizedBody.language as any)) {
-      return NextResponse.json(
-        { error: `language 必须是以下值之一: ${VALID_LANGUAGES.join(', ')}` },
-        { status: 400 }
-      )
-    }
-
-    // 验证 category 值
-    if (!VALID_CATEGORIES.includes(sanitizedBody.category)) {
-      return NextResponse.json(
-        { error: `category 必须是以下值之一: ${VALID_CATEGORIES.join(', ')}` },
-        { status: 400 }
-      )
-    }
+    console.log(`[API] 开始创建文章: ${data.title}, 句子数: ${sentences.length}`)
 
     // ============================================================
-    // JSON 结构深度校验：防止僵尸文章
+    // 3. 计算衍生数据（兜底逻辑）
     // ============================================================
-    // 校验 sentences 数据结构
-    if (!sanitizedBody.json_data || typeof sanitizedBody.json_data !== 'object') {
-      return NextResponse.json(
-        {
-          error: 'json_data 格式错误',
-          details: 'json_data 必须是包含 sentences 属性的对象，不能是字符串或其他类型'
-        },
-        { status: 400 }
-      )
+
+    // 句子总数
+    const total_sentences = sentences.length
+
+    // 时长：取最后一个句子的 end_time
+    let duration_seconds = data.duration_seconds
+    if (duration_seconds === undefined || duration_seconds === null) {
+      const lastSentence = sentences[sentences.length - 1]
+      duration_seconds = lastSentence?.end_time
+        ? Math.ceil(lastSentence.end_time)
+        : 0
     }
 
-    if (!Array.isArray(sanitizedBody.json_data.sentences)) {
-      return NextResponse.json(
-        {
-          error: 'sentences 数据格式错误',
-          details: 'sentences 必须是数组类型，且不能为空'
-        },
-        { status: 400 }
-      )
+    // 词数：如果前端没传，后端计算
+    let word_count = data.word_count
+    if (word_count === undefined || word_count === null) {
+      word_count = sentences.reduce((acc, s) => {
+        return acc + s.text.split(/\s+/).filter(w => w.length > 0).length
+      }, 0)
     }
 
-    if (sanitizedBody.json_data.sentences.length === 0) {
-      return NextResponse.json(
-        {
-          error: 'sentences 不能为空',
-          details: '文章必须至少包含一个句子'
-        },
-        { status: 400 }
-      )
-    }
+    console.log(`[API] 计算结果 - 总句子: ${total_sentences}, 时长: ${duration_seconds}s, 词数: ${word_count}`)
 
-    // 提取 sentences 数据（已通过校验）
-    const sentences = sanitizedBody.json_data.sentences
-    const totalSentences = sentences.length
-
-    // 计算时长（从 sentences 的最后一个 end_time）
-    let durationSeconds = durationInt  // 使用转换后的整数值
-
-    // 插入文章数据
-    let article: any = null  // 保存文章ID，用于回滚
-
-    const { data: articleData, error: articleError } = await supabase
+    // ============================================================
+    // 4. 插入文章
+    // ============================================================
+    const { data: article, error: articleError } = await supabase
       .from('speaker_articles')
       .insert({
-        level: finalLevel,  // 使用验证后的 level
-        language: sanitizedBody.language,
-        category: sanitizedBody.category,
-        title: sanitizedBody.title,
-        source_url: sanitizedBody.source_url || null,
-        audio_url: sanitizedBody.audio_url,
-        image_url: sanitizedBody.image_url || null,
-        has_preroll_ad: sanitizedBody.has_preroll_ad || false,  // 修复拼写：使用 FIELD_NAMES.HAS_PREROLL_AD
-        total_sentences: totalSentences,
-        duration_seconds: durationSeconds,  // 使用转换后的整数值
-        word_count: wordCountInt,  // ✅ 使用转换后的整数值，防止 "953.07" 类错误
-        json_data: sanitizedBody.json_data,
-        status: sanitizedBody.status || DEFAULT_STATUS  // 使用统一默认状态
+        // 基础字段
+        title: data.title,
+        level: data.level,
+        language: data.language,
+        category: data.category,
+
+        // URL 字段
+        source_url: data.source_url,
+        audio_url: data.audio_url,
+        image_url: data.image_url,
+
+        // 标记
+        has_preroll_ad: data.has_preroll_ad ?? false,
+
+        // JSON 数据
+        json_data: data.json_data,
+
+        // 统计字段
+        total_sentences,
+        duration_seconds,
+        word_count,
+
+        // 状态：固定为 'published'（符合新约束）
+        status: 'published',
+
+        // 用户 ID（从 auth 获取）
+        user_id: user.id
       })
       .select()
       .single()
@@ -262,53 +240,49 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // 保存成功后才赋值，用于可能的回滚
-    article = articleData
+    console.log(`[API] ✅ 文章插入成功: ${article.id}`)
 
-    // 插入句子数据
+    // ============================================================
+    // 5. 插入句子
+    // ============================================================
     if (sentences.length > 0) {
-      const sentencesToInsert = sentences.map((s: any, index: number) => ({
+      const sentencesPayload = sentences.map((s, index) => ({
         article_id: article.id,
         sentence_index: index,
         text: s.text,
-        text_en: s.text_en || s.text,  // 优先使用前端传来的英文翻译，防止数据丢失
-        start_time: s.start_time || null,
-        end_time: s.end_time || null
+        text_en: s.text_en || null, // 包含 text_en，但可为 null
+        start_time: s.start_time ?? null,
+        end_time: s.end_time ?? null
       }))
 
       const { error: sentencesError } = await supabase
         .from('speaker_sentences')
-        .insert(sentencesToInsert)
+        .insert(sentencesPayload)
 
       if (sentencesError) {
         console.error('[API] 插入句子失败:', sentencesError)
 
         // ============================================================
-        // 手动回滚：删除僵尸文章，防止数据不一致
+        // 回滚：删除文章，避免数据不一致
         // ============================================================
-        console.warn('[API] 句子插入失败，执行回滚，删除文章以防止数据不一致')
-
-        const { error: deleteError } = await supabase
+        console.warn('[API] 执行回滚：删除文章以避免脏数据')
+        await supabase
           .from('speaker_articles')
           .delete()
           .eq('id', article.id)
 
-        if (deleteError) {
-          console.error('[API] 回滚失败:', deleteError)
-          // 回滚也失败，记录错误但继续
-        } else {
-          console.log(`[API] 回滚成功：已删除文章 ID ${article.id}`)
-          // 删除引用，避免返回已被删除的文章数据
-          article = null
-        }
-      } else {
-        console.log(`[API] ✅ 成功插入 ${sentences.length} 个句子`)
+        return NextResponse.json(
+          { error: '插入句子失败，已回滚文章', details: sentencesError.message },
+          { status: 500 }
+        )
       }
-    } else {
-      console.warn('[API] 文章没有句子数据，跳过句子插入')
+
+      console.log(`[API] ✅ 成功插入 ${sentences.length} 个句子`)
     }
 
-    // 重新验证缓存
+    // ============================================================
+    // 6. 重新验证缓存
+    // ============================================================
     revalidatePath('/speaker')
     revalidatePath('/admin/speaker/articles')
 
@@ -317,6 +291,7 @@ export async function POST(request: NextRequest) {
       data: article,
       message: '文章创建成功'
     }, { status: 201 })
+
   } catch (error: any) {
     console.error('[API] 创建文章异常:', error)
     return NextResponse.json(

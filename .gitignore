@@ -147,3 +147,11 @@ stardict*
 # Speaker audio files (too large for GitHub)
 public/audio/speaker/
 speak/*/*.mp3
+
+# AI instruction documents (not part of project code)
+CLAUDE.md
+AI_DEVELOPMENT_GUIDE.md
+DATA_IMPORT_SPEC.md
+SPEAKER_GHOST_WORDS_MIGRATION.md
+SPEAKER_REFACTOR_PLAN.md
+TECHNICAL_MODIFICATION_PLAN.md
