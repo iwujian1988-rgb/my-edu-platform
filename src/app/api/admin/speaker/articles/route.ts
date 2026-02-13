@@ -10,6 +10,7 @@ import { createClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
+import { resolveImageUrl } from '@/lib/speaker-auto-analysis'
 
 // ========================================
 // Zod Schema - 强校验
@@ -196,7 +197,15 @@ export async function POST(request: NextRequest) {
     console.log(`[API] 计算结果 - 总句子: ${total_sentences}, 时长: ${duration_seconds}s, 词数: ${word_count}`)
 
     // ============================================================
-    // 4. 插入文章
+    // 4. 解析图片 URL（处理 loremflickr 重定向）
+    // ============================================================
+    const finalImageUrl = await resolveImageUrl(data.image_url)
+    if (data.image_url !== finalImageUrl) {
+      console.log(`[API] 图片 URL 已解析: ${data.image_url?.substring(0, 50)}... → ${finalImageUrl?.substring(0, 50)}...`)
+    }
+
+    // ============================================================
+    // 5. 插入文章
     // ============================================================
     const { data: article, error: articleError } = await supabase
       .from('speaker_articles')
@@ -210,7 +219,7 @@ export async function POST(request: NextRequest) {
         // URL 字段
         source_url: data.source_url,
         audio_url: data.audio_url,
-        image_url: data.image_url,
+        image_url: finalImageUrl, // 使用解析后的真实 URL
 
         // 标记
         has_preroll_ad: data.has_preroll_ad ?? false,

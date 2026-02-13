@@ -524,3 +524,44 @@ export async function analyzeArticle(
     imageKeywords
   }
 }
+
+/**
+ * 解析图片 URL 的重定向，获取最终真实 URL
+ *
+ * 功能：
+ * - 处理 loremflickr 等 302 重定向服务
+ * - 非 loremflickr URL 直接透传（OSS、其他图床）
+ * - 解析失败时降级到原 URL
+ *
+ * @param url - 原始 URL（可能是 loremflickr 重定向前 URL）
+ * @returns 最终的真实 URL（重定向后或原 URL）
+ *
+ * @example
+ * // loremflickr URL 会解析为真实图片 URL
+ * await resolveImageUrl('https://loremflickr.com/400/250/psychology?lock=123')
+ * // => 'https://farm5.staticflickr.com/4123/abc_xyz.jpg'
+ *
+ * // 其他 URL 直接透传
+ * await resolveImageUrl('https://mysite.com/image.jpg')
+ * // => 'https://mysite.com/image.jpg'
+ */
+export async function resolveImageUrl(url: string | null): Promise<string | null> {
+  // 1. 空值直接返回
+  if (!url) return null
+
+  // 2. 非 loremflickr URL 直接透传（OSS、其他图床）
+  if (!url.includes('loremflickr.com')) return url
+
+  // 3. 解析 302 重定向，获取真实图片 URL
+  try {
+    const response = await fetch(url, { method: 'HEAD' })
+    if (response.ok && response.redirected) {
+      console.log(`[resolveImageUrl] ${url.substring(0, 50)}... → ${response.url.substring(0, 50)}...`)
+      return response.url // 返回重定向后的真实 URL
+    }
+    return url // 无重定向，返回原 URL
+  } catch (error) {
+    console.warn(`[resolveImageUrl] 解析失败，使用原 URL:`, error)
+    return url // 降级：解析失败时返回原 URL
+  }
+}

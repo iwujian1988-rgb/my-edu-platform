@@ -103,7 +103,9 @@ export function GhostWordBook({ userId }: GhostWordBookProps) {
   useEffect(() => {
     const fetchWords = async () => {
       try {
-        const response = await fetch(`/api/speaker/words?userId=${userId}&pageSize=1000`)
+        // P0修复：扩大加载限制，确保能加载所有生词
+        // 后端已自动使用当前登录用户 ID，无需传递 userId 参数
+        const response = await fetch(`/api/speaker/words?pageSize=10000`)
         const data = await response.json()
 
         if (data.success) {
@@ -139,12 +141,8 @@ export function GhostWordBook({ userId }: GhostWordBookProps) {
       }
     }
 
-    // 延迟执行，让界面先渲染
-    const timer = setTimeout(() => {
-      loadArticleTitles()
-    }, 100)
-
-    return () => clearTimeout(timer)
+    // P1性能优化：移除不必要的 setTimeout，直接调用
+    loadArticleTitles()
   }, [words])
 
   // 使用 useMemo 优化性能：避免每次渲染都重新筛选
@@ -179,6 +177,20 @@ export function GhostWordBook({ userId }: GhostWordBookProps) {
 
     return filtered
   }, [words, errorTypeFilter, timeFilter, articleFilter])
+
+  // 重新加载生词数据（提取为独立函数，消除重复代码）
+  const reloadGhostWords = async () => {
+    try {
+      const response = await fetch(`/api/speaker/words?pageSize=10000`)
+      const data = await response.json()
+      if (data.success) {
+        setWords(data.words || [])
+      }
+    } catch (error) {
+      console.error('[Ghost Word Book] 重新加载失败:', error)
+      toast.error('❌ 加载失败，请刷新页面')
+    }
+  }
 
   // 格式化日期
   const formatDate = (dateStr: string) => {
@@ -340,34 +352,20 @@ export function GhostWordBook({ userId }: GhostWordBookProps) {
       const response = await fetch(`/api/speaker/words?id=${wordId}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ userId })
+        body: JSON.stringify({})  // 后端已自动使用当前用户 ID，无需传递 userId
       })
 
       const data = await response.json()
 
       if (!data.success) {
-        // 如果后台更新失败，恢复数据
+        // 如果后台更新失败，调用统一的 reload 函数
         toast.error('❌ 标记失败，已撤销')
-        // 重新加载数据
-        const reloadResponse = await fetch(`/api/speaker/words?userId=${userId}&pageSize=1000`)
-        const reloadData = await reloadResponse.json()
-        if (reloadData.success) {
-          setWords(reloadData.words || [])
-        }
+        await reloadGhostWords()
       }
     } catch (error) {
       console.error('[Ghost Word Book] 标记失败:', error)
       toast.error('❌ 网络错误，已撤销')
-      // 重新加载数据
-      try {
-        const reloadResponse = await fetch(`/api/speaker/words?userId=${userId}&pageSize=1000`)
-        const reloadData = await reloadResponse.json()
-        if (reloadData.success) {
-          setWords(reloadData.words || [])
-        }
-      } catch (reloadError) {
-        console.error('[Ghost Word Book] 重新加载失败:', reloadError)
-      }
+      await reloadGhostWords()
     }
   }
 

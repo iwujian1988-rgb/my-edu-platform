@@ -13,6 +13,7 @@
 
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { z } from 'zod'
 
 /**
  * GET 处理器：获取用户的魔鬼生词列表
@@ -26,8 +27,29 @@ export async function GET(request: Request) {
   console.log('[Speaker Words API] 获取生词列表')
 
   try {
+    const supabase = await createClient()
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+
+    // 身份验证：检查用户是否登录
+    if (authError || !user) {
+      console.error('[Speaker Words API] 未授权访问')
+      return NextResponse.json(
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
     const { searchParams } = new URL(request.url)
     const userId = searchParams.get('userId')
+
+    // 权限检查：验证 userId 是否与当前登录用户一致
+    if (userId && userId !== user.id) {
+      console.error('[Speaker Words API] 权限验证失败：userId 不匹配', { userId, user_id: user.id })
+      return NextResponse.json(
+        { error: 'FORBIDDEN', message: '无权访问他人数据' },
+        { status: 403 }
+      )
+    }
 
     // P2修复：添加分页参数
     const page = parseInt(searchParams.get('page') || '1', 10)
@@ -36,22 +58,15 @@ export async function GET(request: Request) {
 
     console.log('[Speaker Words API] userId:', userId, 'page:', page, 'pageSize:', pageSize)
 
-    if (!userId) {
-      return NextResponse.json(
-        { error: 'MISSING_USER_ID', message: '缺少用户 ID' },
-        { status: 400 }
-      )
-    }
-
-    const supabase = await createClient()
-
-    console.log('[Speaker Words API] supabase client created')
+    // 如果 userId 为空，使用当前登录用户的 ID
+    const targetUserId = userId || user.id
+    console.log('[Speaker Words API] targetUserId:', targetUserId)
 
     // 查询生词列表（排除已掌握的，带分页）
     const { data, error, count } = await supabase
       .from('speaker_ghost_words')
       .select('*', { count: 'exact' })
-      .eq('user_id', userId)
+      .eq('user_id', targetUserId)
       .eq('is_mastered', false)
       .order('created_at', { ascending: false })
       .range(offset, offset + pageSize - 1)
@@ -117,6 +132,18 @@ export async function PUT(request: Request) {
   console.log('[Speaker Words API] 标记单词为已掌握')
 
   try {
+    const supabase = await createClient()
+    const { data: { user }, error: authError } = await supabase.auth.getUser()
+
+    // 身份验证：检查用户是否登录
+    if (authError || !user) {
+      console.error('[Speaker Words API] 未授权访问')
+      return NextResponse.json(
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
     const { searchParams } = new URL(request.url)
     const wordId = searchParams.get('id')
 
@@ -127,17 +154,8 @@ export async function PUT(request: Request) {
       )
     }
 
-    const body = await request.json()
-    const { userId } = body
-
-    if (!userId) {
-      return NextResponse.json(
-        { error: 'MISSING_USER_ID', message: '缺少用户 ID' },
-        { status: 400 }
-      )
-    }
-
-    const supabase = await createClient()
+    // 忽略请求体中的 userId，直接使用当前登录用户的 ID（更安全）
+    const userId = user.id
 
     // 标记为已掌握
     const { data, error } = await supabase
@@ -147,7 +165,7 @@ export async function PUT(request: Request) {
         mastered_at: new Date().toISOString()
       })
       .eq('id', wordId)
-      .eq('user_id', userId)  // 安全检查：只能操作自己的生词
+      .eq('user_id', userId)
       .select()
       .single()
 
