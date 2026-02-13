@@ -96,36 +96,36 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
           </button>
 
           {/* 标题 */}
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-snug text-black dark:text-white transition-colors duration-300 mb-4 font-sans">
+          <h1 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight leading-snug text-black dark:text-white transition-colors duration-300 mb-4 font-sans">
             {article.title}
           </h1>
 
           {/* 标签组 */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="flex flex-wrap items-center gap-2 md:gap-3">
             {/* Level 标签 - 荧光绿背景 */}
-            <div className="px-4 py-2 bg-[#B4F416] border-[3px] border-black shadow-[4px_4px_0px_0px_#000]">
-              <span className="text-sm font-black tracking-tight text-black">
+            <div className="px-2 md:px-4 py-1 md:py-2 bg-[#B4F416] border-[2px] md:border-[3px] border-black shadow-[2px_2px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000]">
+              <span className="text-xs md:text-sm font-black tracking-tight text-black">
                 LEVEL {article.level}
               </span>
             </div>
 
             {/* 句数标签 */}
-            <div className="px-4 py-2 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666]">
-              <span className="text-sm font-black tracking-tight text-black dark:text-white">
+            <div className="px-2 md:px-4 py-1 md:py-2 bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] md:dark:shadow-[4px_4px_0px_0px_#666]">
+              <span className="text-xs md:text-sm font-black tracking-tight text-black dark:text-white">
                 {article.total_sentences} 句
               </span>
             </div>
 
             {/* 状态标签（如果有进度） */}
             {progress && (
-              <div className={`px-4 py-2 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] ${
+              <div className={`px-2 md:px-4 py-1 md:py-2 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] md:shadow-[4px_4px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] md:dark:shadow-[4px_4px_0px_0px_#666] ${
                 progress.status === 'completed'
                   ? 'bg-[#B4F416]'
                   : progress.status === 'in_progress'
                   ? 'bg-blue-400'
                   : 'bg-gray-200 dark:bg-gray-700'
               }`}>
-                <span className="text-sm font-black tracking-tight text-black dark:text-white">
+                <span className="text-xs md:text-sm font-black tracking-tight text-black dark:text-white">
                   {progress.status === 'completed' ? '✓ 已完成' : progress.status === 'in_progress' ? '→ 进行中' : '○ 未开始'}
                 </span>
               </div>
@@ -135,10 +135,10 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
       </div>
 
       {/* 时间轴内容 */}
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         <div className="relative">
           {/* 进度连线 - 左侧 */}
-          <div className="absolute left-10 top-0 bottom-0 w-1 bg-gray-200 dark:bg-gray-700 -z-10">
+          <div className="absolute left-6 md:left-10 top-0 bottom-0 w-0.5 md:w-1 bg-gray-200 dark:bg-gray-700 -z-10">
             {/* 进度填充 - 荧光绿 */}
             <div
               className="bg-[#B4F416] transition-all duration-500"
@@ -148,7 +148,7 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
             />
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-3 md:space-y-6">
             {steps.map((step, index) => {
               const Icon = step.icon
 
@@ -156,27 +156,27 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
                 <button
                   key={step.id}
                   onClick={() => handleStepClick(step.path)}
-                  className={`group w-full relative border-[3px] transition-all duration-150 overflow-hidden rounded-sm ${
+                  className={`group w-full relative border-[2px] md:border-[3px] transition-all duration-150 overflow-hidden rounded-sm ${
                     step.current
-                      ? 'bg-[#B4F416] border-black dark:border-gray-600 shadow-[8px_8px_0px_0px_#000] dark:shadow-[8px_8px_0px_0px_#666] scale-105'
-                      : 'bg-white dark:bg-gray-800 border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[8px_8px_0px_0px_#000] dark:hover:shadow-[8px_8px_0px_0px_#666] hover:-translate-y-1'
+                      ? 'bg-[#B4F416] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] md:shadow-[8px_8px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] md:dark:shadow-[8px_8px_0px_0px_#666] scale-[1.02] md:scale-105'
+                      : 'bg-white dark:bg-gray-800 border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] md:shadow-[6px_6px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] md:dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] md:hover:shadow-[8px_8px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] md:dark:hover:shadow-[8px_8px_0px_0px_#666] hover:-translate-y-1'
                   }`}
                 >
                   {/* 当前步骤标签 */}
                   {step.current && !step.completed && (
-                    <div className="absolute top-2 right-2 px-2 py-1 bg-black text-white text-xs font-black rounded-sm animate-pulse">
+                    <div className="absolute top-1.5 md:top-2 right-1.5 md:right-2 px-1.5 md:px-2 py-0.5 md:py-1 bg-black text-white text-[10px] md:text-xs font-black rounded-sm animate-pulse">
                       当前
                     </div>
                   )}
 
                   <div className="flex items-stretch">
                     {/* 左侧序号 - 黑色圆圈 */}
-                    <div className={`relative w-20 flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
+                    <div className={`relative w-12 md:w-20 flex items-center justify-center flex-shrink-0 transition-colors duration-300 ${
                       step.completed || step.current
                         ? 'bg-black dark:bg-black'
                         : 'bg-gray-300 dark:bg-gray-700'
                     }`}>
-                      <span className={`font-mono font-black text-4xl ${
+                      <span className={`font-mono font-black text-2xl md:text-4xl ${
                         step.completed || step.current
                           ? 'text-white dark:text-white'
                           : 'text-gray-500 dark:text-gray-400'
@@ -186,31 +186,31 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
 
                       {/* 完成标记 */}
                       {step.completed && (
-                        <div className="absolute top-2 right-2 w-5 h-5 bg-[#B4F416] border-2 border-white rounded-full flex items-center justify-center">
-                          <CheckCircle2 className="w-3 h-3 text-black" strokeWidth={3} />
+                        <div className="absolute top-1.5 md:top-2 right-1.5 md:right-2 w-3.5 h-3.5 md:w-5 md:h-5 bg-[#B4F416] border-2 border-white rounded-full flex items-center justify-center">
+                          <CheckCircle2 className="w-2 h-2 md:w-3 md:h-3 text-black" strokeWidth={3} />
                         </div>
                       )}
                     </div>
 
                     {/* 右侧内容区域 */}
-                    <div className="flex-1 p-6 text-left">
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex items-start gap-4 flex-1">
+                    <div className="flex-1 p-3 md:p-6 text-left">
+                      <div className="flex items-start justify-between gap-2 md:gap-4">
+                        <div className="flex items-start gap-2 md:gap-4 flex-1">
                           {/* 图标 - 白底黑框，hover变荧光绿 */}
                           <div className={`
-                            p-3 border-[2px] border-black dark:border-gray-600 rounded-sm transition-all duration-150
+                            p-1.5 md:p-3 border-[2px] border-black dark:border-gray-600 rounded-sm transition-all duration-150
                             ${step.completed || step.current
                               ? 'bg-[#B4F416]'
                               : 'bg-white dark:bg-gray-800 group-hover:bg-[#B4F416]'
                             }
                           `}>
-                            <Icon className="w-6 h-6 text-black dark:text-white" strokeWidth={3} />
+                            <Icon className="w-4 h-4 md:w-6 md:h-6 text-black dark:text-white" strokeWidth={3} />
                           </div>
 
                           {/* 标题和描述 */}
                           <div className="flex-1">
                             <h3 className={`
-                              text-xl font-black tracking-tight mb-2 uppercase font-sans
+                              text-base md:text-xl font-black tracking-tight mb-1 md:mb-2 uppercase font-sans
                               ${step.completed || step.current
                                 ? 'text-black dark:text-white'
                                 : 'text-gray-900 dark:text-white'
@@ -218,7 +218,7 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
                             `}>
                               {step.title}
                             </h3>
-                            <p className="text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors duration-300 font-sans">
+                            <p className="text-xs md:text-sm font-bold text-gray-600 dark:text-gray-400 transition-colors duration-300 font-sans">
                               {step.description}
                             </p>
                           </div>
@@ -226,12 +226,12 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
 
                         {/* 箭头 - 正方形容器，hover变全黑 */}
                         <div className={`
-                          flex-shrink-0 w-10 h-10 flex items-center justify-center
+                          flex-shrink-0 w-8 h-8 md:w-10 md:h-10 flex items-center justify-center
                           border-[2px] border-black dark:border-gray-600 rounded-sm
                           transition-all duration-150
                           group-hover:bg-black dark:group-hover:bg-black group-hover:text-white
                         `}>
-                          <svg className="w-5 h-5 text-black dark:text-white group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+                          <svg className="w-4 h-4 md:w-5 md:h-5 text-black dark:text-white group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
                           </svg>
                         </div>

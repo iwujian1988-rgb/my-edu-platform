@@ -52,14 +52,11 @@ export default function LoginFormClient() {
 
       console.log('[Login] 登录成功:', data.user.id)
 
-      // 🔥 关键修复：等待 session 稳定后再跳转
-      // Supabase 的 cookie 设置是异步的，需要等待确保服务端能读取到
-      console.log('[Login] 等待 session 稳定...')
+      // 性能优化：Supabase SDK 会确保 cookies 在返回前设置完成
+      // 无需额外等待，直接验证 session
+      console.log('[Login] 验证 session 稳定性...')
 
-      // 等待 800ms 让 cookies 完全设置
-      await new Promise(resolve => setTimeout(resolve, 800))
-
-      // 验证 session 真的可用（服务端能读取到用户）
+      // 直接验证 session（无需延迟）
       const { data: { user: verifiedUser }, error: verifyError } = await supabase.auth.getUser()
 
       if (verifyError || !verifiedUser) {

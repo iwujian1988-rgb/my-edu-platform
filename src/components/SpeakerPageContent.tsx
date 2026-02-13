@@ -135,7 +135,7 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
 
           {/* 卡带式时间轴 */}
           <div className="overflow-x-auto pb-6">
-            <div className="min-w-[800px] flex items-stretch gap-4">
+            <div className="flex items-stretch gap-2 md:gap-4 min-w-max">
               {[
                 { id: 1, num: '01', title: "整段盲听", desc: "纯听觉输入" },
                 { id: 2, num: '02', title: "听写训练", desc: "逐句听写" },
@@ -143,21 +143,21 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                 { id: 4, num: '04', title: "原音对比", desc: "KTV式对比" }
               ].map((step, index) => (
                 <React.Fragment key={step.id}>
-                  <div className="flex-1 relative group min-w-[180px]">
-                    <div className="h-full bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 p-0 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-1 transition-all flex flex-col">
-                      <div className="bg-black dark:bg-gray-700 text-white px-3 py-1 flex justify-between items-center border-b-[3px] border-black dark:border-gray-600">
-                        <span className="font-mono font-bold text-xs">STEP</span>
-                        <span className="font-mono font-black text-lg text-[#B4F416]">{step.num}</span>
+                  <div className="flex-1 relative group min-w-[70px] md:min-w-[140px]">
+                    <div className="h-full bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 p-0 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 transition-all flex flex-col">
+                      <div className="bg-black dark:bg-gray-700 text-white px-1.5 md:px-3 py-0.5 md:py-1 flex justify-between items-center border-b-[2px] md:border-b-[3px] border-black dark:border-gray-600">
+                        <span className="font-mono font-bold text-[10px] md:text-xs">STEP</span>
+                        <span className="font-mono font-black text-sm md:text-lg text-[#B4F416]">{step.num}</span>
                       </div>
-                      <div className="p-4 flex flex-col items-center text-center flex-1">
-                        <h3 className="font-black text-base mb-1 text-black dark:text-white transition-colors duration-300">{step.title}</h3>
-                        <p className="text-xs text-gray-500 dark:text-gray-400 transition-colors duration-300">{step.desc}</p>
+                      <div className="p-2 md:p-4 flex flex-col items-center text-center flex-1">
+                        <h3 className="font-black text-xs md:text-base mb-0.5 md:mb-1 text-black dark:text-white transition-colors duration-300">{step.title}</h3>
+                        <p className="text-[10px] md:text-xs text-gray-500 dark:text-gray-400 transition-colors duration-300">{step.desc}</p>
                       </div>
                     </div>
                   </div>
                   {/* 简单的连接箭头 */}
                   {index < 3 && (
-                    <div className="flex items-center justify-center px-2 text-black dark:text-white font-black text-2xl transition-colors duration-300">→</div>
+                    <div className="flex items-center justify-center px-1 md:px-2 text-black dark:text-white font-black text-lg md:text-2xl transition-colors duration-300">→</div>
                   )}
                 </React.Fragment>
               ))}
@@ -251,12 +251,12 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                 <button
                   onClick={() => setFilter({ ...filter, category: 'all' })}
                   className={`
-                    px-3 py-1.5 rounded-sm text-xs font-bold tracking-tight
-                    border-[2px] border-black dark:border-gray-600
+                    px-4 py-2 rounded-sm text-sm font-black tracking-tight
+                    border-[3px] border-black dark:border-gray-600
                     transition-all duration-150
                     ${filter.category === 'all'
-                      ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                      ? 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                      : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
                     }
                   `}
                 >
@@ -267,12 +267,12 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                     key={cat}
                     onClick={() => setFilter({ ...filter, category: cat })}
                     className={`
-                      px-3 py-1.5 rounded-sm text-xs font-bold tracking-tight
-                      border-[2px] border-black dark:border-gray-600
+                      px-4 py-2 rounded-sm text-sm font-black tracking-tight
+                      border-[3px] border-black dark:border-gray-600
                       transition-all duration-150
                       ${filter.category === cat
-                        ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                        ? 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                        : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
                       }
                     `}
                   >
@@ -345,17 +345,45 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                 >
                   L3
                 </button>
+                <button
+                  onClick={() => setFilter({ ...filter, level: 4 })}
+                  className={`
+                    px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
+                    border-[2px] border-black dark:border-gray-600
+                    transition-all duration-150
+                    ${filter.level === 4
+                      ? 'bg-orange-400 shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                    }
+                  `}
+                >
+                  L4
+                </button>
+                <button
+                  onClick={() => setFilter({ ...filter, level: 5 })}
+                  className={`
+                    px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
+                    border-[2px] border-black dark:border-gray-600
+                    transition-all duration-150
+                    ${filter.level === 5
+                      ? 'bg-red-400 shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                    }
+                  `}
+                >
+                  L5
+                </button>
               </div>
             </div>
 
             {/* 内容分类筛选 */}
-            <div className="text-right mb-6">
+            <div className="text-left mb-6">
               <div className="text-sm font-black text-gray-700 dark:text-gray-300 transition-colors duration-300 mb-2">内容分类：</div>
-              <div className="flex flex-wrap gap-2 justify-end">
+              <div className="flex flex-wrap gap-2 justify-start">
                 <button
                   onClick={() => setFilter({ ...filter, category: 'all' })}
                   className={`
-                    px-2 py-1 rounded-sm text-xs font-bold tracking-tight
+                    px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
                     border-[2px] border-black dark:border-gray-600
                     transition-all duration-150
                     ${filter.category === 'all'
@@ -371,7 +399,7 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                     key={cat}
                     onClick={() => setFilter({ ...filter, category: cat })}
                     className={`
-                      px-2 py-1 rounded-sm text-xs font-bold tracking-tight
+                      px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
                       border-[2px] border-black dark:border-gray-600
                       transition-all duration-150
                       ${filter.category === cat
@@ -443,7 +471,7 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
           </div>
         ) : (
           // 文章网格
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {articles.map((article) => (
               <SpeakerCard key={article.id} article={article} />
             ))}
