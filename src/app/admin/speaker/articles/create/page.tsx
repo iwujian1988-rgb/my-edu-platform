@@ -14,14 +14,18 @@ import {
   Upload,
   Loader2,
   FileAudio,
-  Mic
+  Mic,
+  Image as ImageIcon
 } from 'lucide-react'
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, ARTICLE_CATEGORIES } from '@/types/speaker'
+import ImageUploadModal from '@/components/admin/ImageUploadModal'
 
 export default function SpeakerArticleCreatePage() {
   const router = useRouter()
   const [saving, setSaving] = useState(false)
   const [uploadingAudio, setUploadingAudio] = useState(false)
+  const [uploadingImage, setUploadingImage] = useState(false)
+  const [imageModalOpen, setImageModalOpen] = useState(false)
 
   // 表单数据
   const [formData, setFormData] = useState({
@@ -309,13 +313,36 @@ export default function SpeakerArticleCreatePage() {
             <label className="block text-sm font-medium text-gray-700 mb-1">
               封面图片 URL
             </label>
-            <input
-              type="url"
-              value={formData.image_url}
-              onChange={(e) => setFormData(prev => ({ ...prev, image_url: e.target.value }))}
-              className="w-full px-4 py-2 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
-              placeholder="https://example.com/image.jpg"
-            />
+            <div className="flex gap-2 mb-2">
+              <button
+                type="button"
+                onClick={() => setImageModalOpen(true)}
+                className="flex items-center gap-1 px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+              >
+                <ImageIcon size={16} />
+                上传图片
+              </button>
+              <input
+                type="url"
+                value={formData.image_url}
+                onChange={(e) => setFormData(prev => ({ ...prev, image_url: e.target.value }))}
+                className="flex-1 px-4 py-2 border-2 border-black rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                placeholder="https://example.com/image.jpg"
+              />
+            </div>
+            {/* 图片预览 */}
+            {formData.image_url && (
+              <div className="w-48 aspect-[8/5] bg-gray-100 rounded-lg overflow-hidden border border-gray-200">
+                <img
+                  src={formData.image_url}
+                  alt="封面预览"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    e.currentTarget.style.display = 'none'
+                  }}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
@@ -439,6 +466,18 @@ export default function SpeakerArticleCreatePage() {
           </div>
         </div>
       </div>
+
+      {/* 图片上传弹层 */}
+      <ImageUploadModal
+        isOpen={imageModalOpen}
+        onClose={() => setImageModalOpen(false)}
+        onConfirm={(url) => {
+          setFormData(prev => ({ ...prev, image_url: url }))
+          setImageModalOpen(false)
+        }}
+        currentImageUrl={formData.image_url || undefined}
+        category={formData.category}
+      />
     </div>
   )
 }

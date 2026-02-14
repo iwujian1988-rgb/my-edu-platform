@@ -27,7 +27,7 @@ export async function GET(
       .from('speaker_articles')
       .select(`
         *,
-        sentences (
+        speaker_sentences (
           id,
           sentence_index,
           text,

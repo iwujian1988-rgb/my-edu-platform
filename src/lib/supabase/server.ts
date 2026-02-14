@@ -18,6 +18,60 @@ import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import type { Database } from '@/types/database'
 
+// 开发环境代理配置
+let proxyFetch: typeof fetch | undefined
+
+async function getProxyFetch(): Promise<typeof fetch | undefined> {
+  if (process.env.NODE_ENV !== 'development') {
+    return undefined
+  }
+
+  if (proxyFetch) {
+    return proxyFetch
+  }
+
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || 'http://127.0.0.1:7890'
+
+  try {
+    const { ProxyAgent, fetch: undiciFetch } = await import('undici')
+    const proxyAgent = new ProxyAgent(proxyUrl)
+
+    proxyFetch = async (input: RequestInfo | URL, init?: RequestInit) => {
+      // 处理 headers - 可能是 Headers 对象、对象或数组
+      let headers: Record<string, string> = {}
+      if (init?.headers) {
+        if (init.headers instanceof Headers) {
+          init.headers.forEach((value, key) => {
+            headers[key] = value
+          })
+        } else if (Array.isArray(init.headers)) {
+          init.headers.forEach(([key, value]) => {
+            headers[key] = value
+          })
+        } else {
+          headers = { ...init.headers as Record<string, string> }
+        }
+      }
+
+      const url = typeof input === 'string' ? input : input instanceof URL ? input.href : (input as Request).url
+
+      const response = await undiciFetch(url, {
+        method: init?.method,
+        headers: headers,
+        body: init?.body as any,
+        dispatcher: proxyAgent,
+      })
+
+      return response as any
+    }
+
+    return proxyFetch
+  } catch (error) {
+    console.error('[Supabase] Failed to configure proxy fetch:', error)
+    return undefined
+  }
+}
+
 /**
  * Creates a Supabase client for server-side usage
  *
@@ -57,10 +111,16 @@ export async function createClient() {
   }
   */
 
+  // 开发环境使用代理 fetch
+  const customFetch = await getProxyFetch()
+
   return createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
+      global: {
+        fetch: customFetch || undefined,
+      },
       cookies: {
         get(name: string) {
           const value = cookieStore.get(name)?.value
@@ -134,10 +194,14 @@ export async function createClient() {
 export async function createAdminClient() {
   const { createClient: createDirectClient } = await import('@supabase/supabase-js')
 
+  // 开发环境使用代理 fetch
+  const customFetch = await getProxyFetch()
+
   return createDirectClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
+      ...(customFetch ? { global: { fetch: customFetch } } : {}),
       auth: {
         autoRefreshToken: false,
         persistSession: false

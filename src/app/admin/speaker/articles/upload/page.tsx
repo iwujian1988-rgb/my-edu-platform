@@ -17,10 +17,12 @@ import {
   CheckCircle,
   XCircle,
   AlertCircle,
-  Loader2
+  Loader2,
+  Image as ImageIcon
 } from 'lucide-react'
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, ARTICLE_CATEGORIES } from '@/types/speaker'
 import OSS from 'ali-oss'
+import ImageUploadModal from '@/components/admin/ImageUploadModal'
 
 interface ParsedArticle {
   fileName: string
@@ -75,6 +77,10 @@ export default function SpeakerUploadPage() {
   const [audioUrls, setAudioUrls] = useState<Record<number, string>>({})
   const [uploadProgress, setUploadProgress] = useState<UploadProgress>({})
   const [importErrors, setImportErrors] = useState<Array<{ index: number; title: string; error: string }>>([])
+
+  // 图片上传弹层状态
+  const [imageModalOpen, setImageModalOpen] = useState(false)
+  const [imageModalArticleIndex, setImageModalArticleIndex] = useState<number | null>(null)
 
   // 处理 JSON 文件选择
   const handleJsonFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -174,6 +180,23 @@ export default function SpeakerUploadPage() {
     const newAudioUrls = { ...audioUrls }
     delete newAudioUrls[index]
     setAudioUrls(newAudioUrls)
+  }
+
+  // 打开图片上传弹层
+  const openImageModal = (index: number) => {
+    setImageModalArticleIndex(index)
+    setImageModalOpen(true)
+  }
+
+  // 图片上传确认
+  const handleImageConfirm = (url: string) => {
+    if (imageModalArticleIndex !== null) {
+      const updated = [...parsedArticles]
+      updated[imageModalArticleIndex].meta.image_filename = url
+      setParsedArticles(updated)
+    }
+    setImageModalOpen(false)
+    setImageModalArticleIndex(null)
   }
 
   // 解析 JSON 文件
@@ -686,44 +709,55 @@ export default function SpeakerUploadPage() {
                           </div>
 
                           {/* 操作按钮 */}
-                          <div className="flex gap-2">
-                            <button
-                              onClick={() => {
-                                const updated = [...parsedArticles]
-                                updated[index].meta.image_filename = null
-                                setParsedArticles(updated)
-                              }}
-                              className="px-3 py-2 text-sm border-2 border-red-300 text-red-600 rounded-lg hover:bg-red-50"
-                            >
-                              移除图片
-                            </button>
-                            <button
-                              onClick={() => {
-                                // 生成新的图片 URL（使用新的 random lock）
-                                // 尺寸：400x250 (适配前台 SpeakerCard)
-                                const category = article.meta.category || article.analysis?.category || 'psychology'
-                                const keywordsMap: Record<string, string[]> = {
-                                  '健康': ['health', 'wellness'],
-                                  '心理': ['psychology', 'mind'],
-                                  '成长': ['success', 'growth'],
-                                  '学习': ['study', 'education'],
-                                  '社交': ['people', 'team'],
-                                  '生活': ['lifestyle', 'daily']
-                                }
-                                const keywords = keywordsMap[category] || ['psychology', 'mind']
-                                const newLock = Math.floor(Math.random() * 10000)
-                                const newImageUrl = `https://loremflickr.com/400/250/${keywords.join(',')}?lock=${newLock}`
+                          <div className="space-y-2">
+                            {/* 第一行：上传、移除、更换 */}
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => openImageModal(index)}
+                                className="px-3 py-2 text-sm bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center gap-1"
+                              >
+                                <ImageIcon size={14} />
+                                上传图片
+                              </button>
+                              <button
+                                onClick={() => {
+                                  const updated = [...parsedArticles]
+                                  updated[index].meta.image_filename = null
+                                  setParsedArticles(updated)
+                                }}
+                                className="px-3 py-2 text-sm border-2 border-red-300 text-red-600 rounded-lg hover:bg-red-50"
+                              >
+                                移除图片
+                              </button>
+                              <button
+                                onClick={() => {
+                                  // 生成新的图片 URL（使用新的 random lock）
+                                  // 尺寸：400x250 (适配前台 SpeakerCard)
+                                  const category = article.meta.category || article.analysis?.category || 'psychology'
+                                  const keywordsMap: Record<string, string[]> = {
+                                    '健康': ['health', 'wellness'],
+                                    '心理': ['psychology', 'mind'],
+                                    '成长': ['success', 'growth'],
+                                    '学习': ['study', 'education'],
+                                    '社交': ['people', 'team'],
+                                    '生活': ['lifestyle', 'daily']
+                                  }
+                                  const keywords = keywordsMap[category] || ['psychology', 'mind']
+                                  const newLock = Math.floor(Math.random() * 10000)
+                                  const newImageUrl = `https://loremflickr.com/400/250/${keywords.join(',')}?lock=${newLock}`
 
-                                const updated = [...parsedArticles]
-                                updated[index].meta.image_filename = newImageUrl
-                                setParsedArticles(updated)
+                                  const updated = [...parsedArticles]
+                                  updated[index].meta.image_filename = newImageUrl
+                                  setParsedArticles(updated)
 
-                                console.log(`[更换图片] ${article.meta.title}: ${newImageUrl}`)
-                              }}
-                              className="flex-1 px-3 py-2 text-sm border-2 border-purple-300 text-purple-600 bg-purple-50 rounded-lg hover:bg-purple-100 flex items-center justify-center gap-2"
-                            >
-                              <span>🔄</span> 更换推荐
-                            </button>
+                                  console.log(`[更换图片] ${article.meta.title}: ${newImageUrl}`)
+                                }}
+                                className="flex-1 px-3 py-2 text-sm border-2 border-purple-300 text-purple-600 bg-purple-50 rounded-lg hover:bg-purple-100 flex items-center justify-center gap-2"
+                              >
+                                <span>🔄</span> 更换推荐
+                              </button>
+                            </div>
+                            {/* 第二行：手动输入 */}
                             <input
                               type="text"
                               value={article.meta.image_filename || ''}
@@ -733,12 +767,19 @@ export default function SpeakerUploadPage() {
                                 setParsedArticles(updated)
                               }}
                               placeholder="或手动输入图片URL"
-                              className="flex-1 px-3 py-2 border-2 border-black rounded-lg text-sm text-gray-900"
+                              className="w-full px-3 py-2 border-2 border-black rounded-lg text-sm text-gray-900"
                             />
                           </div>
                         </div>
                       ) : (
                         <div className="space-y-2">
+                          <button
+                            onClick={() => openImageModal(index)}
+                            className="w-full px-3 py-2 text-sm bg-green-600 text-white rounded-lg hover:bg-green-700 flex items-center justify-center gap-2"
+                          >
+                            <ImageIcon size={14} />
+                            上传图片到OSS
+                          </button>
                           <input
                             type="text"
                             value={article.meta.image_filename || ''}
@@ -747,7 +788,7 @@ export default function SpeakerUploadPage() {
                               updated[index].meta.image_filename = e.target.value
                               setParsedArticles(updated)
                             }}
-                            placeholder="输入图片URL (https://...)"
+                            placeholder="或输入图片URL (https://...)"
                             className="w-full px-3 py-2 border-2 border-black rounded-lg text-sm text-gray-900"
                           />
                           {article.analysis?.suggestedImage && (
@@ -904,6 +945,18 @@ export default function SpeakerUploadPage() {
           <p className="text-gray-600">请稍候，正在处理 {parsedArticles.length} 篇文章</p>
         </div>
       )}
+
+      {/* 图片上传弹层 */}
+      <ImageUploadModal
+        isOpen={imageModalOpen}
+        onClose={() => {
+          setImageModalOpen(false)
+          setImageModalArticleIndex(null)
+        }}
+        onConfirm={handleImageConfirm}
+        currentImageUrl={imageModalArticleIndex !== null ? parsedArticles[imageModalArticleIndex]?.meta.image_filename || undefined : undefined}
+        category={imageModalArticleIndex !== null ? parsedArticles[imageModalArticleIndex]?.meta.category || 'default' : 'default'}
+      />
     </div>
   )
 }

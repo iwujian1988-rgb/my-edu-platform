@@ -471,7 +471,7 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
           </div>
         ) : (
           // 文章网格
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
             {articles.map((article) => (
               <SpeakerCard key={article.id} article={article} />
             ))}
