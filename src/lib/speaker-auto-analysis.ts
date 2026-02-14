@@ -293,12 +293,20 @@ function getDurationScore(durationSeconds: number | null): number {
  * 使用 cefr-analyzer 库分析文本词汇的 CEFR 等级分布
  * CEFR 等级: A1(1), A2(2), B1(3), B2(4), C1(5), C2(6)
  *
+ * cefr-analyzer 分数阈值：
+ * - A1: < 1.2
+ * - A2: 1.2 - 1.7
+ * - B1: 1.7 - 2.2
+ * - B2: 2.2 - 2.8
+ * - C1: 2.8 - 3.5
+ * - C2: > 3.5
+ *
  * 返回值说明：
- * - score: 保留小数精度（1.0-6.0），用于加权计算，最终在 autoDetectLevel 中映射到 1-5
+ * - score: 映射到 Level 1-5 的分数，用于加权计算
  * - details: CEFR 分析详情，用于 UI 展示
  */
 function getCefrVocabScore(sentences: Array<{ text: string }>): {
-  score: number  // 1.0-6.0 的小数，保留精度参与加权
+  score: number  // 1-5 映射后的分数
   details: DifficultyAnalysisDetails['cefrDetails']
 } {
   try {
@@ -311,12 +319,26 @@ function getCefrVocabScore(sentences: Array<{ text: string }>): {
       analyzeByPartOfSpeech: false
     })
 
-    // 计算复杂度分数 (1.0-6.0 对应 A1-C2)
+    // 计算复杂度分数 (cefr-analyzer 的评分范围)
     const complexityResult = calculateComplexityScore(analysisResult)
-
-    // 保留小数精度，不在此处 round
-    // 让这个 1-6 的分数直接参与加权计算，最后在 autoDetectLevel 中统一处理
     const rawScore = complexityResult.score
+
+    // 根据 cefr-analyzer 的实际阈值映射到 Level 1-5
+    // 这是非线性映射，因为 cefr-analyzer 的分数分布不是均匀的
+    let mappedScore: number
+    if (rawScore < 1.2) {
+      mappedScore = 1.0  // A1
+    } else if (rawScore < 1.7) {
+      mappedScore = 1.5  // A2
+    } else if (rawScore < 2.2) {
+      mappedScore = 2.0  // B1
+    } else if (rawScore < 2.8) {
+      mappedScore = 3.0  // B2
+    } else if (rawScore < 3.5) {
+      mappedScore = 4.0  // C1
+    } else {
+      mappedScore = 5.0  // C2
+    }
 
     const details: DifficultyAnalysisDetails['cefrDetails'] = {
       level: complexityResult.level.toUpperCase(),
@@ -329,7 +351,7 @@ function getCefrVocabScore(sentences: Array<{ text: string }>): {
       c2Percent: Number(analysisResult.levelPercentages.c2.toFixed(1))
     }
 
-    return { score: rawScore, details }
+    return { score: mappedScore, details }
   } catch (error) {
     // 降级：CEFR 分析失败时使用词长评估
     console.warn('[CEFR分析失败，使用降级方案]', error)
@@ -407,12 +429,9 @@ function calculateDifficultyMetrics(
  * 新版权重分配（共 5 个维度）：
  * 1. 句子数量 (15%) - 文章长度
  * 2. 平均句长 (20%) - 句子复杂度
- * 3. CEFR 词汇等级 (35%) - 词汇难度（基于词频，1-6 分）
+ * 3. CEFR 词汇等级 (35%) - 词汇难度（已映射到 1-5）
  * 4. 语速 (20%) - 每分钟词数
  * 5. 时长 (10%) - 听力耐力
- *
- * 注意：CEFR 分数是 1-6，其他维度是 1-5
- *       加权计算后需要将结果映射回 1-5
  */
 export function autoDetectLevel(
   sentences: Array<{ text: string }>,
@@ -426,34 +445,26 @@ export function autoDetectLevel(
   // 计算基础指标
   const baseMetrics = calculateDifficultyMetrics(sentences)
 
-  // 计算各项得分（1-5 整数）
+  // 计算各项得分（1-5）
   const sentenceScore = getSentenceScore(baseMetrics.totalSentences)
   const lengthScore = getSentenceLengthScore(sentences)
 
-  // 语速评分（1-5 整数）
+  // 语速评分（1-5）
   const speedResult = getSpeakingSpeedScore(baseMetrics.totalWords, durationSeconds)
   const speakingSpeedScore = speedResult.score
 
-  // 时长评分（1-5 整数）
+  // 时长评分（1-5）
   const durationScore = getDurationScore(durationSeconds)
 
-  // CEFR 词汇评分（1.0-6.0 小数，保留精度）
+  // CEFR 词汇评分（已映射到 1-5）
   const cefrResult = getCefrVocabScore(sentences)
-  const cefrRawScore = cefrResult.score  // 1.0-6.0
+  const cefrVocabScore = cefrResult.score
 
   // 加权计算总分
-  // 注意：CEFR 是 1-6 分，其他是 1-5 分
-  // 需要归一化处理，或者让 CEFR 权重按比例调整
-  //
-  // 方案：将 CEFR 1-6 映射到 1-5 参与加权，但保留小数精度
-  // 映射公式：cefrNormalized = (cefrRaw - 1) * (4/5) + 1
-  // 即：1→1, 2→1.8, 3→2.6, 4→3.4, 5→4.2, 6→5
-  const cefrNormalized = (cefrRawScore - 1) * (4 / 5) + 1
-
   const weightedScore =
     sentenceScore * 0.15 +        // 句子数量 15%
     lengthScore * 0.20 +          // 平均句长 20%
-    cefrNormalized * 0.35 +       // CEFR 词汇 35% (已归一化到 1-5)
+    cefrVocabScore * 0.35 +       // CEFR 词汇 35%
     speakingSpeedScore * 0.20 +   // 语速 20%
     durationScore * 0.10          // 时长 10%
 
@@ -487,7 +498,7 @@ export function autoDetectLevel(
   const details: DifficultyAnalysisDetails = {
     sentenceScore,
     lengthScore,
-    cefrVocabScore: Math.round(cefrNormalized * 10) / 10,  // 归一化后的分数，保留1位小数
+    cefrVocabScore,
     speakingSpeedScore,
     durationScore,
     weightedScore: Number(weightedScore.toFixed(2)),
