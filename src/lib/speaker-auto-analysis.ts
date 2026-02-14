@@ -5,20 +5,28 @@
  * - 自动判断文章分类
  * - 自动评估难度等级（1-5级）
  * - 自动匹配封面图片
+ *
+ * 难度评估维度：
+ * 1. 句子数量 (15%) - 文章长度
+ * 2. 平均句长 (20%) - 句子复杂度
+ * 3. CEFR 词汇等级 (35%) - 词汇难度（基于词频）
+ * 4. 语速 (20%) - 每分钟词数
+ * 5. 时长 (10%) - 听力耐力
  */
 
 import { SupportedLanguage, ArticleCategory } from '@/types/speaker'
+import cefrAnalyzer, { calculateComplexityScore } from 'cefr-analyzer'
 
 // 难度等级类型（1-5级）
 export type DifficultyLevel = 1 | 2 | 3 | 4 | 5
 
 // 难度等级描述
 export const LEVEL_NAMES: Record<DifficultyLevel, string> = {
-  1: '入门级（初中-高中基础）',
-  2: '基础级（四级水平）',
-  3: '进阶级（六级-托福基础）',
-  4: '高级（雅思-托福进阶）',
-  5: '专家级（GRE-专业学术）'
+  1: '入门级（小学-初中基础）',
+  2: '基础级（高中-四级基础）',
+  3: '进阶级（四级高分-六级）',
+  4: '高级（雅思托福-考研）',
+  5: '专家级（GRE-学术专业）'
 }
 
 // 难度等级简称
@@ -88,16 +96,30 @@ interface DifficultyMetrics {
   totalWords: number
   avgSentenceLength: number
   avgWordLength: number
-  longWordRatio: number  // 7字母以上长词占比
+  longWordRatio: number  // 7字母以上长词占比（保留用于对比）
   durationSeconds: number | null
+  speakingSpeedWpm: number | null  // 每分钟词数 (Words Per Minute)
+  cefrScore: number  // CEFR 词汇难度分 (1-6 对应 A1-C2)
 }
 
 interface DifficultyAnalysisDetails {
   sentenceScore: number
   lengthScore: number
-  vocabScore: number
+  cefrVocabScore: number  // CEFR 词汇评分（替代旧的 vocabScore）
+  speakingSpeedScore: number  // 语速评分
   durationScore: number
   weightedScore: number
+  // CEFR 详细信息
+  cefrDetails?: {
+    level: string
+    score: number
+    a1Percent: number
+    a2Percent: number
+    b1Percent: number
+    b2Percent: number
+    c1Percent: number
+    c2Percent: number
+  }
 }
 
 // ========================================
@@ -266,11 +288,91 @@ function getDurationScore(durationSeconds: number | null): number {
 }
 
 /**
+ * 规则5：CEFR 词汇等级评分（权重 35%）
+ *
+ * 使用 cefr-analyzer 库分析文本词汇的 CEFR 等级分布
+ * CEFR 等级: A1(1), A2(2), B1(3), B2(4), C1(5), C2(6)
+ *
+ * 返回值说明：
+ * - score: 保留小数精度（1.0-6.0），用于加权计算，最终在 autoDetectLevel 中映射到 1-5
+ * - details: CEFR 分析详情，用于 UI 展示
+ */
+function getCefrVocabScore(sentences: Array<{ text: string }>): {
+  score: number  // 1.0-6.0 的小数，保留精度参与加权
+  details: DifficultyAnalysisDetails['cefrDetails']
+} {
+  try {
+    // 合并所有句子为一段文本
+    const text = sentences.map(s => s.text).join(' ')
+
+    // 使用 cefr-analyzer 分析
+    const analysisResult = cefrAnalyzer.analyze(text, {
+      includeUnknownWords: false,
+      analyzeByPartOfSpeech: false
+    })
+
+    // 计算复杂度分数 (1.0-6.0 对应 A1-C2)
+    const complexityResult = calculateComplexityScore(analysisResult)
+
+    // 保留小数精度，不在此处 round
+    // 让这个 1-6 的分数直接参与加权计算，最后在 autoDetectLevel 中统一处理
+    const rawScore = complexityResult.score
+
+    const details: DifficultyAnalysisDetails['cefrDetails'] = {
+      level: complexityResult.level.toUpperCase(),
+      score: Number(rawScore.toFixed(2)),
+      a1Percent: Number(analysisResult.levelPercentages.a1.toFixed(1)),
+      a2Percent: Number(analysisResult.levelPercentages.a2.toFixed(1)),
+      b1Percent: Number(analysisResult.levelPercentages.b1.toFixed(1)),
+      b2Percent: Number(analysisResult.levelPercentages.b2.toFixed(1)),
+      c1Percent: Number(analysisResult.levelPercentages.c1.toFixed(1)),
+      c2Percent: Number(analysisResult.levelPercentages.c2.toFixed(1))
+    }
+
+    return { score: rawScore, details }
+  } catch (error) {
+    // 降级：CEFR 分析失败时使用词长评估
+    console.warn('[CEFR分析失败，使用降级方案]', error)
+    const fallbackScore = getVocabularyScore(sentences)
+    return { score: fallbackScore, details: undefined }
+  }
+}
+
+/**
+ * 规则6：语速评分（权重 20%）
+ *
+ * 语速 = 总词数 / 时长（分钟）
+ *
+ * 参考标准：
+ * - 慢速教学: 80-100 WPM (Level 1)
+ * - 正常口语: 120-150 WPM (Level 2-3)
+ * - 快速演讲: 160-180 WPM (Level 4)
+ * - 极速新闻: 190+ WPM (Level 5)
+ */
+function getSpeakingSpeedScore(
+  totalWords: number,
+  durationSeconds: number | null
+): { score: number; wpm: number | null } {
+  if (!durationSeconds || durationSeconds <= 0) {
+    return { score: 3, wpm: null }  // 无时长数据，默认中等
+  }
+
+  const durationMinutes = durationSeconds / 60
+  const wpm = Math.round(totalWords / durationMinutes)
+
+  if (wpm < 100) return { score: 1, wpm }
+  if (wpm < 130) return { score: 2, wpm }
+  if (wpm < 160) return { score: 3, wpm }
+  if (wpm < 190) return { score: 4, wpm }
+  return { score: 5, wpm }
+}
+
+/**
  * 计算难度指标
  */
 function calculateDifficultyMetrics(
   sentences: Array<{ text: string }>
-): Omit<DifficultyMetrics, 'durationSeconds'> {
+): Omit<DifficultyMetrics, 'durationSeconds' | 'speakingSpeedWpm' | 'cefrScore'> {
   const totalSentences = sentences.length
   let totalWords = 0
   let totalChars = 0
@@ -301,6 +403,16 @@ function calculateDifficultyMetrics(
 
 /**
  * 根据指标自动评估难度等级（1-5级）
+ *
+ * 新版权重分配（共 5 个维度）：
+ * 1. 句子数量 (15%) - 文章长度
+ * 2. 平均句长 (20%) - 句子复杂度
+ * 3. CEFR 词汇等级 (35%) - 词汇难度（基于词频，1-6 分）
+ * 4. 语速 (20%) - 每分钟词数
+ * 5. 时长 (10%) - 听力耐力
+ *
+ * 注意：CEFR 分数是 1-6，其他维度是 1-5
+ *       加权计算后需要将结果映射回 1-5
  */
 export function autoDetectLevel(
   sentences: Array<{ text: string }>,
@@ -311,24 +423,38 @@ export function autoDetectLevel(
   metrics: DifficultyMetrics
   details: DifficultyAnalysisDetails
 } {
-  // 计算指标
+  // 计算基础指标
   const baseMetrics = calculateDifficultyMetrics(sentences)
-  const metrics: DifficultyMetrics = {
-    ...baseMetrics,
-    durationSeconds
-  }
 
-  // 计算各项得分
-  const sentenceScore = getSentenceScore(metrics.totalSentences)
+  // 计算各项得分（1-5 整数）
+  const sentenceScore = getSentenceScore(baseMetrics.totalSentences)
   const lengthScore = getSentenceLengthScore(sentences)
-  const vocabScore = getVocabularyScore(sentences)
+
+  // 语速评分（1-5 整数）
+  const speedResult = getSpeakingSpeedScore(baseMetrics.totalWords, durationSeconds)
+  const speakingSpeedScore = speedResult.score
+
+  // 时长评分（1-5 整数）
   const durationScore = getDurationScore(durationSeconds)
 
+  // CEFR 词汇评分（1.0-6.0 小数，保留精度）
+  const cefrResult = getCefrVocabScore(sentences)
+  const cefrRawScore = cefrResult.score  // 1.0-6.0
+
   // 加权计算总分
+  // 注意：CEFR 是 1-6 分，其他是 1-5 分
+  // 需要归一化处理，或者让 CEFR 权重按比例调整
+  //
+  // 方案：将 CEFR 1-6 映射到 1-5 参与加权，但保留小数精度
+  // 映射公式：cefrNormalized = (cefrRaw - 1) * (4/5) + 1
+  // 即：1→1, 2→1.8, 3→2.6, 4→3.4, 5→4.2, 6→5
+  const cefrNormalized = (cefrRawScore - 1) * (4 / 5) + 1
+
   const weightedScore =
-    sentenceScore * 0.25 +        // 句子数量 25%
-    lengthScore * 0.30 +          // 平均句长 30%
-    vocabScore * 0.35 +           // 词汇复杂度 35%
+    sentenceScore * 0.15 +        // 句子数量 15%
+    lengthScore * 0.20 +          // 平均句长 20%
+    cefrNormalized * 0.35 +       // CEFR 词汇 35% (已归一化到 1-5)
+    speakingSpeedScore * 0.20 +   // 语速 20%
     durationScore * 0.10          // 时长 10%
 
   // 四舍五入到整数等级，并限制在 1-5 范围内
@@ -350,12 +476,22 @@ export function autoDetectLevel(
   // 限制置信度范围
   confidence = Math.min(Math.max(confidence, 0.5), 0.95)
 
+  // 构建完整指标
+  const metrics: DifficultyMetrics = {
+    ...baseMetrics,
+    durationSeconds,
+    speakingSpeedWpm: speedResult.wpm,
+    cefrScore: cefrResult.details?.score ?? 0
+  }
+
   const details: DifficultyAnalysisDetails = {
     sentenceScore,
     lengthScore,
-    vocabScore,
+    cefrVocabScore: Math.round(cefrNormalized * 10) / 10,  // 归一化后的分数，保留1位小数
+    speakingSpeedScore,
     durationScore,
-    weightedScore: Number(weightedScore.toFixed(2))
+    weightedScore: Number(weightedScore.toFixed(2)),
+    cefrDetails: cefrResult.details
   }
 
   return { level, confidence, metrics, details }
