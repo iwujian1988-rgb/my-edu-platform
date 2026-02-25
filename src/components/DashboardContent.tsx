@@ -125,14 +125,14 @@ function StatBox({
           <span className="text-xs font-black text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1">
             {label}
           </span>
-          <div className="flex items-baseline gap-1 leading-none">
+          <div className="flex items-baseline gap-0.5 leading-none">
             <span className={`font-black text-black dark:text-slate-100 ${
-              Number(value) >= 1000 ? 'text-xl' :
-              Number(value) >= 100 ? 'text-2xl' : 'text-3xl'
+              Number(value) >= 1000 ? 'text-lg' :
+              Number(value) >= 100 ? 'text-xl' : 'text-2xl'
             }`}>
               {value}
             </span>
-            <span className="text-xs font-bold text-gray-400 dark:text-slate-500 shrink-0">
+            <span className="text-[10px] font-bold text-gray-400 dark:text-slate-500 shrink-0">
               {unit}
             </span>
           </div>
