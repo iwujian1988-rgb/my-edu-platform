@@ -191,8 +191,8 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
     phonetic: word.us_phonetic || word.uk_phonetic || word.phonetic,
     pos: getPartOfSpeechLabel(word.part_of_speech),
     definition: showDefinition ? word.definition : word.definition_en,
-    // 搭配始终显示中文（因为数据库中只有中文搭配），不受隐藏中文按钮影响
-    collocation: word.collocation,
+    // 搭配优先显示英文（collocation_en），没有再显示 collocation
+    collocation: word.collocation_en || word.collocation,
     // 例句始终显示英文（中文例句字段为空），点击隐藏中文不影响例句
     sentence: word.example_sentence_en || word.example_sentence,
   }
