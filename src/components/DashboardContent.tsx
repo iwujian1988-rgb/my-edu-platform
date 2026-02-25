@@ -127,8 +127,8 @@ function StatBox({
           </span>
           <div className="flex items-baseline gap-1 leading-none">
             <span className={`font-black text-black dark:text-slate-100 ${
-              typeof value === 'number' && value >= 1000 ? 'text-xl' :
-              typeof value === 'number' && value >= 100 ? 'text-2xl' : 'text-3xl'
+              Number(value) >= 1000 ? 'text-xl' :
+              Number(value) >= 100 ? 'text-2xl' : 'text-3xl'
             }`}>
               {value}
             </span>
