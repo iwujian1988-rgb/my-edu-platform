@@ -397,7 +397,7 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
             <button
               onClick={handleEditPlan}
               className="
-                opacity-0 group-hover/card:opacity-50 hover:opacity-100
+                opacity-50 md:opacity-0 md:group-hover/card:opacity-50 hover:opacity-100
                 p-1.5 rounded
                 text-gray-400 dark:text-gray-600
                 hover:text-blue-600 dark:hover:text-blue-400
@@ -409,11 +409,11 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
               <Edit className="w-3.5 h-3.5" strokeWidth={2} />
             </button>
 
-            {/* 删除按钮（小图标，悬停显示） */}
+            {/* 删除按钮 */}
             <button
               onClick={handleDeletePlan}
               className="
-                opacity-0 group-hover/card:opacity-50 hover:opacity-100
+                opacity-50 md:opacity-0 md:group-hover/card:opacity-50 hover:opacity-100
                 p-1.5 rounded
                 text-gray-400 dark:text-gray-600
                 hover:text-red-600 dark:hover:text-red-400

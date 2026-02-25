@@ -353,9 +353,10 @@ export function FlashcardScopeDialog({
 
                 {/* 右侧：数字和箭头 */}
                 <div className="flex items-center gap-3">
-                  {/* 数字标签 */}
+                  {/* 数字标签 - 根据数字大小动态调整样式 */}
                   <div className={`
-                    w-14 h-14 flex items-center justify-center text-2xl font-black border-2 border-black rounded
+                    h-12 min-w-12 px-2 flex items-center justify-center font-black border-2 border-black rounded
+                    ${option.count >= 10000 ? 'text-sm' : option.count >= 1000 ? 'text-lg' : 'text-2xl'}
                   `}
                   style={option.disabled
                     ? { backgroundColor: 'var(--bg-tertiary)', color: '#9ca3af' }

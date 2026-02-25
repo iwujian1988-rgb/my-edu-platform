@@ -27,6 +27,6 @@ export default async function SpeakerPage() {
   // 直接返回空数组，完全使用客户端渲染避免服务端阻塞
   console.log('[Speaker Page] 使用客户端渲染模式')
 
-  return <SpeakerClient initialArticles={[]} />
+  return <SpeakerClient initialArticles={[]} userId={user.id} />
 }
 

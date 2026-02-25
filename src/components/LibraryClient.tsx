@@ -27,6 +27,7 @@ export function LibraryClient({ books, userId }: LibraryClientProps) {
     <>
       <AppSidebar
         books={books}
+        userId={userId}
         currentView={view}
         onViewChange={handleViewChange}
       />

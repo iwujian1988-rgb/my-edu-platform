@@ -9,15 +9,15 @@ import { SpeakerPageContent } from './SpeakerPageContent'
 
 interface SpeakerClientProps {
   initialArticles: any[]
+  userId?: string
 }
 
-export function SpeakerClient({ initialArticles }: SpeakerClientProps) {
+export function SpeakerClient({ initialArticles, userId }: SpeakerClientProps) {
   return (
     <>
       <AppSidebar
         books={[]}  // 演说家不需要书籍数据
-        currentView="speaker"
-        onViewChange={() => {}}
+        userId={userId}
       />
       <div className="lg:ml-64 min-h-screen">
         <SpeakerPageContent initialArticles={initialArticles} />
