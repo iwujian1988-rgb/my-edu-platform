@@ -52,6 +52,7 @@ export default async function BlindListenPage({
     <BlindListenClient
       article={article}
       lastPosition={progress?.step1_last_position || null}
+      userId={user.id}
     />
   )
 }

@@ -18,6 +18,7 @@ import { useRouter } from 'next/navigation'
 import { ArrowLeft, Volume2, CheckCircle, BookOpen, ExternalLink, Filter, X, Pause, Play, BookText, ChevronLeft } from 'lucide-react'
 import type { SpeakerGhostWord, SpeakerArticle } from '@/types/speaker'
 import { toast } from 'sonner'
+import { SpeakerSubPageLayout } from '@/components/speaker/SpeakerSubPageLayout'
 
 // 词典数据类型
 interface DictEntry {
@@ -392,7 +393,8 @@ export function GhostWordBook({ userId }: GhostWordBookProps) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+    <SpeakerSubPageLayout userId={userId}>
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       {/* 顶部导航栏 - 黑底白字档案库风格 */}
       <div className="bg-black dark:bg-black border-b-4 border-black">
         <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 py-6">
@@ -815,6 +817,7 @@ export function GhostWordBook({ userId }: GhostWordBookProps) {
           </div>
         </div>
       )}
-    </div>
+      </div>
+    </SpeakerSubPageLayout>
   )
 }

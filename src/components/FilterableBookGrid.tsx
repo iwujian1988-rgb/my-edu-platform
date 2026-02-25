@@ -20,8 +20,11 @@ const HOT_BOOKS = [
   '考研',
   'IELTS',
   'TOEFL',
-  'CET-4',  // 大学四六级，热门度次之
+  'CET-4',  // 大学四六级
   'CET-6',
+  '新概念英语',  // 新增热门
+  '专业英语八级',  // 专八
+  '专升本',  // 专升本
 ]
 
 // 书名到分类的映射
@@ -30,14 +33,16 @@ const BOOK_CATEGORY_MAP: Record<string, BookCategory> = {
   '考研': 'hot',
   'IELTS': 'hot',
   'TOEFL': 'hot',
+  '新概念英语': 'hot',  // 新增热门
+  '专业英语八级': 'hot',  // 专八改为热门
+  '专升本': 'hot',  // 专升本改为热门
 
   // 大学教材
-  'CET-4': 'university',
-  'CET-6': 'university',
+  'CET-4': 'hot',  // 四级改为热门
+  'CET-6': 'hot',  // 六级改为热门
 
   // 国内考试
   '专业英语四级': 'domestic',
-  '专业英语八级': 'domestic',
   'PETS3': 'domestic',
 
   // 国外考试
@@ -258,7 +263,7 @@ export function FilterableBookGrid({ books }: FilterableBookGridProps) {
               <div>
                 <h1 className={`text-2xl md:text-3xl font-black tracking-tighter italic ${
                   isDark ? 'text-[#BEF264]' : 'text-black'
-                }`}>28+ 精选词库</h1>
+                }`}>{books.length}+ 精选词库</h1>
                 <div className={`flex items-center gap-2 mt-2 ${
                   isDark ? 'text-[#BEF264]' : ''
                 }`}>

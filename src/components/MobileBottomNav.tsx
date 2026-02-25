@@ -1,27 +1,27 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Home, Library, Dumbbell, Settings, Mic } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
 import { useLoading } from './LoadingOverlay'
 import { BookSelectorModal } from './BookSelectorModal'
 import type { Book } from '@/types/book'
+import { createClient } from '@/lib/supabase/client'
 
 interface NavItem {
   label: string
   href: string
   icon: any
   isPractice?: boolean // 标记是否为练习按钮
-  disabled?: boolean // 标记是否禁用
-  disabledMessage?: string // 禁用时显示的提示信息
+  requiresPermission?: string // 需要的权限标识
 }
 
 const navItems: NavItem[] = [
   { label: '工作台', href: '/', icon: Home },
   { label: '词库', href: '/library', icon: Library },
   { label: '练习', href: '/practice', icon: Dumbbell, isPractice: true },
-  { label: '演说家', href: '/speaker', icon: Mic, disabled: true, disabledMessage: '功能开发中，敬请期待！' },
+  { label: '雯姐', href: '/speaker', icon: Mic, requiresPermission: 'speaker' },
   { label: '设置', icon: Settings }, // 特殊处理
 ]
 
@@ -38,6 +38,88 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
   const { showLoading } = useLoading()
   const isDark = mounted && theme === 'dark'
   const [showBookSelector, setShowBookSelector] = useState(false)
+  const [userPermissions, setUserPermissions] = useState<string[]>([])
+
+  // 获取用户权限
+  useEffect(() => {
+    let isMounted = true
+
+    const fetchUserPermissions = async () => {
+      if (!userId) return
+
+      try {
+        const supabase = createClient()
+        const { data, error } = await supabase
+          .from('users')
+          .select('feature_permissions, invitation_code_id')
+          .eq('id', userId)
+          .single()
+
+        if (error) {
+          if (isMounted) console.error('[MobileBottomNav] 获取用户权限失败:', error)
+          return
+        }
+
+        if (!isMounted) return
+
+        // 优先使用用户自己设置的权限
+        if (data?.feature_permissions && data.feature_permissions.length > 0) {
+          if (isMounted) setUserPermissions(data.feature_permissions)
+          return
+        }
+
+        // 通过 invitation_code 获取套餐权限
+        if (data?.invitation_code_id) {
+          const { data: codeData } = await supabase
+            .from('invitation_codes')
+            .select('package_id')
+            .eq('id', data.invitation_code_id)
+            .single()
+
+          if (!isMounted) return
+
+          if (codeData?.package_id) {
+            const { data: packageData } = await supabase
+              .from('invitation_packages')
+              .select('feature_permissions')
+              .eq('id', codeData.package_id)
+              .single()
+
+            if (!isMounted) return
+
+            if (packageData?.feature_permissions) {
+              if (isMounted) setUserPermissions(packageData.feature_permissions)
+            }
+          }
+        }
+      } catch (error) {
+        if (isMounted) console.error('[MobileBottomNav] 获取权限失败:', error)
+      }
+    }
+
+    fetchUserPermissions()
+
+    return () => {
+      isMounted = false
+    }
+  }, [userId])
+
+  // 检查用户是否有特定权限
+  const hasPermission = (permission: string) => {
+    // 如果用户已经在对应页面，说明肯定有权限
+    if (permission === 'speaker' && pathname === '/speaker') {
+      return true
+    }
+    // 权限还没加载完成，暂时显示所有菜单
+    if (userPermissions.length === 0 && userId) {
+      return true
+    }
+    // 如果有明确的权限列表，按权限列表判断
+    if (userPermissions.length > 0) {
+      return userPermissions.includes(permission)
+    }
+    return false
+  }
 
   // 处理导航点击，立即显示加载状态
   const handleNavigation = (href: string) => {
@@ -64,39 +146,13 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
             const Icon = item.icon
             const isSettings = item.label === '设置'
             const isPractice = item.isPractice
-            const isDisabled = item.disabled
 
             // 判断是否激活
             const isActive = isSettings ? pathname === '/settings' : pathname === item.href
 
-            // 禁用项（演说家）
-            if (isDisabled) {
-              return (
-                <button
-                  key={item.label}
-                  onClick={() => alert(item.disabledMessage || '功能开发中，敬请期待！')}
-                  className="flex-1 flex flex-col items-center justify-center py-3 px-2 opacity-50 transition-all duration-200"
-                  suppressHydrationWarning
-                >
-                  <div className="relative mb-2">
-                    <div
-                      className="w-12 h-12 rounded border-[2px] border-black flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] transition-all duration-200"
-                      style={{
-                        backgroundColor: 'var(--bg-secondary)',
-                        color: 'var(--text-secondary)',
-                      }}
-                    >
-                      <Icon className="w-6 h-6" strokeWidth={2.5} />
-                    </div>
-                  </div>
-                  <span
-                    className="text-xs font-black"
-                    style={{ color: 'var(--text-secondary)' }}
-                  >
-                    {item.label}
-                  </span>
-                </button>
-              )
+            // 权限检查：如果需要权限但用户没有，则不显示
+            if (item.requiresPermission && !hasPermission(item.requiresPermission)) {
+              return null
             }
 
             // 练习按钮：打开弹层（如果有books）

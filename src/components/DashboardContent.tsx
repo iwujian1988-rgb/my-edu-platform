@@ -121,15 +121,18 @@ function StatBox({
         `}>
           <Icon className="w-6 h-6 text-black" strokeWidth={3} />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col min-w-0">
           <span className="text-xs font-black text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1">
             {label}
           </span>
           <div className="flex items-baseline gap-1 leading-none">
-            <span className="text-3xl font-black text-black dark:text-slate-100">
+            <span className={`font-black text-black dark:text-slate-100 ${
+              typeof value === 'number' && value >= 1000 ? 'text-xl' :
+              typeof value === 'number' && value >= 100 ? 'text-2xl' : 'text-3xl'
+            }`}>
               {value}
             </span>
-            <span className="text-xs font-bold text-gray-400 dark:text-slate-500">
+            <span className="text-xs font-bold text-gray-400 dark:text-slate-500 shrink-0">
               {unit}
             </span>
           </div>

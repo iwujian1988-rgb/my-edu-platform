@@ -14,10 +14,12 @@ import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { Play, Pause, SkipForward } from 'lucide-react'
 import type { SpeakerArticle } from '@/types/speaker'
+import { SpeakerSubPageLayout } from '@/components/speaker/SpeakerSubPageLayout'
 
 interface BlindListenClientProps {
   article: SpeakerArticle
   lastPosition: number | null
+  userId?: string
 }
 
 const ENCOURAGEMENT_MESSAGES = [
@@ -30,7 +32,7 @@ const ENCOURAGEMENT_MESSAGES = [
   '雯姐说：听到实在有的词听不出来就进入下一步'
 ]
 
-export function BlindListenClient({ article, lastPosition }: BlindListenClientProps) {
+export function BlindListenClient({ article, lastPosition, userId }: BlindListenClientProps) {
   const router = useRouter()
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -196,7 +198,8 @@ export function BlindListenClient({ article, lastPosition }: BlindListenClientPr
   }
 
   return (
-    <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center p-4 relative overflow-hidden">
+    <SpeakerSubPageLayout userId={userId}>
+      <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center p-4 relative overflow-hidden">
       {/* 背景网格装饰 */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="w-full h-full" style={{
@@ -336,6 +339,7 @@ export function BlindListenClient({ article, lastPosition }: BlindListenClientPr
 
       {/* 隐藏的音频元素 */}
       <audio ref={audioRef} />
-    </div>
+      </div>
+    </SpeakerSubPageLayout>
   )
 }
