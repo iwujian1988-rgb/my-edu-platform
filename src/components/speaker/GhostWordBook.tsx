@@ -262,8 +262,21 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
       audio.currentTime = word.start_time
 
-      // 🔧 修复：播放完整句子，不设置5秒限制
-      // 只在播放自然结束时停止
+      // 获取句子结束时间，用于限制播放范围
+      const sentence = article.sentences?.find(s => s.sentence_index === word.sentence_id)
+      const endTime = sentence?.end_time
+
+      // 使用 timeupdate 事件在到达结束时间时暂停
+      if (endTime) {
+        audio.ontimeupdate = () => {
+          if (audio.currentTime >= endTime) {
+            audio.pause()
+            setIsPlaying(null)
+            console.log('[Ghost Word Book] 句子播放完成，已暂停')
+          }
+        }
+      }
+
       audio.onended = () => {
         console.log('[Ghost Word Book] 播放完成')
         setIsPlaying(null)
@@ -279,6 +292,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       console.log('[Ghost Word Book] ✅ 开始播放句子:', {
         url: article.audio_url,
         startTime: word.start_time,
+        endTime: endTime,
         sentenceId: word.sentence_id
       })
 
