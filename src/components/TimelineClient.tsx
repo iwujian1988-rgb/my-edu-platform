@@ -5,7 +5,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import { CheckCircle2, Circle, PlayCircle, BookOpen, Mic, Music } from 'lucide-react'
+import { CheckCircle2, Circle, PlayCircle, BookOpen, Mic, Music, BookText } from 'lucide-react'
 import type { SpeakerArticle, SpeakerProgress } from '@/types/speaker'
 
 interface TimelineClientProps {
@@ -53,8 +53,18 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
       path: `/speaker/steps/step2?id=${article.id}`
     },
     {
-      id: 'step3',
+      id: 'step2_5',
       number: 3,
+      title: '搞懂单词',
+      description: '她说："查字典把听不懂的单词学完"',
+      icon: BookText,
+      completed: false, // 魔鬼单词表不需要完成状态追踪
+      current: false,   // 不影响进度判断
+      path: `/speaker/ghost-words?articleId=${article.id}`
+    },
+    {
+      id: 'step3',
+      number: 4,
       title: '跟读背诵',
       description: '模仿发音，强化记忆',
       icon: Mic,
@@ -64,7 +74,7 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
     },
     {
       id: 'step4',
-      number: 4,
+      number: 5,
       title: '原音对比',
       description: '背到和原音一样快 方可结束',
       icon: Music,

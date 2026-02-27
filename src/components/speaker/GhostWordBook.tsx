@@ -32,13 +32,14 @@ interface DictEntry {
 
 interface GhostWordBookProps {
   userId: string
+  articleId?: string  // 可选：从 URL 参数传入，自动筛选指定文章的生词
 }
 
 type ErrorTypeFilter = 'all' | 'wrong' | 'skipped'
 type TimeFilter = 'all' | 'today' | 'week' | 'month'
 type ArticleFilter = string | 'all'  // 'all' 或具体的 article_id
 
-export function GhostWordBook({ userId }: GhostWordBookProps) {
+export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   const router = useRouter()
 
   const [words, setWords] = useState<SpeakerGhostWord[]>([])
@@ -54,11 +55,18 @@ export function GhostWordBook({ userId }: GhostWordBookProps) {
     loading: boolean
   } | null>(null)
 
-  // 筛选状态
+  // 筛选状态 - 如果传入 articleId，默认按该文章筛选
   const [errorTypeFilter, setErrorTypeFilter] = useState<ErrorTypeFilter>('all')
   const [timeFilter, setTimeFilter] = useState<TimeFilter>('all')
-  const [articleFilter, setArticleFilter] = useState<ArticleFilter>('all')
+  const [articleFilter, setArticleFilter] = useState<ArticleFilter>(articleId || 'all')
   const [showFilters, setShowFilters] = useState(true)  // 默认展示筛选面板
+
+  // 当 articleId prop 变化时更新筛选器
+  useEffect(() => {
+    if (articleId) {
+      setArticleFilter(articleId)
+    }
+  }, [articleId])
 
   // 清理音频资源
   useEffect(() => {

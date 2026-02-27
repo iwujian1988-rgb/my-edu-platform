@@ -14,13 +14,21 @@ import { GhostWordBook } from '@/components/speaker/GhostWordBook'
 // 强制动态渲染，跳过预渲染
 export const dynamic = 'force-dynamic'
 
-export default async function GhostWordsPage() {
+export default async function GhostWordsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ articleId?: string }>
+}) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
-    redirect('/login')
+    const { articleId } = await searchParams
+    const currentUrl = articleId ? `/speaker/ghost-words?articleId=${articleId}` : '/speaker/ghost-words'
+    redirect('/login?redirect=' + encodeURIComponent(currentUrl))
   }
 
-  return <GhostWordBook userId={user.id} />
+  const { articleId } = await searchParams
+
+  return <GhostWordBook userId={user.id} articleId={articleId} />
 }
