@@ -49,7 +49,7 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
     return `${mins}:${secs.toString().padStart(2, '0')}`
   }
 
-  // 初始化音频
+  // 初始化音频（只在 audio_url 变化时重新初始化）
   useEffect(() => {
     const audio = audioRef.current
     if (!audio) return
@@ -58,35 +58,40 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
     audio.src = audioUrl
     audio.playbackRate = playbackRate
 
-    // 检查是否有断点
+    // 检查是否有断点（只在首次加载时检查）
     if (lastPosition && lastPosition > 0) {
       setShowResumePrompt(true)
     }
 
-    // 音频加载完成后
-    audio.addEventListener('loadedmetadata', () => {
+    // 定义事件处理函数（必须使用相同引用才能正确移除）
+    const handleLoadedMetadata = () => {
       setDuration(audio.duration)
-    })
+    }
 
-    // 监听播放进度
-    audio.addEventListener('timeupdate', () => {
+    const handleTimeUpdate = () => {
       setCurrentTime(audio.currentTime)
-    })
+    }
 
-    // 监听播放结束
-    audio.addEventListener('ended', () => {
+    const handleEnded = () => {
       setIsPlaying(false)
       // 保存进度（完成）
       saveProgress(audio.duration)
-    })
+    }
+
+    // 添加事件监听器
+    audio.addEventListener('loadedmetadata', handleLoadedMetadata)
+    audio.addEventListener('timeupdate', handleTimeUpdate)
+    audio.addEventListener('ended', handleEnded)
 
     return () => {
+      // 清理：暂停音频并移除所有事件监听器
       audio.pause()
-      audio.removeEventListener('loadedmetadata', () => {})
-      audio.removeEventListener('timeupdate', () => {})
-      audio.removeEventListener('ended', () => {})
+      audio.removeEventListener('loadedmetadata', handleLoadedMetadata)
+      audio.removeEventListener('timeupdate', handleTimeUpdate)
+      audio.removeEventListener('ended', handleEnded)
     }
-  }, [article.audio_url, lastPosition])
+    // 🔥 修复：移除 lastPosition 依赖，避免进度保存时触发重新初始化导致音频暂停
+  }, [article.audio_url])
 
   // 鼓励语句轮播 - 字幕式淡入淡出
   useEffect(() => {

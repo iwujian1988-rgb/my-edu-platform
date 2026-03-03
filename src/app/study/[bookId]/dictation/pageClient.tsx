@@ -469,6 +469,16 @@ export default function DictationPageClient() {
     setIsPlaying(false)
   }
 
+  // 🔥 播放按钮点击处理：标记用户已交互，解决 Edge 浏览器音频静默失败问题
+  const handlePlayButtonClick = () => {
+    hasUserInteractedRef.current = true  // 标记用户已交互
+    if (isPlaying) {
+      handlePause()
+    } else {
+      playWordAudio()
+    }
+  }
+
   // 上一个单词
   const handlePrevious = async () => {
     if (!canOperate || currentIndex <= 0) return
@@ -489,10 +499,11 @@ export default function DictationPageClient() {
     )
   }
 
-  // 自动播放TTS（只在用户选择范围后才触发）
+  // 自动播放TTS（只在用户首次交互后才触发）
+  // 🔥 修复 Edge 浏览器音频静默失败问题：首次必须有用户交互
   useEffect(() => {
-    // ⚡️ 关键修改：只有用户选择范围后，才自动播放
-    if (currentWord && !wordsLoading && !feedback && hasSelectedScope) {
+    // ⚡️ 关键修改：只有用户首次交互后，才自动播放
+    if (currentWord && !wordsLoading && !feedback && hasSelectedScope && hasUserInteractedRef.current) {
       const timer = setTimeout(() => {
         playWordAudio()
       }, 500)
@@ -502,8 +513,9 @@ export default function DictationPageClient() {
   }, [currentIndex, currentWord, wordsLoading, feedback, hasSelectedScope])
 
   // 输入框焦点处理
+  // 🔥 修复：只有用户首次交互后才自动播放
   const handleInputFocus = () => {
-    if (hasPlayedOnceRef.current && !isPlaying && !feedback && currentWord) {
+    if (hasUserInteractedRef.current && hasPlayedOnceRef.current && !isPlaying && !feedback && currentWord) {
       playWordAudio()
     }
   }
@@ -554,57 +566,6 @@ export default function DictationPageClient() {
       audioContextRef.current.resume()
     }
     return audioContextRef.current
-  }
-
-  // ⭐ 老式打字机音效 - 多层声音叠加
-  const playTypewriterSound = () => {
-    try {
-      const audioContext = getAudioContext()
-      if (!audioContext) return  // 🔥 SSR 安全检查
-      const now = audioContext.currentTime
-
-      // 第一层：敲击声（高频短促）
-      const clickOsc = audioContext.createOscillator()
-      const clickGain = audioContext.createGain()
-      clickOsc.type = 'square'
-      clickOsc.frequency.setValueAtTime(1500, now)
-      clickOsc.frequency.exponentialRampToValueAtTime(800, now + 0.01)
-      clickGain.gain.setValueAtTime(0.15, now)
-      clickGain.gain.exponentialRampToValueAtTime(0.01, now + 0.02)
-
-      // 第二层：金属回响（中频）
-      const metalOsc = audioContext.createOscillator()
-      const metalGain = audioContext.createGain()
-      metalOsc.type = 'triangle'
-      metalOsc.frequency.setValueAtTime(2000, now)
-      metalOsc.frequency.exponentialRampToValueAtTime(1200, now + 0.03)
-      metalGain.gain.setValueAtTime(0.08, now)
-      metalGain.gain.exponentialRampToValueAtTime(0.01, now + 0.04)
-
-      // 第三层：机身震动（低频）
-      const bodyOsc = audioContext.createOscillator()
-      const bodyGain = audioContext.createGain()
-      bodyOsc.type = 'sine'
-      bodyOsc.frequency.setValueAtTime(200, now)
-      bodyGain.gain.setValueAtTime(0.2, now)
-      bodyGain.gain.exponentialRampToValueAtTime(0.01, now + 0.06)
-
-      // 连接节点
-      clickOsc.connect(clickGain).connect(audioContext.destination)
-      metalOsc.connect(metalGain).connect(audioContext.destination)
-      bodyOsc.connect(bodyGain).connect(audioContext.destination)
-
-      // 播放
-      clickOsc.start(now)
-      clickOsc.stop(now + 0.02)
-      metalOsc.start(now + 0.005)
-      metalOsc.stop(now + 0.045)
-      bodyOsc.start(now)
-      bodyOsc.stop(now + 0.06)
-
-    } catch (error) {
-      console.error('打字机音效播放失败:', error)
-    }
   }
 
   // ⭐ 错误音效 - 有质感的嗡嗡声
@@ -668,17 +629,6 @@ export default function DictationPageClient() {
 
     } catch (error) {
       console.error('正确音效播放失败:', error)
-    }
-  }
-
-  // 防抖：使用 ref 存储最后播放时间
-  const lastPlayTimeRef = useRef(0)
-
-  const playTypewriterSoundThrottled = () => {
-    const now = Date.now()
-    if (now - lastPlayTimeRef.current > 80) {
-      lastPlayTimeRef.current = now
-      playTypewriterSound()
     }
   }
 
@@ -1124,7 +1074,7 @@ export default function DictationPageClient() {
                   </button>
 
                   <button
-                    onClick={isPlaying ? handlePause : playWordAudio}
+                    onClick={handlePlayButtonClick}
                     className="w-20 h-20 bg-[#ccff00] border-2 border-black rounded-full flex items-center justify-center shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:translate-y-[2px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:translate-y-[4px] active:shadow-none transition-all"
                   >
                     {isPlaying ? (
@@ -1170,10 +1120,6 @@ export default function DictationPageClient() {
                     value={userInput}
                     onChange={(e) => {
                       setUserInput(e.target.value)
-                      // ⭐ 触发打字机音效（只在有新输入且没有反馈时）
-                      if (e.target.value && feedback === null) {
-                        playTypewriterSoundThrottled()
-                      }
                     }}
                     onKeyPress={(e) => {
                       if (feedback === 'wrong' && showCorrectAnswer) {

@@ -56,6 +56,7 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
   /**
    * 播放音频文件（从 URL）
    * 🔧 修复：捕获 AbortError，避免快速切换时报错
+   * 🔧 修复：添加播放启动超时检测，解决 Edge 浏览器 Promise 永远 pending 问题
    */
   const playAudioFile = useCallback(
     (url: string): Promise<void> => {
@@ -80,8 +81,48 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
         console.log(`🔊 [useTTS] 播放音频: ${url}`)
 
         const audio = new Audio(url)
-
         audioRef.current = audio
+
+        // ========== 🔥 关键修复：播放启动超时检测 ==========
+        // Edge 浏览器可能在某些情况下 audio.play() 返回 pending Promise 且不触发任何事件
+        const PLAY_START_TIMEOUT = 1500  // 1.5秒超时
+        let playStartTimeoutId: ReturnType<typeof setTimeout> | null = null
+        let hasPlayStarted = false
+        let hasSettled = false  // 防止重复 resolve/reject
+
+        const cleanup = () => {
+          if (playStartTimeoutId) {
+            clearTimeout(playStartTimeoutId)
+            playStartTimeoutId = null
+          }
+        }
+
+        const safeReject = (error: Error) => {
+          if (hasSettled) return
+          hasSettled = true
+          cleanup()
+          if (isMountedRef.current) {
+            setIsPlaying(false)
+            setIsLoading(false)
+          }
+          audioRef.current = null
+          reject(error)
+        }
+
+        const safeResolve = () => {
+          if (hasSettled) return
+          hasSettled = true
+          cleanup()
+          resolve()
+        }
+
+        // 设置超时检测
+        playStartTimeoutId = setTimeout(() => {
+          if (!hasPlayStarted) {
+            console.error(`❌ [useTTS] 播放启动超时 (${PLAY_START_TIMEOUT}ms)，可能被浏览器静默阻止`)
+            safeReject(new Error('Playback start timeout'))
+          }
+        }, PLAY_START_TIMEOUT)
 
         // 加载完成后开始播放
         audio.onloadeddata = () => {
@@ -91,8 +132,12 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
         // 播放开始
         audio.onplay = () => {
           console.log(`▶️ [useTTS] 开始播放`)
-          setIsPlaying(true)
-          setIsLoading(false)
+          hasPlayStarted = true
+          cleanup()  // 清除超时检测
+          if (isMountedRef.current) {
+            setIsPlaying(true)
+            setIsLoading(false)
+          }
         }
 
         // 播放结束
@@ -103,20 +148,13 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
             setIsLoading(false)
           }
           audioRef.current = null
-          resolve()
+          safeResolve()
         }
 
         // 播放错误
         audio.onerror = (event) => {
           console.error(`❌ [useTTS] 音频播放错误:`, event)
-          if (isMountedRef.current) {
-            setIsPlaying(false)
-            setIsLoading(false)
-          }
-          audioRef.current = null
-
-          const error = new Error('Audio playback failed')
-          reject(error)
+          safeReject(new Error('Audio playback failed'))
         }
 
         // 开始播放
@@ -129,17 +167,12 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
               setIsLoading(false)
             }
             audioRef.current = null
-            resolve() // 🔥 不要 reject，因为这不算错误
+            safeResolve() // 🔥 不要 reject，因为这不算错误
             return
           }
 
           console.error(`❌ [useTTS] play() 调用失败:`, err)
-          if (isMountedRef.current) {
-            setIsPlaying(false)
-            setIsLoading(false)
-          }
-          audioRef.current = null
-          reject(err)
+          safeReject(err)
         })
       })
     },
@@ -249,6 +282,7 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
       if (!success) {
         console.error(`❌ [useTTS] Web Speech API初始化失败`)
         if (isMountedRef.current) {
+          setIsPlaying(false)  // 🔥 修复：Web Speech 失败时也要重置 isPlaying
           setIsLoading(false)
         }
       }
