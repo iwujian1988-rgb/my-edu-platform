@@ -127,7 +127,7 @@ export function DictationResultModal({
   // 查看魔鬼生词本
   const goToGhostWords = () => {
     console.log('[Dictation Result] 查看生词本')
-    router.push('/speaker/ghost-words')
+    router.push(`/speaker/ghost-words?articleId=${articleId}`)
   }
 
   return (

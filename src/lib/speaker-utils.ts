@@ -13,7 +13,7 @@
 export interface Token {
   text: string          // 原始文本
   type: 'word' | 'punctuation'  // 类型
-  skipInput?: boolean   // 是否跳过输入（如缩写词 i'm, i'll 等）
+  skipInput?: boolean   // 是否跳过输入（如缩写词 i'm, i'll 等，或数字）
 }
 
 /**
@@ -22,6 +22,7 @@ export interface Token {
  * 功能：
  * - 分离单词和标点符号
  * - 保留标点符号用于右栏预置
+ * - 数字跳过输入（直接显示）
  *
  * @example
  * parseSentenceTokens("Hello, world!")
@@ -55,18 +56,22 @@ export function parseSentenceTokens(sentence: string): Token[] {
     "haven't", "hasn't", "hadn't", "isn't", "aren't", "wasn't", "weren't"
   ])
 
-  // 正则：匹配英文单词 或 标点符号
-  const regex = /([a-zA-Z]+(?:'[a-zA-Z]+)?)|([^\w\s])/g
+  // 正则：匹配英文单词 | 数字 | 标点符号
+  const regex = /([a-zA-Z]+(?:'[a-zA-Z]+)?)|(\d+)|([^\w\s])/g
 
   let match
   while ((match = regex.exec(sentence)) !== null) {
-    const word = match[1]      // 单词
-    const punctuation = match[2]  // 标点
+    const word = match[1]        // 单词
+    const number = match[2]      // 数字
+    const punctuation = match[3] // 标点
 
     if (word) {
       const wordLower = word.toLowerCase()
       const isContraction = contractionWords.has(wordLower)
       tokens.push({ text: word, type: 'word', skipInput: isContraction })
+    } else if (number) {
+      // 数字跳过输入，直接显示
+      tokens.push({ text: number, type: 'word', skipInput: true })
     } else if (punctuation) {
       tokens.push({ text: punctuation, type: 'punctuation' })
     }

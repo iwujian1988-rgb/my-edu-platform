@@ -13,9 +13,10 @@ import { toast } from 'sonner'
 interface WordContextClientProps {
   ghostWord: SpeakerGhostWord
   article: SpeakerArticle
+  fromPage?: string  // 来源页面：'ghost-words' | 'step2' | 其他
 }
 
-export function WordContextClient({ ghostWord, article }: WordContextClientProps) {
+export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words' }: WordContextClientProps) {
   const router = useRouter()
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState(false)
@@ -102,9 +103,15 @@ export function WordContextClient({ ghostWord, article }: WordContextClientProps
       {/* 顶部导航 - Neo-Brutalism 风格 */}
       <div className="border-b-4 border-black dark:border-gray-700">
         <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-8 py-8">
-          {/* 返回按钮 - 白底黑框方形按钮 */}
+          {/* 返回按钮 - 根据 fromPage 参数决定返回位置 */}
           <button
-            onClick={() => router.back()}
+            onClick={() => {
+              if (fromPage === 'step2') {
+                router.push(`/speaker/steps/step2?id=${article.id}`)
+              } else {
+                router.push(`/speaker/ghost-words?articleId=${article.id}`)
+              }
+            }}
             className="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 border-3 border-black dark:border-gray-700 hover:bg-black dark:hover:bg-gray-700 hover:text-white transition-all mb-6"
           >
             <ArrowLeft className="w-6 h-6 text-black dark:text-white" strokeWidth={3} />
@@ -119,9 +126,9 @@ export function WordContextClient({ ghostWord, article }: WordContextClientProps
         </div>
       </div>
 
-      <div className="max-w-4xl mx-auto px-6 sm:px-6 lg:px-8 py-8 space-y-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-4 sm:py-6 space-y-4 sm:space-y-6">
         {/* 单词信息卡片 */}
-        <div className="p-8 rounded-none bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-700 shadow-[8px_8px_0px_0px_#000] dark:shadow-[8px_8px_0px_0px_#666]">
+        <div className="p-4 sm:p-6 md:p-8 rounded-none bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-700 shadow-[4px_4px_0px_0px_#000] sm:shadow-[8px_8px_0px_0px_#666]">
           <div className="flex items-start justify-between mb-6">
             <div>
               <h2 className="text-6xl font-black text-gray-900 dark:text-white font-mono tracking-tight">

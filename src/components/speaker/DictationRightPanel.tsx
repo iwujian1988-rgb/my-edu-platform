@@ -34,9 +34,11 @@ interface DictationRightPanelProps {
   onSkipWord: (sentenceIndex: number, wordIndex: number) => void
   onUnskipWord: (sentenceIndex: number, wordIndex: number) => void
   onPlaySentence: (sentenceIndex: number) => void
-  onPlayFromStart: (sentenceIndex: number) => void  // 新增：从头播放句子
-  onScrollToSentence?: (index: number) => void  // 新增：滚动时通知父组件当前句子索引
-  onSentenceFocus?: (sentenceIndex: number) => void  // 新增：当聚焦输入框时激活对应句子
+  onPlayFromStart: (sentenceIndex: number) => void  // 从头播放句子
+  onScrollToSentence?: (index: number) => void  // 滚动时通知父组件当前句子索引
+  onSentenceFocus?: (sentenceIndex: number) => void  // 当聚焦输入框时激活对应句子
+  onClearSentence?: (sentenceIndex: number) => void  // 新增：一键清除句子
+  onCheckSentence?: (sentenceIndex: number) => { correct: number, wrong: number, skipped: number } | null  // 新增：检查句子对错
 }
 
 /**
@@ -52,10 +54,8 @@ function SentenceInput({
   onMoveToNextWord,
   onSkipWord,
   onUnskipWord,
-  onPlaySentence,
-  onPlayFromStart,
-  totalSentences,  // 新增：总句子数
-  onSentenceFocus  // 新增：聚焦回调
+  totalSentences,
+  onSentenceFocus
 }: {
   sentence: SpeakerSentence
   index: number
@@ -66,15 +66,43 @@ function SentenceInput({
   onMoveToNextWord: (wordIndex: number) => void
   onSkipWord: (wordIndex: number) => void
   onUnskipWord: (wordIndex: number) => void
-  onPlaySentence: () => void
-  onPlayFromStart: () => void
-  totalSentences: number  // 新增
-  onSentenceFocus?: (sentenceIndex: number) => void  // 新增
+  totalSentences: number
+  onSentenceFocus?: (sentenceIndex: number) => void
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const [checkResults, setCheckResults] = useState<{[key: number]: boolean}>({})
 
   // 解析句子为 tokens（单词 + 标点）
   const tokens = parseSentenceTokens(sentence.text_en)
+
+  // 获取需要输入的单词列表（排除标点和缩写）
+  const inputWords = tokens.filter(t => t.type === 'word' && !t.skipInput).map(t => t.text.toLowerCase())
+
+  // 一键清除：通过 onUpdateWordInput 清空所有输入框
+  const handleClearSentence = () => {
+    // 清空所有输入框
+    wordInputs.forEach((_, index) => {
+      onUpdateWordInput(index, '')
+    })
+    // 清除检查结果
+    setCheckResults({})
+  }
+
+  // 检查对错：对比用户输入和正确答案
+  const handleCheckSentence = () => {
+    const results: {[key: number]: boolean} = {}
+    wordInputs.forEach((input, index) => {
+      const userValue = input.value.trim()
+      // 空的不标记对错，跳过
+      if (userValue === '') {
+        return
+      }
+      const correctAnswer = inputWords[index]
+      const userAnswer = userValue.toLowerCase()
+      results[index] = userAnswer === correctAnswer
+    })
+    setCheckResults(results)
+  }
 
   // 自动聚焦到当前输入框
   useEffect(() => {
@@ -186,52 +214,47 @@ function SentenceInput({
         minHeight: '120px'  // 确保最小高度一致，与左侧对齐
       }}
     >
-      {/* 句子头部：编号 + 播放按钮组 */}
-      <div className="flex items-center justify-between mb-4 mt-0">
-        <span className="text-xs font-mono font-black text-gray-700 dark:text-gray-300 uppercase tracking-wider">
-          SENTENCE {String(index + 1).padStart(2, '0')}
+      {/* 句子头部：编号 + 功能按钮组 */}
+      <div className="flex items-center justify-between mb-4 mt-0 gap-2">
+        <span className="text-xs font-mono font-black text-gray-700 dark:text-gray-300 uppercase tracking-wider shrink-0">
+          {String(index + 1).padStart(2, '0')}
         </span>
 
-        <div className="flex items-center gap-2">
-          {/* 从头听按钮 - 纯图标 */}
+        <div className="flex items-center gap-1.5 shrink-0">
+          {/* 一键清除按钮 */}
           <button
-            onClick={onPlayFromStart}
+            onClick={handleClearSentence}
             className="
-              flex items-center justify-center w-10 h-10 rounded-sm
-              transition-all duration-150 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666]
-              border-2 border-black dark:border-gray-600
-              bg-white dark:bg-gray-800
-              text-gray-700 dark:text-gray-300
-              hover:bg-[#B4F416] hover:text-black hover:border-[#B4F416]
+              flex items-center gap-1 px-2 py-1 rounded-sm text-xs font-bold
+              transition-all duration-150
+              border-2 border-black dark:border-gray-500
+              bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200
+              hover:bg-red-500 hover:text-white hover:border-red-500
+              active:translate-y-0.5
             "
-            title={`从头播放句子 ${index + 1}`}
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
+            <span className="hidden sm:inline">清除</span>
           </button>
 
-          {/* 播放/暂停按钮 - 纯图标 */}
+          {/* 检查对错按钮 */}
           <button
-            onClick={onPlaySentence}
-            className={`
-              flex items-center justify-center w-10 h-10 rounded-sm
-              transition-all duration-150 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] border-2
-              ${isPlaying
-                ? 'bg-amber-500 text-white border-amber-500'
-                : 'bg-black dark:bg-gray-700 text-white border-black dark:border-gray-600 hover:bg-gray-800 dark:hover:bg-gray-600'
-              }
-            `}
-            title={isPlaying ? `暂停句子 ${index + 1}` : `播放句子 ${index + 1}`}
+            onClick={handleCheckSentence}
+            className="
+              flex items-center gap-1 px-2 py-1 rounded-sm text-xs font-bold
+              transition-all duration-150
+              border-2 border-black dark:border-gray-500
+              bg-black dark:bg-gray-600 text-white
+              hover:bg-[#B4F416] hover:text-black hover:border-[#B4F416]
+              active:translate-y-0.5
+            "
           >
-            {isPlaying ? (
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <rect x="6" y="4" width="4" height="16" />
-                <rect x="14" y="4" width="4" height="16" />
-              </svg>
-            ) : (
-              <Play className="w-5 h-5" strokeWidth={2.5} />
-            )}
+            <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={2.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            <span className="hidden sm:inline">检查</span>
           </button>
         </div>
       </div>
@@ -267,14 +290,26 @@ function SentenceInput({
             const inputState = wordInputs[wordIndex]
             const isSkipped = inputState?.isSkipped ?? false
             const isFocused = inputState?.isFocused ?? false
+            // 使用本地检查结果
+            const checkResult = checkResults[wordIndex]
 
             return (
               <input
                 key={`input-${tokenIndex}`}
                 type="text"
                 value={inputState?.value ?? ''}
-                onChange={(e) => handleInputChange(wordIndex, e.target.value)}
-                onFocus={handleInputFocus}  // 新增：聚焦时激活句子
+                onChange={(e) => {
+                  handleInputChange(wordIndex, e.target.value)
+                  // 输入变化时清除该位置的检查结果
+                  if (checkResults[wordIndex] !== undefined) {
+                    setCheckResults(prev => {
+                      const next = { ...prev }
+                      delete next[wordIndex]
+                      return next
+                    })
+                  }
+                }}
+                onFocus={handleInputFocus}
                 onKeyDown={(e) => handleKeyDown(wordIndex, e)}
                 onContextMenu={(e) => handleContextMenu(wordIndex, e)}
                 disabled={isSkipped}
@@ -290,9 +325,13 @@ function SentenceInput({
                   border-b-2
                   transition-all duration-150
                   outline-none
-                  ${isFocused
-                    ? 'border-black dark:border-gray-400 bg-[#B4F416]/20 text-black dark:text-black'
-                    : 'border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-black dark:hover:border-gray-400'
+                  ${checkResult === true
+                    ? 'border-green-500 bg-green-50 text-white dark:bg-green-900/30 dark:text-green-300 dark:border-green-500'
+                    : checkResult === false
+                      ? 'border-red-500 bg-red-50 text-white dark:bg-red-900/30 dark:text-red-300 dark:border-red-500'
+                      : isFocused
+                        ? 'border-black dark:border-gray-400 bg-[#B4F416]/20 text-white'
+                        : 'border-gray-300 dark:border-gray-600 text-white hover:border-black dark:hover:border-gray-400'
                   }
                   ${isSkipped
                     ? 'opacity-50 line-through text-gray-400'
@@ -492,8 +531,8 @@ export function DictationRightPanel({
                   onMoveToNextWord={(wordIndex) => onMoveToNextWord(index, wordIndex)}
                   onSkipWord={(wordIndex) => onSkipWord(index, wordIndex)}
                   onUnskipWord={(wordIndex) => onUnskipWord(index, wordIndex)}
-                  onPlaySentence={() => onPlaySentence(index)}
-                  onPlayFromStart={() => onPlayFromStart(index)}
+                  onClearSentence={() => {}}
+                  onCheckSentence={() => null}
                   totalSentences={sentences.length}
                   onSentenceFocus={onSentenceFocus}  // 传递聚焦回调
                 />

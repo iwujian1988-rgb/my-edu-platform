@@ -60,6 +60,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   const [timeFilter, setTimeFilter] = useState<TimeFilter>('all')
   const [articleFilter, setArticleFilter] = useState<ArticleFilter>(articleId || 'all')
   const [showFilters, setShowFilters] = useState(true)  // 默认展示筛选面板
+  const [displayCount, setDisplayCount] = useState(100)  // 分批显示：初始显示 100 个
 
   // 当 articleId prop 变化时更新筛选器
   useEffect(() => {
@@ -67,6 +68,11 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       setArticleFilter(articleId)
     }
   }, [articleId])
+
+  // 筛选条件变化时重置显示数量
+  useEffect(() => {
+    setDisplayCount(100)
+  }, [errorTypeFilter, timeFilter, articleFilter])
 
   // 清理音频资源
   useEffect(() => {
@@ -394,7 +400,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
   // 跳转到上下文查看页面
   const jumpToContext = (word: SpeakerGhostWord) => {
-    router.push(`/speaker/word-context?wordId=${word.id}`)
+    router.push(`/speaker/word-context?wordId=${word.id}&from=ghost-words`)
   }
 
   // 获取文章标题
@@ -588,21 +594,22 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
             </p>
           </div>
         ) : (
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {filteredWords.map((word) => (
+          <>
+            <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {filteredWords.slice(0, displayCount).map((word) => (
               <div
                 key={word.id}
-                className="flex flex-col p-8 rounded-sm bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-700 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[6px_6px_0px_0px_#B4F416] dark:hover:shadow-[6px_6px_0px_0px_#84cc16] transition-all min-h-[320px]"
+                className="flex flex-col p-4 sm:p-6 md:p-8 rounded-sm bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-700 shadow-[4px_4px_0px_0px_#000] sm:shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#B4F416] sm:hover:shadow-[6px_6px_0px_0px_#B4F416] dark:hover:shadow-[6px_6px_0px_0px_#84cc16] transition-all min-h-0 sm:min-h-[320px]"
               >
                 {/* 顶部：单词 + 查看上下文链接（左侧） + 标签（右侧） */}
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex items-start justify-between mb-2 sm:mb-4">
                   <div className="flex-1">
-                    <h3 className="text-4xl font-black text-black dark:text-white font-mono tracking-tight mb-2">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-black dark:text-white font-mono tracking-tight mb-1 sm:mb-2">
                       {word.word}
                     </h3>
                     <button
                       onClick={() => jumpToContext(word)}
-                      className="flex items-center gap-2 text-sm font-bold text-black dark:text-white hover:text-[#B4F416] dark:hover:text-[#84cc16] transition-colors"
+                      className="flex items-center gap-1 sm:gap-2 text-xs sm:text-sm font-bold text-black dark:text-white hover:text-[#B4F416] dark:hover:text-[#84cc16] transition-colors"
                     >
                       <span>查看上下文</span>
                       <span>→</span>
@@ -610,29 +617,29 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                   </div>
 
                   {/* 错误类型标签 - 方框标签 */}
-                  <span className="px-3 py-1.5 text-sm font-bold uppercase border-2 border-black dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white ml-4">
+                  <span className="px-2 py-1 sm:px-3 sm:py-1.5 text-xs sm:text-sm font-bold uppercase border-2 border-black dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white ml-2 sm:ml-4">
                     {word.error_type === 'wrong' ? '答错' : '放弃'}
                   </span>
                 </div>
 
                 {/* 音标 */}
                 {word.phonetic && (
-                  <p className="text-black dark:text-gray-300 font-mono text-base mb-4 tracking-wide">
+                  <p className="text-black dark:text-gray-300 font-mono text-sm sm:text-base mb-2 sm:mb-4 tracking-wide">
                     {word.phonetic}
                   </p>
                 )}
 
                 {/* 中文释义 */}
                 {word.definition && (
-                  <p className="text-black dark:text-gray-200 text-lg mb-4 font-medium leading-relaxed">
+                  <p className="text-black dark:text-gray-200 text-base sm:text-lg mb-2 sm:mb-4 font-medium leading-relaxed">
                     {word.definition}
                   </p>
                 )}
 
                 {/* 英文例句 - 限制2行 */}
                 {word.example_sentence && (
-                  <div className="mb-4 p-4 bg-gray-50 dark:bg-gray-900 border-2 border-black dark:border-gray-700">
-                    <p className="text-sm text-gray-700 dark:text-gray-300 line-clamp-2 leading-relaxed font-mono">
+                  <div className="mb-2 sm:mb-4 p-2 sm:p-4 bg-gray-50 dark:bg-gray-900 border-2 border-black dark:border-gray-700">
+                    <p className="text-xs sm:text-sm text-gray-700 dark:text-gray-300 line-clamp-2 leading-relaxed font-mono">
                       {word.example_sentence}
                     </p>
                   </div>
@@ -699,6 +706,19 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
               </div>
             ))}
           </div>
+
+          {/* 加载更多按钮 */}
+          {displayCount < filteredWords.length && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setDisplayCount(prev => prev + 100)}
+                className="px-8 py-3 bg-black dark:bg-gray-700 text-white font-bold border-2 border-black dark:border-gray-600 hover:bg-[#B4F416] hover:text-black transition-all"
+              >
+                加载更多 ({filteredWords.length - displayCount} 个剩余)
+              </button>
+            </div>
+          )}
+        </>
         )}
       </div>
 

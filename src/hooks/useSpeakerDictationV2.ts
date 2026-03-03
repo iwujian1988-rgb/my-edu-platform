@@ -131,26 +131,45 @@ export function useSpeakerDictationV2(
   const [gradingResult, setGradingResult] = useState<any>(null)
 
   // ========================================
-  // 2. 初始化音频元素
+  // 2. 初始化音频元素（只在挂载时执行一次）
   // ========================================
   useEffect(() => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(audioUrl)
-      audioRef.current.playbackRate = playbackRate  // 应用初始语速
+    // 创建 Audio 元素
+    audioRef.current = new Audio(audioUrl)
+    audioRef.current.playbackRate = playbackRate
 
-      audioRef.current.addEventListener('ended', () => {
-        setIsPlaying(false)
-        setCurrentPlayingSentence(null)
-      })
+    // 定义事件处理函数（使用命名函数以便正确移除）
+    const handleEnded = () => {
+      setIsPlaying(false)
+      setCurrentPlayingSentence(null)
     }
 
+    // 添加事件监听器
+    audioRef.current.addEventListener('ended', handleEnded)
+
+    // cleanup：组件卸载时清理
     return () => {
       if (audioRef.current) {
         audioRef.current.pause()
-        audioRef.current.removeEventListener('ended', () => {})
+        audioRef.current.removeEventListener('ended', handleEnded)
+        audioRef.current = null  // 完全释放引用
       }
     }
-  }, [audioUrl, playbackRate])  // 添加 playbackRate 依赖
+  }, [])  // 空依赖：只在挂载/卸载时执行
+
+  // 单独处理 audioUrl 变化
+  useEffect(() => {
+    if (audioRef.current && audioUrl) {
+      audioRef.current.src = audioUrl
+    }
+  }, [audioUrl])
+
+  // 单独处理 playbackRate 变化
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.playbackRate = playbackRate
+    }
+  }, [playbackRate])
 
   // ========================================
   // 3. 播放单个句子（强制停止在句子结束点）
@@ -370,6 +389,93 @@ export function useSpeakerDictationV2(
   }, [])
 
   // ========================================
+  // 7-1. 一键清除单个句子（清除该句所有输入）
+  // ========================================
+  const clearSentence = useCallback((sentenceIndex: number) => {
+    console.log('[Dictation] 清除句子:', sentenceIndex)
+
+    setWordInputs(prev => {
+      const newInputs = [...prev]
+      const sentenceInputs = newInputs[sentenceIndex]
+      if (!sentenceInputs) return prev
+
+      // 重置该句子所有单词为初始状态
+      newInputs[sentenceIndex] = sentenceInputs.map(() => ({
+        value: '',
+        isSkipped: false,
+        isFocused: false,
+        isCorrect: null
+      }))
+
+      // 聚焦第一个单词
+      if (newInputs[sentenceIndex].length > 0) {
+        newInputs[sentenceIndex][0].isFocused = true
+      }
+
+      return newInputs
+    })
+
+    saveDraftDebounced()
+  }, [])
+
+  // ========================================
+  // 7-2. 检查句子对错（不进入魔鬼生词本，仅显示结果）
+  // ========================================
+  const checkSentence = useCallback((sentenceIndex: number) => {
+    console.log('[Dictation] 检查句子对错:', sentenceIndex)
+
+    const sentence = sentences[sentenceIndex]
+    if (!sentence) return { correct: 0, wrong: 0, skipped: 0 }
+
+    const tokens = parseSentenceTokens(sentence.text_en)
+    const correctWords = tokens
+      .filter(t => t.type === 'word' && !t.skipInput)
+      .map(t => t.text)
+
+    const sentenceInputs = wordInputs[sentenceIndex]
+    if (!sentenceInputs) return { correct: 0, wrong: 0, skipped: 0 }
+
+    let correct = 0
+    let wrong = 0
+    let skipped = 0
+
+    // 更新每个单词的判分状态
+    setWordInputs(prev => {
+      const newInputs = [...prev]
+      const currentSentenceInputs = [...newInputs[sentenceIndex]]
+
+      currentSentenceInputs.forEach((input, idx) => {
+        if (input.isSkipped) {
+          skipped++
+          return { ...input, isCorrect: false }
+        }
+
+        const userValue = input.value.trim().toLowerCase()
+        const correctWord = correctWords[idx]?.toLowerCase() || ''
+
+        if (!userValue) {
+          wrong++
+          return { ...input, isCorrect: false }
+        }
+
+        if (userValue === correctWord) {
+          correct++
+          return { ...input, isCorrect: true }
+        } else {
+          wrong++
+          return { ...input, isCorrect: false }
+        }
+      })
+
+      newInputs[sentenceIndex] = currentSentenceInputs
+      return newInputs
+    })
+
+    console.log('[Dictation] 检查结果:', { correct, wrong, skipped })
+    return { correct, wrong, skipped }
+  }, [sentences, wordInputs])
+
+  // ========================================
   // 8. 双栏同步滚动（联动逻辑）
   // ========================================
   const setActiveSentence = useCallback((sentenceIndex: number) => {
@@ -377,7 +483,18 @@ export function useSpeakerDictationV2(
 
     // 右栏：自动聚焦到该句子的第一个单词输入框
     setWordInputs(prev => {
+      // 边界检查：确保句子索引有效且该句子有单词
+      if (sentenceIndex < 0 || sentenceIndex >= prev.length) {
+        return prev
+      }
+
+      const sentenceInputs = prev[sentenceIndex]
+      if (!sentenceInputs || sentenceInputs.length === 0) {
+        return prev
+      }
+
       const newInputs = [...prev]
+      newInputs[sentenceIndex] = [...sentenceInputs]
       newInputs[sentenceIndex][0].isFocused = true
       return newInputs
     })
@@ -452,6 +569,49 @@ export function useSpeakerDictationV2(
     }, 1000) // 1秒 debounce
   }, [saveDraft])
 
+  // 组件卸载时强制保存草稿（使用 keepalive 确保请求完成）
+  // 使用 ref 保存最新数据，避免每次状态变化都触发保存
+  const draftDataRef = useRef({ articleId, userId, wordInputs, activeSentenceIndex })
+
+  // 更新 ref
+  useEffect(() => {
+    draftDataRef.current = { articleId, userId, wordInputs, activeSentenceIndex }
+  }, [articleId, userId, wordInputs, activeSentenceIndex])
+
+  // 组件卸载时保存
+  useEffect(() => {
+    return () => {
+      // 清除 debounce timer
+      if (saveDraftTimeoutRef.current) {
+        clearTimeout(saveDraftTimeoutRef.current)
+      }
+
+      // 使用 ref 中的最新数据
+      const { articleId, userId, wordInputs, activeSentenceIndex } = draftDataRef.current
+
+      const draftData = {
+        articleId,
+        userId,
+        draft: {
+          wordInputs,
+          activeSentenceIndex,
+          skippedWords: wordInputs.flat().map((w, i) => w.isSkipped ? i : -1).filter(i => i >= 0),
+          savedAt: new Date().toISOString()
+        }
+      }
+
+      // 使用 fetch keepalive 在组件卸载时保存草稿
+      fetch('/api/speaker/draft', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(draftData),
+        keepalive: true
+      }).catch(err => {
+        console.warn('[Dictation] 组件卸载时保存草稿失败:', err)
+      })
+    }
+  }, [])  // 空依赖：只在组件真正卸载时执行
+
   // ========================================
   // 11. 恢复草稿（用于断点续传）
   // ========================================
@@ -503,6 +663,8 @@ export function useSpeakerDictationV2(
     moveToNextWord,
     skipWord,
     unskipWord,
+    clearSentence,
+    checkSentence,
     submitDictation,
     restoreDraft,
     setPlaybackRate,

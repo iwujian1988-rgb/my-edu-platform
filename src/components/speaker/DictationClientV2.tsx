@@ -342,6 +342,8 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
               onPlayFromStart={actions.playSentenceFromStart}
               onScrollToSentence={handleRightPanelScroll}
               onSentenceFocus={actions.setActiveSentence}  // 聚焦输入框时激活句子
+              onClearSentence={actions.clearSentence}  // 新增：一键清除句子
+              onCheckSentence={actions.checkSentence}  // 新增：检查句子对错
             />
           </div>
         </div>

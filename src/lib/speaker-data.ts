@@ -302,7 +302,7 @@ export async function upsertSpeakerProgress(
 
     const { data, error } = await supabase
       .from('speaker_progress')
-      .upsert(progressWithTimestamp)
+      .upsert(progressWithTimestamp, { onConflict: 'user_id,article_id' })
       .select()
       .single()
 

@@ -6,7 +6,7 @@
  */
 
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { upsertSpeakerProgress } from '@/lib/speaker-data'
 
 /**
@@ -46,15 +46,21 @@ export async function PUT(request: Request) {
 
     console.log('[Speaker Progress API] 更新进度:', { articleId, progressData })
 
-    // TODO: 获取真实用户 ID（从 session）
-    const userId = 'mock-user-id'
+    // 获取当前登录用户
+    const user = await getCurrentUser()
+    if (!user) {
+      return NextResponse.json(
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
 
     // 创建 Supabase 客户端
     const supabase = await createClient()
 
     // 更新进度
     const progress = await upsertSpeakerProgress(supabase, {
-      user_id: userId,
+      user_id: user.id,
       article_id: articleId,
       ...progressData
     })

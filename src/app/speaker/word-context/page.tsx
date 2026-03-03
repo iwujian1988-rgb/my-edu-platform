@@ -18,10 +18,10 @@ import { WordContextClient } from '@/components/speaker/WordContextClient'
 export default async function WordContextPage({
   searchParams,
 }: {
-  searchParams: Promise<{ wordId?: string }>
+  searchParams: Promise<{ wordId?: string; from?: string }>
 }) {
   const supabase = await createClient()
-  const { wordId } = await searchParams
+  const { wordId, from } = await searchParams
 
   if (!wordId) {
     redirect('/speaker/ghost-words')
@@ -55,6 +55,7 @@ export default async function WordContextPage({
     <WordContextClient
       ghostWord={ghostWord}
       article={article}
+      fromPage={from || 'ghost-words'}
     />
   )
 }
