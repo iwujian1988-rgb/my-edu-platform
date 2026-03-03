@@ -21,6 +21,9 @@ interface Word {
   meaning?: string
   type: 'new' | 'review'
   audio_url?: string | null  // 🔧 添加 audio_url 属性
+  // 多语言支持
+  kana?: string       // 日语假名
+  romaji?: string     // 日语罗马音
 }
 
 interface Props {
@@ -665,9 +668,13 @@ export function DictationQueue({
               <p className="font-bold mb-1 text-gray-600 dark:text-gray-400">
                 正确拼写：<span className="font-black text-xl text-gray-900 dark:text-white">{displayedWord.word}</span>
               </p>
-              {displayedWord.phonetic && (
+              {/* 发音显示：日语优先（假名+罗马音），其次英语 */}
+              {(displayedWord.kana || displayedWord.phonetic) && (
                 <p className="text-sm font-mono text-gray-500 dark:text-gray-500">
-                  {displayedWord.phonetic}
+                  {displayedWord.kana
+                    ? `${displayedWord.kana}${displayedWord.romaji ? ` / ${displayedWord.romaji}` : ''}`
+                    : displayedWord.phonetic
+                  }
                 </p>
               )}
               {displayedWord.meaning && (

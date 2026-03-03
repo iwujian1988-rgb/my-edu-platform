@@ -108,7 +108,7 @@ export default function PlanSelectClient({ bookId }: { bookId: string }) {
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <div className="min-h-screen pb-24" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="max-w-2xl mx-auto px-4 py-6">
 
         {/* 顶部导航 */}

@@ -17,18 +17,6 @@ const FEATURE_PERMISSIONS = [
   { id: 'speaker', name: '雯姐学习法' }
 ]
 
-// 单词书权限选项
-const BOOK_PERMISSIONS = [
-  { id: 'cet4', name: 'CET4' },
-  { id: 'cet6', name: 'CET6' },
-  { id: 'toefl', name: '托福' },
-  { id: 'ielts', name: '雅思' },
-  { id: 'gre', name: 'GRE' },
-  { id: 'gmat', name: 'GMAT' },
-  { id: 'high_school_3500', name: '高中3500词' },
-  { id: '*', name: '全部单词书' }
-]
-
 // 语言包选项（雯姐学习法）
 const LANGUAGE_PACKAGES = [
   { id: 'en', name: '英语', flag: '🇬🇧' },
@@ -38,6 +26,15 @@ const LANGUAGE_PACKAGES = [
   { id: 'de', name: '德语', flag: '🇩🇪' },
   { id: 'ja', name: '日语', flag: '🇯🇵' }
 ]
+
+// 单词书类型
+interface BookOption {
+  id: string
+  name: string
+}
+
+// "全部单词书"选项
+const ALL_BOOKS_OPTION: BookOption = { id: '*', name: '全部单词书' }
 
 interface Package {
   id: string
@@ -64,6 +61,28 @@ export default function PackageListClient({ initialPackages }: PackageListClient
   const [showCreateModal, setShowCreateModal] = useState(false)
   const [editingPackage, setEditingPackage] = useState<Package | null>(null)
   const [loading, setLoading] = useState(false)
+  const [bookOptions, setBookOptions] = useState<BookOption[]>([ALL_BOOKS_OPTION])
+
+  // 加载单词书列表
+  useEffect(() => {
+    const fetchBooks = async () => {
+      try {
+        const response = await fetch('/api/books?all=true')
+        const data = await response.json()
+        if (data.books) {
+          // 将单词书转换为选项格式，并按名称排序
+          const options = data.books
+            .filter((book: any) => book.is_official)
+            .map((book: any) => ({ id: book.id, name: book.title }))
+            .sort((a: BookOption, b: BookOption) => a.name.localeCompare(b.name, 'zh-CN'))
+          setBookOptions([ALL_BOOKS_OPTION, ...options])
+        }
+      } catch (error) {
+        console.error('Failed to fetch books:', error)
+      }
+    }
+    fetchBooks()
+  }, [])
 
   // 筛选套餐
   const filteredPackages = packages.filter(pkg => {
@@ -238,7 +257,7 @@ export default function PackageListClient({ initialPackages }: PackageListClient
                             key={perm}
                             className="px-2 py-0.5 bg-green-50 text-green-700 rounded text-xs"
                           >
-                            {BOOK_PERMISSIONS.find(b => b.id === perm)?.name || perm}
+                            {bookOptions.find(b => b.id === perm)?.name || perm}
                           </span>
                         ))
                       ) : (
@@ -289,6 +308,7 @@ export default function PackageListClient({ initialPackages }: PackageListClient
       {(showCreateModal || editingPackage) && (
         <PackageFormModal
           package={editingPackage}
+          bookOptions={bookOptions}
           onClose={() => {
             setShowCreateModal(false)
             setEditingPackage(null)
@@ -307,10 +327,12 @@ export default function PackageListClient({ initialPackages }: PackageListClient
 // 套餐表单对话框组件
 function PackageFormModal({
   package: pkg,
+  bookOptions,
   onClose,
   onSave
 }: {
   package: Package | null
+  bookOptions: BookOption[]
   onClose: () => void
   onSave: () => void
 }) {
@@ -502,14 +524,16 @@ function PackageFormModal({
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 单词书权限
               </label>
-              <div className="flex flex-wrap gap-2">
-                {BOOK_PERMISSIONS.map(perm => (
+              <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto p-2 border border-gray-200 rounded">
+                {bookOptions.map(perm => (
                   <label
                     key={perm.id}
                     className={`flex items-center gap-1 px-3 py-1.5 rounded border cursor-pointer ${
-                      formData.book_permissions.includes(perm.id)
-                        ? 'bg-green-50 border-green-500'
-                        : 'bg-gray-50 border-gray-300 hover:bg-gray-100'
+                      perm.id === '*'
+                        ? 'bg-yellow-50 border-yellow-500'
+                        : formData.book_permissions.includes(perm.id)
+                          ? 'bg-green-50 border-green-500'
+                          : 'bg-gray-50 border-gray-300 hover:bg-gray-100'
                     }`}
                   >
                     <input
@@ -522,6 +546,9 @@ function PackageFormModal({
                   </label>
                 ))}
               </div>
+              <p className="text-xs text-gray-500 mt-1">
+                共 {bookOptions.length - 1} 本单词书可选，选择"全部单词书"将自动授权所有单词书
+              </p>
             </div>
 
             {/* 雯姐学习法语言包（新增） */}

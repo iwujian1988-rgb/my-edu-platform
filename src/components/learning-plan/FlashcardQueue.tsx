@@ -27,6 +27,9 @@ interface Word {
   example_sentence_en?: string
   part_of_speech?: string
   audio_url?: string | null
+  // 多语言支持
+  kana?: string       // 日语假名
+  romaji?: string     // 日语罗马音
 }
 
 interface Props {
@@ -526,7 +529,11 @@ export function FlashcardQueue({
                   {/* Phonetic + Button */}
                   <div className="flex items-center gap-4 justify-center">
                     <span className="font-mono text-lg text-gray-600 dark:text-gray-400">
-                      {currentWord.phonetic}
+                      {/* 发音显示：日语优先（假名+罗马音），其次英语 */}
+                      {currentWord.kana
+                        ? `${currentWord.kana}${currentWord.romaji ? ` / ${currentWord.romaji}` : ''}`
+                        : currentWord.phonetic
+                      }
                     </span>
                     <button
                       onClick={(e) => {

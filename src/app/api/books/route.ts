@@ -1,10 +1,13 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { getUserPermissions } from '@/lib/permissions'
 import { NextResponse } from 'next/server'
+import { requireAdmin } from '@/lib/admin-auth'
 
 /**
  * GET /api/books
  * 获取词库列表（带权限过滤）
+ * 参数：
+ * - all=true: 管理员获取所有词库（用于后台配置）
  */
 export async function GET(request: Request) {
   const user = await getCurrentUser()
@@ -14,7 +17,31 @@ export async function GET(request: Request) {
   }
 
   try {
+    const { searchParams } = new URL(request.url)
+    const getAll = searchParams.get('all') === 'true'
+
     const supabase = await createClient()
+
+    // 如果是管理员请求获取所有词库
+    if (getAll) {
+      try {
+        await requireAdmin()
+        const { data: books, error } = await supabase
+          .from('books')
+          .select('id, title, is_official, is_published')
+          .eq('is_published', true)
+          .order('title', { ascending: true })
+
+        if (error) {
+          console.error('Error fetching all books:', error)
+          return NextResponse.json({ error: '获取词库失败' }, { status: 500 })
+        }
+
+        return NextResponse.json({ books })
+      } catch {
+        return NextResponse.json({ error: 'Forbidden' }, { status: 403 })
+      }
+    }
 
     // 获取所有已上架的词库
     const { data: books, error } = await supabase

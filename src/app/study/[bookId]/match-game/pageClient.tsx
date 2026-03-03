@@ -79,6 +79,7 @@ export default function MatchGamePageClient() {
   const [allCompleted, setAllCompleted] = useState(false)  // 是否全部通关
   const [pendingDifficulty, setPendingDifficulty] = useState<number | null>(null)  // 待切换的难度（下一轮生效）
   const [unknownWordsPool, setUnknownWordsPool] = useState<Word[]>([])  // 所有未认识的单词池
+  const [gameKey, setGameKey] = useState(0)  // 用于触发游戏重新初始化（轮次切换时更新）
 
   // AbortController用于取消进行中的API请求
   const abortControllerRef = useRef<AbortController | null>(null)
@@ -302,16 +303,7 @@ export default function MatchGamePageClient() {
     setCards(shuffledCards)
     setShowDifficultySelect(false)  // 隐藏难度选择，显示游戏
     setAllCompleted(false)  // 重置通关状态
-  }, [unknownWordsPool, selectedDifficulty])  // ✅ 只在单词池或难度变化时重新初始化
-
-  // 单独处理轮次变化 - 避免循环触发
-  useEffect(() => {
-    if (selectedDifficulty !== null && !showDifficultySelect && currentRound > 0 && unknownWordsPool.length > 0) {
-      // 当前端已经选择了难度且不在难度选择界面时，才初始化游戏
-      initializeGame()
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentRound])  // ✅ 只监听 currentRound 变化，故意忽略 initializeGame
+  }, [unknownWordsPool, selectedDifficulty, gameKey])  // gameKey 变化时也会重新初始化（用于轮次切换）
 
   // 保存单词进度到数据库（带重试机制和cleanup）
   const saveWordProgress = useCallback(async (data: any, retries = 2, signal?: AbortSignal) => {
@@ -531,6 +523,7 @@ export default function MatchGamePageClient() {
 
                 // 进入下一轮
                 setCurrentRound(prev => prev + 1)
+                setGameKey(prev => prev + 1)  // 触发游戏重新初始化
               }, 1500) // 1.5秒后自动进入下一轮
             } else {
               // 最后一轮完成，显示通关界面
