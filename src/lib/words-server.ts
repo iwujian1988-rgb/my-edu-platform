@@ -26,6 +26,9 @@ export interface Word {
   theme?: string
   scene?: string
   status?: 'new' | 'unknown' | 'fuzzy' | 'known'
+  // 多语言支持字段
+  kana?: string       // 日语假名
+  romaji?: string     // 日语罗马音
 }
 
 /**
@@ -162,22 +165,23 @@ export async function getWordsForBookServer(
 
       const { data: chaptersData } = await chaptersQuery
 
-      if (!chaptersData) {
-        return {
-          words: [],
-          total: book.total_words || 0,
-          count: 0,
-          success: true
-        }
+      // 🔧 FIX: 支持无章节的词库（如日语词库）
+      // 如果没有chapters，直接按book_id查询
+      let wordsQuery = supabase
+        .from('words')
+        .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id, kana, romaji')
+
+      if (chaptersData && chaptersData.length > 0) {
+        // 有chapters：按chapter_id查询
+        const chapterIds = chaptersData.map((c: any) => c.id)
+        wordsQuery = wordsQuery.in('chapter_id', chapterIds) as any
+      } else {
+        // 无chapters：直接按book_id查询（支持日语等无章节词库）
+        console.log('📚 [Server] No chapters found, querying by book_id directly')
+        wordsQuery = wordsQuery.eq('book_id', bookId) as any
       }
 
-      const chapterIds = chaptersData.map((c: any) => c.id)
-
-      // 查询words
-      const { data: fallbackWords, error: fallbackError } = await supabase
-        .from('words')
-        .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id')
-        .in('chapter_id', chapterIds)
+      const { data: fallbackWords, error: fallbackError } = await wordsQuery
         .order('order_index', { ascending: true })
         .range(offset, offset + pageSize - 1)
 

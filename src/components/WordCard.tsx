@@ -21,6 +21,9 @@ interface Word {
   part_of_speech: string
   status: 'known' | 'fuzzy' | 'unknown' | 'new'
   audio_url?: string | null
+  // 多语言支持
+  kana?: string       // 日语假名
+  romaji?: string     // 日语罗马音
 }
 
 interface WordCardProps {
@@ -197,8 +200,17 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                 </button>
               </div>
               <div className="flex items-center gap-3 flex-wrap">
-                {/* 显示音标：优先显示英标和美标 */}
-                {word.uk_phonetic || word.us_phonetic ? (
+                {/* 发音显示：日语优先（假名+罗马音），其次英语（音标） */}
+                {word.kana ? (
+                  // 日语：显示假名 + 罗马音
+                  <>
+                    <span className={`text-sm font-mono transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{word.kana}</span>
+                    {word.romaji && (
+                      <span className={`text-xs font-mono transition-colors duration-300 ${isDark ? 'text-gray-500' : 'text-gray-500'}`}>/ {word.romaji}</span>
+                    )}
+                  </>
+                ) : word.uk_phonetic || word.us_phonetic ? (
+                  // 英语：显示英标和美标（原有逻辑）
                   <>
                     {word.uk_phonetic && (
                       <span className={`text-xs font-mono transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>UK {word.uk_phonetic}</span>
@@ -208,6 +220,7 @@ export function WordCard({ word, index, onStatusChange, isSaving = false, global
                     )}
                   </>
                 ) : (
+                  // 兜底：显示 phonetic 字段
                   <span className={`text-sm font-mono transition-colors duration-300 ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>{word.phonetic}</span>
                 )}
                 <span className={`px-2 py-1 text-xs font-semibold rounded-full transition-colors duration-300 ${

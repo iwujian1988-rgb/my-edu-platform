@@ -21,6 +21,9 @@ interface Word {
   part_of_speech: string
   status: 'known' | 'fuzzy' | 'unknown' | 'new'
   audio_url?: string | null
+  // 多语言支持
+  kana?: string       // 日语假名
+  romaji?: string     // 日语罗马音
 }
 
 interface VocabularyCardProps {
@@ -186,9 +189,19 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   }
 
   // 构造卡片数据
+  // 发音显示逻辑：日语优先（假名+罗马音），其次英语（音标）
+  const getPhoneticDisplay = () => {
+    // 日语：显示假名 + 罗马音
+    if (word.kana) {
+      return `${word.kana}${word.romaji ? ` / ${word.romaji}` : ''}`
+    }
+    // 英语：显示音标（原有逻辑）
+    return word.us_phonetic || word.uk_phonetic || word.phonetic
+  }
+
   const data = {
     word: word.word,
-    phonetic: word.us_phonetic || word.uk_phonetic || word.phonetic,
+    phonetic: getPhoneticDisplay(),
     pos: getPartOfSpeechLabel(word.part_of_speech),
     definition: showDefinition ? word.definition : word.definition_en,
     // 搭配优先显示英文（collocation_en），没有再显示 collocation
