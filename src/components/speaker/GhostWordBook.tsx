@@ -60,7 +60,12 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   const [timeFilter, setTimeFilter] = useState<TimeFilter>('all')
   const [articleFilter, setArticleFilter] = useState<ArticleFilter>(articleId || 'all')
   const [showFilters, setShowFilters] = useState(true)  // 默认展示筛选面板
-  const [displayCount, setDisplayCount] = useState(100)  // 分批显示：初始显示 100 个
+
+  // 分页状态
+  const [currentPage, setCurrentPage] = useState(1)
+  const [totalCount, setTotalCount] = useState(0)
+  const [hasMore, setHasMore] = useState(false)
+  const [loadingMore, setLoadingMore] = useState(false)
 
   // 当 articleId prop 变化时更新筛选器
   useEffect(() => {
@@ -68,11 +73,6 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       setArticleFilter(articleId)
     }
   }, [articleId])
-
-  // 筛选条件变化时重置显示数量
-  useEffect(() => {
-    setDisplayCount(100)
-  }, [errorTypeFilter, timeFilter, articleFilter])
 
   // 清理音频资源
   useEffect(() => {
@@ -97,7 +97,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
     }
   }, [dictModal])
 
-  // 加载文章标题（独立的函数，放在useEffect之前）
+  // 加载文章标题（独立的函数，放在useEffect之前）- 保留用于播放原声时按需加载完整文章信息
   const loadArticleTitle = async (articleId: string) => {
     if (articles.has(articleId)) return
 
@@ -114,18 +114,32 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
     }
   }
 
-  // 加载生词列表（优化性能：立即显示界面，后台异步加载）
+  // 加载生词列表（性能优化：分页加载 + 批量获取文章标题）
   useEffect(() => {
     const fetchWords = async () => {
       try {
-        // P0修复：扩大加载限制，确保能加载所有生词
-        // 后端已自动使用当前登录用户 ID，无需传递 userId 参数
-        const response = await fetch(`/api/speaker/words?pageSize=10000`)
+        setLoading(true)
+        // 性能优化：使用分页，初始只加载50条
+        const response = await fetch(`/api/speaker/words?page=1&pageSize=50`)
         const data = await response.json()
 
         if (data.success) {
           setWords(data.words || [])
-          console.log('[Ghost Word Book] ✅ 生词列表加载成功，数量:', data.words?.length)
+          setTotalCount(data.pagination?.totalCount || 0)
+          setHasMore(data.pagination?.hasMore || false)
+          setCurrentPage(1)
+
+          // 性能优化：直接使用API返回的articles映射，不再逐个请求
+          if (data.articles) {
+            const newArticlesMap = new Map<string, SpeakerArticle>()
+            Object.entries(data.articles).forEach(([id, article]: [string, unknown]) => {
+              newArticlesMap.set(id, article as SpeakerArticle)
+            })
+            setArticles(newArticlesMap)
+            console.log('[Ghost Word Book] ✅ 批量获取文章标题:', newArticlesMap.size)
+          }
+
+          console.log('[Ghost Word Book] ✅ 生词列表加载成功，数量:', data.words?.length, '总数:', data.pagination?.totalCount)
         }
       } catch (error) {
         console.error('[Ghost Word Book] ❌ 获取生词失败:', error)
@@ -139,26 +153,41 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId])
 
-  // 单独的useEffect：当words加载完成后，异步加载文章标题
-  useEffect(() => {
-    if (words.length === 0) return
+  // 加载更多生词
+  const loadMoreWords = async () => {
+    if (loadingMore || !hasMore) return
 
-    const loadArticleTitles = async () => {
-      const uniqueArticleIds = Array.from(new Set(words.map((w: SpeakerGhostWord) => w.article_id)))
-      console.log('[Ghost Word Book] 准备加载', uniqueArticleIds.length, '个文章标题')
+    try {
+      setLoadingMore(true)
+      const nextPage = currentPage + 1
+      const response = await fetch(`/api/speaker/words?page=${nextPage}&pageSize=50`)
+      const data = await response.json()
 
-      // 使用更大的批次，加快加载速度
-      const BATCH_SIZE = 20
-      for (let i = 0; i < uniqueArticleIds.length; i += BATCH_SIZE) {
-        const batch = uniqueArticleIds.slice(i, i + BATCH_SIZE)
-        await Promise.all(batch.map(articleId => loadArticleTitle(articleId)))
-        console.log(`[Ghost Word Book] 已加载 ${Math.min(i + BATCH_SIZE, uniqueArticleIds.length)}/${uniqueArticleIds.length} 个文章标题`)
+      if (data.success) {
+        setWords(prev => [...prev, ...data.words])
+        setCurrentPage(nextPage)
+        setHasMore(data.pagination?.hasMore || false)
+
+        // 合并新的文章标题
+        if (data.articles) {
+          setArticles(prev => {
+            const newMap = new Map(prev)
+            Object.entries(data.articles).forEach(([id, article]: [string, unknown]) => {
+              newMap.set(id, article as SpeakerArticle)
+            })
+            return newMap
+          })
+        }
+
+        console.log('[Ghost Word Book] ✅ 加载更多成功，新加载:', data.words?.length)
       }
+    } catch (error) {
+      console.error('[Ghost Word Book] ❌ 加载更多失败:', error)
+      toast.error('加载失败')
+    } finally {
+      setLoadingMore(false)
     }
-
-    // P1性能优化：移除不必要的 setTimeout，直接调用
-    loadArticleTitles()
-  }, [words])
+  }
 
   // 使用 useMemo 优化性能：避免每次渲染都重新筛选
   const filteredWords = useMemo(() => {
@@ -196,10 +225,22 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   // 重新加载生词数据（提取为独立函数，消除重复代码）
   const reloadGhostWords = async () => {
     try {
-      const response = await fetch(`/api/speaker/words?pageSize=10000`)
+      const response = await fetch(`/api/speaker/words?page=1&pageSize=50`)
       const data = await response.json()
       if (data.success) {
         setWords(data.words || [])
+        setTotalCount(data.pagination?.totalCount || 0)
+        setHasMore(data.pagination?.hasMore || false)
+        setCurrentPage(1)
+
+        // 更新文章标题
+        if (data.articles) {
+          const newArticlesMap = new Map<string, SpeakerArticle>()
+          Object.entries(data.articles).forEach(([id, article]: [string, unknown]) => {
+            newArticlesMap.set(id, article as SpeakerArticle)
+          })
+          setArticles(newArticlesMap)
+        }
       }
     } catch (error) {
       console.error('[Ghost Word Book] 重新加载失败:', error)
@@ -442,7 +483,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                 魔鬼生词本
               </h1>
               <p className="text-gray-400 mt-1 font-mono text-sm">
-                来自 Step 2 听写训练的错题 · 共 {filteredWords.length} 个
+                来自 Step 2 听写训练的错题 · 共 {totalCount} 个
               </p>
             </div>
           </div>
@@ -596,7 +637,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
         ) : (
           <>
             <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredWords.slice(0, displayCount).map((word) => (
+              {filteredWords.map((word) => (
               <div
                 key={word.id}
                 className="flex flex-col p-4 sm:p-6 md:p-8 rounded-sm bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-700 shadow-[4px_4px_0px_0px_#000] sm:shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#B4F416] sm:hover:shadow-[6px_6px_0px_0px_#B4F416] dark:hover:shadow-[6px_6px_0px_0px_#84cc16] transition-all min-h-0 sm:min-h-[320px]"
@@ -708,13 +749,14 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
           </div>
 
           {/* 加载更多按钮 */}
-          {displayCount < filteredWords.length && (
+          {hasMore && (
             <div className="mt-8 text-center">
               <button
-                onClick={() => setDisplayCount(prev => prev + 100)}
-                className="px-8 py-3 bg-black dark:bg-gray-700 text-white font-bold border-2 border-black dark:border-gray-600 hover:bg-[#B4F416] hover:text-black transition-all"
+                onClick={loadMoreWords}
+                disabled={loadingMore}
+                className="px-8 py-3 bg-black dark:bg-gray-700 text-white font-bold border-2 border-black dark:border-gray-600 hover:bg-[#B4F416] hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                加载更多 ({filteredWords.length - displayCount} 个剩余)
+                {loadingMore ? '加载中...' : `加载更多 (还有 ${totalCount - words.length} 个)`}
               </button>
             </div>
           )}

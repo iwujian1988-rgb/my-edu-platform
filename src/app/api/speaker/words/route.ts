@@ -97,11 +97,31 @@ export async function GET(request: Request) {
       // 不再在这里更新，避免重复IO
     }
 
+    // 性能优化：批量获取文章标题，避免前端逐个请求
+    const uniqueArticleIds = Array.from(new Set(wordsWithDict.map(w => w.article_id).filter(Boolean)))
+    let articlesMap: Record<string, { id: string; title: string }> = {}
+
+    if (uniqueArticleIds.length > 0) {
+      const { data: articlesData, error: articlesError } = await supabase
+        .from('speaker_articles')
+        .select('id, title')
+        .in('id', uniqueArticleIds)
+
+      if (!articlesError && articlesData) {
+        articlesMap = articlesData.reduce((acc, article) => {
+          acc[article.id] = article
+          return acc
+        }, {} as Record<string, { id: string; title: string }>)
+        console.log('[Speaker Words API] ✅ 批量获取文章标题:', articlesData.length)
+      }
+    }
+
     console.log('[Speaker Words API] ✅ 查询成功')
 
     return NextResponse.json({
       success: true,
       words: wordsWithDict,
+      articles: articlesMap,  // 返回文章映射，前端不再需要逐个请求
       pagination: {
         page,
         pageSize,
