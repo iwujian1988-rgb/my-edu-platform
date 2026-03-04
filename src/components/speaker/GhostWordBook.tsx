@@ -120,7 +120,9 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       try {
         setLoading(true)
         // 性能优化：使用分页，初始只加载50条
-        const response = await fetch(`/api/speaker/words?page=1&pageSize=50`)
+        // 如果有 articleId，传递给后端进行筛选
+        const articleIdParam = articleId ? `&articleId=${articleId}` : ''
+        const response = await fetch(`/api/speaker/words?page=1&pageSize=50${articleIdParam}`)
         const data = await response.json()
 
         if (data.success) {
@@ -151,7 +153,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
     fetchWords()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId])
+  }, [userId, articleId])
 
   // 加载更多生词
   const loadMoreWords = async () => {
@@ -160,7 +162,8 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
     try {
       setLoadingMore(true)
       const nextPage = currentPage + 1
-      const response = await fetch(`/api/speaker/words?page=${nextPage}&pageSize=50`)
+      const articleIdParam = articleId ? `&articleId=${articleId}` : ''
+      const response = await fetch(`/api/speaker/words?page=${nextPage}&pageSize=50${articleIdParam}`)
       const data = await response.json()
 
       if (data.success) {
@@ -225,7 +228,9 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   // 重新加载生词数据（提取为独立函数，消除重复代码）
   const reloadGhostWords = async () => {
     try {
-      const response = await fetch(`/api/speaker/words?page=1&pageSize=50`)
+      // 如果有 articleId，传递给后端进行筛选
+      const articleIdParam = articleId ? `&articleId=${articleId}` : ''
+      const response = await fetch(`/api/speaker/words?page=1&pageSize=50${articleIdParam}`)
       const data = await response.json()
       if (data.success) {
         setWords(data.words || [])

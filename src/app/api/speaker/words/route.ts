@@ -41,6 +41,7 @@ export async function GET(request: Request) {
 
     const { searchParams } = new URL(request.url)
     const userId = searchParams.get('userId')
+    const articleIdParam = searchParams.get('articleId')  // 新增：支持按文章筛选
 
     // 权限检查：验证 userId 是否与当前登录用户一致
     if (userId && userId !== user.id) {
@@ -56,18 +57,25 @@ export async function GET(request: Request) {
     const pageSize = parseInt(searchParams.get('pageSize') || '50', 10)
     const offset = (page - 1) * pageSize
 
-    console.log('[Speaker Words API] userId:', userId, 'page:', page, 'pageSize:', pageSize)
+    console.log('[Speaker Words API] userId:', userId, 'page:', page, 'pageSize:', pageSize, 'articleId:', articleIdParam)
 
     // 如果 userId 为空，使用当前登录用户的 ID
     const targetUserId = userId || user.id
     console.log('[Speaker Words API] targetUserId:', targetUserId)
 
     // 查询生词列表（排除已掌握的，带分页）
-    const { data, error, count } = await supabase
+    let query = supabase
       .from('speaker_ghost_words')
       .select('*', { count: 'exact' })
       .eq('user_id', targetUserId)
       .eq('is_mastered', false)
+
+    // 如果指定了文章ID，添加筛选条件
+    if (articleIdParam) {
+      query = query.eq('article_id', articleIdParam)
+    }
+
+    const { data, error, count } = await query
       .order('created_at', { ascending: false })
       .range(offset, offset + pageSize - 1)
 
