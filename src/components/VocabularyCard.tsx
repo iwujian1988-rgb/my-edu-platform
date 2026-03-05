@@ -52,6 +52,16 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   const [needsExpansion, setNeedsExpansion] = useState(false) // 是否需要展开按钮
   const contentRef = useRef<HTMLDivElement>(null) // 内容区域ref
 
+  // 🆕 例句弹窗状态
+  const [showSentenceModal, setShowSentenceModal] = useState(false)
+  const [sentenceOverflow, setSentenceOverflow] = useState(false) // 例句是否溢出
+  const sentenceRef = useRef<HTMLSpanElement>(null) // 例句ref
+
+  // 🆕 搭配弹窗状态
+  const [showCollocationModal, setShowCollocationModal] = useState(false)
+  const [collocationOverflow, setCollocationOverflow] = useState(false) // 搭配是否溢出
+  const collocationRef = useRef<HTMLSpanElement>(null) // 搭配ref
+
   // 🆕 根据屏幕方向设置卡片高度
   const cardHeight = isPortrait ? '380px' : '380px'  // 竖屏与横屏一致高度
 
@@ -210,6 +220,70 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
     sentence: word.example_sentence_en || word.example_sentence,
   }
 
+  // 🆕 检测例句是否溢出2行
+  useEffect(() => {
+    const checkSentenceOverflow = () => {
+      if (!sentenceRef.current || !data.sentence) return
+
+      // 创建一个隐藏的测量元素，不使用 line-clamp
+      const measureEl = document.createElement('span')
+      measureEl.style.cssText = `
+        position: absolute;
+        visibility: hidden;
+        white-space: normal;
+        font-size: 12px;
+        line-height: 1.25;
+        font-weight: 500;
+        width: ${sentenceRef.current.clientWidth}px;
+      `
+      measureEl.textContent = data.sentence
+      document.body.appendChild(measureEl)
+
+      // 2行的高度约为: 12px * 1.25 * 2 = 30px
+      const twoLineHeight = 32
+      const actualHeight = measureEl.scrollHeight
+
+      document.body.removeChild(measureEl)
+
+      setSentenceOverflow(actualHeight > twoLineHeight)
+    }
+
+    const timeoutId = setTimeout(checkSentenceOverflow, 100)
+    return () => clearTimeout(timeoutId)
+  }, [data.sentence])
+
+  // 🆕 检测搭配是否溢出1行
+  useEffect(() => {
+    const checkCollocationOverflow = () => {
+      if (!collocationRef.current || !data.collocation) return
+
+      // 创建一个隐藏的测量元素，不使用 line-clamp
+      const measureEl = document.createElement('span')
+      measureEl.style.cssText = `
+        position: absolute;
+        visibility: hidden;
+        white-space: normal;
+        font-size: 12px;
+        line-height: 1.25;
+        font-weight: 500;
+        width: ${collocationRef.current.clientWidth}px;
+      `
+      measureEl.textContent = data.collocation
+      document.body.appendChild(measureEl)
+
+      // 1行的高度约为: 12px * 1.25 = 15px
+      const oneLineHeight = 18
+      const actualHeight = measureEl.scrollHeight
+
+      document.body.removeChild(measureEl)
+
+      setCollocationOverflow(actualHeight > oneLineHeight)
+    }
+
+    const timeoutId = setTimeout(checkCollocationOverflow, 100)
+    return () => clearTimeout(timeoutId)
+  }, [data.collocation])
+
   return (
     // ⚠️ 注意：这里移除了大部分 Tailwind 类名，全靠 style 属性控制，防止冲突
     <div
@@ -227,9 +301,9 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
 
       {/* 顶部区域 */}
       <div className={`flex justify-between items-start mb-4 border-b-2 border-dashed pb-3 transition-colors duration-300 dark:border-gray-700 border-gray-200`}>
-        <div className="flex-1">
+        <div className="flex-1 min-w-0">
           <div className="flex items-center gap-1.5 md:gap-2 flex-wrap">
-            <h2 className="text-2xl md:text-3xl font-black tracking-tight transition-colors duration-300 dark:text-white text-black">{data.word}</h2>
+            <h2 className="text-2xl md:text-3xl font-black tracking-tight transition-colors duration-300 dark:text-white text-black truncate max-w-[180px] md:max-w-none" title={data.word}>{data.word}</h2>
             <button
               onClick={handleSpeak}
               disabled={isLoading}
@@ -241,8 +315,8 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
               <Volume2 size={16} className="hidden md:block" strokeWidth={2.5} />
             </button>
           </div>
-          <div className="flex items-center gap-2 mt-1">
-            <span className="font-serif font-bold transition-colors duration-300 dark:text-slate-400 text-gray-600">{data.phonetic}</span>
+          <div className="flex items-center gap-2 mt-1 min-w-0">
+            <span className="font-serif font-bold transition-colors duration-300 dark:text-slate-400 text-gray-600 truncate" title={data.phonetic}>{data.phonetic}</span>
             {data.pos && (
               <span className="text-xs font-black border px-1.5 py-0.5 rounded transition-colors duration-300 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 bg-gray-100 border-black text-black">
                 {data.pos}
@@ -278,8 +352,15 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
               />
               <div className="text-xs leading-snug flex-1">
                 <span className="font-black block mb-0.5 text-[10px] transition-colors duration-300 dark:text-blue-400 text-blue-700">搭配</span>
-                <span className={`font-medium ${isExpanded ? '' : 'line-clamp-1'} transition-colors duration-300 dark:text-slate-200 text-gray-900`}>
+                <span
+                  ref={collocationRef}
+                  className={`font-medium line-clamp-1 transition-colors duration-300 dark:text-slate-200 text-gray-900 ${collocationOverflow ? 'cursor-pointer' : ''}`}
+                  onClick={() => collocationOverflow && setShowCollocationModal(true)}
+                >
                   {data.collocation}
+                  {collocationOverflow && (
+                    <span className="ml-1 text-blue-600 dark:text-blue-400 font-bold hover:underline">...【more】</span>
+                  )}
                 </span>
               </div>
             </div>
@@ -294,8 +375,15 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
               />
               <div className="text-xs leading-snug flex-1">
                 <span className="font-black block mb-0.5 text-[10px] transition-colors duration-300 dark:text-green-400 text-green-700">例句</span>
-                <span className={`font-medium ${isExpanded ? '' : 'line-clamp-2'} transition-colors duration-300 dark:text-slate-200 text-gray-900`}>
+                <span
+                  ref={sentenceRef}
+                  className={`font-medium line-clamp-2 transition-colors duration-300 dark:text-slate-200 text-gray-900 ${sentenceOverflow ? 'cursor-pointer' : ''}`}
+                  onClick={() => sentenceOverflow && setShowSentenceModal(true)}
+                >
                   {data.sentence}
+                  {sentenceOverflow && (
+                    <span className="ml-1 text-green-600 dark:text-green-400 font-bold hover:underline">...【more】</span>
+                  )}
                 </span>
               </div>
             </div>
@@ -343,6 +431,58 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
           label="不认识"
         />
       </div>
+
+      {/* 🆕 例句弹窗 */}
+      {showSentenceModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+          onClick={() => setShowSentenceModal(false)}
+        >
+          <div
+            className="bg-white dark:bg-gray-800 rounded-lg border-3 border-black p-4 max-w-md w-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="font-black text-lg dark:text-white">例句</h3>
+              <button
+                onClick={() => setShowSentenceModal(false)}
+                className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+              >
+                <X size={18} className="dark:text-gray-400" />
+              </button>
+            </div>
+            <p className="text-sm leading-relaxed dark:text-slate-200 text-gray-700">
+              {data.sentence}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* 🆕 搭配弹窗 */}
+      {showCollocationModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+          onClick={() => setShowCollocationModal(false)}
+        >
+          <div
+            className="bg-white dark:bg-gray-800 rounded-lg border-3 border-black p-4 max-w-md w-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="font-black text-lg dark:text-white">搭配</h3>
+              <button
+                onClick={() => setShowCollocationModal(false)}
+                className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+              >
+                <X size={18} className="dark:text-gray-400" />
+              </button>
+            </div>
+            <p className="text-sm leading-relaxed dark:text-blue-400 dark:bg-blue-900/30 text-blue-700">
+              {data.collocation}
+            </p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
