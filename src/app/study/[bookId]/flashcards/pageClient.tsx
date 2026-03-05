@@ -442,19 +442,6 @@ export default function FlashcardsPageClient() {
   const currentWord = words[currentIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
 
-  // 安全检查：如果 currentWord 不存在，显示加载或错误
-  if (!currentWord && !loading) {
-    console.error('[Flashcards] currentWord is undefined!', { currentIndex, wordsLength: words.length, initialHashIndex })
-    return (
-      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="text-center">
-          <p className="text-lg font-bold mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>加载中...</p>
-          <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>正在准备单词卡片</p>
-        </div>
-      </div>
-    )
-  }
-
   // 批量保存函数
   const flushPendingSaves = useCallback(async (options?: { keepalive?: boolean }) => {
     const pending = { ...pendingSaveRef.current }
@@ -652,7 +639,7 @@ export default function FlashcardsPageClient() {
     }
 
     nextWordTimerRef.current = setTimeout(() => {
-      // 🎯 判断逻辑：只有当真的完成所有单词时才显示完成对话框
+      // 🎯 判断逻辑：基于总数判断是否完成（更可靠）
       const reachedTotalEnd = totalWordsInScope > 0 && currentIndex >= totalWordsInScope - 1
       const reachedLoadedEnd = currentIndex >= words.length - 1
 
@@ -664,9 +651,11 @@ export default function FlashcardsPageClient() {
         return
       }
 
-      if (reachedLoadedEnd && !hasMore) {
-        // 没有更多单词可加载，且已到达当前列表末尾
-        // 这时才显示完成对话框
+      // 🔧 FIX: 使用 reachedTotalEnd 判断完成，而不是 reachedLoadedEnd && !hasMore
+      // 这样即使 API 返回的数据量不足，也能正确判断是否完成
+      if (reachedTotalEnd) {
+        // 真的完成了所有单词（基于总数判断）
+        console.log('🎉 All words completed! (based on totalWordsInScope)')
         setShowCompleteDialog(true)
         setIsCardSwitching(false)
         return
@@ -743,7 +732,9 @@ export default function FlashcardsPageClient() {
     } else {
       console.log('Auto-speak conditions not met')
     }
-  }, [currentIndex, currentWord, isCardSwitching, loading, isFlipped, hasUserInteracted, speak])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentIndex, currentWord, isCardSwitching, loading, isFlipped, hasUserInteracted])
+  // 注意：speak 函数从依赖中移除，因为它是稳定的 hook 返回值，不需要作为依赖
 
   // 键盘快捷键
   useEffect(() => {
@@ -908,6 +899,19 @@ export default function FlashcardsPageClient() {
 
     setDragStart(null)
     setDragOffset({ x: 0, y: 0 })
+  }
+
+  // 🔧 安全检查：如果 currentWord 不存在（在所有 hooks 之后）
+  if (!currentWord && !loading) {
+    console.error('[Flashcards] currentWord is undefined!', { currentIndex, wordsLength: words.length })
+    return (
+      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="text-center">
+          <p className="text-lg font-bold mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>加载中...</p>
+          <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>正在准备单词卡片</p>
+        </div>
+      </div>
+    )
   }
 
   if (loading) {

@@ -477,16 +477,102 @@ export async function GET(request: NextRequest) {
         statusTotalCount = (totalWordsFromBook || 0) - allProgressIds.size + newStatusIds.size
         console.log(`🔍 Filtered for 'new': ${filteredWords.length} words (total: ${statusTotalCount})`)
       } else {
-        // 其他状态：只返回匹配指定状态的单词
+        // 🔧 FIX: 其他状态（unknown/fuzzy/known）也需要确保返回足够的数据
+        // 先获取所有匹配状态的 word_id
         const statusWordIds = new Set(
           progressResult.data
             ?.filter((p: any) => p.status === status)
             .map((p: any) => p.word_id) || []
         )
 
-        filteredWords = filteredWords.filter((word: any) => statusWordIds.has(word.id))
         statusTotalCount = statusWordIds.size // 使用实际总数
-        console.log(`🔍 Filtered for '${status}': ${filteredWords.length} words (total: ${statusTotalCount})`)
+        console.log(`🔍 Total '${status}' words: ${statusTotalCount}`)
+
+        // 🔧 FIX: 使用循环加载确保返回足够的数据（与 'new' 状态类似的逻辑）
+        if (statusWordIds.size > 0) {
+          // 获取章节信息
+          const chaptersQuery = supabase
+            .from('chapters')
+            .select('id, theme_id, scene_id')
+            .eq('book_id', bookId)
+
+          const { data: chaptersData } = await chaptersQuery
+
+          if (!chaptersData) {
+            return NextResponse.json({ error: 'Failed to fetch chapters' }, { status: 500 })
+          }
+
+          const chaptersMap = new Map(chaptersData.map((c: any) => [
+            c.id,
+            { theme_id: c.theme_id, scene_id: c.scene_id }
+          ]))
+          const chapterIds = chaptersData.map((c: any) => c.id)
+
+          // 循环加载直到填满一页或没有更多数据
+          const finalWords: any[] = []
+          let currentOffset = offset
+          let loadedCount = 0
+
+          await safeLoop(
+            async () => {
+              // 如果已经填满一页，停止
+              if (finalWords.length >= pageSize) {
+                return false
+              }
+
+              // 如果上次加载的数据少于 pageSize，说明没有更多数据了
+              if (loadedCount > 0 && loadedCount < pageSize) {
+                return false
+              }
+
+              const { data: moreWords, error: moreError } = await withTimeout(
+                supabase
+                  .from('words')
+                  .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, collocation, collocation_en, example_sentence, example_sentence_en, part_of_speech, chapter_id, audio_url')
+                  .in('chapter_id', chapterIds)
+                  .order('order_index', { ascending: true })
+                  .range(currentOffset, currentOffset + pageSize - 1),
+                10000,
+                'Loading words timeout'
+              )
+
+              if (moreError || !moreWords || moreWords.length === 0) {
+                return false
+              }
+
+              // 筛选符合状态的单词并附加 theme/scene
+              const moreWordsWithThemeScene = moreWords
+                .filter((w: any) => statusWordIds.has(w.id))
+                .map((w: any) => {
+                  const chapterInfo = chaptersMap.get(w.chapter_id)
+                  return {
+                    ...w,
+                    theme: chapterInfo?.theme_id || null,
+                    scene: chapterInfo?.scene_id || null,
+                    status: status // 直接设置状态
+                  }
+                })
+
+              finalWords.push(...moreWordsWithThemeScene)
+              loadedCount = moreWords.length
+              currentOffset += pageSize
+
+              return true
+            },
+            {
+              maxIterations: 15,
+              timeout: 30000,
+              iterationDelay: 0
+            }
+          )
+
+          filteredWords = finalWords.slice(0, pageSize) // 确保不超过 pageSize
+          console.log(`✅ Returning page ${page} with ${filteredWords.length} '${status}' words (total: ${statusTotalCount})`)
+        } else {
+          // 没有匹配的单词
+          filteredWords = []
+          console.log(`✅ No '${status}' words found`)
+        }
       }
     }
 
