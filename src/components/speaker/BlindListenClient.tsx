@@ -15,6 +15,7 @@ import { useRouter } from 'next/navigation'
 import { Play, Pause, SkipForward } from 'lucide-react'
 import type { SpeakerArticle } from '@/types/speaker'
 import { SpeakerSubPageLayout } from '@/components/speaker/SpeakerSubPageLayout'
+import { useTheme } from '@/contexts/ThemeContext'
 
 interface BlindListenClientProps {
   article: SpeakerArticle
@@ -34,6 +35,8 @@ const ENCOURAGEMENT_MESSAGES = [
 
 export function BlindListenClient({ article, lastPosition, userId }: BlindListenClientProps) {
   const router = useRouter()
+  const { theme, mounted } = useTheme()
+  const isDark = mounted && theme === 'dark'
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
@@ -204,13 +207,15 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
 
   return (
     <SpeakerSubPageLayout userId={userId}>
-      <div className="min-h-screen bg-[#050505] flex flex-col items-center justify-center p-4 relative overflow-hidden">
+      <div className={`min-h-screen flex flex-col items-center justify-center p-4 relative overflow-hidden ${
+        isDark ? 'bg-[#050505]' : 'bg-gray-100'
+      }`}>
       {/* 背景网格装饰 */}
       <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="w-full h-full" style={{
           backgroundImage: `
-            linear-gradient(to right, #333 1px, transparent 1px),
-            linear-gradient(to bottom, #333 1px, transparent 1px)
+            linear-gradient(to right, ${isDark ? '#333' : '#999'} 1px, transparent 1px),
+            linear-gradient(to bottom, ${isDark ? '#333' : '#999'} 1px, transparent 1px)
           `,
           backgroundSize: '50px 50px'
         }} />
@@ -231,7 +236,9 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
       <div className="text-center max-w-2xl w-full z-10">
         {/* 步骤标识 */}
         <div className="mb-6">
-          <div className="inline-block px-4 py-2 bg-[#1a1a1a] border-2 border-[#B4F416]">
+          <div className={`inline-block px-4 py-2 border-2 border-[#B4F416] ${
+            isDark ? 'bg-[#1a1a1a]' : 'bg-gray-100'
+          }`}>
             <span className="text-[#B4F416] font-mono text-sm font-black tracking-widest">
               STEP 01 - BLIND LISTENING
             </span>
@@ -239,27 +246,31 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
         </div>
 
         {/* 文章标题 */}
-        <h1 className="text-3xl md:text-4xl font-black text-white mb-12 leading-tight">
+        <h1 className={`text-3xl md:text-4xl font-black mb-12 leading-tight ${
+          isDark ? 'text-white' : 'text-gray-900'
+        }`}>
           {article.title}
         </h1>
 
         {/* 进度条 - 粗线条工业风 */}
         <div className="mb-10">
-          <div className="relative w-full h-6 bg-[#111] border-2 border-[#333] overflow-hidden">
+          <div className={`relative w-full h-6 border-2 overflow-hidden ${
+            isDark ? 'bg-[#111] border-[#333]' : 'bg-gray-200 border-gray-300'
+          }`}>
             <div
               className="absolute top-0 left-0 h-full bg-[#B4F416] transition-all duration-150"
               style={{ width: `${(currentTime / duration) * 100}%` }}
             />
           </div>
           <div className="flex justify-between mt-3 font-mono text-sm">
-            <span className="text-gray-500">{formatTime(currentTime)}</span>
-            <span className="text-gray-500">{formatTime(duration)}</span>
+            <span className={isDark ? 'text-gray-500' : 'text-gray-600'}>{formatTime(currentTime)}</span>
+            <span className={isDark ? 'text-gray-500' : 'text-gray-600'}>{formatTime(duration)}</span>
           </div>
         </div>
 
         {/* 语速调节 - 紧凑矩形按钮 */}
         <div className="flex items-center justify-center gap-3 mb-12">
-          <span className="text-gray-500 font-mono text-sm mr-2">SPEED</span>
+          <span className={`font-mono text-sm mr-2 ${isDark ? 'text-gray-500' : 'text-gray-600'}`}>SPEED</span>
           {[0.5, 0.8, 1.0, 1.2, 1.5].map((rate) => (
             <button
               key={rate}
@@ -268,7 +279,9 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
                 px-4 py-2 text-sm font-mono font-black tracking-tight border-2 transition-all duration-150
                 ${playbackRate === rate
                   ? 'bg-[#B4F416] text-black border-[#B4F416] shadow-[0_0_15px_rgba(180,244,22,0.4)]'
-                  : 'bg-[#1a1a1a] text-gray-500 border-[#333] hover:border-[#B4F416] hover:text-white'
+                  : isDark
+                    ? 'bg-[#1a1a1a] text-gray-500 border-[#333] hover:border-[#B4F416] hover:text-white'
+                    : 'bg-white text-gray-600 border-gray-300 hover:border-[#B4F416] hover:text-black'
                 }
               `}
             >
@@ -281,13 +294,14 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
         <div className="flex items-center justify-center gap-8 mb-16">
           <button
             onClick={togglePlayPause}
-            className="
-              w-32 h-32 rounded-none bg-black border-4 border-[#B4F416]
+            className={`
+              w-32 h-32 rounded-none border-4 border-[#B4F416]
               text-[#B4F416] flex items-center justify-center
               hover:bg-[#B4F416] hover:text-black hover:shadow-[0_0_30px_#B4F416]
               hover:drop-shadow-[0_0_10px_rgba(180,244,22,0.8)]
               transition-all duration-300
-            "
+              ${isDark ? 'bg-black' : 'bg-white'}
+            `}
           >
             {isPlaying ? (
               <Pause className="w-16 h-16" strokeWidth={2.5} style={{ fill: '#B4F416' }} />
@@ -300,28 +314,32 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
         {/* 下一步按钮 - 深灰底 + 粗边框 */}
         <button
           onClick={goToNextStep}
-          className="
+          className={`
             group inline-flex items-center gap-3 px-10 py-4
-            bg-[#1a1a1a] border border-white/20 border-3
-            text-white font-mono font-black text-sm tracking-widest uppercase
+            border border-3
+            font-mono font-black text-sm tracking-widest uppercase
             hover:border-[#B4F416] hover:shadow-[6px_6px_0px_0px_#B4F416]
             transition-all duration-150
-          "
+            ${isDark
+              ? 'bg-[#1a1a1a] border-white/20 text-white'
+              : 'bg-white border-black/20 text-black'
+            }
+          `}
         >
           <span>进入下一步</span>
-          <SkipForward className="w-5 h-5 text-white transition-colors" strokeWidth={2.5} />
+          <SkipForward className={`w-5 h-5 transition-colors ${isDark ? 'text-white' : 'text-black'}`} strokeWidth={2.5} />
         </button>
       </div>
 
       {/* 断点续播提示 - 工业风弹窗 */}
       {showResumePrompt && (
-        <div className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4 backdrop-blur-sm">
-          <div className="bg-[#0a0a0a] border-3 border-[#B4F416] p-8 max-w-md w-full shadow-[0_0_50px_rgba(180,244,22,0.2)]">
-            <h3 className="text-2xl font-black text-white mb-2 uppercase tracking-wider">
+        <div className={`fixed inset-0 flex items-center justify-center z-50 p-4 backdrop-blur-sm ${isDark ? 'bg-black/90' : 'bg-black/50'}`}>
+          <div className={`border-3 border-[#B4F416] p-8 max-w-md w-full shadow-[0_0_50px_rgba(180,244,22,0.2)] ${isDark ? 'bg-[#0a0a0a]' : 'bg-white'}`}>
+            <h3 className={`text-2xl font-black mb-2 uppercase tracking-wider ${isDark ? 'text-white' : 'text-black'}`}>
               检测到播放记录
             </h3>
             <div className="w-full h-px bg-[#B4F416]/30 my-4"></div>
-            <p className="text-gray-400 mb-8 font-mono text-sm">
+            <p className={`mb-8 font-mono text-sm ${isDark ? 'text-gray-400' : 'text-gray-600'}`}>
               上次播放位置：<span className="text-[#B4F416] font-bold">{formatTime(lastPosition || 0)}</span>
             </p>
             <div className="flex gap-4">
@@ -333,7 +351,11 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
               </button>
               <button
                 onClick={startFromBeginning}
-                className="flex-1 px-6 py-4 bg-[#1a1a1a] text-gray-400 font-black font-mono text-sm uppercase tracking-wider border-2 border-[#333] hover:border-white hover:text-white transition-all"
+                className={`flex-1 px-6 py-4 font-black font-mono text-sm uppercase tracking-wider border-2 transition-all ${
+                  isDark
+                    ? 'bg-[#1a1a1a] text-gray-400 border-[#333] hover:border-white hover:text-white'
+                    : 'bg-gray-100 text-gray-600 border-gray-300 hover:border-black hover:text-black'
+                }`}
               >
                 从头开始
               </button>
