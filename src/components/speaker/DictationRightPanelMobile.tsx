@@ -296,7 +296,7 @@ function SentenceInput({
                 onKeyDown={(e) => handleKeyDown(wordIndex, e)}
                 onContextMenu={(e) => handleContextMenu(wordIndex, e)}
                 disabled={isSkipped}
-                placeholder={isSkipped ? '放弃' : ''}
+                placeholder={isSkipped ? '还未掌握' : ''}
                 autoComplete="off"
                 autoCapitalize="off"
                 autoCorrect="off"
@@ -331,7 +331,7 @@ function SentenceInput({
 
       {/* 操作提示 */}
       <div className="mt-3 text-center text-xs text-gray-500 dark:text-gray-400 font-mono">
-        长按放弃单词 | 点击对号查看输入是否正确
+        长按标记"还未掌握" | 点击对号查看输入是否正确
       </div>
     </div>
   )

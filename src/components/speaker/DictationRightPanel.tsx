@@ -313,7 +313,7 @@ function SentenceInput({
                 onKeyDown={(e) => handleKeyDown(wordIndex, e)}
                 onContextMenu={(e) => handleContextMenu(wordIndex, e)}
                 disabled={isSkipped}
-                placeholder={isSkipped ? '放弃' : ''}
+                placeholder={isSkipped ? '还未掌握' : ''}
                 autoComplete="off"
                 autoCapitalize="off"
                 autoCorrect="off"
@@ -356,7 +356,7 @@ function SentenceInput({
           <span className="font-mono">空格跳转 | 回车换句</span>
           <span className="mx-1">•</span>
           <span className="text-base">🖱️</span>
-          <span className="font-mono">右键放弃</span>
+          <span className="font-mono">右键标记"还未掌握"</span>
         </div>
       )}
     </div>
@@ -492,11 +492,11 @@ export function DictationRightPanel({
             </h3>
             {/* PC端提示 */}
             <p className="text-xs text-gray-600 dark:text-gray-400 hidden md:block">
-              按 <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700">空格</kbd> 跳转 | 最后词按 <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700">↵ Enter</kbd> 换句 | 右键"放弃"
+              按 <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700">空格</kbd> 跳转 | 最后词按 <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700">↵ Enter</kbd> 换句 | 右键标记"还未掌握"
             </p>
             {/* 移动端提示 */}
             <p className="text-xs text-gray-600 dark:text-gray-400 md:hidden">
-              按 <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700">空格</kbd> / <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700">↵</kbd> 跳转 | 长按"放弃"
+              按 <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700">空格</kbd> / <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-700">↵</kbd> 跳转 | 长按标记"还未掌握"
             </p>
           </div>
         </div>

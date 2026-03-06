@@ -464,13 +464,13 @@ export function LearningPlanWorkspace({ books }: { books: BookData[] }) {
     if (!showCreateDialog) return null
 
     return (
-      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-end sm:items-center justify-center z-50 p-3 sm:p-4">
+      <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-end sm:items-center justify-center z-50 p-0 sm:p-4">
         {/* 移动端：从底部弹出的全屏卡片；PC端：居中弹窗 */}
         <div className={`w-full sm:max-w-md ${
           isDark ? 'bg-[#0f172a]' : 'bg-white'
-        } border-[3px] border-black dark:border-slate-600 shadow-[8px_8px_0px_0px_#000] dark:shadow-none max-h-[85vh] overflow-hidden flex flex-col rounded sm:rounded`}>
+        } border-[3px] border-black dark:border-slate-600 shadow-[8px_8px_0px_0px_#000] dark:shadow-none h-auto max-h-[95vh] sm:max-h-[85vh] overflow-hidden flex flex-col rounded-t sm:rounded border-b-0 sm:border-b-[3px]`}>
           {/* Header - Neo-Brutalism */}
-          <div className="flex items-center justify-between px-4 py-3 border-b-[3px] border-black dark:border-slate-600 bg-[#B4F416]">
+          <div className="flex-shrink-0 flex items-center justify-between px-4 py-3 border-b-[3px] border-black dark:border-slate-600 bg-[#B4F416]">
             <h2 className="text-base sm:text-lg font-black uppercase tracking-tight text-black">
               {editingPlan ? '修改' : '创建'}学习计划
             </h2>
@@ -488,8 +488,8 @@ export function LearningPlanWorkspace({ books }: { books: BookData[] }) {
             </button>
           </div>
 
-          {/* Content */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          {/* Content - 可滚动区域 */}
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 min-h-0">
             {!showSetupForm && (
               <>
                 <p className={`text-xs font-black uppercase tracking-wider ${

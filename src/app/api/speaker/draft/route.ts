@@ -42,6 +42,12 @@ export async function PUT(request: Request) {
     const body = await request.json()
     const { articleId, userId, draft } = body
 
+    console.log('[Speaker Draft API] 请求参数:', { articleId, userId, hasDraft: !!draft })
+    console.log('[Speaker Draft API] 草稿数据:', {
+      wordInputsLength: draft?.wordInputs?.length,
+      activeSentenceIndex: draft?.activeSentenceIndex
+    })
+
     // 验证必填字段
     if (!articleId || !userId) {
       return NextResponse.json(
@@ -81,7 +87,10 @@ export async function PUT(request: Request) {
       throw error
     }
 
-    console.log('[Speaker Draft API] ✅ 草稿保存成功')
+    console.log('[Speaker Draft API] ✅ 草稿保存成功, 返回数据:', {
+      hasStep2Draft: !!data?.step2_draft,
+      wordInputsLength: data?.step2_draft?.wordInputs?.length
+    })
 
     return NextResponse.json({
       success: true,
@@ -161,6 +170,8 @@ export async function GET(request: Request) {
   const articleId = searchParams.get('articleId')
   const userId = searchParams.get('userId')
 
+  console.log('[Speaker Draft API] 获取草稿请求:', { articleId, userId })
+
   if (!articleId || !userId) {
     return NextResponse.json(
       { error: 'MISSING_FIELDS', message: '缺少 articleId 或 userId' },
@@ -181,7 +192,7 @@ export async function GET(request: Request) {
     if (error) {
       // 如果没有找到草稿，返回 null（不是错误）
       if (error.code === 'PGRST116') {
-        console.log('[Speaker Draft API] 未找到草稿')
+        console.log('[Speaker Draft API] 未找到草稿记录')
         return NextResponse.json({
           success: true,
           draft: null
@@ -190,7 +201,10 @@ export async function GET(request: Request) {
       throw error
     }
 
-    console.log('[Speaker Draft API] 草稿获取成功')
+    console.log('[Speaker Draft API] 草稿获取成功, step2_draft:', data?.step2_draft ? '有数据' : '无数据')
+    if (data?.step2_draft?.wordInputs) {
+      console.log('[Speaker Draft API] wordInputs 句子数:', data.step2_draft.wordInputs.length)
+    }
 
     return NextResponse.json({
       success: true,

@@ -534,7 +534,21 @@ export function useSpeakerDictationV2(
   // ========================================
   const saveDraftTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
+  // 使用 ref 保存最新数据，解决闭包问题
+  const latestDataRef = useRef({ articleId, userId, wordInputs, activeSentenceIndex })
+
+  // 更新 ref（每次状态变化时）
+  useEffect(() => {
+    latestDataRef.current = { articleId, userId, wordInputs, activeSentenceIndex }
+  }, [articleId, userId, wordInputs, activeSentenceIndex])
+
   const saveDraft = useCallback(async () => {
+    // 使用 ref 中的最新数据
+    const { articleId, userId, wordInputs, activeSentenceIndex } = latestDataRef.current
+
+    console.log('[Dictation Hook] 自动保存草稿, wordInputs 句子数:', wordInputs.length)
+    console.log('[Dictation Hook] 第一个句子的输入:', wordInputs[0]?.map(w => w.value).filter(v => v))
+
     try {
       const response = await fetch('/api/speaker/draft', {
         method: 'PUT',
@@ -552,12 +566,14 @@ export function useSpeakerDictationV2(
       })
 
       if (response.ok) {
-        console.log('[Dictation] 草稿保存成功')
+        console.log('[Dictation Hook] ✅ 草稿自动保存成功')
+      } else {
+        console.error('[Dictation Hook] ❌ 草稿自动保存失败:', response.status)
       }
     } catch (error) {
-      console.error('[Dictation] 保存草稿失败:', error)
+      console.error('[Dictation Hook] ❌ 保存草稿异常:', error)
     }
-  }, [articleId, userId, wordInputs, activeSentenceIndex])
+  }, []) // 空依赖，使用 ref 获取最新数据
 
   const saveDraftDebounced = useCallback(() => {
     if (saveDraftTimeoutRef.current) {
@@ -616,7 +632,7 @@ export function useSpeakerDictationV2(
   // 11. 恢复草稿（用于断点续传）
   // ========================================
   const restoreDraft = useCallback(async (draft: any) => {
-    console.log('[Dictation Hook] 开始恢复草稿:', draft)
+    console.log('[Dictation Hook] 开始恢复草稿:', JSON.stringify(draft, null, 2))
 
     if (!draft) {
       console.warn('[Dictation Hook] 草稿数据为空，跳过恢复')
@@ -626,12 +642,18 @@ export function useSpeakerDictationV2(
     try {
       // 恢复 activeSentenceIndex
       if (draft.activeSentenceIndex !== undefined) {
+        console.log('[Dictation Hook] 恢复 activeSentenceIndex:', draft.activeSentenceIndex)
         setActiveSentenceIndex(draft.activeSentenceIndex)
       }
 
       // 恢复 wordInputs
       if (draft.wordInputs && Array.isArray(draft.wordInputs)) {
+        console.log('[Dictation Hook] 恢复 wordInputs, 句子数:', draft.wordInputs.length)
+        console.log('[Dictation Hook] 第一个句子的单词数:', draft.wordInputs[0]?.length)
+        console.log('[Dictation Hook] 第一个句子的第一个单词:', draft.wordInputs[0]?.[0])
         setWordInputs(draft.wordInputs)
+      } else {
+        console.warn('[Dictation Hook] wordInputs 数据无效:', draft.wordInputs)
       }
 
       console.log('[Dictation Hook] ✅ 草稿恢复成功')

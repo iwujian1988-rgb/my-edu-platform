@@ -67,7 +67,8 @@ export function parseSentenceTokens(sentence: string): Token[] {
 
     if (word) {
       const wordLower = word.toLowerCase()
-      const isContraction = contractionWords.has(wordLower)
+      // 检测：1. 常见缩写词 2. 所有格形式（如 Adam's, John's）
+      const isContraction = contractionWords.has(wordLower) || /^.+['']s$/i.test(word)
       tokens.push({ text: word, type: 'word', skipInput: isContraction })
     } else if (number) {
       // 数字跳过输入，直接显示

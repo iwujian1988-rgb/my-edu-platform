@@ -19,7 +19,7 @@
 
 import { useState, useEffect, useCallback, useRef } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import { ArrowLeft, AlertCircle, History } from 'lucide-react'
+import { ArrowLeft, AlertCircle, History, Save, Check, ArrowRight } from 'lucide-react'
 import type { SpeakerArticle } from '@/types/speaker'
 import { useSpeakerDictationV2 } from '@/hooks/useSpeakerDictationV2'
 import { DictationLeftPanel } from '@/components/speaker/DictationLeftPanel'
@@ -87,6 +87,14 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
   const [submitError, setSubmitError] = useState<string | null>(null)
   const [sessionStartTime] = useState(Date.now())  // 记录会话开始时间
   const [showResultModal, setShowResultModal] = useState(true)  // 控制结果显示
+
+  // 保存状态
+  const [isSaving, setIsSaving] = useState(false)
+  const [showSaveSuccess, setShowSaveSuccess] = useState(false)
+
+  // 未完成确认弹窗
+  const [showIncompleteConfirm, setShowIncompleteConfirm] = useState(false)
+  const [incompleteCount, setIncompleteCount] = useState(0)
 
   // 断点恢复逻辑（检查是否有草稿）
   const [showDraftPrompt, setShowDraftPrompt] = useState(false)
@@ -193,6 +201,35 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
 
   // 提交听写
   const handleSubmit = async () => {
+    // 检查未输入的单词数量（不包括"还未掌握"的单词）
+    let emptyCount = 0
+    state.wordInputs.forEach(sentence => {
+      sentence.forEach(word => {
+        if (!word.isSkipped && !word.value.trim()) {
+          emptyCount++
+        }
+      })
+    })
+
+    // 如果有未输入的单词，显示确认对话框
+    if (emptyCount > 0) {
+      setIncompleteCount(emptyCount)
+      setShowIncompleteConfirm(true)
+      return
+    }
+
+    // 没有未输入的单词，直接提交
+    await doSubmit()
+  }
+
+  // 确认后继续提交
+  const handleConfirmSubmit = async () => {
+    setShowIncompleteConfirm(false)
+    await doSubmit()
+  }
+
+  // 实际提交逻辑
+  const doSubmit = async () => {
     setSubmitError(null)
     setIsSubmitting(true)
 
@@ -254,6 +291,38 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
     setGradingResult(null)
   }
 
+  // 手动保存草稿
+  const handleSaveDraft = async () => {
+    setIsSaving(true)
+    try {
+      const response = await fetch('/api/speaker/draft', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          articleId: article.id,
+          userId,
+          draft: {
+            wordInputs: state.wordInputs,
+            activeSentenceIndex: state.activeSentenceIndex,
+            skippedWords: state.wordInputs.flat().map((w, i) => w.isSkipped ? i : -1).filter(i => i >= 0),
+            savedAt: new Date().toISOString()
+          }
+        })
+      })
+
+      if (response.ok) {
+        setShowSaveSuccess(true)
+        setTimeout(() => setShowSaveSuccess(false), 2000)
+      } else {
+        console.error('[Dictation] 保存草稿失败')
+      }
+    } catch (error) {
+      console.error('[Dictation] 保存草稿异常:', error)
+    } finally {
+      setIsSaving(false)
+    }
+  }
+
   return (
     <div className="min-h-screen bg-white transition-colors duration-300 flex flex-col" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       {/* 顶部导航栏 - Neo-Brutalism */}
@@ -300,6 +369,16 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
                   </button>
                 ))}
               </div>
+
+              {/* 历史记录按钮 - 右上角 */}
+              <button
+                onClick={() => router.push(`/speaker/dictation-history?id=${article.id}`)}
+                className="ml-4 inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] dark:hover:shadow-[1px_1px_0px_0px_#666] hover:-translate-y-0.5 text-black dark:text-white text-sm font-black transition-all duration-150"
+                title="查看历史记录"
+              >
+                <History className="w-4 h-4" strokeWidth={2.5} />
+                <span>历史记录</span>
+              </button>
             </div>
           </div>
         </div>
@@ -417,7 +496,46 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
         </div>
       )}
 
-      {/* 底部固定栏 - 进度 + 历史记录 + 提交按钮 */}
+      {/* 未完成确认弹窗 - Neo-Brutalism */}
+      {showIncompleteConfirm && (
+        <div className="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+          <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[8px_8px_0px_0px_#000] dark:shadow-[8px_8px_0px_0px_#666] p-8 max-w-md w-full transition-colors duration-300">
+            <div className="flex items-center gap-3 mb-4">
+              <div className="w-12 h-12 bg-amber-400 border-[3px] border-black flex items-center justify-center flex-shrink-0">
+                <AlertCircle className="w-6 h-6 text-black" strokeWidth={2.5} />
+              </div>
+              <h3 className="text-xl font-black tracking-tight uppercase text-black dark:text-white transition-colors duration-300">
+                检测到您还有 {incompleteCount} 个未听写的单词
+              </h3>
+            </div>
+
+            <p className="text-sm font-bold text-gray-700 dark:text-gray-300 mb-2">
+              是否继续？
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mb-8">
+              若继续，未听写的单词将加入生词本
+            </p>
+
+            <div className="flex gap-3">
+              <button
+                onClick={() => setShowIncompleteConfirm(false)}
+                className="flex-1 px-6 py-3 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 text-black dark:text-white font-black text-sm uppercase tracking-wider hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-0.5 transition-all duration-150"
+              >
+                返回修改
+              </button>
+              <button
+                onClick={handleConfirmSubmit}
+                disabled={isSubmitting}
+                className="flex-1 px-6 py-3 bg-[#B4F416] border-[3px] border-black text-black font-black text-sm uppercase tracking-wider hover:shadow-[0_0_20px_#B4F416] transition-all duration-150 disabled:opacity-50"
+              >
+                {isSubmitting ? '提交中...' : '继续提交'}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 底部固定栏 - 进度 + 保存 + 提交按钮 */}
       <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t-[3px] border-black dark:border-gray-600 shadow-[0_-4px_0px_0px_rgba(0,0,0,0.1)] z-40">
         <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
           <div className="flex items-center justify-between gap-4">
@@ -430,29 +548,55 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
             </div>
 
             <div className="flex items-center gap-3">
-              {/* 历史记录按钮 */}
+              {/* 保存按钮 */}
               <button
-                onClick={() => router.push(`/speaker/dictation-history?id=${article.id}`)}
-                className="hidden sm:inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] dark:hover:shadow-[1px_1px_0px_0px_#666] hover:-translate-y-0.5 text-black dark:text-white text-sm font-black transition-all duration-150"
-                title="查看历史记录"
+                onClick={handleSaveDraft}
+                disabled={isSaving}
+                className={`
+                  inline-flex flex-col items-center justify-center px-4 py-2.5 border-2 font-black text-sm tracking-wider uppercase transition-all duration-150 min-w-[100px]
+                  ${showSaveSuccess
+                    ? 'bg-green-500 text-white border-green-500'
+                    : 'bg-white dark:bg-gray-800 text-black dark:text-white border-black dark:border-gray-600 hover:bg-[#B4F416] hover:text-black hover:border-[#B4F416] shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000]'
+                  }
+                  ${isSaving ? 'opacity-50 cursor-not-allowed' : ''}
+                `}
               >
-                <History className="w-4 h-4" strokeWidth={2.5} />
-                <span>历史记录</span>
+                {showSaveSuccess ? (
+                  <>
+                    <span className="flex items-center gap-1">
+                      <Check className="w-4 h-4" strokeWidth={2.5} />
+                      已保存
+                    </span>
+                    <span className="text-[10px] font-normal normal-case">下次继续</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="flex items-center gap-1">
+                      <Save className="w-4 h-4" strokeWidth={2.5} />
+                      {isSaving ? '保存中...' : '临时保存'}
+                    </span>
+                    <span className="text-[10px] font-normal normal-case">下次继续</span>
+                  </>
+                )}
               </button>
 
-              {/* 提交按钮 - 大按钮 */}
+              {/* 提交按钮 - 下一步 */}
               <button
                 onClick={handleSubmit}
                 disabled={state.isSubmitted || isSubmitting}
                 className={`
-                  flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 border-2 font-black text-sm tracking-wider uppercase transition-all duration-150 min-w-[140px]
+                  inline-flex flex-col items-center justify-center px-6 py-2.5 border-2 font-black text-sm tracking-wider uppercase transition-all duration-150 min-w-[140px]
                   ${state.isSubmitted || isSubmitting
                     ? 'bg-gray-400 text-gray-600 border-gray-400 cursor-not-allowed'
-                    : 'bg-black dark:bg-gray-800 text-white border-black dark:border-gray-600 hover:bg-[#B4F416] hover:text-black hover:border-[#B4F416] hover:shadow-[4px_4px_0px_0px_#B4F416]'
+                    : 'bg-black dark:bg-gray-800 text-white border-black dark:border-gray-600 hover:bg-[#B4F416] hover:text-black hover:border-[#B4F416] shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#B4F416]'
                   }
                 `}
               >
-                {isSubmitting ? '提交中...' : state.isSubmitted ? '✓ 已完成' : '提交听写'}
+                <span className="flex items-center gap-1">
+                  {isSubmitting ? '提交中...' : state.isSubmitted ? '✓ 已完成' : '下一步'}
+                  {!state.isSubmitted && !isSubmitting && <ArrowRight className="w-4 h-4" strokeWidth={2.5} />}
+                </span>
+                <span className="text-[10px] font-normal normal-case">全文查错词</span>
               </button>
             </div>
           </div>

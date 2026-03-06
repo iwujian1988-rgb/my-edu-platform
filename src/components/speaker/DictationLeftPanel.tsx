@@ -21,6 +21,12 @@ import { Play, Volume2 } from 'lucide-react'
 import type { SpeakerSentence } from '@/types/speaker'
 import type { SentenceMaskState } from '@/hooks/useSpeakerDictationV2'
 
+// 检测是否为触摸设备（包括 iPad）
+function isTouchDevice() {
+  if (typeof window === 'undefined') return false
+  return 'ontouchstart' in window || navigator.maxTouchPoints > 0
+}
+
 interface DictationLeftPanelProps {
   sentences: SpeakerSentence[]
   sentenceMasks: SentenceMaskState[]
@@ -51,19 +57,29 @@ function SentenceCard({
   globalMaskEnabled: boolean
   isActive: boolean
 }) {
+  // 检测是否为触摸设备
+  const [isTouch, setIsTouch] = useState(false)
+
+  useEffect(() => {
+    setIsTouch(isTouchDevice())
+  }, [])
+
   // PC端：鼠标悬停临时透视（添加延迟，避免鼠标经过时误触发）
   const [isHovered, setIsHovered] = useState(false)
   const hoverTimerRef = useRef<NodeJS.Timeout | null>(null)
 
-  // 移动端：长按临时透视
+  // 触摸设备：长按临时透视
   const [isLongPressing, setIsLongPressing] = useState(false)
   const longPressTimerRef = useRef<NodeJS.Timeout | null>(null)
 
   // 判断是否应该显示遮罩
   const shouldMask = globalMaskEnabled && !isHovered && !isLongPressing
 
-  // PC端鼠标事件（添加300ms延迟）
+  // PC端鼠标事件（添加500ms延迟）
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    // 触摸设备不启用鼠标悬停
+    if (isTouch) return
+
     if (globalMaskEnabled) {
       // 检查是否真正悬停在文字区域
       const target = e.target as HTMLElement
@@ -85,6 +101,9 @@ function SentenceCard({
   }
 
   const handleMouseLeave = () => {
+    // 触摸设备不启用鼠标悬停
+    if (isTouch) return
+
     if (globalMaskEnabled) {
       // 清除延迟定时器（如果还未触发）
       if (hoverTimerRef.current) {
@@ -96,7 +115,7 @@ function SentenceCard({
     }
   }
 
-  // 移动端长按事件
+  // 触摸设备长按事件
   const handleTouchStart = () => {
     if (globalMaskEnabled) {
       longPressTimerRef.current = setTimeout(() => {
@@ -184,10 +203,12 @@ function SentenceCard({
         </div>
       </div>
 
-      {/* 移动端提示 */}
-      <div className="md:hidden mt-2 text-xs font-mono font-bold text-gray-500 dark:text-gray-400 text-center">
-        {globalMaskEnabled && '👆 长按可临时查看原文'}
-      </div>
+      {/* 触摸设备提示 - 使用 isTouch 检测而不是屏幕尺寸 */}
+      {isTouch && globalMaskEnabled && (
+        <div className="mt-2 text-xs font-mono font-bold text-gray-500 dark:text-gray-400 text-center">
+          👆 长按可临时查看原文
+        </div>
+      )}
     </div>
   )
 }
@@ -212,6 +233,13 @@ export function DictationLeftPanel({
   const containerRef = useRef<HTMLDivElement>(null)
   const cardsContainerRef = useRef<HTMLDivElement>(null)
   const isObserverReadyRef = useRef(false)  // 标记 IntersectionObserver 是否已准备好
+
+  // 检测是否为触摸设备
+  const [isTouch, setIsTouch] = useState(false)
+
+  useEffect(() => {
+    setIsTouch(isTouchDevice())
+  }, [])
 
   // ========================================
   // 1. 双栏同步滚动：当右侧激活的句子变化时，自动滚动左侧
@@ -314,14 +342,18 @@ export function DictationLeftPanel({
             全局遮罩原文
           </span>
         </label>
-        {/* PC端提示 */}
-        <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 ml-8 hidden md:block">
-          鼠标悬停查看原文
-        </p>
-        {/* 移动端提示 */}
-        <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 ml-8 md:hidden">
-          长按查看原文
-        </p>
+        {/* PC端提示 - 非触摸设备 */}
+        {!isTouch && (
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 ml-8">
+            鼠标悬停查看原文
+          </p>
+        )}
+        {/* 触摸设备提示 */}
+        {isTouch && (
+          <p className="text-xs text-gray-600 dark:text-gray-400 mt-2 ml-8">
+            长按查看原文
+          </p>
+        )}
       </div>
 
       {/* 句子列表（可滚动） - 使用 space-y-4 和右侧保持一致 */}

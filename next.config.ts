@@ -22,6 +22,7 @@ const withPWA = withPWAInit({
     faviconPath: "/icons/icon-192.png",
   },
   workboxOptions: {
+    cleanupOutdatedCaches: true,
     disableDevLogs: true,
     // ✅ 明确排除 API 请求的缓存
     runtimeCaching: [
