@@ -154,8 +154,8 @@ export function LearningPlanSetup({ bookId, bookTitle, totalWords, editingPlan, 
   if (isInDialog) {
     return (
       <form onSubmit={handleSubmit} className="flex flex-col h-full">
-        {/* 表单内容区域 */}
-        <div className="flex-1 space-y-5 pb-4">
+        {/* 表单内容区域 - 添加 overflow-y-auto 支持滚动 */}
+        <div className="flex-1 overflow-y-auto p-4 space-y-5">
           {/* 书籍标题 */}
           {book && (
             <div className="pb-4 border-b">

@@ -309,12 +309,12 @@ function SentenceInput({
                   transition-all duration-150
                   outline-none
                   ${checkResult === true
-                    ? 'border-green-500 bg-green-50 text-white dark:bg-green-900/30 dark:text-green-300 dark:border-green-500'
+                    ? 'border-green-500 bg-green-50 text-green-700 dark:bg-green-900/30 dark:text-green-300 dark:border-green-500'
                     : checkResult === false
-                      ? 'border-red-500 bg-red-50 text-white dark:bg-red-900/30 dark:text-red-300 dark:border-red-500'
+                      ? 'border-red-500 bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300 dark:border-red-500'
                       : isFocused
-                        ? 'border-black dark:border-gray-400 bg-[#B4F416]/20 text-white'
-                        : 'border-gray-300 dark:border-gray-600 text-white hover:border-black dark:hover:border-gray-400'
+                        ? 'border-black dark:border-gray-400 bg-[#B4F416]/20 text-gray-900 dark:text-white'
+                        : 'border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-black dark:hover:border-gray-400'
                   }
                   ${isSkipped ? 'opacity-50 line-through text-gray-400' : ''}
                 `}

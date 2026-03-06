@@ -489,7 +489,7 @@ export function LearningPlanWorkspace({ books }: { books: BookData[] }) {
           </div>
 
           {/* Content - 可滚动区域 */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 min-h-0">
+          <div className={`flex-1 min-h-0 ${showSetupForm ? 'overflow-hidden' : 'overflow-y-auto p-4 space-y-4'}`}>
             {!showSetupForm && (
               <>
                 <p className={`text-xs font-black uppercase tracking-wider ${
@@ -560,20 +560,22 @@ export function LearningPlanWorkspace({ books }: { books: BookData[] }) {
             )}
 
             {showSetupForm && (selectedBookForPlan || editingPlan) && (
-              <LearningPlanSetup
-                bookId={selectedBookForPlan?.id || editingPlan?.book_id || ''}
-                bookTitle={selectedBookForPlan?.title || editingBookTitle}
-                totalWords={selectedBookForPlan?.total_words || editingPlan?.total_words}
-                editingPlan={editingPlan}
-                onSuccess={editingPlan ? handleEditCompleted : handlePlanCreated}
-                isInDialog={true}
-                onCancel={() => {
-                  setShowSetupForm(false)
-                  setSelectedBookForPlan(null)
-                  setEditingPlan(null)
-                  setEditingBookTitle('')
-                }}
-              />
+              <div className="h-full">
+                <LearningPlanSetup
+                  bookId={selectedBookForPlan?.id || editingPlan?.book_id || ''}
+                  bookTitle={selectedBookForPlan?.title || editingBookTitle}
+                  totalWords={selectedBookForPlan?.total_words || editingPlan?.total_words}
+                  editingPlan={editingPlan}
+                  onSuccess={editingPlan ? handleEditCompleted : handlePlanCreated}
+                  isInDialog={true}
+                  onCancel={() => {
+                    setShowSetupForm(false)
+                    setSelectedBookForPlan(null)
+                    setEditingPlan(null)
+                    setEditingBookTitle('')
+                  }}
+                />
+              </div>
             )}
           </div>
         </div>
