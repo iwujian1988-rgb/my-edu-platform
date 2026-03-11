@@ -30,7 +30,7 @@ async function getProxyFetch(): Promise<typeof fetch | undefined> {
     return proxyFetch
   }
 
-  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || 'http://127.0.0.1:7890'
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || 'http://127.0.0.1:12334'
 
   try {
     const { ProxyAgent, fetch: undiciFetch } = await import('undici')

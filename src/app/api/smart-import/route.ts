@@ -129,12 +129,12 @@ export async function POST(request: Request) {
     const cacheAvailable = await isRedisAvailable()
 
     // 3. 调用有道词典API获取单词信息（带缓存和重试）
-    const results = []
-    const totalBatches = Math.ceil(uniqueWords.length / MAX_CONCURRENT)
-
     // 🔒 安全性：使用Promise.allSettle并发调用，设置超时
     const API_TIMEOUT = 6000 // 6秒超时（降低以提高响应速度）
     const MAX_CONCURRENT = 20 // 最多并发20个请求（提升吞吐量）
+
+    const results = []
+    const totalBatches = Math.ceil(uniqueWords.length / MAX_CONCURRENT)
 
     for (let i = 0; i < uniqueWords.length; i += MAX_CONCURRENT) {
       const batch = uniqueWords.slice(i, i + MAX_CONCURRENT)

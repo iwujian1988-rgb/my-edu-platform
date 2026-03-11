@@ -4,16 +4,23 @@
  * 功能：
  * 1. 查询数据库中是否已有音频 URL
  * 2. 如果有，返回 307 重定向
- * 3. 如果没有，从有道 API 获取音频
+ * 3. 如果没有，从有道 API 获取音频（仅英语）
  * 4. 上传到 OSS 并更新数据库
  * 5. 返回音频流
  *
- * @route GET /api/tts?text={word}&type={1|2}
+ * 多语言支持：
+ * - 英语 (en): 使用有道 TTS API
+ * - 其他语言 (fr, de, es, ja, it, ru): 返回 404，客户端回退到 Web Speech API
+ *
+ * @route GET /api/tts?text={word}&type={1|2}&language={en|fr|de|es|ja|it|ru}
  */
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/server'
 import { getOSSClient, generateSafeFileName, uploadAudioAsync } from '@/lib/oss'
+
+/** 支持的语言 */
+type SupportedLanguage = 'en' | 'fr' | 'de' | 'es' | 'ja' | 'it' | 'ru'
 
 /**
  * 浏览器 User-Agent（用于伪装，避免被有道拦截）
@@ -21,7 +28,7 @@ import { getOSSClient, generateSafeFileName, uploadAudioAsync } from '@/lib/oss'
 const BROWSER_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
 /**
- * 有道语音 API 配置
+ * 有道语音 API 配置（仅支持英语）
  */
 const YOUDAO_TTS_BASE_URL = 'https://dict.youdao.com/dictvoice'
 
@@ -34,6 +41,7 @@ export async function GET(request: NextRequest) {
     const searchParams = request.nextUrl.searchParams
     const text = searchParams.get('text')
     const type = searchParams.get('type') || '2' // 默认美音
+    const language = (searchParams.get('language') || 'en') as SupportedLanguage
 
     // 2. 参数验证
     if (!text) {
@@ -57,7 +65,18 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    console.log(`🎯 [TTS API] 请求: text="${text}", type=${type}`)
+    console.log(`🎯 [TTS API] 请求: text="${text}", type=${type}, language=${language}`)
+
+    // 3. 非英语语言：直接返回 404，让客户端使用 Web Speech API
+    // 有道 API 只支持英语，其他语言需要回退到浏览器 TTS
+    if (language !== 'en') {
+      console.log(`⚠️ [TTS API] 语言 ${language} 不支持有道TTS，建议使用 Web Speech API`)
+      return NextResponse.json(
+        { error: `${language} 语言暂不支持服务器端TTS，请使用浏览器 Web Speech API`,
+        fallback: 'webspeech',
+        language
+      }, { status: 404 })
+    }
 
     // 3. 查询数据库（精确匹配单词）
     const supabase = await createAdminClient()

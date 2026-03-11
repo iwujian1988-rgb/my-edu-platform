@@ -8,7 +8,7 @@
 export async function register() {
   // 只在开发环境且在服务器端配置代理
   if (process.env.NEXT_RUNTIME === 'nodejs' && process.env.NODE_ENV === 'development') {
-    const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || 'http://127.0.0.1:7890'
+    const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || 'http://127.0.0.1:12334'
 
     if (proxyUrl) {
       try {

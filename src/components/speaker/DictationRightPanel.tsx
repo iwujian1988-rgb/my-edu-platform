@@ -71,6 +71,9 @@ function SentenceInput({
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [checkResults, setCheckResults] = useState<{[key: number]: boolean}>({})
+  const [isDemoMode, setIsDemoMode] = useState(false)
+  const demoTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const isDemoModeRef = useRef(false)  // 用 ref 跟踪演示状态，避免闭包问题
 
   // 解析句子为 tokens（单词 + 标点）
   const tokens = parseSentenceTokens(sentence.text_en)
@@ -103,6 +106,114 @@ function SentenceInput({
     })
     setCheckResults(results)
   }
+
+  // 演示模式：模拟真实用户打字
+  const startDemoMode = async () => {
+    if (isDemoMode) return
+
+    setIsDemoMode(true)
+    isDemoModeRef.current = true  // 设置 ref 状态
+    console.log('[Demo] 开始演示模式')
+
+    // 清空当前句子的所有输入
+    handleClearSentence()
+
+    // 遍历每个单词
+    for (let wordIndex = 0; wordIndex < inputWords.length; wordIndex++) {
+      const correctWord = inputWords[wordIndex]
+
+      // 随机决定是否输入错误（20%概率）
+      const shouldMakeError = Math.random() < 0.2
+      let textToType = correctWord
+
+      if (shouldMakeError) {
+        // 随机替换一个字符为错误的字符
+        const errorPosition = Math.floor(Math.random() * correctWord.length)
+        const wrongChar = String.fromCharCode(97 + Math.floor(Math.random() * 26)) // 随机字母
+        textToType = correctWord.substring(0, errorPosition) + wrongChar + correctWord.substring(errorPosition + 1)
+      }
+
+      // 逐字输入
+      for (let charIndex = 0; charIndex < textToType.length; charIndex++) {
+        const currentText = textToType.substring(0, charIndex + 1)
+        onUpdateWordInput(wordIndex, currentText)
+
+        // 随机延迟（50-150ms）
+        await new Promise(resolve => {
+          demoTimeoutRef.current = setTimeout(resolve, 50 + Math.random() * 100)
+        })
+
+        // 使用 ref 检查状态（避免闭包问题）
+        if (!isDemoModeRef.current) return
+      }
+
+      // 如果输入了错误，等待一会儿再纠正
+      if (shouldMakeError) {
+        await new Promise(resolve => {
+          demoTimeoutRef.current = setTimeout(resolve, 300 + Math.random() * 500)
+        })
+
+        // 逐字删除错误的单词
+        for (let i = textToType.length - 1; i >= 0; i--) {
+          onUpdateWordInput(wordIndex, textToType.substring(0, i))
+          await new Promise(resolve => {
+            demoTimeoutRef.current = setTimeout(resolve, 30 + Math.random() * 50)
+          })
+          if (!isDemoModeRef.current) return
+        }
+
+        // 重新输入正确的单词
+        for (let charIndex = 0; charIndex < correctWord.length; charIndex++) {
+          const currentText = correctWord.substring(0, charIndex + 1)
+          onUpdateWordInput(wordIndex, currentText)
+          await new Promise(resolve => {
+            demoTimeoutRef.current = setTimeout(resolve, 50 + Math.random() * 100)
+          })
+          if (!isDemoModeRef.current) return
+        }
+      }
+
+      // 单词之间停顿（模拟思考，200-800ms）
+      if (wordIndex < inputWords.length - 1) {
+        await new Promise(resolve => {
+          demoTimeoutRef.current = setTimeout(resolve, 200 + Math.random() * 600)
+        })
+      }
+    }
+
+    console.log('[Demo] 演示完成')
+    setIsDemoMode(false)
+    isDemoModeRef.current = false
+  }
+
+  // 停止演示模式
+  const stopDemoMode = () => {
+    if (demoTimeoutRef.current) {
+      clearTimeout(demoTimeoutRef.current)
+      demoTimeoutRef.current = null
+    }
+    setIsDemoMode(false)
+    isDemoModeRef.current = false
+    console.log('[Demo] 演示已停止')
+  }
+
+  // 双击 ⌨️ 图标切换演示模式
+  const handleKeyboardDoubleClick = () => {
+    if (isDemoMode) {
+      stopDemoMode()
+    } else {
+      startDemoMode()
+    }
+  }
+
+  // 组件卸载时清理定时器
+  useEffect(() => {
+    return () => {
+      if (demoTimeoutRef.current) {
+        clearTimeout(demoTimeoutRef.current)
+      }
+    }
+  }, [])
 
   // 自动聚焦到当前输入框
   useEffect(() => {
@@ -352,7 +463,13 @@ function SentenceInput({
       {/* 右键提示 */}
       {isActive && (
         <div className="mt-3 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
-          <span className="text-base">⌨️</span>
+          <span
+            className="text-base cursor-pointer select-none"
+            onDoubleClick={handleKeyboardDoubleClick}
+            title="双击开始演示模式"
+          >
+            ⌨️
+          </span>
           <span className="font-mono">空格跳转 | 回车换句</span>
           <span className="mx-1">•</span>
           <span className="text-base">🖱️</span>

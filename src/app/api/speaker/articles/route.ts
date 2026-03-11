@@ -18,19 +18,19 @@ import { getSpeakerArticles } from '../../../../lib/speaker-data'
 /**
  * GET 处理器：获取文章列表
  *
- * @queryParam level - 可选，难度等级（1、2 或 3）
+ * @queryParam level - 可选，难度等级（1、2、3、4、5）
  * @queryParam language - 可选，语种（en, pl, es, fr, de, ja）
  * @queryParam category - 可选，分类（健康、心理、成长、学习、社交、生活）
- * @queryParam limit - 可选，返回数量限制
+ * @queryParam page - 可选，页码（默认1）
+ * @queryParam pageSize - 可选，每页数量（默认12）
  * @queryParam status - 可选，文章状态（active 或 archived，默认 active）
  *
- * @returns { articles: SpeakerArticle[], total: number }
+ * @returns { articles: SpeakerArticle[], total: number, page: number, pageSize: number, totalPages: number }
  *
  * @example
  * GET /api/speaker/articles
- * GET /api/speaker/articles?level=2
- * GET /api/speaker/articles?language=en&category=健康
- * GET /api/speaker/articles?level=3&limit=5
+ * GET /api/speaker/articles?level=2&page=1&pageSize=12
+ * GET /api/speaker/articles?language=en&category=健康&page=2
  */
 export async function GET(request: Request) {
   console.log('[Speaker API] 收到文章列表请求')
@@ -41,14 +41,16 @@ export async function GET(request: Request) {
     const levelParam = searchParams.get('level')
     const languageParam = searchParams.get('language')
     const categoryParam = searchParams.get('category')
-    const limitParam = searchParams.get('limit')
-    const statusParam = searchParams.get('status') // 移除默认值，让 data 层处理
+    const pageParam = searchParams.get('page')
+    const pageSizeParam = searchParams.get('pageSize')
+    const statusParam = searchParams.get('status')
 
     console.log('[Speaker API] 查询参数:', {
       level: levelParam,
       language: languageParam,
       category: categoryParam,
-      limit: limitParam,
+      page: pageParam,
+      pageSize: pageSizeParam,
       status: statusParam
     })
 
@@ -93,11 +95,22 @@ export async function GET(request: Request) {
       )
     }
 
-    const limit = limitParam ? parseInt(limitParam, 10) : undefined
-    if (limitParam && isNaN(limit!)) {
-      console.warn('[Speaker API] ⚠️ 无效的 limit 参数:', limitParam)
+    // 解析分页参数
+    const page = pageParam ? parseInt(pageParam, 10) : 1
+    const pageSize = pageSizeParam ? parseInt(pageSizeParam, 10) : 12
+
+    if (pageParam && (isNaN(page) || page < 1)) {
+      console.warn('[Speaker API] ⚠️ 无效的 page 参数:', pageParam)
       return NextResponse.json(
-        { error: 'INVALID_LIMIT', message: 'limit 必须是有效的数字' },
+        { error: 'INVALID_PAGE', message: 'page 必须是有效的正整数' },
+        { status: 400 }
+      )
+    }
+
+    if (pageSizeParam && (isNaN(pageSize) || pageSize < 1 || pageSize > 100)) {
+      console.warn('[Speaker API] ⚠️ 无效的 pageSize 参数:', pageSizeParam)
+      return NextResponse.json(
+        { error: 'INVALID_PAGE_SIZE', message: 'pageSize 必须是 1-100 之间的整数' },
         { status: 400 }
       )
     }
@@ -106,13 +119,16 @@ export async function GET(request: Request) {
     const supabase = await createClient()
 
     // 4. 查询文章列表（RLS 会自动过滤未购语言）
-    const articles = await getSpeakerArticles(supabase, {
+    const { articles, total } = await getSpeakerArticles(supabase, {
       level,
       language,
       category,
-      limit,
+      page,
+      pageSize,
       status: statusParam as 'active' | 'archived'
     })
+
+    const totalPages = Math.ceil(total / pageSize)
 
     // 5. 获取当前用户信息（如果有）
     const { data: { user } } = await supabase.auth.getUser()
@@ -145,11 +161,16 @@ export async function GET(request: Request) {
     }
 
     // 7. 返回结果
-    console.log('[Speaker API] ✅ 成功返回文章列表:', { count: articlesWithProgress.length })
+    console.log('[Speaker API] ✅ 成功返回文章列表:', { count: articlesWithProgress.length, total, page, pageSize })
 
     return NextResponse.json({
       articles: articlesWithProgress,
-      total: articlesWithProgress.length
+      pagination: {
+        total,
+        page,
+        pageSize,
+        totalPages
+      }
     })
 
   } catch (error) {

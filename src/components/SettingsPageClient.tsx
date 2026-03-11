@@ -17,6 +17,12 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
   const { theme, themeMode, setThemeMode, mounted } = useTheme()
   const [showPasswordModal, setShowPasswordModal] = useState(false)
 
+  // 企业微信客服链接
+  const WECHAT_KF_URL = 'https://work.weixin.qq.com/kfid/kfc49c2602e3dbe2fc1'
+
+  // 检测是否为移动端
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+
   return (
     <>
       {/* 全站左侧导航 - 传递必需的props */}
@@ -188,7 +194,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
                 </div>
               </div>
               <button
-                onClick={() => alert('请联系购买平台客服')}
+                onClick={() => window.open('https://work.weixin.qq.com/kfid/kfc49c2602e3dbe2fc1', '_blank')}
                 className="px-6 py-3 bg-[#B4F416] border-[3px] border-black rounded font-black text-sm hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 transition-all"
               >
                 联系

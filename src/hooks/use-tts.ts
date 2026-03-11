@@ -1,5 +1,5 @@
 /**
- * TTS Hook - 混合策略实现
+ * TTS Hook - 混合策略实现（多语言支持）
  *
  * 播放逻辑链（Chain of Responsibility）：
  * 1. 如果传入 audioUrl → 直接播放 OSS 音频
@@ -7,24 +7,35 @@
  * 3. 如果上述步骤失败 → 回退到 Web Speech API
  *
  * @example
- * const { play, isPlaying, isLoading } = useTTS()
- * await play('hello', existingAudioUrl)
+ * // 英语（默认）
+ * const { play } = useTTS()
+ * await play('hello')
+ *
+ * // 法语
+ * const { play } = useTTS({ language: 'fr' })
+ * await play('bonjour')
+ *
+ * // 动态切换语言
+ * await play('hello', null, 'en')
+ * await play('bonjour', null, 'fr')
  */
 
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { toast } from 'sonner'
-import { speak as webSpeechSpeak, stopSpeaking } from '@/lib/speech'
+import { speak as webSpeechSpeak, stopSpeaking, getWebSpeechLang, SupportedLanguage } from '@/lib/speech'
 
 export interface UseTTSOptions {
-  /** 发音类型：1=英音, 2=美音 (默认: 2) */
+  /** 发音类型：1=英音, 2=美音 (默认: 2，仅英语有效) */
   type?: '1' | '2'
+  /** 语言代码 (默认: 'en') */
+  language?: SupportedLanguage
   /** 是否在降级时显示 Toast 提示 (默认: true) */
   showFallbackToast?: boolean
 }
 
 export interface UseTTSReturn {
   /** 播放语音 */
-  play: (text: string, audioUrl?: string | null) => Promise<void>
+  play: (text: string, audioUrl?: string | null, language?: SupportedLanguage) => Promise<void>
   /** 停止播放 */
   stop: () => void
   /** 预加载音频（后台加载，不播放） */
@@ -33,16 +44,19 @@ export interface UseTTSReturn {
   isPlaying: boolean
   /** 是否正在加载 */
   isLoading: boolean
+  /** 当前语言 */
+  language: SupportedLanguage
 }
 
 /**
  * TTS Hook
  */
 export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
-  const { type = '2', showFallbackToast = true } = options
+  const { type = '2', language: defaultLanguage = 'en', showFallbackToast = true } = options
 
   const [isPlaying, setIsPlaying] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [currentLanguage, setCurrentLanguage] = useState<SupportedLanguage>(defaultLanguage)
 
   // 使用 ref 存储 Audio 实例，支持组件卸载时清理
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -183,7 +197,7 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
    * 从 /api/tts 获取音频
    */
   const fetchFromAPI = useCallback(
-    async (text: string): Promise<void> => {
+    async (text: string, language: SupportedLanguage = 'en'): Promise<void> => {
       // ========== 边界检查 ==========
       if (!text || text.trim() === '') {
         console.warn(`⚠️ [useTTS] 文本为空，跳过API请求`)
@@ -195,9 +209,11 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
         throw new Error('Text too long')
       }
 
-      const url = `/api/tts?text=${encodeURIComponent(text)}&type=${type}`
+      // 根据语言选择有道 TTS 类型
+      const youdaoType = language === 'en' ? type : '1'
+      const url = `/api/tts?text=${encodeURIComponent(text)}&type=${youdaoType}&language=${language}`
 
-      console.log(`📡 [useTTS] 请求API: text="${text}", type=${type}`)
+      console.log(`📡 [useTTS] 请求API: text="${text}", type=${youdaoType}, language=${language}`)
 
       // 添加超时保护
       const controller = new AbortController()
@@ -245,21 +261,21 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
    * 回退到 Web Speech API
    */
   const fallbackToWebSpeech = useCallback(
-    (text: string): void => {
+    (text: string, language: SupportedLanguage = 'en'): void => {
       // ========== 边界检查 ==========
       if (!text || text.trim() === '') {
         console.warn(`⚠️ [useTTS] 文本为空，跳过Web Speech`)
         return
       }
 
-      console.log(`🔄 [useTTS] 回退到Web Speech: text="${text}"`)
+      console.log(`🔄 [useTTS] 回退到Web Speech: text="${text}", language=${language}`)
 
       // 停止之前的语音
       stopSpeaking()
 
-      // 使用 Web Speech API
+      // 使用 Web Speech API，传入语言参数
       const success = webSpeechSpeak(text, {
-        lang: type === '1' ? 'en-GB' : 'en-US',
+        language: language,
         rate: 1.0,
         pitch: 1.0,
         volume: 1.0,
@@ -287,7 +303,7 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
         }
       }
     },
-    [type]
+    []
   )
 
   /**
@@ -345,17 +361,22 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
   /**
    * 主播放函数
    * 🔧 优化：检查预加载缓存
+   * 🔧 新增：支持语言参数
    */
   const play = useCallback(
-    async (text: string, audioUrl?: string | null): Promise<void> => {
+    async (text: string, audioUrl?: string | null, language?: SupportedLanguage): Promise<void> => {
       // ========== 边界检查 ==========
       if (!text || text.trim() === '') {
         console.warn(`⚠️ [useTTS] 空文本，忽略`)
         return
       }
 
+      // 使用传入的语言或默认语言
+      const langToUse = language || defaultLanguage
+      setCurrentLanguage(langToUse)
+
       console.log(
-        `🎯 [useTTS] 播放请求: text="${text}", type=${type}, audioUrl=${audioUrl || 'none'}`
+        `🎯 [useTTS] 播放请求: text="${text}", language=${langToUse}, audioUrl=${audioUrl || 'none'}`
       )
 
       setIsLoading(true)
@@ -370,8 +391,8 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
         }
 
         // 策略 2: 从 API 获取音频
-        console.log(`🔄 [useTTS] 从API获取音频...`)
-        await fetchFromAPI(text)
+        console.log(`🔄 [useTTS] 从API获取音频 (language=${langToUse})...`)
+        await fetchFromAPI(text, langToUse)
       } catch (error) {
         console.error(
           `❌ [useTTS] 音频获取失败，回退到Web Speech:`,
@@ -386,10 +407,10 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
           })
         }
 
-        fallbackToWebSpeech(text)
+        fallbackToWebSpeech(text, langToUse)
       }
     },
-    [type, playAudioFile, fetchFromAPI, fallbackToWebSpeech, showFallbackToast]
+    [defaultLanguage, playAudioFile, fetchFromAPI, fallbackToWebSpeech, showFallbackToast]
   )
 
   /**
@@ -439,5 +460,6 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
     preload,  // 🆕 导出预加载函数
     isPlaying,
     isLoading,
+    language: currentLanguage,  // 🆕 当前语言
   }
 }

@@ -3,6 +3,7 @@
 import { AppSidebar } from './AppSidebar'
 import { DashboardContent } from './DashboardContent'
 import { MobileBottomNav } from './MobileBottomNav'
+import { PromoPopup } from './PromoPopup'
 import type { Book } from '@/types/book'
 import type { ProgressCardProps } from '@/types/progress'
 
@@ -46,6 +47,8 @@ export function DashboardClient({
         userId={userId}
         scopeStatsMap={scopeStatsMap}
       />
+      {/* 运营弹窗 */}
+      <PromoPopup />
     </>
   )
 }

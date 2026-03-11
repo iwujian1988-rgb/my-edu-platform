@@ -9,10 +9,18 @@ import { SpeakerCard } from '@/components/speaker/SpeakerCard'
 import type { SpeakerArticle, ArticleCategory } from '@/types/speaker'
 import { ARTICLE_CATEGORIES } from '@/types/speaker'
 import React from 'react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 
 interface FilterState {
   level: 'all' | 1 | 2 | 3 | 4 | 5
   category: ArticleCategory | 'all'
+}
+
+interface PaginationState {
+  page: number
+  pageSize: number
+  total: number
+  totalPages: number
 }
 
 export function SpeakerPageContent({ initialArticles }: { initialArticles: SpeakerArticle[] }) {
@@ -23,31 +31,44 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
     level: 'all',
     category: 'all'
   })
+  const [pagination, setPagination] = useState<PaginationState>({
+    page: 1,
+    pageSize: 12,
+    total: 0,
+    totalPages: 0
+  })
   const isFirstRender = useRef(true)
 
   // 获取文章列表
   useEffect(() => {
-    // 首次渲染：如果没有初始数据，则获取
-    // 过滤器改变：总是重新获取
     if (isFirstRender.current) {
       if (initialArticles.length === 0) {
         fetchArticles()
       }
       isFirstRender.current = false
     } else {
-      fetchArticles()
+      // 过滤器改变时重置页码
+      setPagination(prev => ({ ...prev, page: 1 }))
+      fetchArticles(1)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filter.level, filter.category])
 
-  const fetchArticles = async () => {
-    console.log('[Speaker Page] 获取文章列表，过滤器:', filter)
+  // 页码改变时获取数据
+  useEffect(() => {
+    if (!isFirstRender.current) {
+      fetchArticles(pagination.page)
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pagination.page])
+
+  const fetchArticles = async (page: number = pagination.page) => {
+    console.log('[Speaker Page] 获取文章列表，过滤器:', filter, '页码:', page)
 
     setLoading(true)
     setError(null)
 
     try {
-      // 构建 URL 参数
       const params = new URLSearchParams()
       if (filter.level !== 'all') {
         params.append('level', filter.level.toString())
@@ -55,6 +76,8 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
       if (filter.category !== 'all') {
         params.append('category', filter.category)
       }
+      params.append('page', page.toString())
+      params.append('pageSize', pagination.pageSize.toString())
 
       const url = `/api/speaker/articles?${params.toString()}`
       console.log('[Speaker Page] 发起请求:', url)
@@ -81,6 +104,13 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
       console.log('[Speaker Page] ✅ 成功获取文章列表:', { count: data.articles.length })
 
       setArticles(data.articles)
+      if (data.pagination) {
+        setPagination(prev => ({
+          ...prev,
+          total: data.pagination.total,
+          totalPages: data.pagination.totalPages
+        }))
+      }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : '未知错误'
       console.error('[Speaker Page] ❌ 获取文章列表失败:', errorMessage)
@@ -88,6 +118,13 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
     } finally {
       setLoading(false)
     }
+  }
+
+  // 翻页
+  const goToPage = (page: number) => {
+    if (page < 1 || page > pagination.totalPages) return
+    setPagination(prev => ({ ...prev, page }))
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -483,12 +520,100 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
           <div className="mt-8 text-center">
             <div className="inline-block px-6 py-3 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] rounded-sm transition-colors duration-300">
               <span className="text-sm font-mono font-bold text-black dark:text-white transition-colors duration-300">
-                共 <span className="text-[#B4F416] text-lg">{articles.length}</span> 篇文章
+                共 <span className="text-[#B4F416] text-lg">{pagination.total}</span> 篇文章
               </span>
             </div>
+          </div>
+        )}
+
+        {/* 分页 */}
+        {!loading && !error && pagination.totalPages > 1 && (
+          <div className="mt-8 flex items-center justify-center gap-2">
+            {/* 上一页 */}
+            <button
+              onClick={() => goToPage(pagination.page - 1)}
+              disabled={pagination.page === 1}
+              className="flex items-center gap-1 px-4 py-2 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-[3px_3px_0px_0px_#000] transition-all font-bold text-sm"
+            >
+              <ChevronLeft className="w-4 h-4" />
+              上一页
+            </button>
+
+            {/* 页码 */}
+            <div className="flex items-center gap-1">
+              {generatePageNumbers(pagination.page, pagination.totalPages).map((pageNum, index) => (
+                pageNum === '...' ? (
+                  <span key={`ellipsis-${index}`} className="px-3 py-2 font-bold text-gray-500">...</span>
+                ) : (
+                  <button
+                    key={pageNum}
+                    onClick={() => goToPage(pageNum as number)}
+                    className={`w-10 h-10 flex items-center justify-center border-[3px] border-black dark:border-gray-600 font-bold text-sm transition-all ${
+                      pagination.page === pageNum
+                        ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]'
+                        : 'bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5'
+                    }`}
+                  >
+                    {pageNum}
+                  </button>
+                )
+              ))}
+            </div>
+
+            {/* 下一页 */}
+            <button
+              onClick={() => goToPage(pagination.page + 1)}
+              disabled={pagination.page === pagination.totalPages}
+              className="flex items-center gap-1 px-4 py-2 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-[3px_3px_0px_0px_#000] transition-all font-bold text-sm"
+            >
+              下一页
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        )}
+
+        {/* 页码信息 */}
+        {!loading && !error && pagination.totalPages > 1 && (
+          <div className="mt-4 text-center text-sm font-mono text-gray-500">
+            第 {pagination.page} / {pagination.totalPages} 页
           </div>
         )}
       </div>
     </div>
   )
+}
+
+// 生成页码数组
+function generatePageNumbers(currentPage: number, totalPages: number): (number | string)[] {
+  const pages: (number | string)[] = []
+  const showPages = 5 // 显示的页码数量
+
+  if (totalPages <= showPages + 2) {
+    // 总页数较少，显示全部
+    for (let i = 1; i <= totalPages; i++) {
+      pages.push(i)
+    }
+  } else {
+    // 总页数较多，显示部分
+    pages.push(1)
+
+    if (currentPage > 3) {
+      pages.push('...')
+    }
+
+    const start = Math.max(2, currentPage - 1)
+    const end = Math.min(totalPages - 1, currentPage + 1)
+
+    for (let i = start; i <= end; i++) {
+      pages.push(i)
+    }
+
+    if (currentPage < totalPages - 2) {
+      pages.push('...')
+    }
+
+    pages.push(totalPages)
+  }
+
+  return pages
 }

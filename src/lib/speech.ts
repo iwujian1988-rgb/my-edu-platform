@@ -1,9 +1,45 @@
 /**
  * Text-to-Speech (TTS) 工具函数
  * 解决Chrome浏览器的speechSynthesis激活问题
+ *
+ * Updated: 2026-03-11 - 添加多语言支持
  */
 
 import { useState, useEffect } from 'react'
+
+// ============================================
+// 多语言配置
+// ============================================
+
+/** 支持的语言代码 */
+export type SupportedLanguage = 'en' | 'fr' | 'de' | 'es' | 'ja' | 'it' | 'ru'
+
+/** 语言代码到 Web Speech API lang 的映射 */
+export const LANGUAGE_TO_WEB_SPEECH_MAP: Record<SupportedLanguage, string> = {
+  en: 'en-US',
+  fr: 'fr-FR',
+  de: 'de-DE',
+  es: 'es-ES',
+  ja: 'ja-JP',
+  it: 'it-IT',
+  ru: 'ru-RU'
+}
+
+/** 语言代码到有道 TTS 类型的映射 */
+export const LANGUAGE_TO_YOUDAO_TYPE: Record<SupportedLanguage, '1' | '2'> = {
+  en: '2',  // 美音
+  fr: '1',
+  de: '1',
+  es: '1',
+  ja: '1',
+  it: '1',
+  ru: '1'
+}
+
+/** 获取语言的 Web Speech API lang 值 */
+export function getWebSpeechLang(language: SupportedLanguage): string {
+  return LANGUAGE_TO_WEB_SPEECH_MAP[language] || 'en-US'
+}
 
 // Chrome TTS引擎状态
 let isTTSAvailable = false
@@ -105,7 +141,8 @@ export async function initializeTTS(): Promise<boolean> {
  * @param options - 可选参数
  */
 export interface SpeakOptions {
-  lang?: string
+  lang?: string           // Web Speech API lang 值（如 'en-US', 'fr-FR'）
+  language?: SupportedLanguage  // 简化的语言代码（如 'en', 'fr'）
   rate?: number
   pitch?: number
   volume?: number
@@ -144,8 +181,13 @@ export function speak(text: string, options: SpeakOptions = {}): boolean {
     // 创建新的utterance
     const utterance = new SpeechSynthesisUtterance(text)
 
+    // 确定语言设置：优先使用 language 参数，其次 lang 参数，最后默认英语
+    const langToUse = options.language
+      ? getWebSpeechLang(options.language)
+      : (options.lang || 'en-US')
+
     // 设置参数
-    utterance.lang = options.lang || 'en-US'
+    utterance.lang = langToUse
     utterance.rate = options.rate || 1.0
     utterance.pitch = options.pitch || 1.0
     utterance.volume = options.volume ?? 1.0
@@ -156,6 +198,14 @@ export function speak(text: string, options: SpeakOptions = {}): boolean {
       const selectedVoice = voices.find(v => v.voiceURI === options.voiceURI)
       if (selectedVoice) {
         utterance.voice = selectedVoice
+      }
+    } else {
+      // 自动选择最匹配的语音
+      const voices = window.speechSynthesis.getVoices()
+      const bestVoice = findBestVoice(voices, langToUse)
+      if (bestVoice) {
+        utterance.voice = bestVoice
+        console.log(`🎙️ TTS: Using voice "${bestVoice.name}" (${bestVoice.lang})`)
       }
     }
 
@@ -205,12 +255,39 @@ export function speak(text: string, options: SpeakOptions = {}): boolean {
       }
     }, 100)
 
-    console.log(`🔊 TTS: Speaking "${text.substring(0, 50)}${text.length > 50 ? '...' : ''}"`)
+    console.log(`🔊 TTS: Speaking "${text.substring(0, 50)}${text.length > 50 ? '...' : ''}" in ${langToUse}`)
     return true
   } catch (error) {
     console.error('❌ TTS: Failed to speak', error)
     return false
   }
+}
+
+/**
+ * 查找最佳匹配的语音
+ */
+function findBestVoice(voices: SpeechSynthesisVoice[], targetLang: string): SpeechSynthesisVoice | null {
+  if (!voices || voices.length === 0) return null
+
+  // 1. 精确匹配语言代码
+  const exactMatch = voices.find(v => v.lang === targetLang)
+  if (exactMatch) return exactMatch
+
+  // 2. 匹配语言前缀（如 'fr' 匹配 'fr-FR', 'fr-CA'）
+  const langPrefix = targetLang.split('-')[0]
+  const prefixMatch = voices.find(v => v.lang.startsWith(langPrefix))
+  if (prefixMatch) return prefixMatch
+
+  // 3. 对于英语，优先选择美式英语
+  if (langPrefix === 'en') {
+    const enUS = voices.find(v => v.lang === 'en-US')
+    if (enUS) return enUS
+    const enAny = voices.find(v => v.lang.startsWith('en'))
+    if (enAny) return enAny
+  }
+
+  // 4. 返回默认语音
+  return voices[0]
 }
 
 /**
@@ -265,21 +342,43 @@ export function getVoices(): SpeechSynthesisVoice[] {
 }
 
 /**
+ * 获取指定语言的语音
+ */
+export function getVoiceForLanguage(language: SupportedLanguage): SpeechSynthesisVoice | null {
+  const voices = getVoices()
+  const targetLang = getWebSpeechLang(language)
+  return findBestVoice(voices, targetLang)
+}
+
+/**
  * 获取英语语音（优先选择美式英语）
+ * @deprecated 使用 getVoiceForLanguage('en') 替代
  */
 export function getEnglishVoice(): SpeechSynthesisVoice | null {
+  return getVoiceForLanguage('en')
+}
+
+/**
+ * 获取法语语音
+ */
+export function getFrenchVoice(): SpeechSynthesisVoice | null {
+  return getVoiceForLanguage('fr')
+}
+
+/**
+ * 获取所有支持语言的语音
+ */
+export function getVoicesByLanguage(): Record<SupportedLanguage, SpeechSynthesisVoice[]> {
   const voices = getVoices()
+  const result: Record<string, SpeechSynthesisVoice[]> = {}
 
-  // 优先选择美式英语
-  const enUS = voices.find(v => v.lang === 'en-US')
-  if (enUS) return enUS
+  for (const lang of Object.keys(LANGUAGE_TO_WEB_SPEECH_MAP)) {
+    const targetLang = LANGUAGE_TO_WEB_SPEECH_MAP[lang as SupportedLanguage]
+    const langPrefix = targetLang.split('-')[0]
+    result[lang] = voices.filter(v => v.lang.startsWith(langPrefix))
+  }
 
-  // 其次选择任何英语语音
-  const enAny = voices.find(v => v.lang.startsWith('en'))
-  if (enAny) return enAny
-
-  // 最后返回第一个语音（如果有的话）
-  return voices.length > 0 ? voices[0] : null
+  return result
 }
 
 /**
@@ -325,6 +424,9 @@ export function useWebSpeechTTS() {
     isSpeaking: isSpeaking(),
     hasPending: hasPendingSpeech(),
     getVoices,
-    getEnglishVoice
+    getEnglishVoice,
+    getFrenchVoice,
+    getVoiceForLanguage,
+    getVoicesByLanguage
   }
 }

@@ -12,7 +12,7 @@
 
 import { useState, useRef, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
-import { Play, Pause, SkipForward } from 'lucide-react'
+import { Play, Pause, SkipForward, ArrowLeft } from 'lucide-react'
 import type { SpeakerArticle } from '@/types/speaker'
 import { SpeakerSubPageLayout } from '@/components/speaker/SpeakerSubPageLayout'
 import { useTheme } from '@/contexts/ThemeContext'
@@ -44,6 +44,10 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
   const [playbackRate, setPlaybackRate] = useState(1.0)
   const [showResumePrompt, setShowResumePrompt] = useState(false)
   const [encouragementIndex, setEncouragementIndex] = useState(0)
+
+  // 演示模式状态
+  const [isDemoMode, setIsDemoMode] = useState(false)
+  const demoIntervalRef = useRef<NodeJS.Timeout | null>(null)
 
   // 格式化时间显示
   const formatTime = (seconds: number): string => {
@@ -106,6 +110,70 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
 
     return () => clearInterval(interval)
   }, [isPlaying])
+
+  // 演示模式：30秒内完成，显示真实音频时长倒计时
+  useEffect(() => {
+    if (!isDemoMode) {
+      // 清除定时器
+      if (demoIntervalRef.current) {
+        clearInterval(demoIntervalRef.current)
+        demoIntervalRef.current = null
+      }
+      return
+    }
+
+    // 使用真实音频时长
+    const realDuration = duration || 30
+    // 30秒内完成，每100ms更新一次，共300次
+    const incrementPerTick = realDuration / 300
+
+    // 启动定时器，每100ms更新一次进度
+    demoIntervalRef.current = setInterval(() => {
+      setCurrentTime(prev => {
+        const newTime = prev + incrementPerTick
+        if (newTime >= realDuration) {
+          // 演示完成，自动跳转到下一步
+          clearInterval(demoIntervalRef.current!)
+          demoIntervalRef.current = null
+          setIsDemoMode(false)
+          setTimeout(() => goToNextStep(), 500)
+          return realDuration
+        }
+        return newTime
+      })
+    }, 100) // 每100ms更新一次
+
+    return () => {
+      if (demoIntervalRef.current) {
+        clearInterval(demoIntervalRef.current)
+      }
+    }
+  }, [isDemoMode, duration])
+
+  // 启动演示模式
+  const startDemoMode = () => {
+    if (isDemoMode) return
+    // 使用真实音频时长（如果已有），否则保持当前 duration
+    const realDuration = audioRef.current?.duration || duration || 30
+    setIsDemoMode(true)
+    setCurrentTime(0) // 从0开始
+    console.log('[Demo] 演示模式已启动 - 时长:', realDuration)
+  }
+
+  // 停止演示模式
+  const stopDemoMode = () => {
+    if (demoIntervalRef.current) {
+      clearInterval(demoIntervalRef.current)
+      demoIntervalRef.current = null
+    }
+    setIsDemoMode(false)
+    // 恢复真实音频时长
+    if (audioRef.current) {
+      setDuration(audioRef.current.duration)
+      setCurrentTime(audioRef.current.currentTime)
+    }
+    console.log('[Demo] 演示模式已停止')
+  }
 
   // 添加淡入淡出动画样式
   useEffect(() => {
@@ -221,6 +289,19 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
         }} />
       </div>
 
+      {/* 返回按钮 - 固定在左上角 */}
+      <button
+        onClick={() => router.push(`/speaker/timeline?id=${article.id}`)}
+        className={`absolute top-4 left-4 z-30 flex items-center gap-2 px-4 py-2 border-2 shadow-lg transition-all duration-200 ${
+          isDark
+            ? 'bg-[#1a1a1a] text-gray-300 border-[#B4F416] hover:bg-[#B4F416] hover:text-black'
+            : 'bg-white text-gray-700 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-0.5'
+        }`}
+      >
+        <ArrowLeft className="w-4 h-4" />
+        <span className="text-sm font-bold">返回时间轴</span>
+      </button>
+
       {/* 鼓励语句 - 电影字幕式淡入淡出 */}
       {isPlaying && (
         <div className="absolute top-6 left-0 right-0 z-10 flex items-center justify-center px-4">
@@ -254,16 +335,27 @@ export function BlindListenClient({ article, lastPosition, userId }: BlindListen
 
         {/* 进度条 - 粗线条工业风 */}
         <div className="mb-10">
-          <div className={`relative w-full h-6 border-2 overflow-hidden ${
-            isDark ? 'bg-[#111] border-[#333]' : 'bg-gray-200 border-gray-300'
-          }`}>
+          <div
+            className={`relative w-full h-6 border-2 overflow-hidden ${
+              isDark ? 'bg-[#111] border-[#333]' : 'bg-gray-200 border-gray-300'
+            }`}
+            onDoubleClick={() => {
+              if (isDemoMode) {
+                stopDemoMode()
+              } else {
+                startDemoMode()
+              }
+            }}
+          >
             <div
-              className="absolute top-0 left-0 h-full bg-[#B4F416] transition-all duration-150"
+              className="absolute top-0 left-0 h-full bg-[#B4F416] transition-all duration-100"
               style={{ width: `${(currentTime / duration) * 100}%` }}
             />
           </div>
-          <div className="flex justify-between mt-3 font-mono text-sm">
-            <span className={isDark ? 'text-gray-500' : 'text-gray-600'}>{formatTime(currentTime)}</span>
+          <div className="flex justify-between mt-3 font-mono text-xs">
+            <span className={isDark ? 'text-gray-500' : 'text-gray-600'}>
+              {isDemoMode ? formatTime(duration - currentTime) : formatTime(currentTime)}
+            </span>
             <span className={isDark ? 'text-gray-500' : 'text-gray-600'}>{formatTime(duration)}</span>
           </div>
         </div>

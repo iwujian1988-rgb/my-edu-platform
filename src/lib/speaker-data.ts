@@ -42,47 +42,70 @@ import type {
 export async function getSpeakerArticles(
   supabase: SupabaseClient,
   params?: GetArticlesParams
-): Promise<SpeakerArticle[]> {
+): Promise<{ articles: SpeakerArticle[]; total: number }> {
   console.log('[Speaker Data] 获取文章列表:', params)
 
   try {
+    const pageSize = params?.pageSize || 12
+    const page = params?.page || 1
+    const offset = (page - 1) * pageSize
+
+    // 先获取总数
+    let countQuery = supabase
+      .from('speaker_articles')
+      .select('*', { count: 'exact', head: true })
+
+    // 状态过滤
+    const statusFilter = params?.status
+    if (statusFilter) {
+      countQuery = countQuery.eq('status', statusFilter as SpeakerArticleStatus)
+    } else {
+      countQuery = countQuery.in('status', ['published', 'active'] as SpeakerArticleStatus[])
+    }
+
+    if (params?.level) {
+      countQuery = countQuery.eq('level', params.level)
+    }
+    if (params?.language) {
+      countQuery = countQuery.eq('language', params.language)
+    }
+    if (params?.category) {
+      countQuery = countQuery.eq('category', params.category)
+    }
+
+    const { count, error: countError } = await countQuery
+
+    if (countError) {
+      console.error('[Speaker Data] ❌ 获取文章总数失败:', countError)
+      throw countError
+    }
+
+    const total = count || 0
+
+    // 获取分页数据
     let query = supabase
       .from('speaker_articles')
       .select('*')
 
     // 状态过滤：如果未指定，默认查询 published 和 active
-    const statusFilter = params?.status
     if (statusFilter) {
       query = query.eq('status', statusFilter as SpeakerArticleStatus)
     } else {
-      // 默认显示已发布（published）和活跃（active）的文章
       query = query.in('status', ['published', 'active'] as SpeakerArticleStatus[])
     }
 
-    // 可选：按难度等级过滤
     if (params?.level) {
       query = query.eq('level', params.level)
     }
-
-    // ✅ 新增：按语种过滤
     if (params?.language) {
       query = query.eq('language', params.language)
     }
-
-    // ✅ 新增：按分类过滤
     if (params?.category) {
       query = query.eq('category', params.category)
     }
 
-    // 可选：限制返回数量
-    if (params?.limit) {
-      query = query.limit(params.limit)
-    }
-
-    // TODO: 分页偏移（Supabase 版本可能不支持，暂不实现）
-    // if (params?.offset) {
-    //   query = query.range(params.offset, params.offset + params.limit! - 1)
-    // }
+    // 分页
+    query = query.range(offset, offset + pageSize - 1)
 
     // 排序：按创建时间倒序
     query = query.order('created_at', { ascending: false })
@@ -90,7 +113,6 @@ export async function getSpeakerArticles(
     const { data, error, status } = await query
 
     if (error) {
-      // 检查是否为 RLS 权限问题
       if (status === 401 || error.code === '42501') {
         console.error('[Speaker Data] ❌ 权限不足，用户可能未登录:', error)
         throw new Error('PERMISSION_DENIED: 请先登录')
@@ -102,10 +124,10 @@ export async function getSpeakerArticles(
 
     if (!data || data.length === 0) {
       console.log('[Speaker Data] ℹ️ 未找到文章')
-      return []
+      return { articles: [], total }
     }
 
-    // 处理每篇文章的 sentences 字段（从 json_data.sentences 提取到顶层）
+    // 处理每篇文章的 sentences 字段
     const articles = data.map((item: any) => {
       const sentences = (item.json_data?.sentences || []).map((s: any) => ({
         ...s,
@@ -118,13 +140,11 @@ export async function getSpeakerArticles(
       } as SpeakerArticle
     })
 
-    console.log('[Speaker Data] ✅ 成功获取文章列表:', { count: articles.length })
-    return articles
+    console.log('[Speaker Data] ✅ 成功获取文章列表:', { count: articles.length, total, page, pageSize })
+    return { articles, total }
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : 'Unknown error'
     console.error('[Speaker Data] ❌ 获取文章列表异常:', { error: errorMessage, params })
-
-    // 重新抛出错误，让调用方处理
     throw error
   }
 }

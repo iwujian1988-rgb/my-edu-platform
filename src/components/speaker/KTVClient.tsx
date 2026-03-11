@@ -88,6 +88,15 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
   const [isCompleted, setIsCompleted] = useState(initialIsCompleted)
 
   // ========================================
+  // 5. 演示模式状态
+  // ========================================
+  const [isDemoMode, setIsDemoMode] = useState(false)
+  const [demoCurrentTime, setDemoCurrentTime] = useState(0)
+  const [demoDuration, setDemoDuration] = useState(0)
+  const [demoCountdown, setDemoCountdown] = useState(0) // 演示模式321倒计时
+  const demoIntervalRef = useRef<NodeJS.Timeout | null>(null)
+
+  // ========================================
   // 5. "我已背完"弹层状态
   // ========================================
   const [showModal, setShowModal] = useState(false)
@@ -396,6 +405,121 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
   }
 
   // ========================================
+  // 11. 演示模式功能
+  // ========================================
+  // 格式化时间显示
+  const formatTime = (seconds: number): string => {
+    const mins = Math.floor(seconds / 60)
+    const secs = Math.floor(seconds % 60)
+    return `${mins}:${secs.toString().padStart(2, '0')}`
+  }
+
+  // 启动演示模式（带321倒计时）
+  const startDemoMode = () => {
+    if (isDemoMode || demoCountdown > 0) return
+    const realDuration = audioRef.current?.duration || 30
+    setDemoDuration(realDuration)
+    setDemoCurrentTime(0)
+    setCurrentSentenceIndex(0)
+
+    // 开始321倒计时
+    setDemoCountdown(3)
+    let count = 3
+    const countdownTimer = setInterval(() => {
+      count--
+      if (count > 0) {
+        setDemoCountdown(count)
+      } else {
+        clearInterval(countdownTimer)
+        setDemoCountdown(0)
+        // 倒计时结束，开始演示
+        setIsDemoMode(true)
+        setPlaybackState('playing')
+        console.log('[KTV Demo] 演示模式已启动 - 时长:', realDuration)
+      }
+    }, 1000)
+  }
+
+  // 停止演示模式
+  const stopDemoMode = () => {
+    if (demoIntervalRef.current) {
+      clearInterval(demoIntervalRef.current)
+      demoIntervalRef.current = null
+    }
+    setIsDemoMode(false)
+    setDemoCurrentTime(0)
+    setDemoCountdown(0)
+    setPlaybackState('idle')
+    setCurrentSentenceIndex(0)
+    console.log('[KTV Demo] 演示模式已停止')
+  }
+
+  // 演示模式：30秒内完成，显示真实音频时长倒计时
+  const demoTimeRef = useRef(0)
+
+  useEffect(() => {
+    if (!isDemoMode) {
+      if (demoIntervalRef.current) {
+        clearInterval(demoIntervalRef.current)
+        demoIntervalRef.current = null
+      }
+      demoTimeRef.current = 0
+      return
+    }
+
+    const realDuration = demoDuration || 30
+    // 30秒内完成，每100ms更新一次，共300次
+    const incrementPerTick = realDuration / 300
+    demoTimeRef.current = 0
+
+    demoIntervalRef.current = setInterval(() => {
+      demoTimeRef.current += incrementPerTick
+      const newTime = demoTimeRef.current
+
+      setDemoCurrentTime(newTime)
+
+      if (newTime >= realDuration) {
+        clearInterval(demoIntervalRef.current!)
+        demoIntervalRef.current = null
+        setIsDemoMode(false)
+        setPlaybackState('idle')
+        // 演示完成，弹出成功提示
+        setModalType('faster')
+        setShowModal(true)
+        return
+      }
+
+      // 更新当前句子索引（根据模拟时间）
+      for (let i = 0; i < sentences.length; i++) {
+        const sentence = sentences[i]
+        if (sentence.start_time !== null &&
+            sentence.end_time !== null &&
+            newTime >= sentence.start_time &&
+            newTime < sentence.end_time) {
+          setCurrentSentenceIndex(i)
+          scrollToSentence(i)
+          break
+        }
+      }
+    }, 100)
+
+    return () => {
+      if (demoIntervalRef.current) {
+        clearInterval(demoIntervalRef.current)
+      }
+    }
+  }, [isDemoMode, demoDuration, sentences])
+
+  // 组件卸载时清理演示模式定时器
+  useEffect(() => {
+    return () => {
+      if (demoIntervalRef.current) {
+        clearInterval(demoIntervalRef.current)
+      }
+    }
+  }, [])
+
+  // ========================================
   // 10. "我已背完"按钮点击处理
   // ========================================
   const handleFinishedMemorizing = () => {
@@ -570,10 +694,18 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
 
         {/* 播放控制 */}
         <div className="mb-6 flex items-center justify-between gap-2 sm:gap-3">
-          {/* 左侧：隐藏文本（弱化样式） */}
-          <button
-            onClick={() => setShowText(!showText)}
-            className="flex items-center gap-1 sm:gap-2 px-2 py-1 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-none transition-all text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500"
+          {/* 左侧：隐藏文本（弱化样式） + 演示模式倒计时 */}
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setShowText(!showText)}
+              onDoubleClick={() => {
+                if (isDemoMode) {
+                  stopDemoMode()
+                } else {
+                  startDemoMode()
+                }
+              }}
+              className="flex items-center gap-1 sm:gap-2 px-2 py-1 sm:px-3 sm:py-2 border border-gray-300 dark:border-gray-600 rounded-none transition-all text-xs text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 hover:border-gray-400 dark:hover:border-gray-500"
             title={showText ? '点击隐藏文本' : '点击显示文本'}
           >
             <svg className={`w-3 h-3 ${showText ? 'opacity-100' : 'opacity-50'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -584,6 +716,13 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
               {showText ? '显示文本' : '隐藏文本'}
             </span>
           </button>
+          {/* 演示模式倒计时 */}
+          {isDemoMode && (
+            <span className="text-xs font-mono text-gray-500 dark:text-gray-400">
+              {formatTime(demoDuration - demoCurrentTime)}
+            </span>
+          )}
+          </div>
 
           {/* 右侧：播放控制按钮 */}
           <div className="flex items-center gap-2 sm:gap-3">
@@ -636,6 +775,17 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
               </div>
               <p className="text-xl font-bold text-black dark:text-white bg-white/90 dark:bg-black/90 px-6 py-3 rounded-none border-2 border-black dark:border-gray-600">
                 即将按原音音量10%播放 请开始准备背诵
+              </p>
+            </div>
+          )}
+          {/* 演示模式321倒计时显示 */}
+          {demoCountdown > 0 && (
+            <div className="absolute inset-0 flex flex-col items-center justify-center z-20 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md gap-6">
+              <div className="px-12 py-8 bg-[#B4F416] text-black text-8xl font-black rounded-none shadow-[8px_8px_0px_0px_#000]">
+                {demoCountdown}
+              </div>
+              <p className="text-xl font-bold text-black bg-white/90 px-6 py-3 rounded-none border-2 border-black">
+                原音速度对比即将开始
               </p>
             </div>
           )}
@@ -699,33 +849,57 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
             </div>
           </div>
 
-          {/* 底部固定：进度条和按钮（仅在播放时显示） */}
-          {playbackState === 'playing' && !isCompleted && (
+          {/* 底部固定：进度条和按钮（播放时或演示模式时显示） */}
+          {(playbackState === 'playing' || isDemoMode || demoCountdown > 0) && !isCompleted && (
             <div className="absolute bottom-0 left-0 right-0 bg-white dark:bg-gray-900 py-4 px-6">
               {/* 当前句子显示 - 居中显示在按钮上方 */}
               <div className="text-black dark:text-gray-300 text-sm font-mono mb-3 text-center">
                 <span className="font-bold text-[#B4F416] dark:text-[#84cc16]">{currentSentenceIndex + 1}</span> / {sentences.length}
               </div>
 
-              {/* "我已背完"进度条按钮 */}
-              <button
-                onClick={handleFinishedMemorizing}
-                className="relative w-full py-6 border-4 border-black dark:border-gray-600 rounded-none overflow-hidden transition-all hover:border-gray-800 dark:hover:border-gray-500 group"
-                style={{
-                  background: `linear-gradient(to right, #B4F416 0%, #B4F416 ${((currentSentenceIndex + 1) / sentences.length) * 100}%, white ${((currentSentenceIndex + 1) / sentences.length) * 100}%, white 100%)`
-                }}
-              >
-                {/* 白色文字 - 使用 text-shadow 实现反色效果 */}
-                <span
-                  className="relative z-10 text-xl font-black"
+              {/* "我已背完"进度条按钮 / 演示模式进度条 */}
+              {isDemoMode || demoCountdown > 0 ? (
+                <button
+                  onClick={() => {
+                    stopDemoMode()
+                    setModalType('faster')
+                    setShowModal(true)
+                  }}
+                  className="relative w-full py-6 border-4 border-black dark:border-gray-600 rounded-none overflow-hidden cursor-pointer hover:border-gray-800 dark:hover:border-gray-500 transition-all"
                   style={{
-                    color: 'white',
-                    textShadow: '0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6), 2px 2px 0 rgba(0,0,0,0.5)'
+                    background: `linear-gradient(to right, #B4F416 0%, #B4F416 ${(demoCurrentTime / demoDuration) * 100}%, white ${(demoCurrentTime / demoDuration) * 100}%, white 100%)`
                   }}
                 >
-                  我已背完
-                </span>
-              </button>
+                  <span
+                    className="relative z-10 text-xl font-black"
+                    style={{
+                      color: 'white',
+                      textShadow: '0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6), 2px 2px 0 rgba(0,0,0,0.5)'
+                    }}
+                  >
+                    {demoCountdown > 0 ? '准备中...' : '我已背完'}
+                  </span>
+                </button>
+              ) : (
+                <button
+                  onClick={handleFinishedMemorizing}
+                  className="relative w-full py-6 border-4 border-black dark:border-gray-600 rounded-none overflow-hidden transition-all hover:border-gray-800 dark:hover:border-gray-500 group"
+                  style={{
+                    background: `linear-gradient(to right, #B4F416 0%, #B4F416 ${((currentSentenceIndex + 1) / sentences.length) * 100}%, white ${((currentSentenceIndex + 1) / sentences.length) * 100}%, white 100%)`
+                  }}
+                >
+                  {/* 白色文字 - 使用 text-shadow 实现反色效果 */}
+                  <span
+                    className="relative z-10 text-xl font-black"
+                    style={{
+                      color: 'white',
+                      textShadow: '0 0 20px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.6), 2px 2px 0 rgba(0,0,0,0.5)'
+                    }}
+                  >
+                    我已背完
+                  </span>
+                </button>
+              )}
             </div>
           )}
         </div>

@@ -573,5 +573,7 @@ export interface GetArticlesParams {
   status?: SpeakerArticleStatus
   limit?: number
   offset?: number
+  page?: number       // 页码（从1开始）
+  pageSize?: number   // 每页数量
 }
 
