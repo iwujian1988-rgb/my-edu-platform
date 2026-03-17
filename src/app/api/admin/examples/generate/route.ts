@@ -1,16 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { createClient } from '@supabase/supabase-js'
 import { spawn } from 'child_process'
 import path from 'path'
 
-import { supabaseAdminClient } from '@/lib/supabase-admin'
+import { createAdminClient } from '@/lib/supabase/server'
 
 export async function POST(request: NextRequest) {
   try {
     const { workers = 10 } = await request.json()
 
     // 获取需要更新的单词
-    const supabase = supabaseAdminClient()
+    const supabase = await createAdminClient()
 
     // 检查是否已有任务在运行
     const { data: existingTask } = await supabase
@@ -50,8 +49,8 @@ export async function POST(request: NextRequest) {
       scriptPath,
       '--all',
       '--workers', String(workers || 10),
-      '--no-resume'
-      '--server-mode'
+      '--no-resume',
+      '--server-mode',
       '--task-id', task.id
     ], {
       detached: true,
@@ -73,3 +72,4 @@ export async function POST(request: NextRequest) {
       details: error instanceof Error ? error.message : 'Unknown error'
     }, 500)
   }
+}
