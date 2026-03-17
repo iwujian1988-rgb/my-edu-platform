@@ -1,0 +1,4015 @@
+[
+  {
+    "word": "livre",
+    "phonetic": "/livʁ/",
+    "definition_zh": "书 书本 书籍",
+    "definition_en": "book",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "livres",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 219,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "livres"
+      }
+    }
+  },
+  {
+    "word": "livre",
+    "phonetic": "/livʁ/",
+    "definition_zh": "书 书本 书籍",
+    "definition_en": "inflection of livrer:",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 219,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Livre",
+    "phonetic": "/livʁ/",
+    "definition_zh": "圣经",
+    "definition_en": "synonym of Bible",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 219,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "apprendre",
+    "phonetic": "/a.pʁɑ̃dʁ/",
+    "definition_zh": "学 学习",
+    "definition_en": "to learn",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "Grâce à vous, j'en apprends tous les jours.",
+    "cefr_level": "A2",
+    "frequency_rank": 323,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "conjugation": {
+          "infinitif": "apprendre",
+          "participe_passe": "appris",
+          "participe_present": "apprenant",
+          "indicatif_present": {
+            "je": "apprends",
+            "tu": "apprends",
+            "il": "apprend",
+            "elle": "apprend",
+            "on": "apprend",
+            "nous": "apprenons",
+            "vous": "apprenez",
+            "ils": "apprennent",
+            "elles": "apprennent"
+          },
+          "indicatif_imparfait": {
+            "je": "apprenais",
+            "tu": "apprenais",
+            "il": "apprenait",
+            "elle": "apprenait",
+            "on": "apprenait",
+            "nous": "apprenions",
+            "vous": "appreniez",
+            "ils": "apprenaient",
+            "elles": "apprenaient"
+          },
+          "indicatif_passe_simple": {
+            "je": "appris",
+            "tu": "appris",
+            "il": "apprit",
+            "elle": "apprit",
+            "on": "apprit",
+            "nous": "apprîmes",
+            "vous": "apprîtes",
+            "ils": "apprirent",
+            "elles": "apprirent"
+          },
+          "indicatif_futur_simple": {
+            "je": "apprendrai",
+            "tu": "apprendras",
+            "il": "apprendra",
+            "elle": "apprendra",
+            "on": "apprendra",
+            "nous": "apprendrons",
+            "vous": "apprendrez",
+            "ils": "apprendront",
+            "elles": "apprendront"
+          },
+          "conditionnel_present": {
+            "je": "apprendrais",
+            "tu": "apprendrais",
+            "il": "apprendrait",
+            "elle": "apprendrait",
+            "on": "apprendrait",
+            "nous": "apprendrions",
+            "vous": "apprendriez",
+            "ils": "apprendraient",
+            "elles": "apprendraient"
+          },
+          "subjonctif_present": {
+            "je": "apprenne",
+            "tu": "apprennes",
+            "il": "apprenne",
+            "elle": "apprenne",
+            "on": "apprenne",
+            "nous": "apprenions",
+            "vous": "appreniez",
+            "ils": "apprennent",
+            "elles": "apprennent"
+          }
+        }
+      }
+    },
+    "conjugation": {
+      "infinitif": "apprendre",
+      "participe_passe": "appris",
+      "participe_present": "apprenant",
+      "indicatif_present": {
+        "je": "apprends",
+        "tu": "apprends",
+        "il": "apprend",
+        "elle": "apprend",
+        "on": "apprend",
+        "nous": "apprenons",
+        "vous": "apprenez",
+        "ils": "apprennent",
+        "elles": "apprennent"
+      },
+      "indicatif_imparfait": {
+        "je": "apprenais",
+        "tu": "apprenais",
+        "il": "apprenait",
+        "elle": "apprenait",
+        "on": "apprenait",
+        "nous": "apprenions",
+        "vous": "appreniez",
+        "ils": "apprenaient",
+        "elles": "apprenaient"
+      },
+      "indicatif_passe_simple": {
+        "je": "appris",
+        "tu": "appris",
+        "il": "apprit",
+        "elle": "apprit",
+        "on": "apprit",
+        "nous": "apprîmes",
+        "vous": "apprîtes",
+        "ils": "apprirent",
+        "elles": "apprirent"
+      },
+      "indicatif_futur_simple": {
+        "je": "apprendrai",
+        "tu": "apprendras",
+        "il": "apprendra",
+        "elle": "apprendra",
+        "on": "apprendra",
+        "nous": "apprendrons",
+        "vous": "apprendrez",
+        "ils": "apprendront",
+        "elles": "apprendront"
+      },
+      "conditionnel_present": {
+        "je": "apprendrais",
+        "tu": "apprendrais",
+        "il": "apprendrait",
+        "elle": "apprendrait",
+        "on": "apprendrait",
+        "nous": "apprendrions",
+        "vous": "apprendriez",
+        "ils": "apprendraient",
+        "elles": "apprendraient"
+      },
+      "subjonctif_present": {
+        "je": "apprenne",
+        "tu": "apprennes",
+        "il": "apprenne",
+        "elle": "apprenne",
+        "on": "apprenne",
+        "nous": "apprenions",
+        "vous": "appreniez",
+        "ils": "apprennent",
+        "elles": "apprennent"
+      }
+    }
+  },
+  {
+    "word": "université",
+    "phonetic": "/y.ni.vɛʁ.si.te/",
+    "definition_zh": "综合性大学",
+    "definition_en": "university (institution of higher education)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "universités",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 436,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "universités"
+      }
+    }
+  },
+  {
+    "word": "enseigner",
+    "phonetic": "/ɑ̃.sɛ.ɲe/",
+    "definition_zh": "教授",
+    "definition_en": "to teach, to instruct, to educate",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "enseigner des enfants et des adolescents",
+    "cefr_level": "A2",
+    "frequency_rank": 568,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "conjugation": {
+          "infinitif": "enseigner",
+          "participe_passe": "enseigné",
+          "participe_present": "enseignant",
+          "indicatif_present": {
+            "je": "enseigne",
+            "tu": "enseignes",
+            "il": "enseigne",
+            "elle": "enseigne",
+            "on": "enseigne",
+            "nous": "enseignons",
+            "vous": "enseignez",
+            "ils": "enseignent",
+            "elles": "enseignent"
+          },
+          "indicatif_imparfait": {
+            "je": "enseignais",
+            "tu": "enseignais",
+            "il": "enseignait",
+            "elle": "enseignait",
+            "on": "enseignait",
+            "nous": "enseignions",
+            "vous": "enseigniez",
+            "ils": "enseignaient",
+            "elles": "enseignaient"
+          },
+          "indicatif_passe_simple": {
+            "je": "enseignai",
+            "tu": "enseignas",
+            "il": "enseigna",
+            "elle": "enseigna",
+            "on": "enseigna",
+            "nous": "enseignâmes",
+            "vous": "enseignâtes",
+            "ils": "enseignèrent",
+            "elles": "enseignèrent"
+          },
+          "indicatif_futur_simple": {
+            "je": "enseignerai",
+            "tu": "enseigneras",
+            "il": "enseignera",
+            "elle": "enseignera",
+            "on": "enseignera",
+            "nous": "enseignerons",
+            "vous": "enseignerez",
+            "ils": "enseigneront",
+            "elles": "enseigneront"
+          },
+          "conditionnel_present": {
+            "je": "enseignerais",
+            "tu": "enseignerais",
+            "il": "enseignerait",
+            "elle": "enseignerait",
+            "on": "enseignerait",
+            "nous": "enseignerions",
+            "vous": "enseigneriez",
+            "ils": "enseigneraient",
+            "elles": "enseigneraient"
+          },
+          "subjonctif_present": {
+            "je": "enseigne",
+            "tu": "enseignes",
+            "il": "enseigne",
+            "elle": "enseigne",
+            "on": "enseigne",
+            "nous": "enseignions",
+            "vous": "enseigniez",
+            "ils": "enseignent",
+            "elles": "enseignent"
+          }
+        }
+      }
+    },
+    "conjugation": {
+      "infinitif": "enseigner",
+      "participe_passe": "enseigné",
+      "participe_present": "enseignant",
+      "indicatif_present": {
+        "je": "enseigne",
+        "tu": "enseignes",
+        "il": "enseigne",
+        "elle": "enseigne",
+        "on": "enseigne",
+        "nous": "enseignons",
+        "vous": "enseignez",
+        "ils": "enseignent",
+        "elles": "enseignent"
+      },
+      "indicatif_imparfait": {
+        "je": "enseignais",
+        "tu": "enseignais",
+        "il": "enseignait",
+        "elle": "enseignait",
+        "on": "enseignait",
+        "nous": "enseignions",
+        "vous": "enseigniez",
+        "ils": "enseignaient",
+        "elles": "enseignaient"
+      },
+      "indicatif_passe_simple": {
+        "je": "enseignai",
+        "tu": "enseignas",
+        "il": "enseigna",
+        "elle": "enseigna",
+        "on": "enseigna",
+        "nous": "enseignâmes",
+        "vous": "enseignâtes",
+        "ils": "enseignèrent",
+        "elles": "enseignèrent"
+      },
+      "indicatif_futur_simple": {
+        "je": "enseignerai",
+        "tu": "enseigneras",
+        "il": "enseignera",
+        "elle": "enseignera",
+        "on": "enseignera",
+        "nous": "enseignerons",
+        "vous": "enseignerez",
+        "ils": "enseigneront",
+        "elles": "enseigneront"
+      },
+      "conditionnel_present": {
+        "je": "enseignerais",
+        "tu": "enseignerais",
+        "il": "enseignerait",
+        "elle": "enseignerait",
+        "on": "enseignerait",
+        "nous": "enseignerions",
+        "vous": "enseigneriez",
+        "ils": "enseigneraient",
+        "elles": "enseigneraient"
+      },
+      "subjonctif_present": {
+        "je": "enseigne",
+        "tu": "enseignes",
+        "il": "enseigne",
+        "elle": "enseigne",
+        "on": "enseigne",
+        "nous": "enseignions",
+        "vous": "enseigniez",
+        "ils": "enseignent",
+        "elles": "enseignent"
+      }
+    }
+  },
+  {
+    "word": "carrière",
+    "phonetic": "/ka.ʁjɛʁ/",
+    "definition_zh": "跑马场赛车场",
+    "definition_en": "racecourse",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "carrières",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 797,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "carrières"
+      }
+    }
+  },
+  {
+    "word": "diplôme",
+    "phonetic": "/di.plom/",
+    "definition_zh": "文凭 证书毕业文凭",
+    "definition_en": "diploma (document issued by an educational institution testifying that the recipient has earned a degree or has successfully completed a particular course of study)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "diplômes",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 856,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "diplômes"
+      }
+    }
+  },
+  {
+    "word": "professeur",
+    "phonetic": "/pʁɔ.fɛ.sœʁ/",
+    "definition_zh": "教师 教员教授 俗称",
+    "definition_en": "teacher",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "professeurs",
+    "example_sentence": "Professeur de français, professeur de mathématiques.",
+    "cefr_level": "B1",
+    "frequency_rank": 937,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "feminine",
+        "plural": "professeurs"
+      }
+    }
+  },
+  {
+    "word": "d'accord",
+    "phonetic": "/d‿a.kɔʁ/",
+    "definition_zh": "同意",
+    "definition_en": "sure!, OK!, of course!, naturally!",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1126,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "cours",
+    "phonetic": "/kuʁ/",
+    "definition_zh": "水道 航道路线流动",
+    "definition_en": "stream of water, river",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "cours d'eau",
+    "cefr_level": "B1",
+    "frequency_rank": 1451,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "cours",
+    "phonetic": "/kuʁ/",
+    "definition_zh": "跑的变形",
+    "definition_en": "inflection of courir:",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1451,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "classe",
+    "phonetic": "/klas/",
+    "definition_zh": "类别",
+    "definition_en": "class, type, group",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "classes",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1557,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "classes"
+      }
+    }
+  },
+  {
+    "word": "littérature",
+    "phonetic": "/li.te.ʁa.tyʁ/",
+    "definition_zh": "文学文学作品",
+    "definition_en": "literature",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "littératures",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1774,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "littératures"
+      }
+    }
+  },
+  {
+    "word": "langue",
+    "phonetic": "/lɑ̃ɡ/",
+    "definition_zh": "舌头",
+    "definition_en": "tongue",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "langues",
+    "example_sentence": "la langue dans la bouche",
+    "cefr_level": "B2",
+    "frequency_rank": 3023,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "langues"
+      }
+    }
+  },
+  {
+    "word": "intellectuel",
+    "phonetic": "/ɛ̃.tɛ.lɛk.tɥɛl/",
+    "definition_zh": "智力的理智的精神的知识的",
+    "definition_en": "an intellectual (intelligent, learned person, especially one who discourses about learned matters)",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "intellectuels",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 3059,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "feminine",
+        "plural": "intellectuels"
+      }
+    }
+  },
+  {
+    "word": "recours",
+    "phonetic": "/ʁə.kuʁ/",
+    "definition_zh": "求助 求援运用依靠 凭借",
+    "definition_en": "recourse, resort, way out",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 3313,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "examen",
+    "phonetic": "/ɛɡ.za.mɛ̃/",
+    "definition_zh": "研究 审查 检查",
+    "definition_en": "examination, inspection, study, analysis",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "examens",
+    "example_sentence": "examen des pièces à conviction",
+    "cefr_level": "C1",
+    "frequency_rank": 4172,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "examens"
+      }
+    }
+  },
+  {
+    "word": "vocabulaire",
+    "phonetic": "/vɔ.ka.by.lɛʁ/",
+    "definition_zh": "词汇表 词汇汇编简明小字典",
+    "definition_en": "vocabulary",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "vocabulaires",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 5032,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "vocabulaires"
+      }
+    }
+  },
+  {
+    "word": "science",
+    "phonetic": "/sjɑ̃s/",
+    "definition_zh": "科学某一门科学 某一门学科",
+    "definition_en": "science (field of study, etc.)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "sciences",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "sciences"
+      }
+    }
+  },
+  {
+    "word": "étudiant",
+    "phonetic": "/e.ty.djɑ̃/",
+    "definition_zh": "大学生",
+    "definition_en": "student",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "étudiants",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "feminine",
+        "plural": "étudiants"
+      }
+    }
+  },
+  {
+    "word": "étudiant",
+    "phonetic": "/e.ty.djɑ̃/",
+    "definition_zh": "大学生",
+    "definition_en": "studying (in the process of studying)",
+    "part_of_speech": "adjective",
+    "gender": "masculine",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "feminine_form": "étudiante",
+        "gender": "masculine"
+      }
+    },
+    "feminine_form": "étudiante"
+  },
+  {
+    "word": "étudiant",
+    "phonetic": "/e.ty.djɑ̃/",
+    "definition_zh": "大学生",
+    "definition_en": "present participle of étudier",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "étudiante",
+    "phonetic": "/e.ty.djɑ̃t/",
+    "definition_zh": "大学生",
+    "definition_en": "feminine singular of étudiant",
+    "part_of_speech": "adjective",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "étudiante",
+    "phonetic": "/e.ty.djɑ̃t/",
+    "definition_zh": "大学生",
+    "definition_en": "feminine singular of étudiant",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "étudiantes",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "étudiantes"
+      }
+    }
+  },
+  {
+    "word": "bien sûr",
+    "phonetic": "/bjɛ̃ syʁ/",
+    "definition_zh": "当然",
+    "definition_en": "of course",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "maths",
+    "phonetic": "/mat/",
+    "definition_zh": "数学",
+    "definition_en": "math or maths (study of numbers, etc.; a course involving the study of numbers)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "Ce type-là, c'est une tronche en maths.",
+    "cefr_level": "C1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "hors-d'œuvre",
+    "phonetic": "/ɔʁ.d‿œvʁ/",
+    "definition_zh": "开胃菜",
+    "definition_en": "appetizer, starter, hors d'oeuvre (small, light, and usually savory first course in a meal)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "recherche",
+    "phonetic": "/ʁə.ʃɛʁʃ/",
+    "definition_zh": "寻找 再寻找搜查 搜寻 搜索",
+    "definition_en": "research",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "recherches",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "recherches"
+      }
+    }
+  },
+  {
+    "word": "recherche",
+    "phonetic": "/ʁə.ʃɛʁʃ/",
+    "definition_zh": "寻找 再寻找搜查 搜寻 搜索",
+    "definition_en": "inflection of rechercher:",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "khâgne",
+    "phonetic": "/kaɲ/",
+    "definition_zh": "预科二年级",
+    "definition_en": "the second year course, preceded by hypokhâgne, of a two-year academic cycle in France (called Classe préparatoire aux grandes écoles, Humanities section) whose aim is to prepare students for the entrance competition to the École normale supérieure in Paris",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "khâgnes",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "khâgnes"
+      }
+    }
+  },
+  {
+    "word": "école",
+    "phonetic": "/e.kɔl/",
+    "definition_zh": "学校",
+    "definition_en": "school",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "écoles",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "écoles"
+      }
+    }
+  },
+  {
+    "word": "SR",
+    "phonetic": "/ɛs.ɛʁ/",
+    "definition_zh": "道路救援",
+    "definition_en": "initialism of secours routier (“road accident rescue”)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "tos",
+    "phonetic": "/tos/",
+    "definition_zh": "一年级生",
+    "definition_en": "a first-year student at the École polytechnique",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "gender": "feminine"
+      }
+    }
+  },
+  {
+    "word": "histoire",
+    "phonetic": "/is.twaʁ/",
+    "definition_zh": "历史 史历史学",
+    "definition_en": "story",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "histoires",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "histoires"
+      }
+    }
+  },
+  {
+    "word": "hippodrome",
+    "phonetic": "/i.pɔ.dʁɔm/",
+    "definition_zh": "古代战车或马的竞赛场",
+    "definition_en": "hippodrome, racecourse, circuit for equestrian sport",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "hippodromes",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "hippodromes"
+      }
+    }
+  },
+  {
+    "word": "évidemment",
+    "phonetic": "/e.vi.da.mɑ̃/",
+    "definition_zh": "书面语显然 明显地",
+    "definition_en": "of course, evidently, obviously",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "étude",
+    "phonetic": "/e.tyd/",
+    "definition_zh": "学 学习",
+    "definition_en": "study (act of studying or examining)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "études",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "études"
+      }
+    }
+  },
+  {
+    "word": "leçon",
+    "phonetic": "/lə.sɔ̃/",
+    "definition_zh": "课 功课 课程",
+    "definition_en": "lesson",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "leçons",
+    "example_sentence": "[J'ai] pas de leçons à donner, juste mon histoire à raconter.",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "leçons"
+      }
+    }
+  },
+  {
+    "word": "cahier",
+    "phonetic": "/ka.je/",
+    "definition_zh": "簿子 本子",
+    "definition_en": "notebook, exercise book",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "cahiers",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "cahiers"
+      }
+    }
+  },
+  {
+    "word": "cursus",
+    "phonetic": "/kyʁ.sys/",
+    "definition_zh": "拉丁语大学课程",
+    "definition_en": "course (learning program)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "grammaire",
+    "phonetic": "/ɡʁa.mɛʁ/",
+    "definition_zh": "语法语法学",
+    "definition_en": "grammar (the study of the morphological and syntactic rules of a language)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "grammaires",
+    "example_sentence": "La grammaire française est très complexe.",
+    "cefr_level": "B2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "grammaires"
+      }
+    }
+  },
+  {
+    "word": "plat principal",
+    "phonetic": "/pla pʁɛ̃.si.pal/",
+    "definition_zh": "主菜",
+    "definition_en": "main course",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "plats principaux",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "plats principaux"
+      }
+    }
+  },
+  {
+    "word": "ligne de conduite",
+    "phonetic": "/liɲ də kɔ̃.dɥit/",
+    "definition_zh": "行为准则",
+    "definition_en": "a conduct; an attitude, a course of action, a line of thought, occupation or policy",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "lignes de conduite",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "lignes de conduite"
+      }
+    }
+  },
+  {
+    "word": "trajet",
+    "phonetic": "/tʁa.ʒɛ/",
+    "definition_zh": "陆上的旅行路程 行程 旅程",
+    "definition_en": "route, course, trajectory",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "trajets",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "trajets"
+      }
+    }
+  },
+  {
+    "word": "rapport sexuel",
+    "phonetic": "/ʁa.pɔʁ sɛk.sɥɛl/",
+    "definition_zh": "性行为",
+    "definition_en": "sex; sexual intercourse",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "rapports sexuels",
+    "example_sentence": "rapports sexuels protégés",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "rapports sexuels"
+      }
+    }
+  },
+  {
+    "word": "lancée",
+    "phonetic": "/lɑ̃.se/",
+    "definition_zh": "冲势",
+    "definition_en": "path or course where momentum is accumulated",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "lancées",
+    "example_sentence": "[...] le bateau s'était littéralement ouvert en deux, en tombant entre deux lames, et, tandis que la partie avant — filant sur sa lancée — emportait les rameurs nᵒˢ 3 et 4, le chef de nage et le nᵒ 2 restaient en panne sur la partie arrière en compagnie du barreur.",
+    "cefr_level": "C1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "lancées"
+      }
+    }
+  },
+  {
+    "word": "parcours",
+    "phonetic": "/paʁ.kuʁ/",
+    "definition_zh": "通行 通过 经过",
+    "definition_en": "route, course",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "impuissant",
+    "phonetic": "/ɛ̃.pɥi.sɑ̃/",
+    "definition_zh": "无力的 虚弱的无能为力的",
+    "definition_en": "impotent (man incapable of sexual intercourse, often because of an inability to achieve or sustain an erection)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "impuissants",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "impuissants"
+      }
+    }
+  },
+  {
+    "word": "mathématique",
+    "phonetic": "/ma.te.ma.tik/",
+    "definition_zh": "数学的",
+    "definition_en": "mathematical",
+    "part_of_speech": "adjective",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "mathématique",
+    "phonetic": "/ma.te.ma.tik/",
+    "definition_zh": "数学的",
+    "definition_en": "synonym of mathématiques",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "normalien",
+    "phonetic": "/nɔʁ.ma.ljɛ̃/",
+    "definition_zh": "巴黎高等师范学校学生师范学校或师范大学学",
+    "definition_en": "a student or graduate of the École normale supérieure",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "normaliens",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "feminine",
+        "plural": "normaliens"
+      }
+    }
+  },
+  {
+    "word": "énarque",
+    "phonetic": "/e.naʁk/",
+    "definition_zh": "口语国立行政学校毕业身居要职的官员",
+    "definition_en": "énarque (graduate of the École nationale d'administration)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "énarques",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "énarques"
+      }
+    }
+  },
+  {
+    "word": "ENA",
+    "phonetic": "/e.na/",
+    "definition_zh": "国立行政学院缩写",
+    "definition_en": "acronym of École nationale d'administration",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "C’est au lendemain du mouvement des « gilets jaunes » qu’Emmanuel Macron avait fait la promesse de supprimer l’ENA.",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "mais oui",
+    "phonetic": "/mɛ wi/",
+    "definition_zh": "当然",
+    "definition_en": "of course",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "« Tu l'as vu ? » « Mais oui ! »",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "maternelle",
+    "phonetic": "/ma.tɛʁ.nɛl/",
+    "definition_zh": "幼儿园",
+    "definition_en": "ellipsis of école maternelle: nursery school, kindergarten",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "maternelles",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "maternelles"
+      }
+    }
+  },
+  {
+    "word": "universités",
+    "phonetic": "/y.ni.vɛʁ.si.te/",
+    "definition_zh": "大学",
+    "definition_en": "plural of université",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "prostituée",
+    "phonetic": "/pʁɔs.ti.tɥe/",
+    "definition_zh": "娼妓 妓女",
+    "definition_en": "prostitute (woman who has sexual intercourse or engages in other sexual activity for payment, especially as a means of livelihood)",
+    "part_of_speech": "noun",
+    "gender": "masculine",
+    "plural": "prostituées",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "masculine",
+        "plural": "prostituées"
+      }
+    }
+  },
+  {
+    "word": "obstiné",
+    "phonetic": "/ɔp.sti.ne/",
+    "definition_zh": "固执的 执拗的 顽固的",
+    "definition_en": "obstinate, stubborn (adhering to an opinion, purpose, or course, usually unreasonably)",
+    "part_of_speech": "adjective",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "feminine_form": "obstinée"
+      }
+    },
+    "feminine_form": "obstinée"
+  },
+  {
+    "word": "méandre",
+    "phonetic": "/me.ɑ̃dʁ/",
+    "definition_zh": "河流的蜿蜒 曲折",
+    "definition_en": "meander (winding, crooked or involved course)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "méandres",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "méandres"
+      }
+    }
+  },
+  {
+    "word": "hunier",
+    "phonetic": "/y.nje/",
+    "definition_zh": "船帆",
+    "definition_en": "topsail (sail above the course sail)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "huniers",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "huniers"
+      }
+    }
+  },
+  {
+    "word": "patinage de vitesse",
+    "phonetic": "/pa.ti.naʒ də vi.tɛs/",
+    "definition_zh": "速滑",
+    "definition_en": "speed skating (the sport of racing around an oval course on ice skates)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "persévérance",
+    "phonetic": "/pɛʁ.se.ve.ʁɑ̃s/",
+    "definition_zh": "坚持 坚持不懈 坚韧不拔 不屈不挠",
+    "definition_en": "perseverance (persistent determination to adhere to a course of action)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "persévérances",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "persévérances"
+      }
+    }
+  },
+  {
+    "word": "déduit",
+    "phonetic": "/de.dɥi/",
+    "definition_zh": "性行为",
+    "definition_en": "sexual intercourse, sex",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "déduits",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "déduits"
+      }
+    }
+  },
+  {
+    "word": "coït",
+    "phonetic": "/kɔ.it/",
+    "definition_zh": "性交 交媾 交配 交尾",
+    "definition_en": "sexual intercourse",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "coïts",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "coïts"
+      }
+    }
+  },
+  {
+    "word": "divaguer",
+    "phonetic": "/di.va.ɡe/",
+    "definition_zh": "飘泊 流浪",
+    "definition_en": "to wander (to move about aimlessly, or on a winding course)",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "Quelqu'un qui divague un peu pour rien, juste parce-que ça fait du bien d' penser à n'importe quoi.",
+    "cefr_level": "C1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "conjugation": {
+          "infinitif": "divaguer",
+          "participe_passe": "divagué",
+          "participe_present": "divaguant",
+          "indicatif_present": {
+            "je": "divague",
+            "tu": "divagues",
+            "il": "divague",
+            "elle": "divague",
+            "on": "divague",
+            "nous": "divaguons",
+            "vous": "divaguez",
+            "ils": "divaguent",
+            "elles": "divaguent"
+          },
+          "indicatif_imparfait": {
+            "je": "divaguais",
+            "tu": "divaguais",
+            "il": "divaguait",
+            "elle": "divaguait",
+            "on": "divaguait",
+            "nous": "divaguions",
+            "vous": "divaguiez",
+            "ils": "divaguaient",
+            "elles": "divaguaient"
+          },
+          "indicatif_passe_simple": {
+            "je": "divaguai",
+            "tu": "divaguas",
+            "il": "divagua",
+            "elle": "divagua",
+            "on": "divagua",
+            "nous": "divaguâmes",
+            "vous": "divaguâtes",
+            "ils": "divaguèrent",
+            "elles": "divaguèrent"
+          },
+          "indicatif_futur_simple": {
+            "je": "divaguerai",
+            "tu": "divagueras",
+            "il": "divaguera",
+            "elle": "divaguera",
+            "on": "divaguera",
+            "nous": "divaguerons",
+            "vous": "divaguerez",
+            "ils": "divagueront",
+            "elles": "divagueront"
+          },
+          "conditionnel_present": {
+            "je": "divaguerais",
+            "tu": "divaguerais",
+            "il": "divaguerait",
+            "elle": "divaguerait",
+            "on": "divaguerait",
+            "nous": "divaguerions",
+            "vous": "divagueriez",
+            "ils": "divagueraient",
+            "elles": "divagueraient"
+          },
+          "subjonctif_present": {
+            "je": "divague",
+            "tu": "divagues",
+            "il": "divague",
+            "elle": "divague",
+            "on": "divague",
+            "nous": "divaguions",
+            "vous": "divaguiez",
+            "ils": "divaguent",
+            "elles": "divaguent"
+          }
+        }
+      }
+    },
+    "conjugation": {
+      "infinitif": "divaguer",
+      "participe_passe": "divagué",
+      "participe_present": "divaguant",
+      "indicatif_present": {
+        "je": "divague",
+        "tu": "divagues",
+        "il": "divague",
+        "elle": "divague",
+        "on": "divague",
+        "nous": "divaguons",
+        "vous": "divaguez",
+        "ils": "divaguent",
+        "elles": "divaguent"
+      },
+      "indicatif_imparfait": {
+        "je": "divaguais",
+        "tu": "divaguais",
+        "il": "divaguait",
+        "elle": "divaguait",
+        "on": "divaguait",
+        "nous": "divaguions",
+        "vous": "divaguiez",
+        "ils": "divaguaient",
+        "elles": "divaguaient"
+      },
+      "indicatif_passe_simple": {
+        "je": "divaguai",
+        "tu": "divaguas",
+        "il": "divagua",
+        "elle": "divagua",
+        "on": "divagua",
+        "nous": "divaguâmes",
+        "vous": "divaguâtes",
+        "ils": "divaguèrent",
+        "elles": "divaguèrent"
+      },
+      "indicatif_futur_simple": {
+        "je": "divaguerai",
+        "tu": "divagueras",
+        "il": "divaguera",
+        "elle": "divaguera",
+        "on": "divaguera",
+        "nous": "divaguerons",
+        "vous": "divaguerez",
+        "ils": "divagueront",
+        "elles": "divagueront"
+      },
+      "conditionnel_present": {
+        "je": "divaguerais",
+        "tu": "divaguerais",
+        "il": "divaguerait",
+        "elle": "divaguerait",
+        "on": "divaguerait",
+        "nous": "divaguerions",
+        "vous": "divagueriez",
+        "ils": "divagueraient",
+        "elles": "divagueraient"
+      },
+      "subjonctif_present": {
+        "je": "divague",
+        "tu": "divagues",
+        "il": "divague",
+        "elle": "divague",
+        "on": "divague",
+        "nous": "divaguions",
+        "vous": "divaguiez",
+        "ils": "divaguent",
+        "elles": "divaguent"
+      }
+    }
+  },
+  {
+    "word": "dans le courant de",
+    "phonetic": "/dɑ̃ l(ə) ku.ʁɑ̃ də/",
+    "definition_zh": "期间",
+    "definition_en": "in the course of",
+    "part_of_speech": "preposition",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "au fil de",
+    "phonetic": "/o fil də/",
+    "definition_zh": "过程中",
+    "definition_en": "in the course of, over the course of",
+    "part_of_speech": "preposition",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "au fil des mois",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "professeure",
+    "phonetic": "/pʁɔ.fɛ.sœʁ/",
+    "definition_zh": "女教授",
+    "definition_en": "female equivalent of professeur",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "professeures",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "professeures"
+      }
+    }
+  },
+  {
+    "word": "polytechnicien",
+    "phonetic": "/pɔ.li.tɛk.ni.sjɛ̃/",
+    "definition_zh": "巴黎综合工科学校学生或毕业生",
+    "definition_en": "related to École polytechnique",
+    "part_of_speech": "adjective",
+    "gender": "masculine",
+    "plural": "",
+    "example_sentence": "Tous les membres de la grande famille polytechnicienne, depuis les élèves de l’école jusqu’aux chefs les plus élevés des administrations qui s’y recrutent. (Journal officiel, 29 décembre 1874, page 8634)",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "feminine_form": "polytechnicienne",
+        "gender": "masculine"
+      }
+    },
+    "feminine_form": "polytechnicienne"
+  },
+  {
+    "word": "polytechnicien",
+    "phonetic": "/pɔ.li.tɛk.ni.sjɛ̃/",
+    "definition_zh": "巴黎综合工科学校学生或毕业生",
+    "definition_en": "graduate of an École polytechnique",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "polytechniciens",
+    "example_sentence": "Je le sais homme de valeur. Il sort de l'École polytechnique. Je me suis bien laissé dire que le coup de marteau, dont on avance que de nombreux polytechniciens sont affligés, a laissé des traces particulières sur son cerveau. (Joseph Caillaux, Mes Mémoires, I, Ma jeunesse orgueilleuse, 1942)",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "feminine",
+        "plural": "polytechniciens"
+      }
+    }
+  },
+  {
+    "word": "parties du discours",
+    "phonetic": "/paʁ.ti dy dis.kuʁ/",
+    "definition_zh": "语部",
+    "definition_en": "plural of partie du discours",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "cheminement",
+    "phonetic": "/ʃə.min.mɑ̃/",
+    "definition_zh": "行走 行进缓慢的行走",
+    "definition_en": "progress, course",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "cheminements",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "cheminements"
+      }
+    }
+  },
+  {
+    "word": "zizi panpan",
+    "phonetic": "/zi.zi pɑ̃.pɑ̃/",
+    "definition_zh": "性行为",
+    "definition_en": "sexual intercourse",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "faire zizi panpan",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "pardi",
+    "phonetic": "/paʁ.di/",
+    "definition_zh": "当然",
+    "definition_en": "(yes,) obviously! (yes,) for God's sake! (yes,) of course!",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "trou normand",
+    "phonetic": "/tʁu nɔʁ.mɑ̃/",
+    "definition_zh": "诺曼底酒",
+    "definition_en": "eau-de-vie, especially calvados, served as a middle course in a large meal",
+    "part_of_speech": "phrase",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "coïter",
+    "phonetic": "/kɔ.i.te/",
+    "definition_zh": "性交 交媾交配 交尾",
+    "definition_en": "to copulate, to engage in sexual intercourse",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "conjugation": {
+          "infinitif": "coïter",
+          "participe_passe": "coïté",
+          "participe_present": "coïtant",
+          "indicatif_present": {
+            "je": "coïte",
+            "tu": "coïtes",
+            "il": "coïte",
+            "elle": "coïte",
+            "on": "coïte",
+            "nous": "coïtons",
+            "vous": "coïtez",
+            "ils": "coïtent",
+            "elles": "coïtent"
+          },
+          "indicatif_imparfait": {
+            "je": "coïtais",
+            "tu": "coïtais",
+            "il": "coïtait",
+            "elle": "coïtait",
+            "on": "coïtait",
+            "nous": "coïtions",
+            "vous": "coïtiez",
+            "ils": "coïtaient",
+            "elles": "coïtaient"
+          },
+          "indicatif_passe_simple": {
+            "je": "coïtai",
+            "tu": "coïtas",
+            "il": "coïta",
+            "elle": "coïta",
+            "on": "coïta",
+            "nous": "coïtâmes",
+            "vous": "coïtâtes",
+            "ils": "coïtèrent",
+            "elles": "coïtèrent"
+          },
+          "indicatif_futur_simple": {
+            "je": "coïterai",
+            "tu": "coïteras",
+            "il": "coïtera",
+            "elle": "coïtera",
+            "on": "coïtera",
+            "nous": "coïterons",
+            "vous": "coïterez",
+            "ils": "coïteront",
+            "elles": "coïteront"
+          },
+          "conditionnel_present": {
+            "je": "coïterais",
+            "tu": "coïterais",
+            "il": "coïterait",
+            "elle": "coïterait",
+            "on": "coïterait",
+            "nous": "coïterions",
+            "vous": "coïteriez",
+            "ils": "coïteraient",
+            "elles": "coïteraient"
+          },
+          "subjonctif_present": {
+            "je": "coïte",
+            "tu": "coïtes",
+            "il": "coïte",
+            "elle": "coïte",
+            "on": "coïte",
+            "nous": "coïtions",
+            "vous": "coïtiez",
+            "ils": "coïtent",
+            "elles": "coïtent"
+          }
+        }
+      }
+    },
+    "conjugation": {
+      "infinitif": "coïter",
+      "participe_passe": "coïté",
+      "participe_present": "coïtant",
+      "indicatif_present": {
+        "je": "coïte",
+        "tu": "coïtes",
+        "il": "coïte",
+        "elle": "coïte",
+        "on": "coïte",
+        "nous": "coïtons",
+        "vous": "coïtez",
+        "ils": "coïtent",
+        "elles": "coïtent"
+      },
+      "indicatif_imparfait": {
+        "je": "coïtais",
+        "tu": "coïtais",
+        "il": "coïtait",
+        "elle": "coïtait",
+        "on": "coïtait",
+        "nous": "coïtions",
+        "vous": "coïtiez",
+        "ils": "coïtaient",
+        "elles": "coïtaient"
+      },
+      "indicatif_passe_simple": {
+        "je": "coïtai",
+        "tu": "coïtas",
+        "il": "coïta",
+        "elle": "coïta",
+        "on": "coïta",
+        "nous": "coïtâmes",
+        "vous": "coïtâtes",
+        "ils": "coïtèrent",
+        "elles": "coïtèrent"
+      },
+      "indicatif_futur_simple": {
+        "je": "coïterai",
+        "tu": "coïteras",
+        "il": "coïtera",
+        "elle": "coïtera",
+        "on": "coïtera",
+        "nous": "coïterons",
+        "vous": "coïterez",
+        "ils": "coïteront",
+        "elles": "coïteront"
+      },
+      "conditionnel_present": {
+        "je": "coïterais",
+        "tu": "coïterais",
+        "il": "coïterait",
+        "elle": "coïterait",
+        "on": "coïterait",
+        "nous": "coïterions",
+        "vous": "coïteriez",
+        "ils": "coïteraient",
+        "elles": "coïteraient"
+      },
+      "subjonctif_present": {
+        "je": "coïte",
+        "tu": "coïtes",
+        "il": "coïte",
+        "elle": "coïte",
+        "on": "coïte",
+        "nous": "coïtions",
+        "vous": "coïtiez",
+        "ils": "coïtent",
+        "elles": "coïtent"
+      }
+    }
+  },
+  {
+    "word": "ultime avertissement",
+    "phonetic": "/yl.ti.m‿a.vɛʁ.tis.mɑ̃/",
+    "definition_zh": "终极警告",
+    "definition_en": "the recourse to the use of limited, sub- or prestrategic, tactical nuclear strikes as part of a nuclear deterrent, constituting a “final warning” and the last measure before strategic nuclear bombardment; also, such a strike",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "ultimes avertissements",
+    "example_sentence": "They were not battlefield weapons but the l’ultime avertissement (final warning) prior to the use of strategic forces.\n[…]",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "ultimes avertissements"
+      }
+    }
+  },
+  {
+    "word": "coursiers",
+    "phonetic": "/kuʁ.sje/",
+    "definition_zh": "快递员",
+    "definition_en": "plural of coursier",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "didacticiel",
+    "phonetic": "/di.dak.ti.sjɛl/",
+    "definition_zh": "教学软件",
+    "definition_en": "courseware (educational software)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "didacticiels",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "didacticiels"
+      }
+    }
+  },
+  {
+    "word": "discourir",
+    "phonetic": "/dis.ku.ʁiʁ/",
+    "definition_zh": "谈论",
+    "definition_en": "to talk, discourse, hold forth",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "conjugation": {
+          "infinitif": "discourir",
+          "participe_passe": "discouru",
+          "participe_present": "discourant",
+          "indicatif_present": {
+            "je": "discours",
+            "tu": "discours",
+            "il": "discourt",
+            "elle": "discourt",
+            "on": "discourt",
+            "nous": "discourons",
+            "vous": "discourez",
+            "ils": "discourent",
+            "elles": "discourent"
+          },
+          "indicatif_imparfait": {
+            "je": "discourais",
+            "tu": "discourais",
+            "il": "discourait",
+            "elle": "discourait",
+            "on": "discourait",
+            "nous": "discourions",
+            "vous": "discouriez",
+            "ils": "discouraient",
+            "elles": "discouraient"
+          },
+          "indicatif_passe_simple": {
+            "je": "discourus",
+            "tu": "discourus",
+            "il": "discourut",
+            "elle": "discourut",
+            "on": "discourut",
+            "nous": "discourûmes",
+            "vous": "discourûtes",
+            "ils": "discoururent",
+            "elles": "discoururent"
+          },
+          "indicatif_futur_simple": {
+            "je": "discourrai",
+            "tu": "discourras",
+            "il": "discourra",
+            "elle": "discourra",
+            "on": "discourra",
+            "nous": "discourrons",
+            "vous": "discourrez",
+            "ils": "discourront",
+            "elles": "discourront"
+          },
+          "conditionnel_present": {
+            "je": "discourrais",
+            "tu": "discourrais",
+            "il": "discourrait",
+            "elle": "discourrait",
+            "on": "discourrait",
+            "nous": "discourrions",
+            "vous": "discourriez",
+            "ils": "discourraient",
+            "elles": "discourraient"
+          },
+          "subjonctif_present": {
+            "je": "discoure",
+            "tu": "discoures",
+            "il": "discoure",
+            "elle": "discoure",
+            "on": "discoure",
+            "nous": "discourions",
+            "vous": "discouriez",
+            "ils": "discourent",
+            "elles": "discourent"
+          }
+        }
+      }
+    },
+    "conjugation": {
+      "infinitif": "discourir",
+      "participe_passe": "discouru",
+      "participe_present": "discourant",
+      "indicatif_present": {
+        "je": "discours",
+        "tu": "discours",
+        "il": "discourt",
+        "elle": "discourt",
+        "on": "discourt",
+        "nous": "discourons",
+        "vous": "discourez",
+        "ils": "discourent",
+        "elles": "discourent"
+      },
+      "indicatif_imparfait": {
+        "je": "discourais",
+        "tu": "discourais",
+        "il": "discourait",
+        "elle": "discourait",
+        "on": "discourait",
+        "nous": "discourions",
+        "vous": "discouriez",
+        "ils": "discouraient",
+        "elles": "discouraient"
+      },
+      "indicatif_passe_simple": {
+        "je": "discourus",
+        "tu": "discourus",
+        "il": "discourut",
+        "elle": "discourut",
+        "on": "discourut",
+        "nous": "discourûmes",
+        "vous": "discourûtes",
+        "ils": "discoururent",
+        "elles": "discoururent"
+      },
+      "indicatif_futur_simple": {
+        "je": "discourrai",
+        "tu": "discourras",
+        "il": "discourra",
+        "elle": "discourra",
+        "on": "discourra",
+        "nous": "discourrons",
+        "vous": "discourrez",
+        "ils": "discourront",
+        "elles": "discourront"
+      },
+      "conditionnel_present": {
+        "je": "discourrais",
+        "tu": "discourrais",
+        "il": "discourrait",
+        "elle": "discourrait",
+        "on": "discourrait",
+        "nous": "discourrions",
+        "vous": "discourriez",
+        "ils": "discourraient",
+        "elles": "discourraient"
+      },
+      "subjonctif_present": {
+        "je": "discoure",
+        "tu": "discoures",
+        "il": "discoure",
+        "elle": "discoure",
+        "on": "discoure",
+        "nous": "discourions",
+        "vous": "discouriez",
+        "ils": "discourent",
+        "elles": "discourent"
+      }
+    }
+  },
+  {
+    "word": "disserter",
+    "phonetic": "/di.sɛʁ.te/",
+    "definition_zh": "论说 论述写论文",
+    "definition_en": "to discourse (on)",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "conjugation": {
+          "infinitif": "disserter",
+          "participe_passe": "disserté",
+          "participe_present": "dissertant",
+          "indicatif_present": {
+            "je": "disserte",
+            "tu": "dissertes",
+            "il": "disserte",
+            "elle": "disserte",
+            "on": "disserte",
+            "nous": "dissertons",
+            "vous": "dissertez",
+            "ils": "dissertent",
+            "elles": "dissertent"
+          },
+          "indicatif_imparfait": {
+            "je": "dissertais",
+            "tu": "dissertais",
+            "il": "dissertait",
+            "elle": "dissertait",
+            "on": "dissertait",
+            "nous": "dissertions",
+            "vous": "dissertiez",
+            "ils": "dissertaient",
+            "elles": "dissertaient"
+          },
+          "indicatif_passe_simple": {
+            "je": "dissertai",
+            "tu": "dissertas",
+            "il": "disserta",
+            "elle": "disserta",
+            "on": "disserta",
+            "nous": "dissertâmes",
+            "vous": "dissertâtes",
+            "ils": "dissertèrent",
+            "elles": "dissertèrent"
+          },
+          "indicatif_futur_simple": {
+            "je": "disserterai",
+            "tu": "disserteras",
+            "il": "dissertera",
+            "elle": "dissertera",
+            "on": "dissertera",
+            "nous": "disserterons",
+            "vous": "disserterez",
+            "ils": "disserteront",
+            "elles": "disserteront"
+          },
+          "conditionnel_present": {
+            "je": "disserterais",
+            "tu": "disserterais",
+            "il": "disserterait",
+            "elle": "disserterait",
+            "on": "disserterait",
+            "nous": "disserterions",
+            "vous": "disserteriez",
+            "ils": "disserteraient",
+            "elles": "disserteraient"
+          },
+          "subjonctif_present": {
+            "je": "disserte",
+            "tu": "dissertes",
+            "il": "disserte",
+            "elle": "disserte",
+            "on": "disserte",
+            "nous": "dissertions",
+            "vous": "dissertiez",
+            "ils": "dissertent",
+            "elles": "dissertent"
+          }
+        }
+      }
+    },
+    "conjugation": {
+      "infinitif": "disserter",
+      "participe_passe": "disserté",
+      "participe_present": "dissertant",
+      "indicatif_present": {
+        "je": "disserte",
+        "tu": "dissertes",
+        "il": "disserte",
+        "elle": "disserte",
+        "on": "disserte",
+        "nous": "dissertons",
+        "vous": "dissertez",
+        "ils": "dissertent",
+        "elles": "dissertent"
+      },
+      "indicatif_imparfait": {
+        "je": "dissertais",
+        "tu": "dissertais",
+        "il": "dissertait",
+        "elle": "dissertait",
+        "on": "dissertait",
+        "nous": "dissertions",
+        "vous": "dissertiez",
+        "ils": "dissertaient",
+        "elles": "dissertaient"
+      },
+      "indicatif_passe_simple": {
+        "je": "dissertai",
+        "tu": "dissertas",
+        "il": "disserta",
+        "elle": "disserta",
+        "on": "disserta",
+        "nous": "dissertâmes",
+        "vous": "dissertâtes",
+        "ils": "dissertèrent",
+        "elles": "dissertèrent"
+      },
+      "indicatif_futur_simple": {
+        "je": "disserterai",
+        "tu": "disserteras",
+        "il": "dissertera",
+        "elle": "dissertera",
+        "on": "dissertera",
+        "nous": "disserterons",
+        "vous": "disserterez",
+        "ils": "disserteront",
+        "elles": "disserteront"
+      },
+      "conditionnel_present": {
+        "je": "disserterais",
+        "tu": "disserterais",
+        "il": "disserterait",
+        "elle": "disserterait",
+        "on": "disserterait",
+        "nous": "disserterions",
+        "vous": "disserteriez",
+        "ils": "disserteraient",
+        "elles": "disserteraient"
+      },
+      "subjonctif_present": {
+        "je": "disserte",
+        "tu": "dissertes",
+        "il": "disserte",
+        "elle": "disserte",
+        "on": "disserte",
+        "nous": "dissertions",
+        "vous": "dissertiez",
+        "ils": "dissertent",
+        "elles": "dissertent"
+      }
+    }
+  },
+  {
+    "word": "Polytechnique",
+    "phonetic": "/pɔ.li.tɛk.nik/",
+    "definition_zh": "巴黎理工",
+    "definition_en": "the École polytechnique, a major institute of higher learning outside of Paris",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "à la russe",
+    "phonetic": "/a la ʁys/",
+    "definition_zh": "俄式分餐",
+    "definition_en": "à la russe (having courses already prepared and handed out to individual guests)",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "géo",
+    "phonetic": "/ʒe.o/",
+    "definition_zh": "地理课考",
+    "definition_en": "geography course or exam",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "géos",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "géos"
+      }
+    }
+  },
+  {
+    "word": "hypokhâgne",
+    "phonetic": "/i.pɔ.kaɲ/",
+    "definition_zh": "预科一年级",
+    "definition_en": "the first year course, followed by khâgne, of the two-year academic cycle in France (called Classe préparatoire aux grandes écoles, Humanities section) whose aim is to prepare students for the entrance competition of the École normale supérieure in Paris",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "hypokhâgnes",
+    "example_sentence": "Et puis, je l'ai sans doute écouté, lui et mes autres professeurs de lettres, puisque j'ai continué. Je suis rentré en hypokhâgne à Louis-le-Grand... J'ai fait une année d’hypokhâgne ; […]",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "hypokhâgnes"
+      }
+    }
+  },
+  {
+    "word": "énarchie",
+    "phonetic": "/e.naʁ.ʃi/",
+    "definition_zh": "戏谑语法国国家机关中国立行政学校毕业生的",
+    "definition_en": "government/rule by the énarques (graduates of the École nationale d'administration)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "énarchies",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "énarchies"
+      }
+    }
+  },
+  {
+    "word": "échole",
+    "phonetic": "/e.kɔl/",
+    "definition_zh": "旧学校",
+    "definition_en": "obsolete form of école",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "écholes",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "écholes"
+      }
+    }
+  },
+  {
+    "word": "mogo",
+    "phonetic": "/mɔ.ɡɔ/",
+    "definition_zh": "男人，情场高手",
+    "definition_en": "bloke, man, particularly as seen as engaging in intercourse with women, philanderer, lothario",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "mogos",
+    "example_sentence": "Bébé laisse toi aller, tout le monde sait que t’es kpoklé\nOn sait que t’as fini de mougou tous les mogos qui jouent les millionnaires de ton quartier",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "mogos"
+      }
+    }
+  },
+  {
+    "word": "si fait",
+    "phonetic": "/si fɛ/",
+    "definition_zh": "当然",
+    "definition_en": "certainly, yes (indeed), but of course (used to contradict a negative assertion)",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "— Vous trouvez que ce n'est pas divertissant ?\n— Si fait ! dit le prêtre.",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "coursière",
+    "phonetic": "/kuʁ.sjɛʁ/",
+    "definition_zh": "当差的人 跑腿的人",
+    "definition_en": "female equivalent of coursier",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "coursières",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "coursières"
+      }
+    }
+  },
+  {
+    "word": "coursières",
+    "phonetic": "/kuʁ.sjɛʁ/",
+    "definition_zh": "女骑师",
+    "definition_en": "plural of coursière",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "pentathlon des neiges",
+    "phonetic": "/pɛ̃.tat.lɔ̃ de nɛʒ/",
+    "definition_zh": "雪五项",
+    "definition_en": "snow pentathlon (a five-leg five-sport race involving vélo (“bicycling”), course (“running”), ski de fond (“cross-country skiing”), patin (“ice skating”), raquette (“snowshoeing”).)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "pentathlons des neiges",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "pentathlons des neiges"
+      }
+    }
+  },
+  {
+    "word": "champ de courses",
+    "phonetic": "/ʃɑ̃ d(ə) kuʁs/",
+    "definition_zh": "赛马场",
+    "definition_en": "racecourse",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "champs de courses",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "champs de courses"
+      }
+    }
+  },
+  {
+    "word": "archicube",
+    "phonetic": "/aʁ.ʃi.kyb/",
+    "definition_zh": "巴黎高等师范学校校友 学生用语",
+    "definition_en": "Graduate, former student at the École normale supérieure in Paris",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "archicubes",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "archicubes"
+      }
+    }
+  },
+  {
+    "word": "au cours de",
+    "phonetic": "/o kuʁ də/",
+    "definition_zh": "过程中",
+    "definition_en": "during, throughout, in the course of",
+    "part_of_speech": "preposition",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "Une relation est une suite d'interactions entre les mêmes personnes au cours du temps.",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "pilule du lendemain",
+    "phonetic": "/pi.lyl dy lɑ̃d.mɛ̃/",
+    "definition_zh": "事后避孕药",
+    "definition_en": "morning-after pill (contraceptive in the form of a pill taken shortly after sexual intercourse)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "pilules du lendemain",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "pilules du lendemain"
+      }
+    }
+  },
+  {
+    "word": "au gré de",
+    "phonetic": "/o ɡʁe də/",
+    "definition_zh": "任意",
+    "definition_en": "in the course of, over the course of",
+    "part_of_speech": "preposition",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "au gré de mes pérégrinations",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "parcours du combattant",
+    "phonetic": "/paʁ.kuʁ dy kɔ̃.ba.tɑ̃/",
+    "definition_zh": "战斗历程",
+    "definition_en": "assault course, obstacle course",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "branlette espagnole",
+    "phonetic": "/bʁɑ̃.lɛ.t‿ɛs.pa.ɲɔl/",
+    "definition_zh": "哺乳交",
+    "definition_en": "tit fuck, titwank, titjob (mammary intercourse)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "branlettes espagnoles",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "branlettes espagnoles"
+      }
+    }
+  },
+  {
+    "word": "cours d'eau",
+    "phonetic": "/kuʁ d‿o/",
+    "definition_zh": "水流",
+    "definition_en": "watercourse, waterway, stream, run",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "marche à suivre",
+    "phonetic": "/maʁ.ʃ‿a sɥivʁ/",
+    "definition_zh": "执行步骤",
+    "definition_en": "procedure, step-by-step instructions, course of action, way to go",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "marches à suivre",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "marches à suivre"
+      }
+    }
+  },
+  {
+    "word": "en temps voulu",
+    "phonetic": "/ɑ̃ tɑ̃ vu.ly/",
+    "definition_zh": "适时",
+    "definition_en": "in good time, in due time, in due course",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "Nous verrons en temps voulu.",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "en temps utile",
+    "phonetic": "/ɑ̃ tɑ̃.z‿y.til/",
+    "definition_zh": "及时",
+    "definition_en": "in good time, in due time, in due course",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "salle des pas perdus",
+    "phonetic": "/sal de pa pɛʁ.dy/",
+    "definition_zh": "失物招领处",
+    "definition_en": "concourse, waiting hall, circulation area, waiting room (in an airport or a railway station)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "salles des pas perdus",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "salles des pas perdus"
+      }
+    }
+  },
+  {
+    "word": "en temps et en heure",
+    "phonetic": "/ɑ̃ tɑ̃ e ɑ̃ œʁ/",
+    "definition_zh": "及时",
+    "definition_en": "in good time, in due time, in due course",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "discours indirects",
+    "phonetic": "/dis.kuʁ.z‿ɛ̃.di.ʁɛkt/",
+    "definition_zh": "间接语",
+    "definition_en": "plural of discours indirect",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "suivre son cours",
+    "phonetic": "/sɥi.vʁə sɔ̃ kuʁ/",
+    "definition_zh": "顺其自然",
+    "definition_en": "to follow its course, to take its course, to continue, to progress, to come along",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "La justice doit suivre son cours.",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "école de la vie",
+    "phonetic": "/e.kɔl də la vi/",
+    "definition_zh": "生活学校",
+    "definition_en": "alternative form of école de vie",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "écoles de la vie",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "écoles de la vie"
+      }
+    }
+  },
+  {
+    "word": "avoir recours",
+    "phonetic": "/a.vwaʁ ʁə.kuʁ/",
+    "definition_zh": "求助",
+    "definition_en": "to have recourse, to resort, to turn",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "avoir recours à la force",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "au détour de",
+    "phonetic": "/o de.tuʁ də/",
+    "definition_zh": "途中",
+    "definition_en": "during, in the course of",
+    "part_of_speech": "preposition",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "au détour d'une conversation",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "mais bien sûr",
+    "phonetic": "/mɛ bjɛ̃ syʁ/",
+    "definition_zh": "当然",
+    "definition_en": "but of course!",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "mais bien sûr, avec plaisir !",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "chacun son métier, les vaches seront bien gardées",
+    "phonetic": "/ʃa.kœ̃ sɔ̃ me.tje | le vaʃ sə.ʁɔ̃ bjɛ̃ ɡaʁ.de/",
+    "definition_zh": "各司其职",
+    "definition_en": "horses for courses; cobbler, keep to your last; each to their own trade (one should stick to what they know)",
+    "part_of_speech": "proverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "plat de résistance",
+    "phonetic": "/pla d(ə) ʁe.zis.tɑ̃s/",
+    "definition_zh": "主菜",
+    "definition_en": "main course, main dish",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "plats de résistance",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "plats de résistance"
+      }
+    }
+  },
+  {
+    "word": "première fois",
+    "phonetic": "/pʁə.mjɛʁ fwa/",
+    "definition_zh": "初尝禁果",
+    "definition_en": "first time (the first instance of sexual intercourse)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "premières fois",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "premières fois"
+      }
+    }
+  },
+  {
+    "word": "rectifier le tir",
+    "phonetic": "/ʁɛk.ti.fje l(ə) tiʁ/",
+    "definition_zh": "调整方向",
+    "definition_en": "to make adjustments, to adjust tactics, to change course; to set things back on track",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "corriger le tir",
+    "phonetic": "/kɔ.ʁi.ʒe l(ə) tiʁ/",
+    "definition_zh": "调整射击",
+    "definition_en": "to make adjustments, to adjust tactics, to change course, to course-correct; to set things back on track",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "course d'obstacles",
+    "phonetic": "/kuʁ.s(ə) d‿ɔp.stakl/",
+    "definition_zh": "障碍赛",
+    "definition_en": "obstacle course, obstacle race, assault course",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "courses d'obstacles",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "courses d'obstacles"
+      }
+    }
+  },
+  {
+    "word": "tenir la distance",
+    "phonetic": "/tə.niʁ la dis.tɑ̃s/",
+    "definition_zh": "保持距离",
+    "definition_en": "to go the distance, to cover the distance, to stay the course, to last the course",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "bon sang mais c'est bien sûr",
+    "phonetic": "/bɔ̃ sɑ̃ mɛ s‿ɛ bjɛ̃ syʁ/",
+    "definition_zh": "当然",
+    "definition_en": "but of course! that's obvious, I can see that now! how did I not get that before?",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "voie de droit",
+    "phonetic": "/vwa də dʁwa/",
+    "definition_zh": "诉讼途径",
+    "definition_en": "right course of law",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "voies de droit",
+    "example_sentence": "Il est loisible à tous les habitans du Royaume d'agir par les voies de droit, & de demander justice ; mais il n'est permis à personne de se la faire.",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "voies de droit"
+      }
+    }
+  },
+  {
+    "word": "non peut-être",
+    "phonetic": "[nõ pœˈtɛːtʁ̥]",
+    "definition_zh": "当然不，或许",
+    "definition_en": "of course, not maybe",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "cela s'entend",
+    "phonetic": "/sə.la s‿ɑ̃.tɑ̃/",
+    "definition_zh": "理所当然",
+    "definition_en": "of course",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "ancienne école",
+    "phonetic": "/ɑ̃.sjɛn e.kɔl/",
+    "definition_zh": "旧学派",
+    "definition_en": "synonym of vieille école",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "",
+    "example_sentence": "être de l'ancienne école",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "gender": "feminine"
+      }
+    }
+  },
+  {
+    "word": "renverser la vapeur",
+    "phonetic": "/ʁɑ̃.vɛʁ.se la va.pœʁ/",
+    "definition_zh": "扭转局势",
+    "definition_en": "to turn the tide, to turn things around; to change course",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "brûler ses vaisseaux",
+    "phonetic": "/bʁy.le se vɛ.so/",
+    "definition_zh": "烧断退路",
+    "definition_en": "to burn one's boats (to cut oneself off from all chance of retreat in order to commit to a course of action)",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "reprendre son cours",
+    "phonetic": "/ʁə.pʁɑ̃.dʁə sɔ̃ kuʁ/",
+    "definition_zh": "恢复课程",
+    "definition_en": "to resume one's course, to return to normal",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "La vie reprend son cours.",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "mettre le cap",
+    "phonetic": "/mɛ.tʁə lə kap/",
+    "definition_zh": "定航向",
+    "definition_en": "to set a course, to set sail, to head",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "à ton avis",
+    "phonetic": "/a tɔ̃.n‿a.vi/",
+    "definition_zh": "你的看法",
+    "definition_en": "what do you think? of course!",
+    "part_of_speech": "phrase",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Courseulles-sur-Mer",
+    "phonetic": "/kuʁ.sœl.syʁ.mɛʁ/",
+    "definition_zh": "库尔塞尔港",
+    "definition_en": "Courseulles-sur-Mer (a town and commune of Calvados department, Normandy, France)",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Courseulles",
+    "phonetic": "/kuʁ.sœl/",
+    "definition_zh": "库鲁塞尔",
+    "definition_en": "short form and former name of Courseulles-sur-Mer, a town and commune in the Calvados department, Normandy, France",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "à votre avis",
+    "phonetic": "/a vɔ.tʁ‿a.vi/",
+    "definition_zh": "看法如何",
+    "definition_en": "what do you think? of course!",
+    "part_of_speech": "phrase",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "tronc commun",
+    "phonetic": "/tʁɔ̃ kɔ.mœ̃/",
+    "definition_zh": "共同课程",
+    "definition_en": "core curriculum (courses or other components of an educational program which are foundational, prerequisite, or mandatory, as opposed to the elective, secondary, or variable components of a program)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "troncs communs",
+    "example_sentence": "une matière du tronc commun",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "troncs communs"
+      }
+    }
+  },
+  {
+    "word": "comment donc",
+    "phonetic": "/kɔ.mɑ̃ dɔ̃k/",
+    "definition_zh": "当然",
+    "definition_en": "An affirmative expression of certainty, used especially to grant permission; certainly, by all means, of course",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "—Je peux te demander une faveur ?\n—Mais comment donc !",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "laisser le temps au temps",
+    "phonetic": "/lɛ.se l(ə) tɑ̃ o tɑ̃/",
+    "definition_zh": "顺其自然",
+    "definition_en": "to let time do its work, to leave it to time, to let time take its course; to be patient",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "donner le temps au temps",
+    "phonetic": "/dɔ.ne l(ə) tɑ̃ o tɑ̃/",
+    "definition_zh": "顺其自然",
+    "definition_en": "to let time do its work, to leave it to time, to let time take its course; to be patient",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Cosne-Cours-sur-Loire",
+    "phonetic": "/kɔs.nə.kuʁ.syʁ.lwaʁ/",
+    "definition_zh": "科森库尔卢瓦尔镇",
+    "definition_en": "Cosne-Cours-sur-Loire (a town in Nièvre department, France)",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Cosne-sur-Loire",
+    "phonetic": "/kɔs.nə.syʁ.lwaʁ/",
+    "definition_zh": "科森河畔",
+    "definition_en": "short for Cosne-Cours-sur-Loire",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Cosne",
+    "phonetic": "/kɔsn/",
+    "definition_zh": "科森库尔洛尔河畔",
+    "definition_en": "synonym of Cosne-Cours-sur-Loire",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "à grand renfort de",
+    "phonetic": "/a ɡʁɑ̃ ʁɑ̃.fɔʁ də/",
+    "definition_zh": "大肆使用",
+    "definition_en": "with a lot of, with a great deal of, making liberal use of, with much recourse to",
+    "part_of_speech": "preposition",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "FEESO",
+    "phonetic": "/fe.ɛ.so/",
+    "definition_zh": "安大略教师联",
+    "definition_en": "acronym of Fédération des enseignantes-enseignants des écoles secondaires de l'Ontario (“Ontario Secondary School Teachers Federation”): OSSTF",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "à pleine lancée",
+    "phonetic": "/a plɛn lɑ̃.se/",
+    "definition_zh": "全力冲刺",
+    "definition_en": "on a path or course where momentum is accumulated",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "continuer sur une lancée",
+    "phonetic": "/kɔ̃.ti.nɥe syʁ yn lɑ̃.se/",
+    "definition_zh": "延续势头",
+    "definition_en": "to keep going on a specific path or course",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "On a supposé qu'Aragon n'aurait pas été au courant de la ligne rapportée par Thorez et aurait continué sur une lancée semi-insurrectionnelle, ou du moins intransigeante, peut-être inspirée par Duclos.",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "auditeur libre",
+    "phonetic": "/o.di.tœʁ libʁ/",
+    "definition_zh": "旁听生",
+    "definition_en": "unregistered student, auditor (one who audits an academic course; one who attends the lectures but does not earn academic credit)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "auditeurs libres",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "auditeurs libres"
+      }
+    }
+  },
+  {
+    "word": "garder le cap",
+    "phonetic": "/ɡaʁ.de l(ə) kap/",
+    "definition_zh": "保持航向",
+    "definition_en": "to stay the course",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "le moment venu",
+    "phonetic": "/lə mɔ.mɑ̃ v(ə).ny/",
+    "definition_zh": "适当时机",
+    "definition_en": "in good time, in due time, in due course",
+    "part_of_speech": "adverb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "mettre le couteau sous la gorge",
+    "phonetic": "/mɛ.tʁə l(ə) ku.to su la ɡɔʁʒ/",
+    "definition_zh": "威胁",
+    "definition_en": "to hold a gun to someone's head, to pressure someone, to compel someone (to create a situation in which someone has no alternative course of action)",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Vègre",
+    "phonetic": "/vɛɡʁ/",
+    "definition_zh": "萨尔特河支流",
+    "definition_en": "Vègre (a river, a right tributary of the Sarthe, having its source near Rouessé-Vassé, its generally southward course in the Sarthe department, France, and its mouth near Avoise)",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "avoir le couteau sous la gorge",
+    "phonetic": "/a.vwaʁ lə ku.to su la ɡɔʁʒ/",
+    "definition_zh": "胁迫",
+    "definition_en": "to be pressured, to be compelled to do something (to be in a situation in which one has no alternative course of action)",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "École polytechnique",
+    "phonetic": "/e.kɔl pɔ.li.tɛk.nik/",
+    "definition_zh": "巴黎综合理工学院",
+    "definition_en": "a grande école located in the commune of Palaiseau, in the south of Paris, France.",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "l'X",
+    "phonetic": "/l‿iks/",
+    "definition_zh": "巴黎理工",
+    "definition_en": "the nickname of the École polytechnique",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "tossette",
+    "phonetic": "/to.sɛt/",
+    "definition_zh": "女新生",
+    "definition_en": "feminine of tos; a first-year student at the École polytechnique",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "tossettes",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "tossettes"
+      }
+    }
+  },
+  {
+    "word": "étudianx",
+    "phonetic": "/e.ty.djɑ̃ks/",
+    "definition_zh": "学生",
+    "definition_en": "gender-neutral form of étudiant or étudiante.",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "étudianx",
+    "example_sentence": "L'université a apparemment une \"duty of care\" pour les étudianxs qu'ils prennent \"très au sérieux\"\ncomment vous expliquez du coup la proportion importante de vos étudianxs sous anti-dépresseurs, anxiolytiques et j'en passe ?",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "étudianx"
+      }
+    }
+  },
+  {
+    "word": "raseteur",
+    "phonetic": "/ʁaz.tœʁ/",
+    "definition_zh": "卡马格赛跑者",
+    "definition_en": "participant in a course camarguaise",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "raseteurs",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "raseteurs"
+      }
+    }
+  },
+  {
+    "word": "récursoire",
+    "phonetic": "/ʁe.kyʁ.swaʁ/",
+    "definition_zh": "上诉的",
+    "definition_en": "recourse",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "récursoires",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "education",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "récursoires"
+      }
+    }
+  }
+]

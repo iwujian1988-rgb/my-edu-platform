@@ -216,7 +216,7 @@ export function DailyTaskDisplay({ planId, bookId, plan, bookTitle, onDeletePlan
 
   // 🔧 修复：确保 completed_words, new_words, review_words 是数组
   // Supabase 可能会返回对象而不是数组（JSONB 字段的解析问题）
-  const normalizeToArray = <T>(value: T[] | Record<string, T> | undefined | null): T[] => {
+  const normalizeToArray = <T,>(value: T[] | Record<string, T> | undefined | null): T[] => {
     if (!value) return []
     if (Array.isArray(value)) return value
     // 如果是对象，提取所有值

@@ -425,6 +425,31 @@ export default function DictationPageClient() {
 
   const currentWord = words[currentIndex]
 
+  // 🔍 调试：检查单词重复问题
+  useEffect(() => {
+    if (words.length > 0 && currentWord) {
+      // 检查是否有重复的单词 ID
+      const ids = words.map(w => w.id)
+      const uniqueIds = new Set(ids)
+      if (ids.length !== uniqueIds.size) {
+        console.warn('⚠️ [Dictation] 发现重复的单词ID！', {
+          total: ids.length,
+          unique: uniqueIds.size,
+          duplicates: ids.filter((id, index) => ids.indexOf(id) !== index)
+        })
+      }
+
+      console.log('[Dictation] 🔍 当前状态:', {
+        currentIndex,
+        currentWord: currentWord.word,
+        currentWordId: currentWord.id,
+        totalWords: words.length,
+        prevWord: currentIndex > 0 ? words[currentIndex - 1]?.word : 'N/A',
+        nextWord: currentIndex < words.length - 1 ? words[currentIndex + 1]?.word : 'N/A'
+      })
+    }
+  }, [currentIndex, words.length, currentWord?.id])
+
   // 🔥 边界检查：如果 currentWord 不存在，显示错误
   if (!currentWord && !wordsLoading && !error) {
     return (
@@ -1031,19 +1056,11 @@ export default function DictationPageClient() {
                 {currentIndex + 1} / {totalWords || words.length}
               </div>
 
-              {/* 2. 单词释义：关键修改！限制最大宽度，增加行高 */}
+              {/* 2. 单词释义 */}
               {!hideChinese && (
                 <div className="w-full max-w-2xl px-4">
                   <h2 className="text-2xl md:text-3xl font-black text-center leading-relaxed break-words" style={{ color: 'var(--text-primary)' }}>
                     {currentWord.definition}
-                    {currentWord.example_sentence && (
-                      <>
-                        <br className="hidden md:block"/>
-                        <span className="text-lg font-bold mt-4 block" style={{ color: 'var(--text-secondary)' }}>
-                          {currentWord.example_sentence}
-                        </span>
-                      </>
-                    )}
                   </h2>
                 </div>
               )}

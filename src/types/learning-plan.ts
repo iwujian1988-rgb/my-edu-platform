@@ -181,8 +181,18 @@ export interface WordWithStatus {
   id: string
   word: string
   phonetic?: string
+  uk_phonetic?: string       // 英式音标
+  us_phonetic?: string       // 美式音标
   meaning?: string
+  definition?: string
+  definition_en?: string     // 英文释义
   example?: string
+  example_sentence?: string  // 中文例句
+  example_sentence_en?: string  // 英文例句
+  collocation?: string       // 搭配
+  collocation_en?: string    // 英文搭配
+  part_of_speech?: string    // 词性
+  audio_url?: string | null  // 音频URL
   status?: 'new' | 'known' | 'fuzzy' | 'unknown'
   practice_count?: number
   review_count?: number        // 复习计划中的复习次数

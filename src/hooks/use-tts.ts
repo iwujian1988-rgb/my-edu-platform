@@ -61,6 +61,9 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
   // 使用 ref 存储 Audio 实例，支持组件卸载时清理
   const audioRef = useRef<HTMLAudioElement | null>(null)
 
+  // 🔧 竞态修复：存储当前 API 请求的 AbortController
+  const abortControllerRef = useRef<AbortController | null>(null)
+
   // 🆕 预加载缓存：记录已预加载的音频 URL
   const preloadedCacheRef = useRef<Set<string>>(new Set())
 
@@ -195,6 +198,7 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
 
   /**
    * 从 /api/tts 获取音频
+   * 🔧 竞态修复：使用共享 AbortController，新请求会取消旧请求
    */
   const fetchFromAPI = useCallback(
     async (text: string, language: SupportedLanguage = 'en'): Promise<void> => {
@@ -209,19 +213,34 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
         throw new Error('Text too long')
       }
 
+      // 🔧 竞态修复：取消之前的请求
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort()
+        console.log(`⏹️ [useTTS] 取消之前的API请求`)
+      }
+
+      // 创建新的 AbortController
+      const controller = new AbortController()
+      abortControllerRef.current = controller
+
       // 根据语言选择有道 TTS 类型
       const youdaoType = language === 'en' ? type : '1'
       const url = `/api/tts?text=${encodeURIComponent(text)}&type=${youdaoType}&language=${language}`
 
       console.log(`📡 [useTTS] 请求API: text="${text}", type=${youdaoType}, language=${language}`)
 
-      // 添加超时保护
-      const controller = new AbortController()
-      const timeoutId = setTimeout(() => controller.abort(), 10000) // 10秒超时
+      // 添加超时保护（增加到15秒，适应慢网络）
+      const timeoutId = setTimeout(() => controller.abort(), 15000) // 15秒超时
 
       try {
         const response = await fetch(url, { signal: controller.signal })
         clearTimeout(timeoutId)
+
+        // 🔧 竞态修复：检查是否被新请求取代
+        if (abortControllerRef.current !== controller) {
+          console.log(`⏭️ [useTTS] 请求已被新请求取代，忽略结果`)
+          return
+        }
 
         if (!response.ok) {
           throw new Error(`API request failed: ${response.status}`)
@@ -247,21 +266,32 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
           }, 1000)
         }
       } catch (error) {
+        // 🔧 竞态修复：区分取消和超时
         if (error.name === 'AbortError') {
+          // 检查是超时还是被取消
+          if (abortControllerRef.current !== controller) {
+            console.log(`⏭️ [useTTS] 请求被取消（新请求已开始）`)
+            return // 不抛出错误，这是正常取消
+          }
           console.error(`❌ [useTTS] API请求超时`)
           throw new Error('API request timeout')
         }
         throw error
+      } finally {
+        // 清理 ref（如果当前 controller 仍然是我们创建的）
+        if (abortControllerRef.current === controller) {
+          abortControllerRef.current = null
+        }
       }
     },
     [type, playAudioFile]
   )
 
   /**
-   * 回退到 Web Speech API
+   * 回退到 Web Speech API（异步版本，等待初始化）
    */
   const fallbackToWebSpeech = useCallback(
-    (text: string, language: SupportedLanguage = 'en'): void => {
+    async (text: string, language: SupportedLanguage = 'en'): Promise<void> => {
       // ========== 边界检查 ==========
       if (!text || text.trim() === '') {
         console.warn(`⚠️ [useTTS] 文本为空，跳过Web Speech`)
@@ -272,6 +302,31 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
 
       // 停止之前的语音
       stopSpeaking()
+
+      // 🔧 等待 Web Speech 初始化（最多等待2秒）
+      const maxWaitTime = 2000
+      const startTime = Date.now()
+
+      // 检查 speechSynthesis 是否可用
+      if (!('speechSynthesis' in window)) {
+        console.error(`❌ [useTTS] 浏览器不支持 Web Speech API`)
+        if (isMountedRef.current) {
+          setIsPlaying(false)
+          setIsLoading(false)
+        }
+        return
+      }
+
+      // 等待 voices 加载
+      let voices = window.speechSynthesis.getVoices()
+      while (voices.length === 0 && Date.now() - startTime < maxWaitTime) {
+        await new Promise(resolve => setTimeout(resolve, 100))
+        voices = window.speechSynthesis.getVoices()
+      }
+
+      if (voices.length === 0) {
+        console.warn(`⚠️ [useTTS] Web Speech 没有可用语音，但仍尝试播放`)
+      }
 
       // 使用 Web Speech API，传入语言参数
       const success = webSpeechSpeak(text, {
@@ -287,7 +342,11 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
           }
         },
         onError: (event) => {
-          console.error(`❌ [useTTS] Web Speech错误:`, event)
+          // 忽略正常的中断错误
+          const normalErrors = ['interrupted', 'canceled', 'not-allowed']
+          if (!normalErrors.includes(event.error)) {
+            console.error(`❌ [useTTS] Web Speech错误:`, event.error)
+          }
           if (isMountedRef.current) {
             setIsPlaying(false)
             setIsLoading(false)
@@ -296,9 +355,9 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
       })
 
       if (!success) {
-        console.error(`❌ [useTTS] Web Speech API初始化失败`)
+        console.error(`❌ [useTTS] Web Speech API调用失败`)
         if (isMountedRef.current) {
-          setIsPlaying(false)  // 🔥 修复：Web Speech 失败时也要重置 isPlaying
+          setIsPlaying(false)
           setIsLoading(false)
         }
       }
@@ -407,7 +466,7 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
           })
         }
 
-        fallbackToWebSpeech(text, langToUse)
+        await fallbackToWebSpeech(text, langToUse)
       }
     },
     [defaultLanguage, playAudioFile, fetchFromAPI, fallbackToWebSpeech, showFallbackToast]
@@ -416,9 +475,16 @@ export function useTTS(options: UseTTSOptions = {}): UseTTSReturn {
   /**
    * 停止播放
    * 🔧 修复：添加清理逻辑
+   * 🔧 竞态修复：取消正在进行的 API 请求
    */
   const stop = useCallback(() => {
     console.log(`⏹️ [useTTS] 停止播放`)
+
+    // 🔧 竞态修复：取消正在进行的 API 请求
+    if (abortControllerRef.current) {
+      abortControllerRef.current.abort()
+      abortControllerRef.current = null
+    }
 
     // 停止音频播放
     if (audioRef.current) {

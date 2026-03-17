@@ -28,6 +28,8 @@ interface Word {
   part_of_speech: string | null
   chapter_id: string
   order_index: number
+  // 🌍 多语言支持（Phase 3）
+  language_data?: import('@/types/word').LanguageData
 }
 
 export default function EditWordPage() {

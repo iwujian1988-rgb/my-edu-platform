@@ -1,0 +1,955 @@
+[
+  {
+    "word": "santé",
+    "phonetic": "/sɑ̃.te/",
+    "definition_zh": "健康",
+    "definition_en": "health",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "santés",
+    "example_sentence": "en bonne santé",
+    "cefr_level": "A2",
+    "frequency_rank": 334,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "santés"
+      }
+    }
+  },
+  {
+    "word": "santé",
+    "phonetic": "/sɑ̃.te/",
+    "definition_zh": "健康",
+    "definition_en": "cheers! (as said when drinking)",
+    "part_of_speech": "interjection",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 334,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "cœur",
+    "phonetic": "/kœʁ/",
+    "definition_zh": "心 心脏",
+    "definition_en": "heart",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "cœurs",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 446,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "cœurs"
+      }
+    }
+  },
+  {
+    "word": "hôpital",
+    "phonetic": "/o.pi.tal/",
+    "definition_zh": "医院",
+    "definition_en": "hospital",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "hôpitaux",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 767,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "hôpitaux"
+      }
+    }
+  },
+  {
+    "word": "traitement",
+    "phonetic": "/tʁɛt.mɑ̃/",
+    "definition_zh": "对待 待遇",
+    "definition_en": "treatment",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "traitements",
+    "example_sentence": "Traitement de faveur.",
+    "cefr_level": "B1",
+    "frequency_rank": 826,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "traitements"
+      }
+    }
+  },
+  {
+    "word": "cerveau",
+    "phonetic": "/sɛʁ.vo/",
+    "definition_zh": "大脑脑",
+    "definition_en": "brain (organ of thought)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "cerveaux",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 962,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "cerveaux"
+      }
+    }
+  },
+  {
+    "word": "médicament",
+    "phonetic": "/me.di.ka.mɑ̃/",
+    "definition_zh": "药剂 药物",
+    "definition_en": "drug, medication, medicine, pharmaceutical, prescription",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "médicaments",
+    "example_sentence": "Il prend de nombreux médicaments.",
+    "cefr_level": "B1",
+    "frequency_rank": 1646,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "médicaments"
+      }
+    }
+  },
+  {
+    "word": "os",
+    "phonetic": "/ɔs/",
+    "definition_zh": "骨",
+    "definition_en": "bone",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "Le chien a enterré un os.",
+    "cefr_level": "B1",
+    "frequency_rank": 1685,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "urgence",
+    "phonetic": "/yʁ.ʒɑ̃s/",
+    "definition_zh": "紧急 急迫",
+    "definition_en": "emergency, urgency",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "urgences",
+    "example_sentence": "en cas d'urgence",
+    "cefr_level": "B1",
+    "frequency_rank": 1704,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "urgences"
+      }
+    }
+  },
+  {
+    "word": "muscle",
+    "phonetic": "/myskl/",
+    "definition_zh": "肌 肌肉",
+    "definition_en": "muscle (contractile tissue, strength)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "muscles",
+    "example_sentence": "muscle lisse",
+    "cefr_level": "B2",
+    "frequency_rank": 2105,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "muscles"
+      }
+    }
+  },
+  {
+    "word": "muscle",
+    "phonetic": "/myskl/",
+    "definition_zh": "肌 肌肉",
+    "definition_en": "inflection of muscler:",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 2105,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "symptôme",
+    "phonetic": "/sɛ̃p.tom/",
+    "definition_zh": "症状",
+    "definition_en": "symptom",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "symptômes",
+    "example_sentence": "Quels sont les symptômes d'un accident vasculaire cérébral ?",
+    "cefr_level": "B2",
+    "frequency_rank": 2336,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "symptômes"
+      }
+    }
+  },
+  {
+    "word": "médecin",
+    "phonetic": "/med.sɛ̃/",
+    "definition_zh": "医生 医师",
+    "definition_en": "physician; (medical) doctor",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "médecins",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 2407,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "médecins"
+      }
+    }
+  },
+  {
+    "word": "maladie",
+    "phonetic": "/ma.la.di/",
+    "definition_zh": "病 疾病",
+    "definition_en": "illness, disease",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "maladies",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 2504,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "maladies"
+      }
+    }
+  },
+  {
+    "word": "diagnostic",
+    "phonetic": "/djaɡ.nɔs.tik/",
+    "definition_zh": "诊断",
+    "definition_en": "diagnosis",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "diagnostics",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 3567,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "diagnostics"
+      }
+    }
+  },
+  {
+    "word": "corps",
+    "phonetic": "/kɔʁ/",
+    "definition_zh": "身体 躯体 人体",
+    "definition_en": "body",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 3602,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "douleur",
+    "phonetic": "/du.lœʁ/",
+    "definition_zh": "疼痛",
+    "definition_en": "pain",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "douleurs",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 4361,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "douleurs"
+      }
+    }
+  },
+  {
+    "word": "fièvre",
+    "phonetic": "/fjɛvʁ/",
+    "definition_zh": "发热 发烧热病",
+    "definition_en": "fever",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "fièvres",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 4584,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "fièvres"
+      }
+    }
+  },
+  {
+    "word": "sang",
+    "phonetic": "/sɑ̃/",
+    "definition_zh": "血 血液",
+    "definition_en": "blood",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "sangs",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "sangs"
+      }
+    }
+  },
+  {
+    "word": "consultation",
+    "phonetic": "/kɔ̃.syl.ta.sjɔ̃/",
+    "definition_zh": "协议会 咨询会会诊",
+    "definition_en": "consultation, consulting",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "consultations",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "consultations"
+      }
+    }
+  },
+  {
+    "word": "peau",
+    "phonetic": "/po/",
+    "definition_zh": "人或脊椎动物的皮 皮肤",
+    "definition_en": "skin of a person or animal",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "peaux",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "peaux"
+      }
+    }
+  },
+  {
+    "word": "guérison",
+    "phonetic": "/ɡe.ʁi.zɔ̃/",
+    "definition_zh": "痊愈 身体复原 健康恢复",
+    "definition_en": "recovery, healing",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "guérisons",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "guérisons"
+      }
+    }
+  },
+  {
+    "word": "chirurgie",
+    "phonetic": "/ʃi.ʁyʁ.ʒi/",
+    "definition_zh": "外科 外科学",
+    "definition_en": "surgery, medical operation",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "chirurgies",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "chirurgies"
+      }
+    }
+  },
+  {
+    "word": "médecine",
+    "phonetic": "/med.sin/",
+    "definition_zh": "医学",
+    "definition_en": "inflection of médeciner:",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "pharmacie",
+    "phonetic": "/faʁ.ma.si/",
+    "definition_zh": "药剂学 制药学",
+    "definition_en": "pharmacy, drugstore",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "pharmacies",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "pharmacies"
+      }
+    }
+  },
+  {
+    "word": "infirmier",
+    "phonetic": "/ɛ̃.fiʁ.mje/",
+    "definition_zh": "护士",
+    "definition_en": "nurse (medical professional)",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "infirmiers",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "feminine",
+        "plural": "infirmiers"
+      }
+    }
+  },
+  {
+    "word": "infirmier",
+    "phonetic": "/ɛ̃.fiʁ.mje/",
+    "definition_zh": "护士",
+    "definition_en": "nurse, nursing",
+    "part_of_speech": "adjective",
+    "gender": "masculine",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "feminine_form": "infirmiere",
+        "gender": "masculine"
+      }
+    },
+    "feminine_form": "infirmiere"
+  },
+  {
+    "word": "médecines",
+    "phonetic": "/mɛd.sin/",
+    "definition_zh": "médecine的变位",
+    "definition_en": "plural of médecine",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "médicaments",
+    "phonetic": "/me.di.ka.mɑ̃/",
+    "definition_zh": "药品",
+    "definition_en": "plural of médicament",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "ordonnance",
+    "phonetic": "/ɔʁ.dɔ.nɑ̃s/",
+    "definition_zh": "处方",
+    "definition_en": "prescription",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "ordonnances",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "ordonnances"
+      }
+    }
+  },
+  {
+    "word": "OMS",
+    "phonetic": "/o.ɛ.mɛs/",
+    "definition_zh": "世界卫生组织",
+    "definition_en": "initialism of Organisation Mondiale de la Santé WHO (World Health Organisation)",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "hôpitaux",
+    "phonetic": "/o.pi.to/",
+    "definition_zh": "hôpital的变位",
+    "definition_en": "plural of hôpital",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "CMU",
+    "phonetic": "/se.ɛ.my/",
+    "definition_zh": "全民医保",
+    "definition_en": "Couverture maladie universelle",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "polymédicamentée",
+    "phonetic": "/pɔ.li.me.di.ka.mɑ̃.te/",
+    "definition_zh": "多药治疗女",
+    "definition_en": "feminine singular of polymédicamenté",
+    "part_of_speech": "adjective",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "maladies sexuellement transmissibles",
+    "phonetic": "/ma.la.di sɛk.sɥɛl.mɑ̃ tʁɑ̃s.mi.sibl/",
+    "definition_zh": "性传播疾病",
+    "definition_en": "plural of maladie sexuellement transmissible",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "quinze-vingt",
+    "phonetic": "/kɛ̃z.vɛ̃/",
+    "definition_zh": "十五二十医院盲人",
+    "definition_en": "a blind patient of the Hôpital des Quinze-Vingts",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "quinze-vingts",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "quinze-vingts"
+      }
+    }
+  },
+  {
+    "word": "quinze-vingts",
+    "phonetic": "/kɛ̃z.vɛ̃/",
+    "definition_zh": "十五二十",
+    "definition_en": "plural of quinze-vingt (“a blind patient of the Hôpital des Quinze-Vingts”)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "carte soleil",
+    "phonetic": "/kaʁ.t(ə) sɔ.lɛj/",
+    "definition_zh": "魁省医保卡",
+    "definition_en": "synonym of carte d'assurance maladie du Québec (the Quebec medicare card)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "cartes soleil",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "cartes soleil"
+      }
+    }
+  },
+  {
+    "word": "MPR",
+    "phonetic": "/ɛm.pɛ.ɛʁ/",
+    "definition_zh": "医理康复",
+    "definition_en": "initialism of médecine physique et de réadaptation",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "c'est l'hôpital qui se fout de la charité",
+    "phonetic": "/s‿ɛ l‿o.pi.tal ki s(ə) fu d(ə) la ʃa.ʁi.te/",
+    "definition_zh": "医院不慈善",
+    "definition_en": "alternative form of c'est l'hôpital qui se moque de la charité",
+    "part_of_speech": "phrase",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "c'est l'hôpital qui se moque de l'infirmerie",
+    "phonetic": "/s‿ɛ l‿o.pi.tal ki s(ə) mɔk də l‿ɛ̃.fiʁ.mə.ʁi/",
+    "definition_zh": "医不仁医",
+    "definition_en": "alternative form of c'est l'hôpital qui se moque de la charité",
+    "part_of_speech": "phrase",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "MRC",
+    "phonetic": "/ɛ.meʁ.se/",
+    "definition_zh": "慢性肾病",
+    "definition_en": "initialism of maladie rénale chronique (“chronic kidney disease; kidney failure”): CKD",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "hôpitaux psychiatriques",
+    "phonetic": "/o.pi.to psi.kja.tʁik/",
+    "definition_zh": "精神病院",
+    "definition_en": "plural of hôpital psychiatrique",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "maladie du cocher",
+    "phonetic": "/ma.la.di dy kɔ.ʃe/",
+    "definition_zh": "病",
+    "definition_en": "synonym of maladie de Dupuytren",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "maladie des Vikings",
+    "phonetic": "/ma.la.di de vi.kiŋ/",
+    "definition_zh": "维京病",
+    "definition_en": "synonym of maladie de Dupuytren (“Viking disease”)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "contracture de Dupuytren",
+    "phonetic": "/kɔ̃.tʁak.tyʁ də dy.pɥij.tʁɛ̃/",
+    "definition_zh": "杜普伊特伦病",
+    "definition_en": "synonym of maladie de Dupuytren (“Dupuytren's contracture”)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "health",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  }
+]

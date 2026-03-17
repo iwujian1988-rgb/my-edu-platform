@@ -19,11 +19,12 @@ const SESSION_EXPIRY_MS = 5 * 60 * 1000 // 5分钟
 interface SessionPosition {
   bookId: string
   index: number
+  wordId?: string  // 🔧 新增：保存单词ID，用于 shuffle 后定位
   scope: string
   timestamp: number
 }
 
-function saveSessionPosition(bookId: string, index: number, scope: string) {
+function saveSessionPosition(bookId: string, index: number, scope: string, wordId?: string) {
   // 🔥 关键修复：检查是否在客户端环境（避免 SSR 崩溃）
   if (typeof window === 'undefined') {
     return
@@ -33,6 +34,7 @@ function saveSessionPosition(bookId: string, index: number, scope: string) {
     const position: SessionPosition = {
       bookId,
       index,
+      wordId,  // 🔧 保存单词ID
       scope,
       timestamp: Date.now()
     }
@@ -157,10 +159,14 @@ export default function FlashcardsPageClient() {
   const [showCompleteDialog, setShowCompleteDialog] = useState(false)
 
   // 🔥 关键修复：判断是否应该显示范围选择对话框
-  // 逻辑：如果sessionStorage有学习进度（刷新恢复），则不显示对话框；否则显示对话框
+  // 逻辑：
+  // 1. 如果是从首页恢复进入 (resume=true)，不显示
+  // 2. 如果 URL 中已有 scope 参数（用户已选择范围），不显示
+  // 3. 如果 sessionStorage 有匹配的学习进度（刷新恢复），不显示
   const sessionPosition = getSessionPosition(bookId)
   const hasLearningProgress = sessionPosition && sessionPosition.scope === scope
-  const shouldShowDialog = !isFromHomepageResume && !hasLearningProgress
+  const hasScopeInUrl = searchParams.get('scope') !== null  // URL 中已有 scope 参数
+  const shouldShowDialog = !isFromHomepageResume && !hasLearningProgress && !hasScopeInUrl
   const [showScopeSelectDialog, setShowScopeSelectDialog] = useState(shouldShowDialog)
 
   const [loadingMore, setLoadingMore] = useState(false)
@@ -214,6 +220,18 @@ export default function FlashcardsPageClient() {
         const wordsData = await wordsRes.json()
         const loadedWords = wordsData.data || []
         setWords(loadedWords)
+
+        // 🔧 Shuffle 模式下：根据 wordId 恢复位置（因为 shuffle 后顺序不同）
+        const sessionPos = getSessionPosition(bookId)
+        if (sessionPos?.wordId && sessionPos.scope === scope) {
+          const wordIndex = loadedWords.findIndex((w: Word) => w.id === sessionPos.wordId)
+          if (wordIndex !== -1) {
+            console.log('📍 Shuffle mode: found wordId at index', wordIndex + 1, 'was', sessionPos.index + 1)
+            setCurrentIndex(wordIndex)
+          } else {
+            console.log('⚠️ Shuffle mode: wordId not found in loaded words, keeping original index')
+          }
+        }
 
         // 从 stats API 获取真实的总数（比 wordsData.count 更准确）
         let finalTotal = 0
@@ -290,6 +308,17 @@ export default function FlashcardsPageClient() {
         }
 
         setCurrentScope(scope)
+
+        // 🔧 安全检查：确保 currentIndex 在有效范围内
+        // 这是针对从 sessionStorage 恢复的索引可能超出当前加载数据范围的情况
+        const finalWordsLength = loadedWords?.length || 0
+        setCurrentIndex(prev => {
+          if (prev >= finalWordsLength && finalWordsLength > 0) {
+            console.log('🔧 Adjusting currentIndex from', prev, 'to', finalWordsLength - 1)
+            return finalWordsLength - 1
+          }
+          return prev
+        })
       } catch (error) {
         console.error('Error fetching data:', error)
       } finally {
@@ -425,9 +454,10 @@ export default function FlashcardsPageClient() {
   // ⭐ 实时保存当前位置到 sessionStorage（用于刷新恢复）
   useEffect(() => {
     if (!loading && words.length > 0) {
-      // 保存当前索引到 sessionStorage
-      saveSessionPosition(bookId, currentIndex, currentScope)
-      console.log('💾 Saved to sessionStorage:', currentIndex + 1, 'scope:', currentScope)
+      // 🔧 保存当前索引和单词ID到 sessionStorage（单词ID用于 shuffle 后定位）
+      const currentWordId = words[currentIndex]?.id
+      saveSessionPosition(bookId, currentIndex, currentScope, currentWordId)
+      console.log('💾 Saved to sessionStorage:', currentIndex + 1, 'scope:', currentScope, 'wordId:', currentWordId)
 
       // ⭐⭐⭐ 同时立即保存到服务器（resume_state）- 解决关闭浏览器丢失进度的问题
       saveResumeState(bookId, 'flashcards', {
@@ -439,7 +469,9 @@ export default function FlashcardsPageClient() {
     }
   }, [currentIndex, currentScope, bookId, loading, words.length])
 
-  const currentWord = words[currentIndex]
+  // 🔧 安全获取当前单词：确保索引不会越界
+  const safeIndex = words.length > 0 ? Math.min(currentIndex, words.length - 1) : 0
+  const currentWord = words[safeIndex]
   const progress = currentWord ? wordProgress[currentWord.id] : null
 
   // 批量保存函数
@@ -506,6 +538,7 @@ export default function FlashcardsPageClient() {
 
     // 重置分页状态
     setWords([])
+    setCurrentIndex(0)  // 🔧 FIX: 重置索引，避免 words 清空后 currentWord 为 undefined
     setCurrentPage(1)
     setHasMore(true)
     setLoadingMore(false)
@@ -608,6 +641,21 @@ export default function FlashcardsPageClient() {
       return updated
     })
 
+    // 🔧 同步更新 totalWordsInScope（用于判断是否完成）
+    // 当用户在特定 scope 下标记单词后，该 scope 的总数需要更新
+    if (scope === 'unknown' || scope === 'fuzzy' || scope === 'known' || scope === 'new') {
+      // 如果单词从当前 scope 移出（状态改变），减少总数
+      if (oldStatus === scope && status !== scope) {
+        setTotalWordsInScope(prev => Math.max(0, prev - 1))
+        console.log('📊 Decreasing totalWordsInScope, new value:', totalWordsInScope - 1)
+      }
+      // 如果单词进入当前 scope（从其他状态变为当前 scope），增加总数
+      else if (oldStatus !== scope && status === scope) {
+        setTotalWordsInScope(prev => prev + 1)
+        console.log('📊 Increasing totalWordsInScope, new value:', totalWordsInScope + 1)
+      }
+    }
+
     // 不再需要 setStatsRefreshKey，因为我们直接更新了前端缓存
     // setStatsRefreshKey(Date.now())
 
@@ -639,8 +687,8 @@ export default function FlashcardsPageClient() {
     }
 
     nextWordTimerRef.current = setTimeout(() => {
-      // 🎯 判断逻辑：基于总数判断是否完成（更可靠）
-      const reachedTotalEnd = totalWordsInScope > 0 && currentIndex >= totalWordsInScope - 1
+      // 🎯 判断逻辑：优先检查索引是否有效
+      const indexOutOfBounds = currentIndex >= words.length
       const reachedLoadedEnd = currentIndex >= words.length - 1
 
       // 如果正在切换范围，不显示完成对话框
@@ -651,11 +699,20 @@ export default function FlashcardsPageClient() {
         return
       }
 
-      // 🔧 FIX: 使用 reachedTotalEnd 判断完成，而不是 reachedLoadedEnd && !hasMore
-      // 这样即使 API 返回的数据量不足，也能正确判断是否完成
+      // 🔧 如果索引越界（currentIndex >= words.length），等待索引调整
+      if (indexOutOfBounds) {
+        console.log('⚠️ Index out of bounds, waiting for adjustment. currentIndex=', currentIndex, 'words.length=', words.length)
+        setIsCardSwitching(false)
+        return
+      }
+
+      // 🔧 判断是否完成：使用 words.length 而不是 totalWordsInScope
+      // 因为 totalWordsInScope 可能与实际加载的数据不一致
+      const reachedTotalEnd = reachedLoadedEnd && !hasMore
+
       if (reachedTotalEnd) {
-        // 真的完成了所有单词（基于总数判断）
-        console.log('🎉 All words completed! (based on totalWordsInScope)')
+        // 真的完成了所有单词
+        console.log('🎉 All words completed! currentIndex=', currentIndex, 'words.length=', words.length)
         setShowCompleteDialog(true)
         setIsCardSwitching(false)
         return
@@ -695,7 +752,7 @@ export default function FlashcardsPageClient() {
         setIsCardSwitching(false)
       }, 50)
     }, 200)
-  }, [currentWord, currentIndex, words.length, flushPendingSaves, hasUserInteracted, bookId, scope, saveFlashcardProgress, hasMore])
+  }, [currentWord, currentIndex, words.length, flushPendingSaves, hasUserInteracted, bookId, scope, saveFlashcardProgress, hasMore, totalWordsInScope])
 
   // 自动朗读新单词 - 当卡片切换完成后自动朗读
   useEffect(() => {
@@ -901,19 +958,16 @@ export default function FlashcardsPageClient() {
     setDragOffset({ x: 0, y: 0 })
   }
 
-  // 🔧 安全检查：如果 currentWord 不存在（在所有 hooks 之后）
-  if (!currentWord && !loading) {
-    console.error('[Flashcards] currentWord is undefined!', { currentIndex, wordsLength: words.length })
-    return (
-      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="text-center">
-          <p className="text-lg font-bold mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>加载中...</p>
-          <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>正在准备单词卡片</p>
-        </div>
-      </div>
-    )
-  }
+  // 🔧 兜底检查：currentIndex 越界但 words 不为空
+  // ⚠️ 必须放在所有条件 return 之前，遵守 React Hooks 规则
+  useEffect(() => {
+    if (!loading && words.length > 0 && currentIndex >= words.length) {
+      console.log('🔧 useEffect adjusting currentIndex from', currentIndex, 'to', words.length - 1, '(words.length=', words.length, ', totalWordsInScope=', totalWordsInScope, ')')
+      setCurrentIndex(words.length - 1)
+    }
+  }, [loading, words.length, currentIndex, totalWordsInScope])
 
+  // 🔧 修复检查顺序：loading -> 空数组 -> currentWord
   if (loading) {
     return (
       <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
@@ -925,6 +979,7 @@ export default function FlashcardsPageClient() {
     )
   }
 
+  // 🔧 空数组检查：如果 words 为空，显示完成页面（而不是报错）
   if (words.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
@@ -974,6 +1029,20 @@ export default function FlashcardsPageClient() {
     )
   }
 
+  // 如果 currentWord 不存在但 words 不为空，显示加载中
+  // 等待 useEffect 调整索引
+  if (!currentWord && words.length > 0) {
+    console.log('🔧 currentWord is undefined, waiting for index adjustment. currentIndex=', currentIndex, 'words.length=', words.length)
+    return (
+      <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
+        <div className="text-center">
+          <div className="inline-block w-12 h-12 border-4 border-black border-t-transparent rounded-full animate-spin"></div>
+          <p className="mt-4 font-black transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>加载中...</p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <PermissionGate feature={FEATURE_PERMISSIONS.FLASHCARDS} bookId={bookId}>
       <div
@@ -1007,7 +1076,7 @@ export default function FlashcardsPageClient() {
                 <span className="text-xs font-bold uppercase tracking-wider transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>Currently Studying</span>
                 <span className="text-sm md:text-base font-black truncate transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{bookTitle}</span>
               </div>
-              <div className="ml-auto font-black text-lg transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{currentIndex + 1} / {totalWordsInScope || words.length}</div>
+              <div className="ml-auto font-black text-lg transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>{safeIndex + 1} / {totalWordsInScope || words.length}</div>
             </div>
           </div>
 
@@ -1015,12 +1084,12 @@ export default function FlashcardsPageClient() {
           <div className="max-w-2xl mx-auto mb-4">
             <div className="flex justify-between text-xs font-bold mb-1 px-1 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
               <span>PROGRESS</span>
-              <span>{Math.round(((currentIndex + 1) / (totalWordsInScope || words.length)) * 100)}%</span>
+              <span>{Math.round(((safeIndex + 1) / (totalWordsInScope || words.length)) * 100)}%</span>
             </div>
             <div className="w-full h-6 rounded-full overflow-hidden relative transition-colors duration-300" style={{ border: '3px solid #000', backgroundColor: 'var(--card-bg)' }}>
               <div
                 className="h-full transition-colors duration-300"
-                style={{ width: `${((currentIndex + 1) / (totalWordsInScope || words.length)) * 100}%`, borderRight: '3px solid #000', backgroundColor: '#B4F416' }}
+                style={{ width: `${((safeIndex + 1) / (totalWordsInScope || words.length)) * 100}%`, borderRight: '3px solid #000', backgroundColor: '#B4F416' }}
               />
             </div>
           </div>
@@ -1150,8 +1219,15 @@ export default function FlashcardsPageClient() {
 
                     {/* Phonetic + Button */}
                     <div className="flex items-center gap-4 justify-center">
-                      <span className="font-mono text-lg transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                        {currentWord.us_phonetic || currentWord.uk_phonetic || currentWord.phonetic}
+                      <span className="font-mono text-sm transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
+                        {currentWord.uk_phonetic || currentWord.us_phonetic
+                          ? <>
+                              {currentWord.uk_phonetic && <span>英/{currentWord.uk_phonetic}</span>}
+                              {currentWord.uk_phonetic && currentWord.us_phonetic && <span className="mx-1 text-gray-400">|</span>}
+                              {currentWord.us_phonetic && <span>美/{currentWord.us_phonetic}</span>}
+                            </>
+                          : currentWord.phonetic
+                        }
                       </span>
                       <button
                         onClick={(e) => {
@@ -1330,8 +1406,15 @@ export default function FlashcardsPageClient() {
                 </h2>
 
                 <div className="flex items-center gap-2 mb-4 justify-center">
-                  <span className="font-mono text-base transition-colors duration-300" style={{ color: '#d1d5db' }}>
-                    {words[currentIndex + 1]?.us_phonetic || words[currentIndex + 1]?.uk_phonetic || words[currentIndex + 1]?.phonetic}
+                  <span className="font-mono text-xs transition-colors duration-300" style={{ color: '#d1d5db' }}>
+                    {words[currentIndex + 1]?.uk_phonetic || words[currentIndex + 1]?.us_phonetic
+                      ? <>
+                          {words[currentIndex + 1]?.uk_phonetic && <span>英/{words[currentIndex + 1]?.uk_phonetic}</span>}
+                          {words[currentIndex + 1]?.uk_phonetic && words[currentIndex + 1]?.us_phonetic && <span className="mx-1 text-gray-500">|</span>}
+                          {words[currentIndex + 1]?.us_phonetic && <span>美/{words[currentIndex + 1]?.us_phonetic}</span>}
+                        </>
+                      : words[currentIndex + 1]?.phonetic
+                    }
                   </span>
                 </div>
 

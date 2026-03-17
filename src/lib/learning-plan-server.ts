@@ -320,10 +320,10 @@ async function enrichTodayTaskWithWords(
 
   // ⚡ 性能优化：并行查询所有需要的数据
   const [wordsResult, progressResult, scheduleResult, todayProgressResult] = await Promise.all([
-    // 查询单词详情
+    // 查询单词详情（包含英文例句）
     supabase
       .from('words')
-      .select('id, word, phonetic, definition, example_sentence')
+      .select('id, word, phonetic, uk_phonetic, us_phonetic, definition, definition_en, example_sentence, example_sentence_en, collocation, collocation_en, part_of_speech, audio_url')
       .in('id', allWordIds),
 
     // 查询单词状态（所有历史记录，用于显示单词的当前状态）
@@ -388,8 +388,18 @@ async function enrichTodayTaskWithWords(
         id: word!.id,
         word: word!.word,
         phonetic: word!.phonetic || '',
+        uk_phonetic: word!.uk_phonetic || '',
+        us_phonetic: word!.us_phonetic || '',
         meaning: word!.definition || '',
+        definition: word!.definition || '',
+        definition_en: word!.definition_en || '',
         example: word!.example_sentence || '',
+        example_sentence: word!.example_sentence || '',
+        example_sentence_en: word!.example_sentence_en || '',
+        collocation: word!.collocation || '',
+        collocation_en: word!.collocation_en || '',
+        part_of_speech: word!.part_of_speech || '',
+        audio_url: word!.audio_url || null,
         status: progress?.status || 'new',
         practice_count: progress?.practice_count || 0,
         review_count: schedule?.review_count || 0,
@@ -409,8 +419,18 @@ async function enrichTodayTaskWithWords(
         id: word!.id,
         word: word!.word,
         phonetic: word!.phonetic || '',
+        uk_phonetic: word!.uk_phonetic || '',
+        us_phonetic: word!.us_phonetic || '',
         meaning: word!.definition || '',
+        definition: word!.definition || '',
+        definition_en: word!.definition_en || '',
         example: word!.example_sentence || '',
+        example_sentence: word!.example_sentence || '',
+        example_sentence_en: word!.example_sentence_en || '',
+        collocation: word!.collocation || '',
+        collocation_en: word!.collocation_en || '',
+        part_of_speech: word!.part_of_speech || '',
+        audio_url: word!.audio_url || null,
         status: progress?.status || 'unknown',
         practice_count: progress?.practice_count || 0,
         review_count: schedule?.review_count || 0,

@@ -1,5 +1,4 @@
-import { createClient, getCurrentUser } from '@/lib/supabase/server'
-import { redirect } from 'next/navigation'
+import { getCurrentUser } from '@/lib/supabase/server'
 import { LibraryClient } from '@/components/LibraryClient'
 import { getAllBooks } from '@/lib/books-server'
 import { getUserPermissions } from '@/lib/permissions'
@@ -9,19 +8,36 @@ import { Suspense } from 'react'
 export const dynamic = 'force-dynamic'
 
 export default async function LibraryPage() {
+  const pageStartTime = Date.now()
+
+  // Step 1: 获取当前用户（使用 cache，应该很快）
+  const userStart = Date.now()
   const user = await getCurrentUser()
+  const userTime = Date.now() - userStart
 
   // Middleware 会处理未登录用户的重定向，这里确保有用户
   if (!user) {
     return null
   }
 
-  // 🔥 修复：改为串行获取，避免 Promise.all 导致的变量引用问题
-  // b47f698 优化尝试并行执行，但 userPermissions 在解构前不存在
+  // Step 2: 获取用户权限（内部使用 cache）
+  const permStart = Date.now()
   const userPermissions = await getUserPermissions()
-  const books = await getAllBooks(user.id, userPermissions)
+  const permTime = Date.now() - permStart
 
-  console.log(`[Library Page] Loaded ${books.length} books`)
+  // Step 3: 获取词库列表
+  const booksStart = Date.now()
+  const books = await getAllBooks(user.id, userPermissions)
+  const booksTime = Date.now() - booksStart
+
+  const totalTime = Date.now() - pageStartTime
+  console.log(`[Library Page] Timing:`, {
+    getCurrentUser: `${userTime}ms`,
+    getUserPermissions: `${permTime}ms`,
+    getAllBooks: `${booksTime}ms`,
+    total: `${totalTime}ms`,
+    booksCount: books.length
+  })
 
   return (
     <Suspense fallback={<div className="text-center py-12">Loading...</div>}>

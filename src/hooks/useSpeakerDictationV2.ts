@@ -690,7 +690,10 @@ export function useSpeakerDictationV2(
     submitDictation,
     restoreDraft,
     setPlaybackRate,
-    playbackRate
+    playbackRate,
+    simulatePlaySentence: (sentenceIndex: number | null) => {
+      setCurrentPlayingSentence(sentenceIndex)
+    }
   }
 
   return [state, actions] as const

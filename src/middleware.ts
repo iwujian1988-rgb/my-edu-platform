@@ -3,6 +3,7 @@ import { NextResponse, type NextRequest } from 'next/server'
 import type { Database } from '@/types/database'
 
 export async function middleware(request: NextRequest) {
+  const startTime = Date.now()
   const { pathname } = request.nextUrl
 
   // 1. 初始 Response
@@ -12,6 +13,7 @@ export async function middleware(request: NextRequest) {
     },
   })
 
+  const clientStart = Date.now()
   const supabase = createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -47,18 +49,23 @@ export async function middleware(request: NextRequest) {
       },
     }
   )
+  const clientTime = Date.now() - clientStart
 
   // 2. 触发刷新逻辑
+  const authStart = Date.now()
   const {
     data: { user },
   } = await supabase.auth.getUser()
+  const authTime = Date.now() - authStart
 
   // Debug log for library routes
   if (pathname.startsWith('/library') || pathname.startsWith('/study')) {
+    const totalTime = Date.now() - startTime
     console.log('🔍 [Middleware]', {
       pathname,
       hasUser: !!user,
       userId: user?.id,
+      timing: { clientCreate: `${clientTime}ms`, authCall: `${authTime}ms`, total: `${totalTime}ms` }
     })
   }
 

@@ -78,7 +78,7 @@ export default function LearningCompleteClient() {
       const task = taskResponse.data
 
       // [Upgrade] 两阶段系统：使用 marked_words 计算进度
-      const normalizeToArray = <T>(value: T[] | Record<string, T> | undefined | null): T[] => {
+      const normalizeToArray = <T,>(value: T[] | Record<string, T> | undefined | null): T[] => {
         if (!value) return []
         if (Array.isArray(value)) return value
         return Object.values(value)

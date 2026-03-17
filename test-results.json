@@ -82,20 +82,20 @@
   },
   "suites": [
     {
-      "title": "status-filter-test.spec.ts",
-      "file": "status-filter-test.spec.ts",
+      "title": "flashcards-edge-cases.spec.ts",
+      "file": "flashcards-edge-cases.spec.ts",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "状态筛选功能测试 - 验证缓存修复",
-          "file": "status-filter-test.spec.ts",
-          "line": 13,
+          "title": "Flashcards 边界情况测试",
+          "file": "flashcards-edge-cases.spec.ts",
+          "line": 65,
           "column": 6,
           "specs": [
             {
-              "title": "验证: 点击\"认识\"筛选后API被调用且页面刷新",
+              "title": "应该自动调整越界的 currentIndex",
               "ok": false,
               "tags": [],
               "tests": [
@@ -110,134 +110,93 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 41509,
+                      "duration": 34588,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8",
-                        "location": {
-                          "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                          "column": 8,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   \u001b[36mconst\u001b[39m \u001b[33mTEST_BOOK_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m`/library/${TEST_BOOK_ID}`\u001b[39m\n \u001b[90m 16 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'🔐 登录测试账号...'\u001b[39m)\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\n \u001b[90m 20 |\u001b[39m   })\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
                         {
-                          "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                            "column": 8,
-                            "line": 17
-                          },
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  15 |   const TEST_BOOK_URL = `/library/${TEST_BOOK_ID}`\n  16 |\n> 17 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  18 |     console.log('🔐 登录测试账号...')\n  19 |     await login(page)\n  20 |   })\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8"
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                         },
                         {
                           "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts",
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
                             "column": 14,
-                            "line": 22
+                            "line": 59
                           },
-                          "message": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/login\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n   at helpers\\login-helper.ts:22\n\n  20 |\n  21 |   // 访问登录页\n> 22 |   await page.goto('/login', { waitUntil: 'domcontentloaded' })\n     |              ^\n  23 |\n  24 |   // 等待React组件加载完成 - 等待tabs出现\n  25 |   await page.waitForSelector('button:has-text(\"登录\")', { timeout: 10000 })\n    at login (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts:22:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:19:16"
+                          "message": "Error: page.goto: net::ERR_NETWORK_IO_SUSPENDED at http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:74:11"
                         }
                       ],
-                      "stdout": [
-                        {
-                          "text": "🔐 登录测试账号...\n"
-                        },
-                        {
-                          "text": "🔐 开始登录测试账号...\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-21T01:35:09.883Z",
+                      "startTime": "2026-03-14T04:14:20.341Z",
                       "annotations": [],
                       "attachments": [
                         {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-3cd12-情况测试-应该自动调整越界的-currentIndex-chromium\\test-failed-1.png"
+                        },
+                        {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测试---验证缓存修复-验证-点击-认识-筛选后API被调用且页面刷新-chromium\\video.webm"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-3cd12-情况测试-应该自动调整越界的-currentIndex-chromium\\video.webm"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                        "column": 8,
-                        "line": 17
-                      }
+                      ]
                     },
                     {
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 41553,
+                      "duration": 44442,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8",
-                        "location": {
-                          "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                          "column": 8,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   \u001b[36mconst\u001b[39m \u001b[33mTEST_BOOK_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m`/library/${TEST_BOOK_ID}`\u001b[39m\n \u001b[90m 16 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'🔐 登录测试账号...'\u001b[39m)\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\n \u001b[90m 20 |\u001b[39m   })\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
                         {
-                          "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                            "column": 8,
-                            "line": 17
-                          },
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  15 |   const TEST_BOOK_URL = `/library/${TEST_BOOK_ID}`\n  16 |\n> 17 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  18 |     console.log('🔐 登录测试账号...')\n  19 |     await login(page)\n  20 |   })\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8"
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                         },
                         {
                           "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts",
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
                             "column": 14,
-                            "line": 22
+                            "line": 59
                           },
-                          "message": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/login\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n   at helpers\\login-helper.ts:22\n\n  20 |\n  21 |   // 访问登录页\n> 22 |   await page.goto('/login', { waitUntil: 'domcontentloaded' })\n     |              ^\n  23 |\n  24 |   // 等待React组件加载完成 - 等待tabs出现\n  25 |   await page.waitForSelector('button:has-text(\"登录\")', { timeout: 10000 })\n    at login (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts:22:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:19:16"
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:74:11"
                         }
                       ],
-                      "stdout": [
-                        {
-                          "text": "🔐 登录测试账号...\n"
-                        },
-                        {
-                          "text": "🔐 开始登录测试账号...\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-01-21T01:35:53.724Z",
+                      "startTime": "2026-03-14T04:14:56.776Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测试---验证缓存修复-验证-点击-认识-筛选后API被调用且页面刷新-chromium-retry1\\video.webm"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-3cd12-情况测试-应该自动调整越界的-currentIndex-chromium-retry1\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测试---验证缓存修复-验证-点击-认识-筛选后API被调用且页面刷新-chromium-retry1\\trace.zip"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-3cd12-情况测试-应该自动调整越界的-currentIndex-chromium-retry1\\trace.zip"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                        "column": 8,
-                        "line": 17
-                      }
+                      ]
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "f5fc35980791b0585e29-f27c443928244fb88bc2",
-              "file": "status-filter-test.spec.ts",
-              "line": 22,
+              "id": "6f3eb56601286991df79-d12c813d0bb20a004d7e",
+              "file": "flashcards-edge-cases.spec.ts",
+              "line": 72,
               "column": 7
             },
             {
-              "title": "验证: 在不同页码之间切换",
+              "title": "切换范围后应该重置 currentIndex",
               "ok": false,
               "tags": [],
               "tests": [
@@ -252,134 +211,88 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 41652,
+                      "duration": 44340,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8",
-                        "location": {
-                          "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                          "column": 8,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   \u001b[36mconst\u001b[39m \u001b[33mTEST_BOOK_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m`/library/${TEST_BOOK_ID}`\u001b[39m\n \u001b[90m 16 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'🔐 登录测试账号...'\u001b[39m)\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\n \u001b[90m 20 |\u001b[39m   })\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
                         {
-                          "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                            "column": 8,
-                            "line": 17
-                          },
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  15 |   const TEST_BOOK_URL = `/library/${TEST_BOOK_ID}`\n  16 |\n> 17 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  18 |     console.log('🔐 登录测试账号...')\n  19 |     await login(page)\n  20 |   })\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8"
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                         },
                         {
                           "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts",
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
                             "column": 14,
-                            "line": 22
+                            "line": 59
                           },
-                          "message": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/login\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n   at helpers\\login-helper.ts:22\n\n  20 |\n  21 |   // 访问登录页\n> 22 |   await page.goto('/login', { waitUntil: 'domcontentloaded' })\n     |              ^\n  23 |\n  24 |   // 等待React组件加载完成 - 等待tabs出现\n  25 |   await page.waitForSelector('button:has-text(\"登录\")', { timeout: 10000 })\n    at login (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts:22:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:19:16"
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:101:11"
                         }
                       ],
-                      "stdout": [
-                        {
-                          "text": "🔐 登录测试账号...\n"
-                        },
-                        {
-                          "text": "🔐 开始登录测试账号...\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-21T01:36:36.430Z",
+                      "startTime": "2026-03-14T04:15:43.176Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测试---验证缓存修复-验证-在不同页码之间切换-chromium\\video.webm"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-f960c-情况测试-切换范围后应该重置-currentIndex-chromium\\video.webm"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                        "column": 8,
-                        "line": 17
-                      }
+                      ]
                     },
                     {
                       "workerIndex": 3,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 41558,
+                      "duration": 44300,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8",
-                        "location": {
-                          "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                          "column": 8,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   \u001b[36mconst\u001b[39m \u001b[33mTEST_BOOK_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m`/library/${TEST_BOOK_ID}`\u001b[39m\n \u001b[90m 16 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'🔐 登录测试账号...'\u001b[39m)\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\n \u001b[90m 20 |\u001b[39m   })\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
                         {
-                          "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                            "column": 8,
-                            "line": 17
-                          },
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  15 |   const TEST_BOOK_URL = `/library/${TEST_BOOK_ID}`\n  16 |\n> 17 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  18 |     console.log('🔐 登录测试账号...')\n  19 |     await login(page)\n  20 |   })\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8"
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                         },
                         {
                           "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts",
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
                             "column": 14,
-                            "line": 22
+                            "line": 59
                           },
-                          "message": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/login\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n   at helpers\\login-helper.ts:22\n\n  20 |\n  21 |   // 访问登录页\n> 22 |   await page.goto('/login', { waitUntil: 'domcontentloaded' })\n     |              ^\n  23 |\n  24 |   // 等待React组件加载完成 - 等待tabs出现\n  25 |   await page.waitForSelector('button:has-text(\"登录\")', { timeout: 10000 })\n    at login (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts:22:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:19:16"
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:101:11"
                         }
                       ],
-                      "stdout": [
-                        {
-                          "text": "🔐 登录测试账号...\n"
-                        },
-                        {
-                          "text": "🔐 开始登录测试账号...\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-01-21T01:37:19.362Z",
+                      "startTime": "2026-03-14T04:16:28.907Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测试---验证缓存修复-验证-在不同页码之间切换-chromium-retry1\\video.webm"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-f960c-情况测试-切换范围后应该重置-currentIndex-chromium-retry1\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测试---验证缓存修复-验证-在不同页码之间切换-chromium-retry1\\trace.zip"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-f960c-情况测试-切换范围后应该重置-currentIndex-chromium-retry1\\trace.zip"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                        "column": 8,
-                        "line": 17
-                      }
+                      ]
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "f5fc35980791b0585e29-c3d0cdbeae2d208fa550",
-              "file": "status-filter-test.spec.ts",
-              "line": 133,
+              "id": "6f3eb56601286991df79-3d38cc3996ecdb9359fc",
+              "file": "flashcards-edge-cases.spec.ts",
+              "line": 99,
               "column": 7
             },
             {
-              "title": "验证: sessionStorage缓存key正确",
+              "title": "空范围应该显示完成页面",
               "ok": false,
               "tags": [],
               "tests": [
@@ -394,130 +307,372 @@
                       "workerIndex": 4,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 41538,
+                      "duration": 44182,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8",
-                        "location": {
-                          "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                          "column": 8,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   \u001b[36mconst\u001b[39m \u001b[33mTEST_BOOK_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m`/library/${TEST_BOOK_ID}`\u001b[39m\n \u001b[90m 16 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'🔐 登录测试账号...'\u001b[39m)\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\n \u001b[90m 20 |\u001b[39m   })\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
                         {
-                          "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                            "column": 8,
-                            "line": 17
-                          },
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  15 |   const TEST_BOOK_URL = `/library/${TEST_BOOK_ID}`\n  16 |\n> 17 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  18 |     console.log('🔐 登录测试账号...')\n  19 |     await login(page)\n  20 |   })\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8"
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                         },
                         {
                           "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts",
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
                             "column": 14,
-                            "line": 22
+                            "line": 59
                           },
-                          "message": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/login\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n   at helpers\\login-helper.ts:22\n\n  20 |\n  21 |   // 访问登录页\n> 22 |   await page.goto('/login', { waitUntil: 'domcontentloaded' })\n     |              ^\n  23 |\n  24 |   // 等待React组件加载完成 - 等待tabs出现\n  25 |   await page.waitForSelector('button:has-text(\"登录\")', { timeout: 10000 })\n    at login (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts:22:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:19:16"
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=known\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:133:11"
                         }
                       ],
-                      "stdout": [
-                        {
-                          "text": "🔐 登录测试账号...\n"
-                        },
-                        {
-                          "text": "🔐 开始登录测试账号...\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-01-21T01:38:02.080Z",
+                      "startTime": "2026-03-14T04:17:14.627Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测-0ac04-修复-验证-sessionStorage缓存key正确-chromium\\video.webm"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-空范围应该显示完成页面-chromium\\video.webm"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                        "column": 8,
-                        "line": 17
-                      }
+                      ]
                     },
                     {
                       "workerIndex": 5,
                       "parallelIndex": 0,
                       "status": "timedOut",
-                      "duration": 44294,
+                      "duration": 44354,
                       "error": {
-                        "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m",
-                        "stack": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8",
-                        "location": {
-                          "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                          "column": 8,
-                          "line": 17
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 15 |\u001b[39m   \u001b[36mconst\u001b[39m \u001b[33mTEST_BOOK_URL\u001b[39m \u001b[33m=\u001b[39m \u001b[32m`/library/${TEST_BOOK_ID}`\u001b[39m\n \u001b[90m 16 |\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 17 |\u001b[39m   test\u001b[33m.\u001b[39mbeforeEach(\u001b[36masync\u001b[39m ({ page }) \u001b[33m=>\u001b[39m {\n \u001b[90m    |\u001b[39m        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 18 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'🔐 登录测试账号...'\u001b[39m)\n \u001b[90m 19 |\u001b[39m     \u001b[36mawait\u001b[39m login(page)\n \u001b[90m 20 |\u001b[39m   })\u001b[0m"
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                       },
                       "errors": [
                         {
-                          "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                            "column": 8,
-                            "line": 17
-                          },
-                          "message": "\u001b[31mTest timeout of 30000ms exceeded while running \"beforeEach\" hook.\u001b[39m\n\n  15 |   const TEST_BOOK_URL = `/library/${TEST_BOOK_ID}`\n  16 |\n> 17 |   test.beforeEach(async ({ page }) => {\n     |        ^\n  18 |     console.log('🔐 登录测试账号...')\n  19 |     await login(page)\n  20 |   })\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:17:8"
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
                         },
                         {
                           "location": {
-                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts",
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
                             "column": 14,
-                            "line": 22
+                            "line": 59
                           },
-                          "message": "TimeoutError: page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/login\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n   at helpers\\login-helper.ts:22\n\n  20 |\n  21 |   // 访问登录页\n> 22 |   await page.goto('/login', { waitUntil: 'domcontentloaded' })\n     |              ^\n  23 |\n  24 |   // 等待React组件加载完成 - 等待tabs出现\n  25 |   await page.waitForSelector('button:has-text(\"登录\")', { timeout: 10000 })\n    at login (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\helpers\\login-helper.ts:22:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts:19:16"
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=known\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:133:11"
                         }
                       ],
-                      "stdout": [
-                        {
-                          "text": "🔐 登录测试账号...\n"
-                        },
-                        {
-                          "text": "🔐 开始登录测试账号...\n"
-                        }
-                      ],
+                      "stdout": [],
                       "stderr": [],
                       "retry": 1,
-                      "startTime": "2026-01-21T01:38:44.931Z",
+                      "startTime": "2026-03-14T04:18:00.140Z",
                       "annotations": [],
                       "attachments": [
                         {
                           "name": "video",
                           "contentType": "video/webm",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测-0ac04-修复-验证-sessionStorage缓存key正确-chromium-retry1\\video.webm"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-空范围应该显示完成页面-chromium-retry1\\video.webm"
                         },
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\status-filter-test-状态筛选功能测-0ac04-修复-验证-sessionStorage缓存key正确-chromium-retry1\\trace.zip"
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-空范围应该显示完成页面-chromium-retry1\\trace.zip"
                         }
-                      ],
-                      "errorLocation": {
-                        "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\status-filter-test.spec.ts",
-                        "column": 8,
-                        "line": 17
-                      }
+                      ]
                     }
                   ],
                   "status": "unexpected"
                 }
               ],
-              "id": "f5fc35980791b0585e29-60508084ad01dd31d2e0",
-              "file": "status-filter-test.spec.ts",
-              "line": 173,
+              "id": "6f3eb56601286991df79-2e8a8cc57d076855d789",
+              "file": "flashcards-edge-cases.spec.ts",
+              "line": 131,
+              "column": 7
+            },
+            {
+              "title": "快速连续标记应该正常工作",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 44090,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
+                            "column": 14,
+                            "line": 59
+                          },
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:151:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-14T04:18:45.941Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-快速连续标记应该正常工作-chromium\\video.webm"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 44356,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
+                            "column": 14,
+                            "line": 59
+                          },
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:151:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-03-14T04:19:31.389Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-快速连续标记应该正常工作-chromium-retry1\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-快速连续标记应该正常工作-chromium-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6f3eb56601286991df79-c5984b05a6eedbc54abd",
+              "file": "flashcards-edge-cases.spec.ts",
+              "line": 150,
+              "column": 7
+            },
+            {
+              "title": "刷新页面后应该恢复进度",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 41570,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
+                            "column": 14,
+                            "line": 59
+                          },
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:178:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-14T04:20:17.141Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-刷新页面后应该恢复进度-chromium\\video.webm"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 44281,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
+                            "column": 14,
+                            "line": 59
+                          },
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:178:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-03-14T04:20:59.895Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-刷新页面后应该恢复进度-chromium-retry1\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flashcards-边界情况测试-刷新页面后应该恢复进度-chromium-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6f3eb56601286991df79-11551eeeabfb72a96edb",
+              "file": "flashcards-edge-cases.spec.ts",
+              "line": 176,
+              "column": 7
+            },
+            {
+              "title": "控制台不应该有 JavaScript 错误",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 44122,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
+                            "column": 14,
+                            "line": 59
+                          },
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:221:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-14T04:21:45.672Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-31863-界情况测试-控制台不应该有-JavaScript-错误-chromium\\video.webm"
+                        }
+                      ]
+                    },
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "timedOut",
+                      "duration": 43792,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts",
+                            "column": 14,
+                            "line": 59
+                          },
+                          "message": "Error: page.goto: net::ERR_ABORTED; maybe frame was detached?\nCall log:\n\u001b[2m  - navigating to \"http://localhost:3003/study/4fff1da4-c82e-4528-bdb1-d8e1524eee77/flashcards?scope=unknown\", waiting until \"domcontentloaded\"\u001b[22m\n\n\n  57 | // 辅助函数：访问 flashcards 页面\n  58 | async function gotoFlashcards(page: Page, scope: string = 'unknown') {\n> 59 |   await page.goto(`${BASE_URL}/study/${TEST_BOOK_ID}/flashcards?scope=${scope}`, {\n     |              ^\n  60 |     waitUntil: 'domcontentloaded',\n  61 |     timeout: 60000\n  62 |   })\n    at gotoFlashcards (D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:59:14)\n    at D:\\claude_work\\yingyu\\my-edu-platform\\e2e\\flashcards-edge-cases.spec.ts:221:11"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 1,
+                      "startTime": "2026-03-14T04:22:31.156Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-31863-界情况测试-控制台不应该有-JavaScript-错误-chromium-retry1\\video.webm"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "D:\\claude_work\\yingyu\\my-edu-platform\\test-results\\flashcards-edge-cases-Flas-31863-界情况测试-控制台不应该有-JavaScript-错误-chromium-retry1\\trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "6f3eb56601286991df79-2383e862f7a665517400",
+              "file": "flashcards-edge-cases.spec.ts",
+              "line": 212,
               "column": 7
             }
           ]
@@ -527,11 +682,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-01-21T01:35:09.251Z",
-    "duration": 260858.767,
+    "startTime": "2026-03-14T04:14:19.638Z",
+    "duration": 536124.456,
     "expected": 0,
     "skipped": 0,
-    "unexpected": 3,
+    "unexpected": 6,
     "flaky": 0
   }
 }

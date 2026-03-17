@@ -245,9 +245,18 @@ export function FlashcardScopeDialog({
     }
   ] : []
 
-  const handleScopeSelect = async (scopeValue: FlashcardScopeType) => {
-    // 跳转到flashcards页面
-    router.push(`/study/${bookId}/flashcards?scope=${scopeValue}&shuffle=true`)
+  const handleScopeSelect = async (scopeValue: FlashcardScopeType, currentIndex?: number) => {
+    // 🔧 修复：添加 resume=true 和 hash 以支持位置恢复
+    const params = new URLSearchParams({
+      scope: scopeValue,
+      shuffle: 'true',
+      resume: 'true'
+    })
+
+    // 如果有索引，添加 hash 定位
+    const hash = currentIndex !== undefined ? `#word-${currentIndex}` : ''
+
+    router.push(`/study/${bookId}/flashcards?${params.toString()}${hash}`)
     onClose()
   }
 
@@ -305,7 +314,7 @@ export function FlashcardScopeDialog({
                 </p>
               </div>
               <button
-                onClick={() => handleScopeSelect(recentProgress.scopeType)}
+                onClick={() => handleScopeSelect(recentProgress.scopeType, recentProgress.currentIndex)}
                 className="px-4 py-2 bg-black text-white font-black text-sm rounded shadow-[3px_3px_0px_0px_rgba(0,0,0,0.3)] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,0.3)] active:translate-x-0 active:translate-y-0 active:shadow-none transition-all"
               >
                 继续

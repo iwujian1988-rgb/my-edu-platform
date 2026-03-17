@@ -22,6 +22,8 @@ interface Word {
   chapter_id: string | null
   chapter?: string
   order_index: number
+  // 🌍 多语言支持（Phase 3）
+  language_data?: import('@/types/word').LanguageData
 }
 
 interface Chapter {

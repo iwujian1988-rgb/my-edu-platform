@@ -26,9 +26,11 @@ export interface Word {
   theme?: string
   scene?: string
   status?: 'new' | 'unknown' | 'fuzzy' | 'known'
-  // 多语言支持字段
+  // 多语言支持字段（旧字段，保留兼容）
   kana?: string       // 日语假名
   romaji?: string     // 日语罗马音
+  // 🌍 多语言支持（Phase 3）- 新字段
+  language_data?: import('@/types/word').LanguageData
 }
 
 /**

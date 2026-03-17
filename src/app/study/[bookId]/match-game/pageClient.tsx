@@ -58,6 +58,7 @@ export default function MatchGamePageClient() {
   const [wordProgress, setWordProgress] = useState<Record<string, WordProgress>>({})
   const [loading, setLoading] = useState(true)
   const [loadingMessage, setLoadingMessage] = useState<string>('')  // 加载提示信息
+  const [loadError, setLoadError] = useState<string | null>(null)  // 🔧 加载错误信息
   const [bookTitle, setBookTitle] = useState('')
   const [scopeLabel, setScopeLabel] = useState('')
 
@@ -71,6 +72,7 @@ export default function MatchGamePageClient() {
   const [explodingCards, setExplodingCards] = useState<Set<string>>(new Set())
   const [masteredWords, setMasteredWords] = useState<string[]>([])  // 本次游戏掌握的单词列表
   const [totalMasteredWords, setTotalMasteredWords] = useState<string[]>([])  // 所有轮次掌握的单词
+  const [currentRoundWords, setCurrentRoundWords] = useState<string[]>([])  // 🔧 本轮出现的所有单词（用于防止重复）
   const [toastMessage, setToastMessage] = useState<string | null>(null)  // 提示消息
   const [selectedDifficulty, setSelectedDifficulty] = useState<number | null>(null)  // 选择的卡片对数：4/10/20
   const [showDifficultySelect, setShowDifficultySelect] = useState(true)  // 是否显示难度选择
@@ -80,19 +82,58 @@ export default function MatchGamePageClient() {
   const [pendingDifficulty, setPendingDifficulty] = useState<number | null>(null)  // 待切换的难度（下一轮生效）
   const [unknownWordsPool, setUnknownWordsPool] = useState<Word[]>([])  // 所有未认识的单词池
   const [gameKey, setGameKey] = useState(0)  // 用于触发游戏重新初始化（轮次切换时更新）
+  const isRoundTransitioning = useRef(false)  // 🔧 修复：防止轮次切换重复执行
 
   // AbortController用于取消进行中的API请求
   const abortControllerRef = useRef<AbortController | null>(null)
 
-  // Cleanup effect: 在组件挂载时创建AbortController，卸载时取消所有pending请求
+  // 🔧 内存泄露修复：AudioContext 单例，避免每次播放音效都创建新实例
+  const audioContextRef = useRef<AudioContext | null>(null)
+
+  // 🔧 内存泄露修复：保存所有需要清理的 setTimeout ID
+  const timeoutIdsRef = useRef<Set<ReturnType<typeof setTimeout>>>(new Set())
+
+  // 🔧 内存泄露修复：安全的 setTimeout 包装函数，自动记录 ID 以便清理
+  const safeSetTimeout = useCallback((callback: () => void, delay: number): ReturnType<typeof setTimeout> => {
+    const id = setTimeout(() => {
+      timeoutIdsRef.current.delete(id)
+      callback()
+    }, delay)
+    timeoutIdsRef.current.add(id)
+    return id
+  }, [])
+
+  // 🔧 内存泄露修复：安全的 clearTimeout 包装函数
+  const safeClearTimeout = useCallback((id: ReturnType<typeof setTimeout>) => {
+    clearTimeout(id)
+    timeoutIdsRef.current.delete(id)
+  }, [])
+
+  // Cleanup effect: 在组件挂载时创建资源，卸载时清理所有资源
   useEffect(() => {
     // 创建新的AbortController
     abortControllerRef.current = new AbortController()
 
+    // 🔧 在 effect 内部捕获 ref 值，供 cleanup 函数使用（避免 ESLint 警告）
+    const timeoutIdsSet = timeoutIdsRef.current
+    const audioCtx = audioContextRef.current
+    const abortCtrl = abortControllerRef.current
+
     // Cleanup函数：组件卸载时执行
     return () => {
       // 取消所有pending的API请求
-      abortControllerRef.current?.abort()
+      abortCtrl?.abort('Component unmounted')
+
+      // 🔧 清理所有未完成的 setTimeout
+      timeoutIdsSet.forEach(id => clearTimeout(id))
+      timeoutIdsSet.clear()
+
+      // 🔧 关闭 AudioContext 释放音频资源
+      if (audioCtx && audioCtx.state !== 'closed') {
+        audioCtx.close().catch(() => {
+          // 静默处理关闭错误
+        })
+      }
     }
   }, []) // 空依赖数组，只在挂载/卸载时执行
 
@@ -118,8 +159,9 @@ export default function MatchGamePageClient() {
   const [totalWordsCount, setTotalWordsCount] = useState(0)  // 书中总单词数
   const [isLoadingMore, setIsLoadingMore] = useState(false)
 
-  // 加载单词数据（支持分批懒加载）
-  const loadWords = useCallback(async (difficulty: number | null, offset: number = 0, isInitialLoad: boolean = false) => {
+  // 加载单词数据（支持分批懒加载，添加超时保护）
+  // 🔧 修复：支持 shuffle 参数随机打乱单词顺序，避免总是从前150个找
+  const loadWords = useCallback(async (difficulty: number | null, offset: number = 0, options?: { shuffle?: boolean }) => {
     try {
       const batchSize = getBatchSize(difficulty)
 
@@ -127,10 +169,20 @@ export default function MatchGamePageClient() {
       params.set('bookId', bookId)
       params.set('page', String(Math.floor(offset / batchSize) + 1))
       params.set('pageSize', String(batchSize))
-      params.set('status', 'all')  // 🔥 修复：添加 status 参数，获取所有状态的单词
+      params.set('status', 'all')  // 获取所有状态的单词，客户端过滤
+      if (options?.shuffle) {
+        params.set('shuffle', 'true')  // 🔧 启用服务端随机打乱
+      }
 
-      // 根据难度加载足够的单词
-      const wordsRes = await fetch(`/api/words?${params.toString()}`)
+      // 🔧 添加超时保护，避免页面卡死（开发环境编译较慢，增加到30秒）
+      const controller = new AbortController()
+      const timeout = setTimeout(() => controller.abort('Request timeout'), 30000)  // 30秒超时
+
+      const wordsRes = await fetch(`/api/words?${params.toString()}`, {
+        signal: controller.signal
+      })
+      clearTimeout(timeout)
+
       if (!wordsRes.ok) throw new Error('Failed to fetch words')
       const wordsData = await wordsRes.json()
 
@@ -144,8 +196,12 @@ export default function MatchGamePageClient() {
         totalCount: wordsData.total || wordsData.count || wordsData.data?.length || 0,
         hasMore: (wordsData.data?.length || 0) === batchSize
       }
-    } catch (error) {
-      console.error('Error loading words:', error)
+    } catch (error: any) {
+      if (error.name === 'AbortError') {
+        console.warn('⚠️ loadWords 超时，返回空数据')
+      } else {
+        console.error('Error loading words:', error)
+      }
       return { words: [], totalCount: 0, hasMore: false }
     }
   }, [bookId])
@@ -154,54 +210,132 @@ export default function MatchGamePageClient() {
   useEffect(() => {
     async function fetchData() {
       try {
-        // 从 localStorage 读取上次选择的难度
+        // 从 localStorage 读取上次选择的难度（仅用于确定加载数量，不自动开始游戏）
         const savedDifficulty = localStorage.getItem(`match-game-difficulty-${bookId}`)
-        if (savedDifficulty) {
-          setSelectedDifficulty(parseInt(savedDifficulty))
-        }
+        // 注意：不在这里设置 selectedDifficulty，让用户手动选择难度
 
         setLoadingMessage('正在加载词书信息...')
-        const bookRes = await fetch(`/api/books/${bookId}`)
+        // 🔧 添加超时保护（开发环境编译较慢，增加到15秒）
+        const bookController = new AbortController()
+        const bookTimeout = setTimeout(() => bookController.abort('Book fetch timeout'), 15000)
+        const bookRes = await fetch(`/api/books/${bookId}`, {
+          signal: bookController.signal
+        })
+        clearTimeout(bookTimeout)
         if (!bookRes.ok) throw new Error('Failed to fetch book')
         const bookData = await bookRes.json()
         setBookTitle(bookData.data.title)
 
-        // 首次加载：根据默认难度加载第一批单词
+        // 🔧 修复：使用 shuffle 参数随机打乱单词，避免总是从前150个找
+        // 首次加载：根据默认难度加载第一批单词（使用 shuffle 随机打乱）
         const initialDifficulty = parseInt(savedDifficulty || '4')
         const batchSize = getBatchSize(initialDifficulty)
-        setLoadingMessage(`正在加载单词...（预计 ${Math.ceil(batchSize / 100)} × 100 个）`)
+        const minRequiredWords = initialDifficulty * 2  // 至少够2轮游戏
+        setLoadingMessage(`正在随机抽取单词...`)
 
-        const { words: initialWords, totalCount: totalWordsCount } = await loadWords(initialDifficulty, 0, true)
+        // 🔧 修复：启用 shuffle，从整本书中随机抽取单词
+        const { words: initialWords, totalCount: totalWordsCount } = await loadWords(initialDifficulty, 0, { shuffle: true })
 
-        setAllWords(initialWords)
-        setLoadedWordsCount(initialWords.length)
-        setTotalWordsCount(totalWordsCount)  // 保存总单词数
-
-        // 生成范围标签：显示加载的单词数量
-        if (totalWordsCount <= batchSize) {
-          setScopeLabel(`全书 ${totalWordsCount} 个单词`)
-        } else {
-          setScopeLabel(`随机复习 ${initialWords.length} 个单词`)
+        // 获取单词进度（添加超时保护）
+        let progressData: Record<string, any> = {}
+        try {
+          const progressController = new AbortController()
+          const progressTimeout = setTimeout(() => progressController.abort('Progress fetch timeout'), 15000)  // 15秒超时（开发环境编译较慢）
+          const progressRes = await fetch(`/api/word-progress?book_id=${bookId}`, {
+            signal: progressController.signal
+          })
+          clearTimeout(progressTimeout)
+          if (progressRes.ok) {
+            const progressJson = await progressRes.json()
+            progressData = progressJson.data || {}
+            setWordProgress(progressData)
+          }
+        } catch (progressError) {
+          console.warn('⚠️ 加载单词进度超时，使用空数据:', progressError)
+          // 超时后使用空数据，不阻塞页面
         }
 
-        const progressRes = await fetch(`/api/word-progress?book_id=${bookId}`)
-        let progressData: any = null
-        if (progressRes.ok) {
-          progressData = await progressRes.json()
-          setWordProgress(progressData.data || {})
-        }
+        // 🔍 调试：打印进度数据统计
+        const progressKeys = Object.keys(progressData)
+        const knownCount = progressKeys.filter(k => progressData[k]?.status === 'known').length
+        const unknownCount = progressKeys.filter(k => progressData[k]?.status === 'unknown' || progressData[k]?.status === 'fuzzy').length
+        const newCount = progressKeys.filter(k => progressData[k]?.status === 'new').length
+        console.log(`📊 [消消乐] 进度数据统计: 总记录=${progressKeys.length}, known=${knownCount}, unknown/fuzzy=${unknownCount}, new=${newCount}`)
 
         // 首次加载：构建未认识单词池
-        const unknownWords = initialWords.filter((word: Word) => {
-          const progress = progressData?.data?.[word.id]
+        let unknownWords = initialWords.filter((word: Word) => {
+          const progress = progressData[word.id]
           return !progress || progress.status !== 'known'
         })
+
+        let allLoadedWords = [...initialWords]
+        let currentOffset = initialWords.length
+
+        // 🔧 辅助函数：计算去重后的唯一单词数量
+        const getUniqueWordCount = (words: Word[]) => {
+          const uniqueSet = new Set(words.map(w => w.word))
+          return uniqueSet.size
+        }
+
+        // 🔧 修复：循环加载时应该用去重后的数量来判断是否足够
+        // 因为同一个单词可能有多条记录（不同释义），但游戏中只会出现一次
+        let uniqueUnknownCount = getUniqueWordCount(unknownWords)
+        let loadIterations = 0
+        const maxIterations = 5  // 🔧 增加：最多加载 5 批，因为 shuffle 模式下可能需要更多批次
+
+        while (uniqueUnknownCount < minRequiredWords && currentOffset < totalWordsCount && loadIterations < maxIterations) {
+          loadIterations++
+          setLoadingMessage(`正在随机抽取更多单词...（已找到 ${uniqueUnknownCount} 个可玩单词）`)
+
+          // 🔧 修复：继续使用 shuffle，每次从整本书中随机抽取
+          const { words: moreWords } = await loadWords(initialDifficulty, currentOffset, { shuffle: true })
+
+          // 🔧 优化： 如果 API 返回空数据，立即退出循环
+          if (moreWords.length === 0) {
+            console.log('⚠️ API 返回空数据，停止加载')
+            break
+          }
+
+          // 🔧 优化: 如果连续 3 次加载都没有新的唯一单词，提前退出
+          const prevUniqueCount = uniqueUnknownCount
+
+          // 过滤新加载的未知单词
+          const newUnknownWords = moreWords.filter((word: Word) => {
+            const progress = progressData[word.id]
+            return !progress || progress.status !== 'known'
+          })
+
+          unknownWords = [...unknownWords, ...newUnknownWords]
+          allLoadedWords = [...allLoadedWords, ...moreWords]
+          currentOffset += moreWords.length
+          uniqueUnknownCount = getUniqueWordCount(unknownWords)  // 更新去重后的数量
+
+          console.log(`📦 加载第 ${loadIterations + 1} 批: ${moreWords.length} 个单词, ${newUnknownWords.length} 个未知, 去重后 ${uniqueUnknownCount} 个`)
+        }
+
+        setAllWords(allLoadedWords)
+        setLoadedWordsCount(currentOffset)
+        setTotalWordsCount(totalWordsCount)
         setUnknownWordsPool(unknownWords)
 
-        // 保存总单词数，用于懒加载判断
-        setLoadedWordsCount(initialWords.length)
+        // 生成范围标签：显示加载的单词数量（使用去重后的数量）
+        if (totalWordsCount <= batchSize) {
+          setScopeLabel(`全书 ${totalWordsCount} 个单词`)
+        } else if (uniqueUnknownCount < totalWordsCount) {
+          setScopeLabel(`随机复习 ${uniqueUnknownCount} 个单词`)
+        } else {
+          setScopeLabel(`全书 ${uniqueUnknownCount} 个单词`)
+        }
+
+        console.log(`✅ 初始化完成: 共加载 ${allLoadedWords.length} 个单词, ${unknownWords.length} 个未知, 去重后 ${uniqueUnknownCount} 个可玩`)
+
+        // 🔧 检查是否成功加载了单词
+        if (allLoadedWords.length === 0) {
+          setLoadError('加载单词失败，请检查网络连接后重试')
+        }
       } catch (error) {
         console.error('Error fetching data:', error)
+        setLoadError('加载单词失败，请刷新页面重试')
       } finally {
         setLoading(false)
         setLoadingMessage('')  // 清除加载提示
@@ -214,46 +348,6 @@ export default function MatchGamePageClient() {
   // 初始化游戏
   useEffect(() => {
     if (unknownWordsPool.length === 0 || selectedDifficulty === null) return
-
-    // 检查是否需要加载更多单词（单词池少于所需数量的2倍）
-    const checkAndLoadMore = async () => {
-      const batchSize = getBatchSize(selectedDifficulty)
-      const minRequiredWords = selectedDifficulty * 2  // 至少够2轮
-
-      // 如果当前单词池少于最小需求，且还没加载完所有单词
-      if (unknownWordsPool.length < minRequiredWords && loadedWordsCount < allWords.length) {
-        console.log('🔄 Loading more words...')
-        setIsLoadingMore(true)
-
-        try {
-          const { words: moreWords } = await loadWords(selectedDifficulty, loadedWordsCount)
-
-          if (moreWords.length > 0) {
-            // 过滤新加载的单词
-            const newUnknownWords = moreWords.filter((word: Word) => {
-              const progress = wordProgress[word.id]
-              return !progress || progress.status !== 'known'
-            })
-
-            // 追加到单词池
-            setUnknownWordsPool(prev => [...prev, ...newUnknownWords])
-            setAllWords(prev => [...prev, ...moreWords])
-            setLoadedWordsCount(prev => prev + moreWords.length)
-
-            console.log(`✅ Loaded ${moreWords.length} more words, ${newUnknownWords.length} are unknown`)
-          } else {
-            console.log('ℹ️ No more words to load')
-          }
-        } catch (error) {
-          console.error('Error loading more words:', error)
-        } finally {
-          setIsLoadingMore(false)
-        }
-      }
-    }
-
-    // 异步检查并加载更多单词（不在初始化时调用，避免循环触发）
-    // checkAndLoadMore() // ❌ 移除：每次轮次变化都会调用，导致重复加载
 
     // 单词去重：同一单词只保留一个释义（避免多义词问题）
     const wordMap = new Map<string, Word>()
@@ -275,6 +369,10 @@ export default function MatchGamePageClient() {
       selectedWords = shuffled
     }
 
+    // 🔧 修复空白方块：过滤掉没有 definition 的单词
+    selectedWords = selectedWords.filter(word => word.definition && word.definition.trim() !== '')
+    console.log(`🎴 创建卡片: 过滤后有 ${selectedWords.length} 个有效单词`)
+
     // 创建卡片对（英文 + 中文）
     const cardPairs: Card[] = []
     selectedWords.forEach((word, index) => {
@@ -289,7 +387,7 @@ export default function MatchGamePageClient() {
       })
       cardPairs.push({
         id: `definition-${index}`,
-        content: word.definition,
+        content: word.definition,  // 🔧 已过滤，确保 definition 不为空
         type: 'definition',
         wordId: word.id,
         wordText: word.word,  // 释义卡片也存储对应的单词
@@ -301,6 +399,8 @@ export default function MatchGamePageClient() {
     // 使用 Fisher-Yates 打乱卡片顺序
     const shuffledCards = fisherYatesShuffle(cardPairs)
     setCards(shuffledCards)
+    // 🔧 记录本轮出现的所有单词（用于防止下一轮重复）
+    setCurrentRoundWords(selectedWords.map(w => w.word))
     setShowDifficultySelect(false)  // 隐藏难度选择，显示游戏
     setAllCompleted(false)  // 重置通关状态
   }, [unknownWordsPool, selectedDifficulty, gameKey])  // gameKey 变化时也会重新初始化（用于轮次切换）
@@ -385,7 +485,7 @@ export default function MatchGamePageClient() {
       const cardsToExplode = cards.filter(c => c.wordText === selectedCard.wordText)
       setExplodingCards(new Set(cardsToExplode.map(c => c.id)))
 
-      setTimeout(async () => {
+      safeSetTimeout(async () => {
         // 消除所有相同单词的卡片（从当前游戏中移除，给用户即时反馈）
         const matchedCards = cards.map(card =>
           card.wordText === selectedCard.wordText ? { ...card, isMatched: true, isSelected: false } : card
@@ -456,7 +556,7 @@ export default function MatchGamePageClient() {
               }
 
               setToastMessage(`✅ 已掌握"${card.wordText}"！`)
-              setTimeout(() => setToastMessage(null), 2000)
+              safeSetTimeout(() => setToastMessage(null), 2000)
             } catch (err: any) {
               // 如果是中止错误，不显示toast（静默处理）
               if (err.name === 'AbortError') {
@@ -465,7 +565,7 @@ export default function MatchGamePageClient() {
               }
               console.error('保存失败:', err)
               setToastMessage(`⚠️ "${card.wordText}"保存失败，请重试`)
-              setTimeout(() => setToastMessage(null), 3000)
+              safeSetTimeout(() => setToastMessage(null), 3000)
             }
           } else {
             // 未达到阈值，仅更新计数，下次游戏还会随机出现
@@ -482,7 +582,7 @@ export default function MatchGamePageClient() {
               }, 2, abortControllerRef.current?.signal) // 传递abort signal
 
               setToastMessage(`✅ 匹配成功！再匹配${remaining}次即可掌握`)
-              setTimeout(() => setToastMessage(null), 2000)
+              safeSetTimeout(() => setToastMessage(null), 2000)
             } catch (err: any) {
               // 如果是中止错误，静默处理
               if (err.name === 'AbortError') {
@@ -505,10 +605,59 @@ export default function MatchGamePageClient() {
 
             // 检查是否还有下一轮
             if (currentRound < totalRounds) {
+              // 🔧 修复：检查是否已经在切换轮次，防止重复执行
+              if (isRoundTransitioning.current) {
+                console.log('⚠️ 已经在切换轮次，跳过本次')
+                return newCount
+              }
+              isRoundTransitioning.current = true
+
               // 还有下一轮，自动进入下一轮
-              setTimeout(() => {
+              safeSetTimeout(async () => {
+                // 🔧 重置轮次切换标志，允许下一轮切换
+                isRoundTransitioning.current = false
+
                 // 累加到总掌握单词列表
                 setTotalMasteredWords(prevWords => [...prevWords, ...masteredWords])
+
+                // 🔧 修复：从单词池中移除本轮出现过的所有单词，防止重复出现
+                const playedWordTexts = new Set(currentRoundWords)
+                const remainingPool = unknownWordsPool.filter(word => !playedWordTexts.has(word.word))
+
+                // 🔧 修复：检查剩余单词池是否足够下一轮
+                const minWordsNeeded = selectedDifficulty || 8
+                if (remainingPool.length < minWordsNeeded) {
+                  console.log(`🔄 单词池不足（${remainingPool.length}/${minWordsNeeded}），重新加载随机单词...`)
+                  setLoading(true)
+                  setLoadingMessage('正在抽取新单词...')
+
+                  try {
+                    // 重新从服务器获取随机单词
+                    const { words: newWords } = await loadWords(selectedDifficulty, 0, { shuffle: true })
+
+                    // 过滤掉已玩过的和已知的单词
+                    const freshWords = newWords.filter((word: Word) => {
+                      const progress = wordProgress[word.id]
+                      const isKnown = progress && progress.status === 'known'
+                      const isPlayed = totalMasteredWords.includes(word.word) ||
+                                      playedWordTexts.has(word.word)
+                      return !isKnown && !isPlayed && word.definition && word.definition.trim() !== ''
+                    })
+
+                    console.log(`✅ 加载了 ${freshWords.length} 个新单词`)
+                    setUnknownWordsPool(freshWords)
+                    setLoadedWordsCount(freshWords.length)
+                  } catch (error) {
+                    console.error('加载新单词失败:', error)
+                    // 使用剩余的单词池
+                    setUnknownWordsPool(remainingPool)
+                  } finally {
+                    setLoading(false)
+                    setLoadingMessage('')
+                  }
+                } else {
+                  setUnknownWordsPool(remainingPool)
+                }
 
                 // 重置当前轮次状态
                 setCards([])
@@ -519,6 +668,7 @@ export default function MatchGamePageClient() {
                 setIsProcessing(false)
                 setExplodingCards(new Set())
                 setMasteredWords([])
+                setCurrentRoundWords([])  // 🔧 重置本轮单词记录
                 setToastMessage(null)
 
                 // 进入下一轮
@@ -527,7 +677,7 @@ export default function MatchGamePageClient() {
               }, 1500) // 1.5秒后自动进入下一轮
             } else {
               // 最后一轮完成，显示通关界面
-              setTimeout(() => {
+              safeSetTimeout(() => {
                 setAllCompleted(true)
               }, 500)
             }
@@ -595,7 +745,7 @@ export default function MatchGamePageClient() {
       }
 
       // 延迟后取消选中，让用户看到两张卡片同时被选中的状态
-      setTimeout(() => {
+      safeSetTimeout(() => {
         const newCards = cards.map(card =>
           card.id === selectedCard.id || card.id === clickedCard.id
             ? { ...card, isSelected: false }
@@ -606,11 +756,23 @@ export default function MatchGamePageClient() {
         setIsProcessing(false)
       }, 500)
     }
+  // 🔧 注：playSound 和 safeSetTimeout 是稳定的 useCallback（空依赖数组），不需要添加到依赖
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cards, selectedCard, isProcessing, wordProgress, bookId, saveWordProgress, MATCH_THRESHOLD, FAIL_THRESHOLD, currentRound, totalRounds, masteredWords])
 
-  // 播放音效 - 游戏级音效
-  const playSound = (type: 'match' | 'wrong' | 'win') => {
-    const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)()
+  // 播放音效 - 游戏级音效（🔧 内存泄露修复：使用单例 AudioContext）
+  const playSound = useCallback((type: 'match' | 'wrong' | 'win') => {
+    // 🔧 复用 AudioContext 实例，避免内存泄露
+    if (!audioContextRef.current || audioContextRef.current.state === 'closed') {
+      audioContextRef.current = new (window.AudioContext || (window as any).webkitAudioContext)()
+    }
+    const audioContext = audioContextRef.current
+
+    // 如果 AudioContext 被暂停（浏览器自动暂停策略），尝试恢复
+    if (audioContext.state === 'suspended') {
+      audioContext.resume().catch(() => {})
+    }
+
     const masterGain = audioContext.createGain()
     masterGain.connect(audioContext.destination)
     masterGain.gain.value = 0.4  // 总体音量
@@ -729,7 +891,7 @@ export default function MatchGamePageClient() {
         chordOsc.stop(now + 0.8)
       }
     }
-  }
+  }, []) // 🔧 useCallback 空依赖，AudioContext 通过 ref 管理
 
   // 重新开始游戏（回到难度选择）
   const handleRestart = () => {
@@ -741,6 +903,7 @@ export default function MatchGamePageClient() {
     setIsProcessing(false)
     setExplodingCards(new Set())
     setMasteredWords([])
+    setCurrentRoundWords([])  // 🔧 重置本轮单词记录
     setToastMessage(null)
     setShowDifficultySelect(true)  // 显示难度选择
     setCurrentRound(1)  // 重置轮次
@@ -757,30 +920,78 @@ export default function MatchGamePageClient() {
     try {
       setLoading(true)
       const batchSize = getBatchSize(pairs)
-      setLoadingMessage(`正在加载单词...（预计 ${Math.ceil(batchSize / 100)} × 100 个）`)
+      const minRequiredWords = pairs * 2  // 至少够2轮游戏
+      setLoadingMessage(`正在随机抽取单词...`)
 
-      const { words: newWords, totalCount: newTotalCount } = await loadWords(pairs, 0, true)
+      // 🔧 修复：使用 shuffle 随机抽取
+      const { words: initialWords, totalCount: newTotalCount } = await loadWords(pairs, 0, { shuffle: true })
 
-      setAllWords(newWords)
-      setLoadedWordsCount(newWords.length)
-      setTotalWordsCount(newTotalCount)
-
-      // 重新过滤未认识单词
-      const unknownWords = newWords.filter((word: Word) => {
+      // 过滤未认识单词
+      let unknownWords = initialWords.filter((word: Word) => {
         const progress = wordProgress[word.id]
         return !progress || progress.status !== 'known'
       })
+
+      let allLoadedWords = [...initialWords]
+      let currentOffset = initialWords.length
+
+      // 🔧 辅助函数：计算去重后的唯一单词数量
+      const getUniqueWordCount = (words: Word[]) => {
+        const uniqueSet = new Set(words.map(w => w.word))
+        return uniqueSet.size
+      }
+
+      // 🔧 修复：循环加载直到有足够的唯一单词
+      let uniqueUnknownCount = getUniqueWordCount(unknownWords)
+      let loadIterations = 0
+      const maxIterations = 10  // 🔧 增加：shuffle 模式下可能需要更多批次
+
+      while (uniqueUnknownCount < minRequiredWords && currentOffset < newTotalCount && loadIterations < maxIterations) {
+        loadIterations++
+        setLoadingMessage(`正在随机抽取更多单词...（已找到 ${uniqueUnknownCount} 个可玩单词）`)
+
+        // 🔧 修复：继续使用 shuffle
+        const { words: moreWords } = await loadWords(pairs, currentOffset, { shuffle: true })
+
+        if (moreWords.length === 0) break
+
+        const newUnknownWords = moreWords.filter((word: Word) => {
+          const progress = wordProgress[word.id]
+          return !progress || progress.status !== 'known'
+        })
+
+        unknownWords = [...unknownWords, ...newUnknownWords]
+        allLoadedWords = [...allLoadedWords, ...moreWords]
+        currentOffset += moreWords.length
+        uniqueUnknownCount = getUniqueWordCount(unknownWords)
+
+        console.log(`📦 [难度选择] 加载第 ${loadIterations + 1} 批: ${moreWords.length} 个, 去重后 ${uniqueUnknownCount} 个`)
+      }
+
+      setAllWords(allLoadedWords)
+      setLoadedWordsCount(currentOffset)
+      setTotalWordsCount(newTotalCount)
       setUnknownWordsPool(unknownWords)
 
-      // 计算总轮次（只在这里计算一次，之后不再改变）
-      const totalRoundsCount = Math.ceil(unknownWords.length / pairs)
+      // 🔧 修复：计算总轮次前先去重（与游戏初始化逻辑一致）
+      // 因为同一个单词可能有多条记录（不同释义），但游戏中只会出现一次
+      const uniqueWordMap = new Map<string, Word>()
+      unknownWords.forEach(word => {
+        if (!uniqueWordMap.has(word.word)) {
+          uniqueWordMap.set(word.word, word)
+        }
+      })
+      const uniqueCount = uniqueWordMap.size
+
+      // 🔧 修复：固定 3 轮，不管单词池有多少（用户体验优化）
+      const totalRoundsCount = 3
       setTotalRounds(totalRoundsCount)
 
-      // 更新标签
+      // 更新标签（使用去重后的数量）
       if (newTotalCount <= batchSize) {
         setScopeLabel(`全书 ${newTotalCount} 个单词`)
       } else {
-        setScopeLabel(`随机复习 ${newWords.length} 个单词`)
+        setScopeLabel(`随机复习 ${uniqueCount} 个单词`)
       }
 
       // 重置游戏状态
@@ -791,11 +1002,11 @@ export default function MatchGamePageClient() {
       setGameWon(false)
       setCurrentRound(1)
 
-      console.log(`✅ Loaded ${newWords.length} words for difficulty ${pairs}`)
+      console.log(`✅ [难度选择] 加载完成: 共 ${allLoadedWords.length} 个单词, ${unknownWords.length} 个未知, 去重后 ${uniqueCount} 个可玩`)
     } catch (error) {
       console.error('Error loading words for new difficulty:', error)
       setToastMessage('加载单词失败，请重试')
-      setTimeout(() => setToastMessage(null), 3000)
+      safeSetTimeout(() => setToastMessage(null), 3000)
     } finally {
       setLoading(false)
       setLoadingMessage('')  // 清除加载提示
@@ -865,35 +1076,58 @@ export default function MatchGamePageClient() {
     )
   }
 
-  // 检查是否单词太少
-  const unknownWords = allWords.filter(word => {
-    const progress = wordProgress[word.id]
-    return !progress || progress.status !== 'known'
-  })
+  // 🔧 修复：使用 unknownWordsPool（初始化时已循环加载足够单词）
+  // 而非重新过滤 allWords，确保检查结果与初始化一致
+  const uniqueUnknownWordTexts = new Set(unknownWordsPool.map(w => w.word))
 
-  if (allWords.length > 0 && unknownWords.length < 3) {
+  // 🔧 修复：只有当所有单词都加载完（loadedWordsCount >= totalWordsCount）
+  // 且确实没有足够的未知单词时，才显示错误
+  const hasMoreWordsToLoad = loadedWordsCount < totalWordsCount
+
+  if (allWords.length > 0 && uniqueUnknownWordTexts.size < 3 && !hasMoreWordsToLoad) {
     return (
       <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
         <div className="clay-card p-8 text-center max-w-md">
           <p className="text-lg font-semibold mb-4" style={{ color: 'var(--text-secondary)' }}>
             单词数量太少啦，先去背几个单词再来玩吧！
           </p>
-          <Link href={`/library/${bookId}`} className="clay-button-primary inline-block px-6 py-3">
+          <button
+            onClick={() => router.push(`/library/${bookId}`)}
+            className="clay-button-primary inline-block px-6 py-3"
+          >
             返回词书详情
-          </Link>
+          </button>
         </div>
       </div>
     )
   }
 
-  if (allWords.length === 0) {
+  // 🔧 修复：先检查是否有加载错误
+  if (loadError || allWords.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center transition-colors duration-300" style={{ backgroundColor: 'var(--bg-primary)' }}>
-        <div className="clay-card p-8 text-center">
-          <p className="text-lg font-semibold" style={{ color: 'var(--text-secondary)' }}>暂无单词数据</p>
-          <Link href={`/library/${bookId}`} className="clay-button-primary inline-block mt-4 px-6 py-3">
-            返回词书详情
-          </Link>
+        <div className="clay-card p-8 text-center max-w-md">
+          <p className="text-lg font-semibold mb-4" style={{ color: 'var(--text-secondary)' }}>
+            {loadError || '暂无单词数据'}
+          </p>
+          <div className="flex gap-3 justify-center">
+            <button
+              onClick={() => {
+                setLoadError(null)
+                setLoading(true)
+                window.location.reload()
+              }}
+              className="clay-button-primary px-6 py-3"
+            >
+              重新加载
+            </button>
+            <button
+              onClick={() => router.push(`/library/${bookId}`)}
+              className="clay-button-secondary px-6 py-3"
+            >
+              返回词书详情
+            </button>
+          </div>
         </div>
       </div>
     )
@@ -908,11 +1142,15 @@ export default function MatchGamePageClient() {
         <div className="max-w-7xl mx-auto">
           <div className="px-3 py-1.5 flex items-center justify-between shadow-[3px_3px_0px_0px_#000] border-3 border-black backdrop-blur-sm transition-colors duration-300" style={{ borderRadius: '12px', backgroundColor: 'var(--card-bg)' }}>
             <div className="flex items-center gap-2">
-              <Link href={`/library/${bookId}`}>
-                <button className="p-1 transition-colors border-3 border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5" style={{ borderRadius: '10px', backgroundColor: 'var(--bg-tertiary)' }} onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'} onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'}>
-                  <ArrowLeft className="w-3.5 h-3.5" strokeWidth={3} style={{ color: 'var(--text-primary)' }} />
-                </button>
-              </Link>
+              <button
+                onClick={() => router.push(`/library/${bookId}`)}
+                className="p-1 transition-colors border-3 border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-x-0.5 hover:-translate-y-0.5 active:translate-x-0 active:translate-y-0 active:shadow-none"
+                style={{ borderRadius: '10px', backgroundColor: 'var(--bg-tertiary)' }}
+                onMouseEnter={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-secondary)'}
+                onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'var(--bg-tertiary)'}
+              >
+                <ArrowLeft className="w-3.5 h-3.5" strokeWidth={3} style={{ color: 'var(--text-primary)' }} />
+              </button>
               <div className="hidden sm:block">
                 <h1 className="text-base font-black" style={{ color: 'var(--text-primary)' }}>{bookTitle}</h1>
                 <p className="text-xs font-bold" style={{ color: 'var(--text-secondary)' }}>
@@ -927,19 +1165,9 @@ export default function MatchGamePageClient() {
                   value={selectedDifficulty || ''}
                   onChange={(e) => {
                     const newDifficulty = parseInt(e.target.value)
-                    if (newDifficulty !== selectedDifficulty && confirm('切换难度将重新开始当前轮次，确定吗？')) {
-                      // 立即应用新难度，重新初始化游戏
-                      setSelectedDifficulty(newDifficulty)
-                      localStorage.setItem(`match-game-difficulty-${bookId}`, newDifficulty.toString())
-
-                      // 重置当前轮次状态
-                      setCards([])
-                      setSelectedCard(null)
-                      setMatchedPairs(0)
-                      setMoves(0)
-                      setGameWon(false)
-                      setExplodingCards(new Set())
-                      setMasteredWords([])
+                    if (newDifficulty !== selectedDifficulty) {
+                      // 🔧 修复：切换难度 = 重新加载随机单词，和第一次选择一样
+                      handleDifficultySelect(newDifficulty)
                     }
                   }}
                   className="px-2 py-1 text-xs font-bold text-gray-900 bg-white border-3 border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] cursor-pointer hover:-translate-y-0.5 transition-all"

@@ -131,7 +131,15 @@ export function useDictationWords(
           return prev
         }
 
-        const newWords = [...prev, ...data]
+        // 🔥 去重：过滤掉已存在的单词（基于 id）
+        const existingIds = new Set(prev.map(w => w.id))
+        const uniqueNewWords = data.filter(w => !existingIds.has(w.id))
+
+        if (uniqueNewWords.length < data.length) {
+          console.log(`⚠️ [useDictationWords] Filtered ${data.length - uniqueNewWords.length} duplicate words`)
+        }
+
+        const newWords = [...prev, ...uniqueNewWords]
         const newHasMore = newWords.length < total
 
         console.log(`✅ [useDictationWords] Loaded: ${newWords.length}/${total} words, hasMore: ${newHasMore}`)

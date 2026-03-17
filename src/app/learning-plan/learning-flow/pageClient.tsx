@@ -14,8 +14,18 @@ interface Word {
   id: string
   word: string
   phonetic?: string
+  uk_phonetic?: string  // 英式音标
+  us_phonetic?: string  // 美式音标
   meaning?: string
+  definition?: string
+  definition_en?: string
   example?: string
+  example_sentence?: string  // 中文例句
+  example_sentence_en?: string  // 英文例句
+  collocation?: string
+  collocation_en?: string
+  part_of_speech?: string
+  audio_url?: string | null
   type: 'new' | 'review'
 }
 
@@ -71,7 +81,7 @@ export default function LearningFlowClient({
       setPhase(currentPhase)
 
       // [Upgrade] 巩固模式：检查是否需要进入巩固模式
-      const normalizeToArray = <T>(value: T[] | Record<string, T> | undefined | null): T[] => {
+      const normalizeToArray = <T,>(value: T[] | Record<string, T> | undefined | null): T[] => {
         if (!value) return []
         if (Array.isArray(value)) return value
         return Object.values(value)

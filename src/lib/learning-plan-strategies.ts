@@ -20,6 +20,8 @@ export interface Word {
   word: string
   phonetic?: string
   meaning?: string
+  // 🌍 多语言支持（Phase 3）
+  language_data?: import('@/types/word').LanguageData
 }
 
 /**

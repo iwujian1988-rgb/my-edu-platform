@@ -16,6 +16,7 @@
 
 import { createServerClient } from '@supabase/ssr'
 import { cookies } from 'next/headers'
+import { cache } from 'react'
 import type { Database } from '@/types/database'
 
 // 开发环境代理配置
@@ -232,6 +233,9 @@ export { createClient as createClientForActions }
 /**
  * Get the currently logged-in user from Supabase Auth
  *
+ * 🚀 Performance: Uses React cache() to deduplicate auth requests within the same render pass
+ * This prevents multiple auth API calls when getCurrentUser is called from different components
+ *
  * @returns {Promise<User | null>} The user object if logged in, null otherwise
  *
  * @example
@@ -244,15 +248,7 @@ export { createClient as createClientForActions }
  * }
  * ```
  */
-export async function getCurrentUser() {
-  /* // 已禁用：日志输出导致内存泄漏
-  const isDev = process.env.NODE_ENV === 'development'
-
-  if (isDev) {
-    console.log('🔍 [getCurrentUser] Starting...')
-  }
-  */
-
+export const getCurrentUser = cache(async () => {
   const supabase = await createClient()
 
   const {
@@ -260,22 +256,12 @@ export async function getCurrentUser() {
     error,
   } = await supabase.auth.getUser()
 
-  /* // 已禁用：日志输出导致内存泄漏
-  if (isDev) {
-    console.log('👤 [getCurrentUser] Result:', {
-      hasUser: !!user,
-      userId: user?.id,
-      error: error?.message
-    })
-  }
-  */
-
   if (error || !user) {
     return null
   }
 
   return user
-}
+})
 
 /**
  * Check if user is authenticated
@@ -299,6 +285,9 @@ export async function isAuthenticated() {
 /**
  * Get user profile from the users table (includes custom fields)
  *
+ * 🚀 Performance: Uses React cache() to deduplicate requests within the same render pass
+ * This prevents multiple database queries when getUserProfile is called from different components
+ *
  * @returns {Promise<any>} User profile if logged in, null otherwise
  *
  * @example
@@ -311,7 +300,7 @@ export async function isAuthenticated() {
  * }
  * ```
  */
-export async function getUserProfile() {
+export const getUserProfile = cache(async () => {
   const user = await getCurrentUser()
 
   if (!user) {
@@ -332,7 +321,7 @@ export async function getUserProfile() {
   }
 
   return data
-}
+})
 
 /**
  * Require authentication - throws error if user is not logged in

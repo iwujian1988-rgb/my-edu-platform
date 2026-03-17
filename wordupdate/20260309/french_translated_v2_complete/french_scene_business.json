@@ -1,0 +1,1654 @@
+[
+  {
+    "word": "industrie",
+    "phonetic": "/ɛ̃.dys.tʁi/",
+    "definition_zh": "工业 产业工业部门工业企业",
+    "definition_en": "diligence, zeal",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "industries",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 659,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "industries"
+      }
+    }
+  },
+  {
+    "word": "banque",
+    "phonetic": "/bɑ̃k/",
+    "definition_zh": "银行银行业",
+    "definition_en": "bank",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "banques",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 696,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "banques"
+      }
+    }
+  },
+  {
+    "word": "facture",
+    "phonetic": "/fak.tyʁ/",
+    "definition_zh": "账单",
+    "definition_en": "bill, invoice",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "factures",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 762,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "factures"
+      }
+    }
+  },
+  {
+    "word": "facture",
+    "phonetic": "/fak.tyʁ/",
+    "definition_zh": "发票",
+    "definition_en": "inflection of facturer:",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 762,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "perte",
+    "phonetic": "/pɛʁt/",
+    "definition_zh": "失去 丧失 损失",
+    "definition_en": "loss",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "pertes",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 847,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "pertes"
+      }
+    }
+  },
+  {
+    "word": "production",
+    "phonetic": "/pʁɔ.dyk.sjɔ̃/",
+    "definition_zh": "生产产量产品",
+    "definition_en": "production",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "productions",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1038,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "productions"
+      }
+    }
+  },
+  {
+    "word": "directeur",
+    "phonetic": "/di.ʁɛk.tœʁ/",
+    "definition_zh": "校长 厂长 局长 经理 主任",
+    "definition_en": "director",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "directeurs",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1063,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "feminine",
+        "plural": "directeurs"
+      }
+    }
+  },
+  {
+    "word": "directeur",
+    "phonetic": "/di.ʁɛk.tœʁ/",
+    "definition_zh": "校长 厂长 局长 经理 主任",
+    "definition_en": "leading, guiding",
+    "part_of_speech": "adjective",
+    "gender": "masculine",
+    "plural": "",
+    "example_sentence": "idée directrice",
+    "cefr_level": "B1",
+    "frequency_rank": 1063,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "feminine_form": "directeure",
+        "gender": "masculine"
+      }
+    },
+    "feminine_form": "directeure"
+  },
+  {
+    "word": "budget",
+    "phonetic": "/by.dʒɛ/",
+    "definition_zh": "预算",
+    "definition_en": "a budget",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "budgets",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1108,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "budgets"
+      }
+    }
+  },
+  {
+    "word": "client",
+    "phonetic": "/kli.jɑ̃/",
+    "definition_zh": "古罗马的被保护人",
+    "definition_en": "client, retainer, follower (person who is under the patronage of someone else)",
+    "part_of_speech": "noun",
+    "gender": "feminine",
+    "plural": "clients",
+    "example_sentence": "État client",
+    "cefr_level": "B1",
+    "frequency_rank": 1198,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "feminine",
+        "plural": "clients"
+      }
+    }
+  },
+  {
+    "word": "investissement",
+    "phonetic": "/ɛ̃.vɛs.tis.mɑ̃/",
+    "definition_zh": "投资",
+    "definition_en": "investment",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "investissements",
+    "example_sentence": "Même si la question de la dette \"chinoise\" inquiète, plusieurs experts s'accordent à dire que les projets, les investissements et les prêts chinois ont beaucoup aidé l'Afrique.",
+    "cefr_level": "B1",
+    "frequency_rank": 1212,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "investissements"
+      }
+    }
+  },
+  {
+    "word": "contrat",
+    "phonetic": "/kɔ̃.tʁa/",
+    "definition_zh": "契约 合同",
+    "definition_en": "contract",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "contrats",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1318,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "contrats"
+      }
+    }
+  },
+  {
+    "word": "affaire",
+    "phonetic": "/a.fɛʁ/",
+    "definition_zh": "事务",
+    "definition_en": "business; matter; affair",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "affaires",
+    "example_sentence": "affaire importante",
+    "cefr_level": "B1",
+    "frequency_rank": 1608,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "affaires"
+      }
+    }
+  },
+  {
+    "word": "travaux",
+    "phonetic": "/tʁa.vo/",
+    "definition_zh": "工作",
+    "definition_en": "plural of travail",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 1824,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "profit",
+    "phonetic": "/pʁɔ.fi/",
+    "definition_zh": "好处 益处 利益",
+    "definition_en": "profit, benefit",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "profits",
+    "example_sentence": "Il a su tirer profit de ses connaissances.",
+    "cefr_level": "B1",
+    "frequency_rank": 1881,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "profits"
+      }
+    }
+  },
+  {
+    "word": "société",
+    "phonetic": "/sɔ.sje.te/",
+    "definition_zh": "公司",
+    "definition_en": "company, frequentation",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "sociétés",
+    "example_sentence": "une société agréable",
+    "cefr_level": "B2",
+    "frequency_rank": 2009,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "sociétés"
+      }
+    }
+  },
+  {
+    "word": "salaire",
+    "phonetic": "/sa.lɛʁ/",
+    "definition_zh": "工资 薪金报酬",
+    "definition_en": "salary, wage",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "salaires",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 2459,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "salaires"
+      }
+    }
+  },
+  {
+    "word": "emploi",
+    "phonetic": "/ɑ̃.plwa/",
+    "definition_zh": "工作",
+    "definition_en": "job",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "emplois",
+    "example_sentence": "Puisque je n'ai pas d'emploi, j'écris un roman.",
+    "cefr_level": "B2",
+    "frequency_rank": 2486,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "emplois"
+      }
+    }
+  },
+  {
+    "word": "prix",
+    "phonetic": "/pʁi/",
+    "definition_zh": "价格 价钱物价价格标签",
+    "definition_en": "prize",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "Gagnez un des trois prix en argent de 5000$ avec le concours Acmeconc.",
+    "cefr_level": "B2",
+    "frequency_rank": 2708,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "bureau",
+    "phonetic": "/by.ʁo/",
+    "definition_zh": "书桌 写字台 办公桌",
+    "definition_en": "desk",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "bureaux",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 2735,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "bureaux"
+      }
+    }
+  },
+  {
+    "word": "argent",
+    "phonetic": "/aʁ.ʒɑ̃/",
+    "definition_zh": "银 白银",
+    "definition_en": "silver",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "argents",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 2812,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "argents"
+      }
+    }
+  },
+  {
+    "word": "travail",
+    "phonetic": "/tʁa.vaj/",
+    "definition_zh": "工作 劳动 活儿 作业职业",
+    "definition_en": "work; labor",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "travaux",
+    "example_sentence": "un travail bien fait",
+    "cefr_level": "B2",
+    "frequency_rank": 2883,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "travaux"
+      }
+    }
+  },
+  {
+    "word": "devis",
+    "phonetic": "/də.vi/",
+    "definition_zh": "工程预算表 概算书 估价单",
+    "definition_en": "quote, cost estimate",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 2981,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "achat",
+    "phonetic": "/a.ʃa/",
+    "definition_zh": "买 购买",
+    "definition_en": "buy, purchase",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "achats",
+    "example_sentence": "C’était un bon achat",
+    "cefr_level": "B2",
+    "frequency_rank": 3052,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "achats"
+      }
+    }
+  },
+  {
+    "word": "marché",
+    "phonetic": "/maʁ.ʃe/",
+    "definition_zh": "市场菜场商埠",
+    "definition_en": "market",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "marchés",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 3063,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "marchés"
+      }
+    }
+  },
+  {
+    "word": "marché",
+    "phonetic": "/maʁ.ʃe/",
+    "definition_zh": "市场菜场商埠",
+    "definition_en": "past participle of marcher",
+    "part_of_speech": "verb",
+    "gender": "masculine",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 3063,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "gender": "masculine"
+      }
+    }
+  },
+  {
+    "word": "économie",
+    "phonetic": "/e.kɔ.nɔ.mi/",
+    "definition_zh": "经济",
+    "definition_en": "economy",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "économies",
+    "example_sentence": "",
+    "cefr_level": "B2",
+    "frequency_rank": 3131,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "économies"
+      }
+    }
+  },
+  {
+    "word": "entreprise",
+    "phonetic": "/ɑ̃.tʁə.pʁiz/",
+    "definition_zh": "从事的事情举动事业",
+    "definition_en": "company, business",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "entreprises",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 3908,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "entreprises"
+      }
+    }
+  },
+  {
+    "word": "commerce",
+    "phonetic": "/kɔ.mɛʁs/",
+    "definition_zh": "商业 贸易 生意",
+    "definition_en": "commerce, trade",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "commerces",
+    "example_sentence": "",
+    "cefr_level": "C1",
+    "frequency_rank": 3939,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "commerces"
+      }
+    }
+  },
+  {
+    "word": "FBI",
+    "phonetic": "/ɛf.bi.aj/",
+    "definition_zh": "联邦调查局",
+    "definition_en": "FBI (Federal Bureau of Investigation)",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Réunion",
+    "phonetic": "/ʁe.y.njɔ̃/",
+    "definition_zh": "马约特岛",
+    "definition_en": "Réunion (an island, overseas department, and administrative region of France, located in the Indian Ocean to the west of Mauritius and to the east of Madagascar)",
+    "part_of_speech": "proper_noun",
+    "gender": "feminine",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "gender": "feminine"
+      }
+    }
+  },
+  {
+    "word": "manager",
+    "phonetic": "/ma.na.dʒɛʁ/",
+    "definition_zh": "经理",
+    "definition_en": "manager",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "managers",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "managers"
+      }
+    }
+  },
+  {
+    "word": "manager",
+    "phonetic": "/ma.na.dʒɛʁ/",
+    "definition_zh": "管理者",
+    "definition_en": "to manage",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "conjugation": {
+          "infinitif": "manager",
+          "participe_passe": "managé",
+          "participe_present": "manageant",
+          "indicatif_present": {
+            "je": "manage",
+            "tu": "manages",
+            "il": "manage",
+            "elle": "manage",
+            "on": "manage",
+            "nous": "manageons",
+            "vous": "managez",
+            "ils": "managent",
+            "elles": "managent"
+          },
+          "indicatif_imparfait": {
+            "je": "manageais",
+            "tu": "manageais",
+            "il": "manageait",
+            "elle": "manageait",
+            "on": "manageait",
+            "nous": "managions",
+            "vous": "managiez",
+            "ils": "manageaient",
+            "elles": "manageaient"
+          },
+          "indicatif_passe_simple": {
+            "je": "manageai",
+            "tu": "manageas",
+            "il": "managea",
+            "elle": "managea",
+            "on": "managea",
+            "nous": "manageâmes",
+            "vous": "manageâtes",
+            "ils": "managèrent",
+            "elles": "managèrent"
+          },
+          "indicatif_futur_simple": {
+            "je": "managerai",
+            "tu": "manageras",
+            "il": "managera",
+            "elle": "managera",
+            "on": "managera",
+            "nous": "managerons",
+            "vous": "managerez",
+            "ils": "manageront",
+            "elles": "manageront"
+          },
+          "conditionnel_present": {
+            "je": "managerais",
+            "tu": "managerais",
+            "il": "managerait",
+            "elle": "managerait",
+            "on": "managerait",
+            "nous": "managerions",
+            "vous": "manageriez",
+            "ils": "manageraient",
+            "elles": "manageraient"
+          },
+          "subjonctif_present": {
+            "je": "manage",
+            "tu": "manages",
+            "il": "manage",
+            "elle": "manage",
+            "on": "manage",
+            "nous": "managions",
+            "vous": "managiez",
+            "ils": "managent",
+            "elles": "managent"
+          }
+        }
+      }
+    },
+    "conjugation": {
+      "infinitif": "manager",
+      "participe_passe": "managé",
+      "participe_present": "manageant",
+      "indicatif_present": {
+        "je": "manage",
+        "tu": "manages",
+        "il": "manage",
+        "elle": "manage",
+        "on": "manage",
+        "nous": "manageons",
+        "vous": "managez",
+        "ils": "managent",
+        "elles": "managent"
+      },
+      "indicatif_imparfait": {
+        "je": "manageais",
+        "tu": "manageais",
+        "il": "manageait",
+        "elle": "manageait",
+        "on": "manageait",
+        "nous": "managions",
+        "vous": "managiez",
+        "ils": "manageaient",
+        "elles": "manageaient"
+      },
+      "indicatif_passe_simple": {
+        "je": "manageai",
+        "tu": "manageas",
+        "il": "managea",
+        "elle": "managea",
+        "on": "managea",
+        "nous": "manageâmes",
+        "vous": "manageâtes",
+        "ils": "managèrent",
+        "elles": "managèrent"
+      },
+      "indicatif_futur_simple": {
+        "je": "managerai",
+        "tu": "manageras",
+        "il": "managera",
+        "elle": "managera",
+        "on": "managera",
+        "nous": "managerons",
+        "vous": "managerez",
+        "ils": "manageront",
+        "elles": "manageront"
+      },
+      "conditionnel_present": {
+        "je": "managerais",
+        "tu": "managerais",
+        "il": "managerait",
+        "elle": "managerait",
+        "on": "managerait",
+        "nous": "managerions",
+        "vous": "manageriez",
+        "ils": "manageraient",
+        "elles": "manageraient"
+      },
+      "subjonctif_present": {
+        "je": "manage",
+        "tu": "manages",
+        "il": "manage",
+        "elle": "manage",
+        "on": "manage",
+        "nous": "managions",
+        "vous": "managiez",
+        "ils": "managent",
+        "elles": "managent"
+      }
+    }
+  },
+  {
+    "word": "profession",
+    "phonetic": "/pʁɔ.fɛ.sjɔ̃/",
+    "definition_zh": "声明 明言 公开主张公开信奉",
+    "definition_en": "profession, public declaration",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "professions",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "professions"
+      }
+    }
+  },
+  {
+    "word": "finance",
+    "phonetic": "/fi.nɑ̃s/",
+    "definition_zh": "王室金库的收入财源",
+    "definition_en": "finance",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "finances",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "finances"
+      }
+    }
+  },
+  {
+    "word": "réunion",
+    "phonetic": "/ʁe.y.njɔ̃/",
+    "definition_zh": "会议",
+    "definition_en": "meeting",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "réunions",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "réunions"
+      }
+    }
+  },
+  {
+    "word": "BST",
+    "phonetic": "/be.ɛs.te/",
+    "definition_zh": "运输安全局",
+    "definition_en": "initialism of Bureau de la sécurité des transports (“Transportation Safety Board”): TSB",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "vente",
+    "phonetic": "/vɑ̃t/",
+    "definition_zh": "卖 出售销售销路",
+    "definition_en": "sale",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "ventes",
+    "example_sentence": "une vente de gâteaux",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "ventes"
+      }
+    }
+  },
+  {
+    "word": "vente",
+    "phonetic": "/vɑ̃t/",
+    "definition_zh": "卖 出售销售销路",
+    "definition_en": "first-person singular present indicative/subjunctive of venter",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "entreprises",
+    "phonetic": "/ɑ̃.tʁə.pʁiz/",
+    "definition_zh": "企业",
+    "definition_en": "plural of entreprise",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "UNEDIC",
+    "phonetic": "/y.ne.dik/",
+    "definition_zh": "全国就业联盟",
+    "definition_en": "acronym of Union Nationale pour l'Emploi dans l'Industrie et le Commerce (“National Union for Employment in Industry and Commerce”)",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "travaillant",
+    "phonetic": "/tʁa.va.jɑ̃/",
+    "definition_zh": "工作着",
+    "definition_en": "present participle of travailler",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "travaillé",
+    "phonetic": "/tʁa.va.je/",
+    "definition_zh": "工作过",
+    "definition_en": "past participle of travailler",
+    "part_of_speech": "verb",
+    "gender": "masculine",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "gender": "masculine"
+      }
+    }
+  },
+  {
+    "word": "travaillent",
+    "phonetic": "/tʁa.vaj/",
+    "definition_zh": "他们工作",
+    "definition_en": "third-person plural present indicative/subjunctive of travailler",
+    "part_of_speech": "verb",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "A1",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "bureau de change",
+    "phonetic": "/by.ʁo d(ə) ʃɑ̃ʒ/",
+    "definition_zh": "货币兑换处",
+    "definition_en": "bureau de change, currency exchange (place where foreign currency can be exchanged)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "bureaux de change",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "bureaux de change"
+      }
+    }
+  },
+  {
+    "word": "bureaucratie",
+    "phonetic": "/by.ʁo.kʁa.si/",
+    "definition_zh": "行政机构的权力官僚主义 官僚作风",
+    "definition_en": "bureaucracy (structure and regulations in place to control activity)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "bureaucraties",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "bureaucraties"
+      }
+    }
+  },
+  {
+    "word": "CGT",
+    "phonetic": "/se.ʒe.te/",
+    "definition_zh": "法国总工会",
+    "definition_en": "initialism of Confédération générale du travail, a French trade union.",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Assedic",
+    "phonetic": "/a.se.dik/",
+    "definition_zh": "就业协会",
+    "definition_en": "acronym of Association pour l'emploi dans l'industrie et le commerce (company managing unemployment insurance payments)",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "travailleuse",
+    "phonetic": "/tʁa.va.jøz/",
+    "definition_zh": "女工人",
+    "definition_en": "female equivalent of travailleur",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "travailleuses",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "travailleuses"
+      }
+    }
+  },
+  {
+    "word": "travailleuse",
+    "phonetic": "/tʁa.va.jøz/",
+    "definition_zh": "女工人",
+    "definition_en": "feminine singular of travailleur",
+    "part_of_speech": "adjective",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "B1",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "lieux de travail",
+    "phonetic": "/ljø.də.tʁa.vaj/",
+    "definition_zh": "工作地点",
+    "definition_en": "plural of lieu de travail",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "bureaucrate",
+    "phonetic": "/by.ʁo.kʁat/",
+    "definition_zh": "官僚官僚主义者",
+    "definition_en": "bureaucrat",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "bureaucrates",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {
+        "plural": "bureaucrates"
+      }
+    }
+  },
+  {
+    "word": "PME",
+    "phonetic": "/pe.ɛ.mø/",
+    "definition_zh": "中小企业",
+    "definition_en": "initialism of petite ou moyenne entreprise; SME",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "CEDEX",
+    "phonetic": "/se.dɛks/",
+    "definition_zh": "企业专递邮编",
+    "definition_en": "acronym of courrier d'entreprise à distribution exceptionnelle: a postcode system used in France for bulk commercial postal mail",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "Saint-Denis",
+    "phonetic": "/sɛ̃.d(ə).ni/",
+    "definition_zh": "圣丹尼斯",
+    "definition_en": "Saint-Denis (the capital and largest city of Réunion, France)",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "SST",
+    "phonetic": "/e.sə.ɛs.te/",
+    "definition_zh": "职业健康安全",
+    "definition_en": "initialism of santé et sécurité au travail (“occupational health and safety”): OHS",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "TPE",
+    "phonetic": "/te.pe.ə/",
+    "definition_zh": "微型企业",
+    "definition_en": "initialism of très petite entreprise (“very small business”)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "outre-mer",
+    "phonetic": "/u.tʁə.mɛʁ/",
+    "definition_zh": "海外",
+    "definition_en": "the overseas territories (the overseas départements of France, such as Guadeloupe and Réunion); also called départements d'outre-mer or France d'outre-mer",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "Il y a 6 millions sans emploi en France en comptant l'outre-mer.",
+    "cefr_level": "C1",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "accident du travail",
+    "phonetic": "/ak.si.dɑ̃ dy tʁa.vaj/",
+    "definition_zh": "工伤",
+    "definition_en": "alternative form of accident de travail",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "accidents du travail",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "accidents du travail"
+      }
+    }
+  },
+  {
+    "word": "techno-bureaucratique",
+    "phonetic": "/tɛk.nɔ.by.ʁo.kʁa.tik/",
+    "definition_zh": "技术官僚主义的",
+    "definition_en": "technobureaucratic",
+    "part_of_speech": "adjective",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "mdx",
+    "confidence": 99,
+    "verified": true,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "burlingue",
+    "phonetic": "/byʁ.lɛ̃ɡ/",
+    "definition_zh": "办公室",
+    "definition_en": "synonym of bureau (“office”)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "burlingues",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 98,
+    "language_data": {
+      "fr": {
+        "plural": "burlingues"
+      }
+    }
+  },
+  {
+    "word": "EDSC",
+    "phonetic": "/e.de.ɛ.se/",
+    "definition_zh": "加国就业",
+    "definition_en": "initialism of Emploi et Développement social Canada (“Employment and Social Development Canada”): ESDC",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "TUAC",
+    "phonetic": "/tɥak/",
+    "definition_zh": "食品商业工联",
+    "definition_en": "acronym of Travailleurs unis de l'alimentation et du commerce (“United Food and Commercial Workers”): UFCW",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "STTP",
+    "phonetic": "/ɛs.te.te.pe/",
+    "definition_zh": "加拿大邮工联",
+    "definition_en": "initialism of Syndicat des travailleurs et travailleuses des postes (“Canadian Union of Postal Workers”): CUPW",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "télétravailleuse",
+    "phonetic": "/te.le.tʁa.va.jøz/",
+    "definition_zh": "远程女工",
+    "definition_en": "female equivalent of télétravailleur",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "télétravailleuses",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "télétravailleuses"
+      }
+    }
+  },
+  {
+    "word": "incarvillée de Delavay",
+    "phonetic": "/ɛ̃.kaʁ.vi.je də d(ə).la.vɛ/",
+    "definition_zh": "德氏仙客来",
+    "definition_en": "hardy gloxinia (Incarvillea delavayi) Bureau & Franc.",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "incarvillées de Delavay",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "incarvillées de Delavay"
+      }
+    }
+  },
+  {
+    "word": "gros tec-tec des Hauts",
+    "phonetic": "/ɡʁo tɛk.tɛk de o/",
+    "definition_zh": "大织布鸟",
+    "definition_en": "synonym of échenilleur de La Réunion (Lalage newtoni (Pollen, 1866)",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "gros tec-tecs des Hauts",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "gros tec-tecs des Hauts"
+      }
+    }
+  },
+  {
+    "word": "échenilleur de La Réunion",
+    "phonetic": "/eʃ.ni.jœʁ də la ʁe.y.njɔ̃/",
+    "definition_zh": "留尼汪杜鹃鹟",
+    "definition_en": "Réunion cuckooshrike (Lalage newtoni (Pollen, 1866))",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "échenilleurs de La Réunion",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "échenilleurs de La Réunion"
+      }
+    }
+  },
+  {
+    "word": "oiseau couillon",
+    "phonetic": "/wa.zo ku.jɔ̃/",
+    "definition_zh": "傻鸟",
+    "definition_en": "synonym of échenilleur de La Réunion (Lalage newtoni (Pollen, 1866))",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "oiseaux couillons",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "oiseaux couillons"
+      }
+    }
+  },
+  {
+    "word": "tuit-tuit",
+    "phonetic": "/tɥi.tɥit/",
+    "definition_zh": "留尼汪啄木鸟",
+    "definition_en": "synonym of échenilleur de La Réunion (Lalage newtoni (Pollen, 1866))",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "tuit-tuits",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "tuit-tuits"
+      }
+    }
+  },
+  {
+    "word": "tuit-tuit de La Réunion",
+    "phonetic": "/tɥi.tɥit də la ʁe.y.njɔ̃/",
+    "definition_zh": "留尼汪杜鹃鹟",
+    "definition_en": "Réunion cuckooshrike (Lalage newtoni (Pollen, 1866))",
+    "part_of_speech": "noun",
+    "gender": "",
+    "plural": "tuit-tuits de La Réunion",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {
+        "plural": "tuit-tuits de La Réunion"
+      }
+    }
+  },
+  {
+    "word": "OZRT",
+    "phonetic": "/o.zɛ.dɛʁ.tɛ/",
+    "definition_zh": "奥扎广播",
+    "definition_en": "initialism of Office Zaïrois de Radiodiffusion et de Télévision (“Zairian Bureau of Broadcasting and Television”),a state public broadcaster of Zaire (now Democratic Republic of the Congo) from 1981 to 1997.",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  },
+  {
+    "word": "île Bourbon",
+    "phonetic": "/il buʁ.bɔ̃/",
+    "definition_zh": "波旁岛",
+    "definition_en": "former name of La Réunion",
+    "part_of_speech": "proper_noun",
+    "gender": "",
+    "plural": "",
+    "example_sentence": "",
+    "cefr_level": "C2",
+    "frequency_rank": 99999,
+    "scene": "business",
+    "source": "kaikki.org (Wiktionary)",
+    "definition_source": "ai",
+    "confidence": 95,
+    "language_data": {
+      "fr": {}
+    }
+  }
+]

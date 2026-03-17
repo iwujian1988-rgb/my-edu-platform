@@ -34,6 +34,8 @@ export interface Word {
   scene?: string
   chapter?: string
   chapter_id?: string | null
+  // 🌍 多语言支持（Phase 3）
+  language_data?: import('@/types/word').LanguageData
 }
 
 // 词书接口

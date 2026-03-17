@@ -198,7 +198,7 @@ async function fetchAudioFromYoudao(
     console.error(`📡 [有道 API] 请求: ${url}`)
 
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 10000) // 10 秒超时
+    const timeoutId = setTimeout(() => controller.abort(), 15000) // 15 秒超时
 
     const response = await fetch(url, {
       signal: controller.signal,

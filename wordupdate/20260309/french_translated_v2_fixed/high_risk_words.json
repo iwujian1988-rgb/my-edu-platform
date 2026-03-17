@@ -1,0 +1,4605 @@
+[
+  {
+    "word": "on",
+    "definition_zh": "一人人们你某人",
+    "definition_en": "one, people, you, someone (an unspecified individual)",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义不清晰"
+    ],
+    "riskScore": 85
+  },
+  {
+    "word": "pendant",
+    "definition_zh": "期间",
+    "definition_en": "during, throughout, for the duration of",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#232)"
+    ],
+    "riskScore": 85
+  },
+  {
+    "word": "au",
+    "definition_zh": "至，为，在",
+    "definition_en": "contraction of à + le, literally “to the, for the, at the”",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "多释义格式",
+      "高频词(#121)"
+    ],
+    "riskScore": 80
+  },
+  {
+    "word": "son",
+    "definition_zh": "他的她的他们的它的",
+    "definition_en": "his, her, their, its (used to qualify masculine nouns and before a vowel)",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "高频词(#186)"
+    ],
+    "riskScore": 75
+  },
+  {
+    "word": "si",
+    "definition_zh": "音",
+    "definition_en": "si, the note 'B'",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#41)"
+    ],
+    "riskScore": 75
+  },
+  {
+    "word": "la",
+    "definition_zh": "她它",
+    "definition_en": "her, it (direct object)",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#2)"
+    ],
+    "riskScore": 75
+  },
+  {
+    "word": "la",
+    "definition_zh": "定音",
+    "definition_en": "la, the note 'A'",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#2)"
+    ],
+    "riskScore": 75
+  },
+  {
+    "word": "sa",
+    "definition_zh": "他的她的它的他们的某人的",
+    "definition_en": "his, her, its, their, one's",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(5个含义)",
+      "纯AI翻译",
+      "高频词(#107)"
+    ],
+    "riskScore": 75
+  },
+  {
+    "word": "ou",
+    "definition_zh": "或者",
+    "definition_en": "or",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#33)"
+    ],
+    "riskScore": 75
+  },
+  {
+    "word": "falloir",
+    "definition_zh": "需要",
+    "definition_en": "to need, have to, to be necessary (that)",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 75
+  },
+  {
+    "word": "ces",
+    "definition_zh": "这些",
+    "definition_en": "masculine/feminine plural of ce: these, those",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#85)"
+    ],
+    "riskScore": 75
+  },
+  {
+    "word": "des",
+    "definition_zh": "的，从的，一些",
+    "definition_en": "contraction of de + les, literally “of the, from the, some”",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 70
+  },
+  {
+    "word": "quoi",
+    "definition_zh": "嘛，类似，嗯",
+    "definition_en": "you know, like, y'know",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 70
+  },
+  {
+    "word": "de",
+    "definition_zh": "所属",
+    "definition_en": "of (expresses belonging)",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#6)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "de",
+    "definition_zh": "的",
+    "definition_en": "Used in the plural with prepositioned adjectives.",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#6)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "son",
+    "definition_zh": "声音",
+    "definition_en": "sound",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#186)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "si",
+    "definition_zh": "是的",
+    "definition_en": "yes (used to contradict a negative statement)",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#41)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "à",
+    "definition_zh": "带重音的",
+    "definition_en": "A with grave accent, a letter used in French mostly to distinguish some homographs and in transliter",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "高频词(#28)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "aux",
+    "definition_zh": "至的",
+    "definition_en": "Contraction of à + les ('to the' or 'of the')",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "une",
+    "definition_zh": "首页",
+    "definition_en": "front page (of a publication)",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#5)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "après",
+    "definition_zh": "之后",
+    "definition_en": "after, later than in time.",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "quel",
+    "definition_zh": "哪个",
+    "definition_en": "which",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#29)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "quel",
+    "definition_zh": "什么",
+    "definition_en": "what",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#29)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "tous",
+    "definition_zh": "所有",
+    "definition_en": "all",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#166)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "CES",
+    "definition_zh": "中学证书",
+    "definition_en": "initialism of certificat d’études secondaires: ≈ GED (high-school diploma), GCSE",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "高频词(#85)"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "du",
+    "definition_zh": "的，特指",
+    "definition_en": "contraction of de + le, literally “of the”",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 60
+  },
+  {
+    "word": "vouloir",
+    "definition_zh": "要 想要 愿意 希望",
+    "definition_en": "to want, wish, desire",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(3个含义)",
+      "高频词(#69)"
+    ],
+    "riskScore": 60
+  },
+  {
+    "word": "aller",
+    "definition_zh": "去 走",
+    "definition_en": "outward trip; journey out; trip away",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(3个含义)",
+      "高频词(#32)"
+    ],
+    "riskScore": 60
+  },
+  {
+    "word": "de",
+    "definition_zh": "夫人缩写",
+    "definition_en": "abbreviation of dame",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#6)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "en",
+    "definition_zh": "一般用在没有限定词或定冠词的名词前面",
+    "definition_en": "Used as the object of a verb to indicate an indefinite quantity; of it, of them. Replaces the partit",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(5个含义)",
+      "释义过长"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "SI",
+    "definition_zh": "国际单位制",
+    "definition_en": "initialism of Système international: SI",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#41)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "lui",
+    "definition_zh": "他它",
+    "definition_en": "him, he, it; the third-person masculine singular personal pronoun used after a preposition, or as th",
+    "riskFactors": [
+      "多义词(10个含义)",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#66)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "ta",
+    "definition_zh": "你的",
+    "definition_en": "your",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "la",
+    "definition_zh": "定冠词",
+    "definition_en": "feminine of le: the",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#2)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "pendant",
+    "definition_zh": "pendre的变位",
+    "definition_en": "present participle of pendre",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#232)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "pendant",
+    "definition_zh": "耳坠石",
+    "definition_en": "stone that dangles on earrings",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#232)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "les",
+    "definition_zh": "它们",
+    "definition_en": "plural of le: them",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "ma",
+    "definition_zh": "mon的变位",
+    "definition_en": "feminine singular of mon",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#37)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "des",
+    "definition_zh": "一些复数",
+    "definition_en": "plural of un (“some”, the plural indefinite article)",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "dont",
+    "definition_zh": "无性数变化 一般都有先行词 指人或物 相",
+    "definition_en": "of/from whom/which, whose; whereof",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(3个含义)",
+      "释义过长"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "mec",
+    "definition_zh": "哥们",
+    "definition_en": "guy, fellow, bloke, chap, dude, boyfriend",
+    "riskFactors": [
+      "多义词(6个含义)",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#204)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "savoir",
+    "definition_zh": "知识",
+    "definition_en": "knowledge",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "une",
+    "definition_zh": "单数阴性",
+    "definition_en": "feminine singular of un",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#5)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "une",
+    "definition_zh": "不定冠词",
+    "definition_en": "a / an (feminine indefinite article)",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#5)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "alors",
+    "definition_zh": "那么",
+    "definition_en": "so, well, well then",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#181)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "venir",
+    "definition_zh": "来",
+    "definition_en": "to come (to move from one place to another that is nearer the speaker)",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "entre",
+    "definition_zh": "进入",
+    "definition_en": "inflection of entrer:",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "quoi",
+    "definition_zh": "什么",
+    "definition_en": "what",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "quoi",
+    "definition_zh": "什么",
+    "definition_en": "what? say again?",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "quand",
+    "definition_zh": "何时",
+    "definition_en": "when",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "après",
+    "definition_zh": "之后",
+    "definition_en": "afterwards",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "depuis",
+    "definition_zh": "自从",
+    "definition_en": "since",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "depuis",
+    "definition_zh": "自那时起",
+    "definition_en": "ever since, since then",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "tous",
+    "definition_zh": "tout的变位",
+    "definition_en": "masculine plural of tout",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "高频词(#166)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "à partir de",
+    "definition_zh": "从起",
+    "definition_en": "starting at, beginning in, from […] onward",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#31)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "On",
+    "definition_zh": "卢森堡村",
+    "definition_en": "a village in Luxembourg, Belgium",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "纯AI翻译"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "donner",
+    "definition_zh": "给予送给 赠给",
+    "definition_en": "to give, to transfer the possession/holding of something to someone else",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#99)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "avoir",
+    "definition_zh": "有 具有 享有 带有",
+    "definition_en": "asset, possession",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#35)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "avoir",
+    "definition_zh": "有 具有 享有 带有",
+    "definition_en": "to have (to own; to possess)",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#35)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "si",
+    "definition_zh": "在 前省略为'",
+    "definition_en": "if, whether",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#41)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "si",
+    "definition_zh": "在 前省略为'",
+    "definition_en": "so, such (intensifier)",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#41)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "mettre",
+    "definition_zh": "放 置 摆 搁",
+    "definition_en": "to put; to place",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#154)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "chez",
+    "definition_zh": "在家里 在住所",
+    "definition_en": "to, at, in or into the home, office, etc. of",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(6个含义)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "dire",
+    "definition_zh": "说 说道 讲",
+    "definition_en": "to say, to tell (to express through speech)",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#93)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "avec",
+    "definition_zh": "表示伴同关系 和一起",
+    "definition_en": "too, also",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#18)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "en",
+    "definition_zh": "一般用在没有限定词或定冠词的名词前面",
+    "definition_en": "in (used to indicate space, also see usage notes)",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "释义过长"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "quelque chose",
+    "definition_zh": "某物",
+    "definition_en": "something (an indefinite or indeterminate object)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#124)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "du",
+    "definition_zh": "部分冠",
+    "definition_en": "Forms the partitive article.",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "à",
+    "definition_zh": "表示方向、趋向、意向",
+    "definition_en": "to (destination)",
+    "riskFactors": [
+      "高频功能词",
+      "多释义格式",
+      "高频词(#28)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "plan",
+    "definition_zh": "地图",
+    "definition_en": "map (schematic maps of streets, subways, etc.)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "eau",
+    "definition_zh": "水",
+    "definition_en": "water, a liquid that is transparent, colorless, odorless, and tasteless in its pure form, the primar",
+    "riskFactors": [
+      "多义词(9个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "partir",
+    "definition_zh": "分配",
+    "definition_en": "to share, to share out, to divide",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "nous",
+    "definition_zh": "理性",
+    "definition_en": "the nous, (divine) reason in philosophy",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#103)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "patron",
+    "definition_zh": "老板",
+    "definition_en": "a boss, employer,",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "les",
+    "definition_zh": "复数定冠",
+    "definition_en": "plural of le: the",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "où",
+    "definition_zh": "表示地点 在地方去地方转义在状态",
+    "definition_en": "where (interrogative)",
+    "riskFactors": [
+      "高频功能词",
+      "释义过长",
+      "高频词(#189)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "tes",
+    "definition_zh": "你们的",
+    "definition_en": "your (when referring to a plural noun)",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "allez",
+    "definition_zh": "出发",
+    "definition_en": "As an expression of encouragement; there you go, let's go, come on, that's it, attaboy, attagirl",
+    "riskFactors": [
+      "多义词(7个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "cries",
+    "definition_zh": "哭声",
+    "definition_en": "plural of crie; feminine plural of cri; feminine of cris",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "copine",
+    "definition_zh": "女友",
+    "definition_en": "female equivalent of copain: female friend, girl friend, chum, pal",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "venait",
+    "definition_zh": "来着",
+    "definition_en": "third-person singular imperfect indicative of venir, was coming, came",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "donne",
+    "definition_zh": "发牌",
+    "definition_en": "distribution of cards; dealing of cards; (metonymic) the cards that one is given",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "hein",
+    "definition_zh": "嗯",
+    "definition_en": "huh, hey, eh",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "enlever",
+    "definition_zh": "移除",
+    "definition_en": "to remove, take off, take away, clear",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "façon",
+    "definition_zh": "方式",
+    "definition_en": "way; manner; fashion",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "n'importe quoi",
+    "definition_zh": "胡说",
+    "definition_en": "nonsense, mess",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#246)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "n'importe quoi",
+    "definition_zh": "胡说八道",
+    "definition_en": "nonsense!, rubbish!, hogwash!",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "高频词(#246)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "deviner",
+    "definition_zh": "猜度",
+    "definition_en": "to guess; to work out, figure out",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "gêner",
+    "definition_zh": "阻碍",
+    "definition_en": "to hinder, hamper, bother",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "Tours",
+    "definition_zh": "图尔",
+    "definition_en": "Tours (a city, the prefecture of Indre-et-Loire department, Centre-Val de Loire, France)",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "d'abord",
+    "definition_zh": "首先",
+    "definition_en": "first, at first, right away",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "moindre",
+    "definition_zh": "较小",
+    "definition_en": "comparative degree of petit; lower; less; lesser",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "ramener",
+    "definition_zh": "带回",
+    "definition_en": "to take back, bring back, restore",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "enfermer",
+    "definition_zh": "锁闭",
+    "definition_en": "to lock up, lock in, lock away",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "prévoir",
+    "definition_zh": "预想",
+    "definition_en": "to anticipate, foresee, expect (reaction, event, etc.)",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "réveillé",
+    "definition_zh": "醒来",
+    "definition_en": "awake (not asleep, by extension, alert)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "remuant",
+    "definition_zh": "喧闹",
+    "definition_en": "boisterous, exuberant, energetic",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "demeure",
+    "definition_zh": "住所",
+    "definition_en": "home, domicile, residence",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "éprouvant",
+    "definition_zh": "折磨",
+    "definition_en": "punishing, demanding, testing, challenging",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "évoquer",
+    "definition_zh": "唤起",
+    "definition_en": "to evoke (to cause the manifestation of something (emotion, picture, etc.) in someone's mind or imag",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "justement",
+    "definition_zh": "正好",
+    "definition_en": "precisely, exactly; accurately",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "Saintes",
+    "definition_zh": "圣城",
+    "definition_en": "Saintes; A city in the southeastern French département Charente-Maritime, the former capital of the ",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "éclatant",
+    "definition_zh": "耀眼",
+    "definition_en": "bright, brilliant, blazing, dazzling",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "ressenti",
+    "definition_zh": "感受",
+    "definition_en": "impressions, feelings, opinions (one's collective subjective (non-physical) senses)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "convenant",
+    "definition_zh": "合适",
+    "definition_en": "suitable, appropriate; conventional",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "à droite",
+    "definition_zh": "右边",
+    "definition_en": "on the right; to the right",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#253)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "Amour",
+    "definition_zh": "爱情",
+    "definition_en": "The world's ninth longest river, forming the border between the Far East of Russia and Northeastern ",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "Cris",
+    "definition_zh": "哭声",
+    "definition_en": "plural of Cri; masculine of Cries; masculine plural of Crie",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "Le",
+    "definition_zh": "越南姓",
+    "definition_en": "a surname from Vietnamese",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "Murs",
+    "definition_zh": "墙壁",
+    "definition_en": "Murs (a commune in Vaucluse department, Provence-Alpes-Côte d'Azur, France)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "Idée",
+    "definition_zh": "伊代乌斯",
+    "definition_en": "a male given name from Latin [in turn from Ancient Greek], of historical usage, equivalent to Englis",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "高频词(#264)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "pendant",
+    "definition_zh": "腰带上的佩剑带",
+    "definition_en": "hanging",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#232)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "faire",
+    "definition_zh": "做出 创造 制造创作制订",
+    "definition_en": "to do",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#16)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "le",
+    "definition_zh": "用在名词前",
+    "definition_en": "him, it",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "dire",
+    "definition_zh": "说 说道 讲",
+    "definition_en": "saying (that which is said)",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#93)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "vouloir",
+    "definition_zh": "要 想要 愿意 希望",
+    "definition_en": "will",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#69)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "aller",
+    "definition_zh": "去 走",
+    "definition_en": "to go",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#32)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "avec",
+    "definition_zh": "表示伴同关系 和一起",
+    "definition_en": "with",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#18)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "lorsque",
+    "definition_zh": "在     前省略为'",
+    "definition_en": "when (at a time when)",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#145)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "sinon",
+    "definition_zh": "也；又；此外",
+    "definition_en": "also; additionally; furthermore; anyway",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "reprendre",
+    "definition_zh": "收回，恢复，重获",
+    "definition_en": "to take back, recover, regain",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "an",
+    "definition_zh": "年",
+    "definition_en": "year",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#65)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "oh",
+    "definition_zh": "哦",
+    "definition_en": "oh",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#142)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "deux",
+    "definition_zh": "二",
+    "definition_en": "two",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#91)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ne",
+    "definition_zh": "否定",
+    "definition_en": "not (used alone to negate a verb, now chiefly with only a few particular verbs: see usage notes)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "jamais",
+    "definition_zh": "从未",
+    "definition_en": "never",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#241)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "je",
+    "definition_zh": "我",
+    "definition_en": "I",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#9)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "allure",
+    "definition_zh": "魅力",
+    "definition_en": "appearance, look",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "goût",
+    "definition_zh": "味道",
+    "definition_en": "taste, flavour",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "vous",
+    "definition_zh": "你们",
+    "definition_en": "the plural personal pronoun in the second person:",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#10)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "pique",
+    "definition_zh": "鱼叉",
+    "definition_en": "pike, lance",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "l'",
+    "definition_zh": "它她他",
+    "definition_en": "apocopic form of le, la: him, her, it",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "quelques",
+    "definition_zh": "一些",
+    "definition_en": "plural of quelque (“some”)",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#68)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "là",
+    "definition_zh": "那里",
+    "definition_en": "referring to physical place",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#110)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "pas",
+    "definition_zh": "否定副词",
+    "definition_en": "The most common adverb of negation in French, typically translating into English as not, don't, does",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "douceur",
+    "definition_zh": "柔嫩",
+    "definition_en": "softness, tenderness",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "nouvelle",
+    "definition_zh": "新闻",
+    "definition_en": "news, a piece of information",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "toi",
+    "definition_zh": "你",
+    "definition_en": "you (informal second-person singular personal pronoun, disjunctive)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "là-bas",
+    "definition_zh": "那边",
+    "definition_en": "there, over there",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "gauche",
+    "definition_zh": "左面",
+    "definition_en": "the left, the left-hand side",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ils",
+    "definition_zh": "他们",
+    "definition_en": "they (male or mixed group)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "alors",
+    "definition_zh": "那时",
+    "definition_en": "then (at that time)",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#181)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "puissance",
+    "definition_zh": "次方",
+    "definition_en": "to the power of",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#275)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "vieille",
+    "definition_zh": "老女",
+    "definition_en": "feminine singular of vieux",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#175)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Homme",
+    "definition_zh": "人类",
+    "definition_en": "Man (genus Homo)",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#96)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "amuser",
+    "definition_zh": "逗乐",
+    "definition_en": "to amuse, to entertain",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "devant",
+    "definition_zh": "面对",
+    "definition_en": "confronted with, faced with",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "hurler",
+    "definition_zh": "喊叫",
+    "definition_en": "to shout, to yell",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "lors",
+    "definition_zh": "那时",
+    "definition_en": "then, at that time",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "pourrait",
+    "definition_zh": "能会",
+    "definition_en": "third-person singular conditional of pouvoir",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#183)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "cris",
+    "definition_zh": "cries的变位",
+    "definition_en": "plural of cri; masculine plural of crie; masculine of cries",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "irait",
+    "definition_zh": "会去",
+    "definition_en": "third-person singular conditional of aller, would go.",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "prétendre",
+    "definition_zh": "声称",
+    "definition_en": "to claim, to allege",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "montre",
+    "definition_zh": "手表",
+    "definition_en": "watch, wristwatch",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "assister",
+    "definition_zh": "协助",
+    "definition_en": "to assist, to aid",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "sauf",
+    "definition_zh": "除",
+    "definition_en": "except, save",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "piques",
+    "definition_zh": "黑桃",
+    "definition_en": "plural of pique; spades (card suit)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "paie",
+    "definition_zh": "支付",
+    "definition_en": "pay, salary",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ayant",
+    "definition_zh": "拥有",
+    "definition_en": "haver, holder",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "présent",
+    "definition_zh": "现在",
+    "definition_en": "the now, the present moment",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "revenant",
+    "definition_zh": "复生者",
+    "definition_en": "a supernatural being that returns from the dead; a zombie or ghost",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "pense",
+    "definition_zh": "思考",
+    "definition_en": "inflection of penser:",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#54)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "revenir",
+    "definition_zh": "回来",
+    "definition_en": "to come back, to return",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "voudrais",
+    "definition_zh": "我想",
+    "definition_en": "first-person singular conditional of vouloir",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#50)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "échapper",
+    "definition_zh": "逃脱",
+    "definition_en": "to escape (from), evade",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "prenant",
+    "definition_zh": "吸引",
+    "definition_en": "gripping, captivating",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "reposer",
+    "definition_zh": "放下",
+    "definition_en": "to put down, to place",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "convenir",
+    "definition_zh": "同意",
+    "definition_en": "to admit; to agree",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "casse",
+    "definition_zh": "盗窃",
+    "definition_en": "burglary, break-in",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "peut être",
+    "definition_zh": "或许",
+    "definition_en": "misspelling of peut-être",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#252)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "formant",
+    "definition_zh": "音素带",
+    "definition_en": "formant (band of frequencies, in a sound spectrum, that have a greater intensity; they determine the",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "celles",
+    "definition_zh": "那些",
+    "definition_en": "feminine plural of celui: those",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#105)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "est-ce que",
+    "definition_zh": "是吗",
+    "definition_en": "Used to introduce a yes-or-no question.",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "doigts",
+    "definition_zh": "手指",
+    "definition_en": "plural of doigt; fingers",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "suffire",
+    "definition_zh": "足够",
+    "definition_en": "to be enough, to suffice",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "offerte",
+    "definition_zh": "提供",
+    "definition_en": "offer, proposal",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "durant",
+    "definition_zh": "持续",
+    "definition_en": "during, while",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "sembler",
+    "definition_zh": "好像 似乎 看来是 看样子 后跟表语或",
+    "definition_en": "to seem, to resemble, to look like",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过长",
+      "高频词(#182)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "s'",
+    "definition_zh": "省音",
+    "definition_en": "Elision of si (“if”) before il or ils.",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "demeurer",
+    "definition_zh": "居住",
+    "definition_en": "to live, stay",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "entraîner",
+    "definition_zh": "训练",
+    "definition_en": "to coach, to train",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "fumées",
+    "definition_zh": "烟雾",
+    "definition_en": "feminine plural of fumé; smoked",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "fumées",
+    "definition_zh": "烟雾",
+    "definition_en": "feminine plural of fumé; smoked",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "tapant",
+    "definition_zh": "尖锐",
+    "definition_en": "sharp, on the dot",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "attachant",
+    "definition_zh": "迷人",
+    "definition_en": "endearing, cute",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "éclairant",
+    "definition_zh": "启发",
+    "definition_en": "illuminating, luminescent",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ressemblant",
+    "definition_zh": "逼真",
+    "definition_en": "true to life, lifelike",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "embrasse",
+    "definition_zh": "帘钩",
+    "definition_en": "curtain-loop, armrest",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "bouge",
+    "definition_zh": "破屋",
+    "definition_en": "hovel; dive",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "cédé",
+    "definition_zh": "光盘",
+    "definition_en": "CD, compact disc",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "battant",
+    "definition_zh": "门叶",
+    "definition_en": "a leaf (of a door or a window)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "détacher",
+    "definition_zh": "除斑",
+    "definition_en": "to remove spots, stains",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "propos",
+    "definition_zh": "意图",
+    "definition_en": "aim, intention",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "serrer",
+    "definition_zh": "拧紧",
+    "definition_en": "to tighten (a screw, a knot)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "repousser",
+    "definition_zh": "推开",
+    "definition_en": "to push back, push out of the way",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "déposé",
+    "definition_zh": "登记",
+    "definition_en": "registered, recorded",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "parcouru",
+    "definition_zh": "浏览",
+    "definition_en": "browsed, skimmed",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Côté",
+    "definition_zh": "姓",
+    "definition_en": "a surname",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#287)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "champ'",
+    "definition_zh": "香槟",
+    "definition_en": "champagne, champers",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Livre",
+    "definition_zh": "圣经",
+    "definition_en": "synonym of Bible",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#219)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Pars",
+    "definition_zh": "帕尔斯",
+    "definition_en": "Pars (a province and historical region in southwestern Iran, homeland of the Persians; known to the ",
+    "riskFactors": [
+      "多义词(7个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "œil",
+    "definition_zh": "眼睛 目",
+    "definition_en": "eye, organ that is sensitive to light, helping organisms to see",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#284)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "sans",
+    "definition_zh": "没有 无 不",
+    "definition_en": "without (not having)",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "lire",
+    "definition_zh": "读，货币单位",
+    "definition_en": "lira (unit of currency)",
+    "riskFactors": [
+      "纯AI翻译",
+      "多释义格式",
+      "高频词(#245)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "pays",
+    "definition_zh": "国 国家",
+    "definition_en": "land; region; home ground; homeland; home country; country; nation",
+    "riskFactors": [
+      "多义词(7个含义)",
+      "高频词(#191)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "le",
+    "definition_zh": "用在名词前",
+    "definition_en": "the (definite article)",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "eux",
+    "definition_zh": "他们",
+    "definition_en": "disjunctive form of ils; them",
+    "riskFactors": [
+      "可能多义",
+      "释义过短",
+      "高频词(#67)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "comment",
+    "definition_zh": "如何 怎么 怎样",
+    "definition_en": "pardon?, sorry?, what?",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#70)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "trouver",
+    "definition_zh": "找到 找着得到",
+    "definition_en": "to find; to retrieve something lost, turn up something hidden, or encounter something previously unk",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "高频词(#98)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "savoir",
+    "definition_zh": "知道 晓得",
+    "definition_en": "to know (something)",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "aussi",
+    "definition_zh": "和一样 和同样",
+    "definition_en": "too, also, as well",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#90)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "connaître",
+    "definition_zh": "知道 认得",
+    "definition_en": "to know (of), to be familiar with (a person, place, fact, event)",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "高频词(#40)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "élève",
+    "definition_zh": "门生 弟子 门徒",
+    "definition_en": "schoolboy, pupil, student",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#180)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "entre",
+    "definition_zh": "在之间",
+    "definition_en": "between",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "éteindre",
+    "definition_zh": "熄灭 扑灭关电灯、收音机、电视机等",
+    "definition_en": "to turn off (a switch, device, etc.)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过长",
+      "多释义格式"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "ensuite",
+    "definition_zh": "然后 以后 后来",
+    "definition_en": "in turn, subsequently, thereafter, then",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "高频词(#80)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "quelle",
+    "definition_zh": "什么样的 哪一类的",
+    "definition_en": "feminine singular of quel:",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "quelle",
+    "definition_zh": "什么样的 哪一类的",
+    "definition_en": "feminine singular of quel",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "réellement",
+    "definition_zh": "确实 真正地",
+    "definition_en": "really; genuinely; in fact",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#270)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "fabriquer",
+    "definition_zh": "制造 制作 生产",
+    "definition_en": "to make; to build; to manufacture",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#51)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "Maison",
+    "definition_zh": "姓氏，家",
+    "definition_en": "a surname, Maison",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "car",
+    "definition_zh": "长途巴士",
+    "definition_en": "a single-decked long-distance, or privately hired, bus, a coach",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(5个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 65
+  },
+  {
+    "word": "car",
+    "definition_zh": "因为",
+    "definition_en": "as, since, because, for",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(4个含义)",
+      "释义过短"
+    ],
+    "riskScore": 60
+  },
+  {
+    "word": "saison",
+    "definition_zh": "季节",
+    "definition_en": "season (one of the four parts of the year in temperate regions: winter, spring, summer and autumn)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#444)"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "quelles",
+    "definition_zh": "哪些",
+    "definition_en": "feminine plural of quel",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "quelles",
+    "definition_zh": "哪些",
+    "definition_en": "feminine plural of quel: which?",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "quels",
+    "definition_zh": "哪些",
+    "definition_en": "masculine plural of quel",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "quels",
+    "definition_zh": "哪些",
+    "definition_en": "masculine plural of quel",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 55
+  },
+  {
+    "word": "tout",
+    "definition_zh": "无 整个的 全部的",
+    "definition_en": "whole, entirety, total",
+    "riskFactors": [
+      "高频功能词",
+      "多义词(3个含义)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "pouvoir",
+    "definition_zh": "表示能力 能 能够 会",
+    "definition_en": "can, to be able to",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "高频词(#356)"
+    ],
+    "riskScore": 50
+  },
+  {
+    "word": "centre",
+    "definition_zh": "中心",
+    "definition_en": "centre, center",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#368)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "office",
+    "definition_zh": "职务",
+    "definition_en": "charge, task, mandate",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "manger",
+    "definition_zh": "食物",
+    "definition_en": "food, foodstuff",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#477)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "trouble",
+    "definition_zh": "浑浊",
+    "definition_en": "murky, turbid, muddy, thick, clouded, cloudy; not clear",
+    "riskFactors": [
+      "多义词(7个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "aborder",
+    "definition_zh": "应对",
+    "definition_en": "to deal with; to tackle; to approach a problem, situation or topic",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "que",
+    "definition_zh": "无性数变化 一般都有先行词 可以指人或物",
+    "definition_en": "The inanimate direct-object or predicative interrogative pronoun: what",
+    "riskFactors": [
+      "高频功能词",
+      "可能多义",
+      "释义过长"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "belle",
+    "definition_zh": "美女",
+    "definition_en": "beautiful woman, belle, beauty",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "il y a",
+    "definition_zh": "有",
+    "definition_en": "impersonal singular present indicative of y avoir: there is, there are",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#339)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "malaise",
+    "definition_zh": "不适",
+    "definition_en": "malaise, uneasiness, cringe",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "chagrin",
+    "definition_zh": "悲伤",
+    "definition_en": "sorrow, grief, chagrin",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "méfier",
+    "definition_zh": "怀疑",
+    "definition_en": "to mistrust, to be wary of, to watch out for",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "heure",
+    "definition_zh": "小时",
+    "definition_en": "hour, time",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#309)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "toutes",
+    "definition_zh": "tout的变位",
+    "definition_en": "feminine plural of tout",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "toutes",
+    "definition_zh": "tout的变位",
+    "definition_en": "feminine plural of tout",
+    "riskFactors": [
+      "高频功能词",
+      "纯AI翻译"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "prof",
+    "definition_zh": "教授",
+    "definition_en": "teacher, professor",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#417)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "épouse",
+    "definition_zh": "配偶",
+    "definition_en": "female spouse, wife",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#488)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "lesquels",
+    "definition_zh": "哪些",
+    "definition_en": "masculine plural of lequel: (following a preposition) which, that, whom",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "imbécile",
+    "definition_zh": "愚笨",
+    "definition_en": "stupid, foolish, acting like an imbecile",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "troubler",
+    "definition_zh": "打扰",
+    "definition_en": "to disturb, disrupt (order, sleep, judgement etc.)",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "folie",
+    "definition_zh": "疯狂",
+    "definition_en": "madness, folly, insanity; silliness, craziness",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "téléphoner",
+    "definition_zh": "打电话",
+    "definition_en": "to call, to ring, to telephone",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "高频词(#494)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "envisager",
+    "definition_zh": "设想",
+    "definition_en": "to envisage; to contemplate",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#396)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "mémé",
+    "definition_zh": "奶奶",
+    "definition_en": "grandma, granny, nana",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "démarrer",
+    "definition_zh": "启动",
+    "definition_en": "to start, to get started, to start up (especially a vehicle)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "ô",
+    "definition_zh": "带帽",
+    "definition_en": "the letter o with circumflex, used to indicate historical deletion of an adjacent ⟨s⟩. For example: ",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "comble",
+    "definition_zh": "拥挤",
+    "definition_en": "packed, heaving, crowded",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "réserver",
+    "definition_zh": "预订",
+    "definition_en": "to reserve, to make a reservation (for), to book",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "expédier",
+    "definition_zh": "发送",
+    "definition_en": "to post, to send, to ship",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "étendue",
+    "definition_zh": "范围",
+    "definition_en": "expanse, area (of land, water etc.)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "efforcer",
+    "definition_zh": "努力",
+    "definition_en": "to make efforts towards, to try hard to, to endeavour",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "fouille",
+    "definition_zh": "搜查",
+    "definition_en": "search (act of searching through something, e.g. a bag, pocket)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "blessant",
+    "definition_zh": "伤人",
+    "definition_en": "wounding, offensive, hurtful",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "gonflant",
+    "definition_zh": "恼人",
+    "definition_en": "exasperating, annoying, irritating, aggravating",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "enseigner",
+    "definition_zh": "教授",
+    "definition_en": "to teach, to instruct, to educate",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "échouer",
+    "definition_zh": "失败",
+    "definition_en": "to fail, fall through, miscarry",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "lasser",
+    "definition_zh": "疲倦",
+    "definition_en": "to tire, weary, bore",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "y compris",
+    "definition_zh": "包括",
+    "definition_en": "including (being part of the group or topic just mentioned)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#395)"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "réclame",
+    "definition_zh": "广告",
+    "definition_en": "a small, commercial advertisement, originally in the printed press",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "ressortir",
+    "definition_zh": "复出",
+    "definition_en": "to go or come back out; to go/come out again",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "fourrer",
+    "definition_zh": "塞入",
+    "definition_en": "to shove, stick, stuff (dans in something)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "déclencher",
+    "definition_zh": "触发",
+    "definition_en": "to trigger, to spark, to set off",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "cogne",
+    "definition_zh": "击打",
+    "definition_en": "whacking, knocking, striking",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "entame",
+    "definition_zh": "开始",
+    "definition_en": "start, opening, beginning",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "fourre",
+    "definition_zh": "套子",
+    "definition_en": "cover, slipcover, folder",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "Ô",
+    "definition_zh": "带帽",
+    "definition_en": "the letter O with circumflex, used to indicate historical deletion of an adjacent ⟨s⟩. For example: ",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "usant",
+    "definition_zh": "累人",
+    "definition_en": "tiring, tiresome, exhausting, taxing",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "encombre",
+    "definition_zh": "阻碍",
+    "definition_en": "obstacle, hindrance, difficulty",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "confus",
+    "definition_zh": "混乱",
+    "definition_en": "confused (chaotic, jumbled or muddled)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 45
+  },
+  {
+    "word": "pouvoir",
+    "definition_zh": "表示能力 能 能够 会",
+    "definition_en": "power",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#356)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "barre",
+    "definition_zh": "横杆、蛋糕、锭",
+    "definition_en": "bar, cake, ingot",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "même",
+    "definition_zh": "放在名词前 相同的 同样的",
+    "definition_en": "even",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#455)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "même",
+    "definition_zh": "放在名词前 相同的 同样的",
+    "definition_en": "same",
+    "riskFactors": [
+      "高频功能词",
+      "高频词(#455)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "gueule",
+    "definition_zh": "喉咙、嘴、面部",
+    "definition_en": "gullet, snout, face (of an animal)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "asseoir",
+    "definition_zh": "使坐",
+    "definition_en": "to sit (someone) down, to seat, make sit",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短",
+      "高频词(#319)"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "figurer",
+    "definition_zh": "列名、包含、代表",
+    "definition_en": "to appear (in a list, etc.), to be included; to represent",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 40
+  },
+  {
+    "word": "second",
+    "definition_zh": "副手",
+    "definition_en": "assistant, first mate",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Réunion",
+    "definition_zh": "马约特岛",
+    "definition_en": "Réunion (an island, overseas department, and administrative region of France, located in the Indian ",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "dollar",
+    "definition_zh": "美元",
+    "definition_en": "dollar, usually the US dollar.",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ben",
+    "definition_zh": "好",
+    "definition_en": "Well; uh",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ben",
+    "definition_zh": "裤子",
+    "definition_en": "pants, trousers",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "cinq",
+    "definition_zh": "五",
+    "definition_en": "five",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#366)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "musique",
+    "definition_zh": "音乐",
+    "definition_en": "inflection of musiquer:",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#437)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "flèche",
+    "definition_zh": "箭矢",
+    "definition_en": "arrow (projectile or symbol)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "canon",
+    "definition_zh": "辣眼",
+    "definition_en": "hot, sexy",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "film",
+    "definition_zh": "电影",
+    "definition_en": "movie, film",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "possible",
+    "definition_zh": "可能的 可能存在的 可能发生的 可能做到",
+    "definition_en": "the possible, feasible, what can be done, achieved etc.",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "释义过长",
+      "高频词(#449)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "vase",
+    "definition_zh": "泥沙",
+    "definition_en": "silt, mud",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "manger",
+    "definition_zh": "吃饭",
+    "definition_en": "to eat",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#477)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "tout le monde",
+    "definition_zh": "众人",
+    "definition_en": "everyone, everybody",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "nation",
+    "definition_zh": "民族",
+    "definition_en": "nation",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#484)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "bouquet",
+    "definition_zh": "花束",
+    "definition_en": "bouquet, bunch",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "marrer",
+    "definition_zh": "大笑",
+    "definition_en": "to laugh; to be amused",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "issue",
+    "definition_zh": "出口",
+    "definition_en": "exit, way out",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "discipline",
+    "definition_zh": "管教",
+    "definition_en": "discipline, sanction",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "que",
+    "definition_zh": "无性数变化 一般都有先行词 可以指人或物",
+    "definition_en": "that (introduces a subordinate noun clause and connects it to its parent clause)",
+    "riskFactors": [
+      "高频功能词",
+      "释义过长"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "longer",
+    "definition_zh": "行走",
+    "definition_en": "to walk along, run along",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "effleurer",
+    "definition_zh": "轻触",
+    "definition_en": "to stroke gently, to touch lightly",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "rater",
+    "definition_zh": "错过",
+    "definition_en": "to miss (an event or a thing)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "nourriture",
+    "definition_zh": "食物",
+    "definition_en": "food, nourishment",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "il y a",
+    "definition_zh": "以前",
+    "definition_en": "ago",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#339)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Champagne",
+    "definition_zh": "香槟区",
+    "definition_en": "Champagne (a cultural region and former province of France, the terroir of the wine champagne; now p",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "chagrin",
+    "definition_zh": "忧伤",
+    "definition_en": "despondent, woeful",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "américain",
+    "definition_zh": "美式",
+    "definition_en": "of America; American",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "américain",
+    "definition_zh": "美式三明治",
+    "definition_en": "sandwich, generally with ham or pork, and French fries",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Américain",
+    "definition_zh": "美国人",
+    "definition_en": "American; someone born in, or a citizen or inhabitant of, the United States of America",
+    "riskFactors": [
+      "多义词(6个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Centre",
+    "definition_zh": "中法中心",
+    "definition_en": "Centre (a former administrative region of France, now named Centre-Val de Loire)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "高频词(#368)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "nota",
+    "definition_zh": "注释",
+    "definition_en": "note (marginal comment or explanation)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "lèche",
+    "definition_zh": "谄媚",
+    "definition_en": "bootlicking, brownnosing",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "merci",
+    "definition_zh": "谢谢",
+    "definition_en": "thank you",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#495)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "parlez",
+    "definition_zh": "越过",
+    "definition_en": "over",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#338)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "aise",
+    "definition_zh": "愉快",
+    "definition_en": "joyous, glad",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "abattre",
+    "definition_zh": "宰杀",
+    "definition_en": "to butcher; to slaughter for meat",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "inclure",
+    "definition_zh": "包含",
+    "definition_en": "to include",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#329)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "inconnu",
+    "definition_zh": "未知者",
+    "definition_en": "an unknown person, place, or thing; a stranger",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "épouse",
+    "definition_zh": "配偶",
+    "definition_en": "inflection of épouser:",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#488)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "auquel",
+    "definition_zh": "所属在处的",
+    "definition_en": "to which, at which, of which",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "grasses",
+    "definition_zh": "草类",
+    "definition_en": "feminine plural of gras (“fat; bold”)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ongle",
+    "definition_zh": "指甲",
+    "definition_en": "nail, fingernail",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "généreux",
+    "definition_zh": "慷慨",
+    "definition_en": "generous, kind",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "monnaie",
+    "definition_zh": "找零",
+    "definition_en": "change (money back after a transaction)",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#365)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "clarté",
+    "definition_zh": "清晰",
+    "definition_en": "light, illumination",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "hé",
+    "definition_zh": "呼唤",
+    "definition_en": "Used to call someone; hey",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "facture",
+    "definition_zh": "账单",
+    "definition_en": "bill, invoice",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "règle",
+    "definition_zh": "规则",
+    "definition_en": "rule, regulation",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "revue",
+    "definition_zh": "杂志",
+    "definition_en": "magazine, journal",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "au-dessous",
+    "definition_zh": "下方",
+    "definition_en": "beneath, below",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "humide",
+    "definition_zh": "湿润",
+    "definition_en": "moist, humid",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "duquel",
+    "definition_zh": "所属哪",
+    "definition_en": "of which, of whom, from which, from whom",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "apparaître",
+    "definition_zh": "出现",
+    "definition_en": "to appear (become visible)",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#438)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "jusque",
+    "definition_zh": "直至",
+    "definition_en": "until, up to",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "même si",
+    "definition_zh": "即使",
+    "definition_en": "even if",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#452)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "semer",
+    "definition_zh": "播种",
+    "definition_en": "to sow (scatter seed, etc.)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "grand-chose",
+    "definition_zh": "重要事",
+    "definition_en": "a big deal; something or someone important",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "agenouiller",
+    "definition_zh": "跪拜",
+    "definition_en": "to kneel, to kneel down",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "soulier",
+    "definition_zh": "鞋子",
+    "definition_en": "shoe, boot (protective covering for the foot)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "énerver",
+    "definition_zh": "恼怒",
+    "definition_en": "to vex, to get on one's nerves",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "crépuscule",
+    "definition_zh": "黄昏",
+    "definition_en": "twilight, dusk (time of day between sunset and darkness)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "retomber",
+    "definition_zh": "再落下",
+    "definition_en": "to refall, to fall again, to fall back down",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "économique",
+    "definition_zh": "经济",
+    "definition_en": "economy; economic",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "envoler",
+    "definition_zh": "起飞",
+    "definition_en": "to take off, to take flight",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ménager",
+    "definition_zh": "家务",
+    "definition_en": "household; cleaning",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ménager",
+    "definition_zh": "节俭",
+    "definition_en": "to husband, to conserve",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "fouiller",
+    "definition_zh": "翻找",
+    "definition_en": "to search (place, thing)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "emmerde",
+    "definition_zh": "麻烦",
+    "definition_en": "trouble (short form, abbreviation of emmerdement)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "hâte",
+    "definition_zh": "急迫",
+    "definition_en": "haste, impatience",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "facteur",
+    "definition_zh": "因素",
+    "definition_en": "factor; element",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "énervant",
+    "definition_zh": "恼人",
+    "definition_en": "annoying, irritating",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "indique",
+    "definition_zh": "指示",
+    "definition_en": "Indic, Indian",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "liant",
+    "definition_zh": "柔韧",
+    "definition_en": "flexible, elastic",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "nationale",
+    "definition_zh": "国道",
+    "definition_en": "a french National Highway",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#311)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "épargner",
+    "definition_zh": "储蓄",
+    "definition_en": "to save (time, money etc.)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "bouquin",
+    "definition_zh": "旧书",
+    "definition_en": "old, worn-out book",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "accroupir",
+    "definition_zh": "蹲下",
+    "definition_en": "to crouch, squat",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "niais",
+    "definition_zh": "傻瓜",
+    "definition_en": "buffoon, fool",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "haïe",
+    "definition_zh": "催马",
+    "definition_en": "a wagoner's cry to make their horses move faster; giddyup",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "nombreuses",
+    "definition_zh": "众多",
+    "definition_en": "feminine plural of nombreux",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#388)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "bagnole",
+    "definition_zh": "汽车轮",
+    "definition_en": "ride; whip; wheels (an automobile)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "combler",
+    "definition_zh": "满足",
+    "definition_en": "to fulfil, satisfy",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "évanouir",
+    "definition_zh": "晕倒",
+    "definition_en": "to lose consciousness; to faint",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "défiler",
+    "definition_zh": "游行",
+    "definition_en": "to parade or march",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "emparer",
+    "definition_zh": "夺取",
+    "definition_en": "to seize, get hold of",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "en haut",
+    "definition_zh": "上方",
+    "definition_en": "above",
+    "riskFactors": [
+      "纯AI翻译",
+      "释义过短",
+      "高频词(#460)"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "d'habitude",
+    "definition_zh": "习惯",
+    "definition_en": "of habit (who needs habits to function properly); set in one's ways",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "gré",
+    "definition_zh": "满足",
+    "definition_en": "satisfaction, pleasure",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "maréchal",
+    "definition_zh": "元帅",
+    "definition_en": "marshal (officer in the household of a medieval prince or lord)",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "opportunité",
+    "definition_zh": "机会",
+    "definition_en": "a state of opportuneness; fortuity",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "vivement",
+    "definition_zh": "迫不及待",
+    "definition_en": "roll on (something), bring on (something), can't wait for (something)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "percevoir",
+    "definition_zh": "感知",
+    "definition_en": "to perceive, to make out",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "ceux-là",
+    "definition_zh": "那些",
+    "definition_en": "masculine plural of celui-là: those ones, the former",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "fierté",
+    "definition_zh": "自豪",
+    "definition_en": "pride (positive emotion), self-esteem",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "vanté",
+    "definition_zh": "赞誉",
+    "definition_en": "praised, vaunted",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "acharner",
+    "definition_zh": "激怒",
+    "definition_en": "to incite; to sic",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "paysanne",
+    "definition_zh": "农妇",
+    "definition_en": "peasantess, female peasant",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "État",
+    "definition_zh": "国家",
+    "definition_en": "state, nation",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "là-dessus",
+    "definition_zh": "此处",
+    "definition_en": "on this, here",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "quelques-uns",
+    "definition_zh": "一些",
+    "definition_en": "some, a few",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "Chevalier",
+    "definition_zh": "骑士",
+    "definition_en": "a surname originating as an occupation, equivalent to English Knight",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "point final",
+    "definition_zh": "句号",
+    "definition_en": "period, full stop",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "point final",
+    "definition_zh": "句号",
+    "definition_en": "period, full stop",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "释义过短"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "La Défense",
+    "definition_zh": "巴黎防区",
+    "definition_en": "La Défense (a business district located 3 kilometres (1.9 mi) west of the city limits of Paris, Fran",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "peu importe",
+    "definition_zh": "无关紧要",
+    "definition_en": "no matter, never mind, it doesn't matter",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "peu importe",
+    "definition_zh": "无关紧要",
+    "definition_en": "no matter the, no matter what, regardless of",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "纯AI翻译"
+    ],
+    "riskScore": 35
+  },
+  {
+    "word": "minute",
+    "definition_zh": "一会儿 片刻",
+    "definition_en": "minute (etymology 1, time unit, all same senses)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#327)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "action",
+    "definition_zh": "行动 活动动作 行为",
+    "definition_en": "action, act, deed",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#486)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "parent",
+    "definition_zh": "亲属 亲戚",
+    "definition_en": "relative, relation, family member",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#380)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "habit",
+    "definition_zh": "服装",
+    "definition_en": "article of clothing, garment, dress-coat, evening dress, tails, full dress",
+    "riskFactors": [
+      "多义词(6个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "tout",
+    "definition_zh": "无 整个的 全部的",
+    "definition_en": "all",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "tout",
+    "definition_zh": "无 整个的 全部的",
+    "definition_en": "all",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "tout",
+    "definition_zh": "无 整个的 全部的",
+    "definition_en": "everything",
+    "riskFactors": [
+      "高频功能词"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "confidence",
+    "definition_zh": "自信，秘密",
+    "definition_en": "confidence, secret",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "affection",
+    "definition_zh": "情感",
+    "definition_en": "affection, love, fondness",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "social",
+    "definition_zh": "社会的",
+    "definition_en": "social, related to society, community",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#345)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "vaisselle",
+    "definition_zh": "餐具",
+    "definition_en": "crockery, dishes, dishware",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "finir",
+    "definition_zh": "完成 结束",
+    "definition_en": "to finish, end, complete",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#453)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "selon",
+    "definition_zh": "按照 依照 根据",
+    "definition_en": "according to; whichever applies; depending on",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "高频词(#463)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "déjà",
+    "definition_zh": "已经",
+    "definition_en": "already, before",
+    "riskFactors": [
+      "可能多义",
+      "释义过短",
+      "高频词(#325)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "E",
+    "definition_zh": "是，东",
+    "definition_en": "abbreviation of est; east",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "E",
+    "definition_zh": "是，东",
+    "definition_en": "abbreviation of est; east",
+    "riskFactors": [
+      "可能多义",
+      "纯AI翻译",
+      "多释义格式"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "décès",
+    "definition_zh": "死亡",
+    "definition_en": "death (act or fact of dying)",
+    "riskFactors": [
+      "可能多义",
+      "释义过短",
+      "高频词(#420)"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "courant",
+    "definition_zh": "水流",
+    "definition_en": "current (of water, electricity, thought, etc.)",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "aucun",
+    "definition_zh": "书面语 在表示比较、怀疑或假定的句中 不",
+    "definition_en": "no, none, not any",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过长",
+      "多释义格式"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "élevé",
+    "definition_zh": "高的",
+    "definition_en": "high, aloft, perched",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "couvercle",
+    "definition_zh": "盖子",
+    "definition_en": "lid, cap, cover",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "alcool",
+    "definition_zh": "酒精",
+    "definition_en": "alcohol, especially domestic, medical, methylated spirits",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "activité",
+    "definition_zh": "活动",
+    "definition_en": "activity (something to do for educational, recreational, or other purposes)",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "phare",
+    "definition_zh": "灯塔",
+    "definition_en": "leading, signature, key, flagship",
+    "riskFactors": [
+      "多义词(4个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "libérer",
+    "definition_zh": "解放",
+    "definition_en": "to liberate, to set free, to release from captivity",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "repos",
+    "definition_zh": "休息",
+    "definition_en": "rest, ease, repose",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "bouffée",
+    "definition_zh": "发作",
+    "definition_en": "puff (of wind, smoke, etc.)",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "ouvrier",
+    "definition_zh": "工人",
+    "definition_en": "worker, labourer (manual worker); workman",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "apprêter",
+    "definition_zh": "烹调",
+    "definition_en": "to prepare, to get ready, prime",
+    "riskFactors": [
+      "多义词(3个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  },
+  {
+    "word": "stupeur",
+    "definition_zh": "木僵",
+    "definition_en": "stupor, amazement, astonishment, stupefaction, wonder",
+    "riskFactors": [
+      "多义词(5个含义)",
+      "释义过短"
+    ],
+    "riskScore": 30
+  }
+]

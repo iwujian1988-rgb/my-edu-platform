@@ -17,7 +17,7 @@
 
 'use client'
 
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import { Play } from 'lucide-react'
 import type { SpeakerSentence } from '@/types/speaker'
 import { parseSentenceTokens } from '@/lib/speaker-utils'
@@ -39,6 +39,7 @@ interface DictationRightPanelProps {
   onSentenceFocus?: (sentenceIndex: number) => void  // 当聚焦输入框时激活对应句子
   onClearSentence?: (sentenceIndex: number) => void  // 新增：一键清除句子
   onCheckSentence?: (sentenceIndex: number) => { correct: number, wrong: number, skipped: number } | null  // 新增：检查句子对错
+  onSimulatePlaySentence?: (sentenceIndex: number, durationMs: number) => void  // 模拟播放状态（不实际播放音频）
 }
 
 /**
@@ -55,7 +56,12 @@ function SentenceInput({
   onSkipWord,
   onUnskipWord,
   totalSentences,
-  onSentenceFocus
+  onSentenceFocus,
+  isGlobalDemoMode,
+  speedMultiplier = 1,
+  onStartGlobalDemo,
+  runGlobalDemoSentence,
+  onDemoComplete
 }: {
   sentence: SpeakerSentence
   index: number
@@ -68,6 +74,13 @@ function SentenceInput({
   onUnskipWord: (wordIndex: number) => void
   totalSentences: number
   onSentenceFocus?: (sentenceIndex: number) => void
+  isGlobalDemoMode?: boolean
+  speedMultiplier?: number
+  onStartGlobalDemo?: () => void
+  runGlobalDemoSentence?: number | null  // 当前应该执行全局演示的句子索引
+  onDemoComplete?: (sentenceIndex: number) => void  // 演示完成回调
+  onClearSentence?: () => void  // 清除句子
+  onCheckSentence?: () => { correct: number, wrong: number, skipped: number } | null  // 检查对错
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [checkResults, setCheckResults] = useState<{[key: number]: boolean}>({})
@@ -108,12 +121,13 @@ function SentenceInput({
   }
 
   // 演示模式：模拟真实用户打字
-  const startDemoMode = async () => {
-    if (isDemoMode) return
+  // 返回 Promise<boolean> 表示是否完成
+  const startDemoMode = async (): Promise<boolean> => {
+    if (isDemoMode) return false
 
     setIsDemoMode(true)
-    isDemoModeRef.current = true  // 设置 ref 状态
-    console.log('[Demo] 开始演示模式')
+    isDemoModeRef.current = true
+    console.log(`[Demo] 开始演示模式 (速度: ${speedMultiplier}x)`)
 
     // 清空当前句子的所有输入
     handleClearSentence()
@@ -122,44 +136,57 @@ function SentenceInput({
     for (let wordIndex = 0; wordIndex < inputWords.length; wordIndex++) {
       const correctWord = inputWords[wordIndex]
 
-      // 随机决定是否输入错误（20%概率）
-      const shouldMakeError = Math.random() < 0.2
+      // 聚焦到当前输入框（触发页面滚动）
+      if (containerRef.current) {
+        const inputs = containerRef.current.querySelectorAll('input')
+        const currentInput = inputs[wordIndex] as HTMLInputElement
+        if (currentInput) {
+          currentInput.focus()
+        }
+      }
+
+      // 随机决定单词最终状态
+      // 10% 出错再修正，10% 出错不修正，80% 直接正确
+      const randomValue = Math.random()
+      const shouldMakeErrorAndFix = randomValue < 0.1      // 10% 出错后修正
+      const shouldMakeErrorNoFix = randomValue >= 0.1 && randomValue < 0.2  // 10% 出错不修正
       let textToType = correctWord
 
-      if (shouldMakeError) {
+      // 如果需要出错（无论是否修正）
+      if (shouldMakeErrorAndFix || shouldMakeErrorNoFix) {
         // 随机替换一个字符为错误的字符
         const errorPosition = Math.floor(Math.random() * correctWord.length)
         const wrongChar = String.fromCharCode(97 + Math.floor(Math.random() * 26)) // 随机字母
         textToType = correctWord.substring(0, errorPosition) + wrongChar + correctWord.substring(errorPosition + 1)
       }
 
-      // 逐字输入
+      // 逐字输入（速度根据 speedMultiplier 调整）
       for (let charIndex = 0; charIndex < textToType.length; charIndex++) {
         const currentText = textToType.substring(0, charIndex + 1)
         onUpdateWordInput(wordIndex, currentText)
 
-        // 随机延迟（50-150ms）
+        // 随机延迟（50-150ms / speedMultiplier）
         await new Promise(resolve => {
-          demoTimeoutRef.current = setTimeout(resolve, 50 + Math.random() * 100)
+          demoTimeoutRef.current = setTimeout(resolve, (50 + Math.random() * 100) / speedMultiplier)
         })
 
         // 使用 ref 检查状态（避免闭包问题）
-        if (!isDemoModeRef.current) return
+        if (!isDemoModeRef.current) return false
       }
 
-      // 如果输入了错误，等待一会儿再纠正
-      if (shouldMakeError) {
+      // 如果需要出错再修正（只有 10% 出错后修正的情况才修正）
+      if (shouldMakeErrorAndFix) {
         await new Promise(resolve => {
-          demoTimeoutRef.current = setTimeout(resolve, 300 + Math.random() * 500)
+          demoTimeoutRef.current = setTimeout(resolve, (300 + Math.random() * 500) / speedMultiplier)
         })
 
         // 逐字删除错误的单词
         for (let i = textToType.length - 1; i >= 0; i--) {
           onUpdateWordInput(wordIndex, textToType.substring(0, i))
           await new Promise(resolve => {
-            demoTimeoutRef.current = setTimeout(resolve, 30 + Math.random() * 50)
+            demoTimeoutRef.current = setTimeout(resolve, (30 + Math.random() * 50) / speedMultiplier)
           })
-          if (!isDemoModeRef.current) return
+          if (!isDemoModeRef.current) return false
         }
 
         // 重新输入正确的单词
@@ -167,16 +194,16 @@ function SentenceInput({
           const currentText = correctWord.substring(0, charIndex + 1)
           onUpdateWordInput(wordIndex, currentText)
           await new Promise(resolve => {
-            demoTimeoutRef.current = setTimeout(resolve, 50 + Math.random() * 100)
+            demoTimeoutRef.current = setTimeout(resolve, (50 + Math.random() * 100) / speedMultiplier)
           })
-          if (!isDemoModeRef.current) return
+          if (!isDemoModeRef.current) return false
         }
       }
 
-      // 单词之间停顿（模拟思考，200-800ms）
+      // 单词之间停顿（模拟思考，200-800ms / speedMultiplier）
       if (wordIndex < inputWords.length - 1) {
         await new Promise(resolve => {
-          demoTimeoutRef.current = setTimeout(resolve, 200 + Math.random() * 600)
+          demoTimeoutRef.current = setTimeout(resolve, (200 + Math.random() * 600) / speedMultiplier)
         })
       }
     }
@@ -184,6 +211,7 @@ function SentenceInput({
     console.log('[Demo] 演示完成')
     setIsDemoMode(false)
     isDemoModeRef.current = false
+    return true
   }
 
   // 停止演示模式
@@ -197,7 +225,7 @@ function SentenceInput({
     console.log('[Demo] 演示已停止')
   }
 
-  // 双击 ⌨️ 图标切换演示模式
+  // 双击 ⌨️ 图标切换单句演示模式
   const handleKeyboardDoubleClick = () => {
     if (isDemoMode) {
       stopDemoMode()
@@ -205,6 +233,36 @@ function SentenceInput({
       startDemoMode()
     }
   }
+
+  // 双击 🖱️ 图标触发全局演示模式（仅在第一个句子有效）
+  const handleMouseDoubleClick = () => {
+    if (index === 0 && onStartGlobalDemo) {
+      if (isGlobalDemoMode) {
+        console.log('[Demo] 全局演示已在运行中')
+      } else {
+        onStartGlobalDemo()
+      }
+    }
+  }
+
+  // 监听全局演示模式：当 runGlobalDemoSentence 匹配当前句子时执行演示
+  useEffect(() => {
+    if (runGlobalDemoSentence === index && !isDemoMode) {
+      console.log(`[Demo] 全局演示: 句子 ${index + 1} 开始`)
+
+      // 激活当前句子（触发左侧滚动同步）
+      if (onSentenceFocus) {
+        onSentenceFocus(index)
+      }
+
+      startDemoMode().then((completed) => {
+        if (completed && onDemoComplete) {
+          console.log(`[Demo] 全局演示: 句子 ${index + 1} 完成`)
+          onDemoComplete(index)
+        }
+      })
+    }
+  }, [runGlobalDemoSentence, index])
 
   // 组件卸载时清理定时器
   useEffect(() => {
@@ -466,13 +524,19 @@ function SentenceInput({
           <span
             className="text-base cursor-pointer select-none"
             onDoubleClick={handleKeyboardDoubleClick}
-            title="双击开始演示模式"
+            title="双击开始单句演示模式"
           >
             ⌨️
           </span>
           <span className="font-mono">空格跳转 | 回车换句</span>
           <span className="mx-1">•</span>
-          <span className="text-base">🖱️</span>
+          <span
+            className={`text-base cursor-pointer select-none ${isGlobalDemoMode ? 'animate-pulse' : ''}`}
+            onDoubleClick={index === 0 ? handleMouseDoubleClick : undefined}
+            title={index === 0 ? "双击开始全局演示" : ""}
+          >
+            🖱️
+          </span>
           <span className="font-mono">右键标记"还未掌握"</span>
         </div>
       )}
@@ -496,11 +560,85 @@ export function DictationRightPanel({
   onPlaySentence,
   onPlayFromStart,
   onScrollToSentence,
-  onSentenceFocus  // 接收聚焦回调
+  onSentenceFocus,
+  onSimulatePlaySentence
 }: DictationRightPanelProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const isInitialMountRef = useRef(true)  // 标记是否是首次挂载，避免页面加载时自动滚动
   const isObserverReadyRef = useRef(false)  // 标记 IntersectionObserver 是否已准备好
+
+  // 全局演示模式状态
+  const [isGlobalDemoMode, setIsGlobalDemoMode] = useState(false)
+  const [runGlobalDemoSentence, setRunGlobalDemoSentence] = useState<number | null>(null)
+  const [simulatePlayingSentence, setSimulatePlayingSentence] = useState<number | null>(null)  // 当前模拟播放的句子
+  const globalDemoSpeedMultiplier = 10  // 10倍速度
+  const globalDemoStateRef = useRef<{ isRunning: boolean; currentIndex: number }>({ isRunning: false, currentIndex: -1 })
+
+  // 开始全局演示模式
+  const startGlobalDemoMode = useCallback(() => {
+    if (globalDemoStateRef.current.isRunning) return
+
+    console.log('[Global Demo] 开始全局演示模式')
+    globalDemoStateRef.current.isRunning = true
+    globalDemoStateRef.current.currentIndex = 0
+    setIsGlobalDemoMode(true)
+
+    // 先触发第一个句子的播放状态
+    if (onSimulatePlaySentence) {
+      onSimulatePlaySentence(0, 2000)
+      setSimulatePlayingSentence(0)
+    }
+
+    // 2 秒后开始打字
+    setTimeout(() => {
+      if (globalDemoStateRef.current.isRunning) {
+        setSimulatePlayingSentence(null)
+        setRunGlobalDemoSentence(0)
+      }
+    }, 2000)
+  }, [onSimulatePlaySentence])
+
+  // 停止全局演示模式
+  const stopGlobalDemoMode = useCallback(() => {
+    globalDemoStateRef.current.isRunning = false
+    globalDemoStateRef.current.currentIndex = -1
+    setIsGlobalDemoMode(false)
+    setRunGlobalDemoSentence(null)
+    setSimulatePlayingSentence(null)
+    console.log('[Global Demo] 全局演示已停止')
+  }, [])
+
+  // 处理单个句子演示完成
+  const handleDemoSentenceComplete = useCallback((sentenceIndex: number) => {
+    console.log(`[Global Demo] 句子 ${sentenceIndex + 1} 演示完成`)
+
+    // 检查是否还有下一个句子
+    const nextIndex = sentenceIndex + 1
+    if (nextIndex < sentences.length && globalDemoStateRef.current.isRunning) {
+      // 先触发下一个句子的播放状态（2秒）
+      if (onSimulatePlaySentence) {
+        onSimulatePlaySentence(nextIndex, 2000)
+        setSimulatePlayingSentence(nextIndex)
+      }
+
+      // 2 秒后开始下一个句子的打字
+      setTimeout(() => {
+        if (globalDemoStateRef.current.isRunning) {
+          globalDemoStateRef.current.currentIndex = nextIndex
+          setSimulatePlayingSentence(null)
+          setRunGlobalDemoSentence(nextIndex)
+        }
+      }, 2000)
+    } else {
+      // 全部完成
+      console.log('[Global Demo] 全局演示完成')
+      globalDemoStateRef.current.isRunning = false
+      globalDemoStateRef.current.currentIndex = -1
+      setIsGlobalDemoMode(false)
+      setRunGlobalDemoSentence(null)
+      setSimulatePlayingSentence(null)
+    }
+  }, [sentences.length, onSimulatePlaySentence])
 
   // ========================================
   // 1. 双栏同步滚动：当左侧点击句子时，自动滚动右侧
@@ -651,7 +789,12 @@ export function DictationRightPanel({
                   onClearSentence={() => {}}
                   onCheckSentence={() => null}
                   totalSentences={sentences.length}
-                  onSentenceFocus={onSentenceFocus}  // 传递聚焦回调
+                  onSentenceFocus={onSentenceFocus}
+                  isGlobalDemoMode={isGlobalDemoMode}
+                  speedMultiplier={globalDemoSpeedMultiplier}
+                  onStartGlobalDemo={startGlobalDemoMode}
+                  runGlobalDemoSentence={runGlobalDemoSentence}
+                  onDemoComplete={handleDemoSentenceComplete}
                 />
               </div>
             )

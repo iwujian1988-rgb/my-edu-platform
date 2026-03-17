@@ -18,6 +18,8 @@ interface Word {
   id: string
   word: string
   phonetic?: string
+  uk_phonetic?: string  // 英式音标
+  us_phonetic?: string  // 美式音标
   meaning?: string
   example?: string
   type: 'new' | 'review'
@@ -78,6 +80,7 @@ export function FlashcardQueue({
   const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 })
   const [keyboardAnimation, setKeyboardAnimation] = useState<{ x: number; rotate: number } | null>(null)
   const [isCardSwitching, setIsCardSwitching] = useState(false)
+  const [flyOutAnimation, setFlyOutAnimation] = useState<{ direction: 'left' | 'right' | 'up' } | null>(null)
   const [hasUserInteracted, setHasUserInteracted] = useState(false)
   const hasUserInteractedRef = useRef(false)
   const cardRef = useRef<HTMLDivElement>(null)
@@ -134,14 +137,21 @@ export function FlashcardQueue({
     const threshold = 100 // 滑动阈值
 
     if (Math.abs(deltaX) > threshold) {
-      // 触发标记（与原版卡片背单词逻辑一致）
-      if (deltaX > 0) {
-        // ➡️ 右滑 - 不认识
-        handleStatus('unknown')
-      } else {
-        // ⬅️ 左滑 - 认识
-        handleStatus('known')
-      }
+      // 🎬 先触发飞出动画
+      const direction = deltaX > 0 ? 'right' : 'left'
+      setFlyOutAnimation({ direction })
+
+      // ⏱️ 等待动画完成后再标记
+      setTimeout(() => {
+        if (deltaX > 0) {
+          // ➡️ 右滑 - 不认识
+          handleStatus('unknown')
+        } else {
+          // ⬅️ 左滑 - 认识
+          handleStatus('known')
+        }
+        setFlyOutAnimation(null)
+      }, 300) // 300ms 动画时间
     }
 
     // 重置拖拽状态
@@ -285,8 +295,21 @@ export function FlashcardQueue({
   }, [currentWord, marking, bookId, completed.length, totalCount, currentIndex, onComplete])
 
   // ============================================
-  // ⌨️ 键盘快捷键
+  // ⌨️ 键盘快捷键（带飞出动画）
   // ============================================
+  const triggerFlyOutAndMark = useCallback((status: WordStatus, direction: 'left' | 'right' | 'up') => {
+    if (!currentWord || marking) return
+
+    // 🎬 触发飞出动画
+    setFlyOutAnimation({ direction })
+
+    // ⏱️ 等待动画完成后再标记
+    setTimeout(() => {
+      handleStatus(status)
+      setFlyOutAnimation(null)
+    }, 300)
+  }, [currentWord, marking, handleStatus])
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       hasUserInteractedRef.current = true
@@ -295,17 +318,17 @@ export function FlashcardQueue({
       }
 
       if (e.key === 'ArrowLeft') {
-        // ⬅️ 认识
+        // ⬅️ 认识（向左飞出）
         e.preventDefault()
-        handleStatus('known')
+        triggerFlyOutAndMark('known', 'left')
       } else if (e.key === 'ArrowUp') {
-        // ↑ 模糊
+        // ↑ 模糊（向上飞出）
         e.preventDefault()
-        handleStatus('fuzzy')
+        triggerFlyOutAndMark('fuzzy', 'up')
       } else if (e.key === 'ArrowRight' || e.key === ' ') {
-        // ➡️ 或 Space - 不认识
+        // ➡️ 或 Space - 不认识（向右飞出）
         e.preventDefault()
-        handleStatus('unknown')
+        triggerFlyOutAndMark('unknown', 'right')
       } else if (e.key === 'ArrowDown' || e.key === 'Enter') {
         // ↓ 或 Enter - 翻转卡片
         e.preventDefault()
@@ -317,7 +340,7 @@ export function FlashcardQueue({
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [flipped, handleStatus])
+  }, [flipped, triggerFlyOutAndMark])
 
   // ============================================
   // 🔊 自动朗读
@@ -366,7 +389,7 @@ export function FlashcardQueue({
   }
 
   return (
-    <div className="min-h-screen bg-white dark:bg-[#0f172a]">
+    <div className="h-screen flex flex-col bg-white dark:bg-[#0f172a]" style={{ userSelect: 'none', WebkitUserSelect: 'none', touchAction: 'pan-x pan-y' }}>
       {/* 顶部导航栏 */}
       <div className="sticky top-0 z-10 px-4 py-3 bg-white dark:bg-[#0f172a]">
         <div className="max-w-2xl mx-auto flex items-center justify-between mb-3">
@@ -431,9 +454,9 @@ export function FlashcardQueue({
         )}
       </div>
 
-      {/* 卡片区域 */}
-      <div className="flex items-center justify-center min-h-[600px]">
-        <div style={{ width: '340px', height: '440px', position: 'relative' }}>
+      {/* 卡片区域 - 使用flex-1占据剩余空间 */}
+      <div className="flex-1 flex items-center justify-center">
+        <div style={{ width: '380px', height: '500px', position: 'relative' }}>
           {/* 用户未交互提示 - Neo-Brutalism */}
           {!hasUserInteracted && (
             <>
@@ -474,14 +497,20 @@ export function FlashcardQueue({
               position: 'absolute',
               top: 0,
               left: 0,
-              width: '340px',
-              height: '440px',
+              width: '380px',
+              height: '500px',
               border: '4px solid #000',
               boxShadow: '12px 12px 0px 0px #000',
               perspective: '1000px',
-              opacity: (dragStart || keyboardAnimation || isCardSwitching) ? 0 : 1,
-              transform: `translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
-              transition: dragStart || keyboardAnimation || isCardSwitching ? 'transform 0.3s ease-out, opacity 0.3s ease-out' : 'transform 0.15s ease-out, opacity 0.3s ease-out',
+              opacity: (keyboardAnimation || isCardSwitching) ? 0 : flyOutAnimation ? 0 : 1,
+              transform: flyOutAnimation
+                ? `translate(${flyOutAnimation.direction === 'left' ? -500 : flyOutAnimation.direction === 'right' ? 500 : 0}px, ${flyOutAnimation.direction === 'up' ? -500 : 0}px) rotate(${flyOutAnimation.direction === 'left' ? -30 : flyOutAnimation.direction === 'right' ? 30 : 0}deg)`
+                : `translate(${dragOffset.x + (keyboardAnimation?.x || 0)}px, ${dragOffset.y}px) rotate(${dragOffset.x * 0.05 + (keyboardAnimation?.rotate || 0)}deg)`,
+              transition: flyOutAnimation
+                ? 'transform 0.3s ease-in, opacity 0.3s ease-in'
+                : dragStart || keyboardAnimation || isCardSwitching
+                  ? 'transform 0.3s ease-out, opacity 0.3s ease-out'
+                  : 'transform 0.15s ease-out, opacity 0.3s ease-out',
               zIndex: 10,
               touchAction: 'none',
             }}
@@ -527,12 +556,18 @@ export function FlashcardQueue({
                   </h1>
 
                   {/* Phonetic + Button */}
-                  <div className="flex items-center gap-4 justify-center">
-                    <span className="font-mono text-lg text-gray-600 dark:text-gray-400">
-                      {/* 发音显示：日语优先（假名+罗马音），其次英语 */}
+                  <div className="flex items-center gap-3 justify-center w-full px-2">
+                    <span className="font-mono text-sm text-gray-600 dark:text-gray-400 flex-1 text-center">
+                      {/* 发音显示：日语优先（假名+罗马音），其次英语（英/美音标） */}
                       {currentWord.kana
                         ? `${currentWord.kana}${currentWord.romaji ? ` / ${currentWord.romaji}` : ''}`
-                        : currentWord.phonetic
+                        : (currentWord.uk_phonetic || currentWord.us_phonetic)
+                          ? <>
+                              {currentWord.uk_phonetic && <span>英/{currentWord.uk_phonetic}</span>}
+                              {currentWord.uk_phonetic && currentWord.us_phonetic && <span className="mx-2 text-gray-400">|</span>}
+                              {currentWord.us_phonetic && <span>美/{currentWord.us_phonetic}</span>}
+                            </>
+                          : currentWord.phonetic
                       }
                     </span>
                     <button
@@ -583,7 +618,7 @@ export function FlashcardQueue({
                 }}
               >
                 {/* Content Area */}
-                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflowY: 'auto', maxHeight: '100%' }}>
+                <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', overflow: 'hidden' }}>
                   {/* English Definition */}
                   {currentWord.definition_en && (
                     <div className="mb-3">
@@ -594,32 +629,12 @@ export function FlashcardQueue({
                     </div>
                   )}
 
-                  {/* Chinese Definition */}
-                  {currentWord.meaning && (
-                    <div className="mb-3">
-                      <p className="text-sm font-bold mb-1 text-gray-500 dark:text-gray-400">中文释义</p>
-                      <p className="text-base font-black leading-snug break-words text-gray-900 dark:text-white">
-                        {currentWord.meaning}
-                      </p>
-                    </div>
-                  )}
-
                   {/* English Collocation */}
                   {currentWord.collocation_en && (
                     <div className="mb-3">
-                      <p className="text-sm font-bold mb-1 text-gray-500 dark:text-gray-400">英文搭配</p>
-                      <p className="text-sm font-semibold leading-snug break-words text-gray-700 dark:text-gray-300">
-                        {currentWord.collocation_en}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Chinese Collocation */}
-                  {currentWord.collocation && (
-                    <div className="mb-3">
                       <p className="text-sm font-bold mb-1 text-gray-500 dark:text-gray-400">搭配</p>
                       <p className="text-sm font-semibold leading-snug break-words text-gray-700 dark:text-gray-300">
-                        {currentWord.collocation}
+                        {currentWord.collocation_en}
                       </p>
                     </div>
                   )}
@@ -628,7 +643,7 @@ export function FlashcardQueue({
                   {currentWord.example_sentence_en && (
                     <div className="p-3 mb-3 bg-gray-100 dark:bg-slate-800 border-2 border-black rounded">
                       <div className="flex items-center justify-between mb-1">
-                        <p className="text-sm font-bold text-gray-500 dark:text-gray-400">英文例句</p>
+                        <p className="text-sm font-bold text-gray-500 dark:text-gray-400">例句</p>
                         <button
                           onClick={(e) => {
                             e.stopPropagation()
@@ -641,16 +656,6 @@ export function FlashcardQueue({
                       </div>
                       <p className="text-sm font-semibold leading-snug break-words text-gray-900 dark:text-white">
                         {currentWord.example_sentence_en}
-                      </p>
-                    </div>
-                  )}
-
-                  {/* Chinese Example */}
-                  {currentWord.example && (
-                    <div className="mb-3">
-                      <p className="text-sm font-bold mb-1 text-gray-500 dark:text-gray-400">例句</p>
-                      <p className="text-sm font-semibold leading-snug break-words text-gray-700 dark:text-gray-300">
-                        {currentWord.example}
                       </p>
                     </div>
                   )}

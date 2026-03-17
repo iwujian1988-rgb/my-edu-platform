@@ -33,6 +33,8 @@ interface Word {
     order_index: number
   }
   order_index: number
+  // 🌍 多语言支持（Phase 3）
+  language_data?: import('@/types/word').LanguageData
 }
 
 interface Chapter {

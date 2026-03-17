@@ -62,6 +62,11 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   const [collocationOverflow, setCollocationOverflow] = useState(false) // 搭配是否溢出
   const collocationRef = useRef<HTMLSpanElement>(null) // 搭配ref
 
+  // 🆕 音标弹窗状态（当英/美音标都有且过长时）
+  const [showPhoneticModal, setShowPhoneticModal] = useState(false)
+  const [phoneticOverflow, setPhoneticOverflow] = useState(false) // 音标是否溢出
+  const phoneticRef = useRef<HTMLSpanElement>(null) // 音标ref
+
   // 🆕 根据屏幕方向设置卡片高度
   const cardHeight = isPortrait ? '380px' : '380px'  // 竖屏与横屏一致高度
 
@@ -199,14 +204,20 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   }
 
   // 构造卡片数据
-  // 发音显示逻辑：日语优先（假名+罗马音），其次英语（音标）
+  // 发音显示逻辑：日语优先（假名+罗马音），其次英语（英/美音标）
   const getPhoneticDisplay = () => {
     // 日语：显示假名 + 罗马音
     if (word.kana) {
       return `${word.kana}${word.romaji ? ` / ${word.romaji}` : ''}`
     }
-    // 英语：显示音标（原有逻辑）
-    return word.us_phonetic || word.uk_phonetic || word.phonetic
+    // 英语：同时显示英/美音标（如果都有）
+    if (word.uk_phonetic || word.us_phonetic) {
+      const parts: string[] = []
+      if (word.uk_phonetic) parts.push(`英${word.uk_phonetic}`)
+      if (word.us_phonetic) parts.push(`美${word.us_phonetic}`)
+      return parts.join(' | ')
+    }
+    return word.phonetic
   }
 
   const data = {
@@ -284,6 +295,20 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
     return () => clearTimeout(timeoutId)
   }, [data.collocation])
 
+  // 🆕 检测音标是否溢出
+  useEffect(() => {
+    const checkPhoneticOverflow = () => {
+      if (!phoneticRef.current || !data.phonetic) return
+
+      // 使用 scrollWidth > clientWidth 检测文本溢出
+      const isOverflowing = phoneticRef.current.scrollWidth > phoneticRef.current.clientWidth
+      setPhoneticOverflow(isOverflowing)
+    }
+
+    const timeoutId = setTimeout(checkPhoneticOverflow, 100)
+    return () => clearTimeout(timeoutId)
+  }, [data.phonetic])
+
   return (
     // ⚠️ 注意：这里移除了大部分 Tailwind 类名，全靠 style 属性控制，防止冲突
     <div
@@ -316,7 +341,15 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
             </button>
           </div>
           <div className="flex items-center gap-2 mt-1 min-w-0">
-            <span className="font-serif font-bold transition-colors duration-300 dark:text-slate-400 text-gray-600 truncate" title={data.phonetic}>{data.phonetic}</span>
+            <span
+              ref={phoneticRef}
+              className={`font-serif font-bold transition-colors duration-300 dark:text-slate-400 text-gray-600 truncate ${phoneticOverflow ? 'cursor-pointer' : ''}`}
+              title={!phoneticOverflow ? data.phonetic : undefined}
+              onClick={() => phoneticOverflow && setShowPhoneticModal(true)}
+            >
+              {data.phonetic}
+              {phoneticOverflow && <span className="ml-1 text-gray-400">...</span>}
+            </span>
             {data.pos && (
               <span className="text-xs font-black border px-1.5 py-0.5 rounded transition-colors duration-300 dark:bg-gray-800 dark:border-gray-600 dark:text-gray-200 bg-gray-100 border-black text-black">
                 {data.pos}
@@ -479,6 +512,32 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
             </div>
             <p className="text-sm leading-relaxed dark:text-blue-400 dark:bg-blue-900/30 text-blue-700">
               {data.collocation}
+            </p>
+          </div>
+        </div>
+      )}
+
+      {/* 🆕 音标弹窗 */}
+      {showPhoneticModal && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
+          onClick={() => setShowPhoneticModal(false)}
+        >
+          <div
+            className="bg-white dark:bg-gray-800 rounded-lg border-3 border-black p-4 max-w-md w-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start mb-3">
+              <h3 className="font-black text-lg dark:text-white">音标</h3>
+              <button
+                onClick={() => setShowPhoneticModal(false)}
+                className="p-1 hover:bg-gray-100 dark:hover:bg-gray-700 rounded"
+              >
+                <X size={18} className="dark:text-gray-400" />
+              </button>
+            </div>
+            <p className="text-base font-serif leading-relaxed dark:text-slate-200 text-gray-700">
+              {data.phonetic}
             </p>
           </div>
         </div>
