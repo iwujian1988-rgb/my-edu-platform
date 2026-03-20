@@ -13,6 +13,20 @@ import { ArrowLeft, Settings, X, Volume2, RotateCcw, SkipForward, CheckCircle2 }
 import Link from 'next/link'
 
 /**
+ * 获取词性显示文本（支持法语阴阳性）
+ * @param word - 单词对象
+ * @returns 词性显示文本，如 "n. (m)" 或 "n. (f)"
+ */
+function getPosDisplay(word: Word | undefined | null): string {
+  if (!word?.part_of_speech) return ''
+  const fr = word.language_data?.fr
+  if (fr?.gender) {
+    return `${word.part_of_speech} (${fr.gender})`
+  }
+  return word.part_of_speech
+}
+
+/**
  * 打字练习核心页面
  */
 export default function TypingPracticePageClient() {
@@ -49,7 +63,7 @@ export default function TypingPracticePageClient() {
 
         let query = supabase
           .from('words')
-          .select('id, word, definition, phonetic, uk_phonetic, us_phonetic, part_of_speech')
+          .select('id, word, definition, phonetic, uk_phonetic, us_phonetic, part_of_speech, language_data')
           .eq('book_id', bookId)
 
         // 根据范围筛选
@@ -436,9 +450,9 @@ export default function TypingPracticePageClient() {
                 <p className="text-xl md:text-2xl font-bold text-gray-700 mb-2">
                   {currentWord.definition}
                 </p>
-                {currentWord.part_of_speech && (
+                {getPosDisplay(currentWord) && (
                   <span className="inline-block px-3 py-1 bg-gray-100 border-[2px] border-black rounded-lg text-sm font-bold text-gray-600">
-                    {currentWord.part_of_speech}
+                    {getPosDisplay(currentWord)}
                   </span>
                 )}
               </div>

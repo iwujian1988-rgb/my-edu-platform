@@ -5,7 +5,11 @@ import { Volume2, EyeOff, Lightbulb, FileText, Check, HelpCircle, X, ChevronDown
 import { useTTS } from '@/hooks/use-tts'
 import { useScreenOrientation } from '@/hooks/useScreenOrientation'  // 🆕 用于检测竖屏模式
 import { useTheme } from '@/contexts/ThemeContext'
+import { getWordLanguage, type LanguageData, type FrenchWordData, type JapaneseWordData } from '@/types/word'
 
+/**
+ * 词库卡片中的单词类型
+ */
 interface Word {
   id: string
   word: string
@@ -21,9 +25,11 @@ interface Word {
   part_of_speech: string
   status: 'known' | 'fuzzy' | 'unknown' | 'new'
   audio_url?: string | null
-  // 多语言支持
-  kana?: string       // 日语假名
-  romaji?: string     // 日语罗马音
+  // 多语言支持（旧字段，保留兼容）
+  kana?: string
+  romaji?: string
+  // 多语言支持（新字段，使用统一定义）
+  language_data?: LanguageData
 }
 
 interface VocabularyCardProps {
@@ -32,9 +38,10 @@ interface VocabularyCardProps {
   onStatusChange: (wordId: string, status: 'known' | 'fuzzy' | 'unknown') => void
   isSaving?: boolean
   globalHideChinese?: boolean
+  bookLanguage?: string  // 🌍 书籍语言，用于 TTS 后备
 }
 
-const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalHideChinese = false }: VocabularyCardProps) => {
+const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalHideChinese = false, bookLanguage = 'en' }: VocabularyCardProps) => {
   // 🆕 检测屏幕方向
   const { isPortrait } = useScreenOrientation()
 
@@ -112,7 +119,10 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   // 播放单词发音 - 使用 TTS Hook
   const handleSpeak = async () => {
     try {
-      await play(word.word, word.audio_url)
+      // 使用统一的 getWordLanguage 函数判断语言
+      const language = getWordLanguage(word, bookLanguage)
+
+      await play(word.word, word.audio_url, language)
     } catch (error) {
       console.error('❌ VocabularyCard: 播放失败', error)
     }
@@ -204,26 +214,47 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
   }
 
   // 构造卡片数据
-  // 发音显示逻辑：日语优先（假名+罗马音），其次英语（英/美音标）
+  // 发音显示逻辑：日语优先（假名+罗马音），其次英语（英/美音标），最后通用音标
   const getPhoneticDisplay = () => {
-    // 日语：显示假名 + 罗马音
-    if (word.kana) {
-      return `${word.kana}${word.romaji ? ` / ${word.romaji}` : ''}`
+    const ja = word.language_data?.ja
+    const fr = word.language_data?.fr
+
+    // 日语：优先从 language_data 读取，回退到旧字段
+    const kana = ja?.kana || word.kana
+    const romaji = ja?.romaji || word.romaji
+    if (kana) {
+      return `${kana}${romaji ? ` / ${romaji}` : ''}`
     }
-    // 英语：同时显示英/美音标（如果都有）
+
+    // 英语：显示英/美音标
     if (word.uk_phonetic || word.us_phonetic) {
       const parts: string[] = []
       if (word.uk_phonetic) parts.push(`英${word.uk_phonetic}`)
       if (word.us_phonetic) parts.push(`美${word.us_phonetic}`)
       return parts.join(' | ')
     }
+
+    // 法语/其他语言：直接显示音标
     return word.phonetic
+  }
+
+  // 获取词性显示（法语包含阴阳性）
+  const getPosDisplay = () => {
+    const pos = getPartOfSpeechLabel(word.part_of_speech)
+    const fr = word.language_data?.fr
+
+    // 法语：显示词性 + 阴阳性
+    if (fr?.gender) {
+      return `${pos} (${fr.gender})`
+    }
+
+    return pos
   }
 
   const data = {
     word: word.word,
     phonetic: getPhoneticDisplay(),
-    pos: getPartOfSpeechLabel(word.part_of_speech),
+    pos: getPosDisplay(),
     definition: showDefinition ? word.definition : word.definition_en,
     // 搭配优先显示英文（collocation_en），没有再显示 collocation
     collocation: word.collocation_en || word.collocation,

@@ -18,6 +18,7 @@
 import { useState, useCallback, useEffect, useRef } from 'react'
 import { toast } from 'sonner'
 import { speak as webSpeechSpeak, stopSpeaking } from '@/lib/speech'
+import { type SupportedLanguage, LANGUAGE_CODE_MAP, getSpeechLanguageCode } from '@/types/word'
 
 export interface UseLearningPlanTTSOptions {
   /** 发音类型：1=英音, 2=美音 (默认: 2) */
@@ -28,7 +29,7 @@ export interface UseLearningPlanTTSOptions {
 
 export interface UseLearningPlanTTSReturn {
   /** 播放语音 */
-  play: (text: string, audioUrl?: string | null) => Promise<void>
+  play: (text: string, audioUrl?: string | null, language?: SupportedLanguage) => Promise<void>
   /** 停止播放 */
   stop: () => void
   /** 预加载音频（后台加载，不播放） */
@@ -148,7 +149,7 @@ export function useLearningPlanTTS(options: UseLearningPlanTTSOptions = {}): Use
    * 策略：服务器代理有道 API 或 OSS，返回音频流
    */
   const fetchFromAPI = useCallback(
-    async (text: string): Promise<void> => {
+    async (text: string, language: SupportedLanguage = 'en'): Promise<void> => {
       // 边界检查
       if (!text || text.trim() === '') {
         console.warn(`⚠️ [学习计划 TTS] 文本为空，跳过API请求`)
@@ -160,9 +161,9 @@ export function useLearningPlanTTS(options: UseLearningPlanTTSOptions = {}): Use
         throw new Error('Text too long')
       }
 
-      const url = `/api/learning-plan/tts?text=${encodeURIComponent(text)}&type=${type}`
+      const url = `/api/learning-plan/tts?text=${encodeURIComponent(text)}&type=${type}&language=${language}`
 
-      console.log(`📡 [学习计划 TTS] 请求学习计划专用 API: text="${text}", type=${type}`)
+      console.log(`📡 [学习计划 TTS] 请求学习计划专用 API: text="${text}", type=${type}, language=${language}`)
 
       // 添加超时保护
       const controller = new AbortController()
@@ -210,21 +211,26 @@ export function useLearningPlanTTS(options: UseLearningPlanTTSOptions = {}): Use
    * 回退到 Web Speech API
    */
   const fallbackToWebSpeech = useCallback(
-    (text: string): void => {
+    (text: string, language: SupportedLanguage = 'en'): void => {
       // 边界检查
       if (!text || text.trim() === '') {
         console.warn(`⚠️ [学习计划 TTS] 文本为空，跳过Web Speech`)
         return
       }
 
-      console.log(`🔄 [学习计划 TTS] 回退到Web Speech: text="${text}"`)
+      console.log(`🔄 [学习计划 TTS] 回退到Web Speech: text="${text}", language=${language}`)
 
       // 停止之前的语音
       stopSpeaking()
 
+      // 获取语言代码
+      const langCode = language === 'en'
+        ? (type === '1' ? 'en-GB' : 'en-US')
+        : LANGUAGE_CODE_MAP[language]
+
       // 使用 Web Speech API
       const success = webSpeechSpeak(text, {
-        lang: type === '1' ? 'en-GB' : 'en-US',
+        lang: langCode,
         rate: 1.0,
         pitch: 1.0,
         volume: 1.0,
@@ -303,9 +309,10 @@ export function useLearningPlanTTS(options: UseLearningPlanTTSOptions = {}): Use
    * 优化策略：
    * 1. 如果有 audioUrl → 客户端直接请求 OSS（被浏览器缓存，超快！）
    * 2. 如果没有 audioUrl → 调用学习计划专用 API
+   * 3. 非英语语言直接回退到 Web Speech API
    */
   const play = useCallback(
-    async (text: string, audioUrl?: string | null): Promise<void> => {
+    async (text: string, audioUrl?: string | null, language: SupportedLanguage = 'en'): Promise<void> => {
       // 边界检查
       if (!text || text.trim() === '') {
         console.warn(`⚠️ [学习计划 TTS] 空文本，忽略`)
@@ -313,8 +320,17 @@ export function useLearningPlanTTS(options: UseLearningPlanTTSOptions = {}): Use
       }
 
       console.log(
-        `🎯 [学习计划 TTS] 播放请求: text="${text}", type=${type}, audioUrl=${audioUrl || 'none'}`
+        `🎯 [学习计划 TTS] 播放请求: text="${text}", type=${type}, audioUrl=${audioUrl || 'none'}, language=${language}`
       )
+
+      // 非英语语言：直接使用 Web Speech API（有道不支持）
+      if (language !== 'en') {
+        console.log(`🌍 [学习计划 TTS] 非英语语言(${language})，使用Web Speech API`)
+        setIsLoading(true)
+        setIsPlaying(true)
+        fallbackToWebSpeech(text, language)
+        return
+      }
 
       setIsLoading(true)
       setIsPlaying(true)
@@ -329,7 +345,7 @@ export function useLearningPlanTTS(options: UseLearningPlanTTSOptions = {}): Use
 
         // 策略 2: 如果没有 OSS URL，调用学习计划专用 API（服务器代理有道 API）
         console.log(`🔄 [学习计划 TTS] 无 OSS URL，调用学习计划专用 API...`)
-        await fetchFromAPI(text)
+        await fetchFromAPI(text, language)
       } catch (error) {
         console.error(
           `❌ [学习计划 TTS] 音频获取失败，回退到Web Speech:`,
@@ -344,7 +360,7 @@ export function useLearningPlanTTS(options: UseLearningPlanTTSOptions = {}): Use
           })
         }
 
-        fallbackToWebSpeech(text)
+        fallbackToWebSpeech(text, language)
       }
     },
     [type, playAudioFile, fetchFromAPI, fallbackToWebSpeech, showFallbackToast]

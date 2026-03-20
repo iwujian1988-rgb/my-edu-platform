@@ -14,6 +14,7 @@ interface UseDictationWordsResult {
   hasMore: boolean
   isLoadingMore: boolean
   isLoadingMoreRef: React.MutableRefObject<boolean>  // 🔥 暴露给外部，避免同步问题
+  bookLanguage: string  // 🌍 书籍语言，用于 TTS
 }
 
 /**
@@ -32,6 +33,7 @@ export function useDictationWords(
   const [totalWords, setTotalWords] = useState(0)
   const [currentPage, setCurrentPage] = useState(1)
   const [hasMore, setHasMore] = useState(true)
+  const [bookLanguage, setBookLanguage] = useState<string>('en')  // 🌍 书籍语言
   const pageSize = 50  // 🔧 改为50个，快速开始，避免加载时间过长
 
   // 🔥 关键修复：初始值 false，通过 useEffect 设置为 true
@@ -60,7 +62,7 @@ export function useDictationWords(
       setError(null)
 
       try {
-        const { data, total } = await dictationService.getWordsWithTotal(
+        const { data, total, bookLanguage: lang } = await dictationService.getWordsWithTotal(
           bookId,
           scopeType,
           shuffle,
@@ -71,6 +73,10 @@ export function useDictationWords(
         if (!mounted || !mountedRef.current) return
 
         setWords(data)
+        if (lang) {
+          setBookLanguage(lang)
+          console.log(`🌍 [useDictationWords] Book language: ${lang}`)
+        }
         setTotalWords(total)
         setHasMore(data.length < total)
         setCurrentPage(1)
@@ -167,6 +173,7 @@ export function useDictationWords(
     loadMore,
     hasMore,
     isLoadingMore,
-    isLoadingMoreRef  // 🔥 暴露 ref 给外部组件使用
+    isLoadingMoreRef,  // 🔥 暴露 ref 给外部组件使用
+    bookLanguage  // 🌍 书籍语言
   }
 }

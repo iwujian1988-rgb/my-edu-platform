@@ -1,0 +1,2536 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>视频学习模块 - 产品原型 v2</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f5f5f5;
+      min-height: 100vh;
+    }
+
+    /* ========== 页面容器 ========== */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ========== 导航栏 ========== */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .navbar-back {
+      background: none;
+      border: none;
+      font-size: 16px;
+      color: #6b7280;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+    .navbar-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+    }
+    .navbar-action {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+    }
+
+    /* ========== 视频列表页 ========== */
+    .video-list-header {
+      background: white;
+      padding: 16px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .search-box {
+      position: relative;
+      margin-bottom: 12px;
+    }
+    .search-input {
+      width: 100%;
+      padding: 10px 12px 10px 36px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+    .search-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 6px 12px;
+      border-radius: 16px;
+      border: none;
+      font-size: 13px;
+      cursor: pointer;
+      background: #f3f4f6;
+      color: #374151;
+    }
+    .filter-btn.active {
+      background: #3b82f6;
+      color: white;
+    }
+    .quick-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .quick-btn {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: none;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .quick-btn.review {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .quick-btn.continue {
+      background: #d1fae5;
+      color: #065f46;
+    }
+    .badge {
+      background: #f59e0b;
+      color: white;
+      padding: 2px 6px;
+      border-radius: 10px;
+      font-size: 11px;
+      margin-left: 4px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      padding: 16px;
+    }
+    @media (min-width: 640px) {
+      .video-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .video-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .video-card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      cursor: pointer;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .video-card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .video-thumb {
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      font-size: 40px;
+    }
+    .video-duration {
+      position: absolute;
+      bottom: 6px;
+      right: 6px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 11px;
+    }
+    .video-level {
+      position: absolute;
+      top: 6px;
+      left: 6px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      color: white;
+    }
+    .level-beginner { background: #22c55e; }
+    .level-intermediate { background: #f59e0b; }
+    .level-advanced { background: #ef4444; }
+    .video-progress {
+      position: absolute;
+      bottom: 6px;
+      left: 6px;
+      width: 28px;
+      height: 28px;
+    }
+    .video-complete {
+      position: absolute;
+      top: 6px;
+      right: 6px;
+      width: 22px;
+      height: 22px;
+      background: #22c55e;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+    .video-info {
+      padding: 10px;
+    }
+    .video-title {
+      font-size: 13px;
+      font-weight: 500;
+      color: #111827;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .video-meta {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 4px;
+    }
+
+    /* ========== 学习页主布局 ========== */
+    .learn-container {
+      display: flex;
+      height: calc(100vh - 52px);
+    }
+    .learn-left {
+      width: 50%;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      border-right: 1px solid #e5e7eb;
+    }
+    .learn-right {
+      width: 50%;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    @media (max-width: 900px) {
+      .learn-container { flex-direction: column; height: auto; }
+      .learn-left, .learn-right { width: 100%; }
+    }
+
+    /* ========== 视频播放器 ========== */
+    .video-player {
+      aspect-ratio: 16/9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+      position: relative;
+      flex-shrink: 0;
+    }
+    .play-icon {
+      font-size: 64px;
+      color: white;
+      opacity: 0.9;
+    }
+    .player-controls {
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .control-btn {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      font-size: 18px;
+    }
+    .progress-track {
+      flex: 1;
+      height: 4px;
+      background: rgba(255,255,255,0.3);
+      border-radius: 2px;
+      cursor: pointer;
+    }
+    .progress-fill {
+      height: 100%;
+      background: #3b82f6;
+      border-radius: 2px;
+      width: 8%;
+    }
+    .time-text {
+      color: white;
+      font-size: 12px;
+    }
+
+    /* ========== 视频详情信息区（学习页） ========== */
+    .video-detail-info {
+      padding: 16px;
+      background: white;
+      flex: 1;
+      overflow-y: auto;
+    }
+    .video-detail-info-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 8px;
+    }
+    .video-detail-info-desc {
+      font-size: 14px;
+      color: #6b7280;
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+    .video-detail-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .video-detail-tag {
+      padding: 4px 10px;
+      background: #eff6ff;
+      color: #3b82f6;
+      border-radius: 12px;
+      font-size: 12px;
+    }
+    .video-detail-meta {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid #f3f4f6;
+    }
+    .video-detail-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      color: #9ca3af;
+    }
+
+    /* ========== 学习模式 Tab 栏 ========== */
+    .learn-tabs {
+      display: flex;
+      background: #f3f4f6;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .learn-tab {
+      flex: 1;
+      padding: 10px 8px;
+      background: none;
+      border: none;
+      font-size: 13px;
+      font-weight: 500;
+      color: #6b7280;
+      cursor: pointer;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .learn-tab:hover {
+      color: #374151;
+      background: #e5e7eb;
+    }
+    .learn-tab.active {
+      color: #3b82f6;
+      background: white;
+    }
+    .learn-tab.active::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: #3b82f6;
+    }
+    .learn-tab-icon {
+      display: inline;
+      font-size: 16px;
+      margin-right: 4px;
+    }
+
+    /* ========== 学习模式内容区 ========== */
+    .learn-mode-content {
+      display: none;
+      flex-direction: column;
+      flex: 1;
+      overflow: hidden;
+    }
+    .learn-mode-content.active {
+      display: flex;
+    }
+
+    /* ========== 听：字幕控制栏 ========== */
+    .subtitle-controls {
+      display: flex;
+      gap: 8px;
+      padding: 10px 12px;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+      flex-wrap: wrap;
+    }
+    .sub-ctrl-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 5px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      background: white;
+      font-size: 12px;
+      cursor: pointer;
+      color: #374151;
+      transition: all 0.15s;
+    }
+    .sub-ctrl-btn.active {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+    .sub-ctrl-btn:hover {
+      background: #f3f4f6;
+    }
+    .sub-ctrl-btn.active:hover {
+      background: #2563eb;
+    }
+
+    /* ========== 说读：复读控制栏 ========== */
+    .speak-controls {
+      padding: 12px;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .speak-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .speak-row:last-child {
+      margin-bottom: 0;
+    }
+    .speak-label {
+      font-size: 12px;
+      color: #6b7280;
+      width: 60px;
+      flex-shrink: 0;
+    }
+    .speed-btns {
+      display: flex;
+      gap: 6px;
+    }
+    .speed-btn {
+      padding: 4px 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      background: white;
+      font-size: 12px;
+      cursor: pointer;
+      color: #374151;
+    }
+    .speed-btn.active {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+    .loop-range {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .loop-range input[type="range"] {
+      flex: 1;
+      height: 4px;
+    }
+    .loop-time {
+      font-size: 11px;
+      color: #6b7280;
+      font-family: monospace;
+    }
+
+    /* ========== 写：练习控制栏 ========== */
+    .write-controls {
+      padding: 12px;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .write-level-btns {
+      display: flex;
+      gap: 8px;
+    }
+    .write-level-btn {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      background: white;
+      font-size: 12px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.15s;
+    }
+    .write-level-btn:hover {
+      border-color: #3b82f6;
+    }
+    .write-level-btn.active {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+    .write-level-btn .level-name {
+      font-weight: 600;
+      color: #111827;
+      display: block;
+    }
+    .write-level-btn .level-desc {
+      font-size: 10px;
+      color: #9ca3af;
+      margin-top: 2px;
+    }
+    .write-level-btn.active .level-name {
+      color: #3b82f6;
+    }
+
+    /* 填空练习区 */
+    .write-exercise {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+    }
+    .exercise-item {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: 1px solid #e5e7eb;
+    }
+    .exercise-item.playing {
+      border-color: #3b82f6;
+      background: #eff6ff;
+    }
+    .exercise-sentence {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #111827;
+      margin-bottom: 10px;
+    }
+    .exercise-blank {
+      display: inline-block;
+      min-width: 80px;
+      border-bottom: 2px solid #3b82f6;
+      margin: 0 4px;
+      text-align: center;
+      color: #3b82f6;
+    }
+    .exercise-blank.filled {
+      color: #059669;
+      border-color: #059669;
+    }
+    .exercise-blank.wrong {
+      color: #dc2626;
+      border-color: #dc2626;
+    }
+    .exercise-input-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+    .exercise-input {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 14px;
+      outline: none;
+    }
+    .exercise-input:focus {
+      border-color: #3b82f6;
+    }
+    .exercise-hint {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .exercise-check-btn {
+      padding: 8px 16px;
+      background: #3b82f6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .exercise-check-btn:hover {
+      background: #2563eb;
+    }
+
+    /* ========== 学：知识点分类 ========== */
+    .learn-knowledge {
+      flex: 1;
+      overflow-y: auto;
+    }
+    .knowledge-tabs {
+      display: flex;
+      gap: 8px;
+      padding: 12px;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    .knowledge-tab {
+      padding: 6px 14px;
+      border: 1px solid #d1d5db;
+      border-radius: 16px;
+      background: white;
+      font-size: 12px;
+      cursor: pointer;
+      color: #374151;
+    }
+    .knowledge-tab.active {
+      background: #3b82f6;
+      color: white;
+      border-color: #3b82f6;
+    }
+    .knowledge-list {
+      padding: 12px;
+    }
+    .knowledge-card {
+      background: #f9fafb;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .knowledge-card:hover {
+      border-color: #d1d5db;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .knowledge-card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .knowledge-type-tag {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 500;
+    }
+    .tag-word { background: #dbeafe; color: #1d4ed8; }
+    .tag-phrase { background: #dcfce7; color: #15803d; }
+    .tag-expression { background: #fef3c7; color: #92400e; }
+    .knowledge-word {
+      font-weight: 600;
+      color: #111827;
+      font-size: 15px;
+    }
+    .knowledge-phonetic {
+      font-size: 12px;
+      color: #9ca3af;
+    }
+    .knowledge-meaning {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .knowledge-example {
+      font-size: 12px;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    /* ========== 字幕列表 ========== */
+    .subtitle-list {
+      flex: 1;
+      overflow-y: auto;
+    }
+    .subtitle-item {
+      padding: 12px 16px;
+      border-bottom: 1px solid #f3f4f6;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .subtitle-item:hover {
+      background: #f9fafb;
+    }
+    .subtitle-item.active {
+      background: #eff6ff;
+      border-left: 3px solid #3b82f6;
+    }
+    .sub-time {
+      font-size: 11px;
+      color: #9ca3af;
+      width: 40px;
+    }
+    .sub-content {
+      flex: 1;
+    }
+    .sub-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .sub-english {
+      font-size: 14px;
+      color: #111827;
+      line-height: 1.5;
+    }
+    .sub-chinese {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+    .hidden-cn {
+      display: none;
+    }
+
+    /* ========== 重点词标记（可点击） ========== */
+    .keyword {
+      position: relative;
+      cursor: pointer;
+      border-bottom: 2px solid #3b82f6;
+      padding-bottom: 1px;
+      transition: all 0.2s ease;
+      background: linear-gradient(to top, rgba(59, 130, 246, 0.1) 0%, transparent 100%);
+    }
+    .keyword:hover {
+      background: linear-gradient(to top, rgba(59, 130, 246, 0.2) 0%, transparent 100%);
+      border-bottom-color: #2563eb;
+    }
+    .keyword.type-expression {
+      border-bottom-color: #8b5cf6;
+      background: linear-gradient(to top, rgba(139, 92, 246, 0.1) 0%, transparent 100%);
+    }
+    .keyword.type-expression:hover {
+      background: linear-gradient(to top, rgba(139, 92, 246, 0.2) 0%, transparent 100%);
+      border-bottom-color: #7c3aed;
+    }
+    .keyword.type-phrase {
+      border-bottom-color: #10b981;
+      background: linear-gradient(to top, rgba(16, 185, 129, 0.1) 0%, transparent 100%);
+    }
+    .keyword.type-phrase:hover {
+      background: linear-gradient(to top, rgba(16, 185, 129, 0.2) 0%, transparent 100%);
+      border-bottom-color: #059669;
+    }
+
+    /* 重点词展开卡片 */
+    .keyword-card {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, margin 0.3s ease, padding 0.3s ease, opacity 0.2s ease;
+      opacity: 0;
+      margin-top: 0;
+      padding: 0 12px;
+    }
+    .keyword-card.expanded {
+      max-height: 300px;
+      opacity: 1;
+      margin-top: 12px;
+      padding: 12px;
+    }
+    .keyword-card-inner {
+      background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+      border-radius: 10px;
+      padding: 12px;
+      border: 1px solid #fde68a;
+      box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+      transform: scale(0.95);
+      transition: transform 0.3s ease;
+    }
+    .keyword-card.expanded .keyword-card-inner {
+      transform: scale(1);
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .card-type-tag {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .card-type-tag.word { background: #3b82f6; color: white; }
+    .card-type-tag.phrase { background: #10b981; color: white; }
+    .card-type-tag.expression { background: #8b5cf6; color: white; }
+    .card-word {
+      font-size: 16px;
+      font-weight: 700;
+      color: #92400e;
+    }
+    .card-phonetic {
+      font-size: 12px;
+      color: #a16207;
+    }
+    .card-meaning {
+      font-size: 14px;
+      color: #78350f;
+      margin-bottom: 8px;
+      padding-bottom: 8px;
+      border-bottom: 1px dashed #fde68a;
+    }
+    .card-usage {
+      font-size: 12px;
+      color: #92400e;
+      background: rgba(255,255,255,0.5);
+      padding: 8px;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .card-usage-title {
+      font-weight: 600;
+      color: #b45309;
+      margin-bottom: 4px;
+    }
+    .card-examples {
+      font-size: 12px;
+    }
+    .card-example {
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(253, 230, 138, 0.5);
+    }
+    .card-example:last-child {
+      border-bottom: none;
+    }
+    .card-example-en {
+      color: #78350f;
+    }
+    .card-example-cn {
+      color: #a16207;
+      font-size: 11px;
+      margin-top: 2px;
+    }
+    .card-close {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      color: #a16207;
+      opacity: 0.6;
+      transition: opacity 0.2s;
+    }
+    .card-close:hover {
+      opacity: 1;
+    }
+
+    /* 旧版重点标记（保留用于精读弹窗） */
+    .key-point {
+      margin-top: 8px;
+      padding: 8px 10px;
+      background: #fef3c7;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .key-tag {
+      padding: 2px 6px;
+      background: #f59e0b;
+      color: white;
+      font-size: 10px;
+      border-radius: 4px;
+      font-weight: 500;
+    }
+    .key-word {
+      font-weight: 600;
+      color: #92400e;
+    }
+    .key-meaning {
+      font-size: 12px;
+      color: #78350f;
+    }
+
+    /* ========== 录音按钮 ========== */
+    .record-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .record-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
+      background: white;
+      font-size: 12px;
+      cursor: pointer;
+      color: #374151;
+    }
+    .record-btn.recording {
+      background: #fef2f2;
+      border-color: #ef4444;
+      color: #dc2626;
+    }
+    .record-btn.play {
+      background: #f0fdf4;
+      border-color: #22c55e;
+      color: #16a34a;
+    }
+    .my-recording {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 11px;
+      color: #6b7280;
+    }
+
+    /* ========== 精读视图（右侧抽屉） ========== */
+    .learn-right-view {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    }
+    .learn-right-view.active {
+      transform: translateX(0);
+    }
+    .view-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e7eb;
+      flex-shrink: 0;
+    }
+    .view-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #111827;
+    }
+    .view-back-btn {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 6px 12px;
+      background: white;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 13px;
+      cursor: pointer;
+      color: #374151;
+      transition: all 0.2s;
+    }
+    .view-back-btn:hover {
+      background: #f3f4f6;
+    }
+
+    /* 精读内容区 */
+    .summary-view {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+    }
+    .summary-section {
+      margin-bottom: 20px;
+    }
+    .summary-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #111827;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .summary-count {
+      background: #e5e7eb;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 12px;
+      font-weight: normal;
+      color: #6b7280;
+    }
+    .summary-item {
+      padding: 12px;
+      background: #f9fafb;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+    }
+    .summary-item:hover {
+      background: #f3f4f6;
+      border-color: #d1d5db;
+    }
+    .summary-item-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+    .summary-type-tag {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .tag-word { background: #dbeafe; color: #1d4ed8; }
+    .tag-phrase { background: #dcfce7; color: #15803d; }
+    .tag-expression { background: #fef3c7; color: #92400e; }
+    .summary-word {
+      font-weight: 600;
+      color: #111827;
+    }
+    .summary-meaning {
+      font-size: 13px;
+      color: #6b7280;
+      margin-bottom: 4px;
+    }
+    .summary-example {
+      font-size: 12px;
+      color: #9ca3af;
+      font-style: italic;
+    }
+
+    /* ========== 导出弹窗（保留） ========== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 200;
+      padding: 20px;
+    }
+    .modal-overlay.show {
+      display: flex;
+    }
+    .modal-content {
+      background: white;
+      border-radius: 16px;
+      width: 100%;
+      max-width: 400px;
+      overflow: hidden;
+    }
+    .modal-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-title {
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .modal-close {
+      background: none;
+      border: none;
+      font-size: 20px;
+      cursor: pointer;
+      color: #9ca3af;
+    }
+    .modal-body {
+      padding: 20px;
+    }
+
+    /* ========== 导出弹窗 ========== */
+    .export-options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .export-option {
+      padding: 12px 16px;
+      border: 1px solid #e5e7eb;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .export-option:hover {
+      background: #f9fafb;
+      border-color: #3b82f6;
+    }
+    .export-icon {
+      font-size: 20px;
+    }
+    .export-info {
+      flex: 1;
+    }
+    .export-name {
+      font-weight: 500;
+      color: #111827;
+    }
+    .export-desc {
+      font-size: 12px;
+      color: #6b7280;
+    }
+
+    /* ========== 底部导航 ========== */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: white;
+      border-top: 1px solid #e5e7eb;
+      display: flex;
+      justify-content: space-around;
+      padding: 8px 0 env(safe-area-inset-bottom, 8px);
+    }
+    @media (min-width: 769px) {
+      .bottom-nav { display: none; }
+    }
+    .nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4px 16px;
+      color: #9ca3af;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+    .nav-item.active {
+      color: #3b82f6;
+    }
+    .nav-icon {
+      font-size: 20px;
+    }
+    .nav-label {
+      font-size: 10px;
+      margin-top: 2px;
+    }
+
+    /* ========== 闪卡页 ========== */
+    .flashcard-page {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .flashcard-filters {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .flashcard-filter-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .flashcard-select {
+      padding: 8px 12px;
+      border: 1px solid #d1d5db;
+      border-radius: 6px;
+      font-size: 13px;
+    }
+    .flip-card-container {
+      perspective: 1000px;
+      cursor: pointer;
+      margin-bottom: 20px;
+    }
+    .flip-card {
+      position: relative;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card.flipped {
+      transform: rotateY(180deg);
+    }
+    .flip-front, .flip-back {
+      backface-visibility: hidden;
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      min-height: 280px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .flip-back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      transform: rotateY(180deg);
+    }
+    .flip-title {
+      font-size: 24px;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .flip-phonetic {
+      text-align: center;
+      color: #6b7280;
+      margin-bottom: 24px;
+    }
+    .flip-formula {
+      text-align: center;
+      color: #374151;
+      font-size: 14px;
+    }
+    .flip-meaning {
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .flip-hint {
+      text-align: center;
+      color: #9ca3af;
+      font-size: 13px;
+      margin-top: 32px;
+    }
+    .flashcard-btns {
+      display: flex;
+      gap: 12px;
+    }
+    .flashcard-btn {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    .flashcard-btn.forget {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .flashcard-btn.know {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+    .flashcard-progress {
+      text-align: center;
+      color: #6b7280;
+      font-size: 14px;
+      margin-top: 16px;
+    }
+
+    /* ========== 收藏页 ========== */
+    .favorites-page {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .fav-item {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .fav-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .fav-type {
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    .fav-source {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+    .fav-word {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .fav-meaning {
+      font-size: 13px;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+    .fav-date {
+      font-size: 11px;
+      color: #9ca3af;
+      margin-top: 8px;
+    }
+    .fav-star {
+      color: #f59e0b;
+      font-size: 18px;
+    }
+
+    /* ========== 统计页 ========== */
+    .stats-page {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .stats-cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .stat-card {
+      border-radius: 12px;
+      padding: 16px;
+      color: white;
+    }
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    .stat-label {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    .calendar-card {
+      background: white;
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .calendar-title {
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 4px;
+      text-align: center;
+    }
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      border-radius: 4px;
+    }
+    .day-header {
+      color: #9ca3af;
+      font-size: 10px;
+    }
+    .day-empty { opacity: 0; }
+    .day-none { color: #d1d5db; }
+    .day-light { background: #dcfce7; color: #16a34a; }
+    .day-heavy { background: #22c55e; color: white; }
+    .day-today { background: #3b82f6; color: white; font-weight: 600; }
+    .streak-card {
+      background: linear-gradient(135deg, #f97316, #ea580c);
+      border-radius: 12px;
+      padding: 20px;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .streak-main {
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .streak-sub {
+      font-size: 12px;
+      opacity: 0.9;
+    }
+    .streak-best {
+      text-align: right;
+    }
+    .streak-best-label {
+      font-size: 11px;
+      opacity: 0.8;
+    }
+    .streak-best-value {
+      font-size: 18px;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== 页面1: 视频列表 ==================== -->
+  <div id="page-list" class="page active">
+    <nav class="navbar">
+      <span style="font-size: 20px; font-weight: 700;">📹 视频学习</span>
+      <div>
+        <button class="navbar-action">🔔</button>
+        <button class="navbar-action">👤</button>
+      </div>
+    </nav>
+
+    <div class="video-list-header">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" placeholder="搜索视频标题、标签...">
+      </div>
+      <div class="filter-row">
+        <button class="filter-btn active">全部</button>
+        <button class="filter-btn">初级</button>
+        <button class="filter-btn">中级</button>
+        <button class="filter-btn">高级</button>
+        <button class="filter-btn">日常生活</button>
+        <button class="filter-btn">美食</button>
+        <button class="filter-btn">旅行</button>
+      </div>
+      <div class="quick-actions">
+        <button class="quick-btn review" onclick="showPage('flashcards')">
+          🔄 待复习<span class="badge">12</span>
+        </button>
+        <button class="quick-btn continue">
+          ▶️ 继续学习
+        </button>
+      </div>
+    </div>
+
+    <div class="video-grid">
+      <div class="video-card" onclick="showPage('learn')">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #f472b6, #ef4444);">
+          <span>🍜</span>
+          <span class="video-duration">5:32</span>
+          <span class="video-level level-beginner">初级</span>
+          <svg class="video-progress" viewBox="0 0 32 32">
+            <circle cx="16" cy="16" r="12" fill="none" stroke="#fff" stroke-width="2" opacity="0.3" transform="rotate(-90 16 16)"/>
+            <circle cx="16" cy="16" r="12" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="75.4" stroke-dashoffset="37.7" transform="rotate(-90 16 16)"/>
+          </svg>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">第一次尝试吃火锅</h3>
+          <p class="video-meta">Birta Hlin · 日常生活</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="showPage('learn')">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #60a5fa, #6366f1);">
+          <span>✈️</span>
+          <span class="video-duration">8:15</span>
+          <span class="video-level level-intermediate">中级</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">一个人的冰岛旅行</h3>
+          <p class="video-meta">Emma · 旅行</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="showPage('learn')">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #34d399, #14b8a6);">
+          <span>💼</span>
+          <span class="video-duration">6:45</span>
+          <span class="video-level level-intermediate">中级</span>
+          <span class="video-complete">✓</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">职场面试技巧</h3>
+          <p class="video-meta">John · 职场</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="showPage('learn')">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #a78bfa, #ec4899);">
+          <span>🎬</span>
+          <span class="video-duration">4:20</span>
+          <span class="video-level level-beginner">初级</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">聊聊最近看的电影</h3>
+          <p class="video-meta">Sarah · 日常生活</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="showPage('learn')">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #fb923c, #ef4444);">
+          <span>🍔</span>
+          <span class="video-duration">3:45</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">美国快餐文化</h3>
+          <p class="video-meta">Mike · 美食</p>
+        </div>
+      </div>
+
+      <div class="video-card" onclick="showPage('learn')">
+        <div class="video-thumb" style="background: linear-gradient(135deg, #22d3ee, #3b82f6);">
+          <span>🏠</span>
+          <span class="video-duration">7:20</span>
+        </div>
+        <div class="video-info">
+          <h3 class="video-title">租房那些事</h3>
+          <p class="video-meta">Lisa · 日常生活</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 70px;"></div>
+    <nav class="bottom-nav">
+      <button class="nav-item active" onclick="showPage('list')">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">首页</span>
+      </button>
+      <button class="nav-item" onclick="showPage('flashcards')">
+        <span class="nav-icon">🔄</span>
+        <span class="nav-label">复习</span>
+      </button>
+      <button class="nav-item" onclick="showPage('favorites')">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-label">收藏</span>
+      </button>
+      <button class="nav-item" onclick="showPage('stats')">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">我的</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ==================== 页面2: 视频学习页 (核心) ==================== -->
+  <div id="page-learn" class="page">
+    <nav class="navbar">
+      <button class="navbar-back" onclick="showPage('list')">← 返回</button>
+      <span class="navbar-title">第一次尝试吃火锅</span>
+      <button class="navbar-action">⭐</button>
+    </nav>
+
+    <div class="learn-container">
+      <!-- 左侧：视频 -->
+      <div class="learn-left">
+        <div class="video-player">
+          <span class="play-icon">▶️</span>
+          <div class="player-controls">
+            <button class="control-btn">▶️</button>
+            <div class="progress-track">
+              <div class="progress-fill"></div>
+            </div>
+            <span class="time-text">0:08 / 5:32</span>
+            <button class="control-btn">🔊</button>
+            <button class="control-btn">⛶</button>
+          </div>
+        </div>
+        <!-- 视频信息区 -->
+        <div class="video-detail-info">
+          <h3 class="video-detail-info-title">📌 视频简介</h3>
+          <p class="video-detail-info-desc">
+            跟随博主一起第一次尝试正宗的中式火锅！在这段 vlog 中，你将学到如何用地道的英语描述对美食的渴望、表达"就在旁边"的夸张说法，以及日常口语中常见的缩略表达。适合中级学习者，包含实用的餐饮场景词汇。
+          </p>
+          <div class="video-detail-tags">
+            <span class="video-detail-tag">🍔 美食</span>
+            <span class="video-detail-tag">✈️ 旅行</span>
+            <span class="video-detail-tag">💬 日常口语</span>
+            <span class="video-detail-tag">🇺🇸 美式发音</span>
+            <span class="video-detail-tag">📖 中级</span>
+          </div>
+          <div class="video-detail-meta">
+            <span class="video-detail-meta-item">👁️ 2.3万次观看</span>
+            <span class="video-detail-meta-item">❤️ 1.2万收藏</span>
+            <span class="video-detail-meta-item">📅 2024-01-15</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧：学习区域 -->
+      <div class="learn-right">
+        <!-- 学习模式 Tab 栏 -->
+        <div class="learn-tabs">
+          <button class="learn-tab active" onclick="switchLearnMode('listen')">
+            <span class="learn-tab-icon">🎧</span>听
+          </button>
+          <button class="learn-tab" onclick="switchLearnMode('speak')">
+            <span class="learn-tab-icon">🗣️</span>说读
+          </button>
+          <button class="learn-tab" onclick="switchLearnMode('write')">
+            <span class="learn-tab-icon">✍️</span>写
+          </button>
+          <button class="learn-tab" onclick="switchLearnMode('learn')">
+            <span class="learn-tab-icon">📚</span>学
+          </button>
+        </div>
+
+        <!-- ========== 听：字幕模式 ========== -->
+        <div id="mode-listen" class="learn-mode-content active">
+          <div class="subtitle-controls">
+            <button class="sub-ctrl-btn active" onclick="setSubtitleMode(this, 'bilingual')">双语</button>
+            <button class="sub-ctrl-btn" onclick="setSubtitleMode(this, 'english')">英文</button>
+            <button class="sub-ctrl-btn" onclick="setSubtitleMode(this, 'chinese')">中文</button>
+            <button class="sub-ctrl-btn" onclick="showModal('export')" style="margin-left:auto">📥</button>
+          </div>
+          <div class="subtitle-list" id="listen-subtitle-list">
+          <!-- 字幕项 1 -->
+          <div class="subtitle-item" onclick="seekTo(this)">
+            <div class="sub-row">
+              <span class="sub-time">00:00</span>
+              <div class="sub-content">
+                <p class="sub-english">Okay, anyways, we are going to try hot pot <span class="keyword type-expression" onclick="event.stopPropagation(); toggleKeywordCard(this)">for the first time</span>.</p>
+                <p class="sub-chinese">好啦，总之，我们要第一次尝试火锅。</p>
+                <!-- 展开卡片 -->
+                <div class="keyword-card">
+                  <div class="keyword-card-inner" style="position:relative;">
+                    <button class="card-close" onclick="event.stopPropagation(); closeKeywordCard(this)">×</button>
+                    <div class="card-header">
+                      <span class="card-type-tag expression">地道表达</span>
+                      <span class="card-word">for the first time</span>
+                    </div>
+                    <div class="card-meaning">第一次（做某事）</div>
+                    <div class="card-usage">
+                      <div class="card-usage-title">💡 用法说明</div>
+                      用于描述某人是第一次经历或尝试某事，常放在句末。
+                    </div>
+                    <div class="card-examples">
+                      <div class="card-example">
+                        <div class="card-example-en">I'm eating sushi <strong>for the first time</strong>.</div>
+                        <div class="card-example-cn">我第一次吃寿司。</div>
+                      </div>
+                      <div class="card-example">
+                        <div class="card-example-en">She traveled abroad <strong>for the first time</strong> last year.</div>
+                        <div class="card-example-cn">她去年第一次出国旅行。</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="record-row">
+                  <button class="record-btn" onclick="startRecording(this)">🎤 录音</button>
+                  <button class="record-btn play">▶️ 播放</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 字幕项 2 (当前播放) -->
+          <div class="subtitle-item active" onclick="seekTo(this)">
+            <div class="sub-row">
+              <span class="sub-time">00:08</span>
+              <div class="sub-content">
+                <p class="sub-english">And I was like, I'm <span class="keyword type-expression" onclick="event.stopPropagation(); toggleKeywordCard(this)">craving</span> this for dinner.</p>
+                <p class="sub-chinese">我当时就想，我晚饭就想吃这个。</p>
+                <!-- 展开卡片 -->
+                <div class="keyword-card">
+                  <div class="keyword-card-inner" style="position:relative;">
+                    <button class="card-close" onclick="event.stopPropagation(); closeKeywordCard(this)">×</button>
+                    <div class="card-header">
+                      <span class="card-type-tag expression">地道表达</span>
+                      <span class="card-word">be craving</span>
+                      <span class="card-phonetic">/ˈkreɪvɪŋ/</span>
+                    </div>
+                    <div class="card-meaning">非常想吃、馋（某样东西）</div>
+                    <div class="card-usage">
+                      <div class="card-usage-title">💡 用法说明</div>
+                      比 "I want" 更有「馋到了」的身体感，特别适合说宵夜、路过餐厅时突然被勾起的食欲。
+                    </div>
+                    <div class="card-examples">
+                      <div class="card-example">
+                        <div class="card-example-en">I'm <strong>craving</strong> noodles tonight.</div>
+                        <div class="card-example-cn">我今晚特别想吃面。</div>
+                      </div>
+                      <div class="card-example">
+                        <div class="card-example-en">She's been <strong>craving</strong> spicy food all day.</div>
+                        <div class="card-example-cn">她一整天都特别想吃辣的。</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="record-row">
+                  <button class="record-btn recording">⏹️ 录音中...</button>
+                  <span class="my-recording">🎵 已录制 (2.1s)</span>
+                  <button class="record-btn play">▶️ 播放</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 字幕项 3 -->
+          <div class="subtitle-item" onclick="seekTo(this)">
+            <div class="sub-row">
+              <span class="sub-time">00:15</span>
+              <div class="sub-content">
+                <p class="sub-english">And there is a Chinese <span class="keyword type-phrase" onclick="event.stopPropagation(); toggleKeywordCard(this)">hot pot place</span> literally next to our hotel.</p>
+                <p class="sub-chinese">而且我们酒店旁边就有一家中式火锅店。</p>
+                <!-- 展开卡片 -->
+                <div class="keyword-card">
+                  <div class="keyword-card-inner" style="position:relative;">
+                    <button class="card-close" onclick="event.stopPropagation(); closeKeywordCard(this)">×</button>
+                    <div class="card-header">
+                      <span class="card-type-tag phrase">短语</span>
+                      <span class="card-word">hot pot place</span>
+                    </div>
+                    <div class="card-meaning">火锅店</div>
+                    <div class="card-usage">
+                      <div class="card-usage-title">💡 用法说明</div>
+                      "place" 在口语中常用来指代餐厅、商店等场所，比 restaurant 更口语化。
+                    </div>
+                    <div class="card-examples">
+                      <div class="card-example">
+                        <div class="card-example-en">Let's go to that new <strong>pizza place</strong>.</div>
+                        <div class="card-example-cn">我们去那家新开的披萨店吧。</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="record-row">
+                  <button class="record-btn" onclick="startRecording(this)">🎤 录音</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 字幕项 4 -->
+          <div class="subtitle-item" onclick="seekTo(this)">
+            <div class="sub-row">
+              <span class="sub-time">00:22</span>
+              <div class="sub-content">
+                <p class="sub-english">It's <span class="keyword" onclick="event.stopPropagation(); toggleKeywordCard(this)">literally</span> right there, so we have to try it.</p>
+                <p class="sub-chinese">就在那里，所以我们必须试试。</p>
+                <!-- 展开卡片 -->
+                <div class="keyword-card">
+                  <div class="keyword-card-inner" style="position:relative;">
+                    <button class="card-close" onclick="event.stopPropagation(); closeKeywordCard(this)">×</button>
+                    <div class="card-header">
+                      <span class="card-type-tag word">单词</span>
+                      <span class="card-word">literally</span>
+                      <span class="card-phonetic">/ˈlɪtərəli/</span>
+                    </div>
+                    <div class="card-meaning">简直；确实地；就在（某地）</div>
+                    <div class="card-usage">
+                      <div class="card-usage-title">💡 用法说明</div>
+                      口语中常用于强调，表示"真的"、"简直"，即使不是字面意思也可以用。
+                    </div>
+                    <div class="card-examples">
+                      <div class="card-example">
+                        <div class="card-example-en">It's <strong>literally</strong> five minutes away.</div>
+                        <div class="card-example-cn">真的就五分钟路程。</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="record-row">
+                  <button class="record-btn" onclick="startRecording(this)">🎤 录音</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 字幕项 5 -->
+          <div class="subtitle-item" onclick="seekTo(this)">
+            <div class="sub-row">
+              <span class="sub-time">00:28</span>
+              <div class="sub-content">
+                <p class="sub-english">The <span class="keyword" onclick="event.stopPropagation(); toggleKeywordCard(this)">broth</span> smells amazing!</p>
+                <p class="sub-chinese">汤底闻起来太香了！</p>
+                <!-- 展开卡片 -->
+                <div class="keyword-card">
+                  <div class="keyword-card-inner" style="position:relative;">
+                    <button class="card-close" onclick="event.stopPropagation(); closeKeywordCard(this)">×</button>
+                    <div class="card-header">
+                      <span class="card-type-tag word">单词</span>
+                      <span class="card-word">broth</span>
+                      <span class="card-phonetic">/brɒθ/</span>
+                    </div>
+                    <div class="card-meaning">（火锅/汤的）汤底；肉汤</div>
+                    <div class="card-usage">
+                      <div class="card-usage-title">💡 用法说明</div>
+                      指煮肉或蔬菜的清汤，在火锅语境中指汤底。
+                    </div>
+                    <div class="card-examples">
+                      <div class="card-example">
+                        <div class="card-example-en">The <strong>broth</strong> is so flavorful!</div>
+                        <div class="card-example-cn">汤底太有味了！</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="record-row">
+                  <button class="record-btn" onclick="startRecording(this)">🎤 录音</button>
+                </div>
+              </div>
+            </div>
+          </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="subtitle-item" onclick="seekTo(this)">
+                <div class="sub-row">
+                  <span class="sub-time">00:35</span>
+                  <div class="sub-content">
+                    <p class="sub-english">Look at all these ingredients!</p>
+                    <p class="sub-chinese">看看这些食材！</p>
+                    <div class="key-point">
+                      <span class="key-tag">单词</span>
+                      <span class="key-word">ingredients</span>
+                      <span class="key-meaning">食材；原料</span>
+                    </div>
+                    <div class="record-row">
+                      <button class="record-btn" onclick="startRecording(this)">🎤 录音</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="subtitle-item" onclick="seekTo(this)">
+                <div class="sub-row">
+                  <span class="sub-time">00:42</span>
+                  <div class="sub-content">
+                    <p class="sub-english">I've never had <strong style="color:#3b82f6;">sichuan peppercorns</strong> before.</p>
+                    <p class="sub-chinese">我以前从来没吃过花椒。</p>
+                    <div class="key-point">
+                      <span class="key-tag">短语</span>
+                      <span class="key-word">sichuan peppercorns</span>
+                      <span class="key-meaning">四川花椒</span>
+                    </div>
+                    <div class="record-row">
+                      <button class="record-btn" onclick="startRecording(this)">🎤 录音</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 说读：复读模式 ========== -->
+        <div id="mode-speak" class="learn-mode-content">
+          <div class="speak-controls">
+            <div class="speak-row">
+              <span class="speak-label">播放速度</span>
+              <div class="speed-btns">
+                <button class="speed-btn" onclick="setSpeed(0.5)">0.5x</button>
+                <button class="speed-btn" onclick="setSpeed(0.75)">0.75x</button>
+                <button class="speed-btn active" onclick="setSpeed(1)">1x</button>
+                <button class="speed-btn" onclick="setSpeed(1.25)">1.25x</button>
+              </div>
+            </div>
+            <div class="speak-row">
+              <span class="speak-label">复读区间</span>
+              <div class="loop-range">
+                <span class="loop-time">00:08</span>
+                <input type="range" min="0" max="100" value="30">
+                <span class="loop-time">00:15</span>
+                <button class="sub-ctrl-btn active" style="margin-left:8px" onclick="toggleLoop(this)">🔁 循环</button>
+              </div>
+            </div>
+          </div>
+          <div class="subtitle-list">
+            <div class="subtitle-item active" onclick="seekTo(this)">
+              <div class="sub-row">
+                <span class="sub-time">00:08</span>
+                <div class="sub-content">
+                  <p class="sub-english">And I was like, I'm <span class="keyword type-expression" onclick="event.stopPropagation(); toggleKeywordCard(this)">craving</span> this for dinner.</p>
+                  <p class="sub-chinese">我当时就想，我晚饭就想吃这个。</p>
+                  <div class="record-row">
+                    <button class="record-btn recording" onclick="stopRecordingVoice(this)">⏹️ 录音中...</button>
+                    <span class="my-recording">🎵 已录制 (2.1s)</span>
+                    <button class="record-btn play" onclick="playRecording(this)">▶️ 播放</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="subtitle-item" onclick="seekTo(this)">
+              <div class="sub-row">
+                <span class="sub-time">00:15</span>
+                <div class="sub-content">
+                  <p class="sub-english">And there is a Chinese <span class="keyword type-phrase">hot pot place</span> literally next to our hotel.</p>
+                  <p class="sub-chinese">而且我们酒店旁边就有一家中式火锅店。</p>
+                  <div class="record-row">
+                    <button class="record-btn" onclick="startRecording(this)">🎤 录音</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="subtitle-item" onclick="seekTo(this)">
+              <div class="sub-row">
+                <span class="sub-time">00:22</span>
+                <div class="sub-content">
+                  <p class="sub-english">It's <span class="keyword">literally</span> right there, so we have to try it.</p>
+                  <p class="sub-chinese">就在那里，所以我们必须试试。</p>
+                  <div class="record-row">
+                    <button class="record-btn" onclick="startRecording(this)">🎤 录音</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 写：填空/听写模式 ========== -->
+        <div id="mode-write" class="learn-mode-content">
+          <div class="write-controls">
+            <div class="write-level-btns">
+              <div class="write-level-btn" onclick="setWriteLevel('easy', this)">
+                <span class="level-name">🌱 简单</span>
+                <span class="level-desc">挖1个关键词</span>
+              </div>
+              <div class="write-level-btn active" onclick="setWriteLevel('medium', this)">
+                <span class="level-name">🌿 中级</span>
+                <span class="level-desc">挖2-3个词</span>
+              </div>
+              <div class="write-level-btn" onclick="setWriteLevel('hard', this)">
+                <span class="level-name">🌳 困难</span>
+                <span class="level-desc">整句听写</span>
+              </div>
+            </div>
+          </div>
+          <div class="write-exercise">
+            <div class="exercise-item playing">
+              <div class="exercise-sentence">
+                And I was like, I'm <span class="exercise-blank" data-answer="craving">______</span> this for dinner.
+              </div>
+              <div class="exercise-input-row">
+                <input type="text" class="exercise-input" placeholder="输入缺失的词..." data-answer="craving">
+                <button class="exercise-check-btn" onclick="checkAnswer(this)">检查</button>
+              </div>
+              <p class="exercise-hint">提示：c____g (非常想要)</p>
+            </div>
+            <div class="exercise-item">
+              <div class="exercise-sentence">
+                It's <span class="exercise-blank" data-answer="literally">______</span> right there, so we have to try it.
+              </div>
+              <div class="exercise-input-row">
+                <input type="text" class="exercise-input" placeholder="输入缺失的词..." data-answer="literally">
+                <button class="exercise-check-btn" onclick="checkAnswer(this)">检查</button>
+              </div>
+              <p class="exercise-hint">提示：l______y (简直)</p>
+            </div>
+            <div class="exercise-item">
+              <div class="exercise-sentence">
+                The <span class="exercise-blank" data-answer="broth">______</span> smells amazing!
+              </div>
+              <div class="exercise-input-row">
+                <input type="text" class="exercise-input" placeholder="输入缺失的词..." data-answer="broth">
+                <button class="exercise-check-btn" onclick="checkAnswer(this)">检查</button>
+              </div>
+              <p class="exercise-hint">提示：b____h (汤底)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== 学：知识点模式 ========== -->
+        <div id="mode-learn" class="learn-mode-content">
+          <div class="knowledge-tabs">
+            <button class="knowledge-tab active" onclick="setKnowledgeType('all', this)">全部</button>
+            <button class="knowledge-tab" onclick="setKnowledgeType('expression', this)">地道表达</button>
+            <button class="knowledge-tab" onclick="setKnowledgeType('phrase', this)">短语</button>
+            <button class="knowledge-tab" onclick="setKnowledgeType('word', this)">单词</button>
+          </div>
+          <div class="knowledge-list">
+            <div class="knowledge-card" onclick="jumpToSubtitle(0)">
+              <div class="knowledge-card-header">
+                <span class="knowledge-type-tag tag-expression">地道表达</span>
+                <span class="knowledge-word">for the first time</span>
+              </div>
+              <p class="knowledge-meaning">第一次（做某事）</p>
+              <p class="knowledge-example">"...we are going to try hot pot for the first time."</p>
+            </div>
+            <div class="knowledge-card" onclick="jumpToSubtitle(1)">
+              <div class="knowledge-card-header">
+                <span class="knowledge-type-tag tag-expression">地道表达</span>
+                <span class="knowledge-word">be craving</span>
+                <span class="knowledge-phonetic">/ˈkreɪvɪŋ/</span>
+              </div>
+              <p class="knowledge-meaning">非常想吃、馋（某样东西）</p>
+              <p class="knowledge-example">"I'm craving this for dinner."</p>
+            </div>
+            <div class="knowledge-card" onclick="jumpToSubtitle(2)">
+              <div class="knowledge-card-header">
+                <span class="knowledge-type-tag tag-phrase">短语</span>
+                <span class="knowledge-word">hot pot place</span>
+              </div>
+              <p class="knowledge-meaning">火锅店</p>
+              <p class="knowledge-example">"...there is a Chinese hot pot place literally next to our hotel."</p>
+            </div>
+            <div class="knowledge-card" onclick="jumpToSubtitle(3)">
+              <div class="knowledge-card-header">
+                <span class="knowledge-type-tag tag-word">单词</span>
+                <span class="knowledge-word">literally</span>
+                <span class="knowledge-phonetic">/ˈlɪtərəli/</span>
+              </div>
+              <p class="knowledge-meaning">简直；确实地；就在（某地）</p>
+              <p class="knowledge-example">"It's literally right there..."</p>
+            </div>
+            <div class="knowledge-card" onclick="jumpToSubtitle(4)">
+              <div class="knowledge-card-header">
+                <span class="knowledge-type-tag tag-word">单词</span>
+                <span class="knowledge-word">broth</span>
+                <span class="knowledge-phonetic">/brɒθ/</span>
+              </div>
+              <p class="knowledge-meaning">（火锅/汤的）汤底；肉汤</p>
+              <p class="knowledge-example">"The broth smells amazing!"</p>
+            </div>
+            <div class="knowledge-card" onclick="jumpToSubtitle(5)">
+              <div class="knowledge-card-header">
+                <span class="knowledge-type-tag tag-phrase">短语</span>
+                <span class="knowledge-word">sichuan peppercorns</span>
+              </div>
+              <p class="knowledge-meaning">四川花椒</p>
+              <p class="knowledge-example">"I've never had sichuan peppercorns before."</p>
+            </div>
+            <div class="knowledge-card" onclick="jumpToSubtitle(6)">
+              <div class="knowledge-card-header">
+                <span class="knowledge-type-tag tag-word">单词</span>
+                <span class="knowledge-word">ingredients</span>
+              </div>
+              <p class="knowledge-meaning">食材；原料</p>
+              <p class="knowledge-example">"Look at all these ingredients!"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 导出弹窗 -->
+  <div id="modal-export" class="modal-overlay" onclick="hideModal('export')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-header">
+        <span class="modal-title">📥 导出字幕</span>
+        <button class="modal-close" onclick="hideModal('export')">×</button>
+      </div>
+      <div class="modal-body">
+        <div class="export-options">
+          <div class="export-option">
+            <span class="export-icon">📄</span>
+            <div class="export-info">
+              <p class="export-name">SRT 字幕文件</p>
+              <p class="export-desc">标准字幕格式，可用于视频编辑软件</p>
+            </div>
+          </div>
+          <div class="export-option">
+            <span class="export-icon">📝</span>
+            <div class="export-info">
+              <p class="export-name">TXT 纯文本</p>
+              <p class="export-desc">仅包含英文字幕，适合阅读学习</p>
+            </div>
+          </div>
+          <div class="export-option">
+            <span class="export-icon">📋</span>
+            <div class="export-info">
+              <p class="export-name">复制到剪贴板</p>
+              <p class="export-desc">双语字幕，可直接粘贴到笔记</p>
+            </div>
+          </div>
+          <div class="export-option">
+            <span class="export-icon">📖</span>
+            <div class="export-info">
+              <p class="export-name">导出学习卡片</p>
+              <p class="export-desc">包含所有重点单词、短语、地道表达</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 页面3: 闪卡复习 ==================== -->
+  <div id="page-flashcards" class="page">
+    <nav class="navbar">
+      <button class="navbar-back" onclick="showPage('list')">← 返回</button>
+      <span class="navbar-title">闪卡复习</span>
+      <span></span>
+    </nav>
+
+    <div class="flashcard-page">
+      <div class="flashcard-filters">
+        <div class="flashcard-filter-row">
+          <select class="flashcard-select">
+            <option>全部视频</option>
+            <option>第一次尝试吃火锅</option>
+          </select>
+        </div>
+        <div class="flashcard-filter-row">
+          <button class="filter-btn active">单词</button>
+          <button class="filter-btn">短语</button>
+          <button class="filter-btn">地道表达</button>
+        </div>
+        <div class="flashcard-filter-row">
+          <button class="filter-btn">全部</button>
+          <button class="filter-btn" style="background:#fef3c7;color:#92400e;">待复习 (12)</button>
+          <button class="filter-btn">已掌握</button>
+        </div>
+      </div>
+
+      <div class="flip-card-container" onclick="this.querySelector('.flip-card').classList.toggle('flipped')">
+        <div class="flip-card">
+          <div class="flip-front">
+            <p class="flip-title">be craving</p>
+            <p class="flip-phonetic">/kreɪv/</p>
+            <p class="flip-formula">公式: be craving + 食物/东西</p>
+            <p class="flip-meaning">非常想吃、馋（某样东西）</p>
+            <p class="flip-hint">点击卡片翻转 ↓</p>
+          </div>
+          <div class="flip-back">
+            <p style="font-size:12px;color:#6b7280;margin-bottom:8px;">字幕原句</p>
+            <p style="font-size:14px;color:#111827;margin-bottom:16px;">"I'm craving this for dinner."</p>
+            <p style="font-size:12px;color:#6b7280;margin-bottom:4px;">举一反三</p>
+            <p style="font-size:13px;color:#374151;">I'm craving noodles tonight.<br><span style="color:#9ca3af;">我今晚特别想吃面。</span></p>
+            <p style="font-size:13px;color:#374151;margin-top:8px;">She's been craving spicy soup all day.<br><span style="color:#9ca3af;">她一整天都想喝辣汤。</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flashcard-btns">
+        <button class="flashcard-btn forget">✗ 不认识</button>
+        <button class="flashcard-btn know">✓ 认识</button>
+      </div>
+
+      <p class="flashcard-progress">5 / 25 &nbsp;|&nbsp; ← 上一张 &nbsp;|&nbsp; 下一张 →</p>
+    </div>
+
+    <div style="height: 70px;"></div>
+    <nav class="bottom-nav">
+      <button class="nav-item" onclick="showPage('list')">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">首页</span>
+      </button>
+      <button class="nav-item active" onclick="showPage('flashcards')">
+        <span class="nav-icon">🔄</span>
+        <span class="nav-label">复习</span>
+      </button>
+      <button class="nav-item" onclick="showPage('favorites')">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-label">收藏</span>
+      </button>
+      <button class="nav-item" onclick="showPage('stats')">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">我的</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ==================== 页面4: 收藏 ==================== -->
+  <div id="page-favorites" class="page">
+    <nav class="navbar">
+      <button class="navbar-back" onclick="showPage('list')">← 返回</button>
+      <span class="navbar-title">我的收藏</span>
+      <span></span>
+    </nav>
+
+    <div class="favorites-page">
+      <div class="filter-row" style="margin-bottom:16px;">
+        <button class="filter-btn active">全部</button>
+        <button class="filter-btn">单词</button>
+        <button class="filter-btn">短语</button>
+        <button class="filter-btn">地道表达</button>
+      </div>
+
+      <div class="fav-item">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div>
+            <div class="fav-header">
+              <span class="fav-type tag-expression">地道表达</span>
+              <span class="fav-source">第一次尝试吃火锅</span>
+            </div>
+            <p class="fav-word">be craving</p>
+            <p class="fav-meaning">非常想吃、馋（某样东西）</p>
+            <p class="fav-date">收藏于 2026-03-15</p>
+          </div>
+          <span class="fav-star">⭐</span>
+        </div>
+      </div>
+
+      <div class="fav-item">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div>
+            <div class="fav-header">
+              <span class="fav-type tag-phrase">短语</span>
+              <span class="fav-source">第一次尝试吃火锅</span>
+            </div>
+            <p class="fav-word">hot pot place</p>
+            <p class="fav-meaning">火锅店</p>
+            <p class="fav-date">收藏于 2026-03-14</p>
+          </div>
+          <span class="fav-star">⭐</span>
+        </div>
+      </div>
+
+      <div class="fav-item">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+          <div>
+            <div class="fav-header">
+              <span class="fav-type tag-word">单词</span>
+              <span class="fav-source">职场面试技巧</span>
+            </div>
+            <p class="fav-word">literally</p>
+            <p class="fav-meaning">字面上地；确实地；简直</p>
+            <p class="fav-date">收藏于 2026-03-13</p>
+          </div>
+          <span class="fav-star">⭐</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 70px;"></div>
+    <nav class="bottom-nav">
+      <button class="nav-item" onclick="showPage('list')">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">首页</span>
+      </button>
+      <button class="nav-item" onclick="showPage('flashcards')">
+        <span class="nav-icon">🔄</span>
+        <span class="nav-label">复习</span>
+      </button>
+      <button class="nav-item active" onclick="showPage('favorites')">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-label">收藏</span>
+      </button>
+      <button class="nav-item" onclick="showPage('stats')">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">我的</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- ==================== 页面5: 统计 ==================== -->
+  <div id="page-stats" class="page">
+    <nav class="navbar">
+      <button class="navbar-back" onclick="showPage('list')">← 返回</button>
+      <span class="navbar-title">学习统计</span>
+      <span></span>
+    </nav>
+
+    <div class="stats-page">
+      <div class="stats-cards">
+        <div class="stat-card" style="background: linear-gradient(135deg, #3b82f6, #2563eb);">
+          <p class="stat-value">12</p>
+          <p class="stat-label">已学视频</p>
+        </div>
+        <div class="stat-card" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
+          <p class="stat-value">2.5h</p>
+          <p class="stat-label">学习时长</p>
+        </div>
+        <div class="stat-card" style="background: linear-gradient(135deg, #a855f7, #9333ea);">
+          <p class="stat-value">86</p>
+          <p class="stat-label">已学词汇</p>
+        </div>
+        <div class="stat-card" style="background: linear-gradient(135deg, #f97316, #ea580c);">
+          <p class="stat-value">15</p>
+          <p class="stat-label">录音数</p>
+        </div>
+      </div>
+
+      <div class="calendar-card">
+        <h3 class="calendar-title">📅 学习日历</h3>
+        <div class="calendar-grid">
+          <span class="calendar-day day-header">日</span>
+          <span class="calendar-day day-header">一</span>
+          <span class="calendar-day day-header">二</span>
+          <span class="calendar-day day-header">三</span>
+          <span class="calendar-day day-header">四</span>
+          <span class="calendar-day day-header">五</span>
+          <span class="calendar-day day-header">六</span>
+          <span class="calendar-day day-empty"></span>
+          <span class="calendar-day day-empty"></span>
+          <span class="calendar-day day-empty"></span>
+          <span class="calendar-day day-empty"></span>
+          <span class="calendar-day day-empty"></span>
+          <span class="calendar-day day-empty"></span>
+          <span class="calendar-day day-light">1</span>
+          <span class="calendar-day day-light">2</span>
+          <span class="calendar-day day-heavy">3</span>
+          <span class="calendar-day day-light">4</span>
+          <span class="calendar-day day-none">5</span>
+          <span class="calendar-day day-light">6</span>
+          <span class="calendar-day day-heavy">7</span>
+          <span class="calendar-day day-light">8</span>
+          <span class="calendar-day day-none">9</span>
+          <span class="calendar-day day-heavy">10</span>
+          <span class="calendar-day day-light">11</span>
+          <span class="calendar-day day-light">12</span>
+          <span class="calendar-day day-none">13</span>
+          <span class="calendar-day day-none">14</span>
+          <span class="calendar-day day-light">15</span>
+          <span class="calendar-day day-today">16</span>
+        </div>
+      </div>
+
+      <div class="streak-card">
+        <div>
+          <p class="streak-main">🔥 连续学习 7 天</p>
+          <p class="streak-sub">继续保持，创造新纪录！</p>
+        </div>
+        <div class="streak-best">
+          <p class="streak-best-label">最长连续</p>
+          <p class="streak-best-value">14 天</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="height: 70px;"></div>
+    <nav class="bottom-nav">
+      <button class="nav-item" onclick="showPage('list')">
+        <span class="nav-icon">🏠</span>
+        <span class="nav-label">首页</span>
+      </button>
+      <button class="nav-item" onclick="showPage('flashcards')">
+        <span class="nav-icon">🔄</span>
+        <span class="nav-label">复习</span>
+      </button>
+      <button class="nav-item" onclick="showPage('favorites')">
+        <span class="nav-icon">⭐</span>
+        <span class="nav-label">收藏</span>
+      </button>
+      <button class="nav-item active" onclick="showPage('stats')">
+        <span class="nav-icon">📊</span>
+        <span class="nav-label">我的</span>
+      </button>
+    </nav>
+  </div>
+
+  <script>
+    // 页面切换
+    function showPage(pageId) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + pageId).classList.add('active');
+    }
+
+    // 字幕模式切换
+    function setSubtitleMode(btn, mode) {
+      btn.parentElement.querySelectorAll('.sub-ctrl-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      var items = document.querySelectorAll('.subtitle-item');
+      items.forEach(item => {
+        var cn = item.querySelector('.sub-chinese');
+        var en = item.querySelector('.sub-english');
+        if (mode === 'english') {
+          cn.style.display = 'none';
+          en.style.display = 'block';
+        } else if (mode === 'chinese') {
+          cn.style.display = 'block';
+          en.style.display = 'none';
+        } else {
+          cn.style.display = 'block';
+          en.style.display = 'block';
+        }
+      });
+    }
+
+    // 循环播放
+    function toggleLoop(btn) {
+      btn.classList.toggle('active');
+    }
+
+    // 跳转到字幕
+    function seekTo(item) {
+      document.querySelectorAll('.subtitle-item').forEach(i => i.classList.remove('active'));
+      item.classList.add('active');
+    }
+
+    // 展开/收起关键词卡片
+    function toggleKeywordCard(keywordEl) {
+      var card = keywordEl.parentElement.querySelector('.keyword-card');
+      if (card.classList.contains('expanded')) {
+        card.classList.remove('expanded');
+      } else {
+        // 先关闭其他已展开的卡片
+        document.querySelectorAll('.keyword-card.expanded').forEach(c => c.classList.remove('expanded'));
+        card.classList.add('expanded');
+      }
+    }
+
+    // 关闭关键词卡片
+    function closeKeywordCard(closeBtn) {
+      var card = closeBtn.closest('.keyword-card');
+      card.classList.remove('expanded');
+    }
+
+    // 学习模式切换（听/说读/写/学）
+    function switchLearnMode(mode) {
+      // 切换 Tab 激活状态
+      document.querySelectorAll('.learn-tab').forEach(function(tab) {
+        tab.classList.remove('active');
+      });
+      // 找到对应的 tab 并激活
+      var tabs = document.querySelectorAll('.learn-tab');
+      tabs.forEach(function(tab) {
+        if (tab.getAttribute('onclick').includes("'" + mode + "'")) {
+          tab.classList.add('active');
+        }
+      });
+
+      // 切换内容区域
+      document.querySelectorAll('.learn-mode-content').forEach(function(content) {
+        content.classList.remove('active');
+      });
+      document.getElementById('mode-' + mode).classList.add('active');
+    }
+
+    // 复读速度设置
+    function setSpeed(speed, btn) {
+      btn.parentElement.querySelectorAll('.speed-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
+
+    // 写难度设置
+    function setWriteLevel(level, btn) {
+      document.querySelectorAll('.write-level-btn').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
+
+    // 知识点类型筛选
+    function setKnowledgeType(type, btn) {
+      document.querySelectorAll('.knowledge-tab').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      btn.classList.add('active');
+    }
+
+    // 跳转到字幕
+    function seekTo(item) {
+      document.querySelectorAll('.subtitle-item').forEach(function(i) {
+        i.classList.remove('active');
+      });
+      item.classList.add('active');
+    }
+
+    // 检查填空答案
+    function checkAnswer(btn) {
+      var input = btn.previousElementSibling;
+      var blank = btn.closest('.exercise-item').querySelector('.exercise-blank');
+      var userAnswer = input.value.trim().toLowerCase();
+      var correctAnswer = input.getAttribute('data-answer').toLowerCase();
+
+      if (userAnswer === correctAnswer) {
+        blank.textContent = userAnswer;
+        blank.classList.add('filled');
+        blank.classList.remove('wrong');
+        input.classList.add('correct');
+        input.disabled = true;
+        btn.textContent = '✓ 正确';
+        btn.disabled = true;
+        btn.style.background = '#10b981';
+      } else {
+        blank.classList.add('wrong');
+        input.classList.add('wrong');
+        input.style.borderColor = '#ef4444';
+        btn.textContent = '重试';
+        btn.style.background = '#ef4444';
+      }
+    }
+
+    // 播放录音
+    function playRecording(btn) {
+      btn.textContent = '⏹️ 停止';
+      btn.onclick = function() { stopRecording(this); };
+    }
+
+    function stopRecording(btn) {
+      btn.textContent = '▶️ 播放';
+      btn.onclick = function() { playRecording(this); };
+    }
+
+    // 开始录音
+    function startRecording(btn) {
+      btn.textContent = '⏹️ 录音中...';
+      btn.classList.add('recording');
+      btn.onclick = function() { stopRecordingVoice(this); };
+    }
+
+    function stopRecordingVoice(btn) {
+      btn.textContent = '🎤 录音';
+      btn.classList.remove('recording');
+      // 显示已录制
+      var recordRow = btn.parentElement;
+      var existingRecording = recordRow.querySelector('.my-recording');
+      if (!existingRecording) {
+        var span = document.createElement('span');
+        span.className = 'my-recording';
+        span.textContent = '🎵 已录制 (2.1s)';
+        recordRow.insertBefore(span, btn.nextSibling);
+      }
+      btn.onclick = function() { startRecording(this); };
+    }
+
+    // 播放录音
+    function playRecording(btn) {
+      var originalText = btn.textContent;
+      btn.textContent = '⏸️ 播放中...';
+      btn.disabled = true;
+      setTimeout(function() {
+        btn.textContent = originalText;
+        btn.disabled = false;
+      }, 2000);
+    }
+
+    // 从知识卡片跳转到字幕
+    function jumpToSubtitle(index) {
+      // 切换到听模式
+      document.querySelectorAll('.learn-tab').forEach(function(tab) {
+        tab.classList.remove('active');
+        if (tab.textContent.includes('听')) {
+          tab.classList.add('active');
+        }
+      });
+      document.querySelectorAll('.learn-mode-content').forEach(function(c) {
+        c.classList.remove('active');
+      });
+      document.getElementById('mode-listen').classList.add('active');
+
+      // 跳转到对应字幕
+      var items = document.querySelectorAll('#mode-listen .subtitle-item');
+      if (items[index]) {
+        items[index].classList.add('active');
+        setTimeout(function() {
+          items[index].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    }
+
+    // 弹窗
+    function showModal(id) {
+      document.getElementById('modal-' + id).classList.add('show');
+    }
+
+    function hideModal(id) {
+      document.getElementById('modal-' + id).classList.remove('show');
+    }
+
+    // 键盘快捷键
+    document.addEventListener('keydown', function(e) {
+      if (document.getElementById('page-flashcards').classList.contains('active')) {
+        if (e.key === ' ') {
+          e.preventDefault();
+          document.querySelector('.flip-card').classList.toggle('flipped');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

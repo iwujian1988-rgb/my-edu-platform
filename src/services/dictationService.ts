@@ -246,7 +246,7 @@ class DictationService {
     shuffle: boolean = false,
     page: number = 1,
     pageSize: number = 200
-  ): Promise<{ data: any[]; total: number }> {
+  ): Promise<{ data: any[]; total: number; bookLanguage?: string }> {
     // 对应方案：防御性编程 - 参数校验
     if (!bookId || !scopeType) {
       throw new Error('bookId和scopeType不能为空')
@@ -303,7 +303,8 @@ class DictationService {
           // count = 当前筛选范围的实际单词数（比如"不认识的"只有200个）
           return {
             data: result.data || [],
-            total: result.count || result.total || 0
+            total: result.count || result.total || 0,
+            bookLanguage: result.bookLanguage || 'en'
           }
         } finally {
           this.abortControllers.delete(key)
@@ -312,7 +313,7 @@ class DictationService {
         // 如果是AbortError，说明请求被取消，这是正常的，直接返回空数组
         if (error instanceof Error && error.name === 'AbortError') {
           console.log('ℹ️ [DictationService] 请求被取消')
-          return { data: [], total: 0 }
+          return { data: [], total: 0, bookLanguage: 'en' }
         }
 
         attemptCount++

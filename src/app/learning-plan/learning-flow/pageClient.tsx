@@ -47,6 +47,7 @@ export default function LearningFlowClient({
   const [completedOriginalWords, setCompletedOriginalWords] = useState(0)
   const [phase, setPhase] = useState<LearningPlanPhase>('legacy')
   const [isConsolidateMode, setIsConsolidateMode] = useState(false)
+  const [bookLanguage, setBookLanguage] = useState<string>('en')  // 🌍 书籍语言
 
   const hasLoadedRef = useRef(false)  // 🔥 防止重复加载
   const lastConsolidateModeRef = useRef(consolidateMode)  // 🔥 记录上次的 consolidateMode
@@ -66,7 +67,17 @@ export default function LearningFlowClient({
     try {
       setLoading(true)
 
-      const response = await getTodayTask(bookId)
+      // 🌍 并行获取今日任务和书籍语言
+      const [response, bookResponse] = await Promise.all([
+        getTodayTask(bookId),
+        fetch(`/api/books/${bookId}`).then(res => res.json()).catch(() => null)
+      ])
+
+      // 🌍 设置书籍语言
+      if (bookResponse?.data?.language) {
+        setBookLanguage(bookResponse.data.language)
+        console.log(`🌍 [LearningFlow] Book language: ${bookResponse.data.language}`)
+      }
 
       if (!response.success || !response.data) {
         toast.error('获取今日任务失败')
@@ -216,6 +227,7 @@ export default function LearningFlowClient({
           completedOriginalWords={completedOriginalWords}
           phase={phase}
           isConsolidateMode={isConsolidateMode}  // [Upgrade] 巩固模式
+          bookLanguage={bookLanguage}  // 🌍 书籍语言
         />
       ) : (
         <DictationQueue
@@ -226,6 +238,7 @@ export default function LearningFlowClient({
           completedOriginalWords={completedOriginalWords}
           phase={phase}
           isConsolidateMode={isConsolidateMode}  // [Upgrade] 巩固模式
+          bookLanguage={bookLanguage}  // 🌍 书籍语言
         />
       )}
     </>

@@ -13,7 +13,12 @@ import { markWord } from '@/services/learning-plan'
 import { useLearningPlanTTS } from '@/hooks/useLearningPlanTTS'
 import { useTheme } from '@/contexts/ThemeContext'
 import type { LearningPlanPhase } from '@/types/learning-plan'
+import { getWordLanguage, type LanguageData } from '@/types/word'
 
+/**
+ * 闪卡队列中的单词类型
+ * @description 包含单词基本信息和学习类型（新学/复习）
+ */
 interface Word {
   id: string
   word: string
@@ -29,9 +34,11 @@ interface Word {
   example_sentence_en?: string
   part_of_speech?: string
   audio_url?: string | null
-  // 多语言支持
-  kana?: string       // 日语假名
-  romaji?: string     // 日语罗马音
+  // 多语言支持（旧字段，保留兼容）
+  kana?: string
+  romaji?: string
+  // 多语言支持（新字段，使用统一定义）
+  language_data?: LanguageData
 }
 
 interface Props {
@@ -42,6 +49,7 @@ interface Props {
   completedOriginalWords?: number  // 🔧 新增：已完成单词数
   phase?: LearningPlanPhase  // [Upgrade] 两阶段系统：学习阶段
   isConsolidateMode?: boolean  // [Upgrade] 巩固模式：专注学习未掌握的单词
+  bookLanguage?: string  // 🌍 书籍语言，用于 TTS 语言检测
 }
 
 type WordStatus = 'known' | 'fuzzy' | 'unknown'
@@ -53,7 +61,8 @@ export function FlashcardQueue({
   totalOriginalWords,
   completedOriginalWords,
   phase = 'legacy',  // [Upgrade] 两阶段系统：默认 legacy 保持向后兼容
-  isConsolidateMode = false  // [Upgrade] 巩固模式
+  isConsolidateMode = false,  // [Upgrade] 巩固模式
+  bookLanguage = 'en',  // 🌍 书籍语言，默认英语
 }: Props) {
   const router = useRouter()
   const { theme, mounted } = useTheme()
@@ -351,7 +360,7 @@ export function FlashcardQueue({
       // 延迟300ms后自动朗读，确保卡片切换动画完成
       const timer = setTimeout(() => {
         if (hasUserInteractedRef.current && !isSpeakingRef.current) {
-          speak(currentWord.word, currentWord.audio_url)
+          speak(currentWord.word, currentWord.audio_url, getWordLanguage(currentWord, bookLanguage))
         }
       }, 300)
 
@@ -577,7 +586,7 @@ export function FlashcardQueue({
                         if (!hasUserInteracted) {
                           setHasUserInteracted(true)
                         }
-                        speak(currentWord?.word || '', currentWord?.audio_url)
+                        speak(currentWord?.word || '', currentWord?.audio_url, getWordLanguage(currentWord!, bookLanguage))
                       }}
                       className="w-10 h-10 flex items-center justify-center bg-[#B4F416] border-2 border-black rounded-full shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
                     >
@@ -586,11 +595,18 @@ export function FlashcardQueue({
                   </div>
 
                   {/* Part of Speech */}
-                  {currentWord.part_of_speech && (
-                    <span className="inline-block px-3 py-1.5 border-2 border-black rounded text-sm font-bold bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-white">
-                      {currentWord.part_of_speech}
-                    </span>
-                  )}
+                  {(() => {
+                    if (!currentWord.part_of_speech) return null
+                    const fr = currentWord.language_data?.fr
+                    const posDisplay = fr?.gender
+                      ? `${currentWord.part_of_speech} (${fr.gender})`
+                      : currentWord.part_of_speech
+                    return (
+                      <span className="inline-block px-3 py-1.5 border-2 border-black rounded text-sm font-bold bg-gray-100 dark:bg-slate-800 text-gray-900 dark:text-white">
+                        {posDisplay}
+                      </span>
+                    )
+                  })()}
                 </div>
 
                 {/* Footer Hint */}
@@ -647,7 +663,7 @@ export function FlashcardQueue({
                         <button
                           onClick={(e) => {
                             e.stopPropagation()
-                            speak(currentWord.example_sentence_en || '', null)
+                            speak(currentWord.example_sentence_en || '', null, 'en')
                           }}
                           className="w-7 h-7 flex items-center justify-center bg-[#B4F416] border-2 border-black rounded shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
                         >

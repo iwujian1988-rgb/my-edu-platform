@@ -3,8 +3,6 @@
 // src/app/study/[bookId]/dictation/page.tsx
 // 对应方案：Neo-Brutalism 设计稿 1:1 还原
 
-
-
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useParams, useRouter, useSearchParams } from 'next/navigation'
 import {
@@ -38,6 +36,12 @@ import { DictationScopeDialog } from '@/components/DictationScopeDialog'
 import { DictationCompleteDialog } from '@/components/DictationCompleteDialog'
 import { DictationScopeType, DICTATION_SCOPE_LABELS } from '@/types/dictation'
 
+// 统一导入多语言类型和工具函数
+import { getWordLanguage, type LanguageData } from '@/types/word'
+
+/**
+ * 听写页面单词类型
+ */
 type Word = {
   id: string
   word: string
@@ -51,7 +55,8 @@ type Word = {
   example_sentence: string
   example_sentence_en: string
   part_of_speech: string
-  audio_url?: string | null  // TTS音频URL（OSS缓存）
+  audio_url?: string | null
+  language_data?: LanguageData
 }
 
 /**
@@ -219,7 +224,7 @@ export default function DictationPageClient() {
   // Hooks
   const { stats, loading: statsLoading, getScopeOptions } = useDictationStats(bookId)
   // ⚡️ 关键修改：使用带懒加载的hook
-  const { words, loading: wordsLoading, error: wordsError, totalWords, loadMore, hasMore, isLoadingMoreRef } = useDictationWords(bookId, scopeType, false)
+  const { words, loading: wordsLoading, error: wordsError, totalWords, loadMore, hasMore, isLoadingMoreRef, bookLanguage } = useDictationWords(bookId, scopeType, false)
 
   // 🔥 懒加载：当接近末尾时自动加载下一批
   // 🔥 修复：直接使用 hook 返回的 ref，避免同步问题
@@ -480,7 +485,7 @@ export default function DictationPageClient() {
     setIsPlaying(true)
     try {
       // 使用新的 TTS Hook（有道API + OSS缓存 + Web Speech降级）
-      await speak(currentWord.word, currentWord.audio_url)
+      await speak(currentWord.word, currentWord.audio_url, getWordLanguage(currentWord, bookLanguage))
       setIsPlaying(false)
     } catch (error) {
       console.error('播放发音失败:', error)

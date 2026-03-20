@@ -1,7 +1,7 @@
 'use client'
 
 import { BaseCard, CardFrontContent, CardBackContent, CardBadge } from './BaseCard'
-import type { Word } from '@/types/word'
+import type { Word, LanguageData } from '@/types/word'
 
 /**
  * WordCard Props
@@ -19,6 +19,40 @@ export interface WordCardProps {
   audioUrl?: string | null
   /** 额外的容器类名 */
   className?: string
+}
+
+/**
+ * 获取词性显示（法语包含阴阳性）
+ */
+function getPosDisplay(word: Word): string | null {
+  if (!word.part_of_speech) return null
+
+  const fr = word.language_data?.fr
+  let pos = word.part_of_speech
+
+  // 词性缩写
+  const posMap: Record<string, string> = {
+    'noun': 'n.',
+    'verb': 'v.',
+    'adjective': 'adj.',
+    'adverb': 'adv.',
+    'pronoun': 'pron.',
+    'preposition': 'prep.',
+    'conjunction': 'conj.',
+    'interjection': 'int.',
+    'article': 'art.',
+    'character': 'char.',
+    'numeral': 'num.',
+    'determiner': 'det.',
+  }
+  pos = posMap[pos.toLowerCase()] || pos
+
+  // 法语：显示词性 + 阴阳性
+  if (fr?.gender) {
+    return `${pos} (${fr.gender})`
+  }
+
+  return pos
 }
 
 /**
@@ -40,8 +74,8 @@ export function WordCard({
       title={data.word}
       subtitle={data.phonetic}
       badge={
-        data.part_of_speech ? (
-          <CardBadge variant="custom">{data.part_of_speech}</CardBadge>
+        getPosDisplay(data) ? (
+          <CardBadge variant="custom">{getPosDisplay(data)}</CardBadge>
         ) : undefined
       }
     />

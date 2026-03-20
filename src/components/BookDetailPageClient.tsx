@@ -559,7 +559,7 @@ export function BookDetailPageClient({
     return () => {
       isMounted = false
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, [book.id]) // 只在组件挂载时执行一次
 
   // 🔥 关键修复：暂停自动保存，直到用户做出选择

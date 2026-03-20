@@ -67,17 +67,24 @@ export default async function AdminUserDetailPage({
     .from('books')
     .select('id, title')
 
-  // 获取套餐信息（通过 invitation_code）
+  // 获取套餐信息（通过 invitation_code 或 users.package_id）
   let userPackage = null
-  if ((invitationCode as any)?.package_id) {
+  const userPackageId = (user as any).package_id || (invitationCode as any)?.package_id
+  if (userPackageId) {
     const { data: pkg } = await supabase
       .from('invitation_packages')
       .select('*')
-      .eq('id', (invitationCode as any).package_id)
+      .eq('id', userPackageId)
       .single()
 
     userPackage = pkg
   }
+
+  // 获取所有套餐列表（用于权限管理）
+  const { data: allPackages } = await supabase
+    .from('invitation_packages')
+    .select('id, name, description, validity_days, feature_permissions, book_permissions, is_active')
+    .order('sort_order', { ascending: true })
 
   return (
     <div className="space-y-6">
@@ -102,6 +109,7 @@ export default async function AdminUserDetailPage({
         invitationCode={invitationCode}
         allBooks={allBooks || []}
         userPackage={userPackage}
+        allPackages={allPackages || []}
       />
     </div>
   )

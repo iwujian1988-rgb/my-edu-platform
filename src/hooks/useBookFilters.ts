@@ -208,7 +208,7 @@ export function useBookFilters(bookId?: string, options?: UseBookFiltersOptions)
       // 组件卸载时保存
       handleBeforeUnload()
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+   
   }, [bookId, options?.shouldSave]) // 🔥 添加 shouldSave 到依赖，确保 handleBeforeUnmount 能访问最新值
 
   // ⭐ 监听URL变化，同步filters状态（不用key时需要）

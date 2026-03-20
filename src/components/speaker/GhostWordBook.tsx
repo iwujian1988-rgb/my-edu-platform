@@ -152,7 +152,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
     }
 
     fetchWords()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [userId, articleId])
 
   // 加载更多生词

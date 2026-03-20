@@ -31,7 +31,7 @@ async function getProxyFetch(): Promise<typeof fetch | undefined> {
     return proxyFetch
   }
 
-  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || 'http://127.0.0.1:12334'
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || 'http://127.0.0.1:7890'
 
   try {
     const { ProxyAgent, fetch: undiciFetch } = await import('undici')
@@ -56,14 +56,20 @@ async function getProxyFetch(): Promise<typeof fetch | undefined> {
 
       const url = typeof input === 'string' ? input : input instanceof URL ? input.href : (input as Request).url
 
-      const response = await undiciFetch(url, {
-        method: init?.method,
-        headers: headers,
-        body: init?.body as any,
-        dispatcher: proxyAgent,
-      })
+      try {
+        const response = await undiciFetch(url, {
+          method: init?.method,
+          headers: headers,
+          body: init?.body as any,
+          dispatcher: proxyAgent,
+        })
 
-      return response as any
+        return response as any
+      } catch (proxyError) {
+        // 代理失败时，fallback 到普通 fetch
+        console.warn('[Supabase] Proxy fetch failed, falling back to direct fetch:', proxyError)
+        return fetch(input, init)
+      }
     }
 
     return proxyFetch

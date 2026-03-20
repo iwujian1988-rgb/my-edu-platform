@@ -59,6 +59,7 @@ interface BookRow {
   id: string
   title: string
   total_words: number
+  language?: string | null
 }
 
 // ============================================
@@ -299,7 +300,7 @@ export async function getWordsPaginated(
     const [bookResult, chaptersResult, progressResult] = await Promise.all([
       supabase
         .from('books')
-        .select('id, title, total_words')
+        .select('id, title, total_words, language')
         .eq('id', bookId)
         .single(),
       chaptersQuery,
@@ -318,6 +319,7 @@ export async function getWordsPaginated(
     const bookData = (bookResult as { data: BookRow }).data
     const bookTitle = bookData.title || 'Unknown Book'
     const totalWordsFromBook = bookData.total_words || 0
+    const bookLanguage = bookData.language || 'en'
 
     // 构建章节映射
     const chaptersData = (chaptersResult.data || []) as ChapterRow[]
@@ -361,6 +363,7 @@ export async function getWordsPaginated(
         bookTitle,
         hasThemeData,
         hasSceneData,
+        bookLanguage,
       }
     }
 
@@ -395,6 +398,7 @@ export async function getWordsPaginated(
       bookTitle,
       hasThemeData,
       hasSceneData,
+      bookLanguage,
     }
 
   } catch (error) {

@@ -2,10 +2,20 @@
 
 /**
  * 套餐列表客户端组件
+ * Neo-brutalism 风格
  */
 
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { Button } from '@/components/ui/button'
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogFooter,
+} from '@/components/ui/dialog'
+import { Plus, Pencil, Trash2, ToggleLeft, ToggleRight } from 'lucide-react'
 
 // 功能权限选项
 const FEATURE_PERMISSIONS = [
@@ -14,7 +24,8 @@ const FEATURE_PERMISSIONS = [
   { id: 'dictation', name: '听写模式' },
   { id: 'custom_book', name: '自定义词库' },
   { id: 'review_mode', name: '复习模式' },
-  { id: 'speaker', name: '雯姐学习法' }
+  { id: 'speaker', name: '雯姐学习法' },
+  { id: 'video', name: '视频学习' }
 ]
 
 // 语言包选项（雯姐学习法）
@@ -36,6 +47,13 @@ interface BookOption {
 // "全部单词书"选项
 const ALL_BOOKS_OPTION: BookOption = { id: '*', name: '全部单词书' }
 
+// 视频套餐选项
+interface VideoPackageOption {
+  id: string
+  name: string
+  language: string | null
+}
+
 interface Package {
   id: string
   name: string
@@ -43,7 +61,8 @@ interface Package {
   validity_days: number | null
   feature_permissions: string[]
   book_permissions: string[]
-  language_packages: string[]  // 新增：语言包列表
+  language_packages: string[]
+  video_package_ids: string[]
   is_active: boolean
   sort_order: number
   created_at: string
@@ -62,15 +81,16 @@ export default function PackageListClient({ initialPackages }: PackageListClient
   const [editingPackage, setEditingPackage] = useState<Package | null>(null)
   const [loading, setLoading] = useState(false)
   const [bookOptions, setBookOptions] = useState<BookOption[]>([ALL_BOOKS_OPTION])
+  const [videoPackageOptions, setVideoPackageOptions] = useState<VideoPackageOption[]>([])
 
-  // 加载单词书列表
+  // 加载单词书列表和视频套餐列表
   useEffect(() => {
-    const fetchBooks = async () => {
+    const fetchData = async () => {
+      // 加载单词书
       try {
         const response = await fetch('/api/books?all=true')
         const data = await response.json()
         if (data.books) {
-          // 将单词书转换为选项格式，并按名称排序
           const options = data.books
             .filter((book: any) => book.is_official)
             .map((book: any) => ({ id: book.id, name: book.title }))
@@ -80,8 +100,24 @@ export default function PackageListClient({ initialPackages }: PackageListClient
       } catch (error) {
         console.error('Failed to fetch books:', error)
       }
+
+      // 加载视频套餐
+      try {
+        const response = await fetch('/api/admin/video-packages')
+        const data = await response.json()
+        if (data.packages || data.items) {
+          const videoPkgs = (data.packages || data.items || []).map((pkg: any) => ({
+            id: pkg.id,
+            name: pkg.name,
+            language: pkg.language
+          }))
+          setVideoPackageOptions(videoPkgs)
+        }
+      } catch (error) {
+        console.error('Failed to fetch video packages:', error)
+      }
     }
-    fetchBooks()
+    fetchData()
   }, [])
 
   // 筛选套餐
@@ -142,50 +178,68 @@ export default function PackageListClient({ initialPackages }: PackageListClient
     }
   }
 
+  // 打开编辑弹窗
+  const handleEdit = (pkg: Package) => {
+    setEditingPackage(pkg)
+  }
+
+  // 关闭弹窗
+  const handleCloseModal = () => {
+    setShowCreateModal(false)
+    setEditingPackage(null)
+  }
+
+  // 保存成功回调
+  const handleSaveSuccess = () => {
+    handleCloseModal()
+    refreshPackages()
+  }
+
   return (
     <div>
       {/* 操作栏 */}
-      <div className="mb-4 flex items-center justify-between">
+      <div className="mb-6 flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-2">
-          <span className="text-sm text-gray-600">筛选：</span>
+          <span className="text-sm font-bold text-black dark:text-white">筛选：</span>
           <button
             onClick={() => setFilter('all')}
-            className={`px-3 py-1 rounded text-sm ${
+            className={`px-4 py-2 font-bold border-[3px] border-black dark:border-gray-600 transition-all ${
               filter === 'all'
-                ? 'bg-blue-500 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-blue-500 text-white shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]'
+                : 'bg-white dark:bg-gray-800 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
             }`}
           >
             全部
           </button>
           <button
             onClick={() => setFilter('active')}
-            className={`px-3 py-1 rounded text-sm ${
+            className={`px-4 py-2 font-bold border-[3px] border-black dark:border-gray-600 transition-all ${
               filter === 'active'
-                ? 'bg-green-500 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-green-500 text-white shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]'
+                : 'bg-white dark:bg-gray-800 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
             }`}
           >
             已启用
           </button>
           <button
             onClick={() => setFilter('inactive')}
-            className={`px-3 py-1 rounded text-sm ${
+            className={`px-4 py-2 font-bold border-[3px] border-black dark:border-gray-600 transition-all ${
               filter === 'inactive'
-                ? 'bg-gray-500 text-white'
-                : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                ? 'bg-gray-500 text-white shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]'
+                : 'bg-white dark:bg-gray-800 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
             }`}
           >
             已禁用
           </button>
         </div>
 
-        <button
+        <Button
           onClick={() => setShowCreateModal(true)}
-          className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
+          className="bg-green-500 hover:bg-green-600 text-white font-bold border-[3px] border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
         >
-          + 创建套餐
-        </button>
+          <Plus className="w-4 h-4 mr-2" />
+          创建套餐
+        </Button>
       </div>
 
       {/* 套餐列表 */}
@@ -193,35 +247,35 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         {filteredPackages.map(pkg => (
           <div
             key={pkg.id}
-            className="bg-white rounded shadow p-4 border border-gray-200"
+            className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] p-6 transition-all hover:shadow-[6px_6px_0px_0px_#000] dark:hover:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-1"
           >
-            <div className="flex items-start justify-between">
+            <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-4">
               <div className="flex-1">
-                <div className="flex items-center gap-3">
-                  <h3 className="text-lg font-semibold text-gray-900">{pkg.name}</h3>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="text-xl font-black text-black dark:text-white">{pkg.name}</h3>
                   <span
-                    className={`px-2 py-0.5 rounded text-xs ${
+                    className={`px-3 py-1 font-bold text-sm border-2 border-black dark:border-gray-500 ${
                       pkg.is_active
-                        ? 'bg-green-100 text-green-800'
-                        : 'bg-gray-100 text-gray-600'
+                        ? 'bg-green-400 text-black'
+                        : 'bg-gray-300 text-gray-700 dark:bg-gray-600 dark:text-gray-300'
                     }`}
                   >
                     {pkg.is_active ? '已启用' : '已禁用'}
                   </span>
-                  <span className="text-xs text-gray-500">
+                  <span className="text-sm font-bold text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-700 px-2 py-1 border-2 border-gray-300 dark:border-gray-600">
                     排序: {pkg.sort_order}
                   </span>
                 </div>
 
                 {pkg.description && (
-                  <p className="text-sm text-gray-600 mt-1">{pkg.description}</p>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{pkg.description}</p>
                 )}
 
-                <div className="mt-3 space-y-2">
+                <div className="mt-4 space-y-3">
                   {/* 有效期 */}
                   <div className="text-sm">
-                    <span className="text-gray-600">有效期：</span>
-                    <span className="font-medium">
+                    <span className="font-bold text-gray-700 dark:text-gray-300">有效期：</span>
+                    <span className="font-black text-black dark:text-white">
                       {pkg.validity_days
                         ? `${pkg.validity_days} 天`
                         : '永久有效'}
@@ -230,13 +284,13 @@ export default function PackageListClient({ initialPackages }: PackageListClient
 
                   {/* 功能权限 */}
                   <div className="text-sm">
-                    <span className="text-gray-600">功能权限：</span>
-                    <div className="flex flex-wrap gap-1 mt-1">
+                    <span className="font-bold text-gray-700 dark:text-gray-300">功能权限：</span>
+                    <div className="flex flex-wrap gap-2 mt-2">
                       {pkg.feature_permissions.length > 0 ? (
                         pkg.feature_permissions.map(perm => (
                           <span
                             key={perm}
-                            className="px-2 py-0.5 bg-blue-50 text-blue-700 rounded text-xs"
+                            className="px-3 py-1 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 font-bold text-xs border-2 border-blue-300 dark:border-blue-700"
                           >
                             {FEATURE_PERMISSIONS.find(f => f.id === perm)?.name || perm}
                           </span>
@@ -249,13 +303,13 @@ export default function PackageListClient({ initialPackages }: PackageListClient
 
                   {/* 单词书权限 */}
                   <div className="text-sm">
-                    <span className="text-gray-600">单词书权限：</span>
-                    <div className="flex flex-wrap gap-1 mt-1">
+                    <span className="font-bold text-gray-700 dark:text-gray-300">单词书权限：</span>
+                    <div className="flex flex-wrap gap-2 mt-2">
                       {pkg.book_permissions.length > 0 ? (
                         pkg.book_permissions.map(perm => (
                           <span
                             key={perm}
-                            className="px-2 py-0.5 bg-green-50 text-green-700 rounded text-xs"
+                            className="px-3 py-1 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200 font-bold text-xs border-2 border-green-300 dark:border-green-700"
                           >
                             {bookOptions.find(b => b.id === perm)?.name || perm}
                           </span>
@@ -269,27 +323,33 @@ export default function PackageListClient({ initialPackages }: PackageListClient
               </div>
 
               {/* 操作按钮 */}
-              <div className="flex items-center gap-2 ml-4">
+              <div className="flex items-center gap-2">
                 <button
-                  onClick={() => setEditingPackage(pkg)}
-                  className="px-3 py-1.5 text-sm bg-gray-100 text-gray-700 rounded hover:bg-gray-200"
+                  onClick={() => handleEdit(pkg)}
+                  className="px-4 py-2 font-bold text-sm bg-yellow-400 text-black border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
                 >
+                  <Pencil className="w-4 h-4 inline mr-1" />
                   编辑
                 </button>
                 <button
                   onClick={() => toggleActive(pkg)}
-                  className={`px-3 py-1.5 text-sm rounded ${
+                  className={`px-4 py-2 font-bold text-sm border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all ${
                     pkg.is_active
-                      ? 'bg-orange-100 text-orange-700 hover:bg-orange-200'
-                      : 'bg-green-100 text-green-700 hover:bg-green-200'
+                      ? 'bg-orange-400 text-black'
+                      : 'bg-green-400 text-black'
                   }`}
                 >
-                  {pkg.is_active ? '禁用' : '启用'}
+                  {pkg.is_active ? (
+                    <><ToggleRight className="w-4 h-4 inline mr-1" />禁用</>
+                  ) : (
+                    <><ToggleLeft className="w-4 h-4 inline mr-1" />启用</>
+                  )}
                 </button>
                 <button
                   onClick={() => deletePackage(pkg.id)}
-                  className="px-3 py-1.5 text-sm bg-red-100 text-red-700 rounded hover:bg-red-200"
+                  className="px-4 py-2 font-bold text-sm bg-red-500 text-white border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
                 >
+                  <Trash2 className="w-4 h-4 inline mr-1" />
                   删除
                 </button>
               </div>
@@ -298,55 +358,92 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         ))}
 
         {filteredPackages.length === 0 && (
-          <div className="text-center py-12 text-gray-500">
+          <div className="text-center py-12 text-gray-500 dark:text-gray-400 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600">
             暂无套餐数据
           </div>
         )}
       </div>
 
-      {/* 创建/编辑套餐对话框 */}
-      {(showCreateModal || editingPackage) && (
-        <PackageFormModal
-          package={editingPackage}
-          bookOptions={bookOptions}
-          onClose={() => {
-            setShowCreateModal(false)
-            setEditingPackage(null)
-          }}
-          onSave={() => {
-            setShowCreateModal(false)
-            setEditingPackage(null)
-            refreshPackages()
-          }}
-        />
-      )}
+      {/* 创建套餐弹窗 */}
+      <PackageFormDialog
+        open={showCreateModal}
+        package={null}
+        bookOptions={bookOptions}
+        videoPackageOptions={videoPackageOptions}
+        onClose={handleCloseModal}
+        onSave={handleSaveSuccess}
+      />
+
+      {/* 编辑套餐弹窗 */}
+      <PackageFormDialog
+        open={editingPackage !== null}
+        package={editingPackage}
+        bookOptions={bookOptions}
+        videoPackageOptions={videoPackageOptions}
+        onClose={handleCloseModal}
+        onSave={handleSaveSuccess}
+      />
     </div>
   )
 }
 
-// 套餐表单对话框组件
-function PackageFormModal({
+// 套餐表单弹窗组件
+function PackageFormDialog({
+  open,
   package: pkg,
   bookOptions,
+  videoPackageOptions,
   onClose,
   onSave
 }: {
+  open: boolean
   package: Package | null
   bookOptions: BookOption[]
+  videoPackageOptions: VideoPackageOption[]
   onClose: () => void
   onSave: () => void
 }) {
   const [loading, setLoading] = useState(false)
   const [formData, setFormData] = useState({
-    name: pkg?.name || '',
-    description: pkg?.description || '',
-    validity_days: pkg?.validity_days || 365,
-    feature_permissions: pkg?.feature_permissions || [],
-    book_permissions: pkg?.book_permissions || [],
-    language_packages: pkg?.language_packages || [],  // 新增
-    is_active: pkg?.is_active ?? true,
-    sort_order: pkg?.sort_order || 0
+    name: '',
+    description: '',
+    validity_days: 365,
+    feature_permissions: [] as string[],
+    book_permissions: [] as string[],
+    language_packages: [] as string[],
+    video_package_ids: [] as string[],
+    is_active: true,
+    sort_order: 0
   })
+
+  // 当编辑的套餐变化时，更新表单数据
+  useEffect(() => {
+    if (pkg) {
+      setFormData({
+        name: pkg.name,
+        description: pkg.description || '',
+        validity_days: pkg.validity_days || 365,
+        feature_permissions: pkg.feature_permissions || [],
+        book_permissions: pkg.book_permissions || [],
+        language_packages: pkg.language_packages || [],
+        video_package_ids: pkg.video_package_ids || [],
+        is_active: pkg.is_active,
+        sort_order: pkg.sort_order || 0
+      })
+    } else {
+      setFormData({
+        name: '',
+        description: '',
+        validity_days: 365,
+        feature_permissions: [],
+        book_permissions: [],
+        language_packages: [],
+        video_package_ids: [],
+        is_active: true,
+        sort_order: 0
+      })
+    }
+  }, [pkg, open])
 
   // 切换功能权限
   const toggleFeaturePermission = (permId: string) => {
@@ -361,7 +458,6 @@ function PackageFormModal({
   // 切换单词书权限
   const toggleBookPermission = (permId: string) => {
     setFormData(prev => {
-      // 如果选择"全部"，清除其他选项
       if (permId === '*') {
         return {
           ...prev,
@@ -371,7 +467,6 @@ function PackageFormModal({
         }
       }
 
-      // 如果选择其他，清除"全部"
       const newPermissions = prev.book_permissions.includes(permId)
         ? prev.book_permissions.filter(p => p !== permId)
         : prev.book_permissions.filter(p => p !== '*').concat(permId)
@@ -383,7 +478,7 @@ function PackageFormModal({
     })
   }
 
-  // 切换语言包权限（新增）
+  // 切换语言包权限
   const toggleLanguagePackage = (langId: string) => {
     setFormData(prev => ({
       ...prev,
@@ -391,6 +486,27 @@ function PackageFormModal({
         ? prev.language_packages.filter(l => l !== langId)
         : [...prev.language_packages, langId]
     }))
+  }
+
+  // 切换视频套餐权限
+  const toggleVideoPackage = (pkgId: string) => {
+    setFormData(prev => ({
+      ...prev,
+      video_package_ids: prev.video_package_ids.includes(pkgId)
+        ? prev.video_package_ids.filter(id => id !== pkgId)
+        : [...prev.video_package_ids, pkgId]
+    }))
+  }
+
+  // 语言名称映射
+  const languageNames: Record<string, string> = {
+    'en': '英语',
+    'fr': '法语',
+    'de': '德语',
+    'es': '西班牙语',
+    'ja': '日语',
+    'it': '意大利语',
+    'ru': '俄语'
   }
 
   // 提交表单
@@ -424,214 +540,262 @@ function PackageFormModal({
   }
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
-        <div className="p-6">
-          <h2 className="text-xl font-bold mb-4">
+    <Dialog open={open} onOpenChange={(isOpen) => !isOpen && onClose()}>
+      <DialogContent className="max-w-2xl max-h-[90vh] overflow-y-auto bg-white dark:bg-gray-900 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666]">
+        <DialogHeader className="border-b-[3px] border-black dark:border-gray-700 pb-4">
+          <DialogTitle className="text-2xl font-black text-black dark:text-white">
             {pkg ? '编辑套餐' : '创建套餐'}
-          </h2>
+          </DialogTitle>
+        </DialogHeader>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {/* 套餐名称 */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                套餐名称 <span className="text-red-500">*</span>
-              </label>
+        <form onSubmit={handleSubmit} className="space-y-6 py-4">
+          {/* 套餐名称 */}
+          <div>
+            <label className="block text-sm font-bold text-black dark:text-white mb-2">
+              套餐名称 <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              required
+              value={formData.name}
+              onChange={e => setFormData({ ...formData, name: e.target.value })}
+              className="w-full px-4 py-3 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white font-semibold focus:ring-2 focus:ring-green-500 focus:outline-none"
+              placeholder="如：1年基础版"
+            />
+          </div>
+
+          {/* 套餐描述 */}
+          <div>
+            <label className="block text-sm font-bold text-black dark:text-white mb-2">
+              套餐描述
+            </label>
+            <textarea
+              value={formData.description}
+              onChange={e => setFormData({ ...formData, description: e.target.value })}
+              className="w-full px-4 py-3 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white font-semibold focus:ring-2 focus:ring-green-500 focus:outline-none resize-none"
+              rows={2}
+              placeholder="套餐的详细说明"
+            />
+          </div>
+
+          {/* 有效期 */}
+          <div>
+            <label className="block text-sm font-bold text-black dark:text-white mb-2">
+              有效期（天）
+            </label>
+            <div className="flex items-center gap-4">
               <input
-                type="text"
-                required
-                value={formData.name}
-                onChange={e => setFormData({ ...formData, name: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                placeholder="如：1年基础版"
+                type="number"
+                value={formData.validity_days || ''}
+                onChange={e => setFormData({
+                  ...formData,
+                  validity_days: e.target.value ? parseInt(e.target.value) : null
+                } as any)}
+                className="w-32 px-4 py-3 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white font-semibold focus:ring-2 focus:ring-green-500 focus:outline-none"
+                placeholder="365"
               />
-            </div>
-
-            {/* 套餐描述 */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                套餐描述
-              </label>
-              <textarea
-                value={formData.description}
-                onChange={e => setFormData({ ...formData, description: e.target.value })}
-                className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                rows={2}
-                placeholder="套餐的详细说明"
-              />
-            </div>
-
-            {/* 有效期 */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-1">
-                有效期（天）
-              </label>
-              <div className="flex items-center gap-2">
+              <label className="flex items-center gap-2 cursor-pointer">
                 <input
-                  type="number"
-                  value={formData.validity_days || ''}
+                  type="checkbox"
+                  checked={formData.validity_days === null}
                   onChange={e => setFormData({
                     ...formData,
-                    validity_days: e.target.value ? parseInt(e.target.value) : null
+                    validity_days: e.target.checked ? null : 365
                   } as any)}
-                  className="w-32 px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="365"
+                  className="w-5 h-5 border-[3px] border-black dark:border-gray-600"
                 />
-                <label className="flex items-center gap-1">
+                <span className="font-bold text-black dark:text-white">永久有效</span>
+              </label>
+            </div>
+          </div>
+
+          {/* 功能权限 */}
+          <div>
+            <label className="block text-sm font-bold text-black dark:text-white mb-3">
+              功能权限
+            </label>
+            <div className="flex flex-wrap gap-2">
+              {FEATURE_PERMISSIONS.map(perm => (
+                <label
+                  key={perm.id}
+                  className={`flex items-center gap-2 px-4 py-2 font-bold border-[3px] border-black dark:border-gray-600 cursor-pointer transition-all ${
+                    formData.feature_permissions.includes(perm.id)
+                      ? 'bg-blue-500 text-white shadow-[2px_2px_0px_0px_#000]'
+                      : 'bg-white dark:bg-gray-800 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700'
+                  }`}
+                >
                   <input
                     type="checkbox"
-                    checked={formData.validity_days === null}
-                    onChange={e => setFormData({
-                      ...formData,
-                      validity_days: e.target.checked ? null : 365
-                    } as any)}
-                    className="rounded"
+                    checked={formData.feature_permissions.includes(perm.id)}
+                    onChange={() => toggleFeaturePermission(perm.id)}
+                    className="w-4 h-4"
                   />
-                  <span className="text-sm">永久有效</span>
+                  <span className="text-sm">{perm.name}</span>
                 </label>
-              </div>
+              ))}
             </div>
+          </div>
 
-            {/* 功能权限 */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                功能权限
-              </label>
-              <div className="flex flex-wrap gap-2">
-                {FEATURE_PERMISSIONS.map(perm => (
-                  <label
-                    key={perm.id}
-                    className={`flex items-center gap-1 px-3 py-1.5 rounded border cursor-pointer ${
-                      formData.feature_permissions.includes(perm.id)
-                        ? 'bg-blue-50 border-blue-500'
-                        : 'bg-gray-50 border-gray-300 hover:bg-gray-100'
-                    }`}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={formData.feature_permissions.includes(perm.id)}
-                      onChange={() => toggleFeaturePermission(perm.id)}
-                      className="rounded"
-                    />
-                    <span className="text-sm">{perm.name}</span>
-                  </label>
-                ))}
-              </div>
+          {/* 单词书权限 */}
+          <div>
+            <label className="block text-sm font-bold text-black dark:text-white mb-3">
+              单词书权限
+            </label>
+            <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto p-4 border-[3px] border-black dark:border-gray-600 bg-gray-50 dark:bg-gray-800">
+              {bookOptions.map(perm => (
+                <label
+                  key={perm.id}
+                  className={`flex items-center gap-2 px-4 py-2 font-bold border-[3px] cursor-pointer transition-all ${
+                    perm.id === '*'
+                      ? 'border-yellow-500 bg-yellow-100 dark:bg-yellow-900 text-yellow-800 dark:text-yellow-200'
+                      : formData.book_permissions.includes(perm.id)
+                        ? 'border-green-500 bg-green-100 dark:bg-green-900 text-green-800 dark:text-green-200'
+                        : 'border-black dark:border-gray-600 bg-white dark:bg-gray-700 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600'
+                  }`}
+                >
+                  <input
+                    type="checkbox"
+                    checked={formData.book_permissions.includes(perm.id)}
+                    onChange={() => toggleBookPermission(perm.id)}
+                    className="w-4 h-4"
+                  />
+                  <span className="text-sm">{perm.name}</span>
+                </label>
+              ))}
             </div>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 font-semibold">
+              共 {bookOptions.length - 1} 本单词书可选，选择"全部单词书"将自动授权所有单词书
+            </p>
+          </div>
 
-            {/* 单词书权限 */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                单词书权限
+          {/* 雯姐学习法语言包 */}
+          {formData.feature_permissions.includes('speaker') && (
+            <div className="p-4 bg-purple-100 dark:bg-purple-900 border-[3px] border-purple-500">
+              <label className="block text-sm font-bold text-purple-900 dark:text-purple-200 mb-2">
+                雯姐学习法 - 语言包配置
               </label>
-              <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto p-2 border border-gray-200 rounded">
-                {bookOptions.map(perm => (
-                  <label
-                    key={perm.id}
-                    className={`flex items-center gap-1 px-3 py-1.5 rounded border cursor-pointer ${
-                      perm.id === '*'
-                        ? 'bg-yellow-50 border-yellow-500'
-                        : formData.book_permissions.includes(perm.id)
-                          ? 'bg-green-50 border-green-500'
-                          : 'bg-gray-50 border-gray-300 hover:bg-gray-100'
-                    }`}
-                  >
-                    <input
-                      type="checkbox"
-                      checked={formData.book_permissions.includes(perm.id)}
-                      onChange={() => toggleBookPermission(perm.id)}
-                      className="rounded"
-                    />
-                    <span className="text-sm">{perm.name}</span>
-                  </label>
-                ))}
-              </div>
-              <p className="text-xs text-gray-500 mt-1">
-                共 {bookOptions.length - 1} 本单词书可选，选择"全部单词书"将自动授权所有单词书
+              <p className="text-xs text-purple-700 dark:text-purple-300 mb-3">
+                选择该套餐包含的语言包，用户购买套餐后自动获得
               </p>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                {LANGUAGE_PACKAGES.map(lang => (
+                  <label
+                    key={lang.id}
+                    className={`flex items-center gap-2 px-3 py-2 font-bold border-[3px] cursor-pointer transition-all ${
+                      formData.language_packages.includes(lang.id)
+                        ? 'border-purple-500 bg-purple-200 dark:bg-purple-800 text-purple-900 dark:text-purple-100 shadow-[2px_2px_0px_0px_#7c3aed]'
+                        : 'border-purple-300 dark:border-purple-700 bg-white dark:bg-gray-800 text-purple-900 dark:text-purple-100 hover:bg-purple-50 dark:hover:bg-gray-700'
+                    }`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={formData.language_packages.includes(lang.id)}
+                      onChange={() => toggleLanguagePackage(lang.id)}
+                      className="w-4 h-4"
+                    />
+                    <span className="text-lg">{lang.flag}</span>
+                    <span className="text-sm">{lang.name}</span>
+                  </label>
+                ))}
+              </div>
             </div>
+          )}
 
-            {/* 雯姐学习法语言包（新增） */}
-            {formData.feature_permissions.includes('speaker') && (
-              <div className="mt-4 p-4 bg-purple-50 rounded border-2 border-purple-200">
-                <label className="block text-sm font-medium text-purple-900 mb-2">
-                  🌍 雯姐学习法 - 语言包配置
-                </label>
-                <p className="text-xs text-purple-700 mb-3">
-                  选择该套餐包含的语言包，用户购买套餐后自动获得
-                </p>
-                <div className="grid grid-cols-2 gap-2">
-                  {LANGUAGE_PACKAGES.map(lang => (
+          {/* 视频套餐关联 - 复用视频模块的套餐系统 */}
+          {formData.feature_permissions.includes('video') && (
+            <div className="p-4 bg-red-100 dark:bg-red-900 border-[3px] border-red-500">
+              <label className="block text-sm font-bold text-red-900 dark:text-red-200 mb-2">
+                视频学习 - 关联视频套餐
+              </label>
+              <p className="text-xs text-red-700 dark:text-red-300 mb-3">
+                用户购买此邀请码套餐后，自动获得以下视频套餐的访问权限
+              </p>
+              {videoPackageOptions.length > 0 ? (
+                <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
+                  {videoPackageOptions.map(videoPkg => (
                     <label
-                      key={lang.id}
-                      className={`flex items-center gap-2 px-3 py-2 rounded border cursor-pointer transition-all ${
-                        formData.language_packages.includes(lang.id)
-                          ? 'bg-purple-100 border-purple-500 shadow-sm'
-                          : 'bg-white border-purple-300 hover:bg-purple-50'
+                      key={videoPkg.id}
+                      className={`flex items-center gap-2 px-4 py-2 font-bold border-[3px] cursor-pointer transition-all ${
+                        formData.video_package_ids.includes(videoPkg.id)
+                          ? 'border-red-500 bg-red-200 dark:bg-red-800 text-red-900 dark:text-red-100 shadow-[2px_2px_0px_0px_#ef4444]'
+                          : 'border-red-300 dark:border-red-700 bg-white dark:bg-gray-800 text-red-900 dark:text-red-100 hover:bg-red-50 dark:hover:bg-gray-700'
                       }`}
                     >
                       <input
                         type="checkbox"
-                        checked={formData.language_packages.includes(lang.id)}
-                        onChange={() => toggleLanguagePackage(lang.id)}
-                        className="rounded"
+                        checked={formData.video_package_ids.includes(videoPkg.id)}
+                        onChange={() => toggleVideoPackage(videoPkg.id)}
+                        className="w-4 h-4"
                       />
-                      <span className="text-lg">{lang.flag}</span>
-                      <span className="text-sm font-medium">{lang.name}</span>
+                      <span className="text-sm">
+                        {videoPkg.name}
+                        {videoPkg.language && (
+                          <span className="ml-1 text-xs opacity-70">
+                            ({languageNames[videoPkg.language] || videoPkg.language})
+                          </span>
+                        )}
+                      </span>
                     </label>
                   ))}
                 </div>
-              </div>
-            )}
+              ) : (
+                <p className="text-sm text-red-600 dark:text-red-400">
+                  暂无视频套餐可选，请先在"视频套餐管理"中创建视频套餐
+                </p>
+              )}
+              <p className="text-xs text-red-600 dark:text-red-400 mt-2 font-semibold">
+                已选择 {formData.video_package_ids.length} 个视频套餐
+              </p>
+            </div>
+          )}
 
-            {/* 其他选项 */}
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  排序
-                </label>
+          {/* 其他选项 */}
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <label className="block text-sm font-bold text-black dark:text-white mb-2">
+                排序
+              </label>
+              <input
+                type="number"
+                value={formData.sort_order}
+                onChange={e => setFormData({ ...formData, sort_order: parseInt(e.target.value) || 0 })}
+                className="w-full px-4 py-3 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white font-semibold focus:ring-2 focus:ring-green-500 focus:outline-none"
+              />
+            </div>
+
+            <div className="flex items-end">
+              <label className="flex items-center gap-2 cursor-pointer py-3">
                 <input
-                  type="number"
-                  value={formData.sort_order}
-                  onChange={e => setFormData({ ...formData, sort_order: parseInt(e.target.value) })}
-                  className="w-full px-3 py-2 border border-gray-300 rounded focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  type="checkbox"
+                  checked={formData.is_active}
+                  onChange={e => setFormData({ ...formData, is_active: e.target.checked })}
+                  className="w-5 h-5 border-[3px] border-black dark:border-gray-600"
                 />
-              </div>
-
-              <div>
-                <label className="flex items-center gap-2 mt-6">
-                  <input
-                    type="checkbox"
-                    checked={formData.is_active}
-                    onChange={e => setFormData({ ...formData, is_active: e.target.checked })}
-                    className="rounded"
-                  />
-                  <span className="text-sm font-medium text-gray-700">启用套餐</span>
-                </label>
-              </div>
+                <span className="font-bold text-black dark:text-white">启用套餐</span>
+              </label>
             </div>
+          </div>
 
-            {/* 按钮 */}
-            <div className="flex justify-end gap-2 pt-4 border-t">
-              <button
-                type="button"
-                onClick={onClose}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300"
-                disabled={loading}
-              >
-                取消
-              </button>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 disabled:opacity-50"
-                disabled={loading}
-              >
-                {loading ? '保存中...' : pkg ? '保存' : '创建'}
-              </button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
+          {/* 按钮 */}
+          <DialogFooter className="border-t-[3px] border-black dark:border-gray-700 pt-4 gap-3">
+            <button
+              type="button"
+              onClick={onClose}
+              className="px-6 py-3 font-bold bg-gray-200 dark:bg-gray-700 text-black dark:text-white border-[3px] border-black dark:border-gray-600 hover:bg-gray-300 dark:hover:bg-gray-600 transition-all"
+              disabled={loading}
+            >
+              取消
+            </button>
+            <button
+              type="submit"
+              className="px-6 py-3 font-bold bg-green-500 text-white border-[3px] border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all disabled:opacity-50"
+              disabled={loading}
+            >
+              {loading ? '保存中...' : pkg ? '保存' : '创建'}
+            </button>
+          </DialogFooter>
+        </form>
+      </DialogContent>
+    </Dialog>
   )
 }

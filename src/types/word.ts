@@ -2,6 +2,97 @@
  * 单词管理相关类型定义
  */
 
+// ============================================
+// 多语言支持类型定义
+// ============================================
+
+/** 法语单词数据 */
+export interface FrenchWordData {
+  gender?: 'm' | 'f' | 'm/f' | 'n'
+  plural?: string
+  conjugation?: Conjugation
+  feminine_form?: string
+}
+
+/** 德语单词数据 */
+export interface GermanWordData {
+  gender?: 'm' | 'f' | 'n'
+  plural?: string
+  cases?: Record<string, string>
+}
+
+/** 日语单词数据 */
+export interface JapaneseWordData {
+  kana?: string
+  romaji?: string
+  pitch_accent?: string
+}
+
+/** 西班牙语单词数据 */
+export interface SpanishWordData {
+  gender?: 'm' | 'f'
+  plural?: string
+}
+
+/** 意大利语单词数据 */
+export interface ItalianWordData {
+  gender?: 'm' | 'f'
+  plural?: string
+}
+
+/** 俄语单词数据 */
+export interface RussianWordData {
+  gender?: 'm' | 'f' | 'n'
+  cases?: Record<string, string>
+}
+
+/** 统一的语种数据结构 */
+export interface LanguageData {
+  fr?: FrenchWordData
+  de?: GermanWordData
+  ja?: JapaneseWordData
+  es?: SpanishWordData
+  it?: ItalianWordData
+  ru?: RussianWordData
+}
+
+/** 法语动词变位 */
+export interface Conjugation {
+  infinitif?: string
+  participe_passe?: string
+  participe_present?: string
+  indicatif_present?: FrenchPersons
+  indicatif_imparfait?: FrenchPersons
+  indicatif_passe_simple?: FrenchPersons
+  indicatif_futur_simple?: FrenchPersons
+  indicatif_passe_compose?: FrenchPersons
+  conditionnel_present?: FrenchPersons
+  subjonctif_present?: FrenchPersons
+  subjonctif_imparfait?: FrenchPersons
+  imperatif_present?: {
+    tu?: string
+    nous?: string
+    vous?: string
+  }
+}
+
+/** 法语人称变位 */
+export interface FrenchPersons {
+  je?: string
+  tu?: string
+  il?: string
+  elle?: string
+  on?: string
+  nous?: string
+  vous?: string
+  ils?: string
+  elles?: string
+}
+
+// ============================================
+// 单词基本信息
+// ============================================
+
 /**
  * 单词基本信息
  */
@@ -21,6 +112,8 @@ export interface Word {
   order_index: number
   created_at: string
   updated_at: string
+  // 多语言支持
+  language_data?: LanguageData
 }
 
 /**
@@ -242,4 +335,97 @@ export interface LanguageDisplayHelpers {
   getFrenchPosDisplay: (word: { part_of_speech?: string; language_data?: LanguageData }) => string
   /** 获取法语单词完整显示 */
   getFrenchWordDisplay: (word: { word: string; language_data?: LanguageData }) => string
+}
+
+// ============================================
+// TTS 多语言支持
+// ============================================
+
+/**
+ * 支持的语言类型（用于 TTS 和显示）
+ */
+export type SupportedLanguage = 'en' | 'fr' | 'ja' | 'de' | 'es' | 'it' | 'ru'
+
+/**
+ * 支持的语言列表（用于验证）
+ */
+export const SUPPORTED_LANGUAGES: readonly SupportedLanguage[] = [
+  'en', 'fr', 'ja', 'de', 'es', 'it', 'ru'
+] as const
+
+/**
+ * 判断字符串是否为有效的支持语言
+ */
+export function isValidLanguage(lang: unknown): lang is SupportedLanguage {
+  return typeof lang === 'string' && SUPPORTED_LANGUAGES.includes(lang as SupportedLanguage)
+}
+
+/**
+ * 从单词的 language_data 判断语言，回退到书籍语言
+ *
+ * @description 优先从单词的 language_data 判断语言，如果没有则使用书籍语言作为后备
+ * @param word - 单词对象，需包含 language_data 字段
+ * @param bookLanguage - 书籍语言（可选），作为后备
+ * @returns 检测到的语言代码
+ *
+ * @example
+ * // 单词有法语数据
+ * getWordLanguage({ language_data: { fr: { gender: 'm' } } }, 'en') // 返回 'fr'
+ *
+ * @example
+ * // 单词无语言数据，使用书籍语言
+ * getWordLanguage({ language_data: null }, 'fr') // 返回 'fr'
+ *
+ * @example
+ * // 单词无语言数据，书籍语言也无效，默认英语
+ * getWordLanguage({ language_data: null }, undefined) // 返回 'en'
+ */
+export function getWordLanguage(
+  word: { language_data?: LanguageData | null },
+  bookLanguage?: string | null
+): SupportedLanguage {
+  // 优先从单词的 language_data 判断
+  if (word.language_data?.fr) return 'fr'
+  if (word.language_data?.ja) return 'ja'
+  if (word.language_data?.de) return 'de'
+  if (word.language_data?.es) return 'es'
+  if (word.language_data?.it) return 'it'
+  if (word.language_data?.ru) return 'ru'
+
+  // 回退到书籍语言（需验证是否有效）
+  if (isValidLanguage(bookLanguage)) {
+    return bookLanguage
+  }
+
+  // 默认英语
+  return 'en'
+}
+
+/**
+ * 语言代码映射（用于 Web Speech API）
+ */
+export const LANGUAGE_CODE_MAP: Record<SupportedLanguage, string> = {
+  en: 'en-US',
+  fr: 'fr-FR',
+  ja: 'ja-JP',
+  de: 'de-DE',
+  es: 'es-ES',
+  it: 'it-IT',
+  ru: 'ru-RU',
+} as const
+
+/**
+ * 获取 Web Speech API 语言代码
+ *
+ * @param language - 支持的语言
+ * @param type - 发音类型（仅对英语有效）：'1'=英音, '2'=美音
+ */
+export function getSpeechLanguageCode(
+  language: SupportedLanguage,
+  type?: '1' | '2'
+): string {
+  if (language === 'en') {
+    return type === '1' ? 'en-GB' : 'en-US'
+  }
+  return LANGUAGE_CODE_MAP[language]
 }

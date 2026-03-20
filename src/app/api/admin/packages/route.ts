@@ -39,7 +39,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: '获取套餐列表失败' }, { status: 500 })
     }
 
-    return NextResponse.json({ packages: data })
+    return NextResponse.json({ packages: data, items: data, total: data.length })
   } catch (error: any) {
     console.error('Error in packages API:', error)
 
@@ -65,6 +65,7 @@ export async function POST(request: NextRequest) {
       validity_days,
       feature_permissions,
       book_permissions,
+      video_package_ids,
       is_active = true,
       sort_order = 0
     } = body

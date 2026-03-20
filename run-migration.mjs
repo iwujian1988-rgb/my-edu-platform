@@ -1,4 +1,7 @@
-// 执行数据库迁移：添加 last_accessed_at 字段
+/**
+ * 执行多语言迁移
+ */
+
 import { createClient } from '@supabase/supabase-js'
 
 const supabaseUrl = 'https://snnrjnpcmdsdlyldvvps.supabase.co'
@@ -6,49 +9,78 @@ const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 
 const supabase = createClient(supabaseUrl, supabaseKey)
 
-async function runMigration() {
-  console.log('🚀 开始执行迁移：添加 last_accessed_at 字段\n')
+async function checkSchema() {
+  console.log('🔍 检查数据库 schema...\n')
 
-  try {
-    // 注意：Supabase JS 客户端不支持直接执行 DDL 语句
-    // 我们需要通过 rpc 调用或者在控制台执行
-    // 这里我们尝试一个测试查询来验证
+  // 检查 books.language
+  const { data: booksSample, error: booksError } = await supabase
+    .from('books')
+    .select('id, language')
+    .limit(1)
 
-    console.log('⚠️  Supabase JS 客户端无法直接执行 ALTER TABLE 语句')
-    console.log('📝 请在 Supabase 控制台执行以下 SQL：\n')
+  const hasBooksLanguage = !booksError && booksSample?.[0] && 'language' in booksSample[0]
+  console.log(`books.language: ${hasBooksLanguage ? '✅ 存在' : '❌ 不存在'}`)
 
-    const sql = `-- 添加 last_accessed_at 字段到 user_book_preferences 表
--- 用于追踪用户最近访问的词库
+  // 检查 words.language_data
+  const { data: wordsSample, error: wordsError } = await supabase
+    .from('words')
+    .select('id, language_data')
+    .limit(1)
 
-ALTER TABLE user_book_preferences
-ADD COLUMN IF NOT EXISTS last_accessed_at TIMESTAMPTZ DEFAULT NOW();
+  const hasWordsLanguageData = !wordsError && wordsSample?.[0] && 'language_data' in wordsSample[0]
+  console.log(`words.language_data: ${hasWordsLanguageData ? '✅ 存在' : '❌ 不存在'}`)
 
--- 创建索引以提高查询性能
-CREATE INDEX IF NOT EXISTS idx_user_book_preferences_last_accessed
-ON user_book_preferences(user_id, last_accessed_at DESC);
+  return { hasBooksLanguage, hasWordsLanguageData }
+}
 
--- 添加注释
-COMMENT ON COLUMN user_book_preferences.last_accessed_at IS '用户最近访问该词库的时间';`
+async function addLanguageDataColumn() {
+  console.log('\n📝 尝试添加 language_data 字段...\n')
 
-    console.log(sql)
+  // Supabase 不支持直接执行 DDL，需要提示用户手动执行
+  console.log('⚠️  Supabase JS 客户端不支持执行 DDL 语句')
+  console.log('请手动在 Supabase Dashboard 执行以下 SQL:\n')
+  console.log('---')
+  console.log(`
+ALTER TABLE words
+ADD COLUMN IF NOT EXISTS language_data JSONB DEFAULT NULL;
 
-    // 验证字段是否添加成功（假设已手动执行）
-    console.log('\n🔍 验证字段是否已添加...')
-    const { data, error } = await supabase
-      .from('user_book_preferences')
-      .select('user_id, book_id, last_accessed_at')
-      .limit(1)
+CREATE INDEX IF NOT EXISTS idx_words_language_data ON words USING GIN (language_data);
 
-    if (error) {
-      console.log('❌ 字段尚未添加，请先在控制台执行上述 SQL')
-    } else {
-      console.log('✅ 字段已成功添加！')
-      console.log('📊 查询结果:', data)
-    }
+-- 迁移现有法语字段
+UPDATE words
+SET language_data = jsonb_strip_nulls(jsonb_build_object(
+  'fr', jsonb_build_object(
+    'gender', gender,
+    'plural', plural,
+    'conjugation', conjugation,
+    'feminine_form', feminine_form
+  )
+))
+WHERE gender IS NOT NULL
+   OR plural IS NOT NULL
+   OR conjugation IS NOT NULL
+   OR feminine_form IS NOT NULL;
+`)
+  console.log('---\n')
+}
 
-  } catch (err) {
-    console.error('❌ 发生异常:', err.message)
+async function main() {
+  const { hasBooksLanguage, hasWordsLanguageData } = await checkSchema()
+
+  if (!hasBooksLanguage || !hasWordsLanguageData) {
+    await addLanguageDataColumn()
+    console.log('执行完 SQL 后，重新运行此脚本验证')
+  } else {
+    console.log('\n✅ 所有字段已就绪!')
+
+    // 统计
+    const { count: wordsWithLangData } = await supabase
+      .from('words')
+      .select('*', { count: 'exact', head: true })
+      .not('language_data', 'is', null)
+
+    console.log(`已有 ${wordsWithLangData} 个单词包含 language_data`)
   }
 }
 
-runMigration()
+main().catch(console.error)

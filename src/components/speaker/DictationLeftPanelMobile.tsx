@@ -1,22 +1,22 @@
 /**
- * Step 2 听写训练 - 移动端左栏组件（横向滚动卡片）
+ * Step 2 听写训练 - 移动端左栏组件（单卡片 + 导航按钮）
  *
  * 严格按照三个文档实现：
  * - shangwenjie.md 第 2.4-B 节（产品需求）
  * - TECHNICAL_MODIFICATION_PLAN.md（技术方案）
  *
  * 核心功能：
- * 1. 句子卡片横向滚动（一张一张，scroll-snap）
+ * 1. 单卡片显示当前句子（移除横向滚动，避免键盘问题）
  * 2. 全局遮罩开关
  * 3. 移动端：长按临时透视
  * 4. 播放按钮（每个卡片右侧）
- * 5. 滚动同步通知父组件
+ * 5. 左右导航按钮切换句子
  */
 
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
-import { Play, Volume2, ChevronLeft, ChevronRight } from 'lucide-react'
+import { Play, ChevronLeft, ChevronRight } from 'lucide-react'
 import type { SpeakerSentence } from '@/types/speaker'
 import type { SentenceMaskState } from '@/hooks/useSpeakerDictationV2'
 
@@ -30,11 +30,11 @@ interface DictationLeftPanelMobileProps {
   onToggleGlobalMask: () => void
   onPlaySentence: (sentenceIndex: number) => void
   onSelectSentence: (sentenceIndex: number) => void
-  onScrollToSentence?: (index: number) => void  // 新增：滚动时通知父组件
+  onScrollToSentence?: (index: number) => void  // 新增：切换句子时通知父组件
 }
 
 /**
- * 单个句子卡片（移动端横向滚动版本）
+ * 单个句子卡片（移动端版本）
  */
 function SentenceCard({
   sentence,
@@ -93,16 +93,13 @@ function SentenceCard({
   return (
     <div
       className={`
-        flex-shrink-0 w-[85vw] max-w-md p-3 rounded-sm border-2 transition-all duration-200
+        w-full p-3 rounded-sm border-2 transition-all duration-200
         ${isActive
           ? 'border-black dark:border-gray-400 bg-[#B4F416]/10 dark:bg-[#B4F416]/5 shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]'
           : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:border-black dark:hover:border-gray-400'
         }
         ${maskState.isPlayed ? 'opacity-60' : ''}
       `}
-      style={{
-        scrollSnapAlign: 'center'  // scroll-snap 关键属性
-      }}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
       onTouchCancel={handleTouchCancel}
@@ -168,7 +165,8 @@ function SentenceCard({
 }
 
 /**
- * 移动端左栏主组件（横向滚动）
+ * 移动端左栏主组件（单卡片 + 导航按钮）
+ * 移除了横向滚动交互，只保留按钮切换，避免键盘弹出时的滚动问题
  */
 export function DictationLeftPanelMobile({
   sentences,
@@ -182,83 +180,23 @@ export function DictationLeftPanelMobile({
   onSelectSentence,
   onScrollToSentence
 }: DictationLeftPanelMobileProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const scrollTimerRef = useRef<NodeJS.Timeout | null>(null)
+  // 当前激活的句子
+  const activeSentence = sentences[activeSentenceIndex]
+  const activeMaskState = sentenceMasks[activeSentenceIndex]
+  const isPlayingSentence = activeSentenceIndex === currentPlayingSentence
 
-  // ========================================
-  // 监听横向滚动，通知父组件当前激活的句子
-  // ========================================
-  useEffect(() => {
-    if (!containerRef.current || !onScrollToSentence) return
-
-    const container = containerRef.current
-
-    const handleScroll = () => {
-      // 使用防抖来避免频繁更新
-      if (scrollTimerRef.current) {
-        clearTimeout(scrollTimerRef.current)
-      }
-
-      scrollTimerRef.current = setTimeout(() => {
-        const scrollLeft = container.scrollLeft
-        const cardWidth = container.firstChild?.clientWidth || 0
-        const currentIndex = Math.round(scrollLeft / cardWidth)
-
-        if (currentIndex >= 0 && currentIndex < sentences.length) {
-          onScrollToSentence(currentIndex)
-        }
-      }, 100)
+  // 切换到上一句
+  const handlePrev = () => {
+    if (activeSentenceIndex > 0 && onScrollToSentence) {
+      onScrollToSentence(activeSentenceIndex - 1)
     }
-
-    container.addEventListener('scroll', handleScroll)
-
-    return () => {
-      container.removeEventListener('scroll', handleScroll)
-      if (scrollTimerRef.current) {
-        clearTimeout(scrollTimerRef.current)
-      }
-    }
-  }, [sentences.length, onScrollToSentence])
-
-  // ========================================
-  // 当 activeSentenceIndex 变化时，自动滚动到对应卡片
-  // ========================================
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    const container = containerRef.current
-    const cardWidth = container.firstChild?.clientWidth || 0
-    const targetScrollLeft = activeSentenceIndex * cardWidth
-
-    container.scrollTo({
-      left: targetScrollLeft,
-      behavior: 'smooth'
-    })
-  }, [activeSentenceIndex])
-
-  // ========================================
-  // 左右导航按钮
-  // ========================================
-  const scrollPrev = () => {
-    if (!containerRef.current) return
-    const container = containerRef.current
-    const cardWidth = container.firstChild?.clientWidth || 0
-
-    container.scrollBy({
-      left: -cardWidth,
-      behavior: 'smooth'
-    })
   }
 
-  const scrollNext = () => {
-    if (!containerRef.current) return
-    const container = containerRef.current
-    const cardWidth = container.firstChild?.clientWidth || 0
-
-    container.scrollBy({
-      left: cardWidth,
-      behavior: 'smooth'
-    })
+  // 切换到下一句
+  const handleNext = () => {
+    if (activeSentenceIndex < sentences.length - 1 && onScrollToSentence) {
+      onScrollToSentence(activeSentenceIndex + 1)
+    }
   }
 
   return (
@@ -294,71 +232,58 @@ export function DictationLeftPanelMobile({
         </p>
       </div>
 
-      {/* 句子卡片横向滚动区域 */}
-      <div className="relative">
-        {/* 左右导航按钮 - Neo-Brutalism */}
+      {/* 单卡片容器 + 左右导航 */}
+      <div className="relative flex items-center justify-center p-4">
+        {/* 左导航按钮 */}
         <button
-          onClick={scrollPrev}
+          onClick={handlePrev}
           disabled={activeSentenceIndex === 0}
-          className="absolute left-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-sm bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] border-2 border-black dark:border-gray-600 text-gray-900 dark:text-white hover:bg-[#B4F416] hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          className="absolute left-2 z-10 p-2 rounded-sm bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] border-2 border-black dark:border-gray-600 text-gray-900 dark:text-white hover:bg-[#B4F416] hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-all"
           aria-label="上一句"
         >
           <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
         </button>
 
+        {/* 当前句子卡片 */}
+        <div className="w-[85vw] max-w-md">
+          {activeSentence && activeMaskState && (
+            <SentenceCard
+              sentence={activeSentence}
+              index={activeSentenceIndex}
+              maskState={activeMaskState}
+              globalMaskEnabled={globalMaskEnabled}
+              isActive={true}
+              isPlaying={isPlayingSentence}
+              onPlay={() => onPlaySentence(activeSentenceIndex)}
+            />
+          )}
+        </div>
+
+        {/* 右导航按钮 */}
         <button
-          onClick={scrollNext}
+          onClick={handleNext}
           disabled={activeSentenceIndex === sentences.length - 1}
-          className="absolute right-2 top-1/2 -translate-y-1/2 z-10 p-2 rounded-sm bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] border-2 border-black dark:border-gray-600 text-gray-900 dark:text-white hover:bg-[#B4F416] hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          className="absolute right-2 z-10 p-2 rounded-sm bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] border-2 border-black dark:border-gray-600 text-gray-900 dark:text-white hover:bg-[#B4F416] hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-all"
           aria-label="下一句"
         >
           <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
         </button>
+      </div>
 
-        {/* 横向滚动容器 */}
-        <div
-          ref={containerRef}
-          className="flex overflow-x-auto gap-4 p-4 snap-x snap-mandatory scrollbar-hide"
-          style={{
-            scrollbarWidth: 'none',  // Firefox
-            msOverflowStyle: 'none'   // IE/Edge
-          }}
-        >
-          {sentences.map((sentence, index) => {
-            const maskState = sentenceMasks[index]
-            const isActive = index === activeSentenceIndex
-            const isPlaying = index === currentPlayingSentence
-
-            return (
-              <SentenceCard
-                key={sentence.id || index}
-                sentence={sentence}
-                index={index}
-                maskState={maskState}
-                globalMaskEnabled={globalMaskEnabled}
-                isActive={isActive}
-                isPlaying={isPlaying}
-                onPlay={() => onPlaySentence(index)}
-              />
-            )
-          })}
-        </div>
-
-        {/* 进度指示器 - Neo-Brutalism */}
-        <div className="flex justify-center gap-1 pb-3">
-          {sentences.map((_, index) => (
-            <div
-              key={index}
-              className={`
-                h-1.5 rounded-sm transition-all duration-200
-                ${index === activeSentenceIndex
-                  ? 'w-6 bg-black dark:bg-gray-400'
-                  : 'w-1.5 bg-gray-300 dark:bg-gray-600'
-                }
-              `}
-            />
-          ))}
-        </div>
+      {/* 进度指示器 - Neo-Brutalism */}
+      <div className="flex justify-center gap-1 pb-3">
+        {sentences.map((_, index) => (
+          <div
+            key={index}
+            className={`
+              h-1.5 rounded-sm transition-all duration-200
+              ${index === activeSentenceIndex
+                ? 'w-6 bg-black dark:bg-gray-400'
+                : 'w-1.5 bg-gray-300 dark:bg-gray-600'
+              }
+            `}
+          />
+        ))}
       </div>
     </div>
   )

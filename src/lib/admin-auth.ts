@@ -402,3 +402,38 @@ export async function requireAdminForAPI(): Promise<AdminUser> {
   return admin
 }
 
+/**
+ * API路由专用：安全的管理员验证
+ * 返回结果对象而不是抛出错误，方便API路由使用
+ * @returns { success: boolean, admin?, error?, code?, status? }
+ */
+export async function checkAdminForAPI(): Promise<{
+  success: boolean
+  admin?: AdminUser
+  error?: string
+  code?: string
+  status?: number
+}> {
+  try {
+    const admin = await getCurrentAdmin()
+
+    if (!admin) {
+      return {
+        success: false,
+        error: '未授权访问',
+        code: 'UNAUTHORIZED',
+        status: 401,
+      }
+    }
+
+    return { success: true, admin }
+  } catch (error) {
+    return {
+      success: false,
+      error: '服务器错误',
+      code: 'INTERNAL_ERROR',
+      status: 500,
+    }
+  }
+}
+

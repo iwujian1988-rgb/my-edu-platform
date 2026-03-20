@@ -3,6 +3,7 @@
 
 import { create } from 'zustand'
 import { persist, createJSONStorage } from 'zustand/middleware'
+import { type LanguageData } from '@/types/word'
 
 /**
  * 单词类型定义
@@ -15,6 +16,7 @@ export type Word = {
   uk_phonetic?: string
   us_phonetic?: string
   part_of_speech?: string
+  language_data?: LanguageData
 }
 
 /**

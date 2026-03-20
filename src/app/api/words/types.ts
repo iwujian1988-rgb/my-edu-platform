@@ -94,6 +94,9 @@ export interface GetWordsResponse {
 
   /** 是否有场景数据 */
   hasSceneData?: boolean
+
+  /** 书籍语言 (en, fr, ja, de, es, it, ru) */
+  bookLanguage?: string
 }
 
 /**

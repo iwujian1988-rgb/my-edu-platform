@@ -11,6 +11,7 @@ import { FEATURE_PERMISSIONS } from '@/lib/permission-constants'
 import { FlashcardStatsBar } from '@/components/FlashcardStatsBar'
 import { FlashcardScopeDialog } from '@/components/FlashcardScopeDialog'
 import { validateScope, validateHashIndex } from '@/lib/urlValidation'
+import { getWordLanguage, type LanguageData, type SupportedLanguage } from '@/types/word'
 
 // ⭐ sessionStorage 工具函数
 const SESSION_STORAGE_KEY = (bookId: string) => `flashcards_position_${bookId}`
@@ -88,6 +89,7 @@ function clearSessionPosition(bookId: string) {
   }
 }
 
+// 单词类型定义
 type Word = {
   id: string
   word: string
@@ -102,11 +104,27 @@ type Word = {
   example_sentence_en: string
   part_of_speech: string
   audio_url?: string | null
+  language_data?: LanguageData
 }
 
 type WordProgress = {
   word_id: string
   status: 'new' | 'known' | 'fuzzy' | 'unknown'
+}
+
+/**
+ * 获取词性显示文本（支持法语阴阳性）
+ * @param word - 单词对象
+ * @returns 词性显示文本，如 "n. (m)" 或 "n. (f)"
+ */
+function getPosDisplay(word: Word | undefined | null): string {
+  if (!word) return 'n.'
+  const pos = word.part_of_speech || 'n.'
+  const fr = word.language_data?.fr
+  if (fr?.gender) {
+    return `${pos} (${fr.gender})`
+  }
+  return pos
 }
 
 export default function FlashcardsPageClient() {
@@ -155,6 +173,7 @@ export default function FlashcardsPageClient() {
   const [isFlipped, setIsFlipped] = useState(false)
   const [loading, setLoading] = useState(true)
   const [bookTitle, setBookTitle] = useState('')
+  const [bookLanguage, setBookLanguage] = useState<string>('en')
   const [currentScope, setCurrentScope] = useState(scope)
   const [showCompleteDialog, setShowCompleteDialog] = useState(false)
 
@@ -257,6 +276,12 @@ export default function FlashcardsPageClient() {
         // 设置书名（从API返回）
         if (wordsData.bookTitle) {
           setBookTitle(wordsData.bookTitle)
+        }
+
+        // 设置书籍语言（从API返回）
+        if (wordsData.bookLanguage) {
+          setBookLanguage(wordsData.bookLanguage)
+          console.log(`🌍 Book language: ${wordsData.bookLanguage}`)
         }
 
         // 只获取当前加载单词的进度（不是全部单词）
@@ -776,7 +801,7 @@ export default function FlashcardsPageClient() {
         // 再次检查用户交互状态和播放状态
         if (hasUserInteractedRef.current && !isSpeakingRef.current) {
           console.log('Auto-speak executing speak() for:', currentWord.word)
-          speak(currentWord.word, currentWord.audio_url)
+          speak(currentWord.word, currentWord.audio_url, getWordLanguage(currentWord, bookLanguage))
         } else {
           console.log('Auto-speak canceled: hasUserInteractedRef=', hasUserInteractedRef.current, 'isSpeakingRef=', isSpeakingRef.current)
         }
@@ -1236,7 +1261,7 @@ export default function FlashcardsPageClient() {
                           if (!hasUserInteracted) {
                             setHasUserInteracted(true)
                           }
-                          speak(currentWord?.word || '', currentWord?.audio_url)
+                          speak(currentWord?.word || '', currentWord?.audio_url, getWordLanguage(currentWord!, bookLanguage))
                         }}
                         className="w-10 h-10 flex items-center justify-center bg-[#B4F416] border-2 border-black rounded-full shadow-[2px_2px_0px_0px_#000] active:translate-y-0.5 active:shadow-none transition-all"
                       >
@@ -1246,7 +1271,7 @@ export default function FlashcardsPageClient() {
 
                     {/* Part of Speech */}
                     <span className="inline-block px-3 py-1.5 border-2 border-black rounded text-sm font-bold transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-primary)' }}>
-                      {currentWord.part_of_speech || 'n.'}
+                      {getPosDisplay(currentWord)}
                     </span>
                   </div>
 
@@ -1420,7 +1445,7 @@ export default function FlashcardsPageClient() {
 
                 <div className="mb-4">
                   <span className="inline-block px-2 py-1 border-2 border-black rounded text-xs font-bold transition-colors duration-300" style={{ backgroundColor: 'var(--bg-tertiary)', color: 'var(--text-primary)' }}>
-                    {words[currentIndex + 1]?.part_of_speech || 'n.'}
+                    {getPosDisplay(words[currentIndex + 1])}
                   </span>
                 </div>
               </div>

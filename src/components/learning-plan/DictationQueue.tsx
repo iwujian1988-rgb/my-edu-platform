@@ -13,17 +13,24 @@ import { markWord } from '@/services/learning-plan'
 import { useLearningPlanTTS } from '@/hooks/useLearningPlanTTS'
 import { useTheme } from '@/contexts/ThemeContext'
 import type { LearningPlanPhase } from '@/types/learning-plan'
+import { getWordLanguage, type LanguageData } from '@/types/word'
 
+/**
+ * 听写队列中的单词类型
+ * @description 包含单词基本信息和学习类型（新学/复习）
+ */
 interface Word {
   id: string
   word: string
   phonetic?: string
   meaning?: string
   type: 'new' | 'review'
-  audio_url?: string | null  // 🔧 添加 audio_url 属性
-  // 多语言支持
-  kana?: string       // 日语假名
-  romaji?: string     // 日语罗马音
+  audio_url?: string | null
+  // 多语言支持（旧字段）
+  kana?: string
+  romaji?: string
+  // 多语言支持（新字段，使用统一定义）
+  language_data?: LanguageData
 }
 
 interface Props {
@@ -34,6 +41,7 @@ interface Props {
   completedOriginalWords?: number
   phase?: LearningPlanPhase
   isConsolidateMode?: boolean  // [Upgrade] 巩固模式
+  bookLanguage?: string  // 🌍 书籍语言，用于 TTS
 }
 
 export function DictationQueue({
@@ -43,7 +51,8 @@ export function DictationQueue({
   totalOriginalWords,
   completedOriginalWords,
   phase = 'legacy',
-  isConsolidateMode = false  // [Upgrade] 巩固模式
+  isConsolidateMode = false,  // [Upgrade] 巩固模式
+  bookLanguage = 'en',  // 🌍 书籍语言，默认英语
 }: Props) {
   const router = useRouter()
   const { theme, mounted } = useTheme()
@@ -237,7 +246,7 @@ export function DictationQueue({
 
     setHasPlayedOnce(true)
     hasPlayedOnceRef.current = true
-    speak(wordToPlay.word, wordToPlay.audio_url)
+    speak(wordToPlay.word, wordToPlay.audio_url, getWordLanguage(wordToPlay, bookLanguage))
 
     // 🔧 播放后聚焦输入框
     setTimeout(() => {
@@ -289,7 +298,7 @@ export function DictationQueue({
 
         if (!hasPlayedOnceRef.current && currentWord) {
           console.log('[DictationQueue] 🎵 自动播放发音:', currentWord.word)
-          speak(currentWord.word, currentWord.audio_url)
+          speak(currentWord.word, currentWord.audio_url, getWordLanguage(currentWord, bookLanguage))
           setHasPlayedOnce(true)
           hasPlayedOnceRef.current = true
 

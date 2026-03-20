@@ -17,7 +17,7 @@
 'use client'
 
 import { useRef, useEffect, useState } from 'react'
-import { Play } from 'lucide-react'
+import { Play, ChevronLeft, ChevronRight } from 'lucide-react'
 import type { SpeakerSentence } from '@/types/speaker'
 import { parseSentenceTokens } from '@/lib/speaker-utils'
 import type { WordInputState } from '@/hooks/useSpeakerDictationV2'
@@ -67,6 +67,8 @@ function SentenceInput({
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
   const [checkResults, setCheckResults] = useState<{[key: number]: boolean}>({})
+  // 移动端：是否已激活输入模式（用户点击后才开始聚焦输入框）
+  const [isInputActive, setIsInputActive] = useState(false)
 
   // 解析句子为 tokens（单词 + 标点）
   const tokens = parseSentenceTokens(sentence.text_en)
@@ -95,19 +97,20 @@ function SentenceInput({
     setCheckResults(results)
   }
 
-  // 自动聚焦到当前输入框
-  useEffect(() => {
-    if (!isActive || !containerRef.current) return
+  // 激活输入模式并聚焦到第一个输入框
+  const handleActivateInput = () => {
+    setIsInputActive(true)
+    // 延迟聚焦，等待状态更新
+    setTimeout(() => {
+      const firstInput = containerRef.current?.querySelector('input') as HTMLInputElement
+      firstInput?.focus()
+    }, 50)
+  }
 
-    const focusedInput = containerRef.current.querySelector('input:focus') as HTMLInputElement
-    if (!focusedInput) {
-      const targetIndex = wordInputs.findIndex(w => w.isFocused)
-      if (targetIndex >= 0) {
-        const input = containerRef.current.querySelectorAll('input')[targetIndex] as HTMLInputElement
-        input?.focus()
-      }
-    }
-  }, [isActive, wordInputs])
+  // 句子切换时重置激活状态（新句子需要重新激活）
+  useEffect(() => {
+    setIsInputActive(false)
+  }, [index])
 
   /**
    * 处理输入框变化
@@ -249,8 +252,26 @@ function SentenceInput({
       </div>
 
       {/* 输入流区域 */}
-      <div className="flex flex-wrap items-center gap-x-2 gap-y-3 leading-relaxed">
-        {tokens.map((token, tokenIndex) => {
+      <div className="relative">
+        {/* 未激活时的覆盖层 - 点击激活输入模式 */}
+        {!isInputActive && (
+          <div
+            onClick={handleActivateInput}
+            className="absolute inset-0 z-10 flex items-center justify-center bg-white/80 dark:bg-gray-800/80 backdrop-blur-[1px] cursor-pointer rounded-sm border-2 border-dashed border-gray-300 dark:border-gray-600 hover:border-[#B4F416] hover:bg-[#B4F416]/10 transition-all"
+          >
+            <div className="text-center p-4">
+              <div className="text-sm font-mono font-black text-gray-700 dark:text-gray-300 uppercase tracking-wider">
+                👆 点击开始输入
+              </div>
+              <div className="text-xs font-mono text-gray-500 dark:text-gray-400 mt-1">
+                点击后弹出键盘
+              </div>
+            </div>
+          </div>
+        )}
+
+        <div className="flex flex-wrap items-center gap-x-2 gap-y-3 leading-relaxed">
+          {tokens.map((token, tokenIndex) => {
           const wordIndex = tokens.slice(0, tokenIndex).filter(t => t.type === 'word' && !t.skipInput).length
 
           if (token.type === 'punctuation') {
@@ -327,6 +348,7 @@ function SentenceInput({
             )
           }
         })}
+        </div>
       </div>
 
       {/* 操作提示 */}
@@ -338,7 +360,8 @@ function SentenceInput({
 }
 
 /**
- * 移动端右栏主组件（横向滚动）
+ * 移动端右栏主组件（单卡片 + 导航按钮）
+ * 移除了横向滚动交互，只保留按钮切换，避免键盘弹出时的滚动问题
  */
 export function DictationRightPanelMobile({
   sentences,
@@ -354,85 +377,66 @@ export function DictationRightPanelMobile({
   onScrollToSentence,
   onSentenceFocus
 }: DictationRightPanelMobileProps) {
-  const containerRef = useRef<HTMLDivElement>(null)
-  const scrollTimerRef = useRef<NodeJS.Timeout | null>(null)
+  // 当前激活的句子
+  const activeSentence = sentences[activeSentenceIndex]
+  const isPlayingSentence = activeSentenceIndex === currentPlayingSentence
 
-  useEffect(() => {
-    if (!containerRef.current || !onScrollToSentence) return
-
-    const container = containerRef.current
-
-    const handleScroll = () => {
-      if (scrollTimerRef.current) {
-        clearTimeout(scrollTimerRef.current)
-      }
-
-      scrollTimerRef.current = setTimeout(() => {
-        const scrollLeft = container.scrollLeft
-        const cardWidth = container.firstChild?.clientWidth || 0
-        const currentIndex = Math.round(scrollLeft / cardWidth)
-
-        if (currentIndex >= 0 && currentIndex < sentences.length) {
-          onScrollToSentence(currentIndex)
-        }
-      }, 100)
+  // 切换到上一句
+  const handlePrev = () => {
+    if (activeSentenceIndex > 0 && onScrollToSentence) {
+      onScrollToSentence(activeSentenceIndex - 1)
     }
+  }
 
-    container.addEventListener('scroll', handleScroll)
-
-    return () => {
-      container.removeEventListener('scroll', handleScroll)
-      if (scrollTimerRef.current) {
-        clearTimeout(scrollTimerRef.current)
-      }
+  // 切换到下一句
+  const handleNext = () => {
+    if (activeSentenceIndex < sentences.length - 1 && onScrollToSentence) {
+      onScrollToSentence(activeSentenceIndex + 1)
     }
-  }, [sentences.length, onScrollToSentence])
-
-  useEffect(() => {
-    if (!containerRef.current) return
-
-    const container = containerRef.current
-    const cardWidth = container.firstChild?.clientWidth || 0
-    const targetScrollLeft = activeSentenceIndex * cardWidth
-
-    container.scrollTo({
-      left: targetScrollLeft,
-      behavior: 'smooth'
-    })
-  }, [activeSentenceIndex])
+  }
 
   return (
     <div className="flex flex-col bg-gray-50 dark:bg-gray-900 flex-1">
-      {/* 横向滚动容器 */}
-      <div
-        ref={containerRef}
-        className="flex overflow-x-auto gap-4 p-4 snap-x snap-mandatory flex-1 scrollbar-hide"
-        style={{
-          scrollbarWidth: 'none',
-          msOverflowStyle: 'none'
-        }}
-      >
-        {sentences.map((sentence, index) => {
-          const isActive = index === activeSentenceIndex
-          const isPlayingSentence = index === currentPlayingSentence
+      {/* 单卡片容器 + 左右导航 */}
+      <div className="relative flex-1 flex items-center justify-center p-4">
+        {/* 左导航按钮 */}
+        <button
+          onClick={handlePrev}
+          disabled={activeSentenceIndex === 0}
+          className="absolute left-2 z-10 p-2 rounded-sm bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] border-2 border-black dark:border-gray-600 text-gray-900 dark:text-white hover:bg-[#B4F416] hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          aria-label="上一句"
+        >
+          <ChevronLeft className="w-5 h-5" strokeWidth={2.5} />
+        </button>
 
-          return (
+        {/* 当前句子卡片 */}
+        <div className="w-[85vw] max-w-md">
+          {activeSentence && (
             <SentenceInput
-              key={sentence.id || index}
-              sentence={sentence}
-              index={index}
-              wordInputs={wordInputs[index]}
-              isActive={isActive}
+              sentence={activeSentence}
+              index={activeSentenceIndex}
+              wordInputs={wordInputs[activeSentenceIndex]}
+              isActive={true}
               isPlaying={isPlayingSentence}
-              onUpdateWordInput={(wordIndex, value) => onUpdateWordInput(index, wordIndex, value)}
-              onMoveToNextWord={(wordIndex) => onMoveToNextWord(index, wordIndex)}
-              onSkipWord={(wordIndex) => onSkipWord(index, wordIndex)}
-              onUnskipWord={(wordIndex) => onUnskipWord(index, wordIndex)}
-              onPlaySentence={() => onPlaySentence(index)}
+              onUpdateWordInput={(wordIndex, value) => onUpdateWordInput(activeSentenceIndex, wordIndex, value)}
+              onMoveToNextWord={(wordIndex) => onMoveToNextWord(activeSentenceIndex, wordIndex)}
+              onSkipWord={(wordIndex) => onSkipWord(activeSentenceIndex, wordIndex)}
+              onUnskipWord={(wordIndex) => onUnskipWord(activeSentenceIndex, wordIndex)}
+              onPlaySentence={() => onPlaySentence(activeSentenceIndex)}
               onSentenceFocus={onSentenceFocus}
             />
-          )
-        })}
+          )}
+        </div>
+
+        {/* 右导航按钮 */}
+        <button
+          onClick={handleNext}
+          disabled={activeSentenceIndex === sentences.length - 1}
+          className="absolute right-2 z-10 p-2 rounded-sm bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] border-2 border-black dark:border-gray-600 text-gray-900 dark:text-white hover:bg-[#B4F416] hover:text-black disabled:opacity-30 disabled:cursor-not-allowed transition-all"
+          aria-label="下一句"
+        >
+          <ChevronRight className="w-5 h-5" strokeWidth={2.5} />
+        </button>
       </div>
 
       {/* 底部进度指示器 */}
