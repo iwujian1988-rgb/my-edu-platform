@@ -5,12 +5,14 @@
  *
  * 对应 PRD: VIDEO_MODULE_PRD.md - Section 4.1
  * 对应 Tech: VIDEO_MODULE_TECH.md v5.0 - Section 3.3.6
+ *
+ * 样式：Neo-brutalism 风格，与全站保持一致
  */
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { Video, Home, RefreshCw, Star, BarChart3, User, Menu, X } from 'lucide-react'
+import { Home, RefreshCw, BarChart3, User, Menu, X } from 'lucide-react'
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import {
@@ -21,116 +23,99 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { useUserPackages } from '@/hooks/useUserPackages'
-import { Skeleton } from '@/components/ui/skeleton'
 
 const NAV_ITEMS = [
   { href: '/videos', label: '首页', icon: Home },
   { href: '/video-flashcards', label: '复习', icon: RefreshCw },
-  { href: '/video-favorites', label: '收藏', icon: Star },
   { href: '/video-stats', label: '统计', icon: BarChart3 },
 ]
 
 export function VideoNav() {
   const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { packages, loading } = useUserPackages()
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-14 items-center">
-        {/* Logo */}
-        <Link href="/videos" className="flex items-center gap-2 mr-6">
-          <Video className="h-5 w-5 text-primary" />
-          <span className="font-semibold text-lg hidden sm:inline-block">视频学习</span>
-        </Link>
+    <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-800 border-b-[3px] border-black dark:border-gray-600 transition-colors duration-300">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex h-14 items-center justify-between">
+          {/* 导航项 - 直接放在左侧 */}
+          <nav className="flex items-center gap-2">
+            {NAV_ITEMS.map((item) => {
+              const Icon = item.icon
+              const isActive = pathname === item.href ||
+                (item.href !== '/videos' && pathname?.startsWith(item.href))
 
-        {/* 桌面端导航 */}
-        <nav className="hidden md:flex items-center gap-1 flex-1">
-          {NAV_ITEMS.map((item) => {
-            const Icon = item.icon
-            const isActive = pathname === item.href ||
-              (item.href !== '/videos' && pathname?.startsWith(item.href))
-
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={cn(
-                  'flex items-center gap-2 px-3 py-2 rounded-md text-sm font-medium transition-colors',
-                  isActive
-                    ? 'bg-primary/10 text-primary'
-                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
-                )}
-              >
-                <Icon className="h-4 w-4" />
-                {item.label}
-              </Link>
-            )
-          })}
-        </nav>
-
-        {/* 右侧：用户套餐 + 用户菜单 */}
-        <div className="flex items-center gap-3 ml-auto">
-          {/* 用户套餐标签 */}
-          <div className="hidden lg:flex items-center gap-2">
-            {loading ? (
-              <Skeleton className="h-6 w-24" />
-            ) : packages.length > 0 ? (
-              packages.slice(0, 3).map((pkg) => (
-                <span
-                  key={pkg.id}
-                  className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary"
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    'flex items-center gap-2 px-4 py-2 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all duration-150',
+                    isActive
+                      ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] text-black'
+                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 text-black dark:text-white'
+                  )}
                 >
-                  {pkg.package?.name || '套餐'}
-                </span>
-              ))
-            ) : null}
+                  <Icon className="h-4 w-4" />
+                  {item.label}
+                </Link>
+              )
+            })}
+          </nav>
+
+          {/* 右侧：用户菜单 */}
+          <div className="flex items-center gap-3">
+            {/* 用户菜单 */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button
+                  variant="ghost"
+                  className="relative h-9 w-9 rounded-full border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all p-0"
+                >
+                  <Avatar className="h-8 w-8">
+                    <AvatarImage src="/avatar.png" alt="用户头像" />
+                    <AvatarFallback className="bg-[#B4F416]">
+                      <User className="h-4 w-4 text-black" />
+                    </AvatarFallback>
+                  </Avatar>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent
+                className="w-56 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666]"
+                align="end"
+                forceMount
+              >
+                <DropdownMenuItem asChild className="cursor-pointer font-bold">
+                  <Link href="/profile">个人中心</Link>
+                </DropdownMenuItem>
+                <DropdownMenuSeparator className="bg-black dark:bg-gray-600 h-[2px]" />
+                <DropdownMenuItem asChild className="cursor-pointer font-bold">
+                  <Link href="/">返回主页</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* 移动端菜单按钮 */}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              {mobileMenuOpen ? (
+                <X className="h-5 w-5 text-black dark:text-white" />
+              ) : (
+                <Menu className="h-5 w-5 text-black dark:text-white" />
+              )}
+            </Button>
           </div>
-
-          {/* 用户菜单 */}
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="relative h-8 w-8 rounded-full">
-                <Avatar className="h-8 w-8">
-                  <AvatarImage src="/avatar.png" alt="用户头像" />
-                  <AvatarFallback>
-                    <User className="h-4 w-4" />
-                  </AvatarFallback>
-                </Avatar>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56" align="end" forceMount>
-              <DropdownMenuItem asChild>
-                <Link href="/profile">个人中心</Link>
-              </DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem asChild>
-                <Link href="/">返回主页</Link>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
-
-          {/* 移动端菜单按钮 */}
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
-          </Button>
         </div>
       </div>
 
       {/* 移动端下拉菜单 */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t bg-background">
-          <nav className="container py-4 flex flex-col gap-2">
+        <div className="md:hidden border-t-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800">
+          <nav className="max-w-7xl mx-auto px-4 py-4 flex flex-col gap-2">
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon
               const isActive = pathname === item.href ||
@@ -142,10 +127,10 @@ export function VideoNav() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    'flex items-center gap-3 px-3 py-2 rounded-md text-sm font-medium transition-colors',
+                    'flex items-center gap-3 px-4 py-3 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all duration-150',
                     isActive
-                      ? 'bg-primary/10 text-primary'
-                      : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                      ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] text-black'
+                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] text-black dark:text-white'
                   )}
                 >
                   <Icon className="h-5 w-5" />
@@ -153,23 +138,6 @@ export function VideoNav() {
                 </Link>
               )
             })}
-
-            {/* 移动端显示套餐 */}
-            {packages.length > 0 && (
-              <div className="mt-4 pt-4 border-t">
-                <p className="text-xs text-muted-foreground mb-2 px-3">我的套餐</p>
-                <div className="flex flex-wrap gap-2 px-3">
-                  {packages.map((pkg) => (
-                    <span
-                      key={pkg.id}
-                      className="text-xs px-2 py-1 rounded-full bg-primary/10 text-primary"
-                    >
-                      {pkg.package?.name || '套餐'}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
           </nav>
         </div>
       )}

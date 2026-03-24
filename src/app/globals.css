@@ -825,7 +825,7 @@ h1, h2, h3, h4, h5, h6 {
   100% {
     top: 100%;
     opacity: 0;
-    transform: translateX(${Math.random() * 100 - 50}px) rotate(720deg);
+    transform: translateX(50px) rotate(720deg);
   }
 }
 

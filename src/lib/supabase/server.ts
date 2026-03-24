@@ -31,7 +31,12 @@ async function getProxyFetch(): Promise<typeof fetch | undefined> {
     return proxyFetch
   }
 
-  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY || 'http://127.0.0.1:7890'
+  const proxyUrl = process.env.HTTPS_PROXY || process.env.HTTP_PROXY
+
+  // 只有环境变量明确设置时才使用代理
+  if (!proxyUrl) {
+    return undefined
+  }
 
   try {
     const { ProxyAgent, fetch: undiciFetch } = await import('undici')

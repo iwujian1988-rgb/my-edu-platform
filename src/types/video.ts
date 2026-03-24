@@ -189,6 +189,8 @@ export interface VideoWordCard {
   english_definition: string | null
   example_from_video: string | null
   example_translation: string | null
+  subtitle_start_time: number  // 单词在字幕中首次出现的时间（秒），用于 [📍] 跳转播放
+  subtitle_end_time: number    // 单词所在字幕的结束时间（秒）
   difficulty_level: number
   is_reviewed: boolean
   reviewed_at: string | null
@@ -227,13 +229,14 @@ export interface VideoExpressionCard {
   context_translation: string | null
   formula: string | null
   meaning: string | null
-  | null
   usage_note: string | null
   examples: CardExample[] | null
   scenarios: string | null
   similar_expressions: string[] | null
   formality_level: FormalityLevel
   difficulty_level: number
+  subtitle_start_time: number  // 表达在字幕中首次出现的时间（秒），用于 [▶ 播放这段]
+  subtitle_end_time: number    // 表达所在字幕的结束时间（秒）
   is_reviewed: boolean
   reviewed_at: string | null
   reviewed_by: string | null
@@ -406,6 +409,7 @@ export interface VideoListResponse {
     name: string
     expires_at: string | null
   }>
+  available_languages?: VideoLanguage[]
 }
 
 export interface VideoFullResponse {
@@ -478,8 +482,9 @@ export interface CardPopoverProps {
 
 export interface RecordingPanelProps {
   videoId: string
-  subtitle: VideoSubtitle | null
-  onRecordingComplete: (recording: UserRecording) => void
+  subtitles: SubtitleWithHighlights[]
+  currentVideoTime: number
+  onPlaySegment: (startTime: number, endTime: number) => void
 }
 
 export interface FlashcardModeProps {
@@ -595,9 +600,7 @@ export function formatDuration(seconds: number): string {
 // ============================================
 
 export interface FlashcardReviewItem {
-  card: VideoCard & {
-    video_title?: string
-  }
+  card: UnifiedVideoCard
   card_type: CardType
   next_review: string | null
   review_count: number
@@ -629,4 +632,186 @@ export interface VideoExerciseWithSubtitle extends VideoExercise {
   text_with_blanks: string
   answers: string[]
   explanation?: string
+}
+
+// ============================================
+// 批量上传相关类型
+// 对应 PRD: VIDEO_BATCH_UPLOAD_PRD.md v1.2
+// ============================================
+
+// --------------------------------------------
+// 新增学习内容类型
+// --------------------------------------------
+
+/** 语法点 */
+export interface VideoGrammarPoint {
+  id: string
+  video_id: string
+  name: string
+  structure: string | null
+  example_french: string | null
+  example_chinese: string | null
+  example_ipa: string | null
+  purpose: string | null
+  note: string | null
+  display_order: number
+  created_at: string
+}
+
+/** 发音要点 */
+export interface VideoPronunciationTip {
+  id: string
+  video_id: string
+  sound_symbol: string
+  example_words: string[] | null
+  instruction: string | null
+  practice_tip: string | null
+  display_order: number
+  created_at: string
+}
+
+/** 词汇网络 */
+export interface VideoVocabularyNetwork {
+  id: string
+  video_id: string
+  theme: string | null
+  structure: string | null
+  related_words: string[] | null
+  collocations: string | null
+  created_at: string
+}
+
+// --------------------------------------------
+// 输入 JSON 类型
+// --------------------------------------------
+
+/** 字幕 JSON 输入结构 */
+export interface SubtitleJsonInput {
+  unit_info: {
+    unit_num: number
+    theme: string
+    start_time: string
+    end_time: string
+    subtitle_count: number
+  }
+  subtitles: Array<{
+    index: number
+    start_time: string
+    end_time: string
+    french: string
+    chinese: string
+  }>
+}
+
+/** 学习材料 JSON 输入结构 */
+export interface LearningMaterialJsonInput {
+  unit_info: {
+    unit_num: number
+    theme: string
+    start_time: string
+    end_time: string
+    duration_minutes: number
+    cefr_level: string
+  }
+  language_analysis: {
+    vocabulary: Array<{
+      french: string
+      part_of_speech: string
+      ipa: string
+      chinese: string
+      first_appearance: string
+      occurrence_count: number
+      cefr_level: string
+    }>
+    key_expressions: Array<{
+      expression: string
+      ipa: string
+      chinese: string
+      cefr_level: string
+      grammar_usage: string
+      example: {
+        french: string
+        chinese: string
+      }
+    }>
+  }
+  deep_learning: {
+    grammar_points: Array<{
+      name: string
+      structure: string
+      example: {
+        french: string
+        chinese: string
+        ipa: string
+      }
+      purpose: string
+      note: string
+    }>
+    pronunciation: {
+      key_sounds: Array<{
+        sound: string
+        example_words: string[]
+        instruction: string
+        practice_tip: string
+      }>
+    }
+    vocabulary_network: {
+      theme: string
+      structure: string
+      related_words?: string[]
+      collocations?: string
+    }
+  }
+}
+
+// --------------------------------------------
+// API 请求/响应类型
+// --------------------------------------------
+
+/** 批量上传单个视频项 */
+export interface BatchUploadVideoItem {
+  subtitle_json: SubtitleJsonInput
+  learning_material_json: LearningMaterialJsonInput
+  video_url: string
+}
+
+/** 批量上传请求 */
+export interface BatchUploadRequest {
+  videos: BatchUploadVideoItem[]
+}
+
+/** 批量上传单个视频结果 */
+export interface BatchUploadResult {
+  id: string
+  title: string
+  subtitles_count: number
+  words_count: number
+  expressions_count: number
+  grammar_points_count: number
+  pronunciation_tips_count: number
+  status: VideoStatus
+}
+
+/** 批量上传响应 */
+export interface BatchUploadResponse {
+  success: boolean
+  data: {
+    created_count: number
+    videos: BatchUploadResult[]
+    errors: Array<{
+      index: number
+      error: string
+    }>
+  }
+}
+
+// --------------------------------------------
+// 扩展的 VideoFullResponse
+// --------------------------------------------
+
+/** 完整视频响应（包含新增的学习内容） */
+export interface VideoFullResponseExtended extends VideoFullResponse {
+  grammar_points: VideoGrammarPoint[]
+  pronunciation_tips: VideoPronunciationTip[]
+  vocabulary_network: VideoVocabularyNetwork | null
 }

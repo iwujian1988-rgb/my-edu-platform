@@ -238,14 +238,31 @@ const VocabularyCard = ({ word, index, onStatusChange, isSaving = false, globalH
     return word.phonetic
   }
 
-  // 获取词性显示（法语包含阴阳性）
+  // 获取词性显示（支持多语言阴阳性）
   const getPosDisplay = () => {
     const pos = getPartOfSpeechLabel(word.part_of_speech)
-    const fr = word.language_data?.fr
 
-    // 法语：显示词性 + 阴阳性
-    if (fr?.gender) {
-      return `${pos} (${fr.gender})`
+    // 从 language_data 中查找任意语言的 gender（fr/de/es/ru/it 等）
+    const langData = word.language_data
+    let gender: string | undefined
+
+    if (langData) {
+      // 遍历所有语言，查找 gender
+      for (const lang of Object.keys(langData)) {
+        if (langData[lang]?.gender) {
+          gender = langData[lang].gender
+          break
+        }
+      }
+    }
+
+    // 回退：从独立 gender 字段读取
+    if (!gender && (word as any).gender) {
+      gender = (word as any).gender
+    }
+
+    if (gender) {
+      return `${pos} (${gender})`
     }
 
     return pos

@@ -51,7 +51,7 @@ function SentenceCard({
   globalMaskEnabled: boolean
   isActive: boolean
   isPlaying: boolean
-  onPlay: () => void
+  onPlay: (sentenceIndex: number) => void
 }) {
   // 移动端：长按临时透视
   const [isLongPressing, setIsLongPressing] = useState(false)
@@ -113,7 +113,7 @@ function SentenceCard({
         <button
           onClick={(e) => {
             e.stopPropagation()
-            onPlay()
+            onPlay(index)
           }}
           className={`
             flex-shrink-0 flex items-center justify-center w-9 h-9 rounded-sm
@@ -254,7 +254,7 @@ export function DictationLeftPanelMobile({
               globalMaskEnabled={globalMaskEnabled}
               isActive={true}
               isPlaying={isPlayingSentence}
-              onPlay={() => onPlaySentence(activeSentenceIndex)}
+              onPlay={onPlaySentence}
             />
           )}
         </div>

@@ -5,13 +5,21 @@
  *
  * 基于 SM-2 算法的间隔重复复习
  * 支持多种卡片类型（词汇、短语、惯用语）
+ * 支持按视频和卡片类型筛选
  */
 
-import { useState, useCallback, useEffect } from 'react'
+import { useState, useCallback, useEffect, useMemo } from 'react'
 import useSWR from 'swr'
 import { Button } from '@/components/ui/button'
 import { Badge } from '@/components/ui/badge'
 import { Progress } from '@/components/ui/progress'
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select'
 import { cn } from '@/lib/utils'
 import {
   ChevronRight,
@@ -26,6 +34,8 @@ import {
   ThumbsUp,
   ThumbsDown,
   Minus,
+  Filter,
+  XCircle,
 } from 'lucide-react'
 import type {
   VideoCard,
@@ -33,6 +43,14 @@ import type {
   FlashcardReviewItem,
   FlashcardReviewResponse,
 } from '@/types/video'
+
+// 卡片类型选项
+const CARD_TYPE_OPTIONS: { value: CardType | 'all'; label: string; icon: React.ReactNode }[] = [
+  { value: 'all', label: '全部', icon: null },
+  { value: 'word', label: '词汇', icon: <BookOpen className="w-4 h-4" /> },
+  { value: 'phrase', label: '短语', icon: <MessageSquare className="w-4 h-4" /> },
+  { value: 'expression', label: '惯用语', icon: <Sparkles className="w-4 h-4" /> },
+]
 
 // SWR fetcher
 const fetcher = async (url: string): Promise<FlashcardReviewResponse> => {
@@ -48,11 +66,48 @@ export function VideoFlashcardsClient() {
   const [reviewedCount, setReviewedCount] = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
 
+  // 筛选状态
+  const [selectedVideoId, setSelectedVideoId] = useState<string>('all')
+  const [selectedCardType, setSelectedCardType] = useState<CardType | 'all'>('all')
+
+  // 构建查询参数
+  const queryParams = useMemo(() => {
+    const params = new URLSearchParams()
+    if (selectedVideoId && selectedVideoId !== 'all') {
+      params.set('video_id', selectedVideoId)
+    }
+    if (selectedCardType && selectedCardType !== 'all') {
+      params.set('card_type', selectedCardType)
+    }
+    params.set('limit', '50')
+    return params.toString()
+  }, [selectedVideoId, selectedCardType])
+
   // 获取待复习卡片
   const { data, error, isLoading, mutate } = useSWR<FlashcardReviewResponse>(
-    '/api/user/video-cards/review',
+    `/api/user/video-cards/review?${queryParams}`,
     fetcher
   )
+
+  // 当筛选条件改变时重置
+  useEffect(() => {
+    setCurrentIndex(0)
+    setIsFlipped(false)
+  }, [selectedVideoId, selectedCardType])
+
+  // 提取视频列表（从卡片数据中）
+  const videoOptions = useMemo(() => {
+    if (!data?.items) return []
+    const videoMap = new Map<string, string>()
+    data.items.forEach((item) => {
+      const videoId = item.card.video_id
+      const videoTitle = item.card.video_title
+      if (videoId && videoTitle) {
+        videoMap.set(videoId, videoTitle)
+      }
+    })
+    return Array.from(videoMap.entries()).map(([id, title]) => ({ id, title }))
+  }, [data?.items])
 
   const currentCard = data?.items[currentIndex]
   const totalCards = data?.items.length || 0
@@ -241,6 +296,68 @@ export function VideoFlashcardsClient() {
   return (
     <div className="container py-6">
       <div className="max-w-2xl mx-auto space-y-6">
+        {/* 筛选器 */}
+        <div className="flex flex-wrap items-center gap-3 p-4 rounded-lg border bg-card">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground">
+            <Filter className="w-4 h-4" />
+            <span>筛选：</span>
+          </div>
+
+          {/* 卡片类型筛选 */}
+          <div className="flex items-center gap-1">
+            {CARD_TYPE_OPTIONS.map((option) => (
+              <Button
+                key={option.value}
+                variant={selectedCardType === option.value ? 'default' : 'outline'}
+                size="sm"
+                onClick={() => setSelectedCardType(option.value)}
+                className="h-8"
+              >
+                {option.icon}
+                <span className="ml-1">{option.label}</span>
+              </Button>
+            ))}
+          </div>
+
+          {/* 视频筛选（只有当有多个视频时显示） */}
+          {videoOptions.length > 1 && (
+            <Select
+              value={selectedVideoId}
+              onValueChange={setSelectedVideoId}
+            >
+              <SelectTrigger className="w-[180px] h-8">
+                <SelectValue placeholder="选择视频" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="all">全部视频</SelectItem>
+                {videoOptions.map((video) => (
+                  <SelectItem key={video.id} value={video.id}>
+                    <span className="truncate max-w-[140px] block">
+                      {video.title}
+                    </span>
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          )}
+
+          {/* 清除筛选按钮 */}
+          {(selectedVideoId !== 'all' || selectedCardType !== 'all') && (
+            <Button
+              variant="ghost"
+              size="sm"
+              className="h-8"
+              onClick={() => {
+                setSelectedVideoId('all')
+                setSelectedCardType('all')
+              }}
+            >
+              <XCircle className="w-4 h-4 mr-1" />
+              清除
+            </Button>
+          )}
+        </div>
+
         {/* 进度 */}
         <div className="space-y-2">
           <div className="flex items-center justify-between text-sm">
@@ -322,9 +439,9 @@ export function VideoFlashcardsClient() {
                     {card.examples.map((example, index) => (
                       <div key={index} className="p-3 rounded bg-muted">
                         <p className="font-medium">{example.original}</p>
-                        {example.translation && (
+                        {example.cn && (
                           <p className="text-sm text-muted-foreground mt-1">
-                            {example.translation}
+                            {example.cn}
                           </p>
                         )}
                       </div>

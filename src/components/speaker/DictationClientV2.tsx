@@ -448,7 +448,7 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
             onToggleGlobalMask={() => actions.setGlobalMaskEnabled(!state.globalMaskEnabled)}
             onPlaySentence={actions.playSentence}
             onSelectSentence={actions.setActiveSentence}
-            onScrollToSentence={handleRightPanelScroll}
+            onScrollToSentence={actions.setActiveSentence}
           />
 
           {/* 下半部分：输入流（横向滚动） */}
@@ -463,8 +463,8 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
             onSkipWord={actions.skipWord}
             onUnskipWord={actions.unskipWord}
             onPlaySentence={actions.playSentence}
-            onScrollToSentence={handleRightPanelScroll}
-            onSentenceFocus={actions.setActiveSentence}  // 聚焦输入框时激活句子
+            onScrollToSentence={actions.setActiveSentence}
+            onSentenceFocus={actions.setActiveSentence}
           />
         </div>
       </div>

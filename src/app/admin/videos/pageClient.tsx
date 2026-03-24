@@ -29,6 +29,7 @@ import {
   Sparkles,
   Upload,
   Layers,
+  Rocket,
 } from 'lucide-react'
 import { VideoUploadField } from '@/components/admin/VideoUploadField'
 import ImageUploadModal from '@/components/admin/ImageUploadModal'
@@ -472,6 +473,24 @@ export function VideoManagementClient() {
           >
             <Plus className="w-4 h-4 mr-2" />
             创建视频
+          </Link>
+
+          {/* 批量上传按钮 */}
+          <Link
+            href="/admin/videos/batch-upload"
+            className="inline-flex items-center px-4 py-3 bg-blue-500 hover:bg-blue-600 text-white font-bold border-[3px] border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+          >
+            <Layers className="w-4 h-4 mr-2" />
+            批量上传
+          </Link>
+
+          {/* 批量发布按钮 */}
+          <Link
+            href="/admin/videos/batch-publish"
+            className="inline-flex items-center px-4 py-3 bg-purple-500 hover:bg-purple-600 text-white font-bold border-[3px] border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+          >
+            <Rocket className="w-4 h-4 mr-2" />
+            批量发布
           </Link>
         </div>
       </div>

@@ -8,6 +8,9 @@
  * 支持按模块单独生成，支持重置
  */
 
+// Next.js API 路由超时配置（Vercel Pro 最大 60 秒，本地开发更长）
+export const maxDuration = 60
+
 import { createAdminClient } from '@/lib/supabase/server'
 import { checkAdminForAPI } from '@/lib/admin-auth'
 import { NextResponse } from 'next/server'
@@ -332,8 +335,8 @@ export async function POST(
 
     const promptTemplate = basePrompt + typeInstruction
 
-    // 🔧 分批处理字幕（每批 5 条），避免 AI 超时
-    const BATCH_SIZE = 5
+    // 🔧 分批处理字幕（每批 3 条），并行处理以加快速度
+    const BATCH_SIZE = 3
     const allCards: Array<{
       type: string
       data: Record<string, unknown>
@@ -348,13 +351,17 @@ export async function POST(
       }, { status: 500 })
     }
 
-    // 分批处理
+    // 构建所有批次的请求
+    const batches: Array<{
+      batchNum: number
+      subtitles: typeof subtitles
+      prompt: string
+    }> = []
+
+    const totalBatches = Math.ceil(subtitles.length / BATCH_SIZE)
     for (let i = 0; i < subtitles.length; i += BATCH_SIZE) {
       const batch = subtitles.slice(i, i + BATCH_SIZE)
       const batchNum = Math.floor(i / BATCH_SIZE) + 1
-      const totalBatches = Math.ceil(subtitles.length / BATCH_SIZE)
-
-      console.log(`[AI 生成] 处理批次 ${batchNum}/${totalBatches}，字幕 ${i + 1}-${Math.min(i + BATCH_SIZE, subtitles.length)}`)
 
       const subtitlesText = batch
         .map((s, idx) => `[${i + idx + 1}] ID: ${s.id}\n${s.original_text}`)
@@ -369,48 +376,72 @@ ${subtitlesText}
 
 Return ONLY valid JSON array, no other text.`
 
-      try {
-        const response = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${apiKey}`,
-          },
-          body: JSON.stringify({
-            model: 'glm-4-flash',
-            max_tokens: 2048,  // 减少单批次 token 数
-            messages: [
-              {
-                role: 'user',
-                content: fullPrompt,
-              },
-            ],
-          }),
-        })
+      batches.push({ batchNum, subtitles: batch, prompt: fullPrompt })
+    }
 
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({}))
-          console.error(`[AI 生成] 批次 ${batchNum} API 错误:`, errorData)
-          continue // 跳过失败批次，继续处理
-        }
+    console.log(`[AI 生成] 共 ${totalBatches} 个批次，开始并行处理...`)
 
-        const aiResponse = await response.json()
-        const content = aiResponse.choices?.[0]?.message?.content || ''
-
-        // 解析 AI 返回的 JSON
+    // 并行处理所有批次
+    const batchResults = await Promise.all(
+      batches.map(async ({ batchNum, prompt }) => {
         try {
-          const jsonMatch = content.match(/\[[\s\S]*\]/)
-          if (jsonMatch) {
-            const batchCards = JSON.parse(jsonMatch[0])
-            allCards.push(...batchCards)
-            console.log(`[AI 生成] 批次 ${batchNum} 成功，获取 ${batchCards.length} 张卡片`)
+          const response = await fetch('https://open.bigmodel.cn/api/paas/v4/chat/completions', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${apiKey}`,
+            },
+            body: JSON.stringify({
+              model: 'glm-4-flash',
+              max_tokens: 4096,
+              messages: [{ role: 'user', content: prompt }],
+            }),
+          })
+
+          if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}))
+            console.error(`[AI 生成] 批次 ${batchNum} API 错误:`, errorData)
+            return []
           }
-        } catch (parseError) {
-          console.error(`[AI 生成] 批次 ${batchNum} JSON 解析失败:`, parseError)
+
+          const aiResponse = await response.json()
+          let content = aiResponse.choices?.[0]?.message?.content || ''
+
+          // 移除 markdown 代码块标记
+          content = content
+            .replace(/```json\s*/gi, '')
+            .replace(/```\s*/g, '')
+            .trim()
+
+          // 解析 AI 返回的 JSON
+          const jsonMatch = content.match(/\[[\s\S]*\]/)
+          if (!jsonMatch) {
+            console.error(`[AI 生成] 批次 ${batchNum} 未找到 JSON 数组`)
+            return []
+          }
+
+          let jsonStr = jsonMatch[0]
+          // 如果 JSON 不完整（不以 ] 结尾），尝试修复
+          if (!jsonStr.trim().endsWith(']')) {
+            const lastCompleteObj = jsonStr.lastIndexOf('},')
+            if (lastCompleteObj > 0) {
+              jsonStr = jsonStr.substring(0, lastCompleteObj + 1) + ']'
+            }
+          }
+
+          const batchCards = JSON.parse(jsonStr)
+          console.log(`[AI 生成] 批次 ${batchNum} 成功，获取 ${batchCards.length} 张卡片`)
+          return batchCards
+        } catch (error) {
+          console.error(`[AI 生成] 批次 ${batchNum} 处理失败:`, error)
+          return []
         }
-      } catch (fetchError) {
-        console.error(`[AI 生成] 批次 ${batchNum} 请求失败:`, fetchError)
-      }
+      })
+    )
+
+    // 合并所有批次结果
+    for (const cards of batchResults) {
+      allCards.push(...cards)
     }
 
     console.log(`[AI 生成] 全部完成，共获取 ${allCards.length} 张卡片`)

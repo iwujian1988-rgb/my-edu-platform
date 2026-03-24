@@ -62,7 +62,7 @@ function SentenceInput({
   onMoveToNextWord: (wordIndex: number) => void
   onSkipWord: (wordIndex: number) => void
   onUnskipWord: (wordIndex: number) => void
-  onPlaySentence: () => void
+  onPlaySentence: (sentenceIndex: number) => void
   onSentenceFocus?: (sentenceIndex: number) => void
 }) {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -228,7 +228,7 @@ function SentenceInput({
 
           {/* 播放按钮 */}
           <button
-            onClick={onPlaySentence}
+            onClick={() => onPlaySentence(index)}
             disabled={isPlaying}
             className={`
               flex items-center justify-center w-8 h-8 rounded-sm
@@ -422,7 +422,7 @@ export function DictationRightPanelMobile({
               onMoveToNextWord={(wordIndex) => onMoveToNextWord(activeSentenceIndex, wordIndex)}
               onSkipWord={(wordIndex) => onSkipWord(activeSentenceIndex, wordIndex)}
               onUnskipWord={(wordIndex) => onUnskipWord(activeSentenceIndex, wordIndex)}
-              onPlaySentence={() => onPlaySentence(activeSentenceIndex)}
+              onPlaySentence={onPlaySentence}
               onSentenceFocus={onSentenceFocus}
             />
           )}

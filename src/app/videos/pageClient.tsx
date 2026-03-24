@@ -9,7 +9,7 @@
  * 样式参考：/speaker 页面 Neo-brutalism 风格
  */
 
-import { useState, useEffect, useCallback, Suspense } from 'react'
+import React, { useState, useEffect, useCallback, useMemo, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
 import useSWR from 'swr'
@@ -17,24 +17,26 @@ import {
   Play,
   Clock,
   CheckCircle,
-  Search,
   BookOpen,
   Video,
+  Repeat,
 } from 'lucide-react'
 import type { VideoListItem, VideoListResponse } from '@/types/video'
 import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, formatDuration } from '@/types/video'
 
-// 语言选项
-const LANGUAGE_OPTIONS = [
-  { value: 'all', label: '全部语言' },
-  { value: 'en', label: '英语' },
-  { value: 'fr', label: '法语' },
-  { value: 'de', label: '德语' },
-  { value: 'es', label: '西班牙语' },
-  { value: 'ja', label: '日语' },
-  { value: 'it', label: '意大利语' },
-  { value: 'ru', label: '俄语' },
-]
+// 语言选项（从 API 动态获取，基于用户权限范围内的语言）
+const buildLanguageOptions = (availableLanguages: string[] | undefined) => {
+  if (!availableLanguages || availableLanguages.length === 0) {
+    return [{ value: 'all', label: '全部语言' }]
+  }
+  return [
+    { value: 'all', label: '全部语言' },
+    ...availableLanguages.map(lang => ({
+      value: lang,
+      label: VIDEO_LANGUAGE_LABELS[lang as keyof typeof VIDEO_LANGUAGE_LABELS] || lang
+    }))
+  ]
+}
 
 // 难度选项
 const DIFFICULTY_OPTIONS = [
@@ -43,6 +45,9 @@ const DIFFICULTY_OPTIONS = [
   { value: 'intermediate', label: '进阶' },
   { value: 'advanced', label: '难' },
 ]
+
+// 分页常量
+const PAGE_SIZE = 12
 
 // 获取难度等级的颜色
 const getDifficultyColor = (difficulty: string) => {
@@ -217,7 +222,9 @@ function ContinueLearningCard({ video }: { video: VideoListItem }) {
 
 // SWR fetcher
 const fetcher = async (url: string): Promise<VideoListResponse> => {
+  console.log('[fetcher] Fetching:', url)
   const res = await fetch(url)
+  console.log('[fetcher] Status:', res.status)
   if (res.status === 401) {
     // 未登录，抛出特殊错误
     const error = new Error('UNAUTHORIZED')
@@ -226,6 +233,7 @@ const fetcher = async (url: string): Promise<VideoListResponse> => {
   }
   if (!res.ok) throw new Error('Failed to fetch')
   const json = await res.json()
+  console.log('[fetcher] Response:', json)
   return json.data
 }
 
@@ -241,7 +249,12 @@ function VideoListContent() {
   const [difficulty, setDifficulty] = useState<string>(
     searchParams.get('difficulty') || 'all'
   )
-  const [search, setSearch] = useState('')
+  const [tag, setTag] = useState<string>(
+    searchParams.get('tag') || 'all'
+  )
+  const [page, setPage] = useState<number>(
+    parseInt(searchParams.get('page') || '1')
+  )
 
   // 构建查询 URL
   const buildQueryUrl = useCallback(() => {
@@ -252,14 +265,17 @@ function VideoListContent() {
     if (difficulty && difficulty !== 'all') {
       params.set('difficulty', difficulty)
     }
-    if (search) {
-      params.set('search', search)
+    if (tag && tag !== 'all') {
+      params.set('tag', tag)
     }
-    params.set('limit', '20')
+    // 分页参数
+    const offset = (page - 1) * PAGE_SIZE
+    params.set('limit', String(PAGE_SIZE))
+    params.set('offset', String(offset))
 
     const queryString = params.toString()
     return `/api/videos${queryString ? `?${queryString}` : ''}`
-  }, [language, difficulty, search])
+  }, [language, difficulty, tag, page])
 
   // 获取视频列表
   const { data, error, isLoading, mutate } = useSWR<VideoListResponse>(
@@ -270,12 +286,50 @@ function VideoListContent() {
     }
   )
 
+  // 获取标签列表（延迟加载，等视频数据加载完成后再请求）
+  const { data: tagsData } = useSWR<{ id: string; name: string; video_count: number }[]>(
+    data ? '/api/video-tags' : null,  // 条件请求：等视频数据就绪
+    async (url) => {
+      const res = await fetch(url)
+      if (!res.ok) throw new Error('Failed to fetch tags')
+      const json = await res.json()
+      return json.data || []
+    },
+    { revalidateOnFocus: false }
+  )
+
+  // 获取学习统计（延迟加载，低优先级）
+  const { data: statsData } = useSWR<{
+    overview: {
+      total_cards: number
+      known_cards: number
+      learning_cards: number
+    }
+  }>(
+    data ? '/api/user/video-stats' : null,  // 条件请求：等视频数据就绪
+    async (url) => {
+      const res = await fetch(url)
+      if (!res.ok) throw new Error('Failed to fetch')
+      const json = await res.json()
+      return json.data
+    },
+    { revalidateOnFocus: false }
+  )
+
+  // 待复习卡片数 = 学习中的卡片
+  const pendingReviewCount = statsData?.overview?.learning_cards || 0
+
   // 未登录时跳转到登录页
   useEffect(() => {
     if (error?.message === 'UNAUTHORIZED') {
       router.push(`/login?redirect=${encodeURIComponent(window.location.pathname)}`)
     }
   }, [error, router])
+
+  // 筛选条件变化时重置页码
+  useEffect(() => {
+    setPage(1)
+  }, [language, difficulty, tag])
 
   // 更新 URL
   useEffect(() => {
@@ -286,16 +340,30 @@ function VideoListContent() {
     if (difficulty && difficulty !== 'all') {
       params.set('difficulty', difficulty)
     }
+    if (tag && tag !== 'all') {
+      params.set('tag', tag)
+    }
+    if (page > 1) {
+      params.set('page', String(page))
+    }
 
     const queryString = params.toString()
     const newUrl = queryString ? `?${queryString}` : window.location.pathname
     router.replace(newUrl, { scroll: false })
-  }, [language, difficulty, router])
+  }, [language, difficulty, tag, page, router])
 
   // 提取继续学习的视频
   const continueLearningVideos = (data?.items || [])
     .filter((v) => v.user_progress && v.user_progress.max_progress > 0 && !v.user_progress.is_completed)
     .slice(0, 1)
+
+  // 动态语言选项（基于用户权限范围内的语言）
+  const languageOptions = useMemo(() => {
+    return buildLanguageOptions(data?.available_languages)
+  }, [data?.available_languages])
+
+  // 是否显示语言筛选（只有多种语言时才显示）
+  const showLanguageFilter = (data?.available_languages?.length || 0) > 1
 
   return (
     <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
@@ -315,10 +383,15 @@ function VideoListContent() {
             {/* 卡片复习入口 */}
             <a
               href="/video-flashcards"
-              className="hidden md:flex items-center gap-2 px-6 py-3 bg-[#B4F416] hover:bg-[#a3e014] border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 transition-all group"
+              className="hidden md:flex items-center gap-2 px-6 py-3 bg-[#B4F416] hover:bg-[#a3e014] border-[3px] border-black dark:border-gray-600 rounded-sm shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 transition-all group relative"
             >
               <BookOpen className="w-5 h-5 text-black" />
               <span className="font-black text-black text-base">卡片复习</span>
+              {pendingReviewCount > 0 && (
+                <span className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center border-[2px] border-black animate-pulse">
+                  {pendingReviewCount > 99 ? '99+' : pendingReviewCount}
+                </span>
+              )}
             </a>
           </div>
         </div>
@@ -326,96 +399,104 @@ function VideoListContent() {
 
       {/* 主内容区域 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        {/* 用户套餐标签 */}
-        {data?.user_packages && data.user_packages.length > 0 && (
-          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-6">
-            <span className="text-sm font-black text-gray-700 dark:text-gray-300 flex-shrink-0">我的套餐:</span>
-            {data.user_packages.map((pkg) => (
-              <div key={pkg.id} className="px-3 py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000]">
-                <span className="text-xs font-black">{pkg.name}</span>
-              </div>
-            ))}
-          </div>
-        )}
-
-        {/* 筛选工具栏 */}
-        <div className="mb-8">
-          {/* PC端 */}
-          <div className="hidden md:flex items-start gap-8">
-            {/* 语言筛选 */}
-            <div className="flex-1">
-              <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-3">语言：</div>
-              <div className="flex flex-wrap gap-2">
-                {LANGUAGE_OPTIONS.map((opt) => (
-                  <button
-                    key={opt.value}
-                    onClick={() => setLanguage(opt.value)}
-                    className={`
-                      px-4 py-2 rounded-sm text-sm font-black tracking-tight
-                      border-[3px] border-black dark:border-gray-600
-                      transition-all duration-150
-                      ${language === opt.value
-                        ? 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                        : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                      }
-                    `}
-                  >
-                    {opt.label}
-                  </button>
+        {/* PC端筛选工具栏 - 紧凑布局 */}
+        <div className="hidden md:block mb-8">
+          <div className="flex flex-wrap items-center gap-6">
+            {/* 套餐标签 */}
+            {data?.user_packages && data.user_packages.length > 0 && (
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-gray-500">套餐</span>
+                {data.user_packages.map((pkg) => (
+                  <span key={pkg.id} className="px-2 py-1 text-xs font-black bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000]">
+                    {pkg.name}
+                  </span>
                 ))}
               </div>
-            </div>
+            )}
 
             {/* 难度筛选 */}
-            <div className="flex-1 text-right">
-              <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-3">难度：</div>
-              <div className="flex flex-wrap gap-2 justify-end">
-                {DIFFICULTY_OPTIONS.map((opt) => (
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold text-gray-500">难度</span>
+              {DIFFICULTY_OPTIONS.map((opt) => (
+                <button
+                  key={opt.value}
+                  onClick={() => setDifficulty(opt.value)}
+                  className={`
+                    px-3 py-1 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                    ${difficulty === opt.value
+                      ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                      : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white'
+                    }
+                  `}
+                >
+                  {opt.label}
+                </button>
+              ))}
+            </div>
+
+            {/* 标签筛选 */}
+            {tagsData && tagsData.length > 0 && (
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="text-xs font-bold text-gray-500">标签</span>
+                <button
+                  onClick={() => setTag('all')}
+                  className={`
+                    px-3 py-1 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                    ${tag === 'all'
+                      ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                      : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white'
+                    }
+                  `}
+                >
+                  全部
+                </button>
+                {tagsData.slice(0, 8).map((t) => (
                   <button
-                    key={opt.value}
-                    onClick={() => setDifficulty(opt.value)}
+                    key={t.id}
+                    onClick={() => setTag(t.name)}
                     className={`
-                      px-4 py-2 rounded-sm text-sm font-black tracking-tight
-                      border-[3px] border-black dark:border-gray-600
-                      transition-all duration-150
-                      ${difficulty === opt.value
-                        ? 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                        : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                      px-3 py-1 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                      ${tag === t.name
+                        ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                        : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white'
                       }
                     `}
                   >
-                    {opt.label}
+                    {t.name}
                   </button>
                 ))}
               </div>
-            </div>
+            )}
           </div>
+        </div>
 
           {/* 移动端 */}
           <div className="md:hidden">
-            {/* 语言筛选 */}
-            <div className="mb-4">
-              <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">语言：</div>
-              <div className="flex gap-2 flex-wrap">
-                {LANGUAGE_OPTIONS.slice(0, 5).map((opt) => (
-                  <button
-                    key={opt.value}
-                    onClick={() => setLanguage(opt.value)}
-                    className={`
-                      px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                      border-[2px] border-black dark:border-gray-600
-                      transition-all duration-150
-                      ${language === opt.value
-                        ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                      }
-                    `}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
+            {/* 语言筛选（只有多种语言时才显示） */}
+            {showLanguageFilter && (
+              <div className="mb-4">
+                <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">语言：</div>
+                <div className="flex gap-2 flex-wrap">
+                  {languageOptions.slice(0, 5).map((opt) => (
+                    <button
+                      key={opt.value}
+                      onClick={() => setLanguage(opt.value)}
+                      className={`
+                        px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
+                        border-[2px] border-black dark:border-gray-600
+                        transition-all duration-150
+                        ${language === opt.value
+                          ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                          : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                        }
+                      `}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
+            )}
 
             {/* 难度筛选 */}
             <div className="mb-4">
@@ -440,22 +521,47 @@ function VideoListContent() {
                 ))}
               </div>
             </div>
-          </div>
 
-          {/* 搜索框 */}
-          <div className="mt-4">
-            <div className="relative max-w-md">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-500" />
-              <input
-                type="text"
-                placeholder="搜索视频..."
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-                className="w-full pl-10 pr-4 py-2.5 rounded-sm border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-sm font-bold shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] focus:shadow-[2px_2px_0px_0px_#000] dark:focus:shadow-[2px_2px_0px_0px_#666] focus:-translate-y-0.5 transition-all outline-none text-black dark:text-white placeholder:text-gray-400"
-              />
-            </div>
+            {/* 标签筛选 */}
+            {tagsData && tagsData.length > 0 && (
+              <div className="mb-4">
+                <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">标签：</div>
+                <div className="flex gap-2 flex-wrap">
+                  <button
+                    onClick={() => setTag('all')}
+                    className={`
+                      px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
+                      border-[2px] border-black dark:border-gray-600
+                      transition-all duration-150
+                      ${tag === 'all'
+                        ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                      }
+                    `}
+                  >
+                    全部
+                  </button>
+                  {tagsData.slice(0, 6).map((t) => (
+                    <button
+                      key={t.id}
+                      onClick={() => setTag(t.name)}
+                      className={`
+                        px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
+                        border-[2px] border-black dark:border-gray-600
+                        transition-all duration-150
+                        ${tag === t.name
+                          ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                          : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                        }
+                      `}
+                    >
+                      {t.name}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
-        </div>
 
         {/* 继续学习 */}
         {continueLearningVideos.length > 0 && (
@@ -546,9 +652,69 @@ function VideoListContent() {
                 </div>
               ) : (
                 <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
-                  {data.items.map((video) => (
+                  {data?.items.map((video) => (
                     <VideoCard key={video.id} video={video} />
                   ))}
+                </div>
+              )}
+
+              {/* 分页 */}
+              {data && data.total > PAGE_SIZE && (
+                <div className="flex items-center justify-center gap-2 mt-8">
+                  <button
+                    onClick={() => setPage(p => Math.max(1, p - 1))}
+                    disabled={page === 1}
+                    className={`
+                      px-4 py-2 text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600
+                      transition-all duration-150
+                      ${page === 1
+                        ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
+                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 text-black dark:text-white'
+                      }
+                    `}
+                  >
+                    上一页
+                  </button>
+
+                  <div className="flex items-center gap-1">
+                    {Array.from({ length: Math.ceil(data.total / PAGE_SIZE) }, (_, i) => i + 1)
+                      .filter(p => p === 1 || p === Math.ceil(data.total / PAGE_SIZE) || Math.abs(p - page) <= 1)
+                      .map((p, idx, arr) => (
+                        <React.Fragment key={p}>
+                          {idx > 0 && arr[idx - 1] !== p - 1 && (
+                            <span className="px-2 text-gray-400">...</span>
+                          )}
+                          <button
+                            onClick={() => setPage(p)}
+                            className={`
+                              w-10 h-10 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600
+                              transition-all duration-150
+                              ${page === p
+                                ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] text-black'
+                                : 'bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 text-black dark:text-white'
+                              }
+                            `}
+                          >
+                            {p}
+                          </button>
+                        </React.Fragment>
+                      ))}
+                  </div>
+
+                  <button
+                    onClick={() => setPage(p => Math.min(Math.ceil(data.total / PAGE_SIZE), p + 1))}
+                    disabled={page >= Math.ceil(data.total / PAGE_SIZE)}
+                    className={`
+                      px-4 py-2 text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600
+                      transition-all duration-150
+                      ${page >= Math.ceil(data.total / PAGE_SIZE)
+                        ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
+                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 text-black dark:text-white'
+                      }
+                    `}
+                  >
+                    下一页
+                  </button>
                 </div>
               )}
             </>

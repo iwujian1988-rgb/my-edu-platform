@@ -7,7 +7,7 @@
  * 实现 SM-2 艾宾浩斯遗忘曲线算法
  */
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useMemo } from 'react'
 import useSWR from 'swr'
 import type { CardType, CardStatus } from '@/types/video'
 
@@ -18,6 +18,7 @@ interface CardProgressData {
   status: CardStatus
   review_count: number
   next_review_at: string | null
+  ease_factor: number
 }
 
 interface UseCardProgressOptions {
@@ -104,26 +105,38 @@ export function useCardProgress(
 ): UseCardProgressResult {
   const { videoId } = options
 
-  // 获取卡片进度数据
-  // TODO: API /api/user/card-progress 尚未实现，暂时禁用 fetch
-  const { data, error, isLoading } = useSWR<CardProgressData[]>(
-    null, // 禁用 fetch 直到 API 实现
+  // 获取卡片进度数据（使用 all=true 获取所有进度，用于显示学习状态）
+  const swrKey = videoId ? `/api/user/video-cards/review?video_id=${videoId}&all=true` : null
+
+  const { data, error, isLoading, mutate } = useSWR<CardProgressData[]>(
+    swrKey,
     async (url: string) => {
       const res = await fetch(url)
       if (!res.ok) throw new Error('Failed to fetch card progress')
       const json = await res.json()
-      return json.data?.items || []
+      return json.data?.items?.map((item: { card: { id: string }; card_type: string; status: CardStatus; review_count: number; next_review: string | null; ease_factor: number }) => ({
+        video_id: videoId!,
+        card_type: item.card_type as CardType,
+        card_id: item.card.id,
+        status: item.status,
+        review_count: item.review_count,
+        next_review_at: item.next_review,
+        ease_factor: item.ease_factor,
+      })) || []
     }
   )
 
-  // 构建 Map 方便查询
-  const progressMap = new Map<string, CardProgressData>()
-  if (data) {
-    for (const item of data) {
-      const key = `${item.card_type}:${item.card_id}`
-      progressMap.set(key, item)
+  // 构建 Map 方便查询 - 使用 useMemo 避免每次渲染重新创建
+  const progressMap = useMemo(() => {
+    const map = new Map<string, CardProgressData>()
+    if (data) {
+      for (const item of data) {
+        const key = `${item.card_type}:${item.card_id}`
+        map.set(key, item)
+      }
     }
-  }
+    return map
+  }, [data])
 
   // 更新卡片状态
   const updateStatus = useCallback(
@@ -145,16 +158,20 @@ export function useCardProgress(
             cardId,
             cardType,
             quality: qualityMap[status],
+            videoId,
           }),
         })
 
         if (!res.ok) throw new Error('Failed to update status')
+
+        // 刷新本地缓存
+        mutate()
       } catch (error) {
         console.error('[useCardProgress] Update error:', error)
         throw error
       }
     },
-    [videoId]
+    [videoId, mutate]
   )
 
   // 获取卡片状态
@@ -212,12 +229,14 @@ export function useCardProgress(
           cardId,
           cardType,
           quality,
+          videoId,
         }),
       })
 
-      // 本地缓存已禁用，无需 mutate
+      // 刷新本地缓存
+      mutate()
     },
-    [progressMap, videoId]
+    [progressMap, videoId, mutate]
   )
 
   return {
