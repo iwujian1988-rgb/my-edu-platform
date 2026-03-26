@@ -91,6 +91,7 @@ export function VideoPlayer({
 
   // 点击封面开始播放
   const handleStartPlay = useCallback(async () => {
+    console.log('[VideoPlayer] handleStartPlay called, video_url:', video.video_url)
     setHasStarted(true)
     setIsLoading(true)
     shouldAutoPlayRef.current = true // 标记需要自动播放
@@ -99,17 +100,23 @@ export function VideoPlayer({
     // 这样可以绕过浏览器的自动播放限制
     const videoEl = videoRef.current
     if (videoEl) {
+      console.log('[VideoPlayer] video element found, loading...')
       videoEl.load()
       // 等待一小段时间让视频开始加载，然后尝试播放
       await new Promise(resolve => setTimeout(resolve, 100))
       try {
+        console.log('[VideoPlayer] attempting to play...')
         await videoEl.play()
+        console.log('[VideoPlayer] play() succeeded')
         shouldAutoPlayRef.current = false // 已成功播放，不需要再在 handleCanPlay 中播放
-      } catch {
+      } catch (error) {
         // 播放失败，等待 handleCanPlay 重试
+        console.log('[VideoPlayer] play() failed:', error)
       }
+    } else {
+      console.log('[VideoPlayer] video element not found!')
     }
-  }, [])
+  }, [video.video_url])
 
   // 当 hasStarted 变为 true 后加载视频
   useEffect(() => {
