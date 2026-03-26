@@ -148,6 +148,9 @@ stardict*
 public/audio/speaker/
 speak/*/*.mp3
 
+# temp directory (debug scripts, test data, large files)
+temp/
+
 # AI instruction documents (not part of project code)
 CLAUDE.md
 AI_DEVELOPMENT_GUIDE.md
