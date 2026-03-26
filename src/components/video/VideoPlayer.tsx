@@ -326,14 +326,7 @@ export function VideoPlayer({
       {/* 视频元素 - 只有开始后才设置 src */}
       <video
         ref={videoRef}
-        src={hasStarted ? (() => {
-          if (!video.video_url) return undefined
-          // 解决 OSS 强制下载问题，          if (video.video_url.includes('aliyuncs.com')) {
-            const sep = video.video_url.includes('?') ? '&' : '?'
-            return `${video.video_url}${sep}response-content-disposition=inline`
-          }
-          return video.video_url
-        })() : undefined}
+        src={hasStarted ? video.video_url : undefined}
         className="w-full aspect-video"
         preload="none"
         playsInline
