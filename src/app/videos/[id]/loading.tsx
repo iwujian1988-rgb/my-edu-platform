@@ -9,7 +9,7 @@
 
 export default function VideoLoading() {
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         {/* 返回按钮骨架 */}
         <div className="h-9 w-24 mb-4 bg-gray-200 dark:bg-gray-700 animate-pulse border-[2px] border-black dark:border-gray-600" />

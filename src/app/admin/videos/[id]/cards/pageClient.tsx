@@ -26,7 +26,6 @@ import {
   ChevronDown,
   Loader2,
   AlertTriangle,
-  Wand2,
 } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -85,14 +84,6 @@ const CARD_TYPE_COLORS: Record<CardType, string> = {
   exercise: 'bg-green-100 text-green-700 border-green-300',
 }
 
-const GENERATE_TYPE_LABELS: Record<string, string> = {
-  all: '全部内容',
-  word: '单词卡片',
-  phrase: '短语卡片',
-  expression: '地道表达卡片',
-  exercise: '填空练习',
-}
-
 export function CardReviewClient() {
   const params = useParams()
   const router = useRouter()
@@ -112,10 +103,6 @@ export function CardReviewClient() {
   // 操作状态
   const [updatingIds, setUpdatingIds] = useState<Set<string>>(new Set())
   const [isBatchApproving, setIsBatchApproving] = useState(false)
-  const [isGenerating, setIsGenerating] = useState(false)
-  const [showGenerateModal, setShowGenerateModal] = useState(false)
-  const [generateType, setGenerateType] = useState<'all' | 'word' | 'phrase' | 'expression' | 'exercise'>('all')
-  const [generateReset, setGenerateReset] = useState(true)
 
   // 加载数据
   const fetchData = useCallback(async () => {
@@ -276,44 +263,6 @@ export function CardReviewClient() {
     }
   }
 
-  // AI 生成卡片
-  const handleGenerateCards = async () => {
-    if (!confirm(
-      generateReset
-        ? `确定要${generateType === 'all' ? '一键生成所有' : `生成${GENERATE_TYPE_LABELS[generateType]}`}？\n\n注意：将删除现有的${generateType === 'all' ? '所有卡片' : GENERATE_TYPE_LABELS[generateType]}后重新生成。`
-        : `确定要生成${GENERATE_TYPE_LABELS[generateType]}？`
-    )) return
-
-    setIsGenerating(true)
-    setShowGenerateModal(false)
-
-    try {
-      const res = await fetch(`/api/admin/videos/${videoId}/generate-cards`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          cardType: generateType,
-          reset: generateReset,
-        }),
-      })
-
-      const data = await res.json()
-
-      if (!res.ok) {
-        throw new Error(data.error || '生成失败')
-      }
-
-      alert(`生成成功！\n\n单词: ${data.data.cards.words}\n短语: ${data.data.cards.phrases}\n表达: ${data.data.cards.expressions}\n练习: ${data.data.cards.exercises}`)
-
-      // 重新加载数据
-      await fetchData()
-    } catch (err) {
-      alert(err instanceof Error ? err.message : '生成失败')
-    } finally {
-      setIsGenerating(false)
-    }
-  }
-
   // 筛选后的卡片
   const filteredCards = cards.filter(card => {
     if (filterType !== 'all' && card.type !== filterType) return false
@@ -432,30 +381,6 @@ export function CardReviewClient() {
 
           {/* 批量操作 */}
           <div className="flex items-center gap-3">
-            {/* AI 生成按钮 */}
-            <button
-              onClick={() => setShowGenerateModal(true)}
-              disabled={isGenerating}
-              className={cn(
-                "flex items-center gap-2 px-4 py-2 font-bold border-2 border-black dark:border-gray-600 transition-colors",
-                isGenerating
-                  ? "bg-gray-100 dark:bg-gray-700 text-gray-400"
-                  : "bg-purple-400 hover:bg-purple-500 text-black"
-              )}
-            >
-              {isGenerating ? (
-                <>
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                  生成中...
-                </>
-              ) : (
-                <>
-                  <Wand2 className="w-4 h-4" />
-                  AI 生成卡片
-                </>
-              )}
-            </button>
-
             {/* 批量通过 */}
             {stats && stats.pending > 0 && (
               <button
@@ -681,73 +606,6 @@ export function CardReviewClient() {
           </div>
         )}
       </div>
-
-      {/* AI 生成卡片弹窗 */}
-      {showGenerateModal && (
-        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 p-6 max-w-md w-full mx-4">
-            <h3 className="text-lg font-black mb-4">AI 生成卡片</h3>
-
-            <div className="space-y-4">
-              {/* 生成类型 */}
-              <div>
-                <label className="block text-sm font-bold mb-2">生成内容</label>
-                <select
-                  value={generateType}
-                  onChange={e => setGenerateType(e.target.value as typeof generateType)}
-                  className="w-full px-3 py-2 border-2 border-black dark:border-gray-600 bg-white dark:bg-gray-700 font-semibold"
-                >
-                  <option value="all">全部内容（单词+短语+表达+练习）</option>
-                  <option value="word">仅单词卡片</option>
-                  <option value="phrase">仅短语卡片</option>
-                  <option value="expression">仅地道表达卡片</option>
-                  <option value="exercise">仅填空练习</option>
-                </select>
-              </div>
-
-              {/* 重置选项 */}
-              <div className="flex items-center gap-2">
-                <input
-                  type="checkbox"
-                  id="generateReset"
-                  checked={generateReset}
-                  onChange={e => setGenerateReset(e.target.checked)}
-                  className="w-4 h-4 border-2 border-black"
-                />
-                <label htmlFor="generateReset" className="text-sm font-semibold">
-                  重置后生成（删除旧的{generateType !== 'all' ? GENERATE_TYPE_LABELS[generateType] : '所有卡片'}）
-                </label>
-              </div>
-
-              {/* 提示信息 */}
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                AI 将根据字幕内容自动提取学习要点并生成卡片。
-                {generateReset && (
-                  <span className="block mt-1 text-amber-600 dark:text-amber-400">
-                    ⚠️ 注意：将删除现有的卡片后重新生成。
-                  </span>
-                )}
-              </p>
-            </div>
-
-            {/* 操作按钮 */}
-            <div className="flex justify-end gap-3 mt-6">
-              <button
-                onClick={() => setShowGenerateModal(false)}
-                className="px-4 py-2 font-bold border-2 border-black dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700"
-              >
-                取消
-              </button>
-              <button
-                onClick={handleGenerateCards}
-                className="px-4 py-2 font-bold bg-purple-400 hover:bg-purple-500 text-black border-2 border-black"
-              >
-                开始生成
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </div>
   )
 }

@@ -5,6 +5,8 @@
  *
  * 对应 PRD: VIDEO_MODULE_PRD.md - Section 2.2
  * 对应 Tech: VIDEO_MODULE_TECH.md v5.0
+ *
+ * 样式：Neo-Brutalism 风格下划线
  */
 
 import { useMemo } from 'react'
@@ -15,29 +17,26 @@ import type {
   SubtitleHighlight,
 } from '@/types/video'
 
-// 高亮颜色映射
-const HIGHLIGHT_COLORS: Record<CardType, { bg: string; text: string; border: string }> = {
+// 高亮样式映射 - Neo-Brutalism 风格
+const HIGHLIGHT_STYLES: Record<CardType, { underline: string; hover: string }> = {
   word: {
-    bg: 'bg-blue-500/20',
-    text: 'text-blue-600 dark:text-blue-400',
-    border: 'border-b-2 border-blue-500',
+    underline: 'decoration-[#3B82F6] decoration-[3px] underline-offset-2',
+    hover: 'hover:bg-blue-100',
   },
   phrase: {
-    bg: 'bg-green-500/20',
-    text: 'text-green-600 dark:text-green-400',
-    border: 'border-b-2 border-green-500',
+    underline: 'decoration-[#22C55E] decoration-[3px] underline-offset-2',
+    hover: 'hover:bg-green-100',
   },
   expression: {
-    bg: 'bg-purple-500/20',
-    text: 'text-purple-600 dark:text-purple-400',
-    border: 'border-b-2 border-purple-500',
+    underline: 'decoration-[#A855F7] decoration-[3px] underline-offset-2',
+    hover: 'hover:bg-purple-100',
   },
 }
 
 interface SubtitleWithHighlightsProps {
   subtitle: SubtitleWithHighlightsType
   isActive: boolean
-  onHighlightClick: (cardType: CardType, cardId: string) => void
+  onHighlightClick: (cardType: CardType, cardId: string, event: React.MouseEvent) => void
   displayMode: 'bilingual' | 'original' | 'chinese'
 }
 
@@ -73,21 +72,19 @@ export function SubtitleWithHighlights({
         )
       }
 
-      // 添加高亮文本
-      const colors = HIGHLIGHT_COLORS[highlight.card_type]
+      // 添加高亮文本 - Neo-Brutalism 风格下划线
+      const styles = HIGHLIGHT_STYLES[highlight.card_type]
       segments.push(
         <button
           key={`highlight-${index}`}
           onClick={(e) => {
             e.stopPropagation()
-            onHighlightClick(highlight.card_type, highlight.card_id)
+            onHighlightClick(highlight.card_type, highlight.card_id, e)
           }}
           className={cn(
-            'cursor-pointer rounded px-0.5 transition-colors',
-            'hover:bg-opacity-40',
-            colors.bg,
-            colors.text,
-            colors.border
+            'cursor-pointer px-0.5 transition-all underline',
+            styles.underline,
+            styles.hover
           )}
         >
           {highlight.text}

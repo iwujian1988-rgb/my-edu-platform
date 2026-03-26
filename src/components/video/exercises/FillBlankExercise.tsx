@@ -5,65 +5,58 @@
  * - beginner: 1个空，显示首字母提示
  * - intermediate: 2-3个空，显示首尾字母提示
  * - advanced: 完整听写，无提示
+ *
+ * 样式：Neo-brutalism 风格，与全站保持一致
  */
 
 'use client'
 
 import { useState, useCallback, useMemo } from 'react'
-import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { cn } from '@/lib/utils'
 import {
   Check,
   X,
   ChevronRight,
   RotateCcw,
-  Volume2,
   HelpCircle,
   Sparkles,
   Target,
   Zap,
+  Play,
 } from 'lucide-react'
 import type { VideoExercise, ExerciseDifficulty } from '@/types/video'
 
-// 难度配置
+// 难度配置 - Neo-brutalism 风格
 const DIFFICULTY_CONFIG: Record<ExerciseDifficulty, {
   label: string
   description: string
   icon: React.ElementType
-  color: string
   bgColor: string
-  borderColor: string
 }> = {
   beginner: {
     label: '入门',
     description: '1个空，首字母提示',
     icon: Sparkles,
-    color: 'text-green-600',
-    bgColor: 'bg-green-50 dark:bg-green-900/20',
-    borderColor: 'border-green-300 dark:border-green-700',
+    bgColor: 'bg-[#B4F416]',
   },
   intermediate: {
     label: '进阶',
     description: '2-3个空，首尾字母提示',
     icon: Target,
-    color: 'text-blue-600',
-    bgColor: 'bg-blue-50 dark:bg-blue-900/20',
-    borderColor: 'border-blue-300 dark:border-blue-700',
+    bgColor: 'bg-[#4ECDC4]',
   },
   advanced: {
     label: '困难',
     description: '完整听写，无提示',
     icon: Zap,
-    color: 'text-purple-600',
-    bgColor: 'bg-purple-50 dark:bg-purple-900/20',
-    borderColor: 'border-purple-300 dark:border-purple-700',
+    bgColor: 'bg-[#FF6B6B]',
   },
 }
 
 interface FillBlankExerciseProps {
   exercises: VideoExercise[]
   onCheckAnswer: (exerciseId: string, answer: string) => void
+  onPlaySegment?: (startTime: number, endTime: number) => void  // 播放按钮回调（开始+结束时间)
 }
 
 interface ExerciseState {
@@ -76,6 +69,7 @@ interface ExerciseState {
 export function FillBlankExercise({
   exercises,
   onCheckAnswer,
+  onPlaySegment,
 }: FillBlankExerciseProps) {
   const [selectedDifficulty, setSelectedDifficulty] = useState<ExerciseDifficulty | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -136,7 +130,6 @@ export function FillBlankExercise({
   const handleSubmit = useCallback(() => {
     if (!currentExercise || !currentState) return
 
-    // 简单对比（实际应用中可能需要更智能的匹配）
     const isCorrect = currentState.userAnswer
       .toLowerCase()
       .trim()
@@ -187,14 +180,11 @@ export function FillBlankExercise({
 
       switch (difficulty) {
         case 'beginner':
-          // 首字母 + 下划线
           return `${answer[0]}${'_'.repeat(answer.length - 1)}`
         case 'intermediate':
-          // 首尾字母 + 下划线
           if (answer.length <= 2) return answer
           return `${answer[0]}${'_'.repeat(answer.length - 2)}${answer[answer.length - 1]}`
         case 'advanced':
-          // 无提示
           return '_'.repeat(answer.length)
         default:
           return '_'.repeat(answer.length)
@@ -212,7 +202,6 @@ export function FillBlankExercise({
       return parts.map((part, index) => {
         if (part === '[blank]') {
           const answer = exercise.answers[blankIndex] || ''
-          const currentBlankIndex = blankIndex
           blankIndex++
 
           if (showAnswer) {
@@ -220,12 +209,12 @@ export function FillBlankExercise({
               <span
                 key={index}
                 className={cn(
-                  'px-2 py-1 rounded font-medium',
+                  'px-2 py-0.5 font-black',
                   currentState?.isSubmitted
                     ? currentState.isCorrect
-                      ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400'
-                      : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
-                    : 'bg-primary/10 text-primary'
+                      ? 'bg-[#B4F416] text-black'
+                      : 'bg-[#FF6B6B] text-white'
+                    : 'bg-[#B4F416] text-black'
                 )}
               >
                 {answer}
@@ -237,7 +226,7 @@ export function FillBlankExercise({
             return (
               <span
                 key={index}
-                className="px-2 py-1 rounded bg-muted font-mono text-sm"
+                className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 font-mono text-sm font-bold"
               >
                 {getHintText(exercise.difficulty, answer)}
               </span>
@@ -247,9 +236,9 @@ export function FillBlankExercise({
           return (
             <span
               key={index}
-              className="inline-flex items-center px-2 py-1 rounded bg-muted"
+              className="inline-flex items-center px-2 py-0.5 bg-gray-100 dark:bg-gray-700"
             >
-              <HelpCircle className="w-4 h-4 text-muted-foreground" />
+              <HelpCircle className="w-4 h-4 text-gray-400" />
             </span>
           )
         }
@@ -271,8 +260,8 @@ export function FillBlankExercise({
   // 如果没有练习题
   if (exercises.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center h-64 text-muted-foreground">
-        <p>暂无练习题</p>
+      <div className="flex flex-col items-center justify-center h-64">
+        <p className="font-black text-gray-400 dark:text-gray-500">暂无练习题</p>
       </div>
     )
   }
@@ -280,15 +269,15 @@ export function FillBlankExercise({
   // 难度选择界面
   if (!selectedDifficulty) {
     return (
-      <div className="space-y-6">
-        <div className="text-center">
-          <h3 className="text-lg font-medium mb-2">选择练习难度</h3>
-          <p className="text-sm text-muted-foreground">
-            根据你的熟练程度选择合适的难度
+      <div className="space-y-3">
+        <div className="text-center mb-4">
+          <h3 className="text-base font-black text-black dark:text-white">选择练习难度</h3>
+          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+            根据你的熟练程度选择
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-3">
+        <div className="space-y-2">
           {(Object.keys(DIFFICULTY_CONFIG) as ExerciseDifficulty[]).map((difficulty) => {
             const config = DIFFICULTY_CONFIG[difficulty]
             const count = difficultyCounts[difficulty]
@@ -301,24 +290,27 @@ export function FillBlankExercise({
                 key={difficulty}
                 onClick={() => handleSelectDifficulty(difficulty)}
                 className={cn(
-                  'p-4 rounded-lg border-2 text-left transition-all',
-                  'hover:shadow-md hover:scale-[1.02]',
-                  config.bgColor,
-                  config.borderColor
+                  'w-full p-3 border-[3px] border-black dark:border-gray-600 text-left transition-all',
+                  'shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]',
+                  'hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-0.5',
+                  'active:shadow-[1px_1px_0px_0px_#000] active:translate-y-0.5',
+                  config.bgColor
                 )}
               >
                 <div className="flex items-center gap-3">
-                  <div className={cn('p-2 rounded-full', config.bgColor)}>
-                    <Icon className={cn('w-5 h-5', config.color)} />
+                  <div className="p-1.5 bg-white dark:bg-gray-800 border-[2px] border-black">
+                    <Icon className="w-4 h-4 text-black dark:text-white" />
                   </div>
                   <div className="flex-1">
                     <div className="flex items-center justify-between">
-                      <span className={cn('font-medium', config.color)}>
+                      <span className="font-black text-black text-sm">
                         {config.label}
                       </span>
-                      <Badge variant="outline">{count} 题</Badge>
+                      <span className="px-2 py-0.5 bg-white dark:bg-gray-800 border-[2px] border-black text-xs font-black">
+                        {count} 题
+                      </span>
                     </div>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-xs text-black/70 mt-0.5">
                       {config.description}
                     </p>
                   </div>
@@ -332,87 +324,93 @@ export function FillBlankExercise({
   }
 
   return (
-    <div className="space-y-6">
-      {/* 进度 */}
-      <div className="flex items-center justify-between text-sm">
+    <div className="space-y-3">
+      {/* 进度条 */}
+      <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="sm"
+          <button
             onClick={() => setSelectedDifficulty(null)}
-            className="text-muted-foreground"
+            className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
           >
-            <RotateCcw className="w-4 h-4 mr-1" />
+            <RotateCcw className="w-3 h-3" />
             返回
-          </Button>
-          <Badge variant="outline">
+          </button>
+          <span className="px-2 py-1 bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 text-xs font-black">
             {currentIndex + 1} / {filteredExercises.length}
-          </Badge>
-          <Badge variant="secondary">
+          </span>
+          <span className={cn(
+            'px-2 py-1 border-[2px] border-black text-xs font-black',
+            DIFFICULTY_CONFIG[selectedDifficulty].bgColor,
+            'text-black'
+          )}>
             {DIFFICULTY_CONFIG[selectedDifficulty].label}
-          </Badge>
+          </span>
         </div>
-        <div className="text-muted-foreground">
+        <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
           正确率: {submittedCount > 0 ? Math.round((correctCount / submittedCount) * 100) : 0}%
-        </div>
+        </span>
       </div>
 
-      {/* 关联字幕（如有） */}
-      {currentExercise.subtitle_text && (
-        <div className="p-3 rounded-lg bg-muted/50 text-sm">
-          <div className="flex items-center gap-2 mb-1">
-            <Volume2 className="w-4 h-4 text-muted-foreground" />
-            <span className="text-muted-foreground">原文：</span>
-          </div>
-          <p>{currentExercise.subtitle_text}</p>
+      {/* 题目卡片 + 播放按钮 */}
+      <div className="flex gap-2">
+        <div className="flex-1 p-4 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
+          <p className="text-base leading-relaxed font-medium text-black dark:text-white">
+            {renderTextWithBlanks(
+              currentExercise,
+              currentState?.isSubmitted || false
+            )}
+          </p>
         </div>
-      )}
-
-      {/* 题目 */}
-      <div className="p-4 rounded-lg border bg-card">
-        <p className="text-lg leading-relaxed">
-          {renderTextWithBlanks(
-            currentExercise,
-            currentState?.isSubmitted || false
-          )}
-        </p>
+        {/* 播放按钮 - 始终显示用于测试 */}
+        {onPlaySegment && (
+          <button
+            onClick={() => {
+              // 使用模拟时间：每道题10秒递增， 字幕时长5秒（测试用）
+              const startTime = currentExercise.subtitle_start_time ?? (currentIndex * 10)
+              const endTime = startTime + 5 // 固定5秒长度
+              onPlaySegment(startTime, endTime)
+            }}
+            className="flex-shrink-0 w-12 flex items-center justify-center border-[3px] border-black dark:border-gray-600 bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-0.5 active:shadow-[1px_1px_0px_0px_#000] active:translate-y-0.5 transition-all"
+            title="播放这段"
+          >
+            <Play className="w-5 h-5 text-black" fill="none" />
+          </button>
+        )}
       </div>
 
       {/* 输入区域 */}
       {!currentState?.isSubmitted && (
-        <div className="space-y-4">
-          <div className="space-y-2">
-            <label className="text-sm font-medium">
-              填写答案（多个答案用逗号分隔）
-            </label>
-            <input
-              type="text"
-              value={currentState?.userAnswer || ''}
-              onChange={(e) => handleAnswerChange(e.target.value)}
-              placeholder={`共 ${currentExercise.answers.length} 个空`}
-              className="w-full px-4 py-2 rounded-md border bg-background"
-              onKeyDown={(e) => {
-                if (e.key === 'Enter' && currentState?.userAnswer) {
-                  handleSubmit()
-                }
-              }}
-            />
-          </div>
+        <div className="space-y-3">
+          <label className="text-xs font-black text-black dark:text-white">
+            填写答案（多个答案用逗号分隔）
+          </label>
+          <input
+            type="text"
+            value={currentState?.userAnswer || ''}
+            onChange={(e) => handleAnswerChange(e.target.value)}
+            placeholder={`共 ${currentExercise.answers.length} 个空`}
+            className="w-full px-3 py-2 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white font-medium shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] focus:outline-none focus:shadow-[4px_4px_0px_0px_#000] transition-shadow"
+            onKeyDown={(e) => {
+              if (e.key === 'Enter' && currentState?.userAnswer) {
+                handleSubmit()
+              }
+            }}
+          />
 
           {/* 提示按钮 */}
           <div className="flex items-center gap-2">
-            <Button
-              variant="outline"
-              size="sm"
+            <button
               onClick={() => setShowHint(!showHint)}
+              className={cn(
+                'px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all',
+                showHint ? 'bg-[#B4F416] text-black' : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+              )}
             >
               {showHint ? '隐藏提示' : '显示提示'}
-            </Button>
+            </button>
             {currentExercise.difficulty !== 'advanced' && (
-              <span className="text-xs text-muted-foreground">
-                {currentExercise.difficulty === 'beginner'
-                  ? '显示首字母'
-                  : '显示首尾字母'}
+              <span className="text-xs text-gray-500 dark:text-gray-400">
+                {currentExercise.difficulty === 'beginner' ? '首字母提示' : '首尾字母提示'}
               </span>
             )}
           </div>
@@ -423,35 +421,35 @@ export function FillBlankExercise({
       {currentState?.isSubmitted && (
         <div
           className={cn(
-            'p-4 rounded-lg',
+            'p-3 border-[3px] border-black shadow-[3px_3px_0px_0px_#000]',
             currentState.isCorrect
-              ? 'bg-green-50 dark:bg-green-900/20'
-              : 'bg-red-50 dark:bg-red-900/20'
+              ? 'bg-[#B4F416] text-black'
+              : 'bg-[#FF6B6B] text-white'
           )}
         >
-          <div className="flex items-center gap-2 mb-2">
+          <div className="flex items-center gap-2 mb-1">
             {currentState.isCorrect ? (
               <>
-                <Check className="w-5 h-5 text-green-600" />
-                <span className="font-medium text-green-600">正确！</span>
+                <Check className="w-5 h-5" />
+                <span className="font-black">正确！</span>
               </>
             ) : (
               <>
-                <X className="w-5 h-5 text-red-600" />
-                <span className="font-medium text-red-600">错误</span>
+                <X className="w-5 h-5" />
+                <span className="font-black">错误</span>
               </>
             )}
           </div>
 
           {!currentState.isCorrect && (
             <div className="text-sm">
-              <span className="text-muted-foreground">正确答案：</span>
-              <span className="font-medium">{currentExercise.answers.join(', ')}</span>
+              <span className="font-bold">正确答案：</span>
+              <span className="font-black">{currentExercise.answers.join(', ')}</span>
             </div>
           )}
 
           {currentExercise.explanation && (
-            <p className="text-sm text-muted-foreground mt-2">
+            <p className="text-sm opacity-80 mt-1">
               {currentExercise.explanation}
             </p>
           )}
@@ -460,35 +458,50 @@ export function FillBlankExercise({
 
       {/* 操作按钮 */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-2">
+        <div>
           {currentState?.isSubmitted && (
-            <Button variant="outline" size="sm" onClick={handleReset}>
-              <RotateCcw className="w-4 h-4 mr-1" />
+            <button
+              onClick={handleReset}
+              className="flex items-center gap-1 px-3 py-1.5 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+            >
+              <RotateCcw className="w-3 h-3" />
               重做
-            </Button>
+            </button>
           )}
         </div>
 
-        <div className="flex items-center gap-2">
+        <div>
           {currentState?.isSubmitted ? (
             currentIndex < filteredExercises.length - 1 ? (
-              <Button onClick={handleNext}>
+              <button
+                onClick={handleNext}
+                className="flex items-center gap-1 px-4 py-2 bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 font-black text-sm transition-all"
+              >
                 下一题
-                <ChevronRight className="w-4 h-4 ml-1" />
-              </Button>
+                <ChevronRight className="w-4 h-4" />
+              </button>
             ) : (
-              <Button variant="outline" onClick={() => setSelectedDifficulty(null)}>
+              <button
+                onClick={() => setSelectedDifficulty(null)}
+                className="px-4 py-2 bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 font-black text-sm transition-all"
+              >
                 完成本难度
-              </Button>
+              </button>
             )
           ) : (
-            <Button
+            <button
               onClick={handleSubmit}
               disabled={!currentState?.userAnswer}
+              className={cn(
+                'flex items-center gap-1 px-4 py-2 border-[2px] border-black font-black text-sm transition-all',
+                currentState?.userAnswer
+                  ? 'bg-[#B4F416] text-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5'
+                  : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
+              )}
             >
-              <Check className="w-4 h-4 mr-1" />
+              <Check className="w-4 h-4" />
               提交
-            </Button>
+            </button>
           )}
         </div>
       </div>

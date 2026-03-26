@@ -28,7 +28,9 @@ interface UseRecordingsResult {
   error: string | null
   isUploading: boolean
   uploadProgress: number // 上传进度 0-100
+  uploadStatus: string // 上传状态文本
   recordings: UserRecording[] // 历史录音列表
+  pendingUploadSubtitleId: string | null // 正在上传的字幕 ID（用于后台静默上传）
 
   // 操作
   startRecording: (subtitleId: string) => Promise<void>
@@ -37,6 +39,7 @@ interface UseRecordingsResult {
   resumeRecording: () => void
   cancelRecording: () => void
   uploadRecording: (subtitleId?: string) => Promise<UserRecording | null>
+  uploadRecordingBackground: (subtitleId?: string) => void // 后台静默上传（不阻塞）
   playRecording: () => void
   clearRecording: () => void
   deleteRecording: (recordingId: string) => Promise<void>
@@ -55,7 +58,9 @@ export function useRecordings({
   const [error, setError] = useState<string | null>(null)
   const [isUploading, setIsUploading] = useState(false)
   const [uploadProgress, setUploadProgress] = useState(0) // 上传进度 0-100
+  const [uploadStatus, setUploadStatus] = useState<string>('') // 上传状态文本
   const [recordings, setRecordings] = useState<UserRecording[]>([])
+  const [pendingUploadSubtitleId, setPendingUploadSubtitleId] = useState<string | null>(null) // 正在上传的字幕 ID
 
   const mediaRecorderRef = useRef<MediaRecorder | null>(null)
   const chunksRef = useRef<Blob[]>([])
@@ -354,6 +359,115 @@ export function useRecordings({
     [videoId, duration, onRecordingComplete]
   )
 
+  // 后台静默上传（不阻塞用户操作）
+  const uploadRecordingBackground = useCallback(
+    (subtitleId?: string) => {
+      const targetSubtitleId = subtitleId || currentSubtitleIdRef.current
+      if (!targetSubtitleId || !blobRef.current) {
+        return
+      }
+
+      // 保存 blob 引用，防止组件卸载后丢失
+      const blobToUpload = blobRef.current
+
+      // 标记正在上传
+      setPendingUploadSubtitleId(targetSubtitleId)
+      setIsUploading(true)
+      setUploadProgress(0)
+      setUploadStatus('准备上传...')
+
+      // 异步上传，不等待结果
+      ;(async () => {
+        try {
+          // 1. 获取 STS Token
+          setUploadStatus('获取凭证...')
+          console.log('[useRecordings] 🔄 后台上传: 获取 STS Token...')
+          const tokenRes = await fetch('/api/user/recordings/oss-token', {
+            method: 'POST'
+          })
+
+          if (!tokenRes.ok) {
+            throw new Error('获取上传凭证失败')
+          }
+
+          const tokenData = await tokenRes.json()
+
+          // 2. 初始化 OSS 客户端
+          const client = new OSS({
+            region: tokenData.region,
+            accessKeyId: tokenData.accessKeyId,
+            accessKeySecret: tokenData.accessKeySecret,
+            stsToken: tokenData.stsToken,
+            bucket: tokenData.bucket,
+            secure: true,
+          })
+
+          // 3. 生成文件路径
+          const timestamp = Date.now()
+          const objectKey = `audio/recordings/${videoId}/${targetSubtitleId}/${timestamp}.webm`
+          const fileSizeKB = (blobToUpload.size / 1024).toFixed(1)
+
+          // 4. 上传到 OSS
+          setUploadStatus(`上传中 (${fileSizeKB}KB)...`)
+          setUploadProgress(10) // 立即显示一点进度
+          console.log(`[useRecordings] 🔄 后台上传: ${objectKey} (${fileSizeKB}KB)`)
+
+          // 使用 multipartUpload 获得更可靠的进度回调
+          await client.multipartUpload(objectKey, blobToUpload, {
+            progress: (p: number) => {
+              const percent = Math.floor(p * 100)
+              setUploadProgress(percent)
+              setUploadStatus(`上传中 ${percent}%`)
+            }
+          })
+
+          // 5. 构建公开 URL
+          const recordingUrl = `https://${tokenData.bucket}.${tokenData.region}.aliyuncs.com/${objectKey}`
+          console.log('[useRecordings] ✅ 后台上传成功:', recordingUrl)
+
+          // 6. 保存元数据到数据库
+          setUploadStatus('保存记录...')
+          const saveRes = await fetch('/api/user/recordings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              video_id: videoId,
+              subtitle_id: targetSubtitleId,
+              recording_url: recordingUrl,
+              file_size: blobToUpload.size,
+              content_type: 'audio/webm',
+              duration: duration,
+            }),
+          })
+
+          if (!saveRes.ok) {
+            throw new Error('保存录音元数据失败')
+          }
+
+          const saveData = await saveRes.json()
+          const recording = saveData.data.recording as UserRecording
+
+          // 7. 更新本地列表
+          setRecordings(prev => [recording, ...prev])
+
+          // 8. 回调
+          onRecordingComplete?.(recording)
+
+          console.log('[useRecordings] ✅ 录音保存成功（后台）')
+        } catch (err) {
+          console.error('[useRecordings] ❌ 后台上传失败:', err)
+          setError('上传失败，但录音已保存到本地')
+        } finally {
+          setIsUploading(false)
+          setPendingUploadSubtitleId(null)
+          setUploadProgress(0)
+          setUploadStatus('')
+        }
+      })()
+    },
+    [videoId, duration, onRecordingComplete]
+  )
+
   // 删除录音
   const deleteRecording = useCallback(async (recordingId: string) => {
     try {
@@ -400,13 +514,16 @@ export function useRecordings({
     error,
     isUploading,
     uploadProgress,
+    uploadStatus,
     recordings,
+    pendingUploadSubtitleId,
     startRecording,
     stopRecording,
     pauseRecording,
     resumeRecording,
     cancelRecording,
     uploadRecording,
+    uploadRecordingBackground,
     playRecording,
     clearRecording,
     deleteRecording,

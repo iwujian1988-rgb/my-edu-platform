@@ -3,14 +3,14 @@
  *
  * 功能：
  * 1. 查询数据库中是否已有音频 URL
- * 2. 如果有，返回 307 重定向
- * 3. 如果没有，从有道 API 获取音频（仅英语）
- * 4. 上传到 OSS 并更新数据库
+ * 2. 如果有，返回音频流
+ * 3. 如果没有，从有道 API 获取音频
+ * 4. 有道失败时，用百度 API 兜底
  * 5. 返回音频流
  *
  * 多语言支持：
- * - 英语 (en): 使用有道 TTS API
- * - 其他语言 (fr, de, es, ja, it, ru): 返回 404，客户端回退到 Web Speech API
+ * - 有道 TTS: en, fr, de, es, ja, it, ru
+ * - 百度 TTS: en, fr, de, es, jp, it, ru (兜底)
  *
  * @route GET /api/tts?text={word}&type={1|2}&language={en|fr|de|es|ja|it|ru}
  */
@@ -23,14 +23,45 @@ import { getOSSClient, generateSafeFileName, uploadAudioAsync } from '@/lib/oss'
 type SupportedLanguage = 'en' | 'fr' | 'de' | 'es' | 'ja' | 'it' | 'ru'
 
 /**
- * 浏览器 User-Agent（用于伪装，避免被有道拦截）
+ * 浏览器 User-Agent（用于伪装，避免被拦截）
  */
 const BROWSER_USER_AGENT = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
 
 /**
- * 有道语音 API 配置（仅支持英语）
+ * 有道语音 API 配置
  */
 const YOUDAO_TTS_BASE_URL = 'https://dict.youdao.com/dictvoice'
+
+/**
+ * 百度翻译 TTS API 配置（兜底）
+ */
+const BAIDU_TTS_BASE_URL = 'https://fanyi.baidu.com/gettts'
+
+/**
+ * 有道语言参数映射
+ */
+const YOUDAO_LANG_MAP: Record<SupportedLanguage, string> = {
+  'en': 'en',
+  'fr': 'fr',
+  'de': 'de',
+  'es': 'es',
+  'ja': 'ja',
+  'it': 'it',
+  'ru': 'ru'
+}
+
+/**
+ * 百度语言参数映射
+ */
+const BAIDU_LANG_MAP: Record<SupportedLanguage, string> = {
+  'en': 'en',
+  'fr': 'fr',
+  'de': 'de',
+  'es': 'spa',
+  'ja': 'jp',
+  'it': 'it',
+  'ru': 'ru'
+}
 
 /**
  * 主处理函数
@@ -67,94 +98,105 @@ export async function GET(request: NextRequest) {
 
     console.log(`🎯 [TTS API] 请求: text="${text}", type=${type}, language=${language}`)
 
-    // 3. 非英语语言：直接返回 404，让客户端使用 Web Speech API
-    // 有道 API 只支持英语，其他语言需要回退到浏览器 TTS
-    if (language !== 'en') {
-      console.log(`⚠️ [TTS API] 语言 ${language} 不支持有道TTS，建议使用 Web Speech API`)
-      return NextResponse.json(
-        { error: `${language} 语言暂不支持服务器端TTS，请使用浏览器 Web Speech API`,
-        fallback: 'webspeech',
-        language
-      }, { status: 404 })
+    // 3. 法语特殊处理
+    // 有道 TTS 不支持：1) 单引号前缀 2) 带重音的字符
+    let ttsText = text
+    if (language === 'fr') {
+      // 3.1 去掉单引号前缀（s', c', d', l', n', qu', j', t', m'）
+      const frenchPrefixPattern = /^(s|c|d|l|n|qu|j|t|m|jusqu|puisqu|lorsqu)'(.+)$/i
+      const match = text.match(frenchPrefixPattern)
+      if (match) {
+        ttsText = match[2]
+        console.log(`🔧 [TTS API] 法语去前缀: "${text}" → "${ttsText}"`)
+      }
+
+      // 3.2 去掉重音符号（有道 TTS 不支持 é, è, ê 等）
+      const accentMap: Record<string, string> = {
+        'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e', 'É': 'E', 'È': 'E', 'Ê': 'E', 'Ë': 'E',
+        'à': 'a', 'â': 'a', 'ä': 'a', 'À': 'A', 'Â': 'A', 'Ä': 'A',
+        'ù': 'u', 'û': 'u', 'ü': 'u', 'Ù': 'U', 'Û': 'U', 'Ü': 'U',
+        'î': 'i', 'ï': 'i', 'Î': 'I', 'Ï': 'I',
+        'ô': 'o', 'ö': 'o', 'Ô': 'O', 'Ö': 'O',
+        'ç': 'c', 'Ç': 'C',
+        'œ': 'oe', 'Œ': 'OE',
+        'æ': 'ae', 'Æ': 'AE',
+      }
+      const originalText = ttsText
+      ttsText = ttsText.replace(/[éèêëÉÈÊËàâäÀÂÄùûüÙÛÜîïÎÏôöÔÖçÇœŒæÆ]/g, char => accentMap[char] || char)
+      if (ttsText !== originalText) {
+        console.log(`🔧 [TTS API] 法语去重音: "${originalText}" → "${ttsText}"`)
+      }
     }
 
-    // 3. 查询数据库（精确匹配单词）
-    const supabase = await createAdminClient()
+    // 4. 英语：查询数据库缓存（仅英语有缓存）
+    if (language === 'en') {
+      const supabase = await createAdminClient()
 
-    // 不使用 .single()，改为查询所有匹配的记录
-    const { data: words, error: dbError } = await supabase
-      .from('words')
-      .select('id, word, audio_url')
-      .eq('word', text.toLowerCase())
-      .limit(1)
+      const { data: words, error: dbError } = await supabase
+        .from('words')
+        .select('id, word, audio_url')
+        .eq('word', text.toLowerCase())
+        .limit(1)
 
-    console.log(`📊 [TTS API] 数据库查询结果:`, {
-      found: words?.length || 0,
-      firstRecord: words?.[0] ? {
-        id: words[0].id,
-        word: words[0].word,
-        hasAudioUrl: !!words[0].audio_url,
-        audioUrl: words[0].audio_url
-      } : null,
-      error: dbError
-    })
+      console.log(`📊 [TTS API] 数据库查询结果:`, {
+        found: words?.length || 0,
+        hasAudioUrl: !!words?.[0]?.audio_url,
+        error: dbError
+      })
 
-    if (dbError) {
-      console.error('❌ [TTS API] 数据库查询错误:', dbError)
-    }
+      if (dbError) {
+        console.error('❌ [TTS API] 数据库查询错误:', dbError)
+      }
 
-    // 4. 如果找到记录且有音频 URL，直接从 OSS 返回音频流
-    const wordData = words?.[0]
-    if (wordData?.audio_url) {
-      // 🔍 检测并过滤掉错误的有道 API URL
-      if (wordData.audio_url.includes('dict.youdao.com')) {
-        console.warn(`⚠️  [TTS API] 检测到错误的有道API URL，将重新获取: ${wordData.audio_url}`)
-        // 继续执行下面的有道 API 逻辑，不上传到OSS（避免死循环）
-      } else {
-        // 确保使用 HTTPS
+      // 如果找到记录且有音频 URL，直接从 OSS 返回音频流
+      const wordData = words?.[0]
+      if (wordData?.audio_url && !wordData.audio_url.includes('dict.youdao.com')) {
         const httpsUrl = wordData.audio_url.replace(/^http:/, 'https:')
         console.log(`✅ [TTS API] 数据库命中，从 OSS 获取: ${httpsUrl}`)
 
         try {
-          // 从 OSS 获取音频
           const ossResponse = await fetch(httpsUrl)
-          if (!ossResponse.ok) {
-            throw new Error(`OSS request failed: ${ossResponse.status}`)
+          if (ossResponse.ok) {
+            const audioBuffer = Buffer.from(await ossResponse.arrayBuffer())
+            console.log(`🔊 [TTS API] 返回 OSS 音频: ${audioBuffer.length} bytes`)
+
+            return new NextResponse(audioBuffer, {
+              status: 200,
+              headers: {
+                'Content-Type': 'audio/mpeg',
+                'Content-Length': audioBuffer.length.toString(),
+                'Cache-Control': 'public, max-age=86400',
+              },
+            })
           }
-
-          const audioBuffer = Buffer.from(await ossResponse.arrayBuffer())
-          console.log(`🔊 [TTS API] 返回 OSS 音频: ${audioBuffer.length} bytes`)
-
-          // 返回音频流（带缓存头）
-          return new NextResponse(audioBuffer, {
-            status: 200,
-            headers: {
-              'Content-Type': 'audio/mpeg',
-              'Content-Length': audioBuffer.length.toString(),
-              'Cache-Control': 'public, max-age=86400', // 缓存 24 小时
-            },
-          })
         } catch (error) {
-          console.error(`❌ [TTS API] OSS 获取失败，回退到有道 API:`, error)
-          // 继续执行下面的有道 API 逻辑
+          console.error(`❌ [TTS API] OSS 获取失败:`, error)
         }
       }
     }
 
-    console.error(`⚠️  [TTS API] 数据库未命中或无音频 URL，将从有道 API 获取...`)
+    // 4. 先请求有道（快速失败），失败后再请求百度
+    // 有道通常更快，所以优先串行请求而非并行（避免浪费带宽）
+    const youdaoLang = YOUDAO_LANG_MAP[language] || 'en'
+    let audioBuffer = await fetchAudioFromYoudao(ttsText, type, youdaoLang, 5000) // 5秒超时
 
-    // 5. Cache Miss - 从有道 API 获取音频
-    const audioBuffer = await fetchAudioFromYoudao(text, type)
+    // 5. 有道失败，尝试百度兜底
+    if (!audioBuffer) {
+      console.log(`⚠️ [TTS API] 有道失败，尝试百度兜底...`)
+      const baiduLang = BAIDU_LANG_MAP[language] || 'en'
+      audioBuffer = await fetchAudioFromBaidu(ttsText, baiduLang)
+    }
 
+    // 6. 都失败了
     if (!audioBuffer) {
       return NextResponse.json(
-        { error: '无法从有道 API 获取音频' },
-        { status: 500 }
+        { error: '无法从 TTS 服务获取音频', fallback: 'webspeech', language },
+        { status: 404 }
       )
     }
 
-    // 6. 优先返回音频流（让用户尽快听到声音）
-    console.error(`🔊 [TTS API] 返回音频流: ${audioBuffer.length} bytes`)
+    // 7. 返回音频流
+    console.log(`🔊 [TTS API] 返回音频流: ${audioBuffer.length} bytes`)
 
     const response = new NextResponse(audioBuffer, {
       status: 200,
@@ -165,11 +207,12 @@ export async function GET(request: NextRequest) {
       },
     })
 
-    // 7. 异步处理：上传 OSS + 更新数据库（不阻塞响应）
-    console.error(`🔄 [TTS API] 触发异步处理: 上传 OSS + 更新数据库`)
-    processAudioAsync(text, type, audioBuffer).catch(error => {
-      console.error('❌ [TTS API] 异步处理失败:', error)
-    })
+    // 8. 英语：异步处理上传 OSS + 更新数据库
+    if (language === 'en') {
+      processAudioAsync(text, type, audioBuffer).catch(error => {
+        console.error('❌ [TTS API] 异步处理失败:', error)
+      })
+    }
 
     return response
 
@@ -186,19 +229,23 @@ export async function GET(request: NextRequest) {
  * 从有道 API 获取音频
  * @param text - 单词或句子
  * @param type - 1=英音, 2=美音
+ * @param lang - 语言代码 (en, fr, de, es, ja, it, ru)
  * @returns 音频 Buffer 或 null
  */
 async function fetchAudioFromYoudao(
   text: string,
-  type: string
+  type: string,
+  lang: string,
+  timeout = 10000
 ): Promise<Buffer | null> {
   try {
-    const url = `${YOUDAO_TTS_BASE_URL}?audio=${encodeURIComponent(text)}&type=${type}`
+    // 有道 TTS: le 参数指定语言
+    const url = `${YOUDAO_TTS_BASE_URL}?audio=${encodeURIComponent(text)}&le=${lang}&type=${type}`
 
-    console.error(`📡 [有道 API] 请求: ${url}`)
+    console.log(`📡 [有道 API] 请求: ${url}`)
 
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 15000) // 15 秒超时
+    const timeoutId = setTimeout(() => controller.abort(), timeout)
 
     const response = await fetch(url, {
       signal: controller.signal,
@@ -217,8 +264,13 @@ async function fetchAudioFromYoudao(
     const arrayBuffer = await response.arrayBuffer()
     const buffer = Buffer.from(arrayBuffer)
 
-    console.error(`✅ [有道 API] 获取成功: ${buffer.length} bytes`)
+    // 检查是否是有效音频（至少 100 bytes，有道有时返回很小的有效音频）
+    if (buffer.length < 100) {
+      console.error(`❌ [有道 API] 音频太小: ${buffer.length} bytes`)
+      return null
+    }
 
+    console.log(`✅ [有道 API] 获取成功: ${buffer.length} bytes`)
     return buffer
 
   } catch (error) {
@@ -232,7 +284,65 @@ async function fetchAudioFromYoudao(
 }
 
 /**
- * 异步处理：上传 OSS + 更新数据库
+ * 从百度翻译 API 获取音频（兜底）
+ * @param text - 单词或句子
+ * @param lang - 语言代码 (en, fr, de, spa, jp, it, ru)
+ * @returns 音频 Buffer 或 null
+ */
+async function fetchAudioFromBaidu(
+  text: string,
+  lang: string
+): Promise<Buffer | null> {
+  try {
+    // 百度 TTS: lan 参数指定语言，spd 语速
+    const url = `${BAIDU_TTS_BASE_URL}?lan=${lang}&text=${encodeURIComponent(text)}&spd=3&source=web`
+
+    console.log(`📡 [百度 API] 请求: ${url}`)
+
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), 10000) // 10 秒超时
+
+    const response = await fetch(url, {
+      signal: controller.signal,
+      headers: {
+        'User-Agent': BROWSER_USER_AGENT,
+        'Referer': 'https://fanyi.baidu.com/',
+        'Accept': '*/*',
+        'Accept-Language': 'zh-CN,zh;q=0.9,en;q=0.8',
+      },
+    })
+
+    clearTimeout(timeoutId)
+
+    if (!response.ok) {
+      console.error(`❌ [百度 API] HTTP ${response.status}`)
+      return null
+    }
+
+    const arrayBuffer = await response.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
+
+    // 检查是否是有效音频（至少 100 bytes）
+    if (buffer.length < 100) {
+      console.error(`❌ [百度 API] 音频太小: ${buffer.length} bytes`)
+      return null
+    }
+
+    console.log(`✅ [百度 API] 获取成功: ${buffer.length} bytes`)
+    return buffer
+
+  } catch (error) {
+    if (error.name === 'AbortError') {
+      console.error('❌ [百度 API] 请求超时')
+    } else {
+      console.error('❌ [百度 API] 请求失败:', error)
+    }
+    return null
+  }
+}
+
+/**
+ * 异步处理：上传 OSS + 更新数据库（仅英语）
  * 不阻塞主响应流程
  */
 async function processAudioAsync(
@@ -241,43 +351,17 @@ async function processAudioAsync(
   audioBuffer: Buffer
 ): Promise<void> {
   try {
-    console.error(`🔄 [异步处理] 开始处理单词: "${text}" (type=${type}, ${audioBuffer.length} bytes)`)
+    console.log(`🔄 [异步处理] 开始处理单词: "${text}" (${audioBuffer.length} bytes)`)
 
     // 1. 生成安全的文件名
     const fileName = generateSafeFileName(text, type)
 
-    console.error(`🔄 [异步处理] 生成文件名: ${fileName}`)
-
     // 2. 上传到 OSS
     const ossUrl = await uploadAudioAsync(audioBuffer, fileName)
+    console.log(`✅ [异步处理] OSS 上传成功: ${ossUrl}`)
 
-    console.error(`✅ [异步处理] OSS 上传成功: ${ossUrl}`)
-
-    // 3. 更新数据库（查找所有匹配的单词记录）
+    // 3. 更新数据库
     const supabase = await createAdminClient()
-
-    console.error(`🔍 [异步处理] 查找数据库记录: word="${text.toLowerCase()}"`)
-
-    // 查找所有匹配该单词的记录（可能在不同书中）
-    const { data: matchingWords, error: findError } = await supabase
-      .from('words')
-      .select('id, word')
-      .eq('word', text.toLowerCase())
-
-    if (findError) {
-      console.error('❌ [异步处理] 查找单词失败:', findError)
-      return
-    }
-
-    if (!matchingWords || matchingWords.length === 0) {
-      console.error(`⚠️  [异步处理] 数据库中未找到单词: "${text}"`)
-      return
-    }
-
-    console.error(`📊 [异步处理] 找到 ${matchingWords.length} 条匹配记录`)
-
-    // 4. 批量更新所有匹配的记录
-    console.error(`💾 [异步处理] 开始更新数据库...`)
 
     const { error: updateError } = await supabase
       .from('words')
@@ -287,7 +371,7 @@ async function processAudioAsync(
     if (updateError) {
       console.error('❌ [异步处理] 数据库更新失败:', updateError)
     } else {
-      console.error(`✅ [异步处理] 数据库更新成功: ${matchingWords.length} 条记录 -> ${ossUrl}`)
+      console.log(`✅ [异步处理] 数据库更新成功`)
     }
 
   } catch (error) {

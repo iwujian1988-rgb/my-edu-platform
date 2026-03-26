@@ -1,32 +1,16 @@
 'use client'
 
 /**
- * 卡片弹窗组件
+ * 卡片弹窗组件 - 纯展示版本
  *
- * 对应 PRD: VIDEO_MODULE_PRD.md - Section 2.6
- * 对应 Tech: VIDEO_MODULE_TECH.md v5.0
+ * 功能：
+ * - 展示单词/短语/地道表达的详细信息
+ * - 移动端友好
+ * - 纯展示，无交互按钮
  */
 
-import { useState, useCallback } from 'react'
 import { cn } from '@/lib/utils'
-import { Button } from '@/components/ui/button'
-import { ScrollArea } from '@/components/ui/scroll-area'
-import {
-  X,
-  Volume2,
-  Star,
-  CheckCircle,
-  XCircle,
-  GraduationCap,
-  MessageSquare,
-  Lightbulb,
-  BookOpen,
-  Pencil,
-  Save,
-} from 'lucide-react'
-import { useTTS } from '@/hooks/use-tts'
-import { useVideoFavorites } from '@/hooks/useVideoFavorites'
-import { useCardNotes } from '@/hooks/useCardNotes'
+import { X } from 'lucide-react'
 import type {
   VideoCard,
   VideoWordCard,
@@ -45,153 +29,80 @@ interface CardPopoverProps {
   onClose: () => void
   onStatusChange: (status: CardStatus) => void
   currentStatus?: CardStatus
+  position?: { x: number; y: number } | null
+}
+
+// 类型标签配置
+const TYPE_CONFIG: Record<CardType, { label: string; color: string }> = {
+  word: { label: '单词', color: 'bg-blue-100 text-blue-700' },
+  phrase: { label: '短语', color: 'bg-green-100 text-green-700' },
+  expression: { label: '地道表达', color: 'bg-purple-100 text-purple-700' },
 }
 
 export function CardPopover({
   card,
   cardType,
   videoLanguage,
-  videoId,
   onClose,
-  onStatusChange,
-  currentStatus,
+  position,
 }: CardPopoverProps) {
-  const [isPlaying, setIsPlaying] = useState(false)
-  const [noteText, setNoteText] = useState('')
-  const [showNoteInput, setShowNoteInput] = useState(false)
+  const typeConfig = TYPE_CONFIG[cardType]
 
-  const { speak, isSpeaking } = useTTS()
-  const { isFavorited, toggleFavorite, getFavoriteId } = useVideoFavorites({ videoId })
-  const { getNote, saveNote, isSaving } = useCardNotes({ videoId })
-
-  const isFav = isFavorited(`${cardType}_card`, card.id)
-  const existingNote = getNote(cardType, card.id)
-
-  // 初始化笔记文本
-  useState(() => {
-    if (existingNote) {
-      setNoteText(existingNote.note)
-    }
-  })
-
-  // 保存笔记
-  const handleSaveNote = useCallback(async () => {
-    if (!noteText.trim()) return
-    const success = await saveNote(cardType, card.id, noteText.trim())
-    if (success) {
-      setShowNoteInput(false)
-    }
-  }, [noteText, saveNote, cardType, card.id])
-
-  // 播放发音
-  const handlePlayTTS = useCallback(() => {
-    const text = getCardText()
-    if (text) {
-      const langMap: Record<VideoLanguage, string> = {
-        en: 'en-US',
-        fr: 'fr-FR',
-        de: 'de-DE',
-        es: 'es-ES',
-        ja: 'ja-JP',
-        it: 'it-IT',
-        ru: 'ru-RU',
-      }
-      speak(text, langMap[videoLanguage] || 'en-US')
-    }
-  }, [speak, videoLanguage])
-
-  const getCardText = (): string => {
-    switch (cardType) {
-      case 'word':
-        return (card as VideoWordCard).word
-      case 'phrase':
-        return (card as VideoPhraseCard).phrase
-      case 'expression':
-        return (card as VideoExpressionCard).expression
-      default:
-        return ''
-    }
+  // 获取卡片文本
+  const getText = () => {
+    if (cardType === 'word') return (card as VideoWordCard).word
+    if (cardType === 'phrase') return (card as VideoPhraseCard).phrase
+    if (cardType === 'expression') return (card as VideoExpressionCard).expression
+    return ''
   }
 
-  // 收藏/取消收藏
-  const handleToggleFavorite = useCallback(async () => {
-    await toggleFavorite(`${cardType}_card`, card.id)
-  }, [toggleFavorite, cardType, card.id])
-
-  // 标记状态
-  const handleStatusChange = useCallback(
-    (status: CardStatus) => {
-      onStatusChange(status)
-    },
-    [onStatusChange]
-  )
-
-  // 渲染单词卡片
-  const renderWordCard = (card: VideoWordCard) => (
-    <div className="space-y-4">
-      {/* 单词和音标 */}
-      <div className="flex items-center gap-3">
-        <div>
-          <h3 className="text-xl font-bold">{card.word}</h3>
-          {card.phonetic && (
-            <p className="text-sm text-muted-foreground">{card.phonetic}</p>
-          )}
-        </div>
-        {card.part_of_speech && (
-          <span className="text-xs px-2 py-0.5 rounded bg-muted">
-            {card.part_of_speech}
+  // 渲染单词内容
+  const renderWordContent = (c: VideoWordCard) => (
+    <div className="space-y-2">
+      {/* 音标和词性 */}
+      <div className="flex items-center gap-2 flex-wrap">
+        {c.phonetic && (
+          <span className="text-sm text-gray-500 font-mono">[{c.phonetic}]</span>
+        )}
+        {c.part_of_speech && (
+          <span className="text-xs px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">
+            {c.part_of_speech}
           </span>
         )}
       </div>
 
       {/* 释义 */}
-      <div>
-        <p className="font-medium">{card.chinese_definition}</p>
-        {card.english_definition && (
-          <p className="text-sm text-muted-foreground mt-1">
-            {card.english_definition}
-          </p>
-        )}
-      </div>
+      <p className="font-medium">{c.chinese_definition}</p>
 
-      {/* 例句 */}
-      {card.example_from_video && (
-        <div className="bg-muted/50 rounded-lg p-3">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-            <BookOpen className="w-3 h-3" />
-            <span>视频例句</span>
-          </div>
-          <p className="text-sm">{card.example_from_video}</p>
-          {card.example_translation && (
-            <p className="text-sm text-muted-foreground mt-1">
-              {card.example_translation}
-            </p>
+      {/* 视频例句 */}
+      {c.example_from_video && (
+        <div className="p-2 bg-gray-50 dark:bg-gray-700/50 rounded text-sm">
+          <p>{c.example_from_video}</p>
+          {c.example_translation && (
+            <p className="text-gray-500 mt-1">{c.example_translation}</p>
           )}
         </div>
       )}
     </div>
   )
 
-  // 渲染短语卡片
-  const renderPhraseCard = (card: VideoPhraseCard) => (
-    <div className="space-y-4">
-      {/* 短语和音标 */}
-      <div>
-        <h3 className="text-xl font-bold">{card.phrase}</h3>
-        {card.phonetic && (
-          <p className="text-sm text-muted-foreground">{card.phonetic}</p>
-        )}
-      </div>
+  // 渲染短语内容
+  const renderPhraseContent = (c: VideoPhraseCard) => (
+    <div className="space-y-2">
+      {/* 音标 */}
+      {c.phonetic && (
+        <span className="text-sm text-gray-500 font-mono">[{c.phonetic}]</span>
+      )}
 
       {/* 释义 */}
-      <p className="font-medium">{card.chinese_definition}</p>
+      <p className="font-medium">{c.chinese_definition}</p>
 
       {/* 同义词 */}
-      {card.synonyms && (
-        <div className="flex items-center gap-2 flex-wrap">
-          <span className="text-sm text-muted-foreground">同义：</span>
-          {card.synonyms.split(',').map((syn, i) => (
-            <span key={i} className="text-sm px-2 py-0.5 bg-muted rounded">
+      {c.synonyms && (
+        <div className="flex items-center gap-1 flex-wrap">
+          <span className="text-xs text-gray-400">同义：</span>
+          {c.synonyms.split(',').map((syn, i) => (
+            <span key={i} className="text-xs px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">
               {syn.trim()}
             </span>
           ))}
@@ -199,288 +110,143 @@ export function CardPopover({
       )}
 
       {/* 语境 */}
-      {card.context && (
-        <div className="bg-muted/50 rounded-lg p-3">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground mb-1">
-            <MessageSquare className="w-3 h-3" />
-            <span>语境</span>
-          </div>
-          <p className="text-sm">{card.context}</p>
-          {card.context_translation && (
-            <p className="text-sm text-muted-foreground mt-1">
-              {card.context_translation}
-            </p>
+      {c.context && (
+        <div className="p-2 bg-gray-50 dark:bg-gray-700/50 rounded text-sm">
+          <p>{c.context}</p>
+          {c.context_translation && (
+            <p className="text-gray-500 mt-1">{c.context_translation}</p>
           )}
         </div>
       )}
     </div>
   )
 
-  // 渲染表达卡片
-  const renderExpressionCard = (card: VideoExpressionCard) => (
-    <ScrollArea className="max-h-[60vh]">
-      <div className="space-y-4 pr-4">
-        {/* 表达和语境 */}
-        <div>
-          <h3 className="text-xl font-bold">{card.expression}</h3>
-        </div>
-
-        {/* 语境 */}
-        <div className="bg-muted/50 rounded-lg p-3">
-          <p className="text-sm">{card.context}</p>
-          {card.context_translation && (
-            <p className="text-sm text-muted-foreground mt-1">
-              {card.context_translation}
-            </p>
+  // 渲染地道表达内容
+  const renderExpressionContent = (c: VideoExpressionCard) => (
+    <div className="space-y-2">
+      {/* 语境 */}
+      {c.context && (
+        <div className="p-2 bg-purple-50 dark:bg-purple-900/20 rounded text-sm">
+          <p>{c.context}</p>
+          {c.context_translation && (
+            <p className="text-gray-500 mt-1">{c.context_translation}</p>
           )}
         </div>
+      )}
 
-        {/* 公式 */}
-        {card.formula && (
-          <div className="bg-primary/10 rounded-lg p-3">
-            <div className="flex items-center gap-2 text-xs text-primary mb-1">
-              <GraduationCap className="w-3 h-3" />
-              <span>公式</span>
-            </div>
-            <p className="font-medium">{card.formula}</p>
-          </div>
-        )}
+      {/* 公式 */}
+      {c.formula && (
+        <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded text-sm">
+          <span className="text-xs text-blue-600 dark:text-blue-400">公式：</span>
+          <p className="font-medium mt-0.5">{c.formula}</p>
+        </div>
+      )}
 
-        {/* 含义 */}
-        {card.meaning && (
-          <div>
-            <p className="text-sm font-medium text-muted-foreground mb-1">核心含义</p>
-            <p>{card.meaning}</p>
-          </div>
-        )}
+      {/* 含义 */}
+      {c.meaning && (
+        <div>
+          <span className="text-xs text-gray-400">核心含义</span>
+          <p className="mt-0.5">{c.meaning}</p>
+        </div>
+      )}
 
-        {/* 使用说明 */}
-        {card.usage_note && (
-          <div className="bg-amber-500/10 rounded-lg p-3">
-            <div className="flex items-center gap-2 text-xs text-amber-600 dark:text-amber-400 mb-1">
-              <Lightbulb className="w-3 h-3" />
-              <span>使用说明</span>
-            </div>
-            <p className="text-sm">{card.usage_note}</p>
-          </div>
-        )}
+      {/* 使用说明 */}
+      {c.usage_note && (
+        <div className="p-2 bg-amber-50 dark:bg-amber-900/20 rounded text-sm">
+          <span className="text-xs text-amber-600 dark:text-amber-400">使用说明：</span>
+          <p className="mt-0.5">{c.usage_note}</p>
+        </div>
+      )}
 
-        {/* 例句 */}
-        {card.examples && card.examples.length > 0 && (
-          <div>
-            <p className="text-sm font-medium text-muted-foreground mb-2">举一反三</p>
-            <div className="space-y-2">
-              {card.examples.map((ex, i) => (
-                <div key={i} className="bg-muted/30 rounded p-2">
-                  <p className="text-sm">{ex.original}</p>
-                  <p className="text-sm text-muted-foreground">{ex.cn}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* 使用场景 */}
-        {card.scenarios && (
-          <div>
-            <p className="text-sm font-medium text-muted-foreground mb-1">使用场景</p>
-            <p className="text-sm">{card.scenarios}</p>
-          </div>
-        )}
-
-        {/* 相似表达 */}
-        {card.similar_expressions && card.similar_expressions.length > 0 && (
-          <div className="flex items-center gap-2 flex-wrap">
-            <span className="text-sm text-muted-foreground">相似表达：</span>
-            {card.similar_expressions.map((exp, i) => (
-              <span key={i} className="text-sm px-2 py-0.5 bg-muted rounded">
-                {exp}
-              </span>
+      {/* 例句 */}
+      {c.examples && c.examples.length > 0 && (
+        <div>
+          <span className="text-xs text-gray-400">举一反三</span>
+          <div className="mt-1 space-y-1">
+            {c.examples.slice(0, 2).map((ex, i) => (
+              <div key={i} className="p-2 bg-gray-50 dark:bg-gray-700/50 rounded text-sm">
+                <p>{ex.original}</p>
+                {ex.cn && <p className="text-gray-500 mt-0.5">{ex.cn}</p>}
+              </div>
             ))}
           </div>
-        )}
-
-        {/* 正式程度 */}
-        {card.formality_level && (
-          <div className="flex items-center gap-2">
-            <span className="text-sm text-muted-foreground">正式程度：</span>
-            <span
-              className={cn(
-                'text-xs px-2 py-0.5 rounded',
-                card.formality_level === 'formal' && 'bg-blue-500/20 text-blue-600',
-                card.formality_level === 'informal' && 'bg-orange-500/20 text-orange-600',
-                card.formality_level === 'neutral' && 'bg-gray-500/20 text-gray-600'
-              )}
-            >
-              {card.formality_level === 'formal'
-                ? '正式'
-                : card.formality_level === 'informal'
-                  ? '非正式'
-                  : '中性'}
-            </span>
-          </div>
-        )}
-      </div>
-    </ScrollArea>
+        </div>
+      )}
+    </div>
   )
 
+  // 计算弹层位置
+  const getPopoverStyle = () => {
+    if (!position) {
+      return { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }
+    }
+
+    const popoverWidth = 320
+    const popoverHeight = 300
+    const padding = 16
+
+    let left = position.x
+    let top = position.y + 10 // 点击位置下方
+
+    // 确保不超出右边界
+    if (left + popoverWidth + padding > window.innerWidth) {
+      left = window.innerWidth - popoverWidth - padding
+    }
+
+    // 确保不超出底部
+    if (top + popoverHeight + padding > window.innerHeight) {
+      top = position.y - popoverHeight - 10 // 改为点击位置上方
+    }
+
+    // 确保不超出左边界
+    if (left < padding) {
+      left = padding
+    }
+
+    return { top: `${top}px`, left: `${left}px` }
+  }
+
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-      <div className="bg-background rounded-xl shadow-xl max-w-md w-full max-h-[80vh] overflow-hidden">
+    <>
+      {/* 透明点击层 - 点击任意位置关闭 */}
+      <div
+        className="fixed inset-0 z-40"
+        onClick={onClose}
+      />
+
+      {/* 弹层 - 定位在点击位置 */}
+      <div
+        className={cn(
+          "fixed z-50 bg-white dark:bg-gray-800 rounded-lg shadow-xl w-80 overflow-hidden",
+          "border-2 border-black dark:border-gray-600"
+        )}
+        style={getPopoverStyle()}
+        onClick={(e) => e.stopPropagation()}
+      >
         {/* 头部 */}
-        <div className="flex items-center justify-between p-4 border-b">
-          <div className="flex items-center gap-2">
-            <span
-              className={cn(
-                'text-xs px-2 py-0.5 rounded',
-                cardType === 'word' && 'bg-blue-500/20 text-blue-600',
-                cardType === 'phrase' && 'bg-green-500/20 text-green-600',
-                cardType === 'expression' && 'bg-purple-500/20 text-purple-600'
-              )}
-            >
-              {cardType === 'word'
-                ? '单词'
-                : cardType === 'phrase'
-                  ? '短语'
-                  : '地道表达'}
-            </span>
-          </div>
-
-          <div className="flex items-center gap-1">
-            {/* 发音 */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handlePlayTTS}
-              disabled={isSpeaking}
-            >
-              <Volume2 className={cn('w-4 h-4', isSpeaking && 'animate-pulse')} />
-            </Button>
-
-            {/* 收藏 */}
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={handleToggleFavorite}
-            >
-              <Star
-                className={cn(
-                  'w-4 h-4',
-                  isFav && 'fill-yellow-500 text-yellow-500'
-                )}
-              />
-            </Button>
-
-            {/* 关闭 */}
-            <Button variant="ghost" size="icon" onClick={onClose}>
-              <X className="w-4 h-4" />
-            </Button>
-          </div>
+        <div className="flex items-center justify-between px-3 py-2 border-b dark:border-gray-700 bg-gray-50 dark:bg-gray-900">
+          <span className={cn("text-xs font-medium px-2 py-0.5 rounded", typeConfig.color)}>
+            {typeConfig.label}
+          </span>
+          <button
+            onClick={onClose}
+            className="p-1 hover:bg-gray-200 dark:hover:bg-gray-700 rounded"
+          >
+            <X className="w-4 h-4" />
+          </button>
         </div>
 
         {/* 内容 */}
-        <ScrollArea className="flex-1">
-          <div className="p-4">
-            {cardType === 'word' && renderWordCard(card as VideoWordCard)}
-            {cardType === 'phrase' && renderPhraseCard(card as VideoPhraseCard)}
-            {cardType === 'expression' && renderExpressionCard(card as VideoExpressionCard)}
+        <div className="p-3 max-h-[50vh] overflow-y-auto">
+          {/* 标题 */}
+          <h3 className="text-lg font-bold mb-2">{getText()}</h3>
 
-            {/* 笔记区域 */}
-            <div className="mt-4 pt-4 border-t">
-              <div className="flex items-center justify-between mb-2">
-                <div className="flex items-center gap-2">
-                  <Pencil className="w-4 h-4 text-muted-foreground" />
-                  <span className="text-sm font-medium">我的笔记</span>
-                </div>
-                {!showNoteInput && (
-                  <Button
-                    variant="ghost"
-                    size="sm"
-                    onClick={() => setShowNoteInput(true)}
-                  >
-                    {existingNote ? '编辑' : '添加'}
-                  </Button>
-                )}
-              </div>
-
-              {showNoteInput ? (
-                <div className="space-y-2">
-                  <textarea
-                    value={noteText}
-                    onChange={(e) => setNoteText(e.target.value)}
-                    placeholder="记录你对这个知识点的理解..."
-                    className="w-full min-h-[80px] p-2 text-sm rounded-md border bg-background resize-none"
-                    rows={3}
-                  />
-                  <div className="flex justify-end gap-2">
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => {
-                        setShowNoteInput(false)
-                        setNoteText(existingNote?.note || '')
-                      }}
-                    >
-                      取消
-                    </Button>
-                    <Button
-                      size="sm"
-                      onClick={handleSaveNote}
-                      disabled={isSaving || !noteText.trim()}
-                    >
-                      <Save className="w-4 h-4 mr-1" />
-                      {isSaving ? '保存中...' : '保存'}
-                    </Button>
-                  </div>
-                </div>
-              ) : existingNote ? (
-                <div className="bg-muted/50 rounded-lg p-3">
-                  <p className="text-sm">{existingNote.note}</p>
-                </div>
-              ) : null}
-            </div>
-          </div>
-        </ScrollArea>
-
-        {/* 底部操作栏 */}
-        <div className="flex items-center justify-center gap-4 p-4 border-t bg-muted/30">
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => handleStatusChange('unknown')}
-            className={cn(
-              currentStatus === 'unknown' && 'border-red-500 text-red-500'
-            )}
-          >
-            <XCircle className="w-4 h-4 mr-1" />
-            不认识
-          </Button>
-
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => handleStatusChange('learning')}
-            className={cn(
-              currentStatus === 'learning' && 'border-yellow-500 text-yellow-500'
-            )}
-          >
-            <GraduationCap className="w-4 h-4 mr-1" />
-            学习中
-          </Button>
-
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => handleStatusChange('known')}
-            className={cn(
-              currentStatus === 'known' && 'border-green-500 text-green-500'
-            )}
-          >
-            <CheckCircle className="w-4 h-4 mr-1" />
-            已掌握
-          </Button>
+          {/* 根据类型渲染内容 */}
+          {cardType === 'word' && renderWordContent(card as VideoWordCard)}
+          {cardType === 'phrase' && renderPhraseContent(card as VideoPhraseCard)}
+          {cardType === 'expression' && renderExpressionContent(card as VideoExpressionCard)}
         </div>
       </div>
-    </div>
+    </>
   )
 }

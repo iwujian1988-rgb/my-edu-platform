@@ -24,7 +24,8 @@ import {
   Cat,
   Package,
   Mic,
-  Video
+  Video,
+  Tag
 } from 'lucide-react'
 import { AdminUser } from '@/lib/admin-auth'
 
@@ -241,6 +242,12 @@ function getMenuItemsByRole(role: AdminUser['role']) {
       roles: ['super_admin', 'content_admin']
     },
     {
+      path: '/admin/videos/tags',
+      icon: Tag,
+      label: '标签管理',
+      roles: ['super_admin', 'content_admin']
+    },
+    {
       path: '/admin/word-books',
       icon: BookOpen,
       label: '词库管理',
@@ -297,6 +304,7 @@ function getPageTitle(pathname: string): string {
     '/admin/packages': '套餐管理',
     '/admin/speaker/articles': '雯姐学习法 - 文章管理',
     '/admin/videos': '视频管理',
+    '/admin/videos/tags': '标签管理',
     '/admin/word-books': '词库管理',
     '/admin/reviews': '审核管理',
     '/admin/statistics': '数据统计',

@@ -102,9 +102,10 @@ function RegisterForm() {
         return
       }
 
-      // 注册成功，跳转到首页
-      console.log('[Signup] 注册成功，跳转到首页')
-      router.push('/')
+      // 注册成功，跳转到对应页面（根据套餐权限）
+      const redirectPath = result.redirect || '/'
+      console.log('[Signup] 注册成功，跳转到:', redirectPath)
+      router.push(redirectPath)
       router.refresh()
     } catch (err: unknown) {
       console.error('[Signup] 异常:', err)

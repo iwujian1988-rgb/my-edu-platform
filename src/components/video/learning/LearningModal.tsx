@@ -12,7 +12,6 @@
  */
 
 import { useState, useCallback, useEffect, useRef } from 'react'
-import { X } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import {
   Dialog,
@@ -22,6 +21,7 @@ import {
 } from '@/components/ui/dialog'
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden'
 import {
+  X,
   BookOpen,
   MessageSquare,
   BookMarked,
@@ -30,7 +30,6 @@ import {
   Play,
   Pause,
   MapPin,
-  X,
   ChevronDown,
   ChevronUp,
   Loader2,
@@ -247,14 +246,81 @@ export function LearningModal({
     }
   }, [])
 
-  // 播放单词发音
-  const playWord = useCallback((word: string) => {
+  // 预热 TTS 引擎
+  useEffect(() => {
     if (!('speechSynthesis' in window)) return
-    const utterance = new SpeechSynthesisUtterance(word)
-    utterance.lang = 'fr-FR'
-    utterance.rate = 0.8
-    speechSynthesis.speak(utterance)
+    // 加载语音列表（某些浏览器需要这样来初始化 TTS）
+    const voices = speechSynthesis.getVoices()
+    console.log('[TTS] 预热，当前语音数:', voices.length)
+    // 某些浏览器需要 onvoiceschanged 事件
+    const handleVoicesChanged = () => {
+      const v = speechSynthesis.getVoices()
+      console.log('[TTS] 语音已加载:', v.length)
+    }
+    speechSynthesis.addEventListener('voiceschanged', handleVoicesChanged)
+    return () => {
+      speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged)
+    }
   }, [])
+
+  // 播放单词发音 - 调用后端 TTS API（有道 + 百度兜底）
+  const playWord = useCallback(async (word: string) => {
+    console.log('[LearningModal] playWord 被调用:', word)
+    try {
+      // 根据视频语言选择 TTS 语言
+      const langMap: Record<string, string> = {
+        'fr': 'fr',
+        'en': 'en',
+        'ja': 'ja',
+        'es': 'es',
+        'de': 'de',
+      }
+      const ttsLang = langMap[video.language || 'fr'] || 'fr'
+      console.log('[LearningModal] TTS 语言:', ttsLang, '视频语言:', video.language)
+
+      // 调用后端 API
+      const url = `/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`
+      console.log('[LearningModal] 请求 TTS API:', url)
+
+      const response = await fetch(url)
+      console.log('[LearningModal] API 响应状态:', response.status, response.ok)
+
+      if (!response.ok) {
+        // API 失败，回退到浏览器 TTS
+        console.warn('[LearningModal TTS] API 失败，回退到浏览器 TTS')
+        if ('speechSynthesis' in window) {
+          speechSynthesis.cancel()
+          const utterance = new SpeechSynthesisUtterance(word)
+          utterance.lang = ttsLang === 'fr' ? 'fr-FR' : 'en-US'
+          utterance.rate = 0.8
+          speechSynthesis.speak(utterance)
+        }
+        return
+      }
+
+      // 播放音频
+      const blob = await response.blob()
+      console.log('[LearningModal] 获取到音频 blob:', blob.size, 'bytes')
+      const audioUrl = URL.createObjectURL(blob)
+      const audio = new Audio(audioUrl)
+
+      audio.onended = () => {
+        console.log('[LearningModal] 音频播放完成')
+        URL.revokeObjectURL(audioUrl)
+      }
+
+      audio.onerror = (e) => {
+        console.error('[LearningModal] 音频播放错误:', e)
+        URL.revokeObjectURL(audioUrl)
+      }
+
+      console.log('[LearningModal] 开始播放音频...')
+      await audio.play()
+      console.log('[LearningModal] audio.play() 完成')
+    } catch (error) {
+      console.error('[LearningModal TTS] 播放失败:', error)
+    }
+  }, [video.language])
 
   // 计算学习进度
   const wordsLearned = words.filter(word => {
@@ -268,7 +334,7 @@ export function LearningModal({
   }).length
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange}>
+    <Dialog open={open} onOpenChange={onOpenChange} modal={false}>
       <DialogContent className="max-w-[98vw] w-[1600px] h-[95vh] p-0 gap-0 bg-gray-100 dark:bg-gray-900 border-[3px] border-black dark:border-gray-600 shadow-[8px_8px_0px_0px_#000] dark:shadow-[8px_8px_0px_0px_#666] rounded-sm overflow-hidden flex flex-col">
         <VisuallyHidden>
           <DialogTitle>学习模块</DialogTitle>
@@ -585,11 +651,6 @@ function WordCard({ word, status, onStatusChange, onJumpToSubtitle, onPlayWord, 
           <p className="text-[10px] text-indigo-700 dark:text-indigo-300 line-clamp-2">
             {word.example_from_video}
           </p>
-          {word.example_translation && (
-            <p className="text-[9px] text-indigo-500 dark:text-indigo-400 mt-0.5 line-clamp-1">
-              {word.example_translation}
-            </p>
-          )}
         </div>
       )}
 

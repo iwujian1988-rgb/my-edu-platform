@@ -289,6 +289,8 @@ interface WordsTabProps {
 
 function WordsTab({ words, onJumpToSubtitle, getCardStatus, onStatusChange }: WordsTabProps) {
   const [playingWord, setPlayingWord] = useState<string | null>(null)
+  const [expandedDefinitions, setExpandedDefinitions] = useState<Set<string>>(new Set())
+  const [expandedExamples, setExpandedExamples] = useState<Set<string>>(new Set())
 
   const playWord = useCallback((word: string) => {
     if (!('speechSynthesis' in window)) return
@@ -302,6 +304,30 @@ function WordsTab({ words, onJumpToSubtitle, getCardStatus, onStatusChange }: Wo
     utterance.onerror = () => setPlayingWord(null)
     speechSynthesis.speak(utterance)
   }, [playingWord])
+
+  const toggleDefinitions = useCallback((wordId: string) => {
+    setExpandedDefinitions(prev => {
+      const next = new Set(prev)
+      if (next.has(wordId)) {
+        next.delete(wordId)
+      } else {
+        next.add(wordId)
+      }
+      return next
+    })
+  }, [])
+
+  const toggleExamples = useCallback((wordId: string) => {
+    setExpandedExamples(prev => {
+      const next = new Set(prev)
+      if (next.has(wordId)) {
+        next.delete(wordId)
+      } else {
+        next.add(wordId)
+      }
+      return next
+    })
+  }, [])
 
   const learnedCount = words.filter(word => {
     const status = getCardStatus?.('word', word.id)
@@ -322,6 +348,42 @@ function WordsTab({ words, onJumpToSubtitle, getCardStatus, onStatusChange }: Wo
       {words.map((word) => {
         const status = getCardStatus?.('word', word.id)
         const isPlaying = playingWord === word.word
+        const showAllDefinitions = expandedDefinitions.has(word.id)
+        const showAllExamples = expandedExamples.has(word.id)
+
+        // 获取性别显示配置（法语特有）
+        const getGenderConfig = (): { label: string; className: string } | null => {
+          if (!word.gender) return null
+          const gender = word.gender.toLowerCase()
+          if (gender === 'm') {
+            return { label: '阳性', className: 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border-blue-300 dark:border-blue-700' }
+          }
+          if (gender === 'f') {
+            return { label: '阴性', className: 'bg-pink-100 dark:bg-pink-900/40 text-pink-700 dark:text-pink-300 border-pink-300 dark:border-pink-700' }
+          }
+          return null
+        }
+
+        // 获取 CEFR 等级配置
+        const getCEFRConfig = (): { level: string; className: string } | null => {
+          const level = word.cefr_level?.toUpperCase() || (word.difficulty_level ? `A${word.difficulty_level}` : null)
+          if (!level) return null
+
+          const configs: Record<string, string> = {
+            'A1': 'bg-green-100 dark:bg-green-900/40 text-green-700 dark:text-green-300 border-green-300 dark:border-green-700',
+            'A2': 'bg-green-200 dark:bg-green-900/50 text-green-800 dark:text-green-200 border-green-400 dark:border-green-600',
+            'B1': 'bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 border-yellow-300 dark:border-yellow-700',
+            'B2': 'bg-yellow-200 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-200 border-yellow-400 dark:border-yellow-600',
+            'C1': 'bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 border-orange-300 dark:border-orange-700',
+            'C2': 'bg-red-100 dark:bg-red-900/40 text-red-700 dark:text-red-300 border-red-300 dark:border-red-700',
+          }
+          return { level, className: configs[level] || 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600' }
+        }
+
+        const genderConfig = getGenderConfig()
+        const cefrConfig = getCEFRConfig()
+        const hasMultipleDefinitions = (word.definitions?.length || 0) > 1
+        const hasMultipleExamples = (word.examples?.length || 0) > 1
 
         return (
           <div
@@ -339,9 +401,21 @@ function WordsTab({ words, onJumpToSubtitle, getCardStatus, onStatusChange }: Wo
                     [{word.phonetic}]
                   </span>
                 )}
+                {/* 性别徽章（法语名词） */}
+                {genderConfig && (
+                  <span className={cn("px-2 py-0.5 text-xs font-bold border-[2px] rounded", genderConfig.className)}>
+                    {genderConfig.label}
+                  </span>
+                )}
                 {word.part_of_speech && (
                   <span className="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 border-[2px] border-blue-300 dark:border-blue-700 text-xs font-bold rounded">
                     {word.part_of_speech}
+                  </span>
+                )}
+                {/* CEFR 等级 */}
+                {cefrConfig && (
+                  <span className={cn("px-2 py-0.5 text-xs font-bold border-[2px] rounded", cefrConfig.className)}>
+                    {cefrConfig.level}
                   </span>
                 )}
               </div>
@@ -366,29 +440,82 @@ function WordsTab({ words, onJumpToSubtitle, getCardStatus, onStatusChange }: Wo
 
             {/* 内容 */}
             <div className="p-3">
-              {/* 释义 */}
-              <p className="text-sm text-gray-700 dark:text-gray-300 mb-2 font-medium">
-                {word.chinese_definition}
-              </p>
+              {/* 释义 - 多条释义可展开 */}
+              {word.definitions && word.definitions.length > 0 ? (
+                <div className="mb-2">
+                  {(showAllDefinitions ? word.definitions : word.definitions.slice(0, 1)).map((def, idx) => (
+                    <p key={idx} className="text-sm text-gray-700 dark:text-gray-300 font-medium">
+                      {word.definitions!.length > 1 && <span className="text-gray-400 mr-1">{idx + 1}.</span>}
+                      {def}
+                    </p>
+                  ))}
+                  {hasMultipleDefinitions && (
+                    <button
+                      onClick={() => toggleDefinitions(word.id)}
+                      className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline mt-1"
+                    >
+                      {showAllDefinitions ? '收起' : `+${(word.definitions?.length || 1) - 1} 条释义`}
+                    </button>
+                  )}
+                </div>
+              ) : (
+                <p className="text-sm text-gray-700 dark:text-gray-300 mb-2 font-medium">
+                  {word.chinese_definition}
+                </p>
+              )}
 
-              {/* 剧中例句 */}
-              {word.example_from_video && (
-                <div className="p-2 bg-indigo-50 dark:bg-indigo-900/20 border-[2px] border-indigo-200 dark:border-indigo-800 rounded-sm mb-2">
-                  <p className="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-0.5">剧中例句</p>
-                  <p className="text-sm text-indigo-800 dark:text-indigo-200">
-                    {word.example_from_video}
+              {/* 搭配/用法 - 单词书优先 */}
+              {word.collocation && (
+                <div className="p-2 bg-amber-50 dark:bg-amber-900/20 border-[2px] border-amber-200 dark:border-amber-800 rounded-sm mb-2">
+                  <p className="text-xs font-bold text-amber-600 dark:text-amber-400 mb-0.5">搭配</p>
+                  <p className="text-sm text-amber-800 dark:text-amber-200">
+                    {word.collocation}
                   </p>
-                  {word.example_translation && (
-                    <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
-                      {word.example_translation}
+                  {word.collocation_cn && (
+                    <p className="text-xs text-amber-600 dark:text-amber-400 mt-1">
+                      {word.collocation_cn}
                     </p>
                   )}
                 </div>
               )}
 
+              {/* 例句 - 多个例句可展开 */}
+              {word.examples && word.examples.length > 0 ? (
+                <div className="p-2 bg-indigo-50 dark:bg-indigo-900/20 border-[2px] border-indigo-200 dark:border-indigo-800 rounded-sm mb-2">
+                  <p className="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-0.5">
+                    例句{word.examples.length > 1 ? ` (${word.examples.length})` : ''}
+                  </p>
+                  {(showAllExamples ? word.examples : word.examples.slice(0, 1)).map((ex, idx) => (
+                    <div key={idx} className={idx > 0 ? 'mt-2 pt-2 border-t border-indigo-200 dark:border-indigo-700' : ''}>
+                      <p className="text-sm text-indigo-800 dark:text-indigo-200">
+                        {ex.fr || ex.en}
+                      </p>
+                      <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
+                        {ex.zh}
+                      </p>
+                    </div>
+                  ))}
+                  {hasMultipleExamples && (
+                    <button
+                      onClick={() => toggleExamples(word.id)}
+                      className="text-xs text-indigo-600 dark:text-indigo-400 hover:underline mt-2"
+                    >
+                      {showAllExamples ? '收起' : `+${(word.examples?.length || 1) - 1} 个例句`}
+                    </button>
+                  )}
+                </div>
+              ) : (word.example_sentence || word.example_from_video) && (
+                <div className="p-2 bg-indigo-50 dark:bg-indigo-900/20 border-[2px] border-indigo-200 dark:border-indigo-800 rounded-sm mb-2">
+                  <p className="text-xs font-bold text-indigo-600 dark:text-indigo-400 mb-0.5">例句</p>
+                  <p className="text-sm text-indigo-800 dark:text-indigo-200">
+                    {word.example_sentence || word.example_from_video}
+                  </p>
+                </div>
+              )}
+
               {/* 功能按钮 */}
               <div className="flex items-center gap-2">
-                {onJumpToSubtitle && word.example_from_video && (
+                {onJumpToSubtitle && word.subtitle_start_time !== undefined && word.subtitle_start_time > 0 && (
                   <button
                     onClick={() => onJumpToSubtitle(word.subtitle_start_time || 0)}
                     className="flex items-center gap-1 px-2 py-1 text-xs font-black text-gray-600 dark:text-gray-400 border-[2px] border-gray-300 dark:border-gray-600 hover:border-black dark:hover:border-gray-400 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition-all"

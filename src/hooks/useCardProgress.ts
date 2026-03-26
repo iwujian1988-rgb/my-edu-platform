@@ -74,7 +74,7 @@ const SM2_PARAMS = {
 function calculateNextReview(
   easeFactor: number,
   reviewCount: number,
-  quality: number // 0-5，5=完美回忆，0=完全忘记
+  quality: number // 1=忘记, 2=一般, 3=简单 (客户端约定)
 ): { nextReviewDays: number; newEaseFactor: number } {
   let newEaseFactor =
     easeFactor +
@@ -143,11 +143,11 @@ export function useCardProgress(
     async (cardType: CardType, cardId: string, status: CardStatus) => {
       if (!videoId) return
 
-      // 将 status 转换为 quality (SM-2 算法)
+      // 将 status 转换为 quality (客户端约定: 1=忘记, 2=一般, 3=简单)
       const qualityMap: Record<CardStatus, number> = {
-        unknown: 0,
-        learning: 2,
-        known: 5,
+        unknown: 1,   // 忘记
+        learning: 2,  // 一般
+        known: 3,     // 简单
       }
 
       try {
@@ -211,7 +211,7 @@ export function useCardProgress(
       const key = `${cardType}:${cardId}`
       const current = progressMap.get(key)
 
-      const quality = remembered ? 5 : 2 // 5=完美，2=忘记
+      const quality = remembered ? 3 : 1 // 3=简单，1=忘记 (客户端约定)
       const { nextReviewDays, newEaseFactor } = calculateNextReview(
         current?.ease_factor || SM2_PARAMS.DEFAULT_EASE_FACTOR,
         current?.review_count || 0,
@@ -222,19 +222,33 @@ export function useCardProgress(
       nextReviewAt.setDate(nextReviewAt.getDate() + nextReviewDays)
 
       // 调用 API 更新
-      await fetch('/api/user/video-cards/review', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          cardId,
-          cardType,
-          quality,
-          videoId,
-        }),
-      })
+      try {
+        const response = await fetch('/api/user/video-cards/review', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            cardId,
+            cardType,
+            quality,
+            videoId,
+          }),
+        })
 
-      // 刷新本地缓存
-      mutate()
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}))
+          console.error('[recordFlashcardResult] API error:', {
+            status: response.status,
+            error: errorData,
+          })
+          throw new Error(`API error: ${response.status}`)
+        }
+
+        // 刷新本地缓存
+        mutate()
+      } catch (error) {
+        console.error('[recordFlashcardResult] Network error:', error)
+        throw error
+      }
     },
     [progressMap, videoId, mutate]
   )

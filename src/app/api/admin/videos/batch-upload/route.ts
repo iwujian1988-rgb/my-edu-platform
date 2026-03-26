@@ -32,6 +32,7 @@ import {
   cefrToNumber,
   findWordInSubtitles,
   findExpressionInSubtitles,
+  extractExpressionFromSubtitle,
   uniqueArray,
   cleanWord,
   isValidUrl,
@@ -100,6 +101,14 @@ interface PronunciationInput {
   example_words: string[]
   instruction: string
   practice_tip: string
+}
+
+/** 填空练习数据结构 */
+interface VocabularyExerciseInput {
+  word: string
+  sentence: string
+  answer: string
+  hint: string
 }
 
 // ============================================
@@ -235,7 +244,25 @@ async function processSingleVideo(
   const unitInfo = subtitle_json.unit_info
   const learningInfo = learning_material_json.unit_info
 
-  // Step 2: 创建视频记录
+  // Step 2: 匹配 UP主（如果提供了 creator 字段）
+  let creatorId: string | null = null
+  const creatorName = unitInfo.creator?.trim()
+  if (creatorName) {
+    const { data: creator } = await supabase
+      .from('upstream_creators')
+      .select('id')
+      .eq('name', creatorName)
+      .maybeSingle()
+
+    if (creator) {
+      creatorId = creator.id
+      console.log(`[批量上传] 匹配到UP主: ${creatorName} -> ${creatorId}`)
+    } else {
+      console.log(`[批量上传] 未找到UP主: ${creatorName}，将不关联UP主`)
+    }
+  }
+
+  // Step 3: 创建视频记录
   const videoUrl = video_url?.trim() || null
   if (videoUrl && !isValidUrl(videoUrl)) {
     throw new Error('视频 URL 格式无效')
@@ -250,6 +277,8 @@ async function processSingleVideo(
       duration: Math.round((learningInfo.duration_minutes || 0) * 60),
       video_url: videoUrl,
       status: 'draft',
+      creator_id: creatorId,
+      creator_name: creatorName || null,
     })
     .select()
     .single()
@@ -264,7 +293,7 @@ async function processSingleVideo(
   // 使用 try-catch 包装后续操作，失败时回滚
   try {
 
-  // Step 3: 存储字幕
+  // Step 4: 存储字幕
   const subtitlesData = subtitle_json.subtitles.map((sub: SubtitleInput, idx: number) => ({
     video_id: videoId,
     start_time: timeStringToSeconds(sub.start_time),
@@ -292,7 +321,7 @@ async function processSingleVideo(
     .eq('video_id', videoId)
     .order('display_order')
 
-  // Step 4: 处理单词
+  // Step 5: 处理单词
   const vocabulary = learning_material_json.language_analysis?.vocabulary || []
   let wordsCount = 0
 
@@ -316,15 +345,31 @@ async function processSingleVideo(
         const dictResult = dictResults[idx]
         const example = findWordInSubtitles(v.word, savedSubtitles || [])
 
+        // 从词典服务获取例句（优先使用第一个例句作为主例句）
+        const dictExamples = dictResult?.examples || []
+        const firstExample = dictExamples[0]
+
+        // 从词典服务获取多条释义
+        const definitions = dictResult?.definitions || []
+
         return {
           video_id: videoId,
           word: v.word,
           phonetic: dictResult?.phonetic || original.ipa || null,
-          part_of_speech: dictResult?.part_of_speech || original.part_of_speech || null,
+          part_of_speech: dictResult?.posDetail || dictResult?.pos || original.part_of_speech || null,
           chinese_definition: dictResult?.definition || original.chinese || '',
+          // 词典例句（单词书自带）
+          example_sentence: firstExample?.fr || null,
+          example_sentence_cn: firstExample?.zh || null,
+          // 视频例句（剧中出现）
           example_from_video: example?.original || null,
           example_translation: example?.translation || null,
           subtitle_start_time: example?.startTime || 0,  // 用于 [📍] 跳转播放
+          // 词典扩展字段
+          gender: dictResult?.gender || null,
+          cefr_level: dictResult?.cefrLevel || original.cefr_level || null,
+          definitions: definitions.length > 0 ? definitions : null,
+          examples: dictExamples.length > 0 ? dictExamples : null,
           difficulty_level: cefrToNumber(original.cefr_level),
           display_order: idx,
           is_reviewed: true,  // 批量上传的内容默认已审核
@@ -344,7 +389,7 @@ async function processSingleVideo(
     }
   }
 
-  // Step 5: 处理地道表达
+  // Step 6: 处理地道表达
   const expressions = learning_material_json.language_analysis?.key_expressions || []
   let expressionsCount = 0
 
@@ -352,9 +397,15 @@ async function processSingleVideo(
     const expressionCards = expressions.map((expr: ExpressionInput, idx: number) => {
       const example = findExpressionInSubtitles(expr.expression, savedSubtitles || [])
 
+      // ⚠️ 关键修复：从字幕中提取完整的 expression 文本，而不是用带省略号的 JSON 值
+      // 用于字幕高亮匹配
+      const fullExpression = example?.original
+        ? extractExpressionFromSubtitle(expr.expression, example.original)
+        : expr.expression
+
       return {
         video_id: videoId,
-        expression: expr.expression,
+        expression: fullExpression,  // 使用完整文本，不带省略号
         context: example?.original || expr.example?.french || '',
         context_translation: example?.translation || expr.example?.chinese || null,
         formula: expr.grammar_usage || null,
@@ -379,7 +430,7 @@ async function processSingleVideo(
     }
   }
 
-  // Step 6: 处理语法点
+  // Step 7: 处理语法点
   const grammarPoints = learning_material_json.deep_learning?.grammar_points || []
   let grammarCount = 0
 
@@ -408,7 +459,7 @@ async function processSingleVideo(
     }
   }
 
-  // Step 7: 处理发音要点
+  // Step 8: 处理发音要点
   const pronunciationTips = learning_material_json.deep_learning?.pronunciation?.key_sounds || []
   let pronunciationCount = 0
 
@@ -434,7 +485,7 @@ async function processSingleVideo(
     }
   }
 
-  // Step 8: 处理词汇网络
+  // Step 9: 处理词汇网络
   const vocabNetwork = learning_material_json.deep_learning?.vocabulary_network
   if (vocabNetwork) {
     // 构建结构数据：支持两种JSON格式
@@ -476,7 +527,56 @@ async function processSingleVideo(
     }
   }
 
-  // Step 9: 更新工作流状态
+  // Step 10: 处理填空练习
+  const vocabularyExercises = learning_material_json.practice?.vocabulary_exercises || []
+  let exercisesCount = 0
+
+  if (vocabularyExercises.length > 0) {
+    const exerciseCards = vocabularyExercises.map((ex: VocabularyExerciseInput, idx: number) => {
+      // 保留原始句子中的 _____ 作为 original_text
+      // 这样 blank_positions 的位置计算才能与 original_text 对应
+      const originalText = ex.sentence
+
+      // 计算 blank_positions：找到连续下划线的位置
+      const blankPattern = /_+/g
+      const blankPositions: Array<{ start: number; end: number; word: string; hint?: string }> = []
+      let match
+
+      while ((match = blankPattern.exec(originalText)) !== null) {
+        blankPositions.push({
+          start: match.index,
+          end: match.index + match[0].length,
+          word: ex.answer,
+          hint: ex.hint || undefined,
+        })
+      }
+
+      return {
+        video_id: videoId,
+        subtitle_id: null, // 不关联特定字幕
+        exercise_type: 'fill_blank' as const,
+        difficulty: 'beginner' as const, // 单个填空默认为 beginner
+        original_text: originalText, // 保留 _____ 的原始句子
+        blank_positions: blankPositions,
+        hint_type: ex.hint ? 'first_letter' : null,
+        answer_text: ex.answer,
+        display_order: idx,
+      }
+    })
+
+    const { error: exercisesError } = await supabase
+      .from('video_exercises')
+      .insert(exerciseCards)
+
+    if (!exercisesError) {
+      exercisesCount = exerciseCards.length
+      console.log(`[批量上传] 存储填空练习成功: ${exercisesCount} 个`)
+    } else {
+      console.error(`[批量上传] 存储填空练习失败:`, exercisesError)
+    }
+  }
+
+  // Step 11: 更新工作流状态
   await completeStep(supabase, videoId, 'subtitles')
   await completeStep(supabase, videoId, 'cards')
 
@@ -488,6 +588,7 @@ async function processSingleVideo(
     expressions_count: expressionsCount,
     grammar_points_count: grammarCount,
     pronunciation_tips_count: pronunciationCount,
+    exercises_count: exercisesCount,
     status: video.status as VideoStatus,
   }
 

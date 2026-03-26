@@ -15,7 +15,7 @@ export async function GET() {
     // 第一步：获取用户最近访问的6个词库ID和resume_state
     const { data: recentPrefs, error: prefsError } = await supabase
       .from('user_book_preferences')
-      .select('book_id, last_accessed_at, last_resume_state, last_resume_summary')
+      .select('book_id, last_accessed_at, last_resume_state, last_resume_summary, last_reading_progress')
       .eq('user_id', user.id)
       .not('last_accessed_at', 'is', null)
       .order('last_accessed_at', { ascending: false })
@@ -53,6 +53,7 @@ export async function GET() {
         // 从 last_resume_state 中提取 mode
         const resumeState = pref.last_resume_state as any
         const resumeSummary = pref.last_resume_summary as any
+        const readingProgress = pref.last_reading_progress as any
         const mode = resumeState?.mode || 'word-list'
 
         return {
@@ -67,8 +68,10 @@ export async function GET() {
           is_official: book.is_official,
           mode: mode,
           lastAccessedAt: pref.last_accessed_at,
-          resumeState: resumeState,
-          resumeSummary: resumeSummary  // ⭐ 添加 summary 字段
+          last_accessed_at: pref.last_accessed_at,
+          last_resume_state: resumeState,
+          last_resume_summary: resumeSummary,
+          last_reading_progress: readingProgress  // ⭐ 添加 reading_progress 字段
         }
       })
       .filter((book: any) => book !== null)

@@ -210,6 +210,77 @@ function ProgressCardComponent(props: ProgressCardProps & { isFirstCard?: boolea
   )
 }
 
+// --- 1.5 DesktopBrowseScroll (桌面端浏览记录滚动区域) ---
+function DesktopBrowseScroll({ progressCards }: { progressCards: ProgressCardProps[] }) {
+  const scrollRef = useRef<HTMLDivElement>(null)
+  const [showLeftArrow, setShowLeftArrow] = useState(false)
+  const [showRightArrow, setShowRightArrow] = useState(false)
+
+  // 检查滚动位置，更新箭头可见性
+  const checkScrollPosition = () => {
+    const container = scrollRef.current
+    if (!container) return
+
+    const { scrollLeft, scrollWidth, clientWidth } = container
+    setShowLeftArrow(scrollLeft > 0)
+    setShowRightArrow(scrollLeft < scrollWidth - clientWidth - 1)
+  }
+
+  // 初始化和窗口变化时检查
+  useEffect(() => {
+    checkScrollPosition()
+    window.addEventListener('resize', checkScrollPosition)
+    return () => window.removeEventListener('resize', checkScrollPosition)
+  }, [progressCards])
+
+  const scrollLeft = () => {
+    scrollRef.current?.scrollBy({ left: -264, behavior: 'smooth' })
+  }
+
+  const scrollRight = () => {
+    scrollRef.current?.scrollBy({ left: 264, behavior: 'smooth' })
+  }
+
+  return (
+    <div
+      className="hidden lg:block relative group"
+      onMouseEnter={checkScrollPosition}
+    >
+      <div
+        ref={scrollRef}
+        className="flex gap-4 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
+        onScroll={checkScrollPosition}
+      >
+        {progressCards.map((card, index) => (
+          <div key={card._uniqueKey || card.bookId} className="w-[250px] max-w-[250px] flex-shrink-0">
+            <ProgressCardComponent {...card} isFirstCard={index === 0} />
+          </div>
+        ))}
+      </div>
+
+      {/* 左箭头按钮 */}
+      <button
+        onClick={scrollLeft}
+        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-10 w-10 h-10 bg-white dark:bg-slate-800 border-[3px] border-black dark:border-slate-600 rounded shadow-[4px_4px_0px_0px_#000] dark:shadow-none flex items-center justify-center transition-all duration-200 hover:bg-[#B4F416] hover:-translate-x-2 ${showLeftArrow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+        <svg className="w-5 h-5 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
+
+      {/* 右箭头按钮 */}
+      <button
+        onClick={scrollRight}
+        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-10 w-10 h-10 bg-white dark:bg-slate-800 border-[3px] border-black dark:border-slate-600 rounded shadow-[4px_4px_0px_0px_#000] dark:shadow-none flex items-center justify-center transition-all duration-200 hover:bg-[#B4F416] hover:translate-x-2 ${showRightArrow ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
+        <svg className="w-5 h-5 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  )
+}
+
 // --- 2. CreateButton (统一黑夜模式边框) ---
 function CreateButton() {
   const { showLoading } = useLoading()
@@ -284,12 +355,42 @@ export function DashboardContent({
     return () => clearTimeout(timer)
   }, [statsLoading]) // 依赖statsLoading，确保数据加载完后再测量
 
-  // 🔄 实时更新：客户端轮询最近访问的词库
+  // 🔄 页面可见性刷新：当用户从其他页面返回时刷新数据
   const [liveRecentBooks, setLiveRecentBooks] = useState(recentBooks)
+  const router = useRouter()
 
   useEffect(() => {
     const randomIndex = Math.floor(Math.random() * MOTIVATIONAL_QUOTES.length)
     setRandomQuote(MOTIVATIONAL_QUOTES[randomIndex])
+  }, [])
+
+  // 🔄 页面可见性刷新：用户返回时刷新数据（替代无效轮询）
+  useEffect(() => {
+    let isMounted = true
+
+    const handleVisibilityChange = () => {
+      if (!document.hidden && isMounted) {
+        // 用户返回页面时，刷新最近访问的词库
+        fetch('/api/recent-books')
+          .then(res => res.json())
+          .then(data => {
+            if (isMounted && data.success && data.data) {
+              setLiveRecentBooks(data.data)
+              console.log('🔄 [Dashboard] 页面可见，更新最近访问:', data.data.length, '本书')
+            }
+          })
+          .catch(err => {
+            if (isMounted) console.error('[Dashboard] 刷新最近访问失败:', err)
+          })
+      }
+    }
+
+    document.addEventListener('visibilitychange', handleVisibilityChange)
+
+    return () => {
+      isMounted = false
+      document.removeEventListener('visibilitychange', handleVisibilityChange)
+    }
   }, [])
 
   // 🚀 异步加载统计数据（如果服务端没有提供）
@@ -346,49 +447,6 @@ export function DashboardContent({
       isMounted = false
     }
   }, [initialMistakesCount, initialTodayNewWordsCount])
-
-  // 🔄 实时轮询：每30秒获取最近访问的词库
-  useEffect(() => {
-    let isMounted = true
-
-    // 使用 Page Visibility API，只在页面可见时轮询
-    const loadRecentBooks = async () => {
-      try {
-        const res = await fetch('/api/recent-books')
-        if (res.ok) {
-          try {
-            const data = await res.json()
-            if (!isMounted) return
-            if (data.success && data.data) {
-              setLiveRecentBooks(data.data)
-              console.log('🔄 [Dashboard] 更新最近访问:', data.data.length, '本书')
-            }
-          } catch (e) {
-            if (isMounted) console.error('[Dashboard] Failed to parse recent-books response:', e)
-          }
-        }
-      } catch (error) {
-        if (isMounted) console.error('[Dashboard] 轮询最近访问失败:', error)
-      }
-    }
-
-    // 立即执行一次
-    loadRecentBooks()
-
-    // 设置定时器：每30秒轮询一次
-    const interval = setInterval(() => {
-      // 只在页面可见时轮询
-      if (!document.hidden && isMounted) {
-        loadRecentBooks()
-      }
-    }, 30000) // 30秒
-
-    // 清理函数
-    return () => {
-      isMounted = false
-      clearInterval(interval)
-    }
-  }, []) // 空依赖数组，只在组件挂载时执行一次
 
   return (
     <div
@@ -527,124 +585,8 @@ export function DashboardContent({
                 />
               </div>
 
-              {/* Desktop: 横向滚动容器，显示6个卡片 */}
-              <div
-                className="hidden lg:block relative group"
-                onMouseEnter={() => {
-                  // 鼠标进入时显示箭头
-                  const container = (window as any).desktopBrowseScrollRef as HTMLDivElement
-                  if (!container) return
-
-                  const scrollLeft = container.scrollLeft
-                  const scrollWidth = container.scrollWidth
-                  const clientWidth = container.clientWidth
-
-                  const leftBtn = (window as any).desktopBrowseLeftBtn
-                  const rightBtn = (window as any).desktopBrowseRightBtn
-
-                  if (leftBtn) {
-                    leftBtn.style.opacity = scrollLeft > 0 ? '1' : '0'
-                    leftBtn.style.pointerEvents = scrollLeft > 0 ? 'auto' : 'none'
-                  }
-
-                  if (rightBtn) {
-                    rightBtn.style.opacity = scrollLeft < scrollWidth - clientWidth - 1 ? '1' : '0'
-                    rightBtn.style.pointerEvents = scrollLeft < scrollWidth - clientWidth - 1 ? 'auto' : 'none'
-                  }
-                }}
-                onMouseLeave={() => {
-                  // 鼠标离开时隐藏所有箭头
-                  const leftBtn = (window as any).desktopBrowseLeftBtn
-                  const rightBtn = (window as any).desktopBrowseRightBtn
-
-                  if (leftBtn) {
-                    leftBtn.style.opacity = '0'
-                    leftBtn.style.pointerEvents = 'none'
-                  }
-
-                  if (rightBtn) {
-                    rightBtn.style.opacity = '0'
-                    rightBtn.style.pointerEvents = 'none'
-                  }
-                }}
-              >
-                <div
-                  ref={(el) => {
-                    if (el) {
-                      (window as any).desktopBrowseScrollRef = el
-                    }
-                  }}
-                  className="flex gap-4 overflow-x-auto scroll-smooth pb-4 scrollbar-hide"
-                  onScroll={(e) => {
-                    const target = e.target as HTMLDivElement
-                    const scrollLeft = target.scrollLeft
-                    const scrollWidth = target.scrollWidth
-                    const clientWidth = target.clientWidth
-
-                    // 控制左右箭头的显示/隐藏（仅在鼠标悬停时）
-                    const leftBtn = (window as any).desktopBrowseLeftBtn
-                    const rightBtn = (window as any).desktopBrowseRightBtn
-
-                    if (leftBtn) {
-                      leftBtn.style.opacity = scrollLeft > 0 ? '1' : '0'
-                      leftBtn.style.pointerEvents = scrollLeft > 0 ? 'auto' : 'none'
-                    }
-
-                    if (rightBtn) {
-                      rightBtn.style.opacity = scrollLeft < scrollWidth - clientWidth - 1 ? '1' : '0'
-                      rightBtn.style.pointerEvents = scrollLeft < scrollWidth - clientWidth - 1 ? 'auto' : 'none'
-                    }
-                  }}
-                >
-                  {progressCards.map((card, index) => (
-                    <div key={card._uniqueKey || card.bookId} className="w-[250px] max-w-[250px] flex-shrink-0">
-                      <ProgressCardComponent {...card} isFirstCard={index === 0} />
-                    </div>
-                  ))}
-                </div>
-
-                {/* 左箭头按钮 */}
-                <button
-                  ref={(el) => {
-                    if (el) {
-                      (window as any).desktopBrowseLeftBtn = el
-                    }
-                  }}
-                  onClick={() => {
-                    const container = (window as any).desktopBrowseScrollRef as HTMLDivElement
-                    if (container) {
-                      container.scrollBy({ left: -264, behavior: 'smooth' }) // 卡片宽度(250) + 间距(4) + 边框(10)
-                    }
-                  }}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-10 w-10 h-10 bg-white dark:bg-slate-800 border-[3px] border-black dark:border-slate-600 rounded shadow-[4px_4px_0px_0px_#000] dark:shadow-none flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 hover:bg-[#B4F416] hover:-translate-x-2"
-                  style={{ opacity: 0, pointerEvents: 'none' }}
-                >
-                  <svg className="w-5 h-5 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M15 19l-7-7 7-7" />
-                  </svg>
-                </button>
-
-                {/* 右箭头按钮 */}
-                <button
-                  ref={(el) => {
-                    if (el) {
-                      (window as any).desktopBrowseRightBtn = el
-                    }
-                  }}
-                  onClick={() => {
-                    const container = (window as any).desktopBrowseScrollRef as HTMLDivElement
-                    if (container) {
-                      container.scrollBy({ left: 264, behavior: 'smooth' })
-                    }
-                  }}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-10 w-10 h-10 bg-white dark:bg-slate-800 border-[3px] border-black dark:border-slate-600 rounded shadow-[4px_4px_0px_0px_#000] dark:shadow-none flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 hover:bg-[#B4F416] hover:translate-x-2"
-                  style={{ opacity: 0, pointerEvents: 'none' }}
-                >
-                  <svg className="w-5 h-5 text-black dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
-              </div>
+              {/* Desktop: 横向滚动容器，使用 useRef 管理箭头 */}
+              <DesktopBrowseScroll progressCards={progressCards} />
             </div>
           ) : (
             <div className="mb-8">

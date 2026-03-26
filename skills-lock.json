@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "skills": {
+    "dbs": {
+      "source": "dontbesilent2025/dbskill",
+      "sourceType": "github",
+      "computedHash": "dd1b2351d26db34b7c5c5c6c7daa94c9d4613fd351094a714f337e1b5dcd8d3c"
+    },
+    "dbs-benchmark": {
+      "source": "dontbesilent2025/dbskill",
+      "sourceType": "github",
+      "computedHash": "11329a6536908e06448efeb4574f860d1704d1c8851c08b5dd0d38e4162c014e"
+    },
+    "dbs-content": {
+      "source": "dontbesilent2025/dbskill",
+      "sourceType": "github",
+      "computedHash": "e6f6d3dc2bc78b9057bf3e629e82833584df569f2654ace4d3fb516b3082ff7d"
+    },
+    "dbs-deconstruct": {
+      "source": "dontbesilent2025/dbskill",
+      "sourceType": "github",
+      "computedHash": "076b0103b9c89c99609ea9f71c4c348c1ac9c6f70b38b750009bc93fcf232bc7"
+    },
+    "dbs-diagnosis": {
+      "source": "dontbesilent2025/dbskill",
+      "sourceType": "github",
+      "computedHash": "9a929ec70c983e7d3e1e6b0f39b34236bbc9f8b6dd181429719af39d49d57e64"
+    },
+    "dbs-unblock": {
+      "source": "dontbesilent2025/dbskill",
+      "sourceType": "github",
+      "computedHash": "481cd163fcff13f429eacd5af4ad3bd2ec293e2e4bc55c760ce4532b8c4a0528"
+    }
+  }
+}

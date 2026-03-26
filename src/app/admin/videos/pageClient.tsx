@@ -30,6 +30,7 @@ import {
   Upload,
   Layers,
   Rocket,
+  ArrowLeft,
 } from 'lucide-react'
 import { VideoUploadField } from '@/components/admin/VideoUploadField'
 import ImageUploadModal from '@/components/admin/ImageUploadModal'
@@ -586,17 +587,8 @@ export function VideoManagementClient() {
 
                 {/* 操作按钮 */}
                 <div className="flex md:flex-col gap-2 flex-shrink-0">
-                  {/* 继续工作流 / 查看预览 */}
-                  {video.status === 'published' ? (
-                    <Link
-                      href={`/videos/${video.id}`}
-                      target="_blank"
-                      className="px-4 py-2 font-bold text-sm bg-blue-400 text-black border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all flex items-center gap-1"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                      预览
-                    </Link>
-                  ) : (
+                  {/* 继续工作流 */}
+                  {video.status !== 'published' && (
                     <Link
                       href={`/admin/videos/new?step=${video.workflow_progress?.current_step || 0}&videoId=${video.id}`}
                       className="px-4 py-2 font-bold text-sm bg-green-400 text-black border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all flex items-center gap-1"
@@ -605,20 +597,51 @@ export function VideoManagementClient() {
                       继续
                     </Link>
                   )}
-                  <Link
+                  {/* 改为草稿 - 已发布的视频显示 */}
+                  {video.status === 'published' && (
+                    <button
+                      onClick={async () => {
+                        if (!confirm('确定要将此视频改为草稿吗？')) return
+                        try {
+                          const res = await fetch('/api/admin/videos/batch-publish', {
+                            method: 'PATCH',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                              video_id: video.id,
+                              updates: { status: 'draft' }
+                            })
+                          })
+                          if (res.ok) {
+                            mutate()
+                          } else {
+                            alert('操作失败')
+                          }
+                        } catch {
+                          alert('操作失败')
+                        }
+                      }}
+                      className="px-4 py-2 font-bold text-sm bg-gray-400 text-black border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all flex items-center gap-1"
+                    >
+                      <ArrowLeft className="w-4 h-4" />
+                      改为草稿
+                    </button>
+                  )}
+                  {/* 卡片 - 暂时隐藏 */}
+                  {/* <Link
                     href={`/admin/videos/${video.id}/cards`}
                     className="px-4 py-2 font-bold text-sm bg-purple-400 text-black border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all flex items-center gap-1"
                   >
                     <Layers className="w-4 h-4" />
                     卡片
-                  </Link>
-                  <button
+                  </Link> */}
+                  {/* 编辑 - 暂时隐藏 */}
+                  {/* <button
                     onClick={() => handleEdit(video)}
                     className="px-4 py-2 font-bold text-sm bg-yellow-400 text-black border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all flex items-center gap-1"
                   >
                     <Pencil className="w-4 h-4" />
                     编辑
-                  </button>
+                  </button> */}
                   <button
                     onClick={() => handleDelete(video.id)}
                     className="px-4 py-2 font-bold text-sm bg-red-500 text-white border-[3px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-0.5 transition-all flex items-center gap-1"

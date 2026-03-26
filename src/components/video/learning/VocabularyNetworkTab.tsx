@@ -5,10 +5,12 @@
  *
  * 设计风格：Neo-brutalism - 与 Speaker 模块保持一致
  * 点击词汇显示词典数据
+ * 支持展开/收起分类
  */
 
+import { useState, memo } from 'react'
 import { cn } from '@/lib/utils'
-import { Network, Link2, Lightbulb } from 'lucide-react'
+import { Network, Link2, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
 import type { VideoVocabularyNetwork, VideoLanguage } from '@/types/video'
 import { WordTooltip } from './WordTooltip'
 
@@ -37,26 +39,9 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr' }: Vocabula
 
   return (
     <div className="space-y-3">
-      {/* 主题 */}
-      {network.theme && (
-        <div className="bg-indigo-100 dark:bg-indigo-900/30 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
-          <div className="flex items-center gap-2 px-3 py-2 bg-indigo-200 dark:bg-indigo-800 border-b-[2px] border-black dark:border-gray-600">
-            <Network className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-            <span className="text-xs font-black text-indigo-700 dark:text-indigo-300">
-              词汇网络主题
-            </span>
-          </div>
-          <div className="p-3">
-            <p className="text-sm font-black text-indigo-800 dark:text-indigo-200">
-              {network.theme}
-            </p>
-          </div>
-        </div>
-      )}
-
       {/* 结构可视化 */}
       {network.structure && (
-        <NetworkVisualization structure={network.structure} videoLanguage={videoLanguage} />
+        <NetworkVisualization structure={network.structure} theme={network.theme} videoLanguage={videoLanguage} />
       )}
 
       {/* 相关词汇 */}
@@ -80,7 +65,7 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr' }: Vocabula
         </div>
       )}
 
-      {/* 吸见搭配 */}
+      {/* 常见搭配 */}
       {network.collocations && (
         <div className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
           <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 border-b-[2px] border-black dark:border-gray-600">
@@ -104,10 +89,13 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr' }: Vocabula
 
 interface NetworkVisualizationProps {
   structure: string
+  theme?: string | null
   videoLanguage: VideoLanguage
 }
 
-function NetworkVisualization({ structure, videoLanguage }: NetworkVisualizationProps) {
+const NetworkVisualization = memo(function NetworkVisualization({ structure, theme, videoLanguage }: NetworkVisualizationProps) {
+  const [isExpanded, setIsExpanded] = useState(true)
+
   // 尝试解析 JSON 结构
   let parsedStructure: Record<string, string[]> | null = null
   try {
@@ -118,7 +106,7 @@ function NetworkVisualization({ structure, videoLanguage }: NetworkVisualization
 
   if (!parsedStructure) {
     return (
-      <div className="bg-gray-50 dark:bg-gray-700/50 border-[2px] border-gray-200 dark:border-gray-600 p-3 rounded-sm">
+      <div className="bg-gray-50 dark:bg-gray-700/50 border-[1px] border-gray-200 dark:border-gray-600 p-3 rounded-sm">
         <p className="text-sm text-gray-600 dark:text-gray-400 whitespace-pre-wrap font-medium">
           {structure}
         </p>
@@ -127,53 +115,85 @@ function NetworkVisualization({ structure, videoLanguage }: NetworkVisualization
   }
 
   const categories = Object.entries(parsedStructure)
+  const categoryCount = categories.length
 
   return (
-    <div className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
-      <div className="flex items-center gap-2 px-3 py-2 bg-indigo-100 dark:bg-indigo-900/30 border-b-[2px] border-black dark:border-gray-600">
-        <Network className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
-        <span className="text-xs font-black text-indigo-700 dark:text-indigo-300">
-          词汇关系图
-        </span>
+    <div className="space-y-3">
+      {/* 中心节点 - 可点击展开/收起 */}
+      <div className="flex flex-col items-center">
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="group flex flex-col items-center"
+        >
+          <div className="px-4 py-2 bg-indigo-500 text-white text-sm font-black border-[2px] border-black dark:border-gray-500 rounded-sm shadow-[2px_2px_0px_0px_#000] group-hover:bg-indigo-600 transition-colors">
+            {theme || '主题中心'}
+          </div>
+          <div className="mt-1 text-indigo-500 dark:text-indigo-400">
+            {isExpanded ? (
+              <ChevronUp className="w-4 h-4" />
+            ) : (
+              <ChevronDown className="w-4 h-4" />
+            )}
+          </div>
+        </button>
       </div>
 
-      <div className="p-3">
-        {/* 中心节点 */}
-        <div className="flex justify-center mb-3">
-          <div className="px-4 py-2 bg-indigo-500 text-white text-sm font-black border-[2px] border-black dark:border-gray-500 rounded-sm shadow-[2px_2px_0px_0px_#000]">
-            主题中心
-          </div>
-        </div>
+      {/* 连接线 + 分类卡片 */}
+      {isExpanded && (
+        <div>
+          {/* CSS 连接线 - 仅 PC 端显示 */}
+          <div className="hidden sm:block relative h-8">
+            {/* 主干线 - 从中心向下 */}
+            <div className="absolute left-1/2 top-0 w-px h-4 bg-indigo-400 dark:bg-indigo-500 -translate-x-1/2" />
 
-        {/* 分类卡片 */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-          {categories.map(([category, words]) => (
-            <div
-              key={category}
-              className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[3px_3px_0px_0px_#666] hover:-translate-y-0.5 transition-all"
-            >
-              <div className="px-2 py-1.5 bg-gray-100 dark:bg-gray-700 border-b-[2px] border-black dark:border-gray-600">
-                <h5 className="text-xs font-black text-center text-gray-900 dark:text-gray-100">
-                  {category}
-                </h5>
-              </div>
-              <div className="p-2">
-                <div className="flex flex-wrap gap-1 justify-center">
-                  {Array.isArray(words) && words.map((word, i) => (
-                    <WordTooltip key={i} word={word} language={videoLanguage}>
-                      <span className="px-1.5 py-1 bg-gray-100 dark:bg-gray-700 text-xs text-gray-700 dark:text-gray-300 border-[2px] border-gray-300 dark:border-gray-600 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 active:bg-indigo-100 dark:active:bg-indigo-900/50 transition-colors cursor-pointer rounded-sm">
-                        {word}
-                      </span>
-                    </WordTooltip>
-                  ))}
+            {/* 横向连接线 */}
+            <div className="absolute top-4 left-[10%] right-[10%] h-px bg-indigo-400 dark:bg-indigo-500" />
+
+            {/* 垂直分支线 - 指向每个分类 */}
+            {categories.map((_, idx) => {
+              const leftPercent = categoryCount > 1
+                ? 10 + (80 / (categoryCount - 1)) * idx
+                : 50
+              return (
+                <div
+                  key={idx}
+                  className="absolute top-4 w-px h-4 bg-indigo-400 dark:bg-indigo-500"
+                  style={{ left: `${leftPercent}%` }}
+                />
+              )
+            })}
+          </div>
+
+          {/* 分类卡片 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {categories.map(([category, words]) => (
+              <div
+                key={category}
+                className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[3px_3px_0px_0px_#666] hover:-translate-y-0.5 transition-all"
+              >
+                <div className="px-2 py-1.5 bg-gray-100 dark:bg-gray-700 border-b-[2px] border-black dark:border-gray-600">
+                  <h5 className="text-xs font-black text-center text-gray-900 dark:text-gray-100">
+                    {category}
+                  </h5>
+                </div>
+                <div className="p-2">
+                  <div className="flex flex-wrap gap-1 justify-center">
+                    {Array.isArray(words) && words.map((word, i) => (
+                      <WordTooltip key={i} word={word} language={videoLanguage}>
+                        <span className="px-1.5 py-1 bg-gray-100 dark:bg-gray-700 text-xs text-gray-700 dark:text-gray-300 border-[2px] border-gray-300 dark:border-gray-600 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 active:bg-indigo-100 dark:active:bg-indigo-900/50 transition-colors cursor-pointer rounded-sm">
+                          {word}
+                        </span>
+                      </WordTooltip>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      )}
     </div>
   )
-}
+})
 
 export default VocabularyNetworkTab

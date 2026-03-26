@@ -3,10 +3,13 @@
  *
  * GET: 返回待复习的卡片（基于 SM-2 算法）
  * POST: 提交复习结果并更新下次复习时间
+ *
+ * 性能优化：使用批量查询替代 N+1 查询
  */
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import { updateLearningCalendar } from '@/lib/learning-calendar'
 import type { CardType, VideoCard } from '@/types/video'
 
 // 卡片类型对应的表名
@@ -36,7 +39,7 @@ export async function GET(request: NextRequest) {
 
     const now = new Date().toISOString()
 
-    // 构建查询
+    // 1. 查询用户卡片进度
     let query = supabase
       .from('user_card_progress')
       .select('*')
@@ -64,71 +67,114 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: error.message }, { status: 500 })
     }
 
-    // 获取卡片详情和视频信息
+    if (!cardProgress || cardProgress.length === 0) {
+      return NextResponse.json({
+        data: {
+          items: [],
+          total: 0,
+        },
+      })
+    }
+
+    // 2. 批量获取卡片数据（按类型分组查询）
+    const progressByType: Record<CardType, typeof cardProgress> = {
+      word: [],
+      phrase: [],
+      expression: [],
+    }
+
+    for (const progress of cardProgress) {
+      const type = progress.card_type as CardType
+      if (progressByType[type]) {
+        progressByType[type].push(progress)
+      }
+    }
+
+    // 3. 批量查询每种类型的卡片
+    const cardDataMap = new Map<string, { type: CardType; data: Record<string, unknown> }>()
+
+    const cardQueries = Object.entries(progressByType)
+      .filter(([, progresses]) => progresses.length > 0)
+      .map(async ([type, progresses]) => {
+        const tableName = CARD_TABLES[type as CardType]
+        const cardIds = progresses.map(p => p.card_id)
+
+        const { data } = await supabase
+          .from(tableName)
+          .select('*')
+          .in('id', cardIds)
+
+        if (data) {
+          for (const card of data) {
+            cardDataMap.set(card.id, { type: type as CardType, data: card })
+          }
+        }
+      })
+
+    await Promise.all(cardQueries)
+
+    // 4. 批量获取视频信息
+    const videoIds = [...new Set(cardProgress.map(p => p.video_id))]
+    const { data: videos } = await supabase
+      .from('videos')
+      .select('id, title, language')
+      .in('id', videoIds)
+
+    const videoMap = new Map(videos?.map(v => [v.id, v]) || [])
+
+    // 5. 构建返回数据
     const items = []
 
-    for (const progress of cardProgress || []) {
-      const tableName = CARD_TABLES[progress.card_type as CardType]
-      if (!tableName) continue
+    for (const progress of cardProgress) {
+      const cardInfo = cardDataMap.get(progress.card_id)
+      if (!cardInfo) continue
 
-      // 获取卡片数据
-      const { data: cardData } = await supabase
-        .from(tableName)
-        .select('*')
-        .eq('id', progress.card_id)
-        .single()
-
-      if (!cardData) continue
-
-      // 获取视频信息
-      const { data: video } = await supabase
-        .from('videos')
-        .select('title, language')
-        .eq('id', progress.video_id)
-        .single()
+      const video = videoMap.get(progress.video_id)
+      const cardData = cardInfo.data
 
       // 构建统一的卡片格式
-      const card: VideoCard = {
-        id: cardData.id,
+      const card = {
+        id: cardData.id as string,
         video_id: progress.video_id,
         video_title: video?.title,
+        video_language: video?.language as string | undefined,
         text: '',
         translation: '',
-        phonetic: cardData.phonetic,
+        phonetic: cardData.phonetic as string,
         examples: [],
       }
 
       // 根据卡片类型填充数据
       switch (progress.card_type as CardType) {
         case 'word':
-          card.text = cardData.word
-          card.translation = cardData.chinese_definition
-          card.part_of_speech = cardData.part_of_speech
-          card.definition = cardData.english_definition
+          card.text = cardData.word as string
+          card.translation = cardData.chinese_definition as string
+          card.part_of_speech = cardData.part_of_speech as string
+          card.definition = cardData.english_definition as string
           if (cardData.example_from_video) {
             card.examples = [{
-              original: cardData.example_from_video,
-              translation: cardData.example_translation,
+              original: cardData.example_from_video as string,
+              cn: cardData.example_translation as string,
             }]
           }
           break
         case 'phrase':
-          card.text = cardData.phrase
-          card.translation = cardData.chinese_definition
+          card.text = cardData.phrase as string
+          card.translation = cardData.chinese_definition as string
           if (cardData.context) {
             card.examples = [{
-              original: cardData.context,
-              translation: cardData.context_translation,
+              original: cardData.context as string,
+              cn: cardData.context_translation as string,
             }]
           }
           break
         case 'expression':
-          card.text = cardData.expression
-          card.translation = cardData.meaning || ''
-          card.formula = cardData.formula
-          card.usage_note = cardData.usage_note
-          card.scenarios = cardData.scenarios
-          card.examples = cardData.examples || []
+          card.text = cardData.expression as string
+          card.translation = cardData.meaning as string || ''
+          card.formula = cardData.formula as string
+          card.usage_note = cardData.usage_note as string
+          card.scenarios = cardData.scenarios as string[]
+          card.examples = cardData.examples as Array<{ original: string; cn?: string }> || []
           break
       }
 
@@ -171,7 +217,7 @@ export async function POST(request: NextRequest) {
     const { cardId, cardType, quality, videoId } = body as {
       cardId: string
       cardType: CardType
-      quality: number  // 0=忘记, 2=一般, 5=简单 (SM-2 标准)
+      quality: number  // 1=忘记, 2=一般, 3=简单 (客户端约定)
       videoId?: string
     }
 
@@ -252,12 +298,12 @@ export async function POST(request: NextRequest) {
     }
 
     // SM-2 算法计算下次复习时间
-    // quality: 0=忘记, 2=一般, 5=简单
+    // quality: 1=忘记, 2=一般, 3=简单 (客户端约定)
     let newEaseFactor = progress.ease_factor
     let interval = 1
     const reviewCount = progress.review_count || 0
 
-    if (quality >= 5) {
+    if (quality >= 3) {
       // 简单/已知
       if (reviewCount === 0) {
         interval = 1
@@ -273,7 +319,7 @@ export async function POST(request: NextRequest) {
       interval = Math.max(1, Math.round(reviewCount * 0.5))
       newEaseFactor = Math.max(1.3, progress.ease_factor - 0.1)
     } else {
-      // 忘记/未知
+      // 忘记/未知 (quality === 1)
       interval = 1
       newEaseFactor = Math.max(1.3, progress.ease_factor - 0.2)
     }
@@ -284,8 +330,8 @@ export async function POST(request: NextRequest) {
 
     // 确定状态
     let newStatus = 'learning'
-    if (quality >= 5) newStatus = 'known'
-    else if (quality === 0) newStatus = 'unknown'
+    if (quality >= 3) newStatus = 'known'
+    else if (quality === 1) newStatus = 'unknown'
 
     // 更新进度
     const { error: updateError } = await supabase
@@ -307,6 +353,14 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       )
     }
+
+    // 更新学习日历（异步，不阻塞响应）
+    updateLearningCalendar(supabase, user.id, { cardType: cardType })
+      .then(result => {
+        if (!result.success) {
+          console.error('[review POST] Calendar update failed:', result.error)
+        }
+      })
 
     return NextResponse.json({
       success: true,

@@ -17,12 +17,14 @@ import {
   Play,
   Clock,
   CheckCircle,
-  BookOpen,
   Video,
   Repeat,
+  Zap,
+  Star,
 } from 'lucide-react'
 import type { VideoListItem, VideoListResponse } from '@/types/video'
 import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, formatDuration } from '@/types/video'
+import LearningCalendar from '@/components/video/LearningCalendar'
 
 // 语言选项（从 API 动态获取，基于用户权限范围内的语言）
 const buildLanguageOptions = (availableLanguages: string[] | undefined) => {
@@ -46,6 +48,13 @@ const DIFFICULTY_OPTIONS = [
   { value: 'advanced', label: '难' },
 ]
 
+// 学习状态选项
+const LEARN_STATUS_OPTIONS = [
+  { value: 'all', label: '全部' },
+  { value: 'learned', label: '已学习' },
+  { value: 'unlearned', label: '未学习' },
+]
+
 // 分页常量
 const PAGE_SIZE = 12
 
@@ -63,17 +72,17 @@ const getDifficultyColor = (difficulty: string) => {
   }
 }
 
-// 视频卡片组件
+// 视频卡片组件 - YouTube 风格
 function VideoCard({ video }: { video: VideoListItem }) {
   const progress = video.user_progress
 
   return (
     <Link
       href={`/videos/${video.id}`}
-      className="group relative bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[8px_8px_0px_0px_#000] dark:hover:shadow-[8px_8px_0px_0px_#666] hover:-translate-y-1 transition-all duration-150 cursor-pointer overflow-hidden rounded-sm block"
+      className="group relative bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] md:shadow-[6px_6px_0px_0px_#000] dark:md:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] md:hover:shadow-[8px_8px_0px_0px_#000] dark:md:hover:shadow-[8px_8px_0px_0px_#666] hover:-translate-y-0.5 transition-all duration-150 cursor-pointer overflow-hidden block flex flex-col"
     >
-      {/* 缩略图 */}
-      <div className="relative h-40 bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[3px] border-black dark:border-gray-600 transition-colors duration-300">
+      {/* 缩略图 - 移动端更大，PC端正常 */}
+      <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[2px] md:border-b-[3px] border-black dark:border-gray-600 flex-shrink-0 transition-colors duration-300">
         {video.thumbnail_url ? (
           <img
             src={video.thumbnail_url}
@@ -82,12 +91,12 @@ function VideoCard({ video }: { video: VideoListItem }) {
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <Video className="w-12 h-12 text-black dark:text-white opacity-20" />
+            <Video className="w-10 h-10 md:w-12 md:h-12 text-black dark:text-white opacity-20" />
           </div>
         )}
 
-        {/* 难度标签 - 贴纸样式 */}
-        <div className="absolute top-3 left-3">
+        {/* 难度标签 - PC端 */}
+        <div className="hidden md:block absolute top-3 left-3">
           <div className={`px-3 py-1 ${getDifficultyColor(video.difficulty)} border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1`}>
             <span className="text-xs font-black tracking-tight">
               {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
@@ -95,23 +104,54 @@ function VideoCard({ video }: { video: VideoListItem }) {
           </div>
         </div>
 
-        {/* 时长 */}
-        <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-xs font-bold border-[2px] border-black">
+        {/* 难度标签 - 移动端 */}
+        <div className="md:hidden absolute top-2 left-2">
+          <div className={`px-2 py-0.5 ${getDifficultyColor(video.difficulty)} border-[1px] border-black text-[10px] font-black`}>
+            {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
+          </div>
+        </div>
+
+        {/* 时长 - PC端 */}
+        <div className="hidden md:block absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-xs font-bold border-[2px] border-black">
           {formatDuration(video.duration)}
         </div>
 
-        {/* 完成标记 */}
+        {/* 时长 - 移动端 */}
+        <div className="md:hidden absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-xs font-bold">
+          {formatDuration(video.duration)}
+        </div>
+
+        {/* 完成标记 - PC端 */}
         {progress?.is_completed && (
-          <div className="absolute top-3 right-3">
+          <div className="hidden md:block absolute top-3 right-3">
             <div className="px-3 py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[3px_3px_0px_0px_#000] transform rotate-2">
               <span className="text-xs font-black tracking-tight">✓ DONE</span>
             </div>
           </div>
         )}
 
-        {/* 进度条 */}
+        {/* 完成标记 - 移动端 */}
+        {progress?.is_completed && (
+          <div className="md:hidden absolute top-2 right-2">
+            <div className="px-2 py-1 bg-[#B4F416] border-[1px] border-black text-[10px] font-black">
+              ✓ 已完成
+            </div>
+          </div>
+        )}
+
+        {/* 进度条 - PC端 */}
         {progress && progress.max_progress > 0 && !progress.is_completed && (
-          <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-gray-300 dark:bg-gray-600">
+          <div className="hidden md:block absolute bottom-0 left-0 right-0 h-[4px] bg-gray-300 dark:bg-gray-600">
+            <div
+              className="h-full bg-[#B4F416] transition-all duration-300"
+              style={{ width: `${Math.min(progress.max_progress, 100)}%` }}
+            />
+          </div>
+        )}
+
+        {/* 进度条 - 移动端 */}
+        {progress && progress.max_progress > 0 && !progress.is_completed && (
+          <div className="md:hidden absolute bottom-0 left-0 right-0 h-[3px] bg-gray-300 dark:bg-gray-600">
             <div
               className="h-full bg-[#B4F416] transition-all duration-300"
               style={{ width: `${Math.min(progress.max_progress, 100)}%` }}
@@ -120,38 +160,60 @@ function VideoCard({ video }: { video: VideoListItem }) {
         )}
       </div>
 
-      {/* 信息 */}
-      <div className="p-4">
+      {/* 信息区 - 移动端更紧凑 */}
+      <div className="flex-1 p-3 md:p-4 min-w-0">
         {/* 标题 */}
-        <h3 className="text-base font-black tracking-tight text-black dark:text-white mb-3 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
+        <h3 className="text-base md:text-base font-black tracking-tight text-black dark:text-white mb-2 md:mb-3 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
           {video.title}
         </h3>
 
-        {/* 语种和标签 */}
-        <div className="flex items-center gap-2 mb-3">
-          <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500 rounded transition-colors duration-300">
+        {/* 语种和标签 - 移动端 */}
+        <div className="flex md:hidden items-center gap-2 mb-1">
+          <div className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 border-[1px] border-gray-300 dark:border-gray-500">
+            <span className="text-[11px] font-bold text-gray-700 dark:text-gray-300">
+              {VIDEO_LANGUAGE_LABELS[video.language]}
+            </span>
+          </div>
+          {video.tags.slice(0, 2).map((tag) => (
+            <div key={tag} className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 border-[1px] border-gray-300 dark:border-gray-500">
+              <span className="text-[11px] font-bold text-gray-700 dark:text-gray-300">{tag}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* 语种和标签 - PC端 */}
+        <div className="hidden md:flex items-center gap-2 mb-3">
+          <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500">
             <span className="text-xs font-bold text-gray-700 dark:text-gray-300">
               {VIDEO_LANGUAGE_LABELS[video.language]}
             </span>
           </div>
           {video.tags.slice(0, 1).map((tag) => (
-            <div key={tag} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500 rounded transition-colors duration-300">
+            <div key={tag} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500">
               <span className="text-xs font-bold text-gray-700 dark:text-gray-300">{tag}</span>
             </div>
           ))}
         </div>
 
-        {/* 进度 */}
+        {/* 进度 - 移动端 */}
         {progress && progress.max_progress > 0 && !progress.is_completed && (
-          <div className="flex items-center gap-1 text-sm font-mono font-bold text-gray-600 dark:text-gray-400 transition-colors duration-300">
+          <div className="flex md:hidden items-center gap-1.5 text-xs font-mono font-bold text-gray-600 dark:text-gray-400">
+            <Clock className="w-3.5 h-3.5" />
+            <span>进度 {Math.min(Math.round(progress.max_progress), 100)}%</span>
+          </div>
+        )}
+
+        {/* 进度 - PC端 */}
+        {progress && progress.max_progress > 0 && !progress.is_completed && (
+          <div className="hidden md:flex items-center gap-1 text-sm font-mono font-bold text-gray-600 dark:text-gray-400">
             <Clock className="w-4 h-4" />
-            <span>进度 {Math.round(progress.max_progress)}%</span>
+            <span>进度 {Math.min(Math.round(progress.max_progress), 100)}%</span>
           </div>
         )}
       </div>
 
-      {/* Hover 效果：荧光绿底部边框 */}
-      <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[#B4F416] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
+      {/* Hover 效果：荧光绿底部边框 - 仅PC端 */}
+      <div className="hidden md:block absolute bottom-0 left-0 w-full h-[3px] bg-[#B4F416] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
     </Link>
   )
 }
@@ -205,7 +267,7 @@ function ContinueLearningCard({ video }: { video: VideoListItem }) {
           </span>
         </div>
         <p className="text-sm font-mono font-bold text-[#B4F416] mt-1">
-          进度 {Math.round(progress.max_progress)}%
+          进度 {Math.min(Math.round(progress.max_progress), 100)}%
         </p>
       </div>
 
@@ -252,9 +314,13 @@ function VideoListContent() {
   const [tag, setTag] = useState<string>(
     searchParams.get('tag') || 'all'
   )
+  const [learnStatus, setLearnStatus] = useState<string>(
+    searchParams.get('learnStatus') || 'all'
+  )
   const [page, setPage] = useState<number>(
     parseInt(searchParams.get('page') || '1')
   )
+  const [filterDrawerOpen, setFilterDrawerOpen] = useState(false)
 
   // 构建查询 URL
   const buildQueryUrl = useCallback(() => {
@@ -268,6 +334,9 @@ function VideoListContent() {
     if (tag && tag !== 'all') {
       params.set('tag', tag)
     }
+    if (learnStatus && learnStatus !== 'all') {
+      params.set('learnStatus', learnStatus)
+    }
     // 分页参数
     const offset = (page - 1) * PAGE_SIZE
     params.set('limit', String(PAGE_SIZE))
@@ -275,7 +344,7 @@ function VideoListContent() {
 
     const queryString = params.toString()
     return `/api/videos${queryString ? `?${queryString}` : ''}`
-  }, [language, difficulty, tag, page])
+  }, [language, difficulty, tag, learnStatus, page])
 
   // 获取视频列表
   const { data, error, isLoading, mutate } = useSWR<VideoListResponse>(
@@ -283,41 +352,21 @@ function VideoListContent() {
     fetcher,
     {
       revalidateOnFocus: false,
+      dedupingInterval: 5000, // 5秒内重复请求去重
     }
   )
 
-  // 获取标签列表（延迟加载，等视频数据加载完成后再请求）
+  // 获取标签列表（并行请求，不等待视频数据）
   const { data: tagsData } = useSWR<{ id: string; name: string; video_count: number }[]>(
-    data ? '/api/video-tags' : null,  // 条件请求：等视频数据就绪
+    '/api/video-tags',
     async (url) => {
       const res = await fetch(url)
       if (!res.ok) throw new Error('Failed to fetch tags')
       const json = await res.json()
       return json.data || []
     },
-    { revalidateOnFocus: false }
+    { revalidateOnFocus: false, dedupingInterval: 10000 }
   )
-
-  // 获取学习统计（延迟加载，低优先级）
-  const { data: statsData } = useSWR<{
-    overview: {
-      total_cards: number
-      known_cards: number
-      learning_cards: number
-    }
-  }>(
-    data ? '/api/user/video-stats' : null,  // 条件请求：等视频数据就绪
-    async (url) => {
-      const res = await fetch(url)
-      if (!res.ok) throw new Error('Failed to fetch')
-      const json = await res.json()
-      return json.data
-    },
-    { revalidateOnFocus: false }
-  )
-
-  // 待复习卡片数 = 学习中的卡片
-  const pendingReviewCount = statsData?.overview?.learning_cards || 0
 
   // 未登录时跳转到登录页
   useEffect(() => {
@@ -329,9 +378,9 @@ function VideoListContent() {
   // 筛选条件变化时重置页码
   useEffect(() => {
     setPage(1)
-  }, [language, difficulty, tag])
+  }, [language, difficulty, tag, learnStatus])
 
-  // 更新 URL
+  // 更新 URL（统一处理筛选和分页）
   useEffect(() => {
     const params = new URLSearchParams()
     if (language && language !== 'all') {
@@ -343,14 +392,21 @@ function VideoListContent() {
     if (tag && tag !== 'all') {
       params.set('tag', tag)
     }
+    if (learnStatus && learnStatus !== 'all') {
+      params.set('learnStatus', learnStatus)
+    }
     if (page > 1) {
       params.set('page', String(page))
     }
 
     const queryString = params.toString()
     const newUrl = queryString ? `?${queryString}` : window.location.pathname
-    router.replace(newUrl, { scroll: false })
-  }, [language, difficulty, tag, page, router])
+    // 使用 setTimeout 确保状态更新后再更新 URL
+    const timer = setTimeout(() => {
+      router.replace(newUrl, { scroll: false })
+    }, 0)
+    return () => clearTimeout(timer)
+  }, [language, difficulty, tag, learnStatus, page, router])
 
   // 提取继续学习的视频
   const continueLearningVideos = (data?.items || [])
@@ -367,127 +423,311 @@ function VideoListContent() {
 
   return (
     <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-      {/* 页面头部 */}
-      <div className="bg-white dark:bg-gray-800 border-b-[3px] border-black dark:border-gray-600 transition-colors duration-300">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="flex items-center justify-between">
-            <div>
-              <h1 className="text-4xl md:text-5xl font-black tracking-tighter italic text-black dark:text-white transition-colors duration-300">
-                视频学习
-              </h1>
-              <p className="mt-2 text-sm font-mono font-bold text-gray-600 dark:text-gray-300 transition-colors duration-300">
-                真实场景视频，地道口语表达，系统化学习
-              </p>
+      {/* 注入跑马灯动画和镂空文字的自定义 CSS */}
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+          @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+          }
+          .animate-marquee {
+            animation: marquee 20s linear infinite;
+          }
+          .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.12);
+          }
+          @keyframes slideInFromRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+          }
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+          }
+          .slide-in-from-right {
+            animation: slideInFromRight 0.3s ease-out forwards;
+          }
+          .fade-in {
+            animation: fadeIn 0.2s ease-out forwards;
+          }
+        `}
+      </style>
+
+      {/* 页面头部 - 紧凑版 Neo-brutalism 风格 */}
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-4">
+        <div className="relative border-[3px] border-black bg-[#D4FF32] dark:bg-gray-800 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_#666] flex flex-col overflow-hidden transition-colors duration-300">
+
+          {/* 背景装饰层 */}
+          <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0">
+            {/* 巨型倾斜背景字 - 缩小字号和描边 */}
+            <div className="absolute transform -rotate-3 whitespace-nowrap text-outline font-black text-[40px] md:text-[60px] leading-none select-none">
+              LEARN NATURALLY
             </div>
 
-            {/* 卡片复习入口 */}
-            <a
-              href="/video-flashcards"
-              className="hidden md:flex items-center gap-2 px-6 py-3 bg-[#B4F416] hover:bg-[#a3e014] border-[3px] border-black dark:border-gray-600 rounded-sm shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 transition-all group relative"
-            >
-              <BookOpen className="w-5 h-5 text-black" />
-              <span className="font-black text-black text-base">卡片复习</span>
-              {pendingReviewCount > 0 && (
-                <span className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center border-[2px] border-black animate-pulse">
-                  {pendingReviewCount > 99 ? '99+' : pendingReviewCount}
+            {/* 散落的装饰符号 */}
+            <Star className="absolute top-3 left-[35%] text-black fill-black/10 animate-pulse hidden md:block" size={18} strokeWidth={2} />
+            <Star className="absolute bottom-3 right-[25%] text-black fill-transparent hidden md:block" size={14} strokeWidth={3} />
+            <div className="absolute top-2 right-[15%] text-black/30 font-black text-base hidden md:block">+</div>
+            <div className="absolute bottom-2 left-[20%] text-black/30 font-black text-lg hidden md:block">+</div>
+          </div>
+
+          {/* 前景内容层 - 紧凑 padding */}
+          <div className="flex flex-col md:flex-row justify-between items-center w-full p-4 md:px-6 md:py-5 relative z-10 gap-3 flex-1">
+
+            {/* 左侧：品牌信息 */}
+            <div className="flex items-center gap-3 md:gap-4 w-full md:w-auto">
+              {/* Logo 盒子 */}
+              <div className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-black border-[3px] border-black dark:border-gray-600 flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_#666] shrink-0 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
+                <Video className="w-5 h-5 md:w-6 md:h-6 text-black dark:text-white" strokeWidth={2.5} />
+              </div>
+
+              {/* 标题与标签 - Z世代风格 */}
+              <div className="flex flex-col gap-1.5">
+                {/* 上排：MAX笔记 */}
+                <span className="bg-black text-white px-2.5 py-0.5 text-sm md:text-base font-black w-fit tracking-tight">MAX笔记</span>
+                {/* 下排：地道外语沉浸站 - 醒目标题 */}
+                <span className="text-xl md:text-2xl text-black dark:text-white font-black tracking-wide">
+                  地道外语沉浸站
                 </span>
-              )}
-            </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* 底部：跑马灯 - 变窄变轻 */}
+          <div className="border-t-[2px] md:border-t-[3px] border-black dark:border-gray-600 bg-black text-[#D4FF32] dark:text-[#B4F416] overflow-hidden py-1 md:py-1.5 flex relative z-10 mt-auto">
+            <div className="flex whitespace-nowrap font-black text-[9px] md:text-[10px] tracking-widest uppercase animate-marquee w-[200%]">
+              <div className="flex-1 flex justify-around items-center">
+                <span>✦ IMMERSIVE LEARNING</span>
+                <span>✦ REAL-WORLD SCENARIOS</span>
+                <span>✦ NATIVE PRONUNCIATION</span>
+                <span>✦ SPACED REPETITION</span>
+              </div>
+              <div className="flex-1 flex justify-around items-center">
+                <span>✦ IMMERSIVE LEARNING</span>
+                <span>✦ REAL-WORLD SCENARIOS</span>
+                <span>✦ NATIVE PRONUNCIATION</span>
+                <span>✦ SPACED REPETITION</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       {/* 主内容区域 */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-        {/* PC端筛选工具栏 - 紧凑布局 */}
-        <div className="hidden md:block mb-8">
-          <div className="flex flex-wrap items-center gap-6">
-            {/* 套餐标签 */}
-            {data?.user_packages && data.user_packages.length > 0 && (
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-bold text-gray-500">套餐</span>
-                {data.user_packages.map((pkg) => (
-                  <span key={pkg.id} className="px-2 py-1 text-xs font-black bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000]">
-                    {pkg.name}
-                  </span>
-                ))}
-              </div>
-            )}
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-8">
 
-            {/* 难度筛选 */}
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-gray-500">难度</span>
-              {DIFFICULTY_OPTIONS.map((opt) => (
-                <button
-                  key={opt.value}
-                  onClick={() => setDifficulty(opt.value)}
-                  className={`
-                    px-3 py-1 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
-                    ${difficulty === opt.value
-                      ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
-                      : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  {opt.label}
-                </button>
-              ))}
-            </div>
-
-            {/* 标签筛选 */}
-            {tagsData && tagsData.length > 0 && (
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-xs font-bold text-gray-500">标签</span>
-                <button
-                  onClick={() => setTag('all')}
-                  className={`
-                    px-3 py-1 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
-                    ${tag === 'all'
-                      ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
-                      : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  全部
-                </button>
-                {tagsData.slice(0, 8).map((t) => (
+          {/* 移动端筛选抽屉 - 右侧滑出 */}
+          {filterDrawerOpen && (
+            <>
+              {/* 遮罩层 */}
+              <div
+                className="fixed inset-0 bg-black/50 z-50 md:hidden fade-in"
+                onClick={() => setFilterDrawerOpen(false)}
+              />
+              {/* 抽屉内容 - 右侧 */}
+              <div className="fixed right-0 top-0 bottom-0 w-[280px] bg-white dark:bg-gray-900 z-50 md:hidden overflow-y-auto shadow-[-4px_0_0_0_#000] dark:shadow-[-4px_0_0_0_#666] slide-in-from-right">
+                {/* 抽屉头部 */}
+                <div className="flex items-center justify-between p-4 border-b-[3px] border-black dark:border-gray-600">
+                  <span className="font-black text-lg text-black dark:text-white">筛选</span>
                   <button
-                    key={t.id}
-                    onClick={() => setTag(t.name)}
-                    className={`
-                      px-3 py-1 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
-                      ${tag === t.name
-                        ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
-                        : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white'
-                      }
-                    `}
+                    onClick={() => setFilterDrawerOpen(false)}
+                    className="w-8 h-8 flex items-center justify-center border-[2px] border-black dark:border-gray-600 font-black text-black dark:text-white"
                   >
-                    {t.name}
+                    ✕
                   </button>
-                ))}
-              </div>
-            )}
-          </div>
-        </div>
+                </div>
 
-          {/* 移动端 */}
-          <div className="md:hidden">
-            {/* 语言筛选（只有多种语言时才显示） */}
-            {showLanguageFilter && (
-              <div className="mb-4">
-                <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">语言：</div>
-                <div className="flex gap-2 flex-wrap">
-                  {languageOptions.slice(0, 5).map((opt) => (
+                {/* 筛选内容 */}
+                <div className="p-4 space-y-5">
+                  {/* 套餐标签 */}
+                  {data?.user_packages && data.user_packages.length > 0 && (
+                    <div>
+                      <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">套餐</div>
+                      <div className="flex gap-2 flex-wrap">
+                        {data.user_packages.map((pkg) => (
+                          <span key={pkg.id} className="px-3 py-1.5 text-xs font-black bg-[#B4F416] border-[2px] border-black">
+                            {pkg.name}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 学习状态筛选 */}
+                  <div>
+                    <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">状态</div>
+                    <div className="flex gap-2 flex-wrap">
+                      {LEARN_STATUS_OPTIONS.map((opt) => (
+                        <button
+                          key={opt.value}
+                          onClick={() => { setLearnStatus(opt.value); setFilterDrawerOpen(false) }}
+                          className={`
+                            px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                            ${learnStatus === opt.value
+                              ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                              : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                            }
+                          `}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 语言筛选 */}
+                  {showLanguageFilter && (
+                    <div>
+                      <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">语言</div>
+                      <div className="flex gap-2 flex-wrap">
+                        {languageOptions.slice(0, 5).map((opt) => (
+                          <button
+                            key={opt.value}
+                            onClick={() => { setLanguage(opt.value); setFilterDrawerOpen(false) }}
+                            className={`
+                              px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                              ${language === opt.value
+                                ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                                : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                              }
+                            `}
+                          >
+                            {opt.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 难度筛选 */}
+                  <div>
+                    <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">难度</div>
+                    <div className="flex gap-2 flex-wrap">
+                      {DIFFICULTY_OPTIONS.map((opt) => (
+                        <button
+                          key={opt.value}
+                          onClick={() => { setDifficulty(opt.value); setFilterDrawerOpen(false) }}
+                          className={`
+                            px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                            ${difficulty === opt.value
+                              ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                              : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                            }
+                          `}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* 标签筛选 */}
+                  {tagsData && tagsData.length > 0 && (
+                    <div>
+                      <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">标签</div>
+                      <div className="flex gap-2 flex-wrap">
+                        <button
+                          onClick={() => { setTag('all'); setFilterDrawerOpen(false) }}
+                          className={`
+                            px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                            ${tag === 'all'
+                              ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                              : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                            }
+                          `}
+                        >
+                          全部
+                        </button>
+                        {tagsData.slice(0, 8).map((t) => (
+                          <button
+                            key={t.id}
+                            onClick={() => { setTag(t.name); setFilterDrawerOpen(false) }}
+                            className={`
+                              px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                              ${tag === t.name
+                                ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                                : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                              }
+                            `}
+                          >
+                            {t.name}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* 重置筛选按钮 */}
+                  <div className="pt-3 border-t-[2px] border-gray-200 dark:border-gray-700">
+                    <button
+                      onClick={() => {
+                        setLearnStatus('all')
+                        setLanguage('all')
+                        setDifficulty('all')
+                        setTag('all')
+                        setFilterDrawerOpen(false)
+                      }}
+                      className="w-full py-2.5 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
+                    >
+                      重置全部筛选
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </>
+          )}
+
+        {/* 主内容区：左侧视频 + 右侧日历 */}
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+          {/* 左侧：视频区域 */}
+          <div className="flex-1 min-w-0">
+            {/* 继续学习 */}
+            {continueLearningVideos.length > 0 && (
+              <section className="mb-8">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center text-white dark:text-black shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]">
+                    <span className="font-bold text-sm">▶</span>
+                  </div>
+                  <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">继续学习</h2>
+                </div>
+                <div className="space-y-3">
+                  {continueLearningVideos.map((video) => (
+                    <ContinueLearningCard key={video.id} video={video} />
+                  ))}
+                </div>
+              </section>
+            )}
+
+            {/* PC端筛选工具栏 - 轻量样式 */}
+            <div className="hidden md:flex flex-wrap items-center gap-6 mb-6 py-3 border-b border-gray-200 dark:border-gray-700">
+              {/* 套餐标签 */}
+              {data?.user_packages && data.user_packages.length > 0 && (
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-medium text-gray-500">套餐</span>
+                  {data.user_packages.map((pkg) => (
+                    <span key={pkg.id} className="px-2 py-0.5 text-xs font-bold bg-[#B4F416]">
+                      {pkg.name}
+                    </span>
+                  ))}
+                </div>
+              )}
+
+              {/* 学习状态筛选 */}
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-medium text-gray-500">状态</span>
+                <div className="flex gap-1">
+                  {LEARN_STATUS_OPTIONS.map((opt) => (
                     <button
                       key={opt.value}
-                      onClick={() => setLanguage(opt.value)}
+                      onClick={() => setLearnStatus(opt.value)}
                       className={`
-                        px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                        border-[2px] border-black dark:border-gray-600
-                        transition-all duration-150
-                        ${language === opt.value
-                          ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                          : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                        px-2.5 py-1 text-xs font-bold transition-all
+                        ${learnStatus === opt.value
+                          ? 'bg-[#B4F416] text-black'
+                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                         }
                       `}
                     >
@@ -496,104 +736,141 @@ function VideoListContent() {
                   ))}
                 </div>
               </div>
-            )}
 
-            {/* 难度筛选 */}
-            <div className="mb-4">
-              <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">难度：</div>
-              <div className="flex gap-2 flex-wrap">
-                {DIFFICULTY_OPTIONS.map((opt) => (
-                  <button
-                    key={opt.value}
-                    onClick={() => setDifficulty(opt.value)}
-                    className={`
-                      px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                      border-[2px] border-black dark:border-gray-600
-                      transition-all duration-150
-                      ${difficulty === opt.value
-                        ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                      }
-                    `}
-                  >
-                    {opt.label}
-                  </button>
-                ))}
-              </div>
-            </div>
+              {/* 语言筛选 */}
+              {showLanguageFilter && (
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-medium text-gray-500">语言</span>
+                  <div className="flex gap-1">
+                    {languageOptions.slice(0, 4).map((opt) => (
+                      <button
+                        key={opt.value}
+                        onClick={() => setLanguage(opt.value)}
+                        className={`
+                          px-2.5 py-1 text-xs font-bold transition-all
+                          ${language === opt.value
+                            ? 'bg-[#B4F416] text-black'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                          }
+                        `}
+                      >
+                        {opt.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
 
-            {/* 标签筛选 */}
-            {tagsData && tagsData.length > 0 && (
-              <div className="mb-4">
-                <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">标签：</div>
-                <div className="flex gap-2 flex-wrap">
-                  <button
-                    onClick={() => setTag('all')}
-                    className={`
-                      px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                      border-[2px] border-black dark:border-gray-600
-                      transition-all duration-150
-                      ${tag === 'all'
-                        ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                      }
-                    `}
-                  >
-                    全部
-                  </button>
-                  {tagsData.slice(0, 6).map((t) => (
+              {/* 难度筛选 */}
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-medium text-gray-500">难度</span>
+                <div className="flex gap-1">
+                  {DIFFICULTY_OPTIONS.map((opt) => (
                     <button
-                      key={t.id}
-                      onClick={() => setTag(t.name)}
+                      key={opt.value}
+                      onClick={() => setDifficulty(opt.value)}
                       className={`
-                        px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                        border-[2px] border-black dark:border-gray-600
-                        transition-all duration-150
-                        ${tag === t.name
-                          ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                          : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                        px-2.5 py-1 text-xs font-bold transition-all
+                        ${difficulty === opt.value
+                          ? 'bg-[#B4F416] text-black'
+                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
                         }
                       `}
                     >
-                      {t.name}
+                      {opt.label}
                     </button>
                   ))}
                 </div>
               </div>
-            )}
-          </div>
 
-        {/* 继续学习 */}
-        {continueLearningVideos.length > 0 && (
-          <section className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center text-white dark:text-black shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]">
-                <span className="font-bold text-sm">▶</span>
-              </div>
-              <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">继续学习</h2>
-            </div>
-            <div className="space-y-3">
-              {continueLearningVideos.map((video) => (
-                <ContinueLearningCard key={video.id} video={video} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* 全部视频 */}
-        <section>
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center text-white dark:text-black shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]">
-              <span className="font-bold text-sm">V</span>
-            </div>
-            <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">
-              全部视频
-              {data && (
-                <span className="text-sm font-normal text-gray-500 ml-2">
-                  ({data.total})
-                </span>
+              {/* 标签筛选 */}
+              {tagsData && tagsData.length > 0 && (
+                <div className="flex items-center gap-2">
+                  <span className="text-xs font-medium text-gray-500">标签</span>
+                  <div className="flex gap-1 flex-wrap">
+                    <button
+                      onClick={() => setTag('all')}
+                      className={`
+                        px-2.5 py-1 text-xs font-bold transition-all
+                        ${tag === 'all'
+                          ? 'bg-[#B4F416] text-black'
+                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                        }
+                      `}
+                    >
+                      全部
+                    </button>
+                    {tagsData.slice(0, 6).map((t) => (
+                      <button
+                        key={t.id}
+                        onClick={() => setTag(t.name)}
+                        className={`
+                          px-2.5 py-1 text-xs font-bold transition-all
+                          ${tag === t.name
+                            ? 'bg-[#B4F416] text-black'
+                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                          }
+                        `}
+                      >
+                        {t.name}
+                      </button>
+                    ))}
+                  </div>
+                </div>
               )}
-            </h2>
+
+              {/* 重置筛选 - PC端 */}
+              {(learnStatus !== 'all' || language !== 'all' || difficulty !== 'all' || tag !== 'all') && (
+                <button
+                  onClick={() => {
+                    setLearnStatus('all')
+                    setLanguage('all')
+                    setDifficulty('all')
+                    setTag('all')
+                  }}
+                  className="px-3 py-1 text-xs font-bold text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-all"
+                >
+                  ✕ 重置
+                </button>
+              )}
+            </div>
+
+            {/* 全部视频 */}
+            <section>
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center text-white dark:text-black shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]">
+                <span className="font-bold text-sm">V</span>
+              </div>
+              <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">
+                全部视频
+                {data && (
+                  <span className="text-sm font-normal text-gray-500 ml-2">
+                    ({data.total})
+                  </span>
+                )}
+              </h2>
+            </div>
+            {/* 移动端筛选按钮 */}
+            {(() => {
+              const hasActiveFilter = learnStatus !== 'all' || language !== 'all' || difficulty !== 'all' || tag !== 'all'
+              return (
+                <button
+                  onClick={() => setFilterDrawerOpen(true)}
+                  className={`
+                    md:hidden flex items-center gap-1.5 px-3 py-1.5 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] font-bold text-sm active:translate-y-0.5 transition-colors
+                    ${hasActiveFilter
+                      ? 'bg-[#B4F416] text-black'
+                      : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                    }
+                  `}
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
+                  筛选
+                  {hasActiveFilter && <span className="w-2 h-2 bg-black rounded-full" />}
+                </button>
+              )
+            })()}
           </div>
 
           {/* 加载状态 */}
@@ -651,8 +928,8 @@ function VideoListContent() {
                   </p>
                 </div>
               ) : (
-                <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
-                  {data?.items.map((video) => (
+                <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 md:gap-4 lg:gap-6">
+                  {data.items.map((video) => (
                     <VideoCard key={video.id} video={video} />
                   ))}
                 </div>
@@ -720,6 +997,75 @@ function VideoListContent() {
             </>
           )}
         </section>
+          </div>
+
+          {/* 右侧：知识点侧边栏 - 仅大屏显示 */}
+          <aside className="hidden lg:block lg:w-[240px] xl:w-[280px] shrink-0">
+            <div className="sticky top-4 space-y-3">
+              {/* 学习日历组件 - 仅大屏显示 */}
+              <div className="hidden lg:block">
+                {/* 标题 */}
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center text-white dark:text-black shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]">
+                    <span className="font-bold text-sm">📅</span>
+                  </div>
+                  <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">学习日历</h2>
+                </div>
+                <Suspense fallback={null}>
+                  <LearningCalendar />
+                </Suspense>
+              </div>
+
+              {/* 领取好礼模块 */}
+              <div className="hidden lg:block mt-4">
+                <div className="bg-[#D4FF00] border-[3px] border-black shadow-[4px_4px_0px_0px_#000] overflow-hidden">
+                  {/* 顶部跑马灯 */}
+                  <div className="bg-black text-white py-1 border-b-[3px] border-black flex overflow-hidden whitespace-nowrap">
+                    <div className="flex gap-4 items-center font-black text-[10px] tracking-widest animate-pulse">
+                      <span>🔥 限时福利</span>
+                      <span>///</span>
+                      <span>好评免费送</span>
+                      <span>///</span>
+                      <span>🔥 限时福利</span>
+                    </div>
+                  </div>
+
+                  {/* 主内容 */}
+                  <div className="p-3">
+                    {/* 标签 */}
+                    <div className="bg-[#FF3366] text-white border-[2px] border-black px-2 py-0.5 -rotate-2 inline-block font-black text-xs shadow-[2px_2px_0px_0px_#000] mb-2">
+                      0元白嫖！
+                    </div>
+
+                    {/* 标题 */}
+                    <div className="bg-white border-[2px] border-black p-2 shadow-[3px_3px_0px_0px_#000]">
+                      <h3 className="text-base font-black text-black leading-tight">
+                        法语<span className="text-[#C084FC] underline decoration-2 underline-offset-2 decoration-black">原声大礼包</span>
+                      </h3>
+                      <div className="bg-black text-white font-bold text-[10px] px-2 py-0.5 mt-1 inline-block">
+                        小红书好评 = 免费解锁 🔓
+                      </div>
+                    </div>
+
+                    {/* 按钮 */}
+                    <button
+                      onClick={() => window.open('https://work.weixin.qq.com/kfid/kfc49c2602e3dbe2fc1', '_blank')}
+                      className="w-full mt-3 bg-[#C084FC] border-[3px] border-black px-3 py-2 font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[1px_1px_0px_0px_#000] transition-all flex items-center justify-center gap-2"
+                    >
+                      <span>🎁</span>
+                      立即领取
+                    </button>
+
+                    {/* 稀缺感 */}
+                    <div className="text-center font-black text-black text-[10px] mt-2 border-b-2 border-black border-dashed pb-0.5">
+                      🔥 仅限前 100 名
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </div>
       </div>
     </div>
   )
@@ -730,13 +1076,13 @@ function VideoListSkeleton() {
   return (
     <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="bg-white dark:bg-gray-800 border-b-[3px] border-black dark:border-gray-600">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="h-12 w-48 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-sm" />
           <div className="h-4 w-64 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-sm mt-2" />
         </div>
       </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 md:gap-6">
           {Array.from({ length: 8 }).map((_, i) => (
             <div key={i} className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm overflow-hidden">
               <div className="h-40 bg-gray-200 dark:bg-gray-700 animate-pulse border-b-[3px] border-black dark:border-gray-600" />

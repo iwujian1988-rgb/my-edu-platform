@@ -20,29 +20,60 @@ export interface PronunciationTipsTabProps {
 }
 
 // ============================================
-// 播放发音 Hook
+// 播放发音 Hook - 调用后端 TTS API
 // ============================================
 
 function usePlayPronunciation() {
   const [playingWord, setPlayingWord] = useState<string | null>(null)
 
-  const playWord = useCallback((word: string) => {
-    if (!('speechSynthesis' in window)) return
-
+  const playWord = useCallback(async (word: string) => {
     if (playingWord) {
-      speechSynthesis.cancel()
+      setPlayingWord(null)
     }
 
     setPlayingWord(word)
 
-    const utterance = new SpeechSynthesisUtterance(word)
-    utterance.lang = 'fr-FR'
-    utterance.rate = 0.8
+    try {
+      // 调用后端 TTS API（有道 + 百度兜底）
+      const response = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=fr`)
 
-    utterance.onend = () => setPlayingWord(null)
-    utterance.onerror = () => setPlayingWord(null)
+      if (!response.ok) {
+        // API 失败，回退到浏览器 TTS
+        console.warn('[PronunciationTips TTS] API 失败，回退到浏览器 TTS')
+        if ('speechSynthesis' in window) {
+          speechSynthesis.cancel()
+          const utterance = new SpeechSynthesisUtterance(word)
+          utterance.lang = 'fr-FR'
+          utterance.rate = 0.8
+          utterance.onend = () => setPlayingWord(null)
+          utterance.onerror = () => setPlayingWord(null)
+          speechSynthesis.speak(utterance)
+        } else {
+          setPlayingWord(null)
+        }
+        return
+      }
 
-    speechSynthesis.speak(utterance)
+      // 播放音频
+      const blob = await response.blob()
+      const audioUrl = URL.createObjectURL(blob)
+      const audio = new Audio(audioUrl)
+
+      audio.onended = () => {
+        URL.revokeObjectURL(audioUrl)
+        setPlayingWord(null)
+      }
+
+      audio.onerror = () => {
+        URL.revokeObjectURL(audioUrl)
+        setPlayingWord(null)
+      }
+
+      await audio.play()
+    } catch (error) {
+      console.warn('[PronunciationTips TTS] 播放失败:', error)
+      setPlayingWord(null)
+    }
   }, [playingWord])
 
   return { playWord, playingWord }

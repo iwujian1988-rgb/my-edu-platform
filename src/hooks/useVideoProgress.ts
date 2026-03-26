@@ -4,6 +4,10 @@
  * 视频进度管理 Hook
  *
  * 对应 Tech: VIDEO_MODULE_TECH.md v5.0
+ *
+ * 修复版本：
+ * - 使用 ref 存储需要保存的值，避免循环依赖
+ * - 修复 sendBeacon 的 Content-Type 问题
  */
 
 import { useState, useCallback, useRef, useEffect } from 'react'
@@ -41,25 +45,49 @@ export function useVideoProgress({
   )
   const [isSaving, setIsSaving] = useState(false)
 
-  // 追踪最大进度
+  // 使用 ref 存储需要保存的值，避免循环依赖
+  const currentTimeRef = useRef(initialProgress?.last_position || 0)
   const maxProgressRef = useRef(initialProgress?.max_progress || 0)
   const watchDurationRef = useRef(0)
   const lastSaveTimeRef = useRef(Date.now())
-  const pendingSaveRef = useRef<NodeJS.Timeout | null>(null)
+  const isSavingRef = useRef(false)
+  const onSaveRef = useRef(onSave)
 
-  // 清理定时器
+  // 保持 onSaveRef 最新
   useEffect(() => {
-    return () => {
-      if (pendingSaveRef.current) {
-        clearTimeout(pendingSaveRef.current)
-      }
+    onSaveRef.current = onSave
+  }, [onSave])
+
+  // 保存进度 - 使用 ref 避免依赖 state
+  const saveProgress = useCallback(async () => {
+    if (!onSaveRef.current || isSavingRef.current) return
+
+    isSavingRef.current = true
+    setIsSaving(true)
+    lastSaveTimeRef.current = Date.now()
+
+    try {
+      await onSaveRef.current({
+        last_position: currentTimeRef.current,
+        max_progress: maxProgressRef.current,
+        watch_duration_increment: Math.floor(watchDurationRef.current),
+      })
+
+      // 重置累计时长
+      watchDurationRef.current = 0
+    } catch (error) {
+      console.error('[useVideoProgress] Save error:', error)
+    } finally {
+      isSavingRef.current = false
+      setIsSaving(false)
     }
-  }, [])
+  }, []) // 无依赖，使用 ref 获取最新值
 
   // 更新进度
   const updateProgress = useCallback(
     (time: number, duration: number) => {
       setCurrentTime(time)
+      currentTimeRef.current = time
 
       // 计算进度百分比
       const progressPercent = duration > 0 ? (time / duration) * 100 : 0
@@ -78,31 +106,8 @@ export function useVideoProgress({
         saveProgress()
       }
     },
-    [saveInterval]
+    [saveInterval, saveProgress]
   )
-
-  // 保存进度
-  const saveProgress = useCallback(async () => {
-    if (!onSave || isSaving) return
-
-    setIsSaving(true)
-    lastSaveTimeRef.current = Date.now()
-
-    try {
-      await onSave({
-        last_position: currentTime,
-        max_progress: maxProgressRef.current,
-        watch_duration_increment: Math.floor(watchDurationRef.current),
-      })
-
-      // 重置累计时长
-      watchDurationRef.current = 0
-    } catch (error) {
-      console.error('[useVideoProgress] Save error:', error)
-    } finally {
-      setIsSaving(false)
-    }
-  }, [currentTime, isSaving, onSave])
 
   // 标记完成
   const markCompleted = useCallback(async () => {
@@ -119,32 +124,34 @@ export function useVideoProgress({
 
     maxProgressRef.current = 100
 
-    if (onSave) {
-      await onSave({
+    if (onSaveRef.current) {
+      await onSaveRef.current({
         is_completed: true,
         max_progress: 100,
       })
     }
-  }, [onSave])
+  }, [])
 
   // 页面离开时保存
   useEffect(() => {
     const handleBeforeUnload = () => {
-      if (watchDurationRef.current > 0) {
+      if (watchDurationRef.current > 0 || maxProgressRef.current > 0) {
         // 使用 sendBeacon 确保请求被发送
         const data = JSON.stringify({
-          last_position: currentTime,
+          last_position: currentTimeRef.current,
           max_progress: maxProgressRef.current,
           watch_duration_increment: Math.floor(watchDurationRef.current),
         })
 
-        navigator.sendBeacon(`/api/user/video-progress/${videoId}`, data)
+        // 使用 Blob 设置正确的 Content-Type
+        const blob = new Blob([data], { type: 'application/json' })
+        navigator.sendBeacon(`/api/user/video-progress/${videoId}`, blob)
       }
     }
 
     window.addEventListener('beforeunload', handleBeforeUnload)
     return () => window.removeEventListener('beforeunload', handleBeforeUnload)
-  }, [videoId, currentTime])
+  }, [videoId])
 
   return {
     progress,

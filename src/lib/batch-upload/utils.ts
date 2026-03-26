@@ -258,6 +258,65 @@ export function findExpressionInSubtitles(
   return null
 }
 
+/**
+ * 从字幕原文中提取完整的 expression 文本
+ *
+ * 用于处理 JSON 中带省略号的 expression（如 "La première chose que je fais... c'est de..."）
+ * 将其转换为字幕中实际出现的完整文本
+ *
+ * @param expressionWithEllipsis - 带省略号的表达式
+ * @param subtitleText - 字幕原文
+ * @returns 提取的完整表达式文本
+ */
+export function extractExpressionFromSubtitle(
+  expressionWithEllipsis: string,
+  subtitleText: string
+): string {
+  if (!expressionWithEllipsis || !subtitleText) {
+    return expressionWithEllipsis
+  }
+
+  // 如果没有省略号，直接返回原值
+  if (!expressionWithEllipsis.includes('...')) {
+    return expressionWithEllipsis
+  }
+
+  // 按 ... 分割
+  const parts = expressionWithEllipsis.split(/\s*\.\.\.\s*/)
+  if (parts.length === 0) {
+    return expressionWithEllipsis
+  }
+
+  const subtitleLower = subtitleText.toLowerCase()
+
+  // 尝试找到第一部分在字幕中的位置
+  const firstPart = parts[0].trim().toLowerCase()
+  const startPos = subtitleLower.indexOf(firstPart)
+
+  if (startPos === -1) {
+    // 第一部分都找不到，返回原值
+    return expressionWithEllipsis
+  }
+
+  // 如果只有一部分（没有省略号后面的内容）
+  if (parts.length === 1) {
+    return subtitleText.substring(startPos, startPos + parts[0].trim().length)
+  }
+
+  // 有多个部分，需要找到最后一部分的位置
+  const lastPart = parts[parts.length - 1].trim().toLowerCase()
+  const lastPartPos = subtitleLower.indexOf(lastPart, startPos + firstPart.length)
+
+  if (lastPartPos === -1) {
+    // 找不到最后一部分，返回从第一部分到结尾
+    return subtitleText.substring(startPos).trim()
+  }
+
+  // 提取从第一部分开始到最后一部分结束的完整文本
+  const endPos = lastPartPos + lastPart.length
+  return subtitleText.substring(startPos, endPos).trim()
+}
+
 // ============================================
 // 数组工具函数
 // ============================================

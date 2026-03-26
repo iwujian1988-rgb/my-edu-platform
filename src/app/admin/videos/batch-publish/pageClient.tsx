@@ -29,9 +29,12 @@ import {
   AlertCircle,
   ChevronDown,
   ChevronUp,
+  Sparkles,
+  Image as ImageIcon,
 } from 'lucide-react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { InlineThumbnailSelector } from '@/components/admin/InlineThumbnailSelector'
 
 // ============================================
 // 类型定义
@@ -40,12 +43,17 @@ import { useRouter } from 'next/navigation'
 interface DraftVideo {
   id: string
   title: string
+  description: string | null
   language: string
   difficulty: string
   duration: number
   status: string
   created_at: string
+  learning_date: string | null
   package_ids: string[] | null
+  creator_id: string | null
+  video_url: string | null
+  thumbnail_url: string | null
   card_stats: {
     words: number
     expressions: number
@@ -67,12 +75,19 @@ interface VideoTag {
   color: string
 }
 
+interface Creator {
+  id: string
+  name: string
+  platform: string | null
+}
+
 interface FetchDataResponse {
   success: boolean
   data: {
     videos: DraftVideo[]
     packages: Package[]
     tags: VideoTag[]
+    creators: Creator[]
   }
 }
 
@@ -81,6 +96,31 @@ interface PublishResult {
   title: string
   success: boolean
   error?: string
+}
+
+// 视频编辑状态
+interface VideoEdit {
+  title?: string
+  description?: string
+  difficulty?: string
+  language?: string
+  creator_id?: string
+  learning_date?: string
+}
+
+// 自动分析结果
+interface AnalyzeResult {
+  difficulty: 'beginner' | 'intermediate' | 'advanced'
+  difficulty_score: number
+  difficulty_breakdown: {
+    vocabulary: number
+    speech_rate: number
+    info_density: number
+  }
+  description: string
+  speech_rate_wpm: number
+  total_words: number
+  unique_words: number
 }
 
 // ============================================
@@ -119,11 +159,16 @@ export default function BatchPublishClient() {
   const [videos, setVideos] = useState<DraftVideo[]>([])
   const [packages, setPackages] = useState<Package[]>([])
   const [tags, setTags] = useState<VideoTag[]>([])
+  const [creators, setCreators] = useState<Creator[]>([])
 
   // 选择状态
   const [selectedVideoIds, setSelectedVideoIds] = useState<Set<string>>(new Set())
   const [selectedPackageIds, setSelectedPackageIds] = useState<Set<string>>(new Set())
   const [videoTags, setVideoTags] = useState<Record<string, string[]>>({})  // video_id -> tag_ids[]
+  const [videoEdits, setVideoEdits] = useState<Record<string, VideoEdit>>({})  // video_id -> edits
+  const [savingEdits, setSavingEdits] = useState<Set<string>>(new Set())  // 正在保存的视频ID
+  const [analyzingVideos, setAnalyzingVideos] = useState<Set<string>>(new Set())  // 正在分析的视频ID
+  const [analyzeResults, setAnalyzeResults] = useState<Record<string, AnalyzeResult>>({})  // 分析结果
 
   // UI 状态
   const [loading, setLoading] = useState(true)
@@ -131,6 +176,60 @@ export default function BatchPublishClient() {
   const [showPreview, setShowPreview] = useState(false)
   const [publishResults, setPublishResults] = useState<PublishResult[] | null>(null)
   const [expandedVideoId, setExpandedVideoId] = useState<string | null>(null)
+
+  // 封面选择器状态（内嵌模式）
+  const [activeThumbnailSelector, setActiveThumbnailSelector] = useState<string | null>(null) // 当前展开的视频ID
+
+  // 更新封面
+  const handleThumbnailSelect = useCallback(async (videoId: string, thumbnailUrl: string) => {
+    console.log('[handleThumbnailSelect] 开始', { videoId, thumbnailUrl })
+
+    // 更新本地状态
+    setVideos(prev => {
+      const updated = prev.map(v =>
+        v.id === videoId ? { ...v, thumbnail_url: thumbnailUrl } : v
+      )
+      console.log('[handleThumbnailSelect] 状态更新', {
+        oldCount: prev.length,
+        newCount: updated.length,
+        updatedVideo: updated.find(v => v.id === videoId)
+      })
+      return updated
+    })
+
+    // 保存到数据库
+    try {
+      const res = await fetch('/api/admin/videos/batch-publish', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          video_id: videoId,
+          updates: { thumbnail_url: thumbnailUrl },
+        }),
+      })
+
+      const data = await res.json()
+      console.log('[handleThumbnailSelect] API 响应', data)
+
+      if (!data.success) {
+        console.error('保存封面失败:', data.error)
+        alert(`保存封面失败: ${data.error || '未知错误'}`)
+      }
+    } catch (error) {
+      console.error('保存封面失败:', error)
+      alert('保存封面失败，请重试')
+    }
+  }, [])
+
+  // 打开/关闭封面选择器
+  const toggleThumbnailSelector = useCallback((video: DraftVideo) => {
+    if (!video.video_url) {
+      alert('该视频没有视频文件，无法提取封面')
+      return
+    }
+    // 如果当前视频已经打开，则关闭；否则打开
+    setActiveThumbnailSelector(prev => prev === video.id ? null : video.id)
+  }, [])
 
   // 获取数据
   useEffect(() => {
@@ -143,6 +242,7 @@ export default function BatchPublishClient() {
           setVideos(data.data.videos)
           setPackages(data.data.packages)
           setTags(data.data.tags)
+          setCreators(data.data.creators || [])
         } else {
           console.error('获取数据失败:', data)
         }
@@ -199,6 +299,124 @@ export default function BatchPublishClient() {
         : [...currentTags, tagId]
       return { ...prev, [videoId]: newTags }
     })
+  }, [])
+
+  // 更新视频编辑状态
+  const updateVideoEdit = useCallback((videoId: string, field: keyof VideoEdit, value: string | null) => {
+    setVideoEdits(prev => ({
+      ...prev,
+      [videoId]: {
+        ...prev[videoId],
+        [field]: value,
+      },
+    }))
+  }, [])
+
+  // 获取视频的编辑值（优先使用编辑状态，否则使用原始值）
+  const getVideoEditValue = useCallback((video: DraftVideo, field: keyof VideoEdit) => {
+    if (videoEdits[video.id]?.[field] !== undefined) {
+      return videoEdits[video.id][field] ?? ''
+    }
+    return video[field as keyof DraftVideo] ?? ''
+  }, [videoEdits])
+
+  // 保存视频编辑
+  const saveVideoEdit = useCallback(async (videoId: string) => {
+    const edits = videoEdits[videoId]
+    if (!edits || Object.keys(edits).length === 0) return
+
+    setSavingEdits(prev => new Set([...prev, videoId]))
+
+    try {
+      const res = await fetch('/api/admin/videos/batch-publish', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          video_id: videoId,
+          updates: edits,
+        }),
+      })
+
+      const data = await res.json()
+
+      if (data.success) {
+        // 更新本地 videos 状态
+        setVideos(prev => prev.map(v =>
+          v.id === videoId ? { ...v, ...edits } : v
+        ))
+        // 清除编辑状态
+        setVideoEdits(prev => {
+          const next = { ...prev }
+          delete next[videoId]
+          return next
+        })
+        // 显示成功提示（简单方式）
+        alert('保存成功')
+      } else {
+        alert(`保存失败: ${data.error || '未知错误'}`)
+      }
+    } catch (error) {
+      console.error('保存视频编辑失败:', error)
+      alert('保存失败，请重试')
+    } finally {
+      setSavingEdits(prev => {
+        const next = new Set(prev)
+        next.delete(videoId)
+        return next
+      })
+    }
+  }, [videoEdits])
+
+  // 检查视频是否有未保存的编辑
+  const hasUnsavedEdits = useCallback((videoId: string) => {
+    const edits = videoEdits[videoId]
+    return edits && Object.keys(edits).length > 0
+  }, [videoEdits])
+
+  // 自动分析视频（难度 + 描述）
+  const autoAnalyze = useCallback(async (videoId: string) => {
+    setAnalyzingVideos(prev => new Set([...prev, videoId]))
+
+    try {
+      const res = await fetch('/api/admin/videos/batch-publish/auto-analyze', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ video_id: videoId }),
+      })
+
+      const data = await res.json()
+
+      if (data.success) {
+        const result: AnalyzeResult = data.data
+
+        // 保存分析结果
+        setAnalyzeResults(prev => ({
+          ...prev,
+          [videoId]: result,
+        }))
+
+        // 自动填充编辑表单
+        setVideoEdits(prev => ({
+          ...prev,
+          [videoId]: {
+            ...prev[videoId],
+            difficulty: result.difficulty,
+            description: result.description,
+          },
+        }))
+      } else {
+        alert(`分析失败: ${data.error || '未知错误'}`)
+      }
+    } catch (error) {
+      console.error('自动分析失败:', error)
+      alert('分析失败，请重试')
+    } finally {
+      setAnalyzingVideos(prev => {
+        const next = new Set(prev)
+        next.delete(videoId)
+        return next
+      })
+    }
   }, [])
 
   // 发布
@@ -492,6 +710,7 @@ export default function BatchPublishClient() {
 
   // 主页面
   return (
+    <>
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
       <div className="max-w-5xl mx-auto">
         {/* 头部 */}
@@ -664,9 +883,259 @@ export default function BatchPublishClient() {
                           </div>
                         </div>
 
-                        {/* 展开的标签选择 */}
+                        {/* 展开的编辑和标签选择 */}
                         {isSelected && isExpanded && (
                           <div className="px-4 pb-4 pl-12 bg-gray-50 dark:bg-gray-700/30">
+                            {/* 编辑视频信息 */}
+                            <div className="mb-4 p-3 bg-white dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-600 rounded">
+                              <div className="flex items-center justify-between mb-3">
+                                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
+                                  📝 编辑视频信息
+                                </p>
+                                <div className="flex items-center gap-2">
+                                  {/* 自动分析按钮 */}
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation()
+                                      autoAnalyze(video.id)
+                                    }}
+                                    disabled={analyzingVideos.has(video.id)}
+                                    className={cn(
+                                      "px-2 py-1 text-xs font-medium rounded border-2 transition-all flex items-center gap-1",
+                                      analyzingVideos.has(video.id)
+                                        ? "bg-gray-100 text-gray-400 cursor-wait border-gray-300"
+                                        : "bg-purple-100 text-purple-700 border-purple-300 hover:bg-purple-200"
+                                    )}
+                                  >
+                                    {analyzingVideos.has(video.id) ? (
+                                      <>
+                                        <Loader2 className="w-3 h-3 animate-spin" />
+                                        分析中...
+                                      </>
+                                    ) : (
+                                      <>
+                                        <Sparkles className="w-3 h-3" />
+                                        自动分析
+                                      </>
+                                    )}
+                                  </button>
+                                  {hasUnsavedEdits(video.id) && (
+                                    <span className="text-xs text-orange-500">有未保存的修改</span>
+                                  )}
+                                </div>
+                              </div>
+
+                              {/* 分析结果展示 */}
+                              {analyzeResults[video.id] && (
+                                <div className="mb-3 p-2 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-700 rounded text-xs">
+                                  <div className="flex items-center gap-2 mb-1">
+                                    <span className="font-medium text-purple-700 dark:text-purple-300">📊 分析结果</span>
+                                  </div>
+                                  <div className="grid grid-cols-4 gap-2 text-gray-600 dark:text-gray-400">
+                                    <div>
+                                      <span className="text-purple-600 dark:text-purple-400 font-mono">{analyzeResults[video.id].speech_rate_wpm}</span>
+                                      <span className="ml-1">词/分</span>
+                                    </div>
+                                    <div>
+                                      <span className="text-purple-600 dark:text-purple-400 font-mono">{analyzeResults[video.id].total_words}</span>
+                                      <span className="ml-1">总词</span>
+                                    </div>
+                                    <div>
+                                      <span className="text-purple-600 dark:text-purple-400 font-mono">{analyzeResults[video.id].difficulty_score}</span>
+                                      <span className="ml-1">难度分</span>
+                                    </div>
+                                    <div>
+                                      <span className={cn(
+                                        "font-medium",
+                                        analyzeResults[video.id].difficulty === 'beginner' && "text-green-600",
+                                        analyzeResults[video.id].difficulty === 'intermediate' && "text-yellow-600",
+                                        analyzeResults[video.id].difficulty === 'advanced' && "text-red-600"
+                                      )}>
+                                        {DIFFICULTY_LABELS[analyzeResults[video.id].difficulty]}
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>
+                              )}
+
+                              <div className="space-y-3">
+                                {/* 标题 */}
+                                <div>
+                                  <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">标题</label>
+                                  <input
+                                    type="text"
+                                    value={getVideoEditValue(video, 'title') as string}
+                                    onChange={(e) => updateVideoEdit(video.id, 'title', e.target.value)}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="w-full px-2 py-1.5 text-sm border-2 border-gray-200 dark:border-gray-600 rounded bg-white dark:bg-gray-700 focus:border-blue-500 focus:outline-none"
+                                    placeholder="视频标题"
+                                  />
+                                </div>
+
+                                {/* 难度 + 语种 + UP主 */}
+                                <div className="grid grid-cols-3 gap-2">
+                                  {/* 难度 */}
+                                  <div>
+                                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">难度</label>
+                                    <select
+                                      value={getVideoEditValue(video, 'difficulty') as string}
+                                      onChange={(e) => updateVideoEdit(video.id, 'difficulty', e.target.value)}
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="w-full px-2 py-1.5 text-sm border-2 border-gray-200 dark:border-gray-600 rounded bg-white dark:bg-gray-700 focus:border-blue-500 focus:outline-none"
+                                    >
+                                      <option value="beginner">入门</option>
+                                      <option value="intermediate">进阶</option>
+                                      <option value="advanced">难</option>
+                                    </select>
+                                  </div>
+
+                                  {/* 语种 */}
+                                  <div>
+                                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">语种</label>
+                                    <select
+                                      value={getVideoEditValue(video, 'language') as string}
+                                      onChange={(e) => updateVideoEdit(video.id, 'language', e.target.value)}
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="w-full px-2 py-1.5 text-sm border-2 border-gray-200 dark:border-gray-600 rounded bg-white dark:bg-gray-700 focus:border-blue-500 focus:outline-none"
+                                    >
+                                      <option value="en">🇬🇧 英语</option>
+                                      <option value="fr">🇫🇷 法语</option>
+                                      <option value="de">🇩🇪 德语</option>
+                                      <option value="es">🇪🇸 西班牙语</option>
+                                      <option value="ja">🇯🇵 日语</option>
+                                      <option value="it">🇮🇹 意大利语</option>
+                                      <option value="ru">🇷🇺 俄语</option>
+                                    </select>
+                                  </div>
+
+                                  {/* UP主 */}
+                                  <div>
+                                    <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">UP主</label>
+                                    <select
+                                      value={getVideoEditValue(video, 'creator_id') as string || ''}
+                                      onChange={(e) => updateVideoEdit(video.id, 'creator_id', e.target.value || null)}
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="w-full px-2 py-1.5 text-sm border-2 border-gray-200 dark:border-gray-600 rounded bg-white dark:bg-gray-700 focus:border-blue-500 focus:outline-none"
+                                    >
+                                      <option value="">未选择</option>
+                                      {creators.map(creator => (
+                                        <option key={creator.id} value={creator.id}>
+                                          {creator.name}
+                                        </option>
+                                      ))}
+                                    </select>
+                                  </div>
+                                </div>
+
+                                {/* 描述 */}
+                                <div>
+                                  <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">描述</label>
+                                  <textarea
+                                    value={getVideoEditValue(video, 'description') as string}
+                                    onChange={(e) => updateVideoEdit(video.id, 'description', e.target.value)}
+                                    onClick={(e) => e.stopPropagation()}
+                                    rows={2}
+                                    className="w-full px-2 py-1.5 text-sm border-2 border-gray-200 dark:border-gray-600 rounded bg-white dark:bg-gray-700 focus:border-blue-500 focus:outline-none resize-none"
+                                    placeholder="视频描述（可选）"
+                                  />
+                                </div>
+
+                                {/* 学习归属时间 */}
+                                <div>
+                                  <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                                    📅 学习归属时间
+                                  </label>
+                                  <input
+                                    type="date"
+                                    value={getVideoEditValue(video, 'learning_date') as string || video.learning_date || ''}
+                                    onChange={(e) => updateVideoEdit(video.id, 'learning_date', e.target.value)}
+                                    onClick={(e) => e.stopPropagation()}
+                                    className="w-full px-2 py-1.5 text-sm border-2 border-gray-200 dark:border-gray-600 rounded bg-white dark:bg-gray-700 focus:border-blue-500 focus:outline-none"
+                                  />
+                                  <p className="text-xs text-gray-400 mt-1">用于前台视频列表排序</p>
+                                </div>
+
+                                {/* 封面选择 */}
+                                <div>
+                                  <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
+                                    🖼️ 视频封面
+                                  </label>
+                                  <div className="flex items-center gap-3">
+                                    {/* 封面预览 */}
+                                    <div className="w-32 h-18 rounded border-2 border-gray-200 dark:border-gray-600 overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+                                      {video.thumbnail_url ? (
+                                        <img
+                                          src={video.thumbnail_url}
+                                          alt="封面"
+                                          className="w-full h-full object-cover"
+                                        />
+                                      ) : (
+                                        <ImageIcon className="w-8 h-8 text-gray-400" />
+                                      )}
+                                    </div>
+                                    <div className="flex-1">
+                                      <button
+                                        onClick={(e) => {
+                                          e.stopPropagation()
+                                          toggleThumbnailSelector(video)
+                                        }}
+                                        disabled={!video.video_url}
+                                        className={cn(
+                                          "px-3 py-1.5 text-sm font-medium rounded border-2 transition-all",
+                                          video.video_url
+                                            ? "bg-blue-100 text-blue-700 border-blue-300 hover:bg-blue-200"
+                                            : "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                                        )}
+                                      >
+                                        {video.video_url ? '从视频提取封面' : '无视频文件'}
+                                      </button>
+                                      <p className="text-xs text-gray-400 mt-1">
+                                        {video.thumbnail_url ? '点击更换封面' : '从视频中选择一帧作为封面'}
+                                      </p>
+                                    </div>
+                                  </div>
+
+                                  {/* 内嵌式封面选择器 */}
+                                  {activeThumbnailSelector === video.id && video.video_url && (
+                                    <div className="mt-3" onClick={(e) => e.stopPropagation()}>
+                                      <InlineThumbnailSelector
+                                        videoUrl={video.video_url}
+                                        videoDuration={video.duration}
+                                        videoId={video.id}
+                                        onSelect={(thumbnailUrl) => {
+                                          handleThumbnailSelect(video.id, thumbnailUrl)
+                                          setActiveThumbnailSelector(null)
+                                        }}
+                                        onCancel={() => setActiveThumbnailSelector(null)}
+                                      />
+                                    </div>
+                                  )}
+                                </div>
+
+                                {/* 保存按钮 */}
+                                {hasUnsavedEdits(video.id) && (
+                                  <div className="flex justify-end">
+                                    <button
+                                      onClick={(e) => {
+                                        e.stopPropagation()
+                                        saveVideoEdit(video.id)
+                                      }}
+                                      disabled={savingEdits.has(video.id)}
+                                      className={cn(
+                                        "px-3 py-1.5 text-sm font-medium rounded border-2 border-black transition-all",
+                                        savingEdits.has(video.id)
+                                          ? "bg-gray-100 text-gray-400 cursor-wait"
+                                          : "bg-green-500 text-white hover:bg-green-600"
+                                      )}
+                                    >
+                                      {savingEdits.has(video.id) ? '保存中...' : '保存修改'}
+                                    </button>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+
+                            {/* 标签选择 */}
                             <p className="text-sm font-medium text-gray-500 dark:text-gray-400 mb-2">
                               <Tag className="w-4 h-4 inline mr-1" />
                               选择标签
@@ -810,5 +1279,7 @@ export default function BatchPublishClient() {
         )}
       </div>
     </div>
+
+  </>
   )
 }

@@ -41,6 +41,8 @@ interface RecordingPanelProps {
   onPlaySegment: (startTime: number, endTime: number) => void
   onPauseMainVideo?: () => void  // 打开弹层时暂停主视频
   onDialogClose?: () => void  // 关闭弹层时回调
+  autoScroll?: boolean  // 外部控制自动滚动
+  noScrollContainer?: boolean  // 不使用内部滚动容器（PC端使用外部滚动）
 }
 
 export function RecordingPanel({
@@ -51,6 +53,8 @@ export function RecordingPanel({
   onPlaySegment,
   onPauseMainVideo,
   onDialogClose,
+  autoScroll: autoScrollProp = true,  // 从外部接收，默认 true
+  noScrollContainer = false,  // PC端使用外部滚动
 }: RecordingPanelProps) {
   // 弹层状态
   const [selectedSubtitle, setSelectedSubtitle] = useState<SubtitleWithHighlights | null>(null)
@@ -64,6 +68,75 @@ export function RecordingPanel({
   // 录音播放状态
   const [isPlayingRecording, setIsPlayingRecording] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
+
+  // 自动滚动相关
+  const containerRef = useRef<HTMLDivElement>(null)
+  const activeSubtitleRef = useRef<HTMLDivElement>(null)
+
+  // 找到当前激活的字幕
+  const activeSubtitleId = useMemo(() => {
+    for (const subtitle of subtitles) {
+      if (
+        currentVideoTime >= subtitle.start_time &&
+        currentVideoTime < subtitle.end_time
+      ) {
+        return subtitle.id
+      }
+    }
+    return null
+  }, [subtitles, currentVideoTime])
+
+  // 自动滚动到当前字幕
+  useEffect(() => {
+    // 没有 activeSubtitleId 或关闭自动滚动时不滚动
+    if (!activeSubtitleId || !autoScrollProp) return
+
+    // 需要等待 DOM 更新后再滚动
+    const timer = setTimeout(() => {
+      if (!activeSubtitleRef.current) return
+
+      const activeElement = activeSubtitleRef.current
+
+      // 找到滚动容器
+      // 如果 noScrollContainer 为 true，需要找到父级滚动容器
+      let scrollContainer: HTMLElement | null = null
+      if (noScrollContainer) {
+        // 向上查找具有 overflow-y-auto 的父容器
+        let parent = activeElement.parentElement
+        while (parent) {
+          const overflow = getComputedStyle(parent).overflowY
+          if (overflow === 'auto' || overflow === 'scroll') {
+            scrollContainer = parent
+            break
+          }
+          parent = parent.parentElement
+        }
+      } else {
+        scrollContainer = containerRef.current
+      }
+
+      if (!scrollContainer) return
+
+      const containerRect = scrollContainer.getBoundingClientRect()
+      const activeRect = activeElement.getBoundingClientRect()
+
+      const scrollTop = scrollContainer.scrollTop
+      const elementTop = activeRect.top - containerRect.top + scrollTop
+      const targetScrollTop = elementTop - 10
+
+      const relativeTop = activeRect.top - containerRect.top
+      const isNotAtTop = relativeTop > 20 || relativeTop < -20
+
+      if (isNotAtTop) {
+        scrollContainer.scrollTo({
+          top: targetScrollTop,
+          behavior: 'smooth',
+        })
+      }
+    }, 50) // 等待 DOM 更新
+
+    return () => clearTimeout(timer)
+  }, [activeSubtitleId, currentVideoTime, autoScrollProp, noScrollContainer])
 
   // 小窗口视频播放器
   const miniVideoRef = useRef<HTMLVideoElement | null>(null)
@@ -108,15 +181,17 @@ export function RecordingPanel({
     isRecording,
     isUploading,
     uploadProgress,
+    uploadStatus,
     recordings,
     error: recordingError,
     startRecording,
     stopRecording,
     deleteRecording,
-    uploadRecording,
+    uploadRecordingBackground,
     audioURL,
     clearRecording,
     duration: localRecordingDuration, // 本地录音时长（WebM 无法自动获取）
+    pendingUploadSubtitleId,
   } = useRecordings({
     videoId,
   })
@@ -124,15 +199,8 @@ export function RecordingPanel({
   // 当前选中字幕的录音
   const selectedRecording = useMemo(() => {
     if (!selectedSubtitle) return null
-    const found = recordings.find((r) => r.subtitle_id === selectedSubtitle.id)
-    console.log('[RecordingPanel] 查找录音:', {
-      selectedSubtitleId: selectedSubtitle.id,
-      recordingsCount: recordings.length,
-      found: !!found,
-      audioURL: !!audioURL,
-    })
-    return found
-  }, [selectedSubtitle, recordings, audioURL])
+    return recordings.find((r) => r.subtitle_id === selectedSubtitle.id)
+  }, [selectedSubtitle, recordings])
 
   // 检查字幕是否有录音（"已读"状态）
   const hasRecorded = useCallback(
@@ -197,22 +265,19 @@ export function RecordingPanel({
     startRecording(selectedSubtitle.id)
   }, [selectedSubtitle, startRecording])
 
-  // 停止录音 - 等待 blob 准备好后上传
+  // 停止录音 - 等待 blob 准备好后后台静默上传
   const handleStopRecording = useCallback(async () => {
     // stopRecording 现在返回 Promise，等待 onstop 完成
     await stopRecording()
 
-    // 标记已录音
+    // 标记已录音（本地 Blob URL 已可用）
     setHasRecordedThisRound(true)
 
-    // 上传录音
+    // 后台静默上传（不阻塞用户操作）
     if (selectedSubtitle) {
-      const result = await uploadRecording(selectedSubtitle.id)
-      if (!result) {
-        console.error('[RecordingPanel] 上传失败')
-      }
+      uploadRecordingBackground(selectedSubtitle.id)
     }
-  }, [stopRecording, uploadRecording, selectedSubtitle])
+  }, [stopRecording, uploadRecordingBackground, selectedSubtitle])
 
   // 播放音频（带增益，解决录音音量小的问题）
   const audioContextRef = useRef<AudioContext | null>(null)
@@ -335,9 +400,12 @@ export function RecordingPanel({
   return (
     <>
       {/* 字幕列表 */}
-      <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent">
+      <div ref={containerRef} className={cn(
+        'h-full scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent',
+        noScrollContainer ? '' : 'overflow-y-auto'
+      )}>
         <div className="space-y-2 p-3">
-          {subtitles.map((subtitle, index) => {
+          {subtitles.map((subtitle) => {
             const hasRecording = hasRecorded(subtitle.id)
             const isActive =
               currentVideoTime >= subtitle.start_time &&
@@ -346,13 +414,15 @@ export function RecordingPanel({
             return (
               <div
                 key={subtitle.id}
+                ref={isActive ? activeSubtitleRef : null}
                 onClick={() => handleOpenPractice(subtitle)}
                 className={cn(
-                  'relative rounded-lg p-3 cursor-pointer transition-all duration-200 border-[2px]',
+                  'relative p-3 cursor-pointer transition-all duration-200 border-[2px]',
                   isActive
                     ? 'bg-[#B4F416] dark:bg-teal-700 border-black dark:border-teal-500 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#555] -translate-y-0.5'
-                    : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-gray-500 hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666]',
-                  hasRecording && !isActive && 'border-l-4 border-l-green-500 dark:border-l-green-400'
+                    : hasRecording
+                      ? 'bg-purple-50 dark:bg-purple-900/30 border-purple-400 dark:border-purple-600 hover:border-purple-500 hover:shadow-[2px_2px_0px_0px_#a855f7]'
+                      : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-gray-500 hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666]'
                 )}
               >
                 {/* 当前播放指示器 */}
@@ -360,22 +430,16 @@ export function RecordingPanel({
                   <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-black rounded-full animate-pulse" />
                 )}
 
-                {/* 序号和时间 */}
+                {/* 时间戳 */}
                 <div className="flex items-center gap-2 mb-1.5">
                   <span
                     className={cn(
                       'text-xs font-mono font-bold px-1.5 py-0.5 border',
                       isActive
                         ? 'bg-black text-white border-black'
-                        : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600'
-                    )}
-                  >
-                    #{index + 1}
-                  </span>
-                  <span
-                    className={cn(
-                      'text-xs font-mono',
-                      isActive ? 'text-black' : 'text-gray-500 dark:text-gray-400'
+                        : hasRecording
+                          ? 'bg-purple-100 dark:bg-purple-800 text-purple-700 dark:text-purple-300 border-purple-300 dark:border-purple-600'
+                          : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600'
                     )}
                   >
                     {formatTime(subtitle.start_time)}
@@ -383,6 +447,12 @@ export function RecordingPanel({
                   {isActive && (
                     <span className="text-xs font-black text-black animate-pulse">
                       ● 播放中
+                    </span>
+                  )}
+                  {hasRecording && !isActive && (
+                    <span className="text-xs font-bold text-purple-600 dark:text-purple-400 flex items-center gap-0.5">
+                      <Mic className="w-3 h-3" />
+                      已跟读
                     </span>
                   )}
                 </div>
@@ -400,15 +470,15 @@ export function RecordingPanel({
                   </p>
                 )}
 
-                {/* 已读标记 */}
-                {hasRecording && (
+                {/* 上传中状态 */}
+                {pendingUploadSubtitleId === subtitle.id && (
                   <div className="absolute top-2 right-2">
                     <Badge
                       variant="outline"
-                      className="bg-green-50 dark:bg-green-900/30 text-green-600 dark:text-green-400 border-green-300 dark:border-green-700 text-[10px] px-1.5 py-0"
+                      className="bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 border-blue-300 dark:border-blue-700 text-[10px] px-1.5 py-0"
                     >
-                      <CheckCircle className="w-3 h-3 mr-0.5" />
-                      已读
+                      <Loader2 className="w-3 h-3 mr-0.5 animate-spin" />
+                      上传中
                     </Badge>
                   </div>
                 )}
@@ -529,6 +599,14 @@ export function RecordingPanel({
                 )}
               </div>
 
+              {/* 后台上传状态指示器（右上角小气泡） */}
+              {isUploading && (
+                <div className="flex items-center gap-2 text-blue-500 text-xs bg-blue-50 dark:bg-blue-900/20 px-3 py-1.5 rounded-full w-fit ml-auto">
+                  <Loader2 className="w-3 h-3 animate-spin" />
+                  <span>{uploadStatus || `上传中 ${uploadProgress}%`}</span>
+                </div>
+              )}
+
               {/* 错误提示 */}
               {recordingError && (
                 <div className="flex items-center gap-2 text-red-500 p-2 bg-red-50 dark:bg-red-900/20 rounded-lg border-[2px] border-red-300 dark:border-red-700">
@@ -552,7 +630,6 @@ export function RecordingPanel({
                     <Button
                       size="lg"
                       onClick={handleStopRecording}
-                      disabled={isUploading}
                       className="bg-red-500 hover:bg-red-600 text-white border-[2px] border-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all font-bold px-8 py-6 text-lg"
                     >
                       <Square className="w-5 h-5 mr-2" />
@@ -582,24 +659,8 @@ export function RecordingPanel({
                   </div>
                 )}
 
-                {/* 正在上传时 */}
-                {isUploading && (
-                  <div className="flex flex-col items-center gap-3">
-                    <div className="flex items-center gap-2 text-blue-500">
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      <span className="font-bold">正在上传 {uploadProgress}%</span>
-                    </div>
-                    <div className="w-full max-w-xs h-3 bg-gray-200 dark:bg-gray-700 rounded-full overflow-hidden">
-                      <div
-                        className="h-full bg-blue-500 transition-all duration-300"
-                        style={{ width: `${uploadProgress}%` }}
-                      />
-                    </div>
-                  </div>
-                )}
-
-                {/* 默认状态：显示当前推荐操作 */}
-                {!isRecording && !isPlayingRecording && !isUploading && (
+                {/* 默认状态：显示当前推荐操作（上传在后台进行，不阻塞） */}
+                {!isRecording && !isPlayingRecording && (
                   <div className="flex flex-col items-center gap-3">
                     {/* Step 1: 听原声（未听时显示） */}
                     {!hasListened && (
@@ -650,7 +711,7 @@ export function RecordingPanel({
                 )}
 
                 {/* 次要操作：已完成的步骤可重做 */}
-                {!isRecording && !isPlayingRecording && !isUploading && (hasListened || hasRecordedThisRound) && (
+                {!isRecording && !isPlayingRecording && (hasListened || hasRecordedThisRound) && (
                   <div className="flex items-center justify-center gap-4 pt-4 border-t border-gray-200 dark:border-gray-700">
                     {hasListened && !hasRecordedThisRound && (
                       <Button

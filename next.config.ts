@@ -54,6 +54,8 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: 50 * 1024 * 1024, // 50MB in bytes
     },
+    // 排除 ffmpeg 相关包，避免 webpack 打包二进制文件
+    serverComponentsExternalPackages: ['@ffmpeg-installer/ffmpeg', '@ffprobe-installer/ffprobe'],
   },
 
   // ✅ 修复 Next.js 16 Turbopack 配置冲突

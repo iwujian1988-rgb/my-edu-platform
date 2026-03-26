@@ -19,6 +19,7 @@ export type ExerciseType = 'fill_blank' | 'dictation'
 export type ExerciseDifficulty = 'beginner' | 'intermediate' | 'advanced'
 export type HintType = 'first_letter' | 'first_last_letter' | 'none'
 export type FormalityLevel = 'neutral' | 'formal' | 'informal'
+export type CreatorPlatform = 'youtube' | 'bilibili' | 'tiktok' | 'instagram' | 'twitter' | 'other'
 
 export const VIDEO_LANGUAGE_LABELS: Record<VideoLanguage, string> = {
   en: '英语',
@@ -34,6 +35,15 @@ export const VIDEO_DIFFICULTY_LABELS: Record<VideoDifficulty, string> = {
   beginner: '入门',
   intermediate: '进阶',
   advanced: '难',
+}
+
+export const CREATOR_PLATFORM_LABELS: Record<CreatorPlatform, string> = {
+  youtube: 'YouTube',
+  bilibili: 'B站',
+  tiktok: 'TikTok',
+  instagram: 'Instagram',
+  twitter: 'Twitter/X',
+  other: '其他',
 }
 
 // ============================================
@@ -119,7 +129,8 @@ export interface VideoPackageListItem extends VideoPackage {
 
 export interface Video {
   id: string
-  title: string
+  title: string  // 中文标题
+  original_title: string | null  // 原语言标题（法语/英语等）
   description: string | null
   thumbnail_url: string | null
   video_url: string | null  // 可选，工作流最后上传
@@ -129,9 +140,11 @@ export interface Video {
   status: VideoStatus
   display_order: number
   creator_name: string | null
+  creator_id: string | null  // 关联的 UP主 ID
   source_url: string | null
   view_count: number
   package_ids: string[] | null  // 关联的套餐 ID 列表
+  learning_date: string | null  // 学习归属时间，用于前台排序
   workflow_progress: WorkflowProgress | null  // 工作流进度
   created_at: string
   published_at: string | null
@@ -145,6 +158,22 @@ export interface VideoTag {
   color: string
   display_order: number
   created_at: string
+}
+
+// UP主/创作者接口
+export interface UpstreamCreator {
+  id: string
+  name: string
+  platform: CreatorPlatform | null
+  platform_user_id: string | null
+  avatar_url: string | null
+  description: string | null
+  follower_count: number
+  channel_url: string | null
+  is_active: boolean
+  display_order: number
+  created_at: string
+  updated_at: string
 }
 
 // ============================================
@@ -179,6 +208,13 @@ export interface SubtitleWithHighlights extends VideoSubtitle {
 // 卡片类型
 // ============================================
 
+// 例句结构（用于多条例句存储）
+export interface WordCardExample {
+  fr?: string    // 原文（法语等）
+  en?: string    // 原文（英语等）
+  zh: string     // 中文翻译
+}
+
 export interface VideoWordCard {
   id: string
   video_id: string
@@ -187,8 +223,19 @@ export interface VideoWordCard {
   part_of_speech: string | null
   chinese_definition: string
   english_definition: string | null
+  // 视频中的例句（原字段，保留兼容）
   example_from_video: string | null
   example_translation: string | null
+  // 单词书例句和搭配（新增）
+  example_sentence: string | null      // 单词书例句（原文）
+  example_sentence_cn: string | null   // 单词书例句（中文）
+  collocation: string | null           // 搭配/用法（原文）
+  collocation_cn: string | null        // 搭配/用法（中文）
+  // 词典扩展字段（新增）
+  gender: string | null                // 名词性别（法语：m=阳性, f=阴性）
+  cefr_level: string | null            // CEFR等级原始值（A1-C2）
+  definitions: string[] | null         // 多条释义数组
+  examples: WordCardExample[] | null   // 多个例句数组
   subtitle_start_time: number  // 单词在字幕中首次出现的时间（秒），用于 [📍] 跳转播放
   subtitle_end_time: number    // 单词所在字幕的结束时间（秒）
   difficulty_level: number
@@ -257,6 +304,7 @@ export interface UnifiedVideoCard {
   part_of_speech?: string | null
   examples?: CardExample[] | null
   video_title?: string
+  video_language?: VideoLanguage  // 用于 TTS 语言选择
   difficulty_level: number
 }
 
@@ -289,6 +337,7 @@ export interface VideoExercise {
   text_with_blanks?: string
   answers?: string[]
   explanation?: string
+  subtitle_start_time?: number  // 字幕开始时间（秒），用于播放按钮跳转
 }
 
 // ============================================
@@ -393,6 +442,7 @@ export interface VideoLearningCalendar {
 export interface VideoListItem extends Video {
   tags: string[]
   packages: string[]
+  creator?: UpstreamCreator | null  // 关联的 UP主信息
   user_progress: {
     last_position: number
     max_progress: number
@@ -460,14 +510,14 @@ export interface SubtitleListProps {
   subtitles: SubtitleWithHighlights[]
   currentVideoTime: number
   onSubtitleClick: (subtitle: VideoSubtitle) => void
-  onHighlightClick: (cardType: CardType, cardId: string) => void
+  onHighlightClick: (cardType: CardType, cardId: string, event: React.MouseEvent) => void
   displayMode: 'bilingual' | 'original' | 'chinese'
 }
 
 export interface SubtitleWithHighlightsProps {
   subtitle: SubtitleWithHighlights
   isActive: boolean
-  onHighlightClick: (cardType: CardType, cardId: string) => void
+  onHighlightClick: (cardType: CardType, cardId: string, event: React.MouseEvent) => void
   displayMode: 'bilingual' | 'original' | 'chinese'
 }
 
@@ -693,6 +743,7 @@ export interface SubtitleJsonInput {
     start_time: string
     end_time: string
     subtitle_count: number
+    creator?: string  // UP主名称（用于匹配）
   }
   subtitles: Array<{
     index: number
@@ -760,6 +811,28 @@ export interface LearningMaterialJsonInput {
       structure: string
       related_words?: string[]
       collocations?: string
+      related_groups?: Array<{
+        category: string
+        words: string[]
+      }>
+    }
+  }
+  practice?: {
+    vocabulary_exercises?: Array<{
+      word: string
+      sentence: string
+      answer: string
+      hint: string
+    }>
+    sentence_patterns?: Array<{
+      pattern: string
+      example: string
+      task: string
+    }>
+    scenario?: {
+      description: string
+      requirements: string
+      starter: string
     }
   }
 }
@@ -789,6 +862,7 @@ export interface BatchUploadResult {
   expressions_count: number
   grammar_points_count: number
   pronunciation_tips_count: number
+  exercises_count: number
   status: VideoStatus
 }
 
@@ -814,4 +888,5 @@ export interface VideoFullResponseExtended extends VideoFullResponse {
   grammar_points: VideoGrammarPoint[]
   pronunciation_tips: VideoPronunciationTip[]
   vocabulary_network: VideoVocabularyNetwork | null
+  creator?: UpstreamCreator | null  // 关联的 UP主信息
 }

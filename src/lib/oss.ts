@@ -105,3 +105,41 @@ export function ensureAudioDirectory(): void {
   // OSS 不需要预先创建目录，直接上传即可
   console.log('✅ [OSS] 音频目录准备就绪: /audio/')
 }
+
+/**
+ * 上传图片到 OSS
+ * @param buffer - 图片数据 Buffer
+ * @param fileName - 文件名
+ * @returns OSS 文件公开访问的完整 URL
+ */
+export async function uploadImageToOSS(
+  buffer: Buffer,
+  fileName: string
+): Promise<string> {
+  try {
+    const client = getOSSClient()
+
+    // 上传到 /speaker-covers/ 目录（与其他图片上传保持一致，避免 ACL 问题）
+    const objectKey = `speaker-covers/${fileName}`
+
+    console.log(`📤 [OSS] 上传图片: ${objectKey} (${buffer.length} bytes)`)
+
+    const result = await client.put(objectKey, buffer, {
+      headers: {
+        'Content-Type': 'image/jpeg',
+      },
+    })
+
+    console.log(`✅ [OSS] 上传成功: ${result.url}`)
+
+    // 构建完整的公开访问 URL
+    const publicUrl = `https://${client.options.bucket}.${client.options.region}.aliyuncs.com/${objectKey}`
+
+    console.log(`✅ [OSS] 公开 URL: ${publicUrl}`)
+
+    return publicUrl
+  } catch (error) {
+    console.error('❌ [OSS] 上传图片失败:', error)
+    throw error
+  }
+}

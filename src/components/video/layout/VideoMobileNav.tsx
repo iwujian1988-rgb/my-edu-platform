@@ -12,12 +12,11 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { Home, RefreshCw, BarChart3, User } from 'lucide-react'
+import { Home, BarChart3, User } from 'lucide-react'
 
 const MOBILE_NAV_ITEMS = [
   { href: '/videos', label: '首页', icon: Home },
-  { href: '/video-flashcards', label: '复习', icon: RefreshCw },
-  { href: '/video-stats', label: '统计', icon: BarChart3 },
+  { href: '/video-stats', label: '知识点', icon: BarChart3 },
   { href: '/profile', label: '我的', icon: User },
 ]
 

@@ -115,11 +115,6 @@ export function WordCard({
       {card.example_from_video && (
         <div className="bg-muted/50 rounded-lg p-3 mb-3">
           <p className="text-sm italic">{card.example_from_video}</p>
-          {card.example_translation && (
-            <p className="text-xs text-muted-foreground mt-1">
-              {card.example_translation}
-            </p>
-          )}
         </div>
       )}
 

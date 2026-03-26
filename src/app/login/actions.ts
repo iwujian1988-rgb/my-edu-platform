@@ -116,10 +116,10 @@ export async function login(formData: { phone: string; password: string }) {
       return { error: '手机号或密码错误' }
     }
 
-    // 🚀 性能优化：并行检查用户封禁状态（关键操作）
+    // 🚀 性能优化：并行检查用户封禁状态和视频权限（关键操作）
     const { data: userData, error: userError } = await supabase
       .from('users')
-      .select('is_banned, ban_reason')
+      .select('is_banned, ban_reason, feature_permissions')
       .eq('id', data.user.id)
       .single()
 
@@ -137,8 +137,12 @@ export async function login(formData: { phone: string; password: string }) {
       }
     }
 
+    // 判断用户是否有视频权限，决定跳转页面
+    const hasVideoPermission = (userData as any)?.feature_permissions?.includes('video')
+    const redirectPath = hasVideoPermission ? '/videos' : '/'
+
     // ✅ 优化完成：立即返回响应，非关键操作异步执行
-    const result = { success: true, redirect: '/' }
+    const result = { success: true, redirect: redirectPath }
 
     // 🚀 性能优化：异步执行非关键操作（不阻塞登录响应）
     Promise.all([
@@ -207,10 +211,17 @@ export async function signup(formData: {
       return { error: '请输入正确的11位手机号' }
     }
 
-    // Step 2: Validate invitation code
+    // Step 2: Validate invitation code (同时获取套餐信息用于判断跳转)
     const { data: codeData, error: codeError } = await supabase
       .from('invitation_codes')
-      .select('*')
+      .select(`
+        *,
+        invitation_packages (
+          id,
+          name,
+          feature_permissions
+        )
+      `)
       .eq('code', invitationCode)
       .eq('is_active', true)
       .single()
@@ -239,6 +250,12 @@ export async function signup(formData: {
     if ((codeData as any).expires_at && new Date((codeData as any).expires_at) < new Date()) {
       return { error: '邀请码已过期' }
     }
+
+    // 检查套餐是否包含视频权限（用于注册成功后的跳转判断）
+    const packageData = (codeData as any).invitation_packages
+    const hasVideoPermission = packageData?.feature_permissions?.includes('video') ?? false
+    console.log('[Signup] Package feature_permissions:', packageData?.feature_permissions)
+    console.log('[Signup] Has video permission:', hasVideoPermission)
 
     // Step 3: Check if user already exists in public.users
     const email = phoneToEmail(phone)
@@ -412,13 +429,18 @@ export async function signup(formData: {
     try {
       revalidatePath('/', 'layout')
       revalidatePath('/study', 'layout')
+      revalidatePath('/videos', 'layout')
     } catch (revalidateError) {
       console.error('Revalidate error (non-fatal):', revalidateError)
       // 忽略 revalidate 错误，不影响注册
     }
 
+    // 根据套餐权限决定跳转路径
+    const redirectPath = hasVideoPermission ? '/videos' : '/'
+    console.log('[Signup] Redirect path:', redirectPath)
+
     console.log('[Signup] Returning success')
-    return { success: true, redirect: '/' }
+    return { success: true, redirect: redirectPath }
   } catch (error: any) {
     console.error('[Signup] Exception:', error)
     console.error('[Signup] Stack:', error.stack)

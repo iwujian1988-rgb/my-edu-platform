@@ -36,12 +36,13 @@ interface SubtitleListProps {
   subtitles: SubtitleWithHighlightsType[]
   currentVideoTime: number
   onSubtitleClick: (subtitle: VideoSubtitle) => void
-  onHighlightClick: (cardType: CardType, cardId: string) => void
+  onHighlightClick: (cardType: CardType, cardId: string, event: React.MouseEvent) => void
   displayMode: 'bilingual' | 'original' | 'chinese'
   autoScroll?: boolean // 外部控制自动滚动
   className?: string
   videoTitle?: string
   externalExportTrigger?: number // 外部触发导出弹窗，改变此值会打开弹窗
+  noScrollContainer?: boolean // 不使用内部滚动容器（PC端使用外部滚动）
 }
 
 const AUTO_SCROLL_THRESHOLD_PX = 120
@@ -56,6 +57,7 @@ export function SubtitleList({
   className,
   videoTitle = 'video',
   externalExportTrigger,
+  noScrollContainer = false, // 默认使用内部滚动
 }: SubtitleListProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const activeSubtitleRef = useRef<HTMLDivElement>(null)
@@ -83,19 +85,37 @@ export function SubtitleList({
     return null
   }, [subtitles, currentVideoTime])
 
-  // 自动滚动到当前字幕 - 在容器内滚动
+  // 自动滚动到当前字幕
   useEffect(() => {
-    if (!autoScrollProp || !activeSubtitleRef.current || !containerRef.current) return
+    if (!autoScrollProp || !activeSubtitleRef.current) return
 
-    const container = containerRef.current
     const activeElement = activeSubtitleRef.current
 
-    // 使用 getBoundingClientRect 计算精确的相对位置
-    const containerRect = container.getBoundingClientRect()
+    // 找到滚动容器
+    // 如果 noScrollContainer 为 true，需要找到父级滚动容器
+    let scrollContainer: HTMLElement | null = null
+    if (noScrollContainer) {
+      // 向上查找具有 overflow-y-auto 的父容器
+      let parent = activeElement.parentElement
+      while (parent) {
+        const overflow = getComputedStyle(parent).overflowY
+        if (overflow === 'auto' || overflow === 'scroll') {
+          scrollContainer = parent
+          break
+        }
+        parent = parent.parentElement
+      }
+    } else {
+      scrollContainer = containerRef.current
+    }
+
+    if (!scrollContainer || !activeElement) return
+
+    const containerRect = scrollContainer.getBoundingClientRect()
     const activeRect = activeElement.getBoundingClientRect()
 
     // 当前字幕顶部相对于容器顶部的偏移（加上当前滚动位置）
-    const scrollTop = container.scrollTop
+    const scrollTop = scrollContainer.scrollTop
     const elementTop = activeRect.top - containerRect.top + scrollTop
 
     // 目标位置：元素在容器顶部留 10px 边距
@@ -106,12 +126,12 @@ export function SubtitleList({
     const isNotAtTop = relativeTop > 20 || relativeTop < -20
 
     if (isNotAtTop) {
-      container.scrollTo({
+      scrollContainer.scrollTo({
         top: targetScrollTop,
         behavior: 'smooth',
       })
     }
-  }, [activeSubtitleId, autoScrollProp])
+  }, [activeSubtitleId, autoScrollProp, noScrollContainer])
 
   // 格式化时间
   const formatSrtTime = useCallback((seconds: number): string => {
@@ -192,7 +212,7 @@ export function SubtitleList({
     <div
       ref={containerRef}
       className={cn(
-        'h-full overflow-y-auto',
+        noScrollContainer ? 'h-full' : 'h-full overflow-y-auto',
         'scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent',
         className
       )}
@@ -208,7 +228,7 @@ export function SubtitleList({
               key={subtitle.id}
               ref={isActive ? activeSubtitleRef : null}
               className={cn(
-                'relative rounded-lg p-3 cursor-pointer transition-all duration-200 border-[2px]',
+                'relative p-3 cursor-pointer transition-all duration-200 border-[2px]',
                 isActive
                   ? 'bg-[#B4F416] dark:bg-teal-700 border-black dark:border-teal-500 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#555] -translate-y-0.5'
                   : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-gray-500 hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666]'

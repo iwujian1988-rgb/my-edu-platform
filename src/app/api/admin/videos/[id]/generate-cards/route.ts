@@ -277,6 +277,34 @@ export async function POST(
       return NextResponse.json({ error: '视频不存在' }, { status: 404 })
     }
 
+    // ⚠️ 检查是否已有数据（来自批量上传的学习材料）
+    // 如果已有数据且不强制重置，直接返回，不做任何操作
+    if (!shouldReset) {
+      const [existingWords, existingPhrases, existingExpressions] = await Promise.all([
+        supabase.from('video_word_cards').select('id').eq('video_id', videoId).limit(1),
+        supabase.from('video_phrase_cards').select('id').eq('video_id', videoId).limit(1),
+        supabase.from('video_expression_cards').select('id').eq('video_id', videoId).limit(1),
+      ])
+
+      const hasData = (cardType === 'all' || cardType === 'word') && existingWords.data?.length > 0
+        || (cardType === 'all' || cardType === 'phrase') && existingPhrases.data?.length > 0
+        || (cardType === 'all' || cardType === 'expression') && existingExpressions.data?.length > 0
+
+      if (hasData) {
+        console.log(`[generate-cards] 视频 ${videoId} 已有学习材料数据，跳过 AI 生成`)
+        return NextResponse.json({
+          success: true,
+          message: '已有学习材料数据，无需 AI 生成',
+          skipped: true,
+          stats: {
+            words: existingWords.data?.length || 0,
+            phrases: existingPhrases.data?.length || 0,
+            expressions: existingExpressions.data?.length || 0,
+          }
+        })
+      }
+    }
+
     // 如果需要重置，先删除旧卡片
     if (shouldReset) {
       const deletePromises: Promise<void>[] = []

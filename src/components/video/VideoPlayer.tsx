@@ -34,6 +34,7 @@ interface VideoPlayerProps {
   onEnded?: () => void
   initialPosition?: number
   seekTo?: number // 外部控制：跳转到指定时间
+  seekTrigger?: number // 用于强制触发跳转（即使时间相同）
   segmentEndTime?: number // 片段播放：到达此时间后自动暂停
   pause?: boolean // 外部控制：暂停视频
   autoPlay?: boolean
@@ -46,6 +47,7 @@ export function VideoPlayer({
   onEnded,
   initialPosition = 0,
   seekTo,
+  seekTrigger,
   segmentEndTime,
   pause,
   autoPlay = false,
@@ -66,6 +68,7 @@ export function VideoPlayer({
   const [playbackSpeed, setPlaybackSpeed] = useState(1)
 
   const hideControlsTimerRef = useRef<NodeJS.Timeout | null>(null)
+  const shouldAutoPlayRef = useRef(false) // 标记是否应该自动播放
 
   const showControlsTemporarily = useCallback(() => {
     setShowControls(true)
@@ -87,9 +90,25 @@ export function VideoPlayer({
   }, [])
 
   // 点击封面开始播放
-  const handleStartPlay = useCallback(() => {
+  const handleStartPlay = useCallback(async () => {
     setHasStarted(true)
     setIsLoading(true)
+    shouldAutoPlayRef.current = true // 标记需要自动播放
+
+    // 立即尝试播放（在用户点击事件上下文中）
+    // 这样可以绕过浏览器的自动播放限制
+    const videoEl = videoRef.current
+    if (videoEl) {
+      videoEl.load()
+      // 等待一小段时间让视频开始加载，然后尝试播放
+      await new Promise(resolve => setTimeout(resolve, 100))
+      try {
+        await videoEl.play()
+        shouldAutoPlayRef.current = false // 已成功播放，不需要再在 handleCanPlay 中播放
+      } catch {
+        // 播放失败，等待 handleCanPlay 重试
+      }
+    }
   }, [])
 
   // 当 hasStarted 变为 true 后加载视频
@@ -131,7 +150,7 @@ export function VideoPlayer({
     if (videoEl.paused) {
       videoEl.play().catch(() => {})
     }
-  }, [seekTo, hasStarted])
+  }, [seekTo, seekTrigger, hasStarted]) // 添加 seekTrigger 依赖
 
   // 外部控制：暂停视频
   useEffect(() => {
@@ -261,9 +280,17 @@ export function VideoPlayer({
   const handleCanPlay = () => {
     setIsLoading(false)
 
-    // 备用：处理 pending 的跳转（如果 handleCanPlayThrough 没触发)
     const videoEl = videoRef.current
-    if (videoEl && pendingSeekRef.current !== null) {
+    if (!videoEl) return
+
+    // 如果是刚点击封面开始播放，自动播放
+    if (shouldAutoPlayRef.current) {
+      shouldAutoPlayRef.current = false
+      videoEl.play().catch(() => {})
+    }
+
+    // 备用：处理 pending 的跳转（如果 handleCanPlayThrough 没触发)
+    if (pendingSeekRef.current !== null) {
       videoEl.currentTime = pendingSeekRef.current
       pendingSeekRef.current = null
       videoEl.play().catch(() => {})
@@ -283,7 +310,7 @@ export function VideoPlayer({
       ref={containerRef}
       className={cn(
         'relative bg-black overflow-hidden group',
-        isFullscreen ? 'fixed inset-0 z-50' : 'rounded-lg',
+        isFullscreen ? 'fixed inset-0 z-50' : '',
         className
       )}
       onMouseMove={showControlsTemporarily}

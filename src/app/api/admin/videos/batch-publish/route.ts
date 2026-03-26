@@ -1,18 +1,21 @@
 /**
  * 批量发布视频 API
  *
- * POST /api/admin/videos/batch-publish
+ * GET  /api/admin/videos/batch-publish - 获取草稿视频、套餐、标签、UP主列表
+ * POST /api/admin/videos/batch-publish - 批量发布视频
+ * PATCH /api/admin/videos/batch-publish - 更新单个视频信息
  *
  * 功能：
  * 1. 批量更新视频状态为 published
  * 2. 批量关联套餐
  * 3. 批量关联标签
  * 4. 更新工作流进度
+ * 5. 更新单个视频的标题、难度、描述、语种、UP主
  */
 
 export const maxDuration = 60
 
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/server'
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { checkAdminForAPI } from '@/lib/admin-auth'
@@ -33,12 +36,23 @@ interface VideoInfo {
 interface DraftVideo {
   id: string
   title: string
+  description: string | null
   language: string
   difficulty: string
   duration: number
   status: string
   created_at: string
   package_ids: string[] | null
+  creator_id: string | null
+  video_url: string | null
+  thumbnail_url: string | null
+}
+
+/** UP主信息 */
+interface CreatorInfo {
+  id: string
+  name: string
+  platform: string | null
 }
 
 /** 套餐信息 */
@@ -85,6 +99,22 @@ interface BatchPublishResponse {
     results: BatchPublishResult[]
   }
 }
+
+/** 视频更新请求 */
+interface UpdateVideoRequest {
+  video_id: string
+  updates: {
+    title?: string
+    difficulty?: 'beginner' | 'intermediate' | 'advanced'
+    description?: string
+    language?: 'en' | 'fr' | 'de' | 'es' | 'ja' | 'it' | 'ru'
+    creator_id?: string | null
+    thumbnail_url?: string | null
+  }
+}
+
+// 允许更新的字段
+const ALLOWED_UPDATE_FIELDS = ['title', 'difficulty', 'description', 'language', 'creator_id', 'thumbnail_url', 'learning_date', 'status'] as const
 
 // ============================================
 // POST: 批量发布
@@ -256,7 +286,104 @@ export async function POST(request: Request) {
 }
 
 // ============================================
-// GET: 获取草稿视频列表 + 套餐列表 + 标签列表
+// PATCH: 更新单个视频信息
+// ============================================
+
+export async function PATCH(request: NextRequest) {
+  try {
+    // 1. 验证管理员权限
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error || '未授权', code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
+    // 2. 解析请求
+    const body: UpdateVideoRequest = await request.json().catch(() => ({}))
+    const { video_id, updates } = body
+
+    // 3. 验证参数
+    if (!video_id) {
+      return NextResponse.json(
+        { error: '缺少 video_id', code: 'MISSING_VIDEO_ID' },
+        { status: 400 }
+      )
+    }
+
+    if (!updates || Object.keys(updates).length === 0) {
+      return NextResponse.json(
+        { error: '没有需要更新的字段', code: 'NO_UPDATES' },
+        { status: 400 }
+      )
+    }
+
+    // 过滤只允许更新的字段
+    const filteredUpdates: Record<string, unknown> = {}
+    for (const key of ALLOWED_UPDATE_FIELDS) {
+      if (updates[key as keyof typeof updates] !== undefined) {
+        filteredUpdates[key] = updates[key as keyof typeof updates]
+      }
+    }
+
+    if (Object.keys(filteredUpdates).length === 0) {
+      return NextResponse.json(
+        { error: '没有有效的更新字段', code: 'INVALID_FIELDS' },
+        { status: 400 }
+      )
+    }
+
+    const supabase = await createAdminClient()
+
+    // 4. 更新视频
+    const { data, error } = await supabase
+      .from('videos')
+      .update({
+        ...filteredUpdates,
+        updated_at: new Date().toISOString(),
+      } as unknown as never)
+      .eq('id', video_id)
+      .select('id, title, description, language, difficulty, creator_id')
+      .single()
+
+    if (error) {
+      console.error('[批量发布] 更新视频失败:', error)
+      return NextResponse.json(
+        { error: `更新失败: ${error.message}`, code: 'UPDATE_FAILED' },
+        { status: 500 }
+      )
+    }
+
+    if (!data) {
+      return NextResponse.json(
+        { error: '视频不存在', code: 'VIDEO_NOT_FOUND' },
+        { status: 404 }
+      )
+    }
+
+    console.log(`[批量发布] 视频 ${video_id} 更新成功:`, filteredUpdates)
+
+    return NextResponse.json({
+      success: true,
+      data: data,
+    })
+
+  } catch (error) {
+    console.error('[批量发布] PATCH 服务器错误:', error)
+    return NextResponse.json(
+      {
+        error: '服务器错误',
+        code: 'INTERNAL_ERROR',
+        details: error instanceof Error ? error.message : String(error),
+      },
+      { status: 500 }
+    )
+  }
+}
+
+// ============================================
+// GET: 获取草稿视频列表 + 套餐列表 + 标签列表 + UP主列表
 // ============================================
 
 export async function GET() {
@@ -272,11 +399,12 @@ export async function GET() {
 
     const supabase = await createAdminClient()
 
-    // 并行获取：草稿视频、套餐、标签
+    // 并行获取：草稿视频、套餐、标签、UP主
     const [
       videosResult,
       packagesResult,
       tagsResult,
+      creatorsResult,
     ] = await Promise.all([
       // 草稿视频列表（包含卡片统计）
       supabase
@@ -284,12 +412,16 @@ export async function GET() {
         .select(`
           id,
           title,
+          description,
           language,
           difficulty,
           duration,
           status,
           created_at,
-          package_ids
+          package_ids,
+          creator_id,
+          video_url,
+          thumbnail_url
         `)
         .eq('status', 'draft')
         .order('created_at', { ascending: false }) as unknown as Promise<{ data: DraftVideo[] | null; error: any }>,
@@ -304,11 +436,18 @@ export async function GET() {
         .from('video_tags')
         .select('id, name, type, color')
         .order('display_order') as unknown as Promise<{ data: TagInfo[] | null; error: any }>,
+      // 所有UP主
+      supabase
+        .from('upstream_creators')
+        .select('id, name, platform')
+        .eq('is_active', true)
+        .order('name') as unknown as Promise<{ data: CreatorInfo[] | null; error: any }>,
     ])
 
     const draftVideos = videosResult.data
     const packages = packagesResult.data
     const tags = tagsResult.data
+    const creators = creatorsResult.data
 
     if (videosResult.error) {
       console.error('[批量发布] 获取视频失败:', videosResult.error)
@@ -318,6 +457,9 @@ export async function GET() {
     }
     if (tagsResult.error) {
       console.error('[批量发布] 获取标签失败:', tagsResult.error)
+    }
+    if (creatorsResult.error) {
+      console.error('[批量发布] 获取UP主失败:', creatorsResult.error)
     }
 
     // 获取每个视频的卡片统计
@@ -364,6 +506,7 @@ export async function GET() {
         })) || [],
         packages: packages || [],
         tags: tags || [],
+        creators: creators || [],
       },
     })
 
