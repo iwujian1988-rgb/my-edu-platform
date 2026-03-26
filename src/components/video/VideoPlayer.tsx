@@ -82,17 +82,6 @@ export function VideoPlayer({
     }
   }, [isPlaying])
 
-  // 处理视频URL - 添加内联播放参数（解决OSS强制下载问题）
-  const getPlayableUrl = useCallback((url: string | null | undefined): string | undefined => {
-    if (!url) return undefined
-    // 如果是阿里云OSS的URL，添加response-content-disposition=inline参数
-    if (url.includes('aliyuncs.com')) {
-      const separator = url.includes('?') ? '&' : '?'
-      return `${url}${separator}response-content-disposition=inline`
-    }
-    return url
-  }, [])
-
   const handleSpeedChange = useCallback((speed: number) => {
     const videoEl = videoRef.current
     if (!videoEl) return
@@ -337,7 +326,7 @@ export function VideoPlayer({
       {/* 视频元素 - 只有开始后才设置 src */}
       <video
         ref={videoRef}
-        src={hasStarted ? getPlayableUrl(video.video_url) : undefined}
+        src={hasStarted ? video.video_url : undefined}
         className="w-full aspect-video"
         preload="none"
         playsInline
