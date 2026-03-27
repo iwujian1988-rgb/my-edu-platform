@@ -203,7 +203,7 @@ async function extractSingleFrame(
       '-i', videoFile,
       '-frames:v', '1',
       '-q:v', '2',
-      '-vf', 'scale=320:-1',
+      '-vf', 'scale=640:-1',
       '-y',
       outputFile,
     ])

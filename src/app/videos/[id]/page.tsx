@@ -1,15 +1,31 @@
 import { notFound, redirect } from 'next/navigation'
+import { Suspense } from 'react'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
 import { hasVideoAccess } from '@/lib/video-permissions'
-import { updateLearningCalendar } from '@/lib/learning-calendar'
 import VideoLearningClient from './pageClient'
+import VideoLoading from './loading'
 import type { VideoFullResponseExtended } from '@/types/video'
 
 interface PageProps {
   params: Promise<{ id: string }>
 }
 
-// 服务器端预取所有数据
+// 获取视频基本信息（快速返回）
+async function getVideoBasicInfo(videoId: string) {
+  const supabase = await createAdminClient()
+  const { data: video, error } = await supabase
+    .from('videos')
+    .select('id, title, original_title, description, video_url, thumbnail_url, duration, language, difficulty, view_count, creator_id, creator_name')
+    .eq('id', videoId)
+    .single()
+
+  if (error || !video) {
+    return null
+  }
+  return video
+}
+
+// 获取完整数据（流式加载）
 async function getVideoFullData(videoId: string, userId: string): Promise<VideoFullResponseExtended | null> {
   const supabase = await createAdminClient()
 
@@ -231,6 +247,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     .then(() => {}) // 忽略结果
 
   // 8. 更新学习日历（记录观看视频）
+  const { updateLearningCalendar } = await import('@/lib/learning-calendar')
   updateLearningCalendar(supabase, userId, { videoId })
     .then(result => {
       if (!result.success) {
@@ -305,6 +322,17 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
   }
 }
 
+// 数据加载组件（用于流式渲染）
+async function VideoDataLoader({ videoId, userId }: { videoId: string; userId: string }) {
+  const data = await getVideoFullData(videoId, userId)
+
+  if (!data) {
+    notFound()
+  }
+
+  return <VideoLearningClient videoId={videoId} initialData={data} />
+}
+
 export default async function VideoLearningPage({ params }: PageProps) {
   // 1. 验证用户登录
   const user = await getCurrentUser()
@@ -315,13 +343,16 @@ export default async function VideoLearningPage({ params }: PageProps) {
   // 2. 获取视频ID
   const { id: videoId } = await params
 
-  // 3. 服务器端预取所有数据
-  const data = await getVideoFullData(videoId, user.id)
-
-  if (!data) {
+  // 3. 快速获取视频基本信息（用于 SEO 和快速响应）
+  const video = await getVideoBasicInfo(videoId)
+  if (!video) {
     notFound()
   }
 
-  // 4. 直接传递数据给客户端组件（无需客户端再请求）
-  return <VideoLearningClient videoId={videoId} initialData={data} />
+  // 4. 使用流式渲染：先显示加载状态，数据准备好后自动更新
+  return (
+    <Suspense fallback={<VideoLoading video={video} />}>
+      <VideoDataLoader videoId={videoId} userId={user.id} />
+    </Suspense>
+  )
 }

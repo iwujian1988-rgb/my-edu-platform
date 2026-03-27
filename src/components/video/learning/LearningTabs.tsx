@@ -14,7 +14,7 @@
  * 设计风格: Neo-brutalism - 与 Speaker 模块保持一致
  */
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useRef, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import { BookOpen, MessageSquare, BookMarked, Volume2, Network, MapPin, Play, Loader2 } from 'lucide-react'
 import type {
@@ -39,7 +39,9 @@ export interface LearningTabsProps {
   grammarPoints: VideoGrammarPoint[]
   pronunciationTips: VideoPronunciationTip[]
   vocabularyNetwork: VideoVocabularyNetwork | null
+  videoLanguage?: string // 视频语言，用于 TTS
   onJumpToSubtitle?: (time: number) => void
+  onPlaySegment?: (startTime: number, endTime: number) => void
   getCardStatus?: (cardType: 'word' | 'expression', cardId: string) => CardStatus | undefined
   onStatusChange?: (cardType: 'word' | 'expression', cardId: string, status: CardStatus) => Promise<void>
 }
@@ -85,12 +87,41 @@ export function LearningTabs({
   grammarPoints = [],
   pronunciationTips = [],
   vocabularyNetwork = null,
+  videoLanguage,
   onJumpToSubtitle,
+  onPlaySegment,
   getCardStatus,
   onStatusChange
 }: LearningTabsProps) {
   const [activeTab, setActiveTab] = useState<TabKey>('words')
   const [localStatusMap, setLocalStatusMap] = useState<Map<string, CardStatus>>(new Map())
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  // Tab 切换时滚动到顶部
+  const handleTabSwitch = useCallback((tabKey: TabKey) => {
+    setActiveTab(tabKey)
+
+    // 延迟执行，确保 DOM 更新后再滚动
+    requestAnimationFrame(() => {
+      if (!containerRef.current) return
+
+      // 向上查找可滚动的父元素
+      let parent: HTMLElement | null = containerRef.current.parentElement
+      while (parent) {
+        const style = window.getComputedStyle(parent)
+        const overflowY = style.overflowY
+        if (overflowY === 'auto' || overflowY === 'scroll') {
+          parent.scrollTop = 0
+          console.log('[LearningTabs] Scrolled parent to top:', parent.className)
+          break
+        }
+        parent = parent.parentElement
+      }
+
+      // 同时尝试滚动 window
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    })
+  }, [])
 
   // 获取卡片状态（优先本地状态，其次远程状态）
   const getCardStatusLocal = useCallback(
@@ -143,6 +174,7 @@ export function LearningTabs({
         return (
           <WordsTab
             words={words}
+            videoLanguage={videoLanguage}
             onJumpToSubtitle={onJumpToSubtitle}
             getCardStatus={getCardStatusLocal}
             onStatusChange={handleStatusChange}
@@ -153,6 +185,7 @@ export function LearningTabs({
           <ExpressionsTab
             expressions={expressions}
             onJumpToSubtitle={onJumpToSubtitle}
+            onPlaySegment={onPlaySegment}
             getCardStatus={getCardStatusLocal}
             onStatusChange={handleStatusChange}
           />
@@ -169,13 +202,13 @@ export function LearningTabs({
   }
 
   return (
-    <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 rounded-sm transition-colors duration-300">
-      {/* Tab 头部 - Neo-brutalism 风格 */}
-      <div className="flex border-b-[3px] border-black dark:border-gray-600 overflow-x-auto rounded-t-sm">
+    <div ref={containerRef} className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 rounded-sm transition-colors duration-300">
+      {/* Tab 头部 - sticky 吸顶，滚动时不被遮挡 */}
+      <div className="sticky top-0 z-10 flex border-b-[3px] border-black dark:border-gray-600 overflow-x-auto rounded-t-sm bg-white dark:bg-gray-800">
         {tabs.map((tab) => (
           <button
             key={tab.key}
-            onClick={() => setActiveTab(tab.key)}
+            onClick={() => handleTabSwitch(tab.key)}
             className={cn(
               "flex items-center gap-2 px-4 py-3 text-sm font-bold whitespace-nowrap transition-all border-r-[2px] border-black dark:border-gray-600 last:border-r-0",
               activeTab === tab.key
@@ -282,28 +315,165 @@ function Progress({ learned, total }: ProgressProps) {
 
 interface WordsTabProps {
   words: VideoWordCard[]
+  videoLanguage?: string
   onJumpToSubtitle?: (time: number) => void
+  onPlaySegment?: (startTime: number, endTime: number) => void
   getCardStatus?: (cardType: 'word', cardId: string) => CardStatus | undefined
   onStatusChange?: (cardType: 'word', cardId: string, status: CardStatus) => Promise<void>
 }
 
-function WordsTab({ words, onJumpToSubtitle, getCardStatus, onStatusChange }: WordsTabProps) {
+function WordsTab({ words, videoLanguage, onJumpToSubtitle, onPlaySegment, getCardStatus, onStatusChange }: WordsTabProps) {
   const [playingWord, setPlayingWord] = useState<string | null>(null)
   const [expandedDefinitions, setExpandedDefinitions] = useState<Set<string>>(new Set())
   const [expandedExamples, setExpandedExamples] = useState<Set<string>>(new Set())
 
-  const playWord = useCallback((word: string) => {
-    if (!('speechSynthesis' in window)) return
-    if (playingWord) speechSynthesis.cancel()
+  // ============================================
+  // TTS 预加载优化
+  // ============================================
+
+  /** TTS 状态：'cached' = API 有音频，'webspeech' = 用浏览器，'pending' = 还未检测 */
+  type TTSStatus = 'pending' | 'cached' | 'webspeech'
+  const ttsStatusRef = useRef<Map<string, TTSStatus>>(new Map())
+
+  // 语言映射
+  const getTTSLanguage = useCallback((): string => {
+    const langMap: Record<string, string> = {
+      'fr': 'fr', 'en': 'en', 'ja': 'ja', 'es': 'es', 'de': 'de',
+    }
+    return langMap[videoLanguage || 'fr'] || 'fr'
+  }, [videoLanguage])
+
+  // 预加载所有单词的 TTS（页面加载后 500ms 开始）
+  useEffect(() => {
+    if (words.length === 0) return
+
+    const ttsLang = getTTSLanguage()
+    const PRELOAD_DELAY_MS = 500
+    let webspeechWarmedUp = false
+
+    // 预热 Web Speech 引擎（只执行一次）
+    const warmupWebSpeech = () => {
+      if (webspeechWarmedUp || !('speechSynthesis' in window)) return
+      webspeechWarmedUp = true
+
+      // 播放静音 utterance 来唤醒引擎
+      const warmup = new SpeechSynthesisUtterance('')
+      warmup.volume = 0
+      warmup.rate = 1
+      warmup.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
+      speechSynthesis.speak(warmup)
+      console.log('[LearningTabs TTS] 🔥 Web Speech 引擎已预热')
+    }
+
+    const timer = setTimeout(() => {
+      console.log(`[LearningTabs TTS] 开始预加载 ${words.length} 个单词...`)
+
+      words.forEach(async ({ word }) => {
+        const key = word.toLowerCase()
+
+        // 跳过已检测的
+        if (ttsStatusRef.current.has(key)) return
+
+        try {
+          const res = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`)
+
+          if (res.ok) {
+            ttsStatusRef.current.set(key, 'cached')
+            // 触发浏览器缓存
+            await res.blob()
+            console.log(`[LearningTabs TTS] ✅ ${word} -> cached`)
+          } else {
+            ttsStatusRef.current.set(key, 'webspeech')
+            // 预热 Web Speech 引擎
+            warmupWebSpeech()
+            console.log(`[LearningTabs TTS] 🔄 ${word} -> webspeech (API 404)`)
+          }
+        } catch {
+          ttsStatusRef.current.set(key, 'webspeech')
+          warmupWebSpeech()
+          console.log(`[LearningTabs TTS] ⚠️ ${word} -> webspeech (请求失败)`)
+        }
+      })
+    }, PRELOAD_DELAY_MS)
+
+    return () => clearTimeout(timer)
+  }, [words, getTTSLanguage])
+
+  // 播放单词发音 - 优先使用缓存状态
+  const playWord = useCallback(async (word: string) => {
+    if (playingWord) {
+      setPlayingWord(null)
+      return
+    }
 
     setPlayingWord(word)
-    const utterance = new SpeechSynthesisUtterance(word)
-    utterance.lang = 'fr-FR'
-    utterance.rate = 0.8
-    utterance.onend = () => setPlayingWord(null)
-    utterance.onerror = () => setPlayingWord(null)
-    speechSynthesis.speak(utterance)
-  }, [playingWord])
+
+    const ttsLang = getTTSLanguage()
+    const key = word.toLowerCase()
+    const status = ttsStatusRef.current.get(key)
+
+    console.log(`[LearningTabs TTS] playWord: "${word}", status: ${status || 'pending'}`)
+
+    // 如果预加载已判定为 webspeech，直接用浏览器 TTS（跳过 API 请求）
+    if (status === 'webspeech') {
+      console.log('[LearningTabs TTS] 直接使用 Web Speech（预加载已判定）')
+      if ('speechSynthesis' in window) {
+        speechSynthesis.cancel()
+        const utterance = new SpeechSynthesisUtterance(word)
+        utterance.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
+        utterance.rate = 0.8
+        utterance.onend = () => setPlayingWord(null)
+        utterance.onerror = () => setPlayingWord(null)
+        speechSynthesis.speak(utterance)
+      } else {
+        setPlayingWord(null)
+      }
+      return
+    }
+
+    // cached 或 pending：请求 API（浏览器缓存会命中）
+    try {
+      const response = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`)
+
+      if (!response.ok) {
+        // API 失败，回退到浏览器 TTS，并更新状态
+        console.warn('[LearningTabs TTS] API 失败，回退到浏览器 TTS')
+        ttsStatusRef.current.set(key, 'webspeech')
+        if ('speechSynthesis' in window) {
+          speechSynthesis.cancel()
+          const utterance = new SpeechSynthesisUtterance(word)
+          utterance.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
+          utterance.rate = 0.8
+          utterance.onend = () => setPlayingWord(null)
+          utterance.onerror = () => setPlayingWord(null)
+          speechSynthesis.speak(utterance)
+        } else {
+          setPlayingWord(null)
+        }
+        return
+      }
+
+      // 播放音频
+      const blob = await response.blob()
+      const audioUrl = URL.createObjectURL(blob)
+      const audio = new Audio(audioUrl)
+
+      audio.onended = () => {
+        URL.revokeObjectURL(audioUrl)
+        setPlayingWord(null)
+      }
+
+      audio.onerror = () => {
+        URL.revokeObjectURL(audioUrl)
+        setPlayingWord(null)
+      }
+
+      await audio.play()
+    } catch (error) {
+      console.warn('[LearningTabs TTS] 播放失败:', error)
+      setPlayingWord(null)
+    }
+  }, [playingWord, getTTSLanguage])
 
   const toggleDefinitions = useCallback((wordId: string) => {
     setExpandedDefinitions(prev => {
@@ -513,20 +683,6 @@ function WordsTab({ words, onJumpToSubtitle, getCardStatus, onStatusChange }: Wo
                 </div>
               )}
 
-              {/* 功能按钮 */}
-              <div className="flex items-center gap-2">
-                {onJumpToSubtitle && word.subtitle_start_time !== undefined && word.subtitle_start_time > 0 && (
-                  <button
-                    onClick={() => onJumpToSubtitle(word.subtitle_start_time || 0)}
-                    className="flex items-center gap-1 px-2 py-1 text-xs font-black text-gray-600 dark:text-gray-400 border-[2px] border-gray-300 dark:border-gray-600 hover:border-black dark:hover:border-gray-400 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition-all"
-                    title="跳转到字幕位置"
-                  >
-                    <MapPin className="w-3 h-3" />
-                    定位
-                  </button>
-                )}
-              </div>
-
               {/* 三态按钮 */}
               <ThreeStateButtons
                 currentStatus={status}
@@ -549,11 +705,12 @@ function WordsTab({ words, onJumpToSubtitle, getCardStatus, onStatusChange }: Wo
 interface ExpressionsTabProps {
   expressions: VideoExpressionCard[]
   onJumpToSubtitle?: (time: number) => void
+  onPlaySegment?: (startTime: number, endTime: number) => void
   getCardStatus?: (cardType: 'expression', cardId: string) => CardStatus | undefined
   onStatusChange?: (cardType: 'expression', cardId: string, status: CardStatus) => Promise<void>
 }
 
-function ExpressionsTab({ expressions, onJumpToSubtitle, getCardStatus, onStatusChange }: ExpressionsTabProps) {
+function ExpressionsTab({ expressions, onJumpToSubtitle, onPlaySegment, getCardStatus, onStatusChange }: ExpressionsTabProps) {
   const learnedCount = expressions.filter(expr => {
     const status = getCardStatus?.('expression', expr.id)
     return status === 'known' || status === 'learning'
@@ -626,29 +783,17 @@ function ExpressionsTab({ expressions, onJumpToSubtitle, getCardStatus, onStatus
                 </div>
               )}
 
-              {/* 功能按钮 */}
-              <div className="flex items-center gap-2">
-                {onJumpToSubtitle && expr.context && (
-                  <button
-                    onClick={() => onJumpToSubtitle(expr.subtitle_start_time || 0)}
-                    className="flex items-center gap-1 px-2 py-1 text-xs font-black text-black bg-[#B4F416] hover:bg-[#a3e014] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
-                    title="播放这段"
-                  >
-                    <Play className="w-3 h-3" />
-                    播放
-                  </button>
-                )}
-                {onJumpToSubtitle && expr.context && (
-                  <button
-                    onClick={() => onJumpToSubtitle(expr.subtitle_start_time || 0)}
-                    className="flex items-center gap-1 px-2 py-1 text-xs font-black text-gray-600 dark:text-gray-400 border-[2px] border-gray-300 dark:border-gray-600 hover:border-black dark:hover:border-gray-400 bg-white dark:bg-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600 transition-all"
-                    title="跳转到字幕位置"
-                  >
-                    <MapPin className="w-3 h-3" />
-                    定位
-                  </button>
-                )}
-              </div>
+              {/* 播放按钮 */}
+              {onPlaySegment && expr.context && expr.subtitle_start_time !== undefined && expr.subtitle_end_time !== undefined && (
+                <button
+                  onClick={() => onPlaySegment(expr.subtitle_start_time || 0, expr.subtitle_end_time || 0)}
+                  className="flex items-center gap-1 px-2 py-1 text-xs font-black text-black bg-[#B4F416] hover:bg-[#a3e014] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+                  title="播放这段字幕"
+                >
+                  <Play className="w-3 h-3" />
+                  播放
+                </button>
+              )}
 
               {/* 三态按钮 */}
               <ThreeStateButtons

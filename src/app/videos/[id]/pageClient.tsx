@@ -44,6 +44,7 @@ import { LearningCards } from '@/components/video/LearningCards'
 import { LearningTabs } from '@/components/video/learning/LearningTabs'
 import { LearningModal } from '@/components/video/learning/LearningModal'
 import { AccessDenied } from '@/components/video/AccessDenied'
+import { DraggablePIP } from '@/components/video/DraggablePIP'
 
 import { useVideoProgress } from '@/hooks/useVideoProgress'
 import { useCardProgress } from '@/hooks/useCardProgress'
@@ -94,6 +95,13 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [seekTrigger, setSeekTrigger] = useState(0) // 用于强制触发跳转
   const [pauseMainVideo, setPauseMainVideo] = useState(false) // 暂停主视频（打开弹层时）
   const [isLearningModalOpen, setIsLearningModalOpen] = useState(false) // PC端学习弹层
+
+  // PIP 模式状态（移动端学习模块）
+  const [pipMode, setPipMode] = useState(false)
+  const [isPipPlaying, setIsPipPlaying] = useState(false)
+  const [isPipMuted, setIsPipMuted] = useState(false)
+  const pipVideoRef = useRef<HTMLVideoElement>(null)
+  const mainVideoRef = useRef<HTMLVideoElement>(null)
 
   // PC端左侧高度 ref（用于右侧对齐）
   const leftColumnRef = useRef<HTMLDivElement>(null)
@@ -158,13 +166,169 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
   // 播放片段
   const [segmentEndTime, setSegmentEndTime] = useState<number | undefined>(undefined)
+  const pipSegmentEndRef = useRef<number | null>(null)
+  const pipTimeUpdateHandlerRef = useRef<(() => void) | null>(null)
 
   const handlePlaySegment = useCallback((startTime: number, endTime: number) => {
-    // 设置片段结束时间（VideoPlayer 会自动在到达时暂停）
-    setSegmentEndTime(endTime)
-    // 使用 seekToTime 状态触发 VideoPlayer 跳转
-    setSeekToTime(startTime)
-  }, [])
+    console.log('[handlePlaySegment] === START ===')
+    console.log('[handlePlaySegment] startTime:', startTime, 'endTime:', endTime)
+    console.log('[handlePlaySegment] pipMode:', pipMode, 'pipVideoRef.current:', !!pipVideoRef.current)
+
+    if (pipMode && pipVideoRef.current) {
+      // PIP 模式：直接操作 PIP video 元素
+      const videoEl = pipVideoRef.current
+      console.log('[handlePlaySegment] video element readyState:', videoEl.readyState)
+      console.log('[handlePlaySegment] video current src:', videoEl.src?.substring(0, 50))
+
+      // 先移除旧的监听器（如果存在）
+      if (pipTimeUpdateHandlerRef.current) {
+        console.log('[handlePlaySegment] Removing old timeupdate listener')
+        videoEl.removeEventListener('timeupdate', pipTimeUpdateHandlerRef.current)
+        pipTimeUpdateHandlerRef.current = null
+      }
+
+      // 设置片段结束时间
+      pipSegmentEndRef.current = endTime
+      console.log('[handlePlaySegment] Set segment end time:', endTime)
+
+      // 检查视频是否已加载足够数据
+      const tryPlaySegment = () => {
+        console.log('[handlePlaySegment] tryPlaySegment - setting currentTime to:', startTime)
+        // 跳转到开始时间
+        videoEl.currentTime = startTime
+
+        console.log('[handlePlaySegment] Calling videoEl.play()')
+        // 播放视频
+        const playPromise = videoEl.play()
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              setIsPipPlaying(true)
+              console.log('[handlePlaySegment] ✅ PIP video started playing successfully')
+            })
+            .catch((err) => {
+              console.warn('[handlePlaySegment] ❌ PIP video play failed:', err)
+              // 如果播放失败，可能是浏览器限制，尝试静音后播放
+              videoEl.muted = true
+              setIsPipMuted(true)
+              videoEl.play().then(() => {
+                setIsPipPlaying(true)
+                console.log('[handlePlaySegment] ✅ PIP video started playing (muted)')
+              }).catch((err2) => {
+                console.error('[handlePlaySegment] ❌ PIP video play failed even muted:', err2)
+              })
+            })
+        }
+      }
+
+      // 如果视频还没加载，等待 loadeddata 事件
+      if (videoEl.readyState < 1) {
+        console.log('[handlePlaySegment] Video not loaded, waiting for loadeddata...')
+        const handleLoaded = () => {
+          console.log('[handlePlaySegment] loadeddata event fired, now trying to play')
+          videoEl.removeEventListener('loadeddata', handleLoaded)
+          tryPlaySegment()
+        }
+        videoEl.addEventListener('loadeddata', handleLoaded)
+        // 触发加载
+        videoEl.load()
+      } else {
+        console.log('[handlePlaySegment] Video already loaded (readyState:', videoEl.readyState, '), playing directly')
+        tryPlaySegment()
+      }
+
+      // 创建新的监听器
+      const handleTimeUpdate = () => {
+        const currentSegmentEnd = pipSegmentEndRef.current
+        if (currentSegmentEnd && videoEl.currentTime >= currentSegmentEnd - 0.1) {
+          console.log('[handlePlaySegment] Segment ended! currentTime:', videoEl.currentTime, '>= endTime:', currentSegmentEnd)
+          videoEl.pause()
+          setIsPipPlaying(false)
+          pipSegmentEndRef.current = null
+          // 移除监听器
+          videoEl.removeEventListener('timeupdate', handleTimeUpdate)
+          pipTimeUpdateHandlerRef.current = null
+        }
+      }
+
+      // 保存监听器引用并添加
+      pipTimeUpdateHandlerRef.current = handleTimeUpdate
+      videoEl.addEventListener('timeupdate', handleTimeUpdate)
+      console.log('[handlePlaySegment] Added timeupdate listener')
+    } else {
+      console.log('[handlePlaySegment] Non-PIP mode, operating main video')
+      // 非PIP模式：操作主视频
+      setSegmentEndTime(endTime)
+      setSeekToTime(startTime)
+      setSeekTrigger(prev => prev + 1)
+    }
+    console.log('[handlePlaySegment] === END ===')
+  }, [pipMode])
+
+  // ============================================
+  // PIP 模式控制（移动端学习模块）
+  // ============================================
+
+  // 进入 PIP 模式
+  const enterPipMode = useCallback(() => {
+    console.log('[enterPipMode] Entering PIP mode, previous pipMode:', pipMode)
+    setPipMode(true)
+    // 暂停主视频（如果正在播放）
+    setPauseMainVideo(true)
+  }, [pipMode])
+
+  // 退出 PIP 模式
+  const exitPipMode = useCallback(() => {
+    console.log('[exitPipMode] Exiting PIP mode, current pipMode:', pipMode)
+    setPipMode(false)
+    // 同步视频时间到主播放器
+    if (pipVideoRef.current) {
+      setSeekToTime(pipVideoRef.current.currentTime)
+      setSeekTrigger(prev => prev + 1)
+    }
+    setPauseMainVideo(false)
+  }, [pipMode])
+
+  // 切换 Tab 时处理 PIP 模式
+  const handleTabChange = useCallback((tab: TabValue) => {
+    const previousTab = currentTab
+    console.log('[handleTabChange] previousTab:', previousTab, '-> newTab:', tab, 'pipMode:', pipMode)
+    setCurrentTab(tab)
+
+    if (tab === 'learn') {
+      // 进入学习模块，总是启用 PIP 模式（即使之前已经在学习Tab）
+      console.log('[handleTabChange] Entering learn tab, calling enterPipMode()')
+      enterPipMode()
+    } else {
+      // 离开学习模块，退出 PIP 模式
+      if (pipMode) {
+        console.log('[handleTabChange] Leaving learn tab, calling exitPipMode()')
+        exitPipMode()
+      }
+      setPauseMainVideo(false)
+    }
+  }, [currentTab, pipMode, enterPipMode, exitPipMode])
+
+  // PIP 视频控制
+  const togglePipPlay = useCallback(() => {
+    const videoEl = pipVideoRef.current
+    if (!videoEl) return
+
+    if (isPipPlaying) {
+      videoEl.pause()
+    } else {
+      videoEl.play()
+    }
+    setIsPipPlaying(!isPipPlaying)
+  }, [isPipPlaying])
+
+  const togglePipMute = useCallback(() => {
+    const videoEl = pipVideoRef.current
+    if (!videoEl) return
+
+    videoEl.muted = !isPipMuted
+    setIsPipMuted(!isPipMuted)
+  }, [isPipMuted])
 
   // 卡片跳转字幕映射
   const cardToSubtitleMap = useCallback(() => {
@@ -255,31 +419,56 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     <div className="min-h-screen bg-gray-50 transition-colors duration-300">
       {/* ===== 移动端布局 ===== */}
       <div className="lg:hidden">
-        {/* 视频区 - 吸顶 */}
-        <div className="sticky top-0 z-40 bg-gray-50 dark:bg-gray-900">
-          {/* 返回按钮 */}
-          <div className="px-3 py-1.5">
-            <button
-              onClick={() => router.back()}
-              className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] active:shadow-[1px_1px_0px_0px_#000] active:translate-y-0.5 transition-all"
-            >
-              <ArrowLeft className="w-3 h-3" />
-              返回
-            </button>
+        {/* PIP 模式下的简洁顶部栏 */}
+        {pipMode && (
+          <div className="sticky top-0 z-40 bg-gray-50 dark:bg-gray-900 border-b-[3px] border-black dark:border-gray-600 px-3 py-2">
+            <div className="flex items-center justify-between">
+              <button
+                onClick={() => router.back()}
+                className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666]"
+              >
+                <ArrowLeft className="w-3 h-3" />
+                返回
+              </button>
+              <span className="text-sm font-black text-black dark:text-white truncate max-w-[60%]">
+                {video.title}
+              </span>
+              <button
+                onClick={exitPipMode}
+                className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000]"
+              >
+                展开
+              </button>
+            </div>
           </div>
+        )}
 
-          {/* 视频播放器 - 只在移动端渲染 */}
-          {!isLargeScreen && (
-            <VideoPlayer
-              video={video}
-              onTimeUpdate={handleTimeUpdate}
-              initialPosition={data.user_progress?.last_position || 0}
-              seekTo={seekToTime}
-              seekTrigger={seekTrigger}
-              segmentEndTime={segmentEndTime}
-              pause={pauseMainVideo}
-            />
-          )}
+        {/* 视频区 - 吸顶（PIP 模式下隐藏） */}
+        {!pipMode && (
+          <div className="sticky top-0 z-40 bg-gray-50 dark:bg-gray-900">
+            {/* 返回按钮 */}
+            <div className="px-3 py-1.5">
+              <button
+                onClick={() => router.back()}
+                className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] active:shadow-[1px_1px_0px_0px_#000] active:translate-y-0.5 transition-all"
+              >
+                <ArrowLeft className="w-3 h-3" />
+                返回
+              </button>
+            </div>
+
+            {/* 视频播放器 - 只在移动端渲染 */}
+            {!isLargeScreen && (
+              <VideoPlayer
+                video={video}
+                onTimeUpdate={handleTimeUpdate}
+                initialPosition={data.user_progress?.last_position || 0}
+                seekTo={seekToTime}
+                seekTrigger={seekTrigger}
+                segmentEndTime={segmentEndTime}
+                pause={pauseMainVideo}
+              />
+            )}
 
           {/* 功能按钮导航 - 视频标题 + 5个图标按钮 + 字幕模式下拉菜单 */}
           <div className="bg-white dark:bg-gray-800 border-b-[3px] border-black dark:border-gray-600 px-3 py-2">
@@ -364,20 +553,17 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
               {/* 5个功能按钮 - 所有按钮统一 shadow 样式，避免点击时跳动 */}
               <div className="flex items-center gap-1">
-                <button onClick={() => setCurrentTab('listen')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'listen' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="听">
+                <button onClick={() => handleTabChange('listen')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'listen' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="听">
                   <Headphones className="w-4 h-4" />
                 </button>
-                <button onClick={() => setCurrentTab('speak')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'speak' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="说读">
+                <button onClick={() => handleTabChange('speak')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'speak' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="说读">
                   <Mic className="w-4 h-4" />
                 </button>
-                <button onClick={() => setCurrentTab('write')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'write' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="写">
+                <button onClick={() => handleTabChange('write')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'write' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="写">
                   <Pen className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => {
-                    setCurrentTab('learn')
-                    setPauseMainVideo(true) // 切换到学习模块时暂停主视频
-                  }}
+                  onClick={() => handleTabChange('learn')}
                   className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'learn' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")}
                   title="学"
                 >
@@ -394,11 +580,13 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
             </div>
           </div>
         </div>
+        )}
 
-        {/* 内容区 - 移动端使用固定高度 60vh */}
+        {/* 内容区 - PIP 模式下全屏，否则 60vh */}
         {/* listen/speak/write 有内部滚动，learn 需要容器滚动 */}
         <div className={cn(
-          "bg-white dark:bg-gray-800 border-[3px] border-t-0 border-black dark:border-gray-600 h-[60vh]",
+          "bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600",
+          pipMode ? "border-t-0 h-[calc(100dvh-48px)]" : "border-t-0 h-[60vh]",
           currentTab === 'learn' ? "overflow-y-auto" : "overflow-hidden"
         )}>
           {currentTab === 'listen' && (
@@ -442,15 +630,53 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               grammarPoints={data.grammar_points}
               pronunciationTips={data.pronunciation_tips}
               vocabularyNetwork={data.vocabulary_network}
+              videoLanguage={data.video.language}
               onJumpToSubtitle={(time) => {
-                setCurrentTab('listen')
-                setSeekToTime(time)
+                // PIP 模式下直接操作 PIP 视频，不切换 tab
+                if (pipMode && pipVideoRef.current) {
+                  pipVideoRef.current.currentTime = time
+                  pipVideoRef.current.play()
+                  setIsPipPlaying(true)
+                } else {
+                  handleTabChange('listen')
+                  setSeekToTime(time)
+                }
+              }}
+              onPlaySegment={(startTime, endTime) => {
+                // PIP 模式下直接操作 PIP 视频，不切换 tab
+                if (pipMode) {
+                  handlePlaySegment(startTime, endTime)
+                } else {
+                  handleTabChange('listen')
+                  handlePlaySegment(startTime, endTime)
+                }
               }}
               getCardStatus={getCardStatus}
               onStatusChange={updateStatus}
             />
           )}
         </div>
+
+        {/* PIP 小窗 - 移动端学习模块 */}
+        {pipMode && (
+          <DraggablePIP
+            video={video}
+            videoRef={pipVideoRef}
+            isPlaying={isPipPlaying}
+            currentTime={currentVideoTime}
+            duration={video.duration || 0}
+            isMuted={isPipMuted}
+            onTogglePlay={togglePipPlay}
+            onToggleMute={togglePipMute}
+            onExpand={exitPipMode}
+            onTimeUpdate={(time) => {
+              setCurrentVideoTime(time)
+              if (video.duration) {
+                updateProgress(time, video.duration)
+              }
+            }}
+          />
+        )}
       </div>
 
       {/* ===== PC端布局 ===== */}

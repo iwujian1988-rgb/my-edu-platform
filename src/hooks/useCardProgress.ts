@@ -7,8 +7,9 @@
  * 实现 SM-2 艾宾浩斯遗忘曲线算法
  */
 
-import { useState, useCallback, useMemo } from 'react'
-import useSWR from 'swr'
+import { useState, useCallback, useMemo, useRef } from 'react'
+import useSWR, { mutate as globalMutate } from 'swr'
+import { toast } from 'sonner'
 import type { CardType, CardStatus } from '@/types/video'
 
 interface CardProgressData {
@@ -138,7 +139,7 @@ export function useCardProgress(
     return map
   }, [data])
 
-  // 更新卡片状态
+  // 更新卡片状态（乐观更新）
   const updateStatus = useCallback(
     async (cardType: CardType, cardId: string, status: CardStatus) => {
       if (!videoId) return
@@ -150,6 +151,21 @@ export function useCardProgress(
         known: 3,     // 简单
       }
 
+      // 🚀 乐观更新：立即更新本地状态
+      mutate(
+        (currentData) => {
+          if (!currentData) return currentData
+          return currentData.map((item) => {
+            if (item.card_type === cardType && item.card_id === cardId) {
+              return { ...item, status }
+            }
+            return item
+          })
+        },
+        false // 不重新验证
+      )
+
+      // 后台发送 API 请求
       try {
         const res = await fetch('/api/user/video-cards/review', {
           method: 'POST',
@@ -162,13 +178,18 @@ export function useCardProgress(
           }),
         })
 
-        if (!res.ok) throw new Error('Failed to update status')
-
-        // 刷新本地缓存
-        mutate()
+        if (!res.ok) {
+          // API 失败，回滚并提示
+          mutate() // 回滚到服务器状态
+          toast.error('状态更新失败，请重试')
+          return
+        }
+        // 成功：静默完成，无需再次 mutate（已乐观更新）
       } catch (error) {
         console.error('[useCardProgress] Update error:', error)
-        throw error
+        // 网络错误，回滚并提示
+        mutate()
+        toast.error('网络错误，请检查网络后重试')
       }
     },
     [videoId, mutate]

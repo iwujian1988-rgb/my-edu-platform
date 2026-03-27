@@ -270,8 +270,11 @@ export function VideoPlayer({
 
     // 片段播放：到达结束时间后自动暂停
     if (segmentEndTime !== undefined && segmentEndTime > 0) {
+      console.log('[VideoPlayer] segmentEndTime:', segmentEndTime, 'currentTime:', videoEl.currentTime, 'diff:', segmentEndTime - videoEl.currentTime)
       if (videoEl.currentTime + 0.1 >= segmentEndTime) {
+        console.log('[VideoPlayer] 到达片段结束时间，暂停播放')
         videoEl.pause()
+        setIsPlaying(false)
       }
     }
   }

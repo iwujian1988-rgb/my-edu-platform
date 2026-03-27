@@ -246,52 +246,112 @@ export function LearningModal({
     }
   }, [])
 
-  // 预热 TTS 引擎
+  // ============================================
+  // TTS 预加载优化
+  // ============================================
+
+  /** TTS 状态：'cached' = API 有音频，'webspeech' = 用浏览器，'pending' = 还未检测 */
+  type TTSStatus = 'pending' | 'cached' | 'webspeech'
+  const ttsStatusRef = useRef<Map<string, TTSStatus>>(new Map())
+
+  // 语言映射
+  const getTTSLanguage = useCallback((): string => {
+    const langMap: Record<string, string> = {
+      'fr': 'fr', 'en': 'en', 'ja': 'ja', 'es': 'es', 'de': 'de',
+    }
+    return langMap[video.language || 'fr'] || 'fr'
+  }, [video.language])
+
+  // 预加载所有单词的 TTS（页面加载后 500ms 开始）
   useEffect(() => {
-    if (!('speechSynthesis' in window)) return
-    // 加载语音列表（某些浏览器需要这样来初始化 TTS）
-    const voices = speechSynthesis.getVoices()
-    console.log('[TTS] 预热，当前语音数:', voices.length)
-    // 某些浏览器需要 onvoiceschanged 事件
-    const handleVoicesChanged = () => {
-      const v = speechSynthesis.getVoices()
-      console.log('[TTS] 语音已加载:', v.length)
-    }
-    speechSynthesis.addEventListener('voiceschanged', handleVoicesChanged)
-    return () => {
-      speechSynthesis.removeEventListener('voiceschanged', handleVoicesChanged)
-    }
-  }, [])
+    if (words.length === 0) return
 
-  // 播放单词发音 - 调用后端 TTS API（有道 + 百度兜底）
+    const ttsLang = getTTSLanguage()
+    const PRELOAD_DELAY_MS = 500
+    let webspeechWarmedUp = false
+
+    // 预热 Web Speech 引擎（只执行一次）
+    const warmupWebSpeech = () => {
+      if (webspeechWarmedUp || !('speechSynthesis' in window)) return
+      webspeechWarmedUp = true
+
+      // 播放静音 utterance 来唤醒引擎
+      const warmup = new SpeechSynthesisUtterance('')
+      warmup.volume = 0
+      warmup.rate = 1
+      warmup.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
+      speechSynthesis.speak(warmup)
+      console.log('[LearningModal TTS] 🔥 Web Speech 引擎已预热')
+    }
+
+    const timer = setTimeout(() => {
+      console.log(`[LearningModal TTS] 开始预加载 ${words.length} 个单词...`)
+
+      words.forEach(async ({ word }) => {
+        const key = word.toLowerCase()
+
+        // 跳过已检测的
+        if (ttsStatusRef.current.has(key)) return
+
+        try {
+          const res = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`)
+
+          if (res.ok) {
+            ttsStatusRef.current.set(key, 'cached')
+            // 触发浏览器缓存
+            await res.blob()
+            console.log(`[LearningModal TTS] ✅ ${word} -> cached`)
+          } else {
+            ttsStatusRef.current.set(key, 'webspeech')
+            // 预热 Web Speech 引擎
+            warmupWebSpeech()
+            console.log(`[LearningModal TTS] 🔄 ${word} -> webspeech (API 404)`)
+          }
+        } catch {
+          ttsStatusRef.current.set(key, 'webspeech')
+          warmupWebSpeech()
+          console.log(`[LearningModal TTS] ⚠️ ${word} -> webspeech (请求失败)`)
+        }
+      })
+    }, PRELOAD_DELAY_MS)
+
+    return () => clearTimeout(timer)
+  }, [words, getTTSLanguage])
+
+  // 播放单词发音 - 优先使用缓存状态
   const playWord = useCallback(async (word: string) => {
-    console.log('[LearningModal] playWord 被调用:', word)
-    try {
-      // 根据视频语言选择 TTS 语言
-      const langMap: Record<string, string> = {
-        'fr': 'fr',
-        'en': 'en',
-        'ja': 'ja',
-        'es': 'es',
-        'de': 'de',
+    const ttsLang = getTTSLanguage()
+    const key = word.toLowerCase()
+    const status = ttsStatusRef.current.get(key)
+
+    console.log(`[LearningModal TTS] playWord: "${word}", status: ${status || 'pending'}`)
+
+    // 如果预加载已判定为 webspeech，直接用浏览器 TTS（跳过 API 请求）
+    if (status === 'webspeech') {
+      console.log('[LearningModal TTS] 直接使用 Web Speech（预加载已判定）')
+      if ('speechSynthesis' in window) {
+        speechSynthesis.cancel()
+        const utterance = new SpeechSynthesisUtterance(word)
+        utterance.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
+        utterance.rate = 0.8
+        speechSynthesis.speak(utterance)
       }
-      const ttsLang = langMap[video.language || 'fr'] || 'fr'
-      console.log('[LearningModal] TTS 语言:', ttsLang, '视频语言:', video.language)
+      return
+    }
 
-      // 调用后端 API
+    // cached 或 pending：请求 API（浏览器缓存会命中）
+    try {
       const url = `/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`
-      console.log('[LearningModal] 请求 TTS API:', url)
-
       const response = await fetch(url)
-      console.log('[LearningModal] API 响应状态:', response.status, response.ok)
 
       if (!response.ok) {
-        // API 失败，回退到浏览器 TTS
+        // API 失败，回退到浏览器 TTS，并更新状态
         console.warn('[LearningModal TTS] API 失败，回退到浏览器 TTS')
+        ttsStatusRef.current.set(key, 'webspeech')
         if ('speechSynthesis' in window) {
           speechSynthesis.cancel()
           const utterance = new SpeechSynthesisUtterance(word)
-          utterance.lang = ttsLang === 'fr' ? 'fr-FR' : 'en-US'
+          utterance.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
           utterance.rate = 0.8
           speechSynthesis.speak(utterance)
         }
@@ -300,27 +360,22 @@ export function LearningModal({
 
       // 播放音频
       const blob = await response.blob()
-      console.log('[LearningModal] 获取到音频 blob:', blob.size, 'bytes')
       const audioUrl = URL.createObjectURL(blob)
       const audio = new Audio(audioUrl)
 
       audio.onended = () => {
-        console.log('[LearningModal] 音频播放完成')
         URL.revokeObjectURL(audioUrl)
       }
 
-      audio.onerror = (e) => {
-        console.error('[LearningModal] 音频播放错误:', e)
+      audio.onerror = () => {
         URL.revokeObjectURL(audioUrl)
       }
 
-      console.log('[LearningModal] 开始播放音频...')
       await audio.play()
-      console.log('[LearningModal] audio.play() 完成')
     } catch (error) {
       console.error('[LearningModal TTS] 播放失败:', error)
     }
-  }, [video.language])
+  }, [getTTSLanguage])
 
   // 计算学习进度
   const wordsLearned = words.filter(word => {

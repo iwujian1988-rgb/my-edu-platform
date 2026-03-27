@@ -365,6 +365,7 @@ async function processSingleVideo(
           example_from_video: example?.original || null,
           example_translation: example?.translation || null,
           subtitle_start_time: example?.startTime || 0,  // 用于 [📍] 跳转播放
+          subtitle_end_time: example?.endTime || 0,      // 用于 [📍] 自动暂停
           // 词典扩展字段
           gender: dictResult?.gender || null,
           cefr_level: dictResult?.cefrLevel || original.cefr_level || null,
@@ -413,6 +414,7 @@ async function processSingleVideo(
         examples: expr.example ? [{ original: expr.example.french, cn: expr.example.chinese }] : null,
         difficulty_level: cefrToNumber(expr.cefr_level),
         subtitle_start_time: example?.startTime || 0,  // 用于 [▶ 播放这段] 跳转播放
+        subtitle_end_time: example?.endTime || 0,      // 用于 [▶ 播放这段] 自动暂停
         display_order: idx,
         is_reviewed: true,  // 批量上传的内容默认已审核
       }

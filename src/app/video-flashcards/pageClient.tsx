@@ -12,6 +12,7 @@
 
 import { useState, useCallback, useEffect, useRef } from 'react'
 import useSWR from 'swr'
+import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
 import {
   RotateCcw,
@@ -218,50 +219,48 @@ export function VideoFlashcardsClient() {
     cardRef.current.style.transition = immediate ? 'none' : 'transform 0.3s ease-out'
   }, [])
 
-  // 提交复习结果
+  // 提交复习结果（乐观更新）
   const handleReview = useCallback(
-    async (quality: 1 | 2 | 3) => {
+    (quality: 1 | 2 | 3) => {
       if (!currentCard) return
 
-      try {
-        const response = await fetch('/api/user/video-cards/review', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            cardId: currentCard.card.id,
-            cardType: currentCard.card_type,
-            quality,
-          }),
-        })
-
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({}))
-          console.error('[handleReview] API error:', {
-            status: response.status,
-            error: errorData,
-          })
-          return
-        }
-
-        setReviewedCount((c) => c + 1)
-        if (quality >= 2) {
-          setCorrectCount((c) => c + 1)
-        }
-
-        // 重置滑动状态
-        swipeOffsetRef.current = { x: 0, y: 0 }
-        isDraggingRef.current = false
-        setSwipeHint(null)
-        updateCardTransform(0, 0, false)
-
-        // 下一张
-        if (currentIndex < totalCards - 1) {
-          setCurrentIndex((i) => i + 1)
-          setIsFlipped(false)
-        }
-      } catch (error) {
-        console.error('[handleReview] Network error:', error)
+      // 🚀 乐观更新：立即更新 UI
+      setReviewedCount((c) => c + 1)
+      if (quality >= 2) {
+        setCorrectCount((c) => c + 1)
       }
+
+      // 重置滑动状态
+      swipeOffsetRef.current = { x: 0, y: 0 }
+      isDraggingRef.current = false
+      setSwipeHint(null)
+      updateCardTransform(0, 0, false)
+
+      // 下一张
+      if (currentIndex < totalCards - 1) {
+        setCurrentIndex((i) => i + 1)
+        setIsFlipped(false)
+      }
+
+      // 后台发送 API 请求（不阻塞 UI）
+      fetch('/api/user/video-cards/review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          cardId: currentCard.card.id,
+          cardType: currentCard.card_type,
+          quality,
+        }),
+      })
+        .then((response) => {
+          if (!response.ok) {
+            toast.error('复习记录同步失败')
+          }
+        })
+        .catch((error) => {
+          console.error('[handleReview] Network error:', error)
+          toast.error('网络错误，复习记录未同步')
+        })
     },
     [currentCard, currentIndex, totalCards, updateCardTransform]
   )

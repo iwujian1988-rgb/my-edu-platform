@@ -160,8 +160,8 @@ export function cefrToNumber(cefr: string): number {
  */
 export function findWordInSubtitles(
   word: string,
-  subtitles: Array<{ original_text: string; chinese_text: string | null; start_time?: number }>
-): { original: string; translation: string | null; startTime: number } | null {
+  subtitles: Array<{ original_text: string; chinese_text: string | null; start_time?: number; end_time?: number }>
+): { original: string; translation: string | null; startTime: number; endTime: number } | null {
   // 边界处理
   if (!word || typeof word !== 'string') {
     return null
@@ -190,6 +190,7 @@ export function findWordInSubtitles(
         original: subtitle.original_text,
         translation: subtitle.chinese_text,
         startTime: subtitle.start_time ?? 0,
+        endTime: subtitle.end_time ?? 0,
       }
     }
   }
@@ -211,8 +212,8 @@ export function findWordInSubtitles(
  */
 export function findExpressionInSubtitles(
   expression: string,
-  subtitles: Array<{ original_text: string; chinese_text: string | null; start_time?: number }>
-): { original: string; translation: string | null; startTime: number } | null {
+  subtitles: Array<{ original_text: string; chinese_text: string | null; start_time?: number; end_time?: number }>
+): { original: string; translation: string | null; startTime: number; endTime: number } | null {
   // 边界处理
   if (!expression || typeof expression !== 'string') {
     return null
@@ -251,6 +252,7 @@ export function findExpressionInSubtitles(
         original: subtitle.original_text,
         translation: subtitle.chinese_text,
         startTime: subtitle.start_time ?? 0,
+        endTime: subtitle.end_time ?? 0,
       }
     }
   }
