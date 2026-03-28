@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Home, Library, Dumbbell, Settings, Mic } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
-import { useLoading } from './LoadingOverlay'
 import { BookSelectorModal } from './BookSelectorModal'
 import type { Book } from '@/types/book'
 import { createClient } from '@/lib/supabase/client'
@@ -35,7 +34,6 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
   const pathname = usePathname()
   const router = useRouter()
   const { theme, mounted } = useTheme()
-  const { showLoading } = useLoading()
   const isDark = mounted && theme === 'dark'
   const [showBookSelector, setShowBookSelector] = useState(false)
   const [userPermissions, setUserPermissions] = useState<string[]>([])
@@ -123,7 +121,6 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
 
   // 处理导航点击，立即显示加载状态
   const handleNavigation = (href: string) => {
-    showLoading()
     router.push(href)
   }
 

@@ -317,7 +317,7 @@ async function processSingleVideo(
   // 获取字幕用于例句匹配（包含 start_time 用于 [📍] 跳转播放）
   const { data: savedSubtitles } = await supabase
     .from('video_subtitles')
-    .select('original_text, chinese_text, start_time')
+    .select('original_text, chinese_text, start_time, end_time')
     .eq('video_id', videoId)
     .order('display_order')
 
@@ -553,6 +553,12 @@ async function processSingleVideo(
         })
       }
 
+      // 匹配字幕：把 _____ 替换成答案，在字幕列表中查找对应行
+      const cleanSentence = originalText.replace(/_+/g, ex.answer).toLowerCase().trim()
+      const matchedSubtitle = (savedSubtitles as Array<{ original_text: string; start_time: number; end_time: number }> | undefined)
+        ?.find(sub => sub.original_text?.toLowerCase().includes(cleanSentence)
+          ?? cleanSentence.includes(sub.original_text?.toLowerCase() || ''))
+
       return {
         video_id: videoId,
         subtitle_id: null, // 不关联特定字幕
@@ -563,6 +569,8 @@ async function processSingleVideo(
         hint_type: ex.hint ? 'first_letter' : null,
         answer_text: ex.answer,
         display_order: idx,
+        subtitle_start_time: matchedSubtitle?.start_time ?? null,
+        subtitle_end_time: matchedSubtitle?.end_time ?? null,
       }
     })
 

@@ -27,27 +27,40 @@ function usePlayPronunciation() {
   const [playingWord, setPlayingWord] = useState<string | null>(null)
 
   const playWord = useCallback(async (word: string) => {
-    if (playingWord) {
-      setPlayingWord(null)
-    }
-
+    // 停止当前播放
+    speechSynthesis.cancel()
     setPlayingWord(word)
 
     try {
-      // 调用后端 TTS API（有道 + 百度兜底）
+      // 调用后端 TTS API
       const response = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=fr`)
 
       if (!response.ok) {
         // API 失败，回退到浏览器 TTS
         console.warn('[PronunciationTips TTS] API 失败，回退到浏览器 TTS')
         if ('speechSynthesis' in window) {
+          // 先 cancel 再 speak，避免队列问题
           speechSynthesis.cancel()
+          // 延迟一帧确保 cancel 完成
+          await new Promise(resolve => setTimeout(resolve, 100))
           const utterance = new SpeechSynthesisUtterance(word)
           utterance.lang = 'fr-FR'
           utterance.rate = 0.8
+          // 尝试选择法语语音
+          const voices = speechSynthesis.getVoices()
+          const frVoice = voices.find(v => v.lang.startsWith('fr'))
+          if (frVoice) {
+            utterance.voice = frVoice
+          }
           utterance.onend = () => setPlayingWord(null)
-          utterance.onerror = () => setPlayingWord(null)
+          utterance.onerror = (e) => {
+            console.warn('[PronunciationTips TTS] SpeechSynthesis error:', e)
+            setPlayingWord(null)
+          }
           speechSynthesis.speak(utterance)
+
+          // Chrome bug: SpeechSynthesis 可能静默不触发 onend，加超时保护
+          setTimeout(() => setPlayingWord(prev => prev === word ? null : prev), 5000)
         } else {
           setPlayingWord(null)
         }
@@ -74,7 +87,7 @@ function usePlayPronunciation() {
       console.warn('[PronunciationTips TTS] 播放失败:', error)
       setPlayingWord(null)
     }
-  }, [playingWord])
+  }, [])
 
   return { playWord, playingWord }
 }

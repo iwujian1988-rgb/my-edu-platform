@@ -315,6 +315,15 @@ export function VideoPlayer({
     }
   }, [])
 
+  // 监听全屏变化（ESC 退出全屏时同步 React 状态）
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      setIsFullscreen(!!document.fullscreenElement)
+    }
+    document.addEventListener('fullscreenchange', handleFullscreenChange)
+    return () => document.removeEventListener('fullscreenchange', handleFullscreenChange)
+  }, [])
+
   return (
     <div
       ref={containerRef}
@@ -409,7 +418,7 @@ export function VideoPlayer({
               max={duration || 100}
               step={0.1}
               onValueChange={(value) => seek(value[0])}
-              className="cursor-pointer"
+              className="cursor-pointer [&_[role=slider]]:h-4 [&_[role=slider]]:w-4 [&_[role=slider]]:bg-[#B4F416] [&_[role=slider]]:border-2 [&_[role=slider]]:border-black [&_[role=slider]]:shadow-[2px_2px_0px_0px_#000]"
             />
           </div>
 
@@ -425,7 +434,13 @@ export function VideoPlayer({
                   {isMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
                 </Button>
                 <div className="w-20 hidden sm:block">
-                  <Slider value={[isMuted ? 0 : volume]} max={1} step={0.01} onValueChange={handleVolumeChange} />
+                  <Slider
+                    value={[isMuted ? 0 : volume]}
+                    max={1}
+                    step={0.01}
+                    onValueChange={handleVolumeChange}
+                    className="[&_[role=slider]]:h-3.5 [&_[role=slider]]:w-3.5 [&_[role=slider]]:bg-[#B4F416] [&_[role=slider]]:border-2 [&_[role=slider]]:border-black"
+                  />
                 </div>
               </div>
 
@@ -442,12 +457,15 @@ export function VideoPlayer({
                     <span className="text-sm">{playbackSpeed}x</span>
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end">
+                <DropdownMenuContent align="end" className="bg-white dark:bg-gray-800 border-2 border-black shadow-[3px_3px_0px_0px_#000]">
                   {SPEED_OPTIONS.map((option) => (
                     <DropdownMenuItem
                       key={option.value}
                       onClick={() => handleSpeedChange(option.value)}
-                      className={cn(playbackSpeed === option.value && 'bg-primary text-primary-foreground')}
+                      className={cn(
+                        "cursor-pointer font-bold",
+                        playbackSpeed === option.value ? 'bg-[#B4F416] text-black' : 'text-gray-700 dark:text-gray-200'
+                      )}
                     >
                       {option.label}
                     </DropdownMenuItem>

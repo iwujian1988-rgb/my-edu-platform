@@ -362,12 +362,11 @@ export function FillBlankExercise({
           </p>
         </div>
         {/* 播放按钮 - 始终显示用于测试 */}
-        {onPlaySegment && (
+        {onPlaySegment && currentExercise.subtitle_start_time != null && (
           <button
             onClick={() => {
-              // 使用模拟时间：每道题10秒递增， 字幕时长5秒（测试用）
-              const startTime = currentExercise.subtitle_start_time ?? (currentIndex * 10)
-              const endTime = startTime + 5 // 固定5秒长度
+              const startTime = currentExercise.subtitle_start_time!
+              const endTime = currentExercise.subtitle_end_time ?? startTime + 5
               onPlaySegment(startTime, endTime)
             }}
             className="flex-shrink-0 w-12 flex items-center justify-center border-[3px] border-black dark:border-gray-600 bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-0.5 active:shadow-[1px_1px_0px_0px_#000] active:translate-y-0.5 transition-all"

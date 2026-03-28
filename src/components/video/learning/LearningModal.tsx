@@ -765,9 +765,9 @@ function ExpressionCard({ expression, status, onStatusChange, onJumpToSubtitle }
             </span>
           )}
         </div>
-        {onJumpToSubtitle && expression.context && (
+        {onJumpToSubtitle && expression.context && (expression.subtitle_start_time ?? 0) > 0 && (
           <button
-            onClick={() => onJumpToSubtitle(expression.subtitle_start_time ?? 0, expression.subtitle_end_time)}
+            onClick={() => onJumpToSubtitle(expression.subtitle_start_time!, expression.subtitle_end_time)}
             className="flex items-center gap-1 px-2 py-1 text-xs font-black text-black bg-[#B4F416] hover:bg-[#a3e014] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
           >
             <Play className="w-3 h-3" />

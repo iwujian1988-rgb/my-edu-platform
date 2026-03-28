@@ -101,6 +101,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [isPipPlaying, setIsPipPlaying] = useState(false)
   const [isPipMuted, setIsPipMuted] = useState(false)
   const pipVideoRef = useRef<HTMLVideoElement>(null)
+  const pipEnterTimeRef = useRef<number>(0)
   const mainVideoRef = useRef<HTMLVideoElement>(null)
 
   // PC端左侧高度 ref（用于右侧对齐）
@@ -272,9 +273,21 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   // 进入 PIP 模式
   const enterPipMode = useCallback(() => {
     console.log('[enterPipMode] Entering PIP mode, previous pipMode:', pipMode)
+    // 记住主视频当前时间，PIP 视频将从此处继续
+    pipEnterTimeRef.current = currentVideoTime
     setPipMode(true)
     // 暂停主视频（如果正在播放）
     setPauseMainVideo(true)
+  }, [pipMode, currentVideoTime])
+
+  // PIP 视频挂载后，同步到进入时的主视频时间并播放
+  useEffect(() => {
+    if (!pipMode) return
+    const videoEl = pipVideoRef.current
+    if (!videoEl) return
+
+    videoEl.currentTime = pipEnterTimeRef.current
+    videoEl.play().catch(() => {})
   }, [pipMode])
 
   // 退出 PIP 模式
@@ -286,8 +299,9 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
       setSeekToTime(pipVideoRef.current.currentTime)
       setSeekTrigger(prev => prev + 1)
     }
-    setPauseMainVideo(false)
-  }, [pipMode])
+    // PIP暂停则主视频也暂停，PIP播放则主视频也播放
+    setPauseMainVideo(!isPipPlaying)
+  }, [pipMode, isPipPlaying])
 
   // 切换 Tab 时处理 PIP 模式
   const handleTabChange = useCallback((tab: TabValue) => {
@@ -437,7 +451,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 onClick={exitPipMode}
                 className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000]"
               >
-                展开
+                恢复
               </button>
             </div>
           </div>
@@ -445,38 +459,39 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
         {/* 视频区 - 吸顶（PIP 模式下隐藏） */}
         {!pipMode && (
-          <div className="sticky top-0 z-40 bg-gray-50 dark:bg-gray-900">
-            {/* 返回按钮 */}
-            <div className="px-3 py-1.5">
+          <div className="sticky top-0 z-40">
+            {/* 视频播放器 + 半透明返回按钮 */}
+            <div className="relative">
+              {!isLargeScreen && (
+                <VideoPlayer
+                  video={video}
+                  onTimeUpdate={handleTimeUpdate}
+                  initialPosition={data.user_progress?.last_position || 0}
+                  seekTo={seekToTime}
+                  seekTrigger={seekTrigger}
+                  segmentEndTime={segmentEndTime}
+                  pause={pauseMainVideo}
+                />
+              )}
               <button
                 onClick={() => router.back()}
-                className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] active:shadow-[1px_1px_0px_0px_#000] active:translate-y-0.5 transition-all"
+                className="absolute top-2 left-3 z-10 flex items-center gap-1 px-2 py-1 text-xs font-bold text-white bg-black/40 backdrop-blur-sm rounded active:bg-black/60 transition-colors"
               >
                 <ArrowLeft className="w-3 h-3" />
                 返回
               </button>
             </div>
 
-            {/* 视频播放器 - 只在移动端渲染 */}
-            {!isLargeScreen && (
-              <VideoPlayer
-                video={video}
-                onTimeUpdate={handleTimeUpdate}
-                initialPosition={data.user_progress?.last_position || 0}
-                seekTo={seekToTime}
-                seekTrigger={seekTrigger}
-                segmentEndTime={segmentEndTime}
-                pause={pauseMainVideo}
-              />
-            )}
-
-          {/* 功能按钮导航 - 视频标题 + 5个图标按钮 + 字幕模式下拉菜单 */}
-          <div className="bg-white dark:bg-gray-800 border-b-[3px] border-black dark:border-gray-600 px-3 py-2">
+          {/* 功能按钮导航 */}
+          <div className="bg-white dark:bg-gray-800 border-l-[3px] border-r-[3px] border-black dark:border-gray-600 px-3 py-2">
             {/* 视频标题 - 双语显示 */}
-            <div className="mb-2">
-              <h1 className="text-base font-black text-black dark:text-white truncate">{video.title}</h1>
+            <div className="mb-6">
+              <h1 className="text-lg font-black text-black dark:text-white truncate">{video.title}</h1>
               {video.original_title && video.original_title !== video.title && (
-                <p className="text-xs text-gray-500 dark:text-gray-400 truncate mt-0.5">{video.original_title}</p>
+                <p className="text-sm text-gray-500 dark:text-gray-400 truncate mt-0.5">{video.original_title}</p>
+              )}
+              {video.description && (
+                <p className="text-sm text-gray-400 dark:text-gray-500 truncate mt-1">{video.description}</p>
               )}
             </div>
 
@@ -517,64 +532,63 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 )}
               </div>
             )}
-            {/* 使用 justify-end 让按钮始终靠右，小眼睛显示时自然在按钮左侧 */}
-            <div className="flex items-center justify-end gap-1">
-              {/* 字幕模式下拉菜单 - 只在听模式显示 */}
-              {currentTab === 'listen' && (
-                <DropdownMenu>
-                  <DropdownMenuTrigger asChild>
-                    <button className="flex items-center gap-1 px-2 py-2 text-sm font-bold bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000]">
-                      <Eye className="w-4 h-4" />
-                      <ChevronDown className="w-3 h-3" />
-                    </button>
-                  </DropdownMenuTrigger>
-                  <DropdownMenuContent align="start" className="border-[2px] border-black shadow-[3px_3px_0px_0px_#000] bg-white dark:bg-gray-800">
-                    <DropdownMenuItem
-                      onClick={() => setDisplayMode('original')}
-                      className={cn("cursor-pointer font-bold", displayMode === 'original' && "bg-[#B4F416]")}
-                    >
-                      原文
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      onClick={() => setDisplayMode('chinese')}
-                      className={cn("cursor-pointer font-bold", displayMode === 'chinese' && "bg-[#B4F416]")}
-                    >
-                      中文
-                    </DropdownMenuItem>
-                    <DropdownMenuItem
-                      onClick={() => setDisplayMode('bilingual')}
-                      className={cn("cursor-pointer font-bold", displayMode === 'bilingual' && "bg-[#B4F416]")}
-                    >
-                      双语
-                    </DropdownMenuItem>
-                  </DropdownMenuContent>
-                </DropdownMenu>
-              )}
+            {/* 字幕模式居左，功能按钮居右，与PC布局一致 */}
+            <div className="flex items-center justify-between gap-1">
+              {/* 字幕模式下拉菜单 - 居左，只在听模式显示 */}
+              <div className="w-[44px] flex-shrink-0">
+                {currentTab === 'listen' && (
+                  <DropdownMenu>
+                    <DropdownMenuTrigger asChild>
+                      <button className={cn("flex items-center gap-0.5 pb-0.5 text-xs font-bold transition-colors border-b-[3px] border-[#B4F416] text-[#B4F416]")}>
+                        {displayMode === 'bilingual' ? '双' : displayMode === 'chinese' ? '汉' : '原'}
+                        <ChevronDown className="w-3 h-3" />
+                      </button>
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="border-[2px] border-black shadow-[3px_3px_0px_0px_#000] bg-white dark:bg-gray-800">
+                      <DropdownMenuItem
+                        onClick={() => setDisplayMode('original')}
+                        className={cn("cursor-pointer font-bold", displayMode === 'original' && "bg-[#B4F416]")}
+                      >
+                        原文
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        onClick={() => setDisplayMode('chinese')}
+                        className={cn("cursor-pointer font-bold", displayMode === 'chinese' && "bg-[#B4F416]")}
+                      >
+                        中文
+                      </DropdownMenuItem>
+                      <DropdownMenuItem
+                        onClick={() => setDisplayMode('bilingual')}
+                        className={cn("cursor-pointer font-bold", displayMode === 'bilingual' && "bg-[#B4F416]")}
+                      >
+                        双语
+                      </DropdownMenuItem>
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                )}
+              </div>
 
-              {/* 5个功能按钮 - 所有按钮统一 shadow 样式，避免点击时跳动 */}
-              <div className="flex items-center gap-1">
-                <button onClick={() => handleTabChange('listen')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'listen' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="听">
-                  <Headphones className="w-4 h-4" />
+              {/* 5个功能按钮 - 图标+文字+绿色下划线 */}
+              <div className="flex items-center gap-3">
+                <button onClick={() => handleTabChange('listen')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'listen' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
+                  <Headphones className="w-3.5 h-3.5" />
+                  字幕
                 </button>
-                <button onClick={() => handleTabChange('speak')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'speak' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="说读">
-                  <Mic className="w-4 h-4" />
+                <button onClick={() => handleTabChange('speak')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'speak' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
+                  <Mic className="w-3.5 h-3.5" />
+                  跟读
                 </button>
-                <button onClick={() => handleTabChange('write')} className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'write' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")} title="写">
-                  <Pen className="w-4 h-4" />
+                <button onClick={() => handleTabChange('write')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'write' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
+                  <Pen className="w-3.5 h-3.5" />
+                  听写
                 </button>
-                <button
-                  onClick={() => handleTabChange('learn')}
-                  className={cn("p-2 border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transition-colors", currentTab === 'learn' ? "bg-[#B4F416] text-black" : "bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300")}
-                  title="学"
-                >
-                  <BookOpen className="w-4 h-4" />
+                <button onClick={() => handleTabChange('learn')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'learn' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
+                  <BookOpen className="w-3.5 h-3.5" />
+                  知识点
                 </button>
-                <button
-                  onClick={() => setExportTrigger(prev => prev + 1)}
-                  className="p-2 border-[2px] border-black bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-500 transition-colors shadow-[2px_2px_0px_0px_#000]"
-                  title="导出字幕"
-                >
-                  <Download className="w-4 h-4" />
+                <button onClick={() => setExportTrigger(prev => prev + 1)} className="flex items-center gap-1 pb-0.5 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors border-b-2 border-transparent">
+                  <Download className="w-3.5 h-3.5" />
+                  导出
                 </button>
               </div>
             </div>
@@ -599,6 +613,20 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               autoScroll={autoScroll}
               externalExportTrigger={exportTrigger}
             />
+          )}
+          {/* 隐藏渲染 SubtitleList 以保证导出弹窗在任何 Tab 下都能弹出 */}
+          {currentTab !== 'listen' && (
+            <div className="hidden">
+              <SubtitleList
+                subtitles={subtitles}
+                currentVideoTime={currentVideoTime}
+                onSubtitleClick={handleSubtitleClick}
+                onHighlightClick={handleHighlightClick}
+                displayMode={displayMode}
+                autoScroll={autoScroll}
+                externalExportTrigger={exportTrigger}
+              />
+            </div>
           )}
           {currentTab === 'speak' && (
             <RecordingPanel
@@ -804,8 +832,8 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                       {currentTab === 'listen' && (
                         <DropdownMenu>
                           <DropdownMenuTrigger asChild>
-                            <button className="flex items-center gap-1 px-2 py-2 text-sm font-bold bg-white dark:bg-gray-600 text-black dark:text-white border-[2px] border-black shadow-[2px_2px_0px_0px_#000]">
-                              <Eye className="w-4 h-4" />
+                            <button className="flex items-center gap-1 px-2 py-1.5 text-xs font-black bg-white dark:bg-gray-600 text-black dark:text-white border-[2px] border-black shadow-[2px_2px_0px_0px_#000]">
+                              {displayMode === 'bilingual' ? '双语' : displayMode === 'chinese' ? '中文' : '原文'}
                               <ChevronDown className="w-3 h-3" />
                             </button>
                           </DropdownMenuTrigger>
@@ -833,33 +861,31 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                       )}
                     </div>
 
-                    {/* 5个功能按钮 - 统一尺寸，避免跳动 */}
+                    {/* 5个功能按钮 */}
                     <div className="flex items-center gap-1">
-                      <button onClick={() => setCurrentTab('listen')} className={cn("p-2 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000]", currentTab === 'listen' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")} title="听">
-                        <Headphones className="w-4 h-4" />
+                      <button onClick={() => setCurrentTab('listen')} className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", currentTab === 'listen' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}>
+                        字幕
                       </button>
-                      <button onClick={() => setCurrentTab('speak')} className={cn("p-2 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000]", currentTab === 'speak' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")} title="说读">
-                        <Mic className="w-4 h-4" />
+                      <button onClick={() => setCurrentTab('speak')} className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", currentTab === 'speak' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}>
+                        跟读
                       </button>
-                      <button onClick={() => setCurrentTab('write')} className={cn("p-2 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000]", currentTab === 'write' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")} title="写">
-                        <Pen className="w-4 h-4" />
+                      <button onClick={() => setCurrentTab('write')} className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", currentTab === 'write' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}>
+                        听写
                       </button>
                       <button
                         onClick={() => {
                           setIsLearningModalOpen(true)
                           setPauseMainVideo(true) // 打开学习模块时暂停主视频
                         }}
-                        className={cn("p-2 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000]", isLearningModalOpen ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}
-                        title="学"
+                        className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", isLearningModalOpen ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}
                       >
-                        <BookOpen className="w-4 h-4" />
+                        知识点
                       </button>
                       <button
                         onClick={() => setExportTrigger(prev => prev + 1)}
-                        className="p-2 border-[2px] border-black bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500 transition-colors shadow-[2px_2px_0px_0px_#000]"
-                        title="导出字幕"
+                        className="px-2.5 py-1.5 border-[2px] border-black bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500 transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black"
                       >
-                        <Download className="w-4 h-4" />
+                        导出
                       </button>
                     </div>
                   </div>

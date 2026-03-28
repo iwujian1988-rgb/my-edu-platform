@@ -338,6 +338,7 @@ export interface VideoExercise {
   answers?: string[]
   explanation?: string
   subtitle_start_time?: number  // 字幕开始时间（秒），用于播放按钮跳转
+  subtitle_end_time?: number    // 字幕结束时间（秒），用于播放按钮自动暂停
 }
 
 // ============================================

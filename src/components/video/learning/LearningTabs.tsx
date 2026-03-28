@@ -132,7 +132,7 @@ export function LearningTabs({
       }
       return getCardStatus?.(cardType, cardId)
     },
-    [getCardStatus, onStatusChange]
+    [getCardStatus, localStatusMap]
   )
 
   // 更新卡片状态
@@ -783,10 +783,10 @@ function ExpressionsTab({ expressions, onJumpToSubtitle, onPlaySegment, getCardS
                 </div>
               )}
 
-              {/* 播放按钮 */}
-              {onPlaySegment && expr.context && expr.subtitle_start_time !== undefined && expr.subtitle_end_time !== undefined && (
+              {/* 播放按钮 - 仅在有时间数据时显示 */}
+              {onPlaySegment && expr.context && (expr.subtitle_start_time ?? 0) > 0 && expr.subtitle_end_time && (
                 <button
-                  onClick={() => onPlaySegment(expr.subtitle_start_time || 0, expr.subtitle_end_time || 0)}
+                  onClick={() => onPlaySegment(expr.subtitle_start_time!, expr.subtitle_end_time!)}
                   className="flex items-center gap-1 px-2 py-1 text-xs font-black text-black bg-[#B4F416] hover:bg-[#a3e014] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
                   title="播放这段字幕"
                 >

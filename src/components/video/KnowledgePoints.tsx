@@ -77,24 +77,57 @@ function KnowledgeList({
   emptyText: string
 }) {
   const [playingId, setPlayingId] = useState<string | null>(null)
+  const ttsCacheRef = useState<Map<string, string>>(new Map())
 
   const playAudio = async (text: string, cardId: string) => {
     if (playingId === cardId) return
     setPlayingId(cardId)
+
     try {
+      // 检查缓存
+      const cacheKey = `${language}:${text.toLowerCase()}`
+      const cachedUrl = ttsCacheRef.current.get(cacheKey)
+
+      if (cachedUrl) {
+        const audio = new Audio(cachedUrl)
+        audio.onended = () => setPlayingId(null)
+        audio.onerror = () => setPlayingId(null)
+        await audio.play()
+        return
+      }
+
       const res = await fetch(`/api/tts?text=${encodeURIComponent(text)}&type=2&language=${language}`)
       if (res.ok) {
         const blob = await res.blob()
-        const audio = new Audio(URL.createObjectURL(blob))
+        const audioUrl = URL.createObjectURL(blob)
+        // 缓存音频 URL
+        ttsCacheRef.current.set(cacheKey, audioUrl)
+        const audio = new Audio(audioUrl)
         audio.onended = () => setPlayingId(null)
+        audio.onerror = () => setPlayingId(null)
         await audio.play()
+        return
+      }
+      // API 失败，回退浏览器 TTS
+      if ('speechSynthesis' in window) {
+        speechSynthesis.cancel()
+        const utterance = new SpeechSynthesisUtterance(text)
+        utterance.lang = language === 'fr' ? 'fr-FR' : language === 'en' ? 'en-US' : language
+        utterance.rate = 0.8
+        utterance.onend = () => setPlayingId(null)
+        utterance.onerror = () => setPlayingId(null)
+        speechSynthesis.speak(utterance)
+        return
       }
     } catch {
       if ('speechSynthesis' in window) {
+        speechSynthesis.cancel()
         const utterance = new SpeechSynthesisUtterance(text)
         utterance.lang = language === 'fr' ? 'fr-FR' : language === 'en' ? 'en-US' : language
         utterance.onend = () => setPlayingId(null)
+        utterance.onerror = () => setPlayingId(null)
         speechSynthesis.speak(utterance)
+        return
       }
     }
     setPlayingId(null)
