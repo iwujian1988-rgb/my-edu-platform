@@ -180,6 +180,10 @@ export default function BatchPublishClient() {
   // 封面选择器状态（内嵌模式）
   const [activeThumbnailSelector, setActiveThumbnailSelector] = useState<string | null>(null) // 当前展开的视频ID
 
+  // 重新上传内容状态
+  const [reuploadingVideoId, setReuploadingVideoId] = useState<string | null>(null)
+  const [reuploading, setReuploading] = useState(false)
+
   // 更新封面
   const handleThumbnailSelect = useCallback(async (videoId: string, thumbnailUrl: string) => {
     console.log('[handleThumbnailSelect] 开始', { videoId, thumbnailUrl })
@@ -229,6 +233,60 @@ export default function BatchPublishClient() {
     }
     // 如果当前视频已经打开，则关闭；否则打开
     setActiveThumbnailSelector(prev => prev === video.id ? null : video.id)
+  }, [])
+
+  // 处理重新上传内容（传什么更新什么）
+  const handleReuploadSubmit = useCallback(async (
+    videoId: string,
+    subtitleFile: File | null,
+    materialFile: File | null,
+  ) => {
+    if (!subtitleFile && !materialFile) {
+      alert('请至少选择一个文件')
+      return
+    }
+    setReuploading(true)
+    try {
+      const payload: Record<string, unknown> = { videoId }
+      if (subtitleFile) {
+        payload.subtitle_json = JSON.parse(await subtitleFile.text())
+      }
+      if (materialFile) {
+        payload.learning_material_json = JSON.parse(await materialFile.text())
+      }
+
+      const res = await fetch('/api/admin/videos/batch-upload', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      })
+
+      const data = await res.json()
+
+      if (data.success) {
+        const { subtitles_count, words_count, expressions_count } = data.data
+        const parts: string[] = []
+        if (subtitles_count) parts.push(`字幕: ${subtitles_count} 条`)
+        if (words_count) parts.push(`单词: ${words_count} 个`)
+        if (expressions_count) parts.push(`表达: ${expressions_count} 个`)
+        alert(`重新处理成功!\n${parts.join('\n')}`)
+
+        // 刷新视频列表以更新统计数据
+        const refreshRes = await fetch('/api/admin/videos/batch-publish')
+        const refreshData: FetchDataResponse = await refreshRes.json()
+        if (refreshData.success) {
+          setVideos(refreshData.data.videos)
+        }
+      } else {
+        alert(`重新处理失败: ${data.error || '未知错误'}`)
+      }
+    } catch (error) {
+      console.error('重新上传失败:', error)
+      alert('重新上传失败，请检查文件格式')
+    } finally {
+      setReuploading(false)
+      setReuploadingVideoId(null)
+    }
   }, [])
 
   // 获取数据
@@ -1108,6 +1166,81 @@ export default function BatchPublishClient() {
                                         }}
                                         onCancel={() => setActiveThumbnailSelector(null)}
                                       />
+                                    </div>
+                                  )}
+                                </div>
+
+                                {/* 重新上传字幕和学习材料 */}
+                                <div className="mt-3">
+                                  <button
+                                    onClick={(e) => {
+                                      e.stopPropagation()
+                                      setReuploadingVideoId(reuploadingVideoId === video.id ? null : video.id)
+                                    }}
+                                    className={cn(
+                                      "px-3 py-1.5 text-sm font-medium rounded border-2 transition-all flex items-center gap-1",
+                                      reuploadingVideoId === video.id
+                                        ? "bg-orange-100 text-orange-700 border-orange-300"
+                                        : "bg-amber-50 text-amber-700 border-amber-300 hover:bg-amber-100"
+                                    )}
+                                  >
+                                    📂 重新上传字幕/学习材料
+                                  </button>
+
+                                  {reuploadingVideoId === video.id && (
+                                    <div
+                                      className="mt-2 p-3 bg-orange-50 dark:bg-orange-900/20 border-2 border-orange-200 dark:border-orange-700 rounded space-y-2"
+                                      onClick={(e) => e.stopPropagation()}
+                                    >
+                                      <p className="text-xs text-orange-600 dark:text-orange-400">
+                                        选择要更新的文件，至少选一个。字幕 JSON 会替换所有字幕；学习材料 JSON 会替换单词卡片、表达、语法点等。
+                                      </p>
+                                      <div className="grid grid-cols-2 gap-2">
+                                        <div>
+                                          <label className="block text-xs text-gray-500 mb-1">字幕 JSON（可选）</label>
+                                          <input
+                                            type="file"
+                                            accept=".json"
+                                            id={`subtitle-${video.id}`}
+                                            className="w-full text-xs file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:bg-orange-100 file:text-orange-700"
+                                          />
+                                        </div>
+                                        <div>
+                                          <label className="block text-xs text-gray-500 mb-1">学习材料 JSON（可选）</label>
+                                          <input
+                                            type="file"
+                                            accept=".json"
+                                            id={`material-${video.id}`}
+                                            className="w-full text-xs file:mr-2 file:py-1 file:px-2 file:rounded file:border-0 file:text-xs file:bg-orange-100 file:text-orange-700"
+                                          />
+                                        </div>
+                                      </div>
+                                      <div className="flex justify-end gap-2">
+                                        <button
+                                          onClick={() => setReuploadingVideoId(null)}
+                                          className="px-2 py-1 text-xs rounded border border-gray-300 hover:bg-gray-100"
+                                        >
+                                          取消
+                                        </button>
+                                        <button
+                                          onClick={async () => {
+                                            const subInput = document.getElementById(`subtitle-${video.id}`) as HTMLInputElement
+                                            const matInput = document.getElementById(`material-${video.id}`) as HTMLInputElement
+                                            const subFile = subInput?.files?.[0] || null
+                                            const matFile = matInput?.files?.[0] || null
+                                            await handleReuploadSubmit(video.id, subFile, matFile)
+                                          }}
+                                          disabled={reuploading}
+                                          className={cn(
+                                            "px-3 py-1 text-xs font-medium rounded border-2 transition-all",
+                                            reuploading
+                                              ? "bg-gray-200 text-gray-400 cursor-wait border-gray-300"
+                                              : "bg-orange-500 text-white border-orange-600 hover:bg-orange-600"
+                                          )}
+                                        >
+                                          {reuploading ? '处理中...' : '确认重新处理'}
+                                        </button>
+                                      </div>
                                     </div>
                                   )}
                                 </div>

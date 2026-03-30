@@ -26,6 +26,7 @@ import { checkAdminForAPI } from '@/lib/admin-auth'
 import { completeStep } from '@/lib/workflow-helper'
 import { lookupBatch } from '@/lib/dictionary'
 import { NextResponse } from 'next/server'
+import { NextRequest } from 'next/server'
 import {
   timeStringToSeconds,
   cefrToDifficulty,
@@ -43,6 +44,8 @@ import type {
   BatchUploadResult,
   BatchUploadVideoItem,
   VideoStatus,
+  SubtitleJsonInput,
+  LearningMaterialJsonInput,
 } from '@/types/video'
 
 // ============================================
@@ -150,18 +153,28 @@ export async function POST(request: Request) {
     const results: BatchUploadResult[] = []
     const errors: Array<{ index: number; error: string }> = []
 
-    // Step 3: 串行处理每个视频（避免资源竞争）
-    for (let i = 0; i < videos.length; i++) {
-      try {
-        const item = videos[i]
-        const result = await processSingleVideo(supabase, item, i)
-        results.push(result)
-        console.log(`[批量上传] 视频 ${i + 1}/${videos.length} 处理成功: ${result.title}`)
-      } catch (error) {
-        const errorMsg = error instanceof Error ? error.message : String(error)
-        errors.push({ index: i, error: errorMsg })
-        console.error(`[批量上传] 视频 ${i + 1}/${videos.length} 处理失败:`, errorMsg)
-      }
+    // Step 3: 并发处理视频（限并发数，避免 DB 连接池耗尽）
+    const CONCURRENCY_LIMIT = 3
+
+    for (let batchStart = 0; batchStart < videos.length; batchStart += CONCURRENCY_LIMIT) {
+      const batch = videos.slice(batchStart, batchStart + CONCURRENCY_LIMIT)
+      const batchPromises = batch.map((item, j) => {
+        const idx = batchStart + j
+        return processSingleVideo(supabase, item, idx)
+          .then(result => {
+            results.push(result)
+            console.log(`[批量上传] 视频 ${idx + 1}/${videos.length} 处理成功: ${result.title}`)
+            return { success: true as const, result }
+          })
+          .catch(error => {
+            const errorMsg = error instanceof Error ? error.message : String(error)
+            errors.push({ index: idx, error: errorMsg })
+            console.error(`[批量上传] 视频 ${idx + 1}/${videos.length} 处理失败:`, errorMsg)
+            return { success: false as const, error: errorMsg }
+          })
+      })
+
+      await Promise.all(batchPromises)
     }
 
     // Step 4: 返回结果
@@ -304,22 +317,17 @@ async function processSingleVideo(
     display_order: idx,
   }))
 
-  const { error: subtitlesError } = await supabase
+  // insert + select 一步完成，省掉一次 DB 往返
+  const { data: savedSubtitles, error: subtitlesError } = await supabase
     .from('video_subtitles')
     .insert(subtitlesData)
+    .select('original_text, chinese_text, start_time, end_time')
 
   if (subtitlesError) {
     throw new Error(`存储字幕失败: ${subtitlesError.message}`)
   }
 
   console.log(`[批量上传] 存储字幕成功: ${subtitlesData.length} 条`)
-
-  // 获取字幕用于例句匹配（包含 start_time 用于 [📍] 跳转播放）
-  const { data: savedSubtitles } = await supabase
-    .from('video_subtitles')
-    .select('original_text, chinese_text, start_time, end_time')
-    .eq('video_id', videoId)
-    .order('display_order')
 
   // Step 5: 处理单词
   const vocabulary = learning_material_json.language_analysis?.vocabulary || []
@@ -338,7 +346,9 @@ async function processSingleVideo(
     if (uniqueWords.length > 0) {
       // 调用词典服务批量查询
       const words = uniqueWords.map((v: { word: string; original: VocabularyInput }) => v.word)
-      const dictResults = await lookupBatch(words, 'fr')
+      // skipFallback: 跳过 ultimateProvider 外部 HTTP 兜底查询（8s/词超时是批量上传慢的根因）
+      // 本地词库 97.8% 覆盖率已足够，缺失词仍有 JSON 输入数据兜底
+      const dictResults = await lookupBatch(words, 'fr', { skipFallback: true })
 
       const wordCards = uniqueWords.map((v: { word: string; original: VocabularyInput }, idx: number) => {
         const original = v.original
@@ -607,5 +617,335 @@ async function processSingleVideo(
     console.error(`[批量上传] 处理失败，开始回滚 videoId=${videoId}:`, error)
     await rollbackVideo(supabase, videoId)
     throw error
+  }
+}
+
+// ============================================
+// PATCH: 重新处理单个视频的字幕和/或学习材料
+// 传什么更新什么，未传的保持不变
+// ============================================
+
+interface ReprocessRequest {
+  videoId: string
+  subtitle_json?: SubtitleJsonInput
+  learning_material_json?: LearningMaterialJsonInput
+}
+
+export async function PATCH(request: NextRequest) {
+  try {
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error || '未授权', code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
+    const body: ReprocessRequest = await request.json()
+    const { videoId, subtitle_json, learning_material_json } = body
+
+    if (!videoId) {
+      return NextResponse.json({ error: '缺少 videoId' }, { status: 400 })
+    }
+    if (!subtitle_json && !learning_material_json) {
+      return NextResponse.json({ error: '至少需要传 subtitle_json 或 learning_material_json' }, { status: 400 })
+    }
+
+    const rawClient = await createAdminClient()
+    const supabase = rawClient as unknown as SupabaseClient<any>
+
+    // 验证视频存在
+    const { data: existingVideo, error: fetchError } = await supabase
+      .from('videos')
+      .select('id, status')
+      .eq('id', videoId)
+      .single()
+
+    if (fetchError || !existingVideo) {
+      return NextResponse.json({ error: '视频不存在' }, { status: 404 })
+    }
+
+    console.log(`[重新处理] 开始 videoId=${videoId} subtitle=${!!subtitle_json} material=${!!learning_material_json}`)
+
+    // 需要拿已有字幕，给学习材料匹配时间用
+    let savedSubtitles: Array<{ original_text: string; chinese_text: string; start_time: number; end_time: number }> | null = null
+
+    // ---------- 处理字幕 ----------
+    let subtitlesCount = 0
+    if (subtitle_json) {
+      if (!subtitle_json.subtitles?.length) {
+        return NextResponse.json({ error: '字幕 JSON 缺少 subtitles 数组' }, { status: 400 })
+      }
+
+      // 删除旧字幕
+      await supabase.from('video_subtitles').delete().eq('video_id', videoId)
+
+      const subtitlesData = subtitle_json.subtitles.map((sub: SubtitleInput, idx: number) => ({
+        video_id: videoId,
+        start_time: timeStringToSeconds(sub.start_time),
+        end_time: timeStringToSeconds(sub.end_time),
+        original_text: sub.french,
+        chinese_text: sub.chinese,
+        word_count: sub.french ? sub.french.split(/\s+/).filter(Boolean).length : 0,
+        display_order: idx,
+      }))
+
+      const { data: inserted, error: subtitlesError } = await supabase
+        .from('video_subtitles')
+        .insert(subtitlesData)
+        .select('original_text, chinese_text, start_time, end_time')
+
+      if (subtitlesError) {
+        throw new Error(`重新存储字幕失败: ${subtitlesError.message}`)
+      }
+      savedSubtitles = inserted
+      subtitlesCount = subtitlesData.length
+      await completeStep(supabase, videoId, 'subtitles')
+      console.log(`[重新处理] 字幕: ${subtitlesCount} 条`)
+    } else {
+      // 未传字幕时，从数据库拿已有字幕给学习材料匹配用
+      const { data: existingSubs } = await supabase
+        .from('video_subtitles')
+        .select('original_text, chinese_text, start_time, end_time')
+        .eq('video_id', videoId)
+      savedSubtitles = existingSubs
+    }
+
+    // ---------- 处理学习材料 ----------
+    let wordsCount = 0
+    let expressionsCount = 0
+    let grammarCount = 0
+    let pronunciationCount = 0
+    let exercisesCount = 0
+
+    if (learning_material_json) {
+      // 学习材料相关的表全部清理重插
+      const MATERIAL_TABLES = [
+        'video_word_cards',
+        'video_expression_cards',
+        'video_grammar_points',
+        'video_pronunciation_tips',
+        'video_vocabulary_networks',
+        'video_exercises',
+      ]
+      for (const table of MATERIAL_TABLES) {
+        const { error: delError } = await supabase.from(table).delete().eq('video_id', videoId)
+        if (delError) {
+          console.error(`[重新处理] 清理 ${table} 失败:`, delError)
+        }
+      }
+
+      // 单词
+      const vocabulary = learning_material_json.language_analysis?.vocabulary || []
+      if (vocabulary.length > 0) {
+        const uniqueWords = uniqueArray(
+          vocabulary.map((v: VocabularyInput) => ({
+            word: cleanWord(v.french),
+            original: v,
+          })).filter((v: { word: string; original: VocabularyInput }) => v.word),
+          'word'
+        )
+
+        if (uniqueWords.length > 0) {
+          const words = uniqueWords.map((v: { word: string; original: VocabularyInput }) => v.word)
+          const dictResults = await lookupBatch(words, 'fr', { skipFallback: true })
+
+          const wordCards = uniqueWords.map((v: { word: string; original: VocabularyInput }, idx: number) => {
+            const original = v.original
+            const dictResult = dictResults[idx]
+            const example = findWordInSubtitles(v.word, savedSubtitles || [])
+            const dictExamples = dictResult?.examples || []
+            const firstExample = dictExamples[0]
+            const definitions = dictResult?.definitions || []
+
+            return {
+              video_id: videoId,
+              word: v.word,
+              phonetic: dictResult?.phonetic || original.ipa || null,
+              part_of_speech: dictResult?.posDetail || dictResult?.pos || original.part_of_speech || null,
+              chinese_definition: dictResult?.definition || original.chinese || '',
+              example_sentence: firstExample?.fr || null,
+              example_sentence_cn: firstExample?.zh || null,
+              example_from_video: example?.original || null,
+              example_translation: example?.translation || null,
+              subtitle_start_time: example?.startTime || 0,
+              subtitle_end_time: example?.endTime || 0,
+              gender: dictResult?.gender || null,
+              cefr_level: dictResult?.cefrLevel || original.cefr_level || null,
+              definitions: definitions.length > 0 ? definitions : null,
+              examples: dictExamples.length > 0 ? dictExamples : null,
+              difficulty_level: cefrToNumber(original.cefr_level),
+              display_order: idx,
+              is_reviewed: true,
+            }
+          })
+
+          const { error: wordsError } = await supabase.from('video_word_cards').insert(wordCards)
+          if (!wordsError) {
+            wordsCount = wordCards.length
+          } else {
+            console.error('[重新处理] 单词卡片失败:', wordsError)
+          }
+        }
+      }
+
+      // 表达
+      const expressions = learning_material_json.language_analysis?.key_expressions || []
+      if (expressions.length > 0) {
+        const expressionCards = expressions.map((expr: ExpressionInput, idx: number) => {
+          const example = findExpressionInSubtitles(expr.expression, savedSubtitles || [])
+          const fullExpression = example?.original
+            ? extractExpressionFromSubtitle(expr.expression, example.original)
+            : expr.expression
+
+          return {
+            video_id: videoId,
+            expression: fullExpression,
+            context: example?.original || expr.example?.french || '',
+            context_translation: example?.translation || expr.example?.chinese || null,
+            formula: expr.grammar_usage || null,
+            meaning: expr.chinese || null,
+            examples: expr.example ? [{ original: expr.example.french, cn: expr.example.chinese }] : null,
+            difficulty_level: cefrToNumber(expr.cefr_level),
+            subtitle_start_time: example?.startTime || 0,
+            subtitle_end_time: example?.endTime || 0,
+            display_order: idx,
+            is_reviewed: true,
+          }
+        })
+
+        const { error: exprError } = await supabase.from('video_expression_cards').insert(expressionCards)
+        if (!exprError) expressionsCount = expressionCards.length
+      }
+
+      // 语法点
+      const grammarPoints = learning_material_json.deep_learning?.grammar_points || []
+      if (grammarPoints.length > 0) {
+        const grammarCards = grammarPoints.map((gp: GrammarPointInput, idx: number) => ({
+          video_id: videoId,
+          name: gp.name,
+          structure: gp.structure || null,
+          example_french: gp.example?.french || null,
+          example_chinese: gp.example?.chinese || null,
+          example_ipa: gp.example?.ipa || null,
+          purpose: gp.purpose || null,
+          note: gp.note || null,
+          display_order: idx,
+        }))
+        const { error } = await supabase.from('video_grammar_points').insert(grammarCards)
+        if (!error) grammarCount = grammarCards.length
+      }
+
+      // 发音要点
+      const pronunciationTips = learning_material_json.deep_learning?.pronunciation?.key_sounds || []
+      if (pronunciationTips.length > 0) {
+        const pronunciationCards = pronunciationTips.map((pt: PronunciationInput, idx: number) => ({
+          video_id: videoId,
+          sound_symbol: pt.sound,
+          example_words: pt.example_words || [],
+          instruction: pt.instruction || null,
+          practice_tip: pt.practice_tip || null,
+          display_order: idx,
+        }))
+        const { error } = await supabase.from('video_pronunciation_tips').insert(pronunciationCards)
+        if (!error) pronunciationCount = pronunciationCards.length
+      }
+
+      // 词汇网络
+      const vocabNetwork = learning_material_json.deep_learning?.vocabulary_network
+      if (vocabNetwork) {
+        let structureData = vocabNetwork.structure || null
+        let relatedWordsData = vocabNetwork.related_words || null
+
+        if (vocabNetwork.related_groups && Array.isArray(vocabNetwork.related_groups)) {
+          const groupMap: Record<string, string[]> = {}
+          const allWords: string[] = []
+          for (const group of vocabNetwork.related_groups) {
+            if (group.category && group.words) {
+              groupMap[group.category] = group.words
+              allWords.push(...group.words)
+            }
+          }
+          structureData = JSON.stringify(groupMap)
+          relatedWordsData = allWords.length > 0 ? allWords : null
+        }
+
+        await supabase.from('video_vocabulary_networks').insert({
+          video_id: videoId,
+          theme: vocabNetwork.theme || null,
+          structure: structureData,
+          related_words: relatedWordsData,
+          collocations: vocabNetwork.collocations || null,
+        })
+      }
+
+      // 填空练习
+      const vocabularyExercises = learning_material_json.practice?.vocabulary_exercises || []
+      if (vocabularyExercises.length > 0) {
+        const exerciseCards = vocabularyExercises.map((ex: VocabularyExerciseInput, idx: number) => {
+          const originalText = ex.sentence
+          const blankPattern = /_+/g
+          const blankPositions: Array<{ start: number; end: number; word: string; hint?: string }> = []
+          let match
+          while ((match = blankPattern.exec(originalText)) !== null) {
+            blankPositions.push({
+              start: match.index,
+              end: match.index + match[0].length,
+              word: ex.answer,
+              hint: ex.hint || undefined,
+            })
+          }
+
+          const cleanSentence = originalText.replace(/_+/g, ex.answer).toLowerCase().trim()
+          const matchedSubtitle = (savedSubtitles as Array<{ original_text: string; start_time: number; end_time: number }> | undefined)
+            ?.find(sub => sub.original_text?.toLowerCase().includes(cleanSentence)
+              ?? cleanSentence.includes(sub.original_text?.toLowerCase() || ''))
+
+          return {
+            video_id: videoId,
+            subtitle_id: null,
+            exercise_type: 'fill_blank' as const,
+            difficulty: 'beginner' as const,
+            original_text: originalText,
+            blank_positions: blankPositions,
+            hint_type: ex.hint ? 'first_letter' : null,
+            answer_text: ex.answer,
+            display_order: idx,
+            subtitle_start_time: matchedSubtitle?.start_time ?? null,
+            subtitle_end_time: matchedSubtitle?.end_time ?? null,
+          }
+        })
+
+        const { error } = await supabase.from('video_exercises').insert(exerciseCards)
+        if (!error) exercisesCount = exerciseCards.length
+      }
+
+      await completeStep(supabase, videoId, 'cards')
+    }
+
+    console.log(`[重新处理] 完成: ${subtitlesCount}字幕 ${wordsCount}词 ${expressionsCount}表达 ${grammarCount}语法`)
+
+    return NextResponse.json({
+      success: true,
+      data: {
+        id: videoId,
+        subtitles_count: subtitlesCount,
+        words_count: wordsCount,
+        expressions_count: expressionsCount,
+        grammar_points_count: grammarCount,
+        pronunciation_tips_count: pronunciationCount,
+        exercises_count: exercisesCount,
+      },
+    })
+
+  } catch (error) {
+    console.error('[重新处理] 失败:', error)
+    return NextResponse.json(
+      {
+        success: false,
+        error: error instanceof Error ? error.message : '重新处理失败',
+      },
+      { status: 500 }
+    )
   }
 }
