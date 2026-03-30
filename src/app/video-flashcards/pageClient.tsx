@@ -236,11 +236,9 @@ export function VideoFlashcardsClient() {
       setSwipeHint(null)
       updateCardTransform(0, 0, false)
 
-      // 下一张
-      if (currentIndex < totalCards - 1) {
-        setCurrentIndex((i) => i + 1)
-        setIsFlipped(false)
-      }
+      // 递增 index，超出 totalCards 时触发完成页
+      setCurrentIndex((i) => i + 1)
+      setIsFlipped(false)
 
       // 后台发送 API 请求（不阻塞 UI）
       fetch('/api/user/video-cards/review', {
