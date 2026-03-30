@@ -31,6 +31,7 @@ import {
   AlertCircle,
 } from 'lucide-react'
 import { useRecordings } from '@/hooks/useRecordings'
+import { WaveformDisplay } from '@/components/video/WaveformDisplay'
 import type { SubtitleWithHighlights } from '@/types/video'
 
 interface RecordingPanelProps {
@@ -67,7 +68,20 @@ export function RecordingPanel({
 
   // 录音播放状态
   const [isPlayingRecording, setIsPlayingRecording] = useState(false)
-  const audioRef = useRef<HTMLAudioElement | null>(null)
+
+  // 原声波形播放状态（Step 1 波形播放按钮）
+  const [isPlayingOriginal, setIsPlayingOriginal] = useState(false)
+
+  // 对比阶段：原声/录音各自独立播放状态
+  const [isPlayingCompareOriginal, setIsPlayingCompareOriginal] = useState(false)
+  const [isPlayingCompareRecording, setIsPlayingCompareRecording] = useState(false)
+
+  // 录音播放用的 audio 元素
+  const recordingAudioElRef = useRef<HTMLAudioElement | null>(null)
+  const recordingProgressIntervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
+
+  // 录音播放进度（0..1），用于波形高亮
+  const [recordingProgress, setRecordingProgress] = useState(0)
 
   // 自动滚动相关
   const containerRef = useRef<HTMLDivElement>(null)
@@ -141,7 +155,9 @@ export function RecordingPanel({
   // 小窗口视频播放器
   const miniVideoRef = useRef<HTMLVideoElement | null>(null)
   const [isMiniVideoPlaying, setIsMiniVideoPlaying] = useState(false)
+  const segmentStartTimeRef = useRef<number>(0)
   const segmentEndTimeRef = useRef<number | null>(null)
+  const [originalProgress, setOriginalProgress] = useState(0)
 
   // 播放视频片段（小窗口）
   const handlePlaySegmentInDialog = useCallback((startTime: number, endTime: number) => {
@@ -153,25 +169,60 @@ export function RecordingPanel({
     }
 
     video.currentTime = startTime
+    segmentStartTimeRef.current = startTime
     segmentEndTimeRef.current = endTime
-    video.play()
+    setOriginalProgress(0)
+    video.play().catch(() => {
+      // 自动播放被阻止或其他错误，静默处理
+    })
     setIsMiniVideoPlaying(true)
+    setIsPlayingOriginal(true)
   }, [onPlaySegment])
 
-  // 小窗口视频时间更新 - 到达片段结束时暂停（使用 interval 更可靠）
+  // 字幕选中时立即预加载到起始位置（弹窗未打开也会执行，提前缓冲）
   useEffect(() => {
-    if (!isMiniVideoPlaying) return
+    if (!selectedSubtitle) return
+    const video = miniVideoRef.current
+    if (video && video.readyState >= 1) {
+      // HAVE_METADATA 或更高，可以直接 seek
+      video.currentTime = selectedSubtitle.start_time
+    }
+  }, [selectedSubtitle])
 
+  // 弹窗打开时再次确保 seek 到位（兜底：video 可能在上次 effect 之后才就绪）
+  useEffect(() => {
+    if (!isDialogOpen || !selectedSubtitle) return
+    const video = miniVideoRef.current
+    if (video && video.readyState >= 1) {
+      video.currentTime = selectedSubtitle.start_time
+    }
+  }, [isDialogOpen, selectedSubtitle])
+
+  // 小窗口视频时间更新 - 追踪进度 + 到达片段结束时暂停
+  useEffect(() => {
+    if (!isMiniVideoPlaying) {
+      return
+    }
+
+    const TICK_MS = 100
     const checkEndTime = setInterval(() => {
       const video = miniVideoRef.current
-      if (video && segmentEndTimeRef.current && video.currentTime >= segmentEndTimeRef.current) {
+      if (!video || segmentEndTimeRef.current === null) return
+
+      const segmentDuration = segmentEndTimeRef.current - segmentStartTimeRef.current
+      const elapsed = video.currentTime - segmentStartTimeRef.current
+      if (segmentDuration > 0) {
+        setOriginalProgress(Math.min(elapsed / segmentDuration, 1))
+      }
+
+      if (video.currentTime >= segmentEndTimeRef.current) {
         video.pause()
         setIsMiniVideoPlaying(false)
+        setOriginalProgress(1)
         segmentEndTimeRef.current = null
-        // ✅ 修复：通过 interval 暂停时也要标记为已听
         setHasListened(true)
       }
-    }, 100) // 每 100ms 检查一次
+    }, TICK_MS)
 
     return () => clearInterval(checkEndTime)
   }, [isMiniVideoPlaying])
@@ -202,10 +253,12 @@ export function RecordingPanel({
     return recordings.find((r) => r.subtitle_id === selectedSubtitle.id)
   }, [selectedSubtitle, recordings])
 
-  // 检查字幕是否有录音（"已读"状态）
+  // 检查字幕是否有录音（"已读"状态）— 乐观更新：录音停止即标记，不等上传完成
+  const [locallyRecordedIds, setLocallyRecordedIds] = useState<Set<string>>(new Set())
   const hasRecorded = useCallback(
-    (subtitleId: string) => recordings.some((r) => r.subtitle_id === subtitleId),
-    [recordings]
+    (subtitleId: string) =>
+      locallyRecordedIds.has(subtitleId) || recordings.some((r) => r.subtitle_id === subtitleId),
+    [locallyRecordedIds, recordings]
   )
 
   // 打开练习弹层
@@ -235,6 +288,22 @@ export function RecordingPanel({
     onPauseMainVideo?.()
   }, [clearRecording, onPauseMainVideo, recordings])
 
+  // 停止播放录音（定义在 handleDialogOpenChange 之前，避免 TDZ 引用错误）
+  const handleStopPlaying = useCallback(() => {
+    if (recordingProgressIntervalRef.current) {
+      clearInterval(recordingProgressIntervalRef.current)
+      recordingProgressIntervalRef.current = null
+    }
+    if (recordingAudioElRef.current) {
+      recordingAudioElRef.current.pause()
+      recordingAudioElRef.current.src = ''
+      recordingAudioElRef.current = null
+    }
+    setRecordingProgress(0)
+    setIsPlayingRecording(false)
+    setIsPlayingCompareRecording(false)
+  }, [])
+
   // 关闭弹层 - 处理录音状态清理
   const handleDialogOpenChange = useCallback((open: boolean) => {
     if (!open) {
@@ -243,21 +312,21 @@ export function RecordingPanel({
         stopRecording()
       }
       // 停止播放录音
-      if (isPlayingRecording && audioRef.current) {
-        audioRef.current.pause()
-        setIsPlayingRecording(false)
+      if (isPlayingRecording || isPlayingCompareRecording) {
+        handleStopPlaying()
+      }
+      // 停止原声播放
+      if (isPlayingOriginal || isPlayingCompareOriginal) {
+        const video = miniVideoRef.current
+        if (video) video.pause()
+        setIsPlayingOriginal(false)
+        setIsPlayingCompareOriginal(false)
       }
       // 通知父组件重置状态
       onDialogClose?.()
     }
     setIsDialogOpen(open)
-  }, [isRecording, stopRecording, isPlayingRecording, onDialogClose])
-
-  // 播放视频片段
-  const handlePlaySegment = useCallback(() => {
-    if (!selectedSubtitle) return
-    onPlaySegment(selectedSubtitle.start_time, selectedSubtitle.end_time)
-  }, [selectedSubtitle, onPlaySegment])
+  }, [isRecording, stopRecording, isPlayingRecording, isPlayingCompareRecording, isPlayingOriginal, isPlayingCompareOriginal, handleStopPlaying, onDialogClose])
 
   // 开始录音
   const handleStartRecording = useCallback(() => {
@@ -273,59 +342,57 @@ export function RecordingPanel({
     // 标记已录音（本地 Blob URL 已可用）
     setHasRecordedThisRound(true)
 
-    // 后台静默上传（不阻塞用户操作）
+    // 乐观标记"已读"状态，不等上传完成
     if (selectedSubtitle) {
+      setLocallyRecordedIds(prev => new Set(prev).add(selectedSubtitle.id))
       uploadRecordingBackground(selectedSubtitle.id)
     }
   }, [stopRecording, uploadRecordingBackground, selectedSubtitle])
 
-  // 播放音频（带增益，解决录音音量小的问题）
-  const audioContextRef = useRef<AudioContext | null>(null)
-  const gainNodeRef = useRef<GainNode | null>(null)
+  // 播放录音 — 统一用 Audio.play()（createMediaElementSource 对 blob/OSS 均有兼容问题）
+  const playWithGain = useCallback(async (audioUrl: string, onPlaybackEnd?: () => void) => {
+    // 停止上一次播放
+    if (recordingProgressIntervalRef.current) {
+      clearInterval(recordingProgressIntervalRef.current)
+      recordingProgressIntervalRef.current = null
+    }
+    if (recordingAudioElRef.current) {
+      recordingAudioElRef.current.pause()
+      recordingAudioElRef.current.src = ''
+      recordingAudioElRef.current = null
+    }
 
-  const playWithGain = useCallback(async (audioUrl: string, knownDuration?: number) => {
-    try {
-      // 创建 AudioContext 和 GainNode（2x 增益）
-      if (!audioContextRef.current) {
-        audioContextRef.current = new (window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext)()
+    const audio = new Audio(audioUrl)
+    recordingAudioElRef.current = audio
+
+    audio.onended = () => {
+      if (recordingProgressIntervalRef.current) {
+        clearInterval(recordingProgressIntervalRef.current)
+        recordingProgressIntervalRef.current = null
       }
-      const ctx = audioContextRef.current
-
-      // 如果 ctx 被暂停，恢复它
-      if (ctx.state === 'suspended') {
-        await ctx.resume()
-      }
-
-      // 获取音频数据
-      const response = await fetch(audioUrl)
-      const arrayBuffer = await response.arrayBuffer()
-      const audioBuffer = await ctx.decodeAudioData(arrayBuffer)
-
-      // 创建增益节点（2x 音量）
-      const gainNode = ctx.createGain()
-      gainNode.gain.value = 2.0  // 2x 增益
-      gainNode.connect(ctx.destination)
-      gainNodeRef.current = gainNode
-
-      // 创建音频源
-      const source = ctx.createBufferSource()
-      source.buffer = audioBuffer
-      source.connect(gainNode)
-
-      // 播放结束回调
-      source.onended = () => {
-        console.log('[RecordingPanel] 🏁 播放结束')
-        setIsPlayingRecording(false)
-        setHasCompared(true)  // 标记已对比播放
-      }
-
-      source.start(0)
-      setIsPlayingRecording(true)
-      console.log(`[RecordingPanel] ✅ 播放中 (2x 增益)，时长: ${audioBuffer.duration.toFixed(1)}s`)
-
-    } catch (err) {
-      console.error('[RecordingPanel] ❌ 播放失败:', err)
+      setRecordingProgress(1)
       setIsPlayingRecording(false)
+      setIsPlayingCompareRecording(false)
+      onPlaybackEnd?.()
+    }
+
+    try {
+      await audio.play()
+      setIsPlayingRecording(true)
+      // 开始进度追踪
+      setRecordingProgress(0)
+      recordingProgressIntervalRef.current = setInterval(() => {
+        if (audio.duration && isFinite(audio.duration) && audio.duration > 0) {
+          setRecordingProgress(audio.currentTime / audio.duration)
+        }
+      }, 100)
+    } catch {
+      if (recordingProgressIntervalRef.current) {
+        clearInterval(recordingProgressIntervalRef.current)
+        recordingProgressIntervalRef.current = null
+      }
+      setIsPlayingRecording(false)
+      setIsPlayingCompareRecording(false)
     }
   }, [])
 
@@ -334,29 +401,22 @@ export function RecordingPanel({
     const ossUrl = selectedRecording?.recording_url
     const localUrl = audioURL
 
+    const onEnd = () => {
+      setHasCompared(true)
+    }
+
     // 优先使用本地 Blob URL（刚录完的）
     if (localUrl) {
-      playWithGain(localUrl)
+      playWithGain(localUrl, onEnd)
       return
     }
 
     // 播放 OSS 录音
     if (ossUrl) {
-      playWithGain(ossUrl, selectedRecording?.duration)
+      playWithGain(ossUrl, onEnd)
       return
     }
-
-    console.warn('[RecordingPanel] ⚠️ 没有可播放的录音')
   }, [selectedRecording, audioURL, playWithGain])
-
-  // 停止播放录音
-  const handleStopPlaying = useCallback(() => {
-    if (audioRef.current) {
-      audioRef.current.pause()
-      audioRef.current = null
-    }
-    setIsPlayingRecording(false)
-  }, [])
 
   // 重新录音
   const handleRerecord = useCallback(async () => {
@@ -380,9 +440,9 @@ export function RecordingPanel({
   // 清理
   useEffect(() => {
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause()
-        audioRef.current = null
+      if (recordingAudioElRef.current) {
+        recordingAudioElRef.current.pause()
+        recordingAudioElRef.current.src = ''
       }
     }
   }, [])
@@ -397,14 +457,117 @@ export function RecordingPanel({
   // 是否有可播放的录音
   const hasPlayableRecording = selectedRecording || audioURL
 
+  // Step 1: 原声波形播放（隐藏 mini video，用 WaveformDisplay + 隐藏 video 音频）
+  const handleOriginalWaveformPlay = useCallback(() => {
+    if (!selectedSubtitle || !videoUrl) return
+    if (isPlayingOriginal) {
+      // 暂停
+      const video = miniVideoRef.current
+      if (video) {
+        video.pause()
+      }
+      setIsPlayingOriginal(false)
+      return
+    }
+    handlePlaySegmentInDialog(selectedSubtitle.start_time, selectedSubtitle.end_time)
+    setIsPlayingOriginal(true)
+  }, [selectedSubtitle, videoUrl, isPlayingOriginal, handlePlaySegmentInDialog])
+
+  // 原声播放结束回调
+  const handleOriginalEnded = useCallback(() => {
+    setIsPlayingOriginal(false)
+    setHasListened(true)
+  }, [])
+
+  // Step 3 对比: 播放原声
+  const handleCompareOriginalPlay = useCallback(() => {
+    if (!selectedSubtitle || !videoUrl) return
+    if (isPlayingCompareOriginal) {
+      const video = miniVideoRef.current
+      if (video) video.pause()
+      setIsPlayingCompareOriginal(false)
+      return
+    }
+    // 停止另一方的播放
+    if (isPlayingCompareRecording) {
+      handleStopPlaying()
+    }
+    handlePlaySegmentInDialog(selectedSubtitle.start_time, selectedSubtitle.end_time)
+    setIsPlayingCompareOriginal(true)
+  }, [selectedSubtitle, videoUrl, isPlayingCompareOriginal, isPlayingCompareRecording, handlePlaySegmentInDialog, handleStopPlaying])
+
+  // Step 3 对比: 播放录音
+  const handleCompareRecordingPlay = useCallback(() => {
+    if (isPlayingCompareRecording) {
+      handleStopPlaying()
+      return
+    }
+    // 停止另一方的播放
+    if (isPlayingCompareOriginal) {
+      const video = miniVideoRef.current
+      if (video) video.pause()
+      setIsPlayingCompareOriginal(false)
+    }
+
+    const ossUrl = selectedRecording?.recording_url
+    const localUrl = audioURL
+    const url = localUrl || ossUrl
+    if (!url) return
+
+    setIsPlayingCompareRecording(true)
+    playWithGain(url, () => {
+      setIsPlayingCompareRecording(false)
+      setHasCompared(true)
+    })
+  }, [isPlayingCompareRecording, isPlayingCompareOriginal, handleStopPlaying, selectedRecording, audioURL, playWithGain])
+
+  // 录音 URL（用于波形展示）
+  const recordingAudioUrl = useMemo(() => {
+    return audioURL || selectedRecording?.recording_url || ''
+  }, [audioURL, selectedRecording])
+
   return (
     <>
+      {/* 持久化 video 元素：放在 Dialog 外部避免弹窗关闭时被卸载导致重新加载 */}
+      {videoUrl && (
+        <video
+          ref={miniVideoRef}
+          src={videoUrl}
+          className="absolute w-0 h-0 overflow-hidden opacity-0 pointer-events-none"
+          playsInline
+          preload="auto"
+          onEnded={() => {
+            setIsMiniVideoPlaying(false)
+            setIsPlayingOriginal(false)
+            setIsPlayingCompareOriginal(false)
+            setHasListened(true)
+          }}
+          onPause={() => {
+            setIsMiniVideoPlaying(false)
+            setIsPlayingOriginal(false)
+            setIsPlayingCompareOriginal(false)
+            setOriginalProgress(0)
+          }}
+        />
+      )}
+
       {/* 字幕列表 */}
       <div ref={containerRef} className={cn(
         'h-full scrollbar-thin scrollbar-thumb-muted scrollbar-track-transparent',
         noScrollContainer ? '' : 'overflow-y-auto'
       )}>
         <div className="space-y-2 p-3">
+          {/* 跟读指引 */}
+          <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700/50 rounded-lg text-xs text-gray-500 dark:text-gray-400">
+            <span className="font-bold text-gray-600 dark:text-gray-300">跟读步骤：</span>
+            <span>点击字幕</span>
+            <span className="text-gray-300 dark:text-gray-600">→</span>
+            <span>听原声</span>
+            <span className="text-gray-300 dark:text-gray-600">→</span>
+            <span>跟读录音</span>
+            <span className="text-gray-300 dark:text-gray-600">→</span>
+            <span>对比播放</span>
+          </div>
           {subtitles.map((subtitle) => {
             const hasRecording = hasRecorded(subtitle.id)
             const isActive =
@@ -561,30 +724,20 @@ export function RecordingPanel({
                 </div>
               </div>
 
-              {/* 小窗口视频播放器 */}
-              {videoUrl && (
-                <div className="relative rounded-lg overflow-hidden border-[2px] border-black dark:border-gray-600 bg-black">
-                  <video
-                    ref={miniVideoRef}
-                    src={videoUrl}
-                    className="w-full h-32 object-cover"
-                    playsInline
-                    onPlay={() => setIsMiniVideoPlaying(true)}
-                    onPause={() => setIsMiniVideoPlaying(false)}
-                    onEnded={() => {
-                      setIsMiniVideoPlaying(false)
-                      // 播放完成标记为已听
-                      setHasListened(true)
-                    }}
-                  />
-                  {/* 播放状态指示器 */}
-                  {isMiniVideoPlaying && (
-                    <div className="absolute top-2 left-2 bg-black/70 text-white text-xs px-2 py-1 rounded flex items-center gap-1">
-                      <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-                      播放中
-                    </div>
-                  )}
-                </div>
+              {/* Step 1: 原声波形（替代 mini video） */}
+              {!hasListened && videoUrl && (
+                <WaveformDisplay
+                  audioSrc={videoUrl}
+                  color="#3B82F6"
+                  playingColor="#60A5FA"
+                  label="原声"
+                  isPlaying={isPlayingOriginal}
+                  onPlay={handleOriginalWaveformPlay}
+                  onEnded={handleOriginalEnded}
+                  usePlaceholderPeaks
+                  seed={selectedSubtitle.start_time * 1000}
+                  progress={originalProgress}
+                />
               )}
 
               {/* 字幕内容 */}
@@ -615,7 +768,7 @@ export function RecordingPanel({
                 </div>
               )}
 
-              {/* 主操作区 - 当前推荐的大按钮 */}
+              {/* 主操作区 */}
               <div className="space-y-4">
                 {/* 正在录音时 */}
                 {isRecording && (
@@ -638,8 +791,48 @@ export function RecordingPanel({
                   </div>
                 )}
 
-                {/* 正在播放录音时 */}
-                {isPlayingRecording && !isRecording && (
+                {/* Step 3: 双波形对比（已录音，非录音中） */}
+                {!isRecording && hasRecordedThisRound && hasPlayableRecording && videoUrl && (
+                  <div className="space-y-2">
+                    <div className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1">
+                      对比原声与你的录音
+                    </div>
+                    {/* 原声波形 */}
+                    <WaveformDisplay
+                      audioSrc={videoUrl}
+                      color="#3B82F6"
+                      playingColor="#60A5FA"
+                      label="原声"
+                      isPlaying={isPlayingCompareOriginal}
+                      onPlay={handleCompareOriginalPlay}
+                      onEnded={() => {
+                        setIsPlayingCompareOriginal(false)
+                      }}
+                      usePlaceholderPeaks
+                      seed={selectedSubtitle.start_time * 1000}
+                      progress={originalProgress}
+                    />
+                    {/* 录音波形 */}
+                    <WaveformDisplay
+                      audioSrc={recordingAudioUrl}
+                      color="#22C55E"
+                      playingColor="#4ADE80"
+                      label="你的录音"
+                      isPlaying={isPlayingCompareRecording}
+                      onPlay={handleCompareRecordingPlay}
+                      onEnded={() => {
+                        setIsPlayingCompareRecording(false)
+                        setHasCompared(true)
+                      }}
+                      usePlaceholderPeaks
+                      seed={selectedSubtitle.start_time * 1000 + 1}
+                      progress={recordingProgress}
+                    />
+                  </div>
+                )}
+
+                {/* 正在播放录音时（非对比阶段，单独播放录音） */}
+                {isPlayingRecording && !isRecording && !(hasRecordedThisRound && videoUrl) && (
                   <div className="flex flex-col items-center gap-3">
                     <div className="flex items-center gap-2 text-blue-500">
                       <Volume2 className="w-4 h-4 animate-pulse" />
@@ -659,23 +852,11 @@ export function RecordingPanel({
                   </div>
                 )}
 
-                {/* 默认状态：显示当前推荐操作（上传在后台进行，不阻塞） */}
-                {!isRecording && !isPlayingRecording && (
+                {/* 默认状态：显示当前推荐操作 */}
+                {!isRecording && !isPlayingRecording && !hasRecordedThisRound && (
                   <div className="flex flex-col items-center gap-3">
-                    {/* Step 1: 听原声（未听时显示） */}
-                    {!hasListened && (
-                      <Button
-                        size="lg"
-                        onClick={() => handlePlaySegmentInDialog(selectedSubtitle.start_time, selectedSubtitle.end_time)}
-                        className="bg-[#B4F416] hover:bg-[#9FE010] text-black border-[3px] border-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-1 transition-all font-bold px-8 py-6 text-lg"
-                      >
-                        <Play className="w-5 h-5 mr-2" />
-                        点击播放原声
-                      </Button>
-                    )}
-
                     {/* Step 2: 跟读（已听但未录音时显示） */}
-                    {hasListened && !hasRecordedThisRound && (
+                    {hasListened && (
                       <Button
                         size="lg"
                         onClick={handleStartRecording}
@@ -684,28 +865,6 @@ export function RecordingPanel({
                         <Mic className="w-5 h-5 mr-2" />
                         点击开始跟读
                       </Button>
-                    )}
-
-                    {/* Step 3: 对比（已录音但未对比时显示） */}
-                    {hasRecordedThisRound && !hasCompared && hasPlayableRecording && (
-                      <Button
-                        size="lg"
-                        onClick={handlePlayRecording}
-                        className="bg-[#B4F416] hover:bg-[#9FE010] text-black border-[3px] border-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-1 transition-all font-bold px-8 py-6 text-lg"
-                      >
-                        <Volume2 className="w-5 h-5 mr-2" />
-                        点击播放对比
-                      </Button>
-                    )}
-
-                    {/* 已完成全部步骤：显示重做选项 */}
-                    {hasListened && hasRecordedThisRound && hasCompared && (
-                      <div className="text-center space-y-2">
-                        <div className="flex items-center justify-center gap-2 text-green-600 font-bold">
-                          <CheckCircle className="w-5 h-5" />
-                          本句练习完成！
-                        </div>
-                      </div>
                     )}
                   </div>
                 )}
@@ -735,7 +894,7 @@ export function RecordingPanel({
                         重新录音
                       </Button>
                     )}
-                    {hasCompared && hasPlayableRecording && (
+                    {hasCompared && hasPlayableRecording && !hasRecordedThisRound && (
                       <Button
                         variant="ghost"
                         size="sm"
