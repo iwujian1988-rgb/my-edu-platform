@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle } from 'lucide-react'
+import { GraduationCap, Eye, EyeOff, Mail, Lock, Sparkles, Trophy, Target, Zap, HelpCircle, BookOpen, Play } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 
 export default function LoginFormClient() {
@@ -13,6 +13,7 @@ export default function LoginFormClient() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
   const [showForgotPassword, setShowForgotPassword] = useState(false)
+  const [showProductPicker, setShowProductPicker] = useState(false)
 
   // 设置页面标题
   useEffect(() => {
@@ -76,15 +77,39 @@ export default function LoginFormClient() {
       })
       // 即使检查失败也不影响登录流程
 
-      // 登录成功，检查是否有redirect参数
+      // 登录成功，检查是否有redirect参数（从受保护页面跳来的，直接回原页面）
       const redirectTo = searchParams.get('redirect')
-      const targetUrl = redirectTo || '/'
+      if (redirectTo) {
+        console.log('[Login] 有redirect参数，跳转到:', redirectTo)
+        window.location.href = redirectTo
+        return
+      }
 
-      console.log('[Login] 跳转到:', targetUrl)
+      // 检查用户是否有视频权限，有则弹层让用户选择进入哪个产品
+      // 统一走服务端 API，避免 RLS 问题和判断逻辑不一致
+      try {
+        const permRes = await fetch('/api/auth/check-permissions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+        })
+        if (permRes.ok) {
+          const permData = await permRes.json()
+          console.log('[Login] 权限查询结果:', permData)
+          if (permData.has_video) {
+            console.log('[Login] 用户有视频权限，弹出产品选择')
+            setShowProductPicker(true)
+            setLoading(false)
+            return
+          }
+        }
+      } catch (permErr) {
+        console.warn('[Login] 权限查询失败，直接进首页:', permErr)
+      }
 
-      // 🔥 使用 window.location.href 强制完整页面重新加载
-      // 这会触发 middleware 和 SSR，确保服务端读取到最新的 cookies
-      window.location.href = targetUrl
+      // 无视频权限，直接进 MAX笔记
+      console.log('[Login] 跳转到首页')
+      window.location.href = '/'
     } catch (err: unknown) {
       console.error('[Login] 异常:', err)
       const message = err instanceof Error ? err.message : '登录失败，请重试'
@@ -119,7 +144,7 @@ export default function LoginFormClient() {
                 MAX笔记
               </h1>
               <p className="text-xl lg:text-2xl xl:text-3xl font-bold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                智能英语学习平台
+                智能外语学习平台
               </p>
             </div>
 
@@ -249,7 +274,7 @@ export default function LoginFormClient() {
                 MAX笔记
               </h1>
               <p className="text-sm md:text-base lg:text-lg font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                ✨ 开启你的英语学习之旅 ✨
+                ✨ 开启你的外语学习之旅 ✨
               </p>
             </div>
 
@@ -460,6 +485,62 @@ export default function LoginFormClient() {
                 }}
               >
                 我知道了
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* 产品选择弹层 - 不可关闭，必须二选一 */}
+      {showProductPicker && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[60] p-4">
+          <div
+            className="w-full max-w-lg p-6 md:p-10 transition-all duration-300"
+            style={{
+              backgroundColor: 'var(--card-bg)',
+              border: '3px solid #000000',
+              borderRadius: '16px',
+              boxShadow: '6px 6px 0px 0px #000000'
+            }}
+          >
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-2xl md:text-3xl font-black mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
+                选择学习入口
+              </h2>
+              <p className="text-sm md:text-base font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
+                你拥有多个产品权限，请选择要进入的学习产品
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
+              {/* MAX笔记 */}
+              <button
+                onClick={() => { window.location.href = '/' }}
+                className="flex flex-col items-center gap-3 md:gap-4 p-5 md:p-8 text-white transition-all duration-200 hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_#000000]"
+                style={{
+                  backgroundColor: '#22C55E',
+                  border: '3px solid #000000',
+                  borderRadius: '14px',
+                  boxShadow: '4px 4px 0px 0px #000000'
+                }}
+              >
+                <BookOpen className="w-10 h-10 md:w-14 md:h-14" strokeWidth={2.5} />
+                <span className="text-lg md:text-2xl font-black">MAX笔记</span>
+                <span className="text-xs md:text-sm font-semibold opacity-80">外语学习平台</span>
+              </button>
+              {/* MAXTube */}
+              <button
+                onClick={() => { window.location.href = '/videos' }}
+                className="flex flex-col items-center gap-3 md:gap-4 p-5 md:p-8 transition-all duration-200 hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_#000000]"
+                style={{
+                  backgroundColor: '#B4F416',
+                  border: '3px solid #000000',
+                  borderRadius: '14px',
+                  boxShadow: '4px 4px 0px 0px #000000'
+                }}
+              >
+                <Play className="w-10 h-10 md:w-14 md:h-14" strokeWidth={2.5} />
+                <span className="text-lg md:text-2xl font-black text-black">MAXTube</span>
+                <span className="text-xs md:text-sm font-semibold text-black/70">视频学习平台</span>
               </button>
             </div>
           </div>

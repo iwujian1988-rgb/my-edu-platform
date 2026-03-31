@@ -242,6 +242,12 @@ function getMenuItemsByRole(role: AdminUser['role']) {
       roles: ['super_admin', 'content_admin']
     },
     {
+      path: '/admin/upstream-creators',
+      icon: Users,
+      label: 'UP主管理',
+      roles: ['super_admin', 'content_admin']
+    },
+    {
       path: '/admin/videos/tags',
       icon: Tag,
       label: '标签管理',
@@ -305,6 +311,7 @@ function getPageTitle(pathname: string): string {
     '/admin/speaker/articles': '雯姐学习法 - 文章管理',
     '/admin/videos': '视频管理',
     '/admin/videos/tags': '标签管理',
+    '/admin/upstream-creators': 'UP主管理',
     '/admin/word-books': '词库管理',
     '/admin/reviews': '审核管理',
     '/admin/statistics': '数据统计',

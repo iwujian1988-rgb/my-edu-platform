@@ -42,7 +42,7 @@ interface FrameInfo {
   time: number
 }
 
-const FRAME_COUNT = 12 // 提取帧数
+const FRAME_COUNT = 3 // 提取帧数
 
 export function ThumbnailSelector({
   open,

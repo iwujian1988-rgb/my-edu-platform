@@ -262,7 +262,9 @@ export function DraggablePIP({
         <video
           ref={videoRef as React.RefObject<HTMLVideoElement>}
           src={video.video_url}
+          poster={video.thumbnail_url || undefined}
           className="w-full h-full object-contain"
+          preload="auto"
           playsInline
           muted={isMuted}
           onTimeUpdate={(e) => onTimeUpdate(e.currentTarget.currentTime)}

@@ -22,6 +22,7 @@ import {
 } from 'lucide-react'
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, ARTICLE_CATEGORIES } from '@/types/speaker'
 import OSS from 'ali-oss'
+import { getCacheHeaders } from '@/lib/oss'
 import ImageUploadModal from '@/components/admin/ImageUploadModal'
 
 interface ParsedArticle {
@@ -135,6 +136,7 @@ export default function SpeakerUploadPage() {
 
       // 4. 上传文件（带进度回调）
       const result = await client.put(filename, file, {
+        headers: getCacheHeaders('audio'),
         progress: (p: number) => {
           // p 是上传进度 (0-1)
           const percent = Math.round(p * 100)

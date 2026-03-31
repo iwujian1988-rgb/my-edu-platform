@@ -163,9 +163,16 @@ function VideoCard({ video }: { video: VideoListItem }) {
       {/* 信息区 - 移动端更紧凑 */}
       <div className="flex-1 p-3 md:p-4 min-w-0">
         {/* 标题 */}
-        <h3 className="text-base md:text-base font-black tracking-tight text-black dark:text-white mb-2 md:mb-3 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
+        <h3 className="text-base md:text-base font-black tracking-tight text-black dark:text-white mb-1 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
           {video.title}
         </h3>
+
+        {/* 描述 */}
+        {video.description && (
+          <p className="text-[11px] md:text-xs text-gray-400 dark:text-gray-500 mb-2 md:mb-3 line-clamp-1">
+            {video.description}
+          </p>
+        )}
 
         {/* 语种和标签 - 移动端 */}
         <div className="flex md:hidden items-center gap-2 mb-1">
@@ -785,37 +792,18 @@ function VideoListContent() {
 
               {/* 标签筛选 */}
               {tagsData && tagsData.length > 0 && (
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium text-gray-500">标签</span>
-                  <div className="flex gap-1 flex-wrap">
-                    <button
-                      onClick={() => setTag('all')}
-                      className={`
-                        px-2.5 py-1 text-xs font-bold transition-all
-                        ${tag === 'all'
-                          ? 'bg-[#B4F416] text-black'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                        }
-                      `}
-                    >
-                      全部
-                    </button>
-                    {tagsData.slice(0, 6).map((t) => (
-                      <button
-                        key={t.id}
-                        onClick={() => setTag(t.name)}
-                        className={`
-                          px-2.5 py-1 text-xs font-bold transition-all
-                          ${tag === t.name
-                            ? 'bg-[#B4F416] text-black'
-                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                          }
-                        `}
-                      >
-                        {t.name}
-                      </button>
+                <div className="ml-auto">
+                  <select
+                    value={tag}
+                    onChange={(e) => setTag(e.target.value)}
+                    className="px-2.5 py-1 text-xs font-bold bg-gray-100 dark:bg-gray-800 text-black dark:text-white border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] outline-none cursor-pointer appearance-none pr-6 bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%223%22%3E%3Cpath%20d%3D%22m6%209%206%206-6%22%2F%3E%2Fsvg%3E')] bg-[length:10px] bg-[right_6px_center] bg-no-repeat"
+                    style={tag !== 'all' ? { backgroundColor: '#B4F416' } : undefined}
+                  >
+                    <option value="all">全部</option>
+                    {tagsData.map((t) => (
+                      <option key={t.id} value={t.name}>{t.name}</option>
                     ))}
-                  </div>
+                  </select>
                 </div>
               )}
 

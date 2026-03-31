@@ -36,7 +36,7 @@ interface FrameInfo {
   time: number
 }
 
-const FRAME_COUNT = 12 // 提取帧数
+const FRAME_COUNT = 3 // 提取帧数
 
 export function InlineThumbnailSelector({
   videoUrl,
@@ -71,6 +71,7 @@ export function InlineThumbnailSelector({
         body: JSON.stringify({
           videoUrl,
           frameCount: FRAME_COUNT,
+          duration: videoDuration,
         }),
       })
 

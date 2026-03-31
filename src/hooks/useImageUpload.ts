@@ -9,6 +9,7 @@
 
 import { useState, useCallback } from 'react'
 import OSS from 'ali-oss'
+import { getCacheHeaders } from '@/lib/oss'
 
 interface UploadState {
   isUploading: boolean
@@ -117,6 +118,7 @@ export function useImageUpload(): UseImageUploadReturn {
 
       // 6. 上传文件（带进度回调）
       const result = await client.put(filename, file, {
+        headers: getCacheHeaders('image'),
         progress: (p: number) => {
           const percent = Math.round(p * 100)
           setUploadState(prev => ({ ...prev, progress: percent }))

@@ -13,6 +13,7 @@
 
 import { useState, useCallback } from 'react'
 import OSS from 'ali-oss'
+import { getCacheHeaders } from '@/lib/oss'
 
 interface UploadState {
   isUploading: boolean
@@ -119,6 +120,7 @@ export function useVideoUpload(): UseVideoUploadReturn {
           return await client.multipartUpload(filename, file, {
             chunkSize: VIDEO_CONFIG.CHUNK_SIZE,
             timeout: VIDEO_CONFIG.TIMEOUT,
+            headers: getCacheHeaders('video'),
             progress: (p: number) => {
               const percent = Math.round(p * 100)
               setUploadState(prev => ({ ...prev, progress: percent }))
@@ -129,6 +131,7 @@ export function useVideoUpload(): UseVideoUploadReturn {
           // 小文件直接上传
           return await client.put(filename, file, {
             timeout: VIDEO_CONFIG.TIMEOUT,
+            headers: getCacheHeaders('video'),
             progress: (p: number) => {
               const percent = Math.round(p * 100)
               setUploadState(prev => ({ ...prev, progress: percent }))

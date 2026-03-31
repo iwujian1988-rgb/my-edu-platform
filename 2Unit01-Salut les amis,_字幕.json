@@ -1,0 +1,543 @@
+{
+  "unit_info": {
+    "unit_num": 1,
+    "theme": "Salut les amis, bienvenue dans",
+    "start_time": "00:00:00.000",
+    "end_time": "00:07:37.480",
+    "subtitle_count": 76
+  },
+  "subtitles": [
+    {
+      "index": 1,
+      "start_time": "00:00:00.000",
+      "end_time": "00:00:03.620",
+      "french": "Salut les amis, bienvenue dans un nouvel épisode.",
+      "chinese": "朋友们好，欢迎来到新的一集。"
+    },
+    {
+      "index": 2,
+      "start_time": "00:00:04.300",
+      "end_time": "00:00:10.980",
+      "french": "Aujourd'hui, vous allez apprendre à utiliser les 20 adjectifs les plus fréquemment",
+      "chinese": "今天，你们将学习使用法语中最常用的20个形容词，"
+    },
+    {
+      "index": 3,
+      "start_time": "00:00:10.980",
+      "end_time": "00:00:14.000",
+      "french": "utilisés en français en contexte.",
+      "chinese": "在具体语境中运用。"
+    },
+    {
+      "index": 4,
+      "start_time": "00:00:14.520",
+      "end_time": "00:00:21.620",
+      "french": "Nous allons aussi vous expliquer quelques règles qui permettent de bien manier les adjectifs",
+      "chinese": "我们还会讲解一些规则，帮助你们更好地掌握形容词，"
+    },
+    {
+      "index": 5,
+      "start_time": "00:00:21.620",
+      "end_time": "00:00:22.680",
+      "french": "en français.",
+      "chinese": "在法语中的用法。"
+    },
+    {
+      "index": 6,
+      "start_time": "00:00:23.320",
+      "end_time": "00:00:25.080",
+      "french": "C'est parti !",
+      "chinese": "开始吧！"
+    },
+    {
+      "index": 7,
+      "start_time": "00:00:36.240",
+      "end_time": "00:00:46.220",
+      "french": "Les adjectifs s'accordent en genre et en nombre avec le nom qu'ils accompagnent.",
+      "chinese": "形容词要与所修饰的名词在性和数上保持一致。"
+    },
+    {
+      "index": 8,
+      "start_time": "00:00:46.860",
+      "end_time": "00:00:58.000",
+      "french": "Par exemple, un grand appartement, des grands appartements, une grande maison, des grandes",
+      "chinese": "例如，一个大公寓，多个大公寓，一个大房子，多个大"
+    },
+    {
+      "index": 9,
+      "start_time": "00:00:58.000",
+      "end_time": "00:01:06.920",
+      "french": "maisons. Souvent, pour mettre un adjectif au féminin, on ajoute un e, ce qui peut changer",
+      "chinese": "房子。通常，将形容词变为阴性时，会加一个e，这可能会改变"
+    },
+    {
+      "index": 10,
+      "start_time": "00:01:06.920",
+      "end_time": "00:01:08.480",
+      "french": "la prononciation.",
+      "chinese": "发音。"
+    },
+    {
+      "index": 11,
+      "start_time": "00:01:09.500",
+      "end_time": "00:01:17.360",
+      "french": "Grand, grande, mais certains adjectifs ont un féminin irrégulier.",
+      "chinese": "Grand（大，阳性），grande（大，阴性），但有些形容词的阴性形式不规则。"
+    },
+    {
+      "index": 12,
+      "start_time": "00:01:17.360",
+      "end_time": "00:01:35.000",
+      "french": "Vieux, vieilles. Pour mettre un adjectif au pluriel, on ajoute un s, ce qui ne change pas",
+      "chinese": "Vieux（老，阳性），vieilles（老，阴性，复数）。将形容词变为复数时，加一个s，这不会改变"
+    },
+    {
+      "index": 13,
+      "start_time": "00:01:35.000",
+      "end_time": "00:01:36.600",
+      "french": "la prononciation.",
+      "chinese": "发音。"
+    },
+    {
+      "index": 14,
+      "start_time": "00:01:36.600",
+      "end_time": "00:01:47.080",
+      "french": "Sauf s'il y a une liaison. Ce sont de beaux appartements, ils sont grands.",
+      "chinese": "除非有连音。这些是漂亮的公寓，它们很大。"
+    },
+    {
+      "index": 15,
+      "start_time": "00:01:53.600",
+      "end_time": "00:02:03.520",
+      "french": "En français, en général, les adjectifs courts et généraux comme beau, grand ou vieux se placent",
+      "chinese": "在法语中，一般来说，短而通用的形容词，如beau（漂亮）、grand（大）或vieux（老），放在"
+    },
+    {
+      "index": 16,
+      "start_time": "00:02:03.520",
+      "end_time": "00:02:08.640",
+      "french": "avant le nom. Par exemple, j'ai un grand appartement.",
+      "chinese": "名词之前。例如，我有一个大公寓。"
+    },
+    {
+      "index": 17,
+      "start_time": "00:02:09.660",
+      "end_time": "00:02:15.780",
+      "french": "Les adjectifs longs ou spécifiques se placent après le nom.",
+      "chinese": "长或特定的形容词放在名词之后。"
+    },
+    {
+      "index": 18,
+      "start_time": "00:02:17.040",
+      "end_time": "00:02:19.720",
+      "french": "J'ai un appartement lumineux.",
+      "chinese": "我有一个明亮的公寓。"
+    },
+    {
+      "index": 19,
+      "start_time": "00:02:20.680",
+      "end_time": "00:02:28.760",
+      "french": "Si l'on utilise un adjectif avec le verbe être, il se place après le verbe.",
+      "chinese": "如果形容词与动词être（是）一起使用，它放在动词之后。"
+    },
+    {
+      "index": 20,
+      "start_time": "00:02:28.760",
+      "end_time": "00:02:32.860",
+      "french": "Par exemple, mon appartement est beau.",
+      "chinese": "例如，我的公寓很漂亮。"
+    },
+    {
+      "index": 21,
+      "start_time": "00:02:34.380",
+      "end_time": "00:02:44.580",
+      "french": "Bon, bonne, grand, grande, petit, petite.",
+      "chinese": "Bon（好，阳性），bonne（好，阴性），grand（大，阳性），grande（大，阴性），petit（小，阳性），petite（小，阴性）。"
+    },
+    {
+      "index": 22,
+      "start_time": "00:02:46.860",
+      "end_time": "00:02:50.500",
+      "french": "Miam, ce gâteau est très bon.",
+      "chinese": "嗯，这个蛋糕非常好吃。"
+    },
+    {
+      "index": 23,
+      "start_time": "00:02:51.080",
+      "end_time": "00:02:59.660",
+      "french": "C'est parce qu'il vient d'une petite boulangerie artisanale et pas d'un grand supermarché.",
+      "chinese": "这是因为它来自一家小型手工面包店，而不是一个大超市。"
+    },
+    {
+      "index": 24,
+      "start_time": "00:03:00.660",
+      "end_time": "00:03:13.100",
+      "french": "Beau, belle, vieux, vieille, nouveau, nouvelle.",
+      "chinese": "Beau（漂亮，阳性），belle（漂亮，阴性），vieux（老，阳性），vieille（老，阴性），nouveau（新，阳性），nouvelle（新，阴性）。"
+    },
+    {
+      "index": 25,
+      "start_time": "00:03:14.160",
+      "end_time": "00:03:18.580",
+      "french": "Ce nouveau magasin est une friperie.",
+      "chinese": "这家新商店是一家二手服装店。"
+    },
+    {
+      "index": 26,
+      "start_time": "00:03:19.100",
+      "end_time": "00:03:27.920",
+      "french": "On y trouve des vêtements qui sont un peu vieux mais quand même beaux.",
+      "chinese": "在那里可以找到一些有点旧但仍然漂亮的衣服。"
+    },
+    {
+      "index": 27,
+      "start_time": "00:03:27.920",
+      "end_time": "00:03:37.540",
+      "french": "J'y ai acheté cette belle écharpe pour seulement 5 euros.",
+      "chinese": "我在那里买了这条漂亮的围巾，只花了5欧元。"
+    },
+    {
+      "index": 28,
+      "start_time": "00:03:39.920",
+      "end_time": "00:03:45.900",
+      "french": "Jeune, long, longue, gros, grosse.",
+      "chinese": "Jeune（年轻），long（长，阳性），longue（长，阴性），gros（大，阳性），grosse（大，阴性）。"
+    },
+    {
+      "index": 29,
+      "start_time": "00:03:48.620",
+      "end_time": "00:03:55.220",
+      "french": "Vous pensez qu'il faut être jeune pour apprendre le français ou peut-être vous imaginez",
+      "chinese": "你们认为学习法语必须年轻，或者也许你们想象"
+    },
+    {
+      "index": 30,
+      "start_time": "00:03:55.220",
+      "end_time": "00:04:01.000",
+      "french": "que c'est un processus trop long ou un trop gros investissement financier.",
+      "chinese": "这是一个太长的过程或太大的财务投入。"
+    },
+    {
+      "index": 31,
+      "start_time": "00:04:01.540",
+      "end_time": "00:04:05.620",
+      "french": "Mais vous pouvez apprendre le français vieux, jeune,",
+      "chinese": "但你们可以年老或年轻时学习法语，"
+    },
+    {
+      "index": 32,
+      "start_time": "00:04:06.120",
+      "end_time": "00:04:12.100",
+      "french": "même si vous n'avez pas un gros budget ou si vous êtes jeune et que vous pensez",
+      "chinese": "即使你们没有大笔预算，或者你们年轻并认为"
+    },
+    {
+      "index": 33,
+      "start_time": "00:04:12.100",
+      "end_time": "00:04:13.800",
+      "french": "que vous n'avez pas assez de temps.",
+      "chinese": "你们没有足够的时间。"
+    },
+    {
+      "index": 34,
+      "start_time": "00:04:14.420",
+      "end_time": "00:04:23.200",
+      "french": "À partir de 5 euros par mois, vous pouvez apprendre le français avec des exercices",
+      "chinese": "每月仅需5欧元起，你们就可以通过练习"
+    },
+    {
+      "index": 35,
+      "start_time": "00:04:23.200",
+      "end_time": "00:04:28.180",
+      "french": "et des listes de vocabulaire liés à toutes nos vidéos.",
+      "chinese": "和与我们所有视频相关的词汇表来学习法语。"
+    },
+    {
+      "index": 36,
+      "start_time": "00:04:28.800",
+      "end_time": "00:04:35.600",
+      "french": "Et un chat sur Discord où vous pouvez communiquer avec nous à votre rythme.",
+      "chinese": "还有一个Discord聊天室，你们可以按自己的节奏与我们交流。"
+    },
+    {
+      "index": 37,
+      "start_time": "00:04:36.340",
+      "end_time": "00:04:45.580",
+      "french": "Ça vous tente ? Passez par le lien et testez notre offre gratuitement pendant 7 jours.",
+      "chinese": "感兴趣吗？通过链接，免费试用我们的服务7天。"
+    },
+    {
+      "index": 38,
+      "start_time": "00:04:54.140",
+      "end_time": "00:05:02.080",
+      "french": "Mauvais, mauvaise, autre, premier,",
+      "chinese": "Mauvais（坏，阳性），mauvaise（坏，阴性），autre（其他），premier（第一，阳性），"
+    },
+    {
+      "index": 39,
+      "start_time": "00:05:05.740",
+      "end_time": "00:05:15.880",
+      "french": "dernier, dernière, meilleur, meilleure, facile.",
+      "chinese": "dernier（最后，阳性），dernière（最后，阴性），meilleur（更好，阳性），meilleure（更好，阴性），facile（容易）。"
+    },
+    {
+      "index": 40,
+      "start_time": "00:05:15.880",
+      "end_time": "00:05:23.500",
+      "french": "C'est lui, Laine.",
+      "chinese": "是他，Laine。"
+    },
+    {
+      "index": 41,
+      "start_time": "00:05:23.940",
+      "end_time": "00:05:25.220",
+      "french": "Ça va ?",
+      "chinese": "你好吗？"
+    },
+    {
+      "index": 42,
+      "start_time": "00:05:25.220",
+      "end_time": "00:05:28.660",
+      "french": "Je passe une mauvaise journée.",
+      "chinese": "我今天过得很糟糕。"
+    },
+    {
+      "index": 43,
+      "start_time": "00:05:29.420",
+      "end_time": "00:05:29.880",
+      "french": "Ah bon ?",
+      "chinese": "真的吗？"
+    },
+    {
+      "index": 44,
+      "start_time": "00:05:30.400",
+      "end_time": "00:05:32.220",
+      "french": "Pourquoi ?",
+      "chinese": "为什么？"
+    },
+    {
+      "index": 45,
+      "start_time": "00:05:32.220",
+      "end_time": "00:05:34.400",
+      "french": "Il pleut sans arrêt.",
+      "chinese": "雨一直下个不停。"
+    },
+    {
+      "index": 46,
+      "start_time": "00:05:36.060",
+      "end_time": "00:05:38.700",
+      "french": "Tu peux peut-être filmer un autre jour.",
+      "chinese": "也许你可以改天再拍摄。"
+    },
+    {
+      "index": 47,
+      "start_time": "00:05:39.320",
+      "end_time": "00:05:43.480",
+      "french": "Les autres jours de la semaine, ça va être pareil.",
+      "chinese": "这周的其他日子，情况也会一样。"
+    },
+    {
+      "index": 48,
+      "start_time": "00:05:43.480",
+      "end_time": "00:05:48.520",
+      "french": "Je vais devoir filmer sous la pluie.",
+      "chinese": "我不得不在雨中拍摄。"
+    },
+    {
+      "index": 49,
+      "start_time": "00:05:48.520",
+      "end_time": "00:05:51.040",
+      "french": "Ce ne sera pas la première fois.",
+      "chinese": "这不会是第一次。"
+    },
+    {
+      "index": 50,
+      "start_time": "00:05:51.660",
+      "end_time": "00:05:54.400",
+      "french": "Et probablement pas la dernière fois non plus.",
+      "chinese": "而且很可能也不会是最后一次。"
+    },
+    {
+      "index": 51,
+      "start_time": "00:05:55.120",
+      "end_time": "00:05:55.900",
+      "french": "C'est sûr.",
+      "chinese": "肯定的。"
+    },
+    {
+      "index": 52,
+      "start_time": "00:05:56.300",
+      "end_time": "00:05:59.360",
+      "french": "Le temps ne sera pas meilleur avant le printemps.",
+      "chinese": "在春天之前，天气不会好转。"
+    },
+    {
+      "index": 53,
+      "start_time": "00:06:00.080",
+      "end_time": "00:06:04.200",
+      "french": "Notre travail n'est vraiment pas facile en hiver.",
+      "chinese": "冬天我们的工作真的不容易。"
+    },
+    {
+      "index": 54,
+      "start_time": "00:06:07.300",
+      "end_time": "00:06:08.080",
+      "french": "Difficile.",
+      "chinese": "困难。"
+    },
+    {
+      "index": 55,
+      "start_time": "00:06:09.080",
+      "end_time": "00:06:10.860",
+      "french": "Important.",
+      "chinese": "重要。"
+    },
+    {
+      "index": 56,
+      "start_time": "00:06:11.160",
+      "end_time": "00:06:12.500",
+      "french": "Importante.",
+      "chinese": "重要（阴性）。"
+    },
+    {
+      "index": 57,
+      "start_time": "00:06:13.260",
+      "end_time": "00:06:14.420",
+      "french": "Fort.",
+      "chinese": "强壮（阳性）。"
+    },
+    {
+      "index": 58,
+      "start_time": "00:06:15.580",
+      "end_time": "00:06:16.080",
+      "french": "Forte.",
+      "chinese": "强壮（阴性）。"
+    },
+    {
+      "index": 59,
+      "start_time": "00:06:17.100",
+      "end_time": "00:06:21.540",
+      "french": "Faire du sport, c'est très important.",
+      "chinese": "做运动非常重要。"
+    },
+    {
+      "index": 60,
+      "start_time": "00:06:22.600",
+      "end_time": "00:06:31.260",
+      "french": "On devient plus fort et aussi, on a une meilleure santé.",
+      "chinese": "我们会变得更强壮，而且，健康状况也会更好。"
+    },
+    {
+      "index": 61,
+      "start_time": "00:06:36.320",
+      "end_time": "00:06:37.280",
+      "french": "Joli.",
+      "chinese": "漂亮。"
+    },
+    {
+      "index": 62,
+      "start_time": "00:06:38.160",
+      "end_time": "00:06:39.120",
+      "french": "Joli.",
+      "chinese": "漂亮。"
+    },
+    {
+      "index": 63,
+      "start_time": "00:06:40.940",
+      "end_time": "00:06:41.900",
+      "french": "Chère.",
+      "chinese": "昂贵。"
+    },
+    {
+      "index": 64,
+      "start_time": "00:06:43.180",
+      "end_time": "00:06:44.140",
+      "french": "Chère.",
+      "chinese": "昂贵。"
+    },
+    {
+      "index": 65,
+      "start_time": "00:06:44.680",
+      "end_time": "00:06:50.240",
+      "french": "J'hésite à aimer et à acheter ce petit bracelet en or.",
+      "chinese": "我犹豫是否喜欢并购买这条小金手链。"
+    },
+    {
+      "index": 66,
+      "start_time": "00:06:50.760",
+      "end_time": "00:06:54.220",
+      "french": "Ou cette jolie bague avec une pierre précieuse.",
+      "chinese": "或者这枚带有宝石的漂亮戒指。"
+    },
+    {
+      "index": 67,
+      "start_time": "00:06:54.660",
+      "end_time": "00:06:57.480",
+      "french": "Mais ils sont tous les deux très chers.",
+      "chinese": "但它们两个都非常昂贵。"
+    },
+    {
+      "index": 68,
+      "start_time": "00:06:58.020",
+      "end_time": "00:07:00.480",
+      "french": "Elle décide d'être raisonnable",
+      "chinese": "她决定理智一点"
+    },
+    {
+      "index": 69,
+      "start_time": "00:07:00.480",
+      "end_time": "00:07:02.800",
+      "french": "et d'attendre les soldes.",
+      "chinese": "并等待打折季。"
+    },
+    {
+      "index": 70,
+      "start_time": "00:07:03.880",
+      "end_time": "00:07:06.500",
+      "french": "Merci les amis d'avoir regardé cet épisode.",
+      "chinese": "感谢朋友们观看这一集。"
+    },
+    {
+      "index": 71,
+      "start_time": "00:07:07.020",
+      "end_time": "00:07:08.360",
+      "french": "On espère qu'il vous a plu.",
+      "chinese": "希望你们喜欢。"
+    },
+    {
+      "index": 72,
+      "start_time": "00:07:08.580",
+      "end_time": "00:07:13.200",
+      "french": "Si vous êtes débutant en français, il est vraiment important de maîtriser.",
+      "chinese": "如果你是法语初学者，掌握这一点真的很重要。"
+    },
+    {
+      "index": 73,
+      "start_time": "00:07:13.660",
+      "end_time": "00:07:17.780",
+      "french": "Ces vieux adjectifs ne sont plus couramment utilisés en français.",
+      "chinese": "这些旧形容词在法语中已不再常用。"
+    },
+    {
+      "index": 74,
+      "start_time": "00:07:18.840",
+      "end_time": "00:07:22.540",
+      "french": "Si vous aimez cette vidéo, abonnez-vous et dites-nous en commentaire",
+      "chinese": "如果你喜欢这个视频，请订阅并在评论中告诉我们"
+    },
+    {
+      "index": 75,
+      "start_time": "00:07:22.540",
+      "end_time": "00:07:25.860",
+      "french": "quel thème vous aimeriez que l'on aborde dans les prochaines vidéos.",
+      "chinese": "你希望我们在接下来的视频中探讨什么主题。"
+    },
+    {
+      "index": 76,
+      "start_time": "00:07:37.400",
+      "end_time": "00:07:37.480",
+      "french": "Joli.",
+      "chinese": "漂亮。"
+    }
+  ]
+}

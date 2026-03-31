@@ -10,6 +10,7 @@ import OSS from 'ali-oss'
 import { STS } from 'ali-oss'
 import { randomUUID } from 'crypto'
 import { checkAdminForAPI } from '@/lib/admin-auth'
+import { getCacheHeaders } from '@/lib/oss'
 
 interface UploadThumbnailParams {
   fileName: string
@@ -100,7 +101,8 @@ export async function uploadThumbnail(
     // 7. 上传到 OSS
     await client.put(objectKey, buffer, {
       headers: {
-        'Content-Type': 'image/jpeg'
+        'Content-Type': 'image/jpeg',
+        ...getCacheHeaders('image'),
       }
     })
 

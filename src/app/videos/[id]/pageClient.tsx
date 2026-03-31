@@ -457,9 +457,8 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           </div>
         )}
 
-        {/* 视频区 - 吸顶（PIP 模式下隐藏） */}
-        {!pipMode && (
-          <div className="sticky top-0 z-40">
+        {/* 视频区 - 吸顶（PIP 模式下 CSS 隐藏，保留 video buffer） */}
+        <div className={cn("sticky top-0 z-40", pipMode && "hidden")}>
             {/* 视频播放器 + 半透明返回按钮 */}
             <div className="relative">
               {!isLargeScreen && (
@@ -594,7 +593,6 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
             </div>
           </div>
         </div>
-        )}
 
         {/* 内容区 - PIP 模式下全屏，否则 60vh */}
         {/* listen/speak/write 有内部滚动，learn 需要容器滚动 */}

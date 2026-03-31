@@ -6,7 +6,7 @@
  * 使用 Server Action 绕过 API Route 的 10MB body size 限制
  */
 
-import { getOSSClient } from '@/lib/oss'
+import { getOSSClient, getCacheHeaders } from '@/lib/oss'
 import { randomUUID } from 'crypto'
 
 export async function uploadAudio(formData: FormData) {
@@ -41,7 +41,9 @@ export async function uploadAudio(formData: FormData) {
 
     const buffer = Buffer.from(await file.arrayBuffer())
     const client = getOSSClient()
-    const result = await client.put(objectKey, buffer)
+    const result = await client.put(objectKey, buffer, {
+      headers: getCacheHeaders('audio'),
+    })
 
     const publicUrl = `https://${client.options.bucket}.${client.options.region}.aliyuncs.com/${objectKey}`
 

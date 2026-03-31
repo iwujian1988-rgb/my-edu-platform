@@ -3,7 +3,7 @@
 /**
  * 视频播放器组件
  *
- * 优化：点击封面图才加载视频，节省流量
+ * 点击封面图开始播放，preload=auto 允许浏览器缓存视频
  */
 
 import { useRef, useState, useEffect, useCallback } from 'react'
@@ -339,8 +339,9 @@ export function VideoPlayer({
       <video
         ref={videoRef}
         src={hasStarted ? video.video_url : undefined}
+        poster={video.thumbnail_url || undefined}
         className="w-full aspect-video"
-        preload="none"
+        preload="auto"
         playsInline
         onLoadedMetadata={handleLoadedMetadata}
         onCanPlayThrough={handleCanPlayThrough}

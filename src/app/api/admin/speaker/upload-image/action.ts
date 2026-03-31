@@ -6,7 +6,7 @@
  * 将封面图片上传到阿里云 OSS，返回公开访问 URL
  */
 
-import { getOSSClient } from '@/lib/oss'
+import { getOSSClient, getCacheHeaders } from '@/lib/oss'
 import { randomUUID } from 'crypto'
 
 export async function uploadSpeakerImage(formData: FormData) {
@@ -50,7 +50,8 @@ export async function uploadSpeakerImage(formData: FormData) {
     const client = getOSSClient()
     await client.put(objectKey, buffer, {
       headers: {
-        'Content-Type': file.type
+        'Content-Type': file.type,
+        ...getCacheHeaders('image'),
       }
     })
 

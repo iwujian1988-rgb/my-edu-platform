@@ -11,6 +11,7 @@
 
 import { useState, useCallback, useRef, useEffect } from 'react'
 import OSS from 'ali-oss'
+import { getCacheHeaders } from '@/lib/oss'
 import type { UserRecording } from '@/types/video'
 
 interface UseRecordingsOptions {
@@ -308,6 +309,7 @@ export function useRecordings({
         setUploadProgress(0)
 
         await client.put(objectKey, blobRef.current, {
+          headers: getCacheHeaders('recording'),
           progress: (p: number) => {
             const percent = Math.floor(p * 100)
             setUploadProgress(percent)
@@ -414,6 +416,7 @@ export function useRecordings({
 
           // 使用 multipartUpload 获得更可靠的进度回调
           await client.multipartUpload(objectKey, blobToUpload, {
+            headers: getCacheHeaders('recording'),
             progress: (p: number) => {
               const percent = Math.floor(p * 100)
               setUploadProgress(percent)

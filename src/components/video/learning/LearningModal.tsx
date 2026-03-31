@@ -389,7 +389,7 @@ export function LearningModal({
   }).length
 
   return (
-    <Dialog open={open} onOpenChange={onOpenChange} modal={false}>
+    <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-[98vw] w-[1600px] h-[95vh] p-0 gap-0 bg-gray-100 dark:bg-gray-900 border-[3px] border-black dark:border-gray-600 shadow-[8px_8px_0px_0px_#000] dark:shadow-[8px_8px_0px_0px_#666] rounded-sm overflow-hidden flex flex-col">
         <VisuallyHidden>
           <DialogTitle>学习模块</DialogTitle>
@@ -401,11 +401,12 @@ export function LearningModal({
           {/* 左侧：视频 + 地道表达 */}
           <div className="w-[45%] flex flex-col shrink-0 border-r-[3px] border-black dark:border-gray-600">
             {/* 视频区域 */}
-            <div className="relative bg-black aspect-video shrink-0">
+            <div className="relative bg-gray-900 aspect-video shrink-0">
               {video.video_url ? (
                 <video
                   ref={videoRef}
                   src={video.video_url}
+                  poster={video.thumbnail_url || undefined}
                   className="w-full h-full object-contain"
                   onTimeUpdate={handleVideoTimeUpdate}
                   onPlay={() => setIsVideoPlaying(true)}

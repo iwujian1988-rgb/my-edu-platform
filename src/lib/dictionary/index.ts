@@ -226,6 +226,7 @@ export async function lookupBatch(
   options?: {
     skipCache?: boolean
     targetLang?: string
+    skipFallback?: boolean
   }
 ): Promise<UnifiedDictEntry[]> {
   if (!words || words.length === 0) {
@@ -293,7 +294,7 @@ export async function lookupBatch(
   // 检查失败的词，尝试兜底 Provider
   const failedIndices = uncachedIndices.filter(i => !results[i]?.success)
 
-  if (failedIndices.length > 0 && lang === 'fr') {
+  if (failedIndices.length > 0 && !options?.skipFallback && lang === 'fr') {
     console.log(`[Dictionary] ${failedIndices.length} 词需要兜底查询`)
 
     for (const idx of failedIndices) {

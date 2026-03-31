@@ -9,7 +9,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { createAdminClient } from '@/lib/supabase/server'
-import { getOSSClient } from '@/lib/oss'
+import { getOSSClient, getCacheHeaders } from '@/lib/oss'
 
 // 开发环境代理 fetch
 async function getProxyFetch() {
@@ -99,7 +99,8 @@ export async function GET(request: NextRequest) {
         // 上传到 OSS
         await ossClient.put(objectKey, imageBuffer, {
           headers: {
-            'Content-Type': 'image/jpeg'
+            'Content-Type': 'image/jpeg',
+            ...getCacheHeaders('image'),
           }
         })
 

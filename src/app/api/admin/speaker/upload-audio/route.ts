@@ -6,7 +6,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server'
-import { getOSSClient } from '@/lib/oss'
+import { getOSSClient, getCacheHeaders } from '@/lib/oss'
 import { randomUUID } from 'crypto'
 
 export async function POST(request: NextRequest) {
@@ -48,7 +48,9 @@ export async function POST(request: NextRequest) {
 
     const buffer = Buffer.from(await file.arrayBuffer())
     const client = getOSSClient()
-    const result = await client.put(objectKey, buffer)
+    const result = await client.put(objectKey, buffer, {
+      headers: getCacheHeaders('audio'),
+    })
 
     const publicUrl = `https://${client.options.bucket}.${client.options.region}.aliyuncs.com/${objectKey}`
 

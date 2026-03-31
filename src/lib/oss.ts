@@ -68,7 +68,9 @@ export async function uploadAudioToOSS(
 
     console.log(`📤 [OSS] 上传音频: ${objectKey} (${buffer.length} bytes)`)
 
-    const result = await client.put(objectKey, buffer)
+    const result = await client.put(objectKey, buffer, {
+      headers: getCacheHeaders('audio'),
+    })
 
     console.log(`✅ [OSS] 上传成功: ${result.url}`)
 
@@ -127,6 +129,7 @@ export async function uploadImageToOSS(
     const result = await client.put(objectKey, buffer, {
       headers: {
         'Content-Type': 'image/jpeg',
+        ...getCacheHeaders('image'),
       },
     })
 
@@ -142,4 +145,28 @@ export async function uploadImageToOSS(
     console.error('❌ [OSS] 上传图片失败:', error)
     throw error
   }
+}
+
+// ─── OSS 缓存头管理 ─────────────────────────────────────────────
+
+type CacheType = 'video' | 'audio' | 'image' | 'recording'
+
+/** 长期缓存（1年）用于不可变的静态资源 */
+const CACHE_MAX_AGE_IMMUTABLE = 'public, max-age=31536000, immutable'
+/** 短期缓存（1天）用于用户录音等可能变更的资源 */
+const CACHE_MAX_AGE_SHORT = 'public, max-age=86400'
+
+const CACHE_HEADERS: Record<CacheType, Record<string, string>> = {
+  video:     { 'Cache-Control': CACHE_MAX_AGE_IMMUTABLE, 'Content-Disposition': 'inline' },
+  audio:     { 'Cache-Control': CACHE_MAX_AGE_IMMUTABLE, 'Content-Disposition': 'inline' },
+  image:     { 'Cache-Control': CACHE_MAX_AGE_IMMUTABLE, 'Content-Disposition': 'inline' },
+  recording: { 'Cache-Control': CACHE_MAX_AGE_SHORT, 'Content-Disposition': 'inline' },
+}
+
+/**
+ * 获取 OSS 对象的缓存响应头
+ * 纯函数，无 Node.js 依赖，前后端通用
+ */
+export function getCacheHeaders(type: CacheType): Record<string, string> {
+  return CACHE_HEADERS[type]
 }

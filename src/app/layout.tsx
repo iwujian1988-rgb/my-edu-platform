@@ -9,8 +9,8 @@ import { LoadingOverlay } from "@/components/LoadingOverlay";
 import { InstallPWAButton } from "@/components/InstallPWAButton";
 
 export const metadata: Metadata = {
-  title: "MAX笔记 - 英语学习平台",
-  description: "MAX笔记 - 智能外语学习平台，采用 Neo-Brutalism 设计风格",
+  title: "MAX笔记 - AI智能外语学习平台",
+  description: "MAX笔记 - AI驱动的智能外语学习平台，支持英语、日语、法语等多语种，提供视频学习、跟读练习、听写训练、智能知识点卡片等沉浸式学习体验",
   manifest: "/manifest.json",
   icons: {
     icon: "/icons/icon-192.png",
