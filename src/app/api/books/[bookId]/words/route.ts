@@ -1,5 +1,5 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
-import { getUserPermissions } from '@/lib/permissions'
+import { getUserPermissions, hasLanguagePermission } from '@/lib/permissions'
 import { NextRequest, NextResponse } from 'next/server'
 
 type Chapter = {
@@ -68,6 +68,31 @@ export async function GET(
         { error: '您只能查看自己创建的词库的单词' },
         { status: 403 }
       )
+    }
+
+    // 官方词库：检查用户权限和语言权限
+    if (bookData.is_official === true) {
+      const userPermissions = await getUserPermissions()
+      const userLangPkgs = userPermissions?.languagePackages || ['en']
+      const hasAllBooks = userPermissions?.bookPermissions?.includes('*') ||
+                          userPermissions?.bookPermissions?.includes('全部') || false
+      const userBookIds = userPermissions?.bookPermissions || []
+
+      // 语言权限检查
+      if (!hasLanguagePermission(userLangPkgs, bookData.language)) {
+        return NextResponse.json(
+          { error: '您的订阅不包含此语言的词库' },
+          { status: 403 }
+        )
+      }
+
+      // 词库权限检查
+      if (!hasAllBooks && !userBookIds.includes(bookId)) {
+        return NextResponse.json(
+          { error: '您没有权限访问此词库' },
+          { status: 403 }
+        )
+      }
     }
 
     // ===== 构建查询 =====

@@ -14,6 +14,7 @@ import { FEATURE_PERMISSIONS } from '@/lib/permissions'
 export interface UserPermissions {
   featurePermissions: string[]
   bookPermissions: string[]
+  languagePackages: string[]
   permissionExpiresAt: string | null
   isExpired: boolean
   isExpiringSoon: boolean
@@ -25,6 +26,7 @@ export function usePermissions() {
   const [permissions, setPermissions] = useState<UserPermissions>({
     featurePermissions: [],
     bookPermissions: [],
+    languagePackages: ['en'],
     permissionExpiresAt: null,
     isExpired: false,
     isExpiringSoon: false,
@@ -48,7 +50,7 @@ export function usePermissions() {
 
         const { data, error } = await supabase
           .from('users')
-          .select('feature_permissions, book_permissions, permission_expires_at')
+          .select('feature_permissions, book_permissions, language_packages, permission_expires_at')
           .eq('id', user.id)
           .single()
 
@@ -82,6 +84,7 @@ export function usePermissions() {
         setPermissions({
           featurePermissions: userData.feature_permissions || [],
           bookPermissions: userData.book_permissions || [],
+          languagePackages: userData.language_packages || ['en'],
           permissionExpiresAt: userData.permission_expires_at,
           isExpired,
           isExpiringSoon,

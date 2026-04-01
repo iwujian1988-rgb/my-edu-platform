@@ -7,6 +7,7 @@
 
 import { cache } from 'react'
 import { createClient } from '@/lib/supabase/server'
+import { hasLanguagePermission } from '@/lib/permissions'
 
 /**
  * 词书数据类型定义
@@ -41,7 +42,7 @@ export interface BookData {
  */
 export const getAllBooks = cache(async (
   userId?: string,
-  userPermissions?: { bookPermissions: string[] }
+  userPermissions?: { bookPermissions: string[]; languagePackages?: string[] }
 ): Promise<BookData[]> => {
   console.log('[Books Server] Fetching all books from database')
 
@@ -50,7 +51,7 @@ export const getAllBooks = cache(async (
   // 1. 获取基础词书数据 - 只查询需要的字段以提升性能
   const { data: booksData, error: booksError } = await supabase
     .from('books')
-    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language')
     .order('created_at', { ascending: false })
 
   if (booksError) {
@@ -76,7 +77,10 @@ export const getAllBooks = cache(async (
                        userPermissions?.bookPermissions?.includes('全部') || false
   const userBookIds = userPermissions?.bookPermissions || []
 
-  // 4. 根据权限过滤词书
+  // 4. 获取用户的语言权限
+  const userLangPkgs = userPermissions?.languagePackages || ['en']
+
+  // 5. 根据权限和语言过滤词书
   const filteredBooks = booksData.filter((book: any) => {
     // 用户自定义词书：只显示自己创建的
     if (book.is_official === false) {
@@ -85,6 +89,10 @@ export const getAllBooks = cache(async (
 
     // 官方词书：检查权限
     if (book.is_official === true) {
+      // 先检查语言权限：英语会员不能看法语/西语词库
+      if (!hasLanguagePermission(userLangPkgs, book.language)) {
+        return false
+      }
       return hasAllBooks || userBookIds.includes(book.id)
     }
 
@@ -223,7 +231,7 @@ function determineCoverType(title?: string, description?: string): 'cn' | 'globa
 export const getBookById = cache(async (
   bookId: string,
   userId?: string,
-  userPermissions?: { bookPermissions: string[] }
+  userPermissions?: { bookPermissions: string[]; languagePackages?: string[] }
 ): Promise<BookData | null> => {
   console.log('[Books Server] Fetching book by ID:', bookId)
 
@@ -231,7 +239,7 @@ export const getBookById = cache(async (
 
   const { data: book, error } = await supabase
     .from('books')
-    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language')
     .eq('id', bookId)
     .single()
 
@@ -245,6 +253,7 @@ export const getBookById = cache(async (
     const hasAllBooks = userPermissions?.bookPermissions?.includes('*') ||
                          userPermissions?.bookPermissions?.includes('全部') || false
     const userBookIds = userPermissions?.bookPermissions || []
+    const userLangPkgs = userPermissions?.languagePackages || ['en']
 
     // 用户自定义词书：必须是自己创建的
     if (book.is_official === false && book.created_by !== userId) {
@@ -253,9 +262,16 @@ export const getBookById = cache(async (
     }
 
     // 官方词书：检查权限
-    if (book.is_official === true && !hasAllBooks && !userBookIds.includes(book.id)) {
-      console.warn('[Books Server] User does not have permission to access this official book')
-      return null
+    if (book.is_official === true) {
+      // 语言权限检查
+      if (!hasLanguagePermission(userLangPkgs, book.language)) {
+        console.warn(`[Books Server] User language packages [${userLangPkgs}] don't include book language: ${book.language}`)
+        return null
+      }
+      if (!hasAllBooks && !userBookIds.includes(book.id)) {
+        console.warn('[Books Server] User does not have permission to access this official book')
+        return null
+      }
     }
   }
 
@@ -276,7 +292,7 @@ export const getBookById = cache(async (
 export const getBooksByIds = cache(async (
   bookIds: string[],
   userId?: string,
-  userPermissions?: { bookPermissions: string[] }
+  userPermissions?: { bookPermissions: string[]; languagePackages?: string[] }
 ): Promise<BookData[]> => {
   if (!bookIds || bookIds.length === 0) {
     console.log('[Books Server] No book IDs provided')
@@ -289,7 +305,7 @@ export const getBooksByIds = cache(async (
 
   const { data: books, error } = await supabase
     .from('books')
-    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language')
     .in('id', bookIds)
 
   if (error) {
@@ -309,6 +325,7 @@ export const getBooksByIds = cache(async (
     const hasAllBooks = userPermissions?.bookPermissions?.includes('*') ||
                          userPermissions?.bookPermissions?.includes('全部') || false
     const userBookIds = userPermissions?.bookPermissions || []
+    const userLangPkgs = userPermissions?.languagePackages || ['en']
 
     filteredBooks = books.filter((book: any) => {
       // 用户自定义词书：必须是自己创建的
@@ -318,6 +335,10 @@ export const getBooksByIds = cache(async (
 
       // 官方词书：检查权限
       if (book.is_official === true) {
+        // 语言权限检查
+        if (!hasLanguagePermission(userLangPkgs, book.language)) {
+          return false
+        }
         return hasAllBooks || userBookIds.includes(book.id)
       }
 

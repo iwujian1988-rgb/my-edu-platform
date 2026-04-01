@@ -196,9 +196,14 @@ export async function getUserPermissions() {
     }
   }
 
+  // 语言权限：未设置时默认只有英语，防止英语会员访问法语/西语词库
+  const rawLanguagePackages = (profile as any).language_packages as string[] | null | undefined
+  const languagePackages = normalizeLanguagePackages(rawLanguagePackages)
+
   return {
     featurePermissions: profile.feature_permissions || [],
     bookPermissions: profile.book_permissions || [],
+    languagePackages,
     permissionExpiresAt: profile.permission_expires_at,
     isExpired: expirationCheck.isExpired,
     isExpiringSoon: expirationCheck.isExpiringSoon,
@@ -210,9 +215,40 @@ export async function getUserPermissions() {
 export interface UserPermissions {
   featurePermissions: string[]
   bookPermissions: string[]
+  languagePackages: string[]
   permissionExpiresAt: string | null
   isExpired: boolean
   isExpiringSoon: boolean
   daysUntilExpiry: number | null
   invitationCodeId: string | null
+}
+
+/**
+ * 标准化语言权限数组
+ *
+ * 规则：
+ * - null/undefined/空 → 默认 ['en']（英语会员不能看其他语言）
+ * - 包含 '*' → 所有语言
+ */
+function normalizeLanguagePackages(raw: string[] | null | undefined): string[] {
+  if (!raw || raw.length === 0) {
+    return ['en']
+  }
+  return raw
+}
+
+/**
+ * 检查用户是否有权限访问指定语言的词库
+ */
+export function hasLanguagePermission(
+  userLanguagePackages: string[],
+  bookLanguage: string | null | undefined
+): boolean {
+  // 通配符：拥有所有语言权限
+  if (userLanguagePackages.includes('*')) {
+    return true
+  }
+  // 词库无语言标记时默认 en，仍需校验
+  const targetLang = bookLanguage || 'en'
+  return userLanguagePackages.includes(targetLang)
 }

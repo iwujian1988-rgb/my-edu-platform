@@ -1,5 +1,5 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
-import { getUserPermissions } from '@/lib/permissions'
+import { getUserPermissions, hasLanguagePermission } from '@/lib/permissions'
 import { NextRequest, NextResponse } from 'next/server'
 
 /**
@@ -50,6 +50,14 @@ export async function GET(
       const hasAllBooks = userPermissions?.bookPermissions.includes('*') ||
                           userPermissions?.bookPermissions.includes('全部')
       const userBookIds = userPermissions?.bookPermissions || []
+
+      // 语言权限检查：英语会员不能访问法语/西语词库
+      if (!hasLanguagePermission(userPermissions?.languagePackages || ['en'], bookData.language)) {
+        return NextResponse.json(
+          { error: 'Forbidden: Your subscription does not include this language' },
+          { status: 403 }
+        )
+      }
 
       if (!hasAllBooks && !userBookIds.includes(bookId)) {
         return NextResponse.json(

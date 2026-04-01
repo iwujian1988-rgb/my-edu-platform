@@ -42,10 +42,11 @@ const LANGUAGE_PACKAGES = [
 interface BookOption {
   id: string
   name: string
+  language: string
 }
 
 // "全部单词书"选项
-const ALL_BOOKS_OPTION: BookOption = { id: '*', name: '全部单词书' }
+const ALL_BOOKS_OPTION: BookOption = { id: '*', name: '全部单词书', language: '*' }
 
 // 视频套餐选项
 interface VideoPackageOption {
@@ -93,7 +94,7 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         if (data.books) {
           const options = data.books
             .filter((book: any) => book.is_official)
-            .map((book: any) => ({ id: book.id, name: book.title }))
+            .map((book: any) => ({ id: book.id, name: book.title, language: book.language || 'en' }))
             .sort((a: BookOption, b: BookOption) => a.name.localeCompare(b.name, 'zh-CN'))
           setBookOptions([ALL_BOOKS_OPTION, ...options])
         }
@@ -509,6 +510,39 @@ function PackageFormDialog({
     'ru': '俄语'
   }
 
+  // 检测词库语言与语言权限的错配
+  const getMismatchWarning = (): string | null => {
+    // 没选语言权限，不需要校验
+    if (formData.language_packages.length === 0) return null
+    // 选了所有语言权限（通配符），不需要校验
+    if (formData.language_packages.includes('*')) return null
+    // 没选词库，不需要校验
+    if (formData.book_permissions.length === 0) return null
+    // 选了"全部词库"，按语言权限过滤
+    if (formData.book_permissions.includes('*') || formData.book_permissions.includes('全部')) {
+      return null // 全部词库由语言权限控制，不会错配
+    }
+
+    // 找出选中词库的语言
+    const selectedBookLanguages = new Set<string>()
+    for (const bookId of formData.book_permissions) {
+      const book = bookOptions.find(b => b.id === bookId)
+      if (book) selectedBookLanguages.add(book.language || 'en')
+    }
+
+    // 找出词库有但语言权限没有的语言
+    const mismatchLangs = [...selectedBookLanguages].filter(
+      lang => !formData.language_packages.includes(lang)
+    )
+
+    if (mismatchLangs.length === 0) return null
+
+    const langNames = mismatchLangs.map(l => languageNames[l] || l).join('、')
+    return `选中的词库包含${langNames}内容，但语言权限未勾选${langNames}，用户将无法看到这些词库`
+  }
+
+  const mismatchWarning = getMismatchWarning()
+
   // 提交表单
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -668,23 +702,22 @@ function PackageFormDialog({
             </p>
           </div>
 
-          {/* 雯姐学习法语言包 */}
-          {formData.feature_permissions.includes('speaker') && (
-            <div className="p-4 bg-purple-100 dark:bg-purple-900 border-[3px] border-purple-500">
-              <label className="block text-sm font-bold text-purple-900 dark:text-purple-200 mb-2">
-                雯姐学习法 - 语言包配置
-              </label>
-              <p className="text-xs text-purple-700 dark:text-purple-300 mb-3">
-                选择该套餐包含的语言包，用户购买套餐后自动获得
-              </p>
+          {/* 语言权限配置 - 控制用户可访问的词库/视频语言 */}
+          <div className="p-4 bg-blue-100 dark:bg-blue-900 border-[3px] border-blue-500">
+            <label className="block text-sm font-bold text-blue-900 dark:text-blue-200 mb-2">
+              语言权限
+            </label>
+            <p className="text-xs text-blue-700 dark:text-blue-300 mb-3">
+              选择该套餐包含的语言。用户只能访问已授权语言的词库和学习材料
+            </p>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
                 {LANGUAGE_PACKAGES.map(lang => (
                   <label
                     key={lang.id}
                     className={`flex items-center gap-2 px-3 py-2 font-bold border-[3px] cursor-pointer transition-all ${
                       formData.language_packages.includes(lang.id)
-                        ? 'border-purple-500 bg-purple-200 dark:bg-purple-800 text-purple-900 dark:text-purple-100 shadow-[2px_2px_0px_0px_#7c3aed]'
-                        : 'border-purple-300 dark:border-purple-700 bg-white dark:bg-gray-800 text-purple-900 dark:text-purple-100 hover:bg-purple-50 dark:hover:bg-gray-700'
+                        ? 'border-blue-500 bg-blue-200 dark:bg-blue-800 text-blue-900 dark:text-blue-100 shadow-[2px_2px_0px_0px_#3b82f6]'
+                        : 'border-blue-300 dark:border-blue-700 bg-white dark:bg-gray-800 text-blue-900 dark:text-blue-100 hover:bg-blue-50 dark:hover:bg-gray-700'
                     }`}
                   >
                     <input
@@ -699,7 +732,6 @@ function PackageFormDialog({
                 ))}
               </div>
             </div>
-          )}
 
           {/* 视频套餐关联 - 复用视频模块的套餐系统 */}
           {formData.feature_permissions.includes('video') && (
@@ -775,6 +807,15 @@ function PackageFormDialog({
               </label>
             </div>
           </div>
+
+          {/* 配置冲突警告 */}
+          {mismatchWarning && (
+            <div className="p-4 bg-yellow-100 dark:bg-yellow-900 border-[3px] border-yellow-500 shadow-[3px_3px_0px_0px_#eab308]">
+              <p className="text-sm font-bold text-yellow-900 dark:text-yellow-100">
+                ⚠️ {mismatchWarning}
+              </p>
+            </div>
+          )}
 
           {/* 按钮 */}
           <DialogFooter className="border-t-[3px] border-black dark:border-gray-700 pt-4 gap-3">
