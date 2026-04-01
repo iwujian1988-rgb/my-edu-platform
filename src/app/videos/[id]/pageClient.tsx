@@ -966,7 +966,15 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
       {/* PC端学习弹层 - 全屏模态框，包含 PiP 视频 */}
       <LearningModal
         open={isLearningModalOpen}
-        onOpenChange={setIsLearningModalOpen}
+        onOpenChange={(open) => {
+          setIsLearningModalOpen(open)
+          if (!open) {
+            // 关闭弹层：恢复主视频，从弹层视频最后位置继续
+            setPauseMainVideo(false)
+            setSeekToTime(currentVideoTime)
+            setSeekTrigger(prev => prev + 1)
+          }
+        }}
         video={video}
         words={data.cards.words}
         expressions={data.cards.expressions}
@@ -977,7 +985,9 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         onStatusChange={updateStatus}
         onJumpToSubtitle={(time) => {
           setIsLearningModalOpen(false)
+          setPauseMainVideo(false)
           setSeekToTime(time)
+          setSeekTrigger(prev => prev + 1)
         }}
         currentVideoTime={currentVideoTime}
         onVideoTimeUpdate={setCurrentVideoTime}

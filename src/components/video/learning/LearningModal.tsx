@@ -390,7 +390,15 @@ export function LearningModal({
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-[98vw] w-[1600px] h-[95vh] p-0 gap-0 bg-gray-100 dark:bg-gray-900 border-[3px] border-black dark:border-gray-600 shadow-[8px_8px_0px_0px_#000] dark:shadow-[8px_8px_0px_0px_#666] rounded-sm overflow-hidden flex flex-col">
+      <DialogContent
+        className="max-w-[98vw] w-[1600px] h-[95vh] p-0 gap-0 bg-gray-100 dark:bg-gray-900 border-[3px] border-black dark:border-gray-600 shadow-[8px_8px_0px_0px_#000] dark:shadow-[8px_8px_0px_0px_#666] rounded-sm overflow-hidden flex flex-col"
+        onPointerDownOutside={(e) => {
+          const target = e.target as HTMLElement
+          if (target.closest('[data-word-tooltip-overlay]')) {
+            e.preventDefault()
+          }
+        }}
+      >
         <VisuallyHidden>
           <DialogTitle>学习模块</DialogTitle>
           <DialogDescription>单词、地道表达、语法点等学习内容</DialogDescription>
@@ -417,6 +425,8 @@ export function LearningModal({
                     if (initialVideoPosition > 0) {
                       el.currentTime = initialVideoPosition
                     }
+                    // 打开弹层后自动从主视频当前位置继续播放
+                    el.play().then(() => setIsVideoPlaying(true)).catch(() => {})
                   }}
                 />
               ) : (

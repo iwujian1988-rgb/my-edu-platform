@@ -1,28 +1,16 @@
 'use client'
 
 /**
- * 词汇弹窗组件
- *
- * 点击词汇显示词典数据：音标、释义、例句等
- * 设计风格：Neo-brutalism - 与 Speaker 模块保持一致
- * 响应式：移动端全屏弹层，PC端悬浮卡片
- *
- * 修复：
- * 1. 根据页面位置智能判断弹层向上/向下展示
- * 2. 使用更高的 z-index 确保在 Dialog 内部正常显示
- * 3. TTS 播放前取消之前的语音
+ * 词汇弹窗 — PC端极简版
+ * 点击词汇 → 显示词典数据 + 播放按钮
+ * 移动端保持原有逻辑不变
  */
 
 import { useState, useEffect, useCallback, useRef, memo } from 'react'
 import { createPortal } from 'react-dom'
-import { cn } from '@/lib/utils'
 import { Volume2, X, Loader2 } from 'lucide-react'
 import { useDictionaryStore } from '@/hooks/useDictionaryStore'
 import type { DictionaryLanguage } from '@/lib/dictionary/types'
-
-// ============================================
-// 类型定义
-// ============================================
 
 export interface WordTooltipProps {
   word: string
@@ -31,45 +19,18 @@ export interface WordTooltipProps {
   className?: string
 }
 
-// ─── 全局状态：确保同时只有一个 tooltip 打开 ───
-let currentOpenId: string | null = null
-const openListeners = new Set<(id: string | null) => void>()
-
-function setOpenId(id: string | null) {
-  currentOpenId = id
-  openListeners.forEach(fn => fn(currentOpenId))
-}
-
-function useOpenId() {
-  const [openId, setOpenId] = useState<string | null>(currentOpenId)
-  useEffect(() => {
-    openListeners.add(setOpenId)
-    return () => { openListeners.delete(setOpenId) }
-  }, [])
-  return openId
-}
-
-// ============================================
-// 主组件
-// ============================================
-
 function WordTooltipInner({ word, language = 'fr', children, className }: WordTooltipProps) {
-  // 用 word + 随机数作为唯一 ID
-  const [tooltipId] = useState(() => `${word}_${Math.random().toString(36).slice(2, 9)}`)
-  const openId = useOpenId()
-  const isOpen = openId === tooltipId
-
-  const [position, setPosition] = useState({ top: 0, left: 0, showAbove: false })
+  const [isOpen, setIsOpen] = useState(false)
+  const [cardPos, setCardPos] = useState({ top: 0, left: 0 })
   const [isMobile, setIsMobile] = useState(false)
   const [mounted, setMounted] = useState(false)
   const triggerRef = useRef<HTMLSpanElement>(null)
+  const cardRef = useRef<HTMLDivElement>(null)
   const scrollRef = useRef<HTMLDivElement>(null)
 
-  const { entry, loading, error, lookup } = useDictionaryStore()
+  const { entry, loading, lookup } = useDictionaryStore()
   const currentEntry = entry?.word?.toLowerCase() === word.toLowerCase() ? entry : null
-  // 缓存的失败结果 success=false，视为无数据
-  const hasValidEntry = currentEntry && currentEntry.success !== false
-  const isCurrentLoading = loading && !currentEntry
+  const hasData = currentEntry && currentEntry.success !== false
 
   useEffect(() => { setMounted(true) }, [])
 
@@ -103,156 +64,156 @@ function WordTooltipInner({ word, language = 'fr', children, className }: WordTo
     }
   }, [isOpen, isMobile])
 
-  // 计算弹层位置 - 根据触发元素位置判断向上/向下展示
-  const calculatePosition = useCallback(() => {
-    if (!triggerRef.current) return { top: 0, left: 0, showAbove: false }
-    const rect = triggerRef.current.getBoundingClientRect()
-    const CARD_H = 400
-    const CARD_W = 288
-
-    // 判断是否有足够空间在下方显示
-    const spaceBelow = window.innerHeight - rect.bottom - 8
-    const showAbove = spaceBelow < CARD_H && rect.top > spaceBelow
-
-    let left = rect.left
-    if (left + CARD_W > window.innerWidth - 16) left = window.innerWidth - CARD_W - 16
-    if (left < 16) left = 16
-
-    const top = showAbove
-      ? Math.max(16, rect.top - CARD_H - 8)
-      : rect.bottom + 8
-
-    return { top, left, showAbove }
-  }, [])
-
+  // ── 打开 ──
   const handleOpen = useCallback((e: React.MouseEvent) => {
     e.preventDefault()
     e.stopPropagation()
-    setPosition(calculatePosition())
-    setOpenId(tooltipId)
+
     lookup(word, language)
-  }, [word, language, lookup, calculatePosition, tooltipId])
+    setIsOpen(true)
 
-  const handleClose = useCallback(() => {
-    setOpenId(null)
-  }, [])
+    // PC端：计算卡片位置
+    if (window.innerWidth >= 1024) {
+      requestAnimationFrame(() => {
+        if (!triggerRef.current) return
+        const rect = triggerRef.current.getBoundingClientRect()
+        const CARD_H = 400
+        const CARD_W = 288
 
+        const spaceBelow = window.innerHeight - rect.bottom - 8
+        const showAbove = spaceBelow < CARD_H && rect.top > spaceBelow
+
+        let left = rect.left
+        if (left + CARD_W > window.innerWidth - 16) left = window.innerWidth - CARD_W - 16
+        if (left < 16) left = 16
+
+        const top = showAbove
+          ? Math.max(16, rect.top - CARD_H - 8)
+          : rect.bottom + 8
+
+        setCardPos({ top, left })
+      })
+    }
+  }, [word, language, lookup])
+
+  const handleClose = useCallback(() => setIsOpen(false), [])
+
+  // 点击外部关闭（PC端）
+  useEffect(() => {
+    if (!isOpen || isMobile) return
+    const onClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement
+      if (triggerRef.current?.contains(target)) return
+      if (cardRef.current?.contains(target)) return
+      setIsOpen(false)
+    }
+    document.addEventListener('mousedown', onClick)
+    return () => document.removeEventListener('mousedown', onClick)
+  }, [isOpen, isMobile])
+
+  // ESC 关闭
+  useEffect(() => {
+    if (!isOpen) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setIsOpen(false) }
+    document.addEventListener('keydown', onKey)
+    return () => document.removeEventListener('keydown', onKey)
+  }, [isOpen])
+
+  // ── TTS ──
   const playSound = useCallback(async () => {
     const target = currentEntry?.word || word
     if (!target) return
-
     try {
-      // 调用后端 TTS API（有道 + 百度兜底）
-      const response = await fetch(`/api/tts?text=${encodeURIComponent(target)}&type=2&language=${language}`)
-
-      if (!response.ok) {
-        // API 失败，回退到浏览器 TTS
-        console.warn('[WordTooltip TTS] API 失败，回退到浏览器 TTS')
+      const res = await fetch(`/api/tts?text=${encodeURIComponent(target)}&type=2&language=${language}`)
+      if (!res.ok) {
         if ('speechSynthesis' in window) {
           speechSynthesis.cancel()
-          const utterance = new SpeechSynthesisUtterance(target)
-          utterance.lang = language === 'fr' ? 'fr-FR' : 'en-US'
-          utterance.rate = 0.8
-          speechSynthesis.speak(utterance)
+          const u = new SpeechSynthesisUtterance(target)
+          u.lang = language === 'fr' ? 'fr-FR' : 'en-US'
+          u.rate = 0.8
+          speechSynthesis.speak(u)
         }
         return
       }
-
-      // 播放音频
-      const blob = await response.blob()
-      const audioUrl = URL.createObjectURL(blob)
-      const audio = new Audio(audioUrl)
-
-      audio.onended = () => {
-        URL.revokeObjectURL(audioUrl)
-      }
-
+      const blob = await res.blob()
+      const url = URL.createObjectURL(blob)
+      const audio = new Audio(url)
+      audio.onended = () => URL.revokeObjectURL(url)
       await audio.play()
-    } catch (error) {
-      console.warn('[WordTooltip TTS] 播放失败:', error)
+    } catch (_err) {
+      // 静默失败
     }
   }, [currentEntry?.word, word, language])
 
-  // ─── 内容 JSX ───────────────────────────────────────────────
-  const content = (
-    <div className="p-3">
-      {isCurrentLoading ? (
+  // ── 词典内容 ──
+  const renderContent = () => {
+    if (loading && !currentEntry) {
+      return (
         <div className="flex items-center justify-center py-8">
-          <Loader2 className="w-6 h-6 animate-spin text-indigo-500" />
+          <Loader2 className="w-5 h-5 animate-spin text-gray-400" />
+          <span className="ml-2 text-sm text-gray-500">查询中...</span>
         </div>
-      ) : error && !hasValidEntry ? (
-        <div className="text-center py-8 text-amber-600 dark:text-amber-400 text-sm font-bold">
-          词典收录中···
+      )
+    }
+    if (!hasData) {
+      return <div className="px-3 py-4 text-sm text-gray-500 text-center">未找到「{word}」</div>
+    }
+
+    const e = currentEntry!
+    const phonetic = e.phonetic || e.uk_phonetic
+    // 优先用 definitions 数组（逐条展示），避免 definition 字段（已 join 拼接）与数组重复
+    const mainDef = e.definitions?.[0] || e.definition
+    const extraDefs = e.definitions?.length ? e.definitions.slice(1) : []
+
+    return (
+      <div className="px-3 py-2 space-y-2 text-sm">
+        {/* 标题：单词 + 音标 + 词性 + 播放 */}
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="font-black text-base text-black dark:text-white">{e.word}</span>
+          {phonetic && <span className="text-gray-500 dark:text-gray-400 text-xs">/{phonetic}/</span>}
+          {(e.posDetail || e.pos) && (
+            <span className="text-xs bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded">
+              {e.posDetail || e.pos}
+            </span>
+          )}
+          {e.gender && (
+            <span className="text-xs bg-pink-100 dark:bg-pink-900/40 text-pink-700 dark:text-pink-300 px-1.5 py-0.5 rounded">
+              {e.gender === 'm' ? '♂' : e.gender === 'f' ? '♀' : e.gender}
+            </span>
+          )}
+          <button
+            type="button"
+            onClick={(ev) => { ev.stopPropagation(); playSound() }}
+            className="ml-auto p-1.5 rounded border-2 border-black dark:border-gray-500 bg-indigo-200 dark:bg-indigo-800 hover:bg-indigo-300 dark:hover:bg-indigo-700 active:translate-y-[1px] cursor-pointer"
+          >
+            <Volume2 className="w-3.5 h-3.5" />
+          </button>
         </div>
-      ) : !hasValidEntry ? (
-        <div className="text-center py-8 text-amber-600 dark:text-amber-400 text-sm font-bold">
-          词典收录中···
-        </div>
-      ) : (
-        <div className="space-y-3">
-          <div className="flex items-center justify-between gap-2">
-            <div className="flex-1 min-w-0">
-              <div className="font-black text-xl text-black dark:text-white truncate">
-                {currentEntry.word}
+
+        {/* 释义 */}
+        {mainDef && <p className="text-gray-800 dark:text-gray-200 font-medium">{mainDef}</p>}
+        {extraDefs.length > 0 && (
+          <ul className="space-y-0.5 text-gray-600 dark:text-gray-400 text-xs">
+            {extraDefs.slice(0, 5).map((d, i) => <li key={i}>• {d}</li>)}
+          </ul>
+        )}
+
+        {/* 例句 */}
+        {e.examples && e.examples.length > 0 && (
+          <div className="pt-1 border-t border-gray-200 dark:border-gray-600 space-y-1">
+            {e.examples.slice(0, 2).map((ex, i) => (
+              <div key={i} className="text-xs text-gray-500 dark:text-gray-400">
+                <p>{ex.fr || ex.en}</p>
+                {ex.zh && <p className="text-gray-400 dark:text-gray-500">{ex.zh}</p>}
               </div>
-              {currentEntry.phonetic && (
-                <div className="text-sm text-gray-500 font-mono truncate">
-                  [{currentEntry.phonetic}]
-                </div>
-              )}
-            </div>
-            <button
-              type="button"
-              onClick={(e) => { e.stopPropagation(); playSound() }}
-              className="shrink-0 p-2 bg-[#B4F416] hover:bg-[#a3e014] active:bg-[#96cf12] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 active:translate-y-0 active:shadow-none transition-all cursor-pointer"
-            >
-              <Volume2 className="w-5 h-5 text-black" />
-            </button>
+            ))}
           </div>
+        )}
+      </div>
+    )
+  }
 
-          {currentEntry.posDetail && (
-            <div className="flex items-center gap-2 flex-wrap">
-              <span className="px-2 py-1 bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300 text-xs font-bold border-[2px] border-blue-300 dark:border-blue-700 rounded">
-                {currentEntry.posDetail}
-              </span>
-              {currentEntry.gender && (
-                <span className="px-2 py-1 bg-pink-100 dark:bg-pink-900/40 text-pink-700 dark:text-pink-300 text-xs font-bold border-[2px] border-pink-300 dark:border-pink-700 rounded">
-                  {currentEntry.gender}
-                </span>
-              )}
-            </div>
-          )}
-
-          {currentEntry.definition && (
-            <div>
-              <div className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1">释义</div>
-              <p className="text-base text-gray-800 dark:text-gray-200 font-medium">
-                {currentEntry.definition}
-              </p>
-            </div>
-          )}
-
-          {currentEntry.examples && currentEntry.examples.length > 0 && (
-            <div>
-              <div className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-1.5">例句</div>
-              <div className="space-y-2">
-                {currentEntry.examples.slice(0, 2).map((ex, i) => (
-                  <div key={i} className="p-2 bg-gray-50 dark:bg-gray-700/50 border-[2px] border-gray-200 dark:border-gray-600 rounded-sm">
-                    <p className="text-sm text-gray-800 dark:text-gray-200">{ex.fr || ex.en}</p>
-                    {ex.zh && (
-                      <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">{ex.zh}</p>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </div>
-      )}
-    </div>
-  )
-
-  // ─── 头部 JSX ───────────────────────────────────────────────
+  // ── 头部 ──
   const header = (
     <div className="flex items-center justify-between px-3 py-2 bg-indigo-200 dark:bg-indigo-900/40 border-b-[3px] border-black dark:border-gray-600 shrink-0">
       <span className="font-black text-sm text-indigo-800 dark:text-indigo-200">词典查询</span>
@@ -270,67 +231,55 @@ function WordTooltipInner({ word, language = 'fr', children, className }: WordTo
     <>
       <span
         ref={triggerRef}
+        className={className}
         onClick={handleOpen}
-        className={cn(
-          'cursor-pointer hover:bg-indigo-100 dark:hover:bg-indigo-900/40 transition-colors rounded-sm inline',
-          className
-        )}
       >
         {children}
       </span>
 
-      {mounted && isOpen && createPortal(
-        <>
-          {/* 背景层：阻止所有事件穿透，点击关闭 */}
-          <div
-            className="fixed inset-0"
-            style={{ zIndex: 99998 }}
-            onClick={handleClose}
-            onWheel={(e) => e.preventDefault()}
-            onTouchMove={(e) => e.preventDefault()}
-          />
-
-          {isMobile ? (
-            /* ── 移动端：底部 sheet ── */
-            <div
-              className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t-[3px] border-black dark:border-gray-600 shadow-[0_-4px_0px_0px_#000] rounded-t-lg flex flex-col"
-              style={{ zIndex: 99999, maxHeight: '80vh', minHeight: '280px' }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              {header}
+      {mounted && isOpen && (
+        isMobile ? (
+          /* ── 移动端：底部 sheet（保持原有逻辑）── */
+          createPortal(
+            <>
+              <div className="fixed inset-0 bg-black/50" style={{ zIndex: 99998 }} onClick={handleClose} />
               <div
-                ref={scrollRef}
-                className="overflow-y-auto overscroll-contain"
-                style={{ flex: '1 1 auto', minHeight: 0, touchAction: 'pan-y' }}
+                className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t-[3px] border-black dark:border-gray-600 shadow-[0_-4px_0px_0px_#000] dark:shadow-[0_-4px_0px_0px_#666] rounded-t-lg flex flex-col"
+                style={{ zIndex: 99999, maxHeight: '80vh', minHeight: '280px' }}
+                onClick={(e) => e.stopPropagation()}
               >
-                {content}
+                {header}
+                <div ref={scrollRef} className="overflow-y-auto overscroll-contain" style={{ flex: '1 1 auto', minHeight: 0, touchAction: 'pan-y' }}>
+                  {renderContent()}
+                </div>
               </div>
-            </div>
-          ) : (
-            /* ── 桌面端：浮动卡片 ── */
+            </>,
+            document.body
+          )
+        ) : (
+          /* ── PC端：portal 到 body，pointerEvents:auto 对抗 react-remove-scroll ── */
+          createPortal(
             <div
-              className="fixed bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm w-72 flex flex-col"
-              style={{
-                zIndex: 99999,
-                top: position.top,
-                left: position.left,
-                height: '400px',
-              }}
+              ref={cardRef}
               onClick={(e) => e.stopPropagation()}
               onWheel={(e) => e.stopPropagation()}
+              className="fixed bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm w-72 flex flex-col overflow-hidden"
+              style={{
+                top: cardPos.top,
+                left: cardPos.left,
+                zIndex: 99999,
+                height: '400px',
+                pointerEvents: 'auto',
+              }}
             >
               {header}
-              <div
-                ref={scrollRef}
-                className="overflow-y-auto overscroll-contain"
-                style={{ flex: '1 1 auto', minHeight: 0 }}
-              >
-                {content}
+              <div ref={scrollRef} className="overflow-y-auto overscroll-contain flex-1" style={{ minHeight: 0 }}>
+                {renderContent()}
               </div>
-            </div>
-          )}
-        </>,
-        document.body
+            </div>,
+            document.body
+          )
+        )
       )}
     </>
   )

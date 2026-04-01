@@ -51,7 +51,7 @@ export function VideoNav() {
               className="flex items-center gap-2 px-3 py-1.5 bg-[#B4F416] dark:bg-gray-700 border-[2px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all font-black text-sm tracking-tight text-black dark:text-white"
             >
               <Video className="w-4 h-4" />
-              <span className="hidden sm:inline">MAX笔记</span>
+              <span className="hidden sm:inline">视频首页</span>
             </Link>
 
             {/* 导航项 */}

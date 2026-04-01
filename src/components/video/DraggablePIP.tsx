@@ -103,10 +103,13 @@ export function DraggablePIP({
 
     return () => {
       // 还原到原始父容器
+      // 注意：React 卸载组件时会先置 ref.current = null，
+      // 所以不能用 videoSlotRef.current 判断，改用"不在原始父容器中"作为条件
       const parent = originalParentRef.current
-      if (parent && videoElement.parentElement === videoSlotRef.current) {
-        if (originalNextSiblingRef.current) {
-          parent.insertBefore(videoElement, originalNextSiblingRef.current)
+      if (parent && videoElement.parentElement !== parent) {
+        const nextSibling = originalNextSiblingRef.current
+        if (nextSibling && nextSibling.parentNode === parent) {
+          parent.insertBefore(videoElement, nextSibling)
         } else {
           parent.appendChild(videoElement)
         }

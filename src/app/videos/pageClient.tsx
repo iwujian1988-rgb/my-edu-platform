@@ -25,6 +25,7 @@ import {
 import type { VideoListItem, VideoListResponse } from '@/types/video'
 import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, formatDuration } from '@/types/video'
 import LearningCalendar from '@/components/video/LearningCalendar'
+import { VideoPromoPopup } from '@/components/video/VideoPromoPopup'
 
 // 语言选项（从 API 动态获取，基于用户权限范围内的语言）
 const buildLanguageOptions = (availableLanguages: string[] | undefined) => {
@@ -79,7 +80,7 @@ function VideoCard({ video }: { video: VideoListItem }) {
   return (
     <Link
       href={`/videos/${video.id}`}
-      className="group relative bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] md:shadow-[6px_6px_0px_0px_#000] dark:md:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] md:hover:shadow-[8px_8px_0px_0px_#000] dark:md:hover:shadow-[8px_8px_0px_0px_#666] hover:-translate-y-0.5 transition-all duration-150 cursor-pointer overflow-hidden block flex flex-col"
+      className="group relative bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] md:shadow-[4px_4px_0px_0px_#000] dark:md:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[3px_3px_0px_0px_#666] md:hover:shadow-[6px_6px_0px_0px_#000] dark:md:hover:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-0.5 transition-[shadow,transform] duration-150 cursor-pointer overflow-hidden block flex flex-col will-change-transform"
     >
       {/* 缩略图 - 移动端更大，PC端正常 */}
       <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[2px] md:border-b-[3px] border-black dark:border-gray-600 flex-shrink-0 transition-colors duration-300">
@@ -87,6 +88,7 @@ function VideoCard({ video }: { video: VideoListItem }) {
           <img
             src={video.thumbnail_url}
             alt={video.title}
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
           />
         ) : (
@@ -236,7 +238,7 @@ function ContinueLearningCard({ video }: { video: VideoListItem }) {
   return (
     <Link
       href={`/videos/${video.id}`}
-      className="group flex items-center gap-4 p-4 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[6px_6px_0px_0px_#000] dark:hover:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-0.5 transition-all duration-150 rounded-sm"
+      className="group flex items-center gap-4 p-4 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[6px_6px_0px_0px_#000] dark:hover:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-0.5 transition-[shadow,transform] duration-150 rounded-sm will-change-transform"
     >
       {/* 缩略图 */}
       <div className="relative w-32 aspect-video rounded-sm overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
@@ -244,6 +246,7 @@ function ContinueLearningCard({ video }: { video: VideoListItem }) {
           <img
             src={video.thumbnail_url}
             alt={video.title}
+            loading="lazy"
             className="w-full h-full object-cover"
           />
         ) : (
@@ -442,8 +445,10 @@ function VideoListContent() {
             animation: marquee 20s linear infinite;
           }
           .text-outline {
-            color: transparent;
-            -webkit-text-stroke: 1.5px rgba(0, 0, 0, 0.12);
+            color: rgba(0, 0, 0, 0.03);
+          }
+          .dark .text-outline {
+            color: rgba(255, 255, 255, 0.03);
           }
           @keyframes slideInFromRight {
             from { transform: translateX(100%); }
@@ -459,6 +464,14 @@ function VideoListContent() {
           .fade-in {
             animation: fadeIn 0.2s ease-out forwards;
           }
+          .banner-content {
+            min-height: 80px;
+          }
+          @media (min-width: 768px) {
+            .banner-content {
+              min-height: 130px;
+            }
+          }
         `}
       </style>
 
@@ -466,39 +479,37 @@ function VideoListContent() {
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-4">
         <div className="relative border-[3px] border-black bg-[#D4FF32] dark:bg-gray-800 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_#666] flex flex-col overflow-hidden transition-colors duration-300">
 
-          {/* 背景装饰层 */}
-          <div className="absolute inset-0 pointer-events-none flex items-center justify-center overflow-hidden z-0">
-            {/* 巨型倾斜背景字 - 缩小字号和描边 */}
-            <div className="absolute transform -rotate-3 whitespace-nowrap text-outline font-black text-[40px] md:text-[60px] leading-none select-none">
-              LEARN NATURALLY
+          {/* 背景水印层 — 统一 -20° 斜排，每行一种语言 */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" style={{ transform: 'rotate(-20deg)', transformOrigin: 'center', scale: '2', left: '20%' }}>
+            <div className="flex flex-col gap-1 md:gap-1.5 whitespace-nowrap select-none">
+              <div className="text-outline font-black text-[12px] md:text-[16px] leading-none tracking-wider">自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习</div>
+              <div className="text-outline font-black text-[12px] md:text-[16px] leading-none tracking-wider">&nbsp; LEARN NATURALLY &nbsp; SPEAK CONFIDENTLY &nbsp; LEARN NATURALLY &nbsp; SPEAK CONFIDENTLY &nbsp; LEARN NATURALLY &nbsp; SPEAK CONFIDENTLY &nbsp; LEARN NATURALLY &nbsp; SPEAK CONFIDENTLY &nbsp; LEARN NATURALLY</div>
+              <div className="text-outline font-black text-[12px] md:text-[16px] leading-none tracking-wider">PARLEZ COURAMMENT &nbsp; ÉCOUTE CHAQUE JOUR &nbsp; PARLEZ COURAMMENT &nbsp; ÉCOUTE CHAQUE JOUR &nbsp; PARLEZ COURAMMENT &nbsp; ÉCOUTE CHAQUE JOUR &nbsp; PARLEZ COURAMMENT &nbsp; ÉCOUTE CHAQUE JOUR</div>
+              <div className="text-outline font-black text-[12px] md:text-[16px] leading-none tracking-wider">&nbsp; 自然に学ぶ &nbsp; 毎日リスニング &nbsp; 自然に学ぶ &nbsp; 毎日リスニング &nbsp; 自然に学ぶ &nbsp; 毎日リスニング &nbsp; 自然に学ぶ &nbsp; 毎日リスニング &nbsp; 自然に学ぶ &nbsp; 毎日リスニング</div>
+              <div className="text-outline font-black text-[12px] md:text-[16px] leading-none tracking-wider">APRENDE NATURALMENTE &nbsp; HABLA CON SEGURIDAD &nbsp; APRENDE NATURALMENTE &nbsp; HABLA CON SEGURIDAD &nbsp; APRENDE NATURALMENTE &nbsp; HABLA CON SEGURIDAD &nbsp; APRENDE NATURALMENTE &nbsp; HABLA CON SEGURIDAD</div>
+              <div className="text-outline font-black text-[12px] md:text-[16px] leading-none tracking-wider">&nbsp; IMPARA NATURALMENTE &nbsp; PARLA CON FIDUCIA &nbsp; IMPARA NATURALMENTE &nbsp; PARLA CON FIDUCIA &nbsp; IMPARA NATURALMENTE &nbsp; PARLA CON FIDUCIA &nbsp; IMPARA NATURALMENTE &nbsp; PARLA CON FIDUCIA</div>
             </div>
-
-            {/* 散落的装饰符号 */}
-            <Star className="absolute top-3 left-[35%] text-black fill-black/10 animate-pulse hidden md:block" size={18} strokeWidth={2} />
-            <Star className="absolute bottom-3 right-[25%] text-black fill-transparent hidden md:block" size={14} strokeWidth={3} />
-            <div className="absolute top-2 right-[15%] text-black/30 font-black text-base hidden md:block">+</div>
-            <div className="absolute bottom-2 left-[20%] text-black/30 font-black text-lg hidden md:block">+</div>
           </div>
 
           {/* 前景内容层 - 紧凑 padding */}
-          <div className="flex flex-col md:flex-row justify-between items-center w-full p-4 md:px-6 md:py-5 relative z-10 gap-3 flex-1">
+          <div className="flex flex-col md:flex-row justify-center md:justify-start items-center w-full p-3 md:p-4 md:px-10 md:py-5 relative z-10 gap-2 md:gap-3 flex-1 banner-content">
 
             {/* 左侧：品牌信息 */}
-            <div className="flex items-center gap-3 md:gap-4 w-full md:w-auto">
-              {/* Logo 盒子 */}
-              <div className="w-12 h-12 md:w-14 md:h-14 bg-white dark:bg-black border-[3px] border-black dark:border-gray-600 flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] dark:shadow-[3px_3px_0px_0px_#666] shrink-0 transform -rotate-3 hover:rotate-0 transition-transform duration-300">
-                <Video className="w-5 h-5 md:w-6 md:h-6 text-black dark:text-white" strokeWidth={2.5} />
+            <div className="flex items-center justify-center gap-1.5 md:gap-2 w-full md:w-auto md:justify-start">
+              {/* YouTube 风格播放图标 */}
+              <div className="shrink-0">
+                <svg viewBox="0 0 60 42" className="w-12 md:w-14 h-auto">
+                  <defs>
+                    <mask id="play-cutout">
+                      <rect width="100%" height="100%" fill="white" />
+                      <polygon points="23,13 23,29 39,21" fill="black" />
+                    </mask>
+                  </defs>
+                  <path d="M58.6,6.6 C57.9,3.9 55.8,1.8 53.1,1.1 C48.4,0 30,0 30,0 C30,0 11.6,0 6.9,1.1 C4.2,1.8 2.1,3.9 1.4,6.6 C0.1,11.4 0,21 0,21 C0,21 0.1,30.6 1.4,35.4 C2.1,38.1 4.2,40.2 6.9,40.9 C11.6,42 30,42 30,42 C30,42 48.4,42 53.1,40.9 C55.8,40.2 57.9,38.1 58.6,35.4 C59.9,30.6 60,21 60,21 C60,21 59.9,11.4 58.6,6.6 Z" fill="black" className="dark:fill-white" mask="url(#play-cutout)" />
+                </svg>
               </div>
 
-              {/* 标题与标签 - Z世代风格 */}
-              <div className="flex flex-col gap-1.5">
-                {/* 上排：MAX笔记 */}
-                <span className="bg-black text-white px-2.5 py-0.5 text-sm md:text-base font-black w-fit tracking-tight">MAX笔记</span>
-                {/* 下排：地道外语沉浸站 - 醒目标题 */}
-                <span className="text-xl md:text-2xl text-black dark:text-white font-black tracking-wide">
-                  地道外语沉浸站
-                </span>
-              </div>
+              <span className="text-3xl md:text-4xl font-black tracking-tight text-black dark:text-white" style={{ fontFamily: 'Impact, "Arial Black", "Helvetica Neue", sans-serif', letterSpacing: '0.01em' }}>MaxTube</span>
             </div>
 
           </div>
@@ -1055,6 +1066,9 @@ function VideoListContent() {
           </aside>
         </div>
       </div>
+
+      {/* 运营弹窗 */}
+      <VideoPromoPopup />
     </div>
   )
 }
