@@ -10,10 +10,10 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
     }
 
-    // 查询用户的 package_id 和 feature_permissions，与 hasAnyVideoPackage 逻辑一致
+    // 查询用户的 package_ids 和 feature_permissions
     const { data: userData, error: profileError } = await supabase
       .from('users')
-      .select('feature_permissions, package_id, permission_expires_at')
+      .select('feature_permissions, package_ids, permission_expires_at')
       .eq('id', user.id)
       .single()
 
@@ -24,20 +24,20 @@ export async function POST(request: NextRequest) {
 
     const featurePermissions = (userData as Record<string, unknown>)?.feature_permissions as string[] | null
     const permissionExpiresAt = (userData as Record<string, unknown>)?.permission_expires_at as string | null
-    const packageId = (userData as Record<string, unknown>)?.package_id as string | null
+    const userPackageIds = ((userData as Record<string, unknown>)?.package_ids as string[] | null) || []
 
     // 判定：用户是否有视频权限（满足任一即可）
     // 1. feature_permissions 包含 'video' 且未过期
-    // 2. 用户的 package_id 关联了至少一个视频
+    // 2. 用户的任一 package_ids 关联了至少一个视频
     const hasVideoPermission = featurePermissions?.includes('video') &&
       (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
 
     let hasPackageVideo = false
-    if (!hasVideoPermission && packageId) {
+    if (!hasVideoPermission && userPackageIds.length > 0) {
       const { data: linkedVideos } = await supabase
         .from('videos')
         .select('id')
-        .contains('package_ids', [packageId])
+        .overlaps('package_ids', userPackageIds)
         .eq('status', 'published')
         .limit(1)
       hasPackageVideo = (linkedVideos?.length ?? 0) > 0
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
 
     console.log('[check-permissions] 结果:', {
       featurePermissions,
-      packageId,
+      userPackageIds,
       hasVideoPermission,
       hasPackageVideo,
       hasVideo

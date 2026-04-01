@@ -33,7 +33,7 @@ export async function GET() {
       data: {
         items: userPackages.map(p => ({
           id: p.id,
-          package_id: p.package_id,
+          package_ids: p.package_ids,
           package_name: p.package_name,
           activated_at: p.activated_at,
           expires_at: p.expires_at,

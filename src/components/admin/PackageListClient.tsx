@@ -423,7 +423,7 @@ function PackageFormDialog({
       setFormData({
         name: pkg.name,
         description: pkg.description || '',
-        validity_days: pkg.validity_days || 365,
+        validity_days: pkg.validity_days ?? null,
         feature_permissions: pkg.feature_permissions || [],
         book_permissions: pkg.book_permissions || [],
         language_packages: pkg.language_packages || [],

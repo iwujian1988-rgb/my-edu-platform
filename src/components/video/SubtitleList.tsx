@@ -20,16 +20,15 @@ import {
   DialogTitle,
   DialogFooter,
 } from '@/components/ui/dialog'
-import { Download, FileText, FileJson, Subtitles } from 'lucide-react'
+import { Download, FileText, FileType } from 'lucide-react'
 import { SubtitleWithHighlights } from './SubtitleWithHighlights'
 import type { VideoSubtitle, SubtitleWithHighlights as SubtitleWithHighlightsType, CardType } from '@/types/video'
 
-type ExportFormat = 'txt' | 'srt' | 'json'
+type ExportFormat = 'pdf' | 'word'
 
 const EXPORT_FORMATS: { value: ExportFormat; label: string; icon: React.ElementType; description: string }[] = [
-  { value: 'txt', label: 'TXT', icon: FileText, description: '纯文本格式' },
-  { value: 'srt', label: 'SRT', icon: Subtitles, description: '标准字幕格式' },
-  { value: 'json', label: 'JSON', icon: FileJson, description: '结构化数据' },
+  { value: 'pdf', label: 'PDF', icon: FileText, description: '浏览器打印为PDF' },
+  { value: 'word', label: 'Word', icon: FileType, description: '下载.doc文件' },
 ]
 
 interface SubtitleListProps {
@@ -63,7 +62,7 @@ export function SubtitleList({
   const activeSubtitleRef = useRef<HTMLDivElement>(null)
 
   const [isExportDialogOpen, setIsExportDialogOpen] = useState(false)
-  const [exportFormat, setExportFormat] = useState<ExportFormat>('txt')
+  const [exportFormat, setExportFormat] = useState<ExportFormat>('pdf')
 
   // 监听外部触发导出弹窗
   useEffect(() => {
@@ -133,74 +132,144 @@ export function SubtitleList({
     }
   }, [activeSubtitleId, autoScrollProp, noScrollContainer])
 
-  // 格式化时间
-  const formatSrtTime = useCallback((seconds: number): string => {
-    const hours = Math.floor(seconds / 3600)
-    const minutes = Math.floor((seconds % 3600) / 60)
-    const secs = Math.floor(seconds % 60)
-    const ms = Math.floor((seconds % 1) * 1000)
-    return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')},${ms.toString().padStart(3, '0')}`
-  }, [])
-
-  const generateExportContent = useCallback((format: ExportFormat): string => {
+  /** 生成带样式的导出 HTML（PDF 和 Word 共用内容体） */
+  const generateExportHtml = useCallback((): string => {
     if (subtitles.length === 0) return ''
 
-    switch (format) {
-      case 'txt':
-        return subtitles
-          .map((sub) => {
-            if (displayMode === 'chinese' && sub.chinese_text) return sub.chinese_text
-            if (displayMode === 'bilingual' && sub.chinese_text) return `${sub.original_text}\n${sub.chinese_text}`
-            return sub.original_text
-          })
-          .join('\n\n')
+    const displayModeLabel = displayMode === 'bilingual' ? '双语' : displayMode === 'chinese' ? '中文' : '原文'
 
-      case 'srt':
-        return subtitles
-          .map((sub, index) => {
-            const startTime = formatSrtTime(sub.start_time)
-            const endTime = formatSrtTime(sub.end_time)
-            let text = sub.original_text
-            if (displayMode === 'bilingual' && sub.chinese_text) text = `${sub.original_text}\n${sub.chinese_text}`
-            else if (displayMode === 'chinese' && sub.chinese_text) text = sub.chinese_text
-            return `${index + 1}\n${startTime} --> ${endTime}\n${text}`
-          })
-          .join('\n\n')
+    const subtitleItems = subtitles.map((sub) => {
+      const timestamp = formatTime(sub.start_time)
+      const parts: string[] = []
 
-      case 'json':
-        return JSON.stringify(subtitles.map((sub) => ({
-          id: sub.id,
-          start_time: sub.start_time,
-          end_time: sub.end_time,
-          original_text: sub.original_text,
-          chinese_text: sub.chinese_text,
-        })), null, 2)
+      if (displayMode !== 'chinese') {
+        parts.push(`<div class="original">[${timestamp}] ${escapeHtml(sub.original_text)}</div>`)
+      }
+      if (displayMode !== 'original' && sub.chinese_text) {
+        const indent = displayMode === 'chinese' ? '' : ' indent'
+        parts.push(`<div class="chinese${indent}">${escapeHtml(sub.chinese_text)}</div>`)
+      }
 
-      default:
-        return ''
+      return `<div class="subtitle-item">${parts.join('')}</div>`
+    }).join('')
+
+    return `
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(videoTitle)} - 字幕导出</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      padding: 40px;
+      background: white;
     }
-  }, [subtitles, displayMode, formatSrtTime])
+    .header {
+      text-align: center;
+      margin-bottom: 30px;
+      border-bottom: 2px solid #333;
+      padding-bottom: 20px;
+    }
+    .header h1 {
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: #1f2937;
+    }
+    .header .meta {
+      font-size: 14px;
+      color: #666;
+    }
+    .subtitle-item {
+      margin-bottom: 12px;
+      page-break-inside: avoid;
+    }
+    .original {
+      font-size: 15px;
+      color: #1f2937;
+    }
+    .chinese {
+      font-size: 14px;
+      color: #6b7280;
+    }
+    .chinese.indent {
+      padding-left: 60px;
+    }
+    .footer {
+      margin-top: 40px;
+      padding-top: 15px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      font-size: 12px;
+      color: #999;
+    }
+    @media print {
+      body { padding: 20px; }
+      .subtitle-item { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>${escapeHtml(videoTitle)}</h1>
+    <p class="meta">${displayModeLabel}模式 · 共 ${subtitles.length} 条字幕 · ${new Date().toLocaleDateString('zh-CN')}</p>
+  </div>
+  <div class="content">${subtitleItems}</div>
+  <div class="footer">
+    <p>导出自英语学习平台 · ${new Date().toLocaleString('zh-CN')}</p>
+  </div>
+</body>
+</html>`
+  }, [subtitles, displayMode, videoTitle])
+
+  /** HTML 转义，防止字幕内容包含 < > 等字符 */
+  function escapeHtml(text: string): string {
+    return text
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+  }
 
   const handleExport = useCallback(() => {
     try {
-      const content = generateExportContent(exportFormat)
-      if (!content) return
+      const html = generateExportHtml()
+      if (!html) return
 
-      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' })
-      const url = URL.createObjectURL(blob)
-      const link = document.createElement('a')
-      link.href = url
-      link.download = `${videoTitle}_subtitles.${exportFormat}`
-      document.body.appendChild(link)
-      link.click()
-      document.body.removeChild(link)
-      URL.revokeObjectURL(url)
+      if (exportFormat === 'pdf') {
+        // PDF：打开新窗口 → 浏览器打印 → 另存为 PDF
+        const printWindow = window.open('', '_blank')
+        if (!printWindow) {
+          alert('无法打开打印窗口，请检查浏览器弹窗设置')
+          return
+        }
+        printWindow.document.write(html)
+        printWindow.document.close()
+        printWindow.focus()
+        setTimeout(() => { printWindow.print() }, 500)
+      } else {
+        // Word：HTML 包裹在 application/msword MIME → 下载 .doc
+        const blob = new Blob([html], { type: 'application/msword' })
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = `${videoTitle}_subtitles.doc`
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+        URL.revokeObjectURL(url)
+      }
 
       setIsExportDialogOpen(false)
     } catch (error) {
-      // 静默处理
+      // 导出失败时提示用户
+      alert('导出失败，请重试')
     }
-  }, [exportFormat, generateExportContent, videoTitle])
+  }, [exportFormat, generateExportHtml, videoTitle])
 
   const formatTime = (seconds: number): string => {
     const mins = Math.floor(seconds / 60)
@@ -289,7 +358,7 @@ export function SubtitleList({
               当前模式：{displayMode === 'bilingual' ? '双语' : displayMode === 'chinese' ? '中文' : '原文'}
             </p>
 
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-2 gap-2">
               {EXPORT_FORMATS.map((format) => {
                 const IconComponent = format.icon
                 return (

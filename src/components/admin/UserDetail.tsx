@@ -25,7 +25,7 @@ interface User {
   language_packages: string[] | null
   permission_expires_at: string | null
   invitation_code_id: string | null
-  package_id: string | null
+  package_ids: string[] | null
 }
 
 interface Stats {
@@ -65,6 +65,7 @@ interface UserDetailProps {
   allBooks: Book[]
   userPackage: Package | null
   allPackages: Package[]
+  userAllPackages?: Package[]
 }
 
 const FEATURE_PERMISSIONS = [
@@ -86,7 +87,7 @@ const LANGUAGE_PACKAGES = [
   { id: 'ja', name: '日语', flag: '🇯🇵' }
 ]
 
-export function UserDetail({ user, stats, invitationCode, allBooks, userPackage, allPackages }: UserDetailProps) {
+export function UserDetail({ user, stats, invitationCode, allBooks, userPackage, allPackages, userAllPackages }: UserDetailProps) {
   const [loading, setLoading] = useState(false)
   const [showPermissionModal, setShowPermissionModal] = useState(false)
   const [tempPassword, setTempPassword] = useState<string | null>(null)
@@ -238,7 +239,27 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage,
             </div>
           )}
 
-          {userPackage && (
+          {(userAllPackages && userAllPackages.length > 0) && (
+            <div className="flex items-start gap-3 p-4 bg-purple-50 rounded border-[2px] border-purple-200 md:col-span-2">
+              <TrendingUp className="text-purple-600 size={20} mt-1" />
+              <div className="flex-1">
+                <p className="text-sm text-purple-600 font-semibold">
+                  所属套餐（{userAllPackages.length}个）
+                </p>
+                <div className="mt-1 flex flex-wrap gap-2">
+                  {userAllPackages.map(pkg => (
+                    <span key={pkg.id} className="px-3 py-1 bg-white rounded border border-purple-300 text-sm font-medium text-gray-800">
+                      {pkg.name}
+                      <span className="ml-1 text-xs text-gray-500">
+                        ({pkg.validity_days ? `${pkg.validity_days}天` : '永久'})
+                      </span>
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+          {(!userAllPackages || userAllPackages.length === 0) && userPackage && (
             <div className="flex items-center gap-3 p-4 bg-purple-50 rounded border-[2px] border-purple-200 md:col-span-2">
               <TrendingUp className="text-purple-600" size={20} />
               <div className="flex-1">
@@ -258,11 +279,6 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage,
                   ) : (
                     <span className="px-2 py-0.5 rounded text-xs font-medium bg-purple-100 text-purple-700">
                       永久有效
-                    </span>
-                  )}
-                  {userPackage.feature_permissions && userPackage.feature_permissions.length > 0 && (
-                    <span className="px-2 py-0.5 rounded text-xs font-medium bg-orange-100 text-orange-700">
-                      {userPackage.feature_permissions.length}项功能
                     </span>
                   )}
                 </div>
@@ -504,7 +520,7 @@ export function UserDetail({ user, stats, invitationCode, allBooks, userPackage,
           user={user}
           allBooks={allBooks}
           allPackages={allPackages}
-          currentPackageId={(user as any).package_id || null}
+          currentPackageIds={(user as Record<string, unknown>).package_ids as string[] || []}
           onClose={() => setShowPermissionModal(false)}
           onSave={() => {
             setShowPermissionModal(false)
@@ -585,19 +601,19 @@ function PermissionModal({
   user,
   allBooks,
   allPackages,
-  currentPackageId,
+  currentPackageIds,
   onClose,
   onSave
 }: {
   user: User
   allBooks: Book[]
   allPackages: Package[]
-  currentPackageId: string | null
+  currentPackageIds: string[]
   onClose: () => void
   onSave: () => void
 }) {
   const [loading, setLoading] = useState(false)
-  const [selectedPackageId, setSelectedPackageId] = useState<string | null>(currentPackageId)
+  const [selectedPackageIds, setSelectedPackageIds] = useState<string[]>(currentPackageIds)
   const [applyPackagePermissions, setApplyPackagePermissions] = useState(false)
   const [applyPackageExpiry, setApplyPackageExpiry] = useState(false)
   const [featurePermissions, setFeaturePermissions] = useState<string[]>(
@@ -612,38 +628,58 @@ function PermissionModal({
   const [expiresIn, setExpiresIn] = useState<string>('365')
   const [changeReason, setChangeReason] = useState('')
 
-  // 获取选中套餐的信息
-  const selectedPackage = allPackages.find(p => p.id === selectedPackageId)
+  // 获取选中套餐中最近一个的信息
+  const selectedPackage = selectedPackageIds.length > 0
+    ? allPackages.find(p => p.id === selectedPackageIds[selectedPackageIds.length - 1])
+    : undefined
 
-  // 当选择套餐并勾选"应用套餐权限"时，自动填充权限
-  const handlePackageChange = (packageId: string) => {
-    setSelectedPackageId(packageId || null)
-    if (packageId && applyPackagePermissions) {
-      const pkg = allPackages.find(p => p.id === packageId)
-      if (pkg) {
-        setFeaturePermissions((pkg as any).feature_permissions || [])
-        setBookPermissions((pkg as any).book_permissions || [])
-      }
-    }
+  // 勾选套餐
+  const togglePackage = (packageId: string) => {
+    setSelectedPackageIds(prev =>
+      prev.includes(packageId)
+        ? prev.filter(id => id !== packageId)
+        : [...prev, packageId]
+    )
   }
 
-  // 当勾选"应用套餐权限"时，立即填充
+  // 当勾选"应用套餐权限"时，合并所有选中套餐的权限
   const handleApplyPackagePermissionsChange = (checked: boolean) => {
     setApplyPackagePermissions(checked)
-    if (checked && selectedPackageId) {
-      const pkg = allPackages.find(p => p.id === selectedPackageId)
-      if (pkg) {
-        setFeaturePermissions((pkg as any).feature_permissions || [])
-        setBookPermissions((pkg as any).book_permissions || [])
+    if (checked && selectedPackageIds.length > 0) {
+      const mergedFeatures = new Set<string>()
+      const mergedBooks = new Set<string>()
+      for (const pkgId of selectedPackageIds) {
+        const pkg = allPackages.find(p => p.id === pkgId)
+        if (pkg) {
+          for (const f of (pkg as Record<string, unknown>).feature_permissions as string[] || []) {
+            mergedFeatures.add(f)
+          }
+          for (const b of (pkg as Record<string, unknown>).book_permissions as string[] || []) {
+            mergedBooks.add(b)
+          }
+        }
       }
+      setFeaturePermissions(Array.from(mergedFeatures))
+      setBookPermissions(Array.from(mergedBooks))
     }
   }
 
-  // 当勾选"应用套餐有效期"时，设置有效期
+  // 当勾选"应用套餐有效期"时，取最长有效期
   const handleApplyPackageExpiryChange = (checked: boolean) => {
     setApplyPackageExpiry(checked)
-    if (checked && selectedPackage?.validity_days) {
-      setExpiresIn(String(selectedPackage.validity_days))
+    if (checked && selectedPackageIds.length > 0) {
+      let maxDays: number | null = null
+      for (const pkgId of selectedPackageIds) {
+        const pkg = allPackages.find(p => p.id === pkgId)
+        if (pkg?.validity_days !== null && pkg?.validity_days !== undefined) {
+          if (maxDays === null || pkg.validity_days > maxDays) {
+            maxDays = pkg.validity_days
+          }
+        }
+      }
+      if (maxDays !== null) {
+        setExpiresIn(String(maxDays))
+      }
     }
   }
 
@@ -695,7 +731,7 @@ function PermissionModal({
           language_packages: languagePackages,
           permission_expires_at,
           change_reason: changeReason,
-          package_id: selectedPackageId,
+          package_ids: selectedPackageIds,
           apply_package_permissions: applyPackagePermissions
         })
       })
@@ -730,40 +766,55 @@ function PermissionModal({
           <div className="bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg p-4 border-2 border-purple-200">
             <h3 className="font-bold mb-3 flex items-center gap-2">
               <span className="text-xl">📦</span>
-              用户套餐
+              用户套餐（可多选）
             </h3>
-            <select
-              value={selectedPackageId || ''}
-              onChange={(e) => handlePackageChange(e.target.value)}
-              className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 font-medium"
-            >
-              <option value="">-- 不关联套餐 --</option>
-              {allPackages.map(pkg => (
-                <option key={pkg.id} value={pkg.id} disabled={!pkg.is_active}>
-                  {pkg.name} {!pkg.is_active ? '(已停用)' : ''} - {pkg.validity_days ? `${pkg.validity_days}天` : '永久'}
-                </option>
-              ))}
-            </select>
+            <div className="space-y-2">
+              {allPackages.map(pkg => {
+                const isSelected = selectedPackageIds.includes(pkg.id)
+                return (
+                  <label
+                    key={pkg.id}
+                    className={`flex items-center gap-2 p-3 rounded border-2 cursor-pointer transition-colors ${
+                      isSelected
+                        ? 'border-purple-500 bg-purple-50'
+                        : 'border-gray-300 hover:border-gray-400'
+                    } ${!pkg.is_active ? 'opacity-50' : ''}`}
+                  >
+                    <input
+                      type="checkbox"
+                      checked={isSelected}
+                      onChange={() => togglePackage(pkg.id)}
+                      disabled={!pkg.is_active}
+                      className="rounded"
+                    />
+                    <span className="font-medium flex-1">{pkg.name}</span>
+                    <span className="text-sm text-gray-500">
+                      {pkg.validity_days ? `${pkg.validity_days}天` : '永久'}
+                    </span>
+                    {!pkg.is_active && <span className="text-xs text-red-500">(已停用)</span>}
+                  </label>
+                )
+              })}
+            </div>
 
-            {selectedPackage && (
+            {selectedPackageIds.length > 0 && (
               <div className="mt-3 p-3 bg-white rounded border text-sm">
-                <p className="font-medium text-gray-700">{selectedPackage.description || '暂无描述'}</p>
+                <p className="font-medium text-gray-700">已选 {selectedPackageIds.length} 个套餐</p>
                 <div className="mt-2 flex flex-wrap gap-2">
-                  <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs">
-                    功能权限: {((selectedPackage as any).feature_permissions || []).length} 项
-                  </span>
-                  <span className="px-2 py-1 bg-green-100 text-green-700 rounded text-xs">
-                    书籍权限: {((selectedPackage as any).book_permissions || []).length} 项
-                  </span>
-                  <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs">
-                    有效期: {selectedPackage.validity_days ? `${selectedPackage.validity_days}天` : '永久'}
-                  </span>
+                  {selectedPackageIds.map(pkgId => {
+                    const pkg = allPackages.find(p => p.id === pkgId)
+                    return pkg ? (
+                      <span key={pkgId} className="px-2 py-1 bg-purple-100 text-purple-700 rounded text-xs">
+                        {pkg.name}
+                      </span>
+                    ) : null
+                  })}
                 </div>
               </div>
             )}
 
             {/* 套餐应用选项 */}
-            {selectedPackageId && (
+            {selectedPackageIds.length > 0 && (
               <div className="mt-4 p-3 bg-yellow-50 rounded border border-yellow-200">
                 <p className="font-bold text-yellow-800 mb-2">⚡ 快捷操作</p>
                 <div className="space-y-2">
@@ -775,7 +826,7 @@ function PermissionModal({
                       className="rounded"
                     />
                     <span className="text-sm font-medium">
-                      应用套餐默认权限（功能+书籍）
+                      合并所有套餐默认权限（功能+书籍）
                     </span>
                   </label>
                   <label className="flex items-center gap-2 cursor-pointer">
@@ -786,7 +837,7 @@ function PermissionModal({
                       className="rounded"
                     />
                     <span className="text-sm font-medium">
-                      应用套餐有效期（{selectedPackage?.validity_days ? `${selectedPackage.validity_days}天` : '永久'}）
+                      应用最长套餐有效期
                     </span>
                   </label>
                 </div>

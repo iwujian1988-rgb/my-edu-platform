@@ -108,7 +108,7 @@ export interface VideoPackage {
 export interface UserVideoPackage {
   id: string
   user_id: string
-  package_id: string
+  package_ids: string[]
   invitation_code_id: string | null
   activated_at: string
   expires_at: string | null
@@ -129,8 +129,9 @@ export interface VideoPackageListItem extends VideoPackage {
 
 export interface Video {
   id: string
-  title: string  // 中文标题
+  title: string  // 视频名称，导入时从 unit_info.unit_name_cn 填充
   original_title: string | null  // 原语言标题（法语/英语等）
+  album_title: string | null  // 专辑名称，导入时从 unit_info.video_title_cn 填充
   description: string | null
   thumbnail_url: string | null
   video_url: string | null  // 可选，工作流最后上传
@@ -745,6 +746,10 @@ export interface SubtitleJsonInput {
     end_time: string
     subtitle_count: number
     creator?: string  // UP主名称（用于匹配）
+    video_title_cn?: string  // 专辑名称（新增）
+    unit_name_cn?: string  // 视频中文名称（新增），导入时映射到 videos.title
+    source_video_name?: string  // 源视频文件名
+    tags?: string[]  // 标签
   }
   subtitles: Array<{
     index: number

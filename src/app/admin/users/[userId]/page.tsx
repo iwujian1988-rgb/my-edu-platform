@@ -67,17 +67,42 @@ export default async function AdminUserDetailPage({
     .from('books')
     .select('id, title')
 
-  // 获取套餐信息（通过 invitation_code 或 users.package_id）
-  let userPackage = null
-  const userPackageId = (user as any).package_id || (invitationCode as any)?.package_id
-  if (userPackageId) {
-    const { data: pkg } = await supabase
+  // 获取套餐信息（通过 users.package_ids）
+  interface PackageRow {
+    id: string
+    name: string
+    description: string | null
+    validity_days: number | null
+    duration_days: number | null
+    feature_permissions: string[] | null
+    book_permissions: string[] | null
+    is_active: boolean
+    [key: string]: unknown
+  }
+  let userPackage: PackageRow | null = null
+  let userAllPackages: PackageRow[] = []
+  const userPackageIds = (user as Record<string, unknown>).package_ids as string[] | null
+  if (userPackageIds && userPackageIds.length > 0) {
+    const { data: pkgs } = await supabase
       .from('invitation_packages')
       .select('*')
-      .eq('id', userPackageId)
-      .single()
+      .in('id', userPackageIds)
 
-    userPackage = pkg
+    userAllPackages = (pkgs as PackageRow[]) || []
+    userPackage = userAllPackages.length > 0 ? userAllPackages[0] : null
+  } else {
+    // 兜底：通过邀请码查找套餐
+    const fallbackPackageId = (invitationCode as Record<string, unknown>)?.package_id as string | null
+    if (fallbackPackageId) {
+      const { data: pkg } = await supabase
+        .from('invitation_packages')
+        .select('*')
+        .eq('id', fallbackPackageId)
+        .single()
+
+      userPackage = pkg as PackageRow | null
+      userAllPackages = pkg ? [pkg as PackageRow] : []
+    }
   }
 
   // 获取所有套餐列表（用于权限管理）
@@ -109,6 +134,7 @@ export default async function AdminUserDetailPage({
         invitationCode={invitationCode}
         allBooks={allBooks || []}
         userPackage={userPackage}
+        userAllPackages={userAllPackages}
         allPackages={allPackages || []}
       />
     </div>

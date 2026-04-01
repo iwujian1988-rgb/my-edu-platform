@@ -284,7 +284,9 @@ async function processSingleVideo(
   const { data: video, error: videoError } = await supabase
     .from('videos')
     .insert({
-      title: unitInfo.theme,
+      title: unitInfo.unit_name_cn || unitInfo.theme,
+      original_title: unitInfo.theme,
+      album_title: unitInfo.video_title_cn || null,
       language: 'fr',
       difficulty: cefrToDifficulty(learningInfo.cefr_level),
       duration: Math.round((learningInfo.duration_minutes || 0) * 60),

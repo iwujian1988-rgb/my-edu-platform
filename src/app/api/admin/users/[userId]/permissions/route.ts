@@ -22,7 +22,7 @@ export async function PUT(
       language_packages,
       permission_expires_at,
       change_reason,
-      package_id,
+      package_ids,
       apply_package_permissions = false
     } = body
 
@@ -32,45 +32,19 @@ export async function PUT(
 
     const supabase = await createAdminClient()
 
-    // 获取用户当前权限（先尝试带 package_id 的查询）
-    let currentUser: Record<string, any> | null = null
-    let hasPackageIdColumn = true
-
-    // 首先尝试带 package_id 的查询
-    const { data: userWithPackage, error: fetchError } = await supabase
+    // 获取用户当前权限
+    const { data: currentUser, error: fetchError } = await supabase
       .from('users')
-      .select('feature_permissions, book_permissions, language_packages, permission_expires_at, package_id')
+      .select('feature_permissions, book_permissions, language_packages, permission_expires_at, package_ids')
       .eq('id', userId)
       .single()
 
     if (fetchError) {
-      console.error('Error fetching user with package_id:', fetchError)
-
-      // 如果是列不存在的错误，尝试不查询 package_id
-      if (fetchError.message?.includes('package_id') || fetchError.code === '42703') {
-        hasPackageIdColumn = false
-        const { data: userWithoutPackage, error: retryError } = await supabase
-          .from('users')
-          .select('feature_permissions, book_permissions, language_packages, permission_expires_at')
-          .eq('id', userId)
-          .single()
-
-        if (retryError) {
-          console.error('Retry fetch also failed:', retryError)
-          if (retryError.code === 'PGRST116') {
-            return NextResponse.json({ error: '用户不存在' }, { status: 404 })
-          }
-          return NextResponse.json({ error: '查询用户失败: ' + retryError.message }, { status: 500 })
-        }
-
-        currentUser = userWithoutPackage ? { ...(userWithoutPackage as object), package_id: null } : null
-      } else if (fetchError.code === 'PGRST116') {
+      if (fetchError.code === 'PGRST116') {
         return NextResponse.json({ error: '用户不存在' }, { status: 404 })
-      } else {
-        return NextResponse.json({ error: '查询用户失败: ' + fetchError.message }, { status: 500 })
       }
-    } else {
-      currentUser = userWithPackage
+      console.error('Error fetching user:', fetchError)
+      return NextResponse.json({ error: '查询用户失败: ' + fetchError.message }, { status: 500 })
     }
 
     if (!currentUser) {
@@ -78,32 +52,49 @@ export async function PUT(
     }
 
     // 构建更新数据
-    const updateData: Record<string, any> = {}
+    const updateData: Record<string, unknown> = {}
 
-    // 如果选择了新套餐
-    if (package_id !== undefined) {
-      // 只有当 package_id 列存在时才更新
-      if (hasPackageIdColumn) {
-        updateData.package_id = package_id || null
-      }
+    // 如果选择了套餐变更
+    if (package_ids !== undefined) {
+      updateData.package_ids = package_ids || []
 
-      // 如果需要应用套餐默认权限
-      if (apply_package_permissions && package_id) {
-        const { data: pkg } = await supabase
+      // 如果需要应用套餐默认权限（合并所有套餐的权限）
+      if (apply_package_permissions && Array.isArray(package_ids) && package_ids.length > 0) {
+        const { data: packages } = await supabase
           .from('invitation_packages')
           .select('feature_permissions, book_permissions, validity_days')
-          .eq('id', package_id)
-          .single()
+          .in('id', package_ids)
 
-        if (pkg) {
+        if (packages && packages.length > 0) {
+          // 合并所有套餐的权限
+          const mergedFeatures = new Set<string>()
+          const mergedBooks = new Set<string>()
+          let maxValidityDays: number | null = null
+
+          for (const pkg of packages) {
+            const pkgData = pkg as Record<string, unknown>
+            for (const f of (pkgData.feature_permissions as string[]) || []) {
+              mergedFeatures.add(f)
+            }
+            for (const b of (pkgData.book_permissions as string[]) || []) {
+              mergedBooks.add(b)
+            }
+            const days = pkgData.validity_days as number | null
+            if (days !== null) {
+              if (maxValidityDays === null || days > maxValidityDays) {
+                maxValidityDays = days
+              }
+            }
+          }
+
           // 应用套餐默认权限（如果前端没有手动指定）
-          updateData.feature_permissions = feature_permissions ?? ((pkg as any).feature_permissions || [])
-          updateData.book_permissions = book_permissions ?? ((pkg as any).book_permissions || [])
+          updateData.feature_permissions = feature_permissions ?? Array.from(mergedFeatures)
+          updateData.book_permissions = book_permissions ?? Array.from(mergedBooks)
 
-          // 如果前端没有手动指定过期时间，使用套餐有效期
-          if (permission_expires_at === undefined && (pkg as any).validity_days) {
+          // 如果前端没有手动指定过期时间，使用最长的套餐有效期
+          if (permission_expires_at === undefined && maxValidityDays !== null) {
             const expiresAt = new Date()
-            expiresAt.setDate(expiresAt.getDate() + (pkg as any).validity_days)
+            expiresAt.setDate(expiresAt.getDate() + maxValidityDays)
             updateData.permission_expires_at = expiresAt.toISOString()
           } else {
             updateData.permission_expires_at = permission_expires_at || null
@@ -122,7 +113,7 @@ export async function PUT(
         }
       }
     } else {
-      // 没有选择新套餐，只更新权限
+      // 没有选择套餐变更，只更新权限
       updateData.feature_permissions = feature_permissions || []
       updateData.book_permissions = book_permissions || []
       updateData.permission_expires_at = permission_expires_at || null
@@ -148,21 +139,21 @@ export async function PUT(
 
     // 记录操作日志（手动记录权限变更）- 使用 try-catch 包装，不影响主流程
     try {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       await (supabase as any).rpc('log_permission_change', {
         user_id_param: userId,
         admin_id_param: admin.id,
-        old_feature_permissions_param: currentUser.feature_permissions || [],
-        old_book_permissions_param: currentUser.book_permissions || [],
-        old_permission_expires_at_param: currentUser.permission_expires_at,
+        old_feature_permissions_param: (currentUser as Record<string, unknown>).feature_permissions || [],
+        old_book_permissions_param: (currentUser as Record<string, unknown>).book_permissions || [],
+        old_permission_expires_at_param: (currentUser as Record<string, unknown>).permission_expires_at,
         new_feature_permissions_param: updateData.feature_permissions || [],
         new_book_permissions_param: updateData.book_permissions || [],
         new_permission_expires_at_param: updateData.permission_expires_at,
         change_reason_param: change_reason,
-        change_type_param: package_id ? 'package_change' : 'adjustment'
+        change_type_param: package_ids ? 'package_change' : 'adjustment'
       })
     } catch (logError) {
       console.error('Failed to log permission change:', logError)
-      // 不中断流程
     }
 
     // 记录管理员操作日志
@@ -172,19 +163,19 @@ export async function PUT(
       userId,
       {
         change_reason,
-        package_changed: package_id !== undefined,
-        old_package_id: currentUser.package_id,
-        new_package_id: package_id,
+        package_changed: package_ids !== undefined,
+        old_package_ids: (currentUser as Record<string, unknown>).package_ids,
+        new_package_ids: package_ids,
         apply_package_permissions,
         old_permissions: {
-          feature_count: (currentUser.feature_permissions || []).length,
-          book_count: (currentUser.book_permissions || []).length,
-          language_count: (currentUser.language_packages || []).length
+          feature_count: ((currentUser as Record<string, unknown>).feature_permissions as unknown[] || []).length,
+          book_count: ((currentUser as Record<string, unknown>).book_permissions as unknown[] || []).length,
+          language_count: ((currentUser as Record<string, unknown>).language_packages as unknown[] || []).length
         },
         new_permissions: {
-          feature_count: (updateData.feature_permissions || []).length,
-          book_count: (updateData.book_permissions || []).length,
-          language_count: (updateData.language_packages || []).length
+          feature_count: ((updateData.feature_permissions as unknown[]) || []).length,
+          book_count: ((updateData.book_permissions as unknown[]) || []).length,
+          language_count: ((updateData.language_packages as unknown[]) || []).length
         }
       }
     )

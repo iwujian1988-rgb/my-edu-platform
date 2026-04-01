@@ -118,9 +118,20 @@ export async function POST(request: Request) {
       }, { status: 404 })
     }
 
-    // 查询套餐信息（通过 invitation_code_id）
-    let packageData: PackageData | null = null
-    if (user.invitation_code_id) {
+    // 查询套餐信息（通过 users.package_ids）
+    let packageDataList: PackageData[] = []
+    const userPackageIds = (user as Record<string, unknown>).package_ids as string[] | null
+    if (userPackageIds && userPackageIds.length > 0) {
+      const { data: packages } = await supabase
+        .from('invitation_packages')
+        .select('name, validity_days')
+        .in('id', userPackageIds)
+
+      if (packages) {
+        packageDataList = packages as PackageData[]
+      }
+    } else if (user.invitation_code_id) {
+      // 兜底：通过邀请码查找套餐
       const { data: invitationCode } = await supabase
         .from('invitation_codes')
         .select('package_id, invitation_packages (name, validity_days)')
@@ -128,7 +139,7 @@ export async function POST(request: Request) {
         .single()
 
       if (invitationCode) {
-        packageData = (invitationCode as any).invitation_packages
+        packageDataList = [(invitationCode as Record<string, unknown>).invitation_packages as PackageData].filter(Boolean)
       }
     }
 
@@ -139,11 +150,19 @@ export async function POST(request: Request) {
     const hasPermission = userData.permission_expires_at === null ||
       new Date(userData.permission_expires_at) > new Date()
 
-    // 获取套餐名称
-    const planName = packageData?.name || '未知套餐'
+    // 获取套餐名称（合并所有套餐）
+    const planName = packageDataList.length > 0
+      ? packageDataList.map(p => p.name).join(' + ')
+      : '未知套餐'
 
-    // 计算套餐说明
-    const validityDays = packageData?.validity_days
+    // 计算套餐说明（取最长有效期）
+    const validityDays = packageDataList.length > 0
+      ? packageDataList.reduce<number | null>((max, p) => {
+          if (p.validity_days === null) return null
+          if (max === null) return p.validity_days
+          return Math.max(max, p.validity_days)
+        }, null as number | null)
+      : null
     let planNameText = '未知'
     if (validityDays === null) {
       planNameText = '终身有效'

@@ -18,7 +18,7 @@ type LearnStatus = 'all' | 'learned' | 'unlearned'
 
 // 用户信息类型
 interface UserInfo {
-  package_id: string | null
+  package_ids: string[] | null
   feature_permissions: string[] | null
   permission_expires_at: string | null
 }
@@ -49,7 +49,7 @@ export async function GET(request: NextRequest) {
       // 用户信息
       supabase
         .from('users')
-        .select('package_id, feature_permissions, permission_expires_at')
+        .select('package_ids, feature_permissions, permission_expires_at')
         .eq('id', authUser.id)
         .single(),
 
@@ -86,30 +86,33 @@ export async function GET(request: NextRequest) {
 
     // 处理用户信息
     const userRow = userResult.data as UserInfo | null
-    const userPackageId = userRow?.package_id ?? null
+    const userPackageIds = userRow?.package_ids || []
     const featurePermissions = userRow?.feature_permissions
     const permissionExpiresAt = userRow?.permission_expires_at ?? null
     const hasVideoPermission = featurePermissions?.includes('video') &&
       (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
 
-    // 2. 获取套餐名称（需要等待 userPackageId）
-    let pkgResult = { data: null as { id: string; name: string } | null }
-    if (userPackageId) {
-      const { data } = await supabase
+    // 2. 获取套餐名称（批量查询所有用户的套餐）
+    const packageNameMap = new Map<string, string>()
+    if (userPackageIds.length > 0) {
+      const { data: pkgData } = await supabase
         .from('invitation_packages')
         .select('id, name')
-        .eq('id', userPackageId)
-        .single()
-      pkgResult = { data }
+        .in('id', userPackageIds)
+      if (pkgData) {
+        for (const pkg of pkgData) {
+          packageNameMap.set(pkg.id, pkg.name || '套餐')
+        }
+      }
     }
 
     // 处理套餐
     const userPackages: Array<{ id: string; name: string; expires_at: string | null }> = []
-    const packageNameMap = new Map<string, string>()
-    if (pkgResult.data && userPackageId) {
-      const pkg = pkgResult.data as { id: string; name: string }
-      userPackages.push({ id: userPackageId, name: pkg.name || '套餐', expires_at: permissionExpiresAt })
-      packageNameMap.set(userPackageId, pkg.name || '套餐')
+    for (const pkgId of userPackageIds) {
+      const pkgName = packageNameMap.get(pkgId)
+      if (pkgName) {
+        userPackages.push({ id: pkgId, name: pkgName, expires_at: permissionExpiresAt })
+      }
     }
 
     // 处理标签
@@ -134,7 +137,7 @@ export async function GET(request: NextRequest) {
     }
 
     // 3. 权限检查
-    if (onlyAccessible && !hasVideoPermission && !userPackageId) {
+    if (onlyAccessible && !hasVideoPermission && userPackageIds.length === 0) {
       const availableLanguages = new Set<VideoLanguage>()
       for (const v of (languagesResult.data || [])) {
         if (v.language) {
@@ -160,8 +163,8 @@ export async function GET(request: NextRequest) {
       .range(0, fetchLimit - 1)
 
     // 权限过滤
-    if (onlyAccessible && !hasVideoPermission && userPackageId) {
-      query = query.contains('package_ids', [userPackageId])
+    if (onlyAccessible && !hasVideoPermission && userPackageIds.length > 0) {
+      query = query.overlaps('package_ids', userPackageIds)
     }
 
     // 筛选条件
@@ -226,7 +229,7 @@ export async function GET(request: NextRequest) {
         tags: v.video_tag_relations?.map((r: { video_tags: { name: string } | null }) => r.video_tags?.name).filter(Boolean) || [],
         packages: v.package_ids?.map(id => packageNameMap.get(id)).filter(Boolean) || [],
         user_progress: userProgress[v.id] || null,
-        has_access: hasVideoPermission || (userPackageId ? v.package_ids?.includes(userPackageId) : false),
+        has_access: hasVideoPermission || (userPackageIds.length > 0 ? v.package_ids?.some(pid => userPackageIds.includes(pid)) : false),
       }
     })
 
