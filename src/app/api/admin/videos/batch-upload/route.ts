@@ -257,14 +257,14 @@ async function processSingleVideo(
   const unitInfo = subtitle_json.unit_info
   const learningInfo = learning_material_json.unit_info
 
-  // Step 2: 匹配 UP主（如果提供了 creator 字段）
+  // Step 2: 匹配 UP主（如果提供了 creator 字段，大小写不敏感匹配）
   let creatorId: string | null = null
   const creatorName = unitInfo.creator?.trim()
   if (creatorName) {
     const { data: creator } = await supabase
       .from('upstream_creators')
       .select('id')
-      .eq('name', creatorName)
+      .ilike('name', creatorName)
       .maybeSingle()
 
     if (creator) {
@@ -284,9 +284,9 @@ async function processSingleVideo(
   const { data: video, error: videoError } = await supabase
     .from('videos')
     .insert({
-      title: unitInfo.unit_name_cn || unitInfo.theme,
+      title: unitInfo.video_title_cn || unitInfo.unit_name_cn || unitInfo.theme,
       original_title: unitInfo.theme,
-      album_title: unitInfo.video_title_cn || null,
+      album_title: unitInfo.unit_name_cn || null,
       language: 'fr',
       difficulty: cefrToDifficulty(learningInfo.cefr_level),
       duration: Math.round((learningInfo.duration_minutes || 0) * 60),
@@ -307,6 +307,35 @@ async function processSingleVideo(
 
   // 使用 try-catch 包装后续操作，失败时回滚
   try {
+
+  // Step 3.5: 处理标签关联（unit_info.tags 是标签名称数组，需匹配 video_tags 表）
+  const tagNames = unitInfo.tags
+  if (tagNames && tagNames.length > 0) {
+    // 按名称批量查找已有标签（大小写不敏感）
+    const { data: matchedTags } = await supabase
+      .from('video_tags')
+      .select('id, name')
+      .in('name', tagNames)
+
+    if (matchedTags && matchedTags.length > 0) {
+      const tagRelations = matchedTags.map(t => ({
+        video_id: videoId,
+        tag_id: t.id,
+      }))
+
+      const { error: tagRelError } = await supabase
+        .from('video_tag_relations')
+        .insert(tagRelations)
+
+      if (tagRelError) {
+        console.warn(`[批量上传] 标签关联失败 videoId=${videoId}:`, tagRelError.message)
+      } else {
+        console.log(`[批量上传] 标签关联成功: ${matchedTags.map(t => t.name).join(', ')}`)
+      }
+    } else {
+      console.log(`[批量上传] 未匹配到标签: ${tagNames.join(', ')}`)
+    }
+  }
 
   // Step 4: 存储字幕
   const subtitlesData = subtitle_json.subtitles.map((sub: SubtitleInput, idx: number) => ({

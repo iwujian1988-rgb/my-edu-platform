@@ -58,6 +58,7 @@ interface DraftVideo {
     words: number
     expressions: number
   }
+  tag_ids: string[]
 }
 
 interface Package {
@@ -301,6 +302,15 @@ export default function BatchPublishClient() {
           setPackages(data.data.packages)
           setTags(data.data.tags)
           setCreators(data.data.creators || [])
+
+          // 用视频已有的标签关联预填 videoTags 状态
+          const existingTags: Record<string, string[]> = {}
+          data.data.videos.forEach(v => {
+            if (v.tag_ids && v.tag_ids.length > 0) {
+              existingTags[v.id] = v.tag_ids
+            }
+          })
+          setVideoTags(existingTags)
         } else {
           console.error('获取数据失败:', data)
         }

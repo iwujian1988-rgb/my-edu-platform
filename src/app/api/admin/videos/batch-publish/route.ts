@@ -462,12 +462,13 @@ export async function GET() {
       console.error('[批量发布] 获取UP主失败:', creatorsResult.error)
     }
 
-    // 获取每个视频的卡片统计
+    // 获取每个视频的卡片统计 + 已有关联标签
     const videoIds = draftVideos?.map(v => v.id) || []
     let cardStats: Record<string, CardStats> = {}
+    let existingVideoTags: Record<string, string[]> = {}
 
     if (videoIds.length > 0) {
-      const [wordsResult, expressionsResult] = await Promise.all([
+      const [wordsResult, expressionsResult, tagRelationsResult] = await Promise.all([
         supabase
           .from('video_word_cards')
           .select('video_id')
@@ -476,6 +477,10 @@ export async function GET() {
           .from('video_expression_cards')
           .select('video_id')
           .in('video_id', videoIds) as unknown as Promise<{ data: { video_id: string }[] | null; error: any }>,
+        supabase
+          .from('video_tag_relations')
+          .select('video_id, tag_id')
+          .in('video_id', videoIds) as unknown as Promise<{ data: { video_id: string; tag_id: string }[] | null; error: any }>,
       ])
 
       // 统计每个视频的卡片数
@@ -495,6 +500,14 @@ export async function GET() {
           expressions: exprCounts[id] || 0,
         }
       })
+
+      // 构建已有的标签关联映射 video_id -> tag_id[]
+      tagRelationsResult.data?.forEach(item => {
+        if (!existingVideoTags[item.video_id]) {
+          existingVideoTags[item.video_id] = []
+        }
+        existingVideoTags[item.video_id].push(item.tag_id)
+      })
     }
 
     return NextResponse.json({
@@ -503,6 +516,7 @@ export async function GET() {
         videos: draftVideos?.map(v => ({
           ...v,
           card_stats: cardStats[v.id] || { words: 0, expressions: 0 },
+          tag_ids: existingVideoTags[v.id] || [],
         })) || [],
         packages: packages || [],
         tags: tags || [],
