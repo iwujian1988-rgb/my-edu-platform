@@ -39,6 +39,8 @@ interface VideoPlayerProps {
   pause?: boolean // 外部控制：暂停视频
   autoPlay?: boolean
   className?: string
+  /** 外部传入的 videoRef，用于 PIP 模式共享同一个 <video> 元素 */
+  videoRefOut?: React.MutableRefObject<HTMLVideoElement | null>
 }
 
 export function VideoPlayer({
@@ -52,6 +54,7 @@ export function VideoPlayer({
   pause,
   autoPlay = false,
   className,
+  videoRefOut,
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
@@ -337,7 +340,10 @@ export function VideoPlayer({
     >
       {/* 视频元素 - 只有开始后才设置 src */}
       <video
-        ref={videoRef}
+        ref={(el) => {
+          (videoRef as React.MutableRefObject<HTMLVideoElement | null>).current = el
+          if (videoRefOut) videoRefOut.current = el
+        }}
         src={hasStarted ? video.video_url : undefined}
         poster={video.thumbnail_url || undefined}
         className="w-full aspect-video"

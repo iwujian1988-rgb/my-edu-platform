@@ -100,8 +100,6 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [pipMode, setPipMode] = useState(false)
   const [isPipPlaying, setIsPipPlaying] = useState(false)
   const [isPipMuted, setIsPipMuted] = useState(false)
-  const pipVideoRef = useRef<HTMLVideoElement>(null)
-  const pipEnterTimeRef = useRef<number>(0)
   const mainVideoRef = useRef<HTMLVideoElement>(null)
 
   // PC端左侧高度 ref（用于右侧对齐）
@@ -173,11 +171,11 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const handlePlaySegment = useCallback((startTime: number, endTime: number) => {
     console.log('[handlePlaySegment] === START ===')
     console.log('[handlePlaySegment] startTime:', startTime, 'endTime:', endTime)
-    console.log('[handlePlaySegment] pipMode:', pipMode, 'pipVideoRef.current:', !!pipVideoRef.current)
+    console.log('[handlePlaySegment] pipMode:', pipMode, 'mainVideoRef.current:', !!mainVideoRef.current)
 
-    if (pipMode && pipVideoRef.current) {
+    if (pipMode && mainVideoRef.current) {
       // PIP 模式：直接操作 PIP video 元素
-      const videoEl = pipVideoRef.current
+      const videoEl = mainVideoRef.current
       console.log('[handlePlaySegment] video element readyState:', videoEl.readyState)
       console.log('[handlePlaySegment] video current src:', videoEl.src?.substring(0, 50))
 
@@ -270,62 +268,35 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   // PIP 模式控制（移动端学习模块）
   // ============================================
 
-  // 进入 PIP 模式
+  // 进入 PIP 模式 — 复用主视频元素，零缓冲延迟
   const enterPipMode = useCallback(() => {
     console.log('[enterPipMode] Entering PIP mode, previous pipMode:', pipMode)
-    // 记住主视频当前时间，PIP 视频将从此处继续
-    pipEnterTimeRef.current = currentVideoTime
+    // 不暂停视频，PIP 组件会把同一个 <video> DOM 元素移入浮动容器
     setPipMode(true)
-    // 暂停主视频（如果正在播放）
-    setPauseMainVideo(true)
-  }, [pipMode, currentVideoTime])
-
-  // PIP 视频挂载后，同步到进入时的主视频时间并播放
-  useEffect(() => {
-    if (!pipMode) return
-    const videoEl = pipVideoRef.current
-    if (!videoEl) return
-
-    videoEl.currentTime = pipEnterTimeRef.current
-    videoEl.play().catch(() => {})
+    setIsPipPlaying(true)
   }, [pipMode])
 
-  // 退出 PIP 模式
+  // 退出 PIP 模式 — PIP 组件卸载时自动把 <video> 还原到主播放器
   const exitPipMode = useCallback(() => {
-    console.log('[exitPipMode] Exiting PIP mode, current pipMode:', pipMode)
+    console.log('[exitPipMode] Exiting PIP mode')
     setPipMode(false)
-    // 同步视频时间到主播放器
-    if (pipVideoRef.current) {
-      setSeekToTime(pipVideoRef.current.currentTime)
-      setSeekTrigger(prev => prev + 1)
-    }
-    // PIP暂停则主视频也暂停，PIP播放则主视频也播放
-    setPauseMainVideo(!isPipPlaying)
-  }, [pipMode, isPipPlaying])
+    setPauseMainVideo(false)
+  }, [])
 
   // 切换 Tab 时处理 PIP 模式
   const handleTabChange = useCallback((tab: TabValue) => {
-    const previousTab = currentTab
-    console.log('[handleTabChange] previousTab:', previousTab, '-> newTab:', tab, 'pipMode:', pipMode)
     setCurrentTab(tab)
 
     if (tab === 'learn') {
-      // 进入学习模块，总是启用 PIP 模式（即使之前已经在学习Tab）
-      console.log('[handleTabChange] Entering learn tab, calling enterPipMode()')
       enterPipMode()
-    } else {
-      // 离开学习模块，退出 PIP 模式
-      if (pipMode) {
-        console.log('[handleTabChange] Leaving learn tab, calling exitPipMode()')
-        exitPipMode()
-      }
-      setPauseMainVideo(false)
+    } else if (pipMode) {
+      exitPipMode()
     }
-  }, [currentTab, pipMode, enterPipMode, exitPipMode])
+  }, [pipMode, enterPipMode, exitPipMode])
 
-  // PIP 视频控制
+  // PIP 视频控制（直接操作主视频元素）
   const togglePipPlay = useCallback(() => {
-    const videoEl = pipVideoRef.current
+    const videoEl = mainVideoRef.current
     if (!videoEl) return
 
     if (isPipPlaying) {
@@ -337,7 +308,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   }, [isPipPlaying])
 
   const togglePipMute = useCallback(() => {
-    const videoEl = pipVideoRef.current
+    const videoEl = mainVideoRef.current
     if (!videoEl) return
 
     videoEl.muted = !isPipMuted
@@ -470,6 +441,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   seekTrigger={seekTrigger}
                   segmentEndTime={segmentEndTime}
                   pause={pauseMainVideo}
+                  videoRefOut={mainVideoRef}
                 />
               )}
               <button
@@ -659,9 +631,9 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               videoLanguage={data.video.language}
               onJumpToSubtitle={(time) => {
                 // PIP 模式下直接操作 PIP 视频，不切换 tab
-                if (pipMode && pipVideoRef.current) {
-                  pipVideoRef.current.currentTime = time
-                  pipVideoRef.current.play()
+                if (pipMode && mainVideoRef.current) {
+                  mainVideoRef.current.currentTime = time
+                  mainVideoRef.current.play()
                   setIsPipPlaying(true)
                 } else {
                   handleTabChange('listen')
@@ -683,11 +655,11 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           )}
         </div>
 
-        {/* PIP 小窗 - 移动端学习模块 */}
+        {/* PIP 小窗 - 移动端学习模块（复用主视频元素，零缓冲延迟） */}
         {pipMode && (
           <DraggablePIP
             video={video}
-            videoRef={pipVideoRef}
+            videoElement={mainVideoRef.current}
             isPlaying={isPipPlaying}
             currentTime={currentVideoTime}
             duration={video.duration || 0}

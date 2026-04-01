@@ -3,13 +3,14 @@
 /**
  * 可拖动画中画 (PIP) 组件
  *
+ * 核心优化：不再创建独立的 <video> 元素，而是复用主视频元素。
+ * 通过 appendChild 将主视频 DOM 节点移入 PIP 容器，零缓冲延迟。
+ *
  * 功能：
  * - 原生 touch 事件处理拖动
  * - RAF 节流优化性能
  * - 边界检测 + 角落吸附动画
  * - 点击展开回全屏
- *
- * 设计风格：Neo-brutalism
  */
 
 import { useRef, useState, useCallback, useEffect } from 'react'
@@ -34,7 +35,8 @@ const DRAG_THRESHOLD = 5
 
 interface DraggablePIPProps {
   video: Video
-  videoRef: React.RefObject<HTMLVideoElement | null>
+  /** 外部传入的主视频 DOM 元素，直接移入 PIP 容器（零缓冲） */
+  videoElement: HTMLVideoElement | null
   isPlaying: boolean
   currentTime: number
   duration: number
@@ -59,7 +61,7 @@ interface Position {
 
 export function DraggablePIP({
   video,
-  videoRef,
+  videoElement,
   isPlaying,
   currentTime,
   duration,
@@ -71,6 +73,9 @@ export function DraggablePIP({
   className,
 }: DraggablePIPProps) {
   const containerRef = useRef<HTMLDivElement>(null)
+  const videoSlotRef = useRef<HTMLDivElement>(null)
+  const originalParentRef = useRef<HTMLElement | null>(null)
+  const originalNextSiblingRef = useRef<Node | null>(null)
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
   const [hasDragged, setHasDragged] = useState(false)
@@ -79,12 +84,46 @@ export function DraggablePIP({
   const rafRef = useRef<number | null>(null)
   const [snappedCorner, setSnappedCorner] = useState<Corner>('bottom-right')
 
+  // 将外部视频元素移入 PIP 容器（挂载时），卸载时还原
+  useEffect(() => {
+    if (!videoElement || !videoSlotRef.current) return
+
+    // 记录原始位置，以便还原
+    originalParentRef.current = videoElement.parentElement
+    originalNextSiblingRef.current = videoElement.nextSibling
+
+    // 调整样式适配 PIP 尺寸
+    videoElement.style.width = '100%'
+    videoElement.style.height = '100%'
+    videoElement.style.objectFit = 'contain'
+    videoElement.style.aspectRatio = ''
+
+    // 移入 PIP 容器
+    videoSlotRef.current.appendChild(videoElement)
+
+    return () => {
+      // 还原到原始父容器
+      const parent = originalParentRef.current
+      if (parent && videoElement.parentElement === videoSlotRef.current) {
+        if (originalNextSiblingRef.current) {
+          parent.insertBefore(videoElement, originalNextSiblingRef.current)
+        } else {
+          parent.appendChild(videoElement)
+        }
+      }
+      // 清除 PIP 样式
+      videoElement.style.width = ''
+      videoElement.style.height = ''
+      videoElement.style.objectFit = ''
+    }
+  }, [videoElement])
+
   // 初始化位置（右下角）
   useEffect(() => {
     const initPosition = () => {
       if (typeof window === 'undefined') return
       const x = window.innerWidth - PIP_WIDTH - PIP_MARGIN
-      const y = window.innerHeight - PIP_HEIGHT - PIP_MARGIN - 80 // 减去底部导航栏高度
+      const y = window.innerHeight - PIP_HEIGHT - PIP_MARGIN - 80
       setPosition({ x, y })
     }
     initPosition()
@@ -111,14 +150,13 @@ export function DraggablePIP({
   const getSnapPosition = useCallback((corner: Corner): Position => {
     if (typeof window === 'undefined') return { x: 0, y: 0 }
 
-    const safeAreaTop = 0
-    const safeAreaBottom = 80 // 底部安全区域
+    const safeAreaBottom = 80
 
     switch (corner) {
       case 'top-left':
-        return { x: PIP_MARGIN, y: PIP_MARGIN + safeAreaTop }
+        return { x: PIP_MARGIN, y: PIP_MARGIN }
       case 'top-right':
-        return { x: window.innerWidth - PIP_WIDTH - PIP_MARGIN, y: PIP_MARGIN + safeAreaTop }
+        return { x: window.innerWidth - PIP_WIDTH - PIP_MARGIN, y: PIP_MARGIN }
       case 'bottom-left':
         return { x: PIP_MARGIN, y: window.innerHeight - PIP_HEIGHT - PIP_MARGIN - safeAreaBottom }
       case 'bottom-right':
@@ -131,12 +169,11 @@ export function DraggablePIP({
   const clampPosition = useCallback((x: number, y: number): Position => {
     if (typeof window === 'undefined') return { x, y }
 
-    const safeAreaTop = 0
     const safeAreaBottom = 80
 
     return {
       x: Math.max(0, Math.min(x, window.innerWidth - PIP_WIDTH)),
-      y: Math.max(safeAreaTop, Math.min(y, window.innerHeight - PIP_HEIGHT - safeAreaBottom)),
+      y: Math.max(0, Math.min(y, window.innerHeight - PIP_HEIGHT - safeAreaBottom)),
     }
   }, [])
 
@@ -164,12 +201,10 @@ export function DraggablePIP({
     const deltaX = clientX - dragStartRef.current.x
     const deltaY = clientY - dragStartRef.current.y
 
-    // 判断是否真正拖拽了
     if (Math.abs(deltaX) > DRAG_THRESHOLD || Math.abs(deltaY) > DRAG_THRESHOLD) {
       setHasDragged(true)
     }
 
-    // RAF 节流更新位置
     if (rafRef.current) {
       cancelAnimationFrame(rafRef.current)
     }
@@ -185,13 +220,11 @@ export function DraggablePIP({
   // 拖动结束
   const handleDragEnd = useCallback(() => {
     if (!hasDragged) {
-      // 没有拖动，视为点击，展开视频
       setIsDragging(false)
       onExpand()
       return
     }
 
-    // 吸附到最近的角落
     const corner = getNearestCorner(position.x, position.y)
     const snapPos = getSnapPosition(corner)
     setPosition(snapPos)
@@ -258,17 +291,8 @@ export function DraggablePIP({
         onMouseDown={handleDragStart}
         onTouchStart={handleDragStart}
       >
-        {/* 视频元素 */}
-        <video
-          ref={videoRef as React.RefObject<HTMLVideoElement>}
-          src={video.video_url}
-          poster={video.thumbnail_url || undefined}
-          className="w-full h-full object-contain"
-          preload="auto"
-          playsInline
-          muted={isMuted}
-          onTimeUpdate={(e) => onTimeUpdate(e.currentTarget.currentTime)}
-        />
+        {/* 视频插槽 - 外部 video 元素将移入此处 */}
+        <div ref={videoSlotRef} className="w-full h-full" />
 
         {/* 控制层 */}
         <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity">
