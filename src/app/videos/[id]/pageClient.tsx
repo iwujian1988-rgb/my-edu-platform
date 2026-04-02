@@ -666,6 +666,10 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
             isMuted={isPipMuted}
             onTogglePlay={togglePipPlay}
             onToggleMute={togglePipMute}
+            onSeek={(time) => {
+              const videoEl = mainVideoRef.current
+              if (videoEl) videoEl.currentTime = time
+            }}
             onExpand={exitPipMode}
             onTimeUpdate={(time) => {
               setCurrentVideoTime(time)

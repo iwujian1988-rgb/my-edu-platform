@@ -43,6 +43,7 @@ interface DraggablePIPProps {
   isMuted: boolean
   onTogglePlay: () => void
   onToggleMute: () => void
+  onSeek: (time: number) => void
   onExpand: () => void
   onTimeUpdate: (time: number) => void
   className?: string
@@ -68,6 +69,7 @@ export function DraggablePIP({
   isMuted,
   onTogglePlay,
   onToggleMute,
+  onSeek,
   onExpand,
   onTimeUpdate,
   className,
@@ -83,6 +85,8 @@ export function DraggablePIP({
   const positionStartRef = useRef<Position | null>(null)
   const rafRef = useRef<number | null>(null)
   const [snappedCorner, setSnappedCorner] = useState<Corner>('bottom-right')
+  const trackRef = useRef<HTMLDivElement>(null)
+  const [seekingPercent, setSeekingPercent] = useState<number | null>(null) // 拖拽中本地视觉进度
 
   // 将外部视频元素移入 PIP 容器（挂载时），卸载时还原
   useEffect(() => {
@@ -267,8 +271,42 @@ export function DraggablePIP({
     return `${mins}:${secs.toString().padStart(2, '0')}`
   }
 
-  // 进度百分比
-  const progressPercent = duration > 0 ? (currentTime / duration) * 100 : 0
+  // 进度百分比（拖拽中用本地值，否则用外部传入的 currentTime）
+  const progressPercent = seekingPercent ?? (duration > 0 ? (currentTime / duration) * 100 : 0)
+
+  // 从鼠标位置计算百分比
+  const calcPercent = useCallback((clientX: number): number => {
+    if (!trackRef.current) return 0
+    const rect = trackRef.current.getBoundingClientRect()
+    return Math.max(0, Math.min(100, ((clientX - rect.left) / rect.width) * 100))
+  }, [])
+
+  const handleTrackMouseDown = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation()
+    e.preventDefault()
+
+    // 立即更新视觉到点击位置
+    setSeekingPercent(calcPercent(e.clientX))
+
+    const handleMove = (ev: MouseEvent) => {
+      ev.preventDefault()
+      setSeekingPercent(calcPercent(ev.clientX))
+    }
+
+    const handleUp = (ev: MouseEvent) => {
+      // 松手：用最终位置 seek 视频，清除拖拽状态
+      const finalPct = calcPercent(ev.clientX)
+      if (duration > 0) {
+        onSeek((finalPct / 100) * duration)
+      }
+      setSeekingPercent(null)
+      window.removeEventListener('mousemove', handleMove)
+      window.removeEventListener('mouseup', handleUp)
+    }
+
+    window.addEventListener('mousemove', handleMove)
+    window.addEventListener('mouseup', handleUp)
+  }, [calcPercent, duration, onSeek])
 
   return (
     <AnimatePresence>
@@ -297,14 +335,20 @@ export function DraggablePIP({
         {/* 视频插槽 - 外部 video 元素将移入此处 */}
         <div ref={videoSlotRef} className="w-full h-full" />
 
-        {/* 控制层 */}
-        <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent opacity-0 hover:opacity-100 transition-opacity">
-          {/* 进度条 */}
-          <div className="h-1 bg-gray-600">
+        {/* 控制层 — PIP 小窗始终显示控制条 */}
+        <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent">
+          {/* 进度条 — 拖拽 / 点击 seek */}
+          <div
+            ref={trackRef}
+            className="relative h-1.5 bg-gray-600 cursor-pointer"
+            onMouseDown={handleTrackMouseDown}
+          >
             <div
               className="h-full bg-[#B4F416]"
               style={{ width: `${progressPercent}%` }}
             />
+            {/* 扩大点击热区 */}
+            <div className="absolute -top-1 -bottom-1 left-0 right-0" />
           </div>
 
           {/* 控制按钮 */}

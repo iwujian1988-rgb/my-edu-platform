@@ -72,18 +72,35 @@ export function VideoPlayer({
 
   const hideControlsTimerRef = useRef<NodeJS.Timeout | null>(null)
   const shouldAutoPlayRef = useRef(false) // 标记是否应该自动播放
+  const seekingValueRef = useRef<number | null>(null) // 拖拽中暂存的进度值，避免 seek 延迟导致滑块回弹
 
-  const showControlsTemporarily = useCallback(() => {
-    setShowControls(true)
+  // 显示控制栏并启动 auto-hide 计时器
+  const startControlsTimer = useCallback(() => {
     if (hideControlsTimerRef.current) {
       clearTimeout(hideControlsTimerRef.current)
     }
-    if (isPlaying) {
-      hideControlsTimerRef.current = setTimeout(() => {
-        setShowControls(false)
-      }, HIDE_CONTROLS_DELAY_MS)
+    hideControlsTimerRef.current = setTimeout(() => {
+      setShowControls(false)
+    }, HIDE_CONTROLS_DELAY_MS)
+  }, [])
+
+  const showControlsTemporarily = useCallback(() => {
+    setShowControls(true)
+    startControlsTimer()
+  }, [startControlsTimer])
+
+  // 点击视频区域切换控制栏（移动端主要交互方式）
+  const toggleControls = useCallback(() => {
+    if (showControls) {
+      setShowControls(false)
+      if (hideControlsTimerRef.current) {
+        clearTimeout(hideControlsTimerRef.current)
+        hideControlsTimerRef.current = null
+      }
+    } else {
+      showControlsTemporarily()
     }
-  }, [isPlaying])
+  }, [showControls, showControlsTemporarily])
 
   const handleSpeedChange = useCallback((speed: number) => {
     const videoEl = videoRef.current
@@ -265,9 +282,14 @@ export function VideoPlayer({
     }
   }
 
+  // 拖拽中的临时值，用于驱动 slider 视觉位置
+  const [seekingDisplay, setSeekingDisplay] = useState<number | null>(null)
+
   const handleTimeUpdate = () => {
     const videoEl = videoRef.current
     if (!videoEl) return
+    // 拖拽中不更新，避免滑块回弹
+    if (seekingValueRef.current !== null) return
     setCurrentTime(videoEl.currentTime)
     onTimeUpdate?.(videoEl.currentTime)
 
@@ -282,7 +304,11 @@ export function VideoPlayer({
     }
   }
 
-  const handlePlay = () => setIsPlaying(true)
+  const handlePlay = () => {
+    setIsPlaying(true)
+    // 视频开始播放时，确保控制栏会在 3s 后自动隐藏
+    showControlsTemporarily()
+  }
   const handlePause = () => setIsPlaying(false)
   const handleEnded = () => {
     setIsPlaying(false)
@@ -357,6 +383,7 @@ export function VideoPlayer({
         onEnded={handleEnded}
         onWaiting={handleWaiting}
         onCanPlay={handleCanPlay}
+        onClick={hasStarted ? toggleControls : undefined}
       />
 
       {/* 封面图 + 播放按钮 - 未开始时显示 */}
@@ -415,17 +442,30 @@ export function VideoPlayer({
         <div
           className={cn(
             'absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 transition-opacity z-30',
-            showControls ? 'opacity-100' : 'opacity-0'
+            showControls ? 'opacity-100' : 'opacity-0 pointer-events-none'
           )}
+          onClick={(e) => e.stopPropagation()}
         >
-          {/* 进度条 */}
+          {/* 进度条 — 拖拽时用本地值驱动视觉，松手后才真正 seek */}
           <div className="mb-3">
             <Slider
-              value={[currentTime]}
+              value={[seekingDisplay ?? currentTime]}
               max={duration || 100}
               step={0.1}
-              onValueChange={(value) => seek(value[0])}
+              onValueChange={(value) => {
+                seekingValueRef.current = value[0]
+                setSeekingDisplay(value[0])
+              }}
+              onValueCommit={(value) => {
+                // 松手：seek 视频 + 立即将 UI 状态同步到目标位置，避免回弹
+                seek(value[0])
+                setCurrentTime(value[0])
+                seekingValueRef.current = null
+                setSeekingDisplay(null)
+              }}
               className="cursor-pointer [&_[role=slider]]:h-4 [&_[role=slider]]:w-4 [&_[role=slider]]:bg-[#B4F416] [&_[role=slider]]:border-2 [&_[role=slider]]:border-black [&_[role=slider]]:shadow-[2px_2px_0px_0px_#000]"
+              trackClassName="bg-white/30 !h-[2px]"
+              rangeClassName="bg-[#B4F416]"
             />
           </div>
 
@@ -446,7 +486,7 @@ export function VideoPlayer({
                     max={1}
                     step={0.01}
                     onValueChange={handleVolumeChange}
-                    className="[&_[role=slider]]:h-3.5 [&_[role=slider]]:w-3.5 [&_[role=slider]]:bg-[#B4F416] [&_[role=slider]]:border-2 [&_[role=slider]]:border-black"
+                    className="[&_[role=slider]]:h-3.5 [&_[role=slider]]:w-3.5 [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-white/50"
                   />
                 </div>
               </div>
