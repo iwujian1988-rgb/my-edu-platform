@@ -46,6 +46,8 @@ import type {
 import { GrammarPointsTab } from './GrammarPointsTab'
 import { PronunciationTipsTab } from './PronunciationTipsTab'
 import { VocabularyNetworkTab } from './VocabularyNetworkTab'
+import { useTTSPreload } from '@/hooks/useTTSPreload'
+import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
 // ============================================
 // 类型定义
@@ -100,6 +102,9 @@ export function LearningModal({
 }: LearningModalProps) {
   const [localStatusMap, setLocalStatusMap] = useState<Map<string, CardStatus>>(new Map())
 
+  // 共享 TTS 预加载实例
+  const ttsPreload = useTTSPreload(video.language)
+
   // 模块折叠状态 - 默认全部展开
   const [expandedSections, setExpandedSections] = useState<Set<string>>(
     new Set(['words', 'expressions', 'grammar', 'pronunciation', 'network'])
@@ -124,10 +129,6 @@ export function LearningModal({
         videoRef.current.removeEventListener('timeupdate', timeUpdateHandlerRef.current)
         timeUpdateHandlerRef.current = null
       }
-      // 停止语音
-      if ('speechSynthesis' in window) {
-        speechSynthesis.cancel()
-      }
       // 暂停视频
       if (videoRef.current) {
         videoRef.current.pause()
@@ -142,10 +143,6 @@ export function LearningModal({
       if (timeUpdateHandlerRef.current && videoRef.current) {
         videoRef.current.removeEventListener('timeupdate', timeUpdateHandlerRef.current)
         timeUpdateHandlerRef.current = null
-      }
-      // 停止语音
-      if ('speechSynthesis' in window) {
-        speechSynthesis.cancel()
       }
       // 暂停视频
       if (videoRef.current) {
@@ -246,136 +243,19 @@ export function LearningModal({
     }
   }, [])
 
-  // ============================================
-  // TTS 预加载优化
-  // ============================================
-
-  /** TTS 状态：'cached' = API 有音频，'webspeech' = 用浏览器，'pending' = 还未检测 */
-  type TTSStatus = 'pending' | 'cached' | 'webspeech'
-  const ttsStatusRef = useRef<Map<string, TTSStatus>>(new Map())
-
-  // 语言映射
-  const getTTSLanguage = useCallback((): string => {
-    const langMap: Record<string, string> = {
-      'fr': 'fr', 'en': 'en', 'ja': 'ja', 'es': 'es', 'de': 'de',
-    }
-    return langMap[video.language || 'fr'] || 'fr'
-  }, [video.language])
-
-  // 预加载所有单词的 TTS（页面加载后 500ms 开始）
+  // 组件挂载时预加载所有单词
   useEffect(() => {
     if (words.length === 0) return
-
-    const ttsLang = getTTSLanguage()
-    const PRELOAD_DELAY_MS = 500
-    let webspeechWarmedUp = false
-
-    // 预热 Web Speech 引擎（只执行一次）
-    const warmupWebSpeech = () => {
-      if (webspeechWarmedUp || !('speechSynthesis' in window)) return
-      webspeechWarmedUp = true
-
-      // 播放静音 utterance 来唤醒引擎
-      const warmup = new SpeechSynthesisUtterance('')
-      warmup.volume = 0
-      warmup.rate = 1
-      warmup.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
-      speechSynthesis.speak(warmup)
-      console.log('[LearningModal TTS] 🔥 Web Speech 引擎已预热')
-    }
-
     const timer = setTimeout(() => {
-      console.log(`[LearningModal TTS] 开始预加载 ${words.length} 个单词...`)
-
-      words.forEach(async ({ word }) => {
-        const key = word.toLowerCase()
-
-        // 跳过已检测的
-        if (ttsStatusRef.current.has(key)) return
-
-        try {
-          const res = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`)
-
-          if (res.ok) {
-            ttsStatusRef.current.set(key, 'cached')
-            // 触发浏览器缓存
-            await res.blob()
-            console.log(`[LearningModal TTS] ✅ ${word} -> cached`)
-          } else {
-            ttsStatusRef.current.set(key, 'webspeech')
-            // 预热 Web Speech 引擎
-            warmupWebSpeech()
-            console.log(`[LearningModal TTS] 🔄 ${word} -> webspeech (API 404)`)
-          }
-        } catch {
-          ttsStatusRef.current.set(key, 'webspeech')
-          warmupWebSpeech()
-          console.log(`[LearningModal TTS] ⚠️ ${word} -> webspeech (请求失败)`)
-        }
-      })
-    }, PRELOAD_DELAY_MS)
-
+      ttsPreload.preloadWords(words.map((w) => w.word))
+    }, 500)
     return () => clearTimeout(timer)
-  }, [words, getTTSLanguage])
+  }, [words, ttsPreload])
 
-  // 播放单词发音 - 优先使用缓存状态
+  // 播放单词发音
   const playWord = useCallback(async (word: string) => {
-    const ttsLang = getTTSLanguage()
-    const key = word.toLowerCase()
-    const status = ttsStatusRef.current.get(key)
-
-    console.log(`[LearningModal TTS] playWord: "${word}", status: ${status || 'pending'}`)
-
-    // 如果预加载已判定为 webspeech，直接用浏览器 TTS（跳过 API 请求）
-    if (status === 'webspeech') {
-      console.log('[LearningModal TTS] 直接使用 Web Speech（预加载已判定）')
-      if ('speechSynthesis' in window) {
-        speechSynthesis.cancel()
-        const utterance = new SpeechSynthesisUtterance(word)
-        utterance.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
-        utterance.rate = 0.8
-        speechSynthesis.speak(utterance)
-      }
-      return
-    }
-
-    // cached 或 pending：请求 API（浏览器缓存会命中）
-    try {
-      const url = `/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`
-      const response = await fetch(url)
-
-      if (!response.ok) {
-        // API 失败，回退到浏览器 TTS，并更新状态
-        console.warn('[LearningModal TTS] API 失败，回退到浏览器 TTS')
-        ttsStatusRef.current.set(key, 'webspeech')
-        if ('speechSynthesis' in window) {
-          speechSynthesis.cancel()
-          const utterance = new SpeechSynthesisUtterance(word)
-          utterance.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
-          utterance.rate = 0.8
-          speechSynthesis.speak(utterance)
-        }
-        return
-      }
-
-      // 播放音频
-      const blob = await response.blob()
-      const audioUrl = URL.createObjectURL(blob)
-      const audio = new Audio(audioUrl)
-
-      audio.onended = () => {
-        URL.revokeObjectURL(audioUrl)
-      }
-
-      audio.onerror = () => {
-        URL.revokeObjectURL(audioUrl)
-      }
-
-      await audio.play()
-    } catch (error) {
-      console.error('[LearningModal TTS] 播放失败:', error)
-    }
-  }, [getTTSLanguage])
+    await ttsPreload.play(word)
+  }, [ttsPreload])
 
   // 计算学习进度
   const wordsLearned = words.filter(word => {
@@ -425,8 +305,6 @@ export function LearningModal({
                     if (initialVideoPosition > 0) {
                       el.currentTime = initialVideoPosition
                     }
-                    // 打开弹层后自动从主视频当前位置继续播放
-                    el.play().then(() => setIsVideoPlaying(true)).catch(() => {})
                   }}
                 />
               ) : (
@@ -440,9 +318,39 @@ export function LearningModal({
                 <button onClick={toggleVideoPlay} className="p-1 text-white hover:text-[#B4F416] transition-colors">
                   {isVideoPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                 </button>
-                <div className="flex-1 h-2 bg-gray-600 rounded-sm overflow-hidden">
+                <div
+                  className="flex-1 h-3 bg-white/20 rounded-sm overflow-hidden cursor-pointer hover:h-4 transition-all"
+                  onClick={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect()
+                    const ratio = (e.clientX - rect.left) / rect.width
+                    const videoEl = videoRef.current
+                    if (videoEl && videoDuration) {
+                      videoEl.currentTime = ratio * videoDuration
+                    }
+                  }}
+                  onMouseDown={(e) => {
+                    if (e.button !== 0) return
+                    const bar = e.currentTarget
+                    const seek = (clientX: number) => {
+                      const rect = bar.getBoundingClientRect()
+                      const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width))
+                      const videoEl = videoRef.current
+                      if (videoEl && videoDuration) {
+                        videoEl.currentTime = ratio * videoDuration
+                      }
+                    }
+                    seek(e.clientX)
+                    const onMove = (ev: MouseEvent) => seek(ev.clientX)
+                    const onUp = () => {
+                      document.removeEventListener('mousemove', onMove)
+                      document.removeEventListener('mouseup', onUp)
+                    }
+                    document.addEventListener('mousemove', onMove)
+                    document.addEventListener('mouseup', onUp)
+                  }}
+                >
                   <div
-                    className="h-full bg-[#B4F416]"
+                    className="h-full bg-[#B4F416] pointer-events-none"
                     style={{ width: videoDuration > 0 ? `${(videoCurrentTime / videoDuration) * 100}%` : '0%' }}
                   />
                 </div>
@@ -525,6 +433,7 @@ export function LearningModal({
                           onJumpToSubtitle={handleJumpToTime}
                           onPlayWord={playWord}
                           videoLanguage={video.language}
+                          ttsPreload={ttsPreload}
                         />
                       ))
                     )}
@@ -584,7 +493,7 @@ export function LearningModal({
                 </div>
                 {expandedSections.has('pronunciation') && (
                   <div className="p-3 bg-white dark:bg-gray-800">
-                    <PronunciationTipsTab tips={pronunciationTips} />
+                    <PronunciationTipsTab tips={pronunciationTips} ttsPreload={ttsPreload} />
                   </div>
                 )}
               </div>
@@ -605,7 +514,7 @@ export function LearningModal({
                 </div>
                 {expandedSections.has('network') && (
                   <div className="p-3 bg-white dark:bg-gray-800">
-                    <VocabularyNetworkTab network={vocabularyNetwork} />
+                    <VocabularyNetworkTab network={vocabularyNetwork} videoLanguage={video.language} ttsPreload={ttsPreload} />
                   </div>
                 )}
               </div>
@@ -637,22 +546,11 @@ interface WordCardProps {
   onStatusChange: (status: CardStatus) => void
   onJumpToSubtitle?: (startTime: number, endTime?: number) => void
   onPlayWord?: (word: string) => void
-  videoLanguage?: string  // 视频语言，用于 TTS 和多语言展示
+  videoLanguage?: string
+  ttsPreload: TTSPreloadInstance
 }
 
-function WordCard({ word, status, onStatusChange, onJumpToSubtitle, onPlayWord, videoLanguage }: WordCardProps) {
-  // 根据视频语言确定 TTS 语言代码
-  const getTTSLang = (): string => {
-    const langMap: Record<string, string> = {
-      'fr': 'fr-FR',
-      'en': 'en-US',
-      'ja': 'ja-JP',
-      'es': 'es-ES',
-      'de': 'de-DE',
-    }
-    return langMap[videoLanguage || 'fr'] || 'fr-FR'
-  }
-
+function WordCard({ word, status, onStatusChange, onJumpToSubtitle, onPlayWord, ttsPreload }: WordCardProps) {
   return (
     <div className={cn(
       "p-2 border-[2px] border-black dark:border-gray-600 rounded-sm transition-all duration-150 hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5",
@@ -678,7 +576,7 @@ function WordCard({ word, status, onStatusChange, onJumpToSubtitle, onPlayWord, 
           )}
         </div>
         <div className="flex items-center gap-1">
-          {onPlayWord && (
+          {onPlayWord && ttsPreload.isAvailable(word.word) && (
             <button
               onClick={() => onPlayWord(word.word)}
               className="p-1 text-gray-500 hover:text-[#B4F416] hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors"

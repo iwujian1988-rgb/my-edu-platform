@@ -11,16 +11,19 @@ import { createPortal } from 'react-dom'
 import { Volume2, X, Loader2 } from 'lucide-react'
 import { useDictionaryStore } from '@/hooks/useDictionaryStore'
 import type { DictionaryLanguage } from '@/lib/dictionary/types'
+import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
 export interface WordTooltipProps {
   word: string
   language?: DictionaryLanguage
   children: React.ReactNode
   className?: string
+  ttsPreload?: TTSPreloadInstance
 }
 
-function WordTooltipInner({ word, language = 'fr', children, className }: WordTooltipProps) {
+function WordTooltipInner({ word, language = 'fr', children, className, ttsPreload }: WordTooltipProps) {
   const [isOpen, setIsOpen] = useState(false)
+  const [isPlaying, setIsPlaying] = useState(false)
   const [cardPos, setCardPos] = useState({ top: 0, left: 0 })
   const [isMobile, setIsMobile] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -72,6 +75,11 @@ function WordTooltipInner({ word, language = 'fr', children, className }: WordTo
     lookup(word, language)
     setIsOpen(true)
 
+    // 打开弹窗时触发单词预加载
+    if (ttsPreload) {
+      ttsPreload.preloadWords([word])
+    }
+
     // PC端：计算卡片位置
     if (window.innerWidth >= 1024) {
       requestAnimationFrame(() => {
@@ -94,7 +102,7 @@ function WordTooltipInner({ word, language = 'fr', children, className }: WordTo
         setCardPos({ top, left })
       })
     }
-  }, [word, language, lookup])
+  }, [word, language, lookup, ttsPreload])
 
   const handleClose = useCallback(() => setIsOpen(false), [])
 
@@ -119,31 +127,17 @@ function WordTooltipInner({ word, language = 'fr', children, className }: WordTo
     return () => document.removeEventListener('keydown', onKey)
   }, [isOpen])
 
-  // ── TTS ──
+  // ── TTS 播放 ──
   const playSound = useCallback(async () => {
     const target = currentEntry?.word || word
-    if (!target) return
-    try {
-      const res = await fetch(`/api/tts?text=${encodeURIComponent(target)}&type=2&language=${language}`)
-      if (!res.ok) {
-        if ('speechSynthesis' in window) {
-          speechSynthesis.cancel()
-          const u = new SpeechSynthesisUtterance(target)
-          u.lang = language === 'fr' ? 'fr-FR' : 'en-US'
-          u.rate = 0.8
-          speechSynthesis.speak(u)
-        }
-        return
-      }
-      const blob = await res.blob()
-      const url = URL.createObjectURL(blob)
-      const audio = new Audio(url)
-      audio.onended = () => URL.revokeObjectURL(url)
-      await audio.play()
-    } catch (_err) {
-      // 静默失败
-    }
-  }, [currentEntry?.word, word, language])
+    if (!target || !ttsPreload) return
+
+    setIsPlaying(true)
+    await ttsPreload.play(target)
+    setIsPlaying(false)
+  }, [currentEntry?.word, word, ttsPreload])
+
+  const hasAudio = ttsPreload ? ttsPreload.isAvailable(currentEntry?.word || word) : false
 
   // ── 词典内容 ──
   const renderContent = () => {
@@ -181,13 +175,20 @@ function WordTooltipInner({ word, language = 'fr', children, className }: WordTo
               {e.gender === 'm' ? '♂' : e.gender === 'f' ? '♀' : e.gender}
             </span>
           )}
-          <button
-            type="button"
-            onClick={(ev) => { ev.stopPropagation(); playSound() }}
-            className="ml-auto p-1.5 rounded border-2 border-black dark:border-gray-500 bg-indigo-200 dark:bg-indigo-800 hover:bg-indigo-300 dark:hover:bg-indigo-700 active:translate-y-[1px] cursor-pointer"
-          >
-            <Volume2 className="w-3.5 h-3.5" />
-          </button>
+          {/* API 有音频才显示播放按钮 */}
+          {hasAudio && (
+            <button
+              type="button"
+              onClick={(ev) => { ev.stopPropagation(); playSound() }}
+              className="ml-auto p-1.5 rounded border-2 border-black dark:border-gray-500 bg-indigo-200 dark:bg-indigo-800 hover:bg-indigo-300 dark:hover:bg-indigo-700 active:translate-y-[1px] cursor-pointer"
+            >
+              {isPlaying ? (
+                <Loader2 className="w-3.5 h-3.5 animate-spin" />
+              ) : (
+                <Volume2 className="w-3.5 h-3.5" />
+              )}
+            </button>
+          )}
         </div>
 
         {/* 释义 */}

@@ -24,10 +24,13 @@ import type {
   VideoPronunciationTip,
   VideoVocabularyNetwork,
   CardStatus,
+  VideoLanguage,
 } from '@/types/video'
 import { GrammarPointsTab } from './GrammarPointsTab'
 import { PronunciationTipsTab } from './PronunciationTipsTab'
 import { VocabularyNetworkTab } from './VocabularyNetworkTab'
+import { useTTSPreload } from '@/hooks/useTTSPreload'
+import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
 // ============================================
 // 类型定义
@@ -39,7 +42,7 @@ export interface LearningTabsProps {
   grammarPoints: VideoGrammarPoint[]
   pronunciationTips: VideoPronunciationTip[]
   vocabularyNetwork: VideoVocabularyNetwork | null
-  videoLanguage?: string // 视频语言，用于 TTS
+  videoLanguage?: VideoLanguage // 视频语言，用于 TTS
   onJumpToSubtitle?: (time: number) => void
   onPlaySegment?: (startTime: number, endTime: number) => void
   getCardStatus?: (cardType: 'word' | 'expression', cardId: string) => CardStatus | undefined
@@ -96,6 +99,7 @@ export function LearningTabs({
   const [activeTab, setActiveTab] = useState<TabKey>('words')
   const [localStatusMap, setLocalStatusMap] = useState<Map<string, CardStatus>>(new Map())
   const containerRef = useRef<HTMLDivElement>(null)
+  const ttsPreload = useTTSPreload(videoLanguage)
 
   // Tab 切换时滚动到顶部
   const handleTabSwitch = useCallback((tabKey: TabKey) => {
@@ -175,6 +179,7 @@ export function LearningTabs({
           <WordsTab
             words={words}
             videoLanguage={videoLanguage}
+            ttsPreload={ttsPreload}
             onJumpToSubtitle={onJumpToSubtitle}
             getCardStatus={getCardStatusLocal}
             onStatusChange={handleStatusChange}
@@ -193,9 +198,9 @@ export function LearningTabs({
       case 'grammar':
         return <GrammarPointsTab grammarPoints={grammarPoints} />
       case 'pronunciation':
-        return <PronunciationTipsTab tips={pronunciationTips} />
+        return <PronunciationTipsTab tips={pronunciationTips} ttsPreload={ttsPreload} />
       case 'network':
-        return <VocabularyNetworkTab network={vocabularyNetwork} />
+        return <VocabularyNetworkTab network={vocabularyNetwork} videoLanguage={videoLanguage} ttsPreload={ttsPreload} />
       default:
         return null
     }
@@ -204,7 +209,8 @@ export function LearningTabs({
   return (
     <div ref={containerRef} className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 rounded-sm transition-colors duration-300">
       {/* Tab 头部 - sticky 吸顶，滚动时不被遮挡 */}
-      <div className="sticky top-0 z-10 flex border-b-[3px] border-black dark:border-gray-600 overflow-x-auto rounded-t-sm bg-white dark:bg-gray-800">
+      {/* touch-action: pan-x 防止安卓全屏时纵向滚动容器吃掉横向滑动手势 */}
+      <div className="sticky top-0 z-10 flex border-b-[3px] border-black dark:border-gray-600 overflow-x-auto overscroll-contain rounded-t-sm bg-white dark:bg-gray-800" style={{ touchAction: 'pan-x' }}>
         {tabs.map((tab) => (
           <button
             key={tab.key}
@@ -316,90 +322,28 @@ function Progress({ learned, total }: ProgressProps) {
 interface WordsTabProps {
   words: VideoWordCard[]
   videoLanguage?: string
+  ttsPreload: TTSPreloadInstance
   onJumpToSubtitle?: (time: number) => void
   onPlaySegment?: (startTime: number, endTime: number) => void
   getCardStatus?: (cardType: 'word', cardId: string) => CardStatus | undefined
   onStatusChange?: (cardType: 'word', cardId: string, status: CardStatus) => Promise<void>
 }
 
-function WordsTab({ words, videoLanguage, onJumpToSubtitle, onPlaySegment, getCardStatus, onStatusChange }: WordsTabProps) {
+function WordsTab({ words, videoLanguage, ttsPreload, onJumpToSubtitle, onPlaySegment, getCardStatus, onStatusChange }: WordsTabProps) {
   const [playingWord, setPlayingWord] = useState<string | null>(null)
   const [expandedDefinitions, setExpandedDefinitions] = useState<Set<string>>(new Set())
   const [expandedExamples, setExpandedExamples] = useState<Set<string>>(new Set())
 
-  // ============================================
-  // TTS 预加载优化
-  // ============================================
-
-  /** TTS 状态：'cached' = API 有音频，'webspeech' = 用浏览器，'pending' = 还未检测 */
-  type TTSStatus = 'pending' | 'cached' | 'webspeech'
-  const ttsStatusRef = useRef<Map<string, TTSStatus>>(new Map())
-
-  // 语言映射
-  const getTTSLanguage = useCallback((): string => {
-    const langMap: Record<string, string> = {
-      'fr': 'fr', 'en': 'en', 'ja': 'ja', 'es': 'es', 'de': 'de',
-    }
-    return langMap[videoLanguage || 'fr'] || 'fr'
-  }, [videoLanguage])
-
-  // 预加载所有单词的 TTS（页面加载后 500ms 开始）
+  // 组件挂载时预加载所有单词
   useEffect(() => {
     if (words.length === 0) return
-
-    const ttsLang = getTTSLanguage()
-    const PRELOAD_DELAY_MS = 500
-    let webspeechWarmedUp = false
-
-    // 预热 Web Speech 引擎（只执行一次）
-    const warmupWebSpeech = () => {
-      if (webspeechWarmedUp || !('speechSynthesis' in window)) return
-      webspeechWarmedUp = true
-
-      // 播放静音 utterance 来唤醒引擎
-      const warmup = new SpeechSynthesisUtterance('')
-      warmup.volume = 0
-      warmup.rate = 1
-      warmup.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
-      speechSynthesis.speak(warmup)
-      console.log('[LearningTabs TTS] 🔥 Web Speech 引擎已预热')
-    }
-
     const timer = setTimeout(() => {
-      console.log(`[LearningTabs TTS] 开始预加载 ${words.length} 个单词...`)
-
-      words.forEach(async ({ word }) => {
-        const key = word.toLowerCase()
-
-        // 跳过已检测的
-        if (ttsStatusRef.current.has(key)) return
-
-        try {
-          const res = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`)
-
-          if (res.ok) {
-            ttsStatusRef.current.set(key, 'cached')
-            // 触发浏览器缓存
-            await res.blob()
-            console.log(`[LearningTabs TTS] ✅ ${word} -> cached`)
-          } else {
-            ttsStatusRef.current.set(key, 'webspeech')
-            // 预热 Web Speech 引擎
-            warmupWebSpeech()
-            console.log(`[LearningTabs TTS] 🔄 ${word} -> webspeech (API 404)`)
-          }
-        } catch {
-          ttsStatusRef.current.set(key, 'webspeech')
-          warmupWebSpeech()
-          console.log(`[LearningTabs TTS] ⚠️ ${word} -> webspeech (请求失败)`)
-        }
-      })
-    }, PRELOAD_DELAY_MS)
-
+      ttsPreload.preloadWords(words.map((w) => w.word))
+    }, 500)
     return () => clearTimeout(timer)
-  }, [words, getTTSLanguage])
+  }, [words, ttsPreload])
 
-  // 播放单词发音 - 优先使用缓存状态
+  // 播放单词发音
   const playWord = useCallback(async (word: string) => {
     if (playingWord) {
       setPlayingWord(null)
@@ -407,73 +351,9 @@ function WordsTab({ words, videoLanguage, onJumpToSubtitle, onPlaySegment, getCa
     }
 
     setPlayingWord(word)
-
-    const ttsLang = getTTSLanguage()
-    const key = word.toLowerCase()
-    const status = ttsStatusRef.current.get(key)
-
-    console.log(`[LearningTabs TTS] playWord: "${word}", status: ${status || 'pending'}`)
-
-    // 如果预加载已判定为 webspeech，直接用浏览器 TTS（跳过 API 请求）
-    if (status === 'webspeech') {
-      console.log('[LearningTabs TTS] 直接使用 Web Speech（预加载已判定）')
-      if ('speechSynthesis' in window) {
-        speechSynthesis.cancel()
-        const utterance = new SpeechSynthesisUtterance(word)
-        utterance.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
-        utterance.rate = 0.8
-        utterance.onend = () => setPlayingWord(null)
-        utterance.onerror = () => setPlayingWord(null)
-        speechSynthesis.speak(utterance)
-      } else {
-        setPlayingWord(null)
-      }
-      return
-    }
-
-    // cached 或 pending：请求 API（浏览器缓存会命中）
-    try {
-      const response = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=${ttsLang}`)
-
-      if (!response.ok) {
-        // API 失败，回退到浏览器 TTS，并更新状态
-        console.warn('[LearningTabs TTS] API 失败，回退到浏览器 TTS')
-        ttsStatusRef.current.set(key, 'webspeech')
-        if ('speechSynthesis' in window) {
-          speechSynthesis.cancel()
-          const utterance = new SpeechSynthesisUtterance(word)
-          utterance.lang = ttsLang === 'fr' ? 'fr-FR' : ttsLang === 'en' ? 'en-US' : ttsLang
-          utterance.rate = 0.8
-          utterance.onend = () => setPlayingWord(null)
-          utterance.onerror = () => setPlayingWord(null)
-          speechSynthesis.speak(utterance)
-        } else {
-          setPlayingWord(null)
-        }
-        return
-      }
-
-      // 播放音频
-      const blob = await response.blob()
-      const audioUrl = URL.createObjectURL(blob)
-      const audio = new Audio(audioUrl)
-
-      audio.onended = () => {
-        URL.revokeObjectURL(audioUrl)
-        setPlayingWord(null)
-      }
-
-      audio.onerror = () => {
-        URL.revokeObjectURL(audioUrl)
-        setPlayingWord(null)
-      }
-
-      await audio.play()
-    } catch (error) {
-      console.warn('[LearningTabs TTS] 播放失败:', error)
-      setPlayingWord(null)
-    }
-  }, [playingWord, getTTSLanguage])
+    await ttsPreload.play(word)
+    setPlayingWord(null)
+  }, [playingWord, ttsPreload])
 
   const toggleDefinitions = useCallback((wordId: string) => {
     setExpandedDefinitions(prev => {
@@ -589,23 +469,25 @@ function WordsTab({ words, videoLanguage, onJumpToSubtitle, onPlaySegment, getCa
                   </span>
                 )}
               </div>
-              {/* 播放按钮 */}
-              <button
-                onClick={() => playWord(word.word)}
-                className={cn(
-                  "p-1.5 border-[2px] border-black dark:border-gray-500 transition-all duration-150",
-                  isPlaying
-                    ? "bg-[#B4F416] text-black"
-                    : "bg-white dark:bg-gray-600 hover:bg-[#B4F416] hover:text-black"
-                )}
-                title="播放发音"
-              >
-                {isPlaying ? (
-                  <Loader2 className="w-4 h-4 animate-spin" />
-                ) : (
-                  <Volume2 className="w-4 h-4" />
-                )}
-              </button>
+              {/* 播放按钮 — API 有音频才显示 */}
+              {ttsPreload.isAvailable(word.word) && (
+                <button
+                  onClick={() => playWord(word.word)}
+                  className={cn(
+                    "p-1.5 border-[2px] border-black dark:border-gray-500 transition-all duration-150",
+                    isPlaying
+                      ? "bg-[#B4F416] text-black"
+                      : "bg-white dark:bg-gray-600 hover:bg-[#B4F416] hover:text-black"
+                  )}
+                  title="播放发音"
+                >
+                  {isPlaying ? (
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                  ) : (
+                    <Volume2 className="w-4 h-4" />
+                  )}
+                </button>
+              )}
             </div>
 
             {/* 内容 */}

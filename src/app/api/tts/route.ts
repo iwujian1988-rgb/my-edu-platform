@@ -99,32 +99,14 @@ export async function GET(request: NextRequest) {
     console.log(`🎯 [TTS API] 请求: text="${text}", type=${type}, language=${language}`)
 
     // 3. 法语特殊处理
-    // 有道 TTS 不支持：1) 单引号前缀 2) 带重音的字符
+    // 有道 TTS 不支持单引号前缀（s', j', l' 等），需要去掉
     let ttsText = text
     if (language === 'fr') {
-      // 3.1 去掉单引号前缀（s', c', d', l', n', qu', j', t', m'）
       const frenchPrefixPattern = /^(s|c|d|l|n|qu|j|t|m|jusqu|puisqu|lorsqu)'(.+)$/i
       const match = text.match(frenchPrefixPattern)
       if (match) {
         ttsText = match[2]
         console.log(`🔧 [TTS API] 法语去前缀: "${text}" → "${ttsText}"`)
-      }
-
-      // 3.2 去掉重音符号（有道 TTS 不支持 é, è, ê 等）
-      const accentMap: Record<string, string> = {
-        'é': 'e', 'è': 'e', 'ê': 'e', 'ë': 'e', 'É': 'E', 'È': 'E', 'Ê': 'E', 'Ë': 'E',
-        'à': 'a', 'â': 'a', 'ä': 'a', 'À': 'A', 'Â': 'A', 'Ä': 'A',
-        'ù': 'u', 'û': 'u', 'ü': 'u', 'Ù': 'U', 'Û': 'U', 'Ü': 'U',
-        'î': 'i', 'ï': 'i', 'Î': 'I', 'Ï': 'I',
-        'ô': 'o', 'ö': 'o', 'Ô': 'O', 'Ö': 'O',
-        'ç': 'c', 'Ç': 'C',
-        'œ': 'oe', 'Œ': 'OE',
-        'æ': 'ae', 'Æ': 'AE',
-      }
-      const originalText = ttsText
-      ttsText = ttsText.replace(/[éèêëÉÈÊËàâäÀÂÄùûüÙÛÜîïÎÏôöÔÖçÇœŒæÆ]/g, char => accentMap[char] || char)
-      if (ttsText !== originalText) {
-        console.log(`🔧 [TTS API] 法语去重音: "${originalText}" → "${ttsText}"`)
       }
     }
 

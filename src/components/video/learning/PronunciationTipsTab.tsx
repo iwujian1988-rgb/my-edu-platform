@@ -6,10 +6,11 @@
  * 设计风格：Neo-brutalism - 与 Speaker 模块保持一致
  */
 
-import { useState, useCallback, useRef } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { cn } from '@/lib/utils'
 import { Volume2, Play, Loader2 } from 'lucide-react'
 import type { VideoPronunciationTip } from '@/types/video'
+import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
 // ============================================
 // 类型定义
@@ -17,93 +18,29 @@ import type { VideoPronunciationTip } from '@/types/video'
 
 export interface PronunciationTipsTabProps {
   tips: VideoPronunciationTip[]
-}
-
-/** IPA 特有字符（正常法语单词中不会出现） */
-const IPA_CHAR_PATTERN = /[ɑɔɛøœəʏʁʃʒɲŋː]/
-
-// ============================================
-// 播放发音 Hook — 缓存 + IPA 快速路径
-// ============================================
-
-function usePlayPronunciation() {
-  const [playingWord, setPlayingWord] = useState<string | null>(null)
-  /** 音频 blob 缓存：word → Object URL */
-  const audioCacheRef = useRef<Map<string, string>>(new Map())
-
-  /** 浏览器 SpeechSynthesis 播放 */
-  const speakWithBrowser = useCallback((text: string) => {
-    if (!('speechSynthesis' in window)) {
-      setPlayingWord(null)
-      return
-    }
-    speechSynthesis.cancel()
-    const utterance = new SpeechSynthesisUtterance(text)
-    utterance.lang = 'fr-FR'
-    utterance.rate = 0.8
-    const voices = speechSynthesis.getVoices()
-    const frVoice = voices.find(v => v.lang.startsWith('fr'))
-    if (frVoice) utterance.voice = frVoice
-    utterance.onend = () => setPlayingWord(null)
-    utterance.onerror = () => setPlayingWord(null)
-    speechSynthesis.speak(utterance)
-    // Chrome bug: onend 可能不触发，加超时保护
-    setTimeout(() => setPlayingWord(prev => prev === text ? null : prev), 5000)
-  }, [])
-
-  const playWord = useCallback(async (word: string) => {
-    speechSynthesis.cancel()
-    setPlayingWord(word)
-
-    try {
-      // 1. 缓存命中 → 瞬间播放
-      const cachedUrl = audioCacheRef.current.get(word)
-      if (cachedUrl) {
-        const audio = new Audio(cachedUrl)
-        audio.onended = () => setPlayingWord(null)
-        audio.onerror = () => setPlayingWord(null)
-        await audio.play()
-        return
-      }
-
-      // 2. IPA 音标 → 跳过 API，直接用 SpeechSynthesis（API 不认识 IPA）
-      if (IPA_CHAR_PATTERN.test(word)) {
-        speakWithBrowser(word)
-        return
-      }
-
-      // 3. 真实法语单词 → 调用后端 TTS API
-      const response = await fetch(`/api/tts?text=${encodeURIComponent(word)}&type=2&language=fr`)
-
-      if (response.ok) {
-        const blob = await response.blob()
-        const blobUrl = URL.createObjectURL(blob)
-        audioCacheRef.current.set(word, blobUrl)
-
-        const audio = new Audio(blobUrl)
-        audio.onended = () => setPlayingWord(null)
-        audio.onerror = () => setPlayingWord(null)
-        await audio.play()
-        return
-      }
-
-      // 4. API 失败 → 回退 SpeechSynthesis
-      speakWithBrowser(word)
-    } catch (error) {
-      console.warn('[PronunciationTips TTS] 播放失败:', error)
-      speakWithBrowser(word)
-    }
-  }, [speakWithBrowser])
-
-  return { playWord, playingWord }
+  ttsPreload: TTSPreloadInstance
 }
 
 // ============================================
 // 组件
 // ============================================
 
-export function PronunciationTipsTab({ tips }: PronunciationTipsTabProps) {
-  const { playWord, playingWord } = usePlayPronunciation()
+export function PronunciationTipsTab({ tips, ttsPreload }: PronunciationTipsTabProps) {
+  const [playingWord, setPlayingWord] = useState<string | null>(null)
+
+  // 组件挂载时预加载所有 example_words
+  useEffect(() => {
+    const allWords = tips.flatMap((tip) => tip.example_words ?? [])
+    if (allWords.length > 0) {
+      ttsPreload.preloadWords(allWords)
+    }
+  }, [tips, ttsPreload])
+
+  const playWord = useCallback(async (word: string) => {
+    setPlayingWord(word)
+    await ttsPreload.play(word)
+    setPlayingWord(null)
+  }, [ttsPreload])
 
   if (!tips || tips.length === 0) {
     return (
@@ -123,6 +60,7 @@ export function PronunciationTipsTab({ tips }: PronunciationTipsTabProps) {
           index={index + 1}
           playWord={playWord}
           playingWord={playingWord}
+          isAvailable={ttsPreload.isAvailable.bind(ttsPreload)}
         />
       ))}
     </div>
@@ -138,9 +76,10 @@ interface PronunciationCardProps {
   index: number
   playWord: (word: string) => void
   playingWord: string | null
+  isAvailable: (word: string) => boolean
 }
 
-function PronunciationCard({ tip, index, playWord, playingWord }: PronunciationCardProps) {
+function PronunciationCard({ tip, index, playWord, playingWord, isAvailable }: PronunciationCardProps) {
 
   return (
     <div className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] transition-all duration-150 hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-0.5">
@@ -167,24 +106,39 @@ function PronunciationCard({ tip, index, playWord, playingWord }: PronunciationC
             <div className="flex flex-wrap gap-1.5">
               {tip.example_words.map((word, i) => {
                 const isPlayingThis = playingWord === word
+                const hasAudio = isAvailable(word)
+
+                // API 有音频 → 显示播放按钮
+                if (hasAudio) {
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => playWord(word)}
+                      className={cn(
+                        "flex items-center gap-1 px-2 py-1 text-xs font-bold border-[2px] border-black dark:border-gray-500 transition-all duration-150",
+                        isPlayingThis
+                          ? "bg-[#B4F416] text-black shadow-[2px_2px_0px_0px_#000]"
+                          : "bg-gray-50 dark:bg-gray-700 hover:bg-[#B4F416] hover:text-black"
+                      )}
+                    >
+                      {isPlayingThis ? (
+                        <Loader2 className="w-3 h-3 animate-spin" />
+                      ) : (
+                        <Play className="w-3 h-3" />
+                      )}
+                      {word}
+                    </button>
+                  )
+                }
+
+                // API 无音频 → 纯文本
                 return (
-                  <button
+                  <span
                     key={i}
-                    onClick={() => playWord(word)}
-                    className={cn(
-                      "flex items-center gap-1 px-2 py-1 text-xs font-bold border-[2px] border-black dark:border-gray-500 transition-all duration-150",
-                      isPlayingThis
-                        ? "bg-[#B4F416] text-black shadow-[2px_2px_0px_0px_#000]"
-                        : "bg-gray-50 dark:bg-gray-700 hover:bg-[#B4F416] hover:text-black"
-                    )}
+                    className="px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-600"
                   >
-                    {isPlayingThis ? (
-                      <Loader2 className="w-3 h-3 animate-spin" />
-                    ) : (
-                      <Play className="w-3 h-3" />
-                    )}
                     {word}
-                  </button>
+                  </span>
                 )
               })}
             </div>
