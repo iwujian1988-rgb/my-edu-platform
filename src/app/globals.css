@@ -900,3 +900,44 @@ h1, h2, h3, h4, h5, h6 {
 .animate-liquidFlow {
   animation: liquidFlow 15s ease infinite;
 }
+
+/*
+ * Neo-brutalism 卡片 hover 阴影优化
+ * 用伪元素 + opacity 过渡替代 box-shadow 动画
+ * box-shadow 动画每帧触发 CPU Paint，opacity 走 GPU Composite
+ */
+.neo-card {
+  position: relative;
+}
+
+.neo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: inherit;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 150ms ease;
+  z-index: -1;
+}
+
+.neo-card:hover::after {
+  opacity: 1;
+}
+
+/* 视频列表卡片 - PC端 hover shadow */
+.neo-card-video::after {
+  box-shadow: 6px 6px 0px 0px #000;
+}
+html.dark .neo-card-video::after {
+  box-shadow: 6px 6px 0px 0px #666;
+}
+
+/* 继续学习卡片 - hover shadow */
+.neo-card-continue::after {
+  box-shadow: 6px 6px 0px 0px #000;
+}
+html.dark .neo-card-continue::after {
+  box-shadow: 6px 6px 0px 0px #666;
+}

@@ -80,7 +80,7 @@ function VideoCard({ video }: { video: VideoListItem }) {
   return (
     <Link
       href={`/videos/${video.id}`}
-      className="group relative bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] md:shadow-[4px_4px_0px_0px_#000] dark:md:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[3px_3px_0px_0px_#666] md:hover:shadow-[6px_6px_0px_0px_#000] dark:md:hover:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-0.5 transition-[shadow,transform] duration-150 cursor-pointer overflow-hidden block flex flex-col will-change-transform"
+      className="neo-card neo-card-video group relative bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] md:shadow-[4px_4px_0px_0px_#000] dark:md:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-0.5 transition-transform duration-150 cursor-pointer overflow-hidden block flex flex-col"
     >
       {/* 缩略图 - 移动端更大，PC端正常 */}
       <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[2px] md:border-b-[3px] border-black dark:border-gray-600 flex-shrink-0 transition-colors duration-300">
@@ -238,7 +238,7 @@ function ContinueLearningCard({ video }: { video: VideoListItem }) {
   return (
     <Link
       href={`/videos/${video.id}`}
-      className="group flex items-center gap-4 p-4 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[6px_6px_0px_0px_#000] dark:hover:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-0.5 transition-[shadow,transform] duration-150 rounded-sm will-change-transform"
+      className="neo-card neo-card-continue group flex items-center gap-4 p-4 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-0.5 transition-transform duration-150 rounded-sm"
     >
       {/* 缩略图 */}
       <div className="relative w-32 aspect-video rounded-sm overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
