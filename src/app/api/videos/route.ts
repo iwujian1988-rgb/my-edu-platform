@@ -32,6 +32,8 @@ interface RpcVideoRow {
   duration: number | null
   language: string | null
   difficulty: string | null
+  content_type: string | null
+  cover_url: string | null
   status: string
   display_order: number | null
   creator_name: string | null
@@ -65,6 +67,7 @@ export async function GET(request: NextRequest) {
     const tag = searchParams.get('tag')
     const learnStatus = (searchParams.get('learnStatus') || 'all') as LearnStatus
     const onlyAccessible = searchParams.get('only_accessible') !== 'false'
+    const contentTypeParam = searchParams.get('content_type') as ContentType | null
 
     // 1. 并行获取：用户信息 + 标签ID + 学习状态 + 可用语言
     const [userResult, tagResult, progressResult, languagesResult] = await Promise.all([
@@ -167,6 +170,7 @@ export async function GET(request: NextRequest) {
       p_package_ids: userPackageIds.length > 0 ? userPackageIds : null,
       p_has_permission: !onlyAccessible || hasVideoPermission,
       p_today: today,
+      p_content_type: contentTypeParam || null,
     })
 
     if (error) {
@@ -203,6 +207,8 @@ export async function GET(request: NextRequest) {
       duration: row.duration,
       language: row.language,
       difficulty: row.difficulty,
+      content_type: row.content_type || 'video',
+      cover_url: row.cover_url || null,
       status: row.status,
       display_order: row.display_order,
       creator_name: row.creator_name,

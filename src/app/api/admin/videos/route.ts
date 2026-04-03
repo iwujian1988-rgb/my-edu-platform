@@ -35,6 +35,7 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search')
     const page = parseInt(searchParams.get('page') || '1')
     const pageSize = parseInt(searchParams.get('page_size') || '20')
+    const contentType = searchParams.get('content_type')
 
     // 3. 构建查询
     // 🔧 临时直接创建客户端来排查问题
@@ -70,6 +71,10 @@ export async function GET(request: NextRequest) {
 
     if (difficulty) {
       query = query.eq('difficulty', difficulty)
+    }
+
+    if (contentType && contentType !== 'all') {
+      query = query.eq('content_type', contentType)
     }
 
     if (search) {
@@ -187,6 +192,8 @@ export async function POST(request: NextRequest) {
       duration,
       language,
       difficulty = 'beginner',
+      content_type = 'video',
+      cover_url,
       creator_name,
       source_url,
       tags = [],
@@ -213,6 +220,8 @@ export async function POST(request: NextRequest) {
         duration: duration || 0,
         language,
         difficulty,
+        content_type,
+        cover_url: cover_url || null,
         creator_name,
         source_url,
         status: 'draft',

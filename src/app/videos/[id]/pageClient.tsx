@@ -36,6 +36,7 @@ import {
 } from 'lucide-react'
 
 import { VideoPlayer } from '@/components/video/VideoPlayer'
+import { AudioPlayer } from '@/components/video/AudioPlayer'
 import { SubtitleList } from '@/components/video/SubtitleList'
 import { CardPopover } from '@/components/video/CardPopover'
 import { RecordingPanel } from '@/components/video/RecordingPanel'
@@ -45,6 +46,7 @@ import { LearningTabs } from '@/components/video/learning/LearningTabs'
 import { LearningModal } from '@/components/video/learning/LearningModal'
 import { AccessDenied } from '@/components/video/AccessDenied'
 import { DraggablePIP } from '@/components/video/DraggablePIP'
+import { DraggableAudioPIP } from '@/components/video/DraggableAudioPIP'
 
 import { useVideoProgress } from '@/hooks/useVideoProgress'
 import { useCardProgress } from '@/hooks/useCardProgress'
@@ -101,6 +103,9 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [isPipPlaying, setIsPipPlaying] = useState(false)
   const [isPipMuted, setIsPipMuted] = useState(false)
   const mainVideoRef = useRef<HTMLVideoElement>(null)
+  const mainAudioRef = useRef<HTMLAudioElement>(null)
+
+  const isAudioContent = data.video.content_type === 'audio'
 
   // PC端左侧高度 ref（用于右侧对齐）
   const leftColumnRef = useRef<HTMLDivElement>(null)
@@ -173,9 +178,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     console.log('[handlePlaySegment] startTime:', startTime, 'endTime:', endTime)
     console.log('[handlePlaySegment] pipMode:', pipMode, 'mainVideoRef.current:', !!mainVideoRef.current)
 
-    if (pipMode && mainVideoRef.current) {
-      // PIP 模式：直接操作 PIP video 元素
-      const videoEl = mainVideoRef.current
+    // 音频内容使用 audio 元素，视频内容使用 video 元素
+    const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+
+    if (pipMode && mediaEl) {
+      // PIP 模式：直接操作 PIP media 元素
+      const videoEl = mediaEl
       console.log('[handlePlaySegment] video element readyState:', videoEl.readyState)
       console.log('[handlePlaySegment] video current src:', videoEl.src?.substring(0, 50))
 
@@ -262,7 +270,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
       setSeekTrigger(prev => prev + 1)
     }
     console.log('[handlePlaySegment] === END ===')
-  }, [pipMode])
+  }, [pipMode, isAudioContent])
 
   // ============================================
   // PIP 模式控制（移动端学习模块）
@@ -294,26 +302,26 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     }
   }, [pipMode, enterPipMode, exitPipMode])
 
-  // PIP 视频控制（直接操作主视频元素）
+  // PIP 控制（直接操作主视频/音频元素）
   const togglePipPlay = useCallback(() => {
-    const videoEl = mainVideoRef.current
-    if (!videoEl) return
+    const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+    if (!mediaEl) return
 
     if (isPipPlaying) {
-      videoEl.pause()
+      mediaEl.pause()
     } else {
-      videoEl.play()
+      mediaEl.play()
     }
     setIsPipPlaying(!isPipPlaying)
-  }, [isPipPlaying])
+  }, [isPipPlaying, isAudioContent])
 
   const togglePipMute = useCallback(() => {
-    const videoEl = mainVideoRef.current
-    if (!videoEl) return
+    const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+    if (!mediaEl) return
 
-    videoEl.muted = !isPipMuted
+    mediaEl.muted = !isPipMuted
     setIsPipMuted(!isPipMuted)
-  }, [isPipMuted])
+  }, [isPipMuted, isAudioContent])
 
   // 卡片跳转字幕映射
   const cardToSubtitleMap = useCallback(() => {
@@ -433,16 +441,29 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
             {/* 视频播放器 + 半透明返回按钮 */}
             <div className="relative">
               {!isLargeScreen && (
-                <VideoPlayer
-                  video={video}
-                  onTimeUpdate={handleTimeUpdate}
-                  initialPosition={data.user_progress?.last_position || 0}
-                  seekTo={seekToTime}
-                  seekTrigger={seekTrigger}
-                  segmentEndTime={segmentEndTime}
-                  pause={pauseMainVideo}
-                  videoRefOut={mainVideoRef}
-                />
+                isAudioContent ? (
+                  <AudioPlayer
+                    video={video}
+                    onTimeUpdate={handleTimeUpdate}
+                    initialPosition={data.user_progress?.last_position || 0}
+                    seekTo={seekToTime}
+                    seekTrigger={seekTrigger}
+                    segmentEndTime={segmentEndTime}
+                    pause={pauseMainVideo}
+                    audioRefOut={mainAudioRef}
+                  />
+                ) : (
+                  <VideoPlayer
+                    video={video}
+                    onTimeUpdate={handleTimeUpdate}
+                    initialPosition={data.user_progress?.last_position || 0}
+                    seekTo={seekToTime}
+                    seekTrigger={seekTrigger}
+                    segmentEndTime={segmentEndTime}
+                    pause={pauseMainVideo}
+                    videoRefOut={mainVideoRef}
+                  />
+                )
               )}
               <button
                 onClick={() => router.back()}
@@ -630,10 +651,11 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               vocabularyNetwork={data.vocabulary_network}
               videoLanguage={data.video.language}
               onJumpToSubtitle={(time) => {
-                // PIP 模式下直接操作 PIP 视频，不切换 tab
-                if (pipMode && mainVideoRef.current) {
-                  mainVideoRef.current.currentTime = time
-                  mainVideoRef.current.play()
+                // PIP 模式下直接操作 PIP media，不切换 tab
+                const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+                if (pipMode && mediaEl) {
+                  mediaEl.currentTime = time
+                  mediaEl.play()
                   setIsPipPlaying(true)
                 } else {
                   handleTabChange('listen')
@@ -641,7 +663,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 }
               }}
               onPlaySegment={(startTime, endTime) => {
-                // PIP 模式下直接操作 PIP 视频，不切换 tab
+                // PIP 模式下直接操作 PIP media，不切换 tab
                 if (pipMode) {
                   handlePlaySegment(startTime, endTime)
                 } else {
@@ -655,29 +677,45 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           )}
         </div>
 
-        {/* PIP 小窗 - 移动端学习模块（复用主视频元素，零缓冲延迟） */}
+        {/* PIP 小窗 - 移动端学习模块（复用主视频/音频元素，零缓冲延迟） */}
         {pipMode && (
-          <DraggablePIP
-            video={video}
-            videoElement={mainVideoRef.current}
-            isPlaying={isPipPlaying}
-            currentTime={currentVideoTime}
-            duration={video.duration || 0}
-            isMuted={isPipMuted}
-            onTogglePlay={togglePipPlay}
-            onToggleMute={togglePipMute}
-            onSeek={(time) => {
-              const videoEl = mainVideoRef.current
-              if (videoEl) videoEl.currentTime = time
-            }}
-            onExpand={exitPipMode}
-            onTimeUpdate={(time) => {
-              setCurrentVideoTime(time)
-              if (video.duration) {
-                updateProgress(time, video.duration)
-              }
-            }}
-          />
+          isAudioContent ? (
+            <DraggableAudioPIP
+              video={video}
+              audioElement={mainAudioRef.current}
+              isPlaying={isPipPlaying}
+              currentTime={currentVideoTime}
+              duration={video.duration || 0}
+              onTogglePlay={togglePipPlay}
+              onSeek={(time) => {
+                const audioEl = mainAudioRef.current
+                if (audioEl) audioEl.currentTime = time
+              }}
+              onExpand={exitPipMode}
+            />
+          ) : (
+            <DraggablePIP
+              video={video}
+              videoElement={mainVideoRef.current}
+              isPlaying={isPipPlaying}
+              currentTime={currentVideoTime}
+              duration={video.duration || 0}
+              isMuted={isPipMuted}
+              onTogglePlay={togglePipPlay}
+              onToggleMute={togglePipMute}
+              onSeek={(time) => {
+                const videoEl = mainVideoRef.current
+                if (videoEl) videoEl.currentTime = time
+              }}
+              onExpand={exitPipMode}
+              onTimeUpdate={(time) => {
+                setCurrentVideoTime(time)
+                if (video.duration) {
+                  updateProgress(time, video.duration)
+                }
+              }}
+            />
+          )
         )}
       </div>
 
@@ -699,15 +737,27 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
               {/* 视频播放器 - 只在PC端渲染 */}
               {isLargeScreen && (
-                <VideoPlayer
-                  video={video}
-                  onTimeUpdate={handleTimeUpdate}
-                  initialPosition={data.user_progress?.last_position || 0}
-                  seekTo={seekToTime}
-                  seekTrigger={seekTrigger}
-                  segmentEndTime={segmentEndTime}
-                  pause={pauseMainVideo}
-                />
+                isAudioContent ? (
+                  <AudioPlayer
+                    video={video}
+                    onTimeUpdate={handleTimeUpdate}
+                    initialPosition={data.user_progress?.last_position || 0}
+                    seekTo={seekToTime}
+                    seekTrigger={seekTrigger}
+                    segmentEndTime={segmentEndTime}
+                    pause={pauseMainVideo}
+                  />
+                ) : (
+                  <VideoPlayer
+                    video={video}
+                    onTimeUpdate={handleTimeUpdate}
+                    initialPosition={data.user_progress?.last_position || 0}
+                    seekTo={seekToTime}
+                    seekTrigger={seekTrigger}
+                    segmentEndTime={segmentEndTime}
+                    pause={pauseMainVideo}
+                  />
+                )
               )}
 
               {/* 视频信息 */}

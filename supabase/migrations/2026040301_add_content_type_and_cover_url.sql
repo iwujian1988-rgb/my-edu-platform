@@ -1,7 +1,14 @@
--- 视频列表 DB 层排序+分页函数
--- 解决 Supabase JS 客户端不支持 COALESCE 排序的问题
--- 将排序和分页下推到 PostgreSQL，每页只返回请求的行数
+-- 音频博客扩展：videos 表加 content_type 和 cover_url 字段
+-- content_type: 区分 'video'（视频）和 'audio'（音频博客）
+-- cover_url: 音频博客的封面图 URL（视频类型仍使用 thumbnail_url）
 
+-- 1. 添加 content_type 字段，默认 'video'（已有数据兼容）
+ALTER TABLE videos ADD COLUMN IF NOT EXISTS content_type VARCHAR(20) DEFAULT 'video';
+
+-- 2. 添加 cover_url 字段（音频博客封面图）
+ALTER TABLE videos ADD COLUMN IF NOT EXISTS cover_url TEXT;
+
+-- 3. 更新分页函数，增加 p_content_type 筛选参数，返回 content_type 和 cover_url
 CREATE OR REPLACE FUNCTION get_published_videos_paginated(
   p_limit INT DEFAULT 12,
   p_offset INT DEFAULT 0,
@@ -12,7 +19,8 @@ CREATE OR REPLACE FUNCTION get_published_videos_paginated(
   p_learn_status VARCHAR DEFAULT 'all',
   p_package_ids UUID[] DEFAULT NULL,
   p_has_permission BOOLEAN DEFAULT FALSE,
-  p_today DATE DEFAULT CURRENT_DATE
+  p_today DATE DEFAULT CURRENT_DATE,
+  p_content_type VARCHAR DEFAULT NULL
 )
 RETURNS TABLE (
   id UUID,
@@ -23,6 +31,8 @@ RETURNS TABLE (
   duration INT,
   language VARCHAR,
   difficulty VARCHAR,
+  content_type VARCHAR,
+  cover_url TEXT,
   status VARCHAR,
   display_order INT,
   creator_name VARCHAR,
@@ -58,7 +68,8 @@ BEGIN
          OR p_package_ids IS NULL
          OR v.package_ids = '{}'
          OR v.package_ids && p_package_ids
-    );
+    )
+    AND (p_content_type IS NULL OR v.content_type = p_content_type);
 
   -- 返回分页数据，按 COALESCE 排序
   RETURN QUERY
@@ -66,6 +77,7 @@ BEGIN
     v.id, v.title, v.description,
     v.thumbnail_url, v.video_url,
     v.duration, v.language, v.difficulty,
+    v.content_type, v.cover_url,
     v.status, v.display_order,
     v.creator_name, v.source_url,
     v.view_count, v.learning_date,
@@ -94,6 +106,7 @@ BEGIN
          OR v.package_ids = '{}'
          OR v.package_ids && p_package_ids
     )
+    AND (p_content_type IS NULL OR v.content_type = p_content_type)
   ORDER BY COALESCE(v.learning_date, v.published_at, v.created_at) DESC,
            v.published_at DESC,
            v.created_at DESC,

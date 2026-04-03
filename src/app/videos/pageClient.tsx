@@ -23,7 +23,7 @@ import {
   Star,
 } from 'lucide-react'
 import type { VideoListItem, VideoListResponse } from '@/types/video'
-import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, formatDuration } from '@/types/video'
+import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, CONTENT_TYPE_LABELS, formatDuration } from '@/types/video'
 import LearningCalendar from '@/components/video/LearningCalendar'
 import { VideoPromoPopup } from '@/components/video/VideoPromoPopup'
 
@@ -54,6 +54,13 @@ const LEARN_STATUS_OPTIONS = [
   { value: 'all', label: '全部' },
   { value: 'learned', label: '已学习' },
   { value: 'unlearned', label: '未学习' },
+]
+
+// 内容类型选项
+const CONTENT_TYPE_OPTIONS = [
+  { value: 'all', label: '全部' },
+  { value: 'video', label: '视频' },
+  { value: 'audio', label: '音频' },
 ]
 
 // 分页常量
@@ -327,6 +334,9 @@ function VideoListContent() {
   const [learnStatus, setLearnStatus] = useState<string>(
     searchParams.get('learnStatus') || 'all'
   )
+  const [contentType, setContentType] = useState<string>(
+    searchParams.get('contentType') || 'all'
+  )
   const [page, setPage] = useState<number>(
     parseInt(searchParams.get('page') || '1')
   )
@@ -347,6 +357,9 @@ function VideoListContent() {
     if (learnStatus && learnStatus !== 'all') {
       params.set('learnStatus', learnStatus)
     }
+    if (contentType && contentType !== 'all') {
+      params.set('content_type', contentType)
+    }
     // 分页参数
     const offset = (page - 1) * PAGE_SIZE
     params.set('limit', String(PAGE_SIZE))
@@ -354,7 +367,7 @@ function VideoListContent() {
 
     const queryString = params.toString()
     return `/api/videos${queryString ? `?${queryString}` : ''}`
-  }, [language, difficulty, tag, learnStatus, page])
+  }, [language, difficulty, tag, learnStatus, contentType, page])
 
   // 获取视频列表
   const { data, error, isLoading, mutate } = useSWR<VideoListResponse>(
@@ -388,7 +401,7 @@ function VideoListContent() {
   // 筛选条件变化时重置页码
   useEffect(() => {
     setPage(1)
-  }, [language, difficulty, tag, learnStatus])
+  }, [language, difficulty, tag, learnStatus, contentType])
 
   // 更新 URL（统一处理筛选和分页）
   useEffect(() => {
@@ -405,6 +418,9 @@ function VideoListContent() {
     if (learnStatus && learnStatus !== 'all') {
       params.set('learnStatus', learnStatus)
     }
+    if (contentType && contentType !== 'all') {
+      params.set('contentType', contentType)
+    }
     if (page > 1) {
       params.set('page', String(page))
     }
@@ -416,7 +432,7 @@ function VideoListContent() {
       router.replace(newUrl, { scroll: false })
     }, 0)
     return () => clearTimeout(timer)
-  }, [language, difficulty, tag, learnStatus, page, router])
+  }, [language, difficulty, tag, learnStatus, contentType, page, router])
 
   // 提取继续学习的视频
   const continueLearningVideos = (data?.items || [])
@@ -574,6 +590,28 @@ function VideoListContent() {
                     </div>
                   )}
 
+                  {/* 内容类型筛选 */}
+                  <div>
+                    <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">类型</div>
+                    <div className="flex gap-2 flex-wrap">
+                      {CONTENT_TYPE_OPTIONS.map((opt) => (
+                        <button
+                          key={opt.value}
+                          onClick={() => { setContentType(opt.value); setFilterDrawerOpen(false) }}
+                          className={`
+                            px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
+                            ${contentType === opt.value
+                              ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000]'
+                              : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                            }
+                          `}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+
                   {/* 学习状态筛选 */}
                   <div>
                     <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">状态</div>
@@ -721,6 +759,28 @@ function VideoListContent() {
 
             {/* PC端筛选工具栏 - 轻量样式 */}
             <div className="hidden md:flex flex-wrap items-center gap-6 mb-6 py-3 border-b border-gray-200 dark:border-gray-700">
+              {/* 内容类型筛选 */}
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-medium text-gray-500">类型</span>
+                <div className="flex gap-1">
+                  {CONTENT_TYPE_OPTIONS.map((opt) => (
+                    <button
+                      key={opt.value}
+                      onClick={() => setContentType(opt.value)}
+                      className={`
+                        px-2.5 py-1 text-xs font-bold transition-all
+                        ${contentType === opt.value
+                          ? 'bg-[#B4F416] text-black'
+                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                        }
+                      `}
+                    >
+                      {opt.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
               {/* 套餐标签 */}
               {data?.user_packages && data.user_packages.length > 0 && (
                 <div className="flex items-center gap-2">

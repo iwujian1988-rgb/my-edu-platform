@@ -31,8 +31,8 @@ import {
   SkipForward,
 } from 'lucide-react'
 import { VideoUploadField } from '@/components/admin/VideoUploadField'
-import type { VideoLanguage, VideoDifficulty, WorkflowProgress } from '@/types/video'
-import { VIDEO_LANGUAGE_LABELS, VIDEO_DIFFICULTY_LABELS, WORKFLOW_STEPS, DEFAULT_WORKFLOW_PROGRESS } from '@/types/video'
+import type { VideoLanguage, VideoDifficulty, ContentType, WorkflowProgress } from '@/types/video'
+import { VIDEO_LANGUAGE_LABELS, VIDEO_DIFFICULTY_LABELS, CONTENT_TYPE_LABELS, WORKFLOW_STEPS, DEFAULT_WORKFLOW_PROGRESS } from '@/types/video'
 import Link from 'next/link'
 
 // ============================================
@@ -64,6 +64,8 @@ interface VideoData {
   description: string
   language: VideoLanguage
   difficulty: VideoDifficulty
+  content_type: ContentType
+  cover_url: string
   duration: number
   video_url: string
   thumbnail_url: string
@@ -80,6 +82,8 @@ const initialVideoData: VideoData = {
   description: '',
   language: 'en',
   difficulty: 'beginner',
+  content_type: 'video',
+  cover_url: '',
   duration: 0,
   video_url: '',
   thumbnail_url: '',
@@ -118,6 +122,8 @@ export function VideoWorkflowClient() {
                 description: data.data.description || '',
                 language: data.data.language || 'en',
                 difficulty: data.data.difficulty || 'beginner',
+                content_type: data.data.content_type || 'video',
+                cover_url: data.data.cover_url || '',
                 duration: data.data.duration || 0,
                 video_url: data.data.video_url || '',
                 thumbnail_url: data.data.thumbnail_url || '',
@@ -276,6 +282,8 @@ export function VideoWorkflowClient() {
           description: videoData.description,
           language: videoData.language,
           difficulty: videoData.difficulty,
+          content_type: videoData.content_type,
+          cover_url: videoData.cover_url || undefined,
           creator_name: videoData.creator_name,
           source_url: videoData.source_url,
           tags: videoData.tags,
@@ -581,6 +589,38 @@ export function VideoWorkflowClient() {
               </div>
 
               <div>
+                <label className="block text-sm font-bold mb-2">内容类型 *</label>
+                <select
+                  value={videoData.content_type}
+                  onChange={(e) => setVideoData(prev => ({ ...prev, content_type: e.target.value as ContentType }))}
+                  className="w-full px-4 py-3 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 font-semibold"
+                >
+                  {Object.entries(CONTENT_TYPE_LABELS).map(([code, label]) => (
+                    <option key={code} value={code}>{label}</option>
+                  ))}
+                </select>
+              </div>
+
+              {/* 音频博客封面图上传 */}
+              {videoData.content_type === 'audio' && (
+                <div>
+                  <label className="block text-sm font-bold mb-2">封面图</label>
+                  <input
+                    type="text"
+                    value={videoData.cover_url}
+                    onChange={(e) => setVideoData(prev => ({ ...prev, cover_url: e.target.value }))}
+                    placeholder="输入封面图 URL 或上传图片"
+                    className="w-full px-4 py-3 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 font-semibold"
+                  />
+                  {videoData.cover_url && (
+                    <div className="mt-2 w-24 h-24 border-2 border-black">
+                      <img src={videoData.cover_url} alt="封面预览" className="w-full h-full object-cover" />
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <div>
                 <label className="block text-sm font-bold mb-2">语言 *</label>
                 <select
                   value={videoData.language}
@@ -853,21 +893,24 @@ export function VideoWorkflowClient() {
           <div className="space-y-6">
             <div className="text-center">
               <h2 className="text-2xl font-black text-black dark:text-white mb-2">
-                上传视频
+                {videoData.content_type === 'audio' ? '上传音频' : '上传视频'}
               </h2>
               <p className="text-gray-500 dark:text-gray-400">
-                上传视频文件或填写视频 URL（可选）
+                {videoData.content_type === 'audio' ? '上传音频文件或填写音频 URL（可选）' : '上传视频文件或填写视频 URL（可选）'}
               </p>
             </div>
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-bold mb-2">上传视频文件</label>
+                <label className="block text-sm font-bold mb-2">
+                  {videoData.content_type === 'audio' ? '上传音频文件' : '上传视频文件'}
+                </label>
                 <VideoUploadField
                   value={videoData.video_url}
                   onChange={(url, duration) => {
                     setVideoData(prev => ({ ...prev, video_url: url, duration: duration || prev.duration }))
                   }}
+                  accept={videoData.content_type === 'audio' ? 'audio/*' : 'video/*'}
                 />
               </div>
             </div>

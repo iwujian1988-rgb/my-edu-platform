@@ -19,19 +19,27 @@ interface VideoUploadFieldProps {
   onChange: (url: string, duration?: number) => void
   error?: string
   disabled?: boolean
+  /** 文件类型限制，默认 'video/*'，音频场景传 'audio/*' */
+  accept?: string
 }
+
+const DEFAULT_ACCEPT = 'video/mp4,video/webm,video/quicktime'
 
 export function VideoUploadField({
   value,
   onChange,
   error,
-  disabled = false
+  disabled = false,
+  accept = DEFAULT_ACCEPT,
 }: VideoUploadFieldProps) {
   const { uploadState, uploadVideo, resetState } = useVideoUpload()
   const [isDragging, setIsDragging] = useState(false)
   const [showManualInput, setShowManualInput] = useState(false)
   const [manualUrl, setManualUrl] = useState('')
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  // 根据文件类型限制判断是音频还是视频
+  const isAudioAccept = accept.includes('audio')
 
   // 处理文件选择
   const handleFileSelect = useCallback(async (file: File) => {
@@ -61,7 +69,8 @@ export function VideoUploadField({
     if (disabled || uploadState.isUploading) return
 
     const file = e.dataTransfer.files[0]
-    if (file && file.type.startsWith('video/')) {
+    const allowedPrefix = accept.includes('audio') ? 'audio/' : 'video/'
+    if (file && file.type.startsWith(allowedPrefix)) {
       handleFileSelect(file)
     }
   }
@@ -109,7 +118,7 @@ export function VideoUploadField({
         <input
           ref={fileInputRef}
           type="file"
-          accept="video/mp4,video/webm,video/quicktime"
+          accept={accept}
           onChange={handleInputChange}
           disabled={disabled || uploadState.isUploading}
           className="hidden"
@@ -120,7 +129,7 @@ export function VideoUploadField({
           <div className="p-6 text-center">
             <Loader2 className="w-10 h-10 text-green-500 mx-auto mb-3 animate-spin" />
             <p className="text-sm font-bold text-black dark:text-white mb-3">
-              正在上传视频...
+              {isAudioAccept ? '正在上传音频...' : '正在上传视频...'}
             </p>
             {/* 进度条 */}
             <div className="w-full bg-gray-200 dark:bg-gray-700 h-3 border-2 border-black dark:border-gray-500">
@@ -143,7 +152,7 @@ export function VideoUploadField({
               <div className="flex items-center gap-2 mb-1">
                 <CheckCircle className="w-4 h-4 text-green-500" />
                 <span className="text-sm font-bold text-green-600 dark:text-green-400">
-                  视频已上传
+                  {isAudioAccept ? '音频已上传' : '视频已上传'}
                 </span>
               </div>
               <p className="text-xs text-gray-500 dark:text-gray-400 truncate font-mono">

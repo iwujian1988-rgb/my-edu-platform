@@ -114,6 +114,8 @@ export async function PUT(
       duration,
       language,
       difficulty,
+      content_type,
+      cover_url,
       creator_name,
       source_url,
       status,
@@ -159,6 +161,8 @@ export async function PUT(
     if (duration !== undefined) updateData.duration = duration
     if (language !== undefined) updateData.language = language
     if (difficulty !== undefined) updateData.difficulty = difficulty
+    if (content_type !== undefined) updateData.content_type = content_type
+    if (cover_url !== undefined) updateData.cover_url = cover_url
     if (creator_name !== undefined) updateData.creator_name = creator_name
     if (source_url !== undefined) updateData.source_url = source_url
     if (package_ids !== undefined) updateData.package_ids = package_ids.length > 0 ? package_ids : null

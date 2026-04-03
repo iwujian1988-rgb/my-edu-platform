@@ -578,7 +578,12 @@ async function processSingleVideo(
     const exerciseCards = vocabularyExercises.map((ex: VocabularyExerciseInput, idx: number) => {
       // 保留原始句子中的 _____ 作为 original_text
       // 这样 blank_positions 的位置计算才能与 original_text 对应
-      const originalText = ex.sentence
+      const originalText = ex.sentence || ''
+
+      if (!originalText) {
+        console.warn(`[batch-upload] vocabulary_exercise[${idx}] 缺少 sentence 字段，跳过:`, ex)
+        return null
+      }
 
       // 计算 blank_positions：找到连续下划线的位置
       const blankPattern = /_+/g
@@ -914,7 +919,12 @@ export async function PATCH(request: NextRequest) {
       const vocabularyExercises = learning_material_json.practice?.vocabulary_exercises || []
       if (vocabularyExercises.length > 0) {
         const exerciseCards = vocabularyExercises.map((ex: VocabularyExerciseInput, idx: number) => {
-          const originalText = ex.sentence
+          const originalText = ex.sentence || ''
+
+          if (!originalText) {
+            console.warn(`[batch-upload] vocabulary_exercise[${idx}] 缺少 sentence 字段，跳过:`, ex)
+            return null
+          }
           const blankPattern = /_+/g
           const blankPositions: Array<{ start: number; end: number; word: string; hint?: string }> = []
           let match

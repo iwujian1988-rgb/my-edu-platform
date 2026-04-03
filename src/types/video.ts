@@ -19,6 +19,7 @@ export type ExerciseType = 'fill_blank' | 'dictation'
 export type ExerciseDifficulty = 'beginner' | 'intermediate' | 'advanced'
 export type HintType = 'first_letter' | 'first_last_letter' | 'none'
 export type FormalityLevel = 'neutral' | 'formal' | 'informal'
+export type ContentType = 'video' | 'audio'
 export type CreatorPlatform = 'youtube' | 'bilibili' | 'tiktok' | 'instagram' | 'twitter' | 'other'
 
 export const VIDEO_LANGUAGE_LABELS: Record<VideoLanguage, string> = {
@@ -35,6 +36,11 @@ export const VIDEO_DIFFICULTY_LABELS: Record<VideoDifficulty, string> = {
   beginner: '入门',
   intermediate: '进阶',
   advanced: '难',
+}
+
+export const CONTENT_TYPE_LABELS: Record<ContentType, string> = {
+  video: '视频',
+  audio: '音频',
 }
 
 export const CREATOR_PLATFORM_LABELS: Record<CreatorPlatform, string> = {
@@ -138,6 +144,8 @@ export interface Video {
   duration: number
   language: VideoLanguage
   difficulty: VideoDifficulty
+  content_type: ContentType  // 'video' 或 'audio'（音频博客）
+  cover_url: string | null  // 音频博客封面图 URL
   status: VideoStatus
   display_order: number
   creator_name: string | null
@@ -580,6 +588,7 @@ export interface VideoListQuery {
   tag?: string
   search?: string
   only_accessible?: boolean
+  content_type?: ContentType
 }
 
 export interface CreateVideoBody {
@@ -590,6 +599,8 @@ export interface CreateVideoBody {
   duration: number
   language: VideoLanguage
   difficulty?: VideoDifficulty
+  content_type?: ContentType
+  cover_url?: string
   creator_name?: string
   source_url?: string
   tags?: string[]
