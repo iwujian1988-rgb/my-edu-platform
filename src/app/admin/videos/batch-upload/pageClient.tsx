@@ -31,6 +31,7 @@ import {
   XCircle,
   AlertCircle,
   RotateCw,
+  Zap,
 } from 'lucide-react'
 import Link from 'next/link'
 import type { SubtitleJsonInput, LearningMaterialJsonInput, BatchUploadResponse } from '@/types/video'
@@ -65,6 +66,35 @@ interface VideoInputRow {
 
 const INITIAL_ROW_COUNT = 3
 
+/** 字幕文件后缀 */
+const SUBTITLE_SUFFIX = '_sub.json'
+/** 学习材料文件后缀 */
+const LEARNING_SUFFIX = '_data.json'
+
+/** 解析字幕 JSON 文件 */
+async function parseSubtitleFile(file: File): Promise<{ fileName: string; data: SubtitleJsonInput }> {
+  const text = await file.text()
+  const json = JSON.parse(text) as SubtitleJsonInput
+
+  if (!json.unit_info?.theme || !json.subtitles) {
+    throw new Error(`字幕 JSON "${file.name}" 格式无效：缺少 unit_info.theme 或 subtitles`)
+  }
+
+  return { fileName: file.name, data: json }
+}
+
+/** 解析学习材料 JSON 文件 */
+async function parseLearningFile(file: File): Promise<{ fileName: string; data: LearningMaterialJsonInput }> {
+  const text = await file.text()
+  const json = JSON.parse(text) as LearningMaterialJsonInput
+
+  if (!json.unit_info || !json.language_analysis) {
+    throw new Error(`学习材料 JSON "${file.name}" 格式无效：缺少 unit_info 或 language_analysis`)
+  }
+
+  return { fileName: file.name, data: json }
+}
+
 // ============================================
 // 组件
 // ============================================
@@ -95,6 +125,7 @@ export default function BatchUploadClient() {
   )
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitProgress, setSubmitProgress] = useState(0)
+  const batchInputRef = useRef<HTMLInputElement>(null)
 
   // 添加一行
   const addRow = useCallback(() => {
@@ -110,21 +141,15 @@ export default function BatchUploadClient() {
   // 处理字幕文件上传
   const handleSubtitleUpload = useCallback(async (rowId: string, file: File) => {
     try {
-      const text = await file.text()
-      const json = JSON.parse(text) as SubtitleJsonInput
-
-      // 验证结构
-      if (!json.unit_info?.theme || !json.subtitles) {
-        throw new Error('字幕 JSON 格式无效：缺少 unit_info.theme 或 subtitles')
-      }
+      const { fileName, data } = await parseSubtitleFile(file)
 
       setRows(prev => prev.map(row =>
         row.id === rowId
           ? {
               ...row,
               subtitleFile: file,
-              subtitleFileName: file.name,
-              subtitleData: json,
+              subtitleFileName: fileName,
+              subtitleData: data,
               status: 'idle',
               error: undefined,
             }
@@ -143,21 +168,15 @@ export default function BatchUploadClient() {
   // 处理学习材料文件上传
   const handleLearningUpload = useCallback(async (rowId: string, file: File) => {
     try {
-      const text = await file.text()
-      const json = JSON.parse(text) as LearningMaterialJsonInput
-
-      // 验证结构
-      if (!json.unit_info || !json.language_analysis) {
-        throw new Error('学习材料 JSON 格式无效：缺少 unit_info 或 language_analysis')
-      }
+      const { fileName, data } = await parseLearningFile(file)
 
       setRows(prev => prev.map(row =>
         row.id === rowId
           ? {
               ...row,
               learningFile: file,
-              learningFileName: file.name,
-              learningData: json,
+              learningFileName: fileName,
+              learningData: data,
               status: 'idle',
               error: undefined,
             }
@@ -201,6 +220,100 @@ export default function BatchUploadClient() {
 
     input.click()
   }, [handleSubtitleUpload, handleLearningUpload])
+
+  // 一键批量上传：按文件名前缀自动配对字幕和学习材料
+  const handleBatchFileSelect = useCallback(async (fileList: FileList) => {
+    const files = Array.from(fileList)
+    const subtitleFiles = new Map<string, File>()
+    const learningFiles = new Map<string, File>()
+    const ignoredFiles: string[] = []
+
+    for (const file of files) {
+      const name = file.name
+      if (name.endsWith(SUBTITLE_SUFFIX)) {
+        const prefix = name.slice(0, -SUBTITLE_SUFFIX.length)
+        if (prefix) {
+          subtitleFiles.set(prefix, file)
+        } else {
+          ignoredFiles.push(name)
+        }
+      } else if (name.endsWith(LEARNING_SUFFIX)) {
+        const prefix = name.slice(0, -LEARNING_SUFFIX.length)
+        if (prefix) {
+          learningFiles.set(prefix, file)
+        } else {
+          ignoredFiles.push(name)
+        }
+      } else {
+        ignoredFiles.push(name)
+      }
+    }
+
+    const allPrefixes = new Set([...subtitleFiles.keys(), ...learningFiles.keys()])
+    const newRows: VideoInputRow[] = []
+    const unpairedFiles: string[] = [...ignoredFiles]
+
+    for (const prefix of allPrefixes) {
+      const subFile = subtitleFiles.get(prefix)
+      const dataFile = learningFiles.get(prefix)
+
+      if (subFile && dataFile) {
+        try {
+          const [subResult, dataResult] = await Promise.all([
+            parseSubtitleFile(subFile),
+            parseLearningFile(dataFile),
+          ])
+
+          const id = `row_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`
+          fileInputRefs.current[id] = {}
+
+          newRows.push({
+            id,
+            subtitleFile: subFile,
+            subtitleFileName: subResult.fileName,
+            subtitleData: subResult.data,
+            learningFile: dataFile,
+            learningFileName: dataResult.fileName,
+            learningData: dataResult.data,
+            videoUrl: '',
+            status: 'idle',
+          })
+        } catch (err) {
+          const errorMsg = err instanceof Error ? err.message : '解析失败'
+          const id = `row_${Date.now()}_${Math.random().toString(36).slice(2, 9)}`
+          fileInputRefs.current[id] = {}
+
+          newRows.push({
+            id,
+            subtitleFile: null,
+            subtitleFileName: '',
+            subtitleData: null,
+            learningFile: null,
+            learningFileName: '',
+            learningData: null,
+            videoUrl: '',
+            status: 'error',
+            error: errorMsg,
+          })
+        }
+      } else {
+        if (subFile) unpairedFiles.push(subFile.name)
+        if (dataFile) unpairedFiles.push(dataFile.name)
+      }
+    }
+
+    if (newRows.length > 0) {
+      setRows(newRows)
+    }
+
+    if (unpairedFiles.length > 0) {
+      alert(`以下文件未配对成功：\n${unpairedFiles.join('\n')}\n\n请确保同一前缀同时有 _sub.json 和 _data.json 文件`)
+    }
+
+    if (newRows.length === 0 && unpairedFiles.length === 0) {
+      alert('未选择任何有效的 JSON 文件')
+    }
+  }, [])
 
   // 验证行是否可提交
   const canSubmitRow = useCallback((row: VideoInputRow): boolean => {
@@ -319,6 +432,21 @@ export default function BatchUploadClient() {
   }
 
   return (
+    <>
+      <input
+        ref={batchInputRef}
+        type="file"
+        multiple
+        accept=".json"
+        className="hidden"
+        onChange={(e) => {
+          const files = e.target.files
+          if (files && files.length > 0) {
+            handleBatchFileSelect(files)
+          }
+          e.target.value = ''
+        }}
+      />
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 p-6">
       <div className="max-w-5xl mx-auto">
         {/* 头部 */}
@@ -340,6 +468,14 @@ export default function BatchUploadClient() {
             <span className="text-sm text-gray-500 dark:text-gray-400">
               {rows.filter(r => r.status === 'success').length} / {rows.length} 成功
             </span>
+            <Button
+              onClick={() => batchInputRef.current?.click()}
+              disabled={isSubmitting}
+              className="gap-2 bg-[#B4F416] text-black hover:bg-[#a3de10] border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[2px_2px_0px_0px_rgba(0,0,0,1)] active:shadow-none active:translate-x-[1px] active:translate-y-[1px] transition-all"
+            >
+              <Zap className="w-4 h-4" />
+              一键上传
+            </Button>
             <Button
               onClick={handleSubmit}
               disabled={isSubmitting || !rows.some(canSubmitRow)}
@@ -538,5 +674,6 @@ export default function BatchUploadClient() {
         </div>
       </div>
     </div>
+    </>
   )
 }
