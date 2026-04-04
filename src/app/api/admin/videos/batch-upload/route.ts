@@ -72,46 +72,53 @@ interface VocabularyInput {
   cefr_level: string
 }
 
-/** 表达数据结构 */
+/** 表达数据结构（兼容 AI 生成格式：meaning/usage_note） */
 interface ExpressionInput {
   expression: string
-  ipa: string
-  chinese: string
-  cefr_level: string
-  grammar_usage: string
-  example: {
+  ipa?: string
+  chinese?: string
+  meaning?: string
+  cefr_level?: string
+  grammar_usage?: string
+  usage_note?: string
+  example?: {
     french: string
     chinese: string
   }
 }
 
-/** 语法点数据结构 */
+/** 语法点数据结构（兼容 AI 生成格式：explanation/usage_note） */
 interface GrammarPointInput {
   name: string
-  structure: string
-  example: {
+  structure?: string
+  example?: {
     french: string
     chinese: string
-    ipa: string
+    ipa?: string
   }
-  purpose: string
-  note: string
+  purpose?: string
+  explanation?: string
+  note?: string
+  usage_note?: string
 }
 
-/** 发音要点数据结构 */
+/** 发音要点数据结构（兼容 AI 生成格式：examples/description） */
 interface PronunciationInput {
   sound: string
-  example_words: string[]
-  instruction: string
-  practice_tip: string
+  example_words?: string[]
+  examples?: string[]
+  instruction?: string
+  description?: string
+  practice_tip?: string
 }
 
-/** 填空练习数据结构 */
+/** 填空练习数据结构（兼容 AI 生成格式：question 代替 sentence） */
 interface VocabularyExerciseInput {
-  word: string
-  sentence: string
+  word?: string
+  sentence?: string
+  question?: string
   answer: string
-  hint: string
+  hint?: string
 }
 
 // ============================================
@@ -450,8 +457,8 @@ async function processSingleVideo(
         expression: fullExpression,  // 使用完整文本，不带省略号
         context: example?.original || expr.example?.french || '',
         context_translation: example?.translation || expr.example?.chinese || null,
-        formula: expr.grammar_usage || null,
-        meaning: expr.chinese || null,
+        formula: expr.grammar_usage || expr.usage_note || null,
+        meaning: expr.chinese || expr.meaning || null,
         examples: expr.example ? [{ original: expr.example.french, cn: expr.example.chinese }] : null,
         difficulty_level: cefrToNumber(expr.cefr_level),
         subtitle_start_time: example?.startTime || 0,  // 用于 [▶ 播放这段] 跳转播放
@@ -485,8 +492,8 @@ async function processSingleVideo(
       example_french: gp.example?.french || null,
       example_chinese: gp.example?.chinese || null,
       example_ipa: gp.example?.ipa || null,
-      purpose: gp.purpose || null,
-      note: gp.note || null,
+      purpose: gp.purpose || gp.explanation || null,
+      note: gp.note || gp.usage_note || null,
       display_order: idx,
     }))
 
@@ -510,8 +517,8 @@ async function processSingleVideo(
     const pronunciationCards = pronunciationTips.map((pt: PronunciationInput, idx: number) => ({
       video_id: videoId,
       sound_symbol: pt.sound,
-      example_words: pt.example_words || [],
-      instruction: pt.instruction || null,
+      example_words: pt.example_words || pt.examples || [],
+      instruction: pt.instruction || pt.description || null,
       practice_tip: pt.practice_tip || null,
       display_order: idx,
     }))
@@ -578,10 +585,11 @@ async function processSingleVideo(
     const exerciseCards = vocabularyExercises.map((ex: VocabularyExerciseInput, idx: number) => {
       // 保留原始句子中的 _____ 作为 original_text
       // 这样 blank_positions 的位置计算才能与 original_text 对应
-      const originalText = ex.sentence || ''
+      // 兼容两种 JSON 格式：sentence（旧）和 question（AI 生成）
+      const originalText = ex.sentence || ex.question || ''
 
       if (!originalText) {
-        console.warn(`[batch-upload] vocabulary_exercise[${idx}] 缺少 sentence 字段，跳过:`, ex)
+        console.warn(`[batch-upload] vocabulary_exercise[${idx}] 缺少 sentence/question 字段，跳过:`, ex)
         return null
       }
 
@@ -620,15 +628,20 @@ async function processSingleVideo(
       }
     })
 
-    const { error: exercisesError } = await supabase
-      .from('video_exercises')
-      .insert(exerciseCards)
+    // 过滤掉无效条目（sentence 和 question 都缺失的情况）
+    const validExerciseCards = exerciseCards.filter(Boolean)
 
-    if (!exercisesError) {
-      exercisesCount = exerciseCards.length
-      console.log(`[批量上传] 存储填空练习成功: ${exercisesCount} 个`)
-    } else {
-      console.error(`[批量上传] 存储填空练习失败:`, exercisesError)
+    if (validExerciseCards.length > 0) {
+      const { error: exercisesError } = await supabase
+        .from('video_exercises')
+        .insert(validExerciseCards)
+
+      if (!exercisesError) {
+        exercisesCount = validExerciseCards.length
+        console.log(`[批量上传] 存储填空练习成功: ${exercisesCount} 个`)
+      } else {
+        console.error(`[批量上传] 存储填空练习失败:`, exercisesError)
+      }
     }
   }
 
@@ -839,8 +852,8 @@ export async function PATCH(request: NextRequest) {
             expression: fullExpression,
             context: example?.original || expr.example?.french || '',
             context_translation: example?.translation || expr.example?.chinese || null,
-            formula: expr.grammar_usage || null,
-            meaning: expr.chinese || null,
+            formula: expr.grammar_usage || expr.usage_note || null,
+            meaning: expr.chinese || expr.meaning || null,
             examples: expr.example ? [{ original: expr.example.french, cn: expr.example.chinese }] : null,
             difficulty_level: cefrToNumber(expr.cefr_level),
             subtitle_start_time: example?.startTime || 0,
@@ -864,8 +877,8 @@ export async function PATCH(request: NextRequest) {
           example_french: gp.example?.french || null,
           example_chinese: gp.example?.chinese || null,
           example_ipa: gp.example?.ipa || null,
-          purpose: gp.purpose || null,
-          note: gp.note || null,
+          purpose: gp.purpose || gp.explanation || null,
+          note: gp.note || gp.usage_note || null,
           display_order: idx,
         }))
         const { error } = await supabase.from('video_grammar_points').insert(grammarCards)
@@ -878,8 +891,8 @@ export async function PATCH(request: NextRequest) {
         const pronunciationCards = pronunciationTips.map((pt: PronunciationInput, idx: number) => ({
           video_id: videoId,
           sound_symbol: pt.sound,
-          example_words: pt.example_words || [],
-          instruction: pt.instruction || null,
+          example_words: pt.example_words || pt.examples || [],
+          instruction: pt.instruction || pt.description || null,
           practice_tip: pt.practice_tip || null,
           display_order: idx,
         }))
@@ -919,10 +932,11 @@ export async function PATCH(request: NextRequest) {
       const vocabularyExercises = learning_material_json.practice?.vocabulary_exercises || []
       if (vocabularyExercises.length > 0) {
         const exerciseCards = vocabularyExercises.map((ex: VocabularyExerciseInput, idx: number) => {
-          const originalText = ex.sentence || ''
+          // 兼容两种 JSON 格式：sentence（旧）和 question（AI 生成）
+          const originalText = ex.sentence || ex.question || ''
 
           if (!originalText) {
-            console.warn(`[batch-upload] vocabulary_exercise[${idx}] 缺少 sentence 字段，跳过:`, ex)
+            console.warn(`[batch-upload] vocabulary_exercise[${idx}] 缺少 sentence/question 字段，跳过:`, ex)
             return null
           }
           const blankPattern = /_+/g
@@ -957,8 +971,11 @@ export async function PATCH(request: NextRequest) {
           }
         })
 
-        const { error } = await supabase.from('video_exercises').insert(exerciseCards)
-        if (!error) exercisesCount = exerciseCards.length
+        const validExerciseCards = exerciseCards.filter(Boolean)
+        if (validExerciseCards.length > 0) {
+          const { error } = await supabase.from('video_exercises').insert(validExerciseCards)
+          if (!error) exercisesCount = validExerciseCards.length
+        }
       }
 
       await completeStep(supabase, videoId, 'cards')
