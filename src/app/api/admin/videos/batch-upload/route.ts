@@ -344,8 +344,11 @@ async function processSingleVideo(
     }
   }
 
-  // Step 4: 存储字幕
-  const subtitlesData = subtitle_json.subtitles.map((sub: SubtitleInput, idx: number) => ({
+  // Step 4: 存储字幕（按 index 排序，防止 JSON 数组顺序混乱）
+  const sortedSubtitles = [...subtitle_json.subtitles].sort(
+    (a: SubtitleInput, b: SubtitleInput) => a.index - b.index
+  )
+  const subtitlesData = sortedSubtitles.map((sub: SubtitleInput, idx: number) => ({
     video_id: videoId,
     start_time: timeStringToSeconds(sub.start_time),
     end_time: timeStringToSeconds(sub.end_time),
@@ -729,7 +732,11 @@ export async function PATCH(request: NextRequest) {
       // 删除旧字幕
       await supabase.from('video_subtitles').delete().eq('video_id', videoId)
 
-      const subtitlesData = subtitle_json.subtitles.map((sub: SubtitleInput, idx: number) => ({
+      // 按 index 排序，防止 JSON 数组顺序混乱
+      const sortedSubs = [...subtitle_json.subtitles].sort(
+        (a: SubtitleInput, b: SubtitleInput) => a.index - b.index
+      )
+      const subtitlesData = sortedSubs.map((sub: SubtitleInput, idx: number) => ({
         video_id: videoId,
         start_time: timeStringToSeconds(sub.start_time),
         end_time: timeStringToSeconds(sub.end_time),
