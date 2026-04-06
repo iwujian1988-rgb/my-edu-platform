@@ -21,11 +21,13 @@ import {
   Repeat,
   Zap,
   Star,
+  Podcast,
 } from 'lucide-react'
 import type { VideoListItem, VideoListResponse } from '@/types/video'
 import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, CONTENT_TYPE_LABELS, formatDuration } from '@/types/video'
 import LearningCalendar from '@/components/video/LearningCalendar'
 import { VideoPromoPopup } from '@/components/video/VideoPromoPopup'
+import { AudioCoverBackground } from '@/components/video/AudioCoverBackground'
 
 // 语言选项（从 API 动态获取，基于用户权限范围内的语言）
 const buildLanguageOptions = (availableLanguages: string[] | undefined) => {
@@ -60,7 +62,7 @@ const LEARN_STATUS_OPTIONS = [
 const CONTENT_TYPE_OPTIONS = [
   { value: 'all', label: '全部' },
   { value: 'video', label: '视频' },
-  { value: 'audio', label: '音频' },
+  { value: 'audio', label: '播客' },
 ]
 
 // 分页常量
@@ -83,6 +85,8 @@ const getDifficultyColor = (difficulty: string) => {
 // 视频卡片组件 - YouTube 风格
 function VideoCard({ video }: { video: VideoListItem }) {
   const progress = video.user_progress
+  const isAudio = video.content_type === 'audio'
+  const coverImage = isAudio ? (video.cover_url || video.thumbnail_url) : video.thumbnail_url
 
   return (
     <Link
@@ -91,22 +95,67 @@ function VideoCard({ video }: { video: VideoListItem }) {
     >
       {/* 缩略图 - 移动端更大，PC端正常 */}
       <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[2px] md:border-b-[3px] border-black dark:border-gray-600 flex-shrink-0 transition-colors duration-300">
-        {video.thumbnail_url ? (
+        {isAudio && coverImage ? (
+          /* 音频：主色调模糊背景 + 居中封面 */
+          <>
+            <AudioCoverBackground imageUrl={coverImage} />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-20 h-20 md:w-24 md:h-24 rounded-lg border border-white/10 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+                style={{ backgroundImage: `url(${coverImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#222' }} />
+            </div>
+          </>
+        ) : coverImage ? (
           <img
-            src={video.thumbnail_url}
+            src={coverImage}
             alt={video.title}
             loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <Video className="w-10 h-10 md:w-12 md:h-12 text-black dark:text-white opacity-20" />
+            {isAudio ? (
+              <Podcast className="w-10 h-10 md:w-12 md:h-12 text-purple-500 opacity-30" />
+            ) : (
+              <Video className="w-10 h-10 md:w-12 md:h-12 text-black dark:text-white opacity-20" />
+            )}
           </div>
         )}
 
-        {/* 难度标签 - PC端 */}
+        {/* 内容类型标签 - PC端 */}
         <div className="hidden md:block absolute top-3 left-3">
-          <div className={`px-3 py-1 ${getDifficultyColor(video.difficulty)} border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1`}>
+          {isAudio ? (
+            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
+              <Podcast className="w-4 h-4 text-purple-600" />
+              <span className="text-xs font-black tracking-tight">播客</span>
+            </div>
+          ) : (
+            <div className="px-3 py-1 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
+              <span className="text-xs font-black tracking-tight flex items-center gap-1">
+                <Play className="w-3 h-3" />
+                视频
+              </span>
+            </div>
+          )}
+        </div>
+
+        {/* 内容类型标签 - 移动端 */}
+        <div className="md:hidden absolute top-2 left-2">
+          {isAudio ? (
+            <div className="flex items-center gap-1 px-2 py-0.5 bg-white/90 backdrop-blur-sm border-[1px] border-black">
+              <Podcast className="w-3 h-3 text-purple-600" />
+              <span className="text-[10px] font-black">播客</span>
+            </div>
+          ) : (
+            <div className="px-2 py-0.5 bg-[#B4F416] border-[1px] border-black text-[10px] font-black flex items-center gap-0.5">
+              <Play className="w-2.5 h-2.5" />
+              视频
+            </div>
+          )}
+        </div>
+
+        {/* 难度标签 - PC端 */}
+        <div className="hidden md:block absolute top-3 right-3">
+          <div className={`px-3 py-1 ${getDifficultyColor(video.difficulty)} border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform rotate-1`}>
             <span className="text-xs font-black tracking-tight">
               {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
             </span>
@@ -114,7 +163,7 @@ function VideoCard({ video }: { video: VideoListItem }) {
         </div>
 
         {/* 难度标签 - 移动端 */}
-        <div className="md:hidden absolute top-2 left-2">
+        <div className="md:hidden absolute top-2 right-2">
           <div className={`px-2 py-0.5 ${getDifficultyColor(video.difficulty)} border-[1px] border-black text-[10px] font-black`}>
             {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
           </div>
@@ -132,7 +181,7 @@ function VideoCard({ video }: { video: VideoListItem }) {
 
         {/* 完成标记 - PC端 */}
         {progress?.is_completed && (
-          <div className="hidden md:block absolute top-3 right-3">
+          <div className="hidden md:block absolute bottom-2 left-2">
             <div className="px-3 py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[3px_3px_0px_0px_#000] transform rotate-2">
               <span className="text-xs font-black tracking-tight">✓ DONE</span>
             </div>
@@ -141,7 +190,7 @@ function VideoCard({ video }: { video: VideoListItem }) {
 
         {/* 完成标记 - 移动端 */}
         {progress?.is_completed && (
-          <div className="md:hidden absolute top-2 right-2">
+          <div className="md:hidden absolute bottom-2 left-2">
             <div className="px-2 py-1 bg-[#B4F416] border-[1px] border-black text-[10px] font-black">
               ✓ 已完成
             </div>
@@ -234,6 +283,231 @@ function VideoCard({ video }: { video: VideoListItem }) {
   )
 }
 
+// 最新发布大卡（FeaturedCard）
+function FeaturedCard({ video }: { video: VideoListItem }) {
+  const progress = video.user_progress
+  const isAudio = video.content_type === 'audio'
+  const coverImage = isAudio ? (video.cover_url || video.thumbnail_url) : (video.thumbnail_url || video.cover_url)
+  const hasProgress = progress && progress.max_progress > 0 && !progress.is_completed
+
+  return (
+    <section className="mb-8">
+      {/* 区域标题 */}
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-8 h-8 bg-[#B4F416] flex items-center justify-center text-black shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666]">
+          <span className="font-bold text-sm">N</span>
+        </div>
+        <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">
+          最新发布
+        </h2>
+      </div>
+
+      <Link
+        href={`/videos/${video.id}`}
+        className="group block bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-1 transition-transform duration-200 overflow-hidden"
+      >
+        {/* PC端：横向布局 */}
+        <div className="hidden md:flex">
+          {/* 封面区 */}
+          <div className="relative w-[360px] lg:w-[420px] flex-shrink-0 aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-r-[3px] border-black dark:border-gray-600">
+            {isAudio && coverImage ? (
+              <>
+                <AudioCoverBackground imageUrl={coverImage} />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-24 h-24 lg:w-28 lg:h-28 rounded-lg border border-white/10 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+                    style={{ backgroundImage: `url(${coverImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#222' }} />
+                </div>
+              </>
+            ) : coverImage ? (
+              <img
+                src={coverImage}
+                alt={video.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                {isAudio ? (
+                  <Podcast className="w-16 h-16 text-purple-500 opacity-30" />
+                ) : (
+                  <Video className="w-16 h-16 text-black dark:text-white opacity-20" />
+                )}
+              </div>
+            )}
+            {/* 类型标签 */}
+            <div className="absolute top-3 left-3">
+              {isAudio ? (
+                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
+                  <Podcast className="w-4 h-4 text-purple-600" />
+                  <span className="text-xs font-black tracking-tight">播客</span>
+                </div>
+              ) : (
+                <div className="px-3 py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
+                  <span className="text-xs font-black tracking-tight flex items-center gap-1">
+                    <Play className="w-3 h-3" />
+                    视频
+                  </span>
+                </div>
+              )}
+            </div>
+            {/* 时长 */}
+            <div className="absolute bottom-3 right-3 px-2 py-1 bg-black/80 text-white text-xs font-bold border-[2px] border-black">
+              {formatDuration(video.duration)}
+            </div>
+            {/* 进度条 */}
+            {hasProgress && (
+              <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-gray-300 dark:bg-gray-600">
+                <div
+                  className="h-full bg-[#B4F416] transition-all duration-300"
+                  style={{ width: `${Math.min(progress.max_progress, 100)}%` }}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* 信息区 */}
+          <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center min-w-0">
+            <h3 className="text-2xl font-black tracking-tight text-black dark:text-white mb-3 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
+              {video.title}
+            </h3>
+
+            {video.description && (
+              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">
+                {video.description}
+              </p>
+            )}
+
+            {/* 标签行 */}
+            <div className="flex items-center gap-2 mb-5 flex-wrap">
+              <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500">
+                <span className="text-xs font-bold text-gray-700 dark:text-gray-300">
+                  {VIDEO_LANGUAGE_LABELS[video.language]}
+                </span>
+              </div>
+              <div className={`px-2 py-1 ${getDifficultyColor(video.difficulty)} border-[2px] border-black`}>
+                <span className="text-xs font-bold">
+                  {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
+                </span>
+              </div>
+              <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500 flex items-center gap-1">
+                <Clock className="w-3 h-3" />
+                <span className="text-xs font-bold text-gray-700 dark:text-gray-300">
+                  {formatDuration(video.duration)}
+                </span>
+              </div>
+            </div>
+
+            {/* CTA 按钮 */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#B4F416] border-[3px] border-black shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] font-black text-sm group-hover:shadow-[2px_2px_0px_0px_#000] dark:group-hover:shadow-[2px_2px_0px_0px_#666] group-hover:-translate-y-0.5 transition-all">
+                <Play className="w-4 h-4" fill="currentColor" />
+                {hasProgress ? '继续学习' : '开始学习'}
+              </div>
+              {hasProgress && (
+                <span className="ml-3 text-sm font-mono font-bold text-gray-500">
+                  进度 {Math.min(Math.round(progress.max_progress), 100)}%
+                </span>
+              )}
+            </div>
+          </div>
+        </div>
+
+        {/* 移动端：纵向布局 */}
+        <div className="md:hidden">
+          {/* 封面区 */}
+          <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[2px] border-black dark:border-gray-600">
+            {isAudio && coverImage ? (
+              <>
+                <AudioCoverBackground imageUrl={coverImage} />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-20 h-20 rounded-lg border border-white/10 overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+                    style={{ backgroundImage: `url(${coverImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#222' }} />
+                </div>
+              </>
+            ) : coverImage ? (
+              <img
+                src={coverImage}
+                alt={video.title}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center">
+                {isAudio ? (
+                  <Podcast className="w-12 h-12 text-purple-500 opacity-30" />
+                ) : (
+                  <Video className="w-12 h-12 text-black dark:text-white opacity-20" />
+                )}
+              </div>
+            )}
+            {/* 类型标签角标 */}
+            <div className="absolute top-2 left-2">
+              {isAudio ? (
+                <div className="flex items-center gap-1 px-2 py-0.5 bg-white/90 backdrop-blur-sm border-[1px] border-black">
+                  <Podcast className="w-3 h-3 text-purple-600" />
+                  <span className="text-[10px] font-black">播客</span>
+                </div>
+              ) : (
+                <div className="px-2 py-0.5 bg-[#B4F416] border-[1px] border-black text-[10px] font-black flex items-center gap-0.5">
+                  <Play className="w-2.5 h-2.5" />
+                  视频
+                </div>
+              )}
+            </div>
+            {/* 时长 */}
+            <div className="absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-xs font-bold">
+              {formatDuration(video.duration)}
+            </div>
+            {/* 进度条 */}
+            {hasProgress && (
+              <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gray-300 dark:bg-gray-600">
+                <div
+                  className="h-full bg-[#B4F416] transition-all duration-300"
+                  style={{ width: `${Math.min(progress.max_progress, 100)}%` }}
+                />
+              </div>
+            )}
+          </div>
+
+          {/* 信息区 */}
+          <div className="p-4">
+            <h3 className="text-lg font-black tracking-tight text-black dark:text-white mb-2 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
+              {video.title}
+            </h3>
+
+            {video.description && (
+              <p className="text-xs text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">
+                {video.description}
+              </p>
+            )}
+
+            {/* 标签行 */}
+            <div className="flex items-center gap-2 mb-3 flex-wrap">
+              <div className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 border-[1px] border-gray-300 dark:border-gray-500">
+                <span className="text-[11px] font-bold text-gray-700 dark:text-gray-300">
+                  {VIDEO_LANGUAGE_LABELS[video.language]}
+                </span>
+              </div>
+              <div className={`px-2 py-0.5 ${getDifficultyColor(video.difficulty)} border-[1px] border-black text-[11px] font-black`}>
+                {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
+              </div>
+            </div>
+
+            {/* CTA 按钮 */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] font-black text-sm">
+              <Play className="w-3.5 h-3.5" fill="currentColor" />
+              {hasProgress ? '继续学习' : '开始学习'}
+            </div>
+            {hasProgress && (
+              <span className="ml-2 text-xs font-mono font-bold text-gray-500">
+                {Math.min(Math.round(progress.max_progress), 100)}%
+              </span>
+            )}
+          </div>
+        </div>
+      </Link>
+    </section>
+  )
+}
+
 // 继续学习卡片
 function ContinueLearningCard({ video }: { video: VideoListItem }) {
   const progress = video.user_progress
@@ -242,6 +516,9 @@ function ContinueLearningCard({ video }: { video: VideoListItem }) {
     return null
   }
 
+  const isAudio = video.content_type === 'audio'
+  const coverImage = isAudio ? (video.cover_url || video.thumbnail_url) : video.thumbnail_url
+
   return (
     <Link
       href={`/videos/${video.id}`}
@@ -249,16 +526,20 @@ function ContinueLearningCard({ video }: { video: VideoListItem }) {
     >
       {/* 缩略图 */}
       <div className="relative w-32 aspect-video rounded-sm overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
-        {video.thumbnail_url ? (
+        {coverImage ? (
           <img
-            src={video.thumbnail_url}
+            src={coverImage}
             alt={video.title}
             loading="lazy"
             className="w-full h-full object-cover"
           />
         ) : (
           <div className="w-full h-full flex items-center justify-center">
-            <Video className="w-6 h-6 text-black dark:text-white opacity-20" />
+            {isAudio ? (
+              <Podcast className="w-6 h-6 text-purple-500 opacity-30" />
+            ) : (
+              <Video className="w-6 h-6 text-black dark:text-white opacity-20" />
+            )}
           </div>
         )}
 
@@ -438,6 +719,11 @@ function VideoListContent() {
   const continueLearningVideos = (data?.items || [])
     .filter((v) => v.user_progress && v.user_progress.max_progress > 0 && !v.user_progress.is_completed)
     .slice(0, 1)
+
+  // 最新发布（列表第一条，按 published_at 降序，服务端已排好）
+  const featuredVideo = (data?.items && data.items.length > 0) ? data.items[0] : null
+  const showFeatured = !!(featuredVideo && page === 1 && contentType === 'all' && difficulty === 'all' && language === 'all' && tag === 'all' && learnStatus === 'all')
+  const gridItems = showFeatured ? (data?.items?.slice(1) || []) : (data?.items || [])
 
   // 动态语言选项（基于用户权限范围内的语言）
   const languageOptions = useMemo(() => {
@@ -757,6 +1043,11 @@ function VideoListContent() {
               </section>
             )}
 
+            {/* 最新发布大卡 - 仅在首页(page=1)且无筛选时显示 */}
+            {showFeatured && featuredVideo && (
+              <FeaturedCard video={featuredVideo} />
+            )}
+
             {/* PC端筛选工具栏 - 轻量样式 */}
             <div className="hidden md:flex flex-wrap items-center gap-6 mb-6 py-3 border-b border-gray-200 dark:border-gray-700">
               {/* 内容类型筛选 */}
@@ -988,7 +1279,7 @@ function VideoListContent() {
                 </div>
               ) : (
                 <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 md:gap-4 lg:gap-6">
-                  {data.items.map((video) => (
+                  {gridItems.map((video) => (
                     <VideoCard key={video.id} video={video} />
                   ))}
                 </div>

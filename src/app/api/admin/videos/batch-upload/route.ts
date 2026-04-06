@@ -266,16 +266,18 @@ async function processSingleVideo(
 
   // Step 2: 匹配 UP主（如果提供了 creator 字段，大小写不敏感匹配）
   let creatorId: string | null = null
+  let creatorAvatarUrl: string | null = null
   const creatorName = unitInfo.creator?.trim()
   if (creatorName) {
     const { data: creator } = await supabase
       .from('upstream_creators')
-      .select('id')
+      .select('id, avatar_url')
       .ilike('name', creatorName)
       .maybeSingle()
 
     if (creator) {
       creatorId = creator.id
+      creatorAvatarUrl = creator.avatar_url || null
       console.log(`[批量上传] 匹配到UP主: ${creatorName} -> ${creatorId}`)
     } else {
       console.log(`[批量上传] 未找到UP主: ${creatorName}，将不关联UP主`)
@@ -288,6 +290,14 @@ async function processSingleVideo(
     throw new Error('视频 URL 格式无效')
   }
 
+  // 检测是否为音频内容
+  const isAudioContent = /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(videoUrl || '')
+
+  // 音频内容且无封面时，用 UP主头像作为默认封面
+  const defaultCoverUrl = (isAudioContent && !unitInfo.cover_url && creatorAvatarUrl)
+    ? creatorAvatarUrl
+    : (unitInfo.cover_url || null)
+
   const { data: video, error: videoError } = await supabase
     .from('videos')
     .insert({
@@ -298,6 +308,8 @@ async function processSingleVideo(
       difficulty: cefrToDifficulty(learningInfo.cefr_level),
       duration: Math.round((learningInfo.duration_minutes || 0) * 60),
       video_url: videoUrl,
+      content_type: isAudioContent ? 'audio' : 'video',
+      cover_url: defaultCoverUrl,
       status: 'draft',
       creator_id: creatorId,
       creator_name: creatorName || null,

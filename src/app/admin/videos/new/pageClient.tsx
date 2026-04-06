@@ -34,6 +34,7 @@ import { VideoUploadField } from '@/components/admin/VideoUploadField'
 import type { VideoLanguage, VideoDifficulty, ContentType, WorkflowProgress } from '@/types/video'
 import { VIDEO_LANGUAGE_LABELS, VIDEO_DIFFICULTY_LABELS, CONTENT_TYPE_LABELS, WORKFLOW_STEPS, DEFAULT_WORKFLOW_PROGRESS } from '@/types/video'
 import Link from 'next/link'
+import ImageUploadModal from '@/components/admin/ImageUploadModal'
 
 // ============================================
 // 步骤配置
@@ -102,6 +103,7 @@ export function VideoWorkflowClient() {
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [isRestoring, setIsRestoring] = useState(true) // 恢复状态中
+  const [coverImageModalOpen, setCoverImageModalOpen] = useState(false)
 
   // 从 URL 参数恢复工作流状态
   useEffect(() => {
@@ -601,24 +603,49 @@ export function VideoWorkflowClient() {
                 </select>
               </div>
 
-              {/* 音频博客封面图上传 */}
-              {videoData.content_type === 'audio' && (
-                <div>
-                  <label className="block text-sm font-bold mb-2">封面图</label>
-                  <input
-                    type="text"
-                    value={videoData.cover_url}
-                    onChange={(e) => setVideoData(prev => ({ ...prev, cover_url: e.target.value }))}
-                    placeholder="输入封面图 URL 或上传图片"
-                    className="w-full px-4 py-3 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 font-semibold"
-                  />
-                  {videoData.cover_url && (
-                    <div className="mt-2 w-24 h-24 border-2 border-black">
+              {/* 封面图上传（视频和音频通用） */}
+              <div>
+                <label className="block text-sm font-bold mb-2">封面图</label>
+                <div className="flex items-start gap-3">
+                  {videoData.cover_url ? (
+                    <div className="relative w-24 h-24 border-[3px] border-black flex-shrink-0">
                       <img src={videoData.cover_url} alt="封面预览" className="w-full h-full object-cover" />
+                      <button
+                        type="button"
+                        onClick={() => setVideoData(prev => ({ ...prev, cover_url: '' }))}
+                        className="absolute -top-2 -right-2 w-5 h-5 bg-red-500 text-white rounded-full flex items-center justify-center text-xs font-bold hover:bg-red-600"
+                      >
+                        ×
+                      </button>
                     </div>
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setCoverImageModalOpen(true)}
+                      className="w-24 h-24 border-[3px] border-dashed border-black dark:border-gray-600 flex flex-col items-center justify-center gap-1 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+                    >
+                      <Upload className="w-5 h-5 text-gray-400" />
+                      <span className="text-[10px] font-bold text-gray-400">上传封面</span>
+                    </button>
                   )}
+                  <button
+                    type="button"
+                    onClick={() => setCoverImageModalOpen(true)}
+                    className="px-3 py-1.5 text-xs font-bold border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-[#B4F416] transition-colors"
+                  >
+                    {videoData.cover_url ? '更换封面' : '选择图片'}
+                  </button>
                 </div>
-              )}
+                <ImageUploadModal
+                  isOpen={coverImageModalOpen}
+                  onClose={() => setCoverImageModalOpen(false)}
+                  onConfirm={(url) => {
+                    setVideoData(prev => ({ ...prev, cover_url: url }))
+                    setCoverImageModalOpen(false)
+                  }}
+                  currentImageUrl={videoData.cover_url}
+                />
+              </div>
 
               <div>
                 <label className="block text-sm font-bold mb-2">语言 *</label>

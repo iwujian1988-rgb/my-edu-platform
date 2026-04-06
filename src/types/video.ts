@@ -40,7 +40,7 @@ export const VIDEO_DIFFICULTY_LABELS: Record<VideoDifficulty, string> = {
 
 export const CONTENT_TYPE_LABELS: Record<ContentType, string> = {
   video: '视频',
-  audio: '音频',
+  audio: '播客',
 }
 
 export const CREATOR_PLATFORM_LABELS: Record<CreatorPlatform, string> = {

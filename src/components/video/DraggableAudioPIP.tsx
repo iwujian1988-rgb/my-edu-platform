@@ -15,8 +15,9 @@ import { cn } from '@/lib/utils'
 import { Play, Pause, Maximize } from 'lucide-react'
 import type { Video } from '@/types/video'
 
-const PIP_HEIGHT = 56
-const PIP_MARGIN = 16
+const PIP_WIDTH = 260
+const PIP_HEIGHT = 64
+const PIP_MARGIN = 12
 const SNAP_THRESHOLD = 50
 const DRAG_THRESHOLD = 5
 
@@ -31,6 +32,8 @@ interface DraggableAudioPIPProps {
   onSeek: (time: number) => void
   onExpand: () => void
   className?: string
+  /** 封面为空时的兜底图片（如 UP主头像） */
+  fallbackImageUrl?: string
 }
 
 type Corner = 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
@@ -50,6 +53,7 @@ export function DraggableAudioPIP({
   onSeek,
   onExpand,
   className,
+  fallbackImageUrl,
 }: DraggableAudioPIPProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const audioSlotRef = useRef<HTMLDivElement>(null)
@@ -100,7 +104,7 @@ export function DraggableAudioPIP({
   useEffect(() => {
     const initPosition = () => {
       if (typeof window === 'undefined') return
-      const pipWidth = Math.min(280, window.innerWidth - PIP_MARGIN * 2)
+      const pipWidth = Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
       setPosition({
         x: window.innerWidth - pipWidth - PIP_MARGIN,
         y: window.innerHeight - PIP_HEIGHT - PIP_MARGIN - 80,
@@ -113,7 +117,8 @@ export function DraggableAudioPIP({
 
   const getNearestCorner = useCallback((x: number, y: number): Corner => {
     if (typeof window === 'undefined') return 'bottom-right'
-    const centerX = x + 140
+    const pipWidth = Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
+    const centerX = x + pipWidth / 2
     const centerY = y + PIP_HEIGHT / 2
     const windowCenterX = window.innerWidth / 2
     const windowCenterY = window.innerHeight / 2
@@ -126,7 +131,7 @@ export function DraggableAudioPIP({
 
   const getSnapPosition = useCallback((corner: Corner): Position => {
     if (typeof window === 'undefined') return { x: 0, y: 0 }
-    const pipWidth = Math.min(280, window.innerWidth - PIP_MARGIN * 2)
+    const pipWidth = Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
     const safeAreaBottom = 80
 
     switch (corner) {
@@ -144,7 +149,7 @@ export function DraggableAudioPIP({
 
   const clampPosition = useCallback((x: number, y: number): Position => {
     if (typeof window === 'undefined') return { x, y }
-    const pipWidth = Math.min(280, window.innerWidth - PIP_MARGIN * 2)
+    const pipWidth = Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
     const safeAreaBottom = 80
     return {
       x: Math.max(0, Math.min(x, window.innerWidth - pipWidth)),
@@ -250,24 +255,24 @@ export function DraggableAudioPIP({
     window.addEventListener('mouseup', handleUp)
   }, [calcPercent, duration, onSeek])
 
-  const coverUrl = video.cover_url || video.thumbnail_url
+  const coverUrl = video.cover_url || video.thumbnail_url || fallbackImageUrl
 
   return (
     <AnimatePresence>
       <motion.div
         ref={containerRef}
         className={cn(
-          'fixed z-[100] bg-black/95 backdrop-blur-sm rounded-lg overflow-hidden',
-          'border-[2px] border-black shadow-[3px_3px_0px_0px_#000]',
+          'fixed z-[100] rounded-xl overflow-hidden',
           isDragging ? 'cursor-grabbing' : 'cursor-grab',
           className
         )}
         style={{
           height: PIP_HEIGHT,
-          width: Math.min(280, typeof window !== 'undefined' ? window.innerWidth - PIP_MARGIN * 2 : 280),
+          width: Math.min(PIP_WIDTH, typeof window !== 'undefined' ? window.innerWidth - PIP_MARGIN * 2 : PIP_WIDTH),
           left: position.x,
           top: position.y,
           touchAction: 'none',
+          backgroundColor: '#111',
         }}
         initial={{ scale: 0, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -276,14 +281,21 @@ export function DraggableAudioPIP({
         onMouseDown={handleDragStart}
         onTouchStart={handleDragStart}
       >
+        {/* 模糊背景 */}
+        {coverUrl && (
+          <img src={coverUrl} alt="" className="absolute inset-0 w-full h-full object-cover"
+            style={{ transform: 'scale(1.4)', filter: 'blur(40px) saturate(2) brightness(0.5) contrast(1.1)' }} />
+        )}
+        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+
         {/* 隐藏的 audio 元素插槽 */}
         <div ref={audioSlotRef} className="hidden" />
 
-        {/* 内容区 */}
-        <div className="flex items-center h-full px-2 gap-2">
+        {/* ===== 横排布局：封面 + 标题/进度 + 播放 + 展开 ===== */}
+        <div className="relative z-10 flex items-center h-full px-2 gap-2">
           {/* 封面小图 */}
           <div
-            className="w-10 h-10 rounded flex-shrink-0 border border-white/10"
+            className="w-10 h-10 rounded-lg flex-shrink-0 border border-white/10"
             style={{
               backgroundImage: coverUrl ? `url(${coverUrl})` : undefined,
               backgroundSize: 'cover',
@@ -292,36 +304,40 @@ export function DraggableAudioPIP({
             }}
           />
 
+          {/* 标题 + 进度条 */}
+          <div className="flex-1 flex flex-col gap-1 min-w-0">
+            <p className="text-white font-bold text-[11px] truncate drop-shadow">{video.title}</p>
+            <div
+              ref={trackRef}
+              className="relative h-1 bg-white/20 cursor-pointer rounded-full"
+              onTouchStart={(e) => e.stopPropagation()}
+              onMouseDown={handleTrackMouseDown}
+            >
+              <div className="h-full bg-[#B4F416] rounded-full" style={{ width: `${progressPercent}%` }} />
+              <div className="absolute -top-1 -bottom-1 left-0 right-0" />
+            </div>
+            <div className="flex justify-between">
+              <span className="text-white/50 text-[8px] font-mono">{formatTime(currentTime)}</span>
+              <span className="text-white/50 text-[8px] font-mono">{formatTime(duration)}</span>
+            </div>
+          </div>
+
           {/* 播放/暂停 */}
           <button
+            onTouchStart={(e) => e.stopPropagation()}
+            onMouseDown={(e) => e.stopPropagation()}
             onClick={(e) => { e.stopPropagation(); onTogglePlay() }}
-            className="p-1.5 text-white hover:text-[#B4F416] transition-colors flex-shrink-0"
+            className="p-2 text-white hover:text-[#B4F416] transition-colors flex-shrink-0"
           >
             {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
           </button>
 
-          {/* 进度条 + 时间 */}
-          <div className="flex-1 flex items-center gap-2 min-w-0">
-            <div
-              ref={trackRef}
-              className="relative flex-1 h-1.5 bg-gray-600 cursor-pointer rounded-full"
-              onMouseDown={handleTrackMouseDown}
-            >
-              <div
-                className="h-full bg-[#B4F416] rounded-full"
-                style={{ width: `${progressPercent}%` }}
-              />
-              <div className="absolute -top-1 -bottom-1 left-0 right-0" />
-            </div>
-            <span className="text-[10px] text-white font-mono flex-shrink-0">
-              {formatTime(currentTime)}/{formatTime(duration)}
-            </span>
-          </div>
-
-          {/* 展开按钮 */}
+          {/* 展开 */}
           <button
+            onTouchStart={(e) => e.stopPropagation()}
+            onMouseDown={(e) => e.stopPropagation()}
             onClick={(e) => { e.stopPropagation(); onExpand() }}
-            className="p-1.5 text-white hover:text-[#B4F416] transition-colors flex-shrink-0"
+            className="p-1.5 text-white/50 hover:text-white transition-colors flex-shrink-0"
           >
             <Maximize className="w-3.5 h-3.5" />
           </button>
@@ -329,7 +345,7 @@ export function DraggableAudioPIP({
 
         {/* 拖动指示器 */}
         {isDragging && (
-          <div className="absolute inset-0 border-2 border-[#B4F416] rounded-lg pointer-events-none" />
+          <div className="absolute inset-0 border-2 border-[#B4F416] rounded-xl pointer-events-none" />
         )}
       </motion.div>
     </AnimatePresence>

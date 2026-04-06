@@ -46,6 +46,8 @@ interface DraftVideo {
   creator_id: string | null
   video_url: string | null
   thumbnail_url: string | null
+  content_type: string | null
+  cover_url: string | null
 }
 
 /** UP主信息 */
@@ -114,7 +116,7 @@ interface UpdateVideoRequest {
 }
 
 // 允许更新的字段
-const ALLOWED_UPDATE_FIELDS = ['title', 'difficulty', 'description', 'language', 'creator_id', 'thumbnail_url', 'learning_date', 'status'] as const
+const ALLOWED_UPDATE_FIELDS = ['title', 'difficulty', 'description', 'language', 'creator_id', 'thumbnail_url', 'cover_url', 'learning_date', 'status'] as const
 
 // ============================================
 // POST: 批量发布
@@ -421,7 +423,9 @@ export async function GET() {
           package_ids,
           creator_id,
           video_url,
-          thumbnail_url
+          thumbnail_url,
+          content_type,
+          cover_url
         `)
         .eq('status', 'draft')
         .order('created_at', { ascending: false }) as unknown as Promise<{ data: DraftVideo[] | null; error: any }>,

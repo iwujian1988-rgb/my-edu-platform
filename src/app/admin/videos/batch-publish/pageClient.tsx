@@ -35,6 +35,7 @@ import {
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { InlineThumbnailSelector } from '@/components/admin/InlineThumbnailSelector'
+import ImageUploadModal from '@/components/admin/ImageUploadModal'
 
 // ============================================
 // 类型定义
@@ -54,6 +55,8 @@ interface DraftVideo {
   creator_id: string | null
   video_url: string | null
   thumbnail_url: string | null
+  content_type: string | null
+  cover_url: string | null
   card_stats: {
     words: number
     expressions: number
@@ -180,6 +183,9 @@ export default function BatchPublishClient() {
 
   // 封面选择器状态（内嵌模式）
   const [activeThumbnailSelector, setActiveThumbnailSelector] = useState<string | null>(null) // 当前展开的视频ID
+
+  // 封面图上传弹窗状态
+  const [coverUploadVideoId, setCoverUploadVideoId] = useState<string | null>(null)
 
   // 重新上传内容状态
   const [reuploadingVideoId, setReuploadingVideoId] = useState<string | null>(null)
@@ -1126,14 +1132,14 @@ export default function BatchPublishClient() {
                                 {/* 封面选择 */}
                                 <div>
                                   <label className="block text-xs text-gray-500 dark:text-gray-400 mb-1">
-                                    🖼️ 视频封面
+                                    🖼️ 封面图
                                   </label>
                                   <div className="flex items-center gap-3">
                                     {/* 封面预览 */}
                                     <div className="w-32 h-18 rounded border-2 border-gray-200 dark:border-gray-600 overflow-hidden bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
-                                      {video.thumbnail_url ? (
+                                      {(video.cover_url || video.thumbnail_url) ? (
                                         <img
-                                          src={video.thumbnail_url}
+                                          src={video.cover_url || video.thumbnail_url || ''}
                                           alt="封面"
                                           className="w-full h-full object-cover"
                                         />
@@ -1141,25 +1147,35 @@ export default function BatchPublishClient() {
                                         <ImageIcon className="w-8 h-8 text-gray-400" />
                                       )}
                                     </div>
-                                    <div className="flex-1">
+                                    <div className="flex-1 flex flex-col gap-2">
+                                      {/* 上传封面按钮（所有类型可用） */}
                                       <button
                                         onClick={(e) => {
                                           e.stopPropagation()
-                                          toggleThumbnailSelector(video)
+                                          setCoverUploadVideoId(video.id)
                                         }}
-                                        disabled={!video.video_url}
-                                        className={cn(
-                                          "px-3 py-1.5 text-sm font-medium rounded border-2 transition-all",
-                                          video.video_url
-                                            ? "bg-blue-100 text-blue-700 border-blue-300 hover:bg-blue-200"
-                                            : "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
-                                        )}
+                                        className="px-3 py-1.5 text-sm font-medium rounded border-2 bg-[#B4F416] text-black border-black hover:bg-[#c5f74d] transition-all"
                                       >
-                                        {video.video_url ? '从视频提取封面' : '无视频文件'}
+                                        上传封面
                                       </button>
-                                      <p className="text-xs text-gray-400 mt-1">
-                                        {video.thumbnail_url ? '点击更换封面' : '从视频中选择一帧作为封面'}
-                                      </p>
+                                      {/* 从视频提取封面按钮（仅视频类型） */}
+                                      {video.content_type !== 'audio' && (
+                                        <button
+                                          onClick={(e) => {
+                                            e.stopPropagation()
+                                            toggleThumbnailSelector(video)
+                                          }}
+                                          disabled={!video.video_url}
+                                          className={cn(
+                                            "px-3 py-1.5 text-sm font-medium rounded border-2 transition-all",
+                                            video.video_url
+                                              ? "bg-blue-100 text-blue-700 border-blue-300 hover:bg-blue-200"
+                                              : "bg-gray-100 text-gray-400 border-gray-200 cursor-not-allowed"
+                                          )}
+                                        >
+                                          {video.video_url ? '从视频提取封面' : '无视频文件'}
+                                        </button>
+                                      )}
                                     </div>
                                   </div>
 
@@ -1423,6 +1439,35 @@ export default function BatchPublishClient() {
       </div>
     </div>
 
+      {/* 封面图上传弹窗（全局单例，按 videoId 区分） */}
+      {coverUploadVideoId && (
+        <ImageUploadModal
+          isOpen={true}
+          onClose={() => setCoverUploadVideoId(null)}
+          onConfirm={(url) => {
+            const targetVideo = videos.find(v => v.id === coverUploadVideoId)
+            if (targetVideo) {
+              // 更新 cover_url（音频类型优先），视频类型也支持
+              setVideos(prev => prev.map(v =>
+                v.id === coverUploadVideoId
+                  ? { ...v, cover_url: url, thumbnail_url: v.thumbnail_url || url }
+                  : v
+              ))
+              // 持久化到数据库
+              fetch('/api/admin/videos/batch-publish', {
+                method: 'PATCH',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                  video_id: coverUploadVideoId,
+                  updates: { cover_url: url, thumbnail_url: targetVideo.thumbnail_url || url },
+                }),
+              }).catch(() => {})
+            }
+            setCoverUploadVideoId(null)
+          }}
+          currentImageUrl={videos.find(v => v.id === coverUploadVideoId)?.cover_url || videos.find(v => v.id === coverUploadVideoId)?.thumbnail_url || ''}
+        />
+      )}
   </>
   )
 }

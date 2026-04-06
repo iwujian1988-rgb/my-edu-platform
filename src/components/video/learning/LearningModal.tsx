@@ -33,6 +33,7 @@ import {
   ChevronDown,
   ChevronUp,
   Loader2,
+  Headphones,
 } from 'lucide-react'
 import type {
   Video,
@@ -116,6 +117,13 @@ export function LearningModal({
 
   // 视频状态
   const videoRef = useRef<HTMLVideoElement>(null)
+  const audioRef = useRef<HTMLAudioElement>(null)
+  const isAudioContent = video.content_type === 'audio'
+    || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(video.video_url || '')
+  // 统一的 media 元素 ref，根据内容类型指向 video 或 audio
+  const mediaRef = isAudioContent
+    ? audioRef as React.MutableRefObject<HTMLVideoElement | HTMLAudioElement | null>
+    : videoRef as React.MutableRefObject<HTMLVideoElement | HTMLAudioElement | null>
   const timeUpdateHandlerRef = useRef<(() => void) | null>(null)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [videoCurrentTime, setVideoCurrentTime] = useState(0)
@@ -125,13 +133,13 @@ export function LearningModal({
   useEffect(() => {
     return () => {
       // 清理 timeupdate 监听器
-      if (timeUpdateHandlerRef.current && videoRef.current) {
-        videoRef.current.removeEventListener('timeupdate', timeUpdateHandlerRef.current)
+      if (timeUpdateHandlerRef.current && mediaRef.current) {
+        mediaRef.current.removeEventListener('timeupdate', timeUpdateHandlerRef.current)
         timeUpdateHandlerRef.current = null
       }
       // 暂停视频
-      if (videoRef.current) {
-        videoRef.current.pause()
+      if (mediaRef.current) {
+        mediaRef.current.pause()
       }
     }
   }, [])
@@ -140,13 +148,13 @@ export function LearningModal({
   useEffect(() => {
     if (!open) {
       // 清理 timeupdate 监听器
-      if (timeUpdateHandlerRef.current && videoRef.current) {
-        videoRef.current.removeEventListener('timeupdate', timeUpdateHandlerRef.current)
+      if (timeUpdateHandlerRef.current && mediaRef.current) {
+        mediaRef.current.removeEventListener('timeupdate', timeUpdateHandlerRef.current)
         timeUpdateHandlerRef.current = null
       }
       // 暂停视频
-      if (videoRef.current) {
-        videoRef.current.pause()
+      if (mediaRef.current) {
+        mediaRef.current.pause()
         setIsVideoPlaying(false)
       }
     }
@@ -194,52 +202,52 @@ export function LearningModal({
     [onStatusChange]
   )
 
-  // 视频控制
+  // 视频/音频控制
   const toggleVideoPlay = useCallback(() => {
-    const videoEl = videoRef.current
-    if (!videoEl) return
+    const mediaEl = mediaRef.current
+    if (!mediaEl) return
 
     if (isVideoPlaying) {
-      videoEl.pause()
+      mediaEl.pause()
     } else {
-      videoEl.play()
+      mediaEl.play()
     }
   }, [isVideoPlaying])
 
-  // 视频时间更新
+  // 视频/音频时间更新
   const handleVideoTimeUpdate = useCallback(() => {
-    const videoEl = videoRef.current
-    if (!videoEl) return
-    setVideoCurrentTime(videoEl.currentTime)
-    onVideoTimeUpdate?.(videoEl.currentTime)
+    const mediaEl = mediaRef.current
+    if (!mediaEl) return
+    setVideoCurrentTime(mediaEl.currentTime)
+    onVideoTimeUpdate?.(mediaEl.currentTime)
   }, [onVideoTimeUpdate])
 
-  // 跳转视频并播放指定片段
+  // 跳转视频/音频并播放指定片段
   const handleJumpToTime = useCallback((startTime: number, endTime?: number) => {
-    const videoEl = videoRef.current
-    if (!videoEl) return
+    const mediaEl = mediaRef.current
+    if (!mediaEl) return
 
     // 清理之前的监听器
     if (timeUpdateHandlerRef.current) {
-      videoEl.removeEventListener('timeupdate', timeUpdateHandlerRef.current)
+      mediaEl.removeEventListener('timeupdate', timeUpdateHandlerRef.current)
       timeUpdateHandlerRef.current = null
     }
 
     // 跳转并播放
-    videoEl.currentTime = startTime
-    videoEl.play()
+    mediaEl.currentTime = startTime
+    mediaEl.play()
 
     // 如果有结束时间，到达后暂停
     if (endTime && endTime > startTime) {
       const handleTimeUpdate = () => {
-        if (videoEl.currentTime >= endTime) {
-          videoEl.pause()
-          videoEl.removeEventListener('timeupdate', handleTimeUpdate)
+        if (mediaEl.currentTime >= endTime) {
+          mediaEl.pause()
+          mediaEl.removeEventListener('timeupdate', handleTimeUpdate)
           timeUpdateHandlerRef.current = null
         }
       }
       timeUpdateHandlerRef.current = handleTimeUpdate
-      videoEl.addEventListener('timeupdate', handleTimeUpdate)
+      mediaEl.addEventListener('timeupdate', handleTimeUpdate)
     }
   }, [])
 
@@ -288,9 +296,52 @@ export function LearningModal({
         <div className="flex flex-1 min-h-0 overflow-hidden">
           {/* 左侧：视频 + 地道表达 */}
           <div className="w-[45%] flex flex-col shrink-0 border-r-[3px] border-black dark:border-gray-600">
-            {/* 视频区域 */}
-            <div className="relative bg-gray-900 aspect-video shrink-0">
-              {video.video_url ? (
+            {/* 视频/音频区域 */}
+            <div className="relative bg-gray-900 aspect-video shrink-0 overflow-hidden">
+              {isAudioContent ? (
+                <>
+                  {/* 音频：隐藏 audio 元素 + 封面视觉 */}
+                  <audio
+                    ref={audioRef as React.RefObject<HTMLAudioElement>}
+                    src={video.video_url}
+                    onTimeUpdate={handleVideoTimeUpdate}
+                    onPlay={() => setIsVideoPlaying(true)}
+                    onPause={() => setIsVideoPlaying(false)}
+                    onLoadedMetadata={(e) => {
+                      const el = e.currentTarget
+                      setVideoDuration(el.duration)
+                      if (initialVideoPosition > 0) {
+                        el.currentTime = initialVideoPosition
+                      }
+                    }}
+                  />
+                  {/* Apple Music 风格封面背景 */}
+                  {(() => {
+                    const coverSrc = video.cover_url || video.thumbnail_url
+                    return coverSrc ? (
+                      <div className="absolute inset-0">
+                        <img src={coverSrc} alt="" className="absolute inset-0 w-full h-full object-cover"
+                          style={{ transform: 'scale(1.6)', filter: 'blur(60px) saturate(2.5) brightness(0.7) contrast(1.1)' }} />
+                        <div className="absolute inset-0 backdrop-blur-[20px]" style={{ backgroundColor: 'rgba(0,0,0,0.15)' }} />
+                        <div className="absolute inset-0" style={{
+                          background: 'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.3) 70%, rgba(0,0,0,0.5) 100%)',
+                        }} />
+                        <div className="absolute inset-0" style={{
+                          background: 'linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.4) 80%, rgba(0,0,0,0.6) 100%)',
+                        }} />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div className="rounded-xl overflow-hidden border border-white/10 w-28 h-28 shadow-[0_4px_20px_rgba(0,0,0,0.4)]"
+                            style={{ backgroundImage: `url(${coverSrc})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+                        </div>
+                      </div>
+                    ) : (
+                      <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-gray-900 via-gray-950 to-black">
+                        <Headphones className="w-16 h-16 text-white/20" />
+                      </div>
+                    )
+                  })()}
+                </>
+              ) : video.video_url ? (
                 <video
                   ref={videoRef}
                   src={video.video_url}
@@ -323,9 +374,9 @@ export function LearningModal({
                   onClick={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect()
                     const ratio = (e.clientX - rect.left) / rect.width
-                    const videoEl = videoRef.current
-                    if (videoEl && videoDuration) {
-                      videoEl.currentTime = ratio * videoDuration
+                    const mediaEl = mediaRef.current
+                    if (mediaEl && videoDuration) {
+                      mediaEl.currentTime = ratio * videoDuration
                     }
                   }}
                   onMouseDown={(e) => {
@@ -334,9 +385,9 @@ export function LearningModal({
                     const seek = (clientX: number) => {
                       const rect = bar.getBoundingClientRect()
                       const ratio = Math.max(0, Math.min(1, (clientX - rect.left) / rect.width))
-                      const videoEl = videoRef.current
-                      if (videoEl && videoDuration) {
-                        videoEl.currentTime = ratio * videoDuration
+                      const mediaEl = mediaRef.current
+                      if (mediaEl && videoDuration) {
+                        mediaEl.currentTime = ratio * videoDuration
                       }
                     }
                     seek(e.clientX)

@@ -9,7 +9,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
-import type { VideoLanguage, VideoDifficulty, VideoListResponse } from '@/types/video'
+import type { VideoLanguage, VideoDifficulty, VideoListResponse, ContentType } from '@/types/video'
 
 const DEFAULT_LIMIT = 20
 const MAX_LIMIT = 100
@@ -197,33 +197,53 @@ export async function GET(request: NextRequest) {
       }
     }
 
+    // 7.5 批量获取 UP主头像（用于无封面时的兜底）
+    const creatorAvatarMap = new Map<string, string>()
+    const uniqueCreatorNames = [...new Set(rows.map(r => r.creator_name).filter(Boolean))] as string[]
+    if (uniqueCreatorNames.length > 0) {
+      const { data: creatorRows } = await supabase
+        .from('upstream_creators')
+        .select('name, avatar_url')
+        .in('name', uniqueCreatorNames)
+      if (creatorRows) {
+        for (const c of creatorRows as Array<{ name: string; avatar_url: string | null }>) {
+          if (c.avatar_url) creatorAvatarMap.set(c.name, c.avatar_url)
+        }
+      }
+    }
+
     // 8. 构建响应（tag_names 已在 SQL 中聚合，无需前端处理）
-    const items = rows.map(row => ({
-      id: row.id,
-      title: row.title,
-      description: row.description,
-      thumbnail_url: row.thumbnail_url,
-      video_url: row.video_url,
-      duration: row.duration,
-      language: row.language,
-      difficulty: row.difficulty,
-      content_type: row.content_type || 'video',
-      cover_url: row.cover_url || null,
-      status: row.status,
-      display_order: row.display_order,
-      creator_name: row.creator_name,
-      source_url: row.source_url,
-      view_count: row.view_count,
-      learning_date: row.learning_date,
-      created_at: row.created_at,
-      published_at: row.published_at,
-      updated_at: row.updated_at,
-      package_ids: row.package_ids,
-      tags: row.tag_names,
-      packages: row.package_ids?.map(id => packageNameMap.get(id)).filter(Boolean) || [],
-      user_progress: userProgress[row.id] || null,
-      has_access: hasVideoPermission || (userPackageIds.length > 0 ? row.package_ids?.some(pid => userPackageIds.includes(pid)) : false),
-    }))
+    const items = rows.map(row => {
+      const creatorAvatar = row.creator_name ? creatorAvatarMap.get(row.creator_name) : undefined
+      return {
+        id: row.id,
+        title: row.title,
+        description: row.description,
+        thumbnail_url: row.thumbnail_url,
+        video_url: row.video_url,
+        duration: row.duration,
+        language: row.language,
+        difficulty: row.difficulty,
+        content_type: row.content_type === 'audio' || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(row.video_url || '')
+          ? 'audio'
+          : (row.content_type || 'video'),
+        cover_url: row.cover_url || row.thumbnail_url || creatorAvatar || null,
+        status: row.status,
+        display_order: row.display_order,
+        creator_name: row.creator_name,
+        source_url: row.source_url,
+        view_count: row.view_count,
+        learning_date: row.learning_date,
+        created_at: row.created_at,
+        published_at: row.published_at,
+        updated_at: row.updated_at,
+        package_ids: row.package_ids,
+        tags: row.tag_names,
+        packages: row.package_ids?.map(id => packageNameMap.get(id)).filter(Boolean) || [],
+        user_progress: userProgress[row.id] || null,
+        has_access: hasVideoPermission || (userPackageIds.length > 0 ? row.package_ids?.some(pid => userPackageIds.includes(pid)) : false),
+      }
+    })
 
     return NextResponse.json({
       success: true,

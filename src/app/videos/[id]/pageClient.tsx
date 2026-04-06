@@ -106,6 +106,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const mainAudioRef = useRef<HTMLAudioElement>(null)
 
   const isAudioContent = data.video.content_type === 'audio'
+    || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(data.video.video_url || '')
+
+  // 音频内容兜底封面：cover_url → thumbnail_url → creator 头像
+  if (isAudioContent && !data.video.cover_url && !data.video.thumbnail_url && data.creator?.avatar_url) {
+    data.video.cover_url = data.creator.avatar_url
+  }
 
   // PC端左侧高度 ref（用于右侧对齐）
   const leftColumnRef = useRef<HTMLDivElement>(null)
@@ -451,6 +457,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                     segmentEndTime={segmentEndTime}
                     pause={pauseMainVideo}
                     audioRefOut={mainAudioRef}
+                    fallbackImageUrl={data.creator?.avatar_url || undefined}
                   />
                 ) : (
                   <VideoPlayer
@@ -692,6 +699,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 if (audioEl) audioEl.currentTime = time
               }}
               onExpand={exitPipMode}
+              fallbackImageUrl={data.creator?.avatar_url || undefined}
             />
           ) : (
             <DraggablePIP
@@ -746,6 +754,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
                     pause={pauseMainVideo}
+                    fallbackImageUrl={data.creator?.avatar_url || undefined}
                   />
                 ) : (
                   <VideoPlayer
