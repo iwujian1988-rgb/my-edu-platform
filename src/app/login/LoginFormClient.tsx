@@ -85,7 +85,7 @@ export default function LoginFormClient() {
         return
       }
 
-      // 检查用户是否有视频权限，有则弹层让用户选择进入哪个产品
+      // 检查用户权限，决定登录后跳转
       // 统一走服务端 API，避免 RLS 问题和判断逻辑不一致
       try {
         const permRes = await fetch('/api/auth/check-permissions', {
@@ -96,18 +96,32 @@ export default function LoginFormClient() {
         if (permRes.ok) {
           const permData = await permRes.json()
           console.log('[Login] 权限查询结果:', permData)
-          if (permData.has_video) {
-            console.log('[Login] 用户有视频权限，弹出产品选择')
+
+          if (permData.has_video && permData.has_books) {
+            // 有视频 + 有单词书 → 弹二选一
+            console.log('[Login] 用户拥有视频+单词书权限，弹出产品选择')
             setShowProductPicker(true)
             setLoading(false)
             return
           }
+
+          if (permData.has_video && !permData.has_books) {
+            // 只有视频权限 → 直接进 MAXTube
+            console.log('[Login] 用户仅有视频权限，跳转 MAXTube')
+            window.location.href = '/videos'
+            return
+          }
+
+          // 无视频权限 → 进 MAX笔记
+          console.log('[Login] 跳转到首页')
+          window.location.href = '/'
+          return
         }
       } catch (permErr) {
         console.warn('[Login] 权限查询失败，直接进首页:', permErr)
       }
 
-      // 无视频权限，直接进 MAX笔记
+      // API 失败兜底：直接进 MAX笔记
       console.log('[Login] 跳转到首页')
       window.location.href = '/'
     } catch (err: unknown) {

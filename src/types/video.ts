@@ -900,10 +900,59 @@ export interface BatchUploadResponse {
 // 扩展的 VideoFullResponse
 // --------------------------------------------
 
+/** 练习答题进度（服务端预取格式） */
+export interface ExerciseProgressEntry {
+  exerciseId: string
+  isCorrect: boolean
+  attempts: number
+}
+
 /** 完整视频响应（包含新增的学习内容） */
 export interface VideoFullResponseExtended extends VideoFullResponse {
   grammar_points: VideoGrammarPoint[]
   pronunciation_tips: VideoPronunciationTip[]
   vocabulary_network: VideoVocabularyNetwork | null
   creator?: UpstreamCreator | null  // 关联的 UP主信息
+  exerciseProgress?: ExerciseProgressEntry[]  // 用户答题记录（预取）
 }
+
+// ============================================
+// 播客专区 + 播主详情类型
+// ============================================
+
+/** 播客专区：播主卡片数据 */
+export interface PodcastCreatorListItem {
+  id: string
+  name: string
+  avatar_url: string | null
+  description: string | null
+  platform: CreatorPlatform | null
+  audio_count: number
+  latest_covers: string[]
+}
+
+/** 播主详情：播主信息 */
+export interface CreatorInfo {
+  id: string
+  name: string
+  avatar_url: string | null
+  description: string | null
+  platform: CreatorPlatform | null
+  platform_user_id: string | null
+  channel_url: string | null
+  follower_count: number
+  is_active: boolean
+  display_order: number
+  audio_count: number
+  video_count: number
+}
+
+/** 播主详情：内容列表项（复用 VideoListItem） */
+export interface CreatorContentResponse {
+  creator: CreatorInfo
+  items: VideoListItem[]
+  total: number
+}
+
+/** 播主详情排序方式 */
+export type CreatorSortMode = 'time' | 'episode'

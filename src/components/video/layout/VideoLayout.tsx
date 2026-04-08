@@ -98,26 +98,28 @@ export function VideoLayout({ children }: VideoLayoutProps) {
     }
   }, [])
 
-  // 判断是否为视频学习页（全屏播放）
+  // 判断是否为视频学习页（全屏播放）或播主详情页（沉浸式 banner）
   const isVideoLearningPage = pathname?.match(/^\/videos\/[^/]+$/)
+  const isCreatorPage = pathname?.match(/^\/videos\/creators\//)
+  const hideNav = isVideoLearningPage || isCreatorPage
 
   return (
     <div className="min-h-screen bg-background">
-      {/* 顶部导航 - 非全屏学习页时显示 */}
-      {!isVideoLearningPage && <VideoNav />}
+      {/* 顶部导航 - 沉浸式页面隐藏 */}
+      {!hideNav && <VideoNav />}
 
       {/* 主内容区 */}
       <main
         className={cn(
           'pb-20 md:pb-0', // 移动端留出底部导航空间
-          isVideoLearningPage && 'pb-0' // 学习页不需要底部空间
+          hideNav && 'pb-0' // 沉浸式页面不需要底部空间
         )}
       >
         {children}
       </main>
 
-      {/* 移动端底部导航 - 非全屏学习页时显示 */}
-      {!isVideoLearningPage && (
+      {/* 移动端底部导航 - 沉浸式页面隐藏 */}
+      {!hideNav && (
         <div className="md:hidden">
           <VideoMobileNav />
         </div>

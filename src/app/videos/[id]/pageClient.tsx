@@ -51,6 +51,7 @@ import { DraggableAudioPIP } from '@/components/video/DraggableAudioPIP'
 import { useVideoProgress } from '@/hooks/useVideoProgress'
 import { useCardProgress } from '@/hooks/useCardProgress'
 import { useVideoFavorites } from '@/hooks/useVideoFavorites'
+import { useExerciseProgress } from '@/hooks/useExerciseProgress'
 
 import type {
   VideoFullResponseExtended,
@@ -154,6 +155,10 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
   const { getCardStatus, updateStatus } = useCardProgress({ videoId })
   const { isFavorited, toggleFavorite } = useVideoFavorites({ videoId })
+  const { progressMap: exerciseProgressMap, recordAnswer: recordExerciseAnswer } = useExerciseProgress({
+    videoId,
+    initialData: data.exerciseProgress,
+  })
 
   // 视频时间更新
   const handleTimeUpdate = useCallback(
@@ -383,16 +388,6 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     [data?.cards]
   )
 
-  const handleCardStatusChange = useCallback(
-    async (status: 'known' | 'unknown' | 'learning') => {
-      if (!selectedCard) return
-
-      await updateStatus(selectedCard.type, selectedCard.card.id, status)
-      setSelectedCard(null)
-    },
-    [selectedCard, updateStatus]
-  )
-
   // 无权限
   if (!data.has_access) {
     return (
@@ -579,7 +574,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 </button>
                 <button onClick={() => handleTabChange('write')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'write' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
                   <Pen className="w-3.5 h-3.5" />
-                  听写
+                  练习
                 </button>
                 <button onClick={() => handleTabChange('learn')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'learn' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
                   <BookOpen className="w-3.5 h-3.5" />
@@ -641,7 +636,8 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           {currentTab === 'write' && (
             <FillBlankExercise
               exercises={exercises}
-              onCheckAnswer={() => {}}
+              progressMap={exerciseProgressMap}
+              onRecordAnswer={recordExerciseAnswer}
               onPlaySegment={(startTime: number, endTime: number) => {
                 setSegmentEndTime(endTime)
                 setSeekToTime(startTime)
@@ -903,7 +899,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                         跟读
                       </button>
                       <button onClick={() => setCurrentTab('write')} className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", currentTab === 'write' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}>
-                        听写
+                        练习
                       </button>
                       <button
                         onClick={() => {
@@ -962,7 +958,8 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                     <div className="p-4">
                       <FillBlankExercise
                         exercises={exercises}
-                        onCheckAnswer={() => {}}
+                        progressMap={exerciseProgressMap}
+                        onRecordAnswer={recordExerciseAnswer}
                         onPlaySegment={(startTime, endTime) => {
                           setSegmentEndTime(endTime)
                           setSeekToTime(startTime)
@@ -1018,10 +1015,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           card={selectedCard.card}
           cardType={selectedCard.type}
           videoLanguage={video.language}
-          videoId={videoId}
           onClose={() => setSelectedCard(null)}
-          onStatusChange={handleCardStatusChange}
-          currentStatus={getCardStatus(selectedCard.type, selectedCard.card.id)}
           position={selectedCard.position}
         />
       )}

@@ -25,6 +25,28 @@ async function getVideoBasicInfo(videoId: string) {
   return video
 }
 
+/** 查询用户在该视频下的答题记录（服务端预取，避免客户端二次请求） */
+async function fetchExerciseProgress(
+  supabase: Awaited<ReturnType<typeof createAdminClient>>,
+  userId: string,
+  exercises: Array<{ id: string }>
+): Promise<Array<{ exerciseId: string; isCorrect: boolean; attempts: number }>> {
+  const exerciseIds = exercises.map(e => e.id)
+  if (exerciseIds.length === 0) return []
+
+  const { data } = await supabase
+    .from('user_exercise_progress')
+    .select('exercise_id, is_correct, attempts')
+    .eq('user_id', userId)
+    .in('exercise_id', exerciseIds)
+
+  return (data || []).map(row => ({
+    exerciseId: row.exercise_id,
+    isCorrect: row.is_correct,
+    attempts: row.attempts,
+  }))
+}
+
 // 获取完整数据（流式加载）
 async function getVideoFullData(videoId: string, userId: string): Promise<VideoFullResponseExtended | null> {
   const supabase = await createAdminClient()
@@ -53,6 +75,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       difficulty_analysis: null,
       has_access: false,
       user_progress: null,
+      exerciseProgress: [],
     }
   }
 
@@ -256,6 +279,8 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     })
 
   // 5.5 转换练习数据格式（供 FillBlankExercise 组件使用）
+  const subtitleMap = new Map(subtitles.map(s => [s.id, s]))
+
   const transformedExercises = (exercisesResult.data || []).map((exercise) => {
     // 从 blank_positions 构建 text_with_blanks 和 answers
     const blankPositions = exercise.blank_positions as Array<{ start: number; end: number; word: string; hint?: string }> || []
@@ -291,11 +316,49 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       })
     }
 
+    // 关联字幕的播放时间和中文翻译
+    // 优先通过 subtitle_id 查找
+    let subtitle = exercise.subtitle_id ? subtitleMap.get(exercise.subtitle_id) : null
+
+    if (!subtitle && subtitles.length > 0) {
+      // 策略1: 用 answer_text 填充空位后，在字幕中查找包含关系
+      const answerText = (exercise as Record<string, unknown>).answer_text as string || ''
+      if (answerText && hasUnderscores) {
+        const filled = originalText.replace(/_+/g, answerText).toLowerCase().trim()
+        subtitle = subtitles.find(s => {
+          const subText = s.original_text?.toLowerCase().trim() || ''
+          return subText.includes(filled) || filled.includes(subText)
+        }) || null
+      }
+
+      // 策略2: 用时间匹配（exercise 表可能直接存了 subtitle_start_time）
+      if (!subtitle) {
+        const exStartTime = (exercise as Record<string, unknown>).subtitle_start_time as number | null
+        if (exStartTime != null) {
+          const TOLERANCE = 0.5
+          subtitle = subtitles.find(s =>
+            Math.abs(s.start_time - exStartTime) < TOLERANCE
+          ) || null
+        }
+      }
+    }
+
+    // 播放时间：优先用 exercise 自身的，其次用匹配到的字幕
+    const startTime = (exercise as Record<string, unknown>).subtitle_start_time as number | null
+      ?? subtitle?.start_time
+    const endTime = (exercise as Record<string, unknown>).subtitle_end_time as number | null
+      ?? subtitle?.end_time
+
     return {
       ...exercise,
       text_with_blanks: textWithBlanks,
       answers,
+      // hint 作为中文语境提示（如"指一个地理区域"、"国家名称"）
       explanation: blankPositions[0]?.hint || null,
+      subtitle_start_time: startTime,
+      subtitle_end_time: endTime,
+      // 优先用字幕翻译，没有则用 hint 兜底
+      translation: subtitle?.chinese_text || blankPositions[0]?.hint || null,
     }
   })
 
@@ -319,6 +382,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     pronunciation_tips: pronunciationTipsResult.data || [],
     vocabulary_network: vocabularyNetworkResult.data || null,
     creator: creatorResult.data || null,
+    exerciseProgress: await fetchExerciseProgress(supabase, userId, transformedExercises),
   }
 }
 

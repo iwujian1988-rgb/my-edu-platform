@@ -61,6 +61,19 @@ export function AudioPlayer({
   const pendingSeekRef = useRef<number | null>(null)
   const coverImageUrl = video.cover_url || video.thumbnail_url || fallbackImageUrl
 
+  // 设置 Media Session 元数据（iOS 锁屏播放器、Android 通知栏）
+  useEffect(() => {
+    if (!('mediaSession' in navigator)) return
+    navigator.mediaSession.metadata = new MediaMetadata({
+      title: video.title,
+      artist: video.creator_name || '未知作者',
+      album: 'MaxTube',
+      artwork: coverImageUrl
+        ? [{ src: coverImageUrl, sizes: '512x512', type: 'image/jpeg' }]
+        : [],
+    })
+  }, [video.title, video.creator_name, coverImageUrl])
+
   const handleSpeedChange = useCallback((speed: number) => {
     const el = audioRef.current
     if (!el) return
@@ -116,6 +129,24 @@ export function AudioPlayer({
     const el = audioRef.current; if (!el) return
     el.currentTime = Math.max(0, Math.min(t, duration))
   }, [duration])
+
+  // Media Session 播放控制（锁屏/通知栏按钮）
+  useEffect(() => {
+    if (!('mediaSession' in navigator)) return
+    navigator.mediaSession.setActionHandler('play', () => {
+      audioRef.current?.play()
+    })
+    navigator.mediaSession.setActionHandler('pause', () => {
+      const el = audioRef.current
+      if (el && !el.paused) { el.pause(); setIsPlaying(false) }
+    })
+    navigator.mediaSession.setActionHandler('seekbackward', () => {
+      seek(currentTime - SKIP_SECONDS)
+    })
+    navigator.mediaSession.setActionHandler('seekforward', () => {
+      seek(currentTime + SKIP_SECONDS)
+    })
+  }, [currentTime, seek])
 
   const handleVolumeChange = useCallback((v: number[]) => {
     const el = audioRef.current; if (!el) return

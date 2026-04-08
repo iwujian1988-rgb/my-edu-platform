@@ -3,11 +3,11 @@
 /**
  * 卡片掌握状态 Hook
  *
- * 对应 Tech: VIDEO_MODULE_TECH.md v5.0
- * 实现 SM-2 艾宾浩斯遗忘曲线算法
+ * SM-2 算法由服务端 /api/user/video-cards/review 实现
+ * 客户端只做乐观更新 + API 调用，不重复计算间隔
  */
 
-import { useState, useCallback, useMemo, useRef } from 'react'
+import { useCallback, useMemo, useRef } from 'react'
 import useSWR, { mutate as globalMutate } from 'swr'
 import { toast } from 'sonner'
 import type { CardType, CardStatus } from '@/types/video'
@@ -52,53 +52,6 @@ interface UseCardProgressResult {
     cardId: string,
     remembered: boolean
   ) => Promise<void>
-}
-
-// SM-2 算法参数
-const SM2_PARAMS = {
-  MIN_EASE_FACTOR: 1.3,
-  DEFAULT_EASE_FACTOR: 2.5,
-  EASE_FACTOR_DELTA: {
-    EASY: 0.1,
-    GOOD: 0,
-    HARD: -0.2,
-  },
-  INTERVALS: {
-    // 复习间隔（天）
-    FIRST: 1,
-    SECOND: 6,
-    EASY_BONUS: 1.3,
-  },
-}
-
-// 计算下次复习时间
-function calculateNextReview(
-  easeFactor: number,
-  reviewCount: number,
-  quality: number // 1=忘记, 2=一般, 3=简单 (客户端约定)
-): { nextReviewDays: number; newEaseFactor: number } {
-  let newEaseFactor =
-    easeFactor +
-    (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02))
-
-  newEaseFactor = Math.max(SM2_PARAMS.MIN_EASE_FACTOR, newEaseFactor)
-
-  let nextReviewDays: number
-
-  if (quality < 3) {
-    // 忘记了，重新开始
-    nextReviewDays = 1
-  } else if (reviewCount === 0) {
-    nextReviewDays = SM2_PARAMS.INTERVALS.FIRST
-  } else if (reviewCount === 1) {
-    nextReviewDays = SM2_PARAMS.INTERVALS.SECOND
-  } else {
-    nextReviewDays = Math.round(
-      SM2_PARAMS.INTERVALS.SECOND * newEaseFactor * Math.pow(1.5, reviewCount - 2)
-    )
-  }
-
-  return { nextReviewDays, newEaseFactor }
 }
 
 export function useCardProgress(
@@ -226,23 +179,11 @@ export function useCardProgress(
     })
   }, [progressMap])
 
-  // 记录闪卡结果
+  // 记录闪卡结果（SM-2 由服务端计算，客户端只负责发请求）
   const recordFlashcardResult = useCallback(
     async (cardType: CardType, cardId: string, remembered: boolean) => {
-      const key = `${cardType}:${cardId}`
-      const current = progressMap.get(key)
+      const quality = remembered ? 3 : 1 // 3=简单，1=忘记
 
-      const quality = remembered ? 3 : 1 // 3=简单，1=忘记 (客户端约定)
-      const { nextReviewDays, newEaseFactor } = calculateNextReview(
-        current?.ease_factor || SM2_PARAMS.DEFAULT_EASE_FACTOR,
-        current?.review_count || 0,
-        quality
-      )
-
-      const nextReviewAt = new Date()
-      nextReviewAt.setDate(nextReviewAt.getDate() + nextReviewDays)
-
-      // 调用 API 更新
       try {
         const response = await fetch('/api/user/video-cards/review', {
           method: 'POST',
@@ -264,14 +205,14 @@ export function useCardProgress(
           throw new Error(`API error: ${response.status}`)
         }
 
-        // 刷新本地缓存
+        // 刷新本地缓存（从服务端拿到最新的 next_review_at 等字段）
         mutate()
       } catch (error) {
         console.error('[recordFlashcardResult] Network error:', error)
         throw error
       }
     },
-    [progressMap, videoId, mutate]
+    [videoId, mutate]
   )
 
   return {

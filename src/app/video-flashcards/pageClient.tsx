@@ -42,12 +42,12 @@ const CARD_TYPE_LABELS: Record<CardType, { label: string; icon: React.ElementTyp
   expression: { label: '惯用语', icon: Sparkles, color: 'bg-orange-100' },
 }
 
-// 评分配置
+// 评分配置（subLabel 在组件内根据服务端返回动态生成）
 const REVIEW_OPTIONS = [
   {
     quality: 1,
     label: '忘记',
-    subLabel: '1天后再见',
+    defaultSubLabel: '1天后再见',
     color: 'bg-red-100 hover:bg-red-200 border-red-400',
     textColor: 'text-red-600',
     swipe: 'left' as const,
@@ -55,7 +55,7 @@ const REVIEW_OPTIONS = [
   {
     quality: 2,
     label: '一般',
-    subLabel: '3天后',
+    defaultSubLabel: '几天后',
     color: 'bg-yellow-100 hover:bg-yellow-200 border-yellow-400',
     textColor: 'text-yellow-600',
     swipe: 'down' as const,
@@ -63,7 +63,7 @@ const REVIEW_OPTIONS = [
   {
     quality: 3,
     label: '简单',
-    subLabel: '7天后',
+    defaultSubLabel: '一周后',
     color: 'bg-green-100 hover:bg-green-200 border-green-400',
     textColor: 'text-green-600',
     swipe: 'right' as const,
@@ -226,7 +226,7 @@ export function VideoFlashcardsClient() {
 
       // 🚀 乐观更新：立即更新 UI
       setReviewedCount((c) => c + 1)
-      if (quality >= 2) {
+      if (quality >= 3) {
         setCorrectCount((c) => c + 1)
       }
 
@@ -777,7 +777,7 @@ export function VideoFlashcardsClient() {
                         <span className={cn('text-sm font-black', option.textColor)}>
                           {option.label}
                         </span>
-                        <span className="text-[10px] text-gray-500 mt-0.5">{option.subLabel}</span>
+                        <span className="text-[10px] text-gray-500 mt-0.5">{option.defaultSubLabel}</span>
                       </button>
                     ))}
                   </div>

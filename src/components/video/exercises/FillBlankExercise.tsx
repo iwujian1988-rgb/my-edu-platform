@@ -6,12 +6,12 @@
  * - intermediate: 2-3个空，显示首尾字母提示
  * - advanced: 完整听写，无提示
  *
- * 样式：Neo-brutalism 风格，与全站保持一致
+ * v2: 每空独立输入框 + 进度持久化 + 完成总结
  */
 
 'use client'
 
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useMemo, useRef } from 'react'
 import { cn } from '@/lib/utils'
 import {
   Check,
@@ -23,8 +23,11 @@ import {
   Target,
   Zap,
   Play,
+  Trophy,
+  RefreshCw,
 } from 'lucide-react'
 import type { VideoExercise, ExerciseDifficulty } from '@/types/video'
+import type { ExerciseProgressItem } from '@/hooks/useExerciseProgress'
 
 // 难度配置 - Neo-brutalism 风格
 const DIFFICULTY_CONFIG: Record<ExerciseDifficulty, {
@@ -53,30 +56,39 @@ const DIFFICULTY_CONFIG: Record<ExerciseDifficulty, {
   },
 }
 
-interface FillBlankExerciseProps {
+export interface FillBlankExerciseProps {
   exercises: VideoExercise[]
-  onCheckAnswer: (exerciseId: string, answer: string) => void
-  onPlaySegment?: (startTime: number, endTime: number) => void  // 播放按钮回调（开始+结束时间)
+  progressMap: Map<string, ExerciseProgressItem> | null
+  onRecordAnswer: (exerciseId: string, isCorrect: boolean) => void
+  onPlaySegment?: (startTime: number, endTime: number) => void
 }
 
-interface ExerciseState {
-  exerciseId: string
+/** 每个空位的本地状态 */
+interface BlankState {
   userAnswer: string
-  isSubmitted: boolean
-  isCorrect: boolean | null
+  submitted: boolean
+  correct: boolean | null  // null=未提交
 }
+
+/** 每道题的本地状态，key 是 exerciseId */
+type LocalExerciseState = Map<string, {
+  blanks: BlankState[]
+  submitted: boolean
+}>
 
 export function FillBlankExercise({
   exercises,
-  onCheckAnswer,
+  progressMap,
+  onRecordAnswer,
   onPlaySegment,
 }: FillBlankExerciseProps) {
   const [selectedDifficulty, setSelectedDifficulty] = useState<ExerciseDifficulty | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const [exerciseStates, setExerciseStates] = useState<Map<string, ExerciseState>>(
-    () => new Map()
-  )
+  const [localStates, setLocalStates] = useState<LocalExerciseState>(() => new Map())
   const [showHint, setShowHint] = useState(false)
+  const [showSummary, setShowSummary] = useState(false)
+  const [resettedIds, setResettedIds] = useState<Set<string>>(new Set())
+  const inputRefs = useRef<Map<string, HTMLInputElement>>(new Map())
 
   // 按难度筛选练习题
   const filteredExercises = useMemo(() => {
@@ -98,80 +110,213 @@ export function FillBlankExercise({
   }, [exercises])
 
   const currentExercise = filteredExercises[currentIndex]
-  const currentState = currentExercise
-    ? exerciseStates.get(currentExercise.id)
-    : null
+
+  // 获取当前题目的本地状态，如果不存在则初始化
+  const getCurrentLocalState = useCallback((exercise: VideoExercise) => {
+    const existing = localStates.get(exercise.id)
+    if (existing) return existing
+
+    const blankCount = exercise.answers?.length || 1
+
+    // 被重置过的题、或无持久化记录 → 显示为未答
+    const persisted = resettedIds.has(exercise.id) ? null : progressMap?.get(exercise.id)
+
+    if (persisted) {
+      // 已有持久化记录，标记为已完成
+      const blanks: BlankState[] = Array.from({ length: blankCount }, () => ({
+        userAnswer: '',
+        submitted: true,
+        correct: persisted.isCorrect ? true : false,
+      }))
+      return { blanks, submitted: true }
+    }
+
+    return {
+      blanks: Array.from({ length: blankCount }, () => ({
+        userAnswer: '',
+        submitted: false,
+        correct: null,
+      })),
+      submitted: false,
+    }
+  }, [localStates, progressMap, resettedIds])
+
+  // 判断某道题是否已完成（持久化或本地，排除已被重置的）
+  const isExerciseCompleted = useCallback((exerciseId: string) => {
+    if (resettedIds.has(exerciseId)) return false
+    if (progressMap?.has(exerciseId)) return true
+    const local = localStates.get(exerciseId)
+    return local?.submitted === true
+  }, [progressMap, localStates, resettedIds])
+
+  // 统计某难度下的完成情况
+  const difficultyStats = useMemo(() => {
+    if (!selectedDifficulty) return { completed: 0, correct: 0, total: 0 }
+
+    const total = filteredExercises.length
+    let completed = 0
+    let correct = 0
+
+    filteredExercises.forEach((e) => {
+      if (isExerciseCompleted(e.id)) {
+        completed++
+        const progress = progressMap?.get(e.id)
+        const local = localStates.get(e.id)
+        if (progress?.isCorrect || local?.blanks.every(b => b.correct === true)) {
+          correct++
+        }
+      }
+    })
+
+    return { completed, correct, total }
+  }, [selectedDifficulty, filteredExercises, isExerciseCompleted, progressMap, localStates, resettedIds])
 
   // 选择难度
   const handleSelectDifficulty = useCallback((difficulty: ExerciseDifficulty) => {
     setSelectedDifficulty(difficulty)
     setCurrentIndex(0)
-    setExerciseStates(new Map())
+    setLocalStates(new Map())
+    setResettedIds(new Set())
     setShowHint(false)
+    setShowSummary(false)
   }, [])
 
-  // 更新答案
-  const handleAnswerChange = useCallback((answer: string) => {
+  // 更新某个空位的输入
+  const handleBlankChange = useCallback(
+    (exerciseId: string, blankIndex: number, value: string) => {
+      setLocalStates((prev) => {
+        const newMap = new Map(prev)
+        const state = newMap.get(exerciseId) || {
+          blanks: Array.from({ length: blankIndex + 1 }, () => ({
+            userAnswer: '',
+            submitted: false,
+            correct: null as boolean | null,
+          })),
+          submitted: false,
+        }
+
+        // 确保 blanks 数组足够长
+        while (state.blanks.length <= blankIndex) {
+          state.blanks.push({ userAnswer: '', submitted: false, correct: null })
+        }
+
+        const newBlanks = [...state.blanks]
+        newBlanks[blankIndex] = { ...newBlanks[blankIndex], userAnswer: value }
+        newMap.set(exerciseId, { ...state, blanks: newBlanks })
+        return newMap
+      })
+    },
+    []
+  )
+
+  // 提交当前题目的答案
+  const handleSubmit = useCallback(() => {
     if (!currentExercise) return
 
-    setExerciseStates((prev) => {
-      const newMap = new Map(prev)
-      newMap.set(currentExercise.id, {
-        exerciseId: currentExercise.id,
-        userAnswer: answer,
-        isSubmitted: false,
-        isCorrect: null,
-      })
-      return newMap
+    const state = getCurrentLocalState(currentExercise)
+    const answers = currentExercise.answers || []
+
+    // 判定每个空位
+    const newBlanks = state.blanks.map((blank, index) => {
+      const correctAnswer = answers[index] || ''
+      const isCorrect = blank.userAnswer.trim().toLowerCase() === correctAnswer.toLowerCase()
+      return { ...blank, submitted: true, correct: isCorrect }
     })
-  }, [currentExercise])
 
-  // 提交答案
-  const handleSubmit = useCallback(() => {
-    if (!currentExercise || !currentState) return
+    const allCorrect = newBlanks.every((b) => b.correct === true)
 
-    const isCorrect = currentState.userAnswer
-      .toLowerCase()
-      .trim()
-      .split(',')
-      .map((a) => a.trim())
-      .every((answer, index) => {
-        const correctAnswer = currentExercise.answers[index]
-        return answer === correctAnswer.toLowerCase()
-      })
-
-    setExerciseStates((prev) => {
+    setLocalStates((prev) => {
       const newMap = new Map(prev)
-      newMap.set(currentExercise.id, {
-        ...currentState,
-        isSubmitted: true,
-        isCorrect,
-      })
+      newMap.set(currentExercise.id, { blanks: newBlanks, submitted: true })
       return newMap
     })
 
-    onCheckAnswer(currentExercise.id, currentState.userAnswer)
-  }, [currentExercise, currentState, onCheckAnswer])
+    // 持久化到后端
+    onRecordAnswer(currentExercise.id, allCorrect)
+  }, [currentExercise, getCurrentLocalState, onRecordAnswer])
 
-  // 重置当前练习
+  // 重置当前题目
   const handleReset = useCallback(() => {
     if (!currentExercise) return
-
-    setExerciseStates((prev) => {
+    setLocalStates((prev) => {
       const newMap = new Map(prev)
       newMap.delete(currentExercise.id)
       return newMap
     })
+    setResettedIds((prev) => new Set(prev).add(currentExercise.id))
     setShowHint(false)
   }, [currentExercise])
 
+  // 重做错题：跳转到第一道未答对的题目
+  const handleRedoWrong = useCallback(() => {
+    const wrongIds = new Set<string>()
+    const wrongIndex = filteredExercises.findIndex((e) => {
+      const progress = progressMap?.get(e.id)
+      if (!progress) return false
+      if (!progress.isCorrect) {
+        wrongIds.add(e.id)
+        return true
+      }
+      return false
+    })
+    if (wrongIndex >= 0) {
+      setLocalStates((prev) => {
+        const newMap = new Map(prev)
+        wrongIds.forEach(id => newMap.delete(id))
+        return newMap
+      })
+      setResettedIds((prev) => {
+        const next = new Set(prev)
+        wrongIds.forEach(id => next.add(id))
+        return next
+      })
+      setCurrentIndex(wrongIndex)
+      setShowSummary(false)
+    }
+  }, [filteredExercises, progressMap])
+
+  // 重新开始当前难度所有题目
+  const handleRedoAll = useCallback(() => {
+    setLocalStates(new Map())
+    // 将所有当前难度的题标记为已重置
+    setResettedIds((prev) => {
+      const next = new Set(prev)
+      filteredExercises.forEach(e => next.add(e.id))
+      return next
+    })
+    setCurrentIndex(0)
+    setShowSummary(false)
+    setShowHint(false)
+  }, [filteredExercises])
+
   // 下一题
   const handleNext = useCallback(() => {
-    if (currentIndex < filteredExercises.length - 1) {
-      setCurrentIndex(currentIndex + 1)
-      setShowHint(false)
+    // 检查是否所有题都已完成
+    const allDone = filteredExercises.every((e) => isExerciseCompleted(e.id))
+    if (allDone) {
+      setShowSummary(true)
+      return
     }
-  }, [currentIndex, filteredExercises.length])
+
+    // 找下一道未完成的题
+    for (let i = currentIndex + 1; i < filteredExercises.length; i++) {
+      if (!isExerciseCompleted(filteredExercises[i].id)) {
+        setCurrentIndex(i)
+        setShowHint(false)
+        return
+      }
+    }
+    // 如果后面没有了，从头找
+    for (let i = 0; i < currentIndex; i++) {
+      if (!isExerciseCompleted(filteredExercises[i].id)) {
+        setCurrentIndex(i)
+        setShowHint(false)
+        return
+      }
+    }
+    // 全部完成
+    setShowSummary(true)
+  }, [currentIndex, filteredExercises, isExerciseCompleted])
 
   // 获取提示文本
   const getHintText = useCallback(
@@ -193,69 +338,99 @@ export function FillBlankExercise({
     []
   )
 
-  // 渲染带空白的文本
+  // 渲染带独立输入框的填空文本
   const renderTextWithBlanks = useCallback(
-    (exercise: VideoExercise, showAnswer: boolean) => {
-      const parts = exercise.text_with_blanks.split(/(\[blank\])/g)
+    (exercise: VideoExercise) => {
+      const textWithBlanks = exercise.text_with_blanks || ''
+      const state = getCurrentLocalState(exercise)
+      const parts = textWithBlanks.split(/(\[blank\])/g)
 
       let blankIndex = 0
       return parts.map((part, index) => {
         if (part === '[blank]') {
-          const answer = exercise.answers[blankIndex] || ''
+          const answer = exercise.answers?.[blankIndex] || ''
+          const blankState = state.blanks[blankIndex]
+          const currentBlankIndex = blankIndex
           blankIndex++
 
-          if (showAnswer) {
+          // 已提交 → 显示结果
+          if (blankState?.submitted) {
+            const isCorrect = blankState.correct === true
             return (
               <span
                 key={index}
                 className={cn(
-                  'px-2 py-0.5 font-black',
-                  currentState?.isSubmitted
-                    ? currentState.isCorrect
-                      ? 'bg-[#B4F416] text-black'
-                      : 'bg-[#FF6B6B] text-white'
-                    : 'bg-[#B4F416] text-black'
+                  'inline-block px-2 py-0.5 font-black mx-0.5 border-b-[3px]',
+                  isCorrect
+                    ? 'bg-[#B4F416] text-black border-black'
+                    : 'bg-[#FF6B6B] text-white border-[#FF6B6B]'
                 )}
               >
-                {answer}
+                {isCorrect ? (
+                  <span className="flex items-center gap-1">
+                    {answer}
+                    <Check className="w-3 h-3" />
+                  </span>
+                ) : (
+                  <span className="flex items-center gap-1">
+                    <span className="line-through opacity-70">{blankState.userAnswer}</span>
+                    <span className="font-black">{answer}</span>
+                  </span>
+                )}
               </span>
             )
           }
 
+          // 显示提示
           if (showHint) {
             return (
               <span
                 key={index}
-                className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 font-mono text-sm font-bold"
+                className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 font-mono text-sm font-bold"
               >
                 {getHintText(exercise.difficulty, answer)}
               </span>
             )
           }
 
+          // 可编辑的输入框
+          const inputId = `${exercise.id}-blank-${currentBlankIndex}`
           return (
-            <span
+            <input
               key={index}
-              className="inline-flex items-center px-2 py-0.5 bg-gray-100 dark:bg-gray-700"
-            >
-              <HelpCircle className="w-4 h-4 text-gray-400" />
-            </span>
+              id={inputId}
+              ref={(el) => {
+                if (el) {
+                  inputRefs.current.set(inputId, el)
+                }
+              }}
+              type="text"
+              value={blankState?.userAnswer || ''}
+              onChange={(e) => handleBlankChange(exercise.id, currentBlankIndex, e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  handleSubmit()
+                }
+              }}
+              placeholder="填入单词"
+              className={cn(
+                'inline-block w-24 px-2 py-0.5 mx-0.5 text-center',
+                'border-[3px] border-black dark:border-gray-600',
+                'bg-white dark:bg-gray-800 text-black dark:text-white',
+                'font-bold text-sm',
+                'shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666]',
+                'focus:outline-none focus:shadow-[3px_3px_0px_0px_#000]',
+                'transition-shadow align-middle'
+              )}
+            />
           )
         }
 
         return <span key={index}>{part}</span>
       })
     },
-    [currentState, showHint, getHintText]
+    [getCurrentLocalState, showHint, getHintText, handleBlankChange, handleSubmit]
   )
-
-  // 统计
-  const correctCount = Array.from(exerciseStates.values()).filter(
-    (s) => s.isCorrect === true
-  ).length
-  const submittedCount = Array.from(exerciseStates.values()).filter(
-    (s) => s.isSubmitted
-  ).length
 
   // 如果没有练习题
   if (exercises.length === 0) {
@@ -285,6 +460,10 @@ export function FillBlankExercise({
 
             if (count === 0) return null
 
+            // 计算该难度下的完成进度
+            const diffExercises = exercises.filter(e => e.difficulty === difficulty)
+            const completedCount = diffExercises.filter(e => progressMap?.has(e.id)).length
+
             return (
               <button
                 key={difficulty}
@@ -307,7 +486,7 @@ export function FillBlankExercise({
                         {config.label}
                       </span>
                       <span className="px-2 py-0.5 bg-white dark:bg-gray-800 border-[2px] border-black text-xs font-black">
-                        {count} 题
+                        {completedCount > 0 ? `${completedCount}/${count}` : `${count} 题`}
                       </span>
                     </div>
                     <p className="text-xs text-black/70 mt-0.5">
@@ -322,6 +501,115 @@ export function FillBlankExercise({
       </div>
     )
   }
+
+  // 完成总结面板
+  if (showSummary) {
+    const { completed, correct, total } = difficultyStats
+    const wrongExercises = filteredExercises.filter((e) => {
+      const progress = progressMap?.get(e.id)
+      return progress && !progress.isCorrect
+    })
+    const accuracy = completed > 0 ? Math.round((correct / completed) * 100) : 0
+
+    return (
+      <div className="space-y-4">
+        <div className="flex items-center justify-between">
+          <button
+            onClick={() => setSelectedDifficulty(null)}
+            className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+          >
+            <RotateCcw className="w-3 h-3" />
+            返回
+          </button>
+          <span className={cn(
+            'px-2 py-1 border-[2px] border-black text-xs font-black',
+            DIFFICULTY_CONFIG[selectedDifficulty].bgColor,
+            'text-black'
+          )}>
+            {DIFFICULTY_CONFIG[selectedDifficulty].label}
+          </span>
+        </div>
+
+        {/* 统计卡片 */}
+        <div className="p-4 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
+          <div className="flex items-center gap-2 mb-3">
+            <Trophy className="w-5 h-5 text-[#B4F416]" />
+            <span className="font-black text-base text-black dark:text-white">练习完成</span>
+          </div>
+
+          <div className="grid grid-cols-3 gap-3">
+            <div className="text-center p-2 bg-gray-50 dark:bg-gray-700 border-[2px] border-black dark:border-gray-600">
+              <div className="text-2xl font-black text-black dark:text-white">{completed}</div>
+              <div className="text-xs font-bold text-gray-500">已完成</div>
+            </div>
+            <div className="text-center p-2 bg-[#B4F416] border-[2px] border-black">
+              <div className="text-2xl font-black text-black">{correct}</div>
+              <div className="text-xs font-bold text-black/70">正确</div>
+            </div>
+            <div className="text-center p-2 bg-gray-50 dark:bg-gray-700 border-[2px] border-black dark:border-gray-600">
+              <div className="text-2xl font-black text-black dark:text-white">{accuracy}%</div>
+              <div className="text-xs font-bold text-gray-500">正确率</div>
+            </div>
+          </div>
+        </div>
+
+        {/* 错题列表 */}
+        {wrongExercises.length > 0 && (
+          <div className="p-3 border-[3px] border-[#FF6B6B] bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000]">
+            <div className="flex items-center gap-2 mb-2">
+              <X className="w-4 h-4 text-[#FF6B6B]" />
+              <span className="font-black text-sm text-black dark:text-white">
+                错题 ({wrongExercises.length})
+              </span>
+            </div>
+            <div className="space-y-1 max-h-40 overflow-y-auto">
+              {wrongExercises.map((e) => {
+                const progress = progressMap?.get(e.id)
+                return (
+                  <div
+                    key={e.id}
+                    className="flex items-center justify-between px-2 py-1 bg-[#FF6B6B]/10 border border-[#FF6B6B]/30 text-xs"
+                  >
+                    <span className="font-medium text-black dark:text-white truncate flex-1 mr-2">
+                      {e.original_text?.substring(0, 50)}...
+                    </span>
+                    {progress && (
+                      <span className="text-[#FF6B6B] font-bold shrink-0">
+                        {progress.attempts}次
+                      </span>
+                    )}
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        )}
+
+        {/* 操作按钮 */}
+        <div className="flex gap-2">
+          {wrongExercises.length > 0 && (
+            <button
+              onClick={handleRedoWrong}
+              className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-[#FF6B6B] text-white border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 font-black text-sm transition-all"
+            >
+              <RefreshCw className="w-3.5 h-3.5" />
+              重做错题
+            </button>
+          )}
+          <button
+            onClick={handleRedoAll}
+            className="flex-1 flex items-center justify-center gap-1 px-3 py-2 bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 font-black text-sm transition-all"
+          >
+            <RotateCcw className="w-3.5 h-3.5" />
+            再练一次
+          </button>
+        </div>
+      </div>
+    )
+  }
+
+  const currentLocalState = currentExercise ? getCurrentLocalState(currentExercise) : null
+  const isAlreadyCompleted = currentExercise ? isExerciseCompleted(currentExercise.id) : false
 
   return (
     <div className="space-y-3">
@@ -347,26 +635,29 @@ export function FillBlankExercise({
           </span>
         </div>
         <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
-          正确率: {submittedCount > 0 ? Math.round((correctCount / submittedCount) * 100) : 0}%
+          正确率: {difficultyStats.completed > 0 ? Math.round((difficultyStats.correct / difficultyStats.completed) * 100) : 0}%
         </span>
       </div>
 
       {/* 题目卡片 + 播放按钮 */}
       <div className="flex gap-2">
         <div className="flex-1 p-4 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
+          {/* 中文语境提示 */}
+          {currentExercise?.translation && (
+            <p className="text-sm text-gray-500 dark:text-gray-400 mb-2 pb-2 border-b border-gray-200 dark:border-gray-600">
+              💡 {currentExercise.translation}
+            </p>
+          )}
           <p className="text-base leading-relaxed font-medium text-black dark:text-white">
-            {renderTextWithBlanks(
-              currentExercise,
-              currentState?.isSubmitted || false
-            )}
+            {currentExercise && renderTextWithBlanks(currentExercise)}
           </p>
         </div>
-        {/* 播放按钮 - 始终显示用于测试 */}
-        {onPlaySegment && currentExercise.subtitle_start_time != null && (
+        {/* 播放按钮：仅在有对应字幕时间时显示 */}
+        {onPlaySegment && currentExercise?.subtitle_start_time != null && (
           <button
             onClick={() => {
-              const startTime = currentExercise.subtitle_start_time!
-              const endTime = currentExercise.subtitle_end_time ?? startTime + 5
+              const startTime = currentExercise?.subtitle_start_time ?? 0
+              const endTime = currentExercise?.subtitle_end_time ?? startTime + 5
               onPlaySegment(startTime, endTime)
             }}
             className="flex-shrink-0 w-12 flex items-center justify-center border-[3px] border-black dark:border-gray-600 bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-0.5 active:shadow-[1px_1px_0px_0px_#000] active:translate-y-0.5 transition-all"
@@ -377,57 +668,18 @@ export function FillBlankExercise({
         )}
       </div>
 
-      {/* 输入区域 */}
-      {!currentState?.isSubmitted && (
-        <div className="space-y-3">
-          <label className="text-xs font-black text-black dark:text-white">
-            填写答案（多个答案用逗号分隔）
-          </label>
-          <input
-            type="text"
-            value={currentState?.userAnswer || ''}
-            onChange={(e) => handleAnswerChange(e.target.value)}
-            placeholder={`共 ${currentExercise.answers.length} 个空`}
-            className="w-full px-3 py-2 border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white font-medium shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] focus:outline-none focus:shadow-[4px_4px_0px_0px_#000] transition-shadow"
-            onKeyDown={(e) => {
-              if (e.key === 'Enter' && currentState?.userAnswer) {
-                handleSubmit()
-              }
-            }}
-          />
-
-          {/* 提示按钮 */}
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setShowHint(!showHint)}
-              className={cn(
-                'px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all',
-                showHint ? 'bg-[#B4F416] text-black' : 'bg-white dark:bg-gray-800 text-black dark:text-white'
-              )}
-            >
-              {showHint ? '隐藏提示' : '显示提示'}
-            </button>
-            {currentExercise.difficulty !== 'advanced' && (
-              <span className="text-xs text-gray-500 dark:text-gray-400">
-                {currentExercise.difficulty === 'beginner' ? '首字母提示' : '首尾字母提示'}
-              </span>
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* 结果 */}
-      {currentState?.isSubmitted && (
+      {/* 已完成题目：显示结果 */}
+      {isAlreadyCompleted && currentLocalState?.submitted && (
         <div
           className={cn(
             'p-3 border-[3px] border-black shadow-[3px_3px_0px_0px_#000]',
-            currentState.isCorrect
+            currentLocalState.blanks.every(b => b.correct === true)
               ? 'bg-[#B4F416] text-black'
               : 'bg-[#FF6B6B] text-white'
           )}
         >
           <div className="flex items-center gap-2 mb-1">
-            {currentState.isCorrect ? (
+            {currentLocalState.blanks.every(b => b.correct === true) ? (
               <>
                 <Check className="w-5 h-5" />
                 <span className="font-black">正确！</span>
@@ -440,14 +692,14 @@ export function FillBlankExercise({
             )}
           </div>
 
-          {!currentState.isCorrect && (
+          {!currentLocalState.blanks.every(b => b.correct === true) && (
             <div className="text-sm">
               <span className="font-bold">正确答案：</span>
-              <span className="font-black">{currentExercise.answers.join(', ')}</span>
+              <span className="font-black">{currentExercise?.answers?.join(', ')}</span>
             </div>
           )}
 
-          {currentExercise.explanation && (
+          {currentExercise?.explanation && (
             <p className="text-sm opacity-80 mt-1">
               {currentExercise.explanation}
             </p>
@@ -455,10 +707,30 @@ export function FillBlankExercise({
         </div>
       )}
 
+      {/* 未完成题目：提示按钮 */}
+      {!isAlreadyCompleted && !currentLocalState?.submitted && (
+        <div className="flex items-center gap-2">
+          <button
+            onClick={() => setShowHint(!showHint)}
+            className={cn(
+              'px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all',
+              showHint ? 'bg-[#B4F416] text-black' : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+            )}
+          >
+            {showHint ? '隐藏提示' : '显示提示'}
+          </button>
+          {currentExercise && currentExercise.difficulty !== 'advanced' && (
+            <span className="text-xs text-gray-500 dark:text-gray-400">
+              {currentExercise.difficulty === 'beginner' ? '首字母提示' : '首尾字母提示'}
+            </span>
+          )}
+        </div>
+      )}
+
       {/* 操作按钮 */}
       <div className="flex items-center justify-between">
         <div>
-          {currentState?.isSubmitted && (
+          {(isAlreadyCompleted || currentLocalState?.submitted) && (
             <button
               onClick={handleReset}
               className="flex items-center gap-1 px-3 py-1.5 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
@@ -470,30 +742,27 @@ export function FillBlankExercise({
         </div>
 
         <div>
-          {currentState?.isSubmitted ? (
-            currentIndex < filteredExercises.length - 1 ? (
-              <button
-                onClick={handleNext}
-                className="flex items-center gap-1 px-4 py-2 bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 font-black text-sm transition-all"
-              >
-                下一题
-                <ChevronRight className="w-4 h-4" />
-              </button>
-            ) : (
-              <button
-                onClick={() => setSelectedDifficulty(null)}
-                className="px-4 py-2 bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 font-black text-sm transition-all"
-              >
-                完成本难度
-              </button>
-            )
+          {isAlreadyCompleted || currentLocalState?.submitted ? (
+            <button
+              onClick={handleNext}
+              className="flex items-center gap-1 px-4 py-2 bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 font-black text-sm transition-all"
+            >
+              {currentIndex < filteredExercises.length - 1 ? (
+                <>
+                  下一题
+                  <ChevronRight className="w-4 h-4" />
+                </>
+              ) : (
+                <>查看总结</>
+              )}
+            </button>
           ) : (
             <button
               onClick={handleSubmit}
-              disabled={!currentState?.userAnswer}
+              disabled={!currentLocalState?.blanks.some(b => b.userAnswer.trim())}
               className={cn(
                 'flex items-center gap-1 px-4 py-2 border-[2px] border-black font-black text-sm transition-all',
-                currentState?.userAnswer
+                currentLocalState?.blanks.some(b => b.userAnswer.trim())
                   ? 'bg-[#B4F416] text-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5'
                   : 'bg-gray-200 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
               )}
