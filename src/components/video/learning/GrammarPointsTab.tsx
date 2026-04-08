@@ -7,7 +7,7 @@
  */
 
 import { cn } from '@/lib/utils'
-import { BookMarked, Lightbulb, AlertTriangle } from 'lucide-react'
+import { BookMarked, Lightbulb } from 'lucide-react'
 import type { VideoGrammarPoint } from '@/types/video'
 
 // ============================================
@@ -104,12 +104,12 @@ function GrammarPointCard({ point, index }: GrammarPointCardProps) {
           </div>
         )}
 
-        {/* 用途说明 */}
+        {/* 讲解 / 用途 */}
         {point.purpose && (
           <div>
             <div className="flex items-center gap-1 text-xs font-bold text-gray-500 dark:text-gray-400 mb-1">
               <Lightbulb className="w-3 h-3" />
-              <span>用途</span>
+              <span>说明</span>
             </div>
             <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">
               {point.purpose}
@@ -117,14 +117,14 @@ function GrammarPointCard({ point, index }: GrammarPointCardProps) {
           </div>
         )}
 
-        {/* 注意事项 */}
+        {/* 补充说明 / 注意事项 */}
         {point.note && (
-          <div className="p-2 bg-amber-50 dark:bg-amber-900/20 border-[2px] border-amber-300 dark:border-amber-700 rounded-sm">
+          <div className="p-2 bg-slate-50 dark:bg-slate-800/40 border-[2px] border-slate-200 dark:border-slate-700 rounded-sm">
             <div className="flex items-start gap-2">
-              <AlertTriangle className="w-4 h-4 text-amber-600 dark:text-amber-400 flex-shrink-0 mt-0.5" />
+              <Lightbulb className="w-4 h-4 text-slate-500 dark:text-slate-400 flex-shrink-0 mt-0.5" />
               <div>
-                <p className="text-xs font-bold text-amber-700 dark:text-amber-300">注意</p>
-                <p className="text-xs text-amber-600 dark:text-amber-400 mt-0.5 font-medium">
+                <p className="text-xs font-bold text-slate-600 dark:text-slate-300">补充</p>
+                <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 font-medium">
                   {point.note}
                 </p>
               </div>

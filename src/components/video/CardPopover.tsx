@@ -25,10 +25,7 @@ interface CardPopoverProps {
   card: VideoCard
   cardType: CardType
   videoLanguage: VideoLanguage
-  videoId: string
   onClose: () => void
-  onStatusChange: (status: CardStatus) => void
-  currentStatus?: CardStatus
   position?: { x: number; y: number } | null
 }
 
@@ -134,10 +131,10 @@ export function CardPopover({
         </div>
       )}
 
-      {/* 公式 */}
+      {/* 用法说明 / 语法公式 */}
       {c.formula && (
         <div className="p-2 bg-blue-50 dark:bg-blue-900/20 rounded text-sm">
-          <span className="text-xs text-blue-600 dark:text-blue-400">公式：</span>
+          <span className="text-xs text-blue-600 dark:text-blue-400">用法说明：</span>
           <p className="font-medium mt-0.5">{c.formula}</p>
         </div>
       )}

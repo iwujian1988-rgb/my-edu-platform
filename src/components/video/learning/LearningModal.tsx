@@ -743,7 +743,7 @@ function ExpressionCard({ expression, status, onStatusChange, onJumpToSubtitle }
         </p>
       )}
 
-      {/* 语法公式 */}
+      {/* 用法说明 */}
       {expression.formula && (
         <div className="mb-2 px-2 py-1 bg-gray-100 dark:bg-gray-700 border-l-[3px] border-[#B4F416]">
           <p className="text-xs text-gray-600 dark:text-gray-400 font-mono font-medium">

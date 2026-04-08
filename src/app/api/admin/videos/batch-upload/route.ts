@@ -61,15 +61,19 @@ interface SubtitleInput {
   chinese: string
 }
 
-/** 单词数据结构 */
+/** 单词数据结构（兼容 AI 生成格式：example_sentence 为对象） */
 interface VocabularyInput {
   french: string
   part_of_speech: string
   ipa: string
   chinese: string
-  first_appearance: string
-  occurrence_count: number
+  first_appearance?: string
+  occurrence_count?: number
   cefr_level: string
+  example_sentence?: {
+    french: string
+    chinese: string
+  }
 }
 
 /** 表达数据结构（兼容 AI 生成格式：meaning/usage_note） */
@@ -408,9 +412,12 @@ async function processSingleVideo(
         const dictResult = dictResults[idx]
         const example = findWordInSubtitles(v.word, savedSubtitles || [])
 
-        // 从词典服务获取例句（优先使用第一个例句作为主例句）
+        // 例句优先级：词典 > JSON 自带 > null
         const dictExamples = dictResult?.examples || []
-        const firstExample = dictExamples[0]
+        const firstDictExample = dictExamples[0]
+        const jsonExample = original.example_sentence
+        const mainExampleFr = firstDictExample?.fr || jsonExample?.french || null
+        const mainExampleCn = firstDictExample?.zh || jsonExample?.chinese || null
 
         // 从词典服务获取多条释义
         const definitions = dictResult?.definitions || []
@@ -421,9 +428,9 @@ async function processSingleVideo(
           phonetic: dictResult?.phonetic || original.ipa || null,
           part_of_speech: dictResult?.posDetail || dictResult?.pos || original.part_of_speech || null,
           chinese_definition: dictResult?.definition || original.chinese || '',
-          // 词典例句（单词书自带）
-          example_sentence: firstExample?.fr || null,
-          example_sentence_cn: firstExample?.zh || null,
+          // 词典例句 > JSON 自带例句（单词书或 AI 生成）
+          example_sentence: mainExampleFr,
+          example_sentence_cn: mainExampleCn,
           // 视频例句（剧中出现）
           example_from_video: example?.original || null,
           example_translation: example?.translation || null,
@@ -613,14 +620,27 @@ async function processSingleVideo(
       const blankPositions: Array<{ start: number; end: number; word: string; hint?: string }> = []
       let match
 
+      // 按 ____ 出现顺序拆分 answer，每个空位对应一个词
+      // answer 可能是 "bruxelloise"（单词）或 "suis marché"（空格分隔多词）
+      const answerParts = ex.answer.split(/[\s,]+/).filter(Boolean)
+
+      let blankIdx = 0
       while ((match = blankPattern.exec(originalText)) !== null) {
         blankPositions.push({
           start: match.index,
           end: match.index + match[0].length,
-          word: ex.answer,
+          // 多空题按顺序取对应答案，单空题直接用完整 answer
+          word: answerParts.length > 1 ? (answerParts[blankIdx] || ex.answer) : ex.answer,
           hint: ex.hint || undefined,
         })
+        blankIdx++
       }
+
+      // 按空位数推断难度：1空=beginner, 2-3空=intermediate, 4+=advanced
+      const blankCount = blankPositions.length
+      const inferredDifficulty = blankCount <= 1 ? 'beginner' as const
+        : blankCount <= 3 ? 'intermediate' as const
+        : 'advanced' as const
 
       // 匹配字幕：把 _____ 替换成答案，在字幕列表中查找对应行
       const cleanSentence = originalText.replace(/_+/g, ex.answer).toLowerCase().trim()
@@ -632,14 +652,13 @@ async function processSingleVideo(
         video_id: videoId,
         subtitle_id: null, // 不关联特定字幕
         exercise_type: 'fill_blank' as const,
-        difficulty: 'beginner' as const, // 单个填空默认为 beginner
+        difficulty: inferredDifficulty,
         original_text: originalText, // 保留 _____ 的原始句子
         blank_positions: blankPositions,
         hint_type: ex.hint ? 'first_letter' : null,
         answer_text: ex.answer,
         display_order: idx,
         subtitle_start_time: matchedSubtitle?.start_time ?? null,
-        subtitle_end_time: matchedSubtitle?.end_time ?? null,
       }
     })
 
@@ -822,8 +841,13 @@ export async function PATCH(request: NextRequest) {
             const original = v.original
             const dictResult = dictResults[idx]
             const example = findWordInSubtitles(v.word, savedSubtitles || [])
+
+            // 例句优先级：词典 > JSON 自带 > null
             const dictExamples = dictResult?.examples || []
-            const firstExample = dictExamples[0]
+            const firstDictExample = dictExamples[0]
+            const jsonExample = original.example_sentence
+            const mainExampleFr = firstDictExample?.fr || jsonExample?.french || null
+            const mainExampleCn = firstDictExample?.zh || jsonExample?.chinese || null
             const definitions = dictResult?.definitions || []
 
             return {
@@ -832,8 +856,8 @@ export async function PATCH(request: NextRequest) {
               phonetic: dictResult?.phonetic || original.ipa || null,
               part_of_speech: dictResult?.posDetail || dictResult?.pos || original.part_of_speech || null,
               chinese_definition: dictResult?.definition || original.chinese || '',
-              example_sentence: firstExample?.fr || null,
-              example_sentence_cn: firstExample?.zh || null,
+              example_sentence: mainExampleFr,
+              example_sentence_cn: mainExampleCn,
               example_from_video: example?.original || null,
               example_translation: example?.translation || null,
               subtitle_start_time: example?.startTime || 0,
@@ -958,17 +982,29 @@ export async function PATCH(request: NextRequest) {
             console.warn(`[batch-upload] vocabulary_exercise[${idx}] 缺少 sentence/question 字段，跳过:`, ex)
             return null
           }
+
           const blankPattern = /_+/g
           const blankPositions: Array<{ start: number; end: number; word: string; hint?: string }> = []
           let match
+
+          // 按 ____ 出现顺序拆分 answer，每个空位对应一个词
+          const answerParts = ex.answer.split(/[\s,]+/).filter(Boolean)
+          let blankIdx = 0
           while ((match = blankPattern.exec(originalText)) !== null) {
             blankPositions.push({
               start: match.index,
               end: match.index + match[0].length,
-              word: ex.answer,
+              word: answerParts.length > 1 ? (answerParts[blankIdx] || ex.answer) : ex.answer,
               hint: ex.hint || undefined,
             })
+            blankIdx++
           }
+
+          // 按空位数推断难度
+          const blankCount = blankPositions.length
+          const inferredDifficulty = blankCount <= 1 ? 'beginner' as const
+            : blankCount <= 3 ? 'intermediate' as const
+            : 'advanced' as const
 
           const cleanSentence = originalText.replace(/_+/g, ex.answer).toLowerCase().trim()
           const matchedSubtitle = (savedSubtitles as Array<{ original_text: string; start_time: number; end_time: number }> | undefined)
@@ -979,14 +1015,13 @@ export async function PATCH(request: NextRequest) {
             video_id: videoId,
             subtitle_id: null,
             exercise_type: 'fill_blank' as const,
-            difficulty: 'beginner' as const,
+            difficulty: inferredDifficulty,
             original_text: originalText,
             blank_positions: blankPositions,
             hint_type: ex.hint ? 'first_letter' : null,
             answer_text: ex.answer,
             display_order: idx,
             subtitle_start_time: matchedSubtitle?.start_time ?? null,
-            subtitle_end_time: matchedSubtitle?.end_time ?? null,
           }
         })
 

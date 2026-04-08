@@ -131,12 +131,12 @@ export function ExpressionCard({
           )}
         </div>
 
-        {/* 公式 */}
+        {/* 用法说明 / 语法公式 */}
         {card.formula && (
           <div className="flex items-start gap-2">
             <Lightbulb className="w-5 h-5 text-yellow-500 mt-0.5" />
             <div>
-              <p className="text-sm font-medium">语法公式</p>
+              <p className="text-sm font-medium">用法说明</p>
               <p className="text-sm text-muted-foreground">{card.formula}</p>
             </div>
           </div>

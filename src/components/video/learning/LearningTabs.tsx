@@ -116,7 +116,6 @@ export function LearningTabs({
         const overflowY = style.overflowY
         if (overflowY === 'auto' || overflowY === 'scroll') {
           parent.scrollTop = 0
-          console.log('[LearningTabs] Scrolled parent to top:', parent.className)
           break
         }
         parent = parent.parentElement
@@ -640,10 +639,10 @@ function ExpressionsTab({ expressions, onJumpToSubtitle, onPlaySegment, getCardS
                 </p>
               )}
 
-              {/* 语法公式 */}
+              {/* 用法说明 */}
               {expr.formula && (
                 <div className="p-2 bg-gray-50 dark:bg-gray-700/50 border-[2px] border-gray-200 dark:border-gray-600 rounded-sm mb-2">
-                  <p className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-0.5">语法公式</p>
+                  <p className="text-xs font-bold text-gray-500 dark:text-gray-400 mb-0.5">用法说明</p>
                   <p className="text-sm text-gray-700 dark:text-gray-300 font-medium">
                     {expr.formula}
                   </p>
