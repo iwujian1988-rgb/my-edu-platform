@@ -11,6 +11,14 @@ import React, { useState, useCallback, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import Link from 'next/link'
 import useSWR from 'swr'
+/** prefetch={false} 的 Link，避免列表页每行都触发 prefetch */
+function LazyLink({ href, children, className }: { href: string; children: React.ReactNode; className?: string }) {
+  return (
+    <Link href={href} prefetch={false} className={className}>
+      {children}
+    </Link>
+  )
+}
 import { ArrowLeft, Play, Podcast, Headphones, Users, Hash, Globe } from 'lucide-react'
 import type { CreatorContentResponse, CreatorSortMode, VideoListItem, CreatorInfo } from '@/types/video'
 import { CREATOR_PLATFORM_LABELS, formatDuration } from '@/types/video'
@@ -88,7 +96,7 @@ function EpisodeRow({ item }: { item: VideoListItem }) {
   const progress = item.user_progress
 
   return (
-    <Link
+    <LazyLink
       href={`/videos/${item.id}`}
       className="group flex items-center gap-3 md:gap-5 py-3 md:py-4 border-b border-gray-100 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/40 transition-colors"
     >
@@ -122,7 +130,7 @@ function EpisodeRow({ item }: { item: VideoListItem }) {
       <span className="text-xs md:text-sm font-mono text-gray-400 flex-shrink-0">
         {formatDuration(item.duration)}
       </span>
-    </Link>
+    </LazyLink>
   )
 }
 

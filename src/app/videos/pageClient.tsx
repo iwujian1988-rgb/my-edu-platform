@@ -369,12 +369,13 @@ function VideoListContent() {
   }, [language, difficulty, tag, learnStatus, contentType, page])
 
   // 获取视频列表
-  const { data, error, isLoading, mutate } = useSWR<VideoListResponse>(
+  const { data, error, isLoading, isValidating, mutate } = useSWR<VideoListResponse>(
     buildQueryUrl(),
     fetcher,
     {
       revalidateOnFocus: false,
       dedupingInterval: 5000, // 5秒内重复请求去重
+      keepPreviousData: true, // 切换筛选时保留旧数据，避免闪烁
     }
   )
 
@@ -933,8 +934,8 @@ function VideoListContent() {
             })()}
           </div>
 
-          {/* 加载状态 */}
-          {isLoading && (
+          {/* 加载状态 - 仅首次无数据时显示全屏加载 */}
+          {isLoading && !data && (
             <div className="flex items-center justify-center py-16">
               <div className="text-center">
                 <div className="inline-block animate-spin rounded-sm h-12 w-12 border-[3px] border-black dark:border-gray-500 border-t-[#B4F416]"></div>
@@ -972,8 +973,8 @@ function VideoListContent() {
             </div>
           )}
 
-          {/* 视频网格 */}
-          {data && !isLoading && (
+          {/* 视频网格 - 有数据就显示，切换筛选时保留旧数据 */}
+          {data && (
             <>
               {data.items.length === 0 ? (
                 <div className="text-center py-16">

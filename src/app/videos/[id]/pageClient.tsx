@@ -33,6 +33,7 @@ import {
   PinOff,
   Users,
   ExternalLink,
+  ChevronRight,
 } from 'lucide-react'
 
 import { VideoPlayer } from '@/components/video/VideoPlayer'
@@ -491,7 +492,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
             {/* UP主信息 - 移动端紧凑显示 */}
             {data.creator && (
-              <div className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-200 dark:border-gray-700">
+              <a href={`/videos/creators/${data.creator.id}`} className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors cursor-pointer group/creator">
                 {data.creator.avatar_url ? (
                   <img
                     src={data.creator.avatar_url}
@@ -503,7 +504,15 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                     <Users className="w-3 h-3 text-gray-400" />
                   </div>
                 )}
-                <span className="text-xs font-bold text-black dark:text-white truncate flex-1">{data.creator.name}</span>
+                <div className="flex-1 min-w-0">
+                  <div className="flex items-center gap-1">
+                    <span className="text-xs font-bold text-black dark:text-white truncate">{data.creator.name}</span>
+                    <ChevronRight className="w-3 h-3 text-gray-300 group-hover/creator:text-[#B4F416] transition-colors flex-shrink-0" />
+                  </div>
+                  {data.creator.description && (
+                    <p className="text-[10px] text-gray-400 dark:text-gray-500 line-clamp-1">{data.creator.description}</p>
+                  )}
+                </div>
                 {data.creator.follower_count > 0 && (
                   <span className="text-xs text-gray-500 dark:text-gray-400">
                     {data.creator.follower_count >= 1000000
@@ -511,20 +520,10 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                       : data.creator.follower_count >= 1000
                         ? `${(data.creator.follower_count / 1000).toFixed(1)}K`
                         : data.creator.follower_count
-                    }
+                    } 粉丝
                   </span>
                 )}
-                {data.creator.channel_url && (
-                  <a
-                    href={data.creator.channel_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-blue-500 hover:text-blue-600"
-                  >
-                    <ExternalLink className="w-3.5 h-3.5" />
-                  </a>
-                )}
-              </div>
+              </a>
             )}
             {/* 字幕模式居左，功能按钮居右，与PC布局一致 */}
             <div className="flex items-center justify-between gap-1">
@@ -788,7 +787,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
                   {/* UP主信息 */}
                   {data.creator && (
-                    <div className="flex items-center gap-3 mt-3 p-3 bg-gray-50 dark:bg-gray-700/50 border-[2px] border-gray-200 dark:border-gray-600">
+                    <a href={`/videos/creators/${data.creator.id}`} className="flex items-center gap-3 mt-3 p-3 bg-gray-50 dark:bg-gray-700/50 border-[2px] border-gray-200 dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 hover:border-[#B4F416] dark:hover:border-[#B4F416] transition-colors cursor-pointer group/creator">
                       {data.creator.avatar_url ? (
                         <img
                           src={data.creator.avatar_url}
@@ -820,19 +819,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                             } 粉丝
                           </div>
                         )}
+                        {data.creator.description && (
+                          <p className="text-xs text-gray-400 dark:text-gray-500 line-clamp-2 mt-1">{data.creator.description}</p>
+                        )}
                       </div>
-                      {data.creator.channel_url && (
-                        <a
-                          href={data.creator.channel_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-blue-500 text-white border-[2px] border-black hover:bg-blue-600 transition-colors"
-                        >
-                          <ExternalLink className="w-3 h-3" />
-                          频道
-                        </a>
-                      )}
-                    </div>
+                      <ChevronRight className="w-4 h-4 text-gray-300 dark:text-gray-500 group-hover/creator:text-[#B4F416] transition-colors flex-shrink-0" />
+                    </a>
                   )}
 
                   {/* 兼容旧数据：只有 creator_name 没有 creator 关联 */}

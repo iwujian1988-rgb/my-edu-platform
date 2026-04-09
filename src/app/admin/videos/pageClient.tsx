@@ -172,6 +172,9 @@ export function VideoManagementClient() {
   const [search, setSearch] = useState('')
   const [languageFilter, setLanguageFilter] = useState<string>('all')
   const [statusFilter, setStatusFilter] = useState<string>('all')
+  const [contentTypeFilter, setContentTypeFilter] = useState<string>('all')
+  const [currentPage, setCurrentPage] = useState(1)
+  const PAGE_SIZE = 20
 
   const [isDialogOpen, setIsDialogOpen] = useState(false)
   const [editingVideo, setEditingVideo] = useState<Video | null>(null)
@@ -188,9 +191,14 @@ export function VideoManagementClient() {
   const [isSkippingTranslation, setIsSkippingTranslation] = useState(false)
 
   const { data, error, isLoading, mutate } = useSWR(
-    `/api/admin/videos?search=${search}&language=${languageFilter}&status=${statusFilter}`,
+    `/api/admin/videos?search=${search}&language=${languageFilter}&status=${statusFilter}&content_type=${contentTypeFilter}&page=${currentPage}&page_size=${PAGE_SIZE}`,
     fetcher
   )
+
+  // 筛选变化时重置页码
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [search, languageFilter, statusFilter, contentTypeFilter])
 
   // 获取邀请码套餐列表（复用现有 invitation_packages 系统）
   const { data: packagesData } = useSWR(
@@ -467,6 +475,17 @@ export function VideoManagementClient() {
             ))}
           </select>
 
+          {/* 内容类型筛选 */}
+          <select
+            value={contentTypeFilter}
+            onChange={(e) => setContentTypeFilter(e.target.value)}
+            className="px-4 py-3 font-bold border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 text-black dark:text-white focus:outline-none cursor-pointer"
+          >
+            <option value="all">全部类型</option>
+            <option value="video">视频</option>
+            <option value="audio">播客</option>
+          </select>
+
           {/* 添加按钮 - 指向工作流 */}
           <Link
             href="/admin/videos/new"
@@ -661,6 +680,39 @@ export function VideoManagementClient() {
               <p className="text-gray-400 dark:text-gray-500 text-sm mt-2">点击"添加视频"创建第一个视频</p>
             </div>
           )}
+        </div>
+      )}
+
+      {/* 分页控件 */}
+      {data?.data && data.data.total_pages > 1 && (
+        <div className="flex items-center justify-between py-4">
+          <span className="text-sm font-bold text-gray-500 dark:text-gray-400">
+            共 {data.data.total} 条，第 {data.data.page} / {data.data.total_pages} 页
+          </span>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+              disabled={currentPage === 1}
+              className={`px-3 py-2 text-sm font-bold border-[2px] border-black dark:border-gray-600 transition-all ${
+                currentPage === 1
+                  ? 'text-gray-300 dark:text-gray-600 cursor-not-allowed'
+                  : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700'
+              }`}
+            >
+              上一页
+            </button>
+            <button
+              onClick={() => setCurrentPage(p => Math.min(data.data.total_pages, p + 1))}
+              disabled={currentPage === data.data.total_pages}
+              className={`px-3 py-2 text-sm font-bold border-[2px] border-black dark:border-gray-600 transition-all ${
+                currentPage === data.data.total_pages
+                  ? 'text-gray-300 dark:text-gray-600 cursor-not-allowed'
+                  : 'bg-white dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700'
+              }`}
+            >
+              下一页
+            </button>
+          </div>
         </div>
       )}
 

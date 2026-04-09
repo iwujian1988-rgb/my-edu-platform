@@ -87,8 +87,10 @@ export async function GET(
 
     const supabase = await createAdminClient()
 
-    // 并行：获取播主信息 + 内容列表 + 用户权限 + 用户进度
-    const [creatorResult, contentResult, userResult] = await Promise.all([
+    // 并行：获取播主信息 + 内容列表 + 用户权限 + 音视频计数
+    const needsFullFetch = sort === 'episode'
+
+    const [creatorResult, contentResult, userResult, audioCountResult, videoCountResult] = await Promise.all([
       supabase
         .from('upstream_creators')
         .select('id, name, avatar_url, description, platform, platform_user_id, channel_url, follower_count, is_active, display_order')
@@ -97,8 +99,8 @@ export async function GET(
 
       supabase.rpc('get_creator_published_content', {
         p_creator_id: creatorId,
-        p_limit: MAX_LIMIT,
-        p_offset: 0,
+        p_limit: needsFullFetch ? MAX_LIMIT : limit,
+        p_offset: needsFullFetch ? 0 : offset,
       }),
 
       supabase
@@ -106,6 +108,20 @@ export async function GET(
         .select('package_ids, feature_permissions, permission_expires_at')
         .eq('id', authUser.id)
         .single(),
+
+      supabase
+        .from('videos')
+        .select('*', { count: 'exact', head: true })
+        .eq('creator_id', creatorId)
+        .eq('status', 'published')
+        .eq('content_type', 'audio'),
+
+      supabase
+        .from('videos')
+        .select('*', { count: 'exact', head: true })
+        .eq('creator_id', creatorId)
+        .eq('status', 'published')
+        .neq('content_type', 'audio'),
     ])
 
     if (creatorResult.error || !creatorResult.data) {
@@ -120,9 +136,9 @@ export async function GET(
     const creatorRow = creatorResult.data
     const contentRows = (contentResult.data || []) as RpcContentRow[]
 
-    // 计算播主的音频/视频数量
-    const audioCount = contentRows.filter(r => r.content_type === 'audio').length
-    const videoCount = contentRows.filter(r => r.content_type !== 'audio').length
+    // 播主音视频数量（从独立 count 查询获取，不受分页影响）
+    const audioCount = audioCountResult.count || 0
+    const videoCount = videoCountResult.count || 0
 
     const creatorInfo: CreatorInfo = {
       id: creatorRow.id,
@@ -145,18 +161,23 @@ export async function GET(
     const hasVideoPermission = userRow?.feature_permissions?.includes('video') &&
       (!userRow?.permission_expires_at || new Date(userRow.permission_expires_at) > new Date())
 
-    // episode 排序：在 API 层完成内存排序 + 分页
-    let sortedRows = contentRows
+    // episode 排序：在 API 层完成内存排序 + 分页；time 排序已由 RPC 分页
+    let pagedRows: RpcContentRow[]
+    let totalCount: number
+
     if (sort === 'episode') {
-      sortedRows = [...contentRows].sort((a, b) => {
+      const sortedRows = [...contentRows].sort((a, b) => {
         const epA = extractEpisodeNumber(a.title)
         const epB = extractEpisodeNumber(b.title)
         return epA - epB
       })
+      totalCount = sortedRows.length
+      pagedRows = sortedRows.slice(offset, offset + limit)
+    } else {
+      // time 排序：RPC 已按 limit/offset 分页，total_count 在首行
+      totalCount = contentRows.length > 0 ? contentRows[0].total_count : 0
+      pagedRows = contentRows
     }
-
-    const totalCount = sortedRows.length
-    const pagedRows = sortedRows.slice(offset, offset + limit)
     const videoIds = pagedRows.map(r => r.id)
 
     // 获取当页视频的用户进度
