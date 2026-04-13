@@ -50,6 +50,9 @@ verify-*.js
 run-*.js
 browser-*.js
 *-test-*.js
+import-*.mjs
+upload-*.mjs
+*-upload-map.json
 
 # test reports
 test-results/
