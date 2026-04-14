@@ -456,6 +456,15 @@ async function processSingleVideo(
         console.log(`[批量上传] 存储单词卡片成功: ${wordsCount} 个`)
       } else {
         console.error(`[批量上传] 存储单词卡片失败:`, wordsError)
+        console.error(`[批量上传] 单词卡片数量: ${wordCards.length}`)
+        console.error(`[批量上传] 第一个单词卡片示例:`, JSON.stringify(wordCards[0], null, 2))
+        // 提供更详细的错误信息用于诊断
+        if (wordsError.message) {
+          console.error(`[批量上传] 错误详情: ${wordsError.message}`)
+        }
+        if (wordsError.hint) {
+          console.error(`[批量上传] 错误提示: ${wordsError.hint}`)
+        }
       }
     }
   }

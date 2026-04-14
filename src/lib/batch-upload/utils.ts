@@ -26,14 +26,17 @@ const CEFR_TO_DIFFICULTY_MAP: Record<string, VideoDifficulty> = {
   C2: 'advanced',
 }
 
-/** CEFR 等级到数字的映射 (1-6) */
+/** CEFR 等级到数字的映射 (1-5)
+ * 注意：数据库约束为 difficulty_level BETWEEN 1 AND 5
+ * 因此 C2 也映射为 5（与 C1 同级）
+ */
 const CEFR_TO_NUMBER_MAP: Record<string, number> = {
   A1: 1,
   A2: 2,
   B1: 3,
   B2: 4,
   C1: 5,
-  C2: 6,
+  C2: 5, // 与 C1 同级，符合数据库约束
 }
 
 // ============================================
@@ -341,6 +344,12 @@ export function uniqueArray<T>(arr: T[], key: keyof T): T[] {
       return false
     }
     const keyValue = item[key]
+
+    // Filter out items with empty/null/undefined key values
+    if (!keyValue) {
+      return false
+    }
+
     if (seen.has(keyValue)) {
       return false
     }
@@ -399,8 +408,25 @@ export function cleanWord(word: string): string {
   if (!word || typeof word !== 'string') {
     return ''
   }
-  // 去除首尾标点和空格
-  return word.trim().replace(/^[^\wÀ-ÿ]+|[^\wÀ-ÿ]+$/g, '')
+
+  const trimmed = word.trim()
+
+  // 如果是空字符串，直接返回
+  if (!trimmed) {
+    return ''
+  }
+
+  // 法语单词可能包含的合法字符：
+  // - 字母 (a-z, A-Z, À-ÿ, æ, œ)
+  // - 连字符 (用于复合词，如 vis-à-vis)
+  // - 撇号 (用于缩合，如 c'est, d'eau)
+  // 只去除首尾的**纯标点符号**（保留单词内部的合法字符）
+  const cleaned = trimmed.replace(/^[^\wÀ-ÿæœ'-]+|[^\wÀ-ÿæœ'-]+$/g, '')
+
+  // 确保清理后至少包含一个字母
+  const hasLetter = /[a-zA-ZÀ-ÿæœ]/.test(cleaned)
+
+  return hasLetter ? cleaned : ''
 }
 
 // ============================================

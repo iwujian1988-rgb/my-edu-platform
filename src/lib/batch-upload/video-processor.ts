@@ -10,6 +10,7 @@
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { completeStep } from '@/lib/workflow-helper'
 import { lookupBatch } from '@/lib/dictionary'
+import type { UnifiedDictEntry } from '@/lib/dictionary/types'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnySupabaseClient = SupabaseClient<any>
@@ -360,15 +361,28 @@ export async function processSingleVideo(
   console.log(`[DEBUG] 开始处理单词: vocabulary.length=${vocabulary.length}`)
 
   if (vocabulary.length > 0) {
+    // 详细的单词处理日志
+    const beforeClean = vocabulary.map((v: VocabularyInput) => v.french)
+    console.log(`[DEBUG] 原始单词列表:`, beforeClean.slice(0, 5), `...(共${beforeClean.length}个)`)
+
+    const cleanedWords = vocabulary.map((v: VocabularyInput) => ({
+      word: cleanWord(v.french),
+      original: v,
+    }))
+
+    // 记录被过滤掉的单词
+    const filteredOut = cleanedWords.filter((v) => !v.word)
+    if (filteredOut.length > 0) {
+      console.warn(`[WARN] ${filteredOut.length} 个单词被过滤掉 (cleanWord后为空):`, filteredOut.map(f => f.original.french).slice(0, 5))
+    }
+
     const uniqueWords = uniqueArray(
-      vocabulary.map((v: VocabularyInput) => ({
-        word: cleanWord(v.french),
-        original: v,
-      })).filter((v: { word: string; original: VocabularyInput }) => v.word),
+      cleanedWords.filter((v: { word: string; original: VocabularyInput }) => v.word),
       'word'
     )
 
     console.log(`[DEBUG] cleanWord后: uniqueWords.length=${uniqueWords.length}`)
+    console.log(`[DEBUG] 去重后单词列表:`, uniqueWords.map((u: { word: string }) => u.word).slice(0, 10), `...(共${uniqueWords.length}个)`)
 
     if (uniqueWords.length > 0) {
       const words = uniqueWords.map((v: { word: string; original: VocabularyInput }) => v.word)
@@ -378,6 +392,17 @@ export async function processSingleVideo(
         console.log(`[DEBUG] 开始词典查询: ${words.length} 个单词`)
         dictResults = await lookupBatch(words, 'fr', { skipFallback: false })
         console.log(`[DEBUG] 词典查询完成`)
+
+        // 统计词典查询成功率
+        const successCount = dictResults.filter((r) => r && r.success).length
+        const failCount = dictResults.length - successCount
+        console.log(`[DEBUG] 词典查询结果: ${successCount} 成功, ${failCount} 失败`)
+
+        // 记录失败的单词（前5个）
+        if (failCount > 0) {
+          const failedWords = words.filter((_, idx) => !dictResults[idx]?.success).slice(0, 5)
+          console.warn(`[WARN] 词典查询失败的单词:`, failedWords)
+        }
       } catch (dictError) {
         console.error(`[DEBUG] 词典查询失败:`, dictError)
         console.log(`[DEBUG] 将使用原始数据作为fallback`)

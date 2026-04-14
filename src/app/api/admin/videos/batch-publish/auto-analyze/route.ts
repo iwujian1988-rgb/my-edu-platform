@@ -202,7 +202,7 @@ async function generateDescription(subtitles: SubtitleSentence[]): Promise<strin
         'Authorization': `Bearer ${apiKey}`,
       },
       body: JSON.stringify({
-        model: 'glm-4-flash',
+        model: 'glm-4-plus',
         max_tokens: 150,
         temperature: 0.7,
         messages: [
