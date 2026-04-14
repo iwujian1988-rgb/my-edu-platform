@@ -96,10 +96,49 @@ export function LearningTabs({
   getCardStatus,
   onStatusChange
 }: LearningTabsProps) {
-  const [activeTab, setActiveTab] = useState<TabKey>('words')
+  // 计算初始标签页：选择第一个有数据的标签页
+  const getInitialTab = (): TabKey => {
+    const tabOrder: TabKey[] = ['words', 'expressions', 'grammar', 'pronunciation', 'network']
+    const tabData = {
+      words: words.length,
+      expressions: expressions.length,
+      grammar: grammarPoints.length,
+      pronunciation: pronunciationTips.length,
+      network: vocabularyNetwork ? 1 : 0
+    }
+
+    // 找到第一个有数据的标签页
+    for (const tab of tabOrder) {
+      if (tabData[tab] > 0) {
+        return tab
+      }
+    }
+
+    return 'words' // 默认回退
+  }
+
+  const [activeTab, setActiveTab] = useState<TabKey>(getInitialTab)
   const [localStatusMap, setLocalStatusMap] = useState<Map<string, CardStatus>>(new Map())
   const containerRef = useRef<HTMLDivElement>(null)
   const ttsPreload = useTTSPreload(videoLanguage)
+
+  // 监听数据变化，如果当前标签页为空则切换到第一个有数据的标签页
+  useEffect(() => {
+    const tabData = {
+      words: words.length,
+      expressions: expressions.length,
+      grammar: grammarPoints.length,
+      pronunciation: pronunciationTips.length,
+      network: vocabularyNetwork ? 1 : 0
+    }
+
+    if (tabData[activeTab] === 0) {
+      const newTab = getInitialTab()
+      if (newTab !== activeTab) {
+        setActiveTab(newTab)
+      }
+    }
+  }, [words.length, expressions.length, grammarPoints.length, pronunciationTips.length, vocabularyNetwork, activeTab])
 
   // Tab 切换时滚动到顶部
   const handleTabSwitch = useCallback((tabKey: TabKey) => {
@@ -162,13 +201,13 @@ export function LearningTabs({
     return status === 'known' || status === 'learning'
   }).length
 
-  const tabs: TabConfig[] = [
-    { key: 'expressions', label: '地道表达', icon: <MessageSquare className="w-4 h-4" />, count: expressions.length },
-    { key: 'words', label: '单词', icon: <BookOpen className="w-4 h-4" />, count: words.length },
-    { key: 'grammar', label: '语法点', icon: <BookMarked className="w-4 h-4" />, count: grammarPoints.length },
-    { key: 'pronunciation', label: '发音要点', icon: <Volume2 className="w-4 h-4" />, count: pronunciationTips.length },
-    { key: 'network', label: '词汇网络', icon: <Network className="w-4 h-4" />, count: vocabularyNetwork ? 1 : 0 },
-  ].filter(tab => tab.count > 0) // 隐藏没有数据的 Tab
+  const tabs = [
+    { key: 'expressions' as const, label: '地道表达', icon: <MessageSquare className="w-4 h-4" />, count: expressions.length },
+    { key: 'words' as const, label: '单词', icon: <BookOpen className="w-4 h-4" />, count: words.length },
+    { key: 'grammar' as const, label: '语法点', icon: <BookMarked className="w-4 h-4" />, count: grammarPoints.length },
+    { key: 'pronunciation' as const, label: '发音要点', icon: <Volume2 className="w-4 h-4" />, count: pronunciationTips.length },
+    { key: 'network' as const, label: '词汇网络', icon: <Network className="w-4 h-4" />, count: vocabularyNetwork ? 1 : 0 },
+  ].filter((tab) => tab.count > 0) as TabConfig[] // 隐藏没有数据的 Tab
 
   // 渲染 Tab 内容
   const renderTabContent = () => {

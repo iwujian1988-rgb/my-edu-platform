@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 
-const FALLBACK_COLORS = ['#886644', '#664422', '#443322']
+const FALLBACK_COLORS = ['#667eea', '#764ba2', '#f093fb'] // 更现代的紫色系渐变
 
 const colorCache = new Map<string, string[]>()
 
@@ -24,7 +24,8 @@ function extractFromCanvas(imageUrl: string): Promise<string[]> {
 
   return new Promise((resolve) => {
     const img = new Image()
-    img.crossOrigin = 'anonymous'
+    // iOS Safari CORS 兼容性：使用 use-credentials 凭证模式
+    img.crossOrigin = 'use-credentials'
     const separator = imageUrl.includes('?') ? '&' : '?'
 
     img.onload = () => {
@@ -32,7 +33,7 @@ function extractFromCanvas(imageUrl: string): Promise<string[]> {
         const canvas = document.createElement('canvas')
         canvas.width = SAMPLE_SIZE
         canvas.height = SAMPLE_SIZE
-        const ctx = canvas.getContext('2d')
+        const ctx = canvas.getContext('2d', { willReadFrequently: true })
         if (!ctx) { resolve(FALLBACK_COLORS); return }
         ctx.drawImage(img, 0, 0, SAMPLE_SIZE, SAMPLE_SIZE)
         const data = ctx.getImageData(0, 0, SAMPLE_SIZE, SAMPLE_SIZE).data
@@ -74,11 +75,15 @@ function extractFromCanvas(imageUrl: string): Promise<string[]> {
         const final = result.length >= 2 ? result : [...result, ...FALLBACK_COLORS].slice(0, 3)
         colorCache.set(imageUrl, final)
         resolve(final)
-      } catch {
+      } catch (error) {
+        console.warn('[useDominantColors] Canvas access failed, possibly CORS issue:', error)
         resolve(FALLBACK_COLORS)
       }
     }
-    img.onerror = () => resolve(FALLBACK_COLORS)
+    img.onerror = () => {
+      console.warn('[useDominantColors] Image load failed')
+      resolve(FALLBACK_COLORS)
+    }
     img.src = `${imageUrl}${separator}_c=${Date.now()}`
   })
 }

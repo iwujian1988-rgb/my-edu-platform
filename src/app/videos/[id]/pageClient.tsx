@@ -50,6 +50,7 @@ import { ScenarioCard } from '@/components/video/exercises/ScenarioCard'
 import { LearningCards } from '@/components/video/LearningCards'
 import { LearningTabs } from '@/components/video/learning/LearningTabs'
 import { LearningModal } from '@/components/video/learning/LearningModal'
+import { PracticeSheet } from '@/components/video/learning/PracticeSheet'
 import { AccessDenied } from '@/components/video/AccessDenied'
 import { DraggablePIP } from '@/components/video/DraggablePIP'
 import { DraggableAudioPIP } from '@/components/video/DraggableAudioPIP'
@@ -104,6 +105,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [seekTrigger, setSeekTrigger] = useState(0) // 用于强制触发跳转
   const [pauseMainVideo, setPauseMainVideo] = useState(false) // 暂停主视频（打开弹层时）
   const [isLearningModalOpen, setIsLearningModalOpen] = useState(false) // PC端学习弹层
+  const [isPracticeSheetOpen, setIsPracticeSheetOpen] = useState(false) // 移动端练习抽屉
 
   // PIP 模式状态（移动端学习模块）
   const [pipMode, setPipMode] = useState(false)
@@ -584,7 +586,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   <Mic className="w-3.5 h-3.5" />
                   跟读
                 </button>
-                <button onClick={() => handleTabChange('write')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'write' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
+                <button onClick={() => !isLargeScreen ? setIsPracticeSheetOpen(true) : handleTabChange('write')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", (currentTab === 'write' || isPracticeSheetOpen) ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
                   <Pen className="w-3.5 h-3.5" />
                   练习
                 </button>
@@ -1099,6 +1101,19 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         onVideoTimeUpdate={setCurrentVideoTime}
         initialVideoPosition={currentVideoTime}
       />
+
+      {/* 移动端练习抽屉 - 底部滑出式 */}
+      {!isLargeScreen && (
+        <PracticeSheet
+          open={isPracticeSheetOpen}
+          onOpenChange={setIsPracticeSheetOpen}
+          video={video}
+          exercises={data.exercises}
+          progressMap={exerciseProgressMap}
+          onRecordAnswer={recordExerciseAnswer}
+          onPlaySegment={handlePlaySegment}
+        />
+      )}
     </div>
   )
 }

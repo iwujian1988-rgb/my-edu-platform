@@ -73,29 +73,71 @@ export function DraggableAudioPIP({
   useEffect(() => {
     if (!audioElement || !audioSlotRef.current) return
 
+    // 保存原始位置
     originalParentRef.current = audioElement.parentElement
     originalNextSiblingRef.current = audioElement.nextSibling
 
-    audioElement.style.width = '0'
-    audioElement.style.height = '0'
-    audioElement.style.position = 'absolute'
-    audioElement.style.pointerEvents = 'none'
+    // 保存播放状态
+    const wasPlaying = !audioElement.paused
+    const currentTime = audioElement.currentTime
 
+    // 修改样式：保持交互能力但视觉隐藏
+    audioElement.style.width = '1px'
+    audioElement.style.height = '1px'
+    audioElement.style.position = 'absolute'
+    audioElement.style.opacity = '0'
+    audioElement.style.pointerEvents = 'auto' // 保持交互能力
+
+    // 先暂停避免移动时的冲突
+    audioElement.pause()
+
+    // 移动元素到 PIP 容器
     audioSlotRef.current.appendChild(audioElement)
+
+    // 恢复播放状态和时间位置
+    audioElement.currentTime = currentTime
+    if (wasPlaying) {
+      audioElement.play().catch((err) => {
+        console.warn('[DraggableAudioPIP] Failed to resume playback after move:', err)
+      })
+    }
+
+    console.log('[DraggableAudioPIP] Audio element moved to PIP, wasPlaying:', wasPlaying)
 
     return () => {
       const parent = originalParentRef.current
       if (parent && audioElement.parentElement !== parent) {
+        // 保存播放状态
+        const wasPlaying = !audioElement.paused
+        const currentTime = audioElement.currentTime
+
+        // 先暂停
+        audioElement.pause()
+
+        // 移回原位置
         const nextSibling = originalNextSiblingRef.current
         if (nextSibling && nextSibling.parentNode === parent) {
           parent.insertBefore(audioElement, nextSibling)
         } else {
           parent.appendChild(audioElement)
         }
+
+        // 恢复播放状态
+        audioElement.currentTime = currentTime
+        if (wasPlaying) {
+          audioElement.play().catch((err) => {
+            console.warn('[DraggableAudioPIP] Failed to resume playback after restore:', err)
+          })
+        }
+
+        console.log('[DraggableAudioPIP] Audio element restored to original position, wasPlaying:', wasPlaying)
       }
+
+      // 清理样式
       audioElement.style.width = ''
       audioElement.style.height = ''
       audioElement.style.position = ''
+      audioElement.style.opacity = ''
       audioElement.style.pointerEvents = ''
     }
   }, [audioElement])
