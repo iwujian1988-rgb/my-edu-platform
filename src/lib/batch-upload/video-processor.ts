@@ -185,6 +185,7 @@ export async function processSingleVideo(
   // Step 2: 匹配 UP主（优先使用 creator_id，其次使用 creator 名称匹配）
   let creatorId: string | null = null
   let creatorAvatarUrl: string | null = null
+  let creatorName: string | null = null
 
   // 优先：直接使用 creator_id
   if (unitInfo.creator_id) {
@@ -202,7 +203,7 @@ export async function processSingleVideo(
   }
   // 备选：通过 creator 名称模糊匹配
   else if (unitInfo.creator) {
-    const creatorName = unitInfo.creator.trim()
+    creatorName = unitInfo.creator.trim()
     const { data: creator } = await supabase
       .from('upstream_creators')
       .select('id, avatar_url')
@@ -253,7 +254,7 @@ export async function processSingleVideo(
   const { data: video, error: videoError } = await supabase
     .from('videos')
     .insert({
-      title: unitInfo.video_title_cn || unitInfo.unit_name_cn || unitInfo.theme,
+      title: unitInfo.source_video_name || unitInfo.video_title_cn || unitInfo.unit_name_cn || unitInfo.theme,
       original_title: unitInfo.theme,
       album_title: unitInfo.unit_name_cn || null,
       language: 'fr',
@@ -352,7 +353,7 @@ export async function processSingleVideo(
 
     if (uniqueWords.length > 0) {
       const words = uniqueWords.map((v: { word: string; original: VocabularyInput }) => v.word)
-      const dictResults = await lookupBatch(words, 'fr', { skipFallback: true })
+      const dictResults = await lookupBatch(words, 'fr', { skipFallback: false }) // 移除 skipFallback，确保使用原始数据回退
 
       const wordCards = uniqueWords.map((v: { word: string; original: VocabularyInput }, idx: number) => {
         const original = v.original
@@ -374,8 +375,8 @@ export async function processSingleVideo(
           video_id: videoId,
           word: v.word,
           // 词典有完整数据时优先用，否则用上传数据
-          phonetic: hasCompleteDictData && dictResult.phonetic ? dictResult.phonetic : (original.ipa || null),
-          part_of_speech: hasCompleteDictData && dictResult.posDetail ? dictResult.posDetail : (dictResult?.pos || original.part_of_speech || null),
+          phonetic: hasCompleteDictData ? dictResult.phonetic : (original.ipa || null),
+          part_of_speech: hasCompleteDictData ? dictResult.posDetail : (dictResult?.pos || original.part_of_speech || null),
           chinese_definition: hasCompleteDictData ? dictResult.definition : (original.chinese || ''),
           example_sentence: mainExampleFr,
           example_sentence_cn: mainExampleCn,
