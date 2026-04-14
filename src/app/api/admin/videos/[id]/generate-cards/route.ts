@@ -420,7 +420,7 @@ Return ONLY valid JSON array, no other text.`
               'Authorization': `Bearer ${apiKey}`,
             },
             body: JSON.stringify({
-              model: 'glm-5.1',
+              model: 'glm-4-flash',
               max_tokens: 4096,
               messages: [{ role: 'user', content: prompt }],
             }),
