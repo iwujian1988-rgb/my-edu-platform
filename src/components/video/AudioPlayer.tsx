@@ -176,7 +176,7 @@ export function AudioPlayer({
     <div ref={containerRef} className={cn('relative overflow-hidden select-none aspect-video', className)} style={{ backgroundColor: '#111' }}>
       <audio
         ref={el => { (audioRef as React.MutableRefObject<HTMLAudioElement | null>).current = el; if (audioRefOut) audioRefOut.current = el }}
-        src={hasStarted ? video.video_url : undefined} preload="auto"
+        src={video.video_url} preload="auto"
         onLoadedMetadata={handleLoadedMetadata} onCanPlay={handleCanPlay}
         onTimeUpdate={handleTimeUpdate} onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)} onEnded={() => { setIsPlaying(false); onEnded?.() }}
