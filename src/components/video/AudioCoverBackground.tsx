@@ -46,6 +46,12 @@ function parseRgb(color: string): [number, number, number] {
 
 /** 提亮 + 增饱和：让颜色在 blur 后依然鲜艳 */
 function brighten(color: string): string {
+  // 支持HSL和RGB格式
+  if (color.startsWith('hsl')) {
+    // HSL格式：直接返回，已经在生成时优化过
+    return color
+  }
+
   let [r, g, b] = parseRgb(color)
   // 增饱和：拉大通道差距
   const max = Math.max(r, g, b)
