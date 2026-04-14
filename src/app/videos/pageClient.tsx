@@ -998,7 +998,7 @@ function VideoListContent() {
 
               {/* 分页 */}
               {data && data.total > PAGE_SIZE && (
-                <div className="flex items-center justify-center gap-2 mt-8">
+                <div className="flex items-center justify-center gap-2 mt-8 mb-24 md:mb-20">
                   <button
                     onClick={() => setPage(p => Math.max(1, p - 1))}
                     disabled={page === 1}
