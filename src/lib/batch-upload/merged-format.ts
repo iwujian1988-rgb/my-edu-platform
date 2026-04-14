@@ -173,7 +173,7 @@ function normalizePronunciation(
  * - learningJson: 供 processSingleVideo 消费
  * - extras: 合并格式独有的额外数据（需 processSingleVideoWithExtras 处理）
  */
-export function normalizeMergedUnit(unit: MergedUnitInput, channel?: string): {
+export function normalizeMergedUnit(unit: MergedUnitInput, channel?: string, videoName?: string): {
   subtitleJson: SubtitleJsonInput
   learningJson: LearningMaterialJsonInput
   extras: MergedFormatExtras
@@ -217,7 +217,7 @@ export function normalizeMergedUnit(unit: MergedUnitInput, channel?: string): {
       creator_id: unit.unit_info.creator_id,  // 传递 creator_id
       video_title_cn: unit.unit_info.video_title_cn,
       unit_name_cn: unit.unit_info.unit_name_cn,
-      source_video_name: unit.unit_info.source_video_name,
+      source_video_name: videoName || unit.unit_info.source_video_name,  // 优先使用顶层的 video_name
       cover_url: unit.unit_info.cover_url,
       tags: unit.unit_info.tags,
     },

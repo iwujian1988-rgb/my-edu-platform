@@ -26,13 +26,20 @@ import type {
 
 export async function POST(request: Request) {
   try {
-    // Step 1: 鉴权
-    const adminCheck = await checkAdminForAPI()
-    if (!adminCheck.success) {
-      return NextResponse.json(
-        { error: adminCheck.error || '未授权', code: adminCheck.code },
-        { status: adminCheck.status || 401 }
-      )
+    // Step 1: 鉴权（支持apikey）
+    const apiKey = request.headers.get('apikey')
+    let isAdmin = false
+
+    if (apiKey === process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      isAdmin = true
+    } else {
+      const adminCheck = await checkAdminForAPI()
+      if (!adminCheck.success) {
+        return NextResponse.json(
+          { error: adminCheck.error || '未授权', code: adminCheck.code },
+          { status: adminCheck.status || 401 }
+        )
+      }
     }
 
     // Step 2: 解析请求
@@ -87,7 +94,8 @@ export async function POST(request: Request) {
           try {
             const { subtitleJson, learningJson, extras, simpleExercises } = normalizeMergedUnit(
               unit,
-              merged_json.channel
+              merged_json.channel,
+              merged_json.video_name  // 传递顶层的 video_name
             )
             const result = await processSingleVideoWithExtras(
               typedSupabase,
