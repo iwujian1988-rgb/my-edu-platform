@@ -338,9 +338,26 @@ export async function processSingleVideo(
 
   console.log(`[批量上传] 存储字幕成功: ${subtitlesData.length} 条`)
 
+  // Step 4.5: 保存原始学习材料
+  const { error: materialsError } = await supabase
+    .from('video_learning_materials')
+    .insert({
+      video_id: videoId,
+      material_json: learning_material_json,
+    })
+
+  if (materialsError) {
+    console.error(`[批量上传] 存储学习材料失败:`, materialsError)
+    // 不抛出错误，继续处理，因为其他数据可能仍然有用
+  } else {
+    console.log(`[批量上传] 存储学习材料成功`)
+  }
+
   // Step 5: 处理单词
   const vocabulary = learning_material_json.language_analysis?.vocabulary || []
   let wordsCount = 0
+
+  console.log(`[DEBUG] 开始处理单词: vocabulary.length=${vocabulary.length}`)
 
   if (vocabulary.length > 0) {
     const uniqueWords = uniqueArray(
@@ -351,9 +368,22 @@ export async function processSingleVideo(
       'word'
     )
 
+    console.log(`[DEBUG] cleanWord后: uniqueWords.length=${uniqueWords.length}`)
+
     if (uniqueWords.length > 0) {
       const words = uniqueWords.map((v: { word: string; original: VocabularyInput }) => v.word)
-      const dictResults = await lookupBatch(words, 'fr', { skipFallback: false }) // 移除 skipFallback，确保使用原始数据回退
+
+      let dictResults = []
+      try {
+        console.log(`[DEBUG] 开始词典查询: ${words.length} 个单词`)
+        dictResults = await lookupBatch(words, 'fr', { skipFallback: false })
+        console.log(`[DEBUG] 词典查询完成`)
+      } catch (dictError) {
+        console.error(`[DEBUG] 词典查询失败:`, dictError)
+        console.log(`[DEBUG] 将使用原始数据作为fallback`)
+        // 使用空数组作为fallback，所有数据都从original获取
+        dictResults = words.map(() => null)
+      }
 
       const wordCards = uniqueWords.map((v: { word: string; original: VocabularyInput }, idx: number) => {
         const original = v.original
@@ -371,12 +401,16 @@ export async function processSingleVideo(
 
         const definitions = dictResult?.definitions || []
 
+        // Truncate part_of_speech to max 20 characters (database constraint)
+        const rawPos = hasCompleteDictData ? dictResult.posDetail : (dictResult?.pos || original.part_of_speech || null)
+        const truncatedPos = rawPos ? rawPos.substring(0, 20) : null
+
         return {
           video_id: videoId,
           word: v.word,
           // 词典有完整数据时优先用，否则用上传数据
           phonetic: hasCompleteDictData ? dictResult.phonetic : (original.ipa || null),
-          part_of_speech: hasCompleteDictData ? dictResult.posDetail : (dictResult?.pos || original.part_of_speech || null),
+          part_of_speech: truncatedPos,
           chinese_definition: hasCompleteDictData ? dictResult.definition : (original.chinese || ''),
           example_sentence: mainExampleFr,
           example_sentence_cn: mainExampleCn,
@@ -405,8 +439,12 @@ export async function processSingleVideo(
         console.log(`[批量上传] 存储单词卡片成功: ${wordsCount} 个`)
       } else {
         console.error(`[批量上传] 存储单词卡片失败:`, wordsError)
+        console.error(`[DEBUG] wordCards.length=${wordCards.length}`)
+        console.error(`[DEBUG] 第一个wordCard:`, JSON.stringify(wordCards[0], null, 2))
       }
     }
+  } else {
+    console.log(`[DEBUG] uniqueWords.length=${uniqueWords.length}，跳过单词卡片生成`)
   }
 
   // Step 6: 处理地道表达

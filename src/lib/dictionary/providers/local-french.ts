@@ -118,7 +118,7 @@ async function loadFrenchWords(): Promise<Map<string, FrenchLocalWord>> {
 
   try {
     // 动态导入 JSON 文件
-    const data = await import('@/../data/french/french_words_all.json') as FrenchWordsData
+    const data = await import('../../data/french/french_words_all.json') as FrenchWordsData
 
     frenchWordsCache = new Map()
 
