@@ -47,6 +47,7 @@ import type {
 import { GrammarPointsTab } from './GrammarPointsTab'
 import { PronunciationTipsTab } from './PronunciationTipsTab'
 import { VocabularyNetworkTab } from './VocabularyNetworkTab'
+import { WordsTab } from './LearningTabs'
 import { useTTSPreload } from '@/hooks/useTTSPreload'
 import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
@@ -411,96 +412,70 @@ export function LearningModal({
               </div>
             </div>
 
-            {/* 地道表达区域 */}
+            {/* 单词区域 */}
             <div className="flex-1 min-h-0 overflow-y-auto bg-white dark:bg-gray-800">
-              <div className="sticky top-0 bg-purple-200 dark:bg-purple-900/40 px-3 py-2 border-b-[2px] border-black dark:border-gray-600 z-10">
-                <div
-                  className="flex items-center gap-2 cursor-pointer"
-                  onClick={() => toggleSection('expressions')}
-                >
-                  <MessageSquare className="w-4 h-4 text-purple-700 dark:text-purple-300" />
-                  <span className="text-sm font-black text-purple-700 dark:text-purple-300">地道表达</span>
-                  <span className="text-xs font-bold px-2 py-0.5 bg-purple-300 dark:bg-purple-800 text-purple-800 dark:text-purple-200 border-[2px] border-black">
-                    {expressionsLearned}/{expressions.length}
+              {/* 单词标题栏 */}
+              <div className="sticky top-0 bg-indigo-200 dark:bg-indigo-900/40 px-3 py-2 border-b-[2px] border-black dark:border-gray-600 z-10">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <BookOpen className="w-4 h-4 text-indigo-700 dark:text-indigo-300" />
+                    <span className="text-sm font-black text-indigo-700 dark:text-indigo-300">单词</span>
+                  </div>
+                  <span className="text-xs font-bold px-2 py-0.5 bg-indigo-300 dark:bg-indigo-800 text-indigo-800 dark:text-indigo-200 border-[2px] border-black">
+                    {words.length} 个
                   </span>
-                  {expandedSections.has('expressions') ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
                 </div>
               </div>
+              <WordsTab
+                words={words}
+                videoLanguage={video.language}
+                ttsPreload={ttsPreload}
+                onJumpToSubtitle={handleJumpToTime}
+                getCardStatus={getCardStatusLocal}
+                onStatusChange={handleStatusChange}
+              />
+            </div>
+          </div>
 
-              {expandedSections.has('expressions') && (
-                <div className="p-2 space-y-2">
-                  {expressions.length === 0 ? (
-                    <div className="text-center py-6 text-gray-500 text-sm font-bold">暂无地道表达</div>
-                  ) : (
-                    expressions.map((expr) => (
+          {/* 右侧：地道表达、单词、语法、发音、词汇网络 - 整体可滚动 */}
+          <div className="w-[55%] flex flex-col min-h-0 overflow-y-auto bg-gray-50 dark:bg-gray-900">
+            {/* 地道表达模块 */}
+            {expressions.length > 0 && (
+              <div className="border-b-[2px] border-black dark:border-gray-600">
+                <div className="sticky top-0 bg-purple-200 dark:bg-purple-900/40 px-3 py-2 cursor-pointer z-10">
+                  <div
+                    className="flex items-center gap-2 cursor-pointer"
+                    onClick={() => toggleSection('expressions')}
+                  >
+                    <MessageSquare className="w-4 h-4 text-purple-700 dark:text-purple-300" />
+                    <span className="text-sm font-black text-purple-700 dark:text-purple-300">地道表达</span>
+                    <span className="text-xs font-bold px-2 py-0.5 bg-purple-300 dark:bg-purple-800 text-purple-800 dark:text-purple-200 border-[2px] border-black">
+                      {expressionsLearned}/{expressions.length}
+                    </span>
+                    {expandedSections.has('expressions') ? <ChevronDown className="w-4 h-4" /> : <ChevronUp className="w-4 h-4" />}
+                  </div>
+                </div>
+
+                {expandedSections.has('expressions') && (
+                  <div className="p-2 space-y-2 bg-white dark:bg-gray-800">
+                    {expressions.map((expr) => (
                       <ExpressionCard
                         key={expr.id}
                         expression={expr}
                         status={getCardStatusLocal('expression', expr.id)}
                         onStatusChange={(status) => handleStatusChange('expression', expr.id, status)}
                         onJumpToSubtitle={handleJumpToTime}
+                        onPlayWord={playWord}
+                        videoLanguage={video.language}
+                        ttsPreload={ttsPreload}
                       />
-                    ))
-                  )}
-                </div>
-              )}
-            </div>
-          </div>
-
-          {/* 右侧：单词、语法、发音、词汇网络 - 整体可滚动 */}
-          <div className="w-[55%] flex flex-col min-h-0 overflow-y-auto bg-gray-50 dark:bg-gray-900">
-            {/* 单词模块 */}
-            <div className="border-b-[2px] border-black dark:border-gray-600">
-              <div
-                className="bg-indigo-200 dark:bg-indigo-900/40 px-3 py-2"
-              >
-                <div className="flex items-center justify-between">
-                  <div
-                    className="flex items-center gap-2 cursor-pointer flex-1"
-                    onClick={() => toggleSection('words')}
-                  >
-                    <BookOpen className="w-4 h-4 text-indigo-700 dark:text-indigo-300" />
-                    <span className="text-sm font-black text-indigo-700 dark:text-indigo-300">单词</span>
-                    <span className="text-xs font-bold px-2 py-0.5 bg-indigo-300 dark:bg-indigo-800 text-indigo-800 dark:text-indigo-200 border-[2px] border-black">
-                      {wordsLearned}/{words.length}
-                    </span>
-                    {expandedSections.has('words') ? <ChevronDown className="w-4 h-4 ml-1" /> : <ChevronUp className="w-4 h-4 ml-1" />}
+                    ))}
                   </div>
-                </div>
+                )}
               </div>
+            )}
 
-              {expandedSections.has('words') && (
-                <div className="bg-white dark:bg-gray-800 p-3">
-                  <div className="grid grid-cols-3 gap-2">
-                    {words.length === 0 ? (
-                      <div className="col-span-3 text-center py-4 text-gray-500 text-sm font-bold">暂无单词</div>
-                    ) : (
-                      (showAllWords ? words : words.slice(0, WORDS_PREVIEW_COUNT)).map((word) => (
-                        <WordCard
-                          key={word.id}
-                          word={word}
-                          status={getCardStatusLocal('word', word.id)}
-                          onStatusChange={(status) => handleStatusChange('word', word.id, status)}
-                          onJumpToSubtitle={handleJumpToTime}
-                          onPlayWord={playWord}
-                          videoLanguage={video.language}
-                          ttsPreload={ttsPreload}
-                        />
-                      ))
-                    )}
-                  </div>
-                  {/* 展开更多/收起按钮 */}
-                  {words.length > WORDS_PREVIEW_COUNT && (
-                    <button
-                      onClick={() => setShowAllWords(!showAllWords)}
-                      className="w-full mt-3 py-2 text-xs font-black text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 border-[2px] border-indigo-300 dark:border-indigo-700 hover:bg-indigo-100 dark:hover:bg-indigo-900/50 transition-colors"
-                    >
-                      {showAllWords ? `收起 (显示 ${WORDS_PREVIEW_COUNT} 个)` : `展开更多 (还有 ${words.length - WORDS_PREVIEW_COUNT} 个)`}
-                    </button>
-                  )}
-                </div>
-              )}
-            </div>
+            {/* 单词模块 - 从右侧移除，已放到左侧 */}
 
             {/* 语法点 */}
             {grammarPoints.length > 0 && (
@@ -551,7 +526,7 @@ export function LearningModal({
             )}
 
             {/* 词汇网络 */}
-            {vocabularyNetwork && (
+            {vocabularyNetwork && vocabularyNetwork.nodes && vocabularyNetwork.nodes.length > 0 && (
               <div>
                 <div
                   className="bg-indigo-200 dark:bg-indigo-900/40 px-3 py-2 cursor-pointer sticky top-0 z-10"

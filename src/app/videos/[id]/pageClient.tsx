@@ -42,6 +42,9 @@ import { SubtitleList } from '@/components/video/SubtitleList'
 import { CardPopover } from '@/components/video/CardPopover'
 import { RecordingPanel } from '@/components/video/RecordingPanel'
 import { FillBlankExercise } from '@/components/video/exercises/FillBlankExercise'
+import { MultipleChoiceExercise } from '@/components/video/exercises/MultipleChoiceExercise'
+import { TranslationExercise } from '@/components/video/exercises/TranslationExercise'
+import { GrammarDrillExercise } from '@/components/video/exercises/GrammarDrillExercise'
 import { LearningCards } from '@/components/video/LearningCards'
 import { LearningTabs } from '@/components/video/learning/LearningTabs'
 import { LearningModal } from '@/components/video/learning/LearningModal'
@@ -410,6 +413,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
   const { video, subtitles, cards, exercises, grammar_points, pronunciation_tips, vocabulary_network } = data
 
+  // 按类型过滤练习
+  const fillBlankExercises = exercises.filter(e => e.exercise_type === 'fill_blank')
+  const multipleChoiceExercises = exercises.filter(e => e.exercise_type === 'multiple_choice')
+  const translationExercises = exercises.filter(e => e.exercise_type === 'translation')
+  const grammarDrillExercises = exercises.filter(e => e.exercise_type === 'grammar_drill')
+
   return (
     <div className="min-h-screen bg-gray-50 transition-colors duration-300">
       {/* ===== 移动端布局 ===== */}
@@ -633,16 +642,33 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
             />
           )}
           {currentTab === 'write' && (
-            <FillBlankExercise
-              exercises={exercises}
-              progressMap={exerciseProgressMap}
-              onRecordAnswer={recordExerciseAnswer}
-              onPlaySegment={(startTime: number, endTime: number) => {
-                setSegmentEndTime(endTime)
-                setSeekToTime(startTime)
-                setSeekTrigger(prev => prev + 1)
-              }}
-            />
+            <div className="space-y-6">
+              <FillBlankExercise
+                exercises={fillBlankExercises}
+                progressMap={exerciseProgressMap}
+                onRecordAnswer={recordExerciseAnswer}
+                onPlaySegment={(startTime: number, endTime: number) => {
+                  setSegmentEndTime(endTime)
+                  setSeekToTime(startTime)
+                  setSeekTrigger(prev => prev + 1)
+                }}
+              />
+              <MultipleChoiceExercise
+                exercises={multipleChoiceExercises}
+                progressMap={exerciseProgressMap}
+                onRecordAnswer={recordExerciseAnswer}
+              />
+              <TranslationExercise
+                exercises={translationExercises}
+                progressMap={exerciseProgressMap}
+                onRecordAnswer={recordExerciseAnswer}
+              />
+              <GrammarDrillExercise
+                exercises={grammarDrillExercises}
+                progressMap={exerciseProgressMap}
+                onRecordAnswer={recordExerciseAnswer}
+              />
+            </div>
           )}
           {currentTab === 'learn' && (
             <LearningTabs
@@ -947,9 +973,9 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   )}
 
                   {currentTab === 'write' && (
-                    <div className="p-4">
+                    <div className="p-4 space-y-6">
                       <FillBlankExercise
-                        exercises={exercises}
+                        exercises={fillBlankExercises}
                         progressMap={exerciseProgressMap}
                         onRecordAnswer={recordExerciseAnswer}
                         onPlaySegment={(startTime, endTime) => {
@@ -957,6 +983,21 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                           setSeekToTime(startTime)
                           setSeekTrigger(prev => prev + 1)
                         }}
+                      />
+                      <MultipleChoiceExercise
+                        exercises={multipleChoiceExercises}
+                        progressMap={exerciseProgressMap}
+                        onRecordAnswer={recordExerciseAnswer}
+                      />
+                      <TranslationExercise
+                        exercises={translationExercises}
+                        progressMap={exerciseProgressMap}
+                        onRecordAnswer={recordExerciseAnswer}
+                      />
+                      <GrammarDrillExercise
+                        exercises={grammarDrillExercises}
+                        progressMap={exerciseProgressMap}
+                        onRecordAnswer={recordExerciseAnswer}
                       />
                     </div>
                   )}

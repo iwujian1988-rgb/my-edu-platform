@@ -163,12 +163,12 @@ export function LearningTabs({
   }).length
 
   const tabs: TabConfig[] = [
-    { key: 'words', label: '单词', icon: <BookOpen className="w-4 h-4" />, count: words.length },
     { key: 'expressions', label: '地道表达', icon: <MessageSquare className="w-4 h-4" />, count: expressions.length },
+    { key: 'words', label: '单词', icon: <BookOpen className="w-4 h-4" />, count: words.length },
     { key: 'grammar', label: '语法点', icon: <BookMarked className="w-4 h-4" />, count: grammarPoints.length },
     { key: 'pronunciation', label: '发音要点', icon: <Volume2 className="w-4 h-4" />, count: pronunciationTips.length },
     { key: 'network', label: '词汇网络', icon: <Network className="w-4 h-4" />, count: vocabularyNetwork ? 1 : 0 },
-  ]
+  ].filter(tab => tab.count > 0) // 隐藏没有数据的 Tab
 
   // 渲染 Tab 内容
   const renderTabContent = () => {
@@ -328,7 +328,7 @@ interface WordsTabProps {
   onStatusChange?: (cardType: 'word', cardId: string, status: CardStatus) => Promise<void>
 }
 
-function WordsTab({ words, videoLanguage, ttsPreload, onJumpToSubtitle, onPlaySegment, getCardStatus, onStatusChange }: WordsTabProps) {
+export function WordsTab({ words, videoLanguage, ttsPreload, onJumpToSubtitle, onPlaySegment, getCardStatus, onStatusChange }: WordsTabProps) {
   const [playingWord, setPlayingWord] = useState<string | null>(null)
   const [expandedDefinitions, setExpandedDefinitions] = useState<Set<string>>(new Set())
   const [expandedExamples, setExpandedExamples] = useState<Set<string>>(new Set())
