@@ -418,10 +418,19 @@ export function VideoWorkflowClient() {
     setError(null)
 
     try {
+      // 检测上传的文件类型，自动修正 content_type
+      const isAudioFile = /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(videoUrl)
+      const updateData: Record<string, any> = { video_url: videoUrl }
+
+      // 如果是音频文件且当前类型不是audio，自动修正
+      if (isAudioFile && videoData.content_type !== 'audio') {
+        updateData.content_type = 'audio'
+      }
+
       const res = await fetch(`/api/admin/videos/${videoData.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ video_url: videoUrl }),
+        body: JSON.stringify(updateData),
       })
 
       const result = await res.json()
@@ -430,14 +439,18 @@ export function VideoWorkflowClient() {
         throw new Error(result.error || '保存失败')
       }
 
-      setVideoData(prev => ({ ...prev, video_url: videoUrl }))
+      setVideoData(prev => ({
+        ...prev,
+        video_url: videoUrl,
+        ...(isAudioFile && prev.content_type !== 'audio' ? { content_type: 'audio' } : {})
+      }))
       setCurrentStep(6)
     } catch (err) {
       setError(err instanceof Error ? err.message : '保存失败')
     } finally {
       setIsLoading(false)
     }
-  }, [videoData.id])
+  }, [videoData.id, videoData.content_type])
 
   // ============================================
   // 步骤 6: 发布

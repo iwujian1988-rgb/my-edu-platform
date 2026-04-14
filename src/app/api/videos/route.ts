@@ -215,6 +215,13 @@ export async function GET(request: NextRequest) {
     // 8. 构建响应（tag_names 已在 SQL 中聚合，无需前端处理）
     const items = rows.map(row => {
       const creatorAvatar = row.creator_name ? creatorAvatarMap.get(row.creator_name) : undefined
+      // 智能判断内容类型
+      const isAudio = row.content_type === 'audio' || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(row.video_url || '')
+      // 音频内容优先使用 UP主头像作为封面
+      const effectiveCover = isAudio
+        ? (row.cover_url || creatorAvatar || row.thumbnail_url || null)
+        : (row.thumbnail_url || row.cover_url || null)
+
       return {
         id: row.id,
         title: row.title,
@@ -224,10 +231,8 @@ export async function GET(request: NextRequest) {
         duration: row.duration,
         language: row.language,
         difficulty: row.difficulty,
-        content_type: row.content_type === 'audio' || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(row.video_url || '')
-          ? 'audio'
-          : (row.content_type || 'video'),
-        cover_url: row.cover_url || row.thumbnail_url || creatorAvatar || null,
+        content_type: isAudio ? 'audio' : (row.content_type || 'video'),
+        cover_url: effectiveCover,
         status: row.status,
         display_order: row.display_order,
         creator_name: row.creator_name,
