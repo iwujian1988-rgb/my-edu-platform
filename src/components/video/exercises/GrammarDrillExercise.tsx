@@ -11,7 +11,7 @@ import { useState, useCallback } from 'react'
 import { cn } from '@/lib/utils'
 import type { VideoExercise } from '@/types/video'
 import type { ExerciseProgressItem } from '@/hooks/useExerciseProgress'
-import { ChevronRight, BookOpen, Check, X } from 'lucide-react'
+import { ChevronRight, BookOpen, Check, X, RotateCcw } from 'lucide-react'
 
 export interface GrammarDrillExerciseProps {
   exercises: VideoExercise[]
@@ -42,13 +42,12 @@ export function GrammarDrillExercise({
   const referenceAnswer = meta?.answer || exercise.answer_text || ''
   const explanation = meta?.explanation || ''
 
-  const correct = isAnswerMatch(userInput, referenceAnswer)
-
   const handleSubmit = useCallback(() => {
     if (!userInput.trim() || submitted) return
+    const correct = isAnswerMatch(userInput, referenceAnswer)
     setSubmitted(true)
     onRecordAnswer(exercise.id, correct)
-  }, [userInput, submitted, exercise.id, correct, onRecordAnswer])
+  }, [userInput, submitted, exercise.id, referenceAnswer, onRecordAnswer])
 
   const handleNext = useCallback(() => {
     if (currentIndex < exercises.length - 1) {
@@ -66,7 +65,15 @@ export function GrammarDrillExercise({
     }
   }, [currentIndex])
 
+  const handleRedo = useCallback(() => {
+    setUserInput('')
+    setSubmitted(false)
+  }, [])
+
   const existingProgress = progressMap?.get(exercise.id)
+
+  // 计算当前答案是否正确（用于显示）
+  const correct = submitted ? isAnswerMatch(userInput, referenceAnswer) : false
 
   return (
     <div className="mb-6">
@@ -152,13 +159,24 @@ export function GrammarDrillExercise({
 
           {/* 操作按钮 */}
           <div className="flex items-center justify-between pt-1">
-            <button
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              className="px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] disabled:opacity-30 hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
-            >
-              上一题
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className="px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] disabled:opacity-30 hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+              >
+                上一题
+              </button>
+              {submitted && !isAnswerMatch(userInput, referenceAnswer) && (
+                <button
+                  onClick={handleRedo}
+                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  重做
+                </button>
+              )}
+            </div>
 
             {!submitted ? (
               <button

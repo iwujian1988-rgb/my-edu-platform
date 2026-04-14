@@ -182,21 +182,37 @@ export async function processSingleVideo(
   const unitInfo = subtitle_json.unit_info
   const learningInfo = learning_material_json.unit_info
 
-  // Step 2: 匹配 UP主（如果提供了 creator 字段，大小写不敏感匹配）
+  // Step 2: 匹配 UP主（优先使用 creator_id，其次使用 creator 名称匹配）
   let creatorId: string | null = null
   let creatorAvatarUrl: string | null = null
-  const creatorName = unitInfo.creator?.trim()
-  if (creatorName) {
+
+  // 优先：直接使用 creator_id
+  if (unitInfo.creator_id) {
+    creatorId = unitInfo.creator_id
+    // 获取UP主头像
+    const { data: creator } = await supabase
+      .from('upstream_creators')
+      .select('avatar_url')
+      .eq('id', creatorId)
+      .maybeSingle()
+    if (creator) {
+      creatorAvatarUrl = creator.avatar_url || null
+      console.log(`[批量上传] 使用 creator_id: ${creatorId}`)
+    }
+  }
+  // 备选：通过 creator 名称模糊匹配
+  else if (unitInfo.creator) {
+    const creatorName = unitInfo.creator.trim()
     const { data: creator } = await supabase
       .from('upstream_creators')
       .select('id, avatar_url')
-      .ilike('name', creatorName)
+      .like('name', `%${creatorName}%`)  // 包含匹配，支持部分名称
       .maybeSingle()
 
     if (creator) {
       creatorId = creator.id
       creatorAvatarUrl = creator.avatar_url || null
-      console.log(`[批量上传] 匹配到UP主: ${creatorName} -> ${creatorId}`)
+      console.log(`[批量上传] 通过名称匹配UP主: ${creatorName} -> ${creatorId}`)
     } else {
       console.log(`[批量上传] 未找到UP主: ${creatorName}，将不关联UP主`)
     }
@@ -210,15 +226,29 @@ export async function processSingleVideo(
 
   // 检测是否为音频内容：
   // 1) URL 包含音频扩展名 → audio
-  // 2) 无 URL 时默认 audio（播客/合并上传场景，绝大多数是音频）
+  // 2) URL 包含视频扩展名 → video
+  // 3) 无 URL 时默认 video（更安全的默认值）
   const isAudioContent = videoUrl
     ? /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(videoUrl)
-    : true
+    : false
 
-  // 音频内容且无封面时，用 UP主头像作为默认封面
-  const defaultCoverUrl = (isAudioContent && !unitInfo.cover_url && creatorAvatarUrl)
-    ? creatorAvatarUrl
-    : (unitInfo.cover_url || null)
+  // 智能封面设置：
+  // 1) 优先使用 unit_info 中的 cover_url
+  // 2) 音频内容且无封面时，使用 UP主头像
+  // 3. 都没有时，使用默认封面（可以是 null，前端会显示占位符）
+  const defaultCoverUrl = unitInfo.cover_url || (isAudioContent && creatorAvatarUrl ? creatorAvatarUrl : null)
+
+  // 设置 thumbnail_url（视频内容主要用这个字段）
+  const defaultThumbnailUrl = unitInfo.cover_url || null
+
+  // 计算视频时长（优先使用duration_minutes，否则根据start_time和end_time计算）
+  let calculatedDuration = Math.round((learningInfo.duration_minutes || 0) * 60)
+  if (calculatedDuration === 0 && unitInfo.start_time && unitInfo.end_time) {
+    const startTime = timeStringToSeconds(unitInfo.start_time)
+    const endTime = timeStringToSeconds(unitInfo.end_time)
+    calculatedDuration = Math.round(endTime - startTime)
+    console.log(`[批量上传] 根据字幕时间计算时长: ${calculatedDuration}秒 (${unitInfo.start_time} -> ${unitInfo.end_time})`)
+  }
 
   const { data: video, error: videoError } = await supabase
     .from('videos')
@@ -228,13 +258,18 @@ export async function processSingleVideo(
       album_title: unitInfo.unit_name_cn || null,
       language: 'fr',
       difficulty: cefrToDifficulty(learningInfo.cefr_level),
-      duration: Math.round((learningInfo.duration_minutes || 0) * 60),
+      duration: calculatedDuration,
       video_url: videoUrl,
       content_type: isAudioContent ? 'audio' : 'video',
       cover_url: defaultCoverUrl,
+      thumbnail_url: defaultThumbnailUrl,
       status: 'draft',
       creator_id: creatorId,
       creator_name: creatorName || null,
+      learning_objectives: (item as any).learning_objectives || null,
+      summary_content: (item as any).summary?.content || null,
+      summary_keywords: (item as any).summary?.keywords || null,
+      difficulty_note: (item as any).summary?.difficulty_note || null,
     })
     .select()
     .single()
@@ -324,6 +359,9 @@ export async function processSingleVideo(
         const dictResult = dictResults[idx]
         const example = findWordInSubtitles(v.word, savedSubtitles || [])
 
+        // 判断词典数据是否完整（有definition表示有完整数据）
+        const hasCompleteDictData = dictResult && dictResult.definition && dictResult.definition.trim() !== ''
+
         const dictExamples = dictResult?.examples || []
         const firstDictExample = dictExamples[0]
         const jsonExample = original.example_sentence
@@ -335,9 +373,10 @@ export async function processSingleVideo(
         return {
           video_id: videoId,
           word: v.word,
-          phonetic: dictResult?.phonetic || original.ipa || null,
-          part_of_speech: dictResult?.posDetail || dictResult?.pos || original.part_of_speech || null,
-          chinese_definition: dictResult?.definition || original.chinese || '',
+          // 词典有完整数据时优先用，否则用上传数据
+          phonetic: hasCompleteDictData && dictResult.phonetic ? dictResult.phonetic : (original.ipa || null),
+          part_of_speech: hasCompleteDictData && dictResult.posDetail ? dictResult.posDetail : (dictResult?.pos || original.part_of_speech || null),
+          chinese_definition: hasCompleteDictData ? dictResult.definition : (original.chinese || ''),
           example_sentence: mainExampleFr,
           example_sentence_cn: mainExampleCn,
           example_from_video: example?.original || null,
@@ -351,6 +390,8 @@ export async function processSingleVideo(
           difficulty_level: cefrToNumber(original.cefr_level),
           display_order: idx,
           is_reviewed: true,
+          occurrence_count: original.occurrence_count || 1,
+          source_ids: original.source_ids || [],
         }
       })
 
@@ -554,6 +595,7 @@ export async function processSingleVideo(
         answer_text: ex.answer,
         display_order: idx,
         subtitle_start_time: matchedSubtitle?.start_time ?? null,
+        exercise_summary: (item as any).exercise_summary || null,
       }
     })
 

@@ -25,6 +25,7 @@ import {
   Play,
   Trophy,
   RefreshCw,
+  Pencil,
 } from 'lucide-react'
 import type { VideoExercise, ExerciseDifficulty } from '@/types/video'
 import type { ExerciseProgressItem } from '@/hooks/useExerciseProgress'
@@ -82,7 +83,6 @@ export function FillBlankExercise({
   onRecordAnswer,
   onPlaySegment,
 }: FillBlankExerciseProps) {
-  const [selectedDifficulty, setSelectedDifficulty] = useState<ExerciseDifficulty | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [localStates, setLocalStates] = useState<LocalExerciseState>(() => new Map())
   const [showHint, setShowHint] = useState(false)
@@ -90,13 +90,10 @@ export function FillBlankExercise({
   const [resettedIds, setResettedIds] = useState<Set<string>>(new Set())
   const inputRefs = useRef<Map<string, HTMLInputElement>>(new Map())
 
-  // 按难度筛选练习题
-  const filteredExercises = useMemo(() => {
-    if (!selectedDifficulty) return []
-    return exercises.filter((e) => e.difficulty === selectedDifficulty)
-  }, [exercises, selectedDifficulty])
+  // 显示所有练习题，不按难度筛选
+  const filteredExercises = exercises
 
-  // 统计各难度的题目数量
+  // 统计各难度的题目数量（用于显示提示）
   const difficultyCounts = useMemo(() => {
     const counts: Record<ExerciseDifficulty, number> = {
       beginner: 0,
@@ -110,6 +107,9 @@ export function FillBlankExercise({
   }, [exercises])
 
   const currentExercise = filteredExercises[currentIndex]
+
+  // 当前题目的难度（用于显示）
+  const currentDifficulty = currentExercise?.difficulty
 
   // 获取当前题目的本地状态，如果不存在则初始化
   const getCurrentLocalState = useCallback((exercise: VideoExercise) => {
@@ -149,10 +149,8 @@ export function FillBlankExercise({
     return local?.submitted === true
   }, [progressMap, localStates, resettedIds])
 
-  // 统计某难度下的完成情况
+  // 统计所有练习题的完成情况
   const difficultyStats = useMemo(() => {
-    if (!selectedDifficulty) return { completed: 0, correct: 0, total: 0 }
-
     const total = filteredExercises.length
     let completed = 0
     let correct = 0
@@ -169,17 +167,9 @@ export function FillBlankExercise({
     })
 
     return { completed, correct, total }
-  }, [selectedDifficulty, filteredExercises, isExerciseCompleted, progressMap, localStates, resettedIds])
+  }, [filteredExercises, isExerciseCompleted, progressMap, localStates, resettedIds])
 
-  // 选择难度
-  const handleSelectDifficulty = useCallback((difficulty: ExerciseDifficulty) => {
-    setSelectedDifficulty(difficulty)
-    setCurrentIndex(0)
-    setLocalStates(new Map())
-    setResettedIds(new Set())
-    setShowHint(false)
-    setShowSummary(false)
-  }, [])
+  // 移除难度选择功能，不再需要
 
   // 更新某个空位的输入
   const handleBlankChange = useCallback(
@@ -275,10 +265,10 @@ export function FillBlankExercise({
     }
   }, [filteredExercises, progressMap])
 
-  // 重新开始当前难度所有题目
+  // 重新开始所有题目
   const handleRedoAll = useCallback(() => {
     setLocalStates(new Map())
-    // 将所有当前难度的题标记为已重置
+    // 将所有题目标记为已重置
     setResettedIds((prev) => {
       const next = new Set(prev)
       filteredExercises.forEach(e => next.add(e.id))
@@ -441,66 +431,7 @@ export function FillBlankExercise({
     )
   }
 
-  // 难度选择界面
-  if (!selectedDifficulty) {
-    return (
-      <div className="space-y-3">
-        <div className="text-center mb-4">
-          <h3 className="text-base font-black text-black dark:text-white">选择练习难度</h3>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
-            根据你的熟练程度选择
-          </p>
-        </div>
-
-        <div className="space-y-2">
-          {(Object.keys(DIFFICULTY_CONFIG) as ExerciseDifficulty[]).map((difficulty) => {
-            const config = DIFFICULTY_CONFIG[difficulty]
-            const count = difficultyCounts[difficulty]
-            const Icon = config.icon
-
-            if (count === 0) return null
-
-            // 计算该难度下的完成进度
-            const diffExercises = exercises.filter(e => e.difficulty === difficulty)
-            const completedCount = diffExercises.filter(e => progressMap?.has(e.id)).length
-
-            return (
-              <button
-                key={difficulty}
-                onClick={() => handleSelectDifficulty(difficulty)}
-                className={cn(
-                  'w-full p-3 border-[3px] border-black dark:border-gray-600 text-left transition-all',
-                  'shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]',
-                  'hover:shadow-[4px_4px_0px_0px_#000] hover:-translate-y-0.5',
-                  'active:shadow-[1px_1px_0px_0px_#000] active:translate-y-0.5',
-                  config.bgColor
-                )}
-              >
-                <div className="flex items-center gap-3">
-                  <div className="p-1.5 bg-white dark:bg-gray-800 border-[2px] border-black">
-                    <Icon className="w-4 h-4 text-black dark:text-white" />
-                  </div>
-                  <div className="flex-1">
-                    <div className="flex items-center justify-between">
-                      <span className="font-black text-black text-sm">
-                        {config.label}
-                      </span>
-                      <span className="px-2 py-0.5 bg-white dark:bg-gray-800 border-[2px] border-black text-xs font-black">
-                        {completedCount > 0 ? `${completedCount}/${count}` : `${count} 题`}
-                      </span>
-                    </div>
-                    <p className="text-xs text-black/70 mt-0.5">
-                      {config.description}
-                    </p>
-                  </div>
-                </div>
-              </button>
-            )
-          })}
-        </div>
-      </div>
-    )
-  }
+  // 移除难度选择界面
 
   // 完成总结面板
   if (showSummary) {
@@ -514,19 +445,12 @@ export function FillBlankExercise({
     return (
       <div className="space-y-4">
         <div className="flex items-center justify-between">
-          <button
-            onClick={() => setSelectedDifficulty(null)}
-            className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
-          >
-            <RotateCcw className="w-3 h-3" />
-            返回
-          </button>
           <span className={cn(
             'px-2 py-1 border-[2px] border-black text-xs font-black',
-            DIFFICULTY_CONFIG[selectedDifficulty].bgColor,
-            'text-black'
+            'bg-gray-100 dark:bg-gray-700',
+            'text-black dark:text-white'
           )}>
-            {DIFFICULTY_CONFIG[selectedDifficulty].label}
+            全部练习
           </span>
         </div>
 
@@ -612,27 +536,34 @@ export function FillBlankExercise({
   const isAlreadyCompleted = currentExercise ? isExerciseCompleted(currentExercise.id) : false
 
   return (
-    <div className="space-y-3">
+    <div className="mb-6">
+      {/* 标题 */}
+      <div className="flex items-center gap-2 mb-3">
+        <div className="p-1.5 bg-[#B4F416] border-[2px] border-black">
+          <Pencil className="w-4 h-4 text-black" />
+        </div>
+        <h3 className="text-base font-black text-black dark:text-white">填空题</h3>
+        <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
+          ({exercises.length} 题)
+        </span>
+      </div>
+
+      <div className="space-y-3">
       {/* 进度条 */}
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-2">
-          <button
-            onClick={() => setSelectedDifficulty(null)}
-            className="flex items-center gap-1 px-2 py-1 text-xs font-bold bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
-          >
-            <RotateCcw className="w-3 h-3" />
-            返回
-          </button>
           <span className="px-2 py-1 bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 text-xs font-black">
             {currentIndex + 1} / {filteredExercises.length}
           </span>
-          <span className={cn(
-            'px-2 py-1 border-[2px] border-black text-xs font-black',
-            DIFFICULTY_CONFIG[selectedDifficulty].bgColor,
-            'text-black'
-          )}>
-            {DIFFICULTY_CONFIG[selectedDifficulty].label}
-          </span>
+          {currentDifficulty && (
+            <span className={cn(
+              'px-2 py-1 border-[2px] border-black text-xs font-black',
+              DIFFICULTY_CONFIG[currentDifficulty].bgColor,
+              'text-black'
+            )}>
+              {DIFFICULTY_CONFIG[currentDifficulty].label}
+            </span>
+          )}
         </div>
         <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
           正确率: {difficultyStats.completed > 0 ? Math.round((difficultyStats.correct / difficultyStats.completed) * 100) : 0}%
@@ -648,6 +579,9 @@ export function FillBlankExercise({
               💡 {currentExercise.translation}
             </p>
           )}
+          <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">
+            根据原文含义填入相关单词让句子通顺
+          </p>
           <p className="text-base leading-relaxed font-medium text-black dark:text-white">
             {currentExercise && renderTextWithBlanks(currentExercise)}
           </p>
@@ -772,6 +706,7 @@ export function FillBlankExercise({
             </button>
           )}
         </div>
+      </div>
       </div>
     </div>
   )

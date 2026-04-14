@@ -46,7 +46,7 @@ export function SentencePatternCards({ patterns }: SentencePatternCardsProps) {
           return (
             <div
               key={exercise.id}
-              className="bg-white dark:bg-gray-800 rounded-lg border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] overflow-hidden"
+              className="bg-white dark:bg-gray-800 rounded-none border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] overflow-hidden"
             >
               {/* 句型结构 - 紫色头部 */}
               <div className="bg-purple-100 dark:bg-purple-900/30 px-4 py-3 border-b-2 border-black">

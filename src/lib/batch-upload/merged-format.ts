@@ -21,6 +21,21 @@ import type {
 import type { MergedFormatExtras } from './video-processor'
 
 // ============================================
+// 类型定义
+// ============================================
+
+/** practice.exercises 中的练习项（选择、翻译、语法） */
+export interface SimpleFormatExercise {
+  type: string           // '选择' | '翻译' | '语法'
+  question: string       // 题目
+  answer: string         // 答案
+  explanation?: string   // 解析
+  source_ids?: number[]  // 来源字幕ID
+  difficulty?: string    // 难度
+  options?: Record<string, string>  // 选择题选项 {A: "...", B: "..."}
+}
+
+// ============================================
 // 格式检测与校验
 // ============================================
 
@@ -88,7 +103,7 @@ function normalizeSubtitles(
   }))
 }
 
-/** 词汇：将 examples[] 数组转为 example_sentence 单对象 */
+/** 词汇：保留 source_ids 和 examples 数组，完整保留原始数据 */
 function normalizeVocabulary(
   vocab: MergedVocabularyInput[] | undefined
 ): LearningMaterialJsonInput['language_analysis']['vocabulary'] {
@@ -101,8 +116,10 @@ function normalizeVocabulary(
     first_appearance: v.first_appearance || '',
     occurrence_count: v.occurrence_count || 0,
     cefr_level: v.cefr_level,
-    // 优先使用 examples[0]，回退到 example_sentence
-    example_sentence: v.examples?.[0] || v.example_sentence || undefined,
+    source_ids: v.source_ids || [],
+    examples: v.examples || [],
+    // 新增：保留原始的 example_sentence，确保词典缺失时数据不丢失
+    example_sentence: v.example_sentence || undefined,
   }))
 }
 
@@ -160,12 +177,31 @@ export function normalizeMergedUnit(unit: MergedUnitInput, channel?: string): {
   subtitleJson: SubtitleJsonInput
   learningJson: LearningMaterialJsonInput
   extras: MergedFormatExtras
+  simpleExercises: SimpleFormatExercise[]  // 新增：返回其他类型的练习
 } {
   const subs = normalizeSubtitles(unit.subtitles)
   const vocabulary = normalizeVocabulary(unit.language_analysis?.vocabulary)
   const grammarPoints = normalizeGrammarPoints(unit.deep_learning?.grammar_points)
   const pronResult = normalizePronunciation(unit.deep_learning?.pronunciation)
   const vocabNetwork = unit.deep_learning?.vocabulary_network
+
+  // 提取 practice.exercises 中的非填空练习（选择、翻译、语法）
+  const simpleExercises: SimpleFormatExercise[] = []
+  if (unit.practice?.exercises && Array.isArray(unit.practice.exercises)) {
+    unit.practice.exercises.forEach(ex => {
+      if (ex.type !== '填空') {
+        simpleExercises.push({
+          type: ex.type,
+          question: ex.question,
+          answer: ex.answer,
+          explanation: ex.explanation,
+          source_ids: ex.source_ids || [],
+          difficulty: ex.difficulty,
+          options: ex.options,  // 选择题的选项
+        })
+      }
+    })
+  }
 
   // 合并格式的 channel 作为 creator（优先级高于 unit 内的 creator）
   const effectiveCreator = channel || unit.unit_info.creator
@@ -178,9 +214,11 @@ export function normalizeMergedUnit(unit: MergedUnitInput, channel?: string): {
       end_time: unit.unit_info.end_time,
       subtitle_count: unit.unit_info.subtitle_count || subs.length,
       creator: effectiveCreator,
+      creator_id: unit.unit_info.creator_id,  // 传递 creator_id
       video_title_cn: unit.unit_info.video_title_cn,
       unit_name_cn: unit.unit_info.unit_name_cn,
       source_video_name: unit.unit_info.source_video_name,
+      cover_url: unit.unit_info.cover_url,
       tags: unit.unit_info.tags,
     },
     subtitles: subs,
@@ -218,12 +256,33 @@ export function normalizeMergedUnit(unit: MergedUnitInput, channel?: string): {
       } : { theme: '', structure: '' },
     },
     practice: unit.practice ? {
-      vocabulary_exercises: unit.practice.vocabulary_exercises?.map(ve => ({
-        word: ve.word || '',
-        sentence: ve.sentence || ve.question || '',
-        answer: ve.answer,
-        hint: ve.hint || '',
-      })),
+      vocabulary_exercises: (() => {
+        // 兼容两种格式：
+        // 1. practice.vocabulary_exercises (旧格式)
+        // 2. practice.exercises (新格式，需要过滤 type="填空")
+        if (unit.practice.vocabulary_exercises) {
+          return unit.practice.vocabulary_exercises.map(ve => ({
+            word: ve.word || '',
+            sentence: ve.sentence || ve.question || '',
+            answer: ve.answer,
+            hint: ve.hint || '',
+          }))
+        }
+
+        // 从 practice.exercises 中提取填空练习
+        if (unit.practice.exercises && Array.isArray(unit.practice.exercises)) {
+          return unit.practice.exercises
+            .filter(ex => ex.type === '填空')
+            .map(ex => ({
+              word: '',
+              sentence: ex.question || '',
+              answer: ex.answer || '',
+              hint: '',
+            }))
+        }
+
+        return []
+      })(),
     } : undefined,
   }
 
@@ -237,5 +296,6 @@ export function normalizeMergedUnit(unit: MergedUnitInput, channel?: string): {
       sentencePatterns: unit.practice?.sentence_patterns || [],
       scenario: unit.practice?.scenario || null,
     },
+    simpleExercises,
   }
 }

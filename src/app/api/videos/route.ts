@@ -217,7 +217,8 @@ export async function GET(request: NextRequest) {
       const creatorAvatar = row.creator_name ? creatorAvatarMap.get(row.creator_name) : undefined
       // 智能判断内容类型
       const isAudio = row.content_type === 'audio' || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(row.video_url || '')
-      // 音频内容优先使用 UP主头像作为封面
+      // 音频内容优先使用 UP主头像作为封面，视频内容优先使用thumbnail_url
+      // 如果都没有，使用默认封面
       const effectiveCover = isAudio
         ? (row.cover_url || creatorAvatar || row.thumbnail_url || null)
         : (row.thumbnail_url || row.cover_url || null)

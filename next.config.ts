@@ -49,6 +49,14 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: true,
   },
 
+  // ✅ 开发环境禁用缓存
+  ...(process.env.NODE_ENV === 'development' && {
+    webpack: (config) => {
+      config.cache = false
+      return config
+    },
+  }),
+
   // ✅ 增加 Server Action 的 body 大小限制（支持大音频文件上传，使用字节数）
   experimental: {
     serverActions: {

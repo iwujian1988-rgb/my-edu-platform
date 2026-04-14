@@ -294,13 +294,12 @@ async function processSingleVideo(
     throw new Error('视频 URL 格式无效')
   }
 
-  // 检测是否为音频内容
-  const isAudioContent = /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(videoUrl || '')
+  // 检测是否为音频内容（只有URL明确包含音频扩展名时才判断为audio）
+  const isAudioContent = videoUrl && /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(videoUrl)
 
-  // 音频内容且无封面时，用 UP主头像作为默认封面
-  const defaultCoverUrl = (isAudioContent && !unitInfo.cover_url && creatorAvatarUrl)
-    ? creatorAvatarUrl
-    : (unitInfo.cover_url || null)
+  // 智能封面设置
+  const defaultCoverUrl = unitInfo.cover_url || (isAudioContent && creatorAvatarUrl ? creatorAvatarUrl : null)
+  const defaultThumbnailUrl = unitInfo.cover_url || null
 
   const { data: video, error: videoError } = await supabase
     .from('videos')
@@ -314,6 +313,7 @@ async function processSingleVideo(
       video_url: videoUrl,
       content_type: isAudioContent ? 'audio' : 'video',
       cover_url: defaultCoverUrl,
+      thumbnail_url: defaultThumbnailUrl,
       status: 'draft',
       creator_id: creatorId,
       creator_name: creatorName || null,
@@ -869,6 +869,8 @@ export async function PATCH(request: NextRequest) {
               difficulty_level: cefrToNumber(original.cefr_level),
               display_order: idx,
               is_reviewed: true,
+              occurrence_count: original.occurrence_count || 1,
+              source_ids: original.source_ids || [],
             }
           })
 

@@ -11,7 +11,7 @@ import { useState, useCallback } from 'react'
 import { cn } from '@/lib/utils'
 import type { VideoExercise } from '@/types/video'
 import type { ExerciseProgressItem } from '@/hooks/useExerciseProgress'
-import { Check, X, ChevronRight, ListChecks } from 'lucide-react'
+import { Check, X, ChevronRight, ListChecks, RotateCcw } from 'lucide-react'
 
 export interface MultipleChoiceExerciseProps {
   exercises: VideoExercise[]
@@ -30,7 +30,21 @@ interface ParsedQuestion {
   correctLabel: string
 }
 
-function parseOptions(questionText: string, answer: string): ParsedQuestion {
+function parseOptions(questionText: string, answer: string, metadataOptions?: Record<string, string>): ParsedQuestion {
+  // 优先使用 metadata 中的选项（新格式）
+  if (metadataOptions && Object.keys(metadataOptions).length > 0) {
+    const options = Object.entries(metadataOptions).map(([label, text]) => ({
+      label: label.toUpperCase(),
+      text: text.trim(),
+    }))
+    return {
+      stem: questionText,
+      options,
+      correctLabel: answer.trim().toUpperCase().charAt(0)
+    }
+  }
+
+  // 兼容旧格式：从题目文本中解析选项
   const optionPattern = /([A-D])[.．)）、]\s*([^A-D]*?)(?=[A-D][.．)）、]|$)/gi
   const options: ParsedOption[] = []
   let match
@@ -65,12 +79,13 @@ export function MultipleChoiceExercise({
   if (exercises.length === 0) return null
 
   const exercise = exercises[currentIndex]
-  const meta = exercise.exercise_metadata as { question?: string; answer?: string; explanation?: string } | null
+  const meta = exercise.exercise_metadata as { question?: string; answer?: string; explanation?: string; options?: Record<string, string> } | null
   const questionText = meta?.question || exercise.original_text || ''
   const answer = meta?.answer || exercise.answer_text || ''
   const explanation = meta?.explanation || ''
+  const metadataOptions = meta?.options
 
-  const parsed = parseOptions(questionText, answer)
+  const parsed = parseOptions(questionText, answer, metadataOptions)
   const isCorrect = selectedLabel === parsed.correctLabel
 
   const handleSubmit = useCallback(() => {
@@ -94,6 +109,11 @@ export function MultipleChoiceExercise({
       setSubmitted(false)
     }
   }, [currentIndex])
+
+  const handleRetry = useCallback(() => {
+    setSelectedLabel(null)
+    setSubmitted(false)
+  }, [])
 
   const existingProgress = progressMap?.get(exercise.id)
 
@@ -203,13 +223,24 @@ export function MultipleChoiceExercise({
 
           {/* 操作按钮 */}
           <div className="flex items-center justify-between pt-1">
-            <button
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              className="px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] disabled:opacity-30 hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
-            >
-              上一题
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className="px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] disabled:opacity-30 hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+              >
+                上一题
+              </button>
+              {submitted && !isCorrect && (
+                <button
+                  onClick={handleRetry}
+                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-amber-100 dark:bg-amber-900/30 shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  重试
+                </button>
+              )}
+            </div>
 
             {!submitted ? (
               <button

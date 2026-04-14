@@ -12,7 +12,7 @@ import { useState, useCallback } from 'react'
 import { cn } from '@/lib/utils'
 import type { VideoExercise } from '@/types/video'
 import type { ExerciseProgressItem } from '@/hooks/useExerciseProgress'
-import { ChevronRight, Languages, Check } from 'lucide-react'
+import { ChevronRight, Languages, Check, RotateCcw } from 'lucide-react'
 
 export interface TranslationExerciseProps {
   exercises: VideoExercise[]
@@ -58,6 +58,11 @@ export function TranslationExercise({
       setSubmitted(false)
     }
   }, [currentIndex])
+
+  const handleRedo = useCallback(() => {
+    setUserInput('')
+    setSubmitted(false)
+  }, [])
 
   const existingProgress = progressMap?.get(exercise.id)
 
@@ -129,13 +134,24 @@ export function TranslationExercise({
 
           {/* 操作按钮 */}
           <div className="flex items-center justify-between pt-1">
-            <button
-              onClick={handlePrev}
-              disabled={currentIndex === 0}
-              className="px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] disabled:opacity-30 hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
-            >
-              上一题
-            </button>
+            <div className="flex items-center gap-2">
+              <button
+                onClick={handlePrev}
+                disabled={currentIndex === 0}
+                className="px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] disabled:opacity-30 hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+              >
+                上一题
+              </button>
+              {submitted && (
+                <button
+                  onClick={handleRedo}
+                  className="flex items-center gap-1 px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+                >
+                  <RotateCcw className="w-3 h-3" />
+                  重做
+                </button>
+              )}
+            </div>
 
             {!submitted ? (
               <button

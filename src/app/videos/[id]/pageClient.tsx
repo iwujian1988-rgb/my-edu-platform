@@ -45,6 +45,8 @@ import { FillBlankExercise } from '@/components/video/exercises/FillBlankExercis
 import { MultipleChoiceExercise } from '@/components/video/exercises/MultipleChoiceExercise'
 import { TranslationExercise } from '@/components/video/exercises/TranslationExercise'
 import { GrammarDrillExercise } from '@/components/video/exercises/GrammarDrillExercise'
+import { SentencePatternCards } from '@/components/video/exercises/SentencePatternCards'
+import { ScenarioCard } from '@/components/video/exercises/ScenarioCard'
 import { LearningCards } from '@/components/video/LearningCards'
 import { LearningTabs } from '@/components/video/learning/LearningTabs'
 import { LearningModal } from '@/components/video/learning/LearningModal'
@@ -418,6 +420,8 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const multipleChoiceExercises = exercises.filter(e => e.exercise_type === 'multiple_choice')
   const translationExercises = exercises.filter(e => e.exercise_type === 'translation')
   const grammarDrillExercises = exercises.filter(e => e.exercise_type === 'grammar_drill')
+  const sentencePatternExercises = exercises.filter(e => e.exercise_type === 'sentence_pattern')
+  const scenarioExercises = exercises.filter(e => e.exercise_type === 'scenario')
 
   return (
     <div className="min-h-screen bg-gray-50 transition-colors duration-300">
@@ -667,6 +671,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 exercises={grammarDrillExercises}
                 progressMap={exerciseProgressMap}
                 onRecordAnswer={recordExerciseAnswer}
+              />
+              <SentencePatternCards
+                patterns={sentencePatternExercises}
+              />
+              <ScenarioCard
+                scenarios={scenarioExercises}
               />
             </div>
           )}
@@ -998,6 +1008,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                         exercises={grammarDrillExercises}
                         progressMap={exerciseProgressMap}
                         onRecordAnswer={recordExerciseAnswer}
+                      />
+                      <SentencePatternCards
+                        patterns={sentencePatternExercises}
+                      />
+                      <ScenarioCard
+                        scenarios={scenarioExercises}
                       />
                     </div>
                   )}

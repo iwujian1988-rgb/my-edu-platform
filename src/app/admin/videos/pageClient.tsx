@@ -504,6 +504,15 @@ export function VideoManagementClient() {
             批量上传
           </Link>
 
+          {/* 合并上传按钮 */}
+          <Link
+            href="/admin/videos/merged-batch-upload"
+            className="inline-flex items-center px-4 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold border-[3px] border-black shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+          >
+            <Sparkles className="w-4 h-4 mr-2" />
+            合并上传
+          </Link>
+
           {/* 批量发布按钮 */}
           <Link
             href="/admin/videos/batch-publish"

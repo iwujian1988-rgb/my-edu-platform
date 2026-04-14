@@ -15,7 +15,7 @@ export type VideoStatus = 'draft' | 'published' | 'archived'
 export type CardType = 'word' | 'phrase' | 'expression'
 export type CardStatus = 'known' | 'unknown' | 'learning'
 export type CardProgressStatus = 'known' | 'unknown' | 'learning'
-export type ExerciseType = 'fill_blank' | 'dictation'
+export type ExerciseType = 'fill_blank' | 'dictation' | 'sentence_pattern' | 'scenario' | 'multiple_choice' | 'translation' | 'grammar_drill'
 export type ExerciseDifficulty = 'beginner' | 'intermediate' | 'advanced'
 export type HintType = 'first_letter' | 'first_last_letter' | 'none'
 export type FormalityLevel = 'neutral' | 'formal' | 'informal'
@@ -328,6 +328,27 @@ export interface BlankPosition {
   hint?: string
 }
 
+// ============================================
+// 练习 Metadata 类型
+// ============================================
+
+/** 句型模式练习的元数据 */
+export interface SentencePatternMetadata {
+  pattern: string
+  explanation: string
+  example: {
+    french: string
+    chinese: string
+  }
+}
+
+/** 情景练习的元数据 */
+export interface ScenarioMetadata {
+  description: string
+  requirements: string | string[]
+  starter?: string
+}
+
 export interface VideoExercise {
   id: string
   video_id: string
@@ -348,6 +369,7 @@ export interface VideoExercise {
   explanation?: string
   subtitle_start_time?: number  // 字幕开始时间（秒），用于播放按钮跳转
   subtitle_end_time?: number    // 字幕结束时间（秒），用于播放按钮自动暂停
+  exercise_metadata?: SentencePatternMetadata | ScenarioMetadata | null  // 新增：扩展练习元数据
 }
 
 // ============================================
@@ -890,6 +912,152 @@ export interface BatchUploadResponse {
     created_count: number
     videos: BatchUploadResult[]
     errors: Array<{
+      index: number
+      error: string
+    }>
+  }
+}
+
+// ============================================
+// 合并批量上传类型
+// ============================================
+
+/** 合并格式的单个 unit 输入 */
+export interface MergedUnitInput {
+  unit_info: {
+    unit_num: number
+    theme: string
+    start_time?: string
+    end_time?: string
+    duration_minutes?: number
+    cefr_level?: string
+    video_title_cn?: string
+    unit_name_cn?: string
+    source_video_name?: string
+    creator?: string        // 保留用于名称匹配
+    creator_id?: string     // 新增：直接使用UP主ID
+    tags?: string[]
+  }
+  subtitles?: Array<{
+    id: number
+    start_time: string
+    end_time: string
+    french: string
+    chinese: string
+  }>
+  language_analysis?: {
+    vocabulary?: Array<{
+      french: string
+      part_of_speech: string
+      ipa: string
+      chinese: string
+      first_appearance?: string
+      occurrence_count?: number
+      cefr_level: string
+      source_ids?: string[]
+      examples?: Array<{
+        french: string
+        chinese: string
+        source_id?: string
+      }>
+      example_sentence?: {
+        french: string
+        chinese: string
+      }
+    }>
+    key_expressions?: Array<{
+      expression: string
+      ipa?: string
+      chinese?: string
+      meaning?: string
+      cefr_level?: string
+      grammar_usage?: string
+      usage_note?: string
+      example?: {
+        french: string
+        chinese: string
+      }
+    }>
+  }
+  deep_learning?: {
+    grammar_points?: Array<{
+      name: string
+      structure?: string
+      example?: {
+        french: string
+        chinese: string
+        ipa?: string
+      }
+      purpose?: string
+      explanation?: string
+      note?: string
+      usage_note?: string
+    }>
+    pronunciation?: {
+      key_sounds?: Array<{
+        sound: string
+        example_words?: string[]
+        examples?: string[]
+        instruction?: string
+        description?: string
+        practice_tip?: string
+      }>
+      liaison?: string[]
+      intonation?: string
+    }
+    vocabulary_network?: {
+      theme?: string
+      structure?: string
+      related_words?: string[]
+      collocations?: string[]
+      related_groups?: Array<{
+        category: string
+        words: string[]
+      }>
+      core_word?: string
+    }
+  }
+  practice?: {
+    vocabulary_exercises?: Array<{
+      word?: string
+      sentence?: string
+      question?: string
+      answer: string
+      hint?: string
+    }>
+    sentence_patterns?: Array<{
+      pattern: string
+      explanation: string
+      examples: Array<{ french: string; chinese: string }>
+    }>
+    scenario?: {
+      context: string
+      dialogue: Array<{ french: string; chinese: string; speaker?: string }>
+    }
+  }
+}
+
+/** 合并格式 JSON 结构 */
+export interface MergedBatchUploadJson {
+  channel?: string
+  materials: Record<string, MergedUnitInput>
+}
+
+/** 合并批量上传请求 */
+export interface MergedBatchUploadRequest {
+  merged_json: MergedBatchUploadJson
+  video_url?: string
+  video_urls?: Record<string, string>
+}
+
+/** 合并批量上传响应 */
+export interface MergedBatchUploadResponse {
+  success: boolean
+  data: {
+    created_count: number
+    videos: BatchUploadResult[]
+    errors: Array<{
+      unit_key: string
       index: number
       error: string
     }>

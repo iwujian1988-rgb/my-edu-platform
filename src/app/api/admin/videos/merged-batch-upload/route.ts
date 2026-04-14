@@ -85,7 +85,7 @@ export async function POST(request: Request) {
 
         return (async () => {
           try {
-            const { subtitleJson, learningJson, extras } = normalizeMergedUnit(
+            const { subtitleJson, learningJson, extras, simpleExercises } = normalizeMergedUnit(
               unit,
               merged_json.channel
             )
@@ -95,6 +95,7 @@ export async function POST(request: Request) {
                 subtitle_json: subtitleJson,
                 learning_material_json: learningJson,
                 video_url: unitVideoUrl,
+                simple_exercises: simpleExercises,  // 传递其他类型的练习
               },
               idx,
               extras
