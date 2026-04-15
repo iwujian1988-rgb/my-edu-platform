@@ -252,6 +252,19 @@ export async function processSingleVideo(
     console.log(`[批量上传] 根据字幕时间计算时长: ${calculatedDuration}秒 (${unitInfo.start_time} -> ${unitInfo.end_time})`)
   }
 
+  // 额外计算：确保时长不为0，从字幕实际时间范围计算
+  if (calculatedDuration === 0 && savedSubtitles && savedSubtitles.length > 0) {
+    const subtitleStartTimes = savedSubtitles.map((s: any) => parseFloat(String(s.start_time)))
+    const subtitleEndTimes = savedSubtitles.map((s: any) => parseFloat(String(s.end_time)))
+    const minTime = Math.min(...subtitleStartTimes)
+    const maxTime = Math.max(...subtitleEndTimes)
+    const subtitleDuration = Math.round(maxTime - minTime)
+    if (subtitleDuration > 0) {
+      calculatedDuration = subtitleDuration
+      console.log(`[批量上传] 从已存储字幕计算时长: ${calculatedDuration}秒 (${minTime}s -> ${maxTime}s)`)
+    }
+  }
+
   const { data: video, error: videoError } = await supabase
     .from('videos')
     .insert({
@@ -699,6 +712,7 @@ export async function processSingleVideo(
           question: ex.question,
           answer: ex.answer,
           explanation: ex.explanation,
+          options: ex.options,
         },
         display_order: exercisesCount + idx,
         subtitle_start_time: null,
