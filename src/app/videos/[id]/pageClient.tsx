@@ -426,9 +426,9 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const scenarioExercises = exercises.filter(e => e.exercise_type === 'scenario')
 
   return (
-    <div className="min-h-screen bg-gray-50 transition-colors duration-300">
+    <div className={cn("bg-gray-50 transition-colors duration-300", pipMode ? "h-dvh overflow-hidden" : "min-h-screen")}>
       {/* ===== 移动端布局 ===== */}
-      <div className="lg:hidden">
+      <div className={cn("lg:hidden", pipMode && "h-full overflow-hidden")}>
         {/* PIP 模式下的简洁顶部栏 */}
         {pipMode && (
           <div className="sticky top-0 z-40 bg-gray-50 dark:bg-gray-900 border-b-[3px] border-black dark:border-gray-600 px-3 py-2">

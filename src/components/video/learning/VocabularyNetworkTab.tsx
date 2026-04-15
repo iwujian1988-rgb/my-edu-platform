@@ -29,6 +29,17 @@ export interface VocabularyNetworkTabProps {
 // 组件
 // ============================================
 
+/** 判断词汇网络是否有实际可展示的内容（排除全 null 的空记录） */
+export function hasVocabularyNetworkContent(network: VideoVocabularyNetwork | null): boolean {
+  if (!network) return false
+  return !!(
+    network.structure ||
+    (network.related_words && network.related_words.length > 0) ||
+    network.collocations ||
+    network.theme
+  )
+}
+
 export function VocabularyNetworkTab({ network, videoLanguage = 'fr', ttsPreload }: VocabularyNetworkTabProps) {
 
   // 挂载时提取 structure + related_words 中的词预加载
@@ -58,7 +69,7 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr', ttsPreload
       ttsPreload.preloadWords(wordsToPreload)
     }
   }, [network, ttsPreload])
-  if (!network) {
+  if (!hasVocabularyNetworkContent(network)) {
     return (
       <div className="text-center py-8 text-gray-500 dark:text-gray-400">
         <Network className="w-12 h-12 mx-auto mb-3 opacity-50" />

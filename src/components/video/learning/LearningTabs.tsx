@@ -28,7 +28,7 @@ import type {
 } from '@/types/video'
 import { GrammarPointsTab } from './GrammarPointsTab'
 import { PronunciationTipsTab } from './PronunciationTipsTab'
-import { VocabularyNetworkTab } from './VocabularyNetworkTab'
+import { VocabularyNetworkTab, hasVocabularyNetworkContent } from './VocabularyNetworkTab'
 import { useTTSPreload } from '@/hooks/useTTSPreload'
 import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
@@ -104,7 +104,7 @@ export function LearningTabs({
       expressions: expressions.length,
       grammar: grammarPoints.length,
       pronunciation: pronunciationTips.length,
-      network: vocabularyNetwork ? 1 : 0
+      network: hasVocabularyNetworkContent(vocabularyNetwork) ? 1 : 0
     }
 
     // 找到第一个有数据的标签页
@@ -129,7 +129,7 @@ export function LearningTabs({
       expressions: expressions.length,
       grammar: grammarPoints.length,
       pronunciation: pronunciationTips.length,
-      network: vocabularyNetwork ? 1 : 0
+      network: hasVocabularyNetworkContent(vocabularyNetwork) ? 1 : 0
     }
 
     if (tabData[activeTab] === 0) {
@@ -206,7 +206,7 @@ export function LearningTabs({
     { key: 'words' as const, label: '单词', icon: <BookOpen className="w-4 h-4" />, count: words.length },
     { key: 'grammar' as const, label: '语法点', icon: <BookMarked className="w-4 h-4" />, count: grammarPoints.length },
     { key: 'pronunciation' as const, label: '发音要点', icon: <Volume2 className="w-4 h-4" />, count: pronunciationTips.length },
-    { key: 'network' as const, label: '词汇网络', icon: <Network className="w-4 h-4" />, count: vocabularyNetwork ? 1 : 0 },
+    { key: 'network' as const, label: '词汇网络', icon: <Network className="w-4 h-4" />, count: hasVocabularyNetworkContent(vocabularyNetwork) ? 1 : 0 },
   ].filter((tab) => tab.count > 0) as TabConfig[] // 隐藏没有数据的 Tab
 
   // 渲染 Tab 内容
