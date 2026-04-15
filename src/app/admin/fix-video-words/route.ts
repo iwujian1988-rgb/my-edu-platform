@@ -5,10 +5,9 @@
 import { createAdminClient } from '@/lib/supabase/server'
 import { checkAdminForAPI } from '@/lib/admin-auth'
 import { NextResponse } from 'next/server'
-import { lookupBatch } from '@/lib/dict/lookup'
-import { cleanWord, cefrToNumber } from '@/lib/batch-upload/video-processor'
 
-export const maxDuration = 120
+// 这个文件暂时禁用，因为引用了不存在的模块
+// export const maxDuration = 120
 
 interface FixWordRequest {
   video_id?: string
