@@ -1,0 +1,1286 @@
+{
+  "source_file": "E192 Corriger les erreurs fossilisées avec Yasmine d'I Learn French.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E192 Corriger les erreurs fossilisées avec Yasmine d'I Learn French",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T14:59:58.456Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "The Subjunctive Mood for Purpose (Le Subjonctif)",
+          "Concession with 'Sans pour autant'",
+          "Causality: 'Grâce à' vs 'À cause de'"
+        ],
+        "speaking": [
+          "Discussing language learning plateaus and fossilized errors",
+          "Comparing regional accents and linguistic attitudes in the Francophonie"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "fossilisation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[fɔ.si.li.za.sjɔ̃]",
+            "chinese": "（语言学习中的）石化现象，错误固化",
+            "example_sentence": {
+              "french": "La fossilisation des erreurs, ce sont des erreurs qui restent dans notre cerveau.",
+              "chinese": "错误的石化是指那些留在我们大脑中的错误。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              37,
+              38
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "On va parler de fossilisation des erreurs.",
+                "chinese": "我们要聊聊错误的石化现象。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "accréditée",
+            "part_of_speech": "adjectif",
+            "ipa": "[a.kʁe.di.te]",
+            "chinese": "经过认证的，获得授权的",
+            "example_sentence": {
+              "french": "L'école était accréditée au Parlement européen.",
+              "chinese": "这所学校获得了欧洲议会的认证。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'école était accréditée au Parlement.",
+                "chinese": "学校在议会获得了认证。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "vocation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[vɔ.ka.sjɔ̃]",
+            "chinese": "天职，志向，使命感",
+            "example_sentence": {
+              "french": "Elle n'avait pas du tout de vocation ni de formation.",
+              "chinese": "她完全没有这方面的志向，也没有受过培训。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Elle n'avait pas du tout de vocation.",
+                "chinese": "她根本没有这种职业抱负。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "bâcler",
+            "part_of_speech": "verbe",
+            "ipa": "[ba.kle]",
+            "chinese": "草率从事，敷衍了事",
+            "example_sentence": {
+              "french": "C'est un processus qui arrive quand on bâcle certains aspects de l'apprentissage.",
+              "chinese": "当我们敷衍学习的某些方面时，就会出现这个过程。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              39
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Notamment quand on bâcle ou on survole certains aspects.",
+                "chinese": "特别是当我们草率对待或走马观花地看某些方面时。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "récurrente",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʁe.ky.ʁɑ̃t]",
+            "chinese": "反复出现的，循环的",
+            "example_sentence": {
+              "french": "Comme je voyais cette erreur récurrente, je me disais que c'était lié à la langue maternelle.",
+              "chinese": "由于我看到这个错误反复出现，我心想这肯定和母语有关。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              43
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Comme je voyais cette erreur récurrente...",
+                "chinese": "因为我看到这个反复出现的错误……",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "désapprendre",
+            "part_of_speech": "verbe",
+            "ipa": "[de.za.pʁɑ̃dʁ]",
+            "chinese": "忘掉（已学的东西），改掉习惯",
+            "example_sentence": {
+              "french": "C'est très difficile de désapprendre, c'est beaucoup plus long.",
+              "chinese": "改掉已有的错误习惯很难，耗时也长得多。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              39,
+              53,
+              86
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "C'est très difficile de désapprendre.",
+                "chinese": "要改掉错误的认知非常困难。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "anglicismes",
+            "part_of_speech": "nom masculin pluriel",
+            "ipa": "[ɑ̃.ɡli.sism]",
+            "chinese": "英语借词，英语式表达",
+            "example_sentence": {
+              "french": "Ils sont aussi beaucoup plus cools par rapport aux anglicismes.",
+              "chinese": "他们对英语借词的态度也更加宽容。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              24,
+              25
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Il n'y a aucun obstacle par rapport aux anglicismes.",
+                "chinese": "对于英语借词的使用没有任何障碍。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "vexée",
+            "part_of_speech": "adjectif",
+            "ipa": "[vɛk.se]",
+            "chinese": "生气的，恼火的，自尊心受损的",
+            "example_sentence": {
+              "french": "Quand le serveur nous a demandé si je voulais le menu en anglais, là je me suis vraiment vexée.",
+              "chinese": "当服务员问我是否要英文菜单时，我真的感到被冒犯了。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              28,
+              30,
+              31
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Là je me suis vraiment vexée.",
+                "chinese": "那时我真的生气了。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "appauvrir",
+            "part_of_speech": "verbe",
+            "ipa": "[a.po.vʁiʁ]",
+            "chinese": "使贫乏，削弱（语言）",
+            "example_sentence": {
+              "french": "On pourrait modifier certaines règles sans pour autant appauvrir la langue.",
+              "chinese": "我们可以修改某些规则，而不会因此削弱语言的丰富性。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              20
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Sans pour autant appauvrir la langue.",
+                "chinese": "而不会削弱这门语言。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "drastiquement",
+            "part_of_speech": "adverbe",
+            "ipa": "[dʁas.tik.mɑ̃]",
+            "chinese": "大幅度地，严厉地",
+            "example_sentence": {
+              "french": "Ça élimine aussi drastiquement le choix.",
+              "chinese": "这也大幅度地缩小了选择范围。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              96
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça élimine aussi drastiquement le choix.",
+                "chinese": "这极大地减少了选择。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "mettre le couteau sous la gorge",
+            "meaning": "强迫某人，威胁某人",
+            "example": {
+              "french": "Elle t'a mis le couteau sous la gorge.",
+              "chinese": "她这是在逼你（把刀架在你脖子上）。"
+            },
+            "usage_note": "Idiomatic expression used to describe an extreme ultimatum or pressure.",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "suivre à la lettre",
+            "meaning": "严格遵守，逐字逐句照办",
+            "example": {
+              "french": "J'ai suivi à la lettre ses explications.",
+              "chinese": "我严格按照她的解释去做了。"
+            },
+            "usage_note": "Used when following instructions exactly as given.",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "faire du zèle",
+            "meaning": "表现过分积极，过分热心",
+            "example": {
+              "french": "Parfois, ils font un peu de zèle dans ce sens-là.",
+              "chinese": "有时，他们在那个方向上表现得有点过分热心。"
+            },
+            "usage_note": "Often used with a slightly negative connotation of doing 'too much'.",
+            "source_ids": [
+              29
+            ]
+          },
+          {
+            "expression": "rester dans le bain",
+            "meaning": "保持状态，不间断练习（浸泡在其中）",
+            "example": {
+              "french": "Il faut un peu forcer aussi le cerveau à rester dans le bain de la langue.",
+              "chinese": "也必须稍微强迫大脑保持在语言环境的浸泡中。"
+            },
+            "usage_note": "Commonly used for language immersion or staying current in a field.",
+            "source_ids": [
+              91
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "The Subjunctive Mood for Purpose (Le Subjonctif)",
+            "structure": "pour que / afin que + sujet + subjonctif",
+            "explanation": "Used to express a goal or purpose when the subjects of the two clauses are different.",
+            "example": {
+              "french": "Il y a assez de locuteurs pour qu'elle puisse continuer à vivre.",
+              "chinese": "有足够的说话者，好让它（语言）能继续生存下去。"
+            },
+            "usage_note": "Note the change from 'pouvoir' to 'puisse'. If the subject were the same, we would use 'pour + infinitive'.",
+            "source_ids": [
+              21
+            ]
+          },
+          {
+            "name": "Concession with 'Sans pour autant'",
+            "structure": "sans pour autant + infinitif",
+            "explanation": "Expresses that an action is done without leading to a certain (often expected) negative consequence.",
+            "example": {
+              "french": "Certaines règles qu'on pourrait modifier sans pour autant appauvrir la langue.",
+              "chinese": "我们可以修改某些规则，而不会因此削弱语言。"
+            },
+            "usage_note": "This is a high-level structure (C1) used to nuance an argument.",
+            "source_ids": [
+              20
+            ]
+          },
+          {
+            "name": "Causality: 'Grâce à' vs 'À cause de'",
+            "structure": "grâce à (positive) / à cause de (negative) + nom",
+            "explanation": "The text highlights the ambiguity of technology's impact on learning.",
+            "example": {
+              "french": "Grâce ou à cause de, je ne sais pas, des applications.",
+              "chinese": "多亏了或者是因为——我不知道——那些应用程序。"
+            },
+            "usage_note": "Yasmine uses both to show that apps have both positive and negative effects on fossilization.",
+            "source_ids": [
+              46
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɥ] vs [w]",
+              "description": "The Belgian pronunciation of 'huit' often uses [w] (ouit) instead of the standard French [ɥ] (huit).",
+              "examples": [
+                "huit",
+                "juin"
+              ]
+            }
+          ],
+          "liaison": [
+            "un petit_oiseau (obligatory)",
+            "des_erreurs_fossilisées (obligatory)",
+            "ils_ont_appris (obligatory)"
+          ],
+          "intonation": "The text discusses how regional accents (Belgian vs. Parisian) involve different rhythmic patterns and vowel qualities, though the speakers emphasize that 'pronunciation' (clarity) is more important than 'accent reduction'."
+        },
+        "vocabulary_network": {
+          "theme": "L'apprentissage des langues",
+          "core_word": "Apprendre",
+          "related_groups": [
+            {
+              "category": "Processus",
+              "words": [
+                "fossilisation",
+                "désapprendre",
+                "progresser",
+                "survoler",
+                "bâcler"
+              ]
+            },
+            {
+              "category": "Acteurs",
+              "words": [
+                "apprenant",
+                "natif",
+                "professeur de FLE",
+                "locuteur"
+              ]
+            },
+            {
+              "category": "Outils",
+              "words": [
+                "application",
+                "IA (Intelligence Artificielle)",
+                "méthode",
+                "podcast"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "La ___ des ___, ce sont des ___ qui ___ dans notre ___ et notre ___ pense que ce qu'on dit est ___.",
+            "answer": "fossilisation, erreurs, erreurs, restent, cerveau, cerveau, correct",
+            "explanation": "根据原文第38句，石化现象是指大脑误认为错误的表达是正确的并将其保留。",
+            "source_ids": [
+              38
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi Yasmine s'est-elle sentie vexée dans un café à Paris ?",
+            "options": {
+              "A": "Parce que le serveur a refusé de la servir.",
+              "B": "Parce que le serveur lui a proposé le menu en anglais alors que le français est sa langue maternelle.",
+              "C": "Parce que le prix du café était trop élevé.",
+              "D": "Parce que le serveur s'est moqué de son accent belge."
+            },
+            "answer": "B",
+            "explanation": "原文第28句提到，当服务员问她是否需要英文菜单时，她感到很生气（vexée），因为法语是她的母语。",
+            "source_ids": [
+              28,
+              30
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Il faut un peu forcer aussi le cerveau à rester dans le bain de la langue pour pouvoir continuer à progresser.",
+            "answer": "也必须稍微强迫大脑保持在语言环境的浸泡中，以便能够继续进步。",
+            "explanation": "‘Rester dans le bain’ 是一个地道的表达，意为保持在某种环境或状态中；‘pour pouvoir’ 引导目的。",
+            "source_ids": [
+              91
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant 'pour que' : 'La langue a assez de locuteurs. Elle peut continuer à vivre.'",
+            "answer": "Il y a assez de locuteurs pour que la langue puisse continuer à vivre.",
+            "explanation": "使用 'pour que' 后接虚拟式 (puisse)，因为主句和从句的主语不同。",
+            "source_ids": [
+              21
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "fossilisation",
+            "erreurs",
+            "cerveau",
+            "vexée",
+            "rester dans le bain"
+          ],
+          "covered_grammar": [
+            "subjonctif",
+            "pour que"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est un processus qui arrive quand...",
+            "explanation": "Used to define a phenomenon and its conditions.",
+            "example": {
+              "french": "C'est un processus qui arrive quand on bâcle l'apprentissage.",
+              "chinese": "这是一个当我们敷衍学习时会发生的过程。"
+            }
+          },
+          {
+            "pattern": "On m'a bien fait comprendre que...",
+            "explanation": "Used to say that someone made something very clear to you (often implicitly).",
+            "example": {
+              "french": "On m'a bien fait comprendre que j'avais un accent.",
+              "chinese": "人家明确让我意识到我有口音。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are talking to a French teacher about a mistake you keep making (e.g., saying 'j'ai allé' instead of 'je suis allé').",
+          "requirements": "Use the words 'fossilisation', 'cerveau', and 'désapprendre'.",
+          "starter": "Bonjour, j'ai l'impression que cette erreur est devenue un fossile dans ma tête..."
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the concept of 'fossilization' in language learning—when errors become deeply rooted in the brain. Hugo and Yasmine discuss how regional accents (Belgian vs. French) can lead to social misunderstandings, the dangers of learning solely through apps without correction, and practical strategies to 'unlearn' bad habits by staying immersed and seeking specialized feedback.",
+        "keywords": [
+          "fossilisation",
+          "accent belge",
+          "FLE",
+          "apprentissage",
+          "phonétique"
+        ],
+        "difficulty_note": "The text is a natural conversation between two experts. It uses high-level pedagogical vocabulary and complex structures like the subjunctive, making it ideal for B2 learners."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:39:53"
+        },
+        "theme": "Language Pedagogy & Fossilized Errors",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.120",
+        "end_time": "00:39:53.699",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 105,
+        "source_video_name": "E192 Corriger les erreurs fossilisées avec Yasmine d'I Learn French.json",
+        "tags": [
+          "职场",
+          "社会观察"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.120",
+          "end_time": "00:00:34.770",
+          "french": "Corriger les erreurs fossilisées avec Yasmine de I Learn French. Salut à toutes et à tous, je suis ravi de vous retrouver aujourd'hui pour un épisode un peu spécial parce que je suis accompagné d'une autre prof que vous connaissez peut-être qui s'appelle Yasmine. Salut Yasmine ! Salut Hugo ! Je suis très content de te recevoir dans le podcast.",
+          "chinese": "和 I Learn French 的 Yasmine 一起纠正法语中的“僵化错误”。大家好，很高兴今天能和大家再次见面。这一集有点特别，因为我邀请到了另一位老师，你们可能认识她，她叫 Yasmine。你好，Yasmine！你好，Hugo！很高兴能邀请你参加播客。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:34.770",
+          "end_time": "00:01:04.180",
+          "french": "Pour la petite histoire, je ne sais pas si je te l'avais dit la première fois qu'on s'était parlé, mais moi, quand j'ai créé mon site internet, j'avais fait des recherches. Donc, c'était déjà il y a huit ans, je crois. J'avais fait des recherches, un peu une analyse de la concurrence pour trouver d'autres profs, voir leur site. Et j'étais tombé sur le tien et j'étais très, très impressionné. Donc, à l'époque, je crois que tu avais plusieurs profs aussi qui travaillaient pour toi. Donc, ça avait l'air d'être une grosse école. Et je crois que tu donnais des cours, notamment au...",
+          "chinese": "说起来，我不确定第一次聊天时有没有告诉你，但我创建自己的网站时做过一些调研。那是八年前的事了，我想。我做了一些调研，算是一种竞品分析，去寻找其他老师，看看他们的网站。我偶然发现了你的网站，印象非常深刻。当时，我记得你还有好几位老师为你工作。所以，那看起来像是一家规模很大的学校。我记得你当时还在……授课。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:04.180",
+          "end_time": "00:01:30.099",
+          "french": "Parlement européen ou peut-être à des députés européens aussi parce que tu vivais à Bruxelles ? Oui, donc j'ai donné des cours au Parlement européen. L'école était accréditée au Parlement. Ok, ok. Donc voilà, j'étais vraiment super impressionné. Donc je suis très content de te recevoir aujourd'hui dans le podcast. Peut-être qu'avant de parler de notre sujet, donc vous l'avez entendu dans le titre, on va parler de fossilisation. On va faire un peu d'archéologie.",
+          "chinese": "欧洲议会，或者可能是给欧洲议会议员上课，因为你当时住在布鲁塞尔？是的，我在欧洲议会上过课。那所学校获得了议会的认证。好的。所以我当时真的印象深刻。今天非常高兴能邀请你来播客。在聊主题之前，正如标题所言，我们要聊聊“僵化现象”。我们要搞点“考古”。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:30.099",
+          "end_time": "00:01:40.750",
+          "french": "Peut-être que tu pourrais nous parler de ton parcours. Comment tu es devenue prof de FLE ? Alors, je suis devenue prof de FLE un peu par hasard. J'habitais à l'époque...",
+          "chinese": "也许你可以跟我们聊聊你的经历。你是怎么成为一名法语老师（FLE）的？其实，我成为法语老师纯属偶然。我当时住在……"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:40.750",
+          "end_time": "00:02:10.509",
+          "french": "Il y a très longtemps maintenant, il y a plus de 20 ans, à Madrid, en Espagne. Et j'ai une amie qui donnait des cours de français langue étrangère comme job alimentaire. Elle n'avait pas du tout de vocation ni de formation, mais étant donné qu'elle était native et qu'à l'époque, mais encore maintenant, il y a beaucoup d'écoles qui embauchent des professeurs à partir du moment où ils sont natifs. Elle m'avait demandé de la remplacer. J'avais refusé au début en disant : « Hors de question. Moi, je déteste l'école et donc, sûr et certain, je ne serais pas une bonne professeure. »",
+          "chinese": "很久以前了，20多年前，在西班牙马德里。我有一个朋友当时在教法语，以此维持生计。她完全没有这方面的志向或培训，但因为她是母语者，而且在那个时代——其实现在也一样——很多学校只要你是母语者就会录用。她请我替她代课。起初我拒绝了，说：“绝对不行。我讨厌学校，所以我肯定不会是一个好老师。”"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:10.509",
+          "end_time": "00:02:10.949",
+          "french": "Merci.",
+          "chinese": "谢谢。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:11.030",
+          "end_time": "00:02:40.849",
+          "french": "Et elle m'a dit : « Écoute, c'est hyper important, moi je ne peux pas donner ce cours, mais pour l'élève qui va passer un examen, elle doit avoir ce cours. Donc si tu es mon amie, tu dois m'aider, remplace-moi. » Elle t'a mis le couteau sous la gorge. Un ultimatum extrême. Et en fait, elle m'a dit : « Tu prends un article du journal Le Monde, parce que l'élève a un niveau assez avancé, et tu lui poses des questions sur l'article. » Donc j'ai suivi à la lettre ses explications, et j'ai adoré donner ce cours,",
+          "chinese": "她对我说：“听着，这非常重要，我没法去上这堂课，但那个学生要参加考试，她必须上这课。如果你是我的朋友，你就得帮我，替我去。”她这是在逼你啊。极端的最后通牒。事实上，她告诉我：“你拿一份《世界报》的文章，因为那个学生的水平相当高，然后你针对文章问她问题。”于是我严格按照她的说明做了，结果我爱上了教这堂课，"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:40.849",
+          "end_time": "00:03:09.099",
+          "french": "alors que j'avais vraiment refusé plusieurs fois. Et mon aventure avec l'enseignement du FLE a commencé comme ça. Elle m'a donné, donc cette amie m'a donné la copie de son livre de grammaire que beaucoup de personnes connaissent, le livre bleu de CLE International, la Grammaire progressive. Depuis, j'en ai acheté beaucoup. Donc, j'ai toujours la copie de ce livre en souvenir. Et j'utilise toujours cette méthode encore aujourd'hui, 20 ans plus tard. Elle n'a pas continué, elle, dans le FLE.",
+          "chinese": "尽管我之前真的拒绝了好几次。我的法语教学冒险就这样开始了。她，也就是那个朋友，给了我一本很多人都熟悉的语法书复印件，就是 CLE International 出版的那本蓝色封面的《渐进法语语法》。从那以后，我买了很多本。所以我一直保留着那本书的复印件作为纪念。直到今天，20年后，我依然在使用这套教材。她后来没有继续从事法语教学。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:09.340",
+          "end_time": "00:03:38.099",
+          "french": "Mais moi, oui. Et donc après, je suis partie de Madrid. Je suis retournée à Bruxelles où j'ai grandi. Et de là, j'ai commencé à donner des cours particuliers. Après, j'ai commencé à avoir des cours, des demandes d'institutions et d'organisations et d'entreprises. Donc, j'ai commencé à donner des cours, notamment au Parlement européen. J'ai eu Google comme client, les Nations Unies. Et puis en 2016, je suis partie m'installer à Paris pour conquérir le marché parisien.",
+          "chinese": "但我坚持了下来。后来我离开了马德里，回到了我长大的布鲁塞尔。在那里，我开始做家教。之后，我开始接到一些机构、组织和企业的课程需求。于是我开始授课，特别是在欧洲议会。我的客户包括谷歌、联合国。然后在2016年，我搬到了巴黎，准备开拓巴黎市场。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:38.099",
+          "end_time": "00:03:51.169",
+          "french": "Et depuis, il y a eu plein de choses, mais en règle générale, depuis les 20 dernières années, j'ai toujours enseigné le français, que ce soit des cours particuliers, des cours en groupe et aussi avec mon podcast depuis bientôt 6 ans maintenant.",
+          "chinese": "从那以后发生了很多事，但总的来说，在过去的20年里，我一直从事法语教学，无论是私教课、团体课，还是我做了快6年的播客。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:51.169",
+          "end_time": "00:04:08.539",
+          "french": "Et quel format il a ton podcast ? Quel sujet tu abordes dedans ? Alors, le podcast a changé au cours des années. J'imagine que c'est aussi la même chose pour toi. Donc, quand j'ai commencé, j'expliquais un petit peu la grammaire. J'expliquais quelques aspects de vocabulaire. Et puis après...",
+          "chinese": "你的播客是什么形式的？你在里面讨论什么主题？嗯，这些年来播客一直在变化。我想你也是一样。刚开始的时候，我会讲解一点语法，解释一些词汇方面的内容。然后……"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:08.539",
+          "end_time": "00:04:36.259",
+          "french": "3 ans, j'ai commencé à mettre en place aussi des interviews avec des personnes qui connaissent des sujets que je ne maîtrise pas du tout. En sachant, par exemple, que je peux faire des épisodes solos sur certains sujets, mais je préfère inviter quelqu'un qui en sait plus que moi. Et tout en continuant moi-même à apprendre. Donc, le rythme à présent, ça peut encore changer. C'est un épisode solo, une interview et un épisode privé pour les membres du club.",
+          "chinese": "三年后，我也开始安排一些采访，对象是那些了解我不擅长领域的人。比如，我可以在某些主题上做单人节目，但我更倾向于邀请比我更懂行的人。同时我自己也在不断学习。现在的节奏是——以后可能还会变——一集单人节目，一集采访，还有一集给俱乐部会员的私密节目。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:36.470",
+          "end_time": "00:04:42.860",
+          "french": "Et c'est tous les jeudis à 11h, heure de Paris, il y a un épisode qui sort. Et comment ça s'appelle ?",
+          "chinese": "每周四巴黎时间上午11点，会出一集新节目。它叫什么名字？"
+        },
+        {
+          "id": 14,
+          "start_time": "00:04:43.160",
+          "end_time": "00:05:07.560",
+          "french": "Le français avec Yasmine. Ok, Le français avec Yasmine. Et ton site internet, par contre, c'est ilearnfrench.eu. Je me fais toujours critiquer pour ma prononciation en anglais. Donc, c'est « j'apprends le français », mais en anglais. Ok, ok, ok, ok, super. Justement, par rapport à ce parcours, donc toi, ça fait plus de 20 ans maintenant que tu enseignes le FLE.",
+          "chinese": "《Le français avec Yasmine》（和 Yasmine 学法语）。好的。不过你的网站是 ilearnfrench.eu。我总是因为英语发音被批评。所以，意思就是“我在学法语”，但是用英语表达。好的，太棒了。说到这段经历，你教法语已经20多年了。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:07.699",
+          "end_time": "00:05:19.230",
+          "french": "Est-ce que tu avais des convictions au début qui ont évolué, des choses sur lesquelles tu as changé d'avis au cours de ta pratique et puis avec tes expériences ?",
+          "chinese": "你在开始时是否有过一些后来发生改变的信念？或者在你的教学实践和经验中，有哪些事情让你改变了看法？"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:19.230",
+          "end_time": "00:05:44.660",
+          "french": "J'ai eu plein de convictions. Déjà, qu'on n'avait pas d'accent. Quand je suis arrivée à Paris, on m'a bien fait comprendre que j'avais un accent. Alors qu'en étant à Bruxelles, j'étais convaincue que je n'en avais pas du tout. Et de là, j'ai commencé à me former notamment sur les accents de la francophonie. Il y en a un peu partout, mais rien qu'en France et rien qu'à Paris, il y a plusieurs accents.",
+          "chinese": "我曾有过很多信念。首先是觉得自己没有口音。当我来到巴黎时，人们让我清楚地意识到我有口音。而在布鲁塞尔时，我确信自己一点口音都没有。从那时起，我开始学习法语圈的各种口音。口音无处不在，光是在法国，光是在巴黎，就有好几种口音。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:05:44.660",
+          "end_time": "00:06:12.639",
+          "french": "de changer un peu ma vision concernant la prononciation en encourageant les personnes à se concentrer plus sur la prononciation plutôt que sur tout ce qui est réduction d'accent pour aussi être moins culpabilisées par rapport à notre identité, parce que l'accent c'est comme la nature de nos cheveux, notre couleur de peau, ce n'est pas une mauvaise chose. On peut avoir un accent et avoir une très, très bonne prononciation et ça reste du français.",
+          "chinese": "这改变了我对发音的看法，我开始鼓励人们更多地关注发音，而不是所谓的“消除口音”，这样大家对自己的身份认同感就不会那么愧疚。因为口音就像我们的发质、肤色一样，并不是件坏事。你可以有口音，但发音非常标准，这依然是地道的法语。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:12.639",
+          "end_time": "00:06:34.180",
+          "french": "Donc, là-dessus, j'ai beaucoup changé et je me suis beaucoup formée aussi. Ensuite, concernant les règles de grammaire, j'ai aussi appris énormément de choses parce qu'au début, j'enseignais la grammaire que j'ai apprise, donc que tu as apprise aussi, évidemment, en étant natif, en disant : « Voilà, la grammaire, elle est stricte, elle est rigoureuse et on ne peut pas la remettre en question. »",
+          "chinese": "所以在这方面我改变了很多，也学了很多。其次，关于语法规则，我也学到了很多东西。因为刚开始我教的是我学到的语法，也就是你作为母语者也学过的那套，我会说：“看，语法是严谨、严格的，不容置疑。”"
+        },
+        {
+          "id": 19,
+          "start_time": "00:06:34.490",
+          "end_time": "00:06:44.819",
+          "french": "Sauf que dernièrement, j'ai commencé à m'intéresser à des travaux de linguistes. Peut-être que tu connais aussi Les Linguistes atterrées. Le français va très bien. Laélia Véron. Oui, voilà.",
+          "chinese": "除非最近我开始关注一些语言学家的著作。也许你也知道《Les Linguistes atterrées》（震惊的语言学家）。《法语好得很》。Laélia Véron。对，就是她。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:06:44.819",
+          "end_time": "00:07:12.420",
+          "french": "Et donc, j'ai commencé aussi à m'intéresser à la remise en question de certaines règles de grammaire qu'on apprend méthodiquement, religieusement. Et en fait, il y a certaines règles qu'on pourrait modifier sans pour autant appauvrir la langue. Je pense notamment à ce très cher accord du participe passé avec l'auxiliaire avoir. Mais il y a aussi, par exemple, la réforme de l'orthographe de 1990,",
+          "chinese": "于是我也开始关注对某些语法规则的反思，那些我们刻板、虔诚地学习的规则。事实上，有些规则我们可以修改，而不会使语言变得贫乏。我特别想到的是那个亲爱的“过去分词与助动词 avoir 的配合”。还有比如1990年的拼写改革，"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:12.420",
+          "end_time": "00:07:38.939",
+          "french": "pour les Belges et les Suisses ou 1990, qui a encore du mal à être mise en place. Il y a beaucoup de résistance. Et donc, je me forme un peu là-dessus. Et je change aussi, évidemment, en disant qu'on peut remettre en question la langue. Ce n'est pas un oiseau fragile. La langue n'a pas besoin d'être défendue. De toute façon, il y a assez de locuteurs pour qu'elle puisse continuer à vivre. Donc ça, c'était plus ou moins mes remises en question dernièrement. Il y en a plein d'autres, mais évidemment.",
+          "chinese": "对比利时人和瑞士人来说是 nonante（90），这项改革仍然难以推行。阻力很大。所以我正在这方面进行学习。我也在改变，显然，我会说我们可以质疑语言。语言不是一只脆弱的小鸟，不需要被刻意保护。无论如何，有足够的母语者让它继续生存下去。所以，这些大致是我最近的一些反思。当然还有很多其他的。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:07:38.939",
+          "end_time": "00:08:00.290",
+          "french": "D'ailleurs, est-ce que tu as l'impression que les Belges sont peut-être un peu plus souples à ce niveau-là sur ce respect absolu, presque ce culte qu'on a en France pour la grammaire et les réticences à cette simplification de l'orthographe ? Est-ce que tu as l'impression qu'en Belgique, c'est peut-être moins un sujet ou est-ce que c'est comme en France ? Non, en Belgique, ils sont beaucoup plus cools.",
+          "chinese": "此外，你是否觉得比利时人在遵守语法和拼写简化方面会更灵活一些？在法国，我们对语法几乎有一种崇拜，对拼写简化非常抵触。你觉得在比利时这不太算个话题，还是和法国一样？不，在比利时，人们要酷得多。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:00.290",
+          "end_time": "00:08:21.980",
+          "french": "Ils sont beaucoup plus détendus, notamment parce qu'il y a déjà plusieurs langues qui cohabitent. Et donc, déjà, il y a une perception d'un français correct qui est beaucoup moins stricte. Donc, si une personne n'est pas native en français et qu'elle s'exprime de manière où on comprend, même s'il y a plein d'erreurs,",
+          "chinese": "他们要放松得多，特别是因为那里有多种语言共存。所以，对比利时人来说，对“正确法语”的感知远没有那么严格。如果一个人的母语不是法语，只要他表达的意思能让人听懂，即使有很多错误，"
+        },
+        {
+          "id": 24,
+          "start_time": "00:08:21.980",
+          "end_time": "00:08:38.220",
+          "french": "ça va être validé. On ne va pas dire : « Oh, je ne comprends pas ». Donc, si une personne dit « une bouteille de l'eau » au lieu d'une bouteille d'eau, la communication va continuer. Il n'y aura pas de blocage. Ensuite, ils sont aussi beaucoup plus cools par rapport aux anglicismes.",
+          "chinese": "也是可以接受的。人们不会说：“噢，我听不懂。”所以，如果有人说“une bouteille de l'eau”而不是“une bouteille d'eau”，交流会继续，不会有障碍。其次，他们对英语借词的态度也更酷。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:08:38.419",
+          "end_time": "00:09:03.679",
+          "french": "Ah, les Bruxellois, en tout cas les anglicismes, ils y vont. Même si le mot existe en français, il n'y a aucun obstacle par rapport aux anglicismes qu'on peut retrouver en France, notamment. Pas tous, mais il y a quand même beaucoup de personnes qui s'opposent aux anglicismes. Et donc, moi je dis souvent à mes élèves : pour pratiquer son français, parfois c'est peut-être plus simple d'aller faire un petit séjour à Bruxelles",
+          "chinese": "啊，布鲁塞尔人，至少在英语借词方面，他们用得很勤。即使法语里有对应的词，他们也不会像法国人那样排斥英语借词。并不是所有人，但法国确实有很多人反对英语借词。所以我经常对我的学生说：为了练习法语，有时去布鲁塞尔住一段时间可能比去巴黎更容易，"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:03.679",
+          "end_time": "00:09:19.909",
+          "french": "plutôt que d'aller à Paris, parce qu'à Bruxelles, les gens sont beaucoup plus détendus, beaucoup plus décontractés par rapport à la langue française. C'est peut-être moins cher aussi, notamment au niveau du logement. Oui. D'aller faire un petit stage à Bruxelles plutôt qu'à Paris. Et puis en plus, les frites sont bonnes. OK.",
+          "chinese": "因为在布鲁塞尔，人们对法语的态度要轻松、随意得多。而且可能也更便宜，尤其是在住宿方面。是的。去布鲁塞尔实习比去巴黎划算。而且，那里的薯条很好吃。好的。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:09:20.789",
+          "end_time": "00:09:48.539",
+          "french": "C'est vrai, c'est vrai, vous avez les meilleures frites. Et tu disais que quand toi tu es arrivée à Paris, tu t'es rendu compte que tu avais un accent. Comment tu t'es sentie par rapport à ça ? Est-ce que du coup tu as essayé de changer ta façon de parler ? Ou quelle a été ta réaction et ton approche ? Alors les premières fois où on m'a fait comprendre que j'avais un accent, c'était toujours dans des cafés ou dans des bars où on me demandait d'où je venais.",
+          "chinese": "没错，没错，你们有最好吃的薯条。你说你刚到巴黎时意识到自己有口音。你当时感觉如何？你有没有因此尝试改变说话方式？你的反应和应对方法是什么？嗯，头几次别人让我意识到我有口音，都是在咖啡馆或酒吧里，他们问我从哪里来。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:09:48.539",
+          "end_time": "00:10:17.549",
+          "french": "Et je disais de Bruxelles et là on me dit : « Ah mais vous n'avez pas l'accent belge ». Est-ce que déjà ils ne te disaient pas : « Ah, Bruxelles ! ». Oui, parfois, évidemment. Ils te corrigent bien sûr sur le ton de la blague. Bien sûr, évidemment. Et ensuite, on m'a déjà demandé si je voulais avoir le menu en anglais. Wow, ok. Oui, oui, oui. Là, je t'avoue, j'étais avec mon ex-copain qui était derrière moi, qui est français. Et donc quand le serveur nous a demandé si je voulais le menu en anglais, là je me suis vraiment vexée. Je disais : « Ah non mais… ».",
+          "chinese": "我说来自布鲁塞尔，然后他们会说：“啊，但你没有比利时口音。”他们难道没先跟你说：“啊，布鲁塞尔（发音模仿）！”？是的，有时会。他们当然会纠正你，虽然是开玩笑的语气。当然，显然。然后，甚至有人问我是否需要英文菜单。哇，好吧。是的，是的。我跟你说，当时我前男友就在我身后，他是法国人。所以当服务员问我是否要英文菜单时，我真的被冒犯到了。我说：“啊，不……”"
+        },
+        {
+          "id": 29,
+          "start_time": "00:10:17.549",
+          "end_time": "00:10:40.620",
+          "french": "Franchement, c'est abusé. C'est fort. Après, parfois, il y a une forme un peu de... Comment dire ? Comme on a cette réputation de ne pas du tout parler anglais, les personnes qui connaissent un peu l'anglais ou les commerces où ils font l'effort justement d'avoir une version du menu en anglais, etc., parfois, ils font un peu de zèle dans ce sens-là.",
+          "chinese": "坦白说，这太过分了。确实。有时这是一种……怎么说呢？因为法国人有那种完全不会说英语的声誉，所以那些懂一点英语的人，或者那些努力提供英文菜单的商店，有时会表现得过于热情。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:10:40.620",
+          "end_time": "00:11:00.110",
+          "french": "Dès qu'ils entendent un accent ou quelque chose, ils se disent : « Bon, on va essayer de leur montrer que nous, on est ouverts d'esprit, qu'on n'a pas de problème avec l'anglais. » Et ils passent tout de suite en anglais alors que finalement, c'est plus vexant, d'autant plus quand le français est ta langue maternelle. Évidemment. Et en plus, je pense que chaque personne, quand on dit...",
+          "chinese": "一旦他们听到口音或别的什么，他们就会想：“好吧，我们要向他们展示我们很开明，我们说英语没问题。”他们会立刻切换到英语，但实际上这更让人恼火，尤其是当法语是你的母语时。当然。而且，我觉得每个人，当被告知……"
+        },
+        {
+          "id": 31,
+          "start_time": "00:11:00.110",
+          "end_time": "00:11:24.620",
+          "french": "« Ah, mais tu as un accent », la personne se vexe. Tout le monde. J'ai fait après le test avec des Parisiens. Donc, évidemment, à une fête d'anniversaire, on va me dire : « Ah, mais tu as un accent. Tu viens d'où ? ». Je dis : « Mais toi aussi, tu as un accent. Et pour avoir un accent, il faut être deux. Donc, moi, j'ai un accent, mais toi aussi. » Donc là, il y a des personnes qui se vexent. « Moi, Parisien, moi, je n'ai pas d'accent. » Eh si ! Tout le monde a un accent. Et il y a toujours une petite pique",
+          "chinese": "“啊，你有口音”时，都会感到不悦。所有人。后来我拿巴黎人做过测试。显然，在生日聚会上，有人会对我说：“啊，你有口音。你从哪儿来？”我会说：“你也有口音啊。要有口音得有两个人。我有口音，但你也有。”这时有些人就会不高兴了。“我，巴黎人，我没有口音。”才怪！每个人都有口音。而且总会有一种……"
+        },
+        {
+          "id": 32,
+          "start_time": "00:11:24.759",
+          "end_time": "00:11:52.080",
+          "french": "qui vient droit au cœur en disant, on pense que parce qu'on nous dit « tu as un accent », on pense qu'on nous dit aussi « ton français n'est pas assez bon », ou il y a une once de jugement, alors que ce n'est pas vrai du tout. J'insiste, l'accent ce n'est pas une mauvaise chose. Donc c'était les premières expériences dans des cafés. Par contre, j'ai aussi fait de la correction en prononciation, notamment sur certains mots",
+          "chinese": "直戳心窝的感觉，因为我们觉得当别人说“你有口音”时，也在暗示“你的法语不够好”，或者带有一丝审判，但这完全不是真的。我坚持认为，口音不是坏事。所以那是最初在咖啡馆的经历。不过，我也确实纠正过自己的发音，特别是一些在比利时发音不同的单词，"
+        },
+        {
+          "id": 33,
+          "start_time": "00:11:52.080",
+          "end_time": "00:12:05.580",
+          "french": "qui sont prononcés différemment en Belgique, parce que j'en avais marre qu'on me reprenne, avec le huit. Donc le chiffre huit, en Belgique, on va le prononcer « ouit ».",
+          "chinese": "因为我受够了总被纠正，比如数字 8（huit）。在比利时，我们会把它读成“ouit”。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:12:06.779",
+          "end_time": "00:12:30.600",
+          "french": "Et donc là, je me suis corrigée, j'ai appris à le prononcer correctement parce que j'ai quelques amis qui me reprennent à chaque fois. Je dis : « Ah, mais tu me fais chier, c'est bon ! » Tu ne t'es pas corrigée, tu t'es adaptée. Oui, voilà, je me suis adaptée à mon audience parisienne qui se moquait, qui rigolait du « ouit ». Donc, si vous allez en Belgique, vous allez entendre. Et après, parce qu'on a appris comme ça, même chose pour le mois de juin.",
+          "chinese": "于是我纠正了自己，学会了正确发音，因为我有几个朋友每次都会纠正我。我说：“啊，你烦死我了，行了！”你不是纠正，你是适应。对，没错，我适应了那些嘲笑、取笑“ouit”发音的巴黎听众。所以，如果你去比利时，你会听到这种发音。还有，因为我们就是这么学的，6月（juin）也是一样。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:12:30.779",
+          "end_time": "00:12:54.000",
+          "french": "On dit « joint ». Sachant que même en France, évidemment, il y a des variations régionales, notamment avec le Sud. Donc, voilà. Mais... Parce que les gens ne te comprenaient pas quand tu disais « ouit » ou c'est juste que ça les faisait rigoler ? Oh, ça les faisait rigoler. Mais non, ils comprenaient. Ça aussi, en général, ils comprennent très, très bien, mais c'est juste pour faire une remarque. Ok. Donc voilà, il y a des choses où tu t'es dit « bon ».",
+          "chinese": "我们读成“joint”。要知道即使在法国，显然也有地区差异，尤其是南方。所以，就是这样。但是……是因为你读“ouit”时人们听不懂，还是纯粹因为这让他们觉得好笑？噢，是让他们觉得好笑。不，他们能听懂。通常情况下，他们听得非常明白，但就是想评论一下。好吧。所以有些事情你会觉得“算了”。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:12:54.000",
+          "end_time": "00:13:23.009",
+          "french": "Ça me fatigue un peu de devoir raconter toute l'histoire à chaque fois ou tu n'as pas envie de parler de ce sujet. Donc, tu t'es adaptée et voilà. OK. Oui, on s'adapte à son audience. Donc voilà, même les francophones natifs se font reprendre par d'autres natifs. Voilà, donc vous n'avez pas de complexe à avoir sur ce sujet-là. Bon, je pense qu'on partage pas mal de valeurs au niveau de notre philosophie de l'enseignement. Mais aujourd'hui, on va parler d'un sujet",
+          "chinese": "每次都要解释来龙去脉让你觉得累，或者你不想聊这个话题。所以你适应了，就这样。好的。是的，我们要适应听众。所以，即使是法语母语者也会被其他母语者纠正。所以，大家在这方面没必要有心理负担。好了，我想我们在教学哲学方面有很多共同的价值观。但今天，我们要聊一个……"
+        },
+        {
+          "id": 37,
+          "start_time": "00:13:23.009",
+          "end_time": "00:13:32.649",
+          "french": "un peu différent dont tu m'as proposé l'idée. J'ai trouvé que c'était vraiment super intéressant. On va parler de fossilisation, de fossilisation des erreurs.",
+          "chinese": "有点不同的主题，是你向我提议的。我觉得非常有意思。我们要聊聊“僵化”，错误的僵化。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:13:39.929",
+          "end_time": "00:14:00.909",
+          "french": "Peut-être pour commencer, est-ce que tu peux nous expliquer ce que c'est la fossilisation ? La fossilisation, en fait, ça vient du mot fossile. Donc, on va, comme tu as dit au début de l'épisode, faire un peu d'archéologie. La fossilisation des erreurs, ce sont des erreurs qui restent dans notre cerveau et notre cerveau pense que ce qu'on dit est correct.",
+          "chinese": "也许首先，你能给我们解释一下什么是“僵化”吗？“僵化”（fossilisation）这个词其实来自“化石”（fossile）。所以，就像你在节目开始时说的，我们要搞点考古。错误的僵化，是指那些留在我们大脑里的错误，而我们的大脑认为我们说的是正确的。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:14:00.909",
+          "end_time": "00:14:25.259",
+          "french": "Comme le cerveau pense que c'est correct, c'est très difficile de désapprendre, c'est beaucoup plus long et c'est un processus qui arrive dans l'apprentissage, notamment quand on bâcle ou on survole certains aspects de l'apprentissage. Ça peut être de la grammaire, mais ça peut être aussi de la prononciation.",
+          "chinese": "因为大脑认为它是正确的，所以很难“去学习”（纠正），这个过程要长得多。这是学习过程中会出现的一个现象，特别是当我们草率对待或走马观花地学习某些内容时。这可能是语法，也可能是发音。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:14:25.500",
+          "end_time": "00:14:49.480",
+          "french": "Comme le cerveau est convaincu que c'est correct, en fait, le cerveau n'entend plus la version correcte et la version qui n'est pas correcte. Et donc, ça se fossilise et ça reste dans le long terme. Et il y a évidemment des raisons pour lesquelles ça arrive. Et il y a aussi, évidemment, des solutions. Ok. Est-ce que tu peux donner peut-être des exemples concrets d'erreurs fossilisées que toi, tu as pu voir avec tes élèves ?",
+          "chinese": "由于大脑深信它是正确的，实际上大脑就再也听不出正确版本和错误版本之间的区别了。于是它就僵化了，并长期存在。当然，这种情况的发生是有原因的。当然，也有解决办法。好的。你能举一些你从学生那里看到的僵化错误的具体例子吗？"
+        },
+        {
+          "id": 41,
+          "start_time": "00:14:49.500",
+          "end_time": "00:15:18.090",
+          "french": "Ça peut être, par exemple, « j'ai allé » au lieu de « je suis allé », « j'ai prendu ». Donc ça, c'est les plus extrêmes au lieu de « j'ai pris ». J'entends souvent aussi « j'ai départi » au lieu de « je suis parti ». Donc aussi parfois des mots qui sont des mots anglais, « departure », qui vont être ramenés francisés. Et ensuite, ça va être aussi, par exemple, des mots qui sont prononcés",
+          "chinese": "比如，用“j'ai allé”代替“je suis allé”，或者“j'ai prendu”——这是最极端的例子，应该是“j'ai pris”。我也经常听到“j'ai départi”而不是“je suis parti”。有时还有一些英语单词，比如“departure”，被生搬硬套成法语。此外，还有一些单词的发音……"
+        },
+        {
+          "id": 42,
+          "start_time": "00:15:18.779",
+          "end_time": "00:15:31.690",
+          "french": "« Alcool » au lieu de « alcool ». Et ça va aussi dépendre de la langue maternelle de la personne. Donc, par exemple, l'exemple « alcool »",
+          "chinese": "把“alcool”读成“Al-cool”（带H音）。这也取决于一个人的母语。比如“alcool”这个例子……"
+        },
+        {
+          "id": 43,
+          "start_time": "00:15:32.279",
+          "end_time": "00:15:57.220",
+          "french": "pour les anglophones qui prononcent le H, mais « alcool », ça peut être aussi pour les personnes qui parlent espagnol. Moi aussi, c'est vrai que quand je donnais des cours particuliers, il y avait des erreurs comme ça que j'observais entre mes différents élèves polonais. Donc, tout de suite, même au début, quand je ne parlais pas trop polonais, comme je voyais cette erreur récurrente, je me disais que ça devait être lié à la langue maternelle.",
+          "chinese": "英语母语者会发H音，但说西班牙语的人也可能这么读。确实，我以前做家教时，在不同的波兰学生身上也观察到过类似的错误。所以，即使在我不怎么会说波兰语的初期，当我看到这种反复出现的错误时，我就意识到这一定与母语有关。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:15:57.220",
+          "end_time": "00:16:18.600",
+          "french": "Et j'avais un élève, par exemple, qui avait un niveau très, très avancé, qui était vraiment au niveau C2, qui parlait super bien français, qui avait un vocabulaire très riche. Mais à chaque leçon, il disait « théorétiquement » au lieu de « théoriquement », parce qu'en polonais, c'est « teoretycznie » et en anglais aussi, c'est « theoretically ».",
+          "chinese": "我曾有一个学生，水平非常高，达到了C2级别，法语说得极好，词汇量也非常丰富。但每堂课他都会把“théoriquement”（理论上）说成“théorétiquement”，因为在波兰语里是“teoretycznie”，在英语里也是“theoretically”。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:16:18.970",
+          "end_time": "00:16:46.610",
+          "french": "Et à chaque leçon, je le corrigeais. Et à chaque leçon, quasiment, il continuait de faire l'erreur. Et ça a duré pendant peut-être deux ans. Donc, c'est là que je me... Cet aspect de fossilisation, il est vraiment très... vraiment évident, en fait, parfois, avec certains types d'erreurs. Donc, tu dis qu'au niveau des causes, une des causes, ça peut être effectivement la langue maternelle. Est-ce qu'il y a d'autres causes de fossilisation des erreurs ?",
+          "chinese": "每堂课我都会纠正他。而几乎每堂课，他都会继续犯这个错误。这种情况持续了大概两年。所以就在那时我意识到……这种僵化现象在某些类型的错误上表现得非常明显。那么，你提到在原因方面，母语确实是其中之一。还有其他导致错误僵化的原因吗？"
+        },
+        {
+          "id": 46,
+          "start_time": "00:16:46.610",
+          "end_time": "00:17:14.829",
+          "french": "Il y a un phénomène qui est très intéressant et je pense qu'on est tous concernés. Les professeurs et aussi les personnes qui apprennent des langues étrangères, c'est la pandémie. Donc, les confinements nous ont encouragés à apprendre des langues, notamment avec, grâce ou à cause de, je ne sais pas, des applications. Et donc, en fait, avant les confinements, les personnes qui apprenaient le français, en général, c'était ou parce qu'ils avaient vraiment une très, très grande passion",
+          "chinese": "有一个非常有趣的现象，我想我们都受到了影响。无论是老师还是外语学习者，那就是大流行。封锁鼓励了人们学习语言，特别是通过——或者说多亏了，或者说归咎于，我也不确定——各种应用程序。事实上，在封锁之前，学习法语的人通常要么是因为对法语有极大的热情和兴趣，要么是为了工作，而在大流行期间，所有人……"
+        },
+        {
+          "id": 47,
+          "start_time": "00:17:14.829",
+          "end_time": "00:17:38.599",
+          "french": "pour la langue française, un intérêt ou pour le travail, alors que pendant la pandémie, tout le monde, même les personnes qui n'avaient que 5 % d'intérêt pour la langue française ou pour une autre langue étrangère, ils ont commencé à apprendre une langue étrangère. Et en fait, ce qui s'est passé pendant les confinements, qui est très intéressant, c'est qu'il y a eu, par exemple, plus de 67 %",
+          "chinese": "即使是那些对法语或其他外语只有5%兴趣的人，也开始学习外语。封锁期间发生了一件很有趣的事，比如，某些应用程序上的学习者增加了超过67%。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:17:38.619",
+          "end_time": "00:18:05.799",
+          "french": "d'apprenants en plus sur certaines applications. Donc, c'est une grande vague de nouveaux apprenants. Mais le souci, c'est que ces applications ou ces formations en ligne sans correction, c'est qu'il y a aussi derrière un marketing qui dit : « N'importe qui peut apprendre une langue tout seul. » Sauf qu'une langue, c'est comme le tennis.",
+          "chinese": "学习者大幅增加。但问题是，这些应用程序或没有纠正机制的在线课程背后有一种营销说法：“任何人都可以独自学会一门语言。”但语言就像网球。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:18:06.009",
+          "end_time": "00:18:13.740",
+          "french": "C'est toujours plus chouette de jouer avec quelqu'un. Et l'objectif d'une langue, même s'il y a des personnes...",
+          "chinese": "有人陪你打球总是更有趣。语言的目标，虽然有些人……"
+        },
+        {
+          "id": 50,
+          "start_time": "00:18:14.140",
+          "end_time": "00:18:39.369",
+          "french": "qui veulent apprendre uniquement tout seuls sans vouloir parler. J'ai deux élèves comme ça dans mon école. Leur objectif, ce n'est pas de parler. Ils adorent apprendre la grammaire et ils veulent apprendre tout seuls. Ils n'ont pas spécialement envie de parler. Mais la plupart des personnes veulent parler. Et les applications, en fait, elles font croire aux personnes qu'elles parlent une langue.",
+          "chinese": "想要完全自学而不打算开口说话。我学校里就有两个这样的学生。他们的目标不是说话。他们喜欢学习语法，想自学。他们没有特别强烈的交流欲望。但大多数人是想开口说的。而那些应用程序，实际上让人们误以为自己正在说这门语言。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:18:40.019",
+          "end_time": "00:19:05.339",
+          "french": "Et la langue dans notre tête, elle est parfaite. On parle parfaitement anglais ou espagnol ou polonais dans notre tête. Mais après, quand on doit parler, c'est là où il y a vraiment un défi qui devient beaucoup plus difficile. Et on se rend compte que le français dans notre tête et le français qu'on parle est vraiment différent. Et il n'y a pas assez de pratique orale et le peu de pratique orale qui existe,",
+          "chinese": "在我们脑海里，语言是完美的。在脑子里，我们的英语、西班牙语或波兰语说得完美无缺。但到了真正要开口的时候，挑战就变得艰巨得多。我们会发现，脑子里的法语和嘴里说出的法语完全是两回事。口语练习不够，而仅有的那点口语练习……"
+        },
+        {
+          "id": 52,
+          "start_time": "00:19:05.339",
+          "end_time": "00:19:34.769",
+          "french": "elle n'est pas suffisante pour vraiment développer la production et aussi avoir un débit de parole ou une production orale correcte. Donc, ça va être, par exemple, au lieu de dire « à l'hôtel », c'est « à le hôtel ». Parce qu'on est convaincu qu'il y a... Et donc, ça, apprendre les liaisons. Il n'y a pas que les liaisons, évidemment, mais il y a plein d'autres aspects qui peuvent être survolés à cause des applications. Alors, c'est très bien.",
+          "chinese": "不足以真正培养产出能力，也无法获得流畅的语速或正确的口头表达。所以，比如会把“à l'hôtel”说成“à le hôtel”。因为我们确信……所以，学习联诵。当然不仅仅是联诵，还有很多其他方面可能因为使用应用程序而被忽视。虽然这很好……"
+        },
+        {
+          "id": 53,
+          "start_time": "00:19:34.769",
+          "end_time": "00:20:02.910",
+          "french": "Il y a plein de nouvelles personnes qui apprennent, mais il faut toujours accompagner cet apprentissage avec des cours, avec des vraies corrections pour pouvoir justement, dès le début, ne pas apprendre à notre cerveau... C'était quoi l'exemple que tu as dit ? Théoriquement ? Non. Théorétiquement. Théorétiquement. Et donc, que le cerveau apprenne dès le début parce qu'après, une fois que le cerveau est convaincu que c'est la manière « à le hôtel »,",
+          "chinese": "有很多新人在学习，但这种学习必须辅以课程和真正的纠正，以便从一开始就不让大脑学错……你刚才举的例子是什么？Théoriquement？不是。Théorétiquement。对，让大脑从一开始就学对。因为一旦大脑认定“à le hôtel”是正确的，"
+        },
+        {
+          "id": 54,
+          "start_time": "00:20:02.910",
+          "end_time": "00:20:26.500",
+          "french": "c'est très difficile pour lui de dire : « Non, non, en fait, ce que tu as appris jusqu'à présent, ce n'est pas ça. Il faut désapprendre. » Et le souci, c'est qu'en fait, il y a cette croyance qu'on peut tout faire tout seul, qu'on peut tout faire pour pas cher. Et après, qu'on va être indépendant, on va être libre et on va pouvoir être totalement autonome avec la langue et discuter dans un café et être compris.",
+          "chinese": "就很难让它改口说：“不，不，其实你之前学的那套不对，得忘掉重来。”问题在于，人们普遍相信可以完全靠自己、花很少的钱就能搞定。然后觉得自己会变得独立、自由，能完全自主地掌握语言，在咖啡馆里谈笑风生并被听懂。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:20:26.500",
+          "end_time": "00:20:44.549",
+          "french": "Malheureusement, dans la vraie vie, c'est un peu différent. Et donc, c'est là aussi où il y a des personnes qui se rendent compte qu'après un certain moment, quand ils commencent à parler avec des natifs, il y a quelque chose à faire. Et donc là, ils décident de prendre des cours pour justement mettre à niveau l'oral",
+          "chinese": "不幸的是，现实生活有点不同。所以，有些人意识到一段时间后，当他们开始和母语者交流时，发现还有很多工作要做。于是他们决定上课，专门为了提升口语水平，使之与在应用程序上学到的知识相匹配。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:20:44.950",
+          "end_time": "00:21:08.690",
+          "french": "et la connaissance des applications. Mais voilà, c'est un long sujet. Mais je ne sais pas si tu as testé maintenant les nouvelles applications qui utilisent plus l'IA. Parce que là, pour le coup, on peut recevoir du feedback, on peut avoir des conversations maintenant aussi avec une IA. Et avoir même des exercices personnalisés en fonction de nos erreurs, etc. Qu'est-ce que tu penses de ça ?",
+          "chinese": "以及在应用程序上学到的知识。但这是一个很长的话题。不过我不知道你有没有测试过现在那些更多使用人工智能（AI）的新应用。因为现在，我们确实可以获得反馈，甚至可以和 AI 进行对话。还能根据我们的错误获得个性化的练习等等。你怎么看？"
+        },
+        {
+          "id": 57,
+          "start_time": "00:21:08.690",
+          "end_time": "00:21:15.599",
+          "french": "Moi, j'utilise une application. Justement, je suis ma propre bêta-testeuse parce que je suis en train d'apprendre le grec.",
+          "chinese": "我正在用一个应用。准确地说，我是在拿自己当测试对象，因为我正在学希腊语。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:21:15.599",
+          "end_time": "00:21:42.619",
+          "french": "Et le grec débutant complet. Donc, j'ai vraiment commencé avec une application avec un petit oiseau. Et ensuite, j'ai fait trois mois. Et puis après, je suis passée en cours particuliers. Je continue à tester l'application. Et donc, pour moi, je n'ai pas encore le niveau pour pouvoir tester avec l'IA. Alors, on m'a dit que cette entreprise l'utilisait déjà. Mais on m'en a parlé pour les cours de français. Et on m'a dit que c'était assez fort",
+          "chinese": "零基础希腊语。所以我确实是从那个带小鸟图标的应用开始的。我学了三个月，然后转到了私教课。我还在继续测试那个应用。对我来说，我的水平还没到能用 AI 测试的程度。不过，有人告诉我那家公司已经开始使用 AI 了。有人跟我聊起过法语课的情况，说它在纠错和发音方面相当厉害。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:21:42.619",
+          "end_time": "00:22:12.099",
+          "french": "au niveau de la correction et aussi de la prononciation. Mais je n'ai pas essayé moi-même. Toi, tu l'as essayé ? Pas encore. Je suis beaucoup démarché. Autrement dit, je reçois beaucoup de demandes pour tester ce genre d'applications, éventuellement les promouvoir. Et je n'ai pas le temps tout simplement de le faire. Là, j'en ai reçu une qui m'a l'air assez prometteuse. Du coup, je l'ai donnée à ma copine qui est polonaise pour qu'elle la teste et qu'elle me dise ce qu'elle en pense.",
+          "chinese": "在纠错和发音方面。但我还没亲自试过。你试过吗？还没有。经常有人找我，换句话说，我收到很多测试这类应用并进行推广的请求。我只是单纯没时间去做。最近我收到一个看起来挺有前景的，于是我把它给了我那波兰女朋友，让她测试一下，告诉我她的想法。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:22:12.099",
+          "end_time": "00:22:36.500",
+          "french": "Mais d'après ce que j'ai pu lire, un peu des commentaires même de certains auditeurs, il y en a qui trouvent ça très bien. Après, bon, on sait bien que l'IA continue de faire des erreurs, même pas forcément au niveau de la langue, mais quand on lui demande n'importe quelle tâche ou des recherches, etc., ça arrive encore qu'elles hallucinent. Autrement dit que les IA inventent des choses qui ne sont pas vraies.",
+          "chinese": "但根据我读到的一些评论，甚至是一些听众的反馈，有人觉得非常好。不过，我们也知道 AI 还是会犯错，甚至不一定是语言方面的错误，当你要求它执行任何任务或进行调研时，它有时仍会产生“幻觉”。换句话说，AI 会编造一些不真实的事情。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:22:36.500",
+          "end_time": "00:22:57.130",
+          "french": "Elles ont toutes un petit avertissement en disant qu'elles peuvent faire des erreurs et de bien vérifier les informations. Donc c'est pareil avec les langues, avec la correction. Moi, je le vois de temps en temps quand je l'utilise aussi pour préparer des épisodes que bon, parfois il y a des choses qui ne sont pas... qu'elle a complètement inventées aussi pour être d'accord avec l'utilisateur ou pour aller dans son sens.",
+          "chinese": "它们都有一个小提示，说可能会出错，请仔细核实信息。语言学习和纠错也是一样。我偶尔在准备节目使用它时也会发现，有些东西……它完全是编造的，只是为了顺着用户的话说，或者为了迎合用户的意思。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:22:57.299",
+          "end_time": "00:23:22.849",
+          "french": "Il faut se méfier de ça, mais ça ne fait que s'améliorer. Donc, peut-être que ça va devenir un outil à ajouter, je pense, pour certains élèves. Et en plus, l'avantage, parce qu'il y a des personnes qui aiment bien cracher sur l'IA, moi, je ne suis pas d'accord, parce que je trouve qu'il y a des choses fantastiques qui se font grâce à l'IA, pour toi en tant que créateur de contenu et pour moi aussi, mais aussi pour l'apprentissage, pour les personnes qui sont ultra timides.",
+          "chinese": "必须警惕这一点，但它一直在进步。所以，我觉得它可能会成为某些学生的一个补充工具。而且，AI 还有一个优势——有些人喜欢贬低 AI，但我不同意，因为我觉得 AI 创造了很多奇妙的东西，无论是对你我这样的内容创作者，还是对学习者，尤其是那些极度害羞的人。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:23:22.849",
+          "end_time": "00:23:42.829",
+          "french": "Il y en a qui sont bloqués par la production orale dans un groupe. C'est hyper rassurant de commencer à faire des exercices de prononciation avec une IA plutôt que de se lancer dans la nature avec un groupe et d'avoir peur d'être jugé. Après,",
+          "chinese": "有些人在小组中会被口语表达难住。先和 AI 进行发音练习，而不是直接投身于小组环境并担心被评判，这非常让人安心。之后，"
+        },
+        {
+          "id": 64,
+          "start_time": "00:23:42.829",
+          "end_time": "00:24:06.569",
+          "french": "l'objectif, c'est de toujours pouvoir être autonome dans la nature. Donc, il y a toujours un moment où on sera obligé de passer par la case « je vais parler avec des vraies personnes », mais on peut s'entraîner. Donc, moi, je n'ai pas testé, mais si ça fonctionne bien, je suis pour, je valide. Bon, c'est vrai qu'on pourrait faire tout un épisode aussi sur l'IA, mais on va peut-être revenir à notre sujet de fossilisation.",
+          "chinese": "目标始终是能在现实环境中独立交流。所以，总有一个时刻你必须迈出那一步，去和真人交流，但你可以先练习。所以，我还没测试过，但如果效果好，我支持，我认可。好了，关于 AI 我们确实能聊上一整集，但我们还是回到“僵化”这个话题吧。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:24:13.180",
+          "end_time": "00:24:37.150",
+          "french": "Est-ce que c'est un problème qui concerne un niveau en particulier ? Est-ce que c'est plutôt, par exemple, les élèves débutants ou est-ce que c'est quelque chose qui concerne un peu tous les niveaux ? Je dirais que ça concerne plutôt les A2-B1, donc les personnes qui sont au niveau du plateau, là où on a l'impression de ne plus progresser parce qu'on fait toujours la même chose.",
+          "chinese": "这是一个针对特定水平的问题吗？是初学者更容易遇到，还是所有水平都会涉及？我会说这更多涉及 A2-B1 级别，也就是处于“平台期”的人，那时你会觉得不再进步了，因为总是在重复同样的东西。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:24:37.150",
+          "end_time": "00:24:45.059",
+          "french": "Et quand tu disais justement, par exemple, que les progrès ne sont pas linéaires, forcément...",
+          "chinese": "就像你刚才说的，进步并不一定是线性的……"
+        },
+        {
+          "id": 67,
+          "start_time": "00:24:45.400",
+          "end_time": "00:25:08.680",
+          "french": "De zéro au niveau intermédiaire, si on est régulier en français, les progrès sont vraiment fantastiques. Parce qu'on passe vraiment de « je ne parle pas du tout français » à « je peux même parfois comprendre des paroles de chansons » ou « écouter ton podcast », des choses comme ça. Mais le souci, c'est toujours aussi…",
+          "chinese": "从零到中级水平，如果坚持学法语，进步真的是惊人的。因为你真的从“完全不会说法语”变成了“有时甚至能听懂歌词”或“听你的播客”之类的。但问题总是在……"
+        },
+        {
+          "id": 68,
+          "start_time": "00:25:08.759",
+          "end_time": "00:25:16.549",
+          "french": "au niveau A2-B1, où là, on est face à beaucoup d'éléments de grammaire, parfois un peu trop.",
+          "chinese": "在 A2-B1 级别，这时我们会面临大量的语法要素，有时甚至太多了。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:25:16.950",
+          "end_time": "00:25:43.079",
+          "french": "Et on se dit : « Bon, je vais mettre cet élément de côté » ou « je vais mettre ce chapitre de côté » pour pouvoir aller plus vite. Il y a des professeurs aussi qui sont coupables, attention. Donc, des professeurs qui disent : « Voilà, on a vu le passé composé, faites bien vos exercices à la maison et la semaine prochaine, on fait l'imparfait. » Et donc, le fait de survoler, de vouloir aller trop vite dans certains aspects de conjugaison ou de grammaire va aussi...",
+          "chinese": "我们会想：“好吧，我先把这个要素放一边”或者“先把这一章放一边”，好学得快一点。有些老师也有责任，注意。有些老师会说：“好了，我们看过了复合过去时，回家好好做练习，下周我们学未完成过去时。”这种走马观花、想在某些变位或语法方面求快的做法也会……"
+        },
+        {
+          "id": 70,
+          "start_time": "00:25:43.859",
+          "end_time": "00:25:58.859",
+          "french": "encourager la fossilisation des erreurs. Attention, on parle de fossilisation des erreurs, il faut faire des erreurs pour progresser. Donc on n'est pas en tant que dire qu'il ne faut pas faire d'erreurs, c'est obligatoire. Passez par la case « je me trompe »",
+          "chinese": "助长错误的僵化。注意，我们谈论错误的僵化，但犯错是进步的必经之路。所以我们并不是说不能犯错，那是必须的。必须经过“犯错”这一关"
+        },
+        {
+          "id": 71,
+          "start_time": "00:25:58.869",
+          "end_time": "00:26:21.799",
+          "french": "pour progresser. Je sais qu'on déteste faire des fautes et tout ça, mais c'est vraiment indispensable pour aller plus loin parce que quand on essaye, on se trompe, on apprend, on réajuste, on répète et c'est comme ça qu'on peut aller beaucoup plus loin. Mais donc, je dirais qu'il y a le fait de vouloir aller trop vite dans la grammaire. Donc, ne pas faire le... Moi, je l'ai vu par exemple avec des élèves...",
+          "chinese": "才能进步。我知道大家都讨厌出错，但这对于走得更远确实是必不可少的。因为当你尝试时，你会出错，然后学习、调整、重复，这样才能走得更远。但我认为，问题在于想在语法上求快。所以，没有做……比如我见过一些学生……"
+        },
+        {
+          "id": 72,
+          "start_time": "00:26:22.619",
+          "end_time": "00:26:41.099",
+          "french": "à qui j'ai donné des devoirs et qui n'ont pas voulu les faire. Et je le dis à chaque fois, les devoirs, c'est pas rigolo. C'est pas drôle. On n'a jamais envie de faire nos devoirs. Mais par contre, si on les fait sérieusement, rigoureusement, on ne devra plus jamais les faire.",
+          "chinese": "我给他们布置了作业，但他们不想做。我每次都说，作业并不好玩。没人想做作业。但如果我们认真、严谨地对待作业，以后就再也不用重复做了。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:26:41.430",
+          "end_time": "00:27:04.809",
+          "french": "Par contre, si on refuse de les faire en disant « Ah non, ça va rentrer tout seul », c'est là où en fait on fossilise parce qu'en fait on va apprendre des choses qui ne sont pas correctes et notre cerveau va être convaincu que ça passe alors que ça ne passe pas du tout. Donc par exemple, « je visite ma grand-mère ». Classique. Un classique. « J'ai rendu visite à ma grand-mère ».",
+          "chinese": "相反，如果我们拒绝做作业，心想“啊没事，自然而然就会了”，那就会产生僵化。因为实际上我们会学到一些不正确的东西，而我们的大脑会确信这没问题，但实际上大错特错。比如，“je visite ma grand-mère”。经典错误。非常经典。应该是“J'ai rendu visite à ma grand-mère”。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:27:05.430",
+          "end_time": "00:27:32.170",
+          "french": "Donc, on peut éviter la fossilisation si, dès le début, on a quand même une structure mise en place et qu'on accepte qu'il y a un moment dans l'apprentissage où ça ne va pas être tout rose. On va se dire : « Oh mon Dieu, mais qu'est-ce que c'est long ! ». On peut comparer ça un peu à un marathon. Je n'ai jamais couru de marathon, justement, pour ces raisons-là, en disant, après deux heures, on se dit : « Mais mon Dieu, mais pourquoi je me suis inscrit ? »",
+          "chinese": "所以，如果从一开始就建立起良好的结构，并接受学习过程中会有不那么美好的时刻，就可以避免僵化。我们会想：“天哪，怎么这么漫长！”我们可以把它比作马拉松。我从来没跑过马拉松，正是因为这些原因，心想跑了两个小时后会问：“天哪，我为什么要报名？”"
+        },
+        {
+          "id": 75,
+          "start_time": "00:27:32.890",
+          "end_time": "00:27:50.460",
+          "french": "Et en fait, le niveau intermédiaire A2-B1, où on commence tout doucement à toucher le subjonctif, c'est un peu les deux heures du marathon. On se dit : « Mais qu'est-ce qui s'est passé ? ». Parce qu'on pense qu'on va étudier le présent, et puis après le passé composé, tu dis : « Oulala ! »",
+          "chinese": "事实上，开始慢慢接触虚拟式的 A2-B1 中级水平，就像是马拉松跑了两个小时的时候。你会想：“发生了什么？”因为你以为学完现在时，接着是复合过去时，你会说：“噢啦啦！”"
+        },
+        {
+          "id": 76,
+          "start_time": "00:27:50.460",
+          "end_time": "00:28:18.470",
+          "french": "« Je suis allé » ou « j'ai mangé ». C'est quoi cette folie ? Et puis après, on passe à l'imparfait. On apprend quand on utilise l'imparfait et quand on utilise le passé composé. Et puis après, on passe aux hypothèses. Et puis après, il y a le subjonctif. Et donc, c'est infini. Bonne nouvelle. Quand on arrive au subjonctif, c'est la fin. Donc, c'est la dernière heure du marathon. En théorie. En théorie. Donc, en général, les erreurs de fossilisation arrivent souvent quand il y a...",
+          "chinese": "“Je suis allé”还是“j'ai mangé”。这是什么疯狂的规则？然后我们学未完成过去时。我们学习什么时候用未完成过去时，什么时候用复合过去时。接着是假设句。然后是虚拟式。这是无穷无尽的。好消息是，当你学到虚拟式时，就快到头了。那是马拉松的最后一个小时。理论上。理论上。所以，通常僵化错误发生在……"
+        },
+        {
+          "id": 77,
+          "start_time": "00:28:18.839",
+          "end_time": "00:28:48.000",
+          "french": "un aspect de la langue française qui a été survolé ou qui n'a pas été travaillé de manière assez approfondie, que ce soit de la part de l'élève, c'est possible, mais ça peut être aussi de la part du professeur en disant : « J'estime que tu dois comprendre et que tu connais », sans avoir vraiment vérifié si l'apprenant maîtrisait vraiment cet aspect. Après, en tant que prof, c'est aussi difficile parfois de savoir où mettre le curseur de la correction. C'est tout un art parce que d'un côté, on se dit bon,",
+          "chinese": "法语的某个方面被草率对待，或者没有进行足够深入的练习。这可能是学生的问题，但也可能是老师的问题，老师觉得“我认为你应该理解了，你也知道了”，而没有真正核实学习者是否真的掌握了这一方面。作为老师，有时也很难确定纠错的尺度。这是一门艺术，因为一方面我们会想……"
+        },
+        {
+          "id": 78,
+          "start_time": "00:28:48.000",
+          "end_time": "00:29:17.349",
+          "french": "voilà, si je ne corrige pas systématiquement cette erreur, surtout cette erreur que les élèves font de manière répétée, ils ne vont jamais la corriger. Mais d'un autre, si à chaque fois qu'ils ouvrent la bouche, je les corrige, ça va les décourager. Donc, toi, comment tu fais justement pour trouver cet équilibre ? Pour les corrections, ça, c'était dans ma formation de professeur de FLE. En fait, on a eu interdiction d'interrompre l'élève pendant...",
+          "chinese": "如果我不系统地纠正这个错误，尤其是学生反复犯的错误，他们永远也改不过来。但另一方面，如果他们每次开口我都纠正，又会打击他们的积极性。那么，你具体是怎么找到这个平衡点的？关于纠错，这是我在 FLE 教师培训中学到的。事实上，我们被禁止在学生……"
+        },
+        {
+          "id": 79,
+          "start_time": "00:29:17.460",
+          "end_time": "00:29:39.150",
+          "french": "qu'il ou elle parlait. Donc, je laisse parler l'élève, je prends des notes et je dis aussi pendant les premiers cours que j'ai avec les élèves : « Je prends beaucoup de notes pendant mes cours. Ça ne veut pas dire que tu racontes n'importe quoi, c'est juste parce que je veux faire une remarque après. Donc, je vais te laisser parler et j'ai peur d'oublier. Donc, je note tout. »",
+          "chinese": "说话时打断他。所以，我会让学生说完，我做记录。在头几堂课上我会告诉学生：“我在课上会记很多笔记。这并不代表你在胡说八道，只是因为我想稍后提点建议。所以我会让你说完，但我怕忘了，所以都记下来。”"
+        },
+        {
+          "id": 80,
+          "start_time": "00:29:39.150",
+          "end_time": "00:30:07.400",
+          "french": "Et puis après, quand la personne a terminé de parler, je fais un retour et je dis : « Voilà, ça, pour faire attention, la prononciation et tout ça. » Mais j'essaye de ne pas interrompre la personne quand elle parle, sauf quand c'est vraiment une grosse fossilisation. Là, notamment, j'ai un élève, il va dire « j'ai mangé à vendredi ». Il adore mettre un petit « à » avec les jours. Et donc, je dis : « Vendredi, vendredi, vendredi. »",
+          "chinese": "然后，当对方说完后，我会给反馈，说：“看，这部分要注意发音之类的。”但我尽量不在别人说话时打断，除非是那种非常严重的僵化错误。比如我有一个学生，他总说“j'ai mangé à vendredi”。他特别喜欢在星期前面加个“à”。于是我会提醒：“Vendredi, vendredi, vendredi.”"
+        },
+        {
+          "id": 81,
+          "start_time": "00:30:07.900",
+          "end_time": "00:30:34.980",
+          "french": "Mais sinon, j'attends pour faire la correction. Ok. Donc, tu fais à la fin du cours, tu fais un peu un récapitulatif, un résumé de toutes les principales erreurs, c'est ça ? Ça peut être à la fin du cours ou après chaque sujet. Donc, par exemple : « Qu'est-ce que tu as fait le week-end dernier ? ». Et puis là, je vais prendre des notes. Et puis après, je vais expliquer d'abord ce qui a fonctionné ou pas. Et puis après, on va passer à un autre sujet. Et même chose. Donc, ça peut être par bloc",
+          "chinese": "否则，我会等到最后再纠正。好的。所以你在课后会做一个回顾，总结所有主要的错误，是吗？可以在课后，也可以在每个主题结束后。比如：“你上周末做了什么？”然后我会记笔记。接着我会先解释哪些地方说得好，哪些不好。然后我们换下一个话题。以此类推。所以可以按版块进行……"
+        },
+        {
+          "id": 82,
+          "start_time": "00:30:34.980",
+          "end_time": "00:30:53.769",
+          "french": "ou à la fin du cours, ça dépend si c'est des cours particuliers, si c'est des cours en groupe. Il y a aussi un inconvénient avec les cours en groupe. Et ça aussi, ça peut vraiment encourager malheureusement la fossilisation des erreurs. C'est que les corrections sont beaucoup plus légères.",
+          "chinese": "或者在课后，这取决于是个教课还是团体课。团体课也有一个缺点，不幸的是，这真的会助长错误的僵化。那就是纠错会轻描淡写得多。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:30:54.299",
+          "end_time": "00:31:20.170",
+          "french": "Elles sont beaucoup moins précises parce qu'évidemment, il y a un nombre d'élèves plus important. Et donc, les corrections sont moins personnalisées, malheureusement. Et donc, ça peut encourager la fossilisation parce que le ou la professeur ne peut pas être hyper, hyper strict par rapport à quelque chose ou le répéter à chaque fois. Alors que dans un cours particulier, là, c'est beaucoup plus difficile de continuer la fossilisation.",
+          "chinese": "纠错没那么精准，因为显然学生人数更多。因此，不幸的是，纠错缺乏针对性。这会助长僵化，因为老师无法对某个点表现得非常、非常严格，或者每次都重复提醒。而在私教课上，想要继续僵化就难得多了。"
+        },
+        {
+          "id": 84,
+          "start_time": "00:31:20.599",
+          "end_time": "00:31:47.180",
+          "french": "Est-ce que tu as l'impression qu'il y a certains élèves, peut-être des personnalités qui sont plus enclines à la fossilisation que d'autres ? Je pose la question parce que voilà, avec mon élève polonais qui avait ce niveau C2, où j'ai passé peut-être deux ans à le corriger sur ce point, il y avait cinq erreurs qu'il faisait à chaque fois et il en faisait tellement peu qu'elles sautaient encore plus aux oreilles, elles étaient encore plus évidentes et malgré...",
+          "chinese": "你是否觉得某些学生，或者说某些性格的人，比其他人更容易产生僵化？我问这个问题是因为，我那个达到 C2 水平的波兰学生，我花了大概两年时间纠正他那个点。他每次都会犯五个错误，因为他犯错太少了，所以那些错误听起来格外刺耳，格外明显，尽管……"
+        },
+        {
+          "id": 85,
+          "start_time": "00:31:47.180",
+          "end_time": "00:32:16.099",
+          "french": "On a tout essayé au niveau de la correction. Au départ, j'avais cette méthode où je lui disais à la fin du cours et je le laissais, parce que je pense que c'est important aussi d'abord d'essayer de laisser l'élève trouver son erreur lui-même et la corriger. Lui, il le faisait tout de suite, non seulement parce qu'il parlait très bien français, mais aussi parce que c'était toujours les mêmes erreurs. C'était assez facile. On a testé cette méthode, ça ne fonctionnait pas trop. Après, lui, il m'a demandé de l'interrompre justement",
+          "chinese": "我们尝试了各种纠错方法。起初我用那种课后告诉他的方法，让他自己发挥，因为我觉得首先让学生尝试自己发现错误并纠正很重要。他能立刻纠正，不仅因为他法语说得好，也因为总是那几个错误。这很简单。我们测试了这种方法，效果不佳。后来，他要求我在他犯错时当场打断他……"
+        },
+        {
+          "id": 86,
+          "start_time": "00:32:16.099",
+          "end_time": "00:32:43.660",
+          "french": "sur le fait, quand il faisait ses erreurs, j'ai testé ça, ça ne marchait pas beaucoup plus. Est-ce que c'est moi qui faisais quelque chose de mal ou est-ce que tu penses qu'il y a aussi une question de personnalité de l'élève ? Je ne sais pas si c'est une question de personnalité, mais c'est plus le cerveau. Une fois que c'est dans le cerveau, je ne dis pas que c'est impossible, mais c'est vraiment très très très très long pour désapprendre. Et c'est pour ça que les erreurs fossilisées coûtent très cher.",
+          "chinese": "就在他犯错的当下。我试了，效果也没好到哪儿去。是你做得不对，还是你觉得这也是学生性格的问题？我不确定这是否是性格问题，更多是大脑的问题。一旦进入大脑，我不是说不可能改变，但“去学习”的过程真的非常、非常漫长。这就是为什么僵化错误的代价很高。"
+        },
+        {
+          "id": 87,
+          "start_time": "00:32:43.660",
+          "end_time": "00:33:01.609",
+          "french": "Parce qu'une fois que le cerveau a enregistré et le cerveau a dit « c'est correct », il n'a pas envie de faire d'une autre manière. C'est comme par exemple, tu as appris à couper les oignons dans un sens. Si je te demande de couper le même oignon dans l'autre sens, tu vas y arriver.",
+          "chinese": "因为一旦大脑记录下来并认定“这是正确的”，它就不想换另一种方式了。就像你学会了按一个方向切洋葱。如果我让你按另一个方向切同样的洋葱，你能做到。"
+        },
+        {
+          "id": 88,
+          "start_time": "00:33:02.259",
+          "end_time": "00:33:26.819",
+          "french": "Mais tu vas trouver ça beaucoup plus difficile parce que tu as une routine, tu as une habitude. Et en fait, c'est aussi une question d'habitude, de routine pour le cerveau. Et il y a aussi des personnes, je pense, qui se disent : « C'est pas grave ». Là, typiquement, avec cet élève, c'était des erreurs qui ne gênaient pas du tout la communication. On comprenait très bien ce qu'il voulait dire. Donc, il y a aussi ce côté-là où...",
+          "chinese": "但你会觉得难得多，因为你已经有了惯例，有了习惯。事实上，对大脑来说，这也是一个习惯和惯例的问题。而且我觉得有些人会想：“没关系”。典型如那个学生，他的错误完全不影响交流。我们完全明白他想表达什么。所以也有这一层因素……"
+        },
+        {
+          "id": 89,
+          "start_time": "00:33:26.970",
+          "end_time": "00:33:54.990",
+          "french": "notamment dans les cours de langue en groupe. Comme tu disais, il y a plusieurs élèves. L'objectif, c'est que tout le monde communique. Donc, le prof ne va pas s'amuser à corriger chaque élève individuellement. Donc, on crée en fait cette espèce de français un peu intermédiaire entre la langue maternelle et le français natif. Et le prof comprend parce qu'il a l'habitude. Les élèves se comprennent parce qu'ils ont un peu tous le même niveau.",
+          "chinese": "特别是在团体语言课上。正如你所说，学生很多。目标是让大家都能交流。所以老师不会以此为乐去纠正每个学生的个体错误。于是我们实际上创造了一种介于母语和地道法语之间的“中介法语”。老师能听懂，因为习惯了。学生之间也能互相听懂，因为水平差不多。"
+        },
+        {
+          "id": 90,
+          "start_time": "00:33:54.990",
+          "end_time": "00:34:19.400",
+          "french": "C'est peut-être là que les erreurs se fossilisent un peu parce qu'ils ont l'impression que ça fonctionne, le prof me comprend, donc il n'y a pas de problème. Je me suis retrouvée dans une situation comme ça avec une élève qui faisait énormément d'erreurs fossilisées. Alors dans son cas, c'était très intéressant, elle avait pris des cours quand elle venait d'arriver à Paris, ça fait quelques années qu'elle est à Paris en ce moment. Elle a survolé la grammaire.",
+          "chinese": "也许错误就是在那时僵化的，因为他们觉得这行得通，老师能听懂，所以没问题。我曾遇到过一个学生，她有很多僵化错误。她的情况很有意思，她刚到巴黎时上过课，现在她在巴黎住了好几年了。她当时草草学了语法。"
+        },
+        {
+          "id": 91,
+          "start_time": "00:34:19.480",
+          "end_time": "00:34:43.710",
+          "french": "Et puis après, elle n'a plus du tout pris de cours. Et après, elle a repris des cours. Donc aussi, il y a l'effet pause entre les cours qui n'aide pas du tout le cerveau. Parce que quand on fait des longues pauses, le cerveau va reprendre. C'est comme un élastique. Donc, il va reprendre la position initiale. Et donc, il faut un peu forcer aussi le cerveau à rester dans le bain de la langue pour pouvoir continuer à progresser.",
+          "chinese": "后来她就完全没再上课。之后她又重新开始上课。所以，课程之间的停顿对大脑一点帮助都没有。因为当你长时间停顿，大脑会反弹。就像橡皮筋一样。它会回到初始位置。所以必须强迫大脑沉浸在语言环境中，才能继续进步。"
+        },
+        {
+          "id": 92,
+          "start_time": "00:34:43.710",
+          "end_time": "00:34:55.820",
+          "french": "Et cette élève ne prenait que des cours en groupe et elle était avec une autre professeure et après j'ai récupéré son groupe et je lui ai fait des rapports de progression personnalisés où j'ai dit : « Là ça ne va pas du tout. Parce que moi je comprends ce que tu dis. »",
+          "chinese": "这个学生只参加团体课，她之前跟另一位老师学，后来我接手了她的班级。我给她做了个性化的进度报告，我说：“这样绝对不行。因为我能听懂你说的话。”"
+        },
+        {
+          "id": 93,
+          "start_time": "00:34:55.989",
+          "end_time": "00:35:24.510",
+          "french": "« Mais les francophones natifs ne vont pas comprendre. Donc, il faut absolument faire quelque chose pour la prononciation. » Et je l'ai dirigée vers des professeurs qui étaient formés justement pour corriger la prononciation. Donc, c'était de l'école, comment ça s'appelle ? Phonétique. Je ne sais pas si tu les connais. Et j'ai dit : « Si tu veux corriger la prononciation, il faut absolument que tu le fasses avec des personnes qui sont formées. »",
+          "chinese": "“但法语母语者是听不懂的。所以必须在发音上下一番功夫。”我把她引荐给了专门从事发音纠正培训的老师。那是哪所学校来着？Phonétique（语音）。不知道你听过没。我说：“如果你想纠正发音，必须找受过专业培训的人。”"
+        },
+        {
+          "id": 94,
+          "start_time": "00:35:24.510",
+          "end_time": "00:35:49.250",
+          "french": "Parce qu'il y a aussi beaucoup de professeurs qui s'improvisent experts en prononciation du français, mais qui n'ont pas de formation spécifique. Pour avoir suivi la formation de phonétique, je peux te dire que moi, francophone native, je ne savais absolument rien de la prononciation et de la correction phonétique. Donc, c'est quelque chose qui s'apprend. Et être native, ce n'est évidemment pas du tout suffisant",
+          "chinese": "因为有很多老师自诩为法语发音专家，但并没有接受过专门培训。在参加了语音培训后，我可以告诉你，作为法语母语者，我以前对发音和语音纠正一无所知。所以这是需要学习的。显然，光是母语者身份是远远不够的……"
+        },
+        {
+          "id": 95,
+          "start_time": "00:35:49.250",
+          "end_time": "00:36:00.710",
+          "french": "pour la correction et la défossilisation, c'est dur à dire, de la prononciation, il faut vraiment être accompagné de personnes qui...",
+          "chinese": "对于发音的纠正和“去僵化”——这个词真拗口——来说，真的需要专业人士的指导……"
+        },
+        {
+          "id": 96,
+          "start_time": "00:36:00.920",
+          "end_time": "00:36:21.320",
+          "french": "qui ont été formées, donc il ne faut vraiment pas hésiter à demander aux professeurs où ils ont été formés, s'ils ont été formés vraiment en prononciation. Ça élimine aussi drastiquement le choix parce qu'il y a énormément de professeurs de français, mais il y a moins de professeurs qui se sont spécialisés dans la correction de la prononciation.",
+          "chinese": "那些受过培训的人。所以千万不要犹豫去问老师他们在哪里受的培训，是否真的接受过发音培训。这也会大大缩小选择范围，因为法语老师非常多，但专门从事发音纠正的老师却很少。"
+        },
+        {
+          "id": 97,
+          "start_time": "00:36:29.019",
+          "end_time": "00:36:58.059",
+          "french": "Est-ce que tu as d'autres solutions ou techniques pour combattre cette fossilisation ? Alors, je dirais déjà qu'il ne faut pas s'alarmer. Il faut surtout être bien accompagné quand il y a un professeur ou une professeure qui nous dit : « Voilà, il y a des petits aspects à modifier. » Moi, j'étais moi-même la victime de fossilisation d'erreur. J'ai dit pendant 20 ans en anglais « in the train », parce que tu vois, pour moi, « in », c'est « dans ».",
+          "chinese": "你还有其他解决或对抗这种僵化的方案或技巧吗？首先我想说，没必要惊慌。最重要的是当老师告诉我们“看，有些小细节需要修改”时，我们要有专业人士的指导。我自己也是僵化错误的受害者。20年来我一直用英语说“in the train”，因为你看，对我来说，“in”就是“在……里面”。"
+        },
+        {
+          "id": 98,
+          "start_time": "00:36:58.059",
+          "end_time": "00:37:24.349",
+          "french": "Et j'ai appris après 20 ans qu'en fait, on disait « I'm on the train ». Et donc, c'est beaucoup plus difficile pour moi de me corriger, mais je suis consciente. Donc déjà, être consciente de son erreur. Et donc, pour être consciente des erreurs qu'on peut faire, premièrement, ce n'est pas paniquer. Ce n'est pas dire : « Oh là là, mon Dieu, mon français est catastrophique, je n'ai rien appris, ce n'est pas pour moi. » Justement, les erreurs, c'est quelque chose",
+          "chinese": "20年后我才知道，其实应该说“I'm on the train”。所以对我来说纠正起来更难，但我意识到了。所以首先要意识到自己的错误。为了意识到可能犯的错误，第一，不要恐慌。不要说：“天哪，我的法语太烂了，我什么也没学到，我不适合学这个。”恰恰相反，错误是……"
+        },
+        {
+          "id": 99,
+          "start_time": "00:37:24.349",
+          "end_time": "00:37:49.099",
+          "french": "qui va nous aider à progresser. Les erreurs vont faire en sorte qu'on continue à apprendre. Donc, essayez d'avoir un diagnostic d'un ou d'une professeur pour pouvoir voir où on en est dans notre apprentissage. S'il y a un aspect de la langue qu'on n'aime pas du tout, ça veut probablement dire qu'il faut absolument le faire.",
+          "chinese": "帮助我们进步的东西。错误会确保我们继续学习。所以，尝试找老师做一个诊断，看看我们的学习进度到了哪里。如果语言中有某个方面是我们非常讨厌的，那很可能意味着我们必须去攻克它。"
+        },
+        {
+          "id": 100,
+          "start_time": "00:37:49.400",
+          "end_time": "00:38:03.659",
+          "french": "Les exercices de conjugaison, c'est pas drôle, mais si on n'a pas du tout envie de les faire, c'est que probablement ça va nous aider à aller plus loin dans la langue, à ne pas fossiliser des erreurs et donc continuer à progresser.",
+          "chinese": "动词变位练习并不好玩，但如果我们一点都不想做，那很可能它能帮助我们在语言学习上走得更远，避免错误僵化，从而继续进步。"
+        },
+        {
+          "id": 101,
+          "start_time": "00:38:03.829",
+          "end_time": "00:38:31.210",
+          "french": "Et si, par exemple, il y a des problèmes de conjugaison, ne pas hésiter à retourner et réviser certains aspects de la langue qu'on ne maîtrise pas ou qu'on a survolés. La langue est disponible tout le temps, donc ce n'est pas comme si c'était une course ou un train qu'on allait rater. On a le droit de retourner en arrière et ça ne veut pas dire qu'on est stupide ou qu'on apprend lentement, c'est juste que notre cerveau a besoin parfois de retourner,",
+          "chinese": "如果存在变位问题，不要犹豫，回去复习那些没掌握或草草学过的方面。语言随时都在那里，所以这不像是一场比赛或一趟会错过的火车。我们有权回头看，这并不意味着我们愚蠢或学得慢，只是我们的大脑有时需要回头……"
+        },
+        {
+          "id": 102,
+          "start_time": "00:38:31.670",
+          "end_time": "00:38:48.579",
+          "french": "de revoir, de faire une pause pour pouvoir aller plus loin. On respire, on prend un verre d'eau, on revoit un petit peu ce qui n'a pas fonctionné pour pouvoir justement continuer notre course. Et si on apprend les aspects qu'on n'aime pas sérieusement,",
+          "chinese": "去复习、去停顿，以便走得更远。深呼吸，喝杯水，回顾一下哪里出了问题，以便继续我们的征程。如果我们认真对待那些不喜欢的方面……"
+        },
+        {
+          "id": 103,
+          "start_time": "00:38:49.300",
+          "end_time": "00:39:13.139",
+          "french": "on ne devra plus jamais le faire. Mais je sais que sur le moment même, ce n'est pas drôle. Ok, super. Je pense qu'on va finir sur ces mots d'encouragement. C'était passionnant. Merci beaucoup, Yasmine. Est-ce que tu as quelque chose à ajouter ? Peut-être si les gens veulent te retrouver, qu'est-ce qu'ils doivent taper dans leur moteur de recherche ? Vous pouvez taper Le français avec Yasmine, mon podcast. C'est là où je...",
+          "chinese": "以后就再也不用做了。但我知道在当下，这并不好玩。好的，太棒了。我想我们就以这些鼓励的话语结束吧。非常精彩。非常感谢，Yasmine。你还有什么要补充的吗？如果大家想找你，应该在搜索引擎里输入什么？你们可以搜“Le français avec Yasmine”，我的播客。我在那里……"
+        },
+        {
+          "id": 104,
+          "start_time": "00:39:13.139",
+          "end_time": "00:39:38.099",
+          "french": "poste, publie mes meilleurs contenus. Étant donné que ce n'est pas viral, je raconte un peu ce que je veux, donc je n'ai pas de limite. Je suis aussi active sur LinkedIn, donc Yasmine Lestel, Yasmine avec un Y. Je poste de temps en temps sur Instagram, mais c'est moins régulièrement que LinkedIn et mon podcast. Mon podcast, c'est vraiment mon chouchou. Ok, très bien. Donc, allez écouter le podcast de Yasmine.",
+          "chinese": "发布、出版我最好的内容。因为它不是为了追求病毒式传播，所以我聊我想聊的，没有限制。我也活跃在 LinkedIn 上，搜 Yasmine Lestel，Yasmine 是 Y 开头的。我偶尔也会在 Instagram 上发帖，但没有 LinkedIn 和播客那么频繁。播客真的是我的心头好。好的，太棒了。大家快去听 Yasmine 的播客吧。"
+        },
+        {
+          "id": 105,
+          "start_time": "00:39:38.099",
+          "end_time": "00:39:53.699",
+          "french": "Merci beaucoup d'avoir répondu à cette invitation et de nous avoir parlé de fossilisation, Yasmine. Et puis, bon courage pour la suite. Merci beaucoup, Hugo. J'ai adoré cette interview avec toi. J'ai passé un très, très bon moment. Merci. Ciao. Ciao, ciao.",
+          "chinese": "非常感谢你接受邀请来和我们聊“僵化”这个话题，Yasmine。祝你未来一切顺利。非常感谢，Hugo。我很喜欢这次采访。我度过了一段非常愉快的时光。谢谢。再见。再见，再见。"
+        }
+      ],
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

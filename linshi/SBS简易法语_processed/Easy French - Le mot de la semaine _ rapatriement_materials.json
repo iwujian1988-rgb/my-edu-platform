@@ -1,0 +1,596 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ rapatriement.json",
+  "channel": "SBS简易法语",
+  "video_name": "Easy French - Le mot de la semaine _ rapatriement",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T17:47:27.126Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "La voix passive avec les verbes modaux",
+          "La nominalisation"
+        ],
+        "speaking": [
+          "Explaining administrative and geopolitical terms",
+          "Discussing government actions during international crises"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "rapatriement",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʁapatʁijmɑ̃]",
+            "chinese": "遣返；归国",
+            "example_sentence": {
+              "french": "Le but du rapatriement, c'est de mettre les citoyens en sécurité.",
+              "chinese": "遣返的目的就是确保公民的安全。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              4,
+              5
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Le rapatriement des touristes a commencé cette nuit.",
+                "chinese": "游客的遣返工作已经于今晚开始。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "rapatrier",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁapatʁije]",
+            "chinese": "遣返；将…接回祖国",
+            "example_sentence": {
+              "french": "Le gouvernement australien a rapatrié les Australiens.",
+              "chinese": "澳大利亚政府已将澳大利亚公民接回国内。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              4
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Des milliers de personnes ont dû être rapatriées.",
+                "chinese": "数千人不得不被遣返回国。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "patrie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[patʁi]",
+            "chinese": "祖国",
+            "example_sentence": {
+              "french": "Le mot vient du verbe « rapatrier » qui signifie « ramener quelqu'un dans sa patrie ».",
+              "chinese": "这个词源自动词“rapatrier”，意思是“将某人带回其祖国”。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il est fier de sa patrie.",
+                "chinese": "他为自己的祖国感到自豪。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "ressortissant",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʁəsɔʁtisɑ̃]",
+            "chinese": "（侨居国外的）本国公民",
+            "example_sentence": {
+              "french": "La France organise un rapatriement pour ses ressortissants bloqués.",
+              "chinese": "法国正在为受困的本国公民组织遣返行动。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les ressortissants étrangers doivent s'enregistrer à l'ambassade.",
+                "chinese": "外国公民必须在使馆登记。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "conflit",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kɔ̃fli]",
+            "chinese": "冲突",
+            "example_sentence": {
+              "french": "Des personnes ont été rapatriées à cause du conflit au Moyen-Orient.",
+              "chinese": "由于中东地区的冲突，人们被遣返回国。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le conflit armé a duré plusieurs années.",
+                "chinese": "武装冲突持续了数年。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "urgence",
+            "part_of_speech": "nom féminin",
+            "ipa": "[yʁʒɑ̃s]",
+            "chinese": "紧急情况",
+            "example_sentence": {
+              "french": "Ce terme est souvent utilisé dans des situations d'urgence.",
+              "chinese": "这一术语通常用于紧急情况。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "En cas d'urgence, appelez le 112.",
+                "chinese": "遇到紧急情况，请拨打112。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "catastrophe naturelle",
+            "part_of_speech": "nom féminin",
+            "ipa": "[katastʁɔf natyʁɛl]",
+            "chinese": "自然灾害",
+            "example_sentence": {
+              "french": "Le rapatriement peut avoir lieu après une catastrophe naturelle.",
+              "chinese": "遣返行动可能在自然灾害后进行。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le séisme est une catastrophe naturelle dévastatrice.",
+                "chinese": "地震是一种毁灭性的自然灾害。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "bloqué",
+            "part_of_speech": "adjectif",
+            "ipa": "[blɔke]",
+            "chinese": "受困的；被封锁的",
+            "example_sentence": {
+              "french": "Le gouvernement aide les ressortissants bloqués à l'étranger.",
+              "chinese": "政府帮助受困海外的本国公民。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La route est bloquée par la neige.",
+                "chinese": "道路被雪封住了。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "vol",
+            "part_of_speech": "nom masculin",
+            "ipa": "[vɔl]",
+            "chinese": "航班；飞行",
+            "example_sentence": {
+              "french": "Un vol de rapatriement est prévu demain matin.",
+              "chinese": "明天上午将有一班遣返航班。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le vol a 2 heures de retard.",
+                "chinese": "航班延误了2小时。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "rubrique",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁybʁik]",
+            "chinese": "栏目；专栏",
+            "example_sentence": {
+              "french": "Bienvenue dans notre rubrique « Le mot de la semaine ».",
+              "chinese": "欢迎来到我们的“本周词汇”栏目。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Il écrit pour la rubrique culturelle du journal.",
+                "chinese": "他为报纸的文化专栏撰稿。",
+                "source_video": "SBS French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "Le mot de la semaine",
+            "meaning": "本周词汇",
+            "example": {
+              "french": "Cette semaine, notre mot est « rapatriement ».",
+              "chinese": "本周我们的词汇是“rapatriement”。"
+            },
+            "usage_note": "Commonly used in educational or news segments to highlight a specific term.",
+            "source_ids": [
+              2,
+              5
+            ]
+          },
+          {
+            "expression": "Mettre en sécurité",
+            "meaning": "确保安全；安置在安全地带",
+            "example": {
+              "french": "Le but est de mettre les citoyens en sécurité.",
+              "chinese": "目的是确保公民的安全。"
+            },
+            "usage_note": "Often used in the context of rescue, police, or military operations.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "C'est le cas",
+            "meaning": "情况正是如此",
+            "example": {
+              "french": "C'est le cas cette semaine avec le conflit au Moyen-Orient.",
+              "chinese": "本周的情况正是如此，由于中东地区的冲突。"
+            },
+            "usage_note": "Used to confirm that a general rule or situation applies to the current specific context.",
+            "source_ids": [
+              4
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La voix passive avec les verbes modaux",
+            "structure": "Sujet + devoir/pouvoir + être + participe passé",
+            "explanation": "The passive voice is used to emphasize the action or the person/thing affected by the action. When combined with a modal verb like 'devoir' (must/have to), 'être' remains in the infinitive.",
+            "example": {
+              "french": "Des milliers de personnes ont dû être rapatriées.",
+              "chinese": "数千人不得不被遣返回国。"
+            },
+            "usage_note": "The past participle must agree in gender and number with the subject (personnes -> rapatriées).",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "La nominalisation",
+            "structure": "Verbe -> Nom",
+            "explanation": "French often uses nouns derived from verbs to summarize actions or create titles. This is very common in news and administrative language.",
+            "example": {
+              "french": "Le mot vient du verbe « rapatrier »... on dit « un rapatriement ».",
+              "chinese": "这个词源自动词“rapatrier”……我们说“一个遣返行动”。"
+            },
+            "usage_note": "Suffixes like -ment, -tion, or -age are commonly used (e.g., rapatrier -> rapatriement).",
+            "source_ids": [
+              2,
+              3
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "The nasal vowel 'en/em/an'. The mouth is open, and air passes through both the nose and mouth.",
+              "examples": [
+                "rapatriement",
+                "gouvernement",
+                "urgence",
+                "en"
+              ]
+            },
+            {
+              "sound": "[ʁ]",
+              "description": "The standard French 'R', produced at the back of the throat.",
+              "examples": [
+                "rapatrier",
+                "ressortissant",
+                "rubrique"
+              ]
+            }
+          ],
+          "liaison": [
+            "Émirats_arabes_unis (z sound between Émirats and arabes, and between arabes and unis)",
+            "3_exemples (z sound between trois and exemples)",
+            "un_autre (n sound between un and autre)"
+          ],
+          "intonation": "In definitions (ID 3), the intonation rises on the word being defined and falls at the end of the explanation."
+        },
+        "vocabulary_network": {
+          "theme": "Crise et Assistance Internationale",
+          "core_word": "Rapatriement",
+          "related_groups": [
+            {
+              "category": "Causes",
+              "words": [
+                "conflit",
+                "guerre",
+                "catastrophe naturelle",
+                "urgence"
+              ]
+            },
+            {
+              "category": "Acteurs",
+              "words": [
+                "gouvernement",
+                "citoyen",
+                "ressortissant",
+                "touriste"
+              ]
+            },
+            {
+              "category": "Logistique",
+              "words": [
+                "vol de rapatriement",
+                "ramener",
+                "organiser",
+                "sécurité"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Des ___ de ___ ont ___ être ___ des ___ ___ ___ à cause du ___ au ___.",
+            "answer": "milliers, personnes, dû, rapatriées, Émirats, arabes, unis, conflit, Moyen-Orient",
+            "explanation": "这句话出自原文第4段，描述了由于中东冲突，数千人不得不从阿联酋被遣返回国的情况。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, quel est l'objectif principal d'un rapatriement ?",
+            "options": {
+              "A": "Permettre aux touristes de voyager gratuitement.",
+              "B": "Mettre les citoyens en sécurité et les ramener chez eux.",
+              "C": "Aider les gens à trouver un travail à l'étranger.",
+              "D": "Organiser des vacances dans des pays en crise."
+            },
+            "answer": "B",
+            "explanation": "原文第4行明确指出：“Le but du rapatriement, c'est de mettre les citoyens en sécurité et de les ramener chez eux.”",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "La France organise un rapatriement pour ses ressortissants bloqués.",
+            "answer": "法国正在为受困的本国公民组织遣返行动。",
+            "explanation": "“Ressortissants”指侨居国外的本国公民，“bloqués”在此语境下指因危机而受困、无法自行回国的人。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante à la voix passive : « Le gouvernement australien a rapatrié les Australiens. »",
+            "answer": "Les Australiens ont été rapatriés par le gouvernement australien.",
+            "explanation": "被动语态由“être + 过去分词”构成。由于主语“Les Australiens”是阳性复数，过去分词“rapatrié”需变为“rapatriés”。这对应了文中“ont dû être rapatriées”的被动结构。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "milliers",
+            "rapatriées",
+            "conflit",
+            "ressortissants",
+            "bloqués",
+            "vol"
+          ],
+          "covered_grammar": [
+            "La voix passive"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Le mot vient du verbe [verbe] qui signifie [définition].",
+            "explanation": "Used to explain the etymology and meaning of a word.",
+            "example": {
+              "french": "Le mot vient du verbe « rapatrier » qui signifie « ramener quelqu'un dans sa patrie ».",
+              "chinese": "这个词源自动词“rapatrier”，意思是“将某人带回其祖国”。"
+            }
+          },
+          {
+            "pattern": "Le but de [nom], c'est de [infinitif].",
+            "explanation": "A common way to define the objective or purpose of an action.",
+            "example": {
+              "french": "Le but du rapatriement, c'est de mettre les citoyens en sécurité.",
+              "chinese": "遣返的目的就是确保公民的安全。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous travaillez au ministère des Affaires étrangères et vous devez expliquer à la presse pourquoi un vol de rapatriement est organisé.",
+          "requirements": "Utilisez les mots : rapatriement, ressortissants, sécurité, et conflit.",
+          "starter": "En raison du conflit actuel, nous organisons un vol de rapatriement..."
+        }
+      },
+      "summary": {
+        "content": "This lesson focuses on the term 'rapatriement' (repatriation). It explains the word's origin from the verb 'rapatrier' and its specific usage in emergency contexts such as wars, crises, or natural disasters. The text provides real-world examples involving the Australian and French governments' actions during the Middle East conflict to bring their citizens home safely.",
+        "keywords": [
+          "rapatriement",
+          "ressortissants",
+          "sécurité",
+          "conflit",
+          "urgence"
+        ],
+        "difficulty_note": "The vocabulary is specialized (geopolitics and administration), making it ideal for B1 learners who want to understand news reports."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:03:09"
+        },
+        "theme": "International Crisis and Repatriation",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了。Work in Progress 是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人至深的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。Work in Progress。立即在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.619",
+          "end_time": "00:01:01.380",
+          "french": "Vous êtes avec SBS French. Bonjour et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Morat avec vous. Cette semaine, notre mot est « rapatriement ». En anglais, on traduit rapatriement par « repatriation ». On dit « un rapatriement », c'est un nom masculin.",
+          "chinese": "您正在收听的是 SBS 法语节目。大家好，欢迎来到 SBS Easy French 的“每周一词”栏目。我是 Marianne Morat。本周我们的单词是“rapatriement”。在英语中，rapatriement 翻译为“repatriation”。我们说“un rapatriement”，它是一个阳性名词。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:01.619",
+          "end_time": "00:01:17.540",
+          "french": "Le mot vient du verbe « rapatrier » qui signifie « ramener quelqu'un dans sa patrie, dans son pays d'origine ». Ce terme est souvent utilisé dans des situations d'urgence : une crise, une guerre, une catastrophe naturelle.",
+          "chinese": "这个词源于动词“rapatrier”，意思是“将某人送回祖国或原籍国”。这个术语通常用于紧急情况：如危机、战争、自然灾害。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:17.879",
+          "end_time": "00:01:45.420",
+          "french": "C'est le cas cette semaine. Des milliers de personnes ont dû être rapatriées des Émirats arabes unis à cause du conflit au Moyen-Orient. Le gouvernement australien a rapatrié les Australiens. Le gouvernement français a rapatrié les Français. Le but du rapatriement, c'est de mettre les citoyens en sécurité et de les ramener chez eux. Alors, comment utiliser ce mot dans une phrase ? Voici plusieurs exemples.",
+          "chinese": "本周的情况正是如此。由于中东冲突，数千人不得不从阿拉伯联合酋长国撤离。澳大利亚政府接回了澳大利亚公民。法国政府接回了法国公民。遣返（撤离）的目的是确保公民安全并带他们回家。那么，如何在句子中使用这个词呢？以下是几个例子。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:45.719",
+          "end_time": "00:02:17.030",
+          "french": "Le rapatriement des touristes a commencé cette nuit. La France organise un rapatriement pour ses ressortissants bloqués. Un vol de rapatriement est prévu demain matin. Voilà, c'étaient trois exemples pour utiliser le mot « rapatriement ». C'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes. On se retrouve la semaine prochaine pour un autre mot de la semaine.",
+          "chinese": "游客的遣返工作已于昨晚开始。法国正在为滞留的本国公民组织撤离。一架撤离专机定于明天上午起飞。以上就是使用“rapatriement”一词的三个例子。这就是本周的“每周一词”。欢迎在 SBS French 网站及各大平台收听我们的“每周一词”和 Easy French 新闻。下周再见，我们将带来另一个每周一词。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:23.479",
+          "end_time": "00:02:34.219",
+          "french": "Vous voulez entendre d'autres rubriques comme celle-ci ? Écoutez-les sur Apple Podcasts, Google Podcasts, Spotify ou n'importe où vous écoutez vos podcasts.",
+          "chinese": "想收听更多此类栏目吗？请在 Apple Podcasts、Google Podcasts、Spotify 或您常用的任何播客平台收听。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:40.379",
+          "end_time": "00:03:09.050",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了。Work in Progress 是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人至深的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。Work in Progress。立即在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:09.050",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 7,
+        "source_video_name": "Easy French - Le mot de la semaine _ rapatriement.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "cross-field consistency",
+            "detail": "The 'occurrence_count' for 'rapatriement' is listed as 6, but it appears 7 times in the subtitles (3 times in ID 2, 1 time in ID 4, and 3 times in ID 5).",
+            "field": "language_analysis.vocabulary[0].occurrence_count"
+          },
+          {
+            "level": "warning",
+            "check": "exercise validation",
+            "detail": "The word 'vol' is listed in 'covered_vocabulary' in the exercise summary, but it does not appear in any of the four exercises.",
+            "field": "practice.exercise_summary.covered_vocabulary"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 2,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

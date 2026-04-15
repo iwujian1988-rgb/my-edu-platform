@@ -1,0 +1,694 @@
+{
+  "source_file": "Louis XIV au Grand Palais, je l'ai vu ! Visiting the King's Carpet Exhibition (French History).json",
+  "channel": "法国日常一件事",
+  "video_name": "巴黎大皇宫的路易十四，我亲眼所见！探访国王御用地毯展（法国历史）",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:38:17.504Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 13,
+          "review_words": 0
+        },
+        "grammar": [
+          "La mise en relief (Ce qui / Ce que / Ce sont)",
+          "Le Plus-que-parfait (愈过去时) avec la voix passive",
+          "L'exclamation avec 'Comme'"
+        ],
+        "speaking": [
+          "Décrire une œuvre d'art ou une exposition en détail",
+          "Exprimer son appréciation esthétique et son enthousiasme"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "nef",
+            "part_of_speech": "nom féminin",
+            "ipa": "[nɛf]",
+            "chinese": "中殿，大厅",
+            "example_sentence": {
+              "french": "Nous entrons dans la nef du Grand Palais.",
+              "chinese": "我们正走进大皇宫的中殿。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Oui, nous entrons dans la nef du Grand Palais.",
+                "chinese": "对了，我们现在正走进大皇宫的中殿。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "haut-parleur",
+            "part_of_speech": "nom masculin",
+            "ipa": "[o.paʁ.lœʁ]",
+            "chinese": "扬声器，喇叭",
+            "example_sentence": {
+              "french": "Des haut-parleurs diffusent de la musique baroque.",
+              "chinese": "扬声器里正播放着巴洛克音乐。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Des haut-parleurs diffusent de la musique baroque.",
+                "chinese": "扬声器里正播放着巴洛克音乐。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "baroque",
+            "part_of_speech": "adjectif",
+            "ipa": "[ba.ʁɔk]",
+            "chinese": "巴洛克风格的",
+            "example_sentence": {
+              "french": "J'écoute souvent de la musique baroque.",
+              "chinese": "我经常听巴洛克音乐。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Des haut-parleurs diffusent de la musique baroque.",
+                "chinese": "扬声器里正播放着巴洛克音乐。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "coursive",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kuʁ.siv]",
+            "chinese": "走廊，通道",
+            "example_sentence": {
+              "french": "Nous décidons de monter sur la coursive du premier étage.",
+              "chinese": "我们决定登上一楼的走廊。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              3,
+              4
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Depuis la coursive, nous découvrons alors la vue splendide.",
+                "chinese": "从走廊望去，我们顿时眼前一亮，映入眼帘的是一片壮丽的景观。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "asile",
+            "part_of_speech": "nom masculin",
+            "ipa": "[a.zil]",
+            "chinese": "庇护所，避难所",
+            "example_sentence": {
+              "french": "Ils ont choisi ce lieu pour asile.",
+              "chinese": "他们选择了这个地方作为庇护所。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les Plaisirs ont choisi pour asile, ce séjour agréable et tranquille.",
+                "chinese": "那些享受生活的人们选择了“庇护所”，一个惬意而宁静的居所。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "tenture",
+            "part_of_speech": "nom féminin",
+            "ipa": "[tɑ̃.tyʁ]",
+            "chinese": "挂毯，帷幔",
+            "example_sentence": {
+              "french": "Il s'agit d'une série de douze tentures.",
+              "chinese": "这是一组由十二幅挂毯组成的系列作品。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              5
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Bien sûr qu'il est là sur les tentures exposées le long des tapis.",
+                "chinese": "没错，他正端坐在沿地毯陈列的挂毯上。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "règne",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʁɛɲ]",
+            "chinese": "统治，在位期",
+            "example_sentence": {
+              "french": "C'était au début du règne de Louis XIV.",
+              "chinese": "那是在路易十四统治初期。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Une série de douze tentures qui racontent les grands moments du début du règne de Louis XIV.",
+                "chinese": "一组由十二幅挂毯组成的系列作品，生动地讲述了路易十四统治初期的重要历史瞬间。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "expressif",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛk.spʁɛ.sif]",
+            "chinese": "富有表现力的，传神的",
+            "example_sentence": {
+              "french": "Les personnages sur ce tableau sont très expressifs.",
+              "chinese": "这幅画上的人物极具表现力。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les personnages sont très expressifs.",
+                "chinese": "人物形象极具表现力。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "tapisserie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ta.pis.ʁi]",
+            "chinese": "挂毯，织锦",
+            "example_sentence": {
+              "french": "J'aime la tapisserie contemporaine.",
+              "chinese": "我喜欢当代挂毯。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Parce que là, on est devant une tapisserie, je pense, qui représente le roi.",
+                "chinese": "因为现在我们面前的是一幅挂毯，我想它描绘的是国王。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "estrade",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛs.tʁad]",
+            "chinese": "高台，讲台",
+            "example_sentence": {
+              "french": "Le roi est sur une estrade recouverte d'un tapis.",
+              "chinese": "国王站在一个铺着地毯的高台上。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il est sur une estrade recouverte d'un tapis.",
+                "chinese": "他站在一个铺着地毯的高台上。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "courtisan",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kuʁ.ti.zɑ̃]",
+            "chinese": "朝臣，廷臣",
+            "example_sentence": {
+              "french": "Le roi reçoit des courtisans.",
+              "chinese": "国王正在接见朝臣。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "qui représente le roi, qui reçoit des gens de l'Église ou peut-être des courtisans.",
+                "chinese": "描绘的是国王正在接受来自教堂的颂歌，或者也许是来自朝臣的敬意。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "se lasser",
+            "part_of_speech": "verbe pronominal",
+            "ipa": "[sə la.se]",
+            "chinese": "厌倦，失去兴趣",
+            "example_sentence": {
+              "french": "On ne s'en lasse pas de regarder ces détails.",
+              "chinese": "我们对观察这些细节百看不厌。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et puis, on ne s'en lasse pas parce qu'on peut prendre vraiment son temps.",
+                "chinese": "而且，你根本不会厌倦，因为真的可以慢慢细细地欣赏。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "orné",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɔʁ.ne]",
+            "chinese": "装饰的，点缀的",
+            "example_sentence": {
+              "french": "Ces vêtements sont richement ornés.",
+              "chinese": "这些衣服装饰得格外华丽。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On voit tout de suite ceux qui sont richement ornés.",
+                "chinese": "一看就知道哪些衣服装饰得格外华丽。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "Mais où en étions-nous ?",
+            "meaning": "我们刚才说到哪儿了？",
+            "example": {
+              "french": "Je vous propose de nous retrouver la semaine prochaine. Mais où en étions-nous ?",
+              "chinese": "我提议我们下周再见。不过，我们刚才说到哪儿了呢？"
+            },
+            "usage_note": "用于在跑题或被打断后，重新回到原来的话题。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "chercher des yeux",
+            "meaning": "四处张望寻找，用目光搜寻",
+            "example": {
+              "french": "Je cherche des yeux les tapis.",
+              "chinese": "我四处张望，寻找那些地毯。"
+            },
+            "usage_note": "比单纯的'chercher'更具画面感，强调视觉上的搜寻动作。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "donner l'illusion de",
+            "meaning": "给人以……的错觉，仿佛……",
+            "example": {
+              "french": "Des miroirs posés à chaque extrémité donnent l'illusion de se prolonger à l'infini.",
+              "chinese": "放置在两端的镜子给人一种无限延伸的错觉。"
+            },
+            "usage_note": "常用于描述艺术品、建筑或视觉效果带来的感官体验。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "prendre son temps",
+            "meaning": "从容不迫，慢慢来",
+            "example": {
+              "french": "On peut prendre vraiment son temps pour regarder les détails.",
+              "chinese": "我们可以真正地慢慢欣赏这些细节。"
+            },
+            "usage_note": "表示不着急，花足够的时间去做某事。",
+            "source_ids": [
+              8
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La mise en relief (Ce qui / Ce que / Ce sont)",
+            "structure": "Ce qui / Ce que + [proposition relative], c'est / ce sont + [élément mis en relief]",
+            "explanation": "强调句型用于突出句子中的某个成分。当被强调的部分是复数名词时，通常使用 'ce sont'。在原文中，说话人为了强调吸引她的事物，使用了这种结构。",
+            "example": {
+              "french": "Ce qui me fascine aussi, ce sont les couleurs.",
+              "chinese": "那些颜色也特别吸引我（吸引我的，是那些颜色）。"
+            },
+            "usage_note": "如果强调的是主语，用 'Ce qui'；如果强调的是直接宾语，用 'Ce que'。被强调词为复数时，'c'est' 变为 'ce sont'。",
+            "source_ids": [
+              5,
+              6
+            ]
+          },
+          {
+            "name": "Le Plus-que-parfait (愈过去时) avec la voix passive",
+            "structure": "Sujet + avoir/être à l'imparfait + été + participe passé",
+            "explanation": "愈过去时用于表示在过去的某个动作或状态之前已经完成的动作。在这里，结合了被动语态，表示这些挂毯在1976年之后到这次展览（过去的一个时间点）之前，一直没有被展出过。",
+            "example": {
+              "french": "Ces tentures n'avaient pas été exposées depuis 1976.",
+              "chinese": "这些挂毯自1976年以来便未曾展出过。"
+            },
+            "usage_note": "注意被动语态中过去分词 'exposées' 要与主语 'Ces tentures'（阴性复数）进行性数配合。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "name": "L'exclamation avec 'Comme'",
+            "structure": "Comme + Sujet + Verbe + [Adjectif/Adverbe] !",
+            "explanation": "使用 'Comme' 引导感叹句，表示程度之深，常用来表达强烈的赞叹、惊讶或情感。相当于 'How' 在英语感叹句中的用法。",
+            "example": {
+              "french": "Comme il est travaillé aussi, c'est exceptionnel.",
+              "chinese": "正如它所呈现的这般精妙，实在令人叹为观止。"
+            },
+            "usage_note": "与 'Que' 引导的感叹句类似，但 'Comme' 更常用于口语中强调动作的方式或状态的程度。",
+            "source_ids": [
+              8
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɛ̃]",
+              "description": "鼻化元音，发音时气流同时从口腔和鼻腔流出，常见于 in, im, ain, ein, en (在某些词末)。",
+              "examples": [
+                "fin",
+                "impressionnant",
+                "peintre"
+              ]
+            },
+            {
+              "sound": "[ɥ]",
+              "description": "半元音，发音部位与 [y] 相似，但更短促，滑动到下一个元音。常见于 ui, ue。",
+              "examples": [
+                "parapluie",
+                "humeur",
+                "illusion"
+              ]
+            }
+          ],
+          "liaison": [
+            "nous_entrons [nuz‿ɑ̃tʁɔ̃]",
+            "sont_exposées [sɔ̃t‿ɛkspoze]",
+            "très_expressifs [tʁɛz‿ɛkspʁɛsif]"
+          ],
+          "intonation": "在描述艺术品时，说话者的语调充满了赞叹和热情。特别是在使用强调句型（Ce qui me fascine...）和感叹句（Comme il est travaillé...）时，重音落在被强调的词汇上（如 couleurs, magnifique, exceptionnel），语调上扬以表达激动之情。"
+        },
+        "vocabulary_network": {
+          "theme": "L'Exposition d'Art (艺术展览)",
+          "core_word": "Tapisserie / Tenture",
+          "related_groups": [
+            {
+              "category": "Lieu (地点)",
+              "words": [
+                "nef",
+                "coursive",
+                "estrade",
+                "Grand Palais"
+              ]
+            },
+            {
+              "category": "Description visuelle (视觉描述)",
+              "words": [
+                "expressif",
+                "orné",
+                "coloré",
+                "splendide",
+                "détails"
+              ]
+            },
+            {
+              "category": "Histoire (历史)",
+              "words": [
+                "roi",
+                "règne",
+                "courtisan",
+                "Roi Soleil"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Depuis la ___, nous découvrons alors la vue ___ sur les tapis qui, grâce à des ___ posés à chaque ___, donnent l'___ de se prolonger à l'___.",
+            "answer": "coursive, splendide, miroirs, extrémité, illusion, infini",
+            "explanation": "根据原文第4段，说话人从走廊（coursive）望去，看到了壮丽的（splendide）景色，两端（extrémité）的镜子（miroirs）给人一种无限（infini）延伸的错觉（illusion）。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, pourquoi les tentures du roi Louis XIV sont-elles particulièrement remarquables lors de cette visite ?",
+            "options": {
+              "A": "Elles n'avaient pas été exposées au public depuis 1976.",
+              "B": "Elles ont été fabriquées par des artisans contemporains.",
+              "C": "Elles sont exposées pour la première fois dans la nef du Grand Palais.",
+              "D": "Elles représentent la fin du règne du Roi Soleil."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第5段明确提到：“Ces tentures n'avaient pas été exposées depuis 1976.”（这些挂毯自1976年以来便未曾展出过）。选项B错误，原文提到喜欢当代挂毯但这次展出的是历史挂毯；选项D错误，原文说是“début du règne”（统治初期）。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Et puis, on ne s'en lasse pas parce qu'on peut prendre vraiment son temps. À chaque fois, on voit quelque chose de nouveau.",
+            "answer": "而且，我们根本不会厌倦，因为真的可以慢慢细细地欣赏。每次看，都能发现新的东西。",
+            "explanation": "翻译难点在于代词动词“se lasser de”（厌倦）的否定形式“on ne s'en lasse pas”，其中“en”代指看挂毯这件事。另外，“prendre son temps”是一个固定表达，意为“从容不迫，慢慢来”。",
+            "source_ids": [
+              8
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant la structure de mise en relief 'Ce qui ... ce sont' pour insister sur 'les couleurs' : 'Les couleurs me fascinent aussi.'",
+            "answer": "Ce qui me fascine aussi, ce sont les couleurs.",
+            "explanation": "原句中“Les couleurs”是主语，所以在强调句型中用“Ce qui”引导关系从句。因为被强调的成分“les couleurs”是复数，所以系动词要用复数形式“ce sont”。这与原文第6段的表达完全一致。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "coursive",
+            "tenture",
+            "se lasser"
+          ],
+          "covered_grammar": [
+            "La mise en relief (Ce qui / Ce que / Ce sont)",
+            "Le Plus-que-parfait (愈过去时) avec la voix passive"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Ce qui [verbe], c'est / ce sont [nom].",
+            "explanation": "用于强调句子中的主语，突出说话人最关注或最感兴趣的事物。",
+            "example": {
+              "french": "Ce qui m'attire davantage, ce sont les tentures.",
+              "chinese": "最吸引我的，是那些挂毯。"
+            }
+          },
+          {
+            "pattern": "Comme [sujet] [verbe] [adjectif/adverbe] !",
+            "explanation": "用于表达强烈的感叹，赞美某物的程度。",
+            "example": {
+              "french": "Comme ce tableau est magnifique !",
+              "chinese": "这幅画真是太美了！"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你和一位法国朋友正在参观一家艺术博物馆。请描述一幅吸引你眼球的画作或挂毯，重点描述它的颜色、细节以及它带给你的感受。",
+          "requirements": "使用至少3个本课词汇（如 expressif, détails, orné, tapisserie），并使用一次强调句型（Ce qui me plaît, c'est...）。",
+          "starter": "Regarde cette œuvre devant nous, ce qui m'attire tout de suite, c'est..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia et son amie Anne-Laure visitent le Grand Palais pour admirer une exposition exceptionnelle de douze tentures retraçant le début du règne de Louis XIV. Ces œuvres, qui n'avaient pas été exposées depuis 1976, les impressionnent par leurs couleurs éclatantes, la richesse de leurs détails et l'expressivité des personnages. Accompagnées de musique baroque, elles prennent le temps d'observer chaque détail de ces tapisseries historiques.",
+        "keywords": [
+          "Grand Palais",
+          "Roi Soleil",
+          "tentures",
+          "tapisserie",
+          "exposition",
+          "détails"
+        ],
+        "difficulty_note": "Le texte utilise un vocabulaire descriptif riche lié à l'art et à l'histoire (tenture, coursive, orné), ce qui correspond à un niveau B2. Cependant, les structures grammaticales restent accessibles, typiques d'une conversation spontanée."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:04:42.439"
+        },
+        "theme": "Art et Histoire (Exposition au Grand Palais)",
+        "cefr_level": "B2",
+        "vocabulary_count": 13,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:23.899",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, mercredi 11 février 2026, cet épisode, le numéro 2597, s'intitule « Le trésor retrouvé du Roi Soleil ».",
+          "chinese": "大家好，我是来自巴黎《One Thing in a French Day》播客的Laetitia。希望你们一切都好，心情愉快。今天，2026年2月11日星期三，本期第2597集节目的标题是《太阳王重见天日的宝藏》。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:23.899",
+          "end_time": "00:01:05.670",
+          "french": "Vendredi, je pars à Lyon pour les championnats de France de kung-fu. Je vous propose de nous retrouver la semaine prochaine, mercredi et vendredi, pour les épisodes du podcast. Mais où en étions-nous ? Oui, nous entrons dans la nef du Grand Palais. Nous fermons notre parapluie et faisons quelques pas. Des haut-parleurs diffusent de la musique baroque. Je cherche des yeux les tapis. Je cherche presque aussi le roi.",
+          "chinese": "星期五，我要去里昂参加法国功夫锦标赛。我建议我们下周三和周五再在播客节目中相见。我们刚才说到哪儿了？对，我们走进了大皇宫的主厅。我们收起雨伞，走了几步。扬声器里播放着巴洛克音乐。我目光四处搜寻着地毯。我甚至几乎在寻找国王的身影。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:06.040",
+          "end_time": "00:01:38.890",
+          "french": "Les tapis sont là, formant un long chemin de jaune, de bleu, de brun et d'autres couleurs. Avant de partir en promenade le long des tapis, nous décidons, Anne-Laure et moi, de monter sur la coursive du premier étage. C'est la passacaille d'Armide qui passe alors dans les haut-parleurs. « Les Plaisirs ont choisi pour asile, ce séjour agréable et tranquille. » Les paroles semblent provenir des tapis eux-mêmes.",
+          "chinese": "地毯就在那里，铺成了一条由黄色、蓝色、棕色和其他颜色组成的长长通道。在沿着地毯漫步之前，Anne-Laure和我决定先上到二楼的回廊。这时，扬声器里正播放着《阿尔米德》的帕萨卡利亚舞曲。“欢乐以此为庇护所，这片宁静宜人的居所。”这歌词仿佛是从地毯本身传出来的。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:39.219",
+          "end_time": "00:02:05.890",
+          "french": "Depuis la coursive, nous découvrons alors la vue splendide sur les tapis qui, grâce à des miroirs posés à chaque extrémité, donnent l'illusion de se prolonger à l'infini. Tout à coup, j'aperçois le roi. Bien sûr qu'il est là sur les tentures exposées le long des tapis. Il s'agit de l'histoire du roi. Une série de douze tentures qui racontent les grands moments",
+          "chinese": "从回廊望去，我们看到了地毯的壮丽景色，由于两端放置了镜子，给人一种无限延伸的错觉。突然，我看到了国王。他当然在那里，就在沿着地毯展示的壁毯上。这是关于国王的故事。一系列十二幅壁毯讲述了"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:05.890",
+          "end_time": "00:02:34.889",
+          "french": "du début du règne de Louis XIV. Ces tentures n'avaient pas été exposées depuis 1976. Quand nous descendons marcher à côté des tapis, ce sont les tentures qui m'attirent davantage. Les tableaux sont très vivants et magnifiquement réalisés. Les personnages sont très expressifs. On reconnaît parfaitement le roi. Ça me plaît énormément. Anne-Laure est aussi enthousiaste. J'ouvre alors mon micro.",
+          "chinese": "路易十四统治初期的重要时刻。这些壁毯自1976年以来就再也没有展出过。当我们下楼走到地毯旁时，更吸引我的是这些壁毯。画面非常生动，制作精美。人物表情十分丰富。人们可以一眼认出国王。我非常喜欢。Anne-Laure也同样充满热情。于是我打开了麦克风。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:35.539",
+          "end_time": "00:03:03.849",
+          "french": "Oui, je trouve ça magnifique, vraiment. Alors que d'habitude, c'est vraiment le genre de choses qui m'ennuient profondément. J'aime la tapisserie, mais la tapisserie contemporaine. Et là, c'est impressionnant. Et tu regardes, il y a plein de détails dans les habits, des couleurs. Ce qui me fascine aussi, ce sont les couleurs. Le violet, là. Oui, le violet, le rose, le rouge. C'est magnifique.",
+          "chinese": "是的，我觉得这真的很美。尽管通常来说，这类东西真的让我觉得极其无聊。我喜欢挂毯，但我喜欢的是现代挂毯。而这里，真的很令人震撼。你看，衣服上有很多细节，还有颜色。同样让我着迷的也是这些颜色。那里的紫色。对，紫色、粉色、红色。太美了。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:03:04.020",
+          "end_time": "00:03:25.479",
+          "french": "Il y a des endroits où c'est un peu mangé, mais... Parce que là, on est devant une tapisserie, je pense, qui représente le roi, qui reçoit des gens de l'Église ou peut-être des courtisans. Il est sur une estrade recouverte d'un tapis. Il est magnifique. Oui, il est vraiment magnifique. Il est très coloré.",
+          "chinese": "有些地方有点破损，但是……因为现在，我们正站在一幅挂毯前，我想，这幅画描绘的是国王接见教会人士或者可能是朝臣的场景。他站在一个铺着地毯的高台上。它太美了。是的，真的非常美。色彩非常丰富。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:25.939",
+          "end_time": "00:03:58.860",
+          "french": "Comme il est travaillé aussi, c'est exceptionnel. Là aussi, regarde vers la droite, je ne sais pas ce que c'est, on dirait aussi un tissu magnifique. Et puis, on ne s'en lasse pas parce qu'on peut prendre vraiment son temps. À chaque fois, on voit quelque chose de nouveau. Il y a beaucoup, beaucoup de détails. Tu as vu les bouquets de fleurs qui sont disposés là ? Oui, les plumes sur le chapeau, les perruques.",
+          "chinese": "它的做工如此精细，真是非同凡响。那里也是，往右看，我不知道那是什么，看起来也是一块华丽的布料。而且，百看不厌，因为我们真的可以慢慢欣赏。每次都能看到新的东西。有非常非常多的细节。你看到那里摆放的花束了吗？看到了，还有帽子上的羽毛，那些假发。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:59.740",
+          "end_time": "00:04:13.830",
+          "french": "Non, c'est incroyable. Les détails des vêtements. Tout à fait. On voit tout de suite ceux qui sont richement ornés. Magnifique. C'est chouette. On continue notre visite ? Oui.",
+          "chinese": "真是不可思议。衣服的细节。完全同意。一眼就能看出那些装饰华丽的服饰。太美了。真棒。我们继续参观吗？好的。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:15.800",
+          "end_time": "00:04:42.439",
+          "french": "Oui, nous avons continué encore notre visite un moment, regardant encore et encore ces personnages d'un autre temps raconter l'histoire du Roi Soleil. One Thing in a French Day, c'est fini pour aujourd'hui. Je vous retrouve avec grand plaisir la semaine prochaine pour de nouveaux épisodes du podcast. À bientôt, au revoir !",
+          "chinese": "是的，我们又继续参观了一会儿，一遍又一遍地看着这些来自另一个时代的人物讲述着太阳王的故事。今天的《One Thing in a French Day》就到这里。很高兴下周能和大家再次相聚，带来新的播客节目。下期见，再见！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:42.439",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 10,
+        "source_video_name": "Louis XIV au Grand Palais, je l'ai vu ! Visiting the King's Carpet Exhibition (French History).json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

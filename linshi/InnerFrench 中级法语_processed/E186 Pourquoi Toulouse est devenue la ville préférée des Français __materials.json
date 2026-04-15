@@ -1,0 +1,1121 @@
+{
+  "source_file": "E186 Pourquoi Toulouse est devenue la ville préférée des Français _.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E186 Pourquoi Toulouse est devenue la ville préférée des Français _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T14:10:01.821Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "关系代词 dont",
+          "au cas où 引导的条件从句",
+          "最高级结构 (Le/La/Les plus + adjectif)"
+        ],
+        "speaking": [
+          "能够描述一个城市的建筑特色与自然景观",
+          "能够讨论地区文化差异（如口音、饮食习惯）",
+          "能够表达个人对居住环境的选择偏好"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "racoleur",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʁakɔlœʁ]",
+            "chinese": "哗众取宠的，招揽游客的",
+            "example_sentence": {
+              "french": "Le titre de l'épisode est un peu racoleur pour attirer l'attention.",
+              "chinese": "这一集的标题有点哗众取宠，为了吸引注意力。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Bon, j'admets que le titre de l'épisode est un peu racoleur.",
+                "chinese": "好吧，我承认这一集的标题有点哗众取宠。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "aéronautique",
+            "part_of_speech": "nom/adjectif",
+            "ipa": "[aeʁonotik]",
+            "chinese": "航空的，航空学",
+            "example_sentence": {
+              "french": "Toulouse est célèbre pour son industrie aéronautique.",
+              "chinese": "图卢兹以其航空工业而闻名。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "notamment des entreprises de l'aéronautique comme Airbus.",
+                "chinese": "特别是像空中客车这样的航空企业。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "brique",
+            "part_of_speech": "nom féminin",
+            "ipa": "[bʁik]",
+            "chinese": "砖，红砖",
+            "example_sentence": {
+              "french": "Les maisons toulousaines sont construites en brique rouge.",
+              "chinese": "图卢兹的房子是用红砖建造的。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              9,
+              10,
+              11,
+              12
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "C'est cette brique qui lui vaut le surnom de Ville rose.",
+                "chinese": "正是这种红砖让它赢得了“粉色之城”的绰号。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "fer forgé",
+            "part_of_speech": "nom masculin",
+            "ipa": "[fɛʁ fɔʁʒe]",
+            "chinese": "锻铁，锻打铁",
+            "example_sentence": {
+              "french": "On voit souvent des balcons en fer forgé dans le centre-ville.",
+              "chinese": "在市中心经常可以看到锻铁阳台。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "un balcon hyper simple en fer forgé.",
+                "chinese": "一个极其简约的锻铁阳台。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "compact",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ̃pakt]",
+            "chinese": "紧凑的",
+            "example_sentence": {
+              "french": "Le centre-ville est compact, on peut tout faire à pied.",
+              "chinese": "市中心很紧凑，我们可以步行完成所有事情。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              19
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "c'est une ville où le centre-ville est assez compact.",
+                "chinese": "这是一座市中心相当紧凑的城市。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "amabilité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[amabilite]",
+            "chinese": "亲切，友善",
+            "example_sentence": {
+              "french": "J'apprécie l'amabilité des habitants de cette région.",
+              "chinese": "我欣赏这个地区居民的友善。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              30
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est qu'il y a une culture de l'amabilité.",
+                "chinese": "那就是这里有一种友善的文化。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "emblématique",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɑ̃blematik]",
+            "chinese": "象征性的，标志性的",
+            "example_sentence": {
+              "french": "Le cassoulet est le plat emblématique de Toulouse.",
+              "chinese": "卡苏莱是图卢兹的标志性菜肴。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              46
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le plat emblématique, c'est le cassoulet, bien sûr.",
+                "chinese": "最具代表性的菜肴当然是卡苏莱。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "conviviale",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ̃vivjal]",
+            "chinese": "欢乐的，气氛友好的",
+            "example_sentence": {
+              "french": "Nous avons passé une soirée très conviviale entre amis.",
+              "chinese": "我们和朋友们度过了一个非常愉快的夜晚。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              46,
+              49
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "La cuisine du sud-ouest a une réputation de cuisine généreuse, copieuse, conviviale.",
+                "chinese": "西南地区的美食以慷慨、丰盛且充满人情味而闻名。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "desservi",
+            "part_of_speech": "adjectif (participe passé)",
+            "ipa": "[desɛʁvi]",
+            "chinese": "（交通）通达的，有交通服务的",
+            "example_sentence": {
+              "french": "Ce quartier est très bien desservi par les transports en commun.",
+              "chinese": "这个街区的公共交通非常便利。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              74
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "l'aéroport est plutôt bien desservi.",
+                "chinese": "机场的交通相当便利。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          },
+          {
+            "french": "excursion",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛkskyʁsjɔ̃]",
+            "chinese": "短途旅行，远足",
+            "example_sentence": {
+              "french": "Nous avons fait une excursion d'une journée à la montagne.",
+              "chinese": "我们去山上进行了一日游。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              61
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "des excursions pour la journée ou pour deux jours.",
+                "chinese": "一日游或两日游的短途出行。",
+                "source_video": "L'épisode sur Toulouse"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "autant vous dire que",
+            "meaning": "可以肯定的是 / 实话告诉你",
+            "example": {
+              "french": "Autant vous dire que j'étais très triste de rentrer.",
+              "chinese": "可以肯定的是，我当时对回家感到非常难过。"
+            },
+            "usage_note": "用于强调接下来的话，通常带有主观情感色彩。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "le nez levé",
+            "meaning": "抬头（仰望）",
+            "example": {
+              "french": "J'adore me promener le nez levé vers les façades.",
+              "chinese": "我喜欢抬头仰望着建筑外墙漫步。"
+            },
+            "usage_note": "形象地描述一个人在走路时专注于观察上方的景物。",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "expression": "n'est pas en reste",
+            "meaning": "也不逊色 / 也不落后",
+            "example": {
+              "french": "Toulouse n'est pas en reste quand on parle de gastronomie.",
+              "chinese": "谈到美食，图卢兹也毫不逊色。"
+            },
+            "usage_note": "常用于比较，表示某物在某方面同样优秀或重要。",
+            "source_ids": [
+              43,
+              44
+            ]
+          },
+          {
+            "expression": "passer à côté de",
+            "meaning": "错过 / 忽略",
+            "example": {
+              "french": "On ne peut pas passer à côté du rugby à Toulouse.",
+              "chinese": "在图卢兹，你不可能错过橄榄球。"
+            },
+            "usage_note": "既可以指物理上的经过，也可以指抽象意义上的错过机会或未注意到某事。",
+            "source_ids": [
+              55,
+              56
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "关系代词 dont",
+            "structure": "Nom + dont + sujet + verbe (qui demande la préposition 'de')",
+            "explanation": "dont 用于替代由介词 de 引导的名词。在文中用于指代已经提到的事物。",
+            "example": {
+              "french": "tous les parcs dont je vous ai parlé.",
+              "chinese": "我跟你们提过的所有公园。（parler de quelque chose）"
+            },
+            "usage_note": "注意 dont 不能与介词 de 同时出现。",
+            "source_ids": [
+              25
+            ]
+          },
+          {
+            "name": "au cas où 引导的条件从句",
+            "structure": "au cas où + conditionnel",
+            "explanation": "表示一种可能性或预防措施，从句谓语必须使用条件式。",
+            "example": {
+              "french": "je donne des exemples au cas où vous voudriez visiter la ville.",
+              "chinese": "我举这些例子，以防万一你们想去这座城市游玩。"
+            },
+            "usage_note": "在口语中非常常用，表达“万一……”的意思。",
+            "source_ids": [
+              14
+            ]
+          },
+          {
+            "name": "最高级结构 (Le/La/Les plus + adjectif)",
+            "structure": "Article défini + plus + adjectif (+ de/en...)",
+            "explanation": "用于在群体中进行比较，指出程度最高的一个。",
+            "example": {
+              "french": "c'est devenu la troisième ville la plus peuplée de France.",
+              "chinese": "它已成为法国人口第三多的城市。"
+            },
+            "usage_note": "形容词的性数要与所修饰的名词一致。",
+            "source_ids": [
+              4
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "Accent toulousain (nasalisation)",
+              "description": "图卢兹口音的特点是发音带有“鼻音”且具有节奏感（chantant）。",
+              "examples": [
+                "un-un"
+              ]
+            }
+          ],
+          "liaison": [
+            "nouveaux_arrivants (z)",
+            "plus_importante (z)",
+            "différents_endroits (z)"
+          ],
+          "intonation": "图卢兹口音通常被描述为“悠扬”（chantant），语速较慢，且末尾音节有时会略微上扬或带有特殊的共鸣。"
+        },
+        "vocabulary_network": {
+          "theme": "La vie à Toulouse",
+          "core_word": "Cadre de vie",
+          "related_groups": [
+            {
+              "category": "Architecture",
+              "words": [
+                "brique",
+                "façade",
+                "balcon",
+                "fer forgé",
+                "vitraux"
+              ]
+            },
+            {
+              "category": "Nature",
+              "words": [
+                "fleuve",
+                "canal",
+                "parc",
+                "jardin",
+                "randonnée"
+              ]
+            },
+            {
+              "category": "Gastronomie",
+              "words": [
+                "cassoulet",
+                "confit",
+                "foie gras",
+                "chocolatine",
+                "violette"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "J'adore me ___ le ___ ___ vers les ___ pour essayer de trouver de nouveaux ___ que je n'avais pas ___ avant.",
+            "answer": "promener, nez, levé, façades, détails, remarqués",
+            "explanation": "根据原文第12句，作者描述了她观察建筑细节的习惯：抬头仰望外墙寻找新细节。",
+            "source_ids": [
+              12
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi appelle-t-on Toulouse la « Ville rose » selon le texte ?",
+            "options": {
+              "A": "Parce que toutes les briques sont peintes en rose vif.",
+              "B": "Parce qu'au coucher du soleil, la lumière se reflète sur les briques et donne une teinte rose.",
+              "C": "Parce que c'est la couleur préférée des habitants de la ville.",
+              "D": "Parce qu'il y a des fleurs de violette partout dans les rues."
+            },
+            "answer": "B",
+            "explanation": "原文第10句明确指出：'si on appelle Toulouse la ville rose, c'est aussi parce qu'au coucher du soleil, la ville prend une teinte rose... ça se reflète sur tous les bâtiments en briques'.",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Toulouse n'est pas en reste quand on parle de gastronomie.",
+            "answer": "谈到美食，图卢兹也毫不逊色。",
+            "explanation": "短语 'n'est pas en reste' 意为“不逊色、不落后”，常用于表示某物在特定领域同样优秀。",
+            "source_ids": [
+              43
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Remplacez les mots soulignés par le pronom 'dont' : J'ai visité les parcs. Je vous ai parlé de ces parcs.",
+            "answer": "J'ai visité les parcs dont je vous ai parlé.",
+            "explanation": "动词 parler 后面接介词 de (parler de quelque chose)，因此在合并句子时使用关系代词 dont 来替代 'de ces parcs'。",
+            "source_ids": [
+              25
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "façade",
+            "brique",
+            "gastronomie"
+          ],
+          "covered_grammar": [
+            "dont",
+            "n'est pas en reste"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est justement de cela que je voudrais vous parler aujourd'hui.",
+            "explanation": "用于引出谈话的主题，起到承上启下的作用。",
+            "example": {
+              "french": "C'est justement de ce projet que je voudrais vous parler.",
+              "chinese": "我今天想跟你们谈的正是这个项目。"
+            }
+          },
+          {
+            "pattern": "Il m'est arrivé de + infinitif",
+            "explanation": "表示“我曾经/偶尔做过某事”，强调事情发生的偶然性。",
+            "example": {
+              "french": "Il m'est arrivé de me perdre dans les petites rues.",
+              "chinese": "我偶尔会在小巷子里迷路。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在向一位想去法国旅游的朋友推荐图卢兹。",
+          "requirements": "使用至少3个本课词汇（如 brique, compact, emblématique）和关系代词 dont。",
+          "starter": "Tu devrais vraiment visiter Toulouse, c'est une ville magnifique..."
+        }
+      },
+      "summary": {
+        "content": "本课介绍了法国南部城市图卢兹（Toulouse）为何成为法国人最喜爱的城市之一。作者从建筑美学（红砖与粉色之城）、自然景观（加龙河与运河）、紧凑便利的市中心、友善的社交文化、独特的地区语言（口音与奥克语）、丰盛的西南美食（卡苏莱与紫罗兰）以及优越的地理位置（邻近比利牛斯山、地中海和西班牙）等多个维度分享了她的个人感受。",
+        "keywords": [
+          "Toulouse",
+          "Ville rose",
+          "Gastronomie",
+          "Accent",
+          "Cadre de vie"
+        ],
+        "difficulty_note": "文本属于中级水平（B1/B2），语速适中，包含了大量描述性的词汇和地道的表达方式，适合想要提升文化理解和描述能力的学习者。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:30:42"
+        },
+        "theme": "Découvrir Toulouse, la ville rose",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.250",
+        "end_time": "00:30:42.890",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 78,
+        "source_video_name": "E186 Pourquoi Toulouse est devenue la ville préférée des Français _.json",
+        "tags": [
+          "搞钱",
+          "美食"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.250",
+          "end_time": "00:00:33.380",
+          "french": "Pourquoi Toulouse est devenue la ville préférée des Français ? Bonjour à tous et à toutes, j'espère que vous allez bien. De mon côté, ça va super. Il n'y a pas longtemps, j'étais au Pérou. J'ai rendu visite à ma belle-famille que je n'avais pas vue depuis trois ans et j'ai pu fêter mon anniversaire avec elle et eux au soleil.",
+          "chinese": "为什么图卢兹成为了法国人最喜爱的城市？大家好，希望你们一切都好。我这边非常好。不久前，我去了秘鲁。我拜访了三年没见的婆家人，并和他们在阳光下庆祝了我的生日。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.750",
+          "end_time": "00:00:55.530",
+          "french": "J'ai passé plusieurs semaines magnifiques et autant vous dire que j'étais très triste de rentrer et de les quitter. Heureusement, en arrivant en France, j'ai débarqué directement dans la ville où j'habite et où je me sens toujours très bien. Et c'est justement de cela que je voudrais vous parler aujourd'hui.",
+          "chinese": "我度过了几个美妙的星期，不得不说，要回来离开他们让我感到非常难过。幸运的是，回到法国后，我直接回到了我居住的城市，在那里我总是感觉很棒。而这正是我今天想和大家聊的话题。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:55.740",
+          "end_time": "00:01:20.040",
+          "french": "Toulouse, la ville rose. Bon, j'admets que le titre de l'épisode est un peu racoleur, c'est-à-dire qu'il est exagéré exprès pour attirer l'attention. En réalité, Toulouse n'est pas forcément la ville préférée des Français. Mais c'est la ville qui a le plus vu sa population augmenter ces dernières années.",
+          "chinese": "图卢兹，这座“粉红之城”。好吧，我承认这一集的标题有点“标题党”，也就是说为了吸引注意力而故意夸大了。实际上，图卢兹未必是法国人最喜欢的城市，但它是近年来人口增长最快的城市。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:20.409",
+          "end_time": "00:01:49.379",
+          "french": "Et oui, il y a tellement de personnes qui se sont installées à Toulouse ces dernières années que c'est devenu la troisième ville la plus peuplée de France, après Paris et Marseille. Elle a donc dépassé Lyon qui, jusqu'à l'année dernière, occupait le podium. Et comme vous le savez, moi je fais partie justement de ces nouveaux arrivants puisque j'habite ici depuis 2021.",
+          "chinese": "没错，近年来有这么多的人定居图卢兹，以至于它已经成为继巴黎和马赛之后，法国人口第三多的城市。因此，它超过了直到去年还位列前三的里昂。正如你们所知，我正是这些新居民中的一员，因为我从2021年起就住在这里。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:49.590",
+          "end_time": "00:02:04.939",
+          "french": "Alors, dans mon cas, la décision de m'installer à Toulouse a été complètement un choix, c'est-à-dire que je ne suis pas venue pour le travail ou pour des raisons familiales, j'avais la chance de pouvoir m'installer",
+          "chinese": "就我而言，定居图卢兹完全是一个个人选择，也就是说，我不是因为工作或家庭原因搬来的，我有幸能够选择定居在……"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:05.079",
+          "end_time": "00:02:33.569",
+          "french": "où je voulais et après avoir visité cette ville du sud-ouest de la France, je suis tombée amoureuse tout simplement du cadre de vie et j'ai décidé de m'y installer. Alors bien sûr, parmi tous les nouveaux arrivants, tout le monde n'a pas la même histoire. Il y a beaucoup de personnes notamment qui s'installent dans la région parce qu'il y a ici beaucoup d'industries, notamment des entreprises de l'aéronautique comme...",
+          "chinese": "……任何我想去的地方。在参观了这座位于法国西南部的城市后，我简直爱上了这里的居住环境，于是决定在这里定居。当然，在所有新居民中，并非每个人的故事都一样。特别是很多人定居在这个地区是因为这里有很多工业，尤其是像……这样的航空航天企业。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:33.569",
+          "end_time": "00:02:55.460",
+          "french": "Airbus ou Thales et donc ces personnes ne viennent pas par choix mais quand même elles peuvent elles aussi tomber amoureuses du cadre de vie et donc dans cet épisode je ne vais pas parler des raisons économiques qui peuvent pousser les gens à s'installer dans...",
+          "chinese": "……空中客车（Airbus）或泰雷兹（Thales）。所以这些人搬来并非出于自愿选择，但即便如此，他们也同样会爱上这里的居住环境。因此，在这一集里，我不会讨论那些促使人们定居在……的经济原因。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:55.460",
+          "end_time": "00:03:22.860",
+          "french": "celle qu'on appelle la ville rose, mais je vais plutôt vous parler de ce que moi j'apprécie, du cadre de vie, de la vie sociale, etc. Je ne vous propose pas ici un épisode avec des statistiques et des sondages, mais plutôt un épisode personnel où je vous parle de ce que moi j'aime dans cette ville. Alors, c'est parti !",
+          "chinese": "……这座被称为“粉红之城”的地方，而是想和大家聊聊我所欣赏的东西：居住环境、社交生活等等。我在这里不打算做一期充满统计数据和调查报告的内容，而是一期个人化的分享，聊聊我喜欢这座城市的哪些方面。那么，我们开始吧！"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:30.069",
+          "end_time": "00:03:59.680",
+          "french": "Alors la première chose qui m'a marquée quand je suis arrivée à Toulouse et qui a fait que je suis tombée amoureuse de cette ville, c'est tout simplement sa beauté. D'un côté, on a sa beauté architecturale. Toulouse, c'est une ville ancienne, surtout son centre-ville, qui a beaucoup de caractère. Notamment, une de ses caractéristiques principales, c'est sa brique. C'est cette brique qui lui vaut le surnom de...",
+          "chinese": "当我来到图卢兹时，最先触动我并让我爱上这座城市的一点，就是它的美。一方面是建筑之美。图卢兹是一座古老的城市，尤其是它的市中心，非常有特色。其中一个主要特征就是它的红砖。正是这种红砖让它赢得了……的绰号。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:59.680",
+          "end_time": "00:04:25.379",
+          "french": "Ville rose. Alors je sais, la brique, ce n'est pas vraiment rose, ça tire un peu sur l'orange. Mais en réalité, si on appelle Toulouse la ville rose, c'est aussi parce qu'au coucher du soleil, la ville prend une teinte rose. Le soleil descend et devient complètement rose et ça se reflète sur...",
+          "chinese": "“粉红之城”。我知道，红砖其实并不是粉红色的，它更偏向橙色。但实际上，图卢兹之所以被称为粉红之城，也是因为在日落时分，整座城市会染上一层粉红色。夕阳西下，变得通红，倒映在……"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:25.379",
+          "end_time": "00:04:40.689",
+          "french": "tous les bâtiments en briques qui, eux, passent d'une espèce de teinte orangée à une teinte rose avec des variations d'un bâtiment à un autre. Ça donne un aspect hyper chaleureux et franchement, c'est super joli.",
+          "chinese": "……所有红砖建筑上，这些建筑的色调会从橙色转变为粉红色，且每栋建筑的深浅各异。这给人一种非常温馨的感觉，坦白说，真的非常漂亮。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:40.689",
+          "end_time": "00:05:08.959",
+          "french": "Et au-delà de cette brique caractéristique qu'on va trouver sur les façades et aussi à l'intérieur des bâtiments, bien sûr, les bâtiments à Toulouse sont hyper intéressants parce qu'ils ont plein de détails variés. J'adore me promener le nez levé vers les façades pour essayer de trouver de nouveaux détails que je n'avais pas remarqués avant. Par exemple, un balcon avec plein de petites sculptures.",
+          "chinese": "除了在建筑外墙和内部随处可见的这种标志性红砖外，图卢兹的建筑本身也非常有趣，因为它们拥有丰富多样的细节。我喜欢在散步时抬头仰望建筑立面，试图寻找以前没注意到的新细节。比如，一个装饰着许多小雕塑的阳台。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:08.959",
+          "end_time": "00:05:27.689",
+          "french": "Ou au contraire, un balcon hyper simple en fer forgé. Il y a aussi des cours intérieures avec des grands escaliers. Parfois, on trouve des vitraux. Et ça m'est arrivé de passer 10 fois, 15 fois dans une même rue et d'y découvrir de nouveaux détails.",
+          "chinese": "或者恰恰相反，一个极其简约的锻铁阳台。这里还有带着大楼梯的内院。有时还能看到彩色玻璃窗。我曾十次、十五次经过同一条街道，却依然能发现新的细节。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:27.930",
+          "end_time": "00:05:55.920",
+          "french": "Bon, ça c'est pour l'architecture, la pierre. Une autre chose qui fait que c'est une ville jolie, ce sont tous ces coins de nature. On va trouver beaucoup de parcs. Par exemple, moi j'aime beaucoup le Jardin des Plantes. Il y a aussi la Prairie des Filtres, le jardin du Musée des Abattoirs. Bon, je donne des exemples au cas où vous voudriez visiter la ville.",
+          "chinese": "好了，建筑和石材就说到这里。让这座城市变美的另一个因素是那些自然角落。这里有很多公园。比如，我非常喜欢植物园（Jardin des Plantes）。还有菲尔特草地（Prairie des Filtres）、屠宰场博物馆（Musée des Abattoirs）的花园。我举这些例子是以防你们想来这座城市旅游。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:55.920",
+          "end_time": "00:06:18.930",
+          "french": "Et puis, bien sûr, tous les parcs qu'on trouve en dehors du centre-ville, puisque Toulouse est quand même une ville qui est étendue et où il est facile de trouver des espaces très aérés avec des jardins, des petits parcs que je ne pourrais pas nommer, mais qui sont des parcs un peu dans chaque quartier.",
+          "chinese": "当然，还有市中心以外的所有公园，因为图卢兹毕竟是一座向外延伸的城市，很容易找到非常开阔的空间，里面有花园和我说不上名字的小公园，几乎每个街区都有。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:18.930",
+          "end_time": "00:06:43.180",
+          "french": "Et bien sûr, je ne peux pas parler de la nature sans parler de la Garonne et du Canal du Midi. Alors la Garonne, c'est le fleuve qui traverse la ville et le Canal du Midi, c'est un canal. Un canal, c'est, contrairement à un fleuve, un cours d'eau qui est aménagé, qui a été fabriqué",
+          "chinese": "当然，谈到自然就不能不提加龙河（Garonne）和米迪运河（Canal du Midi）。加龙河是穿城而过的河流，而米迪运河是一条运河。运河与河流不同，它是经过人工治理、由人类建造的……"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:43.180",
+          "end_time": "00:07:10.430",
+          "french": "par l'homme, par l'humain. Et donc, à Toulouse, on a le Canal du Midi qui est un canal protégé par l'UNESCO qui relie l'océan Atlantique à la mer Méditerranée. Et donc, que ce soit sur les bords de la Garonne ou sur les bords du canal, on va avoir beaucoup de nature où on peut se promener,",
+          "chinese": "……水路。在图卢兹，米迪运河是被联合国教科文组织保护的运河，它连接了大西洋和地中海。因此，无论是在加龙河畔还是在运河边，都有大片的自然景观，人们可以在那里散步、"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:10.430",
+          "end_time": "00:07:36.589",
+          "french": "courir, faire du vélo et même tout simplement pique-niquer. Donc ça, l'architecture, la nature, ce sont des choses qui font que Toulouse est vraiment belle et qui font que j'adore m'y promener. Maintenant, pour qu'une ville soit agréable à vivre, il ne faut pas simplement qu'elle soit belle. Il faut aussi que ce soit agréable de faire ses activités du quotidien.",
+          "chinese": "……跑步、骑自行车，甚至只是野餐。建筑和自然景观让图卢兹变得非常美丽，也让我爱上了在这里漫步。不过，一座城市要宜居，光有美貌是不够的，日常活动也必须方便舒适才行。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:36.589",
+          "end_time": "00:07:56.709",
+          "french": "Et en fait, quelque chose que j'apprécie particulièrement à Toulouse, c'est que c'est une ville où le centre-ville est assez compact. C'est-à-dire qu'il va y avoir beaucoup de choses, beaucoup de propositions d'activités qui sont rapprochées.",
+          "chinese": "事实上，我特别欣赏图卢兹的一点是，它的市中心非常紧凑。也就是说，很多事物和活动场所都离得很近。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:57.050",
+          "end_time": "00:08:24.779",
+          "french": "Donc en fait, on peut vivre dans des quartiers assez paisibles avec évidemment, on aura toujours quand même quelques magasins, quelques cafés, une boulangerie bien évidemment partout dans la ville. Mais par contre, quand on veut aller retrouver ses amis par exemple, on va plutôt aller dans le centre-ville. Et on dira même entre amis, on se retrouve en ville. Ça c'est quelque chose que je n'ai...",
+          "chinese": "所以实际上，我们可以住在相当安静的街区，当然，城市到处都会有一些商店、咖啡馆，还有必不可少的面包店。但另一方面，当我们想去见朋友时，通常会去市中心。朋友之间甚至会说“我们在城里见”。这种说法我……"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:24.779",
+          "end_time": "00:08:49.059",
+          "french": "absolument jamais entendu à Paris, puisque Paris, il n'y a pas vraiment un seul centre-ville. Tous les quartiers sont urbanisés à peu près à la même hauteur. À Toulouse, au contraire, on va tous et toutes se retrouver un peu au même endroit, là où sont concentrées les activités et ce qui fait qu'on pourra tout faire à pied.",
+          "chinese": "……在巴黎绝对没听过，因为巴黎并没有一个唯一的市中心。所有的街区城市化程度都差不多。而在图卢兹恰恰相反，大家都会聚在同一个地方，那里集中了各种活动，这也意味着我们可以全靠步行。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:49.080",
+          "end_time": "00:09:09.350",
+          "french": "On pourra aller au café, sortir, aller à une activité manuelle, puis passer à la librairie, ensuite aller au restaurant et dans un bar. Bref, vous voyez la vie urbaine, mais organisée autour du même endroit.",
+          "chinese": "我们可以去咖啡馆、逛街、参加手工活动，然后去书店，接着去餐厅和酒吧。总之，这就是围绕同一个中心展开的城市生活。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:10.139",
+          "end_time": "00:09:32.289",
+          "french": "Ensuite, si on parle plus concrètement de à quoi ressemblent ces commerces et ces lieux de sociabilisation, je dirais qu'il y a deux choses que j'aime beaucoup. La première, c'est qu'il y a une culture très importante de la pause et de la terrasse.",
+          "chinese": "接下来，如果具体谈谈这些商店和社交场所的样子，我会说有两点我非常喜欢。第一点是，这里有一种非常深厚的“休息”和“露天座”文化。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:32.289",
+          "end_time": "00:09:42.830",
+          "french": "posé en terrasse. Bon, Toulouse, ça reste une ville du sud où le climat est très agréable et donc les terrasses sont très développées.",
+          "chinese": "……坐在露天座上。图卢兹毕竟是一座南方城市，气候非常宜人，所以露天座文化非常发达。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:42.830",
+          "end_time": "00:10:05.549",
+          "french": "On peut très facilement aller se prendre un café, se prendre un verre avec un rayon de soleil tout en admirant par exemple la Garonne. Même d'ailleurs si je repense aux parcs dont je vous ai parlé, au Jardin des Plantes par exemple, il y a des cafés qui donnent directement sur le jardin.",
+          "chinese": "你可以很轻松地去喝杯咖啡，在阳光下喝上一杯，同时欣赏加龙河的美景。即使回想起我提到的那些公园，比如植物园，也有直接面向花园的咖啡馆。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:05.549",
+          "end_time": "00:10:27.789",
+          "french": "Et donc ça, c'est déjà quelque chose qui me plaît beaucoup et que je pense qu'on doit retrouver dans beaucoup de villes qui ont le même climat. Ensuite, une autre chose, c'est que même si c'est une grande ville et une ville de plus en plus dense, on a toujours beaucoup de commerces de proximité.",
+          "chinese": "这已经是我非常喜欢的一点了，我想在气候相似的许多城市都能看到。其次，另一点是，尽管它是一座大城市，而且人口越来越密集，但我们仍然保留着许多社区小店。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:27.789",
+          "end_time": "00:10:57.519",
+          "french": "Ce qu'on appelle un commerce de proximité, c'est un commerce où on va connaître la personne qui possède le lieu. Par exemple, on va dans un café et on connaît le propriétaire, on peut parler de son histoire avec lui. Pareil pour la petite librairie du coin, le restaurant, etc.",
+          "chinese": "所谓“社区小店”，就是那种你会认识店主的商店。比如，你去一家咖啡馆，认识老板，可以和他聊聊他的故事。街角的书店、餐厅等等也是如此。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:57.519",
+          "end_time": "00:11:25.500",
+          "french": "place pour des nouvelles activités. Il y a toujours beaucoup de nouveaux commerces qui ouvrent et qui sont assez chouettes. Et puis là, je vous parle des choses dont je suis habituée, les cafés. Moi, je fréquente beaucoup les cafés. C'est une ville qui est très agréable pour ça. Mais on va trouver aussi des ateliers d'artisans, des potiers, des personnes qui font de la menuiserie, des choses comme ça.",
+          "chinese": "……为新活动留出空间。总是有很多很棒的新店开张。我刚才说的是我习惯去的地方，比如咖啡馆。我经常去咖啡馆，图卢兹在这方面非常惬意。但你也能找到手工艺作坊、陶艺师、木工等等。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:11:25.500",
+          "end_time": "00:11:29.350",
+          "french": "Donc voilà, c'est une ville où il y a toujours des rencontres à faire.",
+          "chinese": "所以，在这座城市里，你总能遇到各种各样的人。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:29.750",
+          "end_time": "00:11:58.460",
+          "french": "dans les différents commerces. Et d'ailleurs, en parlant de rencontres, c'est peut-être mon dernier point pour parler du fait que Toulouse est une ville où il fait bon vivre. C'est qu'il y a une culture de l'amabilité. Je ne dis pas que tous les Toulousains sont gentils, mais en fait, c'est un endroit où on prend le temps de vivre, où les gens ne sont pas trop stressés et où du coup, il y a même une culture de la...",
+          "chinese": "……在不同的商店里。说到遇见，这可能是我关于图卢兹宜居的最后一点：这里有一种友善的文化。我不是说所有的图卢兹人都很友善，但事实上，这是一个人们懂得享受生活的地方，大家不会太焦虑，因此甚至形成了一种……"
+        },
+        {
+          "id": 31,
+          "start_time": "00:11:58.460",
+          "end_time": "00:12:21.139",
+          "french": "Par exemple, ça va être tout à fait normal d'être assis au bar et puis de se mettre à papoter avec la table d'à côté. Ce n'est pas quelque chose de bizarre. Pareil, les serveurs et les serveuses, parfois, vont mettre un peu de temps à apporter une commande, mais par contre, on va pouvoir papoter avec eux.",
+          "chinese": "……的文化。例如，坐在酒吧里和隔壁桌的人聊起天来是很正常的，一点也不奇怪。同样，服务员有时上菜可能慢一点，但你可以和他们闲聊。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:21.139",
+          "end_time": "00:12:50.590",
+          "french": "discuter, leur demander comment va leur journée et ils vont nous répondre sincèrement et on va pouvoir avoir une conversation. Ça, pareil, c'est quelque chose que je ne trouvais pas à Paris. Après, encore une fois, ma comparaison principale, c'est Paris, mais bon, j'ai quand même beaucoup voyagé dans d'autres endroits et c'est vrai que pour la France, c'est une des villes les plus chaleureuses en termes de chaleur humaine que j'ai trouvée.",
+          "chinese": "……交谈，问问他们今天过得怎么样，他们会真诚地回答，你们可以展开对话。这同样是我在巴黎找不到的。当然，我主要的对比对象是巴黎，不过我也去过很多其他地方，就法国而言，这确实是我见过的最具人情味的城市之一。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:50.590",
+          "end_time": "00:13:14.860",
+          "french": "Donc voilà, ça c'est pour ma première partie, on va dire, sur vraiment le fait que Toulouse est une ville où il fait bon vivre et où moi, quand je reviens après un voyage et que j'arrive ici, je me sens tout de suite toujours très bien parce qu'elle est belle, parce que j'y trouve des activités sympas et des gens sympas. Maintenant, on passe à la deuxième partie.",
+          "chinese": "好了，这就是第一部分，主要是关于图卢兹是一座宜居城市的感受。每次旅行回来，我一到这里就会立刻感觉很好，因为它很美，有有趣的活动，还有友善的人。现在，我们进入第二部分。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:21.980",
+          "end_time": "00:13:50.259",
+          "french": "Une chose que j'ai beaucoup appréciée à Toulouse dès mon arrivée, c'est le fait qu'il y a ici une culture locale très forte mais qui en même temps n'est pas excluante. En fait, c'est très facile de se sentir rapidement toulousain ou toulousaine parce qu'il y a certains marqueurs culturels qu'on peut intégrer très vite et faire sien.",
+          "chinese": "从我到达图卢兹起，有一点让我非常欣赏，那就是这里有着浓厚的本土文化，但同时又不排外。事实上，你很容易就能迅速产生归属感，觉得自己是个图卢兹人，因为这里有一些文化标识，你可以很快融入并感同身受。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:50.259",
+          "end_time": "00:14:14.820",
+          "french": "Ça se ressent déjà très vite dans la langue. Toulouse, c'est un endroit où il y a un petit accent très particulier. C'est un accent qui est un peu lent, un peu chantant, on articule beaucoup ou certains sons sont dits différemment par rapport à Paris par exemple. Le un-un qui parle un peu du nez.",
+          "chinese": "这在语言上体现得非常快。图卢兹有一种非常独特的口音。这种口音节奏稍慢，带有韵律感，发音清晰，或者某些发音与巴黎不同。比如那种带点鼻音的“un-un”声。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:14:14.970",
+          "end_time": "00:14:31.049",
+          "french": "Et c'est un accent qu'on prend facilement parce qu'il est agréable, parce qu'il est vraiment sympa. J'ai même déjà entendu des personnes qui ne sont pas francophones à l'origine à Toulouse commencer à parler avec ce petit accent.",
+          "chinese": "这种口音很容易学，因为它很好听，很有亲和力。我甚至听过一些在图卢兹生活的非法语母语者也开始带着这种小口音说话。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:31.220",
+          "end_time": "00:14:47.649",
+          "french": "Et puis, au-delà de l'accent, il y a le vocabulaire. Il y a certains mots qu'on ne dit qu'à Toulouse. Par exemple, une poche pour dire un sac plastique ou encore une chocolatine pour dire un pain au chocolat.",
+          "chinese": "除了口音，还有词汇。有些词只有在图卢兹才这么说。例如，用“poche”指代塑料袋，或者用“chocolatine”指代巧克力面包（pain au chocolat）。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:47.649",
+          "end_time": "00:15:17.419",
+          "french": "Il y a ce débat très important en France que vous avez peut-être déjà vu passer sur Internet sous forme de blague de même. C'est celui de s'il faut dire pain au chocolat ou chocolatine. En fait, on dit chocolatine dans une région assez restreinte de France qui va jusqu'à Bordeaux à peu près. Et c'est vrai que moi, je dois dire qu'après 25 ans à dire pain au chocolat,",
+          "chinese": "法国有一个非常著名的争论，你们可能在网上见过相关的笑话或表情包。那就是该说“pain au chocolat”还是“chocolatine”。实际上，只有在法国西南部到波尔多一带的有限区域才说“chocolatine”。不得不说，在我说了25年的“pain au chocolat”之后，"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:17.419",
+          "end_time": "00:15:46.480",
+          "french": "Il m'a fallu à peine un mois pour me mettre à dire chocolatine parce que c'est comme ça qu'on demande à la boulangerie, mais aussi parce que je trouve ça sympa. Je ne sais pas, je me sens toulousaine quand je dis ça. Bon, après, en parlant de la langue, il y a aussi la question de l'occitan. L'occitan, c'est une langue ancienne qui était parlée dans la région auparavant, il y a des siècles.",
+          "chinese": "我只用了不到一个月就改口说“chocolatine”了，因为在面包店大家都这么点餐，而且我觉得这词挺好听的。不知道为什么，说这个词让我觉得自己像个图卢兹人。好了，说到语言，还有奥克语（Occitan）的问题。奥克语是几个世纪前该地区使用的古老语言。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:46.480",
+          "end_time": "00:16:04.940",
+          "french": "et qui existe encore comme plutôt une touche culturelle historique. Les gens ne parlent plus cette langue dans la vie de tous les jours, mais on la retrouve par exemple sur les panneaux qui indiquent les rues. C'est toujours écrit en français et puis en occitan.",
+          "chinese": "它现在更多是作为一种历史文化特色而存在。人们在日常生活中不再使用这种语言，但你可以在路牌上看到它。路名总是先用法语写，再用奥克语写一遍。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:16:04.940",
+          "end_time": "00:16:28.620",
+          "french": "Pareil dans le métro, dans le métro il y a une voix qui, dans les haut-parleurs, qui dit les noms des stations de métro en occitan. Et en fait, ce n'est pas pour des raisons pratiques, parce qu'il y aurait des personnes qui parleraient seulement cette langue, mais c'est pour une raison historique, culturelle, pour ne pas...",
+          "chinese": "地铁里也是一样，广播里会用奥克语播报站名。这其实并不是出于实用目的（并不是因为有人只说奥克语），而是出于历史和文化原因，为了不……"
+        },
+        {
+          "id": 42,
+          "start_time": "00:16:28.620",
+          "end_time": "00:16:55.139",
+          "french": "oublier d'où l'on vient et le fait que la région a une identité historique forte. Et ce n'est pas une identité qui est revendiquée comme quelque chose pour se démarquer des autres. C'est plutôt pour ne pas oublier qu'il y a toute une histoire et que cette région a une histoire qui n'est pas forcément la même que celle de Paris, de Lyon, de Marseille.",
+          "chinese": "……忘本，也为了体现这个地区拥有浓厚的历史底蕴。这种身份认同并不是为了标新立异，而是为了不忘记那段历史，以及这个地区拥有与巴黎、里昂或马赛截然不同的过去。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:55.320",
+          "end_time": "00:17:14.690",
+          "french": "D'ailleurs, en parlant d'histoire et de culture, il ne faut pas oublier de parler du plus important, je pense, quand on parle de culture locale, c'est la gastronomie. Et Toulouse n'est pas en reste quand on parle de gastronomie.",
+          "chinese": "此外，谈到历史和文化，我认为绝不能忽略最重要的一点，那就是美食。在美食方面，图卢兹也毫不逊色。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:17:14.690",
+          "end_time": "00:17:44.079",
+          "french": "Alors quand on dit que quelque chose n'est pas en reste, c'est une manière de dire qu'on n'a pas à se plaindre, que nous aussi on a quelque chose d'important. Par exemple, si je dis que mes sœurs ont eu des super cadeaux de Noël et que je dis mais je n'étais pas en reste, ça veut dire que moi aussi j'ai eu des choses super. Donc Toulouse n'est pas en reste.",
+          "chinese": "当人们说某事“毫不逊色”时，意思是我们没什么可抱怨的，我们也有很棒的东西。比如，如果我说我姐妹们收到了很棒的圣诞礼物，而我“也毫不逊色”，意思是我也收到了好东西。所以，在美食方面，图卢兹也毫不逊色……"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:44.079",
+          "end_time": "00:17:46.890",
+          "french": "quand on parle de gastronomie.",
+          "chinese": "……"
+        },
+        {
+          "id": 46,
+          "start_time": "00:17:47.380",
+          "end_time": "00:18:17.150",
+          "french": "La cuisine du sud-ouest a une réputation de cuisine généreuse, copieuse, conviviale. Le plat emblématique, c'est le cassoulet, bien sûr. C'est un ragoût à base de haricots blancs avec du canard confit et de la saucisse de Toulouse. C'est un plat qui a des origines paysannes, qu'on peut partager en famille et qui est assez réconfortant. Typiquement, c'est un plat pour l'hiver.",
+          "chinese": "法国西南部的料理以丰盛、量大和充满欢乐而闻名。最具代表性的菜肴当然是卡酥来砂锅（cassoulet）。这是一种以白扁豆、油封鸭和图卢兹香肠为原料的炖菜。这道菜起源于农村，适合全家分享，非常治愈。它通常是冬天的理想佳肴。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:18:17.150",
+          "end_time": "00:18:46.500",
+          "french": "De manière générale, la cuisine traditionnelle comporte beaucoup de canards ou d'oies, de la volaille, parce que c'est une tradition, comme je le disais, plutôt paysanne. Et c'est notamment du sud-ouest de la France qu'est originaire le foie gras. Personnellement, j'adore aller dans un restaurant traditionnel pour demander soit du cassoulet, soit du confit, soit même une assiette.",
+          "chinese": "总的来说，传统料理中包含大量的鸭肉、鹅肉等家禽，因为正如我所说，这是一种农村传统。法国西南部正是肥肝（foie gras）的发源地。我个人非常喜欢去传统餐厅点一份卡酥来砂锅，或者油封鸭，甚至是……"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:46.500",
+          "end_time": "00:19:06.059",
+          "french": "Toulousaine qui est composée de différentes spécialités à base de canards. Mais je sais que beaucoup d'entre vous sont végétariens et je veux vous rassurer car j'ai beaucoup d'amis végétariens à Toulouse et ils trouvent aussi leur bonheur puisque...",
+          "chinese": "……“图卢兹拼盘”，里面有各种鸭肉特产。但我知道你们中很多人是素食主义者，我想让你们放心，因为我在图卢兹有很多素食朋友，他们也能在这里找到乐趣，因为……"
+        },
+        {
+          "id": 49,
+          "start_time": "00:19:06.059",
+          "end_time": "00:19:35.140",
+          "french": "Comme c'est une ville dynamique où on aime la cuisine réconfortante et conviviale, il y a des restaurateurs, des chefs, des personnes qui tiennent des cafés qui proposent beaucoup de choix de cuisine réinventée, revisitée. Et puis bien sûr, je ne peux pas parler de la gastronomie sans parler de la violette. La violette, c'est une fleur très...",
+          "chinese": "……由于这是一座充满活力的城市，人们热爱治愈且适合社交的美食，所以很多餐厅老板、厨师和咖啡馆经营者会提供许多改良或创新的菜肴选择。当然，谈到美食，我不能不提紫罗兰。紫罗兰是当地非常……"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:35.140",
+          "end_time": "00:19:59.789",
+          "french": "très courante dans la région avec laquelle on fait des produits de beauté, de la teinture, mais aussi avec lequel on fait des produits sucrés à consommer et notamment le must pour moi, c'est le sirop de violette. J'ai goûté ça il n'y a pas longtemps et franchement, je trouve ça...",
+          "chinese": "……常见的一种花，人们用它制作化妆品、染料，也制作甜食。对我来说，必尝的是紫罗兰糖浆。我不久前刚尝过，坦白说，我觉得……"
+        },
+        {
+          "id": 51,
+          "start_time": "00:19:59.789",
+          "end_time": "00:20:19.140",
+          "french": "Trop bon ! Et maintenant, au restaurant ou dans les bars, j'aime beaucoup me commander un petit sirop de violette. Il y en a tout le temps ici. Donc voilà, ça c'est un petit truc que j'adore. Et puis, bien sûr, quand on parle de la...",
+          "chinese": "……太好喝了！现在去餐厅或酒吧，我非常喜欢点一杯紫罗兰糖浆。这里到处都有。这是我的一个小爱好。当然，当我们谈到……"
+        },
+        {
+          "id": 52,
+          "start_time": "00:20:19.480",
+          "end_time": "00:20:49.250",
+          "french": "Cuisine, il faut aussi parler de toute la proposition de cuisine internationale. De manière générale, Toulouse, c'est une ville où il y a une communauté internationale très vaste et où notamment on va trouver beaucoup de marchés et dans ces marchés, on va trouver des stands du monde entier.",
+          "chinese": "……美食时，还必须提到丰富的国际料理。总的来说，图卢兹是一座拥有庞大国际社区的城市，你会发现很多集市，集市上有来自世界各地的摊位。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:49.250",
+          "end_time": "00:21:07.589",
+          "french": "fois que j'y vais, je prends un petit déjeuner différent. Parfois, c'est les chilaquiles mexicains. À d'autres moments, c'est des spécialités grecques, libanaises, syriennes, algériennes, nigériennes. Bref, vous comprenez, il y en a pour...",
+          "chinese": "每次去，我都会吃不一样的早餐。有时是墨西哥的 chilaquiles，有时是希腊、黎巴嫩、叙利亚、阿尔及利亚或尼日利亚的特色菜。总之，你懂的，这里应有尽有……"
+        },
+        {
+          "id": 54,
+          "start_time": "00:21:07.609",
+          "end_time": "00:21:32.420",
+          "french": "Et ça, bon, c'est quelque chose qu'on trouve dans beaucoup de métropoles, mais Toulouse, apparemment, c'est quelque chose qui n'a pas toujours existé. J'ai une copine, notamment, qui a grandi à Toulouse et qui m'a dit que quand elle y est revenue des années après avoir quitté la ville, elle a été très étonnée de voir...",
+          "chinese": "这种多样性在很多大城市都能见到，但在图卢兹，这似乎并非一直如此。我有一个在图卢兹长大的朋友告诉我，当她离开多年后再次回来时，非常惊讶地发现……"
+        },
+        {
+          "id": 55,
+          "start_time": "00:21:32.420",
+          "end_time": "00:21:52.109",
+          "french": "quel point ça s'était diversifié et ça c'est quelque chose que je trouve vraiment génial et qui évidemment je pense peut vous intéresser. Bon et en parlant d'identité forte et de transmission, quand on habite à Toulouse, on ne peut pas passer à côté du...",
+          "chinese": "……这里变得如此多元化，我觉得这真的很棒，相信你们也会感兴趣。好了，说到鲜明的身份特征和传承，住在图卢兹，你绝对不能错过……"
+        },
+        {
+          "id": 56,
+          "start_time": "00:21:52.109",
+          "end_time": "00:22:20.849",
+          "french": "Rugby, le sport local qui est plus populaire ici que le football, même si bien sûr le football est aussi important avec le Toulouse Football Club. Mais le rugby, c'est à un autre niveau. Tout le monde ici regarde le rugby, tout le monde commente le rugby. Quand il y a des matchs, on ne peut pas passer à côté parce qu'ils sont diffusés partout.",
+          "chinese": "……橄榄球。这项运动在当地比足球更受欢迎，虽然图卢兹足球俱乐部也很重要。但橄榄球是另一个层级的。这里的每个人都看橄榄球，每个人都聊橄榄球。比赛期间你绝不会错过，因为到处都在转播。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:22:20.849",
+          "end_time": "00:22:46.769",
+          "french": "Ce n'est pas quelque chose que je vais beaucoup développer parce que, comme j'ai pu vous le dire et vous avez pu constater aussi dans mes choix de sujets de podcast, je ne suis pas très branchée sport, je ne suis pas fan de sport. Mais le rugby, c'est quelque chose qui est très important à Toulouse et même moi qui n'ai pas vu de Coupe du monde de foot depuis l'enfance.",
+          "chinese": "我不会在这方面展开太多，因为正如我之前提到的，从我播客选题中也能看出，我不太关注体育，也不是体育迷。但橄榄球在图卢兹确实非常重要，甚至连我这个从小就没看过足球世界杯的人……"
+        },
+        {
+          "id": 58,
+          "start_time": "00:22:46.769",
+          "end_time": "00:23:14.660",
+          "french": "Il m'est arrivé de regarder des matchs de rugby parce que c'est comme ça. Je suis toulousaine maintenant, alors je suis obligée. Et ben voilà, c'est comme ça qu'on achève la partie sur la culture avec un peu de sport. Et maintenant, on va passer à la troisième partie dans laquelle je vais vous parler de l'offre de voyage depuis Toulouse.",
+          "chinese": "……偶尔也会看橄榄球赛，因为没办法，我现在是图卢兹人了，这是“义务”。好了，文化和体育部分就聊到这里。现在进入第三部分，我将向大家介绍从图卢兹出发的旅行选择。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:22.140",
+          "end_time": "00:23:38.190",
+          "french": "Dans cette dernière partie, je vais vous parler donc de quelque chose qui est un critère absolument obligatoire pour moi au moment de choisir un endroit où habiter et je pense vraiment que je ne suis pas...",
+          "chinese": "在最后一部分，我想聊聊对我来说选择居住地时的一个绝对必要的标准，而且我想我肯定不是……"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:38.190",
+          "end_time": "00:24:07.779",
+          "french": "Pas la seule, puisqu'on est dans une génération et une époque où les personnes ont de plus en plus de voyages, ont de plus en plus l'occasion de télétravailler, l'occasion d'aménager leurs horaires et donc peuvent se permettre de voyager. Et Toulouse, c'est une ville qui est un très bon point de départ pour voyager. Et alors, ça peut être des voyages loin.",
+          "chinese": "……唯一一个这么想的人。因为我们这一代人身处一个旅行越来越频繁、远程办公机会越来越多、工作时间越来越灵活的时代，所以大家都有条件去旅行。而图卢兹是一个非常理想的旅行出发点。这可以是长途旅行，"
+        },
+        {
+          "id": 61,
+          "start_time": "00:24:07.779",
+          "end_time": "00:24:21.960",
+          "french": "Mais ça peut aussi être tout simplement, quand je dis voyage, des excursions pour la journée ou pour deux jours. Alors, on va faire ça de manière géographique. Déjà...",
+          "chinese": "也可以只是简单的短途旅行，比如一日游或两日游。我们按地理位置来说吧。首先……"
+        },
+        {
+          "id": 62,
+          "start_time": "00:24:22.390",
+          "end_time": "00:24:43.950",
+          "french": "Si on commence au plus proche, autour de Toulouse, dans la métropole ou en tout cas dans les départements qui sont tout autour, on peut très facilement s'échapper de la ville pour la journée, pour aller par exemple passer la journée sur un lac. J'ai une copine, par exemple, elle fait du paddle.",
+          "chinese": "从最近的开始，在图卢兹周边，或者至少在周边的省份，你可以很容易地离开城市去过上一天，比如去湖边。我有一个朋友，她喜欢玩桨板（paddle）。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:24:43.950",
+          "end_time": "00:25:13.539",
+          "french": "C'est un sport où on est sur l'eau et puis on rame. Je pense que le mot est international, donc vous connaissez peut-être. Et elle part souvent avec son chien le dimanche pour passer la journée dans la nature. Et ça, c'est quelque chose qu'on peut faire vraiment juste à côté de Toulouse. On peut aussi passer la journée à faire de la randonnée, puisque très très vite, quand on descend, on arrive au début des...",
+          "chinese": "这是一种站在水面上划桨的运动。我想这个词是国际通用的，所以你们可能知道。她经常在周日带着狗去大自然里待上一整天。这在图卢兹近郊就能实现。你也可以去徒步旅行，因为往南走很快就能到达……"
+        },
+        {
+          "id": 64,
+          "start_time": "00:25:13.559",
+          "end_time": "00:25:33.069",
+          "french": "Pyrénées. Ensuite, si on a un peu plus de temps, on peut aller carrément plus loin dans les Pyrénées et faire des randonnées beaucoup plus longues, aller faire du ski, aller faire de l'alpinisme. Alors bon, bien sûr, ce ne sont pas les Alpes.",
+          "chinese": "……比利牛斯山脉。如果你时间充裕，可以深入山区进行更长时间的徒步，或者去滑雪、登山。当然，这里不像阿尔卑斯山。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:25:33.069",
+          "end_time": "00:25:58.960",
+          "french": "Et je vous l'ai déjà dit sur ce podcast, moi, ma famille est originaire de Savoie, donc je connais très bien les Alpes. Les Pyrénées, à côté, ce sont des petites montagnes. Mais justement, c'est ça qui fait son charme, c'est qu'on n'a pas besoin de rouler en voiture pendant super longtemps pour arriver tout en haut des pistes de ski. En fait, depuis Toulouse, on peut tout simplement prendre le TE.",
+          "chinese": "我在播客里提过，我家人来自萨瓦省（Savoie），所以我对阿尔卑斯山非常熟悉。相比之下，比利牛斯山算是“小山”。但这正是它的魅力所在：你不需要开车很久就能到达滑雪场。事实上，从图卢兹出发，你只需乘坐 TER……"
+        },
+        {
+          "id": 66,
+          "start_time": "00:25:58.960",
+          "end_time": "00:26:16.329",
+          "french": "qui est le train express régional, qui est un train accessible, pas très cher, sur lequel il n'est pas nécessaire de réserver en avance. Et on peut arriver tout de suite au pied des pistes de ski, comme ça, en une heure de trajet.",
+          "chinese": "……也就是地区快车。这种火车很方便，票价不贵，而且不需要提前预订。只需一个小时的车程，你就能到达滑雪场脚下。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:26:16.700",
+          "end_time": "00:26:40.819",
+          "french": "Et puis si on n'est pas trop montagne ou si on veut varier les plaisirs, on peut aussi aller à la mer puisqu'on a la mer Méditerranée qui n'est vraiment pas loin, qui est une mer assez calme avec des plages où on peut prendre le soleil, où on peut se reposer. Et si on préfère quelque chose d'un peu plus calme,",
+          "chinese": "如果你不喜欢山，或者想换换口味，也可以去海边。地中海离这儿真的很近，那里的海面相对平静，有很多沙滩可以晒太阳或休息。如果你喜欢更……"
+        },
+        {
+          "id": 68,
+          "start_time": "00:26:40.819",
+          "end_time": "00:26:55.500",
+          "french": "tumultueux, par exemple pour faire du surf, il suffit d'aller de l'autre côté vers la côte atlantique. On peut rejoindre très vite les Landes ou le Pays-Bas. Donc moi, personnellement,",
+          "chinese": "……波涛汹涌一点的地方，比如去冲浪，只需去另一边的大西洋沿岸。你可以很快到达朗德省（Landes）或巴斯克地区。就我个人而言，"
+        },
+        {
+          "id": 69,
+          "start_time": "00:26:55.500",
+          "end_time": "00:27:22.180",
+          "french": "J'ai tout fait au cours de ces années. J'ai une petite voiture qui est une Fiat Panda. Je crois que je vous ai parlé de ma petite Fiat Panda quand j'ai fait mon épisode sur la Normandie et la Bretagne. Eh bien, depuis Toulouse, ma petite Fiat, elle est allée jusque dans les montagnes. Par exemple, une année, j'ai passé mon anniversaire à la montagne. Il y avait de la neige.",
+          "chinese": "这些年来我把这些地方都玩遍了。我有一辆菲亚特熊猫（Fiat Panda）小车。我想在讲诺曼底和布列塔尼那一集里提到过它。从图卢兹出发，我的小菲亚特跑遍了山里。有一年，我就是在山里过生日的，当时还下着雪。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:22.180",
+          "end_time": "00:27:44.259",
+          "french": "Très sympa. Et puis sinon, quand il y a les premiers rayons du soleil, je suis déjà allée à l'océan, à la mer. Je me rappelle même d'une fois où ma petite sœur est venue me voir depuis Paris. Je suis allée la chercher en voiture à la gare et on s'est fait un week-end pendant lequel on a...",
+          "chinese": "非常惬意。此外，当第一缕阳光出现时，我就已经去过大西洋和地中海了。我记得有一次，我妹妹从巴黎来看我，我开车去火车站接她，我们度过了一个……"
+        },
+        {
+          "id": 71,
+          "start_time": "00:27:44.259",
+          "end_time": "00:28:06.920",
+          "french": "tout traversé. On est passé par la montagne, on a traversé le Pays Basque et puis on est arrivé jusqu'à l'océan. Un peu plus et on continuait vers l'Espagne. Donc voilà, c'est vraiment un point de départ sympa pour des virées, pour des petits séjours de quelques jours.",
+          "chinese": "……横跨各地的周末。我们穿过大山，横跨巴斯克地区，最后到达大西洋。再往前走一点就到西班牙了。所以，这里真的是短途旅行或几天小长假的理想出发点。"
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:07.319",
+          "end_time": "00:28:23.619",
+          "french": "Et puis, si on parle d'aller plus loin, d'aller carrément dans d'autres pays, il y a bien sûr l'Espagne. L'Espagne qui finalement est juste à côté de Toulouse. On est plus vite en Espagne que ce qu'on va à Paris.",
+          "chinese": "如果说去更远的地方，甚至是出国，那当然首选西班牙。西班牙其实就在图卢兹旁边。去西班牙比去巴黎还要快。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:23.619",
+          "end_time": "00:28:40.460",
+          "french": "Bon, le train nous emmène jusqu'à Barcelone, mais après, il est assez facile en prenant plusieurs trains, en prenant le bus, en prenant la voiture, on peut même faire du covoiturage, d'aller un peu partout en Espagne.",
+          "chinese": "火车可以带你直达巴塞罗那，之后通过转乘火车、大巴、开车甚至拼车，去西班牙各地都很方便。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:28:40.460",
+          "end_time": "00:29:04.049",
+          "french": "Et puis, si on veut aller dans d'autres pays, l'aéroport est plutôt bien desservi. Il y a beaucoup, beaucoup de destinations. Il me semble même qu'on peut aller jusqu'en Amérique du Nord, peut-être le Canada, il me semble. Mais sans aller plus loin, Toulouse dessert à peu près toute l'Europe.",
+          "chinese": "如果你想去其他国家，这里的机场航线也非常丰富。有很多目的地。我记得甚至可以飞往北美，好像有去加拿大的航班。即便不走那么远，图卢兹的航线也几乎覆盖了整个欧洲。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:04.049",
+          "end_time": "00:29:27.500",
+          "french": "Donc c'est vrai que ça a été un critère pour moi puisque même si j'essaye de moins prendre l'avion, c'est quand même sympa de pouvoir se dire que je peux rentrer assez facilement chez moi après un long voyage sans avoir besoin forcément de passer par Paris puis de prendre le train, voilà.",
+          "chinese": "这对我来说确实是一个重要标准，因为尽管我尽量少坐飞机，但想到长途旅行后能直接回家，而不需要先绕道巴黎再转火车，这种感觉还是很棒的。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:29:28.059",
+          "end_time": "00:29:56.579",
+          "french": "Donc voilà, je pense que j'ai fait le tour des raisons qui m'ont poussé à m'installer à Toulouse et qui, je pense, ont séduit d'autres personnes. Donc le cadre de vie, la culture et la possibilité de voyager. C'est pourquoi je suis très heureuse dans cette ville et j'ai bien l'intention d'y rester encore pour quelques années.",
+          "chinese": "好了，我想我已经说完了促使我定居图卢兹的所有原因，我想这些原因也吸引了其他人。那就是：居住环境、文化氛围和旅行的便利性。这就是为什么我在这座城市生活得很开心，并打算在这里再住上几年。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:29:56.980",
+          "end_time": "00:30:26.740",
+          "french": "Bon, je m'arrête ici. Je vous avoue que j'avais écrit un script. J'avais déjà enregistré cet épisode et j'en étais pas très contente. Et donc, je viens de le réenregistrer en total freestyle. Donc, j'espère que ça vous a plu, que je n'ai pas parlé trop vite et que j'étais assez claire. N'hésitez pas à me dire dans les commentaires ce que vous en avez pensé. Je vous lis toujours.",
+          "chinese": "好了，就聊到这里。坦白说，我之前写过一个脚本，也录过一遍，但我不太满意。所以，这一遍我是完全即兴录制的。希望你们喜欢，也希望我没说得太快，表达得够清楚。欢迎在评论区告诉我你们的想法，我每一条都会看的。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:30:26.740",
+          "end_time": "00:30:42.890",
+          "french": "Et j'apprécie toujours vos retours. Je vous dis à dans deux semaines pour le dernier épisode de l'année. Ce sera sûrement avec Hugo et Agna pour faire le bilan de 2025. Salut, salut, à bientôt !",
+          "chinese": "我非常珍惜你们的反馈。两周后的年度最后一集再见。届时我应该会和 Hugo 以及 Agna 一起对 2025 年做一个总结。拜拜，下次见！"
+        }
+      ],
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "part of speech classification",
+            "detail": "The headword 'conviviale' is provided in its feminine form. Standard practice for adjectives in vocabulary lists is to use the masculine form 'convivial' or 'convivial, -e'.",
+            "field": "language_analysis.vocabulary[7].french"
+          },
+          {
+            "level": "warning",
+            "check": "cross-field consistency",
+            "detail": "The 'exercise_summary' lists 'façade' and 'gastronomie' as covered vocabulary, but these are not present in the primary vocabulary list (though they appear in the network and expressions).",
+            "field": "practice.exercise_summary.covered_vocabulary"
+          },
+          {
+            "level": "warning",
+            "check": "cross-field consistency",
+            "detail": "The 'exercise_summary' lists 'n'est pas en reste' under 'covered_grammar', but it is classified as a 'key_expression' in the language analysis section.",
+            "field": "practice.exercise_summary.covered_grammar"
+          },
+          {
+            "level": "warning",
+            "check": "exercise validation",
+            "detail": "The word 'conviviale' lists source_id 46, but the example text associated with ID 46 in the 'emblématique' entry does not contain the word 'conviviale'. It is likely only present in ID 49.",
+            "field": "language_analysis.vocabulary[7].source_ids"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 4,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

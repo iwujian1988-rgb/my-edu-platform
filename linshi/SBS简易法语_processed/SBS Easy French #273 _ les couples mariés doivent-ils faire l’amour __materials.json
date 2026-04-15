@@ -1,0 +1,695 @@
+{
+  "source_file": "SBS Easy French #273 _ les couples mariés doivent-ils faire l’amour _.json",
+  "channel": "SBS简易法语",
+  "video_name": "SBS Easy French #273 _ les couples mariés doivent-ils faire l’amour _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T00:09:43.406Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "L'infinitif passé",
+          "Le passif (Passive Voice)"
+        ],
+        "speaking": [
+          "Summarizing international news events in French",
+          "Discussing social issues such as consent and historical protests"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "partenariat",
+            "part_of_speech": "nom",
+            "ipa": "[paʁtənaʁja]",
+            "chinese": "伙伴关系",
+            "example_sentence": {
+              "french": "Ce podcast est réalisé en partenariat avec l'Alliance française.",
+              "chinese": "本播客是与法国联盟合作制作的。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce podcast est réalisé en partenariat avec l'Alliance française de Melbourne.",
+                "chinese": "本播客由墨尔本法国联盟联合制作。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "manifestation",
+            "part_of_speech": "nom",
+            "ipa": "[manifɛstasjɔ̃]",
+            "chinese": "示威游行",
+            "example_sentence": {
+              "french": "Des milliers de personnes participent à la manifestation.",
+              "chinese": "数千人参加了示威游行。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              5,
+              8
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Des milliers de personnes manifestent contre l'Invasion Day.",
+                "chinese": "数千人举行示威游行抗议“入侵日”。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "colonisation",
+            "part_of_speech": "nom",
+            "ipa": "[kɔlɔnizasjɔ̃]",
+            "chinese": "殖民",
+            "example_sentence": {
+              "french": "Cette date est liée à l'histoire de la colonisation.",
+              "chinese": "这个日期与殖民历史有关。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Des milliers de personnes contestent cette date liée à la colonisation.",
+                "chinese": "数千人抗议这一与殖民相关的日期。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "détention provisoire",
+            "part_of_speech": "nom",
+            "ipa": "[detɑ̃sjɔ̃ pʁɔvizwaʁ]",
+            "chinese": "羁押候审 / 临时拘留",
+            "example_sentence": {
+              "french": "Le suspect a été placé en détention provisoire.",
+              "chinese": "嫌疑人已被采取临时拘留措施。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il a été placé en détention provisoire.",
+                "chinese": "他已被羁押候审。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "libre-échange",
+            "part_of_speech": "nom",
+            "ipa": "[libʁeʃɑ̃ʒ]",
+            "chinese": "自由贸易",
+            "example_sentence": {
+              "french": "Ils ont signé un accord de libre-échange.",
+              "chinese": "他们签署了一项自由贸易协定。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "L'Inde et l'Union européenne signent un accord de libre-échange historique.",
+                "chinese": "印度与欧盟签署了一项具有历史意义的自由贸易协定。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "PIB",
+            "part_of_speech": "nom",
+            "ipa": "[peibe]",
+            "chinese": "国内生产总值 (GDP)",
+            "example_sentence": {
+              "french": "Cet accord concerne un quart du PIB mondial.",
+              "chinese": "该协议涉及全球四分之一的GDP。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Un quart du PIB mondial est désormais concerné.",
+                "chinese": "全球四分之一的GDP现在都受到了影响。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "devoir conjugal",
+            "part_of_speech": "nom",
+            "ipa": "[dəvwaʁ kɔ̃ʒyɡal]",
+            "chinese": "夫妻义务（尤指性义务）",
+            "example_sentence": {
+              "french": "La France vote la fin du devoir conjugal.",
+              "chinese": "法国投票废除夫妻间的性义务。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              4,
+              10
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "L'Assemblée nationale vote la fin du devoir conjugal.",
+                "chinese": "国民议会投票通过废除夫妻间的性义务。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "consentement",
+            "part_of_speech": "nom",
+            "ipa": "[kɔ̃sɑ̃tmɑ̃]",
+            "chinese": "同意 / 准许",
+            "example_sentence": {
+              "french": "Le consentement est un principe indispensable.",
+              "chinese": "同意是一项不可或缺的原则。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les députés veulent défendre le consentement comme principe indispensable.",
+                "chinese": "议员们希望将“同意”作为一项不可或缺的原则加以捍卫。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "unanimité",
+            "part_of_speech": "nom",
+            "ipa": "[ynanimite]",
+            "chinese": "一致同意",
+            "example_sentence": {
+              "french": "La loi a été votée à l'unanimité.",
+              "chinese": "该法律获得全票通过。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La loi, votée à l'unanimité, doit maintenant être examinée au Sénat.",
+                "chinese": "这项获得全票通过的法律目前需提交参议院审议。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "biodiversité",
+            "part_of_speech": "nom",
+            "ipa": "[bjɔdivɛʁsite]",
+            "chinese": "生物多样性",
+            "example_sentence": {
+              "french": "Il faut protéger la biodiversité des océans.",
+              "chinese": "必须保护海洋的生物多样性。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il permet de mieux protéger les océans, la biodiversité.",
+                "chinese": "它有助于更好地保护海洋和生物多样性。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "menacé",
+            "part_of_speech": "adjectif",
+            "ipa": "[mənase]",
+            "chinese": "受威胁的 / 濒危的",
+            "example_sentence": {
+              "french": "Cette espèce est menacée d'extinction.",
+              "chinese": "这个物种正面临灭绝的威胁。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il permet de protéger les espèces menacées.",
+                "chinese": "它有助于保护濒危物种。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "vigueur",
+            "part_of_speech": "nom",
+            "ipa": "[viɡœʁ]",
+            "chinese": "效力（常用于法律生效）",
+            "example_sentence": {
+              "french": "Le traité est entré en vigueur ce matin.",
+              "chinese": "该条约于今天上午生效。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le premier traité international est officiellement entré en vigueur.",
+                "chinese": "首项国际条约正式生效。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "à votre rythme",
+            "meaning": "以您自己的节奏",
+            "example": {
+              "french": "Apprendre le français à votre rythme.",
+              "chinese": "以您自己的节奏学习法语。"
+            },
+            "usage_note": "Used to describe personalized learning or working speeds.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "se sentir à l'aise",
+            "meaning": "感到自在 / 得心应手",
+            "example": {
+              "french": "Si vous vous sentez de plus en plus à l'aise avec le français.",
+              "chinese": "如果您觉得自己对法语越来越得心应手。"
+            },
+            "usage_note": "Commonly used for language proficiency or social comfort.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "passer au niveau supérieur",
+            "meaning": "更上一层楼 / 进入下一阶段",
+            "example": {
+              "french": "Vous êtes prêt à passer au niveau supérieur.",
+              "chinese": "您已准备好更上一层楼。"
+            },
+            "usage_note": "Often used in educational or professional contexts.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "changer la donne",
+            "meaning": "改变游戏规则 / 扭转局面",
+            "example": {
+              "french": "Ce traité de libre-échange change la donne face à la Chine.",
+              "chinese": "这项自由贸易协定改变了面对中国时的局面。"
+            },
+            "usage_note": "A common idiomatic expression in politics and business.",
+            "source_ids": [
+              9
+            ]
+          },
+          {
+            "expression": "mettre le sourire aux lèvres",
+            "meaning": "让人露出笑容",
+            "example": {
+              "french": "La nouvelle qui va vous mettre le sourire aux lèvres.",
+              "chinese": "这条消息一定会让你会心一笑。"
+            },
+            "usage_note": "Used for positive or heartwarming news.",
+            "source_ids": [
+              12
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "L'infinitif passé",
+            "structure": "avoir/être (infinitif) + participe passé",
+            "explanation": "Used to express an action that happened before the action of the main verb, often after prepositions like 'après' or verbs like 'accuser de'.",
+            "example": {
+              "french": "Un homme de 31 ans est accusé d'avoir lancé un explosif.",
+              "chinese": "一名31岁的男子被指控投掷了一枚爆炸装置。"
+            },
+            "usage_note": "The auxiliary verb stays in the infinitive form, while the main verb takes the past participle.",
+            "source_ids": [
+              8
+            ]
+          },
+          {
+            "name": "Le passif (Passive Voice)",
+            "structure": "être + participe passé (+ par...)",
+            "explanation": "Used to emphasize the action or the object rather than the subject performing the action. Common in news reporting.",
+            "example": {
+              "french": "La loi, votée à l'unanimité, doit maintenant être examinée au Sénat.",
+              "chinese": "这项获得全票通过的法律目前需提交参议院审议。"
+            },
+            "usage_note": "The past participle must agree in gender and number with the subject.",
+            "source_ids": [
+              11
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "Nasal vowel 'an/en'. Ensure the mouth is open and the sound resonates in the nose.",
+              "examples": [
+                "manifestation",
+                "consentement",
+                "janvier"
+              ]
+            },
+            {
+              "sound": "[y]",
+              "description": "The French 'u' sound. Position lips as if to say 'oo' but say 'ee'.",
+              "examples": [
+                "unanimité",
+                "plus",
+                "commune"
+              ]
+            }
+          ],
+          "liaison": [
+            "un accord [œ̃n‿akɔʁ]",
+            "des océans [dez‿ɔseɑ̃]",
+            "est officiellement [ɛt‿ɔfisjɛlmɑ̃]"
+          ],
+          "intonation": "Journalistic intonation: Rising pitch at the end of introductory phrases (e.g., 'En France...') and falling pitch at the end of factual statements."
+        },
+        "vocabulary_network": {
+          "theme": "L'environnement et la protection",
+          "core_word": "Protéger",
+          "related_groups": [
+            {
+              "category": "Nature",
+              "words": [
+                "océans",
+                "biodiversité",
+                "vie marine",
+                "haute mer"
+              ]
+            },
+            {
+              "category": "Menaces",
+              "words": [
+                "espèces menacées",
+                "extinction",
+                "colonisation"
+              ]
+            },
+            {
+              "category": "Actions légales",
+              "words": [
+                "traité international",
+                "entrer en vigueur",
+                "accord"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Le 17 janvier, le premier ___ ___ pour ___ la ___ ___ en haute mer est ___ ___ en ___.",
+            "answer": "traité, international, protéger, vie, marine, officiellement, entré, vigueur",
+            "explanation": "根据原文第12句，1月17日首项旨在保护公海海洋生物的国际条约正式生效。",
+            "source_ids": [
+              12
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi les députés français ont-ils voté la fin du devoir conjugal ?",
+            "options": {
+              "A": "Pour encourager le divorce entre les couples.",
+              "B": "Pour prévenir les violences sexuelles et défendre le consentement.",
+              "C": "Parce que les Français ne veulent plus se marier.",
+              "D": "Pour suivre une nouvelle directive de l'Union européenne."
+            },
+            "answer": "B",
+            "explanation": "原文第11句明确指出：'Les députés français veulent prévenir les violences sexuelles et défendre le consentement comme principe indispensable'.",
+            "source_ids": [
+              11
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Un quart du PIB mondial et 2 milliards de personnes sont désormais concernées par ce traité de libre-échange.",
+            "answer": "全球四分之一的GDP和20亿人口目前都受到这项自由贸易协定的影响。",
+            "explanation": "重点词汇：'Un quart' (四分之一), 'PIB' (GDP), 'désormais' (从此/目前), 'concernées' (涉及/受影响).",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase en utilisant 'être accusé de' + infinitif passé : 'La police dit que l'homme a lancé un explosif.'",
+            "answer": "L'homme est accusé d'avoir lancé un explosif.",
+            "explanation": "使用 'être accusé de' 接不定式过去时 (infinitif passé) 来表示被指控完成了某项过去的行为。结构为：de + avoir/être + 过去分词。",
+            "source_ids": [
+              8
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "traité",
+            "vigueur",
+            "consentement",
+            "PIB",
+            "libre-échange"
+          ],
+          "covered_grammar": [
+            "L'infinitif passé",
+            "Le passif"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il permet de mieux [verbe à l'infinitif]...",
+            "explanation": "Used to describe the utility or benefit of a tool, law, or action.",
+            "example": {
+              "french": "Il permet de mieux protéger les océans.",
+              "chinese": "它有助于更好地保护海洋。"
+            }
+          },
+          {
+            "pattern": "Désormais, [sujet] ne pourra plus [verbe]...",
+            "explanation": "Used to state a new rule or a change in possibility from now on.",
+            "example": {
+              "french": "Dorénavant, un partenaire ne pourra plus demander le divorce pour ce motif.",
+              "chinese": "今后，一方当事人将不得再以此为由提出离婚。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are a journalist presenting a short news segment about a new environmental law in your country.",
+          "requirements": "Use at least 3 vocabulary words from the lesson (e.g., traité, biodiversité, entrer en vigueur) and the passive voice.",
+          "starter": "Bonjour à tous, voici une nouvelle qui va vous mettre le sourire aux lèvres..."
+        }
+      },
+      "summary": {
+        "content": "This lesson covers a French news bulletin discussing Australia Day protests, a major trade deal between India and the EU, France's legislative change regarding marital consent, and a new international treaty for ocean protection. It focuses on formal, journalistic language and social/legal terminology.",
+        "keywords": [
+          "Actualités",
+          "Australie",
+          "Libre-échange",
+          "Consentement",
+          "Environnement"
+        ],
+        "difficulty_note": "The text is rated B1/B2 due to its use of specialized vocabulary (legal, economic, environmental) and complex structures like the past infinitive and passive voice."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:06:32"
+        },
+        "theme": "International News and Social Reforms",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一个旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《Work in Progress》，现在即可在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.619",
+          "end_time": "00:00:59.850",
+          "french": "Vous êtes avec SBS French. Bonjour et bienvenue dans ce nouvel épisode de SBS Easy French. Ce podcast est réalisé en partenariat avec l'Alliance française de Melbourne. Chaque semaine, vous avez rendez-vous avec Easy French, votre compagnon pour apprendre le français à votre rythme.",
+          "chinese": "您正在收听的是 SBS 法语频道。大家好，欢迎收听新一期 SBS Easy French。本播客是与墨尔本法语联盟合作制作的。每周，Easy French 都会与您相约，陪伴您按照自己的节奏学习法语。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:00.219",
+          "end_time": "00:01:35.430",
+          "french": "Si ce n'est pas déjà fait, je vous invite à vous inscrire à notre newsletter sur le site web de SBS French pour recevoir la transcription de cette émission et de toutes les autres sur votre boîte mail tous les vendredis. Et si vous vous sentez de plus en plus à l'aise avec le français et prêt à passer au niveau supérieur, alors n'hésitez pas à découvrir SBS French. Vous êtes avec Marianne Mourat et voici votre journal. On commence avec les titres.",
+          "chinese": "如果您还没有订阅，欢迎前往 SBS 法语频道网站订阅我们的时事通讯，以便在每周五通过邮箱接收本节目及其他所有节目的文本。如果您觉得自己的法语越来越流利，并准备好进入更高阶段的学习，请随时关注 SBS 法语频道。我是 Marianne Mourat，为您播报新闻。首先来看新闻提要。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:35.739",
+          "end_time": "00:02:06.599",
+          "french": "L'Australie célèbre Australia Day, des milliers de personnes manifestent contre l'Invasion Day. L'Inde et l'Union européenne signent un accord de libre-échange historique. La France vote la fin du devoir conjugal. Et enfin, la bonne nouvelle de la semaine, un traité pour mieux protéger les océans. Le 26 janvier 2026, l'Australie a célébré l'Australia Day avec des cérémonies officielles et des remises de citoyenneté.",
+          "chinese": "澳大利亚庆祝“澳大利亚日”，数千人游行抗议“入侵日”。印度与欧盟签署历史性自由贸易协定。法国投票废除“夫妻义务”。最后是本周的好消息：一项旨在更好保护海洋的条约。2026年1月26日，澳大利亚举行官方仪式和入籍仪式庆祝“澳大利亚日”。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:07.060",
+          "end_time": "00:02:18.789",
+          "french": "Dans le même temps, des manifestations ont eu lieu dans plusieurs villes, car des milliers de personnes contestent cette date liée à la colonisation et à l'histoire des peuples aborigènes.",
+          "chinese": "与此同时，多个城市爆发了游行，数千人对这一与殖民统治及原住民历史相关的日期表示抗议。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:19.129",
+          "end_time": "00:02:45.250",
+          "french": "On écoute deux manifestants, la première à Sydney, le second à Melbourne. Ils expliquent pourquoi c'était important pour eux de se rassembler et de manifester contre cette fête nationale.",
+          "chinese": "让我们来听听两位抗议者的心声，一位在悉尼，另一位在墨尔本。他们解释了为什么集会抗议这个国庆日对他们来说如此重要。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:45.250",
+          "end_time": "00:03:12.009",
+          "french": "...",
+          "chinese": "……"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:12.180",
+          "end_time": "00:03:40.099",
+          "french": "Toujours lors de l'une de ces manifestations du lundi 26 janvier, mais à Perth cette fois, un homme de 31 ans est accusé d'avoir lancé un explosif dans la foule. L'engin n'a finalement pas explosé, mais la police évoque un coup de chance, assurant que le suspect voulait faire des blessés. Il a été présenté au juge le lendemain, placé en détention provisoire, et son audience a été renvoyée au 17 février.",
+          "chinese": "同样是在1月26日周一的游行期间，但在珀斯，一名31岁的男子被指控向人群投掷爆炸物。该装置最终没有爆炸，但警方称这是万幸，并确信嫌疑人意图伤人。他于次日出庭受审，被暂时羁押，听证会延期至2月17日。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:41.460",
+          "end_time": "00:04:08.009",
+          "french": "Après 20 ans de négociations, New Delhi et Bruxelles ont scellé un accord commercial. Un quart du PIB mondial et 2 milliards de personnes sont désormais concernées par ce traité de libre-échange qui change la donne face à la Chine et aux États-Unis. Le ministre indien du commerce espère que cet accord sera opérationnel avant la fin de l'année.",
+          "chinese": "经过20年的谈判，新德里与布鲁塞尔达成了一项贸易协定。该自由贸易协定涉及全球四分之一的 GDP 和 20 亿人口，将改变面对中国和美国时的竞争格局。印度商务部长希望该协定能在年底前正式生效。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:08.759",
+          "end_time": "00:04:40.230",
+          "french": "En France, l'Assemblée nationale vote la fin du devoir conjugal. Cela veut dire que ce n'est pas une obligation, pour un couple marié, de faire l'amour.",
+          "chinese": "在法国，国民议会投票废除“夫妻义务”。这意味着对于已婚夫妇来说，发生性行为不再是一项义务。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:40.540",
+          "end_time": "00:05:01.379",
+          "french": "Les députés français veulent prévenir les violences sexuelles et défendre le consentement comme principe indispensable, même au sein du mariage. Dorénavant, un partenaire ne pourra plus demander le divorce pour absence d'activité sexuelle. La loi, votée à l'unanimité, doit maintenant être examinée au Sénat.",
+          "chinese": "法国议员希望预防性暴力，并将“同意”作为不可或缺的原则，即使在婚姻内部也是如此。今后，配偶一方不得再以缺乏性生活为由提出离婚。该法案已获得一致通过，目前尚待参议院审议。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:05:03.290",
+          "end_time": "00:05:29.829",
+          "french": "Et enfin, on termine avec la Feel Good News de la semaine, la nouvelle qui va vous mettre le sourire aux lèvres. Le 17 janvier, le premier traité international pour protéger la vie marine en haute mer est officiellement entré en vigueur. Il permet de mieux protéger les océans, la biodiversité et les espèces menacées au-delà des frontières des pays. C'est une avancée importante pour l'environnement.",
+          "chinese": "最后，我们以本周的“暖心新闻”结束，这是一个会让您嘴角上扬的消息。1月17日，首个保护公海海洋生物的国际条约正式生效。它有助于更好地保护各国国界之外的海洋、生物多样性和濒危物种。这是环境保护方面的一项重要进展。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:30.519",
+          "end_time": "00:05:58.060",
+          "french": "Merci d'avoir suivi votre journal en français facile. Nous nous retrouvons la semaine prochaine pour un nouvel épisode de SBS Easy French. À bientôt !",
+          "chinese": "感谢收听本期法语简明新闻。下周我们将在新一期 SBS Easy French 中再见。回头见！"
+        },
+        {
+          "id": 14,
+          "start_time": "00:06:04.310",
+          "end_time": "00:06:32.899",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一个旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《Work in Progress》，现在即可在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:06:32.899",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 14,
+        "source_video_name": "SBS Easy French #273 _ les couples mariés doivent-ils faire l’amour _.json",
+        "tags": [
+          "旅行",
+          "法国生活"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

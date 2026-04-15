@@ -1,0 +1,615 @@
+{
+  "source_file": "Rediffusion - Un hôpital attaqué (Hospital under attack).json",
+  "channel": "Louis法语课",
+  "video_name": "Rediffusion - Un hôpital attaqué (Hospital under attack)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T03:08:28.446Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le participe présent (现在分词)",
+          "L'expression de la préférence (表达偏好)"
+        ],
+        "speaking": [
+          "Expliquer un problème technique et ses conséquences",
+          "Parler de ses préférences personnelles en matière d'outils (clavier vs stylo)"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "cible",
+            "part_of_speech": "nom",
+            "ipa": "[sibl]",
+            "chinese": "目标，靶子",
+            "example_sentence": {
+              "french": "Un hôpital du sud de Paris a été la cible d'une cyberattaque.",
+              "chinese": "巴黎南部的一家医院成为网络攻击的目标。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "On dit viser une cible.",
+                "chinese": "人们说瞄准一个目标。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "cyberattaque",
+            "part_of_speech": "nom",
+            "ipa": "[sibɛʁatak]",
+            "chinese": "网络攻击",
+            "example_sentence": {
+              "french": "La cible de quoi ? D'une cyberattaque.",
+              "chinese": "瞄准什么的目标？一场网络攻击的目标。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Un hôpital du sud de Paris a été la cible d'une cyberattaque.",
+                "chinese": "巴黎南部的一家医院成为网络攻击的目标。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "provoquer",
+            "part_of_speech": "verbe",
+            "ipa": "[pʁɔvɔke]",
+            "chinese": "引发，导致",
+            "example_sentence": {
+              "french": "Une cyberattaque, provoquant l'interruption de ses services.",
+              "chinese": "一场网络攻击，导致其服务中断。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Provoquant, causant. C'est-à-dire ayant pour effet, ayant pour conséquence.",
+                "chinese": "引发、导致。也就是说，产生某种效果、带来某种后果。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "interruption",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃tɛʁypsjɔ̃]",
+            "chinese": "中断，停止",
+            "example_sentence": {
+              "french": "La pluie a causé l'interruption du match de football.",
+              "chinese": "下雨导致了足球比赛的中断。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              5,
+              7
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Une interruption, c'est un arrêt, une interruption.",
+                "chinese": "中断，就是停止、中止。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "infirmière",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃fiʁmjɛʁ]",
+            "chinese": "护士",
+            "example_sentence": {
+              "french": "Les infirmières devant saisir les données à la main.",
+              "chinese": "护士们将不得不手动录入数据。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Les infirmières, une infirmière, nurse, une infirmière.",
+                "chinese": "护士们，一名护士，nurse，一名护士。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "saisir",
+            "part_of_speech": "verbe",
+            "ipa": "[seziʁ]",
+            "chinese": "输入，录入（数据）",
+            "example_sentence": {
+              "french": "Saisir les données, c'est-à-dire entrer ou enregistrer les informations.",
+              "chinese": "所谓“输入数据”，就是录入或记录信息。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Elles ont dû saisir les données à la main.",
+                "chinese": "她们不得不手动输入数据。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "donnée",
+            "part_of_speech": "nom",
+            "ipa": "[dɔne]",
+            "chinese": "数据",
+            "example_sentence": {
+              "french": "Saisir les données, c'est enregistrer les informations.",
+              "chinese": "“输入数据”就是记录信息。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Les infirmières devant saisir les données à la main.",
+                "chinese": "护士们将不得不手动录入数据。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "clavier",
+            "part_of_speech": "nom",
+            "ipa": "[klavje]",
+            "chinese": "键盘",
+            "example_sentence": {
+              "french": "Je préfère écrire à la main que sur un clavier d'ordinateur.",
+              "chinese": "我更喜欢用手写，而不是用电脑键盘。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je préfère écrire à la main que sur un clavier d'ordinateur.",
+                "chinese": "我更喜欢用手写，而不是用电脑键盘。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "endormir (s')",
+            "part_of_speech": "verbe",
+            "ipa": "[sɑ̃dɔʁmiʁ]",
+            "chinese": "入睡",
+            "example_sentence": {
+              "french": "Si vous avez du mal à vous endormir, j'ai créé un podcast pour vous aider.",
+              "chinese": "如果您入睡困难，我为您制作了一个播客来帮助您。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Si vous avez du mal à vous endormir, j'ai créé un podcast pour vous aider.",
+                "chinese": "如果您入睡困难，我为您制作了一个播客来帮助您。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "bruit blanc",
+            "part_of_speech": "nom",
+            "ipa": "[bʁɥi blɑ̃]",
+            "chinese": "白噪音",
+            "example_sentence": {
+              "french": "Vous pouvez écouter des sons de la nature et des bruits blancs.",
+              "chinese": "您可以收听各种自然声音和白噪音。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Vous pouvez écouter des sons de la nature et des bruits blancs.",
+                "chinese": "您可以收听各种自然声音和白噪音。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "à la main",
+            "meaning": "手工地，用手",
+            "example": {
+              "french": "Elles ont dû saisir les données à la main.",
+              "chinese": "她们不得不手动输入数据。"
+            },
+            "usage_note": "用于强调不使用机器或电脑，而是依靠人工完成某事。",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7
+            ]
+          },
+          {
+            "expression": "avoir du mal à",
+            "meaning": "做某事有困难",
+            "example": {
+              "french": "Si vous avez du mal à vous endormir, j'ai créé un podcast pour vous aider.",
+              "chinese": "如果您入睡困难，我为您制作了一个播客来帮助您。"
+            },
+            "usage_note": "后接动词不定式，是非常常用的表达困难的句型。",
+            "source_ids": [
+              8
+            ]
+          },
+          {
+            "expression": "avoir pour effet",
+            "meaning": "产生...的效果，导致",
+            "example": {
+              "french": "Provoquant, causant. C'est-à-dire ayant pour effet, ayant pour conséquence.",
+              "chinese": "引发、导致。也就是说，产生某种效果、带来某种后果。"
+            },
+            "usage_note": "常用于解释某事物的后果或影响，属于较为正式的表达。",
+            "source_ids": [
+              4
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le participe présent (现在分词)",
+            "structure": "Radical de 'nous' au présent + -ant (ex: provoquant, devant)",
+            "explanation": "在新闻报道或书面语中，现在分词常用来替代关系从句（qui + verbe）或表达原因/结果。原文中'provoquant'表示网络攻击导致的结果，'devant'表示护士们因此必须做出的行动。",
+            "example": {
+              "french": "Un hôpital du sud de Paris a été la cible d'une cyberattaque, provoquant l'interruption de ses services, les infirmières devant saisir les données à la main.",
+              "chinese": "巴黎南部的一家医院遭到网络攻击，导致其服务中断。护士们将不得不手动录入数据。"
+            },
+            "usage_note": "注意'devant'是'devoir'的现在分词，属于不规则变化。现在分词在句中不随主语的性数变化。",
+            "source_ids": [
+              2,
+              3,
+              5,
+              7
+            ]
+          },
+          {
+            "name": "L'expression de la préférence (表达偏好)",
+            "structure": "préférer + infinitif/nom + que + (de) + infinitif/nom",
+            "explanation": "当比较两个动作或事物，表达更喜欢其中一个时，使用'préférer... que...'结构。如果后面接的是动词不定式，'que'后面通常会加'de'，但在口语或某些介词短语对比中（如原文），直接用'que'连接两个介词短语。",
+            "example": {
+              "french": "Je préfère écrire à la main que sur un clavier d'ordinateur.",
+              "chinese": "我更喜欢用手写，而不是用电脑键盘。"
+            },
+            "usage_note": "这里对比的是两个状语'à la main'和'sur un clavier'，因此直接用'que'连接。",
+            "source_ids": [
+              7
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "Accent circonflexe (^)",
+              "description": "原文特别指出了'hôpital'上的长音符（accent circonflexe）。在现代法语中，'ô'的发音通常是闭口音[o]，并且这个符号往往代表历史上曾经存在过但后来消失的字母's'（如 hospital -> hôpital）。",
+              "examples": [
+                "hôpital"
+              ]
+            }
+          ],
+          "liaison": [
+            "un_n_hôpital (连音: [œ̃.nɔ.pi.tal])",
+            "les_z_infirmières (连音: [le.zɛ̃.fiʁ.mjɛʁ])"
+          ],
+          "intonation": "在新闻播报式的长句中（如第2、3、7句），语调在逗号处（cyberattaque, / services,）微微上扬以保持句子的连贯性，在句末（à la main.）下降。"
+        },
+        "vocabulary_network": {
+          "theme": "Informatique et Conséquences",
+          "core_word": "cyberattaque",
+          "related_groups": [
+            {
+              "category": "Actions",
+              "words": [
+                "provoquer",
+                "causer",
+                "saisir",
+                "enregistrer"
+              ]
+            },
+            {
+              "category": "Conséquences",
+              "words": [
+                "interruption",
+                "arrêt",
+                "à la main"
+              ]
+            },
+            {
+              "category": "Outils",
+              "words": [
+                "données",
+                "ordinateur",
+                "clavier",
+                "stylo",
+                "papier"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Un ___ du sud de Paris a été la ___ d'une ___, ___ l'interruption de ses services, les ___ devant ___ les données à la ___.",
+            "answer": "hôpital, cible, cyberattaque, provoquant, infirmières, saisir, main",
+            "explanation": "根据原文，巴黎南部的一家医院（hôpital）成为网络攻击（cyberattaque）的目标（cible），导致（provoquant）服务中断，护士们（infirmières）不得不手动（à la main）录入（saisir）数据。",
+            "source_ids": [
+              2,
+              3,
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, comment les infirmières doivent-elles enregistrer les informations suite à la cyberattaque ?",
+            "options": {
+              "A": "Avec un ordinateur de secours.",
+              "B": "À la main, avec un stylo sur du papier.",
+              "C": "En utilisant un clavier d'ordinateur spécial.",
+              "D": "Elles ne peuvent plus enregistrer d'informations."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第6句明确指出：'À la main, by hand, à la main. Et donc, pas avec un ordinateur, mais plutôt avec un stylo sur du papier, à la main.'（因此，并不是用电脑，而是用笔在纸上，靠手来完成。）",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Je préfère écrire à la main que sur un clavier d'ordinateur.",
+            "answer": "我更喜欢用手写，而不是用电脑键盘。",
+            "explanation": "翻译难点在于'préférer... que...'结构，表示'更喜欢...而不是...'。'à la main'译为'用手写/手工'，'sur un clavier d'ordinateur'译为'在电脑键盘上'。",
+            "source_ids": [
+              7
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en remplaçant le participe présent 'provoquant' par une proposition subordonnée relative (avec 'qui') : 'Une cyberattaque, provoquant l'interruption de ses services.'",
+            "answer": "Une cyberattaque qui provoque l'interruption de ses services.",
+            "explanation": "现在分词'provoquant'在这里起到了关系从句的作用，修饰前面的名词'cyberattaque'。将其改写为关系从句时，使用关系代词'qui'作主语，并将动词变为直陈式现在时'provoque'（与主句时态保持逻辑一致）。",
+            "source_ids": [
+              2,
+              4
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "hôpital",
+            "cible",
+            "cyberattaque",
+            "provoquer",
+            "infirmière",
+            "saisir",
+            "clavier"
+          ],
+          "covered_grammar": [
+            "Le participe présent (现在分词)",
+            "L'expression de la préférence (表达偏好)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "avoir du mal à + infinitif",
+            "explanation": "表示做某事有困难、很费劲。",
+            "example": {
+              "french": "J'ai du mal à comprendre cet exercice.",
+              "chinese": "我很难理解这个练习。"
+            }
+          },
+          {
+            "pattern": "préférer [A] que [B]",
+            "explanation": "表达在两个事物或动作中更偏好前者。",
+            "example": {
+              "french": "Je préfère le thé que le café.",
+              "chinese": "我更喜欢茶而不是咖啡。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你是一家医院的护士，由于医院系统遭到网络攻击，你正在向一位焦急等待的病人解释为什么今天办理手续特别慢。",
+          "requirements": "使用词汇：cyberattaque, interruption, saisir les données, à la main。使用句型：avoir du mal à。",
+          "starter": "Bonjour monsieur, je suis désolée pour l'attente. Nous avons du mal à avancer rapidement aujourd'hui parce que..."
+        }
+      },
+      "summary": {
+        "content": "Ce texte est une leçon de français basée sur une actualité : un hôpital parisien a subi une cyberattaque. Le professeur explique le vocabulaire clé de cette phrase d'actualité, comme 'cible', 'cyberattaque', 'interruption', et 'saisir les données à la main'. Il détaille également des points de grammaire comme le participe présent ('provoquant', 'devant'). À la fin, l'auteur fait la promotion de son podcast de bruits blancs et de sons de la nature conçu pour aider les gens à s'endormir.",
+        "keywords": [
+          "cyberattaque",
+          "hôpital",
+          "données",
+          "participe présent",
+          "podcast"
+        ],
+        "difficulty_note": "Le texte est de niveau B1. Bien que le vocabulaire de l'actualité (cyberattaque, données) soit spécifique, les explications fournies par le professeur rendent la compréhension très accessible. La principale difficulté réside dans l'usage du participe présent."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.060",
+          "end": "00:04:36.139"
+        },
+        "theme": "Actualité, Cybersécurité et Apprentissage du français",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司提供字幕"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.979",
+          "end_time": "00:00:52.100",
+          "french": "Bonjour, aujourd'hui la leçon est : un hôpital attaqué. Un hôpital du sud de Paris a été la cible d'une cyberattaque, provoquant l'interruption de ses services, les infirmières devant saisir les données à la main.",
+          "chinese": "大家好，今天的课程是：一家遭到攻击的医院。巴黎南部的一家医院遭到网络攻击，导致其服务中断，护士们不得不手工录入数据。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.859",
+          "end_time": "00:01:20.459",
+          "french": "Once again, un hôpital du sud de Paris a été la cible d'une cyberattaque, provoquant l'interruption de ses services, les infirmières devant saisir les données à la main. On commence avec un hôpital. Un hôpital. Attention à l'accent circonflexe. Un hôpital. Un hôpital qui se trouve dans le sud de Paris.",
+          "chinese": "再来一遍，巴黎南部的一家医院遭到网络攻击，导致其服务中断，护士们不得不手工录入数据。我们从“一家医院”（un hôpital）开始。一家医院。注意上面的长音符（accent circonflexe）。一家医院。一家位于巴黎南部的医院。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:20.760",
+          "end_time": "00:01:53.420",
+          "french": "Dans le sud de Paris. Et il a été la cible. The target. La cible. On dit viser une cible. Viser une cible. La cible de quoi ? D'une cyberattaque. Attention, une attaque, c'est Q-U-E à la fin. Provoquant ou causant. Provoquant, causant. C'est-à-dire ayant pour effet, ayant pour conséquence. L'interruption.",
+          "chinese": "在巴黎南部。它成为了目标（la cible）。英文是The target。目标。我们说瞄准目标（viser une cible）。瞄准目标。什么的目标？网络攻击（cyberattaque）的目标。注意，“攻击”（attaque）这个词结尾是Q-U-E。导致（provoquant）或引起（causant）。导致，引起。也就是说，产生了某种效果或后果。中断（L'interruption）。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:53.560",
+          "end_time": "00:02:23.080",
+          "french": "Une interruption, c'est un arrêt, une interruption. Exemple : la pluie a causé l'interruption du match de football. La pluie a causé l'interruption du match de football. Les infirmières, une infirmière, nurse, une infirmière. Devant, c'est le participe présent de devoir, c'est to have to, devoir.",
+          "chinese": "中断（interruption）就是停止、中断。例如：大雨导致足球比赛中断。大雨导致足球比赛中断。护士们（les infirmières），一名护士（une infirmière），英文是nurse，一名护士。必须（devant），这是动词devoir的现在分词，英文是to have to，必须（devoir）。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:23.639",
+          "end_time": "00:02:52.680",
+          "french": "Elles ont dû saisir les données à la main. Saisir les données, c'est-à-dire entrer ou enregistrer les informations. Saisir les données, c'est enregistrer les informations. À la main, by hand, à la main. Et donc, pas avec un ordinateur, mais plutôt avec un stylo sur du papier, à la main.",
+          "chinese": "她们不得不手工录入数据。录入数据（saisir les données），意思是输入或记录信息。录入数据，就是记录信息。手工地（à la main），英文是by hand，手工地。也就是说，不是用电脑，而是用笔写在纸上，手工地。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:53.460",
+          "end_time": "00:03:25.349",
+          "french": "On dit par exemple : « Je préfère écrire à la main que sur un clavier d'ordinateur ». Un hôpital du sud de Paris a été la cible d'une cyberattaque, provoquant l'interruption de ses services, les infirmières devant saisir les données à la main.",
+          "chinese": "比如我们会说：“我更喜欢手写，而不是用电脑键盘打字。”巴黎南部的一家医院遭到网络攻击，导致其服务中断，护士们不得不手工录入数据。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:27.419",
+          "end_time": "00:03:57.900",
+          "french": "Juste un petit mot pour vous dire que si vous avez du mal à vous endormir, j'ai créé un podcast pour vous aider. Sur ce podcast, vous pouvez écouter des sons de la nature et des bruits blancs. En anglais : in this podcast, you can listen to relaxing nature sounds and white noise to help you fall asleep. Chaque épisode dure 8 heures sans publicité. Vous pouvez écouter par exemple le bruit de l'eau, des oiseaux dans une forêt ou le bruit du vent ou de la pluie.",
+          "chinese": "简单说几句，如果您有入睡困难，我制作了一档播客来帮助您。在这个播客中，您可以听到大自然的声音和白噪音。用英语说就是：in this podcast, you can listen to relaxing nature sounds and white noise to help you fall asleep（在这个播客中，您可以聆听令人放松的自然声音和白噪音来帮助您入睡）。每集长达8小时，没有广告。比如，您可以听到水声、森林里的鸟鸣，或是风声和雨声。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:58.069",
+          "end_time": "00:04:03.909",
+          "french": "Voilà, si ça vous intéresse, je mets les liens dans les notes de cet épisode. Merci et bonne écoute !",
+          "chinese": "好了，如果您感兴趣，我会把链接放在这集节目的简介里。谢谢，祝您收听愉快！"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:06.300",
+          "end_time": "00:04:36.139",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司提供字幕"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:04:36.139",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 10,
+        "source_video_name": "Rediffusion - Un hôpital attaqué (Hospital under attack).json",
+        "tags": []
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

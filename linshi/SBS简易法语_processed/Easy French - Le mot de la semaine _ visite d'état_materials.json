@@ -1,0 +1,550 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ visite d'état.json",
+  "channel": "SBS简易法语",
+  "video_name": "Easy French - Le mot de la semaine _ visite d'état",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T00:08:02.651Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 8,
+          "review_words": 0
+        },
+        "grammar": [
+          "L'expression du but avec 'afin de'",
+          "La proposition participiale (Le participe présent)",
+          "Le pronom adverbial 'y'"
+        ],
+        "speaking": [
+          "Discussing the significance of international diplomatic events",
+          "Describing professional challenges and career progression for migrants"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "migrants qualifiés",
+            "part_of_speech": "nom masculin pluriel",
+            "ipa": "[miɡʁɑ̃ kalifje]",
+            "chinese": "技术移民",
+            "example_sentence": {
+              "french": "Le podcast aide les migrants qualifiés à reconstruire leur carrière.",
+              "chinese": "该播客帮助技术移民重建他们的职业生涯。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              7
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "« Work in Progress » est un podcast pour aider les migrants qualifiés à reconstruire leur carrière.",
+                "chinese": "《工作进行时》是一个旨在帮助技术移民重建职业生涯的播客。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "visite d'État",
+            "part_of_speech": "nom féminin",
+            "ipa": "[vizit deta]",
+            "chinese": "国事访问",
+            "example_sentence": {
+              "french": "Une visite d'État est la visite officielle d'un chef d'État.",
+              "chinese": "国事访问是一国元首的正式访问。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              5
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Cette semaine, notre mot est « visite d'État ».",
+                "chinese": "本周我们的词汇是“国事访问”。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "rejeté",
+            "part_of_speech": "verbe (participe passé)",
+            "ipa": "[ʁəʒte]",
+            "chinese": "拒绝",
+            "example_sentence": {
+              "french": "Beaucoup d'entreprises m'ont rejeté au début.",
+              "chinese": "起初很多公司都拒绝了我。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              7
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Beaucoup d'entreprises m'ont rejeté.",
+                "chinese": "很多公司都拒绝了我。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "astuces",
+            "part_of_speech": "nom féminin pluriel",
+            "ipa": "[astys]",
+            "chinese": "技巧 / 妙招",
+            "example_sentence": {
+              "french": "Il donne des astuces précieuses pour trouver un emploi.",
+              "chinese": "他提供了寻找工作的宝贵技巧。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              7
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "...des conseils d'experts et des astuces précieuses pour vous aider.",
+                "chinese": "……专家的建议和宝贵的技巧来帮助你。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "symbolique",
+            "part_of_speech": "adjectif",
+            "ipa": "[sɛ̃bɔlik]",
+            "chinese": "象征性的",
+            "example_sentence": {
+              "french": "C'est aussi un événement symbolique pour les 2 pays.",
+              "chinese": "这对于两国来说也是一个具有象征意义的事件。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est aussi un événement symbolique qui montre l'importance de la relation.",
+                "chinese": "这更是一个具有象征意义的盛事，彰显了关系的重要性。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "diplomatiques",
+            "part_of_speech": "adjectif",
+            "ipa": "[diplɔmatik]",
+            "chinese": "外交的",
+            "example_sentence": {
+              "french": "Ils veulent renforcer les relations diplomatiques.",
+              "chinese": "他们想要加强外交关系。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...afin de renforcer les relations diplomatiques.",
+                "chinese": "……为了加强外交关系。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "protocole",
+            "part_of_speech": "nom masculin",
+            "ipa": "[pʁɔtɔkɔl]",
+            "chinese": "礼仪 / 协议",
+            "example_sentence": {
+              "french": "Il y a beaucoup de protocole à respecter.",
+              "chinese": "有许多礼仪规范需要遵守。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il y a beaucoup de protocole à respecter lors d'une visite d'État.",
+                "chinese": "在国事访问期间，有许多礼仪规范需要遵守。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "entretenir",
+            "part_of_speech": "verbe",
+            "ipa": "[ɑ̃tʁətniʁ]",
+            "chinese": "维持 / 维护",
+            "example_sentence": {
+              "french": "Le but est d'entretenir les relations existantes.",
+              "chinese": "目的是维护现有的关系。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...le but étant d'entretenir ou de renforcer les relations existantes.",
+                "chinese": "……目的正是为了维护或进一步巩固现有的关系。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "faire progresser votre carrière",
+            "meaning": "促进职业发展",
+            "example": {
+              "french": "Ces conseils vous aident à faire progresser votre carrière.",
+              "chinese": "这些建议助你实现职业发展。"
+            },
+            "usage_note": "Commonly used in professional contexts to discuss growth and promotion.",
+            "source_ids": [
+              1,
+              7
+            ]
+          },
+          {
+            "expression": "arrivée au pouvoir",
+            "meaning": "上台 / 执政",
+            "example": {
+              "french": "Depuis son arrivée au pouvoir, il a beaucoup voyagé.",
+              "chinese": "自上任以来，他经常出访。"
+            },
+            "usage_note": "Used to describe the moment a political leader or party begins their term.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "témoigner du respect",
+            "meaning": "表示尊重 / 彰显尊重",
+            "example": {
+              "french": "Cette cérémonie sert à témoigner du respect entre les nations.",
+              "chinese": "这一仪式旨在彰显各国间的相互尊重。"
+            },
+            "usage_note": "'Témoigner de' means to show or give evidence of a quality or feeling.",
+            "source_ids": [
+              5
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "L'expression du but avec 'afin de'",
+            "structure": "afin de + infinitif",
+            "explanation": "Used to express a goal or purpose. It is more formal than 'pour'. It is used when the subject of the main verb and the infinitive is the same.",
+            "example": {
+              "french": "Anthony Albanese a voyagé dans de nombreux pays... afin de renforcer les relations diplomatiques.",
+              "chinese": "安东尼·阿尔巴尼斯前往多个国家……以加强外交关系。"
+            },
+            "usage_note": "In formal writing or diplomatic contexts, 'afin de' is preferred over 'pour'.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "La proposition participiale (Le participe présent)",
+            "structure": "Nom/Pronom + participe présent (étant)",
+            "explanation": "The present participle 'étant' can be used in an absolute construction to explain a cause or a goal, functioning like a subordinate clause.",
+            "example": {
+              "french": "...le but étant d'entretenir ou de renforcer les relations existantes entre 2 pays.",
+              "chinese": "……其目的正是为了维护或进一步巩固两国之间已有的关系。"
+            },
+            "usage_note": "This structure is very common in formal explanations to link a goal to the preceding action.",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "name": "Le pronom adverbial 'y'",
+            "structure": "y + verbe",
+            "explanation": "The pronoun 'y' replaces a place or a context previously mentioned (often introduced by 'à', 'dans', 'sur').",
+            "example": {
+              "french": "Vous y entendrez des récits de vie inspirants.",
+              "chinese": "你将在那里（指播客中）听到鼓舞人心的真实故事。"
+            },
+            "usage_note": "Here, 'y' refers to the podcast 'Work in Progress' mentioned in the previous sentence.",
+            "source_ids": [
+              1,
+              7
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "Nasal vowel 'an/en' found in diplomatic terms.",
+              "examples": [
+                "renforcer",
+                "entretenir",
+                "gouvernements"
+              ]
+            }
+          ],
+          "liaison": [
+            "visite d'État [vizit deta]",
+            "dîner d'État [dine deta]",
+            "conseils d'experts [kɔ̃sɛj dɛkspɛʁ]"
+          ],
+          "intonation": "Formal diplomatic speech often uses a steady, descending intonation at the end of informative sentences to sound authoritative."
+        },
+        "vocabulary_network": {
+          "theme": "La Diplomatie",
+          "core_word": "Relations Internationales",
+          "related_groups": [
+            {
+              "category": "Acteurs",
+              "words": [
+                "chef d'État",
+                "Premier ministre",
+                "gouvernements"
+              ]
+            },
+            {
+              "category": "Événements",
+              "words": [
+                "visite d'État",
+                "rencontres politiques",
+                "cérémonies",
+                "dîner d'État"
+              ]
+            },
+            {
+              "category": "Objectifs",
+              "words": [
+                "renforcer",
+                "entretenir",
+                "diplomatiques",
+                "protocole"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Une ___ d'État sert donc à ___ l'amitié entre 2 pays, à ___ de projets ___ concernant l'économie, la ___ ou encore la ___.",
+            "answer": "visite, renforcer, discuter, communs, culture, sécurité",
+            "explanation": "根据原文第5句，国事访问的目的包括加强友谊、讨论共同项目（经济、文化、安全）。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, qu'est-ce qui distingue une visite d'État d'une simple visite de travail ?",
+            "options": {
+              "A": "Elle est uniquement réservée aux discussions sur l'économie.",
+              "B": "C'est un événement symbolique qui montre l'importance de la relation entre 2 pays.",
+              "C": "Elle est moins formelle qu'une visite de travail.",
+              "D": "Elle ne comporte jamais de dîner officiel."
+            },
+            "answer": "B",
+            "explanation": "原文第3句明确指出：'une visite d'État n'est pas une simple visite de travail. C'est aussi un événement symbolique qui montre l'importance de la relation entre 2 pays.'",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Depuis son arrivée au pouvoir, Anthony Albanese a voyagé dans de nombreux pays afin de renforcer les relations diplomatiques.",
+            "answer": "自上任以来，安东尼·阿尔巴尼斯已前往许多国家，以加强外交关系。",
+            "explanation": "重点在于 'arrivée au pouvoir' (上任/执政) 和 'afin de' (为了/以) 的准确翻译。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Remplacez 'afin de' par 'pour' dans la phrase suivante : 'Il effectue des visites afin de représenter l'Australie.'",
+            "answer": "Il effectue des visites pour représenter l'Australie.",
+            "explanation": "当主句和从句主语一致时，'afin de' 和 'pour' 后面都接不定式，表示目的。'afin de' 语气更正式。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "visite d'État",
+            "renforcer",
+            "communs",
+            "sécurité",
+            "diplomatiques"
+          ],
+          "covered_grammar": [
+            "afin de + infinitif",
+            "le but étant de"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est aussi un événement symbolique qui montre [nom]...",
+            "explanation": "Used to define the deeper meaning of an event.",
+            "example": {
+              "french": "C'est aussi un événement symbolique qui montre l'importance de notre amitié.",
+              "chinese": "这也是一个彰显我们友谊重要性的象征性事件。"
+            }
+          },
+          {
+            "pattern": "Le but étant de [infinitif]...",
+            "explanation": "A formal way to state the objective of an action.",
+            "example": {
+              "french": "Nous organisons ce forum, le but étant de partager nos expériences.",
+              "chinese": "我们组织这个论坛，目的是分享我们的经验。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Imaginez que vous êtes un journaliste couvrant la visite d'un dirigeant étranger.",
+          "requirements": "Utilisez les mots 'visite d'État', 'protocole' et 'renforcer les relations'.",
+          "starter": "Aujourd'hui, nous accueillons le président pour une visite d'État historique..."
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the concept of a 'State Visit' (visite d'État) through the lens of Australian diplomacy. It defines the formal and symbolic nature of these visits, contrasting them with regular work trips. Additionally, the text touches upon the professional challenges faced by qualified migrants in Australia and how podcasts can support their career integration.",
+        "keywords": [
+          "diplomatie",
+          "Australie",
+          "visite d'État",
+          "carrière",
+          "migrants"
+        ],
+        "difficulty_note": "The text is rated B1 due to its formal political vocabulary and professional context, though the sentence structures remain accessible."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:03:20"
+        },
+        "theme": "Diplomacy and Career Development",
+        "cefr_level": "B1",
+        "vocabulary_count": 8,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Commencer une nouvelle vie en Australie n'est pas facile. Beaucoup d'entreprises m'ont rejeté. Parfois, j'ai l'impression que je vais abandonner. « Work in Progress » est un podcast pour aider les migrants qualifiés à reconstruire leur carrière dans un nouveau pays. Vous y entendrez des récits de vie inspirants, des conseils d'experts et des astuces précieuses pour vous aider à trouver un emploi et à faire progresser votre carrière. « Work in Progress ». À écouter dès maintenant sur toutes les plateformes de podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时，我觉得自己快要放弃了。《Work in Progress》是一档旨在帮助技术移民在异国他乡重建职业生涯的播客。在这里，您将听到感人至深的人生故事、专家建议以及宝贵的实用技巧，助您寻找工作并提升职业发展。《Work in Progress》，现已在各大播客平台上线。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.619",
+          "end_time": "00:01:06.989",
+          "french": "Vous êtes sur SBS French. Bonjour et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Murat avec vous. Cette semaine, notre mot est « visite d'État ». On en parle parce que le président d'Israël était en visite officielle en Australie. Mais qu'est-ce que ça veut dire, une visite d'État ? Une visite d'État, c'est la visite officielle d'un chef d'État dans un autre pays.",
+          "chinese": "您正在收听的是 SBS 法语节目。大家好，欢迎来到 SBS Easy French 的“每周一词”栏目。我是 Marianne Murat。本周我们的关键词是“国事访问”（visite d'État）。我们之所以讨论这个词，是因为以色列总统正在对澳大利亚进行正式访问。那么，什么是“国事访问”呢？国事访问是指一国元首对另一国进行的正式访问。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:06.989",
+          "end_time": "00:01:28.650",
+          "french": "C'est une visite très formelle, avec un programme spécial : accueil officiel, rencontres politiques, cérémonies et parfois un dîner d'État. Mais une visite d'État n'est pas une simple visite de travail. C'est aussi un événement symbolique qui montre l'importance de la relation entre deux pays.",
+          "chinese": "这是一种非常正式的访问，有着特殊的议程：官方欢迎仪式、政治会晤、典礼，有时还包括国宴。但国事访问不仅仅是简单的事务性访问，它也是一个象征性的事件，展示了两国关系的重要性。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:29.180",
+          "end_time": "00:01:53.760",
+          "french": "En Australie, c'est le Premier ministre qui reçoit ces visites. Il effectue aussi lui-même beaucoup de visites officielles à l'étranger pour représenter l'Australie. Depuis son arrivée au pouvoir, Anthony Albanese a voyagé dans de nombreux pays comme l'Indonésie, la France, le Japon, les États-Unis ou encore l'Inde, afin de renforcer les relations diplomatiques.",
+          "chinese": "在澳大利亚，通常由总理接待此类访问。总理本人也会代表澳大利亚进行多次海外正式访问。自上任以来，安东尼·阿尔巴尼斯已访问过印度尼西亚、法国、日本、美国和印度等多个国家，以加强外交关系。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:53.760",
+          "end_time": "00:02:16.349",
+          "french": "Une visite d'État sert donc à renforcer l'amitié entre deux pays, à discuter de projets communs concernant l'économie, la culture ou encore la sécurité, et à témoigner du respect entre les gouvernements. Il y a beaucoup de protocole à respecter lors d'une visite d'État, le but étant d'entretenir ou de renforcer les relations existantes entre deux pays.",
+          "chinese": "因此，国事访问旨在增进两国友谊，讨论涉及经济、文化或安全等领域的共同项目，并体现政府间的相互尊重。国事访问期间有许多外交礼节需要遵守，其目的是维护或加强两国间的现有关系。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:16.349",
+          "end_time": "00:02:46.180",
+          "french": "Voilà, c'était « visite d'État », c'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes. On se retrouve la semaine prochaine pour un autre mot de la semaine.",
+          "chinese": "好了，以上就是本周的关键词“国事访问”。欢迎您在 SBS 法语网站及各大平台收听我们的“每周一词”以及 Easy French 新闻节目。我们下周再见，一起学习下一个每周一词。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:52.150",
+          "end_time": "00:03:20.810",
+          "french": "Commencer une nouvelle vie en Australie n'est pas facile. Beaucoup d'entreprises m'ont rejeté. Parfois, j'ai l'impression que je vais abandonner. « Work in Progress » est un podcast pour aider les migrants qualifiés à reconstruire leur carrière dans un nouveau pays. Vous y entendrez des récits de vie inspirants, des conseils d'experts et des astuces précieuses pour vous aider à trouver un emploi et à faire progresser votre carrière. « Work in Progress ». À écouter dès maintenant sur toutes les plateformes de podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时，我觉得自己快要放弃了。《Work in Progress》是一档旨在帮助技术移民在异国他乡重建职业生涯的播客。在这里，您将听到感人至深的人生故事、专家建议以及宝贵的实用技巧，助您寻找工作并提升职业发展。《Work in Progress》，现已在各大播客平台上线。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:20.810",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 7,
+        "source_video_name": "Easy French - Le mot de la semaine _ visite d'état.json",
+        "tags": [
+          "专家见解",
+          "美食"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "Cross-field consistency",
+            "detail": "The occurrence_count for 'visite d'État' is listed as 5, but the term appears 7 times in the subtitles (Subtitle 2: 3 times, Subtitle 3: 1 time, Subtitle 5: 2 times, Subtitle 6: 1 time). Additionally, source_id 6 is missing from its source_ids list.",
+            "field": "language_analysis.vocabulary[1]"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

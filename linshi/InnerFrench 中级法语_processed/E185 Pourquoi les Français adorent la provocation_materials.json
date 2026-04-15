@@ -1,0 +1,1247 @@
+{
+  "source_file": "E185 Pourquoi les Français adorent la provocation.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E185 Pourquoi les Français adorent la provocation",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T15:11:12.589Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "The Restrictive 'Ne... Que'",
+          "Past Conditional for Hypothetical Consequences",
+          "Subjunctive Mood after 'afin que' vs Infinitive after 'afin de'"
+        ],
+        "speaking": [
+          "Discussing the cultural boundaries of humor and satire",
+          "Debating the historical evolution of freedom of expression in France"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "blasé",
+            "part_of_speech": "adjectif",
+            "ipa": "[blaze]",
+            "chinese": "厌倦的，无动于衷的",
+            "example_sentence": {
+              "french": "On a souvent cette image du Français blasé qui est impossible à choquer.",
+              "chinese": "人们通常有这样一种印象：法国人无动于衷，不可能被震惊。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On a souvent cette image du Français blasé qui est impossible à choquer ou à surprendre.",
+                "chinese": "人们常常有这样一种刻板印象：法国人早已看惯一切，不可能被震惊或出其不意。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "subversif",
+            "part_of_speech": "adjectif",
+            "ipa": "[sybvɛʁsif]",
+            "chinese": "颠覆性的",
+            "example_sentence": {
+              "french": "Il dit des choses subversives sans forcément y croire.",
+              "chinese": "他说一些颠覆性的言论，并不一定真的相信。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il dit des choses subversives ou transgressives sans forcément y croire.",
+                "chinese": "他们说出一些颠覆常规或逾越底线的话，并不一定真的相信这些话。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "unidimensionnel",
+            "part_of_speech": "adjectif",
+            "ipa": "[ynidimɑ̃sjɔnɛl]",
+            "chinese": "单一的，一维的",
+            "example_sentence": {
+              "french": "Cette passion n'est pas aussi unidimensionnelle qu'on peut le croire.",
+              "chinese": "这种热情并不像人们想象的那样单一。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cette passion française pour la provocation n'est pas aussi unidimensionnelle qu'on peut le croire.",
+                "chinese": "法国人对挑衅的热情并不像人们想象的那样单一。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "prémédité",
+            "part_of_speech": "adjectif",
+            "ipa": "[pʁemedite]",
+            "chinese": "预谋的",
+            "example_sentence": {
+              "french": "La provocation est un acte conscient, souvent même prémédité.",
+              "chinese": "挑衅是一种有意识的行为，通常甚至是预谋好的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La provocation est un acte conscient, médité, souvent même prémédité.",
+                "chinese": "挑衅是一种有意识、经过深思熟虑，甚至常常是事先预谋的行为。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "représailles",
+            "part_of_speech": "nom féminin pluriel",
+            "ipa": "[ʁəpʁezaj]",
+            "chinese": "报复",
+            "example_sentence": {
+              "french": "Le provocateur s'expose à un risque de représailles.",
+              "chinese": "挑衅者面临遭到报复的风险。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              14
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et quatrièmement, un risque de représailles.",
+                "chinese": "第四，或许也是最重要的一点，就是存在遭到报复的风险。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "dévot",
+            "part_of_speech": "nom/adjectif",
+            "ipa": "[devo]",
+            "chinese": "虔诚的（人）",
+            "example_sentence": {
+              "french": "Cette pièce raconte l'histoire d'un faux dévot nommé Tartuffe.",
+              "chinese": "这部剧讲述了一个名叫塔尔图夫的伪虔诚者的故事。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              18,
+              19
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Un dévot, c'est une personne qui manifeste de la dévotion pour la religion.",
+                "chinese": "虔诚的人是指对宗教怀有虔敬之心的人。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "obscurantisme",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ɔpskyʁɑ̃tism]",
+            "chinese": "蒙昧主义",
+            "example_sentence": {
+              "french": "Cette affaire devient un symbole de l'obscurantisme religieux.",
+              "chinese": "这起案件成为了宗教蒙昧主义的象征。"
+            },
+            "cefr_level": "C2",
+            "source_ids": [
+              39,
+              59
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Cette affaire devient rapidement un symbole de l'obscurantisme religieux.",
+                "chinese": "这起案件迅速成为宗教蒙昧主义的象征。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "arbitraire",
+            "part_of_speech": "nom/adjectif",
+            "ipa": "[aʁbitʁɛʁ]",
+            "chinese": "专断，武断",
+            "example_sentence": {
+              "french": "Il dénonce l'arbitraire de la justice.",
+              "chinese": "他谴责司法的专断。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              39
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cette affaire devient un symbole de l'arbitraire de la justice.",
+                "chinese": "这起案件迅速成为司法专断的象征。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "laïcité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[laisite]",
+            "chinese": "世俗主义（政教分离）",
+            "example_sentence": {
+              "french": "La laïcité est la séparation de l'État et de la religion.",
+              "chinese": "世俗主义是国家与宗教的分离。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              41
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Elle pose les bases de ce qui deviendra la laïcité.",
+                "chinese": "它奠定了基础，为一个世纪后出现的世俗主义铺平了道路。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "diffamer",
+            "part_of_speech": "verbe",
+            "ipa": "[difame]",
+            "chinese": "诽谤",
+            "example_sentence": {
+              "french": "On ne peut pas diffamer une personne privée.",
+              "chinese": "我们不能诽谤私人。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              50,
+              84
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "On ne peut pas diffamer une personne privée.",
+                "chinese": "我们不能诽谤私人人物。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "sacrilège",
+            "part_of_speech": "nom masculin",
+            "ipa": "[sakʁilɛʒ]",
+            "chinese": "亵渎，大不敬",
+            "example_sentence": {
+              "french": "Pour beaucoup de Français, c'est vraiment un sacrilège.",
+              "chinese": "对许多法国人来说，这确实是一种亵渎。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              70
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Alors là, pour beaucoup de Français, c'est vraiment un sacrilège.",
+                "chinese": "对许多法国人来说，这简直是一种亵渎神明的行为。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          },
+          {
+            "french": "clivage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[klivaʒ]",
+            "chinese": "分歧，裂痕",
+            "example_sentence": {
+              "french": "Il y a un clivage générationnel qui apparaît.",
+              "chinese": "出现了一种代际分歧。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              85
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "il y a un clivage générationnel qui apparaît.",
+                "chinese": "一种代际分歧正在显现。",
+                "source_video": "Pourquoi les Français adorent la provocation ?"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "une fois n'est pas coutume",
+            "meaning": "破例一次，一反常态",
+            "example": {
+              "french": "Aujourd'hui, une fois n'est pas coutume, on s'attaque à un autre cliché.",
+              "chinese": "今天，一反常态，我们来探讨另一个陈词滥调。"
+            },
+            "usage_note": "Used to introduce something that happens exceptionally, contrary to habit.",
+            "source_ids": [
+              1
+            ]
+          },
+          {
+            "expression": "la langue de Molière",
+            "meaning": "莫里哀的语言（指法语）",
+            "example": {
+              "french": "Vous savez qu'on appelle même le français la langue de Molière.",
+              "chinese": "你们知道人们甚至称法语为莫里哀的语言。"
+            },
+            "usage_note": "A common literary periphrasis for the French language.",
+            "source_ids": [
+              17
+            ]
+          },
+          {
+            "expression": "faire couler beaucoup d'encre",
+            "meaning": "引起广泛讨论，引发争议",
+            "example": {
+              "french": "Cette affaire a fait couler beaucoup d'encre en France.",
+              "chinese": "这起事件在法国引发了热烈讨论。"
+            },
+            "usage_note": "Literally 'to make a lot of ink flow', used for media controversies.",
+            "source_ids": [
+              11
+            ]
+          },
+          {
+            "expression": "sous le manteau",
+            "meaning": "秘密地，私下地",
+            "example": {
+              "french": "Pendant longtemps, ils circulent uniquement sous le manteau.",
+              "chinese": "很长一段时间里，它们只能秘密流传。"
+            },
+            "usage_note": "Refers to the clandestine distribution of forbidden materials.",
+            "source_ids": [
+              63
+            ]
+          },
+          {
+            "expression": "dépasser les bornes",
+            "meaning": "过分，越界",
+            "example": {
+              "french": "Un humoriste français qui dépasse les bornes.",
+              "chinese": "一位越界的法国喜剧演员。"
+            },
+            "usage_note": "Synonymous with 'dépasser les limites'.",
+            "source_ids": [
+              91
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "The Restrictive 'Ne... Que'",
+            "structure": "ne + [verb] + que + [restricted element]",
+            "explanation": "Used to express 'only' or 'nothing but'. It is more formal and emphatic than 'seulement'.",
+            "example": {
+              "french": "Ce n'est qu'en 1669 que le Tartuffe est enfin autorisé.",
+              "chinese": "直到1669年，《伪君子》才终于获得许可。"
+            },
+            "usage_note": "The 'que' is placed directly before the word or phrase it restricts.",
+            "source_ids": [
+              25
+            ]
+          },
+          {
+            "name": "Past Conditional for Hypothetical Consequences",
+            "structure": "avoir/être (conditional) + past participle",
+            "explanation": "Used to express an action that would have happened in the past under certain conditions, often used to describe avoided risks.",
+            "example": {
+              "french": "ce qui aurait risqué de faire gagner l'extrême droite.",
+              "chinese": "这本可能会冒着让极右翼获胜的风险。"
+            },
+            "usage_note": "Often used with 'risquer de' to describe a potential danger that did not materialize.",
+            "source_ids": [
+              32
+            ]
+          },
+          {
+            "name": "Subjunctive Mood after 'afin que' vs Infinitive after 'afin de'",
+            "structure": "afin que + [subject] + [subjunctive verb] / afin de + [infinitive]",
+            "explanation": "Used to express purpose. Use 'afin de' when the subjects of both clauses are the same, and 'afin que' when they are different.",
+            "example": {
+              "french": "Il prétend être un bon catholique uniquement afin de manipuler une famille bourgeoise.",
+              "chinese": "他假装自己是个虔诚的天主教徒，仅仅是为了操纵一个资产阶级家庭。"
+            },
+            "usage_note": "In the text, 'afin de' is used because Tartuffe is the subject of both 'prétend' and 'manipuler'.",
+            "source_ids": [
+              19
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[y] vs [u]",
+              "description": "Distinguishing the French 'u' (subversif) from 'ou' (dévot).",
+              "examples": [
+                "subversif",
+                "dévot"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_États-Unis [lez‿etazyni]",
+            "un_homme [œ̃n‿ɔm]",
+            "leurs_aînés [lœʁz‿ene]"
+          ],
+          "intonation": "The speaker uses a rising intonation for lists of historical figures (Diderot, Montesquieu, Rousseau) and a falling intonation for emphatic conclusions."
+        },
+        "vocabulary_network": {
+          "theme": "Provocation and Satire",
+          "core_word": "La Provocation",
+          "related_groups": [
+            {
+              "category": "Actions",
+              "words": [
+                "choquer",
+                "transgresser",
+                "dépasser les limites",
+                "moquer"
+              ]
+            },
+            {
+              "category": "Actors",
+              "words": [
+                "humoriste",
+                "provocateur",
+                "satiriste",
+                "dissident"
+              ]
+            },
+            {
+              "category": "Consequences",
+              "words": [
+                "polémique",
+                "scandale",
+                "représailles",
+                "censure"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "On a souvent cette image du Français ___ qui est impossible à ___ ou à ___ parce qu'il a déjà tout vu, tout fait et qui, pour se ___, utilise la ___.",
+            "answer": "blasé, choquer, surprendre, divertir, provocation",
+            "explanation": "这段话描述了典型的法国人刻板印象：由于见多识广而显得无动于衷，为了寻求消遣而使用挑衅手段。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi Serge Gainsbourg a-t-il brûlé un billet de 500 francs à la télévision ?",
+            "options": {
+              "A": "Parce qu'il était trop riche et ne savait pas quoi faire de son argent.",
+              "B": "Pour dénoncer la pression fiscale et les impôts trop élevés.",
+              "C": "Pour montrer que l'argent n'a aucune valeur dans l'art.",
+              "D": "Parce que c'était un acte légal pour faire de la publicité."
+            },
+            "answer": "B",
+            "explanation": "根据原文第73条，他这样做是为了抗议税收压力，他声称自己的收入中有74%要交税。",
+            "source_ids": [
+              73
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "La France devient le premier pays au monde à supprimer officiellement ce délit.",
+            "answer": "法国成为世界上第一个正式废除这一罪行的国家。",
+            "explanation": "这里的'délit'指的是前文提到的'blasphème'（亵渎神明罪）。",
+            "source_ids": [
+              40
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant la structure restrictive 'ne... que' : 'Le Tartuffe est autorisé seulement en 1669.'",
+            "answer": "Le Tartuffe n'est autorisé qu'en 1669.",
+            "explanation": "使用'ne... que'结构可以替换'seulement'，使句子更具强调意味，符合原文风格。",
+            "source_ids": [
+              25
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "blasé",
+            "choquer",
+            "surprendre",
+            "divertir",
+            "provocation",
+            "délit"
+          ],
+          "covered_grammar": [
+            "ne... que"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il ne faut pas croire qu'il existe...",
+            "explanation": "Used to debunk a common misconception.",
+            "example": {
+              "french": "Il ne faut pas croire qu'il existe un droit inconditionnel à la provocation.",
+              "chinese": "我们绝不能认为存在一种无条件的挑衅权利。"
+            }
+          },
+          {
+            "pattern": "Ce qui est certain, c'est que...",
+            "explanation": "Used to introduce a definitive fact amidst a debate.",
+            "example": {
+              "french": "Ce qui est certain, c'est que la provocation reste un sujet brûlant.",
+              "chinese": "可以肯定的是，挑衅仍然是一个热门话题。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are a journalist interviewing a modern French satirist who has just been censored.",
+          "requirements": "Use vocabulary like 'subversif', 'laïcité', and 'dépasser les bornes'. Ask about the risk of 'représailles'.",
+          "starter": "Pensez-vous que votre dernière caricature a dépassé les bornes ?"
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the deep-rooted French tradition of provocation, tracing its history from Molière's 'Tartuffe' and Voltaire's fight against religious obscurantism to modern figures like Coluche, Gainsbourg, and the Charlie Hebdo tragedy. It analyzes provocation as a tool for social progress, a core component of national identity, and a fundamental aspect of freedom of expression, while acknowledging the growing generational divide regarding the 'right to shock'.",
+        "keywords": [
+          "Provocation",
+          "Liberté d'expression",
+          "Satire",
+          "Molière",
+          "Voltaire",
+          "Charlie Hebdo"
+        ],
+        "difficulty_note": "The text is suitable for B2-C1 learners due to its abstract philosophical concepts, historical references, and sophisticated vocabulary."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:39:53"
+        },
+        "theme": "The Culture of Provocation in France",
+        "cefr_level": "B2/C1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.019",
+        "end_time": "00:39:53.099",
+        "duration_minutes": 0,
+        "cefr_level": "B2/C1",
+        "subtitle_count": 91,
+        "source_video_name": "E185 Pourquoi les Français adorent la provocation.json",
+        "tags": [
+          "顶级思维",
+          "搞钱"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.019",
+          "end_time": "00:00:26.699",
+          "french": "Pourquoi les Français adorent la provocation ? Salut à toutes et à tous, j'espère que vous allez bien. Aujourd'hui, une fois n'est pas coutume, on s'attaque à un autre cliché sur mes compatriotes, leur passion pour la provocation.",
+          "chinese": "为什么法国人如此热爱“挑衅”？大家好，希望你们一切都好。今天，我们一反常态，来探讨关于我同胞的另一个刻板印象：他们对“挑衅”的热爱。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:26.969",
+          "end_time": "00:00:49.380",
+          "french": "On a souvent cette image du Français blasé qui est impossible à choquer ou à surprendre parce qu'il a déjà tout vu, tout fait et qui, pour se divertir, utilise la provocation. Il dit des choses subversives ou transgressives sans forcément y croire, juste pour le plaisir de voir la réaction de son interlocuteur.",
+          "chinese": "我们脑海中常有这样一个法国人的形象：他们玩世不恭，很难被惊吓或冒犯，因为他们已经见多识广；为了消遣，他们会利用“挑衅”。他们会说一些颠覆性或逾矩的话，未必真的相信，纯粹是为了看对方的反应。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:49.719",
+          "end_time": "00:01:03.460",
+          "french": "L'incarnation de ce stéréotype étant évidemment le chanteur Serge Gainsbourg, provocateur professionnel qui a réussi à scandaliser l'opinion publique aussi bien par ses œuvres que par sa vie privée.",
+          "chinese": "这一刻板印象的化身显然是歌手塞尔日·甘斯布（Serge Gainsbourg），他是一位专业的挑衅者，无论是作品还是私生活，都成功地引起了公众的愤慨。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:03.770",
+          "end_time": "00:01:32.390",
+          "french": "Bien sûr, je ne prétends pas que les Français ont le monopole de la provocation. Regardez les États-Unis, Donald Trump a bâti toute sa carrière politique dessus. Regardez le Royaume-Uni, l'Italie, le Brésil. Partout, il y a des personnalités qui choquent, qui transgressent, qui dépassent les limites. Mais il semble y avoir quelque chose de différent en France. Chez nous, la provocation semble plus acceptée qu'ailleurs.",
+          "chinese": "当然，我并不是说法国人垄断了挑衅。看看美国，唐纳德·特朗普的整个政治生涯都建立在挑衅之上。看看英国、意大利、巴西，到处都有令人震惊、逾越界限的人物。但在法国，情况似乎有所不同。在我们这里，挑衅似乎比其他地方更容易被接受。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:32.409",
+          "end_time": "00:02:01.930",
+          "french": "plus valorisée même. Elle fait partie de la culture, de l'identité nationale. Pourtant, il ne faut pas croire qu'il existe un droit inconditionnel à la provocation chez nous. Et oui, même en France, les provocateurs peuvent s'attirer des ennuis, peuvent avoir des problèmes. Justement, l'un d'entre eux l'a appris récemment. Il s'appelle Pierre-Emmanuel Barré. Je ne pense pas que vous le connaissiez, à moins que vous ne suiviez de près les médias français.",
+          "chinese": "甚至更受推崇。它已成为文化和国家认同的一部分。然而，不要以为在我们国家存在无条件的挑衅权。没错，即使在法国，挑衅者也可能招致麻烦。最近就有一位深有体会，他叫皮埃尔-埃马纽埃尔·巴雷（Pierre-Emmanuel Barré）。除非你密切关注法国媒体，否则我想你可能不认识他。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:02.260",
+          "end_time": "00:02:27.210",
+          "french": "Pierre-Emmanuel Barré, c'est un humoriste, adepte de l'humour noir, souvent vulgaire et très provocateur. Sa cible préférée étant le président Emmanuel Macron et plus généralement la classe politique. Mais le 10 novembre dernier, c'est à cause d'une blague sur la police française qu'il s'est retrouvé au cœur d'une grande polémique.",
+          "chinese": "皮埃尔-埃马纽埃尔·巴雷是一位喜剧演员，擅长黑色幽默，言语往往粗俗且极具挑衅性。他最喜欢的攻击目标是总统埃马纽埃尔·马克龙，以及更广泛的政治阶层。但在去年11月10日，因为一个关于法国警察的笑话，他陷入了一场巨大的争议中心。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:27.259",
+          "end_time": "00:02:55.659",
+          "french": "Une blague pour laquelle le ministre de l'Intérieur lui-même a décidé de porter plainte contre lui. Alors, qu'a-t-il dit pour provoquer un tel tollé, une telle indignation ? Eh bien, lors d'une émission sur Radio Nova, une station de radio indépendante, plutôt proche de la gauche, voire de l'extrême gauche, Pierre-Emmanuel Barré a comparé la police française à Daech, l'État islamique.",
+          "chinese": "内政部长本人甚至决定对他提起诉讼。那么，他到底说了什么才引起如此大的轩然大波和愤慨呢？在Radio Nova（一家立场偏左甚至极左的独立电台）的一档节目中，皮埃尔-埃马纽埃尔·巴雷将法国警察比作恐怖组织“达伊沙”（伊斯兰国）。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:56.120",
+          "end_time": "00:03:12.620",
+          "french": "S'il a fait cette comparaison, c'est parce que récemment, des médias ont diffusé des vidéos filmées par des gendarmes pendant une manifestation. Dans ces vidéos, on voit les gendarmes frapper et insulter des manifestants en ayant l'air de trouver ça amusant.",
+          "chinese": "他之所以做这个类比，是因为最近媒体播放了一些宪兵在示威活动中拍摄的视频。在这些视频中，可以看到宪兵殴打并辱骂示威者，而且看起来还乐在其中。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:12.860",
+          "end_time": "00:03:38.569",
+          "french": "Cette affaire s'ajoute à une longue liste de cas de violences policières qui sont de plus en plus médiatisées, notamment des accusations récentes de viols commis par des policiers dans des commissariats. Donc, Pierre-Emmanuel Barré s'est permis de comparer ça aux vidéos d'exécution et de torture que les membres de Daech publiaient sur les réseaux sociaux.",
+          "chinese": "这件事加入了一系列日益受到媒体关注的警察暴力案件清单，特别是最近关于警察在警察局内实施强奸的指控。因此，皮埃尔-埃马纽埃尔·巴雷竟敢将此与“达伊沙”成员在社交网络上发布的处决和酷刑视频相提并论。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:38.840",
+          "end_time": "00:03:59.370",
+          "french": "Bien sûr, il a tourné ça de manière humoristique. Il a dit, je cite : « La police française, c'est comme Daech, mais avec la sécurité de l'emploi. » Oui, parce que les policiers ont le statut de fonctionnaires, donc ils sont très protégés et ne peuvent pas se faire licencier aussi facilement que dans une entreprise privée.",
+          "chinese": "当然，他是以幽默的方式表达的。他原话是：“法国警察就像达伊沙，只不过有编制。”是的，因为警察拥有公务员身份，受到高度保护，不能像在私企那样被轻易解雇。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:59.900",
+          "end_time": "00:04:24.810",
+          "french": "Cette affaire a fait couler beaucoup d'encre en France. Certains ont défendu l'humoriste au nom de la liberté d'expression. D'autres ont estimé qu'il était allé trop loin, que comparer la police française à Daech était inacceptable. Cet événement illustre bien que cette passion française pour la provocation n'est pas aussi unidimensionnelle qu'on peut le croire.",
+          "chinese": "这件事在法国引起了广泛讨论。有些人以言论自由之名支持这位喜剧演员；另一些人则认为他做得太过分了，将法国警察比作“达伊沙”是不可接受的。这一事件很好地说明，法国人对挑衅的热情并非人们想象的那样单一。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:24.980",
+          "end_time": "00:04:53.060",
+          "french": "Mais avant d'aller plus loin, essayons de définir ce qu'on entend par provocation. Pour moi, une vraie provocation repose sur quatre ingrédients. Premièrement, une intentionnalité. La provocation est un acte conscient, médité, souvent même prémédité. Ce n'est pas un dérapage, un geste incontrôlé. Ce n'est pas une maladresse. Le provocateur sait ce qu'il fait.",
+          "chinese": "但在深入探讨之前，让我们先试着定义什么是“挑衅”。对我来说，真正的挑衅包含四个要素。第一，意图性。挑衅是一种有意识、经过思考，甚至往往是预谋的行为。它不是失言，不是失控的举动，也不是笨拙。挑衅者清楚自己在做什么。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:53.430",
+          "end_time": "00:05:22.759",
+          "french": "Deuxièmement, une cible. On provoque quelqu'un ou quelque chose. Une personne, un groupe, une institution, un pays, une norme sociale. La provocation n'existe pas dans le vide. Elle a toujours un adversaire. Troisièmement, une transgression. La provocation franchit une limite. Elle attaque, elle insulte, elle choque, elle dit ou fait quelque chose qui n'est pas censé être dit ou fait.",
+          "chinese": "第二，目标。挑衅是针对某人或某事的。一个人、一个群体、一个机构、一个国家或一种社会规范。挑衅不会凭空存在，它总有一个对手。第三，逾矩。挑衅跨越了界限。它攻击、侮辱、震惊，说出或做出不该说或不该做的事。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:23.100",
+          "end_time": "00:05:43.240",
+          "french": "Et quatrièmement, et c'est peut-être le plus important, un risque de représailles. Le provocateur s'expose à des conséquences : une attaque, une sanction, une atteinte à sa réputation, parfois pire. Sans ce risque, il n'y a pas vraiment de provocation, il y a juste une transgression gratuite.",
+          "chinese": "第四，也许是最重要的一点：报复的风险。挑衅者面临后果：攻击、制裁、名誉受损，有时甚至更糟。如果没有这种风险，那就不是真正的挑衅，而只是无谓的逾矩。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:43.579",
+          "end_time": "00:06:10.889",
+          "french": "Quand on regarde l'histoire de France à travers ce prisme, on se rend compte que la provocation a joué un rôle central dans la construction de la culture française. Des philosophes aux humoristes, des artistes aux journalistes, des générations de Français ont utilisé la provocation pour critiquer, pour dénoncer, pour faire avancer les idées. Alors aujourd'hui, je voudrais explorer cette question avec vous.",
+          "chinese": "当我们透过这个棱镜观察法国历史时，会发现挑衅在法国文化的构建中起到了核心作用。从哲学家到喜剧演员，从艺术家到记者，一代又一代的法国人利用挑衅来批评、谴责和推动思想进步。所以今天，我想和大家一起探讨这个问题。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:11.189",
+          "end_time": "00:06:50.600",
+          "french": "Pourquoi la provocation semble-t-elle si importante aux yeux des Français ? Pourquoi cette tradition est-elle si ancrée dans notre culture ? Et surtout, est-elle toujours aussi vivante aujourd'hui ? Pour comprendre le rapport des Français à la provocation, il faut remonter au XVIIe siècle, à l'époque de Louis XIV, le Roi-Soleil. Et plus précisément, il faut s'intéresser à un homme de théâtre que vous connaissez certainement, Molière.",
+          "chinese": "为什么挑衅在法国人眼中如此重要？为什么这一传统在我们的文化中根深蒂固？最重要的是，它在今天依然充满活力吗？要理解法国人与挑衅的关系，必须追溯到17世纪路易十四（太阳王）时代。更准确地说，我们要关注一位你肯定认识的戏剧家：莫里哀。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:50.810",
+          "end_time": "00:07:11.910",
+          "french": "Aujourd'hui, Molière est une figure nationale. Vous savez qu'on appelle même le français la langue de Molière. Ses pièces sont étudiées dans toutes les écoles, jouées dans tous les théâtres. Bref, c'est un monument de la culture française. Mais, à son époque, Molière était considéré par beaucoup comme un provocateur dangereux.",
+          "chinese": "今天，莫里哀是一个国家级的人物。如你所知，我们甚至把法语称为“莫里哀的语言”。他的剧作在所有学校被研究，在所有剧院上演。简而言之，他是法国文化的丰碑。但在他那个时代，莫里哀被许多人视为危险的挑衅者。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:12.220",
+          "end_time": "00:07:22.790",
+          "french": "L'affaire la plus célèbre concerne sa pièce Le Tartuffe ou l'Imposteur. Cette pièce raconte l'histoire d'un faux dévot nommé Tartuffe.",
+          "chinese": "最著名的事件涉及他的剧作《伪君子》（或称《冒牌货》）。这部剧讲述了一个名叫达尔丢夫（Tartuffe）的伪善信徒的故事。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:22.970",
+          "end_time": "00:07:50.860",
+          "french": "Un dévot, c'est une personne qui manifeste de la dévotion pour la religion, une personne très religieuse. Mais comme l'indique le titre de la pièce, le personnage de Tartuffe est un faux dévot, un imposteur. Il prétend être un bon catholique uniquement afin de manipuler une famille bourgeoise pour s'emparer de sa fortune et séduire la femme du maître de maison au passage.",
+          "chinese": "信徒是指对宗教表现出虔诚的人。但正如剧名所示，达尔丢夫这个角色是个伪君子、冒牌货。他假装是虔诚的天主教徒，目的只是为了操纵一个资产阶级家庭，夺取其财产，并顺便勾引男主人的妻子。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:51.060",
+          "end_time": "00:08:20.040",
+          "french": "Dans cette pièce, il y a une des répliques les plus célèbres du théâtre français. C'est Tartuffe qui s'adresse à Dorine, la servante de la maison. Elle porte un décolleté, autrement dit un col largement ouvert, qui laisse le haut de sa poitrine visible. Alors Tartuffe lui dit : « Couvrez ce sein que je ne saurais voir. Par de pareils objets, des âmes sont blessées. Et cela fait venir de coupables pensées. »",
+          "chinese": "在这部剧中，有一句法国戏剧史上最著名的台词。那是达尔丢夫对家里的女仆多琳娜说的。她穿着低胸装，也就是说领口开得很大，露出了胸部上方。于是达尔丢夫对她说：“快遮住那我不该看见的胸脯。这种东西会伤害灵魂，勾起罪恶的念头。”"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:20.470",
+          "end_time": "00:08:47.179",
+          "french": "Autrement dit, il lui demande de cacher sa poitrine car cette vue pourrait provoquer des pensées obscènes. Cette réplique, elle trahit toute son hypocrisie. C'est lui qui regarde Dorine avec désir alors qu'il est censé être un homme très religieux et vertueux. Ici, Molière se moque des personnes qui affichent leur morale en public et accuse les autres de leurs propres défauts.",
+          "chinese": "换句话说，他要求她遮住胸部，因为这景象可能会引发淫秽的想法。这句台词暴露了他所有的虚伪。明明是他带着欲望盯着多琳娜看，而他本该是一个非常虔诚和道德高尚的人。在这里，莫里哀嘲讽了那些在公众面前标榜道德，却将自己的缺点归咎于他人的人。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:47.509",
+          "end_time": "00:09:13.700",
+          "french": "Aujourd'hui, les Français le disent de manière ironique pour faire semblant d'être pudiques quand ils voient une poitrine. On dit : « Couvrez ce sein que je ne saurais voir ». Bref, en mai 1664, Molière présente cette comédie devant Louis XIV et sa cour lors d'une grande fête à Versailles. Le roi adore la pièce, le public aussi. Mais, quelques jours plus tard, c'est le scandale.",
+          "chinese": "今天，法国人会讽刺地引用这句话，在看到胸部时假装正经。我们会说：“快遮住那我不该看见的胸脯”。总之，1664年5月，莫里哀在凡尔赛宫的一次盛大庆典上向路易十四及其朝臣展示了这部喜剧。国王很喜欢，观众也很喜欢。但几天后，丑闻爆发了。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:13.700",
+          "end_time": "00:09:40.139",
+          "french": "L'archevêque de Paris exige l'interdiction de la pièce. Pour lui, Molière ne se moque pas seulement des faux dévots, il attaque la religion elle-même. Face à la pression des catholiques, Louis XIV décide d'interdire le Tartuffe. Et attention, on ne parle pas d'une polémique sur les réseaux sociaux. À cette époque, Molière ne risquait pas simplement sa réputation, il risquait sa vie.",
+          "chinese": "巴黎大主教要求禁演此剧。在他看来，莫里哀不仅是在嘲笑伪君子，更是在攻击宗教本身。面对天主教徒的压力，路易十四决定禁止《伪君子》上演。请注意，这可不是社交网络上的口水战。在那个时代，莫里哀面临的不只是名誉受损，而是生命危险。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:40.340",
+          "end_time": "00:10:04.009",
+          "french": "Oui, car les plus dévots des catholiques réclamaient qu'il aille au bûcher, autrement dit qu'il soit brûlé vivant. Mais Molière ne recule pas. Pendant cinq ans, il se bat pour faire jouer sa pièce, il écrit au roi pour plaider sa cause, il réécrit le texte pour le rendre moins provocant, il change même le titre. Rien n'y fait.",
+          "chinese": "是的，因为最虔诚的天主教徒要求将他送上火刑柱，也就是活活烧死。但莫里哀没有退缩。五年来，他为了让剧作上演而奋斗，给国王写信申诉，改写剧本使其不那么具有挑衅性，甚至更改了剧名。但都无济于事。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:10:04.220",
+          "end_time": "00:10:18.149",
+          "french": "Ce n'est qu'en 1669, après trois versions différentes, que le Tartuffe est enfin autorisé. Et là, c'est un triomphe. La pièce devient un immense succès populaire.",
+          "chinese": "直到1669年，在经历了三个不同的版本后，《伪君子》终于获准上演。结果大获成功，这部剧成为了极受欢迎的经典。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:18.490",
+          "end_time": "00:10:46.120",
+          "french": "Ce qui est intéressant, c'est la manière dont Molière justifie sa démarche. Pour lui, la comédie a une mission morale. Il écrit Autrement dit, le rire n'est pas gratuit. Il sert à dénoncer l'hypocrisie",
+          "chinese": "有趣的是莫里哀辩护的方式。对他来说，喜剧肩负着道德使命。他写道：“笑的意义不在于笑本身，而在于揭露虚伪，”"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:46.200",
+          "end_time": "00:11:14.019",
+          "french": "à montrer du doigt ce qui se cache derrière les apparences. Cette idée, utiliser l'humour pour critiquer la société, va traverser les siècles en France. Et 300 ans plus tard, on retrouve exactement le même esprit chez un autre provocateur, Coluche. Coluche, de son vrai nom Michel Colucci, est un humoriste qui était très populaire en France dans les années 70 et 80.",
+          "chinese": "“指明隐藏在表象背后的真相。”这种利用幽默批评社会的想法，在法国流传了几个世纪。300年后，我们在另一位挑衅者科吕什（Coluche）身上发现了完全相同的精神。科吕什，原名米歇尔·科卢奇，是70和80年代在法国极受欢迎的喜剧演员。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:11:14.230",
+          "end_time": "00:11:34.730",
+          "french": "Il était connu pour les caricatures qu'il incarnait dans ses sketchs, aussi bien des politiciens que des patrons, des syndicalistes, des journalistes et, plus généralement, les Français dans leur ensemble. Mais il le faisait avec une telle bienveillance et sincérité que quasiment tout le monde l'appréciait.",
+          "chinese": "他以在小品中塑造的各种讽刺形象而闻名，无论是政治家、老板、工会成员、记者，还是更广泛的法国大众。但他表现得如此善良和真诚，以至于几乎每个人都喜欢他。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:11:34.970",
+          "end_time": "00:11:59.500",
+          "french": "Les gens l'appréciaient aussi pour son engagement envers les plus démunis, les plus pauvres, puisqu'il a créé une association pour leur offrir de la nourriture gratuitement, association qui existe encore aujourd'hui, les Restos du Coeur. Coluche n'avait pas peur de provoquer, au contraire. Sa plus grande provocation a été de se présenter à l'élection présidentielle en 1980.",
+          "chinese": "人们也因为他致力于帮助弱势群体和穷人而爱戴他，因为他创建了一个免费提供食物的协会——“爱心食堂”（Les Restos du Coeur），该协会至今依然存在。科吕什并不害怕挑衅，恰恰相反。他最大的挑衅是在1980年参加总统选举。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:59.769",
+          "end_time": "00:12:29.259",
+          "french": "C'était la première et je crois la seule fois qu'un artiste osait présenter sa candidature à l'élection la plus importante en France. Il avait trouvé un super slogan. « Avant moi, la France était coupée en deux. Avec moi, elle sera pliée en quatre. » Être pliée en quatre, dans la langue informelle, ça veut dire être mort de rire. Vous savez, quand on rit tellement qu'on en a mal au ventre, tellement mal qu'on se plie sur soi-même.",
+          "chinese": "那是第一次，我想也是唯一一次，有艺术家敢于竞选法国最重要的职位。他想出了一个绝妙的口号：“在我之前，法国被劈成两半；有了我，法国将笑成四瓣。”在法语口语中，“笑成四瓣”意味着捧腹大笑。你知道，就是笑得肚子疼，疼到整个人都蜷缩起来。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:29.429",
+          "end_time": "00:12:56.389",
+          "french": "Et la France coupée en deux, ça fait référence à l'opposition politique entre la gauche et la droite qui divisait les Français. Coluche avait l'ambition de réunir tous ceux qui en avaient assez des politiciens de l'époque, qu'ils soient de gauche ou de droite. Rapidement, les sondages ont montré que les Français prenaient sa candidature au sérieux et que beaucoup envisageaient de voter pour lui.",
+          "chinese": "而“被劈成两半的法国”是指当时分裂法国人的左右翼政治对立。科吕什的雄心是团结所有厌倦了当时政客的人，无论他们是左派还是右派。很快，民调显示法国人认真对待他的参选，许多人考虑投票给他。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:56.659",
+          "end_time": "00:13:23.299",
+          "french": "Coluche a commencé à recevoir des menaces de mort et des pressions venant d'un peu partout, si bien qu'il a fini par retirer sa candidature, officiellement pour ne pas prendre des voix aux candidats de gauche, ce qui aurait risqué de faire gagner l'extrême droite. Mais, comme Molière, Coluche faisait de l'humour une arme, une arme qu'il utilisait principalement pour remettre en question l'ordre établi,",
+          "chinese": "科吕什开始收到来自各方的死亡威胁和压力，以至于他最终撤回了参选申请，官方理由是不想分走左翼候选人的选票，以免让极右翼获胜。但就像莫里哀一样，科吕什将幽默作为武器，主要用来质疑既定秩序，"
+        },
+        {
+          "id": 33,
+          "start_time": "00:13:23.379",
+          "end_time": "00:13:45.700",
+          "french": "que ce soit au niveau des institutions ou des mœurs, des règles et valeurs morales des Français. C'est peut-être là une première clé pour comprendre l'attachement des Français à la provocation. En France, le bouffon a toujours eu un rôle particulier, celui de dire la vérité au roi en se protégeant grâce au rire.",
+          "chinese": "无论是针对体制还是社会习俗、道德规则和价值观。这也许是理解法国人迷恋挑衅的第一个关键。在法国，“弄臣”一直扮演着特殊的角色：在笑声的保护下向国王说出真相。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:55.129",
+          "end_time": "00:14:22.570",
+          "french": "Mais il y a d'autres provocateurs qui ont choisi d'être plus frontaux, plus directs, ceux qu'on a appelés les Lumières, dont le plus célèbre, Voltaire. Il écrivait des textes qui étaient très critiques du pouvoir, aussi bien politiques que religieux, critiques qui lui ont valu quelques problèmes. Par exemple, à 23 ans, il a été emprisonné à la Bastille, oui car à l'époque c'était une prison,",
+          "chinese": "但还有一些挑衅者选择了更正面、更直接的方式，那就是所谓的“启蒙思想家”，其中最著名的是伏尔泰。他写的文章对政治和宗教权力都极具批判性，这些批判也给他带来了不少麻烦。例如，23岁时，他因为写诗讽刺当时的摄政王而被关进巴士底狱（当时那里是监狱）。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:14:22.840",
+          "end_time": "00:14:49.539",
+          "french": "à cause de vers satiriques qu'il avait écrits contre le régent, celui qui dirigeait la France à l'époque. Quelques années plus tard, il a été exilé en Angleterre. Ses livres étaient régulièrement interdits et brûlés. D'ailleurs, il a passé une grande partie de sa vie à fuir la censure, s'installant même près de la frontière suisse pour pouvoir s'échapper rapidement en cas de problème.",
+          "chinese": "几年后，他被流放到英国。他的书经常被禁并被焚毁。事实上，他大半辈子都在躲避审查，甚至住在瑞士边境附近，以便在出事时能迅速逃离。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:14:49.879",
+          "end_time": "00:14:57.509",
+          "french": "Mais l'épisode qui illustre le mieux le côté provocateur de Voltaire, c'est l'affaire du chevalier de la barre.",
+          "chinese": "但最能说明伏尔泰挑衅一面的是“拉巴尔骑士案”。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:57.720",
+          "end_time": "00:15:24.710",
+          "french": "En 1766, un jeune chevalier de 20 ans est arrêté parce qu'il ne s'est pas découvert devant une procession religieuse. Autrement dit, il n'a pas enlevé son chapeau. Et parce qu'on l'accuse de posséder le dictionnaire philosophique de Voltaire, une œuvre interdite par l'Église, et aussi d'avoir chanté des chansons contraires à la religion. Le procès est expéditif. Ça va très vite.",
+          "chinese": "1766年，一名20岁的年轻骑士被捕，原因是他没有在宗教游行队伍前脱帽致敬。而且他被指控拥有伏尔泰的《哲学辞典》（教会禁书），并唱过反宗教歌曲。审判非常草率，进行得极快。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:15:24.789",
+          "end_time": "00:15:50.220",
+          "french": "Expéditif, ça veut dire rapide, mais dans le sens où on ne prend pas le temps de bien examiner les choses. Le chevalier de la barre est condamné à mort pour blasphème. On commence par lui couper la langue, puis la tête. Son corps est ensuite brûlé sur un bûcher avec, posé dessus, un exemplaire du livre de Voltaire. Quand Voltaire apprend cette histoire, il est horrifié.",
+          "chinese": "“草率”意味着很快，但带有不花时间仔细审查的含义。拉巴尔骑士因亵渎罪被判处死刑。他们先割掉他的舌头，然后斩首。他的尸体随后在火刑柱上焚烧，上面还放了一本伏尔泰的书。当伏尔泰得知此事时，他感到无比震惊。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:50.419",
+          "end_time": "00:16:19.370",
+          "french": "Il écrit immédiatement un texte, La relation de la mort du chevalier de la barre, un texte qui va circuler dans toute l'Europe. Il y dénonce l'absurdité et la cruauté d'une justice qui tue un jeune homme pour des accusations aussi ridicules. Cette affaire devient rapidement un symbole de l'obscurantisme religieux et de l'arbitraire de la justice, c'est-à-dire le fait qu'elle applique les lois de manière injuste et excessive.",
+          "chinese": "他立即写了一篇文章《拉巴尔骑士之死记述》，传遍了整个欧洲。他在文中谴责了法律的荒谬与残酷，竟然因为如此荒唐的指控处死一名年轻人。此案迅速成为宗教蒙昧主义和司法专横（即不公正且过度执法）的象征。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:16:19.830",
+          "end_time": "00:16:49.000",
+          "french": "25 ans après cet incident, les révolutionnaires français décident de réhabiliter la mémoire du chevalier de la barre en reconnaissant qu'il a été condamné injustement. Et en 1791, ils abolissent le délit de blasphème. La France devient le premier pays au monde à supprimer officiellement ce délit. Ce qui pouvait vous faire condamner à mort quelques années plus tôt devient parfaitement légal du jour au lendemain.",
+          "chinese": "事件发生25年后，法国革命者决定为拉巴尔骑士平反，承认他被不公正地定罪。1791年，他们废除了亵渎罪。法国成为世界上第一个正式取消该罪名的国家。几年前还可能让你被判死刑的行为，一夜之间变得完全合法。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:16:49.460",
+          "end_time": "00:17:16.460",
+          "french": "C'est vraiment un tournant majeur dans l'histoire française. Pour la première fois, un État décide que critiquer la religion, même de manière violente, même de manière choquante, n'est pas un crime. Cette décision va marquer profondément notre culture. Elle pose les bases de ce qui deviendra, un siècle plus tard, la laïcité, la séparation de l'État et de la religion.",
+          "chinese": "这确实是法国历史上的一个重大转折点。国家第一次决定，批评宗教——即使是以暴力或令人震惊的方式——也不再是犯罪。这一决定深刻地影响了我们的文化。它为一个世纪后确立的“世俗主义”（政教分离）奠定了基础。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:17:16.730",
+          "end_time": "00:17:44.779",
+          "french": "Voltaire était sûrement le plus provocateur des Lumières, mais il n'était pas seul dans son combat. Les autres, Diderot, Montesquieu, Rousseau, etc., partageaient la même conviction fondamentale. La raison doit vaincre la superstition. Et pour ça, il faut oser penser par soi-même, ce qui nécessite la liberté de tout questionner, tout critiquer, même ce qui paraît sacré ou intouchable.",
+          "chinese": "伏尔泰无疑是启蒙思想家中最具挑衅性的，但他并非孤军奋战。狄德罗、孟德斯鸠、卢梭等人也持有相同的基本信念：理性必须战胜迷信。为此，必须敢于独立思考，这需要质疑一切、批评一切的自由，即使是那些看似神圣不可侵犯的事物。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:17:45.079",
+          "end_time": "00:18:07.140",
+          "french": "Les Lumières savaient que défendre publiquement cette conviction pouvait les envoyer en prison, en exil et parfois bien pire. Mais ils n'ont pas renoncé parce qu'ils étaient convaincus que la provocation intellectuelle, remettre en cause les évidences, défier les autorités établies, pouvait vraiment faire avancer la société.",
+          "chinese": "启蒙思想家知道，公开捍卫这种信念可能会让他们入狱、流亡，甚至面临更糟的后果。但他们没有放弃，因为他们坚信，智力上的挑衅——挑战显而易见的事实、挑战既定权威——能够真正推动社会进步。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:18:07.319",
+          "end_time": "00:18:19.299",
+          "french": "Aujourd'hui encore, cette tradition reste bien vivante en France. Cette idée que rien n'est sacré, que tout peut être discuté et critiqué, est profondément ancrée dans notre culture.",
+          "chinese": "直到今天，这一传统在法国依然充满活力。这种“没有什么事是神圣的、一切都可以讨论和批评”的想法，在我们的文化中根深蒂固。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:18:19.640",
+          "end_time": "00:18:44.809",
+          "french": "Je sais que c'est parfois difficile à comprendre pour les étrangers qui viennent de pays où la religion ou certaines institutions sont protégées par la loi, mais pour beaucoup de Français, cette liberté de critiquer, y compris de manière provocatrice, c'est un héritage direct des Lumières. Un héritage qu'on a conquis au prix de nombreux sacrifices et qu'il faut continuer à défendre.",
+          "chinese": "我知道，对于来自宗教或某些机构受法律保护的国家的外国人来说，这有时很难理解。但对许多法国人来说，这种批评的自由（包括以挑衅方式批评的自由）是启蒙运动的直接遗产。这是一份以无数牺牲换来的遗产，必须继续捍卫。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:18:54.329",
+          "end_time": "00:19:19.140",
+          "french": "Les philosophes des Lumières ont posé les fondations théoriques de la liberté d'expression. Mais pour que cette liberté devienne une réalité concrète, il fallait des outils. Et en France, l'un de ces outils a été la presse satirique. Ces journaux qui utilisent le dessin et la caricature pour se moquer des puissants. Tout commence avec la Révolution française.",
+          "chinese": "启蒙哲学家为言论自由奠定了理论基础。但要让这种自由成为现实，需要工具。在法国，其中一个工具就是讽刺媒体。这些报纸利用绘画和漫画来嘲讽权贵。这一切始于法国大革命。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:19:19.319",
+          "end_time": "00:19:49.930",
+          "french": "Avant 1789, la presse était étroitement contrôlée par le pouvoir royal. Tout ce qui était trop critique était immédiatement censuré. Avec la révolution, le nombre de journaux explose, passant de quelques dizaines à plus de mille. Et ce qui contribue beaucoup à leur popularité, ce sont les caricatures politiques. On dessine le roi Louis XVI en cochon, la reine Marie-Antoinette en autruche.",
+          "chinese": "1789年之前，报刊受到王权的严密控制。任何过于批判的内容都会立即被审查。随着革命爆发，报纸数量激增，从几十种增加到一千多种。而极大地促进其普及的是政治漫画。人们把国王路易十六画成猪，把王后玛丽·安托瓦内特画成鸵鸟。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:19:50.069",
+          "end_time": "00:20:19.109",
+          "french": "Personne n'est épargné et le public adore ça. Mais cette nouvelle liberté reste fragile. Au XIXe siècle, chaque régime politique essaie de contrôler la presse. Les journaux sont censurés, les caricaturistes emprisonnés. Le célèbre dessinateur Honoré Daumier passe six mois en prison pour avoir représenté le roi Louis-Philippe en gargantua, un géant qui dévore l'argent du peuple.",
+          "chinese": "没有人能幸免，公众对此趋之若鹜。但这种新获得的自由依然脆弱。在19世纪，每个政权都试图控制媒体。报纸被查封，漫画家被监禁。著名画家奥诺雷·杜米埃因将国王路易-菲利普画成“巨人传”中吞噬百姓钱财的巨人，而被判入狱六个月。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:20:19.259",
+          "end_time": "00:20:47.400",
+          "french": "Mais les satiristes persistent. Ils inventent des codes, des symboles, des moyens détournés de critiquer le pouvoir. Le vrai tournant arrive en 1881 avec une loi qui existe encore aujourd'hui, la loi sur la liberté de la presse. Cette loi est révolutionnaire pour l'époque. Elle supprime la censure préalable et autorise la création de journaux sans permission du gouvernement.",
+          "chinese": "但讽刺作家们坚持了下来。他们发明了代码、符号和迂回的方式来批评权力。真正的转折点出现在1881年，当时通过了一项至今仍在生效的法律：新闻自由法。这项法律在当时是革命性的。它废除了预先审查制度，允许在未经政府许可的情况下创办报纸。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:20:47.640",
+          "end_time": "00:21:14.220",
+          "french": "Elle protège le droit de critiquer, de se moquer, de choquer, dans certaines limites. On ne peut pas diffamer une personne privée, on ne peut pas inciter à la haine contre des groupes de personnes. Mais on peut se moquer des religions, des politiciens et des institutions. Grâce à cette loi, la presse satirique française gagne une popularité assez unique au monde à cette époque.",
+          "chinese": "它保护批评、嘲讽和冒犯的权利，但在一定限度内：不能诽谤私人，不能煽动对特定群体的仇恨。但人们可以嘲讽宗教、政客和机构。得益于这项法律，法国讽刺媒体在当时获得了世界上独一无二的普及度。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:21:14.420",
+          "end_time": "00:21:37.509",
+          "french": "Un des exemples les plus emblématiques, c'est le canard enchaîné. Oui, parce que dans la langue familière, on utilise le mot canard pour dire journal. Le canard enchaîné a été fondé en 1915 et il existe encore aujourd'hui. Il est spécialisé dans les enquêtes politiques et il a révélé de nombreux scandales qui ont coûté leur carrière à des politiciens.",
+          "chinese": "其中最典型的例子是《鸭鸣报》（Le Canard enchaîné）。是的，因为在法语口语中，我们用“canard”（鸭子）来指代报纸。《鸭鸣报》创刊于1915年，至今依然存在。它专门从事政治调查，揭露了许多让政客丢掉职业生涯的丑闻。"
+        },
+        {
+          "id": 52,
+          "start_time": "00:21:37.980",
+          "end_time": "00:21:55.940",
+          "french": "Dans la seconde moitié du XXe siècle, une nouvelle génération encore plus provocatrice de journaux satiriques a vu le jour. Parmi eux, on trouve Charlie Hebdo, créé en 1970, qui va devenir le symbole de la provocation à la française.",
+          "chinese": "20世纪下半叶，新一代更具挑衅性的讽刺报纸诞生了。其中包括创刊于1970年的《查理周刊》（Charlie Hebdo），它成为了法式挑衅的象征。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:21:56.119",
+          "end_time": "00:22:25.859",
+          "french": "Pendant des décennies, le journal attaque tout le monde. La droite, la gauche, les catholiques, les juifs, les musulmans, les politiciens, les célébrités. Ces caricatures sont souvent vulgaires, parfois de mauvais goût, mais pour ces défenseurs, c'est précisément le but. Dans une démocratie, le droit de choquer fait partie de la liberté d'expression. Malheureusement, comme vous le savez, cet engagement va coûter la vie à plusieurs de ses employés.",
+          "chinese": "几十年来，该报攻击所有人：右派、左派、天主教徒、犹太人、穆斯林、政客、名人。这些漫画往往很粗俗，有时甚至品味低俗，但对于其捍卫者来说，这正是目的所在。在民主国家，冒犯的权利是言论自由的一部分。不幸的是，如你所知，这种坚持让几名员工付出了生命代价。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:22:26.140",
+          "end_time": "00:22:53.259",
+          "french": "En 2006, Charlie Hebdo republie des caricatures du prophète Mahomet qui avaient provoqué une polémique au Danemark. Le journal reçoit des menaces de mort. En 2011, ses locaux sont incendiés. Mais les dessinateurs de Charlie continuent. Jusqu'à ce que, le 7 janvier 2015, deux terroristes islamiques entrent dans les bureaux du journal et assassinent 12 personnes.",
+          "chinese": "2006年，《查理周刊》转载了曾在丹麦引起争议的先知穆罕默德漫画。该报收到了死亡威胁。2011年，其办公地点遭到纵火。但《查理》的画师们继续坚持。直到2015年1月7日，两名伊斯兰恐怖分子闯入报社办公室，杀害了12人。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:22:53.660",
+          "end_time": "00:23:22.980",
+          "french": "En France, des millions de personnes montrent leur soutien en manifestant et en partageant le slogan « Je suis Charlie ». Même des gens qui n'appréciaient pas le journal. Car, pour beaucoup de Français, cette attaque ne visait pas seulement Charlie Hebdo. Elle visait le droit même de provoquer, de se moquer, de blasphémer. Mais, à l'étranger, les réactions sont plus nuancées. Certains journaux américains refusent de republier les caricatures.",
+          "chinese": "在法国，数百万人通过游行和分享“我是查理”（Je suis Charlie）的口号来表达支持。甚至包括那些并不喜欢该报的人。因为对许多法国人来说，这次袭击不仅针对《查理周刊》，它针对的是挑衅、嘲讽和亵渎的权利本身。但在国外，反应则更为复杂。一些美国报纸拒绝转载这些漫画。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:23:23.190",
+          "end_time": "00:23:48.970",
+          "french": "Des intellectuels anglo-saxons critiquent Charlie Hebdo en l'accusant d'islamophobie. En France, ces critiques sont mal comprises. Comment peut-on reprocher à des dessinateurs assassinés d'avoir été trop provocateurs ? Et c'est peut-être là que se situe la différence culturelle la plus profonde entre la France et d'autres pays. Pour beaucoup de Français, la liberté d'expression inclut le droit d'offenser.",
+          "chinese": "一些西方知识分子批评《查理周刊》，指责其“恐伊斯兰”。在法国，这些批评很难被理解。怎么能责怪被谋杀的画师过于挑衅呢？这也许就是法国与其他国家之间最深刻的文化差异所在。对许多法国人来说，言论自由包括“冒犯的权利”。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:23:49.210",
+          "end_time": "00:24:13.289",
+          "french": "Une institution, une religion, une idéologie, tout peut être moqué, critiqué, caricaturé. C'est pas toujours de bon goût, c'est pas toujours drôle, on peut être d'accord ou pas, mais c'est un droit fondamental, conquis au fil des siècles, que beaucoup considèrent comme non négociable. Vous voyez, les journaux satiriques incarnent vraiment cette tradition.",
+          "chinese": "一个机构、一种宗教、一种意识形态，一切都可以被嘲弄、批评、漫画化。这并不总是高雅的，也不总是好笑的，你可以同意也可以反对，但这是一项几个世纪以来争得的基本权利，许多人认为这是不可谈判的。你看，讽刺报纸真正体现了这一传统。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:24:13.430",
+          "end_time": "00:24:36.680",
+          "french": "Ils sont les héritiers directs de Voltaire et des Lumières. Utilisez l'ironie et la provocation pour questionner les pouvoirs, quels qu'ils soient. Et, pour eux, le jour où l'on n'aura plus le droit de choquer, c'est la liberté d'expression elle-même qui sera morte. Bon, je sais que c'est un sujet difficile, sensible, et que tout le monde n'est pas d'accord avec cette position.",
+          "chinese": "他们是伏尔泰和启蒙运动的直接继承者。利用讽刺和挑衅来质疑任何形式的权力。对他们来说，一旦失去了冒犯的权利，言论自由本身也就消亡了。我知道这是一个困难且敏感的话题，并不是每个人都同意这一立场。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:24:36.859",
+          "end_time": "00:25:12.390",
+          "french": "Mais je pense que c'est important de comprendre d'où vient cette culture de la provocation en France et pourquoi elle est si importante aux yeux de beaucoup de mes compatriotes. Jusqu'ici, on a vu des provocateurs qui avaient un objectif assez clair. Moquer l'hypocrisie sociale chez Molière, combattre l'obscurantisme chez Voltaire, défendre la liberté d'expression chez la presse satirique,",
+          "chinese": "但我认为，理解法国这种挑衅文化的来源，以及为什么它在许多同胞眼中如此重要，是非常关键的。到目前为止，我们看到的挑衅者都有相当明确的目标：莫里哀嘲讽社会虚伪，伏尔泰打击蒙昧主义，讽刺媒体捍卫言论自由。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:25:12.569",
+          "end_time": "00:25:35.880",
+          "french": "Mais il existe une autre forme de provocation en France, plus trouble, plus ambiguë. C'est celle des artistes qui choquent pour repousser les limites de ce qu'on a le droit de dire, de montrer, d'explorer. Ils ne recherchent pas forcément une réforme politique ou sociale. Non, leur but c'est plutôt de secouer les consciences, de faire tomber les tabous.",
+          "chinese": "但在法国还存在另一种形式的挑衅，它更模糊、更暧昧。那是艺术家的挑衅，他们通过冒犯来突破言论、展示和探索的界限。他们不一定追求政治或社会改革。不，他们的目的是震撼意识，打破禁忌。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:25:36.309",
+          "end_time": "00:26:05.900",
+          "french": "Et pour comprendre cette tradition, il faut commencer par un personnage extrêmement polémique, Donatien Alphonse François de Sade, plus connu sous son titre de Marquis de Sade. C'est lui qui a donné son nom au sadisme, rien que ça. Au départ, rien ne laissait penser qu'il aurait une telle postérité. Il naît en 1740 dans une famille aristocratique et commence par mener une vie assez classique pour son époque.",
+          "chinese": "要理解这一传统，必须从一个极具争议的人物开始：多纳蒂安·阿尔丰斯·弗朗索瓦·德·萨德，更广为人知的头衔是萨德侯爵。正是他为“施虐狂”（sadisme）一词贡献了名字。起初，没有什么迹象表明他会有这样的后世名声。他于1740年出生在一个贵族家庭，开始过着当时相当典型的生活："
+        },
+        {
+          "id": 62,
+          "start_time": "00:26:06.039",
+          "end_time": "00:26:36.490",
+          "french": "mariage arrangé, carrière militaire, quelques scandales mondains. Mais en 1768, les choses se compliquent sérieusement. Il est arrêté pour avoir séquestré et torturé une jeune femme. C'est le début d'une série d'affaires qui vont le conduire en prison, puis à l'asile psychiatrique pendant près de 30 ans, quasiment la moitié de sa vie. Et c'est en prison que le marquis de Sade écrit ses œuvres les plus connues.",
+          "chinese": "包办婚姻、军旅生涯、一些社交丑闻。但在1768年，事情变得严重了。他因非法拘禁和虐待一名年轻女性而被捕。这是一系列案件的开始，导致他在监狱和精神病院度过了近30年，几乎是他生命的一半。正是在狱中，萨德侯爵写下了他最著名的作品。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:26:36.730",
+          "end_time": "00:27:06.700",
+          "french": "Justine, les 120 journées de Sodome, la philosophie dans le boudoir. Je ne vais pas vous détailler le contenu de ces livres, sachez juste qu'ils décrivent des scènes de violence et de sexualité extrêmes. C'est volontairement choquant, encore plus à cette époque. D'ailleurs, ils sont immédiatement interdits et pendant longtemps, ils circulent uniquement sous le manteau. Sous le manteau, c'est une expression qui signifie de manière clandestine, en secret.",
+          "chinese": "《瑞斯丁娜》、《索多玛120天》、《闺房哲学》。我不会向你们详细介绍这些书的内容，只需知道它们描述了极端的暴力和性场面。这在当时是故意惊世骇俗的。事实上，它们立即被禁，长期以来只能“在斗篷下”流传。“在斗篷下”是一个表达，意为秘密地、私下里流传。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:27:07.000",
+          "end_time": "00:27:26.500",
+          "french": "Alors, que penser de Sade ? C'est une question qui divise encore aujourd'hui. Pour certains, c'est simplement un criminel dont les textes reflètent les pires pulsions humaines. Pour d'autres, c'est un philosophe radical qui a osé explorer les zones les plus sombres de la nature humaine.",
+          "chinese": "那么，该如何评价萨德？这是一个至今仍有分歧的问题。对某些人来说，他只是一个罪犯，其文字反映了人类最恶劣的冲动。对另一些人来说，他是一位激进的哲学家，敢于探索人性中最阴暗的区域。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:27:26.809",
+          "end_time": "00:27:54.890",
+          "french": "Des penseurs français majeurs du XXe siècle, comme Simone de Beauvoir ou Michel Foucault, ont vu dans l'œuvre du marquis de Sade une réflexion profonde sur le pouvoir, le désir et la liberté. Ce qui est certain, c'est que Sade a ouvert une brèche. Il a montré que la littérature pouvait tout dire, tout explorer, même l'inadmissible. Et cette idée va influencer des générations d'artistes français.",
+          "chinese": "20世纪重要的法国思想家，如西蒙娜·德·波伏娃或米歇尔·福柯，在萨德侯爵的作品中看到了对权力、欲望和自由的深刻思考。可以肯定的是，萨德打开了一个缺口。他证明了文学可以言说一切、探索一切，甚至是那些不可接受的事物。这一思想影响了一代又一代的法国艺术家。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:27:55.349",
+          "end_time": "00:28:24.009",
+          "french": "Au XIXe siècle, par exemple, Charles Baudelaire publie « Les fleurs du mal », un recueil de poèmes qui célèbre la beauté dans la laideur. L'érotisme, la mort, le mal, le titre lui-même est provocateur. Comment peut-on trouver des fleurs, symbole de beauté, dans le mal ? Six de ses poèmes sont jugés obscènes. Baudelaire est traîné en justice et condamné pour offense à la morale publique.",
+          "chinese": "例如在19世纪，夏尔·波德莱尔出版了《恶之花》，这是一部在丑恶中赞美美丽的诗集。色情、死亡、邪恶，连书名本身都具有挑衅性。怎么能在邪恶中找到象征美丽的“花”呢？他的六首诗被判猥亵。波德莱尔被控告并因“冒犯公共道德”被定罪。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:28:24.250",
+          "end_time": "00:28:45.220",
+          "french": "On devra attendre près d'un siècle, 1949 exactement, pour que ces poèmes soient autorisés. Aujourd'hui, Les Fleurs du Mal est considéré comme l'une des œuvres fondatrices de la poésie moderne. On l'étudie dans tous les lycées français. On peut dire que Serge Gainsbourg est un des nombreux héritiers de Baudelaire.",
+          "chinese": "直到近一个世纪后的1949年，这些诗才获准解禁。今天，《恶之花》被视为现代诗歌的奠基之作。法国所有高中都会学习它。可以说，塞尔日·甘斯布是波德莱尔的众多继承者之一。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:28:45.589",
+          "end_time": "00:29:13.609",
+          "french": "Ces chansons n'ont pas la même ambition littéraire ni la même profondeur métaphysique que les poèmes de Baudelaire, mais tous deux partagent le goût de la provocation et la posture d'artistes maudits dans leur vie privée. Oui, car Gainsbourg cultivait une image de provocateur cynique, alcoolique, politiquement incorrect. Il n'avait pas peur de choquer, de scandaliser, que ce soit dans sa musique ou dans sa vie privée.",
+          "chinese": "他的歌曲没有波德莱尔诗歌那样的文学野心或形而上学的深度，但两人都热爱挑衅，并在私生活中保持着“受诅咒的艺术家”的姿态。是的，因为甘斯布刻意塑造了一个愤世嫉俗、酗酒、政治不正确的挑衅者形象。他不怕惊世骇俗，无论是在音乐中还是私生活里。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:29:13.779",
+          "end_time": "00:29:39.019",
+          "french": "Par exemple, en 1969, il enregistre la chanson « Je t'aime, moi non plus » avec Jan Birkin, l'actrice et chanteuse britannique qui était sa compagne à l'époque. Dans cette chanson, on entend des gémissements qui simulent clairement un orgasme féminin. Le scandale est immédiat. La chanson est interdite dans plusieurs pays, condamnée par le Vatican.",
+          "chinese": "例如在1969年，他与当时的伴侣、英国女演员兼歌手简·柏金录制了歌曲《我爱你，我也不爱你》（Je t'aime, moi non plus）。在这首歌中，可以听到明显模拟女性高潮的呻吟声。丑闻立即爆发。这首歌在多个国家被禁，并受到梵蒂冈的谴责。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:29:39.190",
+          "end_time": "00:30:05.900",
+          "french": "En France aussi, elle fait scandale, mais en même temps, elle devient un immense succès commercial. C'est un peu le paradoxe français. On est choqué, mais on adore ça. Dix ans plus tard, en 1979, Gainsbourg récidive. Cette fois, en enregistrant une version reggae de La Marseillaise, l'hymne national français. Alors là, pour beaucoup de Français, c'est vraiment un sacrilège.",
+          "chinese": "在法国，它也引起了轰动，但与此同时，它在商业上获得了巨大的成功。这就是法国式的悖论：我们感到震惊，但我们热爱它。十年后的1979年，甘斯布再次出手。这一次，他录制了法国国歌《马赛曲》的雷鬼版本。对许多法国人来说，这简直是亵渎。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:30:06.170",
+          "end_time": "00:30:35.980",
+          "french": "Toucher à l'hymne national, c'est toucher à la patrie, à l'identité nationale. Des anciens combattants, des gens qui ont fait la guerre, menacent de l'agresser. Lors d'un concert à Strasbourg, des parachutistes envahissent la scène pour l'empêcher de chanter. Mais Gainsbourg garde son sang-froid. Il les calme en chantant la marseillaise a cappella, c'est-à-dire sans musique, juste avec sa voix, le point levé.",
+          "chinese": "动国歌就是动祖国，动国家认同。一些参加过战争的退伍军人威胁要袭击他。在斯特拉斯堡的一次演唱会上，一群伞兵冲上舞台阻止他演唱。但甘斯布保持了冷静。他通过清唱（即无伴奏，仅凭嗓音）《马赛曲》并举起拳头，平息了他们的愤怒。"
+        },
+        {
+          "id": 72,
+          "start_time": "00:30:36.279",
+          "end_time": "00:31:06.569",
+          "french": "L'image est restée célèbre. On voit ce provocateur notoire défendre l'hymne national devant ceux qui voulaient l'attaquer. C'est assez ironique, non ? Mais sa provocation la plus célèbre, c'est celle qu'il fait en 1984 lors d'une émission de télévision très populaire. Visiblement alcoolisé, comme à chaque fois qu'il passe à la télé, Gainsbourg brûle un billet de 500 francs devant les caméras. A l'époque, 500 francs, c'était beaucoup d'argent.",
+          "chinese": "这一画面成为了经典。我们看到这位著名的挑衅者在想要攻击他的人面前捍卫国歌。这挺讽刺的，不是吗？但他最著名的挑衅发生在1984年的一档热门电视节目中。显然喝醉了的甘斯布（就像他每次上电视一样）在镜头前烧掉了一张500法郎的钞票。在当时，500法郎是一大笔钱。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:31:06.869",
+          "end_time": "00:31:33.900",
+          "french": "Il fait ça pour dénoncer la pression fiscale, les impôts. Il dit qu'il pèse 74% d'impôts sur ses revenus. Donc il brûle ce billet pour montrer symboliquement que l'État lui prend tout son argent. Évidemment, ça fait scandale, notamment parce que détruire de l'argent est un acte illégal en France. Mais Gainsbourg assume complètement. Il dit « je brûle ce que j'ai gagné ».",
+          "chinese": "他这样做是为了谴责税收压力。他说他的收入要交74%的税。所以他烧掉这张钞票，象征性地展示国家拿走了他所有的钱。显然这引起了公愤，尤其是因为在法国损毁货币是违法行为。但甘斯布完全承担责任。他说：“我烧的是我赚来的钱。”"
+        },
+        {
+          "id": 74,
+          "start_time": "00:31:34.230",
+          "end_time": "00:32:01.640",
+          "french": "Vous voyez, Gainsbourg, c'était vraiment ça. Des provocations constantes sur tous les plans. Mais derrière cette image, il y avait un artiste extrêmement exigeant, perfectionniste même, qui a profondément renouvelé la chanson française. Alors, qu'est-ce qui relie ça de Baudelaire et Gainsbourg ? Tous les trois ont utilisé l'art pour transgresser les normes de leur époque. Normes sexuelles, morales, patriotiques.",
+          "chinese": "你看，甘斯布就是这样。在各个层面不断挑衅。但在这种形象背后，他是一位极其严谨、甚至追求完美的艺术家，他深刻地革新了法国歌曲。那么，萨德、波德莱尔和甘斯布之间有什么联系？这三人都利用艺术逾越了时代的规范：性的、道德的、爱国的规范。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:32:01.880",
+          "end_time": "00:32:27.369",
+          "french": "Tous les trois ont été censurés, condamnés ou menacés. Et tous les trois sont aujourd'hui reconnus comme des figures majeures de la culture française. C'est peut-être là le paradoxe de la provocation artistique en France. Sur le moment, elle choque, elle scandalise, elle fait hurler les bien-pensants. Vous savez, ces gens qui se disent vertueux et qui pensent savoir ce qui est moral ou non.",
+          "chinese": "这三人都曾被审查、定罪或威胁。而这三人今天都被公认为法国文化的重要人物。这也许就是法国艺术挑衅的悖论：在当时，它令人震惊、引起愤慨，让那些“卫道士”尖叫。你知道，就是那些自诩道德高尚、认为自己知道什么是对错的人。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:32:27.740",
+          "end_time": "00:32:53.480",
+          "french": "Mais avec le temps, les provocateurs d'hier deviennent des classiques d'aujourd'hui. Les livres interdits entrent dans les programmes scolaires, les chansons censurées deviennent des standards qu'on écoute à la radio. Comme si, en France, la provocation était une étape nécessaire pour faire avancer les mœurs. Les mœurs, je vous l'ai déjà dit, ce sont les règles morales et les comportements socialement acceptables.",
+          "chinese": "但随着时间推移，昨天的挑衅者变成了今天的经典。禁书进入了教学大纲，被禁的歌曲变成了电台播放的经典曲目。仿佛在法国，挑衅是推动社会风尚进步的必要阶段。社会风尚，正如我之前说过的，是指道德规则和社交中可接受的行为。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:32:53.690",
+          "end_time": "00:33:32.839",
+          "french": "Ce qui est inacceptable aujourd'hui sera peut-être banal demain. Et les artistes qui osent franchir les limites, même maladroitement, même de manière discutable, ouvrent la voie pour les générations suivantes. Mais qu'en est-il aujourd'hui ? Est-ce que la provocation est toujours aussi acceptée en France ? Est-ce qu'on peut encore tout dire ? Pour répondre à cette question, je vais vous raconter une histoire très récente qui est liée à celle que j'ai évoquée au début de cet épisode.",
+          "chinese": "今天不可接受的事，明天也许就变得平淡无奇。那些敢于跨越界限的艺术家，即使做得笨拙或有争议，也为后代开辟了道路。但今天的情况如何？挑衅在法国依然被接受吗？我们还能言说一切吗？为了回答这个问题，我将给你们讲一个最近的故事，它与本集开头提到的那个故事有关。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:33:33.140",
+          "end_time": "00:33:48.869",
+          "french": "En octobre 2023, l'humoriste Guillaume Meurisse tient une chronique satirique sur France Inter, la radio publique la plus écoutée de France. On est en pleine guerre entre Israël et le Hamas, un contexte extrêmement tendu.",
+          "chinese": "2023年10月，喜剧演员纪尧姆·默里斯（Guillaume Meurice）在法国收听率最高的公共广播电台France Inter主持一段讽刺专栏。当时正值以色列与哈马斯战争期间，背景极其紧张。"
+        },
+        {
+          "id": 79,
+          "start_time": "00:33:49.049",
+          "end_time": "00:34:17.539",
+          "french": "Et Guillaume Meurice, dans son style provocateur habituel, qualifie le premier ministre israélien Benjamin Netanyahou de « nazi sans prépuce ». Le prépuce, c'est le petit bout de peau à l'extrémité du pénis qui est enlevé lors de la circoncision. Donc là, vous comprenez, il fait référence au fait que Netanyahou est juif tout en comparant le massacre des Palestiniens à celui des juifs par les nazis.",
+          "chinese": "纪尧姆·默里斯以其一贯的挑衅风格，称以色列总理本雅明·内塔尼亚胡为“没包皮的纳粹”。包皮是阴茎末端的一小块皮肤，在割礼中被切除。所以你明白，他是在指涉内塔尼亚胡是犹太人这一事实，同时将对巴勒斯坦人的屠杀与纳粹对犹太人的屠杀相类比。"
+        },
+        {
+          "id": 80,
+          "start_time": "00:34:17.909",
+          "end_time": "00:34:44.329",
+          "french": "La réaction est immédiate. Guillaume Maurice et France Inter sont attaqués en justice. Mais l'humoriste refuse de s'excuser. Il assume complètement ses propos, invoquant la liberté d'expression. Quelques mois plus tard, il ose même répéter sa blague dans l'émission. France Inter finit par le licencier pour faute grave. Cette décision provoque un vrai séisme à France Inter.",
+          "chinese": "反应是即刻的。纪尧姆·默里斯和France Inter被起诉。但这位喜剧演员拒绝道歉。他完全坚持自己的言论，援引言论自由。几个月后，他甚至敢在节目中重复这个笑话。France Inter最终以严重过失为由解雇了他。这一决定在电台内部引起了巨震。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:34:44.539",
+          "end_time": "00:35:08.170",
+          "french": "Plusieurs chroniqueurs démissionnent en soutien à leurs collègues, mais quelques semaines après son licenciement, Guillaume Meurice est recruté par Radio Nova. Oui, la même station que l'humoriste dont je vous parlais en introduction, Pierre-Emmanuel Barré. Et c'est pas un hasard, lui aussi était sur France Inter avant de démissionner car il avait l'impression d'être censuré.",
+          "chinese": "几名专栏作家辞职以支持同事。但在被解雇几周后，纪尧姆·默里斯被Radio Nova聘用。是的，就是我在引言中提到的那位演员皮埃尔-埃马纽埃尔·巴雷所在的电台。这并非巧合，巴雷在辞职前也在France Inter工作，因为他觉得受到了审查。"
+        },
+        {
+          "id": 82,
+          "start_time": "00:35:08.440",
+          "end_time": "00:35:36.230",
+          "french": "Sur Radio Nova, Guillaume Meurice lance une nouvelle émission avec un titre assez ironique, « La dernière ». Il explique lui-même, je cite, « Comme on a compris que la liberté d'expression, c'était surtout un joli concept, on s'est dit que c'était mieux d'imaginer chaque émission comme si c'était la dernière ». Meurice invite tous les dissidents de France Inter à le rejoindre et le succès de l'émission est immédiat.",
+          "chinese": "在Radio Nova，纪尧姆·默里斯推出了一档新节目，名字挺讽刺，叫《最后一期》。他自己解释说，我引用一下：“既然我们明白言论自由主要只是个漂亮的概念，我们觉得最好把每一期节目都想象成最后一期。”默里斯邀请所有离开France Inter的“异见者”加入，节目立即大获成功。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:35:36.409",
+          "end_time": "00:36:04.519",
+          "french": "Le podcast de La Dernière devient rapidement un des plus téléchargés en France. Il publie aussi des extraits de l'émission sur Youtube, si ça vous intéresse. Bref, les anciens provocateurs rejetés par le service public sont devenus les stars d'une radio alternative. La preuve que, malgré les pressions politiques et économiques, le public français reste attaché à cette tradition d'irrévérence, de provocation. Alors...",
+          "chinese": "《最后一期》的播客迅速成为法国下载量最高的播客之一。如果你感兴趣，他也会在Youtube上发布节目片段。总之，被公共服务机构排斥的前挑衅者们成了非主流电台的明星。这证明了尽管存在政治和经济压力，法国公众依然眷恋这种不敬和挑衅的传统。那么……"
+        },
+        {
+          "id": 84,
+          "start_time": "00:36:04.699",
+          "end_time": "00:36:23.300",
+          "french": "C'est vraiment la grande question que chaque société doit se poser. En France, le cadre légal est assez clair. On peut critiquer les idées, les religions, les institutions. On ne peut pas inciter à la haine contre des personnes, diffamer quelqu'un, discriminer.",
+          "chinese": "这确实是每个社会都必须自问的重大问题。在法国，法律框架相当清晰：可以批评思想、宗教、机构；但不能煽动对人的仇恨，不能诽谤他人，不能歧视。"
+        },
+        {
+          "id": 85,
+          "start_time": "00:36:23.699",
+          "end_time": "00:36:52.679",
+          "french": "Mais entre le légal et l'acceptable, il existe une vaste zone grise. Et j'ai l'impression que cette zone grise se rétrécit. On a de moins en moins de marge de manœuvre. Les études d'opinion le confirment. Dix ans après les attentats de Charlie Hebdo, les Français restent majoritairement attachés à la liberté d'expression et au droit de caricaturer, mais il y a un clivage générationnel qui apparaît.",
+          "chinese": "但在法律允许和社交可接受之间，存在着巨大的灰色地带。我感觉这个灰色地带正在缩小，我们的回旋余地越来越小。民意调查证实了这一点。在《查理周刊》遇袭十年后，法国人大多依然坚持言论自由和漫画权，但出现了世代分歧。"
+        },
+        {
+          "id": 86,
+          "start_time": "00:36:52.679",
+          "end_time": "00:37:18.659",
+          "french": "Les jeunes sont moins nombreux que leurs aînés à défendre le droit de se moquer de tout. Ils sont plus sensibles aux effets de certaines paroles sur les minorités, sur les personnes qui peuvent se sentir blessées ou discriminées. Ce qui est certain, c'est que la provocation reste un sujet brûlant en France. Elle fait partie de notre identité nationale, mais elle est aussi source de tensions, de divisions, parfois de drames.",
+          "chinese": "年轻人中支持“嘲讽一切的权利”的人数少于长辈。他们对某些言论对少数群体的影响更为敏感，更在意那些可能感到受伤害或被歧视的人。可以肯定的是，挑衅在法国依然是一个火爆的话题。它是我们国家认同的一部分，但也是紧张、分裂甚至悲剧的源头。"
+        },
+        {
+          "id": 87,
+          "start_time": "00:37:18.809",
+          "end_time": "00:37:44.679",
+          "french": "Peut-être que c'est justement parce qu'elle touche à quelque chose d'essentiel, le rapport entre la liberté individuelle et le vivre ensemble. Jusqu'où peut-on aller dans la critique, dans la moquerie, l'insulte, sans abîmer le tissu social, sans détruire ce qui nous unit ? Il n'y a pas de réponse définitive à cette question. Chaque génération, chaque époque doit renégocier cet équilibre fragile.",
+          "chinese": "也许正是因为它触及了核心问题：个人自由与社会共存之间的关系。在不破坏社会结构、不摧毁团结我们的纽带的前提下，批评、嘲讽和侮辱的底线在哪里？这个问题没有标准答案。每一代人、每一个时代都必须重新协商这种脆弱的平衡。"
+        },
+        {
+          "id": 88,
+          "start_time": "00:37:44.920",
+          "end_time": "00:38:24.550",
+          "french": "Une chose est sûre, tant qu'il y aura des provocateurs en France, il y aura des gens pour les défendre et des gens pour les condamner. Et ce débat lui-même, passionné, parfois violent, jamais définitif, fait partie de ce qui rend la culture française si particulière, si singulière aux yeux du monde. Alors, pourquoi les Français aiment-ils tant provoquer ? Peut-être parce qu'ils ont appris, au fil de leur histoire, que le progrès passe souvent par la transgression.",
+          "chinese": "有一点是肯定的，只要法国还有挑衅者，就会有人捍卫他们，也会有人谴责他们。而这种充满激情、有时甚至激烈的、永无定论的辩论本身，正是让法国文化在世界眼中如此特别、如此独特的原因之一。那么，为什么法国人这么爱挑衅？也许是因为他们在历史长河中领悟到，进步往往通过“逾矩”来实现。"
+        },
+        {
+          "id": 89,
+          "start_time": "00:38:24.789",
+          "end_time": "00:38:54.730",
+          "french": "que les idées nouvelles commencent par choquer avant d'être acceptées, que rire des puissants, se moquer des certitudes, bousculer les tabous, tout ça fait partie d'une forme de liberté à laquelle ils sont profondément attachés. Est-ce que ça signifie que toute provocation est bonne ? Non, bien sûr. Il y a des provocations intelligentes et des provocations stupides, des provocations courageuses et des provocations gratuites, des provocations qui font avancer le débat et des provocations qui ne font que blesser.",
+          "chinese": "新思想在被接受之前往往先引起震惊；嘲笑权贵、讽刺定论、打破禁忌，这一切都是他们深切眷恋的一种自由形式。这是否意味着所有挑衅都是好的？当然不是。有聪明的挑衅，也有愚蠢的挑衅；有勇敢的挑衅，也有无谓的挑衅；有推动辩论的挑衅，也有纯粹伤人的挑衅。"
+        },
+        {
+          "id": 90,
+          "start_time": "00:38:55.030",
+          "end_time": "00:39:25.579",
+          "french": "Mais pour beaucoup de Français, mieux vaut une société où l'on provoque trop qu'une société où l'on n'ose plus rien dire. Mieux vaut supporter quelques excès que vivre dans la peur de choquer. C'est un choix culturel assumé, revendiqué et souvent incompris à l'étranger. L'histoire de Guillaume Meurice et de Radio Nova montre d'ailleurs que cette tradition reste vivante. Quand les provocateurs sont chassés d'un endroit, ils trouvent refuge ailleurs. Et leur public les suit.",
+          "chinese": "但对许多法国人来说，宁要一个挑衅过度的社会，也不要一个什么都不敢说的社会。宁可忍受一些过激行为，也不愿生活在害怕冒犯的恐惧中。这是一种自觉选择、公开宣称且常被国外误解的文化选择。纪尧姆·默里斯和Radio Nova的故事也表明这一传统依然鲜活。当挑衅者被某处驱逐，他们会在别处找到避难所，而观众会追随他们。"
+        },
+        {
+          "id": 91,
+          "start_time": "00:39:25.780",
+          "end_time": "00:39:53.099",
+          "french": "Comme si en France, il y avait toujours une place pour ceux qui osent dire ce que d'autres n'osent pas. La prochaine fois que vous verrez une caricature française qui vous choque, ou un humoriste français qui dépasse les bornes, qui dépasse les limites, rappelez-vous cette histoire. Derrière cette provocation, il y a peut-être un peu de Voltaire, un peu de Coluche, un peu de Charlie. Et, une conviction profonde, la liberté de choquer fait partie de la liberté tout court.",
+          "chinese": "仿佛在法国，总会给那些敢于言他人所不敢言的人留有一席之地。下次当你看到一幅令你震惊的法国漫画，或一个言语出格、逾越界限的法国喜剧演员时，请记住这个故事。在这些挑衅背后，也许有一点伏尔泰的影子，一点科吕什的影子，一点查理的影子。以及一个深刻的信念：冒犯的自由是自由本身的一部分。"
+        }
+      ],
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The word 'dévot' is used as an example for the [u] sound (ou), but its IPA is correctly listed as [devo], which contains the [o] sound, not [u]. A better example for [u] from the text would be 'souvent' or 'pour'.",
+            "field": "deep_learning.pronunciation.key_sounds"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

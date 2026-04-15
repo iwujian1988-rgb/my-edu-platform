@@ -1,0 +1,654 @@
+{
+  "source_file": "L’appel du large (The lure of open waters).json",
+  "channel": "Louis法语课",
+  "video_name": "L’appel du large (The lure of open waters)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T15:20:15.496Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "La voix passive au passé composé",
+          "La concession avec 'Malgré'",
+          "Le préfixe répétitif 're-'"
+        ],
+        "speaking": [
+          "Discussing humanitarian actions and rescue missions",
+          "Describing geographical locations relative to a coast"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "ONG",
+            "part_of_speech": "nom féminin",
+            "ipa": "[o.ɛn.ʒe]",
+            "chinese": "非政府组织",
+            "example_sentence": {
+              "french": "L'ONG Sea-Watch reprend ses missions de sauvetage.",
+              "chinese": "非政府组织“海卫”恢复了其救援任务。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Alors on commence avec l'ONG, c'est-à-dire l'organisation non gouvernementale.",
+                "chinese": "那么我们先从非政府组织说起，也就是非政府组织。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "sauvetage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[sov.taʒ]",
+            "chinese": "救援，营救",
+            "example_sentence": {
+              "french": "Les pompiers font souvent des opérations de sauvetage.",
+              "chinese": "消防员经常进行救援行动。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              4,
+              5,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Le sauvetage, c'est empêcher que quelqu'un se noie ou meure.",
+                "chinese": "救援就是防止有人溺水或死亡。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "reprendre",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁə.pʁɑ̃dʁ]",
+            "chinese": "重新开始，恢复",
+            "example_sentence": {
+              "french": "Elle reprend ses missions après une pause.",
+              "chinese": "她在休息后恢复了任务。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "L'ONG Sea-Watch reprend ses missions de sauvetage en Méditerranée.",
+                "chinese": "非政府组织“海卫”恢复了在地中海的救援行动。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "malgré",
+            "part_of_speech": "préposition",
+            "ipa": "[mal.ɡʁe]",
+            "chinese": "尽管，虽然",
+            "example_sentence": {
+              "french": "Il est sorti malgré la pluie.",
+              "chinese": "尽管下雨，他还是出去了。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Malgré des restrictions italiennes, des dizaines de migrants ont été secourus.",
+                "chinese": "尽管意大利实施了限制措施，数十名移民仍获救。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "secourir",
+            "part_of_speech": "verbe",
+            "ipa": "[sə.ku.ʁiʁ]",
+            "chinese": "救援，救助",
+            "example_sentence": {
+              "french": "On leur a sauvé la vie, on les a secourus.",
+              "chinese": "人们救了他们的命，救助了他们。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5,
+              6
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Des dizaines de migrants ont été secourus cette semaine.",
+                "chinese": "本周有数十名移民获救。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "au large de",
+            "part_of_speech": "locution prépositive",
+            "ipa": "[o laʁʒ də]",
+            "chinese": "在……附近海域，在……岸外",
+            "example_sentence": {
+              "french": "Le bateau se trouve au large de la Libye.",
+              "chinese": "船只位于利比亚附近海域。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Et « au large de », c'est dans la mer, loin des côtes de ce pays.",
+                "chinese": "而“在……附近海域”，是指在海上，远离该国的海岸。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "restriction",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁɛs.tʁik.sjɔ̃]",
+            "chinese": "限制，约束",
+            "example_sentence": {
+              "french": "Il y a des restrictions sur la circulation.",
+              "chinese": "交通方面有限制。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Malgré des restrictions italiennes.",
+                "chinese": "尽管有意大利的限制。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "migrant",
+            "part_of_speech": "nom masculin",
+            "ipa": "[mi.ɡʁɑ̃]",
+            "chinese": "移民，难民",
+            "example_sentence": {
+              "french": "Des dizaines de migrants traversent la mer.",
+              "chinese": "数十名移民横渡大海。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Des dizaines de migrants ont été secourus.",
+                "chinese": "数十名移民获救。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "se noyer",
+            "part_of_speech": "verbe pronominal",
+            "ipa": "[sə nwa.je]",
+            "chinese": "溺水，淹死",
+            "example_sentence": {
+              "french": "Il faut porter un gilet pour ne pas se noyer.",
+              "chinese": "必须穿救生衣以免溺水。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le sauvetage, c'est empêcher que quelqu'un se noie ou meure.",
+                "chinese": "救援就是防止有人溺水或死亡。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          },
+          {
+            "french": "côte",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kot]",
+            "chinese": "海岸，岸边",
+            "example_sentence": {
+              "french": "Le bateau s'éloigne des côtes.",
+              "chinese": "船只正在远离海岸。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Au large des côtes.",
+                "chinese": "在海岸外。",
+                "source_video": "L'appel du large"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "L'appel du large",
+            "meaning": "远航的召唤 / 大海的诱惑",
+            "example": {
+              "french": "Aujourd'hui, la leçon est « L'appel du large ».",
+              "chinese": "今天的课程是“远航的召唤”。"
+            },
+            "usage_note": "A poetic expression referring to the desire to travel or go out to sea.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "C'est-à-dire",
+            "meaning": "也就是说 / 即",
+            "example": {
+              "french": "L'ONG, c'est-à-dire l'organisation non gouvernementale.",
+              "chinese": "ONG，也就是非政府组织。"
+            },
+            "usage_note": "Used to clarify or provide a definition for a term just mentioned.",
+            "source_ids": [
+              3,
+              6
+            ]
+          },
+          {
+            "expression": "Au large de",
+            "meaning": "在……附近海域",
+            "example": {
+              "french": "Des migrants ont été secourus au large de la Libye.",
+              "chinese": "移民在利比亚附近海域获救。"
+            },
+            "usage_note": "Specifically used in maritime contexts to describe a position away from the coast.",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La voix passive au passé composé",
+            "structure": "Sujet + auxiliaire être (au présent) + été + participe passé",
+            "explanation": "Used to emphasize the action or the person receiving the action rather than the doer.",
+            "example": {
+              "french": "Des dizaines de migrants ont été secourus cette semaine.",
+              "chinese": "本周有数十名移民获救。"
+            },
+            "usage_note": "The past participle must agree in gender and number with the subject (migrants = masculine plural, so 'secourus').",
+            "source_ids": [
+              2,
+              3,
+              5,
+              7
+            ]
+          },
+          {
+            "name": "La concession avec 'Malgré'",
+            "structure": "Malgré + Groupe Nominal",
+            "explanation": "Expresses a contrast or obstacle that does not prevent an action from happening.",
+            "example": {
+              "french": "Malgré des restrictions italiennes, l'ONG reprend ses missions.",
+              "chinese": "尽管有意大利的限制，该非政府组织仍恢复了任务。"
+            },
+            "usage_note": "'Malgré' is followed directly by a noun, never by a verb or 'que' (unless in the rare 'malgré que' which is often avoided).",
+            "source_ids": [
+              2,
+              3,
+              7
+            ]
+          },
+          {
+            "name": "Le préfixe répétitif 're-'",
+            "structure": "re- + verbe",
+            "explanation": "The prefix 're-' added to a verb indicates that the action is happening again or returning to a previous state.",
+            "example": {
+              "french": "L'ONG Sea-Watch reprend ses missions.",
+              "chinese": "非政府组织“海卫”恢复（重新开始）其任务。"
+            },
+            "usage_note": "Common examples in the text: reprendre (take again/resume), recommencer (start again).",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ʁ]",
+              "description": "The French 'R' produced in the back of the throat.",
+              "examples": [
+                "reprendre",
+                "sauvetage",
+                "restrictions"
+              ]
+            },
+            {
+              "sound": "[ɑ̃]",
+              "description": "Nasal vowel 'an/en'.",
+              "examples": [
+                "migrants",
+                "reprend",
+                "en Méditerranée"
+              ]
+            }
+          ],
+          "liaison": [
+            "ont été [ɔ̃t‿ete]",
+            "des opérations [dez‿opeʁasjɔ̃]",
+            "dizaines de [dizɛn də] (no liaison)"
+          ],
+          "intonation": "Rising intonation on lists or introductory phrases like 'Alors on commence avec...'"
+        },
+        "vocabulary_network": {
+          "theme": "Humanitarian Maritime Rescue",
+          "core_word": "Sauvetage",
+          "related_groups": [
+            {
+              "category": "Actors",
+              "words": [
+                "ONG",
+                "pompiers",
+                "migrants"
+              ]
+            },
+            {
+              "category": "Actions",
+              "words": [
+                "secourir",
+                "reprendre",
+                "sauver",
+                "empêcher"
+              ]
+            },
+            {
+              "category": "Geography",
+              "words": [
+                "Méditerranée",
+                "Libye",
+                "côte",
+                "au large"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "L'ONG Sea-Watch ___ ses ___ de ___ en Méditerranée, ___ des ___ italiennes et des ___ de ___ ont été ___.",
+            "answer": "reprend, missions, sauvetage, malgré, restrictions, dizaines, migrants, secourus",
+            "explanation": "这句话结合了原文第2和第7句的内容，描述了尽管有政治阻碍，非政府组织仍恢复了救援行动并救助了移民。",
+            "source_ids": [
+              2,
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, que signifie l'expression « au large de » ?",
+            "options": {
+              "A": "Près du centre-ville",
+              "B": "Dans la mer, loin des côtes",
+              "C": "Sur la terre ferme",
+              "D": "Dans un petit lac"
+            },
+            "answer": "B",
+            "explanation": "原文第6行明确解释道：'« au large de », c'est dans la mer, loin des côtes de ce pays.'",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Le sauvetage, c'est empêcher que quelqu'un se noie ou meure.",
+            "answer": "救援就是防止有人溺水或死亡。",
+            "explanation": "这句话定义了'sauvetage'（救援）的含义。注意'empêcher que'后面接虚拟式（se noie, meure）。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase active suivante à la voix passive (en utilisant le passé composé) : « On a secouru des dizaines de migrants. »",
+            "answer": "Des dizaines de migrants ont été secourus.",
+            "explanation": "被动语态由'être'（此处为现在时ont été）+ 过去分词组成。过去分词'secourus'需与主语'migrants'进行性数配合。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "reprendre",
+            "missions",
+            "sauvetage",
+            "malgré",
+            "restrictions",
+            "au large de",
+            "secourir"
+          ],
+          "covered_grammar": [
+            "La voix passive",
+            "La concession avec Malgré"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "[Sujet] reprend ses missions de [Nom].",
+            "explanation": "Used to describe the resumption of a specific professional or humanitarian activity.",
+            "example": {
+              "french": "L'ONG reprend ses missions de sauvetage.",
+              "chinese": "非政府组织恢复了救援任务。"
+            }
+          },
+          {
+            "pattern": "Malgré [Nom], [Proposition].",
+            "explanation": "A structure to introduce a contrast or concession.",
+            "example": {
+              "french": "Malgré la fatigue, il continue de travailler.",
+              "chinese": "尽管疲劳，他仍继续工作。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are a journalist interviewing a spokesperson for Sea-Watch about their recent operations in the Mediterranean.",
+          "requirements": "Use vocabulary like 'sauvetage', 'secourir', and 'malgré'. Mention the location 'au large de la Libye'.",
+          "starter": "Journaliste : Bonjour, pouvez-vous nous expliquer pourquoi vous avez repris vos missions malgré les restrictions ?"
+        }
+      },
+      "summary": {
+        "content": "This lesson covers a news report about the NGO Sea-Watch resuming its humanitarian rescue missions in the Mediterranean Sea. Despite legal and political restrictions imposed by Italy, the organization successfully rescued dozens of migrants off the coast of Libya. The text explains key maritime and humanitarian terms while providing context on the ongoing migration crisis.",
+        "keywords": [
+          "Sea-Watch",
+          "Méditerranée",
+          "sauvetage",
+          "migrants",
+          "Libye",
+          "ONG"
+        ],
+        "difficulty_note": "The text is at a B1 level. It uses specific vocabulary related to humanitarian work and geography, and introduces the passive voice and concessive structures which are typical of intermediate French."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:04:42"
+        },
+        "theme": "Maritime Rescue & Migration",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.539",
+          "end_time": "00:01:03.909",
+          "french": "Bonjour ! Aujourd'hui, la leçon est « L'appel du large ». L'ONG Sea-Watch reprend ses missions de sauvetage en Méditerranée, malgré des restrictions italiennes. Des dizaines de migrants ont été secourus cette semaine au large de la Libye. Once again, l'ONG Sea-Watch reprend ses missions de sauvetage en Méditerranée.",
+          "chinese": "大家好！今天的课程主题是“大海的呼唤”。尽管受到意大利方面的限制，非政府组织 Sea-Watch 仍恢复了在地中海的搜救任务。本周，数十名移民在利比亚海域获救。再次重申，非政府组织 Sea-Watch 恢复了在地中海的搜救任务。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:04.150",
+          "end_time": "00:01:35.400",
+          "french": "Malgré des restrictions italiennes, des dizaines de migrants ont été secourus cette semaine au large de la Libye. Alors on commence avec l'ONG, c'est-à-dire l'organisation non gouvernementale. C'est donc un groupe, une association. « Reprend ses missions » : « reprend », c'est le verbe reprendre.",
+          "chinese": "尽管受到意大利方面的限制，本周仍有数十名移民在利比亚海域获救。我们先从“ONG”开始，即非政府组织。它是一个团体或协会。“Reprend ses missions”（恢复任务）：“reprend”是动词“reprendre”。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:35.829",
+          "end_time": "00:02:08.330",
+          "french": "Elle avait donc arrêté temporairement ses missions et là, elle recommence, elle reprend — « resumes » — ses missions — « missions » — de sauvetage. Le sauvetage, c'est empêcher que quelqu'un se noie ou meure. Le sauvetage : « rescue ». Par exemple, les pompiers font souvent des opérations de sauvetage.",
+          "chinese": "它之前暂时停止了任务，现在重新开始，也就是恢复（resumes）其搜救任务（missions）。“Sauvetage”是指防止某人溺水或死亡，即“救援”（rescue）。例如，消防员经常进行救援行动。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:08.659",
+          "end_time": "00:02:35.909",
+          "french": "Les pompiers font souvent des opérations de sauvetage. « Malgré », « malgré », c'est « despite ». Malgré des restrictions italiennes. « Des dizaines de migrants », « dozens of migrants », des dizaines de migrants ont été secourus. Le verbe secourir.",
+          "chinese": "消防员经常进行救援行动。“Malgré”的意思是“尽管”（despite）。尽管受到意大利方面的限制。“Des dizaines de migrants”即“数十名移民”（dozens of migrants），数十名移民获救。动词是“secourir”。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:36.280",
+          "end_time": "00:03:08.419",
+          "french": "Ici, c'est le participe passé : « secouru », « saved », c'est-à-dire sauvé. On leur a sauvé la vie, on les a secourus. « Cette semaine », « this week », au large de la Libye. Alors, la Libye, c'est le nom d'un pays. Et « au large de », c'est dans la mer, loin des côtes de ce pays. On dirait en anglais « off the coast ». Au large des côtes.",
+          "chinese": "这里使用的是过去分词：“secouru”，即“获救”（saved），也就是被救了。我们救了他们的命，营救了他们。“Cette semaine”即“本周”（this week），在利比亚海域。利比亚是一个国家的名称。而“au large de”是指在海里，远离该国海岸。英语里会说“off the coast”，即在近海或海域。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:03:12.789",
+          "end_time": "00:03:30.629",
+          "french": "L'ONG Sea-Watch reprend ses missions de sauvetage en Méditerranée, malgré des restrictions italiennes. Des dizaines de migrants ont été secourus cette semaine au large de la Libye.",
+          "chinese": "非政府组织 Sea-Watch 恢复了在地中海的搜救任务，尽管受到意大利方面的限制。本周，数十名移民在利比亚海域获救。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:30.780",
+          "end_time": "00:03:59.750",
+          "french": "Voilà, cette leçon est maintenant terminée, mais si vous voulez continuer à m'écouter, vous pouvez me rejoindre sur mon autre podcast qui s'appelle « Choses à savoir ». Je mets le lien dans la description. Sur ce podcast, je réponds à une question par jour en moins de deux minutes. Par exemple : est-il possible de se marier avec une personne morte ? Pourquoi le mois de septembre s'appelle septembre alors qu'il n'est pas le septième mois de l'année ?",
+          "chinese": "好了，这节课到此结束。如果你想继续听我的节目，可以关注我的另一个播客，名为《值得了解的事》（Choses à savoir）。我把链接放在了简介里。在这个播客中，我每天用不到两分钟的时间回答一个问题。例如：是否可以与死者结婚？为什么九月（September）叫这个名字，尽管它并不是一年中的第七个月？"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:59.900",
+          "end_time": "00:04:10.469",
+          "french": "Pourquoi Hello Kitty n'a pas de bouche ? Ou bien pourquoi la Suisse est devenue le pays du chocolat ? Voilà, je mets le lien vers ce podcast dans les notes. Merci !",
+          "chinese": "为什么 Hello Kitty 没有嘴巴？或者为什么瑞士成为了巧克力之国？好了，我把播客链接放在了备注里。谢谢！"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:12.789",
+          "end_time": "00:04:42.600",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:04:42.600",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 10,
+        "source_video_name": "L’appel du large (The lure of open waters).json",
+        "tags": [
+          "社会观察",
+          "新闻时事"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "error",
+            "check": "grammar_accuracy",
+            "detail": "The structure for 'La voix passive au passé composé' incorrectly identifies the auxiliary as 'être (au présent)'. In French, the passive voice in the passé composé uses the auxiliary 'avoir' (e.g., 'ont été'). Additionally, the explanation for Exercise 4 incorrectly labels 'ont été' as the present tense ('现在时'), whereas it is the passé composé of 'être'.",
+            "field": "deep_learning.grammar_points[0].structure"
+          }
+        ],
+        "error_count": 1,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": false
+      }
+    }
+  }
+}

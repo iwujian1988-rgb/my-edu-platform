@@ -1,0 +1,749 @@
+{
+  "source_file": "Allergique au rap_ Impossible. Les macarons_ Surcotés (French Rap Parisian Clichés).json",
+  "channel": "法国日常一件事",
+  "video_name": "对说唱过敏_ 绝不可能。马卡龙_ 名过其实 (法国说唱与巴黎刻板印象)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:12:29.991Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le conditionnel présent pour l'hypothèse",
+          "Avant que + subjonctif VS Avant de + infinitif",
+          "La mise en relief (C'est... qui/que)"
+        ],
+        "speaking": [
+          "Débattre des goûts musicaux et défendre un genre musical",
+          "Nuancer son opinion sur des clichés culturels (ex: les macarons)"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "surcoté",
+            "part_of_speech": "adjectif",
+            "ipa": "[syʁkɔte]",
+            "chinese": "被高估的",
+            "example_sentence": {
+              "french": "C'est vrai que les macarons c'est bon mais pour moi c'est un petit peu surcoté.",
+              "chinese": "确实马卡龙很好吃，但对我来说它有点被高估了。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              24,
+              25,
+              27
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Après c'est un peu surcoté selon moi.",
+                "chinese": "不过我觉得它有点被过度吹捧了。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "décalé",
+            "part_of_speech": "adjectif",
+            "ipa": "[dekale]",
+            "chinese": "另类的，不落俗套的",
+            "example_sentence": {
+              "french": "C'est agréable de cultiver sa curiosité d'une manière plus légère et décalée.",
+              "chinese": "以一种更轻松、更具创意（另类）的方式培养好奇心是令人愉悦的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "d'une manière plus légère et décalée, mais tout aussi efficace.",
+                "chinese": "以一种更轻松、更具创意的方式，而且同样高效。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "sonorité",
+            "part_of_speech": "nom",
+            "ipa": "[sɔnɔʁite]",
+            "chinese": "音色，声响",
+            "example_sentence": {
+              "french": "Elle pourrait assez facilement le comprendre dans les sonorités.",
+              "chinese": "她完全可以从声音（音色）上轻松理解这一点。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je pense qu'elle pourrait assez facilement le comprendre dans les sonorités",
+                "chinese": "我认为她完全可以从声音上轻松理解这一点",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "retranscrit",
+            "part_of_speech": "adjectif / participe passé",
+            "ipa": "[ʁətʁɑ̃skʁi]",
+            "chinese": "转录的，改编的",
+            "example_sentence": {
+              "french": "Le rap français s'inspire des codes américains retranscrits en français.",
+              "chinese": "法国说唱汲取了美国的元素，并以法语的形式加以再现（改编）。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "en s'inspirant vraiment des codes américains retranscrits en français.",
+                "chinese": "真正汲取了美国的元素，并以法语的形式加以再现。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "chantier",
+            "part_of_speech": "nom",
+            "ipa": "[ʃɑ̃tje]",
+            "chinese": "工地，（引申为）庞大的工程/探索领域",
+            "example_sentence": {
+              "french": "Découvrir tout le rap français, c'est un vaste chantier.",
+              "chinese": "探索整个法国说唱界，这绝对是个庞大的工程。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Mais un vaste chantier en tout cas.",
+                "chinese": "不过，这绝对是个庞大的探索领域。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "rythmique",
+            "part_of_speech": "nom",
+            "ipa": "[ʁitmik]",
+            "chinese": "节奏",
+            "example_sentence": {
+              "french": "Elle va vraiment avoir une rythmique très précise.",
+              "chinese": "她的节奏感非常精准。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Elle va vraiment avoir une rythmique très précise",
+                "chinese": "她节奏感非常精准",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "instru",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃stʁy]",
+            "chinese": "伴奏，器乐（instrumental的缩写）",
+            "example_sentence": {
+              "french": "Au niveau de ses instrus, elle a des inspirations diverses.",
+              "chinese": "在她的伴奏方面，她有各种不同的灵感。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11,
+              12,
+              13
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Mais après au niveau de ses instrus, elle va quand même avoir des inspirations assez diverses",
+                "chinese": "不过，在她的音乐制作（伴奏）方面，她还是会受到相当多元的灵感启发",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "retrait",
+            "part_of_speech": "nom",
+            "ipa": "[ʁətʁɛ]",
+            "chinese": "后退，弱化（en retrait：处于次要地位）",
+            "example_sentence": {
+              "french": "Dans certains courants, la voix va être mise un peu en retrait.",
+              "chinese": "在某些流派中，人声反而会被稍稍弱化。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "on va avoir des courants où la voix va être mise un peu en retrait.",
+                "chinese": "也会有一些流派，其中人声反而会被稍稍弱化。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "mouvance",
+            "part_of_speech": "nom",
+            "ipa": "[muvɑ̃s]",
+            "chinese": "潮流，运动，派别",
+            "example_sentence": {
+              "french": "Il y a Gazo, et en plus, toute cette mouvance-là.",
+              "chinese": "有Gazo，另外还有这一大堆潮流。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              18
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "En plus, toute cette mouvance-là.",
+                "chinese": "另外，还有这一大堆潮流。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "déni",
+            "part_of_speech": "nom",
+            "ipa": "[deni]",
+            "chinese": "否认，拒绝承认",
+            "example_sentence": {
+              "french": "Je pense qu'on ne peut pas être allergique au rap, c'est qu'on est dans le déni.",
+              "chinese": "我觉得一个人不可能真的对说唱过敏，这其实只是在自我否认罢了。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              21
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "c'est qu'on est dans le déni.",
+                "chinese": "这其实只是在自我否认罢了。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "faire un état des lieux",
+            "meaning": "做现状盘点，评估现状",
+            "example": {
+              "french": "Il est donc temps de faire un petit état des lieux du rap en France.",
+              "chinese": "因此，现在是时候对法国说唱现状做个简要盘点了。"
+            },
+            "usage_note": "Expression très utilisée dans le monde professionnel ou journalistique pour signifier 'faire le point sur une situation'.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "au fur et à mesure",
+            "meaning": "随着时间的推移，逐步地",
+            "example": {
+              "french": "Mais c'est vrai qu'au fur et à mesure, il s'est vraiment développé en France.",
+              "chinese": "不过确实，随着时间推移，它在法国得到了迅猛发展。"
+            },
+            "usage_note": "Indique une progression dans le temps ou une action qui se fait petit à petit.",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "être allergique à quelque chose",
+            "meaning": "对某事极度反感（比喻义）",
+            "example": {
+              "french": "Il y a des gens qui sont allergiques au rap, qui ne supportent pas.",
+              "chinese": "有些人对说唱过敏，完全无法忍受。"
+            },
+            "usage_note": "Au sens figuré, cela signifie détester fortement quelque chose ou quelqu'un.",
+            "source_ids": [
+              21
+            ]
+          },
+          {
+            "expression": "un truc de touriste",
+            "meaning": "专为游客准备的东西（通常带有贬义，指不够地道）",
+            "example": {
+              "french": "C'est un petit peu surcoté dans le sens où c'est un peu un truc de touriste.",
+              "chinese": "我觉得它有点被过度炒作了，多少带点游客专属的感觉。"
+            },
+            "usage_note": "Langage familier ('un truc') pour désigner une attraction ou un produit qui manque d'authenticité locale.",
+            "source_ids": [
+              25
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le conditionnel présent pour l'hypothèse",
+            "structure": "Si + imparfait, sujet + conditionnel présent",
+            "explanation": "Le conditionnel est utilisé ici pour imaginer une situation irréelle dans le présent (imaginer ce qu'on dirait à une artiste internationale si on la rencontrait).",
+            "example": {
+              "french": "Et si tu devais lui parler déjà un peu du rap en France, [...] qu'est-ce que tu lui dirais ?",
+              "chinese": "如果你要和她聊聊法国说唱，你会对她说什么呢？"
+            },
+            "usage_note": "Dans le texte, les locutrices utilisent beaucoup le conditionnel ('pourrait', 'comprendrait', 'aurait') car toute la conversation est basée sur une situation imaginaire (la visite de Little Simz à Paris).",
+            "source_ids": [
+              5,
+              6,
+              7,
+              9
+            ]
+          },
+          {
+            "name": "Avant que + subjonctif VS Avant de + infinitif",
+            "structure": "Avant que + sujet différent + verbe au subjonctif / Avant de + verbe à l'infinitif (même sujet)",
+            "explanation": "On utilise 'avant que' suivi du subjonctif lorsque le sujet de la proposition principale est différent de celui de la subordonnée. Si le sujet est le même, on utilise 'avant de' suivi de l'infinitif.",
+            "example": {
+              "french": "On lui envoie cette playlist avant qu'elle reprenne l'Eurostar pour rentrer.",
+              "chinese": "我们趁她坐欧洲之星回家之前，把这份歌单发给她。"
+            },
+            "usage_note": "Dans l'exemple 23, les sujets sont 'on' et 'elle', donc 'avant que + subjonctif' (reprenne). Dans l'exemple 25 ('qu'on ait un peu de sucré avant de continuer'), le sujet implicite de 'continuer' est aussi 'on', d'où l'infinitif.",
+            "source_ids": [
+              23,
+              25
+            ]
+          },
+          {
+            "name": "La mise en relief (C'est... qui/que)",
+            "structure": "C'est + élément mis en valeur + qui (sujet) / que (objet direct)",
+            "explanation": "Cette structure permet d'insister sur un élément spécifique de la phrase. 'Qui' remplace le sujet, 'que' remplace le complément d'objet direct.",
+            "example": {
+              "french": "D'ailleurs, c'est elle qui s'est en quelque sorte invitée.",
+              "chinese": "顺便一提，其实是她自己“邀请”了自己呢。"
+            },
+            "usage_note": "Très fréquent à l'oral pour dynamiser le discours et focaliser l'attention de l'auditeur sur l'information clé.",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "Anglicismes en français",
+              "description": "Les mots empruntés à l'anglais (rap, flow, mainstream, New Wave, Spotify) sont souvent prononcés avec un accent hybride ou francisé. Par exemple, le 'r' de 'rap' est souvent roulé ou prononcé à la française [ʁap].",
+              "examples": [
+                "rap",
+                "flow",
+                "mainstream",
+                "New Wave"
+              ]
+            }
+          ],
+          "liaison": [
+            "un petit_état des lieux [ɛ̃.pə.ti.te.ta.de.ljø]",
+            "les_années_80 [le.za.ne.ka.tʁə.vɛ̃]",
+            "pas_un [pa.zœ̃]"
+          ],
+          "intonation": "L'intonation est très conversationnelle, avec de nombreuses hésitations naturelles ('quoi', 'voilà', 'enfin') qui marquent des pauses rythmiques typiques du français parlé spontané."
+        },
+        "vocabulary_network": {
+          "theme": "L'industrie musicale et le rap",
+          "core_word": "Le rap",
+          "related_groups": [
+            {
+              "category": "Création musicale",
+              "words": [
+                "sonorités",
+                "instrus",
+                "rythmique",
+                "flow",
+                "production"
+              ]
+            },
+            {
+              "category": "Tendances et époques",
+              "words": [
+                "mainstream",
+                "New Wave",
+                "mouvance",
+                "âge d'or"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Je pense qu'on ne peut pas être ___ au ___, c'est qu'on est dans le ___. [...] il y a tellement de styles différents, que ce soit dans les ___ ou dans les ___...",
+            "answer": "allergique, rap, déni, thématiques, instrumentations",
+            "explanation": "根据原文第21和22段，Mathilde认为不可能对说唱“过敏”（allergique），这只是一种“否认”（déni），因为说唱在“主题”（thématiques）和“配器”（instrumentations）上有太多不同的风格。",
+            "source_ids": [
+              21,
+              22
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon Mathilde dans le podcast, pourquoi les macarons sont-ils considérés comme 'surcotés' ?",
+            "options": {
+              "A": "Parce que c'est principalement une spécialité pour les touristes et que les Français en mangent rarement au quotidien.",
+              "B": "Parce qu'ils sont beaucoup trop sucrés pour être mangés lors d'un petit goûter.",
+              "C": "Parce qu'ils coûtent trop cher dans les boulangeries parisiennes.",
+              "D": "Parce que la recette originale a été perdue avec le temps."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第25段明确指出：'C'est vrai que les macarons c'est bon mais pour moi c'est un petit peu surcoté dans le sens où c'est un peu un truc de touriste. Après, je pense que les Parisiens ou les Français ils mangent rarement des macarons dans la vie de tous les jours quoi.'",
+            "source_ids": [
+              25
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Il est donc temps de faire un petit état des lieux du rap en France et surtout de conseiller à Little Simz l'écoute de quelques rappeurs ou rappeuses françaises.",
+            "answer": "因此，现在是时候对法国说唱现状做个简要盘点了，尤其是建议Little Simz多听听几位法国说唱歌手。",
+            "explanation": "翻译难点在于固定搭配 'faire un état des lieux'（做现状盘点/评估）以及 'conseiller à [quelqu'un] l'écoute de...'（建议某人听...，这里名词化表达 l'écoute 翻译为动词“听”更符合中文习惯）。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Lisez la phrase suivante tirée du texte : 'On lui envoie cette playlist avant qu'elle reprenne l'Eurostar.' Pourquoi est-il grammaticalement IMPOSSIBLE de transformer cette phrase en utilisant 'avant de + infinitif' (ex: avant de reprendre) sans changer le sens ?",
+            "answer": "Parce que les sujets des deux propositions sont différents. Le sujet de la proposition principale est 'On' (on envoie), tandis que le sujet de la subordonnée est 'elle' (elle reprend l'Eurostar). La structure 'avant de + infinitif' exige que le sujet soit le même pour les deux verbes.",
+            "explanation": "测试对 'avant que + subjonctif' 和 'avant de + infinitif' 规则的理解。当主句和从句主语不同（On vs elle）时，必须使用 'avant que + subjonctif'。只有当主语相同时（例如原文另一处的 'qu'on ait un peu de sucré avant de continuer'，主语都是on），才能使用 'avant de + infinitif'。",
+            "source_ids": [
+              23,
+              25
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "allergique",
+            "déni",
+            "surcoté"
+          ],
+          "covered_grammar": [
+            "Avant que + subjonctif VS Avant de + infinitif"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il est (donc) temps de + infinitif",
+            "explanation": "用于表达“现在是做某事的时候了”，常用于引入一个新的话题或行动。",
+            "example": {
+              "french": "Il est donc temps de faire un petit état des lieux du rap en France.",
+              "chinese": "因此，现在是时候对法国说唱现状做个简要盘点了。"
+            }
+          },
+          {
+            "pattern": "C'est vrai que [A], mais pour moi c'est [B]",
+            "explanation": "用于让步和表达个人观点的句型。先承认某个普遍事实或他人的观点（A），然后提出自己不同的看法（B）。",
+            "example": {
+              "french": "C'est vrai que les macarons c'est bon mais pour moi c'est un petit peu surcoté.",
+              "chinese": "确实马卡龙很好吃，但对我来说它有点被高估了。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和一位法国朋友讨论法国的美食和音乐。朋友认为某个著名的法国特色（比如羊角面包或某位流行歌手）是世界上最好的，但你觉得它名不副实（被高估了）。",
+          "requirements": "使用词汇 'surcoté'，并用 'C'est vrai que... mais...' 句型委婉地表达你的不同意见，同时推荐一个你认为更好的替代品。",
+          "starter": "Je comprends pourquoi tu aimes ça, mais honnêtement..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia et Mathilde imaginent la visite de la rappeuse britannique Little Simz à Paris. Elles en profitent pour faire un état des lieux du rap français, de ses origines américaines à la 'New Wave' actuelle, en soulignant l'émergence de figures féminines. Mathilde présente sa playlist éclectique pour initier Little Simz. Enfin, elles concluent sur une note culinaire, affirmant que les célèbres macarons parisiens sont 'surcotés' et préfèrent recommander une bonne boulangerie.",
+        "keywords": [
+          "rap français",
+          "Little Simz",
+          "New Wave",
+          "playlist",
+          "macarons",
+          "surcoté"
+        ],
+        "difficulty_note": "Le texte est de niveau B2 en raison de son vocabulaire familier et argotique lié à la musique (flow, instrus, surcoté) et de ses structures grammaticales complexes (conditionnel hypothétique, subjonctif) typiques d'une conversation spontanée."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:10:45.100"
+        },
+        "theme": "Musique (Rap français) et Culture parisienne",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:21.609",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, lundi 30 mars 2026, cet épisode, le numéro 2610, s'intitule « On ne peut pas être allergique au rap ».",
+          "chinese": "大家好，我是Laetitia，欢迎收听来自巴黎的《One Thing in a French Day》。希望大家一切顺利，心情愉快。今天是2026年3月30日星期一，本期第2610集节目的标题是“没人会对说唱过敏”。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:22.329",
+          "end_time": "00:00:43.979",
+          "french": "Quel est le contexte de cette conversation avec Mathilde, jeune femme de 25 ans qui travaille dans l'industrie musicale ? Eh bien, toutes les deux, nous avons imaginé que nous recevions la rappeuse anglaise Little Simz à Paris. D'ailleurs, c'est elle qui s'est en quelque sorte invitée, si vous écoutez bien sa chanson Young sur l'album Lotus.",
+          "chinese": "这次与在音乐行业工作的25岁女孩Mathilde的对话背景是什么呢？是这样的，我们俩想象着在巴黎接待英国女说唱歌手Little Simz。而且，如果你仔细听她《Lotus》专辑里的那首《Young》，就会发现某种程度上是她“不请自来”的。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:44.310",
+          "end_time": "00:00:57.420",
+          "french": "Après une galette à la descente de l'Eurostar, un tour à Montmartre pour acheter des vinyles d'Aznavour et visiter l'atelier de Suzanne Valadon au musée de Montmartre, nous projetons une soirée au Supersonic.",
+          "chinese": "下了欧洲之星列车吃过法式煎饼后，我们去蒙马特区逛了逛，买了阿兹纳武尔的黑胶唱片，还参观了蒙马特博物馆里的苏珊·瓦拉东工作室，接着我们计划晚上去Supersonic酒吧。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:00:57.780",
+          "end_time": "00:01:22.579",
+          "french": "Il est donc temps de faire un petit état des lieux du rap en France et surtout de conseiller à Little Simz l'écoute de quelques rappeurs ou rappeuses françaises. Vous apprendrez aussi, au détour de cette conversation, que les macarons, c'est surcoté, eh oui. Cet épisode est donc culturellement intéressant, mais aussi linguistiquement. C'est pour cela que je vous invite à vous abonner",
+          "chinese": "所以，现在是时候简单盘点一下法国说唱的现状了，最重要的是向Little Simz推荐几位法国男女说唱歌手。在我们的闲聊中，你还会发现，马卡龙其实被高估了，没错。因此，这期节目不仅在文化上很有趣，在语言学习上也是如此。这就是为什么我邀请大家订阅"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:22.579",
+          "end_time": "00:01:53.700",
+          "french": "aux lettres qui accompagnent ces épisodes. Si l'apprentissage a parfois besoin d'être méthodique, c'est aussi agréable de cultiver sa curiosité linguistique d'une manière plus légère et décalée, mais tout aussi efficace. Rendez-vous sur onethinginafrenchday.com. Et si tu devais lui parler déjà un peu du rap en France, décrire le rap en France, qu'est-ce que tu lui dirais ?",
+          "chinese": "随节目附上的通讯邮件。虽然学习有时需要循序渐进，但用一种更轻松、更不拘一格却同样有效的方式来培养对语言的好奇心，也是一件乐事。请访问 onethinginafrenchday.com。那么，如果你要向她简单介绍一下法国说唱，描述一下法国说唱的特点，你会怎么说呢？"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:54.230",
+          "end_time": "00:02:10.020",
+          "french": "Je pense qu'elle pourrait assez facilement le comprendre dans les sonorités parce que le rap, qu'il soit français, anglais ou quoi, il est originaire du rap américain.",
+          "chinese": "我觉得她从旋律和节奏上应该很容易就能听懂，因为说唱，无论是法国的、英国的还是哪里的，都起源于美国说唱。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:10.259",
+          "end_time": "00:02:37.550",
+          "french": "Et donc en France, il est arrivé plus dans les années 80, mais en s'inspirant vraiment des codes américains retranscrits en français. Et donc je pense qu'elle comprendrait plutôt ça. Mais c'est vrai qu'au fur et à mesure, il s'est vraiment développé en France. Et d'ailleurs, je ne sais pas si tu savais, mais la France est le deuxième marché mondial du hip-hop derrière les États-Unis. Et donc c'est vraiment un genre qui s'est énormément développé et qui s'est aussi un petit peu séparé en plusieurs courants.",
+          "chinese": "说唱大概是在80年代传入法国的，当时主要是借鉴美国的风格，然后用法语重新演绎。所以我认为她对这方面会比较容易理解。不过随着时间的推移，说唱在法国确实有了长足的发展。顺便说一句，不知道你清不清楚，法国现在是仅次于美国的全球第二大嘻哈市场。所以，这真的是一个发展极其迅猛的音乐流派，并且也逐渐分化出了好几个不同的分支。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:37.550",
+          "end_time": "00:02:49.479",
+          "french": "Aussi en fonction des époques, donc déjà la génération plus 80-90, après une génération plus dans les années 2000-2010, le nouvel âge d'or du rap, etc.",
+          "chinese": "这些分支也与时代有关，比如80到90年代的那一代，然后是2000到2010年代的那一代，也就是说唱的新黄金时代等等。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:02:49.780",
+          "end_time": "00:03:15.340",
+          "french": "Et plus récemment aussi avec la New Wave, qui est plus les rappeurs des années 2020 qui font des choses un petit peu plus expérimentales. Donc voilà, elle aurait beaucoup de choses à découvrir qu'elle comprendrait plus ou moins, je pense. Mais un vaste chantier en tout cas. D'accord. Et son rap à elle, toi tu le qualifierais comment ? Enfin si tu le compares au rap français ?",
+          "chinese": "还有最近的“新浪潮”，主要是2020年代的说唱歌手，他们做的音乐更具实验性。所以，她会有很多新发现，而且我觉得她多多少少都能听懂。不过，这绝对是个庞大的探索过程。好的。那她自己的说唱风格，你会怎么定义呢？就是如果拿来和法国说唱作比较的话？"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:15.340",
+          "end_time": "00:03:34.580",
+          "french": "J'ai essayé de trouver des équivalents mais c'est vrai que je n'ai pas l'impression qu'il y ait exactement ça. Mais elle, je dirais qu'elle a quand même un rap qui est assez marqué par le flow comme on dit. Elle va vraiment avoir une rythmique très précise et sa voix et son texte ressortent beaucoup,",
+          "chinese": "我试着找过类似的法国歌手，但感觉并没有完全一样的。不过就她而言，我觉得她的说唱非常有“flow”（律动）的个人印记。她的节奏感非常精准，而且她的声音和歌词都非常突出，"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:34.580",
+          "end_time": "00:03:49.740",
+          "french": "je trouve. Mais après au niveau de ses instrus, elle va quand même avoir des inspirations assez diverses, que ce soit plus de jazz, je pense de soul, etc. Et beaucoup de travail là-dessus.",
+          "chinese": "我是这么觉得的。但在伴奏方面，她的灵感来源非常多样化，比如融入了更多的爵士乐、灵魂乐等等。她在编曲上真的下了很大功夫。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:03:50.360",
+          "end_time": "00:04:15.939",
+          "french": "Et donc voilà, c'est vrai qu'en France je trouve qu'on n'a pas d'équivalent mais on va avoir justement beaucoup de rappeurs qui se focalisent sur le texte et sur le flow et qui vont avoir des instrus qui peuvent être un peu plus ressemblantes, répétitives et qui sont moins importantes dans le truc. Et à l'inverse, on va avoir des courants où la voix va être mise un peu en retrait.",
+          "chinese": "所以，我觉得在法国确实找不到完全对标的歌手，但我们有很多专注于歌词和律动的说唱歌手，他们的伴奏可能比较雷同、重复，在整首歌里的重要性没那么高。而反过来，我们也有一些流派，人声会被稍微弱化。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:16.149",
+          "end_time": "00:04:44.709",
+          "french": "Et ils vont beaucoup faire ressortir la production. Et c'est notamment le cas de la nouvelle génération. Par exemple, j'aime beaucoup Asinine, qui est aussi une rappeuse, mais de cette nouvelle génération, et qui écrit de très beaux textes. Mais sa parole, elle est un petit peu au sein des instrus, et elle ressort moins que pour Little Simz, par exemple. D'accord. Justement, est-ce que la nouvelle génération, la New Wave, est-ce qu'ils sont plus féminins ?",
+          "chinese": "他们会更加突出音乐制作本身。新生代尤其如此。比如，我非常喜欢Asinine，她也是一位说唱歌手，属于新生代，歌词写得非常美。但她的人声有点融入在伴奏里，不像Little Simz的人声那么突出。明白了。说到这里，新生代，也就是“新浪潮”，女性歌手是不是更多了？"
+        },
+        {
+          "id": 14,
+          "start_time": "00:04:44.980",
+          "end_time": "00:05:04.170",
+          "french": "Ouais je pense que c'est vrai que dans le rap français il y a eu moins d'icônes féminines que par exemple aux États-Unis. À l'époque il y avait quand même Shay qui est connue depuis plus les années 2010 mais on a du mal à citer des icônes quoi.",
+          "chinese": "是的，我觉得相比美国，法国说唱圈的女性代表人物确实比较少。虽然当时有Shay，她从2010年代起就挺出名了，但我们很难列举出那种标志性的女性偶像。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:04.660",
+          "end_time": "00:05:33.519",
+          "french": "Et là de la New Wave du coup, qui veut un peu tout et rien dire mais qui est en gros les rappeurs et rappeuses des cinq dernières années, on a pas mal de femmes qui ressortent, par exemple Asinine que j'ai citée, Zinée, et en fait aussi c'est une génération qui va parler d'autres thématiques, donc des thématiques un peu plus intimes souvent de leur vie etc. Et donc ça laisse un peu plus de place je pense...",
+          "chinese": "而现在的“新浪潮”——这个词虽然有点宽泛，但大致指的就是过去五年涌现的男女说唱歌手——确实有不少女性脱颖而出，比如我刚才提到的Asinine、Zinée。而且，这一代人会探讨一些不同的话题，通常是关于他们生活等更私密的主题。所以我觉得，这给女性留出了更多的发挥空间……"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:33.519",
+          "end_time": "00:06:03.470",
+          "french": "aux femmes que les thématiques habituelles du rap. Ah oui ? Du coup, Mathilde a préparé une playlist de musique de rap français dans laquelle on trouve différentes sortes de rappeurs. Tu peux nous présenter un peu ta playlist qui est disponible sur Spotify ? Je mettrai le lien. C'est une playlist qui dure une heure où j'ai essayé de mettre un petit peu différents styles et différentes époques de rap.",
+          "chinese": "相比于传统的说唱主题，这些话题更适合女性表达。是吗？所以，Mathilde准备了一份法国说唱音乐歌单，里面收录了各种不同类型的说唱歌手。你能给我们简单介绍一下你这个在Spotify上可以听到的歌单吗？我会把链接放出来。这是一份时长一小时的歌单，我尽量挑选了不同风格和不同时代的说唱作品。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:03.470",
+          "end_time": "00:06:30.660",
+          "french": "Et aussi, quand je pouvais, de mettre plus des rappeurs parisiens ou des chansons qui étaient autour de Paris, avec des références parisiennes, etc. Et vous allez vraiment avoir de tout, que ce soit ce qu'on dirait du mainstream, donc des choses qui sont énormément écoutées. Par exemple, Gims, donc vraiment la personne, je pense, qui a été le plus écoutée cette année, l'année dernière. Ninho, Tiakola.",
+          "chinese": "另外，只要条件允许，我尽量多放了一些巴黎的说唱歌手，或者与巴黎有关、带有巴黎元素的歌曲。里面真的什么风格都有，既有我们所说的“主流”音乐，也就是播放量极高的作品。比如Gims，我觉得他绝对是今年和去年收听量最高的歌手。还有Ninho、Tiakola。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:30.660",
+          "end_time": "00:06:54.149",
+          "french": "Gazo, voilà. En plus, toute cette mouvance-là. Un peu des trucs plus anciens avec Titi parisien. Et Oxmo Puccino, notamment, qui est une référence de l'époque. Qui écrit très bien aussi. Qui écrit très bien. Il y aura des trucs un peu plus mélodiques, comme Lino, Casablanca, Dany Dan, voilà, Jwles, Isha.",
+          "chinese": "还有Gazo，差不多就是这一派的。也有一些比较老派的作品，比如带有巴黎街头风情的歌。特别是Oxmo Puccino，他是那个时代的标杆人物。他的词写得也非常好。词写得极好。还有一些旋律性更强的作品，比如Lino、Casablanca、Dany Dan，还有Jwles、Isha。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:06:54.329",
+          "end_time": "00:07:20.879",
+          "french": "Et ensuite pas mal de trucs aussi qui est ce que j'aime un petit peu plus personnellement. Donc que ce soit plus New Wave encore une fois. Ou plus des chansons, enfin pas des chansons du coup mais des morceaux à texte. Donc par exemple Ciel Bleu, H Jeune Crack, Asinine, Josman.",
+          "chinese": "接着还有不少我个人比较偏爱的作品。比如再次提到偏“新浪潮”风格的。或者更偏向于……不能说是歌曲，而是那种注重歌词文本的曲目。比如Ciel Bleu、H Jeune Crack、Asinine、Josman的作品。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:20.879",
+          "end_time": "00:07:37.189",
+          "french": "Voilà, donc un petit peu de tout. Je pense qu'il y a de quoi plaire à tout le monde, même si tout ne plaira pas. Mais voilà, ça donne un bon panorama, je pense. D'accord, ok.",
+          "chinese": "总之，各种风格都有一些。我觉得每个人都能在里面找到自己喜欢的，虽然不可能每首都合胃口。但不管怎样，我觉得这份歌单能很好地展现法国说唱的全貌。好的，明白了。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:38.300",
+          "end_time": "00:07:58.750",
+          "french": "Il y a des gens qui sont allergiques au rap, qui ne supportent pas. Du coup, il y aura quand même un ou deux titres qui pourront être... Ouais. Je pense qu'on ne peut pas être allergique au rap, c'est qu'on est dans le déni. Ah oui ? Oui. Parce qu'il y a tellement... Je pense que si on se dit ça, c'est qu'on est contre. Mais en réalité, il y a tellement de styles différents,",
+          "chinese": "有些人对说唱“过敏”，完全受不了。所以，歌单里还是会有一两首能让他们…… 是的。我觉得没人会真的对说唱过敏，只是在自我否定罢了。是吗？对。因为说唱有太多…… 我觉得如果有人这么说，那只是出于抵触心理。但实际上，说唱有太多不同的风格了，"
+        },
+        {
+          "id": 22,
+          "start_time": "00:07:58.750",
+          "end_time": "00:08:17.000",
+          "french": "que ce soit dans les thématiques ou dans les instrumentations, que si on aime la musique c'est impossible qu'on ne trouve rien dans le rap qu'on aime. Et puis aussi dans la playlist j'ai essayé de mettre pas mal de beaux textes en français et que...",
+          "chinese": "无论是在主题还是在编曲上，只要你喜欢音乐，就不可能在说唱里找不到自己喜欢的作品。另外，在歌单里我也尽量收录了不少歌词写得很美的法语作品，而且……"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:17.240",
+          "end_time": "00:08:40.169",
+          "french": "qui ne sont pas forcément compréhensibles à l'écoute mais qui à la lecture sont intéressants, assez poétiques donc ça peut aussi être intéressant d'un point de vue du français quoi. Ouais de les découvrir. Ouais. Ok. Voilà. C'est bien. Donc ça plaira à Little Simz aussi, on lui envoie cette playlist avant qu'elle reprenne l'Eurostar pour rentrer. Et tu crois qu'elle aime les macarons ?",
+          "chinese": "这些歌词光听可能不一定能完全听懂，但读起来非常有意思，很有诗意，所以从学习法语的角度来看也是很有价值的。对，去探索一下。是的。好的。就是这样。挺好的。所以Little Simz应该也会喜欢的，在她坐欧洲之星回去之前，我们把这份歌单发给她。那你觉得她会喜欢马卡龙吗？"
+        },
+        {
+          "id": 24,
+          "start_time": "00:08:40.730",
+          "end_time": "00:08:50.570",
+          "french": "Tout le monde aime les macarons. Après c'est un peu surcoté selon moi. Ah ouais ? Donc ça serait plutôt quoi toi ? Tu voudrais lui faire découvrir quoi ? Maintenant que moi je lui fais découvrir les galettes. Ah ouais.",
+          "chinese": "每个人都喜欢马卡龙。不过在我看来，马卡龙有点被高估了。是吗？那你觉得吃什么比较好？你想带她去尝点什么？既然我已经带她尝过法式煎饼了。啊对。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:08:50.570",
+          "end_time": "00:09:15.950",
+          "french": "pour un petit goûter. Ouais pour un petit goûter, qu'on ait un peu de sucré avant de continuer notre balade. C'est vrai que les macarons c'est bon mais pour moi c'est un petit peu surcoté dans le sens où c'est un peu un truc de touriste. Après, je pense que les Parisiens ou les Français ils mangent rarement des macarons dans la vie de tous les jours quoi. Mais je vous conseillerais d'aller dans une bonne boulangerie.",
+          "chinese": "当作下午茶点心。对，当作下午茶点心，在继续逛街前吃点甜食。马卡龙确实好吃，但我觉得有点被高估了，因为它更像是专门卖给游客的东西。而且，我觉得巴黎人或者法国人在日常生活中其实很少吃马卡龙。不过，我建议你们去一家不错的面包店。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:15.950",
+          "end_time": "00:09:38.980",
+          "french": "J'ai beaucoup parlé du bar à brioche sur les ondes du podcast, ça pourrait être pas mal ça. Ouais, ouais, ouais. Un petit café. Un petit café. Ouais, c'est vrai. Bah, Little Sims, j'espère que cette balade à Paris avec Mathilde vous aura plu. Vous avez dit que vous parliez bien français, ben on a hâte de vous recevoir sur les ondes du podcast. Oui, oui, oui. Oui, oui, oui. Et...",
+          "chinese": "我在播客节目里经常提到布里欧修面包店，那个应该挺不错的。对，对，对。再配杯咖啡。配杯咖啡。对，没错。好吧，Little Simz，希望你会喜欢这次和Mathilde的巴黎漫步。你说过你法语说得不错，那我们很期待能在播客节目里邀请到你。对，对，对。对，对，对。还有……"
+        },
+        {
+          "id": 27,
+          "start_time": "00:09:39.740",
+          "end_time": "00:10:03.850",
+          "french": "Et voilà, merci beaucoup Mathilde pour cette balade parisienne autour du rap et des quartiers de Paris et des salles de spectacle. Et de la nourriture. Et de la nourriture, oui. Et puis on a bien compris, les macarons c'est... Surcôté. Surcôté. Merci beaucoup Mathilde. Merci Laetitia. Merci à toi. Pour cet intéressant voyage dans l'univers du rap français. À bientôt. À bientôt.",
+          "chinese": "好了，非常感谢Mathilde带我们进行这场围绕说唱、巴黎街区和演出场馆的巴黎漫步。还有美食。对，还有美食。而且我们都听明白了，马卡龙就是…… 被高估了。被高估了。非常感谢Mathilde。谢谢Laetitia。也谢谢你。感谢你带我们进行这场有趣的法国说唱世界之旅。下次见。下次见。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:05.559",
+          "end_time": "00:10:32.100",
+          "french": "Alors, n'avais-je pas raison en vous disant que cette conversation avec Mathilde serait super intéressante ? N'hésitez pas à nous envoyer un commentaire, à Mathilde ou moi, sur Spotify ou un avis sur Apple Podcast. Ça serait super sympa de savoir ce que vous avez pensé de cet épisode. Vous pouvez aussi, bien sûr, nous envoyer un email à frenchday.gmail.com",
+          "chinese": "怎么样，我之前说和Mathilde的对话会非常有趣，没骗你们吧？欢迎大家在Spotify上给我或Mathilde留言，或者在Apple Podcast上留下评价。如果能知道大家对这期节目的看法，那就太棒了。当然，你们也可以发邮件到 frenchday.gmail.com。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:10:32.539",
+          "end_time": "00:10:45.100",
+          "french": "One thing in a French day, c'est fini pour aujourd'hui. Je vous retrouve très vite pour un nouvel épisode de podcast. A bientôt, au revoir !",
+          "chinese": "今天的《One Thing in a French Day》就到这里。我们很快会在新一期播客中再见。下次见，拜拜！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:10:45.100",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 29,
+        "source_video_name": "Allergique au rap_ Impossible. Les macarons_ Surcotés (French Rap Parisian Clichés).json",
+        "tags": [
+          "法国生活",
+          "考试干货"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

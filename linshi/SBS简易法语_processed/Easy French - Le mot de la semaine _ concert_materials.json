@@ -1,0 +1,706 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ concert.json",
+  "channel": "SBS简易法语",
+  "video_name": "简易法语 - 本周词汇：音乐会",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T23:58:56.495Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 14,
+          "review_words": 0
+        },
+        "grammar": [
+          "关系代词 qui (Pronom relatif 'qui')",
+          "过去分词作形容词 (Participe passé employé comme adjectif)",
+          "被动语态 (La voix passive)"
+        ],
+        "speaking": [
+          "能够定义并描述一场文化活动",
+          "能够讨论词汇的词源及其语义演变"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "migrant",
+            "part_of_speech": "nom",
+            "ipa": "[mi.ɡʁɑ̃]",
+            "chinese": "移民",
+            "example_sentence": {
+              "french": "Work in Progress aide les migrants qualifiés à reconstruire leur carrière.",
+              "chinese": "《工作进行时》帮助技术移民重建职业生涯。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              7
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Work in Progress is a podcast to help skilled migrants rebuild their careers.",
+                "chinese": "《工作进行时》是一个旨在帮助技术移民重建职业生涯的播客。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "rubrique",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁy.bʁik]",
+            "chinese": "栏目，专栏",
+            "example_sentence": {
+              "french": "Bienvenue dans notre rubrique « Le mot de la semaine ».",
+              "chinese": "欢迎来到我们的“本周词汇”栏目。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              6
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Retrouvez les rubriques sur sbs.com.au/french.",
+                "chinese": "请在 sbs.com.au/french 查找相关栏目。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "retour sur scène",
+            "part_of_speech": "expression",
+            "ipa": "",
+            "chinese": "重返舞台",
+            "example_sentence": {
+              "french": "Céline Dion a annoncé son retour sur scène à Paris.",
+              "chinese": "席琳·迪翁宣布她将在巴黎重返舞台。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Céline Dion a annoncé son retour sur scène avec une série de concerts.",
+                "chinese": "席琳·迪翁宣布她将通过一系列演唱会重返舞台。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "prévu",
+            "part_of_speech": "adjectif",
+            "ipa": "[pʁe.vy]",
+            "chinese": "预定的，安排的",
+            "example_sentence": {
+              "french": "10 dates sont prévues dans la capitale.",
+              "chinese": "首都安排了10场演出。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Dix dates sont prévues dans la capitale française.",
+                "chinese": "法国首都预定了10个日期（演出）。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "attendu",
+            "part_of_speech": "adjectif",
+            "ipa": "[a.tɑ̃.dy]",
+            "chinese": "期待的，预料中的",
+            "example_sentence": {
+              "french": "C'est un événement très attendu par les fans.",
+              "chinese": "这是一个粉丝们非常期待的活动。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "un événement très attendu par ses fans après 6 ans d'absence.",
+                "chinese": "这是粉丝们在阔别6年后翘首以盼的盛事。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "spectacle",
+            "part_of_speech": "nom masculin",
+            "ipa": "[spɛk.takl]",
+            "chinese": "演出，表演",
+            "example_sentence": {
+              "french": "Un concert est un spectacle de musique en public.",
+              "chinese": "音乐会是面向公众的音乐表演。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3,
+              4,
+              5
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Un concert, c'est un spectacle de musique en public.",
+                "chinese": "演唱会就是一场面向公众的音乐表演。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "en plein air",
+            "part_of_speech": "expression",
+            "ipa": "[ɑ̃.plɛ.n‿ɛʁ]",
+            "chinese": "露天的，户外的",
+            "example_sentence": {
+              "french": "Le festival a lieu en plein air.",
+              "chinese": "这个节日是在户外举行的。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "dans une salle, un stade ou en plein air.",
+                "chinese": "在礼堂、体育场或露天场所。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "évoluer",
+            "part_of_speech": "verbe",
+            "ipa": "[e.vɔ.lɥe]",
+            "chinese": "演变，进化",
+            "example_sentence": {
+              "french": "Le sens du mot a évolué avec le temps.",
+              "chinese": "这个词的意思随着时间的推移而演变。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Avec le temps, le sens a évolué pour parler de musique.",
+                "chinese": "随着时间的推移，词义演变为指代音乐。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "usage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[y.zaʒ]",
+            "chinese": "用法，用途",
+            "example_sentence": {
+              "french": "Ce mot a d'autres usages en français.",
+              "chinese": "这个词在法语中还有其他用法。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Mais le mot « concert » a aussi d'autres usages en français.",
+                "chinese": "不过，“concert”一词在法语中还有其他用法。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "concerté",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ̃.sɛʁ.te]",
+            "chinese": "商定的，协调的",
+            "example_sentence": {
+              "french": "Ils ont mené une action concertée.",
+              "chinese": "他们采取了协调一致的行动。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On parle par exemple d'une action « concertée ».",
+                "chinese": "例如，人们会提到“协调一致的”行动。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "coordonner",
+            "part_of_speech": "verbe",
+            "ipa": "[ko.ɔʁ.dɔ.ne]",
+            "chinese": "协调",
+            "example_sentence": {
+              "french": "Il faut coordonner nos efforts.",
+              "chinese": "我们需要协调我们的努力。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "« concert » signifie « organiser ensemble, coordonner ».",
+                "chinese": "“concert”意味着“共同组织、协调”。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "homonyme",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ɔ.mɔ.nim]",
+            "chinese": "同音异义词",
+            "example_sentence": {
+              "french": "Le mot « concert » a un homonyme.",
+              "chinese": "“concert”这个词有一个同音异义词。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "le mot « concert » peut surprendre car il a un homonyme.",
+                "chinese": "“concert”一词可能会让人感到意外，因为它有一个同音异义词。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "collaboration",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kɔ.la.bɔ.ʁa.sjɔ̃]",
+            "chinese": "协作，合作",
+            "example_sentence": {
+              "french": "C'est un mot qui parle de collaboration.",
+              "chinese": "这是一个谈论协作的词。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "un mot qui parle de collaboration et d'action collective.",
+                "chinese": "一个强调协作与集体行动的词汇。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "collectif",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ.lɛk.tif]",
+            "chinese": "集体的",
+            "example_sentence": {
+              "french": "Nous devons privilégier l'action collective.",
+              "chinese": "我们必须优先考虑集体行动。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "un mot qui parle de collaboration et d'action collective.",
+                "chinese": "一个强调协作与集体行动的词汇。",
+                "source_video": "SBS French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "de concert",
+            "meaning": "一致地，一齐",
+            "example": {
+              "french": "Ils travaillent de concert pour réussir ce projet.",
+              "chinese": "他们齐心协力以使这个项目成功。"
+            },
+            "usage_note": "常用于正式语境，表示多人或多方共同行动。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "en plein air",
+            "meaning": "在户外，露天",
+            "example": {
+              "french": "J'adore les concerts en plein air pendant l'été.",
+              "chinese": "我喜欢夏天里的露天音乐会。"
+            },
+            "usage_note": "用于描述活动地点不在室内。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "le mot de la semaine",
+            "meaning": "每周词汇",
+            "example": {
+              "french": "Bienvenue dans notre rubrique « Le mot de la semaine ».",
+              "chinese": "欢迎来到我们的“每周词汇”栏目。"
+            },
+            "usage_note": "典型的广播或教学节目栏目名称。",
+            "source_ids": [
+              2,
+              6
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "关系代词 qui (Pronom relatif 'qui')",
+            "structure": "Nom + qui + Verbe",
+            "explanation": "关系代词 qui 在从句中作主语，指代先行词（人或物）。",
+            "example": {
+              "french": "Le mot « concert » vient du latin « concertare » qui signifiait « agir ensemble ».",
+              "chinese": "“concert”一词源自拉丁语“concertare”，其原意为“共同行动”。"
+            },
+            "usage_note": "注意 qui 后直接接动词，且动词的性数需与先行词一致。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "过去分词作形容词 (Participe passé employé comme adjectif)",
+            "structure": "Nom + Participe Passé",
+            "explanation": "过去分词可以像形容词一样修饰名词，表示被动或完成的状态，需进行性数配合。",
+            "example": {
+              "french": "un événement très attendu par ses fans",
+              "chinese": "一个被粉丝们高度期待的活动"
+            },
+            "usage_note": "此处 'attendu' 修饰阳性单数名词 'événement'。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "被动语态 (La voix passive)",
+            "structure": "Sujet + être + Participe Passé (+ par + complément d'agent)",
+            "explanation": "用于强调动作的承受者。助动词 être 的时态决定了整个句子的时态。",
+            "example": {
+              "french": "Dix dates sont prévues dans la capitale française.",
+              "chinese": "在法国首都安排了10个日期。"
+            },
+            "usage_note": "过去分词 'prévues' 与主语 'Dix dates'（阴性复数）配合。",
+            "source_ids": [
+              3
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɔ̃]",
+              "description": "鼻腔元音，发音时舌后缩，双唇突出呈圆形，气流从鼻腔和口腔同时流出。",
+              "examples": [
+                "concert",
+                "annoncé",
+                "action"
+              ]
+            },
+            {
+              "sound": "[ɥ]",
+              "description": "半元音，发音位置同 [y]（u），但发音极短促，立即滑向后面的元音。",
+              "examples": [
+                "évolué",
+                "prévue"
+              ]
+            }
+          ],
+          "liaison": [
+            "un événement [ɛ̃.n‿e.ve.nə.mɑ̃]",
+            "d'autres usages [dotʁ.z‿y.zaʒ]",
+            "en plein air [ɑ̃.plɛ.n‿ɛʁ]"
+          ],
+          "intonation": "在列举地点（salle, stade, plein air）时，前两项语调上扬，最后一项语调下降。"
+        },
+        "vocabulary_network": {
+          "theme": "La musique et la collaboration",
+          "core_word": "Concert",
+          "related_groups": [
+            {
+              "category": "La performance",
+              "words": [
+                "spectacle",
+                "scène",
+                "public",
+                "artiste",
+                "spectateur"
+              ]
+            },
+            {
+              "category": "L'étymologie et le sens",
+              "words": [
+                "latin",
+                "signifier",
+                "évoluer",
+                "usage",
+                "homonyme"
+              ]
+            },
+            {
+              "category": "L'action collective",
+              "words": [
+                "concerté",
+                "coordonner",
+                "collaboration",
+                "collectif",
+                "ensemble"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Un ___, c'est un ___ de ___ en ___. Un ou plusieurs ___ jouent et chantent devant des ___ dans une ___, un ___ ou en ___.",
+            "answer": "concert, spectacle, musique, public, artistes, spectateurs, salle, stade, plein air",
+            "explanation": "根据原文第3句，演唱会是面向公众的音乐表演，可以在礼堂、体育场或露天场所举行。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi l'émission parle-t-elle du mot « concert » cette semaine ?",
+            "options": {
+              "A": "Parce que c'est la fête de la musique en France.",
+              "B": "Parce que Céline Dion a annoncé son retour sur scène à Paris.",
+              "C": "Parce qu'un nouveau stade vient d'ouvrir à Paris.",
+              "D": "Parce que le mot vient de changer de sens dans le dictionnaire."
+            },
+            "answer": "B",
+            "explanation": "原文第2行明确提到：“On en parle parce que Céline Dion a annoncé son retour sur scène avec une série de concerts à Paris à l'automne.”",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Dix dates sont prévues dans la capitale française, un événement très attendu par ses fans après 6 ans d'absence.",
+            "answer": "在法国首都安排了10场演出，这是粉丝们在阔别6年后翘首以盼的盛事。",
+            "explanation": "注意 'prévues'（安排/预定）和 'attendu'（期待）的翻译，以及 '6 ans d'absence'（6年的缺席/阔别）的表达。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez ces deux phrases en une seule en utilisant le pronom relatif 'qui' : « Le mot concert vient du latin concertare. Ce mot signifiait agir ensemble. »",
+            "answer": "Le mot « concert » vient du latin « concertare » qui signifiait « agir ensemble ».",
+            "explanation": "使用关系代词 'qui' 代替重复的主语 'Ce mot'，使句子结构更紧凑。参考原文第4行。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "concert",
+            "spectacle",
+            "public",
+            "artiste",
+            "prévu",
+            "attendu"
+          ],
+          "covered_grammar": [
+            "Pronom relatif 'qui'",
+            "Voix passive",
+            "Participe passé adjectivé"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "On en parle parce que...",
+            "explanation": "用于引出讨论某个话题的原因。",
+            "example": {
+              "french": "On en parle parce que Céline Dion a annoncé son retour.",
+              "chinese": "我们谈论这个是因为席琳·迪翁宣布了她的回归。"
+            }
+          },
+          {
+            "pattern": "Un [nom], c'est [définition]...",
+            "explanation": "用于给某个概念下定义。",
+            "example": {
+              "french": "Un concert, c'est un spectacle de musique en public.",
+              "chinese": "音乐会是面向公众的音乐表演。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "您正在组织一场慈善音乐会来帮助新移民。您需要向合作伙伴解释这个项目。",
+          "requirements": "在描述中使用词汇 'concerté', 'collaboration' 和短语 'de concert'。",
+          "starter": "Pour aider les nouveaux migrants, nous organisons un événement spécial..."
+        }
+      },
+      "summary": {
+        "content": "本课以“Concert”一词为核心，介绍了席琳·迪翁重返巴黎舞台的新闻，并深入探讨了该词的拉丁语词源（意为共同行动）、语义演变以及在现代法语中的多种用法（如协调行动、同音异义词等）。",
+        "keywords": [
+          "Concert",
+          "Céline Dion",
+          "Étymologie",
+          "Collaboration",
+          "Musique"
+        ],
+        "difficulty_note": "文本属于B1级别，涉及词源分析和抽象概念（如协作、协调），语法重点在于关系从句和被动结构。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:03:36"
+        },
+        "theme": "Le mot de la semaine : Concert",
+        "cefr_level": "B1",
+        "vocabulary_count": 14,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《Work in Progress》，立即在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:01:10.890",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Bonjour et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Murat avec vous. Cette semaine, notre mot est « concert ». On dit « a show » en anglais. On en parle parce que Céline Dion a annoncé son retour sur scène avec une série de concerts à Paris à l'automne.",
+          "chinese": "您正在收听的是 SBS 法语广播。请访问 sbs.com.au/french 查看更多栏目。大家好，欢迎收看 SBS Easy French 的“每周一词”栏目。我是 Marianne Murat。本周我们要讲的词是“concert”（音乐会）。在英语中，人们说“a show”。我们之所以讨论这个词，是因为席琳·迪翁（Céline Dion）宣布将于秋季在巴黎举办系列音乐会，重返舞台。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:11.159",
+          "end_time": "00:01:35.180",
+          "french": "Dix dates sont prévues dans la capitale française, un événement très attendu par ses fans après six ans d'absence. Mais que veut dire le mot « concert » ? Un concert, c'est un spectacle de musique en public. Un ou plusieurs artistes jouent et chantent devant des spectateurs dans une salle, un stade ou en plein air.",
+          "chinese": "她计划在法国首都举办十场演出，这是歌迷们在等待六年后的热切期盼。那么，“concert”这个词是什么意思呢？音乐会（concert）是一场面向公众的音乐表演。一位或多位艺术家在音乐厅、体育场或户外，在观众面前演奏和演唱。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:35.540",
+          "end_time": "00:02:01.769",
+          "french": "Le mot « concert » vient du latin « concertare » qui signifiait « agir ensemble » ou « lutter ensemble ». Avec le temps, le sens a évolué pour parler de musique puis de spectacle. Mais le mot « concert » a aussi d'autres usages en français. On parle par exemple d'une action « concertée ». Dans ce cas, « concert » signifie « organiser ensemble, coordonner ».",
+          "chinese": "“concert”一词源于拉丁语“concertare”，原意为“共同行动”或“共同奋斗”。随着时间的推移，其含义演变为指代音乐，进而指代演出。但在法语中，“concert”还有其他用法。例如，我们会说“action concertée”（协同行动）。在这种情况下，“concert”的意思是“共同组织、协调”。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:02.680",
+          "end_time": "00:02:31.370",
+          "french": "Il existe aussi l'expression « de concert » qui veut dire « ensemble ». Enfin, à l'écrit, le mot « concert » peut surprendre car il a un homonyme. Un concert, un spectacle donc, ou « il concerte », du verbe « concerter » qui signifie « organiser ensemble ». En résumé donc, un concert, c'est de la musique en public, mais aussi un mot qui parle de collaboration et d'action collective.",
+          "chinese": "还有一个短语叫“de concert”，意思是“齐心协力”或“一起”。最后，在书面表达中，“concert”这个词可能会让人感到意外，因为它有一个同形异义词。它可以是名词“un concert”（音乐会、演出），也可以是动词“concerter”的变位形式“il concerte”，意为“他正在共同筹划”。总而言之，音乐会是面向公众的音乐演出，但这个词也蕴含着协作和集体行动的意义。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:31.830",
+          "end_time": "00:03:02.120",
+          "french": "Voilà, c'était « concert », c'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes. On se retrouve la semaine prochaine pour un autre mot de la semaine.",
+          "chinese": "以上就是本周的单词“concert”。欢迎在 SBS French 网站及各大平台收听我们的“每周一词”以及 Easy French 新闻简报。下周我们再见，一起学习下一个每周一词。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:03:08.090",
+          "end_time": "00:03:36.770",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《Work in Progress》，立即在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:36.770",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 7,
+        "source_video_name": "Easy French - Le mot de la semaine _ concert.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "content_consistency",
+            "detail": "Subtitles 1 and 7 contain English text in the 'french' field. While this accurately reflects the source podcast's intro/outro, it results in French vocabulary items (like 'migrant') being linked to English source text.",
+            "field": "subtitles[0].french"
+          },
+          {
+            "level": "warning",
+            "check": "source_id_accuracy",
+            "detail": "Vocabulary item 'rubrique' lists source_id 6, but the word 'rubrique' does not appear in that subtitle block.",
+            "field": "language_analysis.vocabulary[1].source_ids"
+          },
+          {
+            "level": "warning",
+            "check": "IPA variations",
+            "detail": "The IPA for 'évoluer' [e.vɔ.lɥe] uses the semi-vowel [ɥ]. While common in rapid speech, the standard syllabic pronunciation is [e.vɔ.ly.e].",
+            "field": "language_analysis.vocabulary[7].ipa"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 3,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

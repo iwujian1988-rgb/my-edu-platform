@@ -1,0 +1,1263 @@
+{
+  "source_file": "E180 Une école française sur un autre continent.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E180 法国学校在异国他乡",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T02:41:30.727Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 15,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le subjonctif après 'pour que' (虚拟式在表示目的的连词后)",
+          "Le conditionnel présent pour l'hypothèse (条件式现在时用于假设)",
+          "Le gérondif (副动词)"
+        ],
+        "speaking": [
+          "Discuter des différences culturelles dans le domaine de l'éducation",
+          "Expliquer le fonctionnement et les avantages d'un système éducatif bilingue ou hybride"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "homologation",
+            "part_of_speech": "nom",
+            "ipa": "[ɔ.mɔ.lɔ.ɡa.sjɔ̃]",
+            "chinese": "认证，认可",
+            "example_sentence": {
+              "french": "C'est comme un audit de qualité qui garantit aux familles que l'enseignement dispensé correspond bien au programme français.",
+              "chinese": "这就像一次质量审核，向家庭保证所提供的教学确实符合法国课程体系。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              10,
+              70,
+              72,
+              73,
+              75
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "ce qu'on appelle des critères d'homologation",
+                "chinese": "所谓的认证标准",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "tutelle",
+            "part_of_speech": "nom",
+            "ipa": "[ty.tɛl]",
+            "chinese": "监管，监护",
+            "example_sentence": {
+              "french": "On est aussi sous tutelle du ministère de l'Éducation nationale sénégalaise.",
+              "chinese": "我们还受塞内加尔国家教育部的监管。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "sous tutelle du ministère",
+                "chinese": "在教育部的监管下",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "bousculer",
+            "part_of_speech": "verbe",
+            "ipa": "[bus.ky.le]",
+            "chinese": "打破，推搡，颠覆",
+            "example_sentence": {
+              "french": "On vient un peu bousculer leurs repères professionnels pour en créer de nouveaux.",
+              "chinese": "我们多少会打破他们原有的职业习惯，从而创造出新的模式。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "bousculer leurs repères professionnels",
+                "chinese": "打破他们的职业习惯",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "hybridation",
+            "part_of_speech": "nom",
+            "ipa": "[i.bʁi.da.sjɔ̃]",
+            "chinese": "混合，杂交（此处指课程融合）",
+            "example_sentence": {
+              "french": "On a travaillé avec le ministère sénégalais sur vraiment l'hybridation des deux programmes.",
+              "chinese": "我们与塞内加尔教育部合作，致力于实现两种课程体系的深度融合。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              20,
+              23,
+              57
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "l'hybridation des deux programmes",
+                "chinese": "两种课程的融合",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "sanctionner",
+            "part_of_speech": "verbe",
+            "ipa": "[sɑ̃k.sjɔ.ne]",
+            "chinese": "批准，认可（此处指考试作为升学的凭证）",
+            "example_sentence": {
+              "french": "C'est un examen qui sanctionne le passage en sixième.",
+              "chinese": "这项考试标志着学生顺利升入六年级。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              21
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "un examen qui sanctionne le passage",
+                "chinese": "作为升学凭证的考试",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "binational",
+            "part_of_speech": "adjectif",
+            "ipa": "[bi.na.sjɔ.nal]",
+            "chinese": "双重国籍的",
+            "example_sentence": {
+              "french": "On a pas mal de familles binationales qui ont les deux cultures.",
+              "chinese": "我们的学生中有很多双重国籍家庭，他们同时拥有两种文化。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              22
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "familles binationales",
+                "chinese": "双重国籍家庭",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "contextualiser",
+            "part_of_speech": "verbe",
+            "ipa": "[kɔ̃.tɛks.tɥa.li.ze]",
+            "chinese": "将...置于具体情境中",
+            "example_sentence": {
+              "french": "On essaye de contextualiser un maximum les enseignements, notamment en histoire et en géographie.",
+              "chinese": "我们在尽可能地将教学内容置于具体情境之中，尤其是在历史和地理学科上。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              22
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "contextualiser un maximum les enseignements",
+                "chinese": "最大限度地将教学情境化",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "cerner",
+            "part_of_speech": "verbe",
+            "ipa": "[sɛʁ.ne]",
+            "chinese": "理解，把握，认清",
+            "example_sentence": {
+              "french": "Pour qu'ils cernent bien le profil de l'école, comment elle fonctionne.",
+              "chinese": "帮助他们更好地理解学校的办学特色以及学校的运作方式。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              28
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "cernent bien le profil de l'école",
+                "chinese": "很好地把握学校的特点",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "criant",
+            "part_of_speech": "adjectif",
+            "ipa": "[kʁi.jɑ̃]",
+            "chinese": "明显的，触目惊心的",
+            "example_sentence": {
+              "french": "La chose la plus criante comme différence, c'est vrai que la manière de gérer la classe...",
+              "chinese": "更明显的差异在于，课堂管理的方式..."
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              33
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "la plus criante comme différence",
+                "chinese": "最明显的差异",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "laxiste",
+            "part_of_speech": "adjectif",
+            "ipa": "[lak.sist]",
+            "chinese": "宽松的，放纵的",
+            "example_sentence": {
+              "french": "La manière de poser les règles dans une école française va être pas plus laxiste, mais faite de manière peut-être un peu moins frontale.",
+              "chinese": "在法国学校中制定规则的方式并不会更加宽松，但可能会采取一种稍微不那么直接的方式。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              34
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "pas plus laxiste",
+                "chinese": "并没有更宽松",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "scinder",
+            "part_of_speech": "verbe",
+            "ipa": "[sɛ̃.de]",
+            "chinese": "分开，划分",
+            "example_sentence": {
+              "french": "On essaye de scinder un peu le côté privé et le côté professionnel.",
+              "chinese": "人们会尽量将私人生活与职业生活区分开来。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              41
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "scinder le côté privé et le côté professionnel",
+                "chinese": "将私人与职业方面分开",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "tirailleur",
+            "part_of_speech": "nom",
+            "ipa": "[ti.ʁa.jœʁ]",
+            "chinese": "散兵，步兵（特指殖民时期的非洲步兵）",
+            "example_sentence": {
+              "french": "On a quand même pas mal parlé de la mémoire des tirailleurs sénégalais pendant la guerre.",
+              "chinese": "我们确实花了不少时间讨论二战期间塞内加尔步兵的记忆。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              52
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "tirailleurs sénégalais",
+                "chinese": "塞内加尔步兵",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "détachement",
+            "part_of_speech": "nom",
+            "ipa": "[de.taʃ.mɑ̃]",
+            "chinese": "借调，外派",
+            "example_sentence": {
+              "french": "Ce sont des titulaires français qui sont en détachement.",
+              "chinese": "这些是处于外派状态的法国正式编制教师。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              69
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "en détachement",
+                "chinese": "在外派中",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "rétribution",
+            "part_of_speech": "nom",
+            "ipa": "[ʁe.tʁi.by.sjɔ̃]",
+            "chinese": "报酬，费用",
+            "example_sentence": {
+              "french": "On verse une rétribution sur un certain pourcentage à l'AEFE.",
+              "chinese": "我们向AEFE支付一定比例的报酬。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              71
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "verser une rétribution",
+                "chinese": "支付报酬",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          },
+          {
+            "french": "coriace",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ.ʁjas]",
+            "chinese": "艰难的，棘手的",
+            "example_sentence": {
+              "french": "L'audit d'homologation, c'est vraiment un audit qui est assez coriace à préparer.",
+              "chinese": "认证审核，这确实是一项准备起来相当棘手的审核。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              74
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "coriace à préparer",
+                "chinese": "准备起来很棘手",
+                "source_video": "Interview Cécile"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "prendre une disponibilité",
+            "meaning": "停薪留职，请长假",
+            "example": {
+              "french": "On a des enseignants qui prennent une disponibilité du ministère sénégalais et qui viennent passer quatre ans chez nous.",
+              "chinese": "我们有来自塞内加尔教育部的教师申请停薪留职，在我们这里度过四年。"
+            },
+            "usage_note": "在法国行政和职场用语中，指公务员或员工暂时离开职位但保留编制的状态。",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "expression": "mettre à plat",
+            "meaning": "把问题摆到桌面上，理清，梳理",
+            "example": {
+              "french": "C'est vrai que mettre à plat un peu toutes ces différences-là avant la rentrée, ça permet que la communication dans l'équipe soit fluide.",
+              "chinese": "确实，在开学前梳理清楚所有这些差异，有助于团队内部的沟通更加顺畅。"
+            },
+            "usage_note": "常用于讨论复杂问题或分歧时，意为公开、透明地分析和解决问题。",
+            "source_ids": [
+              29
+            ]
+          },
+          {
+            "expression": "se méfier des évidences",
+            "meaning": "警惕看似显而易见的事物",
+            "example": {
+              "french": "Que tout le monde un peu se méfie des évidences.",
+              "chinese": "每个人都应稍微警惕那些看似显而易见的事。"
+            },
+            "usage_note": "用于提醒人们不要想当然，特别是在跨文化交流中，一方认为理所当然的事对另一方可能完全陌生。",
+            "source_ids": [
+              30
+            ]
+          },
+          {
+            "expression": "trouver ses repères",
+            "meaning": "找到自己的定位，适应新环境",
+            "example": {
+              "french": "On fait en sorte que tout le monde trouve ses repères dès le début de l'année.",
+              "chinese": "我们正努力确保每个人从年初就开始找到自己的定位。"
+            },
+            "usage_note": "常用于描述某人来到新环境（如新学校、新国家、新工作）后逐渐适应并建立参照系的过程。",
+            "source_ids": [
+              35
+            ]
+          },
+          {
+            "expression": "en gestion directe",
+            "meaning": "直接管理",
+            "example": {
+              "french": "En fait, on a des établissements qui sont en gestion directe.",
+              "chinese": "事实上，我们有一些由（AEFE）直接管理的机构。"
+            },
+            "usage_note": "行政管理术语，指机构不通过中间人或合作伙伴，而是由上级主管单位直接运营和管理。",
+            "source_ids": [
+              67
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le subjonctif après 'pour que' (虚拟式在表示目的的连词后)",
+            "structure": "pour que + Sujet + Verbe au subjonctif",
+            "explanation": "当表达目的时，如果主句和从句的主语不同，必须使用连词 'pour que' 或 'afin que'，其后紧跟虚拟式。如果主从句主语相同，则通常使用 'pour + infinitif'。",
+            "example": {
+              "french": "Pour que le wolof ou le diola soient aussi appris et utilisés à l'école.",
+              "chinese": "为了让沃洛夫语或迪奥拉语也能在学校里被学习和使用。"
+            },
+            "usage_note": "在原句中，主句隐含的主语（如政府/学校）与从句主语（le wolof ou le diola）不同，因此动词 être 必须变为虚拟式 soient。",
+            "source_ids": [
+              47
+            ]
+          },
+          {
+            "name": "Le conditionnel présent pour l'hypothèse (条件式现在时用于假设)",
+            "structure": "Si + Imparfait, Sujet + Conditionnel présent",
+            "explanation": "用于表达与现在事实相反的假设，或在想象的情境下会发生的事情。主句使用条件式现在时，si引导的从句使用未完成过去时。",
+            "example": {
+              "french": "Si on me mettait dans leurs conditions de travail [...], je ne suis pas sûre que je ferais preuve de la même adaptabilité.",
+              "chinese": "如果让我处在他们的工作环境中[...]，我真不确定自己能否展现出同样的适应能力。"
+            },
+            "usage_note": "这里说话人并未处于那种工作环境，因此用 'si on me mettait' (imparfait) 提出假设，用 'je ferais' (conditionnel) 表达可能的结果。",
+            "source_ids": [
+              13
+            ]
+          },
+          {
+            "name": "Le gérondif (副动词)",
+            "structure": "En + participe présent (radical de 'nous' au présent + -ant)",
+            "explanation": "副动词用于表示与主句谓语动词同时发生的动作，常用来表达方式、手段、条件或同时性。主句和副动词的主语必须是同一个。",
+            "example": {
+              "french": "Et c'est vrai qu'en t'entendant, on sent vraiment [...] un intérêt pour ce pays.",
+              "chinese": "确实，听你讲话时，我们真切地感受到[...]对这个国家的兴趣。"
+            },
+            "usage_note": "这里的 'en t'entendant' 表示 '当听你说话的时候'，表达了动作的同时性。",
+            "source_ids": [
+              60
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "Acronymes et sigles",
+              "description": "在法语中，首字母缩略词通常按字母逐个发音。例如 AEFE 发音为 [a.ø.ɛf.ø]，CFEE 发音为 [se.ɛf.ø.ø]。",
+              "examples": [
+                "AEFE",
+                "CFEE"
+              ]
+            },
+            {
+              "sound": "Les mots d'origine étrangère ou régionale",
+              "description": "塞内加尔当地语言名称在法语中的发音保留了其特定的音节结构，如 wolof [wɔ.lɔf] 和 diola [dʒɔ.la]。",
+              "examples": [
+                "wolof",
+                "diola"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_écoles_américaines [le.z‿e.kɔl.za.me.ʁi.kɛn]",
+            "des_enseignants [de.z‿ɑ̃.sɛ.ɲɑ̃]",
+            "pas_encore [pa.z‿ɑ̃.kɔʁ]"
+          ],
+          "intonation": "在长句中，特别是解释复杂概念（如学校的混合课程或管理模式）时，说话人会在逻辑意群（groupes rythmiques）末尾使用轻微的升调以保持听众的注意力，直到句子结束时才使用降调。"
+        },
+        "vocabulary_network": {
+          "theme": "Le système éducatif et la coopération internationale",
+          "core_word": "Éducation",
+          "related_groups": [
+            {
+              "category": "Institutions et structures",
+              "words": [
+                "AEFE",
+                "ministère",
+                "tutelle",
+                "homologation",
+                "gestion directe"
+              ]
+            },
+            {
+              "category": "Pédagogie et enseignement",
+              "words": [
+                "hybridation",
+                "programme",
+                "contextualiser",
+                "évaluation",
+                "bulletin"
+              ]
+            },
+            {
+              "category": "Ressources humaines",
+              "words": [
+                "enseignant",
+                "titulaire",
+                "détachement",
+                "disponibilité",
+                "personnel"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Et l'___, c'est que les ___ qui changent régulièrement de pays ou qui font des ___ entre la France et un pays en particulier, elles vont pouvoir avoir cette ___ d'avoir la ___ pédagogique parce que les systèmes fonctionnent pareil en France et à l'étranger.",
+            "answer": "avantage, familles, allers-retours, assurance, continuité",
+            "explanation": "根据原文第10段，这段话解释了获得法国课程认证（homologation）对经常搬家的家庭（familles）的好处（avantage），即他们在往返（allers-retours）不同国家时，能获得教学连续性（continuité）的保障（assurance）。",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon l'interview, comment sont financées les écoles françaises à l'étranger pour les familles ?",
+            "options": {
+              "A": "Elles sont entièrement gratuites pour tous les élèves français grâce à l'État.",
+              "B": "Les familles doivent payer des frais d'inscription et de scolarisation, bien qu'il existe des bourses.",
+              "C": "Elles sont financées exclusivement par le ministère de l'Éducation nationale sénégalaise.",
+              "D": "Les entreprises locales paient la totalité des frais pour les familles expatriées."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第78和79段明确指出，海外的法国学校并非对法国学生完全免费（'Il n'y a pas la France qui a des établissements publics à l'étranger complètement gratuits'）。家庭必须支付注册费和学费（'il y a des frais d'inscription et des frais de scolarisation que les familles doivent payer'），不过法国籍学生有机会申请奖学金（'il peut y avoir des bourses'）。",
+            "source_ids": [
+              78,
+              79
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Je ne suis pas sûre que je ferais preuve de la même adaptabilité qu'eux peuvent montrer au quotidien.",
+            "answer": "我真不确定自己能否像他们那样每天展现出同样的适应能力。",
+            "explanation": "翻译难点在于准确表达虚拟语气和条件式结合的语境（je ne suis pas sûre que + 虚拟式/条件式）。'faire preuve de' 是一个固定搭配，意为'展现出、证明'；'au quotidien' 意为'每天、日常地'。",
+            "source_ids": [
+              13
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Pourquoi ne peut-on pas remplacer 'pour que' par 'pour + infinitif' dans la phrase : 'pour que le wolof ou le diola soient aussi appris et utilisés à l'école' ?",
+            "answer": "Parce que le sujet de la proposition principale est différent du sujet de la proposition subordonnée (le wolof ou le diola).",
+            "explanation": "当主句和从句的主语不同的时候，必须使用 'pour que + 虚拟式'（如原句中的 soient），而不能使用 'pour + 动词不定式'。只有当主从句主语一致时（例如：Je travaille dur pour réussir），才能进行这种转换。在原句中，主句隐含的主语（实施政策的人）与从句主语（语言）不一致。",
+            "source_ids": [
+              47
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "assurance",
+            "continuité",
+            "adaptabilité"
+          ],
+          "covered_grammar": [
+            "Le subjonctif après 'pour que'",
+            "Le conditionnel pour formuler une hypothèse"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est vrai que... mais...",
+            "explanation": "用于表达让步或细微的差别。先承认某事是真实的，然后提出转折或补充说明。",
+            "example": {
+              "french": "C'est vrai que dans une classe sénégalaise, systématiquement, les élèves savent qui est le meilleur, mais ce sont des différences culturelles.",
+              "chinese": "确实，在塞内加尔的课堂里，学生们总是知道谁是最优秀的，但这属于文化差异。"
+            }
+          },
+          {
+            "pattern": "Il y a plein de... qui ne...",
+            "explanation": "用于描述一种普遍存在的现象，并带有限制性或否定性的定语从句，常用于口语中表达数量多。",
+            "example": {
+              "french": "Il y a plein d'élèves qui ne connaissent pas les mots puisqu'ils ne sont pas forcément francophones à l'origine.",
+              "chinese": "有很多学生并不认识这些词汇，因为他们原本并不一定以法语为母语。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "您是一位即将外派到塞内加尔的法国家长，正在向当地法国学校的校长咨询孩子入学的事宜。您需要了解学校的课程设置（是否融合了当地文化）、学费情况以及教师的资质。",
+          "requirements": "使用至少3个本课的核心词汇（如 homologation, hybridation, frais de scolarisation），并尝试使用条件式来礼貌地提出问题（如 'Je voudrais savoir si...'）。",
+          "starter": "Bonjour Madame la Directrice, nous allons bientôt nous installer à Dakar et je souhaiterais avoir quelques renseignements concernant votre établissement..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, l'animatrice interviewe Cécile, directrice de l'école franco-sénégalaise à Dakar. L'entretien explore en profondeur le réseau des écoles françaises à l'étranger (AEFE) et ses spécificités. Cécile explique le concept d'école de coopération, mettant en lumière l'hybridation des programmes français et sénégalais. Elle aborde également les défis et les richesses des échanges culturels, notamment en matière de gestion de classe, d'évaluation des élèves et de diversité linguistique (intégration du wolof et du diola). Enfin, l'épisode clarifie les différents statuts des établissements de l'AEFE (gestion directe, conventionnés, partenaires) et le système de financement pour les familles.",
+        "keywords": [
+          "AEFE",
+          "école franco-sénégalaise",
+          "hybridation",
+          "homologation",
+          "coopération",
+          "bilinguisme"
+        ],
+        "difficulty_note": "Le niveau global est B2. Le vocabulaire est riche et spécifique au domaine de l'éducation et de l'administration publique. Les structures grammaticales incluent des subordonnées complexes, le subjonctif et le conditionnel, reflétant un discours professionnel nuancé."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04.280",
+          "end": "00:31:04.200"
+        },
+        "theme": "Le réseau des écoles françaises à l'étranger et la coopération éducative",
+        "cefr_level": "B2",
+        "vocabulary_count": 15,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.280",
+          "end_time": "00:00:07.589",
+          "french": "une école française sur un autre continent.",
+          "chinese": "一所位于另一个大洲的法国学校。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:11.859",
+          "end_time": "00:00:40.270",
+          "french": "Bonjour à toutes et à tous et bienvenue dans ce nouvel épisode. Aujourd'hui, on va parler du réseau des écoles françaises à l'étranger et on va le faire à travers l'exemple de l'école franco-sénégalaise à Dakar. Comme vous le savez, il n'y a pas longtemps, j'ai eu l'occasion d'aller au Sénégal et en fait, j'y suis allée pour accompagner mon amie Marina qui est institutrice.",
+          "chinese": "大家好，欢迎收听本期节目。今天，我们将围绕海外法语学校网络展开讨论，并以位于达喀尔的法塞学校为例进行介绍。如大家所知，不久前我有幸前往塞内加尔，其实我是去陪伴我的朋友玛丽娜——一位小学教师。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:40.270",
+          "end_time": "00:00:46.259",
+          "french": "et qui commence une nouvelle année scolaire à Dakar où elle vient de s'installer.",
+          "chinese": "以及在达喀尔开始新学年的人，她刚在那里安顿下来。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:00:46.259",
+          "end_time": "00:01:15.980",
+          "french": "Et alors, j'ai eu la chance de pouvoir rencontrer sa directrice, Cécile, qui m'a accordé une interview et qui nous raconte un peu comment ça se passe. Qu'est-ce que c'est exactement une école française à l'étranger ? Quelles sont les particularités de l'école franco-sénégalaise ? Quelles peuvent être les difficultés d'adaptation, les particularités ? Voilà, vous saurez tout à travers cet exemple sur le réseau",
+          "chinese": "于是，我有幸见到了该校的校长塞西尔，她接受了我们的采访，并向我们详细讲述了学校的情况。那么，究竟什么是海外法国学校呢？法非塞内加尔学校又有哪些独特之处？在适应过程中可能会遇到哪些困难，又有哪些特别之处呢？通过这个关于RIS学校的案例，你将全面了解这一切。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:15.980",
+          "end_time": "00:01:35.819",
+          "french": "des écoles françaises à l'étranger. Et comme je sais que beaucoup d'entre vous vivent en dehors de France, mais veulent quand même donner une éducation française à leurs enfants, je pense que ça pourrait vous intéresser. Alors, je ne parle pas plus et je vous laisse écouter l'interview.",
+          "chinese": "海外的法国学校。而且，我知道你们当中很多人虽然生活在法国以外，但仍然希望为孩子提供法国教育，所以我觉得这可能会对你们有帮助。那么，我就不多说了，接下来就请大家收听这段采访吧。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:42.780",
+          "end_time": "00:02:11.490",
+          "french": "Bonjour Cécile, merci de bien vouloir nous répondre sur le podcast. Alors toi, tu es directrice d'une école française au Sénégal. C'est ça. Corrige-moi si je me trompe, est-ce que tu peux nous dire un petit peu, voilà, quel est ton parcours et ce que tu fais exactement, qu'est-ce que c'est que cette école ? Alors donc, je suis la directrice de l'école franco-sénégalaise, qui est une école de coopération entre la France et le Sénégal, qui se situe à Dakar.",
+          "chinese": "你好，塞西尔，谢谢你能为我们的播客回复一下。那么，你是在塞内加尔的一所法国学校的校长，对吧？如果我理解错了，请你纠正我。你能简单跟我们说说你的经历，以及你具体在做什么呢？这所学校到底是什么样的学校呢？嗯，我是这所法塞合作学校的校长，它是由法国和塞内加尔合作创办的一所学校，位于达喀尔。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:11.490",
+          "end_time": "00:02:40.900",
+          "french": "et qui appartient au réseau AEFE, donc l'Agence pour l'enseignement français à l'étranger. Donc moi je suis directrice ici pour la troisième année. Avant ça j'ai été directrice aux Émirats Arabes Unis à Dubaï, et avant ça j'étais en France. Donc mon parcours, je suis arrivée dans l'enseignement, puisque je me suis reconvertie pour des raisons familiales. De formation, j'étais biologiste marine.",
+          "chinese": "它隶属于AEFE网络，即海外法语教育署。因此，我在这里担任校长已经第三年了。此前，我曾在阿联酋迪拜担任校长，再之前则是在法国工作。我的职业经历是这样的：我最初从事教育工作，后来因为家庭原因转行。我原本受过海洋生物学的训练。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:40.900",
+          "end_time": "00:03:03.530",
+          "french": "Et j'ai passé le concours il y a 14 ans maintenant, donc j'ai commencé à enseigner en Bretagne. J'ai rapidement pris des directions d'école puisque c'est quelque chose qui m'intéressait. Et puis après on avait un projet familial de départ à l'étranger, donc j'ai aussi passé des qualifications de formation d'enseignant et j'ai obtenu un poste en 2023.",
+          "chinese": "而且我现在已经通过了那次考试14年了，因此我开始在布列塔尼地区任教。很快，我就担任了学校的管理工作，因为这正是我感兴趣的领域。后来，我们家庭有了移居海外的计划，于是我又取得了教师培训资格，并在2023年获得了一份工作。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:03.770",
+          "end_time": "00:03:15.780",
+          "french": "2022, c'est ça, le premier poste. Voilà, donc après, les écoles françaises à l'étranger, donc la spécificité un petit peu du réseau français, c'est qu'on a",
+          "chinese": "2022年，这就是第一个职位。因此，接下来是海外的法国学校。法国网络的一个小特点在于，我们有……"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:15.780",
+          "end_time": "00:03:43.530",
+          "french": "ce qu'on appelle des critères d'homologation, c'est comme un audit de qualité qui garantit aux familles que l'enseignement dispensé correspond bien au programme français. Et l'avantage, c'est que les familles qui changent régulièrement de pays ou qui font des allers-retours entre la France et un pays en particulier, elles vont pouvoir avoir cette assurance d'avoir la continuité pédagogique parce que les systèmes fonctionnent pareil en France et à l'étranger. Donc en ça, c'est assez rassurant, je pense, pour les familles.",
+          "chinese": "所谓认证标准，其实就像一次质量审核，能向家庭保证所接受的教育确实符合法国课程体系。而且，其优势在于，那些经常更换国家或在法国与某个特定国家之间往返的家庭，能够获得教学连续性的保障，因为无论是在法国还是在国外，这些体系的运作方式都是一样的。因此，我认为这对家庭来说相当令人安心。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:44.219",
+          "end_time": "00:04:08.460",
+          "french": "Ensuite, nous, on a une spécificité puisqu'on est une école de coopération. Donc, on est aussi sous tutelle du ministère de l'Éducation nationale sénégalaise. De ce fait, à l'école, on a une proportion d'enseignants et de personnels qui sont sénégalais qui est assez importante. Et je trouve aussi pour ça que c'est un endroit très intéressant où il y a beaucoup d'échanges culturels, que ce soit...",
+          "chinese": "接下来，我们学校有一个独特之处，因为我们是一所合作型学校。因此，我们还受塞内加尔国家教育部的监管。正因如此，学校里来自塞内加尔的教师和工作人员比例相当高。我也认为，正因为这一点，这里是一个非常有趣的地方，有着丰富的文化交流，无论是……"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:08.460",
+          "end_time": "00:04:32.810",
+          "french": "vraiment dans les relations humaines, mais aussi dans la manière d'enseigner, la manière de travailler avec les enfants. Et on est une école de formation, donc tous les ans, on a des enseignants qui prennent une disponibilité du ministère sénégalais et qui viennent passer quatre ans chez nous, se former au système français. Donc c'est leur choix, c'est un investissement, c'est un investissement courageux, parce qu'ils changent de système éducatif.",
+          "chinese": "不仅体现在人际关系中，也体现在教学方式以及与孩子们相处的方式上。我们是一所培训学校，因此每年都有来自塞内加尔教育部的教师申请离职，在我们这里接受为期四年的培训，学习法国的教育体系。这完全是他们的自主选择，也是一种勇敢的投资——因为他们正在改变自己的教育体系。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:32.889",
+          "end_time": "00:04:59.649",
+          "french": "Et du coup, on vient un peu bousculer leurs repères professionnels pour en créer de nouveaux. Et je les admire beaucoup parce que dans l'autre sens, moi, si on me mettait dans leurs conditions de travail avec des classes à 70 élèves, avec des conditions matérielles qui ne sont pas forcément celles dont on a l'habitude, je ne suis pas sûre que je ferais preuve de la même adaptabilité qu'eux peuvent montrer au quotidien. Donc vraiment, c'est une démarche qui est...",
+          "chinese": "于是，我们多少会打破他们原有的职业习惯，从而创造出新的模式。我非常钦佩他们，因为反过来说，如果让我处在他们的工作环境中——面对70人的大班教学，还要适应那些并不一定是我们惯常的物质条件——我真不确定自己能否像他们那样每天展现出同样的适应能力。所以，这真的是一种……"
+        },
+        {
+          "id": 14,
+          "start_time": "00:04:59.649",
+          "end_time": "00:05:15.430",
+          "french": "qui est courageuse et sur laquelle on les accompagne pendant 4 ans. À l'issue de ces 4 ans, soit ils réintègrent le ministère public, soit il y en a qui continuent dans d'autres écoles françaises à l'étranger. Mais du coup, c'est une partie importante de notre travail ici, c'est qu'on est beaucoup dans la formation des enseignants.",
+          "chinese": "她勇敢无畏，并在接下来的四年里得到我们的全程陪伴。四年后，他们要么重新回到检察机关，要么前往法国驻外其他学校继续深造。因此，我们在这里的一项重要工作就是大力开展教师培训。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:15.610",
+          "end_time": "00:05:44.850",
+          "french": "D'accord. Et les enseignants qui font ce choix, est-ce que tu sais pourquoi ils le font ? Quel est leur intérêt à faire ça ? Est-ce que c'est plus pour personnellement découvrir autre chose ou c'est pour des perspectives de carrière qui vont être meilleures pour eux ? Il y a un peu les deux. En fait, souvent, ils veulent enrichir leur pratique et découvrir d'autres choses. Donc, c'est quand même généralement des gens qui sont assez curieux et qui aiment un peu le challenge. Pour certains, ils sont très contents après de pouvoir...",
+          "chinese": "好的。那做出这种选择的老师们，你知道他们为什么这么做吗？他们这么做的动机是什么？是出于个人想要探索更多新事物，还是为了获得更好的职业发展机会呢？其实这两方面都有点。实际上，很多时候，他们希望丰富自己的教学实践，去发现一些新的东西。所以，总的来说，这些人通常都相当好奇，也喜欢接受一些挑战。对某些人来说，他们之后会感到非常满足……"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:44.850",
+          "end_time": "00:05:50.699",
+          "french": "repartager ce qu'ils ont appris au sein de leur système, leur système éducatif public.",
+          "chinese": "在他们自己的体系内，即他们的公立教育体系内，重新分享他们所学到的知识。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:05:50.699",
+          "end_time": "00:06:19.720",
+          "french": "Et puis pour d'autres, c'est aussi une occasion de pouvoir avoir accès à des postes dans le réseau français à l'étranger qui va aussi rimer avec un déplacement, avec des voyages pour la famille, etc. Donc ça ouvre d'autres opportunités. C'est vrai que nous, dans les enseignants de l'école, on en a plusieurs, par exemple, qui ont passé quatre ans à la franco-sénégalaise qui sont en Louisiane maintenant. Et puis il y en a dans pas mal d'autres écoles du réseau à Dakar et dans le réseau d'Afrique de l'Ouest. Ok.",
+          "chinese": "然后，对另一些人来说，这也意味着有机会在法国海外网络中担任职位——这通常伴随着出差、带家人旅行等。因此，这会带来更多的机遇。确实，我们学校的教师中就有不少例子，比如有几位曾在路易斯安那州的塞内加尔法语学校工作了四年，现在他们已调回国内。此外，在达喀尔以及西非地区的其他许多学校里，也有不少这样的教师。好的。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:19.800",
+          "end_time": "00:06:35.120",
+          "french": "Même question, mais plutôt côté élèves, plutôt parents d'élèves, quels sont leurs profils et quels sont leurs intérêts à étudier dans cette école plutôt qu'une école sénégalaise sans programme français ?",
+          "chinese": "同样的问题，但更侧重于学生和家长的视角：他们的背景是什么？他们为何选择在这所学校学习，而不是选择一所没有法语课程的塞内加尔学校？"
+        },
+        {
+          "id": 19,
+          "start_time": "00:06:35.120",
+          "end_time": "00:06:54.060",
+          "french": "Alors on a des profils assez variés. Historiquement, l'école franco-sénégalaise, elle est ancienne. On accueille des classes depuis les années 60. Déjà à cette époque, il n'y avait pas beaucoup d'écoles à programme français et c'était une école qui était assez réputée pour le niveau scolaire des élèves.",
+          "chinese": "因此，我们的学生背景相当多样。从历史上看，这所法塞学校历史悠久。自20世纪60年代起，学校就开始招收学生。早在那个时期，提供法语课程的学校并不多，而这所学校在学生的学业水平方面享有很高的声誉。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:06:54.060",
+          "end_time": "00:07:14.779",
+          "french": "Avant, il y avait une section à programme français et une section à programme sénégalais. Au fur et à mesure des années, ça a évolué. Et donc maintenant, on a une classe qui s'appelle la classe hybride. Et en fait, on a travaillé avec le ministère sénégalais sur vraiment l'hybridation des deux programmes. Donc, les enfants qui sont dans ces sections-là, ils suivent l'intégralité du programme français et...",
+          "chinese": "以前，这里曾设有法语课程班和塞内加尔课程班。随着岁月的流逝，这种模式逐渐发生了变化。因此，如今我们开设了一种名为“混合班”的班级。实际上，我们与塞内加尔教育部合作，致力于实现两种课程体系的深度融合。所以，在这些班级里学习的孩子们，将完整地学习法语课程……"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:14.779",
+          "end_time": "00:07:41.860",
+          "french": "on va dire la majeure partie du programme sénégalais sur le temps scolaire classique. Et après, ils ont deux heures de classe en plus pour étudier les parties du programme sénégalais qui n'avaient pas vraiment de correspondance dans le programme français, qui étaient vraiment spécifiques. Et ça les prépare au certificat de fin d'études élémentaires puisque le Sénégal, alors ça va peut-être changer, mais en tout cas pour le moment, le CFEE c'est encore en vigueur. Donc c'est un examen qui sanctionne le passage en sixième.",
+          "chinese": "我们将重点介绍塞内加尔课程中大部分内容在传统上课时间内的安排。之后，他们还将额外增加两小时的课堂时间，用于学习那些在法国课程中没有对应内容、具有鲜明特色的塞内加尔课程部分。这有助于他们为小学毕业证书考试做好准备——尽管塞内加尔的情况或许会有所变化，但目前而言，小学毕业证书考试（CFE）仍处于有效实施阶段。这项考试标志着学生顺利升入六年级。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:07:42.009",
+          "end_time": "00:08:10.689",
+          "french": "Et donc nos élèves, alors on a pas mal de familles binationales qui ont les deux cultures et qui souhaitent aussi du coup avoir une éducation qui va vraiment intégrer les deux. On va dire que dans toutes les écoles françaises à l'étranger, on essaye de contextualiser un maximum les enseignements, notamment en histoire et en géographie. On ne va pas traiter uniquement de l'histoire et de la géographie françaises. On va utiliser les compétences du programme français, mais on va les appliquer au contexte local. Et c'est vrai que l'école franco-sénégalaise, elle est...",
+          "chinese": "因此，我们的学生中有很多双语家庭，他们同时拥有两种文化，也因此希望接受一种真正融合这两种文化的教育。可以说，在所有海外法国学校，我们都在尽可能地将教学内容置于具体情境之中，尤其是在历史和地理学科上。我们不会仅仅局限于讲授法国的历史与地理，而是会运用法国课程体系中的各项能力，但将其应用于当地的具体情境。确实，这所法塞内加尔学校……"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:10.689",
+          "end_time": "00:08:22.089",
+          "french": "particulièrement à l'aise là-dessus parce que nos enseignants connaissent très bien l'histoire et la géographie sénégalaises. Donc tout le travail d'hybridation, on a vraiment creusé sur l'enseignement contextualisé des programmes.",
+          "chinese": "尤其在这方面非常得心应手，因为我们的教师对塞内加尔的历史和地理非常熟悉。因此，在混合式教学方面，我们真正深入研究了课程的语境化教学。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:08:22.329",
+          "end_time": "00:08:43.690",
+          "french": "Donc ça, c'est quelque chose qui est mis en place dans toutes les classes, qu'elles soient à section générale ou hybride. Et puis en cursus hybride, on donne aussi aux parents l'assurance que les enfants vont valider les deux programmes. Ça veut dire qu'à la fin du CM2, ils peuvent aussi bien aller en 6e dans un collège à programme français qu'en 6e dans un collège à programme sénégalais. On va dire que ça permet d'avoir un peu plus d'opportunités.",
+          "chinese": "因此，这一点已在所有班级中落实到位，无论是普通班还是混合班。在混合课程中，我们还向家长保证，孩子们将同时完成两种课程体系的学习。这意味着，在小学六年级结束时，他们既可以顺利升入采用法国课程的初中，也可以升入采用塞内加尔课程的初中。可以说，这为孩子们提供了更多选择与机会。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:08:43.899",
+          "end_time": "00:09:10.590",
+          "french": "Pour certaines familles, c'est une tradition aussi. On a beaucoup de familles qui fréquentent l'école de génération en génération. Pour qui c'est important d'y revenir. J'ai toujours plaisir à croiser des anciens élèves qui ont une trentaine, 35 ans, qui me disent qu'ils sont à l'étranger, mais que s'ils reviennent au Sénégal, ils mettront leurs enfants dans cette école. Parce que c'est important pour eux, c'est un lieu qui a beaucoup compté. Ils souhaitent vraiment que leurs enfants puissent connaître le même lieu.",
+          "chinese": "对一些家庭来说，这也是一种传统。有很多家庭一代又一代地送孩子来这所学校就读。对他们而言，重返这里意义非凡。我总是很高兴遇到那些已经三十多岁、三十五岁的老校友，他们告诉我，虽然现在身在海外，但只要一回到塞内加尔，就一定会把孩子送到这所学校来。因为对他们来说，这所学校意义重大，曾对他们的人生产生过深远影响。他们真心希望自己的孩子也能体验到同样的地方。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:10.590",
+          "end_time": "00:09:31.899",
+          "french": "D'accord, oui. Donc, c'est un lieu qui est apprécié et quasi un peu familial avec une tradition, etc. C'est très intéressant, ça. Et donc, tu as parlé des profs sénégalais. Donc, il y a aussi des profs français. Oui. Est-ce que pour eux, c'est...",
+          "chinese": "好的，没错。所以，这是一个备受喜爱、近乎温馨如家的地方，有着悠久的传统等等。这一点非常有趣。另外，你刚才提到了塞内加尔的老师。那么，这里也有法国老师呢。是的。对他们来说，这……"
+        },
+        {
+          "id": 27,
+          "start_time": "00:09:31.899",
+          "end_time": "00:09:51.039",
+          "french": "particulier comme enseignement ? Tu parlais des programmes d'histoire-géo. J'imagine que pour eux aussi, il y a un apprentissage énorme de pouvoir adapter à la culture peut-être des enfants et cette culture mixte des programmes qu'ils ont l'habitude de faire plutôt en France. Oui. Ça, c'est quelque chose que vous accompagnez au sein de l'école ?",
+          "chinese": "作为一项特别的教学内容。你刚才提到历史与地理课程。我想，对他们来说，能够根据当地文化——或许是那些在法国习以为常的多元文化——来调整课程，也是一项巨大的学习机会。是的。这是否正是你们在学校里所支持的一项内容呢？"
+        },
+        {
+          "id": 28,
+          "start_time": "00:09:51.039",
+          "end_time": "00:10:19.070",
+          "french": "C'est quelque chose qu'on prépare, c'est-à-dire que quand on prépare la rentrée à l'école, nous on a une semaine où je fais des stages de formation pour les nouveaux enseignants pour qu'ils cernent bien le profil de l'école, comment elle fonctionne, parce qu'il y a quand même pas mal de spécificités, et puis qu'ils cernent bien aussi un peu les pièges qu'il peut y avoir parce qu'on vient soit du système éducatif français ou du système éducatif sénégalais.",
+          "chinese": "这是我们正在准备的一项工作，也就是说，在为新学年做准备时，我们安排了一周时间，由我为新教师举办培训实习，帮助他们更好地理解学校的办学特色以及学校的运作方式。毕竟，学校有不少独特之处，同时也要让他们熟悉可能遇到的一些陷阱——毕竟，这些教师有的来自法国教育体系，有的来自塞内加尔教育体系。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:10:19.070",
+          "end_time": "00:10:40.450",
+          "french": "Il y a aussi des enseignants qui ont des expériences dans d'autres systèmes. On a eu des enseignants qui venaient du système belge, par exemple. Il y a beaucoup de points communs dans chacun de ces systèmes éducatifs, mais il y a aussi des différences, et notamment les mots qu'on utilise, ce sont les mêmes mots, mais ils ne veulent pas forcément dire la même chose. Donc, c'est vrai que mettre à plat un peu toutes ces différences-là avant la rentrée, ça permet que la communication dans l'équipe soit fluide et que...",
+          "chinese": "还有一些教师拥有其他教育体系的从业经验。比如，我们曾有过来自比利时教育体系的教师。这些教育体系之间有很多共同点，但也存在一些差异，尤其是有些词汇虽然相同，却未必具有相同的含义。因此，在开学前梳理清楚这些差异，确实有助于团队内部的沟通更加顺畅，并且……"
+        },
+        {
+          "id": 30,
+          "start_time": "00:10:40.450",
+          "end_time": "00:10:59.009",
+          "french": "que tout le monde un peu se méfie des évidences. On a tous, dans notre culture professionnelle, des choses qui sont un peu automatisées, qu'on ne questionne pas forcément et puis qui paraissent évidentes pour tous, sauf pour quelqu'un qui arrive. Donc ça, c'est un exercice qu'il faut faire à chaque début d'année de bien réexpliquer tout ça. Et donc, le système fonctionne avec... On a des...",
+          "chinese": "每个人都应稍微警惕那些看似显而易见的事。在我们每个人身上，在我们的职业文化中，都有一些事情已经变得近乎自动化，我们未必会去质疑它们，而且这些事情对所有人来说似乎再明显不过，唯独对刚加入的人而言并非如此。因此，每年年初都必须重新好好解释一遍这些内容，这是一项必不可少的练习。所以，这个体系是这样运作的……我们有……"
+        },
+        {
+          "id": 31,
+          "start_time": "00:10:59.009",
+          "end_time": "00:11:28.110",
+          "french": "trois classes dans chaque niveau. Et sur chaque niveau, on a un enseignant qui est titulaire français qui accompagne les deux enseignants sénégalais qui partagent le même niveau pour justement les aider à s'approprier les spécificités du système éducatif français. Et dans l'autre sens, tous les apports justement où on a besoin des apports culturels, historiques, etc. Là, c'est les enseignants sénégalais qui nous aident justement. Et c'est chouette que ce soit vraiment un échange bilatéral puisqu'il y a vraiment des choses",
+          "chinese": "每个年级有三个班级。在每个年级，都有一位持有法国教师资格的老师，与两位共同负责同一年级的塞内加尔教师一起工作，帮助他们更好地掌握法国教育体系的特点。反过来，当需要文化、历史等方面的贡献时，又是由塞内加尔教师来协助我们。这种真正意义上的双向交流非常棒，因为双方都能从中获得很多有趣的东西。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:11:28.110",
+          "end_time": "00:11:57.970",
+          "french": "très intéressantes dans les échanges d'un côté comme de l'autre. Oui, j'imagine, ça doit être vraiment intéressant pour les deux côtés. Et tu parlais tout à l'heure de quelques différences qu'il peut y avoir entre, par exemple, tu parlais du nombre d'élèves dans les classes. Qu'est-ce qu'il y a d'autre comme ça, comme petit exemple que tu pourrais citer d'incompréhension ou d'évidence de différence entre les deux systèmes ou les habitudes ? La manière de gérer la classe. Après, les effectifs, c'est la chose la plus...",
+          "chinese": "非常有趣，双方的交流都十分精彩。是的，我猜，这对双方来说一定都特别有意思。你刚才还提到一些差异，比如你提到了班级里的学生人数。还有哪些类似的、可以举出的小例子，能说明两个体系之间或两种习惯之间的误解或明显差异呢？比如课堂管理的方式。另外，班级规模，这可是最……"
+        },
+        {
+          "id": 33,
+          "start_time": "00:11:57.970",
+          "end_time": "00:12:12.269",
+          "french": "plus criante comme différence, c'est vrai que la manière de gérer la classe dans les écoles sénégalaises et de par le nombre d'élèves, c'est une éducation qui peut paraître peut-être un peu stricte vue de l'extérieur ou d'un point de vue d'un enseignant ou d'un élève.",
+          "chinese": "更明显的差异在于，塞内加尔学校的课堂管理方式以及学生人数，从外部视角或从教师或学生的角度来看，这种教育或许显得有些严格。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:12:12.269",
+          "end_time": "00:12:42.049",
+          "french": "français ou qui vient du système éducatif français. Donc, la manière de poser les règles dans une école française va être pas plus laxiste, mais faite de manière peut-être un peu moins frontale et avec un peu plus de douceur. Donc, c'est vrai que ça, c'est quelque chose sur laquelle on travaille puisque dans les mots qu'on utilise ou la manière de communiquer avec les élèves, il y a quand même des petites différences et c'est un pas culturel à faire pour les enseignants, mais aussi pour les élèves. Donc, on fait en sorte que",
+          "chinese": "法语或源自法国教育体系。因此，在法国学校中制定规则的方式并不会更加宽松，但可能会采取一种稍微不那么直接、多一些温和的处理方式。确实，这一点是我们正在努力改进的地方：我们所使用的措辞以及与学生沟通的方式，还是存在一些细微差异。这对于教师和学生而言，都是一项需要跨越的文化差异。因此，我们正努力确保……"
+        },
+        {
+          "id": 35,
+          "start_time": "00:12:42.049",
+          "end_time": "00:12:54.940",
+          "french": "tout le monde trouve ses repères dès le début de l'année. Dans l'évaluation, on a des pratiques différentes. Dans les écoles sénégalaises, les élèves sont classés par ordre de réussite sur le bulletin et on fait apparaître des notes chiffrées.",
+          "chinese": "每个人从年初就开始找到自己的定位。在评估方面，各校的做法不尽相同。在塞内加尔的学校里，学生会按成绩单上的成绩排名，并且会显示具体的分数。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:12:54.940",
+          "end_time": "00:13:24.659",
+          "french": "Je le vois dès la maternelle dans certaines écoles, mais souvent, ça commence en CI, avec des appréciations qui sont souvent très courtes. C'est quelques mots, donc on peut avoir excellent, très bien, passable, médiocre. Des choses peut-être qu'on a eu l'habitude de voir dans le système français, mais qu'on ne voit plus. C'est vrai qu'on travaille aussi avec les enseignants sur la formulation des commentaires pour qu'ils expriment le message qu'ils veulent faire passer, mais de manière à ce que ce soit reçu par les familles de la bonne manière. Et effectivement, nous, on",
+          "chinese": "我从一些幼儿园就开始看到这种情况，但更多时候是从小学一年级开始的，评价往往非常简短。通常只用几个词来描述，比如“优秀”、“很好”、“及格”、“一般”。这些评价方式或许我们以前在法国的教育体系中很常见，但现在却很少见了。确实，我们也在与教师合作，帮助他们优化评语的措辞，以便更准确地传达他们想要表达的信息，同时确保家长能够以恰当的方式理解这些评价。事实上，我们……"
+        },
+        {
+          "id": 37,
+          "start_time": "00:13:24.659",
+          "end_time": "00:13:31.779",
+          "french": "travaille sur le fait de ne pas utiliser de notes chiffrées avec les élèves, de ne pas classer les élèves les uns par rapport aux autres. Donc...",
+          "chinese": "我们正在努力避免在学生中使用分数，也不将学生相互比较排名。因此……"
+        },
+        {
+          "id": 38,
+          "start_time": "00:13:32.059",
+          "end_time": "00:13:56.389",
+          "french": "Ça peut être des petites choses qui vont transparaître dans le langage, mais on ne va pas identifier qui est le meilleur de la classe. Alors que c'est vrai que dans une classe sénégalaise, systématiquement, les élèves et l'enseignant savent qui est le meilleur, qui est le numéro 2, qui est le numéro 3. Ce sont des différences culturelles et puis des différences aussi d'évolution du système éducatif. Parce que quand on regarde le système éducatif français d'il y a quelques années, il y avait aussi beaucoup de points communs avec ce qu'on trouve là.",
+          "chinese": "这可能是一些细微之处，会体现在语言中，但我们却无法辨认出班上谁是最优秀的。然而，事实上，在塞内加尔的课堂里，学生和老师总是清楚地知道谁是第一名、第二名和第三名。这既源于文化差异，也源于教育体系自身发展的不同。因为如果我们回顾几年前的法国教育体系，也会发现它与如今的情况有许多相似之处。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:13:56.440",
+          "end_time": "00:14:12.980",
+          "french": "Oui, c'est vrai que ce que tu dis, ce sont des choses qu'on peut retrouver dans les témoignages, par exemple, d'autres générations, ou même le système chiffré, ça existe encore dans des classes supérieures. Mais c'est vrai que maintenant, en France, on a beaucoup ce discours de ne pas trop noter les élèves, les comparer, etc.",
+          "chinese": "是的，你说得对，这些内容确实能在其他世代的证词中找到，比如，甚至在一些高级阶层中，那种以数字来衡量学生的做法依然存在。不过，确实如今在法国，人们普遍提倡不要过度给学生打分、不要相互比较等等。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:14:12.980",
+          "end_time": "00:14:28.009",
+          "french": "J'imagine que c'est des choses qui peuvent se partager assez facilement, se comprendre, s'expliquer. Après, c'est quand même des repères à reconstruire pour eux parce qu'effectivement, on évalue, mais pas tout à fait de la même manière. Donc ça, c'est quelque chose qu'on accompagne, dont on discute.",
+          "chinese": "我想，这些事情其实很容易分享、理解并解释清楚。不过，这毕竟是一些需要他们重新建立的参照系，因为确实，我们虽然会进行评估，但方式并不完全一致。所以，这正是我们所陪伴、所探讨的内容。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:14:28.470",
+          "end_time": "00:14:58.289",
+          "french": "Et puis, il y a le rapport aux familles qui n'est pas tout à fait le même non plus. C'est vrai que dans la culture professionnelle française, on essaye de scinder un peu le côté privé et le côté professionnel. Alors qu'au Sénégal, c'est tout à fait normal d'avoir le WhatsApp de l'enseignant, de pouvoir l'appeler le soir, etc. Donc là aussi, il y a une attente des familles qui n'est pas toujours tout à fait celle à laquelle on souhaite répondre. Donc, il faut qu'on explique les règles de fonctionnement.",
+          "chinese": "然后，与家庭之间的关系也不完全一样。诚然，在法国的职业文化中，人们会尽量将私人生活与职业生活区分开来。而在塞内加尔，教师的WhatsApp账号、晚上还能打电话给老师，这些都再正常不过了。因此，家庭方面也存在一种期待，而这种期待并不总是完全符合我们的预期。所以，我们必须向他们解释清楚工作规则。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:14:58.289",
+          "end_time": "00:15:27.649",
+          "french": "à tout le monde. D'accord, donc même là, ça va être plutôt les enseignants français qui vont expliquer comment ça fonctionne plutôt que s'adapter. J'imagine, je me mets à leur place, je me dis que ça doit être difficile de réussir à mettre ses limites quand on a des parents qui sont sympas, qui veulent être un peu familiers. Mais si ça fonctionne... En fait, c'est des règles que moi, je pose en tant que directrice. Je le dis aux parents que c'est la direction qui l'interdit. Comme ça, ce n'est pas aux enseignants de porter ce poids-là.",
+          "chinese": "给大家。好的，所以即便在这种情况下，也还是法国的老师们会来解释具体是怎么运作的，而不是去适应。我猜，如果换作是我，站在他们的角度想想，当父母很友善、想和孩子保持亲近时，要成功划清界限肯定挺难的。不过，如果这种方式真的管用……其实，这些规则是我作为校长亲自制定的。我会明确告诉家长们，是学校管理层禁止这种行为。这样一来，就不用让老师们来承担这份压力了。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:15:27.649",
+          "end_time": "00:15:53.059",
+          "french": "Et ça fonctionne plutôt bien. Bien sûr, il y a des méthodes de communication, il y a des applications pour communiquer, etc. Mais le rôle d'éducateur que peut avoir l'enseignant, notamment dans les villages sénégalais où il va être éducateur tout le temps, finalement, s'il croise un enfant dans le village, il va avoir aussi cette proximité, cette posture-là. Je pense que les enseignants français le regrettent parce que ça existait avant.",
+          "chinese": "而且效果相当不错。当然，现在有各种沟通方式，也有专门的通讯应用等等。但教师所扮演的教育者角色，尤其是在塞内加尔的乡村地区——在那里，教师几乎时时刻刻都在从事教育工作——一旦在村里遇到孩子，他们自然而然就会保持这种亲近感和这种姿态。我认为，法国的教师们对此感到遗憾，因为过去这种情形是存在的。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:15:53.059",
+          "end_time": "00:16:03.110",
+          "french": "C'est quelque chose qui est encore très présent dans les valeurs et qui se ressent aussi dans la manière dont les familles peuvent vouloir interagir avec l'enseignant.",
+          "chinese": "这是一种仍然深深植根于价值观中的东西，也体现在家庭希望与教师互动的方式中。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:16:10.389",
+          "end_time": "00:16:32.320",
+          "french": "Tu as été directrice avant dans un autre pays qui n'a pas les mêmes spécificités que le Sénégal. Qu'est-ce que tu vois comme spécificité dans un pays qui a le français comme langue officielle, qui a été une colonie française, qui a des liens très étroits avec la France ? Est-ce que tu penses qu'il y a des choses qui sont...",
+          "chinese": "你之前曾在另一个国家担任过主管，那个国家与塞内加尔的特殊性并不相同。那么，在一个以法语为官方语言、曾是法国殖民地并与法国有着密切联系的国家，你认为有哪些特殊之处呢？你觉得是否存在一些……"
+        },
+        {
+          "id": 46,
+          "start_time": "00:16:32.320",
+          "end_time": "00:16:54.700",
+          "french": "qui se retrouvent, qui ne se retrouveraient pas, par exemple, si tu étais directrice, je ne sais pas, en Amérique du Sud, où ils parlent espagnol, où ils ont moins de liens avec la France ou avec même peut-être des pays africains, mais plutôt anglophones ? Alors, il y a plusieurs points. Déjà, le Sénégal, donc la langue de scolarisation, c'est le français, mais ils travaillent aussi de plus en plus sur la prise en compte des dialectes.",
+          "chinese": "那些会相遇的人，如果由你来担任校长，比如在南美洲——我不知道——那里讲西班牙语，与法国的联系较少，甚至可能与非洲国家的联系也较弱，而更多是讲英语的地区，那么他们就未必会相遇了。所以，有几个关键点。首先，塞内加尔的官方教学语言是法语，但与此同时，他们也越来越重视对当地方言的考量。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:16:54.700",
+          "end_time": "00:17:05.650",
+          "french": "donc pour que le wolof ou le diola soient aussi appris et utilisés à l'école. Et donc la plupart du temps, pour des élèves sénégalais, quand ils arrivent à l'école, en fait, ils ne parlent pas forcément français.",
+          "chinese": "因此，为了让沃洛夫语或迪奥拉语也能在学校里被学习和使用。所以，大多数情况下，对于塞内加尔学生而言，当他们刚到学校时，其实并不一定讲法语。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:17:05.650",
+          "end_time": "00:17:29.569",
+          "french": "selon les familles. Et d'ailleurs, moi, j'ai été étonnée et très admirative. Les enseignants, quand ils sont nommés, ils peuvent être nommés dans le pays et envoyés dans des régions qui ont un dialecte différent du leur. Ils peuvent se retrouver à enseigner en diola, alors qu'ils sont d'origine peule, par exemple, ou d'autres situations comme ça. Donc, d'enseigner à des élèves qui ne parlent pas la même langue qu'eux. Moi, je suis très admirative. Je ne sais pas comment je me débrouillerais à leur place.",
+          "chinese": "根据家庭情况而定。而且，说实话，我感到非常惊讶，也由衷地钦佩。教师在被任命时，可能会被派往全国各地，甚至前往使用与自己母语不同的方言的地区任教。比如，一位原本是富拉尼族出身的教师，可能被派去教迪奥拉语；又或者反过来，一位迪奥拉族教师却要教富拉尼语。总之，他们要面对的学生说着完全不同于自己的语言。对此，我深感钦佩。真不知道如果换作是我，我能不能胜任这样的工作。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:17:29.569",
+          "end_time": "00:17:50.049",
+          "french": "Et donc, ils ont quand même cette flexibilité vis-à-vis de la langue. Et dans les apprentissages au Sénégal, à chaque fois, la première séance, c'est une séance de langage parce que là, on va apprendre le vocabulaire spécifique à la notion qu'on va voir, partant du principe qu'il y a plein d'élèves qui ne connaissent pas les mots puisqu'ils ne sont pas forcément francophones à l'origine. Et ça, c'est quelque chose que nous, on ne fait pas en France.",
+          "chinese": "因此，他们在语言方面仍然具备这种灵活性。在塞内加尔的教学中，每次第一节课都是语言课，因为我们会先学习与即将讲解的概念相关的专用词汇，基于这样一个前提：很多学生并不认识这些词汇，因为他们原本并不一定以法语为母语。而这一点，我们在法国是不做的。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:17:50.049",
+          "end_time": "00:18:07.690",
+          "french": "Mais malgré tout, il y a plein de familles qui ne sont pas forcément francophones à la maison, qui fréquentent les écoles françaises. Et puis on a des enfants qui ont des niveaux de langage aussi assez différents. Donc finalement, je pense que c'est une bonne habitude qu'on pourrait leur piquer de bien reposer à chaque fois le langage, le vocabulaire, etc. avant de démarrer une nouvelle notion.",
+          "chinese": "但尽管如此，仍有许多家庭在家并不一定以法语为母语，却送孩子入读法国学校。此外，孩子们的语言水平也参差不齐。因此，我认为这是一个很好的习惯，我们不妨借鉴一下：每次开始学习新概念之前，都先帮助孩子们好好梳理一下语言、词汇等内容。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:18:08.059",
+          "end_time": "00:18:37.059",
+          "french": "Ce que je note aussi, c'est que les Sénégalais qui ont fait des études à l'université, etc., ils ont un niveau de français dans la manière de formuler les phrases, etc., qui est extrêmement soutenu et souvent beaucoup plus travaillé, en fait, que celui de quelqu'un qui est francophone de naissance. On se rend compte aussi, en parlant à des gens ici, que parfois, ils ont du vocabulaire bien plus avancé que nous et précis. Donc, il y a quand même, on sent sur certains points la richesse aussi qu'il y a derrière tout ça.",
+          "chinese": "我还注意到，那些曾在大学等机构接受过教育的塞内加尔人，在措辞造句等方面所展现的法语水平，往往极为精炼，甚至比以法语为母语的人还要更加用心打磨。此外，与这里的人交谈时，我们还会发现，他们有时掌握的词汇量远比我们更丰富、更精准。因此，在某些方面，我们确实能感受到背后蕴藏的深厚底蕴与丰富内涵。"
+        },
+        {
+          "id": 52,
+          "start_time": "00:18:37.210",
+          "end_time": "00:19:05.619",
+          "french": "D'accord. L'autre point, c'est... Je pense aussi à l'actualité, parce que là, il y a eu les anniversaires du débarquement, etc. Donc, on a quand même pas mal parlé de la mémoire des tirailleurs sénégalais pendant la guerre. Il y a eu l'anniversaire du massacre de Thiaroye, c'était un point aussi important. Donc ça, c'est des choses qu'on travaille et qu'on discute beaucoup ici. Nos élèves, ils ont eu la chance de pouvoir rencontrer un ancien tirailleur sénégalais qui a donné une conférence et qui parlait justement de sa relation à la France.",
+          "chinese": "好的。另一个要点是……我也想到最近的时事，因为最近正好是诺曼底登陆的纪念日等等。因此，我们确实花了不少时间讨论二战期间塞内加尔步兵的记忆。此外，蒂亚罗伊大屠杀的周年纪念日也是一个非常重要的议题。这些话题都是我们在这里经常探讨和研究的内容。我们的学生们很幸运，能够与一位曾经的塞内加尔步兵老兵见面，他做了一场讲座，专门讲述了自己与法国之间的关系。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:19:05.619",
+          "end_time": "00:19:15.910",
+          "french": "Je pense que selon les générations, ils n'ont pas tout à fait la même perception de la France et de ce qu'a pu apporter la France au Sénégal. Il y a des histoires très touchantes, très fortes.",
+          "chinese": "我认为，不同世代对法国以及法国曾为塞内加尔做出的贡献，并没有完全相同的看法。其中有许多感人至深、令人印象深刻的往事。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:19:15.960",
+          "end_time": "00:19:45.779",
+          "french": "D'accord. Oui, parce que je me posais la question, vu que dans l'actualité, en ce moment, il y a quand même une volonté de la part des pays africains francophones et notamment le Sénégal de se distancier de la France, notamment au niveau militaire. Et on sait que l'enseignement, la langue, c'est un peu du soft power qui permet de garder des relations, mais sans être dans l'invasion, la domination militaire, etc.",
+          "chinese": "好的。是的，我确实有点好奇，因为最近新闻里提到，一些法语非洲国家，尤其是塞内加尔，正有意与法国保持距离，特别是在军事领域。我们都知道，教育和语言其实是一种软实力，能够帮助维持关系，却避免了军事入侵或军事统治之类的情况。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:19:45.779",
+          "end_time": "00:20:13.730",
+          "french": "Et donc je me demandais si ça, ça se ressentait et que peut-être il pouvait y avoir des familles qui avaient cette volonté de garder un lien avec la France ou au contraire d'autres qui pouvaient avoir une réticence aujourd'hui à être trop dans le système français et avoir un rejet aujourd'hui. Dans les familles qui fréquentent l'école, on n'a pas ce phénomène de rejet. Je pense que les familles qui la fréquentent, justement, c'est parce qu'elles font le choix aussi de venir chercher ce mélange culturel.",
+          "chinese": "因此，我一直在想，这种现象是否能被察觉到呢？或许有些家庭仍渴望与法国保持联系，而另一些家庭如今却可能对过于融入法国体制感到抗拒，甚至产生排斥心理。在那些送孩子上这所学校的家庭中，并不存在这种排斥现象。我认为，恰恰是这些家庭选择送孩子来这儿，正是因为他们有意寻求这种文化交融的体验。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:20:13.730",
+          "end_time": "00:20:43.440",
+          "french": "Donc, ça, on ne le sent pas. Et après, comme on est dans la coopération, nous, on est en lien avec un certain nombre d'institutions sénégalaises avec lesquelles on travaille et avec lesquelles les relations sont bonnes, en fait. Les échanges se passent bien, les dossiers sont travaillés en commun. Et moi, j'ai vraiment, à chaque fois, beaucoup de plaisir à rencontrer les membres, que ce soit de l'inspection d'académie ou l'inspection de Dakar Plateau, dont on dépend, ou les membres de la direction de l'enseignement élémentaire, parce qu'on peut travailler.",
+          "chinese": "因此，这一点我们感受不到。另外，由于我们开展的是合作，我们与不少塞内加尔机构保持着联系，并且彼此之间的关系一直很好。双方交流顺畅，共同处理各项事务。每次与各位成员见面，无论是来自学区督察局还是我们所隶属的达喀尔高原督察局，抑或是小学教育管理部门的各位同仁，我都会感到由衷的愉悦，因为我们能够携手共事。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:20:43.440",
+          "end_time": "00:21:08.880",
+          "french": "sur des sujets pédagogiques assez pointus quand on est sur l'hybridation des programmes. C'est très intéressant intellectuellement pour les deux parties parce que nous aussi on apprend beaucoup dans la manière de concevoir les apprentissages, de les présenter. Et ce que je perçois aussi, chaque année quand on recrute des enseignants qui viennent du ministère public sénégalais, il y a un travail de formation des enseignants.",
+          "chinese": "在探讨课程混合这一相当深入的教学议题时，对双方而言都极具智力吸引力。因为我们也能从对方设计和呈现学习内容的方式中学到很多东西。此外，我每年都能感受到，每当招聘来自塞内加尔公共教育部的教师时，都会开展一项针对教师的培训工作。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:21:08.880",
+          "end_time": "00:21:36.529",
+          "french": "qui est assez conséquent. Ils ont lancé un nouveau programme en mathématiques, ils ont aussi lancé l'enseignement de l'anglais en élémentaire, donc ça c'est des choses qui sont relativement nouvelles. Et là, chaque année, je sens que les enseignants sont de plus en plus au fait de ces choses-là, ils les ont vécues en formation, ils ont commencé à les mettre en place. Donc je vois aussi un effet des décisions de formation sur la masse des enseignants qu'ils ont à former qui est assez impressionnant.",
+          "chinese": "规模相当可观。他们启动了一项新的数学课程，还在小学阶段引入了英语教学，这些都算是相对新颖的举措。而且，我每年都能感受到，教师们对这些新事物的掌握程度越来越高：他们在培训中亲身体验过，也开始逐步付诸实践。因此，我也看到了培训决策对需要接受培训的广大教师群体所产生的显著影响。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:21:36.529",
+          "end_time": "00:21:44.680",
+          "french": "Oui, c'est bien, c'est intéressant. C'est vrai que le Sénégal est en ce moment dans une période un peu d'évolution très rapide sur beaucoup de sujets. Oui.",
+          "chinese": "是的，这很好，很有意思。确实，塞内加尔目前正处于一个在许多议题上快速发展的时期。是的。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:21:51.509",
+          "end_time": "00:22:15.710",
+          "french": "Et là, j'aurais une question un peu plus personnelle par rapport au fait qu'on parle beaucoup de la spécificité du Sénégal. Et c'est vrai qu'en t'entendant, on sent vraiment, je ne sais pas si on peut dire un amour, mais un intérêt pour ce pays, que tu as vraiment un lien de construit avec ce pays. Est-ce que dans tes perspectives, l'idée, c'est de rester ici ou tu as quand même...",
+          "chinese": "然后，我想问一个稍微私人一点的问题，关于我们经常谈到塞内加尔的独特性。确实，听你讲话时，我真切地感受到——我不知道能不能说是一种“热爱”，但至少能感觉到你对这个国家怀有一种特别而深刻的情感，你与这个国家之间建立了一种超越常规的联系。那么，在你的未来规划中，是打算一直留在这里，还是说你心里其实……"
+        },
+        {
+          "id": 61,
+          "start_time": "00:22:15.710",
+          "end_time": "00:22:41.170",
+          "french": "un intérêt pour aller voir comment ça se passe encore ailleurs, peut-être sur d'autres continents, d'autres systèmes, etc. Alors, moi, je me plais beaucoup ici, effectivement. J'aime particulièrement l'établissement dans lequel je travaille parce que la dimension, justement, de coopération, c'est quelque chose que j'ai découvert dans cet établissement et que j'ai énormément apprécié. Dans beaucoup d'autres écoles françaises à l'étranger, notamment les lycées français, on a une culture professionnelle qui est beaucoup plus proche.",
+          "chinese": "对去看看其他地方的情况感兴趣，也许是在其他大洲、其他体系中等等。所以，我确实很喜欢这里。我尤其喜欢我工作的这家机构，因为正是在这里，我发现了合作这一维度，并且非常欣赏它。在许多其他的法国海外学校，尤其是法国高中，我们的职业文化要更接近一些。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:22:41.170",
+          "end_time": "00:22:58.539",
+          "french": "d'une culture française. Alors c'est très agréable et très confortable aussi. Mais là, j'apprécie vraiment ce travail qu'on fait au quotidien de mélange culturel et d'appropriation de la part des uns et des autres. Donc c'est vraiment une dimension importante pour moi, en fait, dans mon expérience au Sénégal. Après...",
+          "chinese": "来自法国的文化。因此，这既非常愉快，也十分舒适。但此刻，我真正欣赏的是我们每天所做的这项工作——不同文化之间的交融以及彼此的相互借鉴与吸收。事实上，这对我在塞内加尔的经历而言，是一个极其重要的维度。之后……"
+        },
+        {
+          "id": 63,
+          "start_time": "00:22:58.539",
+          "end_time": "00:23:14.849",
+          "french": "Notre projet familial, c'était surtout de pouvoir découvrir différents pays, différentes cultures. Et de manière générale, on n'aime pas, même en vacances, retourner à un endroit qu'on connaît déjà. On essaie de découvrir de nouveaux endroits. Donc notre projet à plus long terme, effectivement, c'est plutôt de partir sur une autre mission.",
+          "chinese": "我们家庭的计划，主要是能够探索不同的国家、不同的文化。而且总的来说，即使在度假时，我们也不喜欢回到已经熟悉的地方。我们更倾向于去发现新的地方。因此，从长远来看，我们的计划确实更倾向于开启另一项任务。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:23:14.849",
+          "end_time": "00:23:44.559",
+          "french": "Au niveau de l'AEFE, les missions de direction, elles durent entre 3 et 5 ans. Et on peut avoir deux missions qui s'enchaînent avant de retourner en France. Il y a un retour en France qui est toujours prévu au bout de deux missions pour pouvoir aussi se remettre à jour, se rafraîchir un petit peu avant de repartir. Donc là, normalement, quand on quitte le Sénégal, on demandera à aller dans un autre pays, on ne sait pas où. Et puis après, ce sera un retour en France pour quelques années.",
+          "chinese": "在AEFE层面，各司的任期通常为3到5年。在返回法国之前，一个人可以连续执行两段任期。每完成两段任期后，总会安排一次回法，以便及时更新知识、稍作休整后再重新出发。因此，正常情况下，当我们离开塞内加尔时，会申请前往另一个国家，至于具体是哪个国家则尚未确定。之后，我们将会回到法国生活几年。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:23:44.559",
+          "end_time": "00:24:13.779",
+          "french": "super intéressant. En tout cas, ça a l'air d'être passionnant comme mode de vie, de découvrir des pays comme ça. Et puis, grâce à ce travail, tu peux avoir beaucoup d'opportunités. Juste, je reviens peut-être à quelque chose de plus technique parce que tu as parlé des lycées français. Alors ça, c'est quelque chose que je sais parce que j'ai cherché puis j'en ai parlé avec Marina qui est donc mon amie qui travaille ici. Mais il y a une spécificité entre ce qu'on appelle les lycées français.",
+          "chinese": "超级有趣。总之，这种生活方式听起来真是令人着迷，能这样探索各个国家，真是太棒了！而且，通过这份工作，你还能获得很多机会。不过，我可能要回到一些更具体的技术性话题上，因为你刚才提到了法国高中。这一点我倒是知道，因为我查过资料，还跟我的朋友玛丽娜聊过——她就在这里工作。不过，所谓的“法国高中”其实有一些特别之处。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:24:13.779",
+          "end_time": "00:24:31.519",
+          "french": "qui sont un peu les lycées officiels, quelque chose comme ça, et d'autres types d'établissements. Je dis que je le sais, mais en fait, j'ai eu du mal à comprendre. Je suis allée sur le site de l'AEFE. Mais peut-être que pour nos auditeurs, ça peut être intéressant de comprendre s'ils ont des enfants qu'ils veulent mettre...",
+          "chinese": "这些有点像官方的高中，大概就是这么回事，还有其他类型的一些学校。我嘴上说我知道，但实际上我却很难弄明白。我查了AEFE的网站。不过，也许对我们的听众来说，了解一下他们是否打算送孩子去这些学校，会很有意思……"
+        },
+        {
+          "id": 67,
+          "start_time": "00:24:31.519",
+          "end_time": "00:25:01.230",
+          "french": "Alors, en fait, il y a trois types d'établissements qui travaillent en lien avec l'AEFE. Et la différence ne va pas se jouer dans le nom. C'est-à-dire que le nom de lycée français, en fait, il y a plein d'établissements qui ont ce nom-là et qui peuvent l'avoir à partir du moment où ils appliquent les programmes français. Par contre, ça va être notamment sur le site de l'AEFE, c'est indiqué, ou à l'entrée de l'établissement. En fait, on a des lycées, enfin, des établissements qui sont en gestion directe. Ça veut dire que l'établissement appartient à l'AEFE, que tous les personnels sont embauchés et rémunérés par l'AEFE. Donc, voilà.",
+          "chinese": "那么，实际上，有三类机构与AEFE合作。而这种差异并不体现在名称上。也就是说，虽然很多机构都叫“法国高中”，但只要它们实施法国课程，就都可以使用这个名称。不过，这一点会在AEFE的官方网站上明确标注，或者在学校的入口处标明。事实上，我们有一些高中——确切地说，是一些由AEFE直接管理的机构。这意味着这些机构归AEFE所有，所有教职员工均由AEFE聘用并支付薪酬。好了，就是这样。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:25:01.230",
+          "end_time": "00:25:19.170",
+          "french": "la France. Donc c'est le cas notamment du lycée Jean Mermoz à Dakar. Et ensuite on a deux autres niveaux de partenariat. Il y a des établissements qui sont conventionnés. Donc quand ils sont conventionnés, il y a une partie du personnel, donc souvent c'est l'équipe de direction, les formateurs et une partie du personnel enseignant qui est...",
+          "chinese": "法国。因此，达喀尔的让·梅尔莫兹高中便是这种情况之一。此外，我们还有另外两个层次的合作关系。有些机构已签订协议。当这些机构签订协议后，其中一部分工作人员——通常是管理团队、培训师以及部分教师——会……"
+        },
+        {
+          "id": 69,
+          "start_time": "00:25:19.170",
+          "end_time": "00:25:37.869",
+          "french": "envoyé par l'AEFE, donc ce sont des titulaires français qui sont en détachement, et le reste du personnel qui est employé en local. Et l'établissement, soit c'est une entreprise, soit c'est une association, alors ça peut être une association parentale, qui va être géré en accord avec la convention signée avec l'AEFE.",
+          "chinese": "由法国外交与海外教育署派遣，因此这些人员均为法国正式编制的外派教师，其余工作人员则为当地聘用。该机构要么是一家企业，要么是一个协会——可能是一个家长协会——其管理将依据与法国外交与海外教育署签署的协议进行。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:25:37.869",
+          "end_time": "00:26:05.059",
+          "french": "Et le dernier niveau, c'est les établissements partenaires, et ce sont ceux qui sont les plus nombreux à l'heure actuelle. Quand on est partenaire de l'AEFE, tous les personnels sont embauchés en local, donc sont employés par l'entreprise ou par l'association qui gère l'établissement. Et le partenariat avec l'AEFE garantit le respect des programmes français, ça c'est l'homologation, c'est dans tous les établissements, et je pense que ça c'est le point le plus important, et garantit aussi l'accès à la formation.",
+          "chinese": "最后一个层级是合作机构，目前这类机构的数量最多。当一所学校成为AEFE的合作伙伴时，所有教职员工均在当地招聘，即由管理该学校的公司或协会聘用。与AEFE的合作确保了法国课程体系得到遵守——这便是认证，所有合作学校都必须遵循。我认为这一点最为重要，同时也能保证教职员工获得培训机会。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:26:05.059",
+          "end_time": "00:26:34.259",
+          "french": "Ça aussi, c'est un point très important pour les écoles et pour la qualité de l'enseignement. C'est-à-dire que nous, dans l'accord de partenariat, on verse une rétribution sur un certain pourcentage à l'AEFE et on peut envoyer nos enseignants en formation. Et donc, l'AEFE est notamment connue pour être un membre actif de la formation des enseignants. Et pour des enseignants comme Marina qui viennent de France, ils découvrent que les opportunités de formation quand on est enseignant à l'étranger, elles sont...",
+          "chinese": "这一点对学校和教学质量而言也十分重要。也就是说，在合作协议中，我们向AEFE支付一定比例的报酬，并且可以派遣我们的教师参加培训。因此，AEFE尤其以积极参与教师培训而闻名。对于像玛丽娜这样来自法国的教师来说，他们发现，作为海外教师，所拥有的培训机会是……"
+        },
+        {
+          "id": 72,
+          "start_time": "00:26:34.259",
+          "end_time": "00:26:58.509",
+          "french": "En fait, il y en a énormément. Et ça ressemble à ce qu'on avait en France il y a quelques années qui a malheureusement tendance à disparaître. Donc, ce sont des points qui sont importants pour la qualité de l'enseignement. Mais dans tous les établissements, l'homologation est présente et l'accès à la formation est présent. Après, c'est vraiment une relation de proximité avec le ministère de l'Éducation nationale qui va être...",
+          "chinese": "事实上，这类情况非常多。这很像几年前法国所拥有的状况，而遗憾的是，这种状况正逐渐消失。因此，这些方面对于教学质量至关重要。不过，在所有教育机构中，认证制度都已建立，接受培训的机会也一应俱全。接下来，真正重要的是与国家教育部之间建立一种紧密的联系……"
+        },
+        {
+          "id": 73,
+          "start_time": "00:26:58.509",
+          "end_time": "00:27:27.230",
+          "french": "plus ou moins proportionnée dans l'établissement. D'accord. Pour les parents, ça ne change pas grand-chose. Le programme sera le même, la qualité de l'enseignement sera la même. Oui, pas de panique, on va dire, si on trouve des établissements qui sont plus ou moins à certains niveaux. Ça ne change rien en termes d'éducation pour les enfants. Le critère de qualité, l'audit d'homologation, c'est vraiment un audit qui est assez...",
+          "chinese": "在机构中或多或少地按比例分配。好的。对家长来说，这并没有太大变化。课程内容将保持一致，教学质量也将保持不变。是的，别慌，如果发现某些机构的水平或高或低，也没关系。这对孩子们的教育没有任何影响。至于质量标准和认证审核，这确实是一项相当……"
+        },
+        {
+          "id": 74,
+          "start_time": "00:27:27.230",
+          "end_time": "00:27:38.269",
+          "french": "coriace à préparer. C'est renouvelé tous les 5 ans, donc c'est quand même aussi revu régulièrement. C'est vraiment une garantie de qualité qui fait aussi la spécificité du réseau français, c'est-à-dire que dans...",
+          "chinese": "科里亚，这已做好准备。每五年进行一次更新，因此也定期接受审查。这确实是一项质量保证，也是法国网络的独特之处，也就是说，在……"
+        },
+        {
+          "id": 75,
+          "start_time": "00:27:38.269",
+          "end_time": "00:28:05.250",
+          "french": "si on prend des écoles américaines ou britanniques à l'étranger, il n'y a pas une homologation par un réseau et il n'y a pas une validation de l'appellation en fait. Donc ça c'est quand même un point fort et puis je pense que c'est sécurisant quand on est parent parce qu'on sait qu'il y a un certain cadre qui est garanti que ce soit sur la sécurité des élèves, les infrastructures et sur les enseignements en fait, le fait que les programmes soient respectés.",
+          "chinese": "如果父母送孩子到海外的美国或英国学校就读，这些学校并未获得任何网络认证，也未经过正式的名称核准。因此，这实际上是一个优势所在。我认为，作为家长，这一点让人感到安心，因为我们知道，无论是在学生安全、基础设施还是教学内容方面，都有一个明确且可靠的框架保障，而且课程体系也得到了严格遵守。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:28:05.250",
+          "end_time": "00:28:33.059",
+          "french": "Quand on est à l'étranger, il y a quand même pas mal d'établissements qui ont différentes filières et qui peuvent avoir des filières homologuées et des filières non homologuées. Ça, ça existe. Donc voilà, il faut juste vérifier. Souvent, on peut avoir des filières qui sont des sections internationales à part entière, par exemple, qui ne vont pas forcément être homologuées et puis une section un peu plus française qui va être homologuée. Donc là, tout dépend aussi du projet des familles.",
+          "chinese": "在国外，确实有不少学校提供不同的课程体系，其中既有获得认证的课程，也有未获认证的课程。这种情况是存在的。所以，大家只需仔细核实一下就行。比如，在巴黎-托鲁尔，很多学校都有国际班，但这些国际班未必都能获得认证；而一些更偏法国本土特色的班级则可能获得了认证。当然，这还得看家庭的具体规划呢。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:28:33.059",
+          "end_time": "00:29:00.220",
+          "french": "Moi, je suis enseignante de la fonction publique française, donc c'est vrai que j'y attache une importance. Et je trouve ça rassurant aussi, en tant que maman, que mes enfants suivent un programme qui est homologué, parce que je sais que si on est amenés à retourner en France, ils n'ont pas une perte de repères trop importante. Et comme on les a déjà mobilisés un petit peu en les changeant de pays plusieurs fois, on ne veut pas en demander davantage. Oui, c'est totalement compréhensible. Et juste pour finir, ces établissements, par contre, ils sont tous privés.",
+          "chinese": "我是一名法国公务员教师，所以确实很重视这一点。作为一位母亲，我也觉得这让我很安心——我的孩子们所接受的课程是经过认证的，这样我就知道，如果将来我们不得不回到法国，他们也不会有太大的适应困难。而且，由于我们之前已经带孩子们在不同国家之间搬过几次家，我们也不希望再给他们增加太多负担了。是的，这完全可以理解。最后补充一点，这些学校都是私立的。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:29:00.220",
+          "end_time": "00:29:11.779",
+          "french": "Il n'y a pas la France qui a des établissements publics à l'étranger complètement gratuits pour les élèves français. Non. En fait, l'AEFE, c'est une agence...",
+          "chinese": "没有法国在海外设有完全免费的公立学校供法国学生就读。不，实际上，AEFE是一个机构……"
+        },
+        {
+          "id": 79,
+          "start_time": "00:29:11.799",
+          "end_time": "00:29:37.160",
+          "french": "Un organisme public qui organise les écoles. Et les écoles, ce sont des organismes privés qui remplissent une mission de service public. C'est-à-dire qu'on fonctionne comme une école publique sur plein de points. Mais effectivement, il y a des frais d'inscription et des frais de scolarisation que les familles doivent payer. Alors après, pour les enfants qui sont de nationalité française, il peut y avoir des bourses. C'est-à-dire qu'on peut avoir des familles qui sont boursières à 100% et qui ont la scolarité prise en charge par l'État français.",
+          "chinese": "一个负责管理学校的公共机构。而这些学校本身则是提供公共服务使命的私立机构。也就是说，在诸多方面，它们的运作方式与公立学校并无二致。不过，确实存在一些注册费和学费，需要由家庭支付。不过，对于持有法国国籍的孩子，可能会获得奖学金。也就是说，有些家庭可以获得100%的奖学金，其子女的学费将由法国政府全额承担。"
+        },
+        {
+          "id": 80,
+          "start_time": "00:29:37.240",
+          "end_time": "00:30:05.230",
+          "french": "D'accord. C'est intéressant parce que parmi nos auditeurs, il y a des personnes qui ne sont pas françaises, mais qui ont leurs enfants qui ont deux nationalités. Donc, ça peut être intéressant de s'intéresser justement à ce système, à la possibilité des bourses, etc. Je suis sûre qu'ils vont être très contents d'avoir ces informations et puis ces analyses de l'intérieur. C'était super intéressant. Je ne sais pas si tu voulais ajouter quelque chose avant de terminer, mais sinon, en tout cas, tu as bien...",
+          "chinese": "好的。这很有意思，因为我们的听众中有一些人并非法国籍，但他们的孩子拥有双重国籍。因此，关注这一制度、奖学金的可能性等等，或许会很有意义。我确信，他们一定会很高兴获得这些信息以及来自内部的分析。刚才的内容真是太精彩了！不知道你结束之前还想补充些什么，不过总之，你已经讲得很到位了……"
+        },
+        {
+          "id": 81,
+          "start_time": "00:30:05.230",
+          "end_time": "00:30:16.940",
+          "french": "Tu nous as raconté plein de choses intéressantes. C'était super. Non, je pense que oui. J'ai dit tout ce qui me paraissait important sur l'école. OK. Merci beaucoup. Avec plaisir.",
+          "chinese": "你给我们讲了很多有趣的事情，真是太棒了。不，我觉得是的。我把自己觉得关于学校的重要内容都说了。好的，非常感谢！不客气！"
+        },
+        {
+          "id": 82,
+          "start_time": "00:30:24.730",
+          "end_time": "00:30:45.150",
+          "french": "Et voilà pour cet épisode. J'espère que ça vous a plu. N'hésitez pas, comme d'habitude, à laisser des commentaires, à nous poser des questions, à nous faire part de vos propres expériences. En tout cas, dans deux semaines, je ferai un nouvel épisode solo pour pouvoir vous raconter.",
+          "chinese": "好了，本期节目就到这里。希望你们喜欢。和往常一样，别忘了留言评论、向我们提问，或者分享你们自己的经历哦！总之，两周后，我会再为大家带来一期单独录制的节目，到时候再跟大家分享更多内容。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:30:45.150",
+          "end_time": "00:31:04.200",
+          "french": "plus de choses sur le Sénégal. J'ai observé pas mal de choses intéressantes, notamment concernant les relations entre la France et le Sénégal. Donc, je vous en dirai plus la prochaine fois. En attendant, je vous souhaite une bonne fin de semaine et à très bientôt !",
+          "chinese": "关于塞内加尔的更多内容。我观察到了不少有趣的现象，尤其是关于法国与塞内加尔之间的关系。下次我会跟大家详细聊聊。在此期间，祝大家周末愉快，我们很快再见！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.280",
+        "end_time": "00:31:04.200",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 83,
+        "source_video_name": "E180 Une école française sur un autre continent.json",
+        "tags": [
+          "考试干货",
+          "专家见解"
+        ]
+      },
+      "_quality_check": {
+        "passed": true,
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0
+      }
+    }
+  }
+}

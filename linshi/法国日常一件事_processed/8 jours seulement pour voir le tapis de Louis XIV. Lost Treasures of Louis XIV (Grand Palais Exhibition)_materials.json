@@ -1,0 +1,680 @@
+{
+  "source_file": "8 jours seulement pour voir le tapis de Louis XIV. Lost Treasures of Louis XIV (Grand Palais Exhibition).json",
+  "channel": "法国日常一件事",
+  "video_name": "仅展8天：一睹路易十四御用地毯。路易十四的失落珍宝（大皇宫特展）",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:00:14.630Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le plus-que-parfait (愈过去时)",
+          "La voix passive (被动语态)",
+          "Le subjonctif après 'avant que' (avant que后的虚拟式与赘词ne)"
+        ],
+        "speaking": [
+          "Raconter une expérience culturelle ou la visite d'une exposition.",
+          "Exprimer son enthousiasme ou son agacement face à une situation quotidienne (ex: faire la queue)."
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "enthousiasmé",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɑ̃.tu.zjas.me]",
+            "chinese": "充满热情的，极度兴奋的",
+            "example_sentence": {
+              "french": "Je ne pensais pas qu'un jour je serais à ce point enthousiasmée à l'idée d'aller voir un tapis.",
+              "chinese": "我从未想过，有一天我会如此兴奋地期待着去看一块地毯。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je ne pensais pas qu'un jour je serais à ce point enthousiasmée à l'idée d'aller voir un tapis.",
+                "chinese": "我从未想过，有一天我会如此兴奋地期待着去看一块地毯。",
+                "source_video": "Subtitle 3"
+              }
+            ]
+          },
+          {
+            "french": "conçu",
+            "part_of_speech": "verbe (participe passé) / adjectif",
+            "ipa": "[kɔ̃.sy]",
+            "chinese": "设计，构思",
+            "example_sentence": {
+              "french": "Il s'agit d'un tapis exceptionnel qui a été conçu par une manufacture parisienne.",
+              "chinese": "这是一块由巴黎一家工坊精心设计的非凡地毯。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le tapis est en fait une série de 92 tapis conçus pour être mis bout à bout...",
+                "chinese": "实际上，这块地毯是由92块地毯组成的系列，原本计划一块接一块地拼接起来……",
+                "source_video": "Subtitle 4"
+              }
+            ]
+          },
+          {
+            "french": "manufacture",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ma.ny.fak.tyʁ]",
+            "chinese": "制造厂，手工作坊（尤指历史上的皇家工坊）",
+            "example_sentence": {
+              "french": "La manufacture des Gobelins est célèbre pour ses tapisseries.",
+              "chinese": "戈布兰制造厂以其挂毯而闻名。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il s'agit d'un tapis exceptionnel qui a été conçu par une manufacture parisienne.",
+                "chinese": "这是一块由巴黎一家工坊精心设计的非凡地毯。",
+                "source_video": "Subtitle 4"
+              }
+            ]
+          },
+          {
+            "french": "décliner",
+            "part_of_speech": "verbe",
+            "ipa": "[de.kli.ne]",
+            "chinese": "演绎，变化（图案、款式等）",
+            "example_sentence": {
+              "french": "Les artistes doivent savoir décliner les motifs.",
+              "chinese": "艺术家们必须懂得变化和演绎各种图案。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les artistes doivent savoir décliner les motifs.",
+                "chinese": "艺术家们必须懂得变化和演绎各种图案。",
+                "source_video": "Subtitle 5"
+              }
+            ]
+          },
+          {
+            "french": "tissage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ti.saʒ]",
+            "chinese": "编织，织造",
+            "example_sentence": {
+              "french": "C'est une technique que les ateliers de tissage français maîtrisaient bien.",
+              "chinese": "这是法国织毯作坊十分擅长的一种工艺。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est une technique que les ateliers de tissage français maîtrisaient bien.",
+                "chinese": "这是法国织毯作坊十分擅长的一种工艺。",
+                "source_video": "Subtitle 6"
+              }
+            ]
+          },
+          {
+            "french": "concurrencer",
+            "part_of_speech": "verbe",
+            "ipa": "[kɔ̃.ky.ʁɑ̃.se]",
+            "chinese": "与……竞争",
+            "example_sentence": {
+              "french": "La France voulait concurrencer les tapis venus d'Orient.",
+              "chinese": "当时，法国希望与来自东方的地毯展开竞争。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La France voulait concurrencer les tapis venus d'Orient.",
+                "chinese": "当时，法国希望与来自东方的地毯展开竞争。",
+                "source_video": "Subtitle 6"
+              }
+            ]
+          },
+          {
+            "french": "nef",
+            "part_of_speech": "nom féminin",
+            "ipa": "[nɛf]",
+            "chinese": "（教堂等的）中殿，大厅",
+            "example_sentence": {
+              "french": "Elle avait lieu dans un bâtiment suffisamment grand pour les accueillir, la nef du Grand Palais à Paris.",
+              "chinese": "展览举办的地点也十分合适——位于巴黎大皇宫的中殿。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7,
+              10
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Lorsque nous avons franchi la porte de la nef, tout fut soudain oublié.",
+                "chinese": "当我们跨过教堂中殿的大门时，一切瞬间被抛诸脑后。",
+                "source_video": "Subtitle 10"
+              }
+            ]
+          },
+          {
+            "french": "se précipiter",
+            "part_of_speech": "verbe pronominal",
+            "ipa": "[sə pʁe.si.pi.te]",
+            "chinese": "冲，奔，赶紧",
+            "example_sentence": {
+              "french": "Je me suis précipitée vers mon ordinateur.",
+              "chinese": "我立刻冲向自己的电脑。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je me suis précipitée vers mon ordinateur.",
+                "chinese": "我立刻冲向自己的电脑。",
+                "source_video": "Subtitle 8"
+              }
+            ]
+          },
+          {
+            "french": "écrin",
+            "part_of_speech": "nom masculin",
+            "ipa": "[e.kʁɛ̃]",
+            "chinese": "首饰盒，（引申为）绝佳的背景/陈列场所",
+            "example_sentence": {
+              "french": "L'écrin parfait pour les tapis de Louis XIV.",
+              "chinese": "它堪称陈列路易十四时期地毯的绝佳场所。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'écrin parfait pour les tapis de Louis XIV.",
+                "chinese": "它堪称陈列路易十四时期地毯的绝佳场所。",
+                "source_video": "Subtitle 9"
+              }
+            ]
+          },
+          {
+            "french": "verrière",
+            "part_of_speech": "nom féminin",
+            "ipa": "[vɛ.ʁjɛʁ]",
+            "chinese": "玻璃天棚，大玻璃窗",
+            "example_sentence": {
+              "french": "C'est un très joli bâtiment du XIXe siècle doté d'une grande verrière.",
+              "chinese": "这是一座19世纪的精美建筑，拥有一个巨大的玻璃天窗。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est un très joli bâtiment du XIXe siècle doté d'une grande verrière.",
+                "chinese": "这是一座19世纪的精美建筑，拥有一个巨大的玻璃天窗。",
+                "source_video": "Subtitle 9"
+              }
+            ]
+          },
+          {
+            "french": "s'abriter",
+            "part_of_speech": "verbe pronominal",
+            "ipa": "[s‿a.bʁi.te]",
+            "chinese": "躲避（风雨等），庇护",
+            "example_sentence": {
+              "french": "Tout le monde était pressé de rentrer pour s'abriter.",
+              "chinese": "每个人都迫不及待地想赶紧进去避雨。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Tout le monde était pressé de rentrer pour s'abriter.",
+                "chinese": "每个人都迫不及待地想赶紧进去避雨。",
+                "source_video": "Subtitle 9"
+              }
+            ]
+          },
+          {
+            "french": "râleur",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʁa.lœʁ]",
+            "chinese": "爱抱怨的人，发牢骚的人",
+            "example_sentence": {
+              "french": "Faire la queue n'était pas particulièrement agréable entre les râleurs.",
+              "chinese": "在那些抱怨的人中间排队实在不太愉快。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Faire la queue n'était pas particulièrement agréable entre les râleurs, les soupireurs et les doubleurs.",
+                "chinese": "在那些抱怨的人、叹气的人和插队的人中间排队，实在不是一件特别愉快的事。",
+                "source_video": "Subtitle 9"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "avoir l'oreille en alerte",
+            "meaning": "竖起耳朵听，立刻警觉/关注起来",
+            "example": {
+              "french": "Tout de suite, j'ai l'oreille en alerte.",
+              "chinese": "顿时，我的耳朵立刻竖了起来。"
+            },
+            "usage_note": "用于形容听到某个感兴趣或异常的声音/消息时，立刻集中注意力的状态。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "mettre bout à bout",
+            "meaning": "首尾相接，拼接在一起",
+            "example": {
+              "french": "Une série de 92 tapis conçus pour être mis bout à bout dans la galerie.",
+              "chinese": "由92块地毯组成的系列，原本计划在长廊中一块接一块地拼接起来。"
+            },
+            "usage_note": "常用于物理上的拼接（如绳子、地毯），也可用于抽象概念（如把时间、证据拼凑起来）。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "par-ci, par-là",
+            "meaning": "零星地，到处，这里那里",
+            "example": {
+              "french": "Cependant, ils ont été offerts par-ci, par-là.",
+              "chinese": "然而，这些地毯零星地被赠送过（这里送一块，那里送一块）。"
+            },
+            "usage_note": "用于表达某物散落各地，或某事偶尔发生，缺乏系统性。",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "faire la queue",
+            "meaning": "排队",
+            "example": {
+              "french": "Faire la queue n'était pas particulièrement agréable.",
+              "chinese": "排队的过程实在不太愉快。"
+            },
+            "usage_note": "非常基础但极常用的日常表达，在描述展览、购物等场景时必不可少。",
+            "source_ids": [
+              9
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le plus-que-parfait (愈过去时)",
+            "structure": "Sujet + avoir/être à l'imparfait + participe passé",
+            "explanation": "愈过去时用于表示在另一个过去的动作或状态之前已经完成的动作。在叙述历史或回忆时非常常见，用来交代背景或先决条件。",
+            "example": {
+              "french": "Parce que le temps de leur réalisation, 20 ans, Louis XIV était déjà parti à Versailles.",
+              "chinese": "因为制作耗时20年，路易十四（在那之前）早已迁往凡尔赛宫了。"
+            },
+            "usage_note": "注意助动词的选择（être或avoir）与复合过去时相同，只是助动词需变为未完成过去时。常与'déjà'连用强调动作的完成。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "name": "La voix passive (被动语态)",
+            "structure": "Sujet patient + être (au temps du verbe actif) + participe passé + (par + agent)",
+            "explanation": "被动语态常用于强调动作的承受者（如艺术品、建筑物）而非执行者。在介绍历史文物、艺术品制作过程时使用频率极高。",
+            "example": {
+              "french": "Les tapis ont été dessinés par le peintre Charles Le Brun.",
+              "chinese": "这些地毯由画家夏尔·勒布伦设计。"
+            },
+            "usage_note": "在复合时态中（如复合过去时），过去分词必须与主语（Les tapis, 阳性复数）进行性数配合（dessinés）。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "name": "Le subjonctif après 'avant que' (avant que后的虚拟式与赘词ne)",
+            "structure": "avant que + sujet + (ne) + verbe au subjonctif",
+            "explanation": "连词短语'avant que'（在……之前）后面必须接虚拟式，因为它表达的是一个尚未发生、存在不确定性的动作。在书面语或讲究的口语中，常在动词前加上没有否定意义的赘词'ne' (ne explétif)。",
+            "example": {
+              "french": "Mardi midi, j'étais dans la cuisine avant que les filles n'arrivent pour le déjeuner.",
+              "chinese": "周二中午，我正待在厨房里，等孩子们来吃午饭（在孩子们到达之前）。"
+            },
+            "usage_note": "这里的'n''不是否定词，去掉它句子意思不变，但加上它显得语言更地道、更高级。",
+            "source_ids": [
+              3
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃] et [ɔ̃]",
+              "description": "Les voyelles nasales (鼻化元音) sont très présentes dans le vocabulaire de cet épisode, nécessitant de bien faire résonner l'air dans la cavité nasale sans prononcer la consonne 'n' ou 'm'.",
+              "examples": [
+                "enthousiasmée",
+                "concurrencer",
+                "passionnant"
+              ]
+            },
+            {
+              "sound": "Les chiffres romains",
+              "description": "La prononciation des rois et des siècles en français nécessite de lire les chiffres romains comme des nombres cardinaux ou ordinaux.",
+              "examples": [
+                "Louis XIV (Louis Quatorze)",
+                "XIXe siècle (dix-neuvième siècle)"
+              ]
+            }
+          ],
+          "liaison": [
+            "tout_est [tu.t‿ɛ] différent",
+            "les_artistes [le.z‿aʁ.tist]",
+            "aux_États-Unis [o.z‿e.ta.z‿y.ni]"
+          ],
+          "intonation": "L'intonation monte pour marquer l'enthousiasme et la surprise (ex: 'Un tapis de Louis XIV ?', 'Quel tapis ?'), puis adopte un rythme descriptif et posé pour les explications historiques."
+        },
+        "vocabulary_network": {
+          "theme": "L'Exposition et l'Artisanat d'Art",
+          "core_word": "Tapis",
+          "related_groups": [
+            {
+              "category": "Création & Fabrication",
+              "words": [
+                "conçu",
+                "manufacture",
+                "dessinés",
+                "motifs",
+                "point noué",
+                "tissage"
+              ]
+            },
+            {
+              "category": "Lieux & Architecture",
+              "words": [
+                "galerie",
+                "château",
+                "palais",
+                "nef",
+                "écrin",
+                "verrière"
+              ]
+            },
+            {
+              "category": "L'expérience de visite",
+              "words": [
+                "enthousiasmée",
+                "exposition",
+                "faire la queue",
+                "râleurs",
+                "magique"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Le tapis est en fait une ___ de 92 tapis ___ pour être mis ___ à ___ dans la galerie de 440 mètres qui ___ le château du Louvre au palais des Tuileries...",
+            "answer": "série, conçus, bout, bout, reliait",
+            "explanation": "根据原文第4句，地毯是一个系列（série），被设计（conçus）用来首尾相接（bout à bout）放置在连接（reliait）卢浮宫和制砖宫的长廊里。注意conçus需要与tapis进行阳性复数配合，reliait是未完成过去时。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi les tapis n'ont-ils jamais été installés dans la Grande Galerie du Louvre ?",
+            "options": {
+              "A": "Parce que Louis XIV avait déjà déménagé à Versailles à la fin de leur fabrication.",
+              "B": "Parce qu'ils ont été détruits pendant la Révolution française.",
+              "C": "Parce que la manufacture parisienne a fait faillite.",
+              "D": "Parce qu'ils étaient trop fragiles pour être exposés."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第6句明确指出：'Les tapis n'ont jamais été installés dans la Grande Galerie. Parce que le temps de leur réalisation, 20 ans, Louis XIV était déjà parti à Versailles.'（因为制作耗时20年，路易十四当时已经搬到了凡尔赛宫）。选项D虽然提到了脆弱（fragiles），但那是现代展览只展出8天的原因，而不是当年未安装在卢浮宫的原因。",
+            "source_ids": [
+              6,
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Tout le monde était pressé de rentrer pour s'abriter et faire la queue n'était pas particulièrement agréable entre les râleurs, les soupireurs et les doubleurs.",
+            "answer": "每个人都迫不及待地想赶紧进去避雨，而在那些抱怨的人、叹气的人和插队的人中间排队，实在不是一件特别愉快的事。",
+            "explanation": "翻译难点在于准确传达后半句三个并列的生动名词：'râleurs'（爱发牢骚/抱怨的人）、'soupireurs'（叹气的人，表达不耐烦）和'doubleurs'（这里指插队的人）。's'abriter'意为'避雨/躲避'，结合前文的'Il pleuvait'（下雨）来理解。",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez cette phrase à la voix active : 'Les tapis ont été dessinés par le peintre Charles Le Brun.'",
+            "answer": "Le peintre Charles Le Brun a dessiné les tapis.",
+            "explanation": "原句是复合过去时的被动语态（ont été dessinés）。改为主动语态时，动作执行者（par后面的部分）'le peintre Charles Le Brun'作主语，动词变为主动的复合过去时'a dessiné'，原主语'les tapis'变为直接宾语。注意主动语态中，过去分词dessiné不再需要与les tapis配合，因为直接宾语在动词之后。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "conçu",
+            "bout à bout",
+            "s'abriter",
+            "râleur"
+          ],
+          "covered_grammar": [
+            "La voix passive",
+            "Le plus-que-parfait"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Je ne pensais pas qu'un jour je serais à ce point + adjectif + à l'idée de + infinitif",
+            "explanation": "用于表达对某件即将发生的事情感到出乎意料的强烈情绪（如兴奋、害怕等）。",
+            "example": {
+              "french": "Je ne pensais pas qu'un jour je serais à ce point enthousiasmée à l'idée d'aller voir un tapis.",
+              "chinese": "我从未想过，有一天我会如此兴奋地期待着去看一块地毯。"
+            }
+          },
+          {
+            "pattern": "Ce que je venais de + infinitif + était + adjectif",
+            "explanation": "使用最近过去时（venir de + inf）的未完成过去时形态（venais de），用来描述刚刚发生并带来某种感受的事情。",
+            "example": {
+              "french": "Ce que je venais d'entendre était passionnant.",
+              "chinese": "我刚听到的消息令人兴奋不已。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你和朋友在巴黎参观一场热门的历史展览。外面正下着雨，排队的人很多，队伍里有人在抱怨。你们终于进入了展厅，被眼前的建筑和展品震撼。",
+          "requirements": "使用本课学到的词汇（如 s'abriter, râleur, écrin, verrière）和表达（faire la queue），并尝试使用愈过去时或被动语态描述展品。",
+          "starter": "Regarde cette queue immense ! Heureusement qu'on a nos parapluies pour s'abriter..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia partage son enthousiasme pour une exposition exceptionnelle au Grand Palais consacrée aux tapis de Louis XIV. Elle explique l'histoire fascinante de ces œuvres d'art : conçues au XVIIe siècle par Charles Le Brun pour la Grande Galerie du Louvre, elles n'y ont jamais été installées car le roi était déjà parti pour Versailles. Malgré la pluie et une attente désagréable parmi les râleurs, la découverte de ces tapis sous la grande verrière du Grand Palais fut une expérience magique.",
+        "keywords": [
+          "Louis XIV",
+          "tapis",
+          "Grand Palais",
+          "exposition",
+          "manufacture",
+          "histoire"
+        ],
+        "difficulty_note": "Le texte est de niveau B1/B2. La difficulté réside principalement dans le vocabulaire spécifique à l'artisanat (manufacture, tissage, point noué) et à l'architecture (nef, verrière, écrin), ainsi que dans l'utilisation fréquente de la voix passive et du plus-que-parfait pour relater des faits historiques."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:04:03.979"
+        },
+        "theme": "Art, Histoire et Vie Parisienne",
+        "cefr_level": "B2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:24.260",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, lundi 9 février 2026, cet épisode, le numéro 2596, s'intitule « Le tapis retrouvé du roi Louis XIV, quel tapis ? »",
+          "chinese": "大家好，我是来自巴黎“One Thing in a French Day”播客的Laetitia。希望你们一切都好，心情愉快。今天，2026年2月9日星期一，第2596期节目的标题是《路易十四找回的地毯，什么地毯？》。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:25.140",
+          "end_time": "00:00:48.679",
+          "french": "Avant de répondre à cette question, une petite annonce pour vous dire que les textes, les fichiers audio, les notes culturelles et les tournures de phrases utiles ainsi que toutes les choses que j'aime vous présenter pour 2025 sont disponibles. Vous pouvez vous procurer le e-book enrichi des fichiers audio sur onethinginafrenchday.com. N'hésitez pas !",
+          "chinese": "在回答这个问题之前，先播送一个小通知：2025年的文本、音频文件、文化笔记、实用句型以及所有我想向大家展示的内容都已经上线了。大家可以在onethinginafrenchday.com上获取附带音频文件的增强版电子书。千万不要错过哦！"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:48.920",
+          "end_time": "00:01:09.870",
+          "french": "Je ne pensais pas qu'un jour je serais à ce point enthousiasmée à l'idée d'aller voir un tapis. Mardi midi, j'étais dans la cuisine avant que les filles n'arrivent pour le déjeuner. J'allume la radio et je tombe sur un reportage à propos du tapis de Louis XIV. Tout de suite, j'ai l'oreille en alerte. Un tapis de Louis XIV ?",
+          "chinese": "我从没想过有一天我会对去看一块地毯感到如此兴奋。星期二中午，在女儿们回来吃午饭之前，我正在厨房里。我打开收音机，刚好听到一篇关于路易十四地毯的报道。我立刻竖起了耳朵。路易十四的地毯？"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:09.870",
+          "end_time": "00:01:36.829",
+          "french": "Quel tapis ? Je comprends qu'il s'agit d'un tapis exceptionnel qui a été conçu par une manufacture parisienne mais qui n'a jamais été installé là où il aurait dû l'être. Le tapis est en fait une série de 92 tapis conçus pour être mis bout à bout dans la galerie de 440 mètres qui reliait le château du Louvre au palais des Tuileries, la Grande Galerie.",
+          "chinese": "什么地毯？我了解到这是一块由巴黎一家制造厂设计的非凡地毯，但它从未被铺设在原本预定的地方。这块地毯实际上是由92块地毯组成的一个系列，原本设计是首尾相连铺在连接卢浮宫和杜伊勒里宫的440米长的长廊——大画廊（la Grande Galerie）里的。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:36.829",
+          "end_time": "00:01:50.659",
+          "french": "Les tapis ont été dessinés par le peintre Charles Le Brun. Nous sommes en pleine époque baroque et les artistes doivent savoir décliner les motifs. Tout se ressemble mais tout est différent, ce sont les variétés.",
+          "chinese": "这些地毯是由画家查理·勒布伦（Charles Le Brun）设计的。当时正值巴洛克时期，艺术家们必须懂得如何变幻图案。一切看起来都很相似，但又各不相同，这就是多样性。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:50.939",
+          "end_time": "00:02:11.620",
+          "french": "Les tapis sont réalisés au point noué, une technique que les ateliers de tissage français maîtrisaient bien. La France voulait concurrencer les tapis venus d'Orient. Les tapis n'ont jamais été installés dans la Grande Galerie. Parce que le temps de leur réalisation, 20 ans, Louis XIV était déjà parti à Versailles.",
+          "chinese": "这些地毯采用打结编织法制作，这是法国织造坊非常精通的一项技术。法国当时希望与来自东方的地毯竞争。这些地毯从未被铺设在大画廊里。因为它们的制作时间长达20年，而那时路易十四已经搬到了凡尔赛宫。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:11.800",
+          "end_time": "00:02:40.810",
+          "french": "Cependant, ils ont été offerts par-ci, par-là. On en retrouvait encore un dans le bureau du président de la République jusqu'en 2017. Des copies ont été offertes aussi, des tapis ont été découpés. Certains se trouvent même aux États-Unis. Donc, cette exposition de 33 tapis était exceptionnelle. Et elle avait lieu dans un bâtiment suffisamment grand pour les accueillir, la nef du Grand Palais à Paris.",
+          "chinese": "然而，它们被四处作为礼物赠送。直到2017年，法国总统的办公室里还能找到一块。也有一些复制品被赠送出去，还有些地毯被裁剪了。有些甚至流落到了美国。因此，这次展出33块地毯的展览非常难得。而且它是在一个足够大、能容纳它们的建筑里举行的，那就是巴黎大皇宫的中殿。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:41.180",
+          "end_time": "00:03:09.129",
+          "french": "« Attention, puisque les tapis sont très fragiles, ils ne seront exposés que huit jours », a dit la journaliste à la radio. Je me suis précipitée vers mon ordinateur. Ce que je venais d'entendre était passionnant. Je voulais voir ces tapis. J'ai pris une place pour le jeudi matin, à l'ouverture. Finalement, Anne-Laure a aussi pris une place et nous nous y sommes rendues ensemble. Le Grand Palais se trouve en bas des Champs-Élysées, en face du Petit Palais.",
+          "chinese": "“请注意，由于这些地毯非常脆弱，它们将只展出八天，”收音机里的记者说道。我立刻冲向电脑。我刚才听到的内容太吸引人了。我想去看看这些地毯。我买了一张周四早上刚开馆时的门票。最后，安妮-洛尔（Anne-Laure）也买了一张票，我们便一起去了。大皇宫位于香榭丽舍大街的下端，在小皇宫的对面。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:09.430",
+          "end_time": "00:03:39.050",
+          "french": "On connaît bien le quartier maintenant. C'est un très joli bâtiment du XIXe siècle doté d'une grande verrière. L'écrin parfait pour les tapis de Louis XIV. Il pleuvait quand nous sommes arrivées dans la queue pour entrer jeudi matin. L'exposition du Trésor du Roi-Soleil avait beaucoup de succès. Tout le monde était pressé de rentrer pour s'abriter et faire la queue n'était pas particulièrement agréable entre les râleurs, les soupireurs et les doubleurs. Mais...",
+          "chinese": "我们现在对这个街区很熟悉了。那是一座非常漂亮的19世纪建筑，有着巨大的玻璃穹顶。它是展示路易十四地毯的完美殿堂。周四早上我们在排队入场时，天正在下雨。这场“太阳王宝藏”的展览非常受欢迎。每个人都急着进去避雨，而在抱怨的人、叹气的人和插队的人之间排队，感觉并不是特别愉快。但是……"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:39.349",
+          "end_time": "00:04:03.979",
+          "french": "Lorsque nous avons franchi la porte de la nef, tout fut soudain oublié. C'était magique. Bien sûr, il y a une suite à cet épisode. Vous la découvrirez mercredi. D'ici là, je vous dis à bientôt pour un prochain épisode de podcast. Au revoir !",
+          "chinese": "当我们跨入中殿的大门时，一切烦恼瞬间都被抛到了脑后。那真是太神奇了。当然，这期节目还有后续。你们将在周三听到。在此之前，期待在下一期播客节目中与大家再见。再见！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:03.979",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 10,
+        "source_video_name": "8 jours seulement pour voir le tapis de Louis XIV. Lost Treasures of Louis XIV (Grand Palais Exhibition).json",
+        "tags": [
+          "考试干货",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "Translation accuracy in subtitles",
+            "detail": "In subtitle 9, 'doubleurs' is translated as '不断重复话语的人' (dubbers/repeaters), but in the context of waiting in a queue, it means '插队的人' (line-cutters). The material correctly identifies and explains this meaning in the vocabulary and exercise sections, but the raw subtitle translation retains the contextual mistranslation.",
+            "field": "subtitles[8].chinese"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

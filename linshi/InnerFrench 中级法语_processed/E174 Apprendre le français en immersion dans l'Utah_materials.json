@@ -1,0 +1,1348 @@
+{
+  "source_file": "E174 Apprendre le français en immersion dans l'Utah.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E174 在犹他州沉浸式学习法语",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T02:04:00.399Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 14,
+          "review_words": 0
+        },
+        "grammar": [
+          "L'expression du but avec 'afin que'",
+          "La forme pronominale à sens passif",
+          "L'hypothèse irréelle du présent"
+        ],
+        "speaking": [
+          "Discuter des avantages de l'éducation bilingue et de l'immersion",
+          "Parler des différences culturelles et de l'adaptation dans un nouveau pays",
+          "Débattre de la glottophobie et des accents régionaux"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "immersion",
+            "part_of_speech": "nom",
+            "ipa": "[imɛʁsjɔ̃]",
+            "chinese": "沉浸，沉浸式（学习）",
+            "example_sentence": {
+              "french": "On va parler d'immersion.",
+              "chinese": "我们要聊聊沉浸式学习。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              4,
+              6,
+              7,
+              24,
+              29,
+              53,
+              71,
+              79,
+              85,
+              88,
+              89
+            ],
+            "occurrence_count": 12,
+            "examples": [
+              {
+                "french": "J'ai découvert qu'Alexandra est prof dans un programme d'immersion dans l'Utah.",
+                "chinese": "我发现亚历山德拉在犹他州的一个沉浸式项目中担任老师。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "logistique",
+            "part_of_speech": "nom",
+            "ipa": "[lɔʒistik]",
+            "chinese": "后勤，统筹安排",
+            "example_sentence": {
+              "french": "Quand on a une famille, une carrière, c'est la logistique qui bloque.",
+              "chinese": "当有了家庭、事业时，真正卡住的反倒是后勤安排问题。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et plus tard, quand on a une famille, une carrière, c'est la logistique qui bloque.",
+                "chinese": "等后来有了家庭、有了事业，真正卡住的反倒是后勤问题。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "calanques",
+            "part_of_speech": "nom",
+            "ipa": "[kalɑ̃k]",
+            "chinese": "卡朗克（法国地中海沿岸的石灰岩峡湾）",
+            "example_sentence": {
+              "french": "Les calanques, c'est ma grande fierté en tant que Marseillaise.",
+              "chinese": "作为马赛人，卡朗克是我最大的骄傲。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8,
+              9,
+              10,
+              17
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Il faisait un petit tour d'Europe avant de m'attirer dans les calanques de Marseille.",
+                "chinese": "他稍微逛了逛欧洲，然后才把我吸引到了马赛的卡朗克地区。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "joyaux",
+            "part_of_speech": "nom",
+            "ipa": "[ʒwajo]",
+            "chinese": "瑰宝，珍宝",
+            "example_sentence": {
+              "french": "C'est vraiment un des joyaux de la région.",
+              "chinese": "这可以说是这一地区真正的瑰宝之一。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça, c'est ce qu'on appelle les calanques et c'est vraiment un des joyaux de la région.",
+                "chinese": "这就是我们所说的卡朗克，可以说是这一地区真正的瑰宝之一。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "malléabilité",
+            "part_of_speech": "nom",
+            "ipa": "[maleabilite]",
+            "chinese": "可塑性，延展性",
+            "example_sentence": {
+              "french": "Ça encourage une certaine malléabilité du cerveau.",
+              "chinese": "这能促进大脑的某种可塑性。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              32
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça rejoint un peu toutes les études qui sont faites sur les enfants qui grandissent dans des familles où on parle plusieurs langues, où ça encourage une certaine malléabilité du cerveau.",
+                "chinese": "这确实与那些关于成长于多语言家庭的孩子们的研究结果有些相似，这些研究都表明多语言环境能够促进大脑的某种可塑性。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "résilient",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʁeziljɑ̃]",
+            "chinese": "有韧性的，适应力强的",
+            "example_sentence": {
+              "french": "Ce sont vraiment les enfants qui ont cette capacité à être résilients.",
+              "chinese": "正是这些具备韧性的孩子（最容易成功）。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              32,
+              70
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Également, ça permet d'être résilient et d'augmenter la connexion entre les neurones.",
+                "chinese": "此外，这种可塑性还有助于培养韧性，并增强神经元之间的连接。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "assidus",
+            "part_of_speech": "adjectif",
+            "ipa": "[asidy]",
+            "chinese": "勤勉的，刻苦的，经常出席的",
+            "example_sentence": {
+              "french": "Certains enfants n'ont pas forcément été très assidus en kindergarten.",
+              "chinese": "有些孩子在幼儿园时未必非常用功/全勤。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              48
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et il y a même certains enfants qui n'ont pas forcément été très assidus en kindergarten.",
+                "chinese": "甚至还有一些孩子在幼儿园时未必非常用功。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "spiralaire",
+            "part_of_speech": "adjectif",
+            "ipa": "[spiʁalɛʁ]",
+            "chinese": "螺旋式的",
+            "example_sentence": {
+              "french": "Le programme de sciences, c'est ce qu'on appelle un programme assez spiralaire.",
+              "chinese": "科学课程采用一种被称为“螺旋式”的教学模式。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              51
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le programme de sciences, c'est ce qu'on appelle un programme assez spiralaire, c'est-à-dire qu'on voit les bases en CP, et ensuite on va vraiment en profondeur.",
+                "chinese": "科学课程采用一种被称为“螺旋式”的教学模式，也就是说，在小学一年级时先学一些基础知识，然后逐步深入。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "butoir",
+            "part_of_speech": "nom",
+            "ipa": "[bytwaʁ]",
+            "chinese": "截止的，极限的（常作形容词用：âge butoir, date butoir）",
+            "example_sentence": {
+              "french": "C'est l'âge butoir parce qu'après, notre système phonétique se fige.",
+              "chinese": "这是个截止年龄，因为过了这个年龄，我们的语音系统就会定型。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              62
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'âge butoir parce qu'après, notre système phonétique se fige d'une certaine manière.",
+                "chinese": "截止年龄，因为过了这个年龄，我们的语音系统会在某种程度上定型。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "polyglottes",
+            "part_of_speech": "nom",
+            "ipa": "[pɔliɡlɔt]",
+            "chinese": "通晓多国语言的人",
+            "example_sentence": {
+              "french": "On connaît tous des polyglottes qui ont un excellent accent.",
+              "chinese": "我们都认识一些口音极佳的多语者。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              62
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On connaît tous des polyglottes qui ont un excellent accent et qui ont appris la langue à l'âge adulte.",
+                "chinese": "我们都知道一些多语者，他们有着纯正的口音，而且是在成年后才开始学习这门语言的。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "glottophobie",
+            "part_of_speech": "nom",
+            "ipa": "[ɡlɔtɔfɔbi]",
+            "chinese": "口音歧视（对带有特定口音者的歧视）",
+            "example_sentence": {
+              "french": "J'avais fait une vidéo sur la glottophobie.",
+              "chinese": "我之前做过一个关于口音歧视的视频。"
+            },
+            "cefr_level": "C2",
+            "source_ids": [
+              78
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je crois que c'était dans une vidéo que j'avais faite sur la glottophobie.",
+                "chinese": "我想这应该是在我之前做的一段关于“口音歧视”的视频里提到过的。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "dérisoire",
+            "part_of_speech": "adjectif",
+            "ipa": "[deʁizwaʁ]",
+            "chinese": "微不足道的，极少的",
+            "example_sentence": {
+              "french": "C'est vraiment un prix assez dérisoire.",
+              "chinese": "这价格真的是微不足道。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              86
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Mais lorsqu'on passe par le programme d'immersion, c'est vraiment un prix assez dérisoire.",
+                "chinese": "但通过沉浸式课程，这笔费用简直微不足道。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "étayage",
+            "part_of_speech": "nom",
+            "ipa": "[etɛjaʒ]",
+            "chinese": "支撑，（教学中的）支架式辅助",
+            "example_sentence": {
+              "french": "Certains élèves ont besoin d'un étayage supplémentaire.",
+              "chinese": "有些学生需要额外的教学支持。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              85
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça permet également à l'enseignant d'avoir une idée de quels élèves ont besoin d'un étayage supplémentaire.",
+                "chinese": "同时也能让教师了解哪些学生需要额外的支持。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          },
+          {
+            "french": "contredire",
+            "part_of_speech": "verbe",
+            "ipa": "[kɔ̃tʁədiʁ]",
+            "chinese": "反驳，与……矛盾",
+            "example_sentence": {
+              "french": "Je pense que tu ne vas pas me contredire là-dessus.",
+              "chinese": "我想你在这点上不会反驳我。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je pense que tu ne vas pas me contredire là-dessus.",
+                "chinese": "我想你不会反驳我的看法吧。",
+                "source_video": "Apprendre le français en immersion dans l'Utah"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "c'est pas donné à tout le monde",
+            "meaning": "不是每个人都有条件/机会做到的",
+            "example": {
+              "french": "Aller passer du temps dans un pays où elle est parlée, mais c'est pas donné à tout le monde.",
+              "chinese": "到讲这种语言的国家去待上一段时间，但并不是每个人都能做到。"
+            },
+            "usage_note": "Utilisé pour exprimer qu'une chose demande des ressources (financières, temporelles, intellectuelles) que tout le monde ne possède pas.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "la langue de Molière",
+            "meaning": "莫里哀的语言（指代法语）",
+            "example": {
+              "french": "Tout se passe dans la langue de Molière dès le premier jour d'école.",
+              "chinese": "一切从开学第一天起，就完全用莫里哀的语言（法语）进行。"
+            },
+            "usage_note": "Périphrase très courante pour désigner la langue française, en référence au célèbre dramaturge français Molière.",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "une bouffée d'air",
+            "meaning": "呼吸新鲜空气（比喻解脱、带来新气象的事物）",
+            "example": {
+              "french": "Pour qui c'était un peu une bouffée d'air d'avoir une maîtresse française.",
+              "chinese": "对他们来说，能有一位法国老师简直就像透了一口气（带来了新鲜感和解脱）。"
+            },
+            "usage_note": "Souvent utilisé avec 'frais' (une bouffée d'air frais) pour décrire quelque chose qui soulage ou apporte un renouveau agréable.",
+            "source_ids": [
+              37
+            ]
+          },
+          {
+            "expression": "avoir le déclic",
+            "meaning": "突然开窍，顿悟",
+            "example": {
+              "french": "J'ai pu observer les premiers déclics, c'est-à-dire les moments où les élèves essayent vraiment de créer une phrase.",
+              "chinese": "我观察到最初的“顿悟”时刻——也就是学生们真正开始尝试造句的那些时刻。"
+            },
+            "usage_note": "S'utilise beaucoup dans l'apprentissage pour décrire le moment où l'on comprend soudainement quelque chose qui bloquait auparavant.",
+            "source_ids": [
+              54,
+              56,
+              57
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "L'expression du but avec 'afin que'",
+            "structure": "afin que / pour que + subjonctif",
+            "explanation": "On utilise 'afin que' ou 'pour que' suivi du subjonctif pour exprimer le but d'une action, lorsque le sujet de la proposition principale est différent de celui de la proposition subordonnée. Si les sujets sont identiques, on utilise 'afin de / pour + infinitif'.",
+            "example": {
+              "french": "On fait une rotation des groupes chaque semaine afin que ce ne soit pas toujours le même groupe qui commence par le français.",
+              "chinese": "我们每周轮换小组，以便早上先上法语课的就不总是同一个小组。"
+            },
+            "usage_note": "'Afin que' est légèrement plus soutenu que 'pour que', mais les deux s'utilisent couramment à l'oral comme à l'écrit.",
+            "source_ids": [
+              49
+            ]
+          },
+          {
+            "name": "La forme pronominale à sens passif",
+            "structure": "Se + verbe transitif (3e personne du singulier ou pluriel)",
+            "explanation": "En français, on utilise très souvent un verbe pronominal (avec 'se') pour exprimer une idée passive, particulièrement quand l'agent (celui qui fait l'action) n'est pas important ou est général. Cela évite d'utiliser la voix passive classique (être + participe passé).",
+            "example": {
+              "french": "L'inscription se fait en général vers le mois de février pour l'année suivante.",
+              "chinese": "报名通常在每年的二月份进行，针对下一年度的项目。"
+            },
+            "usage_note": "Très fréquent à l'oral pour décrire des processus, des règles ou des habitudes (ex: Ça se dit, ça se mange, ça se fait).",
+            "source_ids": [
+              34
+            ]
+          },
+          {
+            "name": "L'hypothèse irréelle du présent",
+            "structure": "Si + imparfait, conditionnel présent",
+            "explanation": "Cette structure sert à formuler une hypothèse sur le présent ou le futur qui est contraire à la réalité actuelle, ou pour introduire une idée de manière polie ou imaginaire.",
+            "example": {
+              "french": "Mais si je vous disais qu'on peut apprendre en immersion sans quitter son pays ?",
+              "chinese": "但要是我告诉你，其实完全不用出国，就能通过沉浸式的方式学习外语呢？"
+            },
+            "usage_note": "Dans l'exemple, le conditionnel de la proposition principale est sous-entendu ou remplacé par une question directe, mais la structure 'Si + imparfait' pose le cadre hypothétique.",
+            "source_ids": [
+              3
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "L'accent marseillais",
+              "description": "L'accent du sud de la France (Marseille) se caractérise souvent par la prononciation des 'e' muets en fin de mot, une intonation chantante, et parfois une prononciation différente des voyelles nasales. Dans le texte, Alexandra mentionne qu'elle 'range' son accent pour paraître plus 'professionnelle', illustrant le concept de glottophobie.",
+              "examples": [
+                "Marseille",
+                "calanques"
+              ]
+            },
+            {
+              "sound": "Le 'R' français",
+              "description": "Le son [ʁ] est souvent difficile pour les anglophones. Le texte mentionne avec humour que les élèves américains et même la collègue américaine d'Alexandra finissent par prononcer le 'R' à la française même lorsqu'ils lisent en anglais.",
+              "examples": [
+                "rotation",
+                "récréation",
+                "résilient"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_élèves [lez‿elɛv] (liaison obligatoire après un déterminant pluriel)",
+            "ils_ont [ilz‿ɔ̃] (liaison obligatoire entre le pronom sujet et le verbe)",
+            "pas_encore [paz‿ɑ̃kɔʁ] (liaison fréquente mais facultative selon le registre)"
+          ],
+          "intonation": "Le texte souligne l'expressivité des Marseillais, qui parlent fort et utilisent beaucoup d'expressions faciales et de gestes, ce qui influence l'intonation globale de la phrase, la rendant plus dynamique et 'chantante' comparée au français standard ou à la culture de l'Utah."
+        },
+        "vocabulary_network": {
+          "theme": "L'apprentissage des langues et l'éducation",
+          "core_word": "Immersion",
+          "related_groups": [
+            {
+              "category": "Système scolaire",
+              "words": [
+                "école élémentaire",
+                "collège",
+                "lycée",
+                "CP",
+                "CE1",
+                "CM1",
+                "matières"
+              ]
+            },
+            {
+              "category": "Processus cognitif",
+              "words": [
+                "malléabilité",
+                "résilient",
+                "déclic",
+                "neurones",
+                "polyglottes"
+              ]
+            },
+            {
+              "category": "Pédagogie",
+              "words": [
+                "étayage",
+                "spiralaire",
+                "combinatoire",
+                "consignes",
+                "tutorat"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Même au ___, les ___ qui apprennent par exemple les ___ en français ont des ___ équivalents, même ___ aux élèves qui apprennent les sciences en anglais.",
+            "answer": "contraire, élèves, sciences, résultats, supérieurs",
+            "explanation": "根据原文第31段，研究表明用法语学习科学的学生，其成绩不仅不差，反而与用英语学习的学生相当甚至更高。填空词汇依次为：相反(contraire)、学生(élèves)、科学(sciences)、结果/成绩(résultats)、更高的(supérieurs)。",
+            "source_ids": [
+              31
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon Alexandra, comment les élèves sont-ils sélectionnés pour participer au programme d'immersion dans les écoles publiques de l'Utah ?",
+            "options": {
+              "A": "Par un système de loterie en classe de CP.",
+              "B": "En payant des frais de scolarité élevés.",
+              "C": "Uniquement s'ils ont des parents francophones.",
+              "D": "En passant un test de niveau de français."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第25段明确指出：“Et pour y accéder, c'est une forme de loterie en CP, c'est-à-dire pour les élèves de 6 ans lorsqu'ils arrivent en école élémentaire.” (要进入该项目，需要在小学一年级时通过一种类似于抽签的方式进行选拔)。",
+            "source_ids": [
+              25
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "On dit souvent que c'est la meilleure façon d'apprendre une langue : aller passer du temps dans un pays où elle est parlée, mais c'est pas donné à tout le monde.",
+            "answer": "人们常说，学一门语言最好的方法就是到讲这种语言的国家去待上一段时间，但并不是每个人都有这样的条件（或：并不是每个人都能做到）。",
+            "explanation": "翻译难点在于“c'est pas donné à tout le monde”这一固定表达，字面意思是“不是给所有人的”，实际意为“不是每个人都有条件/机会/财力做到的”。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Observez la phrase : 'On fait une rotation des groupes chaque semaine afin que ce ne soit pas toujours le même groupe qui commence par le français.' Peut-on remplacer 'afin que' par 'pour' + infinitif dans cette phrase ? Pourquoi ?",
+            "answer": "Non, on ne peut pas. Il faut garder 'afin que' (ou 'pour que') + subjonctif car les sujets des deux propositions sont différents.",
+            "explanation": "语法规则要求，只有当主句和从句的主语相同时，才能将 'afin que / pour que + 虚拟式' 转换为 'pour + 不定式'。在此句中，主句主语是 'On'，而从句主语是 'ce' (指代后面的 le même groupe)，主语不同，因此必须保留 'afin que + 虚拟式' 的结构。",
+            "source_ids": [
+              49
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "élèves",
+            "sciences",
+            "résultats"
+          ],
+          "covered_grammar": [
+            "L'expression du but avec 'afin que'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il s'avère que + indicatif",
+            "explanation": "用于引出某个事实或结果，意为“结果发现……”、“事实证明……”。",
+            "example": {
+              "french": "Il s'avère que lorsque je lui ai rendu visite ici en Utah, je me suis rendu compte qu'il y avait un programme d'immersion.",
+              "chinese": "结果发现，当我来犹他州看望他时，我才意识到这里有一个沉浸式项目。"
+            }
+          },
+          {
+            "pattern": "C'est pas donné à tout le monde de + infinitif",
+            "explanation": "用于表达某事门槛较高，不是所有人都有能力、财力或机会去做的。",
+            "example": {
+              "french": "Aller passer du temps dans un pays où elle est parlée, mais c'est pas donné à tout le monde.",
+              "chinese": "到讲这种语言的国家去待上一段时间，但并不是每个人都能做到。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous êtes un parent intéressé par le programme d'immersion bilingue pour votre enfant qui va entrer en CP. Vous posez des questions à la directrice de l'école sur le fonctionnement du programme et les critères d'admission.",
+          "requirements": "Utilisez le vocabulaire de l'éducation (CP, immersion, matières), posez des questions sur la 'loterie' et utilisez la forme pronominale à sens passif (ex: comment ça s'organise ?).",
+          "starter": "Bonjour Madame la directrice, j'ai entendu parler de votre programme d'immersion à 50-50 et je voudrais savoir comment l'inscription se fait pour l'année prochaine..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Hugo interviewe Alexandra, une professeure marseillaise enseignant dans un programme d'immersion francophone dans l'Utah, aux États-Unis. Ils discutent du fonctionnement de ce programme public gratuit basé sur un modèle 50-50, où les enfants apprennent des matières comme les mathématiques et les sciences en français dès le CP. Alexandra partage son expérience d'adaptation culturelle, les défis liés à l'apprentissage précoce d'une langue, et les bénéfices cognitifs du bilinguisme. L'échange aborde également la question de l'accent (marseillais vs standard) et de la glottophobie, avant de se conclure sur des conseils encourageants pour les adultes apprenant le français : ne pas avoir peur de faire des erreurs et pratiquer le plus possible.",
+        "keywords": [
+          "immersion",
+          "bilinguisme",
+          "Utah",
+          "Marseille",
+          "éducation",
+          "glottophobie",
+          "apprentissage"
+        ],
+        "difficulty_note": "Le niveau global est B2. Le vocabulaire est riche et spécifique au domaine de l'éducation, mais le ton conversationnel rend l'écoute accessible. Les structures de phrases spontanées (hésitations, reformulations) nécessitent une bonne compréhension de l'oral authentique."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:03.930",
+          "end": "00:39:43.019"
+        },
+        "theme": "L'apprentissage des langues et l'éducation bilingue",
+        "cefr_level": "B2",
+        "vocabulary_count": 14,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:03.930",
+          "end_time": "00:00:37.500",
+          "french": "Apprendre le français en immersion dans l'Utah. Salut à toutes et à tous, j'espère que vous allez bien. Peut-être que certains d'entre vous sont en vacances. Si c'est le cas, profitez-en bien. Chez InnerFrench, on ne fait pas de pause cet été. Comme l'année dernière, on continuera de publier un nouvel épisode toutes les deux semaines pour vous accompagner à la plage, à la montagne ou au bureau si vous ne partez pas en vacances. Rassurez-vous,",
+          "chinese": "在犹他州沉浸式学习法语 大家好，希望大家一切顺利。也许你们当中有些人正在度假呢。如果是这样，那就好好享受吧！在North French，我们这个夏天可不会休息哦。和去年一样，我们会继续每两周更新一集，无论你是在海滩、山里，还是在办公室——即使你不放假，也能跟着我们一起学习。放心吧！"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:37.500",
+          "end_time": "00:01:05.200",
+          "french": "on va prendre des vacances quand même chez InnerFrench, mais on s'est organisé pour qu'il y ait toujours quelqu'un pour publier les épisodes et ça, c'est en grande partie grâce à Ingrid, donc merci à elle. Bref, aujourd'hui, vous l'avez entendu, on va parler d'immersion. On dit souvent que c'est la meilleure façon d'apprendre une langue : aller passer du temps dans un pays où elle est parlée, mais c'est pas donné à tout le monde. Quand on est jeune,",
+          "chinese": "我们还是会去InnerFrench度假，不过我们已经安排好了，确保总有人能发布节目内容。这很大程度上要感谢英格丽德，所以要特别感谢她！总之，今天你们已经听到了，我们要聊聊“沉浸式学习”。人们常说，学一门语言最好的方法就是到讲这种语言的国家去待上一段时间，但并不是每个人都能做到。尤其是当我们还年轻的时候……"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:05.200",
+          "end_time": "00:01:34.189",
+          "french": "on n'a pas forcément les moyens financiers de le faire. Et plus tard, quand on a une famille, une carrière, c'est la logistique qui bloque. Mais si je vous disais qu'on peut apprendre en immersion sans quitter son pays ? C'est ce qu'on va voir aujourd'hui avec mon invitée, Alexandra. Elle est marseillaise, mais c'est pas à Marseille que j'ai fait sa connaissance puisqu'elle vit aux États-Unis. Moi, je l'ai rencontrée grâce à son mari qui est un fidèle auditeur du podcast.",
+          "chinese": "我们未必有经济能力做到这一点。等后来有了家庭、有了事业，真正卡住的反倒是后勤问题。但要是我告诉你，其实完全不用出国，就能通过沉浸式的方式学习外语呢？今天，我们就和我的嘉宾亚历山德拉一起来探讨这个话题。她来自马赛，不过我认识她可不是在马赛——因为她现在住在美国。而我之所以能认识她，还要感谢她的丈夫，他可是我播客的忠实听众呢！"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:34.189",
+          "end_time": "00:01:52.299",
+          "french": "J'ai découvert qu'Alexandra est prof dans un programme d'immersion dans l'Utah et quand je dis « immersion », c'est pas juste quelques heures de français par semaine. Non, les élèves d'Alexandra apprennent toutes leurs matières en français. Les maths, les sciences, l'histoire...",
+          "chinese": "我发现亚历山德拉在犹他州的一个沉浸式项目中担任老师。我所说的“沉浸式”，可不是每周只上几个小时的法语课那么简单。不，亚历山德拉的学生们所有课程都用法语授课——数学、科学、历史……"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:52.469",
+          "end_time": "00:02:17.099",
+          "french": "Tout se passe dans la langue de Molière dès le premier jour d'école. Alors, j'étais très curieux de comprendre comment ce genre de programme fonctionne, quelles méthodes ils utilisent et surtout si ça marche vraiment. Alexandra a gentiment accepté de répondre à toutes mes questions et de vous en faire profiter dans le podcast. Donc maintenant, je vous laisse écouter notre conversation.",
+          "chinese": "一切从开学第一天起，就完全用莫里哀的语言进行。因此，我非常好奇地想了解这种课程的具体运作方式、他们采用哪些教学方法，尤其是它到底有没有效果。亚历山德拉很慷慨地答应回答我所有的问题，并将这些内容分享到播客中。现在，就请各位收听我们的对话吧！"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:23.930",
+          "end_time": "00:02:53.349",
+          "french": "Salut Alexandra ! Salut Hugo ! Merci d'avoir accepté mon invitation. Je suis ravi de te recevoir aujourd'hui dans le podcast pour parler de l'apprentissage du français en immersion. Mais pour commencer, donc toi, tu nous parles aujourd'hui depuis Salt Lake City, dans l'État de l'Utah, aux États-Unis. Il me semble que tu es marseillaise d'origine, donc peut-être que tu peux nous raconter comment tu t'es retrouvée là-bas ?",
+          "chinese": "嗨，亚历山德拉！嗨，雨果！谢谢你接受我的邀请。今天很高兴能在播客里邀请你，和我聊聊沉浸式法语学习的话题。不过，首先呢，你今天是从美国犹他州盐湖城向我们连线的。我听说你原本是马赛人，不知道你能不能跟我们讲讲，你是怎么跑到那儿去的呢？"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:53.500",
+          "end_time": "00:03:20.939",
+          "french": "Oui, alors merci Hugo tout d'abord de me recevoir dans ton podcast. En effet, je suis marseillaise et je me suis retrouvée en Utah il y a environ huit ans de cela, suite à la rencontre de mon mari sur une plage à Marseille. Et donc il s'avère que lorsque je lui ai rendu visite ici en Utah, eh bien je me suis rendu compte qu'il y avait un programme d'immersion.",
+          "chinese": "是的，首先感谢雨果在你的播客里接待我。确实，我是马赛人，大约八年前，我在马赛的一片海滩上遇到了我的丈夫，之后便来到了犹他州。后来，当我来犹他州看望他时，我才发现这里有一个沉浸式项目。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:20.939",
+          "end_time": "00:03:48.840",
+          "french": "Donc, étant prof moi-même de l'Éducation nationale à ce moment-là, j'ai demandé une disponibilité. Et donc, voilà, me voici. Ok. Donc, ton mari est originaire de l'Utah, si j'ai bien compris. Oui, c'est ça. D'accord. Il est né à Salt Lake City. Il faisait un petit voyage, un petit tour d'Europe avant de m'attirer dans les calanques de Marseille. Ok. Donc, une rencontre dans les calanques. Alors, les calanques, c'était un concept que j'ai...",
+          "chinese": "所以，当时我自己也是国家教育系统的教师，于是我申请了休假。于是，就这样，我来到了这里。好的。那么，如果我没理解错的话，你的丈夫是犹他州人？是的，没错。好。他出生在盐湖城。他当时正做一次小小的旅行，稍微逛了逛欧洲，然后才把我吸引到了马赛的卡朗克地区。好的。所以，就是在卡朗克地区相识的。嗯，说到卡朗克，这个概念对我来说……"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:49.270",
+          "end_time": "00:04:18.019",
+          "french": "pas mal de difficultés à expliquer à ma copine avant qu'on déménage à Marseille. Bon, le plus simple, c'est vraiment que vous alliez dans un moteur de recherche et que vous cherchiez des images de calanques, vous allez comprendre ce que c'est. Mais voilà, c'est un parc naturel dans la région entre Marseille, Cassis, etc. Et c'est l'endroit où la terre rencontre la mer. Et donc, il y a une topographie assez particulière avec pas des petites...",
+          "chinese": "在我们搬到马赛之前，跟女朋友解释起来还真有点困难。嗯，其实最简单的方法就是你们直接去搜索引擎上搜一下“卡朗克”的图片，一看就明白了。总之，它位于马赛、卡西斯等地之间的这一带，是一个自然公园。这里正是陆地与海洋交汇的地方。因此，这里的地形非常独特，而且……"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:18.019",
+          "end_time": "00:04:41.350",
+          "french": "toutes petites montagnes, on pourrait dire, qui plongent dans la mer. Ça, c'est ce qu'on appelle les calanques et c'est vraiment un des joyaux de la région, on pourrait dire. Je pense que tu ne vas pas me contredire là-dessus. Non, absolument pas. Les calanques, c'est ma grande fierté en tant que Marseillaise. Je conseille à n'importe quelle personne qui souhaite visiter la France d'y faire un petit tour. C'est magnifique.",
+          "chinese": "可以说，这是一座非常小的山，没入了大海之中。这就是我们所说的卡朗克，可以说是这一地区真正的瑰宝之一。我想你不会反驳我的看法吧。当然不会！作为马赛人，卡朗克可是我最大的骄傲呢。我建议任何想来法国旅游的人，都一定要去那里转一转。那儿美极了！"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:41.720",
+          "end_time": "00:05:09.920",
+          "french": "Et depuis combien de temps tu as déménagé aux États-Unis ? Cela va faire huit ans bientôt. D'accord, ok. Et tu t'y plais ? Tu te plais à Salt Lake ? Oui, alors l'adaptation a été un peu rude, étant donné que, comme on en rigole souvent avec mon mari, la culture marseillaise de pure sudiste est vraiment à l'opposé complet de la culture et de la façon d'être",
+          "chinese": "你搬到美国多久了？快八年了。好的，明白了。你觉得那里怎么样？你喜欢盐湖城吗？是的，不过刚开始适应确实有点艰难，就像我和我丈夫经常开玩笑说的那样，马赛那种纯粹南方人的文化，跟这里的文化和生活方式完全相反。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:05:09.920",
+          "end_time": "00:05:26.180",
+          "french": "ici à Salt Lake City en Utah. Donc, j'ai vraiment dû réapprendre à communiquer et vraiment à m'adapter. C'est rigolo, souvent les personnes pensaient que j'étais en colère.",
+          "chinese": "就在犹他州的盐湖城。因此，我不得不重新学习如何沟通，真正地适应环境。有趣的是，人们常常以为我生气了。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:26.709",
+          "end_time": "00:05:53.839",
+          "french": "ma façon juste de m'exprimer, de regarder les gens, alors qu'en fait, non, pas du tout. C'est vrai que les Marseillais sont très expressifs et ils ont tendance à parler assez fort aussi. Donc, ma copine me faisait la réflexion aussi au début. Quand on entendait des gens parfois parler dans la rue ou dans le bus, elle me demandait « Ah, mais à propos de quoi ils se disputent ? » Et je lui disais « Non, non, c'était juste une conversation normale. »",
+          "chinese": "我表达自己、注视他人的方式，其实完全不是那样的。诚然，马赛人非常善于表达，而且他们说话的音量也往往比较大。所以一开始，我的女朋友也常常对此提出过看法。有时候我们在街上或公交车上听到别人交谈，她就会问我：“啊，他们在吵什么呢？” 我便告诉她：“不不，那只是普通的聊天而已。”"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:53.839",
+          "end_time": "00:06:05.319",
+          "french": "Ils ne se disputaient pas du tout, mais bon, c'est vrai qu'ils sont très expressifs, un peu comme les Italiens, sans tomber dans les clichés, mais bon, il y a un peu ce tempérament du Sud, comme tu l'as dit.",
+          "chinese": "完全别争了，不过说真的，他们确实很富于表现力，有点像意大利人，当然这并不落入刻板印象，但确实有点你所说的那种南方人的性格。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:06:05.850",
+          "end_time": "00:06:27.470",
+          "french": "Complètement, et puis vraiment le parler avec les mains, énormément d'expressions faciales que j'ai dû réapprendre. J'ai vraiment dû aussi faire attention à la façon dont je m'exprime, à mon débit de parole également. Et j'essaie toujours d'être assez souriante ici lorsque je discute.",
+          "chinese": "完全如此，而且真的要用双手来表达，我不得不重新学习大量的面部表情。我也确实需要特别注意自己的表达方式，包括语速。在和人交谈时，我总是尽量保持微笑。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:27.470",
+          "end_time": "00:06:53.290",
+          "french": "Et assez intéressant, c'est que maintenant, lorsque je reviens en France, lorsque je reviens à Marseille, j'ai besoin d'avoir un petit temps de réadaptation. La première heure où je sors de l'avion et où je me retrouve avec ma sœur, par exemple, dans la voiture, et je lui dis « Oulala, va doucement parce que là, c'est beaucoup d'informations d'un coup. » Ok. Et Marseille, ça ne te manque pas trop ?",
+          "chinese": "而且相当有趣的是，现在当我回到法国、回到马赛时，我需要花一点时间来重新适应。比如，我一下飞机，刚和姐姐一起坐上车，我就对她说：“哎呀，你开慢点吧，因为一下子看到这么多东西，有点应接不暇呢。” 好的。那马赛，你是不是挺想念的？"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:53.339",
+          "end_time": "00:07:08.199",
+          "french": "Oui, ça me manque énormément, surtout de vivre près de la mer. Je me rappelle, après le travail, j'allais souvent soit dans les calanques, soit dans des points de vue, comme par exemple la route des Crêtes. Je ne sais pas si tu as eu l'occasion d'expérimenter. Si, bien sûr.",
+          "chinese": "是的，我非常想念那里，尤其是住在海边的感觉。我记得，下班后，我常常会去卡朗克，或者去一些观景台，比如克雷特之路。不知道你有没有机会体验过。当然有啊！"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:08.439",
+          "end_time": "00:07:31.870",
+          "french": "Et quand j'ai emménagé ici, Salt Lake City, c'est les montagnes. Et quand on regarde l'horizon, il n'y a pas de mer. Il y a les montagnes et les montagnes. Et il n'y a pas cette humidité dans l'air, l'odeur de l'eau salée, la nourriture, les fruits de mer.",
+          "chinese": "当我搬到这里，南湖城时，映入眼帘的是群山。当你眺望天际，根本看不到大海。眼前只有连绵的山脉，再无那空气中的湿润气息、咸水的气味，以及海鲜的美味。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:31.870",
+          "end_time": "00:07:58.100",
+          "french": "C'est très différent, ça prend du temps, mais oui, je m'y plais. Salt Lake City, je le considère vraiment comme le paradis des enfants, surtout si vous avez une famille. Il y a tellement de choses à faire pour les enfants. C'est un bonheur d'élever des enfants ici. Donc, pour le moment, avec ton mari et ta famille, vous n'envisagez pas d'aller vous installer en France ? Vous comptez rester à Salt Lake City ? Pour le moment, ça nous va très bien comme ça. Peut-être lorsque les enfants seront plus âgés.",
+          "chinese": "这很不一样，需要花些时间，但确实，我很喜欢这里。盐湖城，我真觉得它就是孩子们的天堂，尤其是有家庭的话。这里能为孩子们提供的活动多得数不胜数。能在这里抚养孩子，真是件幸福的事。所以，目前来说，你和丈夫还有家人，暂时还不打算搬去法国定居吧？你们打算一直留在盐湖城吗？目前这样对我们来说挺好的。也许等孩子们再大一点的时候再说吧。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:58.100",
+          "end_time": "00:08:25.160",
+          "french": "Je voudrais leur offrir la possibilité de venir à l'université en France, par exemple, et également de découvrir la culture dans laquelle j'ai grandi et d'avoir l'occasion de supporter l'OM. L'Olympique de Marseille, le fameux club de foot de la ville, effectivement. C'est quasiment une religion ici. Dans l'Utah, il y a les mormons et à Marseille, il y a l'OM. C'est ça, c'est bien résumé. Ok.",
+          "chinese": "我想为他们提供机会，比如到法国的大学就读，同时也能深入了解我成长的文化，并有机会支持马赛奥林匹克队——这座城市的著名足球俱乐部。没错，这里几乎把这当成一种信仰。在犹他州有摩门教徒，在马赛就有马赛奥林匹克队。说得太对了！好，明白了。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:25.529",
+          "end_time": "00:08:53.129",
+          "french": "Et donc tu dis que avant de déménager, tu étais dans l'Éducation nationale en France. Donc quand on dit qu'on est dans l'Éducation nationale, ça veut dire en général qu'on est professeur, soit à l'école, au lycée, voilà. Ça peut être à différents niveaux. Et tu parlais déjà anglais couramment avant de déménager là-bas ou tu as appris surtout après avoir déménagé ? J'avais un bon niveau d'anglais,",
+          "chinese": "所以你说，在搬家之前，你曾在法国的国民教育体系工作。那么，当我们说“在国民教育体系工作”时，通常指的是当老师，可能是在小学、中学，或者别的阶段。你在搬到那边之前就已经能流利地讲英语了，还是主要是在搬过去之后才开始学的呢？我以前英语水平就不错。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:53.269",
+          "end_time": "00:09:22.820",
+          "french": "grâce aux cours à l'école que j'ai eu l'occasion d'avoir. Après, c'était un anglais assez scolaire. Et il m'a fallu, je dirais, une bonne année pour m'adapter et surtout pouvoir suivre une conversation de groupe. C'est ce qui était le plus compliqué pour moi, de comprendre une conversation et de la suivre lorsque plusieurs personnes parlent en même temps et également comprendre les expressions locales.",
+          "chinese": "我在学校上过的课程。之后，我的英语就比较偏学术化了。我想，我大概花了一年时间才逐渐适应，尤其是能够跟上小组对话。对我来说，最困难的就是理解并跟上多人同时交谈的对话，还有理解当地的俚语表达。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:23.000",
+          "end_time": "00:09:51.230",
+          "french": "Je pense que beaucoup d'auditeurs et d'auditrices peuvent compatir parce que c'est un problème qui revient très souvent chez les apprenants de langue étrangère et avec le français aussi. Il y a souvent des personnes qui nous disent « Ah, je comprends bien quand c'est juste moi qui… quand il y a une seule personne qui me parle dans une conversation, ça va, mais quand il y a des Français qui parlent entre eux, je ne comprends rien à ce qu'ils disent. » Effectivement, c'est sûr que c'est un exercice assez difficile. Ok.",
+          "chinese": "我认为很多听众都能感同身受，因为这其实是外语学习者经常遇到的一个问题，法语学习者也不例外。常常有人会跟我们说：“啊，如果只有我一个人的时候……如果对话里就我一个人，那还挺好懂的；但要是几个法国人彼此交谈，我就完全听不懂他们在说什么。” 确实，这的确是个挺难的练习。好的。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:51.230",
+          "end_time": "00:10:18.210",
+          "french": "Donc toi, tu es devenue prof dans un programme d'immersion à Salt Lake City. Est-ce que tu peux nous expliquer un peu ce que c'est, ce programme, l'école où tu travailles, etc. ? Donc c'est un programme qui a été créé, qui a vu le jour en 2008, suite à l'adoption d'une loi en Utah qui a permis le lancement et le financement de ces premières classes d'immersion en français, en chinois",
+          "chinese": "所以，你后来在盐湖城的一所沉浸式教学项目里当起了老师。你能跟我们简单介绍一下这个项目、你所在的学校，以及相关情况吗？这个项目诞生于2008年，源于犹他州通过的一项法律，该法律为首批法语和中文沉浸式班级的启动与资金支持提供了保障。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:10:18.210",
+          "end_time": "00:10:46.480",
+          "french": "et en espagnol. D'autres langues ont suivi par la suite, mais les trois premières langues étaient donc français, chinois et espagnol. Ce qu'il y a de super, je trouve, c'est que c'est un programme qui est ouvert à tous et qui est implanté dans les écoles publiques et qui est complètement gratuit. Et pour y accéder, c'est une forme de loterie en CP, c'est-à-dire pour les élèves de 6 ans lorsqu'ils arrivent en école élémentaire. La façon dont ce programme fonctionne, c'est qu'en fait, il y a...",
+          "chinese": "以及西班牙语。随后又增加了其他语言，但最初的三种语言分别是法语、中文和西班牙语。我觉得最棒的一点是，这个项目面向所有人开放，而且扎根于公立学校，完全免费。要参与这个项目，需要在小学一年级时通过一种类似于抽签的方式进行选拔——也就是说，针对6岁的新生入学时。这个项目的运作方式是……"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:46.480",
+          "end_time": "00:11:13.419",
+          "french": "deux groupes d'environ 25-30 élèves. Chaque jour, on a un groupe qui commence la journée avec un enseignant qui est américain et l'autre avec l'enseignant de langue. Environ au milieu de journée, on fait une rotation entre les deux groupes. Ce modèle-là est le modèle qui est vraiment propre à l'Utah. C'est ce qu'on appelle couramment le modèle 50-50. Afin de pouvoir recevoir le financement de l'État, chaque école qui adhère",
+          "chinese": "两个大约25至30名学生的小组。每天，一个小组由一名美国教师带领开始一天的学习，另一个小组则由语言教师带领。大约在一天的中途，两个小组会互换教学任务。这种模式正是犹他州特有的模式，通常被称为“50-50模式”。为了能够获得州政府的资金支持，每所具备相应条件的学校——"
+        },
+        {
+          "id": 27,
+          "start_time": "00:11:13.429",
+          "end_time": "00:11:42.570",
+          "french": "à ce programme doit vraiment respecter ce modèle. D'accord. Donc, c'est intéressant. C'est vraiment dans les écoles publiques, ce n'est pas quelque chose réservé aux familles aisées, les écoles privées, les parents qui ont les moyens de payer pour que leurs enfants aient des cours de langue très tôt. Non, là, c'est ouvert à tous. Et tu as dit que ça dépendait d'une loterie. Donc, bon, il faut juste avoir de la chance. C'est ça. Alors, on peut avoir...",
+          "chinese": "这个项目确实必须遵循这种模式。好的，所以这很有趣。这主要是在公立学校开展的，并不是专为富裕家庭、私立学校或那些有能力早早为孩子支付语言课程费用的家长准备的。不，这里对所有人开放。而且你刚才提到，这得靠抽签决定。嗯，那就只能碰运气了，是吧？那么，我们或许可以……"
+        },
+        {
+          "id": 28,
+          "start_time": "00:11:43.129",
+          "end_time": "00:12:13.059",
+          "french": "plus de, entre guillemets, tickets dans la loterie si jamais on a des parents qui parlent déjà le français. Ça permet aux familles d'augmenter leurs chances. Et également lorsqu'il y a un membre de la fratrie qui est déjà dans le programme, les autres frères et sœurs ont également un peu plus de chances d'accéder au programme qu'un autre élève, par exemple. Donc c'est dans une école élémentaire, c'est ça, pour les enfants qui ont entre 6 et 10-11 ans ?",
+          "chinese": "如果父母已经会说法语，那么在彩票中获得的“额外”门票数量会更多。这能帮助家庭提高中奖几率。此外，如果兄弟姐妹中已有成员参与该项目，其他兄弟姐妹获得该项目名额的几率也会比其他学生略高一些。所以，这是针对小学阶段、年龄介于6至10或11岁的儿童的项目，对吗？"
+        },
+        {
+          "id": 29,
+          "start_time": "00:12:13.559",
+          "end_time": "00:12:32.899",
+          "french": "C'est ça, exactement, du CP au CM2. Donc ce modèle 50-50 est appliqué dans les écoles élémentaires. Ensuite, il y a encore ce qu'on appelle des classes d'immersion en collège et lycée, mais le format est légèrement différent. D'accord. Et tu as dit que ça a été lancé en 2008, donc c'est encore un programme assez récent.",
+          "chinese": "没错，就是CPOCM2。因此，这种50-50模式主要应用于小学。此外，在初中和高中还有所谓的沉浸式班级，不过其形式略有不同。好的。你刚才提到这项计划始于2008年，所以它其实还算是个相当新的项目。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:12:33.559",
+          "end_time": "00:12:53.450",
+          "french": "Oui, ça reste assez récent. Les premières études commencent à sortir par rapport aux élèves qui ont terminé le lycée. On peut voir à quel point ce programme est efficace. Il y a eu plusieurs études, par exemple,",
+          "chinese": "是的，这仍然是相当新的。针对已完成高中学业的学生，首批研究刚刚开始发布。我们可以清楚地看到这一项目的效果。例如，已经开展了多项研究。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:53.980",
+          "end_time": "00:13:23.059",
+          "french": "qui ont été faites pour savoir si les élèves, est-ce que les élèves qui font partie d'un programme de français ont plus de difficultés dans d'autres domaines ? Et à la grande surprise, non, pas du tout. Même au contraire, les élèves qui apprennent par exemple les sciences en français ont des résultats équivalents, même supérieurs aux élèves qui apprennent les sciences en anglais. D'accord, oui, ça rejoint un peu toutes les études qui sont faites sur les enfants qui grandissent dans des familles où on parle plusieurs langues, où ça encourage une certaine...",
+          "chinese": "这些研究旨在了解，参加法语课程的学生在其他领域是否面临更多困难？令人惊讶的是，答案是否定的，完全不是。甚至相反，例如用法语学习科学的学生，其成绩与用英语学习科学的学生相当，甚至更高。没错，这确实与那些关于成长于多语言家庭的孩子们的研究结果有些相似，这些研究都表明多语言环境能够促进某种……"
+        },
+        {
+          "id": 32,
+          "start_time": "00:13:23.059",
+          "end_time": "00:13:44.419",
+          "french": "malléabilité du cerveau, ça les force à faire pas mal d'efforts et souvent, pas toujours, mais souvent, ça leur permet d'avoir des facilités dans plein d'autres matières et pas seulement dans les langues. Également, ça permet d'être résilient et d'augmenter la connexion entre les neurones",
+          "chinese": "大脑的可塑性迫使他们付出不少努力，而且往往——虽然并非总是如此——这能让他们在许多其他学科上也游刃有余，而不仅仅是语言方面。此外，这种可塑性还有助于培养韧性，并增强神经元之间的连接。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:13:44.730",
+          "end_time": "00:13:53.669",
+          "french": "dans le cerveau de pouvoir vraiment apprendre un domaine, une matière spécifique dans une langue étrangère.",
+          "chinese": "在大脑中，才能真正用一门外语学习某个领域或特定学科。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:14:00.570",
+          "end_time": "00:14:28.269",
+          "french": "Et donc, tu as expliqué que c'était un système de loterie pour intégrer ce programme, mais est-ce qu'il faut s'inscrire à cette loterie ou est-ce que automatiquement tous les enfants de Salt Lake qui entrent à l'école primaire sont inscrits d'office à cette loterie ? Oui, il faut s'y inscrire. L'inscription se fait en général vers le mois de février pour l'année suivante. Et à ce moment-là, on fait ce qu'on appelle une réunion d'information où les profs de français rencontrent les familles",
+          "chinese": "因此，你解释说这是一个通过抽签方式来参与该项目的制度。但需要专门去报名参加这个抽签吗？还是说，盐湖城所有刚入小学的孩子都会自动被登记参加这项抽签呢？是的，确实需要报名参加。通常，报名时间是在每年的二月份，针对下一年度的项目。届时，我们会举办一场说明会，由法语老师与各家庭进行交流。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:14:28.269",
+          "end_time": "00:14:52.490",
+          "french": "qui ont de l'intérêt pour le programme. On présente le programme. Parfois, on a des anciens élèves qui viennent et qui interagissent avec nous afin que les familles puissent voir le niveau de langue de ces enfants qui ont commencé dans le programme et qui maintenant parlent couramment le français. D'accord. Donc, il n'y a pas d'enfants qui se retrouvent dans ce programme et qui n'ont pas du tout envie d'apprendre le français et qui se retrouvent un peu...",
+          "chinese": "对该项目感兴趣的人员。我们介绍该项目。有时，会有往届学生前来与我们互动，以便家长们能够了解这些孩子在项目开始时的语言水平，以及他们如今已能流利地讲法语。好的。因此，这个项目里没有孩子是完全不想学法语的，也没有孩子会感到……"
+        },
+        {
+          "id": 36,
+          "start_time": "00:14:52.700",
+          "end_time": "00:15:10.289",
+          "french": "un peu contraints et forcés ? Alors souvent, la plupart du temps, les enfants sont super excités à l'idée d'apprendre une nouvelle langue, surtout parce que les élèves qui se retrouvent dans le programme sont soit des enfants qui sont natifs, c'est une minorité, mais il y a beaucoup de...",
+          "chinese": "有点受限和被迫？那么，通常情况下，孩子们对学习一门新语言都特别兴奋，尤其是因为参与这个项目的学生中，以母语为该语言的孩子只占少数，但确实有很多……"
+        },
+        {
+          "id": 37,
+          "start_time": "00:15:10.289",
+          "end_time": "00:15:24.200",
+          "french": "J'ai rencontré pas mal de familles qui ont été mutées en Utah et pour qui c'était un peu une bouffée d'air d'avoir une maîtresse française. Comme tu l'as évoqué plus tôt, Salt Lake City, c'est une ville assez mormonne.",
+          "chinese": "我遇到过不少被调到犹他州的家庭，对他们来说，能有一位法国老师简直就像透了一口气。正如你之前提到的，盐湖城是一座相当摩门教的城市。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:15:24.500",
+          "end_time": "00:15:50.090",
+          "french": "Et donc les mormons, lorsqu'ils atteignent environ la vingtaine, font ce qu'on appelle une mission dans un pays étranger. Et j'ai rencontré beaucoup de familles dont les parents ou les grands-parents ont pratiqué leur mission en France ou dans un pays francophone. Et ils souhaitent que leurs enfants ou petits-enfants puissent apprendre cette même langue qu'eux-mêmes",
+          "chinese": "因此，每位摩门教徒在二十岁左右时，都会前往国外执行所谓的“传教任务”。我曾遇到许多家庭，他们的父母或祖父母曾在法国或法语国家执行过传教任务。他们希望自己的孩子或孙辈也能像他们一样学会这门语言。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:50.259",
+          "end_time": "00:16:07.779",
+          "french": "ont apprise. Il y a eu des enfants une fois, mais c'est vraiment assez rare, où une fois, il y a eu un parent qui est venu me voir et qui m'a dit « En fait, mon fils, il ne comprend toujours pas pourquoi vous ne parlez pas anglais. » Au bout de combien de temps ?",
+          "chinese": "听说。曾经有过一些孩子，但这种情况确实相当罕见。有一次，一位家长来找我，对我说：“其实，我的儿子一直不明白，为什么您不讲英语。” 那么，这到底过了多久呢？"
+        },
+        {
+          "id": 40,
+          "start_time": "00:16:08.379",
+          "end_time": "00:16:30.080",
+          "french": "Au bout de six mois. Ah oui ! Il devait vraiment être frustré d'avoir... Ça me fait penser à mon meilleur ami, dont j'ai déjà parlé pas mal dans le podcast, dont les parents sont polonais et ils ont déménagé en France quand lui, il avait trois ans. Et à la maison, il parlait seulement polonais. Donc quand il est arrivé à l'école maternelle, lui, il ne parlait que polonais.",
+          "chinese": "六个月之后。啊对！他当时肯定特别沮丧……这让我想起了我的挚友，我在播客里已经聊过不少次了。他父母是波兰人，他三岁的时候全家搬到了法国。在家中，他只讲波兰语。所以，当他刚上幼儿园时，他只会说波兰语。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:16:30.080",
+          "end_time": "00:16:55.720",
+          "french": "Et les maîtresses ne comprenaient pas ce qu'il disait, donc il avait l'impression que les maîtresses étaient vraiment stupides parce qu'il parlait et personne ne le comprenait. Les débuts ont été assez frustrants. C'est ça, mais ça reste assez rare quand même. En général, les enfants ont super hâte. Ils ont déjà lu des livres en français, écouté des petites vidéos sur YouTube,",
+          "chinese": "而且老师们听不懂他说什么，因此他觉得老师们真的特别笨，因为他们说话时根本没人能理解。刚开始的时候，确实挺令人沮丧的。不过，这种情况毕竟还是相当少见。一般来说，孩子们都超级期待呢！他们已经读过法语书籍，还看过YouTube上的小视频了。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:16:55.929",
+          "end_time": "00:17:11.880",
+          "french": "un certain degré de familiarité, on va dire ça. D'accord, donc il n'y a pas d'enfants qui arrivent avec un niveau zéro sans vraiment parler aucun mot de français. Ils ont quelques bases en général. La plupart ont un niveau zéro parce que...",
+          "chinese": "可以说，他们多少都有一些熟悉程度。好的，所以并没有孩子一上来就完全零基础，一句法语都不会说。一般来说，他们多少都掌握一些基础。大多数孩子之所以是零基础，是因为……"
+        },
+        {
+          "id": 43,
+          "start_time": "00:17:12.380",
+          "end_time": "00:17:41.170",
+          "french": "ils ont une certaine familiarité avec la langue dans le sens où ils ont appris des chansons, on va compter jusqu'à cinq. Mais une fois qu'on se retrouve complètement immergé, ce qui est assez différent d'un cours classique de français, c'est là qu'ils réalisent. Ce n'est plus simplement les petites vidéos qu'on voit sur YouTube où on apprend à compter en chantant. Même si, en effet, ça fait partie de...",
+          "chinese": "他们对这门语言有一定程度的熟悉，因为他们学过一些歌曲，比如我们会数到五。但一旦真正完全沉浸其中——这与传统的法语课程截然不同——他们才恍然大悟。这不再仅仅是像在YouTube上看到的那种小视频，通过唱歌来学习数数。尽管事实上，这的确也是……"
+        },
+        {
+          "id": 44,
+          "start_time": "00:17:41.170",
+          "end_time": "00:17:58.539",
+          "french": "de ce qu'on fait en classe. Mais lorsqu'ils se rendent compte qu'absolument tout est en français, que ce soit les consignes de classe, les interactions, la résolution de conflits, c'est là que ça devient un peu plus compliqué et challenging pour les élèves, comme on dit.",
+          "chinese": "关于他们在课堂上所做的事情。但当他们意识到，无论是课堂指令、师生互动，还是冲突解决，所有内容竟然都是法语时，情况就变得稍微复杂且更具挑战性了，正如人们所说的那样。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:58.940",
+          "end_time": "00:18:12.329",
+          "french": "Donc toi, tu parles uniquement français pendant tout le cours. Il n'y a aucun moment où tu passes en anglais pour expliquer quelque chose. Non, c'est 100% français dès le premier cours.",
+          "chinese": "所以，你整堂课都只讲法语。没有任何时刻你会转用英语来解释什么。不，从第一节课开始就百分之百讲法语。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:18:12.819",
+          "end_time": "00:18:40.460",
+          "french": "C'est ça, c'est vraiment 100% français. Alors, parfois, lorsqu'il y a certains conflits en classe, ou il y a des élèves dont les parents leur manquent, par exemple, surtout quand ils sont tout petits, quand ils sont en CP, on peut les sortir de la classe et les réconforter, dire tout va bien, ne t'inquiète pas, etc. Mais du moment qu'on rentre en classe, on passe au français de nouveau.",
+          "chinese": "没错，这真的是百分之百的法语教学。所以，有时候在课堂上出现一些冲突，或者有些学生特别想念他们的父母——尤其是他们还很小、刚上小学一年级的时候——我们可以把他们带出教室，安慰他们说：“一切都会好起来的，别担心。”但只要一回到教室，我们又会重新开始用法语授课。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:18:40.730",
+          "end_time": "00:19:07.579",
+          "french": "Oui, c'est vrai que l'école à cet âge-là, c'est déjà un sacré défi, une sacrée immersion. Donc, si en plus on ajoute une nouvelle langue, effectivement, ça peut être un peu intimidant. Oui, surtout qu'ici, aux États-Unis, l'école maternelle n'est pas obligatoire. Donc, on a des enfants qui n'ont été qu'à l'équivalent de la grande section maternelle qu'on appelle kindergarten ici. Et il y a même certains enfants qui n'ont pas forcément...",
+          "chinese": "是的，确实，这个年龄段上学本身就是一个不小的挑战，也是一次深度的沉浸式体验。所以，如果再额外增加一门新语言，的确可能会让人感到有些压力。尤其是这里在美国，幼儿园并不是强制性的。因此，有些孩子只上过相当于我们所说的“大班”的幼儿园——也就是这里的“kindergarten”。甚至还有一些孩子根本……"
+        },
+        {
+          "id": 48,
+          "start_time": "00:19:07.579",
+          "end_time": "00:19:34.529",
+          "french": "été très assidus en kindergarten et qui se retrouvent dans une classe de CP où non seulement ils doivent apprendre à lire, à écrire, à compter dans les deux langues, mais aussi devoir faire face à une langue dont ils ne connaissent absolument rien. Et c'est un peu déstabilisant quand on a 8 ans. J'imagine. Alors, tu nous as dit que ce programme s'organisait autour d'une structure 50-50. Il commence le matin avec le français, c'est ça ?",
+          "chinese": "他在幼儿园时非常用功，结果到了小学一年级，不仅得用两种语言学习认字、写字和算数，还得面对一门他们完全一无所知的语言。对于一个8岁的孩子来说，这确实有点让人不安。我能想象。那么，你刚才提到这个项目是以50-50的结构来安排的。它早上开始时是法语，对吧？"
+        },
+        {
+          "id": 49,
+          "start_time": "00:19:34.529",
+          "end_time": "00:20:00.559",
+          "french": "Alors, ça dépend du groupe. Il y a un groupe qui commence le matin avec le français et l'autre groupe qui commence avec l'anglais. Chaque paire d'enseignants a une façon différente de fonctionner. Par exemple, il y a des enseignants qui font une rotation des groupes chaque semaine afin que ce ne soit pas toujours le même groupe qui commence par le français le matin. Par exemple, ma collègue et moi, nous, on change tous les trimestres. D'autres le font tous les mois. Ça dépend vraiment des préférences des enseignants.",
+          "chinese": "那么，这取决于小组。有一个小组早上先上法语课，另一个小组则先上英语课。每对教师都有不同的教学方式。比如，有些老师每周轮换小组，这样早上先上法语课的就不总是同一个小组。例如，我和我的同事每学期都会调换一次小组。还有些老师则是每个月调换一次。这真的取决于教师们的个人偏好。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:20:00.559",
+          "end_time": "00:20:19.490",
+          "french": "Toi, les cours que tu donnes, ce n'est pas seulement des cours de français, comme tu disais. Vous faites des maths en français, d'autres sciences, peut-être des cours d'histoire, j'imagine, c'est ça ? Oui, alors, donc en CP, CE1 et CE2, c'est-à-dire pour les élèves de 6, 7, 8 ans, les maths sont complètement en français.",
+          "chinese": "你教的课程可不仅仅是法语课，就像你说的那样。你们用法语上数学课，还有其他一些科学课，也许还有历史课，我猜是这样吧？是的，所以，在小学一年级、二年级和三年级——也就是针对6岁、7岁和8岁的学生——数学课完全用法语授课。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:20:19.490",
+          "end_time": "00:20:45.029",
+          "french": "On fait également un peu ce qu'on appelle du renforcement en sciences, où on apprend vraiment le vocabulaire basique qui va servir pour les classes un petit peu plus grandes. Le programme de sciences, c'est ce qu'on appelle un programme assez spiralaire, c'est-à-dire qu'on voit les bases en CP, et ensuite on va vraiment en profondeur au fur et à mesure qu'on évolue dans les classes supérieures. On apprend également la littérature en français.",
+          "chinese": "我们还会进行一些所谓的科学强化训练，重点学习一些基础词汇，这些词汇将在更高年级的课堂中派上用场。科学课程采用一种被称为“螺旋式”的教学模式，也就是说，在小学一年级时先学一些基础知识，然后随着年级升高，我们会逐步深入地学习相关内容。此外，我们还会学习法语文学。"
+        },
+        {
+          "id": 52,
+          "start_time": "00:20:45.369",
+          "end_time": "00:21:11.900",
+          "french": "On utilise une méthode de lecture française qui s'appelle Taoki. On travaille également avec ce qu'on appelle la méthode Borel-Maisonny. C'est une méthode dans laquelle chaque son de la langue est associé à un geste. Ensuite, on associe ces gestes ensemble afin de travailler la combinatoire. Et donc voilà, la journée est rythmée comme ça d'un domaine à l'autre. La différence avec un cours de français classique, c'est que...",
+          "chinese": "我们采用一种名为Taoki的法国阅读方法。此外，我们还使用一种称为Borel-Mezoni的方法。这种方法的特点是，语言中的每个音都对应一个手势。随后，我们将这些手势组合起来，以训练语音组合能力。因此，一天的安排就是如此，在不同领域之间交替进行。与传统的法语课程不同的是……"
+        },
+        {
+          "id": 53,
+          "start_time": "00:21:11.900",
+          "end_time": "00:21:40.480",
+          "french": "Dans un cours de français classique, le français est la matière qu'on étudie. L'idée, c'est vraiment de découvrir la langue et de la comprendre. Mais on ne s'attend pas forcément à ce que les élèves deviennent bilingues à la suite d'un cours de français comme on peut avoir en élémentaire en France ou en collège. Alors qu'ici, dans le contexte de l'immersion, la langue est vraiment utilisée pour enseigner les autres matières. Et les enfants peuvent...",
+          "chinese": "在传统的法语课上，法语是学生们所学习的科目。其核心理念在于让学生们去发现并理解这门语言。不过，我们并不一定期望学生在修完这样的法语课后就能成为双语人才——就像在法国小学或初中阶段那样。而在这里，在沉浸式教学的环境中，法语真正被用来教授其他学科。这样一来，孩子们可以……"
+        },
+        {
+          "id": 54,
+          "start_time": "00:21:40.480",
+          "end_time": "00:22:10.059",
+          "french": "la vivre au quotidien, la pratiquer dans le contexte avec une personne qui est native. Et c'est un apprentissage qui est relativement plus actif et naturel et qui permet d'ancrer ces compétences linguistiques sur le long terme. Et au bout de combien de temps ils commencent à s'exprimer en français ? Alors, il y a plusieurs niveaux de déclic.",
+          "chinese": "每天亲身体验，在真实情境中与以该语言为母语的人一起练习。这种学习方式相对更主动、更自然，有助于长期巩固语言能力。那么，经过多长时间他就能开始用法语表达呢？其实，触发点有不同的层次。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:22:10.230",
+          "end_time": "00:22:27.720",
+          "french": "Si je puis dire... Ce qu'il faut savoir, c'est que j'ai enseigné en CP pendant 6 ans et ensuite... Donc le CP, c'est la première classe de l'école élémentaire. C'est ça. Et là, actuellement, j'enseigne en CM1. Donc ce sont des élèves qui ont 9 ans.",
+          "chinese": "我可以这么说……需要知道的是，我曾在一年级教了6年，然后……所以，一年级是小学的第一学年。没错。目前，我正在教C1班。这些学生都9岁了。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:22:28.089",
+          "end_time": "00:22:44.390",
+          "french": "Lorsque j'enseignais en CP, j'ai pu observer les premiers déclics, c'est-à-dire les moments où les élèves essayent vraiment de créer une phrase basique avec un sujet, verbe, complément, en général vers octobre, novembre. Ça, c'est vraiment la première vague. Il n'y en a pas beaucoup, quelques-uns.",
+          "chinese": "当我教一年级时，我观察到最初的“顿悟”时刻——也就是学生们真正开始尝试用主语、谓语和宾语构成简单句子的那些时刻，通常出现在十月至十一月左右。这确实是一波最早的突破。这样的学生并不多，只有寥寥几个。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:22:44.599",
+          "end_time": "00:23:07.849",
+          "french": "Les plus grosses vagues en général de déclics arrivent vers le mois de février, puis ensuite vers fin avril. La plupart des élèves commencent à parler plus de manière spontanée en fin d'année scolaire, et plus spécifiquement vers le CE1. À partir de la deuxième année, ils commencent à être capables de s'exprimer assez librement, c'est ça ?",
+          "chinese": "一般来说，语言发展的关键转折点通常出现在二月左右，随后在四月底前后再次出现。大多数学生会在学年末开始更自然地说话，尤其是在小学一年级（CE1）阶段。从第二年开始，他们便能相当自由地表达自己了，对吧？"
+        },
+        {
+          "id": 58,
+          "start_time": "00:23:08.119",
+          "end_time": "00:23:23.849",
+          "french": "La manière dont ils s'expriment en CP, souvent, c'est avec un mot anglais au milieu de la phrase. Alors que lorsqu'ils arrivent en CE1, ils ont un peu plus de vocabulaire et les phrases de base sont acquises.",
+          "chinese": "他们在一年级时的表达方式，常常是在句子中间夹杂一个英语单词。而到了二年级，他们的词汇量多了些，基本句型也掌握了。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:24.309",
+          "end_time": "00:23:42.980",
+          "french": "Donc ils sont un petit peu plus libres à ce niveau-là. Après, comme j'explique souvent aux parents, chaque enfant est différent et a son propre rythme. J'ai vu des enfants qui n'ont pas commencé à parler avant le CE1 et qui maintenant gèrent en CM1 et qui sont super.",
+          "chinese": "因此，他们在这一方面稍微自由一些。不过，正如我经常跟家长们解释的，每个孩子都是不同的，都有自己的节奏。我见过一些孩子直到小学二年级才开始说话，但现在到了小学四年级却已经完全适应了，而且表现得非常棒。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:43.259",
+          "end_time": "00:24:15.269",
+          "french": "Donc, ce n'est pas une compétition et c'est vraiment quelque chose qui est important pour les parents de se rappeler, même si en tant que maman, moi-même, je sais qu'on a tendance à regarder un peu les autres. Mais c'est vraiment important de comprendre que oui, c'est bien s'ils commencent à s'exprimer en CP, mais ça ne veut pas tout dire. Et l'avantage aussi de commencer aussi tôt, c'est par rapport à la prononciation, à l'accent.",
+          "chinese": "因此，这并不是一场竞赛，这一点对家长们来说真的非常重要——即使身为妈妈的我本人也明白，我们往往会不自觉地拿自己的孩子跟别人比较。但真正重要的是要清楚：孩子在小学一年级就开始表达自己，这固然很好，但这并不意味着一切就此定论。另外，尽早开始还有一个好处，那就是有助于改善发音和口音。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:24:15.609",
+          "end_time": "00:24:37.829",
+          "french": "Parce que moi, d'après les études que j'avais lues, on peut vraiment apprendre à parler couramment une langue à n'importe quel âge. Mais en ce qui concerne la prononciation, si on veut être capable d'avoir un accent qui ressemble plus ou moins à celui d'un locuteur natif, c'est mieux d'apprendre la langue avant 10 ou 11 ans. Il me semble que c'est ça l'âge.",
+          "chinese": "因为根据我读过的研究，其实无论什么年龄，我们都能学会流利地讲一门语言。不过说到发音，如果想达到接近母语者的口音水平，最好在10或11岁之前就开始学这门语言。我觉得大概就是这个年纪吧。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:24:38.039",
+          "end_time": "00:25:05.859",
+          "french": "L'âge butoir parce qu'après, notre système phonétique se fige d'une certaine manière. Il est beaucoup moins malléable, beaucoup moins flexible. Et là, ça devient... Même s'il y a des exceptions. On connaît tous des polyglottes qui ont un excellent accent et qui ont appris la langue à l'âge adulte. Mais c'est quand même plus simple quand on commence un peu plus tôt. Oui, complètement. D'ailleurs, cette année, j'ai une élève...",
+          "chinese": "截止年龄，因为过了这个年龄，我们的语音系统会在某种程度上定型。它变得不那么灵活，也不那么可塑了。而到了那个时候……尽管确实存在一些例外情况。我们都知道一些多语者，他们有着纯正的口音，而且是在成年后才开始学习这门语言的。但无论如何，如果能早一点开始学，还是更容易些。是的，完全正确。事实上，今年我有一位学生……"
+        },
+        {
+          "id": 63,
+          "start_time": "00:25:06.200",
+          "end_time": "00:25:31.470",
+          "french": "que je n'avais pas eue en CP. Parce que le groupe que j'ai eu cette année, c'est un groupe que j'ai eu en CP. Et il y a une nouvelle élève qui est arrivée en CE1 et je ne savais pas qu'elle était française. Parce que son français était tellement parfait, son accent était tellement parfait. Et au bout de deux mois, j'ai fait une activité où je demandais aux élèves qui étaient français, parce que j'en avais deux ou trois dans la classe à ce moment-là,",
+          "chinese": "我以前在一年级时没有遇到过这样的情况。因为我今年带的这个班，正是我去年带的一年级班。后来，有一名新学生转到了二年级，而我那时还完全不认识她，而且她还是法国人。她的法语说得太完美了，口音也完美得令人难以置信。两个月后，我组织了一次活动，当时我问那些说法语的学生——因为班里当时正好有两三个说法语的学生。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:25:31.470",
+          "end_time": "00:26:00.359",
+          "french": "de ne pas se mettre ensemble justement parce que je voulais qu'ils puissent être en situation de tutorat avec d'autres élèves. Et elle, je l'ai mise en situation de tutorat comme tuteur et c'est là qu'elle m'a dit non, mais je ne suis pas française. Je m'en suis rendu compte deux mois après parce qu'elle était tellement excellente. Et comment ça se fait du coup qu'elle parle si bien ? Je pense que ça dépend vraiment des élèves et de leur capacité à s'exprimer sans retenue. Les élèves qui sont le plus...",
+          "chinese": "恰恰是因为我想让他们能够与其他学生一起进行辅导，所以才没有让他们凑到一起。而她呢，我让她以导师的身份参与辅导工作，就在那时她告诉我：“不，我不是法国人。”两个月后我才意识到这一点，因为她表现得实在太出色了。那么，她到底是怎么做到讲得这么好的呢？我觉得这真的取决于学生本身，以及他们能否毫无顾忌地表达自己。那些最……"
+        },
+        {
+          "id": 65,
+          "start_time": "00:26:00.819",
+          "end_time": "00:26:21.160",
+          "french": "en situation de succès, ce sont vraiment des élèves qui n'ont pas peur d'essayer et de faire des erreurs. Et cette petite fille, Mary-Kate, si tu m'entends, n'a jamais vraiment eu peur de s'exprimer, a toujours la main levée et accepte toujours les redirections afin de pouvoir...",
+          "chinese": "在成功的情境中，这些学生确实毫不畏惧尝试，也敢于犯错。还有这位小女孩，玛丽-凯特，如果你能听到我的声音，她从来都不怕表达自己，总是高高举起小手，也总是乐于接受引导，以便能够……"
+        },
+        {
+          "id": 66,
+          "start_time": "00:26:21.339",
+          "end_time": "00:26:42.980",
+          "french": "s'améliorer quotidiennement. Ça, c'est une bonne leçon aussi qu'on répète souvent à nos élèves, mais se comparer aux autres, et ça vaut pour l'apprentissage des langues, mais de manière générale, dans tous les domaines de la vie, ça n'apporte pas grand-chose. Chacun avance à son rythme et là, c'est un bon exemple parce que tu as des élèves qui arrivent...",
+          "chinese": "每天进步。这也是我们经常对学生们强调的一条重要经验，但与他人比较——这不仅适用于语言学习，也普遍适用于生活的各个领域——其实意义并不大。每个人都有自己的节奏，而这一点正是个很好的例子：你会看到一些学生……"
+        },
+        {
+          "id": 67,
+          "start_time": "00:26:42.980",
+          "end_time": "00:27:04.359",
+          "french": "plus ou moins avec le même niveau et qui ont les mêmes cours, mais très rapidement il y a des écarts qui apparaissent et qui sont liés à des capacités personnelles, à des personnalités différentes. Donc bon, chacun avance à son rythme et l'important c'est de ne pas se décourager et d'essayer de ne pas trop se comparer.",
+          "chinese": "或多或少处于同一水平、上着相同的课程，但很快就会出现差距，这些差距与个人能力及不同性格有关。所以，每个人按照自己的节奏前进就好，重要的是不要灰心，也尽量别过度比较自己。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:27:05.299",
+          "end_time": "00:27:14.150",
+          "french": "Sauf éventuellement se comparer à soi-même et aux progrès qu'on fait d'une année sur l'autre. Mais se comparer aux autres, ce n'est pas le plus productif.",
+          "chinese": "除非偶尔与自己比较，看看自己一年比一年的进步。但与他人比较，并不是最有效的方式。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:27:14.779",
+          "end_time": "00:27:39.059",
+          "french": "Je pense que vraiment ne pas avoir peur de faire des erreurs, c'est un élément clé. Souvent les parents me demandent, lorsque je faisais cette réunion d'information en CP, quels sont les critères de succès, comment est-ce que je peux être sûre que mon enfant va bien s'adapter au programme. Et je leur expliquais toujours, ce n'est pas forcément les élèves les plus proprement dits scolaires qui...",
+          "chinese": "我认为，真正不怕犯错，这一点至关重要。很多时候，当我在一年级举办说明会时，家长们都会问我：成功的标准是什么？我怎样才能确信我的孩子能很好地适应这个课程呢？而我总是向他们解释：其实，不一定是最“成绩优异”的学生……"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:39.059",
+          "end_time": "00:28:01.539",
+          "french": "réussissent le mieux, le plus rapidement possible. Ce sont vraiment les enfants qui ont cette capacité à être résilients, à comprendre et à accepter le fait qu'ils ne peuvent pas tout contrôler, qu'ils ne peuvent pas tout comprendre dès le départ et qu'ils se laissent guider et qu'ils n'ont pas peur d'essayer. Et à force, à force d'essayer, c'est là qu'ils progressent le plus.",
+          "chinese": "最能成功、且速度最快的孩子，正是那些具备韧性、能够理解并接受自己无法掌控一切、一开始也无法完全明白一切的孩子。他们乐于顺其自然，不惧尝试。而正是通过一次又一次的尝试，他们才能取得最大的进步。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:28:01.849",
+          "end_time": "00:28:30.630",
+          "french": "Oui, et j'imagine qu'il y a des élèves qui sont plus passionnés par la langue et qui, en rentrant chez eux, comme tu l'as dit, vont regarder des vidéos, vont continuer cette immersion à la maison, alors que pour d'autres, bon, c'est peut-être un peu moins... Voilà, comme tu disais, ils sont moins excités par la langue et ils vont moins la travailler à l'extérieur et forcément, ils vont progresser un peu moins vite. C'est ça. Mais en général, les élèves que...",
+          "chinese": "是的，而且我猜有些学生对这门语言更感兴趣。就像你刚才说的，他们一回到家就会去看视频，继续在家里沉浸式地学习；而另一些学生呢，嗯，可能就没那么积极了……没错，就像你说的，他们对这门语言没那么兴奋，课后花在语言上的时间也少一些，因此进步速度自然会慢一点。就是这样。不过总的来说，那些……"
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:31.289",
+          "end_time": "00:28:57.859",
+          "french": "que je revois maintenant qui sont en collège, même ceux qui avaient eu un petit peu plus de mal parlent très bien et sont en général très contents d'avoir eu cette expérience. Et donc pour en revenir à cette question de l'accent, de la prononciation, tu dirais qu'ils arrivent à avoir un accent proche de celui des natifs ou est-ce qu'ils gardent quand même un accent américain ? Alors il y a quand même un petit accent américain, surtout quand...",
+          "chinese": "我现在再看看那些已经上初中的学生，甚至以前稍微有点吃力的学生，现在都说得非常好，而且总体上都非常满意能有这段经历。那么，回到刚才那个关于口音和发音的问题，你觉得他们能接近母语者的口音吗？还是说他们还是会保留一点美式口音呢？嗯，确实还有一点美式口音，尤其是当……"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:58.009",
+          "end_time": "00:29:19.369",
+          "french": "d'un point de vue d'un natif. Mais, par exemple, lorsqu'ils sont dans une situation de lecture à voix haute, ils prononcent relativement bien, surtout les R, toutes ces lettres un peu propres à la langue française.",
+          "chinese": "从母语者的角度来看。但是，例如，当他们处于朗读情境时，发音相对较好，尤其是R音，以及所有这些对法语来说比较独特的字母。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:29:20.019",
+          "end_time": "00:29:50.339",
+          "french": "Et d'ailleurs, ma collègue américaine, on rigole souvent parce qu'elle nous dit que quand elle est en situation de lecture avec ces mêmes élèves, elle continue à prononcer le R à la française même dans le cours d'anglais. Donc... C'est drôle. Donc oui, ils ont un accent... Finalement, ils prennent un accent français en anglais quand ils lisent, c'est ça ? C'est ça. Ils prennent un peu l'accent marseillais parfois parce qu'ils comptent.",
+          "chinese": "而且，顺便说一下，我的美国同事经常和我们开玩笑，因为她告诉我们，当她跟同样的学生一起阅读时，即使是在上英语课，她还是会用法式口音发“R”音。所以……这挺有趣的。没错，他们确实带点口音……说到底，他们在读英语的时候会带上一点法语口音，对吧？就是这么回事。有时候，他们还会带点马赛口音，因为他们数数的时候会这样。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:50.680",
+          "end_time": "00:30:16.900",
+          "french": "Lorsqu'ils disent cinq, il y a un papa qui est venu me voir à la fin de la journée, qui avait fait sa mission dans le sud de la France. Il me demande « Est-ce que tu es marseillaise ? » Je lui dis « Oui, mais comment tu sais ? » Il me dit « Mon fils comptait hier à la maison, il a compté 1, 2, 3, 4, 5. »",
+          "chinese": "当他们说“5”的时候，一位爸爸在一天结束时来找我，他之前在法国南部执行任务。他问我：“你是马赛人吗？” 我回答：“是的，可是你怎么知道的呢？” 他告诉我：“我儿子昨天在家数数，他数了1、2、3、4、5。”"
+        },
+        {
+          "id": 76,
+          "start_time": "00:30:17.180",
+          "end_time": "00:30:46.410",
+          "french": "Et à ce moment-là, j'ai compris que la maîtresse était marseillaise. Bon, mais pour dire aux auditeurs, tu n'as pas non plus un accent qui est très fort, très prononcé. Il est quand même assez soft, ton accent marseillais. Oui, mon accent marseillais, j'y fais vraiment très attention. Lorsque j'ai emménagé ici, je l'ai mis dans une petite boîte et je l'ai rangé avec mon écharpe de l'OM. Je le ressors occasionnellement lorsque je conduis.",
+          "chinese": "于是，那一刻我明白了，这位老师是马赛人。不过话说回来，要跟听众们说一句，你的口音其实并不很重，也不太明显。你的马赛口音还是相当柔和的。没错，我的马赛口音，我确实特别注意。刚搬来这里的时候，我把它装进一个小盒子里，然后用我那件马赛足球队的围巾重新包装了一下。偶尔开车的时候，我还会拿出来用一用。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:30:46.460",
+          "end_time": "00:31:08.579",
+          "french": "Lorsqu'il y a un match, mais comme il me semble que tu l'as évoqué dans un de tes podcasts, parfois l'accent marseillais peut sembler un peu pas forcément professionnel. Donc lorsqu'on est en formation avec les autres enseignants qui viennent de partout en France,",
+          "chinese": "当有比赛的时候，不过正如你似乎在某个播客中提到过的，有时候马赛口音可能会显得有点不够专业。因此，当我们和其他来自法国各地的教师一起接受培训时，就会遇到这种情况。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:31:08.980",
+          "end_time": "00:31:36.829",
+          "french": "j'essaye vraiment de faire attention. Oui, c'est vrai. Je crois que c'était dans une vidéo que j'avais faite sur la glottophobie et le fait qu'en France, il y a ce français un peu mythique qu'on appelle le français standard, l'accent neutre entre guillemets, qui existe, qui est en réalité plutôt l'accent parisien. Et quand on a un accent régional, que ce soit l'accent marseillais, l'accent toulousain, etc., c'est...",
+          "chinese": "我真的在努力注意。是的，没错。我想这应该是在我之前做的一段关于“喉音恐惧症”的视频里提到过的：在法国，有一种被神话化的法语——所谓的“标准法语”，也就是所谓“中性口音”——这种口音其实更接近巴黎口音。而当我们带有地方口音时，比如马赛口音、图卢兹口音等等……"
+        },
+        {
+          "id": 79,
+          "start_time": "00:31:36.829",
+          "end_time": "00:32:12.970",
+          "french": "effectivement, c'est pas considéré comme professionnel et à part dans certains domaines comme par exemple les animateurs sportifs, là c'est toléré qu'ils aient l'accent du sud parce que c'est associé au sport collectif, etc. Mais voilà, ça fait partie un peu de cette tyrannie du français standard. Est-ce que vous faites des cours de grammaire dans ce programme en immersion ? Alors, oui, on fait de la grammaire mais il n'y a pas vraiment de...",
+          "chinese": "确实，这并不被视为专业表现，除了某些特定领域，比如体育解说员，他们带有南方口音反而会被容忍，因为这与集体运动等联系在一起。但总的来说，这多少也反映了对标准法语的某种强制性要求。在你们的沉浸式课程中，会开设语法课吗？嗯，是的，我们会讲语法，不过其实并没有特别……"
+        },
+        {
+          "id": 80,
+          "start_time": "00:32:13.559",
+          "end_time": "00:32:29.799",
+          "french": "de cours de grammaire proprement dits, tels qu'on les a connus nous à l'école. En fait, on étudie la grammaire en observant les régularités de la langue grâce à ce qu'on appelle une approche intégrée.",
+          "chinese": "严格意义上的语法课程，即我们过去在学校所熟知的那种。实际上，我们通过观察语言的规律性来学习语法，这被称为综合法。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:32:30.359",
+          "end_time": "00:32:48.519",
+          "french": "Par exemple, je vais expliquer ce qu'est une approche intégrée au travers du premier ouvrage qu'on étudie dans ma classe de CM1 qui s'appelle « Le loup sentimental ». C'est un petit album écrit par Geoffroy de Pennart. Une fois qu'on a travaillé sur la compréhension globale, le vocabulaire,",
+          "chinese": "例如，我将通过我在萨明班上所学的第一本书——《多情的狼》——来解释什么是综合方法。这是一本由热弗鲁瓦·德佩纳尔撰写的精美小绘本。在完成整体理解与词汇学习之后，"
+        },
+        {
+          "id": 82,
+          "start_time": "00:32:48.819",
+          "end_time": "00:33:17.789",
+          "french": "on aborde la grammaire qui est présente dans le texte. On a la chance d'avoir de super coordinateurs ici. Ce sont comme des conseillers pédagogiques qui ont créé des supports adaptés à cette démarche. Par exemple, dans le cas du loup sentimental, certains passages ont été réécrits en insistant sur, par exemple, les adjectifs. Ensuite, on va demander aux élèves, qu'est-ce que tu remarques de spécial dans ce passage ? À quoi servent ces mots ?",
+          "chinese": "我们开始探讨文中所涉及的语法知识。很幸运，我们这里有几位出色的协调员。他们就像教学顾问一样，专门为这种教学方法设计了相应的辅助材料。例如，在《多情的狼》这篇课文里，某些段落经过重新改写，特别强调了形容词的作用。接下来，我们会问学生们：“你注意到这段文字有什么特别之处？这些词语究竟有什么作用呢？”"
+        },
+        {
+          "id": 83,
+          "start_time": "00:33:17.789",
+          "end_time": "00:33:41.990",
+          "french": "Est-ce qu'on peut les remplacer ? Est-ce qu'on peut les supprimer ? Est-ce qu'on peut les déplacer ? Ensuite, on va avoir le même passage, mais par exemple au pluriel. Et on répète la démarche. Qu'est-ce que vous remarquez ? Qu'est-ce qu'il y a à la fin de ce mot ? Il s'accorde. Il y a un S également, lorsque la phrase est au pluriel. Et ensuite, ça va être aux élèves à leur tour de créer leurs propres phrases avec des adjectifs, de les accorder, etc.",
+          "chinese": "我们可以替换它们吗？可以删除它们吗？可以移动它们吗？接下来，我们再来看一遍同样的段落，但这次用复数形式。然后，我们重复刚才的步骤。你们注意到了什么？这个单词的结尾有什么特点？它会进行性数一致。当句子是复数时，也会出现字母S。之后，就轮到学生们自己用形容词造句，并进行性数一致的处理了。"
+        },
+        {
+          "id": 84,
+          "start_time": "00:33:42.200",
+          "end_time": "00:34:10.730",
+          "french": "On aborde la grammaire, l'orthographe, la conjugaison de cette manière-là. D'accord. Donc, à partir d'exemples concrets, ensuite, eux, ils doivent essayer de deviner les règles et de comprendre instinctivement, entre guillemets, la grammaire française. C'est exactement ça. Tout ça, ça nous permet vraiment de voir le niveau de maîtrise des élèves et également de leur donner plusieurs opportunités",
+          "chinese": "我们正是以这种方式来学习语法、拼写和动词变位的。没错。因此，从具体的例子入手，学生们随后需要尝试去猜测规则，并在直觉上——用引号括起来——理解法语语法。这正是如此。所有这些，都能让我们真正了解学生们的掌握程度，同时也为他们提供多种学习机会。"
+        },
+        {
+          "id": 85,
+          "start_time": "00:34:11.000",
+          "end_time": "00:34:38.820",
+          "french": "de réussir la tâche proposée et ça permet également à l'enseignant d'avoir une idée de quels élèves ont besoin d'un étayage supplémentaire. Et donc à la fin de ce programme en immersion à l'école primaire, est-ce que tous les élèves décident de continuer cette immersion au collège ou pas nécessairement ? La plupart, oui, continuent parce que...",
+          "chinese": "成功完成所提出的任务，同时也能让教师了解哪些学生需要额外的支持。那么，在小学沉浸式课程结束后，所有学生都会决定在初中继续这种沉浸式学习吗？并非一定如此。不过，大多数学生会继续，因为……"
+        },
+        {
+          "id": 86,
+          "start_time": "00:34:39.480",
+          "end_time": "00:35:05.670",
+          "french": "Si on continue ce programme jusqu'au lycée, ça permet d'avoir ce qu'on appelle des college credits, qui sont assez précieux et qui coûtent cher de manière générale. Mais lorsqu'on passe par le programme d'immersion, c'est vraiment un prix assez dérisoire. Donc les élèves ont vraiment tout intérêt, ça leur permet d'avoir...",
+          "chinese": "如果我们将这个项目一直延续到高中阶段，就能获得所谓的大学学分。这些学分相当珍贵，通常费用不菲。但通过沉浸式课程，这笔费用简直微不足道。因此，学生们真的非常值得参与，这能让他们……"
+        },
+        {
+          "id": 87,
+          "start_time": "00:35:05.909",
+          "end_time": "00:35:17.769",
+          "french": "également une sorte de petit... pas un diplôme universitaire en français mais ce qu'on appelle un minor. Un quoi pardon ? Minor, je ne connais pas vraiment le...",
+          "chinese": "还有一种类似的小...不是法语里的大学学位，而是叫“minor”。什么？Minor？我真不太了解……"
+        },
+        {
+          "id": 88,
+          "start_time": "00:35:18.010",
+          "end_time": "00:35:45.510",
+          "french": "On n'a pas ce système vraiment en France de major ou minor. Mais voilà, en général, oui, les élèves continuent, à moins que l'immersion ait été vraiment compliquée en élémentaire. Mais ça, c'est rare qu'ils abandonnent. En général, ils continuent. Est-ce que tu les entends parfois discuter en français en dehors des cours, dans la cour de récréation, par exemple ? Ou est-ce que globalement...",
+          "chinese": "在法国，我们确实没有这种“优等生”或“差等生”的制度。不过总的来说，是的，学生们通常都会坚持下去，除非小学阶段的沉浸式学习真的特别困难。但这种情况很少见，他们一般都会继续学下去。你有没有偶尔听到他们在课外、比如课间休息时用法语聊天？或者总体来说……"
+        },
+        {
+          "id": 89,
+          "start_time": "00:35:45.849",
+          "end_time": "00:36:14.820",
+          "french": "ils utilisent seulement la langue en classe ? Globalement, ils l'utilisent plus en classe. Par contre, lorsque, par exemple, on est de service pendant la récréation, s'il y a un problème, les élèves doivent venir nous le dire en français. D'accord. Donc, ils utilisent quand même le français à l'extérieur de la classe. Également, quand on a des enfants francophones qui arrivent, qui ne maîtrisent pas l'anglais, eh bien, là, nos élèves en immersion vont vraiment aider ces...",
+          "chinese": "他们只在课堂上使用这门语言吗？总体而言，他们在课堂上的使用频率更高。不过，比如在课间休息时值班的时候，如果遇到问题，学生们必须用法语来告诉我们。好的。所以，他们其实也在课堂之外使用法语。另外，当有说法语的孩子刚来学校、还不太会英语时，我们的沉浸式学习班的学生就会真正地帮助这些……"
+        },
+        {
+          "id": 90,
+          "start_time": "00:36:15.030",
+          "end_time": "00:36:43.789",
+          "french": "ces enfants nouvellement arrivés, ils vont jouer exclusivement en français. Super, bah écoute, je pense que c'est un programme qui doit faire rêver pas mal d'auditeurs qui se disent sûrement, ah si j'avais eu ça quand j'étais à l'école primaire, aujourd'hui ce serait beaucoup plus facile pour moi de continuer mon apprentissage en français. Faut espérer que ce soit quelque chose qui se démocratise, pas seulement pour le français, mais pour toutes les langues, parce que, comme tu l'as évoqué,",
+          "chinese": "这些新来的孩子们，他们将完全用法语进行游戏。太棒了！嗯，我觉得这个节目一定会让不少听众心生向往——他们肯定在想：“要是我小时候就有这样的机会就好了！今天我学法语肯定会轻松许多。” 希望这种做法能逐渐普及开来，不仅限于法语，而是所有语言都能如此。正如你刚才提到的……"
+        },
+        {
+          "id": 91,
+          "start_time": "00:36:43.789",
+          "end_time": "00:37:11.019",
+          "french": "ça permet aux élèves de se développer sur plein d'aspects différents, pas uniquement la langue. C'est vraiment quelque chose de bénéfique d'après les différentes études qu'on a sur le sujet. Pour terminer, est-ce que tu aurais un ou deux conseils à donner à nos auditeurs qui sont plutôt des adultes et apprennent le français ? Toi, qu'est-ce que tu leur conseillerais pour continuer leur apprentissage ?",
+          "chinese": "这能让学生们在诸多不同方面得到发展，而不仅仅是语言本身。根据我们针对这一主题所做的各项研究，这确实是一件大有裨益的事。最后，你有没有一两条建议想对那些以成年人为主、正在学习法语的听众们说呢？你自己会给他们什么建议来继续他们的学习呢？"
+        },
+        {
+          "id": 92,
+          "start_time": "00:37:11.059",
+          "end_time": "00:37:38.599",
+          "french": "Je pense que vraiment, pour moi, la clé, c'est de pratiquer, c'est de le parler. Je vois l'exemple de mon mari qui est des fois un peu timide. Il a un peu honte de faire des erreurs, mais je pense que c'est en faisant des erreurs qu'on apprend le plus. Donc, vraiment, n'hésitez pas à pratiquer la langue, à l'écouter. L'écoute, en général, c'est ce qui arrive en premier, ce qui est le plus...",
+          "chinese": "我觉得，对我而言，真正的关键就在于多练习、多开口说。我看到我丈夫的例子，他有时候会有点害羞，偶尔还会为犯错而感到不好意思。但我觉得，恰恰是在犯错的过程中，我们才能学得最多。所以，真的别犹豫，大胆地去练习语言，去听语言。一般来说，听力总是最先开始的，也是最重要的……"
+        },
+        {
+          "id": 93,
+          "start_time": "00:37:39.000",
+          "end_time": "00:38:03.659",
+          "french": "pas simple, mais c'est ce qui se débloque en premier, le parler arrive par la suite. Vraiment parler autant que possible. Ce n'est pas grave si vous faites des erreurs. Je sais que les Français ont la réputation de ne pas apprécier apparemment lorsque des personnes étrangères essayent de parler dans notre langue. Et c'est un cliché qu'il serait bon de...",
+          "chinese": "并不简单，但这是最先能突破的，口语随后才会逐渐掌握。一定要尽可能多地开口说！即使犯错也没关系。我知道，法国人似乎有个传统观念：不太喜欢外国人尝试用他们的语言交流。而这种刻板印象其实……"
+        },
+        {
+          "id": 94,
+          "start_time": "00:38:03.960",
+          "end_time": "00:38:13.960",
+          "french": "d'adresser. Et non, c'est pas le cas. Voilà, si vous êtes des auditeurs étrangers, parlez-nous en français, on est patients et on est toujours",
+          "chinese": "请发言，但事实并非如此。如果您是外国听众，请用法语和我们交流吧！我们很有耐心，而且一直都在。"
+        },
+        {
+          "id": 95,
+          "start_time": "00:38:14.199",
+          "end_time": "00:38:41.260",
+          "french": "heureux de pouvoir aider et soutenir votre apprentissage. C'est vrai, je pense que j'ai pas mal contribué à propager ce cliché parce que c'est quelque chose dont j'ai été témoin plusieurs fois et qui m'énerve très rapidement. Mais là, depuis que je vis à Marseille et que je vois ma copine qui essaye de pratiquer le français, je dois dire que je suis agréablement surpris. Bon, c'est peut-être une spécificité du Sud, mais je trouve que les gens sont très patients.",
+          "chinese": "很高兴能帮助并支持你的学习。没错，我觉得自己确实为传播这种刻板印象贡献了不少，因为这正是我多次亲眼目睹、并且很快就会让我感到恼火的事情。不过，自从我搬到马赛，看到我的女朋友努力练习法语，我不得不说，我感到非常惊喜。当然，这也许只是南方地区的特色，但我发现这里的人们都非常有耐心。"
+        },
+        {
+          "id": 96,
+          "start_time": "00:38:41.260",
+          "end_time": "00:39:04.110",
+          "french": "personne ne l'a corrigée pour le moment dans les interactions qu'elle a eues. Donc voilà, je sais pas si c'est spécifique au Sud ou si en général les Français évoluent sur cette question-là depuis que, eux aussi, ils essayent d'apprendre des langues étrangères et qu'ils se rendent compte à quel point c'est difficile. Mais comme tu le dis, effectivement, n'ayez pas peur.",
+          "chinese": "目前在她所进行的互动中，还没有人对此进行纠正。所以，我不知道这是否只是南方特有的现象，还是说从法国人也开始学习外语、逐渐意识到语言学习有多么困难之后，他们在这方面整体上都有所进步。不过，正如你所说，确实不必害怕。"
+        },
+        {
+          "id": 97,
+          "start_time": "00:39:04.110",
+          "end_time": "00:39:25.989",
+          "french": "Et si jamais vous tombez sur quelqu'un qui n'est pas sympa, qui vous corrige, ce n'est pas vous qui avez un problème, c'est vraiment cette personne. Donc passez à quelqu'un d'autre, ne le prenez pas personnellement et voilà. Ne pas se renfermer lorsqu'on tombe sur une personne qui est un peu malpolie et qui n'est pas patiente. Pas tout le monde est comme ça.",
+          "chinese": "如果万一你遇到一个不太友善、总是批评你的人，那问题不在你身上，真正有问题的是那个人。所以，换个别人吧，别往心里去，就这么简单。当遇到态度有点粗鲁、缺乏耐心的人时，千万别因此把自己封闭起来。并不是所有人都这样。"
+        },
+        {
+          "id": 98,
+          "start_time": "00:39:26.230",
+          "end_time": "00:39:43.019",
+          "french": "D'accord, très bien. Merci beaucoup Alexandra. Je te souhaite une bonne continuation avec ce programme et ta vie à Salt Lake City. On se croisera peut-être un jour à Marseille, qui sait. Merci beaucoup. Merci à toi Hugo.",
+          "chinese": "好的，非常好。非常感谢你，亚历山德拉。祝你在这个项目中一切顺利，也祝你在盐湖城的生活一切如意。说不定哪天我们在马赛还能碰面呢，谁知道呢。非常感谢你！也谢谢你，雨果。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:03.930",
+        "end_time": "00:39:43.019",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 98,
+        "source_video_name": "E174 Apprendre le français en immersion dans l'Utah.json",
+        "tags": [
+          "旅行",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

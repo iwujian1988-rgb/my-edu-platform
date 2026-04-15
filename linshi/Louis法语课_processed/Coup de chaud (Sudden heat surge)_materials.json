@@ -1,0 +1,635 @@
+{
+  "source_file": "Coup de chaud (Sudden heat surge).json",
+  "channel": "Louis法语课",
+  "video_name": "突然热浪",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T03:03:12.668Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Les pronoms relatifs (qui / que)",
+          "L'impératif présent",
+          "Les pronoms démonstratifs neutres (ça / cela)"
+        ],
+        "speaking": [
+          "Expliquer la signification d'un mot ou d'une expression en français (ex: 'Cela veut dire...').",
+          "Parler de la météo extrême et des records de température."
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "saveur",
+            "part_of_speech": "nom",
+            "ipa": "[sa.vœʁ]",
+            "chinese": "风味，味道",
+            "example_sentence": {
+              "french": "C'est la saveur café que vous aimez.",
+              "chinese": "这是您喜爱的咖啡风味。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              8
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Ka'Chava a pensé à vous avec sa nouvelle saveur café.",
+                "chinese": "Ka'Chava 为您带来了他们全新推出的咖啡风味。",
+                "source_video": ""
+              }
+            ]
+          },
+          {
+            "french": "caféine",
+            "part_of_speech": "nom",
+            "ipa": "[ka.fe.in]",
+            "chinese": "咖啡因",
+            "example_sentence": {
+              "french": "C'est la saveur café que vous aimez, mais sans la caféine.",
+              "chinese": "这是您喜爱的咖啡风味，但不含咖啡因。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": []
+          },
+          {
+            "french": "corsé",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔʁ.se]",
+            "chinese": "浓郁的，醇厚的",
+            "example_sentence": {
+              "french": "Ce shake délivre un goût corsé.",
+              "chinese": "这款奶昔带来浓郁的口感。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": []
+          },
+          {
+            "french": "authentique",
+            "part_of_speech": "adjectif",
+            "ipa": "[o.tɑ̃.tik]",
+            "chinese": "纯正的，真实的",
+            "example_sentence": {
+              "french": "Il a un goût corsé, authentique.",
+              "chinese": "它口感浓郁而纯正。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": []
+          },
+          {
+            "french": "décaféiné",
+            "part_of_speech": "adjectif",
+            "ipa": "[de.ka.fe.i.ne]",
+            "chinese": "脱咖啡因的",
+            "example_sentence": {
+              "french": "Il est créé à partir de grains du Brésil décaféinés.",
+              "chinese": "它由巴西无咖啡因咖啡豆制成。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": []
+          },
+          {
+            "french": "réclamer",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁe.kla.me]",
+            "chinese": "渴望，要求",
+            "example_sentence": {
+              "french": "Offrez-vous la nutrition que votre corps réclame.",
+              "chinese": "享受这份身体渴望的营养吧。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": []
+          },
+          {
+            "french": "inédit",
+            "part_of_speech": "adjectif",
+            "ipa": "[i.ne.di]",
+            "chinese": "前所未有的，新奇的",
+            "example_sentence": {
+              "french": "Un pic de chaleur inédit touche le sud de la France.",
+              "chinese": "一场前所未有的高温热浪正席卷法国南部。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              4,
+              5,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Ce pic de chaleur est inédit.",
+                "chinese": "这个高温峰值是前所未有的。",
+                "source_video": ""
+              }
+            ]
+          },
+          {
+            "french": "thermomètre",
+            "part_of_speech": "nom",
+            "ipa": "[tɛʁ.mɔ.mɛtʁ]",
+            "chinese": "温度计",
+            "example_sentence": {
+              "french": "Le thermomètre atteint 35 degrés Celsius.",
+              "chinese": "气温（温度计）达到了35摄氏度。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3,
+              5,
+              6,
+              7
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Le thermomètre, c'est l'instrument qui permet de mesurer la température.",
+                "chinese": "温度计就是用来测量温度的仪器。",
+                "source_video": ""
+              }
+            ]
+          },
+          {
+            "french": "absolu",
+            "part_of_speech": "adjectif",
+            "ipa": "[ab.sɔ.ly]",
+            "chinese": "绝对的",
+            "example_sentence": {
+              "french": "C'est un record absolu.",
+              "chinese": "这是一项绝对纪录。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Absolu, c'est-à-dire dans toute l'histoire de l'humanité.",
+                "chinese": "所谓“绝对”，指的是在整个人类历史上都是如此。",
+                "source_video": ""
+              }
+            ]
+          },
+          {
+            "french": "affecter",
+            "part_of_speech": "verbe",
+            "ipa": "[a.fɛk.te]",
+            "chinese": "影响，波及",
+            "example_sentence": {
+              "french": "Il touche, il affecte, il concerne le sud de la France.",
+              "chinese": "它涉及、波及了法国南部。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": []
+          },
+          {
+            "french": "sommet",
+            "part_of_speech": "nom",
+            "ipa": "[sɔ.mɛ]",
+            "chinese": "顶峰，极点",
+            "example_sentence": {
+              "french": "Un pic de chaleur, cela veut dire une chaleur, un sommet plutôt.",
+              "chinese": "所谓高温热浪，指的是酷热天气，确切地说，是高温的顶峰。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": []
+          },
+          {
+            "french": "atteindre",
+            "part_of_speech": "verbe",
+            "ipa": "[a.tɛ̃dʁ]",
+            "chinese": "达到，抵达",
+            "example_sentence": {
+              "french": "Le thermomètre atteint 35 degrés Celsius le 2 mai.",
+              "chinese": "5月2日的气温达到了35摄氏度。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": []
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "coup de chaud",
+            "meaning": "热浪，中暑，突然的高温",
+            "example": {
+              "french": "Aujourd'hui la leçon est : coup de chaud.",
+              "chinese": "今天这节课的主题是“热浪来袭”。"
+            },
+            "usage_note": "口语中常用来指天气突然变热，或者人因为高温感到不适（中暑）。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "pic de chaleur",
+            "meaning": "高温峰值，热浪",
+            "example": {
+              "french": "Un pic de chaleur inédit touche le sud de la France.",
+              "chinese": "一场前所未有的高温热浪正席卷法国南部。"
+            },
+            "usage_note": "气象学术语，指一段时间内气温达到最高点的现象。",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ]
+          },
+          {
+            "expression": "tout-en-un",
+            "meaning": "多合一，一体化",
+            "example": {
+              "french": "Ce shake repas tout-en-un délivre un goût corsé.",
+              "chinese": "这款多合一代餐奶昔带来浓郁的口感。"
+            },
+            "usage_note": "常用于产品营销，表示一个产品包含多种功能或成分。",
+            "source_ids": [
+              1,
+              8
+            ]
+          },
+          {
+            "expression": "une première",
+            "meaning": "第一次，首创",
+            "example": {
+              "french": "C'est une première dans l'histoire.",
+              "chinese": "这在历史上还是头一回。"
+            },
+            "usage_note": "用来强调某事是前所未有的，第一次发生。",
+            "source_ids": [
+              5
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Les pronoms relatifs (qui / que)",
+            "structure": "Nom + qui + Verbe / Nom + que + Sujet + Verbe",
+            "explanation": "关系代词 'qui' 和 'que' 用于连接两个句子并避免重复。'qui' 在从句中作主语，后面直接跟动词；'que' 在从句中作直接宾语，后面跟主语和动词。",
+            "example": {
+              "french": "C'est la saveur café que vous aimez... le thermomètre, c'est l'instrument qui permet de mesurer la température.",
+              "chinese": "这是您喜爱的咖啡风味……温度计就是用来测量温度的仪器。"
+            },
+            "usage_note": "注意 'que' 在遇到元音开头的词时要省音变成 'qu''。",
+            "source_ids": [
+              1,
+              6,
+              8
+            ]
+          },
+          {
+            "name": "L'impératif présent",
+            "structure": "Verbe (sans sujet) à la 2e personne du singulier/pluriel ou 1re personne du pluriel",
+            "explanation": "命令式用于给出建议、指示、命令或邀请。在广告或指导语中非常常见。对于第一组动词（-er），tu形式的词尾不加's'。",
+            "example": {
+              "french": "Offrez-vous la saveur et la nutrition... Allez sur kachava.com et utilisez le code SMOOTHIE.",
+              "chinese": "犒劳一下自己，享受美味与营养吧……访问 kachava.com 并使用代码 SMOOTHIE。"
+            },
+            "usage_note": "代词式动词在肯定命令式中，代词放在动词后面并用连字符连接（如 offrez-vous）。",
+            "source_ids": [
+              1,
+              8
+            ]
+          },
+          {
+            "name": "Les pronoms démonstratifs neutres (ça / cela)",
+            "structure": "Cela / Ça + verbe",
+            "explanation": "'Cela'（书面/正式）和 'ça'（口语/日常）是中性指示代词，用来指代前面提到的一整句话、一个概念或一个事物。",
+            "example": {
+              "french": "Un pic de chaleur, cela veut dire une chaleur... Et ça, c'est un record.",
+              "chinese": "所谓高温热浪，指的是酷热天气……而这，就是一个纪录。"
+            },
+            "usage_note": "在解释概念时，“cela veut dire” (意思是) 是一个非常高频且实用的句型。",
+            "source_ids": [
+              3,
+              5,
+              6
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[e] vs [ɛ]",
+              "description": "区分闭口音 [e] (如 é) 和开口音 [ɛ] (如 è, ê)。在法语中，这两个音的区别有时会影响词义，发音时注意嘴巴张开的幅度。",
+              "examples": [
+                "inédit [i.ne.di]",
+                "thermomètre [tɛʁ.mɔ.mɛtʁ]"
+              ]
+            },
+            {
+              "sound": "[k]",
+              "description": "清软腭塞音 [k]，在法语中通常由字母 c (在 a, o, u 前), k, 或 qu 发出。发音干脆，不送气。",
+              "examples": [
+                "pic",
+                "café",
+                "corsé"
+              ]
+            }
+          ],
+          "liaison": [
+            "tout-en-un [tu.tɑ̃.nœ̃] (t 与 e 连读，n 与 u 连读)",
+            "un record absolu [œ̃.ʁə.kɔ.ʁab.sɔ.ly] (d 发 [t] 的音连读，或者 r 连读，通常在口语中 d 不发音，r 与 a 连读)"
+          ],
+          "intonation": "在解释词汇时（如第3、4、5段），说话者使用了教学式语调（intonation didactique），语速放慢，在关键词（如 chaleur, sommet, inédit）上加重音并停顿，以确保听众理解。"
+        },
+        "vocabulary_network": {
+          "theme": "Météo et Température",
+          "core_word": "chaleur",
+          "related_groups": [
+            {
+              "category": "Mesure",
+              "words": [
+                "thermomètre",
+                "degrés Celsius",
+                "atteindre"
+              ]
+            },
+            {
+              "category": "Extrêmes",
+              "words": [
+                "pic",
+                "sommet",
+                "record absolu",
+                "inédit",
+                "coup de chaud"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Ce ___ repas ___ délivre un goût ___, ___, créé à partir de ___ du Brésil ___ premium.",
+            "answer": "shake, tout-en-un, corsé, authentique, grains, décaféinés",
+            "explanation": "根据原文广告部分，这款多合一奶昔口感浓郁纯正，由优质巴西无咖啡因咖啡豆制成。",
+            "source_ids": [
+              1,
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Que signifie l'adjectif « inédit » dans l'expression « un pic de chaleur inédit » selon les explications du professeur ?",
+            "options": {
+              "A": "Cela veut dire qu'on ne l'a jamais connu, c'est une première dans l'histoire.",
+              "B": "Cela veut dire que la chaleur a lieu vers deux heures de l'après-midi.",
+              "C": "Cela veut dire que c'est une chaleur normale pour le sud de la France.",
+              "D": "Cela veut dire que le thermomètre est cassé."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第5段明确解释了“inédit”的意思：“Cela veut dire qu'on ne l'a jamais connu. C'est une première dans l'histoire.” (这意味着我们从未经历过。这是历史上的第一次。)",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Un pic de chaleur inédit touche le sud de la France. À Marseille, le thermomètre atteint 35 degrés Celsius le 2 mai.",
+            "answer": "一场前所未有的高温热浪正席卷法国南部。在马赛，5月2日的气温达到了35摄氏度。",
+            "explanation": "翻译难点在于准确表达“pic de chaleur inédit”（前所未有的高温峰值/热浪）以及动词“touche”（这里引申为“席卷、波及”）。“Le thermomètre atteint”直译为“温度计达到”，中文习惯说“气温达到”。",
+            "source_ids": [
+              2,
+              3,
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez ces deux phrases en une seule phrase en utilisant le pronom relatif « que » : « C'est la saveur café. Vous aimez cette saveur. »",
+            "answer": "C'est la saveur café que vous aimez.",
+            "explanation": "关系代词“que”用来代替先行词“la saveur café”，在从句中作直接宾语（vous aimez la saveur café），从而将两句话合并为一句，避免重复。",
+            "source_ids": [
+              1,
+              8
+            ],
+            "difficulty": "A2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "corsé",
+            "authentique",
+            "décaféiné",
+            "inédit",
+            "thermomètre",
+            "atteindre"
+          ],
+          "covered_grammar": [
+            "Les pronoms relatifs (qui / que)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "[Mot/Expression], cela veut dire [Explication].",
+            "explanation": "用于解释某个词汇或概念的含义。",
+            "example": {
+              "french": "Un pic de chaleur, cela veut dire une chaleur, un sommet plutôt.",
+              "chinese": "所谓高温热浪，指的是酷热天气，确切地说，是高温的顶峰。"
+            }
+          },
+          {
+            "pattern": "C'est le/la [Nom] que [Sujet] [Verbe].",
+            "explanation": "强调句型，用于突出某人所做/喜欢/想要的特定事物。",
+            "example": {
+              "french": "C'est la saveur café que vous aimez.",
+              "chinese": "这是您喜爱的咖啡风味。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和一位法国朋友聊天，谈论最近你们城市遭遇的极端高温天气。你需要向他描述气温打破了纪录，并向他推荐一款适合夏天喝的健康冷饮。",
+          "requirements": "使用词汇 'pic de chaleur', 'inédit', 'thermomètre' 以及命令式推荐饮品。",
+          "starter": "Tu ne vas pas le croire, mais on traverse un pic de chaleur inédit ici..."
+        }
+      },
+      "summary": {
+        "content": "Ce texte est composé de deux parties : une publicité pour Ka'Chava, un shake nutritionnel au goût de café décaféiné, et une courte leçon de français. La leçon explique le vocabulaire lié à la canicule, en se concentrant sur l'expression 'pic de chaleur inédit' suite à un record de température de 35 degrés Celsius enregistré à Marseille le 2 mai.",
+        "keywords": [
+          "nutrition",
+          "café",
+          "canicule",
+          "Marseille",
+          "record",
+          "vocabulaire"
+        ],
+        "difficulty_note": "Le texte est globalement de niveau A2, avec des phrases courtes et répétitives idéales pour l'apprentissage. Cependant, il introduit un vocabulaire spécifique (B1/B2) lié à la nutrition (décaféiné, corsé) et à la météorologie (inédit, pic de chaleur)."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.000",
+          "end": "00:03:52.780"
+        },
+        "theme": "Nutrition et Météorologie",
+        "cefr_level": "A2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.000",
+          "end_time": "00:00:23.839",
+          "french": "C'est la saveur café que vous aimez, mais sans la caféine. Ka'Chava a pensé à vous avec sa nouvelle saveur café. Ce shake repas tout-en-un délivre un goût corsé, authentique, créé à partir de grains du Brésil décaféinés premium, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus. Offrez-vous la saveur et la nutrition que votre corps réclame. Allez sur kachava.com et utilisez le code SMOOTHIE.",
+          "chinese": "这是一款您喜爱的咖啡风味，但不含咖啡。Cachava 为您带来了他们全新推出的咖啡风味。这款单一食品奶昔带来浓郁、纯正的口感，由优质巴西无咖啡因甜甜圈制成，富含25克蛋白质、6克膳食纤维，还有更多营养成分。犒劳一下自己，享受这份身体渴望的美味与色彩吧！访问 cachava.com 并使用代码 SMOOTHIE。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:23.839",
+          "end_time": "00:00:51.880",
+          "french": "New customers get 15% off their first order. That's K-A-C-H-A-V-A dot com code smoothie. Bonjour, aujourd'hui la leçon est : coup de chaud. Un pic de chaleur inédit touche le sud de la France. À Marseille, le thermomètre atteint 35 degrés Celsius le 2 mai. Un record absolu.",
+          "chinese": "新客户首单享15%折扣。这是K-A-C-H-A-V-A.com的smoothie优惠码。大家好，今天这节课的主题是“热浪来袭”。一场前所未有的高温热浪正席卷法国南部。在马赛，5月2日的气温达到了35摄氏度，创下历史新高！"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.310",
+          "end_time": "00:01:20.840",
+          "french": "Once again, un pic de chaleur inédit touche le sud de la France. À Marseille, le thermomètre atteint 35 degrés Celsius le 2 mai. Un record absolu. Alors, on commence avec un pic de chaleur. Un pic de chaleur, cela veut dire une chaleur, un sommet plutôt, un record de chaleur.",
+          "chinese": "再次，一场前所未有的高温热浪正席卷法国南部。在马赛，5月2日的气温达到了35摄氏度，创下历史新高。那么，我们先从一场高温热浪说起。所谓高温热浪，指的是酷热天气，确切地说，是高温的顶峰，也是创纪录的高温。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:21.079",
+          "end_time": "00:01:50.569",
+          "french": "C'est le maximum de la chaleur, le maximum de la température. Un pic de chaleur. Par exemple, souvent, le pic de chaleur d'une journée a lieu vers deux heures de l'après-midi. Ce pic de chaleur est inédit.",
+          "chinese": "这是热量的最高点，温度的最高值。一个高温峰值。例如，通常一天的高温峰值出现在下午两点左右。这个高温峰值是前所未有的。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:50.969",
+          "end_time": "00:02:22.469",
+          "french": "Cela veut dire qu'on ne l'a jamais connu. C'est une première dans l'histoire. Il est inédit. Et il touche le sud de la France. « Touche », c'est le verbe « toucher », c'est-à-dire « affecter ». Il touche, il affecte, il concerne le sud de la France. Plus particulièrement, à Marseille, le thermomètre",
+          "chinese": "这意味着我们从未见过这样的情况。这在历史上还是头一回，前所未有。它影响了法国南部。“影响”，用的是“toucher”这个动词，也就是“涉及、波及”的意思。它涉及、波及了法国南部。尤其在马赛，气温……"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:22.710",
+          "end_time": "00:02:53.830",
+          "french": "Alors, le thermomètre, c'est l'instrument qui permet de mesurer la température. Le thermomètre atteint, hit ou bien reach, c'est ça, atteindre, atteint 35 degrés Celsius le 2 mai. Et ça, c'est un record, comme en anglais, un record absolu. Absolu, c'est-à-dire dans toute l'histoire de l'humanité.",
+          "chinese": "那么，温度计就是用来测量温度的仪器。温度计达到、触及或抵达——没错，就是“达到”，它在5月2日达到了35摄氏度。而这，就是一个纪录，用英语来说，是“绝对纪录”。所谓“绝对”，指的是在整个整个人类历史上都是如此。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:54.069",
+          "end_time": "00:03:19.909",
+          "french": "Un record absolu. Un new all-time record. Un record absolu. Un pic de chaleur inédit touche le sud de la France. À Marseille, le thermomètre atteint 35 degrés Celsius le 2 mai. Un record absolu.",
+          "chinese": "一项绝对纪录。一项历史新高。一项绝对纪录。法国南部正经历前所未有的高温峰值。5月2日，马赛的气温达到35摄氏度。一项绝对纪录。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:22.360",
+          "end_time": "00:03:46.210",
+          "french": "C'est la saveur café que vous aimez, mais sans la caféine. Ka'Chava a pensé à vous avec sa nouvelle saveur café. Ce shake repas tout-en-un délivre un goût corsé, authentique, créé à partir de grains du Brésil décaféinés premium, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus. Offrez-vous la nutrition et la saveur que votre corps réclame. Allez sur kachava.com et utilisez le code SMOOTHIE.",
+          "chinese": "这是一款你钟爱的咖啡，却无需咖啡本身。Cachava 为你带来了他们的全新咖啡饮品。这款一饮即食的奶昔，口感浓郁而纯正，由优质巴西无咖啡因甜甜圈制成，富含25克蛋白质、6克膳食纤维，还有更多营养成分。犒劳一下自己，享受这份身体渴望的美味与口感吧！快访问 cachava.com，并使用优惠码 SMOOTHIE。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:46.210",
+          "end_time": "00:03:52.780",
+          "french": "C'est K-A-C-H-A-V-A dot com code smoothie.",
+          "chinese": "这是K-A-C-H-A-V-A点com冰沙代码。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.000",
+        "end_time": "00:03:52.780",
+        "duration_minutes": 0,
+        "cefr_level": "A2",
+        "subtitle_count": 9,
+        "source_video_name": "Coup de chaud (Sudden heat surge).json",
+        "tags": [
+          "艺术人文",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "passed": true,
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0
+      }
+    }
+  }
+}

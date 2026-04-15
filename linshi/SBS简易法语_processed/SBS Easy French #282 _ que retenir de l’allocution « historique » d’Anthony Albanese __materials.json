@@ -1,0 +1,760 @@
+{
+  "source_file": "SBS Easy French #282 _ que retenir de l’allocution « historique » d’Anthony Albanese _.json",
+  "channel": "SBS简易法语",
+  "video_name": "SBS Easy French #282 _ que retenir de l’allocution « historique » d’Anthony Albanese _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T01:17:46.976Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "La voix passive (被动语态)",
+          "Le plus-que-parfait (愈过去时)"
+        ],
+        "speaking": [
+          "Résumer des titres d'actualité (politique, faits divers, culture)",
+          "Exprimer son enthousiasme ou son attente concernant un événement futur"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "soutenu",
+            "part_of_speech": "adjectif/participe passé",
+            "ipa": "[su.tə.ny]",
+            "chinese": "被支持的，由...赞助的",
+            "example_sentence": {
+              "french": "Les streams et les podcasts de SBS sont soutenus par la publicité.",
+              "chinese": "SBS的流媒体和播客由广告支持。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les streams et les podcasts de SBS sont soutenus par la publicité.",
+                "chinese": "SBS的流媒体和播客由广告支持。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "rubrique",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁy.bʁik]",
+            "chinese": "专栏，栏目",
+            "example_sentence": {
+              "french": "Retrouvez les rubriques sur sbs.com.au/french.",
+              "chinese": "请在sbs.com.au/french上查看各个栏目。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Retrouvez les rubriques sur sbs.com.au/french.",
+                "chinese": "请在sbs.com.au/french上查看各个栏目。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "allocution",
+            "part_of_speech": "nom féminin",
+            "ipa": "[a.lɔ.ky.sjɔ̃]",
+            "chinese": "简短演说，讲话",
+            "example_sentence": {
+              "french": "Dans une rare allocution nationale, la première pour Anthony Albanese.",
+              "chinese": "在一次罕见的全国性讲话中，这也是安东尼·阿尔巴尼斯的首次。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6,
+              7,
+              8,
+              10
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "L'allocution de 3 minutes a été préenregistrée et diffusée dans tout le pays.",
+                "chinese": "这段3分钟的讲话已预先录制，并在全国范围内播出。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "pénurie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[pe.ny.ʁi]",
+            "chinese": "短缺，匮乏",
+            "example_sentence": {
+              "french": "Le Premier ministre a expliqué comment contribuer à lutter contre les pénuries de carburant.",
+              "chinese": "总理向澳大利亚人解释了如何为应对燃油短缺贡献力量。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le Premier ministre a expliqué comment contribuer à lutter contre les pénuries de carburant.",
+                "chinese": "总理向澳大利亚人解释了如何为应对燃油短缺贡献力量。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "carburant",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kaʁ.by.ʁɑ̃]",
+            "chinese": "燃料，燃油",
+            "example_sentence": {
+              "french": "Le Premier ministre a conseillé d'économiser le carburant dans la mesure du possible.",
+              "chinese": "总理建议尽可能节约燃油。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le Premier ministre a conseillé d'économiser le carburant dans la mesure du possible.",
+                "chinese": "总理建议尽可能节约燃油。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "exhorter",
+            "part_of_speech": "verbe",
+            "ipa": "[ɛɡ.zɔʁ.te]",
+            "chinese": "呼吁，敦促",
+            "example_sentence": {
+              "french": "Anthony Albanese a exhorté les Australiens à faire leur part.",
+              "chinese": "安东尼·阿尔巴尼斯呼吁澳大利亚人尽自己的一份力量。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Anthony Albanese a exhorté les Australiens à faire leur part.",
+                "chinese": "安东尼·阿尔巴尼斯呼吁澳大利亚人尽自己的一份力量。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "incertitude",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛ̃.sɛʁ.ti.tyd]",
+            "chinese": "不确定性",
+            "example_sentence": {
+              "french": "En ces temps d'incertitude causés par la guerre en cours.",
+              "chinese": "在当前由持续战争引发的不确定性时期。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "En ces temps d'incertitude causés par la guerre en cours.",
+                "chinese": "在当前由持续战争引发的不确定性时期。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "réitérer",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁe.i.te.ʁe]",
+            "chinese": "重申，反复做",
+            "example_sentence": {
+              "french": "L'allocution ne contenait aucune nouvelle mesure, réitérant plutôt les annonces faites.",
+              "chinese": "该声明未提出任何新措施，而是重申了此前作出的宣布。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'allocution ne contenait aucune nouvelle mesure, réitérant plutôt les annonces faites.",
+                "chinese": "该声明未提出任何新措施，而是重申了此前作出的宣布。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "abattre",
+            "part_of_speech": "verbe",
+            "ipa": "[a.batʁ]",
+            "chinese": "击毙，砍伐",
+            "example_sentence": {
+              "french": "Cet homme de 56 ans a été abattu par des policiers.",
+              "chinese": "这名56岁的男子被警察击毙。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cet homme de 56 ans a été abattu par des policiers.",
+                "chinese": "这名56岁的男子被警察击毙。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "déplacé",
+            "part_of_speech": "nom masculin",
+            "ipa": "[de.pla.se]",
+            "chinese": "流离失所者，难民",
+            "example_sentence": {
+              "french": "Le million de déplacés libanais terrifiés de ne plus pouvoir rentrer chez eux.",
+              "chinese": "一百万黎巴嫩流离失所者惊恐万分，担心再也无法返回家园。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              12,
+              13
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "On écoute les témoignages des déplacés au micro de nos confrères.",
+                "chinese": "我们正在收听流离失所者在记者麦克风前的证词。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "orbite",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɔʁ.bit]",
+            "chinese": "轨道",
+            "example_sentence": {
+              "french": "Trois astronautes sont partis pour une mission de 10 jours en orbite autour de la Lune.",
+              "chinese": "三名宇航员启程执行为期10天的绕月轨道飞行任务。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              15
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Trois astronautes sont partis pour une mission de 10 jours en orbite autour de la Lune.",
+                "chinese": "三名宇航员启程执行为期10天的绕月轨道飞行任务。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "reconnaissant",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʁə.kɔ.nɛ.sɑ̃]",
+            "chinese": "感激的，感谢的",
+            "example_sentence": {
+              "french": "Je suis tellement reconnaissante envers vous tous.",
+              "chinese": "我真的非常感激你们所有人。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              21
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je suis tellement reconnaissante envers vous tous.",
+                "chinese": "我真的非常感激你们所有人。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "passer au niveau supérieur",
+            "meaning": "更上一层楼，进入更高阶段",
+            "example": {
+              "french": "Si vous vous sentez prêt à passer au niveau supérieur, n'hésitez pas à découvrir SBS French.",
+              "chinese": "如果您觉得自己已准备好更上一层楼，欢迎随时了解SBS French。"
+            },
+            "usage_note": "常用于学习、职业发展或技能提升的语境中，表示从当前水平向更高水平迈进。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "attirer les foudres",
+            "meaning": "招致强烈批评，惹怒",
+            "example": {
+              "french": "Une allocution qui a attiré les foudres de l'opposition.",
+              "chinese": "一场引发反对派强烈谴责的讲话。"
+            },
+            "usage_note": "字面意思是“吸引雷电”，比喻义为引来某人的怒火或严厉批评，常接 'de quelqu'un'。",
+            "source_ids": [
+              10
+            ]
+          },
+          {
+            "expression": "mettre le sourire aux lèvres",
+            "meaning": "让人露出笑容，令人开心",
+            "example": {
+              "french": "La nouvelle qui va vous mettre le sourire aux lèvres.",
+              "chinese": "这条新闻一定会让你会心一笑。"
+            },
+            "usage_note": "用于形容某事（如好消息、惊喜）给人带来快乐和微笑。",
+            "source_ids": [
+              18
+            ]
+          },
+          {
+            "expression": "passer à côté de",
+            "meaning": "错过，忽略",
+            "example": {
+              "french": "Il est quasiment impossible d'être passé à côté de cette actualité.",
+              "chinese": "几乎不可能错过这条新闻。"
+            },
+            "usage_note": "表示没有注意到某事或错失了某个机会。",
+            "source_ids": [
+              18
+            ]
+          },
+          {
+            "expression": "faire le tour de",
+            "meaning": "传遍，绕...一圈",
+            "example": {
+              "french": "Cette actualité a fait le tour des réseaux sociaux.",
+              "chinese": "这条新闻已经在社交网络上疯传了。"
+            },
+            "usage_note": "在新闻或网络语境中，'faire le tour de' 常用来表示某消息迅速传播，人尽皆知。",
+            "source_ids": [
+              18
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La voix passive (被动语态)",
+            "structure": "Sujet + verbe être (au temps de l'action) + participe passé (+ par + agent)",
+            "explanation": "在新闻报道中，被动语态被广泛使用，用于强调动作的承受者（如受害者、被发现的人）而不是动作的执行者。注意过去分词必须与主语进行性数配合。",
+            "example": {
+              "french": "Cet homme de 56 ans a été abattu par des policiers après une confrontation.",
+              "chinese": "这名56岁的男子在对峙后被警察击毙。"
+            },
+            "usage_note": "此处助动词 'être' 使用了复合过去时 (a été)，过去分词 'abattu' 配合阳性单数主语 'Cet homme'。",
+            "source_ids": [
+              5,
+              11
+            ]
+          },
+          {
+            "name": "Le plus-que-parfait (愈过去时)",
+            "structure": "Sujet + avoir/être (à l'imparfait) + participe passé",
+            "explanation": "愈过去时用于表示在过去的某个动作或状态之前已经完成的动作（即“过去的过去”）。常与复合过去时或未完成过去时连用。",
+            "example": {
+              "french": "Aucun humain ne s'était approché de la Lune d'aussi près depuis 1972.",
+              "chinese": "自1972年以来，还没有人类如此接近过月球。"
+            },
+            "usage_note": "在例句中，'s'était approché' 发生在播客报道的当前新闻事件（阿耳忒弥斯2号发射）之前。代词式动词使用 'être' 的未完成过去时作助动词。",
+            "source_ids": [
+              16,
+              19
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[y]",
+              "description": "法语特有的闭前圆唇元音，发音时舌位靠前，双唇收圆突出（类似拼音的ü）。在新闻词汇中出现频率高。",
+              "examples": [
+                "Lune",
+                "carburant",
+                "allocution"
+              ]
+            },
+            {
+              "sound": "[ɑ̃]",
+              "description": "后鼻元音，发音时嘴巴张开，气流同时从口腔和鼻腔流出。拼写常为 an, am, en, em。",
+              "examples": [
+                "Australiens",
+                "carburant",
+                "attendant"
+              ]
+            }
+          ],
+          "liaison": [
+            "les‿Australiens [lez‿ostʁaljɛ̃] (必须联诵)",
+            "en‿orbite [ɑ̃n‿ɔʁbit] (必须联诵)",
+            "les‿annonces [lez‿anɔ̃s] (必须联诵)"
+          ],
+          "intonation": "新闻播报语调：在列举新闻标题时（如第5句），每个标题的结尾通常使用降调以表示一个完整信息的结束，但在长句的意群停顿处（如逗号前）保持升调以维持听众的注意力。"
+        },
+        "vocabulary_network": {
+          "theme": "L'actualité et les médias (新闻与媒体)",
+          "core_word": "Journal",
+          "related_groups": [
+            {
+              "category": "Politique & Société",
+              "words": [
+                "allocution",
+                "Premier ministre",
+                "pénurie",
+                "déplacés"
+              ]
+            },
+            {
+              "category": "Faits divers",
+              "words": [
+                "police",
+                "fuite",
+                "abattu",
+                "coroner"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Anthony Albanese a ___ les Australiens à faire leur ___ en ces temps d'___ causés par la ___ en cours au ___.",
+            "answer": "exhorté, part, incertitude, guerre, Moyen-Orient",
+            "explanation": "根据原文第7句，总理呼吁（exhorté）澳大利亚人在中东（Moyen-Orient）持续战争（guerre）引发的不确定性（incertitude）时期尽自己的一份力量（part）。",
+            "source_ids": [
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le Premier ministre Anthony Albanese, que devaient faire les Australiens pendant les vacances de Pâques ?",
+            "options": {
+              "A": "Partir en vacances tout en économisant le carburant dans la mesure du possible.",
+              "B": "Annuler leurs voyages à cause de la guerre au Moyen-Orient.",
+              "C": "Acheter plus de carburant avant le début des pénuries.",
+              "D": "Rester chez eux pour écouter son allocution nationale."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。根据原文第8句：'Le Premier ministre a conseillé aux Australiens de partir en vacances de Pâques, tout en économisant le carburant dans la mesure du possible.'（总理建议澳大利亚人去度复活节假期，同时尽可能节约燃油。）",
+            "source_ids": [
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Il est quasiment impossible d'être passé à côté de cette actualité tant elle a fait le tour des réseaux sociaux.",
+            "answer": "几乎不可能错过这条新闻，因为它已经在社交网络上疯传了。",
+            "explanation": "翻译难点在于两个地道表达：'passer à côté de' 意为'错过，忽略'；'faire le tour de' 意为'绕...一圈，传遍'。'tant' 在这里引导原因，表示'如此...以至于'或'因为'。",
+            "source_ids": [
+              18
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez cette phrase à la voix active : 'Cet homme de 56 ans a été abattu par des policiers après une confrontation de 3 heures.'",
+            "answer": "Des policiers ont abattu cet homme de 56 ans après une confrontation de 3 heures.",
+            "explanation": "原句为被动语态（a été abattu），时态是复合过去时。改为主动语态时，动作的执行者 'des policiers' 变为句子主语，动词变为主动形式的复合过去时 'ont abattu'，原主语 'cet homme de 56 ans' 变为直接宾语。",
+            "source_ids": [
+              11
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "exhorter",
+            "incertitude",
+            "carburant",
+            "actualité"
+          ],
+          "covered_grammar": [
+            "La voix passive"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il est (quasiment) impossible de + infinitif / infinitif passé",
+            "explanation": "用于表达某事（几乎）是不可能的。后接动词不定式或不定式过去时（表示已发生的动作）。",
+            "example": {
+              "french": "Il est quasiment impossible d'être passé à côté de cette actualité.",
+              "chinese": "几乎不可能错过这条新闻。"
+            }
+          },
+          {
+            "pattern": "Avoir la chance de + infinitif",
+            "explanation": "表示“有幸做某事”或“有机会做某事”。",
+            "example": {
+              "french": "Je vais avoir la chance d'aller vous voir et de pouvoir encore chanter pour vous.",
+              "chinese": "我将有机会去见你们，并能再次为你们唱歌。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和一位讲法语的朋友讨论最近的新闻。你想提到你听到的一则好消息（比如某位著名歌手即将复出），并表达你的期待。",
+          "requirements": "使用至少两个本课学到的词汇或表达（如：actualité, mettre le sourire aux lèvres, avoir la chance de），并尝试使用复合过去时或愈过去时描述背景。",
+          "starter": "Tu as vu les infos récemment ? Il y a une nouvelle qui m'a vraiment mis le sourire aux lèvres..."
+        }
+      },
+      "summary": {
+        "content": "本期SBS Easy French播客涵盖了多项国内外新闻。首先，澳大利亚总理安东尼·阿尔巴尼斯发表全国讲话，呼吁民众在应对中东冲突引发的燃油短缺时节约能源。其次，潜逃7个月的杀警嫌犯Desi Freeman被警方击毙。国际方面，黎巴嫩流离失所者面临无法返乡的困境；同时，NASA的阿耳忒弥斯2号任务成功发射，宇航员将进行绕月飞行。最后，全球偶像席琳·迪翁宣布将在阔别舞台6年后重返巴黎举办演唱会，为听众带来了一则令人振奋的好消息。",
+        "keywords": [
+          "allocution",
+          "pénurie",
+          "carburant",
+          "déplacés",
+          "orbite",
+          "Céline Dion"
+        ],
+        "difficulty_note": "文本整体难度为B1，属于标准的新闻法语（Français facile）。难点在于新闻报道中常见的被动语态、愈过去时的使用，以及部分地道的法语表达（如 attirer les foudres, passer à côté de）。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.000",
+          "end": "00:10:54.980"
+        },
+        "theme": "Actualités internationales et culturelles (国际与文化新闻)",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.000",
+          "end_time": "00:00:04.650",
+          "french": "Les streams et les podcasts de SBS sont soutenus par la publicité.",
+          "chinese": "SBS的流媒体和播客由广告提供支持。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:07.320",
+          "end_time": "00:00:35.979",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开始新生活并不容易。很多公司都拒绝了我。有时我觉得，哦，我要退出了，我要放弃了。《Work in Progress》是一档帮助技术移民在新国家重建职业生涯的播客。您将听到鼓舞人心的真实故事、专家建议和宝贵提示，帮助您找到工作并推动职业发展。《Work in Progress》。现在就在您收听播客的平台收听吧。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:36.600",
+          "end_time": "00:01:09.189",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Bonjour et bienvenue dans ce nouvel épisode de SBS Easy French. Ce podcast est réalisé en partenariat avec l'Alliance française de Melbourne. Chaque semaine, vous avez rendez-vous avec Easy French, votre compagnon pour apprendre le français à votre rythme.",
+          "chinese": "您正在收听的是SBS法语频道。请访问sbs.com.au/french查看更多专栏。大家好，欢迎收听新一期的《SBS简易法语》。本播客与墨尔本法语联盟合作制作。每周，《简易法语》都会与您相约，成为您按照自己的节奏学习法语的贴心伴侣。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:09.659",
+          "end_time": "00:01:49.640",
+          "french": "Si ce n'est pas déjà fait, je vous invite à vous inscrire à notre newsletter sur le site web de SBS French pour recevoir la transcription de cette émission et de toutes les autres sur votre boîte mail tous les vendredis. Et si vous vous sentez de plus en plus à l'aise avec le français et prêt à passer au niveau supérieur, n'hésitez pas à découvrir SBS French. Vous êtes avec Marianne Murat et voici votre journal. On commence avec les titres.",
+          "chinese": "如果您还没有订阅，我邀请您在SBS法语频道网站上订阅我们的时事通讯，以便每周五在您的邮箱中收到本节目及所有其他节目的文字稿。如果您觉得自己的法语越来越熟练，并准备好迈向更高水平，请随时探索SBS法语频道的其他内容。我是玛丽安·穆拉特，以下是新闻报道。我们先来看头条新闻。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:50.299",
+          "end_time": "00:02:09.639",
+          "french": "Anthony Albanese s'est adressé à la Nation à propos du conflit au Moyen-Orient. Desi Freeman a été retrouvé, puis tué par la police, après une fuite qui aura duré sept mois. Direction la Lune, la mission Artemis II a décollé.",
+          "chinese": "安东尼·阿尔巴尼斯就中东冲突向全国发表讲话。在逃亡七个月后，德西·弗里曼被发现并被警方击毙。目标月球，阿耳忒弥斯2号任务已发射升空。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:10.199",
+          "end_time": "00:02:30.310",
+          "french": "Et enfin, la bonne nouvelle, l'icône mondiale Céline Dion a officialisé son grand retour sur scène après six années d'absence, le jour de son 58e anniversaire. Dans une rare allocution nationale, la première pour Anthony Albanese.",
+          "chinese": "最后是一个好消息，国际巨星席琳·迪翁在她58岁生日当天，正式宣布在阔别舞台六年之后强势回归。在一次罕见的全国电视讲话中，这也是安东尼·阿尔巴尼斯的首次全国讲话。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:30.460",
+          "end_time": "00:02:56.169",
+          "french": "Le Premier ministre a expliqué aux Australiens comment ils pouvaient contribuer à lutter contre les pénuries de carburant. Anthony Albanese a exhorté les Australiens à faire leur part en ces temps d'incertitude causés par la guerre en cours au Moyen-Orient. L'allocution de trois minutes a été préenregistrée et diffusée dans tout le pays à 19h, mercredi soir.",
+          "chinese": "总理向澳大利亚民众解释了他们可以如何协助应对燃料短缺问题。安东尼·阿尔巴尼斯敦促澳大利亚人在中东持续战争引发的这个充满不确定性的时期尽自己的一份力量。这段三分钟的讲话是提前录制的，并于周三晚上7点在全国播出。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:56.659",
+          "end_time": "00:03:17.900",
+          "french": "L'allocution ne contenait aucune nouvelle mesure, réitérant plutôt les annonces faites les jours précédents. Le Premier ministre a conseillé aux Australiens de partir en vacances de Pâques, tout en économisant le carburant dans la mesure du possible.",
+          "chinese": "讲话并未包含任何新措施，而是重申了前几天发布的公告。总理建议澳大利亚人去度复活节假期，但要尽可能节约燃料。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:18.099",
+          "end_time": "00:03:42.409",
+          "french": "No government can promise to eliminate the pressures that this war is causing. I can promise we will do everything we can to protect Australia from the worst of it. These are uncertain times, but I'm absolutely certain of this. We will deal with these global challenges the Australian way, working together and looking after each other.",
+          "chinese": "没有任何政府能承诺消除这场战争带来的压力。但我可以承诺，我们将尽一切努力保护澳大利亚免受最严重的影响。这是一个充满不确定性的时代，但我对此非常确信：我们将以澳大利亚的方式应对这些全球性挑战，那就是团结协作、互相关照。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:42.650",
+          "end_time": "00:04:09.360",
+          "french": "Une allocution qui a attiré les foudres de l'opposition. On écoute la sénatrice Bridget McKenzie au micro de nos confrères de Channel 9.",
+          "chinese": "这一讲话招致了反对派的猛烈抨击。我们来听听参议员布丽奇特·麦肯齐在第九频道同仁麦克风前的发言。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:09.360",
+          "end_time": "00:04:37.129",
+          "french": "La police de l'État du Victoria a officiellement identifié Desi Freeman comme l'homme tué par balle par la police lundi 31 mars, après l'identification de son corps par le coroner. Cet homme de 56 ans a été abattu par des policiers après une confrontation de trois heures dans une propriété rurale du nord-est du Victoria.",
+          "chinese": "维多利亚州警方在验尸官确认身份后，正式确认3月31日星期一被警方开枪击毙的男子为德西·弗里曼。这名56岁的男子在维多利亚州东北部一处乡村庄园与警方对峙了三个小时后被击毙。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:37.370",
+          "end_time": "00:04:58.600",
+          "french": "Desi Freeman était en fuite depuis sept mois. Il était recherché après avoir tué deux policiers en août dernier. Sur la scène internationale, le million de déplacés libanais terrifiés de ne plus pouvoir rentrer chez eux. Israël menace de continuer à occuper la zone, même après la fin de la guerre.",
+          "chinese": "德西·弗里曼已经逃亡了七个月。他因在去年8月杀害两名警察而遭到通缉。国际方面，百万黎巴嫩流离失所者恐惧再也无法返回家园。以色列威胁称，即使在战争结束后，也将继续占领该地区。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:58.839",
+          "end_time": "00:05:28.779",
+          "french": "On écoute les témoignages des déplacés au micro de nos confrères de Radio France Internationale. C'est une photo de ma maison. Je l'ai prise avant de partir. Moi, j'ai peur de ne pas pouvoir rentrer dans mon village. Je vous le dis honnêtement, c'est la peur qu'on a tous. Malgré les destructions, je serai prêt à retourner à Houla. Mais ma peur, c'est de ne pas pouvoir revenir dans mon village. Où est-ce que je pourrais aller ?",
+          "chinese": "我们来听听流离失所者在法国国际广播电台同仁麦克风前的讲述。这是我家的照片，是我离开前拍的。我很害怕无法回到我的村庄。老实说，这是我们所有人的恐惧。尽管那里遭到了破坏，我还是愿意回到胡拉。但我害怕的是无法回到我的村庄。我还能去哪儿呢？"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:29.019",
+          "end_time": "00:05:55.550",
+          "french": "Il y a beaucoup de bombardements, d'immeubles qui ont été détruits et de martyrs. Les gens souffrent énormément. Mais j'ai l'espoir de revenir. Si Dieu le veut, on sera victorieux pour toujours. J'ai espoir dans la résistance. Que Dieu leur donne la victoire. Après un vol inhabité en 2022, la NASA lance la deuxième phase de son programme qui vise à retourner sur la Lune. La mission Artemis II",
+          "chinese": "那里有很多轰炸，许多建筑物被毁，还有许多人牺牲。人们遭受了巨大的痛苦。但我仍有回去的希望。如果真主意欲，我们将取得永远的胜利。我对抵抗运动抱有希望。愿真主赐予他们胜利。在2022年进行无人飞行之后，美国宇航局启动了其重返月球计划的第二阶段。阿耳忒弥斯2号任务"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:55.550",
+          "end_time": "00:06:18.060",
+          "french": "a décollé dans la nuit du mercredi 1er avril au jeudi 2 avril depuis le Kennedy Space Center en Floride. Pour le second volet de cet ambitieux programme spatial, trois astronautes américains et un Canadien sont partis pour une mission de 10 jours en orbite autour de la Lune avant de revenir sur Terre.",
+          "chinese": "于4月1日周三至4月2日周四的夜间从佛罗里达州肯尼迪航天中心发射升空。作为这项雄心勃勃的太空计划的第二部分，三名美国宇航员和一名加拿大宇航员出发执行为期10天的绕月飞行任务，随后将返回地球。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:18.329",
+          "end_time": "00:06:46.980",
+          "french": "Ils vont donc faire le tour de la Lune sans s'y poser. Aucun humain ne s'était approché de la Lune d'aussi près depuis 1972. Simon Henry a conduit 9 heures pour pouvoir assister au décollage. Écoutez.",
+          "chinese": "因此，他们将环绕月球飞行而不会登陆。自1972年以来，还没有人类如此近距离地接近过月球。西蒙·亨利开了9个小时的车来观看发射。请听。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:47.379",
+          "end_time": "00:07:13.699",
+          "french": "...",
+          "chinese": "..."
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:15.509",
+          "end_time": "00:07:38.459",
+          "french": "Et enfin, on termine avec la feel good news, la nouvelle qui va vous mettre le sourire aux lèvres. Il est quasiment impossible d'être passé à côté de cette actualité tant elle a fait le tour des réseaux sociaux. Céline Dion signe son grand retour en France. La chanteuse québécoise revient à Paris, 10 dates, 5 semaines de concert.",
+          "chinese": "最后，我们以一则令人心情愉悦的新闻结束，这则新闻会让您嘴角上扬。您几乎不可能错过这条新闻，因为它已经在社交网络上刷屏了。席琳·迪翁宣布在法国盛大回归。这位魁北克歌手重返巴黎，将举行为期5周、共10场的演唱会。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:38.459",
+          "end_time": "00:08:08.199",
+          "french": "Elle était déjà venue dans la capitale française pour l'ouverture des Jeux Olympiques. C'était en 2024. Mais son dernier concert officiel remonte à 2020, il y a six ans déjà. Sa tournée avait été interrompue par l'épidémie de Covid-19, puis n'avait pas repris à cause des problèmes de santé de la star internationale. On écoute Céline Dion. Vous me manquez beaucoup. Eh bien...",
+          "chinese": "她之前曾来到法国首都参加奥运会开幕式。那是在2024年。但她上一次正式演唱会还要追溯到2020年，已经是六年前的事了。她的巡演曾因新冠疫情而中断，后来又因这位国际巨星的健康问题而未能恢复。我们来听听席琳·迪翁怎么说。我非常想念你们。那么……"
+        },
+        {
+          "id": 20,
+          "start_time": "00:08:09.370",
+          "end_time": "00:08:41.159",
+          "french": "Tout cela me ramène à mon anniversaire. Alors cette année, je vais recevoir le meilleur cadeau de toute ma vie. Je vais avoir la chance d'aller vous voir et de pouvoir encore chanter pour vous à Paris à partir de cet automne au mois de septembre. Je suis tellement contente. Je me sens bien, forte, super excitée évidemment aussi.",
+          "chinese": "这一切让我想起了我的生日。所以今年，我将收到我一生中最好的礼物。从今年秋天9月开始，我将有机会去巴黎看望你们，并再次为你们唱歌。我太高兴了。我感觉很好，很坚强，当然也非常激动。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:41.559",
+          "end_time": "00:09:17.029",
+          "french": "Un peu nerveuse, bien sûr, mais surtout, je suis tellement reconnaissante envers vous tous. J'ai vraiment trop hâte de vous revoir. Merci d'avoir suivi votre journal en français facile. Nous nous retrouvons la semaine prochaine pour un nouvel épisode de SBS Easy French. À bientôt !",
+          "chinese": "当然也有点紧张，但最重要的是，我对你们所有人充满感激。我真的迫不及待想再次见到你们。感谢您收听简易法语新闻。我们下周在最新一期的《SBS简易法语》中再见。回头见！"
+        },
+        {
+          "id": 22,
+          "start_time": "00:09:18.299",
+          "end_time": "00:09:47.169",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司提供字幕"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:47.169",
+          "end_time": "00:10:19.779",
+          "french": "I love that Avocado proves you don't have to choose between comfortable, supportive sleep and your values. And now, during our Earth Month sale, you can get up to 15% off Avocado mattresses. Just go to avocadogreenmattress.com. Get up to 15% off at avocadogreenmattress.com. avocadogreenmattress.com. Aimez, partagez, commentez. Suivez-nous sur facebook.com/sbsfrench",
+          "chinese": "我很喜欢Avocado证明了您不必在舒适、有支撑力的睡眠和您的价值观之间做出妥协。现在，在我们的地球月促销期间，购买Avocado床垫最高可享85折优惠。只需访问 avocadogreenmattress.com。在 avocadogreenmattress.com 享受最高85折优惠。avocadogreenmattress.com。点赞、分享、评论。请在 facebook.com/sbsfrench 关注我们。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:10:25.879",
+          "end_time": "00:10:54.980",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司提供字幕"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:00.000",
+        "end_time": "00:10:54.980",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 24,
+        "source_video_name": "SBS Easy French #282 _ que retenir de l’allocution « historique » d’Anthony Albanese _.json",
+        "tags": [
+          "社会观察",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

@@ -1,0 +1,689 @@
+{
+  "source_file": "Que pense Pauline de Victor Hugo décorateur_ (Victor Hugo's Interior Design).json",
+  "channel": "法国日常一件事",
+  "video_name": "宝琳眼中的“装饰家”维克多·雨果_（维克多·雨果的室内设计）",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:54:36.531Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "La mise en relief (Ce que / Ce qui ... c'est)",
+          "L'interrogation complexe avec inversion du sujet",
+          "L'expression de la concession avec 'même si'"
+        ],
+        "speaking": [
+          "Exprimer son opinion sur une œuvre d'art ou une décoration",
+          "Parler d'un lieu historique et de son atmosphère"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "humeur",
+            "part_of_speech": "nom féminin",
+            "ipa": "[y.mœʁ]",
+            "chinese": "心情，情绪",
+            "example_sentence": {
+              "french": "J'espère que vous êtes de bonne humeur.",
+              "chinese": "我希望你们心情愉快。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'espère que vous allez bien et que vous êtes de bonne humeur.",
+                "chinese": "希望你一切安好，心情愉快。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "exil",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ɛɡ.zil]",
+            "chinese": "流亡，放逐",
+            "example_sentence": {
+              "french": "Il a écrit beaucoup de poèmes pendant son exil.",
+              "chinese": "他在流亡期间写了许多诗。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3,
+              10
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Nous nous arrêterons sur l'histoire de l'exil de Victor Hugo.",
+                "chinese": "我们将重点探讨维克多·雨果的流亡经历。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "repère",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʁə.pɛʁ]",
+            "chinese": "标志，参照物，线索",
+            "example_sentence": {
+              "french": "Ce monument est un repère important dans la ville.",
+              "chinese": "这座纪念碑是城市里的一个重要地标。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce sera un excellent moyen d'avoir quelques repères historiques.",
+                "chinese": "这将是一个绝佳的方式，让我们获得一些历史线索。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "sceptique",
+            "part_of_speech": "adjectif",
+            "ipa": "[sɛp.tik]",
+            "chinese": "怀疑的",
+            "example_sentence": {
+              "french": "Je reste sceptique quant à la réussite de ce projet.",
+              "chinese": "我对这个项目的成功持怀疑态度。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Au début, j'étais assez sceptique devant les projets.",
+                "chinese": "一开始，我对那些方案还挺持怀疑态度的。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "croquis",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kʁɔ.ki]",
+            "chinese": "草图，速写",
+            "example_sentence": {
+              "french": "L'architecte a dessiné un croquis de la future maison.",
+              "chinese": "建筑师画了未来房屋的草图。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Des croquis qu'on peut voir dans les premières pièces.",
+                "chinese": "在前面几个展厅里能看到的草图。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "boiserie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[bwa.zʁi]",
+            "chinese": "木饰面，护墙板",
+            "example_sentence": {
+              "french": "Le salon est orné de magnifiques boiseries en chêne.",
+              "chinese": "客厅装饰着华丽的橡木护墙板。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Donc quand même, beaucoup de boiseries foncées.",
+                "chinese": "总之，这里有很多深色的木饰面。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "chargé",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʃaʁ.ʒe]",
+            "chinese": "繁复的，堆砌的，满载的",
+            "example_sentence": {
+              "french": "La décoration de cette pièce est un peu trop chargée à mon goût.",
+              "chinese": "我觉得这个房间的装饰有点过于繁复了。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et donc, c'est à la fois très chargé, très sombre.",
+                "chinese": "整个空间既繁复又昏暗。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "assorti",
+            "part_of_speech": "adjectif",
+            "ipa": "[a.sɔʁ.ti]",
+            "chinese": "相配的，协调的",
+            "example_sentence": {
+              "french": "Elle porte un sac assorti à ses chaussures.",
+              "chinese": "她拿着一个和鞋子相配的包。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il a fait le plafond assorti aux quatre murs.",
+                "chinese": "他特意把天花板的颜色与四面墙搭配得恰到好处。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "faïence",
+            "part_of_speech": "nom féminin",
+            "ipa": "[fa.jɑ̃s]",
+            "chinese": "彩釉陶器，锡釉陶",
+            "example_sentence": {
+              "french": "La salle de bain est décorée avec de la faïence bleue.",
+              "chinese": "浴室用蓝色的彩釉陶砖装饰。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ces murs remplis d'une collection d'assiettes en faïence.",
+                "chinese": "墙壁上满满当当的彩绘瓷盘收藏。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "omniprésent",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɔm.ni.pʁe.zɑ̃]",
+            "chinese": "无处不在的",
+            "example_sentence": {
+              "french": "La technologie est omniprésente dans notre vie quotidienne.",
+              "chinese": "科技在我们的日常生活中无处不在。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On voit qu'elle fait partie, elle est omniprésente dans la vie de Victor Hugo.",
+                "chinese": "我们能明显感受到，维克多·雨果的生命中处处都有她的身影，她无处不在。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "demeurer",
+            "part_of_speech": "verbe",
+            "ipa": "[də.mœ.ʁe]",
+            "chinese": "居住，停留",
+            "example_sentence": {
+              "french": "Il a demeuré dans cette maison pendant vingt ans.",
+              "chinese": "他在这栋房子里居住了二十年。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Même si l'écrivain n'y a pas demeuré très longtemps...",
+                "chinese": "尽管这位作家在此居住的时间并不长……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "seuil",
+            "part_of_speech": "nom masculin",
+            "ipa": "[sœj]",
+            "chinese": "门槛，开端",
+            "example_sentence": {
+              "french": "Il s'est arrêté sur le seuil de la porte.",
+              "chinese": "他停在了门槛上。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le musée rend l'ambiance hugolienne dès qu'on en passe le seuil.",
+                "chinese": "一踏入馆内（跨过门槛），就能立刻感受到雨果式的氛围。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "avoir cette corde à son arc",
+            "meaning": "有多项技能，有这一手绝活",
+            "example": {
+              "french": "Je ne savais pas qu'il avait cette corde à son arc.",
+              "chinese": "我根本不知道他还有这一手绝活呢。"
+            },
+            "usage_note": "比喻一个人除了本职工作外，还具备其他未被广泛知晓的才能或技能。常用于表达惊讶或赞赏。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "faire son petit effet",
+            "meaning": "产生不错的效果，别有一番韵味",
+            "example": {
+              "french": "Il y a certaines pièces où quand même, ça a son petit effet.",
+              "chinese": "也有一些房间确实别有一番韵味。"
+            },
+            "usage_note": "用于形容某事物（如装饰、服装、言辞等）成功地引起了注意或留下了好印象，通常带有一种轻松或略带惊喜的语气。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "expression": "valoir le détour",
+            "meaning": "值得一游，值得特意去看",
+            "example": {
+              "french": "La maison de Victor Hugo vaut vraiment le détour.",
+              "chinese": "维克多·雨果的故居绝对值得一游。"
+            },
+            "usage_note": "旅游或推荐景点时的常用表达，意为即使需要绕道也值得去看看。",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "expression": "accrocher à",
+            "meaning": "被……吸引，喜欢上",
+            "example": {
+              "french": "Est-ce que tu as accroché au style de Victor Hugo ?",
+              "chinese": "你有没有被维克多·雨果的文风（风格）所吸引呢？"
+            },
+            "usage_note": "口语表达，表示对某事物产生兴趣、产生共鸣或喜欢上某物（如电影、风格、概念等）。",
+            "source_ids": [
+              4
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La mise en relief (Ce que / Ce qui ... c'est)",
+            "structure": "Ce que/qui + proposition relative, c'est + élément mis en valeur",
+            "explanation": "强调句型，用于突出句子中的某一部分。'Ce que' 代替直接宾语，'Ce qui' 代替主语。在口语和书面语中都非常常见，用于引导听者的注意力。",
+            "example": {
+              "french": "Ce qu'on a vu ensuite au deuxième étage, c'est l'exposition permanente.",
+              "chinese": "随后我们在二楼看到的，是常设展览。"
+            },
+            "usage_note": "原文中还使用了 'Si..., c'est que...' 的变体来强调原因（Si j'ai proposé..., c'est que je sais...）。",
+            "source_ids": [
+              2,
+              8
+            ]
+          },
+          {
+            "name": "L'interrogation complexe avec inversion du sujet",
+            "structure": "Sujet (Nom) + Verbe + Pronom sujet (t-il/elle/ils/elles) + ... ?",
+            "explanation": "在正式的法语疑问句中，如果主语是名词而不是代词，通常保留名词主语，并在动词后加上对应的代词进行倒装。这是一种高级且优雅的提问方式。",
+            "example": {
+              "french": "Une maison décorée au XIXe siècle peut-elle plaire à une Parisienne du XXIe siècle ?",
+              "chinese": "19世纪装饰的房屋，能否赢得21世纪巴黎女性的喜爱呢？"
+            },
+            "usage_note": "注意动词和代词之间需要加连字符。如果动词以元音结尾，代词是il/elle/on，中间需加 '-t-' (如 a-t-il)。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "name": "L'expression de la concession avec 'même si'",
+            "structure": "Même si + Sujet + Verbe à l'indicatif",
+            "explanation": "表示让步或假设的对立，意为“即使，尽管”。与 'bien que' (后接虚拟式) 不同，'même si' 后面总是接直陈式 (l'indicatif)。",
+            "example": {
+              "french": "Car même si l'écrivain n'y a pas demeuré très longtemps, le musée rend l'ambiance hugolienne...",
+              "chinese": "尽管这位作家在此居住的时间并不长，但一踏入馆内，就能立刻感受到雨果式的氛围……"
+            },
+            "usage_note": "这是一个非常实用的B1/B2语法点，常用于辩证地表达观点。",
+            "source_ids": [
+              12
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[j] (Semi-voyelle Yod)",
+              "description": "半元音[j]在法语中非常常见，发音类似英语的'y'。在文本中的特定词汇里，它与不同的元音组合，形成独特的音节。",
+              "examples": [
+                "faïence [fa.jɑ̃s]",
+                "seuil [sœj]"
+              ]
+            },
+            {
+              "sound": "[w] (Semi-voyelle)",
+              "description": "半元音[w]，通常由'ou'加元音或'oi'组合产生，发音需圆唇。",
+              "examples": [
+                "boiserie [bwa.zʁi]",
+                "voir [vwaʁ]"
+              ]
+            }
+          ],
+          "liaison": [
+            "peut-elle [pø.tɛl] (Liaison obligatoire entre le verbe et le pronom inversé)",
+            "un excellent [œ̃.nɛk.sɛ.lɑ̃] (Liaison obligatoire entre le déterminant et l'adjectif)",
+            "tout à fait [tu.ta.fɛ] (Liaison figée dans l'expression)"
+          ],
+          "intonation": "Dans les questions complexes (ex: 'Une maison... peut-elle plaire... ?'), l'intonation monte progressivement jusqu'au verbe inversé, puis redescend légèrement à la fin de la phrase."
+        },
+        "vocabulary_network": {
+          "theme": "La décoration d'intérieur et l'architecture",
+          "core_word": "décoration",
+          "related_groups": [
+            {
+              "category": "Éléments de la pièce",
+              "words": [
+                "plafond",
+                "murs",
+                "cheminée",
+                "boiseries"
+              ]
+            },
+            {
+              "category": "Objets et Art",
+              "words": [
+                "tapisserie",
+                "faïence",
+                "croquis",
+                "meubles"
+              ]
+            },
+            {
+              "category": "Adjectifs descriptifs",
+              "words": [
+                "chargé",
+                "sombre",
+                "assorti",
+                "omniprésent"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Car ___ si l'___ n'y a pas ___ très longtemps, le musée rend l'___ hugolienne dès qu'on en passe le ___.",
+            "answer": "même, écrivain, demeuré, ambiance, seuil",
+            "explanation": "根据原文第12段，句子描述了尽管作家居住时间不长，但博物馆依然保留了其独特的氛围。填入的词汇测试了让步表达(même si)、核心词汇(écrivain, ambiance)以及高级动词和名词(demeuré, seuil)。",
+            "source_ids": [
+              12
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi Laetitia a-t-elle proposé à Pauline d'aller voir l'exposition « Hugo décorateur » ?",
+            "options": {
+              "A": "Parce que Pauline est une experte de la littérature du XIXe siècle.",
+              "B": "Parce qu'elle sait que Pauline aime beaucoup la décoration.",
+              "C": "Parce qu'elles voulaient acheter des meubles en faïence.",
+              "D": "Parce que Pauline travaille à la maison de Victor Hugo."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第2段明确提到：“Si j'ai proposé à Pauline d'aller voir cette exposition, c'est que je sais qu'elle aime beaucoup la décoration.”（我之所以邀请保琳一起来看这个展览，是因为我知道她特别喜欢室内装饰。）",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Déjà, je ne savais pas qu'il avait cette corde à son arc. Et donc, au début, j'étais assez sceptique devant les projets, des croquis qu'on peut voir dans les premières pièces.",
+            "answer": "首先，我根本不知道他还有这一手绝活。所以一开始，我对那些在前面几个展厅里能看到的方案和草图还挺持怀疑态度的。",
+            "explanation": "翻译难点在于准确传达习语“avoir cette corde à son arc”（有这一手绝活/有多项技能）以及形容词“sceptique”（怀疑的）。同时，“Déjà”在这里是口语用法，意为“首先(pour commencer)”。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez cette phrase en utilisant la mise en relief (Ce que ... c'est) pour mettre en valeur l'objet direct : « On a vu l'exposition permanente au deuxième étage. »",
+            "answer": "Ce qu'on a vu au deuxième étage, c'est l'exposition permanente.",
+            "explanation": "考察强调句型“Ce que... c'est...”。原文(ID: 8)使用了“Ce qu'on a vu ensuite au deuxième étage, c'est l'exposition permanente.”来强调看到的宾语内容（常设展览）。'Ce que' 代替了原句中的直接宾语 'l'exposition permanente'。",
+            "source_ids": [
+              8
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "demeurer",
+            "seuil",
+            "sceptique",
+            "croquis",
+            "avoir cette corde à son arc"
+          ],
+          "covered_grammar": [
+            "La mise en relief (Ce que / Ce qui ... c'est)",
+            "L'expression de la concession avec 'même si'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Si [Proposition A], c'est que [Proposition B]",
+            "explanation": "用于强调原因。意为“如果说发生了A，那是因为B”。",
+            "example": {
+              "french": "Si j'ai proposé à Pauline d'aller voir cette exposition, c'est que je sais qu'elle aime beaucoup la décoration.",
+              "chinese": "我之所以邀请保琳一起来看这个展览，是因为我知道她特别喜欢室内装饰。"
+            }
+          },
+          {
+            "pattern": "Même si + [Indicatif], [Proposition principale]",
+            "explanation": "用于表达让步，意为“即使……，也……”。注意后面接直陈式。",
+            "example": {
+              "french": "Même si l'écrivain n'y a pas demeuré très longtemps, le musée rend l'ambiance hugolienne.",
+              "chinese": "尽管这位作家在此居住的时间并不长，但博物馆依然呈现出雨果式的氛围。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你和一位法国朋友刚参观完一个关于某位著名历史人物（如作家、科学家）鲜为人知才华的展览。你们在咖啡馆里讨论对展览的看法。",
+          "requirements": "使用至少两个新学词汇（如 sceptique, croquis, chargé），并尝试使用习语 'avoir cette corde à son arc' 或 'valoir le détour'。使用一次强调句型 (Ce que... c'est)。",
+          "starter": "Alors, qu'est-ce que tu as pensé de l'exposition ? Moi, au début, j'étais un peu..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia et Pauline discutent de leur visite à l'exposition « Hugo décorateur » à la maison de Victor Hugo, place des Vosges. Pauline, amatrice de décoration, découvre avec surprise les talents d'architecte d'intérieur de l'écrivain. Elles échangent sur le style chargé et sombre du XIXe siècle, les boiseries, les plafonds assortis et la collection de faïence. L'épisode évoque également l'omniprésence de Juliette Drouet, la maîtresse de Hugo, dans sa vie et ses aménagements. Finalement, elles concluent que ce lieu historique vaut vraiment le détour pour s'imprégner de l'ambiance hugolienne.",
+        "keywords": [
+          "Victor Hugo",
+          "décoration",
+          "exposition",
+          "XIXe siècle",
+          "Juliette Drouet",
+          "Paris"
+        ],
+        "difficulty_note": "Le texte est de niveau B1-B2. Il contient un vocabulaire riche lié à la décoration d'intérieur et à l'architecture, ainsi que des expressions idiomatiques courantes. Les structures grammaticales incluent des phrases complexes (relatives, mise en relief, inversion)."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:04:48.490"
+        },
+        "theme": "Culture, Histoire et Décoration",
+        "cefr_level": "B2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:23.980",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, mercredi 25 février 2026, cet épisode, le numéro 2601, s'intitule « Que pense Pauline de Victor Hugo, décorateur ? ».",
+          "chinese": "大家好，我是Laetitia，来自巴黎的《One Thing in a French Day》播客。希望大家一切顺利，心情愉快。今天，2026年2月25日星期三，我们第2601期节目的标题是《Pauline对作为室内装饰家的维克多·雨果有什么看法？》。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:25.559",
+          "end_time": "00:00:54.509",
+          "french": "Une maison décorée au XIXe siècle peut-elle plaire à une Parisienne du XXIe siècle ? C'est ce que nous allons découvrir aujourd'hui dans cette conversation avec Pauline. Nous nous sommes enregistrées après notre visite de l'exposition « Hugo décorateur » à la maison de Victor Hugo, place des Vosges, dans le centre historique de Paris. Si j'ai proposé à Pauline d'aller voir cette exposition, c'est que je sais qu'elle aime beaucoup la décoration.",
+          "chinese": "一座19世纪装饰风格的房子能让21世纪的巴黎女孩喜欢吗？这就是我们今天要在与Pauline的对话中探讨的内容。我们在参观完位于巴黎历史中心区孚日广场维克多·雨果故居的“装饰家雨果”展览后，录制了这期节目。我之所以邀请Pauline去看这个展览，是因为我知道她非常喜欢室内装饰。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:54.509",
+          "end_time": "00:01:15.780",
+          "french": "Mais la décoration de Victor Hugo au XIXe siècle est-elle du goût de la jeune femme parisienne du XXIe siècle ? Dans la lettre qui accompagne cet épisode, nous nous arrêterons sur l'histoire de l'exil de Victor Hugo et pourquoi c'est particulièrement sa maison de Guernesey qui est montrée lors de l'exposition.",
+          "chinese": "维克多·雨果在19世纪的装饰风格，符合21世纪巴黎年轻女性的品味吗？在本期节目的配套通讯中，我们将重点探讨维克多·雨果的流亡史，以及为什么展览中特别展示了他在根西岛的房子。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:16.120",
+          "end_time": "00:01:34.439",
+          "french": "Ce sera un excellent moyen d'avoir quelques repères historiques sur l'histoire de la France au XIXe siècle et celle du grand écrivain. Ainsi, nous cultiverons notre curiosité. Alors, est-ce que tu as accroché au style de Victor Hugo, décorateur ?",
+          "chinese": "这将是了解19世纪法国历史以及这位伟大作家生平背景的绝佳方式。借此，我们也能满足一下自己的好奇心。那么，你喜欢作为室内装饰家的维克多·雨果的风格吗？"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:34.579",
+          "end_time": "00:01:50.700",
+          "french": "Écoute, c'est assez étonnant. Déjà, je ne savais pas qu'il avait cette corde à son arc. Et donc, au début, j'étais assez sceptique devant les projets, des croquis qu'on peut voir dans les premières pièces.",
+          "chinese": "嗯，这挺让人惊讶的。首先，我都不知道他还有这项才华。所以一开始，看到前面几个展厅里的那些设计方案和草图时，我其实是有点怀疑的。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:51.290",
+          "end_time": "00:02:21.319",
+          "french": "Et puis après, on a vu certains meubles tout seuls, isolés, avec les explications. Donc quand même, beaucoup de boiseries foncées. Et après, on est rentrées dans les vraies pièces au deuxième étage. Et donc, c'est à la fois très chargé, très sombre. Mais il y a certaines pièces où quand même, ça a son petit effet. Donc j'ai bien aimé. Alors je ne pourrais pas vivre dans cette décoration, bien sûr. Mais il y a de bonnes idées.",
+          "chinese": "后来，我们看到了一些单独陈列的家具和附带的解说。能看出还是用了大量深色的木饰面。接着，我们走进了三楼那些还原的真实房间。整体感觉既繁复又昏暗。不过，有些房间的视觉效果确实不错。所以我还挺喜欢的。当然，我肯定没法住在这种装修风格里，但里面确实有不少好点子。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:22.009",
+          "end_time": "00:02:47.819",
+          "french": "Le plafond surtout ? Alors chaque tapisserie de chaque pièce, il n'a pas oublié le plafond effectivement. Il a fait le plafond assorti aux quatre murs. Et puis il y a des idées autour de la cheminée. Il a l'air d'avoir une petite obsession cheminée. Mais il y a aussi effectivement ce plafond et ces murs remplis d'une collection d'assiettes en faïence.",
+          "chinese": "尤其是天花板对吧？每个房间的墙面装饰，他确实都没落下天花板。他把天花板设计得与四面墙相呼应。此外，壁炉周围的设计也很有创意。他似乎对壁炉情有独钟。而且，确实还有那些挂满了彩陶盘子收藏的天花板和墙壁。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:48.310",
+          "end_time": "00:03:18.889",
+          "french": "En tout cas, c'est très visuel et d'un point de vue photographique, ça rend bien. Oui, c'est vrai, je suis d'accord avec toi. L'exposition était au premier étage, donc on a vu les dessins, les meubles et tout ça. Ce qu'on a vu ensuite au deuxième étage, c'est l'exposition permanente. Donc ça, les auditeurs, s'ils viennent à Paris, ils pourront aller voir ces appartements reconstitués. Et alors toi, tu as retrouvé un personnage que tu avais croisé il y a peu de temps au théâtre. En fait, on est allés voir avec mon mari Florent au Théâtre Marigny, qui est sur les Champs-Élysées.",
+          "chinese": "总之，视觉冲击力很强，从拍照的角度来看效果非常好。是的，没错，我同意你的看法。特展在二楼，所以我们看到了设计图、家具等等。后来我们在三楼看到的是常设展。所以，听众朋友们如果来巴黎，也可以去看看这些复原的公寓房间。另外，你在这里还发现了一个不久前在剧院里“遇到”的人物。其实，我和我丈夫Florent去了香榭丽舍大街上的马里尼剧院。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:19.289",
+          "end_time": "00:03:30.949",
+          "french": "C'était une pièce, je ne sais pas si on peut dire pièce, mais en tout cas, Julie Depardieu interprète pendant cette pièce Juliette Drouet. Et c'était l'une des maîtresses préférées de Victor Hugo.",
+          "chinese": "我们看了一部剧，不知道能不能称之为戏剧，但总之，朱莉·德帕迪约在剧中饰演了朱丽叶·德鲁埃。她是维克多·雨果最钟爱的情人之一。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:31.639",
+          "end_time": "00:03:58.060",
+          "french": "qui était amoureuse du personnage, de l'homme, pendant toute sa vie et du coup il a décoré ses appartements, enfin en tout cas les différents appartements pendant toute sa vie, donc à Paris puis quand il est parti en exil. Et donc c'était rigolo parce qu'on l'a vue jeune, on l'a vue beaucoup moins jeune qui est représentée là dans l'exposition et en tout cas on voit qu'elle fait partie, elle est omniprésente dans la vie de Victor Hugo.",
+          "chinese": "她一生都深爱着这个人物、这个男人，因此雨果也为她装修了公寓，或者说为她一生中居住过的各个公寓做过室内装饰，先是在巴黎，后来是在他流亡期间。这挺有趣的，因为我们在展览中看到了年轻时的她，也看到了不再年轻的她。总之，能看出来她是雨果生命中不可或缺的一部分，无处不在。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:58.199",
+          "end_time": "00:04:11.500",
+          "french": "C'est vrai. Nous allons reprendre la R5 électrique pour rentrer. Tout à fait. On va aller la retrouver à quelques rues d'ici et puis en route jusqu'à la prochaine aventure. Merci Pauline. Merci Laetitia.",
+          "chinese": "确实如此。我们要开着那辆电动R5回去了。没错。我们现在去隔壁几条街取车，然后出发前往下一次冒险。谢谢Pauline。谢谢Laetitia。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:13.110",
+          "end_time": "00:04:42.079",
+          "french": "Vous l'aurez compris, la maison de Victor Hugo vaut vraiment le détour. Car même si l'écrivain n'y a pas demeuré très longtemps, le musée rend l'ambiance hugolienne dès qu'on en passe le seuil. C'est également l'occasion de pénétrer à l'intérieur d'un des bâtiments de la plus ancienne place de Paris. One Thing in a French Day, c'est fini pour aujourd'hui. Je vous retrouve la semaine prochaine pour un nouvel épisode de podcast.",
+          "chinese": "相信大家已经看出来了，维克多·雨果故居绝对值得一去。因为即使这位大作家在这里居住的时间并不长，但只要一踏进大门，这座博物馆就能让你感受到浓郁的雨果气息。这也是一次走进巴黎最古老广场上历史建筑内部的绝佳机会。今天的《One Thing in a French Day》就到这里。我们下周的新一期播客再见。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:42.079",
+          "end_time": "00:04:48.490",
+          "french": "À bientôt, au revoir.",
+          "chinese": "下期见，再见。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:48.490",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 13,
+        "source_video_name": "Que pense Pauline de Victor Hugo décorateur_ (Victor Hugo's Interior Design).json",
+        "tags": [
+          "艺术人文",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 2,
+        "passed": true
+      }
+    }
+  }
+}

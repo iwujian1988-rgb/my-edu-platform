@@ -1,0 +1,597 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ accord.json",
+  "channel": "SBS简易法语",
+  "video_name": "简易法语 - 本周词汇：协议",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T13:54:58.110Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le Passé Récent (Recent Past)",
+          "L'expression du but avec 'viser à'",
+          "L'accord grammatical (Grammatical Agreement)"
+        ],
+        "speaking": [
+          "Expressing agreement in various contexts",
+          "Discussing international relations and trade basics"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "ampleur",
+            "part_of_speech": "nom",
+            "ipa": "[ɑ̃.plœʁ]",
+            "chinese": "规模，广度",
+            "example_sentence": {
+              "french": "C'est un accord d'ampleur internationale.",
+              "chinese": "这是一项具有国际规模的协议。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...viennent de signer un accord commercial d'ampleur après plusieurs années de négociations.",
+                "chinese": "……在经过数年谈判后，刚刚签署了一项规模宏大的贸易协议。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "négociation",
+            "part_of_speech": "nom",
+            "ipa": "[ne.ɡɔ.sja.sjɔ̃]",
+            "chinese": "谈判，协商",
+            "example_sentence": {
+              "french": "Les négociations ont duré trois jours.",
+              "chinese": "谈判持续了三天。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...après plusieurs années de négociations.",
+                "chinese": "……经过数年的谈判。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "viser à",
+            "part_of_speech": "verbe",
+            "ipa": "[vi.ze a]",
+            "chinese": "旨在，目的是",
+            "example_sentence": {
+              "french": "Ce projet vise à protéger l'environnement.",
+              "chinese": "该项目旨在保护环境。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cet accord vise à faciliter les échanges entre les deux partenaires...",
+                "chinese": "这项协议旨在促进双方的贸易往来……",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "échange",
+            "part_of_speech": "nom",
+            "ipa": "[e.ʃɑ̃ʒ]",
+            "chinese": "交流，贸易往来",
+            "example_sentence": {
+              "french": "Les échanges culturels sont importants.",
+              "chinese": "文化交流很重要。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cet accord vise à faciliter les échanges...",
+                "chinese": "这项协议旨在促进贸易往来……",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "droits de douane",
+            "part_of_speech": "nom pluriel",
+            "ipa": "[dʁwa də dwan]",
+            "chinese": "关税",
+            "example_sentence": {
+              "french": "Le gouvernement a décidé de réduire les droits de douane.",
+              "chinese": "政府决定降低关税。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...à réduire ou supprimer certains droits de douane...",
+                "chinese": "……降低或取消部分关税……",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "renforcer",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁɑ̃.fɔʁ.se]",
+            "chinese": "加强，巩固",
+            "example_sentence": {
+              "french": "Il faut renforcer la sécurité.",
+              "chinese": "必须加强安全。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...et à renforcer leur coopération économique et stratégique.",
+                "chinese": "……并加强彼此的经济与战略合作。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "entente",
+            "part_of_speech": "nom",
+            "ipa": "[ɑ̃.tɑ̃t]",
+            "chinese": "协议，谅解，共识",
+            "example_sentence": {
+              "french": "Il y a une bonne entente entre les voisins.",
+              "chinese": "邻里之间相处得很融洽（有很好的默契）。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Un accord, c'est une entente, une décision prise ensemble...",
+                "chinese": "协议是指一种共识，一种共同作出的决定……",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "quotidien",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ.ti.djɛ̃]",
+            "chinese": "日常的",
+            "example_sentence": {
+              "french": "C'est un problème de la vie quotidienne.",
+              "chinese": "这是日常生活中的一个问题。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              5,
+              7
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "On utilise ce mot très souvent dans la vie quotidienne.",
+                "chinese": "这个词在日常生活中经常使用。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "participe passé",
+            "part_of_speech": "nom",
+            "ipa": "[paʁ.ti.sip pa.se]",
+            "chinese": "过去分词",
+            "example_sentence": {
+              "french": "Il faut faire l'accord du participe passé avec 'être'.",
+              "chinese": "使用'être'时，过去分词必须进行性数配合。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...comme dans les accords du participe passé.",
+                "chinese": "……比如过去分词的配合。",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "rubrique",
+            "part_of_speech": "nom",
+            "ipa": "[ʁy.bʁik]",
+            "chinese": "栏目，板块",
+            "example_sentence": {
+              "french": "Je lis toujours la rubrique sportive.",
+              "chinese": "我总是读体育专栏。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Retrouvez les rubriques sur sbs.com.au/french.",
+                "chinese": "请登录sbs.com.au/french了解相关栏目。",
+                "source_video": "SBS French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "se mettre d'accord",
+            "meaning": "达成一致，商定",
+            "example": {
+              "french": "Ils se mettent d'accord sur le prix.",
+              "chinese": "他们就价格达成了一致。"
+            },
+            "usage_note": "Used when two or more parties reach a common decision.",
+            "source_ids": [
+              4,
+              7
+            ]
+          },
+          {
+            "expression": "venir de + infinitif",
+            "meaning": "刚刚做某事",
+            "example": {
+              "french": "Le train vient de partir.",
+              "chinese": "火车刚刚离开。"
+            },
+            "usage_note": "Expresses the 'recent past' (passé récent).",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "que ce soit... ou...",
+            "meaning": "无论是……还是……",
+            "example": {
+              "french": "Que ce soit en été ou en hiver, il fait beau.",
+              "chinese": "无论是夏天还是冬天，天气都很美。"
+            },
+            "usage_note": "Used to introduce alternatives or examples that all lead to the same conclusion.",
+            "source_ids": [
+              7
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le Passé Récent (Recent Past)",
+            "structure": "Venir (conjugated in present) + de + infinitif",
+            "explanation": "Used to describe an action that has just happened.",
+            "example": {
+              "french": "L'Union européenne et l'Australie viennent de signer un accord commercial.",
+              "chinese": "欧盟与澳大利亚刚刚签署了一项贸易协议。"
+            },
+            "usage_note": "In English, this is often translated as 'have just [done something]'.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "L'expression du but avec 'viser à'",
+            "structure": "Sujet + viser à + infinitif / nom",
+            "explanation": "Used to express an objective or a goal, particularly in formal or administrative contexts.",
+            "example": {
+              "french": "Cet accord vise à faciliter les échanges entre les deux partenaires.",
+              "chinese": "这项协议旨在促进双方的贸易往来。"
+            },
+            "usage_note": "More formal than 'pour' or 'afin de'.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "L'accord grammatical (Grammatical Agreement)",
+            "structure": "Variation in gender (masculine/feminine) and number (singular/plural)",
+            "explanation": "The text mentions how words change form based on gender or number, specifically mentioning the past participle.",
+            "example": {
+              "french": "Les mots changent de forme selon le genre ou le nombre.",
+              "chinese": "词语根据性或数的变化而改变形式。"
+            },
+            "usage_note": "Essential for adjectives, articles, and certain verb forms in French.",
+            "source_ids": [
+              6
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "The nasal 'an/en' sound found in 'entente' and 'ampleur'.",
+              "examples": [
+                "entente",
+                "ampleur",
+                "pendant"
+              ]
+            }
+          ],
+          "liaison": [
+            "un accord [œ̃.na.kɔʁ]",
+            "deux organisations [dø.zɔʁ.ɡa.ni.za.sjɔ̃]",
+            "des accords [de.za.kɔʁ]"
+          ],
+          "intonation": "Rising intonation on lists (e.g., 'en politique, dans la vie quotidienne, en musique ou en grammaire') followed by a falling tone at the end of the sentence."
+        },
+        "vocabulary_network": {
+          "theme": "L'Accord (Agreement)",
+          "core_word": "Accord",
+          "related_groups": [
+            {
+              "category": "Politique & Commerce",
+              "words": [
+                "négociation",
+                "traité",
+                "partenaire",
+                "droits de douane"
+              ]
+            },
+            {
+              "category": "Musique",
+              "words": [
+                "notes",
+                "guitare",
+                "piano",
+                "ensemble"
+              ]
+            },
+            {
+              "category": "Grammaire",
+              "words": [
+                "genre",
+                "nombre",
+                "participe passé",
+                "forme"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Cet accord ___ à ___ les ___ entre les deux ___, à ___ ou ___ certains ___ de ___ et à ___ leur ___ économique et ___.",
+            "answer": "vise, faciliter, échanges, partenaires, réduire, supprimer, droits, douane, renforcer, coopération, stratégique",
+            "explanation": "根据原文第3句，该句描述了欧盟与澳大利亚贸易协议的具体目标：旨在促进往来、降低关税并加强合作。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, que signifie le mot « accord » dans le contexte de la musique ?",
+            "options": {
+              "A": "Une décision prise ensemble par deux pays.",
+              "B": "Le fait que les mots changent de forme selon le genre.",
+              "C": "Un ensemble de notes jouées en même temps.",
+              "D": "Une émission de radio hebdomadaire."
+            },
+            "answer": "C",
+            "explanation": "原文第5句明确指出：'En musique, un accord, c'est un ensemble de notes jouées en même temps'.",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Un accord, c'est une entente, une décision prise ensemble quand deux personnes, deux pays ou deux organisations se mettent d'accord sur quelque chose.",
+            "answer": "协议是指两个人、两个国家或两个组织就某事达成一致意见或共同作出的决定。",
+            "explanation": "这句话定义了'accord'的核心含义。'entente'对应'共识/协议'，'se mettre d'accord'是'达成一致'的固定搭配。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant le passé récent (venir de) : « L'Union européenne et l'Australie signent un accord. »",
+            "answer": "L'Union européenne et l'Australie viennent de signer un accord.",
+            "explanation": "最近过去时的结构是 'venir (现在时变位) + de + 动词不定式'。原文第3句使用了这一结构：'viennent de signer'。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "viser à",
+            "échanges",
+            "droits de douane",
+            "accord",
+            "entente"
+          ],
+          "covered_grammar": [
+            "Le passé récent",
+            "L'expression du but"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "On en parle puisque...",
+            "explanation": "Used to introduce a topic by giving a recent reason or context.",
+            "example": {
+              "french": "On en parle puisque c'est l'actualité du jour.",
+              "chinese": "我们谈论这个是因为它是今天的新闻。"
+            }
+          },
+          {
+            "pattern": "Cela veut dire...",
+            "explanation": "A simple way to define a word or expression.",
+            "example": {
+              "french": "Cela veut dire que je suis content.",
+              "chinese": "那意味着我很开心。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are discussing a group project with a classmate and need to reach an agreement on the topic.",
+          "requirements": "Use 'se mettre d'accord', 'd'accord', and 'viser à'.",
+          "starter": "On doit choisir un sujet pour notre présentation. Est-ce qu'on peut se mettre d'accord ?"
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the polysemous word 'accord' (agreement) triggered by the recent trade deal between the EU and Australia. It covers its meanings in international relations, daily life, music, and grammar.",
+        "keywords": [
+          "accord",
+          "commerce",
+          "négociation",
+          "grammaire",
+          "musique"
+        ],
+        "difficulty_note": "The text is B1 level due to technical terms related to trade and grammar, but the explanations are clear and pedagogical."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:33",
+          "end": "00:02:51"
+        },
+        "theme": "The word of the week: 'Accord'",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:39.430",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 9,
+        "source_video_name": "Easy French - Le mot de la semaine _ accord.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《进行中的工作》（Work in Progress）是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《进行中的工作》。现在即可在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:00:56.170",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Murat avec vous.",
+          "chinese": "您正在收听的是 SBS 法语广播。请访问 sbs.com.au/french 浏览相关栏目。欢迎来到 SBS Easy French 的“每周一词”栏目。我是 Marianne Murat。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:56.630",
+          "end_time": "00:01:25.739",
+          "french": "Cette semaine, notre mot est « accord ». On en parle puisque l'Union européenne et l'Australie viennent de signer un accord commercial d'ampleur après plusieurs années de négociations. Cet accord vise à faciliter les échanges entre les deux partenaires, à réduire ou supprimer certains droits de douane et à renforcer leur coopération économique et stratégique. Mais d'abord, que signifie le mot « accord » ?",
+          "chinese": "本周我们的单词是“accord”（协议/一致）。我们之所以讨论这个词，是因为欧盟与澳大利亚在经过数年谈判后，刚刚签署了一项重大的贸易协定。该协定旨在促进双方之间的贸易往来，降低或取消某些关税，并加强经济与战略合作。但首先，“accord”这个词是什么意思呢？"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:25.739",
+          "end_time": "00:01:44.299",
+          "french": "Un accord, c'est une entente, une décision prise ensemble quand deux personnes, deux pays ou deux organisations se mettent d'accord sur quelque chose. En anglais, le mot « accord » se traduit le plus souvent par « agreement » ou « deal ».",
+          "chinese": "“Accord”是指一种谅解，是两个自然人、两个国家或两个组织就某事达成一致时共同作出的决定。在英语中，“accord”一词通常翻译为“agreement”或“deal”。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:44.540",
+          "end_time": "00:02:13.159",
+          "french": "On utilise ce mot très souvent dans la vie quotidienne. Par exemple : « Les deux pays ont signé un accord. » Ou alors : « Nous avons trouvé un accord. » Il existe aussi d'autres utilisations du mot « accord » en français. Quand on dit « d'accord », cela veut dire « oui, j'accepte, je suis d'accord avec toi ». En musique, un accord, c'est un ensemble de notes jouées en même temps, par exemple sur une guitare ou un piano.",
+          "chinese": "我们在日常生活中经常使用这个词。例如：“两国签署了一项协议。”或者：“我们达成了一致。”在法语中，“accord”还有其他用法。当我们说“d'accord”时，意思是“好的，我接受，我同意你的看法”。在音乐中，“accord”指的是和弦，即同时演奏的一组音符，例如在吉他或钢琴上。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:13.750",
+          "end_time": "00:02:23.430",
+          "french": "On parle aussi d'accord grammatical, quand les mots changent de forme selon le genre ou le nombre, comme dans les accords du participe passé.",
+          "chinese": "我们还谈到“语法配合”（accord grammatical），即单词根据性或数改变形式，比如过去分词的配合。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:23.669",
+          "end_time": "00:02:51.750",
+          "french": "En résumé, un accord, c'est le fait de se mettre d'accord, que ce soit en politique, dans la vie quotidienne, en musique ou en grammaire. Voilà, c'était « accord », c'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes. On se retrouve la semaine prochaine pour un autre mot de la semaine.",
+          "chinese": "总之，“accord”就是达成一致的行为，无论是在政治、日常生活、音乐还是语法中。好了，这就是“accord”，本周的每周一词。欢迎在 SBS 法语网站及各大平台收听我们的“每周一词”以及 Easy French 新闻节目。下周我们再见，学习另一个每周一词。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:57.719",
+          "end_time": "00:03:04.810",
+          "french": "Aimez, partagez, commentez. Suivez-nous sur facebook.com.",
+          "chinese": "点赞、分享、评论。请在 facebook.com 上关注我们。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:10.780",
+          "end_time": "00:03:39.430",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《进行中的工作》（Work in Progress）是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《进行中的工作》。现在即可在各大播客平台收听。"
+        }
+      ],
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

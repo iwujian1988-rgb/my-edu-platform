@@ -1,0 +1,651 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ taux d'intérêt.json",
+  "channel": "SBS简易法语",
+  "video_name": "Easy French - Le mot de la semaine _ taux d'intérêt",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T00:10:32.569Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 13,
+          "review_words": 0
+        },
+        "grammar": [
+          "Relative Pronoun 'ce qui'",
+          "Causal Conjunction 'puisque'",
+          "Preposition 'depuis' with Present Tense"
+        ],
+        "speaking": [
+          "Discussing banking and loans",
+          "Explaining the impact of economic changes on daily life"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "taux d'intérêt",
+            "part_of_speech": "nom masculin",
+            "ipa": "[to dɛ̃teʁɛ]",
+            "chinese": "利率",
+            "example_sentence": {
+              "french": "La banque a augmenté les taux d'intérêt.",
+              "chinese": "银行上调了利率。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              5
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Notre mot est « taux d'intérêt ».",
+                "chinese": "我们的词汇是“利率”。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "augmenter",
+            "part_of_speech": "verbe",
+            "ipa": "[oɡmɑ̃te]",
+            "chinese": "增加，提高",
+            "example_sentence": {
+              "french": "Les prix augmentent chaque année.",
+              "chinese": "价格每年都在上涨。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "La Banque centrale australienne a augmenté les taux d'intérêt.",
+                "chinese": "澳大利亚央行上调了利率。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "inattendu",
+            "part_of_speech": "adjectif",
+            "ipa": "[inatɑ̃dy]",
+            "chinese": "出乎意料的",
+            "example_sentence": {
+              "french": "C'est un résultat totalement inattendu.",
+              "chinese": "这是一个完全出乎意料的结果。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce qui était inattendu.",
+                "chinese": "这是出乎意料的。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "prêter",
+            "part_of_speech": "verbe",
+            "ipa": "[pʁɛte]",
+            "chinese": "出借，贷款",
+            "example_sentence": {
+              "french": "Peux-tu me prêter ton dictionnaire ?",
+              "chinese": "你能把字典借给我吗？"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Quand une banque prête de l'argent...",
+                "chinese": "当银行贷款时……",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "remboursement",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʁɑ̃buʁsəmɑ̃]",
+            "chinese": "还款，偿还",
+            "example_sentence": {
+              "french": "Le remboursement du prêt se fait chaque mois.",
+              "chinese": "贷款每月偿还一次。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les remboursements mensuels augmentent aussi.",
+                "chinese": "每月的还款额也会随之增加。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "mensuel",
+            "part_of_speech": "adjectif",
+            "ipa": "[mɑ̃sɥɛl]",
+            "chinese": "每月的",
+            "example_sentence": {
+              "french": "Il reçoit un salaire mensuel.",
+              "chinese": "他领取月薪。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les remboursements mensuels augmentent.",
+                "chinese": "每月还款额增加。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "hausse",
+            "part_of_speech": "nom féminin",
+            "ipa": "[os]",
+            "chinese": "上升，上涨",
+            "example_sentence": {
+              "french": "Il y a une hausse du prix de l'essence.",
+              "chinese": "汽油价格上涨了。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Avec la nouvelle hausse...",
+                "chinese": "随着新的上涨……",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "crédit",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kʁedi]",
+            "chinese": "贷款，信用",
+            "example_sentence": {
+              "french": "J'ai pris un crédit pour ma voiture.",
+              "chinese": "我贷款买了一辆车。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le taux d'intérêt influence les crédits.",
+                "chinese": "利率影响着贷款。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "épargne",
+            "part_of_speech": "nom féminin",
+            "ipa": "[epaʁɲ]",
+            "chinese": "储蓄",
+            "example_sentence": {
+              "french": "Il est important d'avoir un peu d'épargne.",
+              "chinese": "拥有一点储蓄很重要。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le taux d'intérêt influence l'épargne.",
+                "chinese": "利率影响着储蓄。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "influence",
+            "part_of_speech": "verbe",
+            "ipa": "[ɛ̃flyɑ̃s]",
+            "chinese": "影响",
+            "example_sentence": {
+              "french": "La météo influence mon moral.",
+              "chinese": "天气影响我的心情。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le taux d'intérêt influence donc le budget.",
+                "chinese": "因此利率影响着预算。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "budget",
+            "part_of_speech": "nom masculin",
+            "ipa": "[bydʒɛ]",
+            "chinese": "预算",
+            "example_sentence": {
+              "french": "Nous devons respecter notre budget.",
+              "chinese": "我们必须遵守我们的预算。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le taux d'intérêt influence donc le budget.",
+                "chinese": "因此利率影响着预算。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "quotidienne",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔtidjɛn]",
+            "chinese": "日常的",
+            "example_sentence": {
+              "french": "C'est un problème de la vie quotidienne.",
+              "chinese": "这是一个日常生活中的问题。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La vie quotidienne de beaucoup de personnes.",
+                "chinese": "许多人的日常生活。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "rubrique",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁybʁik]",
+            "chinese": "栏目，专栏",
+            "example_sentence": {
+              "french": "J'aime lire la rubrique sportive.",
+              "chinese": "我喜欢读体育专栏。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Bienvenue dans notre rubrique « Le mot de la semaine ».",
+                "chinese": "欢迎来到我们的“本周词汇”栏目。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "le prix de l'argent",
+            "meaning": "钱的价格（指利率）",
+            "example": {
+              "french": "Le taux d'intérêt, c'est le prix de l'argent.",
+              "chinese": "利率就是钱的价格。"
+            },
+            "usage_note": "A metaphorical way to explain interest rates to a general audience.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "depuis 2 ans",
+            "meaning": "两年来（至今）",
+            "example": {
+              "french": "C'est la première fois depuis 2 ans.",
+              "chinese": "这是两年来第一次。"
+            },
+            "usage_note": "Used with the present tense in French to indicate an action or state that started in the past and continues to the present.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "en plus",
+            "meaning": "额外的，另外",
+            "example": {
+              "french": "Elle demande de l'argent en plus.",
+              "chinese": "它要求支付额外的钱。"
+            },
+            "usage_note": "Commonly used to indicate an addition or an extra amount/item.",
+            "source_ids": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Relative Pronoun 'ce qui'",
+            "structure": "Phrase + , + ce qui + verb",
+            "explanation": "Used to refer back to an entire preceding idea or clause, rather than a single noun. 'Ce qui' acts as the subject of the following verb.",
+            "example": {
+              "french": "Le taux est passé de 3,6 % à 3,85 %, ce qui était inattendu.",
+              "chinese": "利率从3.6%升至3.85%，这是出乎意料的。"
+            },
+            "usage_note": "Always use a comma before 'ce qui' when it refers to the whole previous clause.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "Causal Conjunction 'puisque'",
+            "structure": "Main clause + puisque + known fact",
+            "explanation": "'Puisque' is used to introduce a cause that is already known to the listener or is obvious.",
+            "example": {
+              "french": "On en parle puisque la Banque centrale australienne a augmenté les taux d'intérêt.",
+              "chinese": "我们聊聊这个，因为澳大利亚央行上调了利率。"
+            },
+            "usage_note": "Unlike 'parce que', 'puisque' often implies 'since' or 'given that'.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "name": "Preposition 'depuis' with Present Tense",
+            "structure": "Verb (present) + depuis + duration/point in time",
+            "explanation": "In French, 'depuis' is used with the present tense to describe an action that started in the past and is still happening.",
+            "example": {
+              "french": "La Banque centrale a augmenté les taux pour la première fois depuis 2 ans.",
+              "chinese": "央行时隔两年（两年来）首次上调利率。"
+            },
+            "usage_note": "English often uses the present perfect ('has been') where French uses the present.",
+            "source_ids": [
+              2
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "/o/",
+              "description": "The closed 'o' sound as in 'taux' or 'hausse'.",
+              "examples": [
+                "taux",
+                "hausse"
+              ]
+            },
+            {
+              "sound": "/ɛ̃/",
+              "description": "The nasal vowel in 'intérêt' or 'influence'.",
+              "examples": [
+                "intérêt",
+                "influence"
+              ]
+            }
+          ],
+          "liaison": [
+            "deux_ans [døzɑ̃]",
+            "un_autre [œ̃notʁ]"
+          ],
+          "intonation": "The speaker uses a clear, pedagogical tone typical of 'Easy French' news, with rising intonation at the end of introductory phrases and falling intonation at the end of declarative sentences."
+        },
+        "vocabulary_network": {
+          "theme": "Économie et Finance",
+          "core_word": "Argent",
+          "related_groups": [
+            {
+              "category": "Banque",
+              "words": [
+                "prêter",
+                "crédit",
+                "taux d'intérêt",
+                "remboursement"
+              ]
+            },
+            {
+              "category": "Gestion personnelle",
+              "words": [
+                "budget",
+                "épargne",
+                "mensuel",
+                "vie quotidienne"
+              ]
+            },
+            {
+              "category": "Mouvements",
+              "words": [
+                "augmenter",
+                "hausse",
+                "passer de... à..."
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Par exemple, avec la nouvelle ___, pour une ___ de 600 000 dollars, cette ___ représente environ 90 dollars de ___ par ___ à ___.",
+            "answer": "hausse, maison, hausse, plus, mois, payer",
+            "explanation": "根据原文第4句，利率上涨意味着对于价值60万的房子，每月要多支付约90美元。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "D'après le texte, qu'est-ce qui se passe quand le taux d'intérêt augmente ?",
+            "options": {
+              "A": "Les banques prêtent plus d'argent gratuitement.",
+              "B": "Les remboursements mensuels augmentent aussi.",
+              "C": "Le prix des maisons diminue immédiatement.",
+              "D": "L'épargne devient inutile."
+            },
+            "answer": "B",
+            "explanation": "原文第3句明确提到：'Quand le taux augmente, les remboursements mensuels augmentent aussi.'",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Le taux d'intérêt influence donc le budget, les crédits, l'épargne et la vie quotidienne de beaucoup de personnes.",
+            "answer": "因此，利率影响着许多人的预算、贷款、储蓄以及日常生活。",
+            "explanation": "这句话总结了利率变动对个人财务和生活的广泛影响。注意'donc'（因此）的逻辑连接作用。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Complétez la phrase avec le pronom relatif correct (ce qui / qui) : 'La banque a monté ses taux, ___ change mes projets de vacances.'",
+            "answer": "ce qui",
+            "explanation": "此处指代前面整个句子（银行涨息这件事），因此必须使用'ce qui'而不是单纯的'qui'。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "hausse",
+            "mensuel",
+            "taux d'intérêt",
+            "épargne",
+            "budget"
+          ],
+          "covered_grammar": [
+            "Relative Pronoun 'ce qui'",
+            "Cause and Consequence"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Le [nom], c'est le [définition].",
+            "explanation": "A simple way to define a concept.",
+            "example": {
+              "french": "Le taux d'intérêt, c'est le prix de l'argent.",
+              "chinese": "利率就是钱的价格。"
+            }
+          },
+          {
+            "pattern": "Passer de [A] à [B]",
+            "explanation": "To change from one value to another.",
+            "example": {
+              "french": "Le taux est passé de 3,6 % à 3,85 %.",
+              "chinese": "利率从3.6%升至3.85%。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are talking to a bank advisor about a home loan.",
+          "requirements": "Use terms like 'taux d'intérêt', 'remboursement mensuel', and 'crédit'.",
+          "starter": "Bonjour, je voudrais des informations pour un crédit immobilier..."
+        }
+      },
+      "summary": {
+        "content": "This lesson focuses on the concept of interest rates following a recent hike by the Australian Central Bank. It explains what an interest rate is ('the price of money'), how it affects monthly mortgage repayments, and its broader impact on personal budgets, savings, and daily life.",
+        "keywords": [
+          "taux d'intérêt",
+          "banque",
+          "économie",
+          "remboursement",
+          "budget"
+        ],
+        "difficulty_note": "The text is accessible (A2/B1) but introduces specific financial terminology that is essential for navigating adult life in a French-speaking environment."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:02:59"
+        },
+        "theme": "Économie : Le taux d'intérêt",
+        "cefr_level": "B1",
+        "vocabulary_count": 13,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档帮助技术移民在新的国家重建职业生涯的播客。你将听到感人至深的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《Work in Progress》，现在即可在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:01:05.930",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Bonjour et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Morat avec vous. Cette semaine, notre mot est « taux d'intérêt ». On en parle puisque la Banque centrale australienne a augmenté les taux d'intérêt pour la première fois depuis deux ans.",
+          "chinese": "您正在收听的是 SBS 法语广播。请访问 sbs.com.au/french 查看更多栏目。大家好，欢迎收听 SBS Easy French 的“每周一词”栏目。我是 Marianne Morat。本周我们要讲的词是“利率”。我们讨论这个词是因为澳大利亚央行两年来首次上调了利率。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:06.260",
+          "end_time": "00:01:30.629",
+          "french": "Le taux est passé de 3,6 % à 3,85 %, ce qui était inattendu. Mais qu'est-ce qu'un taux d'intérêt ? Le taux d'intérêt, c'est le prix de l'argent. Quand une banque prête de l'argent, par exemple pour acheter une maison, elle demande de l'argent en plus. Quand le taux augmente, les remboursements mensuels augmentent aussi.",
+          "chinese": "利率从 3.6% 上升至 3.85%，这出乎意料。但什么是利率呢？利率就是资金的价格。当银行贷款时（例如买房贷款），它会要求支付额外的费用。当利率上升时，每月的还款额也会随之增加。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:30.870",
+          "end_time": "00:01:49.769",
+          "french": "Par exemple, avec la nouvelle hausse, pour une maison de 600 000 dollars, cette hausse représente environ 90 dollars de plus par mois à payer. Le taux d'intérêt influence donc le budget, les crédits, l'épargne et la vie quotidienne de beaucoup de personnes.",
+          "chinese": "例如，随着这次加息，对于一栋 60 万澳元的房子来说，这意味着每月要多支付约 90 澳元。因此，利率会影响许多人的预算、贷款、储蓄和日常生活。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:50.040",
+          "end_time": "00:02:24.490",
+          "french": "Voilà, c'était « Taux d'intérêt », c'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes. On se retrouve la semaine prochaine pour un autre mot de la semaine. Vous voulez entendre d'autres rubriques comme celle-ci ? Écoutez-les sur Apple Podcasts, Google Podcasts, Spotify ou partout où vous écoutez vos podcasts.",
+          "chinese": "好了，以上就是本周的词汇“利率”。欢迎在 SBS 法语网站及各大平台收听我们的“每周一词”和 Easy French 新闻。下周我们再见，一起学习另一个新词。想听更多类似栏目吗？请在 Apple Podcasts、Google Podcasts、Spotify 或您常用的播客平台收听。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:30.620",
+          "end_time": "00:02:59.300",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I've given up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我已经认输了。《Work in Progress》是一档帮助技术移民在新的国家重建职业生涯的播客。你将听到感人至深的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《Work in Progress》，现在即可在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:02:59.300",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 6,
+        "source_video_name": "Easy French - Le mot de la semaine _ taux d'intérêt.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

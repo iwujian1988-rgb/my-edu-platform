@@ -1,0 +1,662 @@
+{
+  "source_file": "Faut-il commencer par le plus difficile _ Réponses de Lisa et Micaela  (Hard Start Method, Real Life).json",
+  "channel": "法国日常一件事",
+  "video_name": "应该先做最难的吗？_ Lisa与Micaela的解答（困难起步法，现实生活）",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:21:41.035Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le gérondif (en + participe présent)",
+          "L'expression de l'alternative (Plutôt que de + infinitif)",
+          "L'hypothèse avec 'Si' (Si + présent)"
+        ],
+        "speaking": [
+          "Débattre des avantages et des inconvénients d'une méthode d'apprentissage",
+          "Exprimer son opinion et justifier ses choix avec des arguments basés sur l'expérience"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "humeur",
+            "part_of_speech": "nom",
+            "ipa": "[y.mœʁ]",
+            "chinese": "心情，情绪",
+            "example_sentence": {
+              "french": "J'espère que vous êtes de bonne humeur.",
+              "chinese": "我希望你们心情愉快。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'espère que vous allez bien et que vous êtes de bonne humeur.",
+                "chinese": "希望你们一切安好，心情愉快。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "apprentissage",
+            "part_of_speech": "nom",
+            "ipa": "[a.pʁɑ̃.ti.saʒ]",
+            "chinese": "学习，学徒期",
+            "example_sentence": {
+              "french": "Je lis un livre sur l'apprentissage.",
+              "chinese": "我在读一本关于学习的书。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je faisais part à Lisa de cette méthode décrite dans un livre que je lis en ce moment sur l'apprentissage.",
+                "chinese": "我向丽莎介绍了我在读的一本书中提到的这种学习方法。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "blocage",
+            "part_of_speech": "nom",
+            "ipa": "[blɔ.kaʒ]",
+            "chinese": "卡顿，瓶颈，阻塞",
+            "example_sentence": {
+              "french": "On fait l'exercice jusqu'au point de blocage.",
+              "chinese": "我们做练习直到遇到瓶颈。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On commence par l'exercice le plus difficile et on le fait jusqu'au point de blocage.",
+                "chinese": "先从最难的题目入手，一直做到遇到瓶颈为止。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "insu",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃.sy]",
+            "chinese": "不知情 (à l'insu de / à mon insu)",
+            "example_sentence": {
+              "french": "Le cerveau travaille à notre insu.",
+              "chinese": "大脑在不知不觉中工作。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Notre cerveau continue de travailler sur l'exercice difficile, à notre insu, en mode diffus.",
+                "chinese": "我们的大脑其实一直在潜意识里以“漫游模式”继续处理那个难的题目。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "diffus",
+            "part_of_speech": "adjectif",
+            "ipa": "[di.fy]",
+            "chinese": "漫游的，发散的，弥漫的",
+            "example_sentence": {
+              "french": "Le cerveau se met en mode diffus.",
+              "chinese": "大脑进入发散模式。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Notre cerveau continue de travailler sur l'exercice difficile, à notre insu, en mode diffus.",
+                "chinese": "我们的大脑其实一直在潜意识里以“漫游模式”继续处理那个难的题目。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "résoudre",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁe.zudʁ]",
+            "chinese": "解决，解答",
+            "example_sentence": {
+              "french": "Je n'arrive pas à résoudre ce problème.",
+              "chinese": "我无法解决这个问题。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Quand on revient sur l'exercice difficile, eh bien, normalement, on peut le résoudre.",
+                "chinese": "当我们回过头来看那道难题时，嗯，通常情况下，我们是可以解决它的。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "copie",
+            "part_of_speech": "nom",
+            "ipa": "[kɔ.pi]",
+            "chinese": "试卷，答卷，副本",
+            "example_sentence": {
+              "french": "Rendez votre copie à la fin de l'heure.",
+              "chinese": "下课时交上你们的试卷。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il faut que je laisse combien de place sur ma copie ?",
+                "chinese": "那我得在试卷上留多少空间呢？",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "échauffement",
+            "part_of_speech": "nom",
+            "ipa": "[e.ʃof.mɑ̃]",
+            "chinese": "热身",
+            "example_sentence": {
+              "french": "C'est une sorte d'échauffement pour le cerveau.",
+              "chinese": "这对大脑来说是一种热身。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est agréable, c'est une sorte d'échauffement.",
+                "chinese": "这很愉快，就像一种热身运动。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "brouillon",
+            "part_of_speech": "nom",
+            "ipa": "[bʁu.jɔ̃]",
+            "chinese": "草稿，草稿纸",
+            "example_sentence": {
+              "french": "Faites d'abord l'exercice sur un brouillon.",
+              "chinese": "先在草稿纸上做这个练习。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je fais autre chose sur mon brouillon et ensuite je reprends l'exercice compliqué.",
+                "chinese": "我在草稿上做别的事情，然后接着做那个复杂的练习。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "argument",
+            "part_of_speech": "nom",
+            "ipa": "[aʁ.ɡy.mɑ̃]",
+            "chinese": "论点，理由",
+            "example_sentence": {
+              "french": "Ses arguments sont très convaincants.",
+              "chinese": "他的论点非常有说服力。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'était intéressant de découvrir leurs arguments tirés de leur propre expérience.",
+                "chinese": "能了解到他们基于自身经验提出的论点，这次讨论很有意思。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "enchaînement",
+            "part_of_speech": "nom",
+            "ipa": "[ɑ̃.ʃɛn.mɑ̃]",
+            "chinese": "连贯动作，套路，一连串",
+            "example_sentence": {
+              "french": "Il apprend un nouvel enchaînement de mouvements.",
+              "chinese": "他在学习一套新的连贯动作。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'y penserai quand j'apprendrai un nouvel enchaînement de kung-fu.",
+                "chinese": "以后我学习新的功夫套路时，都会想到这一点。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "apercevoir",
+            "part_of_speech": "verbe",
+            "ipa": "[a.pɛʁ.sə.vwaʁ]",
+            "chinese": "察觉，意识到 (s'apercevoir)",
+            "example_sentence": {
+              "french": "Vous allez vous apercevoir de vos progrès.",
+              "chinese": "你们会意识到自己的进步。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Vous allez vous apercevoir que vous comprenez mieux qu'à la première écoute.",
+                "chinese": "你会发现，这次听比第一次听更能理解内容。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "sur le papier",
+            "meaning": "在理论上，表面上看起来",
+            "example": {
+              "french": "Une méthode peut paraître brillante sur le papier.",
+              "chinese": "一种方法在纸面上看起来似乎很巧妙。"
+            },
+            "usage_note": "用于对比理论与实际情况（en pratique）。",
+            "source_ids": [
+              1
+            ]
+          },
+          {
+            "expression": "c'est bien beau en théorie",
+            "meaning": "理论上听起来是不错（但实际行不通）",
+            "example": {
+              "french": "C'est bien beau en théorie, mais en pratique, ça ne marche pas.",
+              "chinese": "理论听起来挺不错的，可实际操作起来就没那么管用了。"
+            },
+            "usage_note": "口语中常用的表达，带有轻微的讽刺或怀疑意味，强调理论脱离实际。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "mettre dans une bonne vibe",
+            "meaning": "带来好心情，进入良好的状态",
+            "example": {
+              "french": "Ça me met toujours dans une bonne vibe de savoir résoudre des exercices.",
+              "chinese": "每次做完后，我都会有一种轻松愉悦的感觉，觉得自己有能力解决这些练习。"
+            },
+            "usage_note": "口语化表达，借用了英语单词 'vibe' (氛围/感觉)。",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "à notre insu",
+            "meaning": "在我们不知情的情况下，潜意识里",
+            "example": {
+              "french": "Notre cerveau continue de travailler à notre insu.",
+              "chinese": "我们的大脑在不知不觉中继续工作。"
+            },
+            "usage_note": "常用于描述潜意识的活动或别人背着自己做的事情（à l'insu de qqn）。",
+            "source_ids": [
+              3
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le gérondif (en + participe présent)",
+            "structure": "en + radical du verbe à la 1ère personne du pluriel (nous) + -ant",
+            "explanation": "副动词（Le gérondif）用于表示两个动作同时发生，或者表示方式、手段、条件。在本文中，它主要用来表示方式或伴随状态。",
+            "example": {
+              "french": "C'est ce que je viens de découvrir en parlant à Lisa et à Michaela.",
+              "chinese": "我刚和丽莎与米凯拉聊完后才意识到这一点（通过和她们聊天）。"
+            },
+            "usage_note": "副动词的主语必须与主句的主语一致。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "name": "L'expression de l'alternative (Plutôt que de + infinitif)",
+            "structure": "Plutôt que de + verbe à l'infinitif",
+            "explanation": "用于表达“与其做某事（不如做另一件事）”，强调在两个选项中做出选择，通常放在句首或句中。",
+            "example": {
+              "french": "Plutôt que de commencer par faire les exercices faciles, on commence par l'exercice le plus difficile.",
+              "chinese": "与其从简单的题目开始做，不如先从最难的题目入手。"
+            },
+            "usage_note": "注意介词 'de' 后面必须接动词原形（infinitif）。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "L'hypothèse avec 'Si' (Si + présent)",
+            "structure": "Si + verbe au présent, verbe au présent / futur / impératif",
+            "explanation": "用于表达在当前或未来可能发生的真实条件或假设。如果条件满足，结果就会发生。",
+            "example": {
+              "french": "Si je commence par le plus difficile et que je bloque, il faut que je laisse combien de place sur ma copie ?",
+              "chinese": "要是我先做最难的题，结果卡住了，那我得在试卷上留多少空间呢？"
+            },
+            "usage_note": "当有多个并列的条件时，第二个 'si' 通常用 'que' 代替，且后面的动词需用虚拟式（如 et que je bloque，这里 bloque 是虚拟式，虽然形式与直陈式相同）。",
+            "source_ids": [
+              5
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "Emprunts à l'anglais (English loanwords)",
+              "description": "法语中借用英语词汇时，通常会带有法国口音。例如不发 'h' 音，或者按照法语的音节习惯来读。",
+              "examples": [
+                "Hard Start (/aʁd staʁt/)",
+                "vibe (/vajb/)"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_exercices (/lez‿ɛɡzɛʁsis/)",
+            "suis_arrivée (/sɥi.z‿aʁive/)",
+            "les_arts (/lez‿aʁ/)"
+          ],
+          "intonation": "在表达怀疑或反驳时（如 Lisa 的话），语调通常在句末上扬或带有强调的重音，例如 'Ah bon ?' 和 'Non, c'est trop compliqué.'"
+        },
+        "vocabulary_network": {
+          "theme": "L'apprentissage et la réflexion",
+          "core_word": "Apprentissage",
+          "related_groups": [
+            {
+              "category": "Processus cognitif",
+              "words": [
+                "cerveau",
+                "mode diffus",
+                "à notre insu",
+                "résoudre"
+              ]
+            },
+            {
+              "category": "Matériel et évaluation",
+              "words": [
+                "copie",
+                "brouillon",
+                "contrôle",
+                "exercices"
+              ]
+            },
+            {
+              "category": "Difficultés",
+              "words": [
+                "blocage",
+                "difficile",
+                "compliqué",
+                "doute"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Plutôt que de ___ par faire les ___ faciles, on commence par l'___ le plus ___ et on le fait jusqu'au point de ___.",
+            "answer": "commencer, exercices, exercice, difficile, blocage",
+            "explanation": "根据原文第3段，介绍“Hard Start”方法的原理是：与其从简单的题目开始，不如先做最难的题目，直到遇到瓶颈。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, pourquoi Michaela préfère-t-elle commencer par les exercices simples ?",
+            "options": {
+              "A": "Parce que cela lui sert d'échauffement et la motive pour la suite.",
+              "B": "Parce qu'elle n'a pas assez de place sur sa copie pour les exercices difficiles.",
+              "C": "Parce que le professeur met toujours des points d'interrogation sur sa copie.",
+              "D": "Parce qu'elle veut terminer son contrôle de mathématiques plus rapidement."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第7段中Michaela明确表示：“Je commence toujours par les exercices simples parce que c'est agréable, c'est une sorte d'échauffement... Ça me motive pour les difficiles.”（我总是从简单的练习开始，因为这很愉快，就像一种热身运动……这让我更有动力去攻克难题）。选项B和C是Lisa遇到的问题，选项D在文中未提及。",
+            "source_ids": [
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Alors ça, maman, c'est bien beau en théorie, mais en pratique, ça ne marche pas.",
+            "answer": "哎呀，妈妈，理论听起来挺不错的，可实际操作起来就没那么管用了。",
+            "explanation": "翻译难点在于准确传达口语化的语气和对比结构。“c'est bien beau en théorie”是固定表达，意为“理论上听起来很好/很漂亮”；“en pratique”意为“在实践中/实际操作中”；“ça ne marche pas”意为“行不通/不管用”。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez cette phrase en utilisant la structure 'Plutôt que de' pour exprimer l'alternative : 'Au lieu de commencer par les exercices faciles, on commence par l'exercice le plus difficile.'",
+            "answer": "Plutôt que de commencer par les exercices faciles, on commence par l'exercice le plus difficile.",
+            "explanation": "测试“Plutôt que de + infinitif”的用法，表示“与其……不如……”，与“au lieu de”同义。原文正是使用了这个结构来对比两种做题顺序。注意介词 de 后面直接跟动词原形 commencer。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "blocage",
+            "échauffement",
+            "copie"
+          ],
+          "covered_grammar": [
+            "L'expression de l'alternative (Plutôt que de + infinitif)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Plutôt que de + infinitif, [Sujet] + [Verbe]...",
+            "explanation": "用于表达在两个动作中选择后者，放弃前者，意为“与其做某事，不如做某事”。",
+            "example": {
+              "french": "Plutôt que de regarder la télévision, il lit un livre.",
+              "chinese": "与其看电视，他不如看书。"
+            }
+          },
+          {
+            "pattern": "C'est bien beau en théorie, mais en pratique...",
+            "explanation": "用于反驳某个看似完美的计划或理论，指出其在现实中不可行。",
+            "example": {
+              "french": "Ton idée est bien belle en théorie, mais en pratique, elle coûte trop cher.",
+              "chinese": "你的想法理论上是不错，但实际上太费钱了。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你和同学在准备即将到来的法语期末考试。你们在讨论复习策略，你建议先复习最难的语法部分，但你的同学认为应该先从简单的词汇开始热身。",
+          "requirements": "使用 'Plutôt que de' 提出你的建议，并使用 'échauffement' 或 'blocage' 等词汇来支持你的观点。你的同学可以使用 'C'est bien beau en théorie' 来反驳。",
+          "starter": "Pour réviser, je pense qu'on devrait utiliser la méthode 'Hard Start'..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia discute de la méthode d'apprentissage 'Hard Start' qui consiste à commencer par les tâches les plus difficiles. Elle partage les réactions de Lisa et Michaela, qui trouvent cette méthode peu pratique pour les contrôles scolaires, préférant commencer par des exercices simples pour s'échauffer et éviter les blocages. Laetitia conclut que la méthode est valable mais nécessite des adaptations selon les situations, comme pour les arts martiaux ou l'écriture.",
+        "keywords": [
+          "apprentissage",
+          "méthode",
+          "difficulté",
+          "cerveau",
+          "pratique"
+        ],
+        "difficulty_note": "Le texte est de niveau B1/B2. La difficulté réside dans le vocabulaire abstrait lié aux processus cognitifs et dans les structures de phrases exprimant l'hypothèse et l'alternative."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:04:11"
+        },
+        "theme": "Méthodes d'apprentissage et éducation",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:28.300",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, jeudi 2 avril 2026, cet épisode, le numéro 2611, s'intitule « Faut-il commencer par le plus difficile ? Lisa et Michaela ont la réponse ». Une méthode peut paraître brillante sur le papier,",
+          "chinese": "大家好，我是来自巴黎《One Thing in a French Day》播客的Laetitia。希望大家一切顺利，心情愉快。今天是2026年4月2日星期四，第2611期节目的标题是“应该从最难的开始吗？Lisa和Michaela给出了答案”。有些方法可能在理论上看起来很完美，"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:28.300",
+          "end_time": "00:00:52.429",
+          "french": "mais nécessiter en pratique quelques adaptations. C'est ce que je viens de découvrir en parlant à Lisa et à Michaela. Mardi midi, je faisais part à Lisa de cette méthode décrite dans un livre que je lis en ce moment sur l'apprentissage. C'est un livre que j'ai acheté parce que je suis toujours à la recherche des meilleures méthodes pour elle. Cette méthode porte un nom anglais, Hard Start.",
+          "chinese": "但在实际操作中却需要一些调整。这正是我在和Lisa以及Michaela交谈后得出的结论。周二中午，我跟Lisa分享了我最近在读的一本关于学习的书里提到的一种方法。我买这本书是因为我一直在为她寻找最好的学习方法。这个方法有个英文名，叫“Hard Start”（先难后易）。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.429",
+          "end_time": "00:01:19.879",
+          "french": "Je vous explique le principe comme je l'ai fait à Lisa à partir de l'exemple du contrôle de maths. Plutôt que de commencer par faire les exercices faciles, on commence par l'exercice le plus difficile et on le fait jusqu'au point de blocage. Ensuite, on passe aux exercices plus simples et pendant ce temps-là, en parallèle, notre cerveau continue de travailler sur l'exercice difficile, à notre insu, en mode diffus.",
+          "chinese": "我来给大家解释一下这个原理，就像我当时拿数学考试举例给Lisa解释的那样。与其先做简单的题，不如先从最难的题开始，一直做到卡壳为止。然后，再转去做简单的题。在这期间，我们的大脑会在不知不觉中，以发散模式继续思考那道难题。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:20.540",
+          "end_time": "00:01:25.349",
+          "french": "Quand on revient sur l'exercice difficile, eh bien, normalement, on peut le résoudre.",
+          "chinese": "等我们再回过头来看那道难题时，通常就能把它解出来了。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:26.010",
+          "end_time": "00:01:52.400",
+          "french": "« Alors ça, maman, c'est bien beau en théorie, m'a dit Lisa, mais en pratique, ça ne marche pas. » « Ah bon ? » « Ben oui, si je commence par le plus difficile et que je bloque, il faut que je laisse combien de place sur ma copie ? Je ne connais pas à l'avance combien de place il me faudra sur ma feuille pour faire cet exercice. Et s'il y a plusieurs exercices difficiles ? Non, c'est trop compliqué. Moi, je les fais dans l'ordre.",
+          "chinese": "“妈妈，这理论上听起来很美好，”Lisa对我说，“但在实际操作中根本行不通。”“是吗？”“对啊，如果我先做最难的题，然后卡壳了，我得在卷子上留多少空白？我事先又不知道这道题需要写多少步骤。要是好几道难题怎么办？不行，这太复杂了。我还是按顺序做。”"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:52.400",
+          "end_time": "00:02:15.560",
+          "french": "Parfois, c'est vrai, je ne fais pas tout. J'arrête et je laisse de la place. Et le prof met toujours trois points d'interrogation. Il ne comprend pas que je n'y suis pas arrivée. » On a bien ri. Plus tard, j'ai eu Michaela au téléphone et je lui ai exposé cette méthode. Son avis était négatif, comme Lisa, mais pour des raisons différentes.",
+          "chinese": "“有时候，确实，我不会全做完。我会停下来留点空白。然后老师总是画三个问号。他不明白我只是没做出来而已。”我们听了哈哈大笑。后来，我和Michaela通了电话，也跟她说了这个方法。和Lisa一样，她也不赞同，但理由却不一样。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:16.599",
+          "end_time": "00:02:45.900",
+          "french": "« Je commence toujours par les exercices simples parce que c'est agréable, c'est une sorte d'échauffement et ça me met toujours dans une bonne vibe de savoir résoudre des exercices. Ça me motive pour les difficiles. Alors que si je commence par un exercice difficile et que je bloque, j'ai le sentiment que même les plus simples, je n'arriverai pas à les résoudre et je doute. Mais ta méthode, je la fais quand même, mais pas en laissant de côté les exercices simples :",
+          "chinese": "“我总是先做简单的题，因为这让人感觉很好，就像是一种热身，能解出题目总是让我状态大好。这会让我有动力去攻克难题。但如果我一上来就做难题，而且还卡壳了，我就会觉得连最简单的题我也做不出来了，从而产生自我怀疑。不过你说的这个方法，我其实也在用，只是我不会把简单的题先搁置一旁："
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:45.900",
+          "end_time": "00:02:50.889",
+          "french": "je fais autre chose sur mon brouillon et ensuite je reprends l'exercice compliqué. »",
+          "chinese": "我会在草稿纸上算点别的，然后再回过头来做那道难题。”"
+        },
+        {
+          "id": 9,
+          "start_time": "00:02:51.930",
+          "end_time": "00:03:19.620",
+          "french": "C'était intéressant, cette discussion, de découvrir leurs arguments tirés de leur propre expérience. Je pense que cette méthode marche, mais qu'elle doit être adaptée à chaque situation. Le livre parle d'ailleurs aussi de cette méthode pour les arts martiaux. J'y penserai quand j'apprendrai un nouvel enchaînement de kung-fu, ou pour l'écriture. Ça, je le confirme, mes textes de podcast ou mes articles de blog subissent tous un temps de repos.",
+          "chinese": "这次讨论很有意思，能听到她们基于自身经验提出的观点。我觉得这个方法是有效的，但必须根据具体情况进行调整。顺便说一下，那本书里也提到了这个方法在武术中的应用。以后我学习新的功夫套路，或者写作的时候，我会想到这个方法的。写作这一点我深有体会，我的播客文稿或博客文章在写完后，都会先搁置沉淀一段时间。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:19.830",
+          "end_time": "00:03:47.729",
+          "french": "Ça me fait penser que d'ailleurs, c'est toujours une bonne idée de réécouter les épisodes, si vous en avez l'occasion, car vous allez vous apercevoir que vous comprenez mieux qu'à la première écoute. Votre cerveau aura travaillé pour vous. Sur le flux du podcast, vous trouverez en permanence les 500 derniers épisodes. Si vous avez envie de vous limiter à l'année 2025, un e-book très sympa avec les textes,",
+          "chinese": "这也让我想到，如果有机会的话，把节目重新听一遍总是个好主意，因为你会发现自己比第一遍听时理解得更透彻了。你的大脑在不知不觉中已经为你做了功课。在播客的更新列表中，你随时可以找到最近的500期节目。如果你只想看2025年的内容，有一本非常棒的电子书，里面包含了文稿、"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:47.729",
+          "end_time": "00:04:11.909",
+          "french": "les notes culturelles et linguistiques ainsi que les fichiers audio est vendu 20 euros sur onethinginafrenchday.com. One Thing in a French Day, c'est fini pour aujourd'hui. Je vous souhaite à tous de passer un très bon week-end et je vous retrouve la semaine prochaine pour un nouvel épisode du podcast. À bientôt, au revoir.",
+          "chinese": "文化和语言注释以及音频文件，在onethinginafrenchday.com网站上售价20欧元。今天的《One Thing in a French Day》就到这里了。祝大家周末愉快，我们下周在新的播客节目中再见。回头见，再见。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:11.909",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 11,
+        "source_video_name": "Faut-il commencer par le plus difficile _ Réponses de Lisa et Micaela  (Hard Start Method, Real Life).json",
+        "tags": [
+          "艺术人文",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

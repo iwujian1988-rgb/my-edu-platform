@@ -1,0 +1,606 @@
+{
+  "source_file": "Rediffusion - La terre aux mille et un châteaux (The land of a thousand and one castles).json",
+  "channel": "Louis法语课",
+  "video_name": "Rediffusion - La terre aux mille et un châteaux (The land of a thousand and one castles)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T23:30:05.786Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "以-eau结尾名词的复数形式",
+          "数量比较副词 autant (de)",
+          "时间状语从句中的将来时"
+        ],
+        "speaking": [
+          "能够描述历史建筑和文化遗产",
+          "能够表达个人爱好与激情（amateur de...）"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "château",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʃato]",
+            "chinese": "城堡",
+            "example_sentence": {
+              "french": "Attention, un château, regardez bien l'orthographe.",
+              "chinese": "注意，“一个城堡”，仔细看拼写。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "La terre aux mille et un châteaux.",
+                "chinese": "千堡之地。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "château fort",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʃato fɔʁ]",
+            "chinese": "防御性城堡/要塞",
+            "example_sentence": {
+              "french": "Ça, c'est un château du Moyen Âge. Un château fort.",
+              "chinese": "这是一种中世纪的城堡。一个防御性城堡。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "On peut parler d'un château fort.",
+                "chinese": "我们可以说“一个防御性城堡”。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "Moyen Âge",
+            "part_of_speech": "nom masculin",
+            "ipa": "[mwajɛnɑʒ]",
+            "chinese": "中世纪",
+            "example_sentence": {
+              "french": "Ça, c'est un château du Moyen Âge.",
+              "chinese": "这是一种中世纪的城堡。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça, c'est un château du Moyen Âge.",
+                "chinese": "这是一种中世纪的城堡。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "amateur",
+            "part_of_speech": "nom masculin",
+            "ipa": "[amatœʁ]",
+            "chinese": "爱好者",
+            "example_sentence": {
+              "french": "C'est un paradis pour les amateurs de vieilles pierres.",
+              "chinese": "这里是古建筑爱好者的天堂。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5,
+              6
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Pour les amateurs, pour ceux qui aiment, qui ont une passion.",
+                "chinese": "对于爱好者，对于那些热爱、有激情的人来说。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "vieilles pierres",
+            "part_of_speech": "nom féminin pluriel",
+            "ipa": "[vjɛj pjɛʁ]",
+            "chinese": "古建筑/古石（字面：古老的石头）",
+            "example_sentence": {
+              "french": "Quand on dit que quelqu'un aime les vieilles pierres, c'est qu'il aime les vieux bâtiments.",
+              "chinese": "当人们说某人喜欢“古石”时，意思是他喜欢古老的建筑。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5,
+              6
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Un paradis pour les amateurs de vieilles pierres.",
+                "chinese": "古建筑爱好者的天堂。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "orthographe",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɔʁtɔɡʁaf]",
+            "chinese": "拼写",
+            "example_sentence": {
+              "french": "Regardez bien l'orthographe.",
+              "chinese": "仔细看拼写。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Regardez bien l'orthographe.",
+                "chinese": "仔细看拼写。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "pluriel",
+            "part_of_speech": "nom masculin",
+            "ipa": "[plyʁijɛl]",
+            "chinese": "复数",
+            "example_sentence": {
+              "french": "Et vous verrez qu'au pluriel, il faut un « x » à la fin.",
+              "chinese": "你会看到在复数形式中，结尾需要加一个“x”。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et vous verrez qu'au pluriel, il faut un « x » à la fin.",
+                "chinese": "你会看到在复数形式中，结尾需要加一个“x”。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "autant",
+            "part_of_speech": "adverbe",
+            "ipa": "[otɑ̃]",
+            "chinese": "同样多",
+            "example_sentence": {
+              "french": "Il y a mille châteaux et presque autant d'églises.",
+              "chinese": "这里有一千座城堡，几乎同样多的教堂。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              4,
+              6
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Presque autant d'églises.",
+                "chinese": "几乎同样多的教堂。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "sud-ouest",
+            "part_of_speech": "nom masculin",
+            "ipa": "[sydwɛst]",
+            "chinese": "西南部",
+            "example_sentence": {
+              "french": "La région du Périgord se trouve dans le sud-ouest de la France.",
+              "chinese": "佩里戈尔地区位于法国西南部。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              4,
+              6
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Dans le sud-ouest de la France.",
+                "chinese": "在法国西南部。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          },
+          {
+            "french": "paradis",
+            "part_of_speech": "nom masculin",
+            "ipa": "[paʁadi]",
+            "chinese": "天堂",
+            "example_sentence": {
+              "french": "Pensez-vous aller au paradis quand vous serez mort ?",
+              "chinese": "你认为你死后会去天堂吗？"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              4,
+              5,
+              6
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "La région du Périgord est un paradis.",
+                "chinese": "佩里戈尔地区是一个天堂。",
+                "source_video": "La terre aux mille et un châteaux"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "La terre aux mille et un châteaux",
+            "meaning": "千堡之地（字面：拥有一千零一座城堡的土地）",
+            "example": {
+              "french": "Aujourd'hui la leçon est « La terre aux mille et un châteaux ».",
+              "chinese": "今天的课程主题是“千堡之地”。"
+            },
+            "usage_note": "常用于旅游宣传，形容某地历史遗迹极其丰富。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "amateurs de vieilles pierres",
+            "meaning": "古建筑爱好者",
+            "example": {
+              "french": "C'est un paradis pour les amateurs de vieilles pierres.",
+              "chinese": "这里是古建筑爱好者的天堂。"
+            },
+            "usage_note": "“Vieilles pierres”是一个固定搭配，特指具有历史价值的古老建筑或遗迹。",
+            "source_ids": [
+              2,
+              5,
+              6
+            ]
+          },
+          {
+            "expression": "c'est que...",
+            "meaning": "意思是... / 是因为...",
+            "example": {
+              "french": "Quand on dit que quelqu'un aime les vieilles pierres, c'est qu'il aime les vieux bâtiments.",
+              "chinese": "当人们说某人喜欢古石时，意思是他喜欢古老的建筑。"
+            },
+            "usage_note": "用于解释前面的陈述或给出理由。",
+            "source_ids": [
+              6
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "以-eau结尾名词的复数形式",
+            "structure": "-eau -> -eaux",
+            "explanation": "在法语中，绝大多数以-eau结尾的名词在变复数时，不是加-s，而是加-x。",
+            "example": {
+              "french": "Un château -> des châteaux.",
+              "chinese": "一座城堡 -> 许多城堡。"
+            },
+            "usage_note": "注意发音不变，[o]音保持一致。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "数量比较副词 autant (de)",
+            "structure": "autant de + nom + que",
+            "explanation": "用于表示数量上的相等。在本课中，省略了que引导的比较对象，因为语境已经明确。",
+            "example": {
+              "french": "Avec mille châteaux et presque autant d'églises.",
+              "chinese": "拥有一千座城堡和几乎同样数量的教堂。"
+            },
+            "usage_note": "注意autant后面接名词时必须加介词de。",
+            "source_ids": [
+              2,
+              4
+            ]
+          },
+          {
+            "name": "时间状语从句中的将来时",
+            "structure": "quand + futur simple",
+            "explanation": "在法语中，如果主句动作发生在将来，由quand引导的时间状语从句通常也要使用将来时（而在英语或汉语中常使用现在时）。",
+            "example": {
+              "french": "Pensez-vous aller au paradis quand vous serez mort ?",
+              "chinese": "你认为你死后（将来）会去天堂吗？"
+            },
+            "usage_note": "这里的“serez mort”是être的将来时配合过去分词，构成先将来时或表达状态。",
+            "source_ids": [
+              5
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ʃ]",
+              "description": "清辅音，类似汉语拼音的sh，但在法语中嘴唇更圆更突出。",
+              "examples": [
+                "château",
+                "château fort"
+              ]
+            },
+            {
+              "sound": "[o]",
+              "description": "受-eau结尾影响的闭口音o。",
+              "examples": [
+                "château",
+                "châteaux"
+              ]
+            }
+          ],
+          "liaison": [
+            "mille_et_un [mil e œ̃]",
+            "vieux_amateurs (potential) [vjøzamatœʁ]",
+            "quand_on [kɑ̃tɔ̃]"
+          ],
+          "intonation": "在列举“mille châteaux et presque autant d'églises”时，语调在châteaux处上扬，在églises处下降。"
+        },
+        "vocabulary_network": {
+          "theme": "Patrimoine et Architecture",
+          "core_word": "Bâtiment",
+          "related_groups": [
+            {
+              "category": "Types de monuments",
+              "words": [
+                "château",
+                "château fort",
+                "église",
+                "monument"
+              ]
+            },
+            {
+              "category": "Histoire",
+              "words": [
+                "Moyen Âge",
+                "vieilles pierres",
+                "ancien"
+              ]
+            },
+            {
+              "category": "Localisation",
+              "words": [
+                "sud-ouest",
+                "région",
+                "Périgord"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Avec ___ ___ et ___ ___ d'églises, la région du ___, dans le ___ de la France, est un ___ pour les ___ de ___ ___.",
+            "answer": "mille, châteaux, presque, autant, Périgord, sud-ouest, paradis, amateurs, vieilles, pierres",
+            "explanation": "根据原文第2句和第6句，这里描述了佩里戈尔地区的特征：拥有1000座城堡和几乎同样多的教堂，是古建筑爱好者的天堂。",
+            "source_ids": [
+              2,
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Qu'est-ce qu'un « château fort » selon les explications du texte ?",
+            "options": {
+              "A": "Une église très ancienne.",
+              "B": "Un château du Moyen Âge.",
+              "C": "Un bâtiment moderne dans le sud-ouest.",
+              "D": "Une pierre utilisée pour la construction."
+            },
+            "answer": "B",
+            "explanation": "原文第3条字幕明确指出：'Ça, c'est un château du Moyen Âge. Un château fort.'",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Pensez-vous aller au paradis quand vous serez mort ?",
+            "answer": "你认为你死后会去天堂吗？",
+            "explanation": "这句话测试了对'paradis'（天堂）的理解以及'quand'引导的时间状语从句中将来时的翻译。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Mettez la phrase suivante au pluriel en faisant attention à l'orthographe : « Le château est un vieux bâtiment. »",
+            "answer": "Les châteaux sont des vieux bâtiments.",
+            "explanation": "根据第3条字幕，'château'的复数形式需要加'x'（châteaux）。同时，定冠词le变为les，动词est变为sont，un vieux bâtiment变为des vieux bâtiments。",
+            "source_ids": [
+              3,
+              6
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "château",
+            "Périgord",
+            "sud-ouest",
+            "paradis",
+            "amateurs",
+            "vieilles pierres",
+            "autant",
+            "château fort"
+          ],
+          "covered_grammar": [
+            "以-eau结尾名词的复数形式",
+            "时间状语从句中的将来时",
+            "数量比较副词autant"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "La région de [Nom], dans le [Direction] de la France, est un paradis pour [Groupe].",
+            "explanation": "用于介绍一个地区的地理位置及其对特定人群的吸引力。",
+            "example": {
+              "french": "La région de la Bretagne, dans le nord-ouest de la France, est un paradis pour les marins.",
+              "chinese": "布列塔尼地区位于法国西北部，是水手们的天堂。"
+            }
+          },
+          {
+            "pattern": "Quand on dit que [Sujet] [Verbe], c'est qu'il [Explication].",
+            "explanation": "用于解释某种表达方式或行为的深层含义。",
+            "example": {
+              "french": "Quand on dit qu'il a un cœur d'or, c'est qu'il est très généreux.",
+              "chinese": "当人们说他有一颗金子般的心时，意思是他非常慷慨。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在向一位朋友介绍法国的旅游胜地佩里戈尔（Périgord）。",
+          "requirements": "使用词汇 'château', 'Moyen Âge', 'amateur' 和 'vieilles pierres'。",
+          "starter": "Tu sais, le Périgord est une région magnifique..."
+        }
+      },
+      "summary": {
+        "content": "本课介绍了法国西南部的佩里戈尔（Périgord）地区，该地区以其密集的历史建筑闻名，被称为“千堡之地”。课程重点讲解了“château”及其复数形式的拼写，解释了“château fort”（防御性城堡）与中世纪的关系，并探讨了“amateurs de vieilles pierres”（古建筑爱好者）这一表达。此外，还通过例句接触了时间状语从句中的将来时用法。",
+        "keywords": [
+          "Périgord",
+          "Châteaux",
+          "Moyen Âge",
+          "Patrimoine",
+          "Sud-ouest"
+        ],
+        "difficulty_note": "文本语法结构适中，但包含较多关于文化遗产的专有名词和固定表达，适合A2末期到B1初期的学习者。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:03:30"
+        },
+        "theme": "La terre aux mille et un châteaux (Le Périgord)",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.659",
+          "end_time": "00:01:03.179",
+          "french": "Bonjour, aujourd'hui la leçon est « La terre aux mille et un châteaux ». Avec mille châteaux et presque autant d'églises, la région du Périgord, dans le sud-ouest de la France, est un paradis pour les amateurs de vieilles pierres. Once again, avec mille châteaux et presque autant d'églises, la région du Périgord, dans le sud-ouest de la France, est un paradis pour les amateurs de vieilles pierres.",
+          "chinese": "大家好，今天的课程是《千堡之乡》。佩里戈尔地区位于法国西南部，拥有上千座城堡和几乎同样数量的教堂，是古建筑爱好者的天堂。再说一遍：佩里戈尔地区位于法国西南部，拥有上千座城堡和几乎同样数量的教堂，是古建筑爱好者的天堂。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:03.700",
+          "end_time": "00:01:29.670",
+          "french": "On commence avec « avec mille châteaux ». « With a thousand castles ». « Avec mille châteaux ». Attention, « un château », regardez bien l'orthographe. Et vous verrez qu'au pluriel, il faut un « x » à la fin. On peut parler d'un château fort. Ça, c'est un château du Moyen Âge. Un château fort.",
+          "chinese": "我们从“avec mille châteaux”开始。“With a thousand castles”（拥有上千座城堡）。“Avec mille châteaux”。注意“un château”，仔细看拼写。你会发现它的复数形式末尾要加“x”。我们也可以说“un château fort”。那是中世纪的城堡。防御性城堡。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:30.230",
+          "end_time": "00:02:03.049",
+          "french": "Donc, il y a mille châteaux et presque autant d'églises. Presque, almost, presque autant. Almost as many d'églises, churches, les églises. La région du Périgord, c'est le nom de cette région qui se trouve dans le sud-ouest de la France. Southwestern, le sud-ouest, est un paradis. I-S à la fin, a paradise. Exemple :",
+          "chinese": "所以，这里有上千座城堡和几乎同样数量的教堂。“Presque”，almost，几乎。“Presque autant”，几乎同样多。“Almost as many d'églises”，教堂，les églises。佩里戈尔地区是位于法国西南部的一个地区名称。“Southwestern”，西南部，“est un paradis”，是一个天堂。末尾是 I-S，a paradise。例如："
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:03.219",
+          "end_time": "00:02:32.680",
+          "french": "Pensez-vous aller au paradis quand vous serez mort ? Un paradis pour les amateurs de vieilles pierres. Pour les amateurs, pour ceux qui aiment, qui ont une passion. Les amateurs, lovers, de vieilles pierres. Ancient stones, les vieilles pierres.",
+          "chinese": "“你认为自己死后会进天堂吗？”古建筑爱好者的天堂。“Pour les amateurs”，给那些喜爱、有热情的人。“Les amateurs”，lovers（爱好者），“de vieilles pierres”。“Ancient stones”，古老的石头（古建筑）。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:33.210",
+          "end_time": "00:02:57.800",
+          "french": "Quand on dit que quelqu'un aime les vieilles pierres, c'est qu'il aime les vieux bâtiments, les vieux monuments. Avec mille châteaux et presque autant d'églises, la région du Périgord, dans le sud-ouest de la France, est un paradis pour les amateurs de vieilles pierres.",
+          "chinese": "当我们说某人喜欢“vieilles pierres”时，意思是他喜欢古老的建筑和古迹。佩里戈尔地区位于法国西南部，拥有上千座城堡和几乎同样数量的教堂，是古建筑爱好者的天堂。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:03:00.310",
+          "end_time": "00:03:30.150",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:03:30.150",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 7,
+        "source_video_name": "Rediffusion - La terre aux mille et un châteaux (The land of a thousand and one castles).json",
+        "tags": [
+          "旅行",
+          "地理"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

@@ -1,0 +1,727 @@
+{
+  "source_file": "Promenade inattendue dans le 11e (Paris Local Discoveries).json",
+  "channel": "法国日常一件事",
+  "video_name": "十一区的不期漫步（巴黎本地发现）",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:48:55.001Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 15,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le Plus-que-parfait (Past Perfect)",
+          "Le pronom relatif 'dont'",
+          "Le discours indirect au passé"
+        ],
+        "speaking": [
+          "Raconter une promenade ou une anecdote inattendue au passé.",
+          "Décrire des objets insolites ou des scènes surprenantes dans un contexte urbain."
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "flâner",
+            "part_of_speech": "verbe",
+            "ipa": "[flane]",
+            "chinese": "闲逛，漫步",
+            "example_sentence": {
+              "french": "À Paris, on peut se promener, on peut flâner et on peut faire des rencontres.",
+              "chinese": "在巴黎，人们可以漫步街头，悠闲地闲逛，还能结识新朋友。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "À Paris, on peut se promener, on peut flâner et on peut faire des rencontres.",
+                "chinese": "在巴黎，人们可以漫步街头，悠闲地闲逛，还能结识新朋友。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "mêler",
+            "part_of_speech": "verbe",
+            "ipa": "[mɛle]",
+            "chinese": "混合，融合",
+            "example_sentence": {
+              "french": "Certains quartiers de Paris mêlent vie locale et histoire.",
+              "chinese": "巴黎的一些街区融合了本地生活与历史。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Certains quartiers de Paris, quand ils mêlent vie locale, vie commerçante et histoire...",
+                "chinese": "巴黎的一些街区，尤其是当它们融合了本地生活、商业氛围与悠久历史时...",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "propice",
+            "part_of_speech": "adjectif",
+            "ipa": "[pʁɔpis]",
+            "chinese": "有利的，适合的",
+            "example_sentence": {
+              "french": "Ces quartiers sont particulièrement propices à ces belles promenades.",
+              "chinese": "这些街区特别适合进行这样美妙的漫步之旅。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "sont particulièrement propices à ces belles promenades.",
+                "chinese": "特别适合进行这样美妙的漫步之旅。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "inattendu",
+            "part_of_speech": "adjectif",
+            "ipa": "[inatɑ̃dy]",
+            "chinese": "意想不到的，意外的",
+            "example_sentence": {
+              "french": "C'était déjà inattendu comme vision.",
+              "chinese": "这一幕本身便已出人意料。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "C'était déjà inattendu comme vision.",
+                "chinese": "这一幕本身便已出人意料。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "émerger",
+            "part_of_speech": "verbe",
+            "ipa": "[emɛʁʒe]",
+            "chinese": "浮现，显露",
+            "example_sentence": {
+              "french": "Le génie de la Bastille semblait émerger des toits.",
+              "chinese": "巴士底狱的精灵雕像仿佛从屋顶上冉冉升起一般。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "le génie de la Bastille qui semblait émerger des toits.",
+                "chinese": "巴士底狱的雄伟壮观，它仿佛从屋顶上冉冉升起一般。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "intriguer",
+            "part_of_speech": "verbe",
+            "ipa": "[ɛ̃tʁiɡe]",
+            "chinese": "引起好奇心，使困惑",
+            "example_sentence": {
+              "french": "Intriguées, nous nous approchons.",
+              "chinese": "我们好奇地走近了。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Intriguées, nous nous approchons.",
+                "chinese": "我们好奇地走近了。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "claquettes",
+            "part_of_speech": "nom féminin pluriel",
+            "ipa": "[klakɛt]",
+            "chinese": "踢踏舞",
+            "example_sentence": {
+              "french": "La boutique était en fait un cours de claquettes.",
+              "chinese": "这家店铺竟是一个踢踏舞教室！"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "des femmes en leggings [...] faisaient des claquettes.",
+                "chinese": "几位女士正穿着紧身裤 [...] 跳着踢踏舞。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "poupon",
+            "part_of_speech": "nom masculin",
+            "ipa": "[pupɔ̃]",
+            "chinese": "婴儿娃娃，塑料娃娃",
+            "example_sentence": {
+              "french": "Il y avait des compositions à partir de petits poupons en plastique.",
+              "chinese": "橱窗里陈列着一些由小塑料娃娃组成的装置作品。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il y avait des compositions à partir de petits poupons en plastique",
+                "chinese": "橱窗里陈列着一些由小塑料娃娃组成的装置作品",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "boulon",
+            "part_of_speech": "nom masculin",
+            "ipa": "[bulɔ̃]",
+            "chinese": "螺栓",
+            "example_sentence": {
+              "french": "Dans lesquels avaient été plantés ou collés des boulons.",
+              "chinese": "这些娃娃身上插着或粘着螺栓。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "dans lesquels avaient été plantés ou collés des boulons",
+                "chinese": "这些娃娃身上插着或粘着螺栓",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "trombone",
+            "part_of_speech": "nom masculin",
+            "ipa": "[tʁɔ̃bɔn]",
+            "chinese": "回形针",
+            "example_sentence": {
+              "french": "Il y avait des boulons, des trombones, des petites pinces à linge.",
+              "chinese": "有螺栓、回形针、小衣夹。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "des boulons, des trombones, des petites pinces à linge",
+                "chinese": "螺栓、回形针、小衣夹",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "escrime",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛskʁim]",
+            "chinese": "击剑",
+            "example_sentence": {
+              "french": "Le mur était décoré de femmes en tenue d'escrime.",
+              "chinese": "墙上绘有穿着击剑服的女子图案。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "dont le mur était décoré de femmes en tenue d'escrime de l'époque",
+                "chinese": "墙上绘有当时击剑女子图案",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "orner",
+            "part_of_speech": "verbe",
+            "ipa": "[ɔʁne]",
+            "chinese": "装饰，点缀",
+            "example_sentence": {
+              "french": "J'ai acheté des crayons à papier jaunes ornés de phrases rigolotes.",
+              "chinese": "我买下了那些印有有趣短句的黄色铅笔。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "les crayons à papier jaunes ornés de phrases rigolotes en anglais.",
+                "chinese": "那些印有有趣英文短句的黄色铅笔。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "accessible",
+            "part_of_speech": "adjectif",
+            "ipa": "[aksɛsibl]",
+            "chinese": "易于获得的，亲民的",
+            "example_sentence": {
+              "french": "Il avait envie de vendre de l'art par des objets accessibles.",
+              "chinese": "他希望能通过亲民的日常用品来销售艺术。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "vendre de l'art autrement par des objets accessibles comme ces crayons.",
+                "chinese": "以更亲民的方式推广艺术，比如通过像这些铅笔这样的日常用品。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "jarret",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʒaʁɛ]",
+            "chinese": "（猪、牛等的）蹄膀，肘子",
+            "example_sentence": {
+              "french": "Nous avons mangé un petit jarret de porc.",
+              "chinese": "我们享用了一小块猪肘。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Une soupe au butternut et un petit jarret de porc plus tard",
+                "chinese": "喝完一碗奶油南瓜浓汤，再享用了一小块猪肘后",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "filer",
+            "part_of_speech": "verbe",
+            "ipa": "[file]",
+            "chinese": "溜走，赶紧离开",
+            "example_sentence": {
+              "french": "Il était temps pour nous de filer.",
+              "chinese": "我们该启程（赶紧走）了。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "il était temps pour nous de filer, à 10 minutes à pied de là",
+                "chinese": "我们就该启程了——从这里步行10分钟",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "être à peine remis(e) de",
+            "meaning": "刚从……中缓过神来，勉强恢复",
+            "example": {
+              "french": "Nous étions à peine remises de notre surprise que nous nous retrouvons devant une galerie.",
+              "chinese": "我们刚从惊讶中回过神来，便又来到了一家画廊前。"
+            },
+            "usage_note": "Utilisé pour exprimer qu'une action suit immédiatement un état de choc ou d'émotion forte. Souvent suivi de 'que' pour introduire l'action suivante.",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "donner une autre dimension à",
+            "meaning": "赋予……另一层意义，使……更上一层楼",
+            "example": {
+              "french": "Abonnez-vous pour donner une autre dimension à l'expérience podcast.",
+              "chinese": "订阅以让播客体验更上一层楼。"
+            },
+            "usage_note": "Expression figurée signifiant enrichir ou approfondir une expérience ou un concept.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "trouver un arrangement",
+            "meaning": "达成协议，找到解决办法",
+            "example": {
+              "french": "Il avait trouvé un arrangement avec un ami à lui afin de distribuer sa collection.",
+              "chinese": "他与一位朋友达成了一项协议，以便分销他的藏品。"
+            },
+            "usage_note": "Très courant dans le langage professionnel ou quotidien pour indiquer un compromis ou une solution pratique entre deux parties.",
+            "source_ids": [
+              10
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le Plus-que-parfait (Past Perfect)",
+            "structure": "Sujet + auxiliaire (avoir/être) à l'imparfait + participe passé",
+            "explanation": "Le plus-que-parfait est utilisé pour exprimer une action passée qui s'est déroulée AVANT une autre action passée. Dans ce texte, la narratrice raconte sa promenade au passé (passé composé/imparfait) et utilise le plus-que-parfait pour décrire ce qui s'était passé avant le début de la promenade ou avant le moment précis raconté.",
+            "example": {
+              "french": "Nous étions arrivées en avance pour notre déjeuner, la R5 jaune électrique était garée rue Sedaine...",
+              "chinese": "我们提前到达，准备吃午饭时，那辆亮黄色的R5（已经）停在塞丹街上……"
+            },
+            "usage_note": "Faites attention à l'accord du participe passé avec l'auxiliaire 'être' (ex: 'arrivées' s'accorde avec 'Nous' féminin pluriel).",
+            "source_ids": [
+              4,
+              5,
+              7
+            ]
+          },
+          {
+            "name": "Le pronom relatif 'dont'",
+            "structure": "Nom antécédent + dont + sujet + verbe (qui demande la préposition 'de')",
+            "explanation": "Le pronom relatif 'dont' remplace un complément introduit par la préposition 'de'. Il est très utilisé avec des verbes comme 'parler de', 'avoir envie de', 'avoir besoin de', ou pour exprimer la possession.",
+            "example": {
+              "french": "Nous étions passées aussi devant la pâtisserie Nanan dont j'avais beaucoup entendu parler.",
+              "chinese": "我们还经过了娜南糕点店，这家店我早就听人说起过（entendre parler DE la pâtisserie）。"
+            },
+            "usage_note": "Dans le texte, on trouve aussi 'l'artiste écossais dont je venais d'acheter les crayons' (acheter les crayons DE l'artiste).",
+            "source_ids": [
+              5,
+              8,
+              9
+            ]
+          },
+          {
+            "name": "Le discours indirect au passé",
+            "structure": "Verbe introducteur au passé (ex: a expliqué) + que + verbe de la subordonnée avec concordance des temps (ex: imparfait)",
+            "explanation": "Quand on rapporte les paroles de quelqu'un dans le passé, le présent du discours direct devient de l'imparfait dans le discours indirect.",
+            "example": {
+              "french": "Elle nous a expliqué que c'était un artiste contemporain qui avait du succès...",
+              "chinese": "她告诉我们，这位艺术家是一位颇受欢迎的当代艺术家……"
+            },
+            "usage_note": "Discours direct : 'C'est un artiste qui a du succès'. Discours indirect : 'Elle a expliqué que c'était un artiste qui avait du succès'.",
+            "source_ids": [
+              9
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "/ɑ̃/ vs /ɛ̃/",
+              "description": "Contraste entre les voyelles nasales très présentes dans les noms propres et le vocabulaire parisien du texte.",
+              "examples": [
+                "arrondissement (/ɑ̃/)",
+                "Sedaine (/ɛ̃/)",
+                "Nanan (/ɑ̃/)"
+              ]
+            }
+          ],
+          "liaison": [
+            "nous_étions (liaison en [z])",
+            "un_arrangement (liaison en [n])",
+            "des objets_accessibles (liaison en [z])"
+          ],
+          "intonation": "L'intonation narrative : la voix monte à la fin des propositions inachevées pour maintenir le suspense (ex: 'Intriguées, nous nous approchons ↗') et descend à la fin des phrases déclaratives."
+        },
+        "vocabulary_network": {
+          "theme": "La flânerie urbaine et les découvertes",
+          "core_word": "Promenade",
+          "related_groups": [
+            {
+              "category": "Actions",
+              "words": [
+                "flâner",
+                "se balader",
+                "filer",
+                "s'approcher"
+              ]
+            },
+            {
+              "category": "Surprise & Découverte",
+              "words": [
+                "inattendu",
+                "intriguer",
+                "attirer",
+                "émerger"
+              ]
+            },
+            {
+              "category": "Objets insolites",
+              "words": [
+                "poupon",
+                "boulon",
+                "trombone",
+                "claquettes"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Certains ___ de Paris, quand ils ___ vie locale, vie ___ et histoire, sont particulièrement ___ à ces belles ___.",
+            "answer": "quartiers, mêlent, commerçante, propices, promenades",
+            "explanation": "根据原文第2段，巴黎的一些街区融合了本地生活、商业氛围与历史，特别适合漫步。填入的词汇分别是：quartiers (街区), mêlent (融合), commerçante (商业的), propices (适合的), promenades (漫步)。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, pourquoi l'artiste écossais a-t-il trouvé un arrangement avec un ami aux Pays-Bas ?",
+            "options": {
+              "A": "Pour ouvrir une nouvelle galerie d'art contemporain à Paris.",
+              "B": "Afin de distribuer sa collection en Europe depuis le Brexit.",
+              "C": "Pour apprendre à fabriquer des objets accessibles comme des crayons.",
+              "D": "Parce qu'il voulait vendre des bijoux dans la boutique de la dame."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文明确指出：'Depuis le Brexit, il avait trouvé un arrangement avec un ami à lui qui était aux Pays-Bas afin de distribuer sa collection en Europe' (自英国脱欧以来，他与一位在荷兰的朋友达成了一项协议，以便将他的藏品分销到欧洲各地)。",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Nous étions à peine remises de notre surprise que nous nous retrouvons quelques pas plus loin devant la vitrine d'une galerie.",
+            "answer": "我们刚从惊讶中回过神来，便又往前走了几步，来到了一家画廊的橱窗前。",
+            "explanation": "翻译难点在于固定搭配 'être à peine remis(e) de... que...'，意为“刚从……中恢复过来，就……”。'remises' 配合主语 'Nous' (全为女性) 进行了性数配合。'quelques pas plus loin' 译为“往前走了几步”或“几步之外”。",
+            "source_ids": [
+              7
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Combinez ces deux phrases en une seule en utilisant le pronom relatif approprié (qui, que, dont, où) : 'Nous sommes passées devant la pâtisserie Nanan. J'avais beaucoup entendu parler de cette pâtisserie.'",
+            "answer": "Nous sommes passées devant la pâtisserie Nanan dont j'avais beaucoup entendu parler.",
+            "explanation": "这里考察关系代词 'dont' 的用法。第二句中的动词短语是 'entendre parler DE quelque chose'。因为先行词 'la pâtisserie Nanan' 在从句中作由 'de' 引导的间接宾语，所以必须使用关系代词 'dont' 来连接两句话。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "mêler",
+            "propice"
+          ],
+          "covered_grammar": [
+            "Le pronom relatif 'dont'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est le cas de + [Nom]",
+            "explanation": "用于举例说明前面提到的情况，意为“……就是这样一个例子”或“……正是如此”。",
+            "example": {
+              "french": "Certains quartiers sont propices aux promenades. C'est le cas du 11e arrondissement.",
+              "chinese": "一些街区很适合漫步。第11区就是这样一个例子。"
+            }
+          },
+          {
+            "pattern": "Il est temps de + [Infinitif]",
+            "explanation": "表示“是时候做某事了”，常用于转换话题或结束某个动作准备进行下一个动作。",
+            "example": {
+              "french": "Enfin, il était temps d'aller déjeuner.",
+              "chinese": "终于，该去吃午饭了。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous vous promenez dans un quartier inconnu de votre ville et vous découvrez une boutique très étrange. Vous envoyez un message vocal à un(e) ami(e) pour lui raconter cette découverte inattendue.",
+          "requirements": "Utilisez le vocabulaire de la surprise (inattendu, intriguer), le plus-que-parfait pour le contexte, et le pronom relatif 'dont'.",
+          "starter": "Salut ! Je dois absolument te raconter ce qui m'est arrivé. Je me baladais dans le quartier dont tu m'avais parlé, quand soudain..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia raconte une flânerie inattendue dans le 11e arrondissement de Paris avec son amie Pauline. Au gré de leur promenade, elles font des découvertes surprenantes : un cours de claquettes caché dans une boutique, une vitrine exposant de l'art vaudou moderne avec des poupons et des boulons, et une rencontre avec une commerçante vendant des objets d'un artiste écossais. Le récit illustre parfaitement le charme des rues parisiennes où se mêlent vie locale, art et commerce.",
+        "keywords": [
+          "flânerie",
+          "11e arrondissement",
+          "découverte",
+          "art contemporain",
+          "claquettes"
+        ],
+        "difficulty_note": "Le texte est de niveau B1/B2. La difficulté principale réside dans l'utilisation des temps du passé (alternance imparfait, passé composé, plus-que-parfait) pour la narration, ainsi que dans le vocabulaire descriptif spécifique (objets, art, danse)."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:04:38.790"
+        },
+        "theme": "Flânerie et découvertes urbaines à Paris",
+        "cefr_level": "B1",
+        "vocabulary_count": 15,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:22.769",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, lundi 23 février 2026, cet épisode, le numéro 2600, s'intitule « La promenade inattendue dans le 11e ».",
+          "chinese": "大家好，我是来自巴黎《One Thing in a French Day》播客的Laetitia。希望你们一切都好，心情愉快。今天，2026年2月23日星期一，本期第2600集节目的标题是《在巴黎十一区的意外漫步》。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:22.769",
+          "end_time": "00:00:51.659",
+          "french": "À Paris, on peut se promener, on peut flâner et on peut faire des rencontres. Certains quartiers de Paris, quand ils mêlent vie locale, vie commerçante et histoire, sont particulièrement propices à ces belles promenades. C'est le cas du 11e arrondissement de Paris, qui est un quartier très vivant. C'est un quartier avec des habitants, mais aussi des rues commerçantes, des petites boutiques, des gens qui travaillent, des galeries d'art et des passages historiques à visiter.",
+          "chinese": "在巴黎，你可以散步、闲逛，还会遇到各种各样的人。巴黎的某些街区，当它们将当地生活、商业气息和历史交织在一起时，就特别适合这种美妙的漫步。巴黎的十一区就是如此，这是一个非常充满活力的街区。这里不仅有常住居民，还有商业街、小精品店、上班族、艺术画廊，以及值得一游的历史拱廊街。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.149",
+          "end_time": "00:01:11.500",
+          "french": "Dans la lettre qui accompagne cet épisode, bien sûr, il y aura des repères culturels, adresses, photos, mais nous remarquerons aussi les verbes intéressants de cet épisode. N'hésitez pas à vous abonner pour donner une autre dimension à l'expérience podcast sur onethinginafrenchday.com.",
+          "chinese": "当然，在本期节目的配套通讯中，会提供文化背景、地址和照片，但我们也会关注本期节目中一些有趣的动词。欢迎在onethinginafrenchday.com上订阅，为您的播客体验增添新的维度。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:12.790",
+          "end_time": "00:01:42.379",
+          "french": "Donc, je suis allée dans le 11e il y a quelques jours avec Pauline, même si nous balader dans ce quartier n'était pas vraiment le plan au départ. Nous étions arrivées en avance pour notre déjeuner, la R5 jaune électrique était garée rue Sedaine, à 10 minutes à pied de la place des Vosges, où nous devions nous rendre ensuite. Nous étions en train de parler et la conversation nous emmenait d'une petite rue à l'autre, d'une vitrine à l'autre.",
+          "chinese": "几天前，我和Pauline去了十一区，尽管在这个街区闲逛并不是我们最初的计划。我们提前到了吃午饭的地方，那辆亮黄色的雷诺5停在塞丹街（rue Sedaine），距离我们之后要去的孚日广场（place des Vosges）只有10分钟的步行路程。聊着聊着，我们就不知不觉穿梭在一条条小街和一个个橱窗之间。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:42.379",
+          "end_time": "00:02:10.090",
+          "french": "On est arrivées rue Keller. Je me souviens que quelques instants auparavant, Pauline m'avait fait remarquer le génie de la Bastille qui semblait émerger des toits. Nous étions passées aussi devant la pâtisserie Nanan dont j'avais beaucoup entendu parler. Beaucoup d'adresses food sont dans le 11e. Donc là, rue Keller, je racontais à Pauline une anecdote quand nos oreilles sont attirées par une musique très rythmée.",
+          "chinese": "我们来到了凯勒街（rue Keller）。我记得就在刚才，Pauline还让我注意看巴士底广场的自由神像，它仿佛从屋顶上探出头来。我们还路过了我久仰大名的Nanan甜品店。十一区有很多美食好去处。当时在凯勒街，我正给Pauline讲着一件趣事，突然我们的耳朵被一阵非常有节奏的音乐吸引了。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:10.229",
+          "end_time": "00:02:38.789",
+          "french": "D'une petite boutique ouverte s'échappait le son musical d'un piano. Intriguées, nous nous approchons. Le joueur de piano était un monsieur d'un certain âge, vêtu d'un costume en satin blanc et d'un nœud papillon rose. C'était déjà inattendu comme vision. Mais derrière lui, des femmes en leggings, t-shirts de couleur et chaussures à talons faisaient des claquettes. La boutique était en fait un cours de claquettes.",
+          "chinese": "钢琴的旋律从一家敞开门的小店里传出。我们很好奇，便走上前去。弹钢琴的是一位上了年纪的先生，穿着白色的缎面西装，戴着粉色的领结。这画面已经够出人意料了。但在他身后，还有几位穿着紧身裤、彩色T恤和高跟鞋的女士在跳踢踏舞。原来这家小店是一个踢踏舞教室。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:39.900",
+          "end_time": "00:02:59.560",
+          "french": "Nous étions à peine remises de notre surprise que nous nous retrouvons quelques pas plus loin devant la vitrine d'une galerie. Il y avait des compositions à partir de petits poupons en plastique dans lesquels avaient été plantés ou collés des boulons, des trombones, des petites pinces à linge, une sorte de vaudou moderne.",
+          "chinese": "我们还没从惊讶中缓过神来，没走几步又来到了一家画廊的橱窗前。那里展示着一些用塑料小娃娃做成的艺术品，娃娃身上插着或粘着螺栓、回形针和小衣夹，就像是一种现代的巫毒娃娃。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:59.830",
+          "end_time": "00:03:13.379",
+          "french": "Non loin de là, en face d'une école dont le mur était décoré de femmes en tenue d'escrime de l'époque, nous sommes entrées dans une boutique qui vendait plein de petits objets et des bijoux.",
+          "chinese": "离那儿不远，在一所学校对面——学校的墙上装饰着穿着那个时代击剑服的女性图案——我们走进了一家卖各种小物件和首饰的商店。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:13.590",
+          "end_time": "00:03:39.650",
+          "french": "Nous y avons acheté des petits cadeaux. La dame qui tenait la boutique était sympa et elle nous a présenté l'artiste écossais dont je venais d'acheter les crayons à papier jaunes ornés de phrases rigolotes en anglais. Un cadeau pour Félicia. Elle nous a expliqué que c'était un artiste contemporain qui avait du succès mais qui avait aussi envie de vendre de l'art autrement par des objets accessibles comme ces crayons.",
+          "chinese": "我们在那里买了一些小礼物。店主女士很友善，她向我们介绍了一位苏格兰艺术家，我刚买的那些印着搞笑英文句子的黄色铅笔就是他的作品。这是给Félicia的礼物。她向我们解释说，这是一位很成功的当代艺术家，但他也想通过像这些铅笔一样平易近人的物品，以另一种方式来销售艺术。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:39.650",
+          "end_time": "00:03:54.250",
+          "french": "Depuis le Brexit, il avait trouvé un arrangement avec un ami à lui qui était aux Pays-Bas afin de distribuer sa collection en Europe et la dame était ravie de l'avoir dans sa boutique. Enfin, il était temps d'aller déjeuner.",
+          "chinese": "自从英国脱欧以来，他与一位在荷兰的朋友达成了合作，以便在欧洲分销他的作品系列，而这位女士也很高兴能在她的店里售卖这些作品。最后，到了该吃午饭的时间了。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:54.580",
+          "end_time": "00:04:18.920",
+          "french": "Nous nous sommes installées au Café de l'Industrie, là où Anne-Laure et moi étions allées déjeuner lorsque nous avions fait les épisodes sur les passages du 11e. Vous vous souvenez ? Une soupe au butternut et un petit jarret de porc plus tard, et il était temps pour nous de filer, à 10 minutes à pied de là, direction la place des Vosges. Nous avions rendez-vous avec VH.",
+          "chinese": "我们在工业咖啡馆（Café de l'Industrie）坐下，之前我和Anne-Laure做关于十一区拱廊街的节目时，就是在这里吃的午饭。你们还记得吗？喝完一碗奶油南瓜汤，吃完一份小猪肘后，我们该出发了，步行10分钟前往孚日广场。我们和VH有个约会。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:19.100",
+          "end_time": "00:04:38.790",
+          "french": "Une petite idée de qui est VH ? De toute façon, je vous révélerai tout dans le prochain épisode du podcast. One Thing in a French Day, c'est fini pour aujourd'hui. Je vous retrouve donc très vite pour un nouvel épisode. À bientôt, au revoir !",
+          "chinese": "猜到VH是谁了吗？不管怎样，我会在下一期播客节目中为大家揭晓一切。今天的《One Thing in a French Day》就到这里了。我们很快会在新一期节目中再见。回见，再见！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:38.790",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 12,
+        "source_video_name": "Promenade inattendue dans le 11e (Paris Local Discoveries).json",
+        "tags": [
+          "文化深度",
+          "纪录片"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

@@ -1,0 +1,998 @@
+{
+  "source_file": "E188 N'apprenez pas le français en 2026.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E188 N'apprenez pas le français en 2026",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T14:35:27.544Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le Subjonctif après les conjonctions de but",
+          "L'hypothèse avec le conditionnel",
+          "La Nominalisation"
+        ],
+        "speaking": [
+          "能够讨论人工智能对语言学习的影响",
+          "能够阐述“语言习得”与“语言学习”的区别"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "provocateur",
+            "part_of_speech": "adjectif",
+            "ipa": "[pʁɔvɔkatœʁ]",
+            "chinese": "挑衅性的，煽动性的",
+            "example_sentence": {
+              "french": "Pourquoi j'ai choisi ce titre provocateur ?",
+              "chinese": "为什么我选了这个颇具挑衅性的标题？"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Alors, vous vous demandez sûrement pourquoi j'ai choisi ce titre provocateur.",
+                "chinese": "那么，你一定在想，我为什么选了这个颇具挑衅性的标题。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "infaillible",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃fajibl]",
+            "chinese": "万无一失的，绝无错误的",
+            "example_sentence": {
+              "french": "Les traducteurs automatiques ne sont pas infaillibles.",
+              "chinese": "自动翻译并非万无一失。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et bien sûr, les traducteurs automatiques ne sont pas infaillibles, ils font encore des erreurs.",
+                "chinese": "当然，自动翻译并非万无一失，它们仍然会出错。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "corvée",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kɔʁve]",
+            "chinese": "苦差事，繁重的工作",
+            "example_sentence": {
+              "french": "Arrêtez de voir l'apprentissage comme une corvée.",
+              "chinese": "别再把学习看作是一项苦差事。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              18
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce que je veux dire, c'est d'arrêter de voir ça comme une corvée.",
+                "chinese": "我的意思是，别再把它当成一项苦差事。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "optimisation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɔptimizasjɔ̃]",
+            "chinese": "优化",
+            "example_sentence": {
+              "french": "On est devenu obsédé par l'optimisation.",
+              "chinese": "我们变得对优化产生了执念。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              23,
+              25
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le problème, c'est qu'on est devenu obsédé par l'optimisation.",
+                "chinese": "问题在于，我们已经对优化产生了执念。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "paradoxe",
+            "part_of_speech": "nom masculin",
+            "ipa": "[paʁadɔks]",
+            "chinese": "悖论，自相矛盾",
+            "example_sentence": {
+              "french": "Vous connaissez sûrement le fameux paradoxe du choix.",
+              "chinese": "你一定听说过著名的选择悖论。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              26
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Vous connaissez sûrement le fameux paradoxe du choix, un concept mis en évidence par Barry Schwartz.",
+                "chinese": "你一定听说过著名的“选择悖论”，这一概念由巴里·施瓦茨提出。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "intrinsèque",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃tʁɛ̃sɛk]",
+            "chinese": "内在的，固有的",
+            "example_sentence": {
+              "french": "La motivation intrinsèque est plus efficace.",
+              "chinese": "内在动机更加有效。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              39
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les études montrent aussi que la motivation intrinsèque est beaucoup plus efficace.",
+                "chinese": "研究还表明，内在动机更加有效。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "éponge",
+            "part_of_speech": "nom féminin",
+            "ipa": "[epɔ̃ʒ]",
+            "chinese": "海绵",
+            "example_sentence": {
+              "french": "Son cerveau absorbait tout comme une éponge.",
+              "chinese": "她的大脑像海绵一样吸收着一切。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              42
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Son cerveau absorbait tout le vocabulaire et la grammaire sans effort apparent, comme une éponge.",
+                "chinese": "她的大脑毫不费力地吸收着所有的词汇和语法，就像一块海绵一样。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "gratification",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɡʁatifikasjɔ̃]",
+            "chinese": "满足，奖励",
+            "example_sentence": {
+              "french": "À l'ère de la gratification immédiate, deux ans semblent une éternité.",
+              "chinese": "在即时满足的时代，两年似乎漫长得像一辈子。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              44
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Mais à l'ère de la gratification immédiate, deux ans, ça semble être une éternité.",
+                "chinese": "但在追求即时满足的时代，两年似乎漫长得像一辈子。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "prisme",
+            "part_of_speech": "nom masculin",
+            "ipa": "[pʁism]",
+            "chinese": "棱镜，视角",
+            "example_sentence": {
+              "french": "Percevoir le monde à travers un autre prisme linguistique.",
+              "chinese": "透过另一种语言的视角去感知世界。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              61
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cette capacité de percevoir le monde à travers un autre prisme linguistique.",
+                "chinese": "这种透过另一种语言的视角去感知世界的能力。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          },
+          {
+            "french": "lacune",
+            "part_of_speech": "nom féminin",
+            "ipa": "[lakyn]",
+            "chinese": "缺陷，空白，不足",
+            "example_sentence": {
+              "french": "Identifier nos lacunes dans notre connaissance de la langue.",
+              "chinese": "发现我们语言知识中的不足之处。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              48
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est en essayant de parler qu'on peut identifier nos lacunes dans notre connaissance de la langue.",
+                "chinese": "正是在尝试说话的过程中，我们才能发现自身语言知识中的不足之处。",
+                "source_video": "N'apprenez pas le français en 2026"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "couper l'herbe sous le pied",
+            "meaning": "抢先一步，使措手不及",
+            "example": {
+              "french": "Elisa m'a coupé l'herbe sous le pied.",
+              "chinese": "艾丽莎抢先了我一步。"
+            },
+            "usage_note": "比喻某人先于他人采取行动，从而破坏了对方的计划或使其处于不利地位。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "prendre le contre-pied",
+            "meaning": "反其道而行之",
+            "example": {
+              "french": "J'ai tout simplement décidé de prendre le contre-pied.",
+              "chinese": "我干脆决定反其道而行之。"
+            },
+            "usage_note": "指采取与流行观点或常规做法完全相反的态度或行动。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "expression": "se regarder dans le blanc des yeux",
+            "meaning": "面面相觑，盯着对方看",
+            "example": {
+              "french": "Vous vous regardez dans le blanc des yeux comme si vous attendiez.",
+              "chinese": "你们愣愣地盯着对方，仿佛在等待着什么。"
+            },
+            "usage_note": "常用于描述尴尬或紧张的对视场景。",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "expression": "c'est le jour et la nuit",
+            "meaning": "截然不同，天壤之别",
+            "example": {
+              "french": "Quand on compare aux traductions d'il y a 10 ans, c'est le jour et la nuit.",
+              "chinese": "与10年前的翻译相比，简直是天壤之别。"
+            },
+            "usage_note": "非常地道的表达，用于强调两个事物之间巨大的差异。",
+            "source_ids": [
+              13
+            ]
+          },
+          {
+            "expression": "se jeter à l'eau",
+            "meaning": "豁出去，大胆尝试",
+            "example": {
+              "french": "Il faut se jeter à l'eau pour apprendre une langue.",
+              "chinese": "学习语言必须大胆尝试（豁出去说）。"
+            },
+            "usage_note": "常用于鼓励某人克服恐惧，开始做某件困难的事情。",
+            "source_ids": [
+              46
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le Subjonctif après les conjonctions de but",
+            "structure": "Pour que / Afin que + sujet + verbe au subjonctif",
+            "explanation": "用于表达目的。当主句和从句的主语不一致时，必须使用虚拟语气。",
+            "example": {
+              "french": "Pour que l'input soit vraiment efficace, il faudrait comprendre entre 95 et 98% du contenu.",
+              "chinese": "为了使输入真正有效，理解的内容比例应达到95%到98%。"
+            },
+            "usage_note": "注意 'soit' 是 'être' 的虚拟语气现在时形式。",
+            "source_ids": [
+              34
+            ]
+          },
+          {
+            "name": "L'hypothèse avec le conditionnel",
+            "structure": "Si + présent -> futur / Si + imparfait -> conditionnel présent",
+            "explanation": "文中虽然没有直接使用si从句，但通过'on peut imaginer que'引导了对未来的假设性推测。",
+            "example": {
+              "french": "On peut imaginer que ce n'est qu'une question de temps avant d'avoir des écouteurs capables de traduire parfaitement.",
+              "chinese": "我们可以想象，距离出现能够完美翻译的耳机，只是时间问题了。"
+            },
+            "usage_note": "条件式常用于表达可能性、愿望或推测。",
+            "source_ids": [
+              13
+            ]
+          },
+          {
+            "name": "La Nominalisation",
+            "structure": "Verbe -> Nom (ex: chercher -> recherche)",
+            "explanation": "法语中常用名词化结构来使表达更简洁、更具概括性，常见于正式论述中。",
+            "example": {
+              "french": "C'est parfois cette recherche de la méthode parfaite qui nous fait perdre le plus de temps.",
+              "chinese": "有时正是这种对完美方法的追求，反而让我们耗费了最多的时间。"
+            },
+            "usage_note": "名词化（recherche）比动词短语（le fait de chercher）更符合高级法语的表达习惯。",
+            "source_ids": [
+              21
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɛ̃] vs [ɑ̃]",
+              "description": "区分 nasal vowels。'infaillible' 中的 [ɛ̃] 和 'apprendre' 中的 [ɑ̃]。",
+              "examples": [
+                "infaillible",
+                "apprendre"
+              ]
+            },
+            {
+              "sound": "[ɥi]",
+              "description": "半元音 [ɥ] 与 [i] 的结合，发音时嘴唇极度收圆。",
+              "examples": [
+                "aujourd'hui",
+                "traduire"
+              ]
+            }
+          ],
+          "liaison": [
+            "un autre angle [œ̃.no.tʁɑ̃ɡl]",
+            "des auditeurs avertis [de.zo.di.tœ.ʁa.vɛʁ.ti]",
+            "sans effort [sɑ̃.ze.fɔʁ]"
+          ],
+          "intonation": "在列举时（如第22句），语调在每个项目末尾略微上扬，在最后一项下降。"
+        },
+        "vocabulary_network": {
+          "theme": "L'apprentissage des langues",
+          "core_word": "Acquisition",
+          "related_groups": [
+            {
+              "category": "Processus",
+              "words": [
+                "input compréhensible",
+                "output",
+                "exposition",
+                "pratique"
+              ]
+            },
+            {
+              "category": "Psychologie",
+              "words": [
+                "motivation intrinsèque",
+                "filtre affectif",
+                "satisfaction",
+                "plaisir"
+              ]
+            },
+            {
+              "category": "Technologie",
+              "words": [
+                "intelligence artificielle",
+                "traduction automatique",
+                "doublage",
+                "navigateur"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Plus on cherche la ___ parfaite, moins on ___. On se ___ à ___ au lieu d'___. Vous connaissez sûrement le fameux ___ du ___.",
+            "answer": "méthode, pratique, prépare, apprendre, apprendre, paradoxe, choix",
+            "explanation": "这句话出自原文第25和26句，描述了“优化陷阱”：越追求完美的方法，实践就越少。",
+            "source_ids": [
+              25,
+              26
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi Hugo a-t-il décidé de désactiver la fonctionnalité de doublage automatique sur ses vidéos YouTube ?",
+            "options": {
+              "A": "Parce que la traduction était de mauvaise qualité.",
+              "B": "Parce que c'est une fonctionnalité contre-productive pour une chaîne d'apprentissage du français.",
+              "C": "Parce que la voix de l'IA ne ressemblait pas à la sienne.",
+              "D": "Parce que YouTube lui faisait payer pour cette option."
+            },
+            "answer": "B",
+            "explanation": "原文第9句明确提到：'Évidemment, pour une chaîne d'apprentissage du français, c'est une fonctionnalité contre-productive. Heureusement, j'ai réussi à la désactiver.'",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Cette capacité de percevoir le monde à travers un autre prisme linguistique, d'accéder à une culture de l'intérieur.",
+            "answer": "这种透过另一种语言的视角去感知世界、从内部深入领略一种文化的能力。",
+            "explanation": "重点在于 'prisme linguistique' (语言视角/棱镜) 和 'de l'intérieur' (从内部) 的准确翻译。",
+            "source_ids": [
+              61
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Remplacez 'Pour que' par 'Afin que' dans la phrase suivante et conjuguez le verbe : 'Pour que l'input (être) vraiment efficace, il faudrait comprendre 95% du contenu.'",
+            "answer": "Afin que l'input soit vraiment efficace, il faudrait comprendre 95% du contenu.",
+            "explanation": "'Afin que' 与 'Pour que' 用法相同，后接虚拟语气。'être' 的虚拟语气现在时第三人称单数为 'soit'。",
+            "source_ids": [
+              34
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "méthode",
+            "paradoxe",
+            "prisme",
+            "contre-productive"
+          ],
+          "covered_grammar": [
+            "Le Subjonctif",
+            "La Nominalisation"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "À quoi bon + infinitif... ?",
+            "explanation": "用于询问某事有什么意义或价值，通常带有否定或怀疑的意味。",
+            "example": {
+              "french": "À quoi bon passer des centaines d'heures à apprendre une langue ?",
+              "chinese": "花几百个小时学一门语言有什么意义呢？"
+            }
+          },
+          {
+            "pattern": "C'est en + [participe présent] + que...",
+            "explanation": "强调方式或手段：正是通过做某事，才能够...",
+            "example": {
+              "french": "C'est en essayant de parler qu'on peut identifier nos lacunes.",
+              "chinese": "正是在尝试说话的过程中，我们才能发现自己的不足。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在参加一个关于“AI时代是否还需要学习外语”的辩论赛。",
+          "requirements": "使用文中提到的 'input compréhensible', 'motivation intrinsèque' 和 'prisme linguistique' 等概念，表达你的观点。",
+          "starter": "À mon avis, même si l'IA peut traduire les mots, elle ne peut pas..."
+        }
+      },
+      "summary": {
+        "content": "本期播客探讨了在2026年人工智能高度发达的背景下，学习法语的真正意义。作者区分了“学习（learning）”与“习得（acquisition）”，强调了“可理解输入（comprehensible input）”和“内在动机”的重要性。同时，作者打破了“必须从头开始说”、“成年人学不好语言”以及“必须死磕语法”等三大迷思，鼓励学习者让法语自然融入生活，享受语言带来的独特文化视角。",
+        "keywords": [
+          "Acquisition",
+          "Intelligence Artificielle",
+          "Input compréhensible",
+          "Motivation",
+          "Mythes"
+        ],
+        "difficulty_note": "文本属于B2级别，涉及教育心理学和科技讨论，词汇较为抽象，包含较多地道表达和复杂句式。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:03",
+          "end": "00:25:44"
+        },
+        "theme": "L'avenir de l'apprentissage des langues à l'ère de l'IA",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:03.899",
+        "end_time": "00:25:44.069",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 62,
+        "source_video_name": "E188 N'apprenez pas le français en 2026.json",
+        "tags": [
+          "职场",
+          "访谈谈话"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:03.899",
+          "end_time": "00:00:35.369",
+          "french": "N'apprenez pas le français en 2026. Bonne année à toutes et à tous. Je suis ravi de vous retrouver pour ce premier épisode de 2026. Je vous souhaite plein de bonheur, la santé et bien sûr de la réussite avec votre français. Pour certains d'entre vous, cette réussite, ce sera peut-être un examen pour certifier votre niveau.",
+          "chinese": "2026年，别再“学”法语了。祝大家新年快乐。很高兴在2026年的第一期节目中与大家见面。祝愿大家幸福、健康，当然还有在法语学习上取得成功。对你们中的一些人来说，这种成功可能是通过一项水平认证考试。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:35.579",
+          "end_time": "00:01:02.310",
+          "french": "Pour d'autres, ce sera parler français avec les locaux durant vos vacances en France ou lire un roman d'un ou une auteure francophone que vous adorez dans le texte, autrement dit dans la langue dans laquelle il a été écrit. Ou peut-être que vous n'avez pas d'objectif précis et que vous voulez juste continuer à pratiquer votre français. Dans tous les cas, cet épisode devrait vous intéresser.",
+          "chinese": "对其他人来说，可能是去法国度假时能和当地人交流，或者是阅读你喜爱的法语作家的原著，也就是用它创作的语言来阅读。又或者，你并没有明确的目标，只是想继续练习法语。无论如何，这一期节目都会让你感兴趣。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:02.649",
+          "end_time": "00:01:18.500",
+          "french": "Alors, vous vous demandez sûrement pourquoi j'ai choisi ce titre provocateur, pourquoi je vous déconseille d'apprendre le français cette année. En fait, j'avais prévu de faire une mise à jour de mon épisode de l'année dernière : « Comment apprendre le français en 2025 ».",
+          "chinese": "那么，你肯定在想，为什么我选了这么一个挑衅性的标题，为什么我建议你今年不要学法语。事实上，我原计划是对去年的那一集《如何在2025年学习法语》做一个更新。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:18.650",
+          "end_time": "00:01:44.510",
+          "french": "Mais Elisa de French Mornings m'a coupé l'herbe sous le pied. Je pense que j'ai déjà utilisé cette expression. Couper l'herbe sous le pied, ça veut dire que quelqu'un fait une chose que vous vouliez faire avant vous. En anglais, la métaphore est plus parlante. On dit « pull the rug out from under someone ». Enfin, ça c'est la traduction : « tirer le tapis sous les pieds de quelqu'un ».",
+          "chinese": "但 French Mornings 的 Elisa 抢在了我前面。我想我以前用过这个表达。“Couper l'herbe sous le pied” 意思是有人抢先做了你想做的事。在英语中，这个隐喻更形象，叫作 “pull the rug out from under someone”。翻译过来就是“抽走某人脚下的地毯”。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:44.510",
+          "end_time": "00:02:03.459",
+          "french": "C'est facile à imaginer : si on est debout sur un tapis et que quelqu'un tire le tapis sous nos pieds, on tombe. Attention, je ne dis pas qu'Elisa a voulu me faire tomber, elle m'a juste devancé, elle a été plus rapide que moi puisqu'elle a publié son épisode « Comment apprendre le français en 2026 » avant moi.",
+          "chinese": "这很容易想象：如果你站在地毯上，有人抽走你脚下的地毯，你就会摔倒。注意，我不是说 Elisa 想让我摔倒，她只是抢先了一步，动作比我快，因为她在之前就发布了她的那一集《如何在2026年学习法语》。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:03.739",
+          "end_time": "00:02:29.800",
+          "french": "En général, j'essaie de ne pas regarder ce que font les autres profs de FLE, justement pour ne pas me comparer ou pour ne pas être influencé. Mais Spotify n'arrête pas de me recommander le podcast d'Elisa. Donc, quand j'ai vu son épisode, je me suis dit que je devais trouver un autre angle. Et j'ai tout simplement décidé de prendre le contre-pied, de faire le contraire du sujet classique. Oui, je sais, je suis un génie.",
+          "chinese": "通常情况下，我尽量不去看其他法语老师在做什么，正是为了避免自我比较或受到影响。但 Spotify 总是向我推荐 Elisa 的播客。所以，当我看到她那一集时，心想我得找个不同的角度。于是我干脆决定反其道而行之，做一个与经典主题相反的题目。是的，我知道，我是个天才。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:29.849",
+          "end_time": "00:02:56.830",
+          "french": "Plus sérieusement, quand on voit les progrès des traducteurs automatiques, surtout depuis qu'on y a ajouté l'intelligence artificielle, on peut se demander si ça sert encore à quelque chose d'apprendre une langue. Par exemple, chez InnerFrench, on reçoit de plus en plus souvent des commentaires de personnes qui nous demandent si les transcriptions du podcast sont aussi disponibles en français. Au début, je ne comprenais pas parce que les transcriptions sont toujours en français.",
+          "chinese": "说正经的，看到自动翻译器的进步，尤其是加入人工智能之后，我们不禁会问，学习一门语言是否还有意义。例如，在 InnerFrench，我们收到的评论越来越多，人们问播客的转录文本是否也有法语版。起初我不明白，因为转录文本一直都是法语的。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:56.830",
+          "end_time": "00:03:26.789",
+          "french": "Mais j'ai fini par découvrir que c'était leur navigateur Internet qui traduisait automatiquement la page. Pareil sur YouTube : depuis l'année dernière, il y a une nouvelle fonctionnalité qui crée des doublages de vidéos grâce à l'intelligence artificielle. Pas juste les sous-titres automatiques, mais l'audio avec une voix qui ressemble à celle du YouTuber. Par exemple, sur certaines de mes vidéos, YouTube avait ajouté des versions en anglais.",
+          "chinese": "但后来我发现，是他们的浏览器自动翻译了页面。YouTube 也是一样：从去年开始，出现了一项利用人工智能为视频配音的新功能。不只是自动字幕，而是用听起来像博主本人的声音进行音频配音。例如，在我的一些视频中，YouTube 添加了英文版本。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:27.000",
+          "end_time": "00:03:50.770",
+          "french": "Et je crois que les personnes qui regardaient ces vidéos depuis un pays anglophone, eh bien, elles avaient automatiquement la version en anglais. Pour avoir la version en français, elles devaient changer les réglages de la vidéo. Évidemment, pour une chaîne d'apprentissage du français, c'est une fonctionnalité contre-productive. Heureusement, j'ai réussi à la désactiver.",
+          "chinese": "我猜那些在英语国家观看这些视频的人，会自动听到英文版。要看法语版，他们必须更改视频设置。显然，对于一个法语学习频道来说，这个功能是适得其反的。幸运的是，我成功禁用了它。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:50.770",
+          "end_time": "00:04:19.399",
+          "french": "Par contre, je ne peux pas le faire avec les transcriptions du podcast parce que ça ne dépend pas des réglages de notre site, mais du navigateur des personnes qui le consultent. Alors, ces fonctionnalités de traduction automatique, d'un côté, elles rendent Internet plus accessible, notamment pour les personnes qui ne parlent pas anglais, mais de l'autre, ça peut donner l'impression de vivre dans une bulle. Vous avez peut-être aussi vu ces écouteurs qui traduisent quasiment en temps réel.",
+          "chinese": "然而，我无法对播客转录文本这样做，因为这不取决于我们网站的设置，而是取决于访问者的浏览器。所以，这些自动翻译功能一方面让互联网变得更易获取，特别是对于不讲英语的人；但另一方面，它会让人感觉生活在一个气泡里。你可能也见过那种几乎可以实时翻译的耳机。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:19.540",
+          "end_time": "00:04:49.160",
+          "french": "Quelqu'un vous parle dans une autre langue et vous, dans vos écouteurs, vous entendez directement la traduction. Si l'autre personne porte aussi ce genre d'écouteurs, vous lui répondez dans votre langue et elle entend la traduction. Comme si vous aviez chacun un interprète dans les oreilles. Et voilà, vous pouvez avoir une conversation comme ça sans connaître la langue de l'autre. Bon, je dis en temps réel, mais en réalité, il y a un petit délai.",
+          "chinese": "有人用另一种语言对你说话，而你在耳机里直接听到翻译。如果对方也戴着这种耳机，你用自己的语言回答，他就能听到翻译。就像你们每个人的耳朵里都住着一个翻译员。就这样，你们可以在不懂对方语言的情况下进行交谈。好吧，我说的是实时，但实际上还是有一点延迟。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:49.300",
+          "end_time": "00:05:17.160",
+          "french": "Je crois que ça dépend aussi de votre connexion Internet. Donc la conversation n'est pas aussi fluide qu'on l'imagine. C'est même un peu gênant parce que vous devez attendre quelques secondes à chaque fois avant d'entendre la traduction. Et pareil avec votre interlocuteur quand il écoute votre réponse. Donc ce n'est pas très naturel. Entre chaque réponse, vous vous regardez dans le blanc des yeux comme si vous attendiez que le message monte au cerveau.",
+          "chinese": "我想这也取决于你的网络连接。所以对话并不像想象中那么流畅。甚至有点尴尬，因为你每次都要等几秒钟才能听到翻译。对方听你的回答时也是一样。所以这不太自然。在每次回答之间，你们面面相觑，就像在等待信息传送到大脑一样。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:17.399",
+          "end_time": "00:05:40.980",
+          "french": "Et bien sûr, les traducteurs automatiques ne sont pas infaillibles, ils font encore des erreurs, mais quand on compare aux traductions qu'ils faisaient il y a 5 ou 10 ans, c'est le jour et la nuit, c'est incomparablement mieux. Donc on peut imaginer que ce n'est qu'une question de temps avant d'avoir des écouteurs capables de traduire parfaitement et en temps réel.",
+          "chinese": "当然，自动翻译器并非万无一失，它们仍会犯错，但与 5 年或 10 年前的翻译相比，简直是天壤之别，好得不可同日而语。所以我们可以想象，拥有能够完美实时翻译的耳机只是时间问题。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:40.980",
+          "end_time": "00:06:09.420",
+          "french": "À quoi bon passer des centaines d'heures à apprendre une langue qu'une machine pourra bientôt parler à votre place ? La raison la plus évidente, c'est la même qui explique pourquoi certaines personnes préfèrent regarder les films en version originale plutôt qu'avec les doublages : parce qu'elles sont snobs. Non, je plaisante, mais c'est vrai que vous connaissez aussi bien que moi le plaisir que c'est de regarder un film ou de lire un livre dans une autre langue et de comprendre.",
+          "chinese": "既然机器很快就能替你说话，那花几百个小时学习一门语言还有什么意义呢？最显而易见的原因，就像为什么有些人宁愿看原声电影也不愿看配音版一样：因为他们很矫情。不，我开玩笑的，但事实是，你们和我一样清楚，用另一种语言看电影或看书并能理解其中的乐趣。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:06:09.420",
+          "end_time": "00:06:38.379",
+          "french": "Ça donne un grand sentiment de satisfaction, mais surtout, ce n'est pas la même expérience. D'abord parce qu'il y a forcément des choses qui se perdent dans la traduction : des images, des références culturelles ou historiques. C'est difficile de mettre des mots sur ça, sur cette expérience, mais par exemple, je trouve qu'on n'a pas la même connexion avec un auteur quand on le lit dans sa langue que quand on lit une traduction de son œuvre. On se sent plus proche de lui.",
+          "chinese": "这会带来巨大的成就感，但最重要的是，体验是不同的。首先，因为翻译过程中必然会丢失一些东西：意象、文化或历史背景。很难用言语来形容这种体验，但例如，我觉得阅读原著与作者建立的联系，和阅读译作是不一样的。你会感觉离作者更近。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:38.389",
+          "end_time": "00:07:06.439",
+          "french": "Je ne sais pas si vous avez la même impression. Mais est-ce que c'est assez pour justifier tous les efforts qu'il faut faire pour apprendre une langue ? Je n'en sais rien, ça dépend de chacun. En revanche, je pense qu'il va y avoir de moins en moins de personnes qui apprennent une langue uniquement pour des raisons, disons, pragmatiques. Parce que oui, pour ça, les technologies actuelles font déjà assez bien le travail et elles le feront de mieux en mieux dans les années à venir.",
+          "chinese": "我不知道你们是否有同样的感受。但这是否足以支撑学习语言所需付出的所有努力呢？我不知道，这因人而异。不过，我认为纯粹出于实用目的而学习语言的人会越来越少。因为是的，就这一点而言，目前的技术已经做得相当不错，而且在未来几年会做得越来越好。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:07:06.810",
+          "end_time": "00:07:36.009",
+          "french": "Par contre, si vous apprenez le français pour le plaisir que ça vous procure et pour la connexion que ça vous permet d'avoir avec une autre culture, une autre façon de voir le monde, là, aucune IA ne peut remplacer ça. Elle peut traduire des mots, mais elle ne peut pas vivre l'expérience à votre place. Elle ne peut pas ressentir la satisfaction de comprendre une chanson, de rire à une blague dans une autre langue, de discuter avec quelqu'un sans intermédiaire.",
+          "chinese": "另一方面，如果你学习法语是为了它带给你的乐趣，以及它让你与另一种文化、另一种看待世界的方式建立联系，那么任何人工智能都无法取代。它可以翻译单词，但无法替你体验。它无法感受到听懂一首歌、听懂另一种语言的笑话、或不通过中介与人交谈时的那份满足感。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:36.250",
+          "end_time": "00:07:47.300",
+          "french": "Donc, quand je dis « n'apprenez pas le français », ce que je veux dire, c'est d'arrêter de voir ça comme une corvée, comme une case à cocher sur votre liste d'objectifs.",
+          "chinese": "所以，当我写下“别学法语”时，我的意思是别再把它当成一种苦差事，别再把它当成目标清单上待勾选的一个项目。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:47.509",
+          "end_time": "00:08:13.540",
+          "french": "Si c'est ça votre motivation, autant utiliser l'IA et profiter de votre temps libre pour faire autre chose. Bon, si vous écoutez le podcast, j'imagine que je n'ai pas besoin de vous convaincre. J'imagine que vous aimez apprendre le français et que vous connaissez déjà tous les bénéfices que ça vous apporte. Mais peut-être que de temps en temps, vous vous demandez si vous utilisez la bonne méthode pour continuer de progresser.",
+          "chinese": "如果这就是你的动力，那还不如使用人工智能，把空闲时间用来做别的事。好吧，既然你在听这个播客，我想我不需要说服你。我想你热爱学习法语，并且已经知道它带给你的所有好处。但也许偶尔你会怀疑，自己是否使用了正确的方法来持续进步。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:08:13.850",
+          "end_time": "00:08:42.500",
+          "french": "Ça fait plus de dix ans que j'enseigne le français et s'il y a une chose que j'ai observée, c'est ça : les gens passent énormément de temps à se demander comment apprendre et pas assez de temps à vraiment apprendre. Je reçois souvent des messages du style : « Hugo, quelle application tu recommandes ? », « Est-ce que je devrais utiliser Anki ou Duolingo ? », « Combien d'heures par jour je dois étudier ? », « Est-ce qu'il faut faire des exercices de grammaire ? »",
+          "chinese": "我教法语已经十多年了，如果说我观察到了一件事，那就是：人们花大量时间纠结于“如何学”，而花在“真正学”上的时间却不够。我经常收到这样的消息：“Hugo，你推荐哪个 App？”“我应该用 Anki 还是 Duolingo？”“我每天应该学习几个小时？”“需要做语法练习吗？”"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:42.649",
+          "end_time": "00:09:07.500",
+          "french": "Et je comprends ces questions. On veut bien faire, on veut être efficace, on ne veut pas perdre son temps. Mais paradoxalement, c'est parfois cette recherche de la méthode parfaite qui nous fait perdre le plus de temps. Donc, dans cet épisode, je vais vous rappeler ce que la recherche scientifique dit vraiment sur l'apprentissage des langues. Spoiler : c'est beaucoup plus simple qu'on ne le croit.",
+          "chinese": "我理解这些问题。我们想做好，想高效，不想浪费时间。但矛盾的是，有时正是这种对完美方法的追求让我们浪费了最多的时间。所以，在这一集里，我将提醒大家科学研究对语言学习的真实看法。剧透一下：它比我们想象的要简单得多。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:09:18.139",
+          "end_time": "00:09:46.279",
+          "french": "On vit à une époque un peu bizarre. On a accès à plus de ressources que jamais pour apprendre une langue : des applications, des podcasts, des chaînes YouTube, des cours en ligne, des livres, des méthodes. C'est comme si on avait trouvé la corne d'abondance ou la boîte de Pandore. Oui, parce qu'avec toutes ces ressources, c'est difficile d'y voir clair et de rester concentré sur une méthode assez longtemps pour voir des progrès.",
+          "chinese": "我们生活在一个有点奇怪的时代。我们拥有比以往任何时候都多的语言学习资源：App、播客、YouTube 频道、在线课程、书籍、教材。就好像我们找到了聚宝盆，或者是潘多拉的盒子。是的，因为有了这么多资源，很难看清方向，也很难在一种方法上保持足够长的专注力以看到进步。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:46.519",
+          "end_time": "00:10:09.379",
+          "french": "Le problème, c'est qu'on est devenu obsédé par l'optimisation. On veut la meilleure méthode, la meilleure application, le meilleur podcast. On passe des heures à comparer, à lire des articles du style « Les 10 meilleures façons d'apprendre le français », à regarder des vidéos YouTube qui promettent des résultats miraculeux ou à écouter des épisodes comme celui-ci.",
+          "chinese": "问题在于，我们变得痴迷于“优化”。我们想要最好的方法、最好的 App、最好的播客。我们花好几个小时进行比较，阅读类似《学习法语的 10 种最佳方法》的文章，观看承诺奇迹般效果的 YouTube 视频，或者听像这一集这样的节目。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:10:09.720",
+          "end_time": "00:10:18.220",
+          "french": "Est-ce que vous aussi, ça vous est déjà arrivé de télécharger une nouvelle application, de vous dire c'est génial, c'est exactement ce que je cherchais ?",
+          "chinese": "你是否也曾下载过一个新的 App，心想这太棒了，这正是我要找的？"
+        },
+        {
+          "id": 25,
+          "start_time": "00:10:18.460",
+          "end_time": "00:10:46.379",
+          "french": "Puis deux semaines plus tard, vous lisez quelque part que cette application n'est pas vraiment efficace, alors vous la désinstallez et vous en cherchez une autre. Vous achetez un cours en ligne, vous faites les trois premières leçons, puis vous voyez une publicité pour un autre cours qui a l'air encore mieux, alors vous achetez celui-là aussi. Et à la fin de l'année, vous avez dépensé pas mal d'argent, mais les résultats ne sont pas au rendez-vous. On peut appeler ça le piège de l'optimisation.",
+          "chinese": "然后两周后，你在哪里读到这个 App 并不真正有效，于是你卸载了它，去寻找另一个。你买了一个在线课程，上了前三课，然后看到另一个看起来更好的课程广告，于是你也买了那个。到年底，你花了不少钱，但效果却不尽如人意。我们可以称之为“优化陷阱”。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:46.519",
+          "end_time": "00:11:11.240",
+          "french": "Plus on cherche la méthode parfaite, moins on pratique. On se prépare à apprendre au lieu d'apprendre. Vous connaissez sûrement le fameux paradoxe du choix, un concept mis en évidence par le psychologue américain Barry Schwartz. Son idée, c'est que quand on a trop d'options, on devient paralysé. On a tellement peur de faire le mauvais choix qu'on finit par ne rien faire du tout.",
+          "chinese": "我们越是寻找完美的方法，练习就越少。我们一直在为学习做准备，而不是在学习。你肯定知道著名的“选择悖论”，这是美国心理学家巴里·施瓦茨提出的概念。他的观点是，当我们有太多选择时，我们就会变得瘫痪。我们太害怕做出错误的选择，以至于最终什么都不做。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:11:11.379",
+          "end_time": "00:11:26.820",
+          "french": "Ou alors, on choisit quelque chose mais on n'est jamais satisfait parce qu'on se demande toujours si une autre option n'aurait pas été meilleure. Je pense que c'est exactement ce qui se passe avec l'apprentissage des langues aujourd'hui. On a tellement de choix qu'on ne sait plus quoi faire.",
+          "chinese": "或者，我们选择了某样东西，但从未感到满意，因为我们总在想另一个选择是否会更好。我认为这正是当今语言学习中所发生的情况。我们有太多的选择，以至于不知道该怎么办。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:11:27.100",
+          "end_time": "00:11:42.700",
+          "french": "Mais est-ce que la meilleure méthode n'est pas tout simplement ce que vous utilisez vraiment, régulièrement, sur la durée ? Une méthode moyenne que vous suivez pendant un an sera toujours plus efficace qu'une méthode parfaite que vous abandonnez au bout de trois semaines.",
+          "chinese": "但最好的方法难道不就是你真正使用、经常使用并长期坚持的方法吗？一个你坚持了一年的普通方法，永远比一个你三周就放弃的完美方法更有效。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:11:42.840",
+          "end_time": "00:12:12.169",
+          "french": "Maintenant, vous allez peut-être me dire « Ok Hugo, mais quand même, il y a des méthodes plus efficaces que d'autres, non ? » Et oui, c'est vrai, toutes les approches ne se valent pas. Mais la bonne nouvelle, c'est que les chercheurs qui étudient l'apprentissage des langues sont d'accord sur l'essentiel depuis des décennies. Ce domaine de recherche, on l'appelle en anglais « Second Language Acquisition », qu'on pourrait traduire par « Acquisition des langues secondes », depuis les années 80, des centaines d'études ont été menées sur la question.",
+          "chinese": "现在，你可能会跟我说：“好吧，Hugo，但确实有些方法比其他方法更有效，不是吗？”是的，没错，并非所有方法都等效。但好消息是，研究语言学习的学者们几十年来在核心问题上已经达成了一致。这个研究领域在英语中被称为“Second Language Acquisition”，可以翻译为“第二语言习得”。自 80 年代以来，已经进行了数百项相关研究。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:12:12.409",
+          "end_time": "00:12:36.740",
+          "french": "Et ce qui en ressort, c'est assez simple. Il y a trois grands principes sur lesquels quasiment tout le monde s'accorde. Le premier principe, c'est ce qu'on appelle le « comprehensible input ». Malheureusement, on n'a pas trouvé de meilleure traduction que « input compréhensible ». Le mot « input » est assez difficile à traduire en français, mais en gros, ça désigne tout ce qui entre, tout ce qu'on reçoit.",
+          "chinese": "结论相当简单。有三个几乎每个人都认同的主要原则。第一个原则就是所谓的“comprehensible input”。遗憾的是，我们还没找到比“可理解性输入”更好的翻译。“Input”这个词在法语中很难翻译，但大体上，它指代所有进入的东西，所有我们接收到的东西。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:36.919",
+          "end_time": "00:13:04.549",
+          "french": "Dans le contexte de l'apprentissage des langues, l'input, c'est tout ce qu'on écoute ou tout ce qu'on lit dans la langue qu'on apprend. Cette théorie a été développée par un linguiste américain dont je vous ai déjà beaucoup parlé, le célèbre Stephen Krashen. Dans les années 80, il a popularisé une idée assez simple mais révolutionnaire à l'époque. On acquiert une langue en étant exposé à des messages qu'on comprend.",
+          "chinese": "在语言学习的背景下，输入就是你在学习的语言中所听到的或读到的一切。这一理论是由一位我经常提到的美国语言学家、著名的斯蒂芬·克拉申（Stephen Krashen）提出的。在 80 年代，他普及了一个当时看来简单但具有革命性的观点：我们通过接触能理解的信息来习得语言。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:13:04.759",
+          "end_time": "00:13:34.700",
+          "french": "Pas en étudiant des règles de grammaire, pas en mémorisant des listes de vocabulaire, non simplement en écoutant et en lisant des choses qu'on comprend. Krashen utilise une formule pour expliquer ça. Le i, c'est votre niveau actuel. Le plus 1, c'est le petit quelque chose en plus que vous ne connaissez pas encore. L'idée, c'est que si vous comprenez le contexte général d'un message, vous pouvez deviner le sens des mots ou des structures que vous ne connaissez pas.",
+          "chinese": "不是通过研究语法规则，不是通过背诵词汇表，不，仅仅是通过听和读你能理解的东西。克拉申用一个公式来解释这一点。“i”是你目前的水平。“+1”是你还不了解的那一点点额外内容。这个想法是，如果你理解了一条信息的总体背景，你就可以推断出你不认识的单词或结构的含义。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:13:34.899",
+          "end_time": "00:13:58.179",
+          "french": "Et c'est comme ça que vous les acquérez naturellement, sans effort conscient. J'ai bien dit « acquérir » du verbe « acquérir » et pas « apprendre ». C'est une différence fondamentale. Prenons un exemple. Imaginons que vous écoutez une histoire et qu'il y a cette phrase. « Il pleuvait des cordes, alors j'ai pris mon parapluie avant de sortir. »",
+          "chinese": "这就是你自然而然、无需刻意努力就能习得它们的方式。我用的是“习得”（acquérir）这个动词，而不是“学习”（apprendre）。这是一个根本性的区别。举个例子。假设你在听一个故事，里面有这么一句话：“雨下得很大（Il pleuvait des cordes），所以我出门前带了伞。”"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:58.419",
+          "end_time": "00:14:28.200",
+          "french": "Peut-être que vous ne connaissiez pas l'expression « pleuvoir des cordes » avant. Mais grâce au contexte, le parapluie, le fait de se protéger, vous pouvez deviner que ça veut dire qu'il pleut très fort. Et voilà, vous venez d'acquérir une nouvelle expression sans avoir eu besoin de l'apprendre. Des études plus récentes ont précisé cette théorie. Pour que l'input soit vraiment efficace, il faudrait comprendre entre 95 et 98% du contenu.",
+          "chinese": "也许你以前不知道 “pleuvoir des cordes” 这个表达。但通过上下文——雨伞、出门前的准备——你可以猜到它的意思是雨下得很大。瞧，你刚刚习得了一个新表达，而不需要去刻意学习它。最近的研究进一步完善了这一理论。为了让输入真正有效，你应该能理解内容的 95% 到 98%。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:14:28.409",
+          "end_time": "00:14:46.789",
+          "french": "Je crois que dans un ancien épisode, je vous avais dit 70-80%, mais apparemment, si vous comprenez moins de 95%, vous passez trop de temps à essayer de décoder le message et votre cerveau n'a plus la capacité de vraiment intégrer les nouveaux éléments.",
+          "chinese": "我记得在以前的一集里，我告诉过你们是 70-80%，但显然，如果你理解的内容少于 95%，你就会花太多时间试图解码信息，而你的大脑就没有能力真正吸收新元素了。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:14:46.970",
+          "end_time": "00:15:05.860",
+          "french": "Bon, en pratique, c'est pas évident de trouver des contenus qui sont précisément entre 95 et 98%. D'ailleurs, vous n'allez pas vous amuser à systématiquement compter le nombre de mots que vous ne connaissez pas avant de lire ou d'écouter quoi que ce soit. Mais voilà, je vous donne quand même le chiffre pour votre culture générale.",
+          "chinese": "好吧，在实践中，要找到精确在 95% 到 98% 之间的内容并不容易。而且，你也不会在阅读或听任何东西之前，真的去系统地计算你不认识的单词数量。但是，我还是把这个数字告诉你们，作为常识了解。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:15:06.009",
+          "end_time": "00:15:28.620",
+          "french": "En tout cas, c'est sur ce principe fondamental que j'ai construit InnerFrench. Le podcast est conçu pour être compréhensible pour des apprenants de niveau intermédiaire à avancer. On explique les mots difficiles, on parle à un rythme adapté, mais en même temps, vous êtes exposés à du vrai français avec des structures et du vocabulaire que vous ne connaissez peut-être pas encore.",
+          "chinese": "无论如何，我正是基于这一基本原则创建了 InnerFrench。这个播客旨在让中高级水平的学习者能够理解。我们会解释难词，以合适的语速说话，但同时，你会接触到真正的法语，其中包含你可能还不认识的结构和词汇。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:15:28.889",
+          "end_time": "00:15:50.250",
+          "french": "C'est le I plus 1 en action. Le deuxième grand principe, c'est l'importance du plaisir et de la motivation. Krashen parle de ce qu'il appelle le filtre affectif. L'idée, c'est que quand on est stressé, anxieux ou qu'on s'ennuie, notre cerveau se ferme et l'acquisition devient beaucoup plus difficile.",
+          "chinese": "这就是“i + 1”在起作用。第二个大原则是乐趣和动力的重要性。克拉申谈到了他所谓的“情感过滤”。这个观点是，当我们感到压力、焦虑或无聊时，我们的大脑就会关闭，习得就会变得困难得多。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:50.519",
+          "end_time": "00:16:15.559",
+          "french": "Au contraire, quand on est détendu et qu'on prend du plaisir, le cerveau est ouvert et réceptif. Les études montrent aussi que la motivation intrinsèque, c'est-à-dire le plaisir qu'on prend au processus lui-même, est beaucoup plus efficace que la motivation extrinsèque, c'est-à-dire un objectif externe comme passer un examen ou obtenir une promotion.",
+          "chinese": "相反，当我们放松并感到快乐时，大脑是开放且易于接受的。研究还表明，内在动力（即从过程本身获得的乐趣）比外在动力（即通过考试或获得晋升等外部目标）要有效得多。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:16:15.929",
+          "end_time": "00:16:37.100",
+          "french": "Concrètement, qu'est-ce que ça veut dire ? Ça veut dire que si vous vous forcez à faire des exercices de grammaire que vous détestez, vous progresserez beaucoup moins vite que si vous passez le même temps à regarder une série française qui vous passionne. Même si, sur le papier, les exercices de grammaire semblent plus sérieux ou plus éducatifs.",
+          "chinese": "具体来说，这意味着什么？这意味着，如果你强迫自己做讨厌的语法练习，你的进步速度会比花同样的时间看一部让你着迷的法语剧集慢得多。即使在理论上，语法练习看起来更严肃或更有教育意义。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:16:37.269",
+          "end_time": "00:17:00.389",
+          "french": "Je ne sais pas si vous vous souvenez de l'interview que j'avais faite avec une de mes élèves polonaises, Inès. Eh bien, Inès, c'était l'illustration parfaite de ça. Elle avait atteint un niveau très avancé en seulement deux ans parce qu'elle aimait tellement le français qu'elle passait presque tout son temps libre à regarder, écouter ou lire des choses en français.",
+          "chinese": "我不知道你们是否还记得我对我的波兰学生 Inès 的采访。Inès 就是这方面的完美例证。她在短短两年内就达到了非常高级的水平，因为她太喜欢法语了，几乎所有的空闲时间都花在看、听或读法语资料上。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:17:00.539",
+          "end_time": "00:17:28.299",
+          "french": "Elle n'avait pas besoin de se forcer, elle le faisait parce qu'elle adorait ça et son cerveau absorbait tout le vocabulaire et la grammaire sans effort apparent, comme une éponge. C'est pour ça que chez InnerFrench, on insiste tellement sur le fait de trouver du contenu qui vous plaît. C'est pas juste pour la motivation, c'est aussi parce que ça met votre cerveau dans les bonnes conditions pour acquérir la langue. Le troisième principe, c'est qu'il n'y a pas de raccourci.",
+          "chinese": "她不需要强迫自己，她这样做是因为她热爱，她的大脑像海绵一样，毫不费力地吸收了所有的词汇和语法。这就是为什么在 InnerFrench，我们如此强调寻找你喜欢的内容。这不仅仅是为了动力，也是因为这能让你的大脑处于习得语言的最佳状态。第三个原则是：没有捷径。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:17:28.500",
+          "end_time": "00:17:44.140",
+          "french": "Acquérir une langue demande du temps, beaucoup de temps. On parle de centaines d'heures d'exposition pour atteindre un niveau où on peut vraiment utiliser la langue dans la vie quotidienne. Je vous ai dit qu'Inès avait acquis un super niveau de français en seulement deux ans.",
+          "chinese": "习得一门语言需要时间，很多时间。我们需要数百小时的接触，才能达到在日常生活中真正使用该语言的水平。我告诉过你们，Inès 仅用两年时间就达到了极高的法语水平。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:17:44.339",
+          "end_time": "00:18:14.279",
+          "french": "Vous, vous êtes des auditeurs et des auditrices avertis, bien informés. Donc, vous savez qu'arriver à un tel niveau en seulement deux ans, ce n'est pas donné à tout le monde. Mais à l'ère de la gratification immédiate, deux ans, ça semble être une éternité. La bonne nouvelle, c'est que si le processus est agréable, on ne compte pas nos heures et on ne voit pas le temps passer. Ania avait parlé des activités de Flow dans notre épisode de fin d'année, l'épisode précédent.",
+          "chinese": "你们是见多识广、消息灵通的听众。所以你们知道，仅用两年时间达到那样的水平并非人人都能做到。但在即时满足的时代，两年似乎是一段永恒。好消息是，如果过程是愉快的，我们就不会计较时间，也不会觉得时间过得慢。Ania 在我们年底的那一集，也就是上一集里，谈到了“心流”活动。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:18:14.519",
+          "end_time": "00:18:40.009",
+          "french": "Eh bien, quand on prend du plaisir à apprendre une langue, ça devient une activité flow. On est complètement plongé dedans, focalisé sur le sujet, tellement qu'on perd la notion du temps. L'objectif, c'est que le français devienne une partie de votre vie, pas quelque chose que vous faites pendant 30 minutes par jour, mais quelque chose qui est là, naturellement, comme un ami qu'on a tout le temps envie de voir.",
+          "chinese": "那么，当我们享受学习语言的乐趣时，它就变成了一项心流活动。我们完全沉浸其中，专注于主题，以至于忘记了时间。目标是让法语成为你生活的一部分，不是你每天做 30 分钟的事情，而是自然而然存在的东西，就像一个你总想见面的朋友。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:18:51.640",
+          "end_time": "00:19:18.759",
+          "french": "Maintenant qu'on a vu les principes fondamentaux, j'aimerais parler de quelques mythes qui circulent sur l'apprentissage des langues. Des croyances qui poussent les gens à se mettre la pression inutilement ou à utiliser des méthodes contre-productives. Premier mythe, l'idée qu'il faut absolument parler dès le début pour progresser. On entend souvent ça, la seule façon d'apprendre une langue, c'est de la pratiquer. Il faut se jeter à l'eau.",
+          "chinese": "既然我们已经了解了基本原则，我想谈谈关于语言学习的一些迷思。这些观念会让人们产生不必要的压力，或使用适得其反的方法。第一个迷思：必须从一开始就开口说话才能进步。我们经常听到这种说法：学习语言的唯一方法就是练习，必须“下水”。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:19:18.970",
+          "end_time": "00:19:42.589",
+          "french": "trouve un partenaire de conversation le plus vite possible. Alors, c'est vrai que parler a des avantages. Une chercheuse qui s'appelle Meryl Swain a développé ce qu'elle appelle l'hypothèse de l'output. Output, le contraire de l'input, ce qui sort, ce qu'on produit, autrement dit ce qu'on exprime en parlant ou en écrivant dans la langue. Selon Swain,",
+          "chinese": "尽快找一个对话伙伴。诚然，开口说话是有好处的。一位名叫梅里尔·斯温（Meryl Swain）的研究员提出了她所谓的“输出假设”。输出，输入的反义词，即产出的东西，换句话说，就是你通过口头或书面表达出来的东西。根据斯温的说法，"
+        },
+        {
+          "id": 48,
+          "start_time": "00:19:42.589",
+          "end_time": "00:20:11.720",
+          "french": "C'est en essayant de parler qu'on peut identifier nos lacunes dans notre connaissance de la langue. On se rend compte qu'on ne sait pas comment dire telle ou telle chose et ça nous pousse à chercher la solution. Mais, et c'est important, Krashen et d'autres chercheurs ont montré que l'output n'est pas indispensable pour progresser. On peut acquérir énormément de compétences linguistiques simplement en écoutant et en lisant sans jamais ouvrir la bouche.",
+          "chinese": "正是通过尝试说话，我们才能发现自己语言知识中的不足。我们意识到自己不知道如何表达某事，这会促使我们寻找解决方案。但是，这一点很重要，克拉申和其他研究人员已经证明，输出对于进步并不是必不可少的。仅仅通过听和读，而从不开口，也可以习得大量的语言能力。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:20:11.740",
+          "end_time": "00:20:25.420",
+          "french": "D'ailleurs, Krashen fait remarquer que dans la vie réelle, les occasions de vraiment pratiquer l'output sont assez rares. Même dans une conversation, on passe plus de temps à écouter qu'à parler, du moins quand on est poli.",
+          "chinese": "此外，克拉申指出，在现实生活中，真正练习输出的机会其实很少。即使在对话中，我们花在听上的时间也比说的时间多，至少在有礼貌的情况下是这样。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:20:25.720",
+          "end_time": "00:20:53.019",
+          "french": "Et les moments où on doit reformuler parce que notre interlocuteur n'a pas compris, ce qui, selon Swain, est le plus utile, eh bien ces moments sont encore plus rares. Donc, si vous n'êtes pas prêt à parler, ne vous forcez pas. Continuez à écouter, à lire, à construire votre système linguistique. Le moment de parler viendra naturellement quand vous vous sentirez suffisamment à l'aise.",
+          "chinese": "而那些因为对方没听懂而必须重新组织语言的时刻（斯温认为这是最有用的），则更加罕见。所以，如果你还没准备好开口，不要强迫自己。继续听、读，构建你的语言系统。当你感到足够自在时，开口说话的时机自然会到来。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:20:53.019",
+          "end_time": "00:21:20.359",
+          "french": "À ce moment-là, vous serez surpris de voir à quel point les mots sortent tout seuls. Deuxième mythe, l'idée qu'après un certain âge, on est trop vieux pour maîtriser une langue étrangère. Cette croyance vient de ce qu'on appelle l'hypothèse de la période critique, proposée par un linguiste nommé Lennberg dans les années 60. Selon cette théorie, il existe une fenêtre, une période, généralement avant la puberté,",
+          "chinese": "到那时，你会惊讶地发现单词会自然而然地蹦出来。第二个迷思：超过一定年龄后，就太老了，无法掌握外语。这种信念源于语言学家伦伯格在 60 年代提出的“关键期假设”。根据这一理论，存在一个窗口期，通常是在青春期之前，"
+        },
+        {
+          "id": 52,
+          "start_time": "00:21:20.500",
+          "end_time": "00:21:49.670",
+          "french": "pendant laquelle le cerveau est particulièrement réceptif aux langues. Après ça, les portes se fermeraient. Mais les recherches récentes montrent que c'est beaucoup plus nuancé que ça. Oui, les enfants ont certains avantages, notamment pour la prononciation. Leur système auditif est plus flexible, ils ont moins peur de faire des erreurs et ils ont souvent plus de temps d'exposition. Mais les adultes ont aussi des avantages qu'on oublie souvent.",
+          "chinese": "在此期间，大脑对语言特别敏感。之后，大门就会关闭。但最近的研究表明，情况要复杂得多。是的，儿童确实有某些优势，特别是在发音方面。他们的听觉系统更灵活，更不怕犯错，而且通常有更多的接触时间。但成年人也有经常被忽视的优势。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:21:49.880",
+          "end_time": "00:22:16.420",
+          "french": "Vous avez des stratégies d'apprentissage que les enfants n'ont pas. Vous avez une motivation claire et consciente. Vous avez des connaissances du monde qui vous aident à comprendre le contexte. Et vous maîtrisez déjà une autre langue, votre langue maternelle, ce qui vous donne une base de comparaison. Une étude intéressante a montré qu'environ 5% des adultes qui commencent une langue tardivement arrivent à atteindre un niveau proche de celui des natifs.",
+          "chinese": "你们拥有儿童所不具备的学习策略。你们有明确而自觉的动力。你们拥有帮助理解背景的世界知识。而且你们已经掌握了另一种语言，即母语，这为你们提供了比较的基础。一项有趣的研究表明，大约 5% 晚年开始学习语言的成年人能够达到接近母语者的水平。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:22:16.599",
+          "end_time": "00:22:42.599",
+          "french": "C'est une minorité, certes, ça semble pas beaucoup, mais ça prouve que c'est possible. Et surtout, il n'y a pas besoin de parler comme les natifs pour pouvoir utiliser une langue. Par exemple, avec un niveau B2, autrement dit intermédiaire avancé, on peut déjà comprendre plein de choses et bien communiquer ses idées. Donc non, c'est pas trop tard, là je n'ai pas une excuse, vos attentes doivent peut-être être ajustées.",
+          "chinese": "诚然，这只是少数，看起来不多，但这证明了它是可能的。最重要的是，不需要说得像母语者一样才能使用一门语言。例如，达到 B2 水平（即中高级水平），就已经可以理解很多东西并很好地交流想法了。所以不，现在还不晚，年龄不是借口，也许只是你的预期需要调整。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:22:42.779",
+          "end_time": "00:22:51.660",
+          "french": "On entendra toujours que vous avez un petit accent, mais la capacité de communiquer, ça, c'est à votre portée. C'est possible.",
+          "chinese": "人们总能听出你有一点口音，但交流的能力是你可以企及的。这是可能的。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:22:51.960",
+          "end_time": "00:23:19.579",
+          "french": "Troisième mythe, l'idée qu'il faut absolument étudier la grammaire pour bien parler une langue. Alors attention, je ne dis pas que la grammaire est inutile. Comprendre comment fonctionne une langue a indéniablement des bénéfices. Par exemple, ça peut vous aider à remarquer certaines structures et à corriger certaines erreurs que vous faites. C'est pour ça qu'il y a des leçons et des activités de grammaire dans nos cours. Mais, et c'est là le point important,",
+          "chinese": "第三个迷思：必须学习语法才能说好一门语言。注意，我不是说语法没用。了解一门语言的运作方式无疑是有益的。例如，它可以帮助你注意到某些结构，并纠正你犯的一些错误。这就是为什么我们的课程中有语法课和练习。但是，关键点在于，"
+        },
+        {
+          "id": 57,
+          "start_time": "00:23:19.579",
+          "end_time": "00:23:30.759",
+          "french": "Acquérir une langue, c'est pas apprendre des règles de grammaire. Vous pouvez connaître parfaitement la règle du subjonctif et être incapable de l'utiliser spontanément dans une conversation.",
+          "chinese": "习得一门语言不是学习语法规则。你可以完美地掌握虚拟式的规则，却无法在对话中自如地使用它。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:23:31.000",
+          "end_time": "00:23:58.980",
+          "french": "Inversement, il y a des gens qui parlent très bien une langue sans jamais avoir ouvert un livre de grammaire. Ils ont acquis les structures naturellement grâce à l'input. Les études le confirment. Quand on compare des apprenants qui ont passé beaucoup de temps à faire de la grammaire et d'autres qui ont simplement été exposés à beaucoup d'inputs compréhensibles, ce sont généralement les seconds qui s'en sortent le mieux, surtout pour la communication orale.",
+          "chinese": "相反，有些人从未翻开过语法书，却能把一门语言说得很好。他们通过输入自然地习得了这些结构。研究证实了这一点。当比较那些花大量时间学语法的学习者和那些仅仅接触大量可理解性输入的学习者时，通常是后者表现得更好，尤其是在口头交流方面。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:59.160",
+          "end_time": "00:24:33.059",
+          "french": "Donc, si vous adorez la grammaire, continuez. Ça peut être un complément utile. Mais si vous détestez ça, ne vous forcez pas. Il vaut mieux consacrer votre temps à écouter des podcasts, lire des romans ou des articles ou regarder des films ou des séries. Alors, revenons à notre titre. N'apprenez pas le français en 2026.",
+          "chinese": "所以，如果你喜欢语法，请继续。它可以是一个有用的补充。但如果你讨厌它，不要强迫自己。最好把时间花在听播客、读小说或文章、看电影或剧集上。那么，回到我们的标题：2026年，别再“学”法语了。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:24:33.240",
+          "end_time": "00:24:53.930",
+          "french": "Ce que je voulais dire par là, c'est au lieu d'apprendre le français, consacrez votre temps à l'acquérir. Écoutez des choses qui vous intéressent, lisez des histoires qui vous captivent, regardez des films qui vous font rire ou pleurer, laissez la langue entrer dans votre vie, naturellement, sans forcer.",
+          "chinese": "我的意思是，与其“学习”法语，不如把时间花在“习得”法语上。听你感兴趣的内容，读让你着迷的故事，看让你大笑或流泪的电影，让语言自然而然地进入你的生活，不要强求。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:24:54.170",
+          "end_time": "00:25:20.869",
+          "french": "Et oui, les machines peuvent traduire, mais elles ne peuvent pas vivre l'expérience à votre place. Elles ne peuvent pas ressentir cette satisfaction unique de comprendre quelque chose dans une autre langue. Elles ne peuvent pas vous donner ce super pouvoir dont je vous parlais l'année dernière, cette capacité de percevoir le monde à travers un autre prisme linguistique, d'accéder à une culture de l'intérieur.",
+          "chinese": "是的，机器可以翻译，但它们无法替你体验。它们无法感受到在另一种语言中理解某事时那种独特的满足感。它们无法赋予你我去年提到的那种“超能力”——通过另一种语言棱镜感知世界、从内部接触一种文化的能力。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:25:20.920",
+          "end_time": "00:25:44.069",
+          "french": "Pour finir, je vous invite à laisser un commentaire en écrivant l'activité que vous faites en français et qui vous procure le plus de plaisir, en dehors d'écouter InnerFrench, bien sûr. Comme ça, ça pourra donner des idées aux autres auditeurs. Merci de m'avoir écouté jusqu'au bout. Je vous souhaite une excellente année 2026 et on se retrouve dans deux semaines avec Ingrid. À bientôt !",
+          "chinese": "最后，我邀请大家留言，写下你在法语学习中做的、最让你感到快乐的活动，当然，除了听 InnerFrench 之外。这样可以给其他听众提供一些灵感。感谢大家听我讲完。祝大家 2026 年万事如意，两周后我们将和 Ingrid 一起再见。回头见！"
+        }
+      ],
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

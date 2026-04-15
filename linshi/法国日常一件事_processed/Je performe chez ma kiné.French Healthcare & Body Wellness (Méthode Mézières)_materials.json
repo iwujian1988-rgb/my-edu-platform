@@ -1,0 +1,692 @@
+{
+  "source_file": "Je performe chez ma kiné.French Healthcare & Body Wellness (Méthode Mézières).json",
+  "channel": "法国日常一件事",
+  "video_name": "我在理疗师那里的出色表现。法国医疗保健与身体康养（Méthode Mézières 梅济耶尔疗法）",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:25:57.434Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le gérondif (副动词表同时性或方式)",
+          "Le subjonctif après les expressions d'impossibilité (表示不可能的无人称句后的虚拟式)",
+          "La structure causative (使役句型 faire + infinitif)"
+        ],
+        "speaking": [
+          "Raconter une anecdote personnelle avec humour et autodérision",
+          "Décrire des postures corporelles et des objets dans l'espace"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "kiné",
+            "part_of_speech": "nom",
+            "ipa": "[ki.ne]",
+            "chinese": "理疗师（kinésithérapeute的缩写）",
+            "example_sentence": {
+              "french": "Samedi matin, de bonne heure, j'avais rendez-vous chez la kiné.",
+              "chinese": "周六一大早，我约了理疗师。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              1,
+              10
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Je performe chez ma kiné.",
+                "chinese": "我在理疗师那里表演。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "cabinet",
+            "part_of_speech": "nom",
+            "ipa": "[ka.bi.nɛ]",
+            "chinese": "诊所，事务所",
+            "example_sentence": {
+              "french": "L'émission s'est terminée alors que je composais le code de l'immeuble du cabinet.",
+              "chinese": "节目结束时，我正输入诊所大楼的密码。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'émission s'est terminée alors que je composais le code de l'immeuble du cabinet.",
+                "chinese": "节目结束时，我正输入诊所大楼的密码。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "basculer",
+            "part_of_speech": "verbe",
+            "ipa": "[bas.ky.le]",
+            "chinese": "倾斜，翻转",
+            "example_sentence": {
+              "french": "Elle attrape une de mes jambes pour la faire basculer doucement sur le côté.",
+              "chinese": "她抓住我的一条腿，轻轻将其向一侧倾斜。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Elle attrape une de mes jambes pour la faire basculer doucement sur le côté.",
+                "chinese": "她抓住我的一条腿，轻轻将其向一侧倾斜。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "tabouret",
+            "part_of_speech": "nom",
+            "ipa": "[ta.bu.ʁɛ]",
+            "chinese": "凳子，无靠背座椅",
+            "example_sentence": {
+              "french": "Jusqu'à atteindre un tabouret posé à côté de moi.",
+              "chinese": "直到够到放在我旁边的一张小凳子。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Jusqu'à atteindre un tabouret posé à côté de moi.",
+                "chinese": "直到够到放在我旁边的一张小凳子。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "perpendiculaire",
+            "part_of_speech": "adjectif",
+            "ipa": "[pɛʁ.pɑ̃.di.ky.lɛʁ]",
+            "chinese": "垂直的",
+            "example_sentence": {
+              "french": "J'ai alors cette jambe perpendiculaire au reste de mon corps.",
+              "chinese": "这时，我的这条腿与身体的其他部位呈垂直状态。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'ai alors cette jambe perpendiculaire au reste de mon corps.",
+                "chinese": "这时，我的这条腿与身体的其他部位呈垂直状态。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "tordu",
+            "part_of_speech": "adjectif",
+            "ipa": "[tɔʁ.dy]",
+            "chinese": "扭曲的，弯曲的",
+            "example_sentence": {
+              "french": "Ainsi tordue, je dois m'efforcer en expirant de poser mon épaule le plus possible dans la table.",
+              "chinese": "如此扭曲着，我不得不屏住呼吸，尽力将肩膀尽可能地压向桌面。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ainsi tordue, je dois m'efforcer en expirant de poser mon épaule le plus possible dans la table.",
+                "chinese": "如此扭曲着，我不得不屏住呼吸，尽力将肩膀尽可能地压向桌面。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "plafonnier",
+            "part_of_speech": "nom",
+            "ipa": "[pla.fɔ.nje]",
+            "chinese": "吸顶灯，天花板灯",
+            "example_sentence": {
+              "french": "C'est là que j'ai remarqué que le plafonnier se positionnait juste au-dessus d'Hélène.",
+              "chinese": "就在这时，我注意到天花板灯正位于艾莲娜的正上方。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8,
+              9,
+              10
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Reproduire avec mes bras et mes jambes les tiges de votre plafonnier.",
+                "chinese": "用我的胳膊和腿来模仿你吊灯的枝条。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "tige",
+            "part_of_speech": "nom",
+            "ipa": "[tiʒ]",
+            "chinese": "杆，茎，枝条",
+            "example_sentence": {
+              "french": "Le plafonnier est composé de différentes tiges entrecroisées.",
+              "chinese": "这盏天花板灯由多根相互交错的灯杆组成。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le plafonnier est composé de différentes tiges entrecroisées.",
+                "chinese": "这盏天花板灯由多根相互交错的灯杆组成。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "entrecroisé",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɑ̃.tʁə.kʁwa.ze]",
+            "chinese": "交错的，交叉的",
+            "example_sentence": {
+              "french": "Le plafonnier est composé de différentes tiges entrecroisées plus ou moins perpendiculairement.",
+              "chinese": "这盏天花板灯由多根或大致垂直或呈一定角度交叉的灯杆组成。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le plafonnier est composé de différentes tiges entrecroisées plus ou moins perpendiculairement.",
+                "chinese": "这盏天花板灯由多根或大致垂直或呈一定角度交叉的灯杆组成。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "illumination",
+            "part_of_speech": "nom",
+            "ipa": "[i.ly.mi.na.sjɔ̃]",
+            "chinese": "顿悟，灵光一现",
+            "example_sentence": {
+              "french": "J'ai eu une illumination.",
+              "chinese": "我突然灵光一现。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'ai eu une illumination.",
+                "chinese": "我突然灵光一现。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "standardisation",
+            "part_of_speech": "nom",
+            "ipa": "[stɑ̃.daʁ.di.za.sjɔ̃]",
+            "chinese": "标准化",
+            "example_sentence": {
+              "french": "Écouter Philippe Bordas parler de la standardisation de la langue à l'aller...",
+              "chinese": "一路上听着菲利普·博尔达斯谈论语言的标准化……"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Écouter Philippe Bordas parler de la standardisation de la langue à l'aller...",
+                "chinese": "一路上听着菲利普·博尔达斯谈论语言的标准化……",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "insoutenable",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃.sut.nabl]",
+            "chinese": "难以忍受的，受不了的",
+            "example_sentence": {
+              "french": "Je sais, c'est insoutenable.",
+              "chinese": "我知道，这简直让人难以忍受。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je sais, c'est insoutenable.",
+                "chinese": "我知道，这简直让人难以忍受。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "mise en abyme",
+            "meaning": "戏中戏，镜中映照（指在作品中嵌入同类作品的手法）",
+            "example": {
+              "french": "C'est une sorte de mise en abyme. Là, j'écoutais une de mes émissions préférées.",
+              "chinese": "这仿佛是一种镜中映照的奇妙体验。此刻，我正听着我最喜欢的节目之一。"
+            },
+            "usage_note": "这是一个文学和艺术术语，常用于形容“画中画”或“故事中的故事”。在这里，作者边散步边听播客，想到听众也是边散步边听她的播客，形成了一种奇妙的对应关系。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "se rendre à l'évidence",
+            "meaning": "面对现实，承认显而易见的事实",
+            "example": {
+              "french": "Pourtant, je dois me rendre à l'évidence.",
+              "chinese": "然而，我不得不承认（面对现实）。"
+            },
+            "usage_note": "用于表示尽管可能不愿意，但不得不接受某个明显的事实。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "de tout repos",
+            "meaning": "轻松的，毫不费力的（常用于否定句）",
+            "example": {
+              "french": "Mais ce n'est pas pour autant de tout repos.",
+              "chinese": "不过，这可并不意味着轻松自在。"
+            },
+            "usage_note": "通常用在否定结构中（ce n'est pas de tout repos），表示某事其实很辛苦、很费力。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "expression": "ça se corse",
+            "meaning": "事情变得复杂/困难起来",
+            "example": {
+              "french": "Mais elle entraîne mon épaule avec elle et c'est là que ça se corse.",
+              "chinese": "可它却连带着我的肩膀一起动了起来，而这正是问题的关键（困难）所在。"
+            },
+            "usage_note": "口语中非常常用的表达，表示情况变得棘手或难度增加。",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "voir clair dans le jeu de quelqu'un",
+            "meaning": "看穿某人的把戏/意图",
+            "example": {
+              "french": "Hélène, je vois clair dans votre jeu.",
+              "chinese": "海伦，我看穿你的把戏了。"
+            },
+            "usage_note": "用于表示识破了别人的真实目的或隐藏的计划。",
+            "source_ids": [
+              9
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le gérondif (副动词表同时性或方式)",
+            "structure": "en + participe présent (动词的现在分词)",
+            "explanation": "副动词（Le gérondif）由“en”加上动词的现在分词构成，常用于表示两个动作同时发生，或者表示主句动作的方式、条件等。在本文中，作者多次使用副动词来描述在做某事的同时进行另一件事。",
+            "example": {
+              "french": "Il était encore tôt, il faisait à peine jour, et pour une fois, j'ai écouté quelque chose en marchant.",
+              "chinese": "还很早，天刚亮不久，而这一次，我边走边听点什么。"
+            },
+            "usage_note": "副动词的主语必须与主句的主语一致。例如“j'ai écouté... en marchant”中，听和走的主语都是“je”。",
+            "source_ids": [
+              2,
+              7,
+              10
+            ]
+          },
+          {
+            "name": "Le subjonctif après les expressions d'impossibilité (表示不可能的无人称句后的虚拟式)",
+            "structure": "Il est impossible que + Sujet + Verbe au subjonctif",
+            "explanation": "当使用表示“不可能”、“怀疑”或“主观评价”的无人称表达式（如 il est impossible que）时，从句中的动词必须使用虚拟式（subjonctif），因为这表达的是一种非现实的、主观的或假设的情况。",
+            "example": {
+              "french": "Il est impossible que je parle autre chose que la langue du milieu...",
+              "chinese": "我根本无法（不可能）说别的语言，只能讲“圈内话”……"
+            },
+            "usage_note": "注意动词parler的虚拟式现在时第一人称单数是“que je parle”，形式上与直陈式现在时相同，但在语法性质上是虚拟式。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "La structure causative (使役句型 faire + infinitif)",
+            "structure": "faire + infinitif (动词原形)",
+            "explanation": "使役句型用于表示“让/使某人做某事”或“使某事发生”。主语本身不直接执行动作，而是促使动作发生。在理疗的语境中，理疗师“让”病人的身体做出特定动作。",
+            "example": {
+              "french": "Je suis à la merci d'Hélène qui monte sur la table et attrape une de mes jambes pour la faire basculer doucement sur le côté...",
+              "chinese": "我完全任由艾莲娜摆布——她爬上治疗台，抓住我的一条腿，轻轻将其向一侧倾斜……"
+            },
+            "usage_note": "在代词宾语（如la）出现时，代词放在faire的前面，即“la faire basculer”（使它倾斜）。",
+            "source_ids": [
+              6
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃] vs [ɛ̃]",
+              "description": "鼻化元音的对比。在本文中，有许多包含鼻化元音的复杂词汇，如 standardisation, perpendiculairement, insoutenable。准确区分[ɑ̃]（如 dans, langue）和[ɛ̃]（如 impossible, insoutenable）对B2级别的发音至关重要。",
+              "examples": [
+                "standardisation",
+                "insoutenable"
+              ]
+            },
+            {
+              "sound": "Consonant clusters (辅音连缀)",
+              "description": "法语中多个辅音相连时的流畅发音。例如在“perpendiculairement”或“entrecroisées”中，需要清晰但连贯地发出辅音群而不插入多余的元音。",
+              "examples": [
+                "perpendiculaire",
+                "entrecroisées"
+              ]
+            }
+          ],
+          "liaison": [
+            "il_était_encore [i.l‿e.tɛ.t‿ɑ̃.kɔʁ] (Obligatoire/Facultative)",
+            "tout_à fait [tu.t‿a fɛ] (Obligatoire dans cette locution)",
+            "les_bras_en croix [le.bʁa.z‿ɑ̃.kʁwa] (Facultative/Soutenue)"
+          ],
+          "intonation": "本文的语调带有明显的幽默和自嘲色彩。在描述理疗过程（第6-9段）时，语调在描述痛苦（douleur）和幽默（illumination, rire）之间切换。特别是第9段的直接引语“Hélène, je vois clair dans votre jeu...”，需要用一种戏剧化、恍然大悟的夸张语调来朗读，以突出“performance artistique”的荒诞感。"
+        },
+        "vocabulary_network": {
+          "theme": "La séance de kinésithérapie et le corps",
+          "core_word": "kiné",
+          "related_groups": [
+            {
+              "category": "Parties du corps (身体部位)",
+              "words": [
+                "bras",
+                "chevilles",
+                "jambes",
+                "épaule",
+                "menton"
+              ]
+            },
+            {
+              "category": "Équipement et position (设备与姿势)",
+              "words": [
+                "table",
+                "poids",
+                "tabouret",
+                "allongée",
+                "en croix",
+                "perpendiculaire",
+                "tordue"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "___ sur la table, les ___ en croix, les chevilles maintenues par des ___, je suis à la ___ d'Hélène qui monte sur la table et attrape une de mes jambes pour la faire ___ doucement sur le côté jusqu'à atteindre un ___ posé à côté de moi.",
+            "answer": "Allongée, bras, poids, merci, basculer, tabouret",
+            "explanation": "根据原文第6段，作者描述了自己在理疗台上的姿势：平躺（Allongée），双臂呈十字（bras），脚踝被重物（poids）固定，任由理疗师摆布（à la merci），理疗师让她的腿倾斜（basculer），直到碰到旁边的凳子（tabouret）。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, pourquoi Laetitia dit-elle qu'elle « performe » (fait une performance artistique) chez sa kiné ?",
+            "options": {
+              "A": "Parce qu'elle reproduit avec ses bras et ses jambes la forme du plafonnier du cabinet.",
+              "B": "Parce qu'elle fait des exercices de musculation très intenses et difficiles.",
+              "C": "Parce qu'elle lit des livres humoristiques de San-Antonio à voix haute.",
+              "D": "Parce qu'elle écoute une émission de France Culture sur l'art contemporain pendant la séance."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。根据原文第8和第9段，Laetitia注意到天花板灯（plafonnier）的形状，并开玩笑说理疗师想让她用胳膊和腿模仿灯管的形状（reproduire avec mes bras et mes jambes les tiges de votre plafonnier），把她当成艺术品，因此她戏称自己在进行艺术表演（performance artistique）。选项B错误，原文第6段明确说这种疗法不是为了做锻炼（plutôt qu'à vous faire faire des exercices）；选项C和D虽然提到了相关词汇，但并非她自称“表演”的原因。",
+            "source_ids": [
+              6,
+              8,
+              9
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Vous voulez m'imposer une performance artistique, reproduire avec mes bras et mes jambes les tiges de votre plafonnier.",
+            "answer": "你其实是想让我表演一场艺术秀，用我的胳膊和腿来模仿你吊灯的枝条。",
+            "explanation": "翻译难点在于准确传达幽默的语气。“imposer une performance artistique”直译为“强加一场艺术表演”，这里可以意译为“想让我表演一场艺术秀”以符合中文习惯。“reproduire”意为“复制、模仿”，“tiges de votre plafonnier”指“吊灯的枝条/灯杆”。",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Combinez ces deux phrases en une seule phrase en utilisant un gérondif (en + participe présent) pour exprimer la simultanéité des deux actions : « J'ai écouté quelque chose. Je marchais en même temps. »",
+            "answer": "J'ai écouté quelque chose en marchant.",
+            "explanation": "考察副动词（Le gérondif）的用法。当两个动作由同一个主语（Je）同时发出时，可以将表示背景或伴随状态的动作变为副动词。动词“marcher”的现在分词是“marchant”，前面加上“en”构成副动词“en marchant”。这与原文第2段中的句子“j'ai écouté quelque chose en marchant”完全一致。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "basculer",
+            "tabouret",
+            "plafonnier",
+            "tige"
+          ],
+          "covered_grammar": [
+            "Le gérondif (副动词表同时性或方式)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il est impossible que + subjonctif",
+            "explanation": "用于表达某事绝对不可能发生，后接虚拟式。",
+            "example": {
+              "french": "Il est impossible que je parle autre chose que la langue du milieu.",
+              "chinese": "我根本不可能说别的语言，只能讲“圈内话”。"
+            }
+          },
+          {
+            "pattern": "consister à + infinitif",
+            "explanation": "用于解释某事物的本质、内容或方法，意为“在于做某事”。",
+            "example": {
+              "french": "C'est une méthode qui consiste à vous remettre droit plutôt qu'à vous faire faire des exercices.",
+              "chinese": "这是一种旨在帮助你恢复正位，而不是单纯让你做各种锻炼的方法。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你刚从医院或诊所做完一项检查或治疗（比如看牙医、做理疗等），过程有些痛苦但又发生了一件让你觉得好笑的事情。你正在向你的法国朋友讲述这段经历。",
+          "requirements": "使用至少3个本课学到的词汇（如 cabinet, basculer, tordu, insoutenable 等），并尝试使用一次副动词（en + participe présent）来描述同时发生的动作。",
+          "starter": "Tu ne devineras jamais ce qui m'est arrivé au cabinet du médecin ce matin ! J'étais allongé(e) sur la table, et..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia raconte son rendez-vous matinal chez sa kinésithérapeute, Hélène. Tout en marchant vers le cabinet, elle écoute une émission de France Culture qui la fait réfléchir sur la langue française. Chez la kiné, elle subit la méthode Mézières, une technique de rééducation posturale exigeante. Dans une position particulièrement tordue et inconfortable, elle remarque que ses membres imitent la forme du plafonnier du cabinet. Avec humour, elle accuse sa kiné de la transformer en œuvre d'art contemporain, transformant ainsi un moment de douleur physique en une anecdote amusante.",
+        "keywords": [
+          "kinésithérapie",
+          "posture",
+          "humour",
+          "podcast",
+          "art contemporain"
+        ],
+        "difficulty_note": "Le texte est de niveau B2. La difficulté principale réside dans le vocabulaire descriptif lié au corps et à l'espace (perpendiculaire, basculer, entrecroisé), ainsi que dans l'utilisation d'expressions idiomatiques (mise en abyme, se rendre à l'évidence) et d'un ton ironique/humoristique qui nécessite une bonne compréhension du second degré."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:04:36.680"
+        },
+        "theme": "Santé, Langue et Humour au quotidien",
+        "cefr_level": "B2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:30.980",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, lundi 2 février 2026, cet épisode, le numéro 2594, s'intitule « Je performe chez ma kiné ». Samedi matin, de bonne heure, j'avais rendez-vous chez la kiné, Hélène. Il me faut une petite demi-heure pour m'y rendre à pied depuis la maison.",
+          "chinese": "大家好，我是来自巴黎《One Thing in a French Day》播客的莱蒂西娅。希望你们一切都好，心情愉快。今天，2026年2月2日星期一，第2594期节目的标题是《我在理疗师那儿搞行为艺术》。周六一大早，我预约了理疗师埃莱娜。从我家步行到她那里大概需要半个小时。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:31.289",
+          "end_time": "00:00:47.429",
+          "french": "Il était encore tôt, il faisait à peine jour, et pour une fois, j'ai écouté quelque chose en marchant. Ça m'a fait penser à vous qui m'écoutez parfois aussi lors de promenades. C'est une sorte de mise en abyme. Là, j'écoutais une de mes émissions préférées.",
+          "chinese": "当时还很早，天刚蒙蒙亮，破天荒地，我边走边听了点东西。这让我想到你们，你们有时也会在散步时听我的播客。这就像是一种“戏中戏”。当时，我正在听我最喜欢的一档节目。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:47.740",
+          "end_time": "00:01:06.060",
+          "french": "Enfin, ce n'est pas tout à fait exact. Un épisode en particulier d'une émission qui passe sur France Culture. Mais cet épisode, je l'adore, vraiment. Je l'écoute au moins une fois par semaine. L'émission dure une heure, j'avais commencé en prenant mon petit-déjeuner et j'ai continué en me rendant à mon rendez-vous.",
+          "chinese": "嗯，这么说也不完全准确。确切地说，是法国文化广播电台（France Culture）某档节目的特定一期。但这期节目我真的非常喜欢。我每周至少要听一次。节目时长一个小时，我吃早饭时就开始听了，然后在去赴约的路上接着听。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:06.579",
+          "end_time": "00:01:24.840",
+          "french": "L'émission s'est terminée alors que je composais le code de l'immeuble du cabinet. Cette émission me rend absolument de bonne humeur. Pourtant, je dois me rendre à l'évidence. Il est impossible que je parle autre chose que la langue du milieu, que je parle français et non le français.",
+          "chinese": "就在我输入理疗诊所大楼密码的时候，节目结束了。这档节目让我心情大好。然而，我必须面对现实。我不可能说出除了“大众语言”以外的语言，我只能“说法语（parler français）”，而不能“讲究地说法语（parler le français）”。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:25.340",
+          "end_time": "00:01:44.170",
+          "french": "J'en ai parlé à Hélène au début de la séance, parce qu'il est question de lire des livres drôles dans l'émission. Pour l'invité, San-Antonio est le dernier écrivain français drôle. « C'est quand même un humour de mec », a commenté Hélène. J'en ai lu un ou deux et je dis, c'est vrai que ça me fait peut-être moins rire que Pietro.",
+          "chinese": "治疗刚开始时，我和埃莱娜聊起了这个，因为节目里提到了读搞笑的书。对节目嘉宾来说，圣安东尼奥（San-Antonio）是最后一位幽默的法国作家。“那终究是男人的幽默，”埃莱娜评论道。我读过他的一两本书，我说，确实，他可能没有彼得罗（Pietro）那么让我觉得好笑。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:44.790",
+          "end_time": "00:02:12.139",
+          "french": "Hélène pratique la méthode Mézières. C'est une méthode qui consiste à vous remettre droit plutôt qu'à vous faire faire des exercices. Mais ce n'est pas pour autant de tout repos. Allongée sur la table, les bras en croix, les chevilles maintenues par des poids, je suis à la merci d'Hélène qui monte sur la table et attrape une de mes jambes pour la faire basculer doucement sur le côté jusqu'à atteindre un tabouret posé à côté de moi.",
+          "chinese": "埃莱娜使用的是梅济耶尔疗法（méthode Mézières）。这种疗法旨在帮你矫正体态，而不是让你做运动。但这并不意味着轻松。我平躺在治疗床上，双臂呈十字张开，脚踝被重物固定着，任凭埃莱娜摆布。她爬上治疗床，抓住我的一条腿，让它慢慢向一侧倾斜，直到碰到放在我旁边的一个凳子。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:13.180",
+          "end_time": "00:02:38.379",
+          "french": "J'ai alors cette jambe perpendiculaire au reste de mon corps. Mais elle entraîne mon épaule avec elle et c'est là que ça se corse. Ainsi tordue, je dois m'efforcer en expirant de poser mon épaule le plus possible dans la table. Quand Hélène a dit « Maintenant soufflez, sans monter votre menton et enfoncez votre épaule dans la table », j'ai eu envie de rire malgré la douleur.",
+          "chinese": "这样一来，我的这条腿就和身体其他部分垂直了。但它连带着拉扯到了我的肩膀，这才是最难受的地方。在这样扭曲的姿势下，我必须在呼气时尽量把肩膀压向治疗床。当埃莱娜说“现在呼气，下巴不要抬，把肩膀压进床里”时，尽管很疼，我还是忍不住想笑。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:38.840",
+          "end_time": "00:03:00.009",
+          "french": "C'est là que j'ai remarqué que le plafonnier se positionnait juste au-dessus d'Hélène, chaque branche dépassant de sa tête comme une couronne lumineuse. Le plafonnier est composé de différentes tiges entrecroisées plus ou moins perpendiculairement avec une ampoule à chaque extrémité.",
+          "chinese": "就在那时，我注意到吸顶灯正好在埃莱娜的正上方，灯的每一个分支从她头顶伸出来，就像一顶发光的王冠。那盏吸顶灯由几根大致垂直交错的灯杆组成，每根灯杆的末端都有一个灯泡。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:00.539",
+          "end_time": "00:03:24.780",
+          "french": "J'ai eu une illumination. « Hélène, je vois clair dans votre jeu. Vous voulez m'imposer une performance artistique, reproduire avec mes bras et mes jambes les tiges de votre plafonnier. Vous faites de vos patients des œuvres d'art. » On a bien ri, mais j'ai quand même dû souffler quelques fois de plus pour enfoncer mon épaule dans la table et passer ensuite à l'autre jambe.",
+          "chinese": "我突然灵光一闪。“埃莱娜，我看穿你的把戏了。你是想强迫我做一场行为艺术，用我的胳膊和腿来模仿你这盏吸顶灯的灯杆。你把你的病人都变成了艺术品。”我们大笑起来，但我还是得多呼几次气，把肩膀压进床里，然后再换另一条腿。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:25.780",
+          "end_time": "00:03:55.719",
+          "french": "Je n'ai rien écouté en rentrant à la maison. Écouter Philippe Bordas parler de la standardisation de la langue à l'aller et reproduire un plafonnier avec mes bras et mes jambes remplissait déjà bien cette journée. Le même jour, j'ai vu sur la couverture d'un magazine affiché sur un kiosque parisien que 66 % des Français aimaient l'art contemporain. J'en fais partie, c'est sûr. Je vais même plus loin. Je performe chez ma kiné.",
+          "chinese": "回家路上我什么也没听。去的时候听菲利普·博尔达斯（Philippe Bordas）谈论语言的标准化，再加上用胳膊和腿模仿吸顶灯，这已经让这一天足够充实了。同一天，我在巴黎一个报亭展示的杂志封面上看到，66%的法国人喜欢当代艺术。我肯定也是其中之一。我甚至更进一步：我在理疗师那儿搞行为艺术。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:56.379",
+          "end_time": "00:04:22.949",
+          "french": "Je sais, c'est insoutenable. Vous voulez comprendre la différence entre parler français et parler le français. Bien sûr, je vous explique tout ça ainsi que d'autres références culturelles dans la lettre parisienne qui accompagne cet épisode. Maintenant, une devinette pour les abonnés. Qu'allons-nous manger au goûter aujourd'hui, lundi 2 février ? Cliquez sur répondre à la lettre parisienne pour m'envoyer votre réponse.",
+          "chinese": "我知道，这太吊人胃口了。你们肯定想知道“parler français”和“parler le français”之间的区别。当然，我会在本期节目附带的《巴黎来信》中为大家解释这一切，以及其他的文化背景知识。现在，给订阅者们出一个谜语：今天，2月2日星期一，我们下午茶要吃什么？点击回复《巴黎来信》，把你的答案发给我吧。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:23.160",
+          "end_time": "00:04:36.680",
+          "french": "One Thing in a French Day, c'est fini pour aujourd'hui. Je vous retrouve mercredi pour un nouvel épisode de podcast. À bientôt, au revoir.",
+          "chinese": "今天的《One Thing in a French Day》就到这里。我们周三的新一期播客再见。回见，拜拜。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:36.680",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 12,
+        "source_video_name": "Je performe chez ma kiné.French Healthcare & Body Wellness (Méthode Mézières).json",
+        "tags": [
+          "文化深度",
+          "法国生活"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

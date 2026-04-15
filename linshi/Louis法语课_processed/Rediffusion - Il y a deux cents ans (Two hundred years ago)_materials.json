@@ -1,0 +1,629 @@
+{
+  "source_file": "Rediffusion - Il y a deux cents ans (Two hundred years ago).json",
+  "channel": "Louis法语课",
+  "video_name": "Rediffusion - Il y a deux cents ans (Two hundred years ago)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T23:51:01.120Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le Passé Simple",
+          "Le pronom relatif 'dont'",
+          "La structure causative 'rendre + adjectif'"
+        ],
+        "speaking": [
+          "Describing historical achievements",
+          "Explaining professional roles and definitions"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "linguiste",
+            "part_of_speech": "nom",
+            "ipa": "[lɛ̃ɡwist]",
+            "chinese": "语言学家",
+            "example_sentence": {
+              "french": "Un jeune linguiste français nommé Champollion déchiffra les hiéroglyphes.",
+              "chinese": "一位名叫商博良的法国年轻语言学家破译了象形文字。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              4,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Linguiste, c'est quelqu'un dont le travail est d'étudier les langues.",
+                "chinese": "语言学家是指工作是研究语言的人。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "déchiffrer",
+            "part_of_speech": "verbe",
+            "ipa": "[deʃifre]",
+            "chinese": "破译，辨认",
+            "example_sentence": {
+              "french": "Ils n'arrivaient pas à les déchiffrer pendant des années.",
+              "chinese": "他们多年来一直无法破译它们。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              5,
+              6,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Il déchiffra les hiéroglyphes.",
+                "chinese": "他破译了象形文字。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "hiéroglyphe",
+            "part_of_speech": "nom m.",
+            "ipa": "[jeʁɔɡlif]",
+            "chinese": "象形文字",
+            "example_sentence": {
+              "french": "Les hiéroglyphes, c'est l'écriture ancienne de l'Égypte.",
+              "chinese": "象形文字是埃及的古老文字。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              5,
+              6,
+              7
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Ce sont des petits dessins.",
+                "chinese": "它们是一些小图案。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "ancienne",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɑ̃sjɛn]",
+            "chinese": "古老的，旧的",
+            "example_sentence": {
+              "french": "C'est le code de l'ancienne Égypte.",
+              "chinese": "这是古埃及的密码。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              5,
+              6,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "L'écriture ancienne de l'Égypte.",
+                "chinese": "埃及的古老文字。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "spécialiste",
+            "part_of_speech": "nom",
+            "ipa": "[spesjalist]",
+            "chinese": "专家",
+            "example_sentence": {
+              "french": "Cela rendit fous les spécialistes pendant des années.",
+              "chinese": "这让专家们困惑多年。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              6,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Il y a des spécialistes qui se sont arraché les cheveux.",
+                "chinese": "有些专家简直要抓狂了。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "profession",
+            "part_of_speech": "nom f.",
+            "ipa": "[pʁɔfɛsjɔ̃]",
+            "chinese": "职业",
+            "example_sentence": {
+              "french": "Linguiste, c'est sa profession.",
+              "chinese": "语言学家是他的职业。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Linguiste, c'est quelqu'un dont le travail, la profession, est d'étudier les langues.",
+                "chinese": "语言学家是指以研究语言为工作、为职业的人。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "orthographe",
+            "part_of_speech": "nom f.",
+            "ipa": "[ɔʁtɔɡʁaf]",
+            "chinese": "拼写",
+            "example_sentence": {
+              "french": "Vous verrez l'orthographe dans les notes.",
+              "chinese": "你们会在注释里看到拼写。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Vous verrez l'orthographe et aussi la traduction.",
+                "chinese": "你们会看到拼写以及翻译。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "alphabet",
+            "part_of_speech": "nom m.",
+            "ipa": "[alfabɛ]",
+            "chinese": "字母表",
+            "example_sentence": {
+              "french": "Il n'y a pas d'alphabet, ce sont des dessins.",
+              "chinese": "没有字母表，它们是图案。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              5,
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "C'est le code ou l'alphabet de l'ancienne Égypte.",
+                "chinese": "它是古埃及的密码或字母表。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "dessin",
+            "part_of_speech": "nom m.",
+            "ipa": "[desɛ̃]",
+            "chinese": "图案，图画",
+            "example_sentence": {
+              "french": "Ce sont des petits dessins.",
+              "chinese": "它们是一些小图案。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce sont des petits dessins.",
+                "chinese": "它们是一些小图案。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          },
+          {
+            "french": "dingue",
+            "part_of_speech": "adjectif",
+            "ipa": "[dɛ̃ɡ]",
+            "chinese": "疯狂的（口语）",
+            "example_sentence": {
+              "french": "Rendre fou, c'est-à-dire rendre dingue.",
+              "chinese": "使人发疯，也就是说让人抓狂。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Rendre fou, c'est-à-dire rendre dingue.",
+                "chinese": "使人发疯，也就是说让人抓狂。",
+                "source_video": "Il y a 200 ans"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "rendre fou / rendre dingue",
+            "meaning": "使人发疯/抓狂",
+            "example": {
+              "french": "Le code de l'ancienne Égypte qui rendit fous les spécialistes.",
+              "chinese": "让专家们感到疯狂的古埃及密码。"
+            },
+            "usage_note": "Used to describe something extremely difficult or frustrating.",
+            "source_ids": [
+              2,
+              6,
+              7
+            ]
+          },
+          {
+            "expression": "s'arracher les cheveux",
+            "meaning": "抓狂，揪头发（形容极度沮丧或困惑）",
+            "example": {
+              "french": "Il y a des spécialistes qui se sont arraché les cheveux sur les hiéroglyphes.",
+              "chinese": "有些专家为了破解象形文字简直要抓狂了。"
+            },
+            "usage_note": "A common idiomatic expression for extreme frustration.",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "expression": "pendant des années",
+            "meaning": "多年来",
+            "example": {
+              "french": "Ils n'arrivaient pas à les déchiffrer pendant des années.",
+              "chinese": "他们多年来一直无法破译它们。"
+            },
+            "usage_note": "Used to emphasize a long duration of time.",
+            "source_ids": [
+              2,
+              6,
+              7
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le Passé Simple",
+            "structure": "Verbe radical + terminaisons du passé simple (-a, -it)",
+            "explanation": "Used in written or formal French to describe completed actions in the past, especially in historical narratives.",
+            "example": {
+              "french": "Champollion déchiffra les hiéroglyphes.",
+              "chinese": "商博良破译了象形文字。"
+            },
+            "usage_note": "In spoken French, this is replaced by the Passé Composé (a déchiffré).",
+            "source_ids": [
+              2,
+              7
+            ]
+          },
+          {
+            "name": "Le pronom relatif 'dont'",
+            "structure": "Nom + dont + sujet + verbe",
+            "explanation": "Used to replace a complement introduced by the preposition 'de'. Here it expresses the object of a definition.",
+            "example": {
+              "french": "Linguiste, c'est quelqu'un dont le travail est d'étudier les langues.",
+              "chinese": "语言学家是指工作是研究语言的人。"
+            },
+            "usage_note": "The structure is 'le travail DE quelqu'un'.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "La structure causative 'rendre + adjectif'",
+            "structure": "Rendre + [quelqu'un/quelque chose] + [adjectif]",
+            "explanation": "Used to express a change of state caused by something or someone.",
+            "example": {
+              "french": "Le code de l'ancienne Égypte qui rendit fous les spécialistes.",
+              "chinese": "让专家们发疯的古埃及密码。"
+            },
+            "usage_note": "The adjective agrees with the object (fous is plural because of spécialistes).",
+            "source_ids": [
+              2,
+              6
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɡw]",
+              "description": "The combination of 'g' and 'u' before 'i' in 'linguiste' creates a semi-vowel sound.",
+              "examples": [
+                "linguiste"
+              ]
+            },
+            {
+              "sound": "[je]",
+              "description": "The 'hié' in 'hiéroglyphes' starts with a semi-vowel [j] sound.",
+              "examples": [
+                "hiéroglyphes"
+              ]
+            }
+          ],
+          "liaison": [
+            "200 ans [dø sɑ̃ zɑ̃]",
+            "des années [de zane]"
+          ],
+          "intonation": "The speaker uses a pedagogical tone, emphasizing keywords like 'jeune' and 'vieux' to show contrast."
+        },
+        "vocabulary_network": {
+          "theme": "Linguistique et Histoire",
+          "core_word": "Langue",
+          "related_groups": [
+            {
+              "category": "Métiers",
+              "words": [
+                "linguiste",
+                "spécialiste"
+              ]
+            },
+            {
+              "category": "Écriture",
+              "words": [
+                "hiéroglyphes",
+                "alphabet",
+                "code",
+                "orthographe",
+                "dessins"
+              ]
+            },
+            {
+              "category": "Temps",
+              "words": [
+                "ancienne",
+                "200 ans",
+                "pendant des années"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Il y a ___ ans, un jeune ___ français nommé Champollion ___ les ___, le ___ de l'___ Égypte, qui ___ fous les ___ pendant des années.",
+            "answer": "200, linguiste, déchiffra, hiéroglyphes, code, ancienne, rendit, spécialistes",
+            "explanation": "这句话完整概括了课文的核心内容：200年前，语言学家商博良破译了让专家们疯狂多年的古埃及象形文字密码。",
+            "source_ids": [
+              2,
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi les spécialistes étaient-ils « fous » selon le texte ?",
+            "options": {
+              "A": "Parce qu'ils n'aimaient pas le travail de Champollion.",
+              "B": "Parce qu'ils n'arrivaient pas à déchiffrer les hiéroglyphes pendant très longtemps.",
+              "C": "Parce que l'Égypte est un pays trop ancien.",
+              "D": "Parce qu'il n'y avait pas de traduction en anglais."
+            },
+            "answer": "B",
+            "explanation": "原文第6条提到：'Ils n'arrivaient pas à les déchiffrer pendant des années'，这解释了为什么他们感到疯狂（rendre fou）。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Linguiste, c'est quelqu'un dont le travail, la profession, est d'étudier les langues.",
+            "answer": "语言学家是指以研究语言为工作、为职业的人。",
+            "explanation": "重点在于理解关系代词 'dont' 的用法，它在这里引导先行词 'quelqu'un' 的所属关系（le travail de quelqu'un）。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante au passé composé (langage parlé) : « Champollion déchiffra les hiéroglyphes. »",
+            "answer": "Champollion a déchiffré les hiéroglyphes.",
+            "explanation": "原文使用的是书面语中的简单过去时（déchiffra），在口语或现代法语中，通常使用复合过去时（a déchiffré）来表达同样的意思。",
+            "source_ids": [
+              2,
+              5
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "linguiste",
+            "déchiffrer",
+            "hiéroglyphes",
+            "spécialiste",
+            "ancienne"
+          ],
+          "covered_grammar": [
+            "Le Passé Simple",
+            "Le pronom relatif 'dont'",
+            "La structure causative 'rendre + adjectif'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il y a [temps] + [sujet] + [verbe]",
+            "explanation": "Used to state how long ago an event happened.",
+            "example": {
+              "french": "Il y a 200 ans, Champollion déchiffra les hiéroglyphes.",
+              "chinese": "200年前，商博良破译了象形文字。"
+            }
+          },
+          {
+            "pattern": "[Sujet] est quelqu'un dont le/la [nom] est de + [infinitif]",
+            "explanation": "A formal way to define a profession or role.",
+            "example": {
+              "french": "Un guide est quelqu'un dont le travail est de montrer la ville.",
+              "chinese": "导游是工作为展示城市的人。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are at the Louvre Museum in Paris, standing in front of Egyptian antiquities. Explain to a friend who Champollion was and why he is famous.",
+          "requirements": "Use the words 'linguiste', 'déchiffrer', and the expression 'pendant des années'.",
+          "starter": "Regarde ces hiéroglyphes ! Tu sais qui les a déchiffrés ?"
+        }
+      },
+      "summary": {
+        "content": "This lesson commemorates the 200th anniversary of Jean-François Champollion's breakthrough in deciphering Egyptian hieroglyphs. It explains the role of a linguist and the immense challenge that these 'small drawings' posed to experts for centuries before the code was finally cracked.",
+        "keywords": [
+          "Champollion",
+          "Hiéroglyphes",
+          "Égypte",
+          "Linguistique",
+          "Déchiffrement"
+        ],
+        "difficulty_note": "The text is B1 level due to the use of the Passé Simple (déchiffra, rendit) and specialized vocabulary related to history and linguistics."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:03:47"
+        },
+        "theme": "History and Linguistics: The Deciphering of Hieroglyphs",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕制作"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.079",
+          "end_time": "00:00:51.880",
+          "french": "Bonjour, aujourd'hui la leçon est « Il y a 200 ans ». Il y a 200 ans, un jeune linguiste français nommé Champollion déchiffra les hiéroglyphes, le code de l'ancienne Égypte, qui rendit fous les spécialistes pendant des années.",
+          "chinese": "大家好，今天的课程是《200年前》。200年前，一位名叫商博良的年轻法国语言学家破译了象形文字，这种古埃及的密码曾让专家们抓狂多年。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.409",
+          "end_time": "00:01:19.500",
+          "french": "Once again, il y a 200 ans, un jeune linguiste français nommé Champollion déchiffra les hiéroglyphes, le code de l'ancienne Égypte, qui rendit fous les spécialistes pendant des années. On commence avec « Il y a 200 ans ». C'est le titre de ce podcast. Il y a 200 ans. 200 years ago. Il y a 200 ans.",
+          "chinese": "再说一遍：200年前，一位名叫商博良的年轻法国语言学家破译了象形文字，这种古埃及的密码曾让专家们抓狂多年。我们从“Il y a 200 ans”开始。这是本期播客的标题。Il y a 200 ans。200年前。Il y a 200 ans。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:20.280",
+          "end_time": "00:01:51.459",
+          "french": "Un jeune linguiste. Un jeune. Jeune, c'est le contraire de vieux. Young, jeune. Linguiste, c'est quelqu'un dont le travail, la profession, est d'étudier les langues. Une langue. Son travail, c'est de les étudier. Il est linguiste. Il est nommé, on l'appelle, on le nomme, named Champollion. C'est son nom.",
+          "chinese": "一位年轻的语言学家。一位年轻人。“Jeune”是“vieux”（老）的反义词。年轻，jeune。语言学家是指以研究语言为职业的人。语言。他的工作就是研究语言。他是一名语言学家。他被命名为，或者说我们称呼他，叫作商博良。这是他的名字。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:51.799",
+          "end_time": "00:02:24.389",
+          "french": "Lui, il déchiffra. C'est le verbe déchiffrer. Déchiffrer, regardez la traduction dans le texte. Vous allez voir, vous verrez l'orthographe et aussi la traduction en anglais dans les notes de cet épisode. Il déchiffra les hiéroglyphes. Les hiéroglyphes, vous savez, c'est l'écriture ancienne de l'Égypte. C'est les hiéroglyphes. Il n'y a pas d'alphabet. Ce sont des petits dessins.",
+          "chinese": "他破译了。这是动词“déchiffrer”（破译）。破译，请看文本中的翻译。你们会在本集笔记中看到拼写以及英文翻译。他破译了象形文字。象形文字，你们知道，是古埃及的古老文字。这就是象形文字。它没有字母表，而是由一个个小图画组成的。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:24.699",
+          "end_time": "00:02:56.939",
+          "french": "C'est ça, les hiéroglyphes. C'est le code ou l'alphabet de l'ancienne Égypte qui rendit fous. Rendre fou, c'est-à-dire rendre dingue. Il y a des spécialistes qui se sont arraché les cheveux sur les hiéroglyphes. Ils n'arrivaient pas à les déchiffrer pendant des années. For years, pendant des années, pendant très longtemps.",
+          "chinese": "没错，这就是象形文字。它是古埃及的密码或字母，曾让人发疯。“Rendre fou”的意思就是让人抓狂。有些专家为了研究象形文字愁得直揪头发。他们多年来一直无法破译。多年来，pendant des années，很长一段时间。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:03:01.020",
+          "end_time": "00:03:15.110",
+          "french": "Il y a 200 ans, un jeune linguiste français nommé Champollion déchiffra les hiéroglyphes, le code de l'ancienne Égypte, qui rendit fous les spécialistes pendant des années.",
+          "chinese": "200年前，一位名叫商博良的年轻法国语言学家破译了象形文字，这种古埃及的密码曾让专家们抓狂多年。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:17.780",
+          "end_time": "00:03:47.620",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕制作"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:03:47.620",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 8,
+        "source_video_name": "Rediffusion - Il y a deux cents ans (Two hundred years ago).json",
+        "tags": []
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The IPA for 'linguiste' is provided as [lɛ̃ɡwist], but in standard French, the 'ui' combination after 'g' is typically pronounced with the labial-palatal approximant [ɥ], resulting in [lɛ̃ɡɥist].",
+            "field": "language_analysis.vocabulary[0].ipa"
+          },
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The IPA for 'hiéroglyphe' is provided as [jeʁɔɡlif], but standard French pronunciation usually includes the initial vowel sound [i], resulting in [ijeʁɔɡlif].",
+            "field": "language_analysis.vocabulary[2].ipa"
+          },
+          {
+            "level": "warning",
+            "check": "Cross-field consistency",
+            "detail": "The occurrence_count for 'hiéroglyphe' is 6, but the source_ids list [2, 5, 6, 7] only accounts for 5 occurrences. The 6th occurrence is in subtitle 3, which is not listed in the source_ids.",
+            "field": "language_analysis.vocabulary[2].occurrence_count"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 3,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

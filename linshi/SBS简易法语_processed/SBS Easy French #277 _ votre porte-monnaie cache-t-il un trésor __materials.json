@@ -1,0 +1,699 @@
+{
+  "source_file": "SBS Easy French #277 _ votre porte-monnaie cache-t-il un trésor _.json",
+  "channel": "SBS简易法语",
+  "video_name": "SBS Easy French #277 _ votre porte-monnaie cache-t-il un trésor _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T00:46:53.664Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 11,
+          "review_words": 0
+        },
+        "grammar": [
+          "La voix passive (被动语态)",
+          "Le conditionnel présent pour l'hypothèse (条件式现在时表假设)",
+          "Le pronom relatif 'où' (关系代词 où)"
+        ],
+        "sections": [
+          "Actualités internationales et nationales",
+          "Cinéma et récompenses",
+          "Avancées médicales"
+        ],
+        "speaking": [
+          "Résumer des nouvelles d'actualité en utilisant le vocabulaire approprié",
+          "Exprimer son opinion sur l'importance du cinéma et de la vérité dans la société"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "dévoiler",
+            "part_of_speech": "verbe",
+            "ipa": "[de.vwa.le]",
+            "chinese": "揭露，推出，公布",
+            "example_sentence": {
+              "french": "La Royal Australian Mint a dévoilé une nouvelle pièce de 1 dollar.",
+              "chinese": "澳大利亚皇家造币厂推出了一枚新的1澳元硬币。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La Royal Australian Mint a dévoilé une nouvelle pièce de 1 dollar en édition limitée.",
+                "chinese": "澳大利亚皇家造币厂推出了一枚限量版1澳元硬币。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "subtil",
+            "part_of_speech": "adjectif",
+            "ipa": "[syb.til]",
+            "chinese": "细微的，微妙的",
+            "example_sentence": {
+              "french": "Cette modification est très subtile.",
+              "chinese": "这一改动非常细微。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cette modification est très subtile. Beaucoup de gens ne la remarqueront pas tout de suite.",
+                "chinese": "这一改动非常细微。许多人可能不会立刻注意到。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "frapper",
+            "part_of_speech": "verbe",
+            "ipa": "[fʁa.pe]",
+            "chinese": "铸造（硬币）；击打",
+            "example_sentence": {
+              "french": "La pièce sera frappée seulement en 2026.",
+              "chinese": "该硬币将于2026年正式铸造发行。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La pièce sera frappée seulement en 2026 pour cette occasion.",
+                "chinese": "为了纪念这一时刻，该硬币将于2026年正式发行（铸造）。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "bilan",
+            "part_of_speech": "nom",
+            "ipa": "[bi.lɑ̃]",
+            "chinese": "伤亡人数；总结，评估",
+            "example_sentence": {
+              "french": "Le bilan humain est très lourd.",
+              "chinese": "人员伤亡惨重。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le bilan humain est très lourd.",
+                "chinese": "人员伤亡惨重。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "invasion",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃.va.zjɔ̃]",
+            "chinese": "入侵",
+            "example_sentence": {
+              "french": "La Russie a lancé une invasion à grande échelle.",
+              "chinese": "俄罗斯发动了一场大规模入侵。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La guerre en Ukraine a commencé le 24 février 2022, lorsque la Russie a lancé une invasion à grande échelle.",
+                "chinese": "乌克兰战争始于2022年2月24日，当时俄罗斯发动了一场大规模入侵。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "sacrer",
+            "part_of_speech": "verbe",
+            "ipa": "[sa.kʁe]",
+            "chinese": "授予称号，加冕",
+            "example_sentence": {
+              "french": "Le film a été sacré meilleur film.",
+              "chinese": "该电影荣获最佳影片奖。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "En France, le film L'Attachement a été sacré meilleur film lors de la 51e cérémonie des Césars.",
+                "chinese": "在法国，电影《依恋》在第51届凯撒奖颁奖典礼上荣获最佳影片奖。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "récompense",
+            "part_of_speech": "nom",
+            "ipa": "[ʁe.kɔ̃.pɑ̃s]",
+            "chinese": "奖项，报酬",
+            "example_sentence": {
+              "french": "Cette récompense est l'une des plus importantes du cinéma.",
+              "chinese": "这一奖项是电影界最重要的奖项之一。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cette récompense est l'une des plus importantes du cinéma français.",
+                "chinese": "这一奖项是法国电影界最重要的奖项之一。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "malmener",
+            "part_of_speech": "verbe",
+            "ipa": "[mal.mə.ne]",
+            "chinese": "粗暴对待，践踏",
+            "example_sentence": {
+              "french": "La vérité est malmenée dans cette période.",
+              "chinese": "在这个时期，真相备受践踏。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              16
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On est dans une période où la vérité est malmenée, où elle est abîmée...",
+                "chinese": "我们正处在一个真相备受践踏、遭到破坏的时期……",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "profusion",
+            "part_of_speech": "nom",
+            "ipa": "[pʁɔ.fy.zjɔ̃]",
+            "chinese": "大量，丰富",
+            "example_sentence": {
+              "french": "La profusion d'images ne nous permet pas d'y voir clair.",
+              "chinese": "海量的图像并不总能让我们看清真相。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              16
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La profusion d'images et d'informations ne nous permet pas toujours d'y voir clair.",
+                "chinese": "海量的图像与信息也并不总能让我们看清真相。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "paradoxe",
+            "part_of_speech": "nom",
+            "ipa": "[pa.ʁa.dɔks]",
+            "chinese": "悖论，自相矛盾",
+            "example_sentence": {
+              "french": "Les paradoxes nourrissent notre intelligence.",
+              "chinese": "悖论滋养着我们的智慧。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              17
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les nuances et les paradoxes nourrissent notre intelligence humaine et collective.",
+                "chinese": "细微之处与悖论滋养着我们人类乃至集体的智慧。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "tumeur",
+            "part_of_speech": "nom",
+            "ipa": "[ty.mœʁ]",
+            "chinese": "肿瘤",
+            "example_sentence": {
+              "french": "Une tumeur a été détectée in utero.",
+              "chinese": "在子宫内检测到了肿瘤。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              18
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Un bébé est né en bonne santé malgré une tumeur détectée in utero.",
+                "chinese": "尽管在子宫内就已发现肿瘤，宝宝依然健康地出生了。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "passer au niveau supérieur",
+            "meaning": "更上一层楼，进入更高阶段",
+            "example": {
+              "french": "Si vous êtes prêt à passer au niveau supérieur, découvrez SBS French.",
+              "chinese": "如果您已准备好更上一层楼，请了解SBS French。"
+            },
+            "usage_note": "常用于学习、工作或技能提升的语境中。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "à grande échelle",
+            "meaning": "大规模地",
+            "example": {
+              "french": "La Russie a lancé une invasion à grande échelle.",
+              "chinese": "俄罗斯发动了一场大规模入侵。"
+            },
+            "usage_note": "用于形容行动、计划或事件的范围非常广泛。",
+            "source_ids": [
+              9
+            ]
+          },
+          {
+            "expression": "mettre le sourire aux lèvres",
+            "meaning": "让人露出笑容，令人会心一笑",
+            "example": {
+              "french": "C'est la nouvelle qui va vous mettre le sourire aux lèvres.",
+              "chinese": "这个消息一定会让你会心一笑。"
+            },
+            "usage_note": "常用于引出好消息或令人愉悦的事物。",
+            "source_ids": [
+              18
+            ]
+          },
+          {
+            "expression": "une première mondiale",
+            "meaning": "全球首例，世界首创",
+            "example": {
+              "french": "Le fœtus a été soigné avant sa naissance, une première mondiale.",
+              "chinese": "这名胎儿在出生前便接受了治疗，这开创了全球首例。"
+            },
+            "usage_note": "新闻报道中常用来强调某项成就或发现的独创性和领先地位。",
+            "source_ids": [
+              18
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La voix passive (被动语态)",
+            "structure": "Sujet + être (au temps voulu) + participe passé (+ par + agent)",
+            "explanation": "被动语态在新闻报道中非常常见，用于强调动作的承受者（即主语）或动作本身，而不是动作的执行者。过去分词必须与主语进行性数配合。",
+            "example": {
+              "french": "En France, le film L'Attachement a été sacré meilleur film lors de la 51e cérémonie des Césars.",
+              "chinese": "在法国，电影《依恋》在第51届凯撒奖颁奖典礼上荣获最佳影片奖。"
+            },
+            "usage_note": "在此例中，'a été sacré' 是复合过去时的被动语态，强调电影获奖这一事实，而省略了颁奖者（评委会）。",
+            "source_ids": [
+              13
+            ]
+          },
+          {
+            "name": "Le conditionnel présent pour l'hypothèse (条件式现在时表假设)",
+            "structure": "Radical du futur + terminaisons de l'imparfait (-ais, -ais, -ait, -ions, -iez, -aient)",
+            "explanation": "条件式现在时可用于表达在某种假设情况下的结果，或者表达一种非现实的、想象的情况。",
+            "example": {
+              "french": "Nous n'aurions pas assez de gens. Nous les perdrions.",
+              "chinese": "我们不会有足够多的人手，我们会失去他们。"
+            },
+            "usage_note": "泽连斯基在这里使用条件式，表达如果采取某些行动（隐含的条件），将会导致的假设性后果。",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "name": "Le pronom relatif 'où' (关系代词 où)",
+            "structure": "Nom (temps/lieu/situation) + où + Sujet + Verbe",
+            "explanation": "关系代词 'où' 不仅可以代替地点，还可以代替时间或某种抽象的处境/状态，相当于 'dans lequel/laquelle' 或 'à quel moment'。",
+            "example": {
+              "french": "On est dans une période où la vérité est malmenée, où elle est abîmée...",
+              "chinese": "我们正处在一个真相备受践踏、遭到破坏的时期……"
+            },
+            "usage_note": "这里 'où' 代替先行词 'une période'（一个时期），引导定语从句修饰该时期发生的状况。",
+            "source_ids": [
+              16
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[s]",
+              "description": "注意 'Césars' 的发音，首字母 C 发 [s]，中间的 s 发 [z]，词尾 s 不发音。",
+              "examples": [
+                "Césars [se.zaʁ]"
+              ]
+            },
+            {
+              "sound": "[ɛ̃]",
+              "description": "鼻化元音 [ɛ̃] 在新闻词汇中频繁出现，发音时嘴唇微展，气流同时从口腔和鼻腔流出。",
+              "examples": [
+                "invasion [ɛ̃.va.zjɔ̃]",
+                "maintien [mɛ̃.tjɛ̃]"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_actrices [le.zak.tʁis] (Obligatoire)",
+            "un_triste_anniversaire [œ̃.tʁis.ta.ni.vɛʁ.sɛʁ] (Enchaînement consonantique/Liaison)",
+            "est_une [ɛ.tyn] (Obligatoire après le verbe être à la 3e personne)"
+          ],
+          "intonation": "新闻播报的语调（Intonation journalistique）：在列举新闻提要时（如第3段），每个短语末尾语调上扬以保持听众的注意力，直到最后一条新闻末尾语调下降表示结束。"
+        },
+        "vocabulary_network": {
+          "theme": "L'actualité et la société",
+          "core_word": "Information",
+          "related_groups": [
+            {
+              "category": "Guerre et Conflit",
+              "words": [
+                "invasion",
+                "bilan",
+                "bombardées",
+                "réfugiés"
+              ]
+            },
+            {
+              "category": "Cinéma et Culture",
+              "words": [
+                "cérémonie",
+                "récompense",
+                "sacré",
+                "actrice"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "On est dans une ___ où la ___ est ___, où elle est ___, très ___, et où la ___ d'images et d'informations ne nous permet pas toujours d'y voir clair.",
+            "answer": "période, vérité, malmenée, abîmée, fragilisée, profusion",
+            "explanation": "根据原文第16句，女演员Léa Drucker在获奖感言中描述了当前社会真相被践踏、信息泛滥的现状。填入的词汇依次为：période（时期）、vérité（真相）、malmenée（被粗暴对待）、abîmée（被破坏）、fragilisée（变得脆弱）、profusion（大量/泛滥）。",
+            "source_ids": [
+              16
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi la nouvelle pièce de 1 dollar australien est-elle considérée comme spéciale selon le texte ?",
+            "options": {
+              "A": "Elle ajoute un sixième kangourou au célèbre dessin original de 1984.",
+              "B": "Elle est fabriquée avec un nouveau métal précieux pour les 60 ans.",
+              "C": "Elle remplace définitivement l'ancienne pièce de 1 dollar.",
+              "D": "Elle montre le portrait du designer Stuart Devlin."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第4句明确指出：'Cette pièce est spéciale parce qu'elle ajoute un sixième kangourou au célèbre dessin original qui montrait 5 kangourous...'（这枚硬币特别之处在于，在原版描绘了5只袋鼠的著名图案基础上，新增加了一只第六只袋鼠）。其他选项在原文中均未提及。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Et je réalise plus que jamais combien le cinéma et les films nous offrent une respiration nécessaire, un temps pour vivre l'expérience de l'intérieur.",
+            "answer": "我比以往任何时候都更深刻地意识到，电影和影片为我们提供了不可或缺的喘息空间，让我们得以从内部亲身体验。",
+            "explanation": "翻译难点在于准确传达抽象表达：'plus que jamais' 意为'比以往任何时候都更'；'offrent une respiration nécessaire' 直译为'提供必要的呼吸'，在此语境下意为'提供不可或缺的喘息空间/放松的机会'；'vivre l'expérience de l'intérieur' 意为'从内部体验/亲身体验'。",
+            "source_ids": [
+              17
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Mettez la phrase suivante à la voix active en utilisant le pronom indéfini 'On' comme sujet : 'Le film L'Attachement a été sacré meilleur film lors de la 51e cérémonie des Césars.'",
+            "answer": "On a sacré le film L'Attachement meilleur film lors de la 51e cérémonie des Césars.",
+            "explanation": "原句使用了被动语态的复合过去时 'a été sacré'。转换为主动语态时，由于没有明确的施动者（par qui），题目要求使用泛指代词 'On' 作为主语。动词变为主动语态的复合过去时 'a sacré'，原主语 'Le film L'Attachement' 变为直接宾语。",
+            "source_ids": [
+              13
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "malmener",
+            "profusion",
+            "sacrer"
+          ],
+          "covered_grammar": [
+            "La voix passive"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est la première fois depuis [événement] que [sujet + verbe]...",
+            "explanation": "用于表达自某个事件发生以来，某事是第一次发生。",
+            "example": {
+              "french": "C'est la première fois depuis l'introduction de la pièce de 1 dollar que le design change.",
+              "chinese": "这是自1澳元硬币问世以来，其设计首次发生改变。"
+            }
+          },
+          {
+            "pattern": "Il y a la difficulté de + infinitif...",
+            "explanation": "用于引出做某事的困难或挑战。",
+            "example": {
+              "french": "Il y a la difficulté de faire du maintien de l'ordre.",
+              "chinese": "其中有维持秩序工作的艰难。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和一位法国朋友讨论最近的新闻和电影。你想谈谈最近在凯撒奖上获奖的电影，并表达你对电影在当今社会中作用的看法（如提供喘息空间、让人看清真相等）。",
+          "requirements": "使用至少两个本课学到的高级词汇（如 profusion, malmener, sacrer）以及被动语态。",
+          "starter": "Tu as vu les résultats des Césars cette année ? Le film L'Attachement a été sacré meilleur film, et je pense que..."
+        }
+      },
+      "summary": {
+        "content": "Cet épisode de SBS Easy French présente un tour d'horizon de l'actualité. Il aborde d'abord la création d'une nouvelle pièce de 1 dollar en Australie pour les 60 ans de la monnaie. Ensuite, il rappelle le triste 4e anniversaire de la guerre en Ukraine avec un lourd bilan humain. En France, le cinéma est à l'honneur avec la 51e cérémonie des Césars, où 'L'Attachement' a été sacré meilleur film. Enfin, une nouvelle réjouissante clôture le journal : une première mondiale médicale en France où un bébé a été opéré d'une tumeur in utero.",
+        "keywords": [
+          "monnaie",
+          "guerre en Ukraine",
+          "Césars",
+          "cinéma français",
+          "première mondiale",
+          "in utero"
+        ],
+        "difficulty_note": "Le texte est globalement accessible (B1) mais contient des citations authentiques (Zelensky, Léa Drucker) qui élèvent le niveau (B2) grâce à un vocabulaire abstrait et des structures grammaticales complexes (voix passive, conditionnel, pronoms relatifs)."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.500",
+          "end": "00:07:54.279"
+        },
+        "theme": "Actualités internationales, Cinéma et Santé",
+        "cefr_level": "B1",
+        "vocabulary_count": 11,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.500",
+          "end_time": "00:00:27.210",
+          "french": "Vous êtes avec SBS French. Bonjour et bienvenue dans ce nouvel épisode de SBS Easy French. Ce podcast est réalisé en partenariat avec l'Alliance française de Melbourne. Chaque semaine, vous avez rendez-vous avec Easy French, votre compagnon pour apprendre le français à votre rythme.",
+          "chinese": "您正在收听的是SBS法语频道。大家好，欢迎收听新一期的“SBS简易法语”（SBS Easy French）。本播客由我们与墨尔本法语联盟合作制作。每周，“简易法语”都会与您相约，成为您按照自己的节奏学习法语的贴心伴侣。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:27.539",
+          "end_time": "00:01:02.859",
+          "french": "Si ce n'est pas déjà fait, je vous invite à vous inscrire à notre newsletter sur le site web de SBS French pour recevoir la transcription de cette émission et de toutes les autres sur votre boîte mail tous les vendredis. Et si vous vous sentez de plus en plus à l'aise avec le français et prêt à passer au niveau supérieur, n'hésitez pas à découvrir SBS French. Vous êtes avec Marianne Murat et voici votre journal. On commence avec les titres.",
+          "chinese": "如果您还没有订阅，我邀请您在SBS法语频道的网站上订阅我们的新闻简报，这样您每周五都能在邮箱中收到本期及所有其他节目的文字记录。如果您觉得自己的法语越来越熟练，并准备好进入更高水平，请随时探索SBS法语频道的其他内容。我是玛丽安·穆拉特（Marianne Murat），以下是为您带来的新闻。我们先来看内容提要。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:03.100",
+          "end_time": "00:01:18.250",
+          "french": "Une nouvelle pièce d'exception en Australie, les 4 ans de la guerre en Ukraine, la cérémonie des Césars en France et enfin, la bonne nouvelle de la semaine, le sauvetage d'un bébé avant même sa naissance.",
+          "chinese": "澳大利亚发行新款限量版硬币；乌克兰战争爆发四周年；法国凯撒电影奖颁奖典礼；最后是本周的好消息：一名婴儿在出生前获救。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:20.090",
+          "end_time": "00:01:43.939",
+          "french": "La Royal Australian Mint a dévoilé une nouvelle pièce de 1 dollar en édition limitée pour marquer les 60 ans de la monnaie en Australie. Cette pièce est spéciale parce qu'elle ajoute un sixième kangourou au célèbre dessin original qui montrait 5 kangourous, créé en 1984 par le designer Stuart Devlin.",
+          "chinese": "澳大利亚皇家造币厂推出了一枚限量版1澳元硬币，以纪念澳大利亚货币发行60周年。这枚硬币非常特别，因为它在设计师斯图尔特·德夫林（Stuart Devlin）于1984年创作的著名的“五只袋鼠”原创图案上，增加了第六只袋鼠。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:45.269",
+          "end_time": "00:02:06.629",
+          "french": "Cette modification est très subtile. Beaucoup de gens ne la remarqueront pas tout de suite, mais elle célèbre une étape importante de l'histoire de l'argent australien. C'est la première fois depuis l'introduction de la pièce de 1 dollar que le design change. La pièce sera frappée seulement en 2026 pour cette occasion.",
+          "chinese": "这一改动非常微妙。许多人不会立刻注意到，但它庆祝了澳大利亚货币史上的一个重要里程碑。这是自1澳元硬币发行以来首次更改设计。该硬币将仅在2026年为此纪念活动进行铸造。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:07.670",
+          "end_time": "00:02:21.580",
+          "french": "Les responsables de la monnaie disent que c'est une façon de relier le passé et le présent de la monnaie australienne, et ils encouragent les gens à regarder leurs pièces pour essayer de trouver cette nouvelle version dans leur porte-monnaie.",
+          "chinese": "造币厂的负责人表示，这是连接澳大利亚货币过去与现在的一种方式，他们鼓励人们多看看自己的硬币，试着在钱包里找到这个新版本。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:22.419",
+          "end_time": "00:02:49.169",
+          "french": "Cette pièce anniversaire est considérée comme un morceau d'histoire que beaucoup de collectionneurs et d'Australiens aimeront avoir. On écoute le présentateur Ricardo Gonçalves.",
+          "chinese": "这枚纪念币被视为一段历史，许多收藏家和澳大利亚人都会想要拥有它。我们来听听主持人里卡多·贡萨尔维斯（Ricardo Gonçalves）的报道。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:49.169",
+          "end_time": "00:03:10.150",
+          "french": "Sous-titrage ST' 501",
+          "chinese": "字幕 ST' 501"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:10.300",
+          "end_time": "00:03:32.870",
+          "french": "Un triste anniversaire. La guerre en Ukraine a commencé le 24 février 2022, lorsque la Russie a lancé une invasion à grande échelle. Quatre ans plus tard, le conflit continue et aucune solution de paix n'a été trouvée. C'est la guerre la plus grave en Europe depuis la Seconde Guerre mondiale. Le bilan humain est très lourd.",
+          "chinese": "一个悲伤的周年纪念日。乌克兰战争始于2022年2月24日，当时俄罗斯发动了全面入侵。四年后，冲突仍在继续，尚未找到任何和平解决方案。这是自第二次世界大战以来欧洲最严重的战争。人员伤亡非常惨重。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:33.139",
+          "end_time": "00:03:52.550",
+          "french": "Des dizaines de milliers de soldats ont été tués ou blessés. Des milliers de civils ont aussi perdu la vie. De nombreuses villes ont été bombardées et en partie détruites. La guerre a provoqué une grande crise humanitaire. Des millions d'Ukrainiens ont quitté leur pays pour se réfugier à l'étranger.",
+          "chinese": "数以万计的士兵阵亡或受伤。数千名平民也失去了生命。许多城市遭到轰炸并被部分摧毁。这场战争引发了严重的人道主义危机。数百万乌克兰人离开祖国，逃往国外避难。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:52.729",
+          "end_time": "00:04:20.579",
+          "french": "La Russie contrôle toujours certaines régions dans l'est et le sud de l'Ukraine. La situation reste tendue et incertaine. On écoute le président ukrainien Volodymyr Zelensky.",
+          "chinese": "俄罗斯仍然控制着乌克兰东部和南部的一些地区。局势依然紧张且充满不确定性。我们来听听乌克兰总统弗拉基米尔·泽连斯基（Volodymyr Zelensky）的讲话。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:20.819",
+          "end_time": "00:04:48.139",
+          "french": "« Et nous comprenons le coût de ces pas. Nous n'aurions pas assez de gens. Nous les perdrions. Et qu'est-ce que l'État sans les gens ? Honnêtement, rien. Et nous n'avons pas suffisamment d'armes. Cela dépend non seulement de nous, mais aussi de nos partenaires. À ce jour, cela n'est pas disponible. Mais retourner aux frontières justes de 1991 est sans doute une victoire pour la justice. »",
+          "chinese": "“我们明白采取这些行动的代价。我们没有足够的人手。我们会失去他们。没有人民的国家算什么？说实话，什么都不是。而且我们没有足够的武器。这不仅取决于我们，也取决于我们的合作伙伴。时至今日，我们仍无法获得这些。但是，恢复到1991年的正义边界，无疑是正义的胜利。”"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:48.569",
+          "end_time": "00:05:08.490",
+          "french": "En France, le film L'Attachement a été sacré meilleur film lors de la 51e cérémonie des Césars. Cette récompense est l'une des plus importantes du cinéma français. Le film a été particulièrement remarqué par les membres de l'Académie pour sa qualité artistique et son émotion.",
+          "chinese": "在法国，电影《依恋》（L'Attachement）在第51届凯撒奖颁奖典礼上荣获最佳影片奖。该奖项是法国电影界最重要的奖项之一。这部电影因其艺术水准和情感表达而备受学院成员的瞩目。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:09.019",
+          "end_time": "00:05:33.899",
+          "french": "Lors de cette soirée, Léa Drucker a remporté le César de la meilleure actrice pour son rôle au cinéma. De son côté, Laurent Lafitte a reçu le César du meilleur acteur. Ces prix récompensent leurs performances et leurs talents à l'écran. La cérémonie des Césars célèbre chaque année les films, les actrices, les acteurs et les équipes techniques qui ont marqué le cinéma français.",
+          "chinese": "在当晚的颁奖典礼上，蕾雅·德吕盖（Léa Drucker）凭借其电影角色荣获凯撒奖最佳女主角。另一方面，洛朗·拉菲特（Laurent Lafitte）获得了凯撒奖最佳男主角。这些奖项是对他们在银幕上的精彩表演和才华的认可。凯撒奖颁奖典礼每年都会表彰那些在法国电影界留下印记的电影、女演员、男演员和技术团队。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:34.199",
+          "end_time": "00:06:04.139",
+          "french": "Cette 51e édition a mis en avant des œuvres variées et a confirmé le succès de L'Attachement, qui s'impose comme l'un des films importants de l'année. La réaction de Léa Drucker : « En regardant ce film, j'ai pu comprendre de façon plus intime ce qui se joue dans cette zone de tension entre l'institution policière et les citoyens. Il y a la difficulté de faire du maintien de l'ordre, la vérité qui est parfois... »",
+          "chinese": "第51届凯撒奖展示了各种各样的作品，并印证了《依恋》的成功，使其成为本年度最重要的电影之一。蕾雅·德吕盖发表感言称：“在观看这部电影时，我能够更深刻地理解在警察机构与公民之间的这种紧张地带正在发生什么。维持秩序存在困难，而真相有时……”"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:04.790",
+          "end_time": "00:06:34.149",
+          "french": "« Et surtout la négation du statut des victimes. On est dans une période où la vérité est malmenée, où elle est abîmée, très fragilisée, et où la profusion d'images et d'informations ne nous permet pas toujours d'y voir clair, en tout cas pour ma part. »",
+          "chinese": "“尤其是对受害者身份的否定。我们正处于一个真相被扭曲、被破坏、变得非常脆弱的时期，海量的图像和信息并不总能让我们看清事实，至少对我来说是这样。”"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:34.649",
+          "end_time": "00:06:56.779",
+          "french": "« Et je réalise plus que jamais combien le cinéma et les films nous offrent une respiration nécessaire, un temps pour vivre l'expérience de l'intérieur, pour adopter le point de vue de l'autre, où la complexité peut exister et où les nuances et les paradoxes nourrissent notre intelligence humaine et collective. Merci beaucoup. »",
+          "chinese": "“我比以往任何时候都更深刻地意识到，电影和影像为我们提供了必要的喘息空间，让我们有时间去从内部体验，去采纳他人的视角，在这里复杂性得以存在，细微的差别和悖论滋养着我们人类的集体智慧。非常感谢。”"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:59.060",
+          "end_time": "00:07:26.220",
+          "french": "Et enfin, on termine avec la feel-good news de la semaine, la nouvelle qui va vous mettre le sourire aux lèvres. Un bébé est né en bonne santé malgré une tumeur détectée in utero, c'est-à-dire détectée pendant la grossesse de la maman dans l'utérus. Le fœtus a été soigné avant sa naissance, une première mondiale à l'hôpital de Mulhouse en France. Le bébé s'appelle Issa, il a maintenant 3 mois.",
+          "chinese": "最后，我们以本周的“暖心新闻”结束，这条新闻会让您会心一笑。一名婴儿健康出生，尽管他在子宫内（即在母亲怀孕期间的子宫里）被检测出患有肿瘤。这名胎儿在出生前就接受了治疗，这是法国米卢斯（Mulhouse）医院创下的世界首例。这个宝宝名叫伊萨（Issa），现在已经3个月大了。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:26.680",
+          "end_time": "00:07:54.279",
+          "french": "Merci d'avoir suivi votre journal en français facile. Nous nous retrouvons la semaine prochaine pour un nouvel épisode de SBS Easy French. À bientôt !",
+          "chinese": "感谢您收听简易法语新闻。我们下周再见，为您带来新一期的“SBS简易法语”。下次见！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:00.500",
+        "end_time": "00:07:54.279",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 19,
+        "source_video_name": "SBS Easy French #277 _ votre porte-monnaie cache-t-il un trésor _.json",
+        "tags": [
+          "文化深度",
+          "旅行"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

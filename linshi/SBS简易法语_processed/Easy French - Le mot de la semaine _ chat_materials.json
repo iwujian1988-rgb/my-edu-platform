@@ -1,0 +1,672 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ chat.json",
+  "channel": "SBS简易法语",
+  "video_name": "简易法语 - 本周词汇：聊天",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T03:25:55.783Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 13,
+          "review_words": 0
+        },
+        "grammar": [
+          "La mise en relief avec 'si... c'est parce que'",
+          "La voix passive (被动语态)",
+          "Le pronom indéfini 'on' à valeur générale"
+        ],
+        "speaking": [
+          "Savoir utiliser des expressions idiomatiques françaises liées aux animaux (le chat) dans une conversation",
+          "Expliquer le sens d'une expression figurée de manière claire"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "domestique",
+            "part_of_speech": "adjectif",
+            "ipa": "[dɔmɛstik]",
+            "chinese": "家养的，家庭的",
+            "example_sentence": {
+              "french": "Le chien est un animal domestique très fidèle.",
+              "chinese": "狗是非常忠诚的家养动物。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "C'est l'un des animaux domestiques les plus présents dans nos foyers.",
+                "chinese": "它是我们家中最常见的宠物（家养动物）之一。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "foyer",
+            "part_of_speech": "nom masculin",
+            "ipa": "[fwaje]",
+            "chinese": "家庭，户，家",
+            "example_sentence": {
+              "french": "Chaque foyer a reçu une lettre de la mairie.",
+              "chinese": "每户家庭都收到了市政厅的信。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est l'un des animaux domestiques les plus présents dans nos foyers.",
+                "chinese": "它是我们家中最常见的宠物之一。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "compagnon",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kɔ̃paɲɔ̃]",
+            "chinese": "同伴，伴侣",
+            "example_sentence": {
+              "french": "Mon chien est mon meilleur compagnon de voyage.",
+              "chinese": "我的狗是我最好的旅行伴侣。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Un compagnon souvent calme, indépendant, parfois joueur...",
+                "chinese": "一个通常性情温和、独立自主，有时爱玩的同伴……",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "indépendant",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃depɑ̃dɑ̃]",
+            "chinese": "独立的，自主的",
+            "example_sentence": {
+              "french": "Les chats sont généralement plus indépendants que les chiens.",
+              "chinese": "猫通常比狗更独立。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Un compagnon souvent calme, indépendant, parfois joueur...",
+                "chinese": "一个通常性情温和、独立自主，有时爱玩的同伴……",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "félin",
+            "part_of_speech": "nom masculin / adjectif",
+            "ipa": "[felɛ̃]",
+            "chinese": "猫科动物",
+            "example_sentence": {
+              "french": "Le lion est le plus grand félin d'Afrique.",
+              "chinese": "狮子是非洲最大的猫科动物。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est parce qu'un félin très célèbre fête son anniversaire.",
+                "chinese": "是因为一只非常著名的猫（猫科动物）正迎来它的生日。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "résidence",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁezidɑ̃s]",
+            "chinese": "住宅，官邸，居住地",
+            "example_sentence": {
+              "french": "Le président a quitté sa résidence officielle.",
+              "chinese": "总统离开了他的官邸。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La résidence officielle du Premier ministre britannique à Londres.",
+                "chinese": "位于伦敦的英国首相官邸。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "devinette",
+            "part_of_speech": "nom féminin",
+            "ipa": "[dəvinɛt]",
+            "chinese": "谜语，猜谜游戏",
+            "example_sentence": {
+              "french": "Les enfants adorent jouer aux devinettes.",
+              "chinese": "孩子们喜欢玩猜谜游戏。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça veut dire qu'on abandonne une devinette et qu'on veut la réponse.",
+                "chinese": "意思就是放弃一个谜题，想要知道答案了。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "franchement",
+            "part_of_speech": "adverbe",
+            "ipa": "[fʁɑ̃ʃmɑ̃]",
+            "chinese": "坦白地，直截了当地",
+            "example_sentence": {
+              "french": "Parle-moi franchement, que penses-tu de mon idée ?",
+              "chinese": "坦白跟我说，你觉得我的主意怎么样？"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "« Appeler un chat un chat », c'est parler franchement, sans détour.",
+                "chinese": "把猫叫作猫，就是直截了当地说话，毫不拐弯抹角。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "détour",
+            "part_of_speech": "nom masculin",
+            "ipa": "[detuʁ]",
+            "chinese": "绕道，拐弯抹角",
+            "example_sentence": {
+              "french": "Il m'a dit la vérité sans aucun détour.",
+              "chinese": "他毫不拐弯抹角地告诉了我真相。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "« Appeler un chat un chat », c'est parler franchement, sans détour.",
+                "chinese": "把猫叫作猫，就是直截了当地说话，毫不拐弯抹角。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "autorité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[otoʁite]",
+            "chinese": "权威，权力，当局",
+            "example_sentence": {
+              "french": "Le professeur a du mal à imposer son autorité dans la classe.",
+              "chinese": "这位老师很难在班里树立威信。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cela veut dire que quand l'autorité s'absente, on en profite un peu.",
+                "chinese": "这说明，当权威缺席时，人们便会趁机占点小便宜。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "fouetter",
+            "part_of_speech": "verbe",
+            "ipa": "[fwete]",
+            "chinese": "鞭打，抽打",
+            "example_sentence": {
+              "french": "Autrefois, on utilisait une cravache pour fouetter les chevaux.",
+              "chinese": "过去，人们用马鞭抽打马匹。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "« Avoir d'autres chats à fouetter », c'est avoir plus important à faire.",
+                "chinese": "“有别的猫要抽打”，就是指手头还有更重要的事情要做。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "tousser",
+            "part_of_speech": "verbe",
+            "ipa": "[tuse]",
+            "chinese": "咳嗽",
+            "example_sentence": {
+              "french": "Il n'arrête pas de tousser depuis ce matin.",
+              "chinese": "他从今天早上起就不停地咳嗽。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et « avoir un chat dans la gorge », c'est avoir envie de tousser.",
+                "chinese": "至于“喉咙里有猫”，则是指想咳嗽的感觉。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "rubrique",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁybʁik]",
+            "chinese": "专栏，栏目",
+            "example_sentence": {
+              "french": "Je lis toujours la rubrique sportive du journal.",
+              "chinese": "我总是看报纸的体育专栏。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Bienvenue dans notre rubrique « Le mot de la semaine ».",
+                "chinese": "欢迎来到我们的“本周词汇”栏目。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "donner sa langue au chat",
+            "meaning": "放弃猜谜，认输并求得答案",
+            "example": {
+              "french": "Je ne trouve pas la solution à ton énigme, je donne ma langue au chat.",
+              "chinese": "我找不到你谜语的答案，我认输了（把舌头给猫）。"
+            },
+            "usage_note": "常用于猜谜游戏或别人问你一个问题你答不上来时，表示放弃思考并请求对方公布答案。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "il n'y a pas un chat",
+            "meaning": "一个人也没有，空无一人",
+            "example": {
+              "french": "Je suis allé au cinéma à 10h du matin, il n'y avait pas un chat.",
+              "chinese": "我早上10点去电影院，那里一个人也没有。"
+            },
+            "usage_note": "非常常用的口语表达，用来形容某个地方异常空荡，连个人影都没有。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "appeler un chat un chat",
+            "meaning": "直言不讳，实话实说，不拐弯抹角",
+            "example": {
+              "french": "Il faut appeler un chat un chat : ce projet est un échec total.",
+              "chinese": "必须实话实说：这个项目彻底失败了。"
+            },
+            "usage_note": "用于强调说话直接，不使用委婉语掩盖事实。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "quand le chat n'est pas là, les souris dansent",
+            "meaning": "山中无老虎，猴子称大王（上司或权威不在时，下属便随心所欲）",
+            "example": {
+              "french": "Le patron est en vacances, alors les employés prennent de longues pauses. Quand le chat n'est pas là, les souris dansent !",
+              "chinese": "老板去度假了，所以员工们休息了很长时间。真是猫不在，老鼠跳舞啊！"
+            },
+            "usage_note": "这是一句著名的谚语，形容失去监管时人们的放纵行为。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "avoir d'autres chats à fouetter",
+            "meaning": "有更重要的事情要做，有别的事要忙",
+            "example": {
+              "french": "Ne me dérange pas avec ces détails, j'ai d'autres chats à fouetter aujourd'hui.",
+              "chinese": "别拿这些细节来烦我，我今天还有更重要的事情要做。"
+            },
+            "usage_note": "字面意思是“有其他的猫要抽打”，实际用来表示自己很忙，没空理会琐事。",
+            "source_ids": [
+              5
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La mise en relief avec 'si... c'est parce que'",
+            "structure": "Si + [proposition 1], c'est parce que + [proposition 2]",
+            "explanation": "这种结构用于强调原因。前半句（Si...）提出一个事实或现象，后半句（c'est parce que...）引出导致该现象的核心原因。它比单纯使用'parce que'更具强调意味，常用于解释为什么要做某事或谈论某事。",
+            "example": {
+              "french": "Et si on parle du chat cette semaine, c'est parce qu'un félin très célèbre fête son anniversaire.",
+              "chinese": "而我们本周之所以要聊猫，是因为一只非常著名的猫正迎来它的生日。"
+            },
+            "usage_note": "注意'si'在这里不表示条件（如果），而是引出已知事实（既然/之所以）。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "La voix passive (被动语态)",
+            "structure": "Sujet + être (au temps voulu) + participe passé (+ par + agent)",
+            "explanation": "被动语态用于强调动作的承受者而不是执行者。在原文中，主语'il'（指代猫Larry）承受了'suivre'（关注）的动作。过去分词必须与主语的性数保持一致。动作的执行者由介词'par'引出。",
+            "example": {
+              "french": "Il est suivi par presque un million de personnes sur les réseaux sociaux.",
+              "chinese": "他在社交媒体上被近百万人关注（拥有近百万粉丝）。"
+            },
+            "usage_note": "在日常法语中，被动语态不如主动语态或使用'on'作主语常见，但在新闻报道或强调受事者（如名人、名猫）时非常有用。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "Le pronom indéfini 'on' à valeur générale",
+            "structure": "On + verbe à la 3e personne du singulier",
+            "explanation": "代词'on'不仅可以代替'nous'（我们），在很多情况下，它用来表示泛指的'人们'、'大家'或'某人'。在解释成语或普遍真理时，'on'是非常自然的选择。",
+            "example": {
+              "french": "Quand on « donne sa langue au chat », ça veut dire qu'on abandonne une devinette et qu'on veut la réponse.",
+              "chinese": "当人们说“给猫舌头”时，意思就是放弃一个谜题，想要知道答案了。"
+            },
+            "usage_note": "在翻译成中文时，泛指的'on'通常可以译为'人们'、'大家'，或者直接省略主语。",
+            "source_ids": [
+              4
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ʃ]",
+              "description": "辅音 /ʃ/，拼写通常为 'ch'。发音时嘴唇微突，舌头靠近硬腭，气流摩擦而出。在本文中由于主题是'chat'，这个音频繁出现。",
+              "examples": [
+                "chat",
+                "franchement"
+              ]
+            },
+            {
+              "sound": "[ɛ̃] / [ɑ̃] / [ɔ̃]",
+              "description": "法语的鼻化元音。发音时气流同时从口腔和鼻腔流出。本文中有许多包含鼻化元音的词汇，需要注意区分它们的开口度和舌位。",
+              "examples": [
+                "compagnon",
+                "indépendant",
+                "franchement"
+              ]
+            }
+          ],
+          "liaison": [
+            "C'est_un [sɛ.tœ̃] (obligatoire)",
+            "les_animaux [le.za.ni.mo] (obligatoire)",
+            "les_expressions_amusantes [le.zɛks.pʁe.sjɔ̃.za.my.zɑ̃t] (obligatoire)"
+          ],
+          "intonation": "在列举形容词时（如：calme, indépendant, parfois joueur），每个形容词后语调微微上升，在最后一个形容词后语调下降，表示列举结束。"
+        },
+        "vocabulary_network": {
+          "theme": "Les animaux et les expressions",
+          "core_word": "Chat",
+          "related_groups": [
+            {
+              "category": "Caractéristiques (特征)",
+              "words": [
+                "domestique",
+                "compagnon",
+                "indépendant",
+                "joueur",
+                "félin"
+              ]
+            },
+            {
+              "category": "Expressions idiomatiques (习语)",
+              "words": [
+                "donner sa langue au chat",
+                "appeler un chat un chat",
+                "avoir d'autres chats à fouetter"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "C'est l'un des ___ ___ les plus présents dans nos ___. Un ___ souvent calme, ___, parfois joueur...",
+            "answer": "animaux, domestiques, foyers, compagnon, indépendant",
+            "explanation": "根据原文第2段，描述猫是家庭中最常见的宠物之一，是一个安静、独立的同伴。填入的词汇依次为：animaux (动物), domestiques (家养的), foyers (家庭), compagnon (同伴), indépendant (独立的)。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le podcast, pourquoi parle-t-on du mot « chat » cette semaine ?",
+            "options": {
+              "A": "Parce qu'un chat célèbre du gouvernement britannique fête ses 15 ans.",
+              "B": "Parce que le chat est l'animal domestique le plus présent en France.",
+              "C": "Parce que le présentateur veut expliquer l'origine latine du mot.",
+              "D": "Parce qu'il y a beaucoup de chats abandonnés dans les rues."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文明确提到：'si on parle du chat cette semaine, c'est parce qu'un félin très célèbre fête son anniversaire : Larry, le chat du 10 Downing Street... qui vient de célébrer ses 15 ans.'（如果这周我们谈论猫，那是因为一只非常著名的猫正在庆祝它的15岁生日：唐宁街10号的拉里）。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Quand on « donne sa langue au chat », ça veut dire qu'on abandonne une devinette et qu'on veut la réponse.",
+            "answer": "当人们说“把舌头给猫”时，意思就是放弃一个谜题，想要知道答案了。",
+            "explanation": "翻译难点在于准确传达法语习语'donner sa langue au chat'的字面意思和实际含义。'abandonner une devinette'意为'放弃猜谜'。'on'在这里泛指'人们'或'我们'。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez cette phrase de la voix passive à la voix active : « Il est suivi par presque un million de personnes sur les réseaux sociaux. »",
+            "answer": "Presque un million de personnes le suivent sur les réseaux sociaux.",
+            "explanation": "原文使用了被动语态（est suivi par）。改为主动语态时，动作的执行者（presque un million de personnes）作主语，动词变为主动形式（suivent，与复数主语配合），原主语（il）变为直接宾语代词（le），放在动词前面。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "domestique",
+            "foyer",
+            "compagnon",
+            "indépendant",
+            "devinette"
+          ],
+          "covered_grammar": [
+            "La voix passive (被动语态)",
+            "Le pronom indéfini 'on' à valeur générale"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Si [A], c'est parce que [B]",
+            "explanation": "用于强调原因：之所以发生A，是因为B。",
+            "example": {
+              "french": "Si je suis en retard, c'est parce que j'ai raté mon train.",
+              "chinese": "我之所以迟到，是因为我错过了火车。"
+            }
+          },
+          {
+            "pattern": "Quand on dit [Expression], c'est que / ça veut dire que [Explication]",
+            "explanation": "用于解释某个词语或表达的含义。",
+            "example": {
+              "french": "Quand on dit « il n'y a pas un chat », c'est qu'il n'y a absolument personne.",
+              "chinese": "当人们说“没有一只猫”时，意思就是绝对没有一个人。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和一位法国朋友聊天，朋友问你一个很难的谜语，你猜不出来。之后你们聊起了各自的宠物以及工作上的忙碌。",
+          "requirements": "在对话中至少使用两个与'chat'相关的法语习语（例如：donner sa langue au chat, avoir d'autres chats à fouetter），并使用'Si... c'est parce que'句型解释你为什么这么忙。",
+          "starter": "A: Alors, tu as trouvé la réponse à ma devinette ?"
+        }
+      },
+      "summary": {
+        "content": "本期播客围绕法语单词“chat”（猫）展开。首先介绍了猫作为家庭宠物的特征及其拉丁语词源。接着，播客提到了英国首相官邸著名的猫Larry庆祝15岁生日的故事。最后，节目重点讲解了五个包含“chat”的法语趣味习语，如“donner sa langue au chat”（放弃猜谜）、“appeler un chat un chat”（直言不讳）等，帮助听众在语境中学习地道表达。",
+        "keywords": [
+          "chat",
+          "animal domestique",
+          "expressions idiomatiques",
+          "Larry",
+          "vocabulaire"
+        ],
+        "difficulty_note": "文本整体难度为B1。句子结构清晰，语速适中，但包含了大量比喻性的习语（expressions idiomatiques），需要学习者理解其引申义而非字面意思。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:33.619",
+          "end": "00:02:59.909"
+        },
+        "theme": "Langue française, Animaux domestiques, Expressions idiomatiques",
+        "cefr_level": "B1",
+        "vocabulary_count": 13,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时候，我真想放弃，干脆不干了。《工作进行时》是一个播客，旨在帮助技术移民在新国家重新建立职业生涯。你将听到鼓舞人心的真实故事、专家建议以及实用技巧，助你找到工作并实现职业发展。《工作进行时》，现在就去你常听播客的地方收听吧！"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.619",
+          "end_time": "00:01:08.390",
+          "french": "Vous êtes avec SBS French. Et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Murat avec vous. Cette semaine, notre mot est « chat », traduit par « cat » en anglais. Le chat, vous le connaissez bien. C'est l'un des animaux domestiques les plus présents dans nos foyers. Un compagnon souvent calme, indépendant, parfois joueur, parfois un peu roi de la maison, soyons honnêtes.",
+          "chinese": "您正在收听SBS法语频道。欢迎来到SBS轻松法语的“本周词汇”栏目。我是玛丽安·穆拉特。本周的词汇是“chat”，英文对应词为“cat”。您对猫一定很熟悉。它是我们家中最常见的宠物之一。它通常性情温和、独立自主，有时爱玩，有时又有点像家里的小国王——说实话，确实如此。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:08.920",
+          "end_time": "00:01:30.500",
+          "french": "Le mot « chat » vient du latin « catus », qui signifie animal domestique. Et si on parle du chat cette semaine, c'est parce qu'un félin très célèbre fête son anniversaire : Larry, le chat du 10 Downing Street, la résidence officielle du Premier ministre britannique à Londres, qui vient de célébrer ses 15 ans.",
+          "chinese": "“猫”一词源自拉丁语catus，意为家养动物。而我们本周之所以要聊猫，是因为一只非常著名的猫正迎来它的生日——那就是位于伦敦、英国首相官邸唐宁街10号的猫拉里，它刚刚庆祝了自己的15岁生日。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:31.000",
+          "end_time": "00:02:01.450",
+          "french": "Larry vit là depuis 2011, il est suivi par presque un million de personnes sur les réseaux sociaux et il a vu passer pas moins de six Premiers ministres. Et parce qu'en français, le mot « chat » est très présent dans la langue, voici quelques expressions amusantes et utiles. Quand on « donne sa langue au chat », ça veut dire qu'on abandonne une devinette et qu'on veut la réponse. Quand on dit « il n'y a pas un chat », c'est qu'il n'y a absolument personne.",
+          "chinese": "拉里从2011年起就住在这里，他在社交媒体上拥有近百万粉丝，还曾见证过六位总理的更迭。而且，由于法语中“猫”这个词在语言里出现得非常频繁，这里给大家介绍一些既有趣又实用的表达方式。当你说“给猫舌头”时，意思就是放弃一个谜题，想要知道答案了。而当你说到“一个人也没有”，那可真是一个人都没有呢！"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:02.230",
+          "end_time": "00:02:24.620",
+          "french": "« Appeler un chat un chat », c'est parler franchement, sans détour. Et « quand le chat n'est pas là, les souris dansent », cela veut dire que quand l'autorité s'absente, on en profite un peu. Enfin, « avoir d'autres chats à fouetter », c'est avoir plus important à faire. Et « avoir un chat dans la gorge », c'est avoir envie de tousser.",
+          "chinese": "把猫叫作猫，就是直截了当地说话，毫不拐弯抹角。而当猫不在时，老鼠们便开始跳舞——这说明，当权威缺席时，人们便会趁机占点小便宜。最后，有别的事要忙，就是指手头还有更重要的事情要做。至于“喉咙里有猫”，则是指想咳嗽的感觉。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:25.139",
+          "end_time": "00:02:59.909",
+          "french": "Voilà, c'était « chat », c'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes. On se retrouve la semaine prochaine pour un autre mot de la semaine. Vous voulez entendre d'autres rubriques comme celle-ci ? Écoutez-les sur Apple Podcasts, Google Podcasts, Spotify ou n'importe où vous obtenez vos podcasts.",
+          "chinese": "好了，这就是“Chat”，也是本周词汇。欢迎各位到SBS法语网站以及各大播客平台上收听我们的“本周词汇”和“轻松法语新闻”。我们下周再见，期待与大家再次分享另一期“本周词汇”。想听更多类似内容吗？请在Apple Podcasts、Google Podcasts、Spotify或任何其他您常用的播客平台收听吧！"
+        },
+        {
+          "id": 7,
+          "start_time": "00:03:06.069",
+          "end_time": "00:03:34.750",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时候，我甚至会想：唉，要不我还是放弃吧，干脆不干了。《工作进行时》是一个播客，旨在帮助技术移民在新国家重新规划并实现职业发展。在这里，你将听到鼓舞人心的真实故事、专家建议以及实用的技巧，助你找到理想工作，推动职业生涯更上一层楼。《工作进行时》，现在就去你常听播客的地方收听吧！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:34.750",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 7,
+        "source_video_name": "Easy French - Le mot de la semaine _ chat.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "passed": true,
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0
+      }
+    }
+  }
+}

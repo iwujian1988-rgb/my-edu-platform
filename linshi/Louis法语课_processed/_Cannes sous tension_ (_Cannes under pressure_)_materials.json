@@ -1,0 +1,670 @@
+{
+  "source_file": "_Cannes sous tension_ (_Cannes under pressure_).json",
+  "channel": "Louis法语课",
+  "video_name": "_Cannes sous tension_ (_Cannes under pressure_)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T23:54:31.528Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le participe présent (Participe présent)",
+          "La voix passive (Voix passive)",
+          "La locution prépositive \"Lors de\""
+        ],
+        "speaking": [
+          "Être capable de décrire un événement officiel ou une cérémonie",
+          "Exprimer des émotions liées à une actualité internationale"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "lors de",
+            "part_of_speech": "préposition",
+            "ipa": "[lɔʁ də]",
+            "chinese": "在……期间；当……之时",
+            "example_sentence": {
+              "french": "Lors de l'ouverture du Festival de Cannes, un hommage est rendu.",
+              "chinese": "在戛纳电影节开幕式上，人们致以敬意。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              5,
+              9
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Lors de l'ouverture du Festival de Cannes, un hommage est rendu à la photojournaliste palestinienne.",
+                "chinese": "在戛纳电影节开幕式上，人们向这位巴勒斯坦女摄影记者致敬。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "hommage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ɔmaʒ]",
+            "chinese": "敬意；悼念",
+            "example_sentence": {
+              "french": "Un hommage est rendu à la photojournaliste.",
+              "chinese": "人们向这位女摄影记者致以敬意。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              6,
+              7,
+              9
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Pendant ce discours, un hommage a été rendu.",
+                "chinese": "在这次演讲中，人们致以了敬意。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "susciter",
+            "part_of_speech": "verbe",
+            "ipa": "[sysite]",
+            "chinese": "引起；激起（情感、反应）",
+            "example_sentence": {
+              "french": "Cet hommage a suscité l'émotion du public.",
+              "chinese": "这次致敬激起了公众的情感。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              7,
+              8,
+              9
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Susciter, participe présent du verbe susciter, c'est-à-dire provoquer.",
+                "chinese": "Susciter，动词susciter的现在分词，即引起的意思。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "ouverture",
+            "part_of_speech": "nom féminin",
+            "ipa": "[uvɛʁtyʁ]",
+            "chinese": "开幕；开启",
+            "example_sentence": {
+              "french": "L'ouverture du festival est un moment important.",
+              "chinese": "电影节的开幕是一个重要时刻。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              4,
+              5,
+              6,
+              9
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Généralement, pendant l'ouverture du festival, il y a un discours.",
+                "chinese": "通常在电影节开幕期间，会有一段致辞。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "photojournaliste",
+            "part_of_speech": "nom",
+            "ipa": "[fotoʒuʁnalist]",
+            "chinese": "摄影记者",
+            "example_sentence": {
+              "french": "La photojournaliste a été tuée à Gaza.",
+              "chinese": "这位摄影记者在加沙遇害。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              7,
+              9
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Un hommage est rendu à la photojournaliste palestinienne Fatima Hassouna.",
+                "chinese": "人们向巴勒斯坦女摄影记者法蒂玛·阿苏娜致敬。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "tension",
+            "part_of_speech": "nom féminin",
+            "ipa": "[tɑ̃sjɔ̃]",
+            "chinese": "紧张；张力",
+            "example_sentence": {
+              "french": "La ville de Cannes est sous tension.",
+              "chinese": "戛纳市正处于紧张状态。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cannes sous tension.",
+                "chinese": "紧张局势下的戛纳。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "discours",
+            "part_of_speech": "nom masculin",
+            "ipa": "[diskuʁ]",
+            "chinese": "演讲；致辞",
+            "example_sentence": {
+              "french": "Le président a prononcé un long discours.",
+              "chinese": "总统发表了一场长篇演讲。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Quelqu'un parle, speech, un discours.",
+                "chinese": "有人在讲话，即演讲，致辞。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "provoquer",
+            "part_of_speech": "verbe",
+            "ipa": "[pʁɔvɔke]",
+            "chinese": "引起；导致",
+            "example_sentence": {
+              "french": "Cette nouvelle a provoqué la colère.",
+              "chinese": "这个消息引起了愤怒。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Susciter... c'est-à-dire provoquer.",
+                "chinese": "Susciter……也就是说引起。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "émotion",
+            "part_of_speech": "nom féminin",
+            "ipa": "[emɔsjɔ̃]",
+            "chinese": "情感；激动",
+            "example_sentence": {
+              "french": "Elle a ressenti une vive émotion.",
+              "chinese": "她感到一阵强烈的情感波动。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              7,
+              8,
+              9
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "En tout cas, ils ont eu des émotions.",
+                "chinese": "无论如何，他们产生了情感。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          },
+          {
+            "french": "palestinienne",
+            "part_of_speech": "adjectif",
+            "ipa": "[palestinjɛn]",
+            "chinese": "巴勒斯坦的（女性）",
+            "example_sentence": {
+              "french": "Elle est d'origine palestinienne.",
+              "chinese": "她是巴勒斯坦裔。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              7,
+              9
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Et elle est palestinienne.",
+                "chinese": "她是巴勒斯坦人。",
+                "source_video": "Cannes sous tension"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "rendre hommage à quelqu'un",
+            "meaning": "向某人致敬/悼念",
+            "example": {
+              "french": "Un hommage est rendu à la photojournaliste.",
+              "chinese": "人们向这位摄影记者致以敬意。"
+            },
+            "usage_note": "常用于正式场合，如葬礼、纪念活动或颁奖典礼。",
+            "source_ids": [
+              6,
+              7
+            ]
+          },
+          {
+            "expression": "sous tension",
+            "meaning": "处于紧张状态",
+            "example": {
+              "french": "La ville est sous tension à cause des manifestations.",
+              "chinese": "由于示威活动，这座城市正处于紧张状态。"
+            },
+            "usage_note": "既可以指物理上的电压，也可以指心理或社会局势的紧张。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "avoir pour effet",
+            "meaning": "结果是；导致",
+            "example": {
+              "french": "Cette décision a pour effet de calmer la situation.",
+              "chinese": "这个决定起到了缓和局势的作用。"
+            },
+            "usage_note": "用于描述某种行为或事件带来的直接后果。",
+            "source_ids": [
+              8
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le participe présent (Participe présent)",
+            "structure": "Radical de la 1ère personne du pluriel au présent + -ant",
+            "explanation": "用于表示原因、同时性或作为形容词。在文中，“suscitant”表示这一行为（致敬）产生的结果或伴随的情况。",
+            "example": {
+              "french": "tuée à Gaza, suscitant l'émotion.",
+              "chinese": "在加沙遇害，引发了强烈共鸣。"
+            },
+            "usage_note": "现在分词没有性数变化。常用于书面语或正式表达。",
+            "source_ids": [
+              4,
+              8,
+              9
+            ]
+          },
+          {
+            "name": "La voix passive (Voix passive)",
+            "structure": "Être (conjugué) + Participe passé",
+            "explanation": "当动作的承受者比执行者更重要时使用。文中强调的是“致敬”这个动作本身，而非具体是谁在致敬。",
+            "example": {
+              "french": "un hommage est rendu à la photojournaliste.",
+              "chinese": "人们向这位摄影记者致以敬意。（直译：一份敬意被给予了这位摄影记者）"
+            },
+            "usage_note": "过去分词必须与主语（un hommage）在性数上保持一致。",
+            "source_ids": [
+              4,
+              6,
+              7,
+              9
+            ]
+          },
+          {
+            "name": "La locution prépositive \"Lors de\"",
+            "structure": "Lors de + Nom",
+            "explanation": "表示“在……期间”或“在……之时”，通常用于指代一个特定的时刻或事件，比“pendant”更正式。",
+            "example": {
+              "french": "Lors de l'ouverture du Festival de Cannes...",
+              "chinese": "在戛纳电影节开幕之际……"
+            },
+            "usage_note": "不能直接接动词原形，必须接名词。",
+            "source_ids": [
+              4,
+              5,
+              9
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ist]",
+              "description": "注意单词末尾 'iste' 的发音，'e' 虽然不发音，但会使前面的 't' 清晰有力。",
+              "examples": [
+                "journaliste",
+                "photojournaliste"
+              ]
+            },
+            {
+              "sound": "[ɑ̃]",
+              "description": "鼻腔元音，出现在 'tension', 'émotion', 'pendant' 中。",
+              "examples": [
+                "tension",
+                "émotion"
+              ]
+            }
+          ],
+          "liaison": [
+            "un hommage [œ̃.nɔ.maʒ]",
+            "est rendu [ɛ.ʁɑ̃.dy]",
+            "des émotions [de.ze.mɔ.sjɔ̃]"
+          ],
+          "intonation": "在列举或描述新闻事实时，语调通常在句中停顿处（如逗号后）略微上扬，在句末下降。"
+        },
+        "vocabulary_network": {
+          "theme": "Le Festival de Cinéma et l'Actualité",
+          "core_word": "Festival",
+          "related_groups": [
+            {
+              "category": "Événement",
+              "words": [
+                "ouverture",
+                "cérémonie",
+                "hommage",
+                "discours"
+              ]
+            },
+            {
+              "category": "Médias",
+              "words": [
+                "photojournaliste",
+                "journaliste",
+                "podcast"
+              ]
+            },
+            {
+              "category": "Émotions",
+              "words": [
+                "émotion",
+                "tension",
+                "pleurer",
+                "applaudir"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "___ de l'___ du Festival de ___, un ___ est ___ à la ___ palestinienne Fatima Hassouna, ___ à Gaza, ___ l'émotion.",
+            "answer": "Lors, ouverture, Cannes, hommage, rendu, photojournaliste, tuée, suscitant",
+            "explanation": "根据原文第4句和第9句，这句话完整描述了戛纳电影节开幕式上的致敬环节。填入的词汇包括时间介词、事件名称、核心动词及分词形式。",
+            "source_ids": [
+              4,
+              9
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, que s'est-il passé pendant la cérémonie d'ouverture ?",
+            "options": {
+              "A": "Le festival a été annulé à cause de la tension.",
+              "B": "Un hommage a été rendu à une photojournaliste palestinienne.",
+              "C": "Fatima Hassouna a prononcé un discours important.",
+              "D": "Le public a protesté contre le festival."
+            },
+            "answer": "B",
+            "explanation": "原文第4句明确提到：'Lors de l'ouverture... un hommage est rendu à la photojournaliste palestinienne Fatima Hassouna'. 选项C错误，因为她已经遇害（tuée）。",
+            "source_ids": [
+              4,
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Susciter, participe présent du verbe susciter, c'est-à-dire provoquer, avoir pour effet l'émotion.",
+            "answer": "Susciter，是动词susciter的现在分词，也就是说引起、产生情感的效果。",
+            "explanation": "这句话解释了核心动词'susciter'的语法形式（现在分词）及其含义（provoquer/avoir pour effet）。",
+            "source_ids": [
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante à la voix active : 'Un hommage est rendu à la photojournaliste par le public.'",
+            "answer": "Le public rend un hommage à la photojournaliste.",
+            "explanation": "将原文中隐含的被动结构（un hommage est rendu）转换为主动结构。注意动词'rendre'需根据新主语'Le public'进行变位。",
+            "source_ids": [
+              6,
+              7
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "lors de",
+            "ouverture",
+            "hommage",
+            "photojournaliste",
+            "susciter",
+            "tuée"
+          ],
+          "covered_grammar": [
+            "Le participe présent",
+            "La voix passive",
+            "Lors de"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Lors de [Événement], [Action au passif].",
+            "explanation": "用于在特定场合描述发生的正式动作。",
+            "example": {
+              "french": "Lors de la cérémonie, un prix est remis à l'acteur.",
+              "chinese": "在典礼上，一份奖项被颁发给这位演员。"
+            }
+          },
+          {
+            "pattern": "[Proposition principale], [Participe présent] [Complément].",
+            "explanation": "用于补充说明主句动作带来的结果或影响。",
+            "example": {
+              "french": "Il a gagné le match, suscitant la joie de ses fans.",
+              "chinese": "他赢得了比赛，激起了粉丝们的喜悦。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous êtes journaliste au Festival de Cannes et vous devez rapporter l'ambiance de la soirée d'ouverture.",
+          "requirements": "Utilisez 'lors de', 'rendre hommage' et au moins un participe présent.",
+          "starter": "Bonsoir à tous, nous sommes en direct de Cannes..."
+        }
+      },
+      "summary": {
+        "content": "Ce podcast traite de l'ouverture du Festival de Cannes dans un contexte de tension internationale. L'élément central est l'hommage rendu à Fatima Hassouna, une photojournaliste palestinienne tuée à Gaza. Le texte explique le vocabulaire lié aux cérémonies (discours, hommage, ouverture) et analyse le verbe 'susciter' pour décrire les émotions du public.",
+        "keywords": [
+          "Cannes",
+          "Festival",
+          "Hommage",
+          "Palestine",
+          "Émotion"
+        ],
+        "difficulty_note": "Le texte est de niveau B1 car il utilise un vocabulaire journalistique précis et des structures grammaticales comme le participe présent et la voix passive, tout en restant accessible grâce aux explications de l'enseignant."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:04:30"
+        },
+        "theme": "Actualité culturelle et internationale (Festival de Cannes)",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司 (Radio-Canada) 字幕制作"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.539",
+          "end_time": "00:00:50.149",
+          "french": "Avant de commencer ce podcast, si vous voulez prendre des leçons de français avec moi en visioconférence, par exemple par Google Meet, n'hésitez pas à me contacter par e-mail : L-O-I-C-K-E-L-A at hotmail.com. Merci.",
+          "chinese": "在开始本期播客之前，如果您想通过视频会议（例如 Google Meet）跟我学习法语，请随时通过电子邮件联系我：L-O-I-C-K-E-L-A at hotmail.com。谢谢。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:50.390",
+          "end_time": "00:01:09.609",
+          "french": "Bonjour, aujourd'hui la leçon est : Cannes sous tension.",
+          "chinese": "大家好，今天的课程主题是：紧张局势下的戛纳。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:10.069",
+          "end_time": "00:01:38.469",
+          "french": "Lors de l'ouverture du Festival de Cannes, un hommage est rendu à la photojournaliste palestinienne Fatima Hassouna, tuée à Gaza, suscitant l'émotion. Once again. Lors de l'ouverture du Festival de Cannes, un hommage est rendu à la photojournaliste palestinienne Fatima Hassouna, tuée à Gaza, suscitant l'émotion.",
+          "chinese": "在戛纳电影节开幕式上，人们向在加沙遇难的巴勒斯坦摄影记者法蒂玛·哈苏纳 (Fatima Hassouna) 致敬，场面十分感人。再说一遍：在戛纳电影节开幕式上，人们向在加沙遇难的巴勒斯坦摄影记者法蒂玛·哈苏纳致敬，场面十分感人。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:39.099",
+          "end_time": "00:02:06.730",
+          "french": "On commence avec « lors de ». Vous le savez, ça, on le voit très souvent dans nos leçons. « Lors de », c'est « pendant », « durant ». Là, c'est « lors de l'ouverture du Festival de Cannes ». Vous savez, il y a en ce moment le Cannes Film Festival. Cannes, c'est une ville du sud de la France. Et donc, on a ouvert ce festival.",
+          "chinese": "我们从“lors de”开始。你们知道，这个词在我们的课程中经常出现。“Lors de”就是“在……期间”、“在……之时”。这里是“在戛纳电影节开幕之际”。你们知道，现在正在举行戛纳电影节。戛纳是法国南部的一座城市。所以，这个电影节已经开幕了。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:07.219",
+          "end_time": "00:02:37.900",
+          "french": "L'ouverture, the opening, l'ouverture. Généralement, pendant l'ouverture du festival, il y a un discours. Quelqu'un parle, speech, un discours. Et pendant ce discours, un hommage a été rendu. Alors là, un hommage est rendu, c'est l'expression rendre hommage à quelqu'un.",
+          "chinese": "“L'ouverture”，开幕，the opening。通常在电影节开幕式上会有致辞。有人会讲话，speech，致辞。在致辞期间，人们表达了敬意。这里，“un hommage est rendu”是短语“rendre hommage à quelqu'un”（向某人致敬）的表达方式。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:38.520",
+          "end_time": "00:03:12.259",
+          "french": "Rendre hommage à quelqu'un. Et donc, un hommage est rendu, c'est « a tribute is paid ». Un hommage est rendu. À qui ? Eh bien, à une photojournaliste. Attention, en français, un « e » à la fin du mot « journaliste ». Et elle est palestinienne. Son nom, c'est Fatima Hassouna. Elle a été tuée à Gaza. « Killed », tuée à Gaza. Suscitant l'émotion.",
+          "chinese": "“Rendre hommage à quelqu'un”。所以，“un hommage est rendu”就是“a tribute is paid”（表达敬意）。向谁致敬呢？向一位摄影记者。注意，在法语中，“journaliste”一词结尾有一个“e”。她是巴勒斯坦人。她的名字是法蒂玛·哈苏纳。她在加沙遇难。“Killed”，在加沙被杀害。引起了情感共鸣。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:12.599",
+          "end_time": "00:03:38.919",
+          "french": "« Susciter », participe présent du verbe « susciter », c'est-à-dire « provoquer », « avoir pour effet l'émotion ». Donc, des gens dans la salle, pendant la cérémonie d'ouverture, ont peut-être pleuré ou applaudi. Ils ont pleuré ou applaudi. En tout cas, ils ont eu des émotions.",
+          "chinese": "“Susciter”是动词“susciter”的现在分词，意思是“引起”、“产生……的情绪效果”。所以，在开幕式现场的人们可能流泪了，或者鼓掌了。他们流泪或鼓掌。总之，他们深受触动。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:44.379",
+          "end_time": "00:03:57.610",
+          "french": "Lors de l'ouverture du Festival de Cannes, un hommage est rendu à la photojournaliste palestinienne Fatima Hassouna, tuée à Gaza, suscitant l'émotion.",
+          "chinese": "在戛纳电影节开幕式上，人们向在加沙遇难的巴勒斯坦摄影记者法蒂玛·哈苏纳致敬，场面十分感人。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:00.219",
+          "end_time": "00:04:30.060",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司 (Radio-Canada) 字幕制作"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:04:30.060",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 10,
+        "source_video_name": "_Cannes sous tension_ (_Cannes under pressure_).json",
+        "tags": [
+          "艺术人文",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "translation_accuracy",
+            "detail": "Subtitle 3: 'Cannes sous tension' is incorrectly translated as '带电的棍子' (Electrified stick). It appears the translator confused the city 'Cannes' with 'canne' (stick) and 'tension' with electrical voltage.",
+            "field": "subtitles[2].chinese"
+          },
+          {
+            "level": "warning",
+            "check": "translation_accuracy",
+            "detail": "Subtitle 7: 'photojournaliste' is translated as '记者照片' (Journalist photo) instead of '摄影记者' (Photojournalist).",
+            "field": "subtitles[6].chinese"
+          },
+          {
+            "level": "warning",
+            "check": "consistency_check",
+            "detail": "The word 'tuée' is included in the exercise summary and used in the fill-in-the-blank exercise but is not listed in the main vocabulary table.",
+            "field": "practice.exercise_summary.covered_vocabulary"
+          },
+          {
+            "level": "warning",
+            "check": "occurrence_count",
+            "detail": "The occurrence count for 'hommage' is listed as 4, but it appears 5 times in the referenced subtitles (once in IDs 4, 6, 9 and twice in ID 7).",
+            "field": "language_analysis.vocabulary[1].occurrence_count"
+          },
+          {
+            "level": "warning",
+            "check": "translation_accuracy",
+            "detail": "Subtitle 2: The spelling of the email address in the Chinese translation ('L-O-G-O-K-E-L-A') does not match the French text ('L-O-I-C-K-E-L-A').",
+            "field": "subtitles[1].chinese"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 5,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

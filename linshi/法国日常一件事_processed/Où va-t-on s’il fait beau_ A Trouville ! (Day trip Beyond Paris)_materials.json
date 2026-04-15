@@ -1,0 +1,613 @@
+{
+  "source_file": "Où va-t-on s’il fait beau_ A Trouville ! (Day trip Beyond Paris).json",
+  "channel": "法国日常一件事",
+  "video_name": "天气好去哪儿？特鲁维尔！（巴黎周边一日游）",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:43:21.353Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Les pronoms relatifs composés (à laquelle, à propos de laquelle)",
+          "Le pronom relatif 'dont'",
+          "L'alternance Passé Composé / Imparfait dans le récit"
+        ],
+        "speaking": [
+          "Raconter une excursion ou une journée de vacances",
+          "Exprimer ses impressions sur la météo et les lieux visités"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "s'échapper",
+            "part_of_speech": "verbe",
+            "ipa": "[s‿eʃape]",
+            "chinese": "逃离，去度假，去散心",
+            "example_sentence": {
+              "french": "Quand on pense à s'échapper pour une journée depuis Paris, on pense automatiquement à la Normandie.",
+              "chinese": "一想到从巴黎出发花一天时间去度假，人们自然而然就会联想到诺曼底。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Quand on pense à s'échapper pour une journée depuis Paris, on pense automatiquement à la Normandie.",
+                "chinese": "一想到从巴黎出发花一天时间去度假，人们自然而然就会联想到诺曼底。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "se morfondre",
+            "part_of_speech": "verbe",
+            "ipa": "[sə mɔʁfɔ̃dʁ]",
+            "chinese": "闷闷不乐，苦苦等待，虚度光阴",
+            "example_sentence": {
+              "french": "On en profite ou bien on se morfond parce que c'est quand même super bizarre.",
+              "chinese": "我们是该好好享受，还是干脆闷闷不乐呢，因为这确实非常奇怪。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Mais du coup, on en profite ou bien on se morfond parce que c'est quand même super bizarre d'avoir ce temps-là en hiver.",
+                "chinese": "不过，既然这样，我们是该好好享受这难得的好天气，还是干脆闷闷不乐呢？毕竟，在冬天出现这样的好天气，实在让人觉得既奇妙又怪异。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "foufou",
+            "part_of_speech": "adjectif",
+            "ipa": "[fufu]",
+            "chinese": "有点疯狂的，古怪的",
+            "example_sentence": {
+              "french": "C'est un peu foufou car d'après le calendrier, c'est toujours l'hiver.",
+              "chinese": "这感觉有点疯狂，因为按日历算，现在明明还处在冬季呢。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est un peu foufou car d'après le calendrier, c'est toujours l'hiver.",
+                "chinese": "这感觉有点疯狂，因为按日历算，现在明明还处在冬季呢。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "embouchure",
+            "part_of_speech": "nom",
+            "ipa": "[ɑ̃buʃyʁ]",
+            "chinese": "河口，入海口",
+            "example_sentence": {
+              "french": "Nous sommes allés de l'autre côté de l'embouchure de la Touques.",
+              "chinese": "我们去了图克河口的另一边。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Nous avons quitté la plage [...] pour aller de l'autre côté de l'embouchure de la Touques.",
+                "chinese": "我们离开了海滩 [...] 前往图克河口的另一边。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "verrière",
+            "part_of_speech": "nom",
+            "ipa": "[vɛʁjɛʁ]",
+            "chinese": "玻璃屋顶，天篷",
+            "example_sentence": {
+              "french": "Nous avons lu tout l'après-midi, installés sous la verrière.",
+              "chinese": "我们整个下午都坐在天窗之下阅读。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Nous avons lu tout l'après-midi, installés dans de confortables chaises, sous la verrière...",
+                "chinese": "我们整个下午都坐在舒适的椅子上阅读，置身于天窗之下...",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "emprunter",
+            "part_of_speech": "verbe",
+            "ipa": "[ɑ̃pʁœ̃te]",
+            "chinese": "走（道路），借用",
+            "example_sentence": {
+              "french": "Nous avons emprunté les escaliers pour descendre.",
+              "chinese": "我们走楼梯下去了。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il avait un appartement dans l'ancien Grand Hôtel de Trouville, celui que longeaient les escaliers que nous venions d'emprunter.",
+                "chinese": "她曾在特鲁维尔那家古老的豪华酒店里住过，而我们刚刚走过的阶梯就沿着那家酒店延伸。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "longer",
+            "part_of_speech": "verbe",
+            "ipa": "[lɔ̃ʒe]",
+            "chinese": "沿着...走，顺着",
+            "example_sentence": {
+              "french": "Les escaliers longeaient l'ancien hôtel.",
+              "chinese": "阶梯沿着那家老酒店延伸。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "celui que longeaient les escaliers que nous venions d'emprunter.",
+                "chinese": "而我们刚刚走过的阶梯就沿着那家酒店延伸。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "consacré",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ̃sakʁe]",
+            "chinese": "专门用于...的，致力于...的",
+            "example_sentence": {
+              "french": "J'ai voulu voir l'exposition consacrée au portrait de dos.",
+              "chinese": "我想去参观那个以背影肖像为主题的展览。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'ai essayé de me motiver pour aller voir l'exposition consacrée au portrait de dos...",
+                "chinese": "我试着鼓起劲儿去参观那个以背影肖像为主题的展览...",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "enthousiaste",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɑ̃tuzjast]",
+            "chinese": "热情的，热心的",
+            "example_sentence": {
+              "french": "J'avais lu beaucoup de commentaires enthousiastes.",
+              "chinese": "我之前读过很多热情的评价。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je voulais voir une librairie à propos de laquelle j'avais lu beaucoup de commentaires enthousiastes.",
+                "chinese": "我想去看看一家书店，之前我读过很多关于它的热情评价。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "déçu",
+            "part_of_speech": "adjectif",
+            "ipa": "[desy]",
+            "chinese": "失望的",
+            "example_sentence": {
+              "french": "Je ne suis pas déçue de ma visite.",
+              "chinese": "我对我的参观一点也不失望。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10,
+              11
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Et je ne suis pas déçue.",
+                "chinese": "而且我一点也没有失望。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "faire office de",
+            "meaning": "充当，起...的作用",
+            "example": {
+              "french": "L'installation fait office de puits de lumière.",
+              "chinese": "那处装置宛如一个采光井（起到了采光井的作用）。"
+            },
+            "usage_note": "用于描述某物被用作非其原本用途的功能，或者发挥某种特定的作用。",
+            "source_ids": [
+              8
+            ]
+          },
+          {
+            "expression": "tourner le dos à quelqu'un",
+            "meaning": "背对着某人，不理睬某人",
+            "example": {
+              "french": "Je n'étais pas d'humeur à ce que l'on me tourne le dos.",
+              "chinese": "我此刻实在没心情被人背对着我。"
+            },
+            "usage_note": "既可以指物理上的背对，也可以引申为拒绝帮助或抛弃某人。此处作者巧妙地用其字面意思来幽默地评价“背影肖像展”。",
+            "source_ids": [
+              9
+            ]
+          },
+          {
+            "expression": "en profiter",
+            "meaning": "好好享受，充分利用（机会）",
+            "example": {
+              "french": "S'il fait beau pendant les vacances, on va à Trouville. Donc, on en a profité.",
+              "chinese": "如果假期天气好，我们就去特鲁维尔。所以，我们好好享受了一番。"
+            },
+            "usage_note": "代词 'en' 代替了前面提到的有利条件（如好天气、假期等）。",
+            "source_ids": [
+              3,
+              4
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Les pronoms relatifs composés (à laquelle, à propos de laquelle)",
+            "structure": "Préposition (à, de, sur, pour, etc.) + lequel/laquelle/lesquels/lesquelles",
+            "explanation": "当关系代词代替的名词在从句中作由介词引导的间接宾语或状语时，需要使用复合关系代词。它必须与先行词在阴阳性、单复数上保持一致。如果介词是 'à'，则与 lequel 缩合成 auquel, à laquelle, auxquels, auxquelles。",
+            "example": {
+              "french": "Nous avons commencé notre journée trouvillaise par la plage à laquelle nous avons accédé par les escaliers Marguerite-Duras.",
+              "chinese": "我们从特鲁维尔的海滩开始了这一天，我们通过玛格丽特·杜拉斯阶梯抵达了那里。"
+            },
+            "usage_note": "先行词是 'la plage' (阴性单数)，从句动词是 'accéder à'，因此使用 'à laquelle'。",
+            "source_ids": [
+              6,
+              10
+            ]
+          },
+          {
+            "name": "Le pronom relatif 'dont'",
+            "structure": "Nom + dont + Sujet + Verbe (remplace un complément introduit par 'de')",
+            "explanation": "关系代词 'dont' 用来代替由介词 'de' 引导的名词短语。它可以作动词的间接宾语（parler de, avoir besoin de），也可以作名词的补语（le père de la fille）。",
+            "example": {
+              "french": "J'ai essayé de me motiver pour aller voir l'exposition consacrée au portrait de dos, dont certains tableaux sont prêtés par le musée d'Orsay.",
+              "chinese": "我试着鼓起劲儿去参观那个以背影肖像为主题的展览，其中一些画作还是奥赛博物馆借来的。"
+            },
+            "usage_note": "这里的 'dont' 代替 'de l'exposition' (certains tableaux DE l'exposition sont prêtés...).",
+            "source_ids": [
+              9
+            ]
+          },
+          {
+            "name": "L'alternance Passé Composé / Imparfait dans le récit",
+            "structure": "Passé composé (actions achevées, événements soudains) vs Imparfait (descriptions, habitudes, décor)",
+            "explanation": "在讲述过去的故事时，复合过去时用于推动故事发展的具体动作或已完成的事件；未完成过去时则用于描绘背景、天气、人物状态或正在延续的动作。",
+            "example": {
+              "french": "Il y avait un vent léger, et l'air sentait bon la mer. Quelques personnes étaient installées comme nous sur la plage... Nous avons quitté la plage en début d'après-midi...",
+              "chinese": "当时微风轻拂，空气中弥漫着浓浓的海腥味。一些人和我们一样坐在海滩上... 午后早些时候，我们离开了海滩..."
+            },
+            "usage_note": "描述天气和状态用 imparfait (il y avait, sentait, étaient installées)，而具体的离开动作则用 passé composé (nous avons quitté)。",
+            "source_ids": [
+              2,
+              6,
+              7
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ij]",
+              "description": "Le son 'ill' dans les noms de villes normandes.",
+              "examples": [
+                "Trouville",
+                "Deauville"
+              ]
+            }
+          ],
+          "liaison": [
+            "nous‿avons‿accédé ([nuz‿avɔ̃z‿aksede])",
+            "tout‿l'après-midi ([tul‿apʁɛmidi])"
+          ],
+          "intonation": "L'intonation monte pour exprimer l'enthousiasme ou l'étonnement, particulièrement dans la phrase : 'C'est un peu foufou car d'après le calendrier, c'est toujours l'hiver.'"
+        },
+        "vocabulary_network": {
+          "theme": "Une escapade à la mer",
+          "core_word": "s'échapper",
+          "related_groups": [
+            {
+              "category": "Lieux",
+              "words": [
+                "la Normandie",
+                "la plage",
+                "l'embouchure",
+                "la rivière",
+                "la librairie"
+              ]
+            },
+            {
+              "category": "Météo et Ambiance",
+              "words": [
+                "il fait beau",
+                "chaud",
+                "vent léger",
+                "foufou",
+                "se morfondre"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Nous avons ___ notre journée trouvillaise par la ___ à laquelle nous avons ___ par les ___ Marguerite-Duras. Tiens, c'était justement le 30e ___ de la mort de la grande écrivaine...",
+            "answer": "commencé, plage, accédé, escaliers, anniversaire",
+            "explanation": "根据原文，作者一行人从海滩开始了特鲁维尔的一天，他们通过玛格丽特·杜拉斯阶梯到达那里，而几天前正是这位作家逝世30周年纪念日。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi la narratrice a-t-elle finalement décidé de ne pas visiter l'exposition consacrée au portrait de dos aux Franciscaines ?",
+            "options": {
+              "A": "Parce que l'exposition était fermée à cause du 30e anniversaire de la mort de Marguerite Duras.",
+              "B": "Parce qu'elle trouvait le thème trop étrange et n'était pas d'humeur à ce qu'on lui tourne le dos.",
+              "C": "Parce qu'elle préférait rester au café pour boire une boisson chaude avec Pietro.",
+              "D": "Parce que les tableaux prêtés par le musée d'Orsay n'étaient pas encore arrivés."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文中作者明确提到：'Mais j'ai eu le sentiment que ça serait un peu trop étrange, que je n'étais pas d'humeur à ce que l'on me tourne le dos.' (但我觉得这样似乎有点太奇怪了，而且我此刻实在没心情被人背对着我。)",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Mais du coup, on en profite ou bien on se morfond parce que c'est quand même super bizarre d'avoir ce temps-là en hiver.",
+            "answer": "不过，既然这样，我们是该好好享受这难得的好天气，还是干脆闷闷不乐呢？毕竟，在冬天出现这样的好天气，实在让人觉得既奇妙又怪异。",
+            "explanation": "翻译难点在于准确传达口语化的表达：'du coup' (既然这样/所以)，'en profiter' (好好享受/利用)，以及 'se morfondre' (闷闷不乐/虚度光阴)。'quand même' 在这里起强调作用，译为'毕竟/确实'。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Combinez ces deux phrases en utilisant un pronom relatif composé (lequel, laquelle, etc.) : 'Je voulais voir une librairie. J'avais lu beaucoup de commentaires enthousiastes à propos de cette librairie.'",
+            "answer": "Je voulais voir une librairie à propos de laquelle j'avais lu beaucoup de commentaires enthousiastes.",
+            "explanation": "先行词是 'une librairie' (阴性单数)。第二句中，'librairie' 作介词短语 'à propos de' 的宾语。因此，需要使用复合关系代词 'laquelle'，与介词连用构成 'à propos de laquelle'。",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "plage",
+            "accédé",
+            "escaliers",
+            "anniversaire",
+            "se morfondre",
+            "enthousiaste"
+          ],
+          "covered_grammar": [
+            "Les pronoms relatifs composés (à laquelle, à propos de laquelle)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Quand on pense à [Action/Lieu], on pense automatiquement à [Lieu/Chose].",
+            "explanation": "用于表达一种自然而然的联想或普遍的共识。",
+            "example": {
+              "french": "Quand on pense à s'échapper pour une journée depuis Paris, on pense automatiquement à la Normandie.",
+              "chinese": "一想到从巴黎出发花一天时间去度假，人们自然而然就会联想到诺曼底。"
+            }
+          },
+          {
+            "pattern": "J'avais tellement envie de [Infinitif 1], de [Infinitif 2] et de [Infinitif 3].",
+            "explanation": "用于表达强烈的愿望，列举多个想做的事情时，每个动词前都要重复介词 'de'。",
+            "example": {
+              "french": "J'avais tellement envie de retourner marcher sur la plage, de regarder les belles maisons et de leur faire découvrir cet endroit.",
+              "chinese": "我特别渴望再次漫步于海滩，凝望那些美丽的房屋，并带她们去领略这个地方。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous discutez avec un(e) ami(e) français(e) pour organiser une escapade d'une journée en dehors de la ville. Vous parlez de la météo inhabituelle et des activités que vous aimeriez faire (se promener, lire, visiter une exposition).",
+          "requirements": "Utilisez le vocabulaire de l'escapade (s'échapper, en profiter), alternez entre le passé composé et l'imparfait si vous évoquez un souvenir, et essayez d'utiliser au moins un pronom relatif composé (auquel, à laquelle).",
+          "starter": "Vu le temps qu'il fait en ce moment, j'ai vraiment envie de m'échapper de la ville ce week-end. Tu connais un endroit sympa auquel on pourrait aller facilement ?"
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia raconte une escapade printanière en plein hiver à Trouville et Deauville, en Normandie. Profitant d'une météo exceptionnellement chaude, elle et ses proches se promènent sur la plage, pique-niquent face à la mer, puis se rendent aux Franciscaines à Deauville pour un après-midi de lecture relaxant. L'épisode mêle descriptions atmosphériques, souvenirs littéraires (Marguerite Duras) et réflexions sur les anomalies climatiques.",
+        "keywords": [
+          "Normandie",
+          "Trouville",
+          "escapade",
+          "météo",
+          "lecture",
+          "Marguerite Duras"
+        ],
+        "difficulty_note": "Le texte est d'un niveau B1 solide, tendant vers B2. La difficulté réside principalement dans l'utilisation de pronoms relatifs complexes (à laquelle, à propos de laquelle, dont) et dans le vocabulaire descriptif et idiomatique (se morfondre, faire office de)."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:04:06.310"
+        },
+        "theme": "Récit de voyage et escapade en Normandie",
+        "cefr_level": "B1+",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:22.019",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, vendredi 6 mars 2026, cet épisode, le numéro 2603, s'intitule « Où va-t-on s'il fait beau à Trouville ? »",
+          "chinese": "大家好，我是来自巴黎《One Thing in a French Day》的Laetitia。希望大家一切顺利，心情愉快。今天是2026年3月6日星期五，本期第2603集节目的标题是《天气好的话，我们在特鲁维尔去哪儿？》。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:22.739",
+          "end_time": "00:00:50.469",
+          "french": "Quand on pense à s'échapper pour une journée depuis Paris, on pense automatiquement à la Normandie. La mer n'est qu'à deux heures de Paris. Raconter sa journée, c'est à la fois décrire, mais aussi utiliser souvent le passé composé avec quelques touches d'imparfait. Dans la lettre qui accompagne cet épisode, nous allons aussi nous intéresser aux maisons typiques de Trouville.",
+          "chinese": "当人们想从巴黎逃离喧嚣去度过一天时，自然会想到诺曼底。大海离巴黎只有两小时车程。讲述自己的一天，既需要描述，也会经常用到复合过去时，并穿插一些未完成过去时。在本期节目的配套信件中，我们还将带大家了解特鲁维尔的特色民居。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.060",
+          "end_time": "00:01:21.379",
+          "french": "En ce moment, on a un temps super agréable. Il fait beau et chaud, mais vraiment chaud l'après-midi. Les gens sont en T-shirt, les terrasses des cafés sont remplies, les arbres sont en fleurs et les allergies ont commencé. C'est un peu foufou car d'après le calendrier, c'est toujours l'hiver. Le printemps, c'est le 20 mars. Mais du coup, on en profite ou bien on se morfond parce que c'est quand même super bizarre d'avoir ce temps-là en hiver.",
+          "chinese": "最近天气非常宜人。阳光明媚，气候温暖，到了下午甚至可以说是炎热。人们都穿上了T恤，咖啡馆的露台座无虚席，树木繁花似锦，过敏季也随之而来。这有点疯狂，因为按日历来说现在还是冬天。春分要到3月20日才来。所以，我们要么尽情享受，要么暗自发愁，毕竟冬天出现这种天气还是挺反常的。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:21.879",
+          "end_time": "00:01:27.659",
+          "french": "J'avais dit : s'il fait beau pendant les vacances, on va à Trouville. Donc, on en a profité.",
+          "chinese": "我之前说过：如果假期天气好，我们就去特鲁维尔。所以，我们趁着好天气出发了。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:28.439",
+          "end_time": "00:01:54.379",
+          "french": "Pietro, Félicia, Lisa et moi sommes partis en direction de la Normandie, mercredi matin, à bord de notre fidèle Bouton d'or, notre Kangoo jaune. J'avais tellement envie de retourner marcher sur la plage de Trouville, souvenir avec Alice Chance, de regarder les belles maisons et de leur faire découvrir cet endroit où l'on peut lire tranquillement, Les Franciscaines, souvenir avec mon amie Géraldine.",
+          "chinese": "周三早上，Pietro、Félicia、Lisa和我开着我们忠实的“金纽扣”——那辆黄色的Kangoo车，向诺曼底出发了。我太想再去特鲁维尔的海滩上走走了（那是和Alice Chance的回忆），想去看看那些漂亮的房子，还想带他们去探索那个可以安静阅读的地方——Les Franciscaines（方济各会文化中心，那是和我朋友Géraldine的回忆）。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:55.060",
+          "end_time": "00:02:19.939",
+          "french": "Nous avons commencé notre journée trouvillaise par la plage à laquelle nous avons accédé par les escaliers Marguerite-Duras. Tiens, c'était justement le 30e anniversaire de la mort de la grande écrivaine quelques jours auparavant. Elle avait un appartement dans l'ancien Grand Hôtel de Trouville, celui que longeaient les escaliers que nous venions d'emprunter. Il y avait un vent léger,",
+          "chinese": "我们在特鲁维尔的一天从海滩开始，我们顺着玛格丽特·杜拉斯阶梯走到了海边。说来也巧，几天前正好是这位伟大作家逝世30周年。她曾在特鲁维尔的旧大饭店里有一套公寓，也就是我们刚刚走过的阶梯旁边的那栋建筑。当时微风轻拂，"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:19.939",
+          "end_time": "00:02:49.189",
+          "french": "et l'air sentait bon la mer. Quelques personnes étaient installées comme nous sur la plage, d'autres se promenaient au bord de l'eau. Nous avons quitté la plage en début d'après-midi, après notre pique-nique face à la mer, pour aller de l'autre côté de l'embouchure de la Touques, la rivière qui sépare Trouville de Deauville. C'est simple, vous prenez le pont et ensuite vous marchez toujours tout droit pendant 20 minutes pour arriver aux Franciscaines à Deauville.",
+          "chinese": "空气中弥漫着好闻的海水气息。有几个人像我们一样在沙滩上坐着，还有些人在水边漫步。下午刚开始，我们在面朝大海吃完野餐后便离开了海滩，前往图克河（Touques）入海口的另一边——这条河将特鲁维尔和多维尔（Deauville）分隔开来。路线很简单，过桥后一直往前走20分钟，就能到达多维尔的Les Franciscaines。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:49.620",
+          "end_time": "00:03:03.750",
+          "french": "Là, nous nous sommes perdus. Le temps s'est arrêté. Nous avons lu tout l'après-midi, installés dans de confortables chaises, sous la verrière et l'installation faisant office de puits de lumière.",
+          "chinese": "在那里，我们沉浸其中，仿佛时间都静止了。我们坐在舒适的椅子上，在玻璃穹顶和充当采光井的装置下，看了一下午的书。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:04.060",
+          "end_time": "00:03:32.259",
+          "french": "Félicia et Lisa ont trouvé leur place sur les canapés au centre de l'espace. Pietro et moi avons fait une pause boisson chaude au café dans l'espace dédié aux romans. J'ai essayé de me motiver pour aller voir l'exposition consacrée au portrait de dos, dont certains tableaux sont prêtés par le musée d'Orsay. Mais j'ai eu le sentiment que ça serait un peu trop étrange, que je n'étais pas d'humeur à ce que l'on me tourne le dos.",
+          "chinese": "Félicia和Lisa在空间中央的沙发上找到了心仪的座位。Pietro和我在小说区的咖啡馆里喝了杯热饮，稍作休息。我本想鼓起劲去看看那个关于背影肖像的展览（其中部分画作是奥赛博物馆借展的），但我总觉得那样有点太奇怪了，我当时实在没心情看别人背对着我。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:32.699",
+          "end_time": "00:03:44.740",
+          "french": "À 17 h, nous avons décidé de retourner vers Trouville. Je voulais voir une librairie à propos de laquelle j'avais lu beaucoup de commentaires enthousiastes. Et je ne suis pas déçue.",
+          "chinese": "下午5点，我们决定返回特鲁维尔。我想去逛一家书店，之前我看到过很多关于这家书店的热情好评。而且我确实没有失望。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:45.080",
+          "end_time": "00:04:06.310",
+          "french": "Mais vous, vous allez être déçus parce qu'il va falloir attendre quelques jours pour avoir la suite de cette aventure à Trouville. One Thing in a French Day, c'est fini pour aujourd'hui. Je vous retrouve dès lundi pour un nouvel épisode de podcast. À bientôt, au revoir.",
+          "chinese": "不过你们可能要失望了，因为还得等上几天才能听到这场特鲁维尔之旅的后续。今天的《One Thing in a French Day》就到这里。我们下周一在新的播客节目中再见。回头见，拜拜。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:06.310",
+        "duration_minutes": 0,
+        "cefr_level": "B1+",
+        "subtitle_count": 11,
+        "source_video_name": "Où va-t-on s’il fait beau_ A Trouville ! (Day trip Beyond Paris).json",
+        "tags": [
+          "艺术人文",
+          "生活Vlog"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "Pronunciation accuracy",
+            "detail": "L'expression 'tout l'après-midi' n'est pas un exemple de liaison car le mot suivant commence par une consonne ('l'). La transcription [tul‿apʁɛmidi] montre d'ailleurs l'enchaînement vocalique/consonantique normal sans consonne de liaison (le 't' final de 'tout' est muet).",
+            "field": "deep_learning.pronunciation.liaison"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

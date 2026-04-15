@@ -1,0 +1,1139 @@
+{
+  "source_file": "E193 Alexandre Dumas, l'inventeur du héros à la française.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E193 Alexandre Dumas, l'inventeur du héros à la française",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T15:07:05.115Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "强调句型 (La mise en relief)",
+          "关系代词 'dont'",
+          "目的状语从句 (Le subjonctif après 'pour que')"
+        ],
+        "speaking": [
+          "能够描述文学人物的性格特征（如：impétueux, stoïque）",
+          "能够讨论文化原型的形成及其社会影响"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "réjouissante",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʁe.ʒwi.sɑ̃t]",
+            "chinese": "令人高兴的，乐观的",
+            "example_sentence": {
+              "french": "L'actualité internationale n'est pas très réjouissante.",
+              "chinese": "国际新闻并不怎么令人乐观。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'espère que vous allez bien malgré l'actualité internationale qui, comme d'habitude, n'est pas très réjouissante.",
+                "chinese": "我希望尽管国际局势一如既往地不太乐观，你们依然一切安好。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "chouchou",
+            "part_of_speech": "nom/adjectif",
+            "ipa": "[ʃu.ʃu]",
+            "chinese": "宠儿，最喜爱的人",
+            "example_sentence": {
+              "french": "Pierre Niney est le chouchou du public français.",
+              "chinese": "皮埃尔·尼内是法国观众的宠儿。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le chouchou, dans la langue informelle, ça veut dire le préféré.",
+                "chinese": "在非正式语言中，“chouchou”指的是“最宠爱的人”。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "fulgurante",
+            "part_of_speech": "adjectif",
+            "ipa": "[fyl.ɡy.ʁɑ̃t]",
+            "chinese": "迅猛的，闪电般的",
+            "example_sentence": {
+              "french": "Il a fait une carrière fulgurante dans l'armée.",
+              "chinese": "他在军队中事业飞黄腾达。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              13,
+              19
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Fulgurante, ça veut dire extrêmement rapide, comme un éclair.",
+                "chinese": "所谓“fulgurante”，指的是速度极快，犹如闪电一般。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "opulence",
+            "part_of_speech": "nom",
+            "ipa": "[ɔ.py.lɑ̃s]",
+            "chinese": "富裕，丰裕",
+            "example_sentence": {
+              "french": "Il n'a pas grandi dans l'opulence.",
+              "chinese": "他并非在富裕中长大。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              16
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le petit Alexandre n'a pas grandi dans l'opulence, loin de là.",
+                "chinese": "小亚历山大却并未在富裕中长大，恰恰相反。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "précarité",
+            "part_of_speech": "nom",
+            "ipa": "[pʁe.ka.ʁi.te]",
+            "chinese": "不稳定，贫困",
+            "example_sentence": {
+              "french": "Son père est décédé dans l'oubli et la précarité.",
+              "chinese": "他的父亲在被遗忘和贫困中去世。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              16
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Son père est décédé à cause de problèmes de santé, dans l'oubli et la précarité.",
+                "chinese": "父亲因健康问题去世，死于被遗忘与贫困之中。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "analphabète",
+            "part_of_speech": "adjectif/nom",
+            "ipa": "[a.nal.fa.bɛt]",
+            "chinese": "文盲的，文盲",
+            "example_sentence": {
+              "french": "La plupart des Français étaient analphabètes à cette époque.",
+              "chinese": "当时大多数法国人都是文盲。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              22
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "De toute façon, la plupart des Français étaient analphabètes.",
+                "chinese": "无论如何，当时大多数法国人都是文盲。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "éminence grise",
+            "part_of_speech": "nom",
+            "ipa": "[e.mi.nɑ̃s ɡʁiz]",
+            "chinese": "幕后操纵者，智囊",
+            "example_sentence": {
+              "french": "Le cardinal de Richelieu était l'éminence grise du roi.",
+              "chinese": "黎塞留红衣主教是国王的幕后智囊。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              55
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Celui qui tire les ficelles, l'éminence grise, c'est son premier ministre.",
+                "chinese": "幕后操纵者、智囊人物正是他的首相。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "impétueux",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃.pe.tɥø]",
+            "chinese": "冲动的，鲁莽的",
+            "example_sentence": {
+              "french": "D'Artagnan est un jeune homme impétueux.",
+              "chinese": "达达尼昂是一个冲动的年轻人。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              70
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il est impétueux, impulsif, il se jette dans les problèmes sans réfléchir.",
+                "chinese": "他性情冲动、行事鲁莽，遇事不加思索便一头扎进麻烦里。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "panache",
+            "part_of_speech": "nom",
+            "ipa": "[pa.naʃ]",
+            "chinese": "气派，风度，华丽",
+            "example_sentence": {
+              "french": "Avoir du panache, c'est agir avec élégance et audace.",
+              "chinese": "拥有气派意味着行动优雅且大胆。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              9,
+              77,
+              78,
+              82,
+              83
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Mais il a quelque chose en plus, le panache.",
+                "chinese": "但除此之外，他还多了一份独特的风采——气派与风度。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          },
+          {
+            "french": "stoïque",
+            "part_of_speech": "adjectif",
+            "ipa": "[stɔ.ik]",
+            "chinese": "坚忍的，斯多葛派的",
+            "example_sentence": {
+              "french": "Les héros anglo-saxons sont souvent stoïques.",
+              "chinese": "盎格鲁-撒克逊英雄通常很坚忍。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              79
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "En général, les héros anglais ou américains sont plutôt du genre stoïque.",
+                "chinese": "一般来说，英国或美国的英雄更倾向于斯多葛式的性格。",
+                "source_video": "Alexandre Dumas, l'inventeur du héros à la française"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "tenir en haleine",
+            "meaning": "扣人心弦，牢牢抓住注意力",
+            "example": {
+              "french": "Il sait comment créer du suspense pour tenir le spectateur en haleine.",
+              "chinese": "他知道如何制造悬念来牢牢抓住观众的注意力。"
+            },
+            "usage_note": "常用于文学或影视评论，描述作品引人入胜。",
+            "source_ids": [
+              24
+            ]
+          },
+          {
+            "expression": "tirer les ficelles",
+            "meaning": "幕后操纵",
+            "example": {
+              "french": "C'est le cardinal qui tire les ficelles dans l'ombre.",
+              "chinese": "是红衣主教在暗中操纵一切。"
+            },
+            "usage_note": "比喻用法，源自木偶戏。",
+            "source_ids": [
+              55
+            ]
+          },
+          {
+            "expression": "un pour tous, tous pour un",
+            "meaning": "人人为我，我为人人",
+            "example": {
+              "french": "C'est le début du célèbre « un pour tous, tous pour un ».",
+              "chinese": "这是那句著名格言“人人为我，我为人人”的开端。"
+            },
+            "usage_note": "《三个火枪手》中最著名的格言，象征团结。",
+            "source_ids": [
+              64
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "强调句型 (La mise en relief)",
+            "structure": "C'est + [强调部分] + qui/que...",
+            "explanation": "用于强调句子中的某一成分（主语、宾语、状语等）。如果是强调主语，用 qui；如果是强调宾语，用 que。",
+            "example": {
+              "french": "C'est vraiment Dumas qui a fait d'eux des figures mythiques.",
+              "chinese": "真正将他们打造成传奇人物的，正是大仲马。"
+            },
+            "usage_note": "在口语和书面语中都非常常见，用于引导听众注意核心信息。",
+            "source_ids": [
+              52
+            ]
+          },
+          {
+            "name": "关系代词 'dont'",
+            "structure": "Nom + dont + Sujet + Verbe (utilisant la préposition 'de')",
+            "explanation": "用于代替以介词 'de' 引导的名词补语。常用于 parler de, avoir besoin de, être fier de 等结构。",
+            "example": {
+              "french": "Il avait beaucoup d'amis, dont des grands auteurs comme Victor Hugo.",
+              "chinese": "他拥有众多朋友，其中包括维克多·雨果这样的大作家。"
+            },
+            "usage_note": "注意 dont 不能引导疑问句，只能作为关系代词连接从句。",
+            "source_ids": [
+              36
+            ]
+          },
+          {
+            "name": "目的状语从句 (Le subjonctif après 'pour que')",
+            "structure": "Pour que + sujet + verbe au subjonctif",
+            "explanation": "当主句和从句的主语不同时，使用 'pour que' 引导目的状语从句，从句动词必须用虚拟式。",
+            "example": {
+              "french": "Les directeurs de journaux voulaient des histoires longues pour que les lecteurs s'attachent au personnage.",
+              "chinese": "报社主编们想要长篇故事，以便读者对角色产生感情。"
+            },
+            "usage_note": "如果主从句主语相同，则使用 'pour + 动词不定式'。",
+            "source_ids": [
+              30,
+              31
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[pa.naʃ]",
+              "description": "注意 'panache' 中的鼻化元音 [a] 和结尾的清辅音 [ʃ]。",
+              "examples": [
+                "panache"
+              ]
+            },
+            {
+              "sound": "[fyl.ɡy.ʁɑ̃t]",
+              "description": "注意元音 [y] 的发音，舌位前缩，双唇突出。",
+              "examples": [
+                "fulgurante"
+              ]
+            }
+          ],
+          "liaison": [
+            "trois_mousquetaires [tʁwa.mus.kə.tɛʁ]",
+            "un_homme [œ̃.nɔm]",
+            "grands_auteurs [ɡʁɑ̃.zo.tœʁ]"
+          ],
+          "intonation": "在列举火枪手名字（Athos, Porthos et Aramis）时，语调应在每一个名字后略微上扬，在最后一个名字后下降。"
+        },
+        "vocabulary_network": {
+          "theme": "La Littérature et le Héros",
+          "core_word": "Dumas",
+          "related_groups": [
+            {
+              "category": "Genres",
+              "words": [
+                "roman-feuilleton",
+                "drame historique",
+                "roman d'apprentissage",
+                "trilogie"
+              ]
+            },
+            {
+              "category": "Qualités du héros",
+              "words": [
+                "panache",
+                "bravoure",
+                "audace",
+                "loyauté",
+                "honneur"
+              ]
+            },
+            {
+              "category": "Métiers",
+              "words": [
+                "dramaturge",
+                "écrivain",
+                "mousquetaire",
+                "prête-plume"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Grâce à son ___ de ___, il sait écrire des ___ ___ entre les ___, il sait comment faire ___ une ___ et lui donner du ___, comment créer du ___ à la fin d'un ___ pour ___ le ___ en ___.",
+            "answer": "expérience, dramaturge, dialogues, vivants, personnages, progresser, histoire, rythme, suspense, acte, tenir, public, haleine",
+            "explanation": "根据原文第24句，大仲马凭借剧作家的经验，擅长写生动的对话、推动情节并制造悬念以吸引观众。",
+            "source_ids": [
+              24
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon la légende mentionnée dans le texte, pourquoi Dumas a-t-il inventé le personnage de Grimaud ?",
+            "options": {
+              "A": "Pour ajouter une touche comique à l'histoire.",
+              "B": "Parce qu'il s'est inspiré d'un valet qu'il connaissait.",
+              "C": "Pour augmenter le nombre de lignes et gagner plus d'argent.",
+              "D": "Pour montrer que les valets de l'époque ne parlaient pas."
+            },
+            "answer": "C",
+            "explanation": "原文第32句提到：'La légende dit que Dumas l'a inventé juste pour augmenter le nombre de lignes et gagner plus d'argent.' 虽然专家认为这是假的，但传说确实如此。",
+            "source_ids": [
+              32
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Avoir du panache, c'est avoir une manière d'agir qui est audacieuse, élégante, un peu flamboyante. C'est faire les choses avec style et une certaine légèreté, même dans les situations difficiles.",
+            "answer": "拥有气派（panache），意味着行事风格大胆、优雅，甚至带点华丽张扬。它指的是以一种充满格调且不失轻盈的方式做事，即便身处困境亦然。",
+            "explanation": "这句话定义了法式英雄的核心特质 'panache'。翻译时需注意 'flamboyante' (华丽/张扬) 和 'légèreté' (轻盈/洒脱) 的对应。",
+            "source_ids": [
+              78
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant la mise en relief (C'est... qui) pour insister sur le sujet : 'Dumas a inventé cet archétype.'",
+            "answer": "C'est Dumas qui a inventé cet archétype.",
+            "explanation": "使用强调句型 'C'est... qui' 来突出动作的发出者 Dumas。这符合原文中多次出现的强调风格。",
+            "source_ids": [
+              80
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "dramaturge",
+            "panache",
+            "archétype",
+            "tenir en haleine"
+          ],
+          "covered_grammar": [
+            "强调句型 (La mise en relief)",
+            "目的状语从句"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il ne faut pas le confondre avec...",
+            "explanation": "用于提醒不要将某人/某物与另一个相似的对象混淆。",
+            "example": {
+              "french": "Il ne faut pas le confondre avec son fils, qui est aussi écrivain.",
+              "chinese": "千万别把他和他儿子混淆，他儿子也是作家。"
+            }
+          },
+          {
+            "pattern": "Être tiraillé entre [A] et [B]",
+            "explanation": "形容在两个选择或志向之间左右为难。",
+            "example": {
+              "french": "Il est tiraillé entre sa carrière et sa vie de famille.",
+              "chinese": "他在事业和家庭生活之间左右为难。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在参加一个关于19世纪法国文学的研讨会，需要向大家介绍大仲马对现代流行文化的影响。",
+          "requirements": "使用 'panache', 'archétype' 和强调句型 'C'est... qui'。",
+          "starter": "Aujourd'hui, je vais vous expliquer pourquoi Alexandre Dumas est si important..."
+        }
+      },
+      "summary": {
+        "content": "本课详细介绍了法国文学巨匠亚历山大·大仲马的生平及其创作的“法式英雄”原型。大仲马出身特殊（贵族与奴隶的后代），凭借连载小说（roman-feuilleton）形式风靡全法。他塑造的火枪手形象，融合了勇气、情感与独特的“气派”（panache），与英美文学中冷静克制的英雄形象形成鲜明对比。尽管曾遭受种族歧视和商业化的指责，他最终凭借其作品的持久生命力入选先贤祠。",
+        "keywords": [
+          "Alexandre Dumas",
+          "Les Trois Mousquetaires",
+          "Panache",
+          "Roman-feuilleton",
+          "Héros à la française"
+        ],
+        "difficulty_note": "文本属于B2级别，涉及较多历史背景（路易十三、黎塞留）和文学术语。重点在于理解 'panache' 这一文化概念及强调句型的应用。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:33:26"
+        },
+        "theme": "Alexandre Dumas et le héros français",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.250",
+        "end_time": "00:33:26.539",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 84,
+        "source_video_name": "E193 Alexandre Dumas, l'inventeur du héros à la française.json",
+        "tags": [
+          "顶级思维",
+          "个人成长"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.250",
+          "end_time": "00:00:33.990",
+          "french": "Alexandre Dumas, l'inventeur du héros à la française. Salut à toutes et à tous, j'espère que vous allez bien malgré l'actualité internationale qui, comme d'habitude, n'est pas très réjouissante. Aujourd'hui, je vous propose un épisode plus léger, histoire de se changer les idées. On va parler du héros à la française et de son inventeur, Alexandre Dumas.",
+          "chinese": "大仲马，法式英雄的缔造者。大家好，希望大家在国际局势动荡的当下依然一切安好。今天，我为大家准备了一期比较轻松的内容，换换心情。我们要聊聊法式英雄及其缔造者——亚历山大·仲马。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:34.229",
+          "end_time": "00:01:00.359",
+          "french": "Vous connaissez sûrement ce nom, c'est l'auteur de deux des romans les plus célèbres de la littérature française, « Les Trois Mousquetaires » et « Le Comte de Monte-Cristo », publiés la même année en 1844. Alors attention, il ne faut pas le confondre avec un autre Alexandre Dumas, qui lui aussi est un écrivain célèbre : le fils du premier.",
+          "chinese": "你们肯定听过这个名字，他是法国文学史上两部最著名小说的作者：《三个火枪手》和《基督山伯爵》，这两部作品均出版于1844年。不过要注意，不要把他和另一位同样著名的作家亚历山大·仲马混淆：那是他的儿子。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:00.539",
+          "end_time": "00:01:17.290",
+          "french": "Un peu moins célèbre que son père quand même. C'est pour ça que parfois on dit Alexandre Dumas père pour parler du premier et Alexandre Dumas fils pour le second. Oui, car contrairement aux Américains, on n'a pas de « junior » en français.",
+          "chinese": "儿子比起父亲还是要稍逊一筹。所以我们有时称前者为大仲马，称后者为小仲马。是的，因为与美国人不同，法语里没有“junior（小）”这个词。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:17.430",
+          "end_time": "00:01:44.140",
+          "french": "Bref, on a beaucoup reparlé du Comte de Monte-Cristo il y a peu en France parce qu'il y a eu une adaptation au cinéma avec un acteur qui est le chouchou du public français, Pierre Niney. Le chouchou, dans la langue informelle, ça veut dire le préféré. Par exemple, à l'école, on dit parfois : « Ah, lui, c'est le chouchou du prof », autrement dit, c'est l'élève préféré du professeur.",
+          "chinese": "总之，最近法国又掀起了《基督山伯爵》的热潮，因为有一部由法国观众的“宠儿”皮埃尔·尼内主演的改编电影上映了。“Chouchou”在非正式口语里是“最受宠、最喜欢”的意思。例如在学校里，人们有时会说：“啊，他是老师的宠儿”，换句话说，他就是老师最喜欢的学生。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:44.150",
+          "end_time": "00:02:09.009",
+          "french": "Pierre Niney, c'est un des acteurs préférés des Français depuis quelques années. D'ailleurs, j'ai lu que son adaptation du Comte de Monte-Cristo a eu un certain succès à l'étranger, donc vous l'avez peut-être vue. Mais l'année dernière, on a surtout parlé des Trois Mousquetaires, cette fois à cause d'un roman intitulé « Les Trois Mousquetaires » écrit par Adélaïde de Clermont-Tonnerre.",
+          "chinese": "皮埃尔·尼内是近几年法国人最喜爱的演员之一。此外，我读到他主演的《基督山伯爵》在国外也取得了一定的成功，所以你们可能已经看过了。但去年，大家谈论最多的还是《三个火枪手》，这次是因为阿德莱德·德·克莱蒙-托内尔写的一本名为《三个火枪手》的小说。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:09.009",
+          "end_time": "00:02:29.990",
+          "french": "Ce roman raconte l'histoire d'un des personnages principaux des Trois Mousquetaires, Milady de Winter, une des femmes fatales les plus célèbres de la littérature. On peut dire que ce roman est une sorte de spin-off, comme dans les séries, une histoire qui s'inscrit dans un univers déjà établi.",
+          "chinese": "这部小说讲述了《三个火枪手》中主要人物之一米莱狄·德·温特的故事，她是文学史上最著名的“蛇蝎美人”之一。我们可以说这部小说就像电视剧里的“衍生剧（spin-off）”，是在一个既定宇宙中展开的故事。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:30.419",
+          "end_time": "00:02:41.639",
+          "french": "Et ça, c'est une des grandes forces de Dumas. Il a réussi à créer des histoires tellement riches et universelles qu'elles font partie de l'imaginaire collectif.",
+          "chinese": "而这正是仲马的伟大力量之一。他成功创造了如此丰富且具有普世价值的故事，以至于它们已成为集体想象的一部分。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:41.879",
+          "end_time": "00:03:07.659",
+          "french": "Tous les Français connaissent « Les Trois Mousquetaires » et « Le Comte de Monte-Cristo » même sans avoir lu les romans. Peut-être qu'ils en ont vu une des nombreuses adaptations au cinéma ou à la télévision. Et même sans ça, ils ont forcément entendu leurs noms, des noms qui évoquent tout un tas d'images. Oui, parce que Dumas a tout simplement inventé les premiers héros de fiction populaire.",
+          "chinese": "所有的法国人即使没读过原著，也都知道《三个火枪手》和《基督山伯爵》。也许他们看过众多的电影或电视改编作品。即便没看过，他们也肯定听过这些名字，这些名字能唤起一系列画面。是的，因为仲马简直就是发明了第一批通俗小说英雄。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:07.659",
+          "end_time": "00:03:40.939",
+          "french": "Des personnages qui sont devenus l'archétype du héros à la française. Dans cet épisode, je vais vous expliquer comment il a réussi ce tour de force grâce à un mélange de talent, de chance et de panache. Alexandre Dumas était très différent des autres grands auteurs français de son époque, le XIXe siècle. Il a eu une vie aussi romanesque que les histoires qu'il écrivait.",
+          "chinese": "这些角色成为了法式英雄的雏形。在本期节目中，我将向大家解释他是如何凭借天赋、运气和“派头（panache）”完成这一壮举的。亚历山大·仲马与他那个时代（19世纪）的其他法国大作家非常不同。他的一生就像他笔下的故事一样充满传奇色彩。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:41.180",
+          "end_time": "00:03:53.379",
+          "french": "D'abord, de par ses origines. Alexandre Dumas était le petit-fils d'un aristocrate et d'une esclave. Vous voyez, rien qu'avec ça, il y a déjà de quoi écrire un bon roman.",
+          "chinese": "首先是他的出身。亚历山大·仲马是一个贵族和一个女奴的孙子。你看，单凭这一点，就足以写成一部精彩的小说了。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:53.689",
+          "end_time": "00:04:22.860",
+          "french": "Comment est-ce possible ? Eh bien parce que son grand-père paternel était un noble qui vivait à Saint-Domingue, une colonie française des Caraïbes, l'actuelle Haïti. Je vous avais raconté l'histoire à la fois tragique et héroïque de cette colonie dans l'épisode 78. Le grand-père d'Alexandre Dumas possédait des terres à Saint-Domingue et des esclaves pour les cultiver. Des esclaves issus du commerce triangulaire, donc.",
+          "chinese": "这怎么可能呢？因为他的祖父是一位生活在圣多明各（法国在加勒比海的殖民地，即今天的海地）的贵族。我在第78期节目中给你们讲过这个殖民地既悲惨又英勇的历史。亚历山大·仲马的祖父在圣多明各拥有土地，并雇佣奴隶耕种。也就是说，这些奴隶来自三角贸易。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:22.860",
+          "end_time": "00:04:49.930",
+          "french": "Il a eu des enfants avec l'une de ses esclaves, une certaine Marie-Cessette Dumas. Et parmi ses enfants, il y avait un garçon, Thomas-Alexandre, le père d'Alexandre Dumas. Thomas-Alexandre était donc métis. En français, on utilise le mot métis pour une personne dont les parents n'ont pas la même couleur de peau. Ici, en l'occurrence, un père blanc et une mère noire.",
+          "chinese": "他与其中一名女奴玛丽-塞塞特·仲马生了几个孩子。在这些孩子中，有一个男孩叫托马-亚历山大，也就是大仲马的父亲。因此，托马-亚历山大是混血儿。在法语中，我们用“métis”这个词来形容父母肤色不同的人。在这里，具体情况是白人父亲和黑人母亲。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:50.300",
+          "end_time": "00:05:17.860",
+          "french": "Il faut que je vous dise quelques mots sur Thomas-Alexandre Dumas parce que lui aussi, c'était un personnage digne d'un roman. Il a fait une carrière fulgurante dans l'armée au moment de la Révolution française. Fulgurante, ça veut dire extrêmement rapide, comme un éclair. Il a été le premier homme noir à devenir général dans l'armée française, un grade qu'il a obtenu en seulement quatre ans.",
+          "chinese": "我必须跟你们聊聊托马-亚历山大·仲马，因为他也是一个堪比小说人物的角色。他在法国大革命期间在军队中取得了飞速的晋升。“Fulgurante”意为极快，像闪电一样。他是法国军队中第一位成为将军的黑人，他仅用四年时间就获得了这一军衔。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:18.100",
+          "end_time": "00:05:47.050",
+          "french": "Il était connu pour sa force herculéenne, son courage et son sens aigu de la morale. La légende disait qu'il était capable de soulever son cheval en l'attrapant entre ses jambes tout en s'accrochant à une poutre. Malheureusement, la carrière de Thomas-Alexandre Dumas s'est brutalement arrêtée à cause d'un autre jeune général français très ambitieux, Napoléon Bonaparte.",
+          "chinese": "他以天生神力、勇气和强烈的道德感而闻名。传说他能双腿夹住马肚子，同时双手抓着梁木把马举起来。不幸的是，托马-亚历山大·仲马的职业生涯因另一位野心勃勃的年轻法国将军——拿破仑·波拿巴而戛然而止。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:47.319",
+          "end_time": "00:06:12.199",
+          "french": "Pour faire simple, Dumas s'est opposé aux ordres de Bonaparte à plusieurs reprises parce qu'il n'était pas d'accord avec lui, et Bonaparte ne l'a jamais oublié. Quelques années plus tard, quand Napoléon est arrivé au pouvoir, le général Dumas a été destitué sans même qu'on lui paie plusieurs années de salaire que l'armée lui devait. Il s'est rapidement retrouvé ruiné.",
+          "chinese": "简单来说，仲马曾多次反对波拿巴的命令，因为他不同意波拿巴的做法，而波拿巴从未忘记这一点。几年后，当拿破仑掌权时，仲马将军被撤职，甚至连军队欠他的几年薪水都没有拿到。他很快就变得一贫如洗。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:12.339",
+          "end_time": "00:06:30.889",
+          "french": "Donc, malgré ce père qui était un véritable héros militaire, le petit Alexandre n'a pas grandi dans l'opulence, loin de là. D'autant plus que quand il avait 4 ans, son père est décédé à cause de problèmes de santé, dans l'oubli et la précarité.",
+          "chinese": "因此，尽管父亲是一位真正的军事英雄，小亚历山大却并非在富足中长大，远非如此。更何况在他4岁时，他的父亲就因健康问题在被遗忘和贫困中去世了。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:31.259",
+          "end_time": "00:07:00.680",
+          "french": "Alexandre Dumas se souviendra toute sa vie de cette injustice faite à son père. C'est donc sa mère et ses grands-parents maternels qui les ont élevés, sa sœur et lui. Ils ont passé leur enfance dans une petite ville au nord-est de Paris, Villers-Cotterêts. Malgré ses débuts difficiles, Alexandre Dumas était convaincu qu'il était destiné à faire de grandes choses comme son père qu'il idolâtrait.",
+          "chinese": "亚历山大·仲马终生都记得对他父亲的不公。因此，是他母亲和外祖父母抚养了他和姐姐。他们在巴黎东北部的小镇维莱科特雷度过了童年。尽管开局艰难，亚历山大·仲马坚信自己注定会像他崇拜的父亲一样成就一番大事业。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:01.019",
+          "end_time": "00:07:26.279",
+          "french": "C'est pourquoi, à 20 ans, il a fait comme tous les jeunes provinciaux ambitieux : il est parti tenter sa chance à Paris. Grâce à un ami de son père, il a obtenu un poste de secrétaire auprès du duc d'Orléans, le futur roi de France, une position qui n'était pas particulièrement prestigieuse, mais qui lui a permis de faire ses premiers pas dans le monde parisien.",
+          "chinese": "于是，20岁那年，他像所有野心勃勃的外省青年一样：前往巴黎碰运气。在父亲一位朋友的帮助下，他在奥尔良公爵（未来的法国国王）手下获得了一个秘书职位，这个职位虽然不是特别显赫，但让他得以迈入巴黎社交圈。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:26.389",
+          "end_time": "00:07:51.620",
+          "french": "En parallèle, il a découvert ce qui allait devenir sa grande passion : le théâtre. Il a commencé à écrire ses propres pièces et, comme son père dans l'armée, son ascension a été fulgurante. Six ans seulement après être arrivé à Paris, une de ses pièces a été jouée à la Comédie-Française, le théâtre le plus prestigieux du pays, encore aujourd'hui d'ailleurs.",
+          "chinese": "与此同时，他发现了后来成为他毕生热爱的领域：戏剧。他开始创作自己的剧本，就像他父亲在军队里一样，他的崛起也是飞速的。到达巴黎仅六年，他的一部作品就在法兰西剧院上演了，那是当时乃至今天全法国最负盛名的剧院。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:51.899",
+          "end_time": "00:08:19.779",
+          "french": "Cette pièce s'intitulait « Henri III et sa cour », un drame historique qui a été un succès immédiat. Alexandre Dumas, le fils du général disgracié, le petit-fils d'esclave, est devenu un dramaturge respecté et apprécié du public. Mais c'est grâce à un autre format qu'il va marquer la littérature française. Ce format, c'est le roman-feuilleton.",
+          "chinese": "这部剧名为《亨利三世及其宫廷》，是一部历史剧，获得了立竿见影的成功。失势将军的儿子、奴隶的孙子——亚历山大·仲马，成为了一名受人尊敬且深受观众喜爱的剧作家。但真正让他名垂青史的是另一种形式：连载小说。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:20.120",
+          "end_time": "00:08:49.090",
+          "french": "Ingrid vous en a déjà parlé dans l'épisode 169, donc je ne vais pas trop m'étaler dessus. Pour résumer, le roman-feuilleton, c'est un format qui est apparu dans les années 1830-1840. L'idée, c'était de publier un roman chapitre par chapitre dans un journal. Chaque jour, on achetait le journal et on pouvait lire la suite de l'histoire, exactement comme une série. D'ailleurs, en France, les premières séries télévisées s'appelaient des feuilletons.",
+          "chinese": "英格丽德在第169期节目中已经跟你们聊过这个了，所以我不打算细说。总而言之，连载小说是出现在1830至1840年代的一种形式。其核心是在报纸上逐章发表小说。人们每天买报纸，就能读到故事的续集，就像追剧一样。顺便提一下，在法国，早期的电视剧就被称为“feuilletons（连载剧）”。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:49.090",
+          "end_time": "00:09:18.600",
+          "french": "Mais aujourd'hui, c'est un terme un peu démodé. Pour les journaux, ce format est un moyen de fidéliser leurs lecteurs et de les pousser à s'abonner. Mais le plus intéressant avec le roman-feuilleton, c'est qu'il a beaucoup contribué à démocratiser la littérature, à la rendre plus accessible. Avant ça, la littérature était plutôt réservée à l'élite. Les livres coûtaient cher et, de toute façon, la plupart des Français étaient analphabètes.",
+          "chinese": "但在今天，这个词已经有点过时了。对于报纸来说，这种形式是培养读者忠诚度并促使他们订阅的一种手段。但连载小说最有趣的地方在于，它极大地促进了文学的民主化，使其变得更加普及。在此之前，文学基本上是精英阶层的专属。书籍价格昂贵，而且无论如何，大多数法国人都是文盲。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:18.779",
+          "end_time": "00:09:46.379",
+          "french": "Avec le roman-feuilleton, tout change. Les journaux ne coûtent pas très cher, de plus en plus de Français savent lire grâce aux premières lois sur l'éducation publique obligatoire et les histoires publiées sous forme de feuilleton ont un style plus accessible que les romans classiques. Résultat, beaucoup de personnes des classes populaires découvrent le plaisir de la lecture grâce au premier roman-feuilleton.",
+          "chinese": "随着连载小说的出现，一切都改变了。报纸并不贵，而且得益于首批义务教育法，越来越多的法国人开始识字，以连载形式发表的故事比古典小说风格更通俗易懂。结果，许多平民阶层的人通过第一批连载小说发现了阅读的乐趣。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:47.059",
+          "end_time": "00:10:15.909",
+          "french": "Dumas sent qu'il a une carte à jouer avec ce format, qu'il a des atouts pour réussir. Grâce à son expérience de dramaturge, il sait écrire des dialogues vivants entre les personnages, il sait comment faire progresser une histoire et lui donner du rythme, comment créer du suspense à la fin d'un acte pour tenir le spectateur en haleine. Tenir en haleine, ça veut dire retenir l'attention du public.",
+          "chinese": "仲马意识到他在这种形式上大有可为，他拥有成功的优势。凭借剧作家的经验，他懂得如何创作生动的角色对话，知道如何推进故事并把握节奏，以及如何在每一幕结束时制造悬念以吸引观众。“Tenir en haleine”的意思就是抓住观众的注意力。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:10:16.120",
+          "end_time": "00:10:45.320",
+          "french": "En plus, Dumas est passionné par l'histoire de France, tout comme beaucoup de Français à cette époque. Souvenez-vous, on est au milieu du XIXe siècle, environ 50 ans après la Révolution. Donc, la plupart des Français qui vivent à ce moment-là n'ont pas connu l'Ancien Régime, la période où toute la société était dirigée par un monarque au pouvoir absolu. Alors, forcément, il se demande à quoi ressemblait la vie à cette époque.",
+          "chinese": "此外，仲马对法国历史充满热情，当时许多法国人也是如此。请记住，那是19世纪中叶，距离大革命大约50年。因此，当时生活的大多数法国人都没有经历过旧制度，即整个社会由拥有绝对权力的君主统治的时期。所以，他们自然会好奇那个时代的生命是什么样子的。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:45.529",
+          "end_time": "00:11:07.750",
+          "french": "Alexandre Dumas va capitaliser sur cette curiosité en utilisant l'histoire de France comme décor pour ses romans. Il va être un des pionniers français de ce qu'on appelle le roman historique. Et pour ça, il va être aidé par un autre écrivain encore plus passionné d'histoire que lui, Auguste Maquet.",
+          "chinese": "亚历山大·仲马利用这种好奇心，将法国历史作为他小说的背景。他成为了所谓的“历史小说”在法国的先驱之一。为此，他得到了另一位比他更痴迷历史的作家——奥古斯特·马凯的帮助。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:11:07.929",
+          "end_time": "00:11:33.940",
+          "french": "Retenez bien ce nom parce que c'est quelqu'un qui a énormément contribué au succès de Dumas. Concrètement, Maquet faisait des recherches historiques, il préparait un plan, parfois même il écrivait des chapitres entiers. Et ensuite, Dumas reprenait tout, il réécrivait, il ajoutait ses dialogues, son humour, son style. C'était un peu comme un travail d'atelier en peinture.",
+          "chinese": "请记住这个名字，因为他是为仲马的成功做出巨大贡献的人。具体来说，马凯负责历史研究，制定大纲，有时甚至撰写整个章节。然后，仲马会重新加工一切，进行改写，加入他的对话、幽默和风格。这有点像绘画作坊里的工作模式。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:11:33.940",
+          "end_time": "00:11:57.190",
+          "french": "avec le maître qui met la touche finale qui fait toute la différence. En 1844, la collaboration Dumas-Mackay donne naissance à deux chefs-d'œuvre de la littérature française, Les Trois Mousquetaires et Le Comte de Montecristo. Ils sont publiés sous forme de romans feuilletons dans deux journaux différents.",
+          "chinese": "由大师画上点睛之笔，从而产生质的飞跃。1844年，仲马与马凯的合作诞生了两部法国文学杰作：《三个火枪手》和《基督山伯爵》。它们以连载小说的形式在两家不同的报纸上发表。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:11:57.460",
+          "end_time": "00:12:15.500",
+          "french": "Le succès est tel que les deux auteurs décident immédiatement d'écrire une suite aux Trois Mousquetaires avec un second roman intitulé « Vingt ans après » puis le vicomte de Brajlon. C'est ainsi que les Trois Mousquetaires deviennent une trilogie.",
+          "chinese": "巨大的成功促使两位作者立即决定为《三个火枪手》写续集，于是有了第二部小说《二十年后》，接着是《布拉热洛纳子爵》。就这样，《三个火枪手》变成了一个三部曲。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:12:15.860",
+          "end_time": "00:12:42.769",
+          "french": "Dumas écrit des dizaines d'autres romans avec Auguste Maquet et d'autres auteurs. Il y avait même des périodes où quatre journaux publiaient des romans de Dumas en même temps. Et on ne parle pas de petits romans. Dumas écrivait des pavés, des romans très longs, 900 pages pour les trois mousquetaires. Oui, parce que les directeurs de journaux voulaient des histoires longues.",
+          "chinese": "仲马与奥古斯特·马凯及其他作者合作撰写了数十部小说。甚至有一段时期，四家报纸同时刊登仲马的小说。而且我们说的不是短篇小说。仲马写的是大部头，非常长的小说，《三个火枪手》有900页。是的，因为报社社长想要长故事。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:42.769",
+          "end_time": "00:12:57.929",
+          "french": "pour que les lecteurs s'attachent au personnage et continuent d'acheter le journal jour après jour. C'est pour ça que les auteurs de romans feuilletons étaient payés à la ligne. Autrement dit, plus ils écrivaient, plus ils gagnaient d'argent.",
+          "chinese": "这样读者就会对角色产生感情，并日复一日地购买报纸。这就是为什么连载小说的作者是按行计酬的。换句话说，他们写得越多，赚得就越多。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:58.200",
+          "end_time": "00:13:17.669",
+          "french": "D'ailleurs, il y a une anecdote amusante à ce sujet. Dans les trois mousquetaires, il y a un personnage, le valet Grimaud, qui répond toujours par un mot, jamais plus. La légende dit que Dumas l'a inventé juste pour augmenter le nombre de lignes et gagner plus d'argent.",
+          "chinese": "关于这一点，还有一个有趣的轶事。在《三个火枪手》中，有一个叫格里莫的仆人，他说话总是只用一个词，绝不多说。传说仲马发明这个角色只是为了增加行数并赚更多的钱。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:13:17.820",
+          "end_time": "00:13:45.830",
+          "french": "Mais les spécialistes de Dumas disent que cette histoire est fausse. En réalité, les éditeurs des journaux ne payaient pas une ligne si elle ne remplissait pas au moins les deux tiers de la colonne. Et Dumas le savait très bien. De toute façon, il n'a pas eu besoin de ce genre de combine pour devenir riche. Il était tellement productif et ses romans avaient tellement de succès qu'il a vite gagné des fortunes.",
+          "chinese": "但研究仲马的专家说这个故事是假的。实际上，如果一行字没有填满专栏的三分之二，报社编辑是不会付钱的。而且仲马很清楚这一点。无论如何，他不需要这种手段来致富。他极高的产出和小说巨大的成功让他很快就赚到了大笔财富。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:45.879",
+          "end_time": "00:14:15.080",
+          "french": "Le problème, c'est qu'il était aussi très doué pour le dépenser. Dumas était ce qu'on appelle dans la langue familière un flambeur, quelqu'un qui dépense son argent sans compter, en général dans des belles choses. L'exemple le plus connu, c'est le château somptueux qu'il s'est fait construire à côté de Paris, le château de Monte Cristo, inspiré bien sûr de son roman. Il existe toujours d'ailleurs, on peut le visiter.",
+          "chinese": "问题是，他也非常擅长花钱。仲马就是俗语中所说的“挥霍者（flambeur）”，即花钱不计后果的人，通常花在美好的事物上。最著名的例子就是他在巴黎郊外为自己建造的奢华城堡——基督山城堡，灵感自然来自他的小说。它至今依然存在，可以参观。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:14:15.539",
+          "end_time": "00:14:39.529",
+          "french": "En plus d'être un flambeur, Dumas avait aussi l'habitude d'organiser de grandes fêtes dans lesquelles il régalait ses invités. Il était très généreux. Résultat, à cause de son train de vie, de son style de vie où il dépensait sans compter, il a souvent eu des problèmes de dette. Il a même été obligé de s'exiler pour échapper à ses créanciers.",
+          "chinese": "除了挥金如土，仲马还习惯举办大型宴会款待宾客。他非常慷慨。结果，由于这种不计后果的消费方式和生活习惯，他经常陷入债务危机。他甚至被迫流亡国外以躲避债主。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:14:40.059",
+          "end_time": "00:15:07.299",
+          "french": "Dumas était quelqu'un de très populaire, très apprécié. Il avait beaucoup d'amis, dont des grands auteurs comme Victor Hugo. Il était aussi ce qu'on appelle un homme à femme, un séducteur qui a du succès auprès de la jante féminine. Dumas a multiplié les conquêtes tout au long de sa vie. Mais il avait aussi de nombreux ennemis, à la fois à cause de son succès et de sa couleur de peau.",
+          "chinese": "仲马是一个非常受欢迎、备受喜爱的人。他有很多朋友，其中包括维克多·雨果等大作家。他也是所谓的“情场高手”，一个深受女性欢迎的诱惑者。仲马一生中征服过无数女性。但他也有许多敌人，既是因为他的成功，也是因为他的肤色。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:15:07.539",
+          "end_time": "00:15:28.620",
+          "french": "Ses ennemis l'accusaient d'être, je cite, « un nègre qui a des nègres ». Il faut que je vous explique cette expression, elle est très importante. « Nègre », c'était un mot péjoratif qu'on utilisait d'abord pour désigner les esclaves africains, puis par extension les personnes noires. C'est l'équivalent du « n-word » en anglais.",
+          "chinese": "他的敌人指责他是，我引用一下，“一个拥有黑奴的黑鬼”。我必须向你们解释一下这个表达，它非常重要。“Nègre”最初是一个贬义词，用来指代非洲奴隶，后来延伸指代黑人。它相当于英语中的“n-word”。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:15:28.789",
+          "end_time": "00:15:54.460",
+          "french": "Donc, si vous n'êtes pas noir, je vous déconseille fortement de l'utiliser. Moi, ici, je le fais juste pour vous l'expliquer. Mais le mot « nègre » a un deuxième sens. Dans le domaine littéraire ou artistique, un nègre, c'est quelqu'un qui travaille dans l'ombre d'une autre personne sans recevoir aucune reconnaissance publique. En anglais, on les appelle « écrivains fantômes », je traduis.",
+          "chinese": "所以，如果你不是黑人，我强烈建议你不要使用它。我在这里只是为了向你们解释。但“nègre”这个词还有第二个意思。在文学或艺术领域，“nègre”指的是在他人阴影下工作而得不到任何公众认可的人。在英语中，他们被称为“ghostwriters（影子作家）”。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:54.460",
+          "end_time": "00:16:22.700",
+          "french": "D'ailleurs, c'est l'expression qu'on utilise aussi en français depuis quelques années parce que, comme je viens de vous le dire, le mot « nègre » est très problématique. On dit aussi parfois « un prête-plume », un écrivain qui prête sa plume à quelqu'un pour écrire son histoire. Bref, les ennemis de Dumas jouaient sur le double sens de ce mot pour critiquer à la fois sa couleur de peau et le fait qu'il travaillait avec d'autres auteurs pour écrire ses romans.",
+          "chinese": "事实上，这也是法语近几年使用的表达方式，因为正如我刚才告诉你们的，“nègre”这个词非常有争议。有时我们也说“prête-plume”，即把笔借给别人写故事的作家。总之，仲马的敌人利用这个词的双关义，既攻击他的肤色，也攻击他与其他作者合作写小说的事实。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:16:23.000",
+          "end_time": "00:16:48.259",
+          "french": "Toute sa vie, Dumas a dû faire face à cette hostilité raciste qui était encore très courante dans la France du XIXe siècle. Certains spécialistes estiment aussi que c'est une des raisons qui expliquent pourquoi, malgré son succès, il a longtemps eu moins de considérations que les autres grands écrivains de son époque comme Hugo, Balzac ou Flaubert.",
+          "chinese": "仲马一生都必须面对这种在19世纪法国仍然非常普遍的种族主义敌意。一些专家还认为，这也是为什么尽管他取得了成功，但在很长一段时间内，他受到的重视程度不如同时代的其他大作家，如雨果、巴尔扎克或福楼拜。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:16:48.600",
+          "end_time": "00:17:07.690",
+          "french": "Mais au-delà de sa couleur de peau, ce que les critiques reprochaient à Dumas, c'était son succès commercial. C'est intéressant parce que c'est à ce moment-là que la figure de l'écrivain moderne a émergé en France et on peut dire qu'elle s'est construite en opposition à Dumas.",
+          "chinese": "但除了肤色之外，评论家们指责仲马的还有他的商业成功。这很有趣，因为正是在那个时候，法国出现了现代作家的形象，可以说这种形象是建立在对仲马的对立面之上的。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:17:07.960",
+          "end_time": "00:17:24.519",
+          "french": "Pour être considéré comme un écrivain « sérieux », il fallait rejeter tout ce que Dumas incarnait. Le succès commercial, le style accessible et populaire, la collaboration avec d'autres auteurs, le lien avec les médias.",
+          "chinese": "要想被视为一名“严肃”作家，就必须拒绝仲马所代表的一切：商业成功、通俗易懂的风格、与其他作者的合作以及与媒体的联系。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:17:24.700",
+          "end_time": "00:17:43.299",
+          "french": "Et c'est une vision de la littérature qu'on retrouve encore aujourd'hui. D'un côté, les auteurs et autrices qui vendent beaucoup de livres mais que les critiques littéraires n'apprécient pas. Et de l'autre, ceux qui gagnent les prix littéraires mais qui sont peu lus par le grand public.",
+          "chinese": "这种文学观在今天依然存在。一边是销量巨大但文学评论家不看好的男女作家；另一边是获得文学奖项但大众读者寥寥的作家。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:17:43.740",
+          "end_time": "00:17:58.410",
+          "french": "Pour en revenir à Dumas, c'est vrai que c'était un auteur extrêmement productif. Comme je vous l'ai dit, il a publié des dizaines de romans, parfois plusieurs par an, ce qui aurait été impossible sans l'aide des auteurs qui travaillaient pour lui.",
+          "chinese": "回到仲马，他确实是一位产量极高的作家。正如我告诉过你们的，他发表了数十部小说，有时一年好几部，如果没有为他工作的作者的帮助，这是不可能完成的。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:58.579",
+          "end_time": "00:18:25.220",
+          "french": "Mais il ne les cachait pas, au contraire, il insistait pour que leur nom soit crédité. C'était les directeurs de journaux qui refusaient de le faire car ce que le public demandait, c'était Dumas, pas Auguste Maquet. Et surtout, on ne peut pas nier que c'était la patte, le style de Dumas qui transformait la matière première de ses collaborateurs en or. La preuve ?",
+          "chinese": "但他并没有隐瞒他们，相反，他坚持要给他们署名。是报社社长拒绝这样做，因为公众要求看到的是仲马，而不是奥古斯特·马凯。最重要的是，不可否认的是，正是仲马的笔触和风格将合作者的原始素材变成了金子。证据呢？"
+        },
+        {
+          "id": 46,
+          "start_time": "00:18:25.220",
+          "end_time": "00:19:02.180",
+          "french": "Les romans qu'Auguste Maquet a écrits sans Dumas n'ont pas eu beaucoup de succès. Il y aurait encore plein de choses à dire sur la vie de Dumas, mais je vois que le temps passe, donc maintenant je vous propose de voir comment il a inventé le héros à la française. Quand vous entendez le mot « mousquetaire », vous avez sûrement des images qui vous viennent en tête. Par exemple, un homme avec une cape, un chapeau à plumes et une épée. Mais à part ça, que savez-vous vraiment sur les mousquetaires ?",
+          "chinese": "奥古斯特·马凯在没有仲马的情况下写的小说并没有取得多大成功。关于仲马的一生还有很多可说的，但我看时间在流逝，所以现在我建议大家看看他是如何发明“法式英雄”的。当你听到“火枪手”这个词时，你脑海中肯定会出现一些画面。例如，一个披着斗篷、戴着羽毛帽、佩着长剑的男人。但除此之外，你对火枪手到底了解多少？"
+        },
+        {
+          "id": 47,
+          "start_time": "00:19:02.619",
+          "end_time": "00:19:19.880",
+          "french": "Déjà, ce qui est intéressant, c'est que leur nom vient d'une arme à feu, le mousquet, une sorte de fusil assez rudimentaire. Tous les mousquetaires étaient équipés de cette arme, mais c'est vrai qu'ils se battaient principalement à l'épée, car le mousquet n'était pas très pratique.",
+          "chinese": "首先，有趣的是，他们的名字来源于一种火器——“mousquet（火绳枪）”，一种相当原始的步枪。所有的火枪手都配备了这种武器，但确实，他们主要用剑战斗，因为火绳枪并不太实用。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:19:20.220",
+          "end_time": "00:19:42.859",
+          "french": "Les mousquetaires sont apparus en France au début du XVIIe siècle sous le règne de Louis XIII. C'était un roi dont le pouvoir était assez fragile. C'est pourquoi il avait besoin d'hommes de confiance pour assurer sa protection. Il a donc créé un corps d'élite, une garde rapprochée, la compagnie des mousquetaires du roi.",
+          "chinese": "火枪手出现在17世纪初路易十三统治时期的法国。那是一位权力相当脆弱的国王。这就是为什么他需要亲信来确保自己的安全。因此，他创建了一支精锐部队，一支近卫军，即国王火枪手连。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:19:43.289",
+          "end_time": "00:19:59.400",
+          "french": "Auguste Maquet, le collaborateur de Dumas dont je vous ai parlé un peu plus tôt, a trouvé un livre publié en 1700 qui sont les mémoires d'un de ses mousquetaires. Ce livre s'intitule « Les mémoires de M. d'Artagnan ».",
+          "chinese": "我之前提到的仲马的合作者奥古斯特·马凯，发现了一本出版于1700年的书，是一位火枪手的回忆录。这本书名为《达达尼昂先生回忆录》。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:59.640",
+          "end_time": "00:20:21.349",
+          "french": "Vous avez sûrement reconnu le nom du personnage principal des trois mousquetaires. Donc oui, Auguste Maquet s'est inspiré de ce livre pour écrire un premier jet, une première version des trois mousquetaires. D'ailleurs, les noms des compagnons de d'Artagnan, Athos, Portos et Aramis, eh bien, ils sont aussi tirés de ce livre.",
+          "chinese": "你们肯定认出了《三个火枪手》中主角的名字。所以是的，奥古斯特·马凯正是受这本书的启发写出了《三个火枪手》的初稿，即第一个版本。此外，达达尼昂的同伴阿多斯、波尔多斯和阿拉密斯的名字也出自这本书。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:20:21.529",
+          "end_time": "00:20:42.500",
+          "french": "Maquet a repris ses noms et quelques références historiques, mais tout le reste, leurs personnalités, leurs aventures, leur amitié, tout ça, c'est Maquet et surtout Dumas qui l'ont inventé. D'ailleurs, quand on regarde l'histoire de France, les mousquetaires n'ont pas joué un rôle très important.",
+          "chinese": "马凯沿用了这些名字和一些历史参考，但其余的一切——他们的性格、冒险经历、友谊，所有这些都是马凯，尤其是仲马发明的。事实上，纵观法国历史，火枪手并没有扮演非常重要的角色。"
+        },
+        {
+          "id": 52,
+          "start_time": "00:20:42.710",
+          "end_time": "00:21:04.039",
+          "french": "C'était un corps militaire parmi d'autres. C'est vraiment Dumas qui a fait d'eux des figures mythiques. C'est un peu comme le cow-boy dans la culture américaine. A l'origine, c'était simplement des gardiens de bétail jusqu'à ce que le cinéma fasse d'eux des héros. Sans Dumas, pas sûr qu'on parlerait encore des mousquetaires aujourd'hui.",
+          "chinese": "他们只是众多军事编制中的一个。是仲马真正把他们变成了神话人物。这有点像美国文化中的牛仔。最初他们只是牧牛人，直到电影把他们塑造成英雄。如果没有仲马，我不确定今天我们是否还会谈论火枪手。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:21:04.380",
+          "end_time": "00:21:29.480",
+          "french": "Voilà, donc d'un côté, il y a les mousquetaires des personnages historiques qui ont joué un rôle assez mineur et de l'autre, les mousquetaires de Dumas qui sont devenus les archétypes du héros à la française. Pour comprendre ça, il faut bien sûr que je vous raconte un peu l'intrigue, l'histoire de ce roman, mais avant, je vais vous donner deux ou trois éléments de contexte important.",
+          "chinese": "所以，一方面是扮演次要角色的历史人物火枪手，另一方面是仲马笔下成为法式英雄雏形的火枪手。为了理解这一点，我当然要给你们讲讲这部小说的情节和故事，但在那之前，我要给你们提供两三个重要的背景要素。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:21:30.009",
+          "end_time": "00:21:55.180",
+          "french": "Premièrement, comme je vous le disais, Louis XIII, c'est pas Louis XIV, dans le sens où il n'a pas autant de pouvoir qu'en aura son successeur. Il faut savoir qu'à cette époque, les nobles du royaume de France sont encore très indépendants, ils ne respectent pas toujours l'autorité royale et puis Louis XIII a un tempérament assez fragile, il hésite, il doute souvent de lui-même.",
+          "chinese": "首先，正如我所说的，路易十三不是路易十四，意思是他的权力没有他的继任者那么大。要知道在那个时代，法兰西王国的贵族仍然非常独立，他们并不总是遵守王室权威，而且路易十三性格比较脆弱，他优柔寡断，经常自我怀疑。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:21:55.349",
+          "end_time": "00:22:20.039",
+          "french": "Donc, en réalité, celui qui tire les ficelles, l'éminence grise, c'est son premier ministre, le cardinal de Richelieu, un haut responsable de l'Église catholique. Richelieu a une grande intelligence stratégique et politique. Il a aussi la volonté de réformer le royaume de France, de le moderniser en renforçant le pouvoir central.",
+          "chinese": "所以实际上，幕后操纵者，即“灰色主教”，是他的首相黎塞留红衣主教，一位天主教会的高层。黎塞留拥有卓越的战略和政治智慧。他也有改革法兰西王国、通过加强中央集权使其现代化的意愿。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:22:20.380",
+          "end_time": "00:22:44.230",
+          "french": "Louis XIII est plutôt favorable à ce projet, mais il a parfois du mal à accepter l'ascendant que son premier ministre a sur lui et le fait que ce soit Richelieu qui prenne toutes les décisions importantes. Deuxièmement, le royaume de France est divisé par des conflits religieux entre les catholiques et les protestants, qu'on appelle les Huguenots.",
+          "chinese": "路易十三对这个计划持赞成态度，但他有时很难接受首相对他拥有的权势，以及黎塞留做出所有重要决定的事实。其次，法兰西王国因天主教徒和被称为胡格诺派的新教徒之间的宗教冲突而四分五裂。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:22:44.569",
+          "end_time": "00:23:11.339",
+          "french": "Comme je vous le disais, Richelieu veut unifier le royaume de France sous l'autorité du roi, mais aussi de l'église catholique, au détriment des autres religions. Logiquement, les Huguenots se sentent menacés, donc ils s'opposent au cardinal. Et un des épicentres de ce conflit, c'est la ville de La Rochelle, une grande ville portuaire sur la côte atlantique qui est un bastion Huguenot.",
+          "chinese": "正如我所说的，黎塞留希望在国王的权威以及天主教会的领导下统一法兰西王国，这损害了其他宗教的利益。理所当然地，胡格诺派感到了威胁，因此他们反对红衣主教。这场冲突的中心之一是大西洋沿岸的大城市拉罗谢尔，它是胡格诺派的堡垒。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:23:11.609",
+          "end_time": "00:23:37.420",
+          "french": "Dernier élément de contexte à connaître, les tensions entre la France et l'Angleterre. Bon, ça, on peut dire que c'est un fil rouge de l'histoire de France, quelque chose qui a duré pendant des siècles et des siècles. À l'époque de Louis XIII, ces tensions sont liées au conflit religieux avec les Huguenots. Comme l'Angleterre est protestante, elle soutient les Huguenots français pour les aider à résister à Richelieu.",
+          "chinese": "最后一个需要了解的背景要素是法国和英国之间的紧张关系。嗯，我们可以说这是法国历史的一个主旋律，持续了几个世纪又几个世纪。在路易十三时代，这些紧张关系与胡格诺派的宗教冲突有关。由于英国是新教国家，它支持法国胡格诺派，帮助他们抵抗黎塞留。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:37.720",
+          "end_time": "00:23:51.339",
+          "french": "Son premier ministre, le duc de Buckingham, devient donc l'ennemi numéro un du cardinal. Cette rivalité entre Richelieu et Buckingham, elle est au cœur de l'intrigue des trois mousquetaires.",
+          "chinese": "英国首相白金汉公爵因此成为了红衣主教的一号敌人。黎塞留和白金汉之间的这种竞争是《三个火枪手》情节的核心。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:52.019",
+          "end_time": "00:24:20.490",
+          "french": "Mais il ne faut pas croire que Dumas raconte fidèlement les événements historiques dans ses romans. Pour lui, l'histoire avec un grand H est importante, mais l'histoire avec un H minuscule, autrement dit l'intrigue, l'est encore plus. S'il doit choisir entre respecter la réalité historique et raconter une bonne histoire, c'est toujours le second qui l'emporte. Alors justement, quelle est l'intrigue des trois mousquetaires ?",
+          "chinese": "但不要以为仲马在他的小说中忠实地讲述了历史事件。对他来说，大写的历史（History）固然重要，但小写的历史（story），换句话说，情节，更为重要。如果必须在尊重历史现实和讲一个好故事之间做出选择，后者总是胜出。那么，《三个火枪手》的情节究竟是什么呢？"
+        },
+        {
+          "id": 61,
+          "start_time": "00:24:20.859",
+          "end_time": "00:24:41.640",
+          "french": "Le personnage principal, D'Artagnan, est un jeune homme qui rêve de devenir mousquetaire. Il quitte sa province natale pour aller à Paris rencontrer un certain monsieur de Tréville, le capitaine des mousquetaires du roi. Sauf que dès son arrivée dans la capitale, les ennuis commencent pour D'Artagnan.",
+          "chinese": "主角达达尼昂是一个梦想成为火枪手的年轻人。他离开家乡前往巴黎，去见国王火枪手卫队队长特雷维尔先生。然而，他一到达首都，麻烦就开始了。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:24:41.910",
+          "end_time": "00:25:10.220",
+          "french": "À cause d'une série de maladresses et de malentendus, il se fait trois ennemis, Athos, Portos et Aramis. Ils lui donnent chacun rendez-vous pour un duel afin de régler leurs différends. Oui, à l'époque, quand un homme avait un problème avec un autre, il réglait ça en faisant un duel, un combat à l'épée. L'heure du duel arrive et D'Artagnan se retrouve face à ses trois ennemis qu'il se prépare à affronter un par un.",
+          "chinese": "由于一系列的笨拙和误会，他结下了三个敌人：阿多斯、波尔多斯和阿拉密斯。他们每人都约他进行决斗以解决分歧。是的，在那个时代，当一个男人和另一个男人有问题时，他们通过决斗来解决，即用剑格斗。决斗的时间到了，达达尼昂面对他的三个敌人，准备一个接一个地对付他们。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:25:10.420",
+          "end_time": "00:25:37.740",
+          "french": "Sauf que le cardinal de Richelieu a interdit les duels dans tout le royaume. Donc, au moment où d'Artagnan et les trois mousquetaires s'apprêtent à se battre, les gardes du cardinal apparaissent soudainement pour les arrêter. Et c'est là que tout bascule, que tout change. Au lieu de se battre contre les mousquetaires, d'Artagnan se met à leur côté pour combattre les gardes du cardinal. Combat dont ils sortent victorieux.",
+          "chinese": "只是黎塞留红衣主教在全王国范围内禁止了决斗。因此，就在达达尼昂和三个火枪手准备开战时，红衣主教的卫兵突然出现要逮捕他们。就在这时，一切都发生了逆转，一切都改变了。达达尼昂没有与火枪手作战，而是站在他们一边对抗红衣主教的卫兵。最终他们赢得了战斗。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:25:37.980",
+          "end_time": "00:25:57.450",
+          "french": "Cette scène est devenue iconique. C'est le moment fondateur de l'amitié entre d'Artagnan et les trois mousquetaires, le début du célèbre « un pour tous, tous pour un ». Donc oui, le roman s'appelle « Les trois mousquetaires », mais en réalité, ils sont quatre. Enfin, trois plus un apprenti.",
+          "chinese": "这一幕已成为经典。这是达达尼昂与三个火枪手友谊的奠基时刻，也是著名的“我为人人，人人为我”的开端。所以是的，小说叫《三个火枪手》，但实际上他们有四个人。准确地说，是三个加一个学徒。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:25:58.009",
+          "end_time": "00:26:20.099",
+          "french": "Une fois ce groupe formé, l'intrigue principale se met en place. Pour faire simple, il y a deux camps qui s'opposent. D'un côté, le roi Louis XIII et sa femme, la reine Anne d'Autriche, qui sont protégées par leur mousquetaire. De l'autre, le cardinal de Richelieu, qui veut renforcer son pouvoir personnel au détriment de celui du roi.",
+          "chinese": "一旦这个小组形成，主线情节就开始展开。简单来说，有两个对立的阵营。一边是国王路易十三和他的妻子奥地利的安妮王后，他们受到火枪手的保护。另一边是黎塞留红衣主教，他想加强个人权力，削弱国王的权力。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:26:20.410",
+          "end_time": "00:26:44.970",
+          "french": "Richelieu apprend que la reine a donné des bijoux en diamant que le roi lui avait offerts à un homme dont elle est secrètement amoureuse. Problème, cet homme est un Anglais et pas n'importe lequel, le fameux duc de Buckingham. Richelieu voit là une occasion parfaite de discréditer la reine et, par extension, d'affaiblir le roi.",
+          "chinese": "黎塞留得知王后把国王送给她的钻石首饰送给了一个她暗恋的男人。问题是，这个男人是个英国人，而且不是普通人，正是著名的白金汉公爵。黎塞留认为这是一个公开败坏王后名声并进而削弱国王的绝佳机会。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:26:45.299",
+          "end_time": "00:27:03.880",
+          "french": "Pour ça, il faut que ce secret soit révélé au grand jour sans que l'on soupçonne le cardinal. Il propose donc d'organiser un grand bal en comptant sur le fait que la reine ne pourra pas porter les diamants offerts par le roi, ce qui constituerait la preuve publique de sa trahison.",
+          "chinese": "为此，必须在不引起对红衣主教怀疑的情况下公开这个秘密。于是他提议举办一场盛大的舞会，指望王后无法佩戴国王赠送的钻石，这将成为她背叛的公开证据。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:27:04.180",
+          "end_time": "00:27:26.440",
+          "french": "Les mousquetaires sont alors envoyés en Angleterre pour récupérer les bijoux avant le bal. Pour les faire échouer, le cardinal fait appel à ses propres gardes ainsi qu'à sa meilleure agente, Milady de Winter, qui est aussi belle que dangereuse. À chaque étape, les deux camps s'affrontent. Duel, piège, etc.",
+          "chinese": "火枪手们随后被派往英国，在舞会开始前取回首饰。为了让他们失败，红衣主教动用了自己的卫兵以及他最得力的特工——米莱狄·德·温特，她既美丽又危险。在每一个阶段，两个阵营都会交锋。决斗、陷阱等等。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:27:26.809",
+          "end_time": "00:27:45.539",
+          "french": "En parallèle, on découvre le passé et les troubles personnels de chacun des mousquetaires, en particulier Athos qui semble avoir un lien avec la mystérieuse Milady. Mais au-delà de ces aventures, les trois mousquetaires est aussi ce qu'on appelle un roman d'apprentissage.",
+          "chinese": "与此同时，我们发现了每个火枪手的过去和个人烦恼，尤其是阿多斯，他似乎与神秘的米莱狄有某种联系。但除了这些冒险之外，《三个火枪手》也是一部所谓的“成长小说（roman d'apprentissage）”。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:45.720",
+          "end_time": "00:28:12.869",
+          "french": "Au début de l'histoire, D'Artagnan n'est pas encore mousquetaire. Il est impétueux, impulsif, il se jette dans les problèmes sans réfléchir. Mais petit à petit, grâce aux aventures qu'il vit avec Athos, Portos et Aramis, il apprend les valeurs des mousquetaires et finit par en devenir un. C'est son parcours initiatique qui constitue le fil rouge du roman, un parcours à la fois épique et tragique.",
+          "chinese": "在故事开始时，达达尼昂还不是火枪手。他鲁莽、冲动，不加思考就陷入麻烦。但渐渐地，通过与阿多斯、波尔多斯和阿拉密斯共同经历的冒险，他学会了火枪手的价值观，并最终成为其中一员。他的启蒙历程构成了小说的主线，这是一个既史诗般又带点悲剧色彩的历程。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:28:13.140",
+          "end_time": "00:28:33.130",
+          "french": "D'ailleurs, on fait souvent le parallèle entre d'Artagnan et Alexandre Dumas. Tous deux sont des jeunes hommes qui ont quitté leur province natale pour chercher la gloire à Paris. Tous deux ont réussi grâce à leur talent, leur audace et un peu de chance. D'Artagnan avec son épée et Dumas avec sa plume.",
+          "chinese": "此外，人们经常将达达尼昂和亚历山大·仲马进行类比。两人都是离开家乡前往巴黎寻求荣耀的年轻人。两人都凭借天赋、胆识和一点运气取得了成功。达达尼昂靠的是剑，而仲马靠的是笔。"
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:33.660",
+          "end_time": "00:29:01.609",
+          "french": "Mais bien sûr, D'Artagnan n'est pas le seul héros de l'histoire. Ce qui a fait le succès du roman, c'est en grande partie l'amitié et la complémentarité entre les quatre mousquetaires. Dumas a fait quelque chose de très malin. Il n'a pas créé un seul héros avec toutes les qualités. Il a créé quatre personnages complémentaires qui incarnent chacun une facette différente du héros. Les Avengers plutôt que Superman.",
+          "chinese": "但当然，达达尼昂并不是故事中唯一的英雄。这部小说之所以成功，很大程度上是因为四位火枪手之间的友谊和互补性。仲马做了一件非常聪明的事。他没有创造一个拥有所有品质的单一英雄。他创造了四个互补的角色，每个角色都体现了英雄的不同侧面。更像是“复仇者联盟”而非“超人”。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:29:01.910",
+          "end_time": "00:29:24.039",
+          "french": "Les mousquetaires sont d'abord différents de par leurs origines géographiques et sociales. Ils viennent tous de régions et de classes sociales différentes. Ça permet au lecteur de s'identifier plus facilement à au moins l'un d'entre eux. Par exemple, Athos est un aristocrate, un comte de la vieille noblesse française, mais il ne s'en vante pas.",
+          "chinese": "火枪手们首先在地理和社会出身方面各不相同。他们来自不同的地区和社会阶层。这让读者更容易在他们中至少一个人身上找到认同感。例如，阿多斯是一位贵族，一位法国老牌贵族的伯爵，但他并不以此自夸。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:29:24.180",
+          "end_time": "00:29:39.690",
+          "french": "Au contraire, il est très discret, mystérieux, souvent mélancolique. Il incarne la grandeur aristocratique, la loyauté, le sens de l'honneur. Il fait un peu figure de père pour d'Artagnan, notamment parce que c'est le plus âgé du groupe.",
+          "chinese": "相反，他非常低调、神秘，经常忧郁。他体现了贵族的气度、忠诚和荣誉感。他在达达尼昂面前有点像父亲的形象，尤其是因为他是小组中年龄最大的。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:39.990",
+          "end_time": "00:30:05.960",
+          "french": "Ensuite, il y a Portos, qui est tout le contraire d'Athos, un bon vivant qui adore la bonne nourriture, les beaux vêtements, le luxe en général. Il est à la fois vaniteux et un peu simple d'esprit, ce qui fait de lui le personnage comique du groupe, souvent malgré lui, mais il est aussi généreux et sincère. Il a, comme on dit, un grand cœur, donc on s'attache facilement à lui.",
+          "chinese": "接下来是波尔多斯，他与阿多斯截然相反，是一个热爱美食、华服和各种奢侈生活的享乐主义者。他既虚荣又有点头脑简单，这使他成为了小组中的喜剧角色，往往是不经意间流露出来的，但他也很慷慨、真诚。正如人们所说，他有一颗“大心脏”，所以人们很容易喜欢上他。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:30:06.970",
+          "end_time": "00:30:25.160",
+          "french": "Aramis, c'est celui qui est le plus complexe. Il est raffiné, élégant et très intelligent, mais il est tiraillé entre deux vocations. Être tiraillé entre deux choses, ça signifie hésiter entre deux options, être attiré par les deux en même temps.",
+          "chinese": "阿拉密斯是最复杂的一个。他优雅、得体且非常聪明，但他纠结于两种职业之间。“Tiraillé entre deux choses”意味着在两个选项之间犹豫不决，同时被两者吸引。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:30:25.400",
+          "end_time": "00:30:55.750",
+          "french": "Dans le cas d'Aramis, il hésite sans cesse entre sa carrière de mousquetaire et celle d'abbé, d'homme d'église. Un jour, il se bat à l'épée. Le lendemain, il veut rejoindre un monastère. Et enfin, il y a d'Artagnan. Au fil du roman, il va devenir progressivement une sorte de synthèse de tous les autres. Il a le courage d'Athos, l'énergie de Portos, la ruse d'Aramis. Mais il a quelque chose en plus, le panache.",
+          "chinese": "就阿拉密斯而言，他不断在火枪手生涯和修道院院长（神职人员）生涯之间徘徊。今天他还在用剑格斗，明天他就想进修道院。最后是达达尼昂。随着小说的推进，他逐渐成为了所有其他人的综合体。他有阿多斯的勇气、波尔多斯的活力、阿拉密斯的机智。但他还有额外的一样东西：派头（panache）。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:30:55.990",
+          "end_time": "00:31:25.990",
+          "french": "Le panache, c'est un mot très français qui est assez difficile à traduire. Littéralement, un panache, c'est un bouquet de plumes qu'on mettait sur les chapeaux ou les casques. D'ailleurs, les mousquetaires en portaient. Mais au sens figuré, avoir du panache, c'est avoir une manière d'agir qui est audacieuse, élégante, un peu flamboyante. C'est faire les choses avec style et une certaine légèreté, même dans les situations difficiles.",
+          "chinese": "“Panache”是一个非常地道的法语词，很难翻译。从字面上看，“panache”是指帽子或头盔上装饰的一束羽毛。顺便说一下，火枪手们就戴着这种羽毛。但在比喻意义上，拥有“panache”是指一种大胆、优雅、甚至有点张扬的行动方式。即使在困难的情况下，也能带着风格和某种轻松感去处理事情。"
+        },
+        {
+          "id": 79,
+          "start_time": "00:31:26.359",
+          "end_time": "00:31:46.730",
+          "french": "À travers ces quatre personnages, Dumas a fabriqué l'archétype du héros à la française. Un archétype assez différent de ses équivalents anglo-saxons. En général, les héros anglais ou américains sont plutôt du genre stoïque. Ils gardent toujours le contrôle de la situation et de leurs émotions.",
+          "chinese": "通过这四个角色，仲马打造了法式英雄的雏形。这种雏形与其盎格鲁-撒克逊版本相当不同。通常，英国或美国的英雄属于坚毅型。他们总是能控制局面和自己的情绪。"
+        },
+        {
+          "id": 80,
+          "start_time": "00:31:47.000",
+          "end_time": "00:32:09.859",
+          "french": "Le héros à la française, tel que Dumas l'a inventé, c'est tout le contraire. C'est un personnage certes courageux, mais qui se prend pas trop au sérieux et qui n'a pas peur de montrer ses émotions. Ça veut pas dire que les Français étaient comme ça, c'est vraiment Dumas qui a inventé cet archétype et il s'est diffusé dans la culture populaire grâce au roman Feuilleton.",
+          "chinese": "仲马发明的法式英雄则完全相反。这个角色固然勇敢，但并不太把自己当回事，也不害怕表达自己的情感。这并不意味着法国人就是那样的，这确实是仲马发明的雏形，并由于连载小说而在流行文化中传播开来。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:32:10.170",
+          "end_time": "00:32:30.119",
+          "french": "Les lecteurs français ont tellement aimé s'identifier à ces mousquetaires qu'ils sont devenus le modèle du héros national. Mais l'influence de Dumas ne s'arrête pas aux mousquetaires. Cet archétype, on le retrouve dans quasiment tous les grands héros de fiction populaire qui ont suivi.",
+          "chinese": "法国读者非常喜欢把自己代入这些火枪手，以至于他们成为了国民英雄的典范。但仲马的影响力并不止于火枪手。这种雏形在随后几乎所有伟大的通俗小说英雄身上都能找到。"
+        },
+        {
+          "id": 82,
+          "start_time": "00:32:30.420",
+          "end_time": "00:32:49.099",
+          "french": "Cyrano de Bergerac, avec son panache, son esprit et son nez comique. Arsène Lupin, avec son élégance et son insolence. Et même Astérix, si on y réfléchit, avec son courage et son refus de se soumettre aux puissants. Il y a du mousquetaire là-dedans.",
+          "chinese": "拥有派头、机智和滑稽鼻子的西哈诺·德·贝热拉克；优雅而傲慢的亚森·罗宾；甚至仔细想想，还有阿斯特里克斯，他拥有勇气且拒绝向强者屈服。这些角色身上都有火枪手的影子。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:32:49.400",
+          "end_time": "00:33:19.019",
+          "french": "Et n'oublions pas d'où vient tout ça. Cet archétype du héros français, symbole de bravoure et de panache, a été inventé par un métis, petit-fils d'une femme esclave. D'ailleurs, en 2002, la dépouille d'Alexandre Dumas a été transférée au Panthéon, là où reposent les grands personnages qui ont marqué l'histoire de France. Ça aura pris du temps, mais c'est une fin digne d'un de ses romans. Voilà.",
+          "chinese": "别忘了这一切从何而来。这种法式英雄的雏形，勇敢和派头的象征，是由一位混血儿、一名女奴的孙子发明的。此外，在2002年，亚历山大·仲马的遗骸被移入了先贤祠，那里安葬着影响了法国历史的伟大人物。虽然花了一些时间，但这是一个配得上他小说的结局。好了。"
+        },
+        {
+          "id": 84,
+          "start_time": "00:33:19.190",
+          "end_time": "00:33:26.539",
+          "french": "Merci de m'avoir écouté jusqu'au bout. J'espère que ça vous a plu. Je vous donne rendez-vous dans deux semaines pour un nouvel épisode. A bientôt !",
+          "chinese": "感谢大家听我讲到最后。希望你们喜欢。我们两周后的新一期节目再见。回头见！"
+        }
+      ],
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The phrase 'trois_mousquetaires' is listed under the 'liaison' section, but no liaison occurs between 'trois' and 'mousquetaires' because 'mousquetaires' begins with a consonant [m].",
+            "field": "language_analysis.deep_learning.pronunciation.liaison"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

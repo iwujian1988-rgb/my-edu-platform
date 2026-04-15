@@ -1,0 +1,154 @@
+{
+  "progress": {
+    "totalFiles": 20,
+    "processedFiles": 12,
+    "successfulFiles": 12,
+    "failedFiles": 0,
+    "remainingFiles": 8,
+    "totalTokensUsed": 298136,
+    "avgTokensPerFile": 24844.666666666668,
+    "estimatedRemainingTokens": 198757.33333333334,
+    "startTime": "2026-04-15T00:56:24.461Z",
+    "currentTime": "2026-04-15T01:59:40.308Z",
+    "elapsedTime": 3795.847,
+    "avgTimePerFile": 316.32058333333333,
+    "estimatedRemainingTime": 2530.5646666666667,
+    "processedFileNames": [
+      "8 jours seulement pour voir le tapis de Louis XIV. Lost Treasures of Louis XIV (Grand Palais Exhibition).json",
+      "Allergique au rap_ Impossible. Les macarons_ Surcotés (French Rap Parisian Clichés).json",
+      "Champagne ou vin mousseux_ French Wine Culture & Celebrations (Clairette de Die).json",
+      "Faut-il commencer par le plus difficile _ Réponses de Lisa et Micaela  (Hard Start Method, Real Life).json",
+      "Je performe chez ma kiné.French Healthcare & Body Wellness (Méthode Mézières).json",
+      "L'apéritif français dans Twin Peaks. French Apéritif Culture & TV Series.json",
+      "La liberté d’écrire (French Writing Practice).json",
+      "Louis XIV au Grand Palais, je l'ai vu ! Visiting the King's Carpet Exhibition (French History).json",
+      "Où va-t-on s’il fait beau_ A Trouville ! (Day trip Beyond Paris).json",
+      "Promenade inattendue dans le 11e (Paris Local Discoveries).json",
+      "Que pense Pauline de Victor Hugo décorateur_ (Victor Hugo's Interior Design).json",
+      "Quel cadeau chez Design & Nature _ Paris inattendu (Genuine Paris conversation).json"
+    ],
+    "failedFileNames": [],
+    "remainingFileNames": [
+      "8 jours seulement pour voir le tapis de Louis XIV. Lost Treasures of Louis XIV (Grand Palais Exhibition).json",
+      "Allergique au rap_ Impossible. Les macarons_ Surcotés (French Rap Parisian Clichés).json",
+      "Améliorez votre compréhension orale en français.json",
+      "Champagne ou vin mousseux_ French Wine Culture & Celebrations (Clairette de Die).json",
+      "Faut-il commencer par le plus difficile _ Réponses de Lisa et Micaela  (Hard Start Method, Real Life).json",
+      "Je performe chez ma kiné.French Healthcare & Body Wellness (Méthode Mézières).json",
+      "L'apéritif français dans Twin Peaks. French Apéritif Culture & TV Series.json",
+      "La liberté d’écrire (French Writing Practice).json",
+      "Louis XIV au Grand Palais, je l'ai vu ! Visiting the King's Carpet Exhibition (French History).json",
+      "Où va-t-on s’il fait beau_ A Trouville ! (Day trip Beyond Paris).json",
+      "Promenade inattendue dans le 11e (Paris Local Discoveries).json",
+      "Que pense Pauline de Victor Hugo décorateur_ (Victor Hugo's Interior Design).json",
+      "Quel cadeau chez Design & Nature _ Paris inattendu (Genuine Paris conversation).json",
+      "Si Little Simz vient à Paris (Parisian Day Trip).json",
+      "Trouville _ l’histoire de Stéphane (In a French bookshop).json",
+      "Trouville _ Renata n’importe quoi (French Book Recommandation).json",
+      "Un double quiproquo_ (French conversation with Cynthia).json",
+      "Une masterclass de musique à la Maison de Victor Hugo (Music Masterclass at Victor Hugo's House).json",
+      "Vos quartiers et mon quartier  (Neighbourhood Life, Paris).json",
+      "Voter en famille, le dimanche, réveille des souvenirs (Voting in a French Election).json"
+    ]
+  },
+  "fileTimings": [
+    [
+      "8 jours seulement pour voir le tapis de Louis XIV. Lost Treasures of Louis XIV (Grand Palais Exhibition).json",
+      230.157
+    ],
+    [
+      "Allergique au rap_ Impossible. Les macarons_ Surcotés (French Rap Parisian Clichés).json",
+      735.361
+    ],
+    [
+      "Champagne ou vin mousseux_ French Wine Culture & Celebrations (Clairette de Die).json",
+      245.116
+    ],
+    [
+      "Faut-il commencer par le plus difficile _ Réponses de Lisa et Micaela  (Hard Start Method, Real Life).json",
+      305.926
+    ],
+    [
+      "Je performe chez ma kiné.French Healthcare & Body Wellness (Méthode Mézières).json",
+      256.396
+    ],
+    [
+      "L'apéritif français dans Twin Peaks. French Apéritif Culture & TV Series.json",
+      264.392
+    ],
+    [
+      "La liberté d’écrire (French Writing Practice).json",
+      219.449
+    ],
+    [
+      "Louis XIV au Grand Palais, je l'ai vu ! Visiting the King's Carpet Exhibition (French History).json",
+      256.226
+    ],
+    [
+      "Où va-t-on s’il fait beau_ A Trouville ! (Day trip Beyond Paris).json",
+      303.849
+    ],
+    [
+      "Promenade inattendue dans le 11e (Paris Local Discoveries).json",
+      333.646
+    ],
+    [
+      "Que pense Pauline de Victor Hugo décorateur_ (Victor Hugo's Interior Design).json",
+      341.529
+    ],
+    [
+      "Quel cadeau chez Design & Nature _ Paris inattendu (Genuine Paris conversation).json",
+      303.774
+    ]
+  ],
+  "fileTokens": [
+    [
+      "8 jours seulement pour voir le tapis de Louis XIV. Lost Treasures of Louis XIV (Grand Palais Exhibition).json",
+      22906
+    ],
+    [
+      "Allergique au rap_ Impossible. Les macarons_ Surcotés (French Rap Parisian Clichés).json",
+      35570
+    ],
+    [
+      "Champagne ou vin mousseux_ French Wine Culture & Celebrations (Clairette de Die).json",
+      22702
+    ],
+    [
+      "Faut-il commencer par le plus difficile _ Réponses de Lisa et Micaela  (Hard Start Method, Real Life).json",
+      22044
+    ],
+    [
+      "Je performe chez ma kiné.French Healthcare & Body Wellness (Méthode Mézières).json",
+      25269
+    ],
+    [
+      "L'apéritif français dans Twin Peaks. French Apéritif Culture & TV Series.json",
+      24024
+    ],
+    [
+      "La liberté d’écrire (French Writing Practice).json",
+      23047
+    ],
+    [
+      "Louis XIV au Grand Palais, je l'ai vu ! Visiting the King's Carpet Exhibition (French History).json",
+      22530
+    ],
+    [
+      "Où va-t-on s’il fait beau_ A Trouville ! (Day trip Beyond Paris).json",
+      22556
+    ],
+    [
+      "Promenade inattendue dans le 11e (Paris Local Discoveries).json",
+      24278
+    ],
+    [
+      "Que pense Pauline de Victor Hugo décorateur_ (Victor Hugo's Interior Design).json",
+      24358
+    ],
+    [
+      "Quel cadeau chez Design & Nature _ Paris inattendu (Genuine Paris conversation).json",
+      28852
+    ]
+  ]
+}

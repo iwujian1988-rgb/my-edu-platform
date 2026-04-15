@@ -1,0 +1,683 @@
+{
+  "source_file": "SBS Easy French #279 _ des footballeuses iraniennes sous protection en Australie _.json",
+  "channel": "SBS简易法语",
+  "video_name": "SBS Easy French #279 _ des footballeuses iraniennes sous protection en Australie _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T19:49:55.326Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "L'imparfait dans la condition (Hypothèse)",
+          "Le subjonctif après 'jusqu'à ce que'",
+          "Le pronom relatif composé 'au cours duquel'"
+        ],
+        "speaking": [
+          "Discussing international news and humanitarian issues",
+          "Expressing conditions and hypothetical outcomes in a formal context"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "humanitaire",
+            "part_of_speech": "adjectif",
+            "ipa": "[y.ma.ni.tɛʁ]",
+            "chinese": "人道主义的",
+            "example_sentence": {
+              "french": "L'Australie délivre des visas humanitaires à des joueuses de football iraniennes.",
+              "chinese": "澳大利亚向伊朗女足球员发放人道主义签证。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le gouvernement australien leur a accordé des visas humanitaires.",
+                "chinese": "澳大利亚政府向她们发放了人道主义签证。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "susciter",
+            "part_of_speech": "verbe",
+            "ipa": "[sy.si.te]",
+            "chinese": "引起，激起",
+            "example_sentence": {
+              "french": "Leur situation a suscité une forte attention.",
+              "chinese": "她们的处境引发了广泛关注。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce projet a suscité beaucoup d'enthousiasme.",
+                "chinese": "这个项目激起了很大的热情。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "hymne",
+            "part_of_speech": "nom masculin",
+            "ipa": "[imn]",
+            "chinese": "国歌，赞歌",
+            "example_sentence": {
+              "french": "Elles ont refusé de chanter l'hymne national iranien.",
+              "chinese": "她们拒绝演唱伊朗国歌。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'hymne national est un symbole de l'unité.",
+                "chinese": "国歌是团结的象征。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "persécution",
+            "part_of_speech": "nom féminin",
+            "ipa": "[pɛʁ.se.ky.sjɔ̃]",
+            "chinese": "迫害",
+            "example_sentence": {
+              "french": "Elles craignent de possibles sanctions ou persécutions.",
+              "chinese": "她们担心可能面临制裁或迫害。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ils ont fui leur pays pour échapper à la persécution.",
+                "chinese": "他们逃离祖国以躲避迫害。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "désescalade",
+            "part_of_speech": "nom féminin",
+            "ipa": "[de.zɛs.ka.lad]",
+            "chinese": "（局势）缓和，降级",
+            "example_sentence": {
+              "french": "Emmanuel Macron appelle à la désescalade au Liban.",
+              "chinese": "埃马纽埃尔·马克龙呼吁在黎巴嫩实现局势缓和。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              10,
+              12
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Les diplomates travaillent pour une désescalade du conflit.",
+                "chinese": "外交官们正致力于缓和冲突。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "allocution",
+            "part_of_speech": "nom féminin",
+            "ipa": "[a.lɔ.ky.sjɔ̃]",
+            "chinese": "致辞，简短演说",
+            "example_sentence": {
+              "french": "Dans une allocution, Donald Trump a assuré avoir gagné la guerre.",
+              "chinese": "在一次讲话中，唐纳德·特朗普声称自己已赢得了战争。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le président a prononcé une allocution télévisée.",
+                "chinese": "总统发表了电视讲话。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "déplorer",
+            "part_of_speech": "verbe",
+            "ipa": "[de.plɔ.ʁe]",
+            "chinese": "痛惜，对...深感遗憾",
+            "example_sentence": {
+              "french": "Le gouvernement libanais déplore être victime d'une guerre.",
+              "chinese": "黎巴嫩政府痛惜自己成为战争的受害者。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Nous déplorons la perte de vies humaines.",
+                "chinese": "我们对人员伤亡深表遗憾。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "exhorter",
+            "part_of_speech": "verbe",
+            "ipa": "[ɛɡ.zɔʁ.te]",
+            "chinese": "敦促，劝诫",
+            "example_sentence": {
+              "french": "Il a aussi exhorté le Hezbollah à mettre fin à ses attaques.",
+              "chinese": "他还敦促真主党停止其袭击行动。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le médecin exhorte le patient à arrêter de fumer.",
+                "chinese": "医生敦促病人戒烟。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "décennie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[de.se.ni]",
+            "chinese": "十年",
+            "example_sentence": {
+              "french": "Le guépard avait disparu d'Inde il y a plusieurs décennies.",
+              "chinese": "猎豹已在几十年前从印度消失。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              14
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cette technologie a évolué au cours de la dernière décennie.",
+                "chinese": "这项技术在过去十年中得到了发展。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "menacé",
+            "part_of_speech": "adjectif",
+            "ipa": "[mə.na.se]",
+            "chinese": "受威胁的，濒危的",
+            "example_sentence": {
+              "french": "Aider à protéger cette espèce menacée.",
+              "chinese": "帮助保护这一濒危物种。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              15
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les pandas sont une espèce menacée.",
+                "chinese": "熊猫是濒危物种。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "passer au niveau supérieur",
+            "meaning": "更上一层楼 / 进入下一阶段",
+            "example": {
+              "french": "Si vous êtes prêt à passer au niveau supérieur, n'hésitez pas à découvrir SBS French.",
+              "chinese": "如果您准备好更上一层楼，请不要犹豫，立即了解SBS French。"
+            },
+            "usage_note": "Used figuratively to describe progress in skills, especially language learning.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "mettre fin à",
+            "meaning": "结束 / 终止",
+            "example": {
+              "french": "Le président iranien énonce ses conditions pour mettre fin au conflit.",
+              "chinese": "伊朗总统提出了结束冲突的条件。"
+            },
+            "usage_note": "A formal way to say 'arrêter' or 'finir', often used for wars, contracts, or habits.",
+            "source_ids": [
+              4,
+              13
+            ]
+          },
+          {
+            "expression": "repartir à la hausse",
+            "meaning": "重新增长 / 回升",
+            "example": {
+              "french": "La population de guépards en Inde repart à la hausse.",
+              "chinese": "印度的猎豹种群正在恢复增长。"
+            },
+            "usage_note": "Common in economic or demographic contexts to describe a trend reversing upwards.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "mettre le sourire aux lèvres",
+            "meaning": "让人会心一笑 / 令人高兴",
+            "example": {
+              "french": "La nouvelle qui va vous mettre le sourire aux lèvres.",
+              "chinese": "这个消息一定会让你会心一笑。"
+            },
+            "usage_note": "An idiomatic expression describing something that brings joy or a smile.",
+            "source_ids": [
+              14
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "L'imparfait dans la condition (Hypothèse)",
+            "structure": "Si + sujet + verbe à l'imparfait, sujet + verbe au conditionnel présent",
+            "explanation": "Used to express a hypothetical situation in the present or future that is unlikely or contrary to fact.",
+            "example": {
+              "french": "L'Australie était prête à apporter son soutien à d'autres membres de l'équipe si elles en faisaient la demande.",
+              "chinese": "如果其他队员提出请求（假设），澳大利亚准备向他们提供支持。"
+            },
+            "usage_note": "In the text, 'faisaient' is imparfait, implying the request hasn't happened yet but is a possibility.",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "name": "Le subjonctif après 'jusqu'à ce que'",
+            "structure": "jusqu'à ce que + sujet + verbe au subjonctif",
+            "explanation": "The conjunction 'jusqu'à ce que' (until) always requires the subjunctive mood because it points to an event that is envisioned but not yet realized.",
+            "example": {
+              "french": "Les forces américaines resteraient dans la région jusqu'à ce que le travail soit terminé.",
+              "chinese": "美军将继续驻扎该地区，直到工作完成为止。"
+            },
+            "usage_note": "'Soit' is the subjunctive present of 'être'. Note that if the subject is the same, we use 'jusqu'à' + infinitive, but here the subjects are different (forces vs. travail).",
+            "source_ids": [
+              10
+            ]
+          },
+          {
+            "name": "Le pronom relatif composé 'au cours duquel'",
+            "structure": "Préposition + lequel / laquelle / lesquels / lesquelles",
+            "explanation": "Used after a preposition to refer back to a noun. 'Au cours de' + 'lequel' becomes 'au cours duquel'.",
+            "example": {
+              "french": "Un match au cours duquel elles ont refusé de chanter l'hymne national.",
+              "chinese": "在一场比赛中（在此期间），她们拒绝演唱国歌。"
+            },
+            "usage_note": "It agrees in gender and number with the antecedent (un match - masculine singular).",
+            "source_ids": [
+              5
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[y]",
+              "description": "The French 'u' sound, as in 'humanitaire' or 'susciter'. Keep lips rounded and tongue forward.",
+              "examples": [
+                "humanitaire",
+                "susciter",
+                "hymne"
+              ]
+            },
+            {
+              "sound": "[ɛ̃]",
+              "description": "The nasal vowel in 'iranien' or 'fin'.",
+              "examples": [
+                "iranien",
+                "fin",
+                "indien"
+              ]
+            }
+          ],
+          "liaison": [
+            "des_ailes (not in text, but relevant: des_humanitaires [de.zy.ma.ni.tɛʁ])",
+            "un_épisode [œ̃.ne.pi.zɔd]",
+            "trois_individus [tʁwa.zɛ̃.di.vi.dy]"
+          ],
+          "intonation": "Journalistic intonation: characterized by a steady rhythm with a slight rise at the end of sense groups and a marked fall at the end of sentences."
+        },
+        "vocabulary_network": {
+          "theme": "Conflits et Diplomatie",
+          "core_word": "Guerre",
+          "related_groups": [
+            {
+              "category": "Actions Militaires",
+              "words": [
+                "offensive terrestre",
+                "attaques",
+                "conflit",
+                "agression"
+              ]
+            },
+            {
+              "category": "Diplomatie",
+              "words": [
+                "désescalade",
+                "conditions",
+                "soutien",
+                "autorités"
+              ]
+            },
+            {
+              "category": "Conséquences",
+              "words": [
+                "victimes",
+                "réparations",
+                "fuir",
+                "persécutions"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Leur ___ a ___ une forte ___ après un ___ au ___ duquel elles ont ___ de chanter l'___ national iranien.",
+            "answer": "situation, suscité, attention, match, cours, refusé, hymne",
+            "explanation": "根据原文第5句，这些词描述了伊朗女球员拒绝唱国歌引发关注的场景。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi le gouvernement australien a-t-il accordé des visas humanitaires aux joueuses iraniennes ?",
+            "options": {
+              "A": "Parce qu'elles ont gagné la Coupe d'Asie féminine.",
+              "B": "Pour les récompenser d'avoir appris le français avec SBS.",
+              "C": "À cause des risques de sanctions ou persécutions après leur refus de chanter l'hymne national.",
+              "D": "Parce que le Premier ministre Anthony Albanese est un fan de football."
+            },
+            "answer": "C",
+            "explanation": "原文第6句明确提到，由于在媒体上遭到批评，她们担心回国后会面临“sanctions ou persécutions”，因此向澳大利亚寻求帮助并获得了签证。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Le gouvernement libanais déplore être victime d'une guerre qu'il n'a pas choisie.",
+            "answer": "黎巴嫩政府痛惜自己成为一场并非由其选择的战争的受害者。",
+            "explanation": "‘Déplorer’ 意为‘痛惜’或‘深感遗憾’；‘qu'il n'a pas choisie’ 是定语从句，修饰 ‘guerre’。",
+            "source_ids": [
+              12
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Conjuguez le verbe entre parenthèses au mode et au temps corrects : 'Les forces américaines resteront dans la région jusqu'à ce que le conflit (être) ___ terminé.'",
+            "answer": "soit",
+            "explanation": "在连词 'jusqu'à ce que' 之后必须使用虚拟式（subjonctif）。'être' 的虚拟式现在时第三人称单数是 'soit'。",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "situation",
+            "suscité",
+            "hymne",
+            "déplorer",
+            "persécution"
+          ],
+          "covered_grammar": [
+            "Le subjonctif après jusqu'à ce que",
+            "Le pronom relatif composé"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "X laisse entendre que... tout en posant Y",
+            "explanation": "Used to say someone implies something while simultaneously setting conditions.",
+            "example": {
+              "french": "Le président laisse entendre que la guerre pourrait finir tout en posant plusieurs conditions.",
+              "chinese": "总统暗示战争可能会结束，同时也提出了若干条件。"
+            }
+          },
+          {
+            "pattern": "Faire état de...",
+            "explanation": "A formal way to report or mention facts/news.",
+            "example": {
+              "french": "Le porte-parole fait état de nouvelles attaques sur le front.",
+              "chinese": "发言人报告了前线的新袭击事件。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are a journalist for a French-speaking radio station reporting on a positive environmental story.",
+          "requirements": "Use 'repartir à la hausse', 'espèce menacée', and 'décennie' in your report.",
+          "starter": "Bonjour à tous, aujourd'hui nous avons une excellente nouvelle concernant la biodiversité..."
+        }
+      },
+      "summary": {
+        "content": "This podcast episode covers diverse international news: Australia granting humanitarian visas to Iranian female footballers facing persecution, the complex geopolitical situation in the Middle East with Iran's conditions for peace, the displacement of Lebanese civilians, and a positive update on the reintroduction of cheetahs in India.",
+        "keywords": [
+          "visas humanitaires",
+          "Iran",
+          "Liban",
+          "désescalade",
+          "guépards",
+          "Inde"
+        ],
+        "difficulty_note": "The text is at a B1-B2 level due to its journalistic nature, featuring formal vocabulary related to politics and international relations, as well as complex grammatical structures like the subjunctive and compound relative pronouns."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:06:57"
+        },
+        "theme": "Actualités Internationales (International News)",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职场竞争力。《Work in Progress》。现在即可在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:01:05.349",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Bonjour et bienvenue dans ce nouvel épisode de SBS Easy French. Ce podcast est réalisé en partenariat avec l'Alliance française de Melbourne. Chaque semaine, vous avez rendez-vous avec Easy French, votre compagnon pour apprendre le français à votre rythme.",
+          "chinese": "您正在收听的是 SBS 法语节目。请访问 sbs.com.au/french 获取更多内容。大家好，欢迎收听新一期的 SBS Easy French。本播客是与墨尔本法语联盟合作制作的。每周，Easy French 都会准时与您相约，陪伴您按自己的节奏学习法语。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:05.620",
+          "end_time": "00:01:41.579",
+          "french": "Si ce n'est pas déjà fait, je vous invite à vous inscrire à notre newsletter sur le site web de SBS French pour recevoir la transcription de cette émission et de toutes les autres sur votre boîte mail tous les vendredis. Et si vous vous sentez de plus en plus à l'aise avec le français et prêt à passer au niveau supérieur, n'hésitez pas à découvrir SBS French. Vous êtes avec Marianne Murat et voici votre journal. On commence avec les titres.",
+          "chinese": "如果您还没有订阅，欢迎前往 SBS 法语网站订阅我们的时事通讯，以便在每周五通过电子邮件接收本节目及所有其他节目的文本。如果您觉得自己的法语越来越流利，并准备好进入更高阶段的学习，欢迎探索 SBS French。我是 Marianne Murat，为您带来新闻简报。首先来看头条新闻。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:42.010",
+          "end_time": "00:02:03.239",
+          "french": "L'Australie délivre des visas humanitaires à des joueuses de football iraniennes. Le président iranien énonce ses conditions pour mettre fin au conflit au Moyen-Orient. Des centaines de milliers de Libanais fuient le sud du pays. Et enfin, la bonne nouvelle de la semaine, la population de guépards en Inde repart à la hausse.",
+          "chinese": "澳大利亚向伊朗女足运动员发放人道主义签证。伊朗总统提出结束中东冲突的条件。数十万黎巴嫩人逃离该国南部。最后是本周的好消息：印度的猎豹数量再次回升。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:05.269",
+          "end_time": "00:02:28.900",
+          "french": "Cinq joueuses de l'équipe nationale féminine de football d'Iran ont été accueillies en Australie début mars, alors qu'elles participaient à la Coupe d'Asie féminine organisée dans le Queensland. Leur situation a suscité une forte attention après un match au cours duquel elles ont refusé de chanter l'hymne national iranien, un geste très sensible dans leur pays.",
+          "chinese": "三月初，五名伊朗国家女子足球队队员在昆士兰州参加女足亚洲杯期间获准进入澳大利亚。在一次比赛中，她们拒绝齐唱伊朗国歌，这一举动在伊朗国内极其敏感，随后她们的处境引起了广泛关注。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:28.900",
+          "end_time": "00:02:57.900",
+          "french": "À la suite de cet épisode, les joueuses ont été violemment critiquées dans les médias d'État iraniens, faisant craindre de possibles sanctions ou persécutions en cas de retour en Iran. Les joueuses ont alors demandé de l'aide aux autorités australiennes. Le gouvernement australien leur a accordé des visas humanitaires, leur permettant de rester légalement dans le pays et d'y être placées en sécurité, sous la protection des autorités.",
+          "chinese": "事件发生后，这些球员遭到了伊朗官方媒体的猛烈抨击，引发了人们对她们回国后可能面临制裁或迫害的担忧。随后，球员们向澳大利亚当局寻求帮助。澳大利亚政府向她们发放了人道主义签证，允许她们合法留在该国，并在当局的保护下获得安全保障。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:58.139",
+          "end_time": "00:03:17.789",
+          "french": "Le Premier ministre, Anthony Albanese, a indiqué que l'Australie était prête à apporter son soutien à d'autres membres de l'équipe si elles en faisaient la demande. Dans le même temps, la guerre au Moyen-Orient pourrait-elle toucher à sa fin prochainement ? C'est ce que laisse entendre le président iranien tout en posant plusieurs conditions.",
+          "chinese": "总理安东尼·阿尔巴尼斯表示，如果其他队员提出请求，澳大利亚也准备提供支持。与此同时，中东战争是否会在近期结束？伊朗总统在提出多项条件的同时暗示了这种可能性。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:17.789",
+          "end_time": "00:03:39.789",
+          "french": "Sur les réseaux sociaux, le président Masoud Pezeshkian a appelé les États-Unis et Israël à reconnaître les droits légitimes du peuple iranien, à verser des réparations liées aux violences et à offrir à son pays des garanties internationales contre toute future agression. L'Iran ne semble pas affaibli par les attaques.",
+          "chinese": "总统马苏德·佩泽什基安在社交媒体上呼吁美国和以色列承认伊朗人民的正当权利，支付与暴力冲突相关的赔偿，并向伊朗提供国际保证，防止未来再次发生侵略。伊朗似乎并未因袭击而削弱。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:39.789",
+          "end_time": "00:03:50.219",
+          "french": "Après la mort du guide suprême et de plusieurs dirigeants iraniens dès le premier jour du conflit, le 28 février, la République islamique a déjà désigné un nouveau leader.",
+          "chinese": "在 2 月 28 日冲突爆发的第一天，最高领袖和多位伊朗领导人相继去世后，伊朗伊斯兰共和国已经任命了新的领导人。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:50.780",
+          "end_time": "00:04:13.740",
+          "french": "De leur côté, les États-Unis et Israël ne montrent aucun signe de désescalade, affirmant qu'ils continueront à se battre aussi longtemps que nécessaire. Dans une allocution, Donald Trump a déjà assuré avoir gagné la guerre au Moyen-Orient, tout en précisant que les forces américaines resteraient dans la région jusqu'à ce que, je cite, « le travail soit terminé ».",
+          "chinese": "另一方面，美国和以色列没有表现出任何降温迹象，声称只要有必要，他们将继续战斗。唐纳德·特朗普在一次演讲中已经宣称赢得了中东战争，同时明确表示美军将留在该地区，直到（引用他的话）“任务完成”。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:14.330",
+          "end_time": "00:04:32.819",
+          "french": "Parmi les victimes du conflit figure la population libanaise. Des centaines de milliers de Libanais ont fui leur domicile dans le sud du pays alors que les violences dans la région s'intensifient. Le porte-parole des Nations unies, Stéphane Dujarric, fait état de nouvelles attaques sur le front.",
+          "chinese": "黎巴嫩民众也是冲突的受害者。随着该地区暴力活动的升级，数十万黎巴嫩人逃离了在该国南部的家园。联合国发言人斯蒂芬·杜加里克报告了前线发生的新袭击。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:32.819",
+          "end_time": "00:05:01.639",
+          "french": "Le gouvernement libanais déplore être victime d'une guerre qu'il n'a pas choisie. Emmanuel Macron appelle, lui, à la désescalade au Liban.",
+          "chinese": "黎巴嫩政府哀叹自己是一场并非其选择的战争的受害者。埃马纽埃尔·马克龙则呼吁黎巴嫩局势降温。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:01.750",
+          "end_time": "00:05:15.560",
+          "french": "Le président français demande à Israël de clairement renoncer à une offensive terrestre au Liban. Dans un message publié sur X, il a aussi exhorté le Hezbollah à immédiatement mettre fin à ses attaques.",
+          "chinese": "法国总统要求以色列明确放弃对黎巴嫩的地面进攻。在 X 平台上发布的一条消息中，他还敦促真主党立即停止袭击。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:17.560",
+          "end_time": "00:05:41.100",
+          "french": "Et enfin, on termine avec la feel-good news de la semaine, la nouvelle qui va vous mettre le sourire aux lèvres. En Inde, trois petits guépards sont nés récemment. Leur mère s'appelle Gamini. C'est une femelle guépard venue d'Afrique du Sud dans le cadre d'un programme de protection des animaux. Ces naissances sont une bonne nouvelle car le guépard avait disparu d'Inde il y a plusieurs décennies.",
+          "chinese": "最后，我们以本周的“治愈系新闻”结束，这条消息一定会让您喜上眉梢。在印度，最近有三只小猎豹出生。它们的母亲名叫 Gamini，是一只根据动物保护计划从南非引进的雌性猎豹。这些幼崽的出生是个好消息，因为猎豹在几十年前就已在印度灭绝。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:41.100",
+          "end_time": "00:06:10.060",
+          "french": "Grâce à ces trois bébés, la population totale de guépards en Inde atteint maintenant 38 individus, selon le gouvernement indien. Les autorités espèrent que ces naissances aideront à reconstruire une population stable de guépards dans le pays et à protéger cette espèce menacée. Merci d'avoir suivi votre journal en français facile. Nous nous retrouvons la semaine prochaine pour un nouvel épisode de SBS Easy French. À bientôt !",
+          "chinese": "据印度政府称，得益于这三只幼崽，印度的猎豹总数现已达到 38 只。当局希望这些新生命的诞生能有助于在该国重建稳定的猎豹种群，并保护这一濒危物种。感谢收听本期法语简易新闻。下周我们将在新一期的 SBS Easy French 中再见。回头见！"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:16.060",
+          "end_time": "00:06:23.139",
+          "french": "Aimez, partagez, commentez. Suivez-nous sur facebook.com/sbsfrench",
+          "chinese": "点赞、分享、评论。请在 facebook.com/sbsfrench 上关注我们。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:29.110",
+          "end_time": "00:06:57.769",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职场竞争力。《Work in Progress》。现在即可在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:06:57.769",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 17,
+        "source_video_name": "SBS Easy French #279 _ des footballeuses iraniennes sous protection en Australie _.json",
+        "tags": [
+          "法国生活",
+          "旅行"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "In the 'key_sounds' section, the word 'hymne' is listed as an example for the [y] sound. However, 'hymne' is pronounced [imn], containing the [i] sound rather than the rounded [y] sound found in 'u'.",
+            "field": "deep_learning.pronunciation.key_sounds"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

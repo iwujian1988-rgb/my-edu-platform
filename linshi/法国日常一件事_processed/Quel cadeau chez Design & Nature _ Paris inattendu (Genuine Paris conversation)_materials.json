@@ -1,0 +1,672 @@
+{
+  "source_file": "Quel cadeau chez Design & Nature _ Paris inattendu (Genuine Paris conversation).json",
+  "channel": "法国日常一件事",
+  "video_name": "Design & Nature 的礼物 _ 意想不到的巴黎（地道巴黎对话）",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:59:40.308Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le subjonctif après 'à moins que'",
+          "Les pronoms relatifs composés (dans laquelle)",
+          "La voix passive au passé composé"
+        ],
+        "speaking": [
+          "Décrire un objet artisanal ou une œuvre d'art avec précision",
+          "Interagir dans une boutique spécialisée pour demander des conseils et des détails sur un produit"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "inattendu",
+            "part_of_speech": "adjectif",
+            "ipa": "[inatɑ̃dy]",
+            "chinese": "意想不到的，出乎意料的",
+            "example_sentence": {
+              "french": "Et puis, dans le magasin, il s'est passé quelque chose d'inattendu.",
+              "chinese": "随后，在商店里，发生了一件意想不到的事。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              2
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Et puis, dans le magasin, il s'est passé quelque chose d'inattendu.",
+                "chinese": "随后，在商店里，发生了一件意想不到的事。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "taxidermie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[taksidɛʁmi]",
+            "chinese": "动物标本剥制术",
+            "example_sentence": {
+              "french": "Et en fait, c'est un endroit où ils font de la taxidermie.",
+              "chinese": "实际上，那里是个做动物标本的地方。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et en fait, c'est un endroit où ils font de la taxidermie.",
+                "chinese": "实际上，那里是个做动物标本的地方。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "empailler",
+            "part_of_speech": "verbe",
+            "ipa": "[ɑ̃paje]",
+            "chinese": "制作（动物）标本，填充",
+            "example_sentence": {
+              "french": "Ce sont des animaux morts qu'ils vont remettre en état et empailler.",
+              "chinese": "他们会对死去的动物进行修复和填充。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6,
+              15
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Ce sont des animaux morts qu'ils vont remettre en état et empailler.",
+                "chinese": "他们会对死去的动物进行修复和填充。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "crustacé",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kʁystase]",
+            "chinese": "甲壳类动物",
+            "example_sentence": {
+              "french": "Moi, je suis surtout fascinée par les insectes, les crustacés.",
+              "chinese": "我最着迷的是昆虫和甲壳类动物。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Moi, je suis surtout fascinée par les insectes, les crustacés.",
+                "chinese": "我最着迷的是昆虫和甲壳类动物。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "éphémère",
+            "part_of_speech": "adjectif",
+            "ipa": "[efemɛʁ]",
+            "chinese": "短暂的，朝生暮死的",
+            "example_sentence": {
+              "french": "La vie d'un papillon est très très éphémère, donc au bout de quelques jours il meurt.",
+              "chinese": "蝴蝶的生命非常短暂，顶多也就几天，然后就死了。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La vie d'un papillon est très très éphémère, donc au bout de quelques jours il meurt.",
+                "chinese": "蝴蝶的生命非常短暂，顶多也就几天，然后就死了。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "cocon",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kɔkɔ̃]",
+            "chinese": "茧",
+            "example_sentence": {
+              "french": "La vie du papillon est plutôt dans le cocon, pas une fois qu'il est sorti.",
+              "chinese": "蝴蝶的生命其实主要是在蛹里度过的，而不是破茧而出之后。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La vie du papillon est plutôt dans le cocon, pas une fois qu'il est sorti.",
+                "chinese": "蝴蝶的生命其实主要是在蛹里度过的，而不是破茧而出之后。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "pendant",
+            "part_of_speech": "nom masculin",
+            "ipa": "[pɑ̃dɑ̃]",
+            "chinese": "对应物，配对物",
+            "example_sentence": {
+              "french": "C'est un peu le pendant de l'autre, le papillon ulysses.",
+              "chinese": "这有点像另一种蝴蝶——尤利西斯蝶的对应物。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est un peu le pendant de l'autre, le papillon ulysses.",
+                "chinese": "这有点像另一种蝴蝶——尤利西斯蝶的对应物。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "raviver",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁavive]",
+            "chinese": "使恢复生机，使（颜色）重新鲜亮",
+            "example_sentence": {
+              "french": "C'est quand même leur vraie couleur ou vous ravivez leur couleur ?",
+              "chinese": "这些蝴蝶的颜色真的是它们原本的样子呢，还是说您给它们重新染了颜色？"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est quand même leur vraie couleur ou vous ravivez leur couleur ?",
+                "chinese": "这些蝴蝶的颜色真的是它们原本的样子呢，还是说您给它们重新染了颜色？",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "pépite",
+            "part_of_speech": "nom féminin",
+            "ipa": "[pepit]",
+            "chinese": "珍宝，金块（引申为极好的事物）",
+            "example_sentence": {
+              "french": "Elle aime bien partager son savoir-faire et les petites pépites qu'elle a dans sa boutique.",
+              "chinese": "她特别乐于分享她的手艺，还有她店里那些小珍宝。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              15
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Elle aime bien partager son savoir-faire et les petites pépites qu'elle a dans sa boutique.",
+                "chinese": "她特别乐于分享她的手艺，还有她店里那些小珍宝。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "savoir-faire",
+            "part_of_speech": "nom masculin",
+            "ipa": "[savwaʁfɛʁ]",
+            "chinese": "专有技术，手艺，诀窍",
+            "example_sentence": {
+              "french": "Elle était passionnée par son métier et tout le savoir-faire que ça nécessitait.",
+              "chinese": "她对她的职业，以及其中蕴含的所有精湛技艺都充满热情。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              15,
+              16
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Elle était passionnée par son métier et tout le savoir-faire que ça nécessitait.",
+                "chinese": "她对她的职业，以及其中蕴含的所有精湛技艺都充满热情。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "remettre en état",
+            "meaning": "修复，使恢复原状",
+            "example": {
+              "french": "Ce sont des animaux morts qu'ils vont remettre en état et empailler.",
+              "chinese": "他们会对死去的动物进行修复和填充。"
+            },
+            "usage_note": "常用于描述对破损物品、建筑或（如本课中）动物标本的修复工作。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "expression": "se suffire à soi-même",
+            "meaning": "自给自足，本身就足够完美",
+            "example": {
+              "french": "Il pourrait suffire. Il se suffit à lui-même.",
+              "chinese": "可能就足够了，它本身就已经很完美了。"
+            },
+            "usage_note": "用于表达某人或某物不需要外在的补充或帮助就已经很完整、很好了。",
+            "source_ids": [
+              8
+            ]
+          },
+          {
+            "expression": "à la limite",
+            "meaning": "在必要时，大不了，甚至",
+            "example": {
+              "french": "Donc à la limite, vous pourriez même mettre un seul papillon comme ça dans une boîte.",
+              "chinese": "所以，从某种角度来说，你们甚至可以只用这样一只蝴蝶放进盒子里。"
+            },
+            "usage_note": "口语中常用来提出一个极端的、但可行的替代方案或妥协。",
+            "source_ids": [
+              8
+            ]
+          },
+          {
+            "expression": "ne pas s'en cacher",
+            "meaning": "不隐瞒，坦白说",
+            "example": {
+              "french": "Je ne te le cache pas, ça fait un peu bizarre.",
+              "chinese": "我可不瞒你，这确实有点怪异呢。"
+            },
+            "usage_note": "用于在表达可能引起争议或负面情绪的真实感受前，作为一种坦诚的开场白。",
+            "source_ids": [
+              6
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le subjonctif après 'à moins que'",
+            "structure": "à moins que + [sujet] + [verbe au subjonctif]",
+            "explanation": "连词短语 'à moins que' (除非) 表达一种假设或条件，其后的从句必须使用虚拟式 (subjonctif)。在正式书面语中，常伴随赘词 'ne' (à moins qu'il ne vienne)，但在日常口语中 'ne' 经常被省略。",
+            "example": {
+              "french": "Donc si vous voulez, moi je vous mets son nom. À moins que vous en vouliez un autre.",
+              "chinese": "所以，如果您愿意的话，我给您报上它的名字。除非您想要别的名字。"
+            },
+            "usage_note": "注意 'vouloir' 的虚拟式现在时变位：que je veuille, que tu veuilles, qu'il veuille, que nous voulions, que vous vouliez, qu'ils veuillent。",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "name": "Les pronoms relatifs composés (dans laquelle)",
+            "structure": "Préposition (dans, sur, avec, pour...) + lequel / laquelle / lesquels / lesquelles",
+            "explanation": "当关系代词代替的名词前有介词（如 dans）时，必须使用复合关系代词。其性数必须与先行词保持一致。这里先行词是 'une boutique' (阴性单数)，所以用 'dans laquelle'。",
+            "example": {
+              "french": "C'est une boutique dans laquelle tu viens acheter un cadeau.",
+              "chinese": "这是一家你可以来挑选礼物的店。"
+            },
+            "usage_note": "在非正式口语中，有时人们会用 'où' 替代 'dans laquelle' (C'est une boutique où tu viens...)，但 'dans laquelle' 更为精确和规范。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "name": "La voix passive au passé composé",
+            "structure": "Sujet + être (au présent) + été + participe passé (+ par + agent)",
+            "explanation": "被动语态的复合过去时由助动词 être 的复合过去时 (a été / ont été) 加上主动词的过去分词构成。过去分词必须与主语进行性数配合。在此例中，主语 'on' 代表 'nous' (女性)，因此 'accueillies' 加上了 'es'。",
+            "example": {
+              "french": "Et surtout, on a été accueillies par Anne, vraiment hyper accueillante...",
+              "chinese": "最重要的是，我们受到了安妮的热情接待……"
+            },
+            "usage_note": "在日常法语中，'on' 经常代替 'nous'。当 'on' 明确指代特定的人群（如这里的两位女性）时，过去分词需要根据实际指代的人进行性数配合。",
+            "source_ids": [
+              15
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɛʁ]",
+              "description": "在专业词汇如 'taxidermie' 和 'éphémère' 中，注意半开元音 [ɛ] 与小舌音 [ʁ] 的结合，发音要清晰但不要过度用力。",
+              "examples": [
+                "taxidermie",
+                "éphémère"
+              ]
+            },
+            {
+              "sound": "L'élision et la réduction à l'oral",
+              "description": "在真实的巴黎日常对话中，一些词会被弱化或连读，例如 'je ne te le cache pas' 常被读作 [ʒəntəlkæʃpɑ]。",
+              "examples": [
+                "Je ne te le cache pas"
+              ]
+            }
+          ],
+          "liaison": [
+            "un achat_un peu [œ̃.na.ʃa.œ̃.pø]",
+            "les_insectes [le.zɛ̃.sɛkt]",
+            "très_éphémère [tʁɛ.ze.fe.mɛʁ]"
+          ],
+          "intonation": "对话中充满了赞叹和确认的语调。当店主 Anne 提出建议时，语调在句末上扬以征求同意 ('C'est bien ?')，而 Pauline 的回答则带有明显的降调和重音以表达满意 ('Ah non, non, non, c'est parfait.')."
+        },
+        "vocabulary_network": {
+          "theme": "La nature et la taxidermie",
+          "core_word": "Taxidermie",
+          "related_groups": [
+            {
+              "category": "Animaux",
+              "words": [
+                "papillon",
+                "insectes",
+                "crustacés",
+                "lion",
+                "ours"
+              ]
+            },
+            {
+              "category": "Processus & État",
+              "words": [
+                "empailler",
+                "remettre en état",
+                "cocon",
+                "éphémère",
+                "raviver"
+              ]
+            },
+            {
+              "category": "Présentation",
+              "words": [
+                "globe transparent",
+                "vitrines",
+                "boîte",
+                "épingles"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Et en fait, c'est un ___ où ils font de la ___. Donc en fait, ce sont des ___ morts qu'ils vont remettre en ___ et ___.",
+            "answer": "endroit, taxidermie, animaux, état, empailler",
+            "explanation": "根据原文第6段，Pauline解释了这家店的性质：这是一个制作动物标本(taxidermie)的地方，他们将死去的动物(animaux)修复(remettre en état)并填充(empailler)。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon la vendeuse (Anne), pourquoi les papillons vendus dans la boutique sont-ils en meilleur état que ceux que l'on pourrait trouver dans la nature ?",
+            "options": {
+              "A": "Parce qu'ils sont protégés dans des globes transparents dès leur naissance.",
+              "B": "Parce qu'ils n'ont pas le temps de s'abîmer contre les plantes ou de perdre leurs antennes.",
+              "C": "Parce que la vendeuse ravive leurs couleurs avec des produits chimiques spéciaux.",
+              "D": "Parce qu'ils sont capturés vivants dans la forêt et immédiatement empaillés."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第10段中店主明确提到：'dans la nature, il ne pourrait pas y avoir de papillons en aussi bon état, parce qu'ils vont perdre leurs antennes, ou ils vont se frotter contre... les fleurs, les plantes... Tandis que là... la vie d'un papillon est très très éphémère...'",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "De toute façon, je vais vous dire une chose, dans la nature, il ne pourrait pas y avoir de papillons en aussi bon état, parce qu'ils vont perdre leurs antennes.",
+            "answer": "不管怎样，我要告诉你们一件事，在自然界中，不可能有保存得这么完好的蝴蝶，因为它们会弄断自己的触角。",
+            "explanation": "翻译难点在于 'en aussi bon état' (处于如此好的状态/保存得这么完好) 以及条件式 'il ne pourrait pas y avoir' (不可能有，表达一种假设或推断)。'perdre leurs antennes' 直译为失去触角，意译为弄断触角更符合中文表达习惯。",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant la conjonction 'à moins que' (attention au mode du verbe) : 'Je vais mettre son nom, sauf si vous désirez un autre papillon.' (Utilisez le verbe 'vouloir' pour remplacer 'désirez').",
+            "answer": "Je vais mettre son nom, à moins que vous n'en vouliez un autre. (ou : à moins que vous en vouliez un autre).",
+            "explanation": "短语 'à moins que' (除非) 后面必须接虚拟式 (subjonctif)。动词 'vouloir' 在主语为 'vous' 时的虚拟式现在时是 'vouliez'。在正式法语中常加赘词 'ne'，但口语中如原文所示直接说 'à moins que vous en vouliez un autre' 也是正确的。",
+            "source_ids": [
+              12
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "taxidermie",
+            "empailler",
+            "éphémère",
+            "raviver"
+          ],
+          "covered_grammar": [
+            "Le subjonctif après 'à moins que'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il suffit de + [infinitif] / Il suffit que + [subjonctif]",
+            "explanation": "表示'只需要……就足够了'。在文中变体为 'Il suffit d'avoir un seul papillon'。",
+            "example": {
+              "french": "Il suffit d'avoir un seul papillon et ça va très bien avec ce que vous avez.",
+              "chinese": "只要有一只蝴蝶，就能和你现有的东西搭配得恰到好处。"
+            }
+          },
+          {
+            "pattern": "C'est un peu le pendant de...",
+            "explanation": "表示'这有点像……的对应物/补充'，用于比较两个相似或互补的事物。",
+            "example": {
+              "french": "C'est un peu le pendant de l'autre, le papillon ulysses.",
+              "chinese": "这有点像另一种蝴蝶——尤利西斯蝶的对应物。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你在巴黎的一家手工艺品或特色精品店（如标本店或古董店）里，想要为朋友挑选一件特别的礼物。你需要向店主询问物品的来源、是否是原色，以及如何包装以防运输损坏。",
+          "requirements": "使用至少两个本课词汇（如 pépite, raviver, savoir-faire），并尝试使用 'à moins que' 提出一个备选方案。",
+          "starter": "Bonjour, je cherche un cadeau un peu particulier pour un ami. J'ai vu cette pièce en vitrine..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia accompagne son amie Pauline dans une boutique parisienne insolite nommée 'Design & Nature'. Spécialisée dans la taxidermie et l'entomologie, la boutique propose des animaux empaillés et des insectes sous globe. Pauline y achète un magnifique papillon pour son mari. La conversation authentique avec Anne, la vendeuse passionnée, permet de découvrir le savoir-faire derrière ces créations, la nature éphémère des papillons, et offre un excellent exercice de compréhension orale dans un contexte quotidien.",
+        "keywords": [
+          "taxidermie",
+          "boutique parisienne",
+          "papillon",
+          "cadeau",
+          "artisanat",
+          "nature"
+        ],
+        "difficulty_note": "Le vocabulaire spécifique à la nature et à la taxidermie (cocon, empailler, crustacés) enrichit le texte, tandis que le débit naturel de la conversation avec ses hésitations et ses tournures idiomatiques correspond à un niveau B1/B2."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:06:30.540"
+        },
+        "theme": "Shopping insolite et artisanat à Paris",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:29.579",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, lundi 2 mars 2026, cet épisode, le numéro 2602, s'intitule « Quel cadeau chez Design & Nature, Paris inattendu ». Alors que nous rentrions de la maison de Victor Hugo, Pauline m'a proposé de la suivre",
+          "chinese": "大家好，我是 Laetitia，在巴黎为您主持《One Thing in a French Day》。希望大家一切都好，心情愉快。今天，2026年3月2日星期一，本期第2602集节目的标题是《在 Design & Nature 挑选礼物，意想不到的巴黎》。当我们从维克多·雨果故居回来时，Pauline 提议我跟她一起去"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:29.579",
+          "end_time": "00:00:55.359",
+          "french": "pour un achat un peu particulier, un cadeau destiné à son mari, un cadeau issu de la nature. Curieuse, je l'ai accompagnée quelques jours plus tard, toujours à Paris, toujours en R5 jaune électrique. Et puis, dans le magasin, il s'est passé quelque chose d'inattendu. Nous avons eu un cadeau supplémentaire. Donc, reprenons. Il y a Laetitia, à laquelle votre oreille s'est habituée,",
+          "chinese": "买一样有点特别的东西，一份送给她丈夫的礼物，一份来自大自然的礼物。出于好奇，几天后我陪她一起去了，依然是在巴黎，依然开着那辆亮黄色的 R5。然后，在店里发生了一件意想不到的事。我们得到了一份额外的礼物。那么，言归正传。这里有大家已经听习惯了的 Laetitia 的声音，"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:55.359",
+          "end_time": "00:01:25.040",
+          "french": "Pauline que vous avez entendue la semaine dernière et, dans l'épisode d'aujourd'hui, une interaction entre Pauline et Anne qui tient le magasin. Et ça, c'est un vrai cadeau pour vous, chers auditeurs, car c'est la combinaison extra pour un défi de compréhension. Le vocabulaire n'est pas difficile, mais simplement, c'est une vraie conversation dans un vrai magasin à Paris. L'entraînement parfait pour la compréhension dans la vie",
+          "chinese": "还有你们上周听到的 Pauline 的声音，而在今天的节目中，还有 Pauline 和店主 Anne 之间的互动。亲爱的听众朋友们，这对你们来说是一份真正的礼物，因为这是一个绝佳的听力理解挑战组合。词汇并不难，但这只是巴黎一家真实商店里的一段真实对话。这是日常生活中听力理解的完美训练。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:25.040",
+          "end_time": "00:01:30.019",
+          "french": "de tous les jours. Bonjour Pauline. Bonjour Laetitia.",
+          "chinese": "早上好，Pauline。早上好，Laetitia。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:30.420",
+          "end_time": "00:01:58.049",
+          "french": "Nous nous retrouvons à nouveau à Paris. Nous sommes dans le deuxième arrondissement, près de la place des Victoires, par un froid matin parisien d'hiver. Mais on va dans une très belle boutique qui va nous réchauffer le cœur. C'est une boutique dans laquelle tu viens acheter un cadeau. Est-ce que tu peux nous expliquer où nous sommes ? Alors c'est une boutique, là pour l'instant on est juste devant, sur le trottoir, qui s'appelle Design & Nature.",
+          "chinese": "我们又在巴黎见面了。我们在第二区，胜利广场附近，这是一个寒冷的巴黎冬日早晨。但我们要去一家非常漂亮的店，它会温暖我们的心。你来这家店是为了买一份礼物。你能跟我们解释一下我们在哪里吗？这是一家店，现在我们就在它门前的人行道上，店名叫 Design & Nature。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:58.049",
+          "end_time": "00:02:20.750",
+          "french": "Et en fait, c'est un endroit où ils font de la taxidermie. Donc en fait, ce sont des animaux morts qu'ils vont remettre en état et empailler. Et alors, c'est assez spécial. Tu vas me dire justement ce que tu ressens quand on entre dans une boutique, dans un endroit pareil, c'est assez étrange de voir ces animaux. Je ne te le cache pas, ça fait un peu bizarre.",
+          "chinese": "实际上，这是一个制作动物标本的地方。也就是说，他们会把死去的动物进行修复并制成标本。这挺特别的。你正好可以告诉我，当你走进这样一家店、这样一个地方时是什么感觉，看到这些动物其实挺奇怪的。我不瞒你说，感觉确实有点怪。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:20.750",
+          "end_time": "00:02:43.590",
+          "french": "Moi, je suis surtout fascinée par les insectes, les crustacés. Et en plus, c'est mis soit sous globe transparent, soit dans des vitrines. Et c'est vraiment, je trouve, très joli. Et ce que j'aime, ce sont tous les détails. Et je trouve que ça fait une œuvre d'art, j'aime beaucoup. On entre ? On entre, c'est parti.",
+          "chinese": "我主要是对昆虫和甲壳类动物很着迷。而且，它们要么被放在透明的玻璃罩里，要么陈列在展示柜中。我觉得真的非常漂亮。我喜欢的是所有的细节。我觉得这就像是一件艺术品，我非常喜欢。我们进去吗？进去吧，走。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:46.460",
+          "end_time": "00:03:15.939",
+          "french": "Non, c'était un blumei. Ça, c'est le papillon blumei, c'est celui qui est là-haut, que vous aviez. Qui est plus vert. Qui est plus vert. Et là, c'est un papillon qui vient du même endroit, donc je vous propose de vous le mettre, il est superbe avec celui-là d'ailleurs. Oui, c'est magnifique. Ils sont très beaux. Donc à la limite, vous pourriez même mettre un seul papillon comme ça dans une boîte 19x19. Il pourrait suffire. Il se suffit à lui-même. Ben écoutez, je vais vous faire voir. On va essayer. Oui. À mon avis, ça peut être très beau avec votre collection.",
+          "chinese": "不，那是一只布鲁梅凤蝶。这就是布鲁梅凤蝶，就是上面那只，你们之前看的那种。更绿的那只。更绿的那只。而这只蝴蝶来自同一个地方，所以我建议给您装这只，它和那只搭配起来非常棒。是的，太美了。它们非常漂亮。所以说到底，您甚至可以在一个 19x19 的盒子里只放这样一只蝴蝶。这就足够了。它本身就足够惊艳了。那您看，我展示给您看。我们试一下。好。在我看来，它和您的收藏搭配起来会非常好看。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:16.409",
+          "end_time": "00:03:38.860",
+          "french": "Je vous en prends un, il y en a de très beaux. Celui-là, il est très gros. La préparation des... Alors en fait, ce sont tous ces papillons qui viennent de fermes à papillons. Donc on les achète quand ils sont en papillote, parce que quand un papillon meurt, il se replie sur lui-même, donc il est tout plat. Et nous, quand on les reçoit, on les réétale pour leur donner cette forme-là.",
+          "chinese": "我给您拿一只，这里有非常漂亮的。这只非常大。关于这些……其实，这些蝴蝶都来自蝴蝶养殖场。所以我们买的时候它们都是用纸袋包着的，因为蝴蝶死后会蜷缩起来，所以是扁平的。当我们收到它们时，我们会给它们重新展翅，让它们呈现出这种形态。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:39.740",
+          "end_time": "00:04:07.110",
+          "french": "Sans les abîmer. De toute façon, je vais vous dire une chose, dans la nature, il ne pourrait pas y avoir de papillons en aussi bon état, parce qu'ils vont perdre leurs antennes, ou ils vont se frotter contre, je ne sais pas, les fleurs, les plantes, les arbres, etc. Tandis que là, en fait, la vie d'un papillon est très très éphémère, donc au bout de quelques jours, voire peut-être une ou deux semaines, il meurt. La vie du papillon est plutôt dans le cocon, pas une fois qu'il est sorti, et c'est pour ça qu'ils sont superbes.",
+          "chinese": "而且不会损坏它们。不管怎样，我跟您说，在自然界中，不可能有保存得这么完好的蝴蝶，因为它们会失去触角，或者会摩擦到，我不知道，比如花朵、植物、树木等等。而在这里，其实蝴蝶的生命是非常短暂的，所以几天后，或者可能一两周后，它就会死去。蝴蝶的生命更多是在茧里，而不是破茧而出之后，这就是为什么它们看起来如此惊艳。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:07.770",
+          "end_time": "00:04:17.319",
+          "french": "Qu'est-ce que vous en pensez, de cette boîte-là ? J'aime beaucoup. Effectivement, la boîte est parfaite. Je le savais bien. Il suffit d'avoir un seul papillon et ça va très bien avec ce que vous avez.",
+          "chinese": "您觉得这个盒子怎么样？我非常喜欢。确实，这个盒子很完美。我就知道。只需要一只蝴蝶就够了，而且和您已有的收藏非常搭。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:17.529",
+          "end_time": "00:04:44.180",
+          "french": "C'est un peu le pendant de l'autre, le papillon ulysses. Donc si vous voulez, moi je vous mets son nom. À moins que vous en vouliez un autre. Ah non, non, non, c'est parfait. C'est bien ? Oui, oui. Alors je vais vous mettre juste deux épingles. Et du coup, c'est quand même leur vraie couleur ou vous ravivez leur couleur ? Ah non, non, c'est leur vraie couleur. Ah non, non, non, on ne touche rien. Non, non, on ne touche rien. Ok, merci beaucoup. Moi je trouve que c'est pas mal ça. Oui, ça me plaît. Ok, je vous mets deux petites épingles",
+          "chinese": "它有点像另一只尤利西斯凤蝶的配对。所以如果您愿意，我给您标上它的名字。除非您想要另一只。啊，不，不，不，这只很完美。这样好吗？好，好。那我只给您钉两根大头针。那这还是它们真实的颜色吗，还是你们提亮了它们的颜色？啊，不，不，这是它们真实的颜色。啊，不，不，不，我们什么都没动。没，没，我们什么都没动。好的，非常感谢。我觉得这个很不错。是的，我很喜欢。好的，我给您钉两根小大头针，"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:44.180",
+          "end_time": "00:05:08.550",
+          "french": "que vous pouvez enlever chez vous, mais c'est juste pour éviter dans le transport que ça puisse bouger. Et je vous mets le nom du papillon derrière. Merci. C'est mon petit cadeau. Coucou Pauline. Coucou Laetitia. Nous sommes dans la R5, un peu le studio de nos rencontres. Dans Paris, là nous sommes boulevard Montmartre, nous allons arriver boulevard Haussmann.",
+          "chinese": "您回家后可以把它们取下来，这只是为了防止在运输过程中晃动。我把蝴蝶的名字写在后面。谢谢。这是我的一点小礼物。嗨，Pauline。嗨，Laetitia。我们现在在 R5 车里，这有点像我们见面的录音室。在巴黎，我们现在在蒙马特大道上，马上就要到奥斯曼大道了。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:09.180",
+          "end_time": "00:05:21.290",
+          "french": "Nous rentrons. Comment s'est passé l'achat que tu venais faire chez Design & Nature ? Je suis contente parce que je t'ai fait découvrir un univers que tu ne connaissais pas.",
+          "chinese": "我们在回家的路上。你刚才在 Design & Nature 的购物进行得怎么样？我很开心，因为我带你发现了一个你以前不知道的世界。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:21.459",
+          "end_time": "00:05:48.139",
+          "french": "Et puis, j'étais trop contente parce qu'il n'y a que de belles choses à regarder. Donc moi, j'adore les couleurs et tout. Et surtout, on a été accueillies par Anne, vraiment hyper accueillante, qui aime bien partager son savoir-faire et les petites pépites, les petits trésors qu'elle a dans sa boutique. Et surtout, elle m'a bien conseillée. C'est un beau magasin. Après, c'est un peu étrange quand même de voir des animaux empaillés. Comme ça, il y avait un lion, un ours.",
+          "chinese": "而且，我太开心了，因为那里全都是好看的东西。我非常喜欢那些颜色之类的。最重要的是，接待我们的是 Anne，她真的非常热情，很喜欢分享她的手艺，以及她店里的那些小宝贝、小宝藏。而且最重要的是，她给了我很好的建议。这是一家很漂亮的店。不过，看到那些动物标本还是觉得有点奇怪。比如那里有一只狮子，一只熊。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:48.139",
+          "end_time": "00:06:02.410",
+          "french": "Mais les papillons, j'ai vraiment aimé. Et on a vu surtout que la dame du magasin était passionnée par ce qu'elle vendait et par son métier et tout le savoir-faire que ça nécessitait. Merci Pauline. Merci Laetitia.",
+          "chinese": "但那些蝴蝶，我是真的很喜欢。而且我们特别能看出来，店里的那位女士对她卖的东西、对她的职业以及这所需的所有手艺都充满了热情。谢谢你，Pauline。谢谢你，Laetitia。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:04.629",
+          "end_time": "00:06:30.540",
+          "french": "Un grand merci à Pauline de m'avoir proposé de l'accompagner. Un grand merci à Anne qui a très gentiment accepté que la conversation soit enregistrée. Je crois savoir que le papillon bleu a fait très plaisir. One Thing in a French Day, c'est fini pour aujourd'hui. Je vous retrouve très vite pour un nouvel épisode de podcast. À bientôt, au revoir.",
+          "chinese": "非常感谢 Pauline 提议让我陪她一起去。也非常感谢 Anne 非常友善地同意我们录下这段对话。据我所知，那只蓝色的蝴蝶让人非常开心。今天的《One Thing in a French Day》就到这里了。我们很快会在新一期的播客节目中再见。回头见，再见。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:06:30.540",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 17,
+        "source_video_name": "Quel cadeau chez Design & Nature _ Paris inattendu (Genuine Paris conversation).json",
+        "tags": [
+          "考试干货"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

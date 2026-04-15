@@ -1,0 +1,667 @@
+{
+  "source_file": "Tirer à boulets rouges (Launching a fierce attack).json",
+  "channel": "Louis法语课",
+  "video_name": "Tirer à boulets rouges (Launching a fierce attack)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T03:17:29.914Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le participe présent (现在分词)",
+          "Les pronoms relatifs 'qui' et 'où' (关系代词)",
+          "Le pronom 'y' (代词 y)"
+        ],
+        "speaking": [
+          "Savoir expliquer les causes et les conséquences d'un événement d'actualité.",
+          "Définir un terme complexe avec ses propres mots (ex: expliquer ce qu'est une représaille)."
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "missile",
+            "part_of_speech": "nom",
+            "ipa": "[misil]",
+            "chinese": "导弹",
+            "example_sentence": {
+              "french": "Un missile houthiste a frappé près de l'aéroport.",
+              "chinese": "一枚胡塞武装导弹击中了机场附近。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Vous savez, les missiles peuvent être envoyés depuis des avions...",
+                "chinese": "你知道，导弹可以从飞机上发射……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "houthiste",
+            "part_of_speech": "adjectif/nom",
+            "ipa": "[utist]",
+            "chinese": "胡塞武装的",
+            "example_sentence": {
+              "french": "Il est houthiste, ce qui veut dire qu'il a été envoyé par le fameux groupe houthi.",
+              "chinese": "它是胡塞武装的，这意味着它是由著名的胡塞组织发射的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              4,
+              8
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Un missile houthiste a frappé près de l'aéroport de Tel Aviv.",
+                "chinese": "一枚胡塞武装导弹击中了特拉维夫机场附近。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "frapper",
+            "part_of_speech": "verbe",
+            "ipa": "[fʁape]",
+            "chinese": "打击，击中",
+            "example_sentence": {
+              "french": "Il a frappé près de l'aéroport de Tel Aviv.",
+              "chinese": "它击中了特拉维夫机场附近。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Un missile houthiste a frappé près de l'aéroport.",
+                "chinese": "一枚胡塞武装导弹击中了机场附近。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "provoquer",
+            "part_of_speech": "verbe",
+            "ipa": "[pʁɔvɔke]",
+            "chinese": "引发，导致",
+            "example_sentence": {
+              "french": "Provoquant, c'est-à-dire provoquer, avoir pour effet, avoir pour conséquence.",
+              "chinese": "引发，即引发、产生影响、导致后果。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              6,
+              8
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "provoquant des tensions accrues",
+                "chinese": "导致局势进一步紧张",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "tension",
+            "part_of_speech": "nom",
+            "ipa": "[tɑ̃sjɔ̃]",
+            "chinese": "紧张局势",
+            "example_sentence": {
+              "french": "Des tensions accrues, cela veut dire des tensions qui sont de plus en plus grandes.",
+              "chinese": "紧张局势加剧，这意味着紧张局势正变得越来越严重。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7,
+              8
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "provoquant des tensions accrues",
+                "chinese": "导致局势进一步紧张",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "accru",
+            "part_of_speech": "adjectif",
+            "ipa": "[akʁy]",
+            "chinese": "增加的，加剧的",
+            "example_sentence": {
+              "french": "Des tensions accrues, cela veut dire des tensions qui sont de plus en plus grandes.",
+              "chinese": "紧张局势加剧，这意味着紧张局势正变得越来越严重。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "provoquant des tensions accrues",
+                "chinese": "导致局势进一步紧张",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "représaille",
+            "part_of_speech": "nom",
+            "ipa": "[ʁəpʁezaj]",
+            "chinese": "报复，报复行动",
+            "example_sentence": {
+              "french": "Une représaille, c'est quand on a subi un événement et qu'on se venge en retour.",
+              "chinese": "所谓报复行动，就是当自己遭受某种事件后，反过来进行报复。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "et des représailles israéliennes au Yémen.",
+                "chinese": "并引发了以色列对也门的报复行动。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "décoller",
+            "part_of_speech": "verbe",
+            "ipa": "[dekɔle]",
+            "chinese": "起飞",
+            "example_sentence": {
+              "french": "C'est bien sûr là où décollent et atterrissent les avions.",
+              "chinese": "当然啦，机场就是飞机起飞和降落的地方。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est bien sûr là où décollent et atterrissent les avions.",
+                "chinese": "当然啦，机场就是飞机起飞和降落的地方。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "atterrir",
+            "part_of_speech": "verbe",
+            "ipa": "[ateʁiʁ]",
+            "chinese": "降落",
+            "example_sentence": {
+              "french": "C'est bien sûr là où décollent et atterrissent les avions.",
+              "chinese": "当然啦，机场就是飞机起飞和降落的地方。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est bien sûr là où décollent et atterrissent les avions.",
+                "chinese": "当然啦，机场就是飞机起飞和降落的地方。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "domestique",
+            "part_of_speech": "adjectif",
+            "ipa": "[dɔmɛstik]",
+            "chinese": "国内的",
+            "example_sentence": {
+              "french": "On peut parler d'un aéroport international ou d'un aéroport domestique.",
+              "chinese": "我们可以谈论国际机场或国内机场。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Aéroport international ou aéroport domestique.",
+                "chinese": "国际机场或国内机场。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "subir",
+            "part_of_speech": "verbe",
+            "ipa": "[sybiʁ]",
+            "chinese": "遭受，承受",
+            "example_sentence": {
+              "french": "On a subi un événement et donc on se venge en retour.",
+              "chinese": "我们遭受了一次事件，因此反过来进行报复。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "c'est quand on a subi un événement et qu'on se venge en retour.",
+                "chinese": "就是当自己遭受某种事件后，反过来进行报复。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "venger",
+            "part_of_speech": "verbe",
+            "ipa": "[vɑ̃ʒe]",
+            "chinese": "报复，复仇",
+            "example_sentence": {
+              "french": "On a subi un événement et donc on se venge en retour.",
+              "chinese": "我们遭受了一次事件，因此反过来进行报复。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "c'est quand on a subi un événement et qu'on se venge en retour.",
+                "chinese": "就是当自己遭受某种事件后，反过来进行报复。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "tirer à boulets rouges",
+            "meaning": "猛烈抨击，严厉批评（字面意思：发射红热的炮弹）",
+            "example": {
+              "french": "Aujourd'hui la leçon est « tirer à boulets rouges ».",
+              "chinese": "今天的课程是“发射红球导弹（猛烈抨击）”。"
+            },
+            "usage_note": "这是一个非常形象的法语成语，源于古代海战中将炮弹烧红后发射以点燃敌船的战术。现在多用于比喻对某人或某事进行极其严厉的批评或攻击。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "avoir pour effet / avoir pour conséquence",
+            "meaning": "产生……的影响 / 导致……的后果",
+            "example": {
+              "french": "Provoquant, c'est-à-dire provoquer, avoir pour effet, avoir pour conséquence.",
+              "chinese": "引发，即引发、产生影响、导致后果。"
+            },
+            "usage_note": "常用于新闻报道或正式语境中，用来解释某个事件带来的直接结果。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "expression": "se venger en retour",
+            "meaning": "反过来进行报复",
+            "example": {
+              "french": "Une représaille, c'est quand on a subi un événement et qu'on se venge en retour.",
+              "chinese": "所谓报复行动，就是当自己遭受某种事件后，反过来进行报复。"
+            },
+            "usage_note": "强调在遭受攻击或不公对待后，采取对等或更强烈的反击行动。",
+            "source_ids": [
+              7,
+              8
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le participe présent (现在分词)",
+            "structure": "Verbe au participe présent (radical de 'nous' au présent + -ant)",
+            "explanation": "在新闻报道中，现在分词常用来表示与主句动作同时发生的结果或伴随状态。它相当于 'et cela provoque' 或 'qui provoque'。",
+            "example": {
+              "french": "Un missile houthiste a frappé près de l'aéroport de Tel Aviv, provoquant des tensions accrues...",
+              "chinese": "一枚胡塞武装导弹击中了特拉维夫机场附近地区，导致（引发）局势进一步紧张……"
+            },
+            "usage_note": "现在分词是不变的（不随主语的性数变化）。",
+            "source_ids": [
+              2,
+              3,
+              6,
+              8
+            ]
+          },
+          {
+            "name": "Les pronoms relatifs 'qui' et 'où' (关系代词)",
+            "structure": "Nom + qui + verbe / Nom (lieu) + où + sujet + verbe",
+            "explanation": "'qui' 代替主语，用于进一步解释前面的名词；'où' 代替地点状语，表示某事发生的地方。",
+            "example": {
+              "french": "Un aéroport, c'est bien sûr là où décollent et atterrissent les avions. / Des tensions accrues, cela veut dire des tensions qui sont de plus en plus grandes.",
+              "chinese": "当然啦，机场就是飞机起飞和降落的地方。/ 紧张局势加剧，这意味着紧张局势正变得越来越严重。"
+            },
+            "usage_note": "注意 'où' 引导的从句中，主语和动词可以倒装（如：décollent les avions）。",
+            "source_ids": [
+              5,
+              7
+            ]
+          },
+          {
+            "name": "Le pronom 'y' (代词 y)",
+            "structure": "Sujet + y + verbe",
+            "explanation": "代词 'y' 用来代替由 'à', 'en', 'dans', 'sur', 'près de' 等介词引导的地点状语，避免重复。",
+            "example": {
+              "french": "J'habite près d'un cinéma, j'y vais souvent.",
+              "chinese": "我住在一家电影院附近，我经常去那里。"
+            },
+            "usage_note": "'y' 放在相关动词的前面。在这个例子中，'y' 代替了 'au cinéma'。",
+            "source_ids": [
+              5
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[e] vs [i]",
+              "description": "讲者特别强调了 'aéroport' 的拼写和发音，指出是带重音符号的 'e' (é) 发 [e] 音，而不是 'i' [i] 音。",
+              "examples": [
+                "aéroport"
+              ]
+            }
+          ],
+          "liaison": [
+            "des avions [dez‿avjɔ̃]",
+            "un aéroport [œ̃n‿aeʁɔpɔʁ]"
+          ],
+          "intonation": "在解释词汇时，讲者使用了明显的停顿和重音来强调关键词，例如 'Des tensions (pause), tensions (pause), accrues.' 以加深听者的印象。"
+        },
+        "vocabulary_network": {
+          "theme": "Actualité et Conflit (新闻与冲突)",
+          "core_word": "missile",
+          "related_groups": [
+            {
+              "category": "Aviation (航空)",
+              "words": [
+                "aéroport",
+                "avion",
+                "décoller",
+                "atterrir",
+                "domestique",
+                "international"
+              ]
+            },
+            {
+              "category": "Conséquences (后果)",
+              "words": [
+                "frapper",
+                "provoquer",
+                "tension",
+                "accru",
+                "représaille",
+                "subir",
+                "venger"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Un ___ houthiste a ___ près de l'___ de Tel Aviv, ___ des ___ accrues et des ___ israéliennes au Yémen.",
+            "answer": "missile, frappé, aéroport, provoquant, tensions, représailles",
+            "explanation": "根据原文第2、8句，这句话是对整个新闻事件的总结：一枚导弹(missile)击中(frappé)了机场(aéroport)附近，引发(provoquant)了紧张局势(tensions)和报复行动(représailles)。",
+            "source_ids": [
+              2,
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, comment le présentateur définit-il le mot « représaille » ?",
+            "options": {
+              "A": "C'est quand on a subi un événement et qu'on se venge en retour.",
+              "B": "C'est un missile envoyé depuis un bateau ou un avion.",
+              "C": "C'est un aéroport où décollent et atterrissent les avions.",
+              "D": "C'est une tension qui est de plus en plus grande."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第7句明确解释了报复的定义：« une représaille, c'est quand on a subi un événement et qu'on se venge en retour. » (所谓报复行动，就是当自己遭受某种事件后，反过来进行报复。)",
+            "source_ids": [
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Un aéroport, c'est bien sûr là où décollent et atterrissent les avions.",
+            "answer": "当然啦，机场就是飞机起飞和降落的地方。",
+            "explanation": "翻译难点在于关系代词 'où' 引导的地点状语从句，以及动词 'décoller' (起飞) 和 'atterrir' (降落) 的准确翻译。注意法语中主谓倒装的结构 'décollent et atterrissent les avions' 在中文里需要调整为'飞机起飞和降落'。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez les deux phrases suivantes en une seule phrase en utilisant le participe présent (comme dans le texte) : 'Un missile a frappé Tel Aviv. Il a provoqué des tensions accrues.'",
+            "answer": "Un missile a frappé Tel Aviv, provoquant des tensions accrues.",
+            "explanation": "在新闻法语中，现在分词 (participe présent) 常用来替代 'et il a provoqué' 或 'ce qui a provoqué'，以表达前一个动作带来的直接后果。动词 'provoquer' 的现在分词是 'provoquant'。",
+            "source_ids": [
+              2,
+              6
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "missile",
+            "frapper",
+            "aéroport",
+            "provoquer",
+            "tension",
+            "accru",
+            "représaille",
+            "décoller",
+            "atterrir",
+            "subir",
+            "venger"
+          ],
+          "covered_grammar": [
+            "Le participe présent (现在分词)",
+            "Les pronoms relatifs 'qui' et 'où' (关系代词)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est quand on a [participe passé] et qu'on [verbe au présent].",
+            "explanation": "用于给某个概念下定义，解释在某种前提下发生的动作。",
+            "example": {
+              "french": "Une représaille, c'est quand on a subi un événement et qu'on se venge en retour.",
+              "chinese": "所谓报复行动，就是当自己遭受某种事件后，反过来进行报复。"
+            }
+          },
+          {
+            "pattern": "[Sujet] a pour effet / a pour conséquence de [Infinitif] / [Nom].",
+            "explanation": "用于表达某事产生的影响或导致的后果。",
+            "example": {
+              "french": "Ce missile a pour conséquence des tensions accrues dans la région.",
+              "chinese": "这枚导弹导致了该地区紧张局势的加剧。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你是一名新闻播音员，正在报道一起国际冲突事件。你需要向听众解释事件的起因（袭击）以及它带来的后果（紧张局势和报复）。",
+          "requirements": "使用词汇 'frapper', 'provoquer', 'tensions accrues', 'représailles'，并尝试使用现在分词来连接句子。",
+          "starter": "Mesdames et messieurs, bonsoir. Une nouvelle escalade de violence a eu lieu aujourd'hui..."
+        }
+      },
+      "summary": {
+        "content": "本节播客课程通过一则关于胡塞武装导弹袭击特拉维夫机场附近的新闻，教授了与军事冲突和航空相关的法语词汇。讲者详细解释了 'missile', 'aéroport', 'tensions accrues' 和 'représailles' 等词的含义、拼写及发音，并展示了如何用法语清晰地解释因果关系。",
+        "keywords": [
+          "missile",
+          "aéroport",
+          "tensions",
+          "représailles",
+          "actualité"
+        ],
+        "difficulty_note": "文本整体难度为B1。虽然涉及地缘政治和军事词汇，但讲者使用了非常教学化、通俗易懂的语言进行解释，句子结构清晰，适合中级学习者积累新闻类词汇。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.060",
+          "end": "00:04:08.840"
+        },
+        "theme": "Actualité internationale et vocabulaire de conflit",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕组"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.700",
+          "end_time": "00:00:50.469",
+          "french": "Bonjour, aujourd'hui la leçon est « tirer à boulets rouges ». Un missile houthiste a frappé près de l'aéroport de Tel Aviv, provoquant des tensions accrues et des représailles israéliennes au Yémen.",
+          "chinese": "大家好，今天的课程是“tirer à boulets rouges”（猛烈抨击）。一枚胡塞武装的导弹击中了特拉维夫机场附近，引发了紧张局势加剧以及以色列对也门的报复行动。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:50.840",
+          "end_time": "00:01:09.379",
+          "french": "Once again, un missile houthiste a frappé près de l'aéroport de Tel Aviv, provoquant des tensions accrues et des représailles israéliennes au Yémen. Alors on commence avec un missile.",
+          "chinese": "再说一遍，一枚胡塞武装的导弹击中了特拉维夫机场附近，引发了紧张局势加剧以及以色列对也门的报复行动。那么我们先从“导弹”（missile）开始讲起。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:09.530",
+          "end_time": "00:01:38.980",
+          "french": "Vous savez, les missiles peuvent être envoyés depuis des avions, ou depuis des bateaux, ou même depuis la terre. Ce sont des bombes, des missiles, et il est houthiste, ce qui veut dire qu'il a été envoyé par le groupe, le fameux groupe houthi. Il a frappé, struck, il a frappé près de l'aéroport de Tel Aviv. Alors, près de...",
+          "chinese": "你们知道，导弹可以从飞机、船只甚至陆地上发射。它们是炸弹，也就是导弹，而它是胡塞武装的（houthiste），意思是它是由著名的胡塞武装组织发射的。它击中了（frappé，英语里的struck），击中了特拉维夫机场附近。那么，“附近”（près de）……"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:39.159",
+          "end_time": "00:02:10.569",
+          "french": "C'est « near », tout simplement, « près de ». Exemple, j'habite près d'un cinéma, j'y vais souvent. Un aéroport, attention à l'orthographe de ce mot, regardez bien le texte. Un aéroport, avec « e » accent aigu, pas de « i ». Un aéroport, c'est bien sûr là où décollent et atterrissent les avions. C'est un aéroport.",
+          "chinese": "就是英语里的“near”，很简单，就是“在……附近”。例如，我住在一家电影院附近，我经常去那里。“机场”（aéroport），注意这个词的拼写，仔细看文本。Aéroport，带有闭音符的“e”（é），没有“i”。机场，当然就是飞机起飞和降落的地方。这就是机场。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:11.289",
+          "end_time": "00:02:37.669",
+          "french": "On peut parler d'un aéroport international ou d'un aéroport domestique. Aéroport international ou aéroport domestique. Ça s'est passé à Tel Aviv, en Israël. Provoquant, c'est-à-dire provoquer, avoir pour effet, avoir pour conséquence. Des tensions, tensions, accrues.",
+          "chinese": "我们可以说国际机场或国内机场。国际机场或国内机场。这发生在以色列的特拉维夫。“引发”（provoquant），也就是动词provoquer，意思是导致某种效果或后果。“紧张局势”（tensions），“加剧的”（accrues）。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:38.099",
+          "end_time": "00:03:10.500",
+          "french": "Des tensions accrues, cela veut dire des tensions qui sont de plus en plus grandes. Des tensions qui sont de plus en plus grandes. Escalating tensions. Et des représailles israéliennes. Alors, des représailles. On dit une représaille. Qu'est-ce que cela veut dire ? Eh bien, une représaille, c'est quand on a subi un événement et qu'on se venge en retour.",
+          "chinese": "“加剧的紧张局势”（tensions accrues），意思就是越来越严重的紧张局势。越来越严重的紧张局势。英语里的Escalating tensions。以及“以色列的报复行动”（représailles israéliennes）。那么，“报复”（représailles）。单数是une représaille。这是什么意思呢？嗯，报复就是当你遭受了某件事后，作为回应进行反击。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:10.900",
+          "end_time": "00:03:36.460",
+          "french": "On a subi un événement et donc on se venge en retour. En réponse, c'est ça, une représaille. Un missile houthiste a frappé près de l'aéroport de Tel Aviv, provoquant des tensions accrues et des représailles israéliennes au Yémen.",
+          "chinese": "遭受了某件事，因此作为回应进行反击。作为回应，没错，这就是报复。一枚胡塞武装的导弹击中了特拉维夫机场附近，引发了紧张局势加剧以及以色列对也门的报复行动。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:39.000",
+          "end_time": "00:04:08.840",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕组"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:04:08.840",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 9,
+        "source_video_name": "Tirer à boulets rouges (Launching a fierce attack).json",
+        "tags": []
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

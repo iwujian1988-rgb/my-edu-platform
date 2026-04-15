@@ -1,0 +1,1138 @@
+{
+  "source_file": "E176 À la découverte des côtes normandes et bretonnes.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E176 探索诺曼底与布列塔尼海岸",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T02:17:49.260Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le gérondif pour exprimer la simultanéité",
+          "L'expression de la conséquence avec 'tellement... que'",
+          "L'antériorité : 'avant de' vs 'avant que'"
+        ],
+        "speaking": [
+          "Décrire un itinéraire de voyage et les paysages traversés",
+          "Donner des conseils pratiques pour l'organisation d'un séjour (météo, logement, équipement)"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "estival",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛs.ti.val]",
+            "chinese": "夏日的，夏天的",
+            "example_sentence": {
+              "french": "Aujourd'hui on part sur un thème estival.",
+              "chinese": "今天我们将聚焦一个夏日主题。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Aujourd'hui on part sur un thème estival.",
+                "chinese": "今天我们将聚焦一个夏日主题。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "sillonner",
+            "part_of_speech": "verbe",
+            "ipa": "[si.jɔ.ne]",
+            "chinese": "穿行，纵横交错地在...上行驶",
+            "example_sentence": {
+              "french": "C'est tout ce qu'on retrouve quand on sillonne les 100 kilomètres qui séparent Etretat de Cabourg.",
+              "chinese": "当你驱车行驶在连接埃特拉和卡布尔的100公里沿途时，这一切都会一一映入眼帘。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5,
+              27
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Quand on sillonne la Manche, on trouve un paysage plus sauvage.",
+                "chinese": "当你穿行于芒什省时，会发现这里的风景更加原始。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "emblématique",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɑ̃.ble.ma.tik]",
+            "chinese": "标志性的，代表性的",
+            "example_sentence": {
+              "french": "Commençons notre itinéraire par les paysages les plus emblématiques de la Normandie.",
+              "chinese": "首先，我们从诺曼底最具代表性的风景开始我们的旅程。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              17,
+              34
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "On commence notre découverte de la Bretagne avec l'une de ses villes les plus emblématiques, Saint-Malo.",
+                "chinese": "我们将从布列塔尼最具代表性的城市之一——圣马洛开始探索这片土地。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "flâner",
+            "part_of_speech": "verbe",
+            "ipa": "[flɑ.ne]",
+            "chinese": "闲逛，漫步",
+            "example_sentence": {
+              "french": "C'est un endroit très agréable où flâner dans les ruelles.",
+              "chinese": "这是一个非常惬意的地方，可以悠闲地漫步于小巷。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est un endroit très agréable où flâner dans les ruelles.",
+                "chinese": "这是一个非常惬意的地方，可以悠闲地漫步于小巷。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "débarquement",
+            "part_of_speech": "nom",
+            "ipa": "[de.baʁ.kə.mɑ̃]",
+            "chinese": "登陆",
+            "example_sentence": {
+              "french": "On tombera sur les plages du débarquement.",
+              "chinese": "你会来到诺曼底登陆的海滩。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              18,
+              19,
+              21,
+              22,
+              24,
+              25
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Le débarquement en Normandie, c'est cette mission militaire historique.",
+                "chinese": "诺曼底登陆是一次具有历史意义的军事行动。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "se recueillir",
+            "part_of_speech": "verbe",
+            "ipa": "[sə ʁə.kœ.jiʁ]",
+            "chinese": "默哀，静思，追思",
+            "example_sentence": {
+              "french": "Bref, c'est un bel endroit où se recueillir.",
+              "chinese": "总之，这是一处适合静心追思的美丽场所。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              23,
+              25
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Je pensais me recueillir quelques minutes sur les monuments en hommage aux soldats.",
+                "chinese": "我本以为会在纪念为士兵们献身的纪念碑前默哀几分钟。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "corsaire",
+            "part_of_speech": "nom",
+            "ipa": "[kɔʁ.sɛʁ]",
+            "chinese": "（获政府授权的）私掠船长，海盗",
+            "example_sentence": {
+              "french": "Saint-Malo, surnommée la cité corsaire.",
+              "chinese": "圣马洛，素有“海盗之城”的美誉。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              34,
+              35,
+              36
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Les corsaires, c'était des marins qui avaient reçu de l'État l'autorisation d'attaquer les navires ennemis.",
+                "chinese": "海盗是那些获得国家许可、可以袭击敌方船只的水手。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "rempart",
+            "part_of_speech": "nom",
+            "ipa": "[ʁɑ̃.paʁ]",
+            "chinese": "城墙，防御土墙",
+            "example_sentence": {
+              "french": "On peut d'ailleurs se promener sur ces remparts pour admirer la vue sur la mer.",
+              "chinese": "事实上，人们还可以漫步于这些城墙上，欣赏大海的美景。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              37
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Cette histoire se ressent dans l'architecture massive de la ville fortifiée, avec ses grands remparts en granit.",
+                "chinese": "这段历史仍能从这座设防城市的宏伟建筑中感受到，尤其是那些巨大的花岗岩城墙。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "presqu'île",
+            "part_of_speech": "nom",
+            "ipa": "[pʁɛs.kil]",
+            "chinese": "半岛",
+            "example_sentence": {
+              "french": "Ce que j'ai préféré dans le Finistère, c'est la presqu'île de Crozon.",
+              "chinese": "在菲尼斯泰尔，我最喜欢的是克罗宗半岛。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              42,
+              43,
+              44
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "On appelle Presqu'île un bout de terre qui est relié au territoire principal par un morceau de terre plus fin.",
+                "chinese": "人们把与主陆相连、仅由一小片狭长陆地相接的那块土地称为“半岛”。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "canicule",
+            "part_of_speech": "nom",
+            "ipa": "[ka.ni.kyl]",
+            "chinese": "酷暑，热浪",
+            "example_sentence": {
+              "french": "Pour vous donner une idée, moi, j'y suis allée pendant une canicule.",
+              "chinese": "给您一个概念，我那次去的时候正值酷暑。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              52
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Pour vous donner une idée, moi, j'y suis allée pendant une canicule.",
+                "chinese": "给您一个概念，我那次去的时候正值酷暑。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "averse",
+            "part_of_speech": "nom",
+            "ipa": "[a.vɛʁs]",
+            "chinese": "阵雨",
+            "example_sentence": {
+              "french": "Mais bon, même quand il fait beau, il faut quand même s'attendre à quelques averses, même si c'est passager.",
+              "chinese": "不过，即使天气晴朗，也难免会遇到几阵小雨，尽管这些雨通常来得快去得也快。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              54
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il faut quand même s'attendre à quelques averses.",
+                "chinese": "还是难免会遇到几阵小雨。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "imperméable",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃.pɛʁ.me.abl]",
+            "chinese": "雨衣，防水服",
+            "example_sentence": {
+              "french": "Il vous faut un pull, un coupe-vent et surtout un imperméable ou une veste de pluie.",
+              "chinese": "别忘了带一件毛衣、一件防风外套，尤其是要带一件雨衣或防水夹克。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              55
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il vous faut un pull, un coupe-vent et surtout un imperméable.",
+                "chinese": "别忘了带一件毛衣、一件防风外套，尤其是要带一件雨衣。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "avoir le mal du pays",
+            "meaning": "思乡，想家",
+            "example": {
+              "french": "Le Covid était passé par là et j'avais eu le mal du pays.",
+              "chinese": "那时新冠疫情刚刚过去，我正经历着浓浓的思乡之情。"
+            },
+            "usage_note": "用于表达在异国他乡时对祖国或家乡的思念之情。",
+            "source_ids": [
+              1
+            ]
+          },
+          {
+            "expression": "aux quatre coins de l'Hexagone",
+            "meaning": "在法国各地，走遍法国",
+            "example": {
+              "french": "J'ai fait pas mal de petits séjours aux quatre coins de l'Hexagone.",
+              "chinese": "我在法国本土进行了不少短途旅行。"
+            },
+            "usage_note": "l'Hexagone（六边形）是法国本土的代称。这个表达常用来指代“在法国的各个角落”。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "à l'improviste",
+            "meaning": "出其不意地，突然地",
+            "example": {
+              "french": "Mais débarquer, ça s'utilise aussi au sens figuré, d'arriver quelque part à l'improviste.",
+              "chinese": "不过，“débarquer”这个词也有引申用法，指突然抵达某地。"
+            },
+            "usage_note": "常与动词 arriver, venir, débarquer 连用，表示没有提前通知的突然造访或发生。",
+            "source_ids": [
+              21
+            ]
+          },
+          {
+            "expression": "à couper le souffle",
+            "meaning": "令人屏息的，美得惊人的",
+            "example": {
+              "french": "C'était vraiment à couper le souffle.",
+              "chinese": "那景色真是美得令人屏息！"
+            },
+            "usage_note": "用于形容风景、表演或事物极其壮观、美丽，让人震撼得仿佛停止了呼吸。",
+            "source_ids": [
+              44,
+              45
+            ]
+          },
+          {
+            "expression": "valoir la peine",
+            "meaning": "值得（做某事）",
+            "example": {
+              "french": "Je me suis dit que ça valait vraiment la peine d'affronter un peu de vent.",
+              "chinese": "我突然觉得，哪怕迎着一点风也完全值得。"
+            },
+            "usage_note": "后接 de + infinitif，表示某件事虽然需要付出努力或代价，但结果是值得的。",
+            "source_ids": [
+              44
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le gérondif pour exprimer la simultanéité",
+            "structure": "en + participe présent (radical de 'nous' au présent + -ant)",
+            "explanation": "副动词（le gérondif）由介词 'en' 加上现在分词构成。在文中，它被用来表示两个动作同时发生（simultanéité），或者表示进行某个动作的方式。有时会在前面加上 'tout' 来强调同时性。",
+            "example": {
+              "french": "Vous pouvez m'écouter tout en vous relaxant sur la plage...",
+              "chinese": "你们可以一边听着我的讲述，一边在海滩上放松身心……"
+            },
+            "usage_note": "副动词的主语必须与主句的主语一致。例如，听播客和在海滩放松的主体都是 'vous'。",
+            "source_ids": [
+              1
+            ]
+          },
+          {
+            "name": "L'expression de la conséquence avec 'tellement... que'",
+            "structure": "tellement + adjectif/adverbe + que + proposition",
+            "explanation": "这种结构用于表达强烈的因果关系，意为“如此……以至于……”。'tellement' 强调程度之深，'que' 引导的从句说明由此产生的结果。",
+            "example": {
+              "french": "C'est un paysage qui est tellement impressionnant qu'on dit de manière figurée qu'on arrête de respirer en le voyant.",
+              "chinese": "这种美景如此震撼，以至于人们常以一种形象化的说法来形容：看到它时竟会屏住呼吸。"
+            },
+            "usage_note": "在口语和书面语中都非常常见，是 B1/B2 级别表达复杂逻辑关系的重要句型。",
+            "source_ids": [
+              45
+            ]
+          },
+          {
+            "name": "L'antériorité : 'avant de' vs 'avant que'",
+            "structure": "avant de + infinitif (si même sujet) / avant que + subjonctif (si sujets différents)",
+            "explanation": "表达“在……之前”时，如果主句和从句的主语相同，必须使用 'avant de + 动词原形'；如果主语不同，则使用 'avant que + 虚拟式'。在口语中，有时即使主语不同，法国人也会用 'avant que'，但标准语法要求区分。",
+            "example": {
+              "french": "Pour finir, avant que vous alliez au Mont-Saint-Michel, je dois vous prévenir.",
+              "chinese": "最后，在你们前往圣米歇尔山之前，我得提醒大家一句。"
+            },
+            "usage_note": "在例句中，主句主语是 'je' (je dois vous prévenir)，从句主语是 'vous' (vous alliez)，主语不同，因此使用了 'avant que' 加上虚拟式 'alliez'。",
+            "source_ids": [
+              32
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "鼻化元音，发音时气流同时从口腔和鼻腔流出。在描述诺曼底和布列塔尼的词汇中频繁出现。",
+              "examples": [
+                "Normandie",
+                "débarquement",
+                "rempart"
+              ]
+            },
+            {
+              "sound": "[ɛ̃]",
+              "description": "鼻化元音，常见于 'in', 'im', 'ain', 'ein' 等拼写。在文中地名和艺术流派中多次出现。",
+              "examples": [
+                "Finistère",
+                "impressionniste",
+                "Saint-Malo"
+              ]
+            }
+          ],
+          "liaison": [
+            "aux‿quatre coins (连诵 [z])",
+            "les‿impressionnistes (连诵 [z])",
+            "tout‿en vous relaxant (连诵 [t])"
+          ],
+          "intonation": "播客采用了典型的叙述性语调，在列举景点或建议时（如 'Quand partir ? Quoi emporter ? Où loger ?'）使用升调以吸引听众注意力，在句末或段落结束时使用降调以示完结。"
+        },
+        "vocabulary_network": {
+          "theme": "Le voyage et la géographie côtière",
+          "core_word": "Côte",
+          "related_groups": [
+            {
+              "category": "Relief et nature",
+              "words": [
+                "falaise",
+                "plage",
+                "sable",
+                "baie",
+                "presqu'île",
+                "îlot"
+              ]
+            },
+            {
+              "category": "Tourisme et aménagement",
+              "words": [
+                "station balnéaire",
+                "port",
+                "rempart",
+                "phare",
+                "sentier",
+                "camping"
+              ]
+            },
+            {
+              "category": "Météo",
+              "words": [
+                "canicule",
+                "dépression",
+                "averse",
+                "brume",
+                "vent"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Les ___ laissent place à de longues ___ de ___ ___, à des petits ___ tranquilles et à des ___ touristiques.",
+            "answer": "falaises, plages, sable, blanc, ports, villages",
+            "explanation": "根据原文第46句，描述了布列塔尼南部海岸线风景的变化：悬崖峭壁（falaises）让位于白色的沙滩（plages de sable blanc）、宁静的小港口（ports）和旅游村庄（villages）。",
+            "source_ids": [
+              46
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi l'auteur a-t-elle décidé de commencer son voyage par le village d'Étretat ?",
+            "options": {
+              "A": "Parce qu'elle venait de voir la série Lupin sur Netflix dont un épisode s'y déroule.",
+              "B": "Parce qu'elle voulait visiter la maison du célèbre peintre Claude Monet.",
+              "C": "Parce que c'est la plage la plus accessible depuis Paris en moins de trois heures.",
+              "D": "Parce qu'elle voulait voir les plages du débarquement de la Seconde Guerre mondiale."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第6句明确提到：“je me rappelle que je venais de voir la série Lupin sur Netflix et un des épisodes se passe à Etretat. C'est peut-être pour ça que j'ai commencé le voyage là-bas.”（我记得刚在Netflix上看了《卢平》，其中一集在埃特雷塔，也许这就是我从那里开始旅行的原因。）",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "En quelques jours, on passe de falaises sauvages à des plages tranquilles, de villes fortifiées à des petits ports.",
+            "answer": "短短几天时间，我们便从荒野峭壁来到了宁静海滩，从设防城市走进了小渔港。",
+            "explanation": "翻译难点在于介词结构 'passer de... à...'（从……过渡到……）的连贯表达，以及准确翻译 'falaises sauvages'（荒野峭壁）和 'villes fortifiées'（设防城市/堡垒城市）。",
+            "source_ids": [
+              49
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Reliez ces deux actions en une seule phrase en utilisant le gérondif pour exprimer la simultanéité (ajoutez 'tout' pour insister) : 'Vous m'écoutez. Vous vous relaxez sur la plage.'",
+            "answer": "Vous pouvez m'écouter tout en vous relaxant sur la plage.",
+            "explanation": "原文使用了副动词 (le gérondif) 'en vous relaxant' 加上 'tout' 来强调两个动作（听播客和在海滩放松）同时进行。构成方法是 'en' + 动词现在时第一人称复数词干 (relaxons -> relax) + '-ant'。",
+            "source_ids": [
+              1
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "falaise",
+            "plage",
+            "sable",
+            "port",
+            "village"
+          ],
+          "covered_grammar": [
+            "Le gérondif pour exprimer la simultanéité"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il faut l'avouer, quand on..., on a envie de...",
+            "explanation": "用于坦诚地表达一种普遍的心理或愿望，意为“不得不承认，当……时，人们总想……”。",
+            "example": {
+              "french": "Il faut l'avouer, quand on voyage, on a envie de retrouver des images qu'on a déjà vues en photo.",
+              "chinese": "不得不承认，旅行时，我们总想重温那些曾在照片中见过的景象。"
+            }
+          },
+          {
+            "pattern": "Ce que j'ai préféré dans..., c'est...",
+            "explanation": "用于强调在某个地方或某段经历中最喜欢的部分，属于分裂句（phrase clivée）的一种形式。",
+            "example": {
+              "french": "Ce que j'ai préféré dans le Finistère, c'est la presqu'île de Crozon.",
+              "chinese": "在菲尼斯泰尔，我最喜欢的是克罗宗半岛。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和一位法国朋友讨论即将到来的暑假旅行计划。你想去布列塔尼自驾游，朋友向你询问行程安排以及应对当地天气的准备。",
+          "requirements": "使用至少3个本课学到的词汇（如 canicule, averse, imperméable, emblématique 等），并尝试使用一次副动词（gérondif）来表达同时进行的动作。",
+          "starter": "Salut ! Cet été, j'ai décidé de faire un road trip en Bretagne. Je vais commencer par..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, l'animatrice partage son expérience d'un road trip estival le long des côtes normandes et bretonnes. Elle décrit un itinéraire riche et varié, commençant par les falaises d'Étretat et les villes impressionnistes de Normandie, passant par les plages historiques du débarquement et le célèbre Mont-Saint-Michel. Le voyage se poursuit en Bretagne avec la cité corsaire de Saint-Malo, la sauvage presqu'île de Crozon dans le Finistère, pour se terminer dans les stations balnéaires plus douces du Morbihan. Enfin, elle donne des conseils pratiques sur la météo (prévoir des vêtements variés), le logement (le camping) et les modes de transport (voiture, vélo, randonnée).",
+        "keywords": [
+          "road trip",
+          "Normandie",
+          "Bretagne",
+          "paysages côtiers",
+          "conseils de voyage"
+        ],
+        "difficulty_note": "Le texte est d'un niveau B1/B2. La difficulté réside dans le vocabulaire géographique et descriptif riche, ainsi que dans les références historiques et culturelles spécifiques à la France."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:03.930",
+          "end": "00:28:51.559"
+        },
+        "theme": "Voyage, géographie et culture française",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:03.930",
+          "end_time": "00:00:37.100",
+          "french": "à la découverte des côtes normandes et bretonnes. Bonjour tout le monde et bienvenue dans cet épisode. Comme promis il y a deux semaines, aujourd'hui on part sur un thème estival. Vous pouvez m'écouter tout en vous relaxant sur la plage car je vais vous décrire des paysages que je trouve très sympas. Il y a quelques années, je suis rentrée en France après un long moment. Le Covid était passé par là et j'avais eu le mal du pays.",
+          "chinese": "探索诺曼底和布列塔尼海岸。大家好，欢迎收听本期节目。正如两周前承诺的那样，今天我们来聊一个夏日主题。你可以一边在海滩上放松一边听我讲述，因为我将向你描述一些我觉得非常迷人的风景。几年前，我在离开很久后回到了法国。当时新冠疫情席卷而过，我非常想家。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:37.500",
+          "end_time": "00:00:53.579",
+          "french": "À mon retour, j'avais envie de mieux connaître les régions françaises. J'ai fait pas mal de petits séjours aux quatre coins de l'Hexagone et, à l'été 2022, j'ai décidé de faire un road trip le long des côtes normandes et bretonnes.",
+          "chinese": "回国后，我渴望更好地了解法国的各个地区。我在法国各地进行了不少短途旅行，而在2022年夏天，我决定沿着诺曼底和布列塔尼海岸进行一次公路旅行。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:54.070",
+          "end_time": "00:01:24.170",
+          "french": "J'ai demandé à une copine de me prêter une tente et un matelas gonflables, j'ai acheté un peu de matériel à Décathlon, tout mis dans ma petite Fiat Panda et on est parti avec mon mari à la découverte de ces régions. Dans cet épisode, je vais m'inspirer de ma propre expérience pour vous proposer un itinéraire qui s'étend des falaises d'Etreta en Normandie au golfe du Morbihan dans le sud de la Bretagne.",
+          "chinese": "我找朋友借了一顶帐篷和一张充气床垫，在迪卡侬买了一些装备，把所有东西都塞进我的小菲亚特熊猫车里，然后和我丈夫一起出发去探索这些地区。在本期节目中，我将结合自己的亲身经历，为大家推荐一条从诺曼底的埃特勒塔悬崖一直延伸到布列塔尼南部莫尔比昂湾的路线。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:24.409",
+          "end_time": "00:02:00.579",
+          "french": "Je vais essayer de ne pas juste vous faire une liste de lieux, mais vous expliquer plutôt quel est l'intérêt de chaque pan de la route. Dans une première partie, on parlera de la Normandie. Dans la deuxième partie, de la Bretagne. Et en troisième partie, je vous donnerai quelques conseils pratiques. Alors, c'est parti ! Commençons notre itinéraire par les paysages les plus emblématiques de la Normandie.",
+          "chinese": "我会尽量不只是给大家列一堆地名，而是向你们解释这段旅程每一段的亮点所在。第一部分，我们将聊聊诺曼底。第二部分，聊聊布列塔尼。在第三部分，我会给大家一些实用建议。那么，我们出发吧！让我们从诺曼底最具标志性的风景开始我们的行程。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:01.079",
+          "end_time": "00:02:30.500",
+          "french": "Il faut l'avouer, quand on voyage, on a envie de retrouver des images qu'on a déjà vues en photo, en tableau ou même dans des films et séries. Eh bien, quand on pense à la Normandie, on pense forcément aux falaises, aux petites villes portuaires et aux plages de sable jaune. C'est tout ce qu'on retrouve quand on sillonne les 100 kilomètres qui séparent Etretat de Cabourg.",
+          "chinese": "必须承认，当我们在旅行时，总希望能亲眼看到那些曾在照片、画作甚至影视剧中见过的画面。那么，一提到诺曼底，我们必然会想到悬崖、港口小镇和金色的沙滩。当你穿梭在埃特勒塔和卡堡之间这100公里的路程时，这些风景都能尽收眼底。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:30.500",
+          "end_time": "00:02:56.490",
+          "french": "Quand j'ai fait mon road trip, je me rappelle que je venais de voir la série Lupin sur Netflix et un des épisodes se passe à Etretat. C'est peut-être pour ça que j'ai commencé le voyage là-bas. Etretat, c'est un petit village de bord de mer qui est surtout connu pour ses falaises de craie blanche qui forment naturellement des arches.",
+          "chinese": "我记得在进行那次公路旅行时，我刚看完网飞上的剧集《亚森·罗宾》，其中有一集的故事就发生在埃特勒塔。也许这就是我选择从那里开始旅程的原因。埃特勒塔是一个海滨小村庄，主要以其自然形成拱门的白色白垩悬崖而闻名。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:56.699",
+          "end_time": "00:03:20.139",
+          "french": "Mais si, vous savez, quand on regarde l'horizon, ces falaises s'avancent dans la mer en formant des sortes d'aiguilles. C'est l'attraction principale du village où je vous conseille d'aller passer un après-midi et d'attendre le coucher du soleil en piqueniquant face à la mer, sur la plage ou sur la colline et en regardant vers l'aiguille.",
+          "chinese": "你知道的，当你眺望地平线时，这些悬崖向海中延伸，形成类似针尖的形状。这是这个村庄的主要景点，我建议你去那里度过一个下午，在海滩或山丘上面朝大海野餐，望着那座“针峰”等待日落。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:20.629",
+          "end_time": "00:03:48.330",
+          "french": "Quand j'y suis allée, j'ai eu l'impression d'être en train d'admirer une peinture en mouvement. Les couleurs que prennent le ciel et la mer au cours de la journée sont fascinantes. J'ai alors compris pourquoi ce paysage a autant inspiré les peintres et notamment le célèbre peintre impressionniste Claude Monet qui a passé une grande partie de sa vie en Normandie.",
+          "chinese": "当我去那里时，我感觉自己仿佛在欣赏一幅流动的画作。天空和海洋在一天中变幻的色彩令人着迷。我这才明白，为什么这里的风景能给画家们带来如此多的灵感，尤其是著名的印象派画家克劳德·莫奈，他一生中很大一部分时间都是在诺曼底度过的。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:48.949",
+          "end_time": "00:04:17.420",
+          "french": "D'ailleurs, en parlant de Claude Monet, en continuant plus à l'ouest après Étretat, vous trouverez plusieurs villes portuaires comme Le Havre ou Honfleur qui sont parmi les berceaux, les lieux d'origine du courant impressionniste. Les impressionnistes avaient pour particularité de peindre des paysages en essayant de représenter au mieux le mouvement des couleurs et des formes.",
+          "chinese": "顺便说一下，提到克劳德·莫奈，过了埃特勒塔继续向西，你会发现几个港口城市，比如勒阿弗尔或翁弗勒尔，它们是印象派的摇篮和发源地之一。印象派画家的特点是，在描绘风景时，试图尽可能完美地展现色彩和形状的动态变化。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:17.660",
+          "end_time": "00:04:41.699",
+          "french": "Et les villes portuaires normandes, avec leurs lumières fortes et changeantes qui transpercent derrière les bateaux à voile, étaient de très bons modèles. Je vous conseille plus particulièrement de vous arrêter à Honfleur, qui est une ville plus petite que le Havre et qui a gardé son charme de l'époque des impressionnistes.",
+          "chinese": "而诺曼底的港口城市，凭借其穿透帆船背后的强烈且变幻莫测的光线，成为了绝佳的写生对象。我特别建议你在翁弗勒尔稍作停留，这座城市比勒阿弗尔小，但保留了印象派时期的独特魅力。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:42.069",
+          "end_time": "00:04:57.420",
+          "french": "C'est un endroit très agréable où flâner dans les ruelles, manger au restaurant au bord du Vieux-Bassin et visiter les galeries d'art. On peut y rester quelques heures comme quelques jours selon l'inspiration.",
+          "chinese": "这是一个非常惬意的地方，你可以在小巷里漫步，在老式船坞旁的餐厅里用餐，还可以参观艺术画廊。根据你的兴致，可以在这里待上几个小时，甚至几天。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:58.870",
+          "end_time": "00:05:25.540",
+          "french": "Alors parmi vous, peut-être que certains connaissent déjà bien la peinture impressionniste. Peut-être même que quand je vous parle de bord de mer normand, vous avez en tête des tableaux célèbres qui représentent une plage de sable jaune avec une promenade faite de planches de bois et des petites cabanes de couleurs tout le long du littoral. Eh bien, ce genre de paysage, on le retrouve juste après.",
+          "chinese": "也许你们当中有些人已经对印象派绘画很了解了。甚至当我提到诺曼底海滨时，你们脑海中会浮现出那些著名的画作：金色的沙滩、木板铺成的海滨步道，以及沿岸一排排彩色的小木屋。那么，这种风景，我们接下来就会看到。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:25.910",
+          "end_time": "00:05:54.730",
+          "french": "En continuant environ 10 km à l'ouest après Honfleur, on tombe sur Trouville, Deauville et puis Cabourg. Ces villes forment le trio des stations balnéaires préférées des Parisiens. Station balnéaire, c'est l'expression qu'on utilise pour parler d'un lieu avec un point d'eau, par exemple la mer ou un lac, et bien aménagé pour accueillir les vacanciers.",
+          "chinese": "过了翁弗勒尔继续向西大约10公里，就会来到特鲁维尔、多维尔，然后是卡堡。这三座城市构成了巴黎人最爱的海滨度假胜地“铁三角”。“Station balnéaire”（海滨度假胜地）这个词，我们用来指代那些有水域（比如大海或湖泊）并且设施完善、适合接待度假者的地方。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:54.870",
+          "end_time": "00:06:20.870",
+          "french": "Ce sont des plages accessibles par des routes faciles, avec des commerces à côté, des hôtels, etc. Et donc, Trouville, Deauville et Cabourg sont des lieux où les Parisiens ont l'habitude d'aller en vacances. Moi, personnellement, je connaissais déjà depuis longtemps ces villes pour y avoir passé plusieurs fois des week-ends entre copains.",
+          "chinese": "这些海滩交通便利，周边有商店、酒店等设施。因此，特鲁维尔、多维尔和卡堡是巴黎人习惯去度假的地方。就我个人而言，我早就对这些城市很熟悉了，因为我曾多次和朋友们去那里度周末。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:06:21.430",
+          "end_time": "00:06:40.069",
+          "french": "Il faut dire que ce sont les plages les plus accessibles depuis Paris à moins de trois heures en voiture ou en train. D'ailleurs, leur popularité n'est pas récente. Déjà dans les années 1900, à la Belle Époque, les classes privilégiées parisiennes allaient se ressourcer là-bas.",
+          "chinese": "不得不说，它们是从巴黎出发最容易到达的海滩，开车或坐火车不到三个小时就能抵达。而且，它们的受欢迎程度由来已久。早在1900年代的“美好年代”，巴黎的特权阶层就会去那里休闲放松。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:40.540",
+          "end_time": "00:07:07.240",
+          "french": "On peut citer par exemple Coco Chanel, la célèbre créatrice de mode, qui avait choisi en 1912 Deauville pour ouvrir sa deuxième boutique, juste après Paris bien sûr. Aujourd'hui, on trouve toujours sur les plages normandes des commerces de luxe, des restaurants chics, des casinos, mais aussi des lieux plus simples et accessibles.",
+          "chinese": "举个例子，著名时装设计师可可·香奈儿在1912年选择在多维尔开设了她的第二家精品店，当然，第一家是在巴黎。如今，在诺曼底的海滩上，你依然能找到奢侈品店、高档餐厅、赌场，同时也有更接地气、更大众化的地方。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:07:07.639",
+          "end_time": "00:07:32.839",
+          "french": "C'est un endroit sympa où passer quelques jours, à se prélasser sur la plage, à lire et à manger des glaces. Et avec ça, on finit le premier morceau de notre itinéraire normand, celui des paysages emblématiques peints par les impressionnistes et on peut passer à notre deuxième morceau de route. Alors, quand je vous parle de la Normandie ?",
+          "chinese": "这是一个适合待上几天的好地方，可以在海滩上慵懒地休息、看书、吃冰淇淋。到这里，我们诺曼底行程的第一部分，也就是印象派画家笔下那些标志性风景的部分就结束了，我们可以进入行程的第二段。那么，当我跟你提到诺曼底时？"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:33.079",
+          "end_time": "00:07:49.220",
+          "french": "vous pensez peut-être à la Seconde Guerre mondiale. Et c'est justement dans cette histoire-là qu'on peut se plonger si on continue la route vers l'ouest. On tombera sur les plages du débarquement.",
+          "chinese": "你可能会想到第二次世界大战。如果我们继续向西行驶，就能沉浸在那段历史之中。我们会来到诺曼底登陆的海滩。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:49.879",
+          "end_time": "00:08:08.839",
+          "french": "Le débarquement en Normandie, c'est cette mission militaire historique où des soldats, principalement britanniques, états-uniens et canadiens, ont réussi à entrer sur le territoire français occupé par l'Allemagne nazie en arrivant par surprise sur des plages.",
+          "chinese": "诺曼底登陆是一次历史性的军事行动，主要由英国、美国和加拿大士兵组成，他们通过在海滩上奇袭，成功进入了被纳粹德国占领的法国领土。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:08:09.620",
+          "end_time": "00:08:33.960",
+          "french": "Dans le mot débarquer, on trouve le mot barque qui est le nom d'un petit bateau, le genre de petit bateau qu'on utilise sur des lacs et qu'on fait avancer avec des rames. Et donc débarquer, c'est sortir de sa barque. Et par extension, on utilise ce mot pour une personne qui sort de n'importe quel navire, même des gros bateaux.",
+          "chinese": "在“débarquer”（登陆/下船）这个词中，包含“barque”这个词，它指的是一种小船，就是那种在湖上用桨划的小船。所以“débarquer”本意是从小船里出来。引申开来，我们用这个词来指代从任何船只上下来的人，即使是大船。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:34.649",
+          "end_time": "00:09:04.360",
+          "french": "Mais débarquer, ça s'utilise aussi au sens figuré, d'arriver quelque part à l'improviste. On peut dire par exemple, il a débarqué chez moi comme ça à 3 heures du mat. Alors, le mot débarquement se prête vraiment bien à ce qu'il s'est passé en juin 1944 quand 150 000 soldats sont sortis de leur bateau par surprise sur des plages normandes.",
+          "chinese": "不过，“débarquer”也有比喻的用法，指突然到达某个地方。比如我们可以说：“他凌晨3点就这样突然跑到我家来了。”所以，“débarquement”（登陆）这个词非常贴切地描述了1944年6月发生的事情，当时15万名士兵出其不意地从船上冲上了诺曼底的海滩。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:09:04.759",
+          "end_time": "00:09:33.899",
+          "french": "C'est en grande partie grâce à cette mission que la France a ensuite été libérée et puis plus tard que la guerre a pris fin. Plus exactement, les soldats ont débarqué sur cinq plages qui portent encore aujourd'hui les noms de codes qui leur avaient été donnés pour préparer la mission. Utah, Omaha, Gold, Sword et Juneau.",
+          "chinese": "很大程度上正是归功于这次行动，法国随后才得以解放，战争也才在后来宣告结束。更准确地说，士兵们在五个海滩登陆，这些海滩至今仍保留着当时为准备任务而设定的代号：犹他、奥马哈、黄金、宝剑和朱诺。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:34.809",
+          "end_time": "00:09:52.970",
+          "french": "Quand j'ai fait mon road trip en Normandie, je pensais passer rapidement sur ces plages, prendre quelques photos, me recueillir quelques minutes sur les monuments en hommage aux soldats. Et finalement, je suis restée beaucoup plus longtemps que prévu. Deux jours complets, je crois, tant il y avait à voir.",
+          "chinese": "当我在诺曼底进行公路旅行时，我本以为只会快速地经过这些海滩，拍几张照片，在纪念士兵的纪念碑前默哀几分钟。但最终，我停留的时间比预期的要长得多。我想大概有整整两天，因为有太多值得看的东西了。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:53.139",
+          "end_time": "00:10:18.500",
+          "french": "En fait, quand on se rend sur les plages du débarquement, il y a de nombreuses infrastructures qui ont été installées là pour faire le travail de mémoire. Il y a des plaques explicatives, il y a des scènes de reproduction, des musées, etc. Un des sites les plus notables est le cimetière américain de Colville avec ses alignements de croix blanches qui surplombent Omaha Beach.",
+          "chinese": "事实上，当你前往登陆海滩时，会发现那里建有许多用于纪念历史的设施。有解说牌、场景复原、博物馆等等。其中最著名的景点之一是科勒维尔的美国公墓，那里排列整齐的白色十字架俯瞰着奥马哈海滩。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:10:18.840",
+          "end_time": "00:10:38.700",
+          "french": "Il repose là-bas les corps de plus de 9000 personnes mortes le jour du débarquement. Quand on visite ce cimetière, on peut accéder à un mémorial, une chapelle, un jardin du souvenir, etc. Bref, c'est un bel endroit où se recueillir.",
+          "chinese": "那里长眠着9000多名在登陆当天阵亡的将士。参观这个公墓时，你可以进入纪念馆、小教堂、纪念花园等。总之，这是一个非常适合缅怀先烈的地方。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:39.509",
+          "end_time": "00:11:07.659",
+          "french": "Comme je vous l'ai dit, pour visiter l'ensemble des plages et des lieux de mémoire qui les entourent, ça m'a pris environ deux jours. Cependant, j'ai vu qu'il existe des parcours recommandés de quatre jours. C'est vrai que je suis passée un peu vite sur certains lieux. Alors, perso, j'ai trouvé que c'était suffisant. Mais, suivant votre intérêt pour cette histoire, vous pouvez prévoir entre une seule journée et quatre jours. Alors, voilà.",
+          "chinese": "正如我刚才所说，参观所有的海滩及其周边的纪念场所，大约花了我两天时间。不过，我看到也有推荐四天的行程。确实，我在某些地方走马观花了一下。就我个人而言，我觉得两天足够了。但根据你对这段历史的兴趣程度，你可以安排一天到四天不等的行程。就是这样。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:11:08.120",
+          "end_time": "00:11:38.149",
+          "french": "Ça, c'était pour la partie historique de la Normandie. Pour le dernier pan, avant d'arriver en Bretagne, il faut que je vous parle du département de la Manche. C'est la zone qui forme une pointe s'avançant dans la mer qui sépare le Royaume-Uni de la France. Cette mer s'appelle la Manche, d'où le nom du département. Quand on sillonne la Manche, on trouve un paysage plus sauvage que quand on se trouve dans les lieux que je vous ai cités avant.",
+          "chinese": "以上就是诺曼底的历史部分。在到达布列塔尼之前的最后一段，我必须跟你们聊聊芒什省。这片区域形成了一个伸入海中的尖角，这片海域将英国和法国隔开。这片海叫英吉利海峡（法语为La Manche），该省也因此得名。当你在芒什省穿行时，你会发现这里的风景比我之前提到的地方更加原始粗犷。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:11:38.360",
+          "end_time": "00:11:59.659",
+          "french": "C'est un territoire principalement rural où on ne trouve pas de grandes villes. Le bout de la pointe s'appelle le Cotentin et c'est une destination prisée, appréciée, des amateurs de tourisme respectueux de l'environnement. On peut y faire des balades au milieu d'une nature verdoyante et dans le calme.",
+          "chinese": "这是一个以乡村为主的地区，没有大城市。这个尖角的尽头叫做科唐坦，它是一个备受环保旅游爱好者青睐和喜爱的目的地。你可以在那里郁郁葱葱的自然环境中安静地漫步。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:12:00.220",
+          "end_time": "00:12:21.509",
+          "french": "Et puis, en redescendant et en se dirigeant vers la Bretagne, on tombe sur le Mont-Saint-Michel. C'est une petite île rocheuse au milieu d'une baie de sable sur laquelle a été construite une abbaye médiévale. À marée haute, c'est vraiment une île, accessible seulement depuis un pont.",
+          "chinese": "然后，一路南下向布列塔尼方向行驶，就会来到圣米歇尔山。这是一座位于沙湾中央的岩石小岛，岛上建有一座中世纪的修道院。涨潮时，它就成了一座真正的岛屿，只能通过一座桥进入。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:12:21.720",
+          "end_time": "00:12:49.289",
+          "french": "Mais à marée basse, c'est-à-dire quand la mer descend et est moins profonde, on peut accéder à ce lieu à pied en passant sur le sable. Attention quand même, pour passer à pied, il faut être accompagné par un guide parce qu'il y a du sable mouvant, c'est-à-dire qu'on peut s'enfoncer dedans et rester bloqué. Le Mont-Saint-Michel est classé au patrimoine de l'UNESCO et il attire des millions de visiteurs chaque année.",
+          "chinese": "但在退潮时，也就是海水退去、水位变浅时，你可以踩着沙子步行前往。不过要注意，步行前往必须有导游陪同，因为那里有流沙，也就是说你可能会陷进去被困住。圣米歇尔山被联合国教科文组织列为世界遗产，每年吸引数百万游客。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:49.559",
+          "end_time": "00:13:10.919",
+          "french": "Du coup, quand on y va, il faut se préparer à se retrouver sur un lieu avec beaucoup de monde et beaucoup de choses payantes. Mais malgré tout, ça reste un lieu magique qui vaut largement le coup d'être visité. Personnellement, j'y suis allée en fin de journée quand les groupes de touristes commençaient à partir.",
+          "chinese": "因此，去那里时，你要做好心理准备，那里会人山人海，而且很多东西都要收费。但尽管如此，它依然是一个充满魔力、非常值得一游的地方。我个人是在傍晚时分去的，那时旅游团已经开始离开了。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:13:11.259",
+          "end_time": "00:13:39.399",
+          "french": "J'ai adoré me balader dans les ruelles du village, gravir les marches jusqu'à l'abbaye, admirer la vue sur la baie et puis redescendre tranquillement en observant les reflets du soleil couchant sur la mer. Pour finir, avant que vous alliez au Mont-Saint-Michel, je dois vous prévenir. Il y a une petite rivalité bien connue entre la Bretagne et la Normandie, chaque région revendiquant ce bout de terre.",
+          "chinese": "我很喜欢在村庄的小巷里漫步，拾阶而上前往修道院，欣赏海湾的景色，然后一边看着夕阳在海面上的倒影，一边悠闲地走下来。最后，在你们去圣米歇尔山之前，我得提醒你们一下。布列塔尼和诺曼底之间有一段众所周知的小竞争，两个地区都声称这块土地属于自己。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:13:39.990",
+          "end_time": "00:13:58.919",
+          "french": "Officiellement, il se situe bien en Normandie, dans le département de la Manche. Mais historiquement, il a aussi été rattaché à la Bretagne et il reste très présent dans l'imaginaire breton. Cette petite querelle entre les deux régions est devenue presque une blague locale.",
+          "chinese": "官方层面上，它确实位于诺曼底的芒什省。但在历史上，它也曾隶属于布列塔尼，并且在布列塔尼人的心目中依然占据着重要地位。这两个地区之间的小争论几乎成了一个当地的笑话。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:59.700",
+          "end_time": "00:14:30.500",
+          "french": "Si vous regardez sur la carte, cette dispute est compréhensible car la petite île est vraiment située pile à la limite. Et c'est bien pour ça que ce sera notre dernier stop et qu'après cette visite, on part en Bretagne. On commence notre découverte de la Bretagne avec l'une de ses villes les plus emblématiques, Saint-Malo, surnommée la cité corsaire.",
+          "chinese": "如果你看一下地图，这种争议是可以理解的，因为这座小岛真的刚好位于边界线上。正因如此，这将是我们的最后一站，参观完这里后，我们就出发去布列塔尼。我们对布列塔尼的探索将从它最具标志性的城市之一——被称为“海盗之城”的圣马洛开始。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:14:31.000",
+          "end_time": "00:14:43.909",
+          "french": "Les corsaires, c'était des marins qui avaient reçu de l'État l'autorisation d'attaquer les navires ennemis pour leur voler leur cargaison. C'était en quelque sorte des pirates, mais légaux.",
+          "chinese": "“Corsaires”（私掠船长/奉旨海盗）是指那些获得国家授权，可以攻击敌国船只并掠夺其货物的海员。他们在某种程度上就是海盗，只不过是合法的。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:14:44.500",
+          "end_time": "00:15:04.549",
+          "french": "Il y avait à Saint-Balo beaucoup de corsaires car cette ville de bord de mer était stratégique pour la défense maritime française. Et puis, plus tard, au moment des grandes explorations et du commerce triangulaire, la ville a vu naître de nombreux navigateurs et explorateurs, dont le célèbre Jacques Cartier.",
+          "chinese": "圣马洛曾经有很多私掠船长，因为这座海滨城市对法国的海上防御具有战略意义。后来，在大航海时代和三角贸易时期，这座城市诞生了许多航海家和探险家，其中就包括著名的雅克·卡蒂埃。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:15:05.399",
+          "end_time": "00:15:23.779",
+          "french": "Encore aujourd'hui, cette histoire se ressent dans l'architecture massive de la ville fortifiée, avec ses grands remparts en granit qui entourent le centre de la vieille ville. On peut d'ailleurs se promener sur ces remparts pour admirer la vue sur la mer, les plages et les îlots voisins.",
+          "chinese": "时至今日，你依然能从这座要塞城市厚重的建筑中感受到这段历史，巨大的花岗岩城墙环绕着老城中心。你还可以在这些城墙上漫步，欣赏大海、海滩和附近小岛的景色。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:15:24.539",
+          "end_time": "00:15:47.909",
+          "french": "En une journée, on peut faire une belle visite du centre-ville, observer les marées, se promener dans les rues Alpavé, visiter la cathédrale, etc. Et surtout, manger une crêpe ou une galette dans une des nombreuses crêperies traditionnelles. Eh oui, impossible de ne pas manger cette spécialité dès son tout premier jour en Bretagne.",
+          "chinese": "在一天的时间里，你可以好好游览一下市中心，观察潮汐，在铺满鹅卵石的街道上漫步，参观大教堂等等。最重要的是，在众多传统的可丽饼店里吃一份甜可丽饼或咸可丽饼。没错，在布列塔尼的第一天，怎么能不尝尝这道特色美食呢。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:48.600",
+          "end_time": "00:16:07.659",
+          "french": "Après, si vous restez un peu plus longtemps, vous pouvez explorer la Côte d'Emeraude tout autour, où l'eau prend parfois une teinte verte intense, surtout quand le soleil perce à travers les nuages. Il y a plein de belles plages, mais aussi des sentiers côtiers accessibles, parfaits pour faire de belles randonnées.",
+          "chinese": "之后，如果你多待一段时间，可以去探索周边的翡翠海岸，那里的海水有时会呈现出浓郁的绿色，尤其是当阳光穿透云层时。那里有很多美丽的海滩，还有平缓的沿海小径，非常适合徒步旅行。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:16:08.090",
+          "end_time": "00:16:38.500",
+          "french": "En fait, tout le littoral breton est parcouru par un long chemin de randonnée qui s'appelle le Sentier des Douaniers. Il commence au Mont-Saint-Michel, puis il arrive à la Côte d'Emeraude et il continue le long de la Côte de Granit Rose. Ce qu'on appelle la Côte de Granit Rose, c'est environ 10 km de côte autour de la ville de Péros-Guirec, caractérisée par la couleur rosée des rochers sculptés par le vent et les vagues.",
+          "chinese": "事实上，整个布列塔尼海岸线都贯穿着一条长长的徒步路线，叫做“海关小径”。它从圣米歇尔山开始，经过翡翠海岸，然后沿着玫瑰海岸延伸。所谓的玫瑰海岸，是指佩罗斯-吉雷克市周围约10公里的海岸，其特点是那些被风浪雕琢的岩石呈现出玫瑰般的粉红色。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:16:38.710",
+          "end_time": "00:17:07.079",
+          "french": "C'est un coin sympa pour prendre des photos, se balader, mais aussi pour faire du surf. Et quand se termine la côte de Granit Rose, après le petit village de L'Ockyrec, on passe à l'avant-dernière étape de notre itinéraire en entrant dans un département qui porte bien son nom. Le Finistère, la fin de la terre. C'est le département le plus à l'ouest de la France et on y ressent vraiment une atmosphère de bout du monde.",
+          "chinese": "这是一个拍照、散步以及冲浪的好地方。当玫瑰海岸结束，过了洛基雷克这个小村庄后，我们就进入了行程的倒数第二站，来到一个名副其实的省份——菲尼斯泰尔省，意为“大地的尽头”。这是法国最西部的省份，在那里你真的能感受到一种世界尽头的氛围。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:17:07.349",
+          "end_time": "00:17:25.220",
+          "french": "Les villages sont parfois minuscules, les routes tournent beaucoup, mais à chaque détour, on découvre une crique, un phare, et on est plongé dans une nature sauvage. Ce que j'ai préféré dans le Finistère, c'est la presqu'île de Crozon.",
+          "chinese": "这里的村庄有时非常小，道路蜿蜒曲折，但在每一个转弯处，你都会发现一个小海湾、一座灯塔，让你沉浸在原始的自然之中。在菲尼斯泰尔省，我最喜欢的是克罗宗半岛。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:17:25.589",
+          "end_time": "00:17:49.480",
+          "french": "On appelle Presqu'île un bout de terre qui est relié au territoire principal par un morceau de terre plus fin. Je ne sais pas si c'est très clair, mais j'avoue que c'est difficile à définir avec des mots simples. Bref, en tout cas, l'exploration de la Presqu'île de Crozon a été pour moi le moment où j'ai compris pourquoi les Bretons adoraient tant leur région.",
+          "chinese": "“Presqu'île”（半岛）是指通过一块较窄的陆地与主体陆地相连的一块土地。我不知道这样解释是否清楚，但我承认很难用简单的词语来定义它。总之，对我来说，探索克罗宗半岛的那一刻，我才真正明白了为什么布列塔尼人如此热爱他们的家乡。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:17:49.880",
+          "end_time": "00:18:13.480",
+          "french": "J'avoue que pendant des années, je n'avais pas très envie d'aller en Bretagne car je pensais qu'il y avait beaucoup de pluie et de vent. Mais quand j'étais en haut des falaises de la presqu'île de Crozon à admirer la mer d'un bleu profond, je me suis dit que ça valait vraiment la peine d'affronter un peu de vent. C'était vraiment à couper le souffle.",
+          "chinese": "我承认，多年来我一直不太想去布列塔尼，因为我觉得那里风大雨多。但是，当我站在克罗宗半岛的悬崖顶上，欣赏着深蓝色的海洋时，我对自己说，为了这番美景，顶着点风也是完全值得的。那景色真是美得令人窒息。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:18:14.230",
+          "end_time": "00:18:45.640",
+          "french": "Un paysage à couper le souffle, je vous l'ai déjà expliqué dans un autre épisode, c'est un paysage qui est tellement impressionnant qu'on dit de manière figurée qu'on arrête de respirer en le voyant. C'est cet effet-là que produit la pointe du Finistère. Alors, après ça, on est prêt à terminer le voyage avec une ambiance plus relax. Tant mieux puisque c'est dans le sud de la Bretagne qu'on trouve les meilleures stations balnéaires de la région.",
+          "chinese": "“令人窒息的风景”，我已经在另一期节目中给大家解释过了，就是指风景太震撼了，以至于我们用比喻的手法说看到它时连呼吸都停止了。菲尼斯泰尔的尽头给人带来的就是这种震撼。那么，在这之后，我们准备以一种更放松的氛围来结束这次旅行。太好了，因为布列塔尼南部拥有该地区最好的海滨度假胜地。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:18:46.069",
+          "end_time": "00:19:16.460",
+          "french": "En longeant la côte sud du Finistère, puis le département du Morbihan, on remarque que les paysages changent petit à petit. Les falaises laissent place à de longues plages de sable blanc, à des petits ports tranquilles et à des villages touristiques. C'est une zone plus douce où il fait souvent un peu plus chaud l'été et où il est agréable de se baigner. Bien sûr, l'eau est plus fraîche qu'en Méditerranée, mais franchement, moi, je m'y suis sentie très bien.",
+          "chinese": "沿着菲尼斯泰尔省的南海岸，然后进入莫尔比昂省，你会发现风景在一点点改变。悬崖逐渐被绵延的白色沙滩、宁静的小港口和旅游村庄所取代。这是一个更温和的地区，夏天通常会更暖和一些，非常适合游泳。当然，海水比地中海要凉一些，但坦白说，我觉得在那里游泳非常舒服。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:19:17.140",
+          "end_time": "00:19:41.539",
+          "french": "Sur cette côte, il y a un petit coin vraiment à part, le golfe du Morbihan. C'est comme une petite mer intérieure dans laquelle il y a plusieurs petites îles où on peut aller passer la journée, louer des vélos et des paddles, faire des balades, puis rentrer sur le continent en bateau. Et puis, en arrivant vers l'est, on sent que le voyage touche à sa fin.",
+          "chinese": "在这条海岸线上，有一个非常独特的地方，那就是莫尔比昂湾。它就像一个内陆小海，里面有几个小岛，你可以在那里度过一天，租自行车和桨板，四处逛逛，然后再坐船回到大陆。接着，当向东行驶时，你会感觉到旅程即将结束。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:19:41.690",
+          "end_time": "00:20:00.490",
+          "french": "Les paysages deviennent plus plats, un peu plus urbains et on boucle cette grande boucle autour de la Bretagne avec, pourquoi pas, un dernier coucher de soleil sur l'océan. Ce que je retiens de ce road trip, c'est à quel point la Normandie et la Bretagne sont variées.",
+          "chinese": "地势变得更加平坦，也多了一点城市气息。我们完成了环绕布列塔尼的这趟大环线，最后，不妨在海边再看一次日落吧。这次公路旅行给我留下的最深印象，就是诺曼底和布列塔尼的风景是如此的多姿多彩。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:20:00.660",
+          "end_time": "00:20:15.660",
+          "french": "En quelques jours, on passe de falaises sauvages à des plages tranquilles, de villes fortifiées à des petits ports. Et c'est en prenant son temps, en avançant petit à petit, qu'on profite vraiment de toute cette richesse.",
+          "chinese": "在短短几天内，我们从原始的悬崖走到宁静的海滩，从要塞城市来到小巧的港口。只有放慢脚步，一点一点地前行，才能真正领略到这所有的丰富景致。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:20:16.279",
+          "end_time": "00:20:50.890",
+          "french": "Alors, si ça vous donne envie de partir, je vais maintenant vous donner quelques conseils pratiques sur le logement, la météo, les moyens de transport, pour vous aider à organiser votre propre voyage sans stress. Pour terminer, je voudrais vous donner quelques conseils pratiques en répondant à quatre questions simples. Quand partir ? Quoi emporter ? Où loger ? Et comment se déplacer ?",
+          "chinese": "那么，如果这让你有了出发的冲动，我现在就给大家提供一些关于住宿、天气和交通工具的实用建议，帮助你轻松无压地规划自己的旅行。最后，我想通过回答四个简单的问题来给大家一些实用建议。什么时候去？带什么？住哪里？以及怎么出行？"
+        },
+        {
+          "id": 51,
+          "start_time": "00:20:51.539",
+          "end_time": "00:21:19.079",
+          "french": "Alors première question, quand partir ? Sans surprise, je vous recommande de voyager en été. C'est à ce moment-là qu'on a le plus de chance d'avoir du beau temps, ce qui est vraiment agréable pour découvrir la côte. La Normandie et la Bretagne sont connues pour leurs pluies et leurs vents et ce n'est pas une légende. Mais en été, on peut avoir aussi de superbes journées avec un ciel bleu et une température parfaite.",
+          "chinese": "那么第一个问题，什么时候去？毫无悬念，我推荐大家在夏天去旅行。那是遇到好天气几率最高的时候，这对于探索海岸线来说非常惬意。诺曼底和布列塔尼以多风多雨著称，这可不是传说。但在夏天，你也能遇到蓝天白云、温度完美的绝佳天气。"
+        },
+        {
+          "id": 52,
+          "start_time": "00:21:19.539",
+          "end_time": "00:21:49.900",
+          "french": "Pour vous donner une idée, moi, j'y suis allée pendant une canicule. Dans le reste de la France, il faisait beaucoup trop chaud pour visiter ou randonner, mais sur la côte bretonne, c'était juste parfait. Cela dit, même en été, il peut y avoir des perturbations. Par exemple, au moment où j'enregistre ce podcast, il y a une grosse dépression, c'est comme ça qu'on dit dans le langage de la météo, au-dessus de la Normandie, avec des pluies très intenses.",
+          "chinese": "给大家举个例子，我去的时候正赶上热浪。在法国其他地方，天气热得根本没法游览或徒步，但在布列塔尼海岸，气候简直完美。话虽如此，即使在夏天，天气也可能会有波动。例如，就在我录制这期播客的时候，诺曼底上空正有一个强低气压（气象学术语），伴随着强降雨。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:21:50.069",
+          "end_time": "00:22:00.069",
+          "french": "Donc, si vous pouvez, essayez de garder un peu de flexibilité. Regarder la météo quelques jours avant de partir, ça peut éviter pas mal de déceptions.",
+          "chinese": "所以，如果可以的话，尽量保持行程的灵活性。出发前几天看看天气预报，可以避免不少失望。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:22:00.950",
+          "end_time": "00:22:30.119",
+          "french": "Mais bon, même quand il fait beau, il faut quand même s'attendre à quelques averses, même si c'est passager. En Bretagne, on dit souvent qu'il pleut tous les jours, plusieurs fois par jour, mais que ça ne dure jamais très longtemps. Il faut juste s'adapter. Parfois, on attend dix minutes dans la voiture ou sous un arbre et le soleil revient. Alors, c'est là qu'on en vient à ma deuxième question. Quoi emporter ? Eh bien, vous l'aurez compris, un peu de tout.",
+          "chinese": "不过，即使在晴天，也要做好遇到阵雨的准备，哪怕只是短暂的。在布列塔尼，人们常说每天都会下雨，一天下好几次，但从来不会下太久。你只需要适应就好。有时，在车里或树下等个十分钟，太阳就又出来了。那么，这就引出了我的第二个问题。带什么？嗯，你大概猜到了，什么都得带一点。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:22:30.519",
+          "end_time": "00:22:57.319",
+          "french": "C'est un peu le secret pour voyager dans ces régions. Il vous faut des vêtements légers pour les journées ensoleillées, un maillot de bain si vous voulez vous baigner, un chapeau, de la crème solaire, mais aussi un pull, un coupe-vent et surtout un imperméable ou une veste de pluie. Même en été, on peut avoir un peu de fraîcheur ou une brume qui vient de l'océan. Et surtout, n'oubliez pas de prendre des bonnes chaussures.",
+          "chinese": "这算是在这些地区旅行的秘诀。你需要为晴天准备轻薄的衣服，如果想游泳要带泳衣，还要带帽子、防晒霜，同时也要带毛衣、防风外套，最重要的是雨衣或防雨夹克。即使在夏天，也可能会感到一丝凉意，或者遇到从海上吹来的薄雾。最重要的是，别忘了带一双好鞋。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:22:57.619",
+          "end_time": "00:23:24.710",
+          "french": "Pas besoin d'être un grand randonneur ou une grande randonneuse, mais vous allez forcément avoir envie de marcher un peu. Un sentier sur une falaise, un chemin entre deux villages, une balade sur la plage, on marche plus qu'on ne le pense. Troisième question, où loger ? Si vous aimez changer de lieu régulièrement, je vous conseille le camping. C'est une solution simple, économique et très flexible.",
+          "chinese": "你不需要是个徒步大神，但你肯定会想走走。悬崖上的小径、两个村庄之间的乡间小路、海滩上的漫步，你走的路会比你想象的要多。第三个问题，住哪里？如果你喜欢经常换地方，我推荐露营。这是一种简单、经济且非常灵活的解决方案。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:23:24.950",
+          "end_time": "00:23:39.079",
+          "french": "En France, on trouve des campings un peu partout, même dans les zones très rurales. Les campings municipaux sont souvent les moins chers, autour de 8 à 12 euros la nuit, avec des équipements simples, douche, toilette, parfois un coin cuisine.",
+          "chinese": "在法国，露营地随处可见，即使在非常偏僻的乡村也有。市政露营地通常是最便宜的，每晚大约8到12欧元，设施简单，有淋浴、厕所，有时还有个小厨房。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:23:39.380",
+          "end_time": "00:23:57.319",
+          "french": "Il y a d'autres campings qui sont un peu plus chers et qui sont plus confortables avec parfois une piscine, un petit magasin, une salle commune et même la possibilité de louer un logement déjà installé, genre un mobilo moins petit chalet.",
+          "chinese": "还有一些稍微贵一点的露营地，条件更舒适，有时会有游泳池、小商店、公共休息室，甚至可以租用已经建好的住宿设施，比如移动房屋或小木屋。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:57.559",
+          "end_time": "00:24:27.529",
+          "french": "Un mobile home, c'est un logement en dur qui peut en théorie se défaire, mais que les campings laissent en général à l'année et où on a au moins une chambre, une petite cuisine, une salle de bain, etc. Quand j'ai fait mon road trip, je ne réservais jamais en avance. En début d'après-midi, j'appelais les campings dans la zone où je pensais m'arrêter le soir et je demandais s'ils avaient de la place. Ça fonctionnait très bien.",
+          "chinese": "移动房屋是一种硬质结构的住所，理论上可以拆卸，但露营地通常会全年放置在那里，里面至少有一间卧室、一个小厨房、一间浴室等。我在进行公路旅行时，从来不提前预订。通常在下午刚开始时，我会给打算晚上落脚的区域内的露营地打电话，问他们是否有空位。这招非常管用。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:24:28.089",
+          "end_time": "00:24:49.190",
+          "french": "Et ce que j'aime beaucoup avec le camping, c'est qu'on croise des gens très différents. Des familles françaises avec des enfants, des couples de trentenaires, des randonneurs, des retraités allemands ou néerlandais en camping-car. Bref, c'est un vrai mix et parfois ça peut faire des conversations sympas entre voisins de tente.",
+          "chinese": "我非常喜欢露营的一点是，你能遇到形形色色的人。带着孩子的法国家庭、三十多岁的情侣、徒步旅行者、开着房车的德国或荷兰退休老人。总之，这是一个真正的大熔炉，有时帐篷邻居之间还能聊得很开心。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:24:49.940",
+          "end_time": "00:25:19.079",
+          "french": "Et enfin, dernière question, comment se déplacer ? Alors moi, j'avais comme je vous l'ai dit, une petite voiture avec une tente et tout le matériel de camping dans le coffre. C'était très pratique parce que ça me permettait de rouler sur des petites routes, de changer facilement d'endroit tous les jours et d'avoir tout à portée de main. Mais cet itinéraire peut aussi se faire en camping-car, à vélo ou même à pied.",
+          "chinese": "最后，最后一个问题，怎么出行？正如我刚才所说，我开着一辆小车，后备箱里装着帐篷和所有的露营装备。这非常方便，因为我可以开小路，每天轻松地更换地点，而且所有的东西都触手可及。但这条路线也可以开房车、骑自行车甚至步行来完成。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:25:19.740",
+          "end_time": "00:25:35.299",
+          "french": "À pied, la Fédération française de randonnées propose plein d'options de randonnées, de sentiers qui sont numérotés et qui s'appellent des GR pour grandes randonnées.",
+          "chinese": "如果步行的话，法国徒步旅行联合会提供了很多徒步路线的选择，这些小径都有编号，被称为GR，即“大徒步路线”。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:25:35.509",
+          "end_time": "00:26:01.500",
+          "french": "Alors en Bretagne, ce que j'ai appelé tout à l'heure le sentier des douaniers, si vous regardez sur la carte de la fédération de randonnée, ça correspond au GR numéro 34 qui longe toute la côte bretonne. Et on a un sentier un peu similaire aussi du côté de la Normandie. Il y a le GR 223.",
+          "chinese": "那么在布列塔尼，我刚才提到的“海关小径”，如果你在徒步联合会的地图上查看，它对应的是沿着整个布列塔尼海岸的GR 34号线。在诺曼底那边也有一条类似的路线，那就是GR 223号线。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:26:01.500",
+          "end_time": "00:26:29.700",
+          "french": "Et puis entre Étretat et Le Havre, c'est encore un autre. Mais vous pouvez voir ça sur internet. C'est des sentiers qui sont balisés, qui sont entretenus et qui sont marqués pour qu'on ne puisse pas se perdre. Et avec exprès des points de vue super beaux, des endroits où dormir sur la route, etc. Donc si vous aimez marcher, c'est vraiment une super option.",
+          "chinese": "另外，在埃特勒塔和勒阿弗尔之间，还有另一条路线。你可以在网上查到这些信息。这些小径都有路标，有人维护，并且做了标记，这样你就不会迷路。沿途还特意设置了非常美丽的观景点、住宿的地方等等。所以，如果你喜欢徒步，这绝对是一个很棒的选择。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:26:29.700",
+          "end_time": "00:26:37.640",
+          "french": "Bien évidemment, vous ne pourrez pas faire tout l'itinéraire que j'ai décrit. Il faudra forcément choisir certaines portions.",
+          "chinese": "当然，你不可能走完我描述的全部路线。你肯定需要挑选其中的某些路段。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:26:38.299",
+          "end_time": "00:27:04.680",
+          "french": "C'est la même chose si vous décidez de prendre le vélo. Vous pourrez faire certaines portions et en cyclisme, on peut suivre les itinéraires de France Vélo Tourisme. Il y a par exemple la vélo maritime, plutôt le long de la Manche, et il y a une route qui s'appelle la littorale qui descend plutôt de l'ouest au sud breton.",
+          "chinese": "如果你决定骑自行车，情况也是一样的。你可以骑行其中的某些路段，在骑行方面，你可以参考“法国自行车旅游”的路线。例如，有一条主要沿着英吉利海峡的“海滨自行车道”，还有一条叫做“海岸线”的路线，主要从布列塔尼西部向南延伸。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:27:05.109",
+          "end_time": "00:27:30.410",
+          "french": "C'est des parcours adaptés, qui sont sécurisés, avec certains pans sur la route principale, d'autres pans dans des petites routes. Parfois, ça va longer, par exemple, des anciens rails, des choses comme ça. Et c'est assez sympa. Alors moi, je ne suis pas spécialiste de ces modes de voyage, mais si ça vous intéresse, je pourrais demander à des amis qui font...",
+          "chinese": "这些都是专门规划的路线，非常安全，有些路段在主干道上，有些在小路上。有时，路线会沿着废弃的铁轨之类的行进。这非常有趣。我不是这些旅行方式的专家，但如果你感兴趣，我可以去问问那些……"
+        },
+        {
+          "id": 68,
+          "start_time": "00:27:30.420",
+          "end_time": "00:27:37.130",
+          "french": "toutes leurs vacances à vélo ou en randonnée et proposer un autre épisode avec leur bon plan.",
+          "chinese": "整个假期都在骑行或徒步的朋友们，然后做一期新节目来分享他们的好建议。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:27:37.910",
+          "end_time": "00:28:05.069",
+          "french": "Voilà, je pense vous avoir donné les informations essentielles pour organiser un road trip en Normandie et en Bretagne. Ces deux régions sont idéales pour voyager lentement, pour profiter des paysages, de l'air marin, des villages, des crêpes bien sûr et des couchers de soleil. J'ai essayé de vous proposer un itinéraire varié en vous expliquant bien quel était l'intérêt de chaque endroit parce que je trouve que c'est...",
+          "chinese": "好了，我想我已经为大家提供了在诺曼底和布列塔尼规划公路旅行的基本信息。这两个地区非常适合慢游，去享受风景、海风、村庄，当然还有可丽饼和日落。我尽量为大家提供了一条丰富多样的路线，并清楚地解释了每个地方的亮点，因为我觉得……"
+        },
+        {
+          "id": 70,
+          "start_time": "00:28:05.069",
+          "end_time": "00:28:16.029",
+          "french": "C'est plus sympa de voyager en suivant un peu des thèmes plutôt que juste une progression de lieu sans vraiment comprendre l'atmosphère.",
+          "chinese": "带着一些主题去旅行，比仅仅是不明就里地从一个地方赶到另一个地方要有趣得多。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:28:16.029",
+          "end_time": "00:28:43.529",
+          "french": "Et n'hésitez pas à me dire dans les commentaires ce que vous avez pensé de cet épisode. Je serais ravie de vous lire si vous avez déjà des expériences de voyage dans ces régions. Et bien sûr, si vous décidez de faire un voyage prochainement, cette année ou l'année prochaine, à partir de ce que j'ai dit dans cet épisode, là, je serais carrément ravie de le savoir et d'échanger avec vous.",
+          "chinese": "欢迎在评论区告诉我你对这期节目的看法。如果你在这些地区有过旅行经历，我会很高兴读到你的分享。当然，如果你决定在近期、今年或明年，根据我在这期节目里讲的内容去旅行，那我绝对会非常乐意知道，并与你交流。"
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:43.960",
+          "end_time": "00:28:51.559",
+          "french": "Je vous souhaite un bel été et je vous dis à très bientôt dans un prochain épisode. Salut !",
+          "chinese": "祝大家度过一个美好的夏天，我们下期节目再见。拜拜！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:03.930",
+        "end_time": "00:28:51.559",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 72,
+        "source_video_name": "E176 À la découverte des côtes normandes et bretonnes.json",
+        "tags": [
+          "美食烹饪",
+          "艺术人文"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "Exercise Answer Accuracy",
+            "detail": "In the grammar exercise, the prompt asks to combine 'Vous m'écoutez. Vous vous relaxez sur la plage.', which would strictly result in 'Vous m'écoutez tout en vous relaxant sur la plage.' However, the provided answer is 'Vous pouvez m'écouter tout en vous relaxant sur la plage.', which matches the source text but introduces the verb 'pouvez' that was not in the prompt sentences.",
+            "field": "practice.exercises[3]"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

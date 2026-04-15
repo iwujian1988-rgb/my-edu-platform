@@ -1,0 +1,615 @@
+{
+  "source_file": "_Quoi qu’il en coûte_ (_Whatever it takes_).json",
+  "channel": "Louis法语课",
+  "video_name": "_Quoi qu’il en coûte_ (_Whatever it takes_)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T23:56:52.124Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 8,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le participe présent (现在分词)",
+          "L'expression du but (目的表达)",
+          "Le passé composé (复合过去时)"
+        ],
+        "speaking": [
+          "能够描述政府的经济政策及其影响",
+          "学习如何用法语表达“承担责任”和“捍卫观点”"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "défendre",
+            "part_of_speech": "verbe",
+            "ipa": "[defɑ̃dʁ]",
+            "chinese": "辩护；捍卫",
+            "example_sentence": {
+              "french": "Emmanuel Macron a défendu sa politique économique.",
+              "chinese": "埃马纽埃尔·马克龙为他的经济政策进行了辩护。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              10
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Défendre sa politique.",
+                "chinese": "捍卫自己的政策。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "politique",
+            "part_of_speech": "nom féminin",
+            "ipa": "[pɔlitik]",
+            "chinese": "政策；政治",
+            "example_sentence": {
+              "french": "Le gouvernement a une politique économique très libérale.",
+              "chinese": "政府实行了一项非常自由的经济政策。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              4,
+              10
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "On parle de politique économique comme dans le texte.",
+                "chinese": "我们谈论的是经济政策，就像文中提到的那样。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "assumer",
+            "part_of_speech": "verbe",
+            "ipa": "[asyme]",
+            "chinese": "承担；承认；坦然接受",
+            "example_sentence": {
+              "french": "Il assume l'augmentation de la dette publique.",
+              "chinese": "他承担了公共债务增加的责任。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              5,
+              6,
+              10
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Assumer un propos, assumer une décision.",
+                "chinese": "对言论负责，对决定负责。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "augmentation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[oɡmɑ̃tasjɔ̃]",
+            "chinese": "增加；上升",
+            "example_sentence": {
+              "french": "L'augmentation du niveau des océans est inquiétante.",
+              "chinese": "海平面的上升令人担忧。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              6,
+              10
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "L'augmentation des prix.",
+                "chinese": "物价上涨。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "dette",
+            "part_of_speech": "nom féminin",
+            "ipa": "[dɛt]",
+            "chinese": "债务",
+            "example_sentence": {
+              "french": "J'ai 20 000 euros de dette à la banque.",
+              "chinese": "我欠银行 20 000 欧元的债务。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              6,
+              7,
+              10
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "La dette, c'est quand on doit de l'argent à quelqu'un.",
+                "chinese": "债务就是当你欠某人钱的时候。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "successives",
+            "part_of_speech": "adjectif",
+            "ipa": "[syksɛsiv]",
+            "chinese": "接连不断的；连续的",
+            "example_sentence": {
+              "french": "Il a fallu protéger les Français face aux crises successives.",
+              "chinese": "必须保护法国人应对接连不断的危机。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              8,
+              9,
+              10
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Il y a eu des crises les unes après les autres.",
+                "chinese": "危机一个接一个地发生。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "rembourser",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁɑ̃buʁse]",
+            "chinese": "偿还",
+            "example_sentence": {
+              "french": "Je dois rembourser la banque.",
+              "chinese": "我必须还银行钱。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je dois donc rembourser la banque de la somme de 20 000 euros.",
+                "chinese": "因此，我必须向银行偿还 20 000 欧元的金额。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "libérale",
+            "part_of_speech": "adjectif",
+            "ipa": "[libeʁal]",
+            "chinese": "自由的（经济上）",
+            "example_sentence": {
+              "french": "Une politique économique libérale favorise le marché.",
+              "chinese": "自由的经济政策有利于市场。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le gouvernement a une politique économique très libérale.",
+                "chinese": "政府奉行一项极为自由的经济政策。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "Quoi qu'il en coûte",
+            "meaning": "不惜一切代价",
+            "example": {
+              "french": "Aujourd'hui la leçon s'appelle « Quoi qu'il en coûte ».",
+              "chinese": "今天的课程名为“不惜一切代价”。"
+            },
+            "usage_note": "这是马克龙在新冠疫情期间提出的著名经济口号，意指政府将动用一切财政手段支持经济。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "Face aux crises",
+            "meaning": "面对危机",
+            "example": {
+              "french": "Protéger les Français face aux crises successives.",
+              "chinese": "保护法国人应对接连不断的危机。"
+            },
+            "usage_note": "“Face à” 常用于表达面对困难、挑战或某种局面。",
+            "source_ids": [
+              2,
+              8,
+              10
+            ]
+          },
+          {
+            "expression": "Devoir de l'argent à quelqu'un",
+            "meaning": "欠某人钱",
+            "example": {
+              "french": "La dette, c'est quand on doit de l'argent à quelqu'un.",
+              "chinese": "债务就是当你欠某人钱的时候。"
+            },
+            "usage_note": "动词 devoir 在此表示金钱上的债务关系。",
+            "source_ids": [
+              7
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le participe présent (现在分词)",
+            "structure": "动词词根 + -ant",
+            "explanation": "现在分词在句中可表示伴随动作、原因或状态。文中“assumant”表示马克龙在捍卫政策的同时，也承认/承担了债务增加的后果。",
+            "example": {
+              "french": "Emmanuel Macron a défendu sa politique économique, assumant l'augmentation de la dette.",
+              "chinese": "埃马纽埃尔·马克龙为他的经济政策辩护，（同时）承担了债务增加的责任。"
+            },
+            "usage_note": "现在分词没有性数变化，通常用于书面或正式表达中。",
+            "source_ids": [
+              2,
+              5,
+              10
+            ]
+          },
+          {
+            "name": "L'expression du but (目的表达)",
+            "structure": "pour + infinitif",
+            "explanation": "当主句和从句的主语一致时，使用 pour 引导动词原形来表达目的。",
+            "example": {
+              "french": "Il a assumé l'augmentation de la dette publique pour protéger les Français.",
+              "chinese": "他承担了公共债务的增加，目的是为了保护法国人。"
+            },
+            "usage_note": "如果主语不一致，则需使用 afin que 或 pour que 引导虚拟式从句。",
+            "source_ids": [
+              2,
+              8,
+              10
+            ]
+          },
+          {
+            "name": "Le passé composé (复合过去时)",
+            "structure": "avoir/être + participe passé",
+            "explanation": "用于描述过去已经完成的动作。文中多次使用 a défendu, a fallu 等来叙述已发生的政治行为。",
+            "example": {
+              "french": "Emmanuel Macron a défendu sa politique économique.",
+              "chinese": "埃马纽埃尔·马克龙为他的经济政策进行了辩护。"
+            },
+            "usage_note": "绝大多数动词使用 avoir 作为助动词。",
+            "source_ids": [
+              2,
+              3,
+              9,
+              10
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[dɛt]",
+              "description": "单词 'dette' 中的 'p' 不发音（与英语 debt 不同），'tt' 发清辅音 [t]。",
+              "examples": [
+                "dette"
+              ]
+            },
+            {
+              "sound": "[oɡmɑ̃tasjɔ̃]",
+              "description": "注意 'augmentation' 中的鼻化元音 [ɑ̃] 和结尾的 [sjɔ̃]。",
+              "examples": [
+                "augmentation"
+              ]
+            }
+          ],
+          "liaison": [
+            "crises_successives [kʁiz.syksɛsiv] (注意 s 在两个元音间发 [z])",
+            "20 000_euros [vɛ̃.mit.ø.ʁo]"
+          ],
+          "intonation": "在列举或强调政治术语时，语调在每个关键词（如 politique économique, dette publique）末尾略微上扬，以示强调。"
+        },
+        "vocabulary_network": {
+          "theme": "Économie et État",
+          "core_word": "La Politique",
+          "related_groups": [
+            {
+              "category": "Finances",
+              "words": [
+                "dette publique",
+                "augmentation",
+                "rembourser",
+                "somme",
+                "argent"
+              ]
+            },
+            {
+              "category": "Action Gouvernementale",
+              "words": [
+                "défendre",
+                "assumer",
+                "protéger",
+                "agir",
+                "décision"
+              ]
+            },
+            {
+              "category": "Contexte",
+              "words": [
+                "crises successives",
+                "libérale",
+                "sociale",
+                "peuple"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Emmanuel Macron a ___ sa ___ ___ sur TF1, ___ l'___ de la ___ ___ pour ___ les Français ___ aux ___ ___.",
+            "answer": "défendu, politique, économique, assumant, augmentation, dette, publique, protéger, face, crises, successives",
+            "explanation": "根据原文第 2 和第 10 条字幕，马克龙在电视台上捍卫其经济政策，并承担了因保护民众应对危机而产生的债务增加。",
+            "source_ids": [
+              2,
+              10
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi Emmanuel Macron assume-t-il l'augmentation de la dette publique ?",
+            "options": {
+              "A": "Pour financer une nouvelle chaîne de télévision.",
+              "B": "Pour protéger les Français face aux crises successives.",
+              "C": "Pour rembourser une dette personnelle de 20 000 euros.",
+              "D": "Parce qu'il a une politique économique très libérale."
+            },
+            "answer": "B",
+            "explanation": "原文第 2 条和第 10 条明确指出：'...assumant l'augmentation de la dette publique pour protéger les Français face aux crises successives.'",
+            "source_ids": [
+              2,
+              10
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Je dois donc rembourser la banque de la somme de 20 000 euros.",
+            "answer": "因此，我必须向银行偿还 20 000 欧元的金额。",
+            "explanation": "重点在于 'rembourser... de la somme de' 的搭配，以及数字 20 000 的翻译。",
+            "source_ids": [
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "将句子中的现在分词改写为 'parce qu'il' 引导的原因从句：'Emmanuel Macron a défendu sa politique, assumant l'augmentation de la dette.'",
+            "answer": "Emmanuel Macron a défendu sa politique parce qu'il assume l'augmentation de la dette.",
+            "explanation": "现在分词 'assumant' 在此处含有原因或伴随的逻辑，改写为从句需注意主从句时态的逻辑协调。",
+            "source_ids": [
+              2,
+              5
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "défendre",
+            "politique",
+            "assumer",
+            "augmentation",
+            "dette",
+            "successives",
+            "rembourser"
+          ],
+          "covered_grammar": [
+            "Le participe présent",
+            "L'expression du but",
+            "Le passé composé"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "[Sujet] a défendu [sa politique], [participe présent] [conséquence].",
+            "explanation": "用于描述某人捍卫某项政策，并同时承担或说明其后果。",
+            "example": {
+              "french": "Le ministre a défendu la réforme, acceptant les critiques des syndicats.",
+              "chinese": "部长捍卫了这项改革，接受了工会的批评。"
+            }
+          },
+          {
+            "pattern": "Il a fallu agir pour [verbe à l'infinitif].",
+            "explanation": "表达“为了达到某目的，必须采取行动”。",
+            "example": {
+              "french": "Il a fallu agir pour sauver l'économie.",
+              "chinese": "必须采取行动以挽救经济。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你是一名经济记者，正在报道法国总统的最新电视演讲。",
+          "requirements": "使用本课词汇（dette publique, assumer, crises successives）简述总统的立场。",
+          "starter": "Hier soir sur TF1, le président a pris la parole..."
+        }
+      },
+      "summary": {
+        "content": "本课通过埃马纽埃尔·马克龙在 TF1 电视台的演讲，探讨了法国的经济政策。核心内容围绕政府如何通过增加公共债务（dette publique）来保护公民免受接连危机（crises successives）的影响。课程重点讲解了“assumer”（承担/承认）一词在政治语境下的深度，以及如何使用现在分词来构建复杂的政治论述。",
+        "keywords": [
+          "Macron",
+          "Économie",
+          "Dette publique",
+          "TF1",
+          "Crise"
+        ],
+        "difficulty_note": "文本属于 B1-B2 级别，涉及较多政治和经济术语，语法结构包含现在分词，适合中高级学习者。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:05:12"
+        },
+        "theme": "Économie et Politique Française",
+        "cefr_level": "B1",
+        "vocabulary_count": 8,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司 (Radio-Canada) 字幕"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.570",
+          "end_time": "00:00:49.579",
+          "french": "Bonjour, aujourd'hui la leçon s'appelle « Quoi qu'il en coûte ». Emmanuel Macron a défendu sa politique économique sur TF1, assumant l'augmentation de la dette publique pour protéger les Français face aux crises successives.",
+          "chinese": "大家好，今天的课程题目是《不惜一切代价》。埃马纽埃尔·马克龙在法国电视一台（TF1）上为其经济政策辩护，表示愿意承担公共债务增加的责任，以在接连的危机中保护法国民众。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:49.820",
+          "end_time": "00:01:15.659",
+          "french": "Once again, Emmanuel Macron a défendu sa politique économique sur TF1, assumant l'augmentation de la dette publique pour protéger les Français face aux crises successives. Alors on commence : « Emmanuel Macron, qui est le président de la France, a défendu ». « Défendu », c'est le participe passé du verbe défendre.",
+          "chinese": "再次重申，埃马纽埃尔·马克龙在 TF1 上为其经济政策辩护，承担公共债务的增加，以保护法国民众应对接连的危机。那么我们开始：“埃马纽埃尔·马克龙，法国总统，辩护道（a défendu）”。“Défendu”是动词“défendre”的过去分词。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:16.569",
+          "end_time": "00:01:49.420",
+          "french": "Défendre, D-R-E à la fin, « to defend » en anglais. Défendre sa politique, une politique, « policy » en anglais, une politique. Exemple : on parle de politique économique comme dans le texte ou bien de politique sociale. Et voilà un exemple de phrase avec ce mot : « Le gouvernement a une politique économique très libérale ».",
+          "chinese": "Défendre，结尾是 D-R-E，英语是“to defend”。辩护他的政策（sa politique），一个政策（une politique），英语是“policy”。例如：我们像文中一样谈论经济政策，或者是社会政策。这里有一个用这个词造句的例子：“政府实行非常自由的经济政策”。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:49.659",
+          "end_time": "00:02:22.090",
+          "french": "Le gouvernement a une politique économique très libérale. Sur TF1, alors TF1, c'est le nom d'une chaîne de télévision. C'est la première, la plus grosse chaîne de télévision en France. Assumant, c'est le verbe assumer, « to acknowledge ». Assumant, participe présent. Assumer un propos, assumer une décision.",
+          "chinese": "政府实行非常自由的经济政策。在 TF1 上，TF1 是一家电视台的名字。它是法国第一大、也是最大的电视台。Assumant，是动词 assumer（承担/承认），英语是“to acknowledge”。Assumant 是现在分词。承担言论责任，承担决定后果。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:22.460",
+          "end_time": "00:02:53.539",
+          "french": "C'est ça, assumer. Dire oui, je l'ai fait et je n'ai pas de problème avec ça. Je l'assume. L'augmentation, une augmentation, « increase » en anglais. Une augmentation, par exemple, l'augmentation du niveau des océans. L'augmentation du niveau des océans ou l'augmentation des prix. Dans le texte, c'est l'augmentation de la de la dette publique.",
+          "chinese": "这就是 assumer。意思是说，是的，我做了这件事，我对此没有异议。我承担责任。L'augmentation，增加，英语是“increase”。增加，例如，海平面的上升。海平面的上升或物价的上涨。在文中，是指公共债务的增加。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:53.819",
+          "end_time": "00:03:22.569",
+          "french": "La dette publique. Alors attention, la dette s'écrit D-E-T-T-E. La dette, c'est quand on doit de l'argent à quelqu'un. Avoir une de la dette, c'est devoir de l'argent à quelqu'un. Par exemple, j'ai 20 000 euros de dette à la banque.",
+          "chinese": "公共债务。请注意，债务（dette）的拼写是 D-E-T-T-E。债务是指欠别人钱。拥有债务就是欠某人钱。例如，我欠银行 2 万欧元的债务。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:22.900",
+          "end_time": "00:03:54.629",
+          "french": "Je dois donc rembourser la banque de la somme de 20 000 euros. Pour protéger, « to protect », protéger les Français face aux crises successives. Alors là, si on devait traduire en anglais, on dirait « to shield French citizens from successive crises ». Pour protéger les Français face aux crises successives.",
+          "chinese": "因此我必须向银行偿还 2 万欧元的金额。为了保护（Pour protéger），“to protect”，在接连的危机面前保护法国人。这里如果翻译成英语，我们会说“to shield French citizens from successive crises”。在接连的危机面前保护法国人。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:54.810",
+          "end_time": "00:04:23.300",
+          "french": "Ce qui veut dire que les Français ont subi, ont vécu des crises, de graves problèmes, des crises. À la suite, successives, à la suite, il y a eu des crises les unes après les autres. Et il a fallu agir pour protéger le peuple. Voilà ce qu'a dit Emmanuel Macron.",
+          "chinese": "这意味着法国人遭受了、经历了危机，严重的问题，即危机。接连地（successives），连续地，危机一个接一个地发生。必须采取行动来保护人民。这就是埃马纽埃尔·马克龙所说的。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:27.379",
+          "end_time": "00:04:40.259",
+          "french": "Emmanuel Macron a défendu sa politique économique sur TF1, assumant l'augmentation de la de la dette publique pour protéger les Français face aux crises successives.",
+          "chinese": "埃马纽埃尔·马克龙在 TF1 上为其经济政策辩护，承担公共债务增加的责任，以在接连的危机中保护法国民众。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:42.779",
+          "end_time": "00:05:12.579",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司 (Radio-Canada) 字幕"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:05:12.579",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 11,
+        "source_video_name": "_Quoi qu’il en coûte_ (_Whatever it takes_).json",
+        "tags": [
+          "社会观察",
+          "新闻时事"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "error",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The IPA provided for '20 000_euros' [vɛ̃.mit.ø.ʁo] is incorrect. 'Mille' is pronounced [mil], not [mit]. The correct pronunciation for the phrase is [vɛ̃.mil.ø.ʁo].",
+            "field": "deep_learning.pronunciation.liaison"
+          },
+          {
+            "level": "warning",
+            "check": "Part of speech classification",
+            "detail": "The term 'crises_successives' is categorized under 'liaison', but no liaison occurs between these two words (the final 's' of 'crises' is silent before the consonant 's' of 'successives'). The explanation describes the internal 's' in 'crises', which is a standard phonetic rule, not a liaison.",
+            "field": "deep_learning.pronunciation.liaison"
+          }
+        ],
+        "error_count": 1,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": false
+      }
+    }
+  }
+}

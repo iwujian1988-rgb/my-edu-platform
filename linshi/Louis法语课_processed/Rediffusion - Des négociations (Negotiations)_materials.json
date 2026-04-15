@@ -1,0 +1,611 @@
+{
+  "source_file": "Rediffusion - Des négociations (Negotiations).json",
+  "channel": "Louis法语课",
+  "video_name": "Rediffusion - Des négociations (Negotiations)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T23:38:11.449Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "La voix passive (Passé Composé)",
+          "Le pronom relatif 'où' (Temps)",
+          "L'expression de la cause : 'En raison de' vs 'À cause de'"
+        ],
+        "speaking": [
+          "Discussing labor strikes and social issues",
+          "Describing historical monuments and anniversaries"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "négociation",
+            "part_of_speech": "nom (f)",
+            "ipa": "[ne.ɡɔ.sja.sjɔ̃]",
+            "chinese": "谈判",
+            "example_sentence": {
+              "french": "La leçon porte sur les négociations.",
+              "chinese": "这节课是关于谈判的。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "La leçon porte sur les négociations.",
+                "chinese": "这节课是关于谈判的。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "grève",
+            "part_of_speech": "nom (f)",
+            "ipa": "[ɡʁɛv]",
+            "chinese": "罢工",
+            "example_sentence": {
+              "french": "La tour Eiffel a été fermée en raison d'une grève.",
+              "chinese": "埃菲尔铁塔由于罢工而关闭。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              4,
+              5
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Je suis en retard au travail à cause d'une grève des trains.",
+                "chinese": "因为火车罢工，我上班迟到了。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "contractuel",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ̃.tʁak.tɥɛl]",
+            "chinese": "合同的，契约的",
+            "example_sentence": {
+              "french": "Il s'agit de négociations contractuelles.",
+              "chinese": "这是关于合同的谈判。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              5,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Une grève liée aux négociations contractuelles.",
+                "chinese": "一场与合同谈判相关的罢工。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "monument",
+            "part_of_speech": "nom (m)",
+            "ipa": "[mɔ.ny.mɑ̃]",
+            "chinese": "纪念碑，地标建筑",
+            "example_sentence": {
+              "french": "Le monument parisien célèbre les 100 ans de son créateur.",
+              "chinese": "这座巴黎地标建筑纪念其设计者逝世100周年。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3,
+              6,
+              8
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Il s'agit d'un monument, la tour Eiffel.",
+                "chinese": "这是一座纪念碑，即埃菲尔铁塔。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "créateur",
+            "part_of_speech": "nom (m)",
+            "ipa": "[kʁe.a.tœʁ]",
+            "chinese": "创作者，设计者",
+            "example_sentence": {
+              "french": "Gustave Eiffel est le créateur de la tour.",
+              "chinese": "居斯塔夫·埃菲尔是这座铁塔的设计者。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              6,
+              7,
+              8
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Attention : un créateur, E-U-R à la fin.",
+                "chinese": "注意：créateur，结尾是E-U-R。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "célébrer",
+            "part_of_speech": "verbe",
+            "ipa": "[se.le.bʁe]",
+            "chinese": "庆祝，纪念",
+            "example_sentence": {
+              "french": "On célèbre les 100 ans de la mort de Gustave Eiffel.",
+              "chinese": "我们纪念居斯塔夫·埃菲尔逝世100周年。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              6,
+              8
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Célébrer, c'est-à-dire fêter, célébrer ou marquer.",
+                "chinese": "Célébrer，也就是说庆祝、纪念或标志着。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "lié",
+            "part_of_speech": "adjectif",
+            "ipa": "[lje]",
+            "chinese": "相关的，关联的",
+            "example_sentence": {
+              "french": "Cette grève est liée aux négociations.",
+              "chinese": "这次罢工与谈判有关。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Une grève liée, c'est-à-dire en lien, en rapport avec...",
+                "chinese": "相关的罢工，也就是说有联系的、关于……的。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "fermer",
+            "part_of_speech": "verbe",
+            "ipa": "[fɛʁ.me]",
+            "chinese": "关闭",
+            "example_sentence": {
+              "french": "La tour Eiffel a été fermée aux visiteurs.",
+              "chinese": "埃菲尔铁塔对游客关闭了。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Elle était fermée. C'est le contraire d'ouvert.",
+                "chinese": "它关着。这是“开”的反义词。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "rapport",
+            "part_of_speech": "nom (m)",
+            "ipa": "[ʁa.pɔʁ]",
+            "chinese": "关系，联系",
+            "example_sentence": {
+              "french": "C'est en rapport avec les négociations.",
+              "chinese": "这与谈判有关。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est-à-dire en lien, en rapport avec des négociations.",
+                "chinese": "也就是说有联系，与谈判有关。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "marquer",
+            "part_of_speech": "verbe",
+            "ipa": "[maʁ.ke]",
+            "chinese": "标志，纪念",
+            "example_sentence": {
+              "french": "Cet événement marque un anniversaire important.",
+              "chinese": "这一事件标志着一个重要的周年纪念。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Célébrer, c'est-à-dire fêter, célébrer ou marquer.",
+                "chinese": "Célébrer，也就是说庆祝、纪念或标志着。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "en raison de",
+            "meaning": "由于，因为",
+            "example": {
+              "french": "La tour Eiffel a été fermée en raison d'une grève.",
+              "chinese": "埃菲尔铁塔由于罢工而关闭。"
+            },
+            "usage_note": "More formal than 'à cause de', often used in administrative or news contexts.",
+            "source_ids": [
+              2,
+              4,
+              7
+            ]
+          },
+          {
+            "expression": "le jour où",
+            "meaning": "……的那一天",
+            "example": {
+              "french": "Le jour où le monument célèbre les 100 ans.",
+              "chinese": "纪念碑庆祝100周年的那一天。"
+            },
+            "usage_note": "Uses the relative pronoun 'où' to refer to a specific time.",
+            "source_ids": [
+              2,
+              6,
+              8
+            ]
+          },
+          {
+            "expression": "en rapport avec",
+            "meaning": "与……有关",
+            "example": {
+              "french": "C'est en rapport avec des négociations contractuelles.",
+              "chinese": "这与合同谈判有关。"
+            },
+            "usage_note": "Used to show a connection or link between two things.",
+            "source_ids": [
+              5
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La voix passive (Passé Composé)",
+            "structure": "Sujet + être (au passé composé) + participe passé (+ par + agent)",
+            "explanation": "The passive voice emphasizes the action or the object receiving the action. In the text, 'La tour Eiffel' is the subject receiving the action of being closed.",
+            "example": {
+              "french": "La tour Eiffel a été fermée aux visiteurs.",
+              "chinese": "埃菲尔铁塔对游客关闭了。"
+            },
+            "usage_note": "The past participle must agree in gender and number with the subject (fermé + e for 'la tour').",
+            "source_ids": [
+              2,
+              3,
+              7
+            ]
+          },
+          {
+            "name": "Le pronom relatif 'où' (Temps)",
+            "structure": "Nom de temps + où + proposition",
+            "explanation": "The relative pronoun 'où' is used not only for place but also for time (the moment when something happens).",
+            "example": {
+              "french": "Le jour où le monument parisien célèbre les 100 ans...",
+              "chinese": "巴黎这座纪念碑庆祝100周年的那一天……"
+            },
+            "usage_note": "In English, this is often translated as 'when'.",
+            "source_ids": [
+              2,
+              6,
+              8
+            ]
+          },
+          {
+            "name": "L'expression de la cause : 'En raison de' vs 'À cause de'",
+            "structure": "En raison de / À cause de + Nom",
+            "explanation": "Both express cause. 'À cause de' is often used for negative results, while 'en raison de' is more neutral or formal.",
+            "example": {
+              "french": "À cause ou en raison d'une grève.",
+              "chinese": "由于或因为一场罢工。"
+            },
+            "usage_note": "The text explicitly links these two as synonyms in context.",
+            "source_ids": [
+              4,
+              5
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[œʁ]",
+              "description": "The suffix '-eur' found in professions or roles.",
+              "examples": [
+                "visiteur",
+                "créateur"
+              ]
+            }
+          ],
+          "liaison": [
+            "cent ans [sɑ̃.tɑ̃]"
+          ],
+          "intonation": "Rising intonation on 'Attention' to emphasize the spelling rule mentioned by the speaker."
+        },
+        "vocabulary_network": {
+          "theme": "Labor Relations and Heritage",
+          "core_word": "La Tour Eiffel",
+          "related_groups": [
+            {
+              "category": "Social Conflict",
+              "words": [
+                "grève",
+                "négociations",
+                "contractuelles",
+                "fermer"
+              ]
+            },
+            {
+              "category": "History & Commemoration",
+              "words": [
+                "monument",
+                "créateur",
+                "célébrer",
+                "100 ans",
+                "mort"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "La ___ Eiffel a été ___ aux ___ mercredi, en ___ d'une ___ liée aux ___ contractuelles.",
+            "answer": "tour, fermée, visiteurs, raison, grève, négociations",
+            "explanation": "根据原文第2和第3句，埃菲尔铁塔由于与合同谈判相关的罢工而对游客关闭。",
+            "source_ids": [
+              2,
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Quelle est la raison mentionnée pour la fermeture du monument ?",
+            "options": {
+              "A": "Le monument célèbre les 100 ans de Gustave Eiffel.",
+              "B": "Il y a des travaux de rénovation sur la tour.",
+              "C": "Une grève liée aux négociations de contrats.",
+              "D": "Il y a trop de visiteurs ce mercredi."
+            },
+            "answer": "C",
+            "explanation": "原文第2句明确指出：'...en raison d'une grève liée aux négociations contractuelles'. 选项A虽然提到了100周年，但那是当天的背景，而非关闭的原因。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Aujourd'hui, je suis en retard au travail à cause d'une grève des trains.",
+            "answer": "今天我上班迟到了，原因是火车罢工。",
+            "explanation": "这句话出现在第5句，用来举例说明 'à cause de' (由于/因为) 的用法。注意 'en retard' 是迟到的意思。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "语法",
+            "question": "Complétez avec le pronom relatif correct : 'C'est le jour ___ le créateur de la tour est mort.'",
+            "answer": "où",
+            "explanation": "在表示时间的名词（如 le jour, l'année）之后，使用关系代词 'où' 来引导从句，正如原文第6句中的 'le jour où le monument... célèbre'。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "tour",
+            "fermée",
+            "visiteurs",
+            "raison",
+            "grève",
+            "négociations",
+            "créateur"
+          ],
+          "covered_grammar": [
+            "La voix passive",
+            "Le pronom relatif 'où'",
+            "L'expression de la cause"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "[Sujet] a été fermé(e) en raison de [Cause]",
+            "explanation": "Used to explain the closure of a place due to a specific reason.",
+            "example": {
+              "french": "Le musée a été fermé en raison de la neige.",
+              "chinese": "博物馆因下雪而关闭。"
+            }
+          },
+          {
+            "pattern": "Le jour où [Événement]",
+            "explanation": "Used to specify what happened on a particular day.",
+            "example": {
+              "french": "C'est le jour où nous avons commencé le projet.",
+              "chinese": "那是我们开始项目的那一天。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are a tourist in Paris and you find the Eiffel Tower closed. You are talking to a staff member.",
+          "requirements": "Use 'en raison de', 'grève', and ask about the 'négociations'.",
+          "starter": "Excusez-moi, pourquoi la tour est-elle fermée aujourd'hui ?"
+        }
+      },
+      "summary": {
+        "content": "The lesson discusses the closure of the Eiffel Tower due to a strike related to contract negotiations. This event coincided with the 100th anniversary of the death of its creator, Gustave Eiffel. The text explains vocabulary related to labor disputes and commemorative events.",
+        "keywords": [
+          "Tour Eiffel",
+          "Grève",
+          "Négociations",
+          "Gustave Eiffel",
+          "100 ans"
+        ],
+        "difficulty_note": "The text is at a B1 level because it deals with social issues (strikes, negotiations) and uses intermediate grammar like the passive voice and relative pronouns."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:04:00"
+        },
+        "theme": "Social Issues and Cultural Heritage",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "字幕由加拿大广播公司提供"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.659",
+          "end_time": "00:00:55.939",
+          "french": "Bonjour. Aujourd'hui, la leçon porte sur les négociations. La tour Eiffel a été fermée aux visiteurs mercredi, en raison d'une grève liée aux négociations contractuelles, le jour où le monument parisien célèbre les 100 ans de la mort de son créateur, Gustave Eiffel.",
+          "chinese": "大家好。今天的课程主题是谈判。埃菲尔铁塔周三对游客关闭，原因是与合同谈判有关的罢工，而这一天恰逢这座巴黎地标纪念其创作者古斯塔夫·埃菲尔逝世100周年。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:56.310",
+          "end_time": "00:01:25.739",
+          "french": "Once again, la tour Eiffel a été fermée aux visiteurs mercredi, en raison d'une grève liée aux négociations contractuelles, le jour où le monument parisien célèbre les 100 ans de la mort de son créateur, Gustave Eiffel. Alors, il s'agit d'un monument, la tour Eiffel, la tour Eiffel. Elle a été fermée, donc les visiteurs n'ont pas pu y aller.",
+          "chinese": "再读一遍：埃菲尔铁塔周三对游客关闭，原因是与合同谈判有关的罢工，而这一天恰逢这座巴黎地标纪念其创作者古斯塔夫·埃菲尔逝世100周年。那么，这涉及到一个地标，埃菲尔铁塔，埃菲尔铁塔。它被关闭了，所以游客们无法进入。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:25.909",
+          "end_time": "00:01:51.239",
+          "french": "Elle était fermée. C'est le contraire d'ouvert. Shut down, fermée aux visiteurs. Attention : un visiteur, E-U-R à la fin. Mercredi, Wednesday, en raison d'une grève. C'est-à-dire à cause d'une grève. Because of a strike. À cause ou en raison d'une grève.",
+          "chinese": "它当时处于关闭状态。“Fermée”是“ouvert”（开放）的反义词。Shut down，对游客关闭。注意：“visiteur”（游客）这个词，结尾是 E-U-R。Mercredi，周三。En raison d'une grève，也就是说“因为罢工”。Because of a strike。À cause 或 en raison d'une grève。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:51.480",
+          "end_time": "00:02:19.430",
+          "french": "Exemple : aujourd'hui, je suis en retard au travail à cause d'une grève des trains. Une grève liée, c'est-à-dire en lien, en rapport avec des négociations contractuelles.",
+          "chinese": "例如：今天我因为火车罢工上班迟到了。Une grève liée，也就是说与合同谈判有关联、有关系的罢工。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:19.430",
+          "end_time": "00:02:49.159",
+          "french": "Le jour, exactement le jour, the day, le jour où le monument parisien célèbre les cent ans. Célébrer, c'est-à-dire fêter, célébrer ou marquer. On dirait d'ailleurs en anglais « marks », célèbre. Célèbre quoi ? Les cent ans, one hundred years, les cent ans depuis la mort de son créateur.",
+          "chinese": "Le jour，确切的那一天，the day，这座巴黎地标纪念100周年的那一天。Célébrer，也就是说庆祝、纪念或标志。在英语中我们会说“marks”，célèbre。纪念什么？Les cent ans，100周年，自其创作者逝世以来的100周年。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:49.500",
+          "end_time": "00:03:19.460",
+          "french": "Depuis, since, la mort de son créateur. Attention : un créateur, E-U-R à la fin. Et le nom de son créateur, c'est Gustave Eiffel. La tour Eiffel a été fermée aux visiteurs mercredi, en raison d'une grève liée aux négociations contractuelles.",
+          "chinese": "Depuis，自……以来，其创作者的逝世。注意：“créateur”（创作者）这个词，结尾是 E-U-R。他创作者的名字叫古斯塔夫·埃菲尔。埃菲尔铁塔周三对游客关闭，原因是与合同谈判有关的罢工。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:19.669",
+          "end_time": "00:03:28.419",
+          "french": "Le jour où le monument parisien célèbre les 100 ans depuis la mort de son créateur, Gustave Eiffel.",
+          "chinese": "这一天恰逢这座巴黎地标纪念其创作者古斯塔夫·埃菲尔逝世100周年。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:31.030",
+          "end_time": "00:04:00.840",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "字幕由加拿大广播公司提供"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:04:00.840",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 9,
+        "source_video_name": "Rediffusion - Des négociations (Negotiations).json",
+        "tags": []
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

@@ -1,0 +1,669 @@
+{
+  "source_file": "Rediffusion - Prolongé (Extended).json",
+  "channel": "Louis法语课",
+  "video_name": "Rediffusion - Prolongé (Extended)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T16:07:45.847Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "被动语态 (La voix passive)",
+          "现在分词 (Le participe présent)",
+          "原因表达 (L'expression de la cause)"
+        ],
+        "speaking": [
+          "能够讨论能源危机及其对生活成本的影响",
+          "能够描述机械故障或技术问题（如腐蚀、压力）"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "prolonger",
+            "part_of_speech": "verbe",
+            "ipa": "[pʁɔ.lɔ̃.ʒe]",
+            "chinese": "延长",
+            "example_sentence": {
+              "french": "La fermeture de 4 réacteurs nucléaires sera prolongée pendant plusieurs semaines.",
+              "chinese": "4座核反应堆的停运将延长数周。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Cette pièce de théâtre est prolongée d'un mois.",
+                "chinese": "这部戏剧将延长一个月。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "réacteur",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʁe.ak.tœʁ]",
+            "chinese": "反应堆",
+            "example_sentence": {
+              "french": "C'est la fermeture de quatre réacteurs nucléaires.",
+              "chinese": "这是四座核反应堆的关闭。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Quatre réacteurs nucléaires.",
+                "chinese": "四座核反应堆。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "corrosion",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kɔ.ʁɔ.zjɔ̃]",
+            "chinese": "腐蚀",
+            "example_sentence": {
+              "french": "À cause de problèmes de corrosion.",
+              "chinese": "由于腐蚀问题。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              5
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "À cause de problèmes de corrosion.",
+                "chinese": "由于腐蚀问题。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "pression",
+            "part_of_speech": "nom féminin",
+            "ipa": "[pʁɛ.sjɔ̃]",
+            "chinese": "压力",
+            "example_sentence": {
+              "french": "La pression dans ce tuyau est trop importante.",
+              "chinese": "这个管道内的压力过大了。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Pouvant faire augmenter la pression.",
+                "chinese": "能够使压力增大。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "hausse",
+            "part_of_speech": "nom féminin",
+            "ipa": "[os]",
+            "chinese": "上涨",
+            "example_sentence": {
+              "french": "C'est la pression à la hausse.",
+              "chinese": "这是上涨的压力。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7,
+              8
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Regardez bien l'orthographe de la hausse.",
+                "chinese": "请仔细注意“上升”的拼写。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "davantage",
+            "part_of_speech": "adverbe",
+            "ipa": "[da.vɑ̃.taʒ]",
+            "chinese": "更多",
+            "example_sentence": {
+              "french": "Augmenter, c'est plus, en mettre davantage.",
+              "chinese": "所谓“增大”，就是增加、投入更多。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Je vais te payer davantage à la condition que tu travailles mieux.",
+                "chinese": "如果你工作表现更好，我将支付你更高的薪酬。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "tuyau",
+            "part_of_speech": "nom masculin",
+            "ipa": "[tɥi.jo]",
+            "chinese": "管道",
+            "example_sentence": {
+              "french": "La pression dans ce tuyau est trop importante.",
+              "chinese": "这个管道内的压力过大了。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Il va exploser.",
+                "chinese": "它会爆炸。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "invariable",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃.va.ʁjab]",
+            "chinese": "不变的",
+            "example_sentence": {
+              "french": "Un prix, P-R-I-X, mot invariable.",
+              "chinese": "价格（prix）这个词是不变的（单复数同形）。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Un prix, c'est price.",
+                "chinese": "一个价格，就是price。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "bruit blanc",
+            "part_of_speech": "nom masculin",
+            "ipa": "[bʁɥi blɑ̃]",
+            "chinese": "白噪音",
+            "example_sentence": {
+              "french": "Vous pouvez écouter des sons de la nature et des bruits blancs.",
+              "chinese": "您可以收听各种自然声音和白噪音。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "White noise to help you fall asleep.",
+                "chinese": "帮助你入睡的白噪音。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "approche",
+            "part_of_speech": "verbe",
+            "ipa": "[a.pʁɔʃ]",
+            "chinese": "临近",
+            "example_sentence": {
+              "french": "L'hiver approche.",
+              "chinese": "冬季即将来临。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              8,
+              9
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Ce promeneur approche, il est à 50 mètres.",
+                "chinese": "这位散步者正走近，他距离我50米。",
+                "source_video": "Radio-Canada"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "à la hausse",
+            "meaning": "呈上升趋势",
+            "example": {
+              "french": "Faire augmenter la pression à la hausse sur les prix.",
+              "chinese": "使价格面临上涨压力。"
+            },
+            "usage_note": "常用于经济语境，描述价格、利率或产量的增长。",
+            "source_ids": [
+              2,
+              7,
+              8
+            ]
+          },
+          {
+            "expression": "avoir du mal à",
+            "meaning": "做某事有困难",
+            "example": {
+              "french": "Si vous avez du mal à vous endormir.",
+              "chinese": "如果您入睡困难。"
+            },
+            "usage_note": "后接动词不定式，表示在生理或心理上感到吃力。",
+            "source_ids": [
+              11
+            ]
+          },
+          {
+            "expression": "alors que",
+            "meaning": "而，与此同时",
+            "example": {
+              "french": "Alors que l'hiver approche.",
+              "chinese": "而冬季即将来临。"
+            },
+            "usage_note": "既可以表示时间上的同时性，也可以表示对比。",
+            "source_ids": [
+              2,
+              8,
+              10
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "被动语态 (La voix passive)",
+            "structure": "Sujet + être (conjugué) + participe passé (+ par + complément d'agent)",
+            "explanation": "用于强调动作的承受者而非执行者。在新闻中常用于描述客观事实。",
+            "example": {
+              "french": "La fermeture de 4 réacteurs nucléaires sera prolongée.",
+              "chinese": "4座核反应堆的停运将延长。"
+            },
+            "usage_note": "过去分词必须与主语在性、数上保持一致（prolongée 对应 la fermeture）。",
+            "source_ids": [
+              2,
+              4
+            ]
+          },
+          {
+            "name": "现在分词 (Le participe présent)",
+            "structure": "Radical de 'nous' au présent + -ant",
+            "explanation": "在文中用作形容词性用法，修饰名词，表示原因或伴随状态，相当于一个关系从句。",
+            "example": {
+              "french": "Des problèmes de corrosion pouvant faire augmenter la pression.",
+              "chinese": "可能导致压力增加的腐蚀问题。"
+            },
+            "usage_note": "此处 'pouvant' 相当于 'qui peuvent'。",
+            "source_ids": [
+              2,
+              6,
+              10
+            ]
+          },
+          {
+            "name": "原因表达 (L'expression de la cause)",
+            "structure": "à cause de + nom",
+            "explanation": "用于引出导致某种结果（通常是负面或中性的）的原因。",
+            "example": {
+              "french": "À cause de problèmes de corrosion.",
+              "chinese": "由于腐蚀问题。"
+            },
+            "usage_note": "注意 'à cause de' 后面只能接名词或代词，不能接从句。",
+            "source_ids": [
+              2,
+              5
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[os]",
+              "description": "词首的 H 是嘘音（H aspiré），不能进行联诵或省音。",
+              "examples": [
+                "la hausse"
+              ]
+            },
+            {
+              "sound": "[pʁi]",
+              "description": "词尾的 X 不发音，且该词单复数形式相同。",
+              "examples": [
+                "les prix"
+              ]
+            }
+          ],
+          "liaison": [
+            "plusieurs_semaines [ply.zjœʁ.sə.mɛn]",
+            "un_mois [œ̃.mwa]",
+            "huit_heures [ɥi.tœʁ]"
+          ],
+          "intonation": "新闻播报语调，在列举原因（à cause de...）和结果（sera prolongée...）时有明显的停顿和重音强调。"
+        },
+        "vocabulary_network": {
+          "theme": "Énergie et Environnement",
+          "core_word": "Énergie",
+          "related_groups": [
+            {
+              "category": "Nucléaire",
+              "words": [
+                "réacteur",
+                "nucléaire",
+                "corrosion",
+                "pression"
+              ]
+            },
+            {
+              "category": "Économie",
+              "words": [
+                "prix",
+                "hausse",
+                "augmenter",
+                "salaire"
+              ]
+            },
+            {
+              "category": "Temps",
+              "words": [
+                "prolonger",
+                "semaines",
+                "hiver",
+                "approche"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "La ___ de 4 ___ ___ sera ___ pendant plusieurs ___ à cause de problèmes de ___ pouvant faire ___ la ___ à la ___ sur les prix de l'___ alors que l'___ ___.",
+            "answer": "fermeture, réacteurs, nucléaires, prolongée, semaines, corrosion, augmenter, pression, hausse, énergie, hiver, approche",
+            "explanation": "这段话完整复述了新闻的核心内容：由于腐蚀问题，核反应堆关闭时间延长，导致冬季能源价格面临上涨压力。",
+            "source_ids": [
+              2,
+              10
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Quelle est la raison principale de la prolongation de la fermeture des réacteurs ?",
+            "options": {
+              "A": "Le manque de personnel pendant l'hiver.",
+              "B": "Des problèmes de corrosion.",
+              "C": "Une augmentation des salaires des employés.",
+              "D": "La construction de nouveaux réacteurs."
+            },
+            "answer": "B",
+            "explanation": "根据原文第2、3、5和10行，明确提到停运延长是“à cause de problèmes de corrosion”（由于腐蚀问题）。",
+            "source_ids": [
+              2,
+              5,
+              10
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "J'augmente ton salaire si tu travailles mieux, ce qui veut dire que je vais te payer davantage.",
+            "answer": "如果你工作表现更好，我就给你加薪，这意味着我将支付你更高的酬劳。",
+            "explanation": "重点在于理解 'augmenter le salaire' (加薪) 和 'davantage' (更多/更高) 的对应关系。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante à la voix active : 'La fermeture de 4 réacteurs nucléaires sera prolongée par les autorités.' (Commencez par 'Les autorités...')",
+            "answer": "Les autorités prolongeront la fermeture de 4 réacteurs nucléaires.",
+            "explanation": "将被动语态（sera prolongée）转换为主动语态。原句是简单将来时的被动式，因此主动语态动词 prolonger 也要用简单将来时（prolongeront）。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "fermeture",
+            "réacteurs",
+            "corrosion",
+            "prolongée",
+            "hausse",
+            "salaire",
+            "davantage"
+          ],
+          "covered_grammar": [
+            "La voix passive",
+            "L'expression de la cause"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "[Sujet] sera prolongé(e) pendant [Durée] à cause de [Raison].",
+            "explanation": "用于描述某项活动的延期及其原因。",
+            "example": {
+              "french": "Le match sera prolongé pendant 10 minutes à cause de la pluie.",
+              "chinese": "由于下雨，比赛将延长10分钟。"
+            }
+          },
+          {
+            "pattern": "Si vous avez du mal à [Infinitif], [Solution].",
+            "explanation": "用于提供建议或推销产品，针对某种困难提供对策。",
+            "example": {
+              "french": "Si vous avez du mal à comprendre, je peux expliquer à nouveau.",
+              "chinese": "如果您理解有困难，我可以再解释一遍。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "想象你是一名能源分析师，正在向客户解释为什么这个冬天的电费会增加。",
+          "requirements": "使用词汇：pression, hausse, énergie, à cause de, prolonger。",
+          "starter": "Bonjour, je vous appelle pour vous informer que les prix de l'énergie vont augmenter..."
+        }
+      },
+      "summary": {
+        "content": "本课件基于一段关于加拿大核能动态的新闻。主要内容涉及由于腐蚀问题，四座核反应堆的关闭时间将被延长，这在冬季临近之际给能源价格带来了上涨压力。此外，视频末尾还介绍了一个旨在帮助入睡的白噪音播客。",
+        "keywords": [
+          "nucléaire",
+          "énergie",
+          "corrosion",
+          "prix",
+          "hiver"
+        ],
+        "difficulty_note": "文本属于B1级别，包含一些工业和经济术语（corrosion, réacteur, hausse），语法上涉及被动语态和现在分词，适合中级学习者提升专业词汇量。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:05:47"
+        },
+        "theme": "核能设施维护与能源价格压力",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司 (Radio-Canada) 字幕组"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.659",
+          "end_time": "00:00:55.979",
+          "french": "Bonjour, aujourd'hui la leçon est prolongée. La fermeture de 4 réacteurs nucléaires sera prolongée pendant plusieurs semaines à cause de problèmes de corrosion pouvant faire augmenter la pression à la hausse sur les prix de l'énergie alors que l'hiver approche.",
+          "chinese": "大家好，今天的课程延长了。由于腐蚀问题，四座核反应堆的关闭时间将延长数周，随着冬季临近，这可能会加大能源价格上涨的压力。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:56.500",
+          "end_time": "00:01:27.019",
+          "french": "Once again, la fermeture de quatre réacteurs nucléaires sera prolongée pendant plusieurs semaines à cause de problèmes de corrosion pouvant faire augmenter la pression à la hausse sur les prix de l'énergie. Alors que l'hiver, on commence avec la fermeture. La fermeture, c'est le fait de fermer, d'arrêter. La fermeture, shutdown.",
+          "chinese": "再次重申，由于腐蚀问题，四座核反应堆的关闭时间将延长数周，这可能会加大能源价格上涨的压力。随着冬季……我们先从“la fermeture”开始。“La fermeture”是指关闭、停止的行为。La fermeture，即 shutdown。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:27.349",
+          "end_time": "00:01:53.219",
+          "french": "La fermeture de ce magasin est une catastrophe. La fermeture de ce magasin est une catastrophe. Là, c'est la fermeture de quatre réacteurs nucléaires. Quatre réacteurs nucléaires. Four nuclear reactors. Quatre réacteurs nucléaires. Elle sera prolongée.",
+          "chinese": "“这家商店的关闭是一场灾难。”“这家商店的关闭是一场灾难。”这里是指四座核反应堆的关闭。四座核反应堆。Four nuclear reactors。四座核反应堆。它将被延长（prolongée）。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:53.560",
+          "end_time": "00:02:26.599",
+          "french": "Prolongée, extended. Elle va durer plus de temps que prévu. Elle est prolongée. Exemple, cette pièce de théâtre est prolongée d'un mois. Cette pièce de théâtre est prolongée d'un mois. Ce qui veut dire qu'on va la jouer encore plus longtemps, pendant un mois. Là, c'est pendant plusieurs semaines. Plusieurs semaines. Several weeks. À cause de problèmes de corrosion.",
+          "chinese": "Prolongée，即 extended（延长的）。它持续的时间将比预期的更长。它被延长了。例如，“这部剧的演出延长了一个月。”“这部剧的演出延长了一个月。”这意味着我们将继续演出更长时间，持续一个月。这里是指持续数周。数周。Several weeks。由于腐蚀问题。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:27.000",
+          "end_time": "00:02:59.180",
+          "french": "Pouvant faire augmenter la pression. Alors, pouvant faire augmenter, c'est potentiellement. Cela peut faire augmenter. Augmenter, c'est plus, en mettre davantage. Exemple, j'augmente ton salaire si tu travailles mieux. J'augmente ton salaire si tu travailles mieux. Ce qui veut dire que je vais te payer davantage à la condition que tu travailles mieux.",
+          "chinese": "可能导致压力增加。那么，“pouvant faire augmenter”就是指潜在地、可能导致增加。Augmenter，就是更多、增加。例如，“如果你工作表现更好，我就给你加薪。”“如果你工作表现更好，我就给你加薪。”这意味着只要你工作更努力，我就会付给你更多报酬。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:59.479",
+          "end_time": "00:03:29.159",
+          "french": "Augmenter. La pression, pressure, la pression. Exemple, la pression dans ce tuyau est trop importante. Il va exploser. La pression dans ce tuyau est trop importante. Il va exploser. Là, c'est la pression à la hausse. Regardez bien l'orthographe de la hausse. C'est vers le haut et non pas vers le bas.",
+          "chinese": "Augmenter（增加）。La pression，即 pressure（压力）。例如，“这个管道里的压力太大了。它会爆炸的。”“这个管道里的压力太大了。它会爆炸的。”这里是指上行压力（la pression à la hausse）。请仔细看“la hausse”的拼写。它是指向上，而不是向下。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:29.340",
+          "end_time": "00:03:56.900",
+          "french": "Upward, la pression à la hausse. Sur les prix de l'énergie, les prix, un prix, P-R-I-X, mot invariable. Un prix, c'est price. Les prix de l'énergie, attention, énergie, I-E à la fin. Alors que l'hiver, winter, l'hiver approche. Approche, c'est-à-dire n'est plus très loin, c'est ça.",
+          "chinese": "Upward，上行压力。针对能源价格（les prix de l'énergie）。价格，un prix，P-R-I-X，这个词是单复数同形的。Un prix，即 price。能源价格，注意，énergie 结尾是 I-E。随着冬季（l'hiver），winter，冬季临近（l'hiver approche）。Approche，也就是说不再遥远，就是这个意思。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:57.050",
+          "end_time": "00:04:14.379",
+          "french": "Exemple, ce promeneur approche, il est à 50 mètres, il vient vers moi. Ce promeneur approche, il est à 50 mètres et vient vers moi. Il est donc de plus en plus près, il approche.",
+          "chinese": "例如，“那个散步的人走近了，他在 50 米外，正朝我走来。”“那个散步的人走近了，他在 50 米外，正朝我走来。”因此他离得越来越近，他在走近（approche）。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:18.649",
+          "end_time": "00:04:37.100",
+          "french": "La fermeture de quatre réacteurs nucléaires sera prolongée pendant plusieurs semaines à cause de problèmes de corrosion pouvant faire augmenter la pression à la hausse sur les prix de l'énergie alors que l'hiver approche.",
+          "chinese": "由于腐蚀问题，四座核反应堆的关闭时间将延长数周，随着冬季临近，这可能会加大能源价格上涨的压力。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:38.740",
+          "end_time": "00:05:09.220",
+          "french": "Juste un petit mot pour vous dire que si vous avez du mal à vous endormir, j'ai créé un podcast pour vous aider. Sur ce podcast, vous pouvez écouter des sons de la nature et des bruits blancs. En anglais, in this podcast, you can listen to relaxing nature sounds and white noise to help you fall asleep. Chaque épisode dure 8 heures sans publicité. Vous pouvez écouter par exemple le bruit de l'eau, des oiseaux dans une forêt ou le bruit du vent ou de la pluie.",
+          "chinese": "顺便提一下，如果你入睡困难，我专门制作了一个播客来帮助你。在这个播客中，你可以听到大自然的声音和白噪音。用英语说，在这个播客中，你可以听到放松的自然声音和白噪音来帮助你入睡。每集时长 8 小时，没有广告。你可以听到流水声、森林里的鸟鸣声，或者是风声和雨声。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:05:09.430",
+          "end_time": "00:05:15.240",
+          "french": "Voilà, si ça vous intéresse, je mets les liens dans les notes de cet épisode. Merci et bonne écoute !",
+          "chinese": "好了，如果你感兴趣，我会把链接放在本集的备注里。谢谢，祝你收听愉快！"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:17.660",
+          "end_time": "00:05:47.459",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司 (Radio-Canada) 字幕组"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:05:47.459",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 13,
+        "source_video_name": "Rediffusion - Prolongé (Extended).json",
+        "tags": [
+          "搞钱",
+          "新闻时事"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "Part of speech classification",
+            "detail": "The vocabulary entry 'approche' is listed as a verb but uses the conjugated form instead of the infinitive 'approcher', which is inconsistent with other verb entries like 'prolonger'.",
+            "field": "language_analysis.vocabulary[9]"
+          },
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The IPA for 'invariable' [ɛ̃.va.ʁjab] is missing the final [l] sound usually present in standard pronunciation [ɛ̃.va.ʁjabl].",
+            "field": "language_analysis.vocabulary[7].ipa"
+          },
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The examples 'plusieurs_semaines' and 'un_mois' are listed under the 'liaison' heading, but they do not contain liaisons as they are followed by words starting with consonants.",
+            "field": "deep_learning.pronunciation.liaison"
+          },
+          {
+            "level": "warning",
+            "check": "Cross-field consistency",
+            "detail": "The 'occurrence_count' for several words (prolonger, réacteur, corrosion, pression, hausse, approche) does not perfectly match the actual number of times these words appear in the subtitles.",
+            "field": "language_analysis.vocabulary"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 4,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

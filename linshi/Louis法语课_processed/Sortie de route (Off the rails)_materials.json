@@ -1,0 +1,662 @@
+{
+  "source_file": "Sortie de route (Off the rails).json",
+  "channel": "Louis法语课",
+  "video_name": "Sortie de route (Off the rails)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T03:14:02.502Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 11,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le subjonctif après 'Il est temps que'",
+          "Le pronom relatif indéfini 'ce qui'",
+          "Les adverbes de manière en '-ment'"
+        ],
+        "speaking": [
+          "Parler des perturbations dans les transports en commun",
+          "Expliquer les raisons et les conséquences d'une grève"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "durement",
+            "part_of_speech": "adverbe",
+            "ipa": "[dyʁ.mɑ̃]",
+            "chinese": "辛苦地，艰难地",
+            "example_sentence": {
+              "french": "Il est temps que votre argent durement gagné travaille plus dur pour vous.",
+              "chinese": "现在正是您辛苦赚来的钱为您发挥更大效用的时候。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il est temps que votre argent durement gagné travaille plus dur pour vous.",
+                "chinese": "现在正是您最珍视的资金发挥最大效用的时刻。",
+                "source_video": "Subtitle 1"
+              }
+            ]
+          },
+          {
+            "french": "rapporter",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁa.pɔʁ.te]",
+            "chinese": "带来（收益），产生（利润）",
+            "example_sentence": {
+              "french": "Votre argent non investi peut rapporter jusqu'à 3,95 %.",
+              "chinese": "您未投资的资金最高可获得3.95%的收益。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Avec le compte Wealthfront Cash, votre argent non investi peut rapporter jusqu'à 3,95 % d'APY.",
+                "chinese": "通过Wealthfront现金账户，您的闲置现金最高可获得3.95%的年化收益率。",
+                "source_video": "Subtitle 1"
+              }
+            ]
+          },
+          {
+            "french": "éligible",
+            "part_of_speech": "adjectif",
+            "ipa": "[e.li.ʒibl]",
+            "chinese": "符合条件的，有资格的",
+            "example_sentence": {
+              "french": "Il y a des transferts instantanés gratuits pour les comptes éligibles.",
+              "chinese": "符合条件的账户可享受免费的即时转账。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Plus des transferts instantanés gratuits pour les comptes éligibles.",
+                "chinese": "符合条件的账户还可立即享受更多免费福利。",
+                "source_video": "Subtitle 1"
+              }
+            ]
+          },
+          {
+            "french": "paralyser",
+            "part_of_speech": "verbe",
+            "ipa": "[pa.ʁa.li.ze]",
+            "chinese": "使瘫痪，使停顿",
+            "example_sentence": {
+              "french": "Une grève surprise paralyse les transports parisiens.",
+              "chinese": "一场突如其来的罢工使巴黎的交通陷入瘫痪。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              4,
+              5,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Une grève surprise paralyse les transports parisiens depuis le 1er mai.",
+                "chinese": "自5月1日起，一场突如其来的罢工导致巴黎交通陷入瘫痪。",
+                "source_video": "Subtitle 2"
+              }
+            ]
+          },
+          {
+            "french": "perturbé",
+            "part_of_speech": "adjectif",
+            "ipa": "[pɛʁ.tyʁ.be]",
+            "chinese": "受到干扰的，受阻的",
+            "example_sentence": {
+              "french": "Le trafic reste fortement perturbé.",
+              "chinese": "交通依然严重受阻。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              6,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Le trafic reste fortement perturbé.",
+                "chinese": "交通依然严重受阻。",
+                "source_video": "Subtitle 3"
+              }
+            ]
+          },
+          {
+            "french": "protester",
+            "part_of_speech": "verbe",
+            "ipa": "[pʁɔ.tɛs.te]",
+            "chinese": "抗议",
+            "example_sentence": {
+              "french": "C'est quand on ne travaille pas pour protester.",
+              "chinese": "这就是当人们为了抗议而不工作的时候。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est quand on ne travaille pas pour protester, pour manifester.",
+                "chinese": "一场罢工，就是不工作以示抗议、表达诉求。",
+                "source_video": "Subtitle 4"
+              }
+            ]
+          },
+          {
+            "french": "manifester",
+            "part_of_speech": "verbe",
+            "ipa": "[ma.ni.fɛs.te]",
+            "chinese": "示威，表达诉求",
+            "example_sentence": {
+              "french": "Les gens arrêtent de travailler pour manifester.",
+              "chinese": "人们停止工作以进行示威。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est quand on ne travaille pas pour protester, pour manifester.",
+                "chinese": "一场罢工，就是不工作以示抗议、表达诉求。",
+                "source_video": "Subtitle 4"
+              }
+            ]
+          },
+          {
+            "french": "prévu",
+            "part_of_speech": "adjectif",
+            "ipa": "[pʁe.vy]",
+            "chinese": "计划好的，预料之中的",
+            "example_sentence": {
+              "french": "Cette grève n'était pas prévue.",
+              "chinese": "这场罢工是事先没有计划的。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Elle n'était pas prévue.",
+                "chinese": "事先并没有计划。",
+                "source_video": "Subtitle 4"
+              }
+            ]
+          },
+          {
+            "french": "décaféiné",
+            "part_of_speech": "adjectif",
+            "ipa": "[de.ka.fe.i.ne]",
+            "chinese": "无咖啡因的",
+            "example_sentence": {
+              "french": "Ce shake est préparé à partir de grains brésiliens décaféinés.",
+              "chinese": "这款奶昔由无咖啡因的巴西咖啡豆制成。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce shake nutritionnel tout-en-un offre une saveur authentique et intense, préparé à partir de grains brésiliens décaféinés de qualité supérieure...",
+                "chinese": "这款独立包装的营养奶昔，采用优质巴西无咖啡因甜甜圈制成，带来纯正、地道的美味体验...",
+                "source_video": "Subtitle 8"
+              }
+            ]
+          },
+          {
+            "french": "authentique",
+            "part_of_speech": "adjectif",
+            "ipa": "[o.tɑ̃.tik]",
+            "chinese": "正宗的，地道的",
+            "example_sentence": {
+              "french": "Il offre une saveur authentique et intense.",
+              "chinese": "它提供纯正而浓郁的风味。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce shake nutritionnel tout-en-un offre une saveur authentique et intense...",
+                "chinese": "这款独立包装的营养奶昔，采用优质巴西无咖啡因甜甜圈制成，带来纯正、地道的美味体验...",
+                "source_video": "Subtitle 8"
+              }
+            ]
+          },
+          {
+            "french": "supérieur",
+            "part_of_speech": "adjectif",
+            "ipa": "[sy.pe.ʁjœʁ]",
+            "chinese": "优质的，高级的",
+            "example_sentence": {
+              "french": "Ce sont des grains de qualité supérieure.",
+              "chinese": "这些是优质的咖啡豆。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "préparé à partir de grains brésiliens décaféinés de qualité supérieure...",
+                "chinese": "采用优质巴西无咖啡因甜甜圈制成...",
+                "source_video": "Subtitle 8"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "sortie de route",
+            "meaning": "偏离主题，跑题（字面意为：冲出道路）",
+            "example": {
+              "french": "Aujourd'hui la leçon est : sortie de route.",
+              "chinese": "今天这节课偏离了主题。"
+            },
+            "usage_note": "Dans ce contexte, l'expression est utilisée métaphoriquement pour indiquer que la leçon s'écarte du sujet habituel (la finance) pour parler de l'actualité (les grèves).",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "en vue",
+            "meaning": "在望，有望（达成）",
+            "example": {
+              "french": "Aucun accord en vue.",
+              "chinese": "目前尚无达成协议的迹象。"
+            },
+            "usage_note": "Très utilisé dans le langage journalistique pour parler de l'issue d'une négociation ou d'un événement futur proche.",
+            "source_ids": [
+              2,
+              3,
+              5,
+              6,
+              7
+            ]
+          },
+          {
+            "expression": "transports en commun",
+            "meaning": "公共交通",
+            "example": {
+              "french": "Ce qui veut dire que les transports en commun ne fonctionnent plus.",
+              "chinese": "这意味着公共交通不再运行了。"
+            },
+            "usage_note": "Terme standard pour désigner les bus, métros, tramways, etc. Indispensable pour parler de la vie urbaine en France.",
+            "source_ids": [
+              5,
+              6
+            ]
+          },
+          {
+            "expression": "avoir ce qu'il vous faut",
+            "meaning": "有你所需要的东西",
+            "example": {
+              "french": "Ka'Chava a ce qu'il vous faut avec son nouveau parfum café.",
+              "chinese": "Ka'Chava 的全新咖啡饮品正是你所需要的。"
+            },
+            "usage_note": "Expression très courante dans la publicité ou le commerce pour proposer une solution idéale à un client.",
+            "source_ids": [
+              8
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le subjonctif après 'Il est temps que'",
+            "structure": "Il est temps que + Sujet + Verbe au subjonctif",
+            "explanation": "L'expression impersonnelle 'Il est temps que' exprime une nécessité, une urgence ou un jugement. Elle déclenche obligatoirement l'utilisation du mode subjonctif dans la proposition subordonnée qui suit.",
+            "example": {
+              "french": "Il est temps que votre argent durement gagné travaille plus dur pour vous.",
+              "chinese": "现在正是您辛苦赚来的钱为您发挥更大效用的时候。"
+            },
+            "usage_note": "Si le sujet de l'action est général ou identique, on peut utiliser 'Il est temps de + infinitif' (ex: Il est temps de partir).",
+            "source_ids": [
+              1
+            ]
+          },
+          {
+            "name": "Le pronom relatif indéfini 'ce qui'",
+            "structure": "Proposition 1 + ce qui + Verbe (Proposition 2)",
+            "explanation": "'Ce qui' est utilisé pour reprendre l'ensemble d'une idée ou d'une phrase précédente (et non un seul mot) et sert de sujet au verbe qui suit. Il permet de lier une conséquence ou une explication à ce qui vient d'être dit.",
+            "example": {
+              "french": "Elle paralyse les transports parisiens. Ce qui veut dire que les transports en commun ne fonctionnent plus.",
+              "chinese": "它让巴黎交通陷入瘫痪。这意味着公共交通不再运行了。"
+            },
+            "usage_note": "Ne pas confondre avec 'ce que' qui a la fonction de complément d'objet direct (COD).",
+            "source_ids": [
+              4,
+              5
+            ]
+          },
+          {
+            "name": "Les adverbes de manière en '-ment'",
+            "structure": "Adjectif au féminin + -ment",
+            "explanation": "Les adverbes de manière se forment généralement en ajoutant le suffixe '-ment' à l'adjectif qualificatif au féminin. Ils servent à modifier un verbe ou un adjectif pour indiquer l'intensité ou la manière.",
+            "example": {
+              "french": "Le trafic reste fortement perturbé.",
+              "chinese": "交通依然严重受阻。"
+            },
+            "usage_note": "Dans le texte, 'fortement' (de l'adjectif fort/forte) modifie l'adjectif 'perturbé' pour en souligner l'intensité.",
+            "source_ids": [
+              3,
+              6,
+              7
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[œ̃] vs [ɔ̃]",
+              "description": "Distinction entre les voyelles nasales. Le son [œ̃] (ou [ɛ̃] en français moderne) dans 'aucun' s'oppose au son [ɔ̃] dans 'accord' ou 'transports'.",
+              "examples": [
+                "aucun",
+                "accord",
+                "transports"
+              ]
+            },
+            {
+              "sound": "[ʁ]",
+              "description": "Le 'R' français est très présent dans le vocabulaire de la grève et des transports. Il doit être prononcé depuis la gorge (fricative uvulaire).",
+              "examples": [
+                "grève",
+                "trafic",
+                "perturbé",
+                "protester"
+              ]
+            }
+          ],
+          "liaison": [
+            "aucun_accord [o.kœ̃.n‿a.kɔʁ]",
+            "transports_en commun [tʁɑ̃s.pɔʁ.z‿ɑ̃ kɔ.mœ̃]"
+          ],
+          "intonation": "Le ton journalistique utilisé dans la leçon (sous-titres 2 à 7) nécessite une intonation descendante à la fin des phrases courtes et factuelles (ex: 'Aucun accord en vue.')."
+        },
+        "vocabulary_network": {
+          "theme": "Les mouvements sociaux et les transports",
+          "core_word": "Grève",
+          "related_groups": [
+            {
+              "category": "Actions",
+              "words": [
+                "protester",
+                "manifester",
+                "paralyser",
+                "arrêter de travailler"
+              ]
+            },
+            {
+              "category": "Conséquences",
+              "words": [
+                "perturbé",
+                "ne fonctionnent plus",
+                "aucun accord"
+              ]
+            },
+            {
+              "category": "Domaine touché",
+              "words": [
+                "transports en commun",
+                "bus",
+                "métros",
+                "trafic"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Ce qui veut dire que les ___ en ___, les bus, les métros, tout ça, eh bien, ne ___ plus. Ces transports ne ___ plus. On ne peut plus les ___.",
+            "answer": "transports, commun, fonctionnent, marchent, prendre",
+            "explanation": "根据原文，讲者在解释罢工的后果，指出公共交通（transports en commun）不再运行（fonctionnent/marchent），人们无法再乘坐（prendre）。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, pourquoi cette grève est-elle qualifiée de « surprise » ?",
+            "options": {
+              "A": "Parce qu'elle n'était pas prévue.",
+              "B": "Parce qu'elle a commencé le 1er mai.",
+              "C": "Parce qu'elle offre des transferts instantanés.",
+              "D": "Parce qu'un accord a été trouvé rapidement."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第4段明确解释了“surprise”的含义：“Et cette grève, elle est surprise. Elle n'était pas prévue.”（这场罢工是出乎意料的。事先并没有计划。）",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Le trafic avec un seul « f », c'est-à-dire le trafic des transports en commun, reste fortement perturbé.",
+            "answer": "仅带一个“f”的“traffic”（法语拼写），也就是公共交通的客流，依然持续受到严重干扰。",
+            "explanation": "翻译难点在于“c'est-à-dire”（即，也就是）的准确表达，以及副词“fortement”（严重地）修饰过去分词“perturbé”（受干扰的）的结构。同时要注意讲者在解释法语单词“trafic”的拼写（只有一个f，区别于英语的traffic）。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Dans la phrase « Il est temps que votre argent durement gagné travaille plus dur pour vous », à quel mode est conjugué le verbe « travaille » et pourquoi ?",
+            "answer": "Le verbe « travaille » est conjugué au mode subjonctif. Il est utilisé car il suit l'expression impersonnelle « Il est temps que », qui exprime une nécessité ou un jugement et exige toujours le subjonctif.",
+            "explanation": "“Il est temps que”是一个表达必要性或主观评价的无人称短语，在法语语法中，其后的从句必须使用虚拟式（subjonctif）。在这里，“travaille”是动词travailler的虚拟式现在时形式。",
+            "source_ids": [
+              1
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "transports en commun",
+            "prévu",
+            "perturbé",
+            "durement"
+          ],
+          "covered_grammar": [
+            "Le subjonctif après 'Il est temps que'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il est temps que + [Sujet] + [Verbe au subjonctif]",
+            "explanation": "用于表达某事已经到了必须做的时候，带有一定的紧迫感或建议意味。",
+            "example": {
+              "french": "Il est temps que nous trouvions un accord.",
+              "chinese": "是我们达成协议的时候了。"
+            }
+          },
+          {
+            "pattern": "Ce qui veut dire que + [Proposition]",
+            "explanation": "用于解释前文提到的情况或事实所带来的结果或含义。",
+            "example": {
+              "french": "Les bus sont paralysés, ce qui veut dire que je vais devoir marcher.",
+              "chinese": "公交车瘫痪了，这意味着我得走路了。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在巴黎出差，遇到了一场突如其来的交通罢工。你需要向你的法国同事解释你为什么会迟到，并询问目前的交通状况。",
+          "requirements": "使用词汇 'grève surprise', 'transports en commun', 'paralysé' 以及表达 'ce qui veut dire que'。",
+          "starter": "Bonjour ! Je suis vraiment désolé pour mon retard, il y a une grève surprise qui..."
+        }
+      },
+      "summary": {
+        "content": "Ce texte est composé de trois parties distinctes : une publicité pour un compte d'investissement (Wealthfront), une leçon de français sous forme de flash info portant sur une grève surprise des transports à Paris, et enfin une publicité pour une boisson nutritionnelle (Ka'Chava). La partie centrale (la leçon) explique le vocabulaire lié aux mouvements sociaux en France, notamment les mots 'grève', 'protester', 'paralyser' et l'expression 'aucun accord en vue'.",
+        "keywords": [
+          "grève",
+          "transports",
+          "paralyser",
+          "accord",
+          "perturbé"
+        ],
+        "difficulty_note": "Le niveau global est B1. Le vocabulaire de la grève est très courant en France, mais le texte mélange des registres différents (publicité financière, actualité, publicité nutritionnelle), ce qui exige une bonne flexibilité de compréhension."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.000",
+          "end": "00:03:46.090"
+        },
+        "theme": "Actualités sociales (Grève des transports) et Publicités",
+        "cefr_level": "B1",
+        "vocabulary_count": 11,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.000",
+          "end_time": "00:00:17.710",
+          "french": "Il est temps que votre argent durement gagné travaille plus dur pour vous. Avec le compte Wealthfront Cash, votre argent non investi peut rapporter jusqu'à 3,95 % d'APY. C'est un boost de 0,65 % sur un taux déjà élevé pendant trois mois, juste parce que vous êtes un nouveau client. Plus des transferts instantanés gratuits pour les comptes éligibles. Commencez aujourd'hui sur Wealthfront.com.",
+          "chinese": "是时候让您辛苦赚来的钱为您创造更多价值了。使用 Wealthfront 现金账户，您未投资的资金可获得高达 3.95% 的年收益率 (APY)。仅因您是新客户，便可在三个月内享受在原有高利率基础上额外 0.65% 的加息。此外，符合条件的账户还可享受免费的即时转账服务。今天就访问 Wealthfront.com 开始吧。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:17.710",
+          "end_time": "00:00:48.359",
+          "french": "3,3 % d'APY de base via les banques partenaires au 30 janvier 2026. Le taux est variable, ne nécessite aucun minimum et est généré sur les fonds transférés vers les banques partenaires. Boost jusqu'à 150 000 $. Compte Cash proposé par Wealthfront Brokerage LLC, membre FINRA, SIPC, non bancaire. Bonjour, aujourd'hui la leçon est : sortie de route. Une grève surprise paralyse les transports parisiens depuis le 1er mai. Aucun accord en vue.",
+          "chinese": "截至2026年1月30日，通过合作银行提供的基础年收益率 (APY) 为 3.3%。该利率为浮动利率，无最低存款要求，且基于转入合作银行的资金产生。加息额度最高适用于 150,000 美元。现金账户由 Wealthfront Brokerage LLC（FINRA 和 SIPC 成员，非银行机构）提供。大家好，今天的课程是：偏离正轨 (sortie de route)。自5月1日以来，一场突如其来的罢工使巴黎的交通陷入瘫痪。目前尚无达成协议的迹象。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:48.659",
+          "end_time": "00:01:08.900",
+          "french": "Le trafic reste fortement perturbé. Une grève surprise paralyse les transports parisiens depuis le 1er mai. Aucun accord en vue. Le trafic reste fortement perturbé.",
+          "chinese": "交通依然严重受阻。自5月1日以来，一场突如其来的罢工使巴黎的交通陷入瘫痪。目前尚无达成协议的迹象。交通依然严重受阻。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:09.400",
+          "end_time": "00:01:41.099",
+          "french": "Alors on commence avec une grève. A strike, une grève. C'est quand on ne travaille pas pour protester, pour manifester. On arrête de travailler. C'est une grève. Et cette grève, elle est surprise. Elle n'était pas prévue. Une grève qui paralyse les transports parisiens. Elle paralyse les transports parisiens.",
+          "chinese": "那么我们从“une grève”（罢工）开始。英语的 a strike，就是 une grève。这是指人们为了抗议、示威而不工作。人们停止工作。这就是“une grève”。而这场罢工是“surprise”（突如其来的）。它是没有预料到的。一场使巴黎交通瘫痪的罢工。它使巴黎的交通陷入了瘫痪。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:41.370",
+          "end_time": "00:02:11.300",
+          "french": "Ce qui veut dire que les transports en commun, les bus, les métros, tout ça, eh bien, ne fonctionnent plus. Ces transports ne marchent plus. On ne peut plus les prendre. Ils sont paralysés. Depuis, since, le 1er mai, aucun accord en vue. Il n'y a pas d'accord. Il n'y a pas d'accord. Aucun.",
+          "chinese": "这意味着公共交通，比如公交车、地铁等等，都不再运行了。这些交通工具不再运作了。人们没法再乘坐它们。它们瘫痪了。“Depuis”，英语的 since，自5月1日以来，“aucun accord en vue”（尚无达成协议的迹象）。没有协议。没有达成协议。“Aucun”（没有）。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:11.990",
+          "end_time": "00:02:45.740",
+          "french": "« None », aucun. « No deal », aucun accord. « En vue », c'est-à-dire dans un avenir proche, dans les jours qui viennent. « In sight », en vue. Le trafic avec un seul « f », c'est-à-dire le trafic des transports en commun, reste, il continue d'être fortement perturbé, fortement.",
+          "chinese": "英语的“None”，就是 aucun。英语的“No deal”，就是 aucun accord。“En vue”，意思是在不久的将来，在接下来的几天里。英语的“In sight”，就是 en vue。“Le trafic”只有一个“f”，指的是公共交通的运行状况，“reste”，也就是继续处于“fortement perturbé”（严重受阻）的状态，“fortement”（严重地）。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:46.039",
+          "end_time": "00:03:13.129",
+          "french": "Largement, grandement, fortement perturbé. Une grève surprise paralyse les transports parisiens depuis le 1er mai. Aucun accord en vue. Le trafic reste fortement perturbé.",
+          "chinese": "广泛地、极大地、严重地受阻。自5月1日以来，一场突如其来的罢工使巴黎的交通陷入瘫痪。目前尚无达成协议的迹象。交通依然严重受阻。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:15.669",
+          "end_time": "00:03:39.520",
+          "french": "C'est le café que vous aimez, mais sans la caféine. Ka'Chava a ce qu'il vous faut avec son nouveau parfum café. Ce shake nutritionnel tout-en-un offre une saveur authentique et intense, préparé à partir de grains brésiliens décaféinés de qualité supérieure, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus encore. Offrez-vous la nutrition et la saveur dont votre corps a envie. Allez sur kachava.com et utilisez le code SMOOTHIE.",
+          "chinese": "这是您喜欢的咖啡，但不含咖啡因。Ka'Chava 推出的全新咖啡口味能满足您的需求。这款全能营养奶昔提供纯正浓郁的风味，由优质的巴西脱因咖啡豆制成，含有25克蛋白质、6克纤维、绿色蔬菜以及更多营养成分。为您提供身体渴望的营养与美味。请访问 kachava.com 并使用优惠码 SMOOTHIE。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:39.520",
+          "end_time": "00:03:46.090",
+          "french": "C'est K-A-C-H-A-V-A point com, code SMOOTHIE.",
+          "chinese": "网址是 K-A-C-H-A-V-A 点 com，优惠码 SMOOTHIE。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.000",
+        "end_time": "00:03:46.090",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 9,
+        "source_video_name": "Sortie de route (Off the rails).json",
+        "tags": [
+          "职场",
+          "商务"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "Translation Accuracy",
+            "detail": "In the examples for 'décaféiné' and 'supérieur' (originating from Subtitle 8), the French word 'grains' (coffee beans) is incorrectly translated as '甜甜圈' (donuts) in the Chinese text.",
+            "field": "language_analysis.vocabulary"
+          },
+          {
+            "level": "warning",
+            "check": "Translation Accuracy",
+            "detail": "In Subtitle 6, the English phrase 'In sight' is incorrectly transcribed as 'Inside' in the Chinese translation.",
+            "field": "subtitles"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 2,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

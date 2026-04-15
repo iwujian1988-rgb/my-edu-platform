@@ -1,0 +1,612 @@
+{
+  "source_file": "Rediffusion - Bizutage (Hazing).json",
+  "channel": "Louis法语课",
+  "video_name": "重播 - 欺凌新生",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T23:17:56.709Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le conditionnel de l'information incertaine",
+          "Le pronom relatif composé 'au cours duquel'"
+        ],
+        "speaking": [
+          "Discussing professional ethics and workplace behavior",
+          "Explaining the French culinary star system"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "bizutage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[bizytaʒ]",
+            "chinese": "（学校或团体的）入会欺凌，恶作剧",
+            "example_sentence": {
+              "french": "Un chef étoilé a quitté son emploi après un bizutage.",
+              "chinese": "一位星级主厨在一次欺凌事件后辞职了。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Pour rentrer dans une grande école, il faut subir parfois un bizutage.",
+                "chinese": "为了进入名牌大学，有时必须经历入会欺凌。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "étoilé",
+            "part_of_speech": "adjectif",
+            "ipa": "[etwale]",
+            "chinese": "星级的（特指米其林星级）",
+            "example_sentence": {
+              "french": "Ce chef est étoilé par un guide gastronomique.",
+              "chinese": "这位厨师被美食指南评为星级。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              4
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Un chef peut avoir au maximum 3 étoiles.",
+                "chinese": "一位厨师最多可以获得3颗星。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "brusquement",
+            "part_of_speech": "adverbe",
+            "ipa": "[bʁyskəmɑ̃]",
+            "chinese": "突然地，骤然地",
+            "example_sentence": {
+              "french": "Il a brusquement quitté son emploi.",
+              "chinese": "他突然辞去了工作。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Je dormais quand brusquement je me suis réveillé à cause du tonnerre.",
+                "chinese": "我正在睡觉，突然被雷声惊醒了。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "gastronomique",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɡastʁɔnɔmik]",
+            "chinese": "美食的，烹饪学的",
+            "example_sentence": {
+              "french": "Il a reçu des étoiles par un guide gastronomique.",
+              "chinese": "他获得了美食指南的星级评价。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il a reçu des étoiles par un guide gastronomique.",
+                "chinese": "他获得了美食指南的星级评价。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "subir",
+            "part_of_speech": "verbe",
+            "ipa": "[sybiʁ]",
+            "chinese": "遭受，经受",
+            "example_sentence": {
+              "french": "Il faut subir parfois un bizutage.",
+              "chinese": "有时必须经受入会欺凌。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Il faut subir parfois un bizutage.",
+                "chinese": "有时必须经受入会欺凌。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "humilié",
+            "part_of_speech": "adjectif / participe passé",
+            "ipa": "[ymilje]",
+            "chinese": "受羞辱的",
+            "example_sentence": {
+              "french": "Un aide de cuisine aurait été humilié.",
+              "chinese": "据称一名厨房帮手受到了羞辱。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              11
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Il aurait été humilié, selon les rapports.",
+                "chinese": "据报道，他受到了羞辱。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "tonnerre",
+            "part_of_speech": "nom masculin",
+            "ipa": "[tɔnɛʁ]",
+            "chinese": "雷声",
+            "example_sentence": {
+              "french": "Je me suis réveillé à cause du tonnerre.",
+              "chinese": "我因为雷声而惊醒。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              5,
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Je dormais quand brusquement je me suis réveillé à cause du tonnerre.",
+                "chinese": "我正在睡觉，突然被雷声惊醒了。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "aide de cuisine",
+            "part_of_speech": "nom",
+            "ipa": "[ɛd də kɥizin]",
+            "chinese": "厨房帮手，二厨助手",
+            "example_sentence": {
+              "french": "Un aide de cuisine n'est pas un grand cuisinier.",
+              "chinese": "厨房帮手不是大厨。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              10,
+              11
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Un aide de cuisine, « kitchen hand » en anglais.",
+                "chinese": "厨房帮手，英语里叫 kitchen hand。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "sous-vêtements",
+            "part_of_speech": "nom masculin pluriel",
+            "ipa": "[suvɛtmɑ̃]",
+            "chinese": "内衣",
+            "example_sentence": {
+              "french": "Se promener dans les rues en sous-vêtements.",
+              "chinese": "穿着内衣在街上闲逛。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Ça, c'est un bizutage : se promener dans les rues en sous-vêtements.",
+                "chinese": "这就是一种欺凌：穿着内衣在街上闲逛。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "rapports",
+            "part_of_speech": "nom masculin pluriel",
+            "ipa": "[ʁapɔʁ]",
+            "chinese": "报告，报道",
+            "example_sentence": {
+              "french": "Selon les rapports, le chef a quitté l'hôtel.",
+              "chinese": "根据报道，主厨离开了酒店。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              11
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Il aurait été humilié, selon les rapports.",
+                "chinese": "据报道，他受到了羞辱。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "au cours duquel",
+            "meaning": "在……期间；在那个过程中",
+            "example": {
+              "french": "Un bizutage au cours duquel un aide de cuisine aurait été humilié.",
+              "chinese": "在一次欺凌事件中，一名厨房帮手据称受到了羞辱。"
+            },
+            "usage_note": "用于引导关系从句，指代在某个事件或过程（阳性单数名词）中发生的事。",
+            "source_ids": [
+              2,
+              9
+            ]
+          },
+          {
+            "expression": "selon les rapports",
+            "meaning": "根据报道",
+            "example": {
+              "french": "Selon les rapports, il a brusquement quitté son emploi.",
+              "chinese": "根据报道，他突然辞去了工作。"
+            },
+            "usage_note": "常用于新闻报道，表示信息的来源，且往往暗示信息尚未被完全证实。",
+            "source_ids": [
+              2,
+              11
+            ]
+          },
+          {
+            "expression": "un hôtel de luxe",
+            "meaning": "豪华酒店",
+            "example": {
+              "french": "Il travaillait dans un hôtel de luxe.",
+              "chinese": "他在一家豪华酒店工作。"
+            },
+            "usage_note": "Luxe 在此作定语，表示高档、奢侈。",
+            "source_ids": [
+              2,
+              7
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le conditionnel de l'information incertaine",
+            "structure": "Sujet + Verbe au conditionnel",
+            "explanation": "在新闻报道中，条件式常用来表示未经证实的消息或传闻。",
+            "example": {
+              "french": "Un aide de cuisine aurait été humilié.",
+              "chinese": "一名厨房帮手据称受到了羞辱（尚未百分之百确定）。"
+            },
+            "usage_note": "这种用法在法语媒体中非常常见，对应英语中的 'allegedly' 或 'reportedly'。",
+            "source_ids": [
+              10,
+              11
+            ]
+          },
+          {
+            "name": "Le pronom relatif composé 'au cours duquel'",
+            "structure": "Nom (masc. sing.) + au cours duquel + proposition",
+            "explanation": "复合关系代词用于引导从句，'duquel' 必须与先行词的性、数一致。'Au cours de' 表示在……期间。",
+            "example": {
+              "french": "Un bizutage au cours duquel un aide de cuisine aurait été humilié.",
+              "chinese": "在一次欺凌事件中，一名厨房帮手据称受到了羞辱。"
+            },
+            "usage_note": "如果先行词是阴性单数，则使用 'au cours de laquelle'。",
+            "source_ids": [
+              2,
+              9
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[o]",
+              "description": "L'accent circonflexe sur le 'o' dans 'hôtel' produit un son fermé et long.",
+              "examples": [
+                "hôtel"
+              ]
+            }
+          ],
+          "liaison": [
+            "un aide [œ̃.nɛd]",
+            "un hôtel [œ̃.nɔ.tɛl]"
+          ],
+          "intonation": "Rising intonation on 'Brusquement' when used as an interjection for emphasis in the explanation."
+        },
+        "vocabulary_network": {
+          "theme": "La Gastronomie et le Travail",
+          "core_word": "Cuisine",
+          "related_groups": [
+            {
+              "category": "Métiers",
+              "words": [
+                "chef étoilé",
+                "cuisinier",
+                "aide de cuisine"
+              ]
+            },
+            {
+              "category": "Établissements",
+              "words": [
+                "hôtel de luxe",
+                "restaurant",
+                "grande école"
+              ]
+            },
+            {
+              "category": "Actions",
+              "words": [
+                "quitter son emploi",
+                "subir un bizutage",
+                "préparer des repas"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Un ___ ___ français a ___ ___ son ___ dans un ___ de ___ après un ___ au cours duquel un ___ de ___ aurait été ___ , selon les ___ .",
+            "answer": "chef, étoilé, brusquement, quitté, emploi, hôtel, luxe, bizutage, aide, cuisine, humilié, rapports",
+            "explanation": "这句话完整复述了文章的核心新闻事件，涵盖了主厨身份、离职方式、地点及起因。",
+            "source_ids": [
+              2,
+              11
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi le chef étoilé a-t-il quitté son emploi ?",
+            "options": {
+              "A": "Parce qu'il a reçu 3 étoiles.",
+              "B": "À cause d'un bizutage où un aide de cuisine a été humilié.",
+              "C": "Parce qu'il voulait travailler dans un motel.",
+              "D": "À cause du tonnerre qui l'a réveillé."
+            },
+            "answer": "B",
+            "explanation": "根据原文第2条和第11条，主厨辞职是因为发生了一次欺凌事件（bizutage），其中一名厨房帮手受到了羞辱。",
+            "source_ids": [
+              2,
+              11
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Pour rentrer dans une grande école, il faut subir parfois un bizutage.",
+            "answer": "为了进入名牌大学，有时必须经受入会欺凌。",
+            "explanation": "Subir 意为遭受/经受；grande école 特指法国的高等专业学院（名牌大学）。",
+            "source_ids": [
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase pour exprimer une incertitude (utilisez le conditionnel) : 'Selon les rapports, l'aide de cuisine a été humilié.'",
+            "answer": "Selon les rapports, l'aide de cuisine aurait été humilié.",
+            "explanation": "使用过去条件式（aurait été）来表达新闻中未经证实的传闻，符合原文的表达方式。",
+            "source_ids": [
+              10,
+              11
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "chef étoilé",
+            "brusquement",
+            "bizutage",
+            "humilié",
+            "subir"
+          ],
+          "covered_grammar": [
+            "Le conditionnel de l'information incertaine",
+            "Le pronom relatif composé"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il a [adverbe] quitté son [nom].",
+            "explanation": "用于描述突然改变职业或生活状态。",
+            "example": {
+              "french": "Il a brusquement quitté son emploi.",
+              "chinese": "他突然辞去了工作。"
+            }
+          },
+          {
+            "pattern": "Cela veut dire que...",
+            "explanation": "用于解释某个词或某种情况的含义。",
+            "example": {
+              "french": "Cela veut dire que ce chef est un très bon cuisinier.",
+              "chinese": "这意味着这位主厨是一位非常出色的厨师。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous êtes journaliste et vous interviewez un témoin de la scène à l'hôtel.",
+          "requirements": "Utilisez le conditionnel pour rapporter les faits et le mot 'bizutage'.",
+          "starter": "Journaliste : Bonjour, pouvez-vous nous dire ce qui se serait passé hier soir ?"
+        }
+      },
+      "summary": {
+        "content": "Cette leçon traite d'un incident de 'bizutage' (hazing) dans le milieu de la haute gastronomie française. Un chef étoilé a démissionné brusquement d'un hôtel de luxe suite à l'humiliation présumée d'un aide de cuisine. Le texte explique également le système des étoiles Michelin et le vocabulaire lié au travail en cuisine.",
+        "keywords": [
+          "bizutage",
+          "chef étoilé",
+          "gastronomie",
+          "conditionnel",
+          "humiliation"
+        ],
+        "difficulty_note": "Le texte est de niveau B1 en raison de l'utilisation du conditionnel journalistique et de termes spécifiques au milieu professionnel et social français."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:05:24"
+        },
+        "theme": "Le bizutage dans la gastronomie française",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.759",
+          "end_time": "00:00:53.030",
+          "french": "Bonjour ! Aujourd'hui, la leçon est « Bizutage ». Un chef étoilé français a brusquement quitté son emploi dans un hôtel de luxe après un bizutage au cours duquel un aide de cuisine aurait été humilié, selon les rapports.",
+          "chinese": "大家好！今天的课程主题是“整蛊（Bizutage）”。据报道，一位法国米其林星级厨师在发生一起厨房帮工疑似受辱的“整蛊”事件后，突然辞去了他在一家豪华酒店的工作。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:53.530",
+          "end_time": "00:01:14.150",
+          "french": "Once again, un chef étoilé français a brusquement quitté son emploi dans un hôtel de luxe après un bizutage au cours duquel un aide de cuisine aurait été humilié, selon les rapports. On commence avec un chef étoilé.",
+          "chinese": "再读一遍：据报道，一位法国米其林星级厨师在发生一起厨房帮工疑似受辱的“整蛊”事件后，突然辞去了他在一家豪华酒店的工作。我们先从“星级厨师（un chef étoilé）”开始讲起。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:14.489",
+          "end_time": "00:01:44.780",
+          "french": "Un chef, vous savez, c'est quelqu'un qui fait à manger. C'est son métier de préparer la nourriture, de préparer des repas dans un restaurant. Et ce chef est étoilé. Cela veut dire qu'il a reçu des étoiles par un guide gastronomique. Il a reçu des étoiles. En France, on peut avoir une, deux ou trois étoiles. Un chef peut avoir au maximum trois étoiles.",
+          "chinese": "厨师（Un chef），大家都知道，就是做饭的人。在餐厅里准备食物、烹饪餐点是他的职业。而这位厨师是“星级的（étoilé）”。这意味着他获得了美食指南授予的星级。他获得了星级。在法国，可以获得一星、二星或三星。一位厨师最高可以获得三星。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:44.920",
+          "end_time": "00:02:15.530",
+          "french": "Donc, s'il est étoilé, cela veut dire que ce chef est un très bon cuisinier. Il est très bon. Il est dans un grand restaurant. Il a brusquement... Brusquement, c'est-à-dire soudainement, tout d'un coup, « abruptly » en anglais. Brusquement. Exemple : « Je dormais quand brusquement je me suis réveillé à cause du tonnerre. »",
+          "chinese": "所以，如果他是星级厨师，就意味着这位厨师厨艺精湛。他非常优秀，在一家高级餐厅工作。他“突然（brusquement）”……“Brusquement”的意思是突然地、一下子，英语里是“abruptly”。例子：“我正在睡觉，突然被雷声惊醒了。”"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:15.860",
+          "end_time": "00:02:47.300",
+          "french": "Je dormais quand brusquement je me suis réveillé à cause du tonnerre. Quitter... Quitter, c'est partir, laisser, « quit ». Quitter. Exemple : « Il a quitté sa femme après seulement deux ans de mariage. » Il a quitté sa femme après seulement deux ans de mariage. Ici, c'est quitter son emploi. Un emploi, « job », un emploi, son travail.",
+          "chinese": "“我正在睡觉，突然被雷声惊醒了。”离开（Quitter）……“Quitter”就是离开、丢下，英语里的“quit”。例子：“他在结婚仅两年后就离开了他的妻子。”在这里，是指辞去工作（quitter son emploi）。“Un emploi”就是工作、职位。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:47.740",
+          "end_time": "00:03:11.500",
+          "french": "Dans un hôtel de luxe... Un hôtel, n'oubliez pas l'accent circonflexe sur le O. Un hôtel de luxe, « luxury hotel ». Un hôtel de luxe. Au contraire, on peut dire un hôtel de bord de route. En anglais, on dirait « motel ». Un hôtel de bord de route.",
+          "chinese": "在一家豪华酒店（un hôtel de luxe）……“Un hôtel”，别忘了O上面的折音符（^）。“Un hôtel de luxe”就是豪华酒店。相反，我们可以说路边旅馆（un hôtel de bord de route），英语里叫“motel”。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:12.250",
+          "end_time": "00:03:35.590",
+          "french": "Après, un bizutage, « hazing » en anglais. Vous voyez, c'est le titre de cette leçon. Par exemple, pour rentrer dans une grande école, il faut subir parfois un bizutage. Pour rentrer dans une grande école, il faut subir parfois un bizutage.",
+          "chinese": "接着是“整蛊（un bizutage）”，英语是“hazing”。你看，这是本课的标题。例如，为了进入名牌大学（grande école），有时必须经历一场“整蛊”。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:36.020",
+          "end_time": "00:03:57.509",
+          "french": "Par exemple, un bizutage, ça peut être de se promener dans les rues en sous-vêtements. Ça, c'est un bizutage : se promener dans les rues en sous-vêtements. Au cours duquel ? « In which » ? Pendant lequel ?",
+          "chinese": "比如，一种“整蛊”可能是只穿内衣在街上走。这就是一种“整蛊”：穿着内衣在街上走。“在此期间（Au cours duquel）”？英语里的“In which”？也就是“在那个过程中”？"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:58.389",
+          "end_time": "00:04:20.420",
+          "french": "Un aide de cuisine, « kitchen hand » en anglais. Un aide de cuisine. Donc ce n'est pas un grand cuisinier. C'est un aide. « Une aide », en anglais, c'est « help ». Une aide. « Aurait », c'est le conditionnel. Donc on n'est pas certain que ce soit vrai.",
+          "chinese": "厨房帮工（Un aide de cuisine），英语是“kitchen hand”。所以他不是大厨，而是一名助手。“Une aide”在英语里是“help”。“Aurait”是条件式，所以我们并不确定这是否属实。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:20.660",
+          "end_time": "00:04:52.839",
+          "french": "Humilié... Il aurait été humilié, « humiliated », selon les rapports, selon ce qu'on en a dit, selon les faits rapportés. Un chef étoilé français a brusquement quitté son emploi dans un hôtel de luxe après un bizutage au cours duquel un aide de cuisine aurait été humilié, selon les rapports.",
+          "chinese": "受辱（Humilié）……他据称受到了羞辱（humiliated）。“根据报道（selon les rapports）”，根据人们所说的，根据报道的事实。一位法国米其林星级厨师在发生一起厨房帮工疑似受辱的“整蛊”事件后，突然辞去了他在一家豪华酒店的工作。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:55.100",
+          "end_time": "00:05:24.939",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司字幕"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:05:24.939",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 12,
+        "source_video_name": "Rediffusion - Bizutage (Hazing).json",
+        "tags": [
+          "考试干货",
+          "美食"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

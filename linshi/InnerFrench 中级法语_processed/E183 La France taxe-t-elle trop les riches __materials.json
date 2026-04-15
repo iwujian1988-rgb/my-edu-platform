@@ -1,0 +1,1294 @@
+{
+  "source_file": "E183 La France taxe-t-elle trop les riches _.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E183 La France taxe-t-elle trop les riches _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T14:56:08.816Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "虚拟式在目的从句中的应用 (Subjonctif après 'pour que')",
+          "条件式现在时表示假设或推论 (Conditionnel présent pour l'hypothèse)",
+          "关系代词 dont 的用法"
+        ],
+        "speaking": [
+          "能够讨论财富分配与社会不平等话题",
+          "能够陈述并反驳关于税收政策的观点"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "patrimoine",
+            "part_of_speech": "nom",
+            "ipa": "[patʁimwan]",
+            "chinese": "财产，遗产，资产",
+            "example_sentence": {
+              "french": "Le patrimoine, c'est ce que l'on possède : immobilier, œuvres d'art, ou entreprises.",
+              "chinese": "资产是指我们所拥有的东西：房地产、艺术品或企业。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Les 10 % les plus riches possèdent 55 % du patrimoine national.",
+                "chinese": "最富有的 10% 人口拥有全国 55% 的资产。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "dividendes",
+            "part_of_speech": "nom",
+            "ipa": "[dividɑ̃d]",
+            "chinese": "股息，红利",
+            "example_sentence": {
+              "french": "L'entreprise peut nous verser des dividendes parce qu'on est propriétaire.",
+              "chinese": "因为我们是所有者，公司可以向我们支付股息。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              27,
+              28,
+              68,
+              69
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "L'inconvénient des dividendes, c'est que ça ne donne aucun droit à la retraite.",
+                "chinese": "股息的缺点在于它不赋予任何退休权利。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "exonérations",
+            "part_of_speech": "nom",
+            "ipa": "[ɛɡzɔneʁasjɔ̃]",
+            "chinese": "减免（税收等）",
+            "example_sentence": {
+              "french": "Les grands groupes bénéficient de nombreuses exonérations fiscales.",
+              "chinese": "大型集团受益于许多税务减免。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              63
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Bénéficier de toutes les aides et les exonérations possibles.",
+                "chinese": "享受所有可能的补助和减免。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "optimisation fiscale",
+            "part_of_speech": "nom",
+            "ipa": "[ɔptimizasjɔ̃ fiskal]",
+            "chinese": "税务优化（合法避税）",
+            "example_sentence": {
+              "french": "La holding est un mécanisme d'optimisation fiscale très connu.",
+              "chinese": "控股公司是一种非常著名的税务优化机制。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              76
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est un mécanisme d'optimisation fiscale qui est tout à fait légal.",
+                "chinese": "这是一种完全合法的税务优化机制。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "impôt plancher",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃po plɑ̃ʃe]",
+            "chinese": "最低税额，底线税",
+            "example_sentence": {
+              "french": "Zucman propose un impôt plancher de 2 % pour les ultra-riches.",
+              "chinese": "祖克曼建议对超级富豪征收 2% 的最低税额。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              83,
+              84
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le plancher, c'est un impôt minimum en dessous duquel on ne peut pas aller.",
+                "chinese": "底线税是指不能低于的最低税额。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "unanime",
+            "part_of_speech": "adjectif",
+            "ipa": "[ynanim]",
+            "chinese": "一致的，全体一致的",
+            "example_sentence": {
+              "french": "Sur ce sujet, les Français sont assez unanimes.",
+              "chinese": "在这个问题上，法国人的意见相当一致。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              89
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Au niveau des économistes, c'est pas tout à fait unanime.",
+                "chinese": "在经济学家层面，意见并非完全一致。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "valorisation",
+            "part_of_speech": "nom",
+            "ipa": "[valɔrizasjɔ̃]",
+            "chinese": "估值，增值",
+            "example_sentence": {
+              "french": "La valorisation d'une entreprise non cotée est complexe.",
+              "chinese": "非上市公司的估值非常复杂。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              91,
+              93
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "La première critique concerne la valorisation de ce patrimoine.",
+                "chinese": "第一个批评涉及这些资产的估值。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "licornes",
+            "part_of_speech": "nom",
+            "ipa": "[likɔʁn]",
+            "chinese": "独角兽企业（估值超10亿美元的初创公司）",
+            "example_sentence": {
+              "french": "Les licornes sont des entreprises très valorisées mais parfois sans argent liquide.",
+              "chinese": "独角兽企业估值很高，但有时缺乏现金。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              94
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Certaines entreprises qu'on appelle les licornes sont très valorisées.",
+                "chinese": "某些被称为独角兽的企业估值非常高。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "cercle vicieux",
+            "part_of_speech": "nom",
+            "ipa": "[sɛʁkl visjø]",
+            "chinese": "恶性循环",
+            "example_sentence": {
+              "french": "La fuite des capitaux pourrait créer un cercle vicieux pour l'économie.",
+              "chinese": "资本外逃可能会给经济造成恶性循环。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              99
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça serait un cercle vicieux qui aurait les effets opposés.",
+                "chinese": "这将是一个会产生相反效果的恶性循环。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          },
+          {
+            "french": "exil fiscal",
+            "part_of_speech": "nom",
+            "ipa": "[ɛɡzil fiskal]",
+            "chinese": "税务移民，逃税外迁",
+            "example_sentence": {
+              "french": "L'exit tax vise à limiter l'exil fiscal des plus riches.",
+              "chinese": "离境税旨在限制最富有阶层的税务移民。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              101,
+              102,
+              104
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Continuer à taxer les personnes qui se seraient exilées fiscalement.",
+                "chinese": "继续对那些已经进行税务移民的人征税。",
+                "source_video": "InnerFrench Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "faire son bonhomme de chemin",
+            "meaning": "逐渐取得进展，逐渐为人接受",
+            "example": {
+              "french": "À gauche, il y a une idée qui fait son bonhomme de chemin.",
+              "chinese": "在左派中，有一个想法正逐渐深入人心。"
+            },
+            "usage_note": "形象地描述一个想法或计划在没有太多阻碍的情况下稳步推进。",
+            "source_ids": [
+              10
+            ]
+          },
+          {
+            "expression": "se faire l'avocat du diable",
+            "meaning": "充当反方发言人，故意唱反调",
+            "example": {
+              "french": "Après, pour me faire l'avocat du diable, je suis aussi chef d'entreprise.",
+              "chinese": "然后，为了唱个反调，我自己也是一名企业主。"
+            },
+            "usage_note": "用于在讨论中提出相反观点，以使辩论更全面，即使说话者未必完全赞同该观点。",
+            "source_ids": [
+              27
+            ]
+          },
+          {
+            "expression": "sans commune mesure",
+            "meaning": "无法相比，不可同日而语",
+            "example": {
+              "french": "C'est sans commune mesure avec ceux qui sont un peu aisés.",
+              "chinese": "这与那些稍微富裕的人相比，简直不可同日而语。"
+            },
+            "usage_note": "用于强调两个事物之间存在巨大的量级差异。",
+            "source_ids": [
+              18
+            ]
+          },
+          {
+            "expression": "mettre tout le monde dans le même sac",
+            "meaning": "一概而论，混为一谈",
+            "example": {
+              "french": "En mettant toutes les entreprises dans le même sac, elles ont bénéficié d'aides.",
+              "chinese": "如果把所有企业一概而论，它们都获得了补助。"
+            },
+            "usage_note": "通常带有批评意味，指责对方没有区分不同情况。",
+            "source_ids": [
+              63
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "虚拟式在目的从句中的应用 (Subjonctif après 'pour que')",
+            "structure": "pour que + 主语 + 虚拟式动词",
+            "explanation": "当主句和从句的主语不同，且表示目的时，使用 pour que 引导虚拟式。",
+            "example": {
+              "french": "On voulait vous parler des taxes pour que vous puissiez comprendre où on en est.",
+              "chinese": "我们想跟你们谈谈税收，好让你们能理解现状。"
+            },
+            "usage_note": "注意 pouvoir 的虚拟式变位为 puisse, puisses, puisse, puissions, puissiez, puissent。",
+            "source_ids": [
+              11
+            ]
+          },
+          {
+            "name": "条件式现在时表示假设或推论 (Conditionnel présent pour l'hypothèse)",
+            "structure": "主语 + 动词条件式变位",
+            "explanation": "在讨论尚未发生或可能发生的政策后果时，常用条件式表示一种可能性或推测。",
+            "example": {
+              "french": "Une telle taxe risquerait de faire fuir les riches.",
+              "chinese": "这样一种税收可能会冒着让富人逃离的风险。"
+            },
+            "usage_note": "常用于表达对未来不确定结果的担忧或预测。",
+            "source_ids": [
+              99
+            ]
+          },
+          {
+            "name": "关系代词 dont 的用法",
+            "structure": "名词 + dont + 句子 (dont 代替 de 引导的补语)",
+            "explanation": "dont 用于引导关系从句，代替先行词在从句中作为带 de 的间接宾语、形容词补语或名词补语。",
+            "example": {
+              "french": "Après, on a d'autres familles dont on connaît très bien les noms.",
+              "chinese": "之后，我们还有一些其他的家族，我们非常熟悉它们的名字。"
+            },
+            "usage_note": "这里的 dont 代替了 'les noms de ces familles' 中的 de 结构。",
+            "source_ids": [
+              23
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɛ̃]",
+              "description": "鼻化元音，常见于经济术语如 impôt, ainsi, financier。",
+              "examples": [
+                "impôt",
+                "financer"
+              ]
+            },
+            {
+              "sound": "[ɔ̃]",
+              "description": "鼻化元音，常见于名词后缀 -tion。",
+              "examples": [
+                "répartition",
+                "optimisation"
+              ]
+            }
+          ],
+          "liaison": [
+            "les ultra-riches [lezyltʁaʁiʃ]",
+            "impôt sur [ɛ̃posyʁ]",
+            "des aides [dezɛd]"
+          ],
+          "intonation": "在列举税种或数字时，语调通常在每一项末尾上扬，在最后一项下降以示结束。"
+        },
+        "vocabulary_network": {
+          "theme": "Économie et Fiscalité",
+          "core_word": "Impôt",
+          "related_groups": [
+            {
+              "category": "Types de taxes",
+              "words": [
+                "TVA",
+                "Impôt sur le revenu",
+                "Impôt sur les sociétés",
+                "Flat tax"
+              ]
+            },
+            {
+              "category": "Richesse",
+              "words": [
+                "Patrimoine",
+                "Capital",
+                "Dividendes",
+                "Bénéfices"
+              ]
+            },
+            {
+              "category": "Acteurs",
+              "words": [
+                "Ultra-riches",
+                "Actionnaires",
+                "Fonctionnaires",
+                "Fiscalistes"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Alors que pendant ce temps, les ___ % les moins riches possèdent seulement ___ % du ___, sachant qu'en plus, la grande majorité ne possède ___ du tout. Il y a beaucoup de Français qui n'ont pas de ___, bien sûr, pas d'œuvre d'art, pas de ___ de collection.",
+            "answer": "50, 8, patrimoine, rien, maison, voiture",
+            "explanation": "根据原文第 14 句，描述了法国财富分配的不平等：底层 50% 的人仅拥有 8% 的资产，且大多没有房产或收藏车。",
+            "source_ids": [
+              14
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi la fortune de Bernard Arnault varie-t-elle beaucoup d'un jour à l'autre selon le texte ?",
+            "options": {
+              "A": "Parce qu'il reçoit un salaire différent chaque mois.",
+              "B": "Parce qu'elle est principalement constituée d'actions qui dépendent de la bourse.",
+              "C": "Parce qu'il vend régulièrement des œuvres d'art.",
+              "D": "Parce que l'État change les taxes tous les jours."
+            },
+            "answer": "B",
+            "explanation": "原文第 21 句明确指出：'elle est principalement constituée d'actions... elles dépendent du cours de la bourse, donc elles changent beaucoup d'un jour à l'autre.'",
+            "source_ids": [
+              21
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "C'est un mécanisme d'optimisation fiscale qui est très connu en France, qui est tout à fait légal et qui permet aux chefs d'entreprise de ne quasiment pas payer d'impôts.",
+            "answer": "这是一种在法国非常著名的税务优化机制，它是完全合法的，并且能让企业主几乎不缴纳任何税款。",
+            "explanation": "重点翻译 'mécanisme d'optimisation fiscale' (税务优化机制) 和 'quasiment pas' (几乎不)。",
+            "source_ids": [
+              76,
+              77
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Conjuguez les verbes entre parenthèses au mode et au temps appropriés : 'Une telle taxe ___ (risquer) de faire fuir les riches, de sorte que l'État ___ (avoir) moins de recettes.'",
+            "answer": "risquerait, ait",
+            "explanation": "第一空使用条件式现在时 (risquerait) 表示假设的风险（见 ID 99）；第二空在 'de sorte que' 引导的目的从句中应使用虚拟式 (ait)。",
+            "source_ids": [
+              99
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "patrimoine",
+            "actions",
+            "optimisation fiscale",
+            "recettes"
+          ],
+          "covered_grammar": [
+            "Conditionnel présent",
+            "Subjonctif",
+            "Nombres"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Plus on..., plus le/la...",
+            "explanation": "表示比例关系：越……，就越……",
+            "example": {
+              "french": "Plus on gagne, plus le taux augmente.",
+              "chinese": "赚得越多，税率就越高。"
+            }
+          },
+          {
+            "pattern": "Il ne faut pas croire que + [Subjonctif]",
+            "explanation": "用于反驳某种普遍的错误观点。",
+            "example": {
+              "french": "Il ne faut pas croire que Bernard Arnault se paie un salaire de plusieurs milliards.",
+              "chinese": "千万别以为伯纳德·阿尔诺会给自己开几十亿的工资。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在参加一个关于社会公平的辩论赛，主题是‘是否应该对超级富豪征收额外税收’。",
+          "requirements": "使用本课学到的词汇（如 patrimoine, dividendes, optimisation fiscale）并运用条件式来陈述你的论点。",
+          "starter": "À mon avis, mettre en place un impôt plancher serait une solution juste car..."
+        }
+      },
+      "summary": {
+        "content": "本课深入探讨了法国当前的财富分配现状及复杂的税收体系。通过对比所得税（累进税制）与增值税（TVA）对不同阶层的影响，揭示了超级富豪如何利用控股公司和资本收入（股息）进行合法避税。重点介绍了经济学家加布里埃尔·祖克曼提出的针对全球超级富豪征收 2% 最低财产税的提议，并分析了该提议在法国社会引发的激烈辩论及其面临的现实阻碍。",
+        "keywords": [
+          "Taxe Zucman",
+          "Ultra-riches",
+          "Inégalités",
+          "Optimisation fiscale",
+          "Patrimoine"
+        ],
+        "difficulty_note": "文本涉及大量经济专业术语和复杂的社会政治背景，适合 B2 及以上水平的学习者，旨在提升其讨论严肃社会议题的能力。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:03",
+          "end": "00:41:26"
+        },
+        "theme": "La taxation des ultra-riches en France",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:03.960",
+        "end_time": "00:41:26.760",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 105,
+        "source_video_name": "E183 La France taxe-t-elle trop les riches _.json",
+        "tags": [
+          "文化深度",
+          "艺术人文"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:03.960",
+          "end_time": "00:00:15.939",
+          "french": "Salut à toutes et à tous. Salut Ingrid. Salut Hugo. Comment ça va ?",
+          "chinese": "大家好。你好，英格丽德。你好，雨果。最近怎么样？"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:16.469",
+          "end_time": "00:00:41.659",
+          "french": "Ça va, ça va. J'ai l'impression que ça fait longtemps qu'on n'a pas enregistré un petit épisode ensemble. Oui, c'est vrai. On a fait pas mal d'épisodes solos, d'interviews et au final, ça fait longtemps. On se parle en dehors des épisodes, mais ça fait longtemps qu'on ne s'est pas parlé face au micro. Oui, mais là, c'est vrai qu'avec la situation politique en France, on s'est dit qu'il fallait faire un épisode un peu plus d'actualité.",
+          "chinese": "挺好的，挺好的。我觉得我们好像很久没一起录节目了。是的，确实。我们录了不少单人节目和访谈，结果一晃就过了很久。虽然我们在节目之外也会交流，但确实很久没一起对着麦克风聊天了。没错，不过鉴于法国目前的政治局势，我们觉得有必要做一期更贴近时事的节目。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:41.659",
+          "end_time": "00:01:11.400",
+          "french": "Mais en même temps, on n'avait pas forcément envie de parler encore une fois de politique, surtout que la situation n'a pas trop évolué par rapport à l'année dernière. Disons que c'est toujours autant le bazar et que les choses changent très vite. Donc voilà, on ne veut pas faire un épisode qui va se périmer dans une semaine. Mais par contre, il y a un débat assez intéressant dans le contexte actuel qui, lui, à mon avis, va rester. Donc c'est ça dont on a décidé de vous parler aujourd'hui.",
+          "chinese": "但与此同时，我们并不一定想再次空谈政治，尤其是局势与去年相比并没有太大变化。可以说，局面依然混乱，而且变数很大。所以，我们不想做一期在一周内就会过时的节目。不过，在当前的背景下，有一个非常有趣的辩论，我认为它会持续下去。这就是我们今天决定要聊的话题。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:11.420",
+          "end_time": "00:01:40.239",
+          "french": "Oui, parce que la situation politique fait qu'il y a des conséquences sur les réflexions, sur les débats qu'il y a dans la société française aujourd'hui et notamment par rapport à l'économie. Puisque, vous le savez, on vous en a déjà parlé, en France, en ce moment, il y a trois grandes forces politiques : la gauche, l'extrême droite et au milieu, on va dire, la droite, le centre-droit.",
+          "chinese": "是的，因为政治局势影响了当今法国社会的思考和辩论，尤其是在经济方面。正如你们所知，我们之前也提到过，法国目前有三大政治力量：左翼、极右翼，以及中间派——也就是右翼和中右翼。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:40.239",
+          "end_time": "00:02:07.120",
+          "french": "Et ces forces politiques s'opposent tellement et font tellement de blocages qu'il y a des grands débats sur vraiment comment réformer l'économie, comment organiser la société, etc. Et notamment sur cette question de : est-ce qu'on taxe trop ou pas assez les riches ? Oui, parce qu'aucun de ces blocs n'a une majorité suffisante pour gouverner",
+          "chinese": "这些政治力量相互对立，造成了重重阻碍，以至于在如何改革经济、如何组织社会等方面引发了激烈的辩论。特别是关于这个问题：我们对富人的征税是太多了还是不够？是的，因为这些阵营中没有一个拥有足够的多数席位来执政"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:07.120",
+          "end_time": "00:02:32.590",
+          "french": "à l'Assemblée, donc ils sont obligés de débattre de toutes ces questions. Et voilà, c'est vrai que la question de l'économie et de cette taxation des riches, on en parle beaucoup, beaucoup depuis quelques mois. Et on va essayer de vous aider à y voir plus clair. C'est une question qui est d'autant plus importante pour les Français que, comme vous l'avez peut-être entendu, la France est très endettée. On a beaucoup de dettes.",
+          "chinese": "在国民议会中，他们不得不就所有这些问题进行辩论。确实，关于经济和对富人征税的问题，近几个月来讨论得非常多。我们将尝试帮助大家理清思路。这个问题对法国人来说尤为重要，因为正如你们可能听到的那样，法国负债累累。我们有很多债务。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:32.590",
+          "end_time": "00:02:59.330",
+          "french": "Et donc, il faut trouver une solution pour remplir les caisses. Alors ça, c'est une expression, « remplir les caisses de l'État », on dit souvent ça. Ça veut dire trouver de l'argent, tout simplement, pour pouvoir financer la dette. Autrement dit, il faut réussir à équilibrer les dépenses et les recettes. Les dépenses, vous savez ce que c'est quand on dépense de l'argent. L'État dépense de l'argent pour plein de choses, pour payer les professeurs,",
+          "chinese": "因此，必须找到一种方案来“充实金库”。“充实国家金库”是一个常用的表达方式，简单来说就是找钱来偿还债务。换句话说，必须实现收支平衡。支出，大家都知道就是花钱。国家在很多方面都有支出，比如支付教师工资、"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:59.330",
+          "end_time": "00:03:07.370",
+          "french": "pour financer le système de santé, les retraites, etc. Et les recettes, on peut dire que ce sont les revenus de l'État",
+          "chinese": "资助医疗体系、退休金等等。而收入，可以说就是国家的收益，"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:07.770",
+          "end_time": "00:03:32.060",
+          "french": "que l'État gagne principalement à travers l'impôt et les taxes. Et justement, c'est ça qui oppose les partis. D'un côté, on a la droite, le centre-droit, qui souhaite plutôt couper les dépenses, c'est-à-dire en baissant le nombre de fonctionnaires, par exemple, en baissant certaines aides, allocations. Il y a plein de moyens",
+          "chinese": "国家主要通过税收来获得收入。而这正是各政党的分歧所在。一方面，右翼和中右翼倾向于削减支出，例如减少公务员人数、降低某些补助和津贴。削减国家支出有很多手段。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:32.060",
+          "end_time": "00:04:00.300",
+          "french": "pour faire baisser les dépenses d'un État. Et au contraire, la gauche est vraiment concentrée sur l'idée d'augmenter les recettes. Donc, pour augmenter les recettes, il faut augmenter les impôts. Et à gauche, il y a une idée qui fait son bonhomme de chemin. Ça, c'est une expression pour dire qui commence à être de plus en plus présente dans le débat public, qu'on commence à intégrer. C'est l'idée...",
+          "chinese": "相反，左翼则专注于增加收入。而要增加收入，就必须提高税收。在左翼阵营中，有一个想法正在“稳步推进”。这个表达的意思是，它在公共辩论中变得越来越普遍，人们开始接受它。这个想法就是……"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:00.300",
+          "end_time": "00:04:26.060",
+          "french": "de mettre en place ce qu'on appelle la taxe Zucman, qui est une taxe sur les ultra-riches, donc sur les personnes qui sont très, très riches. Et dans cet épisode, on va parler de cette taxe, mais pas seulement, ce sera plutôt quelque chose qu'on vous expliquera en dernière partie. Mais avant, on voulait vous parler un peu des taxes en général pour que vous puissiez comprendre où on en est en France.",
+          "chinese": "实施所谓的“祖克曼税”（taxe Zucman），这是一种针对超级富豪，也就是那些极其富有的人征收的税。在本期节目中，我们将讨论这项税收，但不仅限于此，这部分内容我们会在最后一部分解释。在此之前，我们想先聊聊法国税收的概况，以便大家了解法国目前的现状。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:33.370",
+          "end_time": "00:05:01.009",
+          "french": "Alors d'abord, on va essayer de comprendre un peu mieux comment la richesse est répartie en France. Qui sont les riches ? Qui sont les pauvres ? Et dans quelles proportions ? Alors il faut savoir qu'en France, comme dans une grande partie des pays riches, eh bien la richesse est très concentrée. Selon la fondation Jean-Jaurès, qui est vraiment une fondation qui publie des études de référence dans ce domaine,",
+          "chinese": "首先，我们来试着更好地了解财富在法国是如何分配的。谁是富人？谁是穷人？比例是多少？要知道，在法国，就像在大多数富裕国家一样，财富高度集中。根据让·饶勒斯基金会（Fondation Jean-Jaurès）——该基金会在该领域发布的报告极具权威性——"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:01.009",
+          "end_time": "00:05:29.470",
+          "french": "les 10 % les plus riches, les 10 % des Français les plus riches possèdent 55 % du patrimoine national. Voilà, les 10 % des plus riches possèdent plus de la moitié du patrimoine national. Le mot patrimoine, il faut qu'on le définisse. Le patrimoine, c'est ce que l'on possède. Alors ça peut être bien sûr de l'immobilier, des maisons, des appartements, mais ça peut être aussi, je ne sais pas, des œuvres d'art,",
+          "chinese": "最富有的 10% 的法国人拥有全国 55% 的财富。也就是说，这 10% 的人拥有超过一半的国家资产。我们需要定义一下“资产”（patrimoine）这个词。资产就是一个人拥有的东西。当然可以包括房地产、房子、公寓，也可以包括艺术品、"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:29.470",
+          "end_time": "00:05:58.699",
+          "french": "des entreprises, etc. Voilà, c'est tout ce que l'on possède. Alors que pendant ce temps, les 50 % les moins riches possèdent seulement 8 % du patrimoine, sachant qu'en plus, la grande majorité ne possède rien du tout. Il y a beaucoup de Français qui n'ont pas de maison, bien sûr, pas d'œuvre d'art, pas de voiture de collection et qui vivent tout simplement au jour le jour en ayant un salaire et puis en le dépensant et chaque mois, ça se répète.",
+          "chinese": "公司等等。总之，就是你拥有的一切。与此同时，最贫穷的 50% 人口仅拥有 8% 的资产，而且绝大多数人根本没有任何资产。很多法国人当然没有房子，没有艺术品，也没有收藏车，他们只是靠工资过活，发了工资就花掉，每个月周而复始。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:58.839",
+          "end_time": "00:06:28.079",
+          "french": "Ouais. Alors, vous vous demandez peut-être combien d'argent il faut pour faire partie des 10 % les plus riches en France. Quel patrimoine il faut ? Eh bien, il faut posséder plus de 716 000 euros de patrimoine. Donc bon, selon votre patrimoine à vous, ça peut vous paraître énorme ou au contraire, rien du tout. Et si vous voulez faire partie du top 1 %, du 1 % des Français les plus riches,",
+          "chinese": "是的。那么，你可能会问，在法国要拥有多少钱才能进入前 10% 的富人行列？需要多少资产？答案是需要拥有超过 71.6 万欧元的资产。根据你个人的资产情况，这可能看起来很多，也可能觉得根本不算什么。如果你想进入前 1% 的最富有法国人行列，"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:28.079",
+          "end_time": "00:06:34.110",
+          "french": "là, il faut avoir un patrimoine de plus de 2,2 millions d'euros. Donc voilà.",
+          "chinese": "那么资产必须超过 220 万欧元。就是这样。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:34.110",
+          "end_time": "00:06:59.120",
+          "french": "Vous savez si vous faites partie des 10 ou des 1 % les plus riches en France. Dans quelle catégorie je suis ? Ce qui est intéressant, c'est de voir que la courbe de la richesse, elle n'est pas régulière. À la fin, elle monte très, très vite, très, très haut. Et c'est pour ça qu'il faut faire attention quand on parle de personnes riches,",
+          "chinese": "现在你知道自己是否属于法国前 10% 或前 1% 的富人了。我属于哪一类呢？有趣的是，财富曲线并不是平滑的。在顶端，它上升得非常快、非常高。这就是为什么当我们谈论富人时要小心，"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:59.120",
+          "end_time": "00:07:22.930",
+          "french": "ultra-riches, parfois on peut croire qu'on parle des 50 % les plus riches, mais en fait, si on prend vraiment le sommet de la pyramide, c'est sans commune mesure avec ceux qui sont un peu aisés, qui sont des cadres, qui vivent bien. Et parce qu'au sommet de la pyramide, on a 145 personnes qui sont",
+          "chinese": "超级富豪，有时人们可能以为是在谈论前 50% 的富人，但实际上，如果我们看金字塔的最顶端，那些人与所谓的小康阶层、管理层或生活优渥的人相比，完全不在一个量级。因为在金字塔顶端，有 145 个人，"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:22.930",
+          "end_time": "00:07:29.800",
+          "french": "là, qui carrément ont plus de 1 milliard d'euros de patrimoine.",
+          "chinese": "他们的资产竟然超过了 10 亿欧元。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:29.939",
+          "end_time": "00:07:57.439",
+          "french": "Oui, on a déjà parlé de certaines de ces personnes, notamment le plus connu, Bernard Arnault, le patron de l'entreprise de luxe LVMH. J'avais fait un épisode sur lui, l'épisode 126. Ils ont une fortune qui est estimée à environ 180 milliards de dollars. Alors, cette fortune varie beaucoup d'un jour à l'autre parce qu'en fait, elle est principalement constituée d'actions,",
+          "chinese": "是的，我们之前提到过其中的一些人，尤其是最著名的贝尔纳·阿尔诺（Bernard Arnault），奢侈品集团 LVMH 的老板。我曾专门做过一期关于他的节目，第 126 期。他的财富估计约为 1800 亿美元。不过，这笔财富每天都在大幅波动，因为其主要构成是股票，"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:57.439",
+          "end_time": "00:08:20.009",
+          "french": "de parts de l'entreprise. Autrement dit, c'est le fait de posséder cette entreprise et ses actions, elles dépendent du cours de la bourse, donc elles changent beaucoup d'un jour à l'autre. C'est pour ça qu'un jour c'est Elon Musk qui est l'homme le plus riche du monde et puis le lendemain c'est Bernard Arnault en fonction des fluctuations des cours de bourse. Qui y a-t-il d'autre qu'ils connaissent peut-être dans ces milliardaires ?",
+          "chinese": "也就是公司的股份。换句话说，他的财富源于拥有这家公司及其股票，而股票价值取决于股市行情，所以每天都在变。这就是为什么根据股市波动，今天埃隆·马斯克是世界首富，明天可能就变成了贝尔纳·阿尔诺。在这些亿万富翁中，还有谁是大家可能认识的？"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:20.089",
+          "end_time": "00:08:43.440",
+          "french": "Ils connaissent Vincent Bolloré puisque j'en avais parlé dans l'épisode 111. Et d'ailleurs, j'en ai aussi parlé dans mon dernier épisode sur le Sénégal puisqu'il possède beaucoup d'industries en Afrique. Et il possède aussi beaucoup de médias en France. C'est pour ça que j'en avais parlé dans mon autre épisode.",
+          "chinese": "大家可能认识文森特·博洛雷（Vincent Bolloré），我在第 111 期节目中提到过他。而且，在我最近关于塞内加尔的节目中也提到了他，因为他在非洲拥有很多产业。他在法国也拥有很多媒体。这就是为什么我在另一期节目中谈到过他。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:43.440",
+          "end_time": "00:09:12.159",
+          "french": "Après, on a d'autres familles dont on connaît très bien les noms. Par exemple, pour la haute couture, il y a Hermès. Après, il y a la famille Bettencourt qui possède L'Oréal. Il me semble que dans un des cours qui sont sur notre site, on parle de Liliane Bettencourt à un moment. Il y a aussi Dassault pour l'armement. Vous en avez peut-être déjà entendu parler quand on parle de vente d'armes ou d'avions. Par exemple, le Rafale, c'est Dassault Aviation.",
+          "chinese": "此外，还有一些我们耳熟能详的家族。比如高级定制领域的爱马仕（Hermès）。还有拥有欧莱雅（L'Oréal）的贝当古（Bettencourt）家族。我记得在我们网站的一门课程中提到过莉莉安·贝当古。还有从事军工行业的达索（Dassault）家族。在谈论武器或飞机销售时，你可能听说过他们。例如，“阵风”战斗机就是达索航空生产的。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:12.159",
+          "end_time": "00:09:41.149",
+          "french": "Donc il y a la question de la répartition des richesses mais aussi celle de leur origine. D'où vient cet argent ? Donc en fait, pour 90 % des Français, pour quasiment tous les Français, la richesse vient principalement du travail. Autrement dit, ce sont les salaires. Ce sont nos salaires qui nous permettent de vivre. Mais plus on monte dans l'échelle des richesses, plus le capital prend le dessus sur le travail.",
+          "chinese": "所以，这不仅涉及财富分配问题，还涉及财富来源问题。这些钱是从哪儿来的？事实上，对于 90% 的法国人，也就是几乎所有法国人来说，财富主要来自劳动。换句话说，就是工资。是工资让我们得以维持生活。但财富等级越高，资本收益就越是压倒了劳动收入。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:41.149",
+          "end_time": "00:10:06.990",
+          "french": "Autrement dit, ce sont les revenus qui viennent de notre patrimoine qui sont les plus importants et pas nécessairement les revenus qui viennent de notre travail. Il ne faut pas croire que Bernard Arnault se paie un salaire de plusieurs milliards chaque année. Ça ne serait pas du tout rentable pour lui de faire ça. Donc en fait, il a d'autres façons de transférer l'argent de son entreprise",
+          "chinese": "也就是说，来自资产的收入才是最重要的，而不一定是来自工作的收入。不要以为贝尔纳·阿尔诺每年给自己发几十亿的工资。这样做对他来说一点都不划算。所以实际上，他有其他方式将公司的资金转移"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:06.990",
+          "end_time": "00:10:24.960",
+          "french": "vers ses comptes personnels et ça ne passe pas par le salaire. Et c'est problématique justement parce que, comme tu l'as dit, les taxes ne sont pas les mêmes. Donc, quand on est payé en salaire, il y a une grosse partie de ce qui nous est versé, de ce qui est dépensé par l'entreprise.",
+          "chinese": "到他的个人账户，而且不经过工资渠道。这正是问题所在，因为正如你所说，税率是不一样的。当我们拿工资时，公司支付给我们的很大一部分钱"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:24.960",
+          "end_time": "00:10:54.220",
+          "french": "qui va dans les caisses de l'État, donc qui sert à améliorer le système social français. Alors que quand on est payé en dividendes ou quand on reçoit de l'argent des loyers d'une maison, etc., c'est taxé, bien sûr, mais en général, il y a des mécanismes qui font que c'est moins taxé. Après, pour me faire l'avocat du diable, parce que moi aussi, je suis chef d'entreprise et je me verse des dividendes de temps en temps,",
+          "chinese": "会进入国家金库，用于改善法国的社会保障体系。而当你领取股息或收取房租等收入时，虽然也要纳税，但通常有一些机制可以降低税负。不过，为了唱反调，因为我也是公司负责人，偶尔也会给自己发股息，"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:54.220",
+          "end_time": "00:11:14.259",
+          "french": "L'inconvénient des dividendes, c'est que ça ne donne aucun droit. Ça ne donne pas droit à la retraite ni de droit à l'assurance maladie. C'est juste un impôt qu'on paie, mais contrairement au salaire, ça n'ouvre pas de droits sociaux. Mais c'est sûr que c'est moins taxé que les salaires. Et surtout, ton cas, c'est un cas très...",
+          "chinese": "股息的缺点是它不赋予任何权益。它不计入退休金，也不包含医疗保险。这只是我们缴纳的一种税，但与工资不同，它不产生社会福利权益。但可以肯定的是，它的税率比工资低。而且最重要的是，你的情况非常……"
+        },
+        {
+          "id": 29,
+          "start_time": "00:11:14.259",
+          "end_time": "00:11:43.419",
+          "french": "peu courant finalement dans la masse de la population. Les chefs d'entreprise, de petites entreprises ou par exemple les artisans, ils représentent très peu dans la population parce qu'ils sont souvent cités comme exemple mais finalement il faudrait plutôt avoir des lois d'exception pour vous plutôt que penser que ça fait partie, dans les statistiques ça pèse presque rien on va dire malheureusement.",
+          "chinese": "在总人口中其实并不常见。小企业主或手工业者在人口中所占比例很小，虽然他们经常被拿来当例子，但实际上应该为你们制定专门的例外法律，而不是认为这具有代表性，在统计数据中，你们的占比几乎可以忽略不计，遗憾的是。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:43.419",
+          "end_time": "00:12:07.759",
+          "french": "Je pense qu'il faudrait arrêter de taxer les chefs de petites entreprises, tout simplement. Je suis d'accord. Il ne faudrait clairement pas les taxer de la même manière que les grandes entreprises. Ça devrait être une catégorie réfléchie à part. Je fais juste cette parenthèse, mais souvent, les petites entreprises sont utilisées comme excuses.",
+          "chinese": "我认为应该直接停止对小企业主征税。我同意。显然不应该用对待大企业的方式来对他们征税。这应该作为一个单独的类别来考虑。我只是顺便提一下，但小企业经常被用作借口，"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:07.759",
+          "end_time": "00:12:31.970",
+          "french": "pour justifier des cadeaux faits aux très grandes entreprises. Et elles servent un peu de bouclier finalement. Oui, c'est sûr que chez InnerFrench, on n'a pas les mêmes moyens que chez LVMH malheureusement. C'est sûr. Mais donc pour revenir à ce qu'on disait, quand on s'intéresse au top 0,1%, donc vraiment ceux qu'on appelle les ultra riches en France,",
+          "chinese": "来为给大企业的优惠政策辩护。它们最终成了某种挡箭牌。是的，遗憾的是，InnerFrench 肯定没有 LVMH 那样的财力。那是肯定的。回到我们刚才说的，当我们关注前 0.1% 的人，也就是法国真正的超级富豪时，"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:31.970",
+          "end_time": "00:12:50.340",
+          "french": "En fait, 60 à 70% de leurs revenus viennent du capital et pas du travail. Et comme tu l'as déjà évoqué, ces revenus du capital, qu'on appelle parfois les actifs professionnels, eh bien, ils sont très peu taxés parce qu'on considère...",
+          "chinese": "事实上，他们 60% 到 70% 的收入来自资本而非劳动。正如你提到的，这些资本收入（有时被称为专业资产）税率非常低，因为人们认为……"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:50.340",
+          "end_time": "00:13:20.049",
+          "french": "Certains politiciens considèrent qu'ils sont productifs, donc il faut éviter de trop les taxer.",
+          "chinese": "某些政客认为这些资产具有生产力，因此应避免过度征税。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:20.049",
+          "end_time": "00:13:32.100",
+          "french": "nouveaux chiffres qui font tourner la tête et au contraire on a de plus en plus de pauvres en France suivant le seuil qu'on choisit de...",
+          "chinese": "这些令人瞠目结舌的新数据背后，相反的是，根据所选的贫困线标准，法国的穷人越来越多……"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:32.340",
+          "end_time": "00:13:53.799",
+          "french": "de garder, on peut dire qu'il y a entre 5 et 10 millions de pauvres en France, donc ça va jusqu'à 15% de la population et ça c'est un chiffre qui est en augmentation notamment depuis 2017, depuis l'élection d'Emmanuel Macron. Il y a plus de millionnaires mais il y a aussi plus de pauvres.",
+          "chinese": "可以说法国有 500 万到 1000 万贫困人口，占总人口的 15%。这个数字一直在增长，尤其是自 2017 年埃马纽埃尔·马克龙当选以来。百万富翁变多了，但穷人也变多了。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:13:54.169",
+          "end_time": "00:14:16.429",
+          "french": "Et ça, c'est quelque chose qui est dû à beaucoup de facteurs, les taxes, mais aussi l'héritage. Et Le Monde, en 2025, a fait un dossier qui était très intéressant, je vous le conseille, sur l'héritage. Et ils affirmaient que le niveau des inégalités d'aujourd'hui...",
+          "chinese": "这归因于许多因素，包括税收，还有遗产继承。《世界报》在 2025 年做了一个关于遗产继承的专题，非常有趣，我推荐大家看看。他们声称，当今的不平等程度……"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:16.429",
+          "end_time": "00:14:31.820",
+          "french": "ça revient au même que celui de la France du XIXe siècle. Donc voilà, on est un peu revenu à un niveau d'inégalité d'une époque où il y avait des grandes familles qui possédaient beaucoup et d'autres qui ne possédaient rien.",
+          "chinese": "已经回到了 19 世纪法国的水平。所以，我们仿佛回到了那个大家族坐拥巨富而其他人一无所有的不平等时代。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:32.120",
+          "end_time": "00:14:52.850",
+          "french": "Ouais. Et juste un chiffre intéressant à avoir en tête, c'est que la France est le troisième pays au monde en termes de millionnaires. Donc le pays qui a le plus de millionnaires dans le monde, c'est évidemment les États-Unis. Derrière, il y a la Chine. Et en troisième position, il y a la France. Alors qu'en termes de richesse nationale, quand on regarde...",
+          "chinese": "是的。还有一个有趣的数据值得记住：法国的百万富翁人数位居世界第三。世界上百万富翁最多的国家显然是美国，其次是中国，第三位就是法国。然而，从国民财富总量来看，当我们观察……"
+        },
+        {
+          "id": 39,
+          "start_time": "00:14:52.850",
+          "end_time": "00:15:13.899",
+          "french": "toute la richesse produite dans le pays. Je crois que la France est 7 ou 8e, quelque chose comme ça. Derrière l'Allemagne, le Royaume-Uni, il y a d'autres pays. Je crois que l'Inde est passée devant aussi. Bref, et ça, ça montre bien justement qu'il y a une concentration des richesses en France entre les mains de quelques personnes, ce qu'on appelle les ultra-riches.",
+          "chinese": "国内生产的所有财富时，我记得法国排在第 7 或第 8 位左右。排在德国、英国和其他国家之后。我想印度也超过了法国。总之，这充分说明法国的财富集中在少数人手中，也就是所谓的超级富豪。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:20.629",
+          "end_time": "00:15:48.370",
+          "french": "Alors maintenant qu'on a vu la répartition des richesses, on va se demander exactement quels sont les types d'impôts et de taxes qui existent en France. Comme ça, vous pourrez plus facilement vous faire une idée, vous, sur cette question « La France taxe-t-elle trop les riches ? » Alors il faut savoir déjà qu'il y a un impôt qui est très connu, c'est l'impôt sur le revenu et que celui-ci est...",
+          "chinese": "既然我们已经了解了财富分配情况，现在来看看法国到底有哪些税种。这样，你们就能更容易地对“法国是否对富人征税过多？”这个问题形成自己的看法。首先要了解的是，有一种非常有名的税，即个人所得税，它是……"
+        },
+        {
+          "id": 41,
+          "start_time": "00:15:48.370",
+          "end_time": "00:16:04.590",
+          "french": "Ça veut dire que plus on gagne, plus le taux augmente, donc on paye un pourcentage plus élevé. Mais attention, il faut savoir aussi que c'est aussi un impôt par tranche. Alors qu'est-ce que ça veut dire l'impôt par tranche ?",
+          "chinese": "这意味着赚得越多，税率就越高，所以缴纳的百分比也越高。但要注意，这是一种累进税制。那么，“累进税制”是什么意思呢？"
+        },
+        {
+          "id": 42,
+          "start_time": "00:16:04.590",
+          "end_time": "00:16:32.509",
+          "french": "Moi, je me souviens que quand j'étais jeune, je n'avais pas du tout compris le principe. Et j'ai compris assez tard quand ma sœur m'a demandé de l'aider à vérifier sa fiche d'imposition. Et là, j'ai fait les calculs et j'ai compris que les personnes qui doivent payer 45% d'impôt ne doivent pas payer 45% sur l'ensemble de leur salaire. En fait, c'est des tranches et on paye tous.",
+          "chinese": "我记得我年轻的时候完全不明白这个原理。直到很晚，我姐姐让我帮她核对税单时我才明白。当时我算了算，发现必须缴纳 45% 税款的人并不是按全部工资的 45% 缴税。实际上是分段计税，我们所有人都要缴纳"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:32.509",
+          "end_time": "00:16:52.039",
+          "french": "0% jusqu'à un certain salaire. Ensuite, on paye tous, je ne sais plus, 11% sur ce qui est au-dessus, etc. Donc, ça va de 0% jusqu'à 45%. Évidemment, si on ne gagne pas assez, on n'atteint pas la tranche de 45%.",
+          "chinese": "在一定工资额度内是 0%。然后，超过部分大家都要缴纳 11%（我不记得确切数字了）等等。所以税率从 0% 到 45% 不等。显然，如果赚得不够多，就不会达到 45% 那一档。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:16:52.309",
+          "end_time": "00:17:12.019",
+          "french": "Mais voilà, c'est donc progressif et par tranche. Je pense qu'il y a beaucoup de pays qui font comme ça. En tout cas, j'ai cherché et je n'ai pas trouvé beaucoup d'infos. Donc, si vous voulez nous dire en commentaire comment ça fonctionne chez vous, je serais très intéressée de savoir ça. Oui, c'est vrai que c'est un impôt qui est très progressif.",
+          "chinese": "总之，这就是分段累进税。我想很多国家都是这样做的。不管怎样，我查了一下，没找到太多信息。所以，如果你们想在评论中告诉我们你们国家的运作方式，我会很感兴趣。是的，这确实是一种累进程度很高的税。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:12.019",
+          "end_time": "00:17:39.980",
+          "french": "Bon, pour vous donner un exemple concret, quelqu'un qui gagne 50 000 euros en France, qui a un salaire de 50 000 euros net, il paie 13% d'impôts sur le total de ses revenus. Donc l'impôt sur les revenus, ça représente 13% pour quelqu'un qui gagne 50 000 euros. Et il faut savoir aussi que quasiment la moitié des Français ne paient pas d'impôts sur le revenu, car leurs revenus sont trop faibles.",
+          "chinese": "举个具体的例子，在法国，一个年净收入为 5 万欧元的人，其缴纳的所得税占总收入的 13%。所以对于年入 5 万欧元的人来说，所得税占比是 13%。此外，还要知道几乎一半的法国人不缴纳个人所得税，因为他们的收入太低了。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:17:39.980",
+          "end_time": "00:18:03.680",
+          "french": "Et à l'inverse, les 10% des Français les plus riches paient 70% du total de l'impôt sur le revenu. Donc on voit que les très riches contribuent beaucoup en ce qui concerne l'impôt sur le revenu. Mais bon, encore une fois, là, les 10%, c'est quand on parle des riches et pas des ultra-riches, qui, eux, sont les 0,1 ou 0,01%.",
+          "chinese": "相反，最富有的 10% 的法国人缴纳了个人所得税总额的 70%。可见，在所得税方面，富人的贡献很大。不过，再次强调，这里的 10% 指的是富人，而不是超级富豪，后者仅占 0.1% 或 0.01%。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:18:03.680",
+          "end_time": "00:18:23.009",
+          "french": "et qui vont être concernés par la taxe Sucman dont on va parler après. Donc a priori, ce système d'imposition, il semble plutôt juste, plutôt équitable. Mais attention, l'impôt sur le revenu, ça ne représente que 7% de l'ensemble des impôts et taxes payés par les Français.",
+          "chinese": "他们才是我们稍后要讨论的“祖克曼税”的对象。所以从表面上看，这种税收制度似乎相当公正、公平。但请注意，个人所得税仅占法国人缴纳的所有税费总额的 7%。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:23.009",
+          "end_time": "00:18:35.750",
+          "french": "Donc ça veut dire que même si cet impôt-là qui est le plus connu est progressif et équitable, ce n'est pas forcément le cas pour la majorité des taxes. Par exemple...",
+          "chinese": "这意味着，即使这种最著名的税种是累进且公平的，但大多数其他税种却未必如此。例如……"
+        },
+        {
+          "id": 49,
+          "start_time": "00:18:36.180",
+          "end_time": "00:19:04.390",
+          "french": "Ouais, en fait, je te coupe. C'est le plus connu parce que c'est celui dont on se rend compte le plus facilement parce que chaque année, on doit faire notre déclaration d'impôt et si on a des impôts à payer, eh bien, les impôts font un prélèvement sur notre compte où nous, on doit faire un virement avec le montant d'impôt. Donc, on voit vraiment très concrètement combien on paie d'impôt alors que les autres impôts dont tu vas parler, je pense, sont un peu moins visibles.",
+          "chinese": "是的，我打断一下。它最出名是因为它是最容易被察觉的，因为每年我们都要申报税务，如果要缴税，税务局会从我们的账户扣款，或者我们需要转账缴纳。所以，我们能非常具体地看到自己交了多少税，而你将要提到的其他税种，我认为透明度要低一些。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:05.019",
+          "end_time": "00:19:31.599",
+          "french": "Oui, tout à fait. J'allais parler justement de la TVA, donc la taxe sur la valeur ajoutée qui existe, je pense, dans tous les pays. Il me semble qu'il y a des pays qui font ressortir beaucoup plus la TVA qu'en France. On le voit vraiment. Par exemple, si je ne me trompe pas, aux États-Unis, il y a beaucoup de magasins où on a le prix hors taxe et puis on va à la caisse et hop, on nous donne la taxe.",
+          "chinese": "没错。我正要谈到增值税（TVA），我想每个国家都有这种税。我觉得有些国家比法国更强调增值税。你能清楚地看到它。例如，如果我没记错的话，在美国很多商店，标价是不含税的，到了收银台，税款才会加上去。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:19:31.599",
+          "end_time": "00:19:54.599",
+          "french": "On le sent. Alors qu'en France, les taxes, elles sont intégrées au prix qui est affiché dans les magasins. Donc ça peut aller de 20% pour certains produits, même peut-être plus pour des produits surtaxés, je ne sais pas. C'est le taux standard, 20%. Et il y a certains produits qui sont à 5,5% parce que c'est des produits plus de nécessité.",
+          "chinese": "你能感觉得到。而在法国，税费已经包含在商店的标价中了。某些商品的税率可能是 20%，对于加税产品甚至可能更高，我不太清楚。标准税率是 20%。还有一些生活必需品的税率是 5.5%。"
+        },
+        {
+          "id": 52,
+          "start_time": "00:19:55.480",
+          "end_time": "00:20:07.900",
+          "french": "Et donc, c'est une taxe qu'on paye sans s'en rendre compte et tout le monde paye la même. Ce n'est pas parce qu'on est pauvre qu'on va payer moins de TVA, ce qui fait que forcément, à la fin du mois...",
+          "chinese": "所以，这是一种我们在不知不觉中缴纳的税，而且每个人交的都一样。并不会因为你穷就少交增值税，这导致在月底结算时……"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:07.900",
+          "end_time": "00:20:29.329",
+          "french": "en pourcentage de leurs revenus, les pauvres payent beaucoup plus de TVA. Parce que quand on n'a pas beaucoup d'argent, déjà, on dépense pratiquement tout ce qu'on a dans des choses qui sont essentielles, comme la nourriture, les vêtements pour avoir chaud l'hiver, etc. Et sur tout ça, on va payer une...",
+          "chinese": "从占收入的百分比来看，穷人缴纳的增值税要多得多。因为钱不多的时候，几乎所有的钱都花在了生活必需品上，比如食物、冬天的保暖衣物等等。而在所有这些消费中，都要缴纳……"
+        },
+        {
+          "id": 54,
+          "start_time": "00:20:29.329",
+          "end_time": "00:20:58.740",
+          "french": "Alors que pour les personnes les plus riches, déjà il va y avoir moins de dépenses essentielles dans le budget et puis il va y avoir beaucoup plus d'argent qui est mis sur soit des livrets pour économiser, soit dans du patrimoine, etc. Et donc là, il ne va pas y avoir autant de dépenses en TVA. C'est pour ça que la gauche appelle ça la TVA sociale.",
+          "chinese": "而对于最富有的人来说，预算中生活必需品的支出比例较小，更多的钱被存入储蓄账户或投资于资产。因此，他们在增值税上的支出比例没那么高。这就是为什么左翼称之为“社会增值税”。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:20:58.740",
+          "end_time": "00:21:23.089",
+          "french": "Oui, donc la TVA, c'est un des impôts qui rapporte le plus. Ça rapporte bien plus que l'impôt sur le revenu. Quand je dis « ça rapporte », ça veut dire que ça représente des recettes plus importantes pour l'État. On ne va pas citer toutes les taxes qui existent. Il y en a beaucoup en France. Je pense que les fiscalistes français sont parmi les meilleurs du monde pour inventer de nouvelles taxes.",
+          "chinese": "是的，所以增值税是贡献最大的税种之一。它带来的收入远超个人所得税。我说的“贡献大”，是指它为国家带来的收入更多。我们不会列举所有的税种，法国的税种太多了。我认为法国的税务专家在发明新税种方面堪称世界顶尖。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:21:23.089",
+          "end_time": "00:21:49.220",
+          "french": "parfois assez exotiques. Mais à côté de tout ça, des taxes et des impôts, il y a une autre grande catégorie qui s'appelle les cotisations sociales. Les cotisations sociales, on les paie directement sur notre salaire quand on est salarié et ça permet de financer la sécurité sociale, le chômage, la retraite, tout ce qui concerne la protection sociale.",
+          "chinese": "有时甚至相当奇特。但在所有这些税收之外，还有另一大类叫做“社会分摊金”（cotisations sociales）。如果你是雇员，这笔钱会直接从工资中扣除，用于资助社会保障、失业保险、养老金等所有涉及社会保护的项目。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:21:49.220",
+          "end_time": "00:22:19.180",
+          "french": "Si vous travaillez en France, vous savez qu'il y a toujours une grosse différence entre le salaire brut et le salaire net. Et cette différence, c'est en grande partie les cotisations sociales. Et les cotisations sociales, elles sont payées par les personnes, donc les salariés. Mais attention, elles sont aussi payées en grande partie par l'entreprise. Donc par exemple, Hugo, quand tu me verses mon salaire, moi, je vois sur ma fiche de paye que je paye",
+          "chinese": "如果你在法国工作，你会发现税前工资（salaire brut）和税后工资（salaire net）之间总是有很大差距。这个差距很大程度上就是社会分摊金。社会分摊金由个人（即雇员）缴纳。但请注意，很大一部分也由企业承担。所以，雨果，当你给我发工资时，我在工资单上看到我缴纳了"
+        },
+        {
+          "id": 58,
+          "start_time": "00:22:19.180",
+          "end_time": "00:22:36.819",
+          "french": "pour la sécu, le chômage et la retraite. Mais toi, avant, tu as déjà donné quelque chose pour moi avec... C'est l'entreprise, ce n'est pas toi, mais in a French, c'est toi. Donc, il faut quand même souligner ça, le fait que les entreprises...",
+          "chinese": "社保、失业金和养老金。但在那之前，你已经为我缴纳了一部分……虽然是公司交的，不是你个人，但在 InnerFrench，公司就是你。所以，还是得强调一下，企业本身……"
+        },
+        {
+          "id": 59,
+          "start_time": "00:22:36.819",
+          "end_time": "00:22:59.460",
+          "french": "elles-mêmes payent aussi beaucoup de taxes et ça, a priori, c'est quelque chose, on peut se dire que c'est assez juste et qu'il ne faut pas non plus penser que tout pèse sur les personnes. D'ailleurs, tu vas peut-être pouvoir nous dire quelles sont les autres taxes qui sont payées par les entreprises, comment ça se passe, à part les contributions sur les salaires ?",
+          "chinese": "也缴纳了很多税，从表面上看，这可以说相当公平，不能认为所有负担都落在个人身上。顺便问一下，除了工资相关的缴款，企业还要缴纳哪些税？情况是怎样的？"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:00.019",
+          "end_time": "00:23:25.009",
+          "french": "Il y en a un sacré paquet, surtout comparé à la Pologne. Franchement, là, en rentrant en France, je ne me rendais pas compte de toutes les taxes que j'allais devoir payer à travers l'entreprise. Mais la plus connue, c'est l'impôt sur les sociétés. Donc tout ça, c'est aussi une taxe qui existe dans tous les pays. C'est tout simplement la taxe sur les bénéfices, sur les profits. En France, elle est fixée à 25%.",
+          "chinese": "有很多，尤其是和波兰相比。坦白说，回到法国后，我才意识到我要通过公司缴纳这么多税。最著名的是企业所得税。这也是各国通行的税种，简单来说就是对利润征税。在法国，税率固定为 25%。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:23:25.009",
+          "end_time": "00:23:49.099",
+          "french": "Donc, mettons qu'une entreprise fait 10 000 euros de profit, eh bien, elle va devoir payer 2 500 euros d'impôt sur les sociétés. Avant, c'était un peu plus. Avant, Macron, c'était à 33 %, mais Macron a baissé cet impôt sur les sociétés pour rendre les entreprises françaises plus compétitives. Bon, ça, c'était la raison officielle.",
+          "chinese": "假设一家公司赚了 1 万欧元的利润，那么它必须缴纳 2500 欧元的企业所得税。以前更高，在马克龙上台前是 33%，但他降低了这项税率，以提高法国企业的竞争力。嗯，这是官方理由。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:23:49.099",
+          "end_time": "00:24:19.049",
+          "french": "Et à côté de ça, il y a plein de petites taxes, des taxes locales, des taxes pour la formation, etc. Moi, franchement, sur le compte de l'entreprise, parfois, je vois les impôts, un petit prélèvement de 500 euros par là, un autre prélèvement de 300 euros. Je ne sais pas vraiment pourquoi c'est, mais j'ai l'impression parfois que le compte bancaire de l'entreprise, c'est open bar pour les impôts français. Donc voilà, ils prennent un peu d'argent quand ils en ont besoin.",
+          "chinese": "除此之外，还有很多小税种：地方税、培训税等等。坦白说，在公司账户上，我有时会看到税务局这里扣 500 欧，那里扣 300 欧。我并不太清楚具体原因，有时我觉得公司的银行账户就像是法国税务局的“自助餐”。总之，他们需要钱的时候就来取一点。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:24:19.289",
+          "end_time": "00:24:47.279",
+          "french": "Et en plus, je parie que tu n'as pas une armada, donc un grand groupe de comptables qui t'aident à bénéficier de toutes les aides et les exonérations possibles parce que les entreprises en général, donc encore une fois en mettant toutes les entreprises dans le même sac, ont bénéficié en 2023 de 211 milliards d'euros.",
+          "chinese": "而且我敢打赌，你并没有一整支会计团队来帮你争取所有可能的补助和减免。因为总体而言（再次把所有企业混为一谈），企业在 2023 年获得了 2110 亿欧元的补助。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:24:47.279",
+          "end_time": "00:25:08.910",
+          "french": "Donc c'est des aides vraiment très diverses. Vous avez peut-être vu dans les news cette histoire de commission au Sénat. Il y a des sénateurs de droite et de gauche ensemble qui ont fait une commission pour étudier quelles étaient les aides qui étaient données aux entreprises en France et ils se sont rendus compte qu'il y en a...",
+          "chinese": "这些补助形式非常多样。你们可能在新闻里看到过参议院委员会的事。左右翼参议员联合成立了一个委员会，调查法国给予企业的补助，结果他们发现……"
+        },
+        {
+          "id": 65,
+          "start_time": "00:25:08.910",
+          "end_time": "00:25:23.940",
+          "french": "énormément et que celles-ci ne sont pas vraiment répertoriées correctement, qu'on ne demande pas de contrepartie aux entreprises. Et donc, ils ont souligné le fait qu'il y a un problème. Et ce qui est particulièrement...",
+          "chinese": "补助数量惊人，而且没有被正确记录，也没有要求企业提供任何回报。因此，他们指出这其中存在问题。而特别……"
+        },
+        {
+          "id": 66,
+          "start_time": "00:25:23.990",
+          "end_time": "00:25:52.349",
+          "french": "Intéressant, là qui me fait rire mais en vrai ce n'est pas drôle, c'est que ceux qui touchent le plus ces aides, c'est justement les grosses entreprises qui en plus n'hésitent pas à quand même licencier, à quand même maltraiter leurs salariés dans certains cas. Alors que les petites entreprises qui peuvent bénéficier aussi d'aides, parfois elles ne savent même pas comment les demander et donc finalement elles se retrouvent à être moins avantagées.",
+          "chinese": "有趣的是（虽然我想笑，但其实并不好笑），拿到最多补助的恰恰是那些大企业，而它们在某些情况下依然会毫不犹豫地裁员或刻薄对待员工。相比之下，本可以享受补助的小企业有时甚至不知道如何申请，最终反而处于劣势。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:25:52.349",
+          "end_time": "00:26:21.940",
+          "french": "Oui, clairement, nous, on touche 0€ d'aide chez InnerFrench. Peut-être qu'on aurait le droit à quelque chose, mais c'est beaucoup de paperasse, beaucoup d'administratif et j'ai ni le temps ni les ressources pour me mettre sur ce sujet. Donc voilà, nous, on paie des impôts chez InnerFrench, mais pour le moment, on n'a pas de contrepartie. On ne touche pas d'aide. Donc on a parlé des impôts sur les particuliers, sur les individus, les impôts sur les sociétés",
+          "chinese": "是的，显然 InnerFrench 没拿到一分钱补助。也许我们有权申请，但手续太繁琐，行政事务太多，我既没时间也没精力去钻研。所以，在 InnerFrench 我们只管交税，目前没有任何回报，也没拿过补助。我们谈过了个人税收和企业税收，"
+        },
+        {
+          "id": 68,
+          "start_time": "00:26:21.940",
+          "end_time": "00:26:50.609",
+          "french": "s'intéresser plus spécifiquement aux impôts que paient les hauts patrimoines, donc les fameux ultra-riches. Comme on vous l'a dit, les ultra-riches ne se rémunèrent pas à travers des salaires, mais plutôt à travers des revenus du capital, principalement des dividendes. Vous savez, quand on possède des actions, des parts d'une entreprise, chaque année ou chaque trimestre, l'entreprise peut nous verser des dividendes, peut nous rémunérer.",
+          "chinese": "现在来专门看看高净值人群，也就是所谓的超级富豪所缴纳的税。正如我们所说，超级富豪不靠工资生活，而是靠资本收益，主要是股息。你们知道，当你拥有公司的股票或股份时，公司每年或每季度可能会向你支付股息作为回报。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:26:50.609",
+          "end_time": "00:27:19.220",
+          "french": "parce qu'on est propriétaire de cette entreprise. Donc, avant, l'impôt sur les dividendes était progressif, un peu comme l'impôt sur les revenus, mais Macron a décidé de créer une flat tax, autrement dit un taux fixe de 30%. Donc, quand on se verse des dividendes, on paie 30%, peu importe le montant qu'on se verse. Donc, par exemple, si InnerFrench commence à vendre des milliers de cours,",
+          "chinese": "因为你是公司的所有者。以前，股息税是累进的，有点像所得税，但马克龙决定实行“单一税制”（flat tax），即 30% 的固定税率。所以，当你领取股息时，无论金额多少，都只需缴纳 30%。例如，如果 InnerFrench 开始售出成千上万门课程，"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:19.220",
+          "end_time": "00:27:45.829",
+          "french": "et qu'on a plein d'argent et que je veux me verser 1 million d'euros de dividendes, eh bien, je ne paierai que 30% sur ces 1. On a le droit de rêver. Là, je te demanderai une augmentation. Oui, bon, effectivement, je commence par donner une augmentation à Anya et Ingrid. De toute façon, les dividendes, c'est toujours sur les profits. Donc, c'est sur ce qu'il reste après avoir payé les salariés tous les coûts de l'entreprise.",
+          "chinese": "我们赚了很多钱，我想给自己发 100 万欧元的股息，那么我只需缴纳 30% 的税。人总要有梦想。到那时我会要求加薪。是的，确实，我会先给安雅和英格丽德加薪。无论如何，股息总是来自利润，也就是在支付了员工工资和所有公司成本后剩下的钱。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:27:46.490",
+          "end_time": "00:28:12.579",
+          "french": "Bref, donc je paierai 300 000 euros de flat tax sur ces 1 million. Et après, je ne paierai pas d'impôt sur le revenu en plus. Donc voilà, je serai acquitté. Je pourrai dépenser ces 700 000 euros qui me restent pour m'acheter une maison à Marseille. Waouh, ça fait rêver. Ça fait rêver. Donc en gros, c'est une entreprise qui gagne beaucoup, beaucoup d'argent.",
+          "chinese": "总之，这 100 万欧元我只需交 30 万欧元的单一税。之后，我不需要再额外缴纳个人所得税。这样我就履行完纳税义务了。剩下的 70 万欧元我可以用来在马赛买套房子。哇，真让人向往。确实。所以基本上，如果一家公司赚了很多很多钱，"
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:12.579",
+          "end_time": "00:28:42.160",
+          "french": "peut verser des dividendes à ses patrons, mais aussi à ses actionnaires, parce que certaines entreprises, non seulement ont comme actionnaire le chef d'entreprise, mais aussi plein d'autres personnes qui ont juste mis de l'argent dedans. Et donc, plus le revenu est important, plus en proportion... Ce n'est pas comme les impôts sur le revenu, quoi. Finalement, ça ne représente pas grand-chose. Et quand on a déjà beaucoup d'argent,",
+          "chinese": "它可以向老板发放股息，也可以向股东发放，因为有些公司的股东不仅有老板，还有很多纯粹出资的人。因此，收入越高，比例上……这不像所得税。最终，这笔税款并不算什么。而当你已经很有钱时，"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:42.160",
+          "end_time": "00:29:07.619",
+          "french": "On s'en fiche, par exemple, comme tu disais, de ne pas cotiser, de ne pas avoir le droit au chômage, parce que ces personnes-là ont des tas de mécanismes privés pour pouvoir se protéger. Ce ne sont pas des personnes qui vont se retrouver au chômage ou qui vont avoir des problèmes pendant la retraite. Donc, c'est plutôt avantageux pour les grands patrons de pouvoir se payer en dividende avec seulement 30% de taxes.",
+          "chinese": "你根本不在乎是否缴纳社保或是否有权领取失业金，因为这些人有很多私人机制来保护自己。他们不会失业，退休后也不会有经济问题。因此，对于大老板来说，通过仅征收 30% 税款的股息来获取报酬是相当有利的。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:29:07.619",
+          "end_time": "00:29:35.390",
+          "french": "Ouais, il y a quelque chose qui est encore mieux, c'est de créer ce qu'on appelle une holding. Bon, alors là, c'est un peu technique, on ne va pas en parler trop longtemps, mais une holding, c'est une entreprise qui possède d'autres entreprises. Donc en fait, souvent, ce que les chefs d'entreprise font quand leur entreprise commence à générer beaucoup de profits, c'est qu'ils créent une holding et cette holding est propriétaire de leur entreprise.",
+          "chinese": "是的，还有一种更好的方法，就是成立所谓的“控股公司”（holding）。这有点专业，我们不多谈，但控股公司就是一家拥有其他公司的公司。实际上，当公司开始产生巨额利润时，老板们通常会成立一家控股公司，并由其持有原公司的股份。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:35.390",
+          "end_time": "00:29:41.740",
+          "french": "Et ensuite, les chefs d'entreprise paient des dividendes à cette holding. Donc les dividendes...",
+          "chinese": "然后，老板们将股息支付给这家控股公司。这样，股息……"
+        },
+        {
+          "id": 76,
+          "start_time": "00:29:41.940",
+          "end_time": "00:30:10.779",
+          "french": "qui vont dans la holding ne sont pas taxés. Enfin, ils sont taxés seulement, je crois, à 1%. Donc ensuite, tout l'argent, tous les profits sont dans cette holding. Ils n'ont quasiment pas été taxés. Et avec cette holding, ils peuvent investir dans d'autres choses, dans de l'immobilier, acheter d'autres entreprises, etc. Donc ça, c'est un mécanisme d'optimisation fiscale qui est très connu en France, qui est tout à fait légal et qui permet aux chefs d'entreprise qui ont une entreprise qui marche.",
+          "chinese": "进入控股公司后是不征税的。或者说，我记得税率只有 1% 左右。于是，所有的钱和利润都留在了控股公司里，几乎没被征税。通过这家控股公司，他们可以投资其他领域，比如房地产，或者收购其他公司。这在法国是一种非常著名的税务筹划机制，完全合法，它让那些经营成功的企业主"
+        },
+        {
+          "id": 77,
+          "start_time": "00:30:10.779",
+          "end_time": "00:30:30.940",
+          "french": "très bien de ne quasiment pas payer d'impôts sur les profits qu'ils réalisent. Et en plus, ces personnes peuvent utiliser leurs entreprises pour payer des choses pour leur usage personnel. Ils peuvent aussi faire des dépenses en faisant des prêts bancaires, en mettant leur entreprise en...",
+          "chinese": "几乎不需要为所赚取的利润缴税。此外，这些人还可以利用公司支付个人开支。他们还可以通过银行贷款进行消费，并将公司作为……"
+        },
+        {
+          "id": 78,
+          "start_time": "00:30:30.940",
+          "end_time": "00:30:51.539",
+          "french": "Donc finalement, il y a beaucoup de mécanismes qui font que les personnes les plus riches à travers leur entreprise ne payent, ne dépensent pas beaucoup personnellement. Et en plus, à la fin, le calcul a été fait, les milliardaires payent moins de 1% d'impôt sur leur patrimoine.",
+          "chinese": "所以最终，有很多机制使得最富有的人通过他们的公司，个人几乎不需要支付或花费太多。而且，根据最终的测算，亿万富翁缴纳的资产税不到其总资产的 1%。"
+        },
+        {
+          "id": 79,
+          "start_time": "00:30:51.539",
+          "end_time": "00:31:20.269",
+          "french": "Oui, pour donner des exemples un peu concrets, typiquement quand on va au restaurant, en fait, c'est l'entreprise qui paie. On peut, si l'entreprise marche très très bien, s'acheter un yacht. C'est officiellement l'entreprise qui est propriétaire du yacht, mais forcément le chef d'entreprise peut l'utiliser quand il le veut. Le reste du temps, il loue ce yacht, comme ça, ça justifie que ce n'est pas seulement à usage personnel. Et voilà, c'est pour ça qu'en fait la frontière entre le patrimoine...",
+          "chinese": "是的，举些具体的例子，典型的情况是去餐厅吃饭其实是公司买单。如果公司经营得非常好，甚至可以买一艘游艇。名义上公司是游艇的所有者，但老板当然可以随时使用。其余时间则将游艇出租，以此证明它不只是个人用途。这就是为什么资产之间的界限……"
+        },
+        {
+          "id": 80,
+          "start_time": "00:31:20.269",
+          "end_time": "00:31:40.039",
+          "french": "et le patrimoine personnel pas toujours très clair, elle est assez floue et c'est ça qui permet aux ultra-riches de payer très peu d'impôts comparé aux personnes normales, aux personnes lambda qui, elles, n'ont pas de holding et qui paient directement les impôts sur leur salaire.",
+          "chinese": "与个人财产之间的界限并不总是很清晰，它相当模糊，这使得超级富豪与普通人相比缴纳的税款极少。普通人没有控股公司，必须直接从工资中扣税。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:31:47.769",
+          "end_time": "00:32:03.279",
+          "french": "Alors, on vous a parlé en introduction de la taxe Zucman. On va voir très rapidement ce que c'est. Comme ça, quand vous en entendrez parler dans les médias, vous aurez quand même une référence. Alors déjà, qui est Zucman ?",
+          "chinese": "我们在开头提到了“祖克曼税”。我们很快来看一下它是什么。这样，当你在媒体上听到它时，就会有个参考。首先，祖克曼是谁？"
+        },
+        {
+          "id": 82,
+          "start_time": "00:32:03.279",
+          "end_time": "00:32:31.299",
+          "french": "Zuckman, c'est Gabriel Zuckman, un économiste... C'est pas un super-héros. Certains le pensent, mais c'est un économiste. Il est français, il a fait son poste doctorat à Berkeley en Californie et aujourd'hui il enseigne à l'école normale supérieure en France. Ses travaux de recherche portent particulièrement sur les inégalités.",
+          "chinese": "祖克曼是指加布里埃尔·祖克曼（Gabriel Zucman），一位经济学家……他不是超级英雄。虽然有些人这么认为，但他确实是一位经济学家。他是法国人，在加州大学伯克利分校完成了博士后研究，目前在法国巴黎高等师范学院任教。他的研究重点是不平等问题。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:32:31.299",
+          "end_time": "00:33:00.849",
+          "french": "Et pour faire face aux inégalités, lui, il propose un impôt plancher de 2% pour les personnes qui possèdent plus de 100 millions d'euros de patrimoine. Et cet impôt plancher serait calculé non pas sur les revenus, mais sur l'ensemble du patrimoine dont on vient de parler en comptant les actions dans les entreprises, les œuvres d'art, etc.",
+          "chinese": "为了应对不平等，他提议对资产超过 1 亿欧元的人征收 2% 的“底线税”（impôt plancher）。这种底线税不是根据收入计算，而是根据我们刚才提到的全部资产计算，包括公司股票、艺术品等。"
+        },
+        {
+          "id": 84,
+          "start_time": "00:33:00.849",
+          "end_time": "00:33:18.990",
+          "french": "Alors attention, j'ai bien dit un impôt plancher. Donc le plancher, c'est le sol dans une maison, dans un bâtiment. Et donc ça veut dire un impôt minimum, un impôt en dessous duquel on ne peut pas aller. Ça veut dire...",
+          "chinese": "请注意，我说的是“底线税”。“Plancher”在法语中指房子或建筑物的地面。所以这意味着最低税额，一个不能再低的税收标准。这意味着……"
+        },
+        {
+          "id": 85,
+          "start_time": "00:33:18.990",
+          "end_time": "00:33:44.940",
+          "french": "que les centimillionnaires qui payent déjà par exemple 2% de leur revenu, de leur patrimoine en impôts sur le revenu, ils ne seraient pas concernés. Alors qu'au contraire, les centimillionnaires qui ne se versent pratiquement aucun revenu et donc ne payent pratiquement aucun impôt, eux, ils devraient payer la différence.",
+          "chinese": "如果那些亿万富翁已经缴纳了相当于其资产 2% 的所得税，他们就不受影响。相反，那些几乎不给自己发工资、因此几乎不交税的亿万富翁，则必须补足差额。"
+        },
+        {
+          "id": 86,
+          "start_time": "00:33:45.339",
+          "end_time": "00:34:11.070",
+          "french": "Par exemple, si Bernard Arnault paye seulement 1% de son patrimoine en divers taxes, il devra payer 1% de plus. Et cet économiste, Gabriel Zucman, a estimé, a calculé que cette taxe rapporterait entre 15 et 20 milliards d'euros. D'autres économistes ne sont pas d'accord, ils pensent que ça rapporterait moins.",
+          "chinese": "例如，如果贝尔纳·阿尔诺缴纳的各项税款仅占其资产的 1%，他就必须额外再交 1%。经济学家加布里埃尔·祖克曼估计，这项税收将带来 150 亿至 200 亿欧元的收入。其他经济学家则持不同意见，认为收入会更少。"
+        },
+        {
+          "id": 87,
+          "start_time": "00:34:11.070",
+          "end_time": "00:34:40.300",
+          "french": "Tout simplement parce qu'encore une fois, c'est difficile d'évaluer le patrimoine professionnel. C'est mécaniquement, techniquement assez compliqué. Et en fait, pourquoi Gabriel Zucman a proposé cette taxe ? Eh bien, parce que d'après lui et d'après de nombreuses sources, de nombreuses institutions qui ont fait des études sur le sujet, les milliardaires paient moins de 0,5% d'impôts sur leur patrimoine réel.",
+          "chinese": "原因很简单，再次强调，评估专业资产非常困难。这在操作和技术上都相当复杂。那么，为什么加布里埃尔·祖克曼会提出这项税收呢？因为根据他以及许多研究该课题的机构的说法，亿万富翁缴纳的税款还不到其真实资产的 0.5%。"
+        },
+        {
+          "id": 88,
+          "start_time": "00:34:40.300",
+          "end_time": "00:35:09.360",
+          "french": "Donc en fait, c'est l'exemple classique de dire que le chef d'entreprise, proportionnellement, paie moins d'impôts que sa secrétaire. Et ça, c'est pas considéré comme quelque chose d'équitable. On a l'impression que la justice fiscale ici n'est pas respectée. C'est pour ça que la taxe Zucman est massivement acceptée dans la société française. 80% des Français l'approuvent. C'est suffisamment rare pour le dire parce qu'on dit tout le temps « Ah, les Français sont divisés, les Français sont divisés ».",
+          "chinese": "所以实际上，这就是那个经典的例子：企业老板缴纳的税款比例比他的秘书还要低。这被认为是不公平的。人们觉得税收正义在这里没有得到体现。这就是为什么“祖克曼税”在法国社会得到了广泛认可。80% 的法国人赞成它。这非常罕见，因为人们总说“法国人意见不一，法国人四分五裂”。"
+        },
+        {
+          "id": 89,
+          "start_time": "00:35:09.360",
+          "end_time": "00:35:39.099",
+          "french": "Là, sur ce sujet, ils sont assez unanimes. Alors, au niveau des économistes, c'est pas tout à fait unanime. Il y en a quand même pas mal qui sont derrière Gabriel Zucman. De façon étonnante, il y a même des économistes libéraux qui pensent que c'est une bonne idée. Notamment un économiste qui a fait partie, qui a été le directeur de programme de Macron en 2017.",
+          "chinese": "但在这一议题上，他们的意见相当一致。至于经济学家，意见并不完全统一。但仍有相当多的人支持加布里埃尔·祖克曼。令人惊讶的是，甚至一些自由派经济学家也认为这是个好主意。其中一位甚至是马克龙 2017 年竞选时的纲领负责人。"
+        },
+        {
+          "id": 90,
+          "start_time": "00:35:39.099",
+          "end_time": "00:35:46.730",
+          "french": "Donc voilà, ce n'est pas que les économistes de gauche qui pensent que c'est important et que c'est possible.",
+          "chinese": "所以，并非只有左翼经济学家认为这很重要且可行。"
+        },
+        {
+          "id": 91,
+          "start_time": "00:35:46.869",
+          "end_time": "00:36:14.179",
+          "french": "Il y en a quand même qui se posent des questions et qui disent que ça ne va pas être possible à mettre en place. Donc, quelles sont les critiques qui sont faites ? La première critique concerne la valorisation de ce patrimoine, notamment le patrimoine professionnel, comme je l'ai déjà évoqué. Comment on fait pour évaluer un yacht ou une entreprise non cotée ? Certains non cotés, ça veut dire une entreprise dont les actions ne sont pas vendues en bourse.",
+          "chinese": "但仍有人提出质疑，认为这无法实施。那么，有哪些批评意见呢？第一个批评涉及资产估值，尤其是正如我提到的专业资产。如何评估一艘游艇或一家非上市公司？“非上市”是指其股票不在证券交易所交易的公司。"
+        },
+        {
+          "id": 92,
+          "start_time": "00:36:14.179",
+          "end_time": "00:36:32.519",
+          "french": "Par exemple, nous, si on décidait d'évaluer combien vaut InnerFrench, ce ne serait pas évident et pourtant on est une petite entreprise. À ça, Gabriel Zucman répond que le Brésil a déjà mis en place un impôt similaire en 2024, sans catastrophe, ça s'est bien passé, et qu'en fait...",
+          "chinese": "例如，如果我们决定评估 InnerFrench 的价值，这并不容易，尽管我们只是一家小公司。对此，加布里埃尔·祖克曼回应说，巴西已经在 2024 年实施了类似的税收，并没有引发灾难，进展顺利。而且事实上……"
+        },
+        {
+          "id": 93,
+          "start_time": "00:36:32.699",
+          "end_time": "00:36:58.019",
+          "french": "quotidiennement, les comptables dans les entreprises font ces valorisations d'actifs. Elles valorisent combien vaut, je ne sais pas, tel achat de machine, tous les investissements qui sont réalisés. L'autre critique, c'est que les entreprises sont réparties en actions et donc les actions, ce n'est pas du liquide, ce n'est pas de l'argent concrètement.",
+          "chinese": "企业会计每天都在进行资产估值。他们会评估购买的机器价值多少，以及所有的投资价值。另一个批评是，公司资产是以股票形式存在的，而股票不是现金，不是具体的钱。"
+        },
+        {
+          "id": 94,
+          "start_time": "00:36:58.019",
+          "end_time": "00:37:23.199",
+          "french": "Et certaines entreprises qu'on appelle les licornes sont des entreprises qui sont très valorisées, donc qui sur le marché de la bourse sont des grosses entreprises qui valent beaucoup. Mais concrètement, comme elles sont encore assez jeunes, les patrons n'ont pas d'argent entre leurs mains qu'ils pourraient donner à l'État sous forme d'impôts.",
+          "chinese": "一些被称为“独角兽”的企业估值很高，在市场上被视为价值巨大的大公司。但具体来说，由于它们还很年轻，老板手里并没有现钱可以作为税款交给国家。"
+        },
+        {
+          "id": 95,
+          "start_time": "00:37:23.199",
+          "end_time": "00:37:30.579",
+          "french": "Pas beaucoup de personnes, mais par contre, c'est un véritable problème pour les quelques personnes qui sont concernées, qui se retrouveraient à devoir.",
+          "chinese": "受影响的人不多，但对于那少数相关人员来说，这确实是个大问题，他们可能会发现自己不得不"
+        },
+        {
+          "id": 96,
+          "start_time": "00:37:30.579",
+          "end_time": "00:38:00.300",
+          "french": "vendre complètement leur entreprise pour payer un impôt. Donc, ce serait absurde. Mais Gabriel Zucman, lui, donne une réponse à cette critique. C'est d'ailleurs quelque chose qui n'était pas prévu, il me semble, dans sa loi à la base et qu'il a rajouté après en disant que ces entreprises pourraient directement verser des actions à l'État. Ça veut dire que chaque année, l'État récupérerait une petite partie.",
+          "chinese": "变卖整个公司来交税。这太荒谬了。但加布里埃尔·祖克曼对这一批评给出了回应。我记得这在他最初的法案中并没有预见到，是后来加进去的，即这些公司可以直接向国家转让股份。这意味着每年国家都会收回一小部分"
+        },
+        {
+          "id": 97,
+          "start_time": "00:38:00.300",
+          "end_time": "00:38:18.289",
+          "french": "actions d'une entreprise montante et pourrait soit donner ses actions ou les vendre aux salariés soit les garder dans un fonds spécial avec l'idée bien sûr de ne pas les vendre à des entreprises étrangères et le gros exemple d'entreprise",
+          "chinese": "新兴公司的股份，既可以将其分配或出售给员工，也可以保留在一个专项基金中，当然前提是不将其卖给外国公司。一个典型的企业例子"
+        },
+        {
+          "id": 98,
+          "start_time": "00:38:18.289",
+          "end_time": "00:38:31.980",
+          "french": "qui est concerné. Par exemple, c'est Mistral, qui est une intelligence artificielle française, qui est en train de monter, qui est très bien valorisée, mais pour l'instant, qui n'a encore rien rapporté de très concret à ses créateurs.",
+          "chinese": "就是 Mistral，这是一家正在崛起的法国人工智能公司，估值很高，但目前还没有给创始人带来任何实质性的收益。"
+        },
+        {
+          "id": 99,
+          "start_time": "00:38:32.219",
+          "end_time": "00:39:01.579",
+          "french": "Et enfin, il y a une dernière critique, c'est qu'une telle taxe risquerait de faire fuir les riches, que les riches quitteraient la France tout simplement pour ne pas payer la taxe Zucman parce qu'ils considèrent qu'ils paient déjà trop d'impôts en France. Et ça, eh bien, mécaniquement, ça ferait moins de recettes pour l'État, mais aussi moins d'entreprises, moins d'emplois. Donc, bon, ça serait un cercle vicieux qui aurait les effets...",
+          "chinese": "最后，还有一个批评是，这种税收可能会导致富人外逃，富人会为了躲避“祖克曼税”而离开法国，因为他们认为自己在法国交的税已经够多了。而这必然会导致国家税收减少，企业和就业岗位也会减少。所以，这会形成一个恶性循环，产生与……"
+        },
+        {
+          "id": 100,
+          "start_time": "00:39:01.579",
+          "end_time": "00:39:28.260",
+          "french": "opposé à ce qu'on espère réaliser grâce à cette taxe. Mais quand on regarde concrètement les chiffres, c'est quelque chose qui se passe assez rarement. On a déjà fait des études quand on a créé une autre taxe sur les grandes fortunes, l'ISF en France, et en fait, on voit qu'il y a eu seulement 600 départs sur 350 000 personnes concernées, 0,17%.",
+          "chinese": "预期目标背道而驰的后果。但从具体数据来看，这种情况很少发生。在法国设立另一项针对巨额财富的税种（ISF）时，我们做过研究，结果显示在 35 万相关人员中，只有 600 人离开，仅占 0.17%。"
+        },
+        {
+          "id": 101,
+          "start_time": "00:39:28.280",
+          "end_time": "00:39:53.809",
+          "french": "Tout simplement parce que ce n'est pas si simple de quitter un pays, surtout quand on a toutes nos activités professionnelles, nos relations, etc. Parfois, on préfère payer 2% d'impôts en plus et ne pas forcément aller s'exiler juste pour faire quelques économies, surtout quand on a déjà plusieurs millions sur son compte en banque. Et en plus, Gabriel Zucman, pour terminer, propose une exit.",
+          "chinese": "原因很简单，离开一个国家并不容易，尤其是当你所有的职业活动和社交关系都在这里时。有时，人们宁愿多交 2% 的税，也不愿为了省点钱而流亡海外，特别是当账户里已经有几百万的时候。此外，加布里埃尔·祖克曼最后还提议征收一种“离境税”（exit"
+        },
+        {
+          "id": 102,
+          "start_time": "00:39:53.809",
+          "end_time": "00:40:16.610",
+          "french": "taxe, donc propose de continuer à taxer les personnes qui se seraient exilées fiscalement pendant quelques années. Ces personnes devraient continuer à payer un impôt en France en déduisant bien sûr l'impôt qu'ils payent déjà dans leur pays d'accueil. C'est ce que font les Etats-Unis et les Etats-Unis c'est pour toute la vie. Donc c'est quelque chose qui existe.",
+          "chinese": "taxe），即建议在几年内继续对那些为了避税而移居国外的人征税。这些人应继续在法国纳税，当然可以扣除他们在居住国已缴纳的税款。美国就是这么做的，而且美国是终身征收。所以这种制度是存在的。"
+        },
+        {
+          "id": 103,
+          "start_time": "00:40:16.610",
+          "end_time": "00:40:43.380",
+          "french": "Pas en Europe, il me semble, et la France pourrait mettre en place cela, justement, pour compenser les éventuels départs. Voilà, en conclusion, bon, c'est un débat intellectuel intéressant, mais concrètement, il y a peu de chances que cette loi soit adoptée dans le contexte actuel, parce que, comme on vous l'a dit, la France a beaucoup de mal à voter un budget à cause des forces politiques qui n'ont pas de majorité claire à l'Assemblée.",
+          "chinese": "据我所知，欧洲还没有这种做法，法国可以实施这一政策，以补偿可能的人员流失。总之，这是一个有趣的智力辩论，但实际上，在当前背景下，这项法律通过的可能性很小，因为正如我们所说，由于国民议会中没有明确的多数派，法国很难通过预算案。"
+        },
+        {
+          "id": 104,
+          "start_time": "00:40:43.380",
+          "end_time": "00:41:11.440",
+          "french": "Donc si le budget n'est pas adopté, on ne peut pas faire passer de nouvelles lois fiscales comme cette loi Zucman. Mais en tout cas, ça a permis de relancer le débat sur la taxation des ultra-riches. Et en fait, ce que Gabriel Zucman veut, c'est que la France soit un leader mondial dans ce domaine et qu'ensuite cette taxe soit adoptée à l'échelle mondiale pour éviter justement les exits fiscaux, etc.",
+          "chinese": "如果预算案不通过，就无法通过像“祖克曼法”这样的新税法。但无论如何，这重新引发了关于对超级富豪征税的辩论。事实上，加布里埃尔·祖克曼希望法国成为该领域的全球领导者，然后让这项税收在全球范围内推广，以避免税收流失等问题。"
+        },
+        {
+          "id": 105,
+          "start_time": "00:41:11.440",
+          "end_time": "00:41:26.760",
+          "french": "Donc voilà, c'est sûrement quelque chose dont on va reparler plus tard. On espère en tout cas que ça vous a permis de mieux comprendre ce débat. N'hésitez pas à nous dire ce que vous en pensez dans les commentaires. Et on se retrouve dans deux semaines. À dans deux semaines. Salut, salut !",
+          "chinese": "所以，这肯定是我们以后还会再聊的话题。无论如何，希望这能帮助大家更好地理解这场辩论。欢迎在评论区告诉我们你的看法。我们两周后再见。两周后见。再见，再见！"
+        }
+      ],
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

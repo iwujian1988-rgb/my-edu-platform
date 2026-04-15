@@ -1,0 +1,669 @@
+{
+  "source_file": "La liberté d’écrire (French Writing Practice).json",
+  "channel": "法国日常一件事",
+  "video_name": "书写的自由 (法语写作练习)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:34:01.277Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le discours indirect au passé (间接引语在过去时中的时态配合)",
+          "L'hypothèse irréelle dans le passé (过去非真实条件句 / 虚拟比较)",
+          "L'infinitif passé (过去不定式)"
+        ],
+        "speaking": [
+          "Raconter une anecdote personnelle liée à l'apprentissage d'une langue.",
+          "Décrire l'atmosphère d'un événement culturel ou d'un lieu (théâtre, quartier)."
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "humeur",
+            "part_of_speech": "nom",
+            "ipa": "[ymœʁ]",
+            "chinese": "心情，情绪",
+            "example_sentence": {
+              "french": "J'espère que vous êtes de bonne humeur.",
+              "chinese": "希望你们心情愉快。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'espère que vous allez bien et que vous êtes de bonne humeur.",
+                "chinese": "希望你们一切安好，心情愉快。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "déferlement",
+            "part_of_speech": "nom",
+            "ipa": "[defɛʁləmɑ̃]",
+            "chinese": "（如波涛般的）涌现，狂潮",
+            "example_sentence": {
+              "french": "La nouvelle a provoqué un déferlement de réactions.",
+              "chinese": "这个消息引发了如潮水般的反应。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cela a créé un déferlement de messages sur le groupe.",
+                "chinese": "这立刻在班级群里引发了一阵消息狂潮。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "intentionnellement",
+            "part_of_speech": "adverbe",
+            "ipa": "[ɛ̃tɑ̃sjɔnɛlmɑ̃]",
+            "chinese": "故意地，有意地",
+            "example_sentence": {
+              "french": "Il n'a pas cassé le verre intentionnellement.",
+              "chinese": "他不是故意打破玻璃杯的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'imagine que la prof ne l'a pas fait intentionnellement.",
+                "chinese": "我想这位老师并非故意这么做。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "arranger",
+            "part_of_speech": "verbe",
+            "ipa": "[aʁɑ̃ʒe]",
+            "chinese": "对...方便，适合",
+            "example_sentence": {
+              "french": "Ce rendez-vous à 10h m'arrange bien.",
+              "chinese": "10点的这个约会对我很方便。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ou sur le fait que ça les arrangeait bien parce que justement ils étaient en retard.",
+                "chinese": "或因为这正合他们的心意，因为他们本来就是迟到的。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "enchaîner",
+            "part_of_speech": "verbe",
+            "ipa": "[ɑ̃ʃɛne]",
+            "chinese": "连贯，连接（词语、动作等）",
+            "example_sentence": {
+              "french": "Il a du mal à enchaîner deux phrases en public.",
+              "chinese": "他在公共场合很难连贯地说出两句话。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Enchaîner les mots, les phrases, retrouver des sensations.",
+                "chinese": "连贯地组织词语和句子，重新找回那种熟悉的感受。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "soupir",
+            "part_of_speech": "nom",
+            "ipa": "[supiʁ]",
+            "chinese": "叹息，叹气",
+            "example_sentence": {
+              "french": "Elle a poussé un long soupir de soulagement.",
+              "chinese": "她长长地舒了一口气。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "A-t-elle ajouté avec un soupir de satisfaction.",
+                "chinese": "她满意地叹了口气补充道。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "formaté",
+            "part_of_speech": "adjectif",
+            "ipa": "[fɔʁmate]",
+            "chinese": "格式化的，千篇一律的",
+            "example_sentence": {
+              "french": "Je n'aime pas ces émissions de télévision trop formatées.",
+              "chinese": "我不喜欢这些过于模式化的电视节目。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Écouter autre chose que des leçons, des textes formatés, sans vraie vie.",
+                "chinese": "去听一些不同于传统课堂、格式化文本、缺乏真实生活气息的内容。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "mêler",
+            "part_of_speech": "verbe",
+            "ipa": "[mɛle]",
+            "chinese": "混合，融合",
+            "example_sentence": {
+              "french": "Ce film mêle habilement humour et drame.",
+              "chinese": "这部电影巧妙地融合了幽默与戏剧性。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce spectacle inattendu qui mêlait le texte de Virginia Woolf et la musique baroque.",
+                "chinese": "演出融合了弗吉尼亚·伍尔夫的文字与巴洛克音乐。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "comble",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ̃bl]",
+            "chinese": "爆满的，座无虚席的",
+            "example_sentence": {
+              "french": "Le théâtre était comble pour la première de la pièce.",
+              "chinese": "这出戏首演时剧院座无虚席。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Nous étions aux Bouffes du Nord, la salle était comble.",
+                "chinese": "我们当时正身处北区餐厅（剧院），现场座无虚席。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "confier",
+            "part_of_speech": "verbe",
+            "ipa": "[kɔ̃fje]",
+            "chinese": "吐露，坦白",
+            "example_sentence": {
+              "french": "Il m'a confié son plus grand secret.",
+              "chinese": "他向我吐露了他最大的秘密。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "« Je crois qu'avoir étudié les auteurs italiens baroques prépare bien à ce genre de spectacle », m'a confié Félicia.",
+                "chinese": "费利西亚向我坦言：“我觉得研习过意大利巴洛克作家的作品，确实能很好地为这种类型的演出做好准备。”",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "se taire",
+            "part_of_speech": "verbe",
+            "ipa": "[sə tɛʁ]",
+            "chinese": "安静下来，闭嘴",
+            "example_sentence": {
+              "french": "Quand le professeur entre, les élèves se taisent.",
+              "chinese": "老师进来时，学生们都安静了下来。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Enregistrer le moment où la salle se tait parce que le spectacle va commencer.",
+                "chinese": "录下当整个大厅安静下来、演出即将开始的那一刻。",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          },
+          {
+            "french": "plume",
+            "part_of_speech": "nom",
+            "ipa": "[plym]",
+            "chinese": "笔，羽毛笔",
+            "example_sentence": {
+              "french": "Cet écrivain a une très belle plume.",
+              "chinese": "这位作家的文笔非常好。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "À vos plumes !",
+                "chinese": "拿起你们的笔吧！",
+                "source_video": "Félicia et la liberté d'écrire"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "pour une fois",
+            "meaning": "难得一次，破例",
+            "example": {
+              "french": "Beaucoup étaient, pour une fois, en avance.",
+              "chinese": "大家难得一见地提前到了。"
+            },
+            "usage_note": "用于强调某事不常发生，带有轻微的惊讶或调侃意味。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "faire du bien",
+            "meaning": "使人感到舒服，对...有好处",
+            "example": {
+              "french": "C'était le fait d'écrire en italien qui lui avait fait du bien.",
+              "chinese": "用意大利语写作的感觉让她倍感舒畅。"
+            },
+            "usage_note": "常用于表达某种活动、食物或休息给身心带来的积极影响。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "ça m'a changé(e) de",
+            "meaning": "这让我换了个口味/摆脱了...",
+            "example": {
+              "french": "Ça m'a changée de ce qu'on fait depuis le début de l'année.",
+              "chinese": "这让我摆脱了今年以来一直做的那种练习。"
+            },
+            "usage_note": "口语中常用，表示某事打破了常规，带来了新鲜感。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "expression": "à vos plumes",
+            "meaning": "拿起你们的笔吧（开始写吧）",
+            "example": {
+              "french": "À vos plumes ! One Thing in a French Day, c'est fini pour aujourd'hui.",
+              "chinese": "拿起你们的笔吧！今天法语一天的内容就到这里了。"
+            },
+            "usage_note": "源自“À vos marques”（各就各位），常用于鼓励听众或读者开始写作。",
+            "source_ids": [
+              11
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le discours indirect au passé (间接引语在过去时中的时态配合)",
+            "structure": "Verbe introducteur au passé + que + Sujet + Verbe avec concordance des temps (ex: Futur -> Conditionnel présent)",
+            "explanation": "当引导间接引语的主句动词（如 dire, annoncer, raconter）是过去时（如未完成过去时、复合过去时或愈过去时）时，从句的时态必须进行配合。原文中，老师原本说的是将来时“Je serai absente”（我将缺席），在转述时，主句动词“avait annoncé”是愈过去时，因此从句的将来时变成了条件式现在时“serait”。",
+            "example": {
+              "french": "Une prof avait annoncé sur l'ENT [...] qu'elle serait absente.",
+              "chinese": "一位老师在学校网络平台上宣布她将缺席。"
+            },
+            "usage_note": "这是B1/B2级别的核心语法点，常用于讲故事或转述过去发生的事情。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "L'hypothèse irréelle dans le passé (过去非真实条件句 / 虚拟比较)",
+            "structure": "Comme si + Sujet + Plus-que-parfait",
+            "explanation": "使用“comme si”（仿佛，好像）加上愈过去时（Plus-que-parfait），用来表达与过去事实相反的假设或比拟。在原文中，Félicia 实际上并没有完全“找回自由”，但那种感觉“就像是”她找回了自由一样。",
+            "example": {
+              "french": "C'était comme si elle avait retrouvé un peu de liberté en italien.",
+              "chinese": "仿佛她重新找回了一点意大利语的自由。"
+            },
+            "usage_note": "注意“comme si”后面永远不接条件式（Conditionnel），而是接未完成过去时（表示与现在相反）或愈过去时（表示与过去相反）。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "name": "L'infinitif passé (过去不定式)",
+            "structure": "Avoir / Être à l'infinitif + Participe passé",
+            "explanation": "过去不定式用于表示在主句动作之前已经完成的动作。在原文中，“avoir étudié”（已经研习过）这个动作发生在“prépare bien”（为...做好准备）之前。它可以作为句子的主语或在介词（如 après, pour）之后使用。",
+            "example": {
+              "french": "Je crois qu'avoir étudié les auteurs italiens baroques prépare bien à ce genre de spectacle.",
+              "chinese": "我觉得研习过意大利巴洛克作家的作品，确实能很好地为这种类型的演出做好准备。"
+            },
+            "usage_note": "过去不定式的助动词选择（avoir或être）与复合过去时完全相同。",
+            "source_ids": [
+              8
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "Acronymes (ENT, EsaBac)",
+              "description": "法语中首字母缩略词的读法通常是逐个字母发音（如 ENT 读作 [e.ɛn.te]），但如果缩略词可以作为一个单词拼读，则直接连读（如 EsaBac 读作 [e.za.bak]）。",
+              "examples": [
+                "ENT",
+                "EsaBac"
+              ]
+            },
+            {
+              "sound": "Mots d'emprunt (WhatsApp)",
+              "description": "外来词在法语中通常会带上法语口音，WhatsApp 中的 'W' 常发作 [w]，而 'App' 发作 [ap]，重音在最后一个音节。",
+              "examples": [
+                "WhatsApp"
+              ]
+            }
+          ],
+          "liaison": [
+            "avait‿annoncé (联诵: [a.vɛ.t‿a.nɔ̃.se] - 助动词与过去分词之间的必须联诵)",
+            "était‿en avance (联诵: [e.tɛ.t‿ɑ̃.n‿a.vɑ̃s] - 动词être与介词之间的必须联诵)",
+            "les‿auteurs‿italiens (联诵: [le.z‿o.tœʁ.z‿i.ta.ljɛ̃] - 限定词与名词、名词与形容词之间的联诵)"
+          ],
+          "intonation": "在列举一系列动作时（如：enchaîner les mots, les phrases, retrouver des sensations），语调在每个逗号前上扬（intonation montante），在最后一个动作后下降（intonation descendante），以体现语言的流畅感和节奏感。"
+        },
+        "vocabulary_network": {
+          "theme": "L'expression écrite et l'apprentissage (书面表达与学习)",
+          "core_word": "écrire",
+          "related_groups": [
+            {
+              "category": "Actions (动作)",
+              "words": [
+                "enchaîner",
+                "compléter",
+                "décrire",
+                "pratiquer"
+              ]
+            },
+            {
+              "category": "Sentiments (情感)",
+              "words": [
+                "satisfaction",
+                "liberté",
+                "plaisir",
+                "bonne humeur"
+              ]
+            },
+            {
+              "category": "Formats (形式)",
+              "words": [
+                "texte",
+                "message",
+                "exercice",
+                "leçon"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Félicia a ___ que c'était le fait d'écrire en italien qui lui avait ___ , ___ les mots, les phrases, ___ des sensations, utiliser l'italien comme elle l'avait fait pendant ses 3 années de lycée en ___.",
+            "answer": "précisé, fait du bien, enchaîner, retrouver, EsaBac",
+            "explanation": "根据原文第5段，Félicia明确表示（précisé）用意大利语写作让她感觉很好（fait du bien），她喜欢连贯地组织（enchaîner）词句，找回（retrouver）在高中Esabac课程中的感觉。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, pourquoi l'absence de la professeure a-t-elle créé un « déferlement de messages » sur le groupe WhatsApp ?",
+            "options": {
+              "A": "Parce que les étudiants étaient fâchés qu'elle soit malade.",
+              "B": "Parce que les étudiants étaient déjà en route pour se rendre à l'université.",
+              "C": "Parce que la professeure l'a fait intentionnellement pour les tester.",
+              "D": "Parce que les étudiants devaient rendre un exercice important ce matin-là."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第3段明确指出：“Cela a créé un déferlement de messages sur le groupe parce que tout le monde était en route pour se rendre à l'université.”（这立刻在班级群里引发了一阵消息狂潮，因为当时大家都正赶往大学。）",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Mais je crois que c'était l'état parfait pour profiter de ce spectacle inattendu qui mêlait le texte de Virginia Woolf et la musique baroque.",
+            "answer": "但我认为，那正是欣赏这场意外演出的绝佳状态，演出融合了弗吉尼亚·伍尔夫的文字与巴洛克音乐。",
+            "explanation": "翻译难点在于“l'état parfait pour profiter de”（欣赏...的绝佳状态）以及关系从句“qui mêlait...”（融合了...）。“mêler”意为混合、融合，这里指文学文本与巴洛克音乐的结合。",
+            "source_ids": [
+              8
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Lisez cette phrase de l'épisode : « une prof avait annoncé [...] qu'elle serait absente ». Si l'annonce était faite au présent (« une prof annonce... »), comment s'écrirait la suite de la phrase ?",
+            "answer": "Une prof annonce [...] qu'elle sera absente.",
+            "explanation": "原文使用了过去时的间接引语（Discours indirect au passé）。主句动词'avait annoncé'是愈过去时，因此从句中原本的将来时必须配合时态变为条件式现在时（serait）来表示过去将来的动作。如果主句动词改为现在时'annonce'，则从句不需要进行时态配合，直接使用简单将来时（sera）。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "enchaîner",
+            "déferlement",
+            "mêler",
+            "intentionnellement"
+          ],
+          "covered_grammar": [
+            "Le discours indirect au passé"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est le fait de + [Infinitif] qui...",
+            "explanation": "用于强调某个具体的动作或事实是导致某种结果的原因。",
+            "example": {
+              "french": "C'était le fait d'écrire en italien qui lui avait fait du bien.",
+              "chinese": "正是用意大利语写作这件事让她倍感舒畅。"
+            }
+          },
+          {
+            "pattern": "Ça change de + [Nom / Pronom]",
+            "explanation": "口语表达，表示某事物与平常不同，带来了新鲜感或改变了单调的现状。",
+            "example": {
+              "french": "Ça m'a changée de ce qu'on fait depuis le début de l'année.",
+              "chinese": "这让我摆脱了今年以来一直做的那种练习。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous écrivez un e-mail à Laetitia et Félicia pour participer à leur projet mentionné à la fin du podcast.",
+          "requirements": "Décrivez votre quartier en français (environ 5-6 phrases). Utilisez au moins deux mots de vocabulaire de la leçon (ex: ambiance, mêler, comble) et essayez d'utiliser l'expression 'faire du bien'.",
+          "starter": "Bonjour Laetitia et Félicia, je vous écris aujourd'hui pour vous décrire mon quartier..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia partage une conversation avec Félicia sur le plaisir et la liberté d'écrire dans une langue étrangère, au-delà des simples exercices à trous. Elles évoquent également une anecdote amusante sur un groupe WhatsApp universitaire et partagent leurs impressions sur une pièce de théâtre mêlant littérature et musique baroque. L'épisode se termine par une invitation aux auditeurs à écrire en français pour décrire leur propre quartier.",
+        "keywords": [
+          "liberté d'écrire",
+          "apprentissage des langues",
+          "théâtre",
+          "musique baroque",
+          "groupe WhatsApp"
+        ],
+        "difficulty_note": "Le texte est de niveau B2 en raison de l'utilisation de structures narratives complexes (discours indirect au passé, hypothèses) et d'un vocabulaire riche lié aux émotions et à la culture."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:04:20.459"
+        },
+        "theme": "L'apprentissage des langues et la culture",
+        "cefr_level": "B2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:23.140",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, vendredi 20 février 2026, cet épisode, le numéro 2599, s'intitule « Félicia et la liberté d'écrire ».",
+          "chinese": "大家好，我是来自巴黎《One Thing in a French Day》播客的Laetitia。希望大家一切顺利，心情愉快。今天是2026年2月20日星期五，本期第2599期节目的标题是《Félicia与写作的自由》。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:23.769",
+          "end_time": "00:00:52.340",
+          "french": "Est-ce que pratiquer une langue peut nous apporter un sentiment de satisfaction et de liberté ? Oui, cela semble évident. Mais écrire dans une autre langue a l'air aussi extrêmement agréable lorsque j'écoute Félicia. Pas seulement faire des exercices. Hier midi, nous étions à table avec Félicia. Il pleuvait dehors. Elle me racontait qu'elle aimait bien l'ambiance du groupe de sa classe sur WhatsApp, qu'elle aimait bien lire les messages",
+          "chinese": "练习一门语言能给我们带来满足感和自由感吗？是的，这似乎显而易见。但在听Félicia讲述时，我发现用另一种语言写作似乎也是一件极其愉悦的事。不仅仅是做练习而已。昨天中午，我们和Félicia一起吃饭。外面下着雨。她跟我说，她很喜欢班级WhatsApp群里的氛围，也很喜欢看里面的消息，"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.340",
+          "end_time": "00:01:19.500",
+          "french": "qui étaient souvent drôles. Le matin même, une prof avait annoncé sur l'ENT, une demi-heure avant le début du cours, qu'elle serait absente. Cela a créé un déferlement de messages sur le groupe parce que tout le monde était en route pour se rendre à l'université. J'imagine que la prof ne l'a pas fait intentionnellement car elle a précisé qu'elle était malade. D'ailleurs, les messages n'étaient pas dirigés contre elle mais plutôt sur le fait que beaucoup étaient, pour une fois,",
+          "chinese": "那些消息通常很搞笑。就在那天早上，一位老师在课前半小时在ENT（数字校园平台）上宣布她要请假。这在群里引发了消息狂潮，因为当时大家都在去学校的路上。我想老师也不是故意的，因为她说明了自己生病了。而且，大家的吐槽并不是针对她，而是因为很多人难得一次，"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:19.500",
+          "end_time": "00:01:25.450",
+          "french": "en avance ou sur le fait que ça les arrangeait bien parce que justement ils étaient en retard.",
+          "chinese": "竟然提前到了，或者是觉得这样正好，因为他们刚好要迟到了。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:26.140",
+          "end_time": "00:01:53.510",
+          "french": "Ensuite, Félicia m'a parlé du cours d'italien de la veille. Elle était contente parce qu'elle avait pris beaucoup de plaisir à faire l'exercice demandé par la prof, écrire un texte qui décrit le quartier où l'on habite. Félicia a précisé que c'était le fait d'écrire en italien qui lui avait fait du bien, enchaîner les mots, les phrases, retrouver des sensations, utiliser l'italien comme elle l'avait fait pendant ses trois années de lycée en EsaBac.",
+          "chinese": "接着，Félicia跟我聊起了前一天的意大利语课。她很高兴，因为她非常享受做老师布置的练习：写一篇描述自己居住街区的短文。Félicia特别提到，正是用意大利语写作这件事让她感觉很棒，将单词和句子串联起来，找回了语感，就像她在EsaBac（意法双语高中项目）那三年里使用意大利语一样。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:54.230",
+          "end_time": "00:02:10.819",
+          "french": "« Ça m'a changée de ce qu'on fait depuis le début de l'année, compléter des trous dans des phrases d'exercices », a-t-elle ajouté avec un soupir de satisfaction. C'était comme si elle avait retrouvé un peu de liberté en italien, la liberté d'écrire, de penser dans cette langue.",
+          "chinese": "“这和我们开学以来一直做的填空练习完全不同，”她满意地叹了口气补充道。就好像她在意大利语中找回了一丝自由，一种用这门语言去写作、去思考的自由。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:10.819",
+          "end_time": "00:02:41.319",
+          "french": "Sa remarque m'a aussi fait sourire et rendue heureuse car j'ai eu l'impression que c'est ce que j'offrais aussi un peu avec le podcast, que je participais à un espace de liberté autour du français. Écouter autre chose que des leçons, des textes formatés, sans vraie vie, sur des sujets pratiques ou à la mode. Nous avons terminé notre conversation sur Orlando que nous avions vu toutes les deux au théâtre lundi soir. J'étais un peu fatiguée après ma compétition.",
+          "chinese": "她的话也让我会心一笑，感到很开心，因为我觉得这正是我通过播客想要带给大家的，我参与创造了一个围绕法语的自由空间。在这里，大家可以听到除了刻板的课程、缺乏生活气息的格式化课文，以及实用或流行话题之外的内容。最后，我们聊起了周一晚上俩人一起在剧院看的《奥兰多》（Orlando）。比赛结束后我本来有点累。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:41.460",
+          "end_time": "00:03:09.449",
+          "french": "Mais je crois que c'était l'état parfait pour profiter de ce spectacle inattendu qui mêlait le texte de Virginia Woolf et la musique baroque d'Orlando di Lasso, jouée par des instruments anciens, dont deux violes de gambe, et modernes. Nous étions aux Bouffes du Nord, la salle était comble, nous avons adoré. « Je crois qu'avoir étudié les auteurs italiens baroques prépare bien à ce genre de spectacle », m'a confié Félicia.",
+          "chinese": "但我觉得这恰好是欣赏这场意外之喜的完美状态。演出将弗吉尼亚·伍尔夫的文本与奥兰多·迪·拉索的巴洛克音乐交织在一起，并由包括两把维奥尔琴在内的古乐器和现代乐器共同演奏。我们当时在北方布夫剧院（Bouffes du Nord），全场座无虚席，我们都爱极了这场演出。“我觉得学习过意大利巴洛克作家，能让人更好地欣赏这类演出，”Félicia对我吐露道。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:09.719",
+          "end_time": "00:03:27.139",
+          "french": "C'était chouette cette soirée à Paris, dans cette belle salle qui est en plein cœur du quartier indien, avec cette belle musique et ce personnage incroyable d'Orlando. Félicia m'a donné l'idée d'enregistrer le moment où la salle se tait parce que le spectacle va commencer.",
+          "chinese": "在巴黎的那个夜晚真的很棒，在那座位于印度街区中心的漂亮剧院里，伴随着美妙的音乐和奥兰多这个不可思议的角色。Félicia还给了我一个灵感：把演出即将开始、全场安静下来的那一刻录下来。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:38.360",
+          "end_time": "00:04:03.150",
+          "french": "D'ailleurs, si vous aussi avez envie de ressentir la liberté d'écrire en français, je vous invite à nous envoyer à Félicia et moi la description de votre quartier par e-mail à frenchday.com. Nous vous lirons, vous publierons et nous vous répondrons. Et nous vous corrigerons aussi pour les abonnés aux lettres du podcast.",
+          "chinese": "另外，如果你们也想感受用法语写作的自由，欢迎通过邮件将你们居住街区的描述发给Félicia和我，地址是frenchday.com。我们会阅读、发布并回复大家。对于订阅了播客通讯的听众，我们还会帮你们修改。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:03.150",
+          "end_time": "00:04:20.459",
+          "french": "À vos plumes ! One Thing in a French Day, c'est fini pour aujourd'hui. Je vous souhaite à tous de passer un très bon week-end et je vous retrouve la semaine prochaine pour de nouveaux épisodes de podcast. À bientôt, au revoir !",
+          "chinese": "拿起笔开始写吧！今天的《One Thing in a French Day》就到这里了。祝大家周末愉快，我们下周在新的播客节目中再见。回头见，拜拜！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:20.459",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 11,
+        "source_video_name": "La liberté d’écrire (French Writing Practice).json",
+        "tags": [
+          "文化深度",
+          "艺术人文"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

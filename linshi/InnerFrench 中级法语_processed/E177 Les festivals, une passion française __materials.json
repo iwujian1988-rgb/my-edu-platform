@@ -1,0 +1,1201 @@
+{
+  "source_file": "E177 Les festivals, une passion française _.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E177 Les festivals, une passion française _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T12:40:56.520Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Irregular Plurals: -al to -als vs. -aux",
+          "Subjunctive after Conjunctions"
+        ],
+        "speaking": [
+          "Discussing the cultural impact of festivals in one's own country",
+          "Debating the economic challenges of large-scale cultural events"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "festivalier",
+            "part_of_speech": "nom",
+            "ipa": "[fɛstivalje]",
+            "chinese": "音乐节参与者",
+            "example_sentence": {
+              "french": "Les personnes qui participent à un festival, on les appelle les festivaliers.",
+              "chinese": "参加音乐节的人，我们称之为音乐节参与者。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Je ne suis pas une grande représentante des festivaliers.",
+                "chinese": "我并不是音乐节爱好者的典型代表。",
+                "source_video": "Les festivals, une passion française ?"
+              }
+            ]
+          },
+          {
+            "french": "estival",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛstival]",
+            "chinese": "夏季的",
+            "example_sentence": {
+              "french": "C'est l'adjectif estival pour décrire les choses qui sont relatives à l'été.",
+              "chinese": "“estival”是用来描述与夏天有关的事物的形容词。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              16,
+              17
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Au pluriel, ça donne des festivals estivaux.",
+                "chinese": "复数形式是“夏季音乐节”。",
+                "source_video": "Les festivals, une passion française ?"
+              }
+            ]
+          },
+          {
+            "french": "subvention",
+            "part_of_speech": "nom féminin",
+            "ipa": "[sybvɑ̃sjɔ̃]",
+            "chinese": "补贴，资助",
+            "example_sentence": {
+              "french": "Les régions ont reçu des subventions pour pouvoir organiser leurs propres événements.",
+              "chinese": "各地区获得了补贴，以便能够组织自己的活动。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              25,
+              77
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Ça ne couvre pas les frais malgré les subventions.",
+                "chinese": "尽管有补贴，但这仍然无法覆盖费用。",
+                "source_video": "Les festivals, une passion française ?"
+              }
+            ]
+          },
+          {
+            "french": "décentralisation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[desɑ̃tʁalizasjɔ̃]",
+            "chinese": "权力下放，去中心化",
+            "example_sentence": {
+              "french": "Dans les années 80-90, on a essayé d'atténuer ça avec une politique de décentralisation.",
+              "chinese": "在80-90年代，人们试图通过去中心化政策来缓解这种情况。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              26
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "On a fait ce qu'on a appelé la décentralisation.",
+                "chinese": "我们实施了所谓的去中心化。"
+              }
+            ]
+          },
+          {
+            "french": "mastodonte",
+            "part_of_speech": "nom masculin",
+            "ipa": "[mastɔdɔ̃t]",
+            "chinese": "庞然大物，巨头",
+            "example_sentence": {
+              "french": "On en trouve à toutes les échelles, des tout petits festivals ou au contraire des mastodontes.",
+              "chinese": "各种规模的都有，既有极小的音乐节，也有庞然大物般的巨型音乐节。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              53
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Des festivals énormes qui sont connus dans toute la France.",
+                "chinese": "在全法国都很有名的巨型音乐节。"
+              }
+            ]
+          },
+          {
+            "french": "dénicher",
+            "part_of_speech": "verbe",
+            "ipa": "[deniʃe]",
+            "chinese": "发掘，搜寻",
+            "example_sentence": {
+              "french": "Les programmateurs essayent souvent aussi de dénicher de nouveaux talents.",
+              "chinese": "节目策划者也经常试图发掘新的人才。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              62
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Dénicher, donc trouver quelque chose qui était caché.",
+                "chinese": "发掘，也就是找到被隐藏的东西。"
+              }
+            ]
+          },
+          {
+            "french": "notoriété",
+            "part_of_speech": "nom féminin",
+            "ipa": "[nɔtɔʁijete]",
+            "chinese": "知名度，名声",
+            "example_sentence": {
+              "french": "L'artiste qui a la plus grande notoriété est en haut de l'affiche.",
+              "chinese": "知名度最高的艺术家排在海报的最上方。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              61,
+              73
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Un festival avec une grosse notoriété.",
+                "chinese": "一个知名度很高的音乐节。"
+              }
+            ]
+          },
+          {
+            "french": "cachet",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kaʃɛ]",
+            "chinese": "（艺术家的）演出酬金",
+            "example_sentence": {
+              "french": "Les cachets, c'est comme ça qu'on appelle la paye des artistes.",
+              "chinese": "“Cachets”是我们对艺术家报酬的称呼。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              82,
+              85
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Il faut quand même rémunérer les artistes qui ont des cachets.",
+                "chinese": "仍然需要支付那些有演出酬金的艺术家。"
+              }
+            ]
+          },
+          {
+            "french": "aléa",
+            "part_of_speech": "nom masculin",
+            "ipa": "[alea]",
+            "chinese": "偶然因素，风险",
+            "example_sentence": {
+              "french": "Il y a de plus en plus d'aléas climatiques.",
+              "chinese": "气候风险越来越多。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              85
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "S'assurer contre ça si jamais le festival doit être annulé.",
+                "chinese": "如果音乐节必须取消，要为此投保。"
+              }
+            ]
+          },
+          {
+            "french": "concurrence",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kɔ̃kyʁɑ̃s]",
+            "chinese": "竞争",
+            "example_sentence": {
+              "french": "Il y a aussi la question de la concurrence.",
+              "chinese": "还有竞争的问题。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              86
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est de plus en plus concurrentiel, le secteur des festivals.",
+                "chinese": "音乐节行业竞争越来越激烈。"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "passage obligé",
+            "meaning": "必经之路 / 必做之事",
+            "example": {
+              "french": "C'est quasi un passage obligé d'être invité à un moment à un festival.",
+              "chinese": "在某个时刻被邀请参加音乐节几乎是必经之事。"
+            },
+            "usage_note": "Used to describe an experience that is considered essential or inevitable in a certain culture or stage of life.",
+            "source_ids": [
+              6,
+              37,
+              40
+            ]
+          },
+          {
+            "expression": "tête d'affiche",
+            "meaning": "领衔主演 / 主打艺人",
+            "example": {
+              "french": "On y va souvent pour la tête d'affiche.",
+              "chinese": "我们经常是为了主打艺人而去的。"
+            },
+            "usage_note": "Refers to the most famous artist whose name appears at the top of the event poster.",
+            "source_ids": [
+              61,
+              62,
+              82,
+              87
+            ]
+          },
+          {
+            "expression": "en plein air",
+            "meaning": "露天 / 户外",
+            "example": {
+              "french": "On a un peu plus de festivals au moment de l'été parce que ça permet de les faire en plein air.",
+              "chinese": "我们在夏天有更多的音乐节，因为这允许在户外举行。"
+            },
+            "usage_note": "Commonly used for concerts, cinemas, or markets held outside.",
+            "source_ids": [
+              19,
+              20
+            ]
+          },
+          {
+            "expression": "c'est le festival de...",
+            "meaning": "（讽刺地）……的盛宴 / 充斥着……",
+            "example": {
+              "french": "C'est le festival des propositions démagogiques.",
+              "chinese": "这简直是蛊惑人心提案的盛宴。"
+            },
+            "usage_note": "A sarcastic way to criticize an accumulation of negative things (e.g., mistakes, lies).",
+            "source_ids": [
+              21,
+              22,
+              23
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Irregular Plurals: -al to -als vs. -aux",
+            "structure": "Un festival -> Des festivals (Exception); Un adjectif estival -> Des adjectifs estivaux (Regular)",
+            "explanation": "Most masculine nouns ending in -al change to -aux in the plural (cheval -> chevaux). However, 'festival' is a notable exception, taking an 's'. Interestingly, the adjective 'estival' follows the regular rule.",
+            "example": {
+              "french": "Au pluriel, ça donne des festivals estivaux.",
+              "chinese": "复数形式是“夏季音乐节”。"
+            },
+            "usage_note": "Other exceptions like 'festival' include: bal, carnaval, choral, récital.",
+            "source_ids": [
+              14,
+              15,
+              16,
+              17
+            ]
+          },
+          {
+            "name": "Subjunctive after Conjunctions",
+            "structure": "Sans que / Pour que + Subjonctif",
+            "explanation": "Certain conjunctions expressing purpose or condition require the subjunctive mood when the subject of the subordinate clause is different from the main clause.",
+            "example": {
+              "french": "Sans que ce soit directement affilié à un seul parti.",
+              "chinese": "而并不直接隶属于某个单一政党。"
+            },
+            "usage_note": "If the subject is the same, 'pour' + infinitive is preferred over 'pour que' + subjunctive.",
+            "source_ids": [
+              34,
+              27,
+              85
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[al] vs [o]",
+              "description": "The contrast between the singular 'festival' [fɛstival] and the plural adjective 'estivaux' [ɛstivo].",
+              "examples": [
+                "festival",
+                "estivaux"
+              ]
+            }
+          ],
+          "liaison": [
+            "festivals_estivaux (s + e -> [z])",
+            "petits_événements (s + é -> [z])",
+            "grands_artistes (s + a -> [z])"
+          ],
+          "intonation": "The speakers use a rising intonation for lists of festivals and a sarcastic falling intonation for the expression 'c'est le festival de...'"
+        },
+        "vocabulary_network": {
+          "theme": "L'économie de la culture",
+          "core_word": "Festival",
+          "related_groups": [
+            {
+              "category": "Financement",
+              "words": [
+                "subvention",
+                "sponsor",
+                "billetterie",
+                "budget",
+                "déficit"
+              ]
+            },
+            {
+              "category": "Organisation",
+              "words": [
+                "programmateur",
+                "tête d'affiche",
+                "cachet",
+                "scène",
+                "installation"
+              ]
+            },
+            {
+              "category": "Public",
+              "words": [
+                "festivalier",
+                "catégorie socioprofessionnelle",
+                "citadin",
+                "amateur"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "D'autant plus que si c'est un ___ qui n'est pas juste à ___ de chez nous, il faut payer le ___, le ___ de train ou l'___ pour aller ___.",
+            "answer": "festival, côté, transport, billet, essence, là-bas",
+            "explanation": "根据原文第50句，去外地参加音乐节需要考虑交通成本，包括火车票或汽油费。",
+            "source_ids": [
+              50
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon l'épisode, pourquoi le festival des Vieilles Charrues a-t-il réalisé un déficit de 1 000 000 d'euros l'année dernière ?",
+            "options": {
+              "A": "Parce qu'ils n'ont pas vendu assez de billets.",
+              "B": "À cause de l'annulation due aux aléas climatiques.",
+              "C": "Parce que les coûts d'organisation et les cachets des artistes sont très élevés.",
+              "D": "Parce qu'ils n'ont pas reçu de subventions publiques."
+            },
+            "answer": "C",
+            "explanation": "原文第80-82句提到，尽管售票率很高，但由于组织成本高昂以及艺人出场费（cachets）不断上涨，导致了亏损。",
+            "source_ids": [
+              80,
+              81,
+              82
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "翻译",
+            "question": "La tête d'affiche, c'est l'artiste le plus connu, l'artiste qui a la plus grande notoriété, qui est donc en haut de l'affiche.",
+            "answer": "主打艺人（领衔主演）是最著名的艺术家，是知名度最高的艺术家，因此排在海报的最上方。",
+            "explanation": "“Tête d'affiche”是一个行业术语，指海报上的头牌艺人。“Notoriété”指知名度。",
+            "source_ids": [
+              61
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Mettez la phrase suivante au pluriel : 'Un festival estival attire un grand artiste.'",
+            "answer": "Des festivals estivaux attirent de grands artistes.",
+            "explanation": "注意 'festival' 的复数是 'festivals'（例外），而形容词 'estival' 的复数是 'estivaux'（规则）。此外，'un grand artiste' 变为复数时，由于形容词在名词前，'des' 变为 'de'。",
+            "source_ids": [
+              14,
+              17
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "festival",
+            "cachet",
+            "tête d'affiche",
+            "notoriété",
+            "estival"
+          ],
+          "covered_grammar": [
+            "Irregular Plurals",
+            "Noun-Adjective Agreement"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il faut savoir que + [Indicateur de fait]",
+            "explanation": "Used to introduce an important fact or historical context.",
+            "example": {
+              "french": "Il faut savoir qu'après la Seconde Guerre mondiale, on a reconstruit le pays.",
+              "chinese": "要知道，二战后我们重建了国家。"
+            }
+          },
+          {
+            "pattern": "D'autant plus que + [Raison supplémentaire]",
+            "explanation": "Used to add a reinforcing reason, meaning 'especially since' or 'all the more so because'.",
+            "example": {
+              "french": "C'est cher, d'autant plus que les prix ont augmenté de 60 %.",
+              "chinese": "这很贵，尤其是价格已经上涨了60%。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are discussing with a French friend whether to go to a music festival this summer.",
+          "requirements": "Use the terms 'tête d'affiche', 'billetterie', and 'en plein air'. Discuss the budget including 'transport' and 'logement'.",
+          "starter": "Salut ! J'ai vu la programmation du festival Rock en Seine, ça te dit d'y aller ?"
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the cultural phenomenon of festivals in France. It covers their historical roots in post-WWII regional development and decentralization, the diversity of themes (music, theater, photography), and the socio-economic challenges they face today, such as rising artist fees (cachets), climate risks, and the struggle for financial balance.",
+        "keywords": [
+          "festivals",
+          "culture française",
+          "économie",
+          "musique",
+          "décentralisation"
+        ],
+        "difficulty_note": "The text is B2 level due to its use of specialized vocabulary related to economics, politics, and the arts, as well as complex sentence structures."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:03",
+          "end": "00:35:43"
+        },
+        "theme": "Les festivals en France",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:03.770",
+        "end_time": "00:35:43.369",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 92,
+        "source_video_name": "E177 Les festivals, une passion française _.json",
+        "tags": [
+          "商务",
+          "旅行"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:03.770",
+          "end_time": "00:00:14.890",
+          "french": "Les festivals, une passion française ? Salut à toutes et à tous, salut Ingrid ! Salut Hugo, ça va bien ? Ouais, ça va et toi ? Ça va, ça va !",
+          "chinese": "音乐节，是法国人的热情所在吗？大家好，你好，英格丽德！你好，雨果，你好吗？嗯，挺好的，你呢？挺好，挺好！"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:15.349",
+          "end_time": "00:00:44.259",
+          "french": "Bon, t'as une super idée pour cet épisode qui t'a été inspirée par tes aventures récentes, il me semble. Oui, tout à fait. Donc aujourd'hui, on va parler des festivals. Il y en a beaucoup en France. Et moi, justement, cet été, j'ai eu l'occasion d'aller à plusieurs festivals et notamment là, très récemment, au moment où on enregistre, c'était la semaine dernière, il me semble que j'y suis allée.",
+          "chinese": "看来你对这一集有个很棒的主意，好像是受你最近经历的启发。是的，没错。所以今天我们要聊聊音乐节。法国有很多音乐节。而我正好在这个夏天有机会去了几个，特别是在录音的当下，就在不久前，好像是上周我刚去过。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:44.259",
+          "end_time": "00:01:07.010",
+          "french": "à Musilac, à Aix-les-Bains, donc dans les Alpes. Et ça m'a inspirée parce que je me suis quand même dit que les festivals, c'est quelque chose qu'on fait beaucoup en France, que tous les Français connaissent et que ce serait sympa d'en parler à nos auditeurs. Oui, c'est vrai. Moi, j'en ai fait quelques-uns pendant ma jeunesse.",
+          "chinese": "去了艾克斯莱班的 Musilac 音乐节，就在阿尔卑斯山区。这给了我启发，因为我觉得音乐节是法国人经常参加的活动，每个法国人都知道，跟听众们聊聊这个应该挺有意思的。是的，没错。我年轻的时候也参加过几个。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:07.010",
+          "end_time": "00:01:36.180",
+          "french": "Je n'étais pas non plus un grand amateur de festivals. C'est vrai que j'écoutais plutôt de la musique en club, la musique électronique. C'est vrai que maintenant, on en voit de plus en plus pendant les festivals. On voit de plus en plus de DJ. À mon époque, un peu moins. Et moi, je suis un peu un puriste. J'ai plutôt tendance à dire que la musique électronique, c'est fait pour les clubs. Et je trouve qu'en festival, ce n'est pas la même chose. Pour moi, ce n'est pas la bonne ambiance. Mais j'ai quand même fait quelques festivals sympas quand j'étais plus jeune. Donc, on pourrait en parler.",
+          "chinese": "我以前也不是那种狂热的音乐节爱好者。说实话，我更倾向于在夜店听电子乐。确实，现在音乐节上的电子乐越来越多了，DJ 也越来越多。在我那个年代还没这么多。我有点像个“原教旨主义者”，总觉得电子乐是为夜店而生的。我觉得在音乐节上感觉不一样，对我来说氛围不对。但我年轻时确实参加过几个不错的音乐节。所以，我们可以聊聊。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:36.180",
+          "end_time": "00:01:48.700",
+          "french": "C'est vrai que moi non plus, je ne suis pas fan de festivals. Je ne suis pas une grande représentante des festivaliers, des gens qui vont à des festivals tout le temps. Mais c'est tellement commun en France que...",
+          "chinese": "确实，我也不是音乐节的铁杆粉丝。我算不上那些经常跑音乐节的“资深乐迷”代表。但在法国，这太普遍了，以至于……"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:48.700",
+          "end_time": "00:02:07.060",
+          "french": "On peut dire que c'est quasi un passage obligé d'être invité à un moment, à un festival comme ça, parce que des copains y vont, parce qu'on va rendre visite à quelqu'un et à ce moment-là, il y a un festival dans sa ville. Et c'est tellement vrai qu'en France, on est...",
+          "chinese": "可以说，这几乎是人生必经之路，总会有某个时刻被邀请去参加这类音乐节，可能是因为朋友要去，或者是去拜访某人时，正好那座城市在举办音乐节。事实也确实如此，在法国……"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:07.060",
+          "end_time": "00:02:35.659",
+          "french": "une personne sur deux à avoir déjà assisté à un festival. Alors oui, ce n'est pas 100 %, mais c'est quand même pas mal. Et donc nous, à innerFrench, ça veut dire que c'est 100 %. On est au-dessus de la moyenne, mais ça reste quand même quelque chose de très commun. Et en plus, on a, pour cet épisode, fait des recherches. Et c'est vrai qu'il y a une offre très, très, très importante, ce qui fait qu'il peut y en avoir pour tout le monde.",
+          "chinese": "每两个人中就有一个参加过音乐节。虽然不是 100%，但也相当多了。所以对我们 innerFrench 来说，比例就是 100% 了。我们高于平均水平，但这依然是一件非常普遍的事情。此外，为了这一集，我们做了一些研究。确实，选择非常非常丰富，每个人都能找到适合自己的。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:36.020",
+          "end_time": "00:03:00.080",
+          "french": "Oui, c'est vrai. Quand on pense aux festivals, on imagine le concert de rock, la pinte de bière et on a l'impression que c'est seulement un truc de jeunes. Mais en fait, non, il y a vraiment des festivals pour tous les publics. Donc, on va en parler dans cet épisode. On ne va pas seulement parler des festivals de musique pour les jeunes. Ça va peut-être vous donner des idées, notamment si vous avez envie d'aller en France.",
+          "chinese": "是的，没错。一提到音乐节，人们就会想到摇滚演唱会、大杯啤酒，觉得那是年轻人的玩意儿。但事实并非如此，真的有面向所有观众的艺术节。所以我们会在这一集里讨论。我们不只聊年轻人的音乐节。这可能会给你们一些启发，特别是如果你想去法国的话。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:00.080",
+          "end_time": "00:03:19.819",
+          "french": "Ça peut être une bonne occasion d'y aller dans le contexte d'un festival, par exemple, parce que c'est aussi un excellent endroit pour rencontrer des gens. C'est vrai que les gens sont souvent plus ouverts dans les festivals que le reste du temps. Donc, voilà, ça va peut-être vous donner quelques idées. C'est parti, on y va alors ? On y va, let's go !",
+          "chinese": "借着艺术节的机会去法国是个不错的选择，因为那也是结识朋友的绝佳场所。确实，人们在艺术节期间通常比平时更开放。所以，这可能会给你们一些灵感。准备好了吗？我们开始吧？走起，出发！"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:26.360",
+          "end_time": "00:03:42.460",
+          "french": "Pour commencer, on va se demander : qu'est-ce qu'un festival ? Alors un festival, c'est un événement culturel qui dure pendant plusieurs jours sur un seul site, donc dans un seul endroit, avec plusieurs petits événements",
+          "chinese": "首先，我们要问：什么是艺术节？艺术节是一种文化活动，通常在同一个地点持续数天，包含多个小型活动。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:42.460",
+          "end_time": "00:04:12.259",
+          "french": "à l'intérieur. Donc, quand c'est un festival de musique, bien sûr, c'est un événement avec plusieurs concerts qui se déroulent sur plusieurs jours. Mais ça peut être aussi autre chose que de la musique. Ça peut être, par exemple, un festival de théâtre et ce sera des représentations théâtrales. Ça peut être des débats, des expositions. Vraiment, on peut imaginer plein, plein de formats. En tout cas, il faut que ça réunisse beaucoup de monde et que ça propose",
+          "chinese": "如果是音乐节，当然就是包含多场音乐会的活动，持续数天。但也可以是音乐以外的形式。比如戏剧节，会有多场戏剧演出。也可以是辩论、展览。真的可以想象出很多很多形式。总之，它需要聚集很多人，并提供……"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:12.259",
+          "end_time": "00:04:17.860",
+          "french": "plusieurs petits événements. Alors, d'où ça vient le mot festival ?",
+          "chinese": "多个小型活动。那么，“festival”这个词是从哪儿来的呢？"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:18.009",
+          "end_time": "00:04:44.620",
+          "french": "Oui, donc dans festival, on entend le mot « festif ». « Festif », ça veut dire quelque chose qui est lié à la fête. C'est vrai qu'il y a vraiment cette dimension d'événement, mais ce n'est pas forcément quelque chose de très sérieux. On y va plutôt pour passer du bon temps, pour s'amuser. Les personnes qui participent à un festival, on les appelle les « festivaliers », « festivalières » au féminin.",
+          "chinese": "是的，在“festival”里能听到“festif”这个词。“Festif”的意思是与节日或庆祝有关。确实，它具有活动规模，但不一定是非常严肃的事情。人们去那里更多是为了度过美好时光，为了玩乐。参加艺术节的人被称为“festivaliers”（女性为“festivalières”）。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:04:44.860",
+          "end_time": "00:05:12.110",
+          "french": "Et une petite exception qu'il est intéressant de noter ici, tu as dit en introduction, il me semble : « j'ai participé à plusieurs festivals ». Et il faut savoir que c'est un pluriel irrégulier parce que normalement, vous savez sûrement que les noms masculins qui se terminent par -al au pluriel, c'est un pluriel irrégulier, c'est -aux. L'exemple classique : un cheval, des chevaux.",
+          "chinese": "这里有一个有趣的例外值得注意，你在开场白里好像说过：“我参加了几个 festivals”。要知道这是一个不规则复数，因为你们肯定知道，通常以 -al 结尾的阳性名词，复数形式是不规则的 -aux。经典的例子是：un cheval（一匹马），des chevaux（几匹马）。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:12.110",
+          "end_time": "00:05:25.379",
+          "french": "Mais avec festival, c'est irrégulier, donc on dit un festival, des festivals. Il y a d'autres exceptions, on ne va pas toutes les citer, mais par exemple carnaval aussi, un carnaval, des carnavals, un bal, des bals, etc.",
+          "chinese": "但“festival”是个例外，所以我们说 un festival，des festivals。还有其他例外，我们就不一一列举了，比如“carnaval”（狂欢节）也是 un carnaval，des carnavals；“bal”（舞会）是 un bal，des bals，等等。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:25.720",
+          "end_time": "00:05:54.540",
+          "french": "Et ce qui est drôle, c'est que souvent les festivals... j'ai envie de dire les festivaux maintenant, je ne sais pas pourquoi. C'est comment on appelle ça quand on se corrige plus que... Ah, la surcorrection. La surcorrection, voilà. On se corrige tellement qu'en fait, ça en devient une erreur. Donc non, les festivals souvent ont lieu en été. Et on a un adjectif pour décrire les choses qui sont relatives à l'été. C'est l'adjectif estival.",
+          "chinese": "有趣的是，通常这些 festivals……我现在都想说成 festivaux 了，不知道为什么。这种过度纠正叫什么来着？啊，“过度矫正”。矫枉过正，结果反而变成了错误。所以，festivals 通常在夏天举行。我们有一个形容词来描述与夏天有关的事物，就是“estival”。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:05:54.579",
+          "end_time": "00:06:20.069",
+          "french": "E-S-T-I-V-A-L. Par exemple, on peut dire un événement estival. C'est un événement qui a lieu en été. Une station estivale, c'est une station balnéaire, une ville, un endroit où on va plutôt en été. Donc, en fait, au pluriel, ça donne des festivals estivaux. Donc, c'est un peu bizarre parce que l'adjectif est régulier, mais le nom festival ne l'est pas. Voilà.",
+          "chinese": "E-S-T-I-V-A-L。例如，我们可以说“un événement estival”，指在夏天举办的活动。“Une station estivale”指海滨胜地，一个人们倾向于夏天去的城镇或地方。所以，复数形式其实是“des festivals estivaux”。这有点奇怪，因为形容词是规则的，但名词“festival”却不是。就是这样。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:20.120",
+          "end_time": "00:06:47.310",
+          "french": "C'est drôle. Au singulier, ce serait un festival estival. C'est ça, un festival estival, des festivals estivaux. Voilà, toute la beauté du français résumée dans cette phrase. Et comme on parle de festival estival, j'en profite pour faire une précision. C'est qu'en France et même en général, je pense, dans le monde, on a un peu plus de festivals au moment de l'été parce que ça permet de les faire en...",
+          "chinese": "真有意思。单数就是“un festival estival”。没错，un festival estival，des festivals estivaux。瞧，法语的所有美妙之处都浓缩在这一句里了。既然聊到了夏季艺术节，我顺便补充一点。在法国，甚至我觉得在全球范围内，夏天的艺术节会多一些，因为这样可以……"
+        },
+        {
+          "id": 19,
+          "start_time": "00:06:47.310",
+          "end_time": "00:06:53.100",
+          "french": "plein air. Donc, en plein air, ça veut dire dehors, à l'air libre. Alors, c'est pas...",
+          "chinese": "在户外举行。“En plein air”就是指在室外、露天。当然，并不……"
+        },
+        {
+          "id": 20,
+          "start_time": "00:06:53.110",
+          "end_time": "00:07:20.839",
+          "french": "que ça, les festivals, il y en a parfois qui sont à l'intérieur, dans des palais des congrès, dans des grandes salles pour des séminaires, etc. Mais souvent, en tout cas c'est plus sympa, on les a en plein air, dehors, sur des grandes pelouses, parfois au bord d'un lac, comme c'est le cas dans le dernier où je suis allée. Et c'est pour ça qu'il y en a plus à cette période-là de l'année.",
+          "chinese": "艺术节并不全是户外的，有时也会在室内，比如会议中心、大型研讨厅等。但通常情况下，或者说更惬意的方式是在户外，在室外的大草坪上，有时在湖边，就像我刚去过的那个一样。这就是为什么一年中这个时期的艺术节更多。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:21.050",
+          "end_time": "00:07:44.269",
+          "french": "Et un dernier point qui concerne le vocabulaire, on a parlé de la grammaire avant, un petit point de vocabulaire maintenant, c'est qu'il y a une expression avec le mot festival. On dit parfois « c'est le festival de », et c'est une manière un peu sarcastique de critiquer ou de se moquer de quelqu'un ou de quelque chose. Par exemple, qu'est-ce qu'on pourrait dire ?",
+          "chinese": "关于词汇的最后一点，刚才聊了语法，现在说个词汇点，就是有一个关于“festival”的表达。我们有时会说“c'est le festival de...”，这是一种带点讽刺意味的批评或嘲笑某人某事的方式。比如，我们可以怎么说？"
+        },
+        {
+          "id": 22,
+          "start_time": "00:07:44.269",
+          "end_time": "00:08:06.509",
+          "french": "Par exemple, en politique, comme j'aime bien la politique, on peut dire que c'est le festival des propositions démagogiques. Quand des hommes et femmes politiques essayent toujours d'aller plus loin pour être celui ou celle qui se fait le plus entendre. Et donc, on a une accumulation comme ça avec...",
+          "chinese": "比如在政治领域，因为我挺喜欢政治，我们可以说这是“蛊惑人心提议的大荟萃”。当政客们总是试图语不惊人死不休，好让自己成为声音最响亮的那个人。于是，就出现了这样一种堆砌……"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:06.509",
+          "end_time": "00:08:35.820",
+          "french": "plein de personnes qui disent un peu des choses similaires, ça donne le même effet que quand on est dans un festival et on a plein de mini-événements, par exemple, plein de petits concerts, plein de petites représentations. Donc voilà, c'est cette image qui est reprise et souvent c'est pour critiquer. Ou alors on s'occupe d'enfants et ils sont vraiment très énervés et on dit : « c'est le festival des bêtises aujourd'hui ». C'est vrai, c'est vrai. Bon exemple.",
+          "chinese": "很多人说着类似的话，效果就像在艺术节里有很多小型活动一样，比如很多场小型音乐会、很多场小型演出。所以，这个形象被借用了，通常带有批评意味。或者你在带孩子，他们闹得不可开交，你会说：“今天真是‘淘气大派对’啊”。没错，没错，好例子。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:08:42.970",
+          "end_time": "00:09:12.110",
+          "french": "Alors, on vous disait que les festivals font vraiment partie de la culture française et nous, on s'est demandé un peu pourquoi. On a fait quelques recherches. Alors, il faut savoir qu'après la Seconde Guerre mondiale, quand on a reconstruit le pays, il y avait une vraie volonté politique de créer des sortes de pôles dans les régions, de développer les régions au niveau économique et culturel. Donc, à partir de ce moment-là, il y avait une...",
+          "chinese": "刚才提到艺术节是法国文化的重要组成部分，我们也思考了其中的原因。我们做了一些研究。要知道，二战后国家重建时期，政府有一种明确的政治意愿，要在各地区建立某种中心，从经济和文化层面发展地方。所以，从那时起，就有了……"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:12.110",
+          "end_time": "00:09:36.620",
+          "french": "action assez active et les régions ont reçu des financements, des subventions pour pouvoir organiser leurs propres événements, notamment les festivals. Les festivals, c'était une bonne manière pour les régions de se construire ou de renforcer leur image sur la scène nationale. Et puis aussi, dans les années 80 et 90,",
+          "chinese": "相当积极的行动，各地区获得了资金和补贴来组织自己的活动，尤其是艺术节。艺术节是各地区在国家舞台上建立或强化自身形象的好方法。此外，在 80 和 90 年代……"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:36.620",
+          "end_time": "00:10:00.909",
+          "french": "on a fait ce qu'on a appelé la décentralisation. Donc, c'est un peu le même processus. Vous savez que la France est un pays très centralisé. Tous les pouvoirs sont concentrés à Paris : pouvoir économique, pouvoir politique et culturel. Mais dans les années 80-90, on a essayé d'atténuer un petit peu ça avec une politique de décentralisation, donc donner plus d'autonomie aux régions.",
+          "chinese": "我们推行了所谓的“权力下放”。这其实是类似的过程。你们知道法国是一个高度集权的国家。所有权力都集中在巴黎：经济、政治和文化权力。但在 80-90 年代，我们尝试通过权力下放政策来缓解这种情况，即给予各地区更多的自主权。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:00.909",
+          "end_time": "00:10:19.690",
+          "french": "Bien sûr, toujours de manière assez encadrée, une autonomie, on peut dire, relative. Et donc là aussi, l'État a donné des financements à ce qu'on appelle les collectivités locales pour qu'elles puissent organiser leurs propres événements, notamment les festivals.",
+          "chinese": "当然，这始终是在一定框架内的，可以说是一种相对的自主权。因此，国家也向所谓的“地方政府”提供资金，以便它们能够组织自己的活动，特别是艺术节。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:19.769",
+          "end_time": "00:10:49.580",
+          "french": "Et ça a tellement bien marché qu'aujourd'hui, il y a à peu près 7 300 festivals en France. En tout cas, c'est ce que dit une étude très sérieuse qui a été réalisée en 2019. Les chercheurs ont pris des critères objectifs pour définir ce qu'est un festival. Il me semble qu'il fallait que ça ait duré au moins sur deux jours, qu'il y ait au moins cinq événements type concert ou autre",
+          "chinese": "这一举措非常成功，以至于今天法国大约有 7300 个艺术节。至少 2019 年的一项非常严肃的研究是这么说的。研究人员采用了客观标准来定义什么是艺术节。我记得标准包括至少持续两天，至少有五场音乐会或其他类型的活动……"
+        },
+        {
+          "id": 29,
+          "start_time": "00:10:49.580",
+          "end_time": "00:11:10.639",
+          "french": "à l'intérieur et je ne sais plus, peut-être un autre critère, qu'il y ait plus d'une édition. Donc voilà, ça on ne l'a pas précisé, mais un festival c'est quelque chose qui revient souvent tous les ans ou deux fois par an ou tous les deux ans, souvent c'est annuel. Et donc on en a décompté 7 000",
+          "chinese": "包含在内，还有另一个标准，好像是必须举办过一届以上。所以，虽然我们没明说，但艺术节通常是定期举办的，每年一次、每年两次或每两年一次，通常是年度性的。所以我们统计到了 7000……"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:10.639",
+          "end_time": "00:11:37.389",
+          "french": "300, c'est quand même beaucoup. Après, il peut y en avoir même plus si jamais on inclut d'autres critères pour des plus petits festivals. Mais ça, on ne peut pas trop savoir parce qu'il y a eu le Covid entre-temps. Et puis en même temps, il y en a tous les ans des nouveaux, mais d'autres qui sont fermés. Mais bon, en général, déjà plus de 7 000, c'est beaucoup. Ça fait beaucoup, oui.",
+          "chinese": "300 个，这确实很多。如果把更小型艺术节的其他标准也算进去，数量可能更多。但由于中间经历了新冠疫情，具体情况很难说。而且每年都有新的艺术节诞生，也有旧的停办。但总的来说，超过 7000 个已经非常惊人了。确实很多。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:11:37.389",
+          "end_time": "00:12:05.919",
+          "french": "Effectivement. Apparemment, ça a vraiment explosé dans les années 2010, la création de festivals. Ce qui fait que la majority des festivals qui étaient dans cette étude, c'étaient plutôt des festivals créés après 2010. Parce que c'est assez difficile de faire tenir, de faire durer un festival sur plusieurs années. Donc voilà, les festivals dont je vous parlais avant, dans les années 80-90, il y en a beaucoup qui ont disparu",
+          "chinese": "的确。显然，艺术节的创建在 2010 年代迎来了爆发。因此，该研究中的大多数艺术节都是在 2010 年之后创建的。因为要维持一个艺术节并让它持续多年是相当困难的。所以，我之前提到的 80-90 年代的那些艺术节，很多都已经消失了……"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:05.919",
+          "end_time": "00:12:35.250",
+          "french": "qui ont été remplacés par d'autres plus tard. Mais il y a des exceptions, des festivals qui existent depuis très longtemps, notamment un des plus connus en France qui s'appelle la Fête de l'Humanité, ou plutôt la Fête de l'Huma. L'Humanité, c'est le nom d'un grand journal d'extrême gauche et ils organisent un festival depuis 1930. Donc voilà, il y a des concerts, mais aussi beaucoup de débats.",
+          "chinese": "后来被其他的取代了。但也有例外，有些艺术节已经存在很久了，特别是法国最著名的艺术节之一，叫做“人道报节”，或者简称“Huma 节”。《人道报》是一家著名的极左翼报纸，他们从 1930 年就开始举办这个艺术节。那里有音乐会，也有很多辩论会。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:35.250",
+          "end_time": "00:13:00.679",
+          "french": "C'est à Paris, il me semble, le festival de l'Huma ? À Paris, et il y en a un mini à Toulouse. Ah, ok, ils ont délocalisé juste pour toi. Oui, juste pour moi. Mais le vrai, l'original, c'est à Paris, tous les ans, depuis 1930, organisé par ce journal, qui avant était financé par le Parti communiste. Donc c'était à l'origine un...",
+          "chinese": "Huma 节好像是在巴黎举办的？在巴黎，图卢兹也有个小型的。啊，好吧，他们是为了你才搬过去的。是的，专门为我。但真正的、原汁原味的在巴黎，自 1930 年以来每年举办，由这家报纸组织，以前由共产党资助。所以它最初是一个……"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:00.730",
+          "end_time": "00:13:13.539",
+          "french": "événement plutôt communiste et maintenant comme tu l'as dit c'est d'extrême gauche ou de gauche radicale un peu plus générale sans que ce soit directement affilié à un seul parti",
+          "chinese": "带有共产主义色彩的活动，而现在正如你所说，它属于极左翼或更广泛的激进左翼，不再直接隶属于单一政党。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:13.879",
+          "end_time": "00:13:42.769",
+          "french": "C'est vraiment une institution. La Fête de l'Huma, tout le monde en a déjà entendu parler. Et il y a un autre festival qui est très connu, les Solidays. Et lui, il existe depuis 1999. Il me semble que tu as une petite anecdote à ce sujet. Les Solidays, c'est le festival qui est organisé par une association, Sidaction, contre le sida, donc de lutte contre le virus du sida.",
+          "chinese": "这真的是一个传统。每个人都听说过 Huma 节。还有一个非常有名的音乐节叫 Solidays。它自 1999 年起就存在了。我记得你关于它有个小故事。Solidays 是由一个名为 Sidaction 的协会组织的，旨在抗击艾滋病。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:13:42.769",
+          "end_time": "00:14:11.500",
+          "french": "Et c'est un gros festival, on peut dire mainstream. Mainstream, comme on dit en français. C'est un mot qui est rentré dans le langage français, qui est donc accessible à tous, que tout le monde connaît. Et moi, comme je vous le disais en introduction, je ne suis pas une méga fan de musique ou une très fine connaisseuse des festivals. Et justement, le tout premier où je suis allée, c'étaient les Solidays",
+          "chinese": "这是一个大型音乐节，可以说很“主流”。这个词已经进入了法语词汇，意思是大伙儿都能接受、大家都知道。正如我在开头所说，我不是超级乐迷，也不是音乐节专家。而我参加的第一个音乐节恰恰就是 Solidays。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:11.500",
+          "end_time": "00:14:34.980",
+          "french": "parce que j'étais étudiante à Paris à ce moment-là et que c'était presque un passage obligé. J'y suis allée sans même me renseigner, sans savoir quels artistes allaient être là-bas, sans savoir quels autres événements à part la musique ça contenait. Et voilà, donc c'est pour bien montrer que souvent les festivals, ça peut être juste...",
+          "chinese": "因为当时我在巴黎上大学，这几乎是必经之路。我甚至没做功课就去了，不知道有哪些艺人，也不知道除了音乐还有什么活动。所以，这充分说明了音乐节往往可能只是……"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:34.980",
+          "end_time": "00:14:41.860",
+          "french": "un gros truc où tout le monde va et on y va comme les autres et on s'amuse sans pour autant le sacraliser.",
+          "chinese": "一个大家都去的大型活动，我们也随大流去凑个热闹，玩得开心就好，没必要把它神圣化。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:14:42.299",
+          "end_time": "00:15:06.779",
+          "french": "Ouais. Nous, dans la région Centre, on a un grand festival qui est connu dans toute la France. C'est le Printemps de Bourges qui est organisé dans la ville de Bourges. Moi, c'était ça mon premier festival quand j'avais 19 ans, je crois. Et il est un peu spécial parce que c'est celui qui lance la saison des festivals, on peut dire, parce qu'il commence à la fin du mois d'avril, je crois.",
+          "chinese": "嗯。在我们中央大区，有一个闻名全法的盛大艺术节。那就是在布尔日市举办的“布尔日之春”。那是我参加的第一个艺术节，当时我大概 19 岁。它有点特别，因为可以说它是拉开艺术节序幕的活动，我记得是在四月底开始。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:06.779",
+          "end_time": "00:15:29.289",
+          "french": "Et voilà, c'est plutôt un festival de musique avec plein de concerts dans toute la ville. Et j'en garde de très bons souvenirs. Donc, c'est vrai que c'est quasiment, comme tu le disais, un rite de passage maintenant pour les jeunes. Bon, pas pour tous, on va le voir un peu plus tard. Mais voilà, quand on est au lycée ou un peu plus tard, souvent on...",
+          "chinese": "这是一个音乐节，全城到处都有音乐会。我对此有着非常美好的回忆。所以，正如你所说，这现在几乎成了年轻人的“成年礼”。当然，并不是对所有人都是这样，我们稍后会聊到。但总之，在上高中或稍大一点的时候，通常……"
+        },
+        {
+          "id": 41,
+          "start_time": "00:15:29.620",
+          "end_time": "00:15:54.399",
+          "french": "on a des amis qui nous invitent à aller à un festival. Et ce qui est bien, c'est qu'on n'est pas obligé d'aller systématiquement à Paris, vu que dans beaucoup de régions, maintenant, il y a de grands festivals avec des super concerts. Oui, c'est vrai. Tu disais pas tous les jeunes. Et effectivement, il ne faut pas non plus qu'on donne une image fausse de la réalité.",
+          "chinese": "会有朋友邀请我们去参加音乐节。好在现在不一定要跑去巴黎，因为很多地区都有举办精彩音乐会的大型艺术节。是的，没错。你刚才说并非所有年轻人。确实，我们也不能歪曲现实。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:15:54.399",
+          "end_time": "00:16:23.519",
+          "french": "Certes, c'est quelque chose qui est très répandu et où de nombreux Français sont déjà allés, mais déjà ça reste quelque chose de nouveau. Donc forcément, les retraités sont sous-représentés. On en voit, parfois, il y a des personnes âgées, mais comme c'est quelque chose qu'ils et elles n'ont pas forcément connu dans leur jeunesse, leur vie active, ils ont moins le réflexe d'aller à ce genre d'événement.",
+          "chinese": "虽然这很普遍，很多法国人都去过，但这毕竟还是个新鲜事物。所以，退休人员的比例自然较低。有时也能看到老人，但因为这在他们年轻或工作时期并不流行，他们不太会有去参加这类活动的习惯。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:23.519",
+          "end_time": "00:16:29.960",
+          "french": "Ensuite, c'est un événement qui est quand même plutôt...",
+          "chinese": "其次，这类活动还是更倾向于……"
+        },
+        {
+          "id": 44,
+          "start_time": "00:16:30.460",
+          "end_time": "00:17:00.080",
+          "french": "connu et facilité pour les personnes qui ont un capital économique et social, donc ce qu'on appelle les catégories socioprofessionnelles supérieures, plutôt les cadres, les citadins, les personnes qui ont du temps et de l'argent à dépenser et encore une fois qui osent, qui sont au courant même de ce genre d'événements, c'est les mêmes personnes que ceux qui vont au musée, qui partent en vacances, des choses comme ça.",
+          "chinese": "那些拥有经济和社会资本的人，也就是所谓的“高收入社会职业群体”，主要是管理层、城市居民，以及有时间和金钱可以消费的人。此外，他们敢于尝试，也了解这类活动。这些人通常也是那些逛博物馆、去度假的人。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:00.080",
+          "end_time": "00:17:28.400",
+          "french": "Et pour les jeunes, plus spécifiquement, tu avais vu quelque chose par rapport aux différentes catégories ? Oui, j'avais lu un article qui interviewait des jeunes de banlieue et beaucoup d'entre eux disaient que dans les festivals, ils ne se sentaient pas à leur place, que pour eux, c'était, je cite, « un truc de Blancs ». Donc, ils ne se sentaient pas légitimes à aller à des festivals, même si dans les programmations maintenant des festivals de...",
+          "chinese": "至于年轻人，具体到不同群体，你有没有发现什么？是的，我读过一篇文章，采访了郊区青年，其中很多人表示在音乐节里感觉格格不入。对他们来说，引用原话，“那是白人的玩意儿”。所以，他们觉得自己没理由去参加音乐节，尽管现在的音乐节节目单里……"
+        },
+        {
+          "id": 46,
+          "start_time": "00:17:28.400",
+          "end_time": "00:17:57.819",
+          "french": "musique, il y a de plus en plus de rappeurs. Donc, en grande partie, sans tomber dans les clichés, mais voilà, une musique qui est très populaire dans les banlieues. Mais voilà, les jeunes n'ont pas ce réflexe, ils n'ont pas reçu cette pratique culturelle d'aller dans les festivals. Donc, voilà, ce n'est pas quelque chose qu'ils font. D'autant plus que les billets, ou ce qu'on appelle aussi les pass, un pass journée pour assister à une journée de festival,",
+          "chinese": "音乐方面，说唱歌手越来越多。很大程度上，抛开刻板印象不谈，这种音乐在郊区非常流行。但年轻人没有这种习惯，他们没有养成去音乐节的文化传统。所以，这不是他们会做的事。更何况门票，或者叫通行证，一张单日票……"
+        },
+        {
+          "id": 47,
+          "start_time": "00:17:57.819",
+          "end_time": "00:18:27.079",
+          "french": "c'est de plus en plus cher, ce n'est pas accessible à tout le monde. J'ai lu que les prix ont augmenté de 60 % en 10 ans. Et maintenant, je ne sais pas toi combien tu as payé pour tes pass sur les festivals auxquels tu as assisté récemment, mais en moyenne, c'est entre 70 et 100 euros le pass journée, ce qui reste moins cher que dans les autres pays à l'étranger. Souvent, c'est beaucoup plus cher. En France, il y a quand même une volonté de maintenir les tarifs à des niveaux assez accessibles.",
+          "chinese": "越来越贵，并不是所有人都能负担得起。我读到过门票价格在 10 年内上涨了 60%。我不知道你最近参加的音乐节花了多少钱，但平均一张单日票在 70 到 100 欧元之间。这虽然比国外其他国家便宜（国外通常贵得多），但在法国，政府还是希望能把价格维持在相对合理的水平。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:27.480",
+          "end_time": "00:18:54.059",
+          "french": "Oui, mais c'est vrai que ça dépend du point de vue. Mais en tout cas, ça reste cher pour une person qui n'a pas forcément un gros budget pour la culture et le divertissement tous les mois. Moi, c'est vrai que, par exemple, cette année, je suis allée au Rio Loco, qui est un petit festival local, vraiment pas cher. C'est 10 euros la journée, 10, 15 suivant quand on prend le billet.",
+          "chinese": "是的，但这取决于视角。总之，对于每月文化娱乐预算有限的人来说，这依然很贵。比如我今年去了 Rio Loco，那是一个当地的小型音乐节，真的很便宜。一天只要 10 欧元，根据购票时间不同，大概 10 到 15 欧元。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:18:54.059",
+          "end_time": "00:19:23.759",
+          "french": "Mais par contre, ma sœur m'a proposé Musilac à Aix-les-Bains et je n'avais pas regardé le prix avant d'accepter. C'est elle qui a payé, mais on a dû la rembourser avec mon autre sœur. Et c'est vrai qu'avec mon autre sœur, on s'est dit : « Eh, mais tu as vu le prix ? C'est cher quand même ! Elle pourrait nous inviter ! » Bon, on peut se le payer, mais c'est vrai qu'on se disait : « Ah oui, quand même, ce n'est pas une petite dépense comme ça. »",
+          "chinese": "但另一方面，我姐姐邀请我去艾克斯莱班的 Musilac，我没看价格就答应了。是她先付的钱，但我得和另一个妹妹一起还给她。我和妹妹当时都惊呼：“哎，你看到价格了吗？真够贵的！她其实可以请我们的！”虽然我们付得起，但确实觉得：“哇，这可不是一笔小数目。”"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:23.759",
+          "end_time": "00:19:51.430",
+          "french": "à laquelle il ne faut pas réfléchir. Je comprends que quelqu'un qui vient d'un milieu plus populaire et qui a plein d'autres dépenses, ce n'est pas ça la priorité. D'autant plus que si c'est un festival qui n'est pas juste à côté de chez nous, il faut payer le transport, le billet de train ou l'essence pour aller là-bas. Ensuite, le logement pour dormir sur place ou même si on dort au camping. Ça fait un budget quand même qui n'est pas accessible à tous.",
+          "chinese": "不能不假思索就花掉。我理解对于出身普通家庭、有很多其他开支的人来说，这绝不是首选。更何况如果艺术节不在家门口，还得付交通费、火车票或油钱。然后还有住宿费，哪怕是住露营地。这加起来的预算确实不是所有人都能负担的。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:19:58.740",
+          "end_time": "00:20:20.230",
+          "french": "Bon, on a balayé du coup le côté vraiment définition et économie globale, on va dire. Mais maintenant, pour vous donner plus des conseils et puis peut-être pour vous donner envie d'aller dans les festivals français, on va donner plus de détails sur ce à quoi ça peut ressembler en termes de programmation. Alors...",
+          "chinese": "好了，我们已经大致聊过了定义和整体经济方面。现在，为了给你们一些建议，也为了让你们有兴趣参加法国的艺术节，我们将详细介绍一下节目安排。那么……"
+        },
+        {
+          "id": 52,
+          "start_time": "00:20:20.440",
+          "end_time": "00:20:46.059",
+          "french": "qu'est-ce qu'on trouve comme festivals en France ? On l'a déjà dit, une grande partie des festivals sont plutôt des festivals de musique, sans surprise. On estime qu'environ 4 festivals sur 10 en France sont des festivals de musique. Ce qui est intéressant, c'est qu'on en trouve à toutes les échelles, donc des tout petits festivals dans un village avec des artistes pas très connus",
+          "chinese": "在法国能看到什么样的艺术节？正如刚才所说，大部分都是音乐节，这并不奇怪。据估计，法国约有 40% 的艺术节是音乐节。有趣的是，各种规模的都有，既有在小村庄举办、艺人名气不大的小型音乐节……"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:46.059",
+          "end_time": "00:21:10.250",
+          "french": "ou au contraire des mastodontes, des festivals énormes qui sont connus dans toute la France et même à l'étranger, comme les Vieilles Charrues, qui est un des festivals les plus connus, qui a lieu en Bretagne, ou le Hellfest, comme on dit en France, où là, c'est principalement des artistes de métal, heavy metal, etc.",
+          "chinese": "也有规模宏大的巨型艺术节，闻名全法甚至海外，比如在布列塔尼举办的 Vieilles Charrues，它是最著名的艺术节之一；还有 Hellfest，在法国很有名，主要是金属乐、重金属乐等艺人的舞台。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:21:10.390",
+          "end_time": "00:21:31.819",
+          "french": "Tous les styles sont représentés, peu importe ce que vous aimez écouter comme type de musique, vous êtes sûr de pouvoir trouver un festival qui correspond à vos goûts. En général, les gros festivals varient justement les styles, les genres, pour attirer un public le plus large possible. Mais toi, là, les festivals auxquels tu as assisté, c'était quoi comme type d'artistes ?",
+          "chinese": "各种风格都有，无论你喜欢什么类型的音乐，一定能找到适合你口味的音乐节。通常，大型音乐节会混合不同的风格和流派，以吸引尽可能广泛的观众。那你最近参加的那些音乐节，都是些什么样的艺人？"
+        },
+        {
+          "id": 55,
+          "start_time": "00:21:32.279",
+          "end_time": "00:21:49.740",
+          "french": "Eh bien à Toulouse, donc le Rio Loco qui a lieu tous les ans et c'est un festival assez ancien d'ailleurs, j'ai vu, il est vraiment top, top, top, je le conseille. Ce sont des artistes internationaux avec des musiques qui sont un peu des fusions de plusieurs styles.",
+          "chinese": "在图卢兹举办的 Rio Loco 每年都有，而且我发现它历史悠久。它真的很棒，非常推荐。那里有很多国际艺人，音乐风格融合了多种流派。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:21:49.740",
+          "end_time": "00:22:15.710",
+          "french": "À chaque fois que j'y suis allée, je ne connaissais aucun artiste. Après, j'ai des amis qui sont très fans de musique, qui connaissent un peu mieux. Mais voilà, c'est vraiment purement pour moi des découvertes avec des mélanges entre, je ne sais pas, cumbia et électro, jazz et reggaeton. Enfin, des trucs un peu… J'invente là, mais voilà, c'est souvent des mélanges assez sympas.",
+          "chinese": "每次去我都不认识那些艺人。不过我有些朋友是乐迷，他们了解得更多。但对我来说，这纯粹是探索发现，比如昆比亚舞曲和电子乐的融合，或者爵士乐和雷鬼音乐的结合。总之，就是一些……我瞎编的例子，但通常都是些很酷的混搭。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:22:15.710",
+          "end_time": "00:22:30.539",
+          "french": "Et au contraire, à Musilac, c'étaient des gros, gros, gros artistes français très connus. Donc, par exemple, Julien Doré, Adèle Castillon, DJ Snake. Et il y avait aussi...",
+          "chinese": "相比之下，在 Musilac 则是非常非常有名的法国大牌艺人。比如 Julien Doré、Adèle Castillon、DJ Snake。还有……"
+        },
+        {
+          "id": 58,
+          "start_time": "00:22:30.539",
+          "end_time": "00:22:46.829",
+          "french": "un que j'ai adoré, le show de Philippe Katerine. Vous l'avez peut-être vu au moment des Jeux olympiques puisqu'il a fait une performance au moment de la cérémonie d'ouverture, et c'est un chanteur mais qui plus qu'un chanteur est plutôt un...",
+          "chinese": "我非常喜欢的一个，菲利普·卡特林的表演。你们可能在奥运会期间见过他，因为他在开幕式上表演过。他是个歌手，但不仅仅是个歌手，更像是一个……"
+        },
+        {
+          "id": 59,
+          "start_time": "00:22:46.829",
+          "end_time": "00:23:12.799",
+          "french": "un artiste qui fait des performances un peu rigolotes. En fait, il critique la société, mais en se rendant lui-même ridicule avec des textes qui sont drôles, mais il est assez difficile à cerner. Il y en a qui le détestent, qui disent : « Mais c'est qui ce mec ? C'est vraiment n'importe quoi, il est ridicule. »",
+          "chinese": "表演风格有点滑稽的艺术家。事实上，他通过自嘲和幽默的歌词来批判社会，但他这个人挺难捉摸的。有些人讨厌他，会说：“这家伙是谁啊？简直胡闹，太荒唐了。”"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:12.799",
+          "end_time": "00:23:38.990",
+          "french": "Mais d'autres qui adorent et qui... on comprend sa démarche. Moi, je le trouve vraiment génial. J'ai passé un moment incroyable. Et typiquement, je ne serais pas allée à un concert de Philippe Katerine si ça n'avait pas été dans un festival. Et là, avec une de mes sœurs, parce que l'autre est partie, mais on est deux à être restées et à vraiment avoir adoré. On a rigolé ensemble. Après, on en reparlait pendant les jours qui ont suivi.",
+          "chinese": "但也有人非常喜欢，能理解他的用意。我觉得他真的很棒。我度过了一段美妙的时光。而且典型的情况是，如果不是在音乐节上，我可能不会专门去听他的演唱会。这次我和一个妹妹留下来看了，我们真的很喜欢。我们一起大笑，之后的几天还一直在聊这件事。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:23:38.990",
+          "end_time": "00:24:04.900",
+          "french": "Oui, c'est un des bons côtés des festivals. On peut souvent y faire des découvertes. C'est pas comme un concert où on ne va pas à un concert par hasard en général. C'est parce qu'on veut vraiment voir cet artiste. Là, un festival, on y va souvent pour la tête d'affiche. La tête d'affiche, c'est l'artiste le plus connu, l'artiste qui a la plus grande notoriété, qui est donc en haut de l'affiche, la tête d'affiche.",
+          "chinese": "是的，这是音乐节的好处之一。你经常能有新发现。这不像普通的演唱会，你通常不会随随便便去听一场演唱会，而是因为你真的很想看那个艺人。而在音乐节，人们通常是为了“领衔艺人”去的。领衔艺人就是名气最大、排在海报最顶端的艺人。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:24:04.900",
+          "end_time": "00:24:28.880",
+          "french": "Mais les programmateurs des festivals essayent souvent aussi de dénicher de nouveaux talents, dénicher, donc trouver quelque chose qui était caché, dénicher de nouveaux talents pour les faire connaître au grand public. Donc c'est, bon, même si Philippe Katerine, c'est déjà quelqu'un de très connu, mais comme tu dis, tu ne serais peut-être pas allée à un concert avec juste Philippe Katerine, et là, dans le cadre d'un festival, tu as pu en profiter.",
+          "chinese": "但音乐节的策划人也经常尝试挖掘新秀，也就是发现那些被埋没的人才，让他们被大众熟知。所以，虽然菲利普·卡特林已经很有名了，但正如你所说，你可能不会专门去听他的专场，但在音乐节这种形式下，你就能欣赏到他的表演。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:24:28.880",
+          "end_time": "00:24:54.700",
+          "french": "Oui, c'est vrai. Et du coup, parfois, on peut aller dans des festivals très spécialisés parce qu'on adore un type de musique. Je pense aux personnes qui vont au Hellfest. Pas du tout mon truc, mais j'imagine que quand ils y vont, ils découvrent des nouveaux artistes. Et au contraire, quand on est comme moi, qu'on n'a pas trop un style de musique dont on est fan, on aime bien aller dans des trucs plus généralistes.",
+          "chinese": "是的，没错。所以有时人们会因为热爱某种音乐而去参加非常专业的艺术节。比如去 Hellfest 的人。那完全不是我的菜，但我能想象他们去那里会发现新艺人。相反，像我这样没有特定偏好的人，更喜欢去一些综合性的艺术节。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:24:54.839",
+          "end_time": "00:25:23.940",
+          "french": "Moi, j'avais fait un festival. Il y a un grand festival de musique électronique en France qui est à Lyon. Ça s'appelle les Nuits Sonores et je le recommande. C'est toujours très bien organisé. Il y a une super programmation. Je dis ça, je ne sais pas si ça existe encore parce que quand j'y suis allé il y a une dizaine d'années, il faudrait vérifier. Il y en a un autre, celui-là, je suis sûr qu'il existe encore, qui est un peu plus généraliste, qui s'appelle We Love Green et qui a lieu à Paris. Lui, c'est intéressant parce qu'il a aussi une dimension un peu...",
+          "chinese": "我参加过一个。里昂有一个大型电子音乐节叫 Nuits Sonores，我很推荐。组织得一直很好，节目单也很棒。不过我是十来年前去的，不知道现在还有没有，得核实一下。还有一个我确定还在办的，稍微综合一点，叫 We Love Green，在巴黎举行。它很有意思，因为它还带有一点……"
+        },
+        {
+          "id": 65,
+          "start_time": "00:25:23.940",
+          "end_time": "00:25:37.440",
+          "french": "écologique, environnement, sensibilisation à toutes ces questions-là. Donc, ils essayent de réduire leur impact environnemental au maximum en organisant ces événements. Ils ont toujours une très bonne programmation aussi. Très bien.",
+          "chinese": "生态、环保和提高环保意识的色彩。所以他们在举办活动时会尽量减少对环境的影响。他们的节目单也一直很出色。非常好。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:25:37.440",
+          "end_time": "00:26:07.180",
+          "french": "Alors après, à part la musique, on vous l'a dit, même si les festivals de musique représentent environ 4 festivals organisés sur 10, on a quand même 6 sur 10 qui sont autre chose. Alors on peut avoir beaucoup de disciplines représentées, par exemple le théâtre, le cinéma, les arts visuels comme la danse, la BD. Il peut y avoir vraiment beaucoup de choses.",
+          "chinese": "那么除了音乐，正如我们所说，虽然音乐节占了约 40%，但还有 60% 是其他类型的。涉及的学科非常广泛，比如戏剧、电影、舞蹈等视觉艺术、漫画。真的可以包含很多东西。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:26:07.180",
+          "end_time": "00:26:14.829",
+          "french": "Et on va vous citer quelques festivals très connus. Il y a par exemple le festival d'Avignon",
+          "chinese": "我们给你们举几个非常有名的艺术节。比如阿维尼翁戏剧节。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:26:14.829",
+          "end_time": "00:26:43.519",
+          "french": "qui est le festival du théâtre en France. Alors personnellement, j'y suis jamais allée, mais j'aimerais bien un jour. Mais quand je pense à ce festival, je me rappelle de l'été où j'ai travaillé au Dauphiné Libéré, qui est un journal de presse quotidienne régionale et qui notamment a une édition Vaucluse, qui est donc le département dans lequel se trouve Avignon. Et je me souviens que...",
+          "chinese": "这是法国的戏剧盛会。我个人还没去过，但希望有一天能去。一想到这个艺术节，我就想起那个夏天我在《自由多菲内报》工作的日子，那是一家地方性日报，在沃克吕兹省（阿维尼翁所在地）有分社。我记得……"
+        },
+        {
+          "id": 69,
+          "start_time": "00:26:43.519",
+          "end_time": "00:27:12.970",
+          "french": "tout l'été, ou en tout cas la durée du festival, c'était vraiment un événement important. Il fallait absolument qu'il y ait dans le journal les petites informations sur le festival d'Avignon, les grosses pièces qui étaient jouées, les critiques qui avaient été faites, etc. Et c'est vrai que les gros festivals comme ça, ils font vivre des villes et ils font la fierté des habitants et les journalistes locaux les connaissent très, très bien.",
+          "chinese": "整个夏天，或者至少在艺术节期间，这绝对是一件大事。报纸上必须刊登阿维尼翁戏剧节的小贴士、上演的大戏、剧评等等。确实，像这样的大型艺术节带动了整座城市，是当地人的骄傲，当地记者对它们了如指掌。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:13.559",
+          "end_time": "00:27:33.000",
+          "french": "C'est vrai, parce qu'ils attirent des festivaliers de la France entière. Ça permet vraiment de renforcer l'image de la ville. Pour le cinéma, il y a bien sûr Cannes, que vous connaissez toutes et tous, mais aussi le festival d'Annecy, qui lui est dédié à l'animation. C'est aussi un des...",
+          "chinese": "没错，因为它们吸引了全法国的游客。这确实能提升城市形象。电影方面，当然有大家都知道的戛纳电影节，还有安纳西国际动画电影节。它也是……"
+        },
+        {
+          "id": 71,
+          "start_time": "00:27:33.140",
+          "end_time": "00:27:49.190",
+          "french": "plus grands festivals d'animation, il me semble, du monde. Un peu moins connu, le festival de Deauville, qui lui est dédié au cinéma américain, et le festival de Clermont-Ferrand pour les courts-métrages, donc ça veut dire pour les films courts.",
+          "chinese": "我记得是全球最大的动画节之一。名气稍小一点的有专门展示美国电影的多维尔电影节，以及克莱蒙费朗国际短片电影节。"
+        },
+        {
+          "id": 72,
+          "start_time": "00:27:49.430",
+          "end_time": "00:28:03.430",
+          "french": "Donc, je vous ai parlé dans le dernier épisode de la Normandie. Donc, si jamais vous voulez suivre les recommandations du dernier épisode et aller voir un festival, ça peut être une bonne idée.",
+          "chinese": "我在上一集聊到了诺曼底。所以，如果你想听从上一集的建议并顺便看个艺术节，那会是个好主意。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:03.579",
+          "end_time": "00:28:32.039",
+          "french": "Ensuite, il y a aussi des festivals, comme tu le disais, pour les arts visuels, notamment, pas loin de chez moi, à Marseille, le festival de la photographie qui a lieu dans la ville d'Arles, Arles, A-R-L-E-S, qui est très connu. Le festival d'Angoulême pour la bande dessinée, là aussi, un festival avec une grosse notoriété. Ou encore pour la danse, le festival de Montpellier, Montpellier Danse, tout simplement.",
+          "chinese": "此外，正如你所说，还有视觉艺术节，特别是在离我住的马赛不远的阿尔勒，那里有非常著名的国际摄影节。还有昂古莱姆国际漫画节，名气也非常大。至于舞蹈，则有蒙彼利埃舞蹈节。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:28:32.279",
+          "end_time": "00:29:00.049",
+          "french": "Oui, il y en a beaucoup comme ça et c'est vrai qu'en creusant le sujet, on s'est rendu compte qu'il y en a certains qu'on oublie. Et par exemple, moi je suis déjà allée à la fête des Lumières à Lyon et c'est un événement qui se passe tous les ans en décembre. C'est hyper important pour les Lyonnais et en fait, dans toute la ville, il y a des installations son et lumière. Donc ce sont vraiment des installations",
+          "chinese": "是的，有很多这样的节日。深入研究后，我们发现有些被忽略了。比如，我去过里昂灯光节，那是每年 12 月举办的盛事。这对里昂人来说非常重要，全城到处都有声光装置。这些真的是……"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:00.049",
+          "end_time": "00:29:28.339",
+          "french": "techniques faites par des artistes ingénieurs. Et on va voir, par exemple, des lumières qui font des formes sur les murs avec de la musique. Mais ce sont des projections sur les façades des cathédrales, sur les façades, enfin, sur les bords du Rhône. C'est hyper impressionnant. Il y a toujours beaucoup de monde et c'est très, très sympa.",
+          "chinese": "由艺术家和工程师合作完成的技术装置。你会看到灯光配合着音乐在墙上变幻出各种形状。这些投影出现在大教堂的立面上，或者罗讷河畔。非常震撼。现场总是人山人海，氛围特别棒。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:29:28.339",
+          "end_time": "00:29:52.970",
+          "french": "Et donc, ça montre bien qu'un festival, ça peut être très divers. C'est vrai. Donc, on a la chance en France d'avoir cette diversité de festivals, que ce soit diversité au niveau des thématiques, des formats, des programmations. Mais apparemment, c'est de plus en plus difficile pour ces festivals de survivre parce que c'est difficile de les financer. Ils se financent...",
+          "chinese": "这充分说明了艺术节可以是多种多样的。没错。在法国，我们很幸运拥有这种多样性，无论是主题、形式还是节目安排。但显然，这些艺术节生存下去正变得越来越难，因为融资困难。它们的资金来源……"
+        },
+        {
+          "id": 77,
+          "start_time": "00:29:53.019",
+          "end_time": "00:30:21.710",
+          "french": "principalement grâce à la billetterie, la vente des billets, aussi grâce à ce que les gens achètent sur place, ce qu'ils consomment, les boissons, la nourriture, etc. Et en partie avec les subventions publiques dont on vous parlait, les régions qui donnent de l'argent pour financer ces festivals et aussi forcément les sponsors. Donc moi, pour la petite histoire, j'ai fait mon apprentissage quand j'étais en école de commerce",
+          "chinese": "主要依靠门票销售，以及人们在现场的消费，比如饮料、食物等。部分资金来自我们提到的公共补贴，即各地区拨款资助，当然还有赞助商。顺便说一下，我读商学院时曾在……"
+        },
+        {
+          "id": 78,
+          "start_time": "00:30:21.710",
+          "end_time": "00:30:45.299",
+          "french": "dans une grande entreprise de télécommunications qui était partenaire de tous les grands festivals en France, les grands festivals de musique. Bon, je ne vais pas citer la marque, mais je regrette un peu parce que grâce à ça, on avait des billets gratuits. Donc, en théorie, j'aurais pu assister à tous les festivals gratuitement cet été-là. Mais je ne sais pas pourquoi je n'avais pas envie de partir de Paris. Donc, j'en ai fait seulement un.",
+          "chinese": "一家大型电信公司实习，它是法国所有大型音乐节的合作伙伴。我就不点名了，但我现在有点后悔，因为那时候我们有免费票。理论上，那个夏天我可以免费参加所有的音乐节。但不知道为什么，当时我不想离开巴黎，所以只去了一个。"
+        },
+        {
+          "id": 79,
+          "start_time": "00:30:45.299",
+          "end_time": "00:31:14.130",
+          "french": "Un festival qui s'appelle Rock en Seine, qui est juste aux portes de Paris. Là aussi, c'est un festival assez gros, assez connu. Il n'y a pas seulement du rock, contrairement à ce que le nom peut laisser penser. Mais bon, il y avait une super ambiance. C'est un super festival. Pourquoi on parlait de ça ? Oui, pour parler de l'équilibre financier qui est difficile à trouver. Notamment, on a l'exemple d'un autre très grand festival, peut-être le plus grand en France, les Vieilles Charrues en Bretagne, qu'on a déjà mentionné.",
+          "chinese": "那个音乐节叫 Rock en Seine，就在巴黎边上。那也是一个非常大、非常有名的音乐节。尽管名字里有 Rock，但并不只有摇滚乐。那里的氛围很棒，是个很棒的音乐节。我们为什么聊到这个？哦，是为了聊难以维持的财务平衡。特别是我们之前提到的布列塔尼 Vieilles Charrues 音乐节，它可能是法国最大的。"
+        },
+        {
+          "id": 80,
+          "start_time": "00:31:14.130",
+          "end_time": "00:31:29.859",
+          "french": "Apparemment, l'année dernière, ils ont fait un déficit d'un million d'euros. Donc, ils ont perdu un million d'euros en organisant ce festival, même s'ils ont eu un très bon taux de remplissage. Ça veut dire qu'ils ont vendu quasiment la totalité des billets.",
+          "chinese": "显然，去年他们亏损了 100 万欧元。也就是说，尽管上座率非常高，几乎卖光了所有的票，但举办这个音乐节还是让他们亏了 100 万。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:31:30.039",
+          "end_time": "00:31:44.750",
+          "french": "Malgré ça, ils ont réalisé un déficit d'un million d'euros. Ils ont perdu de l'argent. Oui, et ça, c'est parce que ça coûte cher d'organiser un festival. Et effectivement, même si les billets sont de plus en plus chers,",
+          "chinese": "尽管如此，他们还是出现了 100 万欧元的赤字。他们亏钱了。是的，这是因为举办艺术节的成本很高。事实上，即使门票越来越贵……"
+        },
+        {
+          "id": 82,
+          "start_time": "00:31:44.750",
+          "end_time": "00:32:14.450",
+          "french": "en fait, ça ne couvre pas les frais malgré les subventions, etc. Il faut quand même rémunérer les artistes qui ont des cachets. Les cachets, c'est comme ça qu'on appelle la paye des artistes. C'est de plus en plus élevé. Les festivals ont souvent des grosses têtes d'affiche qui peuvent être connues internationalement, qui ont toute une équipe qui se déplace avec elles et eux, qui parfois ont leurs propres ingénieurs du son, etc.",
+          "chinese": "尽管有补贴等收入，但实际上仍无法覆盖成本。艺人的酬劳必须支付。我们把艺人的报酬称为“cachets”。这笔费用越来越高。音乐节通常会有国际知名的领衔艺人，他们随行有一整支团队，有时还有自己的音响工程师等。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:32:14.450",
+          "end_time": "00:32:43.119",
+          "french": "Donc, ça coûte cher de les faire venir. Et puis, je pense que le public est de plus en plus exigeant. Donc, s'il n'y a pas ces grosses têtes d'affiche, il va y avoir moins de monde qui va vouloir venir. Et finalement, ça coûte cher. Surtout qu'aujourd'hui, l'économie des musiciens fonctionne beaucoup grâce aux festivals et aux concerts, vu qu'on ne vend plus d'albums. Les CD à l'ancienne, ça n'existe plus.",
+          "chinese": "所以请他们来的费用很高。而且，我认为观众也越来越挑剔。如果没有这些大牌明星，来的人就会变少。最终成本变得非常高。尤其是现在，既然专辑已经卖不动了，老式 CD 也不复存在，音乐人的收入很大程度上依赖于音乐节和演唱会。"
+        },
+        {
+          "id": 84,
+          "start_time": "00:32:43.119",
+          "end_time": "00:32:47.559",
+          "french": "Et les plateformes de streaming, ce n'est pas très rémunérateur.",
+          "chinese": "而流媒体平台的收益并不高。"
+        },
+        {
+          "id": 85,
+          "start_time": "00:32:47.930",
+          "end_time": "00:33:16.769",
+          "french": "Donc voilà, il faudrait finalement peut-être que les billets coûtent plus cher pour que les festivals puissent continuer à fonctionner. Oui, et en plus des cachets des artistes qui ont explosé, il y a aussi le coût des assurances parce qu'à cause du réchauffement climatique, il y a de plus en plus d'aléas climatiques et il faut s'assurer contre ça si jamais le festival doit être annulé à cause d'un événement climatique.",
+          "chinese": "所以，为了让音乐节继续办下去，门票可能最终得涨价。是的，除了暴涨的艺人酬劳，还有保险成本。由于全球变暖，极端天气越来越多，如果艺术节因天气原因被迫取消，必须有保险保障。"
+        },
+        {
+          "id": 86,
+          "start_time": "00:33:16.769",
+          "end_time": "00:33:44.190",
+          "french": "Voilà, tout ça, ça coûte de plus en plus cher. Et à côté de cette question des coûts, il y a aussi la question de la concurrence. C'est de plus en plus concurrentiel, le secteur des festivals, notamment au niveau européen, vu qu'en Europe, on se déplace assez facilement d'un pays à l'autre quand il y a un artiste qu'on veut vraiment aller voir. Et les festivals en France, ils ont un peu ce désavantage",
+          "chinese": "总之，这一切都变得越来越贵。除了成本问题，还有竞争问题。艺术节行业的竞争日益激烈，特别是在欧洲范围内，因为在欧洲，如果想看某个艺人，跨国旅行非常方便。而法国的艺术节在这方面有点劣势……"
+        },
+        {
+          "id": 87,
+          "start_time": "00:33:44.190",
+          "end_time": "00:34:01.029",
+          "french": "de ne pas pouvoir être sponsorisés par une marque d'alcool ou de tabac, qui sont souvent dans les autres pays les principaux sponsors de ces grands événements. Donc voilà, en France, les festivals doivent trouver d'autres moyens de se financer et de payer ces têtes d'affiche.",
+          "chinese": "那就是不能接受烟酒品牌的赞助，而在其他国家，这些品牌往往是此类大型活动的主要赞助商。所以，在法国，艺术节必须寻找其他融资方式来支付这些领衔艺人的费用。"
+        },
+        {
+          "id": 88,
+          "start_time": "00:34:01.180",
+          "end_time": "00:34:30.989",
+          "french": "Voilà, tout ça, c'est assez compliqué. Effectivement, donc ça peut être quand même compliqué d'organiser un festival en France. Et c'est vrai que c'est dommage parce que les festivals, c'est vraiment sympa. Au-delà de tout ce qu'on a dit, de la musique, les représentations, etc., c'est vraiment un lieu collectif de rencontres, de détente où il y a souvent beaucoup plus que des spectacles, mais il y a aussi de quoi manger, boire,",
+          "chinese": "这一切都挺复杂的。确实，在法国举办艺术节可能相当困难。这真的很可惜，因为艺术节真的很棒。除了我们提到的音乐、表演等，它还是一个社交、放松的集体场所，通常除了演出，还有各种吃喝……"
+        },
+        {
+          "id": 89,
+          "start_time": "00:34:30.989",
+          "end_time": "00:34:46.159",
+          "french": "se faire des petits tatouages, du maquillage, il y a des librairies, etc. Donc, c'est sûrement très compliqué à organiser, mais très sympa, surtout aujourd'hui dans un monde où parfois on est...",
+          "chinese": "纹身、彩绘，甚至还有书店等等。所以，虽然组织起来肯定很复杂，但非常有意义，特别是在当今这个有时让我们感到……的世界里。"
+        },
+        {
+          "id": 90,
+          "start_time": "00:34:46.159",
+          "end_time": "00:35:12.670",
+          "french": "très isolés où il y a beaucoup de personnes qui souffrent de dépression, qui ont moins de lieux où se rencontrer, de lieux de communauté. Donc je pense qu'au-delà de l'aspect économique, c'est important de trouver un moyen de maintenir ces moments et peut-être même de les rendre plus accessibles à tous et à toutes.",
+          "chinese": "孤独、抑郁症频发、缺乏社交和社区场所的世界。因此我认为，除了经济层面，找到维持这些时刻的方法很重要，甚至可能让每个人都更容易参与其中。"
+        },
+        {
+          "id": 91,
+          "start_time": "00:35:12.670",
+          "end_time": "00:35:39.659",
+          "french": "Voilà, super. Je trouve que c'est une conclusion géniale, très optimiste. On espère que ça va vous donner envie éventuellement d'assister à un festival en France. Si jamais vous l'avez déjà fait et que vous avez des recommandations, partagez-les dans les commentaires de l'épisode. Ça pourra inspirer certains d'entre vous. Merci à toutes et à tous. On vous souhaite une belle fin d'été.",
+          "chinese": "太棒了。我觉得这是一个非常棒、非常乐观的总结。我们希望这能让你们产生去法国参加艺术节的愿望。如果你已经去过并有推荐，请在这一集的评论区分享。这可能会启发其他人。谢谢大家。祝大家夏末愉快。"
+        },
+        {
+          "id": 92,
+          "start_time": "00:35:39.670",
+          "end_time": "00:35:43.369",
+          "french": "Et on se retrouve très bientôt. À très bientôt.",
+          "chinese": "我们很快再见。再见。"
+        }
+      ],
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "part of speech classification",
+            "detail": "The noun 'festivalier' is classified as 'nom' without specifying gender, whereas other nouns in the list (e.g., 'subvention', 'mastodonte') include gender (nom féminin/masculin).",
+            "field": "language_analysis.vocabulary[0].part_of_speech"
+          },
+          {
+            "level": "warning",
+            "check": "cross-field consistency",
+            "detail": "The second example for 'décentralisation' and 'mastodonte' is missing the 'source_video' field, which is present in other vocabulary examples.",
+            "field": "language_analysis.vocabulary[3].examples[0]"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 2,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

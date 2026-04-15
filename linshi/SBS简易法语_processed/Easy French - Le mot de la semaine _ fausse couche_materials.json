@@ -1,0 +1,584 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ fausse couche.json",
+  "channel": "SBS简易法语",
+  "video_name": "简易法语 - 本周词汇：流产",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T17:32:25.767Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Relative Pronouns 'qui' and 'où'",
+          "Impersonal Expression 'Il est + adjectif + de'",
+          "Passive Participle as Adjective"
+        ],
+        "speaking": [
+          "Discussing health and medical procedures with appropriate terminology",
+          "Expressing empathy and support in difficult emotional situations"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "fausse couche",
+            "part_of_speech": "nom féminin",
+            "ipa": "[fos kuʃ]",
+            "chinese": "流产",
+            "example_sentence": {
+              "french": "Une fausse couche est une interruption spontanée de grossesse.",
+              "chinese": "流产是指妊娠的自发性中断。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 8,
+            "examples": [
+              {
+                "french": "Environ 10 % des grossesses se terminent par une fausse couche.",
+                "chinese": "大约 10 % 的妊娠以流产告终。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "grossesse",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɡʁɔ.sɛs]",
+            "chinese": "怀孕，妊娠",
+            "example_sentence": {
+              "french": "La grossesse s'arrête toute seule.",
+              "chinese": "怀孕自行停止了。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Tout le tissu de grossesse s'évacue tout seul.",
+                "chinese": "所有的妊娠组织都会自行排出。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "spontanée",
+            "part_of_speech": "adjectif",
+            "ipa": "[spɔ̃.ta.ne]",
+            "chinese": "自发的，自然发生的",
+            "example_sentence": {
+              "french": "C'est une interruption spontanée.",
+              "chinese": "这是一种自发性的中断。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Une fausse couche est une interruption spontanée de grossesse.",
+                "chinese": "流产是妊娠的自发性中断。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "douloureux",
+            "part_of_speech": "adjectif",
+            "ipa": "[du.lu.ʁø]",
+            "chinese": "痛苦的",
+            "example_sentence": {
+              "french": "C'est un événement douloureux émotionnellement.",
+              "chinese": "这在情感上是一个痛苦的事件。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Même s'il est douloureux émotionnellement.",
+                "chinese": "尽管在情感上很痛苦。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "évacuer",
+            "part_of_speech": "verbe",
+            "ipa": "[e.va.kɥe]",
+            "chinese": "排出，撤离",
+            "example_sentence": {
+              "french": "Le tissu s'évacue tout seul.",
+              "chinese": "组织自行排出。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Tout le tissu de grossesse s'évacue tout seul.",
+                "chinese": "所有的妊娠组织都会自行排出。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "curetage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kyʁ.taʒ]",
+            "chinese": "刮宫术",
+            "example_sentence": {
+              "french": "On peut faire un curetage.",
+              "chinese": "可以进行刮宫术。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On peut soit prendre un médicament, soit faire un curetage.",
+                "chinese": "既可以服药，也可以进行刮宫术。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "anesthésie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[a.nɛs.te.zi]",
+            "chinese": "麻醉",
+            "example_sentence": {
+              "french": "L'intervention est réalisée sous anesthésie générale.",
+              "chinese": "手术是在全身麻醉下进行的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Une intervention chirurgicale réalisée sous anesthésie générale.",
+                "chinese": "在全身麻醉下实施的手术。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "d'affilée",
+            "part_of_speech": "adverbe",
+            "ipa": "[da.fi.le]",
+            "chinese": "连续地",
+            "example_sentence": {
+              "french": "Il y en a au moins 3 d'affilée.",
+              "chinese": "至少连续发生了 3 次。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Lorsqu'il y en a au moins 3 d'affilée.",
+                "chinese": "当连续发生至少 3 次时。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "épreuve",
+            "part_of_speech": "nom féminin",
+            "ipa": "[e.pʁœv]",
+            "chinese": "考验，磨难",
+            "example_sentence": {
+              "french": "Beaucoup de personnes vivent cette épreuve.",
+              "chinese": "许多人都经历过这种磨难。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Beaucoup de personnes vivent cette épreuve.",
+                "chinese": "许多人经历过这一考验。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "expulsion",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛks.pyl.sjɔ̃]",
+            "chinese": "排出，驱逐",
+            "example_sentence": {
+              "french": "On prend un médicament pour aider l'expulsion.",
+              "chinese": "服用药物以帮助排出。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Prendre un médicament pour aider l'expulsion.",
+                "chinese": "服药以辅助排出。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "interruption spontanée de grossesse",
+            "meaning": "自然流产（医学术语）",
+            "example": {
+              "french": "Une fausse couche est une interruption spontanée de grossesse.",
+              "chinese": "流产是妊娠的自发性中断。"
+            },
+            "usage_note": "A formal medical term used to define 'fausse couche'.",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "se terminer par",
+            "meaning": "以……告终",
+            "example": {
+              "french": "10 % des grossesses se terminent par une fausse couche.",
+              "chinese": "10 % 的妊娠以流产告终。"
+            },
+            "usage_note": "Used to describe the outcome or conclusion of a process.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "prendre soin de soi",
+            "meaning": "照顾好自己",
+            "example": {
+              "french": "Prenez soin de vous et on se retrouve la semaine prochaine.",
+              "chinese": "照顾好自己，我们下周再见。"
+            },
+            "usage_note": "A common way to say goodbye while showing care.",
+            "source_ids": [
+              6
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Relative Pronouns 'qui' and 'où'",
+            "structure": "Nom + qui + verbe / Nom + où + sujet + verbe",
+            "explanation": "'Qui' acts as the subject of the following verb, while 'où' indicates a place or a situation.",
+            "example": {
+              "french": "La fausse couche incomplète, où une partie du tissu reste dans l'utérus.",
+              "chinese": "不完全流产，即部分组织留在子宫内的情况。"
+            },
+            "usage_note": "In medical contexts, 'où' is often used to describe specific conditions or anatomical locations.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "Impersonal Expression 'Il est + adjectif + de'",
+            "structure": "Il est + adjectif + de + infinitif",
+            "explanation": "Used to express a general feeling or a fact about an action.",
+            "example": {
+              "french": "Il est normal de ressentir de la tristesse.",
+              "chinese": "感到悲伤是很正常的。"
+            },
+            "usage_note": "The 'de' is mandatory before the infinitive in this formal structure.",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "name": "Passive Participle as Adjective",
+            "structure": "Nom + participe passé (+ complément)",
+            "explanation": "The past participle can function as an adjective to describe a noun, often implying a passive action.",
+            "example": {
+              "french": "Une intervention chirurgicale réalisée sous anesthésie générale.",
+              "chinese": "在全身麻醉下实施的手术。"
+            },
+            "usage_note": "The participle 'réalisée' agrees in gender and number with 'intervention'.",
+            "source_ids": [
+              4
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "/u/ vs /y/",
+              "description": "Contrast between the back vowel in 'couche' [kuʃ] and the front rounded vowel in 'curetage' [kyʁ.taʒ].",
+              "examples": [
+                "couche",
+                "curetage"
+              ]
+            }
+          ],
+          "liaison": [
+            "un événement [ɛ̃.n‿e.ve.nə.mɑ̃]",
+            "deux situations [dø.zi.tɥa.sjɔ̃]",
+            "des examens [de.za.ɡza.mɛ̃]"
+          ],
+          "intonation": "The speaker uses a calm, informative, and empathetic tone, with rising intonation on lists (tristesse, fatigue...) and falling intonation at the end of medical explanations."
+        },
+        "vocabulary_network": {
+          "theme": "La santé reproductive",
+          "core_word": "Grossesse",
+          "related_groups": [
+            {
+              "category": "Complications",
+              "words": [
+                "fausse couche",
+                "interruption",
+                "épreuve"
+              ]
+            },
+            {
+              "category": "Médical",
+              "words": [
+                "utérus",
+                "tissu",
+                "médicament",
+                "curetage",
+                "anesthésie"
+              ]
+            },
+            {
+              "category": "Émotions",
+              "words": [
+                "tristesse",
+                "fatigue",
+                "doutes",
+                "douloureux"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Beaucoup de ___ vivent cette ___ et il est ___ de ___ de la ___, de la ___ et des ___.",
+            "answer": "personnes, épreuve, normal, ressentir, tristesse, fatigue, doutes",
+            "explanation": "根据原文第 5 段，许多人经历这种考验，感到悲伤、疲惫和怀疑是正常的。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, qu'est-ce qu'une fausse couche incomplète ?",
+            "options": {
+              "A": "Tout le tissu de grossesse s'évacue tout seul.",
+              "B": "Une partie du tissu reste dans l'utérus.",
+              "C": "C'est une intervention sous anesthésie générale.",
+              "D": "C'est quand il y a 3 fausses couches d'affilée."
+            },
+            "answer": "B",
+            "explanation": "原文第 4 段明确指出：'il y a la fausse couche incomplète, où une partie du tissu reste dans l'utérus.'",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Environ 10 % des grossesses se terminent par une fausse couche et environ 1 femme sur 4 en vivra au moins 1 dans sa vie.",
+            "answer": "大约 10 % 的妊娠以流产告终，大约四分之一的女性一生中至少会经历一次流产。",
+            "explanation": "注意 'se terminer par' 译为“以……告终”，'en' 指代前文提到的 'fausse couche'。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant la structure 'Il est + adjectif + de' : 'Ressentir de la fatigue est normal.'",
+            "answer": "Il est normal de ressentir de la fatigue.",
+            "explanation": "使用无人称句型 'Il est + adj + de + infinitif'，注意必须加上介词 'de'。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "épreuve",
+            "tristesse",
+            "fatigue",
+            "doutes",
+            "fausse couche",
+            "grossesse",
+            "utérus"
+          ],
+          "covered_grammar": [
+            "Relative Pronouns",
+            "Impersonal Expression 'Il est + adjectif + de'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "On parle de [sujet] lorsqu'il y a [condition].",
+            "explanation": "Used to define a specific term based on a condition.",
+            "example": {
+              "french": "On parle de fausses couches à répétition lorsqu'il y en a au moins 3 d'affilée.",
+              "chinese": "当连续发生至少 3 次流产时，我们称之为复发性流产。"
+            }
+          },
+          {
+            "pattern": "On peut soit [action A], soit [action B].",
+            "explanation": "Used to present two alternatives (either... or...).",
+            "example": {
+              "french": "On peut soit prendre un médicament, soit faire un curetage.",
+              "chinese": "既可以服药，也可以进行刮宫术。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous êtes chez le médecin pour discuter de votre santé ou pour soutenir une amie qui traverse une période difficile après une fausse couche.",
+          "requirements": "Utilisez le vocabulaire médical (grossesse, tissu, évacuer) et exprimez de l'empathie (épreuve, normal de ressentir).",
+          "starter": "Docteur, j'aimerais comprendre ce qui se passe exactement lors d'une fausse couche incomplète..."
+        }
+      },
+      "summary": {
+        "content": "This lesson covers the sensitive topic of miscarriage (fausse couche). It explains the medical definition as a spontaneous interruption of pregnancy, distinguishes between complete and incomplete miscarriages, and discusses medical interventions like curettage. It also addresses the emotional impact, emphasizing that it is a frequent natural event and offering support to those affected.",
+        "keywords": [
+          "fausse couche",
+          "grossesse",
+          "santé",
+          "médical",
+          "émotions"
+        ],
+        "difficulty_note": "The text is at a B1 level due to the specialized medical vocabulary and the use of impersonal and relative structures, though the delivery is clear and educational."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:33",
+          "end": "00:02:46"
+        },
+        "theme": "Women's Health & Miscarriage Awareness",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《Work in Progress》，现在即可在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.619",
+          "end_time": "00:01:02.090",
+          "french": "Vous êtes avec SBS French. Bonjour et bienvenue dans notre rubrique Le mot de la semaine de SBS Easy French. Marianne Mourat avec vous. Cette semaine, le mot est fausse couche, qu'on peut traduire en anglais par miscarriage. Une fausse couche est une interruption spontanée de grossesse. Cela signifie que la grossesse s'arrête toute seule.",
+          "chinese": "您正在收听的是 SBS 法语节目。大家好，欢迎来到 SBS Easy French 的“每周一词”栏目。我是 Marianne Mourat。本周的词汇是“fausse couche”，在英语中可以翻译为“miscarriage”（流产）。流产是指妊娠的自发性中断。这意味着怀孕过程自行停止了。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:02.259",
+          "end_time": "00:01:31.530",
+          "french": "Le mot peut parfois sembler difficile. On dit fausse, mais il n'y a rien de faux dans une fausse couche. Et ce n'est jamais la faute de la personne qui la vit. C'est un événement malheureusement fréquent et naturel, même s'il est douloureux émotionnellement. Environ 10 % des grossesses se terminent par une fausse couche et environ une femme sur quatre en vivra au moins une dans sa vie. Alors comment cela se passe ? Il existe deux situations.",
+          "chinese": "这个词有时可能听起来很沉重。虽然法语中用了“fausse”（假的/错误的）这个词，但流产这件事本身并没有什么“假”的。而且这绝不是经历者的错。不幸的是，这是一种常见且自然的现象，尽管在情感上非常痛苦。大约 10% 的怀孕以流产告终，大约四分之一的女性一生中至少会经历一次流产。那么，流产是如何发生的呢？通常有两种情况。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:31.829",
+          "end_time": "00:01:57.799",
+          "french": "La fausse couche complète : tout le tissu de grossesse s'évacue tout seul, aucun geste médical n'est nécessaire. Et il y a la fausse couche incomplète, où une partie du tissu reste dans l'utérus. Dans ce cas, on peut soit prendre un médicament pour aider l'expulsion, soit faire un curetage, une intervention chirurgicale réalisée sous anesthésie générale.",
+          "chinese": "第一种是完全流产：所有的妊娠组织都会自行排出，不需要医疗干预。第二种是不完全流产，即部分组织残留在子宫内。在这种情况下，可以服用药物帮助排出，或者进行清宫术（一种在全身麻醉下进行的手术）。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:58.329",
+          "end_time": "00:02:27.659",
+          "french": "On parle de fausses couches à répétition lorsqu'il y en a au moins trois d'affilée. C'est rare, mais ça arrive. Dans ce cas, les médecins peuvent proposer des examens pour comprendre ce qui se passe. Une fausse couche peut être un moment très difficile. Si vous ou quelqu'un que vous connaissez traversez cela, sachez que vous n'êtes pas seuls. Beaucoup de personnes vivent cette épreuve et il est normal de ressentir de la tristesse, de la fatigue et des doutes.",
+          "chinese": "当连续发生至少三次流产时，被称为习惯性流产。这虽然罕见，但确实会发生。在这种情况下，医生可能会建议进行检查以了解原因。流产可能是一段非常艰难的时期。如果您或您认识的人正在经历这一切，请记住您并不孤单。许多人都经历过这种考验，感到悲伤、疲惫和自我怀疑都是正常的。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:28.090",
+          "end_time": "00:02:46.219",
+          "french": "Prenez soin de vous et on se retrouve la semaine prochaine pour un autre mot de la semaine.",
+          "chinese": "请保重身体，我们下周的“每周一词”再见。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:52.150",
+          "end_time": "00:03:20.830",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档旨在帮助技术移民在异国他乡重塑职业生涯的播客。你将听到感人的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业发展。《Work in Progress》，现在即可在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:20.830",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 7,
+        "source_video_name": "Easy French - Le mot de la semaine _ fausse couche.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

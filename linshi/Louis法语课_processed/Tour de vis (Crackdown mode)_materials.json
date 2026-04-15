@@ -1,0 +1,724 @@
+{
+  "source_file": "Tour de vis (Crackdown mode).json",
+  "channel": "Louis法语课",
+  "video_name": "Tour de vis (Crackdown mode)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T03:23:47.506Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 13,
+          "review_words": 0
+        },
+        "grammar": [
+          "Verbes d'obligation + de + infinitif",
+          "Les pronoms relatifs (qui et que)"
+        ],
+        "speaking": [
+          "Parler des caractéristiques nutritionnelles d'un produit",
+          "Expliquer une règle ou une loi concernant les réseaux sociaux"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "saveur",
+            "part_of_speech": "nom",
+            "ipa": "[sa.vœʁ]",
+            "chinese": "风味，味道",
+            "example_sentence": {
+              "french": "C'est la saveur café que vous aimez.",
+              "chinese": "这是您喜爱的咖啡风味。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame.",
+                "chinese": "犒劳自己，享受身体渴望的美味与营养吧。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "caféine",
+            "part_of_speech": "nom",
+            "ipa": "[ka.fe.in]",
+            "chinese": "咖啡因",
+            "example_sentence": {
+              "french": "Je bois du café sans caféine le soir.",
+              "chinese": "我晚上喝无咖啡因的咖啡。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "C'est la saveur café que vous aimez, mais sans la caféine.",
+                "chinese": "这是一款您喜爱的咖啡风味，但不含咖啡因。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "nutritionnel",
+            "part_of_speech": "adjectif",
+            "ipa": "[ny.tʁi.sjɔ.nɛl]",
+            "chinese": "营养的",
+            "example_sentence": {
+              "french": "Ce shake nutritionnel est très bon pour la santé.",
+              "chinese": "这款营养奶昔对健康非常有益。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Ce shake nutritionnel tout-en-un offre un goût intense.",
+                "chinese": "这款单杯营养奶昔口感醇厚。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "authentique",
+            "part_of_speech": "adjectif",
+            "ipa": "[o.tɑ̃.tik]",
+            "chinese": "纯正的，真实的",
+            "example_sentence": {
+              "french": "Ce restaurant propose une cuisine italienne authentique.",
+              "chinese": "这家餐厅提供纯正的意大利菜。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Ce shake nutritionnel tout-en-un offre un goût intense et authentique.",
+                "chinese": "这款单杯营养奶昔带来浓郁醇厚、原汁原味的口感。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "élaboré",
+            "part_of_speech": "adjectif/verbe",
+            "ipa": "[e.la.bɔ.ʁe]",
+            "chinese": "精心制作的，研制的",
+            "example_sentence": {
+              "french": "Ce plat est élaboré par un grand chef.",
+              "chinese": "这道菜是由一位大厨精心制作的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "élaboré à partir de grains brésiliens décaféinés de première qualité",
+                "chinese": "由优质巴西无咖啡因咖啡豆精心调制",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "décaféiné",
+            "part_of_speech": "adjectif",
+            "ipa": "[de.ka.fe.i.ne]",
+            "chinese": "脱咖啡因的",
+            "example_sentence": {
+              "french": "Je voudrais un café décaféiné, s'il vous plaît.",
+              "chinese": "请给我一杯无咖啡因咖啡。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "élaboré à partir de grains brésiliens décaféinés de première qualité",
+                "chinese": "由优质巴西无咖啡因咖啡豆精心调制",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "nutriment",
+            "part_of_speech": "nom",
+            "ipa": "[ny.tʁi.mɑ̃]",
+            "chinese": "营养素，营养成分",
+            "example_sentence": {
+              "french": "Les légumes sont riches en nutriments essentiels.",
+              "chinese": "蔬菜富含必需的营养素。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame.",
+                "chinese": "犒劳自己，享受身体渴望的美味与营养吧。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "resserrer",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁə.sɛ.ʁe]",
+            "chinese": "收紧，加强",
+            "example_sentence": {
+              "french": "Le gouvernement veut resserrer les contrôles de sécurité.",
+              "chinese": "政府希望加强安全检查。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "La Chine resserre la surveillance des influenceurs.",
+                "chinese": "中国正加强对网红的监管。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "surveillance",
+            "part_of_speech": "nom",
+            "ipa": "[syʁ.vɛ.jɑ̃s]",
+            "chinese": "监管，监视",
+            "example_sentence": {
+              "french": "La banque est sous la surveillance de la police.",
+              "chinese": "这家银行在警方的监视之下。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "La surveillance, c'est le contrôle, la surveillance des influenceurs.",
+                "chinese": "所谓监管，就是对网红的控制与监督。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "influenceur",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃.fly.ɑ̃.sœʁ]",
+            "chinese": "网红，有影响力的人",
+            "example_sentence": {
+              "french": "Cet influenceur a des millions d'abonnés sur Instagram.",
+              "chinese": "这位网红在Instagram上有数百万粉丝。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              5,
+              7
+            ],
+            "occurrence_count": 7,
+            "examples": [
+              {
+                "french": "Un influenceur, vous le savez, c'est quelqu'un qui est beaucoup sur les réseaux sociaux.",
+                "chinese": "大家都知道，网红就是在社交媒体上活跃度很高的人。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "imposer",
+            "part_of_speech": "verbe",
+            "ipa": "[ɛ̃.po.ze]",
+            "chinese": "强制，强加",
+            "example_sentence": {
+              "french": "Le directeur a imposé de nouvelles règles.",
+              "chinese": "经理强制推行了新规定。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Une nouvelle loi impose de signaler tout contenu sponsorisé.",
+                "chinese": "一项新法律要求必须标注所有赞助内容。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "sponsorisé",
+            "part_of_speech": "adjectif",
+            "ipa": "[spɔ̃.sɔ.ʁi.ze]",
+            "chinese": "赞助的",
+            "example_sentence": {
+              "french": "Il a publié un article sponsorisé sur son blog.",
+              "chinese": "他在博客上发布了一篇赞助文章。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              6,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Une nouvelle loi impose de signaler tout contenu sponsorisé.",
+                "chinese": "一项新法律要求必须标注所有赞助内容。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "sanction",
+            "part_of_speech": "nom",
+            "ipa": "[sɑ̃k.sjɔ̃]",
+            "chinese": "处罚，制裁",
+            "example_sentence": {
+              "french": "L'entreprise risque de lourdes sanctions financières.",
+              "chinese": "该公司面临严厉的财务处罚风险。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "sous peine de lourdes sanctions.",
+                "chinese": "否则将面临严厉处罚。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "tour de vis",
+            "meaning": "收紧政策，加强管控",
+            "example": {
+              "french": "Aujourd'hui la leçon est « tour de vis ».",
+              "chinese": "今天我们要学习的是“拧紧螺丝”（加强监管）这一课。"
+            },
+            "usage_note": "字面意思是“拧紧螺丝”，在新闻或政治语境中常用来比喻政策、法律或监管的收紧。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "tout-en-un",
+            "meaning": "多合一，全能",
+            "example": {
+              "french": "Ce shake nutritionnel tout-en-un offre un goût intense.",
+              "chinese": "这款单杯（多合一）营养奶昔口感醇厚。"
+            },
+            "usage_note": "常用于产品描述，表示一个产品包含了多种功能或成分。",
+            "source_ids": [
+              1,
+              9
+            ]
+          },
+          {
+            "expression": "sous peine de",
+            "meaning": "否则将面临...，违者将受...处罚",
+            "example": {
+              "french": "Une nouvelle loi impose de signaler tout contenu sponsorisé, sous peine de lourdes sanctions.",
+              "chinese": "一项新法律要求必须标注所有赞助内容，否则将面临严厉处罚。"
+            },
+            "usage_note": "法律或正式规定中常用的表达，后面通常接名词，表示如果不遵守规定将带来的负面后果。",
+            "source_ids": [
+              2,
+              3,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "expression": "faire la publicité de",
+            "meaning": "为...做广告",
+            "example": {
+              "french": "Et qui fait la publicité de produits. C'est ça, un influenceur.",
+              "chinese": "以及那些为产品做广告的人。这，就是网红。"
+            },
+            "usage_note": "表示宣传或推广某物，注意介词使用 'de'。",
+            "source_ids": [
+              5
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Verbes d'obligation + de + infinitif",
+            "structure": "Sujet + imposer/demander/ordonner + de + infinitif",
+            "explanation": "在法语中，许多表示命令、要求或强制的动词（如 imposer）后面接动词不定式时，必须使用介词 'de'。这构成了 'imposer de faire quelque chose'（强制要求做某事）的结构。",
+            "example": {
+              "french": "Une nouvelle loi impose de signaler tout contenu sponsorisé.",
+              "chinese": "一项新法律要求必须标注所有赞助内容。"
+            },
+            "usage_note": "注意与直接及物动词的区别。这里 'imposer' 引导不定式短语作为直接宾语时，'de' 是必不可少的连接词。",
+            "source_ids": [
+              2,
+              3,
+              5,
+              8
+            ]
+          },
+          {
+            "name": "Les pronoms relatifs (qui et que)",
+            "structure": "Nom + qui + verbe / Nom + que + sujet + verbe",
+            "explanation": "关系代词用于连接主句和从句，避免名词重复。'qui' 在从句中作主语，后面直接跟动词；'que' 在从句中作直接宾语，后面跟主语和动词。",
+            "example": {
+              "french": "C'est la saveur café que vous aimez... un influenceur, c'est quelqu'un qui est beaucoup sur les réseaux sociaux.",
+              "chinese": "这是您喜爱的咖啡风味……网红就是在社交媒体上活跃度很高的人。"
+            },
+            "usage_note": "在口语中，'que' 遇到元音开头的词会省音变成 'qu''，而 'qui' 永远不省音。",
+            "source_ids": [
+              1,
+              4,
+              9
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɛ̃] et [ɑ̃]",
+              "description": "Les voyelles nasales. Le mot 'influenceur' contient deux voyelles nasales distinctes : [ɛ̃] (in) et [ɑ̃] (en).",
+              "examples": [
+                "influenceur",
+                "sanction"
+              ]
+            }
+          ],
+          "liaison": [
+            "tout-en-un [tu.tɑ̃.nœ̃]",
+            "les influenceurs [le.zɛ̃.fly.ɑ̃.sœʁ]"
+          ],
+          "intonation": "Dans les phrases d'avertissement ou de loi, l'intonation descend à la fin pour marquer le sérieux et la finalité, par exemple sur 'lourdes sanctions'."
+        },
+        "vocabulary_network": {
+          "theme": "Régulation des réseaux sociaux",
+          "core_word": "Influenceur",
+          "related_groups": [
+            {
+              "category": "Action",
+              "words": [
+                "resserrer",
+                "imposer",
+                "signaler",
+                "faire la publicité"
+              ]
+            },
+            {
+              "category": "Loi et Conséquence",
+              "words": [
+                "loi",
+                "surveillance",
+                "sanction",
+                "sous peine de"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Ce shake ___ tout-en-un offre un goût intense et ___, ___ à partir de grains brésiliens ___ de première qualité, avec 25 grammes de ___, 6 grammes de ___, des légumes verts et bien plus.",
+            "answer": "nutritionnel, authentique, élaboré, décaféinés, protéines, fibres",
+            "explanation": "根据原文，这款奶昔的描述包含了多个具体的形容词和营养成分名词。依次为：nutritionnel (营养的), authentique (纯正的), élaboré (精心制作的), décaféinés (脱咖啡因的), protéines (蛋白质), fibres (纤维)。",
+            "source_ids": [
+              1,
+              9
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon la nouvelle loi mentionnée dans le texte, que se passera-t-il si les influenceurs ne signalent pas le contenu sponsorisé ?",
+            "options": {
+              "A": "Ils devront payer une petite taxe.",
+              "B": "Ils feront face à de lourdes sanctions.",
+              "C": "Leurs comptes sur les réseaux sociaux seront supprimés.",
+              "D": "Ils ne pourront plus boire de café."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文明确指出：“Une nouvelle loi impose de signaler tout contenu sponsorisé, sous peine de lourdes sanctions.”（一项新法律要求必须标注所有赞助内容，否则将面临严厉处罚）。选项A、C、D在原文中均未提及。",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Une nouvelle loi impose de signaler tout contenu sponsorisé, sous peine de lourdes sanctions.",
+            "answer": "一项新法律要求必须标明所有赞助内容，否则将面临严厉处罚。",
+            "explanation": "翻译难点在于准确传达 'imposer de' (强制要求) 和 'sous peine de' (否则将面临...处罚) 这两个固定搭配的法律/正式语体色彩。'tout contenu sponsorisé' 译为 '所有赞助内容'。",
+            "source_ids": [
+              2,
+              3,
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Complétez la phrase en utilisant la préposition correcte pour relier le verbe d'obligation à l'infinitif : La nouvelle loi impose ___ signaler tout contenu sponsorisé.",
+            "answer": "de",
+            "explanation": "动词 'imposer' 在引导动词不定式作宾语时，必须使用介词 'de'，构成 'imposer de faire qqch' 的结构。原文中正是使用了 'impose de signaler'。",
+            "source_ids": [
+              2,
+              3,
+              5,
+              8
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "nutritionnel",
+            "authentique",
+            "élaboré",
+            "décaféiné",
+            "protéine",
+            "fibre",
+            "sanction",
+            "sponsorisé"
+          ],
+          "covered_grammar": [
+            "Verbes d'obligation + de + infinitif"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "C'est... que...",
+            "explanation": "强调句型，用于突出句子中的某个成分（如宾语）。'que' 后面跟主语和动词。",
+            "example": {
+              "french": "C'est la saveur café que vous aimez.",
+              "chinese": "这正是您喜爱的咖啡风味。"
+            }
+          },
+          {
+            "pattern": "sous peine de + nom",
+            "explanation": "表示如果不遵守某项规定将会导致的负面后果，常用于警告或法律条文中。",
+            "example": {
+              "french": "Il faut respecter la loi, sous peine de lourdes sanctions.",
+              "chinese": "必须遵守法律，否则将面临严厉处罚。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous travaillez pour une agence de marketing en Chine. Vous devez expliquer à un influenceur français les nouvelles règles concernant les publications sur les réseaux sociaux.",
+          "requirements": "Utilisez le vocabulaire de la leçon (influenceur, sponsorisé, imposer, sanction) et expliquez clairement ce qu'il doit faire pour respecter la loi.",
+          "starter": "Bonjour, je vous contacte aujourd'hui pour vous parler d'un 'tour de vis' concernant nos prochaines campagnes..."
+        }
+      },
+      "summary": {
+        "content": "Ce texte est composé de deux parties : une publicité pour un shake nutritionnel au café décaféiné (Ka'Chava), riche en protéines et en fibres, et une courte leçon d'actualité. La leçon explique l'expression 'tour de vis' en prenant l'exemple de la Chine qui resserre la surveillance des influenceurs, imposant par une nouvelle loi de signaler tout contenu sponsorisé sous peine de lourdes sanctions.",
+        "keywords": [
+          "nutrition",
+          "décaféiné",
+          "influenceur",
+          "surveillance",
+          "loi",
+          "sponsorisé"
+        ],
+        "difficulty_note": "Le niveau global est B1. Le vocabulaire est spécifique (nutrition, termes juridiques et réseaux sociaux), mais les structures grammaticales restent accessibles, avec une bonne utilisation des pronoms relatifs et des verbes d'obligation."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.000",
+          "end": "00:04:11.740"
+        },
+        "theme": "Santé/Nutrition et Régulation des réseaux sociaux",
+        "cefr_level": "B1",
+        "vocabulary_count": 13,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.000",
+          "end_time": "00:00:23.839",
+          "french": "C'est la saveur café que vous aimez, mais sans la caféine. Ka'Chava a ce qu'il vous faut avec sa nouvelle saveur café. Ce shake nutritionnel tout-en-un offre un goût intense et authentique, élaboré à partir de grains brésiliens décaféinés de première qualité, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus. Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame. Allez sur kachava.com et utilisez le code SMOOTHIE.",
+          "chinese": "这是您喜欢的咖啡口味，但不含咖啡因。Ka'Chava的全新咖啡口味正是您所需要的。这款全能营养奶昔口感浓郁纯正，采用优质巴西脱因咖啡豆精制而成，富含25克蛋白质、6克纤维、绿叶蔬菜等更多营养。让您的身体尽享渴望的美味与营养吧。请访问 kachava.com 并使用优惠码 SMOOTHIE。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:23.839",
+          "end_time": "00:00:51.780",
+          "french": "New customers get 15% off their first order. That's K-A-C-H-A-V-A dot com code SMOOTHIE. Bonjour, aujourd'hui la leçon est « tour de vis ». La Chine resserre la surveillance des influenceurs. Une nouvelle loi impose de signaler tout contenu sponsorisé, sous peine de lourdes sanctions.",
+          "chinese": "新客户首单可享85折优惠。网址是 K-A-C-H-A-V-A 点 com，优惠码 SMOOTHIE。大家好，今天的课程是“tour de vis（收紧政策）”。中国正在加强对网红的监管。一项新法律强制要求标明所有赞助内容，违者将面临严厉处罚。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.340",
+          "end_time": "00:01:21.260",
+          "french": "Once again, la Chine resserre la surveillance des influenceurs. Une nouvelle loi impose de signaler tout contenu sponsorisé, sous peine de lourdes sanctions. Alors la Chine resserre, c'est le verbe resserrer, au sens figuré, c'est tighten en anglais. Resserrer.",
+          "chinese": "再说一遍，中国正在加强对网红的监管。一项新法律强制要求标明所有赞助内容，违者将面临严厉处罚。那么，“中国加强（la Chine resserre）”，这里用的是动词“resserrer”，在比喻意义上，相当于英语中的“tighten”（收紧）。Resserrer（收紧）。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:21.430",
+          "end_time": "00:01:52.140",
+          "french": "C'est rapprocher, rendre plus dur, plus sévère, resserrer. Resserrer la surveillance des influenceurs. La surveillance, c'est le contrôle, la surveillance des influenceurs. E-U-R à la fin. Un influenceur, vous le savez, c'est quelqu'un qui est beaucoup sur les réseaux sociaux.",
+          "chinese": "意思是拉近、变得更强硬、更严厉，即收紧（resserrer）。加强（Resserrer）对网红的监管。监管（La surveillance），也就是控制，对网红（influenceurs）的监管。词尾是 E-U-R。你们知道，网红（influenceur）就是那些经常活跃在社交网络上的人。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:52.340",
+          "end_time": "00:02:22.439",
+          "french": "Et qui fait la publicité de produits. C'est ça, un influenceur. Eh bien, une nouvelle loi, a new law, une nouvelle loi impose, c'est le verbe imposer, rendre obligatoire, impose, impose de signaler. Signaler, c'est dire publiquement.",
+          "chinese": "并且为产品做广告。这就是网红（influenceur）。那么，一项新法律（une nouvelle loi），英语是 a new law，一项新法律强制要求（impose），这里是动词“imposer”，意思是使其成为强制性的，强制要求，强制要求标明（signaler）。标明（Signaler）的意思是公开说明。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:22.580",
+          "end_time": "00:02:56.550",
+          "french": "Quelque chose. Donner une information. Signaler. Exemple : le journaliste signale qu'il y a une attaque en cours en ce moment. Il donne l'information qu'il y a une attaque en ce moment. Tout contenu sponsorisé. Eh bien, c'est « all sponsored content ». Tout contenu sponsorisé. Sous peine.",
+          "chinese": "某件事。提供一个信息。标明（Signaler）。例如：记者报道（signale）目前正在发生一起袭击事件。他提供了目前有袭击事件的信息。所有赞助内容（Tout contenu sponsorisé）。嗯，也就是英语的“all sponsored content”。所有赞助内容。违者将面临（Sous peine）。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:56.789",
+          "end_time": "00:03:29.449",
+          "french": "Sous peine de lourdes sanctions. Sous peine, c'est-à-dire s'ils ne le font pas, s'ils ne respectent pas la loi, alors il y aura de lourdes sanctions. Heavy penalties. De lourdes sanctions. La Chine resserre la surveillance des influenceurs.",
+          "chinese": "违者将面临严厉处罚（Sous peine de lourdes sanctions）。“违者将面临（Sous peine）”，也就是说如果他们不这样做，如果不遵守法律，那么就会有严厉的处罚。英语是 Heavy penalties。严厉的处罚（De lourdes sanctions）。中国正在加强对网红的监管。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:29.689",
+          "end_time": "00:03:39.020",
+          "french": "Une nouvelle loi impose de signaler tout contenu sponsorisé, sous peine de lourdes sanctions.",
+          "chinese": "一项新法律强制要求标明所有赞助内容，违者将面临严厉处罚。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:41.370",
+          "end_time": "00:04:08.020",
+          "french": "C'est la saveur café que vous aimez, mais sans la caféine. Ka'Chava a ce qu'il vous faut avec sa nouvelle saveur café. Ce shake nutritionnel tout-en-un offre un goût intense et authentique, élaboré à partir de grains brésiliens décaféinés de première qualité, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus. Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame. Allez sur kachava.com et utilisez le code SMOOTHIE. Les nouveaux clients bénéficient de 15 % de réduction sur leur première commande.",
+          "chinese": "这是您喜欢的咖啡口味，但不含咖啡因。Ka'Chava的全新咖啡口味正是您所需要的。这款全能营养奶昔口感浓郁纯正，采用优质巴西脱因咖啡豆精制而成，富含25克蛋白质、6克纤维、绿叶蔬菜等更多营养。让您的身体尽享渴望的美味与营养吧。请访问 kachava.com 并使用优惠码 SMOOTHIE。新客户首单可享85折优惠。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:08.020",
+          "end_time": "00:04:11.740",
+          "french": "C'est K-A-C-H-A-V-A point com, code SMOOTHIE.",
+          "chinese": "网址是 K-A-C-H-A-V-A 点 com，优惠码 SMOOTHIE。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.000",
+        "end_time": "00:04:11.740",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 10,
+        "source_video_name": "Tour de vis (Crackdown mode).json",
+        "tags": []
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "error",
+            "check": "Exercise Validation",
+            "detail": "Typographical and grammatical error in the multiple-choice question: 'que se passera-telling' should be 'que se passera-t-il'.",
+            "field": "practice.exercises[1].question"
+          },
+          {
+            "level": "warning",
+            "check": "Cross-field Consistency",
+            "detail": "Occurrence count mismatch for 'resserrer'. Actual count in subtitles is 8, but stated as 6.",
+            "field": "language_analysis.vocabulary[7].occurrence_count"
+          },
+          {
+            "level": "warning",
+            "check": "Cross-field Consistency",
+            "detail": "Occurrence count mismatch for 'surveillance'. Actual count in subtitles is 6, but stated as 5.",
+            "field": "language_analysis.vocabulary[8].occurrence_count"
+          },
+          {
+            "level": "warning",
+            "check": "Cross-field Consistency",
+            "detail": "Occurrence count mismatch for 'imposer'. Actual count in subtitles is 6, but stated as 5.",
+            "field": "language_analysis.vocabulary[10].occurrence_count"
+          }
+        ],
+        "error_count": 1,
+        "warning_count": 3,
+        "fixed_count": 0,
+        "passed": false
+      }
+    }
+  }
+}

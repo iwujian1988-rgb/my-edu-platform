@@ -1,0 +1,757 @@
+{
+  "source_file": "SBS Easy French #276 _ comment apprendre efficacement le français _.json",
+  "channel": "SBS简易法语",
+  "video_name": "SBS Easy French #276 _ comment apprendre efficacement le français _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T00:43:02.649Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "La nominalisation avec 'Le fait de + infinitif'",
+          "Le pronom relatif 'où' pour un espace abstrait ou physique"
+        ],
+        "speaking": [
+          "Parler de l'apprentissage des langues et des méthodes pédagogiques",
+          "Exprimer la motivation et surmonter les obstacles dans un environnement d'immersion"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "immersion",
+            "part_of_speech": "nom",
+            "ipa": "[imɛʁsjɔ̃]",
+            "chinese": "沉浸，沉浸式",
+            "example_sentence": {
+              "french": "Cosmopoly French est une école qui est basée sur le concept de l'immersion.",
+              "chinese": "Cosmopoly French是一所基于沉浸式理念的学校。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              4,
+              6,
+              7,
+              8,
+              21
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Cosmopoly French est une école que j'ai créée il y a maintenant 14 ans, qui est une école qui est basée sur le concept de l'immersion.",
+                "chinese": "Cosmopoly French是我14年前创办的一所学校，它采用了一种以沉浸式学习为核心的教育模式。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "couramment",
+            "part_of_speech": "adverbe",
+            "ipa": "[kuʁamɑ̃]",
+            "chinese": "流利地",
+            "example_sentence": {
+              "french": "Elle explique comment apprendre à parler couramment français.",
+              "chinese": "她解释了如何学会流利地讲法语。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Elle nous explique le concept de son école de français et comment elle pense que l'immersion, les échanges et la communauté permettent d'apprendre à parler couramment français de façon authentique.",
+                "chinese": "她向我们介绍了她法语学校的理念，以及她认为沉浸式学习、交流互动和社群氛围如何帮助大家以地道的方式流利地讲法语。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "concurrence",
+            "part_of_speech": "nom",
+            "ipa": "[kɔ̃kyʁɑ̃s]",
+            "chinese": "竞争",
+            "example_sentence": {
+              "french": "Effectivement, il y a une très grande concurrence.",
+              "chinese": "确实，竞争非常激烈。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "J'imagine que vous faites face à une très forte concurrence.",
+                "chinese": "我想您一定面临着激烈的竞争。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "se démarquer",
+            "part_of_speech": "verbe",
+            "ipa": "[sə demaʁke]",
+            "chinese": "脱颖而出，与众不同",
+            "example_sentence": {
+              "french": "Ce qui permet de nous démarquer, c'est qu'on a une offre très singulière.",
+              "chinese": "让我们脱颖而出的是，我们提供了一种非常独特的课程体系。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Mais ce qui permet de nous démarquer, c'est qu'on a une offre très singulière.",
+                "chinese": "但正是因为我们提供了一种非常独特的课程体系，才让我们脱颖而出。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "singulier",
+            "part_of_speech": "adjectif",
+            "ipa": "[sɛ̃ɡylje]",
+            "chinese": "独特的，非凡的",
+            "example_sentence": {
+              "french": "Nous avons une offre très singulière.",
+              "chinese": "我们提供了一种非常独特的课程体系。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Mais ce qui permet de nous démarquer, c'est qu'on a une offre très singulière.",
+                "chinese": "但正是因为我们提供了一种非常独特的课程体系，才让我们脱颖而出。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "ancrer",
+            "part_of_speech": "verbe",
+            "ipa": "[ɑ̃kʁe]",
+            "chinese": "使扎根，使固定",
+            "example_sentence": {
+              "french": "C'est vraiment pour ancrer l'apprentissage dans le réel.",
+              "chinese": "这旨在真正将学习内容融入到真实的生活中。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6,
+              12
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Donc c'est vraiment pour ancrer l'apprentissage dans le réel et dans l'expérience.",
+                "chinese": "这样做旨在真正将学习内容融入到真实的生活与实际体验中。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "frein",
+            "part_of_speech": "nom",
+            "ipa": "[fʁɛ̃]",
+            "chinese": "障碍，制动器",
+            "example_sentence": {
+              "french": "Le fait d'être débutant n'est absolument pas un frein.",
+              "chinese": "初学者身份绝不会成为学习的障碍。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7,
+              22
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "La grammaire est un outil qui peut vous servir à communiquer et ce n'est pas un frein.",
+                "chinese": "语法其实是一种能帮助你沟通的工具，而不是阻碍。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "propice",
+            "part_of_speech": "adjectif",
+            "ipa": "[pʁɔpis]",
+            "chinese": "有利的，适合的",
+            "example_sentence": {
+              "french": "C'est un espace propice à la conversation.",
+              "chinese": "这是一个适合交流的场所。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'espace qu'on a décidé de créer, c'est en fait un petit salon, un espace propice à la conversation...",
+                "chinese": "我们决定打造的空间其实是一个小型客厅，一个适合交流的场所...",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "intimider",
+            "part_of_speech": "verbe",
+            "ipa": "[ɛ̃timide]",
+            "chinese": "使害怕，使畏惧",
+            "example_sentence": {
+              "french": "Le schéma de salle de classe classique peut intimider certains apprenants.",
+              "chinese": "传统的课堂模式有时会让一些学习者感到拘谨或畏惧。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le choix de ne pas avoir de manuels scolaires, c'est justement pour essayer de sortir du schéma de salle de classe classique qui peut intimider certains apprenants.",
+                "chinese": "之所以选择不使用教科书，正是为了摆脱传统课堂模式——这种模式有时会让一些学习者感到拘谨或畏惧。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "résilience",
+            "part_of_speech": "nom",
+            "ipa": "[ʁeziljɑ̃s]",
+            "chinese": "韧性，抗压能力",
+            "example_sentence": {
+              "french": "Cette motivation vous donne une résilience incroyable.",
+              "chinese": "这种动力会赋予你惊人的韧性。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              13,
+              22
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Quand on est adulte, cette motivation vous donne une résilience incroyable.",
+                "chinese": "成年后，这种动力会赋予你惊人的韧性。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "lapsus",
+            "part_of_speech": "nom",
+            "ipa": "[lapsys]",
+            "chinese": "口误",
+            "example_sentence": {
+              "french": "Vous avez fait un petit lapsus qui est tellement mignon.",
+              "chinese": "您说了一个特别可爱的口误。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              15
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Tout à l'heure, vous avez fait un petit lapsus qui est tellement mignon que je ne vais pas le retirer...",
+                "chinese": "刚才您说了一个特别可爱的口误，我可不会把它删掉...",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "bénéfice",
+            "part_of_speech": "nom",
+            "ipa": "[benefis]",
+            "chinese": "益处，好处",
+            "example_sentence": {
+              "french": "Ils en ont tiré beaucoup de bénéfices.",
+              "chinese": "他们从中受益良多。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              14
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On a de nombreux étudiants qui ont déjà testé ces approches académiques, donc qui en ont tiré beaucoup de bénéfices...",
+                "chinese": "我们有许多学生此前已经尝试过传统的学术教学方法，并从中受益良多...",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "faire le grand saut",
+            "meaning": "迈出大胆的一步，采取决定性的行动",
+            "example": {
+              "french": "Si vous êtes tentés de faire le grand saut afin de parler français en totale immersion, écoutez cette interview.",
+              "chinese": "如果你正考虑勇敢迈出一步，全身心投入法语学习，那就快来听听这期访谈吧。"
+            },
+            "usage_note": "Utilisé pour décrire une action courageuse ou un changement important dans la vie.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "mettre au service de",
+            "meaning": "为...服务，将...应用于",
+            "example": {
+              "french": "La grammaire est mise au service de l'expression.",
+              "chinese": "语法始终是为了更好地表达而服务的。"
+            },
+            "usage_note": "Expression formelle pour indiquer qu'une compétence ou un outil est utilisé pour aider ou améliorer quelque chose d'autre.",
+            "source_ids": [
+              7,
+              19
+            ]
+          },
+          {
+            "expression": "se mettre en danger",
+            "meaning": "置身于危险/挑战之中，走出舒适区",
+            "example": {
+              "french": "C'est accepter de devenir débutant, accepter de se mettre en danger.",
+              "chinese": "这意味着要接受自己仍是个初学者，接受让自己置身于风险（挑战）之中。"
+            },
+            "usage_note": "Dans le contexte de l'apprentissage, cela signifie prendre des risques et sortir de sa zone de confort.",
+            "source_ids": [
+              13
+            ]
+          },
+          {
+            "expression": "briser ce plafond",
+            "meaning": "打破天花板/瓶颈",
+            "example": {
+              "french": "On peut vraiment les accompagner et les aider à briser ce plafond où ils se sentent un petit peu bloqués.",
+              "chinese": "我们才能真正陪伴他们、帮助他们打破那道让他们感到些许受困的天花板（瓶颈）。"
+            },
+            "usage_note": "Souvent utilisé avec 'de verre' (plafond de verre), ici utilisé métaphoriquement pour désigner un blocage dans l'apprentissage.",
+            "source_ids": [
+              15
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La nominalisation avec 'Le fait de + infinitif'",
+            "structure": "Le fait de + verbe à l'infinitif",
+            "explanation": "Cette structure permet de transformer une action (exprimée par un verbe) en un groupe nominal qui peut servir de sujet dans la phrase. C'est très utile pour exprimer une idée générale ou un état de fait sans utiliser de subordonnée complexe.",
+            "example": {
+              "french": "Le fait d'être débutant n'est absolument pas un frein.",
+              "chinese": "初学者身份（作为初学者这件事）绝不会成为学习的障碍。"
+            },
+            "usage_note": "On l'utilise souvent à l'oral et à l'écrit pour insister sur la réalité d'une action ou d'un état.",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "name": "Le pronom relatif 'où' pour un espace abstrait ou physique",
+            "structure": "Nom (lieu/espace/moment) + où + Sujet + Verbe",
+            "explanation": "Le pronom relatif 'où' remplace un complément de lieu ou de temps. Dans ce texte, il est utilisé pour décrire un espace (physique ou métaphorique) propice à une action.",
+            "example": {
+              "french": "L'espace qu'on a décidé de créer, c'est en fait un petit salon, un espace propice à la conversation, où les gens peuvent se regarder dans les yeux...",
+              "chinese": "我们决定打造的空间其实是一个小型客厅，一个适合交流的场所，人们可以在这里面对面地交谈..."
+            },
+            "usage_note": "Attention à ne pas le confondre avec 'que'. 'Où' remplace toujours un lieu ou un temps (ex: dans cet espace -> où).",
+            "source_ids": [
+              11
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃] et [ɛ̃]",
+              "description": "Les voyelles nasales sont très présentes dans le vocabulaire de l'apprentissage et de la pédagogie.",
+              "examples": [
+                "immersion [imɛʁsjɔ̃]",
+                "frein [fʁɛ̃]",
+                "apprentissage [apʁɑ̃tisaʒ]"
+              ]
+            }
+          ],
+          "liaison": [
+            "vous êtes avec [vu.z‿ɛt.a.vɛk]",
+            "un espace propice [œ̃.n‿ɛs.pas]",
+            "les apprenants [le.z‿a.pʁə.nɑ̃]"
+          ],
+          "intonation": "L'intonation dans une interview est souvent montante à la fin des questions du journaliste, et descendante à la fin des explications de l'invitée pour marquer la certitude et l'expertise."
+        },
+        "vocabulary_network": {
+          "theme": "L'apprentissage des langues",
+          "core_word": "Apprentissage",
+          "related_groups": [
+            {
+              "category": "Méthodes",
+              "words": [
+                "immersion",
+                "académique",
+                "jeux de rôle",
+                "action"
+              ]
+            },
+            {
+              "category": "Attitudes et émotions",
+              "words": [
+                "résilience",
+                "patience",
+                "humilité",
+                "intimider",
+                "motivation"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Mais quand on apprend une ___, il faut aussi savoir qu'une dose de ___, une dose d'___ et bien sûr de la ___, tous ces ___-là sont essentiels dans l'apprentissage parce que c'est accepter de devenir débutant.",
+            "answer": "langue, patience, humilité, résilience, ingrédients",
+            "explanation": "根据原文第13段，学习语言时需要耐心、谦逊和韧性，这些都是必不可少的要素（ingrédients）。",
+            "source_ids": [
+              13
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi l'école Cosmopoly French a-t-elle choisi de ne pas utiliser de manuels scolaires dans ses cours ?",
+            "options": {
+              "A": "Parce que les manuels scolaires coûtent trop cher pour les étudiants adultes.",
+              "B": "Pour essayer de sortir du schéma de salle de classe classique qui peut intimider certains apprenants.",
+              "C": "Pour obliger les étudiants à utiliser uniquement des applications mobiles et des podcasts.",
+              "D": "Parce que l'école n'enseigne pas du tout la grammaire française."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第11段明确指出：'Le choix de ne pas avoir de manuels scolaires, c'est justement pour essayer de sortir du schéma de salle de classe classique qui peut intimider certains apprenants.'（之所以选择不使用教科书，正是为了摆脱传统课堂模式——这种模式有时会让一些学习者感到拘谨或畏惧。）",
+            "source_ids": [
+              11
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Je voudrais leur dire qu'apprendre le français à l'âge adulte est en fait un très bon moment pour le faire parce que vous avez l'avantage d'avoir une très grande motivation.",
+            "answer": "我想告诉他们，其实成年后学习法语正是一个非常好的时机，因为此时你们拥有非常强烈的动机这一优势。",
+            "explanation": "翻译难点在于'à l'âge adulte'（成年后/在成年阶段）和'avoir l'avantage de'（拥有...的优势）。句子结构较长，需要理顺因果关系。",
+            "source_ids": [
+              21
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Complétez la phrase avec le pronom relatif approprié (qui, que, où, dont) : 'L'espace qu'on a décidé de créer, c'est en fait un petit salon, un espace propice à la conversation, ___ les gens peuvent se regarder dans les yeux.'",
+            "answer": "où",
+            "explanation": "此处需要填入'où'。因为先行词是'un espace'（一个空间/场所），后面的从句'les gens peuvent se regarder dans les yeux (dans cet espace)'缺少地点状语，因此必须使用关系代词'où'来代替地点。",
+            "source_ids": [
+              11
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "langue",
+            "patience",
+            "humilité",
+            "résilience",
+            "ingrédients",
+            "intimider"
+          ],
+          "covered_grammar": [
+            "Le pronom relatif 'où'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Ce qui permet de [infinitif], c'est que...",
+            "explanation": "用于强调某种方法或原因使得某事成为可能。",
+            "example": {
+              "french": "Ce qui permet de nous démarquer, c'est qu'on a une offre très singulière.",
+              "chinese": "让我们脱颖而出的是，我们提供了一种非常独特的课程体系。"
+            }
+          },
+          {
+            "pattern": "Le fait de [infinitif] n'est absolument pas...",
+            "explanation": "用于将一个动作名词化作主语，并进行强烈的否定。",
+            "example": {
+              "french": "Le fait d'être débutant n'est absolument pas un frein.",
+              "chinese": "初学者身份绝不会成为学习的障碍。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你是一名成年人，想报名参加一家非传统法语学校的课程。你需要向校长询问他们的教学方法，是否教授语法，并表达你想更自信地开口说法语的愿望。",
+          "requirements": "使用词汇 'immersion', 'frein', 'couramment'，并尝试使用 'Le fait de + infinitif' 的句型。",
+          "starter": "Bonjour, je suis très intéressé(e) par votre école. J'aimerais savoir comment fonctionne votre méthode d'immersion..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode de SBS Easy French, Marianne Murat interviewe Nathalie Marguerite, fondatrice de l'école Cosmopoly French à Melbourne. Nathalie explique sa méthode d'enseignement basée sur l'immersion et l'action, sans manuels scolaires ni salles de classe traditionnelles. Elle souligne que l'apprentissage à l'âge adulte est un avantage grâce à la motivation et à la résilience, et que la grammaire doit être au service de la communication.",
+        "keywords": [
+          "immersion",
+          "apprentissage",
+          "adulte",
+          "école de français",
+          "Melbourne"
+        ],
+        "difficulty_note": "Le texte est de niveau B1/B2. Le vocabulaire est riche et abstrait (résilience, immersion, académique), mais les structures de phrases restent claires et typiques d'une interview radiophonique."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:33.719",
+          "end": "00:09:36.649"
+        },
+        "theme": "L'apprentissage du français et l'immersion linguistique",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并非易事。我被很多公司拒绝过。有时我会想，唉，我不干了，我想放弃。《Work in Progress》是一档致力于帮助技术移民在全新的国家重建职业生涯的播客。您将听到鼓舞人心的真实故事、专家建议以及宝贵的求职技巧，助您找到工作并实现职业发展。《Work in Progress》。欢迎在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:01:05.060",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Bonjour et bienvenue dans ce nouvel épisode de SBS Easy French. Cette semaine, nous vous proposons non pas un journal, mais une interview. Nous avons discuté avec Nathalie Marguerite, fondatrice de Cosmopoly French.",
+          "chinese": "您正在收听的是SBS法语频道。更多精彩内容请访问sbs.com.au/french。大家好，欢迎收听最新一期的《SBS简易法语》（SBS Easy French）。本周，我们为您带来的不是新闻播报，而是一篇访谈。我们与Cosmopoly French的创始人娜塔莉·玛格丽特（Nathalie Marguerite）进行了交流。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:05.340",
+          "end_time": "00:01:36.200",
+          "french": "Elle nous explique le concept de son école de français et comment elle pense que l'immersion, les échanges et la communauté permettent d'apprendre à parler couramment français de façon authentique. Alors, si vous êtes tentés de vous inscrire à des cours de français et de faire le grand saut afin de parler français en totale immersion, écoutez cette interview. Vous êtes avec Marianne Murat. Merci d'écouter Easy French, votre compagnon pour apprendre le français à votre rythme.",
+          "chinese": "她向我们介绍了她创办的法语学校的理念，以及她为何认为沉浸式体验、互动交流和社群氛围能让人学会说一口流利且地道的法语。因此，如果您正打算报名法语课程，并渴望迈出关键一步，在全沉浸式环境中开口说法语，那就请收听这篇访谈吧。我是主持人玛丽安·穆拉特（Marianne Murat）。感谢收听《简易法语》，这是陪伴您按照自己的节奏学习法语的好帮手。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:43.030",
+          "end_time": "00:02:02.219",
+          "french": "Nous sommes en ligne avec Nathalie Marguerite, la fondatrice et directrice de Cosmopoly French. Nathalie, bonjour. Bonjour. Expliquez-nous quel est le concept original de Cosmopoly French. Cosmopoly French est une école que j'ai créée il y a maintenant 14 ans, qui est une école qui est basée sur le concept de l'immersion.",
+          "chinese": "我们现在连线的是Cosmopoly French的创始人兼校长娜塔莉·玛格丽特。娜塔莉，你好。你好。请向我们介绍一下Cosmopoly French独特的办学理念是什么？Cosmopoly French是我在14年前创办的一所学校，它的核心理念就是沉浸式教学。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:02.780",
+          "end_time": "00:02:32.550",
+          "french": "Donc, chaque semaine, on crée des expériences pour nos étudiants pour leur permettre de travailler le français sur des situations réelles et concrètes du quotidien. Des écoles de français à Melbourne, il y en a beaucoup. J'imagine que vous faites face à une très forte concurrence. Mais est-ce que vous avez en votre faveur la longévité de l'école, 14 ans ? Effectivement, il y a une très grande concurrence. Mais ce qui permet de nous démarquer, c'est qu'on a une offre très singulière. Beaucoup d'écoles françaises proposent une approche peut-être un peu plus académique que la nôtre.",
+          "chinese": "因此，我们每周都会为学生创造各种体验，让他们能够在日常真实、具体的场景中练习法语。墨尔本有很多法语学校。我想你们面临的竞争一定非常激烈。但建校14年的悠久历史是否成为了你们的优势？确实，竞争非常激烈。但让我们脱颖而出的是我们独树一帜的课程设置。许多法语学校采用的教学方法可能比我们更偏向学术化。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:32.759",
+          "end_time": "00:02:57.219",
+          "french": "Et nous avons décidé de nous axer sur une approche plus dans l'immersion et sur l'action. Donc chaque semaine, nos étudiants sont plongés dans une situation du quotidien où on va leur demander, par exemple, de simuler une expérience où ils vont faire du shopping en France, où ils vont peut-être envoyer un colis, comment faire un repas. Donc c'est vraiment pour ancrer l'apprentissage dans le réel et dans l'expérience.",
+          "chinese": "而我们决定将重心放在更注重沉浸感和实践性的教学方法上。因此，我们的学生每周都会置身于一个日常情境中，比如，我们会让他们模拟在法国购物的经历，或者是寄包裹、做一顿饭等。所以，这真正做到了将学习扎根于现实和实际体验之中。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:57.500",
+          "end_time": "00:03:23.939",
+          "french": "Est-ce que ça veut dire que pour pouvoir suivre des cours chez Cosmopoly French, il faut déjà avoir toutes les notions de grammaire, de conjugaison ? Ou est-ce que ça, ça s'apprend naturellement une fois qu'on est en immersion ? Excellente question. Donc, en fait, on peut être absolument débutant ou un apprenant déjà confirmé pour commencer les cours chez nous. Donc, nous enseignons bien sûr la grammaire, mais la grammaire est mise au service de l'expression. Le fait d'être débutant n'est absolument pas un frein.",
+          "chinese": "这是否意味着，要想在Cosmopoly French上课，必须先掌握所有的语法和动词变位知识？还是说，一旦进入沉浸式环境，这些知识就能自然而然地学会？这个问题问得好。实际上，无论是零基础的初学者，还是已经有一定水平的学习者，都可以来我们这里上课。我们当然也会教语法，但语法是为口语表达服务的。零基础绝对不是学习的障碍。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:24.060",
+          "end_time": "00:03:37.319",
+          "french": "J'imagine que puisque vous faites des ateliers d'immersion, vous disiez faire du shopping en français, commander au restaurant, envoyer un colis, c'est que vous voyez vos élèves en personne. Il y a aussi des cours sur Internet ?",
+          "chinese": "我想，既然你们举办沉浸式工作坊，比如您刚才提到的用法语购物、在餐厅点餐、寄包裹，那意味着你们是和学生面对面上课的。那你们有网课吗？"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:37.500",
+          "end_time": "00:03:56.810",
+          "french": "Oui, donc nous avons les deux offres disponibles. Donc, pour ce qui est des jeux de rôle, on peut bien entendu les faire également en ligne. Mais tous les trimestres, nous demandons à nos étudiants de nous rejoindre au moins une fois à Melbourne pour la grande activité, qui peut être, comme je vous le disais, le restaurant ou une visite guidée, par exemple, en ville.",
+          "chinese": "是的，这两种授课形式我们都有。关于角色扮演，我们当然也可以在线上进行。但每个季度，我们都会要求学生至少来墨尔本参加一次大型线下活动，就像我刚才说的，可能是去餐厅实地体验，或者是城市导览游等。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:57.400",
+          "end_time": "00:04:20.170",
+          "french": "Donc on comprend bien que de temps en temps, vous rencontrez vos élèves en personne sur le terrain, qu'il y a aussi des cours sur Internet et il y a aussi des cours physiques. Mais ce n'est pas une salle de classe traditionnelle. Expliquez-nous. Une des spécificités de Cosmopoly French est le fait que nous n'avons pas de salle de classe classique. Donc quand je parle de salle de classe classique, j'entends tables, chaises et manuels scolaires.",
+          "chinese": "所以我们明白了，你们偶尔会和学生进行实地见面，既有线上课程，也有线下实体课。但这并不是在传统的教室里上课。请给我们讲讲。Cosmopoly French的一大特色就是我们没有传统的教室。我所说的传统教室，是指那种摆满桌椅、使用教科书的教室。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:20.600",
+          "end_time": "00:04:44.939",
+          "french": "L'espace qu'on a décidé de créer, c'est en fait un petit salon, un espace propice à la conversation, où les gens peuvent se regarder dans les yeux et converser pendant une heure et demie. Le choix de ne pas avoir de manuels scolaires, c'est justement pour essayer de sortir du schéma de salle de classe classique qui peut intimider certains apprenants. Et toutes les semaines, on crée des activités.",
+          "chinese": "我们决定打造的空间其实更像一个小客厅，一个非常适合交流的环境。在这里，大家可以看着彼此的眼睛，畅聊一个半小时。我们之所以选择不使用教科书，正是为了打破传统课堂的固有模式，因为那种模式可能会让一些学习者感到胆怯。此外，我们每周都会设计不同的活动。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:45.399",
+          "end_time": "00:05:03.209",
+          "french": "Donc, on peut vraiment s'ancrer dans le réel, on peut vraiment s'ancrer dans l'actualité de ce qui se passe dans le monde francophone aujourd'hui. Et je pense que c'est la raison pour laquelle beaucoup d'apprenants ont beaucoup de plaisir à venir se retrouver. C'est un moment social et un moment partagé, plus qu'une leçon de français.",
+          "chinese": "这样一来，我们就能真正与现实接轨，紧跟当今法语世界正在发生的时事热点。我想，这也是为什么很多学生都非常享受来这里聚会的原因。这不仅是一堂法语课，更是一个社交和分享的美好时光。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:03.379",
+          "end_time": "00:05:29.149",
+          "french": "Est-ce que ce n'est pas ce qu'il y a de plus difficile pour les apprenants, justement, d'oser se lancer ? Effectivement, il y a une vraie mise en danger quand on se lance directement dans la conversation. Mais quand on apprend une langue, il faut aussi savoir qu'une dose de patience, une dose d'humilité et bien sûr de la résilience, tous ces ingrédients-là sont essentiels dans l'apprentissage parce que c'est accepter de devenir débutant, accepter de se mettre en danger.",
+          "chinese": "对于学习者来说，最困难的难道不正是鼓起勇气开口吗？确实，当人们直接进入对话状态时，会产生一种真正的不安全感。但在学习一门语言时，大家也必须明白，耐心、谦逊，当然还有韧性，这些品质在学习过程中都是不可或缺的。因为学习语言就意味着要接受自己是个初学者，接受那种走出舒适区的不安全感。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:29.149",
+          "end_time": "00:05:57.670",
+          "french": "Mais tous nos professeurs sont très bien formés pour pouvoir accompagner les apprenants dans cet apprentissage. Vous avez justement des élèves qui sont attirés par Cosmopoly French par ce côté un peu différent des cours académiques qu'on peut trouver dans une offre un peu plus standard ? Alors absolument. On a de nombreux étudiants qui ont déjà testé ces approches académiques, donc qui en ont tiré beaucoup de bénéfices, mais qui arrivent à un moment de leur apprentissage où ils aimeraient parler avec davantage de confiance.",
+          "chinese": "不过，我们所有的老师都受过专业的培训，能够很好地引导学生度过这个学习阶段。有没有学生正是因为Cosmopoly French这种有别于传统学术课程的独特模式而被吸引过来的呢？绝对有。我们有很多学生之前已经尝试过传统的学术教学法，也从中受益良多，但当他们的学习达到某个阶段时，他们渴望能更加自信地开口表达。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:57.850",
+          "end_time": "00:06:26.180",
+          "french": "Et c'est justement à ce moment-là qu'on peut vraiment les accompagner et les aider à, en fait, briser ce plafond où ils se sentent un petit peu bloqués. Tout à l'heure, vous avez fait un petit lapsus qui est tellement mignon que je ne vais pas le retirer, je vais le laisser dans l'interview. Vous avez dit faire du shopping en France et non pas faire du shopping en français. Alors j'imagine que ça va faire rêver bon nombre d'étudiants. Est-ce que c'est éventuellement quelque chose que vous pourriez envisager d'emmener vos étudiants en France ? Alors oui, c'est quelque chose qu'on a déjà proposé trois fois.",
+          "chinese": "而正是在这个时候，我们能真正地陪伴他们，帮助他们打破瓶颈，突破那种停滞不前的状态。刚才，您有一个非常可爱的小口误，我不打算剪掉它，我要把它保留在访谈里。您刚才说的是“在法国购物”（en France），而不是“用法语购物”（en français）。我想这一定会让很多学生心驰神往。您未来会考虑真的带学生去法国吗？会的，其实这个项目我们已经举办过三次了。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:26.490",
+          "end_time": "00:06:45.959",
+          "french": "On a visité quatre villes de France et le concept était d'avoir des cours le matin et ensuite d'avoir une activité pour mettre en application ce qu'on avait appris dans la matinée, dans la vraie vie. Donc oui, et c'est un projet qu'on a encore pour l'année 2027. Avec déjà une ville choisie ?",
+          "chinese": "我们游览了法国的四座城市，其理念是上午上课，下午则安排活动，将上午学到的知识应用到现实生活中。所以，是的，我们计划在2027年再次推出这个项目。已经选好要去哪座城市了吗？"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:46.100",
+          "end_time": "00:07:15.819",
+          "french": "On vise Toulouse et le canal du Midi. C'est magnifique. La ville rose, très belle destination. Pour ce qui est de vos étudiants, vous en avez combien ? Quel est leur profil type ? Quel âge ont-ils ? On a des profils très variés. Donc, ça peut être des personnes qui sont en couple avec des personnes francophones. Ça peut être de jeunes professionnels qui souhaiteraient s'installer dans un pays francophone et booster leur carrière professionnelle. Ça peut être aussi un public de personnes retraitées,",
+          "chinese": "我们初步定在图卢兹和米迪运河。那太美了。“玫瑰之城”，非常棒的目的地。关于您的学生，目前大概有多少人？他们主要是什么样的人群？年龄段分布如何？我们的学生群体非常多样化。有的是伴侣为法语母语者的人士；有的是希望移居法语国家并助力职业发展的年轻职场人；也有退休人员群体，"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:16.220",
+          "end_time": "00:07:30.250",
+          "french": "qui ont déjà soit une très bonne connaissance du français ou des personnes qui ont appris le français quand elles étaient beaucoup plus jeunes, qui ont abandonné parce que le format académique justement ne leur convenait pas et qui ont décidé de reprendre le français plusieurs années plus tard.",
+          "chinese": "他们中有些人的法语水平已经很高，有些则是年轻时学过法语，但因为不适应传统的学术教学模式而中途放弃，如今时隔多年又决定重新拾起法语的人。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:30.810",
+          "end_time": "00:08:01.699",
+          "french": "Et vous, comment vous en êtes venue à créer Cosmopoly French ? Il y a une quinzaine d'années, vous êtes arrivée et vous trouviez que l'offre d'apprentissage du français manquait ? J'ai commencé Cosmopoly French pour plusieurs raisons. Avant d'être dans le monde de l'enseignement, j'avais une vie complètement différente. Je travaillais dans une station de radio en France. Mon travail était d'analyser les tendances sociétales. Et je mettais ces connaissances au service de la radio pour laquelle je travaillais, mais aussi de nombreuses marques, pour leur permettre de comprendre leur public et de comprendre leurs attentes.",
+          "chinese": "那您自己呢，您是如何萌生创办Cosmopoly French的想法的？大约15年前，您来到这里，是觉得当时法语教学的市场存在空白吗？我创办Cosmopoly French是出于几个原因。在进入教育行业之前，我的生活轨迹完全不同。我曾在法国的一家广播电台工作，主要负责分析社会趋势。我将这些专业知识不仅应用于我所在的电台，还服务于许多品牌，帮助他们更好地了解受众群体及其需求。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:08:02.389",
+          "end_time": "00:08:25.319",
+          "french": "Donc, quand je suis arrivée à Melbourne, j'ai vu l'offre qui était disponible et j'ai trouvé que cette offre était parfaite pour un certain profil d'apprenants. Il y a de nombreux apprenants qui ont des difficultés dans ce format un peu plus académique, des apprenants qui apprennent beaucoup mieux dans l'action, qui apprennent beaucoup mieux en faisant, et je voulais proposer cette offre alternative.",
+          "chinese": "因此，当我来到墨尔本时，我考察了当地的法语课程，发现现有的课程非常适合某类特定的学习者。但也有许多学习者在偏学术化的教学模式中感到吃力，他们更适合在实践中学习，在“做”中学习。所以，我希望能为他们提供一种全新的替代方案。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:25.779",
+          "end_time": "00:08:56.169",
+          "french": "Et dernière question à Nathalie, pour nos auditeurs qui nous écoutent et qui peuvent éventuellement ne pas être bilingues en français et auraient envie de s'améliorer, justement, d'être plus en immersion avec le français, qu'est-ce que vous voudriez leur dire ? Je voudrais leur dire qu'apprendre le français à l'âge adulte est en fait un très bon moment pour le faire parce que vous avez l'avantage d'avoir une très grande motivation. Quand on apprend le français quand on est plus jeune, on est très souvent forcé.",
+          "chinese": "最后一个问题想请问娜塔莉，对于正在收听我们节目的听众，他们可能还不能流利地说法语，但非常渴望提升自己，希望能更深入地沉浸在法语环境中，您有什么想对他们说的吗？我想告诉大家，成年后学习法语其实是一个绝佳的时机，因为你们拥有极强的主动性和动力，这是你们的优势。当我们小时候学法语时，往往是被迫的。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:56.889",
+          "end_time": "00:09:19.690",
+          "french": "Quand on est adulte, cette motivation vous donne une résilience incroyable. Donc, je vous dirais, lancez-vous. Il est possible d'apprendre le français en prenant beaucoup de plaisir. N'ayez pas peur de la grammaire. La grammaire est un outil qui peut vous servir à communiquer et ce n'est pas un frein. Donc, on vous attend. Merci beaucoup, Nathalie. Merci de m'avoir reçue, Marianne.",
+          "chinese": "而作为成年人，这种内在的动力会赋予你惊人的韧性。所以，我想说，勇敢地迈出第一步吧。学习法语完全可以是一件充满乐趣的事。不要害怕语法，语法只是辅助你沟通的工具，绝不是阻碍。所以，我们期待你的加入。非常感谢您，娜塔莉。谢谢你的邀请，玛丽安。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:21.909",
+          "end_time": "00:09:36.649",
+          "french": "Voilà pour cette interview avec Nathalie Marguerite, fondatrice de Cosmopoly French. Merci de l'avoir écoutée. Nous nous retrouvons la semaine prochaine pour un nouvel épisode de SBS Easy French. À bientôt.",
+          "chinese": "以上就是对Cosmopoly French创始人娜塔莉·玛格丽特的访谈。感谢您的收听。我们下周将在新一期的《SBS简易法语》中再见。期待与您重聚！"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:40.470",
+          "end_time": "00:10:09.639",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并非易事。我被很多公司拒绝过。有时我会想，唉，我不干了，我想放弃。《Work in Progress》是一档致力于帮助技术移民在全新的国家重建职业生涯的播客。您将听到鼓舞人心的真实故事、专家建议以及宝贵的求职技巧，助您找到工作并实现职业发展。《Work in Progress》。欢迎在各大播客平台收听。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:10:15.960",
+          "end_time": "00:10:26.759",
+          "french": "Vous voulez entendre d'autres rubriques comme celle-ci ? Écoutez-les sur Apple Podcasts, Google Podcasts, Spotify ou partout où vous écoutez vos podcasts.",
+          "chinese": "想收听更多类似的精彩内容吗？欢迎在Apple Podcasts、Google Podcasts、Spotify或您常用的任何播客平台收听我们的节目。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:32.889",
+          "end_time": "00:11:01.559",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并非易事。我被很多公司拒绝过。有时我会想，唉，我不干了，我想放弃。《Work in Progress》是一档致力于帮助技术移民在全新的国家重建职业生涯的播客。您将听到鼓舞人心的真实故事、专家建议以及宝贵的求职技巧，助您找到工作并实现职业发展。《Work in Progress》。欢迎在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:11:01.559",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 26,
+        "source_video_name": "SBS Easy French #276 _ comment apprendre efficacement le français _.json",
+        "tags": [
+          "科技前沿",
+          "地理"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

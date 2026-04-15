@@ -1,0 +1,677 @@
+{
+  "source_file": "L'apéritif français dans Twin Peaks. French Apéritif Culture & TV Series.json",
+  "channel": "法国日常一件事",
+  "video_name": "《双峰》(Twin Peaks) 中的法国餐前酒。法国餐前酒文化与电视剧",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:30:21.827Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le pronom relatif 'dont'",
+          "Le plus-que-parfait",
+          "Le gérondif"
+        ],
+        "speaking": [
+          "Décrire ses habitudes lors d'un apéritif ou d'un repas informel.",
+          "Raconter une scène de film ou de série en utilisant les temps du passé."
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "se dérouler",
+            "part_of_speech": "verbe",
+            "ipa": "[sə de.ʁu.le]",
+            "chinese": "发生，进行",
+            "example_sentence": {
+              "french": "Chaque épisode se déroule au moment du nouvel an.",
+              "chinese": "每一集都发生在新年时刻。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Pour nous, Los años nuevos, la série espagnole dont chaque épisode se déroule au moment du nouvel an sur 10 ans.",
+                "chinese": "比如《新岁月》，这是一部西班牙剧，每集都以10年为周期，讲述新年时刻的故事。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "soupirer",
+            "part_of_speech": "verbe",
+            "ipa": "[su.pi.ʁe]",
+            "chinese": "叹气",
+            "example_sentence": {
+              "french": "Elle a dit cela en soupirant.",
+              "chinese": "她叹着气说了这话。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "« Encore un de tes films bizarres, a-t-elle dit en soupirant. »",
+                "chinese": "“又是你那些怪怪的片子啊，”她叹了口气说。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "glauque",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɡlok]",
+            "chinese": "阴森的，诡异的，令人毛骨悚然的",
+            "example_sentence": {
+              "french": "L'atmosphère de ce film est vraiment glauque.",
+              "chinese": "这部电影的氛围真是令人毛骨悚然。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              6
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "« Je suis sûre que ça sera glauque. »",
+                "chinese": "“我敢肯定，这一定会很诡异。”",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "imprégné",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃.pʁe.ɲe]",
+            "chinese": "浸透的，充满的",
+            "example_sentence": {
+              "french": "Le gâteau est imprégné de sirop.",
+              "chinese": "蛋糕浸透了糖浆。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Bon, c'est la version de l'œuf mayo posé sur une tranche de pomme de terre imprégnée de bouillon de volaille...",
+                "chinese": "好吧，就是那个把蛋黄酱蛋放在浸过鸡汤的土豆片上的版本...",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "bouillon",
+            "part_of_speech": "nom",
+            "ipa": "[bu.jɔ̃]",
+            "chinese": "肉汤，清汤",
+            "example_sentence": {
+              "french": "J'ai préparé un bouillon de légumes.",
+              "chinese": "我准备了蔬菜清汤。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...une tranche de pomme de terre imprégnée de bouillon de volaille...",
+                "chinese": "……浸过鸡汤的土豆片……",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "vaguement",
+            "part_of_speech": "adverbe",
+            "ipa": "[vaɡ.mɑ̃]",
+            "chinese": "依稀地，模糊地",
+            "example_sentence": {
+              "french": "Je me souviens vaguement de cette histoire.",
+              "chinese": "我依稀记得这个故事。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Vaguement, quand l'agent Cooper enregistre ses propres faits et gestes...",
+                "chinese": "只依稀记得，当库珀探员为自己记录下所见所闻时...",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "obsédé",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɔp.se.de]",
+            "chinese": "着迷的，痴迷的",
+            "example_sentence": {
+              "french": "Il est obsédé par les jeux vidéo.",
+              "chinese": "他对电子游戏很痴迷。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et puis, la femme au bandeau de pirate sur un œil, celle qui est obsédée par les rideaux.",
+                "chinese": "还有那个戴着眼罩、一只眼睛被遮住的女郎，她对窗帘情有独钟。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "lampée",
+            "part_of_speech": "nom",
+            "ipa": "[lɑ̃.pe]",
+            "chinese": "一大口（液体）",
+            "example_sentence": {
+              "french": "Il a bu une grande lampée d'eau.",
+              "chinese": "他喝了一大口水。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il y a ce moment où Bobby ramène la serveuse du restaurant en voiture et qu'elle lui propose une lampée d'alcool.",
+                "chinese": "有那么一瞬间，鲍比开车送餐厅的服务员回来，她居然主动递给他一小口酒。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "flasque",
+            "part_of_speech": "nom",
+            "ipa": "[flask]",
+            "chinese": "随身酒壶，扁酒瓶",
+            "example_sentence": {
+              "french": "Il a sorti une flasque de sa poche.",
+              "chinese": "他从口袋里拿出一个随身酒壶。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Parce que c'est le matin, avant de lui tendre la flasque, elle dit : « C'est l'heure de l'apéritif en France ».",
+                "chinese": "因为当时是早上，在把酒瓶递给他之前，她还说：“在法国，现在正是开胃酒的时间呢。”",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "grignoter",
+            "part_of_speech": "verbe",
+            "ipa": "[ɡʁi.ɲɔ.te]",
+            "chinese": "吃零食，啃咬",
+            "example_sentence": {
+              "french": "J'aime grignoter devant la télévision.",
+              "chinese": "我喜欢在电视机前吃零食。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On prépare plein de petites choses à grignoter ou simplement quelques biscuits apéritifs...",
+                "chinese": "我们会准备各种小点心，或者干脆就摆上几块开胃饼干...",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "informel",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃.fɔʁ.mɛl]",
+            "chinese": "非正式的",
+            "example_sentence": {
+              "french": "C'est une réunion très informelle.",
+              "chinese": "这是一次非常非正式的会议。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'apéritif peut aussi être un dîner informel si on a préparé beaucoup de choses à manger.",
+                "chinese": "如果准备了大量美食，开胃酒聚会也可以变成一场轻松的（非正式的）晚餐。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          },
+          {
+            "french": "exprès",
+            "part_of_speech": "adverbe",
+            "ipa": "[ɛk.spʁɛ]",
+            "chinese": "故意地",
+            "example_sentence": {
+              "french": "Je ne l'ai pas fait exprès.",
+              "chinese": "我不是故意的。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Était-ce fait exprès ? Je ne sais pas.",
+                "chinese": "这是故意这么做的吗？我也不知道。",
+                "source_video": "One Thing in a French Day"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "prendre un verre",
+            "meaning": "喝一杯（通常指去酒吧或咖啡馆喝酒聊天）",
+            "example": {
+              "french": "La semaine dernière, j'ai pris un verre avec mon amie Caroline.",
+              "chinese": "上周，我和朋友卡罗琳一起喝了一杯。"
+            },
+            "usage_note": "非常常用的日常表达，表示社交性的饮酒聚会。",
+            "source_ids": [
+              1
+            ]
+          },
+          {
+            "expression": "faits et gestes",
+            "meaning": "一举一动，所作所为",
+            "example": {
+              "french": "L'agent Cooper enregistre ses propres faits et gestes.",
+              "chinese": "库珀探员记录下自己的所作所为。"
+            },
+            "usage_note": "固定搭配，通常指某人的所有行为和动作，常带有一种被密切关注或详细记录的意味。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "apéritif dînatoire",
+            "meaning": "开胃晚餐（以丰盛的开胃小吃代替正餐的聚会形式）",
+            "example": {
+              "french": "Alors, on appelle ça un apéritif dînatoire.",
+              "chinese": "这种时候，我们就称之为“开胃晚餐”。"
+            },
+            "usage_note": "法国文化中非常典型的社交形式，比正式晚宴轻松，但食物分量足以替代晚餐。",
+            "source_ids": [
+              9
+            ]
+          },
+          {
+            "expression": "ouvrir l'appétit",
+            "meaning": "开胃，让人胃口大开",
+            "example": {
+              "french": "Attention, ça ouvre l'appétit.",
+              "chinese": "注意，这可真会让人胃口大开呢！"
+            },
+            "usage_note": "常用于谈论美食或开胃酒时，表示某物激发了食欲。",
+            "source_ids": [
+              10
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le pronom relatif 'dont'",
+            "structure": "Nom + dont + Sujet + Verbe (remplace un complément introduit par 'de')",
+            "explanation": "关系代词 'dont' 用于替代由介词 'de' 引导的补语（如 de cette série）。在原文中，'chaque épisode de la série' 变成了 'la série dont chaque épisode'，表示所属关系。",
+            "example": {
+              "french": "Los años nuevos, la série espagnole dont chaque épisode se déroule au moment du nouvel an...",
+              "chinese": "《新岁月》，这是一部西班牙剧，每集都发生在新年时刻……"
+            },
+            "usage_note": "在B1/B2级别，掌握 'dont' 表示所属（...的）是非常关键的，它比简单的 'qui' 或 'que' 更能体现句子的复杂度和流畅性。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "name": "Le plus-que-parfait",
+            "structure": "Sujet + auxiliaire (avoir/être) à l'imparfait + participe passé",
+            "explanation": "愈过去时用于表示在过去某个动作或状态之前已经完成的动作（即“过去的过去”）。在原文中，讨论剧集发生在过去（imparfait/passé composé），而“看剧”这个动作发生得更早。",
+            "example": {
+              "french": "On a discuté de plein de choses, dont les dernières séries qu'on avait regardées.",
+              "chinese": "我们聊了很多话题，包括最近看过的几部剧。"
+            },
+            "usage_note": "注意助动词的未完成过去时变位以及过去分词的配合（如 'regardées' 与前面的直接宾语 'séries' 配合）。",
+            "source_ids": [
+              2,
+              3
+            ]
+          },
+          {
+            "name": "Le gérondif",
+            "structure": "En + participe présent (radical de 'nous' au présent + -ant)",
+            "explanation": "副动词（gérondif）用于表示两个动作同时发生，或者表示主句动作的方式、原因等。原文中用来生动地描绘说话时的伴随动作（叹气、回想）。",
+            "example": {
+              "french": "« Encore un de tes films bizarres, a-t-elle dit en soupirant. »",
+              "chinese": "“又是你那些怪怪的片子啊，”她叹了口气说。"
+            },
+            "usage_note": "副动词的主语必须与主句的主语一致。在这里，'elle' 既是 'a dit' 的主语，也是 'soupirant' 的主语。",
+            "source_ids": [
+              3,
+              4
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɲ]",
+              "description": "鼻腭响音（类似拼音的ni），在法语中通常由字母组合 'gn' 发出。在本文的词汇中多次出现，需要注意不要发成硬的 [g] 加 [n]。",
+              "examples": [
+                "grignoter",
+                "imprégnée"
+              ]
+            },
+            {
+              "sound": "[œ] vs [ø]",
+              "description": "在单词 'œuf'（单数）中，发开音的 [œ] 并且发音末尾的 'f'；而在复数 'œufs' 中，发闭音的 [ø] 且不发 'f'。本文中提到的是单数 'l'œuf mayo'。",
+              "examples": [
+                "l'œuf mayo"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_épisodes (联诵 [z])",
+            "un_ancien (联诵 [n])",
+            "faisait_envie (联诵 [t] - 较正式的口语中出现)"
+          ],
+          "intonation": "在描述《双峰》的诡异氛围和朋友的吐槽时，语调有明显的起伏，特别是引用直接引语时（如叹气说的话），语调会模仿说话者的情绪（无奈、调侃）。"
+        },
+        "vocabulary_network": {
+          "theme": "L'apéritif et la gastronomie",
+          "core_word": "Apéritif",
+          "related_groups": [
+            {
+              "category": "Nourriture (Food)",
+              "words": [
+                "biscuits apéritifs",
+                "olives",
+                "cacahuètes",
+                "chips",
+                "œuf mayo",
+                "bouillon de volaille"
+              ]
+            },
+            {
+              "category": "Boissons (Drinks)",
+              "words": [
+                "vin",
+                "cocktail",
+                "jus de fruits",
+                "sirop",
+                "alcool",
+                "flasque"
+              ]
+            },
+            {
+              "category": "Actions (Actions)",
+              "words": [
+                "grignoter",
+                "prendre un verre",
+                "discuter",
+                "ouvrir l'appétit"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Bon, c'est la version de l'œuf mayo posé sur une tranche de pomme de terre ___ de ___ de volaille et recouvert de pickles de graines de moutarde qui a ___ le ___ ___.",
+            "answer": "imprégnée, bouillon, remporté, titre, mondial",
+            "explanation": "根据原文第4段，描述获得世界冠军的蛋黄酱蛋（œuf mayo）的做法：放在浸过鸡汤（imprégnée de bouillon de volaille）的土豆片上，并赢得了世界冠军（remporté le titre mondial）。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, qu'est-ce qui caractérise un « apéritif dînatoire » ?",
+            "options": {
+              "A": "C'est un repas très formel servi dans un restaurant étoilé comme la Tour d'Argent.",
+              "B": "C'est un apéritif qui se transforme en dîner informel parce qu'on a préparé beaucoup de choses à manger.",
+              "C": "C'est une tradition française qui consiste à boire de l'alcool le matin dans une flasque.",
+              "D": "C'est un repas composé exclusivement d'œufs mayonnaise et de bouillon de volaille."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第9段明确解释了什么是开胃晚餐：“L'apéritif peut aussi être un dîner informel si on a préparé beaucoup de choses à manger. Alors, on appelle ça un apéritif dînatoire.”（如果准备了大量食物，开胃酒聚会也可以变成一场轻松的晚餐。这种时候，我们就称之为“开胃晚餐”。）",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "C'était inattendu cette référence à la France, en plus pour l'apéritif.",
+            "answer": "这种对法国的提及真是出人意料，而且还是关于开胃酒的。",
+            "explanation": "翻译难点在于 'inattendu'（出乎意料的）和 'en plus'（而且，更何况）。这句话表达了作者在美国剧集《双峰》的早晨场景中听到法国开胃酒文化时的惊讶与觉得有趣的心情。",
+            "source_ids": [
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez ces deux phrases en une seule phrase en utilisant le pronom relatif « dont » : « Nous avons regardé une série espagnole. Chaque épisode de cette série se déroule au moment du nouvel an. »",
+            "answer": "Nous avons regardé une série espagnole dont chaque épisode se déroule au moment du nouvel an.",
+            "explanation": "关系代词 'dont' 用来代替由 'de' 引导的补语。在第二句话中，'de cette série' 表示所属关系。使用 'dont' 可以将两句话合并，避免重复，这正是原文第2段中使用的结构。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "imprégné",
+            "bouillon",
+            "apéritif dînatoire",
+            "se dérouler"
+          ],
+          "covered_grammar": [
+            "Le pronom relatif 'dont'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il y a ce moment où...",
+            "explanation": "用于引出对电影、剧集或记忆中某个特定场景的描述，意为“有那么一个瞬间/场景……”。",
+            "example": {
+              "french": "Il y a ce moment où Bobby ramène la serveuse du restaurant en voiture.",
+              "chinese": "有那么一瞬间，鲍比开车送餐厅的服务员回来。"
+            }
+          },
+          {
+            "pattern": "Et si nous + imparfait ?",
+            "explanation": "用于提出建议或假设，意为“如果我们……怎么样？”",
+            "example": {
+              "french": "Et si nous composions un apéritif ?",
+              "chinese": "要不我们来调制一杯开胃酒吧？"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和几个法国朋友筹划周末的聚会。你提议不要去餐厅吃正式的晚餐，而是举办一个“开胃晚餐”（apéritif dînatoire）。你需要向他们解释你会准备哪些吃的和喝的，并分配任务。",
+          "requirements": "使用词汇表中的词汇（如 grignoter, informel），并尝试使用 'dont' 或副动词（gérondif）。",
+          "starter": "Salut les amis ! Pour ce samedi, et si nous organisions un apéritif dînatoire ? C'est plus informel..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia raconte sa soirée télévisée où elle a regardé le pilote de la série culte Twin Peaks. Elle y a remarqué une scène amusante et glauque faisant référence à l'apéritif français. Cela l'amène à expliquer en détail la tradition de l'apéritif en France : un moment de détente informel où l'on boit un verre, grignote et discute, qui peut parfois se transformer en 'apéritif dînatoire'.",
+        "keywords": [
+          "Twin Peaks",
+          "apéritif",
+          "série",
+          "œuf mayo",
+          "glauque",
+          "grignoter"
+        ],
+        "difficulty_note": "Le texte est de niveau B1/B2. Il contient du vocabulaire familier et descriptif (glauque, lampée, grignoter) ainsi que des structures grammaticales avancées comme le plus-que-parfait et le pronom relatif 'dont'."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:04:26.819"
+        },
+        "theme": "Culture pop et traditions culinaires françaises",
+        "cefr_level": "B1/B2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:28.940",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, mercredi 4 février 2026, cet épisode, le numéro 2595, s'intitule « Une référence à la France dans le pilote de Twin Peaks, l'apéritif ». La semaine dernière, j'ai pris un verre avec mon amie Caroline.",
+          "chinese": "大家好，我是来自巴黎“One Thing in a French Day”播客的Laetitia。希望你们一切都好，心情愉快。今天，2026年2月4日星期三，第2595期节目的标题是《<双峰>试播集里对法国的致敬：开胃酒》。上周，我和朋友Caroline一起喝了一杯。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:28.940",
+          "end_time": "00:00:47.369",
+          "french": "On a discuté de plein de choses, dont les dernières séries qu'on avait regardées. Pour nous, Los años nuevos, la série espagnole dont chaque épisode se déroule au moment du nouvel an sur dix ans, et The Dreamer, la série qui raconte le retour de Karen Blixen au Danemark.",
+          "chinese": "我们聊了很多事情，包括我们最近看的剧。至于我们，看了西班牙剧《新年》（Los años nuevos），这部剧每一集都设定在跨年夜，时间跨度长达十年；还有《梦想家》（The Dreamer），讲述凯伦·布里克森回到丹麦的故事。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:48.060",
+          "end_time": "00:01:18.859",
+          "french": "« On a commencé à regarder Twin Peaks il y a des mois, a dit Caroline. Ça nous plaît beaucoup. Tu l'avais vu à l'époque ? » « Oui, quelques épisodes, mais pas tout. J'avais adoré, c'était super bizarre. » Donc, samedi soir, au moment de choisir un film, je propose de regarder le premier épisode de Twin Peaks. Elisa était déjà en train de regarder la finale du championnat du monde de l'œuf mayo. « Encore un de tes films bizarres, a-t-elle dit en soupirant. On peut au moins regarder qui remporte le titre. »",
+          "chinese": "“我们几个月前开始看《双峰》，”Caroline说，“我们非常喜欢。你当年看过吗？”“看过几集，但没看完。我很喜欢，它超级古怪。”所以，周六晚上，在选电影的时候，我提议看《双峰》的第一集。Elisa当时已经在看世界蛋黄酱水煮蛋锦标赛的决赛了。“又是你那些古怪的片子，”她叹了口气说，“我们至少可以先看看谁赢了冠军吧。”"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:19.189",
+          "end_time": "00:01:48.099",
+          "french": "Mika est là à rigoler en repensant à Talons aiguilles et à Fargo. « Je suis sûre que ça sera glauque. » « Je reconnais que c'est assez glauque, mais en même temps drôle. » « Ah ah, mais tu dis ça à chaque fois ! » Bon, c'est la version de l'œuf mayo posé sur une tranche de pomme de terre imprégnée de bouillon de volaille et recouvert de pickles de graines de moutarde qui a remporté le titre mondial. C'est vrai qu'il faisait envie.",
+          "chinese": "Mika在一旁笑着，回想起了《高跟鞋》和《冰血暴》。“我敢肯定这剧会很诡异。”“我承认它确实挺诡异的，但同时也很好笑。”“哈哈，但你每次都这么说！”好吧，最终赢得世界冠军的是这款蛋黄酱水煮蛋：它放在浸满禽肉高汤的土豆片上，上面还覆盖着腌芥末籽。说实话，它确实很诱人。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:48.099",
+          "end_time": "00:02:18.150",
+          "french": "Tous faisaient envie d'ailleurs. Le gagnant était un ancien chef de la Tour d'Argent, le restaurant de la Tour Eiffel. On a quand même mis Twin Peaks. En fait, je me suis aperçue que je ne me souvenais pas de grand-chose. Vaguement, quand l'agent Cooper enregistre ses propres faits et gestes et réflexions à destination de Diane, son assistante. Et puis, la femme au bandeau de pirate sur un œil, celle qui est obsédée par les rideaux. Sinon, rien d'autre.",
+          "chinese": "其实所有的参赛作品看起来都很诱人。获胜者是埃菲尔铁塔餐厅“银塔”的前主厨。我们最后还是放了《双峰》。事实上，我发现自己已经记不太清剧情了。隐约记得库珀探员把自己的所作所为和想法录下来给他的助手黛安。还有那个戴着海盗眼罩、对窗帘着迷的女人。除此之外，什么都不记得了。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:18.300",
+          "end_time": "00:02:21.860",
+          "french": "Et effectivement, c'est assez glauque, mais parfois drôle.",
+          "chinese": "确实，它挺诡异的，但有时也很好笑。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:22.550",
+          "end_time": "00:02:50.280",
+          "french": "Il y a ce moment où Bobby ramène la serveuse du restaurant en voiture et qu'elle lui propose une lampée d'alcool. Parce que c'est le matin, avant de lui tendre la flasque, elle dit : « C'est l'heure de l'apéritif en France ». Et c'était exactement l'heure de l'apéritif chez nous. Pietro avait sorti quelques chips, les filles buvaient un sirop, tout ça en attendant que les pizzas soient prêtes. C'était inattendu cette référence à la France, en plus pour l'apéritif.",
+          "chinese": "有这样一个片段，Bobby开车送餐厅的女服务员回家，她提议让他喝一大口酒。因为当时是早上，在把随身酒壶递给他之前，她说：“现在是法国的开胃酒时间。”而当时我们家也正好是开胃酒时间。Pietro拿出了一些薯片，女孩们在喝糖浆饮料，大家边吃喝边等披萨烤好。没想到会这样提到法国，而且还是关于开胃酒的。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:51.129",
+          "end_time": "00:03:17.780",
+          "french": "Alors, d'ailleurs, comment ça se passe un apéritif ? Eh bien, on est tous assis autour d'une table, souvent ce n'est pas la table sur laquelle on va prendre le repas, c'est la table basse du salon par exemple. On prépare plein de petites choses à grignoter ou simplement quelques biscuits apéritifs, des olives et quelques cacahuètes. Bien sûr, on boit quelque chose, du vin, un cocktail, un jus de fruits. C'est un moment de détente où l'on discute.",
+          "chinese": "那么，话说回来，开胃酒时间是怎么进行的呢？嗯，大家围坐在一张桌子旁，通常不是我们吃饭的那张餐桌，比如可能是客厅的茶几。我们会准备很多小零食，或者仅仅是一些开胃饼干、橄榄和一些花生。当然，我们也会喝点东西，葡萄酒、鸡尾酒或者果汁。这是一个供大家聊天放松的时刻。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:17.780",
+          "end_time": "00:03:43.729",
+          "french": "On échange des nouvelles, on parle politique, chacun raconte quelque chose et participe à la conversation. L'apéritif peut aussi être un dîner informel si on a préparé beaucoup de choses à manger. Alors, on appelle ça un apéritif dînatoire. À la fin de l'épisode, nous n'étions plus que trois devant la télé : Pietro, Michaela et moi. « En fait, ça me plaît bien », a dit Michaela.",
+          "chinese": "我们交换近况，谈论政治，每个人都分享一些事情并参与对话。如果准备了很多吃的，开胃酒时间也可以变成一顿非正式的晚餐。这样的话，我们称之为“晚餐式开胃酒”。在这集结束时，电视机前只剩下我们三个人：Pietro、Michaela和我。“其实，我挺喜欢的，”Michaela说。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:43.729",
+          "end_time": "00:04:12.349",
+          "french": "« Ça m'a fait penser à une publicité que j'ai vue dans le métro qui disait \"Je regarderai tous les épisodes avec toi\" dans un message avec des fautes. Était-ce fait exprès ? Je ne sais pas. » Et si nous composions un apéritif ? Ça, c'est mon message. Je vous donne mon apéritif idéal dans la lettre parisienne qui accompagne cet épisode. Vous pouvez vous abonner sur onethinginafrenchday.com. Attention, ça ouvre l'appétit. One Thing in a French Day,",
+          "chinese": "“这让我想起了我在地铁里看到的一个广告，上面写着‘我会陪你看完所有剧集’，但那条信息里有拼写错误。是故意的吗？我不知道。”如果我们也来准备一顿开胃酒呢？这就是我想对大家说的话。我会在本期节目附带的“巴黎通讯”中分享我理想的开胃酒搭配。你们可以在onethinginafrenchday.com上订阅。小心，这会让人胃口大开哦。One Thing in a French Day，"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:12.349",
+          "end_time": "00:04:26.819",
+          "french": "c'est fini pour aujourd'hui. Je vous retrouve avec grand plaisir la semaine prochaine pour de nouveaux épisodes de podcast. À bientôt, au revoir.",
+          "chinese": "今天的节目就到这里。很高兴下周能和大家再次相聚，带来新的播客节目。下期见，再见。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:04:26.819",
+        "duration_minutes": 0,
+        "cefr_level": "B1/B2",
+        "subtitle_count": 11,
+        "source_video_name": "L'apéritif français dans Twin Peaks. French Apéritif Culture & TV Series.json",
+        "tags": [
+          "美食烹饪",
+          "美食"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

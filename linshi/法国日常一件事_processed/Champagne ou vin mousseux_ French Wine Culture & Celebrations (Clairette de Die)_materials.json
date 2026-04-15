@@ -1,0 +1,707 @@
+{
+  "source_file": "Champagne ou vin mousseux_ French Wine Culture & Celebrations (Clairette de Die).json",
+  "channel": "法国日常一件事",
+  "video_name": "香槟还是起泡酒_法国葡萄酒文化与庆典 (Clairette de Die 迪耶克莱雷特)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:16:35.108Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 14,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le conditionnel passé (过去条件式)",
+          "Le subjonctif présent après les verbes de volonté (意愿动词后的虚拟式)"
+        ],
+        "speaking": [
+          "Parler des caractéristiques d'un vin (minéral, fruité, doux)",
+          "Discuter des méthodes de fabrication du vin et du champagne",
+          "Exprimer ses préférences lors d'un événement festif"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "mousseux",
+            "part_of_speech": "adjectif/nom masculin",
+            "ipa": "[musø]",
+            "chinese": "起泡的；起泡酒",
+            "example_sentence": {
+              "french": "C'est un vin mousseux de la Drôme.",
+              "chinese": "这是一款产自德龙省的起泡酒。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              3
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Champagne ou vin mousseux, la clairette pour Papy Michel.",
+                "chinese": "香槟还是起泡酒，给米歇尔爷爷的克莱雷特。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "mets",
+            "part_of_speech": "nom masculin",
+            "ipa": "[mɛ]",
+            "chinese": "佳肴，菜肴",
+            "example_sentence": {
+              "french": "Le vin s'accorde parfaitement avec ce mets délicat.",
+              "chinese": "这款葡萄酒与这道精致的佳肴完美搭配。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Car le vin, s'il s'accorde avec un mets, est aussi un compagnon...",
+                "chinese": "毕竟，葡萄酒不仅与美食相得益彰，更像一位贴心的伙伴……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "gorgée",
+            "part_of_speech": "nom féminin",
+            "ipa": "[gɔʁʒe]",
+            "chinese": "一口（饮料）",
+            "example_sentence": {
+              "french": "Il a bu son café en une seule gorgée.",
+              "chinese": "他一口气喝完了咖啡。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...qui raconte sa petite histoire à chaque gorgée...",
+                "chinese": "……每一口都娓娓道来属于它的独特故事……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "modération",
+            "part_of_speech": "nom féminin",
+            "ipa": "[mɔdeʁasjɔ̃]",
+            "chinese": "节制，适度",
+            "example_sentence": {
+              "french": "L'alcool doit être consommé avec modération.",
+              "chinese": "酒精饮品必须适度饮用。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...toujours avec modération.",
+                "chinese": "……当然，这一切都要适度享用。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "vinifié",
+            "part_of_speech": "verbe (participe passé)",
+            "ipa": "[vinifje]",
+            "chinese": "酿造（葡萄酒）",
+            "example_sentence": {
+              "french": "Ce raisin est vinifié selon une méthode ancienne.",
+              "chinese": "这种葡萄是按照古老的方法酿造的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est un vin mousseux de la Drôme qui est vinifié selon un procédé...",
+                "chinese": "这是一种产自德龙省的起泡酒，其酿造工艺……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "procédé",
+            "part_of_speech": "nom masculin",
+            "ipa": "[pʁɔsede]",
+            "chinese": "工艺，方法，过程",
+            "example_sentence": {
+              "french": "Le procédé de fabrication est très complexe.",
+              "chinese": "制造工艺非常复杂。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Ce procédé s'appelle la méthode ancestrale.",
+                "chinese": "这种工艺被称为“传统古法”。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "cuve",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kyv]",
+            "chinese": "酒罐，发酵罐",
+            "example_sentence": {
+              "french": "Le vin repose dans une grande cuve en acier.",
+              "chinese": "葡萄酒静置在一个巨大的钢罐中。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La première fermentation est incomplète en cuve...",
+                "chinese": "第一次发酵在酒罐中并未完全完成……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "résiduel",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʁezidɥɛl]",
+            "chinese": "残留的，剩余的",
+            "example_sentence": {
+              "french": "Le vin contient encore du sucre résiduel.",
+              "chinese": "这款酒还含有残留的糖分。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...et elle se poursuit en bouteille à partir du sucre résiduel du raisin.",
+                "chinese": "……随后利用葡萄残留的糖分，在瓶中继续进行二次发酵。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "minéral",
+            "part_of_speech": "adjectif",
+            "ipa": "[mineʁal]",
+            "chinese": "矿物的，带矿物风味的",
+            "example_sentence": {
+              "french": "Ce vin blanc est très sec et minéral.",
+              "chinese": "这款白葡萄酒非常干且带有矿物风味。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4,
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Mais le champagne est un vin plus minéral...",
+                "chinese": "不过，香槟是一种更偏矿物风味的葡萄酒……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "élaboré",
+            "part_of_speech": "verbe (participe passé) / adjectif",
+            "ipa": "[elabɔʁe]",
+            "chinese": "精心制作的，酿制的",
+            "example_sentence": {
+              "french": "C'est un produit élaboré avec soin.",
+              "chinese": "这是一款精心制作的产品。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est un vin élaboré à partir principalement du muscat à petits grains.",
+                "chinese": "这种葡萄酒主要以小粒麝香葡萄酿制而成。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "vigneron",
+            "part_of_speech": "nom masculin / adjectif",
+            "ipa": "[viɲʁɔ̃]",
+            "chinese": "葡萄种植者，酿酒师",
+            "example_sentence": {
+              "french": "Le vigneron nous a fait visiter sa cave.",
+              "chinese": "酿酒师带我们参观了他的酒窖。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...c'est-à-dire tout l'aspect vigneron, l'aspect viticulture...",
+                "chinese": "……也就是酿酒师的方方面面、葡萄种植的各个环节……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "viticulture",
+            "part_of_speech": "nom féminin",
+            "ipa": "[vitikyltyʁ]",
+            "chinese": "葡萄栽培，葡萄种植业",
+            "example_sentence": {
+              "french": "La viticulture est essentielle dans cette région.",
+              "chinese": "葡萄种植业在这一地区至关重要。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...l'aspect viticulture, l'aspect vinification...",
+                "chinese": "……葡萄种植的各个环节、葡萄酒酿造的工艺流程……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "authenticité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[otɑ̃tisite]",
+            "chinese": "真实性，地道",
+            "example_sentence": {
+              "french": "Je recherche l'authenticité dans les produits locaux.",
+              "chinese": "我在寻找当地产品的地道风味。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...toute la technique et l'authenticité et la générosité qu'il y a derrière ces champagnes...",
+                "chinese": "……以及这些知名香槟品牌所蕴含的技术、真实性和慷慨精神。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "générosité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʒeneʁozite]",
+            "chinese": "慷慨，丰富",
+            "example_sentence": {
+              "french": "Ce vin se caractérise par sa générosité en bouche.",
+              "chinese": "这款酒的特点是口感丰富醇厚。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...et l'authenticité et la générosité qu'il y a derrière ces champagnes...",
+                "chinese": "……真实性和慷慨精神。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "s'accorder avec",
+            "meaning": "与……相配，与……相得益彰（常用于餐酒搭配）",
+            "example": {
+              "french": "Le vin rouge s'accorde bien avec la viande de bœuf.",
+              "chinese": "红葡萄酒与牛肉很搭。"
+            },
+            "usage_note": "在美食和品酒领域非常常用的表达，指食物和酒的完美搭配。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "à taille humaine",
+            "meaning": "人性化规模的，适度规模的",
+            "example": {
+              "french": "Je préfère travailler dans une entreprise à taille humaine.",
+              "chinese": "我更喜欢在一家规模适中的公司工作。"
+            },
+            "usage_note": "常用来形容不过于庞大、保留了人情味和个性化特征的组织或生产商（如独立酒庄）。",
+            "source_ids": [
+              10
+            ]
+          },
+          {
+            "expression": "gratter un peu",
+            "meaning": "深入挖掘，探究表面之下的事物",
+            "example": {
+              "french": "Si on gratte un peu, on découvre une histoire fascinante.",
+              "chinese": "如果我们深入挖掘一下，就会发现一个迷人的故事。"
+            },
+            "usage_note": "字面意思是“稍微刮一下”，引申为不满足于表面现象，去探寻背后的真相或细节。",
+            "source_ids": [
+              9
+            ]
+          },
+          {
+            "expression": "avoir le mérite de",
+            "meaning": "具有……的优点，值得肯定的是……",
+            "example": {
+              "french": "Son idée a le mérite d'être originale.",
+              "chinese": "他的想法值得肯定的一点是很有创意。"
+            },
+            "usage_note": "用于承认某事物虽然可能不完美，但至少具备某种积极的品质或贡献。",
+            "source_ids": [
+              9
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le conditionnel passé (过去条件式)",
+            "structure": "Sujet + aurais/serais (etc.) + participe passé",
+            "explanation": "过去条件式常用于表达在过去本可以发生但实际未发生的事情（遗憾、错过的机会或另一种可能性）。在文中，叙述者用它来表示“本来是可以喝香槟的（但实际上喝了克莱雷特）”。",
+            "example": {
+              "french": "On aurait pu boire du champagne car après tout, c'était un événement festif. Mais [...] il aurait fallu un bon champagne demi-sec...",
+              "chinese": "本来是可以喝香槟的，毕竟这是个喜庆的场合。不过……那就需要配上一款上好的半甜香槟……"
+            },
+            "usage_note": "注意助动词的选择（avoir或être）与复合过去时相同。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "Le subjonctif présent après les verbes de volonté (意愿动词后的虚拟式)",
+            "structure": "Verbe de volonté (aimer, vouloir, souhaiter) + que + Sujet 2 + verbe au subjonctif",
+            "explanation": "当主句动词表达意愿、希望（如 j'aimerais），且从句的主语与主句主语不同（Je vs On）时，从句必须使用虚拟式。文中“gratte”和“découvre”都是虚拟式现在时。",
+            "example": {
+              "french": "J'aimerais qu'on gratte un peu et qu'on découvre ce qu'il y a derrière...",
+              "chinese": "我希望我们能深入挖掘一下，去探寻其背后的一切……"
+            },
+            "usage_note": "如果主句和从句主语相同，则直接使用动词原形（例如：J'aimerais découvrir...）。",
+            "source_ids": [
+              9
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[y] vs [u]",
+              "description": "区分法语中的[y]（如字母u）和[u]（如字母ou）。在葡萄酒词汇中经常出现，发音位置不同，[y]需要嘴唇更向前突出且紧闭。",
+              "examples": [
+                "cuve [kyv] vs mousseux [musø]",
+                "sucre [sykʁ] vs doux [du]"
+              ]
+            },
+            {
+              "sound": "Voyelles nasales (鼻化元音)",
+              "description": "品酒词汇中含有大量的鼻化元音，特别是[ɛ̃] (vin, minéral, fin) 和 [ɑ̃] (fermentation, champagne, authentique)。",
+              "examples": [
+                "vin [vɛ̃]",
+                "champagne [ʃɑ̃paɲ]"
+              ]
+            }
+          ],
+          "liaison": [
+            "nous‿avons [nuzavɔ̃] (联诵 - 必读)",
+            "les‿arômes [lezaʁom] (联诵 - 必读)",
+            "un événement‿festif [œ̃nevɛnmɑ̃fɛstif] (联诵 - 选读/正式)"
+          ],
+          "intonation": "在列举葡萄酒特性或酿造工艺时（如：l'aspect vigneron, l'aspect viticulture, l'aspect vinification），语调在每个逗号前上扬（intonation montante），在句末下降（intonation descendante）。"
+        },
+        "vocabulary_network": {
+          "theme": "Le Vin et la Célébration (葡萄酒与庆祝)",
+          "core_word": "Champagne / Vin mousseux",
+          "related_groups": [
+            {
+              "category": "Fabrication (酿造)",
+              "words": [
+                "vinifié",
+                "procédé",
+                "fermentation",
+                "cuve",
+                "sucre résiduel",
+                "viticulture",
+                "vinification"
+              ]
+            },
+            {
+              "category": "Dégustation (品鉴)",
+              "words": [
+                "gorgée",
+                "minéral",
+                "demi-sec",
+                "vifs",
+                "rafraîchissants",
+                "doux",
+                "fruité",
+                "parfumé"
+              ]
+            },
+            {
+              "category": "Acteurs & Événements (人物与场合)",
+              "words": [
+                "vigneron",
+                "producteurs indépendants",
+                "événement festif",
+                "apéritif"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "La première ___ est ___ en ___ et elle se ___ en bouteille à partir du ___ ___ du raisin.",
+            "answer": "fermentation, incomplète, cuve, poursuit, sucre, résiduel",
+            "explanation": "根据原文第3段，描述了“传统古法”的酿造过程：第一次发酵在酒罐中并未完全完成，随后利用葡萄残留的糖分，在瓶中继续进行二次发酵。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon la narratrice, pourquoi auraient-ils pu choisir de boire du champagne pour l'anniversaire de Papy Michel ?",
+            "options": {
+              "A": "Parce que c'était un événement festif.",
+              "B": "Parce que le champagne est moins cher que la clairette de Die.",
+              "C": "Parce que Papy Michel n'aime pas les vins doux et fruités.",
+              "D": "Parce qu'ils n'avaient plus de clairette dans leur cave."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文明确提到：'On aurait pu boire du champagne car après tout, c'était un événement festif.'（本来是可以喝香槟的，毕竟这可是个喜庆的场合）。其他选项在原文中均未提及或与原文事实相反。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Car le vin, s'il s'accorde avec un mets, est aussi un compagnon qui raconte sa petite histoire à chaque gorgée, toujours avec modération.",
+            "answer": "毕竟，葡萄酒不仅与美食相得益彰，更像一位贴心的伙伴，每一口都娓娓道来属于它的独特故事——当然，这一切都要适度享用。",
+            "explanation": "翻译难点在于处理插入语 's'il s'accorde avec un mets'（让步或条件关系，这里意为“不仅与美食相配”）以及拟人化的表达 'un compagnon qui raconte sa petite histoire'。'toujours avec modération' 是法国酒类宣传的固定提示语，意为“适度饮酒”。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Lisez la phrase : 'J'aimerais qu'on découvre ce qu'il y a derrière.' Est-il possible de réécrire cette phrase en utilisant l'infinitif 'découvrir' (ex: J'aimerais découvrir...) tout en gardant exactement le même sens ? Expliquez pourquoi grammaticalement.",
+            "answer": "Non, ce n'est pas possible de garder exactement le même sens. Grammaticalement, on utilise 'que + subjonctif' parce que les sujets sont différents ('Je' pour aimer, 'on' pour découvrir). Si on dit 'J'aimerais découvrir', le sujet de 'découvrir' devient 'Je', ce qui change le sens de la phrase.",
+            "explanation": "考查意愿动词后虚拟式与不定式的用法区别。当主句和从句主语不同（Je vs On）时，必须使用 que + 虚拟式。如果改用不定式（J'aimerais découvrir），则意味着动作的执行者变成了主句的主语（Je），改变了原文“我希望大家/我们去发现”的语义。",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "fermentation",
+            "cuve",
+            "sucre résiduel",
+            "mets",
+            "gorgée",
+            "modération"
+          ],
+          "covered_grammar": [
+            "Le conditionnel passé",
+            "Le subjonctif présent après les verbes de volonté"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "On aurait pu + infinitif",
+            "explanation": "用于表达过去的一种可能性或本可以做出的另一种选择（过去条件式）。",
+            "example": {
+              "french": "On aurait pu boire du champagne car après tout, c'était un événement festif.",
+              "chinese": "本来是可以喝香槟的，毕竟这可是个喜庆的场合。"
+            }
+          },
+          {
+            "pattern": "Il s'agit de + nom",
+            "explanation": "用于指出事物的本质、核心问题或谈论的主题，意为“关于……”、“涉及……”或“这是……”。",
+            "example": {
+              "french": "Bien sûr, il s'agit d'alcool, alors on est raisonnable.",
+              "chinese": "当然，这毕竟是酒精饮品，所以大家都要适度饮用。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你在巴黎的一家独立酒窖（cave à vin）里，想为朋友的升职庆祝买一瓶酒。你向酿酒师（vigneron）询问建议，想知道是买传统香槟好，还是买像Clairette de Die这样偏甜果香的起泡酒好。",
+          "requirements": "使用词汇：mousseux, événement festif, s'accorder avec, minéral, fruité。尝试使用过去条件式表达你原本的想法（例如：我本来想买香槟，但是...）。",
+          "starter": "Bonjour ! Je cherche une bouteille pour fêter la promotion d'un ami. J'aurais pensé prendre un champagne classique, mais..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode, Laetitia raconte l'anniversaire de son père, Papy Michel. Pour accompagner son gâteau, ils ont choisi la clairette de Die, un vin mousseux doux et fruité, plutôt que du champagne, qui est plus minéral. Elle explique la différence de vinification entre ces deux vins (méthode ancestrale vs traditionnelle). Ensuite, elle partage une réflexion sur l'univers du champagne, soulignant l'importance de découvrir le travail authentique des vignerons indépendants au-delà des grandes marques commerciales.",
+        "keywords": [
+          "champagne",
+          "clairette de Die",
+          "vin mousseux",
+          "vinification",
+          "vigneron",
+          "célébration"
+        ],
+        "difficulty_note": "Le texte est de niveau B2 en raison du vocabulaire technique lié à la viticulture (vinification, cuve, sucre résiduel) et de l'utilisation de structures grammaticales avancées comme le conditionnel passé et le subjonctif."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:03:56.580"
+        },
+        "theme": "Le vin, le champagne et les célébrations",
+        "cefr_level": "B2",
+        "vocabulary_count": 14,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:29.620",
+          "french": "Bonjour, c'est Laetitia de One Thing in a French Day à Paris. J'espère que vous allez bien et que vous êtes de bonne humeur. Aujourd'hui, mercredi 28 janvier 2026, cet épisode, le numéro 2593, s'intitule « Champagne ou vin mousseux, la clairette pour Papy Michel ». Dimanche, nous avons fêté l'anniversaire de mon père, alias Papy Michel.",
+          "chinese": "大家好，我是来自巴黎《One Thing in a French Day》播客的莱蒂西娅（Laetitia）。希望你们一切都好，心情愉快。今天，2026年1月28日星期三，第2593期节目的标题是《香槟还是起泡酒，给米歇尔爷爷的克莱雷特》。星期天，我们庆祝了我父亲，也就是米歇尔爷爷的生日。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:29.620",
+          "end_time": "00:00:52.289",
+          "french": "Il avait choisi le même gâteau que Lisa pour son anniversaire. Un merveilleux ! Et bien sûr, en accompagnement, nous avons bu quelques bulles. Mais lesquelles ? Quel vin allait accompagner ce moment festif ? Car le vin, s'il s'accorde avec un mets, est aussi un compagnon qui raconte sa petite histoire à chaque gorgée, toujours avec modération.",
+          "chinese": "他选了和丽莎过生日时一样的蛋糕。一款Merveilleux蛋糕！当然，作为搭配，我们喝了点带气泡的酒。但是喝了哪种呢？哪种酒最适合搭配这个欢乐的时刻呢？因为葡萄酒不仅能与美食相得益彰，它还像一位伴侣，在每一口中诉说着自己的小故事，当然，饮酒要适量。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:52.289",
+          "end_time": "00:01:21.640",
+          "french": "Nous avions choisi pour mon père des bulles qu'il aime particulièrement, celles de la clairette de Die. C'est un vin mousseux de la Drôme qui est vinifié selon un procédé qui se rapproche de celui du champagne. Ce procédé s'appelle la méthode ancestrale. Il s'appelle méthode traditionnelle pour le champagne. La première fermentation est incomplète en cuve et elle se poursuit en bouteille à partir du sucre résiduel du raisin.",
+          "chinese": "我们为父亲挑选了他特别喜欢的起泡酒，迪耶克莱雷特（Clairette de Die）。这是一种产自德龙省（Drôme）的起泡酒，其酿造工艺与香槟非常相似。这种工艺被称为“古法酿造”（méthode ancestrale）。而香槟的酿造工艺则被称为“传统酿造法”（méthode traditionnelle）。它的第一次发酵在酒罐中并未完全结束，而是利用葡萄残留的糖分在瓶中继续发酵。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:22.650",
+          "end_time": "00:01:35.049",
+          "french": "On aurait pu boire du champagne car après tout, c'était un événement festif. Mais le champagne est un vin plus minéral et il aurait fallu un bon champagne demi-sec en accompagnement du merveilleux.",
+          "chinese": "我们本来也可以喝香槟，毕竟这是一个喜庆的场合。但香槟的矿物味更重，如果要搭配Merveilleux蛋糕，就需要一款上好的半干型香槟。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:36.019",
+          "end_time": "00:02:02.480",
+          "french": "Nous avons bu du champagne pendant les fêtes, en apéritif le soir du 31 décembre et le lendemain pour fêter la nouvelle année avec la famille de Caroline. J'aime beaucoup la présence aristocratique du champagne, son côté minéral, ses arômes vifs et rafraîchissants. La clairette, c'est autre chose. C'est un vin élaboré à partir principalement du muscat à petits grains. C'est doux, fruité et très parfumé.",
+          "chinese": "节日期间我们喝了香槟，在12月31日晚作为餐前酒，以及第二天和卡罗琳一家庆祝新年时也喝了。我非常喜欢香槟那种贵族般的气质、它的矿物感，以及它那活泼清爽的香气。而克莱雷特则是另一种风味。它主要由小粒麝香葡萄（muscat à petits grains）酿制而成。口感甜美，果味浓郁，香气扑鼻。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:02.480",
+          "end_time": "00:02:25.770",
+          "french": "Une auditrice, gagnante du concours de livres en français, Michelle, m'a dit qu'elle s'était lancée dans une étude des meilleurs champagnes dans une certaine gamme de prix. C'est une jolie aventure et beaucoup de travail comme elle dit. Bien sûr, il s'agit d'alcool, alors on est raisonnable. Il y a quelque chose de sentimental avec le vin et en particulier le vin des fêtes.",
+          "chinese": "一位法语书籍比赛的获奖听众米歇尔（Michelle）告诉我，她开始研究特定价格区间内最好的香槟。正如她所说，这是一次美妙的冒险，也是一项不小的工作。当然，因为是酒精饮料，所以我们要适度。葡萄酒，尤其是节日里的葡萄酒，总带着一种感性的色彩。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:26.199",
+          "end_time": "00:02:53.740",
+          "french": "Il y a bien sûr les grandes maisons de champagne, mais il y a aussi tous les producteurs indépendants qui font un travail qui mérite d'être découvert. À propos du champagne, j'aimerais vous faire écouter à nouveau Benoît Mélendez lorsque je lui ai rendu visite dans sa cave à champagne parisienne. Dans la lettre qui accompagne cet épisode, nous explorons davantage l'univers du champagne. En attendant, écoutons Benoît.",
+          "chinese": "当然，有那些大型的香槟酒庄，但也有许多独立生产商，他们的作品同样值得被发掘。说到香槟，我想让大家再次听听伯努瓦·梅伦德斯（Benoît Mélendez）的分享，那是我去拜访他位于巴黎的香槟酒窖时录制的。在本期节目的附信中，我们会进一步探索香槟的世界。在此期间，让我们先来听听伯努瓦怎么说。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:54.229",
+          "end_time": "00:03:04.840",
+          "french": "On connaît tous les grandes marques, on connaît tous ce que le champagne peut nous offrir dans certaines soirées, certains anniversaires, certains mariages, mais ce n'est pas tout le champagne.",
+          "chinese": "我们都知道那些大品牌，也都知道香槟在某些晚会、生日派对或婚礼上能带给我们什么，但那并不是香槟的全部。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:05.050",
+          "end_time": "00:03:28.460",
+          "french": "J'aimerais qu'on gratte un peu et qu'on découvre ce qu'il y a derrière, c'est-à-dire tout l'aspect vigneron, l'aspect viticulture, l'aspect vinification, toute la technique et l'authenticité et la générosité qu'il y a derrière ces champagnes de marque qui ont le mérite d'exister, qui ont le mérite de faire connaître le champagne à travers le monde, ce qui est très bien.",
+          "chinese": "我希望我们能深入挖掘一下，去发现它背后的东西，也就是葡萄种植者、葡萄栽培、酿造工艺，以及在这些品牌香槟背后所蕴含的所有技术、真实性和慷慨。这些品牌香槟有其存在的价值，它们让香槟名扬世界，这非常棒。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:28.500",
+          "end_time": "00:03:56.580",
+          "french": "Mais j'aimerais aussi qu'on redécouvre justement tout ce qui est peut-être un peu plus petit à taille humaine et qui peut nous offrir de très très très grandes émotions. On entend déjà les bulles fines du champagne dans ses paroles ? Vous ne trouvez pas ? One Thing in a French Day, c'est fini pour aujourd'hui. Je vous retrouve la semaine prochaine pour de nouveaux épisodes de podcast. À bientôt, au revoir !",
+          "chinese": "但我也希望我们能重新发现那些规模较小、更具人情味的酒庄，它们同样能带给我们极大的感动。在他的话语中，我们是不是已经听到了香槟细腻的气泡声？你们觉得呢？今天的《One Thing in a French Day》就到这里。下周我将带着新的播客节目与大家再见。回见，再见！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:03:56.580",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 10,
+        "source_video_name": "Champagne ou vin mousseux_ French Wine Culture & Celebrations (Clairette de Die).json",
+        "tags": [
+          "专家见解",
+          "考试干货"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

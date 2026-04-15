@@ -1,0 +1,682 @@
+{
+  "source_file": "Grand écart climatique (Climate contradictions).json",
+  "channel": "Louis法语课",
+  "video_name": "气候反差巨大",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T15:17:09.970Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le gérondif (tout en + participe présent)",
+          "Le subjonctif après « jusqu'à ce que »",
+          "La négation complexe avec quantité"
+        ],
+        "speaking": [
+          "能够描述经济发展与环境保护之间的矛盾",
+          "学会使用象征性比喻（如 le grand écart）来描述复杂局势"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "écart",
+            "part_of_speech": "nom",
+            "ipa": "[ekaʁ]",
+            "chinese": "差距，间距",
+            "example_sentence": {
+              "french": "Il y a un grand écart entre ses paroles et ses actes.",
+              "chinese": "他的言行之间存在巨大的差距。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Le grand écart climatique.",
+                "chinese": "气候差距（大跨步）。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "charbon",
+            "part_of_speech": "nom",
+            "ipa": "[ʃaʁbɔ̃]",
+            "chinese": "煤炭",
+            "example_sentence": {
+              "french": "Le charbon est une énergie fossile très polluante.",
+              "chinese": "煤炭是一种污染非常严重的化石能源。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              5,
+              6,
+              7,
+              10
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "La Chine bat son record de production de charbon.",
+                "chinese": "中国创下了煤炭产量的新纪录。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "impératif",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃peʁatif]",
+            "chinese": "迫切要求，必要的事",
+            "example_sentence": {
+              "french": "La sécurité est un impératif absolu dans cette usine.",
+              "chinese": "安全是这家工厂绝对必要的要求。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8,
+              10
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Entre impératifs économiques et engagements climatiques.",
+                "chinese": "在经济需求与气候承诺之间。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "engagement",
+            "part_of_speech": "nom",
+            "ipa": "[ɑ̃ɡaʒmɑ̃]",
+            "chinese": "承诺，约定",
+            "example_sentence": {
+              "french": "Il a pris l'engagement de réduire ses émissions de CO2.",
+              "chinese": "他承诺减少二氧化碳排放。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              9,
+              10
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Engagement : des promesses, des engagements sur le climat.",
+                "chinese": "承诺：关于气候的诺言、承诺。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "fragile",
+            "part_of_speech": "adjectif",
+            "ipa": "[fʁaʒil]",
+            "chinese": "脆弱的",
+            "example_sentence": {
+              "french": "Cette situation politique reste très fragile.",
+              "chinese": "这种政治局势仍然非常脆弱。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3,
+              9,
+              10
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "L'équilibre est fragile.",
+                "chinese": "这种平衡是脆弱的。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "inédit",
+            "part_of_speech": "adjectif",
+            "ipa": "[inedi]",
+            "chinese": "前所未有的，新颖的",
+            "example_sentence": {
+              "french": "C'est un événement inédit dans l'histoire du pays.",
+              "chinese": "这是该国历史上前所未有的事件。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Atteindre un niveau inédit.",
+                "chinese": "达到前所未有的水平。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "atteindre",
+            "part_of_speech": "verbe",
+            "ipa": "[atɛ̃dʁ]",
+            "chinese": "达到，实现",
+            "example_sentence": {
+              "french": "Nous espérons atteindre nos objectifs d'ici la fin de l'année.",
+              "chinese": "我们希望在年底前实现我们的目标。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Atteindre un niveau jusque-là jamais atteint.",
+                "chinese": "达到迄今从未达到过的高度。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "taxe",
+            "part_of_speech": "nom",
+            "ipa": "[taks]",
+            "chinese": "税，税收",
+            "example_sentence": {
+              "french": "Le gouvernement a instauré une nouvelle taxe sur le sucre.",
+              "chinese": "政府对糖征收了一项新税。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              7,
+              10
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Elle annonce une future taxe carbone nationale.",
+                "chinese": "她宣布将推出一项全国性的碳税。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "équilibre",
+            "part_of_speech": "nom",
+            "ipa": "[ekilibʁ]",
+            "chinese": "平衡",
+            "example_sentence": {
+              "french": "Il faut trouver un équilibre entre vie professionnelle et vie privée.",
+              "chinese": "必须在职业生活和私人生活之间找到平衡。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              9,
+              10
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "L'équilibre est difficile à trouver.",
+                "chinese": "这种平衡实属不易找到。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          },
+          {
+            "french": "national",
+            "part_of_speech": "adjectif",
+            "ipa": "[nasjɔnal]",
+            "chinese": "全国性的，国家的",
+            "example_sentence": {
+              "french": "C'est une question d'intérêt national.",
+              "chinese": "这是一个涉及国家利益的问题。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              7,
+              10
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Une future taxe carbone nationale.",
+                "chinese": "一项未来的全国性碳税。",
+                "source_video": "Société Radio-Canada"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "faire le grand écart",
+            "meaning": "（喻）在两个矛盾的事物间寻求平衡；（体）劈叉",
+            "example": {
+              "french": "Le gouvernement fait le grand écart entre écologie et industrie.",
+              "chinese": "政府在生态保护和工业发展之间艰难地寻求平衡。"
+            },
+            "usage_note": "本义是体操中的劈叉动作，在政治或经济语境下常用来形容试图同时兼顾两个截然相反或难以调和的目标。",
+            "source_ids": [
+              3,
+              4
+            ]
+          },
+          {
+            "expression": "battre son record",
+            "meaning": "打破/刷新自己的纪录",
+            "example": {
+              "french": "L'athlète a battu son propre record du monde.",
+              "chinese": "这位运动员打破了他自己的世界纪录。"
+            },
+            "usage_note": "用于描述达到一个比之前更高的水平或数量。",
+            "source_ids": [
+              2,
+              4,
+              5,
+              10
+            ]
+          },
+          {
+            "expression": "entre... et...",
+            "meaning": "在……与……之间",
+            "example": {
+              "french": "Entre la pluie et le vent, le temps est désagréable.",
+              "chinese": "又是雨又是风，天气真让人不舒服。"
+            },
+            "usage_note": "常用于对比两个不同的概念或描述两者之间的平衡/冲突。",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8,
+              10
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le gérondif (tout en + participe présent)",
+            "structure": "tout en + participe présent",
+            "explanation": "用于表示两个动作同时发生，且往往带有“对立”或“让步”的色彩（虽然……但是……）。",
+            "example": {
+              "french": "La Chine bat son record de production de charbon tout en annonçant une future taxe carbone nationale.",
+              "chinese": "中国在创下煤炭产量新纪录的同时，也宣布将推出一项全国性的碳税。"
+            },
+            "usage_note": "主语必须一致。在本例中，主语都是“La Chine”。",
+            "source_ids": [
+              2,
+              6,
+              10
+            ]
+          },
+          {
+            "name": "Le subjonctif après « jusqu'à ce que »",
+            "structure": "jusqu'à ce que + sujet + verbe au subjonctif",
+            "explanation": "引导时间状语从句，表示动作持续到某一时刻。该从句必须使用虚拟式。",
+            "example": {
+              "french": "C'est quand on descend jusqu'à ce que nos jambes soient toutes les deux à l'horizontale.",
+              "chinese": "这就是指下蹲直到双腿完全平放在地面上。"
+            },
+            "usage_note": "注意 'soient' 是 être 的虚拟式现在时第三人称复数。",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "La négation complexe avec quantité",
+            "structure": "ne + verbe + jamais + autant de + nom",
+            "explanation": "表示“从未有过如此多……”，用于强调当前的极端情况。",
+            "example": {
+              "french": "La Chine n'a jamais produit, n'a jamais fabriqué autant de charbon.",
+              "chinese": "中国从未生产过、也从未制造过如此大量的煤炭。"
+            },
+            "usage_note": "autant 后面接名词时必须加 de。",
+            "source_ids": [
+              6
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "鼻化元音，常见于 en, an, em, am。",
+              "examples": [
+                "engagement",
+                "grand",
+                "annonçant"
+              ]
+            },
+            {
+              "sound": "[ʁ]",
+              "description": "小舌音，在 record 和 fragile 中清晰可见。",
+              "examples": [
+                "record",
+                "fragile",
+                "charbon"
+              ]
+            }
+          ],
+          "liaison": [
+            "grand écart [ɡʁɑ̃.te.kaʁ] - 字母 d 发 [t] 的音",
+            "impératifs économiques [ɛ̃.pe.ʁa.tif.ze.kɔ.nɔ.mik] - 字母 s 发 [z] 的音",
+            "engagements climatiques [ɑ̃.ɡaʒ.mɑ̃.kli.ma.tik] - 此处通常不连读"
+          ],
+          "intonation": "在列举“Entre impératifs économiques et engagements climatiques”时，语调在 économiques 处上扬，在 climatiques 处下降，以示对比。"
+        },
+        "vocabulary_network": {
+          "theme": "Environnement et Économie",
+          "core_word": "Climat",
+          "related_groups": [
+            {
+              "category": "Énergie",
+              "words": [
+                "charbon",
+                "production",
+                "feu"
+              ]
+            },
+            {
+              "category": "Politique/Fiscalité",
+              "words": [
+                "taxe carbone",
+                "impôt",
+                "engagement",
+                "national"
+              ]
+            },
+            {
+              "category": "État de situation",
+              "words": [
+                "équilibre",
+                "fragile",
+                "record",
+                "écart"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "La ___ ___ son ___ de ___ de ___ ___ en ___ une ___ ___ ___.",
+            "answer": "Chine, bat, record, production, charbon, tout, annonçant, future, taxe, carbone",
+            "explanation": "根据原文第2句和第10句，中国在刷新煤炭产量纪录的同时宣布了碳税计划。",
+            "source_ids": [
+              2,
+              10
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Que signifie l'expression « le grand écart » dans le contexte symbolique de cette leçon ?",
+            "options": {
+              "A": "Un exercice physique pour assouplir les jambes.",
+              "B": "Une situation contradictoire entre la production de charbon et les taxes écologiques.",
+              "C": "Une augmentation massive du prix du charbon.",
+              "D": "Une nouvelle méthode de construction de maisons."
+            },
+            "answer": "B",
+            "explanation": "原文第4句提到“Ici, c'est un grand écart symbolique. Il est climatique”，指代中国一方面增加煤炭生产（高污染），另一方面推行碳税（环保）的矛盾状态。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Entre impératifs économiques et engagements climatiques, l'équilibre est fragile.",
+            "answer": "在经济需求与气候承诺之间，这种平衡显得尤为脆弱。",
+            "explanation": "注意 'impératifs' 在此处指必须满足的经济条件或需求，'engagements' 指对气候变化的承诺。",
+            "source_ids": [
+              2,
+              10
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Dans la phrase « jusqu'à ce qu'elles soient à l'horizontale », quel est le mode du verbe « soient » et pourquoi ?",
+            "answer": "Le subjonctif présent. On l'utilise car la conjonction « jusqu'à ce que » l'exige toujours.",
+            "explanation": "在法语中，表示“直到……”的连词短语 'jusqu'à ce que' 后面必须接虚拟式（subjonctif）。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "Chine",
+            "record",
+            "charbon",
+            "taxe",
+            "écart",
+            "impératif",
+            "engagement",
+            "fragile"
+          ],
+          "covered_grammar": [
+            "gérondif",
+            "subjonctif après jusqu'à ce que"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Entre [A] et [B], l'équilibre est [adjectif].",
+            "explanation": "用于描述在两个对立或不同的事物之间维持某种状态的难度。",
+            "example": {
+              "french": "Entre travail et repos, l'équilibre est difficile à trouver.",
+              "chinese": "在工作与休息之间，平衡很难找到。"
+            }
+          },
+          {
+            "pattern": "[Sujet] bat son record de [Nom].",
+            "explanation": "用于描述某人或某机构刷新了自己在某方面的最高纪录。",
+            "example": {
+              "french": "L'entreprise bat son record de ventes cette année.",
+              "chinese": "这家公司今年刷新了销售纪录。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在参加一个关于环境保护与经济发展的辩论赛。",
+          "requirements": "使用 'faire le grand écart' 和 'engagement' 来描述一个国家的现状。",
+          "starter": "À mon avis, ce pays fait le grand écart car..."
+        }
+      },
+      "summary": {
+        "content": "本课探讨了中国在气候政策上的矛盾现状：一方面煤炭产量创下历史新高（经济需求），另一方面又宣布推行全国性碳税（气候承诺）。作者通过“le grand écart”（大跨步/劈叉）这一生动比喻，形象地描述了这种在经济与环保之间脆弱的平衡状态。",
+        "keywords": [
+          "climat",
+          "charbon",
+          "taxe carbone",
+          "équilibre",
+          "Chine"
+        ],
+        "difficulty_note": "文本涉及环境经济学术语，适合B1-B2水平。重点在于理解抽象比喻及 gérondif 的用法。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:06:24"
+        },
+        "theme": "Le grand écart climatique de la Chine",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司 (Radio-Canada) 字幕"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.539",
+          "end_time": "00:01:04.519",
+          "french": "Bonjour. Aujourd'hui, la leçon est : « Le grand écart climatique ». La Chine bat son record de production de charbon tout en annonçant une future taxe carbone nationale. Entre impératifs économiques et engagements climatiques, l'équilibre est fragile. Once again : la Chine bat son record de production de charbon tout en annonçant une future taxe carbone nationale.",
+          "chinese": "大家好。今天的课程主题是：“气候政策的大跨度”。中国在打破煤炭产量纪录的同时，宣布将征收全国碳税。在经济需求与气候承诺之间，平衡十分脆弱。再说一遍：中国在打破煤炭产量纪录的同时，宣布将征收全国碳税。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:04.819",
+          "end_time": "00:01:35.689",
+          "french": "Entre impératifs économiques et engagements climatiques, l'équilibre est fragile. On commence avec le grand écart. C'est dans le titre de cette leçon : « Le grand écart ». Mais on fait la liaison entre ces deux mots : le grand écart. Sur le plan physique, c'est quand une personne descend au sol en écartant ses jambes...",
+          "chinese": "在经济需求与气候承诺之间，平衡十分脆弱。我们先从“大跨度”这个词开始。它就在本课的标题中：“Le grand écart”。但我们要把这两个词连读：le grand écart。在身体层面，这是指一个人张开双腿降到地面……"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:35.959",
+          "end_time": "00:02:07.019",
+          "french": "...jusqu'à ce qu'elles soient à l'horizontale. Et on dit « faire le grand écart ». C'est quand on descend jusqu'à ce que nos jambes soient toutes les deux à l'horizontale sur le sol. On fait le grand écart. Ici, c'est un grand écart symbolique. Il est climatique. La Chine bat son record.",
+          "chinese": "……直到双腿呈水平状态。我们说“faire le grand écart”（劈叉）。就是指我们向下直到双腿都在地面上呈水平状态。这就是劈叉。在这里，这是一个象征性的“大跨度”。它是关于气候的。中国打破了纪录。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:07.189",
+          "end_time": "00:02:34.599",
+          "french": "C'est l'expression « battre un record » ou « battre son record », c'est-à-dire atteindre un niveau inédit, atteindre un niveau jusque-là jamais atteint : un record. Battre, aller plus loin. Battre son record de production de charbon.",
+          "chinese": "这是表达方式“battre un record”或“battre son record”，也就是说达到一个前所未有的水平，达到一个此前从未达到的水平：纪录。打破，走得更远。打破其煤炭产量纪录。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:34.969",
+          "end_time": "00:03:08.870",
+          "french": "Alors, la Chine n'a jamais produit, n'a jamais fabriqué autant de charbon. Le charbon, c'est « coal » en anglais. Le charbon. Exemple : quand on fait du feu, généralement, il reste du charbon. Quand on fait du feu, il reste du charbon. « Tout en annonçant », cela veut dire que la Chine bat son record de production...",
+          "chinese": "所以，中国从未生产过、制造过这么多煤炭。煤炭在英语里是“coal”。煤炭。例如：当我们生火时，通常会剩下炭。生火时，会剩下炭。“Tout en annonçant”意思是说中国在打破产量纪录的同时……"
+        },
+        {
+          "id": 7,
+          "start_time": "00:03:09.400",
+          "end_time": "00:03:44.360",
+          "french": "...tout en faisant autre chose. En même temps, elle annonce une future taxe carbone. Une future taxe — avec un « e » à la fin en français — carbone. Donc, en fait, sur le charbon. Un impôt, une taxe sur le charbon. Et elle est nationale, cette taxe. Elle concerne tout le pays. Entre impératifs économiques. « Entre », c'est « between ».",
+          "chinese": "……也在做另一件事。与此同时，它宣布了未来的碳税。未来的税——法语里词尾带“e”——碳。所以，实际上是针对煤炭的。一种税，针对煤炭的税。而且它是全国性的，这项税收。它涉及整个国家。在经济需求之间。“Entre”就是“between”。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:44.629",
+          "end_time": "00:04:12.199",
+          "french": "Entre : « between ». Exemple : « Mon chat est tombé entre deux maisons. » Impératif économique : les impératifs économiques, c'est ce qu'un pays doit faire pour avoir une bonne économie. C'est ça, un impératif économique.",
+          "chinese": "Entre：“between”。例如：“我的猫掉到了两座房子之间。”经济需求（impératifs économiques）：经济需求是一个国家为了保持经济良好运行而必须做的事情。这就是经济需求。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:04:12.469",
+          "end_time": "00:04:44.230",
+          "french": "Ce qu'un pays doit faire pour avoir une bonne économie. Et engagement climatique. Engagement : des promesses, des engagements sur le climat. L'équilibre est fragile. L'équilibre, c'est « balance ». L'équilibre est fragile. On dirait que l'équilibre est difficile à trouver.",
+          "chinese": "一个国家为了保持经济良好运行而必须做的事情。还有气候承诺（engagement climatique）。承诺（Engagement）：关于气候的诺言、承诺。平衡是脆弱的。平衡（L'équilibre）就是“balance”。平衡是脆弱的。可以说平衡很难找到。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:44.660",
+          "end_time": "00:05:12.139",
+          "french": "En tout cas, quand on le trouve, cela peut évoluer rapidement. L'équilibre est fragile. La Chine bat son record de production de charbon tout en annonçant une future taxe carbone nationale. Entre impératifs économiques et engagements climatiques, l'équilibre est fragile.",
+          "chinese": "无论如何，即使找到了，它也可能迅速变化。平衡是脆弱的。中国在打破煤炭产量纪录的同时，宣布将征收全国碳税。在经济需求与气候承诺之间，平衡十分脆弱。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:05:12.379",
+          "end_time": "00:05:41.319",
+          "french": "Voilà, cette leçon est maintenant terminée, mais si vous voulez continuer à m'écouter, vous pouvez me rejoindre sur mon autre podcast qui s'appelle « Choses à Savoir ». Je mets le lien dans la description. Sur ce podcast, je réponds à une question par jour en moins de deux minutes. Par exemple : est-il possible de se marier avec une personne morte ? Pourquoi le mois de septembre s'appelle septembre alors qu'il n'est pas le septième mois de l'année ?",
+          "chinese": "好了，这节课到此结束，但如果你想继续听我讲解，可以关注我的另一个播客，叫做《百科知识》（Choses à Savoir）。我在描述栏里放了链接。在这个播客中，我每天用不到两分钟的时间回答一个问题。例如：是否可以和死人结婚？为什么九月（septembre）叫九月，尽管它不是一年中的第七个月？"
+        },
+        {
+          "id": 12,
+          "start_time": "00:05:41.459",
+          "end_time": "00:05:52.040",
+          "french": "Pourquoi Hello Kitty n'a pas de bouche ? Ou bien pourquoi la Suisse est devenue le pays du chocolat ? Voilà, je mets le lien vers ce podcast dans les notes. Merci !",
+          "chinese": "为什么 Hello Kitty 没有嘴巴？或者为什么瑞士成为了巧克力之国？好了，我在笔记里放了该播客的链接。谢谢！"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:54.360",
+          "end_time": "00:06:24.170",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司 (Radio-Canada) 字幕"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:06:24.170",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 13,
+        "source_video_name": "Grand écart climatique (Climate contradictions).json",
+        "tags": [
+          "社会观察",
+          "新闻时事"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "occurrence_count consistency",
+            "detail": "The occurrence_count for several words (charbon, taxe, fragile, engagement, impératif) is lower than the actual count in the subtitles. For example, 'charbon' appears 10 times but is listed as 6.",
+            "field": "language_analysis.vocabulary"
+          },
+          {
+            "level": "warning",
+            "check": "exercise sentence completeness",
+            "detail": "Exercise 1 (填空) uses a truncated version of the source sentence from subtitles 2 and 10, omitting the final word 'nationale'.",
+            "field": "practice.exercises[0]"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 2,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

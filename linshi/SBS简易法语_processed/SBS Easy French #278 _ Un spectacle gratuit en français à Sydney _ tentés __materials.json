@@ -1,0 +1,723 @@
+{
+  "source_file": "SBS Easy French #278 _ Un spectacle gratuit en français à Sydney _ tentés _.json",
+  "channel": "SBS简易法语",
+  "video_name": "SBS Easy French #278 _ Un spectacle gratuit en français à Sydney _ tentés _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T00:54:30.486Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le subjonctif après un superlatif",
+          "Les verbes pronominaux à sens passif",
+          "Les pronoms relatifs (qui, que)"
+        ],
+        "speaking": [
+          "Parler d'un événement culturel ou d'un spectacle",
+          "Expliquer les avantages de l'apprentissage par la pratique (comme le théâtre)"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "pluridisciplinaire",
+            "part_of_speech": "adjectif",
+            "ipa": "[plyʁidisiplinɛʁ]",
+            "chinese": "多学科的，跨学科的",
+            "example_sentence": {
+              "french": "C'est un spectacle qui en fait est pluridisciplinaire.",
+              "chinese": "这实际上是一场跨学科的演出。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "C'est une grosse production parce qu'elle est pluridisciplinaire.",
+                "chinese": "这是一部大制作，因为它是跨学科的。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "chorégraphie",
+            "part_of_speech": "nom",
+            "ipa": "[kɔʁeɡʁafi]",
+            "chinese": "编舞，舞蹈设计",
+            "example_sentence": {
+              "french": "Il fait l'union entre la danse, des chorégraphies et du jeu théâtral.",
+              "chinese": "它将舞蹈、编舞和戏剧表演结合在一起。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5,
+              10
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Il y a du chant, il y a de la chorégraphie et il y a énormément d'interactions.",
+                "chinese": "有歌唱，有编舞，还有大量的互动。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "conséquent",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɔ̃sekɑ̃]",
+            "chinese": "重要的，大量的，规模大的",
+            "example_sentence": {
+              "french": "C'est une grosse production parce qu'elle est pluridisciplinaire mais aussi parce qu'elle est conséquente.",
+              "chinese": "这是一部大制作，不仅因为它是跨学科的，还因为它的规模相当大。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est une grosse production parce qu'elle est pluridisciplinaire mais aussi parce qu'elle est conséquente.",
+                "chinese": "这是一部大制作，不仅因为它是跨学科的，还因为它的规模相当大。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "immersion",
+            "part_of_speech": "nom",
+            "ipa": "[imɛʁsjɔ̃]",
+            "chinese": "沉浸，沉浸式体验",
+            "example_sentence": {
+              "french": "Il ne s'agit pas que d'un spectacle avec des spectateurs assis, mais bien d'une expérience d'immersion.",
+              "chinese": "这不仅仅是一场观众坐着看的演出，而是一次沉浸式的体验。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il ne s'agit pas que d'un spectacle avec des spectateurs assis, mais bien d'une expérience d'immersion.",
+                "chinese": "这不仅仅是一场观众坐着看的演出，而是一次沉浸式的体验。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "dévoiler",
+            "part_of_speech": "verbe",
+            "ipa": "[devwale]",
+            "chinese": "揭露，透露",
+            "example_sentence": {
+              "french": "Je ne vais pas trop en dévoiler, mais il s'agit vraiment d'une expérience humaine.",
+              "chinese": "我不想透露太多，但这确实是一次人类体验。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je ne vais pas trop en dévoiler, mais il s'agit vraiment d'une expérience humaine.",
+                "chinese": "我不想透露太多，但这确实是一次人类体验。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "francophone",
+            "part_of_speech": "adjectif / nom",
+            "ipa": "[fʁɑ̃kɔfɔn]",
+            "chinese": "讲法语的（人）",
+            "example_sentence": {
+              "french": "Ils sont tous francophones puisque le lycée Condorcet est un établissement scolaire francophone.",
+              "chinese": "他们都是讲法语的，因为孔多塞高中是一所法语学校。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              7,
+              9,
+              14
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Même pour certains francophones, ça peut être difficile.",
+                "chinese": "甚至对一些讲法语的人来说，这也可能很难。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "improvisation",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃pʁɔvizasjɔ̃]",
+            "chinese": "即兴表演",
+            "example_sentence": {
+              "french": "L'improvisation autorise l'erreur et travaille sur énormément d'autres aspects.",
+              "chinese": "即兴表演允许犯错，并在许多其他方面进行锻炼。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              14,
+              15
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Est-ce que l'improvisation est une bonne façon de faire des progrès plus rapidement ?",
+                "chinese": "即兴表演是更快取得进步的好方法吗？",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "lâcher-prise",
+            "part_of_speech": "nom",
+            "ipa": "[laʃepʁiz]",
+            "chinese": "放手，顺其自然，放下包袱",
+            "example_sentence": {
+              "french": "L'improvisation travaille sur d'autres aspects qui sont aussi le lâcher-prise.",
+              "chinese": "即兴表演还锻炼其他方面，比如学会放手。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              15
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'improvisation travaille sur d'autres aspects qui sont aussi le lâcher-prise.",
+                "chinese": "即兴表演还锻炼其他方面，比如学会放手。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "amateur",
+            "part_of_speech": "adjectif / nom",
+            "ipa": "[amatœʁ]",
+            "chinese": "业余的（爱好者）",
+            "example_sentence": {
+              "french": "Tous les comédiens amateurs s'expriment en français.",
+              "chinese": "所有的业余演员都用法语表达。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Tous les comédiens amateurs s'expriment en français.",
+                "chinese": "所有的业余演员都用法语表达。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "interpréter",
+            "part_of_speech": "verbe",
+            "ipa": "[ɛ̃tɛʁpʁete]",
+            "chinese": "表演，演绎，诠释",
+            "example_sentence": {
+              "french": "Ils vont interpréter différents rôles de cette époque de Louis XIV.",
+              "chinese": "他们将扮演路易十四时代各种不同的角色。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6,
+              13
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Voir et écouter une personne interpréter un texte, c'est une belle façon de se connecter à une culture.",
+                "chinese": "观看并聆听一个人演绎一段文字，是与一种文化建立联系的美妙方式。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "accessible",
+            "part_of_speech": "adjectif",
+            "ipa": "[aksesibl]",
+            "chinese": "易懂的，可获得的，平易近人的",
+            "example_sentence": {
+              "french": "Est-ce que c'est accessible pour les personnes qui ne parlent pas couramment ?",
+              "chinese": "这对那些说得不流利的人来说容易理解吗？"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              8,
+              11
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le spectacle est gratuit, donc accessible à tous et à toutes.",
+                "chinese": "演出是免费的，因此所有人都可以观看。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "couramment",
+            "part_of_speech": "adverbe",
+            "ipa": "[kuʁamɑ̃]",
+            "chinese": "流利地",
+            "example_sentence": {
+              "french": "Ils parlent tous couramment français ?",
+              "chinese": "他们都流利地讲法语吗？"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              7,
+              8,
+              13
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Même si vous ne pratiquez pas le français couramment, c'est toujours une belle expérience.",
+                "chinese": "即使你并不流利地使用法语，这依然是一次美好的体验。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "pas n'importe quel",
+            "meaning": "不是随便哪一个，非同一般的",
+            "example": {
+              "french": "Oui, c'est vrai et pas n'importe quel spectacle puisqu'il s'agit de la comédie musicale du Roi Soleil.",
+              "chinese": "是的，没错，而且这不是一般的演出，因为它是《太阳王》音乐剧。"
+            },
+            "usage_note": "Utilisé pour souligner l'importance ou le caractère exceptionnel de quelque chose.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "en cours de chemin",
+            "meaning": "在半路上，中途",
+            "example": {
+              "french": "C'est un énorme projet que je n'ai pas débuté, mais que j'ai repris en cours de chemin au mois de novembre.",
+              "chinese": "这是一个我没有从头开始的大项目，但我是在11月份中途接手的。"
+            },
+            "usage_note": "Expression idiomatique signifiant 'pendant que l'action est déjà commencée'.",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "expression": "mettre l'accent sur",
+            "meaning": "强调，把重点放在",
+            "example": {
+              "french": "J'aimerais vraiment mettre l'accent sur cette valeur-là.",
+              "chinese": "我真的想强调这一价值。"
+            },
+            "usage_note": "Très courant à l'oral comme à l'écrit pour indiquer la priorité ou l'importance d'un point.",
+            "source_ids": [
+              8
+            ]
+          },
+          {
+            "expression": "spectacle vivant",
+            "meaning": "现场演出，表演艺术",
+            "example": {
+              "french": "La première raison qui me vient à l'esprit, c'est le spectacle vivant.",
+              "chinese": "我脑海中浮现的第一个原因就是现场演出。"
+            },
+            "usage_note": "Terme culturel désignant les arts de la scène (théâtre, danse, musique) joués en direct devant un public.",
+            "source_ids": [
+              12
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le subjonctif après un superlatif",
+            "structure": "Le/La/Les + plus/mieux/meilleur + que + Sujet + Verbe au subjonctif",
+            "explanation": "Après une expression au superlatif (le meilleur, le seul, le plus, le mieux), on utilise souvent le subjonctif pour exprimer une opinion subjective ou une idée qui n'est pas absolue.",
+            "example": {
+              "french": "Le mieux qu'on puisse conseiller à nos auditeurs, c'est d'aller voir ce spectacle.",
+              "chinese": "我们能给听众最好的建议，就是去观看这场演出。"
+            },
+            "usage_note": "Ici, 'puisse' est le subjonctif présent du verbe 'pouvoir'.",
+            "source_ids": [
+              10
+            ]
+          },
+          {
+            "name": "Les verbes pronominaux à sens passif",
+            "structure": "Sujet inanimé + se + Verbe à la 3e personne",
+            "explanation": "Lorsqu'un verbe pronominal est utilisé avec un sujet inanimé (une chose, un concept), il a souvent un sens passif. L'action est subie par le sujet, mais on ne précise pas par qui.",
+            "example": {
+              "french": "Une langue est vivante. Donc elle peut se vivre à travers des émotions.",
+              "chinese": "语言是活的。因此，它可以通过情感被体验（感受）。"
+            },
+            "usage_note": "Dans le texte, on trouve aussi 'un spectacle qui se veut ouvert' (un spectacle qui a la volonté d'être ouvert / qui est conçu pour être ouvert).",
+            "source_ids": [
+              8,
+              13
+            ]
+          },
+          {
+            "name": "Les pronoms relatifs (qui, que)",
+            "structure": "Nom antécédent + qui (sujet) / que (objet direct) + suite de la proposition",
+            "explanation": "Les pronoms relatifs permettent de relier deux phrases en évitant la répétition. 'Qui' remplace le sujet du verbe qui suit, tandis que 'que' (ou qu') remplace l'objet direct.",
+            "example": {
+              "french": "C'est un énorme projet que je n'ai pas débuté [...] mais que j'ai repris en cours de chemin.",
+              "chinese": "这是一个我没有从头开始，但中途接手的大项目。"
+            },
+            "usage_note": "Attention à l'accord du participe passé avec 'que' si le temps est composé (ex: les rôles qu'ils ont joués).",
+            "source_ids": [
+              6
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɛ̃] vs [ɑ̃]",
+              "description": "Le texte contient beaucoup de voyelles nasales, typiques du français. Il est important de bien distinguer le [ɛ̃] (improvisation, interpréter) du [ɑ̃] (francophone, couramment).",
+              "examples": [
+                "improvisation",
+                "francophone"
+              ]
+            }
+          ],
+          "liaison": [
+            "est un [ɛ.t‿œ̃] énorme succès",
+            "les élèves [le.z‿elɛv]",
+            "pas n'importe quel [pa.nɛ̃.pɔʁ.tə.kɛl] (enchaînement consonantique)"
+          ],
+          "intonation": "L'intonation monte à la fin des questions directes ('Ils parlent tous couramment français ?') et reste suspendue lors des énumérations ('la danse, des chorégraphies et du jeu théâtral')."
+        },
+        "vocabulary_network": {
+          "theme": "Le Théâtre et le Spectacle",
+          "core_word": "Spectacle",
+          "related_groups": [
+            {
+              "category": "Personnes",
+              "words": [
+                "spectateurs",
+                "comédiens",
+                "amateurs",
+                "élèves"
+              ]
+            },
+            {
+              "category": "Éléments du spectacle",
+              "words": [
+                "chorégraphie",
+                "danse",
+                "jeu théâtral",
+                "chant",
+                "texte",
+                "rôles"
+              ]
+            },
+            {
+              "category": "Action théâtrale",
+              "words": [
+                "mettre en scène",
+                "interpréter",
+                "improvisation",
+                "lâcher-prise"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Ce ___ est né grâce à la ___ de 23 élèves qui ont passé un ___ et ils vont ___ différents ___ de cette époque de Louis XIV.",
+            "answer": "projet, motivation, casting, interpréter, rôles",
+            "explanation": "根据原文第6段，Natacha解释了这个项目是如何诞生的，以及学生们将如何演绎路易十四时代的不同角色。这些词汇测试了对戏剧项目背景的理解。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon Natacha Muller, pourquoi la pièce 'Le Roi Soleil' peut-elle être difficile à comprendre pour certains spectateurs ?",
+            "options": {
+              "A": "Parce que le français utilisé date du XVIe et XVIIe siècle.",
+              "B": "Parce que les acteurs parlent trop vite et sans micro.",
+              "C": "Parce qu'il n'y a pas de texte du tout dans ce spectacle.",
+              "D": "Parce que c'est une pièce réservée uniquement aux professeurs."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第9段明确提到：'ça peut être difficile à comprendre parce que c'est un français qui date du temps du XVIe, XVIIe siècle et qui, même pour certains francophones, peut être difficile.'",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Le mieux qu'on puisse conseiller à nos auditeurs, c'est d'aller voir ce spectacle.",
+            "answer": "我们能给听众最好的建议，就是去观看这场演出。",
+            "explanation": "翻译难点在于'Le mieux qu'on puisse conseiller'（最高级+虚拟式结构），意为'我们能建议的最好的事情'。'auditeurs'指电台听众。",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant la forme pronominale à sens passif (comme vu dans le texte) : 'On peut vivre une langue à travers des émotions.'",
+            "answer": "Une langue peut se vivre à travers des émotions.",
+            "explanation": "原文中使用了代词式动词的被动意义（se vivre）。当主语是无生命事物（une langue）时，使用'se + verbe'来表达被动含义，即'语言可以被体验'。",
+            "source_ids": [
+              13
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "interpréter",
+            "francophone"
+          ],
+          "covered_grammar": [
+            "Le subjonctif après un superlatif",
+            "Les verbes pronominaux à sens passif"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il ne s'agit pas que de [A], mais bien de [B].",
+            "explanation": "用于强调某事物不仅仅是A，更是B。'que'在这里是'seulement'的意思，'bien'用于加强语气。",
+            "example": {
+              "french": "Il ne s'agit pas que d'un spectacle avec des spectateurs assis, mais bien d'une expérience d'immersion.",
+              "chinese": "这不仅仅是一场观众坐着观看的演出，而是一次沉浸式的体验。"
+            }
+          },
+          {
+            "pattern": "Le mieux qu'on puisse [verbe à l'infinitif], c'est de [verbe à l'infinitif].",
+            "explanation": "用于给出强烈建议，意为'我们能做的最好的事情就是...'，注意puisse是pouvoir的虚拟式。",
+            "example": {
+              "french": "Le mieux qu'on puisse faire, c'est de pratiquer tous les jours.",
+              "chinese": "我们能做的最好的事情，就是每天练习。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous discutez avec un ami francophone d'un spectacle de théâtre que vous venez de voir. Vous lui expliquez pourquoi c'était une expérience unique et comment cela vous a aidé à pratiquer votre français.",
+          "requirements": "Utilisez au moins 3 mots de vocabulaire liés au théâtre (ex: interpréter, chorégraphie, mise en scène) et l'expression 'mettre l'accent sur'.",
+          "starter": "Salut ! Tu sais, je suis allé voir une pièce de théâtre hier soir, et ce n'était pas n'importe quel spectacle..."
+        }
+      },
+      "summary": {
+        "content": "Dans cet épisode de SBS Easy French, Natacha Muller, fondatrice de The French Loop, présente la comédie musicale 'Le Roi Soleil' mise en scène au lycée Condorcet de Sydney. Ce projet pluridisciplinaire implique 23 élèves francophones. Natacha souligne que le théâtre et l'improvisation sont d'excellents moyens d'apprendre le français, car ils permettent le lâcher-prise et offrent une véritable immersion culturelle et humaine.",
+        "keywords": [
+          "théâtre",
+          "comédie musicale",
+          "apprentissage du français",
+          "improvisation",
+          "immersion",
+          "Sydney"
+        ],
+        "difficulty_note": "Le texte est de niveau intermédiaire (B1/B2). Le vocabulaire lié au théâtre et à l'éducation est riche. La syntaxe comprend des structures avancées comme le subjonctif et les pronoms relatifs, bien que le débit de parole soit clair et accessible."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:33.619",
+          "end": "00:07:00.329"
+        },
+        "theme": "Culture, Théâtre et Apprentissage des langues",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开始新生活并不容易。很多公司拒绝了我。有时候我觉得，唉，我干不下去了，我想放弃。《Work in Progress》是一档帮助技术移民在新的国家重建职业生涯的播客。你将听到鼓舞人心的真实故事、专家建议和宝贵的技巧，帮助你找到工作并提升你的职业生涯。《Work in Progress》。现在就在你收听播客的各大平台收听吧。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.619",
+          "end_time": "00:01:09.989",
+          "french": "Vous êtes avec SBS French. Bonjour et bienvenue dans ce nouvel épisode de SBS Easy French. Ce podcast est réalisé en partenariat avec l'Alliance française de Melbourne. Cette semaine, on vous propose une interview. Nous avons rencontré Natacha Muller, professeure de français et fondatrice de la compagnie de théâtre The French Loop. Elle nous parle d'un spectacle qu'elle met en scène au lycée Condorcet à Sydney, Le Roi Soleil.",
+          "chinese": "您正在收听的是SBS法语频道。大家好，欢迎收听新一期的《SBS简易法语》播客。本播客由墨尔本法语联盟合作制作。本周，我们为大家带来一段采访。我们采访了法语老师兼The French Loop剧团创始人娜塔莎·穆勒。她将向我们介绍她在悉尼孔多塞中学执导的剧目《太阳王》。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:17.620",
+          "end_time": "00:01:44.260",
+          "french": "Mesdames et messieurs, bonjour, je suis avec Natacha Muller, une Française basée à Sydney qui a fondé The French Loop, une école d'improvisation théâtrale. Natacha, bonjour. Bonjour Marianne, bonjour à tous. Vous êtes sur nos ondes aujourd'hui parce que vous voulez nous parler d'un spectacle. Oui, c'est vrai et pas n'importe quel spectacle puisqu'il s'agit de la comédie musicale du Roi Soleil.",
+          "chinese": "女士们先生们，大家好，现在和我在一起的是娜塔莎·穆勒，她是一位居住在悉尼的法国人，创办了即兴戏剧学校The French Loop。娜塔莎，你好。你好，玛丽安，大家好。今天你来到我们的节目，是因为你想和我们聊聊一部剧。是的，没错，而且这不是一部普通的剧，而是音乐剧《太阳王》。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:45.109",
+          "end_time": "00:01:54.629",
+          "french": "qui a eu un énorme succès en France il y a, je crois, 20 ans cette année et qui ressort. J'ai eu l'opportunité de mettre en scène ce spectacle.",
+          "chinese": "我记得这部剧今年刚好是它在法国大获成功20周年，现在它又重新上演了。我有幸能执导这部剧。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:54.840",
+          "end_time": "00:02:16.710",
+          "french": "au lycée Condorcet de Sydney. Et ce spectacle en particulier représente un challenge. C'est un spectacle qui en fait est pluridisciplinaire. Il fait l'union entre la danse, des chorégraphies et du jeu théâtral. C'est une grosse production parce qu'elle est pluridisciplinaire mais aussi parce qu'elle est conséquente. Le spectacle dure deux heures.",
+          "chinese": "在悉尼的孔多塞中学。这部剧本身就是一个挑战。它实际上是一部跨学科的剧目。它结合了舞蹈、编舞和戏剧表演。这是一部大制作，不仅因为它跨越多个领域，还因为它的规模很大。整场演出长达两个小时。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:17.020",
+          "end_time": "00:02:45.259",
+          "french": "C'est un énorme projet que je n'ai pas débuté, en étant tout honnête avec vous, mais que j'ai repris en cours de chemin au mois de novembre. Donc j'ai dû m'adapter aux élèves et les élèves ont dû s'adapter à moi. Ce projet est né grâce à la motivation de 23 élèves qui ont passé un casting et ils vont interpréter différents rôles de cette époque de Louis XIV.",
+          "chinese": "老实说，这个庞大的项目并不是我发起的，而是在11月份中途接手的。所以我必须适应学生，学生也必须适应我。这个项目的诞生得益于23名通过试镜的学生的积极参与，他们将扮演路易十四时代的各种角色。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:45.400",
+          "end_time": "00:03:07.340",
+          "french": "Ils sont âgés entre 10 et 17 ans, ce qui est incroyable. Ils parlent tous couramment français ? Oui. Alors, ils sont tous francophones puisque le lycée Condorcet est un établissement scolaire francophone et tous les comédiens amateurs, les élèves s'expriment en français et chantent en français.",
+          "chinese": "他们的年龄在10到17岁之间，这太不可思议了。他们法语都很流利吗？是的。他们都是讲法语的，因为孔多塞中学是一所法语学校，所有这些业余演员，也就是学生们，都用法语表演和唱歌。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:07.900",
+          "end_time": "00:03:36.620",
+          "french": "Et le fait que ce soit entièrement en français, est-ce que c'est accessible pour les personnes qui ne parlent pas couramment ? Oui et non. Oui, parce que c'est un spectacle qui se veut ouvert et qui est, au-delà d'être un spectacle de théâtre, une expérience humaine. J'aimerais vraiment mettre l'accent sur cette valeur-là. Il ne s'agit pas que d'un spectacle avec des spectateurs assis, mais bien d'une expérience d'immersion.",
+          "chinese": "既然全剧都是法语，那对于法语不流利的人来说能看懂吗？可以说是，也可以说不是。说是，因为这是一部旨在包容开放的剧目，它不仅是一场戏剧演出，更是一种人文体验。我非常想强调这一价值。它不仅仅是让观众坐在那里看的一场演出，而是一种沉浸式的体验。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:37.050",
+          "end_time": "00:04:03.240",
+          "french": "C'est-à-dire que dès le moment où les personnes spectatrices vont arriver, elles vont rentrer dans un univers. Je ne vais pas trop en dévoiler, mais il s'agit vraiment d'une expérience humaine. Et non, ça peut être difficile à comprendre parce que c'est un français qui date du temps du XVIe, XVIIe siècle et qui, même pour certains francophones, peut être difficile.",
+          "chinese": "也就是说，从观众到达的那一刻起，他们就会进入一个全新的世界。我不想剧透太多，但这确实是一种人文体验。说不是，是因为它可能很难理解，因为它使用的是16、17世纪的法语，即使对一些母语为法语的人来说也可能有难度。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:03.580",
+          "end_time": "00:04:31.050",
+          "french": "Mais l'essentiel de cette comédie musicale, c'est qu'elle ne repose pas sur le texte. Ce n'est pas un spectacle de texte. Il y a du chant, il y a de la chorégraphie et il y a énormément d'interactions. Le mieux qu'on puisse conseiller à nos auditeurs, c'est d'aller voir ce spectacle. C'est à Sydney. Parlez-nous des dates, du prix d'entrée. Je crois que là, il va y avoir une très bonne surprise. Racontez-nous.",
+          "chinese": "但这部音乐剧最重要的一点是，它并不依赖于台词。它不是一部纯台词剧。里面有唱歌、有舞蹈编排，还有大量的互动。我们能给听众最好的建议就是亲自去看看这部剧。演出在悉尼。跟我们说说演出日期和门票价格吧。我相信这会是一个很大的惊喜。告诉我们吧。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:31.290",
+          "end_time": "00:05:01.579",
+          "french": "Les dates ouvertes au public sont le samedi 14, le jeudi 19 et le samedi 21 mars à 18h30. Et vous avez bien raison de le dire, Marianne, le spectacle est gratuit, donc accessible à tous et à toutes. Deux heures de spectacle gratuitement au lycée Condorcet à Sydney. Natacha, au-delà de ce spectacle, parlons un petit peu du théâtre. En quoi le théâtre est une bonne matière pour apprendre à parler le français ?",
+          "chinese": "对公众开放的日期是3月14日星期六、19日星期四和21日星期六晚上6点30分。你说得很对，玛丽安，演出是免费的，所以所有人都可以来看。在悉尼孔多塞中学免费观看两小时的演出。娜塔莎，除了这部剧，我们来聊聊戏剧本身。为什么说戏剧是学习说法语的好方法？"
+        },
+        {
+          "id": 12,
+          "start_time": "00:05:02.199",
+          "end_time": "00:05:07.019",
+          "french": "Eh bien, la première raison qui me vient à l'esprit, c'est le spectacle vivant.",
+          "chinese": "嗯，我脑海中浮现的第一个原因就是，它是现场表演。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:07.160",
+          "end_time": "00:05:34.310",
+          "french": "C'est vivant et une langue est vivante. Donc elle peut se vivre à travers des émotions, à travers des chansons, à travers des textes. Et voir et écouter une personne interpréter un texte, c'est une belle façon de se connecter à une culture, mais aussi à une langue. Je pense que même si vous ne pratiquez pas le français couramment, c'est toujours une belle expérience. Et c'est aussi un point de rencontre incroyable.",
+          "chinese": "它是鲜活的，而语言也是鲜活的。因此，语言可以通过情感、歌曲和文本来体验。看着并听着一个人演绎一段文本，是连接一种文化和一门语言的绝佳方式。我认为，即使你的法语不是很流利，这也始终是一次美妙的体验。而且，这也是一个不可思议的交汇点。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:34.389",
+          "end_time": "00:06:01.319",
+          "french": "pour rencontrer de nouvelles personnes, mais aussi se connecter avec la communauté francophone. Vous êtes également professeure de français, en plus d'être professeure de théâtre. Est-ce que vous diriez aux gens qui ont peur de se lancer parce qu'ils ne maîtrisent pas forcément la grammaire ou la conjugaison, est-ce que vous leur diriez que, justement, l'improvisation est une bonne façon de faire des progrès plus rapidement ?",
+          "chinese": "让你结识新朋友，同时也能与法语社区建立联系。除了戏剧老师，你也是一名法语老师。对于那些因为不精通语法或动词变位而害怕开口的人，你会不会告诉他们，即兴表演恰恰是更快取得进步的好方法？"
+        },
+        {
+          "id": 15,
+          "start_time": "00:06:01.819",
+          "end_time": "00:06:30.410",
+          "french": "Oui, en ce qui concerne l'improvisation, bien sûr, puisque l'improvisation autorise l'erreur et travaille sur énormément d'autres aspects de l'humain et du théâtre, qui sont aussi le lâcher-prise, l'expression orale et corporelle. Mais à une plus grande échelle, et en ce qui concerne cette pièce, le théâtre, qu'il soit de texte ou improvisé, c'est une façon de se connecter avec soi-même, avec une communauté et avec la culture.",
+          "chinese": "是的，就即兴表演而言，当然是这样，因为即兴表演允许犯错，并且能锻炼人类和戏剧的许多其他方面，比如释放自我、口头和肢体表达。但从更广泛的意义上讲，就这部剧而言，戏剧，无论是台词剧还是即兴剧，都是一种与自我、与社区、与文化建立联系的方式。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:30.620",
+          "end_time": "00:07:00.329",
+          "french": "Natacha Muller, merci beaucoup. Merci beaucoup pour votre temps et j'espère vous revoir tous au spectacle le samedi 14 et le samedi 21 mars et le jeudi 19 mars. Les trois dates, le spectacle commencera à 18h30. Merci messieurs-dames d'avoir suivi cette émission. Nous nous retrouvons la semaine prochaine pour un nouvel épisode de SBS Easy French. À bientôt !",
+          "chinese": "娜塔莎·穆勒，非常感谢你。非常感谢你抽出时间，我希望在3月14日星期六、21日星期六和19日星期四的演出中见到大家。这三个日期，演出都将在晚上6点30分开始。感谢各位听众收听本期节目。我们下周再见，带来新一期的《SBS简易法语》。再见！"
+        },
+        {
+          "id": 17,
+          "start_time": "00:07:06.300",
+          "end_time": "00:07:13.420",
+          "french": "Aimez, partagez, commentez. Suivez-nous sur facebook.com.",
+          "chinese": "欢迎点赞、分享、评论。请在facebook.com上关注我们。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:19.319",
+          "end_time": "00:07:48.000",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开始新生活并不容易。很多公司拒绝了我。有时候我觉得，唉，我干不下去了，我想放弃。《Work in Progress》是一档帮助技术移民在新的国家重建职业生涯的播客。你将听到鼓舞人心的真实故事、专家建议和宝贵的技巧，帮助你找到工作并提升你的职业生涯。《Work in Progress》。现在就在你收听播客的各大平台收听吧。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:07:48.000",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 18,
+        "source_video_name": "SBS Easy French #278 _ Un spectacle gratuit en français à Sydney _ tentés _.json",
+        "tags": [
+          "考试干货",
+          "艺术人文"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

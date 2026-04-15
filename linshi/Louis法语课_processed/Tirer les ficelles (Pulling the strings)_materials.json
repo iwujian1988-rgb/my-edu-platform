@@ -1,0 +1,603 @@
+{
+  "source_file": "Tirer les ficelles (Pulling the strings).json",
+  "channel": "Louis法语课",
+  "video_name": "Tirer les ficelles (Pulling the strings)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T23:55:24.792Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 8,
+          "review_words": 0
+        },
+        "grammar": [
+          "不定式过去时 (L'infinitif passé)",
+          "虚拟式现在时 (Le subjonctif présent)",
+          "被动语态 (La voix passive)"
+        ],
+        "speaking": [
+          "能够讨论关于网络安全和国际指控的基本话题",
+          "能够描述金融服务中的利率、账户资格等基本概念"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "rapporter",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁapɔʁte]",
+            "chinese": "带来（收益），产生",
+            "example_sentence": {
+              "french": "Votre argent non investi peut rapporter jusqu'à 3,95 % d'APY.",
+              "chinese": "您的闲置资金最高可获得 3.95% 的年化收益率。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Cet investissement rapporte beaucoup.",
+                "chinese": "这项投资收益颇丰。",
+                "source_video": "Wealthfront Ad"
+              }
+            ]
+          },
+          {
+            "french": "éligible",
+            "part_of_speech": "adjectif",
+            "ipa": "[eliʒibl]",
+            "chinese": "符合条件的，有资格的",
+            "example_sentence": {
+              "french": "Plus de transferts instantanés gratuits pour les comptes éligibles.",
+              "chinese": "符合条件的账户可享受更多即时免费转账。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Êtes-vous éligible à cette offre ?",
+                "chinese": "您符合这项优惠的条件吗？",
+                "source_video": "Wealthfront Ad"
+              }
+            ]
+          },
+          {
+            "french": "faciliter",
+            "part_of_speech": "verbe",
+            "ipa": "[fasilite]",
+            "chinese": "促进，为……提供便利，协助",
+            "example_sentence": {
+              "french": "L'Iran est accusé d'avoir facilité une cyberattaque.",
+              "chinese": "伊朗被指控协助实施了一场网络攻击。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              4
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Cet homme a facilité le vol en prêtant sa voiture.",
+                "chinese": "这个人通过借出汽车为盗窃提供了便利。",
+                "source_video": "Lesson Context"
+              }
+            ]
+          },
+          {
+            "french": "fournisseur",
+            "part_of_speech": "nom masculin",
+            "ipa": "[fuʁnisœʁ]",
+            "chinese": "供应商",
+            "example_sentence": {
+              "french": "Un fournisseur d'énergie, c'est une société qui produit de l'énergie.",
+              "chinese": "能源供应商是一家生产能源的公司。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Il travaille pour un fournisseur d'accès internet.",
+                "chinese": "他在一家互联网服务供应商工作。",
+                "source_video": "News Context"
+              }
+            ]
+          },
+          {
+            "french": "enquête",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɑ̃kɛt]",
+            "chinese": "调查",
+            "example_sentence": {
+              "french": "Washington demande une enquête internationale urgente.",
+              "chinese": "华盛顿要求立即展开国际调查。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              6,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "La police a ouvert une enquête.",
+                "chinese": "警方已展开调查。",
+                "source_video": "News Context"
+              }
+            ]
+          },
+          {
+            "french": "cyberattaque",
+            "part_of_speech": "nom féminin",
+            "ipa": "[sibɛʁatak]",
+            "chinese": "网络攻击",
+            "example_sentence": {
+              "french": "L'Iran est accusé d'avoir facilité une cyberattaque.",
+              "chinese": "伊朗被指控协助实施了一场网络攻击。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              4,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Une cyberattaque a paralysé le réseau.",
+                "chinese": "一场网络攻击瘫痪了网络。",
+                "source_video": "News Context"
+              }
+            ]
+          },
+          {
+            "french": "variable",
+            "part_of_speech": "adjectif",
+            "ipa": "[vaʁjabl]",
+            "chinese": "可变的，浮动的",
+            "example_sentence": {
+              "french": "Le taux est variable, il n'est pas fixe.",
+              "chinese": "利率是浮动的，不是固定的。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le temps est très variable en montagne.",
+                "chinese": "山里的天气变化无常。",
+                "source_video": "Financial Context"
+              }
+            ]
+          },
+          {
+            "french": "instantané",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃stɑ̃tane]",
+            "chinese": "即时的，瞬间的",
+            "example_sentence": {
+              "french": "Plus de transferts instantanés gratuits.",
+              "chinese": "更多即时免费转账。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              8
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "La réponse a été instantanée.",
+                "chinese": "回答是即刻的。",
+                "source_video": "Wealthfront Ad"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "tirer les ficelles",
+            "meaning": "操纵局势，幕后操纵",
+            "example": {
+              "french": "Aujourd'hui, la leçon est : « Tirer les ficelles ».",
+              "chinese": "今天这节课的主题是：‘操纵局势’。"
+            },
+            "usage_note": "这是一个成语，字面意思是“拉动（木偶的）线”，比喻在幕后控制局面。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "être accusé de",
+            "meaning": "被指控……",
+            "example": {
+              "french": "L'Iran est accusé d'avoir facilité une cyberattaque.",
+              "chinese": "伊朗被指控协助实施了一场网络攻击。"
+            },
+            "usage_note": "后接名词或不定式过去时，表示被指控做了某事。",
+            "source_ids": [
+              2,
+              3,
+              7
+            ]
+          },
+          {
+            "expression": "avoir lieu",
+            "meaning": "发生，举行",
+            "example": {
+              "french": "Il faut que l'enquête ait lieu tout de suite.",
+              "chinese": "调查必须立即启动。"
+            },
+            "usage_note": "常用于描述会议、事故或调查的发生。",
+            "source_ids": [
+              6
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "不定式过去时 (L'infinitif passé)",
+            "structure": "avoir/être 的不定式 + 过去分词",
+            "explanation": "用于表达在主句动作之前已经完成的动作。在文中用于指控已经发生的行为。",
+            "example": {
+              "french": "L'Iran est accusé d'avoir facilité une cyberattaque.",
+              "chinese": "伊朗被指控协助（已经发生）了一场网络攻击。"
+            },
+            "usage_note": "注意助动词的选择（大部分用avoir，代词式动词和部分不及物动词用être）。",
+            "source_ids": [
+              2,
+              3,
+              4
+            ]
+          },
+          {
+            "name": "虚拟式现在时 (Le subjonctif présent)",
+            "structure": "que + 主语 + 虚拟式动词变位",
+            "explanation": "在表达必要性、愿望或命令的无人称句型 'il faut que' 后必须使用虚拟式。",
+            "example": {
+              "french": "Il faut que l'enquête ait lieu tout de suite.",
+              "chinese": "调查必须立即启动。"
+            },
+            "usage_note": "动词 'avoir' 的虚拟式变位在第三人称单数时为 'ait'。",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "name": "被动语态 (La voix passive)",
+            "structure": "être + 过去分词 (+ par + 施动者)",
+            "explanation": "用于强调动作的承受者。在新闻报道中非常常见。",
+            "example": {
+              "french": "L'Iran est accusé.",
+              "chinese": "伊朗被指控。"
+            },
+            "usage_note": "过去分词必须与主语的性、数保持一致。",
+            "source_ids": [
+              2,
+              3
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "鼻腔元音，发音时舌位靠后，口型微张，气流从鼻腔流出。",
+              "examples": [
+                "enquête",
+                "argent",
+                "instantané"
+              ]
+            },
+            {
+              "sound": "[ɥi]",
+              "description": "半元音 [ɥ] 与元音 [i] 的组合，发音迅速。",
+              "examples": [
+                "produit",
+                "aujourd'hui"
+              ]
+            }
+          ],
+          "liaison": [
+            "un nouveau client [œ̃ nuvo klijɑ̃] (无联诵)",
+            "un fournisseur d'énergie [œ̃ fuʁnisœʁ deneʁʒi]",
+            "enquête internationale [ɑ̃kɛt ɛ̃tɛʁnasjonal]"
+          ],
+          "intonation": "在列举时（如 ID 1 中的百分比和条件），语调在每一项末尾略微上扬，在句末下降。"
+        },
+        "vocabulary_network": {
+          "theme": "Cyber-sécurité et Diplomatie",
+          "core_word": "Enquête",
+          "related_groups": [
+            {
+              "category": "Actions",
+              "words": [
+                "accuser",
+                "faciliter",
+                "suspecter",
+                "demander"
+              ]
+            },
+            {
+              "category": "Acteurs",
+              "words": [
+                "fournisseur",
+                "société",
+                "pays",
+                "client"
+              ]
+            },
+            {
+              "category": "Événements",
+              "words": [
+                "cyberattaque",
+                "vol",
+                "transfert"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "C'est un ___ de 0,65 % sur un ___ déjà ___ pendant 3 ___, juste pour être un ___ ___.",
+            "answer": "boost, taux, élevé, mois, nouveau, client",
+            "explanation": "根据原文第 1 句和第 8 句，这是描述 Wealthfront 账户给新客户的额外利率奖励。",
+            "source_ids": [
+              1,
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi Washington demande-t-il une enquête internationale urgente ?",
+            "options": {
+              "A": "Parce qu'un fournisseur d'énergie a augmenté ses prix.",
+              "B": "Parce que l'Iran est accusé d'avoir facilité une cyberattaque.",
+              "C": "Parce que les transferts d'argent ne sont plus gratuits.",
+              "D": "Parce que le taux d'intérêt est variable."
+            },
+            "answer": "B",
+            "explanation": "原文第 2、3 句明确指出：'L'Iran est accusé d'avoir facilité une cyberattaque... Washington demande une enquête internationale urgente.'",
+            "source_ids": [
+              2,
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Il ne faut pas attendre pour Washington, il faut que l'enquête ait lieu tout de suite, elle est urgente.",
+            "answer": "对华盛顿而言，绝不能等待，调查必须立即启动，这是当务之急。",
+            "explanation": "这句话考察了 'il faut que' 引导的虚拟式从句以及 'urgent' 作为形容词的用法。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "将以下两个句子合并为一个句子，使用 'être accusé de' + 不定式过去时：\nL'Iran est accusé. L'Iran a facilité une cyberattaque.",
+            "answer": "L'Iran est accusé d'avoir facilité une cyberattaque.",
+            "explanation": "使用不定式过去时 (avoir facilité) 来表示被指控的动作发生在‘被指控’这一状态之前。",
+            "source_ids": [
+              2,
+              3
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "boost",
+            "taux",
+            "élevé",
+            "client",
+            "cyberattaque",
+            "enquête",
+            "urgent"
+          ],
+          "covered_grammar": [
+            "Infinitif passé",
+            "Subjonctif présent",
+            "Voix passive"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "X est accusé d'avoir + [participe passé]",
+            "explanation": "用于正式表达某人或某机构被指控完成了某项负面行为。",
+            "example": {
+              "french": "L'homme est accusé d'avoir volé une voiture.",
+              "chinese": "该男子被指控偷了一辆车。"
+            }
+          },
+          {
+            "pattern": "Il faut que + [sujet] + [verbe au subjonctif]",
+            "explanation": "表达必须做某事，语气较强。",
+            "example": {
+              "french": "Il faut que tu viennes demain.",
+              "chinese": "你明天必须来。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你是一名国际新闻记者，正在报道一起涉及能源公司的安全事件。",
+          "requirements": "使用本课词汇（fournisseur, enquête, cyberattaque）和语法点（被动语态或虚拟式）。",
+          "starter": "Mesdames et messieurs, nous apprenons qu'une société importante est en danger..."
+        }
+      },
+      "summary": {
+        "content": "本课内容分为两部分：前半部分是 Wealthfront 现金账户的金融广告，介绍了高年化收益率（APY）、新客户奖励及即时转账功能；后半部分是一则国际新闻摘要，报道了伊朗因涉嫌协助针对以色列能源供应商的网络攻击而遭到指控，华盛顿方面要求立即展开国际调查。课程重点讲解了“操纵局势”（tirer les ficelles）这一表达及相关的法律与安全词汇。",
+        "keywords": [
+          "Cyberattaque",
+          "Enquête",
+          "Énergie",
+          "Taux d'intérêt",
+          "Accusation"
+        ],
+        "difficulty_note": "文本属于 B1 级别。虽然涉及金融和外交术语，但句子结构清晰，重复率高，适合中级学习者练习复杂时态（如不定式过去时和虚拟式）。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:03:34"
+        },
+        "theme": "Cyber-sécurité et Finance",
+        "cefr_level": "B1",
+        "vocabulary_count": 8,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.000",
+          "end_time": "00:00:17.710",
+          "french": "C'est le moment où votre argent devrait travailler plus dur pour vous. Avec le compte Wealthfront Cash, votre argent non investi peut rapporter jusqu'à 3,95 % d'APY. C'est un boost de 0,65 % sur un taux déjà élevé pendant trois mois, juste pour être un nouveau client. Plus de transferts instantanés gratuits pour les comptes éligibles. Commencez aujourd'hui sur Wealthfront.com.",
+          "chinese": "现在是让您的资金为您更努力工作的时候了。通过 Wealthfront 现金账户，您的未投资资金可获得高达 3.95% 的年收益率 (APY)。作为新客户，您可以在原本就很高的利率基础上，在前三个月享受 0.65% 的额外加成。此外，符合条件的账户还可享受免费的即时转账。立即访问 Wealthfront.com 开始使用。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:17.710",
+          "end_time": "00:00:47.140",
+          "french": "3.3% base APY via Program Banks as of January 30th, 2026. Rate is variable, requires no minimum and is earned on funds swept to Program Banks. Boost up to $150,000. Cash account offered by Wealthfront Brokerage LLC, member FINRA, SIPC, not a bank. Bonjour. Aujourd'hui, la leçon est : « Tirer les ficelles ». L'Iran est accusé d'avoir facilité une cyberattaque contre un fournisseur d'énergie israélien.",
+          "chinese": "截至 2026 年 1 月 30 日，通过合作银行提供的基础年收益率 (APY) 为 3.3%。利率是浮动的，无最低余额要求，且适用于转入合作银行的资金。加成上限为 150,000 美元。现金账户由 Wealthfront Brokerage LLC 提供，该公司是 FINRA 和 SIPC 成员，而非银行。你好。今天的课程是：“幕后操纵”。伊朗被指控协助了针对以色列能源供应商的网络攻击。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:47.380",
+          "end_time": "00:01:17.859",
+          "french": "Washington demande une enquête internationale urgente. Once again, l'Iran est accusé d'avoir facilité une cyberattaque contre un fournisseur d'énergie israélien. Washington demande une enquête internationale urgente. On commence avec « l'Iran est accusé ». L'Iran, le pays, est suspecté. Accusé, suspecté.",
+          "chinese": "华盛顿要求立即进行国际调查。伊朗再次被指控协助了针对以色列能源供应商的网络攻击。华盛顿要求立即进行国际调查。我们从“l'Iran est accusé”（伊朗被指控）开始。伊朗，这个国家，正受到怀疑。Accusé，即被指控、被怀疑。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:18.140",
+          "end_time": "00:01:46.120",
+          "french": "« D'avoir facilité ». Faciliter, c'est aider. Faciliter ou aider. Par exemple, cet homme a facilité le vol en prêtant sa voiture. Une cyberattaque avec Q-U-E à la fin.",
+          "chinese": "“D'avoir facilité”（协助）。Faciliter 就是帮助的意思。Faciliter 或 aider。例如，这个人通过出借汽车协助了盗窃。Cyberattaque（网络攻击），结尾是 Q-U-E。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:46.709",
+          "end_time": "00:02:11.750",
+          "french": "Contre, « against », contre un fournisseur d'énergie. Un fournisseur d'énergie, c'est une société, « a company », une société qui produit de l'énergie. « Make », produire, fabriquer de l'énergie. Attention, « énergie », I-E en français. Et il est israélien.",
+          "chinese": "Contre，即“反对”或“针对”，针对一家能源供应商。能源供应商是一家公司，“a company”，一家生产能源的公司。“Make”，即生产、制造能源。注意，法语中“énergie”的结尾是 I-E。而且它是以色列的。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:12.860",
+          "end_time": "00:02:42.219",
+          "french": "Washington demande. Alors « demander », ici c'est « to call », demander ou bien « ask », cela dépend du contexte. Demande une enquête, donc « an investigation » en anglais, une enquête internationale urgente, c'est-à-dire très rapidement. Il ne faut pas attendre pour Washington, il faut que l'enquête ait lieu tout de suite, elle est urgente.",
+          "chinese": "Washington demande（华盛顿要求）。这里的“demander”相当于英语的“to call”或“ask”，取决于语境。Demande une enquête，即英语中的“an investigation”（调查），一项紧急的国际调查，也就是说要非常迅速。对华盛顿来说，不能等待，调查必须立即进行，它是紧急的。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:46.840",
+          "end_time": "00:03:01.449",
+          "french": "L'Iran est accusé d'avoir facilité une cyberattaque contre un fournisseur d'énergie israélien. Washington demande une enquête internationale urgente.",
+          "chinese": "伊朗被指控协助了针对以色列能源供应商的网络攻击。华盛顿要求立即进行国际调查。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:03.830",
+          "end_time": "00:03:21.550",
+          "french": "C'est le moment où votre argent devrait travailler plus dur pour vous. Avec le compte Wealthfront Cash, votre argent non investi peut rapporter jusqu'à 3,95 % d'APY. C'est un boost de 0,65 % sur un taux déjà élevé pendant trois mois, juste pour être un nouveau client. Plus de transferts instantanés gratuits pour les comptes éligibles. Commencez aujourd'hui sur Wealthfront.com.",
+          "chinese": "现在是让您的资金为您更努力工作的时候了。通过 Wealthfront 现金账户，您的未投资资金可获得高达 3.95% 的年收益率 (APY)。作为新客户，您可以在原本就很高的利率基础上，在前三个月享受 0.65% 的额外加成。此外，符合条件的账户还可享受免费的即时转账。立即访问 Wealthfront.com 开始使用。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:21.550",
+          "end_time": "00:03:34.259",
+          "french": "3.3% base APY via Program Banks as of January 30th, 2026. Rate is variable, requires no minimum and is earned on funds swept to Program Banks. Boost up to $150,000. Cash account offered by Wealthfront Brokerage LLC, member FINRA, SIPC, not a bank.",
+          "chinese": "截至 2026 年 1 月 30 日，通过合作银行提供的基础年收益率 (APY) 为 3.3%。利率是浮动的，无最低余额要求，且适用于转入合作银行的资金。加成上限为 150,000 美元。现金账户由 Wealthfront Brokerage LLC 提供，该公司是 FINRA 和 SIPC 成员，而非银行。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.000",
+        "end_time": "00:03:34.259",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 9,
+        "source_video_name": "Tirer les ficelles (Pulling the strings).json",
+        "tags": [
+          "搞钱",
+          "商务"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "source_text_language",
+            "detail": "The vocabulary word 'variable' (French) references source IDs 2 and 9, where the corresponding text in the subtitles is actually in English ('Rate is variable').",
+            "field": "language_analysis.vocabulary[6].source_ids"
+          },
+          {
+            "level": "warning",
+            "check": "phonetic_terminology",
+            "detail": "The pronunciation section labels 'fournisseur d'énergie' and 'enquête internationale' as 'liaison', but these are technically examples of 'enchaînement' since the consonants [ʁ] and [t] are not normally silent in those words.",
+            "field": "deep_learning.pronunciation.liaison"
+          },
+          {
+            "level": "warning",
+            "check": "exercise_vocabulary_coverage",
+            "detail": "The exercises primarily test words from the subtitles that are not in the target vocabulary list (e.g., 'boost', 'taux', 'élevé', 'client', 'urgent'), while several target words (e.g., 'rapporter', 'éligible', 'faciliter') are not practiced.",
+            "field": "practice.exercise_summary.covered_vocabulary"
+          },
+          {
+            "level": "warning",
+            "check": "occurrence_count_accuracy",
+            "detail": "The occurrence_count for several words (faciliter, fournisseur, enquête, cyberattaque) is slightly lower than the actual number of times they appear in the provided subtitles.",
+            "field": "language_analysis.vocabulary"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 4,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

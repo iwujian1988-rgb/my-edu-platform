@@ -1,0 +1,549 @@
+{
+  "learning_objectives": {
+    "vocabulary": {
+      "new_words": 11,
+      "review_words": 4
+    },
+    "grammar": [
+      "Maîtriser la voix passive au présent (être touché par)",
+      "Utiliser 'depuis' pour exprimer l'origine d'une action continue",
+      "Comprendre l'utilisation du suffixe '-âtre' pour exprimer l'approximation"
+    ],
+    "speaking": [
+      "Expliquer une situation de crise ou de pénurie",
+      "Décrire les caractéristiques physiques et gustatives d'un aliment"
+    ]
+  },
+  "language_analysis": {
+    "vocabulary": [
+      {
+        "french": "moutarde",
+        "part_of_speech": "nom",
+        "ipa": "[mu.taʁd]",
+        "chinese": "芥末",
+        "example_sentence": {
+          "french": "La moutarde, c'est cette pâte jaunâtre.",
+          "chinese": "芥末，就是这种略带黄色的酱料。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          2,
+          6,
+          7
+        ],
+        "occurrence_count": 5,
+        "examples": [
+          {
+            "french": "Une pénurie nationale de moutarde.",
+            "chinese": "全国性的芥末短缺。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "pénurie",
+        "part_of_speech": "nom",
+        "ipa": "[pe.ny.ʁi]",
+        "chinese": "短缺，匮乏",
+        "example_sentence": {
+          "french": "Il y a une pénurie de pâtes dans les magasins.",
+          "chinese": "商店里出现了意大利面短缺。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          2,
+          5,
+          6,
+          7
+        ],
+        "occurrence_count": 6,
+        "examples": [
+          {
+            "french": "Eh bien, c'est une pénurie.",
+            "chinese": "嗯，这是一场短缺。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "précédent",
+        "part_of_speech": "nom/adjectif",
+        "ipa": "[pʁe.se.dɑ̃]",
+        "chinese": "前例，先例",
+        "example_sentence": {
+          "french": "C'est une crise sans précédent.",
+          "chinese": "这是一场前所未有的危机。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          2,
+          4,
+          7
+        ],
+        "occurrence_count": 6,
+        "examples": [
+          {
+            "french": "C'est-à-dire que dans l'histoire, ce n'est jamais arrivé.",
+            "chinese": "也就是说，在历史上，这种情况从未发生过。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "toucher",
+        "part_of_speech": "verbe",
+        "ipa": "[tu.ʃe]",
+        "chinese": "影响，波及，击中",
+        "example_sentence": {
+          "french": "La France est touchée par une crise.",
+          "chinese": "法国正遭受一场危机。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          2,
+          3,
+          4,
+          7
+        ],
+        "occurrence_count": 5,
+        "examples": [
+          {
+            "french": "J'ai été touché par une balle de revolver.",
+            "chinese": "我中了一颗左轮手枪子弹。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "crise",
+        "part_of_speech": "nom",
+        "ipa": "[kʁiz]",
+        "chinese": "危机",
+        "example_sentence": {
+          "french": "La France est touchée par une crise sans précédent.",
+          "chinese": "法国正遭受一场前所未有的危机。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          2,
+          4,
+          5,
+          7
+        ],
+        "occurrence_count": 4,
+        "examples": [
+          {
+            "french": "Quelle est cette crise sans précédent ?",
+            "chinese": "这场前所未有的危机究竟是什么？",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "atteindre",
+        "part_of_speech": "verbe",
+        "ipa": "[a.tɛ̃dʁ]",
+        "chinese": "打击，波及（此处用作被动语态）",
+        "example_sentence": {
+          "french": "Elle est atteinte, touchée.",
+          "chinese": "她被击中了，受到打击。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          3
+        ],
+        "occurrence_count": 1,
+        "examples": [
+          {
+            "french": "Elle est atteinte, touchée, hit en anglais.",
+            "chinese": "她被击中了，受到打击，在英语中是“hit”。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "manque",
+        "part_of_speech": "nom",
+        "ipa": "[mɑ̃k]",
+        "chinese": "缺乏，缺少",
+        "example_sentence": {
+          "french": "Une pénurie, c'est-à-dire un manque.",
+          "chinese": "所谓短缺，也就是缺乏。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          5
+        ],
+        "occurrence_count": 1,
+        "examples": [
+          {
+            "french": "Une pénurie, IE à la fin, c'est-à-dire un manque.",
+            "chinese": "所谓短缺，词尾是IE，也就是缺乏。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "jaunâtre",
+        "part_of_speech": "adjectif",
+        "ipa": "[ʒo.nɑtʁ]",
+        "chinese": "微黄的，淡黄色的",
+        "example_sentence": {
+          "french": "C'est cette pâte jaunâtre, un peu jaune.",
+          "chinese": "就是那种略带黄色、呈淡黄色的酱料。"
+        },
+        "cefr_level": "B2",
+        "source_ids": [
+          6
+        ],
+        "occurrence_count": 1,
+        "examples": [
+          {
+            "french": "La moutarde, c'est cette pâte jaunâtre.",
+            "chinese": "芥末，就是那种略带黄色的酱料。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "piquer",
+        "part_of_speech": "verbe",
+        "ipa": "[pi.ke]",
+        "chinese": "刺痛，辣，呛人",
+        "example_sentence": {
+          "french": "C'est une pâte qui pique quand on la mange.",
+          "chinese": "这是一种吃起来辣得直呛人的酱料。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          6
+        ],
+        "occurrence_count": 1,
+        "examples": [
+          {
+            "french": "qui est très forte, qui pique quand on la mange.",
+            "chinese": "味道非常浓烈，吃起来辣得直呛人。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "printemps",
+        "part_of_speech": "nom",
+        "ipa": "[pʁɛ̃.tɑ̃]",
+        "chinese": "春天",
+        "example_sentence": {
+          "french": "Depuis le printemps dernier.",
+          "chinese": "自去年春天以来。"
+        },
+        "cefr_level": "A1",
+        "source_ids": [
+          2,
+          3,
+          7
+        ],
+        "occurrence_count": 4,
+        "examples": [
+          {
+            "french": "On commence avec « depuis le printemps dernier ».",
+            "chinese": "我们从“自去年春天以来”开始。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      },
+      {
+        "french": "national",
+        "part_of_speech": "adjectif",
+        "ipa": "[na.sjɔ.nal]",
+        "chinese": "全国的，国家的",
+        "example_sentence": {
+          "french": "Une pénurie nationale de moutarde.",
+          "chinese": "一场全国性的芥末短缺。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          2,
+          6,
+          7
+        ],
+        "occurrence_count": 3,
+        "examples": [
+          {
+            "french": "Et cette pénurie, elle est nationale. Elle est dans tout le pays.",
+            "chinese": "而这种短缺，是全国性的。它遍布全国各地。",
+            "source_video": "Où est ma moutarde ?"
+          }
+        ]
+      }
+    ],
+    "key_expressions": [
+      {
+        "expression": "sans précédent",
+        "meaning": "史无前例的，前所未有的",
+        "example": {
+          "french": "La France est touchée par une crise sans précédent.",
+          "chinese": "法国正遭受一场前所未有的危机。"
+        },
+        "usage_note": "用于形容某事在历史上从未发生过，常与crise, record, situation等词连用。",
+        "source_ids": [
+          2,
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "expression": "être touché(e) par",
+        "meaning": "受到...的影响，遭受...",
+        "example": {
+          "french": "J'ai été touché par une balle de revolver.",
+          "chinese": "我中了一颗左轮手枪子弹。"
+        },
+        "usage_note": "被动语态表达，常用于描述受到危机、灾难、疾病或物理打击的影响。",
+        "source_ids": [
+          2,
+          3,
+          4,
+          7
+        ]
+      },
+      {
+        "expression": "c'est-à-dire",
+        "meaning": "也就是说，换言之",
+        "example": {
+          "french": "Une pénurie, c'est-à-dire un manque.",
+          "chinese": "所谓短缺，也就是缺乏。"
+        },
+        "usage_note": "用于解释、澄清或重新表述前面的概念。",
+        "source_ids": [
+          4,
+          5
+        ]
+      }
+    ]
+  },
+  "deep_learning": {
+    "grammar_points": [
+      {
+        "name": "La voix passive (被动语态)",
+        "structure": "Sujet + être (au temps voulu) + participe passé + par + agent",
+        "explanation": "被动语态用于强调动作的承受者而非发出者。助动词être的时态决定了整个句子的时态，过去分词必须与主语进行性数配合。介词'par'引出动作的实际发出者（施动者）。",
+        "example": {
+          "french": "La France est touchée par une crise sans précédent.",
+          "chinese": "法国正遭受一场前所未有的危机。"
+        },
+        "usage_note": "在新闻报道和正式描述中非常常见，用于突出受影响的实体（如这里的La France）。",
+        "source_ids": [
+          2,
+          3,
+          4,
+          7
+        ]
+      },
+      {
+        "name": "L'expression de l'origine avec 'Depuis' (用depuis表达动作的起点)",
+        "structure": "Depuis + point de départ (date, événement)",
+        "explanation": "介词'depuis'后接一个时间点，表示某个动作或状态从过去某个时刻开始，并且一直持续到现在。主句通常使用现在时。",
+        "example": {
+          "french": "Depuis le printemps dernier, la France est touchée par une crise.",
+          "chinese": "自去年春天以来，法国正遭受一场危机。"
+        },
+        "usage_note": "注意与'pendant'（表示持续的一段时间，动作已结束）的区别。",
+        "source_ids": [
+          2,
+          3,
+          7
+        ]
+      },
+      {
+        "name": "Le suffixe '-âtre' pour l'approximation (表示近似的后缀-âtre)",
+        "structure": "Adjectif de couleur/nom + -âtre",
+        "explanation": "后缀'-âtre'加在颜色形容词后，表示“略带...色的”、“微...的”，带有近似或有时略带贬义的色彩。",
+        "example": {
+          "french": "C'est cette pâte jaunâtre, un peu jaune.",
+          "chinese": "就是那种略带黄色、呈淡黄色的酱料。"
+        },
+        "usage_note": "常见例子包括：jaunâtre (微黄的), verdâtre (微绿的), blanchâtre (微白的)。",
+        "source_ids": [
+          6
+        ]
+      }
+    ],
+    "pronunciation": {
+      "key_sounds": [
+        {
+          "sound": "[ɑ̃]",
+          "description": "鼻化元音，发音时气流同时从口腔和鼻腔流出，嘴唇微圆，舌头后缩。在文本中频繁出现。",
+          "examples": [
+            "printemps",
+            "sans",
+            "précédent",
+            "manque"
+          ]
+        },
+        {
+          "sound": "[y]",
+          "description": "前圆唇元音，发音部位与[i]相同，但嘴唇要像发[u]一样圆突。",
+          "examples": [
+            "pénurie"
+          ]
+        }
+      ],
+      "liaison": [
+        "est‿atteinte [ɛ.t‿a.tɛ̃t]",
+        "est‿une [ɛ.t‿yn]"
+      ],
+      "intonation": "文本作为教学播客，语调具有明显的停顿和强调特征。在解释词汇时（如 'Une pénurie... c'est-à-dire un manque'），解释部分语调上扬，以吸引听众注意力并确保理解。"
+    },
+    "vocabulary_network": {
+      "theme": "Crise et Pénurie (危机与短缺)",
+      "core_word": "pénurie",
+      "related_groups": [
+        {
+          "category": "Causes et effets (原因与影响)",
+          "words": [
+            "crise",
+            "toucher",
+            "atteindre",
+            "manque"
+          ]
+        },
+        {
+          "category": "Description (描述)",
+          "words": [
+            "sans précédent",
+            "national",
+            "dernier"
+          ]
+        }
+      ]
+    }
+  },
+  "practice": {
+    "exercises": [
+      {
+        "type": "填空",
+        "question": "___ le ___ dernier, la France est ___ par une ___ sans ___, une ___ nationale de ___.",
+        "answer": "Depuis, printemps, touchée, crise, précédent, pénurie, moutarde",
+        "explanation": "根据原文，这句话是播客的核心句，描述了自去年春天以来法国遭受的史无前例的芥末短缺危机。考察了关键时间介词、被动语态动词以及核心名词。",
+        "source_ids": [
+          2,
+          7
+        ],
+        "difficulty": "A2"
+      },
+      {
+        "type": "选择",
+        "question": "Selon le texte, qu'est-ce qu'une « pénurie » ?",
+        "options": {
+          "A": "Un manque de produits, comme l'absence de pâtes dans les magasins.",
+          "B": "Une pâte jaunâtre très forte qui pique quand on la mange.",
+          "C": "Une balle de revolver qui touche quelqu'un.",
+          "D": "Un record historique qui n'est jamais arrivé."
+        },
+        "answer": "A",
+        "explanation": "正确答案是A。原文第5段明确解释了：“Une pénurie... c'est-à-dire un manque. Exemple. Il y a une pénurie de pâtes dans les magasins.”（短缺，也就是说缺乏。例如，商店里出现了意大利面短缺）。选项B描述的是moutarde，选项C和D是解释其他词汇时用的例子。",
+        "source_ids": [
+          5
+        ],
+        "difficulty": "A2"
+      },
+      {
+        "type": "翻译",
+        "question": "La moutarde, c'est cette pâte jaunâtre, un peu jaune, qui est très forte, qui pique quand on la mange.",
+        "answer": "芥末，就是那种略带黄色、呈淡黄色的酱料，味道非常浓烈，吃起来辣得直呛人。",
+        "explanation": "翻译难点在于准确表达后缀词“jaunâtre”（微黄的/略带黄色的）以及动词“piquer”在此处的引申义（刺激味蕾、辣、呛人）。同时需要处理好两个由qui引导的并列定语从句。",
+        "source_ids": [
+          6
+        ],
+        "difficulty": "B1"
+      },
+      {
+        "type": "语法",
+        "question": "Transformez cette phrase à la voix active : « La France est touchée par une crise sans précédent. »",
+        "answer": "Une crise sans précédent touche la France.",
+        "explanation": "原句是被动语态（être touché par）。改为主动语态时，介词par后面的施动者（une crise sans précédent）变为新主语；动词toucher根据新主语变位为现在时第三人称单数（touche，因为原句助动词est是现在时）；原主语（La France）变为直接宾语。",
+        "source_ids": [
+          2,
+          4
+        ],
+        "difficulty": "B1"
+      }
+    ],
+    "exercise_summary": {
+      "total_count": 4,
+      "type_distribution": {
+        "填空": 1,
+        "选择": 1,
+        "翻译": 1,
+        "语法": 1
+      },
+      "covered_vocabulary": [
+        "printemps",
+        "toucher",
+        "crise",
+        "précédent",
+        "pénurie",
+        "moutarde",
+        "manque",
+        "jaunâtre",
+        "piquer"
+      ],
+      "covered_grammar": [
+        "La voix passive (被动语态)"
+      ]
+    },
+    "sentence_patterns": [
+      {
+        "pattern": "Depuis [moment du passé], [Sujet] est touché(e) par [Nom].",
+        "explanation": "用于描述从过去某时开始一直持续到现在的受影响状态。",
+        "example": {
+          "french": "Depuis 2020, le monde est touché par une crise économique.",
+          "chinese": "自2020年以来，世界一直受到经济危机的影响。"
+        }
+      },
+      {
+        "pattern": "[Mot], c'est-à-dire [Explication].",
+        "explanation": "用于对刚提到的词汇或概念进行解释和澄清。",
+        "example": {
+          "french": "Il est végétarien, c'est-à-dire qu'il ne mange pas de viande.",
+          "chinese": "他是素食主义者，也就是说他不吃肉。"
+        }
+      }
+    ],
+    "scenario": {
+      "description": "你在法国的一家超市里，发现货架上没有你想要的商品。你向超市员工询问情况，员工向你解释当前的全国性短缺危机。",
+      "requirements": "使用词汇 'pénurie', 'touché par', 'sans précédent'，并尝试用 'c'est-à-dire' 解释原因。",
+      "starter": "Excusez-moi, je ne trouve pas d'huile de tournesol dans les rayons..."
+    }
+  },
+  "summary": {
+    "content": "Ce texte pédagogique explique une phrase d'actualité concernant la pénurie nationale de moutarde en France. Le professeur décortique la phrase mot par mot, en expliquant le vocabulaire clé comme 'pénurie', 'crise sans précédent' et 'touchée', tout en donnant des exemples simples pour faciliter la compréhension des apprenants.",
+    "keywords": [
+      "moutarde",
+      "pénurie",
+      "crise",
+      "explication de texte"
+    ],
+    "difficulty_note": "Le texte est très accessible car il est conçu comme une leçon de français. La difficulté réside dans la compréhension de la voix passive et du vocabulaire spécifique aux situations de crise."
+  },
+  "verification": {
+    "unit_num": 1,
+    "time_range": {
+      "start": "00:00:00.060",
+      "end": "00:03:46.860"
+    },
+    "theme": "Crise alimentaire et explication de vocabulaire",
+    "cefr_level": "A2",
+    "vocabulary_count": 11,
+    "grammar_points_count": 3,
+    "checklist": {
+      "vocabulary_complete": true,
+      "grammar_complete": true,
+      "pronunciation_complete": true,
+      "practice_complete": true,
+      "summary_complete": true
+    }
+  },
+  "channel": "Louis法语课"
+}

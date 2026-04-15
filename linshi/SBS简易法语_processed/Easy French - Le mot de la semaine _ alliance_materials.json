@@ -1,0 +1,593 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ alliance.json",
+  "channel": "SBS简易法语",
+  "video_name": "简易法语 - 本周词汇：联盟",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T17:21:17.651Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le pronom relatif « qui »",
+          "L'expression du but avec « pour »"
+        ],
+        "speaking": [
+          "Explaining the multiple meanings of a polysemous word",
+          "Discussing political processes and personal milestones like marriage"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "alliance",
+            "part_of_speech": "nom féminin",
+            "ipa": "[aljɑ̃s]",
+            "chinese": "联盟；结婚戒指",
+            "example_sentence": {
+              "french": "Une alliance, c'est quand 2 ou plusieurs personnes décident de travailler ensemble.",
+              "chinese": "联盟是指两个或更多的人决定共同工作。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              4,
+              5
+            ],
+            "occurrence_count": 8,
+            "examples": [
+              {
+                "french": "Les candidats peuvent faire des alliances pour le 2nd tour.",
+                "chinese": "候选人们可以为第二轮投票结成联盟。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "élections municipales",
+            "part_of_speech": "nom féminin pluriel",
+            "ipa": "[elɛksjɔ̃ mysisipal]",
+            "chinese": "市政选举",
+            "example_sentence": {
+              "french": "Il y a eu le 1er tour des élections municipales en France.",
+              "chinese": "法国举行了第一轮市政选举。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il y a eu le 1er tour des élections municipales.",
+                "chinese": "举行了第一轮市政选举。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "candidat",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kɑ̃dida]",
+            "chinese": "候选人",
+            "example_sentence": {
+              "french": "Les candidats qui restent peuvent faire des alliances.",
+              "chinese": "留下的候选人可以结成联盟。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3,
+              4
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Une alliance est un accord entre partis ou entre candidats.",
+                "chinese": "联盟是政党之间或候选人之间的协议。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "objectif",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ɔbʒɛktif]",
+            "chinese": "目标",
+            "example_sentence": {
+              "french": "Ils travaillent ensemble pour un même objectif.",
+              "chinese": "他们为了同一个目标而共同努力。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ils décident de travailler ensemble pour un même objectif.",
+                "chinese": "他们决定为了同一个目标而共同努力。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "accord",
+            "part_of_speech": "nom masculin",
+            "ipa": "[akɔʁ]",
+            "chinese": "协议；一致",
+            "example_sentence": {
+              "french": "Une alliance est un accord entre partis.",
+              "chinese": "联盟是政党之间的协议。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "En politique, une alliance est un accord entre partis.",
+                "chinese": "在政治中，联盟是政党之间的协议。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "bijou",
+            "part_of_speech": "nom masculin",
+            "ipa": "[biʒu]",
+            "chinese": "珠宝；首饰",
+            "example_sentence": {
+              "french": "Une alliance est le bijou que portent les personnes mariées.",
+              "chinese": "结婚戒指是已婚人士佩戴的珠宝。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Une alliance, c'est le bijou que portent les personnes mariées.",
+                "chinese": "结婚戒指是已婚人士佩戴的珠宝。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "anneau",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ano]",
+            "chinese": "戒指；圆环",
+            "example_sentence": {
+              "french": "C'est souvent un anneau en or.",
+              "chinese": "这通常是一个金戒指。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est souvent un anneau en or.",
+                "chinese": "这通常是一个金戒指。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "combinaison",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kɔ̃binɛzɔ̃]",
+            "chinese": "结合；组合",
+            "example_sentence": {
+              "french": "On peut parler d'alliance pour dire une bonne combinaison.",
+              "chinese": "我们可以用“alliance”来表示一种良好的结合。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On peut aussi parler d'alliance dans la vie quotidienne, pour dire une bonne combinaison.",
+                "chinese": "在日常生活中，我们也可以用“alliance”来表示一种良好的结合。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "patience",
+            "part_of_speech": "nom féminin",
+            "ipa": "[pasjɑ̃s]",
+            "chinese": "耐心",
+            "example_sentence": {
+              "french": "L'alliance du travail et de la patience est importante.",
+              "chinese": "劳动与耐心的结合很重要。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Par exemple, l'alliance du travail et de la patience.",
+                "chinese": "例如，劳动与耐心的结合。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "quotidien",
+            "part_of_speech": "adjectif / nom",
+            "ipa": "[kɔtidjɛ̃]",
+            "chinese": "日常的；日常生活",
+            "example_sentence": {
+              "french": "On utilise ce mot dans la vie quotidienne.",
+              "chinese": "我们在日常生活中使用这个词。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On peut aussi parler d'alliance dans la vie quotidienne.",
+                "chinese": "在日常生活中，我们也可以谈论联盟（结合）。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "faire des alliances",
+            "meaning": "结成联盟",
+            "example": {
+              "french": "Les candidats peuvent faire des alliances pour le 2nd tour.",
+              "chinese": "候选人们可以为第二轮投票结成联盟。"
+            },
+            "usage_note": "Used frequently in political contexts to describe parties or candidates joining forces.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "en ce moment",
+            "meaning": "目前；现在",
+            "example": {
+              "french": "On en parle beaucoup en France en ce moment.",
+              "chinese": "目前在法国，人们经常谈论这件事。"
+            },
+            "usage_note": "A common temporal expression synonymous with 'actuellement'.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "la vie quotidienne",
+            "meaning": "日常生活",
+            "example": {
+              "french": "On peut aussi parler d'alliance dans la vie quotidienne.",
+              "chinese": "在日常生活中，我们也可以谈论“alliance”（结合）。"
+            },
+            "usage_note": "Refers to the routine activities and common language used every day.",
+            "source_ids": [
+              4
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le pronom relatif « qui »",
+            "structure": "Nom + qui + verbe",
+            "explanation": "The relative pronoun 'qui' replaces a subject noun to link two clauses and avoid repetition.",
+            "example": {
+              "french": "Les candidats qui restent peuvent faire des alliances.",
+              "chinese": "留下的候选人可以结成联盟。"
+            },
+            "usage_note": "In this example, 'qui' replaces 'les candidats' as the subject of the verb 'restent'.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "L'expression du but avec « pour »",
+            "structure": "Pour + infinitif",
+            "explanation": "Used to express the purpose or goal of an action when the subject of both verbs is the same.",
+            "example": {
+              "french": "Ils travaillent ensemble pour avoir plus de chances de gagner.",
+              "chinese": "他们携手合作，以提高获胜的几率。"
+            },
+            "usage_note": "The infinitive 'avoir' follows 'pour' to indicate why they are working together.",
+            "source_ids": [
+              3
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "The nasal vowel found in 'alliance', 'ensemble', and 'patience'.",
+              "examples": [
+                "alliance",
+                "ensemble",
+                "patience"
+              ]
+            },
+            {
+              "sound": "[j]",
+              "description": "The semi-vowel sound in 'alliance' and 'travail'.",
+              "examples": [
+                "alliance",
+                "travail"
+              ]
+            }
+          ],
+          "liaison": [
+            "des_alliances [dez‿aljɑ̃s]",
+            "un_accord [œ̃n‿akɔʁ]",
+            "un_anneau [œ̃n‿ano]"
+          ],
+          "intonation": "Rising intonation at the end of introductory phrases like 'En politique...' or 'Par exemple...' to signal that more information is coming."
+        },
+        "vocabulary_network": {
+          "theme": "Les multiples sens du mot « alliance »",
+          "core_word": "alliance",
+          "related_groups": [
+            {
+              "category": "Politique",
+              "words": [
+                "élections",
+                "candidats",
+                "partis",
+                "accord",
+                "gagner"
+              ]
+            },
+            {
+              "category": "Mariage",
+              "words": [
+                "bijou",
+                "anneau",
+                "or",
+                "marié",
+                "main gauche"
+              ]
+            },
+            {
+              "category": "Vie quotidienne",
+              "words": [
+                "combinaison",
+                "travail",
+                "patience",
+                "beurre",
+                "chocolat"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Une ___, c'est quand ___ ou ___ personnes ou ___ décident de ___ ensemble pour un même ___.",
+            "answer": "alliance, 2, plusieurs, groupes, travailler, objectif",
+            "explanation": "根据原文第3句，联盟的定义是两个或多个个人或团体为了同一个目标而决定携手合作。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi les candidats font-ils des alliances après le 1er tour des élections municipales ?",
+            "options": {
+              "A": "Pour porter un bijou en or à la main gauche.",
+              "B": "Pour travailler ensemble et avoir plus de chances de gagner.",
+              "C": "Pour arrêter de travailler avec les autres partis.",
+              "D": "Pour quitter la France et aller en Australie."
+            },
+            "answer": "B",
+            "explanation": "原文第3句明确指出：候选人结成联盟是因为“Ils travaillent ensemble pour avoir plus de chances de gagner”。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "En politique, une alliance est un accord entre partis ou entre candidats.",
+            "answer": "在政治中，联盟是指政党之间或候选人之间达成的协议。",
+            "explanation": "“Accord”在此语境下翻译为“协议”或“协定”最为准确。 (Source 4)",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez ces 2 phrases en une seule en utilisant le pronom relatif « qui » : « Il y a des candidats. Ces candidats restent pour le 2nd tour. »",
+            "answer": "Il y a des candidats qui restent pour le 2nd tour.",
+            "explanation": "使用关系代词“qui”代替重复的主语“ces candidats”，使句子结构更紧凑。 (Source 3)",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "alliance",
+            "objectif",
+            "candidat",
+            "accord"
+          ],
+          "covered_grammar": [
+            "Le pronom relatif « qui »",
+            "L'expression du but avec « pour »"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Une [nom], c'est quand [explication].",
+            "explanation": "A common way to define a concept in French.",
+            "example": {
+              "french": "Une alliance, c'est quand 2 personnes décident de travailler ensemble.",
+              "chinese": "联盟就是指两个人决定共同工作。"
+            }
+          },
+          {
+            "pattern": "Faire une alliance pour [infinitif].",
+            "explanation": "To form an alliance in order to achieve a specific goal.",
+            "example": {
+              "french": "Ils font une alliance pour gagner l'élection.",
+              "chinese": "他们结成联盟以赢得选举。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are in a jewelry shop in Paris looking for a wedding ring.",
+          "requirements": "Use the word 'alliance', mention the material 'or' (gold), and specify which hand it is worn on.",
+          "starter": "Bonjour, je cherche une alliance pour mon mariage..."
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the polysemous nature of the French word 'alliance'. It covers its political meaning (coalitions during municipal elections), its material meaning (wedding rings), and its abstract meaning (combinations in daily life, like butter and chocolate).",
+        "keywords": [
+          "alliance",
+          "élections",
+          "mariage",
+          "accord",
+          "combinaison"
+        ],
+        "difficulty_note": "The text is accessible for A2/B1 learners as it uses clear definitions and common examples to explain abstract and political concepts."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:03:21"
+        },
+        "theme": "The word of the week: Alliance",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》（进行中的工作）是一个旨在帮助技术移民在新的国家重建职业生涯的播客。你将听到鼓舞人心的真实故事、专家建议和宝贵技巧，帮助你找到工作并提升职业生涯。《Work in Progress》。现在即可在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:00:55.460",
+          "french": "Vous êtes avec SBS French. Retrouvez nos rubriques sur sbs.com.au/french. Et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Murat avec vous.",
+          "chinese": "您正在收听的是 SBS 法语广播。请访问 sbs.com.au/french 查看我们的栏目。欢迎来到 SBS Easy French 的“每周一词”栏目。我是 Marianne Murat。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:55.670",
+          "end_time": "00:01:25.159",
+          "french": "Cette semaine, notre mot est « alliance ». On en parle beaucoup en France en ce moment, car il y a eu le premier tour des élections municipales. Après ce premier tour, les candidats qui restent peuvent faire des alliances pour le second tour. Ils travaillent ensemble pour avoir plus de chances de gagner. Mais que veut dire le mot « alliance » ? Une alliance, c'est quand deux ou plusieurs personnes ou groupes décident de travailler ensemble pour un même objectif.",
+          "chinese": "本周我们的词汇是“alliance”。目前法国对此讨论很多，因为刚刚结束了第一轮市政选举。在第一轮之后，剩下的候选人可以在第二轮进行结盟。他们共同努力以增加获胜的机会。但“alliance”这个词是什么意思呢？“alliance”是指两个或多个个人或团体决定为了同一个目标共同努力。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:25.340",
+          "end_time": "00:01:56.680",
+          "french": "Ils s'aident et avancent ensemble. En politique, une alliance est un accord entre partis ou entre candidats. Par exemple, deux partis font une alliance pour gagner une élection. Le mot « alliance » a aussi d'autres sens en français. Une alliance, c'est le bijou que portent les personnes mariées, souvent un anneau en or. Par exemple, elle porte son alliance de mariage à la main gauche. On peut aussi parler d'alliance dans la vie quotidienne, pour dire une bonne combinaison.",
+          "chinese": "他们互相帮助，共同进步。在政治上，“alliance”是政党之间或候选人之间的协议。例如，两个政党结成联盟以赢得选举。“alliance”这个词在法语中还有其他含义。它也指已婚人士佩戴的首饰，通常是一个金戒指。例如，她的左手戴着结婚戒指。在日常生活中，我们也可以用“alliance”来表示一种良好的组合。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:56.890",
+          "end_time": "00:02:24.419",
+          "french": "Par exemple, l'alliance du travail et de la patience, l'alliance du beurre et du chocolat. En anglais, le mot « alliance » se dit « alliance ». Pour le mariage, on parle de « wedding ring ». Voilà, c'était « alliance », c'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes.",
+          "chinese": "例如，努力与耐心的结合，黄油与巧克力的融合。在英语中，“alliance”一词也写作“alliance”。对于婚姻，英语中则使用“wedding ring”。好了，这就是“alliance”，本周的每周一词。欢迎在 SBS French 网站及各大平台收听我们的“每周一词”和 Easy French 新闻。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:24.629",
+          "end_time": "00:02:46.819",
+          "french": "On se retrouve la semaine prochaine pour un autre mot de la semaine.",
+          "chinese": "我们下周再见，届时将带来另一个每周一词。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:52.949",
+          "end_time": "00:03:21.650",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》（进行中的工作）是一个旨在帮助技术移民在新的国家重建职业生涯的播客。你将听到鼓舞人心的真实故事、专家建议和宝贵技巧，帮助你找到工作并提升职业生涯。《Work in Progress》。现在即可在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:21.650",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 7,
+        "source_video_name": "Easy French - Le mot de la semaine _ alliance.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The IPA for 'élections municipales' [elɛksjɔ̃ mysisipal] is missing the [n] sound for the syllable 'ni' [mynisipal].",
+            "field": "language_analysis.vocabulary[1].ipa"
+          },
+          {
+            "level": "warning",
+            "check": "Exercise consistency",
+            "detail": "In the '填空' exercise, the answer uses the digit '2' while the source subtitle text uses the word 'deux'.",
+            "field": "practice.exercises[0].answer"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 2,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

@@ -1,0 +1,503 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ visa.json",
+  "channel": "SBS简易法语",
+  "video_name": "Easy French - Le mot de la semaine _ visa",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T17:59:29.498Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 6,
+          "review_words": 0
+        },
+        "grammar": [
+          "Relative Pronoun 'qui'",
+          "Expressing Purpose with 'afin de'",
+          "Emphatic Cause: 'Si... c'est parce que'"
+        ],
+        "speaking": [
+          "Describing different types of administrative documents",
+          "Discussing international travel and humanitarian issues"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "séjourner",
+            "part_of_speech": "verbe",
+            "ipa": "[seʒuʁne]",
+            "chinese": "逗留，停留",
+            "example_sentence": {
+              "french": "Un visa donne le droit de séjourner dans un pays étranger.",
+              "chinese": "签证赋予了在外国停留的权利。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Un visa, c'est un document officiel qui donne le droit d'entrer, de séjourner...",
+                "chinese": "签证是一种官方文件，它赋予持证人进入、停留的权利……",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "territoire",
+            "part_of_speech": "nom masculin",
+            "ipa": "[teʁitwaʁ]",
+            "chinese": "领土，境内",
+            "example_sentence": {
+              "french": "On ne peut pas entrer sur le territoire sans autorisation.",
+              "chinese": "未经许可不得进入该领土。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...on ne peut tout simplement pas entrer sur le territoire.",
+                "chinese": "……根本无法入境（进入该领土）。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "humanitaire",
+            "part_of_speech": "adjectif",
+            "ipa": "[ymanitɛʁ]",
+            "chinese": "人道主义的",
+            "example_sentence": {
+              "french": "L'Australie a accordé des visas humanitaires.",
+              "chinese": "澳大利亚发放了人道主义签证。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              5
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "...l'Australie a accordé des visas humanitaires à des joueuses iraniennes.",
+                "chinese": "……澳大利亚向伊朗女运动员发放了人道主义签证。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "accordé",
+            "part_of_speech": "verbe (participe passé)",
+            "ipa": "[akɔʁde]",
+            "chinese": "给予，批准",
+            "example_sentence": {
+              "french": "Le gouvernement a accordé une aide financière.",
+              "chinese": "政府批准了一项财政援助。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...l'Australie a accordé des visas humanitaires...",
+                "chinese": "……澳大利亚发放了人道主义签证……",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "simplifier",
+            "part_of_speech": "verbe",
+            "ipa": "[sɛ̃plifje]",
+            "chinese": "简化",
+            "example_sentence": {
+              "french": "Il faut simplifier les procédures administratives.",
+              "chinese": "必须简化行政程序。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'Union européenne réfléchit à simplifier les voyages.",
+                "chinese": "欧盟正在考虑简化旅行手续。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "supprimer",
+            "part_of_speech": "verbe",
+            "ipa": "[sypʁime]",
+            "chinese": "取消，删除",
+            "example_sentence": {
+              "french": "Ils veulent supprimer les taxes sur l'importation.",
+              "chinese": "他们想取消进口税。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...réduire ou supprimer les obligations de visa...",
+                "chinese": "……减少或取消签证要求……",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "donner le droit de",
+            "meaning": "赋予……的权利",
+            "example": {
+              "french": "Ce document donne le droit de travailler ici.",
+              "chinese": "这份文件赋予了在这里工作的权利。"
+            },
+            "usage_note": "Followed by an infinitive verb.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "visa vacances-travail",
+            "meaning": "打工度假签证",
+            "example": {
+              "french": "Il est parti en Australie avec un visa vacances-travail.",
+              "chinese": "他持打工度假签证去了澳大利亚。"
+            },
+            "usage_note": "Also known as 'Working Holiday Visa' (WHV).",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "affaire à suivre",
+            "meaning": "此事值得关注 / 且听下回分解",
+            "example": {
+              "french": "Les négociations continuent, affaire à suivre.",
+              "chinese": "谈判仍在继续，此事值得关注。"
+            },
+            "usage_note": "Used to indicate that a situation is developing and more news will follow.",
+            "source_ids": [
+              6
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Relative Pronoun 'qui'",
+            "structure": "Nom + qui + Verbe",
+            "explanation": "'Qui' acts as the subject of the following verb, replacing the preceding noun to avoid repetition.",
+            "example": {
+              "french": "Un visa, c'est un document officiel qui donne le droit d'entrer.",
+              "chinese": "签证是一种赋予入境权利的官方文件。"
+            },
+            "usage_note": "Always followed by a verb, unlike 'que' which is followed by a subject.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "Expressing Purpose with 'afin de'",
+            "structure": "afin de + infinitif",
+            "explanation": "Used to express the goal or purpose of an action when the subject of both clauses is the same.",
+            "example": {
+              "french": "...supprimer les obligations de visa afin de faciliter les déplacements.",
+              "chinese": "……取消签证要求以便于人员往来。"
+            },
+            "usage_note": "More formal than 'pour'.",
+            "source_ids": [
+              6
+            ]
+          },
+          {
+            "name": "Emphatic Cause: 'Si... c'est parce que'",
+            "structure": "Si [Action], c'est parce que [Raison]",
+            "explanation": "A structure used to highlight the reason behind a specific topic or action mentioned first.",
+            "example": {
+              "french": "Si on parle du visa cette semaine, c'est parce que l'Australie a accordé des visas humanitaires.",
+              "chinese": "我们本周之所以谈论签证，是因为澳大利亚发放了人道主义签证。"
+            },
+            "usage_note": "Common in journalism and podcasts to introduce a topic's relevance.",
+            "source_ids": [
+              4
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[z]",
+              "description": "The letter 's' between two vowels is pronounced as a voiced [z].",
+              "examples": [
+                "visa",
+                "joueuses"
+              ]
+            }
+          ],
+          "liaison": [
+            "un document_officiel [dɔkymɑ̃tɔfisjɛl]",
+            "certains_pays [sɛʁtɛ̃peji]",
+            "des_obligations [dezɔbliɡasjɔ̃]"
+          ],
+          "intonation": "Rising intonation on list items (visa touristique, visa étudiant...) and falling intonation at the end of the sentence."
+        },
+        "vocabulary_network": {
+          "theme": "L'Immigration et les Documents",
+          "core_word": "Visa",
+          "related_groups": [
+            {
+              "category": "Types de visas",
+              "words": [
+                "touristique",
+                "étudiant",
+                "travail",
+                "humanitaire",
+                "vacances-travail"
+              ]
+            },
+            {
+              "category": "Actions",
+              "words": [
+                "entrer",
+                "séjourner",
+                "travailler",
+                "accorder",
+                "simplifier"
+              ]
+            },
+            {
+              "category": "Durée",
+              "words": [
+                "temporaire",
+                "permanent",
+                "court séjour",
+                "long séjour"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Un ___ , c'est un ___ ___ qui donne le ___ d' ___ , de ___ et parfois de ___ dans un ___ ___ .",
+            "answer": "visa, document, officiel, droit, entrer, séjourner, travailler, pays, étranger",
+            "explanation": "根据原文第3句，签证的定义是赋予在外国入境、停留和工作的官方文件。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi l'Australie a-t-elle accordé des visas humanitaires à des joueuses iraniennes ?",
+            "options": {
+              "A": "Pour qu'elles puissent étudier à l'université.",
+              "B": "Parce que la situation dans leur pays est devenue difficile et dangereuse.",
+              "C": "Pour simplifier les voyages entre les deux pays.",
+              "D": "Parce qu'elles ont demandé un visa vacances-travail."
+            },
+            "answer": "B",
+            "explanation": "原文第4句明确指出：'Ces visas leur permettent de quitter leur pays et d'être en sécurité, car la situation est devenue difficile et dangereuse.'",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "L'Union européenne réfléchit à simplifier les voyages afin de faciliter les déplacements.",
+            "answer": "欧盟正在考虑简化旅行手续，以便于人员往来。",
+            "explanation": "重点词汇：'réfléchir à' (考虑), 'simplifier' (简化), 'afin de' (以便于), 'déplacements' (往来/移动)。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez cette phrase en utilisant 'qui' : 'Le visa est un outil. Cet outil protège les personnes.'",
+            "answer": "Le visa est un outil qui protège les personnes.",
+            "explanation": "使用关系代词 'qui' 代替重复的名词 'outil'，'qui' 在从句中作主语。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "A2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "visa",
+            "séjourner",
+            "humanitaire",
+            "simplifier",
+            "déplacements"
+          ],
+          "covered_grammar": [
+            "Relative Pronoun 'qui'",
+            "afin de",
+            "si... c'est parce que"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il existe plusieurs types de [Nom]",
+            "explanation": "Used to introduce a categorization of items.",
+            "example": {
+              "french": "Il existe plusieurs types de visas en Australie.",
+              "chinese": "在澳大利亚存在多种类型的签证。"
+            }
+          },
+          {
+            "pattern": "Le mot [X] vient du [Langue] [Y] qui signifie [Z]",
+            "explanation": "Used to explain the etymology of a word.",
+            "example": {
+              "french": "Le mot « visa » vient du latin « visum » qui signifie « chose vue ».",
+              "chinese": "“签证”一词源自拉丁语“visum”，意为“所见之物”。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous êtes à l'ambassade pour demander un visa.",
+          "requirements": "Expliquez quel type de visa vous voulez (étudiant, travail, etc.) et pourquoi vous en avez besoin.",
+          "starter": "Bonjour, je voudrais faire une demande de visa..."
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the word 'visa', its Latin origins, and its various functions in international travel. It covers different visa categories (tourist, student, work, humanitarian) and discusses current trends in the European Union regarding travel simplification.",
+        "keywords": [
+          "visa",
+          "humanitaire",
+          "Australie",
+          "Union européenne",
+          "voyage"
+        ],
+        "difficulty_note": "The text is accessible for B1 learners, focusing on administrative and international relations vocabulary with clear definitions."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:03:45"
+        },
+        "theme": "L'administration et les voyages (Le mot 'Visa')",
+        "cefr_level": "B1",
+        "vocabulary_count": 6,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档帮助技术移民在异国他乡重建事业的播客。你将听到感人至深的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业生涯。《Work in Progress》，现在即可在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:00:58.539",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Morat avec vous. Cette semaine, notre mot est « visa ».",
+          "chinese": "您正在收听的是 SBS 法语节目。欢迎访问 sbs.com.au/french 查看更多栏目。欢迎来到 SBS Easy French 的“每周一词”栏目。我是 Marianne Morat。本周我们要讲的词是“visa”（签证）。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:58.869",
+          "end_time": "00:01:24.680",
+          "french": "Un visa, c'est un document officiel qui donne le droit d'entrer, de séjourner et parfois de travailler dans un pays étranger. Sans visa, dans certains pays, on ne peut tout simplement pas entrer sur le territoire. Le mot « visa » vient du latin « visum » qui signifie « chose vue ». À l'origine, cela voulait dire que les autorités avaient vu et accepté la demande.",
+          "chinese": "签证是一份官方文件，赋予持有人进入、停留以及有时在外国工作的权利。在某些国家，如果没有签证，你根本无法入境。“Visa”一词源于拉丁语“visum”，意为“已见之物”。最初，这意味着当局已经查看并批准了申请。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:25.109",
+          "end_time": "00:01:55.239",
+          "french": "Aujourd'hui, le mot est utilisé dans presque toutes les langues. En anglais, on dit aussi « visa ». Si on parle du visa cette semaine, c'est parce que l'Australie a accordé des visas humanitaires à des joueuses iraniennes. Ces visas leur permettent de quitter leur pays et d'être en sécurité, car la situation est devenue difficile et dangereuse. Le visa peut donc aussi être un outil de protection. En Australie, il existe plusieurs grands types de visas.",
+          "chinese": "如今，这个词几乎在所有语言中都有使用。在英语中，也叫“visa”。我们这周谈论签证，是因为澳大利亚向伊朗女运动员发放了人道主义签证。这些签证使她们能够离开自己的国家并获得安全，因为那里的局势已变得艰难且危险。因此，签证也可以是一种保护工具。在澳大利亚，有几种主要的签证类型。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:55.540",
+          "end_time": "00:02:24.490",
+          "french": "Le visa touristique pour voyager, le visa étudiant pour étudier, le visa de travail, temporaire ou permanent, le visa vacances-travail, plus connu sous le nom de « Working Holiday Visa », et le visa humanitaire pour les personnes en danger. En France aussi, il y a plusieurs visas. Par exemple, le visa de court séjour, le visa long séjour et le visa humanitaire dans des situations exceptionnelles.",
+          "chinese": "用于旅行的旅游签证、用于学习的留学签证、临时或永久的工作签证、更广为人知的“打工度假签证”（Working Holiday Visa），以及为处境危险的人提供的人道主义签证。在法国也有几种签证。例如，短期停留签证、长期停留签证以及特殊情况下的人道主义签证。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:24.949",
+          "end_time": "00:02:40.370",
+          "french": "En ce moment, l'Union européenne réfléchit à simplifier les voyages avec certains pays partenaires, comme l'Australie, avec l'idée de réduire ou supprimer les obligations de visa afin de faciliter les déplacements. Affaire à suivre.",
+          "chinese": "目前，欧盟正在考虑简化与澳大利亚等部分伙伴国家的旅行往来，计划通过减少或取消签证要求来便利出行。我们将继续关注后续进展。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:40.370",
+          "end_time": "00:03:10.409",
+          "french": "Voilà, c'était « Visa », c'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes de podcasts. On se retrouve la semaine prochaine pour un autre mot de la semaine.",
+          "chinese": "好了，以上就是本周的单词“Visa”。欢迎在 SBS 法语网站及各大播客平台收听我们的“每周一词”和 Easy French 新闻。下周我们再见，一起学习另一个每周一词。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:16.340",
+          "end_time": "00:03:45.020",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一档帮助技术移民在异国他乡重建事业的播客。你将听到感人至深的真实故事、专家建议和宝贵技巧，助你寻找工作并提升职业生涯。《Work in Progress》，现在即可在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:45.020",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 8,
+        "source_video_name": "Easy French - Le mot de la semaine _ visa.json",
+        "tags": [
+          "旅行",
+          "地理"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

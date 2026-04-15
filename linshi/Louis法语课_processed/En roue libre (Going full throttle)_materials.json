@@ -1,0 +1,553 @@
+{
+  "learning_objectives": {
+    "vocabulary": {
+      "new_words": 12,
+      "review_words": 5
+    },
+    "grammar": [
+      "Comprendre et utiliser le participe présent (ex: repoussant) pour remplacer une proposition relative.",
+      "Exprimer l'intensité et la conséquence avec 'tellement'."
+    ],
+    "speaking": [
+      "Décrire un événement sportif ou un spectacle captivant.",
+      "Expliquer le sens d'une expression idiomatique en français."
+    ]
+  },
+  "language_analysis": {
+    "vocabulary": [
+      {
+        "french": "palpitant",
+        "part_of_speech": "adjectif",
+        "ipa": "[pal.pi.tɑ̃]",
+        "chinese": "扣人心弦的，令人激动的",
+        "example_sentence": {
+          "french": "Le Grand Prix Moto a offert un spectacle palpitant.",
+          "chinese": "摩托车大奖赛呈现了一场扣人心弦的比赛。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "occurrence_count": 6,
+        "examples": [
+          {
+            "french": "On peut dire, par exemple, que tel ou tel film est palpitant.",
+            "chinese": "比如，我们可以说某部电影扣人心弦。",
+            "source_video": "Subtitle 6"
+          }
+        ]
+      },
+      {
+        "french": "repousser",
+        "part_of_speech": "verbe",
+        "ipa": "[ʁə.pu.se]",
+        "chinese": "推迟，推开，突破（极限）",
+        "example_sentence": {
+          "french": "Les pilotes repoussent leurs limites sur le circuit.",
+          "chinese": "车手们在赛道上突破他们的极限。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          2,
+          3,
+          6,
+          7,
+          8
+        ],
+        "occurrence_count": 5,
+        "examples": [
+          {
+            "french": "Repousser les limites, aller plus loin.",
+            "chinese": "突破极限，走得更远。",
+            "source_video": "Subtitle 7"
+          }
+        ]
+      },
+      {
+        "french": "circuit",
+        "part_of_speech": "nom masculin",
+        "ipa": "[siʁ.kɥi]",
+        "chinese": "赛道，环形路线",
+        "example_sentence": {
+          "french": "La course a lieu sur le circuit Bugatti.",
+          "chinese": "比赛在布加迪赛道上举行。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          2,
+          3,
+          7,
+          8
+        ],
+        "occurrence_count": 4,
+        "examples": [
+          {
+            "french": "Et Bugatti, c'est le nom tout simplement du circuit.",
+            "chinese": "而布加迪，仅仅是这条赛道的名字。",
+            "source_video": "Subtitle 7"
+          }
+        ]
+      },
+      {
+        "french": "spectacle",
+        "part_of_speech": "nom masculin",
+        "ipa": "[spɛk.takl]",
+        "chinese": "演出，表演，奇观",
+        "example_sentence": {
+          "french": "C'est un spectacle de danse très intéressant.",
+          "chinese": "这是一场非常有趣的舞蹈表演。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          2,
+          3,
+          4,
+          5,
+          7
+        ],
+        "occurrence_count": 5,
+        "examples": [
+          {
+            "french": "On ne pouvait pas quitter les yeux, quitter le regard de ce spectacle.",
+            "chinese": "人们根本移不开目光，完全沉浸在这场演出中。",
+            "source_video": "Subtitle 5"
+          }
+        ]
+      },
+      {
+        "french": "suspense",
+        "part_of_speech": "nom masculin",
+        "ipa": "[sys.pɛns]",
+        "chinese": "悬念",
+        "example_sentence": {
+          "french": "C'est un film avec beaucoup de suspense.",
+          "chinese": "这是一部充满悬念的电影。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          5
+        ],
+        "occurrence_count": 2,
+        "examples": [
+          {
+            "french": "Ce qui veut dire qu'il y a eu du suspense.",
+            "chinese": "这意味着其中充满了悬念。",
+            "source_video": "Subtitle 5"
+          }
+        ]
+      },
+      {
+        "french": "pilote",
+        "part_of_speech": "nom masculin",
+        "ipa": "[pi.lɔt]",
+        "chinese": "飞行员，（赛车/摩托车）车手",
+        "example_sentence": {
+          "french": "Les pilotes de motos sont très courageux.",
+          "chinese": "摩托车手们非常勇敢。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          2,
+          3,
+          6,
+          8
+        ],
+        "occurrence_count": 4,
+        "examples": [
+          {
+            "french": "Avec des pilotes, donc les pilotes des motos, poussant ou plutôt repoussant leurs limites.",
+            "chinese": "用“with”来描述那些车手——也就是摩托车骑手，在不断挑战、或者说突破自己的极限。",
+            "source_video": "Subtitle 6"
+          }
+        ]
+      },
+      {
+        "french": "limite",
+        "part_of_speech": "nom féminin",
+        "ipa": "[li.mit]",
+        "chinese": "极限，界限",
+        "example_sentence": {
+          "french": "Il faut connaître ses limites.",
+          "chinese": "必须了解自己的极限。"
+        },
+        "cefr_level": "A2",
+        "source_ids": [
+          2,
+          3,
+          6,
+          7,
+          8
+        ],
+        "occurrence_count": 5,
+        "examples": [
+          {
+            "french": "Repousser ses limites sur le circuit Bugatti.",
+            "chinese": "在布加迪赛道上挑战自我极限。",
+            "source_video": "Subtitle 7"
+          }
+        ]
+      },
+      {
+        "french": "authentique",
+        "part_of_speech": "adjectif",
+        "ipa": "[o.tɑ̃.tik]",
+        "chinese": "纯正的，真实的",
+        "example_sentence": {
+          "french": "Ce restaurant offre un goût authentique.",
+          "chinese": "这家餐厅提供纯正的口味。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          1
+        ],
+        "occurrence_count": 1,
+        "examples": [
+          {
+            "french": "Cette shake de nourriture en tout seul délivre un goût boud, authentique...",
+            "chinese": "这款单独饮用的食品奶昔，带来浓郁、纯正的口感...",
+            "source_video": "Subtitle 1"
+          }
+        ]
+      },
+      {
+        "french": "protéine",
+        "part_of_speech": "nom féminin",
+        "ipa": "[pʁɔ.te.in]",
+        "chinese": "蛋白质",
+        "example_sentence": {
+          "french": "Il y a 25 grammes de protéines dans cette boisson.",
+          "chinese": "这款饮料里有25克蛋白质。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          1
+        ],
+        "occurrence_count": 1,
+        "examples": [
+          {
+            "french": "Avec 25 grammes de protéines, 6 grammes de fibres...",
+            "chinese": "富含25克蛋白质、6克膳食纤维...",
+            "source_video": "Subtitle 1"
+          }
+        ]
+      },
+      {
+        "french": "fibre",
+        "part_of_speech": "nom féminin",
+        "ipa": "[fibʁ]",
+        "chinese": "纤维",
+        "example_sentence": {
+          "french": "Les légumes sont riches en fibres.",
+          "chinese": "蔬菜富含纤维。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          1
+        ],
+        "occurrence_count": 1,
+        "examples": [
+          {
+            "french": "Avec 25 grammes de protéines, 6 grammes de fibres...",
+            "chinese": "富含25克蛋白质、6克膳食纤维...",
+            "source_video": "Subtitle 1"
+          }
+        ]
+      },
+      {
+        "french": "décaféiné",
+        "part_of_speech": "adjectif",
+        "ipa": "[de.ka.fe.i.ne]",
+        "chinese": "无咖啡因的",
+        "example_sentence": {
+          "french": "Je voudrais un café décaféiné, s'il vous plaît.",
+          "chinese": "请给我来一杯无咖啡因咖啡。"
+        },
+        "cefr_level": "B1",
+        "source_ids": [
+          1
+        ],
+        "occurrence_count": 1,
+        "examples": [
+          {
+            "french": "Créé de beignets de Brésil décaffeinés de premium...",
+            "chinese": "由优质巴西无咖啡因甜甜圈（注：此处为原文机器翻译错误，应为咖啡豆）制成...",
+            "source_video": "Subtitle 1"
+          }
+        ]
+      }
+    ],
+    "key_expressions": [
+      {
+        "expression": "en roue libre",
+        "meaning": "自由发挥，不受控制，随心所欲（字面意思：滑行，空转）",
+        "example": {
+          "french": "Aujourd'hui la leçon est en roue libre.",
+          "chinese": "今天这节课是自由发挥。"
+        },
+        "usage_note": "常用于形容某人说话或做事没有准备、不受约束，或者失去控制。",
+        "source_ids": [
+          2
+        ]
+      },
+      {
+        "expression": "repousser ses limites",
+        "meaning": "突破自我极限，挑战极限",
+        "example": {
+          "french": "C'est l'expression à retenir : repousser ses limites.",
+          "chinese": "这是需要记住的表达：突破自我极限。"
+        },
+        "usage_note": "在体育、个人成长和励志语境中非常常用，表示超越原有的能力边界。",
+        "source_ids": [
+          6,
+          7
+        ]
+      },
+      {
+        "expression": "quitter des yeux",
+        "meaning": "移开视线（常用于否定句：ne pas pouvoir quitter des yeux）",
+        "example": {
+          "french": "On ne pouvait pas quitter les yeux de ce spectacle.",
+          "chinese": "人们根本移不开目光，完全沉浸在这场演出中。"
+        },
+        "usage_note": "表示某事物非常吸引人，让人目不转睛。",
+        "source_ids": [
+          5
+        ]
+      },
+      {
+        "expression": "aller plus loin",
+        "meaning": "走得更远，深入，超越",
+        "example": {
+          "french": "Repousser les limites, aller plus loin que ce que l'on pense.",
+          "chinese": "突破极限，就是超越自我、突破想象的极限。"
+        },
+        "usage_note": "不仅指物理距离上的更远，也常指思想、能力或行动上的深化和超越。",
+        "source_ids": [
+          7
+        ]
+      }
+    ]
+  },
+  "deep_learning": {
+    "grammar_points": [
+      {
+        "name": "Le participe présent (现在分词)",
+        "structure": "Radical de 'nous' au présent + -ant",
+        "explanation": "现在分词在句中可以起到类似于关系从句（qui + 动词）的作用，用来修饰前面的名词，表示主动和同时发生的动作。在原文中，'repoussant' 修饰 'pilotes'，等同于 'qui repoussent'。",
+        "example": {
+          "french": "Le Grand Prix Moto a offert un spectacle palpitant avec des pilotes repoussant leurs limites.",
+          "chinese": "摩托车大奖赛呈现了一场扣人心弦的比赛，车手们不断突破自我极限。"
+        },
+        "usage_note": "现在分词没有性数变化（除非作为形容词使用）。",
+        "source_ids": [
+          2,
+          3,
+          6,
+          8
+        ]
+      },
+      {
+        "name": "L'expression de l'intensité avec 'tellement' (用 tellement 表达强度与结果)",
+        "structure": "Tellement + adjectif/adverbe + (que + conséquence)",
+        "explanation": "Tellement 用于强调某事物的程度极高，常引出结果。在口语中，'que' 引导的从句有时会被省略或倒装。原文中 'Tellement c'était intéressant' 是一种口语化的倒装强调，等同于 'C'était tellement intéressant qu'on ne pouvait pas quitter les yeux'.",
+        "example": {
+          "french": "On ne pouvait pas quitter la salle de cinéma tellement c'est intéressant.",
+          "chinese": "观众根本舍不得离开电影院，因为实在是太精彩了。"
+        },
+        "usage_note": "在口语中，常把结果放在前面，然后用 'tellement + 句子' 来解释原因（强度）。",
+        "source_ids": [
+          5,
+          6
+        ]
+      }
+    ],
+    "pronunciation": {
+      "key_sounds": [
+        {
+          "sound": "[ɑ̃]",
+          "description": "鼻化元音，发音时气流同时从口腔和鼻腔流出。在文本中频繁出现。",
+          "examples": [
+            "palpitant",
+            "France",
+            "Mans",
+            "danse"
+          ]
+        },
+        {
+          "sound": "[ɛns]",
+          "description": "英语外来词在法语中的发音保留了词尾辅音群。",
+          "examples": [
+            "suspense"
+          ]
+        }
+      ],
+      "liaison": [
+        "est_en (obligatory liaison: [ɛ.tɑ̃])",
+        "des_pilotes (no liaison, pronounced [de.pi.lɔt])"
+      ],
+      "intonation": "在讲解词汇时（如 'C'est ça, aller plus loin'），语调在逗号处上扬，在句末下降，体现出教师解释和强调的语气。"
+    },
+    "vocabulary_network": {
+      "theme": "Le sport extrême et le spectacle",
+      "core_word": "Palpitant",
+      "related_groups": [
+        {
+          "category": "L'événement",
+          "words": [
+            "spectacle",
+            "Grand Prix",
+            "circuit"
+          ]
+        },
+        {
+          "category": "L'action",
+          "words": [
+            "repousser",
+            "aller plus loin",
+            "pousser"
+          ]
+        },
+        {
+          "category": "Les acteurs",
+          "words": [
+            "pilotes",
+            "riders"
+          ]
+        }
+      ]
+    }
+  },
+  "practice": {
+    "exercises": [
+      {
+        "type": "填空",
+        "question": "Le Grand Prix Moto de France au Mans a offert un ___ ___ avec des ___ ___ leurs ___ sur le ___ Bugatti.",
+        "answer": "spectacle, palpitant, pilotes, repoussant, limites, circuit",
+        "explanation": "根据原文第2、3、8句，这是播客中反复讲解的核心句子：“Le Grand Prix Moto de France au Mans a offert un spectacle palpitant avec des pilotes repoussant leurs limites sur le circuit Bugatti.”",
+        "source_ids": [
+          2,
+          3,
+          8
+        ],
+        "difficulty": "B1"
+      },
+      {
+        "type": "选择",
+        "question": "Selon les explications du professeur dans le texte, que signifie l'expression « repousser ses limites » ?",
+        "options": {
+          "A": "Quitter la salle de cinéma avant la fin du film.",
+          "B": "Aller plus loin que ce que l'on pense.",
+          "C": "Conduire une moto sur le circuit Bugatti.",
+          "D": "Regarder un spectacle de danse palpitant."
+        },
+        "answer": "B",
+        "explanation": "正确答案是B。原文第7句明确解释了该表达的含义：“Repousser les limites, aller plus loin. C'est ça, aller plus loin que ce que l'on pense.” 其他选项均为文本中提到的其他事物的拼凑，并非该表达的含义。",
+        "source_ids": [
+          7
+        ],
+        "difficulty": "A2"
+      },
+      {
+        "type": "翻译",
+        "question": "On ne pouvait pas quitter les yeux, quitter le regard de ce spectacle. Tellement c'était intéressant avec du suspense.",
+        "answer": "我们无法移开视线，无法不看这场演出。它充满了悬念，实在是太有趣了。",
+        "explanation": "翻译难点在于“quitter les yeux / le regard”（移开视线）以及“Tellement c'était intéressant”（实在是太有趣了）。这里“tellement”放在句首起强调作用，表示程度之深导致了前一句“无法移开视线”的结果。",
+        "source_ids": [
+          5
+        ],
+        "difficulty": "B1"
+      },
+      {
+        "type": "语法",
+        "question": "Transformez la phrase suivante en remplaçant le participe présent « repoussant » par une proposition relative avec « qui » : « ...avec des pilotes repoussant leurs limites sur le circuit Bugatti. »",
+        "answer": "...avec des pilotes qui repoussent leurs limites sur le circuit Bugatti.",
+        "explanation": "现在分词“repoussant”在这里起到了关系从句的作用，修饰先行词“pilotes”（复数）。因此，可以改写为关系代词“qui”加上动词的直陈式现在时第三人称复数变位“repoussent”。",
+        "source_ids": [
+          2,
+          6
+        ],
+        "difficulty": "B1"
+      }
+    ],
+    "exercise_summary": {
+      "total_count": 4,
+      "type_distribution": {
+        "填空": 1,
+        "选择": 1,
+        "翻译": 1,
+        "语法": 1
+      },
+      "covered_vocabulary": [
+        "spectacle",
+        "palpitant",
+        "pilote",
+        "repousser",
+        "limite",
+        "circuit",
+        "suspense"
+      ],
+      "covered_grammar": [
+        "Le participe présent (现在分词)",
+        "L'expression de l'intensité avec 'tellement' (用 tellement 表达强度与结果)"
+      ]
+    },
+    "sentence_patterns": [
+      {
+        "pattern": "Offrir un spectacle + adjectif",
+        "explanation": "呈现一场...的表演/比赛。常用于描述体育赛事、文艺演出等。",
+        "example": {
+          "french": "Ce match de football a offert un spectacle inoubliable.",
+          "chinese": "这场足球赛呈现了一场令人难忘的精彩对决。"
+        }
+      },
+      {
+        "pattern": "Ne pas pouvoir quitter [quelque chose] tellement c'est [adjectif]",
+        "explanation": "因为某事物太...而无法离开/移开视线。口语中常用的因果倒装强调句型。",
+        "example": {
+          "french": "Je n'ai pas pu fermer le livre tellement l'histoire était captivante.",
+          "chinese": "故事太吸引人了，我根本无法合上书。"
+        }
+      }
+    ],
+    "scenario": {
+      "description": "你刚刚在现场观看了一场极其精彩的极限运动比赛（如滑板、赛车或跑酷）。你的法国朋友问你比赛怎么样。你需要用今天学到的词汇（palpitant, repousser ses limites, spectacle, tellement）向他描述这场比赛。",
+      "requirements": "使用至少3个目标词汇，并尝试使用'tellement'来表达你的激动之情。",
+      "starter": "Salut ! Tu ne vas pas le croire, la compétition d'hier a offert un spectacle..."
+    }
+  },
+  "summary": {
+    "content": "本节课分为两部分。第一部分是一段关于Cachava代餐奶昔的广告（注意：原文广告的法语翻译带有明显的机器翻译痕迹，如将咖啡豆错译为甜甜圈）。第二部分是核心法语教学，老师详细讲解了一句描述勒芒摩托车大奖赛的法语长句。通过这节课，学习者掌握了如何描述激动人心的赛事（spectacle palpitant），以及如何表达“突破极限”（repousser ses limites）等高级词汇和表达。",
+    "keywords": [
+      "palpitant",
+      "repousser ses limites",
+      "spectacle",
+      "circuit",
+      "suspense"
+    ],
+    "difficulty_note": "文本的教学部分适合B1级别的学习者，词汇讲解非常细致。但需注意开头广告部分的法语存在语法和用词错误（属于直译英语），学习时应将重点放在第二部分的教师讲解上。"
+  },
+  "verification": {
+    "unit_num": 1,
+    "time_range": {
+      "start": "00:00:00.000",
+      "end": "00:04:00.900"
+    },
+    "theme": "Le sport, le spectacle et le dépassement de soi",
+    "cefr_level": "B1",
+    "vocabulary_count": 11,
+    "grammar_points_count": 2,
+    "checklist": {
+      "vocabulary_complete": true,
+      "grammar_complete": true,
+      "pronunciation_complete": true,
+      "practice_complete": true,
+      "summary_complete": true
+    }
+  },
+  "channel": "Louis法语课"
+}

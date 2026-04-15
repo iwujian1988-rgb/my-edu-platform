@@ -1,0 +1,1144 @@
+{
+  "source_file": "E181 France-Sénégal, entre amitié et domination.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E181 法国与塞内加尔，友谊与霸权之间",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T13:23:24.074Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "The Relative Pronoun 'dont'",
+          "The Passive Voice (La voix passive)",
+          "Subjunctive after 'Il faut que'"
+        ],
+        "speaking": [
+          "Discussing historical legacies and their modern impacts",
+          "Expressing nuanced opinions on political and economic sovereignty",
+          "Debating the concept of 'Françafrique' and post-colonial relations"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "traite négrière",
+            "part_of_speech": "nom féminin",
+            "ipa": "[tʁɛt ne.ɡʁijɛʁ]",
+            "chinese": "黑奴贸易",
+            "example_sentence": {
+              "french": "On va commencer par le XVIIe siècle, par la colonisation, la traite négrière.",
+              "chinese": "我们将从17世纪开始，从殖民化和奴隶贸易说起。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Certains historiens contestent qu'elle était un centre majeur de la traite.",
+                "chinese": "一些历史学家质疑它是否曾是奴隶贸易的主要中心。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "comptoir",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kɔ̃.twaʁ]",
+            "chinese": "商站；贸易据点",
+            "example_sentence": {
+              "french": "Des commerçants français fondent un comptoir commercial à l'embouchure du fleuve Sénégal.",
+              "chinese": "法国商人在塞内加尔河口建立了一个贸易据点。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9,
+              10
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Un comptoir, c'est une propriété des Européens au niveau des côtes.",
+                "chinese": "贸易据点是欧洲人在沿海地区拥有的财产。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "flagrant",
+            "part_of_speech": "adjectif",
+            "ipa": "[fla.ɡʁɑ̃]",
+            "chinese": "明显的；公然的",
+            "example_sentence": {
+              "french": "Au Sénégal, c'était beaucoup plus flagrant, beaucoup plus présent.",
+              "chinese": "在塞内加尔，这一点更加明显，更加无处不在。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6,
+              29
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "En lisant les panneaux, c'était quand même flagrant.",
+                "chinese": "读着那些标牌时，这一点还是非常明显的。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "entassé",
+            "part_of_speech": "adjectif / participe passé",
+            "ipa": "[ɑ̃.ta.se]",
+            "chinese": "拥挤的；堆积的",
+            "example_sentence": {
+              "french": "Les Africains qui étaient considérés comme des esclaves étaient entassés.",
+              "chinese": "那些被视为奴隶的非洲人被拥挤地塞在一起。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              19,
+              25
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Des dizaines de personnes étaient entassées pendant des semaines.",
+                "chinese": "数十人被挤在一起长达数周。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "atrocités",
+            "part_of_speech": "nom féminin pluriel",
+            "ipa": "[a.tʁɔ.si.te]",
+            "chinese": "暴行",
+            "example_sentence": {
+              "french": "C'est une reconnaissance du rôle de mon pays dans ces atrocités.",
+              "chinese": "这是对我国在这些暴行中所扮演角色的承认。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              30
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Mon pays a participé à ces atrocités.",
+                "chinese": "我的国家参与了这些暴行。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "assimilation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[a.si.mi.la.sjɔ̃]",
+            "chinese": "同化",
+            "example_sentence": {
+              "french": "Le modèle colonial français, en particulier, est basé sur l'assimilation.",
+              "chinese": "尤其是法国的殖民模式，是以同化为基础的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              35
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Mais cette assimilation est hypocrite.",
+                "chinese": "但这种同化是虚伪的。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "indigène",
+            "part_of_speech": "nom / adjectif",
+            "ipa": "[ɛ̃.di.ʒɛn]",
+            "chinese": "原住民；土著（殖民语境下带贬义）",
+            "example_sentence": {
+              "french": "Les populations colonisées étaient considérées comme des indigènes.",
+              "chinese": "被殖民的人口被视为原住民。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              38,
+              45
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Cette histoire-là, elle est racontée dans le film Indigènes.",
+                "chinese": "这段故事在电影《原住民》中有所讲述。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "pension",
+            "part_of_speech": "nom féminin",
+            "ipa": "[pɑ̃.sjɔ̃]",
+            "chinese": "养老金；抚恤金",
+            "example_sentence": {
+              "french": "Ils rencontrent de grosses difficultés pour recevoir leur pension.",
+              "chinese": "他们在领取养老金时遇到了巨大困难。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              46
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Leurs pensions sont gelées à un niveau très bas.",
+                "chinese": "他们的养老金被冻结在极低水平。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "souveraineté",
+            "part_of_speech": "nom féminin",
+            "ipa": "[su.vʁɛn.te]",
+            "chinese": "主权",
+            "example_sentence": {
+              "french": "L'un de ses engagements forts, c'est ce qu'on appelle la souveraineté nationale.",
+              "chinese": "他的一项重要承诺，就是所谓的国家主权。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              58
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il défend la souveraineté de son pays.",
+                "chinese": "他捍卫国家的主权。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "ingérence",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛ̃.ʒe.ʁɑ̃s]",
+            "chinese": "干涉；干预",
+            "example_sentence": {
+              "french": "Il y avait des scandales de corruption, des ingérences.",
+              "chinese": "当时充斥着腐败丑闻和干涉他国内政的事件。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              65
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La France est accusée d'ingérence en Afrique.",
+                "chinese": "法国被指责干涉非洲事务。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "comble",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kɔ̃bl]",
+            "chinese": "极致；顶点（常指荒谬或讽刺的事）",
+            "example_sentence": {
+              "french": "Le comble, c'est qu'on a des propriétaires d'entreprises en Afrique qui sont contre l'immigration.",
+              "chinese": "极致的荒谬是，非洲的一些企业主竟然反对移民。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              69,
+              71,
+              72
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "C'est le maximum de l'ironie, c'est le comble.",
+                "chinese": "这是讽刺的顶点，真是荒谬透顶。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          },
+          {
+            "french": "rapatrié",
+            "part_of_speech": "adjectif / participe passé",
+            "ipa": "[ʁa.pa.tʁi.je]",
+            "chinese": "汇回（本国）；遣返回国",
+            "example_sentence": {
+              "french": "Les profits sont rapatriés en France.",
+              "chinese": "利润被汇回法国。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              69
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'argent gagné au Sénégal est rapatrié.",
+                "chinese": "在塞内加尔赚的钱被汇回了国。",
+                "source_video": "France-Sénégal : entre amitié et domination"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "l'arbre qui cache la forêt",
+            "meaning": "只见树木，不见森林；掩盖真相的局部现象",
+            "example": {
+              "french": "On peut dire que cette situation-là, c'est l'arbre qui cache la forêt.",
+              "chinese": "可以说，这种状况正是“只见树木，不见森林”。"
+            },
+            "usage_note": "Used to describe a minor detail or exception that hides a much larger, more important reality.",
+            "source_ids": [
+              37
+            ]
+          },
+          {
+            "expression": "sur un pied d'égalité",
+            "meaning": "在平等的基础上",
+            "example": {
+              "french": "La Francophonie, c'est un espace où les pays francophones collaborent sur un pied d'égalité.",
+              "chinese": "“法语圈”是一个由讲法语国家以平等地位开展合作的平台。"
+            },
+            "usage_note": "Commonly used in political and diplomatic contexts to emphasize fairness and lack of hierarchy.",
+            "source_ids": [
+              53,
+              54,
+              74
+            ]
+          },
+          {
+            "expression": "à sa juste valeur",
+            "meaning": "按其应有的价值；恰如其分地",
+            "example": {
+              "french": "Ces soldats ne sont pas remerciés à leur juste valeur.",
+              "chinese": "这些士兵并未得到应有的回报。"
+            },
+            "usage_note": "Often used with verbs like 'remercier', 'apprécier', or 'estimer'.",
+            "source_ids": [
+              46
+            ]
+          },
+          {
+            "expression": "échauffer les esprits",
+            "meaning": "激起情绪；使人激动/愤怒",
+            "example": {
+              "french": "Je sais que ce genre de sujet peut un peu échauffer les esprits.",
+              "chinese": "我知道这类话题可能会引发一些争论（激起情绪）。"
+            },
+            "usage_note": "Used when a topic is controversial or sensitive.",
+            "source_ids": [
+              76
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "The Relative Pronoun 'dont'",
+            "structure": "Nom + dont + Sujet + Verbe (qui se construit avec 'de')",
+            "explanation": "Used to replace a complement introduced by the preposition 'de'. It can indicate possession, origin, or the object of a verb followed by 'de'.",
+            "example": {
+              "french": "C'est ça dont je voudrais vous parler aujourd'hui.",
+              "chinese": "这正是我今天想和大家探讨的（parler de quelque chose）。"
+            },
+            "usage_note": "In the text, it's used frequently to link themes: 'le lien dont je vous parle', 'l'histoire dont on se souvient'.",
+            "source_ids": [
+              7,
+              21,
+              45,
+              69
+            ]
+          },
+          {
+            "name": "The Passive Voice (La voix passive)",
+            "structure": "Sujet + Être (conjugué) + Participe Passé (+ par + Complément d'agent)",
+            "explanation": "Used to emphasize the action or the person/thing undergoing the action rather than the doer. Common in historical accounts.",
+            "example": {
+              "french": "Ces États souverains qui existaient depuis des siècles sont conquis.",
+              "chinese": "这些存在了数个世纪的主权国家被征服了。"
+            },
+            "usage_note": "The agent (the one doing the action) is often omitted if it's obvious or unknown.",
+            "source_ids": [
+              33,
+              35,
+              45,
+              50
+            ]
+          },
+          {
+            "name": "Subjunctive after 'Il faut que'",
+            "structure": "Il faut que + Sujet + Verbe au subjonctif",
+            "explanation": "The subjunctive mood is required after impersonal expressions of necessity like 'il faut que'.",
+            "example": {
+              "french": "Il faut que je vous dise quelque chose.",
+              "chinese": "我得跟大家说点什么。"
+            },
+            "usage_note": "Used here to introduce a crucial historical clarification.",
+            "source_ids": [
+              31
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[j]",
+              "description": "The semi-vowel 'y' sound in words like 'traite négrière' [ne.ɡʁijɛʁ] and 'Thiaroye' [tja.ʁwaj].",
+              "examples": [
+                "négrière",
+                "Thiaroye"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_habitants [le.za.bi.tɑ̃]",
+            "des_esclaves [de.zɛs.klav]",
+            "un_établissement [œ̃.ne.ta.blis.mɑ̃]"
+          ],
+          "intonation": "The speaker uses a serious, pedagogical tone with clear pauses after historical dates and key terms like 'esclavage' or 'indépendance' to emphasize their weight."
+        },
+        "vocabulary_network": {
+          "theme": "Colonisation et Souveraineté",
+          "core_word": "Domination",
+          "related_groups": [
+            {
+              "category": "Histoire Coloniale",
+              "words": [
+                "traite négrière",
+                "comptoir",
+                "indigène",
+                "assimilation"
+              ]
+            },
+            {
+              "category": "Économie",
+              "words": [
+                "monnaie",
+                "franc CFA",
+                "profits",
+                "rapatriés"
+              ]
+            },
+            {
+              "category": "Politique Moderne",
+              "words": [
+                "souveraineté",
+                "indépendance",
+                "ingérence",
+                "coopération"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Les ___ sont ___ en France et le ___, c'est que parmi les ___ de ces grandes ___, beaucoup ___ pour qu'en France, on ___ l'immigration.",
+            "answer": "profits, rapatriés, comble, propriétaires, entreprises, militent, limite",
+            "explanation": "根据原文第69句，作者指出利润被汇回法国，而讽刺的是，这些大企业的所有者却在法国主张限制移民。",
+            "source_ids": [
+              69
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi l'auteur dit-elle que l'assimilation coloniale était « hypocrite » ?",
+            "options": {
+              "A": "Parce que les colonisés ne voulaient pas apprendre le français.",
+              "B": "Parce que les colonisés ne devenaient jamais vraiment des citoyens à part entière.",
+              "C": "Parce que la France a quitté le Sénégal dès 1848.",
+              "D": "Parce que le système juridique français était trop complexe."
+            },
+            "answer": "B",
+            "explanation": "原文第36句明确提到：'En réalité, les colonisés ne deviennent jamais vraiment des citoyens français à part entière.'，因此这种同化是虚伪的。",
+            "source_ids": [
+              36
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "翻译",
+            "question": "Une partie importante des troupes qui ont libéré la France était constituée de soldats africains.",
+            "answer": "解放法国的部队中，有很大一部分是由非洲士兵组成的。",
+            "explanation": "这句话使用了被动结构 'était constituée de'，强调了非洲士兵在二战中对法国解放的重要贡献。",
+            "source_ids": [
+              45
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Complétez la phrase avec le pronom relatif correct : « C'est un lien qui a une histoire longue et complexe. C'est le sujet ___ je voudrais vous parler aujourd'hui. »",
+            "answer": "dont",
+            "explanation": "动词短语是 'parler de quelque chose'，当先行词是介词 'de' 的宾语时，使用关系代词 'dont'。",
+            "source_ids": [
+              7
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "profits",
+            "rapatriés",
+            "comble",
+            "propriétaires",
+            "entreprises",
+            "militent",
+            "limite"
+          ],
+          "covered_grammar": [
+            "dont",
+            "la voix passive"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il faut remonter au [siècle] pour comprendre pourquoi...",
+            "explanation": "Used to introduce a historical explanation for a current situation.",
+            "example": {
+              "french": "Il faut remonter au XVIIe siècle pour comprendre pourquoi il y a tant de France au Sénégal.",
+              "chinese": "必须追溯到17世纪，才能理解为什么今天的塞内加尔有这么多法国元素。"
+            }
+          },
+          {
+            "pattern": "D'un côté, [A], et en même temps, [B].",
+            "explanation": "Used to express two seemingly contradictory feelings or situations that coexist.",
+            "example": {
+              "french": "D'un côté, une amitié pour la France, et en même temps, une envie d'indépendance.",
+              "chinese": "一方面是对法国的友谊，与此同时，又是对独立的渴望。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous discutez avec un étudiant sénégalais de l'influence des entreprises françaises à Dakar.",
+          "requirements": "Utilisez le pronom 'dont', l'expression 'sur un pied d'égalité' et parlez de la souveraineté économique.",
+          "starter": "C'est vrai qu'en marchant dans les rues de Dakar, on voit beaucoup d'enseignes françaises..."
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the complex, multi-layered relationship between France and Senegal. It traces history from the 17th-century slave trade (Gorée Island) through the colonial era of 'assimilation' and the sacrifice of the 'Tirailleurs sénégalais' in World Wars. It concludes by analyzing modern tensions: the desire for full sovereignty (military and economic) versus the deep cultural and linguistic ties that remain.",
+        "keywords": [
+          "Colonisation",
+          "Sénégal",
+          "Esclavage",
+          "Franc CFA",
+          "Souveraineté",
+          "Tirailleurs"
+        ],
+        "difficulty_note": "The text is B2 level due to its abstract historical and political vocabulary. It requires understanding of nuanced arguments regarding neo-colonialism and economic policy."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:30:11"
+        },
+        "theme": "France-Senegal Relations: History and Modern Domination",
+        "cefr_level": "B2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.019",
+        "end_time": "00:30:11.049",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 77,
+        "source_video_name": "E181 France-Sénégal, entre amitié et domination.json",
+        "tags": [
+          "商务",
+          "搞钱"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.019",
+          "end_time": "00:00:35.240",
+          "french": "France-Sénégal : entre amitié et domination. Bonjour à toutes et à tous et bienvenue dans ce nouvel épisode. Comme vous le savez, j'étais au Sénégal il n'y a pas longtemps et à la fin de mon interview dans le dernier épisode, je vous ai même annoncé que j'avais des choses à vous dire sur les relations entre la France et le Sénégal. C'est donc le sujet du jour.",
+          "chinese": "法国与塞内加尔：友谊与统治之间。大家好，欢迎收看本期节目。如你们所知，我不久前去了塞内加尔，在上一集采访结束时，我甚至预告过，关于法国与塞内加尔的关系，我有话想对大家说。这就是今天的主题。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:35.609",
+          "end_time": "00:00:50.340",
+          "french": "Alors, il faut savoir que ce sont deux pays qui sont très proches à cause de leur histoire commune. Et ça, ça se ressent immédiatement quand on arrive à Dakar. C'est quelque chose qui m'a frappée dès mon arrivée.",
+          "chinese": "首先，必须知道这两个国家因共同的历史而关系紧密。当你到达达喀尔时，这种感觉会扑面而来。这是我一抵达就深受触动的一点。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:50.869",
+          "end_time": "00:01:06.500",
+          "french": "En retirant de l'argent au distributeur, par exemple, j'ai reçu des francs. Des francs : le nom de la monnaie utilisée au Sénégal a le même nom que la monnaie que j'utilisais enfant, avant l'arrivée de l'euro.",
+          "chinese": "比如，在自动取款机取钱时，我取到的是法郎。法郎：塞内加尔使用的货币名称，和我小时候在欧元出现前使用的货币名称一模一样。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:07.099",
+          "end_time": "00:01:36.719",
+          "french": "Puis, sur le trajet de l'aéroport vers le centre-ville, j'ai vu défiler les mêmes enseignes qu'en France : Orange, Total, Auchan, Décathlon. En fait, j'avais l'impression d'être chez un cousin éloigné, avec une maison qui ressemble à la mienne, avec certaines habitudes communes, certains objets, certaines références que je reconnaissais. Mais en même temps, c'était assez perturbant parce que, en fait, je savais...",
+          "chinese": "接着，在从机场前往市中心的路上，我看到路边闪过和法国一样的招牌：Orange、Total、Auchan、Décathlon。事实上，我感觉自己就像在一位远房亲戚家，他的房子和我的很像，有着共同的习惯、物品和熟悉的参照物。但与此同时，这又让人感到有些不安，因为事实上，我知道……"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:36.719",
+          "end_time": "00:01:55.939",
+          "french": "...très bien que cette familiarité était un héritage de la colonisation. Alors bien sûr, j'avais déjà constaté l'héritage de la colonisation française dans d'autres pays. D'ailleurs, je vous avais fait un épisode sur l'Indochine quand j'étais au Vietnam.",
+          "chinese": "……我很清楚这种亲近感是殖民统治的遗产。当然，我以前在其他国家也见过法国殖民的痕迹。比如，我在越南时曾做过一期关于法属印度支那的节目。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:56.439",
+          "end_time": "00:02:22.469",
+          "french": "Mais dans les pays d'Asie où j'étais allée, cet héritage se découvrait progressivement à travers des petits détails culturels, par exemple de la nourriture. Alors que là, au Sénégal, c'était beaucoup plus flagrant, beaucoup plus présent. Et ça m'a fait me questionner sur notre histoire commune, sur notre lien aujourd'hui.",
+          "chinese": "但在我去过的亚洲国家，这种遗产是通过文化细节（比如食物）逐渐被发现的。而在塞内加尔，它要显眼得多，存在感强得多。这让我开始反思我们共同的历史，以及我们今天的纽带。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:22.870",
+          "end_time": "00:02:50.990",
+          "french": "Alors pendant tout le mois que j'ai passé là-bas, j'ai pu explorer ces questionnements. Et c'est ça dont je voudrais vous parler aujourd'hui. Je voudrais vous raconter ce que j'ai appris de ce lien entre la France et le Sénégal. C'est un lien qui a une histoire, une histoire longue et complexe. Et on va explorer ça ensemble aujourd'hui en allant dans un ordre chronologique.",
+          "chinese": "在那里的一个月里，我一直在探索这些疑问。这就是我今天想和大家聊的内容。我想告诉大家，关于法国和塞内加尔之间的这种纽带，我学到了什么。这是一段有着悠久且复杂历史的纽带。今天我们将按照时间顺序，一起探索这段历史。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:50.990",
+          "end_time": "00:03:23.240",
+          "french": "On va commencer par le XVIIe siècle, par la colonisation, la traite négrière. Et puis ensuite, on parlera plutôt du XXe siècle. Et enfin, dans une dernière partie, on essayera de comprendre le lien aujourd'hui. Alors, c'est parti ! Pour comprendre pourquoi il y a tant de France au Sénégal aujourd'hui, il faut remonter au XVIIe siècle.",
+          "chinese": "我们将从17世纪的殖民扩张和黑奴贸易开始。然后，我们会谈谈20世纪。最后，在最后一部分，我们将尝试理解当下的关系。那么，我们开始吧！要理解为什么今天的塞内加尔有这么多法国的影子，必须追溯到17世纪。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:23.479",
+          "end_time": "00:03:54.379",
+          "french": "À cette époque, les puissances européennes sont en pleine expansion maritime. Elles cherchent de nouvelles routes commerciales, de nouveaux territoires et de nouvelles richesses. Les Portugais sont les premiers à explorer les côtes africaines. Mais rapidement, les Hollandais, les Anglais et les Français les rejoignent. En 1638, des commerçants français de la Compagnie normande fondent un comptoir commercial à l'embouchure du fleuve Sénégal.",
+          "chinese": "当时，欧洲列强正处于海上扩张期。它们寻找新的贸易路线、领土和财富。葡萄牙人是最先探索非洲海岸的。但很快，荷兰人、英国人和法国人也加入了进来。1638年，诺曼底公司的法国商人就在塞内加尔河口建立了一个贸易站。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:55.000",
+          "end_time": "00:04:18.470",
+          "french": "Un comptoir, vous savez, je vous en ai déjà parlé dans un autre épisode, c'est une propriété des Européens au niveau des côtes, comme un petit port qu'ils s'appropriaient pour pouvoir faire du commerce, pour pouvoir laisser leurs bateaux, apporter des marchandises et puis repartir avec ces marchandises vers l'Europe.",
+          "chinese": "贸易站，你们知道的，我在另一集里提到过，它是欧洲人在海岸线上的领地，就像一个他们占为己有的小港口，用来做生意、停靠船只、卸下货物，然后带着货物返回欧洲。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:18.970",
+          "end_time": "00:04:30.379",
+          "french": "Alors donc d'abord, les Français commencent par un comptoir. Et puis, en 1659, ils fondent la ville de Saint-Louis, construite sur une île du fleuve Sénégal.",
+          "chinese": "起初，法国人从贸易站开始。接着在1659年，他们建立了圣路易市，这座城市建在塞内加尔河的一个岛上。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:30.839",
+          "end_time": "00:04:57.290",
+          "french": "Cette ville devient le premier établissement français permanent en Afrique subsaharienne. C'est le point de départ de la présence française dans la région. L'Afrique subsaharienne, c'est toute l'Afrique à l'exception du Maroc, de l'Algérie, de la Tunisie, de la Libye et de l'Égypte. En gros, on enlève la partie nord qui donne sur la Méditerranée et...",
+          "chinese": "这座城市成为了法国在撒哈拉以南非洲的第一个永久定居点。这是法国在该地区存在的起点。撒哈拉以南非洲是指除摩洛哥、阿尔及利亚、突尼斯、利比亚和埃及以外的所有非洲地区。简单来说，去掉面向地中海的北部地区……"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:57.430",
+          "end_time": "00:05:12.899",
+          "french": "...après, c'est l'Afrique subsaharienne. Donc là, les Français commencent à entrer sur ce territoire-là. Et c'est d'ailleurs pour cette raison que le Sénégal est considéré comme la plus ancienne colonie française d'Afrique.",
+          "chinese": "……剩下的就是撒哈拉以南非洲。于是，法国人开始进入这片领土。也正因如此，塞内加尔被认为是法国在非洲最古老的殖民地。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:13.339",
+          "end_time": "00:05:34.089",
+          "french": "Mais à cette époque, les Français ne contrôlent que quelques comptoirs sur la côte. L'intérieur des terres reste sous le contrôle des royaumes africains locaux. Ces États ont leurs propres structures politiques, systèmes économiques et cultures. Certains sont même très puissants et organisés.",
+          "chinese": "但在那个时代，法国人只控制着沿海的几个贸易站。内陆地区仍由当地的非洲王国控制。这些国家拥有自己的政治结构、经济体系和文化。有些甚至非常强大且组织严密。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:34.839",
+          "end_time": "00:05:58.980",
+          "french": "Au début, les relations entre les Français et ces royaumes sont commerciales. On échange des tissus, de l'alcool, des armes à feu contre de l'or, de l'ivoire et d'autres matières premières. L'ivoire, c'est le matériau qui compose les défenses des éléphants. Donc ça, c'était assez précieux pour les Européens. Et puis...",
+          "chinese": "起初，法国人与这些王国之间是贸易关系。人们用布料、酒精、枪支换取黄金、象牙和其他原材料。象牙是构成大象长牙的材料，这对当时的欧洲人来说非常珍贵。然后……"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:59.220",
+          "end_time": "00:06:15.209",
+          "french": "Très vite, les Français prennent part au commerce triangulaire. Donc au début, c'était des relations commerciales égalitaires. Et puis, les Français commencent à entrer dans ce qu'on appelle le commerce triangulaire.",
+          "chinese": "很快，法国人参与到了三角贸易中。所以起初是平等的商业关系，接着，法国人开始进入所谓的三角贸易。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:15.350",
+          "end_time": "00:06:44.720",
+          "french": "Vous en avez forcément déjà entendu parler, mais c'est comme un triangle qui a trois côtés. C'est un commerce qui consiste à échanger trois types de marchandises venues de trois continents différents. Mais le gros problème, la chose horrible de ce commerce, c'est qu'une de ces marchandises, c'était des esclaves noirs capturés en Afrique. Donc les Européens partaient...",
+          "chinese": "你们肯定听说过它，就像一个有三条边的三角形。这种贸易涉及交换来自三个不同大陆的三类商品。但最大的问题，也是这种贸易最恐怖的地方在于，其中一种“商品”是在非洲捕获的黑奴。于是，欧洲人出发……"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:44.720",
+          "end_time": "00:07:09.839",
+          "french": "...d'Europe avec des marchandises européennes. Ils arrivaient dans les comptoirs sur les côtes africaines et notamment au Sénégal. Ils échangeaient leurs marchandises européennes contre des êtres humains qui étaient considérés comme des objets, et puis ils repartaient avec ces bateaux vers les Amériques sur le trajet qui était appelé...",
+          "chinese": "……带着欧洲货物从欧洲出发。他们抵达非洲海岸的贸易站，尤其是塞内加尔。他们用欧洲货物交换被视为“物品”的人类，然后带着这些船只前往美洲，这段航程被称为……"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:09.839",
+          "end_time": "00:07:27.459",
+          "french": "...le Passage du milieu. Les Africains qui étaient considérés comme des esclaves étaient entassés, ils étaient très nombreux, ils étaient dans des conditions très difficiles, tellement difficiles que beaucoup d'entre eux mouraient sur le chemin.",
+          "chinese": "……“中段航程”。被视为奴隶的非洲人被塞进船舱，人数众多，处境极其艰难，以至于许多人在途中就死去了。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:27.639",
+          "end_time": "00:07:54.829",
+          "french": "Et puis finalement, arrivés en Amérique, les esclaves étaient vendus pour pouvoir travailler dans les plantations et les bateaux, eux, repartaient en Europe avec du sucre, du café, du coton. Et ça, ça a vraiment fait la richesse des ports français. Pendant deux siècles, ça a duré et du coup, la relation entre la France et...",
+          "chinese": "最后抵达美洲后，奴隶被卖到种植园劳作，而船只则带着糖、咖啡、棉花返回欧洲。这真正造就了法国港口的财富。这种情况持续了两个世纪，因此，当时法国与……"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:54.829",
+          "end_time": "00:08:20.040",
+          "french": "...l'Afrique, et donc le Sénégal à cette époque, ça reposait vraiment sur cet esclavagisme. D'ailleurs, il y a un endroit en particulier dont je voudrais vous parler qui incarne toute cette histoire. C'est un endroit que j'ai visité quand j'étais au Sénégal et qui m'a fait comprendre cette réalité d'une manière que je n'avais jamais ressentie avant.",
+          "chinese": "……非洲，也就是当时的塞内加尔之间的关系，完全建立在这种奴隶制之上。此外，我想特别提到一个体现这段历史的地方。那是我在塞内加尔时参观过的一个地方，它让我以一种前所未有的方式理解了这一现实。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:20.949",
+          "end_time": "00:08:46.730",
+          "french": "C'est l'île de Gorée. Alors l'île de Gorée, ça se trouve à quelques kilomètres au large de Dakar. Aujourd'hui, c'est un endroit magnifique avec des maisons coloniales colorées, des rues pavées tranquilles et il y a une vue splendide sur l'océan Atlantique. C'est comme une carte postale. Et sur cette île se trouve un endroit qui s'appelle la Maison des Esclaves.",
+          "chinese": "那就是戈雷岛。戈雷岛位于达喀尔离岸几公里处。今天，那里是一个风景优美的地方，有彩色的殖民风格房屋、安静的石板路，还能欣赏到壮丽的大西洋海景。就像明信片一样。在这个岛上，有一个叫“奴隶堡”的地方。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:46.870",
+          "end_time": "00:08:52.299",
+          "french": "Elle a été construite en 1776 et aujourd'hui c'est un musée.",
+          "chinese": "它建于1776年，现在是一座博物馆。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:08:52.919",
+          "end_time": "00:09:18.990",
+          "french": "C'est un bâtiment qui servait de lieu de transit pour les personnes réduites en esclavage avant leur déportation en Amérique. C'est un lieu petit, sobre, il n'y a pas de mise en scène spectaculaire dans le musée. Quand j'y suis allée, j'ai passé des heures à lire les panneaux qui expliquent l'histoire. J'ai vu les cellules, des pièces minuscules, sombres, sans fenêtres...",
+          "chinese": "这座建筑曾是奴隶在被驱逐到美洲之前的转运站。那是一个狭小、庄重的地方，博物馆里没有夸张的布景。我去的时候，花了好几个小时阅读解释这段历史的展板。我看到了囚室，那些阴暗、狭小、没有窗户的房间……"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:18.990",
+          "end_time": "00:09:48.840",
+          "french": "...où des dizaines de personnes étaient entassées pendant des semaines, parfois des mois, en attendant d'être récupérées par un navire commercial. Il y avait des cellules séparées pour les hommes, pour les femmes, pour les enfants, et même une cellule pour les jeunes filles vierges, qui coûtaient un peu plus cher. Il y avait des chaînes fixées au mur. J'ai imaginé les boulets lourds attachés aux chevilles, la chaleur, l'obscurité, la peur, le désespoir.",
+          "chinese": "……几十个人被塞在一起长达数周，有时甚至数月，等待贸易船只来接走。那里有分别关押男人、女人、儿童的囚室，甚至还有一个关押处女的囚室，她们的价格更高一些。墙上固定着锁链。我能想象脚踝上沉重的铁球，还有那里的闷热、黑暗、恐惧和绝望。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:49.210",
+          "end_time": "00:10:13.029",
+          "french": "Et puis, au bout d'un couloir étroit, il y a ce qu'on appelle la Porte du Voyage sans retour. C'est une petite ouverture qui donne directement sur l'océan. Et par cette porte, les esclaves embarquaient sur des chaloupes, des petites embarcations à rames qui les conduisaient aux navires négriers ancrés au large.",
+          "chinese": "然后，在一条狭窄走廊的尽头，就是所谓的“不归之门”。这是一个直接通向大海的小开口。奴隶们通过这扇门登上小艇，这些划桨的小船会将他们送到停在远海的贩奴船上。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:13.590",
+          "end_time": "00:10:36.710",
+          "french": "Une fois qu'ils franchissaient cette porte, ils ne revoyaient plus jamais leur terre, leur famille, leur vie d'avant. Et alors, dans la dernière cellule, juste avant cette porte, j'ai été submergée par un trop-plein d'émotions. Je me suis mise à pleurer, parce que c'était plus qu'une leçon d'histoire abstraite. C'était réel. C'était là.",
+          "chinese": "一旦跨过这扇门，他们就再也见不到自己的土地、家人和过去的生活了。在紧挨着这扇门的最后一间囚室里，我被排山倒海的情绪淹没了。我哭了起来，因为这不仅仅是一堂抽象的历史课。它是真实的。它就在这里。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:36.980",
+          "end_time": "00:10:45.450",
+          "french": "Des êtres humains avaient souffert dans ces murs. Et je portais le même passeport, je parlais la même langue que ceux qui avaient organisé cela.",
+          "chinese": "人类曾在这些墙壁内受苦。而我拿着和那些组织这一切的人一样的护照，说着同样的语言。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:10:46.169",
+          "end_time": "00:11:14.940",
+          "french": "Ça peut paraître bizarre à certains de savoir que je m'identifie à ceux qui participaient à ça. Mais en lisant les panneaux, c'était quand même flagrant. On voyait les grands noms des personnes qui étaient envoyées par la France pour contrôler toutes ces terres et pour contrôler ce marché. Et donc forcément, ça m'a impactée. J'étais très triste et j'ai ressenti, je ne sais pas si c'est une culpabilité, mais...",
+          "chinese": "对某些人来说，我把自己与参与其中的人联系起来可能显得很奇怪。但读着那些展板，事实显而易见。我们能看到那些被法国派去控制这些土地和市场的显赫人物的名字。所以这必然对我产生了冲击。我感到非常悲伤，我感受到了一种，我不知道这是否叫愧疚，但是……"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:14.940",
+          "end_time": "00:11:23.529",
+          "french": "...quelque chose d'assez fort qui ressemble en tout cas à une reconnaissance du rôle de mon pays dans ces atrocités.",
+          "chinese": "……一种非常强烈的情感，至少看起来像是对我国家在这些暴行中所扮演角色的承认。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:11:23.740",
+          "end_time": "00:11:53.009",
+          "french": "Alors il faut que je vous dise quelque chose, il y a un débat historique sur le rôle exact de la Maison des Esclaves de Gorée. Certains historiens contestent qu'elle était un centre majeur de la traite. Mais ce n'est pas très important ce débat parce que le plus important c'est que finalement aujourd'hui Gorée est devenue un lieu de mémoire universel. L'UNESCO l'a classée au patrimoine mondial et c'est un endroit...",
+          "chinese": "我得告诉大家一件事，关于戈雷岛奴隶堡的确切角色存在历史争议。一些历史学家质疑它是否真的是主要的贸易中心。但这个争议并不重要，因为最重要的是，戈雷岛如今已成为一个普世的记忆之地。联合国教科文组织将其列为世界遗产，这是一个……"
+        },
+        {
+          "id": 32,
+          "start_time": "00:11:53.009",
+          "end_time": "00:12:27.909",
+          "french": "...où on peut se recueillir, se souvenir et ressentir justement ces émotions que j'ai ressenties et je pense que c'est important. Avançons maintenant dans le temps. Au XIXe siècle, après l'abolition progressive de l'esclavage (en France c'est en 1848), on pourrait penser que la France va quitter le Sénégal. Mais c'est le contraire qui se produit. La France étend son contrôle.",
+          "chinese": "……人们可以沉思、缅怀并感受我所感受到的那些情绪的地方，我认为这很重要。现在让我们把时间往后拨。在19世纪，随着奴隶制的逐渐废除（法国是在1848年），人们可能认为法国会离开塞内加尔。但事实恰恰相反。法国扩大了控制权。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:28.440",
+          "end_time": "00:12:55.909",
+          "french": "En 1854, Louis Faidherbe devient gouverneur du Sénégal. C'est un militaire et il va mener une politique d'expansion agressive. Il lance des campagnes militaires contre les royaumes de l'intérieur. Certains royaumes résistent longtemps mais finissent par tomber. Un à un, ces États souverains qui existaient depuis des siècles sont conquis.",
+          "chinese": "1854年，路易·费代尔布成为塞内加尔总督。他是一名军人，推行激进的扩张政策。他发起了针对内陆王国的军事行动。一些王国抵抗了很久，但最终还是沦陷了。这些存在了几个世纪的主权国家被一个接一个地征服。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:12:56.889",
+          "end_time": "00:13:21.929",
+          "french": "Cette conquête s'accompagne d'une idéologie que vous connaissez peut-être, la mission civilisatrice. L'idée des Européens, c'est qu'ils sont supérieurs et qu'ils ont le devoir moral de transmettre le progrès et la civilisation, notamment à travers la religion, aux peuples qu'ils jugent inférieurs.",
+          "chinese": "这种征服伴随着一种你们可能听说过的意识形态——“文明开化使命”。欧洲人的想法是，他们是优越的，有道德义务向他们认为低等的民族传播进步和文明，特别是通过宗教。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:22.299",
+          "end_time": "00:13:46.730",
+          "french": "Le modèle colonial français, en particulier, est basé sur l'assimilation. L'objectif est de transformer les colonisés en Français. On impose la langue française dans l'administration et l'éducation, on impose le système juridique français et les valeurs françaises. Mais cette assimilation est hypocrite.",
+          "chinese": "法国的殖民模式尤其基于“同化”。目标是将殖民地人民转变为法国人。他们在行政和教育中强加法语，强加法国的法律体系和价值观。但这种同化是虚伪的。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:13:46.940",
+          "end_time": "00:14:08.940",
+          "french": "En réalité, les colonisés ne deviennent jamais vraiment des citoyens français à part entière. Alors il y a quelques exceptions, notamment avec les habitants des communes de Saint-Louis, Gorée, Dakar et Rufisque, qu'on appelle les Quatre Communes. Ceux-là, à partir de 1916, ils ont le statut de citoyens français.",
+          "chinese": "实际上，殖民地人民从未真正成为完全意义上的法国公民。当然也有一些例外，特别是圣路易、戈雷、达喀尔和吕菲斯克这四个市镇的居民，被称为“四大市镇”。从1916年起，他们拥有法国公民身份。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:09.049",
+          "end_time": "00:14:30.179",
+          "french": "Mais on peut dire que cette situation-là, c'est l'arbre qui cache la forêt. Quand on dit l'arbre qui cache la forêt, ça veut dire que c'est une chose exceptionnelle qui invisibilise, qui rend invisible le phénomène le plus important. Et le phénomène le plus important...",
+          "chinese": "但可以说，这种情况只是“见木不见林”。当我们说“见木不见林”时，意思是这是一个例外的现象，它掩盖了更重要的整体现状。而更重要的现状是……"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:30.620",
+          "end_time": "00:14:58.730",
+          "french": "...c'est que les populations colonisées étaient considérées comme des indigènes. Ça, je vous en ai parlé dans mon podcast sur l'Algérie. C'est-à-dire que c'étaient des citoyens un peu... des sous-citoyens français. Des citoyens français mais qui n'avaient pas complètement la citoyenneté, qui n'avaient pas exactement les mêmes droits et les mêmes devoirs. Donc, voilà. Ça, c'est la situation au...",
+          "chinese": "……殖民地人口被视为“土著”。我在关于阿尔及利亚的播客中提到过这一点。也就是说，他们是某种……二等法国公民。虽然是法国公民，但没有完全的公民权，没有完全相同的权利和义务。所以，这就是当时的情况……"
+        },
+        {
+          "id": 39,
+          "start_time": "00:14:58.870",
+          "end_time": "00:15:07.139",
+          "french": "...XXe siècle, dans les années 1900, le Sénégal est pleinement intégré à l'Empire colonial français.",
+          "chinese": "……20世纪，在1900年代，塞内加尔被完全纳入了法兰西殖民帝国。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:07.509",
+          "end_time": "00:15:33.190",
+          "french": "Le système économique est conçu pour extraire les ressources du pays au profit de la métropole. Les Sénégalais sont soumis au travail forcé. Ils sont obligés de travailler pour l'Empire colonial et ce qu'on extrait de leurs terres sert principalement à enrichir la France hexagonale.",
+          "chinese": "经济体系旨在榨取该国的资源以造福宗主国。塞内加尔人被迫从事劳役。他们被迫为殖民帝国工作，从他们土地上开采出来的资源主要用于富裕法国本土。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:15:33.559",
+          "end_time": "00:15:56.330",
+          "french": "Et puis, dans ce contexte-là, surviennent les deux guerres mondiales. Et là, on découvre un sacré paradoxe. Alors que les Sénégalais étaient traités comme des sujets de seconde zone dans leur propre pays, on les appelle à défendre la France, à mourir pour la France.",
+          "chinese": "在这种背景下，两次世界大战爆发了。这时我们发现了一个巨大的悖论。虽然塞内加尔人在自己的国家被当作二等臣民对待，但他们却被征召去保卫法国，为法国牺牲。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:15:56.629",
+          "end_time": "00:16:22.570",
+          "french": "On recrute des centaines de milliers de soldats en Afrique de l'Ouest. On les appelle de façon générique les Tirailleurs sénégalais. Même ceux qui ne viennent pas du Sénégal mais qui viennent des pays voisins, on dira que ce sont des Tirailleurs sénégalais parce que le Sénégal est le port principal par là où passent ces soldats.",
+          "chinese": "西非招募了数十万士兵。他们被统称为“塞内加尔步兵”。即使那些不是来自塞内加尔而是来自邻国的人，也被称为塞内加尔步兵，因为塞内加尔是这些士兵经过的主要港口。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:22.740",
+          "end_time": "00:16:46.600",
+          "french": "Et donc, qu'est-ce que c'est que ces Tirailleurs sénégalais ? Eh bien, ce sont des soldats africains qui sont envoyés pour combattre pour la France. Pendant la Première Guerre mondiale, il y a environ 200 000 soldats qui sont envoyés. Ils se battent dans les tranchées, à Verdun, dans la Somme, dans la Marne, et ils meurent par dizaines de milliers.",
+          "chinese": "那么，这些塞内加尔步兵是什么人呢？他们是被派往为法国作战的非洲士兵。第一次世界大战期间，大约有20万名士兵被派往战场。他们在凡尔登、索姆河、马恩河的战壕里战斗，数万人牺牲。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:16:46.809",
+          "end_time": "00:16:59.659",
+          "french": "Si vous voulez en savoir plus sur cette histoire, vous pouvez voir le film Tirailleurs avec Omar Sy qui est sorti il y a deux ans je crois et qui raconte justement cette histoire.",
+          "chinese": "如果你想了解更多这段历史，可以看两年前上映的由奥玛·希主演的电影《塞内加尔步兵》，它讲述的正是这段故事。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:00.250",
+          "end_time": "00:17:27.109",
+          "french": "Et puis, pendant la Seconde Guerre mondiale, ils sont à nouveau mobilisés. En 1944, ils participent au Débarquement de Provence et à la libération de la France, dont on vous parlait avec Hugo justement dans l'épisode 173. Cette histoire-là, elle est racontée dans le film Indigènes. Une partie importante des troupes qui ont libéré la France était constituée de soldats africains.",
+          "chinese": "接着，在第二次世界大战期间，他们再次被动员。1944年，他们参加了普罗旺斯登陆和法国解放，正如我和雨果在第173集里提到的。这段历史在电影《光荣岁月》（Indigènes）中也有讲述。解放法国的部队中很大一部分是由非洲士兵组成的。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:17:27.740",
+          "end_time": "00:17:51.529",
+          "french": "Et pourtant, ces soldats ne sont pas remerciés à leur juste valeur. Une fois la guerre terminée, ils rencontrent de grosses difficultés pour recevoir leur pension, c'est-à-dire la somme d'argent qu'un soldat est censé recevoir après le combat. Leurs pensions sont gelées à un niveau très bas, plusieurs fois inférieures à celles des soldats français.",
+          "chinese": "然而，这些士兵并没有得到应有的感谢。战争结束后，他们在领取津贴（即士兵退伍后应得的款项）时遇到了巨大困难。他们的津贴被冻结在很低的水平，比法国士兵的津贴低好几倍。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:17:52.220",
+          "end_time": "00:18:01.190",
+          "french": "D'ailleurs, dans l'interview de l'épisode précédent, Cécile parlait de la commémoration d'un événement : le massacre de Thiaroye.",
+          "chinese": "此外，在上一集的采访中，塞西尔提到了对一个事件的纪念：提亚罗耶屠杀。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:01.190",
+          "end_time": "00:18:29.089",
+          "french": "Alors le massacre de Thiaroye est lié aux Tirailleurs sénégalais. Ça s'est passé le 1er décembre 1944 au camp militaire de Thiaroye, près de Dakar. Des Tirailleurs sénégalais qui venaient de rentrer d'Europe attendaient depuis des semaines le paiement de leur salaire et de leurs primes. Les promesses n'étaient pas tenues et alors ils se rassemblent et ils manifestent, mais pacifiquement.",
+          "chinese": "提亚罗耶屠杀与塞内加尔步兵有关。它发生在1944年12月1日，地点是达喀尔附近的提亚罗耶军营。刚从欧洲回来的塞内加尔步兵已经等待了数周的工资和奖金发放。承诺没有兑现，于是他们聚集起来进行抗议，但是是和平抗议。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:18:29.089",
+          "end_time": "00:18:53.190",
+          "french": "Attention, c'est très important, c'était pacifique. Mais la réponse de l'armée française est terrible. Elle ouvre le feu à l'arme automatique sur ces soldats qui venaient de se battre pour libérer la France. Officiellement, lors de ce massacre, il y a eu 35 morts. Mais de nombreux témoignages suggèrent que le bilan réel est beaucoup plus élevé.",
+          "chinese": "请注意，这非常重要，那是和平的。但法国军队的反应却是可怕的。他们用自动武器向这些刚刚为解放法国而战的士兵开火。官方称这次屠杀有35人死亡。但许多证词表明，实际死亡人数要高得多。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:18:53.619",
+          "end_time": "00:19:21.799",
+          "french": "Pendant des décennies, ce massacre a été étouffé et il a fallu attendre 2004 pour que le président français reconnaisse officiellement que l'armée française avait, entre guillemets, massacré ces soldats. Et puis, après la guerre, le mouvement indépendantiste grandit dans les colonies. Au Sénégal, il est porté par Léopold Sédar Senghor.",
+          "chinese": "几十年来，这次屠杀一直被掩盖，直到2004年法国总统才正式承认法国军队“屠杀”了这些士兵。战后，殖民地的独立运动日益高涨。在塞内加尔，这一运动由利奥波德·塞达尔·桑戈尔领导。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:19:22.299",
+          "end_time": "00:19:36.170",
+          "french": "Né en 1906, il fait des études brillantes en France. Il devient agrégé de grammaire, le premier Africain à obtenir cette distinction. C'est un poète magnifique, un intellectuel reconnu.",
+          "chinese": "他出生于1906年，在法国接受了卓越的教育。他成为了语法学博士，是第一位获得这一荣誉的非洲人。他是一位伟大的诗人，也是一位公认的知识分子。"
+        },
+        {
+          "id": 52,
+          "start_time": "00:19:36.599",
+          "end_time": "00:19:59.720",
+          "french": "Avec Aimé Césaire de Martinique et Léon-Gontran Damas de Guyane, il développe le concept de Négritude, un mouvement culturel et politique qui émerge dans les années 30, avec l'idée centrale de revendiquer et valoriser l'identité noire, la culture africaine face au racisme colonial.",
+          "chinese": "他与马提尼克的艾梅·塞泽尔和法属圭亚那的莱昂-贡特兰·达马斯一起，发展了“黑人精神”（Négritude）的概念。这是一场兴起于30年代的文化和政治运动，其核心思想是在面对殖民种族主义时，维护和弘扬黑人身份及非洲文化。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:00.569",
+          "end_time": "00:20:26.980",
+          "french": "Mais Senghor reste profondément attaché à la France et à la culture française. Il ne veut pas une rupture totale. Il défend l'idée de la Francophonie. La Francophonie, c'est un espace où les pays francophones collaborent sur un pied d'égalité. Pour Senghor, il n'y a pas de contradiction à être profondément sénégalais et profondément francophone.",
+          "chinese": "但桑戈尔对法国和法国文化仍有着深厚的情感。他不想要彻底的断裂。他捍卫“法语国家共同体”的理念。这是一个法语国家在平等基础上合作的空间。对桑戈尔来说，做一个纯粹的塞内加尔人和一个纯粹的法语使用者并不矛盾。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:20:27.579",
+          "end_time": "00:20:58.599",
+          "french": "Finalement, en 1960, le Sénégal accède à l'indépendance et Senghor devient le premier président. Ça fait donc 65 ans que le Sénégal est un État indépendant, fondé à l'origine sur l'idée d'un lien fort avec la France, avec la conviction qu'une collaboration sur un pied d'égalité est possible, notamment grâce à une langue commune. Mais qu'en est-il vraiment aujourd'hui ?",
+          "chinese": "最终在1960年，塞内加尔获得独立，桑戈尔成为首任总统。所以塞内加尔作为一个独立国家已经有65年了，它最初建立在与法国保持紧密联系的想法之上，坚信在平等基础上的合作是可能的，特别是通过共同的语言。但今天的情况究竟如何呢？"
+        },
+        {
+          "id": 55,
+          "start_time": "00:20:58.839",
+          "end_time": "00:21:36.809",
+          "french": "Quels sont les éléments qui structurent le lien entre la France et le Sénégal en 2025 ? Est-ce qu'on peut vraiment parler d'égalité entre les deux États ? C'est ça qu'on va voir dans la dernière partie. En 2025, le Sénégal est indépendant depuis 65 ans et pourtant la présence française reste massive. Pendant des décennies après l'indépendance, la France a maintenu une présence militaire permanente au Sénégal.",
+          "chinese": "在2025年，构成法国与塞内加尔纽带的元素有哪些？我们真的能谈论两个国家之间的平等吗？这就是我们在最后一部分要看的。2025年，塞内加尔独立已65年，然而法国的存在依然庞大。独立后的几十年里，法国在塞内加尔保持着永久的军事存在。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:21:37.240",
+          "end_time": "00:22:08.420",
+          "french": "Officiellement, il s'agit de coopération militaire, de formation, de lutte contre le terrorisme. Mais depuis quelques années, un vent de contestation souffle sur le continent. Au Mali, au Burkina Faso, au Niger, les populations réclament le départ des forces françaises. On voit des manifestations avec des pancartes qui disent « France dégage », donc « France va-t'en ». Pourquoi ?",
+          "chinese": "官方说法是军事合作、培训、反恐。但近几年来，非洲大陆刮起了一股抗议之风。在马里、布基纳法索、尼日尔，民众要求法国军队撤离。我们看到抗议者举着写有“法国滚出去”的标语。为什么？"
+        },
+        {
+          "id": 57,
+          "start_time": "00:22:08.759",
+          "end_time": "00:22:35.019",
+          "french": "Parce que pour beaucoup d'Africains, cette présence militaire symbolise la continuation de la domination coloniale. La France est perçue comme un pays qui veut toujours contrôler ses anciennes colonies. En 2024, Bassirou Diomaye Faye est élu président du Sénégal. C'est un homme jeune de 44 ans et qui représente une nouvelle génération.",
+          "chinese": "因为对许多非洲人来说，这种军事存在象征着殖民统治的延续。法国被视为一个总想控制其前殖民地的国家。2024年，巴西鲁·迪奥马耶·法耶当选塞内加尔总统。他是一个44岁的年轻人，代表了新一代。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:22:35.349",
+          "end_time": "00:23:02.859",
+          "french": "L'un de ses engagements forts, c'est ce qu'on appelle la souveraineté nationale. Quelques mois après son élection, il a annoncé que les bases militaires françaises devraient quitter le Sénégal. C'est un tournant historique. Le Sénégal était considéré comme l'un des alliés les plus fidèles de la France en Afrique. Et si même le Sénégal demande le départ des troupes françaises, cela marque vraiment la fin d'une époque.",
+          "chinese": "他的重要承诺之一就是所谓的“国家主权”。当选几个月后，他宣布法国军事基地应撤离塞内加尔。这是一个历史性的转折点。塞内加尔曾被认为是法国在非洲最忠实的盟友之一。如果连塞内加尔都要求法军撤离，这确实标志着一个时代的终结。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:03.420",
+          "end_time": "00:23:19.779",
+          "french": "Je tiens ici à préciser qu'en parlant avec beaucoup de Sénégalais, j'ai compris que deux choses pouvaient exister en même temps. D'un côté, un attachement et une amitié pour la France, et en même temps, une envie de plus d'indépendance.",
+          "chinese": "我想在这里说明，通过与许多塞内加尔人交谈，我明白了两件事是可以并存的。一方面是对法国的依恋和友谊，另一方面是对更多独立自主的渴望。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:20.089",
+          "end_time": "00:23:46.789",
+          "french": "Je n'ai ressenti à aucun moment une animosité envers les Français ou même un rejet de la langue française. Ils veulent juste ne plus avoir de soldats français sur leur territoire en permanence et ça peut se comprendre. Alors en plus de l'aspect militaire, l'aspect de domination qui persiste, c'est la domination économique. Alors parlons d'abord un peu d'argent.",
+          "chinese": "我从未感受到任何对法国人的敌意，甚至没有对法语的排斥。他们只是不想让法国士兵永久驻扎在自己的领土上，这完全可以理解。除了军事方面，持续存在的统治还体现在经济统治上。让我们先聊聊钱。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:23:47.099",
+          "end_time": "00:24:17.539",
+          "french": "En introduction, je vous disais que la monnaie du Sénégal, c'était le franc. Plus exactement, c'est le franc CFA. Le franc CFA a été créé en 1945 par la France pour ses colonies africaines. À l'origine, CFA signifiait « franc des colonies françaises d'Afrique ». Après les indépendances, le nom a changé, mais le système reste.",
+          "chinese": "在开头我提到，塞内加尔的货币是法郎。更准确地说，是西非法郎（CFA franc）。西非法郎是法国在1945年为其非洲殖民地创建的。最初，CFA代表“法属非洲殖民地法郎”。独立后，名称变了，但体系保留了下来。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:24:17.849",
+          "end_time": "00:24:46.440",
+          "french": "Aujourd'hui, 14 pays africains utilisent encore cette monnaie, cette devise. Alors comment ça fonctionne ? Imaginez que vous vouliez créer votre propre monnaie pour votre pays. Normalement, votre banque centrale imprime les billets. Elle décide combien d'argent est en circulation. Si votre économie a besoin de plus d'argent, vous en imprimez plus. Mais avec le franc CFA, ce n'est pas comme ça.",
+          "chinese": "今天，仍有14个非洲国家在使用这种货币。它是如何运作的？想象一下你想为自己的国家创建货币。通常，你的中央银行负责印钞，决定流通量。如果经济需要更多钱，你就多印一点。但西非法郎不是这样的。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:24:46.779",
+          "end_time": "00:25:15.880",
+          "french": "Il a une valeur qui est attachée à l'euro. Un euro vaut toujours 655 francs CFA. Ce nombre ne change jamais. C'est la France qui garantit cette valeur. En échange, les pays qui utilisent cette monnaie doivent suivre certaines règles décidées en partie par la France. Et historiquement, ils devaient même garder la moitié de leurs réserves d'argent dans les banques françaises.",
+          "chinese": "它的价值与欧元挂钩。1欧元永远等于655西非法郎。这个数值永远不变。由法国保证这个价值。作为交换，使用这种货币的国家必须遵守部分由法国决定的规则。从历史上看，他们甚至必须将一半的货币储备存放在法国银行。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:25:16.470",
+          "end_time": "00:25:46.470",
+          "french": "Certains disent que c'est bien parce que ça donne de la stabilité. L'argent ne perd pas soudainement sa valeur, contrairement à ce qui peut arriver dans d'autres pays africains. Mais beaucoup de gens critiquent ce système. D'ailleurs, il y a un économiste sénégalais et une journaliste française qui ont écrit récemment un livre pour expliquer en quoi le franc CFA serait une arme invisible de la Françafrique.",
+          "chinese": "有人说这很好，因为它带来了稳定性。货币不会像其他非洲国家那样突然贬值。但许多人批评这一体系。此外，一位塞内加尔经济学家和一位法国记者最近写了一本书，解释西非法郎如何成为“法非特殊关系”的隐形武器。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:25:46.839",
+          "end_time": "00:26:17.960",
+          "french": "La Françafrique, c'est le terme qu'on utilise pour parler du néocolonialisme français en Afrique. Dans les années 1960 et jusqu'à 1990-2000, il était très visible à travers les liens entre les hommes politiques français et des dictateurs africains, avec des scandales de corruption, des ingérences. Aujourd'hui, ce système est devenu plus subtil, plus discret.",
+          "chinese": "“法非特殊关系”（Françafrique）是一个用来描述法国在非洲的新殖民主义的术语。在1960年代直到1990-2000年代，它通过法国政客与非洲独裁者之间的联系、腐败丑闻和干预行为表现得非常明显。今天，这个体系变得更加微妙和隐蔽。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:26:18.359",
+          "end_time": "00:26:44.230",
+          "french": "Il ne passe plus par des valises de billets ou des coups d'État, mais par des mécanismes économiques comme la monnaie ou la présence massive des entreprises françaises. Et puis, au-delà de la monnaie, la présence économique française est massive à travers les entreprises. Je vous l'ai dit, quand vous vous promenez à Dakar, elles sont partout.",
+          "chinese": "它不再通过一箱箱现金或政变来实现，而是通过货币等经济机制或法国企业的庞大存在来实现。除了货币，法国的经济存在通过企业也显得非常庞大。正如我所说，当你在达喀尔散步时，它们无处不在。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:26:44.599",
+          "end_time": "00:27:13.069",
+          "french": "Si vous avez besoin d'une carte SIM pour votre téléphone, il faudra aller chez Orange. Si vous voulez regarder la télé, ce sera Canal+. Pour mettre de l'essence dans votre voiture, il faut aller dans une station-service Total. Pour les banques, il y a la Société Générale et la BNP qui dominent. Quand vous voyez un bâtiment, il y a de grandes chances qu'il soit construit par Vinci ou Bouygues.",
+          "chinese": "如果你需要一张手机SIM卡，得去Orange。如果你想看电视，那是Canal+。要给车加油，得去Total加油站。在银行方面，法国兴业银行和法国巴黎银行占据主导地位。当你看到一座建筑，很有可能是由万喜（Vinci）或布依格（Bouygues）建造的。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:27:13.069",
+          "end_time": "00:27:18.500",
+          "french": "Et puis, même au port, c'est Bolloré Logistique qui gère presque tout.",
+          "chinese": "甚至在港口，博洛雷物流（Bolloré Logistique）几乎管理着一切。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:27:18.869",
+          "end_time": "00:27:45.309",
+          "french": "Bref, les secteurs stratégiques de l'économie sénégalaise sont largement contrôlés par des entreprises françaises. Les profits sont rapatriés en France et le comble, c'est que parmi les propriétaires de ces grandes entreprises, notamment Vincent Bolloré, dont je vous ai déjà parlé aussi dans un épisode, beaucoup militent pour qu'en France, on limite l'immigration.",
+          "chinese": "简而言之，塞内加尔经济的战略部门在很大程度上由法国公司控制。利润被汇回法国，而最讽刺的是，在这些大公司的所有者中，特别是文森特·博洛雷（我也在另一集里提到过他），许多人都在法国游说限制移民。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:45.309",
+          "end_time": "00:27:56.490",
+          "french": "Alors même qu'une grande partie de l'immigration est causée par la pauvreté dans ces pays qui n'ont pas accès directement à leurs propres ressources.",
+          "chinese": "而很大一部分移民恰恰是因为这些无法直接获取自身资源的国家的贫困造成的。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:27:56.700",
+          "end_time": "00:28:18.569",
+          "french": "Ah oui, je crois que je viens de dire « le comble ». Oui, le comble, c'est qu'on a des propriétaires d'entreprises en Afrique qui sont contre l'immigration en France. Ça veut dire que c'est le maximum de la contradiction, le maximum de l'ironie. Quand on dit « ah, c'est le comble », c'est que vraiment, c'est quelque chose qui est un peu absurde.",
+          "chinese": "是的，我想我刚才说了“最讽刺的是”。这种矛盾在于，我们在非洲拥有企业主，他们却反对移民进入法国。这意味着这是矛盾的顶点，讽刺的极致。当我们说“真是讽刺”时，意思就是这确实有些荒谬。"
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:19.259",
+          "end_time": "00:28:38.539",
+          "french": "Alors, je pense que c'est ce comble, cette contradiction que j'ai ressentie en arrivant à Dakar et que je n'ai pas su décrire tout de suite. Une présence française pas tout à fait innocente et qui est ironique quand on sait les discours qui peuvent dominer en France actuellement sur les pays africains.",
+          "chinese": "我想，正是这种讽刺和矛盾，是我抵达达喀尔时感受到却无法立即描述出来的。一种并非完全无辜的法国存在，当你想到目前法国国内关于非洲国家的主流言论时，这种存在就显得格外讽刺。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:39.420",
+          "end_time": "00:29:00.710",
+          "french": "Alors, quand je discutais avec les Sénégalais qui m'expliquaient poliment qu'ils pensaient que ce serait bien que leur pays reprenne le contrôle de leurs industries, de leurs télécommunications, de leur monnaie, je ne pouvais que leur donner raison. Ça ne nous empêchera pas de partager une amitié et la richesse de nos cultures.",
+          "chinese": "所以，当我与塞内加尔人交谈，他们礼貌地解释说，他们认为如果自己的国家能重新控制工业、电信和货币会更好时，我只能表示赞同。这并不会妨碍我们分享友谊和丰富的文化。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:29:00.890",
+          "end_time": "00:29:21.349",
+          "french": "Au contraire, on pourra encore mieux échanger quand on pourra être sur un pied d'égalité. Ça ne veut pas dire qu'il faut lâcher tout d'un coup, mais ce serait bien que progressivement le lien de domination devienne un vrai lien d'amitié et de collaboration.",
+          "chinese": "相反，当我们能够处于平等地位时，我们能更好地交流。这并不意味着要一下子放手，但如果这种统治纽带能逐渐转变为真正的友谊与合作纽带，那就太好了。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:21.940",
+          "end_time": "00:29:36.940",
+          "french": "Et ce sera le mot de la fin pour cet épisode. C'est mon avis, c'est celui que je me suis fait en voyageant dans ce beau pays. Il est personnel, mais je sais qu'il est partagé par beaucoup de monde.",
+          "chinese": "这就是本期节目的结语。这是我的观点，是我在这个美丽的国家旅行时形成的。这是个人见解，但我知道很多人都有同感。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:29:37.299",
+          "end_time": "00:30:03.750",
+          "french": "Si vous n'êtes pas d'accord, ou même si vous êtes d'accord, ou partiellement d'accord, n'hésitez pas, bien évidemment, à le faire savoir en commentaires. Je serai ravie de vous lire. Mais surtout, n'oubliez pas d'être respectueux. Je sais que ce genre de sujet peut un peu échauffer les esprits, mais on n'oublie pas d'être poli et d'être dans la discussion constructive.",
+          "chinese": "如果你不同意，或者同意，或者部分同意，当然请随时在评论区告知。我很乐意阅读你们的评论。但最重要的是，请保持尊重。我知道这类话题可能会引起激烈的争论，但请不要忘记保持礼貌并进行建设性的讨论。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:30:04.089",
+          "end_time": "00:30:11.049",
+          "french": "Je vous remercie beaucoup pour votre écoute et je vous dis à tous à très bientôt. Salut, salut !",
+          "chinese": "非常感谢大家的收听，我们很快再见。拜拜，拜拜！"
+        }
+      ],
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

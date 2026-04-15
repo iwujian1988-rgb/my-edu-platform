@@ -1,0 +1,790 @@
+{
+  "source_file": "SBS Easy French #280 _ éducation bilingue, quel est l'engagement de la France en Australie _.json",
+  "channel": "SBS简易法语",
+  "video_name": "SBS Easy French #280 _ éducation bilingue, quel est l'engagement de la France en Australie _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T01:13:07.348Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 14,
+          "review_words": 0
+        },
+        "grammar": [
+          "L'expression du but : afin que (Subjonctif) vs pour (Infinitif)",
+          "La voix passive et les participes passés adjectivés",
+          "Le conditionnel de politesse ou d'atténuation"
+        ],
+        "speaking": [
+          "Présenter les avantages d'un système éducatif bilingue",
+          "Discuter de l'influence culturelle et de la francophonie"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "francophile",
+            "part_of_speech": "adjectif/nom",
+            "ipa": "[fʁɑ̃kɔfil]",
+            "chinese": "热爱法国文化的人/偏爱法国的",
+            "example_sentence": {
+              "french": "L'Australie est un pays que je qualifierais de plutôt francophile.",
+              "chinese": "澳大利亚是一个我愿意称之为偏爱法国的国家。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'Australie est un pays que je qualifierais de plutôt francophile, à défaut d'être francophone.",
+                "chinese": "澳大利亚是一个我愿意称之为“偏爱法国”的国家——尽管它并非法语国家。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "attachement",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ataʃmɑ̃]",
+            "chinese": "依恋，深厚的感情",
+            "example_sentence": {
+              "french": "Il manifeste un grand attachement à son pays natal.",
+              "chinese": "他表现出对祖国的深深依恋。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "qui manifeste au quotidien un attachement à la culture française.",
+                "chinese": "日常生活中却处处流露出对法国文化的深厚感情。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "immersif",
+            "part_of_speech": "adjectif",
+            "ipa": "[imɛʁsif]",
+            "chinese": "沉浸式的",
+            "example_sentence": {
+              "french": "Les programmes immersifs sont très populaires.",
+              "chinese": "沉浸式课程非常受欢迎。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6,
+              9,
+              15
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "et des programmes qu'on appelle immersifs, qui sont labellisés Label France Éducation.",
+                "chinese": "而且有一类被称为沉浸式课程，这些课程获得了“法国教育标签”认证。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "labellisé",
+            "part_of_speech": "adjectif/participe passé",
+            "ipa": "[labelize]",
+            "chinese": "获得认证的，贴上标签的",
+            "example_sentence": {
+              "french": "Ce produit est labellisé bio.",
+              "chinese": "这个产品获得了有机认证。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6,
+              14
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "qui sont labellisés Label France Éducation, qui existent dans 17 écoles en Australie.",
+                "chinese": "这些课程获得了“法国教育标签”认证，在澳大利亚的17所学校中开展。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "académisme",
+            "part_of_speech": "nom masculin",
+            "ipa": "[akademism]",
+            "chinese": "学院派作风，学术严谨性",
+            "example_sentence": {
+              "french": "L'académisme à la française est reconnu dans le monde entier.",
+              "chinese": "法国式的学术严谨性在全世界都受到认可。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'académisme à la française et en même temps l'accent poussé sur l'autonomie.",
+                "chinese": "既保留了法国式的学术严谨性，又充分强调了自主性。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "autonomie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[otɔnɔmi]",
+            "chinese": "自主性，独立性",
+            "example_sentence": {
+              "french": "Ce système éducatif favorise l'autonomie des élèves.",
+              "chinese": "这种教育体系鼓励学生的自主性。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "l'accent poussé sur l'autonomie prôné par le système australien.",
+                "chinese": "充分强调了澳大利亚体系所倡导的自主性。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "plébiscité",
+            "part_of_speech": "adjectif/participe passé",
+            "ipa": "[plebisite]",
+            "chinese": "广受欢迎的，高票通过的",
+            "example_sentence": {
+              "french": "Ce nouveau programme a été plébiscité par les parents.",
+              "chinese": "这个新项目受到了家长们的广泛欢迎。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "sont plébiscités par les Australiens et nous avons plutôt des perspectives de développement à l'avenir.",
+                "chinese": "深受澳大利亚人欢迎，我们对未来的发展前景也十分看好。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "vocation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[vɔkasjɔ̃]",
+            "chinese": "使命，倾向，天职",
+            "example_sentence": {
+              "french": "Cette école a pour vocation de former les futurs leaders.",
+              "chinese": "这所学校的使命是培养未来的领导者。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Est-ce que ces programmes ont plus vocation à recevoir des élèves étrangers ?",
+                "chinese": "这些课程更倾向于招收外国学生吗？",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "expatrié",
+            "part_of_speech": "nom/adjectif",
+            "ipa": "[ɛkspatʁije]",
+            "chinese": "侨民，外籍人士",
+            "example_sentence": {
+              "french": "Beaucoup d'expatriés français vivent à Melbourne.",
+              "chinese": "许多法国侨民居住在墨尔本。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              8,
+              9,
+              10
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Pour les expatriés, ce sont surtout les programmes qui sont dits homologués par l'AEFE.",
+                "chinese": "对于侨居海外的同胞们，尤其值得关注的是经法国海外教育署（AEFE）认证的课程。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "homologué",
+            "part_of_speech": "adjectif/participe passé",
+            "ipa": "[ɔmɔlɔɡe]",
+            "chinese": "获得官方认可的，认证的",
+            "example_sentence": {
+              "french": "Le diplôme est homologué par l'État.",
+              "chinese": "该文凭获得了国家认证。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9,
+              12,
+              14,
+              16
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Et cela permettra d'avoir à terme un cursus homologué jusqu'à l'année 12.",
+                "chinese": "这最终将使你获得一项直至十二年级的认证学历。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "cohorte",
+            "part_of_speech": "nom féminin",
+            "ipa": "[kɔɔʁt]",
+            "chinese": "群体，梯队（尤指同龄或同届的人）",
+            "example_sentence": {
+              "french": "La nouvelle cohorte d'étudiants est très motivée.",
+              "chinese": "新一届的学生非常有动力。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Il faut compter sur la montée des cohortes.",
+                "chinese": "我们必须依靠“梯队的逐步壮大”。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "déperdition",
+            "part_of_speech": "nom féminin",
+            "ipa": "[depɛʁdisjɔ̃]",
+            "chinese": "流失，损耗",
+            "example_sentence": {
+              "french": "Il y a une forte déperdition d'élèves au lycée.",
+              "chinese": "高中阶段有大量的学生流失。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              15
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "nous devons travailler davantage [...] pour éviter la déperdition des élèves après l'année 6.",
+                "chinese": "我们必须投入更多精力，以避免学生在六年级之后流失。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "cursus",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kyʁsys]",
+            "chinese": "课程体系，学业历程",
+            "example_sentence": {
+              "french": "Il a suivi un cursus universitaire brillant.",
+              "chinese": "他完成了一段出色的大学学业。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              15,
+              16
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Dans le cursus immersif, 60 % des élèves après l'année 6 partent vers d'autres horizons.",
+                "chinese": "在沉浸式课程中，60%的学生在六年级结束后会转向其他学习方向。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "solidarité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[sɔlidaʁite]",
+            "chinese": "团结，休戚相关",
+            "example_sentence": {
+              "french": "La francophonie est basée sur la solidarité.",
+              "chinese": "法语国家组织建立在团结的基础之上。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              17
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est une solidarité entre 93 pays qui ont le français en partage.",
+                "chinese": "它是93个以法语为共同语言的国家之间的团结纽带。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "à défaut de",
+            "meaning": "在没有...的情况下，退一步说",
+            "example": {
+              "french": "L'Australie est un pays que je qualifierais de plutôt francophile, à défaut d'être francophone.",
+              "chinese": "澳大利亚是一个我愿意称之为“偏爱法国”的国家——尽管它并非法语国家。"
+            },
+            "usage_note": "用于引出一种退而求其次的描述或状态，表示虽然达不到某种程度，但至少具备另一种特质。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "expression": "prendre le meilleur de",
+            "meaning": "汲取...的精华，取...之长",
+            "example": {
+              "french": "Ce sont des programmes qui fonctionnent bien en Australie parce qu'ils prennent le meilleur des deux systèmes.",
+              "chinese": "这些项目在澳大利亚运行得非常好，因为它们融合了两种体系的精华。"
+            },
+            "usage_note": "常用于描述结合了不同事物优点的混合体或新系统。",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "à bras ouverts",
+            "meaning": "张开双臂地，热烈欢迎地",
+            "example": {
+              "french": "dans les pays où nous sommes accueillis, et je dirais chaleureusement et à bras ouverts, comme en Australie.",
+              "chinese": "在我们所到访的国家——我在此热烈而敞开怀抱地欢迎所有人，就像在澳大利亚一样。"
+            },
+            "usage_note": "非常形象的表达，表示极其热情地接纳或欢迎某人/某事。",
+            "source_ids": [
+              10
+            ]
+          },
+          {
+            "expression": "sur ma feuille de route",
+            "meaning": "在我的路线图上，在我的计划/议程中",
+            "example": {
+              "french": "Alors c'est clairement un objectif que j'avais sur ma feuille de route à mon arrivée à Melbourne.",
+              "chinese": "那么，这显然是我抵达墨尔本时就写在路线图上的一个目标。"
+            },
+            "usage_note": "职场和外交常用语，指既定的战略计划或目标清单。",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "expression": "avoir en partage",
+            "meaning": "共同拥有，共享",
+            "example": {
+              "french": "C'est une solidarité entre 93 pays qui ont le français en partage.",
+              "chinese": "它是93个以法语为共同语言（共享法语）的国家之间的团结纽带。"
+            },
+            "usage_note": "比简单的 'partager' 更正式、更具文学色彩，常用于描述共同的文化、语言或价值观。",
+            "source_ids": [
+              17
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "L'expression du but : afin que (Subjonctif) vs pour (Infinitif)",
+            "structure": "Sujet 1 + Verbe 1 + afin que + Sujet 2 + Verbe 2 (Subjonctif) / Sujet 1 + Verbe 1 + pour + Infinitif",
+            "explanation": "在表达目的时，如果主句和从句的主语不同，必须使用 'afin que' 或 'pour que' 加上虚拟式 (Subjonctif)。如果主语相同，则使用 'pour' 或 'afin de' 加上动词原形 (Infinitif)。在字幕中，领事使用了 'afin qu'ils ne perdent pas'，因为主句主语是隐含的'nous' (nous devons travailler)，而从句主语是'ils' (les élèves)。",
+            "example": {
+              "french": "Nous pensons qu'il nous faut davantage travailler pour garder ces élèves afin qu'ils ne perdent pas leurs compétences en français.",
+              "chinese": "我们认为，我们需要付出更多努力来留住这些学生，让他们不会丧失法语能力。"
+            },
+            "usage_note": "这是B2级别非常关键的语法点，考察对主语一致性的判断以及虚拟式的掌握。",
+            "source_ids": [
+              15
+            ]
+          },
+          {
+            "name": "La voix passive et les participes passés adjectivés",
+            "structure": "Être + Participe passé (+ par + Agent)",
+            "explanation": "在正式访谈或官方介绍中，经常使用被动语态或将过去分词直接作为形容词使用，以强调状态或被接受的动作。例如 'certifiés', 'labellisés', 'plébiscités', 'homologués'。这些词都需要与它们所修饰的名词（如 programmes）在性数上保持一致。",
+            "example": {
+              "french": "Ces programmes sont plébiscités par les Australiens.",
+              "chinese": "这些项目深受澳大利亚人欢迎。"
+            },
+            "usage_note": "注意过去分词作为形容词时的性数配合（这里 programmes 是阳性复数，所以加 's'）。",
+            "source_ids": [
+              5,
+              6,
+              8,
+              9
+            ]
+          },
+          {
+            "name": "Le conditionnel de politesse ou d'atténuation",
+            "structure": "Sujet + Verbe au conditionnel présent",
+            "explanation": "条件式现在时不仅用于假设，在正式场合中常用来委婉地表达意见、评价或请求，使其听起来不那么绝对或生硬。领事使用 'je qualifierais' (我愿意称之为) 而不是 'je qualifie' (我称之为)，体现了外交辞令的严谨与礼貌。",
+            "example": {
+              "french": "L'Australie est un pays que je qualifierais de plutôt francophile.",
+              "chinese": "澳大利亚是一个我愿意称之为“偏爱法国”的国家。"
+            },
+            "usage_note": "在B2及以上级别的口语表达中，使用条件式来软化语气是必备技能。",
+            "source_ids": [
+              5
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃] et [ɔ̃]",
+              "description": "Les voyelles nasales. Le texte contient de nombreux mots liés à la francophonie qui utilisent ces sons.",
+              "examples": [
+                "francophonie [fʁɑ̃kɔfɔni]",
+                "francophile [fʁɑ̃kɔfil]",
+                "attachement [ataʃmɑ̃]"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_Australiens [lezostʁaljɛ̃]",
+            "des_élèves [dezelɛv]",
+            "sont_immersifs [sɔ̃timɛʁsif]"
+          ],
+          "intonation": "L'intonation de la consule est posée et didactique. Elle utilise des pauses claires avant d'énumérer des points (ex: 'Ça, c'est un premier point. Le deuxième point...'), ce qui est typique du discours formel et diplomatique."
+        },
+        "vocabulary_network": {
+          "theme": "L'éducation bilingue et la diplomatie culturelle",
+          "core_word": "Francophonie",
+          "related_groups": [
+            {
+              "category": "Système éducatif",
+              "words": [
+                "académisme",
+                "autonomie",
+                "cursus",
+                "cohorte",
+                "déperdition"
+              ]
+            },
+            {
+              "category": "Reconnaissance officielle",
+              "words": [
+                "labellisé",
+                "homologué",
+                "certifié",
+                "plébiscité"
+              ]
+            },
+            {
+              "category": "Identité et culture",
+              "words": [
+                "francophile",
+                "expatrié",
+                "attachement",
+                "solidarité"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "L'Australie est un pays que je ___ de plutôt ___, à ___ d'être ___, qui manifeste au quotidien un ___ à la culture française.",
+            "answer": "qualifierais, francophile, défaut, francophone, attachement",
+            "explanation": "根据原文第5句，领事在描述澳大利亚与法国文化的关系时使用了这些精确的词汇。注意'à défaut de'（在没有...的情况下）和'francophile'（偏爱法国的）的搭配。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon Madame la consule, pourquoi les programmes bilingues fonctionnent-ils bien en Australie ?",
+            "options": {
+              "A": "Parce qu'ils sont entièrement gratuits pour les familles d'expatriés français.",
+              "B": "Parce qu'ils combinent l'académisme à la française et l'accent sur l'autonomie du système australien.",
+              "C": "Parce qu'ils permettent aux élèves de voyager en France tous les ans pour pratiquer la langue.",
+              "D": "Parce qu'ils sont exclusivement réservés aux enfants de diplomates francophones."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第7句明确指出：'Ce sont des programmes qui fonctionnent bien en Australie parce qu'ils prennent le meilleur des deux systèmes. L'académisme à la française et en même temps l'accent poussé sur l'autonomie prôné par le système australien.' 其他选项在原文中均未提及。",
+            "source_ids": [
+              7
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Mon message en ce mois de la francophonie, c'est que le français, ce n'est effectivement pas qu'une histoire de langue, c'est aussi une histoire de culture et de valeurs partagées.",
+            "answer": "在这个法语国家月，我想传达的信息是：法语确实不仅仅是关于语言的故事，它也是关于文化和共同价值观的故事。",
+            "explanation": "翻译难点在于结构 'ce n'est pas que... c'est aussi...' (不仅仅是...也是...)，以及 'valeurs partagées' (共同的价值观/共享的价值观)。'histoire' 在这里不译为具体的'历史'，而是指'关于...的事情/故事'。",
+            "source_ids": [
+              17
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Complétez la phrase suivante avec la forme correcte du verbe entre parenthèses (Subjonctif ou Infinitif) : 'Nous devons travailler davantage afin qu'ils ne ___ (perdre) pas leurs compétences en français, et pour ___ (garder) ces élèves dans le cursus.'",
+            "answer": "perdent, garder",
+            "explanation": "第一个空：'afin que' 后面必须接虚拟式 (perdent)，因为主句主语 (nous) 和从句主语 (ils) 不同。第二个空：'pour' 后面接动词原形 (garder)，因为动作的执行者与主句主语 (nous) 相同，表示目的。",
+            "source_ids": [
+              15
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "francophile",
+            "francophone",
+            "attachement",
+            "académisme",
+            "autonomie",
+            "cursus"
+          ],
+          "covered_grammar": [
+            "L'expression du but : afin que (Subjonctif) vs pour (Infinitif)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Ce n'est pas que... c'est aussi...",
+            "explanation": "用于强调某事物不仅包含表面上的第一层含义，还包含更深层的第二层含义（不仅仅是...也是...）。",
+            "example": {
+              "french": "Le français, ce n'est effectivement pas qu'une histoire de langue, c'est aussi une histoire de culture.",
+              "chinese": "法语确实不仅仅是关于语言的故事，它也是关于文化的故事。"
+            }
+          },
+          {
+            "pattern": "Plus on aura de [Nom], plus on aura la chance de [Infinitif]",
+            "explanation": "表达比例关系的句型：“越...就越...”。注意 'plus de' 后面直接加名词，不加冠词。",
+            "example": {
+              "french": "Plus on aura d'élèves dans le primaire, plus on aura la chance de faire davantage de classes pour après le brevet.",
+              "chinese": "小学学生越多，我们就越有机会在初中毕业考试后开设更多班级。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous êtes conseiller/conseillère pédagogique dans une école franco-australienne. Un parent australien vous demande quels sont les avantages d'inscrire son enfant dans un programme bilingue immersif.",
+          "requirements": "Utilisez le vocabulaire de l'éducation (immersif, autonomie, académisme) et l'expression 'prendre le meilleur de' pour expliquer les avantages du système.",
+          "starter": "Bonjour ! C'est une excellente question. En fait, nos programmes immersifs sont très plébiscités car ils prennent le meilleur des deux systèmes..."
+        }
+      },
+      "summary": {
+        "content": "Dans cette interview réalisée par SBS Easy French à l'occasion du mois de la francophonie, la consule générale de France à Melbourne, Paule Ignatio, discute de l'enseignement du français en Australie. Elle souligne que l'Australie est un pays francophile où les programmes bilingues et immersifs connaissent un grand succès. Ces programmes combinent l'académisme français et l'autonomie australienne. La consule détaille également les efforts en cours pour homologuer davantage d'établissements afin d'offrir un cursus continu jusqu'au baccalauréat, évitant ainsi la déperdition des élèves. Enfin, elle rappelle que la francophonie représente des valeurs partagées et une ouverture sur le monde.",
+        "keywords": [
+          "francophonie",
+          "éducation bilingue",
+          "Label France Éducation",
+          "académisme",
+          "diplomatie"
+        ],
+        "difficulty_note": "Le texte est de niveau B2. Il utilise un vocabulaire formel lié à l'éducation institutionnelle (homologué, labellisé, cohorte) et à la diplomatie, avec des structures syntaxiques complexes (voix passive, subjonctif de but, conditionnel d'atténuation)."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04.410",
+          "end": "00:07:44.279"
+        },
+        "theme": "Éducation bilingue et Francophonie en Australie",
+        "cefr_level": "B2",
+        "vocabulary_count": 14,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开始新生活并不容易。很多公司都拒绝了我。有时我觉得，唉，我要放弃了，我不干了。《Work in Progress》是一档帮助技术移民在新国家重建职业生涯的播客。你将听到鼓舞人心的真实故事、专家建议和宝贵提示，帮助你找到工作并推动职业发展。《Work in Progress》。现在就在你收听播客的平台收听吧。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:00:40.740",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french.",
+          "chinese": "您正在收听的是SBS法语频道。请访问 sbs.com.au/french 获取更多专栏内容。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:49.140",
+          "end_time": "00:01:24.650",
+          "french": "Et bienvenue dans ce nouvel épisode de SBS Easy French. Ce podcast est réalisé en partenariat avec l'Alliance française de Melbourne. Cette semaine, on vous propose une interview. À l'occasion du mois de la francophonie, nous sommes allés à la réception organisée par le consulat général de France à Melbourne en présence de Madame la consule Paule Ignatio. Interview. Madame la consule de France à Melbourne, bonjour. Bonjour.",
+          "chinese": "欢迎收听新一期的《SBS简易法语》。本播客与墨尔本法语联盟合作制作。本周，我们为您带来一篇采访。借着法语活动月的契机，我们参加了由法国驻墨尔本总领事馆举办的招待会，总领事波勒·伊格纳西奥（Paule Ignatio）女士出席了活动。采访开始。法国驻墨尔本总领事女士，您好。你好。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:24.790",
+          "end_time": "00:01:36.969",
+          "french": "C'est le mois de la francophonie et vous avez organisé un événement pour justement célébrer la francophonie. Est-ce qu'en Australie, le français est bien enseigné ? Est-ce qu'on accède facilement justement à cette francophonie ?",
+          "chinese": "现在是法语活动月，您举办了一场活动来庆祝法语文化。在澳大利亚，法语教学做得好吗？人们能轻松接触到法语文化吗？"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:37.620",
+          "end_time": "00:02:07.439",
+          "french": "L'Australie est un pays que je qualifierais de plutôt francophile, à défaut d'être francophone, qui manifeste au quotidien un attachement à la culture française. Alors cet attachement, on le voit en fait dans les différents voyages effectués par les personnes en France, mais également dans leur souhait d'apprendre le français. Et justement, puisqu'on parle d'apprentissage du français, nous avons des programmes bilingues, certains certifiés par l'AEFE,",
+          "chinese": "我认为澳大利亚是一个相当“亲法”的国家，即便它不是一个法语国家，但它在日常生活中展现出了对法国文化的喜爱。这种喜爱实际上体现在人们去法国的各种旅行中，也体现在他们学习法语的愿望上。说到法语学习，我们有双语项目，其中一些获得了法国海外教育署（AEFE）的认证，"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:07.439",
+          "end_time": "00:02:29.500",
+          "french": "et des programmes qu'on appelle immersifs, qui sont labellisés Label France Éducation, qui existent dans 17 écoles en Australie. Nous avons 4 800 élèves dans ces programmes. On voit une augmentation, puisque l'année dernière, quand j'ai fait cette même réception, et que c'est l'occasion toujours de partager les chiffres, ils étaient 4 500. Clairement...",
+          "chinese": "还有被称为沉浸式的项目，获得了“法国教育标志”（Label France Éducation）认证，目前在澳大利亚的17所学校中开展。我们的这些项目共有4800名学生。我们看到了增长，因为去年我举办同样的招待会时——这也是分享数据的惯例时刻——学生人数是4500人。显然……"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:29.500",
+          "end_time": "00:02:53.069",
+          "french": "Ce sont des programmes qui fonctionnent bien en Australie parce qu'ils prennent le meilleur des deux systèmes. L'académisme à la française et en même temps l'accent poussé sur l'autonomie prôné par le système australien. On voit aussi que les élèves dans ces programmes maîtrisent mieux l'anglais, leur grammaire anglaise, qu'en dehors de ces programmes. Donc clairement, ces programmes sont...",
+          "chinese": "这些项目在澳大利亚运作良好，因为它们汲取了两种教育体系的精华：既有法国式的学术严谨，又结合了澳大利亚教育体系所倡导的高度自主性。我们还发现，参与这些项目的学生比未参与的学生能更好地掌握英语及其语法。所以很明显，这些项目……"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:53.069",
+          "end_time": "00:03:16.590",
+          "french": "sont plébiscités par les Australiens et nous avons plutôt des perspectives de développement à l'avenir. Est-ce que ces programmes ont plus vocation à recevoir des élèves étrangers, notamment Australiens, qui apprennent le français ? Ou est-ce que le niveau est également suffisant pour des enfants d'expatriés, de familles françaises ou francophones ? Alors cet enseignement, il s'adresse à la fois aux enfants d'expatriés...",
+          "chinese": "深受澳大利亚人的欢迎，而且我们对未来的发展前景相当看好。这些项目主要是为了招收学习法语的外国学生，特别是澳大利亚学生吗？还是说，其水平也足以满足法国或法语家庭的侨民子女的需求？其实，这种教学既面向侨民子女……"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:16.590",
+          "end_time": "00:03:45.020",
+          "french": "comme aux Australiens qui souhaitent développer plus avant leurs capacités en français. Pour les expatriés, ce sont surtout les programmes qui sont dits homologués par l'AEFE, parce que l'enseignement est équivalent quand on est dans ces programmes. Et nous l'avons à Melbourne, à Caulfield Junior College pour le primaire et à Auburn High School jusqu'au brevet. Après, nous décidons de progresser sur ces programmes qui sont très utiles pour les expatriés. Les programmes immersifs...",
+          "chinese": "也面向希望进一步提高法语能力的澳大利亚人。对于侨民来说，主要是那些获得AEFE认证的项目，因为在这些项目中接受的教育与国内是同等的。在墨尔本，我们在考菲尔德初级学院（Caulfield Junior College）设有小学项目，在奥本高中（Auburn High School）设有直至初中毕业会考（brevet）的项目。之后，我们决定继续推进这些对侨民非常有用的项目。沉浸式项目……"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:45.020",
+          "end_time": "00:04:04.419",
+          "french": "peuvent s'adresser aux expatriés qui veulent rester plus longtemps en Australie, mais également aux Australiens, parce que ce sont à la fois des programmes tournés vers les Français, mais aussi des programmes tournés vers l'influence française dans les pays où nous sommes accueillis, et je dirais chaleureusement et à bras ouverts, comme en Australie.",
+          "chinese": "可以面向希望在澳大利亚长期居住的侨民，也可以面向澳大利亚人，因为这些项目既面向法国人，也旨在扩大法国在东道国的影响力，而且我想说，像在澳大利亚，我们受到了张开双臂的热烈欢迎。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:04.569",
+          "end_time": "00:04:23.120",
+          "french": "Alors justement, vous avez évoqué Melbourne. À Melbourne, on peut aller dès la crèche dans des programmes bilingues. Malheureusement, ça s'arrête au brevet. À Sydney, par exemple, il y a le lycée Condorcet. On peut aller jusqu'au baccalauréat. Est-ce qu'il y a des projets pour que les familles qui vivent à Melbourne ou même les Australiens puissent avoir du français jusqu'au lycée ?",
+          "chinese": "刚才您提到了墨尔本。在墨尔本，孩子们从托儿所开始就可以参加双语项目。遗憾的是，这到初中毕业（brevet）就结束了。例如在悉尼，有孔多塞中学（Lycée Condorcet），可以一直读到高中毕业会考（baccalauréat）。是否有计划让居住在墨尔本的家庭，甚至澳大利亚人，能够一直到高中都接受法语教育？"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:23.120",
+          "end_time": "00:04:45.420",
+          "french": "Alors c'est clairement un objectif que j'avais sur ma feuille de route à mon arrivée à Melbourne en septembre 2024, quand j'ai rouvert le consulat général de France à Melbourne. Et je suis heureuse de vous annoncer qu'on progresse petit à petit vers cet objectif qui ne peut pas se faire en un jour. Il faut compter sur la montée des cohortes. Donc ça veut dire quoi la montée des cohortes ? Ça veut dire qu'il faut homologuer",
+          "chinese": "这显然是我在2024年9月抵达墨尔本、重新开设法国驻墨尔本总领事馆时，路线图上的一个目标。我很高兴地告诉大家，我们正在逐步朝着这个目标迈进，但这不可能一蹴而就。我们需要依靠学生群体的增长。那么学生群体的增长意味着什么呢？这意味着我们需要认证"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:45.420",
+          "end_time": "00:04:59.810",
+          "french": "plus d'établissements de primaire, parce que plus on aura d'élèves dans le primaire, plus on aura la chance de faire davantage de classes pour après le brevet, en fait. Ça, c'est un premier point. Le deuxième point, et c'est une bonne nouvelle, c'est qu'Auburn High School et Glen Eira College...",
+          "chinese": "更多的小学机构，因为我们在小学阶段拥有的学生越多，实际上我们就越有机会在初中毕业后开设更多的班级。这是第一点。第二点，也是个好消息，那就是奥本高中（Auburn High School）和格伦艾拉学院（Glen Eira College）……"
+        },
+        {
+          "id": 14,
+          "start_time": "00:04:59.810",
+          "end_time": "00:05:28.100",
+          "french": "ont fait une demande de labellisation Label France Éducation. Ça veut dire déjà, on apprend le français de manière intensive à un niveau assez soutenu après le brevet. On n'avait pas assez communiqué là-dessus par le passé. Mais on a déjà ces programmes qui existent et là, on demande à la France de les reconnaître. Et c'est une première étape parce que le label, c'est 20 % d'éducation en français, sachant que l'homologation, c'est plutôt 50 %. Mais on voit cela comme une première étape.",
+          "chinese": "已经申请了“法国教育标志”（Label France Éducation）认证。这意味着在初中毕业后，学生们已经在以相当高的水平进行密集的法语学习。过去我们在这方面的宣传不够。但我们已经有了这些现成的项目，现在我们正请求法国官方予以认可。这是第一步，因为该标志要求20%的法语教学，而认证（homologation）则需要达到50%。但我们将其视为迈出的第一步。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:28.100",
+          "end_time": "00:05:54.160",
+          "french": "Et le troisième point, c'est que nous devons travailler davantage dans le réseau francophone et de nos écoles franco-australiennes pour éviter la déperdition des élèves après l'année 6. C'est ce qu'on remarque. Dans le cursus immersif, 60 % des élèves après l'année 6 partent vers d'autres horizons. Et nous pensons qu'il nous faut davantage travailler pour garder ces élèves afin qu'ils ne perdent pas leurs compétences en français et leur parler",
+          "chinese": "第三点是，我们必须在法语网络和我们的法澳学校中做更多的工作，以避免学生在6年级之后流失。这是我们注意到的现象。在沉浸式课程中，60%的学生在6年级之后转向了其他方向。我们认为我们需要更加努力地留住这些学生，以免他们丧失法语能力，并向他们介绍"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:54.160",
+          "end_time": "00:06:18.629",
+          "french": "depuis le plus jeune âge, des possibilités d'études pour le bac et après le bac en français. Et cela permettra d'avoir à terme un cursus homologué jusqu'à l'année 12. Vous avez dit dans votre discours quelque chose qui était assez rigolo. Vous disiez que le français, ce n'est pas seulement la langue de la romance, la langue qui peut être fantasmée par les étrangers. C'est quoi votre message en ce mois de la francophonie ?",
+          "chinese": "从小就用法语参加高中毕业会考（bac）以及会考后的升学机会。这将最终促成一个直到12年级的认证课程。您在演讲中说了一件很有趣的事。您说法语不仅仅是浪漫的语言，不仅仅是外国人幻想中的语言。在这个法语活动月，您想传达的信息是什么？"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:18.740",
+          "end_time": "00:06:44.680",
+          "french": "Mon message en ce mois de la francophonie, c'est que le français, ce n'est effectivement pas qu'une histoire de langue, c'est aussi une histoire de culture et de valeurs partagées. C'est une solidarité entre 93 pays qui ont le français en partage et c'est aussi une ouverture sur le monde. Parce que quand on apprend le français, ce n'est pas forcément pour faire des études en France, c'est aussi pour faire des études dans d'autres pays et accéder à d'autres mondes. Paule Ignatio, merci beaucoup. Merci.",
+          "chinese": "我在这个法语活动月想传达的信息是，法语确实不仅仅关乎语言，它还关乎文化和共同的价值观。它是93个共享法语的国家之间的团结，也是一扇通向世界的窗口。因为学习法语不一定是为了去法国留学，也可以是为了去其他国家学习，去接触其他的世界。波勒·伊格纳西奥，非常感谢。谢谢。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:46.779",
+          "end_time": "00:07:09.639",
+          "french": "Merci messieurs-dames d'avoir suivi cette émission. Nous nous retrouvons la semaine prochaine pour un nouvel épisode de SBS Easy French. À bientôt.",
+          "chinese": "感谢各位收听本期节目。我们下周在《SBS简易法语》的新一期节目中再见。下次见。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:15.610",
+          "end_time": "00:07:44.279",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开始新生活并不容易。很多公司都拒绝了我。有时我觉得，唉，我要放弃了，我不干了。《Work in Progress》是一档帮助技术移民在新国家重建职业生涯的播客。你将听到鼓舞人心的真实故事、专家建议和宝贵提示，帮助你找到工作并推动职业发展。《Work in Progress》。现在就在你收听播客的平台收听吧。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:07:44.279",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 19,
+        "source_video_name": "SBS Easy French #280 _ éducation bilingue, quel est l'engagement de la France en Australie _.json",
+        "tags": [
+          "地理",
+          "访谈谈话"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

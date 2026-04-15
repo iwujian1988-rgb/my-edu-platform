@@ -1,0 +1,1261 @@
+{
+  "source_file": "E189 Pourquoi les Français ne vont plus au restaurant _.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E189 Pourquoi les Français ne vont plus au restaurant _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T14:39:50.962Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le Conditionnel Passé (过去条件式)",
+          "Le Pronom Relatif 'Dont'",
+          "La Nominalisation (名词化)"
+        ],
+        "speaking": [
+          "能够讨论餐饮业的经济现状及通货膨胀的影响",
+          "能够描述法国餐厅的历史起源及其文化演变"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "symptomatique",
+            "part_of_speech": "adjectif",
+            "ipa": "[sɛ̃ptɔmatik]",
+            "chinese": "有症状的；作为征兆的",
+            "example_sentence": {
+              "french": "On est symptomatique de ce qui se passe en France.",
+              "chinese": "我们正是法国当下状况的一个缩影（征兆）。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On est symptomatique de ce qui se passe en France.",
+                "chinese": "我们正是法国当下状况的一个缩影。",
+                "source_video": "InnerFrench"
+              }
+            ]
+          },
+          {
+            "french": "émulation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[emylasjɔ̃]",
+            "chinese": "竞争；激励；赶超",
+            "example_sentence": {
+              "french": "Ça a créé une grande émulation culinaire avec beaucoup d'activités.",
+              "chinese": "这引发了一场热烈的美食热潮（互相激励）。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              21
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Ça a créé une grande émulation culinaire.",
+                "chinese": "这引发了一场巨大的美食竞争与激励。"
+              }
+            ]
+          },
+          {
+            "french": "étymologique",
+            "part_of_speech": "adjectif",
+            "ipa": "[etimɔlɔʒik]",
+            "chinese": "词源学的",
+            "example_sentence": {
+              "french": "Patrick nous propose une explication étymologique.",
+              "chinese": "帕特里克为我们提供了一个词源学的解释。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              26,
+              27
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Étymologique, c'est quand on étudie l'origine d'un mot.",
+                "chinese": "词源学，就是当我们研究一个词的起源时。"
+              }
+            ]
+          },
+          {
+            "french": "démocratisation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[demɔkʁatizasjɔ̃]",
+            "chinese": "大众化；普及",
+            "example_sentence": {
+              "french": "Au XIXe siècle, la démocratisation est là pour le restaurant.",
+              "chinese": "到了19世纪，餐厅的大众化趋势已经显现。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              36,
+              40
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Les restaurants se sont assez vite démocratisés.",
+                "chinese": "餐厅很快就变得大众化了。"
+              }
+            ]
+          },
+          {
+            "french": "hiérarchie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[jeʁaʁʃi]",
+            "chinese": "等级制度；阶层",
+            "example_sentence": {
+              "french": "On a toute une hiérarchie des restaurants à prix fixe.",
+              "chinese": "我们有一整套固定价格餐厅的等级体系。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              39
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On a toute une hiérarchie des restaurants.",
+                "chinese": "我们有一套完整的餐厅等级。"
+              }
+            ]
+          },
+          {
+            "french": "répercuter",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁepeʁkyte]",
+            "chinese": "转嫁（成本）；反射",
+            "example_sentence": {
+              "french": "Les restaurateurs doivent répercuter l'augmentation des coûts sur leurs prix.",
+              "chinese": "餐馆经营者不得不将成本上涨转嫁到价格上。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              70
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ils doivent répercuter l'augmentation des coûts.",
+                "chinese": "他们必须转嫁成本的增加。"
+              }
+            ]
+          },
+          {
+            "french": "marge",
+            "part_of_speech": "nom féminin",
+            "ipa": "[maʁʒ]",
+            "chinese": "利润空间；边缘",
+            "example_sentence": {
+              "french": "Ils sont obligés d'augmenter leurs prix pour essayer de sauver leurs marges.",
+              "chinese": "他们被迫提高价格以努力保住利润空间。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              70
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Sauver leurs marges.",
+                "chinese": "保住他们的利润。"
+              }
+            ]
+          },
+          {
+            "french": "inflation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛ̃flasjɔ̃]",
+            "chinese": "通货膨胀",
+            "example_sentence": {
+              "french": "Les prix globalement ont connu une assez forte inflation.",
+              "chinese": "物价总体上经历了相当剧烈的通货膨胀。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              70
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Une assez forte inflation depuis le Covid.",
+                "chinese": "新冠疫情以来相当严重的通货膨胀。"
+              }
+            ]
+          },
+          {
+            "french": "surgelé",
+            "part_of_speech": "adjectif / nom",
+            "ipa": "[syʁʒəle]",
+            "chinese": "速冻的；冷冻食品",
+            "example_sentence": {
+              "french": "On ne sait pas si c'est un plat surgelé qui a juste été réchauffé.",
+              "chinese": "我们不知道这是否只是一个刚加热过的速冻菜肴。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              88,
+              89
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Manger quelque chose de surgelé.",
+                "chinese": "吃速冻的东西。"
+              }
+            ]
+          },
+          {
+            "french": "rentable",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʁɑ̃tabl]",
+            "chinese": "盈利的；有利可图的",
+            "example_sentence": {
+              "french": "C'est plus rentable d'avoir un local et de cuisiner pour les applications.",
+              "chinese": "租个店面专门为外卖应用烹饪往往更具盈利性。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              91
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "C'est plus rentable d'avoir un local.",
+                "chinese": "拥有一个店面更划算。"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "Cocorico !",
+            "meaning": "公鸡啼叫声（象征法国人的骄傲）",
+            "example": {
+              "french": "Le restaurant a été inventé en France, Cocorico !",
+              "chinese": "餐厅是在法国发明的，真值得骄傲！"
+            },
+            "usage_note": "用于表达对法国成就的民族自豪感，有时带有幽默或自嘲意味。",
+            "source_ids": [
+              9
+            ]
+          },
+          {
+            "expression": "une mise en bouche",
+            "meaning": "开胃小菜；引子",
+            "example": {
+              "french": "C'est une petite mise en bouche, un avant-goût de ce cours.",
+              "chinese": "这只是一个小小的引子，是本课程的一个预告。"
+            },
+            "usage_note": "原指餐前的开胃小吃，引申为对某事物的初步介绍或尝试。",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "expression": "marcher du tonnerre",
+            "meaning": "非常成功；极其火爆",
+            "example": {
+              "french": "Ça marche du tonnerre.",
+              "chinese": "这生意火得不得了。"
+            },
+            "usage_note": "非正式表达，形容某事进展非常顺利或极受欢迎。",
+            "source_ids": [
+              44,
+              51,
+              52
+            ]
+          },
+          {
+            "expression": "sauver les meubles",
+            "meaning": "保住现有局面；挽救残局",
+            "example": {
+              "french": "Pour essayer de sauver les meubles, ils ont augmenté leur prix.",
+              "chinese": "为了尽量保住经营，他们提高了价格。"
+            },
+            "usage_note": "比喻在糟糕的情况下尽力挽救剩下的东西。",
+            "source_ids": [
+              72,
+              73
+            ]
+          },
+          {
+            "expression": "être regardant sur",
+            "meaning": "对...很挑剔/留意",
+            "example": {
+              "french": "Ils sont de plus en plus regardants sur les prix.",
+              "chinese": "他们对价格越来越敏感（挑剔）。"
+            },
+            "usage_note": "常用于指对金钱、质量或时间的精打细算或严格要求。",
+            "source_ids": [
+              74,
+              76,
+              78
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le Conditionnel Passé (过去条件式)",
+            "structure": "avoir/être (conditionnel présent) + participe passé",
+            "explanation": "用于表达对过去未发生事实的假设，或对过去行为的遗憾。",
+            "example": {
+              "french": "Si on m'avait demandé d'imaginer la naissance du restaurant, j'aurais plutôt pensé que...",
+              "chinese": "如果当时有人让我设想餐厅的诞生，我本会以为……"
+            },
+            "usage_note": "常与 'si + plus-que-parfait' 配合使用。",
+            "source_ids": [
+              30
+            ]
+          },
+          {
+            "name": "Le Pronom Relatif 'Dont'",
+            "structure": "Nom + dont + sujet + verbe (qui se construit avec 'de')",
+            "explanation": "引导关系从句，代替由介词 'de' 引导的名词，表示所属、来源或部分关系。",
+            "example": {
+              "french": "Je sais que vous êtes nombreux, dont je fais partie évidemment.",
+              "chinese": "我知道你们人数不少，我显然也是其中之一。"
+            },
+            "usage_note": "在此例中，'dont' 代替了 'de ces personnes' (faire partie de...).",
+            "source_ids": [
+              16
+            ]
+          },
+          {
+            "name": "La Nominalisation (名词化)",
+            "structure": "Verbe/Adjectif -> Nom",
+            "explanation": "法语中常用名词来概括一个动作或状态，使表达更正式、更具概括性。",
+            "example": {
+              "french": "La fréquentation a tendance à baisser.",
+              "chinese": "客流量（光顾率）有下降趋势。"
+            },
+            "usage_note": "文本中多次出现此类用法，如 'démocratisation' (démocratiser), 'augmentation' (augmenter)。",
+            "source_ids": [
+              5,
+              36,
+              70
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[j]",
+              "description": "半元音，出现在 'bouillon' [bujɔ̃] 中，注意不要发成 [l]。",
+              "examples": [
+                "bouillon",
+                "volailler"
+              ]
+            },
+            {
+              "sound": "[ʁ]",
+              "description": "小舌音，在 'hiérarchie' [jeʁaʁʃi] 中连续出现，需注意发音的流畅性。",
+              "examples": [
+                "hiérarchie",
+                "restaurateur"
+              ]
+            }
+          ],
+          "liaison": [
+            "des_extraits [dezɛkstʁɛ]",
+            "un_historien [ɛ̃nistɔʁjɛ̃]",
+            "leurs_employés [lœʁzɑ̃plwaje]"
+          ],
+          "intonation": "在列举原因时（如第71句），语调在每个项末尾上扬，最后一项下降。"
+        },
+        "vocabulary_network": {
+          "theme": "La Restauration",
+          "core_word": "Établissement",
+          "related_groups": [
+            {
+              "category": "Types de lieux",
+              "words": [
+                "Bistrot",
+                "Brasserie",
+                "Bouillon",
+                "Taverne",
+                "Auberge"
+              ]
+            },
+            {
+              "category": "Économie",
+              "words": [
+                "Chiffre d'affaires",
+                "Marge",
+                "Inflation",
+                "Rentable",
+                "Faillite"
+              ]
+            },
+            {
+              "category": "Métiers",
+              "words": [
+                "Restaurateur",
+                "Chef",
+                "Volailler",
+                "Rôtisseur",
+                "Serveur"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Les ___ doivent ___ l'___ des ___ sur leurs ___ autrement dit comme leurs ___ de ___ à eux ___ et bien ils sont ___ d'___ leurs ___ pour essayer de ___ leurs ___.",
+            "answer": "restaurateurs, répercuter, augmentation, coûts, prix, coûts, fonctionnement, augmentent, obligés, augmenter, prix, sauver, marges",
+            "explanation": "根据原文第70句，餐馆老板必须将成本的增加转嫁到价格上，以保住利润空间。",
+            "source_ids": [
+              70
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon Patrick Rambourg, quelle était l'idée originale derrière l'ouverture des premiers 'bouillons' par le boucher Duval ?",
+            "options": {
+              "A": "Créer une cuisine de luxe pour la noblesse.",
+              "B": "Utiliser les 'bas morceaux' de viande qu'il ne pouvait pas vendre tels quels.",
+              "C": "Proposer des plats exclusivement véganes pour la santé.",
+              "D": "Ouvrir un lieu de concert avec de la nourriture."
+            },
+            "answer": "B",
+            "explanation": "原文第44句提到，屠夫Duval因为只卖掉了上等肉块（hauts morceaux），剩下边角料（bas morceaux）不知道怎么处理，于是想到把它们煮成带肉块的汤。",
+            "source_ids": [
+              44
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Dans le pire scénario, les restaurateurs, pour essayer de sauver les meubles, de survivre, ils ont augmenté leur prix à la carte.",
+            "answer": "在最糟糕的情况下，餐馆老板们为了保住经营、求生存，上调了菜单上的价格。",
+            "explanation": "重点在于短语 'sauver les meubles' 的意译（保住经营/挽救残局）以及 'prix à la carte'（点菜价格/菜单价格）。",
+            "source_ids": [
+              73
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant le pronom relatif 'dont' : 'Je connais beaucoup de personnes. Je fais partie de ces personnes.'",
+            "answer": "Je connais beaucoup de personnes dont je fais partie.",
+            "explanation": "动词短语 'faire partie de' 要求使用关系代词 'dont' 来连接先行词。",
+            "source_ids": [
+              16,
+              81
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "restaurateur",
+            "répercuter",
+            "marge",
+            "bouillon",
+            "bas morceaux"
+          ],
+          "covered_grammar": [
+            "dont",
+            "nominalisation"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il s'agit de + [Nom/Infinitif]",
+            "explanation": "用于定义或说明某事物的本质。",
+            "example": {
+              "french": "Il s'agit d'un cours qu'on a sur notre plateforme.",
+              "chinese": "这是我们平台上的一个课程。"
+            }
+          },
+          {
+            "pattern": "Avoir tendance à + [Infinitif]",
+            "explanation": "表达某种趋势或习惯。",
+            "example": {
+              "french": "La fréquentation a tendance à baisser.",
+              "chinese": "光顾率有下降的趋势。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和一位法国朋友讨论为什么最近大家更倾向于在家吃饭而不是去餐厅。",
+          "requirements": "使用 'inflation', 'répercuter', 'regardant sur les prix' 等词汇，并用到一个 'dont' 引导的句子。",
+          "starter": "C'est vrai qu'on va moins au restaurant ces derniers temps..."
+        }
+      },
+      "summary": {
+        "content": "本课探讨了法国餐厅的历史起源及其现状危机。从18世纪作为“健康汤饮”诞生的起源，到19世纪的大众化（如Bouillon餐厅的兴起），再到如今因通货膨胀、成本转嫁、质量下降及生活方式改变（远程办公、外卖应用）而面临的经济挑战。课程深入分析了为何这一“国家利益”级别的传统正遭遇信任与生存危机。",
+        "keywords": [
+          "Restauration",
+          "Histoire",
+          "Inflation",
+          "Bouillon",
+          "Crise"
+        ],
+        "difficulty_note": "文本涉及较多经济学术语（marge, chiffre d'affaires）和历史背景，适合B2及以上水平学习者。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:38:51"
+        },
+        "theme": "La crise des restaurants en France",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.089",
+        "end_time": "00:38:51.369",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 99,
+        "source_video_name": "E189 Pourquoi les Français ne vont plus au restaurant _.json",
+        "tags": [
+          "搞钱",
+          "顶级思维"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.089",
+          "end_time": "00:00:31.170",
+          "french": "Pourquoi les Français ne vont plus au restaurant ? Salut à toutes et à tous, salut Ingrid ! Salut Hugo, comment ça va ? Ça va, ça va et toi ? Ouais, ça va bien. Là, on est après le déjeuner, donc est-ce que tu as mangé au restaurant ce midi ? Eh bien non, je me suis fait à manger. C'est un peu une résolution de 2024 pour moi de manger plus à la maison.",
+          "chinese": "为什么法国人不再去餐厅吃饭了？大家好，你好，英格丽德！你好，雨果，你怎么样？挺好的，你呢？嗯，我也很好。现在是午饭后，你今天中午去餐厅吃饭了吗？没有，我自己做了饭。多在家吃饭是我 2024 年的一个小目标。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:31.170",
+          "end_time": "00:00:45.770",
+          "french": "parce que la tentation du restaurant est très forte. Mais l'année dernière, je me suis retrouvée à aller un peu trop à mon goût dehors et à oublier un peu de cuisiner à la maison. Et toi ?",
+          "chinese": "因为餐厅的诱惑力太大了。但去年，我发现自己在外就餐的次数有点多，超出了我的预期，反而有点忘了怎么在家做饭。你呢？"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:46.100",
+          "end_time": "00:01:06.819",
+          "french": "Non, moi non plus, tout simplement parce que dans le quartier où on habite, donc on a déménagé avant, vous le savez peut-être, on était dans un quartier qui s'appelle Endoume, qui est très dynamique, où il y a beaucoup justement de cafés, de restos et tout ça. Là, on est dans un quartier plus résidentiel et il n'y a pas beaucoup de choix en matière de restaurant, encore moins en matière d'options véganes.",
+          "chinese": "我也没去。原因很简单，我们现在住的这个街区——你们可能知道，我们之前搬家了，以前住在昂杜姆（Endoume）街区，那里非常热闹，有很多咖啡馆、餐厅之类的。现在我们住的是一个纯住宅区，餐厅的选择不多，素食选择就更少了。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:06.819",
+          "end_time": "00:01:30.719",
+          "french": "Donc maintenant, on mange presque exclusivement à la maison. Donc en fait, on peut un peu dire que toi et moi, on fait partie du problème. Oui. On est symptomatique de ce qui se passe en France. Parce que comme vous l'avez entendu, aujourd'hui, on va parler des restaurants en France et essayer de répondre à cette question épineuse, cette question d'intérêt national. Pourquoi nos compatriotes ne vont plus au restaurant ?",
+          "chinese": "所以现在我们几乎只在家吃饭。其实可以说，你和我也是这个问题的一部分。是的，我们是法国现状的一个缩影。正如大家所听到的，今天我们要聊聊法国的餐厅，并试着回答这个棘手的、关乎国家利益的问题：为什么我们的同胞不再去餐厅了？"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:30.719",
+          "end_time": "00:01:50.930",
+          "french": "Comme d'habitude, c'est un titre un peu provocateur. On a un peu exagéré, vous le savez. Il y a toujours des Français qui vont au restaurant, rassurez-vous. Les restaurants français n'ont pas disparu, mais c'est vrai que la fréquentation a tendance à baisser et on va essayer de comprendre pourquoi. Oui, parce que c'est vrai que la France, c'est un peu le...",
+          "chinese": "像往常一样，这个标题有点标题党，我们夸大其词了。请放心，还是有法国人去餐厅的，法国的餐厅并没有消失。但确实，客流量有下降的趋势，我们要试着分析其中的原因。是的，因为法国确实是……"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:50.930",
+          "end_time": "00:02:20.229",
+          "french": "pays des restaurants. On a une vraie tradition d'aller au restaurant. Quand on regarde les classements sur plusieurs années, les Français sont en général parmi les personnes qui vont le plus au restaurant. On a aussi beaucoup de restaurants dans le pays, que ce soit des restaurants étoilés, donc de très grande qualité, mais aussi des petits restaurants modestes. Voilà, on en a de tout type.",
+          "chinese": "餐厅之国。我们有去餐厅吃饭的传统。观察多年的排名可以发现，法国人通常是去餐厅次数最多的人群之一。法国也有很多餐厅，既有高品质的星级餐厅，也有朴实的小餐馆。总之，各种类型的都有。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:20.250",
+          "end_time": "00:02:38.439",
+          "french": "Alors du coup, on pourrait croire que c'est tellement une tradition que c'est sacré, que c'est intouchable. Et pourtant, quand on regarde les chiffres actuels, il y a vraiment une crise. Et donc, on va essayer de comprendre un peu d'où vient cette crise, pourquoi on en est arrivé là.",
+          "chinese": "所以，人们可能会认为这种传统是神圣不可侵犯的。然而，看看目前的数据，确实存在危机。因此，我们要试着了解这场危机从何而来，为什么会演变到这一步。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:38.580",
+          "end_time": "00:03:07.729",
+          "french": "Et pour comprendre ça, on va commencer comme d'habitude par regarder du côté de l'histoire, mettre nos lunettes d'historien. Et ça tombe bien parce que quand on a enregistré les nouvelles leçons pour le cours Les Visages de Paris, on a interviewé un historien spécialiste de la gastronomie française, Patrick Rambourg. Donc, on va mettre quelques extraits de cette interview pour comprendre notamment comment le restaurant est né en France.",
+          "chinese": "为了理解这一点，我们要像往常一样，先从历史的角度来看，戴上历史学家的眼镜。这正好合适，因为我们在为《巴黎面孔》（Les Visages de Paris）课程录制新课时，采访了一位专门研究法国美食的历史学家帕特里克·兰堡（Patrick Rambourg）。所以，我们会放几段采访片段，来了解餐厅是如何在法国诞生的。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:07.729",
+          "end_time": "00:03:28.259",
+          "french": "Voilà, ça fait partie des théories de ce que Patrick Rambourg a trouvé dans ses recherches. Il a découvert que le restaurant a été inventé en France, Cocorico ! Donc on va vous expliquer tout ça. Et puis après, dans un deuxième temps, on verra pourquoi, depuis quelques années, ce modèle du restaurant français est en crise.",
+          "chinese": "这就是帕特里克·兰堡在研究中发现的理论之一。他发现餐厅是在法国发明的，值得骄傲（Cocorico）！我们会向大家解释这一切。然后，在第二部分，我们将看看为什么近几年来，这种法国餐厅模式陷入了危机。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:28.699",
+          "end_time": "00:03:40.780",
+          "french": "Avant de commencer, je veux juste préciser quelque chose parce que je ne suis pas sûre que tous nos auditeurs comprennent quand on dit le cours Les Visages de Paris.",
+          "chinese": "在开始之前，我想澄清一点，因为我不确定所有的听众都知道我们提到的《巴黎面孔》课程。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:40.780",
+          "end_time": "00:04:05.360",
+          "french": "Mais voilà, il s'agit d'un cours qu'on a sur notre plateforme innerfrench.com et on est allé en fait filmer des interviews pour pouvoir après les mettre en ligne avec des questionnaires, etc. On en a déjà parlé, mais c'est vrai que je sais que certains auditeurs ne suivent pas tout notre contenu. Et cette interview, elle est sur la plateforme, elle dure...",
+          "chinese": "这是我们 innerfrench.com 平台上的一门课程。我们去实地拍摄了采访，然后配上练习题等内容上传到网上。虽然我们之前提到过，但我知道有些听众并没有关注我们的全部内容。这段采访就在平台上，时长大约……"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:05.360",
+          "end_time": "00:04:25.379",
+          "french": "30 minutes, même peut-être 40 au total. Donc là, on vous met juste quelques extraits avant de passer au sujet plus actuel. Mais voilà, c'était pour donner un peu de contexte sur ces audios que vous allez entendre. C'est vrai, on peut dire que c'est une petite mise en bouche, un avant-goût de ce cours, si jamais ça vous intéresse.",
+          "chinese": "总共 30 甚至 40 分钟。现在我们只放几个片段，然后再转入更现代的话题。这只是为了给你们将要听到的音频提供一些背景。没错，可以说这是一道“开胃小菜”，如果你们感兴趣的话，可以先预热一下这门课。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:25.379",
+          "end_time": "00:04:50.819",
+          "french": "T'as eu raison de préciser, c'est vrai que comme nous on pense à ça tout le temps, ou en tout cas moi, j'ai l'impression que tout le monde est au courant de tout ce qu'on fait, mais c'est pas forcément le cas. Il y a même certaines personnes qui ne savent toujours pas qu'on a des cours. Donc oui, on a des cours à côté du podcast avec beaucoup d'activités pour pratiquer, des cours dans lesquels on est impliqués, nous les profs InnerFrench. Donc voilà, là on va vous mettre des extraits du cours avancé, du cours C1.",
+          "chinese": "你补充得对。因为我们整天都在想这些事，或者至少我是这样，我总觉得大家都知道我们在做什么，但事实并非如此。甚至有些人还不知道我们有课程。是的，除了播客，我们还有包含大量练习活动的课程，我们这些 InnerFrench 的老师都参与其中。所以，现在我们要给你们放一段 C1 高级课程的片段。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:04:51.610",
+          "end_time": "00:04:56.490",
+          "french": "Bon, on va terminer cette longue introduction. C'est parti ? C'est parti !",
+          "chinese": "好了，漫长的开场白到此结束。准备好了吗？开始吧！"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:03.829",
+          "end_time": "00:05:33.279",
+          "french": "Alors, comme beaucoup de choses en France, la tendance ou le concept du restaurant est né à Paris. Tout a commencé à Paris. Et selon Patrick Rambourg, on en voit les premiers signes à partir du Moyen Âge. Parce que déjà au Moyen Âge, beaucoup de Parisiens achetaient leur nourriture prête à être consommée. Donc, ils achetaient par exemple de la nourriture chez le volailler.",
+          "chinese": "和法国的许多事物一样，餐厅的趋势或概念诞生于巴黎。一切都始于巴黎。根据帕特里克·兰堡的说法，我们从中世纪就能看到最初的迹象。因为早在中世纪，很多巴黎人就会购买即食食品。比如，他们会去禽肉商那里买吃的。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:33.279",
+          "end_time": "00:05:45.930",
+          "french": "Bon alors, je préviens à l'avance pour les véganes, parce que je sais que vous êtes nombreux, dont je fais partie évidemment. Voilà, à l'époque, surtout au Moyen Âge, la nourriture en France n'était pas super végane.",
+          "chinese": "好吧，我先给素食者们打个预防针，因为我知道你们人很多，我当然也是其中之一。在那个时代，尤其是在中世纪，法国的食物并不是很“素食友好”。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:05:46.230",
+          "end_time": "00:06:08.519",
+          "french": "Mais voilà, on ne va pas travestir la réalité. Donc voilà, les gens allaient chez le volailler pour acheter du poulet, des choses comme ça, de la viande déjà cuite. Et ensuite, ils la mangeaient soit dans la rue, c'était un peu, on peut dire, le début de la street food, soit dans une taverne ou une auberge ou tout simplement à la maison. Mais c'est vrai que...",
+          "chinese": "但我们不能歪曲现实。总之，人们会去禽肉商那里买鸡肉之类已经煮熟的肉。然后，他们要么在街上吃——可以说这是街头小吃的雏形，要么在小酒馆、客栈里吃，或者干脆带回家吃。但事实是……"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:09.110",
+          "end_time": "00:06:32.850",
+          "french": "les logements n'étaient pas équipés en général de cuisine à cette époque, donc c'était assez commun d'acheter la nourriture à l'extérieur dans ce qu'on appelle des commerces de bouche. Tu peux expliquer peut-être ce que c'est les commerces de bouche ? Alors ce qu'on appelle commerces de bouche ou aussi les métiers de bouche, c'est tout ce qui a un rapport avec la nourriture.",
+          "chinese": "那个时代的住房通常没有厨房设备，所以去外面的“食品贸易店”（commerces de bouche）买吃的很常见。你能解释一下什么是“commerces de bouche”吗？我们所说的“食品贸易”或“食品行业”，是指所有与食物相关的行业。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:06:32.850",
+          "end_time": "00:06:57.189",
+          "french": "Donc que ce soit les restaurants, mais aussi avant ça, ceux qui vendent de la nourriture à emporter, qui est déjà prête ou qui est à faire réchauffer à la maison. Voilà, c'est vraiment un secteur économique qui est ancien et qui est très vaste et très important dans l'économie en général.",
+          "chinese": "不仅包括餐厅，还包括在那之前售卖即食外带食品或带回家加热食品的店铺。这确实是一个古老的经济部门，范围非常广泛，在整体经济中占有重要地位。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:06:57.689",
+          "end_time": "00:07:26.180",
+          "french": "C'est vrai. Donc voilà, dès le Moyen Âge, il y avait déjà beaucoup de Parisiens, et en tout cas les personnes dans les grandes villes en France, mais aussi en Europe, qui mangeaient à l'extérieur. La spécificité avec Paris, c'est qu'à cette époque, c'était la plus grande capitale européenne en termes de population. C'était la ville qui avait la population la plus nombreuse et il y avait une forte concentration de tous les pouvoirs : pouvoirs politiques, économiques et religieux.",
+          "chinese": "没错。所以从中世纪开始，就已经有很多巴黎人，或者说法国乃至欧洲大城市的居民在外面吃饭了。巴黎的特殊之处在于，当时它是欧洲人口最多的首都。它是人口最密集的城市，而且高度集中了所有权力：政治、经济和宗教权力。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:26.490",
+          "end_time": "00:07:43.379",
+          "french": "Donc ça, ça a créé une grande émulation culinaire avec beaucoup d'activités. C'est une inspiration quand on dit émulation, c'est-à-dire que chaque personne inspire l'autre et ça crée un mouvement général.",
+          "chinese": "这创造了巨大的“烹饪竞争与交流”（émulation culinaire），活动非常频繁。所谓“émulation”，就是一种启发，每个人都在启发他人，从而形成一种整体运动。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:07:43.379",
+          "end_time": "00:08:13.100",
+          "french": "Et du coup, il y a eu les premiers grands chefs qui cuisinaient pour les nobles. Donc, dans les familles, on pouvait avoir le chef à domicile qui cuisinait tous les repas. C'était le cas pour le roi, mais c'était aussi le cas pour d'autres strates, d'autres niveaux de l'aristocratie et de la noblesse. Et ce qui fait que ça a créé de plus en plus de concurrence des métiers de bouche avec certains producteurs",
+          "chinese": "于是，出现了第一批为贵族烹饪的名厨。在这些家庭里，会有私人厨师负责所有的餐食。国王是这样，其他阶层的贵族也是如此。这导致食品行业竞争日益激烈，某些生产者……"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:13.100",
+          "end_time": "00:08:32.679",
+          "french": "qui étaient plus réputés que d'autres et voilà, une forte demande. Ouais. Et donc, à partir du XVIIIe siècle, selon Patrick Rambourg toujours, c'est là qu'on a vu apparaître les premiers restaurants. Donc, on va écouter un extrait de l'interview et il va nous expliquer tout ça.",
+          "chinese": "比其他人更出名，需求非常旺盛。是的。根据帕特里克·兰堡的说法，从 18 世纪开始，第一批餐厅出现了。现在我们听一段采访片段，他会向我们解释这一切。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:08:32.730",
+          "end_time": "00:09:02.220",
+          "french": "Dans les années 1760, il va y avoir quelques personnages, des anciens rôtisseurs généralement. Donc des rôtisseurs, c'est ceux qui proposent de la viande rôtie, généralement des volailles. Il va y en avoir un ou deux qui vont décider de transformer leur établissement et de devenir des restaurateurs. Alors qu'est-ce qu'un restaurateur ? Il faut réfléchir sur le mot. D'où vient le mot restaurant ? Qu'est-ce qu'un restaurant ? Le mot restaurant est un vieux mot français qui existait déjà au Moyen Âge, qui veut dire un bouillon de santé.",
+          "chinese": "在 1760 年代，出现了几个人物，通常是以前的烤肉商。烤肉商就是提供烤肉的人，通常是禽类。其中一两个人决定改造他们的店铺，成为“餐厅老板”（restaurateurs）。那么什么是“restaurateur”？我们需要思考一下这个词。餐厅（restaurant）这个词从哪儿来？什么是餐厅？“restaurant”是一个古老的法语词，中世纪就存在了，意思是“健康肉汤”。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:02.519",
+          "end_time": "00:09:27.340",
+          "french": "C'est-à-dire qu'on a des recettes dans les traités culinaires anciens et on nous explique que quand on donne un restaurant à une personne, c'est que cette personne est malade ou elle a besoin de retrouver de la vigueur, de la force en fait. Et ça vient du latin, restaurant c'est « restaurare », restaurer le corps humain. Donc là, on a une sorte de coup marketing au XVIIIe siècle, donc dans les années 1760, quelqu'un se dit : on parle beaucoup de nouvelle cuisine.",
+          "chinese": "也就是说，在古老的烹饪论著中，有一些食谱解释说，给某人一份“restaurant”，是因为这个人病了，或者需要恢复活力和体力。它源自拉丁语，“restaurant”就是“restaurare”，即修复人体。所以这在 18 世纪，也就是 1760 年代，算是一种营销手段。有人心想：现在大家都在谈论“新式烹饪”。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:27.340",
+          "end_time": "00:09:45.710",
+          "french": "Il y a une vraie mode de la cuisine de la santé. Donc, je vais devenir un restaurateur, c'est-à-dire que je vais ouvrir un établissement où je vais proposer un bouillon de santé ou des bouillons de santé que l'on appelle des restaurants. Les premiers restaurateurs, c'est ça. Alors là, Patrick nous propose une explication",
+          "chinese": "当时非常流行健康饮食。于是，我要成为一名“restaurateur”，也就是说，我要开一家店，提供一种或几种被称为“restaurants”的健康肉汤。最初的餐厅老板就是这样的。帕特里克在这里给了我们一个解释……"
+        },
+        {
+          "id": 27,
+          "start_time": "00:09:45.710",
+          "end_time": "00:10:15.440",
+          "french": "Étymologique, donc étymologique c'est quand on étudie l'origine d'un mot et souvent c'est très intéressant je trouve quand on va voir l'étymologie parce que ça permet vraiment de comprendre le cheminement qu'un mot a eu et donc qu'une réalité sociale a eu dans l'histoire. Et là pour le restaurant, c'est vrai qu'aujourd'hui à notre époque quand on entend le mot restaurant, on ne pense plus à son origine, on ne pense plus au...",
+          "chinese": "词源学的解释。词源学就是研究单词的起源。我觉得去了解词源通常很有趣，因为它能让我们理解一个词的演变路径，以及它在历史中对应的社会现实。对于“餐厅”这个词，在当今时代，我们听到它时不再会想到它的起源，不再会想到……"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:15.440",
+          "end_time": "00:10:37.669",
+          "french": "verbe restaurer, se restaurer, qui signifie donc, comme il l'explique, reprendre des forces. Aujourd'hui, quand on utilise le mot restaurer, ça va être par exemple pour un tableau. Quand on parle d'une œuvre d'art qui est ancienne, il y a un métier de restaurateur, restauratrice, qui consiste en...",
+          "chinese": "动词“restaurer”（修复/恢复），即他所解释的“恢复体力”。今天我们使用“restaurer”这个词，通常是指修复画作。当谈到一件古老的艺术品时，有一种职业叫修复师（restaurateur/restauratrice），其工作是……"
+        },
+        {
+          "id": 29,
+          "start_time": "00:10:38.259",
+          "end_time": "00:10:56.299",
+          "french": "prendre soin de l'œuvre d'art et la modifier, la rendre plus neuve, mais sans changer sa nature d'origine. Et donc là, au niveau du restaurant, les premiers restaurateurs servaient des plats.",
+          "chinese": "打理艺术品并对其进行修整，使其焕然一新，但不改变其原始性质。而在餐厅层面，最初的餐厅老板供应菜肴……"
+        },
+        {
+          "id": 30,
+          "start_time": "00:10:56.629",
+          "end_time": "00:11:22.879",
+          "french": "Donc, ils appelaient des restaurants, comme il l'explique, qui servaient à rendre sa nouveauté à la personne, à rendre une personne comme neuve. Et ça, je trouve que c'est vraiment intéressant parce qu'on a vraiment perdu cette signification aujourd'hui, non ? Ouais, moi, ça m'a vraiment surpris. C'est vrai que si on m'avait demandé d'imaginer la naissance du restaurant, j'aurais plutôt pensé que...",
+          "chinese": "正如他所解释的，他们称之为“restaurants”，用来让人恢复活力，让人像新的一样。我觉得这真的很有趣，因为我们今天已经完全失去了这个含义，不是吗？是的，这让我很惊讶。说实话，如果让我想象餐厅的诞生，我会认为……"
+        },
+        {
+          "id": 31,
+          "start_time": "00:11:22.879",
+          "end_time": "00:11:51.899",
+          "french": "C'était pour manger des choses exceptionnelles, des plats qu'on n'avait pas l'habitude de manger à la maison, des choses forcément très chères, très riches aussi en matière de saveurs, de calories, etc. Et en réalité, c'était un peu les débuts de la cuisine healthy, on pourrait dire, qui a vraiment lancé ce concept de restaurant. Mais c'est intéressant aussi que ce soit partie des bouillons de santé.",
+          "chinese": "那是为了吃一些特别的东西，一些平时在家里吃不到的菜，肯定是非常昂贵、在口味和热量等方面都非常丰富的东西。但实际上，可以说它是“健康餐”的雏形，真正开启了餐厅这个概念。不过，它起源于健康肉汤……"
+        },
+        {
+          "id": 32,
+          "start_time": "00:11:51.899",
+          "end_time": "00:12:20.080",
+          "french": "ou de ce plat, le bouillon, parce que bon, un bouillon, c'est pas quelque chose de très raffiné. C'est un peu comme une forme de soupe, sauf que voilà, le bouillon, c'est à partir de... soit à partir de la viande, soit à partir de légumes qu'on fait bouillir. Il y a beaucoup d'eau. Donc c'est un peu... c'est drôle d'imaginer d'aller dans un lieu spécialement pour consommer ça, alors que dans toute... c'était quasiment la chose la plus facile à cuisiner à la maison.",
+          "chinese": "或者这种肉汤菜肴，也挺有意思的。因为肉汤并不是什么非常精致的东西。它有点像汤，只不过肉汤是用肉或蔬菜煮出来的，水很多。所以……想象专门去一个地方喝这个挺滑稽的，因为在当时，这几乎是家里最容易做的东西。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:20.080",
+          "end_time": "00:12:45.919",
+          "french": "Mais finalement, ils ont fait cette espèce de coup marketing d'avoir ces restaurants avec cette étiquette saine, on pourrait dire, dès le XVIIIe siècle. Je trouve que c'est intéressant parce que ça donne un peu cette impression quand même de prendre soin de soi. On peut s'imaginer le Moyen-Âge comme une époque assez dure où c'était difficile d'être en bonne santé, de pouvoir...",
+          "chinese": "但最终，他们在 18 世纪通过给餐厅贴上这种“健康”标签，成功完成了一次营销。我觉得这很有趣，因为它给人一种关爱自己的感觉。我们可以想象中世纪是一个相当艰苦的时代，保持健康、在家里吃上好菜是很困难的。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:12:45.919",
+          "end_time": "00:13:14.509",
+          "french": "de pouvoir se servir des bons plats à la maison. Et du coup, c'est vrai qu'on peut imaginer le restaurant comme ce lieu où on va finalement se faire plaisir, prendre soin de soi. Et là, ça rejoint un peu le rôle du restaurant aujourd'hui. C'est juste que c'est dans une autre réalité où le besoin, les besoins des gens étaient différents de maintenant. Ensuite, ce qui est intéressant, c'est que Patrick nous a...",
+          "chinese": "因此，我们可以把餐厅想象成一个最终能让自己开心、照顾自己的地方。这与今天餐厅的角色有些重合。只是当时处于另一种现实，人们的需求与现在不同。接下来，有趣的是，帕特里克向我们……"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:14.509",
+          "end_time": "00:13:39.259",
+          "french": "décrit la clientèle des premiers restaurants en nous disant que c'est une clientèle assez élitiste même si on servait des bouillons de santé des choses qui n'étaient peut-être pas très chères à préparer, à cuisiner ça s'adressait surtout à la clientèle de l'époque qui avait le temps de prendre soin d'elle on pourrait dire, de se soucier de sa santé ce qui n'était pas le cas pour tout le monde",
+          "chinese": "描述了第一批餐厅的客户群，他说那是一个相当精英化的群体。尽管当时供应的是健康肉汤，这些东西的准备和烹饪成本可能并不高，但它主要面向的是当时有时间照顾自己、关注健康的人群，而这并不是所有人都能做到的。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:13:39.259",
+          "end_time": "00:14:08.100",
+          "french": "Et c'était aussi un des premiers lieux dans lesquels les femmes pouvaient se rendre seules sans que leur honneur ou leur image soit remise en cause. Donc ça, c'était assez intéressant. C'était des établissements publics qui s'adressaient aussi à une clientèle féminine, alors que la plupart des autres lieux publics à l'époque, c'était principalement pour les hommes. Alors, l'établissement se démocratise de certaines façons assez rapidement. Au XIXe siècle, la démocratisation, elle est là pour le restaurant.",
+          "chinese": "这也是女性可以独自前往而不会使其名誉或形象受到质疑的首批场所之一。所以这很有趣。这些公共场所也面向女性客户，而当时大多数其他公共场所主要是男性的天下。随后，这种机构在某种程度上迅速大众化了。到了 19 世纪，餐厅实现了大众化。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:08.279",
+          "end_time": "00:14:20.679",
+          "french": "Avec deux catégories de restaurants. Dans un premier temps, les restaurants qu'on va appeler les restaurants à la carte, qui sont plutôt des restaurants qui s'adressent à une clientèle riche, en fait, avec, comme aujourd'hui, on propose des plats à la carte.",
+          "chinese": "餐厅分为两类。第一类，我们称之为“单点餐厅”（restaurants à la carte），这类餐厅更倾向于面向富裕客户，就像今天一样，提供单点菜肴。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:20.730",
+          "end_time": "00:14:48.460",
+          "french": "Et on a le prix devant chaque plat, devant chaque vin. Et puis, on a une autre catégorie d'instaurants qu'on appelle les restaurants à prix fixe. Alors là, ils s'adressent à une clientèle beaucoup plus différente, soit une clientèle de travailleurs, populaire, voire une clientèle à petite bourgeoisie ou de la bourgeoisie. Et là, le restaurant à prix fixe, bien sûr, ça veut dire ce que ça veut dire. On nous propose un ou deux menus ou plusieurs menus à un prix donné, avec au minimum trois plats à l'intérieur.",
+          "chinese": "每道菜、每款酒前面都有标价。然后，我们有另一类餐厅，叫做“固定价格餐厅”（restaurants à prix fixe）。这类餐厅面向完全不同的群体，要么是工人阶层、平民，甚至是小资产阶级或中产阶级。顾名思义，“固定价格餐厅”就是以给定的价格提供一两套或多套套餐，里面至少包含三道菜。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:14:48.820",
+          "end_time": "00:15:05.509",
+          "french": "bien souvent le vin compris, voire le pain compris, etc. Alors on a toute une hiérarchie des restaurants à prix fixe. On a le très bon restaurant à prix fixe, et puis on a le petit restaurant à prix fixe pour une clientèle populaire. On a ça au XIXe siècle. Donc là, on voit très très bien que j'aurais tendance à dire à chacun son restaurant.",
+          "chinese": "通常还包括葡萄酒，甚至包括面包等等。固定价格餐厅也有等级之分。有非常高档的固定价格餐厅，也有面向平民的小型固定价格餐厅。19 世纪就是这样。所以我们可以很清楚地看到，我倾向于说，每个人都有适合自己的餐厅。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:05.690",
+          "end_time": "00:15:34.460",
+          "french": "Donc là, ce qu'a expliqué Patrick, c'est que les restaurants, même si au début ils étaient plutôt réservés à une élite, ils se sont assez vite démocratisés. Autrement dit, ils ont permis de toucher une clientèle plus large, principalement grâce à deux modèles qui existent encore aujourd'hui. Le modèle avec les plats à la carte, donc on peut choisir différents plats avec différents prix, qui sont les restaurants les plus chers en général.",
+          "chinese": "帕特里克解释说，餐厅虽然最初是为精英阶层保留的，但很快就大众化了。换句话说，它们触达了更广泛的客户群，这主要归功于至今仍然存在的两种模式。一种是单点模式，可以根据不同价格选择不同的菜肴，通常是最贵的餐厅。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:15:34.460",
+          "end_time": "00:16:03.389",
+          "french": "Et d'autres restaurants plus populaires avec des menus, des menus à prix fixe et des menus qui changent peut-être en fonction des arrivages de produits du jour, etc. Mais voilà, le menu, c'est toujours le même prix. Et en général, c'est suffisant pour bien manger, pour reprendre des forces, pour retourner au travail avec les trois plats, entrée, plat principal et dessert, et le vin et le pain qui sont compris aussi. Donc, grâce à ces deux modèles,",
+          "chinese": "另一种是更平民化的套餐模式，价格固定，菜单可能会根据当天的食材供应而变化。但套餐的价格总是一样的。通常，三道菜（前菜、主菜和甜点）加上包含在内的酒和面包，足以让人吃得好、恢复体力并重新投入工作。正是凭借这两种模式，"
+        },
+        {
+          "id": 42,
+          "start_time": "00:16:03.389",
+          "end_time": "00:16:31.519",
+          "french": "Très rapidement, les restaurants sont devenus des endroits qui étaient fréquentés par toutes les franges de la population. Et puis, Patrick nous a parlé d'un type de restaurant en particulier qui naît à peu près au même moment, donc au XIXe siècle. Et c'est un type de restaurant qui s'appelle le Bouillon. On l'écoute. Il y a, au milieu du XIXe siècle,",
+          "chinese": "餐厅迅速成为了社会各阶层都会光顾的地方。接着，帕特里克向我们提到了一种大约在同一时期（即 19 世纪）诞生的特殊餐厅类型。这种餐厅叫做“Bouillon”（肉汤馆）。我们来听听。在 19 世纪中叶，"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:31.519",
+          "end_time": "00:16:41.379",
+          "french": "Il y a une catégorie de restaurants qui va apparaître, qui va avoir un très grand succès et qui redevient à la mode à Paris aujourd'hui depuis quelques années, c'est le bouillon.",
+          "chinese": "出现了一类餐厅，它们获得了巨大的成功，而且近几年来在巴黎又重新流行起来，那就是“Bouillon”。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:16:42.139",
+          "end_time": "00:17:11.950",
+          "french": "Le bouillon qui apparaît dans les années 1850 grâce à un boucher, le boucher Duval, qui avait une boucherie au centre de Paris, dans le quartier Coquillère si je me souviens bien, qui avait une clientèle riche en fait. Donc elle ne jetait que les hauts morceaux. Et lui se retrouvait avec les bas morceaux de la viande, il ne savait pas trop quoi en faire. Il a eu l'idée à un moment donné de cuire cette viande et de la proposer sous forme de bouillon avec des morceaux dans un établissement que l'on va appeler bouillon. Ça marche du tonnerre.",
+          "chinese": "“Bouillon”出现在 1850 年代，归功于一位名叫迪瓦尔（Duval）的屠夫。他在巴黎市中心，如果我没记错的话是在 Coquillère 街区有一家肉店，他的客户很富有。所以他们只买上等的肉块。而他手里剩下了一些廉价部位的肉，不知道该拿它们怎么办。后来他想到把这些肉煮了，在一家被称为“Bouillon”的店里以肉汤加肉块的形式供应。结果火得一塌糊涂。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:11.950",
+          "end_time": "00:17:34.700",
+          "french": "premier établissement a un succès phénoménal. Et pareil, l'idée que le restaurant ce n'est pas qu'un lieu où on consomme, c'est aussi un lieu qui doit être extrêmement bien décoré. Et même pour une clientèle populaire, les bouillons, on a quelques bouillons qui nous restent encore aujourd'hui et puis on a quelques gravures de l'époque, sont extrêmement bien décorés avec des colonnades, avec des verrières un peu partout et ça va avoir un énorme succès.",
+          "chinese": "第一家店获得了惊人的成功。同样，餐厅不仅是一个消费场所，也是一个必须装饰得极其精美的地方。即使是面向平民客户，那些至今仍存的“Bouillon”以及当时的版画显示，它们的装饰都极其精美，到处是柱廊和玻璃天顶，这让它们大获成功。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:17:34.700",
+          "end_time": "00:18:02.700",
+          "french": "Donc voilà, vous comprenez que ce plat qui n'est pas forcément très raffiné, très sophistiqué, le bouillon, il a donné naissance à toute une tradition d'établissement, de restaurant. On vous a parlé des premiers bouillons de santé. Et puis c'est quelque chose qui s'est vraiment encore développé au milieu du XIXe siècle, qui a un peu disparu au XXe siècle et là qui est en train de revenir à la mode.",
+          "chinese": "所以你们明白了，肉汤这种并不一定非常精致、复杂的菜肴，催生了一整套餐厅传统。我们聊了最初的健康肉汤馆。这种模式在 19 世纪中叶得到了真正的进一步发展，在 20 世纪一度几乎消失，而现在又重新流行起来了。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:18:02.700",
+          "end_time": "00:18:33.029",
+          "french": "Bon, en général, encore une fois, comme je disais, c'est plutôt avec de la viande. Donc moi, personnellement, je ne suis jamais allé dans un bouillon. Je ne sais pas si toi, tu en as fréquenté déjà. Ah oui ! Ah, toi, tu es une fan du bouillon ! Non, je ne suis pas fan du bouillon, mais disons que ça m'est arrivé plusieurs fois de visiter Paris avec des personnes étrangères qui n'avaient pas forcément un budget énorme. C'est vrai que quand on vient en France, souvent, on est assez...",
+          "chinese": "通常，正如我所说，这些店主要是供应肉类的。所以我个人从未去过“Bouillon”。我不知道你有没有去过。噢，去过！啊，你是“Bouillon”的粉丝啊！不，我不是它的粉丝，但可以说我好几次陪同预算有限的外国朋友游览巴黎时去过。确实，来法国旅游时，人们经常会……"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:33.210",
+          "end_time": "00:19:02.400",
+          "french": "Ouais, serré au niveau du budget parce que c'est quand même des prix qui sont plus élevés que dans d'autres pays. Et donc, c'est un peu le truc que je conseille, c'est d'aller au Bouillon, notamment le Bouillon Pigalle puisque c'est mon ancien quartier. Donc, j'aime bien aller avec les personnes que j'accompagne à Montmartre, faire un tour, voir les abeilles, etc.",
+          "chinese": "预算比较紧张，因为这里的价格还是比其他国家高。所以我通常会建议去“Bouillon”，特别是皮加勒肉汤馆（Bouillon Pigalle），因为那是我的老街区。我喜欢带我陪同的人去蒙马特高地转转，看看圣心大教堂等等。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:19:02.400",
+          "end_time": "00:19:26.980",
+          "french": "au bouillon pigalle, comme ça, ça permet d'avoir un bon moment, avec un bon plat, être bien servi, on peut y rester aussi longtemps qu'on veut et on ne paye pas trop cher. Le seul inconvénient, c'est qu'il faut faire la queue, puisque en général, dans les bouillons, il y a quand même une longue file d'attente, il n'y a pas de réservation. Et d'ailleurs, il y a un bouillon...",
+          "chinese": "然后去皮加勒肉汤馆，这样可以享受一段美好的时光，吃上一道好菜，服务周到，想待多久就待多久，而且价格不贵。唯一的缺点是必须排队，因为通常在“Bouillon”，队伍都很长，而且不能预订。顺便说一下，还有一家“Bouillon”……"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:26.980",
+          "end_time": "00:19:48.809",
+          "french": "à Toulouse, le Bouillon Capitole. Apparemment, c'est le restaurant le moins cher de la ville. J'avoue, je n'y suis encore jamais allée, mais j'aimerais bien y aller pour tester, voir si c'est aussi bien que le Bouillon Pigalle. En tout cas, il a une bonne réputation. Donc, si vous n'êtes pas végane, peut-être même que ça peut s'essayer. Il y a peut-être des options maintenant avec les légumes.",
+          "chinese": "在图卢兹，叫市政厅肉汤馆（Bouillon Capitole）。据说它是全城最便宜的餐厅。我承认我还没去过，但我很想去试试，看看它是不是和皮加勒肉汤馆一样好。总之，它的名声很好。所以，如果你不是素食者，甚至可以去尝试一下。现在可能也有蔬菜选项了。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:19:49.210",
+          "end_time": "00:20:11.299",
+          "french": "Je n'ai pas fait attention, mais c'est possible qu'il y ait des options. En tout cas, au niveau du prix et de l'expérience, ça vaut le coup. Patrick a utilisé une expression assez sympa dans cet extrait. Il a dit, le bouillon à cette époque, ça marche du tonnerre. C'est un peu vintage comme expression. Je ne sais pas si je l'utiliserais. Je pense que c'était...",
+          "chinese": "我没注意，但可能有。总之，从价格和体验来看，很值得一试。帕特里克在这一段里用了一个挺有意思的表达。他说当时的“Bouillon”是“marche du tonnerre”（火得一塌糊涂）。这个表达有点复古，我不确定我会不会用。我觉得那是……"
+        },
+        {
+          "id": 52,
+          "start_time": "00:20:11.450",
+          "end_time": "00:20:40.640",
+          "french": "C'était peut-être les jeunes. Quand Patrick était jeune, peut-être dans les années 70-80, on utilisait cette expression. Marché du tonnerre. Aujourd'hui, on dit plutôt cartonné, le verbe cartonné. Je ne sais pas si tu n'es pas déjà un peu vieux toi-même. C'est un peu vintage aussi, pardon. Quand moi, j'étais jeune, on disait cartonné. Mais tout ça, ça veut dire que quelque chose fonctionne très bien, quelque chose a beaucoup de succès. Voilà, ça marche du tonnerre, ça veut dire ce restaurant a beaucoup de succès, il est très populaire.",
+          "chinese": "可能是年轻人用的。帕特里克年轻的时候，大概在七八十年代，人们会用这个词。“Marcher du tonnerre”。今天我们更倾向于说“cartonner”（大获成功）。我不知道你是不是自己也有点老了。抱歉，这也有点复古。我年轻的时候，大家说“cartonner”。但这些都意味着某事运行得非常好，非常成功。总之，“marche du tonnerre”意味着这家餐厅非常成功，非常受欢迎。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:40.640",
+          "end_time": "00:20:58.539",
+          "french": "On dit aussi cartonner. Qu'est-ce qu'ils disent les jeunes maintenant ? Je ne sais pas justement, je me demande. Mais bon, je ne sais pas. C'est le feu peut-être ? Je ne sais pas. Il faudrait demander à des plus jeunes. Mais c'est vrai que quand j'entends ça cartonne, j'ai l'impression que ce n'est pas trop cool. C'est un peu millénial.",
+          "chinese": "我们也说“cartonner”。现在的年轻人怎么说？我正想问呢，我也在想。但我不知道。也许是“C'est le feu”？我不知道。得问问更年轻的人。但确实，当我听到“ça cartonne”时，我觉得这已经不太酷了，有点千禧一代的感觉。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:20:59.450",
+          "end_time": "00:21:25.490",
+          "french": "Bon, en tout cas, c'est vrai que les bouillons cartonnaient à cette époque, que maintenant, ils sont en train de redevenir populaires. Mais il n'y avait pas que ça. Il y avait aussi d'autres types de restaurants. Donc, on ne va pas passer tous les extraits de Patrick, mais il nous parle dans l'interview d'autres choses, comme par exemple, quoi ? Le bistrot, évidemment. Enfin, on a fait toute une partie aussi sur le café.",
+          "chinese": "总之，当时的“Bouillon”确实大获成功，现在它们又重新流行起来了。但不仅仅是这些，还有其他类型的餐厅。我们不会放帕特里克所有的采访片段，但他在采访中还提到了其他东西，比如什么？当然是小酒馆（bistrot）。最后，我们也专门聊了咖啡馆。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:21:25.490",
+          "end_time": "00:21:52.289",
+          "french": "parce que les cafés apparaissent à peu près au même moment que les premiers restaurants et ce sont aussi des lieux qui vont être très importants dans la vie culturelle et la vie sociale française. Mais on va faire tout un épisode, je pense, sur le café parce que toi comme moi, on en est de gros consommateurs et on s'intéresse aussi bien aux produits qu'aux lieux. En tant que bons millenials, encore une fois, on est un peu obsédés par le café. Voilà, Ingrid me montre son mug à l'écran.",
+          "chinese": "因为咖啡馆大约在第一批餐厅出现的同时出现，它们也是法国文化生活和社会生活中非常重要的场所。但我想我们会专门做一集关于咖啡馆的内容，因为你我都是咖啡的重度消费者，我们对产品和场所都很感兴趣。作为典型的千禧一代，我们再次对咖啡表现出了痴迷。瞧，英格丽德正对着屏幕展示她的马克杯。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:21:52.289",
+          "end_time": "00:22:16.069",
+          "french": "son grand mug de café. Donc voilà, là, pour le moment, on ne va pas passer de temps dessus. Mais il nous a parlé aussi du bistrot. Alors souvent, c'est vrai que quand on vient visiter la France, on a envie de manger dans un bistrot. Mais ce n'est pas toujours très évident de comprendre la différence entre un bistrot et un restaurant. Ouais, un bistrot, un restaurant, il y a les brasseries aussi. Bon.",
+          "chinese": "她那大杯咖啡。所以，目前我们不在上面花时间。但他还跟我们聊了“bistrot”。通常，来法国旅游时，人们都想在“bistrot”吃顿饭。但要理解“bistrot”和“restaurant”的区别并不总是那么容易。是的，“bistrot”、“restaurant”，还有“brasserie”（大餐厅）。好吧。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:22:16.180",
+          "end_time": "00:22:44.029",
+          "french": "Anciennement, il y avait des vraies différences avec, par exemple, les types de plats. Typiquement, dans les bistrots, c'était plutôt des plats comme la blanquette de veau, le pot au feu, des choses pas du tout véganes. Les plats vraiment typiques français à l'ancienne. Alors que dans une brasserie, c'était plutôt des plateaux de fruits de mer, des huîtres. Mais maintenant, j'ai l'impression que de toute façon, on n'a plus ces différences.",
+          "chinese": "以前确实有真正的区别，比如菜肴类型。典型地，在“bistrot”，多是像白汁小牛肉（blanquette de veau）、火上锅（pot au feu）这类完全不素食的菜。那些非常传统的法式老菜。而在“brasserie”，更多是海鲜拼盘、生蚝。但现在，我觉得反正这些区别已经不存在了。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:22:44.029",
+          "end_time": "00:23:02.150",
+          "french": "On a des établissements qui sont tous un peu dans le même style où on peut trouver des plats typiques, des choses un peu plus modernes. Par exemple, je ne sais pas, on peut trouver des hamburgers aujourd'hui, plus français, des croque-monsieur.",
+          "chinese": "现在的餐厅风格都差不多，既能找到传统菜，也能找到现代菜。比如，我不知道，现在也能找到更法式的汉堡、法式三明治（croque-monsieur）。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:02.420",
+          "end_time": "00:23:28.380",
+          "french": "Mais voilà, il y a plusieurs noms. Mais je ne sais pas si tu es d'accord avec moi. J'ai l'impression qu'aujourd'hui, franchement, tu demandes à n'importe quel Français. Ils ne vont pas réussir à te dire la différence entre un bistrot et une brasserie. Oui, c'est vrai qu'on retrouve un peu les mêmes plats partout dans ces restaurants français. Donc, les bistrots, les brasseries. D'ailleurs, ça fait un peu partie du problème dont on va parler plus tard au niveau de la crise des restaurants.",
+          "chinese": "虽然名字很多，但我不知道你是否同意我的看法。我觉得今天，坦白说，你随便问一个法国人，他们都说不出“bistrot”和“brasserie”的区别。没错，在这些法国餐厅里，到处都能看到同样的菜。所以，无论是“bistrot”还是“brasserie”，这其实也是我们稍后要谈到的餐厅危机的一部分。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:28.380",
+          "end_time": "00:23:54.220",
+          "french": "Un petit manque peut-être de renouveau, d'originalité. Donc voilà, maintenant c'est un peu plus, en général par rapport à l'histoire du lieu, si historiquement le lieu était un bistrot, les propriétaires, même si c'est des nouveaux propriétaires, ils vont continuer d'utiliser ça parce que ça fait partie de l'identité, peut-être du nom même du restaurant. Mais après, en termes de cuisine, de service à l'intérieur, c'est quand même plus ou moins la même expérience.",
+          "chinese": "也许是缺乏创新和原创性。所以，现在更多是根据场所的历史来定，如果历史上这个地方是一家“bistrot”，即使换了新老板，他们也会继续沿用这个称呼，因为这是身份标识的一部分，甚至是餐厅名字的一部分。但在烹饪和服务方面，体验其实大同小异。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:23:54.490",
+          "end_time": "00:24:03.339",
+          "french": "On a parlé des terrasses aussi qui font partie, notamment à Paris, mais dans les grandes villes, de l'identité des restaurants, des cafés.",
+          "chinese": "我们也聊到了露天座（terrasses），特别是在巴黎，但在各大城市，它们也是餐厅和咖啡馆身份标识的一部分。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:24:03.960",
+          "end_time": "00:24:31.390",
+          "french": "C'est vrai que c'est Patrick qui avait fait cette remarque, mais au moment des attentats de 2015, vous vous souvenez peut-être des attentats à Paris, c'est la salle de concert Le Bataclan qui avait été visée, mais aussi les terrasses, les personnes qui étaient en terrasse, qui avaient été attaquées par les terroristes. Patrick avait dit dans une autre interview que c'était comme si on attaquait l'identité française quand on attaquait ces terrasses. Donc c'est assez intéressant de voir que...",
+          "chinese": "帕特里克曾发表过一个评论，在 2015 年恐怖袭击发生时——你们可能还记得巴黎的袭击，巴塔克兰音乐厅是目标，但露天座也是，那些在露天座的人遭到了恐怖分子的袭击。帕特里克在另一次采访中说，袭击这些露天座就像是在袭击法国人的身份。所以看到这一点很有趣……"
+        },
+        {
+          "id": 63,
+          "start_time": "00:24:31.390",
+          "end_time": "00:25:00.529",
+          "french": "Les restaurants, ce n'est pas seulement des commerces, ce n'est pas seulement des lieux économiques, mais il y a toute cette dimension aussi culturelle. Et surtout dans l'interview avec Patrick, nous, on a parlé surtout de Paris parce que c'est la capitale, c'est un peu le leader de tout ce qu'il se passe dans le pays. Mais bien sûr, toutes ces modes sont arrivées très rapidement dans d'autres villes de France, notamment Toulouse et Marseille que nous, on connaît bien.",
+          "chinese": "餐厅不仅仅是商业场所，不仅仅是经济场所，还有整个文化维度。特别是在对帕特里克的采访中，我们主要聊了巴黎，因为它是首都，是全国动态的领头羊。但当然，所有这些时尚都迅速传到了法国其他城市，特别是我们熟悉的图卢兹和马赛。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:25:00.529",
+          "end_time": "00:25:23.339",
+          "french": "Et aujourd'hui, quand on parle de restaurant en général, on ne peut pas vraiment faire la différence entre Paris et le reste de la France. Il y a des petites particularités, mais ça reste une culture qui est nationale. Oui, notamment ce qu'on retrouve au niveau national, c'est la crise actuelle des restaurants. Et c'est justement ce dont on va parler maintenant.",
+          "chinese": "今天，当我们谈论餐厅时，通常无法真正区分巴黎和法国其他地区。虽然有一些小特色，但文化是全国性的。是的，特别是在全国范围内都能看到的是目前的餐厅危机。这正是我们现在要聊的话题。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:25:30.650",
+          "end_time": "00:25:42.890",
+          "french": "Comme on le disait en introduction, le restaurant, c'est quelque chose qui est traditionnel, que tous les Français adorent. Et pourtant, aujourd'hui, c'est un secteur qui est en crise.",
+          "chinese": "正如我们在开头所说，餐厅是传统的东西，所有法国人都热爱。然而，今天这个行业正处于危机之中。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:25:43.029",
+          "end_time": "00:26:08.579",
+          "french": "En moyenne, chaque restaurant a enregistré une baisse de chiffre d'affaires de 1 à 2 % en 2024 et c'est une tendance qui ne fait que se confirmer à travers des années. On peut dire que les restaurants sont de plus en plus nombreux soit à faire faillite, soit tout simplement à fermer, surtout dans les grandes villes.",
+          "chinese": "平均而言，2024 年每家餐厅的营业额下降了 1% 到 2%，而且这一趋势在多年间不断得到证实。可以说，越来越多的餐厅要么破产，要么直接关门，特别是在大城市。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:26:08.579",
+          "end_time": "00:26:36.109",
+          "french": "Alors quand je dis soit faire faillite, soit fermer, c'est-à-dire que quand on fait faillite, ça veut dire qu'on a des problèmes économiques, des difficultés économiques tellement fortes qu'on finit par ne plus pouvoir payer ses factures, ses dettes et que donc on nous oblige à fermer. Et en plus de ça, il y a des restaurants qui, avant même d'arriver à ce stade, décident de fermer pour...",
+          "chinese": "我说“要么破产，要么关门”，意思是：破产是指遇到了非常严重的经济问题和困难，以至于最终无法支付账单和债务，从而被迫关闭。除此之外，还有一些餐厅在达到这个阶段之前，就决定关门，原因有很多……"
+        },
+        {
+          "id": 68,
+          "start_time": "00:26:36.109",
+          "end_time": "00:27:05.839",
+          "french": "Plein de raisons qu'on va voir, mais parce que souvent, c'est difficile en fait comme activité. Et donc, la conséquence économique la plus importante, c'est qu'on considère aujourd'hui qu'environ 25 000 emplois, là tout de suite, au moment où on parle, sont menacés. Donc, environ 25 000 personnes travaillent dans un restaurant qui pourrait avoir des difficultés économiques bientôt, donc qui pourrait être renvoyé de là.",
+          "chinese": "我们待会儿会看到，但通常是因为这项活动确实很辛苦。因此，最重要的经济后果是，我们认为目前大约有 25,000 个工作岗位受到威胁。也就是说，大约有 25,000 人在可能很快会遇到经济困难的餐厅工作，他们可能很快会被解雇，"
+        },
+        {
+          "id": 69,
+          "start_time": "00:27:05.839",
+          "end_time": "00:27:22.380",
+          "french": "leur travail bientôt, qui pourraient perdre leur travail dans les prochains mois. Donc ça, c'est le constat qui est assez alarmant. Et maintenant, quelles sont les causes de ce phénomène ? D'abord, l'augmentation des prix.",
+          "chinese": "或者在未来几个月内失业。所以，这个现状相当令人担忧。那么，这种现象的原因是什么呢？首先是价格上涨。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:22.809",
+          "end_time": "00:27:50.990",
+          "french": "globalement ont connu une assez forte inflation depuis le Covid mais ça se ressent particulièrement dans les restaurants et ça c'est en grande partie parce que les restaurateurs doivent répercuter l'augmentation des coûts sur leurs prix autrement dit comme leurs coûts de fonctionnement à eux augmentent et bien ils sont obligés d'augmenter leurs prix pour essayer de sauver leurs marges les coûts qui ont augmenté",
+          "chinese": "总的来说，自新冠疫情以来，物价经历了相当强劲的通胀，但在餐厅里感受尤为明显。这在很大程度上是因为餐厅老板必须将成本上涨转嫁到价格上。换句话说，由于他们的运营成本增加了，他们不得不提高价格，以试图保住利润。增加的成本包括……"
+        },
+        {
+          "id": 71,
+          "start_time": "00:27:50.990",
+          "end_time": "00:28:16.420",
+          "french": "Ça aussi, c'est quelque chose qu'on retrouve un peu partout, mais les coûts d'énergie, notamment l'électricité qui est devenue plus chère, les matières premières, surtout depuis la guerre en Ukraine, notamment le prix du blé qui a pas mal augmenté, et aussi les loyers, tout simplement quand on n'est pas propriétaire de son restaurant et on doit payer un loyer. Et puis, il y a eu aussi un impact du Covid, non ?",
+          "chinese": "这也是到处都能看到的情况，比如能源成本，特别是电费变贵了；原材料成本，特别是自乌克兰战争以来，小麦价格大幅上涨；还有租金，如果你不是餐厅的房东，就必须支付租金。此外，新冠疫情也有影响，不是吗？"
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:16.660",
+          "end_time": "00:28:45.440",
+          "french": "Oui, parce que pendant le Covid, beaucoup de restaurants ont dû fermer. Donc, l'État a versé des primes, des prêts exceptionnels qui doivent être remboursés. Et jusqu'à aujourd'hui, il y a des restaurateurs qui n'arrivent pas à faire entrer le remboursement du prêt dans leur budget. Et donc, pour essayer de sauver les meubles, on pourrait dire... Donc, sauver les meubles, c'est une expression qui signifie...",
+          "chinese": "是的，因为疫情期间，很多餐厅被迫关闭。于是国家发放了补贴和必须偿还的特别贷款（PGE）。直到今天，仍有一些餐厅老板无法将贷款偿还纳入预算。所以为了“sauver les meubles”（尽量挽回损失）……“sauver les meubles”这个表达的意思是……"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:45.440",
+          "end_time": "00:29:06.589",
+          "french": "Essayer de sauver ce qui peut être sauvé. Dans le pire scénario, les restaurateurs, pour essayer de sauver les meubles, de survivre, ils ont augmenté leur prix à la carte. Apparemment, sur les deux dernières années, les prix à la carte dans les restaurants ont augmenté d'en moyenne 20%. Donc ça fait une augmentation quand même significative.",
+          "chinese": "试着保住能保住的东西。在最坏的情况下，餐厅老板为了生存，提高了菜单价格。据称，在过去两年里，餐厅的单点价格平均上涨了 20%。这确实是一个显著的涨幅。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:29:06.589",
+          "end_time": "00:29:36.400",
+          "french": "Le problème, c'est que pendant ce temps-là, les Français, eux, ils ont aussi des charges qui augmentent, les loyers qui augmentent, la hausse de l'énergie, de l'électricité et du gaz pèsent aussi à la maison. Et donc, ils sont de plus en plus regardants sur les prix. On va au restaurant avec un budget un peu plus serré. Donc forcément, si les prix sont plus élevés alors que notre budget est plus serré, la décision est faite.",
+          "chinese": "问题在于，与此同时，法国人自己的支出也在增加，租金在涨，能源、电费和燃气费的上涨也增加了家庭负担。因此，他们对价格越来越“regardants”（斤斤计较）。人们去餐厅时的预算更紧了。显然，如果价格更高而预算更紧，决定就很简单了。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:36.400",
+          "end_time": "00:29:40.359",
+          "french": "Elle est vite prise d'aller au restaurant beaucoup moins souvent.",
+          "chinese": "很快就会决定减少去餐厅的次数。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:29:40.630",
+          "end_time": "00:30:09.339",
+          "french": "Ouais, j'aime bien l'expression que tu as utilisée, « regardant », être regardant sur quelque chose. Ça veut dire qu'on fait attention à quelque chose. Par exemple, être regardant sur la qualité de ce qu'on mange, ça veut dire que, voilà, vous faites très attention à la qualité de ce que vous mangez. On l'utilise aussi assez souvent à la forme négative. Dire que quelqu'un n'est pas regardant sur quelque chose, ça veut dire, bon, cette personne ne fait pas attention à ça, ce n'est pas très important pour elle.",
+          "chinese": "没错，我很喜欢你用的那个词，“regardant”，对某事“être regardant”。这意味着对某事很在意。例如，对食物的质量“être regardant”，意味着你非常关注所吃东西的质量。我们也经常用它的否定形式。说某人对某事“n'est pas regardant”，意味着这个人不在意，这对他们来说不重要。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:30:09.339",
+          "end_time": "00:30:32.519",
+          "french": "Voilà, par exemple, je ne sais pas, un chef dans une entreprise qui n'est pas très regardant sur les horaires de ses employés. Tu parles de qui ? Surtout en télétravail, ça veut dire qu'il n'est pas à surveiller à chaque fois l'heure à laquelle ses employés commencent et finissent le travail. Il n'est pas très regardant sur les horaires de ses salariés.",
+          "chinese": "比如，我不知道，一个对员工工作时间不太计较的老板。你在说谁？特别是在远程办公时，这意味着他不会每次都盯着员工上下班的时间。他对员工的工作时间不太计较。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:30:32.630",
+          "end_time": "00:30:52.839",
+          "french": "Et donc les Français, j'ai dit, sont de plus en plus regardants sur le prix. Et tu as parlé de qualité. Justement, les Français sont au contraire assez regardants sur la qualité. Et ils se rendent bien compte que la qualité dans les restaurants baisse. Et ça, ça crée une crise de confiance.",
+          "chinese": "所以我说，法国人对价格越来越计较。你提到了质量。恰恰相反，法国人对质量非常计较。他们清楚地意识到餐厅的质量在下降。这造成了信任危机。"
+        },
+        {
+          "id": 79,
+          "start_time": "00:30:53.079",
+          "end_time": "00:31:21.730",
+          "french": "Ouais, ils baissent notamment parce qu'il y a beaucoup de restaurateurs qui se lancent sans avoir beaucoup d'expérience, qui ont juste peut-être un concept, une idée ou voilà, ils aiment bien cuisiner un peu à la maison, donc ils se disent « bon, je vais ouvrir un restaurant », c'est un peu le projet que tout le monde a, soit écrire un livre, soit ouvrir un restaurant avec des amis, mais bon, c'est pas pareil de faire la cuisine à la maison pour sa famille et pour 50 clients tous les jours.",
+          "chinese": "是的，质量下降的部分原因是很多餐厅老板在没有太多经验的情况下就开始创业，他们可能只有一个概念、一个想法，或者只是喜欢在家里做点饭，于是就想“好吧，我要开家餐厅”。这有点像每个人的梦想，要么写本书，要么和朋友开家餐厅。但是，在家里给家人做饭和每天给 50 个客人做饭是两回事。"
+        },
+        {
+          "id": 80,
+          "start_time": "00:31:21.730",
+          "end_time": "00:31:37.900",
+          "french": "Donc voilà, le résultat n'est pas toujours optimal. Et au contraire, il y a beaucoup de restaurateurs expérimentés qui, aujourd'hui, partent à la retraite. Il y a un espèce de changement générationnel comme ça. Donc on est encore dans une phase d'ajustement.",
+          "chinese": "所以，结果并不总是理想的。相反，现在有很多经验丰富的餐厅老板退休了。这是一种代际更替。所以我们还处于调整阶段。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:31:37.940",
+          "end_time": "00:32:02.859",
+          "french": "En plus, c'est un secteur qui est très difficile. On sait pour les employés, la restauration, c'est un des secteurs les plus fatigants. Et les conditions de travail en général ne sont pas très bonnes. Moi, je sais que je connais pas mal de monde qui travaille dans ce secteur. Et franchement, il se passe beaucoup de temps à démissionner, en fait, pour pouvoir faire des pauses et à retrouver du travail derrière.",
+          "chinese": "此外，这是一个非常辛苦的行业。我们知道对于员工来说，餐饮业是最累的行业之一。工作条件通常不太好。我知道我认识不少在这个行业工作的人。坦白说，他们经常辞职，为了能休息一段时间，然后再找工作。"
+        },
+        {
+          "id": 82,
+          "start_time": "00:32:02.859",
+          "end_time": "00:32:30.460",
+          "french": "Les salaires ne sont pas bons, c'est fatigant. Souvent, on travaille en deux fois, un service du midi, un service du soir, ce qui fait que pour le repos et pour la vie personnelle, c'est compliqué. Donc forcément, les restaurants ont du mal à avoir des employés sur le long terme qui peuvent vraiment former une équipe qui fonctionne bien, avec une envie de travailler ensemble et d'améliorer les choses ensemble.",
+          "chinese": "工资不高，人很累。通常是分段工作，中午一班，晚上一班，这使得休息和个人生活变得很复杂。因此，餐厅很难拥有能够真正形成高效团队、愿意共同努力并改善现状的长期员工。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:32:30.460",
+          "end_time": "00:32:44.460",
+          "french": "C'est vrai que les restaurateurs, depuis quelques années, se plaignent beaucoup du manque de personnel. Ils ont des difficultés à embaucher, à trouver des personnes qui ont envie de travailler soit en cuisine, soit au service. Et c'est vrai que...",
+          "chinese": "确实，几年来，餐厅老板一直在抱怨人手短缺。他们很难招到人，很难找到愿意在厨房或服务岗位工作的人。而且……"
+        },
+        {
+          "id": 84,
+          "start_time": "00:32:44.730",
+          "end_time": "00:33:10.940",
+          "french": "Bon, parmi les jeunes, ça ne fait plus vraiment partie des métiers qui font rêver, les métiers de bouche, les métiers dans les restaurants, alors qu'en France, une différence que j'avais remarquée, c'est que les serveurs, c'est un vrai métier, par exemple. Donc, ce n'est pas rare, surtout dans les brasseries parisiennes, de voir des serveurs assez âgés qui ont peut-être 50 ans, qui ont fait toute leur carrière comme ça et qui ont un vrai sens du métier, de la profession.",
+          "chinese": "在年轻人中，食品行业、餐厅工作不再是令人向往的职业。虽然在法国，我注意到一个区别，那就是服务员是一份真正的职业。比如，在巴黎的大餐厅里，看到 50 岁左右、整个职业生涯都在做服务员的人并不罕见，他们对这份职业有真正的使命感。"
+        },
+        {
+          "id": 85,
+          "start_time": "00:33:10.940",
+          "end_time": "00:33:22.750",
+          "french": "Alors que dans les autres pays, c'est plutôt réservé à des étudiants, à des jeunes. En France, c'est considéré vraiment comme un vrai métier. Mais de moins en moins, en fait, c'est quelque chose qui séduit de moins en moins les jeunes.",
+          "chinese": "而在其他国家，这更多是留给学生或年轻人的。在法国，这被视为一份真正的职业。但这种情况越来越少，它对年轻人的吸引力越来越小。"
+        },
+        {
+          "id": 86,
+          "start_time": "00:33:22.750",
+          "end_time": "00:33:52.529",
+          "french": "En général, il y a une crise de confiance pour toutes ces raisons et aussi parce que tu parlais du manque d'expérience. Le manque d'expérience fait aussi qu'il y a un manque d'innovation. Souvent, il y a des restaurants qui ouvrent comme ça et puis les patrons finalement ne sont pas très présents et ils ne se rendent pas vraiment compte des besoins de la clientèle. Ils ne proposent par exemple pas beaucoup de cuisine végétale.",
+          "chinese": "总的来说，由于所有这些原因，存在着信任危机，也因为你提到的缺乏经验。缺乏经验也导致了缺乏创新。通常有些餐厅就这样开张了，但老板最终并不常在店里，他们并没有真正意识到客户的需求。例如，他们不提供太多的素食。"
+        },
+        {
+          "id": 87,
+          "start_time": "00:33:52.529",
+          "end_time": "00:34:19.820",
+          "french": "On ne peut pas faire de réservation facilement en ligne. Ils ne communiquent pas sur leur concept. Donc, ce qui fait que finalement, les clients, ils n'ont plus cette envie d'aller tester ce restaurant qui propose cette nouveauté où ils peuvent identifier le patron. Il n'y a plus trop ce truc-là. Oui, et comme tu le disais aussi, il y a ce manque de transparence. Quand on lit un peu des articles sur le sujet, il y a beaucoup de clients qui se plaignent.",
+          "chinese": "无法轻松在线预订。他们不宣传自己的理念。因此，客户最终不再有欲望去尝试这些提供新意或能见到老板的餐厅。那种感觉消失了。是的，正如你所说，还有缺乏透明度的问题。读一些相关文章时，会发现很多客户都在抱怨。"
+        },
+        {
+          "id": 88,
+          "start_time": "00:34:19.820",
+          "end_time": "00:34:45.449",
+          "french": "de la mauvaise qualité de certains restaurants. Quand le plat arrive, on ne sait pas si c'est un plat surgelé qui a juste été réchauffé au micro-ondes ou si c'est vraiment du fait maison. Alors que dans d'autres pays, il me semble, en Italie, ça doit être mentionné sur le menu si quelque chose est fait maison ou pas, je crois. Et en France, on n'arrive pas à faire passer une législation similaire.",
+          "chinese": "抱怨某些餐厅质量差。当菜端上来时，我们不知道那是微波炉加热的冷冻食品，还是真正的“自制”（fait maison）。而在其他国家，我记得在意大利，菜单上必须注明是否是自制的。而在法国，我们还没能通过类似的立法。"
+        },
+        {
+          "id": 89,
+          "start_time": "00:34:45.500",
+          "end_time": "00:35:10.510",
+          "french": "Donc, voilà, les gens n'ont pas envie d'aller au restaurant pour manger quelque chose de surgelé, facturé au prix du fait maison, alors qu'ils pourraient très bien le faire chez eux. D'autant plus que, et ça c'est un peu le troisième facteur, après le prix et la qualité, c'est que les gens ont moins besoin d'aller au restaurant. Déjà à cause du télétravail, puisque les modes de vie changent, les gens sont plus à la maison.",
+          "chinese": "所以，人们不想去餐厅花“自制”的价格吃冷冻食品，因为他们在家里也能做。更何况，这是除了价格和质量之外的第三个因素，那就是人们去餐厅的需求减少了。首先是因为远程办公，生活方式改变了，人们更多待在家里。"
+        },
+        {
+          "id": 90,
+          "start_time": "00:35:10.510",
+          "end_time": "00:35:38.909",
+          "french": "Et ce qui fait qu'ils n'ont plus cette habitude d'aller dans une brasserie le midi avec les collègues. Et donc, ils vont plus facilement manger à la maison le midi. Et puis, il y a aussi évidemment l'essor des applications de livraison à domicile qui permettent de commander depuis son canapé n'importe quel plat, de se faire livrer aussi bien des pizzas que des burgers, la cuisine asiatique, etc.",
+          "chinese": "这导致他们不再有中午和同事去大餐厅吃饭的习惯。因此，他们中午更容易在家里吃。当然，还有外卖应用的兴起，让人可以坐在沙发上订购任何菜肴，无论是披萨、汉堡还是亚洲菜等等。"
+        },
+        {
+          "id": 91,
+          "start_time": "00:35:38.909",
+          "end_time": "00:36:06.500",
+          "french": "Et ça, ça a encouragé un développement de ce qu'on appelle les dark kitchens. Encore une fois, ce n'est pas une spécificité française, mais au lieu d'ouvrir un restaurant, souvent maintenant, c'est plus rentable d'avoir un local et de cuisiner exclusivement pour les applications de livraison. D'ailleurs, j'ai écouté un super épisode à ce sujet d'un podcast de Arte Radio qui s'appelle « Vivons heureux avant la fin du monde » qui traite...",
+          "chinese": "这鼓励了所谓“幽灵厨房”（dark kitchens）的发展。这同样不是法国特有的现象，但与其开一家餐厅，现在通常拥有一个场所并专门为外卖应用烹饪更有利可图。顺便说一下，我听过 Arte Radio 播客《Vivons heureux avant la fin du monde》中关于这个话题的一集，非常棒，它探讨了……"
+        },
+        {
+          "id": 92,
+          "start_time": "00:36:06.500",
+          "end_time": "00:36:35.889",
+          "french": "plutôt des sujets de société, un peu sous le format d'une enquête. Et là, c'était un épisode intitulé « Paresse Business », un très bon titre, qui était justement par rapport à toutes ces applications de livraison. Donc, je vous invite à l'écouter si ça vous intéresse. Et enfin, un facteur qu'on peut citer aussi, c'est toujours lié au mode de vie qui change et au fait que les gens vont plus vouloir manger chez eux, c'est qu'en France, on a quelque chose qui s'appelle les…",
+          "chinese": "社会话题，采用调查的形式。那一集的标题是《懒人生意》（Paresse Business），起得很好，讲的就是这些外卖应用。如果你们感兴趣，我建议去听听。最后，我们还可以提到一个因素，这仍然与生活方式的改变以及人们更想在家里吃饭有关，那就是在法国，我们有一种东西叫做……"
+        },
+        {
+          "id": 93,
+          "start_time": "00:36:35.889",
+          "end_time": "00:36:44.360",
+          "french": "tickets restaurant ou les chèques restaurant qui est une manière pour les employeurs de ces",
+          "chinese": "“餐券”（tickets restaurant）或“餐支票”（chèques restaurant），这是雇主给员工的一种……"
+        },
+        {
+          "id": 94,
+          "start_time": "00:36:44.949",
+          "end_time": "00:37:09.550",
+          "french": "Quelque chose qu'on peut recevoir quand on est salarié, qui fait partie de la rémunération. En plus du salaire, on peut avoir des tickets ou des chèques restaurant qui permettent de payer son déjeuner le midi. Quand, par exemple, il n'y a pas de cantine dans l'entreprise. Sauf que ces moyens de paiement particuliers sont...",
+          "chinese": "作为员工可以收到的一种福利，是薪酬的一部分。除了工资，还可以有餐券，用来支付中午的午餐。比如当公司没有食堂时。只不过，这些特殊的支付方式……"
+        },
+        {
+          "id": 95,
+          "start_time": "00:37:09.550",
+          "end_time": "00:37:36.579",
+          "french": "aussi depuis le Covid disponibles pour acheter dans un supermarché pour faire ses courses. Mais ce n'était pas le cas déjà avant ? En fait, c'était déjà le cas avant, mais seulement pour acheter des sandwiches, des choses à consommer tout de suite pour le midi. Et depuis le Covid, je crois qu'on pouvait aussi les utiliser pour acheter des pâtes, du riz, pour vraiment faire ses courses. C'était ça la petite différence.",
+          "chinese": "自新冠疫情以来，也可以在超市买菜时使用。但以前不就是这样吗？其实以前也可以，但仅限于买三明治之类中午即食的东西。而自疫情以来，我想也可以用它们买面条、大米，真正用来买菜。这就是那个小小的区别。"
+        },
+        {
+          "id": 96,
+          "start_time": "00:37:36.579",
+          "end_time": "00:37:57.170",
+          "french": "justement pour pas que ça fasse concurrence au restaurant. Et ça, ça devait être arrêté après le Covid, mais ça a rencontré un tel succès, ça aide vraiment les Français à payer une partie de leurs courses. Donc ça a été prolongé jusqu'à cette année, je crois que c'est toujours possible. Donc il y a beaucoup de restaurateurs qui se plaignent de ça, qui disent...",
+          "chinese": "原本是为了不与餐厅竞争。这本该在疫情后停止，但它获得了巨大的成功，它确实帮助法国人支付了一部分买菜钱。所以它被延长到了今年，我想现在仍然可行。所以很多餐厅老板对此抱怨，他们说……"
+        },
+        {
+          "id": 97,
+          "start_time": "00:37:57.170",
+          "end_time": "00:38:07.400",
+          "french": "Les tickets restaurant maintenant sont plus utilisés pour faire les courses que pour vraiment aller manger au restaurant. Donc effectivement, c'est un problème pour eux.",
+          "chinese": "现在的餐券更多被用来买菜，而不是真正去餐厅吃饭。所以这确实是他们面临的一个问题。"
+        },
+        {
+          "id": 98,
+          "start_time": "00:38:07.579",
+          "end_time": "00:38:37.670",
+          "french": "Voilà. Donc bon, ça, le ticket resto, c'est vraiment un problème franco-français, on pourrait dire. Mais parmi tous les autres critères qu'on a listés au niveau de l'augmentation des prix, peut-être de la qualité aussi, et puis des changements des modes de vie, c'est quelque chose qui touche beaucoup de pays dans le monde. Et cette crise des restaurants, on la retrouve aussi dans d'autres pays. Et voilà, là, comme ça, vous avez la perspective française. Bon, ben voilà, on a fait le tour. Je pense que c'était efficace. Ouais.",
+          "chinese": "没错。所以，餐券确实是一个“非常法国”的问题。但在我们列出的所有其他标准中，比如价格上涨、质量问题以及生活方式的改变，这些都是影响全球许多国家的问题。这种餐厅危机在其他国家也能看到。好了，现在你们有了法国的视角。好了，我们聊得差不多了，我觉得很高效。是的。"
+        },
+        {
+          "id": 99,
+          "start_time": "00:38:37.980",
+          "end_time": "00:38:51.369",
+          "french": "Dans un prochain épisode, on pourra se concentrer plus sur les cafés. Il y a beaucoup de choses à dire. Voilà, on se retrouve bientôt pour parler du café, d'autres sujets. Merci à toutes et à tous et à bientôt. À bientôt.",
+          "chinese": "在下一集里，我们可以更多地关注咖啡馆。有很多话要说。好了，我们很快会再见，聊聊咖啡和其他话题。谢谢大家，再见。再见。"
+        }
+      ],
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

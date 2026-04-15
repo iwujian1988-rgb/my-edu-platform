@@ -1,0 +1,120 @@
+{
+  "timestamp": "2026-04-14T14:09:09.128Z",
+  "summary": {
+    "total": 55,
+    "success": 5,
+    "failed": 0
+  },
+  "results": [
+    {
+      "success": true,
+      "fileName": "E174 Apprendre le français en immersion dans l'Utah_materials.json",
+      "sourceFile": "E174 Apprendre le français en immersion dans l'Utah.json",
+      "channel": "InnerFrench 中级法语",
+      "data": {
+        "created_count": 1,
+        "videos": [
+          {
+            "id": "838fb14e-e110-4256-a680-ab48b80e985e",
+            "title": "E174 在犹他州沉浸式学习法语",
+            "subtitles_count": 98,
+            "words_count": 0,
+            "expressions_count": 4,
+            "grammar_points_count": 3,
+            "pronunciation_tips_count": 2,
+            "exercises_count": 4,
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "success": true,
+      "fileName": "E175 L'aide médicale à mourir, bientôt possible en France_materials.json",
+      "sourceFile": "E175 L'aide médicale à mourir, bientôt possible en France.json",
+      "channel": "InnerFrench 中级法语",
+      "data": {
+        "created_count": 1,
+        "videos": [
+          {
+            "id": "ce79cda6-0662-4506-8366-fdd8a1eb9df3",
+            "title": "E175 医疗援助死亡，即将在法国实现",
+            "subtitles_count": 85,
+            "words_count": 0,
+            "expressions_count": 4,
+            "grammar_points_count": 3,
+            "pronunciation_tips_count": 2,
+            "exercises_count": 4,
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "success": true,
+      "fileName": "E176 À la découverte des côtes normandes et bretonnes_materials.json",
+      "sourceFile": "E176 À la découverte des côtes normandes et bretonnes.json",
+      "channel": "InnerFrench 中级法语",
+      "data": {
+        "created_count": 1,
+        "videos": [
+          {
+            "id": "2b54a7b1-a547-4c07-a4c4-aa93fef2dc47",
+            "title": "E176 探索诺曼底与布列塔尼海岸",
+            "subtitles_count": 72,
+            "words_count": 12,
+            "expressions_count": 5,
+            "grammar_points_count": 3,
+            "pronunciation_tips_count": 2,
+            "exercises_count": 4,
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "success": true,
+      "fileName": "E177 Les festivals, une passion française __materials.json",
+      "sourceFile": "E177 Les festivals, une passion française _.json",
+      "channel": "InnerFrench 中级法语",
+      "data": {
+        "created_count": 1,
+        "videos": [
+          {
+            "id": "8dd04c38-531b-4765-9d89-191785eae184",
+            "title": "E177 Les festivals, une passion française _",
+            "subtitles_count": 92,
+            "words_count": 10,
+            "expressions_count": 4,
+            "grammar_points_count": 2,
+            "pronunciation_tips_count": 1,
+            "exercises_count": 4,
+            "status": "draft"
+          }
+        ]
+      }
+    },
+    {
+      "success": true,
+      "fileName": "E179 La France est-elle anti-enfants __materials.json",
+      "sourceFile": "E179 La France est-elle anti-enfants _.json",
+      "channel": "InnerFrench 中级法语",
+      "data": {
+        "created_count": 1,
+        "videos": [
+          {
+            "id": "e4ef3320-5950-4bcf-98a2-94585f0df2af",
+            "title": "E179 La France est-elle anti-enfants _",
+            "subtitles_count": 80,
+            "words_count": 0,
+            "expressions_count": 5,
+            "grammar_points_count": 3,
+            "pronunciation_tips_count": 1,
+            "exercises_count": 4,
+            "status": "draft"
+          }
+        ]
+      }
+    }
+  ]
+}

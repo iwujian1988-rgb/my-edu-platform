@@ -1,0 +1,1196 @@
+{
+  "source_file": "E175 L'aide médicale à mourir, bientôt possible en France.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E175 医疗援助死亡，即将在法国实现",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T13:14:35.296Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "虚拟式在可能性表达中的应用",
+          "被动语态在正式叙述中的使用",
+          "关系代词 'dont' 的高级用法"
+        ],
+        "speaking": [
+          "能够就伦理和社会辩论话题（如安乐死）表达个人观点",
+          "学会使用让步和对比结构讨论社会进步与退化"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "euthanasie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[øtanazi]",
+            "chinese": "安乐死",
+            "example_sentence": {
+              "french": "L'euthanasie est un acte médical pour provoquer délibérément la mort d'un patient.",
+              "chinese": "安乐死是一种旨在故意促使患者死亡的医疗行为。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              5,
+              6,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "L'euthanasie devienne une solution de facilité pour des personnes qui n'ont pas accès à des conditions de vie dignes.",
+                "chinese": "安乐死成为那些无法获得体面生活条件的人的一种便捷解决方案。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "acharnement",
+            "part_of_speech": "nom masculin",
+            "ipa": "[aʃaʁnəmɑ̃]",
+            "chinese": "固执，（医疗上的）过度干预",
+            "example_sentence": {
+              "french": "La loi Leonetti avait permis de limiter l'acharnement thérapeutique.",
+              "chinese": "莱奥内蒂法案允许限制过度医疗干预。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              19,
+              21,
+              22,
+              24
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Le verbe s'acharner, ça a une connotation assez négative.",
+                "chinese": "“s'acharner”这个动词带有一种相当负面的含义。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "incurable",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃kyʁabl]",
+            "chinese": "无法治愈的",
+            "example_sentence": {
+              "french": "Il faut que vous soyez atteint d'une maladie grave et incurable.",
+              "chinese": "您必须患有某种严重且无法治愈的疾病。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              32,
+              37,
+              43,
+              78
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Toutes les personnes qui sont dans une situation de maladie incurable.",
+                "chinese": "所有身处无法治愈疾病境地的人们。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "palliatif",
+            "part_of_speech": "adjectif",
+            "ipa": "[paljatif]",
+            "chinese": "姑息的，临终关怀的",
+            "example_sentence": {
+              "french": "Les députés ont voté une loi sur les soins palliatifs.",
+              "chinese": "议员们投票通过了一项关于姑息治疗的法律。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              33,
+              35,
+              36,
+              38,
+              73,
+              74,
+              75
+            ],
+            "occurrence_count": 8,
+            "examples": [
+              {
+                "french": "Les soins palliatifs, c'est tout ce que les équipes médicales apportent aux patients à la fin de leur vie.",
+                "chinese": "所谓姑息治疗，就是医疗团队在患者生命末期为其提供的所有照护服务。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "dérive",
+            "part_of_speech": "nom féminin",
+            "ipa": "[deʁiv]",
+            "chinese": "偏差，越轨，（法律执行中的）走样",
+            "example_sentence": {
+              "french": "Certaines personnes s'inquiètent des possibles dérives de cette loi.",
+              "chinese": "一些人担心这部法律可能出现的偏差。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              65,
+              67,
+              68,
+              75,
+              77,
+              78,
+              80
+            ],
+            "occurrence_count": 7,
+            "examples": [
+              {
+                "french": "Un bateau qui dérive, c'est un bateau qui perd son cap.",
+                "chinese": "一艘漂移的船，就是一艘失去航向的船。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "promulguée",
+            "part_of_speech": "adjectif (participe passé)",
+            "ipa": "[pʁɔmylɡe]",
+            "chinese": "颁布的（法律）",
+            "example_sentence": {
+              "french": "La loi n'est pas encore promulguée parce qu'elle doit être débattue au Sénat.",
+              "chinese": "这项法律尚未正式颁布，因为它还需在参议院进行审议。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              8,
+              9,
+              30,
+              43
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Il y a de grandes chances que cette loi soit promulguée.",
+                "chinese": "这项法律有很大可能获得颁布。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "létal",
+            "part_of_speech": "adjectif",
+            "ipa": "[letal]",
+            "chinese": "致命的",
+            "example_sentence": {
+              "french": "Le malade va devoir s'auto-administrer la substance létale.",
+              "chinese": "患者接下来必须自行服用致命物质。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              62
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le malade va devoir s'auto-administrer la substance létale, donc concrètement le poison.",
+                "chinese": "患者必须自行服用致命物质，具体来说就是毒药。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "eugénisme",
+            "part_of_speech": "nom masculin",
+            "ipa": "[øʒenism]",
+            "chinese": "优生学",
+            "example_sentence": {
+              "french": "Est-ce qu'inclure ces personnes-là serait une dérive et presque de l'eugénisme ?",
+              "chinese": "将这些人纳入其中是否会是一种偏差，甚至近乎优生学？"
+            },
+            "cefr_level": "C2",
+            "source_ids": [
+              78,
+              79
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Le génisme, c'est la sélection des personnes en fonction de leur capacité.",
+                "chinese": "基因主义（优生学）是指根据个人的能力进行选拔。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "consentement",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kɔ̃sɑ̃tmɑ̃]",
+            "chinese": "同意，知情同意",
+            "example_sentence": {
+              "french": "Il faut pouvoir donner son consentement libre, éclairé et répété.",
+              "chinese": "必须能够给出自由、明智且反复表达的同意。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              52,
+              55,
+              58
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Ils vont contrôler la maladie, les souffrances et le consentement de la personne.",
+                "chinese": "他们将对疾病、痛苦以及当事人的同意进行把关。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          },
+          {
+            "french": "amendement",
+            "part_of_speech": "nom masculin",
+            "ipa": "[amɑ̃dmɑ̃]",
+            "chinese": "修正案",
+            "example_sentence": {
+              "french": "En tout, il y a eu 2600 amendements.",
+              "chinese": "总共提出了2600项修正案。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              48
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "2600 amendements... petite modification éventuelle étudiée par les parlementaires.",
+                "chinese": "2600项修正案……议员们正在研究的可能的小修改。",
+                "source_video": "L'aide médicale à mourir"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "mourir dans la dignité",
+            "meaning": "尊严死",
+            "example": {
+              "french": "C'est l'idée qu'on a tous le droit de mourir dans la dignité.",
+              "chinese": "这一理念认为，我们每个人都享有有尊严地离世的权利。"
+            },
+            "usage_note": "常用于关于安乐死和临终关怀的伦理讨论中。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "faire l'unanimité",
+            "meaning": "获得一致通过/认可",
+            "example": {
+              "french": "Cette loi sur les soins palliatifs a fait l'unanimité parmi les parlementaires.",
+              "chinese": "这项关于姑息治疗的法律在议员中获得了全票通过。"
+            },
+            "usage_note": "用于描述没有任何反对意见的情况，常用于政治或集体决策背景。",
+            "source_ids": [
+              38,
+              75
+            ]
+          },
+          {
+            "expression": "clause de conscience",
+            "meaning": "良心条款",
+            "example": {
+              "french": "Les médecins, dans cette loi, ont le droit à ce qu'on appelle une clause de conscience.",
+              "chinese": "在这项法律中，医生有权行使所谓的“良心条款”。"
+            },
+            "usage_note": "法律术语，指专业人士（如医生、记者）因道德或宗教信仰而拒绝执行某项任务的权利。",
+            "source_ids": [
+              61
+            ]
+          },
+          {
+            "expression": "faire le tour de la question",
+            "meaning": "详尽地探讨问题",
+            "example": {
+              "french": "Je pense qu'on a fait le tour de la question.",
+              "chinese": "我想我们已经把这个问题讨论得差不多了（面面俱到了）。"
+            },
+            "usage_note": "口语和写作中常用的习语，表示已经讨论了某个话题的所有重要方面。",
+            "source_ids": [
+              82
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "虚拟式在可能性表达中的应用",
+            "structure": "Il y a de grandes chances que + subjonctif",
+            "explanation": "当表达“很有可能”但仍存在不确定性时，'il y a des chances que' 后面通常接虚拟式。",
+            "example": {
+              "french": "Il y a de grandes chances que cette loi soit promulguée.",
+              "chinese": "这项法律有很大可能获得颁布。"
+            },
+            "usage_note": "注意与 'Il est probable que'（通常接直陈式）的区别，尽管在现代口语中两者界限有时模糊。",
+            "source_ids": [
+              9
+            ]
+          },
+          {
+            "name": "被动语态在正式叙述中的使用",
+            "structure": "Être + participe passé (+ par...)",
+            "explanation": "用于强调动作的承受者而非执行者，常用于法律、新闻或正式程序描述。",
+            "example": {
+              "french": "184 citoyens français ont été tirés au sort.",
+              "chinese": "184名法国公民被随机抽选出来。"
+            },
+            "usage_note": "在法律背景下，被动语态能增加客观性和正式感。",
+            "source_ids": [
+              27
+            ]
+          },
+          {
+            "name": "关系代词 'dont' 的高级用法",
+            "structure": "Nom + dont + sujet + verbe (dont 代替 de + nom)",
+            "explanation": "用于引导关系从句，代替由介词 'de' 引导的补语，如 'parler de', 'avoir besoin de'。",
+            "example": {
+              "french": "C'est une évolution de société dont on parle déjà depuis de nombreuses années.",
+              "chinese": "这是人们已经讨论多年的社会变革。"
+            },
+            "usage_note": "在此句中，'dont' 代替了 'de cette évolution' (on parle de cette évolution)。",
+            "source_ids": [
+              9
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ø]",
+              "description": "出现在 'euthanasie' [øtanazi] 的开头。这是一个受圆唇影响的半闭元音。",
+              "examples": [
+                "euthanasie",
+                "euthanasier"
+              ]
+            },
+            {
+              "sound": "[ɛ̃]",
+              "description": "鼻化元音，出现在 'incurable' [ɛ̃kyʁabl] 和 'soins' [swɛ̃] 中。",
+              "examples": [
+                "incurable",
+                "soins",
+                "fin"
+              ]
+            }
+          ],
+          "liaison": [
+            "des experts [de.zɛks.pɛʁ]",
+            "les équipes [le.zekip]",
+            "un acte [œ̃.nakt]"
+          ],
+          "intonation": "在讨论严肃话题（如死亡）时，语速较慢，语调起伏较小，显得庄重且富有同理心。"
+        },
+        "vocabulary_network": {
+          "theme": "La fin de vie et l'éthique médicale",
+          "core_word": "Aide à mourir",
+          "related_groups": [
+            {
+              "category": "Actes médicaux",
+              "words": [
+                "euthanasie",
+                "sédation profonde",
+                "soins palliatifs",
+                "substance létale"
+              ]
+            },
+            {
+              "category": "Cadre légal",
+              "words": [
+                "loi",
+                "promulguée",
+                "amendement",
+                "directives anticipées",
+                "clause de conscience"
+              ]
+            },
+            {
+              "category": "Conditions du patient",
+              "words": [
+                "maladie incurable",
+                "souffrance insupportable",
+                "pronostic vital",
+                "consentement libre"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Pour bénéficier de l'aide à mourir, il faut être soit ___, soit ___ en France de manière ___. Ensuite, il faut être capable de ___ sa ___ de façon ___ et ___.",
+            "answer": "français, résider, stable, manifester, volonté, libre, éclairée",
+            "explanation": "根据原文第31句，申请者必须是法国国籍或在法国稳定居住，且必须能自由且明智地表达其意愿。",
+            "source_ids": [
+              31
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi certains Français se rendaient-ils à l'étranger pour demander l'aide à mourir avant cette loi ?",
+            "options": {
+              "A": "Parce que c'était complètement gratuit dans les pays voisins.",
+              "B": "Parce que les pays voisins avaient ouvert leur législation de manière plus favorable.",
+              "C": "Parce que les médecins français refusaient de soigner les personnes âgées.",
+              "D": "Parce qu'il n'y avait pas d'hôpitaux en France pour les maladies incurables."
+            },
+            "answer": "B",
+            "explanation": "原文第14和15句提到，邻国的立法比法国更开放或更有利于安乐死，导致一些法国人前往国外寻求帮助。",
+            "source_ids": [
+              14,
+              15
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "On se pose la question de savoir si cette aide à mourir est un progrès civilisationnel ou au contraire une régression.",
+            "answer": "我们不禁要问：这种安乐死援助究竟是文明的进步，还是相反，一种倒退？",
+            "explanation": "这句话探讨了辩论的核心伦理冲突。'Progrès civilisationnel' 译为文明的进步，'régression' 译为倒退。",
+            "source_ids": [
+              11
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant le subjonctif après 'Il est possible que' : 'Cette loi sera promulguée à la rentrée.'",
+            "answer": "Il est possible que cette loi soit promulguée à la rentrée.",
+            "explanation": "测试虚拟式的变位。'être' 在虚拟式现在时第三人称单数形式为 'soit'。原文第9句使用了类似的结构 'Il y a de grandes chances que cette loi soit promulguée'。",
+            "source_ids": [
+              9
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "promulguée",
+            "volonté",
+            "éclairée",
+            "législation",
+            "progrès",
+            "régression"
+          ],
+          "covered_grammar": [
+            "Subjonctif",
+            "Conditions d'application de la loi"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "À condition que + subjonctif",
+            "explanation": "用于表达“前提条件是……”。",
+            "example": {
+              "french": "Elle accorde le droit à l'aide à mourir à condition de respecter cinq critères précis.",
+              "chinese": "它赋予安乐死的权利，前提是遵守五个明确的标准。（注：原文此处用de+inf，但也可接que+subj）"
+            }
+          },
+          {
+            "pattern": "Quoi qu'il arrive, ...",
+            "explanation": "用于表达“无论发生什么，……”。",
+            "example": {
+              "french": "Quoi qu'il arrive, l'état de santé de la personne malade va s'aggraver.",
+              "chinese": "无论发生什么，病人的健康状况都会恶化。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous participez à un débat sur l'éthique médicale à l'université.",
+          "requirements": "Utilisez les termes 'soins palliatifs', 'dignité' et 'consentement' pour exprimer votre avis sur la nouvelle loi française.",
+          "starter": "À mon avis, cette loi est nécessaire parce que chaque individu devrait avoir le droit de..."
+        }
+      },
+      "summary": {
+        "content": "本课探讨了法国关于“医疗协助死亡”（安乐死）的最新立法辩论。内容涵盖了法律诞生的社会背景（老龄化、医学进步、邻国竞争）、现行法律（Leonetti法）的局限性、新法案设定的五个严格标准（成年、国籍/居住、自由意愿、不治之症、难以忍受的痛苦），以及社会各界对潜在“偏差”（dérives）的担忧，特别是对弱势群体保护和姑息治疗资源分配的讨论。",
+        "keywords": [
+          "Aide à mourir",
+          "Euthanasie",
+          "Soins palliatifs",
+          "Éthique",
+          "Législation française"
+        ],
+        "difficulty_note": "文本属于B2-C1级别，涉及大量法律和医学专业术语，且讨论逻辑严密，包含多种抽象概念的对比。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:03",
+          "end": "00:33:09"
+        },
+        "theme": "L'aide médicale à mourir en France",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:03.669",
+        "end_time": "00:33:09.900",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 85,
+        "source_video_name": "E175 L'aide médicale à mourir, bientôt possible en France.json",
+        "tags": [
+          "法国生活",
+          "新闻时事"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:03.669",
+          "end_time": "00:00:06.980",
+          "french": "L'aide médicale à mourir, bientôt possible en France ?",
+          "chinese": "法国即将实现医疗辅助死亡吗？"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:13.300",
+          "end_time": "00:00:42.020",
+          "french": "Salut à toutes et à tous, salut Ingrid ! Salut Hugo, comment tu vas aujourd'hui ? Ça va, ça va, même si on a un sujet assez compliqué, un sujet qui n'est pas du tout estival, parce que peut-être que là vous nous écoutez en vacances, à la plage, vous avez envie d'écouter quelque chose de léger, mais non, comme vous l'avez entendu, on va parler de mort dans cet épisode, et plus spécifiquement de ce qu'on appelle le droit à l'aide à mourir.",
+          "chinese": "大家好，你好 Ingrid！你好 Hugo，今天怎么样？还行，还行，虽然我们要聊一个挺沉重的话题，一点也不轻松。也许你们现在正在度假，在沙滩上，想听点轻快的内容，但正如你们所听到的，这集我们要聊聊死亡，具体来说是所谓的“死亡权援助”。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:42.020",
+          "end_time": "00:01:06.819",
+          "french": "Alors, qu'est-ce que c'est ce droit à mourir ? Le droit à mourir, c'est le fait d'avoir la possibilité pour une personne qui est malade d'avoir de l'aide médicale pour terminer sa vie. C'est l'idée qu'on a tous le droit de mourir dans la dignité et donc d'avoir des conditions de vie jusqu'au dernier moment",
+          "chinese": "那么，什么是死亡权？死亡权是指患病者有权获得医疗帮助来结束生命。其核心理念是每个人都有权尊严地死去，直到最后一刻都能拥有..."
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:06.819",
+          "end_time": "00:01:36.299",
+          "french": "saines, dans de bonnes conditions, et donc au moment où la maladie commence à être trop difficile, de pouvoir avoir le choix de demander à des médecins d'en terminer. Donc là, ce n'est pas vraiment la question du suicide en général. Par exemple, une personne qui veut se suicider à cause de raisons purement psychologiques, non, là, ce n'est pas de ça dont il s'agit. En tout cas, pour le moment, comme tu l'as dit, c'est vraiment quelque chose",
+          "chinese": "健康、良好的生活条件，因此当病情变得过于痛苦时，可以选择请求医生结束生命。所以这和通常意义上的自杀不是一回事。比如，一个人因为纯心理原因想自杀，不，这不属于我们要讨论的范畴。至少目前来看，正如你所说，这确实是..."
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:36.299",
+          "end_time": "00:02:00.579",
+          "french": "qui est dans le contexte de la maladie et qui doit permettre de soulager la souffrance de personnes qui sont très malades et qui n'ont aucune perspective de guérison, aucune perspective de guérir. Alors, cette aide à mourir, concrètement, elle peut se passer de différentes manières. Il y a d'abord ce que tout le monde connaît, l'euthanasie.",
+          "chinese": "在疾病背景下的，旨在减轻那些重病且无治愈希望、无康复前景的人的痛苦。具体来说，这种临终援助可以通过不同方式实现。首先是大家都知道的：安乐死。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:00.579",
+          "end_time": "00:02:27.629",
+          "french": "Donc c'est quasiment le même mot en anglais, en espagnol aussi, on a vérifié. Donc l'euthanasie, c'est un acte médical pour provoquer délibérément la mort d'un patient afin de mettre fin à ses souffrances. C'est aussi le cas chez le vétérinaire. Vous savez, quand on a un chien, un chat, un animal de compagnie qui est très âgé ou alors qui est très malade, eh bien pour lui éviter de souffrir,",
+          "chinese": "这个词在英语和西班牙语里几乎一样，我们查过了。安乐死是一种医疗行为，旨在故意导致患者死亡以结束其痛苦。兽医那里也是这样。你知道，当家里的狗、猫或宠物年纪很大或病得很重时，为了避免它受苦，"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:27.629",
+          "end_time": "00:02:56.330",
+          "french": "on peut décider de l'euthanasier. Et alors, pourquoi on parle de ça maintenant, alors que vous êtes en vacances sur la plage, en train normalement d'essayer de vous relaxer ? Eh bien, c'est parce qu'en France, les députés viennent d'adopter une loi donnant de nouvelles conditions pour ce droit à l'euthanasie. Plus exactement, c'était le 27 mai qu'ils ont voté cette loi.",
+          "chinese": "我们可以决定对其进行安乐死。那么，既然你们正在沙滩上度假，本该试着放松，为什么我们要现在聊这个？因为在法国，议员们刚刚通过了一项法律，为这项安乐死权利规定了新的条件。更准确地说，他们是在5月27日投票通过这项法律的。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:56.379",
+          "end_time": "00:03:25.569",
+          "french": "Juste avant, il y avait eu pas mal de débats sur le sujet. Donc nous, on a voulu prendre le temps de se renseigner sur la question, de réfléchir au sujet pour pouvoir vous faire un petit résumé de cette loi, des nouvelles conditions et de comment ça se passe en France à partir de maintenant. Il faut savoir que la loi n'est pas encore promulguée parce qu'elle doit être débattue au Sénat à la rentrée et ensuite elle va revenir à l'Assemblée.",
+          "chinese": "在此之前，关于这个话题有很多辩论。所以我们想花点时间了解相关信息，思考这个话题，以便为你们简要总结这项法律、新条件以及法国从现在起的情况。需要知道的是，法律尚未正式颁布，因为秋季开学后还要在参议院辩论，然后回到国民议会。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:25.569",
+          "end_time": "00:03:51.199",
+          "french": "Mais il y a de grandes chances que cette loi soit promulguée et en tout cas, elle a donné lieu à des débats passionnants. C'est pour ça qu'on a voulu vous en parler dans le podcast. C'est vrai que ce droit à mourir, c'était une évolution de société qui était très attendue, en tout cas par certaines personnes, et dont on parle déjà depuis de nombreuses années. Mais on peut dire que cette loi et plus généralement la notion de droit à mourir,",
+          "chinese": "但这项法律很有可能被颁布，无论如何，它引发了精彩的辩论。这就是为什么我们想在播客里聊聊它。确实，这种死亡权是社会期待已久的演变，至少对某些人来说是这样，而且已经讨论很多年了。但可以说，这项法律以及更广泛的死亡权概念，"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:51.199",
+          "end_time": "00:04:17.670",
+          "french": "eh bien, suscite de nombreuses critiques, notamment parmi le corps médical. On a beaucoup entendu dans les médias dernièrement des médecins dire que leur rôle n'était pas d'aider les personnes à mourir, mais au contraire de tout faire pour les soigner. Et d'un autre côté, il y a d'autres critiques qui disent que cette loi ne va pas assez loin, qu'elle est trop restrictive et que finalement elle n'a pas de substance. Donc ça, on va en reparler aussi dans l'épisode.",
+          "chinese": "引发了许多批评，尤其是在医疗界。最近我们在媒体上经常听到医生说，他们的职责不是帮助人们死去，相反，是尽一切努力救治。另一方面，也有批评说这项法律走得不够远，限制太多，最终缺乏实质内容。这些我们稍后也会在节目中讨论。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:17.720",
+          "end_time": "00:04:41.860",
+          "french": "Oui, donc c'est un débat qui est éthique, voire philosophique. On se pose la question de savoir si cette aide à mourir est un progrès civilisationnel ou au contraire une régression. Voilà, donc pour essayer de vous expliquer tout ça, on va vous dire comment cette loi a vu le jour. Ensuite, on va parler...",
+          "chinese": "是的，这是一场伦理甚至哲学层面的辩论。我们在思考这种临终援助究竟是文明的进步，还是倒退。为了向大家解释清楚，我们会先讲讲这项法律是如何诞生的。然后，我们会聊聊..."
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:41.860",
+          "end_time": "00:04:57.000",
+          "french": "concrètement de quoi il s'agit, ce qui est prévu dans cette loi pour l'aide à mourir. Et puis enfin, on évoquera les points qui font débat, les critiques et les possibles évolutions de cette loi. Allez, on y va !",
+          "chinese": "具体内容，即法律中关于临终援助的规定。最后，我们会提到有争议的点、批评意见以及法律可能的演变。好，我们开始吧！"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:04.759",
+          "end_time": "00:05:25.959",
+          "french": "En France, si les députés ont étudié un texte de loi pour ouvrir l'aide médicale à mourir, c'est parce qu'on était dans un contexte social qui favorisait ce débat. Ça faisait déjà des années qu'on en parlait et que la loi évoluait petit à petit.",
+          "chinese": "在法国，议员们之所以审议一项开放医疗辅助死亡的法案，是因为当时的社会背景有利于这场辩论。我们已经讨论了很多年，法律也在逐步演变。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:26.139",
+          "end_time": "00:05:42.730",
+          "french": "Et en 2024-2025, on était arrivé à une situation où, d'un côté, les pays voisins avaient, pour certains d'entre eux, ouvert leur législation de manière beaucoup plus...",
+          "chinese": "到2024-2025年，情况变成了：一方面，一些邻国已经开放了立法，其方式比法国..."
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:43.420",
+          "end_time": "00:05:58.610",
+          "french": "ou de manière beaucoup plus favorable à l'aide à mourir qu'en France. Et donc, ça créait de la compétition entre les pays avec certains Français qui se rendaient à l'étranger pour demander de l'aide à mourir.",
+          "chinese": "或者说其方式比法国更有利于临终援助。这导致了国家间的竞争，一些法国人前往国外寻求临终援助。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:58.610",
+          "end_time": "00:06:25.639",
+          "french": "Et puis, d'un autre côté, on avait une population qui est plus vieillissante et où il y a des progrès de la médecine qui font qu'il y a de plus en plus de personnes qui se retrouvent dans une situation de mort lente puisque les médecins sont capables de maintenir en vie des personnes âgées pendant très longtemps et aussi des personnes très malades sans que la maladie ne les emporte.",
+          "chinese": "另一方面，人口日益老龄化，医学进步使得越来越多的人处于“缓慢死亡”的状态，因为医生能够维持老人和重病患者的生命很长时间，而疾病却无法立刻夺走他们的生命。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:25.879",
+          "end_time": "00:06:55.100",
+          "french": "On était dans cette situation qui fait qu'il y avait une urgence à légiférer sur la question, d'autant plus que dans l'actualité, année après année, on a eu des cas spécifiques de personnes qui allaient devant les journalistes pour exprimer leur situation personnelle et le fait qu'ils avaient besoin d'une nouvelle loi. Donc voilà, on était dans un contexte quand même qui faisait que les députés presque étaient...",
+          "chinese": "这种局面使得立法变得迫切，更何况年复一年，新闻中总会出现一些特定案例，当事人出现在记者面前，讲述个人处境以及他们对新法律的需求。所以，在这样的背景下，议员们几乎是..."
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:55.100",
+          "end_time": "00:07:15.050",
+          "french": "obligés de réfléchir à cette question. Oui, et tous les sondages montraient que dans l'opinion publique, une énorme majorité des Français étaient favorables à cette aide à mourir. Bon, ça dépendait un peu de comment la question était formulée, mais en tout cas, il y avait une vraie demande, on pourrait dire, de la part des citoyens.",
+          "chinese": "被迫思考这个问题。是的，所有民调都显示，在公众舆论中，绝大多数法国人支持这种临终援助。当然，这取决于问题的提问方式，但无论如何，公民确实有真正的需求。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:15.350",
+          "end_time": "00:07:39.579",
+          "french": "Il y avait déjà eu plusieurs lois votées dans ce sens. La première, c'était une loi de 2005, la loi Leonetti, qui avait permis de limiter l'acharnement thérapeutique. Alors, qu'est-ce que c'est que l'acharnement thérapeutique ? C'est quand on fait tout pour soigner quelqu'un, soigner un malade, qu'on lui donne énormément de médicaments.",
+          "chinese": "此前已经通过了几项相关法律。第一项是2005年的法律，即《里奥内蒂法》，它允许限制“过度医疗”。那么，什么是过度医疗？就是当人们尽一切努力救治病人，给他们用大量的药，"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:39.579",
+          "end_time": "00:07:46.819",
+          "french": "Alors qu'on sait que cette personne ne va pas pouvoir guérir, que cette personne va mourir, mais on...",
+          "chinese": "尽管知道这个人无法治愈，即将死去，但..."
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:47.000",
+          "end_time": "00:08:14.939",
+          "french": "On fait tout ce qui est possible pour maintenir cette personne en vie. Et il faut savoir que le verbe s'acharner, ça a une connotation assez négative. On peut s'acharner contre quelqu'un. Ça veut dire attaquer une personne sans relâche, sans s'arrêter. Parfois, on parle d'acharnement médiatique quand il y a une forme d'hostilité contre quelqu'un dans les médias, une hostilité qui continue, qui ne s'arrête pas.",
+          "chinese": "仍尽一切可能维持其生命。需要知道，“s'acharner”（固执/死磕）这个动词带有相当负面的含义。我们可以“s'acharner contre quelqu'un”，意思是无休止地攻击某人。有时我们会说“媒体围攻”（acharnement médiatique），指媒体对某人持续不断的敌意。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:14.939",
+          "end_time": "00:08:37.919",
+          "french": "Et on peut aussi dire plus généralement s'acharner. Ça veut dire continuer quelque chose encore et encore sans jamais abandonner. Par exemple, peut-être que vous, vous vous acharnez à apprendre le français. Et là, si vous dites ça, « je m'acharne à apprendre le français », on comprend que c'est quelque chose de très difficile pour vous. Mais que voilà, vous n'abandonnez pas, vous...",
+          "chinese": "更普遍地说，“s'acharner”意味着一遍又一遍地继续某事而不放弃。例如，也许你们正在“死磕”学法语。如果你说“我正死磕学法语”，我们能理解这对你来说非常困难，但你没有放弃..."
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:37.919",
+          "end_time": "00:09:01.549",
+          "french": "Donc cette loi de 2005 a permis d'arrêter l'acharnement thérapeutique et d'autoriser la sédation. Ensuite, il y a eu une deuxième loi en 2016. Oui, la loi Claeys-Leonetti qui était une loi, en gros, qui venait compléter la première loi pour permettre encore plus de facilité, encore plus de...",
+          "chinese": "所以2005年的法律允许停止过度医疗并授权镇静治疗。接着，2016年有了第二项法律。是的，《克莱兹-里奥内蒂法》，基本上是对第一项法律的补充，为病患提供更多便利和..."
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:01.549",
+          "end_time": "00:09:25.230",
+          "french": "confort aux personnes malades, notamment les personnes malades pouvaient rédiger des directives anticipées, c'est-à-dire avant que la maladie ne devienne trop handicapante pour pouvoir s'exprimer. Les personnes pouvaient signer une déclaration pour dire qu'elles ne souhaitaient pas d'acharnement thérapeutique.",
+          "chinese": "舒适度，特别是病患可以编写“预先指示”，即在病情变得过于严重而无法表达意愿之前。人们可以签署声明，表示不希望接受过度医疗。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:25.230",
+          "end_time": "00:09:55.220",
+          "french": "Et il a aussi été mis en place le concept de sédation profonde. Donc finalement, la possibilité d'être mis dans un coma ou dans un état de repos très très intense, de sommeil profond. Et donc de mourir comme ça, de façon certes lente, mais sans se rendre compte de rien. Puisque les docteurs tout simplement pouvaient à partir de 2016 endormir complètement les patients,",
+          "chinese": "还确立了“深度镇静”的概念。最终，这让人有可能进入昏迷或极度深沉的休息、深度睡眠状态。从而以这种虽然缓慢但毫无察觉的方式死去。因为从2016年起，医生可以简单地让患者完全入睡，"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:55.220",
+          "end_time": "00:10:16.500",
+          "french": "arrêter les traitements contre la maladie et attendre que la maladie emporte les patients. Mais certains trouvaient que ces deux lois n'étaient pas suffisantes et qu'il fallait aller plus loin pour permettre une aide active à mourir. Donc le débat a été relancé à partir de 2022.",
+          "chinese": "停止针对疾病的治疗，等待疾病夺走患者的生命。但有些人认为这两项法律还不够，必须更进一步，允许“主动临终援助”。因此，辩论从2022年起重新开启。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:16.500",
+          "end_time": "00:10:45.679",
+          "french": "En 2023, il y a eu une convention citoyenne. Donc concrètement, 184 citoyens français ont été tirés au sort, des citoyens qui représentent l'ensemble de la société française, pour réfléchir à cette question, la question de l'aide active à mourir. Ils ont rencontré des experts, ils ont assisté à des cours, des conférences, etc. Pour réfléchir à cette question, ils ont débattu. Et à la fin, les trois quarts d'entre eux,",
+          "chinese": "2023年举行了公民会议。具体来说，随机抽取了184名代表法国社会各界的公民，来思考“主动临终援助”的问题。他们会见了专家，参加了课程和讲座等。为了思考这个问题，他们进行了辩论。最后，其中四分之三的人，"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:45.679",
+          "end_time": "00:10:57.629",
+          "french": "76% se sont dit favorables à une aide active à mourir, mais à condition que cette aide respecte des critères stricts et qu'elle soit bien encadrée.",
+          "chinese": "即76%，表示支持主动临终援助，但前提是这种援助必须遵守严格的标准并受到良好监管。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:10:57.629",
+          "end_time": "00:11:22.250",
+          "french": "Et donc c'est dans ces conditions, avec ce contexte social, toute cette histoire de réflexion sur l'aide à mourir et les préconisations, c'est-à-dire les conseils donnés par cette convention citoyenne, les députés ont pu réfléchir à cette question avec déjà tous ces débats en tête.",
+          "chinese": "正是在这些条件下，伴随着这种社会背景、关于临终援助的思考历程以及公民会议给出的建议（即忠告），议员们带着这些辩论成果开始思考这个问题。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:22.580",
+          "end_time": "00:11:48.379",
+          "french": "Alors concrètement, que dit cette nouvelle loi, ce projet de loi ? Parce que, comme on l'a rappelé, elle n'a pas encore été promulguée. Ça peut encore changer avec les débats au Sénat. Mais pour le moment, elle accorde le droit à l'aide à mourir à condition de respecter cinq critères précis. Le premier, c'est d'être majeur. En France, vous le savez, la majorité, c'est à 18 ans.",
+          "chinese": "那么具体来说，这项新法律（法案）说了什么？因为正如我们提到的，它尚未颁布。随着参议院的辩论，它可能还会改变。但目前，它赋予了临终援助权，前提是符合五个精确标准。第一，必须是成年人。在法国，你们知道，成年是18岁。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:11:48.379",
+          "end_time": "00:12:16.110",
+          "french": "d'être de nationalité française ou de résider en France. Donc, vous ne pouvez pas, comme certains Français le faisaient avant, en allant en Suisse, par exemple, pour être euthanasié, vous ne pouvez pas venir en France pour un week-end pour vous faire euthanasier. Non, il faut être soit français, soit résider en France de manière stable. Ensuite, il faut être capable de manifester sa volonté de façon libre et éclairée.",
+          "chinese": "第二，拥有法国国籍或居住在法国。所以，你不能像以前一些法国人去瑞士那样，为了安乐死来法国过个周末。不，必须是法国人或在法国稳定居住。第三，必须能够以自由且知情的方式表达意愿。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:16.110",
+          "end_time": "00:12:45.809",
+          "french": "Autrement dit, il ne faut pas que quelqu'un vous ait mis la pression de quelque manière que ce soit. Il faut que vous soyez atteint d'une maladie grave et incurable, une maladie qu'on ne peut pas guérir, et que votre pronostic vital soit engagé et que la maladie soit dans une phase avancée ou un stade terminal. Et pour finir, le cinquième critère, c'est d'avoir une souffrance physique ou psychologique qui est jugée insupportable.",
+          "chinese": "换句话说，不能是有人以任何方式向你施压。第四，必须患有严重且不治之症，且生命预后受到威胁，疾病处于晚期或末期。最后，第五个标准是，经判定具有无法忍受的生理或心理痛苦。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:45.809",
+          "end_time": "00:13:04.259",
+          "french": "Exactement. Et en parallèle, au même moment, les députés ont voté une deuxième loi, une loi sur les soins palliatifs. Donc les soins palliatifs, c'est tout ce que les équipes médicales apportent aux patients à la fin de leur vie.",
+          "chinese": "没错。与此同时，议员们还投票通过了第二项法律，即关于“姑息治疗”的法律。姑息治疗是指医疗团队在患者生命末期提供的一切，"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:04.259",
+          "end_time": "00:13:17.169",
+          "french": "pour que la fin de vie soit confortable. Donc souvent ça se passe dans des unités spécialisées dans les hôpitaux ou même dans des centres médicaux spécialisés.",
+          "chinese": "旨在让生命末期更舒适的护理。通常这发生在医院的专门科室，甚至是专门的医疗中心，"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:17.169",
+          "end_time": "00:13:45.360",
+          "french": "où on va avoir des soins pour soulager la douleur, parfois même des activités pour permettre de partir en étant en paix psychologiquement. Voilà, il y a beaucoup de choses. C'est une spécialisation médicale qui est vraiment très spécifique. Les médecins qui font des soins palliatifs souvent le font avec, comment dire, beaucoup de passion. Et justement, on n'a pas beaucoup.",
+          "chinese": "在那里会有减轻疼痛的护理，有时甚至有帮助患者在心理平静中离世的活动。有很多内容。这是一种非常特殊的医学专业。从事姑息治疗的医生通常充满热情。而恰恰我们没有很多"
+        },
+        {
+          "id": 36,
+          "start_time": "00:13:45.360",
+          "end_time": "00:14:10.210",
+          "french": "de moyens qui sont mis sur les soins palliatifs. Donc, les députés ont voté une loi pour justement améliorer ces services, pour inscrire dans la loi que tout le monde a le droit à ses soins et que l'État doit s'engager à fournir, à travers un plan national, assez de centres spécialisés.",
+          "chinese": "投入到姑息治疗中的资源。因此，议员们投票通过了一项法律，旨在改善这些服务，将其写入法律：每个人都有权获得这些护理，国家必须承诺通过国家计划提供足够的专业中心，"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:10.210",
+          "end_time": "00:14:39.539",
+          "french": "pour que toutes les personnes qui sont dans une situation de maladie incurable, avec beaucoup de souffrance, puissent avoir accès à ces médecins spécialisés, et pas que les médecins, les soignants en général, des infirmiers spécialisés, des aides-soignants spécialisés, du matériel spécifique, pour que la fin de vie soit confortable. Et il faut savoir que cette loi sur les soins palliatifs,",
+          "chinese": "以便所有处于不治之症、遭受巨大痛苦的人都能接触到这些专科医生，不仅是医生，还有广大的医护人员，如专科护士、专科护理员和特定设备，让生命末期更舒适。需要知道，这项关于姑息治疗的法律，"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:39.539",
+          "end_time": "00:15:03.360",
+          "french": "a fait l'unanimité parmi les parlementaires, puisqu'on n'a eu aucun député qui a voté contre. C'était vraiment un besoin sur lequel tout le monde était d'accord. Oui, et c'était important que ces deux lois soient votées en même temps, celles sur l'aide à mourir et celles sur les soins palliatifs, parce qu'il y avait des craintes que l'aide à mourir devienne la solution.",
+          "chinese": "在议员中获得了一致通过，因为没有一名议员投反对票。这确实是大家都认同的需求。是的，这两项法律（临终援助和姑息治疗）同时投票很重要，因为有人担心，在各地缺乏姑息治疗的情况下，临终援助会变成"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:03.360",
+          "end_time": "00:15:31.340",
+          "french": "par défaut, en absence de soins palliatifs accessibles partout. Mais bon, ça, on va en reparler un peu dans la troisième partie de l'épisode. Au niveau de la scène politique, on peut dire qu'il y avait trois grands groupes, comme d'habitude. Donc la majorité présidentielle, le camp d'Emmanuel Macron, qui était plutôt pour cette loi sur l'aide à mourir. Ensuite, les partis politiques de gauche, qui eux aussi étaient pour, à l'exception notable du Parti communiste.",
+          "chinese": "默认的解决方案。不过，我们会在节目的第三部分再聊聊这个。在政坛层面，可以说有三个大阵营，和往常一样。总统多数派（马克龙阵营）基本支持这项临终援助法。然后是左翼政党，他们也支持，但共产党除外，"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:31.350",
+          "end_time": "00:15:46.110",
+          "french": "et les partis de droite et d'extrême droite qui, eux, étaient globalement contre. Après, il faut quand même noter, et c'est quelque chose qui m'a plutôt marquée quand j'ai fait les recherches pour voir qui avait voté pour, qui avait voté contre.",
+          "chinese": "右翼和极右翼政党总体上持反对意见。不过，有一点让我印象深刻，当我研究谁投了赞成票、谁投了反对票时，我发现"
+        },
+        {
+          "id": 41,
+          "start_time": "00:15:46.110",
+          "end_time": "00:16:15.889",
+          "french": "que dans beaucoup de groupes, c'est mélangé. Il y a des parlementaires qui sont dans des groupes qui sont censés être contre, mais il y en a quand même qui ont voté pour. Donc ça montre bien à quel point cette question est complexe et elle est très individuelle. Parfois, au-delà des positions politiques, de principes, les personnes ont vécu certaines expériences personnelles qui font qu'elles ne vont pas être dans la ligne de leur parti et c'est particulièrement intéressant.",
+          "chinese": "许多阵营内部意见不一。有些议员所在的阵营本该反对，但他们却投了赞成票。这充分说明了这个问题有多复杂，且非常个人化。有时，抛开政治立场和原则，人们经历过的某些个人经验让他们不与党派路线一致，这特别有意思，"
+        },
+        {
+          "id": 42,
+          "start_time": "00:16:15.889",
+          "end_time": "00:16:20.940",
+          "french": "parce que ça montre à quel point c'est un débat de société vraiment complexe.",
+          "chinese": "因为这显示了这是一场多么复杂的社会辩论。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:28.179",
+          "end_time": "00:16:57.860",
+          "french": "Alors, maintenant, on va voir concrètement ce que cette nouvelle loi va changer si elle est adoptée. Alors, d'abord, on va revenir un peu sur les conditions médicales précises pour pouvoir bénéficier de ce droit à mourir. La première, la plus importante, bon, hormis le fait d'être majeur et de résider en France, comme je l'ai évoqué, c'est que la personne doit être atteinte d'une affection grave et incurable, d'une maladie grave.",
+          "chinese": "现在，我们来看看如果这项新法律被采纳，具体会改变什么。首先，我们回到获得临终援助权的精确医疗条件。第一点，也是最重要的，除了我提到的成年和居住在法国外，就是当事人必须患有严重且不可治愈的疾病，"
+        },
+        {
+          "id": 44,
+          "start_time": "00:16:57.860",
+          "end_time": "00:17:24.779",
+          "french": "quelle qu'en soit la cause, et que cette maladie, elle engage le pronostic vital. Il faut aussi que la maladie soit dans une phase avancée, c'est-à-dire qu'elle soit déjà entrée dans un processus irréversible, donc c'est impossible de revenir en arrière. Il y a un peu cette idée que, peu importe le temps que ça va prendre, on est dans une étape où...",
+          "chinese": "无论病因为何，且该疾病威胁到生命预后。疾病还必须处于晚期，即已经进入不可逆转的过程，无法回头。有一种观点是，无论需要多长时间，都已经到了一个阶段，"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:24.779",
+          "end_time": "00:17:48.480",
+          "french": "Quoi qu'il arrive, l'état de santé de la personne malade va s'aggraver et va affecter de plus en plus sa qualité de vie. Oui, et il y avait eu beaucoup de débats sur la question du pronostic vital parce que, comme vous le savez, souvent les médecins donnent une estimation du temps qu'il vous reste à vivre en fonction de l'avancement de la maladie.",
+          "chinese": "无论发生什么，病人的健康状况都会恶化，并日益影响其生活质量。是的，关于“生命预后”曾有很多辩论，因为如你所知，医生通常会根据病情进展估算剩余寿命。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:17:48.480",
+          "end_time": "00:18:03.559",
+          "french": "Et dans une version précédente du texte de cette loi, il était question que le pronostic vital soit engagé à court ou moyen terme. Autrement dit, qu'un médecin vous ait informé qu'il ne vous restait que quelques jours ou semaines à vivre.",
+          "chinese": "在该法律之前的版本中，曾提到生命预后在“短期或中期”受到威胁。换句话说，医生已告知你只剩下几天或几周的生命。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:18:03.769",
+          "end_time": "00:18:29.900",
+          "french": "Il y a eu beaucoup de débats là-dessus parce que, comme vous le savez aussi, les médecins se trompent souvent sur la durée de ce pronostic vital. C'est quelque chose qui est très difficile à estimer. Donc finalement, on a enlevé cette notion de court ou moyen terme du texte de loi. Oui, et maintenant, la loi précise seulement qu'il faut qu'il y ait un état réel de dégradation.",
+          "chinese": "对此有很多争论，因为如你所知，医生经常在生命预后的时长上出错。这很难估算。所以最终，法律文本删除了“短期或中期”的概念。是的，现在法律只规定必须存在真实的恶化状态。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:29.900",
+          "end_time": "00:18:35.680",
+          "french": "C'est vrai qu'en tout, il y a eu 2600 amendements, donc 2600...",
+          "chinese": "事实上，总共有2600项修正案，也就是2600个..."
+        },
+        {
+          "id": 49,
+          "start_time": "00:18:35.680",
+          "end_time": "00:19:05.420",
+          "french": "Petite modification éventuelle étudiée par les parlementaires, ça montre à quel point chaque petit mot est important parce qu'à chaque fois, on va parler de possibilités d'application à certaines personnes et à pas d'autres. Donc, dans le cas de ce débat sur la durée, en fait, il y a certaines maladies qu'on peut avoir pendant très très très longtemps et dont l'évolution peut s'accélérer très vite.",
+          "chinese": "议员们研究的潜在小修改，这显示了每个词有多重要，因为每次都会涉及法律是否适用于某些人。在关于时长的辩论中，事实上，有些病可能持续很久，但进展可能突然加快，"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:05.420",
+          "end_time": "00:19:30.609",
+          "french": "vite ou au contraire très lentement. C'est le cas de la maladie de Charcot qui a été beaucoup citée. On a vu pas mal de personnes atteintes de cette maladie dans les médias expliquer à quel point leur vie était difficile, à quel point leur maladie leur causait des souffrances insupportables et que les docteurs n'étaient pas capables de dire combien de temps ça allait prendre.",
+          "chinese": "或者相反，非常缓慢。经常被提及的夏科氏病（渐冻症）就是这种情况。我们在媒体上看到很多患有这种病的人解释他们的生活有多艰难，疾病带给他们无法忍受的痛苦，而医生无法说出这最终"
+        },
+        {
+          "id": 51,
+          "start_time": "00:19:30.609",
+          "end_time": "00:19:56.500",
+          "french": "pour que cette maladie finisse finalement par les tuer. Donc, c'est pour ça qu'ils ont fini par garder cette définition beaucoup plus élargie. Il faut aussi que cette maladie provoque des souffrances physiques insupportables, très grandes souffrances physiques, éventuellement associées à des souffrances psychologiques, mais il faut savoir que les souffrances psychologiques seules ne suffisent pas.",
+          "chinese": "夺走他们的生命需要多长时间。所以他们最终保留了这个更广泛的定义。此外，这种疾病还必须引起无法忍受的、巨大的生理痛苦，可能伴有心理痛苦，但需要知道，仅有心理痛苦是不够的"
+        },
+        {
+          "id": 52,
+          "start_time": "00:19:56.500",
+          "end_time": "00:20:24.880",
+          "french": "à avoir ce droit à mourir. Il faut vraiment que ce soit une maladie qui provoque des souffrances physiques. Donc voilà, ça c'est pour les conditions médicales, vraiment, pour quel type de maladie, pour quel type de diagnostic, ce droit à mourir est autorisé. Mais donc, on vous a dit tout à l'heure qu'il y avait aussi d'autres conditions, et notamment cette condition de pouvoir donner son consentement libre.",
+          "chinese": "来获得这项死亡权。必须确实是引起生理痛苦的疾病。这就是医疗条件，即针对哪种疾病、哪种诊断可以授权死亡权。但我们刚才也说了，还有其他条件，特别是能够给予自由、知情且反复表达的同意。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:24.880",
+          "end_time": "00:20:54.380",
+          "french": "éclairé et répété. Donc, qu'est-ce que ça veut dire ça ? Ça veut dire que la loi exclut certaines personnes qui ont des maladies psychiatriques ou qui ont des dégénérescences mentales. Par exemple, les personnes qui sont atteintes de la maladie d'Alzheimer ne peuvent pas être concernées puisqu'on considère qu'elles ne sont pas capables de dire vraiment sans influence si elles veulent mourir ou pas.",
+          "chinese": "那么，这是什么意思？这意味着法律排除了某些患有精神疾病或精神退化的人。例如，阿尔茨海默病患者不属于适用范围，因为人们认为他们无法在不受影响的情况下真正表达是否想死。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:20:54.579",
+          "end_time": "00:21:20.380",
+          "french": "Et comme on l'a précisé un peu avant, si la personne à un stade moins avancé de sa maladie a écrit des directives, des directives anticipées sur les conditions qu'elle souhaite pour sa fin de vie et son traitement, elles peuvent être prises en compte. Et d'ailleurs, on peut aussi désigner dans ces directives anticipées une personne de confiance qui peut...",
+          "chinese": "正如我们之前提到的，如果病人在病情较轻时写下了关于生命末期条件和治疗的“预先指示”，这些是可以被考虑的。此外，还可以在这些预先指示中指定一名“信任的人”，由其..."
+        },
+        {
+          "id": 55,
+          "start_time": "00:21:20.380",
+          "end_time": "00:21:50.099",
+          "french": "prendre des décisions à notre place, ça, ça répond vraiment à un problème qui a déjà été soulevé par des cas particuliers de proches de la famille d'une personne très malade, dans un coma par exemple, ou dans un état avancé de maladie qui faisait qu'il n'était plus capable de donner son consentement. Eh bien, on a vu des parents et des conjoints, par exemple, se déchirer devant la justice. Certains estiment",
+          "chinese": "代为做出决定。这确实解决了一些特殊案例中出现的问题，比如重病患者（如昏迷或处于疾病晚期）的亲属因患者无法表达同意而产生分歧。我们见过父母和配偶在法庭上反目。有些人认为"
+        },
+        {
+          "id": 56,
+          "start_time": "00:21:50.099",
+          "end_time": "00:22:18.720",
+          "french": "qu'il fallait s'acharner de façon thérapeutique, d'autres estimant qu'au contraire, il fallait abréger les souffrances de la personne. Donc voilà, avec ces directives anticipées, on peut dire voilà ce que je souhaite et si jamais la situation est trop compliquée, voilà la personne qui peut décider pour moi parce qu'elle me connaît mieux. Voilà la fameuse personne de confiance. Bon et concrètement, si cette loi est adoptée,",
+          "chinese": "应该进行过度医疗，而另一些人则认为应该缩短病人的痛苦。所以，有了这些预先指示，就可以说“这是我的愿望，如果情况太复杂，这是可以代我决定的人，因为他最了解我”。这就是著名的“信任的人”。那么具体来说，如果法律通过了，"
+        },
+        {
+          "id": 57,
+          "start_time": "00:22:18.720",
+          "end_time": "00:22:48.109",
+          "french": "Comment ça va se passer pour les personnes qui veulent utiliser leur droit à mourir ? Donc d'abord, le malade va devoir formuler sa demande auprès d'un médecin. Elle va devoir dire à un médecin « je souffre trop, je suis en trop grande souffrance physique et je souhaite mettre fin à mes jours ». Ensuite, il doit y avoir au moins deux médecins indépendants, dont un spécialiste, qui doivent vérifier que toutes les conditions sont remplies.",
+          "chinese": "想行使死亡权的人该怎么办？首先，病人必须向医生提出申请。必须对医生说“我太痛苦了，生理上承受不了，我想结束生命”。然后，必须至少有两名独立医生（其中一名是专科医生）核实所有条件是否满足。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:22:48.109",
+          "end_time": "00:23:16.369",
+          "french": "Donc ils vont contrôler la maladie, les souffrances et le consentement de la personne. Ils vont s'assurer que cette personne a pris cette décision de manière libre et éclairée. Mais il y a une critique par rapport à ça, c'est que comme c'est aux médecins d'évaluer la souffrance du malade et que les médecins vont sûrement faire preuve de beaucoup de prudence, certaines personnes pensent que cette loi va être totalement inefficace parce que les médecins...",
+          "chinese": "他们将检查病情、痛苦程度和病人的同意情况。他们要确保该决定是自由且知情的。但对此有一个批评：由于是由医生评估病人的痛苦，而医生肯定会非常谨慎，有些人认为这项法律将完全无效，因为医生..."
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:16.369",
+          "end_time": "00:23:34.089",
+          "french": "pourrait en théorie dire « Bon ben moi j'estime que non, les souffrances de cette personne ne justifient pas d'utiliser ce droit à mourir. » Et c'est vrai qu'il n'y a pas d'outil d'évaluation scientifique de la souffrance, donc ça va être laissé au jugement des médecins.",
+          "chinese": "理论上可以说：“我觉得不，这个人的痛苦不足以行使死亡权。”确实，目前没有评估痛苦的科学工具，所以这将取决于医生的判断。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:34.460",
+          "end_time": "00:24:00.750",
+          "french": "Et du coup, à cause de ça, on peut se demander si ce droit à mourir va vraiment être appliqué. Oui, surtout que du coup, ça fait une procédure qui est très lente puisqu'elle est très encadrée parce que d'abord, il y a ces deux médecins qui doivent prendre une décision. Mais ensuite, le dossier va être soumis à un comité d'éthique ou en tout cas à une instance de contrôle pour garantir la transparence, pour éviter les abus.",
+          "chinese": "因此，人们会怀疑这项死亡权是否真的能被执行。是的，尤其是这导致程序非常缓慢，因为它受到严格监管：首先是这两名医生做决定，然后卷宗要提交给伦理委员会或监管机构以确保透明度，防止滥用。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:24:00.750",
+          "end_time": "00:24:18.049",
+          "french": "Et ce qui fait qu'au final, ça prend énormément de temps. Et pour des situations où parfois les patients ont besoin que ça aille vite. D'autant plus que les médecins, dans cette loi, ont le droit à ce qu'on appelle une clause de conscience.",
+          "chinese": "这最终导致耗时极长。而在某些情况下，病人需要快点解决。更何况，法律规定医生拥有“良知条款”，"
+        },
+        {
+          "id": 62,
+          "start_time": "00:24:18.049",
+          "end_time": "00:24:46.240",
+          "french": "qu'ils ont le droit de refuser de se prononcer sur ce droit à mourir et de dire « bon voilà, moi je ne veux pas m'engager, je ne veux pas prendre cette décision, je ne veux pas m'engager dans ce processus » et donc il faut trouver des médecins qui seront d'accord pour analyser notre dossier. Si notre dossier est « accepté », le malade ensuite va devoir s'auto-administrer la substance létale, donc concrètement le poison.",
+          "chinese": "即他们有权拒绝就这项死亡权表态，说“我不参与，不想做这个决定，不想进入这个流程”，因此必须找到愿意分析卷宗的医生。如果卷宗被“接受”，病人随后必须自行服用致死物质，具体说就是毒药。"
+        },
+        {
+          "id": 63,
+          "start_time": "00:24:46.240",
+          "end_time": "00:24:55.109",
+          "french": "Ou s'il n'en est pas capable physiquement, il va être aidé par un médecin ou un infirmier pour prendre le médicament qui mettra fin à ses jours.",
+          "chinese": "或者如果生理上无法做到，则由医生或护士协助服用结束生命的药物。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:25:02.359",
+          "end_time": "00:25:24.220",
+          "french": "Donc on vient d'expliquer en quoi consiste la nouvelle loi qui vient d'être votée pour élargir le droit à l'aide médicale à mourir en France. Et il faut savoir que comme c'est souvent le cas avec les lois qui touchent à des sujets sensibles, certaines personnes s'inquiètent des possibles...",
+          "chinese": "我们刚才解释了这项旨在扩大法国医疗辅助死亡权的法律内容。需要知道，正如涉及敏感话题的法律常有的情况，有些人担心可能出现的..."
+        },
+        {
+          "id": 65,
+          "start_time": "00:25:24.220",
+          "end_time": "00:25:54.000",
+          "french": "Alors, qu'est-ce que c'est qu'une dérive ? Il faut comprendre l'image qu'il y a derrière. Vraiment, par exemple, un bateau qui dérive, c'est un bateau qui perd son cap, qui perd sa direction et qui, petit à petit, va aller dans une mauvaise direction, qui va, par exemple, s'échouer sur la côte. Et donc, c'est vraiment cette image, quand on parle de dérive par rapport aux lois sur les sujets sociaux,",
+          "chinese": "偏差（dérive）。什么是“偏差”？要理解背后的意象。比如，一艘漂流的船（bateau qui dérive）是指失去了航向和目标，逐渐滑向错误的方向，比如在岸边搁浅。在讨论社会话题的法律时，这就是这种意象，"
+        },
+        {
+          "id": 66,
+          "start_time": "00:25:54.000",
+          "end_time": "00:26:21.450",
+          "french": "peur qu'à partir d'un certain cadre, on puisse petit à petit ajouter d'autres évolutions ou interpréter la loi d'une manière qui n'était pas prévue au départ et donc créer des véritables changements de société qui n'étaient pas souhaités au départ quand on a fait la première loi. Autrement dit, on peut avoir peur que la loi aille...",
+          "chinese": "担心在一定的框架下，人们会逐渐加入其他演变，或以一种最初未预见的方式解读法律，从而造成最初制定法律时并不希望看到的社会剧变。换句话说，担心法律走得..."
+        },
+        {
+          "id": 67,
+          "start_time": "00:26:21.460",
+          "end_time": "00:26:40.009",
+          "french": "trop loin ou que l'application de la loi dépasse ce qui était prévu au départ dans cette loi On a beaucoup parlé de possibles dérives au moment de la loi sur l'IVG l'interruption volontaire de grossesse où on avait peur qu'il y ait des avortements à des âges...",
+          "chinese": "太远，或者法律的执行超出了最初的规定。在关于自愿终止妊娠（IVG）的法律出台时，人们曾讨论过可能的偏差，担心会出现针对..."
+        },
+        {
+          "id": 68,
+          "start_time": "00:26:40.220",
+          "end_time": "00:27:09.329",
+          "french": "très avancé du fœtus et aussi au moment du mariage pour tous, donc le mariage homosexuel, où là aussi beaucoup de personnes avaient peur des dérives d'une telle loi. Alors, dans le cas de cette aide à mourir, quelles sont les dérives dont certains s'inquiètent ? Alors, la première chose qui est plutôt communément admise, sur laquelle il n'y a pas trop de débat, c'est la peur que...",
+          "chinese": "胎龄很大的胎儿进行堕胎；在“全民婚姻”（同性婚姻）法律出台时也是如此，当时许多人也担心此类法律的偏差。那么在临终援助的案例中，有些人担心哪些偏差呢？首先是大家普遍认同、争议不大的：担心..."
+        },
+        {
+          "id": 69,
+          "start_time": "00:27:09.329",
+          "end_time": "00:27:33.970",
+          "french": "L'euthanasie devienne une solution de facilité pour des personnes qui n'ont pas accès à des conditions de vie dignes ou à des soins dont ils ont besoin. Donc ça, c'est par exemple les personnes âgées qui sont en EHPAD. Donc les EHPAD, c'est les maisons de retraite, les endroits où souvent on envoie ou on fait vivre.",
+          "chinese": "安乐死会成为那些无法获得尊严生活条件或所需护理的人的“省事方案”。比如住在 EHPAD 的老人。EHPAD 是指养老院，通常是人们送去或安置"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:33.970",
+          "end_time": "00:27:58.849",
+          "french": "Les papys, mamies, quand ils ne sont plus capables de vivre tout seuls. Et malheureusement, ces EHPAD sont souvent mal financés. Les personnes âgées, parfois, vivent dans des mauvaises conditions, mal accompagnées, mal traitées. Et donc, c'est une première catégorie de personnes qui pourraient décider de demander une aide médicale à mourir.",
+          "chinese": "那些无法自理的爷爷奶奶的地方。不幸的是，这些养老院往往资金不足。老人有时生活条件恶劣，缺乏陪伴，甚至遭受虐待。因此，这是第一类可能决定申请医疗辅助死亡的人。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:27:58.849",
+          "end_time": "00:28:28.809",
+          "french": "Par exemple, s'ils sont atteints d'une maladie qui rentre dans les cases, juste parce qu'ils ne se sentent pas bien considérés, pas bien traités dans leur EHPAD. Après, on a quoi d'autre comme catégorie ? Il y a aussi la question des personnes en situation de handicap qui ont aussi des conditions de vie assez compliquées et qui n'ont pas toujours accès à des soins adaptés et à une vie sociale digne. Donc là aussi, on pourrait...",
+          "chinese": "比如，如果他们患有符合条件的疾病，仅仅是因为在养老院里感觉不被尊重、待遇不好。除此之外还有哪类人？还有残疾人，他们的生活条件也相当复杂，并不总能获得适当的护理和有尊严的社会生活。所以这里也可能..."
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:29.019",
+          "end_time": "00:28:40.740",
+          "french": "considérer qu'avec cette loi, certaines de ces personnes vont faire appel à ce droit à mourir alors que si elles étaient mieux traitées, mieux prises en charge, elles n'exprimeraient pas cette volonté.",
+          "chinese": "认为有了这项法律，其中一些人会行使死亡权，而如果他们得到更好的对待和照顾，他们可能不会表达这种意愿。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:40.980",
+          "end_time": "00:29:10.799",
+          "french": "Et enfin, on a aussi tout simplement les personnes gravement malades qui n'ont pas accès aux soins palliatifs. Donc, il y a des personnes malades qui entrent dans les conditions qu'on a décrites avant pour demander l'aide médicale à mourir, mais qui pourtant n'ont pas envie de bénéficier de cette aide, qui voudraient tout simplement avoir accès à des soins palliatifs. Sauf que les centres de soins palliatifs ne sont pas présents dans toutes les régions.",
+          "chinese": "最后，还有那些无法获得姑息治疗的重病患者。有些病人符合我们之前描述的申请医疗辅助死亡的条件，但他们其实并不想使用这项援助，他们只是想获得姑息治疗。然而，姑息治疗中心并非遍布所有地区，"
+        },
+        {
+          "id": 74,
+          "start_time": "00:29:10.799",
+          "end_time": "00:29:25.900",
+          "french": "que parfois pour pouvoir être admis dans un centre, il faut attendre très longtemps. Les structures qui existent sont débordées. Et donc il y a certaines personnes, par exemple, qui réclamaient de d'abord faire la loi sur les soins palliatifs.",
+          "chinese": "有时为了能进入中心，必须等待很长时间。现有的机构已经不堪重负。因此，有些人要求先制定关于姑息治疗的法律，"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:25.900",
+          "end_time": "00:29:48.180",
+          "french": "qui a mis tout le monde d'accord. Et puis ensuite, dans un deuxième temps, après qu'on ait financé les soins palliatifs et que ceux-ci fonctionnent bien, on aurait pu introduire une ouverture plus grande de l'aide médicale à mourir. Dans tous les cas, la principale dérive, ce dont on a peur, c'est que des personnes qui...",
+          "chinese": "这让大家都达成了一致。然后，在第二阶段，当我们资助了姑息治疗且其运作良好后，我们本可以更大程度地开放医疗辅助死亡。无论如何，主要的偏差，即人们担心的，是那些..."
+        },
+        {
+          "id": 76,
+          "start_time": "00:29:48.180",
+          "end_time": "00:30:13.220",
+          "french": "Dans d'autres contextes, si elles étaient mieux aidées, mieux accompagnées, n'auraient pas envie de mourir, eh bien ici, fasse appel à ce droit à mourir, tout simplement, parce qu'il n'y a pas d'autres solutions adaptées. Et là, c'est un échec à la fois de l'État, du gouvernement et du corps médical. Il y avait aussi d'autres questions qui concernaient la possibilité d'inclure d'autres catégories dans ce droit à mourir.",
+          "chinese": "在其他背景下，如果得到更好的帮助和陪伴，本不想死的人，在这里却因为没有其他合适的解决方案而行使死亡权。这是国家、政府和医疗界的共同失败。还有一些关于是否将其他类别纳入死亡权的问题。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:30:13.220",
+          "end_time": "00:30:31.309",
+          "french": "Oui, et là, on ne va pas trop se prononcer parce qu'en fait, il y a des débats sur certains sujets. Certaines personnes pensent qu'il faut faire évoluer la loi dans le futur parce qu'il serait un progrès d'inclure certaines catégories, alors que pour d'autres...",
+          "chinese": "是的，关于这一点我们不便多说，因为某些话题存在争议。有些人认为未来应该演进法律，因为纳入某些类别是一种进步，而对另一些人来说..."
+        },
+        {
+          "id": 78,
+          "start_time": "00:30:31.309",
+          "end_time": "00:30:58.509",
+          "french": "ce serait une dérive. Donc, par exemple, est-ce qu'on inclut les personnes qui ont certains handicaps ? Il y a certains handicaps, on ne sait pas si c'est considéré comme des maladies incurables ou si on peut vivre dignement, correctement avec ce handicap, même si la vie est difficile. Et donc, on peut se demander, est-ce qu'inclure ces personnes-là serait une dérive et presque de l'eugénisme ?",
+          "chinese": "这就是偏差。例如，是否纳入某些残疾人？有些残疾，我们不知道是否应被视为不治之症，或者是否可以带着这种残疾尊严、正常地生活，即使生活很艰难。因此我们可以问，纳入这些人是偏差，甚至近乎“优生学”吗？"
+        },
+        {
+          "id": 79,
+          "start_time": "00:30:58.509",
+          "end_time": "00:31:14.420",
+          "french": "Le génisme, c'est la sélection des personnes en fonction de leur capacité. C'est quelque chose qui est très débattu en éthique. Ou est-ce qu'au contraire, ce serait une manière de laisser le libre arbitre aux personnes handicapées ?",
+          "chinese": "优生学是根据人的能力进行筛选。这是伦理学中极具争议的话题。或者相反，这是否是赋予残疾人自由意志的一种方式？"
+        },
+        {
+          "id": 80,
+          "start_time": "00:31:14.420",
+          "end_time": "00:31:29.900",
+          "french": "Et de la même manière, on peut parler aussi des personnes qui sont atteintes de troubles psychiatriques. Certains pensent que ce serait une dérive que d'inclure, par exemple, de donner la possibilité aux personnes bipolaires de demander l'aide à mourir, alors que...",
+          "chinese": "同样，我们也可以谈谈患有精神障碍的人。有些人认为，如果允许双相情感障碍患者申请临终援助，将是一种偏差，因为..."
+        },
+        {
+          "id": 81,
+          "start_time": "00:31:29.900",
+          "end_time": "00:31:56.579",
+          "french": "Elles ne sont pas en totale capacité de mesurer ce que ça veut dire, alors qu'au contraire, certaines personnes qui sont atteintes de ces troubles souhaiteraient pouvoir être incluses et considérées comme des personnes à part entière. Donc voilà, il y a des vrais gros débats sur lesquels on ne peut pas répondre nous, mais de possibilités d'ouverture, d'élargissement de la loi.",
+          "chinese": "他们并不完全具备衡量其意义的能力；而相反，一些患有这些障碍的人希望被纳入其中，并被视为具有完全行为能力的人。所以，这里存在真正的重大争论，我们无法给出答案，但存在开放和扩大法律的可能性。"
+        },
+        {
+          "id": 82,
+          "start_time": "00:31:56.579",
+          "end_time": "00:32:15.859",
+          "french": "Et en fait, on ne sait pas dans 10 ans, dans 20 ans, quelles seront les conditions pour accéder à l'aide à mourir. Voilà, je pense qu'on a fait le tour de la question, en tout cas dans le temps qui nous était imparti. C'est quelque chose dont on pourrait débattre pendant des années.",
+          "chinese": "事实上，我们不知道10年、20年后，获得临终援助的条件会是什么。好了，我想在给定的时间内，我们已经把问题聊得差不多了。关于死亡权的问题，我们可以讨论好几年。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:32:15.859",
+          "end_time": "00:32:36.170",
+          "french": "cette question du droit à mourir. Est-ce que c'est un progrès ? Au contraire, est-ce que c'est une régression ? Si vous allez voir différents articles sur Internet à propos de ce sujet, je vous invite à lire les commentaires des Français. Vous allez voir à quel point c'est une question qui suscite des passions et c'est bien normal parce que c'est quelque chose qui touche à la vie humaine.",
+          "chinese": "它是进步吗？还是倒退？如果你去网上看关于这个话题的不同文章，我建议你读读法国人的评论。你会看到这个问题引发了多么激烈的讨论，这很正常，因为它涉及人类生命。"
+        },
+        {
+          "id": 84,
+          "start_time": "00:32:36.440",
+          "end_time": "00:33:05.259",
+          "french": "Si vous voulez partager votre avis, comme d'habitude, vous pouvez laisser un commentaire sur la page de l'épisode. Comme c'est un sujet assez sensible, essayez d'y mettre les formes parce que ça peut heurter certaines sensibilités. En tout cas, on espère que ça vous aura donné matière à réflexion. Merci de nous avoir écoutés jusqu'au bout et on se retrouve dans deux semaines. Et promis dans deux semaines avec un sujet beaucoup plus léger que vous pourrez écouter à la plage.",
+          "chinese": "如果你想分享你的观点，和往常一样，可以在本集页面留言。由于这是一个相当敏感的话题，请注意措辞，因为它可能会触及某些人的敏感神经。无论如何，我们希望这能引发大家的思考。感谢大家听到最后，我们两周后再见。保证两周后的主题会轻松得多，你们可以在沙滩上听。"
+        },
+        {
+          "id": 85,
+          "start_time": "00:33:05.259",
+          "end_time": "00:33:09.900",
+          "french": "Exactement. Merci à tous et à toutes. Ciao. Salut.",
+          "chinese": "没错。谢谢大家。再见。拜拜。"
+        }
+      ],
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "pattern_example_mismatch",
+            "detail": "The grammar pattern 'À condition que + subjonctif' is illustrated with an example using 'à condition de + infinitif' (Elle accorde le droit... à condition de respecter...).",
+            "field": "sentence_patterns[0]"
+          },
+          {
+            "level": "warning",
+            "check": "vocabulary_example_mismatch",
+            "detail": "The source example for 'eugénisme' uses the term 'génisme', which is a non-standard variation or speaker error, potentially confusing for learners.",
+            "field": "language_analysis.vocabulary[7].examples[0]"
+          },
+          {
+            "level": "warning",
+            "check": "count_mismatch",
+            "detail": "The 'occurrence_count' for words like 'euthanasie', 'acharnement', and 'palliatif' does not match the number of unique 'source_ids' provided, though this may indicate multiple occurrences within the same subtitle ID.",
+            "field": "language_analysis.vocabulary"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 3,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

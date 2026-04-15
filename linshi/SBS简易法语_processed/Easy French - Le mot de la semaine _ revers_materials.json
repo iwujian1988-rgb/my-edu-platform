@@ -1,0 +1,516 @@
+{
+  "source_file": "Easy French - Le mot de la semaine _ revers.json",
+  "channel": "SBS简易法语",
+  "video_name": "Easy French - Le mot de la semaine _ revers",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T17:50:42.569Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 8,
+          "review_words": 0
+        },
+        "grammar": [
+          "Relative Pronouns (qui, ce qui)",
+          "Contrast with 'pourtant'"
+        ],
+        "speaking": [
+          "Describing sports movements and their technical terms",
+          "Discussing the pros and cons of a situation using idiomatic expressions"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "revers",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ʁə.vɛʁ]",
+            "chinese": "反手击球；挫折；背面",
+            "example_sentence": {
+              "french": "Un revers, c'est donc un coup joué par le joueur de tennis du côté opposé à la main forte.",
+              "chinese": "反手击球是网球运动员在强力手的对侧所击出的一球。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4
+            ],
+            "occurrence_count": 8,
+            "examples": [
+              {
+                "french": "connaître un revers professionnel",
+                "chinese": "遭遇职业挫折",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "rubrique",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁy.bʁik]",
+            "chinese": "栏目；专栏",
+            "example_sentence": {
+              "french": "Bienvenue dans notre rubrique « Le mot de la semaine ».",
+              "chinese": "欢迎来到我们的“本周词汇”栏目。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Retrouvez les rubriques sur le site.",
+                "chinese": "在网站上查找这些专栏。"
+              }
+            ]
+          },
+          {
+            "french": "échec",
+            "part_of_speech": "nom masculin",
+            "ipa": "[e.ʃɛk]",
+            "chinese": "失败",
+            "example_sentence": {
+              "french": "Il peut désigner une difficulté ou un échec.",
+              "chinese": "它可以指代一种困难或失败。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3,
+              4
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "subir un échec",
+                "chinese": "遭受失败",
+                "source_video": "SBS French"
+              }
+            ]
+          },
+          {
+            "french": "médaille",
+            "part_of_speech": "nom féminin",
+            "ipa": "[me.daj]",
+            "chinese": "奖牌；勋章",
+            "example_sentence": {
+              "french": "On retrouve ce sens dans l'expression « le revers de la médaille ».",
+              "chinese": "这种含义体现在“奖牌的反面（事情的负面）”这一表达中。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il a gagné une médaille d'or.",
+                "chinese": "他赢得了一枚金牌。"
+              }
+            ]
+          },
+          {
+            "french": "essuyer",
+            "part_of_speech": "verbe",
+            "ipa": "[e.sɥi.je]",
+            "chinese": "遭受（失败、批评等）；擦拭",
+            "example_sentence": {
+              "french": "« Essuyer un revers », ce qui veut dire subir un échec.",
+              "chinese": "“Essuyer un revers”意思是遭受失败。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il a dû essuyer de nombreuses critiques.",
+                "chinese": "他不得不遭受许多批评。"
+              }
+            ]
+          },
+          {
+            "french": "subir",
+            "part_of_speech": "verbe",
+            "ipa": "[sy.biʁ]",
+            "chinese": "遭受；忍受",
+            "example_sentence": {
+              "french": "Ce qui veut dire subir un échec.",
+              "chinese": "这意味着遭受失败。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "subir une opération",
+                "chinese": "接受手术"
+              }
+            ]
+          },
+          {
+            "french": "fortune",
+            "part_of_speech": "nom féminin",
+            "ipa": "[fɔʁ.tyn]",
+            "chinese": "财富；运气",
+            "example_sentence": {
+              "french": "Un revers de fortune veut dire une perte d'argent.",
+              "chinese": "“Revers de fortune”意味着财产损失。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "faire fortune",
+                "chinese": "发财"
+              }
+            ]
+          },
+          {
+            "french": "veste",
+            "part_of_speech": "nom féminin",
+            "ipa": "[vɛst]",
+            "chinese": "上衣；外套",
+            "example_sentence": {
+              "french": "Le revers d'une veste désigne le côté intérieur d'un vêtement.",
+              "chinese": "西装的翻领（或内侧）指的是衣服的内侧部分。"
+            },
+            "cefr_level": "A1",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il met sa veste car il fait froid.",
+                "chinese": "因为天冷，他穿上了外套。"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "le revers de la médaille",
+            "meaning": "事物的反面；美中不足之处",
+            "example": {
+              "french": "Le voyage est intéressant, mais le revers de la médaille, c'est la fatigue.",
+              "chinese": "旅行很有趣，但美中不足的是很累。"
+            },
+            "usage_note": "Used to describe the negative aspect of an otherwise positive situation.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "essuyer un revers",
+            "meaning": "遭受挫折；遭遇失败",
+            "example": {
+              "french": "L'équipe a essuyé un revers lors du dernier match.",
+              "chinese": "球队在最后一场比赛中遭遇了挫折。"
+            },
+            "usage_note": "A formal way to say 'to fail' or 'to be defeated'.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "un revers de fortune",
+            "meaning": "家道中落；财产损失",
+            "example": {
+              "french": "Après un revers de fortune, il a dû vendre sa maison.",
+              "chinese": "在遭遇财产损失后，他不得不卖掉房子。"
+            },
+            "usage_note": "Specifically refers to economic or financial decline.",
+            "source_ids": [
+              4
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Relative Pronouns (qui, ce qui)",
+            "structure": "[Antecedent] + qui + [Verb] / ce qui + [Verb]",
+            "explanation": "Used to link clauses. 'Qui' refers to a specific preceding noun, while 'ce qui' refers to an entire preceding idea or statement.",
+            "example": {
+              "french": "« essuyer un revers », ce qui veut dire subir un échec",
+              "chinese": "“essuyer un revers”，这意味着遭受失败"
+            },
+            "usage_note": "In the text, 'ce qui' is used to define the meaning of the previous expression.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "name": "Contrast with 'pourtant'",
+            "structure": "[Noun] + pourtant + [Adjective]",
+            "explanation": "The adverb 'pourtant' (however/yet) can be placed between a noun and an adjective to highlight a surprising contrast.",
+            "example": {
+              "french": "le côté négatif d'une situation pourtant positive",
+              "chinese": "一个本是积极情况的负面一面"
+            },
+            "usage_note": "This structure is more sophisticated than using 'mais' between two clauses.",
+            "source_ids": [
+              3
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ʁ]",
+              "description": "The French 'r' in 'revers' and 'rubrique'.",
+              "examples": [
+                "revers",
+                "rubrique"
+              ]
+            },
+            {
+              "sound": "[ɥ]",
+              "description": "The semi-vowel in 'essuyer'.",
+              "examples": [
+                "essuyer"
+              ]
+            }
+          ],
+          "liaison": [
+            "un_échec [œ̃.ne.ʃɛk]",
+            "un_autre [œ̃.no.tʁ]"
+          ],
+          "intonation": "The speaker uses a rising intonation at the end of introductory phrases like 'Cette semaine,' and 'En français,' to signal that more information is coming."
+        },
+        "vocabulary_network": {
+          "theme": "Polysemy and Sports",
+          "core_word": "revers",
+          "related_groups": [
+            {
+              "category": "Sports (Tennis)",
+              "words": [
+                "coup",
+                "joueur",
+                "main forte",
+                "côté opposé"
+              ]
+            },
+            {
+              "category": "Failure/Difficulty",
+              "words": [
+                "échec",
+                "difficulté",
+                "subir",
+                "essuyer"
+              ]
+            },
+            {
+              "category": "Clothing",
+              "words": [
+                "veste",
+                "vêtement",
+                "côté intérieur"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "On retrouve ce ___ dans l'___ très ___ « le ___ de la ___ », qui ___ le côté ___ d'une ___ pourtant ___.",
+            "answer": "sens, expression, courante, revers, médaille, signifie, négatif, situation, positive",
+            "explanation": "这句话出自原文第3条，解释了“le revers de la médaille”这一常用表达的含义，即一个积极情况的负面一面。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, que signifie l'expression « un revers de fortune » ?",
+            "options": {
+              "A": "Gagner beaucoup d'argent au tennis.",
+              "B": "Une perte d'argent ou un changement économique négatif.",
+              "C": "Le côté intérieur d'une veste de luxe.",
+              "D": "Réussir sa carrière professionnelle."
+            },
+            "answer": "B",
+            "explanation": "原文第4条明确指出：“« un revers de fortune », ce qui veut dire une perte d'argent ou un changement économique négatif”。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Le voyage est intéressant, mais le revers de la médaille, c'est la fatigue.",
+            "answer": "旅行很有趣，但美中不足的是（它的反面是）疲惫。",
+            "explanation": "此句展示了“le revers de la médaille”的典型用法，用来引出某件好事带来的负面影响。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez ces deux phrases en une seule en utilisant 'ce qui' : « Il a perdu son travail. Cela est un revers professionnel. »",
+            "answer": "Il a perdu son travail, ce qui est un revers professionnel.",
+            "explanation": "使用关系代词 'ce qui' 来指代前面提到的整个情况（失去工作）。这符合原文第4条中解释词义的语法结构。",
+            "source_ids": [
+              4
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "revers",
+            "médaille",
+            "fortune",
+            "échec"
+          ],
+          "covered_grammar": [
+            "Relative Pronouns (ce qui)",
+            "Contrast with pourtant"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "[Mot] fait référence à [Contexte]",
+            "explanation": "Used to introduce the context or origin of a word.",
+            "example": {
+              "french": "Ce mot fait référence au tennis.",
+              "chinese": "这个词与网球有关。"
+            }
+          },
+          {
+            "pattern": "[Terme] désigne [Définition]",
+            "explanation": "A formal way to define what a term refers to.",
+            "example": {
+              "french": "Le revers d'une veste désigne le côté intérieur d'un vêtement.",
+              "chinese": "衣服的翻领指的是衣服的内侧。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are discussing your recent vacation with a French friend. You enjoyed the beach, but the hotel was very noisy.",
+          "requirements": "Use the expression 'le revers de la médaille' to describe the situation.",
+          "starter": "La plage était magnifique, mais le revers de la médaille..."
+        }
+      },
+      "summary": {
+        "content": "This lesson explores the polysemous French word 'revers'. Starting from its technical meaning in tennis (backhand), the text branches out into idiomatic expressions used in daily life and professional contexts, such as 'le revers de la médaille' (the downside) and 'un revers de fortune' (financial loss).",
+        "keywords": [
+          "revers",
+          "tennis",
+          "expressions idiomatiques",
+          "échec",
+          "vocabulaire"
+        ],
+        "difficulty_note": "The text is rated B1 because it requires understanding abstract metaphorical meanings of a common word and recognizes formal idiomatic structures."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:33",
+          "end": "00:02:37"
+        },
+        "theme": "The word of the week: 'Revers'",
+        "cefr_level": "B1",
+        "vocabulary_count": 8,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一个旨在帮助技术移民在异国他乡重建职业生涯的播客。你将听到鼓舞人心的真实故事、专家建议和宝贵技巧，帮助你找到工作并提升职业生涯。《Work in Progress》，现在即可在各大播客平台收听。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.719",
+          "end_time": "00:01:12.069",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Bonjour et bienvenue dans notre rubrique « Le mot de la semaine » de SBS Easy French. Marianne Murat avec vous. Cette semaine, notre mot est « revers ». Ce mot fait référence au tennis puisque nous sommes en plein Australian Open à Melbourne. Un revers, c'est donc un coup joué par le joueur de tennis du côté opposé à la main forte.",
+          "chinese": "您正在收听的是 SBS 法语节目。欢迎访问 sbs.com.au/french 查看更多栏目。大家好，欢迎来到 SBS Easy French 的“每周一词”栏目。我是 Marianne Murat。本周我们的词是“revers”。这个词与网球有关，因为目前澳大利亚网球公开赛正在墨尔本如火如荼地进行。“revers”指的是网球运动员用非惯用手一侧击球，即“反手”。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:12.340",
+          "end_time": "00:01:39.180",
+          "french": "Mais en français, « revers » a aussi un sens plus général. Il peut désigner une difficulté ou un échec, comme dans « connaître un revers professionnel », par exemple. On retrouve ce sens dans l'expression très courante « le revers de la médaille », qui signifie le côté négatif d'une situation pourtant positive, par exemple : « Le voyage est intéressant, mais le revers de la médaille, c'est la fatigue ».",
+          "chinese": "但在法语中，“revers”还有一个更通用的含义。它可以指困难或失败，例如“经历职业挫折”（connaître un revers professionnel）。在非常常用的表达“le revers de la médaille”（硬币的反面/美中不足）中也能看到这个意思，它指的是一个正面情况中负面的一面。例如：“旅行很有趣，但美中不足的是太累了。”"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:39.379",
+          "end_time": "00:02:06.310",
+          "french": "D'autres expressions utilisent ce mot comme « essuyer un revers », ce qui veut dire subir un échec ; « un revers de fortune », ce qui veut dire une perte d'argent ou un changement économique négatif ; ou encore « le revers d'une veste », qui désigne le côté intérieur d'un vêtement. Le mot « revers » est donc simple, mais il a plusieurs sens et s'emploie souvent dans des contextes très différents.",
+          "chinese": "还有其他表达也使用了这个词，比如“essuyer un revers”，意思是遭遇失败；“un revers de fortune”，意思是破产或经济状况恶化；还有“le revers d'une veste”，指的是衣服的翻领。因此，“revers”这个词虽然简单，但它有多种含义，且常用于截然不同的语境中。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:07.290",
+          "end_time": "00:02:37.060",
+          "french": "Voilà, c'était « revers », c'était le mot de la semaine. Je vous invite à écouter nos mots de la semaine ainsi que nos journaux Easy French sur le site web de SBS French et sur toutes les plateformes. On se retrouve la semaine prochaine pour un autre mot de la semaine.",
+          "chinese": "好了，以上就是本周的单词“revers”。欢迎在 SBS 法语网站及各大平台收听我们的“每周一词”和 Easy French 新闻节目。我们下周再见，一起学习下一个每周一词。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:43.000",
+          "end_time": "00:03:11.659",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。许多公司都拒绝了我。有时我觉得，噢，我要放弃了，我不干了。《Work in Progress》是一个旨在帮助技术移民在异国他乡重建职业生涯的播客。你将听到鼓舞人心的真实故事、专家建议和宝贵技巧，帮助你找到工作并提升职业生涯。《Work in Progress》，现在即可在各大播客平台收听。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:03:11.659",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 6,
+        "source_video_name": "Easy French - Le mot de la semaine _ revers.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

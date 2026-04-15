@@ -1,0 +1,1163 @@
+{
+  "source_file": "E182 La France est-elle la championne du monde des cancers _.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E182 La France est-elle la championne du monde des cancers _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T14:38:16.369Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "关系代词 dont 的用法",
+          "虚拟式表达必要性",
+          "条件假设句 (Si + Imparfait, Conditionnel Présent)"
+        ],
+        "speaking": [
+          "能够讨论公共健康问题及生活方式对健康的影响",
+          "能够就环境污染与疾病的关系发表看法"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "taux d'incidence",
+            "part_of_speech": "nom masculin",
+            "ipa": "[to dɛ̃sidɑ̃s]",
+            "chinese": "发病率",
+            "example_sentence": {
+              "french": "En France, le taux d'incidence du cancer est de quasiment 390 pour 100 000 habitants.",
+              "chinese": "在法国，癌症的发病率几乎为每10万居民390例。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "C'est ce qu'on appelle le taux d'incidence, le nombre de nouveaux cas chaque année.",
+                "chinese": "这就是所谓的发病率，即每年新增病例的数量。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "vieillissement",
+            "part_of_speech": "nom masculin",
+            "ipa": "[vjɛjismɑ̃]",
+            "chinese": "老龄化",
+            "example_sentence": {
+              "french": "La principale raison de cette évolution, c'est le vieillissement de la population.",
+              "chinese": "这一演变的主要原因是人口老龄化。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              12,
+              15,
+              16
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Le vieillissement de la population explique une très grande partie de l'augmentation des cas.",
+                "chinese": "人口老龄化解释了病例增加的很大一部分原因。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "espérance de vie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛspeʁɑ̃s də vi]",
+            "chinese": "预期寿命",
+            "example_sentence": {
+              "french": "Au XIXe siècle, l'espérance de vie était beaucoup plus faible.",
+              "chinese": "在19世纪，预期寿命要低得多。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              14
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Au XIXe siècle, l'espérance de vie était beaucoup plus faible, les gens mouraient plus jeunes.",
+                "chinese": "在19世纪，预期寿命要低得多，人们死得更早。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "cancérigène",
+            "part_of_speech": "adjectif",
+            "ipa": "[kɑ̃seʁiʒɛn]",
+            "chinese": "致癌的",
+            "example_sentence": {
+              "french": "On sait depuis longtemps que l'alcool est cancérigène.",
+              "chinese": "人们早就知道酒精是致癌的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              28,
+              38,
+              51
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Certains pesticides sont cancérigènes.",
+                "chinese": "某些农药是致癌的。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "sédentarité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[sedɑ̃taʁite]",
+            "chinese": "久坐不动的生活方式",
+            "example_sentence": {
+              "french": "Ensuite, il y a la sédentarité, le fait de ne pas bouger assez.",
+              "chinese": "其次，还有久坐不动，即运动不足的事实。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              40
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ensuite, il y a la sédentarité, le fait de ne pas bouger assez, de rester assis ou inactif.",
+                "chinese": "其次，还有久坐不动，即运动不足、保持坐姿或不活动的事实。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "marge de manœuvre",
+            "part_of_speech": "nom féminin",
+            "ipa": "[maʁʒ də manœvʁ]",
+            "chinese": "余地，活动空间",
+            "example_sentence": {
+              "french": "On a une marge de manœuvre énorme pour réduire le nombre de cancers.",
+              "chinese": "我们在减少癌症数量方面有巨大的空间。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              45,
+              81
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "41%, ça signifie qu'on a une marge de manœuvre énorme.",
+                "chinese": "41%，这意味着我们有巨大的操作空间。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "perturbateurs endocriniens",
+            "part_of_speech": "nom masculin pluriel",
+            "ipa": "[pɛʁtyʁbatœʁ ɑ̃dɔkʁinjɛ̃]",
+            "chinese": "内分泌干扰物",
+            "example_sentence": {
+              "french": "Ces substances sont des perturbateurs endocriniens qui interfèrent avec notre système hormonal.",
+              "chinese": "这些物质是干扰我们激素系统的内分泌干扰物。"
+            },
+            "cefr_level": "C2",
+            "source_ids": [
+              57
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ces substances sont des perturbateurs endocriniens qui interfèrent avec notre système hormonal.",
+                "chinese": "这些物质是干扰我们激素系统的内分泌干扰物。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "immunothérapie",
+            "part_of_speech": "nom féminin",
+            "ipa": "[imynoteʁapi]",
+            "chinese": "免疫疗法",
+            "example_sentence": {
+              "french": "L'immunothérapie consiste à stimuler le système immunitaire du patient.",
+              "chinese": "免疫疗法包括刺激患者的免疫系统。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              65,
+              66
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "L'immunothérapie permet maintenant de prolonger la vie des patients.",
+                "chinese": "免疫疗法现在可以延长患者的寿命。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "dépistage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[depistaʒ]",
+            "chinese": "筛查",
+            "example_sentence": {
+              "french": "Le nerf de la guerre contre le cancer, ça reste le dépistage.",
+              "chinese": "抗癌的关键仍然是筛查。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              70,
+              71,
+              72,
+              73,
+              75,
+              76,
+              77,
+              81,
+              83
+            ],
+            "occurrence_count": 10,
+            "examples": [
+              {
+                "french": "On a des programmes de dépistage organisés pour les cancers les plus fréquents.",
+                "chinese": "我们针对最常见的癌症制定了有组织的筛查计划。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          },
+          {
+            "french": "réfractaire",
+            "part_of_speech": "adjectif",
+            "ipa": "[ʁefʁaktɛʁ]",
+            "chinese": "抵制的，抗拒的",
+            "example_sentence": {
+              "french": "Pourquoi les Français sont-ils si réfractaires à des examens gratuits ?",
+              "chinese": "为什么法国人对免费检查如此抵制？"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              77
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On peut se demander pourquoi les Français sont si réfractaires à des examens qui sont gratuits.",
+                "chinese": "我们可以问问为什么法国人对免费的检查如此抵制。",
+                "source_video": "La France est-elle la championne du monde des cancers ?"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "faire couler beaucoup d'encre",
+            "meaning": "引起广泛讨论，占据大量篇幅",
+            "example": {
+              "french": "Évidemment, ce classement a fait couler beaucoup d'encre dans les médias français.",
+              "chinese": "显然，这个排名在法国媒体上引起了广泛讨论。"
+            },
+            "usage_note": "常用于描述一个话题或事件在媒体或公众中引发了大量的评论和报道。",
+            "source_ids": [
+              7
+            ]
+          },
+          {
+            "expression": "chercher midi à 14h",
+            "meaning": "自找麻烦，把简单的事情复杂化",
+            "example": {
+              "french": "Oui, parce qu'il ne faut pas chercher midi à 14h.",
+              "chinese": "是的，因为没必要把事情复杂化。"
+            },
+            "usage_note": "这是一个非常地道的口语表达，意为在没有问题的地方找问题。",
+            "source_ids": [
+              24
+            ]
+          },
+          {
+            "expression": "avoir la vie dure",
+            "meaning": "根深蒂固，难以消失",
+            "example": {
+              "french": "Et cette image a la vie dure, autrement dit elle résiste au temps.",
+              "chinese": "这种形象根深蒂固，换句话说，它经得起时间的考验。"
+            },
+            "usage_note": "常用于描述一种观念、偏见或习惯尽管过时但依然存在。",
+            "source_ids": [
+              34
+            ]
+          },
+          {
+            "expression": "le nerf de la guerre",
+            "meaning": "关键所在，核心要素",
+            "example": {
+              "french": "Maintenant, le nerf de la guerre contre le cancer, ça reste le dépistage.",
+              "chinese": "现在，抗癌的关键仍然是筛查。"
+            },
+            "usage_note": "原指战争的经费，现泛指达成任何目标所需的最关键因素。",
+            "source_ids": [
+              70
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "关系代词 dont 的用法",
+            "structure": "Nom + dont + sujet + verbe (+ complément)",
+            "explanation": "dont 用于代替由介词 de 引导的补语（名词补语、形容词补语或动词补语）。",
+            "example": {
+              "french": "Il y a les PFAS, ces polluants éternels dont je vous ai déjà parlé.",
+              "chinese": "还有全氟烷基物质（PFAS），这些我之前跟你们提到过的永久性污染物。"
+            },
+            "usage_note": "在此例中，dont 代替了 'parler de quelque chose' 中的 de quelque chose。",
+            "source_ids": [
+              56
+            ]
+          },
+          {
+            "name": "虚拟式表达必要性",
+            "structure": "Il faut que + sujet + verbe au subjonctif",
+            "explanation": "在表示必要、必须的无人称句 il faut que 之后，从句谓语动词需用虚拟式。",
+            "example": {
+              "french": "Il faut que les autorités réglementent mieux l'utilisation de ces substances.",
+              "chinese": "有关部门必须更好地规范这些物质的使用。"
+            },
+            "usage_note": "注意 réglementent 是 réglementer 的虚拟式现在时第三人称复数形式。",
+            "source_ids": [
+              60
+            ]
+          },
+          {
+            "name": "条件假设句 (Si + Imparfait, Conditionnel Présent)",
+            "structure": "Si + sujet + imparfait, sujet + conditionnel présent",
+            "explanation": "用于表达对现在事实相反的假设或可能性较小的假设。",
+            "example": {
+              "french": "Si on arrivait vraiment à faire baisser la consommation de tabac, on pourrait sauver des dizaines de milliers de vies.",
+              "chinese": "如果我们真的能降低烟草消耗，我们就能挽救数万人的生命。"
+            },
+            "usage_note": "arrivait 是未完成过去时，pourrait 是条件式现在时。",
+            "source_ids": [
+              47,
+              48
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[a]",
+              "description": "单词 'tabac' 中的末尾字母 'c' 不发音。",
+              "examples": [
+                "tabac"
+              ]
+            },
+            {
+              "sound": "[j]",
+              "description": "单词 'vieillissement' 中的 'ill' 发半元音 [j]。",
+              "examples": [
+                "vieillissement"
+              ]
+            }
+          ],
+          "liaison": [
+            "pays_riches [pe.i ʁiʃ]",
+            "cas_de cancer [kɑ də kɑ̃.sɛʁ]",
+            "Français_en restent [fʁɑ̃.sɛ ɑ̃ ʁɛst]"
+          ],
+          "intonation": "在列举癌症类型时（如 ID 10），语调在每一项末尾上扬，最后一项下降。"
+        },
+        "vocabulary_network": {
+          "theme": "Santé et Cancer",
+          "core_word": "Le Cancer",
+          "related_groups": [
+            {
+              "category": "Types de cancer",
+              "words": [
+                "cancer du sein",
+                "cancer du poumon",
+                "cancer de la prostate",
+                "cancer colorectal",
+                "lymphome"
+              ]
+            },
+            {
+              "category": "Facteurs de risque",
+              "words": [
+                "tabac",
+                "alcool",
+                "sédentarité",
+                "obésité",
+                "pesticides",
+                "PFAS"
+              ]
+            },
+            {
+              "category": "Système de santé",
+              "words": [
+                "dépistage",
+                "mammographie",
+                "frottis",
+                "immunothérapie",
+                "oncologue"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Il suffit de s'asseoir quelques minutes à la ___ d'un ___ en France pour que ça nous ___ aux yeux. Vous verrez beaucoup de mes ___ avec une ___ ou une ___ dans une main et un ___ de ___ dans l'autre.",
+            "answer": "terrasse, café, saute, compatriotes, cigarette, vapoteuse, verre, vin",
+            "explanation": "根据原文第25句，作者描述了在法国咖啡馆露台观察到的典型场景：同胞们一手拿着烟或电子烟，另一手拿着酒。",
+            "source_ids": [
+              25
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Quelle est la raison principale de l'augmentation du nombre de cancers dans les pays riches selon le texte ?",
+            "options": {
+              "A": "La consommation excessive de viande rouge.",
+              "B": "Le vieillissement de la population.",
+              "C": "L'exposition aux pesticides dans l'agriculture.",
+              "D": "Le manque d'activité physique."
+            },
+            "answer": "B",
+            "explanation": "原文第12句明确指出：'La principale raison de cette évolution, c'est le vieillissement de la population.' 虽然其他选项也是风险因素，但老龄化被确定为主要原因。",
+            "source_ids": [
+              12,
+              15
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "En France, l'assurance maladie prend en charge 100% des frais pour les maladies graves comme le cancer.",
+            "answer": "在法国，医疗保险全额承担癌症等重大疾病的费用。",
+            "explanation": "重点词汇：'assurance maladie' (医疗保险)，'prendre en charge' (承担/负责)，'frais' (费用)。",
+            "source_ids": [
+              64
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant une structure avec 'Si' (hypothèse sur le présent) : 'On encourage davantage l'activité physique et on sauve des vies.'",
+            "answer": "Si on encourageait davantage l'activité physique, on sauverait des vies.",
+            "explanation": "使用 Si + imparfait (encourageait) + conditionnel présent (sauverait) 来表达一种假设及其可能的结果，参考原文第48句的结构。",
+            "source_ids": [
+              48
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "vieillissement",
+            "compatriotes",
+            "assurance maladie",
+            "prendre en charge"
+          ],
+          "covered_grammar": [
+            "Si + Imparfait / Conditionnel",
+            "Hypothèse"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il suffit de [verbe à l'infinitif] pour que [sujet] [verbe au subjonctif]",
+            "explanation": "只需做某事，就能让某事发生。",
+            "example": {
+              "french": "Il suffit de s'asseoir quelques minutes pour que ça nous saute aux yeux.",
+              "chinese": "只需坐下几分钟，这就会显而易见。"
+            }
+          },
+          {
+            "pattern": "Contrairement à ce qu'on entend parfois, ...",
+            "explanation": "与我们有时听到的相反，……（用于纠正普遍误解）。",
+            "example": {
+              "french": "Contrairement à ce qu'on entend parfois, il n'y a pas de dose sûre d'alcool.",
+              "chinese": "与我们有时听到的相反，酒精并没有安全剂量。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous discutez avec un ami français de l'impact du mode de vie sur la santé.",
+          "requirements": "Utilisez le vocabulaire du risque (tabac, alcool, sédentarité) et une structure avec 'si' pour proposer des solutions.",
+          "starter": "Tu sais, j'ai lu une étude qui dit que 41% des cancers pourraient être évités..."
+        }
+      },
+      "summary": {
+        "content": "本课探讨了法国癌症发病率位居世界前列的现象及其背后的复杂原因。主要因素包括人口老龄化、烟草和酒精的高消费（尤其是女性群体）、以及环境因素（如农药和PFAS暴露）。尽管发病率高，但得益于法国全民医保体系和先进的医疗技术（如免疫疗法），其癌症死亡率较低且生存率较高。课程强调了预防和早期筛查（如乳腺癌、结直肠癌筛查）的重要性，指出41%的癌症可以通过改变生活方式来避免。",
+        "keywords": [
+          "Cancer",
+          "France",
+          "Santé publique",
+          "Prévention",
+          "Dépistage",
+          "Mode de vie"
+        ],
+        "difficulty_note": "文本属于B2级别，包含大量医疗和统计学术语，以及复杂的句法结构（虚拟式、条件式）。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:32:37"
+        },
+        "theme": "Santé et Société : Le cas du cancer en France",
+        "cefr_level": "B2",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.440",
+        "end_time": "00:32:37.930",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 83,
+        "source_video_name": "E182 La France est-elle la championne du monde des cancers _.json",
+        "tags": [
+          "专家见解",
+          "文化深度"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.440",
+          "end_time": "00:00:08.550",
+          "french": "La France est-elle la championne du monde des cancers ?",
+          "chinese": "法国是全球癌症发病率最高的国家吗？"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:14.650",
+          "end_time": "00:00:41.770",
+          "french": "Salut à toutes et à tous, j'espère que vous allez bien. J'avais prévu de vous parler de politique aujourd'hui. Vous avez peut-être vu qu'en France, c'est encore le bazar, pour le dire poliment, mais je pense qu'on aura l'occasion d'en reparler plus tard parce que la situation n'est pas près de s'améliorer. Finalement, j'ai décidé d'aborder un sujet qui n'est pas plus réjouissant mais qui est très important parce qu'il nous concerne toutes et tous.",
+          "chinese": "大家好，希望你们一切都好。我原计划今天和大家聊聊政治。你们可能已经看到了，法国现在的局势——委婉点说——依然一团糟，但我认为以后会有机会再谈，因为情况短期内不会好转。最后，我决定讨论一个虽然不那么令人愉快，但非常重要的主题，因为它关乎我们每一个人。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:41.820",
+          "end_time": "00:01:10.099",
+          "french": "Oui, le cancer est une maladie qui touche des millions de personnes chaque année et qui a probablement affecté quelqu'un dans votre entourage, que ce soit un membre de votre famille, un ami ou un collègue. C'est mon cas aussi. Je ne vais pas entrer dans les détails, mais je le mentionne parce que ça a provoqué une discussion avec ma copine. J'ai eu tellement de cas de cancer autour de moi ces dernières années.",
+          "chinese": "是的，癌症是一种每年影响数百万人疾病，你的身边可能也有人受到影响，无论是家人、朋友还是同事。我也是如此。我不想详谈细节，但我提到这一点是因为这引发了我与女朋友的一次讨论。这些年来，我身边出现了太多的癌症病例。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:10.099",
+          "end_time": "00:01:37.609",
+          "french": "que ma copine a fini par me dire qu'elle trouvait ça étrange. Elle m'a dit qu'elle avait l'impression qu'il n'y en avait pas autant en Pologne, en tout cas dans son entourage. Sur le coup, je n'y ai pas pensé plus que ça. Je me suis dit que c'était juste le hasard. Je ne voyais pas pourquoi il y aurait plus de cancers en France qu'ailleurs. Mais le mois dernier, une étude publiée dans la très sérieuse revue médicale de Lancet m'a fait changer d'avis.",
+          "chinese": "以至于我女朋友最后对我说，她觉得这很奇怪。她告诉我，她觉得在波兰没有这么多病例，至少在她的社交圈里没有。当时，我并没有多想。我以为这只是巧合。我不明白为什么法国的癌症病例会比其他地方多。但上个月，发表在权威医学期刊《柳叶刀》上的一项研究改变了我的看法。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:37.980",
+          "end_time": "00:01:51.780",
+          "french": "Cette étude a classé la France comme le pays ayant le plus grand nombre de cancers par habitant au monde. Enfin, en réalité, c'est Monaco qui est première du classement, mais la France est juste derrière.",
+          "chinese": "这项研究将法国列为全球人均癌症发病率最高的国家。好吧，实际上摩纳哥排名第一，但法国紧随其后。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:52.150",
+          "end_time": "00:02:20.530",
+          "french": "C'est ce qu'on appelle le taux d'incidence, le nombre de nouveaux cas chaque année. En France, le taux d'incidence du cancer est de quasiment 390 pour 100 000 habitants. Donc, on peut dire que 4 Français sur 1000 développent un cancer chaque année. Oui, pour un cancer, on ne dit pas « attraper » comme pour les autres maladies. Attraper un rhume, attraper la grippe.",
+          "chinese": "这就是所谓的“发病率”，即每年新增病例的数量。在法国，癌症发病率几乎是每10万居民中有390例。所以，可以说每年每1000名法国人中就有4人患上癌症。是的，对于癌症，我们不像其他疾病那样说“染上”，比如感冒或流感。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:20.530",
+          "end_time": "00:02:50.310",
+          "french": "On dit « développé » car c'est pas un virus. Évidemment, ce classement a fait couler beaucoup d'encre dans les médias français. C'est pas le genre de domaine dans lequel on veut être champion du monde. On va pas dire « cocorico » comme quand on gagne la coupe du monde de foot. Mais alors pourquoi y a-t-il autant de cancers en France ? Est-ce que c'est à cause du mode de vie des Français ? Est-ce que ce sont plutôt des facteurs biologiques ou environnementaux ?",
+          "chinese": "我们说“患上”，因为它不是病毒。显然，这一排名在法国媒体上引起了轩然大波。这可不是那种我们想当世界冠军的领域。我们不会像赢得世界杯足球赛时那样欢呼“高卢雄鸡”。但为什么法国有这么多癌症病例呢？是因为法国人的生活方式吗？还是生物或环境因素？"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:50.330",
+          "end_time": "00:03:10.439",
+          "french": "Dans cet épisode, on va essayer de comprendre les spécificités françaises qui peuvent expliquer ces chiffres. On va parler des facteurs de risque, de notre système de santé, des progrès de la recherche. L'objectif, c'est vraiment de démêler le vrai du faux et de vous donner une vision claire de la situation.",
+          "chinese": "在本期节目中，我们将尝试了解可以解释这些数据的法国特色。我们将讨论风险因素、我们的医疗体系以及研究进展。目标是拨开迷雾，辨别真伪，让大家对现状有一个清晰的认识。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:17.659",
+          "end_time": "00:03:45.259",
+          "french": "Avant d'entrer dans le vif du sujet, je vais expliquer quelques termes qui vont être utiles pour comprendre la suite de l'épisode. Petit avertissement, je ne suis pas médecin, donc n'hésitez pas à me corriger dans les commentaires si je dis des bêtises. Je ne vais pas entrer dans des choses trop techniques que je ne maîtrise pas, mais on ne sait jamais. Et comme il y a beaucoup de médecins et autres professionnels de santé parmi vous, on pourra profiter de votre expertise.",
+          "chinese": "在进入正题之前，我先解释几个对理解后续内容有帮助的术语。温馨提示，我不是医生，所以如果我说错了，请随时在评论区指正。我不会涉及我不擅长的过于专业的内容，但以防万一。既然你们当中有很多医生和其他医疗专业人士，我们可以借鉴你们的专业知识。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:45.400",
+          "end_time": "00:04:15.590",
+          "french": "Alors d'abord, qu'est-ce qu'un cancer ? Pour faire simple, c'est une maladie qui se caractérise par la multiplication incontrôlée de cellules anormales dans le corps. Ces cellules forment ce qu'on appelle une tumeur qui grossit et finit par détruire les organes qui se trouvent autour. Il existe de nombreux types de cancers différents, le cancer du sein, le cancer du poumon, le cancer de la prostate, etc.",
+          "chinese": "首先，什么是癌症？简单来说，它是一种以体内异常细胞失控增殖为特征的疾病。这些细胞形成所谓的肿瘤，肿瘤长大并最终破坏周围的器官。癌症有很多种类型：乳腺癌、肺癌、前列腺癌等。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:15.800",
+          "end_time": "00:04:36.490",
+          "french": "Je pense que je ne vous apprends rien en vous disant que le nombre de cancers augmente partout dans le monde, en particulier dans les pays riches. En France, par exemple, le taux d'incidence de cancer a doublé en 35 ans. Autrement dit, il y a deux fois plus de nouveaux cas de cancer en 2024 qu'en 1990.",
+          "chinese": "我想我不必告诉大家，全球癌症病例都在增加，尤其是在富裕国家。例如，在法国，癌症发病率在35年内翻了一番。换句话说，2024年的新增癌症病例是1990年的两倍。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:36.699",
+          "end_time": "00:04:50.790",
+          "french": "La principale raison de cette évolution, c'est le vieillissement de la population. Et oui, c'est un peu déprimant quand on le dit comme ça, mais plus on vieillit, plus on a de risques de développer un cancer.",
+          "chinese": "这种变化的主要原因是人口老龄化。是的，这样说可能有点令人沮丧，但年龄越大，患癌症的风险就越高。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:51.160",
+          "end_time": "00:05:17.860",
+          "french": "Si vous vous souvenez de vos cours de biologie du collège, vous savez que nos cellules se multiplient et se renouvellent constamment tout au long de notre vie. Le problème, c'est qu'à chaque fois qu'une cellule se divise, il y a un risque qu'une erreur se produise dans son ADN. Bon, je vous rassure, ce risque est très faible, mais plus on vit longtemps, plus ces erreurs s'accumulent et plus le risque de cancer augmente.",
+          "chinese": "如果你还记得初中的生物课，你就会知道我们的细胞在整个生命过程中不断增殖和更新。问题是，每次细胞分裂时，其DNA都有可能出错。当然，请放心，这种风险非常低，但活得越久，这些错误积累得就越多，患癌症的风险也就越大。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:17.980",
+          "end_time": "00:05:38.500",
+          "french": "Donc, paradoxalement, l'augmentation des cas de cancer est en partie une bonne nouvelle. Ça veut dire que les gens vivent plus longtemps. Au XIXe siècle, par exemple, l'espérance de vie était beaucoup plus faible, les gens mouraient plus jeunes, souvent d'infections, de malnutrition ou d'accidents.",
+          "chinese": "因此，矛盾的是，癌症病例的增加在某种程度上是个好消息。这意味着人们活得更久了。例如，在19世纪，预期寿命要低得多，人们死得更早，通常死于感染、营养不良或事故。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:38.649",
+          "end_time": "00:06:04.009",
+          "french": "On pourrait dire qu'ils n'avaient pas le temps de développer un cancer. Aujourd'hui, grâce au progrès de la médecine, de l'hygiène et des conditions de vie, on vit beaucoup plus longtemps. Et donc, mécaniquement, le nombre de cancers augmente. D'ailleurs, les chercheurs qui étudient l'évolution du cancer dans le monde montrent que, dans les pays riches, le vieillissement de la population explique une très grande partie de l'augmentation des cas.",
+          "chinese": "可以说他们还没来得及患上癌症就去世了。如今，得益于医学、卫生和生活条件的进步，我们的寿命大大延长。因此，从机制上讲，癌症病例的数量也在增加。此外，研究全球癌症演变的学者表明，在富裕国家，人口老龄化解释了大部分病例增加的原因。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:04.220",
+          "end_time": "00:06:29.449",
+          "french": "Pour vous donner une idée, on estime qu'en France, le vieillissement explique environ 78% de l'augmentation des cas chez les hommes et 57% chez les femmes depuis 1990. Autrement dit, la grande majorité. Comme je vous l'ai dit en introduction, d'après l'étude du Lancet, chaque année, environ 4 Français sur 1000 développent un cancer.",
+          "chinese": "为了让大家有个概念，据估计，在法国，自1990年以来，男性病例增加的约78%和女性病例增加的57%归因于老龄化。换句话说，绝大多数都是因为变老。正如我在开头提到的，根据《柳叶刀》的研究，每年大约每1000名法国人中就有4人患上癌症。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:29.720",
+          "end_time": "00:06:51.209",
+          "french": "Parmi les types de cancers les plus fréquents, on trouve d'abord le cancer du sein, un cancer qui touche principalement les femmes. Chez les hommes, c'est le cancer de la prostate qui fait le plus de ravages. En troisième position, le cancer du poumon, cet organe qui nous sert à respirer. D'ailleurs, je devrais dire qu'il nous serve parce qu'on en a deux.",
+          "chinese": "在最常见的癌症类型中，首先是乳腺癌，这主要影响女性。在男性中，前列腺癌造成的危害最大。排名第三的是肺癌，肺是我们呼吸的器官。顺便说一下，我应该说“它们”，因为我们有两个肺。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:51.509",
+          "end_time": "00:07:09.000",
+          "french": "Et enfin, le quatrième type de cancer le plus fréquent, c'est le cancer colorectal, c'est-à-dire le cancer du colon et du rectum. Ensemble, ces quatre cancers représentent plus de la moitié de tous les cancers diagnostiqués dans l'hexagone.",
+          "chinese": "最后，第四种最常见的癌症是结直肠癌，即结肠癌和直肠癌。这四种癌症加起来占法国确诊癌症总数的一半以上。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:09.269",
+          "end_time": "00:07:23.720",
+          "french": "Ok donc, on a parlé de la cause principale, le vieillissement de la population, mais c'est pas une spécificité française. Comment expliquer que l'incidence des cancers est plus élevée chez nous que dans les autres pays ?",
+          "chinese": "好了，我们谈到了主要原因——人口老龄化，但这并不是法国独有的。如何解释我们的癌症发病率高于其他国家呢？"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:31.420",
+          "end_time": "00:08:00.810",
+          "french": "Déjà, il faut prendre en compte la richesse du pays et son système de santé. Forcément, les pays riches ont une meilleure capacité à détecter et enregistrer les cancers. Au contraire, dans les pays pauvres, beaucoup de cancers ne sont jamais comptabilisés, soit parce que les gens n'ont pas accès aux soins, soit parce qu'il n'existe pas de système d'enregistrement fiable. Ensuite, l'autre limite de ces comparaisons internationales, ce sont les données utilisées.",
+          "chinese": "首先，必须考虑国家的财富及其医疗体系。当然，富裕国家更有能力检测和记录癌症。相反，在贫困国家，许多癌症从未被统计，要么是因为人们无法获得医疗服务，要么是因为缺乏可靠的登记系统。其次，这些国际比较的另一个局限性是所使用的数据。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:01.019",
+          "end_time": "00:08:24.230",
+          "french": "Normalement, la France est très forte en matière de statistiques. On fait des statistiques pour tout. Mais en ce qui concerne la comptabilisation des cancers, on est en retard. Par exemple, on est un des derniers pays européens à ne pas avoir de registre national du cancer. On n'a pas de source officielle qui recense tous les nouveaux cas de cancer au niveau national.",
+          "chinese": "通常情况下，法国在统计方面非常出色。我们对所有事情都进行统计。但在癌症统计方面，我们落后了。例如，我们是欧洲最后一批没有国家癌症登记处的国家之一。我们没有官方来源来统计全国范围内所有新增癌症病例。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:24.439",
+          "end_time": "00:08:50.759",
+          "french": "En réalité, ils ne sont comptabilisés que sur environ un quart du territoire. Ensuite, pour connaître le chiffre total, les mathématiciens font des projections, des estimations. Ce sont ces estimations que de l'Anset a utilisées pour sa comparaison. Mais par exemple, dans une autre étude qui a utilisé une source de données différente, la France arrivait en neuvième position.",
+          "chinese": "实际上，只有大约四分之一的地区进行了统计。然后，为了得出总数，数学家会进行推算和估算。《柳叶刀》在进行比较时使用的就是这些估算值。但在另一项使用不同数据源的研究中，法国排名第九。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:51.029",
+          "end_time": "00:09:14.019",
+          "french": "Il y a le projet de créer un registre national bientôt, mais en attendant, il faut prendre les résultats de la France avec des pincettes, avec précaution. Mais que la France soit première, deuxième ou neuvième, ça reste un résultat alarmant qu'il faut essayer d'expliquer. Et pour ça, on va commencer par regarder du côté de notre mode de vie.",
+          "chinese": "虽然有计划很快建立国家登记处，但在那之前，必须谨慎对待法国的结果。但无论法国是第一、第二还是第九，这仍然是一个令人担忧的结果，必须尝试解释。为此，我们先从生活方式入手。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:14.169",
+          "end_time": "00:09:25.830",
+          "french": "Oui, parce qu'il ne faut pas chercher midi à 14h. Chercher midi à 14h, c'est une expression pour dire compliquer inutilement les choses. Chercher un problème là où il n'y en a pas.",
+          "chinese": "是的，因为没必要“在14点找12点”。这是一个表达方式，意思是把事情不必要地复杂化，在没有问题的地方找问题。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:26.009",
+          "end_time": "00:09:53.120",
+          "french": "Moi, ici, je veux dire que l'explication est assez évidente. Il suffit de s'asseoir quelques minutes à la terrasse d'un café en France pour que ça nous saute aux yeux. Vous verrez beaucoup de mes compatriotes avec une cigarette ou une vapoteuse dans une main et un verre de vin dans l'autre. Oui, car même si la consommation de tabac et d'alcool a tendance à baisser en France, les Français en restent de gros consommateurs.",
+          "chinese": "我在这里想说的是，解释相当明显。只要在法国咖啡馆的露天座坐上几分钟，你就能一目了然。你会看到我的许多同胞一手拿着香烟或电子烟，另一手拿着一杯红酒。是的，尽管法国的烟酒消费量呈下降趋势，但法国人仍然是重度消费者。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:53.120",
+          "end_time": "00:10:19.019",
+          "french": "En tout cas, plus que dans des pays ayant un niveau de richesse similaire. Or, les scientifiques ont identifié depuis longtemps que ces deux substances augmentent les risques de cancer. Commençons par le principal coupable, le tabac. Attention, en français, on ne prononce pas le C. Tabac et pas tabac. Le tabac, c'est le facteur de risque numéro 1 pour le cancer.",
+          "chinese": "无论如何，比财富水平相当的国家要多。然而，科学家们早就发现这两种物质会增加患癌风险。让我们从头号元凶——烟草开始。注意，在法语中，末尾的C不发音。读作“Tabac”而不是“Tabac”。烟草是癌症的第一大风险因素。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:19.289",
+          "end_time": "00:10:45.509",
+          "french": "A lui seul, il est responsable de 20% de tous les cancers diagnostiqués en France. Un cancer sur cinq, c'est énorme. Évidemment, on pense au cancer du poumon, mais pas seulement. Le tabac augmente aussi le risque de développer 16 autres types de cancers, la bouche, la gorge, l'œsophage, le pancréas, la vessie et même certains cancers du sang.",
+          "chinese": "仅烟草一项就占法国确诊癌症总数的20%。五分之一的癌症，这是巨大的比例。显然，我们会想到肺癌，但不止于此。烟草还会增加患其他16种癌症的风险，包括口腔癌、喉癌、食道癌、胰腺癌、膀胱癌，甚至某些血液癌症。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:45.659",
+          "end_time": "00:11:12.429",
+          "french": "Je vous laisse regarder la transcription pour voir les traductions s'il y a des noms d'organes que vous ne connaissez pas. Passons au coupable numéro 2, l'alcool. On sait depuis longtemps qu'il est cancérigène. Cancérigène, ça veut dire qu'il peut provoquer le cancer. L'alcool est associé à environ 8% des cancers en France. Il augmente particulièrement le risque de cancer de la bouche.",
+          "chinese": "如果有些器官名称你不认识，可以查看文稿中的翻译。接下来看二号元凶：酒精。我们早就知道它是致癌物。致癌意味着它可能诱发癌症。在法国，约8%的癌症与饮酒有关。它尤其会增加口腔癌的风险。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:11:12.429",
+          "end_time": "00:11:34.789",
+          "french": "de la gorge, du foie, du sein et du côlon. Et attention, contrairement à ce qu'on entend parfois, il n'y a pas de dose sûre d'alcool. Même une consommation modérée augmente légèrement le risque. Évidemment, plus on boit, plus le risque est élevé. Et ce qui est vraiment préoccupant, c'est la situation chez les femmes.",
+          "chinese": "喉癌、肝癌、乳腺癌和结肠癌。请注意，与有时听到的说法相反，饮酒没有安全剂量。即使是适量饮酒也会略微增加风险。显然，喝得越多，风险越高。真正令人担忧的是女性的情况。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:34.970",
+          "end_time": "00:12:00.940",
+          "french": "Pendant longtemps, les hommes étaient beaucoup plus touchés par le cancer que les femmes. Pour une fois, c'était une inégalité qui leur était favorable. Malheureusement, on peut dire que les Françaises ont rattrapé leur retard dans ce domaine. La preuve, c'est que l'augmentation de l'incidence du cancer depuis 1990 vient essentiellement des Françaises. Alors, pourquoi une telle évolution ?",
+          "chinese": "长期以来，男性受癌症影响的程度远高于女性。难得有一次，这种不平等对女性有利。不幸的是，可以说法国女性在这一领域已经“赶了上来”。证据是，自1990年以来癌症发病率的增加主要来自法国女性。那么，为什么会有这样的演变呢？"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:01.139",
+          "end_time": "00:12:13.129",
+          "french": "Eh bien, les principaux coupables sont les mêmes, simplement avec quelques décennies de décalage. Les hommes français ont commencé à fumer massivement après la Première Guerre mondiale.",
+          "chinese": "嗯，主要元凶是一样的，只是晚了几十年。法国男性在第一次世界大战后开始大规模吸烟。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:13.399",
+          "end_time": "00:12:41.889",
+          "french": "Progressivement, ils ont arrêté de fumer, notamment grâce aux campagnes de prévention. Aujourd'hui, on voit les bénéfices de cette baisse. Le cancer du poumon chez les hommes diminue. Mais pour les femmes, c'est l'inverse. Elles ont commencé à fumer plus tard, surtout à partir des années 60 et 70, avec l'émancipation féminine. Fumer était un signe d'indépendance. C'était avoir le droit de se comporter comme les hommes.",
+          "chinese": "逐渐地，得益于预防宣传，他们戒烟了。今天，我们看到了这种下降带来的好处。男性的肺癌发病率正在下降。但对于女性来说，情况正好相反。她们开始吸烟较晚，主要是在60和70年代，随着女性解放运动而兴起。吸烟曾是独立的象征，意味着拥有像男人一样行事的权利。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:41.889",
+          "end_time": "00:12:57.289",
+          "french": "Les producteurs de tabac ont vite capitalisé sur cette évolution avec des campagnes publicitaires qui visaient principalement les femmes. Le fameux cliché de la parisienne élégante et indépendante qui fume seule à la terrasse d'un café.",
+          "chinese": "烟草生产商迅速利用这一趋势，开展主要针对女性的广告活动。著名的刻板印象是：优雅独立的巴黎女人独自坐在咖啡馆露天座吸烟。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:12:57.720",
+          "end_time": "00:13:22.149",
+          "french": "Et cette image a la vie dure, autrement dit elle résiste au temps, elle est difficile à faire disparaître. La preuve, les Françaises sont les championnes d'Europe du tabagisme avec 23% de fumeuses. Ça explique pourquoi le cancer du poumon, qui était rare chez les femmes il y a encore 30 ans, est en train de devenir une cause majeure de mortalité.",
+          "chinese": "这种形象根深蒂固，换句话说，它经受住了时间的考验，很难消除。证据是，法国女性是欧洲的吸烟冠军，吸烟率达23%。这解释了为什么30年前在女性中还很罕见的肺癌，正成为主要的死亡原因。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:22.169",
+          "end_time": "00:13:32.840",
+          "french": "Certains chercheurs estiment même qu'ils pourraient bientôt dépasser le cancer du sein comme première cause de décès par cancer chez les femmes. C'est vraiment alarmant.",
+          "chinese": "一些研究人员甚至估计，肺癌可能很快会超过乳腺癌，成为女性癌症死亡的首要原因。这真的很令人担忧。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:13:33.299",
+          "end_time": "00:13:59.139",
+          "french": "L'évolution et l'explication est exactement la même en ce qui concerne l'alcool, donc je ne vais pas m'étendre dessus. Ne pas s'étendre sur un sujet, ça veut dire qu'on ne va pas passer trop de temps dessus, on ne va pas trop le développer. Mais on va prendre un exemple concret, celui du cancer du sein. C'est le cancer le plus fréquent en France avec plus de 60 000 nouveaux cas par an.",
+          "chinese": "酒精的情况和解释完全相同，所以我就不展开说了。“不展开说”意味着不在上面花太多时间，不过多阐述。但我们要举一个具体的例子，那就是乳腺癌。它是法国最常见的癌症，每年新增病例超过6万例。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:13:59.350",
+          "end_time": "00:14:24.809",
+          "french": "En 2018, le Centre international de recherche sur le cancer basé à Lyon a fait une estimation sur ces facteurs de risque. Les chercheurs ont calculé que 37% des cas de cancer du sein étaient attribuables à des facteurs modifiables, autrement dit, des facteurs sur lesquels on peut agir, des facteurs qui sont liés à nos comportements.",
+          "chinese": "2018年，总部位于里昂的国际癌症研究机构对其风险因素进行了估算。研究人员计算出，37%的乳腺癌病例归因于可改变的因素，换句话说，就是我们可以采取行动的因素，即与我们的行为相关的因素。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:24.820",
+          "end_time": "00:14:45.899",
+          "french": "Ça signifie donc que plus d'un tiers des cancers du sein pourraient être évités si les femmes modifiaient certains aspects de leur mode de vie. Bien sûr, ça vaut aussi pour les hommes, c'est juste qu'ils sont beaucoup moins concernés par ce type de cancer. Et parmi ces facteurs modifiables, le plus cancérigène, c'est l'alcool.",
+          "chinese": "这意味着，如果女性改变生活方式的某些方面，超过三分之一的乳腺癌是可以预防的。当然，这也适用于男性，只是他们受此类癌症影响较小。在这些可改变的因素中，致癌性最强的是酒精。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:14:46.070",
+          "end_time": "00:15:09.100",
+          "french": "L'étude du Centre international de recherche sur le cancer estime qu'environ 13% des cancers du sein sont attribuables à la consommation d'alcool. Donc ça mériterait vraiment de faire plus d'efforts de prévention. Mais le tabac et l'alcool ne sont pas les seuls coupables. Il y a d'autres facteurs liés à notre mode de vie qui jouent un rôle important.",
+          "chinese": "国际癌症研究机构的研究估计，约13%的乳腺癌归因于饮酒。因此，这确实值得在预防方面投入更多努力。但烟草和酒精并不是唯一的元凶。还有其他与我们生活方式相关的因素也起着重要作用。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:09.299",
+          "end_time": "00:15:39.019",
+          "french": "D'abord, il y a l'obésité et le surpoids. On sait aujourd'hui que le surpoids augmente le risque de développer plusieurs types de cancers. Sur ce point, les Français ne se démarquent pas particulièrement de leurs voisins européens. L'obésité est un problème dans tous les pays riches et la France ne fait pas exception. Ensuite, il y a la sédentarité, le fait de ne pas bouger assez, de rester assis ou inactif la plupart du temps.",
+          "chinese": "首先是肥胖和超重。我们现在知道，超重会增加患多种癌症的风险。在这一点上，法国人与欧洲邻国相比并没有特别突出。肥胖是所有富裕国家共同的问题，法国也不例外。其次是久坐不动，即活动量不足，大部分时间坐着或不活动。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:15:39.220",
+          "end_time": "00:16:07.429",
+          "french": "Aujourd'hui, beaucoup de gens ont des métiers où ils passent 8 heures par jour assis derrière un ordinateur, ils prennent leur voiture pour aller au travail, ils restent assis toute la journée et le soir, ils rentrent chez eux et regardent la télévision. Résultat, ils ne font presque aucune activité physique. Or, on sait que l'activité physique a un effet protecteur contre plusieurs cancers. Faire du sport régulièrement réduit le risque de certains cancers.",
+          "chinese": "如今，许多人的工作是每天在电脑前坐8小时，他们开车上班，整天坐着，晚上回家看电视。结果，他们几乎没有任何体力活动。然而，我们知道体力活动对多种癌症具有保护作用。定期运动可以降低某些癌症的风险。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:16:07.539",
+          "end_time": "00:16:34.799",
+          "french": "Les recommandations officielles, c'est au moins 30 minutes d'activité physique par jour, quelque chose qui vous fait un peu transpirer, qui accélère votre rythme cardiaque. Ça peut être de la marche rapide, du vélo, de la natation, peu importe, l'important c'est de bouger. Enfin, il y a l'alimentation. Là, c'est un sujet complexe parce qu'il y a beaucoup de débats et parfois des informations contradictoires.",
+          "chinese": "官方建议是每天至少进行30分钟的体力活动，一些能让你出汗、加快心率的活动。可以是快走、骑自行车、游泳，什么都行，关键是要动起来。最后是饮食。这是一个复杂的话题，因为有很多争论，有时还有矛盾的信息。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:34.799",
+          "end_time": "00:17:02.960",
+          "french": "Mais globalement, les scientifiques s'accordent sur quelques principes. Une alimentation riche en viande rouge et en charcuterie augmente le risque de cancer colorectal. A l'inverse, une alimentation riche en fruits, en légumes et en fibres a un effet protecteur. Donc, encore une fois, go vegan ! Malheureusement, pour nos amis les animaux et pour la santé publique, ces recommandations ne sont pas encore très suivies.",
+          "chinese": "但总的来说，科学家们在一些原则上达成了一致。富含红肉和加工肉类的饮食会增加患结直肠癌的风险。相反，富含水果、蔬菜和纤维的饮食具有保护作用。所以，再次强调，去吃素吧！不幸的是，为了我们的动物朋友和公众健康，这些建议在法国还没有得到很好的遵循。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:17:02.960",
+          "end_time": "00:17:28.420",
+          "french": "pas très respectés en France, notamment à cause de nos traditions culinaires. Bon, je vous ai donné beaucoup d'informations, peut-être même un peu trop, mais il y a un chiffre que je voudrais que vous reteniez absolument, un chiffre qui résume bien la situation. En France, on estime que 41% des cancers pourraient être évités en modifiant nos modes de vie. Je répète.",
+          "chinese": "在法国并没有得到很好的遵守，特别是由于我们的烹饪传统。好了，我给了大家很多信息，甚至可能有点太多了，但我希望大家绝对记住一个数字，一个能很好概括现状的数字。在法国，据估计，通过改变生活方式可以预防41%的癌症。我重复一遍。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:28.660",
+          "end_time": "00:17:52.039",
+          "french": "41%, ça signifie qu'on a une marge de manœuvre énorme pour réduire le nombre de cancers. L'âge, c'est un facteur de risque non modifiable, on ne peut pas décider de ne pas vieillir. Pareil pour la génétique, même si elle ne représente qu'une petite partie des cancers. Si vous avez une mutation génétique qui augmente votre risque de cancer, vous ne pouvez rien y faire.",
+          "chinese": "41%，这意味着我们在减少癌症病例方面有巨大的操作空间。年龄是一个不可改变的风险因素，我们无法决定不老去。遗传也是如此，尽管它只占癌症的一小部分。如果你有增加患癌风险的基因突变，你对此无能为力。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:17:52.339",
+          "end_time": "00:18:07.079",
+          "french": "Alors autant concentrer nos efforts sur les facteurs de risque modifiables. C'est le message que les autorités de santé veulent faire passer. On n'est pas complètement impuissant face au cancer. On a un certain pouvoir sur notre santé.",
+          "chinese": "既然如此，不如把精力集中在可改变的风险因素上。这是卫生当局想要传达的信息。面对癌症，我们并非完全无能为力。我们对自己的健康有一定的掌控权。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:18:07.259",
+          "end_time": "00:18:35.250",
+          "french": "Bien sûr, ça ne garantit rien. Même les personnes qui ont des modes de vie très sains peuvent développer un cancer. Et à l'inverse, il y a des gens qui fument toute leur vie et qui n'ont jamais de cancer. Mais statistiquement, en moyenne, adopter de bonnes habitudes réduit significativement le risque. Et c'est là que la prévention devient cruciale. Si on arrivait vraiment à faire baisser la consommation de tabac et d'alcool en France,",
+          "chinese": "当然，这并不能保证什么。即使是生活方式非常健康的人也可能患上癌症。反之，也有人抽了一辈子烟却从未患癌。但从统计学上看，平均而言，养成良好的习惯能显著降低风险。这就是预防变得至关重要的原因。如果我们真的能降低法国的烟酒消费量，"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:35.250",
+          "end_time": "00:18:43.559",
+          "french": "Si on encourageait davantage l'activité physique et une meilleure alimentation, on pourrait sauver des dizaines de milliers de vies chaque année.",
+          "chinese": "如果我们更多地鼓励体力活动和更好的饮食，每年可以挽救数万人的生命。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:18:50.740",
+          "end_time": "00:19:16.140",
+          "french": "Bon, on s'est intéressé aux facteurs liés au mode de vie des Français, mais il y a une autre catégorie qui suscite beaucoup d'inquiétude, les facteurs environnementaux. Plus précisément, les substances chimiques auxquelles on est exposé au quotidien, souvent sans le savoir, dans l'air qu'on respire, dans l'eau qu'on boit, dans la nourriture qu'on mange, dans les objets qu'on utilise tous les jours.",
+          "chinese": "好了，我们关注了与法国人生活方式相关的因素，但还有另一类引起广泛关注的因素：环境因素。更具体地说，是我们日常接触到的化学物质，通常是在不知不觉中，通过我们呼吸的空气、喝的水、吃的食物以及每天使用的物品。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:16.250",
+          "end_time": "00:19:44.259",
+          "french": "Oui, car certaines de ces substances chimiques sont suspectées d'augmenter le risque de cancer. Parmi les plus connues, on trouve d'abord les pesticides. C'est des produits qu'on utilise en agriculture pour tuer les insectes, les mauvaises herbes ou les champignons. Ils sont utilisés partout dans le monde, mais encore plus par les agriculteurs français. La France est le premier pays utilisateur de pesticides en Europe.",
+          "chinese": "是的，因为其中一些化学物质被怀疑会增加患癌风险。其中最著名的是农药。这些是农业中用来杀灭昆虫、杂草或真菌的产品。它们在世界各地被使用，但法国农民使用得更多。法国是欧洲农药使用量最大的国家。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:19:44.730",
+          "end_time": "00:19:56.619",
+          "french": "En plus de tous les problèmes qu'ils créent pour la biodiversité, certains pesticides sont cancérigènes. On sait par exemple qu'ils augmentent le risque de développer des lymphomes.",
+          "chinese": "除了给生物多样性带来的所有问题外，某些农药还是致癌的。例如，我们知道它们会增加患淋巴瘤的风险。"
+        },
+        {
+          "id": 52,
+          "start_time": "00:19:56.789",
+          "end_time": "00:20:23.049",
+          "french": "Un lymphome, c'est un cancer du système lymphatique, le système qui aide notre corps à se défendre contre les infections. Des études scientifiques ont montré que les agriculteurs qui manipulent ces pesticides tous les jours ont effectivement des taux de lymphome et de cancer de la prostate plus élevés que la moyenne. Et puis, plus généralement, toute la population est touchée à travers l'alimentation.",
+          "chinese": "淋巴瘤是淋巴系统的癌症，淋巴系统帮助我们的身体抵御感染。科学研究表明，每天接触这些农药的农民，其淋巴瘤和前列腺癌的发病率确实高于平均水平。而且，更广泛地说，整个人群都通过饮食受到影响。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:23.259",
+          "end_time": "00:20:43.619",
+          "french": "Quand on mange des fruits et des légumes qui ont été traités avec des pesticides, il reste souvent des résidus. Il y a une étude française intéressante qui a été publiée en 2018 à ce sujet. Les chercheurs ont comparé des gens qui mangeaient principalement des fruits et légumes bio et d'autres qui mangeaient des produits issus de l'agriculture conventionnelle.",
+          "chinese": "当我们吃经过农药处理的水果和蔬菜时，通常会有残留。2018年发表的一项关于此主题的法国研究很有趣。研究人员比较了主要食用有机蔬果的人和食用传统农业产品的人。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:20:43.799",
+          "end_time": "00:20:58.220",
+          "french": "Et ils ont trouvé que les gros consommateurs de produits bio avaient 75% de risque en moins de développer un lymphome. Et pour les femmes, 34% de risque en moins pour le cancer du sein après la ménopause.",
+          "chinese": "他们发现，大量食用有机产品的人患淋巴瘤的风险降低了75%。对于女性，绝经后患乳腺癌的风险降低了34%。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:20:58.740",
+          "end_time": "00:21:18.470",
+          "french": "L'hypothèse, c'est que cette différence est liée aux résidus de pesticides dans l'alimentation. Alors attention, je ne suis pas en train de vous dire que manger bio vous protégera à coup sûr du cancer, c'est juste une étude et il en faudrait d'autres pour confirmer ces résultats, mais c'est quand même une hypothèse intéressante.",
+          "chinese": "假设是这种差异与饮食中的农药残留有关。请注意，我并不是在告诉大家吃有机食品一定能预防癌症，这只是一项研究，还需要更多研究来证实这些结果，但这仍然是一个有趣的假设。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:21:18.779",
+          "end_time": "00:21:40.650",
+          "french": "Après les pesticides, il y a les pyphases, ces polluants éternels dont je vous ai déjà parlé dans l'épisode 166. Pour résumer rapidement, ils sont utilisés dans la fabrication de plein de produits du quotidien, les poils antiadhésives, les vêtements imperméables, les emballages alimentaires, les cosmétiques, etc.",
+          "chinese": "在农药之后，还有PFAS，这些我在第166期节目中提到过的“永久性污染物”。简单总结一下，它们被用于制造许多日常用品：不粘锅、防水衣物、食品包装、化妆品等。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:21:40.920",
+          "end_time": "00:21:58.410",
+          "french": "Ils ne se dégradent pratiquement jamais dans l'environnement et ils s'accumulent dans nos corps. Le problème, c'est que ces substances sont des perturbateurs endocriniens qui interfèrent avec notre système hormonal et peuvent provoquer des cancers.",
+          "chinese": "它们在环境中几乎永远不会降解，并会在我们体内积累。问题是，这些物质是内分泌干扰物，会干扰我们的激素系统并可能诱发癌症。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:21:58.619",
+          "end_time": "00:22:22.599",
+          "french": "Là aussi, la France semble être plus exposée que le reste du monde. Dans une étude qui comparait huit pays européens, on a découvert que les adolescents français étaient les plus surexposés au PFAS. Un quart d'entre eux dépassent la valeur considérée comme non dangereuse pour la santé contre seulement 1% des adolescents espagnols, par exemple.",
+          "chinese": "在这一点上，法国人似乎也比世界其他地区暴露得更多。在一项比较八个欧洲国家的研究中，发现法国青少年暴露于PFAS的程度最高。其中四分之一的人超过了被认为对健康无害的数值，而西班牙青少年中这一比例仅为1%。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:22:23.130",
+          "end_time": "00:22:50.309",
+          "french": "Vous voyez, il y a une sorte de cocktail de substances auxquelles les Français sont exposés en permanence. Les scientifiques appellent ça la multi-exposition à faible dose. Individuellement, chaque exposition est peut-être trop faible pour causer des dégâts importants, mais quand on additionne toutes ces expositions, jour après jour, année après année, l'effet cumulé pourrait être significatif.",
+          "chinese": "你看，法国人一直暴露在一种物质“鸡尾酒”中。科学家称之为“低剂量多重暴露”。单独来看，每次暴露可能太低，不足以造成重大损害，但当日复一日、年复一年地将所有这些暴露相加时，累积效应可能是显著的。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:22:50.579",
+          "end_time": "00:23:22.279",
+          "french": "C'est vraiment une question de politique publique. Il faut que les autorités réglementent mieux l'utilisation de ces substances, qu'elles financent davantage la recherche et qu'elles mettent en place des programmes de biosurveillance pour suivre l'évolution de ces expositions dans la population. On va essayer de finir cet épisode sur une note plus positive en parlant de la guérison.",
+          "chinese": "这确实是一个公共政策问题。当局需要更好地监管这些物质的使用，资助更多研究，并建立生物监测计划，以跟踪人群中这些暴露的演变。我们试着以更积极的基调结束这一集，谈谈治愈。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:23:22.519",
+          "end_time": "00:23:48.700",
+          "french": "Oui, car si la France a un des taux d'incidence du cancer les plus élevés du monde, elle a aussi un des taux de mortalité liés à cette maladie les plus faibles. Autrement dit, vous avez statistiquement plus de chances de survivre à un cancer si vous vivez en France. On estime qu'en France, environ 60% des personnes diagnostiquées avec un cancer survivent plus de 5 ans.",
+          "chinese": "是的，因为虽然法国是全球癌症发病率最高的国家之一，但它也是与该疾病相关的死亡率最低的国家之一。换句话说，如果你住在法国，统计学上你从癌症中幸存的机会更高。据估计，在法国，约60%被诊断患有癌症的人存活时间超过5年。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:23:48.700",
+          "end_time": "00:24:14.180",
+          "french": "Pour certains cancers, les taux de survie sont encore plus élevés. Par exemple, pour le cancer du sein, le taux de survie à 5 ans est de 88%. Pour le cancer de la prostate, c'est 93%. Et ça tombe bien parce que, comme on l'a vu, ce sont les types de cancers les plus fréquents. Alors, comment s'explique cette relative résistance des Français face au cancer ?",
+          "chinese": "对于某些癌症，存活率甚至更高。例如，乳腺癌的5年存活率为88%。前列腺癌为93%。这很好，因为正如我们所见，这些是最常见的癌症类型。那么，如何解释法国人面对癌症时相对较强的抵抗力呢？"
+        },
+        {
+          "id": 63,
+          "start_time": "00:24:14.359",
+          "end_time": "00:24:28.619",
+          "french": "Eh bien d'abord, grâce à l'accès universel aux soins. En France, tout le monde a une couverture maladie. Que vous soyez riche ou pauvre, que vous habitiez à Paris ou dans un petit village, en théorie vous avez accès aux soins.",
+          "chinese": "嗯，首先要归功于全民医疗。在法国，每个人都有医疗保险。无论你是贫穷还是富有，无论你住在巴黎还是小村庄，理论上你都能获得医疗服务。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:24:28.819",
+          "end_time": "00:24:50.309",
+          "french": "Quand vous êtes diagnostiqué avec un cancer, vous n'avez pas à vous inquiéter de savoir comment vous allez payer vos traitements. Des traitements comme la chimiothérapie ou la radiothérapie qui, dans d'autres pays, peuvent coûter très cher aux malades. En France, l'assurance maladie prend en charge 100% des frais pour les maladies graves comme le cancer.",
+          "chinese": "当你被诊断出患有癌症时，你不必担心如何支付治疗费用。像化疗或放疗这样的治疗，在其他国家可能会让患者花费巨大。在法国，医疗保险承担癌症等严重疾病100%的费用。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:24:50.779",
+          "end_time": "00:25:14.920",
+          "french": "Ensuite, les médecins et patients français ont rapidement accès aux innovations thérapeutiques. La France investit beaucoup dans la recherche sur le cancer et les nouveaux traitements. Par exemple, l'immunothérapie, une approche révolutionnaire et qui consiste à stimuler le système immunitaire du patient pour qu'il attaque lui-même les cellules cancéreuses.",
+          "chinese": "其次，法国医生和患者可以迅速获得创新的治疗方法。法国在癌症研究和新疗法方面投入巨大。例如免疫疗法，这是一种革命性的方法，通过刺激患者自身的免疫系统来攻击癌细胞。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:25:15.190",
+          "end_time": "00:25:45.420",
+          "french": "Pour certains cancers qui étaient considérés comme incurables il y a encore quelques années, l'immunothérapie permet maintenant de prolonger la vie des patients de plusieurs années, voire de les guérir complètement. Grâce à ces atouts, la France s'est fixé un objectif ambitieux, atteindre 75% de taux de guérison global d'ici 2035. Actuellement, on est à 60%, donc il faudrait gagner 15 points de pourcentage en une dizaine d'années.",
+          "chinese": "对于一些几年前还被认为无法治愈的癌症，免疫疗法现在可以让患者延长数年生命，甚至完全治愈。凭借这些优势，法国设定了一个雄心勃勃的目标：到2035年实现75%的总治愈率。目前是60%，所以需要在十年左右的时间里提高15个百分点。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:25:45.940",
+          "end_time": "00:26:12.579",
+          "french": "C'est optimiste, mais pas complètement irréaliste. Sauf qu'il y a une ombre au tableau, un point noir. Si vous demandez à mes compatriotes ce qu'ils pensent du système de santé, la plupart vous diront qu'il s'est beaucoup dégradé. Oui, car malheureusement, le financement public des hôpitaux n'est pas à la hauteur des dépenses. Autrement dit, les coûts des hôpitaux augmentent plus vite que le budget que leur donne le gouvernement.",
+          "chinese": "这很乐观，但并非完全不切实际。只不过美中不足的是，有一个污点。如果你问我的同胞们对医疗体系的看法，大多数人会告诉你它已经恶化了很多。是的，不幸的是，公立医院的资金投入跟不上支出的增长。换句话说，医院的成本增长速度快于政府给他们的预算。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:26:12.789",
+          "end_time": "00:26:27.210",
+          "french": "Concrètement, ça se traduit par un manque de spécialistes, pas assez d'oncologues, de radiologues, etc. Un manque d'équipement et de place, surtout dans certaines régions où les hôpitaux sont surchargés.",
+          "chinese": "具体来说，这表现为专家短缺，肿瘤科医生、放射科医生等不足。设备和床位短缺，尤其是在医院超负荷运转的某些地区。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:26:27.349",
+          "end_time": "00:26:50.309",
+          "french": "Une des conséquences pour les patients atteints de cancer, c'est que les délais de traitement augmentent. En 2024, le délai médian entre la première consultation et le début du traitement est de 7 semaines. C'est deux semaines de plus qu'il y a 5 ans. Il y a 5 ans, quand on était diagnostiqué d'un cancer, on pouvait commencer le traitement deux semaines plus tôt que maintenant.",
+          "chinese": "对癌症患者的后果之一是治疗等待时间增加。2024年，从首次就诊到开始治疗的中位时间为7周。这比5年前多了两周。5年前，当被诊断出癌症时，可以比现在提前两周开始治疗。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:26:50.650",
+          "end_time": "00:27:17.349",
+          "french": "Ça peut sembler technique comme chiffre, mais ça a des conséquences importantes. Quand vous êtes diagnostiqué avec un cancer, chaque jour compte. Plus le traitement commence tôt, meilleures sont vos chances. Donc, cet allongement des délais, c'est vraiment préoccupant. Maintenant, le nerf de la guerre contre le cancer, ça reste le dépistage. Le nerf de la guerre, ça signifie l'élément crucial pour atteindre un objectif.",
+          "chinese": "这个数字听起来可能很专业，但它有重要的后果。当你被诊断出癌症时，每一天都很重要。治疗开始得越早，机会就越大。因此，等待时间的延长确实令人担忧。现在，抗癌的关键因素仍然是筛查。“Nerf de la guerre”意味着实现目标的关键要素。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:27:17.500",
+          "end_time": "00:27:41.160",
+          "french": "Et « dépistage », ça vient du verbe « dépister » qui signifie « détecter, découvrir, trouver ». On l'utilise principalement dans le domaine médical, dépister une maladie, faire un test pour détecter si un patient a telle ou telle maladie. En France, on a des programmes de dépistage organisés pour les cancers les plus fréquents.",
+          "chinese": "而“dépistage”（筛查）来自动词“dépister”，意思是“检测、发现、寻找”。它主要用于医学领域，筛查疾病，进行测试以检测患者是否患有某种疾病。在法国，我们针对最常见的癌症制定了有组织的筛查计划。"
+        },
+        {
+          "id": 72,
+          "start_time": "00:27:41.339",
+          "end_time": "00:28:03.529",
+          "french": "Ils permettent de détecter certains cancers à un stade précoce avant qu'ils ne deviennent trop graves. Et plus un cancer est détecté tôt, plus il est facile à soigner. Il y a trois principaux programmes de dépistage. Le premier, c'est le dépistage du cancer du sein par mammographie pour les femmes de 50 à 74 ans.",
+          "chinese": "它们可以在癌症变得过于严重之前的早期阶段检测到。癌症发现得越早，就越容易治疗。有三个主要的筛查计划。第一个是通过乳房X光检查对50至74岁女性进行乳腺癌筛查。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:03.859",
+          "end_time": "00:28:26.059",
+          "french": "Tous les deux ans, ces femmes reçoivent une invitation par courrier pour aller faire une mammographie gratuite. Une mammographie, c'est une radiographie des seins qui permet de détecter d'éventuels tumeurs. Le deuxième programme, c'est le dépistage du cancer colorectal. Là, c'est pour les hommes et les femmes de 50 à 74 ans aussi.",
+          "chinese": "每两年，这些女性都会收到一封邮件邀请，去进行免费的乳房X光检查。乳房X光检查是一种乳房放射检查，可以检测潜在的肿瘤。第二个计划是结直肠癌筛查。这也是针对50至74岁的男性和女性。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:28:26.460",
+          "end_time": "00:28:52.720",
+          "french": "Tous les deux ans, ils reçoivent un kit à la maison qui leur permet de faire un test sur leur sel. Les sels, S-E-L-E-S, à ne pas confondre avec le sel, S-E-L, c'est le terme scientifique pour le caca. Je sais, c'est pas très glamour, mais tester ses sels, ça devient très important après 50 ans pour détecter un cancer colorectal précoce.",
+          "chinese": "每两年，他们会在家里收到一个工具包，可以对粪便进行检测。粪便（selle），不要与盐（sel）混淆，这是大便的科学术语。我知道，这不太体面，但50岁以后，检测粪便对于早期发现结直肠癌变得非常重要。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:28:52.720",
+          "end_time": "00:29:18.819",
+          "french": "Enfin, le troisième grand programme, c'est le dépistage du cancer du col de l'utérus pour les femmes de 25 à 65 ans. Là, c'est un frottis cervical qu'on fait chez le gynécologue ou la sage-femme. Ces trois programmes sont essentiels parce qu'ils permettent de détecter les cancers à un stade précoce, quand ils sont beaucoup plus faciles à traiter, et ça peut vraiment sauver des vies.",
+          "chinese": "最后，第三个大计划是针对25至65岁女性的子宫颈癌筛查。这是在妇科医生或助产士那里进行的宫颈抹片检查。这三个计划至关重要，因为它们可以在癌症处于早期、更容易治疗时检测到，这真的可以挽救生命。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:29:19.130",
+          "end_time": "00:29:45.539",
+          "french": "Le problème, c'est que les Français ne participent pas assez à ces dépistages. Par exemple, pour le cancer du sein, le taux de participation n'est que de 47%, moins d'une femme sur deux, alors que dans d'autres pays comme la Finlande, 80% des femmes font le dépistage. Pour le cancer colorectal, c'est encore pire, seulement 34% de participation, alors que la moyenne européenne est de 44%.",
+          "chinese": "问题是，法国人参与这些筛查的程度不够。例如，对于乳腺癌，参与率仅为47%，不到二分之一，而在芬兰等其他国家，80%的女性会进行筛查。对于结直肠癌，情况更糟，参与率仅为34%，而欧洲平均水平为44%。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:29:45.940",
+          "end_time": "00:30:18.059",
+          "french": "On peut se demander pourquoi les Français sont si réfractaires à des examens qui sont gratuits et qui peuvent leur sauver la vie. Il y a plusieurs explications à mon avis. La première, c'est un manque d'informations sur l'importance du dépistage. Et la deuxième, c'est tout simplement la peur. Peur de passer l'examen, peur de ce qu'on va trouver. Alors, la France est-elle vraiment la championne du monde des cancers ?",
+          "chinese": "我们可能会问，为什么法国人对这些免费且能救命的检查如此抵触。在我看来有几种解释。第一是缺乏关于筛查重要性的信息。第二纯粹是恐惧。害怕接受检查，害怕检查结果。那么，法国真的是世界癌症冠军吗？"
+        },
+        {
+          "id": 78,
+          "start_time": "00:30:18.299",
+          "end_time": "00:30:47.109",
+          "french": "Comme vous l'avez vu, la réponse n'est pas si simple. Oui, la France a une incidence élevée de cancers, ça c'est indéniable. Il y a des facteurs réels qui expliquent cette situation. Notre consommation de tabac et d'alcool, particulièrement préoccupante chez les femmes, le vieillissement de notre population et probablement aussi des facteurs environnementaux comme l'exposition aux pesticides et aux PFAS. Sur tous ces points, il y a vraiment des progrès à faire.",
+          "chinese": "正如你所看到的，答案并非如此简单。是的，法国的癌症发病率很高，这是不可否认的。有一些真实的因素可以解释这种情况。我们的烟酒消费，尤其是女性的情况令人担忧，人口老龄化，可能还有环境因素，如接触农药和PFAS。在所有这些方面，确实还有待改进。"
+        },
+        {
+          "id": 79,
+          "start_time": "00:30:47.349",
+          "end_time": "00:31:15.779",
+          "french": "Mais en même temps, ce classement doit être nuancé. La France a un système de santé performant qui détecte bien les cancers, ce qui fait mécaniquement augmenter les chiffres d'incidence. Et surtout, malgré cette incidence élevée, les Français s'en sortent plutôt bien. La mortalité par cancer est inférieure à la moyenne européenne et les taux de survie sont parmi les meilleurs d'Europe. C'est quand même une bonne nouvelle.",
+          "chinese": "但与此同时，这一排名需要客观分析。法国拥有高效的医疗体系，能很好地检测癌症，这在机制上增加了发病率数据。最重要的是，尽管发病率很高，但法国人的情况还不错。癌症死亡率低于欧洲平均水平，存活率也是欧洲最好的之一。这终究是个好消息。"
+        },
+        {
+          "id": 80,
+          "start_time": "00:31:15.990",
+          "end_time": "00:31:21.059",
+          "french": "La vérité, comme souvent, se situe probablement quelque part entre les deux.",
+          "chinese": "真相往往介于两者之间。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:31:21.210",
+          "end_time": "00:31:49.180",
+          "french": "La France fait partie des pays les plus touchés au monde, certainement dans le top 10, mais peut-être pas numéro 1 comme le suggère l'étude du Lancet. Ce qui est sûr, c'est qu'il y a des marges d'amélioration considérables si on arrivait à réduire la consommation de tabac, surtout chez les femmes, si on buvait moins d'alcool, si on participait davantage au dépistage, on pourrait éviter des dizaines de milliers de cas chaque année. Rappelez-vous,",
+          "chinese": "法国是受影响最严重的国家之一，肯定在前十名之列，但可能不像《柳叶刀》研究建议的那样是第一名。可以肯定的是，如果我们能减少烟草消费（尤其是女性），如果我们少喝酒，如果我们更多地参与筛查，每年可以避免数万个病例，这其中有巨大的提升空间。请记住，"
+        },
+        {
+          "id": 82,
+          "start_time": "00:31:49.180",
+          "end_time": "00:32:14.460",
+          "french": "41% des cancers sont évitables. Et il y a aussi des raisons d'espérer. La recherche française sur le cancer est dynamique avec des innovations thérapeutiques remarquables. L'objectif d'atteindre 75% de guérissons d'ici 2035 est ambitieux, mais comme je le disais, pas irréaliste. Et vous, comment ça se passe dans votre pays ? Est-ce qu'on parle beaucoup du cancer ?",
+          "chinese": "41%的癌症是可以预防的。也有理由保持希望。法国的癌症研究充满活力，拥有卓越的治疗创新。到2035年实现75%治愈率的目标虽然雄心勃勃，但正如我所说，并非不切实际。那么，在你们国家情况如何？大家经常谈论癌症吗？"
+        },
+        {
+          "id": 83,
+          "start_time": "00:32:14.460",
+          "end_time": "00:32:37.930",
+          "french": "Est-ce qu'il y a des programmes de dépistage ? Est-ce que votre système de santé permet à tout le monde d'accéder au traitement ? N'hésitez pas à laisser un commentaire sur la page de l'épisode pour partager votre expérience. C'est toujours intéressant de comparer les situations à l'international. Merci de m'avoir écouté jusqu'au bout. On se retrouve dans deux semaines avec Ingrid pour un nouvel épisode. D'ici là, prenez soin de vous et à bientôt !",
+          "chinese": "是否有筛查计划？你们的医疗体系是否让每个人都能获得治疗？欢迎在节目页面留言分享你的经验。比较国际情况总是很有趣。感谢大家听我讲完。两周后我和Ingrid会带来新的一集。在那之前，照顾好自己，再见！"
+        }
+      ],
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "IPA pronunciation accuracy",
+            "detail": "The 'liaison' section contains word pairs where no phonetic liaison occurs (e.g., 'pays riches', 'cas de cancer'), and the IPA correctly reflects this absence. This may be confusing as these are not examples of active liaisons.",
+            "field": "deep_learning.pronunciation.liaison"
+          },
+          {
+            "level": "warning",
+            "check": "Cross-field consistency",
+            "detail": "Minor mismatches between 'occurrence_count' and the number of 'source_ids' provided for words like 'taux d'incidence', 'vieillissement', and 'dépistage'.",
+            "field": "language_analysis.vocabulary"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 2,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

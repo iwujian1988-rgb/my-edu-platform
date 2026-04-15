@@ -1,0 +1,1252 @@
+{
+  "source_file": "E184 Pourquoi les Français sont-ils accros à l'homéopathie _.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E184 Pourquoi les Français sont-ils accros à l'homéopathie _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T02:56:56.635Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le subjonctif avec 'pour que' (Expression du but)",
+          "La voix passive (Description de faits historiques ou administratifs)",
+          "Le conditionnel présent (Hypothèses et suggestions douces)"
+        ],
+        "speaking": [
+          "Débattre de l'efficacité des médecines alternatives",
+          "Expliquer les principes de base d'un traitement médical",
+          "Discuter des politiques de santé publique et de remboursement"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "homéopathie",
+            "part_of_speech": "nom",
+            "ipa": "[ɔmeɔpati]",
+            "chinese": "顺势疗法",
+            "example_sentence": {
+              "french": "L'homéopathie est une gamme de médicaments très populaire en France.",
+              "chinese": "顺势疗法在法国是一类非常受欢迎的药物。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              8,
+              12,
+              13,
+              14,
+              21,
+              26,
+              27,
+              30,
+              31,
+              32,
+              35,
+              37,
+              38,
+              39,
+              40,
+              43,
+              46,
+              54,
+              55,
+              60,
+              64,
+              66,
+              70,
+              71,
+              72,
+              73,
+              77,
+              82,
+              83
+            ],
+            "occurrence_count": 34,
+            "examples": [
+              {
+                "french": "Pourquoi les Français sont-ils accros à l'homéopathie ?",
+                "chinese": "为什么法国人如此迷恋顺势疗法？",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "accro",
+            "part_of_speech": "adjectif/nom",
+            "ipa": "[akʁo]",
+            "chinese": "上瘾的，沉迷的",
+            "example_sentence": {
+              "french": "Les Français sont accros à ces médicaments.",
+              "chinese": "法国人对这些药物情有独钟。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              4,
+              43
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Et là, on est accros à un médicament qui n'a aucune efficacité.",
+                "chinese": "然而，我们却对一种没有任何疗效的药物深陷其中。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "saignée",
+            "part_of_speech": "nom",
+            "ipa": "[sɛɲe]",
+            "chinese": "放血疗法",
+            "example_sentence": {
+              "french": "Une des méthodes les plus populaires au XVIIIe siècle, c'était la fameuse saignée.",
+              "chinese": "18世纪最流行的疗法之一便是著名的放血疗法。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Donc l'idée, c'était de faire saigner les patients.",
+                "chinese": "其原理是通过给患者放血。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "paludisme",
+            "part_of_speech": "nom",
+            "ipa": "[palydism]",
+            "chinese": "疟疾",
+            "example_sentence": {
+              "french": "Le quinquina est une écorce qui était utilisée pour guérir le paludisme.",
+              "chinese": "金鸡纳树皮过去曾被用来治疗疟疾。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              9,
+              11,
+              12,
+              15
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Ce qu'il constate, c'est qu'il commence à développer les symptômes du paludisme.",
+                "chinese": "值得注意的是，他开始出现疟疾的症状。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "écorce",
+            "part_of_speech": "nom",
+            "ipa": "[ekɔʁs]",
+            "chinese": "树皮",
+            "example_sentence": {
+              "french": "L'écorce, c'est ce qui recouvre le tronc d'un arbre.",
+              "chinese": "树皮，实际上就是覆盖在树干上的部分。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              9,
+              10,
+              11,
+              15
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Souvent, quand on est enfant, on aime bien arracher les écorces des arbres.",
+                "chinese": "小时候，我们常常喜欢把树皮剥下来。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "similitude",
+            "part_of_speech": "nom",
+            "ipa": "[similityd]",
+            "chinese": "相似性，相似律",
+            "example_sentence": {
+              "french": "Le premier principe de l'homéopathie, c'est le principe de similitude.",
+              "chinese": "顺势疗法的第一个原则就是相似律。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              13,
+              14,
+              20
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Donc, la similitude, quand deux choses sont similaires, quand elles sont presque pareilles.",
+                "chinese": "所谓相似律，就是当两件事物彼此相似，几乎一模一样时。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "dilution",
+            "part_of_speech": "nom",
+            "ipa": "[dilysjɔ̃]",
+            "chinese": "稀释",
+            "example_sentence": {
+              "french": "Le deuxième principe, c'est celui de dilution infinitésimale.",
+              "chinese": "第二个原则则是无限稀释原则。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              20,
+              21,
+              23,
+              24,
+              26
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "La dilution, c'est le fait de mélanger une substance à une autre.",
+                "chinese": "所谓稀释，就是将一种物质与另一种物质混合。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "granule",
+            "part_of_speech": "nom",
+            "ipa": "[gʁanyl]",
+            "chinese": "颗粒，微粒",
+            "example_sentence": {
+              "french": "Les docteurs disent vous prenez 10 granules chaque jour et puis ça ira mieux.",
+              "chinese": "医生会说你每天服用10粒，这样情况就会好起来。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              27,
+              28,
+              29,
+              30,
+              33,
+              40,
+              42,
+              55,
+              58,
+              60,
+              62,
+              65,
+              67,
+              68,
+              79,
+              80
+            ],
+            "occurrence_count": 17,
+            "examples": [
+              {
+                "french": "Moi aussi, j'ai le souvenir d'avoir pris ces fameux petits granules.",
+                "chinese": "我也有印象，记得自己小时候也吃过那些小小的颗粒状药物。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "monopole",
+            "part_of_speech": "nom",
+            "ipa": "[mɔnɔpɔl]",
+            "chinese": "垄断",
+            "example_sentence": {
+              "french": "Ce laboratoire a un quasi-monopole sur l'homéopathie en France.",
+              "chinese": "这家实验室在法国几乎垄断了顺势疗法。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              35
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Aujourd'hui, c'est encore ce laboratoire qui a un quasi-monopole sur l'homéopathie.",
+                "chinese": "如今正是这家实验室几乎垄断了顺势疗法。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "holistique",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɔlistik]",
+            "chinese": "整体的，全面的",
+            "example_sentence": {
+              "french": "L'homéopathie propose une approche plus globale, plus holistique.",
+              "chinese": "顺势疗法提出了一种更全局、更整体的视角。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              56
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il y a une approche plus globale, plus holistique, on pourrait dire.",
+                "chinese": "可以说，背后蕴含着一种更全局、更整体的视角。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "rembourser",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁɑ̃buʁse]",
+            "chinese": "报销，退款",
+            "example_sentence": {
+              "french": "La Sécurité sociale remboursait l'homéopathie en partie.",
+              "chinese": "社保曾部分报销过顺势疗法的费用。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              40,
+              66,
+              67,
+              68,
+              70,
+              71,
+              74,
+              76,
+              78,
+              79,
+              81
+            ],
+            "occurrence_count": 11,
+            "examples": [
+              {
+                "french": "Est-ce que la Sécurité sociale doit rembourser ces médicaments homéopathiques ?",
+                "chinese": "社保是否应当为这些顺势疗法药物支付费用？",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "déremboursement",
+            "part_of_speech": "nom",
+            "ipa": "[deʁɑ̃buʁsəmɑ̃]",
+            "chinese": "取消报销",
+            "example_sentence": {
+              "french": "La décision a été prise de commencer à dérembourser.",
+              "chinese": "人们决定开始取消医保报销。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              72
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça s'est fait progressivement jusqu'à un déremboursement complet en 2021.",
+                "chinese": "这一过程逐步推进，直至2021年完全取消了医保报销。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "roulez jeunesse",
+            "meaning": "年轻人，尽情享受吧 / 走起，出发（表示事情顺利进行）",
+            "example": {
+              "french": "Avec le repos, tout se guérit comme ça. Ouais, et roulez jeunesse, comme on dit.",
+              "chinese": "好好休息，一切都会慢慢好起来的。没错，就像俗话说的：年轻人，尽情享受吧！"
+            },
+            "usage_note": "Expression familière utilisée pour encourager l'action ou souligner que les choses avancent facilement, souvent avec une touche d'humour.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "le nerf de la guerre",
+            "meaning": "战争的神经（指关键所在，核心问题，通常指金钱或核心手段）",
+            "example": {
+              "french": "Oui, c'est vrai que la prévention, c'est le nerf de la guerre.",
+              "chinese": "是的，预防确实是制胜的关键。"
+            },
+            "usage_note": "Expression idiomatique très courante pour désigner l'élément essentiel à la réussite d'une entreprise.",
+            "source_ids": [
+              81
+            ]
+          },
+          {
+            "expression": "effet boule de neige",
+            "meaning": "滚雪球效应",
+            "example": {
+              "french": "Il y a aussi un effet boule de neige où du coup, tout d'un coup, les Français se méfient un peu plus.",
+              "chinese": "此外，还会产生一种滚雪球效应：突然间，法国人对这种产品开始更加警惕。"
+            },
+            "usage_note": "Utilisé pour décrire un phénomène qui s'amplifie de plus en plus rapidement au fil du temps.",
+            "source_ids": [
+              75
+            ]
+          },
+          {
+            "expression": "repartir les mains vides",
+            "meaning": "空手而归",
+            "example": {
+              "french": "En général, quand on va voir un médecin, on ne repart pas les mains vides.",
+              "chinese": "通常情况下，当我们去看医生时，都不会空手而归。"
+            },
+            "usage_note": "Expression imagée signifiant quitter un lieu sans avoir rien obtenu.",
+            "source_ids": [
+              46
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le subjonctif avec 'pour que' (Expression du but)",
+            "structure": "pour que + sujet + verbe au subjonctif",
+            "explanation": "La conjonction 'pour que' exprime le but et est toujours suivie du subjonctif. On l'utilise obligatoirement lorsque le sujet de la proposition principale est différent de celui de la proposition subordonnée.",
+            "example": {
+              "french": "On mélange une substance à une autre pour que cette substance soit beaucoup moins chargée.",
+              "chinese": "将一种物质与另一种物质混合，为了让这种物质的浓度低得多。"
+            },
+            "usage_note": "Si le sujet est le même dans les deux propositions, on utilise 'pour + infinitif' (ex: Je me repose pour guérir).",
+            "source_ids": [
+              20,
+              21
+            ]
+          },
+          {
+            "name": "La voix passive (Description de faits historiques ou administratifs)",
+            "structure": "Sujet + être (conjugué) + participe passé (+ par + agent)",
+            "explanation": "La voix passive est très utilisée en français pour mettre en valeur l'action ou l'objet de l'action plutôt que celui qui l'accomplit. Elle est fréquente dans les contextes historiques, scientifiques ou administratifs.",
+            "example": {
+              "french": "Sa pratique a été interdite dans son pays d'origine.",
+              "chinese": "他的行医方式在他祖国被禁止了。"
+            },
+            "usage_note": "Le participe passé s'accorde toujours en genre et en nombre avec le sujet du verbe 'être' (ici 'pratique' est féminin, donc 'interdite').",
+            "source_ids": [
+              31
+            ]
+          },
+          {
+            "name": "Le conditionnel présent (Hypothèses et suggestions douces)",
+            "structure": "Sujet + verbe au conditionnel présent",
+            "explanation": "Le conditionnel est utilisé pour formuler des hypothèses, des suggestions ou pour atténuer une affirmation. Dans ce texte, il sert à imaginer des alternatives aux politiques de santé actuelles.",
+            "example": {
+              "french": "On pourrait rembourser le tofu, par exemple.",
+              "chinese": "比如，我们可以报销豆腐的费用。"
+            },
+            "usage_note": "Souvent introduit par 'si + imparfait' ou utilisé seul pour exprimer une idée imaginaire ou souhaitable.",
+            "source_ids": [
+              81
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɔ] vs [o]",
+              "description": "Le mot 'homéopathie' contient plusieurs voyelles 'o' avec des ouvertures différentes : [ɔ] ouvert et [o] fermé. La prononciation standard est [ɔmeɔpati].",
+              "examples": [
+                "homéopathie",
+                "monopole"
+              ]
+            },
+            {
+              "sound": "[y]",
+              "description": "Le son [y] (u français) est très présent dans le vocabulaire médical et scientifique du texte.",
+              "examples": [
+                "paludisme",
+                "dilution",
+                "granule"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_océans [lezɔseɑ̃] (liaison obligatoire entre le déterminant pluriel et le nom commençant par une voyelle)",
+            "des_habitudes [dezabityd] (liaison obligatoire avec le 'h' muet)",
+            "tout_un_coup [tutœ̃ku] (liaison figée dans l'expression)"
+          ],
+          "intonation": "L'intonation dans ce podcast est didactique mais conversationnelle. Les questions rhétoriques (ex: 'Pourquoi l'homéopathie a eu un tel succès en France ?') ont une intonation montante à la fin pour engager l'auditeur."
+        },
+        "vocabulary_network": {
+          "theme": "L'homéopathie et le système de santé",
+          "core_word": "homéopathie",
+          "related_groups": [
+            {
+              "category": "Principes fondateurs",
+              "words": [
+                "similitude",
+                "dilution",
+                "dynamisation",
+                "individualisation"
+              ]
+            },
+            {
+              "category": "Traitements et médicaments",
+              "words": [
+                "granule",
+                "principe actif",
+                "effet placebo",
+                "ordonnance",
+                "antibiotique"
+              ]
+            },
+            {
+              "category": "Système de santé français",
+              "words": [
+                "Sécurité sociale",
+                "rembourser",
+                "déremboursement",
+                "médecin généraliste"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Et alors, à partir de cette ___ personnelle, il tire la ___ qu'on peut utiliser pour ___ quelque chose, une ___ qui provoque les ___ de cette maladie sur une personne ___.",
+            "answer": "expérience, conclusion, soigner, substance, symptômes, saine",
+            "explanation": "根据原文第12段，哈内曼医生通过在自己身上试验金鸡纳树皮，得出了顺势疗法的基本结论：可以使用在健康人身上引起相同症状的物质来治病。",
+            "source_ids": [
+              12
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le podcast, quelle proportion de la consommation mondiale de médicaments homéopathiques les Français représentent-ils ?",
+            "options": {
+              "A": "1 %",
+              "B": "20 %",
+              "C": "50 %",
+              "D": "77 %"
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文第37段明确指出：'les Français sont responsables de 20 % de la consommation de médicaments homéopathiques dans le monde, alors que la population française représente seulement 1 % de la population' (法国人占全球顺势疗法药物消费量的20%，而法国人口仅占1%)。",
+            "source_ids": [
+              37
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "C'est une campagne qui avait été beaucoup diffusée et à raison parce que cette surconsommation d'antibiotiques a eu des effets assez négatifs sur la santé des Français.",
+            "answer": "这是一场曾被广泛传播的宣传活动，而且这样做完全有道理，因为抗生素的过度使用对法国人的健康造成了相当负面的影响。",
+            "explanation": "翻译难点在于 'à raison' (有道理地，理所当然地) 和 'surconsommation' (过度消费/使用)。句子使用了愈过去时被动语态 'avait été beaucoup diffusée'，翻译时需体现出'曾经被广泛传播'的完成状态。",
+            "source_ids": [
+              50
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante en utilisant 'pour + infinitif' au lieu de 'pour que + subjonctif' si possible. Si ce n'est pas possible, expliquez pourquoi : 'On mélange une substance à de l'eau pour que cette substance soit beaucoup moins chargée.'",
+            "answer": "Ce n'est pas possible de transformer cette phrase avec 'pour + infinitif'.",
+            "explanation": "在法语语法中，只有当主句和从句的主语相同时，才能将 'pour que + 虚拟式' 简化为 'pour + 不定式'。在这句话中，主句的主语是 'On' (我们/人们)，而从句的主语是 'cette substance' (这种物质)。因为主语不同，所以必须保留 'pour que + 虚拟式' 的结构。",
+            "source_ids": [
+              20,
+              21
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "substance",
+            "symptôme",
+            "rembourser"
+          ],
+          "covered_grammar": [
+            "Le subjonctif avec 'pour que' (Expression du but)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Plus [sujet] [verbe], plus [sujet] [verbe]",
+            "explanation": "用于表达两个变量之间的正比例关系，相当于中文的“越……越……”。注意法语中 plus 后面直接跟主语和动词，不需要加定冠词。",
+            "example": {
+              "french": "Plus c'est dilué, plus c'est censé être puissant.",
+              "chinese": "越是稀释，据说药效反而越强。"
+            }
+          },
+          {
+            "pattern": "Il faut savoir que + [Indicatif]",
+            "explanation": "用于引入一个重要的事实或背景信息，常用于解释说明或辩论中，相当于中文的“要知道……”或“必须指出的是……”。",
+            "example": {
+              "french": "Il faut savoir que déjà dès le début, au XIXe siècle, Samuel Hahnemann se retrouve en France.",
+              "chinese": "要知道，早在19世纪初，塞缪尔·哈内曼就来到了法国。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous êtes à la pharmacie en France. Vous avez un rhume léger et vous demandez des granules homéopathiques. Le pharmacien vous explique que ces médicaments ne sont plus remboursés par la Sécurité sociale et vous propose une alternative.",
+          "requirements": "Utilisez le vocabulaire de l'homéopathie (granule, dilution, principe actif) et discutez du déremboursement en utilisant le conditionnel pour demander des conseils.",
+          "starter": "Bonjour, je voudrais des granules pour mon rhume s'il vous plaît. Est-ce que c'est toujours remboursé avec ma carte Vitale ?"
+        }
+      },
+      "summary": {
+        "content": "Ce podcast explore la popularité paradoxale de l'homéopathie en France. Il retrace l'histoire de cette pratique inventée par Samuel Hahnemann, basée sur les principes de similitude et de dilution infinitésimale. Bien que scientifiquement prouvée comme n'ayant aucun principe actif au-delà de l'effet placebo, l'homéopathie est ancrée dans la culture française, en partie grâce aux laboratoires Boiron et à une tradition de sur-prescription médicale. Le débat récent a conduit au déremboursement total de ces granules par la Sécurité sociale en 2021, soulevant des questions plus larges sur la prévention et le financement de la santé publique.",
+        "keywords": [
+          "homéopathie",
+          "Sécurité sociale",
+          "remboursement",
+          "effet placebo",
+          "dilution",
+          "culture médicale française"
+        ],
+        "difficulty_note": "Le texte est de niveau B2 en raison de son vocabulaire médical et scientifique spécifique, ainsi que de la complexité des débats sociétaux abordés (politiques de santé, remboursement)."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04.379",
+          "end": "00:33:58.279"
+        },
+        "theme": "Santé, Médecine alternative et Société française",
+        "cefr_level": "B2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.379",
+          "end_time": "00:00:38.850",
+          "french": "Pourquoi les Français sont-ils accros à l'homéopathie ? Salut à toutes et à tous, salut Ingrid ! Salut Hugo, tu vas bien ? Ouais, ça va et toi ? Bah moi je suis un peu sur une fin de maladie, mais ça va. J'ai été fatiguée ces derniers jours, donc j'espère que ça va aller aujourd'hui. Ouais, c'est la grande saison là, des rhumes, des grippes, ça a commencé, j'ai l'impression que tout le monde est malade. Et du coup, comment tu as fait pour te soigner ? Tu as pris de l'homéopathie ?",
+          "chinese": "为什么法国人如此迷恋顺势疗法？大家好，大家好，英格丽德！你好，雨果，你最近好吗？嗯，我挺好的，你呢？我嘛，最近有点病刚好，不过还好。这几天一直很累，所以希望今天能好起来。是啊，现在正是感冒和流感高发的季节，感觉大家都生病了。那你是怎么治疗的呢？你用过顺势疗法吗？"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:38.850",
+          "end_time": "00:01:02.159",
+          "french": "Ah non, je n'ai pas pris d'homéopathie. L'homéopathie, c'est une gamme de médicaments, voire une médecine dont on va parler aujourd'hui. Mais moi, personnellement, ça fait depuis l'enfance que je n'en ai pas consommé. Ce que je fais quand je suis malade, en général, c'est que je bois beaucoup de thé, de tisane. Je mets des huiles essentielles dans ma chambre.",
+          "chinese": "啊，不，我没吃过顺势疗法。顺势疗法是一类药物，甚至可以说是一种医学体系，我们今天就要来聊聊它。不过，我个人从小到大就没吃过这种药。我生病时一般会多喝些茶或草本茶，还会在我房间里滴几滴精油。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:02.159",
+          "end_time": "00:01:26.019",
+          "french": "Et puis, voilà, du gingembre, du miel et pour la fièvre, un petit paracétamol de temps en temps. Et voilà, avec le repos, tout se guérit comme ça. Ouais, et roulez jeunesse, comme on dit. Pourtant, l'homéopathie, c'est quelque chose qui est très populaire en France. Donc, tu dis que tu en as pris quand tu étais petite. Moi aussi, j'ai le souvenir d'avoir pris ces fameux petits granules.",
+          "chinese": "然后呢，就是姜、蜂蜜，还有偶尔来点对乙酰氨基酚退烧。就这样，好好休息，一切都会慢慢好起来的。没错，就像那句俗话所说的：“年轻人，尽情享受吧！”不过话说回来，其实顺势疗法在法国可是相当流行的呢。所以啊，你说你小时候也吃过这种药？我也有印象，记得自己小时候也吃过那些小小的颗粒状药物。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:26.019",
+          "end_time": "00:01:53.319",
+          "french": "Et on n'est pas des exceptions parce que la majorité des Français ont déjà pris des médicaments basés sur l'homéopathie à un moment de leur vie. Il y en a beaucoup qui l'utilisent encore pour se soigner. Alors peut-être que vous n'êtes pas familiers avec ce qu'est l'homéopathie, donc on va vous expliquer tout ça dans l'épisode. Et puis aussi, on va vous expliquer pourquoi c'est tellement populaire en France, pourquoi les Français sont accros à ces médicaments.",
+          "chinese": "而且我们并非特例，因为大多数法国人一生中都曾服用过基于顺势疗法的药物。如今仍有不少人继续用它来治疗疾病。也许您对顺势疗法还不太了解，因此在本期节目中，我们会为您详细讲解这一切。此外，我们还会向您解释为什么顺势疗法在法国如此流行，以及法国人为何对这些药物情有独钟。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:53.459",
+          "end_time": "00:02:26.599",
+          "french": "Je propose qu'on commence tout de suite, comme ça on explique ce que c'est pour tous ceux qui n'en ont jamais entendu parler. Allons-y, c'est parti ! Au départ de l'homéopathie, il y a un homme, un médecin allemand à la fin du XVIIIe siècle qui s'appelle Samuel Hahnemann. Désolé pour ma prononciation allemande, je n'ai pas appris l'allemand au collège. Vous me corrigerez dans les commentaires si vous voulez.",
+          "chinese": "我提议我们立刻开始吧，这样就能向那些从未听说过的人解释清楚它到底是什么。来吧，咱们开始！顺势疗法的起源，要追溯到18世纪末一位德国医生——塞缪尔·哈内曼。抱歉我的德语发音不太标准，我在中学时没学过德语。如果大家觉得我哪里读错了，欢迎在评论区指正哦！"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:26.599",
+          "end_time": "00:02:52.539",
+          "french": "Donc ce médecin, il était assez critique de la médecine de son époque. Il trouvait que les méthodes utilisées n'étaient pas très efficaces. Une des méthodes les plus populaires au XVIIIe siècle, c'était la fameuse saignée. Donc l'idée, c'était de faire saigner les patients. On les ouvrait et on les vidait d'une partie de leur sang avec l'idée derrière de les purifier, de faire sortir la maladie",
+          "chinese": "因此，这位医生对当时医学持相当批判的态度。他认为当时所采用的疗法效果并不太理想。18世纪最流行的疗法之一便是著名的放血疗法。其原理是通过给患者放血，也就是切开患者的血管，将一部分血液放出，以此达到净化身体、驱除病邪的目的。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:52.539",
+          "end_time": "00:03:18.939",
+          "french": "en les vidant de leur sang. Bon, c'était pas très efficace, en général c'était assez contre-productif. Et lui, donc, Samuel Hahnemann, il se disait « Bon, ben, je suis médecin, mais je trouve que les méthodes qu'on utilise devraient être améliorées. » Il avait envie de tester quelque chose de différent, d'autant plus qu'il n'avait pas beaucoup de succès, apparemment, en tant que médecin. Donc, à l'âge de 34 ans, il a repris des études, et cette fois des études de chimie.",
+          "chinese": "通过抽干他们的血液。嗯，这效果并不太好，通常反而适得其反。于是，萨缪尔·哈内曼便对自己说：“好吧，我是个医生，但我认为我们目前所用的方法应该改进一下。” 他渴望尝试一些不同的东西，尤其因为他似乎作为医生的成就并不显著。因此，在34岁时，他重新开始学习，这一次选择了化学专业。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:18.939",
+          "end_time": "00:03:28.710",
+          "french": "Et là, ça l'a inspiré à s'intéresser à un nouveau principe et donc il a découvert ce qu'il va nommer plus tard l'homéopathie.",
+          "chinese": "于是，这激发了他对一种新原理的兴趣，从而发现了他日后称之为“顺势疗法”的东西。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:29.080",
+          "end_time": "00:03:58.669",
+          "french": "Comment il a fait cette découverte ? Tu peux nous en parler ? Eh bien, il a été chargé, à la fin du XVIIIe siècle, de traduire un traité, un livre, sur le quinquina. Alors, le quinquina, c'est une écorce qui était utilisée pour guérir le paludisme. Et alors, une écorce, peut-être qu'on peut expliquer ? Ce n'est pas un mot qu'on trouve tout le temps. Écorce, c'est un morceau d'arbre. Oui, c'est ça. Pardon.",
+          "chinese": "他是如何做出这一发现的呢？你能跟我们聊聊吗？嗯，18世纪末，他受命翻译一本关于金鸡纳树的专著——一本书。那么，金鸡纳树是一种树皮，过去曾被用来治疗疟疾。那又怎样呢？一棵树皮，也许还能说得通吧？这可不是个经常能见到的词啊！树皮，就是树上的一块树皮。没错，就是这样。抱歉。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:58.669",
+          "end_time": "00:04:17.199",
+          "french": "Pardon, c'est en fait ce qui recouvre le tronc d'un arbre. Souvent, quand on est enfant, je ne sais pas si tu faisais ça, mais on aime bien arracher les écorces des arbres. Bon, ce n'est pas très sympa pour les arbres, mais voilà, enlever la peau des arbres, on pourrait dire, et ça, c'est ce qu'on appelle l'écorce. Donc là, c'était...",
+          "chinese": "不好意思，实际上，这正是覆盖在树干上的部分。小时候，我常常会做一件事——不知道你有没有做过——就是喜欢把树皮剥下来。嗯，这么做对树木可不太友好呢。不过，这么说吧，把树的外皮去掉，我们就可以称之为“树皮”。所以，刚才那……"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:17.199",
+          "end_time": "00:04:34.300",
+          "french": "Comme tu le disais, une écorce qui était utilisée pour soigner le paludisme. Et donc, notre docteur a cette bonne idée d'utiliser ce remède, ce médicament sur lui alors que lui-même, il n'était pas atteint de paludisme.",
+          "chinese": "正如你所说，这是一种曾被用于治疗疟疾的树皮。于是，我们的医生突发奇想，决定用这种疗法、这种药物来试验一下自己——尽管他自己其实并未感染疟疾。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:34.300",
+          "end_time": "00:05:03.339",
+          "french": "Ce qu'il constate, c'est qu'il commence à développer les symptômes du paludisme. Il commence à avoir de la fièvre, des frissons. Et alors, à partir de cette expérience personnelle, il tire la conclusion qu'on peut utiliser pour soigner quelque chose, une substance qui provoque les symptômes de cette maladie sur une personne saine. Et c'est là le point de départ de l'homéopathie.",
+          "chinese": "值得注意的是，他开始出现疟疾的症状。他开始发烧、发冷。于是，基于这段个人经历，他得出一个结论：可以利用某种物质来治疗疾病——这种物质能在健康人体上引发与该疾病相同的症状。而这正是顺势疗法的起点。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:03.420",
+          "end_time": "00:05:30.430",
+          "french": "Exactement. Et donc, au début du XIXe siècle, en 1810, il publie un ouvrage fondateur qui va avoir un grand succès en France, dans lequel il pose les principes de l'homéopathie. Et il y a, je crois, quatre principes fondateurs, c'est ça ? C'est ça. Le premier principe, c'est le principe de similitude. Donc, la similitude, quand deux choses sont similaires, quand elles sont...",
+          "chinese": "没错。因此，在19世纪初，也就是1810年，他出版了一本具有开创性意义的著作，在法国获得了巨大成功。在这本书中，他提出了顺势疗法的基本原则。我想，共有四个基本原则，对吧？没错。第一个原则就是“相似律”。所谓相似律，就是当两件事物彼此相似时……"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:30.430",
+          "end_time": "00:05:52.769",
+          "french": "presque pareilles, qu'en tout cas elles se ressemblent, d'où le nom de l'homéopathie. Homéo, c'est similaire, pareil, et pathie, maladie. Donc en fait, il va essayer de créer chimiquement des produits qui contiennent une substance qui est similaire à la maladie qu'on veut soigner. Ça peut être vraiment...",
+          "chinese": "几乎一模一样，至少它们很相似，这正是“顺势疗法”名称的由来。“Homéo”意为相似、相同，“hépatie”意为疾病。因此，实际上，顺势疗法试图通过化学手段制备出含有与所要治疗的疾病相似物质的制剂。这种做法真的可以……"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:52.769",
+          "end_time": "00:06:20.259",
+          "french": "plein, plein de substances différentes. Ça peut être des plantes, mais ça peut être un bout d'animal par exemple. Il y a un médicament homéopathique très connu et très diffusé qui est à base de cœur et de foie de canard. Donc voilà, il reprend vraiment ce principe qu'il a cru comprendre avec l'écorce contre le paludisme et il le reproduit avec plein d'autres substances pour plein d'autres maladies.",
+          "chinese": "含有大量不同的物质。这些物质可以是植物，也可以是动物的某个部位，比如一块动物组织。有一种非常知名且广泛使用的顺势疗法药物，其成分正是鸭子的心脏和肝脏。因此，它真正沿用了他从树皮治疗疟疾中领悟到的那个原理，并将其应用于其他多种物质，以治疗各种不同的疾病。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:20.259",
+          "end_time": "00:06:43.250",
+          "french": "Ouais, et donc les laboratoires qui... Bon, ça va être un peu plus tard, on fait un saut dans le temps, mais les laboratoires qui développent ces médicaments homéopathiques, ils sont très créatifs en ce qui concerne les principes actifs, donc ces ingrédients qu'ils utilisent à la base de leurs médicaments. Donc tu as parlé de ce médicament à base de cœur et de foie de canard.",
+          "chinese": "嗯，还有那些研发……嗯，这要晚一点再说，我们先跳到未来一会儿。不过，研发这些顺势疗法药物的实验室，在活性成分方面可是非常有创意的——也就是他们用于药物基础配方的那些原料。你刚才提到的那种以鸭心和鸭肝为原料的药，就是个例子。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:43.250",
+          "end_time": "00:07:04.430",
+          "french": "J'ai vu aussi, et j'ai trouvé ça assez poétique d'une certaine manière, qu'il y a un laboratoire britannique qui a créé un médicament à partir de morceaux du mur de Berlin. Donc voilà, ils prennent des morceaux du mur de Berlin qu'ils mélangent avec du lait, je crois, pour les diluer. Et ça, c'est censé aider contre la dépression.",
+          "chinese": "我还看到过，而且觉得这在某种程度上还挺富有诗意的：一家英国实验室用柏林墙的碎片研制出了一种药物。原来，他们从柏林墙上取下一些碎片，据我所知，还把这些碎片与牛奶混合稀释了一下。据说，这种药能帮助缓解抑郁症。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:04.430",
+          "end_time": "00:07:28.160",
+          "french": "Parce que, bon, voilà, mur de Berlin égale dépression. Les crises de panique, l'angoisse de séparation, bon, ça c'est sûr effectivement que le mur de Berlin c'est vraiment le symbole de tout ça. Mais aussi la timidité, l'asthme, la migraine, enfin voilà, ça a plein d'effets bénéfiques. Et il me semble aussi que la famille royale, ou en tout cas le prince Charles,",
+          "chinese": "因为，嗯，你看，柏林墙就等于抑郁。惊恐发作、分离焦虑——没错，柏林墙确实正是这一切的象征。但除此之外，它对害羞、哮喘、偏头痛等等也都有不少积极影响。而且我觉得，王室家族，或者至少查尔斯王子，也……"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:28.160",
+          "end_time": "00:07:43.779",
+          "french": "soutenait ce laboratoire. Je ne sais plus exactement si c'était financièrement ou d'une autre manière, mais apparemment, la famille royale britannique est assez amatrice aussi d'homéopathie. Là, tu viens de dire le mot « diluer avec du lait ».",
+          "chinese": "支持这个实验室。我记不太清具体是资金上还是其他方面，但显然，英国王室对顺势疗法也相当感兴趣。刚才你说到了“用牛奶稀释”这个词。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:44.089",
+          "end_time": "00:08:11.620",
+          "french": "Et donc, c'est justement le deuxième principe. Donc, on a dit le premier principe, c'est celui de similitude. Et ensuite, le deuxième principe, c'est celui de dilution infinitésimale. Alors, pour expliquer, donc la dilution, c'est le fait de mélanger une substance à une autre, par exemple du lait ou de l'eau, quelque chose qui est plutôt neutre,",
+          "chinese": "因此，这正是第二个原则。刚才我们提到的第一个原则是相似性原则，而第二个原则则是无限稀释原则。那么，为了说明一下，所谓稀释，就是将一种物质与另一种物质混合，比如牛奶或水——也就是一种相对中性的物质。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:08:11.620",
+          "end_time": "00:08:34.429",
+          "french": "pour que cette substance soit beaucoup moins chargée, pour en avoir seulement un tout petit peu. C'est le principe de mettre seulement deux gouttes d'huile essentielle dans beaucoup de thé, c'est la dilution. Donc, pour l'homéopathie, il y a une dilution, mais à l'infini. On met une goutte de substance active",
+          "chinese": "为了让这种物质的浓度低得多，只需取极少量即可。这正是“只在大量茶中滴入两滴精油”的原理——即稀释。因此，对于顺势疗法而言，同样存在稀释的过程，只不过这种稀释是无限的：我们只加入一滴活性物质。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:34.429",
+          "end_time": "00:09:02.929",
+          "french": "pour 99 gouttes d'eau ou de lait ou de quelque chose comme ça, qu'on appelle un solvant. Et puis ensuite, on prend le nouveau mélange, on en met une seule goutte avec 99 autres gouttes de solvant et on continue et on continue et on continue. Et en fait, d'après notre docteur allemand, Samuel Hahnemann, plus c'est dilué, plus c'est censé être puissant. Pratique, pas cher à produire.",
+          "chinese": "对于99滴水、牛奶或类似物质——我们称之为溶剂。然后，我们取这个新混合液，只取一滴，再与99滴溶剂混合，接着不断重复这一过程。事实上，根据我们的德国医生塞缪尔·哈内曼的说法，越是稀释，药效反而越强。这种做法既实用又成本低廉。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:09:02.929",
+          "end_time": "00:09:29.700",
+          "french": "Et il faut vraiment imaginer que certains de ces médicaments, quand on dit qu'ils sont dilués, c'est l'équivalent d'une goutte diluée dans l'ensemble des océans de la planète. Voilà, il faut vraiment imaginer ça. Et parfois, c'est même carrément dans l'ensemble de l'univers. Enfin bon, c'est des quantités qui sont assez difficiles même à visualiser. Mais voilà, c'est vraiment une dilution infinitésimale, comme tu l'as dit.",
+          "chinese": "而且，你真的得想象一下，某些药物所谓的“稀释”，其程度相当于将一滴药液稀释到整个地球的海洋中。没错，你真的得这么去想象。有时候，甚至要放到整个宇宙里去考虑。总之，这些量级实在难以直观地想象。但正如你所说，这确实是一种极其微小的稀释比例。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:09:29.700",
+          "end_time": "00:09:46.860",
+          "french": "Il y a le troisième principe, il est plus simple à comprendre, c'est celui de dynamisation. Entre chacune de ces dilutions, il faut secouer vigoureusement le flacon, il faut le faire bouger pour activer les propriétés de la substance.",
+          "chinese": "还有第三个原则，它更容易理解，那就是“活化”原则。在每次稀释之间，都要用力摇晃瓶子，使其晃动，以激活物质的特性。"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:46.870",
+          "end_time": "00:10:16.129",
+          "french": "Et le quatrième principe, c'est celui de l'individualisation. Donc, c'est le principe qui veut que deux patients avec la même maladie ne reçoivent pas forcément le même traitement. On prend en compte toute la globalité de la personne avec son caractère, ses émotions, son mode de vie. Ça, c'est quelque chose qui est très important et on va en reparler quand on parlera de pourquoi ça a été aussi populaire en France.",
+          "chinese": "第四个原则是个性化原则。也就是说，即使两位患者患有相同的疾病，也不一定接受相同的治疗。我们会综合考虑患者的全部情况，包括其个性、情绪和生活方式。这一点非常重要，我们稍后在讨论它为何在法国如此受欢迎时还会再提到。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:10:16.129",
+          "end_time": "00:10:35.210",
+          "french": "Alors maintenant la critique majeure qui est faite à l'homéopathie, eh bien elle concerne le deuxième principe dont on a parlé, celui de dilution. Parce que certains de ces médicaments sont tellement dilués qu'en fait il ne reste aucun atome du principe actif dedans.",
+          "chinese": "那么，目前对顺势疗法的主要批评，正是针对我们刚才提到的第二个原则——稀释原理。因为其中一些药物被稀释得如此之深，以至于实际上已不剩任何活性成分的原子了。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:35.259",
+          "end_time": "00:10:59.120",
+          "french": "À cause de ça, il y a beaucoup de scientifiques qui disent qu'en fait, dans l'homéopathie, il n'y a aucun principe actif. Et concrètement, est-ce que tu peux décrire à quoi ça ressemble ? Sous quelle forme sont ces médicaments ? Oui, alors bon, il y a plusieurs formes, mais la plus classique, celle vraiment que tout le monde connaît, c'est celle des granules. Donc un granule, c'est un...",
+          "chinese": "正因为如此，许多科学家认为，实际上，顺势疗法中根本不存在任何活性成分。那么具体来说，你能描述一下它是什么样子的吗？这些药物以何种形式存在呢？是的，嗯，其实有好几种形式，但最经典、也是大家最熟悉的，就是颗粒剂。所谓颗粒剂，就是一种……"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:59.120",
+          "end_time": "00:11:28.230",
+          "french": "petit grain, c'est une petite boule. C'est vraiment des boules toutes petites qui sont contenues dans de tout petits flacons et donc on doit en prendre par exemple 3 le matin, 5, bon voilà, les docteurs disent vous prenez 10 granules chaque jour et puis ça ira mieux. Et en fait, c'est du sucre, globalement. En tout cas, les études scientifiques montrent que, comme tu l'as dit, vu qu'il y a",
+          "chinese": "小颗粒，就是一小团。实际上，这些小颗粒非常小，装在特别小的瓶子里，因此我们每天早上得服用3粒，或者5粒——嗯，医生会说你每天服用10粒，这样情况就会好起来。其实，总的来说，这玩意儿就是糖。至少，科学研究表明，正如你所说的，因为里面含有……"
+        },
+        {
+          "id": 29,
+          "start_time": "00:11:28.250",
+          "end_time": "00:11:46.379",
+          "french": "presque pas de substance active finalement, c'est plutôt du sucre et de l'eau. Et c'est pour ça que les enfants, souvent quand on leur demande de prendre leurs granules, ils aiment bien parce qu'en fait on les fait fondre sous la langue et c'est comme si on faisait fondre un peu de sucre sous sa langue.",
+          "chinese": "实际上，几乎不含任何有效成分，更多的是糖和水。正因如此，当孩子们被要求服用颗粒剂时，往往会很喜欢，因为其实这些颗粒会在舌下慢慢融化，就像在舌头上融化一点糖一样。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:46.379",
+          "end_time": "00:12:12.710",
+          "french": "Tout à fait. Et puis comme tu l'as dit, c'est vrai, les petits flacons, ça peut un peu faire penser à des distributeurs de bonbons. Moi, voilà, j'ai ces souvenirs de mes grands-parents parfois qui me donnaient des médicaments homéopathiques quand j'étais un peu malade. Et c'est vrai que j'aimais bien ces petits granules. Donc ouais, ça explique peut-être en partie le succès de l'homéopathie, mais pas que. On va y revenir.",
+          "chinese": "完全正确。而且正如你所说，确实，那些小瓶子多少会让人联想到糖果自动售货机。我呢，常常想起小时候生病时，祖父母给我服用一些顺势疗法药物的场景。说实话，我特别喜欢那些小小的颗粒状药剂。所以，是的，这或许能部分解释顺势疗法为何如此受欢迎，但也不仅仅是因为这一点。我们稍后再来探讨这个问题。"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:19.899",
+          "end_time": "00:12:49.360",
+          "french": "Alors maintenant, on va voir pourquoi l'homéopathie est particulièrement populaire en France. Alors, il faut savoir que déjà dès le début, au XIXe siècle, Samuel Hahnemann se retrouve en France parce que sa pratique a été interdite dans son pays d'origine. Donc, l'homéopathie est interdite dans l'Empire autrichien et également dans la ville de Leipzig.",
+          "chinese": "那么现在，我们来看看为什么顺势疗法在法国特别受欢迎。要知道，早在19世纪初，塞缪尔·哈内曼就来到了法国，因为他的行医方式在他祖国被禁止了。因此，顺势疗法在奥地利帝国以及莱比锡市都被禁止。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:49.360",
+          "end_time": "00:13:18.269",
+          "french": "Ce qui fait que déjà à cette époque, il commence à y avoir des pharmacies homéopathiques en France et il y a un petit boom de l'homéopathie. Mais ensuite, c'est un siècle plus tard qu'il y a vraiment l'installation de l'homéopathie dans les mœurs françaises grâce à deux frères, les jumeaux Jean et Henri Boiron qui fondent en 1932 les laboratoires Boiron.",
+          "chinese": "这使得早在那个时代，法国就已经开始出现一些顺势疗法药房，顺势疗法也迎来了一波小热潮。但真正让顺势疗法在法国社会扎根，则要等到一个世纪之后，得益于两位兄弟——双胞胎让和亨利·布瓦龙，他们于1932年创立了布瓦龙制药实验室。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:13:18.269",
+          "end_time": "00:13:45.039",
+          "french": "Ça, c'est un nom que tout le monde connaît en France, les laboratoires Boiron. Ils font beaucoup de publicité. Et effectivement, ils ont des médicaments homéopathiques très populaires. C'est vraiment eux, les jumeaux Boiron, qui ont industrialisé la production de granules homéopathiques. Alors qu'avant, c'était plutôt quelque chose, on pourrait dire, d'artisanal. Là, vraiment, avec les laboratoires Boiron...",
+          "chinese": "这可是个在法国家喻户晓的名字——博瓦龙制药公司。他们做了很多广告。确实，他们生产的顺势疗法药物非常受欢迎。真正将顺势疗法颗粒剂的生产工业化的是博瓦龙兄弟俩。要知道，在此之前，顺势疗法更多还是一种手工制作的方式。而如今，有了博瓦龙制药公司……"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:45.039",
+          "end_time": "00:13:49.169",
+          "french": "Dans les années 30, ça devient une véritable industrie.",
+          "chinese": "在20世纪30年代，它变成了一项真正的产业。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:49.169",
+          "end_time": "00:14:18.960",
+          "french": "Et d'ailleurs, aujourd'hui, c'est encore ce laboratoire qui a un quasi-monopole sur l'homéopathie en France et même dans le monde. C'est le premier producteur d'homéopathie et ça appartient encore à la même famille. C'est une entreprise qui aujourd'hui est cotée en bourse, qui jusqu'en 2018 avait un chiffre d'affaires qui dépassait les 600 millions d'euros. Donc voilà, on peut dire que c'est une grosse entreprise qui...",
+          "chinese": "而且，事实上，如今正是这家实验室在法国乃至全球几乎垄断了顺势疗法。它是全球最大的顺势疗法生产商，至今仍由同一家族掌控。这家公司如今已在证券交易所上市，截至2018年，其营业额曾超过6亿欧元。所以，可以说，这是一家规模庞大的企业……"
+        },
+        {
+          "id": 36,
+          "start_time": "00:14:18.960",
+          "end_time": "00:14:30.090",
+          "french": "Et son marché principal, c'est bien sûr la France et les Français. Ouais, il faut savoir que les Français...",
+          "chinese": "而它的主要市场，当然是法国和法国人。没错，要知道，法国人……"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:30.460",
+          "end_time": "00:15:00.059",
+          "french": "sont responsables de 20 % de la consommation de médicaments homéopathiques dans le monde, alors que la population française représente seulement 1 % de la population, c'est assez disproportionné. Et en France, dans quasiment n'importe quelle pharmacie, vous pouvez acheter des médicaments homéopathiques, alors que je sais qu'à Varsovie, par exemple, il y avait seulement deux pharmacies dans lesquelles c'était possible. C'était assez encadré, assez réglementé. Mais en France, vous pouvez vraiment en trouver partout.",
+          "chinese": "它们占全球顺势疗法药物消费量的20%，而法国人口仅占1%。这一比例显得极不相称。在法国，几乎任何一家药店都能买到顺势疗法药物，而据我所知，比如在华沙，只有两家药店能提供这类药品。当时对顺势疗法药物的销售管控相当严格、规范有序。但在法国，你真的能在任何地方找到它们。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:15:00.059",
+          "end_time": "00:15:25.299",
+          "french": "D'ailleurs, 3 Français sur 4, 77 % selon un sondage qui a été fait en 2018, ont déjà pris de l'homéopathie au cours de leur vie. Et plus de 50 % en ont même déjà pris plusieurs fois. C'est quand même plus que dans les autres pays. Par exemple, chez les Belges, apparemment c'est 28 % selon une étude. Et en Espagne, c'est 30 %.",
+          "chinese": "此外，根据2018年的一项调查，四分之三的法国人——即77%——一生中都曾服用过顺势疗法。其中，超过50%的人甚至已经多次服用过。这比其他国家的比例都要高。例如，据一项研究显示，比利时人的比例似乎只有28%；而在西班牙，这一比例为30%。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:25.299",
+          "end_time": "00:15:54.779",
+          "french": "Donc voilà, le marché français est un des marchés les plus importants d'homéopathie. Ouais, et on pourrait dire que c'est quelque chose de transgénérationnel, qui se transmet d'une génération à l'autre. Moi, je me souviens, comme je disais, de mes grands-parents qui m'avaient donné des médicaments homéopathiques. Et je sais qu'eux, ils en prennent vraiment depuis aussi loin que je me souvienne, quasiment tous les hivers, pour essayer de se protéger de la grippe et d'autres maladies.",
+          "chinese": "所以，法国市场是同类疗法最重要的市场之一。没错，可以说这是一种跨代相传的习俗，一代又一代地延续下来。我记得，就像我刚才说的，我的祖父母曾给我服用过一些同类疗法药物。而且我知道，从我记事起，他们几乎每年冬天都会服用这类药物，以试图预防流感和其他疾病。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:54.779",
+          "end_time": "00:16:24.519",
+          "french": "Ils prennent leurs petits granules. Donc cette consommation, ce n'est pas un acte isolé, mais souvent les personnes qui prennent de l'homéopathie, elles en consomment régulièrement pendant des années et des années. Et souvent, elle est prescrite par des médecins. Alors, on peut aussi l'acheter de manière libre et ça, c'est aussi une pratique très courante. Mais en France, la Sécurité sociale remboursait l'homéopathie en partie de 1995 jusqu'à…",
+          "chinese": "他们服用的是小颗粒药丸。因此，这种用药行为并非孤立的举动，而是经常有患者长期、持续多年地定期服用顺势疗法药物。而且，很多时候这些药物是由医生开具的。当然，人们也可以自行购买，而这种做法也非常普遍。不过，在法国，从1995年到……社保曾部分报销过顺势疗法的费用。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:16:24.539",
+          "end_time": "00:16:30.820",
+          "french": "2019. Donc, c'est-à-dire qu'il y a beaucoup de médecins qui étaient aussi médecins",
+          "chinese": "2019年。也就是说，有很多医生同时也是医生。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:16:31.029",
+          "end_time": "00:16:54.919",
+          "french": "C'était une option qu'on pouvait prendre en fac de médecine. On parle au passé, on va expliquer pourquoi, parce que ça ne fait pas longtemps que ça a changé. Mais voilà, il y a beaucoup de Français qui ont eu l'habitude pendant longtemps d'aller chez leur docteur. Et leur docteur était un médecin homéopathe qui leur prescrivait ces petits granules.",
+          "chinese": "这曾是医学院学生可以选修的一项课程。我们用过去时来讲述，接下来会解释原因，因为这一变化发生的时间并不久远。不过，长期以来，很多法国人都习惯于去看自己的医生。而他们的医生是一位顺势疗法医师，会给他们开那些小小的颗粒药剂。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:55.029",
+          "end_time": "00:17:21.569",
+          "french": "Pourquoi l'homéopathie a eu un tel succès en France ? C'est vrai qu'on aime bien se voir, je le dis souvent, mais comme un pays cartésien, le pays de la rationalité, du philosophe René Descartes. Et là, on est accros à un médicament qui, d'après de nombreuses études scientifiques, n'a aucune efficacité. Alors, pourquoi ce paradoxe, on pourrait dire ?",
+          "chinese": "为什么顺势疗法在法国如此成功？诚然，正如我经常所说，我们确实很喜欢自我感觉良好——毕竟，法国是一个笛卡尔式的国家，一个崇尚理性、以哲学家勒内·笛卡尔为代表的国家。然而，我们却对一种药物深陷其中，而根据大量科学研究，这种药物根本没有任何疗效。那么，我们不禁要问：这究竟是怎么回事呢？"
+        },
+        {
+          "id": 44,
+          "start_time": "00:17:21.569",
+          "end_time": "00:17:49.900",
+          "french": "Eh bien, c'est vrai que dans beaucoup de pays, la tradition médicale encourage plutôt le repos et l'hydratation. Un peu comme, voilà, toi, ce que tu as fait là quand tu avais ton état grippal. Pour se soigner, les médecins disent, eh bien, voilà, vous avez besoin de vous reposer et de boire beaucoup d'eau ou de thé ou des choses comme ça. Quand la maladie, évidemment, n'est pas très grave, quand les symptômes ne sont pas très graves. Mais en France, c'est un peu différent. On a vraiment une culture de la...",
+          "chinese": "嗯，确实，在很多国家，传统医学更提倡休息和补水。有点像——比如说，你之前得了流感时的做法。医生们说，要治病的话，就得好好休息，多喝水、喝点茶，或者类似这样的东西。当然，这前提是病情并不严重，症状也不太明显。不过在法国，情况就有点不同了。我们这里其实有一种……"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:49.900",
+          "end_time": "00:18:14.450",
+          "french": "C'est vrai que les médecins, en général, quand on va les voir, ils font toujours une ordonnance ou une prescription, même quand on a seulement des symptômes assez légers. Par exemple, là, je sais que ma copine, depuis qu'on est en France, il y a un mot qu'elle a appris très très vite, c'est le mot « Doliprane ». Donc le Doliprane, c'est un médicament à base de paracétamol.",
+          "chinese": "确实，一般来说，当我们去看医生时，他们总会开一张处方或医嘱，即使我们只是有一些很轻微的症状。比如，我认识的这位朋友，自从我们来到法国后，她很快就学会了一个词——“多利普兰”。所谓“多利普兰”，是一种以对乙酰氨基酚为成分的药物。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:18:14.450",
+          "end_time": "00:18:40.400",
+          "french": "Et les médecins en prescrivent quasi systématiquement quand on va les voir. On a toujours le droit à une boîte de Doliprane parce que c'est un antidouleur. Et c'est vrai que, contrairement à l'homéopathie, l'efficacité du paracétamol a été totalement prouvée. Mais voilà, en général, quand on va voir un médecin, on ne repart pas les mains vides. On veut qu'il nous prescrive quelque chose. On veut avoir un médicament à prendre pour pouvoir se soigner.",
+          "chinese": "而且，当我们去看医生时，医生几乎总是会开这种药。我们总能拿到一盒多力普兰，因为它是一种止痛药。确实，与顺势疗法不同，对乙酰氨基酚的疗效已经得到了充分证实。但通常情况下，当我们去看医生时，都不会空手而归。我们希望医生能给我们开点什么药，好让我们能吃药治病。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:18:40.400",
+          "end_time": "00:18:45.440",
+          "french": "assez souvent, quand on a un rhume ou quelque chose de pas très grave, on nous prescrit du paracétamol.",
+          "chinese": "相当多时候，当我们感冒或得了些不太严重的病时，医生会开对乙酰氨基酚给我们。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:45.440",
+          "end_time": "00:19:14.559",
+          "french": "Oui, c'est vrai que c'est souvent les patients qui le demandent, qui vont vouloir absolument repartir avec quelque chose. C'est vrai qu'on s'imagine mal aller chez le docteur et puis qu'il nous dise « bon ben voilà, reposez-vous et buvez du thé ». Et il y a quelque chose qui est assez emblématique de ça. J'imagine, Hugo, que tu t'en souviens aussi bien que moi parce qu'on était jeunes à cette époque et on regardait beaucoup la télé.",
+          "chinese": "是的，确实经常是患者主动提出要求，非要带点什么回家不可。的确，我们很难想象自己去看医生，结果医生却只说一句：“好了，好好休息，多喝点茶吧。” 这种情形其实有个特别典型的例子。我想，雨果，你跟我一样肯定也记得，因为那时候我们还年轻，特别爱看电视呢。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:19:14.559",
+          "end_time": "00:19:42.660",
+          "french": "En 2002, le gouvernement a lancé une campagne pour lutter contre la surconsommation d'antibiotiques. Et c'était des publicités où on voyait des personnes interagir, et puis une personne malade, et puis l'autre qui disait « t'as des antibiotiques ? » Et vraiment, comme si c'était quelque chose d'obligatoire. Et la campagne expliquait que non, ce n'était pas obligatoire.",
+          "chinese": "2002年，政府发起了一项运动，旨在遏制抗生素的过度使用。当时的广告中，人们彼此互动，随后出现一位生病的人，接着另一个人问道：“你有抗生素吗？” 仿佛服用抗生素是件理所当然的事。然而，这场运动明确指出：其实，服用抗生素并非必须。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:42.660",
+          "end_time": "00:20:05.009",
+          "french": "Et le slogan, à la fin, c'était toujours : « Les antibiotiques, c'est pas automatique. » C'est vraiment accrocheur. Tout le monde connaît ce slogan en France. C'est une campagne qui avait été beaucoup diffusée et à raison parce que cette surconsommation d'antibiotiques a eu des effets assez négatifs sur la santé des Français.",
+          "chinese": "而且，最后的口号始终是“抗生素”。这可不是理所当然的。它确实非常抓人眼球。在法国，人人都知道这个口号。这是一场曾被广泛传播的宣传活动，而且这样做完全有道理，因为抗生素的过度使用对法国人的健康造成了相当负面的影响。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:20:05.009",
+          "end_time": "00:20:32.369",
+          "french": "en affaiblissant notamment les systèmes immunitaires. Moi, je sais que j'ai un ami dont la mère le gavait d'antibiotiques quand il était petit, dès qu'il avait un truc. Voilà, c'était tout de suite des antibiotiques. Et maintenant, dès qu'il y a un virus ou quelque chose, il est sûr de l'attraper. Donc voilà, malheureusement, sa mère peut-être n'avait pas vu les campagnes. Oui, et puis quand on prend trop d'antibiotiques, quand on a une vraie infection,",
+          "chinese": "尤其是会削弱免疫系统。我认识一位朋友，他小时候只要有点小毛病，他妈妈就给他猛灌抗生素。一有啥事，立马就是抗生素。现在呢，只要一遇到病毒或者什么的，他准保会中招。唉，可惜啊，他妈妈可能没看过那些宣传吧。是啊，而且，如果抗生素用得太多，尤其是在真正感染的时候……"
+        },
+        {
+          "id": 52,
+          "start_time": "00:20:32.369",
+          "end_time": "00:20:50.779",
+          "french": "Par exemple, qu'on va à l'hôpital pour une opération et que ça s'infecte un peu, on est résistant aux antibiotiques, on doit nous en donner beaucoup plus. Donc ça peut vraiment être très dangereux de prendre des antibiotiques alors qu'il n'y a pas eu de test qui démontre que c'est nécessaire.",
+          "chinese": "例如，如果我们去医院做手术，伤口稍微感染了，而我们又对抗生素产生了耐药性，医生就必须给我们使用更多剂量的抗生素。因此，在没有经过检测证明确实需要的情况下服用抗生素，真的可能非常危险。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:50.779",
+          "end_time": "00:21:19.869",
+          "french": "Ouais, ouais. Donc effectivement, c'est tous ces problèmes d'antibiorésistance. On a l'exemple aussi avec les antidépresseurs. La France, c'est un des pays dans lesquels on consomme le plus d'antidépresseurs. Parfois pour des symptômes qui sont assez légers. Donc c'est assez discutable de prescrire cette tendance qu'on a à prescrire assez systématiquement des antidépresseurs. Mais voilà, tout ça, ça va dans cette logique de prescription.",
+          "chinese": "是的，是的。所以，确实，这全都与抗生素耐药性问题有关。我们也有抗抑郁药的例子。法国是抗抑郁药消费量最高的国家之一，有时甚至用于治疗一些相当轻微的症状。因此，这种动辄就开抗抑郁药的做法，实在值得商榷。但总之，所有这些都符合当前的处方逻辑。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:21:19.869",
+          "end_time": "00:21:37.920",
+          "french": "Quand on va chez le médecin, on veut avoir un médicament pour se soigner. Donc c'est un terrain qui est favorable pour les petites pilules magiques que sont l'homéopathie parce que ça permet de répondre de façon...",
+          "chinese": "去看医生时，人们都希望得到一种药物来治疗疾病。因此，这为那些所谓“神奇小药丸”——即顺势疗法——提供了有利的土壤，因为它能够以一种……的方式做出回应。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:21:37.920",
+          "end_time": "00:22:07.119",
+          "french": "douce à ce besoin d'avoir absolument quelque chose à prendre qui est quasi un rituel finalement. Je suis malade, je m'occupe de moi, eh bien je vais prendre mes petits granules le matin, mes petits granules le soir et ça donne vraiment cette impression d'avoir un produit qui entre dans notre corps et qui nous permet de nous soigner. C'est vrai qu'en plus derrière l'homéopathie, c'est pas juste une question de granules, de médicaments, mais il y a une approche",
+          "chinese": "对这种迫切需要拥有某种东西的渴望，其实几乎成了一种仪式。我生病了，就照顾好自己——早上吃几粒小药丸，晚上也吃几粒小药丸，这真的让人感觉有一种产品进入了体内，帮助我们自我疗愈。确实，除了那些小药丸和药物之外，顺势疗法背后还蕴含着一种整体的视角。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:22:07.119",
+          "end_time": "00:22:28.700",
+          "french": "plus globale, plus holistique, on pourrait dire. Parce que même déjà avec Hahnemann, il y avait cette idée de prescrire un changement d'habitudes, un changement de régime chez le patient, de l'écouter et de ne pas se focaliser juste sur les symptômes de la maladie, mais sur le patient dans son ensemble, son style de vie, etc.",
+          "chinese": "更全局、更整体，可以这么说。因为即使在哈内曼时代，就已经有了这样一种理念：为患者开出的处方应包含生活习惯的改变、饮食结构的调整；倾听患者的声音，而不仅仅关注疾病的症状，而是着眼于患者的整体状况、生活方式等等。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:22:28.700",
+          "end_time": "00:22:46.400",
+          "french": "Et quand on va voir un médecin homéopathe, en général, les consultations sont plus longues, on a plus le temps de discuter et on se sent vraiment écouté, alors que ce n'est pas toujours le cas quand on va voir un médecin généraliste. Oui, les médecins homéopathes ont...",
+          "chinese": "而且，当我们去看一位顺势疗法医生时，通常问诊时间更长，我们有更多的时间交流，感觉真的被认真倾听，而去看全科医生时，却并不总是这样。是的，顺势疗法医生……"
+        },
+        {
+          "id": 58,
+          "start_time": "00:22:46.400",
+          "end_time": "00:23:16.109",
+          "french": "tendance à passer plus de temps avec les patients parce qu'ils vont leur faire répondre à des questions, ils vont leur poser des questions sur leurs émotions, sur leur mode de vie, sur leur histoire familiale, etc. Et du coup, ça donne vraiment cette impression d'un soin particulier. Et comme tu le disais, c'était déjà le cas à l'époque puisque c'est ça l'individualisation. Donc finalement, granule ou pas granule,",
+          "chinese": "倾向于花更多时间与患者相处，因为他们会引导患者回答问题，询问患者的感受、生活方式以及家族病史等。这样一来，确实会给人一种特别关怀的感觉。正如你所说，这种做法在当时就已经存在了，因为这正是个性化医疗的体现。所以，归根结底，无论是颗粒状还是非颗粒状，都一样。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:23:16.109",
+          "end_time": "00:23:45.359",
+          "french": "il y a déjà dans la consultation même un soin un peu différent par rapport à la médecine générale plus classique où on reste chez le médecin 15 minutes et puis parfois on change de médecin à chaque fois qu'on est malade alors que les médecins homéopathes suivent les patients pendant des années, ils les connaissent bien, etc. Donc il y a aussi cet aspect-là qui répond à un besoin et qui fait que finalement,",
+          "chinese": "在咨询过程中，已经体现出与传统普通医学略有不同的特点：在普通医学中，人们通常每次看医生只待15分钟，而且有时每次生病都会换一位医生；而顺势疗法医生则会持续多年跟踪患者，对他们非常了解，等等。因此，正是这种特点满足了一种需求，最终使得……"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:45.359",
+          "end_time": "00:24:11.750",
+          "french": "Eh bien, ça fonctionne. Ça fonctionne l'homéopathie parce qu'on peut donner l'impression que là, on critique, on dit qu'il n'y a rien dans les granules, que ce n'est pas prouvé, etc. Et pourtant, beaucoup de personnes trouvent que ça fonctionne et on sait pourquoi. Moi, j'ai l'exemple de ma copine, encore une fois. Quand on était encore à Varsovie il y a quelques années, pendant au moins un mois, je crois, elle était...",
+          "chinese": "嗯，它确实有效。顺势疗法之所以有效，是因为人们可能会觉得我们是在批评它——说药粒里什么都没有，没有经过证实等等。然而，很多人却觉得它真的管用，而且我们还知道其中的原因。我再举个我朋友的例子。几年前，我们还在华沙的时候，她至少连续一个月……"
+        },
+        {
+          "id": 61,
+          "start_time": "00:24:11.960",
+          "end_time": "00:24:37.059",
+          "french": "Elle avait une espèce de grippe ou une angine. Elle n'arrivait pas à se soigner. Elle avait vu trois médecins différents. Elle avait pris des antibiotiques et rien n'y faisait. Et puis, elle a fini par voir un médecin, une médecin homéopathe que lui avait recommandée sa mère en disant « Bon, j'ai tout essayé. Je vais finir par... Je peux aussi tester ça. » Et elle est allée voir cette médecin qui...",
+          "chinese": "她得了某种流感或扁桃体炎，怎么也治不好。她看了三位不同的医生，用过抗生素，可一点效果都没有。后来，她终于去看了一位医生——一位她的母亲推荐的顺势疗法医生。她妈妈说：“好吧，我什么都试过了，实在不行……我也试试这个吧。”于是她去了那位医生那里……"
+        },
+        {
+          "id": 62,
+          "start_time": "00:24:37.059",
+          "end_time": "00:25:03.210",
+          "french": "a fait une consultation d'une heure avec elle, qui lui a prescrit des médicaments homéopathiques et, miracle, deux jours après cette consultation, elle était soignée. Et ça, comme on l'a déjà dit, il n'y a quasiment pas de principe actif dans ces petits granules sucrés, comment est-ce qu'on peut l'expliquer ? Eh bien, par ce qu'on appelle l'effet placebo. Alors, est-ce que tu peux nous dire ce que c'est cet effet placebo ?",
+          "chinese": "他与她进行了一小时的咨询，医生给她开了些顺势疗法药物。奇迹般地，就在咨询后的两天，她的病情竟然痊愈了。正如我们之前所说，这些小小的糖粒中几乎不含任何有效成分，这究竟是怎么解释呢？嗯，这就涉及到了一种被称为“安慰剂效应”的现象。那么，你能跟我们讲讲什么是安慰剂效应吗？"
+        },
+        {
+          "id": 63,
+          "start_time": "00:25:03.319",
+          "end_time": "00:25:31.299",
+          "french": "L'effet placebo, c'est quand on prend un médicament, et pas forcément un médicament en général, quand on reçoit un soin et que ce soin n'a pas de principe actif, mais que ça fonctionne quand même parce qu'il y a un aspect psychologique dans la guérison. De toute façon, comme on le disait tout à l'heure, il y a beaucoup de maladies pour lesquelles il faut juste attendre que ça passe, se reposer, s'hydrater.",
+          "chinese": "安慰剂效应是指，当我们服用某种药物——不一定非得是传统意义上的药物——接受某种治疗时，即使这种治疗本身并不含有任何活性成分，却依然能够发挥作用，这是因为治愈过程中存在心理因素的作用。无论如何，正如我们刚才所提到的，许多疾病其实只需耐心等待，好好休息、多喝水，就能自行好转。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:25:31.299",
+          "end_time": "00:26:00.559",
+          "french": "Mais du coup, on peut guérir plus vite ou en tout cas, on peut avoir l'impression de guérir plus vite parce qu'on est actif, parce qu'on prend soin de nous. Et d'ailleurs, cet effet placebo de l'homéopathie fonctionne même, par exemple, sur les animaux et sur les bébés parce que, en fait, c'est les parents ou les propriétaires des animaux qui vont avoir ce soin qu'ils donnent à leurs...",
+          "chinese": "但这样一来，我们就能更快地康复，或者至少会觉得自己康复得更快，这是因为我们积极行动，好好照顾自己。事实上，这种来自安慰剂效应的顺势疗法效果甚至对动物和婴儿都有效——因为实际上，给予动物或婴儿这种关怀的正是它们的父母或主人。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:26:00.559",
+          "end_time": "00:26:15.619",
+          "french": "protégés, et qui vont passer du temps, leur donner leurs petits granules, ce qui va s'accompagner d'un moment de caresse, etc. Et ça c'est hyper important dans le soin et c'est quelque chose qui n'est pas à négliger.",
+          "chinese": "受保护的动物们，它们将度过一段时光，我们会给它们喂上一小撮颗粒饲料，同时还会陪伴它们一会儿，轻轻抚摸它们等等。这一点在护理过程中至关重要，绝对不可忽视。"
+        },
+        {
+          "id": 66,
+          "start_time": "00:26:22.710",
+          "end_time": "00:26:51.359",
+          "french": "Donc finalement, on pourrait se dire que tout est beau et tout va bien dans le monde merveilleux de l'homéopathie, en tout cas en France, mais c'est pas vraiment le cas. Même chez nous, dans le royaume de l'homéopathie, depuis quelques années, il y a un grand débat pour savoir si, oui ou non, il faut continuer de rembourser ces médicaments. Est-ce que la Sécurité sociale doit rembourser ces médicaments homéopathiques quand ils sont prescrits par les médecins ?",
+          "chinese": "因此，我们或许会认为，在这个美妙的顺势疗法世界里——至少在法国是这样——一切都美好而顺利。但事实却并非如此。即使在我们这个顺势疗法的“王国”里，近年来也围绕着一个重大议题展开了激烈争论：究竟是否应该继续为这些药物提供报销？当医生开具处方时，社保是否应当为这些顺势疗法药物支付费用？"
+        },
+        {
+          "id": 67,
+          "start_time": "00:26:51.359",
+          "end_time": "00:27:17.180",
+          "french": "Et ce n'est pas un débat négligeable parce que ça représente plusieurs millions d'euros sur le budget de la Sécurité sociale, quasiment 127 millions en 2018. Donc, c'est une question assez importante. Et ça fait longtemps, en fait, que le débat existe parce qu'il y a un consensus médical sur le fait que les granules en soi n'ont pas de principe actif.",
+          "chinese": "而且这并非一个可以忽视的议题，因为它涉及社保预算中的数百万欧元，2018年几乎高达1.27亿欧元。因此，这是一个相当重要的问题。事实上，这一争论由来已久，因为医学界已达成共识：单纯的小颗粒本身并不含有任何活性成分。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:27:17.180",
+          "end_time": "00:27:46.900",
+          "french": "Mais pendant longtemps, le fait que c'était remboursé par la Sécurité sociale, c'était justifié par le fait qu'il n'y avait pas d'effet secondaire et qu'il y avait un effet placebo. Puisque quand on décide ce qui est remboursé, en fait, on ne prend pas juste en compte l'utilité ou l'inutilité. On prend en compte la balance bénéfice-risque. Et en fait, forcément, quand on prend des granules qui ne sont que du sucre,",
+          "chinese": "但长期以来，这种药物能获得社保报销的理由是：它没有副作用，而且存在安慰剂效应。事实上，当决定哪些药物可以报销时，我们考虑的不仅仅是其有效性和无效性，还包括效益与风险的平衡。而实际上，当你服用的只是纯糖制成的颗粒时，这一点就显得尤为明显。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:27:46.900",
+          "end_time": "00:28:04.940",
+          "french": "Il n'y a pas d'effet secondaire puisqu'il n'y a pas non plus de vrai effet primaire à part le placebo. Donc pendant longtemps, on a considéré, en tout cas une partie des Français ont considéré que c'était pas mal de permettre à certains de pouvoir avoir leurs petites...",
+          "chinese": "没有副作用，因为除了安慰剂之外，根本就没有什么真正的主要效果。因此，很长一段时间以来，至少一部分法国人认为，允许某些人能够拥有他们那点小……是件不错的事。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:28:04.940",
+          "end_time": "00:28:30.509",
+          "french": "pilules magiques qui ne leur faisaient pas d'effet secondaire. Mais en 2019, il y a eu une tribune publiée par 120 médecins, chercheurs, scientifiques pour critiquer ce remboursement de l'homéopathie et demander à ce qu'il prenne fin. Et un des arguments pour justifier cette demande, c'était que quand la Sécurité sociale...",
+          "chinese": "不会产生任何副作用的神奇药丸。但2019年，有120名医生、研究人员和科学家发表了一篇评论文章，批评对顺势疗法的报销政策，并呼吁停止这种报销。他们提出的一个重要理由是：当社保……"
+        },
+        {
+          "id": 71,
+          "start_time": "00:28:30.509",
+          "end_time": "00:28:48.539",
+          "french": "Donc l'État rembourse ces médicaments. Ça envoie le signal que finalement l'homéopathie est validée et approuvée par les hautes sphères politiques. Donc ça veut dire qu'elle est efficace. En tout cas, c'est ce que les gens peuvent penser. Donc c'est une forme de désinformation.",
+          "chinese": "因此，国家会报销这些药物。这传递出一个信号：最终，顺势疗法得到了高层政界人士的认可与肯定。这意味着顺势疗法是有效的——至少，人们可能会这样认为。因此，这是一种形式的虚假信息。"
+        },
+        {
+          "id": 72,
+          "start_time": "00:28:48.539",
+          "end_time": "00:29:13.730",
+          "french": "Et donc finalement, en 2019, la décision a été prise de commencer à dérembourser et ça s'est fait progressivement jusqu'à un déremboursement complet en 2021. Oui, et de la même manière, la plupart des facultés, des universités de médecine dans lesquelles l'homéopathie était enseignée en option, elles ont mis fin à ces options ou à ces programmes.",
+          "chinese": "因此，最终在2019年，人们决定开始取消医保报销，这一过程逐步推进，直至2021年完全取消了医保报销。是的，同样地，大多数曾开设顺势疗法选修课的医学院和大学也已停止提供这些选修课或相关课程。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:29:13.730",
+          "end_time": "00:29:39.569",
+          "french": "Et le titre de médecin homéopathe n'est plus reconnu par l'Ordre des médecins. Donc l'institution officielle qui régule la profession de médecin en France ne reconnaît plus cette option de médecine homéopathique. Et voilà, donc ça marque en 2019-2021 la fin du remboursement de l'homéopathie.",
+          "chinese": "而且，医师协会已不再承认“顺势疗法医师”这一职称。因此，在法国对医师职业进行规范的官方机构也不再认可这种顺势疗法医学选项了。就这样，从2019年至2021年，顺势疗法的报销政策宣告终结。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:29:39.569",
+          "end_time": "00:29:58.240",
+          "french": "Avec ça, une diminution des ventes. Il y a eu 42 % de ventes en moins. Il me semble que si on s'intéresse vraiment aux chiffres, c'est plus que ce qui était remboursé qui a chuté. Je ne sais pas si la phrase est claire, mais c'est que...",
+          "chinese": "有了这个，销量出现了下降。销量减少了42%。我觉得，如果认真看数据的话，真正下降的不仅仅是退款金额。我不确定这句话是否清楚，但总之……"
+        },
+        {
+          "id": 75,
+          "start_time": "00:29:58.240",
+          "end_time": "00:30:27.950",
+          "french": "En déremboursant, non seulement on supprime les ventes ou beaucoup de ventes qui étaient faites via le remboursement, mais il y a aussi un effet boule de neige où du coup, tout d'un coup, les Français se méfient un peu plus, ça devient moins à la mode. Et du coup, le laboratoire Boiron a dû commencer à se diversifier et à faire d'autres choses. Bon, ils ont réussi à s'en sortir économiquement parce qu'ils sont pleins de ressources, mais ils ont dû commencer",
+          "chinese": "取消报销不仅会减少原本通过报销渠道实现的销售，甚至会导致销量大幅下滑；此外，还会产生一种滚雪球效应：突然间，法国人对这种产品开始更加警惕，它也逐渐不再流行。因此，博伊龙制药公司不得不开始多元化经营，涉足其他领域。当然，他们凭借自身雄厚的实力成功地度过了这一难关，但确实不得不迈出这一步。"
+        },
+        {
+          "id": 76,
+          "start_time": "00:30:27.950",
+          "end_time": "00:30:48.589",
+          "french": "à trouver d'autres stratégies. Donc cette décision pour la communauté scientifique et pour une partie des Français, c'est évidemment une victoire. Ils voient ça aussi comme la fin d'une inégalité parce qu'en fait, comme la Sécurité sociale remboursait ces médicaments,",
+          "chinese": "需要寻找其他策略。因此，这一决定对科学界以及部分法国人而言，无疑是一次胜利。他们也将此视为不平等现象的终结，因为实际上，此前社保一直报销这些药物，"
+        },
+        {
+          "id": 77,
+          "start_time": "00:30:48.589",
+          "end_time": "00:31:15.539",
+          "french": "Pour les Français qui ne croient pas à l'efficacité de l'homéopathie, ils avaient l'impression de financer une croyance. Ils n'étaient pas d'accord pour faire ça. Donc là, maintenant, les médicaments homéopathiques ne sont pas interdits. Ils sont toujours en vente dans toutes les pharmacies. Il y a toujours beaucoup de pharmaciens qui recommandent de les acheter. Mais quand on les achète, ce n'est pas remboursé par la Sécurité sociale. On le fait avec son propre argent.",
+          "chinese": "对于那些不相信顺势疗法疗效的法国人来说，他们觉得自己是在资助一种迷信。他们并不认同这种做法。因此，目前，顺势疗法药物并未被禁止。它们仍然在所有药店有售。许多药剂师依然推荐人们购买这些药物。不过，一旦购买，这些药物将无法由社保报销，需要自费购买。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:31:15.539",
+          "end_time": "00:31:45.299",
+          "french": "Et nous, on s'est dit en préparant ce sujet qu'on trouvait que ce débat était assez intéressant parce que ça pose la question aussi de pourquoi on rembourse collectivement certains produits pour la santé et pourquoi on se contenterait de rembourser seulement les produits qui sont très forts, qui vraiment sont des substances chimiques qui modifient le corps, alors que certains Français...",
+          "chinese": "而我们，在准备这个话题时觉得，这场辩论相当有趣，因为它也提出了这样一个问题：为什么我们要集体报销某些健康产品？又为什么我们只满足于报销那些效力特别强、真正属于能改变人体的化学物质的产品，而对一些法国人……"
+        },
+        {
+          "id": 79,
+          "start_time": "00:31:45.299",
+          "end_time": "00:32:14.930",
+          "french": "recherchent plutôt des choses plus douces, plus naturelles. Et donc, on s'est demandé s'il ne pouvait pas y avoir un entre-deux. Au lieu de rembourser des granules fabriqués par des laboratoires avec seulement du sucre dedans, pourquoi on ne pourrait pas rembourser des produits naturels, alimentaires qui permettraient d'être en bonne santé ? Et moi, j'ai pensé particulièrement à ton épisode sur le cancer, Hugo, qui m'a un peu traumatisée, je dois avouer. Ah mince, désolé !",
+          "chinese": "他们更倾向于寻找一些更温和、更天然的东西。于是，我们不禁思考：难道不能找到一种介于两者之间的方案吗？与其报销那些仅含糖分的实验室生产的颗粒状产品，何不报销一些天然的、食品级的健康产品呢？尤其是，我特别想到了你那期关于癌症的节目，雨果，说实话，它让我有点深受震撼。哎呀，真抱歉！"
+        },
+        {
+          "id": 80,
+          "start_time": "00:32:14.930",
+          "end_time": "00:32:41.019",
+          "french": "dans tout ce qu'il ne faut pas faire. Non, non, mais je rigole. C'est vrai que s'il y avait plus de prévention encadrée par la Sécurité sociale, si on avait accès à une sécurité sociale de l'alimentation pour les produits basiques qui permettent d'être en bonne santé, ce serait peut-être plus intéressant que de dépenser de l'argent pour des granules homéopathiques.",
+          "chinese": "在所有不该做的事情里。不，不，我只是开玩笑的。确实，如果能有更多由社保监管的预防措施，如果能方便地获得针对基本食品的社保保障，以确保身体健康，那或许比花钱买些顺势疗法颗粒更划算呢。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:32:41.019",
+          "end_time": "00:33:06.269",
+          "french": "Oui, c'est vrai que la prévention, c'est le nerf de la guerre. On aurait tout intérêt à dépenser beaucoup plus d'argent dans la promotion d'habitudes saines, de changements liés au mode de vie, plutôt que dans les médicaments pour soigner après les maladies. On pourrait rembourser le tofu, par exemple. Moi, ça me ferait faire beaucoup d'économies. Le tofu plutôt que les biftecks.",
+          "chinese": "是的，预防确实是制胜的关键。我们完全有必要在推广健康习惯和生活方式改变上投入更多资金，而不是把钱花在治疗疾病的药物上。比如，我们可以报销豆腐的费用。这样一来，我就能省下不少钱了。吃豆腐，而不是牛排！"
+        },
+        {
+          "id": 82,
+          "start_time": "00:33:06.269",
+          "end_time": "00:33:33.019",
+          "french": "Mais voilà, effectivement, c'est très intéressant cette question et ce débat sur l'homéopathie parce que ça permet d'élargir le débat à la question de société, de savoir qu'est-ce qu'on veut faire pour avoir des citoyens en bonne santé, qu'est-ce qu'on veut promouvoir, qu'est-ce que l'État veut financer. Mais voilà, ça dépasse le cadre de cet épisode, mais on espère que ça vous aura donné matière à réflexion.",
+          "chinese": "但话说回来，关于顺势疗法的这一问题和争论确实非常有趣，因为它促使我们把讨论扩展到更广泛的社会议题上——即：我们究竟想通过怎样的举措来培养健康公民？我们究竟想倡导什么？国家又究竟愿意资助哪些领域？不过，这已经超出了本期节目的讨论范围了。但我们希望，这些内容能引发大家的思考。"
+        },
+        {
+          "id": 83,
+          "start_time": "00:33:33.019",
+          "end_time": "00:33:58.279",
+          "french": "Peut-être dites-nous dans les commentaires si l'homéopathie est populaire dans votre pays, si vous aussi vous en consommez, si l'homéopathie a fait des miracles pour vous, je ne sais pas, c'est toujours intéressant. Tu as quelque chose à ajouter ? Non, je pense que c'était bien complet. Et puis n'hésitez pas à nous dire ce que ça vous inspire dans les commentaires. Super, merci beaucoup, à bientôt. À bientôt.",
+          "chinese": "也许您可以在评论区告诉我们，您的国家是否流行顺势疗法，您自己是否也服用过，以及顺势疗法是否为您创造了奇迹——反正怎么说都挺有意思的。您还有什么想补充的吗？没有，我觉得已经很全面了。另外，别忘了在评论区告诉我们您的感想哦！太棒了，非常感谢大家，我们下次再见！再见！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.379",
+        "end_time": "00:33:58.279",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 83,
+        "source_video_name": "E184 Pourquoi les Français sont-ils accros à l'homéopathie _.json",
+        "tags": [
+          "生活Vlog",
+          "旅行"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

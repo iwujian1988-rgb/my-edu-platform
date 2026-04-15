@@ -1,0 +1,696 @@
+{
+  "source_file": "SBS Easy French #274 _ hausse des taux d’intérêt, les ménages vont-ils payer l’addition _.json",
+  "channel": "SBS简易法语",
+  "video_name": "SBS Easy French #274 _ hausse des taux d’intérêt, les ménages vont-ils payer l’addition _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T00:26:48.547Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "The Passive Voice (La Voix Passive)",
+          "Relative Pronouns 'Qui' and 'Que'",
+          "Nominalization in Economic Discourse"
+        ],
+        "speaking": [
+          "Discussing economic trends and interest rates",
+          "Summarizing legal and political news",
+          "Expressing congratulations for professional achievements"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "taux d'intérêt",
+            "part_of_speech": "nom masculin",
+            "ipa": "[to dɛ̃teʁɛ]",
+            "chinese": "利率",
+            "example_sentence": {
+              "french": "La Banque centrale australienne augmente les taux d'intérêt.",
+              "chinese": "澳大利亚央行上调利率。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              4,
+              5
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "La Banque de réserve d'Australie (RBA) a décidé d'augmenter son taux d'intérêt directeur.",
+                "chinese": "澳大利亚储备银行（RBA）决定上调其基准利率。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "inflation",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛ̃flasjɔ̃]",
+            "chinese": "通货膨胀",
+            "example_sentence": {
+              "french": "La banque centrale explique cette décision par une inflation plus élevée que prévue.",
+              "chinese": "央行解释称，这一决定是由于通胀高于预期。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              5
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "L'inflation a un impact sur le pouvoir d'achat.",
+                "chinese": "通货膨胀影响购买力。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "ménages",
+            "part_of_speech": "nom masculin pluriel",
+            "ipa": "[menaʒ]",
+            "chinese": "家庭 / 住户",
+            "example_sentence": {
+              "french": "Cette hausse a un impact direct sur les ménages.",
+              "chinese": "这一增长对家庭有直接影响。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le budget impacte le quotidien des ménages français.",
+                "chinese": "预算影响着法国民众的日常生活。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "perquisitionné",
+            "part_of_speech": "verbe (participe passé)",
+            "ipa": "[pɛʁkizisjɔne]",
+            "chinese": "搜查",
+            "example_sentence": {
+              "french": "Le siège social parisien a été perquisitionné par la justice française.",
+              "chinese": "巴黎总部已被法国司法部门搜查。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La police a perquisitionné les bureaux de l'entreprise.",
+                "chinese": "警方搜查了该公司的办公室。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "algorithme",
+            "part_of_speech": "nom masculin",
+            "ipa": "[alɡɔʁitm]",
+            "chinese": "算法",
+            "example_sentence": {
+              "french": "L'enquête portait sur l'utilisation par X de son algorithme.",
+              "chinese": "调查涉及 X 平台对其算法的使用。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              11
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les réseaux sociaux utilisent des algorithmes pour personnaliser le contenu.",
+                "chinese": "社交网络使用算法来个性化内容。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "cybercriminalité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[sibɛʁkʁiminalite]",
+            "chinese": "网络犯罪",
+            "example_sentence": {
+              "french": "La section de lutte contre la cybercriminalité est intervenue.",
+              "chinese": "打击网络犯罪部门采取了行动。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              12
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La cybercriminalité est un défi majeur pour la sécurité nationale.",
+                "chinese": "网络犯罪是国家安全面临的一大挑战。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "déficit public",
+            "part_of_speech": "nom masculin",
+            "ipa": "[defisit pyblik]",
+            "chinese": "公共赤字",
+            "example_sentence": {
+              "french": "Le budget prévoit un déficit public d'environ 5 %.",
+              "chinese": "预算预计公共赤字约为 5%。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              15
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "La réduction du déficit public est une priorité du gouvernement.",
+                "chinese": "减少公共赤字是政府的优先事项。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "distinction",
+            "part_of_speech": "nom féminin",
+            "ipa": "[distɛ̃ksjɔ̃]",
+            "chinese": "荣誉 / 勋章",
+            "example_sentence": {
+              "french": "Ce prix est considéré comme l'une des plus hautes distinctions civiles.",
+              "chinese": "该奖项被视为最高级别的公民荣誉之一。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              16
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il a reçu une distinction pour son travail humanitaire.",
+                "chinese": "他因其人道主义工作而获得荣誉。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "éligible",
+            "part_of_speech": "adjectif",
+            "ipa": "[eliʒibl]",
+            "chinese": "符合条件的 / 有资格的",
+            "example_sentence": {
+              "french": "Cette formation l'a rendue éligible à de futures missions spatiales.",
+              "chinese": "这次培训使她具备了参加未来太空任务的资格。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              17
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Êtes-vous éligible pour cette bourse d'études ?",
+                "chinese": "你有资格申请这项奖学金吗？",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          },
+          {
+            "french": "aérospatiale",
+            "part_of_speech": "adjectif / nom féminin",
+            "ipa": "[aeʁɔspasjal]",
+            "chinese": "航空航天的",
+            "example_sentence": {
+              "french": "L'ingénieure aérospatiale Katherine Bennell-Pegg a été nommée.",
+              "chinese": "航空航天工程师凯瑟琳·贝纳尔佩格被提名。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              16,
+              18
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Elle travaille dans l'industrie aérospatiale.",
+                "chinese": "她在航空航天工业工作。",
+                "source_video": "SBS Easy French"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "dans la tourmente",
+            "meaning": "陷入风波 / 处于动荡中",
+            "example": {
+              "french": "Le réseau social X, anciennement Twitter, dans la tourmente.",
+              "chinese": "社交网络 X（原名 Twitter）陷入风波。"
+            },
+            "usage_note": "Used to describe a person or organization facing severe difficulties or controversy.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "mettre le sourire aux lèvres",
+            "meaning": "让人会心一笑 / 令人高兴",
+            "example": {
+              "french": "La nouvelle qui va vous mettre le sourire aux lèvres.",
+              "chinese": "这个消息一定会让你会心一笑。"
+            },
+            "usage_note": "A common idiomatic expression for 'good news' or something heartwarming.",
+            "source_ids": [
+              16
+            ]
+          },
+          {
+            "expression": "dans le collimateur de",
+            "meaning": "成为……的目标 / 被……盯上",
+            "example": {
+              "french": "Dans le collimateur de la justice française, Grok, l'IA générative.",
+              "chinese": "法国司法机关的调查重点指向了 Grok，这一生成式人工智能。"
+            },
+            "usage_note": "Literally refers to the sight of a weapon; figuratively means being under close scrutiny or targeted by an authority.",
+            "source_ids": [
+              12
+            ]
+          },
+          {
+            "expression": "passer au niveau supérieur",
+            "meaning": "更上一层楼 / 进入下一阶段",
+            "example": {
+              "french": "Si vous vous sentez prêt à passer au niveau supérieur, n'hésitez pas à découvrir SBS French.",
+              "chinese": "如果您准备好更上一层楼，欢迎随时了解 SBS French。"
+            },
+            "usage_note": "Commonly used in learning or professional contexts to mean advancing to a higher level of difficulty or responsibility.",
+            "source_ids": [
+              3
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "The Passive Voice (La Voix Passive)",
+            "structure": "Sujet + être (conjugué) + participe passé + par + agent",
+            "explanation": "Used to emphasize the action or the object receiving the action rather than the doer. Common in news reporting.",
+            "example": {
+              "french": "Le siège social parisien a été perquisitionné par la justice française.",
+              "chinese": "巴黎总部已被法国司法部门搜查。"
+            },
+            "usage_note": "The past participle must agree in gender and number with the subject.",
+            "source_ids": [
+              10
+            ]
+          },
+          {
+            "name": "Relative Pronouns 'Qui' and 'Que'",
+            "structure": "Antécédent + qui (sujet) / que (objet) + verbe",
+            "explanation": "'Qui' replaces the subject of the following verb, while 'que' replaces the direct object.",
+            "example": {
+              "french": "Le gouvernement a utilisé un article spécial... qui permet de faire passer une loi sans vote.",
+              "chinese": "政府使用了一项特别条款……该条款允许在无需投票的情况下通过法律。"
+            },
+            "usage_note": "Note that 'que' becomes 'qu'' before a vowel.",
+            "source_ids": [
+              14
+            ]
+          },
+          {
+            "name": "Nominalization in Economic Discourse",
+            "structure": "Verbe → Nom (ex: augmenter → une hausse)",
+            "explanation": "French news often uses nouns derived from verbs to sound more formal and concise.",
+            "example": {
+              "french": "La banque centrale explique cette décision par une hausse de 0.25 point.",
+              "chinese": "央行将这一决定解释为 0.25 个百分点的增长。"
+            },
+            "usage_note": "Common pairs: augmenter/hausse, diminuer/baisse, rembourser/remboursement.",
+            "source_ids": [
+              5,
+              6
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[iks]",
+              "description": "The pronunciation of the letter 'X' when referring to the social network.",
+              "examples": [
+                "le réseau social X"
+              ]
+            },
+            {
+              "sound": "[ɛʁ be a]",
+              "description": "The spelling out of the acronym RBA (Reserve Bank of Australia).",
+              "examples": [
+                "La RBA indique..."
+              ]
+            }
+          ],
+          "liaison": [
+            "taux d'intérêt [to dɛ̃teʁɛ]",
+            "un impact direct [œ̃ nɛ̃pakt diʁɛkt]",
+            "les astronautes [le zastʁonot]"
+          ],
+          "intonation": "News reporting intonation: steady pace with a slight rise at the end of introductory phrases and a fall at the end of sentences."
+        },
+        "vocabulary_network": {
+          "theme": "Économie et Société",
+          "core_word": "L'Économie",
+          "related_groups": [
+            {
+              "category": "Banque",
+              "words": [
+                "taux d'intérêt",
+                "inflation",
+                "prêt immobilier",
+                "remboursements"
+              ]
+            },
+            {
+              "category": "Justice et Tech",
+              "words": [
+                "perquisitionné",
+                "enquête",
+                "algorithme",
+                "cybercriminalité"
+              ]
+            },
+            {
+              "category": "Politique",
+              "words": [
+                "budget",
+                "déficit public",
+                "impôts",
+                "motion de censure"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "L'ingénieur ___ ___ et ___ Katherine Bennell-Pegg a été ___ Australian of the Year 2026 lors d'une ___ ___ à Canberra.",
+            "answer": "aérospatiale, astronaute, nommée, cérémonie, officielle",
+            "explanation": "根据原文第 16 句：'L'ingénieur aérospatiale et astronaute Katherine Bennell-Pegg a été nommée Australian of the Year 2026 lors d'une cérémonie officielle à Canberra.'",
+            "source_ids": [
+              16
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi la Banque de réserve d'Australie (RBA) a-t-elle décidé d'augmenter les taux d'intérêt ?",
+            "options": {
+              "A": "Pour aider les familles endettées à rembourser leurs prêts.",
+              "B": "Pour ralentir la hausse des prix due à une inflation élevée.",
+              "C": "Parce que le marché du travail est trop faible.",
+              "D": "Pour encourager les ménages à acheter plus de maisons."
+            },
+            "answer": "B",
+            "explanation": "原文第 5 和 6 句提到，央行加息是因为通胀高于预期，且希望通过此举“ralentir la hausse des prix”（减缓价格上涨）。",
+            "source_ids": [
+              5,
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Le gouvernement a utilisé un article spécial de la Constitution, appelé article 49.3, qui permet de faire passer une loi sans vote.",
+            "answer": "政府援引了宪法中的一项特别条款，即第 49.3 条，该条款允许在无需投票的情况下通过一项法案。",
+            "explanation": "重点词汇：'Constitution' (宪法), 'faire passer une loi' (通过法案), 'sans vote' (无需投票)。",
+            "source_ids": [
+              14
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "将下列被动语态句子改为主动语态：'Le siège social parisien a été perquisitionné par la justice française.'",
+            "answer": "La justice française a perquisitionné le siège social parisien.",
+            "explanation": "在主动语态中，原来的施动者 'la justice française' 变为句子的主语，动词 'a été perquisitionné' 变为主动复合过去时 'a perquisitionné'。",
+            "source_ids": [
+              10
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "aérospatiale",
+            "astronaute",
+            "taux d'intérêt",
+            "inflation",
+            "perquisitionné"
+          ],
+          "covered_grammar": [
+            "Passive Voice",
+            "Relative Pronouns",
+            "Nominalization"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "X explique cette décision par Y...",
+            "explanation": "Used to provide a reason or justification for an action.",
+            "example": {
+              "french": "La banque centrale explique cette décision par une inflation élevée.",
+              "chinese": "央行将这一决定解释为高通胀所致。"
+            }
+          },
+          {
+            "pattern": "Ce prix récompense des citoyens qui...",
+            "explanation": "Used to describe the purpose of an award or recognition.",
+            "example": {
+              "french": "Ce prix récompense des citoyens qui apportent une contribution remarquable.",
+              "chinese": "该奖项旨在表彰做出卓越贡献的公民。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are discussing the latest news with a French-speaking friend. You need to talk about the economic changes in Australia and the new Australian of the Year.",
+          "requirements": "Use at least 2 vocabulary words (e.g., taux d'intérêt, distinction) and 1 key expression (e.g., mettre le sourire aux lèvres).",
+          "starter": "Tu as entendu les nouvelles ? La RBA a encore augmenté les taux d'intérêt..."
+        }
+      },
+      "summary": {
+        "content": "This lesson covers a news bulletin from SBS Easy French. It discusses the Australian Reserve Bank's decision to raise interest rates to 3.85% to combat inflation, the legal investigation into the social media platform X (Twitter) regarding its algorithms and AI safety, the controversial adoption of the French 2026 budget using Article 49.3, and the inspiring story of Katherine Bennell-Pegg, the first qualified female astronaut representing Australia, who was named Australian of the Year 2026.",
+        "keywords": [
+          "Économie",
+          "RBA",
+          "Justice",
+          "X",
+          "Budget",
+          "Astronaute"
+        ],
+        "difficulty_note": "The text is at a B1/B2 level due to technical vocabulary related to finance, law, and politics. The sentence structures are typical of journalistic French."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "00:08:32"
+        },
+        "theme": "Actualités Internationales (Économie, Justice, Espace)",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.410",
+          "end_time": "00:00:33.100",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时候我真想，唉，要不我还是放弃吧。《工作进行时》是一个播客，旨在帮助技术移民在新国家重新建立职业生涯。你将听到鼓舞人心的真实故事、专家建议以及实用技巧，助你找到工作并实现职业发展。《工作进行时》，现在就去你常听播客的地方收听吧！"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:33.689",
+          "end_time": "00:01:06.540",
+          "french": "Vous êtes avec SBS French. Retrouvez les rubriques sur sbs.com.au/french. Bonjour et bienvenue dans ce nouvel épisode de SBS Easy French. Ce podcast est réalisé en partenariat avec l'Alliance française de Melbourne. Chaque semaine, vous avez rendez-vous avec Easy French, votre compagnon pour apprendre le français à votre rythme.",
+          "chinese": "您正在收听SBS法语节目。更多栏目内容，请访问sbs.com.au/french。大家好，欢迎收听SBS轻松法语的最新一期节目！本播客由墨尔本法国联盟联合制作。每周，我们与您相约“轻松法语”，陪伴您以自己的节奏学习法语。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:06.709",
+          "end_time": "00:01:33.099",
+          "french": "Si ce n'est pas déjà fait, je vous invite à vous inscrire à notre newsletter sur le site web de SBS French pour recevoir la transcription de cette émission et de toutes les autres sur votre boîte mail tous les vendredis. Et si vous vous sentez de plus en plus à l'aise avec le français et prêt à passer au niveau supérieur, n'hésitez pas à découvrir SBS French. Vous êtes avec Marianne Mourat et voici votre journal.",
+          "chinese": "如果尚未注册，我诚邀您在SBS French网站上订阅我们的时事通讯，以便每星期五通过电子邮件收到本期节目及所有其他节目的文字稿。如果您觉得自己越来越适应法语，并已准备好更上一层楼，欢迎随时了解SBS French。您现在收听的是玛丽安·穆拉特为您带来的新闻播报。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:38.170",
+          "end_time": "00:02:01.030",
+          "french": "On commence avec les titres. La Banque centrale australienne augmente les taux d'intérêt. Le réseau social X, anciennement Twitter, dans la tourmente. La France adopte enfin le budget 2026. Et enfin, la bonne nouvelle de la semaine, l'astronaute Katherine Bennell-Pegg a été désignée Australian of the Year 2026.",
+          "chinese": "我们从头条新闻开始。澳大利亚央行上调利率。社交网络X（原名Twitter）陷入风波。法国终于通过了2026年预算案。最后，本周的喜讯是，宇航员凯瑟琳·贝纳尔佩格被授予2026年度澳大利亚人称号。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:02:02.870",
+          "end_time": "00:02:29.639",
+          "french": "La Banque de réserve d'Australie (RBA) a décidé d'augmenter son taux d'intérêt directeur pour la première fois depuis deux ans. Le taux est passé de 3,6 % à 3,85 %, soit une hausse de 0,25 point. La banque centrale explique cette décision par une inflation plus élevée que prévue et une économie australienne jugée encore trop dynamique.",
+          "chinese": "澳大利亚储备银行（RBA）决定自两年来首次上调其基准利率。此次加息幅度为0.25个百分点，利率从3.6%上调至3.85%。央行解释称，这一决定是基于通胀水平高于预期，以及澳大利亚经济仍过于强劲的考量。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:29.849",
+          "end_time": "00:02:52.009",
+          "french": "Cette hausse a un impact direct sur les ménages. Les crédits immobiliers deviennent plus chers. Par exemple, pour un prêt immobilier de 600 000 dollars, les remboursements augmentent d'environ 90 dollars par mois. La RBA indique qu'elle veut ainsi ralentir la hausse des prix, même si cette décision est difficile pour les familles endettées.",
+          "chinese": "这一加息对家庭产生了直接的影响。房贷变得更加昂贵。例如，对于一笔60万美元的房贷，每月还款额将增加约90美元。澳大利亚储备银行表示，此举旨在减缓房价上涨速度，尽管这对负债家庭而言是一项艰难的决定。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:52.219",
+          "end_time": "00:03:12.620",
+          "french": "Réaction du trésorier Jim Chalmers.",
+          "chinese": "财政部长吉姆·查尔默斯的回应。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:12.819",
+          "end_time": "00:03:30.919",
+          "french": "Autre réaction, celle de Michele Bullock. La gouverneure de la RBA tente de calmer les inquiétudes.",
+          "chinese": "另一种反应来自米歇尔·布洛克。澳大利亚储备银行行长试图平息人们的担忧。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:31.129",
+          "end_time": "00:03:44.620",
+          "french": "Ce niveau de taux d'intérêt est restrictif. Nous sommes en bonne position. Le marché du travail est très fort. La demande domestique est en reprise. Ce sont de bonnes choses.",
+          "chinese": "这种利率节奏非常负面。我们目前处境良好。劳动力市场十分强劲。国内需求正在复苏。这些都是好消息。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:44.979",
+          "end_time": "00:04:13.680",
+          "french": "Actualité judiciaire chargée pour X, anciennement Twitter, le réseau social d'Elon Musk. Le siège social parisien a été perquisitionné par la justice française.",
+          "chinese": "针对前身为Twitter的社交网络平台X，即埃隆·马斯克旗下的公司，司法界近期动作频频。法国司法部门已对位于巴黎的总部实施了搜查。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:13.680",
+          "end_time": "00:04:41.730",
+          "french": "Tandis que le régulateur britannique a annoncé l'ouverture d'une enquête. Pourquoi ? Éléments de réponse avec Nathanaël Vittrant, journaliste à Radio France Internationale. La justice française convoque également Elon Musk en audition libre en avril prochain suite à une enquête ouverte il y a tout juste un an. Une enquête qui portait notamment sur l'utilisation par X de son algorithme pour promouvoir des contenus politiquement en accord avec les idées réactionnaires de son propriétaire.",
+          "chinese": "与此同时，英国监管机构宣布启动一项调查。原因何在？法国国际广播电台记者纳塔内尔·维特兰为您解读相关情况。此外，法国司法部门也已传唤埃隆·马斯克，将于明年四月接受自由问询，此前一年前刚刚启动了一项调查。这项调查主要聚焦于X平台如何利用其算法，推广与平台所有者反动思想相契合的政治内容。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:41.730",
+          "end_time": "00:05:11.439",
+          "french": "Dans la foulée de l'intervention des hommes et des femmes de la section de lutte contre la cybercriminalité, le parquet a annoncé qu'il ne communiquerait plus à l'avenir sur la plateforme X et qu'il allait élargir l'enquête à des faits de complicité, de possession et de distribution d'images pédopornographiques. Dans le collimateur de la justice française, Grok, l'IA générative intégrée à X qui produisait à la demande des versions dénudées de photos de femmes ou d'enfants bien réelles. C'est ce même dossier qui vaut à",
+          "chinese": "在反网络犯罪部门男女警员采取行动之后，检察机关宣布，今后将不再通过X平台发布相关信息，并将把调查范围扩大至共谋、持有及传播儿童色情图片等行为。法国司法机关的调查重点指向了GROC——一种集成于X平台的生成式人工智能，该工具可根据用户需求生成真实女性或儿童的裸体照片版本。正是这一案件，使得……"
+        },
+        {
+          "id": 13,
+          "start_time": "00:05:11.439",
+          "end_time": "00:05:36.839",
+          "french": "X une enquête du gendarme de la protection des données britannique. Un gendarme inquiet de l'utilisation faite des images postées par les utilisateurs du réseau social. Que révèle cette dérive ? X risque une amende au Royaume-Uni qui pourrait s'élever jusqu'à 4 % de son chiffre d'affaires. Après plusieurs mois de crise politique, le budget de l'État français pour 2026 a, enfin, été définitivement adopté.",
+          "chinese": "X，英国数据保护监察员的一项调查。这位监察员对社交网络用户发布的图像被滥用的情况深感忧虑，这一趋势令人担忧。X 在英国可能面临最高达其营业额 4% 的罚款。经过数月的政治危机，法国 2026 年的国家预算终于获得最终通过。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:37.110",
+          "end_time": "00:05:55.399",
+          "french": "Le gouvernement a utilisé un article spécial de la Constitution, appelé article 49.3, qui permet de faire passer une loi sans vote, sauf si le gouvernement est renversé. Deux motions de censure ont été déposées contre le gouvernement, mais elles ont été rejetées.",
+          "chinese": "政府援引了宪法中的一项特别条款，即第49.3条，该条款允许在政府未被推翻的情况下，无需投票即可通过一项法案。针对政府已提出了两项不信任动议，但均遭否决。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:55.540",
+          "end_time": "00:06:13.060",
+          "french": "Le budget prévoit un déficit public d'environ 5 %, une augmentation des dépenses militaires et des hausses d'impôts pour certaines grandes entreprises. Le gouvernement explique que ce budget est nécessaire pour assurer la stabilité économique du pays.",
+          "chinese": "预算预计公共赤字约为5%，军事支出增加，部分大型企业将面临增税。政府表示，这一预算对于确保国家经济稳定至关重要。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:14.649",
+          "end_time": "00:06:42.759",
+          "french": "Et enfin, on termine avec la feel-good news de la semaine, la nouvelle qui va vous mettre le sourire aux lèvres. L'ingénieur aérospatial et astronaute Katherine Bennell-Pegg a été nommée Australian of the Year 2026 lors d'une cérémonie officielle à Canberra. Ce prix, considéré comme l'une des plus hautes distinctions civiles du pays, récompense des citoyens qui apportent une contribution remarquable à la société australienne.",
+          "chinese": "最后，我们以本周的暖心消息收尾——这个消息一定会让你会心一笑。航空航天工程师兼宇航员凯瑟琳·贝纳尔佩格在堪培拉举行的正式仪式上被授予2026年度澳大利亚人称号。这一奖项被视为该国最高级别的公民荣誉之一，旨在表彰那些为澳大利亚社会作出杰出贡献的公民。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:43.290",
+          "end_time": "00:07:08.459",
+          "french": "Katherine Bennell-Pegg est reconnue comme la première astronaute officiellement qualifiée représentant l'Australie. En 2024, elle a achevé avec succès le programme de formation d'astronaute du Centre européen des astronautes de l'Agence spatiale européenne en Allemagne. Cette formation intensive l'a rendue éligible à de futures missions spatiales internationales.",
+          "chinese": "凯瑟琳·贝内尔·佩格被公认为首位正式获得资格的澳大利亚女宇航员。2024年，她成功完成了位于德国的欧洲航天局欧洲宇航员中心的宇航员培训项目。这一高强度培训使她具备了参与未来国际太空任务的资格。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:07:08.819",
+          "end_time": "00:07:29.379",
+          "french": "Ingénieure aérospatiale de formation, elle occupe aussi le poste de directrice de la technologie spatiale à l'Australian Space Agency. Elle participe donc activement au développement du programme spatial national. Ainsi, elle contribue à la structuration d'un secteur encore jeune en Australie.",
+          "chinese": "她受过航空航天工程训练，同时担任澳大利亚航天局空间技术总监。因此，她积极参与国家航天计划的制定与发展。由此，她为澳大利亚这一尚处于起步阶段的航天领域奠定了坚实的基础。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:29.910",
+          "end_time": "00:07:57.829",
+          "french": "Merci d'avoir suivi votre journal en français facile. Nous nous retrouvons la semaine prochaine pour un nouvel épisode de SBS Easy French. À bientôt.",
+          "chinese": "感谢您收看我们的法语简易版新闻。我们下周再见，敬请期待SBS法语简易版的全新一集。再见！"
+        },
+        {
+          "id": 20,
+          "start_time": "00:08:03.990",
+          "end_time": "00:08:32.659",
+          "french": "Starting a new life in Australia isn't easy. A lot of companies have rejected me. Sometimes I feel like, oh, I'm going to quit, I'll give up. Work in Progress is a podcast to help skilled migrants rebuild their careers in a new country. You'll hear inspiring real-life stories, expert advice and valuable tips to help you find a job and advance your career. Work in Progress. Listen now wherever you get your podcasts.",
+          "chinese": "在澳大利亚开启新生活并不容易。很多公司都拒绝了我。有时候，我甚至会想：唉，要不我还是放弃吧，干脆不干了。《工作进行时》是一个播客，旨在帮助技术移民在新国家重新规划自己的职业生涯。在这里，你将听到鼓舞人心的真实故事、专家建议以及实用的技巧，助你找到理想工作并实现职业发展。《工作进行时》，现在就去你常听播客的地方收听吧！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "SBS简易法语",
+        "start_time": "00:00:04.410",
+        "end_time": "00:08:32.659",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 20,
+        "source_video_name": "SBS Easy French #274 _ hausse des taux d’intérêt, les ménages vont-ils payer l’addition _.json",
+        "tags": [
+          "职场",
+          "科技前沿"
+        ]
+      },
+      "_quality_check": {
+        "passed": true,
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0
+      }
+    }
+  }
+}

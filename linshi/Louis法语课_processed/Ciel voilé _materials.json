@@ -1,0 +1,747 @@
+{
+  "source_file": "Ciel voilé .json",
+  "channel": "Louis法语课",
+  "video_name": "Ciel voilé ",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T02:53:09.923Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 13,
+          "review_words": 0
+        },
+        "grammar": [
+          "La voix passive (被动语态)",
+          "L'imparfait et le passé composé (未完成过去时与复合过去时的交替使用)",
+          "Les pronoms relatifs indéfinis : ce que / ce qui (指示代词+关系代词)"
+        ],
+        "speaking": [
+          "Exprimer sa déception face à une situation attendue",
+          "Décrire des conditions météorologiques empêchant une observation"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "saveur",
+            "part_of_speech": "nom",
+            "ipa": "[sa.vœʁ]",
+            "chinese": "风味，味道",
+            "example_sentence": {
+              "french": "C'est la saveur café que vous aimez.",
+              "chinese": "这是您喜欢的咖啡风味。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame.",
+                "chinese": "享受身体渴望的美味与营养，犒劳一下自己吧。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "caféine",
+            "part_of_speech": "nom",
+            "ipa": "[ka.fe.in]",
+            "chinese": "咖啡因",
+            "example_sentence": {
+              "french": "C'est la saveur café que vous aimez, mais sans la caféine.",
+              "chinese": "这是您喜欢的咖啡风味，但不含咖啡因。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "C'est la saveur café que vous aimez, mais sans la caféine.",
+                "chinese": "这是您喜欢的咖啡风味，但不含咖啡因。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "nutritionnel",
+            "part_of_speech": "adjectif",
+            "ipa": "[ny.tʁi.sjɔ.nɛl]",
+            "chinese": "营养的",
+            "example_sentence": {
+              "french": "Ce shake nutritionnel tout-en-un offre un goût intense.",
+              "chinese": "这款多效合一的营养奶昔口感浓郁。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Ce shake nutritionnel tout-en-un offre un goût intense et authentique.",
+                "chinese": "这款多效合一的营养奶昔带来浓郁纯正的口感。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "authentique",
+            "part_of_speech": "adjectif",
+            "ipa": "[o.tɑ̃.tik]",
+            "chinese": "纯正的，正宗的，真实的",
+            "example_sentence": {
+              "french": "Ce produit offre un goût intense et authentique.",
+              "chinese": "这款产品提供浓郁且纯正的口感。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Ce shake nutritionnel tout-en-un offre un goût intense et authentique.",
+                "chinese": "这款多效合一的营养奶昔带来浓郁纯正的口感。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "décaféiné",
+            "part_of_speech": "adjectif",
+            "ipa": "[de.ka.fe.i.ne]",
+            "chinese": "脱咖啡因的",
+            "example_sentence": {
+              "french": "Il est à base de grains brésiliens décaféinés.",
+              "chinese": "它由巴西脱咖啡因咖啡豆制成。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "à base de grains brésiliens décaféinés de première qualité",
+                "chinese": "由优质的巴西脱咖啡因咖啡豆制成",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "nutriment",
+            "part_of_speech": "nom",
+            "ipa": "[ny.tʁi.mɑ̃]",
+            "chinese": "营养素，营养成分",
+            "example_sentence": {
+              "french": "Votre corps réclame ces nutriments.",
+              "chinese": "您的身体需要这些营养成分。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              1,
+              9
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame.",
+                "chinese": "享受身体渴望的美味与营养，犒劳一下自己吧。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "amateur",
+            "part_of_speech": "nom",
+            "ipa": "[a.ma.tœʁ]",
+            "chinese": "爱好者，业余爱好者",
+            "example_sentence": {
+              "french": "Les amateurs d'astronomie ont été déçus.",
+              "chinese": "天文学爱好者们感到失望。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              8
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Les amateurs, ce ne sont pas des professionnels, mais ils adorent ce qu'ils font.",
+                "chinese": "所谓爱好者，他们不是专业人士，但他们热爱自己所做的事。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "déçu",
+            "part_of_speech": "adjectif",
+            "ipa": "[de.sy]",
+            "chinese": "失望的",
+            "example_sentence": {
+              "french": "J'attendais de voir ce film, mais j'ai été déçu.",
+              "chinese": "我一直期待看这部电影，但我很失望。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              5,
+              8
+            ],
+            "occurrence_count": 7,
+            "examples": [
+              {
+                "french": "Être déçu, c'est quand on s'attendait à quelque chose de bien et que finalement, c'est mauvais.",
+                "chinese": "失望，就是当你期待一件好事，结果却很糟糕。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "persistant",
+            "part_of_speech": "adjectif",
+            "ipa": "[pɛʁ.sis.tɑ̃]",
+            "chinese": "持续的，持久的",
+            "example_sentence": {
+              "french": "La pluie d'étoiles a été invisible à cause d'un voile nuageux persistant.",
+              "chinese": "由于持续的云层遮蔽，流星雨无法被观测到。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Et ce voile nuageux était persistant. Il n'est pas parti.",
+                "chinese": "而且这层云雾是一直持续的。它没有消散。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "voile",
+            "part_of_speech": "nom",
+            "ipa": "[vwal]",
+            "chinese": "面纱，遮蔽物，（云）幕",
+            "example_sentence": {
+              "french": "Il y avait devant ces étoiles comme un grand nuage, un voile nuageux.",
+              "chinese": "在这些星星前面仿佛有一大片云，一层云幕。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Un voile, c'est-à-dire qu'il y avait devant ces étoiles comme un grand nuage.",
+                "chinese": "所谓云幕，就是说在这些星星前面仿佛有一片巨大的云层。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "nuageux",
+            "part_of_speech": "adjectif",
+            "ipa": "[nɥa.ʒø]",
+            "chinese": "多云的",
+            "example_sentence": {
+              "french": "Le ciel est couvert par un voile nuageux.",
+              "chinese": "天空被一层云幕覆盖。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "La pluie d'étoiles Lyrides a été presque invisible cette année à cause d'un voile nuageux persistant.",
+                "chinese": "由于持续的云雾笼罩，今年的天琴座流星雨几乎完全看不见。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "épaisseur",
+            "part_of_speech": "nom",
+            "ipa": "[e.pɛ.sœʁ]",
+            "chinese": "厚度，浓密",
+            "example_sentence": {
+              "french": "Une épaisseur trouble empêchait de voir les étoiles.",
+              "chinese": "一层浑浊的浓雾阻挡了看星星的视线。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "une épaisseur trouble qui empêchait de voir les étoiles filantes.",
+                "chinese": "一层浓密而模糊的云雾挡住了视线，让人无法观测到流星。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "trouble",
+            "part_of_speech": "adjectif",
+            "ipa": "[tʁubl]",
+            "chinese": "浑浊的，模糊的",
+            "example_sentence": {
+              "french": "L'eau de ce lac est un peu trouble.",
+              "chinese": "这个湖的水有点浑浊。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "une épaisseur trouble qui empêchait de voir les étoiles filantes.",
+                "chinese": "一层浓密而模糊的云雾挡住了视线，让人无法观测到流星。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "tout-en-un",
+            "meaning": "多效合一的，全能的",
+            "example": {
+              "french": "Ce shake nutritionnel tout-en-un offre un goût intense.",
+              "chinese": "这款多效合一的营养奶昔口感浓郁。"
+            },
+            "usage_note": "常用于广告或产品描述中，表示一个产品具备多种功能或包含多种成分。",
+            "source_ids": [
+              1,
+              9
+            ]
+          },
+          {
+            "expression": "de première qualité",
+            "meaning": "优质的，顶级的",
+            "example": {
+              "french": "Il est fait à base de grains brésiliens décaféinés de première qualité.",
+              "chinese": "它由优质的巴西脱咖啡因咖啡豆制成。"
+            },
+            "usage_note": "用于强调产品或材料的高标准和优良品质。",
+            "source_ids": [
+              1,
+              9
+            ]
+          },
+          {
+            "expression": "se faire plaisir",
+            "meaning": "取悦自己，犒劳自己",
+            "example": {
+              "french": "Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame.",
+              "chinese": "享受身体渴望的美味与营养，犒劳一下自己吧。"
+            },
+            "usage_note": "常用于鼓励人们享受生活、美食或购买心仪的物品。",
+            "source_ids": [
+              1,
+              9
+            ]
+          },
+          {
+            "expression": "pluie d'étoiles (filantes)",
+            "meaning": "流星雨",
+            "example": {
+              "french": "La pluie d'étoiles Lyrides a été presque invisible cette année.",
+              "chinese": "今年的天琴座流星雨几乎完全看不见。"
+            },
+            "usage_note": "天文学术语的日常表达，'étoile filante' 直译为'划过的星星'，即流星。",
+            "source_ids": [
+              2,
+              3,
+              6,
+              8
+            ]
+          },
+          {
+            "expression": "à cause de",
+            "meaning": "由于，因为（通常接负面或中性原因）",
+            "example": {
+              "french": "La pluie d'étoiles a été invisible à cause d'un voile nuageux.",
+              "chinese": "由于云层遮蔽，流星雨无法被观测到。"
+            },
+            "usage_note": "后接名词，与 'grâce à'（幸亏，多亏，接正面原因）相对。",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "La voix passive (被动语态)",
+            "structure": "Sujet + être (au temps voulu) + participe passé (+ par/de + agent)",
+            "explanation": "被动语态用于强调动作的承受者或动作造成的状态，而不是动作的执行者。在原文中，'ont été déçus' 强调了天文爱好者们所处的失望状态，动作的执行者（天气）被弱化或省略。",
+            "example": {
+              "french": "Les amateurs d'astronomie ont été déçus.",
+              "chinese": "天文学爱好者们感到失望了。"
+            },
+            "usage_note": "注意过去分词必须与主语进行性数配合（amateurs 是阳性复数，所以 déçu 加 s）。",
+            "source_ids": [
+              2,
+              3,
+              4,
+              8
+            ]
+          },
+          {
+            "name": "L'imparfait et le passé composé (未完成过去时与复合过去时的交替使用)",
+            "structure": "Imparfait pour le contexte/l'état + Passé composé pour l'action achevée/le résultat",
+            "explanation": "在讲述过去的事情时，未完成过去时（Imparfait）通常用于描述背景、持续的状态或未完成的动作；而复合过去时（Passé Composé）用于描述已经完成的动作或最终的结果。原文中，'attendais' 表示过去持续了两个月的期待状态，而 'ai été' 表示最终产生的结果（感到失望）。",
+            "example": {
+              "french": "J'attendais de voir ce film depuis deux mois, mais j'ai été déçu.",
+              "chinese": "我等了两个月才去看这部电影，但结果却让我很失望。"
+            },
+            "usage_note": "这是法语叙事中最核心的时态搭配之一，理解两者的分工对提升法语表达至关重要。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "name": "Les pronoms relatifs indéfinis : ce que / ce qui (指示代词+关系代词)",
+            "structure": "ce + qui (sujet) / ce + que (objet direct)",
+            "explanation": "当关系从句没有明确的先行词，而是指代一整件事或一个概念时，使用 'ce qui'（作主语）或 'ce que'（作直接宾语）。原文中 'ce qu'il vous faut' 中，'ce que' 是动词 'falloir' 的宾语（il faut quelque chose）。",
+            "example": {
+              "french": "Ka'Chava a ce qu'il vous faut avec sa nouvelle saveur café.",
+              "chinese": "Cachava 全新推出的咖啡风味正是您所需要的。"
+            },
+            "usage_note": "在元音前，'ce que' 会省音变成 'ce qu''，而 'ce qui' 永远不省音。",
+            "source_ids": [
+              1,
+              9
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ɑ̃]",
+              "description": "鼻化元音，发音时气流同时从口腔和鼻腔流出。原文特别强调了 'persistant' 的拼写是 A-N-T，对应的发音即为 [ɑ̃]。",
+              "examples": [
+                "persistant",
+                "amateurs",
+                "attendant"
+              ]
+            },
+            {
+              "sound": "[wa]",
+              "description": "半元音组合，发音类似中文的 '哇'。在描述天文和天气的词汇中频繁出现。",
+              "examples": [
+                "voile",
+                "étoiles",
+                "voir"
+              ]
+            }
+          ],
+          "liaison": [
+            "Les amateurs [le.z‿a.ma.tœʁ]",
+            "des étoiles [de.z‿e.twal]"
+          ],
+          "intonation": "在解释词汇时（如 'Un voile, c'est-à-dire...'），语调在逗号处上扬，表示句子未完，并在解释的核心词汇上加重语气以吸引听众注意。"
+        },
+        "vocabulary_network": {
+          "theme": "L'astronomie et la météo (天文学与天气)",
+          "core_word": "Ciel (天空)",
+          "related_groups": [
+            {
+              "category": "Astronomie (天文学)",
+              "words": [
+                "étoiles",
+                "étoiles filantes",
+                "cosmos",
+                "Lyrides",
+                "amateurs d'astronomie"
+              ]
+            },
+            {
+              "category": "Météo (天气)",
+              "words": [
+                "voile nuageux",
+                "nuage",
+                "pluie",
+                "épaisseur trouble",
+                "persistant"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Ce ___ ___ ___ offre un goût intense et ___, à base de grains brésiliens ___ de première ___, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus.",
+            "answer": "shake, nutritionnel, tout-en-un, authentique, décaféinés, qualité",
+            "explanation": "根据原文第1段和第9段的广告词，这款产品被称为 'shake nutritionnel tout-en-un'（多效合一的营养奶昔），提供 'authentique'（纯正的）口感，并由 'décaféinés'（脱咖啡因的）和 'qualité'（优质的）巴西咖啡豆制成。",
+            "source_ids": [
+              1,
+              9
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, pourquoi la pluie d'étoiles Lyrides a-t-elle été presque invisible cette année ?",
+            "options": {
+              "A": "À cause d'un voile nuageux persistant qui empêchait de voir le ciel.",
+              "B": "Parce que les amateurs d'astronomie n'avaient pas le bon équipement professionnel.",
+              "C": "À cause de la pollution lumineuse très forte dans les grandes villes.",
+              "D": "Parce que les étoiles filantes étaient trop petites et rapides cette année."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文明确指出：'La pluie d'étoiles Lyrides a été presque invisible cette année à cause d'un voile nuageux persistant.'（由于持续的云雾笼罩，今年的天琴座流星雨几乎完全看不见）。选项B、C、D在原文中均未提及。",
+            "source_ids": [
+              2,
+              3,
+              7,
+              8
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "J'attendais de voir ce film depuis deux mois, mais j'ai été déçu.",
+            "answer": "我等了两个月才去看这部电影，但结果却让我很失望。",
+            "explanation": "翻译难点在于时态的把握：'attendais' (Imparfait) 表达过去持续的等待状态，译为'一直等/等了'；'ai été déçu' (Passé Composé) 表达最终产生的结果，译为'感到失望'。'depuis' 在这里表示动作持续的时间段。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Choisissez le temps correct (Imparfait ou Passé Composé) pour compléter la phrase basée sur le texte : 'Je (attendre) ___ de voir ce film depuis deux mois, mais finalement je (être) ___ déçu.'",
+            "answer": "attendais, ai été",
+            "explanation": "根据原文的语法逻辑，'attendre' 描述的是过去持续了两个月的背景状态，因此必须使用未完成过去时（Imparfait）'attendais'；而 'être déçu' 描述的是看完电影后产生的最终结果或突发的情感变化，因此必须使用复合过去时（Passé Composé）'ai été'。",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "nutritionnel",
+            "authentique",
+            "décaféiné",
+            "voile",
+            "nuageux",
+            "persistant",
+            "déçu"
+          ],
+          "covered_grammar": [
+            "L'imparfait et le passé composé",
+            "La voix passive"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Être déçu(e) par [quelque chose] / Être déçu(e) de [faire quelque chose]",
+            "explanation": "用于表达对某事或做某事感到失望。",
+            "example": {
+              "french": "J'ai été déçu par ce film.",
+              "chinese": "我对这部电影感到失望。"
+            }
+          },
+          {
+            "pattern": "À cause de + [Nom]",
+            "explanation": "用于引出导致某种负面或中性结果的原因。",
+            "example": {
+              "french": "Nous n'avons rien vu à cause des nuages.",
+              "chinese": "因为云层的缘故，我们什么也没看到。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你是一名天文爱好者。昨晚原本有一场罕见的流星雨，你期待了很久，但因为天气原因什么也没看到。今天你遇到了一位朋友，向他讲述这件事。",
+          "requirements": "使用词汇 'amateur', 'déçu', 'pluie d'étoiles', 'à cause de' 以及 'voile nuageux'。注意正确使用未完成过去时和复合过去时。",
+          "starter": "Salut ! Tu sais, hier soir, j'attendais de voir la pluie d'étoiles, mais..."
+        }
+      },
+      "summary": {
+        "content": "Ce texte se divise en deux parties : une publicité pour une boisson nutritionnelle (Ka'Chava) au goût de café décaféiné, et une courte leçon de français. La leçon explique le vocabulaire lié à une observation astronomique ratée. Le professeur détaille pourquoi les 'amateurs d'astronomie' ont été 'déçus' par la 'pluie d'étoiles' Lyrides, qui est restée invisible 'à cause d'un voile nuageux persistant'.",
+        "keywords": [
+          "astronomie",
+          "déçu",
+          "voile nuageux",
+          "nutrition",
+          "décaféiné"
+        ],
+        "difficulty_note": "Le vocabulaire thématique (astronomie, nutrition) est de niveau B1/B2, mais les structures grammaticales utilisées pour les explications sont claires et accessibles, rendant l'ensemble adapté à un niveau B1."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.000",
+          "end": "00:04:19.889"
+        },
+        "theme": "Nutrition et Astronomie (Météo)",
+        "cefr_level": "B1",
+        "vocabulary_count": 13,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.000",
+          "end_time": "00:00:23.839",
+          "french": "C'est la saveur café que vous aimez, mais sans la caféine. Ka'Chava a ce qu'il vous faut avec sa nouvelle saveur café. Ce shake nutritionnel tout-en-un offre un goût intense et authentique, à base de grains brésiliens décaféinés de première qualité, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus. Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame. Allez sur kachava.com et utilisez le code SMOOTHIE.",
+          "chinese": "这是您喜爱的咖啡口味，但不含咖啡因。Ka'Chava 推出的全新咖啡口味能满足您的需求。这款多效合一的营养奶昔采用优质的巴西脱因咖啡豆，口感浓郁纯正，含有25克蛋白质、6克纤维、绿叶蔬菜等丰富营养。用您的身体渴望的美味和营养来犒劳自己吧。请访问 kachava.com 并使用优惠码 SMOOTHIE。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:23.839",
+          "end_time": "00:00:53.130",
+          "french": "New customers get 15% off their first order. That's K-A-C-H-A-V-A dot com, code SMOOTHIE. Bonjour, aujourd'hui la leçon est : ciel voilé. Les amateurs d'astronomie ont été déçus. La pluie d'étoiles Lyrides a été presque invisible cette année à cause d'un voile nuageux persistant.",
+          "chinese": "新客户首单可享85折优惠。网址是 K-A-C-H-A-V-A.com，优惠码 SMOOTHIE。大家好，今天的课程是：多云的天空（ciel voilé）。天文爱好者们感到很失望。由于持续的云层遮挡，今年的天琴座流星雨几乎无法观测到。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:54.299",
+          "end_time": "00:01:24.230",
+          "french": "Once again, les amateurs d'astronomie ont été déçus. La pluie d'étoiles Lyrides a été presque invisible cette année à cause d'un voile nuageux persistant. Alors on commence avec les amateurs. Les amateurs, ce ne sont pas des professionnels, mais ils adorent ce qu'ils font. Ce sont des amateurs. Il y a les amateurs et les professionnels.",
+          "chinese": "再说一遍，天文爱好者们感到很失望。由于持续的云层遮挡，今年的天琴座流星雨几乎无法观测到。那么我们先从“爱好者（amateurs）”这个词开始。“爱好者”不是专业人士，但他们热爱自己做的事情。这就是爱好者。有业余爱好者，也有专业人士。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:24.540",
+          "end_time": "00:01:50.629",
+          "french": "Par exemple, dans le sport. Les amateurs d'astronomie, donc ceux qui aiment les étoiles, le cosmos, ont été déçus. Être déçu, c'est quand on s'attendait à quelque chose de bien et que finalement, c'est mauvais. C'est l'inverse. Alors, on est déçu.",
+          "chinese": "比如在体育界。天文爱好者，也就是那些喜欢星星、喜欢宇宙的人，感到很“失望（déçus）”。“失望”就是当你期待某件好事，但结果却很糟糕。情况恰恰相反。这时，我们就会感到失望。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:51.060",
+          "end_time": "00:02:08.580",
+          "french": "Par exemple, j'attendais de voir ce film depuis deux mois, mais j'ai été déçu. J'attendais de voir ce film depuis deux mois, mais j'ai été déçu. Donc finalement, ce film n'était pas bon.",
+          "chinese": "举个例子，我期待看这部电影已经两个月了，但我感到很失望。我期待看这部电影已经两个月了，但我感到很失望。所以归根结底，这部电影并不好看。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:10.139",
+          "end_time": "00:02:42.280",
+          "french": "La pluie d'étoiles. Alors une pluie, c'est « rain ». C'est ça la pluie, « the rain ». Une pluie d'étoiles, une étoile, « a star ». Dans le ciel, la nuit, on peut voir des étoiles. Et là, c'était les étoiles connues sous le nom de Lyrides. C'est un nom propre. Eh bien, cette pluie d'étoiles a été presque, « almost », presque invisible. On n'a rien vu, presque rien vu.",
+          "chinese": "“流星雨（La pluie d'étoiles）”。“pluie”就是英语里的“rain（雨）”。这就是雨，“the rain”。“Une pluie d'étoiles（一场星雨）”，“une étoile”就是“a star（星星）”。在晚上的夜空中，我们可以看到星星。而这里，指的是被称为“天琴座（Lyrides）”的流星。这是一个专有名词。那么，这场流星雨“几乎（presque）”，也就是英语里的“almost”，几乎是看不见的（invisible）。我们什么都没看到，几乎什么都没看到。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:42.740",
+          "end_time": "00:03:15.819",
+          "french": "Cette année, this year, à cause, because of, à cause d'un voile nuageux persistant. Un voile, c'est-à-dire qu'il y avait devant ces étoiles comme un grand nuage, un voile nuageux, comme un grand nuage, une épaisseur trouble qui empêchait de voir les étoiles filantes.",
+          "chinese": "“今年（Cette année）”，也就是“this year”，“因为（à cause）”，也就是“because of”，因为持续的“云层遮挡（voile nuageux）”。“Un voile（面纱/遮挡物）”，也就是说在这些星星前面有一大片云，一层云幕，就像一大片云，一层浑浊的厚云，阻挡了我们看流星的视线。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:16.180",
+          "end_time": "00:03:46.919",
+          "french": "Et ce voile nuageux était persistant. Il n'est pas parti. Attention, persistant, c'est avec en français A-N-T. Les amateurs d'astronomie ont été déçus. La pluie d'étoiles Lyrides a été presque invisible cette année à cause d'un voile nuageux persistant.",
+          "chinese": "而且这层云幕是“持续的（persistant）”。它没有散去。注意，“persistant”在法语里是以 A-N-T 结尾的。天文爱好者们感到很失望。由于持续的云层遮挡，今年的天琴座流星雨几乎无法观测到。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:49.460",
+          "end_time": "00:04:16.110",
+          "french": "C'est la saveur café que vous aimez, mais sans la caféine. Ka'Chava a ce qu'il vous faut avec sa nouvelle saveur café. Ce shake nutritionnel tout-en-un offre un goût intense et authentique, à base de grains brésiliens décaféinés de première qualité, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus. Faites-vous plaisir avec la saveur et les nutriments que votre corps réclame. Allez sur kachava.com et utilisez le code SMOOTHIE. Les nouveaux clients bénéficient de 15 % de réduction sur leur première commande.",
+          "chinese": "这是您喜爱的咖啡口味，但不含咖啡因。Ka'Chava 推出的全新咖啡口味能满足您的需求。这款多效合一的营养奶昔采用优质的巴西脱因咖啡豆，口感浓郁纯正，含有25克蛋白质、6克纤维、绿叶蔬菜等丰富营养。用您的身体渴望的美味和营养来犒劳自己吧。请访问 kachava.com 并使用优惠码 SMOOTHIE。新客户首单可享85折优惠。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:16.110",
+          "end_time": "00:04:19.889",
+          "french": "C'est K-A-C-H-A-V-A point com, code SMOOTHIE.",
+          "chinese": "网址是 K-A-C-H-A-V-A.com，优惠码 SMOOTHIE。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.000",
+        "end_time": "00:04:19.889",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 10,
+        "source_video_name": "Ciel voilé .json",
+        "tags": [
+          "艺术人文",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "Occurrence Count Accuracy",
+            "detail": "The occurrence_count for several vocabulary words (e.g., 'saveur', 'amateur', 'déçu', 'persistant') does not match the actual number of occurrences in the provided subtitles.",
+            "field": "language_analysis.vocabulary"
+          },
+          {
+            "level": "warning",
+            "check": "Pronunciation Examples Accuracy",
+            "detail": "The word 'amateurs' is incorrectly listed as an example for the nasal vowel [ɑ̃]. The word 'amateurs' is pronounced [a.ma.tœʁ] and does not contain the [ɑ̃] sound.",
+            "field": "deep_learning.pronunciation.key_sounds"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 2,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

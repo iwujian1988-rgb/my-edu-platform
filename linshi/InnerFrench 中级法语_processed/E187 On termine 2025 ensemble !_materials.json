@@ -1,0 +1,1863 @@
+{
+  "source_file": "E187 On termine 2025 ensemble !.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E187 On termine 2025 ensemble !",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T14:20:25.536Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le subjonctif après 'de manière à ce que'",
+          "Le conditionnel pour exprimer un souhait ou un projet",
+          "L'expression idiomatique 'faire ses nuits'"
+        ],
+        "speaking": [
+          "能够用法语描述个人年度总结（bilan）与未来规划",
+          "学习如何用法语推荐书籍、播客或影视作品并说明理由"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "ancrage",
+            "part_of_speech": "nom masculin",
+            "ipa": "[ɑ̃kʁaʒ]",
+            "chinese": "锚定，扎根，固定",
+            "example_sentence": {
+              "french": "2025 a été l'année de l'ancrage pour moi à Toulouse.",
+              "chinese": "2025年对我来说是在图卢兹扎根的一年。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              6,
+              8,
+              19
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "En 2025, j'ai pu m'ancrer dans la ville de Toulouse.",
+                "chinese": "在2025年，我得以在图卢兹市扎下根来。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "décortiquer",
+            "part_of_speech": "verbe",
+            "ipa": "[dekɔʁtike]",
+            "chinese": "剥壳，仔细分析，剖析",
+            "example_sentence": {
+              "french": "On décortique les savoirs pour les rendre accessibles.",
+              "chinese": "我们深入剖析知识，使其变得通俗易懂。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              12,
+              13
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Le mot décortiquer signifie chercher les détails de quelque chose.",
+                "chinese": "“décortiquer”这个词的意思是探寻某事物的细节。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "chambouler",
+            "part_of_speech": "verbe",
+            "ipa": "[ʃɑ̃bule]",
+            "chinese": "打乱，翻天覆地的变化",
+            "example_sentence": {
+              "french": "L'arrivée du chien a chamboulé notre quotidien.",
+              "chinese": "小狗的到来打乱了我们的日常生活。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              24,
+              37
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "C'est ce grand changement qui a chamboulé un peu notre quotidien.",
+                "chinese": "正是这个巨大的变化稍微打乱了我们的日常生活。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "têtu",
+            "part_of_speech": "adjectif",
+            "ipa": "[tety]",
+            "chinese": "顽固的，固执的",
+            "example_sentence": {
+              "french": "Ce petit chien est aussi mignon que têtu.",
+              "chinese": "这只小狗既可爱又固执。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              24
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il est aussi mignon que têtu.",
+                "chinese": "它既可爱又固执。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "terrier",
+            "part_of_speech": "nom masculin",
+            "ipa": "[tɛʁje]",
+            "chinese": "地洞，穴，（动物的）巢穴",
+            "example_sentence": {
+              "french": "Les teckels sont des chiens taillés pour les terriers.",
+              "chinese": "腊肠犬是为洞穴狩猎而生的狗。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              27,
+              28
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Ils chassaient surtout les animaux qui vivaient dans des terriers.",
+                "chinese": "它们主要猎捕生活在洞穴里的动物。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "s'extasier",
+            "part_of_speech": "verbe pronominal",
+            "ipa": "[sɛkstazje]",
+            "chinese": "赞美，狂喜，对...赞叹不已",
+            "example_sentence": {
+              "french": "On a tendance à s'extasier de ces nouveaux pères impliqués.",
+              "chinese": "人们倾向于对这些积极参与育儿的新手爸爸赞叹不已。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              52
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On a tendance à s'extasier de ces papas qui donnent le biberon.",
+                "chinese": "人们倾向于对那些喂奶瓶的爸爸们赞叹不已。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "concrétiser",
+            "part_of_speech": "verbe",
+            "ipa": "[kɔ̃kʁetize]",
+            "chinese": "使具体化，实现，落实",
+            "example_sentence": {
+              "french": "C'est un projet difficile à concrétiser sans ressources.",
+              "chinese": "这是一个在没有资源的情况下很难实现的计划。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              56,
+              57
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "C'est difficile de le concrétiser.",
+                "chinese": "很难将它（项目）落实。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "épidermique",
+            "part_of_speech": "adjectif",
+            "ipa": "[epidɛʁmik]",
+            "chinese": "皮肤的；（引申为）本能的，强烈的（反感）",
+            "example_sentence": {
+              "french": "J'ai une réaction épidermique à cette personne.",
+              "chinese": "我对这个人有一种本能的反感。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              62,
+              63
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Une réaction épidermique, ça veut dire que vous avez une réaction très vive.",
+                "chinese": "“表皮反应”意味着你有一种非常强烈的反应。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "bénéfique",
+            "part_of_speech": "adjectif",
+            "ipa": "[benefik]",
+            "chinese": "有益的，有利的",
+            "example_sentence": {
+              "french": "Certaines activités sont bénéfiques pour notre santé mentale.",
+              "chinese": "某些活动对我们的心理健康是有益的。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              68
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Des activités qui sont bénéfiques pour nous en général.",
+                "chinese": "总的来说对我们有益的活动。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "effréné",
+            "part_of_speech": "adjectif",
+            "ipa": "[efʁene]",
+            "chinese": "狂热的，极快的，不受拘束的",
+            "example_sentence": {
+              "french": "Le rythme de cette série est vraiment effréné.",
+              "chinese": "这部剧的节奏真的非常快。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              142
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le rythme est vraiment effréné et très très rapide.",
+                "chinese": "节奏非常狂热且非常非常快。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "refonte",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ʁəfɔ̃t]",
+            "chinese": "重塑，改版，彻底改造",
+            "example_sentence": {
+              "french": "On a fait une refonte du site internet cette année.",
+              "chinese": "我们今年对网站进行了改版。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              174
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Un des gros chantiers aussi, ça a été de faire une refonte du site internet.",
+                "chinese": "其中一个大工程就是对网站进行改版。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          },
+          {
+            "french": "fidélité",
+            "part_of_speech": "nom féminin",
+            "ipa": "[fidelite]",
+            "chinese": "忠诚，忠实",
+            "example_sentence": {
+              "french": "Merci beaucoup pour votre fidélité au podcast.",
+              "chinese": "非常感谢您对播客的忠实支持。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              168,
+              178
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Merci à toutes et à tous pour votre fidélité.",
+                "chinese": "感谢大家一直以来的支持。",
+                "source_video": "innerFrench 2025 Bilan"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "ajouter une corde à son arc",
+            "meaning": "增加一项技能，多一条路",
+            "example": {
+              "french": "Tu as ajouté une corde à ton arc en devenant autrice.",
+              "chinese": "你成为作家，又多了一项技能。"
+            },
+            "usage_note": "源自射箭，指一个人拥有多种能力或手段来达到目的。",
+            "source_ids": [
+              21
+            ]
+          },
+          {
+            "expression": "la face émergée de l'iceberg",
+            "meaning": "冰山一角",
+            "example": {
+              "french": "L'implication des pères n'est que la face émergée de l'iceberg.",
+              "chinese": "父亲的参与仅仅是冰山一角。"
+            },
+            "usage_note": "常用于表示某个复杂问题中显而易见但只是一小部分的情况。",
+            "source_ids": [
+              52
+            ]
+          },
+          {
+            "expression": "ne pas lâcher l'affaire",
+            "meaning": "不放弃，坚持到底",
+            "example": {
+              "french": "C'est compliqué, mais j'y crois, je ne lâche pas l'affaire.",
+              "chinese": "虽然很复杂，但我相信它，我不会放弃。"
+            },
+            "usage_note": "口语表达，表示在困难面前保持毅力。",
+            "source_ids": [
+              58
+            ]
+          },
+          {
+            "expression": "mettre des mots sur",
+            "meaning": "用言语表达（情感或经历）",
+            "example": {
+              "french": "Ce podcast permet de mettre des mots sur notre vie émotionnelle.",
+              "chinese": "这个播客让我们能够用言语表达我们的情感生活。"
+            },
+            "usage_note": "常用于心理学背景，指将模糊的感觉转化为清晰的语言。",
+            "source_ids": [
+              120,
+              121
+            ]
+          },
+          {
+            "expression": "rythme de croisière",
+            "meaning": "平稳状态，正常进度",
+            "example": {
+              "french": "On est sur notre rythme de croisière avec 2 épisodes par mois.",
+              "chinese": "我们现在处于每月2集的平稳发布状态。"
+            },
+            "usage_note": "原指船只或飞机的巡航速度，引申为工作或生活进入稳定、规律的阶段。",
+            "source_ids": [
+              164
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le subjonctif après 'de manière à ce que'",
+            "structure": "de manière à ce que + sujet + verbe au subjonctif",
+            "explanation": "用于引导目的状语从句，表示“为了使...，以至于...”。注意如果主从句主语一致，通常用 'de manière à + infinitif'。",
+            "example": {
+              "french": "J'ai écrit de manière à ce que ce soit très compréhensible.",
+              "chinese": "我写得非常通俗易懂（为了让它易于理解）。"
+            },
+            "usage_note": "在正式或半正式法语中常见，'soit' 是 'être' 的虚拟式现在时。",
+            "source_ids": [
+              9,
+              14
+            ]
+          },
+          {
+            "name": "Le conditionnel pour exprimer un souhait ou un projet",
+            "structure": "Sujet + Verbe (radical du futur + terminaisons de l'imparfait)",
+            "explanation": "条件式现在时常用于委婉地表达愿望、设想或尚未实现的个人计划。",
+            "example": {
+              "french": "J'aimerais bien m'acheter une maison et y faire une maison d'hôte.",
+              "chinese": "我很想买一栋房子，并在那里开一家民宿。"
+            },
+            "usage_note": "相比现在时，条件式显得更礼貌且带有“梦想”或“可能性”的色彩。",
+            "source_ids": [
+              56,
+              82,
+              84
+            ]
+          },
+          {
+            "name": "L'expression idiomatique 'faire ses nuits'",
+            "structure": "faire + ses + nuits",
+            "explanation": "这是一个专门用于婴儿的表达，指婴儿能够整夜睡觉而不吵醒父母。",
+            "example": {
+              "french": "On dit en français faire ses nuits, ça veut dire un bébé qui dort sans trop se réveiller.",
+              "chinese": "法语里说 'faire ses nuits'，意思是宝宝睡觉不太会醒。"
+            },
+            "usage_note": "这是新手父母最常被问到的问题之一。",
+            "source_ids": [
+              39
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[e.pi.dɛʁ.mik]",
+              "description": "注意 'épidermique' 中清脆的 [e] 和末尾的 [mik] 发音，不要漏掉中间的 [ʁ]。",
+              "examples": [
+                "épidermique"
+              ]
+            },
+            {
+              "sound": "[ɑ̃.kʁaʒ]",
+              "description": "鼻元音 [ɑ̃] 与 [kʁ] 组合时的连贯性。",
+              "examples": [
+                "ancrage"
+              ]
+            }
+          ],
+          "liaison": [
+            "un état [n] intense",
+            "les élections [z] municipales",
+            "un épisode [n] exceptionnel"
+          ],
+          "intonation": "在讨论个人情感和推荐时，语调起伏较大，重音常落在表达情感的形容词上（如 'incroyable', 'intense'）。"
+        },
+        "vocabulary_network": {
+          "theme": "Le Bilan et les Projets",
+          "core_word": "Évolution",
+          "related_groups": [
+            {
+              "category": "Vie Personnelle",
+              "words": [
+                "ancrage",
+                "chambouler",
+                "parentalité",
+                "santé mentale"
+              ]
+            },
+            {
+              "category": "Projets Professionnels",
+              "words": [
+                "concrétiser",
+                "refonte",
+                "nouveauté",
+                "rythme de croisière"
+              ]
+            },
+            {
+              "category": "Culture et Loisirs",
+              "words": [
+                "décortiquer",
+                "recommandation",
+                "état de flow",
+                "broderie"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "On a tendance, depuis une ___ d'années, à ___ de ces papas qui donnent le ___, qui changent les ___, qui partagent des photos sur les ___ ___ en disant « Ah, c'est formidable maintenant, les nouveaux pères, ils sont super ___ ».",
+            "answer": "20, s'extasier, biberon, couches, réseaux sociaux, impliqués",
+            "explanation": "根据原文第52句，描述了社会对新手爸爸参与育儿的普遍看法，使用了 's'extasier'（赞叹）和 'impliqués'（投入）等词。",
+            "source_ids": [
+              52
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi Ingrid et son amie ont-elles choisi le nom « Les Décortiqueuses » pour leur association ?",
+            "options": {
+              "A": "Parce que c'est un terme technique utilisé en kinésithérapie.",
+              "B": "C'est un jeu de mots entre le verbe « décortiquer » (analyser en détail) et le mot « corps ».",
+              "C": "C'est un hommage à une autrice célèbre de Bourgogne.",
+              "D": "C'est le nom d'une race de chiens chasseurs de terriers."
+            },
+            "answer": "B",
+            "explanation": "原文第12和13句明确提到，这个名字是一个发明的词，源自 'décortiquer'（剖析细节）并让人联想到 'corps'（身体），因为她们剖析关于女性身体的知识。",
+            "source_ids": [
+              12,
+              13
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Ce que je trouve très bien avec des podcasts comme ça, ce n'est pas forcément le fait de trouver des réponses, mais plutôt de mettre des mots sur notre vie émotionnelle.",
+            "answer": "我觉得这类播客非常好的一点，并不一定在于找到答案，而是在于为我们的情感生活找到恰当的措辞。",
+            "explanation": "重点在于 'mettre des mots sur' 的翻译，意为“用言语表达/定义”。",
+            "source_ids": [
+              120
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "语法",
+            "question": "Complétez la phrase en conjuguant le verbe entre parenthèses : « On va actualiser le site de manière à ce que les auditeurs ___ (pouvoir) trouver les épisodes plus facilement. »",
+            "answer": "puissent",
+            "explanation": "‘de manière à ce que’ 引导目的状语从句，必须使用虚拟式。'pouvoir' 的虚拟式现在时复数第三人称为 'puissent'。",
+            "source_ids": [
+              9,
+              175
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "s'extasier",
+            "décortiquer",
+            "impliqués",
+            "mettre des mots sur"
+          ],
+          "covered_grammar": [
+            "Le subjonctif après 'de manière à ce que'"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Tout est matière à + infinitif/nom",
+            "explanation": "表示“一切皆可成为...的素材/理由”。",
+            "example": {
+              "french": "Tout est matière à faire un épisode.",
+              "chinese": "万事万物皆可成为制作一期节目的素材。"
+            }
+          },
+          {
+            "pattern": "C'est tout le mal qu'on te souhaite",
+            "explanation": "一种反语表达，意为“祝你一切顺利/愿你的愿望成真”。",
+            "example": {
+              "french": "Tu veux retourner vivre au Portugal ? C'est tout le mal qu'on te souhaite !",
+              "chinese": "你想回葡萄牙住？那我们祝你心想事成！"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在和法国朋友进行年度总结（bilan de l'année）。",
+          "requirements": "使用条件式表达一个明年的愿望，并使用 'ancrage' 或 'concrétiser' 其中一个词。",
+          "starter": "Pour l'année 2026, j'ai un grand projet..."
+        }
+      },
+      "summary": {
+        "content": "本期 innerFrench 播客是 2025 年的年度总结。三位成员 Hugo, Ingrid 和 Anya 分享了各自的生活变化：Ingrid 在图卢兹“扎根”并成立了女性健康协会；Anya 养了一只顽固但可爱的腊肠犬并开始学习刺绣以进入“心流状态”；Hugo 则分享了成为父亲后的挑战与喜悦。此外，他们还推荐了多部优秀的法语书籍、播客和影视作品，并回顾了 innerFrench 网站改版及课程更新等专业进展。",
+        "keywords": [
+          "Bilan 2025",
+          "Parentalité",
+          "Ancrage",
+          "Recommandations culturelles",
+          "InnerFrench"
+        ],
+        "difficulty_note": "文本属于 B2 级别，语速自然且包含大量地道的习语和文化引用（如 Jul, Bref, Prix Goncourt）。语法重点在于虚拟式和条件式的灵活运用。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04",
+          "end": "01:08:33"
+        },
+        "theme": "Bilan 2025 et Projets 2026",
+        "cefr_level": "B2",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.250",
+        "end_time": "01:08:33.159",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 178,
+        "source_video_name": "E187 On termine 2025 ensemble !.json",
+        "tags": [
+          "地理",
+          "新闻时事"
+        ]
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.250",
+          "end_time": "00:00:30.570",
+          "french": "On termine 2025 ensemble. Salut à toutes et à tous. Salut Ingrid. Salut Anya. Salut. Salut. Vous avez entendu qu'aujourd'hui, l'équipe innerFrench est au grand complet pour faire ce qui est en train de devenir une tradition année après année, notre épisode bilan.",
+          "chinese": "我们一起度过2025年的尾声。大家好。嗨，Ingrid。嗨，Anya。嗨。嗨。你们听到了，今天 innerFrench 团队全员到齐，来完成一项正逐渐成为传统的年度活动：我们的年度总结。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:30.839",
+          "end_time": "00:00:59.210",
+          "french": "Autrement dit, on va vous dire un peu ce qui s'est passé pour nous cette année et qu'est-ce qu'on va leur raconter d'autre ? On va faire quelques recommandations, comme c'est vrai que c'est devenu une tradition, nos coups de cœur de l'année, les livres, les podcasts qu'on a bien aimés. Et puis, on parlera peut-être un peu de 2026 aussi ? On va vous parler aussi de nos projets perso pour l'année prochaine et de nos projets professionnels chez innerFrench.",
+          "chinese": "换句话说，我们会聊聊今年我们身上发生了什么，还会聊些什么呢？我们会做一些推荐，正如这已成为传统，分享我们今年的心头好，比如我们喜欢的书和播客。然后，我们也许也会聊聊2026年？我们还会告诉大家明年我们的个人计划以及 innerFrench 的职业项目。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:59.450",
+          "end_time": "00:01:05.900",
+          "french": "Exactement, les projets pour 2026. Bon, on y va ? Yes, c'est parti !",
+          "chinese": "没错，2026年的计划。好，我们开始吧？好，出发！"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:13.459",
+          "end_time": "00:01:42.590",
+          "french": "Donc, dans cette première partie, on s'est dit qu'allait vous raconter un peu nos vies, nos vies personnelles parce que c'est vrai qu'avec Hugo, de temps en temps, on glisse certaines informations mais de manière générale, on ne vous raconte pas les détails. Bon, on ne va pas non plus tout raconter aujourd'hui mais on s'est dit qu'on allait faire un petit bilan de l'année. Donc, je me lance pour commencer.",
+          "chinese": "所以，在第一部分，我们想聊聊我们的生活，我们的个人生活，因为确实，我和 Hugo 偶尔会透露一些信息，但通常不会说细节。好，今天我们也不会全盘托出，但我们想做一个年度小结。那么，我先开始吧。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:42.590",
+          "end_time": "00:02:03.079",
+          "french": "Moi, en fait, 2025, ça a été une année, je dirais, assez cool, assez tranquille et en même temps assez exceptionnelle pour moi puisque, vous savez, je suis habituée à beaucoup voyager et quand on voyage beaucoup, on n'a pas beaucoup de...",
+          "chinese": "对我来说，2025年其实是，我会说，挺酷、挺平静的一年，但同时对我来说又很特别，因为你们知道，我习惯了经常旅行，而当我们经常旅行时，就没有太多的……"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:03.129",
+          "end_time": "00:02:32.560",
+          "french": "d'ancrage, d'habitude où on ne fait pas beaucoup de choses qui demandent du temps puisque d'habitude mes temps libres ont été consacrés à faire des visites de nouvelles villes, à découvrir de nouvelles cultures, etc. Mais fin 2024, je suis rentrée à Toulouse après un long voyage et en fait en 2025, j'ai pu m'ancrer. Alors ancrer, A-N-C-R-E-R.",
+          "chinese": "根基，或者说习惯，我们不会做很多耗时的事情，因为通常我的空闲时间都花在参观新城市、探索新文化等等。但在2024年底，长途旅行后我回到了图卢兹，实际上在2025年，我得以“扎根”。扎根，A-N-C-R-E-R。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:32.560",
+          "end_time": "00:02:40.539",
+          "french": "C'est un verbe qui s'inspire du domaine maritime puisque ce sont les bateaux.",
+          "chinese": "这个动词灵感来自航海领域，因为通常是船只……"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:40.539",
+          "end_time": "00:03:10.259",
+          "french": "qui s'ancrent normalement. Quand on arrive au port, on lance l'ancre et puis ça permet de bien fixer le bateau. Eh bien, le bateau Ingrid, cette année, s'est bien ancré dans la ville de Toulouse. Et c'est vrai que ça a été une année assez sympa pendant laquelle j'ai pu, par exemple, faire régulièrement un club de lecture avec mes copines. J'ai pu aussi, enfin, avec une de mes meilleures amies ici à Toulouse, créer une association.",
+          "chinese": "抛锚扎根。当我们到达港口，抛下锚，就能把船固定住。嗯，Ingrid 这艘船今年在图卢兹市稳稳地扎下了根。确实，这是很棒的一年，期间我可以，比如，定期和朋友们参加读书会。我终于还能和我在图卢兹最好的朋友之一一起成立了一个协会。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:10.259",
+          "end_time": "00:03:35.340",
+          "french": "sur un sujet qui nous tient à cœur. On a créé une association qui s'appelle Les Décortiqueuses et qui a pour but de parler du corps féminin. Et on a notamment écrit un livre. Voilà, on avait écrit un texte depuis longtemps. Et cette année, on a enfin pris le temps de travailler pour le publier.",
+          "chinese": "关于一个我们非常关心的主题。我们成立了一个叫“Les Décortiqueuses”（解剖者）的协会，旨在讨论女性身体。我们还特别写了一本书。其实我们很久以前就写好了一篇文稿，今年我们终于腾出时间来完善并出版它。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:35.340",
+          "end_time": "00:03:55.460",
+          "french": "pu publier un petit manuel dans le cadre associatif qu'on a vendu lors de festivals avec aussi des très belles illustrations. Donc voilà, c'est quelque chose, je pense, qui a été important dans mon année 2025. Il est bien trouvé le nom de votre association. Vous l'écrivez C-O-R-P-S ?",
+          "chinese": "在协会框架下出版了一本小手册，我们在艺术节上出售，还配有非常精美的插图。所以，我觉得这是我2025年中很重要的一件事。你们协会的名字起得真好。你们写的是 C-O-R-P-S（身体）吗？"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:55.479",
+          "end_time": "00:04:25.250",
+          "french": "C-O-R-P-S, vous avez fait un jeu de mots ?",
+          "chinese": "C-O-R-P-S，你们玩了个谐音梗吗？"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:25.250",
+          "end_time": "00:04:39.779",
+          "french": "Quand on a brainstormé, donc quand on a réfléchi, on a pensé à ça, le corps, et puis voilà, le mot décortiquer, qui signifie chercher les détails de quelque chose, est apparu comme un bon jeu de mots.",
+          "chinese": "当我们头脑风暴，也就是思考时，我们想到了这个，“身体”（corps），然后“décortiquer”（剥壳/深入分析）这个词，意思是探究事物的细节，它看起来像个不错的谐音梗。"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:39.779",
+          "end_time": "00:05:07.410",
+          "french": "Et en fait, le mot décortiqueuse n'existe pas. C'est un mot qu'on a inventé, mais qui vient du verbe décortiquer, qui fait penser au mot corps. Et effectivement, dans l'association, on décortique les savoirs, puisque mon amie, à la base, elle est donc kinésithérapeute spécialisée sur le domaine plutôt du corps féminin. Et donc, on a décortiqué ensemble le savoir qu'elle partage avec ses patientes.",
+          "chinese": "事实上，“décortiqueuse”这个词并不存在。这是我们发明的词，它源自“décortiquer”这个动词，让人联想到“身体”（corps）这个词。确实，在协会里，我们“剖析”知识，因为我的朋友原本是一名专门从事女性身体领域的物理治疗师。所以，我们一起剖析了她与患者分享的知识。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:07.410",
+          "end_time": "00:05:36.290",
+          "french": "pour pouvoir le mettre dans un livre accessible à tous, où j'ai écrit de manière à ce que ce soit très compréhensible. Et maintenant, on en parle aussi lors de conférences, clubs de lecture, des choses comme ça. Les auditeurs peuvent l'acheter en ligne s'ils sont intéressés ou c'est seulement en format papier ? Il y a le format papier qui est disponible par envoi. Donc ça, pour ceux qui sont en France, celles et ceux qui sont en France peuvent le commander.",
+          "chinese": "为了能把它写进一本通俗易懂的书里，我写得非常易于理解。现在，我们也会在讲座、读书会之类的地方谈论它。听众如果感兴趣可以在线购买吗，还是只有纸质版？有纸质版可以通过邮寄购买。所以，在法国的人可以订购。"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:36.290",
+          "end_time": "00:05:53.930",
+          "french": "à Toulouse même, venir le chercher en main propre. Et effectivement, là, pour l'année 2026, on va mettre en vente en ligne, il faut qu'on voit comment on fait, le format PDF ou le format e-book. Donc ça, c'est un projet.",
+          "chinese": "在图卢兹本地，可以自取。确实，在2026年，我们将上线销售，我们需要看看怎么操作，PDF 格式或电子书格式。所以，这是一个计划。"
+        },
+        {
+          "id": 16,
+          "start_time": "00:05:54.170",
+          "end_time": "00:06:15.980",
+          "french": "Donc c'est quoi ? Vous avez un site internet, lesdecortiqueuses.fr ? Oui, le site internet, ce n'est pas très ambitieux, on est juste vraiment deux à faire ça, mais c'est lesdecortiqueuses.fr. On essaye, ce n'est pas très actualisé, mais d'ici la fin d'année, on va actualiser ça pour qu'il y ait toutes les infos.",
+          "chinese": "那是什么？你们有网站吗，lesdecortiqueuses.fr？是的，网站，野心不大，真的只有我们两个人在做，网址是 lesdecortiqueuses.fr。我们正在尝试，目前更新不多，但到年底前我们会更新，以便提供所有信息。"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:16.470",
+          "end_time": "00:06:29.339",
+          "french": "Ok, et donc vous avez créé l'association, vous avez déposé les statuts et tout est officiel ? Oui, on est trois dans l'asso, du coup il y a moi, cette amie et l'autre ami qui a fait les illustrations.",
+          "chinese": "好的，所以你们成立了协会，提交了章程，一切都是正式的了？是的，协会里有三个人，包括我、那位朋友和另一位负责插画的朋友。"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:29.339",
+          "end_time": "00:06:54.879",
+          "french": "Rien que pour ça, je vous invite à aller sur le site. Au-delà de vouloir faire de la publicité pour mon livre et pour notre activité, vraiment, les illustrations sont trop belles. Et cet ami artiste mérite vraiment qu'on voit son travail. C'est très cool comme initiative. Non, c'est chouette. Ça vaudrait peut-être le coup de faire un épisode sur les associations en France parce que ça fait vraiment partie de la culture française.",
+          "chinese": "仅仅为了这个，我也邀请大家去看看网站。除了想给我的书和我们的活动打广告外，说真的，插画太美了。这位艺术家朋友的工作真的很值得被看到。这真是一个很酷的倡议。不，这很棒。也许值得做一个关于法国协会的节目，因为这确实是法国文化的一部分。"
+        },
+        {
+          "id": 19,
+          "start_time": "00:06:54.879",
+          "end_time": "00:07:22.370",
+          "french": "La vie associative, c'est quelque chose d'assez important pour nous. Et je sais que ça n'existe pas forcément, en tout cas sous cette forme, partout. Donc voilà, peut-être qu'on pourra utiliser ton expérience pour en faire un épisode. Oui, c'est vrai. Tout est matière à faire un épisode. Tout est matière. Puis en plus, c'est vrai que je fréquente beaucoup les associations en général, la vie associative. Donc, je pourrais en parler sans problème. Ok, ok. Donc, on peut dire pour toi 2025, l'année de l'ancrage. Oui, c'est ça.",
+          "chinese": "协会生活对我们来说非常重要。我知道这在其他地方不一定存在，至少不是以这种形式。所以，也许我们可以利用你的经验做一期节目。是的，没错。万物皆可做节目。万物皆素材。而且，我确实经常参加各种协会，了解协会生活。所以，我可以毫无压力地聊聊。好的。所以，对你来说，2025年是“扎根”之年。是的，就是这样。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:22.370",
+          "end_time": "00:07:52.459",
+          "french": "Dernière question, tu te présentes comme auteur, autrice maintenant ? Je ne me présente pas spécialement sous un mot en particulier, mais oui, en tout cas, j'ai écrit un... C'est sûr que je suis autrice de cet ouvrage qui est plus un petit manuel qu'un livre très... Mais bon, oui, on peut dire autrice. Pas de problème. Ça peut être une de mes casquettes supplémentaires. Il y en a déjà beaucoup.",
+          "chinese": "最后一个问题，你现在介绍自己是作家了吗？我并没有特别用某个词来介绍自己，但确实，我写了一本……可以肯定我是这本作品的作者，它更像是一本小手册，而不是一本非常……但好吧，可以说我是作者。没问题。这可以是我众多的头衔之一。已经有很多了。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:52.459",
+          "end_time": "00:08:09.899",
+          "french": "Ok, ok, tu as ajouté une corde à ton arc. Voilà. Tu veux y aller, Anya, ou ? Pour moi, moi, je reste toujours ancrée à Cracovie, donc dans ma ville natale. Et le plus grand changement de cette année, pour moi, c'est un petit chien qui est apparu chez moi.",
+          "chinese": "好的，你又多了一项技能。没错。Anya，你想聊聊吗，还是？我呢，我依然扎根在克拉科夫，也就是我的家乡。今年对我来说最大的变化是，家里出现了一只小狗。"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:09.899",
+          "end_time": "00:08:36.070",
+          "french": "Par magie. Par magie. C'est ça. Un petit chien, un petit teckel. Donc, le teckel, c'est une race, je suis sûre que vous connaissez, mais c'est ce chien très caractéristique au corps très allongé et aux pattes courtes. Jamnik en polonais. Jamnik en polonais, exactement. Il est aussi connu, il me semble, comme chien saucisse ou sausage dog. Je pense que presque dans chaque langue, il y a...",
+          "chinese": "变魔术般地。变魔术般地。没错。一只小腊肠犬。腊肠犬这个品种，我确信你们都知道，就是那种身体很长、腿很短的标志性犬种。波兰语叫 Jamnik。波兰语叫 Jamnik，没错。它似乎也被称为“香肠狗”。我想几乎每种语言里都有……"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:36.279",
+          "end_time": "00:08:47.110",
+          "french": "à part ce nom officiel, il y a encore un nom comme ça. Et oui, il est super mignon. Il s'appelle Pingo. Il est maintenant avec nous depuis… Ça fait six mois.",
+          "chinese": "除了官方名称外，还有这样一个名字。是的，它超级可爱。它叫 Pingo。它和我们在一起已经……六个月了。"
+        },
+        {
+          "id": 24,
+          "start_time": "00:08:47.539",
+          "end_time": "00:09:16.389",
+          "french": "Il est avec nous et il est aussi mignon que têtu. C'est vrai que c'est un grand défi pour nous parce que j'ai jamais eu de chien, mon mari non plus. Donc, c'est vraiment la première fois qu'on essaye de s'occuper d'un petit chien. Et bien sûr, il y a plein de défis. Et c'est ce grand changement qui a chamboulé un peu notre quotidien, nos habitudes parce que c'est...",
+          "chinese": "它和我们在一起，既可爱又固执。这对我们来说确实是一个巨大的挑战，因为我从未养过狗，我丈夫也没有。所以，这真的是我们第一次尝试照顾一只小狗。当然，有很多挑战。正是这个巨大的变化打乱了我们的日常生活和习惯，因为……"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:16.409",
+          "end_time": "00:09:33.059",
+          "french": "Évidemment, on doit s'habituer à un autre rythme de la journée et tout. Je me rappelle des promenades huit fois par jour. Il y a encore quatre mois, donc oui, ça change le quotidien. Mais c'est super, je suis très contente.",
+          "chinese": "显然，我们必须适应另一种生活节奏。我记得每天要遛八次狗。那是四个月前的事了，所以是的，这改变了日常生活。但太棒了，我非常开心。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:33.059",
+          "end_time": "00:09:55.759",
+          "french": "Je crois que les teckels, c'est des chiens de chasse, non ? Exactement. Oui, oui, à la base, c'était des chiens de chasse, chiens chasseurs. Oui, malgré leur apparence où on se dit, bon, voilà, c'est juste un chien avec des petites pattes courtes et il va rester sur le canapé. C'est ça. En fait, ils sont super actifs, non ? C'est ça, c'est ça. Oui, ils sont super actifs, très indépendants. Ils aboient beaucoup aussi, malheureusement.",
+          "chinese": "我记得腊肠犬是猎犬，对吧？没错。是的，最初它们是猎犬。是的，尽管它们的外表让人觉得，好吧，这只是一只短腿小狗，它会待在沙发上。没错。其实它们非常活跃，不是吗？没错，没错。是的，它们非常活跃，非常独立。不幸的是，它们也经常吠叫。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:09:55.759",
+          "end_time": "00:10:19.840",
+          "french": "Ils sont très, très attachés, très loyaux. Donc, c'est des chiens vraiment super. Et oui, oui, à la base, c'était des chiens chasseurs. Donc, ils chassaient surtout les animaux qui vivaient dans des terriers, comme les lapins, les blaireaux. Voilà, et grâce à leur corps allongé, ils pouvaient entrer dans ces terriers. Ils sont taillés pour les terriers, ça, c'est sûr. Exactement, taillés pour les terriers.",
+          "chinese": "它们非常非常粘人，非常忠诚。所以，它们真的是很棒的狗。是的，最初它们是猎犬。它们主要猎杀住在洞穴里的动物，比如兔子、獾。没错，多亏了它们细长的身体，它们能钻进这些洞穴。它们天生就是钻洞的料，这很确定。没错，天生钻洞。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:19.840",
+          "end_time": "00:10:44.909",
+          "french": "Donc peut-être qu'un jour tu vas avoir ton chien qui va t'apporter en cadeau une taupe ou un petit animal. J'espère que non, mais on verra. Il y a plein de surprises en tout cas chaque jour. Il n'a pas essayé de creuser un terrier dans votre canapé ou quelque chose comme ça ? Pas encore, mais il creuse plein plein de terriers ici dans notre quartier.",
+          "chinese": "所以也许有一天你的狗会给你带回一只鼹鼠或小动物作为礼物。我希望不会，但走着瞧吧。总之每天都有很多惊喜。它没试过在你们的沙发上挖个洞吗？还没有，但它在我们社区挖了很多很多洞。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:10:44.909",
+          "end_time": "00:11:00.330",
+          "french": "On a un peu peur avec mon mari qu'un jour quelqu'un vienne chez nous, il va frapper à la porte, il va nous dire que désolé mais vous quittez le quartier parce qu'il y a trop de trous et bon, ça ne va pas.",
+          "chinese": "我和我丈夫有点担心，有一天会有人来敲门告诉我们，不好意思，请你们搬离这个社区，因为洞太多了，这不行。"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:00.789",
+          "end_time": "00:11:26.210",
+          "french": "J'imagine que ce n'est pas le seul tekel du quartier, non ? Parce que quand j'étais en Pologne, j'avais remarqué qu'en Pologne, il existe tous les chiens en version tekel. Donc, j'ai l'impression que c'est un chien très populaire. Mais voilà, parfois, on voit même des huskies en version tekel. Ah mon Dieu ! Donc, des huskies, mais avec les pattes très très courtes. Je n'avais pas vu ça en France, mais ouais, en Pologne, je voyais beaucoup de chiens comme ça qui avaient...",
+          "chinese": "我想那不是社区里唯一的腊肠犬吧？因为我在波兰时注意到，波兰似乎所有狗都有“腊肠版”。所以，我的感觉是这是一种非常受欢迎的狗。但你看，有时甚至能看到“腊肠版”的哈士奇。天哪！所以，是哈士奇，但腿非常非常短。我在法国没见过，但在波兰，我见过很多这样的狗……"
+        },
+        {
+          "id": 31,
+          "start_time": "00:11:26.210",
+          "end_time": "00:11:41.460",
+          "french": "une forme plus ou moins de tekel, mais on voyait que c'était croisé avec une autre race. Et du coup, je m'étais dit, les Polonais doivent beaucoup aimer les tekel. Oui, c'était l'échec qui était surtout très, très à la mode dans les années 90, il me semble.",
+          "chinese": "或多或少有腊肠犬的体型，但能看出是和其他品种混血的。于是我心想，波兰人一定非常喜欢腊肠犬。是的，腊肠犬在90年代似乎特别流行。"
+        },
+        {
+          "id": 32,
+          "start_time": "00:11:41.460",
+          "end_time": "00:12:05.809",
+          "french": "Là, maintenant, il n'y a pas énormément de chiens. Par contre, je vois que la mode, que ça revient, par exemple, dans des magasins de vêtements, on retrouve plein de vêtements avec des motifs, avec des petits teckels. Donc, il se passe quelque chose. Il se passe quelque chose. Sur Internet aussi, j'ai l'impression que, bon, sur Instagram, je vois plein de teckels, plein de...",
+          "chinese": "现在，狗的数量不算特别多。不过，我看到这种潮流正在回归，比如在服装店，能看到很多印有腊肠犬图案的衣服。所以，有些事情正在发生。有些事情正在发生。在网上我也感觉，在 Instagram 上我看到很多腊肠犬，很多……"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:05.809",
+          "end_time": "00:12:30.820",
+          "french": "d'objets, de vêtements avec ce motif. Et oui, dans notre quartier, il y en a deux. Donc, pas beaucoup, mais oui, il y en a deux. Donc, Pingo, il a un autre copain, un cousin. Un copain tekel. Oui, un copain tekel. Trop mignon. Dans les années 2010, c'était les Shiba Inu. Et là, maintenant, c'est la mode des tekels qui revient. Oui.",
+          "chinese": "印有这个图案的物品和衣服。是的，在我们社区有两只。所以，不多，但确实有两只。所以 Pingo 有另一个伙伴，一个表亲。一个腊肠犬伙伴。是的，一个腊肠犬伙伴。太可爱了。2010年代流行柴犬，现在腊肠犬的潮流又回来了。是的。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:12:31.830",
+          "end_time": "00:12:59.789",
+          "french": "Et toi, Hugo ? Moi, grand changement cette année. Bon, vous le savez déjà, ce n'est pas une surprise, mais je suis devenu papa. Donc voilà, c'est un secret que j'ai gardé pendant de longs mois parce que je n'avais pas spécialement envie d'en parler tout de suite dans le podcast. Mais bon, je pense que c'est quelque chose qui va quand même pas mal impacter, qui a commencé à pas mal impacter ma vie, ma vision des choses. Donc bon, forcément, je vais me retrouver à...",
+          "chinese": "你呢，Hugo？我今年有大变化。你们已经知道了，这不是惊喜，但我当爸爸了。所以，这是一个我保守了几个月的秘密，因为我并不特别想马上在播客里谈论它。但好吧，我觉得这还是会相当大地影响，或者说已经开始相当大地影响我的生活和我的看法。所以，必然地，我会发现自己……"
+        },
+        {
+          "id": 35,
+          "start_time": "00:12:59.789",
+          "end_time": "00:13:28.210",
+          "french": "Comme tous les parents, on a tout le temps envie de parler de ses enfants. Donc, je vais sûrement me retrouver à en parler un peu dans le podcast. Donc, je préfère l'annoncer maintenant. Et j'ai noté d'ailleurs dans le script pour préparer cet épisode, j'ai noté Marseille bébé. Parce que ça fait un peu partie des... Vous savez, souvent, il y a des villes qui ont un peu des slogans comme Londres, c'est London Calling ou des choses comme ça. Et à Marseille, ce qu'on dit en général, c'est Marseille bébé.",
+          "chinese": "像所有父母一样，总想谈论自己的孩子。所以，我肯定会发现自己在播客里聊到他。所以我宁愿现在就宣布。而且我在准备这期节目的脚本里记下了“Marseille bébé”（马赛宝贝）。因为这有点像……你们知道，通常城市都有口号，比如伦敦是“London Calling”之类的。在马赛，人们通常说“Marseille bébé”。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:13:28.210",
+          "end_time": "00:13:48.330",
+          "french": "Je pense que c'est en référence à une chanson de Jul, il me semble. Oui. C'est lui qui a annoncé le truc. Je pense que c'est lui qui dit « C'est Marseille, bébé ». C'est pas la capitale. C'est Marseille, bébé. C'est Marseille, bébé, exactement. Donc là, pour le coup, c'est vraiment un Marseille-bébé, un bébé marseillais. Donc c'est la blague que j'ai faite à tous mes amis à sa naissance.",
+          "chinese": "我想这是参考了 Jul 的一首歌。是的。是他发起的。我想是他说的“C'est Marseille, bébé”。这不是首都。是马赛，宝贝。是马赛，宝贝，没错。所以这一次，真的是一个“马赛宝贝”，一个马赛出生的宝宝。这是他在出生时我对所有朋友开的玩笑。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:13:48.500",
+          "end_time": "00:14:02.149",
+          "french": "Que dire, que dire, ça fait quelques mois déjà puisqu'il est né en mai. Bon bah les parents le savent ou si vous avez des parents dans votre entourage, vous le savez, c'est un grand bouleversement.",
+          "chinese": "怎么说呢，已经好几个月了，因为他是五月出生的。好吧，父母们都知道，或者如果你身边有父母，你也知道，这是一个巨大的翻天覆地的变化。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:02.299",
+          "end_time": "00:14:30.059",
+          "french": "Peut-être pas autant qu'un tekel, je ne sais pas. En tout cas, on ne fait pas huit promenades par jour, ça c'est sûr. Ce ne sont pas les mêmes bouleversements, en tout cas. Je pense qu'on a quelques problématiques similaires et puis d'autres qui sont plus spécifiques aux bébés humains. Mais oui, beaucoup de bonheur, pas beaucoup de sommeil. C'est un peu le truc dont... C'est la loterie en fait, souvent avec les bébés. Parfois, on a un bébé qui dort bien.",
+          "chinese": "也许不像养腊肠犬那么夸张，我不知道。总之，我们不用每天遛八次，这是肯定的。总之，不是同一种翻天覆地。我想我们有一些相似的问题，还有一些是人类婴儿特有的。但是，是的，很多幸福，睡眠不足。这是那种……其实就像抽奖，通常对于宝宝来说。有时宝宝睡得很好。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:14:30.169",
+          "end_time": "00:14:54.379",
+          "french": "bien entre guillemets dès le début, qui fait ses nuits. On dit en français faire ses nuits, ça veut dire un bébé qui dort sans trop se réveiller de 8h à 7h, on va dire. Et c'est un peu la question qu'on pose souvent aux jeunes parents. Alors ça y est, est-ce qu'il fait ses nuits ? Est-ce qu'il fait ses nuits ? En général, on le voit assez vite sur le visage des parents si le bébé fait ses nuits ou pas.",
+          "chinese": "所谓的“从一开始就睡得好”，也就是“睡整觉”。法语里说“faire ses nuits”，意思是宝宝从晚上8点睡到早上7点，中间不太醒。这是人们经常问新手父母的问题。那么，他能睡整觉了吗？他能睡整觉了吗？通常从父母的脸上就能很快看出宝宝是否睡整觉。"
+        },
+        {
+          "id": 40,
+          "start_time": "00:14:54.519",
+          "end_time": "00:15:09.289",
+          "french": "Vous ne m'avez pas vu en vidéo depuis longtemps, donc vous ne le voyez pas. Nous sommes témoins. Ingrid et Anya peuvent témoigner. Et quand on prend des photos avec sa maman, parfois on se dit bon c'est...",
+          "chinese": "你们很久没在视频里见到我了，所以你们看不出来。我们是见证人。Ingrid 和 Anya 可以作证。当我们和他妈妈一起拍照时，有时会想，好吧……"
+        },
+        {
+          "id": 41,
+          "start_time": "00:15:09.690",
+          "end_time": "00:15:31.889",
+          "french": "C'est dommage parce que, bon, du coup, on prend surtout des photos de lui et pas trop de nous parce que les derniers mois ont été un peu compliqués. Mais voilà, c'est beaucoup de bonheur et des nouvelles perspectives, on va dire, sur la vie. Oui, d'ailleurs, on a fait des épisodes, au moins un épisode, je pense, où...",
+          "chinese": "很遗憾，因为我们主要拍他，不太拍我们自己，因为过去几个月有点辛苦。但这就是很多幸福和对生活的新视角。是的，顺便说一下，我们做过几期节目，至少一期，关于……"
+        },
+        {
+          "id": 42,
+          "start_time": "00:15:31.889",
+          "end_time": "00:15:51.730",
+          "french": "Ou peut-être que certaines personnes se sont posées la question, je ne sais pas. Parce que quand on a fait « La France est-elle anti-enfant ? », c'est vrai que c'était assez inspiré dans ce que disait Hugo. Il y avait des bonnes raisons de penser tout ça et d'y être attentif.",
+          "chinese": "或者也许有些人产生过疑问，我不知道。因为当我们做“法国是否反儿童？”那期节目时，确实受到了 Hugo 所说内容的启发。有很多理由去思考这些并保持关注。"
+        },
+        {
+          "id": 43,
+          "start_time": "00:15:51.730",
+          "end_time": "00:16:07.370",
+          "french": "Moi, je le savais. J'avais un peu les sous-titres du podcast. Vous, non. Je ne sais pas si ça s'est senti. Mais ça peut influencer aussi les thèmes choisis, la manière de voir les choses.",
+          "chinese": "我当时就知道。我有点像带着播客的“内幕字幕”。你们不知道。我不知道大家是否感觉到了。但这也会影响选定的主题和看待事物的方式。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:16:07.419",
+          "end_time": "00:16:31.049",
+          "french": "C'est vrai, c'est vrai. Si je m'écoutais, je pense qu'on ne ferait que des épisodes sur la parentalité et les enfants. Mais bon, ça risque de saouler un peu ceux qui n'ont pas d'enfants ou qui n'en veulent pas. Le pire, c'est que je te suivrai vu que je suis une multi-tata pour toutes mes copines et que moi, j'adore parler de parentalité. Donc, on pourrait, mais peut-être qu'effectivement... C'est vrai qu'il y aurait matière.",
+          "chinese": "没错，没错。如果听我的，我想我们会只做关于育儿和孩子的节目。但好吧，这可能会让那些没有孩子或不想要孩子的人感到厌烦。最糟糕的是我会支持你，因为我是所有闺蜜孩子的“超级阿姨”，而且我非常喜欢聊育儿。所以，我们可以做，但也许确实……确实有很多素材。"
+        },
+        {
+          "id": 45,
+          "start_time": "00:16:31.320",
+          "end_time": "00:16:56.879",
+          "french": "Il faut lancer un nouveau podcast. Il y en a déjà pas mal des podcasts sur la parentalité. D'ailleurs, il y en a un que j'écoute, que je peux vous recommander. On n'a pas encore commencé les recommandations, mais là, j'y pense. Donc, si c'est un sujet qui vous plaît, notamment pour les pères, parce qu'il y a beaucoup de ressources de podcasts pour les mamans, pour les papas, un peu moins, sauf depuis quelques années, ça change. Et là, il y en a un que j'aime bien qui s'appelle...",
+          "chinese": "必须开一个新的播客。关于育儿的播客已经有很多了。顺便说一下，我正在听一个，可以推荐给你们。我们还没开始推荐环节，但我现在想到了。所以，如果这是一个你喜欢的主题，特别是对父亲来说，因为有很多针对妈妈的播客资源，针对爸爸的少一点，除非是最近几年，情况在改变。现在有一个我很喜欢的，叫……"
+        },
+        {
+          "id": 46,
+          "start_time": "00:16:56.879",
+          "end_time": "00:17:21.289",
+          "french": "pas patriarcat. Bon, alors, on va encore m'accuser d'être woke, mais bon, si vous nous écoutez encore, vous le savez. Les non-wokes sont partis déjà. Voilà. Mais c'est un podcast sur à la fois la place du père, mais bon, aussi un peu de la mère, et dans un contexte patriarcal. Donc voilà, c'est un jeu de mots avec papa et le mot patriarcat.",
+          "chinese": "Papatriarcat（父权制谐音）。好吧，又要有人指责我“觉醒”了，但好吧，如果你还在听我们，你就知道了。不“觉醒”的人已经离开了。没错。但这是一个关于父亲地位，也关于母亲地位，且在父权制背景下的播客。所以，这是一个“爸爸”（papa）和“父权制”（patriarcat）的谐音梗。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:17:22.039",
+          "end_time": "00:17:34.980",
+          "french": "Et c'est assez intéressant parce que moi, j'ai essayé de m'éduquer à toutes ces questions pendant la grossesse de ma copine. Mais en fait, on se rend compte, une fois que le bébé est là, que c'est très facile de...",
+          "chinese": "这很有趣，因为在我女朋友怀孕期间，我曾尝试自学所有这些问题。但事实上，一旦宝宝出生，你会发现很容易……"
+        },
+        {
+          "id": 48,
+          "start_time": "00:17:35.160",
+          "end_time": "00:18:04.240",
+          "french": "de tomber dans les schémas habituels, même si on essaie de faire attention et on n'a pas envie que ce soit seulement la maman qui s'occupe du bébé et le papa qui travaille. En fait, notamment quand la maman alète, donc quand c'est la maman qui donne directement son lait au bébé, très rapidement on tombe un peu dans ces schémas où c'est la maman qui passe la majeure partie du temps avec le bébé et puis le papa qui fait autre chose autour dans la maison et tout ça.",
+          "chinese": "陷入习惯性的模式，即使我们努力注意，不想只是妈妈照顾宝宝，爸爸去工作。事实上，特别是当妈妈哺乳时，也就是妈妈直接给宝宝喂奶时，很快就会陷入这种模式：妈妈花大部分时间陪宝宝，而爸爸在家里忙别的事。"
+        },
+        {
+          "id": 49,
+          "start_time": "00:18:04.240",
+          "end_time": "00:18:12.650",
+          "french": "Il faut vraiment essayer de se battre pour casser ça et pour, moi notamment, pour passer plus de temps avec...",
+          "chinese": "真的必须努力抗争来打破这种局面，特别是对我来说，要花更多时间陪……"
+        },
+        {
+          "id": 50,
+          "start_time": "00:18:12.950",
+          "end_time": "00:18:40.579",
+          "french": "avec mon fils dès le début parce que souvent on parle de cet instinct maternel que pour les mamans c'est quelque chose d'instinctif mais en fait c'est juste pas juste mais c'est en grande partie dépendant du temps qu'on passe avec le bébé c'est sûr que si le papa travaille et que c'est la maman qui passe du temps avec le bébé c'est elle qui va apprendre à mieux le connaître à mieux le comprendre et c'est pas un instinct c'est juste quelque chose qu'on développe",
+          "chinese": "从一开始就陪我儿子，因为人们经常谈论这种“母性本能”，觉得对妈妈来说这是本能，但事实上，这不仅仅是，或者说很大程度上取决于陪伴宝宝的时间。可以肯定的是，如果爸爸工作，妈妈陪宝宝，那她就会更了解他，更理解他，这不是本能，这只是我们培养出来的东西。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:18:40.859",
+          "end_time": "00:19:04.460",
+          "french": "Donc voilà, nous on a essayé d'équilibrer un peu ça, mais c'est quand même, je dois dire, assez compliqué. On pourra en faire un épisode. Là je pense qu'il y a beaucoup de choses à répondre, mais on va partir. Notamment une bande dessinée que tu m'avais recommandée Ingrid, que j'ai lue pendant la grossesse, qui s'appelle L'arnaque des nouveaux pères, dans le sens où...",
+          "chinese": "所以，我们尝试平衡这一点，但我必须说，这相当复杂。我们可以做一期节目。我觉得有很多可以回应的，但我们要继续了。特别是一本 Ingrid 推荐给我的漫画，我在怀孕期间读过，叫《新好爸爸的骗局》，意思是……"
+        },
+        {
+          "id": 52,
+          "start_time": "00:19:04.500",
+          "end_time": "00:19:30.849",
+          "french": "On a tendance, depuis une vingtaine d'années, à s'extasier de ces papas qui donnent le biberon, qui changent les couches, qui partagent des photos sur les réseaux sociaux en disant « Ah, c'est formidable maintenant, les nouveaux pères, ils sont super impliqués. » Et en réalité, quand on va un peu plus loin que ça, quand on creuse un peu, on se rend compte que ça, c'est juste la face émergée de l'iceberg.",
+          "chinese": "过去二十年来，我们倾向于赞美那些喂奶、换尿布、在社交网络上分享照片并说“啊，现在太棒了，新好爸爸们参与度很高”的爸爸。而实际上，当我们深入探究时，会发现这只是冰山一角。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:19:30.849",
+          "end_time": "00:19:58.589",
+          "french": "derrière tout ça, les inégalités sont loin d'avoir disparu. Juste, elles se manifestent sous différentes formes. Bref, je ne vais pas monopoliser tout l'épisode. Moi, je me retiens de répondre parce que j'ai tellement de choses à dire dessus que je me dis non, il faut suivre. Là, on doit passer aux recommandations. On ne va pas parler que de ça. Mais ça peut être un épisode maintenant que tu as révélé cette nouvelle.",
+          "chinese": "在这一切背后，不平等远未消失。只是它们以不同的形式表现出来。总之，我不想垄断整期节目。我忍着不回应，因为我有太多话要说，我想不行，得继续。现在我们该进入推荐环节了。我们不能只聊这个。但既然你透露了这个消息，现在可以做一期关于这个主题的节目了。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:19:58.589",
+          "end_time": "00:20:25.740",
+          "french": "D'ailleurs, je te redis félicitations, même si je te l'ai déjà dit, mais comme ça, devant les auditeurs. De la part des auditeurs, je suis sûre qu'ils ne manqueront pas de le faire. Mais maintenant que tu as révélé ta situation, on va pouvoir faire un épisode sur ce sujet avec des anecdotes personnelles, etc. Ça pourrait être intéressant. Donc, début 2026, on fera ça. J'annonce. J'ai hâte, j'ai hâte.",
+          "chinese": "顺便说一下，我再次向你表示祝贺，虽然我已经说过了，但在听众面前再说一次。代表听众，我相信他们一定也会这么做的。但既然你透露了你的情况，我们可以就这个话题做一期节目，分享个人轶事等等。这可能会很有趣。所以，2026年初，我们会做这个。我宣布。我很期待，我很期待。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:20:32.660",
+          "end_time": "00:20:52.079",
+          "french": "Voilà, c'était un peu notre bilan perso de cette année. Qu'est-ce que vous attendez pour 2026 ? Est-ce que vous avez des projets au point de vue personnel ou des espoirs ? Je ne sais pas. J'ai pas mal de choses que j'attends pour 2026. J'ai un projet dont j'aurais bien voulu vous parler, mais en fait, c'est...",
+          "chinese": "好了，这就是我们今年的个人总结。你们对2026年有什么期待？你们在个人方面有什么计划或希望吗？我不知道。我对2026年有很多期待。我有一个很想和你们聊聊的计划，但实际上……"
+        },
+        {
+          "id": 56,
+          "start_time": "00:20:52.079",
+          "end_time": "00:21:09.339",
+          "french": "difficile de le concrétiser. J'aimerais bien m'acheter une maison et y faire une maison d'hôte pour pouvoir accueillir des touristes. Voilà, c'est un gros projet que j'ai avec plusieurs personnes, dont mes soeurs et mon mari.",
+          "chinese": "很难实现。我很想买一栋房子，把它做成民宿，以便接待游客。好，这是我和几个人（包括我姐姐们和我丈夫）的一个大项目。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:21:09.339",
+          "end_time": "00:21:33.359",
+          "french": "Mais c'est compliqué, donc peut-être que ce sera plutôt quelque chose que je raconterai dans l'épisode de l'année fin 2026, quand ça se sera concrétisé. Je ne pensais pas que c'était aussi difficile, l'immobilier en France et les projets entrepreneuriaux, quand on n'est pas né dedans et qu'on n'a pas beaucoup de ressources.",
+          "chinese": "但这很复杂，所以也许这会是我在2026年底的年度节目中讲述的内容，等它实现的时候。我没想过在法国搞房地产和创业项目会这么难，当你不是出身于此且没有很多资源时。"
+        },
+        {
+          "id": 58,
+          "start_time": "00:21:33.359",
+          "end_time": "00:22:01.549",
+          "french": "Mais j'y crois, je ne lâche pas l'affaire. Donc voilà, c'est quelque chose que j'espère très fort pour 2026. Et voilà, et autre chose pour moi, quand je pense à 2026, c'est pas perso, mais c'est quelque chose, un domaine que j'adore et qui occupe beaucoup de mon temps. D'ailleurs, ça va se voir quand on fera les recommandations, mais c'est que la politique va être un gros sujet pour 2026.",
+          "chinese": "但我相信，我不会放弃。所以，这是我非常希望在2026年实现的事情。还有，对我来说，想到2026年，这不是私事，而是一个我热爱且占据我很多时间的领域。顺便说一下，当我们做推荐时就会看出来，那就是政治将成为2026年的一个大话题。"
+        },
+        {
+          "id": 59,
+          "start_time": "00:22:01.549",
+          "end_time": "00:22:30.700",
+          "french": "Il y a les élections municipales et quand les élections municipales seront passées, ça va tout de suite démarrer la campagne pour les élections présidentielles qui seront l'année suivante. Donc ça va être une grosse année en termes de politique et moi j'attends ça avec impatience parce que j'adore ce domaine, les débats. Je pense que ça va être riche en moments difficiles mais en même temps plein d'espoir.",
+          "chinese": "有市政选举，当市政选举结束后，紧接着就会开始明年的总统选举活动。所以从政治角度来看，这将是重要的一年，我对此充满期待，因为我热爱这个领域，热爱辩论。我认为这将充满艰难时刻，但同时也充满希望。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:22:31.190",
+          "end_time": "00:22:37.640",
+          "french": "Donc voilà, c'est ce que j'attends pour 2026. Donc politique et enfants pour l'année 2026.",
+          "chinese": "所以，这就是我对2026年的期待。所以2026年是政治和孩子的一年。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:22:37.910",
+          "end_time": "00:23:03.680",
+          "french": "Dans le podcast. Ah oui. Moi, j'étais là, enfant. Je pensais que tu allais révéler un autre scoop. Je résume pour nos auditeurs. Je pensais que tu parlais de moi et j'allais dire... Politique et enfant. C'est un peu présomptueux. D'ailleurs, les élections municipales, un petit point vocabulaire, municipales, c'est pour élire le ou la maire d'une ville. Donc ça, c'est les élections municipales.",
+          "chinese": "在播客里。啊，是的。我当时在想，孩子。我以为你要透露另一个大新闻。我为听众总结一下。我以为你在说我，我正想说……政治和孩子。这有点自负了。顺便说一下，市政选举，一个小词汇点，municipales 是为了选举一个城市的市长。所以，这就是市政选举。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:23:03.680",
+          "end_time": "00:23:20.559",
+          "french": "Oui, moi je les attends aussi à Marseille parce qu'il y a une candidate que je déteste. J'ai vraiment une réaction épidermique à cette personne. Épidermique ? Ouais, on ne dit pas ça en français. Tu peux expliquer peut-être ? Non, mais peut-être qu'ils ne connaissent pas. Tu peux expliquer le...",
+          "chinese": "是的，我也在期待马赛的选举，因为有一个我讨厌的候选人。我对这个人真的有“过敏性反应”。过敏性反应？是的，法语里不是这么说的吗？你也许可以解释一下？不，也许他们不认识这个词。你可以解释一下……"
+        },
+        {
+          "id": 63,
+          "start_time": "00:23:20.559",
+          "end_time": "00:23:44.970",
+          "french": "Non, mais je suis en train de me dire, est-ce que c'est une traduction directe de l'anglais ou est-ce qu'on dit ça vraiment avoir une réaction épiderme ? Non, je ne sais pas, mais tout le monde ne parle pas anglais couramment dans nos auditeurs. C'est vrai, c'est vrai. Oui, une réaction épidermique, ça veut dire que l'épiderme, c'est cette couche qu'on a sur la peau. Et quand quelque chose, vous avez une réaction épidermique en général, c'est que vous avez une réaction très...",
+          "chinese": "不，我是在想，这是英语的直译，还是我们真的说“对皮肤有反应”？不，我不知道，但我们的听众并不都精通英语。没错，没错。是的，过敏性反应，意思是 épiderme 是我们皮肤上的那一层。当某件事让你产生过敏性反应时，通常意味着你对某人或某事有非常……"
+        },
+        {
+          "id": 64,
+          "start_time": "00:23:45.109",
+          "end_time": "00:23:57.450",
+          "french": "très vive et très négative à quelqu'un ou quelque chose. Donc voilà, moi, il y a une candidate qui m'énerve profondément et qui est assez bien classée dans les sondages, donc j'espère qu'elle ne va pas gagner.",
+          "chinese": "非常强烈且非常负面的反应。所以，有一个候选人让我深感厌烦，而且她在民调中排名相当靠前，所以我希望她不会赢。"
+        },
+        {
+          "id": 65,
+          "start_time": "00:23:57.779",
+          "end_time": "00:24:27.089",
+          "french": "On va suivre ça. Moi aussi, pour Toulouse, je suis ça de près parce que Toulouse a la réputation d'être la plus grosse ville de gauche dirigée par un maire de droite. Et donc, c'est une grosse anomalie. Il y a des explications derrière ça. Mais c'est vrai que c'est quelque chose qui étonne souvent et le maire se représente. Donc, je suis ça de près pour voir si ça va.",
+          "chinese": "我们会关注的。我也在密切关注图卢兹的情况，因为图卢兹以“由右翼市长领导的最大左翼城市”而闻名。所以，这是一个巨大的反常现象。这背后有解释。但这确实是经常让人惊讶的事情，而且市长要竞选连任。所以，我正密切关注，看看这是否会……"
+        },
+        {
+          "id": 66,
+          "start_time": "00:24:27.089",
+          "end_time": "00:24:37.900",
+          "french": "continuer cette réalité ou s'il va être s'il va partir et être remplacé. Ok et toi Ania les projets pour l'année prochaine ?",
+          "chinese": "继续这一现实，还是他会离开并被取代。好的，Anya，你明年的计划呢？"
+        },
+        {
+          "id": 67,
+          "start_time": "00:24:38.259",
+          "end_time": "00:25:04.369",
+          "french": "Alors moi, je dois vous avouer que cette année a été très, très difficile pour moi sur le plan perso. Donc cette année, enfin l'année qui vient, j'ai surtout envie de prendre soin de ma santé physique et surtout de ma santé mentale. C'est un bon objectif pour chaque année, pour chaque personne, mais l'année qui vient, bon, ça serait surtout ça pour moi.",
+          "chinese": "那么我，我必须向你们坦白，今年在个人层面上对我来说非常非常艰难。所以今年，也就是即将到来的一年，我特别想照顾好我的身体健康，尤其是我的心理健康。这对每个人、每一年来说都是一个很好的目标，但对于即将到来的一年，这对我来说尤为重要。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:25:04.369",
+          "end_time": "00:25:33.440",
+          "french": "Cette année, on a parlé aussi pas mal avec mon mari des activités qui nous font plaisir, des activités qui sont bénéfiques pour nous en général. On a pas mal lu sur cet état de flow. L'état de flow pour notre cerveau, c'est un état de concentration très intense où on est totalement absorbé par une activité.",
+          "chinese": "今年，我和丈夫也聊了很多让我们快乐的活动，通常对我们有益的活动。我们读了很多关于“心流状态”的内容。对我们大脑而言，心流状态是一种非常专注的状态，我们完全沉浸在一项活动中。"
+        },
+        {
+          "id": 69,
+          "start_time": "00:25:33.440",
+          "end_time": "00:25:59.750",
+          "french": "Et mon mari, par exemple, il peint. Donc, c'est ça qui occupe beaucoup de son temps. Et c'est vraiment une activité. Quand il commence à faire ça, il est complètement absorbé. Il n'entend rien. Il ne regarde surtout pas son smartphone. Donc, ça permet vraiment de se déconnecter. Et c'est très, très bon pour le cerveau. C'est un état très... Apparemment, c'est un état très...",
+          "chinese": "比如我丈夫，他画画。所以，这占据了他很多时间。这真的是一项活动。当他开始做这件事时，他完全沉浸其中。他什么也听不见。他绝对不看手机。所以，这真的能让人断开连接。这对大脑非常非常有好处。这是一种非常……显然，这是大脑非常渴望的一种状态，这种心流状态。"
+        },
+        {
+          "id": 70,
+          "start_time": "00:26:00.119",
+          "end_time": "00:26:24.930",
+          "french": "désiré par le cerveau cet état de flow. Et donc, moi, je me suis trouvé une autre activité pour cette année et je vais me lancer à la broderie. Je vais broder. Je me suis déjà acheté des matos pour démarrer parce que je cherchais une activité que je peux faire depuis chez moi pour ne pas sortir, pour ne pas me trouver une excuse.",
+          "chinese": "所以，我为今年找到了另一项活动，我要开始学刺绣。我要刺绣。我已经买好了开始用的材料，因为我一直在寻找一项可以在家做的活动，这样就不用出门，也就没有借口……"
+        },
+        {
+          "id": 71,
+          "start_time": "00:26:24.930",
+          "end_time": "00:26:46.470",
+          "french": "comme quoi, voilà, je n'ai pas de temps, etc. Donc, je peux le faire chez moi. Et voilà, je me lance depuis le 1er janvier à la broderie. Super ! Tu as déjà essayé ou ça va être une première ? Ça va être une première. J'aime bien coudre. Ma grand-mère était couturière, donc en fait, j'aime bien coudre. Je ne suis pas...",
+          "chinese": "比如，没时间之类的。所以我可以在家做。所以，我从1月1日开始学刺绣。太棒了！你以前试过吗，还是第一次？这将是第一次。我喜欢缝纫。我祖母是裁缝，所以其实我喜欢缝纫。我不是……"
+        },
+        {
+          "id": 72,
+          "start_time": "00:26:46.779",
+          "end_time": "00:27:11.119",
+          "french": "professionnelle, mais c'est une activité qui me détente pas mal. Donc, je trouve que la broderie, ça serait aussi une bonne idée. Et voilà, à voir, à suivre. Moi, j'ai eu une phase broderie. C'est surprenant pour les garçons, mais en fait, souvent, c'était pendant les vacances d'été. Ma mère, elle cherchait une activité pour mon frère et moi pour que...",
+          "chinese": "专业的，但这是一种让我相当放松的活动。所以，我觉得刺绣也是个好主意。好，走着瞧，拭目以待。我曾有过一段刺绣时期。这对男生来说很令人惊讶，但事实上，通常是在暑假期间。我妈妈会为我和我哥哥找一项活动，以便……"
+        },
+        {
+          "id": 73,
+          "start_time": "00:27:11.119",
+          "end_time": "00:27:39.750",
+          "french": "on soit un peu occupé et qu'on n'embête pas trop toute la famille. Il y a une année, par exemple, où c'était les Scooby-Doo. Je ne sais pas si vous avez vu ça en polonais. Scooby-Doo, je connais le dessin animé, mais c'est quoi comme... J'imagine bien la merde. Allez les garçons, prenez vos fils. Faites des Scooby-Doo. Faites des Scooby-Doo. Avec plein de bracelets. Tu as beaucoup de bracelets.",
+          "chinese": "让我们有点事做，不至于太烦扰全家人。有一年，比如，是编 Scooby-Doo。我不知道你们是否见过波兰语里的这个。Scooby-Doo，我知道那个动画片，但那是种什么……我能想象那个场景。来吧孩子们，拿着你们的线。编 Scooby-Doo 吧。编 Scooby-Doo 吧。有很多手链。你有很多手链。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:27:40.019",
+          "end_time": "00:27:48.839",
+          "french": "Ouais, ça a sûrement un autre nom dans d'autres langues, mais c'est des longs fils en plastique qu'on tressait entre eux pour faire des espèces de porte-clés.",
+          "chinese": "是的，在其他语言里肯定有另一个名字，但那是我们编织在一起做成各种钥匙扣的长塑料线。"
+        },
+        {
+          "id": 75,
+          "start_time": "00:27:49.140",
+          "end_time": "00:28:12.130",
+          "french": "Je ne sais pas si tu as vu, mais j'en ai parlé déjà à ma copine et elle ne connaissait pas. Non, moi non plus. Donc, on prenait deux ou trois fils de différentes couleurs et on les tressait ensemble. Et on pouvait faire soit des porte-clés en forme rectangulaire, soit en forme torsadée comme ça. Oui, je sais. Mais je ne sais pas du tout quel nom ça porte en polonais. Comment on appelle ça ? Je ne sais pas, mais depuis maintenant, je vais appeler...",
+          "chinese": "我不知道你见没见过，但我已经和我女朋友聊过了，她不知道。不，我也不知道。所以，我们拿两三根不同颜色的线，把它们编在一起。我们可以做成长方形的钥匙扣，也可以做成这种扭曲形状的。是的，我知道。但我完全不知道波兰语里叫什么。怎么称呼它？我不知道，但从现在起，我会叫它……"
+        },
+        {
+          "id": 76,
+          "start_time": "00:28:12.130",
+          "end_time": "00:28:34.700",
+          "french": "C'est des scoubidous, quoi. Voilà. Nous, on appelait ça des scoubidous. Et je me souviens, d'un été, on était en vacances, on allait à la plage et on avait tout le temps un sac de scoubidous. Et moi et mes amis, tout le monde essayait de faire le meilleur scoubidou. Et on a passé un été à faire des scoubidous. On a perdu une lettre. C'est trop horrible.",
+          "chinese": "就是 scoubidous 嘛。好。我们管它叫 scoubidous。我记得有一个夏天，我们去度假，去海滩，总是带着一袋 scoubidous。我和我的朋友们，每个人都想做出最好的 scoubidou。我们花了一个夏天编 scoubidous。我们丢了一个字母。太可怕了。"
+        },
+        {
+          "id": 77,
+          "start_time": "00:28:35.059",
+          "end_time": "00:29:01.099",
+          "french": "Après, nos mamans avaient 10 porte-clés Scooby-Doo chacune. D'accord. C'est vraiment pas... C'est pas une super bonne idée. Mais c'était un super état de flot, tu vois. C'était vraiment un truc parce qu'on apprend un certain motif. Tu fais tes boucles et tout, tu rentres les trucs, t'as différentes formes. T'as des Scooby-Doo super avancés avec, je sais pas, 6, 7, 8 fils. Là, ça demande vraiment une grosse dextérité.",
+          "chinese": "后来，我们的妈妈每人都有10个 Scooby-Doo 钥匙扣。好吧。这真的不是……不是个特别好的主意。但那是一种超级心流状态，你看。这真的是一件事，因为你会学习某种图案。你打结之类的，把东西塞进去，有不同的形状。有超级高级的 Scooby-Doo，用6、7、8根线。那真的需要很强的灵巧性。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:29:01.099",
+          "end_time": "00:29:24.339",
+          "french": "Et on a eu un été où on faisait un peu de la broderie. Donc, on avait... C'était pour les enfants. Donc, on avait un espèce de canevas avec un dessin. Et puis, on mettait les couleurs comme ça. On prenait les couleurs. Et j'avais bien aimé. J'avais bien aimé. C'est cool, la broderie. J'aime bien aussi. Moi, c'est trop... Trop flow pour moi. Après, ça me... J'ai une copine, une fois, qui m'a confisqué.",
+          "chinese": "我们还有一个夏天在做刺绣。所以，我们有……那是给小孩子的。所以，我们有一种带图案的画布。然后，我们就这样填色。我们选颜色。我很喜欢。我很喜欢。刺绣很酷。我也很喜欢。对我来说太……太心流了。之后它会让我……我有过一个朋友，有一次没收了我的东西。"
+        },
+        {
+          "id": 79,
+          "start_time": "00:29:24.339",
+          "end_time": "00:29:44.940",
+          "french": "qui m'a dit je vais le garder et on brodera ensemble d'accord parce que sinon je sais que tu vas me dire après dans trois mois faut que j'arrête ça m'a pris tout mon temps moi j'ai des obsessions des fois donc la broderie je sais que c'est trop bien mais par contre c'est risqué en termes d'oublier de manger",
+          "chinese": "她对我说“我要把它收起来，我们一起绣”，好吧，因为否则我知道你三个月后会告诉我“我得停下来，这占用了我所有时间”。我有时会有强迫症，所以刺绣我知道非常好，但另一方面，它有让人忘记吃饭的风险。"
+        },
+        {
+          "id": 80,
+          "start_time": "00:29:45.180",
+          "end_time": "00:29:57.319",
+          "french": "Ah oui, toi, c'est à ce point-là. Toi, le flow, c'est un flow total. Je ne me nourris pas et à trois heures du mat, on me retrouve par terre en train de faire un puzzle.",
+          "chinese": "啊，是的，你到了这种地步。你的心流是完全沉浸。我不吃不喝，凌晨三点，人们会发现我趴在地上拼拼图。"
+        },
+        {
+          "id": 81,
+          "start_time": "00:29:58.839",
+          "end_time": "00:30:25.640",
+          "french": "Les dangers des activités flow. C'est très à la mode aussi d'ailleurs les entreprises, les petites entreprises de broderie, de t-shirts, de choses comme ça. Je sais qu'il y en a beaucoup maintenant. On peut faire des broderies personnalisées. Agna, tu pourras nous faire Inner French sur un t-shirt ? Ouais, des t-shirts brodés Inner French. Pas de problème. Ouais. Allez, on rajoutera ça à la liste de tes tâches. Chouette. T'avais autre chose parmi tes projets, Agna ?",
+          "chinese": "心流活动的危险。顺便说一下，刺绣、T恤、这类小公司现在也非常流行。我知道现在有很多。我们可以做定制刺绣。Anya，你能帮我们在 T恤上绣个 Inner French 吗？好啊，Inner French 刺绣 T恤。没问题。好。来，我们把它加到你的任务清单里。太棒了。Anya，你的计划里还有别的吗？"
+        },
+        {
+          "id": 82,
+          "start_time": "00:30:26.039",
+          "end_time": "00:30:49.710",
+          "french": "C'est pas vraiment un projet, c'est plutôt un rêve peut-être, je sais plus comment appeler. Mais oui, j'aimerais bien, en fait vous savez que mon mari et moi, nous avons vécu presque deux ans au Portugal, à Lisbonne. Et pour moi c'est vraiment un rêve d'y retourner. Je sais pas si c'est pour l'année 2026 ou...",
+          "chinese": "这不完全是一个计划，也许更像是一个梦想，我不知道该怎么称呼。但是，是的，我很想，其实你们知道我和我丈夫在葡萄牙里斯本住了快两年。对我来说，回到那里真的是一个梦想。我不知道是在2026年还是……"
+        },
+        {
+          "id": 83,
+          "start_time": "00:30:49.710",
+          "end_time": "00:30:59.980",
+          "french": "ou non, mais bon, ça reste dans mon cœur. Le Portugal et Lisbonne et peut-être cette année et sinon...",
+          "chinese": "还是不，但好在，它留在我心中。葡萄牙和里斯本，也许是今年，否则……"
+        },
+        {
+          "id": 84,
+          "start_time": "00:31:01.079",
+          "end_time": "00:31:27.180",
+          "french": "Je vais attendre. Trop bien. Bon projet. C'est tout le mal qu'on te souhaite. Merci. Et toi, Hugo, du coup, 2026, comment tu le vois ? Pour l'année prochaine, l'espoir, c'est de faire une nuit complète. Là, c'est vraiment, si on me demande, si j'ai un souhait, c'est une nuit complète de 23h à 8h sans me réveiller. Ce serait vraiment super.",
+          "chinese": "我会等待。太棒了。好计划。这是我们能给你的最好祝愿。谢谢。Hugo，那你呢，2026年你打算怎么过？对于明年，希望是能睡个整觉。这真的是，如果问我，如果我有一个愿望，那就是从晚上11点到早上8点睡个整觉，中间不醒。那真的太棒了。"
+        },
+        {
+          "id": 85,
+          "start_time": "00:31:27.480",
+          "end_time": "00:31:52.240",
+          "french": "Voir plusieurs nuits complètes, ce serait vraiment le rêve. Mais à part ça, nous, on a acheté une maison l'année dernière à Marseille qu'on a dû totalement rénover. Donc là, elle est encore en travaux. On est encore dans les rénovations et on espère emménager en avril. Donc ça, c'est vraiment ce qu'on attend pour l'année 2026, pouvoir emménager dans la maison.",
+          "chinese": "甚至能睡好几个整觉，那真的是梦想。但除此之外，我们去年在马赛买了一栋房子，必须全面翻修。所以现在，它还在施工中。我们还在装修，希望能在四月搬进去。所以，这真的是我们对2026年的期待，能够搬进这栋房子。"
+        },
+        {
+          "id": 86,
+          "start_time": "00:31:52.240",
+          "end_time": "00:32:19.279",
+          "french": "Et on aimerait bien découvrir un peu la région où c'est installé parce que la ville de Marseille, on commence à la connaître relativement bien. Mais il y a plein de choses à voir, à visiter dans la région où on se trouve, Provence-Alpes, Côte d'Azur. Notamment le Luberon, plein de petits coins sympas qui sont accessibles assez facilement en voiture. Donc on aimerait pouvoir en profiter un peu plus parce que là, cette année, on a été beaucoup à la maison.",
+          "chinese": "我们很想探索一下安家落户的这个地区，因为马赛市我们已经开始比较熟悉了。但在我们所在的普罗旺斯-阿尔卑斯-蓝色海岸大区，有很多值得看、值得参观的地方。特别是吕贝隆，有很多开车就能轻松到达的漂亮小地方。所以我们希望能多享受一下，因为今年我们大部分时间都待在家里。"
+        },
+        {
+          "id": 87,
+          "start_time": "00:32:19.279",
+          "end_time": "00:32:48.859",
+          "french": "On n'est pas allé une seule fois à la plage cet été, donc c'est un peu triste d'être à Marseille et de ne pas avoir pu en profiter. D'ailleurs, je sais qu'il y a plusieurs auditeurs qui ont demandé de faire un épisode mise à jour à Marseille, comment ça se passe, est-ce que je suis toujours content ? Oui, je suis toujours content d'y être, mais bon, là, je n'ai pas grand-chose de plus à partager, malheureusement, par rapport à l'année qui s'est passée, mais j'aimerais bien vous en reparler, je pense, en 2026, en fonction des...",
+          "chinese": "今年夏天我们一次海滩也没去过，所以待在马赛却没能享受海滩有点遗憾。顺便说一下，我知道有几位听众要求做一期关于马赛的更新节目，情况如何，我是否依然开心？是的，我依然很高兴待在这里，但好在，相对于过去的一年，我没有什么更多可以分享的了，但我很想在2026年再和大家聊聊，根据……"
+        },
+        {
+          "id": 88,
+          "start_time": "00:32:48.859",
+          "end_time": "00:33:07.559",
+          "french": "des découvertes que j'aurais faites. Bon, on a bien parlé là sur la partie personnelle. On va passer aux recommandations. Ouais, je me demande même si on pourrait pas faire un podcast en plusieurs parties parce que là, ça fait déjà plus de 30 minutes rien que sur la partie perso. Je sais pas.",
+          "chinese": "我将要做的发现。好，关于个人部分我们聊了很多。我们要进入推荐环节了。是的，我甚至在想我们是否可以把播客分成几个部分，因为光是个人部分就已经超过30分钟了。我不知道。"
+        },
+        {
+          "id": 89,
+          "start_time": "00:33:07.859",
+          "end_time": "00:33:42.019",
+          "french": "Bon, on décidera à la fin. Oui, ça va être... Voilà, c'est un épisode là bonus. Voilà, vous avez entendu, il va être publié le 31 décembre normalement. En plus, bon là, c'est un épisode détente à la cool. Donc voilà, on va enchaîner. Alors cette année, j'ai découvert une autrice et un livre qui n'est pas complètement nouveau. C'est le livre « Changer l'eau des fleurs » de Valérie Perrin.",
+          "chinese": "好吧，我们最后再决定。是的，这将是……好，这是一期特别节目。好，你们听到了，它通常会在12月31日发布。而且，好，这是一期轻松休闲的节目。所以，我们要继续了。那么今年，我发现了一位作家和一本书，这本书并不完全是新作。是瓦莱丽·佩兰的《给花换水》。"
+        },
+        {
+          "id": 90,
+          "start_time": "00:33:42.519",
+          "end_time": "00:34:05.130",
+          "french": "Et c'est un livre qui m'a été recommandé par un ami polonais. Donc, c'est le livre qui raconte une histoire de Violette Toussaint, qui est gardienne du cimetière d'une petite ville de Bourgogne. Et elle y vit avec des chats, avec ses amis Fossoyeur. Donc, Fossoyeur, c'est une personne qui creuse les fosses dans un cimetière.",
+          "chinese": "这本书是一位波兰朋友推荐给我的。所以，这本书讲述了维奥莱特·图桑的故事，她是勃艮第小镇一座墓地的看守人。她和猫、还有她的掘墓人朋友们住在一起。掘墓人就是在墓地里挖坑的人。"
+        },
+        {
+          "id": 91,
+          "start_time": "00:34:05.369",
+          "end_time": "00:34:24.329",
+          "french": "Et elle cultive son jardin. En général, c'est une femme très, très chaleureuse, très bienveillante. Tous les visiteurs du cimetière viennent chez elle pour chercher du réconfort, pour raconter ses histoires. Donc, son quotidien est un peu rythmé par toutes ses confidences.",
+          "chinese": "她打理着自己的花园。总的来说，她是一个非常非常热情、非常善良的女性。所有墓地的访客都会去她家寻求安慰，讲述他们的故事。所以，她的日常生活节奏是由这些秘密心事带动的。"
+        },
+        {
+          "id": 92,
+          "start_time": "00:34:24.730",
+          "end_time": "00:34:52.000",
+          "french": "Et moi, ce que j'ai aimé particulièrement dans ce livre, c'est tout d'abord le fait que ça se passe au cimetière. Ça m'a tout de suite intriguée. J'aime beaucoup le fait que la narration dans ce livre n'est pas linéaire. Il y a plusieurs lignes de temps. Donc, on découvre petit à petit toutes les expériences de Violette. Il y a plein d'histoires qui se croisent entre les vivants et les morts. C'est écrit un peu comme un polar. Et je pense que c'est même Valérie Perrin qui a dit ça.",
+          "chinese": "而我特别喜欢这本书的一点是，首先它发生在墓地。这立刻引起了我的好奇。我非常喜欢这本书的叙事不是线性的。有几条时间线。所以，我们逐渐发现维奥莱特的所有经历。有很多生者与死者交织的故事。写得有点像侦探小说。我想甚至是瓦莱丽·佩兰自己说过……"
+        },
+        {
+          "id": 93,
+          "start_time": "00:34:52.000",
+          "end_time": "00:35:13.449",
+          "french": "qui écrit ses livres comme des polars. Donc c'est vraiment un roman dont on a du mal à se séparer et quand on tourne les pages, on a envie de savoir ce qui va se passer. Et c'est une histoire qui m'a beaucoup touchée parce que c'est une histoire d'une femme qui, malgré toutes les épreuves, crée même obstinément au bonheur.",
+          "chinese": "她像写侦探小说一样写书。所以这真的是一本让人难以释手的长篇小说，当你翻页时，你很想知道接下来会发生什么。这是一个非常打动我的故事，因为它讲述了一个女人，尽管经历了重重考验，依然执着地创造幸福。"
+        },
+        {
+          "id": 94,
+          "start_time": "00:35:13.590",
+          "end_time": "00:35:41.300",
+          "french": "En général, c'est un personnage très, très, très attachant. Et je pense que même l'année prochaine, il va y avoir une adaptation au cinéma. Donc, probablement, vous allez pouvoir aussi voir l'adaptation de ce livre au cinéma. Je ne sais pas si vous connaissez cette autrice. Il me semble qu'elle est assez connue en France. Oui, elle est connue. Mais justement, je n'en avais jamais entendu parler dans les détails.",
+          "chinese": "总的来说，这是一个非常非常非常讨人喜欢的角色。我想明年甚至会有电影改编。所以，你们可能也能在电影院看到这本书的改编版。我不知道你们是否认识这位作家。我觉得她在法国挺出名的。是的，她很有名。但恰恰是，我从未听过详细介绍。"
+        },
+        {
+          "id": 95,
+          "start_time": "00:35:41.300",
+          "end_time": "00:36:10.719",
+          "french": "En fait, c'est une autrice que je connais parce que j'ai vu passer ses livres plein de fois. Elle est souvent dans les rayons mis en avant. Mais je suis contente d'entendre ta recommandation parce qu'il y a plusieurs de ses livres. Alors, pas celui-là, mais il me semble qu'il y en a un qui s'appelle Nous trois ou quelque chose comme ça. Trois amis et un autre Tata que j'avais vu passer.",
+          "chinese": "事实上，这是一位我认识的作家，因为我多次看到过她的书。她的书经常摆在显眼的书架上。但我很高兴听到你的推荐，因为她有好几本书。虽然不是这一本，但我记得有一本叫《我们三个》或类似的。三个朋友，还有另一本《塔塔》，我见过。"
+        },
+        {
+          "id": 96,
+          "start_time": "00:36:10.719",
+          "end_time": "00:36:34.409",
+          "french": "J'avais hésité justement à les lire et c'est vrai que les livres c'est assez difficile de se décider. En tout cas en France on a tellement de nouveautés, de nouveaux auteurs. Parfois on a peur de se tromper et parfois malheureusement les auteurs les plus mis en avant ne sont pas forcément ceux qui sont en tout cas qu'on apprécie le plus personnellement. Mais voilà, il me semble que...",
+          "chinese": "我当时确实犹豫要不要读，确实，决定读哪本书挺难的。总之在法国，我们有这么多新作、新作家。有时我们害怕选错，有时不幸的是，最受推崇的作家不一定是我们个人最喜欢的。但好在，似乎……"
+        },
+        {
+          "id": 97,
+          "start_time": "00:36:35.000",
+          "end_time": "00:36:46.730",
+          "french": "Agna, toi et moi, on n'a pas forcément des goûts trop éloignés en matière de livres. Donc, si tu recommandes, je vais en lire un pour voir à mon tour.",
+          "chinese": "Anya，你和我在书籍方面的品味不一定相差太远。所以，如果你推荐，我也要去读一本，看看……"
+        },
+        {
+          "id": 98,
+          "start_time": "00:36:47.579",
+          "end_time": "00:37:08.360",
+          "french": "ce que ça donne. Super. C'est sûr que c'est un livre de type un feel-good. Donc, parfois, les livres de ce type n'ont pas forcément une très, très bonne réputation, je dirais. Mais c'est vrai que ça, c'est un livre que je peux recommander parce que ça se lit très bien. Et comme je dis, comme un polar. Donc, c'est vraiment très intéressant. On peut dire que...",
+          "chinese": "效果如何。太棒了。这肯定是一本“治愈系”类型的书。所以，有时这类书的名声不一定非常非常……好，我会说。但确实，这是一本我可以推荐的书，因为它读起来很顺畅。正如我所说，像侦探小说一样。所以，这真的是一个非常酷的提议。而且在难度方面，你觉得容易读吗？是的，我觉得相当容易读，是的。好的。那么我呢，今年我读书有点困难，正如你们可以想象的那样，但我还是读了一本相当短的小说。"
+        },
+        {
+          "id": 99,
+          "start_time": "00:37:08.630",
+          "end_time": "00:37:36.610",
+          "french": "Il ne se passe pas grand-chose, mais en même temps, il se passe beaucoup de choses quand même dans ce livre. Donc, je pense que c'est très cool comme proposition. Et au niveau de la difficulté, tu trouves que c'est accessible ? Oui, je trouve que c'est assez accessible, oui. Ok. Alors, moi, j'ai eu un peu de mal à lire cette année, comme vous pouvez l'imaginer, mais j'ai pu lire quand même un roman assez court.",
+          "chinese": "叫《雪地班级》，这是一本几年前出版的小说，似乎是在90年代末，由埃马纽埃尔·卡雷尔撰写。埃马纽埃尔·卡雷尔既是小说家也是记者。"
+        },
+        {
+          "id": 100,
+          "start_time": "00:37:36.610",
+          "end_time": "00:37:51.690",
+          "french": "qui s'appelle La classe de neige c'est un roman qui est sorti il y a déjà quelques années à la fin des années 90 il me semble qui a été écrit par Emmanuel Carrère Emmanuel Carrère qui est auteur de romans mais aussi reporter",
+          "chinese": "他的母亲曾是法兰西学院的杰出成员。但好在，他走了一条非常不同的路。他是一位在法国相当受欢迎的作家，我非常欣赏他。在过去的几年里，我想他成了我最喜欢的法语作家。而我以前没读过这本小说，这似乎是他的第一部小说之一。"
+        },
+        {
+          "id": 101,
+          "start_time": "00:37:51.929",
+          "end_time": "00:38:12.739",
+          "french": "dont la mère était une membre éminente de l'Académie française. Mais bon, lui, il a pris un chemin très différent. C'est un auteur qui est assez populaire en France, que moi, j'apprécie beaucoup. Là, ces dernières années, je pense que c'est devenu mon auteur francophone préféré. Et je n'avais pas lu ce roman, qui est un de ses premiers romans, il me semble.",
+          "chinese": "所以，雪地班级，在法国，是指孩子们和学校、班级一起去滑雪。我们称之为“雪地班级”。所以这里讲述的是一个大约十二岁的小男孩的故事，他不太自信，有点像是……"
+        },
+        {
+          "id": 102,
+          "start_time": "00:38:12.739",
+          "end_time": "00:38:33.610",
+          "french": "Donc, la classe de neige, en France, classe de neige, c'est quand les enfants vont au ski avec leur école, avec leur classe. On appelle ça la classe de neige. Donc là, c'est l'histoire d'un petit garçon qui doit avoir une douzaine d'années, qui n'a pas vraiment confiance en lui, qui est un peu le...",
+          "chinese": "班里的边缘人，可以这么说。总之，他不太受欢迎。他很难交到朋友。这时雪地班级活动来了。所以他非常焦虑，因为他要一直和班级过集体生活，他很害怕。他不太清楚会发生什么。我们从一开始就感觉到会有一些相当阴暗的事情发生。但我们不知道具体是什么。好，故事就围绕着在雪地班级度过的这一周展开。"
+        },
+        {
+          "id": 103,
+          "start_time": "00:38:33.909",
+          "end_time": "00:39:02.449",
+          "french": "le paria de sa classe, on pourrait dire. En tout cas, il n'est pas très populaire. Il a un peu du mal à se faire des amis. Et là, il y a cette classe de neige qui arrive. Donc lui, il est très angoissé parce qu'il va être en collectivité tout le temps avec sa classe et il a peur. Il ne sait pas trop comment ça va se passer. Et on sent dès le début qu'il y a quelque chose d'assez sombre qui va arriver. Mais on ne sait pas exactement quoi. Et voilà, c'est sur cette histoire, sur cette semaine passée à la classe de neige.",
+          "chinese": "特别是这个男孩和他爸爸的关系。"
+        },
+        {
+          "id": 104,
+          "start_time": "00:39:02.449",
+          "end_time": "00:39:06.860",
+          "french": "Notamment la relation de ce garçon avec son papa.",
+          "chinese": "这种关系有点复杂。好，我就不多说了。读起来……这不是最简单的风格，因为，好，他们使用了不少简单过去时，而确实在更现代的小说和治愈系小说中，他们倾向于使用复合过去时。这本写得还是相当有文学性的，但主题是可触及的，好，它谈论孩子、学校等等。"
+        },
+        {
+          "id": 105,
+          "start_time": "00:39:07.670",
+          "end_time": "00:39:36.690",
+          "french": "qui est une relation un peu compliquée. Donc voilà, j'en dis pas trop. Ça se lit... C'est pas le style le plus facile parce que, bon, ils utilisent pas mal le passé simple, par exemple, alors que c'est vrai que dans les romans plus récents et les romans feel-good, ils ont tendance à plutôt utiliser le passé composé. Là, c'est quand même assez écrit, mais c'est un sujet qui est abordable, voilà, quand ça... qui parle des enfants, de l'école et tout ça.",
+          "chinese": "这本书相当短，大概150页。读起来也很顺畅，悬念很多。所以，这是我今年可以向你们推荐的一本小说。那么我呢，作为推荐书籍，我没有选择小说。不是虚构作品。事实上，我回顾了今年读过的书，发现我读了很多译著，甚至是法语书。"
+        },
+        {
+          "id": 106,
+          "start_time": "00:39:36.690",
+          "end_time": "00:40:05.679",
+          "french": "Et le livre est assez court, il doit faire 150 pages. Ça se lit très bien aussi, il y a beaucoup de suspense. Donc voilà, c'est un roman que je peux vous recommander pour cette année. Moi, du coup, comme livre, ce n'est pas un roman que j'ai choisi. Ce n'est pas de la fiction. En fait, j'ai regardé les livres que j'ai lus cette année et je me suis rendu compte que j'avais beaucoup lu de traductions ou même de livres en français.",
+          "chinese": "原著，法语以外的其他语言，西班牙语。所以，在法语书中，最终主要是随笔。有一本我想推荐给你们，是记者朱迪思·杜波特尔的《叛逆母职》。这本书相当短，我想读起来相当容易，因为信息量很大，同时语调相当酷。"
+        },
+        {
+          "id": 107,
+          "start_time": "00:40:05.679",
+          "end_time": "00:40:35.309",
+          "french": "en langue originale, en autre langue que le français, espagnol. Et donc, dans les livres en français, finalement, c'est surtout des essais. Et il y en a un que j'aimerais vous recommander, c'est le livre « Maternité rebelle » de la journaliste Judith Duportail. C'est un livre qui est assez court, je pense assez facile à lire, puisque c'est très informatif et en même temps avec un ton assez cool.",
+          "chinese": "我就会说它是新闻随笔、见证和纯粹辩护状的结合。辩护状是指当我们寻求捍卫观点、说服读者时。所以事实上，朱迪思·杜波特尔是我以前就认识的一位记者，她在所谓的“觉醒”圈子里相当有名。她写过很多东西。觉醒斯坦？"
+        },
+        {
+          "id": 108,
+          "start_time": "00:40:35.309",
+          "end_time": "00:41:04.900",
+          "french": "Alors je dirais que c'est un mélange entre un essai journalistique, un témoignage et carrément un plaidoyer. Un plaidoyer, c'est quand on cherche à défendre des idées, à convaincre les personnes qui nous lisent. Donc en fait, Judith Duportail, c'est une journaliste que je connaissais déjà avant, qui est assez connue dans le monde, on va dire, woke. C'est une journaliste qui a beaucoup écrit. Le Wokistan ?",
+          "chinese": "觉醒斯坦，没错，我们都住在那里。她经常参加女性主义播客。她写过很多文章，特别是关于恋爱约会世界的，尤其是在 Tinder 时代。她写过一本关于 Tinder 算法和这类应用的书。"
+        },
+        {
+          "id": 109,
+          "start_time": "00:41:05.110",
+          "end_time": "00:41:28.619",
+          "french": "Le Wauquistan, voilà, nous habitons tous et toutes. Elle participe souvent à des podcasts féministes. Elle a beaucoup écrit d'articles, notamment sur le monde des rencontres amoureuses, notamment à l'ère de Tinder. Elle a écrit un livre sur les algorithmes de Tinder et des applications de ce style.",
+          "chinese": "事实上，在她的书《叛逆母职》中，她讲述了自己的经历，她通过辅助生殖技术有了孩子，我之前在播客里提到过，PMA。事实上，她独自进行了 PMA 并生了一对双胞胎。她讲述了自己的经历，但在随笔中她也做了一个……"
+        },
+        {
+          "id": 110,
+          "start_time": "00:41:28.619",
+          "end_time": "00:41:58.179",
+          "french": "Et en fait, dans son livre « Maternité rebelle », en fait, elle raconte son expérience, elle qui a eu des enfants par une procréation médicalement assistée, dont j'ai déjà parlé d'ailleurs sur ce podcast, une PMA. Et en fait, elle a fait une PMA toute seule et elle a eu des jumeaux. Et en fait, elle raconte son expérience, mais dans un essai dans lequel elle fait aussi un...",
+          "chinese": "辩护，旨在给那些经历……的女性勇气。"
+        },
+        {
+          "id": 111,
+          "start_time": "00:41:58.179",
+          "end_time": "00:42:04.369",
+          "french": "plaidoyer pour donner du courage aux femmes qui passent",
+          "chinese": "无论是 PMA、怀孕还是产后。在这本书中，她探讨了很多与母职相关的主题，特别是与30岁后的母职相关的主题。她谈到了“生物钟”正在流逝的神话，即滴答滴答，一旦到了30岁就绝对必须开始生孩子。她谈到了来自社会的压力。"
+        },
+        {
+          "id": 112,
+          "start_time": "00:42:04.369",
+          "end_time": "00:42:34.099",
+          "french": "soit par la PMA, soit par la grossesse, par le postpartum. C'est un livre dans lequel elle explore beaucoup de sujets liés à la maternité et notamment liés à la maternité après 30 ans. Elle parle du mythe de l'horloge biologique qui passerait, donc le fait que tic-tac, tic-tac, il faut absolument se mettre à faire des enfants une fois qu'on a 30 ans. Elle parle des pressions qu'il peut y avoir de la part de la société.",
+          "chinese": "来自政治甚至医疗领域的压力。所以，这是一本相当短、相当容易读且读起来很舒服的书。好，我们在学习知识的同时，也窥见了她的私生活，好，我真心推荐它，我觉得对于非法语母语者来说它相当容易读。"
+        },
+        {
+          "id": 113,
+          "start_time": "00:42:34.099",
+          "end_time": "00:43:01.510",
+          "french": "de la part de la politique et même de la sphère médicale. Donc voilà, c'est un livre qui est assez court, qui est assez facile à lire et qui fait du bien à lire. Donc voilà, on apprend des choses en même temps, on plonge un peu dans son intimité et voilà, je le recommande vraiment et je pense qu'il est assez facile à lire pour des non francophones.",
+          "chinese": "我们现在也许该进入听力推荐环节了。我要向大家推荐由 Arte Radio 制作的一个系列。Arte 最初是一个电视频道，一个法德合资频道，法德之间的合作伙伴，它制作高质量的内容、文化内容、纪录片，他们也有广播部分。"
+        },
+        {
+          "id": 114,
+          "start_time": "00:43:01.559",
+          "end_time": "00:43:25.500",
+          "french": "On va passer peut-être aux recommandations de choses à écouter maintenant. Moi, je vais vous recommander une série produite par Arte Radio. Arte, c'est une chaîne de télévision au départ, une chaîne franco-allemande, un partenariat entre la France et l'Allemagne qui produit des contenus de grande qualité, des contenus culturels, des documentaires et ils ont aussi une partie radio.",
+          "chinese": "在这里，我向大家推荐一个叫《我的海洛因》的三集小系列。这是一种音频格式的调查纪录片，讲述了一个39岁的女性调查她母亲过去的故事。她的母亲曾是海洛因成瘾者，对海洛因上瘾，甚至在怀这个女儿期间还在吸食海洛因。"
+        },
+        {
+          "id": 115,
+          "start_time": "00:43:25.500",
+          "end_time": "00:43:53.869",
+          "french": "Et là, moi, ce que je vous recommande, c'est une petite série en trois épisodes qui s'appelle « Mon héroïne ». Et c'est une espèce d'enquête documentaire en format audio d'une femme qui a 39 ans et qui fait une enquête pour comprendre le passé de sa mère. Sa mère qui était héroïnomane, qui était accro à l'héroïne et qui a continué d'ailleurs à consommer de l'héroïne pendant qu'elle était enceinte de cette fille.",
+          "chinese": "并且很年轻就去世了，在……我不记得几岁了，但总之很年轻就去世了。所以，这个女性试图理解她母亲是如何走到那一步的，她探索了与母亲的关系，尝试原谅她与否，这真的很有趣，因为我们看到她通过采访她妈妈的朋友发现了许多事情，发现了许多她以前不知道的关于母亲过去的事。所以，这是一个制作精良的播客，我向大家推荐。"
+        },
+        {
+          "id": 116,
+          "start_time": "00:43:53.869",
+          "end_time": "00:44:22.639",
+          "french": "et qui est morte très jeune, à l'âge de... je sais plus, mais bon, qui est morte très jeune. Donc voilà, cette femme essaie de comprendre comment sa mère en est arrivée là, elle explore sa relation avec elle, d'essayer de lui pardonner ou non, et c'est vraiment intéressant parce qu'on voit qu'elle découvre des choses en interviewant les amis de sa maman, elle découvre plein de choses sur son passé qu'elle ne savait pas. Donc voilà, c'est un podcast qui est très bien fait et que je vous recommande.",
+          "chinese": "听起来很沉重。是的，非常沉重，但制作精良。这不一定是一件让人沮丧的事，但它引人深思。Anya，你也有一个想推荐的播客。是的，我有一个播客要推荐给你们。这个播客叫《情绪》，很简单。所以，没什么秘密。它是由 Louis Média 制作的。"
+        },
+        {
+          "id": 117,
+          "start_time": "00:44:22.639",
+          "end_time": "00:44:49.659",
+          "french": "Ça a l'air intense. Oui, c'est très intense, mais c'est très bien fait. Et ce n'est pas un truc qui fait forcément déprimer, mais ça fait réfléchir. Toi, Ania, tu avais aussi un podcast que tu voulais recommander. Oui, j'aurais un podcast à vous recommander. C'est le podcast intitulé Émotions, tout simplement. Donc, il n'y a pas beaucoup de secrets. C'est réalisé par Louis Média.",
+          "chinese": "所以，这是一个讨论特定情绪的播客。每一集都是一个我们自问的问题。这是一个触及生活不同方面的播客：家庭、朋友、工作、自尊。好，当然，我们可以说有很多心理学播客，对吧，像这样。但我发现这个播客相当原创的一点是，内容既……"
+        },
+        {
+          "id": 118,
+          "start_time": "00:44:49.659",
+          "end_time": "00:45:17.150",
+          "french": "Donc, c'est un podcast où on parle des émotions spécifiques. Chaque épisode, c'est une question qu'on se pose. Et c'est un podcast qui touche différents aspects de la vie, famille, amis, travail, estime de soi. Et bon, bien sûr, on peut dire qu'il y a beaucoup de podcasts psychologiques, non, comme ça. Mais moi, ce que je trouve assez original dans ce podcast, c'est que le contenu est à la fois...",
+          "chinese": "非常私人化又充满信息量。私人化是因为有人们亲密的见证。这些见证与专家的分析相结合。所以，你可以听到多种声音，可以听到多个不同的片段。我觉得听起来也相当愉快，即使主题有时相当……"
+        },
+        {
+          "id": 119,
+          "start_time": "00:45:17.150",
+          "end_time": "00:45:42.400",
+          "french": "très personnels et informatifs. Personnels parce qu'il y a des témoignages intimes des gens. Et ces témoignages sont combinés avec des analyses d'experts. Donc, vous pouvez entendre plusieurs voix, vous pouvez entendre plusieurs extraits différents. Je pense que c'est aussi assez agréable à écouter, même si des sujets sont parfois assez...",
+          "chinese": "相当沉重且相当强烈。有时听这些东西有点困难，不是吗？但听起来很顺畅。我觉得这类播客非常好的一点，不一定是找到答案，而是为我们的情感生活找到措辞。所以，有时就是这样，不是吗？"
+        },
+        {
+          "id": 120,
+          "start_time": "00:45:42.400",
+          "end_time": "00:46:05.440",
+          "french": "assez lourds et assez forts. C'est un peu difficile parfois, non, à écouter des choses comme ça. Mais ça s'écoute très bien. Et ce que je trouve très bien avec des podcasts comme ça, ce n'est pas forcément le fait de trouver des réponses, mais plutôt de mettre des mots sur notre vie émotionnelle. Donc, parfois, c'est ça, non ?",
+          "chinese": "我们在寻找，我们很难表达自己的感受。所以在这里，你有机会找到准确的词汇，而且是用法语，来谈论你的情绪。我觉得这非常有趣。所以我向大家推荐《情绪》播客。"
+        },
+        {
+          "id": 121,
+          "start_time": "00:46:05.440",
+          "end_time": "00:46:24.699",
+          "french": "qu'on cherche, qu'on a du mal un peu à exprimer ce qu'on ressent. Donc là, vous avez cette opportunité de trouver des mots exacts et en plus en français pour justement parler de vos émotions. Et je trouve ça très intéressant. Donc je vous recommande le podcast Émotions.",
+          "chinese": "这对听众来说确实是个好主意。我在想，如果我以前有一个这样的西班牙语播客，那可能会让我的生活在那段时期变得更容易。因为用另一种语言表达情绪确实很难。肯定，肯定。"
+        },
+        {
+          "id": 122,
+          "start_time": "00:46:24.699",
+          "end_time": "00:46:40.840",
+          "french": "C'est vrai que c'est une bonne idée pour les auditeurs. Je me dis, si j'avais eu un podcast comme ça en espagnol, ça aurait pu me faciliter la vie à une époque. Parce que les émotions, c'est difficile dans une autre langue. C'est sûr, c'est sûr.",
+          "chinese": "好的。Ingrid，你也要推荐一个播客吗？是的，其实是一个你在上一集提到的节目，最后一集，在 Radio Nova。所以，我会说得很快，因为你提到了，但我还是要推荐它，因为这真的是我在2025年发现的一个节目。我想它是从2024年9月开始的。"
+        },
+        {
+          "id": 123,
+          "start_time": "00:46:41.269",
+          "end_time": "00:47:07.710",
+          "french": "Ok. Et toi, Ingrid, tu vas recommander un podcast aussi ? Oui, une émission en fait dont tu as parlé dans ton dernier épisode, la dernière, sur Radio Nova. Donc, je vais être assez rapide parce que tu en as parlé, mais c'était pour le recommander parce que moi, ça a été une émission vraiment que j'ai découvert en 2025. Je crois qu'elle a commencé en septembre 2024.",
+          "chinese": "起初，我像很多人一样，看到 YouTube 上的视频剪辑版。所以，偶尔我会听听 Pierre-Emmanuel Barré 的专栏，或者某位嘉宾的专栏，好。过了一段时间……"
+        },
+        {
+          "id": 124,
+          "start_time": "00:47:07.710",
+          "end_time": "00:47:29.699",
+          "french": "Au début, je voyais passer, un peu comme beaucoup de monde, je pense, les chroniques sous format vidéo sur YouTube. Donc voilà, de temps en temps, j'écoutais la chronique de Pierre-Emmanuel Barré, la chronique de tel intervenant, voilà. Et au bout d'un moment...",
+          "chinese": "出于好奇，我最终听了完整的节目，事实上我真心推荐它，除了你们可能已经听过的专栏外，真心建议听听包含嘉宾在内的完整内容。他们总是有非常有趣的嘉宾，并给他们发言权，让他们畅所欲言，这在广播中很少见。"
+        },
+        {
+          "id": 125,
+          "start_time": "00:47:29.699",
+          "end_time": "00:47:55.519",
+          "french": "Intriguée, j'ai fini par écouter l'émission complète et en fait je la recommande vraiment au-delà des chroniques que vous avez peut-être déjà entendues, d'écouter vraiment l'ensemble avec les invités. Ils ont toujours des invités hyper intéressants à qui ils donnent la parole en les laissant parler, ce qui arrive peu à la radio.",
+          "chinese": "至少对于这些嘉宾来说，他们有时会从批判性的角度谈论在其他媒体上经常听到的主题。而且，那些讲笑话的人也会在节目中向嘉宾提问时介入等等。所以这营造了一种相当不错的基调。"
+        },
+        {
+          "id": 126,
+          "start_time": "00:47:55.519",
+          "end_time": "00:48:22.559",
+          "french": "En tout cas pour ces invités-là qui sont parfois des personnes qui vont parler de sujets qu'on entend souvent d'un point de vue critique sur d'autres médias. Et voilà, les personnes qui font aussi des blagues interviennent pendant l'émission au moment des questions à l'invité, etc. Donc ça donne un ton assez sympa.",
+          "chinese": "我建议听听这个周日播出的周更节目。通常，在接下来的一周里，可以在 Radio Nova 的网站上听回放。之后，它也会在……我是在 YouTube 上看的。否则，当我鼓起勇气等待它上线 YouTube 时。好，这就是我的音频小推荐。"
+        },
+        {
+          "id": 127,
+          "start_time": "00:48:22.559",
+          "end_time": "00:48:48.070",
+          "french": "Je conseille cette émission hebdomadaire qui passe le dimanche. En général, on peut écouter le replay sur le site de Radio Nova la semaine qui suit. Et après, c'est aussi sur... Moi, je regarde sur YouTube. Sinon, quand j'ai le courage d'attendre que ça arrive sur YouTube. Et voilà, ma petite recommandation audio.",
+          "chinese": "很好。好，我们要以最后一个推荐结束。我推荐的还是听力内容。是一本有声书。所以，今年我也发现了有声书，因为，好，有了我儿子，读书并不总是那么容易。但有时，摇他两个小时，是可以听点东西的，而我并不一定想一直听播客。所以，我掉进了有声书的坑。"
+        },
+        {
+          "id": 128,
+          "start_time": "00:48:48.570",
+          "end_time": "00:49:15.010",
+          "french": "Très bien. Bon, on va finir avec une dernière recommandation. Moi, c'est encore quelque chose à écouter. C'est un livre audio. Donc, j'ai découvert aussi les livres audio cette année parce que, voilà, avec mon fils, c'était pas évident toujours de pouvoir lire. Mais parfois, en le berçant pendant deux heures, c'est possible d'écouter quelque chose et j'avais pas forcément envie d'écouter encore des podcasts. Donc, je suis tombé dans les livres audio.",
+          "chinese": "听了今年获得龚古尔奖（法国最负盛名的文学奖）的那本书，叫《空房子》，作者是 Laurent Mauvignier，我以前完全不认识他，但他已经写了十几部小说。这本有声书是由一位演员朗读的……"
+        },
+        {
+          "id": 129,
+          "start_time": "00:49:15.010",
+          "end_time": "00:49:35.980",
+          "french": "en écoutant celui qui a gagné le prix Goncourt cette année, donc le prix littéraire le plus prestigieux en France, qui s'appelle La Maison Vide d'un auteur qui s'appelle Laurent Mauvignier que je ne connaissais pas du tout mais qui a déjà écrit une dizaine de romans. Et ce livre audio est lu par un acteur...",
+          "chinese": "真的很棒，一位法兰西剧院的演员，叫 Denis Podalides。有声书通常是这样，往往有非常好的叙述者或演员，而这位拥有一种嗓音、一种韵律、一种说话方式，听起来真的超级舒服，所以这更加增添了文本的美感。"
+        },
+        {
+          "id": 130,
+          "start_time": "00:49:36.659",
+          "end_time": "00:50:00.329",
+          "french": "vraiment génial, un acteur de la comédie française qui s'appelle Denis Podalides. C'est souvent le cas avec les livres audio, souvent il y a de très bons narrateurs ou des acteurs et là c'est quelqu'un qui a une voix, une prosodie, une façon de parler qui est vraiment super agréable à écouter donc ça ajoute encore à la beauté du texte.",
+          "chinese": "《空房子》讲述了一个叙述者追溯四代人对家族进行的调查。"
+        },
+        {
+          "id": 131,
+          "start_time": "00:50:00.440",
+          "end_time": "00:50:09.030",
+          "french": "Et la maison vide, c'est un narrateur qui fait une enquête sur sa famille en remontant à quatre générations.",
+          "chinese": "实际上是通过家族老宅。这栋老宅已经存在好几个世纪了。他利用某些物品试图发现他的祖先是谁，特别是这段历史如何以他父亲在46岁时自杀而告终。"
+        },
+        {
+          "id": 132,
+          "start_time": "00:50:09.820",
+          "end_time": "00:50:31.550",
+          "french": "et à travers la maison de famille, en fait. La maison de famille qui est là depuis plusieurs siècles. Et il utilise certains objets pour essayer de découvrir qui étaient ses ancêtres et en particulier comment cette histoire a abouti par le suicide de son père quand il avait 46 ans.",
+          "chinese": "所以是的，我今年没听什么很欢快的东西。我正意识到这一点。这肯定是因为疲劳，我不知道。当时我听这本小说时完全不知道该期待什么。我只是看到它得了龚古尔奖，所以就试了试。真的很棒。这是一本“大部头”。当我们说一本书是大部头时，意味着它有很多页。它有750页。所以有声书大概花了我20个小时左右。"
+        },
+        {
+          "id": 133,
+          "start_time": "00:50:31.550",
+          "end_time": "00:50:57.489",
+          "french": "Donc oui, je n'ai pas écouté des trucs très gais cette année. Je suis en train de m'en rendre compte. C'est sûrement à cause de la fatigue, je ne sais pas. Là, je ne savais pas du tout à quoi m'attendre en écoutant ce roman. J'ai juste vu qu'il avait gagné le prix concours, donc j'ai essayé. C'est vraiment génial. C'est un gros pavé. Quand on dit qu'un livre est un pavé, ça veut dire qu'il y a beaucoup de pages. Il fait 750 pages. Donc là, en livre audio, je crois que ça m'a pris 20 heures ou quelque chose comme ça.",
+          "chinese": "所以我们真的有时间沉浸在这个家族的生活中。这让人有点想起《卢贡-马卡尔家族》系列。我知道 Ingrid 你非常喜欢，所以有点那种风格。但同时，他说他不想写成一部“古装小说”。所以这不是一部自诩为19世纪的小说。"
+        },
+        {
+          "id": 134,
+          "start_time": "00:50:57.489",
+          "end_time": "00:51:17.389",
+          "french": "Donc on a vraiment le temps de se plonger dans la vie de cette famille. Ça fait un peu penser à la saga des Rougon-Macquart. Je sais qu'Ingrid t'apprécie beaucoup, donc c'est un peu dans ce style-là. Mais en même temps, il a dit qu'il n'avait pas envie de faire un roman en costume. Donc ce n'est pas un roman qui prétend être un roman du XIXe siècle.",
+          "chinese": "它是现在写的，但有很多关于不同时代生活的细节，特别是很多关于第一次世界大战、两次大战期间、第二次世界大战时期的内容，以及这对生活在普罗旺斯一个小村庄的这个家族产生的影响。所以，写得真的超级好，很棒。不是超级超级容易读，所以我建议如果你已经有 C1、C2 水平再读，因为在风格上，有一些长句子之类的，但这是一部非常美的小说。"
+        },
+        {
+          "id": 135,
+          "start_time": "00:51:17.389",
+          "end_time": "00:51:47.690",
+          "french": "Ça a bien été écrit maintenant, mais il y a beaucoup de détails sur la vie à ces différentes époques, notamment beaucoup à la période Première Guerre mondiale, Entre-deux-guerres, Deuxième Guerre mondiale, l'impact que ça a eu sur cette famille qui vivait dans un petit village de Provence. Donc voilà, c'est vraiment super bien écrit, c'est génial. Pas super, super accessible, donc je vous le recommande plutôt si vous avez déjà un niveau C1, C2, parce qu'au niveau du style, il y a des phrases un peu longues et tout ça, mais un très beau roman.",
+          "chinese": "太棒了，我要去读。或者听，我不知道。到时看吧。"
+        },
+        {
+          "id": 136,
+          "start_time": "00:51:47.989",
+          "end_time": "00:51:53.219",
+          "french": "Trop bien, je vais le lire. Ou l'écouter, je ne sais pas. On verra.",
+          "chinese": "Anya，你还有最后一个推荐吗？是的，我还有一个最后的推荐给你们。这是一部剧，但不是普通的剧。我觉得这是一部今年非常脱颖而出的剧，因为它是2011年出的一部神剧的续作，那部剧叫《总而言之》。好，现在的续作是《总而言之2》。我想你们知道第一部吧？第一季，知道。是的。"
+        },
+        {
+          "id": 137,
+          "start_time": "00:51:53.590",
+          "end_time": "00:52:21.820",
+          "french": "Agna, tu avais une dernière recommandation ? Oui, j'ai encore une dernière recommandation pour vous. Et c'est une série, mais pas n'importe quelle série. Je pense que c'est une série qui s'est beaucoup démarquée cette année parce que c'est la continuation d'une série culte qui est sortie en 2011, il me semble, qui est intitulée Bref. Bon, maintenant, la continuation, c'est Bref 2. Je pense que vous connaissez la première partie, non ? La première saison, oui. Oui.",
+          "chinese": "肯定。比如我，就完全错过了第一季。我以前完全不知道，因为以前……以前没有那么多流媒体平台。所以，没那么容易看到。但好在，又是一位朋友向我推荐了这部剧，一位法国朋友告诉我，你一定要看这部剧。如果有一部你一定要看的剧，一部一定要看的法国剧，那就是这部。"
+        },
+        {
+          "id": 138,
+          "start_time": "00:52:21.820",
+          "end_time": "00:52:50.159",
+          "french": "C'est sûr. Moi, par exemple, je suis passée complètement à côté de cette première saison. Je ne connaissais pas du tout parce que ce n'était pas encore... Avant, il n'y avait pas beaucoup de plateformes de streaming. Donc, c'était un peu moins accessible. Mais oui, encore une fois, c'est un ami qui m'a recommandé cette série, un ami français qui m'a dit, tu dois regarder cette série. S'il y a une série que tu dois regarder, une série française que tu dois regarder, c'est celle-ci.",
+          "chinese": "所以，我看了，而且非常非常喜欢。真的非常非常酷，非常原创。所以，这部剧的主角是一个40岁的男人，可以说，他正面临成年生活的现实。所以，剧中的主题，涉及的主题是……"
+        },
+        {
+          "id": 139,
+          "start_time": "00:52:50.159",
+          "end_time": "00:53:13.260",
+          "french": "Et donc, j'ai regardé et j'ai très, très aimé. C'est vraiment très, très cool, très original. Donc, le personnage principal de cette série, c'est un mec de 40 ans qui, disons, fait face aux réalités de la vie adulte. Donc, les thèmes de la série, les thèmes qui sont abordés, c'est...",
+          "chinese": "首先是自我怀疑、恋爱关系、友情、家庭、育儿，还有与流逝时间的关系，许多困难的话题。好，这部剧里有很多我喜欢的地方，但我认为……"
+        },
+        {
+          "id": 140,
+          "start_time": "00:53:13.260",
+          "end_time": "00:53:32.869",
+          "french": "Avant tout, remise en question personnelle, relation amoureuse, relation amicale, famille, parentalité aussi, rapport en temps qui passe, plein de sujets difficiles. Et bon, il y a plusieurs choses que j'aimais dans cette série, mais je pense que la...",
+          "chinese": "第一点，主要是形式非常有趣。所以，在这部剧中，你会看到有很多转场、场面调度、特效，甚至还有特技效果。有些角色会跳出故事去评判其他角色，去给建议等等。总之，非常有创意且出人意料。"
+        },
+        {
+          "id": 141,
+          "start_time": "00:53:33.079",
+          "end_time": "00:53:58.659",
+          "french": "Première, c'est surtout le format qui est très intéressant. Donc, dans cette série, vous allez voir, il y a beaucoup de transitions, de mise en scène, des trucages, des effets spéciaux même. Il y a des personnages qui sortent de l'histoire pour juger d'autres personnages, pour conseiller, etc. Bref, c'est très créatif et très inattendu.",
+          "chinese": "而且也非常紧凑，我提醒大家，非常非常紧凑。虽然每集时长，我想，大约30分钟，但这完全足够了，因为节奏真的非常疯狂，非常非常快。一切都进行得非常快。台词写得超级好。有很多一针见血的妙语，也就是说，恰到好处地触动我们。"
+        },
+        {
+          "id": 142,
+          "start_time": "00:53:58.679",
+          "end_time": "00:54:24.619",
+          "french": "Et c'est aussi très intense, je vous préviens, c'est très très intense. Même si chaque épisode dure, je pense, environ 30 minutes, mais c'est largement suffisant parce que le rythme est vraiment effréné et très très rapide. Tout va vraiment très vite. Les dialogues sont super bien écrits. Il y a beaucoup de punchlines qui font mouche, c'est-à-dire qui nous touchent juste là où il faut.",
+          "chinese": "我觉得所有这些涉及的主题，我刚才提到的，都与我们的时代完美共鸣。它们非常普世。而且，这部剧里有很多幽默，很多荒诞幽默，我特别欣赏。我非常喜欢这种平衡，在……"
+        },
+        {
+          "id": 143,
+          "start_time": "00:54:24.619",
+          "end_time": "00:54:46.699",
+          "french": "Et je trouve que tous ces thèmes qui sont abordés, que je viens de mentionner, ça résonne parfaitement avec notre époque. Ils sont très universels. Et aussi, il y a beaucoup d'humour dans cette série, beaucoup d'humour absurde que moi, j'apprécie particulièrement. Et j'ai bien aimé cet équilibre entre cette...",
+          "chinese": "这种情感深度、这些困难且严肃的主题，与许多喜剧元素之间的平衡，我觉得平衡得非常好。我衷心向大家推荐这部剧。我觉得这是我看过的最好的法剧之一。所以，就是这样。"
+        },
+        {
+          "id": 144,
+          "start_time": "00:54:46.969",
+          "end_time": "00:55:03.880",
+          "french": "Cette profondeur émotionnelle, ces thèmes qui sont difficiles, qui sont sérieux, mais aussi, il y a beaucoup de comiques et je pense que c'est très bien équilibré. Je vous recommande sincèrement cette série. Je pense que c'est une des meilleures séries françaises que j'ai vues. Donc, voilà.",
+          "chinese": "我今年的重磅推荐。你把最好的留到了最后。是的。是的，我刚才在想我的推荐。早知道我应该先说我的，因为你以一个很棒的东西收尾。你也看了《总而言之》第二季，对吧？是的，我看了。我也非常喜欢。顺便说一下，我起初有点怀疑，因为第一季……"
+        },
+        {
+          "id": 145,
+          "start_time": "00:55:04.019",
+          "end_time": "00:55:30.320",
+          "french": "Ma grande recommandation de cette année. Tu as gardé le meilleur pour la fin. Yes. Ouais, j'étais en train de me dire ma recommandation. Après, j'aurais mieux fait de la dire avant parce que tu as fini avec quelque chose. Tu l'as regardé aussi, non, la deuxième saison de Baf ? Ouais, je l'ai vu. J'ai beaucoup aimé aussi. D'ailleurs, j'étais un peu sceptique au début parce que la première saison...",
+          "chinese": "其实只是一些非常短的视频。更像是一种短小、搞笑、制作精良的形式，但并没有传达特别深刻或解构性的信息。更多是日常生活场景。有点像是一个平庸男人的视角。"
+        },
+        {
+          "id": 146,
+          "start_time": "00:55:30.320",
+          "end_time": "00:55:49.219",
+          "french": "C'est juste des toutes petites vidéos en fait. C'est plus un format court, rigolo, bien fait, mais qui passait pas un message particulièrement profond ou déconstruit. C'était plus des situations quotidiennes. C'était un peu le point de vue d'un mec un peu banal.",
+          "chinese": "不太讨人喜欢。所以，我在想，做一个长剧集，且想要更深刻、真正进入角色内心世界的剧，对于这样一个角色来说是有风险的……"
+        },
+        {
+          "id": 147,
+          "start_time": "00:55:49.219",
+          "end_time": "00:56:05.980",
+          "french": "pas très attachant. Donc, je me disais, faire toute une série avec des épisodes longs et qui se veulent un peu plus profonds où on rentre vraiment dans l'intimité des personnages, c'est risqué avec un personnage aussi...",
+          "chinese": "有点废。必须说，主角是个有点废的男人。事实上，我想在十年间，也就是你说的，两季之间大概相隔十年，导演同时也是演员，我猜是他写的故事，一定也意识到了他角色的问题，并心想……"
+        },
+        {
+          "id": 148,
+          "start_time": "00:56:05.980",
+          "end_time": "00:56:31.570",
+          "french": "Un peu nul. C'est un mec un peu nul, il faut le dire, le personnage principal. Et en fait, je pense qu'en dix ans, il doit y avoir, c'est ce que tu disais, à peu près dix ans entre les deux saisons, le réalisateur qui est aussi l'acteur, j'imagine que c'est lui qui a écrit l'histoire, a dû se rendre compte aussi des problématiques de son personnage et se dire...",
+          "chinese": "有些东西可以做，以便进一步挖掘这种有点陈词滥调但最终能引起所有人共鸣的心理。确实，第一季真的是神作。在 Canal+ 频道播出。太搞笑了。所有法国人都知道。我觉得它现在看起来有点过时了。有一些那个时代的场景。但第二季也大获成功。事实上，第一季真正酷的地方在于……"
+        },
+        {
+          "id": 149,
+          "start_time": "00:56:31.570",
+          "end_time": "00:57:00.969",
+          "french": "Il y a un truc à faire pour aller plus loin sur cette psychologie un peu cliché, mais finalement qui pourrait parler à tout le monde. C'est vrai que la première saison était vraiment culte. Ça passait sur Canal+. C'était trop drôle. Tous les Français connaissent. Ça n'a pas super bien vieilli, je trouve. Il y a un peu des situations de l'époque. Mais la deuxième saison a super bien marché aussi. En fait, ce qui était vraiment très cool dans la saison 1, c'était le...",
+          "chinese": "叙事类型。节奏很快。是的，剪辑非常非常利落。是的，没错。后来被广泛模仿。但是的，他们在第二季做了一件很棒的事。我同意。好的。那么，你的最后一个推荐呢？"
+        },
+        {
+          "id": 150,
+          "start_time": "00:57:01.300",
+          "end_time": "00:57:27.090",
+          "french": "le type de narration, quoi. Ça va vite. Oui, le montage très, très curte. Oui, voilà. Qui ont été beaucoup repris ensuite. Mais oui, ils ont fait un truc super pour la saison 2. Je suis d'accord. OK. Alors toi, ta dernière recommandation, du coup ? Alors, en plus, je me suis dit, moi, bonne élève, un livre, un podcast, il faut que je trouve un truc à voir. Et il se trouve que...",
+          "chinese": "那么，此外，我心想，作为好学生，一本书，一个播客，我得找个视频看。结果发现……"
+        },
+        {
+          "id": 151,
+          "start_time": "00:57:27.090",
+          "end_time": "00:57:48.840",
+          "french": "en français, je me suis rendue compte que la seule fois de 2025 où je suis allée au ciné voir quelque chose de français, et c'est là où je reste très cliché, toutes mes recommandations tournent autour de la politique et des infos, c'est pas ma faute, c'est une obsession, c'est le film fait par Mediapart.",
+          "chinese": "用法语，我意识到2025年我唯一一次去电影院看法国片，而且在这里我还是老样子，我所有的推荐都围绕着政治和新闻，这不是我的错，这是一种执念，那就是 Mediapart 制作的电影。"
+        },
+        {
+          "id": 152,
+          "start_time": "00:57:49.079",
+          "end_time": "00:58:14.690",
+          "french": "donc journal média indépendant d'informations et qui notamment sort énormément d'enquêtes pour révéler les secrets des politiques, et bien ils ont fait un film sur l'affaire libyenne. Alors comment le dire, c'est monsieur Nicolas Sarkozy, notre ancien président, que vous connaissez très probablement,",
+          "chinese": "也就是独立的新闻媒体报纸，它特别发布了大量调查以揭露政客的秘密，好，他们拍了一部关于利比亚案的电影。怎么说呢，就是尼古拉·萨科齐先生，我们的前总统，你们很可能认识他，"
+        },
+        {
+          "id": 153,
+          "start_time": "00:58:14.690",
+          "end_time": "00:58:39.059",
+          "french": "a été poursuivi en justice pour avoir financé une de ses campagnes présidentielles avec de l'argent sale, avec de l'argent fourni par un dictateur, le dictateur libyen, Mohamed Kadhafi. Et donc, Mediapart a beaucoup enquêté sur Nicolas Sarkozy et Nicolas Sarkozy a dit une fois...",
+          "chinese": "他因使用黑钱，即由独裁者、利比亚独裁者穆阿迈尔·卡扎菲提供的资金资助其总统竞选而受到起诉。所以，Mediapart 对尼古拉·萨科齐进行了大量调查，而尼古拉·萨科齐曾说过一次……"
+        },
+        {
+          "id": 154,
+          "start_time": "00:58:39.059",
+          "end_time": "00:59:04.909",
+          "french": "De toute façon, personne n'y comprend rien pour dire que c'était du grand n'importe quoi. Et Mediapart a pris ça comme un défi et ils ont fait un film qui explique vraiment toute l'histoire. Donc, ça dure pendant des années et c'est vrai que j'ai trouvé ça assez impressionnant qu'ils réussissent à faire sous format film une explication aussi.",
+          "chinese": "“反正没人听得懂”，意思就是这纯属胡说八道。Mediapart 把这当作一个挑战，他们拍了一部真正解释整个故事的电影。所以，这持续了很多年，我发现他们能以电影的形式做出这样一种解释，真的很令人印象深刻。"
+        },
+        {
+          "id": 155,
+          "start_time": "00:59:04.909",
+          "end_time": "00:59:18.000",
+          "french": "d'une histoire aussi compliquée et c'était avant la condamnation. Entre temps, Nicolas Sarkozy a été condamné pour cette affaire et il a fait un peu de prison.",
+          "chinese": "解释这样一个复杂的故事，而且是在判决之前。与此同时，尼古拉·萨科齐因本案被定罪，并坐了一段时间牢。"
+        },
+        {
+          "id": 156,
+          "start_time": "00:59:18.000",
+          "end_time": "00:59:44.849",
+          "french": "Et c'est vrai que quand il a été condamné, il a beaucoup été défendu sur les plateaux télé qui disaient « Ah, mais de toute façon, il n'y a aucune preuve, le dossier est vide, ce n'est pas vrai ». Alors, quand on a vu le film de Mediapart, je peux vous dire qu'on sait que, en fait, si, c'est très grave ce qu'il a fait. Et il y a bien beaucoup, beaucoup d'éléments qui montrent qu'il était pris dans...",
+          "chinese": "确实，当他被定罪时，他在电视节目中受到了很多辩护，人们说“啊，但反正没有任何证据，卷宗是空的，这不是真的”。然而，当我们看了 Mediapart 的电影，我可以告诉你们，我们知道，事实上，是的，他所做的事情非常严重。而且确实有很多很多证据表明他卷入了……"
+        },
+        {
+          "id": 157,
+          "start_time": "00:59:44.849",
+          "end_time": "01:00:07.210",
+          "french": "il était pratiquement le chef de quelque chose qui ressemblait à de la mafia. Donc, très bien fait ce film. Il est passé au cinéma et je pense qu'il est encore accessible quelque part sur le site de Mediapart. Ok, très bien. Comme ça, vous avez des choses à lire, des choses à écouter et des choses à regarder.",
+          "chinese": "他实际上是一个类似于黑手党的组织的头目。所以，这部电影制作精良。它在电影院上映过，我想在 Mediapart 的网站上某个地方还能看到。好的，很好。这样，你们就有书可读，有音频可听，有视频可看了。"
+        },
+        {
+          "id": 158,
+          "start_time": "01:00:14.739",
+          "end_time": "01:00:40.739",
+          "french": "Ok, alors on s'est éternisé un peu sur ces premières parties. Je pense que ça va être l'épisode le plus long de notre histoire. Donc, on va essayer de terminer assez rapidement en vous parlant plus particulièrement d'InnerFrench. On va commencer par faire le bilan. Alors, qu'est-ce qu'on a fait cette année chez InnerFrench ? Alors, cette année, nous vous avons proposé un peu de nouveautés pédagogiques. Plus concrètement, un peu de nouveautés dans nos cours.",
+          "chinese": "好的，我们在前几部分聊得太久了。我想这将是我们历史上最长的一集。所以，我们要尝试快点结束，特别和大家聊聊 InnerFrench。我们先来做个总结。那么，今年我们在 InnerFrench 做了什么？那么，今年我们为大家提供了一些教学上的新内容。更具体地说，是课程中的一些新内容。"
+        },
+        {
+          "id": 159,
+          "start_time": "01:00:40.739",
+          "end_time": "01:01:07.969",
+          "french": "On a ajouté cinq nouvelles leçons dans notre cours « Avancer les visages de Paris ». On a réalisé des interviews passionnantes et les thèmes qu'on vous propose dans cette nouvelle partie, c'est par exemple le féminisme et le street art, être étudiant à Paris, la gastronomie française et le café français. Donc, vous allez voir, le cours, il est vraiment maintenant très, très riche en matière. Il est très diversifié. Il y a 34 leçons au total.",
+          "chinese": "我们在《进阶：巴黎的面孔》课程中增加了五节新课。我们进行了精彩的采访，我们在这一新部分中提供的主题包括，例如，女性主义与街头艺术、在巴黎当学生、法国美食和法国咖啡。所以，你们会看到，这门课程现在的内容非常非常丰富。它非常多样化。总共有34节课。"
+        },
+        {
+          "id": 160,
+          "start_time": "01:01:07.969",
+          "end_time": "01:01:37.409",
+          "french": "Et donc, vous avez l'opportunité d'entendre plein de spécialistes de différents domaines, approfondir votre vocabulaire, améliorer votre compréhension orale, tout en jetant un coup d'œil à des points de grammaire de ce niveau avancé. Ça, c'est la première nouveauté. Et la deuxième nouveauté, c'est qu'on a créé un nouveau cours, un cours bonus qu'on a intitulé « Les connais-tu ? ».",
+          "chinese": "所以，你们有机会听到不同领域的许多专家的见解，扩充词汇量，提高听力理解，同时关注这一高级水平的语法点。这是第一个新内容。第二个新内容是我们创建了一门新课程，一门我们称之为《你认识他们吗？》的奖励课程。"
+        },
+        {
+          "id": 161,
+          "start_time": "01:01:37.409",
+          "end_time": "01:01:53.420",
+          "french": "Il a été fait comme un complément à notre cours intermédiaire Build a Strong Core. Donc, ce nouveau cours, les connaissances, on le propose plutôt aux étudiants de Build a Strong Core ou les personnes qui veulent s'inscrire à ce cours.",
+          "chinese": "它是作为我们中级课程《打好基础》的补充而制作的。所以，这门新课程《你认识他们吗？》，我们主要推荐给《打好基础》的学生或想报名该课程的人。"
+        },
+        {
+          "id": 162,
+          "start_time": "01:01:53.420",
+          "end_time": "01:02:19.880",
+          "french": "Et c'est un cours où on vous présente 20 personnalités françaises influentes, donc les personnalités à connaître. Si vous voulez participer dans des conversations avec des natifs, si vous voulez vous sentir que vous êtes au courant de l'actualité culturelle, c'est vraiment des personnalités à connaître. Cette fois-ci, c'est un cours avec des leçons audio, donc on a testé un nouveau format.",
+          "chinese": "在这门课中，我们向大家介绍20位有影响力的法国人物，即必须了解的人物。如果你想参与和母语者的对话，如果你想觉得自己了解文化时事，这些真的是必须了解的人物。这一次，这是一门音频课程，所以我们测试了一种新形式。"
+        },
+        {
+          "id": 163,
+          "start_time": "01:02:20.219",
+          "end_time": "01:02:45.190",
+          "french": "Et chaque leçon est accompagnée d'un quiz de compréhension pour travailler encore plus votre vocabulaire et votre compréhension orale. Très bien. Je pense que là, tu vas donner envie aux auditeurs d'acheter immédiatement. Donc ça, c'était sur les cours. Ça nous a pris pas mal de temps, effectivement, toutes ces mises à jour. Et on a aussi bien travaillé sur le podcast cette année. Qu'est-ce qu'on a fait, Ingrid ?",
+          "chinese": "每节课都配有理解测试，以进一步锻炼你们的词汇和听力理解。很好。我想你现在会让听众产生立即购买的冲动。好，这就是关于课程的部分。确实，所有这些更新花了我们不少时间。今年我们在播客方面也做了不少工作。Ingrid，我们做了什么？"
+        },
+        {
+          "id": 164,
+          "start_time": "01:02:45.619",
+          "end_time": "01:03:10.980",
+          "french": "Ouais, le podcast, on peut dire qu'on est sur notre rythme de croisière. Cette année, comme c'était le cas l'année dernière, je crois, on a publié un épisode toutes les deux semaines, donc deux épisodes par mois. C'est vrai que c'était un objectif. Il y a quelques années, on n'y arrivait pas du tout à avoir cette régularité.",
+          "chinese": "是的，播客方面，可以说我们正处于平稳运行期。今年，和去年一样，我想，我们每两周发布一集，也就是每月两集。这确实是一个目标。几年前，我们根本无法保持这种规律性。"
+        },
+        {
+          "id": 165,
+          "start_time": "01:03:11.130",
+          "end_time": "01:03:37.679",
+          "french": "On a pu faire ça régulièrement et donc vous proposer des épisodes variés. On essaye d'alterner entre des épisodes solo d'Hugo, des épisodes solo que je fais ou des conversations. Et ça a l'air de fonctionner puisque vous êtes de plus en plus nombreux à nous écouter. Il me semble que sur le bilan Spotify, il y avait...",
+          "chinese": "我们能定期做到这一点，从而为大家提供多样化的剧集。我们尝试在 Hugo 的单人集、我做的单人集或对话集之间交替。这似乎奏效了，因为听我们节目的人越来越多。我觉得在 Spotify 的年度总结中，有……"
+        },
+        {
+          "id": 166,
+          "start_time": "01:03:37.679",
+          "end_time": "01:04:06.579",
+          "french": "plus 50% presque d'abonnés. On écoutait, alors ça c'est les statistiques Spotify, mais je pense que sur les autres plateformes, c'est à peu près pareil, dans 145 pays. Quasiment dans le monde entier, on peut dire. Ouais, c'est vrai, c'est presque... Je pense qu'il n'y a pas beaucoup de podcasts en français qui sont écoutés, qui sont aussi écoutés, donc Cocorico. Ouais, c'est clair, et en plus, on est souvent dans le top.",
+          "chinese": "订阅者增加了近50%。我们在145个国家被收听，这是 Spotify 的统计数据，但我认为在其他平台上也差不多。几乎遍布全世界，可以说。是的，没错，这几乎是……我觉得没有多少法语播客被收听得如此之多，所以值得自豪。"
+        },
+        {
+          "id": 167,
+          "start_time": "01:04:06.579",
+          "end_time": "01:04:28.190",
+          "french": "des podcasts les plus écoutés. J'ai vu sur Spotify toujours, c'est ceux qui font les super statistiques, c'est pour ça que je les cite. Après, il y a beaucoup de monde qui nous écoute sur d'autres plateformes. Mais là, par exemple, il y a 130 000 personnes qui ont InnoFrench dans leur top 10 des podcasts les plus écoutés.",
+          "chinese": "在收听率最高的播客之列。我还是在 Spotify 上看到的，他们做的统计数据非常棒，所以我引用了他们。当然，在其他平台上也有很多人听我们的节目。但在这里，例如，有13万人将 InnerFrench 列入他们收听率最高的前10个播客。"
+        },
+        {
+          "id": 168,
+          "start_time": "01:04:28.190",
+          "end_time": "01:04:52.750",
+          "french": "Merci beaucoup pour votre fidélité. Je voulais vous faire un petit top des épisodes les plus écoutés, mais en fait, suivant les plateformes, ça change. C'est plutôt une bonne nouvelle, je trouve. On n'a pas forcément un épisode qui surpasse tous les autres. Vous êtes assez fidèles dans la régularité.",
+          "chinese": "非常感谢大家的忠诚。我本想给大家做一个收听率最高的剧集榜单，但事实上，根据平台的不同，情况会有所变化。我觉得这反而是个好消息。我们不一定有一集能超越所有其他剧集。大家在规律性方面非常忠诚。"
+        },
+        {
+          "id": 169,
+          "start_time": "01:04:52.750",
+          "end_time": "01:05:19.139",
+          "french": "Donc ça, c'est vraiment cool et ça nous permet de faire des sujets qui nous intéressent nous, qu'on aime bien et vous êtes nombreux aussi à commenter et on peut suivre aussi vos retours grâce à ça et les prendre en compte. Oui, effectivement. Et il y a juste un ou deux épisodes où on a failli pas le publier à temps ou on les a publiés un peu en retard. C'est quand tu étais en vacances en général.",
+          "chinese": "所以这真的很酷，这让我们能做一些我们感兴趣、我们喜欢的主题，而且你们中也有很多人发表评论，我们也能借此关注大家的反馈并予以考虑。是的，确实。只有一两集我们差点没能按时发布，或者发布得晚了一点。那通常是在你度假的时候。"
+        },
+        {
+          "id": 170,
+          "start_time": "01:05:19.139",
+          "end_time": "01:05:42.090",
+          "french": "Et j'étais tout seul. Donc, voilà. Moi, j'en profite pour te remercier, Ingrid, aussi, parce que cette régularité, c'est aussi parce que tu es là pour me rappeler à l'ordre de temps en temps. Pour t'engueuler. Pour m'engueuler, on peut le dire. Je me fais engueuler maintenant. Non, elle le fait toujours avec beaucoup de diplomatie.",
+          "chinese": "而我当时是一个人。所以，就是这样。我也想借此机会感谢你，Ingrid，因为这种规律性也是因为你偶尔会提醒我遵守秩序。为了训斥你。为了训斥我，可以这么说。我现在被训斥了。不，她总是做得非常有外交手腕。"
+        },
+        {
+          "id": 171,
+          "start_time": "01:05:42.460",
+          "end_time": "01:06:03.619",
+          "french": "Pour finir, ce qu'on a fait aussi, c'est que j'ai relancé la newsletter cet été en essayant d'écrire une newsletter par semaine sous un format un peu différent. Donc, c'était plus des petites histoires personnelles, des petites leçons comme ça de la vie quotidienne. Ça a assez bien marché. Vous êtes nombreux à m'avoir dit que vous aimiez bien ce format.",
+          "chinese": "最后，我们还做的是，我今年夏天重启了时事通讯，尝试每周以一种略有不同的形式写一封。所以，更多是一些个人小故事、日常生活中的小教训。效果相当不错。你们中很多人告诉我喜欢这种形式。"
+        },
+        {
+          "id": 172,
+          "start_time": "01:06:03.619",
+          "end_time": "01:06:20.619",
+          "french": "Bon, je n'ai pas réussi à le maintenir forcément tout le temps, mais il y en a qui l'utilisent notamment pour faire des petites conversations et qui nous ont demandé s'ils pouvaient avoir accès aux anciennes newsletters parce qu'ils n'étaient pas encore abonnés. Donc, on a fait une archive des newsletters sur le site.",
+          "chinese": "好吧，我不一定能一直维持下去，但有些人特别用它来进行简短对话，并问我们是否可以查看旧的 newsletter，因为他们当时还没订阅。所以，我们在网站上做了 newsletter 存档。"
+        },
+        {
+          "id": 173,
+          "start_time": "01:06:21.019",
+          "end_time": "01:06:41.260",
+          "french": "que vous pouvez retrouver tout simplement en tapant innerfrench.com slash newsletter. Le mieux, ça reste de vous inscrire, comme ça vous les recevez en temps réel, vous êtes sûr d'en rater aucune. Donc si vous n'êtes pas encore inscrit à la newsletter, je vous le recommande. Et cette année, un des gros chantiers aussi, ça a été de...",
+          "chinese": "你们只需输入 innerfrench.com/newsletter 即可找到。最好的办法还是订阅，这样你们就能实时收到，确保不会错过任何一封。所以如果你还没订阅 newsletter，我建议你订阅。今年，其中一个大工程也是……"
+        },
+        {
+          "id": 174,
+          "start_time": "01:06:42.010",
+          "end_time": "01:07:10.929",
+          "french": "faire une refonte du site internet. Ça veut dire qu'en fait, on a combiné, vous ne le saviez peut-être pas avant, mais il y avait en réalité deux sites internet, un pour le podcast et un pour les cours, qui se ressemblaient. Donc voilà, on n'avait pas forcément l'impression que c'était deux sites différents, mais c'était deux sites séparés, ce qui faisait que vous deviez avoir deux comptes, un pour le podcast, un pour les cours. C'était un peu compliqué parfois. Donc là, on a décidé de tout mettre sur le même site et de le réorganiser un peu.",
+          "chinese": "对网站进行改版。这意味着事实上，我们合并了——你们以前可能不知道，但实际上有两个网站，一个用于播客，一个用于课程，它们长得很像。所以，好，大家不一定觉得那是两个不同的网站，但它们是分开的，这意味着你们必须有两个账号，一个用于播客，一个用于课程。有时有点复杂。所以现在，我们决定把所有东西都放在同一个网站上，并重新组织了一下。"
+        },
+        {
+          "id": 175,
+          "start_time": "01:07:10.929",
+          "end_time": "01:07:39.849",
+          "french": "Donc voilà, maintenant, normalement, en théorie, c'est plus simple. Bon, la période de transition, il y a eu quelques petits problèmes techniques comme d'habitude, mais là, maintenant, ça fonctionne assez bien. On a changé aussi un peu la page des podcasts en ajoutant des filtres et des choses comme ça. Donc, c'est plus facile d'organiser les épisodes, de chercher les épisodes par thème en fonction de ce qui vous intéresse. Donc, quelques petites nouveautés comme ça qui ont, on espère, amélioré votre expérience.",
+          "chinese": "所以，现在理论上更简单了。好，过渡期照例出现了一些小的技术问题，但现在运行得相当好。我们也稍微改动了播客页面，增加了过滤器之类的内容。所以，按主题整理剧集、根据你感兴趣的内容搜索剧集变得更容易了。所以，这些小的新功能，我们希望，改善了你们的体验。"
+        },
+        {
+          "id": 176,
+          "start_time": "01:07:40.119",
+          "end_time": "01:07:47.780",
+          "french": "avec le site et voilà ça a été un peu ce qu'on a fait cette année on a plein de projets pour 2026",
+          "chinese": "在网站上的体验，好，这就是我们今年所做的，我们对2026年有很多计划。"
+        },
+        {
+          "id": 177,
+          "start_time": "01:07:47.960",
+          "end_time": "01:08:12.530",
+          "french": "Je pense que comme l'épisode est déjà assez long, on ne va peut-être pas vous les dévoiler maintenant. Ça pourrait être le premier épisode de l'année. Je ne sais pas si on avait prévu quelque chose déjà. Je ne sais pas. On verra ce qu'on publie. Mais bon, sachez qu'on a plein de nouvelles idées, plein de nouveaux projets pour 2026. On est plus motivés que jamais. Donc voilà, on espère que vous serez au rendez-vous.",
+          "chinese": "我想由于这一集已经相当长了，我们也许现在就不向大家透露了。这可能是明年的第一集。我不知道我们是否已经有了计划。我不知道。到时看我们发布什么。但好在，请记住我们对2026年有很多新想法、很多新计划。我们比以往任何时候都更有动力。所以，好，我们希望大家能准时收听。"
+        },
+        {
+          "id": 178,
+          "start_time": "01:08:12.530",
+          "end_time": "01:08:33.159",
+          "french": "Merci à toutes et à tous pour votre fidélité, pour continuer de nous accompagner, de nous écouter, pour vos commentaires. Ça nous fait toujours super plaisir de vous lire. On vous souhaite une excellente année 2026. Bonne année à tous et encore merci beaucoup. Bonne année, merci.",
+          "chinese": "感谢大家的忠诚，感谢大家继续陪伴我们、听我们的节目，感谢大家的评论。读大家的评论总是让我们超级开心。祝大家2026年万事如意。祝大家新年快乐，再次非常感谢。新年快乐，谢谢。"
+        }
+      ],
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

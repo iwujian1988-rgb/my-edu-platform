@@ -1,0 +1,587 @@
+{
+  "source_file": "Améliorez votre compréhension orale en français.json",
+  "channel": "法国日常一件事",
+  "video_name": "提升您的法语听力",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-15T01:08:20.645Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "L'infinitif sujet (不定式作主语)",
+          "L'infinitif passé (过去不定式)"
+        ],
+        "speaking": [
+          "Améliorer la compréhension orale à vitesse normale",
+          "S'habituer à l'articulation claire du français parlé au quotidien"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "améliorer",
+            "part_of_speech": "verbe",
+            "ipa": "[ameljɔʁe]",
+            "chinese": "改善，提高",
+            "example_sentence": {
+              "french": "Je vous invite à améliorer votre compréhension orale.",
+              "chinese": "我邀请您提高您的听力理解能力。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je vous invite à améliorer votre compréhension orale avec One Thing in a French Day.",
+                "chinese": "我邀请你通过《法语一天里的某件事》来提升你的听力理解能力。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "compréhension",
+            "part_of_speech": "nom",
+            "ipa": "[kɔ̃pʁeɑ̃sjɔ̃]",
+            "chinese": "理解",
+            "example_sentence": {
+              "french": "La compréhension orale est essentielle pour apprendre une langue.",
+              "chinese": "听力理解对学习一门语言至关重要。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je vous invite à améliorer votre compréhension orale...",
+                "chinese": "我邀请你提升你的听力理解能力……",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "fabriqué",
+            "part_of_speech": "adjectif",
+            "ipa": "[fabʁike]",
+            "chinese": "虚构的，人造的",
+            "example_sentence": {
+              "french": "Ce n'est pas un sujet fabriqué, c'est la vraie vie.",
+              "chinese": "这不是一个虚构的话题，这是真实的生活。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Pas de leçons construites, pas de sujets fabriqués.",
+                "chinese": "没有精心设计的课程，也没有虚构的话题。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "littéralement",
+            "part_of_speech": "adverbe",
+            "ipa": "[liteʁalmɑ̃]",
+            "chinese": "简直，字面上地",
+            "example_sentence": {
+              "french": "Le podcast est littéralement branché sur la vie réelle.",
+              "chinese": "这个播客简直就是与现实生活紧密相连。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le podcast est littéralement branché sur la vie réelle à Paris.",
+                "chinese": "这个播客简直就是与巴黎的现实生活紧密相连。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "branché",
+            "part_of_speech": "adjectif",
+            "ipa": "[bʁɑ̃ʃe]",
+            "chinese": "连接的，紧密相连的",
+            "example_sentence": {
+              "french": "Il est toujours branché sur l'actualité.",
+              "chinese": "他总是密切关注时事。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Le podcast est littéralement branché sur la vie réelle à Paris.",
+                "chinese": "这个播客简直就是与巴黎的现实生活紧密相连。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "passionnant",
+            "part_of_speech": "adjectif",
+            "ipa": "[pasjɔnɑ̃]",
+            "chinese": "极有趣的，引人入胜的",
+            "example_sentence": {
+              "french": "J'ai fait des rencontres passionnantes hier.",
+              "chinese": "我昨天遇到了一些极有趣的人。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "des rencontres avec des invités passionnants.",
+                "chinese": "与各位精彩嘉宾的交流互动。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "impression",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃pʁesjɔ̃]",
+            "chinese": "印象，感觉",
+            "example_sentence": {
+              "french": "Il vous donne l'impression d'être là.",
+              "chinese": "它会让你感觉仿佛置身其中。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il vous donne l'impression d'être là avec nous dans la vraie vie.",
+                "chinese": "它会让你感觉仿佛真的置身于我们身边，与我们一起体验真实的生活。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "articulation",
+            "part_of_speech": "nom",
+            "ipa": "[aʁtikylasjɔ̃]",
+            "chinese": "发音，咬字",
+            "example_sentence": {
+              "french": "Elle parle avec une articulation claire.",
+              "chinese": "她说话发音清晰。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je vous parle comme à mes amis, à vitesse normale, avec une articulation claire.",
+                "chinese": "我跟你们说话时就像在跟朋友聊天一样，语速正常，发音清晰。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "captivant",
+            "part_of_speech": "adjectif",
+            "ipa": "[kaptivɑ̃]",
+            "chinese": "迷人的，引人入胜的",
+            "example_sentence": {
+              "french": "Ce livre est vraiment captivant.",
+              "chinese": "这本书真的很引人入胜。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Chaque épisode dure entre 3 et 8 minutes, court, captivant, jamais ennuyeux.",
+                "chinese": "每集时长介于3到8分钟，短小精悍、引人入胜，绝不会让人感到枯燥。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "ennuyeux",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɑ̃nɥijø]",
+            "chinese": "无聊的，枯燥的",
+            "example_sentence": {
+              "french": "Ce film n'est jamais ennuyeux.",
+              "chinese": "这部电影从不无聊。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Chaque épisode dure entre 3 et 8 minutes, court, captivant, jamais ennuyeux.",
+                "chinese": "每集时长介于3到8分钟，短小精悍、引人入胜，绝不会让人感到枯燥。",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "découverte",
+            "part_of_speech": "nom",
+            "ipa": "[dekuvɛʁt]",
+            "chinese": "发现",
+            "example_sentence": {
+              "french": "C'est une année remplie de découvertes.",
+              "chinese": "这是充满发现的一年。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Je vous attends pour une année remplie de découvertes...",
+                "chinese": "我期待着与你们一起度过充满发现……的一年！",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          },
+          {
+            "french": "obsession",
+            "part_of_speech": "nom",
+            "ipa": "[ɔpsesjɔ̃]",
+            "chinese": "痴迷，热爱",
+            "example_sentence": {
+              "french": "Apprendre le français est devenu une nouvelle obsession.",
+              "chinese": "学习法语成了一种新的热爱。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              3
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "...de rencontres passionnantes et de nouvelles obsessions.",
+                "chinese": "……精彩相遇和全新热爱的一年！",
+                "source_video": "Podcast Intro"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "branché sur",
+            "meaning": "与……紧密相连，接通",
+            "example": {
+              "french": "Le podcast est littéralement branché sur la vie réelle à Paris.",
+              "chinese": "这个播客简直就是与巴黎的现实生活紧密相连。"
+            },
+            "usage_note": "原意为“插上电源”，在此引申为“密切关注”、“与……同步”。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "donner l'impression de",
+            "meaning": "给人……的印象，让人感觉",
+            "example": {
+              "french": "Il vous donne l'impression d'être là avec nous.",
+              "chinese": "它会让你感觉仿佛真的置身于我们身边。"
+            },
+            "usage_note": "后接不定式，表示产生某种错觉或感觉。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "avoir fait X% du chemin",
+            "meaning": "已经完成了X%的路程/目标",
+            "example": {
+              "french": "Me comprendre dans les épisodes, c'est avoir fait 80% du chemin.",
+              "chinese": "在这些节目中理解我，就等于已经走完了80%的路程。"
+            },
+            "usage_note": "形象地表达在达成某个目标的进程中已经取得了显著进展。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "la vie de tous les jours",
+            "meaning": "日常生活",
+            "example": {
+              "french": "Je parle de la vie de tous les jours.",
+              "chinese": "我谈论的是日常生活。"
+            },
+            "usage_note": "常用于强调真实、非虚构的日常点滴。",
+            "source_ids": [
+              2
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "L'infinitif sujet (不定式作主语)",
+            "structure": "Infinitif + [compléments], c'est + [attribut/infinitif]",
+            "explanation": "在法语中，动词不定式可以直接作为句子的主语，通常用来表达一个普遍的概念或动作。当主语是不定式时，后面的系动词通常用 'c'est' 来引导表语。",
+            "example": {
+              "french": "Me comprendre dans les épisodes, c'est avoir fait 80% du chemin pour comprendre les gens en France.",
+              "chinese": "在这些节目中理解我，就等于已经走完了在法国理解他人的80%路程。"
+            },
+            "usage_note": "这种结构在口语和书面语中都很常见，使句子显得更加凝练。",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "name": "L'infinitif passé (过去不定式)",
+            "structure": "Avoir / Être (à l'infinitif) + Participe passé",
+            "explanation": "过去不定式用于表示在主句动作之前已经完成的动作。在原文中，它作为 'c'est' 的表语，强调'理解我'这个动作一旦发生，就意味着'已经走完了'80%的路程这个既定事实。",
+            "example": {
+              "french": "Me comprendre dans les épisodes, c'est avoir fait 80% du chemin...",
+              "chinese": "在这些节目中理解我，就等于已经走完了80%的路程……"
+            },
+            "usage_note": "常用于 'après avoir fait' 结构中，或如本例中强调动作的完成状态。",
+            "source_ids": [
+              3
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "Rythme et articulation",
+              "description": "原文强调了 'à vitesse normale, avec une articulation claire' (正常语速，发音清晰)。在真实的法语播客中，即使语速正常，清晰的咬字 (articulation) 也是帮助听众理解的关键。",
+              "examples": [
+                "articulation claire"
+              ]
+            }
+          ],
+          "liaison": [
+            "Vous_aimez [vuz_eme]",
+            "Vous_apprenez [vuz_apʁəne]",
+            "les_épisodes [lez_epizɔd]"
+          ],
+          "intonation": "播客开场白使用了多个升调的疑问句 (Vous aimez le français ? La France ? Paris ?) 来吸引听众的注意力，随后转为平稳、亲切的陈述语调。"
+        },
+        "vocabulary_network": {
+          "theme": "Le Podcast et l'Apprentissage",
+          "core_word": "Podcast",
+          "related_groups": [
+            {
+              "category": "Caractéristiques",
+              "words": [
+                "branché",
+                "réelle",
+                "court",
+                "captivant",
+                "passionnant"
+              ]
+            },
+            {
+              "category": "Objectifs",
+              "words": [
+                "améliorer",
+                "compréhension",
+                "découverte"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Le podcast est ___ ___ sur la vie réelle à Paris. La vie de ___ ___ ___, des moments en famille, des rencontres avec des invités ___.",
+            "answer": "littéralement, branché, tous, les, jours, passionnants",
+            "explanation": "根据原文，播客简直是与巴黎的现实生活紧密相连，记录着日常生活和与精彩嘉宾的相遇。填入的词汇测试了副词、形容词及固定表达'tous les jours'。",
+            "source_ids": [
+              2
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, quelle est la particularité de ce podcast ?",
+            "options": {
+              "A": "Il propose des leçons de grammaire très construites.",
+              "B": "Il est branché sur la vie réelle avec des épisodes courts et captivants.",
+              "C": "Chaque épisode dure plus de 80 minutes pour bien expliquer les sujets.",
+              "D": "Il utilise des sujets fabriqués pour faciliter l'apprentissage."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文明确指出 'Pas de leçons construites, pas de sujets fabriqués. Le podcast est littéralement branché sur la vie réelle à Paris.' 并且提到 'Chaque épisode dure entre 3 et 8 minutes, court, captivant...'",
+            "source_ids": [
+              1,
+              2,
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Me comprendre dans les épisodes, c'est avoir fait 80% du chemin pour comprendre les gens en France.",
+            "answer": "在这些节目中理解我，就等于已经走完了在法国理解他人的80%路程。",
+            "explanation": "翻译难点在于 'Me comprendre... c'est avoir fait...' 这种不定式作主语和表语的结构，以及固定表达 'avoir fait X% du chemin' (走完了X%的路程/完成了X%的目标)。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Complétez la phrase en utilisant l'infinitif passé du verbe 'faire', comme dans le texte : 'Me comprendre dans les épisodes, c'est ___ ___ 80% du chemin.'",
+            "answer": "avoir fait",
+            "explanation": "此处需要使用过去不定式 (L'infinitif passé) 来表示一个已经完成的状态。结构为助动词 avoir 的不定式加上 faire 的过去分词 fait。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "littéralement",
+            "branché",
+            "passionnant",
+            "captivant",
+            "fabriqué"
+          ],
+          "covered_grammar": [
+            "L'infinitif sujet (不定式作主语)",
+            "L'infinitif passé (过去不定式)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Pas de [Nom], pas de [Nom].",
+            "explanation": "用于强调完全没有某物，常用于口语或广告语中，显得简洁有力。",
+            "example": {
+              "french": "Pas de leçons construites, pas de sujets fabriqués.",
+              "chinese": "没有精心设计的课程，也没有虚构的话题。"
+            }
+          },
+          {
+            "pattern": "Il vous donne l'impression de + [Infinitif].",
+            "explanation": "表示某事物给人带来某种感觉或错觉。",
+            "example": {
+              "french": "Il vous donne l'impression d'être là avec nous dans la vraie vie.",
+              "chinese": "它会让你感觉仿佛真的置身于我们身边，与我们一起体验真实的生活。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你正在向一位正在学习法语的朋友推荐一个播客，你需要描述这个播客的特点（真实生活、语速正常、发音清晰）。",
+          "requirements": "使用 'donner l'impression de' 和 'branché sur' 这两个表达。",
+          "starter": "Tu devrais écouter ce podcast, il est vraiment différent. Il est..."
+        }
+      },
+      "summary": {
+        "content": "Ce texte est l'introduction du podcast 'One Thing in a French Day' par Laetitia. Elle explique que son podcast n'est pas une leçon traditionnelle, mais une immersion dans la vie réelle parisienne. Avec des épisodes courts, une vitesse normale et une articulation claire, elle aide les apprenants à améliorer leur compréhension orale en écoutant des histoires du quotidien.",
+        "keywords": [
+          "podcast",
+          "compréhension orale",
+          "vie réelle",
+          "Paris",
+          "apprentissage"
+        ],
+        "difficulty_note": "Le texte est de niveau B1. Le vocabulaire est accessible mais utilise des expressions idiomatiques ('branché sur', 'faire le chemin') et des structures grammaticales intéressantes comme l'infinitif passé."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.380",
+          "end": "00:01:21.219"
+        },
+        "theme": "Présentation de podcast et apprentissage du français",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 2,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.380",
+          "end_time": "00:00:25.579",
+          "french": "Bonjour, c'est Laetitia à Paris. Vous aimez le français ? La France ? Paris ? Et vous apprenez le français ? Je vous invite à améliorer votre compréhension orale avec One Thing in a French Day. Ce podcast est différent. Pas de leçons construites, pas de sujets fabriqués.",
+          "chinese": "你好，我是身在巴黎的Laetitia。你喜欢法语吗？喜欢法国吗？喜欢巴黎吗？你正在学法语吗？我邀请你通过《One Thing in a French Day》来提高法语听力。这个播客与众不同。没有刻板的课程，也没有生硬编造的话题。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:25.750",
+          "end_time": "00:00:50.280",
+          "french": "Le podcast est littéralement branché sur la vie réelle à Paris. La vie de tous les jours, des moments en famille, des rencontres avec des invités passionnants. Il vous donne l'impression d'être là avec nous dans la vraie vie. Je vous parle comme à mes amis, à vitesse normale, avec une articulation claire.",
+          "chinese": "这个播客完全与巴黎的真实生活接轨。日常生活、家庭时光，以及与有趣的嘉宾们的交流。它会让你感觉仿佛在现实生活中与我们同在。我会像和朋友聊天一样跟你说话，语速正常，吐字清晰。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:50.520",
+          "end_time": "00:01:21.219",
+          "french": "Me comprendre dans les épisodes, c'est avoir fait 80% du chemin pour comprendre les gens en France. Chaque épisode dure entre 3 et 8 minutes, court, captivant, jamais ennuyeux. Je vous attends pour une année remplie de découvertes, de rencontres passionnantes et de nouvelles obsessions. À bientôt sur One Thing in a French Day.",
+          "chinese": "能听懂我在节目里说的话，就意味着你在听懂法国人说话的道路上已经完成了80%。每集时长在3到8分钟之间，简短、吸引人，绝不枯燥。我在这里等你，一起度过充满新发现、有趣邂逅和全新热爱的一年。我们在《One Thing in a French Day》不见不散。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "法国日常一件事",
+        "start_time": "00:00:00.380",
+        "end_time": "00:01:21.219",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 3,
+        "source_video_name": "Améliorez votre compréhension orale en français.json",
+        "tags": [
+          "法国生活",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

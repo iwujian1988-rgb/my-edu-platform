@@ -1,0 +1,610 @@
+{
+  "source_file": "_Trump et la paix_ (_Trump and peace_).json",
+  "channel": "Louis法语课",
+  "video_name": "_Trump et la paix_ (_Trump and peace_)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-13T17:19:42.463Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 10,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le participe présent",
+          "L'infinitif de but avec 'pour'",
+          "L'accord de l'adjectif en -eur"
+        ],
+        "speaking": [
+          "Discussing international diplomatic initiatives",
+          "Expressing intentions and promises in a formal context"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "intention",
+            "part_of_speech": "nom féminin",
+            "ipa": "[ɛ̃.tɑ̃.sjɔ̃]",
+            "chinese": "意图，打算",
+            "example_sentence": {
+              "french": "Il annonce son intention de contacter Vladimir Poutine.",
+              "chinese": "他宣布了他与弗拉基米尔·普京取得联系的意图。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Trump annonce son intention.",
+                "chinese": "特朗普宣布了他的意图。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "conflit",
+            "part_of_speech": "nom masculin",
+            "ipa": "[kɔ̃.fli]",
+            "chinese": "冲突，战争",
+            "example_sentence": {
+              "french": "Il veut mettre fin au conflit en Ukraine.",
+              "chinese": "他想结束乌克兰的冲突。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5,
+              6
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "mettre fin au conflit en Ukraine.",
+                "chinese": "结束乌克兰的冲突。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "initiative",
+            "part_of_speech": "nom féminin",
+            "ipa": "[i.ni.sja.tiv]",
+            "chinese": "倡议，举措",
+            "example_sentence": {
+              "french": "Il promet une initiative diplomatique majeure.",
+              "chinese": "他承诺采取一项重大的外交举措。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "Promettant une initiative diplomatique majeure.",
+                "chinese": "承诺一项重大外交举措。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "diplomatique",
+            "part_of_speech": "adjectif",
+            "ipa": "[di.plɔ.ma.tik]",
+            "chinese": "外交的",
+            "example_sentence": {
+              "french": "C'est une solution diplomatique.",
+              "chinese": "这是一个外交解决方案。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "une initiative diplomatique majeure.",
+                "chinese": "一项重大的外交举措。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "majeure",
+            "part_of_speech": "adjectif (féminin)",
+            "ipa": "[ma.ʒœʁ]",
+            "chinese": "重大的，主要的",
+            "example_sentence": {
+              "french": "Cette décision est majeure pour l'avenir.",
+              "chinese": "这个决定对未来至关重要。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              5,
+              7
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "Attention, « majeure », ce n'est pas J-O-R en français, c'est J-E-U-R.",
+                "chinese": "注意，“重大”在法语中不是J-O-R，而是J-E-U-R。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "promettre",
+            "part_of_speech": "verbe",
+            "ipa": "[pʁɔ.mɛtʁ]",
+            "chinese": "承诺，保证",
+            "example_sentence": {
+              "french": "Je te promets que je serai là.",
+              "chinese": "我向你保证我会到场。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              5,
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "Je te promets que je serai fidèle toute ma vie.",
+                "chinese": "我向你保证，我会一生一世忠于你。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "fidèle",
+            "part_of_speech": "adjectif",
+            "ipa": "[fi.dɛl]",
+            "chinese": "忠诚的，忠实的",
+            "example_sentence": {
+              "french": "Il est resté fidèle à ses principes.",
+              "chinese": "他始终忠于自己的原则。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              6
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "je serai fidèle toute ma vie.",
+                "chinese": "我会一生一世忠于你。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "dispute",
+            "part_of_speech": "nom féminin",
+            "ipa": "[dis.pyt]",
+            "chinese": "争吵，纠纷",
+            "example_sentence": {
+              "french": "Ils ont eu une dispute hier soir.",
+              "chinese": "他们昨晚吵了一架。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              4
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "les parents mettent fin à une dispute entre leurs enfants.",
+                "chinese": "父母结束了孩子们之间的争吵。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "contacter",
+            "part_of_speech": "verbe",
+            "ipa": "[kɔ̃.tak.te]",
+            "chinese": "联系，联络",
+            "example_sentence": {
+              "french": "N'hésitez pas à nous contacter.",
+              "chinese": "请随时与我们联系。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2,
+              3,
+              6
+            ],
+            "occurrence_count": 3,
+            "examples": [
+              {
+                "french": "son projet de contacter, donc d'appeler au téléphone sûrement.",
+                "chinese": "他的计划是取得联系，因此很可能是打电话联系。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          },
+          {
+            "french": "fin",
+            "part_of_speech": "nom féminin",
+            "ipa": "[fɛ̃]",
+            "chinese": "结束，末尾",
+            "example_sentence": {
+              "french": "C'est la fin du film.",
+              "chinese": "这是电影的结尾。"
+            },
+            "cefr_level": "A1",
+            "source_ids": [
+              2,
+              4,
+              5,
+              6
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "pour mettre fin au conflit en Ukraine.",
+                "chinese": "为了结束乌克兰的冲突。",
+                "source_video": "Trump et la paix"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "mettre fin à",
+            "meaning": "结束，制止",
+            "example": {
+              "french": "Les parents mettent fin à une dispute entre leurs enfants.",
+              "chinese": "父母结束了孩子们之间的争吵。"
+            },
+            "usage_note": "Used with the preposition 'à' before the noun representing the thing being stopped.",
+            "source_ids": [
+              4
+            ]
+          },
+          {
+            "expression": "annoncer son intention de",
+            "meaning": "宣布有意做某事",
+            "example": {
+              "french": "Donald Trump annonce son intention de contacter Vladimir Poutine.",
+              "chinese": "唐纳德·特朗普宣布他有意联系弗拉基米尔·普京。"
+            },
+            "usage_note": "Followed by an infinitive verb.",
+            "source_ids": [
+              2,
+              3
+            ]
+          },
+          {
+            "expression": "une initiative diplomatique majeure",
+            "meaning": "一项重大的外交举措",
+            "example": {
+              "french": "Le président propose une initiative diplomatique majeure.",
+              "chinese": "总统提出了一项重大的外交举措。"
+            },
+            "usage_note": "A formal political phrase used in news and international relations.",
+            "source_ids": [
+              2,
+              5,
+              7
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le participe présent",
+            "structure": "Verbe + -ant",
+            "explanation": "The present participle is used here to describe a secondary action or a characteristic of the subject (Trump) while performing the main action (announcing).",
+            "example": {
+              "french": "Promettant une initiative diplomatique majeure.",
+              "chinese": "承诺一项重大外交举措。"
+            },
+            "usage_note": "In this context, it functions similarly to a relative clause ('qui promet').",
+            "source_ids": [
+              5,
+              7
+            ]
+          },
+          {
+            "name": "L'infinitif de but avec 'pour'",
+            "structure": "pour + infinitif",
+            "explanation": "Used to express the objective or purpose of an action.",
+            "example": {
+              "french": "Donald Trump annonce son intention... pour mettre fin au conflit.",
+              "chinese": "唐纳德·特朗普宣布他的意图……是为了结束冲突。"
+            },
+            "usage_note": "The subject of the main verb and the infinitive must be the same.",
+            "source_ids": [
+              2,
+              4,
+              6
+            ]
+          },
+          {
+            "name": "L'accord de l'adjectif en -eur",
+            "structure": "Masculin: -eur / Féminin: -eure",
+            "explanation": "Adjectives like 'majeur' follow specific spelling rules in the feminine form.",
+            "example": {
+              "french": "une initiative diplomatique majeure.",
+              "chinese": "一项重大的外交举措。"
+            },
+            "usage_note": "The text explicitly points out the spelling: J-E-U-R-E for the feminine.",
+            "source_ids": [
+              5
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[ma.ʒœʁ]",
+              "description": "The pronunciation of 'majeure'. Note the open 'eu' sound followed by the French 'r'.",
+              "examples": [
+                "majeure"
+              ]
+            }
+          ],
+          "liaison": [
+            "son intention [sɔ̃.nɛ̃.tɑ̃.sjɔ̃]",
+            "un instant [œ̃.nɛ̃.stɑ̃]"
+          ],
+          "intonation": "Formal news reporting intonation, with clear pauses after logical segments (e.g., after 'Poutine' and 'Ukraine')."
+        },
+        "vocabulary_network": {
+          "theme": "Diplomatie et Paix",
+          "core_word": "Paix",
+          "related_groups": [
+            {
+              "category": "Actions",
+              "words": [
+                "contacter",
+                "annoncer",
+                "promettre",
+                "mettre fin"
+              ]
+            },
+            {
+              "category": "Conflit",
+              "words": [
+                "guerre",
+                "dispute",
+                "conflit"
+              ]
+            },
+            {
+              "category": "Politique",
+              "words": [
+                "diplomatique",
+                "initiative",
+                "intention",
+                "projet"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "Donald Trump ___ son ___ de ___ Vladimir Poutine pour ___ ___ au ___ en Ukraine, ___ une ___ ___ ___.",
+            "answer": "annonce, intention, contacter, mettre, fin, conflit, promettant, initiative, diplomatique, majeure",
+            "explanation": "这句话完整复述了新闻的核心内容：特朗普宣布有意联系普京以结束冲突，并承诺外交举措。",
+            "source_ids": [
+              2,
+              5
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le texte, quel est le moyen probable que Trump utilisera pour 'contacter' Poutine ?",
+            "options": {
+              "A": "Envoyer une lettre par la poste",
+              "B": "Appeler au téléphone",
+              "C": "Organiser une rencontre physique",
+              "D": "Envoyer un e-mail"
+            },
+            "answer": "B",
+            "explanation": "原文第3条字幕提到：'son projet de contacter, donc d'appeler au téléphone sûrement'。",
+            "source_ids": [
+              3
+            ],
+            "difficulty": "A2"
+          },
+          {
+            "type": "翻译",
+            "question": "Je te promets que je serai fidèle toute ma vie.",
+            "answer": "我向你保证，我会一生一世忠于你。",
+            "explanation": "这是文中用来讲解动词 'promettre' 的例句。'Fidèle' 意为忠诚，'toute ma vie' 意为一生。",
+            "source_ids": [
+              6
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase en utilisant 'afin de' au lieu de 'pour' : 'Donald Trump annonce son intention de contacter Vladimir Poutine pour mettre fin au conflit.'",
+            "answer": "Donald Trump annonce son intention de contacter Vladimir Poutine afin de mettre fin au conflit.",
+            "explanation": "'Pour' 和 'afin de' 后面都可以接不定式来表示目的，且主语必须一致。在这种正式语境下，两者可以互换。",
+            "source_ids": [
+              2,
+              4
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "annonce",
+            "intention",
+            "contacter",
+            "conflit",
+            "promettre",
+            "fidèle",
+            "initiative",
+            "majeure"
+          ],
+          "covered_grammar": [
+            "Le participe présent",
+            "L'infinitif de but",
+            "L'accord de l'adjectif"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "[Sujet] annonce son intention de [Infinitif]",
+            "explanation": "Used to formally declare a plan or goal.",
+            "example": {
+              "french": "Le gouvernement annonce son intention de baisser les impôts.",
+              "chinese": "政府宣布有意减税。"
+            }
+          },
+          {
+            "pattern": "Mettre fin à [Nom]",
+            "explanation": "A standard way to say 'to stop' or 'to terminate' something (a conflict, a meeting, etc.).",
+            "example": {
+              "french": "Il est temps de mettre fin à cette réunion.",
+              "chinese": "是时候结束这次会议了。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "You are a political journalist reporting on a new peace initiative between two countries.",
+          "requirements": "Use the expressions 'annoncer son intention de', 'mettre fin au conflit', and 'une initiative diplomatique'.",
+          "starter": "Mesdames et messieurs, aujourd'hui le président a fait une déclaration importante..."
+        }
+      },
+      "summary": {
+        "content": "The lesson focuses on a news report about Donald Trump's stated goal to mediate the conflict in Ukraine by contacting Vladimir Poutine. It covers diplomatic vocabulary, the use of the present participle, and formal expressions of intent.",
+        "keywords": [
+          "Trump",
+          "Poutine",
+          "Ukraine",
+          "Diplomatie",
+          "Paix",
+          "Promesse"
+        ],
+        "difficulty_note": "The text is at a B1 level due to its political subject matter and specific vocabulary, though the sentence structures remain relatively straightforward."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00",
+          "end": "00:03:34"
+        },
+        "theme": "Trump et la paix en Ukraine",
+        "cefr_level": "B1",
+        "vocabulary_count": 10,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.060",
+          "end_time": "00:00:29.899",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司提供字幕"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:32.570",
+          "end_time": "00:01:01.000",
+          "french": "Bonjour. Aujourd'hui, la leçon est : Trump et la paix. Donald Trump annonce son intention de contacter Vladimir Poutine pour mettre fin au conflit en Ukraine, promettant une initiative diplomatique majeure. Once again : Donald Trump annonce son intention de contacter Vladimir Poutine pour mettre fin au conflit en Ukraine.",
+          "chinese": "大家好。今天的课程主题是：特朗普与和平。唐纳德·特朗普宣布，他打算联系弗拉基米尔·普京以结束乌克兰冲突，并承诺将采取重大外交行动。再说一遍：唐纳德·特朗普宣布，他打算联系弗拉基米尔·普京以结束乌克兰冲突。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:01:01.140",
+          "end_time": "00:01:31.049",
+          "french": "Promettant une initiative diplomatique majeure. Alors, Trump annonce, il annonce son intention. Une intention : « plan », « plans » peut-être. Son intention, c'est-à-dire ce qu'il veut faire, son projet de contacter, donc d'appeler au téléphone sûrement. Contact, contacter, E-R, Poutine.",
+          "chinese": "承诺采取重大外交行动。那么，特朗普宣布，他宣布了他的“intention”（意图）。“Une intention”：也许是“计划”、“打算”。他的意图，也就是说他想做的事，他联系某人的计划，所以肯定是指打电话。联系，contacter，动词原形以 E-R 结尾，联系普京。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:31.510",
+          "end_time": "00:01:57.700",
+          "french": "Pourquoi ? Pour mettre fin. Pour mettre fin. En deux mots : mettre fin. C'est-à-dire arrêter, stopper, mettre fin. Exemple : les parents mettent fin à une dispute entre leurs enfants. Les parents mettent fin à une dispute entre leurs enfants.",
+          "chinese": "为什么？为了“mettre fin”（结束）。为了结束。由两个词组成：mettre fin。也就是说停止、终止、结束。例如：父母平息了孩子们之间的争吵。父母平息了孩子们之间的争吵。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:58.709",
+          "end_time": "00:02:25.219",
+          "french": "Là, il faut mettre fin au conflit, à la guerre en Ukraine. Promettant, participe présent du verbe promettre, « to promise ». Promettant une initiative diplomatique majeure. Attention, « majeure », ce n'est pas J-O-R en français, c'est J-E-U-R. Et là, c'est au féminin, donc un E à la fin.",
+          "chinese": "在这里，是要结束冲突，结束乌克兰战争。“Promettant”是动词“promettre”（承诺）的现在分词。承诺采取重大外交行动。注意，“majeure”在法语中不是 J-O-R，而是 J-E-U-R。这里是阴性形式，所以末尾有一个 E。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:25.659",
+          "end_time": "00:02:57.349",
+          "french": "Revenons un instant sur le verbe « promettre » avec peut-être un exemple de phrase : « Je te promets que je serai fidèle toute ma vie. » « Je te promets que je serai fidèle toute ma vie. » Donald Trump annonce son intention de contacter Vladimir Poutine pour mettre fin au conflit en Ukraine.",
+          "chinese": "我们再来看一下动词“promettre”，举个例句：“我向你保证，我会一生忠诚。”“我向你保证，我会一生忠诚。”唐纳德·特朗普宣布，他打算联系弗拉基米尔·普京以结束乌克兰冲突。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:57.560",
+          "end_time": "00:03:02.280",
+          "french": "Promettant une initiative diplomatique majeure.",
+          "chinese": "承诺采取重大外交行动。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:04.979",
+          "end_time": "00:03:34.789",
+          "french": "Sous-titrage Société Radio-Canada",
+          "chinese": "加拿大广播公司提供字幕"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.060",
+        "end_time": "00:03:34.789",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 8,
+        "source_video_name": "_Trump et la paix_ (_Trump and peace_).json",
+        "tags": []
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

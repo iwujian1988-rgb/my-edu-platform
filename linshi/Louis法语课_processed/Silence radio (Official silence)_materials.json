@@ -1,0 +1,687 @@
+{
+  "source_file": "Silence radio (Official silence).json",
+  "channel": "Louis法语课",
+  "video_name": "Silence radio (Official silence)",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T03:08:07.597Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 12,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le subjonctif après 'Il est temps que'",
+          "Le pronom relatif 'où' pour le lieu",
+          "L'opposition avec 'alors que'"
+        ],
+        "speaking": [
+          "Rapporter une information journalistique",
+          "Décrire une situation de silence ou de manque de communication"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "durement",
+            "part_of_speech": "adverbe",
+            "ipa": "[dyʁmɑ̃]",
+            "chinese": "辛苦地，艰难地",
+            "example_sentence": {
+              "french": "Il est temps que votre argent durement gagné travaille plus dur pour vous.",
+              "chinese": "现在正是您辛苦赚来的钱为您更努力工作的时候。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Il est temps que votre argent durement gagné travaille plus dur pour vous.",
+                "chinese": "现在正是您辛苦赚来的钱为您更努力工作的时候。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "rapporter",
+            "part_of_speech": "verbe",
+            "ipa": "[ʁapɔʁte]",
+            "chinese": "带来（收益），产生（利润）",
+            "example_sentence": {
+              "french": "Votre argent non investi peut rapporter jusqu'à 3,95 % d'APY.",
+              "chinese": "您的闲置现金最高可获得3.95%的年化收益率。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Votre argent non investi peut rapporter jusqu'à 3,95 % d'APY.",
+                "chinese": "您的闲置现金最高可获得3.95%的年化收益率。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "instantané",
+            "part_of_speech": "adjectif",
+            "ipa": "[ɛ̃stɑ̃tane]",
+            "chinese": "即时的，瞬间的",
+            "example_sentence": {
+              "french": "Les transferts instantanés sont gratuits pour les comptes éligibles.",
+              "chinese": "符合条件的账户可免费进行即时转账。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les transferts instantanés sont gratuits pour les comptes éligibles.",
+                "chinese": "符合条件的账户可免费进行即时转账。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "éligible",
+            "part_of_speech": "adjectif",
+            "ipa": "[eliʒibl]",
+            "chinese": "符合条件的，有资格的",
+            "example_sentence": {
+              "french": "Les transferts instantanés sont gratuits pour les comptes éligibles.",
+              "chinese": "符合条件的账户可免费进行即时转账。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              1
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Les transferts instantanés sont gratuits pour les comptes éligibles.",
+                "chinese": "符合条件的账户可免费进行即时转账。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "mystérieux",
+            "part_of_speech": "adjectif",
+            "ipa": "[misteʁjø]",
+            "chinese": "神秘的",
+            "example_sentence": {
+              "french": "En Russie, aucune communication sur la mystérieuse explosion d'un silo militaire.",
+              "chinese": "在俄罗斯，关于一处军事掩体神秘爆炸事件没有任何消息。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              2,
+              3,
+              4,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "En Russie, aucune communication sur la mystérieuse explosion d'un silo militaire à Tambov.",
+                "chinese": "在俄罗斯，关于坦波夫一处军事掩体神秘爆炸事件，目前尚无任何官方消息。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "silo",
+            "part_of_speech": "nom",
+            "ipa": "[silo]",
+            "chinese": "导弹发射井，筒仓",
+            "example_sentence": {
+              "french": "C'est le lieu où ce silo militaire a explosé.",
+              "chinese": "这就是该军用导弹发射井发生爆炸的地点。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              2,
+              3,
+              5,
+              7
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "C'est le lieu où ce silo militaire a explosé.",
+                "chinese": "这就是该军用导弹发射井发生爆炸的地点。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "évoquer",
+            "part_of_speech": "verbe",
+            "ipa": "[evɔke]",
+            "chinese": "提及，唤起",
+            "example_sentence": {
+              "french": "Les médias locaux évoquent des victimes.",
+              "chinese": "当地媒体提及有人员伤亡。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              6,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Les médias locaux évoquent des victimes, mais le Kremlin reste muet.",
+                "chinese": "当地媒体提及有人员伤亡，但克里姆林宫仍保持沉默。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "victime",
+            "part_of_speech": "nom",
+            "ipa": "[viktim]",
+            "chinese": "受害者，伤亡人员",
+            "example_sentence": {
+              "french": "Ils évoquent, ils disent qu'il y a des victimes.",
+              "chinese": "他们提及，他们说有伤亡。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              3,
+              6,
+              8
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "Les médias locaux évoquent des victimes, mais le Kremlin reste muet.",
+                "chinese": "当地媒体提及有人员伤亡，但克里姆林宫仍保持沉默。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "muet",
+            "part_of_speech": "adjectif",
+            "ipa": "[mɥɛ]",
+            "chinese": "哑的，沉默的",
+            "example_sentence": {
+              "french": "Le Kremlin reste muet, reste silencieux.",
+              "chinese": "克里姆林宫保持沉默，依然无声。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              3,
+              6,
+              7,
+              8
+            ],
+            "occurrence_count": 6,
+            "examples": [
+              {
+                "french": "Attention au féminin, muet, c'est muette.",
+                "chinese": "注意，阴性名词“哑巴”是“muette”。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "décaféiné",
+            "part_of_speech": "adjectif",
+            "ipa": "[dekafeine]",
+            "chinese": "脱咖啡因的",
+            "example_sentence": {
+              "french": "Préparé à partir de grains brésiliens décaféinés de première qualité.",
+              "chinese": "采用优质巴西无咖啡因咖啡豆制成。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Préparé à partir de grains brésiliens décaféinés de première qualité.",
+                "chinese": "采用优质巴西无咖啡因咖啡豆制成。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "authentique",
+            "part_of_speech": "adjectif",
+            "ipa": "[otɑ̃tik]",
+            "chinese": "正宗的，真实的",
+            "example_sentence": {
+              "french": "Ce shake nutritionnel offre une saveur intense et authentique.",
+              "chinese": "这款营养奶昔口感醇厚、原汁原味。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ce shake nutritionnel tout-en-un offre une saveur intense et authentique.",
+                "chinese": "这款单杯即饮的奶昔口感醇厚、原汁原味。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "fibre",
+            "part_of_speech": "nom",
+            "ipa": "[fibʁ]",
+            "chinese": "纤维",
+            "example_sentence": {
+              "french": "Avec 25 grammes de protéines, 6 grammes de fibres.",
+              "chinese": "富含25克蛋白质、6克膳食纤维。"
+            },
+            "cefr_level": "B1",
+            "source_ids": [
+              10
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus encore.",
+                "chinese": "富含25克蛋白质、6克膳食纤维，以及更多营养成分。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "silence radio",
+            "meaning": "无线电静默；引申为“毫无音讯”、“完全沉默”",
+            "example": {
+              "french": "Aujourd'hui la leçon est silence radio.",
+              "chinese": "今天的课程是“静默无声”。"
+            },
+            "usage_note": "常用于新闻或日常生活中，表示某人或某机构对某事完全不作回应。",
+            "source_ids": [
+              2
+            ]
+          },
+          {
+            "expression": "rester muet",
+            "meaning": "保持沉默",
+            "example": {
+              "french": "Les médias locaux évoquent des victimes, mais le Kremlin reste muet.",
+              "chinese": "当地媒体提及有人员伤亡，但克里姆林宫仍保持沉默。"
+            },
+            "usage_note": "比 'rester silencieux' 更具文学色彩或强调意味，muet 本意为“哑的”。",
+            "source_ids": [
+              3,
+              6,
+              7,
+              8
+            ]
+          },
+          {
+            "expression": "tout-en-un",
+            "meaning": "多合一，全能",
+            "example": {
+              "french": "Ce shake nutritionnel tout-en-un offre une saveur intense.",
+              "chinese": "这款单杯即饮（多合一）的奶昔口感醇厚。"
+            },
+            "usage_note": "常用于产品广告中，形容产品功能全面。",
+            "source_ids": [
+              10
+            ]
+          },
+          {
+            "expression": "avoir ce qu'il vous faut",
+            "meaning": "有你所需要的东西",
+            "example": {
+              "french": "Ka'Chava a ce qu'il vous faut avec son nouveau parfum café.",
+              "chinese": "Cachava 用他们的全新咖啡饮品满足了你的需求。"
+            },
+            "usage_note": "口语中非常实用的表达，用于向别人推荐产品或提供帮助。",
+            "source_ids": [
+              10
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le subjonctif après 'Il est temps que'",
+            "structure": "Il est temps que + Sujet + Verbe au subjonctif",
+            "explanation": "短语 'il est temps que'（是时候...了）表达一种必要性或主观的紧迫感，因此其后的从句必须使用虚拟式（subjonctif）。",
+            "example": {
+              "french": "Il est temps que votre argent durement gagné travaille plus dur pour vous.",
+              "chinese": "现在正是您辛苦赚来的钱为您更努力工作的时候。"
+            },
+            "usage_note": "注意动词 'travailler' 的虚拟式现在时第三人称单数形式为 'travaille'，与直陈式同形，但语法性质不同。",
+            "source_ids": [
+              1
+            ]
+          },
+          {
+            "name": "Le pronom relatif 'où' pour le lieu",
+            "structure": "Nom de lieu + où + Sujet + Verbe",
+            "explanation": "关系代词 'où' 用于引导定语从句，替代表示地点（或时间）的先行词，在从句中作地点状语。",
+            "example": {
+              "french": "C'est le lieu où ce silo militaire a explosé.",
+              "chinese": "这就是该军用导弹发射井发生爆炸的地点。"
+            },
+            "usage_note": "这里 'où' 替代了 'dans ce lieu'，连接主句和从句。",
+            "source_ids": [
+              5
+            ]
+          },
+          {
+            "name": "L'opposition avec 'alors que'",
+            "structure": "Proposition 1 + alors que + Proposition 2 (à l'indicatif)",
+            "explanation": "'Alors que' 用于表达对比或让步（尽管，然而），其后接直陈式（indicatif）。",
+            "example": {
+              "french": "Pourquoi le mois de septembre s'appelle septembre alors qu'il n'est pas le septième mois de l'année ?",
+              "chinese": "为什么九月叫“九月”，却并不是一年中的第七个月？"
+            },
+            "usage_note": "与 'bien que'（后接虚拟式）不同，'alors que' 强调客观事实的对比，后接直陈式。",
+            "source_ids": [
+              9
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "[mɥɛ] vs [mɥɛt]",
+              "description": "阳性形容词 'muet' 词尾的 't' 不发音，而阴性形式 'muette' 词尾的 't' 发音，且前面的元音变为开口的 [ɛ]。",
+              "examples": [
+                "muet",
+                "muette"
+              ]
+            },
+            {
+              "sound": "[ɛ̃]",
+              "description": "鼻化元音 [ɛ̃]，在拼写为 'in', 'im', 'ain', 'ein' 时常见。",
+              "examples": [
+                "Kremlin",
+                "instantané",
+                "rien"
+              ]
+            }
+          ],
+          "liaison": [
+            "tout-en-un [tu.t‿ɑ̃.n‿œ̃]",
+            "est-il [ɛ.t‿il]"
+          ],
+          "intonation": "在播客教学部分，主讲人使用了非常明显的停顿和强调语调（如 'Une explosion. « Blast » en anglais.'），以突出关键词汇，帮助学习者捕捉重点。"
+        },
+        "vocabulary_network": {
+          "theme": "L'information et le silence",
+          "core_word": "communication",
+          "related_groups": [
+            {
+              "category": "Médias",
+              "words": [
+                "médias locaux",
+                "publication",
+                "évoquer"
+              ]
+            },
+            {
+              "category": "Absence d'information",
+              "words": [
+                "silence radio",
+                "muet",
+                "aucune explication"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "En Russie, ___ ___ sur la ___ ___ d'un silo militaire à Tambov. Les médias locaux évoquent des victimes, mais le Kremlin ___ ___.",
+            "answer": "aucune, communication, mystérieuse, explosion, reste, muet",
+            "explanation": "根据原文，句子描述了俄罗斯坦波夫军事设施爆炸后，官方毫无消息，克里姆林宫保持沉默的情况。",
+            "source_ids": [
+              2,
+              3,
+              8
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le podcast, que se passe-t-il en Russie concernant l'explosion à Tambov ?",
+            "options": {
+              "A": "Le Kremlin a publié un rapport détaillé sur les victimes.",
+              "B": "Il n'y a aucune communication officielle et le Kremlin reste muet.",
+              "C": "Les médias locaux ont été interdits de parler de l'explosion.",
+              "D": "Le président a fait un discours à la radio."
+            },
+            "answer": "B",
+            "explanation": "正确答案是B。原文明确指出：“En Russie, aucune communication sur la mystérieuse explosion d'un silo militaire à Tambov... le Kremlin reste muet.”（在俄罗斯，关于坦波夫一处军事掩体神秘爆炸事件，目前尚无任何官方消息...克里姆林宫仍保持沉默。）",
+            "source_ids": [
+              2,
+              3
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "Il est temps que votre argent durement gagné travaille plus dur pour vous.",
+            "answer": "现在正是您辛苦赚来的钱为您更努力工作（发挥更大效用）的时候了。",
+            "explanation": "翻译难点在于固定句型“Il est temps que + 虚拟式”（是时候...了），以及副词“durement”修饰过去分词“gagné”（辛苦赚来的）。",
+            "source_ids": [
+              1
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez ces deux phrases en une seule phrase en utilisant le pronom relatif 'où' : 'Un silo militaire a explosé à Tambov. Tambov est une ville russe.' -> 'Tambov est la ville russe ___ ...'",
+            "answer": "Tambov est la ville russe où un silo militaire a explosé.",
+            "explanation": "关系代词“où”用于替代表示地点或时间的先行词。在此句中，“où”替代了地点状语“à Tambov”。原文中也有类似用法：“C'est le lieu où ce silo militaire a explosé.”",
+            "source_ids": [
+              5
+            ],
+            "difficulty": "B1"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "communication",
+            "mystérieuse",
+            "explosion",
+            "muet",
+            "durement"
+          ],
+          "covered_grammar": [
+            "Le subjonctif après 'Il est temps que'",
+            "Le pronom relatif 'où' pour le lieu"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Il est temps que + [Sujet] + [Verbe au subjonctif]",
+            "explanation": "用于表达某事已经到了必须做的时候，带有一定的紧迫感。",
+            "example": {
+              "french": "Il est temps que nous partions.",
+              "chinese": "我们是时候该出发了。"
+            }
+          },
+          {
+            "pattern": "C'est le lieu où + [Sujet] + [Verbe]",
+            "explanation": "用于指明某事发生的具体地点。",
+            "example": {
+              "french": "C'est le lieu où nous nous sommes rencontrés.",
+              "chinese": "这就是我们相遇的地方。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "你是一名新闻主播，正在报道一起神秘事件，而官方拒绝发表任何评论。",
+          "requirements": "使用本课学到的词汇和表达，如 'évoquer', 'victime', 'muet', 'aucune communication' 和 'silence radio'。",
+          "starter": "Bonjour à tous. Aujourd'hui, nous commençons notre journal avec un véritable silence radio concernant..."
+        }
+      },
+      "summary": {
+        "content": "本期播客包含三个部分：首先是Wealthfront现金账户的金融广告；其次是核心法语教学部分，主讲人通过俄罗斯坦波夫军事设施爆炸的新闻，教授了'silence radio'、'muet'、'évoquer'等与“沉默”和“新闻报道”相关的词汇；最后是Ka'Chava营养奶昔的广告。教学部分语速适中，解释详尽，非常适合B1级别的学习者积累新闻词汇。",
+        "keywords": [
+          "silence radio",
+          "muet",
+          "explosion",
+          "médias",
+          "investissement"
+        ],
+        "difficulty_note": "整体难度为B1。新闻词汇和部分语法（如虚拟式、关系代词où）需要一定基础，但主讲人用英语进行了辅助解释，降低了理解难度。"
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:00.000",
+          "end": "00:04:43.319"
+        },
+        "theme": "Actualités et vocabulaire du silence",
+        "cefr_level": "B1",
+        "vocabulary_count": 12,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:00.000",
+          "end_time": "00:00:17.710",
+          "french": "Il est temps que votre argent durement gagné travaille plus dur pour vous. Avec le compte Wealthfront Cash, votre argent non investi peut rapporter jusqu'à 3,95 % d'APY. C'est un boost de 0,65 % sur un taux déjà élevé pendant trois mois, juste en devenant un nouveau client. De plus, les transferts instantanés sont gratuits pour les comptes éligibles. Commencez dès aujourd'hui sur Wealthfront.com.",
+          "chinese": "是时候让您辛苦赚来的钱为您创造更多价值了。使用 Wealthfront 现金账户，您未投资的资金可以获得高达 3.95% 的年化收益率（APY）。只需成为新客户，您就可以在三个月内，在原本已经很高的利率基础上再获得 0.65% 的提升。此外，符合条件的账户还可免费进行即时转账。今天就访问 Wealthfront.com 开始吧。"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:17.710",
+          "end_time": "00:00:46.340",
+          "french": "3.3% base APY via Program Banks as of January 30th, 2024. Rate is variable, requires no minimum and is earned on funds swept to Program Banks. Boost up to $150,000. Cash account offered by Wealthfront Brokerage LLC, member FINRA, SIPC, not a bank. Bonjour, aujourd'hui la leçon est silence radio. En Russie, aucune communication sur la mystérieuse explosion d'un silo militaire à Tambov.",
+          "chinese": "截至2024年1月30日，通过合作银行提供的基础年化收益率为3.3%。利率是浮动的，无最低存款要求，收益基于转入合作银行的资金计算。最高可提升至150,000美元。现金账户由Wealthfront Brokerage LLC提供，该公司是FINRA和SIPC成员，并非银行。大家好，今天的课程是“保持沉默”（silence radio）。在俄罗斯，关于坦波夫一个军事发射井发生的神秘爆炸，官方没有任何通报。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:46.840",
+          "end_time": "00:01:19.819",
+          "french": "Les médias locaux évoquent des victimes, mais le Kremlin reste muet. « Once again », en Russie, aucune communication sur la mystérieuse explosion d'un silo militaire à Tambov. Les médias locaux évoquent des victimes, mais le Kremlin reste muet. Alors on commence avec « aucune communication ». Eh bien, rien. Aucune explication.",
+          "chinese": "当地媒体报道有人员伤亡，但克里姆林宫保持沉默。“再来一次”，在俄罗斯，关于坦波夫一个军事发射井发生的神秘爆炸，官方没有任何通报。当地媒体报道有人员伤亡，但克里姆林宫保持沉默。那么我们从“aucune communication”（没有任何通报）开始。也就是说，什么都没有。没有任何解释。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:21.049",
+          "end_time": "00:01:49.540",
+          "french": "Aucune publication même. Aucune communication. « No word » en anglais. Sur, c'est-à-dire à propos de, « about », sur, la mystérieuse, attention à l'orthographe, regardez bien le texte, explosion. Une explosion. « Blast » en anglais. Une explosion.",
+          "chinese": "甚至没有任何公告。没有任何通报。英语里是“no word”。“Sur”，意思是关于，英语里的“about”，关于。“la mystérieuse”（神秘的），注意拼写，仔细看文本，“explosion”（爆炸）。一场爆炸。英语里是“blast”。一场爆炸。"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:50.230",
+          "end_time": "00:02:20.900",
+          "french": "D'un silo, comme en anglais, militaire, à Tambov. C'est le lieu où ce silo militaire a explosé. Les médias locaux, les médias locaux, donc la télévision, la radio ou les sites internet, sur place, à cet endroit, à Tambov. Ils sont locaux, A-U-X à la fin.",
+          "chinese": "“D'un silo”（一个发射井），和英语一样，“militaire”（军事的），“à Tambov”（在坦波夫）。这是这个军事发射井爆炸的地点。“Les médias locaux”（当地媒体），当地媒体，也就是当地的电视、广播或网站，在那个地方，在坦波夫。它们是“locaux”（当地的），结尾是A-U-X。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:02:21.460",
+          "end_time": "00:02:55.659",
+          "french": "Évoquent, c'est le verbe évoquer. On pourrait dire en anglais « report ». Ils évoquent, ils disent qu'il y a des victimes. Ils évoquent des victimes. « They report casualties ». Ils évoquent des victimes. Mais, « but », le Kremlin, c'est-à-dire Moscou, reste muet, reste silencieux. « It stays silent ». Il reste muet.",
+          "chinese": "“Évoquent”，这是动词“évoquer”（提及/报道）。英语里可以说“report”。他们提及，他们说有受害者。他们报道有人员伤亡。英语是“They report casualties”。他们报道有人员伤亡。“Mais”，英语里的“but”（但是），“le Kremlin”（克里姆林宫），也就是莫斯科，“reste muet”（保持沉默），保持安静。英语是“It stays silent”。它保持沉默。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:56.219",
+          "end_time": "00:03:24.169",
+          "french": "Attention au féminin, muet, c'est muette. On peut dire : « Cette dame est muette depuis toujours ». « Cette dame est muette depuis toujours ». Donc, elle n'a jamais parlé. En Russie, aucune communication sur la mystérieuse explosion d'un silo militaire à Tambov.",
+          "chinese": "注意阴性形式，“muet”的阴性是“muette”。我们可以说：“Cette dame est muette depuis toujours”（这位女士一直是个哑巴）。“Cette dame est muette depuis toujours”。也就是说，她从来没有说过话。在俄罗斯，关于坦波夫一个军事发射井发生的神秘爆炸，官方没有任何通报。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:03:24.659",
+          "end_time": "00:03:49.060",
+          "french": "Les médias locaux évoquent des victimes, mais le Kremlin reste muet. Voilà, cette leçon est maintenant terminée, mais si vous voulez continuer à m'écouter, vous pouvez me rejoindre sur mon autre podcast qui s'appelle « Choses à savoir ». Je mets le lien dans la description. Sur ce podcast, je réponds à une question par jour en moins de deux minutes.",
+          "chinese": "当地媒体报道有人员伤亡，但克里姆林宫保持沉默。好了，今天的课程到此结束，但如果您想继续听我的节目，可以去听我的另一个播客，叫做“Choses à savoir”（须知事项）。我会把链接放在简介里。在这个播客中，我每天会在两分钟内回答一个问题。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:49.210",
+          "end_time": "00:04:10.699",
+          "french": "Par exemple, est-il possible de se marier avec une personne morte ? Pourquoi le mois de septembre s'appelle septembre alors qu'il n'est pas le septième mois de l'année ? Pourquoi Hello Kitty n'a pas de bouche ? Ou bien pourquoi la Suisse est devenue le pays du chocolat ? Voilà, je mets le lien vers ce podcast dans les notes. Merci !",
+          "chinese": "例如，可以和死人结婚吗？为什么九月（septembre）叫九月，而它却不是一年中的第七个月？为什么Hello Kitty没有嘴巴？或者为什么瑞士成了巧克力之国？好了，我会把这个播客的链接放在节目注释里。谢谢！"
+        },
+        {
+          "id": 10,
+          "start_time": "00:04:12.889",
+          "end_time": "00:04:36.769",
+          "french": "C'est le café que vous aimez, mais sans la caféine. Ka'Chava a ce qu'il vous faut avec son nouveau parfum café. Ce shake nutritionnel tout-en-un offre une saveur intense et authentique, préparé à partir de grains brésiliens décaféinés de première qualité, avec 25 grammes de protéines, 6 grammes de fibres, des légumes verts et bien plus encore. Offrez-vous la nutrition et la saveur dont votre corps a envie. Allez sur kachava.com et utilisez le code SMOOTHIE.",
+          "chinese": "这是您喜欢的咖啡，但不含咖啡因。Ka'Chava 推出的全新咖啡口味能满足您的需求。这款全能营养奶昔提供浓郁纯正的口感，由优质的巴西脱因咖啡豆制成，含有25克蛋白质、6克纤维、绿色蔬菜以及更多营养成分。为您自己提供身体渴望的营养和美味吧。请访问 kachava.com 并使用优惠码 SMOOTHIE。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:04:36.769",
+          "end_time": "00:04:43.319",
+          "french": "C'est K-A-C-H-A-V-A point com, code SMOOTHIE.",
+          "chinese": "网址是 K-A-C-H-A-V-A 点 com，优惠码 SMOOTHIE。"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "Louis法语课",
+        "start_time": "00:00:00.000",
+        "end_time": "00:04:43.319",
+        "duration_minutes": 0,
+        "cefr_level": "B1",
+        "subtitle_count": 11,
+        "source_video_name": "Silence radio (Official silence).json",
+        "tags": [
+          "考试干货",
+          "科技前沿"
+        ]
+      },
+      "_quality_check": {
+        "issues": [
+          {
+            "level": "warning",
+            "check": "Cross-field consistency",
+            "detail": "The words 'communication' and 'explosion' in practice.exercise_summary.covered_vocabulary are not present in the language_analysis.vocabulary list.",
+            "field": "practice.exercise_summary.covered_vocabulary"
+          }
+        ],
+        "error_count": 0,
+        "warning_count": 1,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}

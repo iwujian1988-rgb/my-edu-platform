@@ -1,0 +1,1181 @@
+{
+  "source_file": "E179 La France est-elle anti-enfants _.json",
+  "channel": "InnerFrench 中级法语",
+  "video_name": "E179 La France est-elle anti-enfants _",
+  "duration_minutes": 0,
+  "total_units": 1,
+  "generated_units": 1,
+  "is_partial": false,
+  "generated_at": "2026-04-14T02:41:10.669Z",
+  "materials": {
+    "unit_1": {
+      "learning_objectives": {
+        "vocabulary": {
+          "new_words": 13,
+          "review_words": 0
+        },
+        "grammar": [
+          "Le subjonctif de but (pour que / afin que)",
+          "La voix passive pour exprimer des constats sociaux",
+          "Le conditionnel présent pour l'hypothèse et l'atténuation"
+        ],
+        "speaking": [
+          "Débattre de la place des enfants dans la société et des politiques familiales",
+          "Exprimer son opinion sur des tendances sociétales comme le mouvement 'no kids'"
+        ]
+      },
+      "language_analysis": {
+        "vocabulary": [
+          {
+            "french": "institutrice",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃stitytʁis]",
+            "chinese": "小学女教师",
+            "example_sentence": {
+              "french": "Elle va commencer à travailler comme institutrice dans une école.",
+              "chinese": "她即将开始在一所学校里当小学老师。"
+            },
+            "cefr_level": "A2",
+            "source_ids": [
+              2
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "J'accompagne une amie qui va commencer à travailler comme institutrice, maîtresse, dans une école franco-sénégalaise.",
+                "chinese": "我陪一位朋友，她即将开始在一所法塞合办的学校里当老师、当班主任。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "natalité",
+            "part_of_speech": "nom",
+            "ipa": "[natalite]",
+            "chinese": "出生率",
+            "example_sentence": {
+              "french": "La France a un fort taux de natalité.",
+              "chinese": "法国有很高的出生率。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              7,
+              13
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "En France, on sait qu'on a un des plus forts taux de natalité en Europe.",
+                "chinese": "在法国，人们知道该国的出生率是欧洲最高的国家之一。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "paradoxe",
+            "part_of_speech": "nom",
+            "ipa": "[paʁadɔks]",
+            "chinese": "悖论，矛盾",
+            "example_sentence": {
+              "french": "C'est un véritable paradoxe dans notre société.",
+              "chinese": "这是我们社会中一个真正的悖论。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              13
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ouais, donc c'est vraiment ce paradoxe que tu as souligné parce que d'un côté, on a besoin des enfants...",
+                "chinese": "没错，你所指出的正是这种矛盾之处——一方面，我们确实需要孩子……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "répartition",
+            "part_of_speech": "nom",
+            "ipa": "[ʁepaʁtisjɔ̃]",
+            "chinese": "分配，分摊（此处指现收现付制）",
+            "example_sentence": {
+              "french": "Le système de retraite par répartition dépend des travailleurs actifs.",
+              "chinese": "现收现付的养老金制度依赖于在职劳动者。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              14
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et puis à plus court terme aussi pour financer notre système de retraite parce qu'en France, ce sont les retraites par répartition.",
+                "chinese": "此外，从更短期来看，他们还能为我们的养老金体系提供资金支持——因为在法国，养老金制度是现收现付制。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "surmenage",
+            "part_of_speech": "nom",
+            "ipa": "[syʁmənaʒ]",
+            "chinese": "过度劳累",
+            "example_sentence": {
+              "french": "Le manque de sommeil peut mener au surmenage.",
+              "chinese": "缺乏睡眠可能导致过度劳累。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              22
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Ça peut être un peu traumatisant pour le bébé, mais surtout ça peut mener après à un surmenage, un burn-out parental.",
+                "chinese": "这可能会对婴儿造成些许创伤，但更重要的是，这随后可能导致父母过度劳累，甚至引发育儿倦怠症。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "indemnisation",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃dɛmnizasjɔ̃]",
+            "chinese": "赔偿，补偿金",
+            "example_sentence": {
+              "french": "L'indemnisation du congé parental est très faible.",
+              "chinese": "育儿假的补偿金非常低。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              42
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "On n'a pas une indemnisation à 100% de son salaire.",
+                "chinese": "我们获得的补偿甚至不到工资的100%。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "entraver",
+            "part_of_speech": "verbe",
+            "ipa": "[ɑ̃tʁave]",
+            "chinese": "阻碍，妨碍",
+            "example_sentence": {
+              "french": "Cette règle entrave notre liberté.",
+              "chinese": "这条规则妨碍了我们的自由。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              49
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "qui nous apporte une forme de handicap ou qui entrave en tout cas notre liberté.",
+                "chinese": "那些给我们带来某种障碍，或至少妨碍我们自由的事物。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "adultisme",
+            "part_of_speech": "nom",
+            "ipa": "[adyltism]",
+            "chinese": "成人主义（以成人为中心的偏见）",
+            "example_sentence": {
+              "french": "L'adultisme ignore souvent les besoins spécifiques des enfants.",
+              "chinese": "成人主义往往忽视儿童的具体需求。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              52,
+              53,
+              54,
+              64,
+              65
+            ],
+            "occurrence_count": 5,
+            "examples": [
+              {
+                "french": "L'adultisme, c'est un concept qui consiste à dire que la société dans laquelle nous vivons a été pensée et conçue uniquement pour répondre aux besoins des adultes...",
+                "chinese": "成人主义是一种观念，即我们所生活的社会完全是为了满足成年人的需求而设计和构建的……",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "exaspérer",
+            "part_of_speech": "verbe",
+            "ipa": "[ɛɡzaspeʁe]",
+            "chinese": "激怒，使恼火",
+            "example_sentence": {
+              "french": "Le bruit constant finit par exaspérer les passagers.",
+              "chinese": "持续的噪音最终激怒了乘客。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              59
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Donc, quand il y a un groupe d'enfants qui rentre, ça exaspère les autres passagers.",
+                "chinese": "所以，一旦有一群孩子上车，就会让其他乘客感到十分恼火。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "laxisme",
+            "part_of_speech": "nom",
+            "ipa": "[laksism]",
+            "chinese": "放纵，松懈",
+            "example_sentence": {
+              "french": "On accuse souvent les parents de laxisme.",
+              "chinese": "人们经常指责父母过于放纵。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              60
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "Et au contraire, dès que les enfants font un peu de bruit, on accuse tout de suite leurs parents de laxisme.",
+                "chinese": "相反，只要孩子稍微吵闹一点，人们立刻就会指责他们的父母放纵溺爱。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "infantisme",
+            "part_of_speech": "nom",
+            "ipa": "[ɛ̃fɑ̃tism]",
+            "chinese": "儿童歧视（针对儿童的偏见）",
+            "example_sentence": {
+              "french": "L'infantisme est une forme de discrimination basée sur l'âge.",
+              "chinese": "儿童歧视是一种基于年龄的歧视形式。"
+            },
+            "cefr_level": "C2",
+            "source_ids": [
+              65,
+              66,
+              67,
+              70
+            ],
+            "occurrence_count": 4,
+            "examples": [
+              {
+                "french": "L'infantisme, c'est carrément une discrimination envers les enfants.",
+                "chinese": "幼稚化实际上是对儿童的一种歧视。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "s'autocensurer",
+            "part_of_speech": "verbe",
+            "ipa": "[sotɔsɑ̃syʁe]",
+            "chinese": "自我审查，自我约束",
+            "example_sentence": {
+              "french": "Les familles finissent par s'autocensurer et ne sortent plus.",
+              "chinese": "家庭最终会自我约束，不再出门。"
+            },
+            "cefr_level": "C1",
+            "source_ids": [
+              72
+            ],
+            "occurrence_count": 1,
+            "examples": [
+              {
+                "french": "ce qui fait que les personnes qui ont des enfants vont s'autocensurer, elles ne vont pas aller dans ces endroits.",
+                "chinese": "这使得有孩子的家庭会自我约束，不会前往这些场所。",
+                "source_video": "Podcast"
+              }
+            ]
+          },
+          {
+            "french": "mixité",
+            "part_of_speech": "nom",
+            "ipa": "[miksite]",
+            "chinese": "混合，多元融合",
+            "example_sentence": {
+              "french": "La mixité sociale est importante dans les écoles.",
+              "chinese": "学校里的社会多元融合很重要。"
+            },
+            "cefr_level": "B2",
+            "source_ids": [
+              73
+            ],
+            "occurrence_count": 2,
+            "examples": [
+              {
+                "french": "D'ailleurs, on parlait des transports en commun et c'est bien notable que les transports en commun soient l'endroit où on peut avoir cette mixité parce qu'on n'a pas le choix.",
+                "chinese": "另外，我们刚才谈到公共交通。值得注意的是，公共交通恰恰是能够实现这种多元融合的场所，因为人们别无选择。",
+                "source_video": "Podcast"
+              }
+            ]
+          }
+        ],
+        "key_expressions": [
+          {
+            "expression": "prendre la température",
+            "meaning": "了解情况，试探水温",
+            "example": {
+              "french": "J'en profite pour un peu prendre la température de ce pays francophone.",
+              "chinese": "我顺便了解一下这个法语国家的现状。"
+            },
+            "usage_note": "Expression figurée utilisée pour dire qu'on observe ou qu'on évalue une situation avant d'agir.",
+            "source_ids": [
+              3
+            ]
+          },
+          {
+            "expression": "le revers de la médaille",
+            "meaning": "事物的反面，负面影响",
+            "example": {
+              "french": "C'est un peu le revers de la médaille du combat féministe.",
+              "chinese": "这多少算是女权主义斗争的另一面（负面影响）。"
+            },
+            "usage_note": "S'utilise pour introduire les conséquences négatives d'une situation apparemment positive.",
+            "source_ids": [
+              24
+            ]
+          },
+          {
+            "expression": "revoir sa copie",
+            "meaning": "重新审视，反思并改进",
+            "example": {
+              "french": "Pour un pays qui se veut à la pointe, on doit revoir notre copie.",
+              "chinese": "对一个自诩走在前沿的国家来说，我们必须好好反思一下了。"
+            },
+            "usage_note": "Expression issue du vocabulaire scolaire, signifiant corriger ses erreurs ou améliorer son travail.",
+            "source_ids": [
+              28,
+              29
+            ]
+          },
+          {
+            "expression": "prendre son mal en patience",
+            "meaning": "耐心忍受，逆来顺受",
+            "example": {
+              "french": "On considère les enfants comme des boulets, comme s'il fallait prendre son mal en patience.",
+              "chinese": "人们把孩子视作累赘，仿佛只能耐心忍受等待他们长大。"
+            },
+            "usage_note": "S'utilise quand on doit supporter une situation désagréable sans pouvoir la changer immédiatement.",
+            "source_ids": [
+              49
+            ]
+          },
+          {
+            "expression": "lever les yeux au ciel",
+            "meaning": "翻白眼（表示无奈或不耐烦）",
+            "example": {
+              "french": "Ils ont cette tendance à lever les yeux au ciel en voyant des enfants.",
+              "chinese": "他们看到孩子时总爱翻白眼。"
+            },
+            "usage_note": "Geste corporel traduisant l'exaspération. Contrairement à l'anglais 'roll one's eyes', on dit 'lever les yeux au ciel' en français.",
+            "source_ids": [
+              55,
+              58
+            ]
+          }
+        ]
+      },
+      "deep_learning": {
+        "grammar_points": [
+          {
+            "name": "Le subjonctif de but (pour que / afin que)",
+            "structure": "Pour que + Sujet + Verbe au subjonctif",
+            "explanation": "On utilise 'pour que' suivi du subjonctif pour exprimer un but lorsque le sujet de la proposition principale est différent de celui de la proposition subordonnée. Si les sujets sont identiques, on utilise 'pour + infinitif'.",
+            "example": {
+              "french": "Souvent, ils avaient tous la même petite casquette pour que les professeurs ne les perdent pas.",
+              "chinese": "他们常常都戴着一模一样的小帽子，这样老师就不会把他们弄丢了。"
+            },
+            "usage_note": "Dans l'exemple, le sujet 1 est 'ils' (les enfants) et le sujet 2 est 'les professeurs'. Le subjonctif 'perdent' est donc obligatoire.",
+            "source_ids": [
+              58
+            ]
+          },
+          {
+            "name": "La voix passive pour exprimer des constats sociaux",
+            "structure": "Être + Participe passé (+ par/de)",
+            "explanation": "La voix passive est fréquemment utilisée dans les analyses sociologiques pour mettre en évidence l'objet de l'action (ici, les enfants ou les professions) plutôt que l'auteur de l'action (la société en général).",
+            "example": {
+              "french": "Les enfants sont constamment victimes de discrimination... ils sont vus comme des boulets.",
+              "chinese": "儿童始终遭受着歧视……他们被视作累赘。"
+            },
+            "usage_note": "Remarquez l'accord du participe passé avec le sujet patient ('vus' s'accorde avec 'les enfants').",
+            "source_ids": [
+              51,
+              53
+            ]
+          },
+          {
+            "name": "Le conditionnel présent pour l'hypothèse et l'atténuation",
+            "structure": "Radical du futur + terminaisons de l'imparfait (-ais, -ais, -ait, -ions, -iez, -aient)",
+            "explanation": "Le conditionnel est utilisé ici pour formuler une hypothèse irréelle (avec 'si + imparfait') ou pour atténuer une affirmation afin de la rendre moins abrupte dans un débat.",
+            "example": {
+              "french": "Si on imaginait un autre groupe qui serait interdit en fonction de son âge... on serait tout de suite beaucoup plus choqués.",
+              "chinese": "要是设想一下，如果某个群体因为年龄而被禁止进入……我们立刻就会感到更加震惊。"
+            },
+            "usage_note": "Structure classique de l'hypothèse : Si + Imparfait (imaginait) -> Conditionnel présent (serait).",
+            "source_ids": [
+              69
+            ]
+          }
+        ],
+        "pronunciation": {
+          "key_sounds": [
+            {
+              "sound": "Emprunts à l'anglais",
+              "description": "Les mots empruntés à l'anglais sont souvent prononcés avec une phonologie adaptée au français, notamment au niveau de l'accentuation (sur la dernière syllabe) et des voyelles.",
+              "examples": [
+                "no kids [no kids]",
+                "burn-out [bœʁn aut]"
+              ]
+            }
+          ],
+          "liaison": [
+            "les_enfants [lez‿ɑ̃fɑ̃]",
+            "tout_un_village [tut‿œ̃ vilaʒ]",
+            "un_investissement [œ̃n‿ɛ̃vɛstismɑ̃]"
+          ],
+          "intonation": "L'intonation dans ce podcast est typique d'un débat ou d'une discussion analytique : des montées intonatives en fin de groupe rythmique pour maintenir l'attention, et des descentes pour marquer des constats forts (ex: 'C'est une forme de discrimination.')."
+        },
+        "vocabulary_network": {
+          "theme": "La place de l'enfant et la parentalité",
+          "core_word": "Enfant",
+          "related_groups": [
+            {
+              "category": "Garde et Éducation",
+              "words": [
+                "crèche",
+                "assistante maternelle",
+                "institutrice",
+                "congé maternité",
+                "congé parental"
+              ]
+            },
+            {
+              "category": "Société et Discriminations",
+              "words": [
+                "adultisme",
+                "infantisme",
+                "no kids",
+                "boulet",
+                "mixité"
+              ]
+            }
+          ]
+        }
+      },
+      "practice": {
+        "exercises": [
+          {
+            "type": "填空",
+            "question": "L'___, c'est un concept qui consiste à dire que la ___ dans laquelle nous vivons a été pensée et conçue uniquement pour répondre aux ___ des ___ et pas à ceux des ___.",
+            "answer": "adultisme, société, besoins, adultes, enfants",
+            "explanation": "根据原文第53句，这段话定义了“成人主义”（adultisme）的概念，即社会（société）是为满足成人（adultes）的需求（besoins）而设计的，而非儿童（enfants）。",
+            "source_ids": [
+              53
+            ],
+            "difficulty": "B2"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le podcast, pourquoi la France a-t-elle choisi un congé maternité relativement court par rapport à d'autres pays comme la Pologne ?",
+            "options": {
+              "A": "Pour que les femmes puissent retourner travailler rapidement et ne pas sacrifier leur carrière au bébé.",
+              "B": "Parce que le système de retraite par répartition ne peut pas financer des congés plus longs.",
+              "C": "Pour encourager les pères à prendre un congé parental plus long et équilibrer les tâches.",
+              "D": "Parce que les crèches et les assistantes maternelles sont très nombreuses et gratuites en France."
+            },
+            "answer": "A",
+            "explanation": "正确答案是A。原文第24句明确提到：'En France, en tout cas, l'idée, c'était que les femmes puissent retourner travailler rapidement pour ne pas sacrifier leur carrière au bébé.'（在法国，理念是女性能尽快重返职场，以免因孩子而牺牲自己的职业生涯。）",
+            "source_ids": [
+              24
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "翻译",
+            "question": "On a un peu l'impression que les enfants sont tolérés seulement s'ils sont silencieux.",
+            "answer": "我们多少有一种感觉，孩子们只有在保持安静的情况下才会被容忍。",
+            "explanation": "翻译难点在于被动语态 'sont tolérés'（被容忍）以及条件从句 'seulement s'ils sont silencieux'（只有当他们安静时）。'On a un peu l'impression que' 是常用的表达，意为'我们多少觉得/有一种感觉'。",
+            "source_ids": [
+              59
+            ],
+            "difficulty": "B1"
+          },
+          {
+            "type": "语法",
+            "question": "Observez cette phrase : 'Souvent, ils avaient tous la même petite casquette pour que les professeurs ne les perdent pas.' Est-il possible de remplacer 'pour que' par 'pour + infinitif' (ex: pour ne pas les perdre) dans ce contexte précis ? Expliquez pourquoi.",
+            "answer": "Non, il est impossible d'utiliser 'pour + infinitif' ici sans changer le sens, car les sujets des deux propositions sont différents.",
+            "explanation": "在法语语法中，只有当主句和从句的主语相同时，才能将 'pour que + 虚拟式' 简化为 'pour + 不定式'。在这句话中，主句的主语是 'ils'（孩子们），而从句的主语是 'les professeurs'（老师们）。因为主语不同，必须保留 'pour que + 虚拟式' 的结构。",
+            "source_ids": [
+              58
+            ],
+            "difficulty": "B2"
+          }
+        ],
+        "exercise_summary": {
+          "total_count": 4,
+          "type_distribution": {
+            "填空": 1,
+            "选择": 1,
+            "翻译": 1,
+            "语法": 1
+          },
+          "covered_vocabulary": [
+            "adultisme"
+          ],
+          "covered_grammar": [
+            "Le subjonctif de but (pour que)"
+          ]
+        },
+        "sentence_patterns": [
+          {
+            "pattern": "Ne serait-ce que parce que...",
+            "explanation": "用于引出众多原因中最基本或最起码的一个原因，意为“仅仅是因为……”。",
+            "example": {
+              "french": "C'est assez difficile d'évoluer en France avec des enfants, ne serait-ce que parce qu'à la naissance, la durée du congé maternité n'est pas très longue.",
+              "chinese": "在法国带着孩子生活相当困难，仅仅是因为出生时的产假期限并不算长。"
+            }
+          },
+          {
+            "pattern": "D'autant plus que...",
+            "explanation": "用于补充一个使前面陈述更加成立的论据，意为“更何况……”或“尤其是因为……”。",
+            "example": {
+              "french": "Les jeunes parents sont épuisés, d'autant plus que ce n'est plus du tout valorisé, le fait de travailler à la maison.",
+              "chinese": "年轻父母疲惫不堪，更何况如今在家工作已不再受到任何重视。"
+            }
+          }
+        ],
+        "scenario": {
+          "description": "Vous discutez avec un(e) ami(e) français(e) des différences de politique familiale entre la France et votre pays d'origine. Vous abordez les congés maternité/paternité et la façon dont les enfants sont perçus dans les lieux publics.",
+          "requirements": "Utilisez au moins 3 mots de vocabulaire de la leçon (ex: natalité, paradoxe, adultisme) et l'expression 'revoir sa copie' ou 'lever les yeux au ciel'.",
+          "starter": "J'ai écouté un podcast très intéressant sur la place des enfants en France. C'est vrai que chez nous, la situation est un peu différente..."
+        }
+      },
+      "summary": {
+        "content": "Ce podcast explore la place des enfants dans la société française à travers le prisme de la tendance 'no kids'. Les animateurs discutent des difficultés rencontrées par les jeunes parents, notamment la brièveté des congés maternité et paternité, l'isolement familial et le manque de valorisation des métiers de la petite enfance. Ils abordent ensuite les concepts sociologiques d'adultisme et d'infantisme pour expliquer pourquoi les enfants sont souvent perçus comme des nuisances dans l'espace public (transports, restaurants). Enfin, ils nuancent leur propos en mentionnant des initiatives 'kids friendly' qui tentent de rendre la société plus inclusive pour les familles.",
+        "keywords": [
+          "no kids",
+          "parentalité",
+          "congé maternité",
+          "adultisme",
+          "discrimination",
+          "éducation"
+        ],
+        "difficulty_note": "Le texte est de niveau B2. La difficulté réside principalement dans le vocabulaire sociologique abstrait (adultisme, infantisme, laxisme) et dans la compréhension des nuances culturelles liées aux politiques familiales françaises."
+      },
+      "verification": {
+        "unit_num": 1,
+        "time_range": {
+          "start": "00:00:04.089",
+          "end": "00:31:07.079"
+        },
+        "theme": "Société et Famille",
+        "cefr_level": "B2",
+        "vocabulary_count": 13,
+        "grammar_points_count": 3,
+        "checklist": {
+          "vocabulary_complete": true,
+          "grammar_complete": true,
+          "pronunciation_complete": true,
+          "practice_complete": true,
+          "summary_complete": true
+        }
+      },
+      "subtitles": [
+        {
+          "id": 1,
+          "start_time": "00:00:04.089",
+          "end_time": "00:00:14.919",
+          "french": "La France est-elle anti-enfants ? Salut à toutes et à tous. Salut Ingrid. Salut Hugo, tu vas bien ?",
+          "chinese": "法国是“反儿童”的吗？大家好。嗨，英格丽德。嗨，雨果，你最近好吗？"
+        },
+        {
+          "id": 2,
+          "start_time": "00:00:15.349",
+          "end_time": "00:00:42.850",
+          "french": "Ouais, ouais, ça va et toi ? Ça va, tranquille. Il me semble que tu n'es pas en France en ce moment. Est-ce que tu veux en parler un petit peu ? Eh ouais, non, pas de problème. Je ne suis pas en France, effectivement. Je suis au Sénégal. Je suis au Sénégal pour un mois. J'accompagne une amie qui va commencer à travailler comme institutrice, maîtresse, dans une école franco-sénégalaise.",
+          "chinese": "嗯，嗯，挺好的，你呢？挺好的，挺清闲。看来你现在不在法国。你想稍微聊聊这个吗？嗯，没问题。我确实不在法国。我在塞内加尔。我会在塞内加尔待一个月。我陪一个朋友过来，她要在一家法塞双语学校开始做小学老师了。"
+        },
+        {
+          "id": 3,
+          "start_time": "00:00:42.850",
+          "end_time": "00:01:00.170",
+          "french": "Et donc j'en profite pour un peu prendre la température de ce pays francophone et je pense que peut-être bientôt je ferai au moins un épisode de podcast parce que je vois beaucoup de choses qui pourraient intéresser nos auditeurs.",
+          "chinese": "所以我趁机来感受一下这个法语国家的氛围，我想也许很快我至少会做一期播客，因为我看到了很多我们的听众可能会感兴趣的东西。"
+        },
+        {
+          "id": 4,
+          "start_time": "00:01:00.920",
+          "end_time": "00:01:30.099",
+          "french": "Super, eh bien je pense qu'on va tous attendre ça avec impatience, mais ce n'est pas le sujet dont on va parler aujourd'hui. Comme vous l'avez entendu avec le titre de cet épisode, on va parler des enfants parce que depuis le mois de mai, il y a un grand débat en France à propos de la tendance « no kids ». Donc oui, on utilise l'expression en anglais parce que je pense que ça passe un peu mieux comme ça, c'est un peu moins violent",
+          "chinese": "太棒了，我想大家都会非常期待的，但这并不是我们今天要讨论的主题。正如大家从这期节目的标题中听到的，我们要聊聊孩子，因为自五月份以来，法国关于“no kids”（无儿童）趋势展开了激烈的辩论。是的，我们使用了这个英文表达，因为我觉得这样听起来更容易接受一些，没那么刺耳，"
+        },
+        {
+          "id": 5,
+          "start_time": "00:01:30.099",
+          "end_time": "00:01:57.920",
+          "french": "de parler de « no kids » plutôt que de « sans enfants ». Si vous n'avez pas entendu parler de cette tendance, c'est le fait que certains hôtels, certains restaurants, donc plutôt des lieux de tourisme, interdisent de plus en plus la présence d'enfants. Donc il y a des hôtels qui sont, par exemple, réservés aux adultes. Et il y a encore une dizaine d'années, ça n'existait pas du tout en France, mais là, ça commence à arriver.",
+          "chinese": "说“no kids”比说“无儿童”要好。如果你没听说过这个趋势，它指的是一些酒店、一些餐厅，也就是偏向旅游场所的地方，越来越多地禁止儿童入内。比如，有些酒店是仅限成人入住的。大约十年前，这在法国是完全不存在的，但现在，这种情况开始出现了。"
+        },
+        {
+          "id": 6,
+          "start_time": "00:01:57.920",
+          "end_time": "00:02:24.060",
+          "french": "C'est une tendance qui est née en Asie et en Amérique du Nord, il me semble. Et là, en France, ça commence à devenir de plus en plus populaire. Donc, ça a alerté une partie de l'opinion publique. Et plus globalement, on s'est posé la question de la place globale des enfants dans notre société. Oui, parce qu'avec cette histoire de « no kids », ça nous a fait réfléchir.",
+          "chinese": "我觉得这是一个起源于亚洲和北美的趋势。而现在在法国，它开始变得越来越普遍。因此，这引起了一部分公众的警觉。更广泛地说，我们开始思考儿童在我们社会中的整体地位。是的，因为这个“no kids”的事情，让我们陷入了思考。"
+        },
+        {
+          "id": 7,
+          "start_time": "00:02:24.060",
+          "end_time": "00:02:40.099",
+          "french": "En France, on sait qu'on a un des plus forts taux de natalité en Europe. Il y a encore 1,6 enfant par femme, ce qui n'est pas énorme, mais ce qui est beaucoup plus que dans d'autres pays voisins.",
+          "chinese": "我们知道，法国是欧洲生育率最高的国家之一。目前每名妇女仍生育1.6个孩子，虽然不算非常多，但比其他邻国要高得多。"
+        },
+        {
+          "id": 8,
+          "start_time": "00:02:40.310",
+          "end_time": "00:03:04.370",
+          "french": "Et pourtant, nous, en tant que Français, on a cette impression que les enfants ne sont pas forcément les bienvenus partout. Il y a beaucoup de personnes qui se permettent de dire qu'elles n'aiment pas les enfants, qu'ils peuvent subir des discriminations très particulières. Et donc, on s'est dit, allez, il faut qu'on parle de ce sujet en essayant de dérouler plusieurs branches à ce thème.",
+          "chinese": "然而，作为法国人，我们有一种感觉，那就是孩子们并不一定在所有地方都受欢迎。有很多人会毫不避讳地说他们不喜欢孩子，孩子们可能会遭受非常特殊的歧视。所以，我们对自己说，来吧，我们必须谈谈这个话题，并尝试展开讨论这个主题的几个分支。"
+        },
+        {
+          "id": 9,
+          "start_time": "00:03:04.370",
+          "end_time": "00:03:25.960",
+          "french": "Oui, et c'est vrai que moi, je m'étais déjà fait la réflexion quand je vivais en Pologne parce que j'avais l'impression qu'en Pologne, les enfants étaient un peu plus « appréciés ». Par exemple, il y a le 1er juin, le jour des enfants ou la journée des enfants en Pologne où on célèbre les enfants et en France, ça n'existe pas.",
+          "chinese": "是的，我以前在波兰生活时就思考过这个问题，因为我感觉在波兰，孩子们似乎更受“喜爱”。例如，波兰有6月1日儿童节，大家会为孩子们庆祝，而在法国，并没有这样的节日。"
+        },
+        {
+          "id": 10,
+          "start_time": "00:03:25.979",
+          "end_time": "00:03:55.979",
+          "french": "Il y a un jour, j'ai vérifié en préparant cet épisode, mais c'est un peu la journée internationale des enfants, donc ce n'est pas une spécificité française. Je n'ai pas l'impression que ce soit très célébré, moi je n'en avais jamais entendu parler avant de faire ces recherches. Donc voilà, en Pologne, j'avais l'impression que les enfants étaient un peu plus fêtés, un peu plus appréciés, même dans les lieux publics en général, quand quelqu'un arrive avec un enfant, on lui fait un sourire. Et en France, c'est un peu moins le cas.",
+          "chinese": "在准备这期节目时我查了一下，其实是有一天，但那更像是国际儿童节，所以并不是法国特有的。我不觉得大家有怎么庆祝它，在做这些调查之前我甚至从未听说过。所以你看，在波兰，我感觉孩子们更受庆祝、更受喜爱，即使在一般的公共场所，当有人带着孩子出现时，大家也会对他们微笑。而在法国，情况就没那么友好了。"
+        },
+        {
+          "id": 11,
+          "start_time": "00:03:56.250",
+          "end_time": "00:04:26.029",
+          "french": "Toi, est-ce que tu as eu des exemples un peu comme ça aussi ? Oui, j'en ai plein parce qu'autour de moi, il y a beaucoup de personnes qui commencent à devenir parents. Et donc, j'ai pu suivre le début de maternité de beaucoup de copines que je suis allée voir, que j'ai accompagnées. Je garde souvent des enfants. Et effectivement, il y a pas mal de choses qui font que c'est assez difficile d'évoluer dans la vie en France avec des enfants.",
+          "chinese": "你呢，你也有过类似这样的例子吗？是的，我有很多，因为我周围有很多人开始为人父母了。因此，我见证了许多女性朋友初为人母的过程，我去探望她们，陪伴她们。我也经常帮忙带孩子。确实，有很多因素使得在法国带着孩子生活变得相当困难。"
+        },
+        {
+          "id": 12,
+          "start_time": "00:04:26.029",
+          "end_time": "00:04:54.779",
+          "french": "Ne serait-ce que parce qu'à la naissance, la durée du congé maternité n'est pas très longue, que c'est assez difficile de jongler entre la vie professionnelle et la vie avec les enfants. D'ailleurs, j'en avais déjà parlé dans l'épisode 107. Donc, c'est la preuve que ça m'avait déjà interpellée. J'avais fait un épisode sur l'idée de faire garder son enfant en France. Et c'est vrai qu'il y avait déjà une idée",
+          "chinese": "仅仅是因为孩子出生时，产假的时间并不长，要在职业生活和带孩子的生活之间找到平衡是相当困难的。其实，我在第107期节目中已经谈到过这个。这证明这个问题早就引起了我的关注。我做过一期关于在法国找人照看孩子的节目。确实，当时就已经有了一种观点，"
+        },
+        {
+          "id": 13,
+          "start_time": "00:04:54.779",
+          "end_time": "00:05:22.269",
+          "french": "derrière ça, qui était celle du fait que c'était difficile et qu'on ne favorisait pas forcément en France le fait de créer de nouveaux petits humains. Ouais, donc c'est vraiment ce paradoxe que tu as souligné parce que d'un côté, on a besoin des enfants et ça alerte beaucoup d'experts, le fait que le taux de natalité, même s'il reste plus élevé que celui de nos voisins, de manière générale, il a quand même tendance à baisser.",
+          "chinese": "其背后的意思是，这很困难，而且在法国，我们并不一定鼓励孕育新的小生命。是的，这正是你强调的悖论，因为一方面，我们需要孩子，而且许多专家对此感到担忧，即尽管我们的生育率仍高于邻国，但总体而言，它依然呈下降趋势。"
+        },
+        {
+          "id": 14,
+          "start_time": "00:05:22.269",
+          "end_time": "00:05:42.660",
+          "french": "Alors qu'on a besoin de ces enfants pour la survie de l'espèce, tout simplement. Et puis à plus court terme aussi pour financer notre système de retraite parce qu'en France, ce sont les retraites par répartition. Donc moins il y a d'enfants, plus c'est difficile de financer la retraite des personnes âgées. Mais...",
+          "chinese": "然而，简而言之，我们需要这些孩子来维持人类的繁衍。而且从短期来看，也是为了支撑我们的养老金体系，因为在法国，养老金是现收现付制的。所以孩子越少，就越难为老年人提供养老金。但是……"
+        },
+        {
+          "id": 15,
+          "start_time": "00:05:42.660",
+          "end_time": "00:06:07.360",
+          "french": "D'un autre côté, on veut que ces enfants dérangent le moins possible, qu'ils restent silencieux, qu'on ne les voit pas trop. Voilà, il ne faut pas qu'ils créent de problèmes. Oui, donc nous, on s'est dit que dans cet épisode, on allait un peu faire le tour de cette question. Pas forcément en faisant une comparaison internationale chiffrée parce que c'est vraiment trop difficile de trouver",
+          "chinese": "另一方面，我们又希望这些孩子尽可能少惹麻烦，希望他们保持安静，不要太显眼。总之，就是不能制造问题。是的，所以我们决定在这期节目中全面探讨一下这个问题。不一定要进行详细的数据化国际比较，因为要找到"
+        },
+        {
+          "id": 16,
+          "start_time": "00:06:07.360",
+          "end_time": "00:06:31.139",
+          "french": "des sondages, des chiffres exacts, mais on va parler de ce qu'on connaît et vous donner un petit peu notre idée sur cette question : la France est-elle anti-enfants ? Ouais, un titre un peu provocateur comme on en a l'habitude, mais on va essayer de ne pas tomber dans les clichés et de vous donner toutes les infos qu'on a. Allez, c'est parti !",
+          "chinese": "确切的民意调查和数据真的太难了，但我们会谈谈我们所了解的情况，并就这个问题分享一下我们的看法：法国是“反儿童”的吗？是的，像往常一样，这是一个有点挑衅性的标题，但我们会尽量避免落入俗套，并把我们掌握的所有信息都告诉大家。好了，我们开始吧！"
+        },
+        {
+          "id": 17,
+          "start_time": "00:06:38.899",
+          "end_time": "00:06:53.149",
+          "french": "Pour commencer, on va faire un petit résumé de ce dont tu as déjà parlé dans l'épisode 107. Déjà, est-ce que les parents sont plutôt accompagnés ou plutôt isolés au moment de la naissance d'un enfant ?",
+          "chinese": "首先，我们来简单回顾一下你在第107期节目中谈到的内容。首先，在孩子出生时，父母是得到了较多支持，还是比较孤立无援呢？"
+        },
+        {
+          "id": 18,
+          "start_time": "00:06:53.149",
+          "end_time": "00:07:17.810",
+          "french": "Eh oui, parce qu'au tout début de la vie d'un petit bébé, les personnes les plus importantes pour s'occuper de lui ou d'elle, ce sont ses parents. On sait quand même que c'est important pour le développement et que si on veut bien prendre soin des petits bébés qui naissent dans notre pays, il faut commencer par donner la possibilité aux parents de pouvoir...",
+          "chinese": "是的，因为在小婴儿生命的最初阶段，照顾他们最重要的人就是他们的父母。我们都知道这对孩子的发展很重要，如果我们想好好照顾在我们国家出生的小婴儿，首先必须让父母有机会能够……"
+        },
+        {
+          "id": 19,
+          "start_time": "00:07:17.810",
+          "end_time": "00:07:33.420",
+          "french": "s'en occuper, en prenant du temps pour eux, en étant dans leur cocon, en n'étant pas trop stressés. Et pour ça, on a ce qu'on appelle un congé maternité, un congé paternité et un congé parental.",
+          "chinese": "照顾他们，为他们腾出时间，待在他们的小窝里，不要有太大的压力。为此，我们有产假、陪产假和育儿假。"
+        },
+        {
+          "id": 20,
+          "start_time": "00:07:33.819",
+          "end_time": "00:07:54.930",
+          "french": "Alors en France en particulier, nous on trouve, je pense que Hugo tu es d'accord avec moi, que le congé maternité n'est pas très long. Il dure 16 semaines. On peut en prendre une partie avant l'accouchement et une autre partie après l'accouchement. C'est rémunéré à 100%.",
+          "chinese": "那么特别是在法国，我们觉得，我想雨果你也会同意我的看法，产假并不是很长。它持续16周。可以在分娩前休一部分，分娩后休另一部分。期间是100%带薪的。"
+        },
+        {
+          "id": 21,
+          "start_time": "00:07:54.930",
+          "end_time": "00:08:05.060",
+          "french": "Donc bon, ça c'est bien, mais ça ne dure pas vraiment longtemps. Moi, je connais beaucoup de personnes qui ont accouché et clairement...",
+          "chinese": "所以，这挺好的，但时间确实不长。我认识很多刚生完孩子的人，很明显……"
+        },
+        {
+          "id": 22,
+          "start_time": "00:08:05.060",
+          "end_time": "00:08:33.789",
+          "french": "Au moment où le congé maternité se terminait, elles n'avaient pas fini de se reposer. Elles avaient le lien avec le bébé qui était encore en construction. Et pour celles qui ne peuvent pas faire autrement, elles doivent retourner au travail. Et ce n'est pas forcément très favorable. Ça peut être un peu traumatisant pour le bébé, mais surtout ça peut mener après à un surmenage, un burn-out parental.",
+          "chinese": "在产假结束时，她们还没有休息够。她们与宝宝之间的情感纽带还在建立中。而对于那些别无选择的人来说，她们必须回去工作。这并不一定是非常有利的。这对宝宝来说可能有点创伤，但最重要的是，这可能会导致后来的过度劳累，也就是父母的倦怠。"
+        },
+        {
+          "id": 23,
+          "start_time": "00:08:33.789",
+          "end_time": "00:08:58.629",
+          "french": "D'autant plus que le congé paternité, lui, n'est vraiment, vraiment pas long du tout. Il a été doublé il n'y a pas longtemps, mais même en le doublant, c'est devenu 28 jours. Donc voilà, un mois pour les papas et après, hop, on retourne au boulot. Et quelques mois pour les mamans, alors même qu'elles se remettent de quelque chose qui a été très physique pour elles. Oui, c'est vrai que c'est...",
+          "chinese": "更何况陪产假真的、真的完全不长。不久前它被翻倍了，但即使翻倍，也只有28天。所以你看，爸爸们只有一个月，然后，嗖，就得回去工作了。而妈妈们只有几个月，尽管她们还在从对身体消耗极大的分娩中恢复。是的，确实是……"
+        },
+        {
+          "id": 24,
+          "start_time": "00:08:58.629",
+          "end_time": "00:09:27.870",
+          "french": "En général, plus court que dans les autres pays. Je sais qu'en Pologne, le congé maternité dure un an. C'est beaucoup plus long. C'est un peu le revers de la médaille du combat féministe parce que l'idée, c'était que les femmes puissent... En France, en tout cas, l'idée, c'était que les femmes puissent retourner travailler rapidement pour ne pas sacrifier leur carrière au bébé. Mais ce qui se passe bien souvent dans les faits, c'est que les femmes, effectivement, sont obligées de retourner au travail",
+          "chinese": "通常比其他国家要短。我知道在波兰，产假有一年。那要长得多。这有点像女权主义斗争的硬币反面，因为初衷是让女性能够……至少在法国，初衷是让女性能够迅速重返工作岗位，以免为了孩子牺牲自己的事业。但在现实中经常发生的情况是，女性确实被迫回去工作，"
+        },
+        {
+          "id": 25,
+          "start_time": "00:09:27.870",
+          "end_time": "00:09:57.419",
+          "french": "très tôt, avant que le bébé ait atteint l'âge des trois mois. Mais ensuite, quand elles rentrent le soir, c'est quand même souvent elles qui s'en occupent et qui s'occupent des tâches ménagères. C'est ce qu'on appelle un peu le second service, comme dans les restaurants, il y a le premier service, le second service. Les mères, maintenant, non seulement elles doivent travailler, mais en plus, c'est elles qui continuent d'assumer une grande partie du travail domestique. Donc c'est un peu la double peine.",
+          "chinese": "非常早，在宝宝还没到三个月大时。但随后，当她们晚上回家时，往往还是她们在照顾孩子和做家务。这有点像我们所说的“第二轮服务”，就像餐厅里有第一轮服务、第二轮服务一样。现在的母亲们，不仅要工作，而且还要继续承担大部分的家务劳动。所以这有点像双重惩罚。"
+        },
+        {
+          "id": 26,
+          "start_time": "00:09:57.529",
+          "end_time": "00:10:22.159",
+          "french": "Alors que dans d'autres pays, il y a eu d'autres choses qui ont été mises en place. Bon, je sais, on a dit qu'on ne faisait pas de comparaison internationale, donc on ne va pas rentrer dans les détails. Mais c'est vrai que quand on entend parler de ce qu'ont pu faire la Norvège, la Suède, peut-être un peu l'Espagne, il y a une tentative de garder quand même un congé assez long en le répartissant bien entre le père et la mère.",
+          "chinese": "而在其他国家，则实施了其他一些措施。好吧，我知道，我们说过不做国际比较，所以我们不深入细节。但确实，当我们听说挪威、瑞典、也许还有西班牙所做的事情时，他们试图保持相当长的假期，并在父母之间进行合理的分配。"
+        },
+        {
+          "id": 27,
+          "start_time": "00:10:22.159",
+          "end_time": "00:10:49.860",
+          "french": "Donc là où la Pologne a un congé très long pour la mère et pas trop pour le père, je crois, c'est plutôt cette idée que la femme doit s'occuper des enfants et la Suède a un congé pour les deux. La France a choisi quelque chose qui finalement, non seulement désavantage les pères, les mères, mais en plus les enfants. Donc on a tout faux, je pense, dans la comparaison internationale.",
+          "chinese": "所以，波兰给母亲的假期很长，而给父亲的假期不多，我认为这更倾向于女性应该照顾孩子的观念；而瑞典则为双方都提供假期。法国选择的方案最终不仅对父亲、母亲不利，对孩子也不利。所以我想，在国际比较中，我们全做错了。"
+        },
+        {
+          "id": 28,
+          "start_time": "00:10:50.169",
+          "end_time": "00:11:16.929",
+          "french": "Ouais, ouais, ouais. Bon, après, je suis sûr qu'il y a des pays où le congé maternité est encore plus court qu'en France. Donc, voilà, on peut toujours trouver pire. Mais pour un pays qui se veut à la pointe en matière de questions sociales, bon, là-dessus, on doit revoir notre copie. Revoir sa copie, ça veut dire essayer de faire mieux. Revoir l'exercice qu'on a fait et se dire, bon, il y a des améliorations qui sont possibles.",
+          "chinese": "是的，是的，是的。不过，我确信有些国家的产假比法国还要短。所以，总能找到更糟的。但对于一个自诩在社会问题上处于领先地位的国家来说，好吧，在这方面，我们必须重写答卷。重写答卷的意思是努力做得更好。重新审视我们做过的练习，并对自己说，好吧，还有改进的空间。"
+        },
+        {
+          "id": 29,
+          "start_time": "00:11:16.929",
+          "end_time": "00:11:44.940",
+          "french": "Donc c'est vrai que là, la France devrait revoir sa copie. Du coup, quand les parents et en particulier les mères reprennent le travail, eh bien, qui peut prendre le relais ? Qui peut s'occuper de ces petits bébés ? On dit souvent ou on entend souvent que pour élever un enfant, ça demande l'implication de tout un village. Alors ça, c'était sûrement vrai en France il y a quelques décennies, dans les précédentes générations,",
+          "chinese": "所以确实，在这方面，法国应该重写它的答卷。那么，当父母，特别是母亲重返工作岗位时，谁来接班呢？谁来照顾这些小婴儿呢？我们经常说或经常听到，养育一个孩子需要全村人的参与。在几十年前的法国，在上一代人中，这肯定是真实的，"
+        },
+        {
+          "id": 30,
+          "start_time": "00:11:44.940",
+          "end_time": "00:12:12.379",
+          "french": "mais ça l'est de moins en moins. C'est vrai que les parents sont très isolés maintenant pour s'occuper de leurs enfants et ça, c'est un peu ce qu'on observe partout, en tout cas dans les économies développées. C'est lié à la fois à l'urbanisation et à la montée de l'individualisme. Donc voilà, concrètement, Ingrid, toi, est-ce que tu sais quelles sont les structures, quelles sont les aides qui existent pour accompagner ces jeunes parents ?",
+          "chinese": "但现在越来越不是这样了。确实，现在的父母在照顾孩子时非常孤立，这几乎是我们在各地都能观察到的现象，至少在发达经济体中是这样。这既与城市化有关，也与个人主义的兴起有关。所以，具体来说，英格丽德，你知道有哪些机构、哪些援助可以用来支持这些年轻的父母吗？"
+        },
+        {
+          "id": 31,
+          "start_time": "00:12:12.379",
+          "end_time": "00:12:35.779",
+          "french": "En général, les parents ont le choix entre mettre leurs enfants dans ce qu'on appelle des crèches, qui sont des structures où il y a plusieurs enfants qui vont et qui sont gardés de façon collective. C'est un peu comme une pré-école en fait, sauf qu'évidemment il n'y a pas de...",
+          "chinese": "通常，父母可以选择把孩子送到所谓的托儿所，这些机构里有很多孩子，他们被集中照看。这其实有点像学前班，只不过显然没有……"
+        },
+        {
+          "id": 32,
+          "start_time": "00:12:35.779",
+          "end_time": "00:12:47.590",
+          "french": "de classe, mais c'est un endroit où on les amène le matin, on les dépose souvent vers 8h quand on va au travail et on les récupère en fin de journée.",
+          "chinese": "课程，但这是一个我们早上把他们送去的地方，通常在我们去上班时，大约8点左右把他们放下，然后在一天结束时接他们回来。"
+        },
+        {
+          "id": 33,
+          "start_time": "00:12:47.929",
+          "end_time": "00:13:15.779",
+          "french": "Sinon, il y a l'option de l'assistante maternelle qui est un peu le même système mais avec moins d'enfants et chez quelqu'un. Donc, il y a des personnes qui, chez elles, ont un agrément pour garder des enfants. Il me semble que c'est entre deux et quatre ou cinq enfants avec une seule personne qui les garde. Ça, ce sont les deux modes de garde principaux.",
+          "chinese": "另外，还有育儿嫂的选择，这有点像同样的系统，但孩子较少，而且是在某人家里。所以，有些人拥有在自己家里照看孩子的资质。我印象中是一个人照看两到四五个孩子。这是两种主要的托育方式。"
+        },
+        {
+          "id": 34,
+          "start_time": "00:13:16.250",
+          "end_time": "00:13:41.470",
+          "french": "Ouais, moi j'ai des amis aussi, ça se fait beaucoup, notamment dans les grandes villes, qui partagent des assistantes maternelles. Donc ils se mettent à deux ou trois couples et ils recrutent ensemble une assistante maternelle. Et souvent, c'est plutôt l'assistante qui vient chez eux. Donc voilà, dans l'appartement d'un couple. Cette semaine, c'est dans leur appartement que les trois enfants seront gardés par l'assistante maternelle.",
+          "chinese": "是的，我也有朋友这样做，这很常见，特别是在大城市，他们共享育儿嫂。所以两三对夫妇联合起来，共同雇佣一名育儿嫂。而且通常是育儿嫂去他们家里。比如，在一对夫妇的公寓里。这周，这三个孩子就在他们的公寓里由育儿嫂照看。"
+        },
+        {
+          "id": 35,
+          "start_time": "00:13:41.470",
+          "end_time": "00:14:04.580",
+          "french": "Ça dépend un peu des questions de logistique. Mais ouais, c'est les deux principales options pour garder les enfants. Bon, avant, il y avait aussi les grands-parents, mais c'est de plus en plus difficile, notamment, comme on l'a dit, avec l'urbanisation. Et plus généralement, les familles sont plus éclatées maintenant. On déménage pour nos études, pour notre travail, donc on s'éloigne de notre famille.",
+          "chinese": "这有点取决于后勤安排的问题。但是，是的，这是照看孩子的两个主要选择。以前还有祖父母，但这变得越来越困难，特别是正如我们所说的，随着城市化的发展。更普遍的是，现在的家庭更加分散了。我们为了学业、为了工作而搬家，所以我们远离了家人。"
+        },
+        {
+          "id": 36,
+          "start_time": "00:14:04.580",
+          "end_time": "00:14:14.399",
+          "french": "Et les grands-parents ne sont pas toujours à côté pour nous dépanner, autrement dit pour nous aider, pour nous donner un coup de main quand on a besoin de faire garder les bébés.",
+          "chinese": "祖父母并不总是在身边为我们解围，换句话说，当我们需要人帮忙照看宝宝时，他们无法总是伸出援手。"
+        },
+        {
+          "id": 37,
+          "start_time": "00:14:14.399",
+          "end_time": "00:14:37.090",
+          "french": "C'est vrai qu'il y a un peu cette mode chez les baby-boomers de bien préciser à leurs enfants « Ah, je te préviens, je ne vais pas faire la baby-sitter. Moi, je veux profiter de ma retraite. » Alors moi, dans ce que j'ai constaté autour de moi, c'est que les grands-parents finalement sont toujours très contents de garder les enfants.",
+          "chinese": "确实，在婴儿潮一代中有点流行这样一种趋势，他们会向孩子们明确表示：‘啊，我先提醒你，我可不当保姆。我要享受我的退休生活。’不过，就我在周围观察到的情况来看，祖父母最终总是非常乐意帮忙带孩子的。"
+        },
+        {
+          "id": 38,
+          "start_time": "00:14:37.090",
+          "end_time": "00:15:04.799",
+          "french": "Mais ça reste ponctuel. Ils et elles ne veulent plus être le mode de garde régulier où on sait que toutes les semaines, la journée, ce sont les grands-parents qui vont chercher les enfants à l'école, etc. On ne peut plus compter sur eux comme avant. Ça pouvait être le cas. Et voilà, ça, c'est quelque chose qui est assez général, constaté un peu dans tous les milieux.",
+          "chinese": "但这只是偶尔的。他们不再想成为常规的托育方式，也就是那种我们知道每周白天都是祖父母去学校接孩子等等的情况。我们不能再像以前那样指望他们了。以前可能是那样的。所以，这是一种相当普遍的现象，在各个阶层都能观察到。"
+        },
+        {
+          "id": 39,
+          "start_time": "00:15:04.799",
+          "end_time": "00:15:34.220",
+          "french": "Et la conséquence de tout ça, c'est que les jeunes parents se retrouvent, comme je l'ai dit précédemment, ils se retrouvent isolés, ils sont épuisés. Épuisés, ils sont très très fatigués. D'autant plus que ce n'est plus du tout valorisé, le fait de travailler à la maison. Autant à une certaine époque, être une femme au foyer, être une mère qui s'occupe de ses enfants, c'est quelque chose qui était assez valorisé socialement. Aujourd'hui, ce n'est plus du tout le cas. En France, on considère vraiment que...",
+          "chinese": "而这一切的后果就是，年轻的父母们发现自己，正如我之前所说，他们发现自己很孤立，他们精疲力竭。精疲力竭，就是他们非常非常累。更何况，在家里工作已经完全不被重视了。在某个时期，做一名家庭主妇、做一名照顾孩子的母亲，在社会上是相当受尊重的。今天，情况完全不同了。在法国，人们真的认为……"
+        },
+        {
+          "id": 40,
+          "start_time": "00:15:34.220",
+          "end_time": "00:15:56.019",
+          "french": "Une femme qui décide de rester chez elle pour s'occuper de ses enfants, c'est une traître à la cause féministe et qu'elle devrait plutôt retourner travailler, essayer de développer sa carrière. D'autant plus qu'on ne l'a pas précisé quand on parlait des congés maternité, mais il existe aussi ce qu'on appelle un congé parental.",
+          "chinese": "一个决定留在家里照顾孩子的女性，是女权主义事业的叛徒，她应该回去工作，努力发展自己的事业。更何况，我们在谈论产假时没有说明，但其实还有一种叫做育儿假的东西。"
+        },
+        {
+          "id": 41,
+          "start_time": "00:15:56.019",
+          "end_time": "00:16:06.570",
+          "french": "C'est ça que prenaient les femmes au foyer avant. Ça peut durer plusieurs années. Je pense que c'est trois ans pour le premier enfant. Et puis après, en tout cas, ça dure assez longtemps.",
+          "chinese": "这就是以前家庭主妇们休的假。它可以持续好几年。我想第一个孩子是三年。然后，总之，它持续的时间相当长。"
+        },
+        {
+          "id": 42,
+          "start_time": "00:16:06.580",
+          "end_time": "00:16:34.690",
+          "french": "Mais le problème, c'est que c'est très, très, très mal payé. On n'a pas une indemnisation à 100% de son salaire. On a à peu près entre 400 et 500 euros, ce qui est moins que le RSA, qui est l'allocation pour les personnes les plus pauvres. Donc, quand les femmes ou les hommes, mais la plupart du temps, ce sont les femmes, veulent s'arrêter de travailler pour s'occuper de leurs enfants,",
+          "chinese": "但问题是，它的报酬非常、非常、非常低。我们拿不到100%工资的补偿。大概只有400到500欧元，这比RSA（积极互助收入津贴，即发给最贫困人群的补助金）还要少。因此，当女性或男性（但大多数时候是女性）想停止工作来照顾孩子时，"
+        },
+        {
+          "id": 43,
+          "start_time": "00:16:34.690",
+          "end_time": "00:16:58.950",
+          "french": "elles deviennent dépendantes de la personne avec qui elles vivent, du papa. Et donc, ça peut causer des problèmes en termes d'indépendance, en termes de développement, en termes de violences éventuelles, etc. Donc, les femmes ne sont pas du tout poussées à rester à la maison pour s'occuper des enfants. Et les hommes non plus.",
+          "chinese": "她们就会在经济上依赖与她们共同生活的人，也就是孩子的爸爸。因此，这可能会在独立性、个人发展、潜在的暴力等方面引发问题。所以，女性根本不被鼓励留在家里照顾孩子。男性也一样。"
+        },
+        {
+          "id": 44,
+          "start_time": "00:16:59.350",
+          "end_time": "00:17:24.980",
+          "french": "Et l'autre question par rapport à ça, c'est comment est valorisé le personnel éducatif ? Autrement dit, toutes ces personnes qui s'occupent des enfants, que ce soit dans les crèches, dans les écoles, les écoles maternelles, est-ce que ce sont des métiers qui sont valorisés si on considère que les enfants, c'est un investissement pour l'avenir, c'est la richesse du pays dans le futur ?",
+          "chinese": "与此相关的另一个问题是，教育人员的价值是如何体现的？换句话说，所有这些照顾孩子的人，无论是在托儿所、学校还是幼儿园，如果我们认为孩子是对未来的投资，是国家未来的财富，那么这些职业受到重视了吗？"
+        },
+        {
+          "id": 45,
+          "start_time": "00:17:24.980",
+          "end_time": "00:17:49.740",
+          "french": "on devrait justement investir dans les personnes qui sont chargées de les élever, de les éduquer. Et malheureusement, comme c'est le cas dans beaucoup de pays, en France, ces professions, les professions de soins et d'éducation aux enfants, donc les assistantes maternelles, les personnels de crèche et même les profs, elles sont assez peu considérées et elles sont très mal rémunérées.",
+          "chinese": "我们理应投资于那些负责抚养和教育他们的人。但不幸的是，就像许多国家的情况一样，在法国，这些职业，即儿童护理和教育职业，包括育儿嫂、托儿所工作人员甚至老师，都不太受重视，而且薪酬非常低。"
+        },
+        {
+          "id": 46,
+          "start_time": "00:17:50.069",
+          "end_time": "00:18:05.119",
+          "french": "Oui, il y en a beaucoup qui considèrent que tout ce qu'ils et elles font, c'est du baby-sitting. Du coup, qu'elles n'ont pas besoin de formation, pas besoin d'être valorisées. Et ça mène à de mauvais soins pour les enfants.",
+          "chinese": "是的，有很多人认为他们所做的只是当保姆。因此，他们不需要培训，不需要被重视。这就导致了对孩子照顾不周。"
+        },
+        {
+          "id": 47,
+          "start_time": "00:18:05.119",
+          "end_time": "00:18:33.940",
+          "french": "Parfois, les personnels de crèche sont surchargés, il n'y en a pas assez. Les enfants peuvent souffrir de certains manques d'attention et les profs, pareil, sont mal formés et donc ne savent pas forcément comment s'occuper de ces enfants, de ces citoyens de demain de la meilleure manière pour qu'ils soient bien pris en charge. Oui, parce que c'est vrai qu'on a tendance à considérer les enfants un peu comme des boulets.",
+          "chinese": "有时，托儿所的工作人员超负荷工作，人手不足。孩子们可能会因为缺乏关注而受苦，老师们也一样，缺乏良好的培训，因此不一定知道如何以最好的方式照顾这些孩子，这些未来的公民，让他们得到妥善的照料。是的，因为我们确实倾向于把孩子看作是累赘。"
+        },
+        {
+          "id": 48,
+          "start_time": "00:18:33.940",
+          "end_time": "00:18:57.799",
+          "french": "Un boulet, donc, je ne sais pas si vous voyez l'image, mais il y a très longtemps, on pouvait attacher un boulet, donc quelque chose de très lourd, au pied des prisonniers pour ne pas qu'ils puissent se déplacer librement. Donc, c'est ça ce qu'on appelle un boulet. Et quand on dit d'une personne que c'est un boulet, ça veut dire que c'est quelqu'un qu'il faut, voilà, qu'il faut se traîner, quelqu'un qui...",
+          "chinese": "累赘，我不知道你们脑海中是否有这个画面，在很久以前，人们会在囚犯的脚上绑一个铁球，也就是非常重的东西，让他们无法自由移动。这就是我们所说的累赘。当我们说一个人是累赘时，意思是这是一个我们需要，嗯，我们需要拖着走的人，一个……"
+        },
+        {
+          "id": 49,
+          "start_time": "00:18:58.259",
+          "end_time": "00:19:20.799",
+          "french": "qui nous apporte une forme de handicap ou qui entrave en tout cas notre liberté. Donc on considère un peu les enfants comme des boulets, comme s'il fallait prendre son mal en patience. Il faut attendre qu'ils deviennent des adultes pour qu'enfin ils aient une utilité. Et en attendant, on doit faire du baby-sitting pour patienter le temps qu'ils deviennent des adultes.",
+          "chinese": "给我们带来某种阻碍，或者至少限制了我们自由的人。所以我们有点把孩子看作是累赘，好像我们必须咬牙忍受。必须等到他们成为成年人，他们才终于有了用处。而在此期间，我们必须做保姆，耐心等待他们长大成人。"
+        },
+        {
+          "id": 50,
+          "start_time": "00:19:20.799",
+          "end_time": "00:19:29.450",
+          "french": "Donc si on considère, comme tu l'as dit, que le travail éducatif, c'est seulement du baby-sitting, c'est sûr que ce n'est pas très valorisé ni valorisant.",
+          "chinese": "所以，如果我们像你所说的那样，认为教育工作仅仅是当保姆，那它肯定不会受到重视，也没有成就感。"
+        },
+        {
+          "id": 51,
+          "start_time": "00:19:29.589",
+          "end_time": "00:19:55.880",
+          "french": "Oui, donc voilà, les enfants, dès leur plus jeune âge, sont vus comme des boulets, comme tu dis, et on n'aide pas du tout les parents pour qu'ils s'occupent d'eux, ni les personnels éducatifs, et on attend tout simplement qu'ils grandissent. Mais alors, qu'est-ce qui se passe quand on fréquente des enfants ? Ils sont là, c'est forcément des êtres humains qu'on va croiser. Comment réagissent les Français ?",
+          "chinese": "是的，所以你看，孩子们从很小的时候起，就像你说的，被看作是累赘，我们根本不帮助父母去照顾他们，也不帮助教育人员，我们只是等待他们长大。但是，当我们和孩子们接触时会发生什么呢？他们就在那里，他们必然是我们会遇到的人类。法国人是如何反应的呢？"
+        },
+        {
+          "id": 52,
+          "start_time": "00:20:03.579",
+          "end_time": "00:20:18.920",
+          "french": "Alors maintenant, la question, c'est de savoir comment les enfants sont perçus dans l'espace public, dans la société et comment ils sont traités. Pour comprendre ça, il y a un concept assez intéressant, le concept de l'adultisme.",
+          "chinese": "那么现在，问题在于孩子们在公共空间、在社会中是如何被看待的，以及他们是如何被对待的。为了理解这一点，有一个相当有趣的概念，即“成人主义”的概念。"
+        },
+        {
+          "id": 53,
+          "start_time": "00:20:19.220",
+          "end_time": "00:20:42.150",
+          "french": "L'adultisme, c'est un concept qui consiste à dire que la société dans laquelle nous vivons a été pensée et conçue uniquement pour répondre aux besoins des adultes et pas à ceux des enfants. Le résultat, la conséquence de cela, c'est que les enfants sont constamment victimes de discrimination.",
+          "chinese": "成人主义这个概念是说，我们生活的社会完全是为了满足成年人的需求而构思和设计的，而不是为了满足儿童的需求。其结果和后果就是，儿童经常成为歧视的受害者。"
+        },
+        {
+          "id": 54,
+          "start_time": "00:20:42.460",
+          "end_time": "00:21:01.500",
+          "french": "Il y a un bon exemple pour comprendre cet adultisme, c'est celui des transports. Oui, c'est clair que les transports, c'est un endroit où on croise un peu tout le monde. Donc forcément, où les adultes qui ne fréquentent pas d'enfants au quotidien peuvent croiser des enfants.",
+          "chinese": "要理解这种成人主义，交通工具就是一个很好的例子。是的，很明显，交通工具是一个我们会遇到各种人的地方。所以必然地，那些日常不接触孩子的成年人可能会在这里遇到孩子。"
+        },
+        {
+          "id": 55,
+          "start_time": "00:21:01.500",
+          "end_time": "00:21:29.839",
+          "french": "Et on voit bien que parfois, les gens sont vraiment agacés de voir des enfants. Ils ont cette tendance à lever les yeux au ciel. Donc, lever les yeux au ciel, ça veut dire vraiment ce que ça veut dire. Vous imaginez, on regarde vers le haut pour donner, vraiment faire sentir aux personnes qui sont en face de nous qu'on est énervé d'avance, qu'on trouve une situation malheureuse ou ridicule.",
+          "chinese": "我们可以清楚地看到，有时人们看到孩子真的会感到烦躁。他们有翻白眼的倾向。所以，翻白眼的意思就是字面上的意思。你可以想象，我们向上看，是为了让，真正让面前的人感觉到我们已经不耐烦了，我们觉得这个情况很倒霉或者很可笑。"
+        },
+        {
+          "id": 56,
+          "start_time": "00:21:29.839",
+          "end_time": "00:21:55.890",
+          "french": "Et moi, je sais que j'ai demandé un peu à mes copines pour faire ce sujet et qu'elles m'ont toutes dit qu'effectivement, elles avaient cette peur avec leurs enfants ou même avec leurs élèves, pour une copine qui est instit pour les petits enfants, d'embêter les gens, que les gens fassent des remarques désagréables, que les gens demandent aux enfants même de se taire.",
+          "chinese": "我知道，为了做这个主题，我问了一些女性朋友，她们都告诉我，确实，她们带着孩子，或者甚至带着学生（我有一个朋友是幼儿教师）时，会有这种恐惧，怕打扰到别人，怕别人说难听的话，怕别人甚至要求孩子们闭嘴。"
+        },
+        {
+          "id": 57,
+          "start_time": "00:21:55.890",
+          "end_time": "00:22:24.859",
+          "french": "Et apparemment, bon, c'est particulièrement vrai en France. En tout cas, j'ai des amis qui ont eu l'occasion d'aller dans certains pays et ça n'a pas l'air d'être le cas partout. Il y a sûrement beaucoup de pays qui sont comme la France, mais en tout cas, ce n'est pas forcément universel. Moi, c'est vrai que quand j'étais à Varsovie, je voyais assez souvent des groupes d'enfants, des classes prendre le tram ou le bus. Et en général, ça faisait plutôt sourire les autres passagers",
+          "chinese": "显然，嗯，这在法国尤为真实。无论如何，我有一些朋友有机会去过一些国家，似乎并非到处都是这样。肯定有很多国家像法国一样，但无论如何，这并不一定是普遍现象。确实，当我在华沙时，我经常看到成群的孩子、整个班级的学生乘坐有轨电车或公交车。通常，这反而会让其他乘客微笑，"
+        },
+        {
+          "id": 58,
+          "start_time": "00:22:24.859",
+          "end_time": "00:22:51.210",
+          "french": "de voir tous ces enfants. Souvent, ils avaient tous la même petite casquette pour que les professeurs ne les perdent pas. Donc voilà, en général, ça provoquait plutôt des sourires. Alors que, comme tu l'as dit, en France, on voit les personnes lever les yeux au ciel. Donc oui, en français, on ne dit pas rouler les yeux, comme en anglais, mais on dit lever les yeux au ciel. Je pense que c'est particulièrement vrai dans les grandes villes, notamment...",
+          "chinese": "看到所有这些孩子。通常，他们都戴着同样的小帽子，这样老师就不会把他们弄丢。所以你看，通常这会引发微笑。然而，正如你所说，在法国，我们会看到人们翻白眼。所以是的，在法语中，我们不说“转眼珠”（像英语那样），而是说“把眼睛翻向天空”（翻白眼）。我认为这在大城市尤其真实，特别是……"
+        },
+        {
+          "id": 59,
+          "start_time": "00:22:51.220",
+          "end_time": "00:23:17.140",
+          "french": "Bon, ce n'est pas pour constamment taper sur Paris, mais c'est vrai que les Parisiens ont une patience assez limitée. C'est très compliqué de prendre les transports en commun à Paris aux heures de pointe. Donc, quand il y a un groupe d'enfants qui rentre, ça exaspère les autres passagers. Et on a un peu l'impression que les enfants sont tolérés seulement s'ils sont silencieux.",
+          "chinese": "好吧，这不是为了总是批评巴黎，但巴黎人的耐心确实相当有限。在高峰时段在巴黎乘坐公共交通是非常痛苦的。所以，当有一群孩子上车时，这会激怒其他乘客。我们有点觉得，只有当孩子们保持安静时，他们才会被容忍。"
+        },
+        {
+          "id": 60,
+          "start_time": "00:23:17.140",
+          "end_time": "00:23:43.549",
+          "french": "Et au contraire, dès que les enfants font un peu de bruit, on accuse tout de suite leurs parents de laxisme. Autrement dit, on les accuse de laisser trop de liberté à leurs enfants et de ne pas savoir éduquer leurs enfants. Oui, c'est vrai qu'il y a cette tendance à mal regarder les parents parce qu'un enfant fait du bruit, alors que pourtant le bruit n'est pas forcément un signe de mauvaise éducation.",
+          "chinese": "相反，一旦孩子们发出一点噪音，人们就会立刻指责他们的父母太放纵。换句话说，指责他们给孩子太多自由，不懂得教育孩子。是的，确实有这种因为孩子吵闹就对父母怒目而视的倾向，然而吵闹并不一定是缺乏教养的标志。"
+        },
+        {
+          "id": 61,
+          "start_time": "00:23:43.549",
+          "end_time": "00:23:50.410",
+          "french": "Parfois, c'est même simplement des bavardages. Les enfants parlent, ils parlent un peu fort et ça énerve les gens.",
+          "chinese": "有时，那甚至只是简单的聊天。孩子们说话，他们说话声音有点大，这就会惹恼人们。"
+        },
+        {
+          "id": 62,
+          "start_time": "00:23:50.740",
+          "end_time": "00:24:15.470",
+          "french": "Si bien qu'il y a des parents qui ont tellement peur de déranger les autres qu'ils se mettent à donner des écrans à leurs enfants alors qu'ils ne le feraient pas à la maison normalement. Il y a vraiment ce phénomène des iPad kids, donc les bébés qui sont déjà sur les écrans. Et alors oui, il y a des parents qui font ça en toutes circonstances, mais il y en a beaucoup",
+          "chinese": "以至于有些父母非常害怕打扰别人，于是开始给孩子看屏幕，而他们通常在家里是不会这样做的。确实存在这种“iPad儿童”的现象，也就是已经在看屏幕的婴儿。那么是的，有些父母在任何情况下都这样做，但也有很多人"
+        },
+        {
+          "id": 63,
+          "start_time": "00:24:15.470",
+          "end_time": "00:24:37.319",
+          "french": "qui ont tendance à dire que dans les transports en commun, c'est l'exception, ou dans les lieux publics où il y a beaucoup de monde, c'est pour respecter les autres, on met son enfant devant un écran, comme ça il est silencieux. Et effectivement, c'est la seule manière dont les enfants sont tolérés en France par beaucoup de personnes.",
+          "chinese": "倾向于说，在公共交通工具上，这是个例外，或者在人多的公共场所，为了尊重他人，我们把孩子放在屏幕前，这样他就安静了。实际上，这是许多法国人容忍孩子的唯一方式。"
+        },
+        {
+          "id": 64,
+          "start_time": "00:24:37.910",
+          "end_time": "00:25:04.259",
+          "french": "C'est vrai qu'il y a une vraie forme de pression sociale par rapport à ça qui fait que parfois les parents font des compromis, notamment avec les écrans, qu'ils ne feraient pas en d'autres circonstances. Et alors, ça peut aller très loin puisque, comme tu le disais, on vit dans un monde fait pour les adultes, par les adultes, ce qui s'appelle l'adultisme. Mais on a carrément, au-delà de...",
+          "chinese": "确实，在这方面存在着一种真正的社会压力，导致父母有时会做出妥协，特别是在屏幕问题上，而他们在其他情况下是不会这样做的。而且，这可能会发展得很严重，因为正如你所说，我们生活在一个由成年人创造、为成年人服务的世界里，这被称为成人主义。但我们甚至，超越了……"
+        },
+        {
+          "id": 65,
+          "start_time": "00:25:04.259",
+          "end_time": "00:25:31.660",
+          "french": "simplement d'un monde qui n'est pas adapté aux enfants, on a de la discrimination. Et ça, il y a une pédopsychiatre qui est aussi sociologue, Laëlia Benoît, qui utilise le terme d'infantisme. Elle traduit le terme en anglais de « childism ». Et en fait, là où l'adultisme est simplement une manière d'exclure les enfants de la...",
+          "chinese": "仅仅是一个不适合儿童的世界，我们还存在歧视。关于这一点，有一位同时也是社会学家的儿童精神病学家莱莉亚·伯努瓦，她使用了“厌童主义”这个词。她翻译了英语中的“childism”一词。事实上，成人主义仅仅是一种将儿童排除在……"
+        },
+        {
+          "id": 66,
+          "start_time": "00:25:31.660",
+          "end_time": "00:25:45.619",
+          "french": "pensée quand on met en place des choses sociales. L'infantisme, c'est carrément une discrimination envers les enfants. Donc, c'est volontairement faire des choses contre eux.",
+          "chinese": "制定社会政策时的考量之外的方式。而厌童主义，则完全是对儿童的歧视。也就是说，这是故意做出对他们不利的事情。"
+        },
+        {
+          "id": 67,
+          "start_time": "00:25:45.619",
+          "end_time": "00:26:10.700",
+          "french": "C'est une forme d'âgisme. L'âgisme, c'est une discrimination basée sur l'âge. En général, on parle plutôt d'âgisme quand on discrimine, par exemple, les personnes âgées ou les personnes d'un certain âge dans le monde du travail. Eh bien, l'infantisme, c'est quand on décide que vraiment, non, les enfants, on ne veut pas d'eux et on va mettre en place des règles qui les discriminent.",
+          "chinese": "这是一种年龄歧视。年龄歧视是基于年龄的歧视。通常，当我们歧视，例如，老年人或职场中特定年龄的人时，我们会谈论年龄歧视。那么，厌童主义就是当我们决定，真的，不，我们不想要孩子，并且我们要制定歧视他们的规则。"
+        },
+        {
+          "id": 68,
+          "start_time": "00:26:10.700",
+          "end_time": "00:26:35.599",
+          "french": "Ouais, on met en place des règles et de manière générale, on considère que les enfants n'ont pas les mêmes droits que les autres êtres humains, vu qu'ils sont complètement sous l'autorité de leurs parents. Donc, un exemple de ça dont on a déjà parlé, c'est évidemment le « no kids » qu'on voit de plus en plus dans les hôtels et les restaurants. C'est une forme de discrimination. Et les gens n'ont...",
+          "chinese": "是的，我们制定规则，而且总的来说，我们认为儿童不享有与其他人类相同的权利，因为他们完全处于父母的管辖之下。所以，我们已经讨论过的一个例子，显然就是我们在酒店和餐厅里越来越多看到的“no kids”。这是一种歧视。而人们似乎……"
+        },
+        {
+          "id": 69,
+          "start_time": "00:26:35.599",
+          "end_time": "00:27:04.640",
+          "french": "pas l'air de trouver ça trop choquant. C'est vrai que moi, avant qu'il y ait ce débat, j'avais vu parfois des hôtels « no kids ». Même une fois, je suis allé en vacances sans le vouloir, mais voilà, l'hôtel qu'on avait réservé, c'était un hôtel « no kids ». Ça ne m'avait pas choqué à l'époque, mais si on imaginait un autre groupe qui serait interdit en fonction de son âge ou de sa couleur de peau, comme ça a été le cas pendant longtemps, on serait tout de suite beaucoup plus choqués par ces discriminations. Mais...",
+          "chinese": "并不觉得这太令人震惊。确实，在这场辩论之前，我有时也见过“no kids”的酒店。甚至有一次，我无意中去度假，结果我们预订的酒店就是一家“no kids”酒店。当时我并没有感到震惊，但如果我们想象另一个群体因为年龄或肤色被禁止入内，就像很长一段时间以来的情况那样，我们会立刻对这些歧视感到震惊得多。但是……"
+        },
+        {
+          "id": 70,
+          "start_time": "00:27:04.640",
+          "end_time": "00:27:15.779",
+          "french": "À cause de l'infantisme, on peut dire que c'est tellement accepté dans la société, ça nous semble tellement naturel que c'est assez rare qu'on s'émeuve de ça. C'est assez rare que ça nous choque.",
+          "chinese": "因为厌童主义，可以说这在社会中被接受得如此之深，对我们来说显得如此自然，以至于我们很少为此感到愤慨。这很少让我们感到震惊。"
+        },
+        {
+          "id": 71,
+          "start_time": "00:27:15.990",
+          "end_time": "00:27:41.009",
+          "french": "Et même quand ce n'est pas spécifiquement interdit, c'est vrai qu'on a l'habitude de la séparation entre les adultes sans enfants et les familles, puisqu'il peut y avoir par exemple beaucoup de restaurants qui n'ont pas de chaises hautes, qui n'ont pas d'espace en toute sécurité pour que les enfants puissent jouer. Il y a des hôtels qui proposent des lits",
+          "chinese": "即使没有明确禁止，我们确实也习惯了没有孩子的成年人和家庭之间的隔离，因为例如，可能有很多餐厅没有高脚椅，没有安全的空间让孩子们玩耍。有些酒店提供儿童床，"
+        },
+        {
+          "id": 72,
+          "start_time": "00:27:41.009",
+          "end_time": "00:28:03.009",
+          "french": "pour enfants, pour un coût additionnel très élevé, ce qui fait que les personnes qui ont des enfants vont s'autocensurer, elles ne vont pas aller dans ces endroits. Et donc, au-delà du fait d'avoir des endroits qui sont spécifiquement, comme on le disait en introduction, « no kids », il y a beaucoup d'endroits où on ne voit pas d'enfants.",
+          "chinese": "但需要支付非常高昂的额外费用，这使得有孩子的人会自我审查，他们不会去这些地方。因此，除了像我们在开头所说的那样，有专门的“no kids”场所之外，还有很多地方我们看不到孩子。"
+        },
+        {
+          "id": 73,
+          "start_time": "00:28:03.009",
+          "end_time": "00:28:21.809",
+          "french": "D'ailleurs, on parlait des transports en commun et c'est bien notable que les transports en commun soient l'endroit où on peut avoir cette mixité parce qu'on n'a pas le choix. Mais sinon, dans les restaurants, les hôtels, les endroits de socialisation, il y a très peu de mixité, même quand ce n'est pas dit clairement.",
+          "chinese": "此外，我们谈到了公共交通，值得注意的是，公共交通是我们能够拥有这种混合的地方，因为我们别无选择。但除此之外，在餐厅、酒店、社交场所，即使没有明说，也很少有这种混合。"
+        },
+        {
+          "id": 74,
+          "start_time": "00:28:21.809",
+          "end_time": "00:28:50.819",
+          "french": "Bon, et pour essayer de nuancer tout ça, on va finir sur une note un peu plus positive avec, au contraire, des initiatives qui essayent d'inclure davantage les enfants, de les prendre un peu plus en considération. Parce que oui, en France, tout le monde n'est pas anti-enfants, comme vous vous en doutez. Alors, cette tendance « no kids », comme on le disait, elle a provoqué un grand débat public. Et il y a la Haute Commissaire chargée de l'enfance,",
+          "chinese": "好吧，为了尽量客观看待这一切，我们将以一个稍微积极一点的基调结束，相反，有一些倡议试图更多地包容儿童，更多地考虑到他们。因为是的，在法国，正如你们所想，并不是每个人都“反儿童”。那么，正如我们所说，这种“no kids”趋势引发了巨大的公众辩论。负责儿童事务的高级专员，"
+        },
+        {
+          "id": 75,
+          "start_time": "00:28:51.059",
+          "end_time": "00:29:19.980",
+          "french": "donc c'est un poste au sein du gouvernement qui a essayé d'interdire ce « no kids », de rendre ça illégal. Je pense que c'est encore en débat, ça n'a pas été tranché, mais en tout cas, elle a trouvé une alternative, peut-être temporaire, c'est de promouvoir, de créer un label, le label « Le Choix des Familles », pour, au contraire, les hôtels, les restaurants qui accueillent de manière...",
+          "chinese": "这是政府内部的一个职位，她试图禁止这种“no kids”的做法，使其成为非法。我认为这还在辩论中，尚未定论，但无论如何，她找到了一个也许是暂时的替代方案，那就是推广、创建一个标签，即“家庭之选”标签，相反，是为了那些以……方式接待的酒店和餐厅，"
+        },
+        {
+          "id": 76,
+          "start_time": "00:29:20.569",
+          "end_time": "00:29:32.839",
+          "french": "qui ont tous les moyens d'accueillir les enfants pour justement leur faire à eux aussi de la promotion. Parce qu'on n'en a pas parlé, mais cette tendance « no kids », c'est parce qu'elle répond à un besoin...",
+          "chinese": "那些具备所有条件来接待儿童的场所，正是为了给它们也做做宣传。因为我们还没提到，但这种“no kids”趋势，是因为它满足了一种需求……"
+        },
+        {
+          "id": 77,
+          "start_time": "00:29:33.019",
+          "end_time": "00:30:01.170",
+          "french": "On pourrait dire qu'il y a un marché pour ça. Il y a vraiment des gens qui ne veulent pas être entourés d'enfants quand ils vont en vacances parce qu'ils ont besoin de tranquillité. Donc voilà, c'est pour ça qu'il y a ce positionnement qu'on trouve de plus en plus dans les hôtels et les restaurants. Oui, en général, il y a quand même une résistance. Ce ne sont pas tous les Français qui sont d'accord avec ce type de discrimination. Il y a aussi des cafés « kids friendly ». Il y en a de plus en plus.",
+          "chinese": "可以说这方面有市场。确实有些人去度假时不想被孩子包围，因为他们需要宁静。所以你看，这就是为什么我们在酒店和餐厅里越来越多地看到这种定位。是的，总的来说，还是有抵制的。并非所有法国人都赞同这种歧视。也有“儿童友好”的咖啡馆。而且越来越多。"
+        },
+        {
+          "id": 78,
+          "start_time": "00:30:01.170",
+          "end_time": "00:30:30.579",
+          "french": "Il y a des villes qui mettent en place des choses, qui ont des conseillers spéciaux pour rendre les villes à hauteur d'enfants. C'est-à-dire confortables pour les enfants, que les enfants puissent s'y sentir bien. Donc voilà, affaire à suivre. On est un peu dans un moment où il y a les deux tendances et il faudra voir comment ça évolue dans les prochaines années. En tout cas, ça provoque des discussions et des débats passionnants,",
+          "chinese": "有些城市正在采取措施，设有特别顾问，致力于打造“儿童高度”的城市。也就是说，对儿童来说很舒适，让孩子们能在那里感觉良好。所以你看，后续发展值得关注。我们正处于两种趋势并存的时期，必须看看未来几年它将如何演变。无论如何，这引发了热烈的讨论和辩论，"
+        },
+        {
+          "id": 79,
+          "start_time": "00:30:30.579",
+          "end_time": "00:30:59.309",
+          "french": "notamment sur la question de l'éducation de manière plus générale. On voulait en parler dans l'épisode, mais ça va être un peu long, donc je pense qu'on dédiera un épisode entier à cette question, la fameuse éducation à la française. On verra ce qu'on en pense. Merci à toutes et à tous. On espère que cet épisode vous a plu. N'hésitez pas aussi à laisser un commentaire pour nous dire comment c'est dans votre pays, comment les enfants sont perçus. Est-ce que le « no kids » est...",
+          "chinese": "特别是关于更广泛的教育问题。我们本想在这期节目中谈谈，但这会有点长，所以我想我们会专门用一整期节目来讨论这个问题，也就是著名的法式教育。我们会看看我们对此有何看法。谢谢大家。希望你们喜欢这期节目。也请随时留言告诉我们你们国家的情况，孩子们是如何被看待的。“no kids”是否……"
+        },
+        {
+          "id": 80,
+          "start_time": "00:30:59.309",
+          "end_time": "00:31:07.079",
+          "french": "aussi une tendance qui est arrivée chez vous ? Et on se retrouve dans deux semaines pour un nouvel épisode. Ciao, à très bientôt. Salut !",
+          "chinese": "也是一种已经传到你们那里的趋势？我们两周后在新一期节目中再见。拜拜，回头见。再见！"
+        }
+      ],
+      "unit_info": {
+        "unit_num": 1,
+        "theme": "Full Video",
+        "creator": "InnerFrench",
+        "start_time": "00:00:04.089",
+        "end_time": "00:31:07.079",
+        "duration_minutes": 0,
+        "cefr_level": "B2",
+        "subtitle_count": 80,
+        "source_video_name": "E179 La France est-elle anti-enfants _.json",
+        "tags": [
+          "职场",
+          "文化深度"
+        ]
+      },
+      "_quality_check": {
+        "issues": [],
+        "error_count": 0,
+        "warning_count": 0,
+        "fixed_count": 0,
+        "passed": true
+      }
+    }
+  }
+}
