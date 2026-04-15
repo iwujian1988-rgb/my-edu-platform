@@ -3,7 +3,7 @@
 import { useState, useEffect, Suspense } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import Link from 'next/link'
-import { GraduationCap, Eye, EyeOff, Mail, Lock, Ticket, Sparkles, BookOpen, Trophy, Target, Zap } from 'lucide-react'
+import { GraduationCap, Eye, EyeOff, Mail, Lock, Ticket, Sparkles, BookOpen, Trophy, Target, Zap, Play } from 'lucide-react'
 import { signup } from '../login/actions'
 
 function RegisterForm() {
@@ -12,6 +12,7 @@ function RegisterForm() {
   const [showPassword, setShowPassword] = useState(false)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+  const [showProductPicker, setShowProductPicker] = useState(false)
 
   // 设置页面标题
   useEffect(() => {
@@ -102,11 +103,36 @@ function RegisterForm() {
         return
       }
 
-      // 注册成功，跳转到对应页面（根据套餐权限）
-      const redirectPath = result.redirect || '/'
-      console.log('[Signup] 注册成功，跳转到:', redirectPath)
-      router.push(redirectPath)
-      router.refresh()
+      // 注册成功，检查权限决定跳转（与登录逻辑一致）
+      try {
+        const permRes = await fetch('/api/auth/check-permissions', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          credentials: 'include',
+        })
+        if (permRes.ok) {
+          const permData = await permRes.json()
+          console.log('[Signup] 权限查询结果:', permData)
+
+          if (permData.has_video && permData.has_books) {
+            // 视频 + 单词书 → 弹二选一
+            setShowProductPicker(true)
+            setLoading(false)
+            return
+          }
+
+          if (permData.has_video && !permData.has_books) {
+            // 只有视频权限 → 直接进 MAXTube
+            window.location.href = '/videos'
+            return
+          }
+        }
+      } catch (permErr) {
+        console.warn('[Signup] 权限查询失败，跳转首页:', permErr)
+      }
+
+      // 无视频权限或查询失败 → 进 MAX笔记
+      window.location.href = '/'
     } catch (err: unknown) {
       console.error('[Signup] 异常:', err)
       const message = err instanceof Error ? err.message : '注册失败，请重试'
@@ -483,6 +509,62 @@ function RegisterForm() {
           </div>
         </div>
       </div>
+
+      {/* 产品选择弹层 - 不可关闭，必须二选一 */}
+      {showProductPicker && (
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-[60] p-4">
+          <div
+            className="w-full max-w-lg p-6 md:p-10 transition-all duration-300"
+            style={{
+              backgroundColor: 'var(--card-bg)',
+              border: '3px solid #000000',
+              borderRadius: '16px',
+              boxShadow: '6px 6px 0px 0px #000000'
+            }}
+          >
+            <div className="text-center mb-6 md:mb-8">
+              <h2 className="text-2xl md:text-3xl font-black mb-2 transition-colors duration-300" style={{ color: 'var(--text-primary)' }}>
+                选择学习入口
+              </h2>
+              <p className="text-sm md:text-base font-semibold transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
+                你拥有多个产品权限，请选择要进入的学习产品
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4 md:gap-6">
+              {/* MAX笔记 */}
+              <button
+                onClick={() => { window.location.href = '/' }}
+                className="flex flex-col items-center gap-3 md:gap-4 p-5 md:p-8 text-white transition-all duration-200 hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_#000000]"
+                style={{
+                  backgroundColor: '#22C55E',
+                  border: '3px solid #000000',
+                  borderRadius: '14px',
+                  boxShadow: '4px 4px 0px 0px #000000'
+                }}
+              >
+                <BookOpen className="w-10 h-10 md:w-14 md:h-14" strokeWidth={2.5} />
+                <span className="text-lg md:text-2xl font-black">MAX笔记</span>
+                <span className="text-xs md:text-sm font-semibold opacity-80">外语学习平台</span>
+              </button>
+              {/* MAXTube */}
+              <button
+                onClick={() => { window.location.href = '/videos' }}
+                className="flex flex-col items-center gap-3 md:gap-4 p-5 md:p-8 transition-all duration-200 hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_#000000]"
+                style={{
+                  backgroundColor: '#B4F416',
+                  border: '3px solid #000000',
+                  borderRadius: '14px',
+                  boxShadow: '4px 4px 0px 0px #000000'
+                }}
+              >
+                <Play className="w-10 h-10 md:w-14 md:h-14" strokeWidth={2.5} />
+                <span className="text-lg md:text-2xl font-black text-black">MAXTube</span>
+                <span className="text-xs md:text-sm font-semibold text-black/70">视频学习平台</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
