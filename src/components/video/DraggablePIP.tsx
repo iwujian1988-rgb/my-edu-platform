@@ -23,8 +23,8 @@ import type { Video } from '@/types/video'
 // 常量
 // ============================================
 
-const PIP_WIDTH = 160
-const PIP_HEIGHT = 90
+const PIP_WIDTH = 208
+const PIP_HEIGHT = 117
 const PIP_MARGIN = 16
 const SNAP_THRESHOLD = 50
 const DRAG_THRESHOLD = 5
@@ -144,6 +144,18 @@ export function DraggablePIP({
       videoElement.style.objectFit = ''
     }
   }, [videoElement])
+
+  // 监听视频元素的 timeupdate 事件，上报进度给父组件
+  useEffect(() => {
+    if (!videoElement) return
+
+    const handleTimeUpdate = () => {
+      onTimeUpdate(videoElement.currentTime)
+    }
+
+    videoElement.addEventListener('timeupdate', handleTimeUpdate)
+    return () => videoElement.removeEventListener('timeupdate', handleTimeUpdate)
+  }, [videoElement, onTimeUpdate])
 
   // 初始化位置（右下角）
   useEffect(() => {
