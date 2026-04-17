@@ -136,10 +136,23 @@ export function DraggablePIP({
           parent.appendChild(videoElement)
         }
 
-        // 恢复进度和播放状态
+        // 立即恢复进度
         if (savedTime > 0) {
           videoElement.currentTime = savedTime
         }
+
+        // Android Chrome 会异步重新加载 video，loadedmetadata 会把 currentTime 重置回 initialPosition
+        // 用 once 监听器在 loadedmetadata 之后重新设置正确的时间
+        if (savedTime > 0) {
+          const restoreTime = () => {
+            videoElement.currentTime = savedTime
+          }
+          videoElement.addEventListener('loadedmetadata', restoreTime, { once: true })
+          // 也在 canplay 时恢复，防止 loadedmetadata 不触发的情况
+          videoElement.addEventListener('canplay', restoreTime, { once: true })
+        }
+
+        // 恢复播放状态
         if (wasPlaying && videoElement.paused) {
           videoElement.play().catch((err) => {
             console.warn('[DraggablePIP] Failed to resume playback after restore:', err)
