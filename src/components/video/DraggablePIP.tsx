@@ -121,11 +121,21 @@ export function DraggablePIP({
       // 所以不能用 videoSlotRef.current 判断，改用"不在原始父容器中"作为条件
       const parent = originalParentRef.current
       if (parent && videoElement.parentElement !== parent) {
+        // 保存播放状态，DOM 移动后恢复
+        const wasPlaying = !videoElement.paused
+
         const nextSibling = originalNextSiblingRef.current
         if (nextSibling && nextSibling.parentNode === parent) {
           parent.insertBefore(videoElement, nextSibling)
         } else {
           parent.appendChild(videoElement)
+        }
+
+        // DOM 移动后恢复播放状态
+        if (wasPlaying && videoElement.paused) {
+          videoElement.play().catch((err) => {
+            console.warn('[DraggablePIP] Failed to resume playback after restore:', err)
+          })
         }
       }
       // 清除 PIP 样式
