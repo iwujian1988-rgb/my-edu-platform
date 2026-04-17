@@ -96,6 +96,9 @@ export function DraggablePIP({
     originalParentRef.current = videoElement.parentElement
     originalNextSiblingRef.current = videoElement.nextSibling
 
+    // 记录当前播放状态，避免移动DOM导致暂停
+    const wasPlaying = !videoElement.paused
+
     // 调整样式适配 PIP 尺寸
     videoElement.style.width = '100%'
     videoElement.style.height = '100%'
@@ -104,6 +107,13 @@ export function DraggablePIP({
 
     // 移入 PIP 容器
     videoSlotRef.current.appendChild(videoElement)
+
+    // 移动后恢复播放状态（如果之前在播放）
+    if (wasPlaying && videoElement.paused) {
+      videoElement.play().catch(err => {
+        console.log('[DraggablePIP] Auto-play after move blocked:', err)
+      })
+    }
 
     return () => {
       // 还原到原始父容器

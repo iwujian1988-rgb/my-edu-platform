@@ -70,6 +70,7 @@ export interface LearningModalProps {
   currentVideoTime?: number
   onVideoTimeUpdate?: (time: number) => void
   initialVideoPosition?: number
+  initialPlayingState?: boolean // 主视频打开弹层前的播放状态
 }
 
 // ============================================
@@ -101,6 +102,7 @@ export function LearningModal({
   currentVideoTime = 0,
   onVideoTimeUpdate,
   initialVideoPosition = 0,
+  initialPlayingState = false,
 }: LearningModalProps) {
   const [localStatusMap, setLocalStatusMap] = useState<Map<string, CardStatus>>(new Map())
 
@@ -260,6 +262,25 @@ export function LearningModal({
     }, 500)
     return () => clearTimeout(timer)
   }, [words, ttsPreload])
+
+  // 当modal打开时，如果主视频之前在播放，则自动播放modal中的视频
+  useEffect(() => {
+    console.log('[LearningModal] Modal打开状态:', open, '初始播放状态:', initialPlayingState)
+    if (!open || !initialPlayingState) return
+
+    const timer = setTimeout(() => {
+      const mediaEl = mediaRef.current
+      console.log('[LearningModal] 尝试自动播放，mediaEl:', !!mediaEl, 'paused:', mediaEl?.paused)
+      if (mediaEl && mediaEl.paused) {
+        mediaEl.play().catch((err) => {
+          // Auto-play was blocked, which is fine
+          console.log('[LearningModal] Auto-play blocked:', err)
+        })
+      }
+    }, 100) // Small delay to ensure the video is ready
+
+    return () => clearTimeout(timer)
+  }, [open, initialPlayingState])
 
   // 播放单词发音
   const playWord = useCallback(async (word: string) => {

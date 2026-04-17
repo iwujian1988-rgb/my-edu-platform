@@ -104,6 +104,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [seekToTime, setSeekToTime] = useState<number | undefined>(undefined)
   const [seekTrigger, setSeekTrigger] = useState(0) // 用于强制触发跳转
   const [pauseMainVideo, setPauseMainVideo] = useState(false) // 暂停主视频（打开弹层时）
+  const [wasMainVideoPlaying, setWasMainVideoPlaying] = useState(false) // 记录打开弹层前主视频的播放状态
   const [isLearningModalOpen, setIsLearningModalOpen] = useState(false) // PC端学习弹层
   const [isPracticeSheetOpen, setIsPracticeSheetOpen] = useState(false) // 移动端练习抽屉
 
@@ -299,9 +300,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const enterPipMode = useCallback(() => {
     console.log('[enterPipMode] Entering PIP mode, previous pipMode:', pipMode)
     // 不暂停视频，PIP 组件会把同一个 <video> DOM 元素移入浮动容器
+    // 检查当前实际播放状态并同步到 isPipPlaying
+    const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+    const isActuallyPlaying = mediaEl ? !mediaEl.paused : false
     setPipMode(true)
-    setIsPipPlaying(true)
-  }, [pipMode])
+    setIsPipPlaying(isActuallyPlaying) // 使用实际播放状态而非硬编码 true
+  }, [pipMode, isAudioContent])
 
   // 退出 PIP 模式 — PIP 组件卸载时自动把 <video> 还原到主播放器
   const exitPipMode = useCallback(() => {
@@ -933,8 +937,15 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                       </button>
                       <button
                         onClick={() => {
+                          // 记录当前播放状态
+                          const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+                          const isPlaying = mediaEl ? !mediaEl.paused : false
+                          console.log('[知识点按钮] 主视频播放状态:', isPlaying, '媒体元素:', mediaEl?.paused)
+                          setWasMainVideoPlaying(isPlaying)
+
+                          // 暂停主视频（因为modal会有独立的播放器）
+                          setPauseMainVideo(true)
                           setIsLearningModalOpen(true)
-                          setPauseMainVideo(true) // 打开学习模块时暂停主视频
                         }}
                         className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", isLearningModalOpen ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}
                       >
@@ -1100,6 +1111,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         currentVideoTime={currentVideoTime}
         onVideoTimeUpdate={setCurrentVideoTime}
         initialVideoPosition={currentVideoTime}
+        initialPlayingState={wasMainVideoPlaying}
       />
 
       {/* 移动端练习抽屉 - 底部滑出式 */}
