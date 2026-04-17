@@ -309,10 +309,16 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
   // 退出 PIP 模式 — PIP 组件卸载时自动把 <video> 还原到主播放器
   const exitPipMode = useCallback(() => {
-    console.log('[exitPipMode] Exiting PIP mode')
+    // 读取视频实际播放位置（比 React 状态更准确）
+    const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+    const actualTime = mediaEl?.currentTime ?? currentVideoTime
+
     setPipMode(false)
     setPauseMainVideo(false)
-  }, [])
+    // 确保 VideoPlayer 恢复后 seek 到正确位置
+    setSeekToTime(actualTime)
+    setSeekTrigger(prev => prev + 1)
+  }, [isAudioContent, currentVideoTime])
 
   // 切换 Tab 时处理 PIP 模式
   const handleTabChange = useCallback((tab: TabValue) => {
