@@ -89,6 +89,8 @@ export function DraggablePIP({
   const [seekingPercent, setSeekingPercent] = useState<number | null>(null) // 拖拽中本地视觉进度
 
   // 将外部视频元素移入 PIP 容器（挂载时），卸载时还原
+  // 关键：移动前必须 pause()，与 DraggableAudioPIP 一致
+  // Android Chrome 对播放中的 video 执行 appendChild 会触发重载导致进度丢失
   useEffect(() => {
     if (!videoElement || !videoSlotRef.current) return
 
@@ -96,7 +98,7 @@ export function DraggablePIP({
     originalParentRef.current = videoElement.parentElement
     originalNextSiblingRef.current = videoElement.nextSibling
 
-    // 记录当前播放状态和进度，避免移动DOM导致丢失
+    // 保存播放状态和进度
     const wasPlaying = !videoElement.paused
     const savedTime = videoElement.currentTime
 
@@ -106,6 +108,9 @@ export function DraggablePIP({
     videoElement.style.objectFit = 'contain'
     videoElement.style.aspectRatio = ''
 
+    // 先暂停，再移动（Android Chrome 播放中移动会重载）
+    videoElement.pause()
+
     // 移入 PIP 容器
     videoSlotRef.current.appendChild(videoElement)
 
@@ -113,22 +118,23 @@ export function DraggablePIP({
     if (savedTime > 0) {
       videoElement.currentTime = savedTime
     }
-    if (wasPlaying && videoElement.paused) {
+    if (wasPlaying) {
       videoElement.play().catch(err => {
         console.log('[DraggablePIP] Auto-play after move blocked:', err)
       })
     }
 
     return () => {
-      // 还原到原始父容器
-      // 注意：React 卸载组件时会先置 ref.current = null，
-      // 所以不能用 videoSlotRef.current 判断，改用"不在原始父容器中"作为条件
       const parent = originalParentRef.current
       if (parent && videoElement.parentElement !== parent) {
-        // 保存播放状态和进度（Android Chrome 移动 DOM 会重置）
+        // 保存播放状态和进度
         const wasPlaying = !videoElement.paused
         const savedTime = videoElement.currentTime
 
+        // 先暂停，再移动
+        videoElement.pause()
+
+        // 移回原位置
         const nextSibling = originalNextSiblingRef.current
         if (nextSibling && nextSibling.parentNode === parent) {
           parent.insertBefore(videoElement, nextSibling)
@@ -136,24 +142,11 @@ export function DraggablePIP({
           parent.appendChild(videoElement)
         }
 
-        // 立即恢复进度
+        // 移动后恢复进度和播放状态
         if (savedTime > 0) {
           videoElement.currentTime = savedTime
         }
-
-        // Android Chrome 会异步重新加载 video，loadedmetadata 会把 currentTime 重置回 initialPosition
-        // 用 once 监听器在 loadedmetadata 之后重新设置正确的时间
-        if (savedTime > 0) {
-          const restoreTime = () => {
-            videoElement.currentTime = savedTime
-          }
-          videoElement.addEventListener('loadedmetadata', restoreTime, { once: true })
-          // 也在 canplay 时恢复，防止 loadedmetadata 不触发的情况
-          videoElement.addEventListener('canplay', restoreTime, { once: true })
-        }
-
-        // 恢复播放状态
-        if (wasPlaying && videoElement.paused) {
+        if (wasPlaying) {
           videoElement.play().catch((err) => {
             console.warn('[DraggablePIP] Failed to resume playback after restore:', err)
           })
