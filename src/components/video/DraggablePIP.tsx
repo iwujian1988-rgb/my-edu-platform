@@ -96,8 +96,9 @@ export function DraggablePIP({
     originalParentRef.current = videoElement.parentElement
     originalNextSiblingRef.current = videoElement.nextSibling
 
-    // 记录当前播放状态，避免移动DOM导致暂停
+    // 记录当前播放状态和进度，避免移动DOM导致丢失
     const wasPlaying = !videoElement.paused
+    const savedTime = videoElement.currentTime
 
     // 调整样式适配 PIP 尺寸
     videoElement.style.width = '100%'
@@ -108,7 +109,10 @@ export function DraggablePIP({
     // 移入 PIP 容器
     videoSlotRef.current.appendChild(videoElement)
 
-    // 移动后恢复播放状态（如果之前在播放）
+    // 移动后恢复进度和播放状态
+    if (savedTime > 0) {
+      videoElement.currentTime = savedTime
+    }
     if (wasPlaying && videoElement.paused) {
       videoElement.play().catch(err => {
         console.log('[DraggablePIP] Auto-play after move blocked:', err)
@@ -121,8 +125,9 @@ export function DraggablePIP({
       // 所以不能用 videoSlotRef.current 判断，改用"不在原始父容器中"作为条件
       const parent = originalParentRef.current
       if (parent && videoElement.parentElement !== parent) {
-        // 保存播放状态，DOM 移动后恢复
+        // 保存播放状态和进度（Android Chrome 移动 DOM 会重置）
         const wasPlaying = !videoElement.paused
+        const savedTime = videoElement.currentTime
 
         const nextSibling = originalNextSiblingRef.current
         if (nextSibling && nextSibling.parentNode === parent) {
@@ -131,7 +136,10 @@ export function DraggablePIP({
           parent.appendChild(videoElement)
         }
 
-        // DOM 移动后恢复播放状态
+        // 恢复进度和播放状态
+        if (savedTime > 0) {
+          videoElement.currentTime = savedTime
+        }
         if (wasPlaying && videoElement.paused) {
           videoElement.play().catch((err) => {
             console.warn('[DraggablePIP] Failed to resume playback after restore:', err)
