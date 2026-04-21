@@ -304,7 +304,13 @@ export default function BatchPublishClient() {
         const data: FetchDataResponse = await res.json()
 
         if (data.success) {
-          setVideos(data.data.videos)
+          // 没有 learning_date 的草稿视频默认填今天的日期
+          const today = new Date().toISOString().split('T')[0]
+          const videosWithDefaultDate = data.data.videos.map(v => ({
+            ...v,
+            learning_date: v.learning_date || today,
+          }))
+          setVideos(videosWithDefaultDate)
           setPackages(data.data.packages)
           setTags(data.data.tags)
           setCreators(data.data.creators || [])

@@ -83,22 +83,22 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
     <section className="mb-8">
       {/* 区域标题 */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-8 h-8 bg-[#B4F416] flex items-center justify-center text-black shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666]">
-          <span className="font-bold text-sm">N</span>
+        <div className="w-8 h-8 bg-[#B4F416] flex items-center justify-center text-black rounded-lg border border-[#99CC00] shadow-sm">
+          <span className="font-semibold text-sm">N</span>
         </div>
-        <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">
+        <h2 className="text-xl font-bold uppercase tracking-wide text-black dark:text-white">
           最新发布
         </h2>
       </div>
 
       <Link
         href={`/videos/${video.id}`}
-        className="group block bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:-translate-y-1 transition-transform duration-200 overflow-hidden"
+        className="group block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 overflow-hidden"
       >
         {/* PC端：横向布局 */}
         <div className="hidden md:flex">
           {/* 封面区 */}
-          <div className="relative w-[360px] lg:w-[420px] flex-shrink-0 aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-r-[3px] border-black dark:border-gray-600">
+          <div className="relative w-[360px] lg:w-[420px] flex-shrink-0 aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-r border-gray-200 dark:border-gray-700">
             {isAudio && coverImage ? (
               <>
                 <AudioCoverBackground imageUrl={coverImage} />
@@ -125,13 +125,13 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
             {/* 类型标签 */}
             <div className="absolute top-3 left-3">
               {isAudio ? (
-                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded-md shadow-sm transform -rotate-1">
                   <Podcast className="w-4 h-4 text-purple-600" />
-                  <span className="text-xs font-black tracking-tight">播客</span>
+                  <span className="text-xs font-semibold tracking-tight">播客</span>
                 </div>
               ) : (
-                <div className="px-3 py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
-                  <span className="text-xs font-black tracking-tight flex items-center gap-1">
+                <div className="px-3 py-1.5 bg-[#B4F416] border border-[#99CC00] rounded-md shadow-sm transform -rotate-1">
+                  <span className="text-xs font-semibold tracking-tight flex items-center gap-1">
                     <Play className="w-3 h-3" />
                     视频
                   </span>
@@ -415,6 +415,11 @@ function VideoListContent() {
   useEffect(() => {
     setPage(1)
   }, [language, difficulty, tag, learnStatus, contentType])
+
+  // 翻页或切换筛选时回到页面顶部
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [page, language, difficulty, tag, learnStatus, contentType])
 
   // 更新 URL（统一处理筛选和分页）
   useEffect(() => {
