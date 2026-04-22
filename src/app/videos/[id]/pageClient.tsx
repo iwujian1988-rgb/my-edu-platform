@@ -465,7 +465,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         )}
 
         {/* 视频区 - 吸顶（PIP 模式下收缩，fixed 定位的 video 不受影响） */}
-        <div className={cn("sticky top-0", isLearningModalOpen ? "z-10" : "z-40", pipMode && "h-0 overflow-hidden")}>
+        <div className={cn("sticky top-0 z-40", isPracticeSheetOpen && "z-10", pipMode && "h-0 overflow-hidden")}>
             {/* 视频播放器 + 半透明返回按钮 */}
             <div className="relative">
               {!isLargeScreen && (
@@ -496,7 +496,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               )}
               <button
                 onClick={() => router.back()}
-                className="absolute top-2 left-3 z-10 flex items-center gap-1 px-2 py-1 text-xs font-bold text-white bg-black/40 backdrop-blur-sm rounded active:bg-black/60 transition-colors"
+                className="absolute top-2 left-3 z-50 flex items-center gap-1 px-2 py-1 text-xs font-bold text-white bg-black/40 backdrop-blur-sm rounded active:bg-black/60 transition-colors"
               >
                 <ArrowLeft className="w-3 h-3" />
                 返回
