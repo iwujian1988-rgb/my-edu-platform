@@ -454,7 +454,8 @@ export function WordsTab({ words, videoLanguage, ttsPreload, onJumpToSubtitle, o
 
         // 获取 CEFR 等级配置
         const getCEFRConfig = (): { level: string; className: string } | null => {
-          const level = word.cefr_level?.toUpperCase() || (word.difficulty_level ? `A${word.difficulty_level}` : null)
+          const DIFFICULTY_TO_CEFR: Record<number, string> = { 1: 'A1', 2: 'A2', 3: 'B1', 4: 'B2', 5: 'C1' }
+          const level = word.cefr_level?.toUpperCase() || (word.difficulty_level ? DIFFICULTY_TO_CEFR[word.difficulty_level] : null)
           if (!level) return null
 
           const configs: Record<string, string> = {
