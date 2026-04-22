@@ -150,8 +150,8 @@ export async function GET(
     // 9.5 获取新增学习内容（使用 Admin 客户端绕过 RLS）
     log('Querying learning content with admin client...')
 
-    // 创建 admin 客户端用于学习内容查询
-    const adminClient = createAdminClient()
+    // 创建 admin 客户端用于学习内容查询（绕过 RLS）
+    const adminClient = await createAdminClient()
 
     const [
       { data: grammarPoints },

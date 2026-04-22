@@ -380,10 +380,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     } : null,
     grammar_points: grammarPointsResult.data || [],
     pronunciation_tips: pronunciationTipsResult.data || [],
-    vocabulary_network: (() => {
-      console.log('[vocab-network-debug] result:', JSON.stringify({ data: vocabularyNetworkResult.data?.id, error: vocabularyNetworkResult.error?.message }))
-      return vocabularyNetworkResult.data || null
-    })(),
+    vocabulary_network: vocabularyNetworkResult.data || null,
     creator: creatorResult.data || null,
     exerciseProgress: await fetchExerciseProgress(supabase, userId, transformedExercises),
   }
