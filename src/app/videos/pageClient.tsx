@@ -421,6 +421,9 @@ function VideoListContent() {
     window.scrollTo({ top: 0, behavior: 'instant' })
   }, [page, language, difficulty, tag, learnStatus, contentType])
 
+  // 翻页时正在加载新数据（非首次加载）
+  const isPageChanging = isValidating && !!data
+
   // 更新 URL（统一处理筛选和分页）
   useEffect(() => {
     const params = new URLSearchParams()
@@ -501,6 +504,10 @@ function VideoListContent() {
           }
           .banner-content {
             min-height: 80px;
+          }
+          @keyframes loading {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(350%); }
           }
           @media (min-width: 768px) {
             .banner-content {
@@ -938,6 +945,13 @@ function VideoListContent() {
               )
             })()}
           </div>
+
+          {/* 翻页加载进度条 */}
+          {isPageChanging && (
+            <div className="h-1 bg-gray-200 dark:bg-gray-700 overflow-hidden rounded-full">
+              <div className="h-full bg-[#B4F416] animate-[loading_1s_ease-in-out_infinite]" style={{ width: '40%' }} />
+            </div>
+          )}
 
           {/* 加载状态 - 仅首次无数据时显示全屏加载 */}
           {isLoading && !data && (
