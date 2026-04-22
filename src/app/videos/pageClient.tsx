@@ -93,7 +93,7 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
 
       <Link
         href={`/videos/${video.id}`}
-        className="group block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 overflow-hidden"
+        className="group block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 overflow-hidden"
       >
         {/* PC端：横向布局 */}
         <div className="hidden md:flex">
@@ -125,12 +125,12 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
             {/* 类型标签 */}
             <div className="absolute top-3 left-3">
               {isAudio ? (
-                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded-md shadow-sm transform -rotate-1">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded shadow-sm transform -rotate-1">
                   <Podcast className="w-4 h-4 text-purple-600" />
                   <span className="text-xs font-semibold tracking-tight">播客</span>
                 </div>
               ) : (
-                <div className="px-3 py-1.5 bg-[#B4F416] border border-[#99CC00] rounded-md shadow-sm transform -rotate-1">
+                <div className="px-3 py-1.5 bg-[#B4F416] border border-[#99CC00] rounded shadow-sm transform -rotate-1">
                   <span className="text-xs font-semibold tracking-tight flex items-center gap-1">
                     <Play className="w-3 h-3" />
                     视频
@@ -167,17 +167,17 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
 
             {/* 标签行 */}
             <div className="flex items-center gap-2 mb-5 flex-wrap">
-              <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500">
+              <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500 rounded">
                 <span className="text-xs font-bold text-gray-700 dark:text-gray-300">
                   {VIDEO_LANGUAGE_LABELS[video.language]}
                 </span>
               </div>
-              <div className={`px-2 py-1 ${getDifficultyColor(video.difficulty)} border-[2px] border-black`}>
+              <div className={`px-2 py-1 ${getDifficultyColor(video.difficulty)} border-[2px] border-black rounded`}>
                 <span className="text-xs font-bold">
                   {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
                 </span>
               </div>
-              <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500 flex items-center gap-1">
+              <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500 rounded flex items-center gap-1">
                 <Clock className="w-3 h-3" />
                 <span className="text-xs font-bold text-gray-700 dark:text-gray-300">
                   {formatDuration(video.duration)}
@@ -187,7 +187,7 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
 
             {/* CTA 按钮 */}
             <div>
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#B4F416] border-[3px] border-black shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] font-black text-sm group-hover:shadow-[2px_2px_0px_0px_#000] dark:group-hover:shadow-[2px_2px_0px_0px_#666] group-hover:-translate-y-0.5 transition-all">
+              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#B4F416] border-[3px] border-black shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] font-black text-sm rounded group-hover:shadow-[2px_2px_0px_0px_#000] dark:group-hover:shadow-[2px_2px_0px_0px_#666] group-hover:-translate-y-0.5 transition-all">
                 <Play className="w-4 h-4" fill="currentColor" />
                 {hasProgress ? '继续学习' : '开始学习'}
               </div>
@@ -281,7 +281,7 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
             </div>
 
             {/* CTA 按钮 */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] font-black text-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] font-black text-sm rounded">
               <Play className="w-3.5 h-3.5" fill="currentColor" />
               {hasProgress ? '继续学习' : '开始学习'}
             </div>
@@ -519,10 +519,10 @@ function VideoListContent() {
 
       {/* 页面头部 - 紧凑版 Neo-brutalism 风格 */}
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-4">
-        <div className="relative border-[3px] border-black bg-[#D4FF32] dark:bg-gray-800 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_#666] flex flex-col overflow-hidden transition-colors duration-300">
+        <div className="relative border-[3px] border-black bg-[#D4FF32] dark:bg-gray-800 shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] dark:shadow-[6px_6px_0px_0px_#666] rounded flex flex-col overflow-hidden transition-colors duration-300">
 
           {/* 背景水印层 — 统一 -20° 斜排，每行一种语言 */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" style={{ transform: 'rotate(-20deg)', transformOrigin: 'center', scale: '2', left: '20%' }}>
+          <div className="absolute inset-0 pointer-events-none overflow-hidden z-0" style={{ transform: 'rotate(-20deg)', transformOrigin: 'center', scale: '2', left: '20%', willChange: 'transform' }}>
             <div className="flex flex-col gap-1 md:gap-1.5 whitespace-nowrap select-none">
               <div className="text-outline font-black text-[12px] md:text-[16px] leading-none tracking-wider">自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习 &nbsp; 地道外语沉浸 &nbsp; 自然地学习</div>
               <div className="text-outline font-black text-[12px] md:text-[16px] leading-none tracking-wider">&nbsp; LEARN NATURALLY &nbsp; SPEAK CONFIDENTLY &nbsp; LEARN NATURALLY &nbsp; SPEAK CONFIDENTLY &nbsp; LEARN NATURALLY &nbsp; SPEAK CONFIDENTLY &nbsp; LEARN NATURALLY &nbsp; SPEAK CONFIDENTLY &nbsp; LEARN NATURALLY</div>
@@ -957,7 +957,7 @@ function VideoListContent() {
           {isLoading && !data && (
             <div className="flex items-center justify-center py-16">
               <div className="text-center">
-                <div className="inline-block animate-spin rounded-sm h-12 w-12 border-[3px] border-black dark:border-gray-500 border-t-[#B4F416]"></div>
+                <div className="inline-block animate-spin rounded h-12 w-12 border-[3px] border-black dark:border-gray-500 border-t-[#B4F416]"></div>
                 <p className="mt-4 text-sm font-mono font-bold text-black dark:text-white">
                   加载中...
                 </p>
@@ -967,10 +967,10 @@ function VideoListContent() {
 
           {/* 错误状态 */}
           {error && (
-            <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm p-6">
+            <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded p-6">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-red-500 border-[3px] border-black rounded-sm flex items-center justify-center">
+                  <div className="w-12 h-12 bg-red-500 border-[3px] border-black rounded flex items-center justify-center">
                     <span className="text-2xl">⚠️</span>
                   </div>
                 </div>
@@ -997,7 +997,7 @@ function VideoListContent() {
             <div className={`transition-opacity duration-150 ${isPageChanging ? 'opacity-30 pointer-events-none' : 'opacity-100'}`}>
               {data.items.length === 0 ? (
                 <div className="text-center py-16">
-                  <div className="inline-block p-6 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm mb-4">
+                  <div className="inline-block p-6 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded mb-4">
                     <span className="text-6xl">📭</span>
                   </div>
                   <h3 className="text-xl font-black tracking-tighter text-black dark:text-white mb-2">
@@ -1008,7 +1008,7 @@ function VideoListContent() {
                   </p>
                 </div>
               ) : (
-                <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 md:gap-4 lg:gap-6">
+                <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-4 lg:gap-5">
                   {gridItems.map((video) => (
                     <VideoCard key={video.id} video={video} />
                   ))}
@@ -1022,7 +1022,7 @@ function VideoListContent() {
                     onClick={() => setPage(p => Math.max(1, p - 1))}
                     disabled={page === 1}
                     className={`
-                      px-4 py-2 text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600
+                      px-4 py-2 text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600 rounded
                       transition-all duration-150
                       ${page === 1
                         ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
@@ -1044,7 +1044,7 @@ function VideoListContent() {
                           <button
                             onClick={() => setPage(p)}
                             className={`
-                              w-10 h-10 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600
+                              w-10 h-10 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600 rounded
                               transition-all duration-150
                               ${page === p
                                 ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] text-black'
@@ -1062,7 +1062,7 @@ function VideoListContent() {
                     onClick={() => setPage(p => Math.min(Math.ceil(data.total / PAGE_SIZE), p + 1))}
                     disabled={page >= Math.ceil(data.total / PAGE_SIZE)}
                     className={`
-                      px-4 py-2 text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600
+                      px-4 py-2 text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600 rounded
                       transition-all duration-150
                       ${page >= Math.ceil(data.total / PAGE_SIZE)
                         ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
@@ -1083,7 +1083,7 @@ function VideoListContent() {
           </div>
 
           {/* 右侧：知识点侧边栏 - 仅大屏显示 */}
-          <aside className="hidden lg:block lg:w-[240px] xl:w-[280px] shrink-0">
+          <aside className="hidden lg:block lg:w-[200px] xl:w-[220px] shrink-0">
             <div className="sticky top-4 space-y-3">
               {/* 学习日历组件 - 仅大屏显示 */}
               <div className="hidden lg:block">
@@ -1101,7 +1101,7 @@ function VideoListContent() {
 
               {/* 领取好礼模块 */}
               <div className="hidden lg:block mt-4">
-                <div className="bg-[#D4FF00] border-[3px] border-black shadow-[4px_4px_0px_0px_#000] overflow-hidden">
+                <div className="bg-[#D4FF00] border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded overflow-hidden">
                   {/* 顶部跑马灯 */}
                   <div className="bg-black text-white py-1 border-b-[3px] border-black flex overflow-hidden whitespace-nowrap">
                     <div className="flex gap-4 items-center font-black text-[10px] tracking-widest animate-pulse">
@@ -1116,16 +1116,16 @@ function VideoListContent() {
                   {/* 主内容 */}
                   <div className="p-3">
                     {/* 标签 */}
-                    <div className="bg-[#FF3366] text-white border-[2px] border-black px-2 py-0.5 -rotate-2 inline-block font-black text-xs shadow-[2px_2px_0px_0px_#000] mb-2">
+                    <div className="bg-[#FF3366] text-white border-[2px] border-black px-2 py-0.5 -rotate-2 inline-block font-black text-xs shadow-[2px_2px_0px_0px_#000] mb-2 rounded">
                       0元白嫖！
                     </div>
 
                     {/* 标题 */}
-                    <div className="bg-white border-[2px] border-black p-2 shadow-[3px_3px_0px_0px_#000]">
+                    <div className="bg-white border-[2px] border-black p-2 shadow-[3px_3px_0px_0px_#000] rounded">
                       <h3 className="text-base font-black text-black leading-tight">
                         法语<span className="text-[#C084FC] underline decoration-2 underline-offset-2 decoration-black">原声大礼包</span>
                       </h3>
-                      <div className="bg-black text-white font-bold text-[10px] px-2 py-0.5 mt-1 inline-block">
+                      <div className="bg-black text-white font-bold text-[10px] px-2 py-0.5 mt-1 inline-block rounded">
                         小红书好评 = 免费解锁 🔓
                       </div>
                     </div>
@@ -1133,7 +1133,7 @@ function VideoListContent() {
                     {/* 按钮 */}
                     <button
                       onClick={() => window.open('https://work.weixin.qq.com/kfid/kfc49c2602e3dbe2fc1', '_blank')}
-                      className="w-full mt-3 bg-[#C084FC] border-[3px] border-black px-3 py-2 font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[1px_1px_0px_0px_#000] transition-all flex items-center justify-center gap-2"
+                      className="w-full mt-3 bg-[#C084FC] border-[3px] border-black px-3 py-2 font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[1px_1px_0px_0px_#000] transition-all flex items-center justify-center gap-2 rounded"
                     >
                       <span>🎁</span>
                       立即领取
@@ -1166,18 +1166,18 @@ function VideoListSkeleton() {
     <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="bg-white dark:bg-gray-800 border-b-[3px] border-black dark:border-gray-600">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="h-12 w-48 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-sm" />
-          <div className="h-4 w-64 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-sm mt-2" />
+          <div className="h-12 w-48 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
+          <div className="h-4 w-64 bg-gray-200 dark:bg-gray-700 animate-pulse rounded mt-2" />
         </div>
       </div>
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-3 md:gap-6">
           {Array.from({ length: 8 }).map((_, i) => (
-            <div key={i} className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm overflow-hidden">
+            <div key={i} className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded overflow-hidden">
               <div className="h-40 bg-gray-200 dark:bg-gray-700 animate-pulse border-b-[3px] border-black dark:border-gray-600" />
               <div className="p-4 space-y-3">
-                <div className="h-4 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-sm" />
-                <div className="h-3 w-1/2 bg-gray-200 dark:bg-gray-700 animate-pulse rounded-sm" />
+                <div className="h-4 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
+                <div className="h-3 w-1/2 bg-gray-200 dark:bg-gray-700 animate-pulse rounded" />
               </div>
             </div>
           ))}

@@ -307,18 +307,11 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     setIsPipPlaying(isActuallyPlaying) // 使用实际播放状态而非硬编码 true
   }, [pipMode, isAudioContent])
 
-  // 退出 PIP 模式 — PIP 组件卸载时自动把 <video> 还原到主播放器
+  // 退出 PIP 模式 — 清除 fixed 定位，视频回原位
   const exitPipMode = useCallback(() => {
-    // 读取视频实际播放位置（比 React 状态更准确）
-    const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
-    const actualTime = mediaEl?.currentTime ?? currentVideoTime
-
     setPipMode(false)
     setPauseMainVideo(false)
-    // 确保 VideoPlayer 恢复后 seek 到正确位置
-    setSeekToTime(actualTime)
-    setSeekTrigger(prev => prev + 1)
-  }, [isAudioContent, currentVideoTime])
+  }, [])
 
   // 切换 Tab 时处理 PIP 模式
   const handleTabChange = useCallback((tab: TabValue) => {
@@ -463,8 +456,8 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           </div>
         )}
 
-        {/* 视频区 - 吸顶（PIP 模式下 CSS 隐藏，保留 video buffer） */}
-        <div className={cn("sticky top-0 z-40", pipMode && "hidden")}>
+        {/* 视频区 - 吸顶（PIP 模式下收缩，fixed 定位的 video 不受影响） */}
+        <div className={cn("sticky top-0", isLearningModalOpen ? "z-10" : "z-40", pipMode && "h-0 overflow-hidden")}>
             {/* 视频播放器 + 半透明返回按钮 */}
             <div className="relative">
               {!isLargeScreen && (

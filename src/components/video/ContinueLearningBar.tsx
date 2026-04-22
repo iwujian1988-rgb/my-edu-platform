@@ -51,7 +51,7 @@ function VideoItem({ video }: { video: VideoListItem }) {
       href={`/videos/${video.id}`}
       className="flex items-center gap-3 md:gap-4 py-2 group hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors"
     >
-      <div className="relative w-9 h-9 md:w-11 md:h-11 rounded-sm overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
+      <div className="relative w-9 h-9 md:w-11 md:h-11 rounded overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
         {coverImage ? (
           <img src={coverImage} alt={video.title} loading="lazy" className="w-full h-full object-cover" />
         ) : (
@@ -79,7 +79,7 @@ function VideoItem({ video }: { video: VideoListItem }) {
         </div>
       </div>
 
-      <div className="flex-shrink-0 px-2 py-1 md:px-3 md:py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] group-hover:shadow-[1px_1px_0px_0px_#000] group-hover:-translate-y-px transition-all">
+      <div className="flex-shrink-0 px-2 py-1 md:px-3 md:py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] group-hover:shadow-[1px_1px_0px_0px_#000] group-hover:-translate-y-px transition-all rounded">
         <span className="font-black text-[10px] md:text-xs flex items-center gap-0.5">
           <Play className="w-3 h-3" />
           继续
@@ -164,14 +164,14 @@ export function ContinueLearningBar({ videos }: ContinueLearningBarProps) {
           <div className="flex items-center h-14 gap-2 px-2">
             <button
               onClick={() => setManualExpand(true)}
-              className="flex-shrink-0 flex flex-col items-center justify-center w-11 h-10 border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] active:translate-y-px active:shadow-none transition-all rounded-sm"
+              className="flex-shrink-0 flex flex-col items-center justify-center w-11 h-10 border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] active:translate-y-px active:shadow-none transition-all rounded"
               aria-label="展开导航"
             >
               <Home className="w-4 h-4 text-gray-700 dark:text-gray-300" />
               <span className="text-[9px] font-bold text-gray-500 dark:text-gray-400 leading-none mt-0.5">首页</span>
             </button>
 
-            <div className="relative w-9 h-9 rounded-sm overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
+            <div className="relative w-9 h-9 rounded overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
               {coverImage ? (
                 <img src={coverImage} alt={video.title} loading="lazy" className="w-full h-full object-cover" />
               ) : (
@@ -199,7 +199,7 @@ export function ContinueLearningBar({ videos }: ContinueLearningBarProps) {
 
             <Link
               href={`/videos/${video.id}`}
-              className="flex-shrink-0 px-2 py-1 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] active:shadow-[1px_1px_0px_0px_#000] active:translate-y-px transition-all"
+              className="flex-shrink-0 px-2 py-1 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] active:shadow-[1px_1px_0px_0px_#000] active:translate-y-px transition-all rounded"
             >
               <span className="font-black text-[10px] flex items-center gap-0.5">
                 <Play className="w-3 h-3" />
@@ -271,7 +271,7 @@ export function ContinueLearningBar({ videos }: ContinueLearningBarProps) {
           {barState === 'single' && (
             <div className="flex items-center h-14 md:h-16 px-3 md:px-6 gap-3 md:gap-4">
               {/* 封面 */}
-              <div className="relative w-9 h-9 md:w-12 md:h-12 rounded-sm overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
+              <div className="relative w-9 h-9 md:w-12 md:h-12 rounded overflow-hidden bg-gray-100 dark:bg-gray-700 flex-shrink-0 border-[2px] border-black dark:border-gray-600">
                 {coverImage ? (
                   <img src={coverImage} alt={video.title} loading="lazy" className="w-full h-full object-cover" />
                 ) : (
@@ -303,7 +303,7 @@ export function ContinueLearningBar({ videos }: ContinueLearningBarProps) {
               {/* 继续 */}
               <Link
                 href={`/videos/${video.id}`}
-                className="flex-shrink-0 px-3 py-1.5 md:px-4 md:py-2 bg-[#B4F416] border-[2px] md:border-[3px] border-black shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+                className="flex-shrink-0 px-3 py-1.5 md:px-4 md:py-2 bg-[#B4F416] border-[2px] md:border-[3px] border-black shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all rounded"
               >
                 <span className="font-black text-xs md:text-sm flex items-center gap-1">
                   <Play className="w-3.5 h-3.5 md:w-4 md:h-4" />

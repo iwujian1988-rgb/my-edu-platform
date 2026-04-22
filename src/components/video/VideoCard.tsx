@@ -45,10 +45,10 @@ export default function VideoCard({ video }: VideoCardProps) {
   return (
     <Link
       href={`/videos/${video.id}`}
-      className="neo-card neo-card-video group relative bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] md:shadow-[4px_4px_0px_0px_#000] dark:md:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-0.5 transition-transform duration-150 cursor-pointer overflow-hidden block flex flex-col"
+      className="neo-card neo-card-video group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-150 cursor-pointer overflow-hidden block flex flex-col"
     >
       {/* 缩略图 - 移动端更大，PC端正常 */}
-      <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[2px] md:border-b-[3px] border-black dark:border-gray-600 flex-shrink-0 transition-colors duration-300">
+      <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b border-gray-200 dark:border-gray-700 flex-shrink-0 transition-colors duration-300">
         {isAudio && coverImage ? (
           /* 音频：主色调模糊背景 + 居中封面 */
           <>
@@ -78,13 +78,13 @@ export default function VideoCard({ video }: VideoCardProps) {
         {/* 内容类型标签 - PC端 */}
         <div className="hidden md:block absolute top-3 left-3">
           {isAudio ? (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
+            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded shadow-sm transform -rotate-1">
               <Podcast className="w-4 h-4 text-purple-600" />
-              <span className="text-xs font-black tracking-tight">播客</span>
+              <span className="text-xs font-semibold tracking-tight">播客</span>
             </div>
           ) : (
-            <div className="px-3 py-1 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform -rotate-1">
-              <span className="text-xs font-black tracking-tight flex items-center gap-1">
+            <div className="px-3 py-1 bg-[#B4F416] border border-[#99CC00] rounded shadow-sm transform -rotate-1">
+              <span className="text-xs font-semibold tracking-tight flex items-center gap-1">
                 <Play className="w-3 h-3" />
                 视频
               </span>
@@ -95,12 +95,12 @@ export default function VideoCard({ video }: VideoCardProps) {
         {/* 内容类型标签 - 移动端 */}
         <div className="md:hidden absolute top-2 left-2">
           {isAudio ? (
-            <div className="flex items-center gap-1 px-2 py-0.5 bg-white/90 backdrop-blur-sm border-[1px] border-black">
+            <div className="flex items-center gap-1 px-2 py-0.5 bg-white/90 backdrop-blur-sm border border-gray-300 rounded">
               <Podcast className="w-3 h-3 text-purple-600" />
-              <span className="text-[10px] font-black">播客</span>
+              <span className="text-[10px] font-semibold">播客</span>
             </div>
           ) : (
-            <div className="px-2 py-0.5 bg-[#B4F416] border-[1px] border-black text-[10px] font-black flex items-center gap-0.5">
+            <div className="px-2 py-0.5 bg-[#B4F416] border border-[#99CC00] rounded text-[10px] font-semibold flex items-center gap-0.5">
               <Play className="w-2.5 h-2.5" />
               视频
             </div>
@@ -109,8 +109,8 @@ export default function VideoCard({ video }: VideoCardProps) {
 
         {/* 难度标签 - PC端 */}
         <div className="hidden md:block absolute top-3 right-3">
-          <div className={`px-3 py-1 ${getDifficultyColor(video.difficulty)} border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform rotate-1`}>
-            <span className="text-xs font-black tracking-tight">
+          <div className={`px-3 py-1 ${getDifficultyColor(video.difficulty)} border border-gray-800 dark:border-gray-600 rounded shadow-sm transform rotate-1`}>
+            <span className="text-xs font-semibold tracking-tight">
               {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
             </span>
           </div>
@@ -118,13 +118,13 @@ export default function VideoCard({ video }: VideoCardProps) {
 
         {/* 难度标签 - 移动端 */}
         <div className="md:hidden absolute top-2 right-2">
-          <div className={`px-2 py-0.5 ${getDifficultyColor(video.difficulty)} border-[1px] border-black text-[10px] font-black`}>
+          <div className={`px-2 py-0.5 ${getDifficultyColor(video.difficulty)} border border-gray-800 dark:border-gray-600 rounded text-[10px] font-semibold`}>
             {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
           </div>
         </div>
 
         {/* 时长 - PC端 */}
-        <div className="hidden md:block absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-xs font-bold border-[2px] border-black">
+        <div className="hidden md:block absolute bottom-2 right-2 px-2 py-1 bg-black/80 text-white text-xs font-semibold rounded">
           {formatDuration(video.duration)}
         </div>
 

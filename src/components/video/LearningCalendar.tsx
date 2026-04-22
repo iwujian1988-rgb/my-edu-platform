@@ -79,7 +79,7 @@ function DayDetailModal({
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div
-        className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm max-w-sm w-full"
+        className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded max-w-sm w-full"
         onClick={e => e.stopPropagation()}
       >
         {/* 头部 */}
@@ -98,7 +98,7 @@ function DayDetailModal({
           {hasActivity ? (
             <div className="space-y-3">
               {day.video_count > 0 && (
-                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded-sm">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded">
                   <div className="w-10 h-10 bg-blue-500 border-[2px] border-black flex items-center justify-center">
                     <Video className="w-5 h-5 text-white" />
                   </div>
@@ -110,7 +110,7 @@ function DayDetailModal({
               )}
 
               {day.words_marked > 0 && (
-                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded-sm">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded">
                   <div className="w-10 h-10 bg-[#B4F416] border-[2px] border-black flex items-center justify-center">
                     <BookOpen className="w-5 h-5 text-black" />
                   </div>
@@ -122,7 +122,7 @@ function DayDetailModal({
               )}
 
               {day.phrases_marked > 0 && (
-                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded-sm">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded">
                   <div className="w-10 h-10 bg-purple-500 border-[2px] border-black flex items-center justify-center">
                     <MessageSquare className="w-5 h-5 text-white" />
                   </div>
@@ -134,7 +134,7 @@ function DayDetailModal({
               )}
 
               {day.expressions_marked > 0 && (
-                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded-sm">
+                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded">
                   <div className="w-10 h-10 bg-orange-500 border-[2px] border-black flex items-center justify-center">
                     <Sparkles className="w-5 h-5 text-white" />
                   </div>
@@ -238,7 +238,7 @@ export default function LearningCalendar() {
   const today = useMemo(() => new Date().toISOString().split('T')[0], [])
 
   return (
-    <div className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] overflow-hidden transition-colors duration-300">
+    <div className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] rounded overflow-hidden transition-colors duration-300">
       {/* 头部 - 紧凑 */}
       <div className="bg-[#B4F416] border-b-[2px] border-black dark:border-gray-600 p-1.5">
         <div className="flex items-center justify-between">
