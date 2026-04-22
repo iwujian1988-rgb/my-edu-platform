@@ -357,7 +357,7 @@ export function VideoPlayer({
     <div
       ref={containerRef}
       className={cn(
-        'relative bg-black overflow-hidden group',
+        'relative z-0 bg-black overflow-hidden group',
         isFullscreen ? 'fixed inset-0 z-50' : '',
         className
       )}
