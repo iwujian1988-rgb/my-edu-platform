@@ -133,9 +133,10 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
     const updateHeight = () => {
       if (leftColumnRef.current) {
-        // 左侧总高度 - 占位符(56px) - tab栏(48px) - 边框等 = 内容区高度
+        // 左侧总高度 = 右侧内容区应该的高度
+        // 右侧包括：占位符(56px = h-10 + mb-4) + tab栏(约52px = p-2*2 + 按钮 + border) + 内容区
         const leftHeight = leftColumnRef.current.offsetHeight
-        const contentHeight = leftHeight - 56 - 48 - 12 // 12px 边框+padding
+        const contentHeight = leftHeight - 56 - 52 - 4 // 增加2px修正，让右侧内容区上移2px
         setRightContentHeight(Math.max(300, contentHeight))
       }
     }
@@ -309,9 +310,16 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
   // 退出 PIP 模式 — 清除 fixed 定位，视频回原位
   const exitPipMode = useCallback(() => {
+    // 读取视频实际播放位置（比 React 状态更准确）
+    const mediaEl = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+    const actualTime = mediaEl?.currentTime ?? currentVideoTime
+
     setPipMode(false)
     setPauseMainVideo(false)
-  }, [])
+    // 确保 VideoPlayer 恢复后 seek 到正确位置
+    setSeekToTime(actualTime)
+    setSeekTrigger(prev => prev + 1)
+  }, [isAudioContent, currentVideoTime])
 
   // 切换 Tab 时处理 PIP 模式
   const handleTabChange = useCallback((tab: TabValue) => {
@@ -407,7 +415,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           <Button
             variant="ghost"
             onClick={() => router.back()}
-            className="mb-4 border-[2px] border-black dark:border-gray-600"
+            className="mb-4 rounded border-[2px] border-black dark:border-gray-600"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
             返回
@@ -806,7 +814,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               )}
 
               {/* 视频信息 */}
-              <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] p-4 transition-colors duration-300">
+              <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] rounded-lg p-4 transition-colors duration-300">
                 <div>
                   <h1 className="text-xl font-black text-black dark:text-white">{video.title}</h1>
                   {video.original_title && video.original_title !== video.title && (
@@ -885,7 +893,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               {/* 占位符：与左侧返回按钮高度对齐 */}
               <div className="h-10 mb-4" />
 
-              <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] overflow-hidden transition-colors duration-300">
+              <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] rounded-lg overflow-hidden transition-colors duration-300">
                 {/* 功能按钮导航 - 5个图标按钮 + 字幕模式下拉菜单 */}
                 <div className="bg-gray-50 dark:bg-gray-700 border-b-[3px] border-black dark:border-gray-600 p-2">
                   <div className="flex items-center justify-between gap-1">
