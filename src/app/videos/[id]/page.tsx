@@ -380,7 +380,12 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     } : null,
     grammar_points: grammarPointsResult.data || [],
     pronunciation_tips: pronunciationTipsResult.data || [],
-    vocabulary_network: vocabularyNetworkResult.data || null,
+    vocabulary_network: (() => {
+      const vn = vocabularyNetworkResult.data || null
+      const fs = require('fs')
+      fs.appendFileSync('/tmp/vocab-debug.log', `[${new Date().toISOString()}] videoId=${videoId} vn=${vn ? 'HAS_DATA:' + vn.theme : 'NULL'} error=${vocabularyNetworkResult.error?.message || 'none'}\n`)
+      return vn
+    })(),
     creator: creatorResult.data || null,
     exerciseProgress: await fetchExerciseProgress(supabase, userId, transformedExercises),
   }
