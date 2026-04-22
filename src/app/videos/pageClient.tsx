@@ -418,7 +418,7 @@ function VideoListContent() {
 
   // 翻页或切换筛选时回到页面顶部
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
+    window.scrollTo({ top: 0, behavior: 'instant' })
   }, [page, language, difficulty, tag, learnStatus, contentType])
 
   // 更新 URL（统一处理筛选和分页）
