@@ -992,9 +992,9 @@ function VideoListContent() {
             </div>
           )}
 
-          {/* 视频网格 - 有数据就显示，切换筛选时保留旧数据 */}
+          {/* 视频网格 - 有数据就显示，翻页加载时半透明防闪烁 */}
           {data && (
-            <>
+            <div className={`transition-opacity duration-150 ${isPageChanging ? 'opacity-30 pointer-events-none' : 'opacity-100'}`}>
               {data.items.length === 0 ? (
                 <div className="text-center py-16">
                   <div className="inline-block p-6 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm mb-4">
@@ -1074,7 +1074,7 @@ function VideoListContent() {
                   </button>
                 </div>
               )}
-            </>
+            </div>
           )}
         </section>
 
