@@ -163,25 +163,56 @@ export function AudioPlayer({
 
   // 外部控制：跳转到指定时间
   // PC/Android: currentTime 即时 seek
-  // iOS + Blob 就绪: currentTime（本地数据，即时准确）
-  // iOS + Blob 未就绪: Media Fragment URL 兜底（准确，~2s）
+  // iOS + Blob 就绪: pause → seek → seeked → play（防止旧缓冲区继续输出）
+  // iOS + Blob 未就绪: pause + Media Fragment 兜底（#t= 强制浏览器从目标位置重新建流）
   useEffect(() => {
     if (seekTo === undefined || seekTo < 0) return
     const el = audioRef.current; if (!el) return
     if (!hasStarted) { setHasStarted(true); setIsLoading(true); pendingSeekRef.current = seekTo; return }
 
-    if (isIOSRef.current && !isBlobReadyRef.current) {
-      // iOS Blob 还没下载好：用 Media Fragment 兜底
-      setIsLoading(true)
-      shouldAutoPlayRef.current = true
-      const baseUrl = video.video_url.split('#')[0]
-      setAudioSrc(baseUrl + '#t=' + seekTo)
+    if (isIOSRef.current) {
+      // iOS：统一先 pause，阻止旧缓冲区输出
+      const wasPlaying = isPlaying
+      el.pause()
+      setIsPlaying(false)
+
+      if (isBlobReadyRef.current) {
+        // blob 已就绪：pause → seek → seeked → play
+        // blob 在内存中，seeked 一定触发，此路径安全
+        const gen = ++seekGenRef.current
+        let fallback: ReturnType<typeof setTimeout>
+
+        const onSeeked = () => {
+          el.removeEventListener('seeked', onSeeked)
+          clearTimeout(fallback)
+          if (seekGenRef.current !== gen) return
+          if (wasPlaying) el.play().catch(() => {})
+        }
+
+        el.addEventListener('seeked', onSeeked)
+        fallback = setTimeout(() => {
+          el.removeEventListener('seeked', onSeeked)
+          if (seekGenRef.current !== gen) return
+          if (wasPlaying) el.play().catch(() => {})
+        }, 800)
+        el.currentTime = seekTo
+
+        return () => { el.removeEventListener('seeked', onSeeked); clearTimeout(fallback) }
+      } else {
+        // blob 未就绪：Media Fragment 强制从目标位置重新建流
+        // 无痕模式/弱网下 seeked 不可靠，#t= 更可靠
+        pendingSeekRef.current = seekTo
+        shouldAutoPlayRef.current = true
+        setIsLoading(true)
+        const baseUrl = video.video_url.split('#')[0]
+        setAudioSrc(baseUrl + '#t=' + seekTo)
+      }
     } else {
-      // PC/Android 或 iOS Blob 已就绪：currentTime 即时 seek
+      // PC/Android：currentTime 即时 seek（不变）
       el.currentTime = seekTo
       if (el.paused) el.play().catch(() => {})
     }
-  }, [seekTo, seekTrigger, hasStarted, video.video_url])
+  }, [seekTo, seekTrigger, hasStarted, isPlaying, video.video_url])
 
   useEffect(() => {
     if (!pause) return
@@ -192,13 +223,18 @@ export function AudioPlayer({
   const handleCanPlay = useCallback(() => {
     const el = audioRef.current; if (!el) return
     setIsLoading(false)
-    // media fragment seek 后自动播放（或首次加载自动播放）
-    if (shouldAutoPlayRef.current) { shouldAutoPlayRef.current = false; el.play().catch(() => {}) }
-    // 首次播放的 pending seek（hasStarted=false 时的延迟跳转）
-    if (pendingSeekRef.current !== null) {
-      const targetTime = pendingSeekRef.current
-      pendingSeekRef.current = null
-      el.currentTime = targetTime
+
+    // 先读后清，防止执行中被外部修改
+    const pendingTime = pendingSeekRef.current
+    pendingSeekRef.current = null
+    const shouldPlay = shouldAutoPlayRef.current
+    shouldAutoPlayRef.current = false
+
+    // 先 seek 到目标位置，再 play
+    if (pendingTime !== null) {
+      el.currentTime = pendingTime
+    }
+    if (shouldPlay) {
       el.play().catch(() => {})
     }
   }, [])
