@@ -172,13 +172,12 @@ export function AudioPlayer({
 
     if (isIOSRef.current) {
       // iOS：统一先 pause，阻止旧缓冲区输出
-      const wasPlaying = isPlaying
+      // 用 el.paused 读 DOM 状态，不依赖 React state，避免 setState 触发 effect 重复执行
+      const wasPlaying = !el.paused
       el.pause()
-      setIsPlaying(false)
 
       if (isBlobReadyRef.current) {
         // blob 已就绪：pause → seek → seeked → play
-        // blob 在内存中，seeked 一定触发，此路径安全
         const gen = ++seekGenRef.current
         let fallback: ReturnType<typeof setTimeout>
 
@@ -200,7 +199,6 @@ export function AudioPlayer({
         return () => { el.removeEventListener('seeked', onSeeked); clearTimeout(fallback) }
       } else {
         // blob 未就绪：Media Fragment 强制从目标位置重新建流
-        // 无痕模式/弱网下 seeked 不可靠，#t= 更可靠
         pendingSeekRef.current = seekTo
         shouldAutoPlayRef.current = true
         setIsLoading(true)
@@ -208,11 +206,11 @@ export function AudioPlayer({
         setAudioSrc(baseUrl + '#t=' + seekTo)
       }
     } else {
-      // PC/Android：currentTime 即时 seek（不变）
+      // PC/Android：currentTime 即时 seek
       el.currentTime = seekTo
       if (el.paused) el.play().catch(() => {})
     }
-  }, [seekTo, seekTrigger, hasStarted, isPlaying, video.video_url])
+  }, [seekTo, seekTrigger, hasStarted, video.video_url])
 
   useEffect(() => {
     if (!pause) return
