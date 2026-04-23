@@ -178,10 +178,16 @@ export function AudioPlayer({
 
     if (isIOSRef.current && !isBlobReadyRef.current) {
       // iOS Blob 还没下载好：用 Media Fragment 兜底
+      // 必须先 pause 阻止旧缓冲区继续输出
+      const wasPlaying = !el.paused
+      el.pause()
+      setIsPlaying(false)
       // 记录 seek 目标，防止 Blob 下载完成时用 el.currentTime 覆盖
       mediaFragmentSeekRef.current = seekTo
+      // handleCanPlay 中显式 seek + 等 seeked 后再 play
+      pendingSeekRef.current = seekTo
+      shouldAutoPlayRef.current = wasPlaying
       setIsLoading(true)
-      shouldAutoPlayRef.current = true
       const baseUrl = video.video_url.split('#')[0]
       setAudioSrc(baseUrl + '#t=' + seekTo)
     } else if (isIOSRef.current) {
@@ -229,7 +235,19 @@ export function AudioPlayer({
       pendingSeekRef.current = null
       el.currentTime = targetTime
     }
-    if (shouldAutoPlayRef.current) { shouldAutoPlayRef.current = false; el.play().catch(() => {}) }
+    if (shouldAutoPlayRef.current) {
+      shouldAutoPlayRef.current = false
+      // iOS: 等 seeked 事件确保 seek 完成后再播放，避免旧缓冲区输出
+      if (isIOSRef.current) {
+        const onSeeked = () => {
+          el.removeEventListener('seeked', onSeeked)
+          el.play().catch(() => {})
+        }
+        el.addEventListener('seeked', onSeeked)
+      } else {
+        el.play().catch(() => {})
+      }
+    }
   }, [])
 
   const togglePlay = useCallback(async () => {
