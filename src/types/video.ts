@@ -763,6 +763,7 @@ export interface VideoVocabularyNetwork {
   structure: string | null
   related_words: string[] | null
   collocations: string | null
+  core_word: string | null
   created_at: string
 }
 

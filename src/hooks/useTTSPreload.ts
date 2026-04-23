@@ -143,9 +143,11 @@ export function createTTSPreload(language: string): TTSPreloadInstance {
         const blobUrl = URL.createObjectURL(blob)
         cache.set(key, { status: 'available', blobUrl })
       } else {
+        // 静默处理 404 和其他错误，不打印日志避免控制台污染
         cache.set(key, { status: 'unavailable' })
       }
     } catch (err) {
+      // 静默处理网络错误，不打印日志
       if (abortController.signal.aborted) return
       cache.set(key, { status: 'unavailable' })
     }

@@ -59,6 +59,7 @@ export function AudioPlayer({
   const [seekingValue, setSeekingValue] = useState(0)
   const shouldAutoPlayRef = useRef(false)
   const pendingSeekRef = useRef<number | null>(null)
+  const seekGenRef = useRef(0)
   const coverImageUrl = video.cover_url || video.thumbnail_url || fallbackImageUrl
 
   // 设置 Media Session 元数据（iOS 锁屏播放器、Android 通知栏）
@@ -99,12 +100,30 @@ export function AudioPlayer({
     el.load()
   }, [hasStarted, initialPosition])
 
+  // 外部控制：跳转到指定时间
+  // iOS 修复：currentTime 赋值是异步的，必须等 seeked 事件后再 play()，
+  // 否则 play() 会从旧位置开始播放，导致进度落后于字幕。
   useEffect(() => {
     if (seekTo === undefined || seekTo < 0) return
     const el = audioRef.current; if (!el) return
     if (!hasStarted) { setHasStarted(true); setIsLoading(true); pendingSeekRef.current = seekTo; return }
+
+    const wasPaused = el.paused
+    const gen = ++seekGenRef.current
+
+    const onSeeked = () => {
+      el.removeEventListener('seeked', onSeeked)
+      // 快速连点时，只处理最新一次 seek
+      if (seekGenRef.current !== gen) return
+      // iOS seek 偏差修正：二次 seek 缩小误差
+      if (Math.abs(el.currentTime - seekTo) > 0.3) {
+        el.currentTime = seekTo
+      }
+      if (wasPaused) el.play().catch(() => {})
+    }
+
+    el.addEventListener('seeked', onSeeked)
     el.currentTime = seekTo
-    if (el.paused) el.play().catch(() => {})
   }, [seekTo, seekTrigger, hasStarted])
 
   useEffect(() => {
@@ -117,7 +136,20 @@ export function AudioPlayer({
     const el = audioRef.current; if (!el) return
     setIsLoading(false)
     if (shouldAutoPlayRef.current) { shouldAutoPlayRef.current = false; el.play().catch(() => {}) }
-    if (pendingSeekRef.current !== null) { el.currentTime = pendingSeekRef.current; pendingSeekRef.current = null; el.play().catch(() => {}) }
+    // pending seek 同样等 seeked 后再 play
+    if (pendingSeekRef.current !== null) {
+      const targetTime = pendingSeekRef.current
+      pendingSeekRef.current = null
+      const onSeeked = () => {
+        el.removeEventListener('seeked', onSeeked)
+        if (Math.abs(el.currentTime - targetTime) > 0.3) {
+          el.currentTime = targetTime
+        }
+        el.play().catch(() => {})
+      }
+      el.addEventListener('seeked', onSeeked)
+      el.currentTime = targetTime
+    }
   }, [])
 
   const togglePlay = useCallback(async () => {

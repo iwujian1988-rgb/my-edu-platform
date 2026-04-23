@@ -108,33 +108,33 @@ export function BookCard({ book, index }: { book: Book; index: number }) {
       <div className="relative w-full cursor-pointer">
 
         {/* 卡片容器 */}
-        <div className={`relative rounded border-[3px] overflow-hidden flex flex-col h-full transition-all duration-200 ${
+        <div className={`relative rounded-lg border overflow-hidden flex flex-col h-full transition-all duration-200 ${
           isDark
-            ? 'bg-gray-900 border-gray-700 hover:border-gray-500 hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
-            : 'bg-white border-black hover:translate-x-[2px] hover:translate-y-[2px] active:translate-x-[4px] active:translate-y-[4px] active:shadow-none'
-        } shadow-[4px_4px_0px_0px_#000] ${glowClass}`}>
+            ? 'bg-gray-900 border-gray-700 hover:border-gray-500 hover:-translate-y-1 shadow-sm hover:shadow-md'
+            : 'bg-white border-gray-200 hover:border-gray-300 hover:-translate-y-1 shadow-sm hover:shadow-md'
+        }`}>
 
           {/* --- 上半部分：封面区 --- */}
-          <div className={`aspect-[4/3] relative flex flex-col items-center justify-center border-b-[2px] md:border-b-[3px] p-2 md:p-3 lg:p-4 ${colorClass} ${
-            isDark ? 'border-gray-700' : 'border-black'
+          <div className={`aspect-[4/3] relative flex flex-col items-center justify-center border-b p-2 md:p-3 lg:p-4 ${colorClass} ${
+            isDark ? 'border-gray-700' : 'border-gray-200'
           }`}>
 
             {/* 分类标签 + 最近标记 */}
             <div className="absolute top-2 left-2 md:top-2.5 md:left-2.5 lg:top-3 lg:left-3 flex gap-1 md:gap-1.5 z-20">
               {book.categoryLabel && (
-                <span className={`px-1.5 py-0.5 md:px-1.5 md:py-0.5 lg:px-2 lg:py-0.5 border text-[8px] md:text-[9px] lg:text-[10px] font-black uppercase shadow-[2px_2px_0px_0px_#000] rounded ${
+                <span className={`px-1.5 py-0.5 md:px-1.5 md:py-0.5 lg:px-2 lg:py-0.5 border text-[8px] md:text-[9px] lg:text-[10px] font-semibold uppercase shadow-sm rounded ${
                   isDark
                     ? 'border-gray-600 bg-gray-800/80 text-gray-200'
-                    : 'border-black bg-white text-black'
+                    : 'border-gray-300 bg-white text-gray-700'
                 }`}>
                   {book.categoryLabel}
                 </span>
               )}
               {book.isRecent && (
-                <span className={`text-[8px] md:text-[9px] lg:text-[10px] font-bold px-1.5 py-0.5 md:px-1.5 md:py-0.5 lg:px-2 lg:py-0.5 border-2 shadow-[2px_2px_0px_0px_#000] rounded ${
+                <span className={`text-[8px] md:text-[9px] lg:text-[10px] font-semibold px-1.5 py-0.5 md:px-1.5 md:py-0.5 lg:px-2 lg:py-0.5 border shadow-sm rounded ${
                   isDark
                     ? 'bg-yellow-500/20 border-yellow-600 text-yellow-300'
-                    : 'bg-[#FFB800] border-black text-black'
+                    : 'bg-[#FFB800] border-yellow-600 text-white'
                 }`}>
                   最近
                 </span>

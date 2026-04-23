@@ -54,10 +54,10 @@ export default function PodcastZone() {
     <section className="mb-10">
       {/* Section Header */}
       <div className="flex items-center gap-3 mb-5">
-        <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center shadow-[4px_4px_0px_0px_#B4F416]">
+        <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center rounded shadow-sm">
           <Podcast className="w-5 h-5 text-[#B4F416]" />
         </div>
-        <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">
+        <h2 className="text-xl font-bold uppercase tracking-wide text-black dark:text-white">
           播客专区
         </h2>
       </div>
@@ -75,7 +75,7 @@ export default function PodcastZone() {
               <Link
                 key={creator.id}
                 href={`/videos/creators/${creator.id}`}
-                className="group flex-shrink-0 w-[200px] md:w-[220px] bg-white dark:bg-gray-800 border-[2px] md:border-[3px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:-translate-y-1 transition-transform duration-150 overflow-hidden"
+                className="group flex-shrink-0 w-[200px] md:w-[220px] bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-150 overflow-hidden"
               >
                 {/* 顶部 banner：模糊头像做色彩背景 */}
                 <div className="relative h-16 md:h-20 overflow-hidden">
@@ -92,7 +92,7 @@ export default function PodcastZone() {
 
                 {/* 居中头像 — 叠加在 banner 底部 */}
                 <div className="flex justify-center -mt-8 md:-mt-10 relative z-10">
-                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border-[3px] border-black dark:border-gray-600 overflow-hidden bg-white dark:bg-gray-700 shadow-[2px_2px_0px_0px_#000]">
+                  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-gray-300 dark:border-gray-600 overflow-hidden bg-white dark:bg-gray-700 shadow-sm">
                     {creator.avatar_url ? (
                       <img src={creator.avatar_url} alt={creator.name} className="w-full h-full object-cover" />
                     ) : (

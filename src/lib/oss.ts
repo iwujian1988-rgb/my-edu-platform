@@ -70,6 +70,7 @@ export async function uploadAudioToOSS(
 
     const result = await client.put(objectKey, buffer, {
       headers: getCacheHeaders('audio'),
+      timeout: 300000, // 5分钟超时（支持大文件上传）
     })
 
     console.log(`✅ [OSS] 上传成功: ${result.url}`)
@@ -79,6 +80,67 @@ export async function uploadAudioToOSS(
     const publicUrl = `https://${client.options.bucket}.${client.options.region}.aliyuncs.com/${objectKey}`
 
     console.log(`✅ [OSS] 公开 URL: ${publicUrl}`)
+
+    return publicUrl
+  } catch (error) {
+    console.error('❌ [OSS] 上传失败:', error)
+    throw error
+  }
+}
+
+/**
+ * 上传视频到 OSS（使用分片上传支持大文件）
+ * @param buffer - 视频数据 Buffer
+ * @param fileName - 文件名
+ * @returns OSS 文件公开访问的完整 URL
+ */
+export async function uploadVideoToOSS(
+  buffer: Buffer,
+  fileName: string
+): Promise<string> {
+  try {
+    const client = getOSSClient()
+
+    // 上传到 /videos/ 目录
+    const objectKey = `videos/${fileName}`
+
+    const fileSizeMB = (buffer.length / 1024 / 1024).toFixed(1)
+    console.log(`📤 [OSS] 上传视频: ${objectKey} (${fileSizeMB}MB)`)
+
+    // 大于10MB使用分片上传
+    const useMultipart = buffer.length > 10 * 1024 * 1024
+
+    let result
+    if (useMultipart) {
+      console.log(`📤 [OSS] 使用分片上传模式`)
+
+      // 使用分片上传
+      result = await client.multipartUpload(objectKey, buffer, {
+        headers: getCacheHeaders('video'),
+        partSize: 1024 * 1024, // 1MB 每片
+        progress: (p: number) => {
+          const percent = Math.round(p * 100)
+          if (percent % 20 === 0) { // 每20%打印一次，减少日志
+            console.log(`📊 [OSS] 上传进度: ${percent}%`)
+          }
+        }
+      })
+    } else {
+      console.log(`📤 [OSS] 使用普通上传模式`)
+
+      // 小文件直接上传
+      result = await client.put(objectKey, buffer, {
+        headers: getCacheHeaders('video'),
+        timeout: 300000, // 5分钟超时
+      })
+    }
+
+    console.log(`✅ [OSS] 上传成功`)
+
+    // 构建完整的公开访问 URL
+    const publicUrl = `https://${client.options.bucket}.${client.options.region}.aliyuncs.com/${objectKey}`
+
+    console.log(`✅ [OSS] URL: ${publicUrl}`)
 
     return publicUrl
   } catch (error) {

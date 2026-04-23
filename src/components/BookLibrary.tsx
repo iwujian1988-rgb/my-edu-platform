@@ -141,18 +141,18 @@ export function BookLibrary({ userBooks, userPhone, userId, recentBooks: initial
       {/* Tab 切换按钮 */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-3">
-          <div className="w-4 h-8 bg-[#B4F416] border-2 border-black dark:border-white shadow-[2px_2px_0px_0px_#000]"></div>
-          <h2 className="text-xl font-black text-black dark:text-white tracking-tighter uppercase italic">
+          <div className="w-4 h-8 bg-[#B4F416] border border-gray-300 dark:border-gray-600 rounded shadow-sm"></div>
+          <h2 className="text-xl font-bold text-black dark:text-white tracking-tighter uppercase italic">
             词库资源
           </h2>
         </div>
         <div className="flex gap-2">
           <button
             onClick={() => setActiveTab('recent')}
-            className={`px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all duration-300 ${
+            className={`px-4 py-1.5 rounded-md font-semibold text-sm transition-all duration-300 ${
               activeTab === 'recent'
-                ? 'bg-[#B4F416] border-black text-black shadow-[2px_2px_0px_0px_#000]'
-                : 'border-black hover:bg-opacity-80'
+                ? 'bg-[#B4F416] border border-[#99CC00] text-black shadow-sm hover:shadow-md'
+                : 'border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
             style={{
               backgroundColor: activeTab === 'recent' ? undefined : 'var(--card-bg)',
@@ -163,10 +163,10 @@ export function BookLibrary({ userBooks, userPhone, userId, recentBooks: initial
           </button>
           <button
             onClick={() => setActiveTab('my')}
-            className={`px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all duration-300 ${
+            className={`px-4 py-1.5 rounded-md font-semibold text-sm transition-all duration-300 ${
               activeTab === 'my'
-                ? 'bg-[#B4F416] border-black text-black shadow-[2px_2px_0px_0px_#000]'
-                : 'border-black hover:bg-opacity-80'
+                ? 'bg-[#B4F416] border border-[#99CC00] text-black shadow-sm hover:shadow-md'
+                : 'border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800'
             }`}
             style={{
               backgroundColor: activeTab === 'my' ? undefined : 'var(--card-bg)',
@@ -177,7 +177,7 @@ export function BookLibrary({ userBooks, userPhone, userId, recentBooks: initial
           </button>
           <Link
             href="/library"
-            className="px-4 py-1.5 rounded-[3px] border-[3px] font-bold text-sm transition-all duration-300 border-black hover:bg-opacity-80 hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5"
+            className="px-4 py-1.5 rounded-md font-semibold text-sm transition-all duration-300 border border-gray-300 dark:border-gray-600 hover:bg-gray-50 dark:hover:bg-gray-800 hover:shadow-sm hover:-translate-y-0.5"
             style={{
               backgroundColor: 'var(--card-bg)',
               color: 'var(--text-secondary)'

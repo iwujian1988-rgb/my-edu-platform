@@ -23,6 +23,22 @@
   /* 🔧 系统字体（替代 Google Fonts） */
   --font-fredoka: 'Varela Round', 'Nunito', 'Segoe UI', system-ui, sans-serif;
   --font-nunito: 'Nunito', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  /* ===== 轻量化设计系统 ===== */
+  /* 圆角变量 */
+  --radius-sm: 4px;   /* 标签、角标 */
+  --radius-md: 6px;   /* 卡片、输入框 */
+  --radius-lg: 8px;   /* 按钮、大块区域 */
+
+  /* 边框变量 */
+  --border-light: 1px solid rgba(0, 0, 0, 0.12);
+  --border-medium: 1px solid rgba(0, 0, 0, 0.25);
+  --border-brand: 1px solid #99CC00;  /* 荧光绿同色系深色 */
+
+  /* 阴影变量 */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.10);
+  --shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.15);
+  --shadow-accent: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 /* 深色主题变量 */
@@ -81,27 +97,27 @@ body {
   border-color: #FF6B6B;
 }
 
-/* Shadow utilities - Neo-Brutalism Hard Shadows */
+/* Shadow utilities - 轻量化阴影 */
 .shadow-neo-sm {
-  box-shadow: 2px 2px 0px 0px rgba(0,0,0,1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
 }
 .shadow-neo-md {
-  box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
 }
 .shadow-neo-lg {
-  box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
 }
 .shadow-neo-green {
-  box-shadow: 4px 4px 0px 0px #B4F416;
+  box-shadow: 0 2px 6px rgba(180, 244, 22, 0.3);
 }
 .shadow-neo-yellow {
-  box-shadow: 4px 4px 0px 0px #FACC15;
+  box-shadow: 0 2px 6px rgba(250, 204, 21, 0.3);
 }
 .shadow-neo-red {
-  box-shadow: 4px 4px 0px 0px #FF6B6B;
+  box-shadow: 0 2px 6px rgba(255, 107, 107, 0.3);
 }
 .shadow-neo-blue {
-  box-shadow: 4px 4px 0px 0px #3B82F6;
+  box-shadow: 0 2px 6px rgba(59, 130, 246, 0.3);
 }
 
 /* Background color utilities */
@@ -133,6 +149,91 @@ body {
 }
 .border-3 {
   border-width: 3px;
+}
+
+/* ============================================
+   轻量化通用样式类
+   ============================================ */
+
+/* 卡片轻量化样式 */
+.card-light {
+  border: var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.card-light:hover {
+  box-shadow: var(--shadow-hover);
+}
+
+/* 按钮轻量化样式 */
+.btn-light {
+  border: none;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-accent);
+  transition: all 0.2s ease;
+}
+
+.btn-light:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* 荧光绿按钮轻量化 */
+.btn-accent-light {
+  background: #CCFF00;
+  border: 1px solid #99CC00;
+  border-radius: var(--radius-lg);
+  color: #1a1a1a;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-accent-light:hover {
+  background: #B8E600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 标签轻量化样式 */
+.tag-light {
+  border: 1px solid rgba(0, 0, 0, 0.20);
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.tag-light:hover {
+  border-color: rgba(0, 0, 0, 0.30);
+}
+
+/* 荧光色标签 */
+.tag-green-light {
+  background: #CCFF00;
+  border: 1px solid #99CC00;
+  border-radius: var(--radius-sm);
+  color: #1a1a1a;
+}
+
+.tag-purple-light {
+  background: #D8B4FE;
+  border: 1px solid #A855F7;
+  border-radius: var(--radius-sm);
+  color: #1a1a1a;
+}
+
+/* 输入框轻量化样式 */
+.input-light {
+  border: var(--border-medium);
+  border-radius: var(--radius-md);
+  box-shadow: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-light:focus {
+  border-color: #CCFF00;
+  box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.2);
+  outline: none;
 }
 
 /* Scrollbar utilities */

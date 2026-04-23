@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --webpack",
+    "dev": "next dev --webpack -p 3001",
     "dev:safe": "node scripts/dev-safe-start.js",
     "dev:monitor": "node scripts/dev-monitor.js",
     "dev:webpack": "NODE_OPTIONS='--max-old-space-size=4096' next dev --no-turbopack",

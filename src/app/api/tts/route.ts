@@ -96,8 +96,6 @@ export async function GET(request: NextRequest) {
       )
     }
 
-    console.log(`🎯 [TTS API] 请求: text="${text}", type=${type}, language=${language}`)
-
     // 3. 法语特殊处理
     // 有道 TTS 不支持单引号前缀（s', j', l' 等），需要去掉
     let ttsText = text
@@ -106,7 +104,6 @@ export async function GET(request: NextRequest) {
       const match = text.match(frenchPrefixPattern)
       if (match) {
         ttsText = match[2]
-        console.log(`🔧 [TTS API] 法语去前缀: "${text}" → "${ttsText}"`)
       }
     }
 
@@ -120,27 +117,19 @@ export async function GET(request: NextRequest) {
         .eq('word', text.toLowerCase())
         .limit(1)
 
-      console.log(`📊 [TTS API] 数据库查询结果:`, {
-        found: words?.length || 0,
-        hasAudioUrl: !!words?.[0]?.audio_url,
-        error: dbError
-      })
-
       if (dbError) {
-        console.error('❌ [TTS API] 数据库查询错误:', dbError)
+        // 静默处理数据库错误
       }
 
       // 如果找到记录且有音频 URL，直接从 OSS 返回音频流
       const wordData = words?.[0]
       if (wordData?.audio_url && !wordData.audio_url.includes('dict.youdao.com')) {
         const httpsUrl = wordData.audio_url.replace(/^http:/, 'https:')
-        console.log(`✅ [TTS API] 数据库命中，从 OSS 获取: ${httpsUrl}`)
 
         try {
           const ossResponse = await fetch(httpsUrl)
           if (ossResponse.ok) {
             const audioBuffer = Buffer.from(await ossResponse.arrayBuffer())
-            console.log(`🔊 [TTS API] 返回 OSS 音频: ${audioBuffer.length} bytes`)
 
             return new NextResponse(audioBuffer, {
               status: 200,
@@ -152,7 +141,7 @@ export async function GET(request: NextRequest) {
             })
           }
         } catch (error) {
-          console.error(`❌ [TTS API] OSS 获取失败:`, error)
+          // OSS 获取失败，继续尝试 TTS 服务
         }
       }
     }
@@ -164,7 +153,6 @@ export async function GET(request: NextRequest) {
 
     // 5. 有道失败，尝试百度兜底
     if (!audioBuffer) {
-      console.log(`⚠️ [TTS API] 有道失败，尝试百度兜底...`)
       const baiduLang = BAIDU_LANG_MAP[language] || 'en'
       audioBuffer = await fetchAudioFromBaidu(ttsText, baiduLang)
     }
@@ -178,7 +166,6 @@ export async function GET(request: NextRequest) {
     }
 
     // 7. 返回音频流
-    console.log(`🔊 [TTS API] 返回音频流: ${audioBuffer.length} bytes`)
 
     const response = new NextResponse(audioBuffer, {
       status: 200,
@@ -191,15 +178,14 @@ export async function GET(request: NextRequest) {
 
     // 8. 英语：异步处理上传 OSS + 更新数据库
     if (language === 'en') {
-      processAudioAsync(text, type, audioBuffer).catch(error => {
-        console.error('❌ [TTS API] 异步处理失败:', error)
+      processAudioAsync(text, type, audioBuffer).catch(() => {
+        // 静默处理异步处理失败
       })
     }
 
     return response
 
   } catch (error) {
-    console.error('❌ [TTS API] 服务器错误:', error)
     return NextResponse.json(
       { error: '服务器内部错误', details: error.message },
       { status: 500 }
@@ -224,8 +210,6 @@ async function fetchAudioFromYoudao(
     // 有道 TTS: le 参数指定语言
     const url = `${YOUDAO_TTS_BASE_URL}?audio=${encodeURIComponent(text)}&le=${lang}&type=${type}`
 
-    console.log(`📡 [有道 API] 请求: ${url}`)
-
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), timeout)
 
@@ -239,7 +223,6 @@ async function fetchAudioFromYoudao(
     clearTimeout(timeoutId)
 
     if (!response.ok) {
-      console.error(`❌ [有道 API] HTTP ${response.status}`)
       return null
     }
 
@@ -248,19 +231,13 @@ async function fetchAudioFromYoudao(
 
     // 检查是否是有效音频（至少 100 bytes，有道有时返回很小的有效音频）
     if (buffer.length < 100) {
-      console.error(`❌ [有道 API] 音频太小: ${buffer.length} bytes`)
       return null
     }
 
-    console.log(`✅ [有道 API] 获取成功: ${buffer.length} bytes`)
     return buffer
 
   } catch (error) {
-    if (error.name === 'AbortError') {
-      console.error('❌ [有道 API] 请求超时')
-    } else {
-      console.error('❌ [有道 API] 请求失败:', error)
-    }
+    // 静默处理有道 API 错误
     return null
   }
 }
@@ -279,8 +256,6 @@ async function fetchAudioFromBaidu(
     // 百度 TTS: lan 参数指定语言，spd 语速
     const url = `${BAIDU_TTS_BASE_URL}?lan=${lang}&text=${encodeURIComponent(text)}&spd=3&source=web`
 
-    console.log(`📡 [百度 API] 请求: ${url}`)
-
     const controller = new AbortController()
     const timeoutId = setTimeout(() => controller.abort(), 10000) // 10 秒超时
 
@@ -297,7 +272,6 @@ async function fetchAudioFromBaidu(
     clearTimeout(timeoutId)
 
     if (!response.ok) {
-      console.error(`❌ [百度 API] HTTP ${response.status}`)
       return null
     }
 
@@ -306,19 +280,13 @@ async function fetchAudioFromBaidu(
 
     // 检查是否是有效音频（至少 100 bytes）
     if (buffer.length < 100) {
-      console.error(`❌ [百度 API] 音频太小: ${buffer.length} bytes`)
       return null
     }
 
-    console.log(`✅ [百度 API] 获取成功: ${buffer.length} bytes`)
     return buffer
 
   } catch (error) {
-    if (error.name === 'AbortError') {
-      console.error('❌ [百度 API] 请求超时')
-    } else {
-      console.error('❌ [百度 API] 请求失败:', error)
-    }
+    // 静默处理百度 API 错误
     return null
   }
 }
@@ -333,14 +301,11 @@ async function processAudioAsync(
   audioBuffer: Buffer
 ): Promise<void> {
   try {
-    console.log(`🔄 [异步处理] 开始处理单词: "${text}" (${audioBuffer.length} bytes)`)
-
     // 1. 生成安全的文件名
     const fileName = generateSafeFileName(text, type)
 
     // 2. 上传到 OSS
     const ossUrl = await uploadAudioAsync(audioBuffer, fileName)
-    console.log(`✅ [异步处理] OSS 上传成功: ${ossUrl}`)
 
     // 3. 更新数据库
     const supabase = await createAdminClient()
@@ -351,13 +316,11 @@ async function processAudioAsync(
       .eq('word', text.toLowerCase())
 
     if (updateError) {
-      console.error('❌ [异步处理] 数据库更新失败:', updateError)
-    } else {
-      console.log(`✅ [异步处理] 数据库更新成功`)
+      // 静默处理数据库更新失败
     }
 
   } catch (error) {
-    console.error('❌ [异步处理] 处理失败:', error)
+    // 静默处理异步处理失败
   }
 }
 

@@ -6,12 +6,18 @@
  * 设计风格：Neo-brutalism - 与 Speaker 模块保持一致
  * 点击词汇显示词典数据
  * 支持展开/收起分类
+ *
+ * 两种渲染模式：
+ * 1. 有 structure（分类结构）→ 完整思维导图：中心词 + 分类卡片
+ * 2. 无 structure 但有 core_word + related_words → 简化版：中心词 + 扩展词网格
+ *
+ * 释义来源：优先匹配该视频的 video_word_cards 数据（内联展示），其次点击查词典
  */
 
-import { useState, useEffect, memo } from 'react'
+import { useState, useEffect, useMemo, memo } from 'react'
 import { cn } from '@/lib/utils'
 import { Network, Link2, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
-import type { VideoVocabularyNetwork, VideoLanguage } from '@/types/video'
+import type { VideoVocabularyNetwork, VideoWordCard, VideoLanguage } from '@/types/video'
 import { WordTooltip } from './WordTooltip'
 import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
@@ -21,8 +27,36 @@ import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
 export interface VocabularyNetworkTabProps {
   network: VideoVocabularyNetwork | null
+  /** 该视频的单词卡片数据，用于内联显示释义 */
+  wordCards?: VideoWordCard[]
   videoLanguage?: VideoLanguage
   ttsPreload?: TTSPreloadInstance
+}
+
+/** 释义行数据的轻量结构 */
+interface WordBrief {
+  phonetic: string | null
+  definition: string | null
+  partOfSpeech: string | null
+}
+
+// ============================================
+// 工具函数
+// ============================================
+
+/** 从 VideoWordCard[] 构建小写 word → WordBrief 映射 */
+function buildWordMap(cards: VideoWordCard[]): Map<string, WordBrief> {
+  const map = new Map<string, WordBrief>()
+  for (const card of cards) {
+    const key = card.word.toLowerCase()
+    if (map.has(key)) continue
+    map.set(key, {
+      phonetic: card.phonetic,
+      definition: card.definitions?.[0] || card.chinese_definition || null,
+      partOfSpeech: card.part_of_speech,
+    })
+  }
+  return map
 }
 
 // ============================================
@@ -36,11 +70,15 @@ export function hasVocabularyNetworkContent(network: VideoVocabularyNetwork | nu
     network.structure ||
     (network.related_words && network.related_words.length > 0) ||
     network.collocations ||
-    network.theme
+    network.theme ||
+    network.core_word
   )
 }
 
-export function VocabularyNetworkTab({ network, videoLanguage = 'fr', ttsPreload }: VocabularyNetworkTabProps) {
+export function VocabularyNetworkTab({ network, wordCards = [], videoLanguage = 'fr', ttsPreload }: VocabularyNetworkTabProps) {
+
+  // word → brief 映射（小写 key，用于内联释义匹配）
+  const wordMap = useMemo(() => buildWordMap(wordCards), [wordCards])
 
   // 挂载时提取 structure + related_words 中的词预加载
   useEffect(() => {
@@ -48,12 +86,10 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr', ttsPreload
 
     const wordsToPreload: string[] = []
 
-    // 从 related_words 提取
     if (network.related_words) {
       wordsToPreload.push(...network.related_words)
     }
 
-    // 从 structure JSON 提取
     if (network.structure) {
       try {
         const parsed: Record<string, string[]> = JSON.parse(network.structure)
@@ -69,6 +105,7 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr', ttsPreload
       ttsPreload.preloadWords(wordsToPreload)
     }
   }, [network, ttsPreload])
+
   if (!hasVocabularyNetworkContent(network)) {
     return (
       <div className="text-center py-8 text-gray-500 dark:text-gray-400">
@@ -78,15 +115,30 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr', ttsPreload
     )
   }
 
+  const centerLabel = network.core_word || network.theme || '主题中心'
+
   return (
     <div className="space-y-3">
-      {/* 结构可视化 */}
-      {network.structure && (
-        <NetworkVisualization structure={network.structure} theme={network.theme} videoLanguage={videoLanguage} ttsPreload={ttsPreload} />
-      )}
+      {network.structure ? (
+        <StructuredNetworkVisualization
+          structure={network.structure}
+          centerLabel={centerLabel}
+          videoLanguage={videoLanguage}
+          ttsPreload={ttsPreload}
+          wordMap={wordMap}
+        />
+      ) : network.core_word && network.related_words && network.related_words.length > 0 ? (
+        <SimpleNetworkVisualization
+          centerLabel={centerLabel}
+          relatedWords={network.related_words}
+          videoLanguage={videoLanguage}
+          ttsPreload={ttsPreload}
+          wordMap={wordMap}
+        />
+      ) : null}
 
-      {/* 相关词汇 */}
-      {network.related_words && network.related_words.length > 0 && (
+      {/* 相关词汇（仅在 structure 存在时额外展示，避免与简化版重复） */}
+      {network.structure && network.related_words && network.related_words.length > 0 && (
         <div className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
           <div className="flex items-center gap-2 px-3 py-2 bg-gray-100 dark:bg-gray-700 border-b-[2px] border-black dark:border-gray-600">
             <Link2 className="w-4 h-4 text-gray-600 dark:text-gray-400" />
@@ -95,11 +147,7 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr', ttsPreload
           <div className="p-3">
             <div className="flex flex-wrap gap-2">
               {network.related_words.map((word, index) => (
-                <WordTooltip key={index} word={word} language={videoLanguage} ttsPreload={ttsPreload}>
-                  <span className="px-2 py-1 bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 text-xs font-medium border-[2px] border-indigo-300 dark:border-indigo-700 hover:border-black dark:hover:border-gray-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 transition-colors rounded-sm">
-                    {word}
-                  </span>
-                </WordTooltip>
+                <NetworkWord key={index} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} />
               ))}
             </div>
           </div>
@@ -125,20 +173,51 @@ export function VocabularyNetworkTab({ network, videoLanguage = 'fr', ttsPreload
 }
 
 // ============================================
-// 词汇网络可视化组件
+// 网络词组件：有卡片释义时内联展示，否则仅展示可点击词标签
 // ============================================
 
-interface NetworkVisualizationProps {
-  structure: string
-  theme?: string | null
+interface NetworkWordProps {
+  word: string
+  wordMap: Map<string, WordBrief>
   videoLanguage: VideoLanguage
   ttsPreload?: TTSPreloadInstance
+  /** 标签样式变体 */
+  variant?: 'default' | 'compact'
 }
 
-const NetworkVisualization = memo(function NetworkVisualization({ structure, theme, videoLanguage, ttsPreload }: NetworkVisualizationProps) {
+function NetworkWord({ word, wordMap, videoLanguage, ttsPreload, variant = 'default' }: NetworkWordProps) {
+  const brief = wordMap.get(word.toLowerCase())
+
+  // 统一：点击才显示释义（无论是否有 wordCard 数据）
+  return (
+    <WordTooltip word={word} language={videoLanguage} ttsPreload={ttsPreload}>
+      <span className={cn(
+        "px-2 py-1 text-xs font-medium border-[2px] cursor-pointer transition-colors rounded-sm",
+        variant === 'compact'
+          ? "bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-indigo-400 dark:hover:border-indigo-500"
+          : "bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 border-indigo-300 dark:border-indigo-700 hover:border-black dark:hover:border-gray-400 hover:bg-indigo-50 dark:hover:bg-indigo-900/30"
+      )}>
+        {word}
+      </span>
+    </WordTooltip>
+  )
+}
+
+// ============================================
+// 完整版网络可视化（有 structure 分类结构）
+// ============================================
+
+interface StructuredNetworkVisualizationProps {
+  structure: string
+  centerLabel: string
+  videoLanguage: VideoLanguage
+  ttsPreload?: TTSPreloadInstance
+  wordMap: Map<string, WordBrief>
+}
+
+const StructuredNetworkVisualization = memo(function StructuredNetworkVisualization({ structure, centerLabel, videoLanguage, ttsPreload, wordMap }: StructuredNetworkVisualizationProps) {
   const [isExpanded, setIsExpanded] = useState(true)
 
-  // 尝试解析 JSON 结构
   let parsedStructure: Record<string, string[]> | null = null
   try {
     parsedStructure = JSON.parse(structure)
@@ -161,21 +240,17 @@ const NetworkVisualization = memo(function NetworkVisualization({ structure, the
 
   return (
     <div className="space-y-3">
-      {/* 中心节点 - 可点击展开/收起 */}
+      {/* 中心节点 */}
       <div className="flex flex-col items-center">
         <button
           onClick={() => setIsExpanded(!isExpanded)}
           className="group flex flex-col items-center"
         >
           <div className="px-4 py-2 bg-indigo-500 text-white text-sm font-black border-[2px] border-black dark:border-gray-500 rounded-sm shadow-[2px_2px_0px_0px_#000] group-hover:bg-indigo-600 transition-colors">
-            {theme || '主题中心'}
+            {centerLabel}
           </div>
           <div className="mt-1 text-indigo-500 dark:text-indigo-400">
-            {isExpanded ? (
-              <ChevronUp className="w-4 h-4" />
-            ) : (
-              <ChevronDown className="w-4 h-4" />
-            )}
+            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
           </div>
         </button>
       </div>
@@ -183,15 +258,9 @@ const NetworkVisualization = memo(function NetworkVisualization({ structure, the
       {/* 连接线 + 分类卡片 */}
       {isExpanded && (
         <div>
-          {/* CSS 连接线 - 仅 PC 端显示 */}
           <div className="hidden sm:block relative h-8">
-            {/* 主干线 - 从中心向下 */}
             <div className="absolute left-1/2 top-0 w-px h-4 bg-indigo-400 dark:bg-indigo-500 -translate-x-1/2" />
-
-            {/* 横向连接线 */}
             <div className="absolute top-4 left-[10%] right-[10%] h-px bg-indigo-400 dark:bg-indigo-500" />
-
-            {/* 垂直分支线 - 指向每个分类 */}
             {categories.map((_, idx) => {
               const leftPercent = categoryCount > 1
                 ? 10 + (80 / (categoryCount - 1)) * idx
@@ -221,16 +290,73 @@ const NetworkVisualization = memo(function NetworkVisualization({ structure, the
                 <div className="p-2">
                   <div className="flex flex-wrap gap-1 justify-center">
                     {Array.isArray(words) && words.map((word, i) => (
-                      <WordTooltip key={i} word={word} language={videoLanguage} ttsPreload={ttsPreload}>
-                        <span className="px-1.5 py-1 bg-gray-100 dark:bg-gray-700 text-xs text-gray-700 dark:text-gray-300 border-[2px] border-gray-300 dark:border-gray-600 hover:border-indigo-400 dark:hover:border-indigo-500 hover:bg-indigo-50 dark:hover:bg-indigo-900/30 active:bg-indigo-100 dark:active:bg-indigo-900/50 transition-colors cursor-pointer rounded-sm">
-                          {word}
-                        </span>
-                      </WordTooltip>
+                      <NetworkWord key={i} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} variant="compact" />
                     ))}
                   </div>
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      )}
+    </div>
+  )
+})
+
+// ============================================
+// 简化版网络可视化（无 structure，只有 core_word + related_words）
+// ============================================
+
+interface SimpleNetworkVisualizationProps {
+  centerLabel: string
+  relatedWords: string[]
+  videoLanguage: VideoLanguage
+  ttsPreload?: TTSPreloadInstance
+  wordMap: Map<string, WordBrief>
+}
+
+const SimpleNetworkVisualization = memo(function SimpleNetworkVisualization({ centerLabel, relatedWords, videoLanguage, ttsPreload, wordMap }: SimpleNetworkVisualizationProps) {
+  const [isExpanded, setIsExpanded] = useState(true)
+  const wordCount = relatedWords.length
+
+  return (
+    <div className="space-y-3">
+      {/* 中心节点 */}
+      <div className="flex flex-col items-center">
+        <button
+          onClick={() => setIsExpanded(!isExpanded)}
+          className="group flex flex-col items-center"
+        >
+          <div className="px-4 py-2 bg-indigo-500 text-white text-sm font-black border-[2px] border-black dark:border-gray-500 rounded-sm shadow-[2px_2px_0px_0px_#000] group-hover:bg-indigo-600 transition-colors">
+            {centerLabel}
+          </div>
+          <div className="mt-1 text-indigo-500 dark:text-indigo-400">
+            {isExpanded ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+          </div>
+        </button>
+      </div>
+
+      {/* 扩展词网格 */}
+      {isExpanded && (
+        <div>
+          <div className="hidden sm:block relative h-4">
+            <div className="absolute left-1/2 top-0 w-px h-4 bg-indigo-400 dark:bg-indigo-500 -translate-x-1/2" />
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[2px_3px_0px_0px_#000] dark:shadow-[2px_3px_0px_0px_#666]">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-gray-100 dark:bg-gray-700 border-b-[2px] border-black dark:border-gray-600">
+              <Link2 className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+              <span className="text-xs font-bold text-indigo-700 dark:text-indigo-300">
+                延伸词 ({wordCount})
+              </span>
+            </div>
+            <div className="p-3">
+              <div className="flex flex-wrap gap-2 justify-center">
+                {relatedWords.map((word, i) => (
+                  <NetworkWord key={i} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} />
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       )}

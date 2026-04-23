@@ -74,8 +74,6 @@ export const localFrenchProvider: IDictionaryProvider = {
     try {
       // 确保词库已加载
       const wordMap = await loadFrenchWords()
-
-      // 查找单词
       const found = wordMap.get(normalizedWord)
 
       if (!found) {
@@ -117,8 +115,12 @@ async function loadFrenchWords(): Promise<Map<string, FrenchLocalWord>> {
   }
 
   try {
-    // 动态导入 JSON 文件
-    const data = await import('../../data/french/french_words_all.json') as FrenchWordsData
+    // 从 public/ 目录 fetch JSON（Turbopack 不支持 src 外的动态 import）
+    const response = await fetch('/data/french/french_words_all.json')
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`)
+    }
+    const data: FrenchWordsData = await response.json()
 
     frenchWordsCache = new Map()
 

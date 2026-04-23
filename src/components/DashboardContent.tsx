@@ -102,37 +102,36 @@ function StatBox({
   const content = (
     <div className="
       relative h-full
-      bg-white dark:bg-gray-800 // 🌙 统一卡片底色（与系统词库一致）
-      border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
-      shadow-[4px_4px_0px_0px_#000] dark:shadow-none
-
-      hover:translate-x-[2px] hover:translate-y-[2px]
-      hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-none
+      bg-white dark:bg-gray-800
+      border border-gray-200 dark:border-gray-700
+      rounded-lg shadow-sm hover:shadow-md
+      hover:-translate-y-0.5
       transition-all duration-200 group
       flex flex-col justify-center p-4
     ">
       <div className="flex items-center gap-3">
         <div className={`
           w-12 h-12 shrink-0
-          border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
+          border border-gray-200 dark:border-gray-700
+          rounded-md
           flex items-center justify-center
-          shadow-[2px_2px_0px_0px_#000] dark:shadow-none
+          shadow-sm
           ${color}
         `}>
-          <Icon className="w-6 h-6 text-black" strokeWidth={3} />
+          <Icon className="w-6 h-6 text-black" strokeWidth={2.5} />
         </div>
         <div className="flex flex-col min-w-0">
-          <span className="text-xs font-black text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1">
+          <span className="text-xs font-bold text-gray-500 dark:text-slate-400 uppercase tracking-wider mb-1">
             {label}
           </span>
           <div className="flex items-baseline gap-0.5 leading-none">
-            <span className={`font-black text-black dark:text-slate-100 ${
+            <span className={`font-bold text-black dark:text-slate-100 ${
               Number(value) >= 1000 ? 'text-lg' :
               Number(value) >= 100 ? 'text-xl' : 'text-2xl'
             }`}>
               {value}
             </span>
-            <span className="text-[10px] font-bold text-gray-400 dark:text-slate-500 shrink-0">
+            <span className="text-[10px] font-semibold text-gray-400 dark:text-slate-500 shrink-0">
               {unit}
             </span>
           </div>
@@ -168,30 +167,25 @@ function ProgressCardComponent(props: ProgressCardProps & { isFirstCard?: boolea
     <Link href={continueURL} onClick={handleClick} className="group block" data-testid="progress-card" data-book-id={bookId}>
       <div className={`
         relative w-full cursor-pointer overflow-hidden flex flex-col transition-all duration-200
-        bg-white dark:bg-gray-800 // 🌙 统一卡片底色（与系统词库一致）
-
-        // 🌙 统一边框逻辑（与系统词库一致）
-        border-[3px] border-black dark:border-gray-700
-
-        shadow-[6px_6px_0px_0px_#000] dark:shadow-none
-
-        hover:translate-x-[2px] hover:translate-y-[2px]
-        hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-none
-        dark:hover:bg-gray-800 // Hover 变亮一点（与系统词库一致）
-        min-h-[110px] rounded-sm // 🌟 降低高度：从 140px -> 110px
+        bg-white dark:bg-gray-800
+        border border-gray-200 dark:border-gray-700 rounded-lg
+        shadow-sm hover:shadow-md
+        hover:-translate-y-0.5
+        dark:hover:bg-gray-800
+        min-h-[110px]
       `}>
         {/* ... 内容保持不变，只改内部文字颜色 ... */}
         <div className="p-2 flex flex-col h-full">
           <div className="flex items-start justify-between mb-1.5">
-            <h3 className="font-black text-sm text-black dark:text-slate-100 line-clamp-1">{bookTitle}</h3>
-            <span className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 text-[9px] font-bold text-gray-600 dark:text-slate-400 rounded-sm">
+            <h3 className="font-bold text-sm text-black dark:text-slate-100 line-clamp-1">{bookTitle}</h3>
+            <span className="px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 text-[9px] font-semibold text-gray-600 dark:text-slate-400 rounded">
               {mode}
             </span>
           </div>
 
           <div className="mt-auto">
             <div className="flex justify-between items-end mb-1">
-              <span className="text-xl font-black text-black dark:text-slate-100">{progress}%</span>
+              <span className="text-xl font-bold text-black dark:text-slate-100">{progress}%</span>
               <span className="text-[9px] font-mono text-gray-500 dark:text-slate-500">{learnedCount}/{totalWords}</span>
             </div>
             {/* 进度条槽 */}
@@ -199,7 +193,7 @@ function ProgressCardComponent(props: ProgressCardProps & { isFirstCard?: boolea
               <div className="h-full bg-[#B4F416]" style={{width: `${Math.max(progress, 5)}%`}}></div>
             </div>
             {/* 时间标签 */}
-            <div className="mt-1 flex items-center gap-1 text-[8px] font-bold text-gray-400 dark:text-slate-600">
+            <div className="mt-1 flex items-center gap-1 text-[8px] font-semibold text-gray-400 dark:text-slate-600">
               <div className="w-1 h-1 rounded-full bg-purple-500"></div>
               <TimeLabel timestamp={lastStudyTime} />
             </div>
@@ -293,27 +287,25 @@ function CreateButton() {
     <Link href="/library/new" onClick={handleClick} className="block h-full">
       <button className="
         w-full h-full
-        bg-white dark:bg-gray-800 // 🌙 统一卡片底色（与系统词库一致）
-        border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
-        shadow-[4px_4px_0px_0px_#000] dark:shadow-none
-
-        hover:translate-x-[2px] hover:translate-y-[2px]
-        hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-none
+        bg-white dark:bg-gray-800
+        border border-gray-200 dark:border-gray-700 rounded-lg
+        shadow-sm hover:shadow-md
+        hover:-translate-y-0.5
         transition-all duration-200 group
         p-4 flex items-center justify-between
       ">
         <div className="text-left">
-          <h3 className="text-base font-black text-black dark:text-slate-100 leading-tight">新建词库</h3>
-          <p className="text-[10px] font-bold text-gray-400 dark:text-slate-500 uppercase tracking-widest mt-1">CUSTOM DECK</p>
+          <h3 className="text-base font-bold text-black dark:text-slate-100 leading-tight">新建词库</h3>
+          <p className="text-[10px] font-semibold text-gray-400 dark:text-slate-500 uppercase tracking-widest mt-1">CUSTOM DECK</p>
         </div>
         <div className="
           w-10 h-10 shrink-0 bg-[#B4F416]
-          border-[3px] border-black dark:border-gray-700 // 🌙 统一边框（与系统词库一致）
-          flex items-center justify-center
-          shadow-[2px_2px_0px_0px_#000] dark:shadow-none
+          border border-[#99CC00] dark:border-gray-600
+          flex items-center justify-center rounded-md
+          shadow-sm group-hover:shadow-md
           group-hover:rotate-90 transition-transform duration-300
         ">
-          <Plus className="w-5 h-5 text-black" strokeWidth={3} />
+          <Plus className="w-5 h-5 text-black" strokeWidth={2.5} />
         </div>
       </button>
     </Link>

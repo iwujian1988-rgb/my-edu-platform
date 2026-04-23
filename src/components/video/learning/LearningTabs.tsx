@@ -238,7 +238,7 @@ export function LearningTabs({
       case 'pronunciation':
         return <PronunciationTipsTab tips={pronunciationTips} ttsPreload={ttsPreload} />
       case 'network':
-        return <VocabularyNetworkTab network={vocabularyNetwork} videoLanguage={videoLanguage} ttsPreload={ttsPreload} />
+        return <VocabularyNetworkTab network={vocabularyNetwork} wordCards={words} videoLanguage={videoLanguage} ttsPreload={ttsPreload} />
       default:
         return null
     }
@@ -579,10 +579,10 @@ export function WordsTab({ words, videoLanguage, ttsPreload, onJumpToSubtitle, o
                   {(showAllExamples ? word.examples : word.examples.slice(0, 1)).map((ex, idx) => (
                     <div key={idx} className={idx > 0 ? 'mt-2 pt-2 border-t border-indigo-200 dark:border-indigo-700' : ''}>
                       <p className="text-sm text-indigo-800 dark:text-indigo-200">
-                        {ex.fr || ex.en}
+                        {ex.fr || ex.french || ex.en}
                       </p>
                       <p className="text-xs text-indigo-600 dark:text-indigo-400 mt-1">
-                        {ex.zh}
+                        {ex.zh || ex.chinese}
                       </p>
                     </div>
                   ))}

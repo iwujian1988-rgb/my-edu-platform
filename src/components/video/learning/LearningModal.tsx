@@ -46,7 +46,7 @@ import type {
 } from '@/types/video'
 import { GrammarPointsTab } from './GrammarPointsTab'
 import { PronunciationTipsTab } from './PronunciationTipsTab'
-import { VocabularyNetworkTab } from './VocabularyNetworkTab'
+import { VocabularyNetworkTab, hasVocabularyNetworkContent } from './VocabularyNetworkTab'
 import { WordsTab } from './LearningTabs'
 import { useTTSPreload } from '@/hooks/useTTSPreload'
 import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
@@ -547,7 +547,7 @@ export function LearningModal({
             )}
 
             {/* 词汇网络 */}
-            {vocabularyNetwork && vocabularyNetwork.nodes && vocabularyNetwork.nodes.length > 0 && (
+            {hasVocabularyNetworkContent(vocabularyNetwork) && (
               <div>
                 <div
                   className="bg-indigo-200 dark:bg-indigo-900/40 px-3 py-2 cursor-pointer sticky top-0 z-10"
@@ -561,7 +561,7 @@ export function LearningModal({
                 </div>
                 {expandedSections.has('network') && (
                   <div className="p-3 bg-white dark:bg-gray-800">
-                    <VocabularyNetworkTab network={vocabularyNetwork} videoLanguage={video.language} ttsPreload={ttsPreload} />
+                    <VocabularyNetworkTab network={vocabularyNetwork} wordCards={words} videoLanguage={video.language} ttsPreload={ttsPreload} />
                   </div>
                 )}
               </div>

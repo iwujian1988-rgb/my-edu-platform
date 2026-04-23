@@ -75,6 +75,10 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       difficulty_analysis: null,
       has_access: false,
       user_progress: null,
+      grammar_points: [],
+      pronunciation_tips: [],
+      vocabulary_network: null,
+      creator: null,
       exerciseProgress: [],
     }
   }
@@ -380,12 +384,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     } : null,
     grammar_points: grammarPointsResult.data || [],
     pronunciation_tips: pronunciationTipsResult.data || [],
-    vocabulary_network: (() => {
-      const vn = vocabularyNetworkResult.data || null
-      const fs = require('fs')
-      fs.appendFileSync('/tmp/vocab-debug.log', `[${new Date().toISOString()}] videoId=${videoId} vn=${vn ? 'HAS_DATA:' + vn.theme : 'NULL'} error=${vocabularyNetworkResult.error?.message || 'none'}\n`)
-      return vn
-    })(),
+    vocabulary_network: vocabularyNetworkResult.data || null,
     creator: creatorResult.data || null,
     exerciseProgress: await fetchExerciseProgress(supabase, userId, transformedExercises),
   }

@@ -3,8 +3,8 @@
 /**
  * 可拖动画中画 (PIP) 组件
  *
- * 核心优化：不再创建独立的 <video> 元素，而是复用主视频元素。
- * 通过 appendChild 将主视频 DOM 节点移入 PIP 容器，零缓冲延迟。
+ * 通过 CSS position: fixed 将主视频元素浮到 PIP 位置，
+ * 不移动 DOM 节点，避免 Android Chrome 移动 video 元素导致重载。
  *
  * 功能：
  * - 原生 touch 事件处理拖动
@@ -35,7 +35,7 @@ const DRAG_THRESHOLD = 5
 
 interface DraggablePIPProps {
   video: Video
-  /** 外部传入的主视频 DOM 元素，直接移入 PIP 容器（零缓冲） */
+  /** 外部传入的主视频 DOM 元素，通过 CSS fixed 定位到 PIP 位置 */
   videoElement: HTMLVideoElement | null
   isPlaying: boolean
   currentTime: number
@@ -75,9 +75,6 @@ export function DraggablePIP({
   className,
 }: DraggablePIPProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const videoSlotRef = useRef<HTMLDivElement>(null)
-  const originalParentRef = useRef<HTMLElement | null>(null)
-  const originalNextSiblingRef = useRef<Node | null>(null)
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 })
   const [isDragging, setIsDragging] = useState(false)
   const [hasDragged, setHasDragged] = useState(false)
@@ -88,76 +85,44 @@ export function DraggablePIP({
   const trackRef = useRef<HTMLDivElement>(null)
   const [seekingPercent, setSeekingPercent] = useState<number | null>(null) // 拖拽中本地视觉进度
 
-  // 将外部视频元素移入 PIP 容器（挂载时），卸载时还原
-  // 关键：移动前必须 pause()，与 DraggableAudioPIP 一致
-  // Android Chrome 对播放中的 video 执行 appendChild 会触发重载导致进度丢失
+  // 通过 CSS position: fixed 将视频元素浮到 PIP 位置（不移动 DOM）
   useEffect(() => {
-    if (!videoElement || !videoSlotRef.current) return
+    if (!videoElement) return
 
-    // 记录原始位置，以便还原
-    originalParentRef.current = videoElement.parentElement
-    originalNextSiblingRef.current = videoElement.nextSibling
-
-    // 保存播放状态和进度
-    const wasPlaying = !videoElement.paused
-    const savedTime = videoElement.currentTime
-
-    // 调整样式适配 PIP 尺寸
-    videoElement.style.width = '100%'
-    videoElement.style.height = '100%'
-    videoElement.style.objectFit = 'contain'
-    videoElement.style.aspectRatio = ''
-
-    // 先暂停，再移动（Android Chrome 播放中移动会重载）
-    videoElement.pause()
-
-    // 移入 PIP 容器
-    videoSlotRef.current.appendChild(videoElement)
-
-    // 移动后恢复进度和播放状态
-    if (savedTime > 0) {
-      videoElement.currentTime = savedTime
-    }
-    if (wasPlaying) {
-      videoElement.play().catch(err => {
-        console.log('[DraggablePIP] Auto-play after move blocked:', err)
-      })
-    }
+    // 应用 PIP 固定定位样式
+    videoElement.style.position = 'fixed'
+    videoElement.style.zIndex = '101'
+    videoElement.style.pointerEvents = 'none'
+    videoElement.style.borderRadius = '8px'
+    videoElement.style.border = '2px solid black'
+    videoElement.style.boxShadow = '3px 3px 0px 0px #000'
 
     return () => {
-      const parent = originalParentRef.current
-      if (parent && videoElement.parentElement !== parent) {
-        // 保存播放状态和进度
-        const wasPlaying = !videoElement.paused
-        const savedTime = videoElement.currentTime
-
-        // 先暂停，再移动
-        videoElement.pause()
-
-        // 移回原位置
-        const nextSibling = originalNextSiblingRef.current
-        if (nextSibling && nextSibling.parentNode === parent) {
-          parent.insertBefore(videoElement, nextSibling)
-        } else {
-          parent.appendChild(videoElement)
-        }
-
-        // 移动后恢复进度和播放状态
-        if (savedTime > 0) {
-          videoElement.currentTime = savedTime
-        }
-        if (wasPlaying) {
-          videoElement.play().catch((err) => {
-            console.warn('[DraggablePIP] Failed to resume playback after restore:', err)
-          })
-        }
-      }
-      // 清除 PIP 样式
+      // 清除所有 PIP 样式
+      videoElement.style.position = ''
+      videoElement.style.zIndex = ''
+      videoElement.style.left = ''
+      videoElement.style.top = ''
       videoElement.style.width = ''
       videoElement.style.height = ''
       videoElement.style.objectFit = ''
+      videoElement.style.pointerEvents = ''
+      videoElement.style.borderRadius = ''
+      videoElement.style.border = ''
+      videoElement.style.boxShadow = ''
     }
   }, [videoElement])
+
+  // 同步 position 到 video 元素的 CSS（拖动时实时更新）
+  useEffect(() => {
+    if (!videoElement) return
+
+    videoElement.style.left = `${position.x}px`
+    videoElement.style.top = `${position.y}px`
+    videoElement.style.width = `${PIP_WIDTH}px`
+    videoElement.style.height = `${PIP_HEIGHT}px`
+    videoElement.style.objectFit = 'contain'
+  }, [videoElement, position.x, position.y])
 
   // 监听视频元素的 timeupdate 事件，上报进度给父组件
   useEffect(() => {
@@ -378,9 +343,6 @@ export function DraggablePIP({
         onMouseDown={handleDragStart}
         onTouchStart={handleDragStart}
       >
-        {/* 视频插槽 - 外部 video 元素将移入此处 */}
-        <div ref={videoSlotRef} className="w-full h-full" />
-
         {/* 控制层 — PIP 小窗始终显示控制条 */}
         <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/70 to-transparent">
           {/* 进度条 — 拖拽 / 点击 seek */}

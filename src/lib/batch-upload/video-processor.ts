@@ -60,6 +60,7 @@ interface VocabularyInput {
   first_appearance?: string
   occurrence_count?: number
   cefr_level: string
+  context_note?: string
   example_sentence?: {
     french: string
     chinese: string
@@ -456,11 +457,15 @@ export async function processSingleVideo(
           example_translation: example?.translation || null,
           subtitle_start_time: example?.startTime || 0,
           subtitle_end_time: example?.endTime || 0,
+          context_note: original.context_note || null,
           gender: dictResult?.gender || null,
           cefr_level: dictResult?.cefrLevel || original.cefr_level || null,
           definitions: definitions.length > 0 ? definitions : null,
           examples: dictExamples.length > 0 ? dictExamples : null,
-          difficulty_level: cefrToNumber(original.cefr_level),
+          difficulty_level: (() => {
+            const cefr = dictResult?.cefrLevel || original.cefr_level
+            return cefr ? cefrToNumber(cefr) : null
+          })(),
           display_order: idx,
           is_reviewed: true,
           occurrence_count: original.occurrence_count || 1,
@@ -504,7 +509,7 @@ export async function processSingleVideo(
         formula: expr.grammar_usage || expr.usage_note || null,
         meaning: expr.chinese || expr.meaning || null,
         examples: expr.example ? [{ original: expr.example.french, cn: expr.example.chinese }] : null,
-        difficulty_level: cefrToNumber(expr.cefr_level),
+        difficulty_level: expr.cefr_level ? cefrToNumber(expr.cefr_level) : null,
         subtitle_start_time: example?.startTime || 0,
         subtitle_end_time: example?.endTime || 0,
         display_order: idx,
@@ -608,6 +613,7 @@ export async function processSingleVideo(
         structure: structureData,
         related_words: relatedWordsData,
         collocations: vocabNetwork.collocations || null,
+        core_word: vocabNetwork.core_word || null,
       })
 
     if (!networkError) {
