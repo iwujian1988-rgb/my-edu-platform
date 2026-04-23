@@ -77,34 +77,43 @@ export function AudioPlayer({
       || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
   }, [])
 
-  // iOS：首次播放后后台下载整个音频为 Blob，完成后切换 src
+  // iOS：首次播放 5 秒后后台下载整个音频为 Blob，完成后切换 src
+  // 延迟 5 秒避免和首次播放争抢带宽导致播放失败
   useEffect(() => {
     if (!isIOSRef.current || !hasStarted) return
     if (isBlobReadyRef.current) return
 
+    const BLOB_DOWNLOAD_DELAY_MS = 5000
     const controller = new AbortController()
 
-    fetch(video.video_url, { signal: controller.signal })
-      .then(res => res.blob())
-      .then(blob => {
-        if (controller.signal.aborted) return
-        const url = URL.createObjectURL(blob)
-        blobUrlRef.current = url
-        isBlobReadyRef.current = true
+    const timer = setTimeout(() => {
+      if (controller.signal.aborted) return
 
-        // 无缝切换：记住当前位置和播放状态
-        const el = audioRef.current
-        if (!el) return
-        const savedTime = el.currentTime
-        const wasPlaying = !el.paused
+      fetch(video.video_url, { signal: controller.signal })
+        .then(res => res.blob())
+        .then(blob => {
+          if (controller.signal.aborted) return
+          const url = URL.createObjectURL(blob)
+          blobUrlRef.current = url
+          isBlobReadyRef.current = true
 
-        pendingSeekRef.current = savedTime
-        shouldAutoPlayRef.current = wasPlaying
-        setAudioSrc(url)
-      })
-      .catch(() => { /* Blob 下载失败，保持远程 URL，seek 时走 Media Fragment 兜底 */ })
+          // 无缝切换：记住当前位置和播放状态
+          const el = audioRef.current
+          if (!el) return
+          const savedTime = el.currentTime
+          const wasPlaying = !el.paused
 
-    return () => controller.abort()
+          pendingSeekRef.current = savedTime
+          shouldAutoPlayRef.current = wasPlaying
+          setAudioSrc(url)
+        })
+        .catch(() => { /* Blob 下载失败，保持远程 URL，seek 时走 Media Fragment 兜底 */ })
+    }, BLOB_DOWNLOAD_DELAY_MS)
+
+    return () => {
+      clearTimeout(timer)
+      controller.abort()
+    }
   }, [hasStarted, video.video_url])
 
   // 组件卸载时释放 Blob URL
