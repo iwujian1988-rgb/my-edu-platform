@@ -60,11 +60,59 @@ export function AudioPlayer({
   const shouldAutoPlayRef = useRef(false)
   const pendingSeekRef = useRef<number | null>(null)
   const seekGenRef = useRef(0)
-  // iOS 修复：用 Media Fragment URL 代替 currentTime seek
-  // iOS 的 <audio> currentTime seek 在 VBR/流式音频上有数秒偏差，
-  // 改用 URL#t=时间 片段让 iOS 从精确位置重新加载
   const [audioSrc, setAudioSrc] = useState(video.video_url)
   const coverImageUrl = video.cover_url || video.thumbnail_url || fallbackImageUrl
+
+  // ── iOS 精确 seek：后台下载音频到内存，切换为 Blob URL ──
+  // iOS 的 <audio> currentTime seek 在远程音频上有数秒偏差，
+  // 将音频下载到本地后 currentTime 即时且准确。
+  const isIOSRef = useRef(false)
+  const isBlobReadyRef = useRef(false)
+  const blobUrlRef = useRef<string | null>(null)
+
+  // 检测 iOS（只执行一次）
+  useEffect(() => {
+    if (typeof navigator === 'undefined') return
+    isIOSRef.current = /iPad|iPhone|iPod/.test(navigator.userAgent)
+      || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+  }, [])
+
+  // iOS：首次播放后后台下载整个音频为 Blob，完成后切换 src
+  useEffect(() => {
+    if (!isIOSRef.current || !hasStarted) return
+    if (isBlobReadyRef.current) return
+
+    const controller = new AbortController()
+
+    fetch(video.video_url, { signal: controller.signal })
+      .then(res => res.blob())
+      .then(blob => {
+        if (controller.signal.aborted) return
+        const url = URL.createObjectURL(blob)
+        blobUrlRef.current = url
+        isBlobReadyRef.current = true
+
+        // 无缝切换：记住当前位置和播放状态
+        const el = audioRef.current
+        if (!el) return
+        const savedTime = el.currentTime
+        const wasPlaying = !el.paused
+
+        pendingSeekRef.current = savedTime
+        shouldAutoPlayRef.current = wasPlaying
+        setAudioSrc(url)
+      })
+      .catch(() => { /* Blob 下载失败，保持远程 URL，seek 时走 Media Fragment 兜底 */ })
+
+    return () => controller.abort()
+  }, [hasStarted, video.video_url])
+
+  // 组件卸载时释放 Blob URL
+  useEffect(() => {
+    return () => {
+      if (blobUrlRef.current) URL.revokeObjectURL(blobUrlRef.current)
+    }
+  }, [])
 
   // 设置 Media Session 元数据（iOS 锁屏播放器、Android 通知栏）
   useEffect(() => {
@@ -105,21 +153,25 @@ export function AudioPlayer({
   }, [hasStarted, initialPosition])
 
   // 外部控制：跳转到指定时间
-  // iOS 修复：iOS 的 <audio> currentTime seek 在 VBR 音频上偏差达数秒。
-  // 改用 Media Fragment URL（url#t=秒数）让 iOS 从精确位置加载。
+  // PC/Android: currentTime 即时 seek
+  // iOS + Blob 就绪: currentTime（本地数据，即时准确）
+  // iOS + Blob 未就绪: Media Fragment URL 兜底（准确，~2s）
   useEffect(() => {
     if (seekTo === undefined || seekTo < 0) return
     const el = audioRef.current; if (!el) return
     if (!hasStarted) { setHasStarted(true); setIsLoading(true); pendingSeekRef.current = seekTo; return }
 
-    const gen = ++seekGenRef.current
-
-    setIsLoading(true)
-    // 通过 media fragment URL 精确定位，canplay 后自动播放
-    shouldAutoPlayRef.current = true
-    const baseUrl = video.video_url.split('#')[0]
-    setAudioSrc(baseUrl + '#t=' + seekTo)
-    // 清理：若快速连点，最新一次 setAudioSrc 生效，旧的 canplay 被 gen 过滤
+    if (isIOSRef.current && !isBlobReadyRef.current) {
+      // iOS Blob 还没下载好：用 Media Fragment 兜底
+      setIsLoading(true)
+      shouldAutoPlayRef.current = true
+      const baseUrl = video.video_url.split('#')[0]
+      setAudioSrc(baseUrl + '#t=' + seekTo)
+    } else {
+      // PC/Android 或 iOS Blob 已就绪：currentTime 即时 seek
+      el.currentTime = seekTo
+      if (el.paused) el.play().catch(() => {})
+    }
   }, [seekTo, seekTrigger, hasStarted, video.video_url])
 
   useEffect(() => {
