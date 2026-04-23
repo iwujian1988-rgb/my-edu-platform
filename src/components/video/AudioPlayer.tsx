@@ -69,8 +69,6 @@ export function AudioPlayer({
   const isIOSRef = useRef(false)
   const isBlobReadyRef = useRef(false)
   const blobUrlRef = useRef<string | null>(null)
-  // 追踪 media fragment seek 目标，防止 Blob 下载完成时覆盖为旧位置
-  const mediaFragmentSeekRef = useRef<number | null>(null)
 
   // 检测 iOS（只执行一次）
   useEffect(() => {
@@ -100,13 +98,9 @@ export function AudioPlayer({
           isBlobReadyRef.current = true
 
           // 无缝切换：记住当前位置和播放状态
-          // 如果 media fragment seek 正在进行，用 seek 目标替代 el.currentTime
-          // 因为 iOS 的 el.currentTime 此时可能尚未跳转到 fragment 指定位置
           const el = audioRef.current
           if (!el) return
-          const seekTarget = mediaFragmentSeekRef.current
-          mediaFragmentSeekRef.current = null
-          const savedTime = seekTarget ?? el.currentTime
+          const savedTime = el.currentTime
           const wasPlaying = !el.paused
 
           pendingSeekRef.current = savedTime
@@ -169,8 +163,8 @@ export function AudioPlayer({
 
   // 外部控制：跳转到指定时间
   // PC/Android: currentTime 即时 seek
-  // iOS + Blob 就绪: pause → seek → wait seeked → play（防止旧缓冲区继续输出）
-  // iOS + Blob 未就绪: Media Fragment URL 兜底
+  // iOS + Blob 就绪: currentTime（本地数据，即时准确）
+  // iOS + Blob 未就绪: Media Fragment URL 兜底（准确，~2s）
   useEffect(() => {
     if (seekTo === undefined || seekTo < 0) return
     const el = audioRef.current; if (!el) return
@@ -178,43 +172,12 @@ export function AudioPlayer({
 
     if (isIOSRef.current && !isBlobReadyRef.current) {
       // iOS Blob 还没下载好：用 Media Fragment 兜底
-      // 必须先 pause 阻止旧缓冲区继续输出
-      const wasPlaying = !el.paused
-      el.pause()
-      setIsPlaying(false)
-      // 记录 seek 目标，防止 Blob 下载完成时用 el.currentTime 覆盖
-      mediaFragmentSeekRef.current = seekTo
-      // handleCanPlay 中显式 seek + 等 seeked 后再 play
-      pendingSeekRef.current = seekTo
-      shouldAutoPlayRef.current = wasPlaying
       setIsLoading(true)
+      shouldAutoPlayRef.current = true
       const baseUrl = video.video_url.split('#')[0]
       setAudioSrc(baseUrl + '#t=' + seekTo)
-    } else if (isIOSRef.current) {
-      // iOS + Blob 已就绪：必须先 pause 再 seek，等 seeked 后再 play
-      // iOS 音频管线在播放中直接设 currentTime 会继续输出旧缓冲区 ~5 秒
-      const wasPlaying = !el.paused
-      el.pause()
-      setIsPlaying(false)
-
-      const gen = ++seekGenRef.current
-      const onSeeked = () => {
-        el.removeEventListener('seeked', onSeeked)
-        clearTimeout(fallbackTimer)
-        // 快速连点时，只处理最新一次 seek
-        if (seekGenRef.current !== gen) return
-        if (wasPlaying) el.play().catch(() => {})
-      }
-      el.addEventListener('seeked', onSeeked)
-      // 兜底：如果 seeked 在 1 秒内未触发，强制恢复播放
-      const fallbackTimer = setTimeout(() => {
-        el.removeEventListener('seeked', onSeeked)
-        if (seekGenRef.current !== gen) return
-        if (wasPlaying) el.play().catch(() => {})
-      }, 1000)
-      el.currentTime = seekTo
     } else {
-      // PC/Android：currentTime 即时 seek
+      // PC/Android 或 iOS Blob 已就绪：currentTime 即时 seek
       el.currentTime = seekTo
       if (el.paused) el.play().catch(() => {})
     }
@@ -229,24 +192,14 @@ export function AudioPlayer({
   const handleCanPlay = useCallback(() => {
     const el = audioRef.current; if (!el) return
     setIsLoading(false)
-    // 先处理 pending seek（确保播放位置正确），再自动播放
+    // media fragment seek 后自动播放（或首次加载自动播放）
+    if (shouldAutoPlayRef.current) { shouldAutoPlayRef.current = false; el.play().catch(() => {}) }
+    // 首次播放的 pending seek（hasStarted=false 时的延迟跳转）
     if (pendingSeekRef.current !== null) {
       const targetTime = pendingSeekRef.current
       pendingSeekRef.current = null
       el.currentTime = targetTime
-    }
-    if (shouldAutoPlayRef.current) {
-      shouldAutoPlayRef.current = false
-      // iOS: 等 seeked 事件确保 seek 完成后再播放，避免旧缓冲区输出
-      if (isIOSRef.current) {
-        const onSeeked = () => {
-          el.removeEventListener('seeked', onSeeked)
-          el.play().catch(() => {})
-        }
-        el.addEventListener('seeked', onSeeked)
-      } else {
-        el.play().catch(() => {})
-      }
+      el.play().catch(() => {})
     }
   }, [])
 
