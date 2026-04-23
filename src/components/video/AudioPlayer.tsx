@@ -101,8 +101,8 @@ export function AudioPlayer({
   }, [hasStarted, initialPosition])
 
   // 外部控制：跳转到指定时间
-  // iOS 修复：currentTime 赋值是异步的，必须等 seeked 事件后再 play()，
-  // 否则 play() 会从旧位置开始播放，导致进度落后于字幕。
+  // iOS 修复：播放中直接设 currentTime 时，iOS 音频管线继续从旧缓冲区输出，
+  // 导致实际听到的位置比目标慢数秒。必须先 pause → seek → 等 seeked → 再 play。
   useEffect(() => {
     if (seekTo === undefined || seekTo < 0) return
     const el = audioRef.current; if (!el) return
@@ -111,15 +111,16 @@ export function AudioPlayer({
     const wasPaused = el.paused
     const gen = ++seekGenRef.current
 
+    // 关键：先暂停，阻止旧缓冲区继续输出
+    el.pause()
+    setIsPlaying(false)
+
     const onSeeked = () => {
       el.removeEventListener('seeked', onSeeked)
       // 快速连点时，只处理最新一次 seek
       if (seekGenRef.current !== gen) return
-      // iOS seek 偏差修正：二次 seek 缩小误差
-      if (Math.abs(el.currentTime - seekTo) > 0.3) {
-        el.currentTime = seekTo
-      }
-      if (wasPaused) el.play().catch(() => {})
+      // seek 完成后恢复播放
+      el.play().catch(() => {})
     }
 
     el.addEventListener('seeked', onSeeked)
