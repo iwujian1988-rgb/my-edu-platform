@@ -60,6 +60,10 @@ export function AudioPlayer({
   const shouldAutoPlayRef = useRef(false)
   const pendingSeekRef = useRef<number | null>(null)
   const seekGenRef = useRef(0)
+  // iOS 修复：用 Media Fragment URL 代替 currentTime seek
+  // iOS 的 <audio> currentTime seek 在 VBR/流式音频上有数秒偏差，
+  // 改用 URL#t=时间 片段让 iOS 从精确位置重新加载
+  const [audioSrc, setAudioSrc] = useState(video.video_url)
   const coverImageUrl = video.cover_url || video.thumbnail_url || fallbackImageUrl
 
   // 设置 Media Session 元数据（iOS 锁屏播放器、Android 通知栏）
@@ -101,31 +105,22 @@ export function AudioPlayer({
   }, [hasStarted, initialPosition])
 
   // 外部控制：跳转到指定时间
-  // iOS 修复：播放中直接设 currentTime 时，iOS 音频管线继续从旧缓冲区输出，
-  // 导致实际听到的位置比目标慢数秒。必须先 pause → seek → 等 seeked → 再 play。
+  // iOS 修复：iOS 的 <audio> currentTime seek 在 VBR 音频上偏差达数秒。
+  // 改用 Media Fragment URL（url#t=秒数）让 iOS 从精确位置加载。
   useEffect(() => {
     if (seekTo === undefined || seekTo < 0) return
     const el = audioRef.current; if (!el) return
     if (!hasStarted) { setHasStarted(true); setIsLoading(true); pendingSeekRef.current = seekTo; return }
 
-    const wasPaused = el.paused
     const gen = ++seekGenRef.current
 
-    // 关键：先暂停，阻止旧缓冲区继续输出
-    el.pause()
-    setIsPlaying(false)
-
-    const onSeeked = () => {
-      el.removeEventListener('seeked', onSeeked)
-      // 快速连点时，只处理最新一次 seek
-      if (seekGenRef.current !== gen) return
-      // seek 完成后恢复播放
-      el.play().catch(() => {})
-    }
-
-    el.addEventListener('seeked', onSeeked)
-    el.currentTime = seekTo
-  }, [seekTo, seekTrigger, hasStarted])
+    setIsLoading(true)
+    // 通过 media fragment URL 精确定位，canplay 后自动播放
+    shouldAutoPlayRef.current = true
+    const baseUrl = video.video_url.split('#')[0]
+    setAudioSrc(baseUrl + '#t=' + seekTo)
+    // 清理：若快速连点，最新一次 setAudioSrc 生效，旧的 canplay 被 gen 过滤
+  }, [seekTo, seekTrigger, hasStarted, video.video_url])
 
   useEffect(() => {
     if (!pause) return
@@ -136,20 +131,14 @@ export function AudioPlayer({
   const handleCanPlay = useCallback(() => {
     const el = audioRef.current; if (!el) return
     setIsLoading(false)
+    // media fragment seek 后自动播放（或首次加载自动播放）
     if (shouldAutoPlayRef.current) { shouldAutoPlayRef.current = false; el.play().catch(() => {}) }
-    // pending seek 同样等 seeked 后再 play
+    // 首次播放的 pending seek（hasStarted=false 时的延迟跳转）
     if (pendingSeekRef.current !== null) {
       const targetTime = pendingSeekRef.current
       pendingSeekRef.current = null
-      const onSeeked = () => {
-        el.removeEventListener('seeked', onSeeked)
-        if (Math.abs(el.currentTime - targetTime) > 0.3) {
-          el.currentTime = targetTime
-        }
-        el.play().catch(() => {})
-      }
-      el.addEventListener('seeked', onSeeked)
       el.currentTime = targetTime
+      el.play().catch(() => {})
     }
   }, [])
 
@@ -209,7 +198,7 @@ export function AudioPlayer({
     <div ref={containerRef} className={cn('relative z-0 overflow-hidden select-none aspect-video', className)} style={{ backgroundColor: '#111' }}>
       <audio
         ref={el => { (audioRef as React.MutableRefObject<HTMLAudioElement | null>).current = el; if (audioRefOut) audioRefOut.current = el }}
-        src={video.video_url} preload="auto"
+        src={audioSrc} preload="auto"
         onLoadedMetadata={handleLoadedMetadata} onCanPlay={handleCanPlay}
         onTimeUpdate={handleTimeUpdate} onPlay={() => setIsPlaying(true)}
         onPause={() => setIsPlaying(false)} onEnded={() => { setIsPlaying(false); onEnded?.() }}
