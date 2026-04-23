@@ -22,7 +22,7 @@ export function DebugIOSSeekClient() {
   const [audioLoaded, setAudioLoaded] = useState(false)
   const logIdRef = useRef(0)
 
-  const TEST_AUDIO_URL = 'https://dingjian-oss.oss-cn-hangzhou.aliyuncs.com/podcast_audio/20250416_037_The_power_of_solitude.mp3'
+  const TEST_AUDIO_URL = "https://english-word-audio-wujian.oss-cn-hongkong.aliyuncs.com/french-podcasts%2FInnerFrench+%E4%B8%AD%E7%BA%A7%E6%B3%95%E8%AF%AD%2FE174+Apprendre+le+fran%C3%A7ais+en+immersion+dans+l'Utah.mp3"
   const SUBTITLE_INTERVAL = 10
   const subtitles = Array.from({ length: 12 }, (_, i) => ({
     id: i,
