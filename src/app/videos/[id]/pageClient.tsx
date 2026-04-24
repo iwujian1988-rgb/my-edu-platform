@@ -186,11 +186,15 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     setSeekToTime(subtitle.start_time)
     setSeekTrigger(prev => prev + 1)
     setSegmentEndTime(undefined)
-    // 直接操作音频/视频元素：在用户手势内 seek + play，绕过 iOS 自动播放限制
-    const el = isAudioContent ? mainAudioRef.current : mainVideoRef.current
-    if (el) {
-      el.currentTime = subtitle.start_time
-      if (el.paused) el.play().catch(() => {})
+    // 仅 iOS：在用户手势内直接 seek + play，绕过自动播放限制
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+      || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+    if (isIOS) {
+      const el = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+      if (el) {
+        el.currentTime = subtitle.start_time
+        if (el.paused) el.play().catch(() => {})
+      }
     }
   }, [isAudioContent])
 
