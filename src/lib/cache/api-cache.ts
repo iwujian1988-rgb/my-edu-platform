@@ -1,0 +1,168 @@
+/**
+ * 通用 API 缓存工具
+ *
+ * 用途：缓存 API 响应和 SSR 数据，减少对 Supabase（美国区域）的重复查询。
+ * 设计原则：
+ * - 缓存失败永远不阻塞业务逻辑（try/catch + 降级）
+ * - 使用 ioredis 单例复用连接
+ * - 支持泛型，类型安全
+ */
+
+import { Redis } from 'ioredis'
+
+/** Redis 单例（跨请求复用） */
+let redisInstance: Redis | null = null
+let redisDisabled = false
+
+const REDIS_CONNECT_TIMEOUT = 5000
+const MAX_RETRIES = 3
+
+/** 获取 Redis 单例，连接失败时返回 null */
+async function getRedis(): Promise<Redis | null> {
+  if (redisDisabled) return null
+  if (redisInstance) return redisInstance
+
+  const redisUrl = process.env.REDIS_URL
+  if (!redisUrl) {
+    redisDisabled = true
+    return null
+  }
+
+  try {
+    const client = new Redis(redisUrl, {
+      maxRetriesPerRequest: 2,
+      connectTimeout: REDIS_CONNECT_TIMEOUT,
+      enableOfflineQueue: false,
+      keepAlive: 30000,
+      retryStrategy(times) {
+        if (times > MAX_RETRIES) {
+          console.error('[api-cache] Redis 连接失败次数过多，暂时禁用')
+          redisDisabled = true
+          return null
+        }
+        return Math.min(times * 100, 2000)
+      },
+    })
+
+    client.on('error', (err) => {
+      console.error('[api-cache] Redis error:', (err as Error).message)
+    })
+
+    // 等待连接就绪或超时
+    await new Promise<void>((resolve, reject) => {
+      const timer = setTimeout(() => {
+        reject(new Error('Redis connect timeout'))
+      }, REDIS_CONNECT_TIMEOUT)
+
+      client.once('ready', () => {
+        clearTimeout(timer)
+        resolve()
+      })
+      client.once('error', () => {
+        clearTimeout(timer)
+        reject(new Error('Redis connect error'))
+      })
+    })
+
+    redisInstance = client
+    return redisInstance
+  } catch (err) {
+    console.error('[api-cache] Redis 初始化失败，缓存禁用:', (err as Error).message)
+    redisDisabled = true
+    return null
+  }
+}
+
+/**
+ * 从缓存读取数据
+ *
+ * @returns 缓存命中返回反序列化后的数据，未命中或出错返回 null
+ */
+export async function getCached<T>(key: string): Promise<T | null> {
+  try {
+    const redis = await getRedis()
+    if (!redis) return null
+
+    const raw = await redis.get(key)
+    if (!raw) return null
+
+    return JSON.parse(raw) as T
+  } catch {
+    // 缓存读失败 → 降级到直接查 DB
+    return null
+  }
+}
+
+/**
+ * 写入缓存
+ *
+ * @param ttl 过期时间（秒）
+ */
+export async function setCache<T>(key: string, data: T, ttl: number): Promise<void> {
+  try {
+    const redis = await getRedis()
+    if (!redis) return
+
+    await redis.setex(key, ttl, JSON.stringify(data))
+  } catch {
+    // 缓存写失败 → 静默忽略
+  }
+}
+
+/**
+ * 删除指定缓存 key
+ */
+export async function deleteCache(key: string): Promise<void> {
+  try {
+    const redis = await getRedis()
+    if (!redis) return
+
+    await redis.del(key)
+  } catch {
+    // 静默忽略
+  }
+}
+
+/**
+ * 按通配符模式批量删除缓存
+ *
+ * 例：invalidatePattern('videos:list:*')
+ */
+export async function invalidatePattern(pattern: string): Promise<void> {
+  try {
+    const redis = await getRedis()
+    if (!redis) return
+
+    const keys = await redis.keys(pattern)
+    if (keys.length > 0) {
+      await redis.del(...keys)
+    }
+  } catch {
+    // 静默忽略
+  }
+}
+
+/**
+ * 惯用缓存模式：先查缓存，未命中则执行 fetcher 并回填。
+ *
+ * @param key    缓存 key
+ * @param ttl    过期时间（秒）
+ * @param fetcher 数据获取函数（仅在缓存未命中时执行）
+ */
+export async function cacheable<T>(
+  key: string,
+  ttl: number,
+  fetcher: () => Promise<T>,
+): Promise<T> {
+  const cached = await getCached<T>(key)
+  if (cached !== null) {
+    return cached
+  }
+
+  const data = await fetcher()
+
+  // 回填缓存（不 await，不阻塞响应）
+  setCache(key, data, ttl).catch(() => {})
+
+  return data
+}

@@ -2,9 +2,40 @@ import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import type { Database } from '@/types/database'
 
+/** 完全公开的页面 — 不需要任何 auth 检查 */
+const PUBLIC_ROUTES = ['/privacy', '/clear-cache']
+
+/** 需要登录才能访问的受保护路由前缀 */
+const PROTECTED_ROUTES = [
+  '/dashboard',
+  '/study',
+  '/books',
+  '/practice',
+  '/mistakes',
+  '/calendar',
+  '/profile',
+  '/custom',
+  '/learning-plan',
+  '/typing',
+  '/speaker',
+  '/video-favorites',
+  '/video-flashcards',
+  '/video-stats',
+  '/settings',
+  '/videos',
+]
+
 export async function middleware(request: NextRequest) {
   const startTime = Date.now()
   const { pathname } = request.nextUrl
+
+  // 快速跳过：完全公开的页面，不需要 Supabase auth 调用（省 ~500ms）
+  const isPublicRoute = PUBLIC_ROUTES.some(
+    route => pathname === route || pathname.startsWith(`${route}/`)
+  )
+  if (isPublicRoute) {
+    return NextResponse.next()
+  }
 
   // 1. 初始 Response
   let response = NextResponse.next({
@@ -13,6 +44,31 @@ export async function middleware(request: NextRequest) {
     },
   })
 
+  // 快速判断：如果没有 Supabase auth cookies，用户未登录
+  // 避免在未登录用户上浪费 ~500ms 的 auth 网络调用
+  const hasSbCookies = request.cookies.getAll().some(c => c.name.startsWith('sb-'))
+
+  const isProtectedRoute = PROTECTED_ROUTES.some(route =>
+    pathname === route || pathname.startsWith(`${route}/`)
+  )
+
+  // 未登录 + 受保护路由 → 直接跳转登录，不需要调用 auth
+  if (!hasSbCookies && isProtectedRoute) {
+    const redirectUrl = new URL('/login', request.url)
+    redirectUrl.searchParams.set('redirect', pathname)
+    return NextResponse.redirect(redirectUrl)
+  }
+
+  // 未登录 + 非受保护路由（如首页、API）→ 不需要 auth，直接放行
+  // 注意：API 路由内部会自行处理 auth
+  if (!hasSbCookies && !pathname.startsWith('/admin') && !pathname.startsWith('/login') && !pathname.startsWith('/register')) {
+    return NextResponse.next()
+  }
+
+  // 以下情况需要 Supabase auth 调用：
+  // 1. 有 cookies 的用户（需要刷新 token）
+  // 2. admin 路由（需要验证管理员身份）
+  // 3. login/register（需要判断是否已登录以决定重定向）
   const clientStart = Date.now()
   const supabase = createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -23,25 +79,18 @@ export async function middleware(request: NextRequest) {
           return request.cookies.getAll()
         },
         setAll(cookiesToSet) {
-          // 更新 Request 中的 Cookie
           cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
 
-          // 重置 Response 以确保 Header 干净
           response = NextResponse.next({
             request,
           })
 
-          // 🚨【关键修复】强制覆盖 Cookie 属性 🚨
           cookiesToSet.forEach(({ name, value, options }) => {
             response.cookies.set(name, value, {
               ...options,
-              // 无论 SDK 怎么判断，生产环境强制为 true
               secure: process.env.NODE_ENV === 'production',
-              // 强制 SameSite 为 Lax
               sameSite: 'lax',
-              // 确保路径是根目录
               path: '/',
-              // 确保域名不被错误设置
               domain: undefined
             })
           })
@@ -51,17 +100,17 @@ export async function middleware(request: NextRequest) {
   )
   const clientTime = Date.now() - clientStart
 
-  // 2. 触发刷新逻辑
+  // 触发刷新逻辑
   const authStart = Date.now()
   const {
     data: { user },
   } = await supabase.auth.getUser()
   const authTime = Date.now() - authStart
 
-  // Debug log for library routes
+  // Debug log for library/study routes
   if (pathname.startsWith('/library') || pathname.startsWith('/study')) {
     const totalTime = Date.now() - startTime
-    console.log('🔍 [Middleware]', {
+    console.log('[Middleware]', {
       pathname,
       hasUser: !!user,
       userId: user?.id,
@@ -69,29 +118,14 @@ export async function middleware(request: NextRequest) {
     })
   }
 
-  // 3. 路由保护逻辑
-  const protectedRoutes = [
-    '/dashboard',
-    '/study',
-    '/books',
-    '/practice',
-    '/mistakes',
-    '/calendar',
-    '/profile',
-    '/custom',
-  ]
-
-  const isProtectedRoute = protectedRoutes.some(route =>
-    pathname === route || pathname.startsWith(`${route}/`)
-  )
-
+  // 路由保护逻辑
   if (isProtectedRoute && !user) {
     const redirectUrl = new URL('/login', request.url)
     redirectUrl.searchParams.set('redirect', pathname)
     return NextResponse.redirect(redirectUrl)
   }
 
-  const authRoutes = ['/login']
+  const authRoutes = ['/login', '/register']
 
   if (user && authRoutes.includes(pathname)) {
     return NextResponse.redirect(new URL('/', request.url))

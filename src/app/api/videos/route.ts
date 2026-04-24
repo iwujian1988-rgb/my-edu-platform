@@ -3,16 +3,24 @@
  *
  * GET /api/videos
  *
- * v7: DB 层排序+分页 — 调用 PostgreSQL 函数 get_published_videos_paginated
- *     移除内存排序和 range hack，每页只从 DB 返回请求的行数
+ * v8: 加入 Redis 缓存层
+ *     - 用户权限信息缓存 5 分钟（减少 users 表查询）
+ *     - 视频列表结果缓存 60 秒（减少 RPC 调用）
+ *     - 用户进度实时查询（合并到缓存结果中）
  */
 
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
+import { getCached, setCache } from '@/lib/cache/api-cache'
 import type { VideoLanguage, VideoDifficulty, VideoListResponse, ContentType } from '@/types/video'
 
 const DEFAULT_LIMIT = 20
 const MAX_LIMIT = 100
+
+/** 用户权限信息缓存 TTL（秒） */
+const USER_INFO_CACHE_TTL = 300 // 5 分钟
+/** 视频列表缓存 TTL（秒） */
+const VIDEO_LIST_CACHE_TTL = 60 // 1 分钟
 
 type LearnStatus = 'all' | 'learned' | 'unlearned'
 
@@ -69,15 +77,80 @@ export async function GET(request: NextRequest) {
     const onlyAccessible = searchParams.get('only_accessible') !== 'false'
     const contentTypeParam = searchParams.get('content_type') as ContentType | null
 
-    // 1. 并行获取：用户信息 + 标签ID + 学习状态 + 可用语言
-    const [userResult, tagResult, progressResult, languagesResult] = await Promise.all([
-      supabase
+    // 0. 尝试从缓存获取用户权限信息（5 分钟有效）
+    const userInfoCacheKey = `videos:user_info:${authUser.id}`
+    let userPackageIds: string[]
+    let hasVideoPermission: boolean
+    let permissionExpiresAt: string | null
+    let userPackages: Array<{ id: string; name: string; expires_at: string | null }>
+    let packageNameMap: Map<string, string>
+
+    const cachedUserInfo = await getCached<{
+      packageIds: string[]
+      hasVideoPermission: boolean
+      permissionExpiresAt: string | null
+      packages: Array<{ id: string; name: string; expires_at: string | null }>
+      packageNameMap: Array<[string, string]>
+    }>(userInfoCacheKey)
+
+    if (cachedUserInfo) {
+      userPackageIds = cachedUserInfo.packageIds
+      hasVideoPermission = cachedUserInfo.hasVideoPermission
+      permissionExpiresAt = cachedUserInfo.permissionExpiresAt
+      userPackages = cachedUserInfo.packages
+      packageNameMap = new Map(cachedUserInfo.packageNameMap)
+    } else {
+      // 缓存未命中 → 查 DB
+      const { data: userRow } = await supabase
         .from('users')
         .select('package_ids, feature_permissions, permission_expires_at')
         .eq('id', authUser.id)
-        .single(),
+        .single()
 
-      // 标签 ID：只需匹配标签名拿到 ID，不再查 video_tag_relations
+      const userInfo = userRow as UserInfo | null
+      userPackageIds = userInfo?.package_ids || []
+      const featurePermissions = userInfo?.feature_permissions
+      permissionExpiresAt = userInfo?.permission_expires_at ?? null
+      hasVideoPermission = !!(
+        featurePermissions?.includes('video') &&
+        (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
+      )
+
+      // 获取套餐名称
+      packageNameMap = new Map<string, string>()
+      if (userPackageIds.length > 0) {
+        const { data: pkgData } = await supabase
+          .from('invitation_packages')
+          .select('id, name')
+          .in('id', userPackageIds)
+        if (pkgData) {
+          for (const pkg of pkgData) {
+            packageNameMap.set(pkg.id, pkg.name || '套餐')
+          }
+        }
+      }
+
+      userPackages = []
+      for (const pkgId of userPackageIds) {
+        const pkgName = packageNameMap.get(pkgId)
+        if (pkgName) {
+          userPackages.push({ id: pkgId, name: pkgName, expires_at: permissionExpiresAt })
+        }
+      }
+
+      // 回填缓存（不阻塞响应）
+      setCache(userInfoCacheKey, {
+        packageIds: userPackageIds,
+        hasVideoPermission,
+        permissionExpiresAt,
+        packages: userPackages,
+        packageNameMap: Array.from(packageNameMap.entries()),
+      }, USER_INFO_CACHE_TTL).catch(() => {})
+    }
+
+    // 1. 并行获取：标签ID + 学习状态 + 可用语言（与用户信息无关的查询）
+    const [tagResult, progressResult, languagesResult] = await Promise.all([
+      // 标签 ID：只需匹配标签名拿到 ID
       tag && tag !== 'all' ? (async () => {
         const { data: tagData } = await supabase
           .from('video_tags')
@@ -101,42 +174,53 @@ export async function GET(request: NextRequest) {
         .eq('status', 'published'),
     ])
 
-    // 处理用户信息
-    const userRow = userResult.data as UserInfo | null
-    const userPackageIds = userRow?.package_ids || []
-    const featurePermissions = userRow?.feature_permissions
-    const permissionExpiresAt = userRow?.permission_expires_at ?? null
-    const hasVideoPermission = featurePermissions?.includes('video') &&
-      (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
-
-    // 2. 获取套餐名称
-    const packageNameMap = new Map<string, string>()
-    if (userPackageIds.length > 0) {
-      const { data: pkgData } = await supabase
-        .from('invitation_packages')
-        .select('id, name')
-        .in('id', userPackageIds)
-      if (pkgData) {
-        for (const pkg of pkgData) {
-          packageNameMap.set(pkg.id, pkg.name || '套餐')
-        }
-      }
-    }
-
-    const userPackages: Array<{ id: string; name: string; expires_at: string | null }> = []
-    for (const pkgId of userPackageIds) {
-      const pkgName = packageNameMap.get(pkgId)
-      if (pkgName) {
-        userPackages.push({ id: pkgId, name: pkgName, expires_at: permissionExpiresAt })
-      }
-    }
-
     // 提取可用语言
     const availableLanguages = new Set<VideoLanguage>()
     for (const v of (languagesResult.data || [])) {
       if (v.language) {
         availableLanguages.add(v.language as VideoLanguage)
       }
+    }
+
+    // 2. 尝试从缓存获取视频列表（60 秒有效）
+    // 缓存 key 包含所有筛选参数，确保不同筛选条件有独立缓存
+    const filterHash = [limit, offset, language, difficulty, tag, learnStatus, onlyAccessible, contentTypeParam,
+      userPackageIds.join(','), hasVideoPermission].join('|')
+    const listCacheKey = `videos:list:${authUser.id}:${filterHash}`
+
+    const cachedList = await getCached<{
+      items: Array<Record<string, unknown>>
+      total: number
+    }>(listCacheKey)
+
+    if (cachedList) {
+      // 缓存命中 → 只需实时获取用户进度，合并后返回
+      const cachedItems = cachedList.items as Array<Record<string, unknown>>
+      const videoIds = cachedItems.map(item => item.id as string)
+      let userProgress: Record<string, { last_position: number; max_progress: number; is_completed: boolean }> = {}
+      if (videoIds.length > 0) {
+        const { data: progressData } = await supabase
+          .from('user_video_progress')
+          .select('video_id, last_position, max_progress, is_completed')
+          .eq('user_id', authUser.id)
+          .in('video_id', videoIds)
+        if (progressData) {
+          for (const p of progressData as Array<{ video_id: string; last_position: number; max_progress: number; is_completed: boolean }>) {
+            userProgress[p.video_id] = { last_position: p.last_position, max_progress: p.max_progress, is_completed: p.is_completed }
+          }
+        }
+      }
+
+      // 合并实时进度到缓存数据
+      const itemsWithProgress = cachedItems.map(item => ({
+        ...item,
+        user_progress: userProgress[item.id as string] || null,
+      }))
+
+      return NextResponse.json({
+        success: true,
+        data: { items: itemsWithProgress, total: cachedList.total, user_packages: userPackages, available_languages: Array.from(availableLanguages) } as VideoListResponse,
+      })
     }
 
     // 3. 标签名不存在 → 空结果
@@ -212,13 +296,10 @@ export async function GET(request: NextRequest) {
       }
     }
 
-    // 8. 构建响应（tag_names 已在 SQL 中聚合，无需前端处理）
+    // 8. 构建响应
     const items = rows.map(row => {
       const creatorAvatar = row.creator_name ? creatorAvatarMap.get(row.creator_name) : undefined
-      // 智能判断内容类型
       const isAudio = row.content_type === 'audio' || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(row.video_url || '')
-      // 音频内容优先使用 UP主头像作为封面，视频内容优先使用thumbnail_url
-      // 如果都没有，使用默认封面
       const effectiveCover = isAudio
         ? (row.cover_url || creatorAvatar || row.thumbnail_url || null)
         : (row.thumbnail_url || row.cover_url || null)
@@ -250,6 +331,9 @@ export async function GET(request: NextRequest) {
         has_access: hasVideoPermission || (userPackageIds.length > 0 ? row.package_ids?.some(pid => userPackageIds.includes(pid)) : false),
       }
     })
+
+    // 8.5 回填视频列表缓存（不阻塞响应）
+    setCache(listCacheKey, { items: items.map(({ user_progress, ...rest }) => rest), total: totalCount }, VIDEO_LIST_CACHE_TTL).catch(() => {})
 
     return NextResponse.json({
       success: true,

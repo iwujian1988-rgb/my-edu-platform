@@ -2,12 +2,35 @@ import { notFound, redirect } from 'next/navigation'
 import { Suspense } from 'react'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
 import { hasVideoAccess } from '@/lib/video-permissions'
+import { getCached, setCache } from '@/lib/cache/api-cache'
 import VideoLearningClient from './pageClient'
 import VideoLoading from './loading'
 import type { VideoFullResponseExtended } from '@/types/video'
 
 interface PageProps {
   params: Promise<{ id: string }>
+}
+
+/** 视频静态数据缓存 TTL（秒） */
+const VIDEO_STATIC_CACHE_TTL = 300 // 5 分钟
+
+/** JSON 序列化后的静态数据结构（缓存用） */
+interface VideoStaticCache {
+  subtitles: unknown[]
+  cards: { words: unknown[]; phrases: unknown[]; expressions: unknown[] }
+  rawExercises: unknown[]
+  difficultyAnalysis: unknown | null
+  grammarPoints: unknown[]
+  pronunciationTips: unknown[]
+  vocabularyNetwork: unknown | null
+  creator: unknown | null
+  highlightRelations: Array<{
+    subtitle_id: string
+    card_type: string
+    card_id: string
+    start_position: number
+    end_position: number
+  }>
 }
 
 // 获取视频基本信息（快速返回）
@@ -25,65 +48,21 @@ async function getVideoBasicInfo(videoId: string) {
   return video
 }
 
-/** 查询用户在该视频下的答题记录（服务端预取，避免客户端二次请求） */
-async function fetchExerciseProgress(
-  supabase: Awaited<ReturnType<typeof createAdminClient>>,
-  userId: string,
-  exercises: Array<{ id: string }>
-): Promise<Array<{ exerciseId: string; isCorrect: boolean; attempts: number }>> {
-  const exerciseIds = exercises.map(e => e.id)
-  if (exerciseIds.length === 0) return []
+/**
+ * 获取视频静态数据（带缓存）
+ * 视频的字幕、卡片、练习等数据不随用户变化，可全局缓存
+ */
+async function getVideoStaticData(videoId: string, creatorId: string | null): Promise<VideoStaticCache> {
+  const cacheKey = `video:static:${videoId}`
 
-  const { data } = await supabase
-    .from('user_exercise_progress')
-    .select('exercise_id, is_correct, attempts')
-    .eq('user_id', userId)
-    .in('exercise_id', exerciseIds)
+  const cached = await getCached<VideoStaticCache>(cacheKey)
+  if (cached) {
+    return cached
+  }
 
-  return (data || []).map(row => ({
-    exerciseId: row.exercise_id,
-    isCorrect: row.is_correct,
-    attempts: row.attempts,
-  }))
-}
-
-// 获取完整数据（流式加载）
-async function getVideoFullData(videoId: string, userId: string): Promise<VideoFullResponseExtended | null> {
   const supabase = await createAdminClient()
 
-  // 1. 获取视频基本信息
-  const { data: video, error: videoError } = await supabase
-    .from('videos')
-    .select('*')
-    .eq('id', videoId)
-    .single()
-
-  if (videoError || !video) {
-    return null
-  }
-
-  // 2. 检查权限
-  const hasAccess = await hasVideoAccess(userId, videoId)
-
-  // 无权限时返回基本信息
-  if (!hasAccess) {
-    return {
-      video,
-      subtitles: [],
-      cards: { words: [], phrases: [], expressions: [] },
-      exercises: [],
-      difficulty_analysis: null,
-      has_access: false,
-      user_progress: null,
-      grammar_points: [],
-      pronunciation_tips: [],
-      vocabulary_network: null,
-      creator: null,
-      exerciseProgress: [],
-    }
-  }
-
-  // 3. 并行获取所有数据
+  // 并行获取所有静态数据（11 → 1 次 Redis + 1 次并行 DB）
   const [
     subtitlesResult,
     wordCardsResult,
@@ -91,97 +70,30 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     expressionCardsResult,
     exercisesResult,
     difficultyResult,
-    progressResult,
     grammarPointsResult,
     pronunciationTipsResult,
     vocabularyNetworkResult,
     creatorResult,
   ] = await Promise.all([
-    // 字幕
-    supabase
-      .from('video_subtitles')
-      .select('*')
-      .eq('video_id', videoId)
-      .order('display_order', { ascending: true }),
-    // 单词卡片
-    supabase
-      .from('video_word_cards')
-      .select('*')
-      .eq('video_id', videoId)
-      .eq('is_reviewed', true)
-      .order('display_order'),
-    // 短语卡片
-    supabase
-      .from('video_phrase_cards')
-      .select('*')
-      .eq('video_id', videoId)
-      .eq('is_reviewed', true)
-      .order('display_order'),
-    // 表达卡片
-    supabase
-      .from('video_expression_cards')
-      .select('*')
-      .eq('video_id', videoId)
-      .eq('is_reviewed', true)
-      .order('display_order'),
-    // 练习
-    supabase
-      .from('video_exercises')
-      .select('*')
-      .eq('video_id', videoId)
-      .order('display_order'),
-    // 难度分析
-    supabase
-      .from('video_difficulty_analysis')
-      .select('*')
-      .eq('video_id', videoId)
-      .maybeSingle(),
-    // 用户进度
-    supabase
-      .from('user_video_progress')
-      .select('last_position, max_progress, is_completed')
-      .eq('user_id', userId)
-      .eq('video_id', videoId)
-      .maybeSingle(),
-    // 语法点
-    supabase
-      .from('video_grammar_points')
-      .select('*')
-      .eq('video_id', videoId)
-      .order('display_order'),
-    // 发音要点
-    supabase
-      .from('video_pronunciation_tips')
-      .select('*')
-      .eq('video_id', videoId)
-      .order('display_order'),
-    // 词汇网络
-    supabase
-      .from('video_vocabulary_networks')
-      .select('*')
-      .eq('video_id', videoId)
-      .maybeSingle(),
-    // UP主信息（如果视频关联了 creator_id）
-    video.creator_id
-      ? supabase
-          .from('upstream_creators')
-          .select('*')
-          .eq('id', video.creator_id)
-          .maybeSingle()
+    supabase.from('video_subtitles').select('*').eq('video_id', videoId).order('display_order', { ascending: true }),
+    supabase.from('video_word_cards').select('*').eq('video_id', videoId).eq('is_reviewed', true).order('display_order'),
+    supabase.from('video_phrase_cards').select('*').eq('video_id', videoId).eq('is_reviewed', true).order('display_order'),
+    supabase.from('video_expression_cards').select('*').eq('video_id', videoId).eq('is_reviewed', true).order('display_order'),
+    supabase.from('video_exercises').select('*').eq('video_id', videoId).order('display_order'),
+    supabase.from('video_difficulty_analysis').select('*').eq('video_id', videoId).maybeSingle(),
+    supabase.from('video_grammar_points').select('*').eq('video_id', videoId).order('display_order'),
+    supabase.from('video_pronunciation_tips').select('*').eq('video_id', videoId).order('display_order'),
+    supabase.from('video_vocabulary_networks').select('*').eq('video_id', videoId).maybeSingle(),
+    creatorId
+      ? supabase.from('upstream_creators').select('*').eq('id', creatorId).maybeSingle()
       : Promise.resolve({ data: null, error: null }),
   ])
 
   const subtitles = subtitlesResult.data || []
   const subtitleIds = subtitles.map(s => s.id)
 
-  // 4. 获取高亮关联（需要字幕ID）
-  let highlightRelations: Array<{
-    subtitle_id: string
-    card_type: string
-    card_id: string
-    start_position: number
-    end_position: number
-  }> = []
+  // 获取或计算高亮关联
+  let highlightRelations: VideoStaticCache['highlightRelations'] = []
 
   if (subtitleIds.length > 0) {
     const { data: relations } = await supabase
@@ -191,32 +103,30 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     highlightRelations = relations || []
   }
 
-  // 4.5 如果没有预计算的高亮关联，动态从 cards 中匹配
+  // 动态匹配（仅在无预计算数据时）
   if (highlightRelations.length === 0) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const allCards = [
       ...(wordCardsResult.data || []).map(c => ({ ...c, card_type: 'word' as const })),
       ...(phraseCardsResult.data || []).map(c => ({ ...c, card_type: 'phrase' as const })),
       ...(expressionCardsResult.data || []).map(c => ({ ...c, card_type: 'expression' as const })),
     ]
 
-    // 为每个字幕动态匹配卡片
-    subtitles.forEach(subtitle => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    subtitles.forEach((subtitle: any) => {
       if (!subtitle.original_text) return
-
-      allCards.forEach(card => {
-        // 获取要匹配的文本
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      allCards.forEach((card: any) => {
         const textToMatch = card.word || card.phrase || card.expression
         if (!textToMatch) return
 
-        // 在字幕中查找所有匹配位置
         let searchPos = 0
         while (true) {
-          const pos = subtitle.original_text!.toLowerCase().indexOf(textToMatch.toLowerCase(), searchPos)
+          const pos = subtitle.original_text.toLowerCase().indexOf(textToMatch.toLowerCase(), searchPos)
           if (pos === -1) break
 
-          // 检查是否是完整单词（避免部分匹配）
-          const beforeChar = subtitle.original_text![pos - 1]
-          const afterChar = subtitle.original_text![pos + textToMatch.length]
+          const beforeChar = subtitle.original_text[pos - 1]
+          const afterChar = subtitle.original_text[pos + textToMatch.length]
           const isWordBoundary = (!beforeChar || /[\s\p{P}]/u.test(beforeChar)) &&
                                  (!afterChar || /[\s\p{P}]/u.test(afterChar))
 
@@ -235,10 +145,179 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     })
   }
 
+  const staticData: VideoStaticCache = {
+    subtitles,
+    cards: {
+      words: wordCardsResult.data || [],
+      phrases: phraseCardsResult.data || [],
+      expressions: expressionCardsResult.data || [],
+    },
+    rawExercises: exercisesResult.data || [],
+    difficultyAnalysis: difficultyResult.data || null,
+    grammarPoints: grammarPointsResult.data || [],
+    pronunciationTips: pronunciationTipsResult.data || [],
+    vocabularyNetwork: vocabularyNetworkResult.data || null,
+    creator: creatorResult.data || null,
+    highlightRelations,
+  }
+
+  // 回填缓存（不阻塞响应）
+  setCache(cacheKey, staticData, VIDEO_STATIC_CACHE_TTL).catch(() => {})
+
+  return staticData
+}
+
+/** 查询用户答题记录 */
+async function fetchExerciseProgress(
+  supabase: Awaited<ReturnType<typeof createAdminClient>>,
+  userId: string,
+  exercises: unknown[],
+): Promise<Array<{ exerciseId: string; isCorrect: boolean; attempts: number }>> {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const exerciseIds = exercises.map((e: any) => e.id as string)
+  if (exerciseIds.length === 0) return []
+
+  const { data } = await supabase
+    .from('user_exercise_progress')
+    .select('exercise_id, is_correct, attempts')
+    .eq('user_id', userId)
+    .in('exercise_id', exerciseIds)
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  return (data || []).map((row: any) => ({
+    exerciseId: row.exercise_id,
+    isCorrect: row.is_correct,
+    attempts: row.attempts,
+  }))
+}
+
+/**
+ * 转换练习数据格式（供 FillBlankExercise 组件使用）
+ */
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function transformExercises(rawExercises: any[], subtitles: any[]) {
+  const subtitleMap = new Map(subtitles.map((s: any) => [s.id as string, s]))
+
+  return rawExercises.map((exercise: any) => {
+    const blankPositions: Array<{ start: number; end: number; word: string; hint?: string }> = exercise.blank_positions || []
+    const originalText: string = exercise.original_text || ''
+
+    let textWithBlanks = originalText
+    const answers: string[] = []
+
+    const hasUnderscores = /_+/.test(originalText)
+
+    if (hasUnderscores && blankPositions.length > 0) {
+      const sortedPositions = [...blankPositions].sort((a, b) => b.start - a.start)
+      sortedPositions.forEach((pos) => {
+        textWithBlanks = textWithBlanks.slice(0, pos.start) + '[blank]' + textWithBlanks.slice(pos.end)
+        answers.unshift(pos.word)
+      })
+    } else if (blankPositions.length > 0) {
+      blankPositions.forEach((pos) => {
+        answers.push(pos.word)
+      })
+      const sortedAnswers = [...answers].sort((a, b) => b.length - a.length)
+      textWithBlanks = originalText
+      sortedAnswers.forEach((answer) => {
+        const regex = new RegExp(`\\b${answer}\\b`, 'gi')
+        textWithBlanks = textWithBlanks.replace(regex, '[blank]')
+      })
+    }
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let subtitle: any = exercise.subtitle_id ? subtitleMap.get(exercise.subtitle_id) : null
+
+    if (!subtitle && subtitles.length > 0) {
+      const answerText: string = exercise.answer_text || ''
+      if (answerText && hasUnderscores) {
+        const filled = originalText.replace(/_+/g, answerText).toLowerCase().trim()
+        subtitle = subtitles.find((s: any) => {
+          const subText: string = s.original_text?.toLowerCase().trim() || ''
+          return subText.includes(filled) || filled.includes(subText)
+        }) || null
+      }
+
+      if (!subtitle) {
+        const exStartTime: number | null = exercise.subtitle_start_time
+        if (exStartTime != null) {
+          const TOLERANCE = 0.5
+          subtitle = subtitles.find((s: any) =>
+            Math.abs(s.start_time - exStartTime) < TOLERANCE
+          ) || null
+        }
+      }
+    }
+
+    const startTime: number | null = exercise.subtitle_start_time ?? subtitle?.start_time
+    const endTime: number | null = exercise.subtitle_end_time ?? subtitle?.end_time
+
+    return {
+      ...exercise,
+      text_with_blanks: textWithBlanks,
+      answers,
+      explanation: blankPositions[0]?.hint || null,
+      subtitle_start_time: startTime,
+      subtitle_end_time: endTime,
+      translation: subtitle?.chinese_text || blankPositions[0]?.hint || null,
+    }
+  })
+}
+
+// 获取完整数据（带缓存优化）
+async function getVideoFullData(videoId: string, userId: string): Promise<VideoFullResponseExtended | null> {
+  const supabase = await createAdminClient()
+
+  // 1. 获取视频基本信息
+  const { data: video, error: videoError } = await supabase
+    .from('videos')
+    .select('*')
+    .eq('id', videoId)
+    .single()
+
+  if (videoError || !video) {
+    return null
+  }
+
+  // 2. 检查权限
+  const hasAccess = await hasVideoAccess(userId, videoId)
+
+  if (!hasAccess) {
+    return {
+      video,
+      subtitles: [],
+      cards: { words: [], phrases: [], expressions: [] },
+      exercises: [],
+      difficulty_analysis: null,
+      has_access: false,
+      user_progress: null,
+      grammar_points: [],
+      pronunciation_tips: [],
+      vocabulary_network: null,
+      creator: null,
+      exerciseProgress: [],
+    }
+  }
+
+  // 3. 获取静态数据（带缓存，全局共享）
+  const staticData = await getVideoStaticData(videoId, video.creator_id)
+
+  // 4. 仅获取用户实时数据（2 次查询 vs 原来的 12+ 次）
+  const [progressResult, exerciseProgressData] = await Promise.all([
+    supabase
+      .from('user_video_progress')
+      .select('last_position, max_progress, is_completed')
+      .eq('user_id', userId)
+      .eq('video_id', videoId)
+      .maybeSingle(),
+    fetchExerciseProgress(supabase, userId, staticData.rawExercises),
+  ])
+
   // 5. 构建带高亮的字幕
-  const subtitlesWithHighlights = subtitles.map(subtitle => ({
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const subtitlesWithHighlights = (staticData.subtitles as any[]).map((subtitle: any) => ({
     ...subtitle,
-    highlights: highlightRelations
+    highlights: staticData.highlightRelations
       .filter(r => r.subtitle_id === subtitle.id)
       .map(r => ({
         card_type: r.card_type as 'word' | 'phrase' | 'expression',
@@ -249,31 +328,27 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       })),
   }))
 
-  // 6. 异步更新观看次数（不阻塞响应）
+  // 6. 转换练习数据
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const transformedExercises = transformExercises(staticData.rawExercises as any[], staticData.subtitles as any[])
+
+  // 7. 异步更新观看次数（不阻塞响应）
   supabase
     .from('videos')
     .update({ view_count: (video.view_count || 0) + 1 })
     .eq('id', videoId)
-    .then(() => {}) // 忽略结果
+    .then(() => {})
 
-  // 7. 创建或更新学习进度记录（标记为"已学习"）
-  // 使用 upsert，如果已存在则更新时间，不存在则创建
+  // 8. 异步更新学习进度记录
   supabase
     .from('user_video_progress')
     .upsert(
-      {
-        user_id: userId,
-        video_id: videoId,
-        updated_at: new Date().toISOString(),
-      },
-      {
-        onConflict: 'user_id,video_id',
-        ignoreDuplicates: false,
-      }
+      { user_id: userId, video_id: videoId, updated_at: new Date().toISOString() },
+      { onConflict: 'user_id,video_id', ignoreDuplicates: false },
     )
-    .then(() => {}) // 忽略结果
+    .then(() => {})
 
-  // 8. 更新学习日历（记录观看视频）
+  // 9. 异步更新学习日历
   const { updateLearningCalendar } = await import('@/lib/learning-calendar')
   updateLearningCalendar(supabase, userId, { videoId })
     .then(result => {
@@ -282,111 +357,23 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       }
     })
 
-  // 5.5 转换练习数据格式（供 FillBlankExercise 组件使用）
-  const subtitleMap = new Map(subtitles.map(s => [s.id, s]))
-
-  const transformedExercises = (exercisesResult.data || []).map((exercise) => {
-    // 从 blank_positions 构建 text_with_blanks 和 answers
-    const blankPositions = exercise.blank_positions as Array<{ start: number; end: number; word: string; hint?: string }> || []
-    const originalText = exercise.original_text || ''
-
-    let textWithBlanks = originalText
-    const answers: string[] = []
-
-    // 检测数据格式：如果 original_text 包含下划线，说明是新格式（位置正确）
-    // 如果 original_text 不包含下划线但有 blank_positions，说明是旧格式（需要重建）
-    const hasUnderscores = /_+/.test(originalText)
-
-    if (hasUnderscores && blankPositions.length > 0) {
-      // 新格式：original_text 包含 _____，blank_positions 是相对于它的位置
-      // 从后往前替换，避免位置偏移
-      const sortedPositions = [...blankPositions].sort((a, b) => b.start - a.start)
-      sortedPositions.forEach((pos) => {
-        textWithBlanks = textWithBlanks.slice(0, pos.start) + '[blank]' + textWithBlanks.slice(pos.end)
-        answers.unshift(pos.word)
-      })
-    } else if (blankPositions.length > 0) {
-      // 旧格式兼容：original_text 已填充答案，需要用 answer_text 重建
-      // 使用正则表达式将答案替换为 [blank]
-      blankPositions.forEach((pos) => {
-        answers.push(pos.word)
-      })
-      // 按答案长度降序排列，避免短答案误替换长答案的一部分
-      const sortedAnswers = [...answers].sort((a, b) => b.length - a.length)
-      textWithBlanks = originalText
-      sortedAnswers.forEach((answer) => {
-        const regex = new RegExp(`\\b${answer}\\b`, 'gi')
-        textWithBlanks = textWithBlanks.replace(regex, '[blank]')
-      })
-    }
-
-    // 关联字幕的播放时间和中文翻译
-    // 优先通过 subtitle_id 查找
-    let subtitle = exercise.subtitle_id ? subtitleMap.get(exercise.subtitle_id) : null
-
-    if (!subtitle && subtitles.length > 0) {
-      // 策略1: 用 answer_text 填充空位后，在字幕中查找包含关系
-      const answerText = (exercise as Record<string, unknown>).answer_text as string || ''
-      if (answerText && hasUnderscores) {
-        const filled = originalText.replace(/_+/g, answerText).toLowerCase().trim()
-        subtitle = subtitles.find(s => {
-          const subText = s.original_text?.toLowerCase().trim() || ''
-          return subText.includes(filled) || filled.includes(subText)
-        }) || null
-      }
-
-      // 策略2: 用时间匹配（exercise 表可能直接存了 subtitle_start_time）
-      if (!subtitle) {
-        const exStartTime = (exercise as Record<string, unknown>).subtitle_start_time as number | null
-        if (exStartTime != null) {
-          const TOLERANCE = 0.5
-          subtitle = subtitles.find(s =>
-            Math.abs(s.start_time - exStartTime) < TOLERANCE
-          ) || null
-        }
-      }
-    }
-
-    // 播放时间：优先用 exercise 自身的，其次用匹配到的字幕
-    const startTime = (exercise as Record<string, unknown>).subtitle_start_time as number | null
-      ?? subtitle?.start_time
-    const endTime = (exercise as Record<string, unknown>).subtitle_end_time as number | null
-      ?? subtitle?.end_time
-
-    return {
-      ...exercise,
-      text_with_blanks: textWithBlanks,
-      answers,
-      // hint 作为中文语境提示（如"指一个地理区域"、"国家名称"）
-      explanation: blankPositions[0]?.hint || null,
-      subtitle_start_time: startTime,
-      subtitle_end_time: endTime,
-      // 优先用字幕翻译，没有则用 hint 兜底
-      translation: subtitle?.chinese_text || blankPositions[0]?.hint || null,
-    }
-  })
-
   return {
     video,
     subtitles: subtitlesWithHighlights,
-    cards: {
-      words: wordCardsResult.data || [],
-      phrases: phraseCardsResult.data || [],
-      expressions: expressionCardsResult.data || [],
-    },
+    cards: staticData.cards as VideoFullResponseExtended['cards'],
     exercises: transformedExercises,
-    difficulty_analysis: difficultyResult.data || null,
+    difficulty_analysis: staticData.difficultyAnalysis as VideoFullResponseExtended['difficulty_analysis'],
     has_access: true,
     user_progress: progressResult.data ? {
       last_position: progressResult.data.last_position,
       max_progress: progressResult.data.max_progress,
       is_completed: progressResult.data.is_completed,
     } : null,
-    grammar_points: grammarPointsResult.data || [],
-    pronunciation_tips: pronunciationTipsResult.data || [],
-    vocabulary_network: vocabularyNetworkResult.data || null,
-    creator: creatorResult.data || null,
-    exerciseProgress: await fetchExerciseProgress(supabase, userId, transformedExercises),
+    grammar_points: staticData.grammarPoints as VideoFullResponseExtended['grammar_points'],
+    pronunciation_tips: staticData.pronunciationTips as VideoFullResponseExtended['pronunciation_tips'],
+    vocabulary_network: staticData.vocabularyNetwork as VideoFullResponseExtended['vocabulary_network'],
+    creator: staticData.creator as VideoFullResponseExtended['creator'],
+    exerciseProgress: exerciseProgressData,
   }
 }
 
@@ -402,22 +389,18 @@ async function VideoDataLoader({ videoId, userId }: { videoId: string; userId: s
 }
 
 export default async function VideoLearningPage({ params }: PageProps) {
-  // 1. 验证用户登录
   const user = await getCurrentUser()
   if (!user) {
     redirect(`/login?redirect=${encodeURIComponent('/videos/' + (await params).id)}`)
   }
 
-  // 2. 获取视频ID
   const { id: videoId } = await params
 
-  // 3. 快速获取视频基本信息（用于 SEO 和快速响应）
   const video = await getVideoBasicInfo(videoId)
   if (!video) {
     notFound()
   }
 
-  // 4. 使用流式渲染：先显示加载状态，数据准备好后自动更新
   return (
     <Suspense fallback={<VideoLoading video={video} />}>
       <VideoDataLoader videoId={videoId} userId={user.id} />
