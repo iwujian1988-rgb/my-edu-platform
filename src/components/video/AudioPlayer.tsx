@@ -77,41 +77,44 @@ export function AudioPlayer({
       || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
   }, [])
 
-  // iOS：首次播放 5 秒后后台下载整个音频为 Blob，完成后切换 src
-  // 延迟 5 秒避免和首次播放争抢带宽导致播放失败
+  // iOS：后台通过代理 API 下载音频为 Blob，绕过 CORS 限制
+  // Blob 在内存中，seek 精确到毫秒级，彻底解决 iOS 远程音频 seek 偏差
   useEffect(() => {
     if (!isIOSRef.current || !hasStarted) return
     if (isBlobReadyRef.current) return
 
-    const BLOB_DOWNLOAD_DELAY_MS = 5000
     const controller = new AbortController()
 
-    const timer = setTimeout(() => {
-      if (controller.signal.aborted) return
+    // 通过服务端代理下载，避免跨域 fetch 被拦截
+    const proxyUrl = `/api/proxy-audio?url=${encodeURIComponent(video.video_url)}`
 
-      fetch(video.video_url, { signal: controller.signal })
-        .then(res => res.blob())
-        .then(blob => {
-          if (controller.signal.aborted) return
-          const url = URL.createObjectURL(blob)
-          blobUrlRef.current = url
-          isBlobReadyRef.current = true
+    fetch(proxyUrl, { signal: controller.signal })
+      .then(res => {
+        if (!res.ok) throw new Error(`proxy ${res.status}`)
+        return res.blob()
+      })
+      .then(blob => {
+        if (controller.signal.aborted) return
+        const url = URL.createObjectURL(blob)
+        blobUrlRef.current = url
+        isBlobReadyRef.current = true
 
-          // 无缝切换：记住当前位置和播放状态
-          const el = audioRef.current
-          if (!el) return
-          const savedTime = el.currentTime
-          const wasPlaying = !el.paused
+        // 无缝切换：记住当前位置和播放状态
+        const el = audioRef.current
+        if (!el) return
+        const savedTime = el.currentTime
+        const wasPlaying = !el.paused
 
+        // 保留已有的 pending seek（字幕点击可能刚设置了它）
+        if (pendingSeekRef.current === null) {
           pendingSeekRef.current = savedTime
-          shouldAutoPlayRef.current = wasPlaying
-          setAudioSrc(url)
-        })
-        .catch(() => { /* Blob 下载失败，保持远程 URL，seek 时走 Media Fragment 兜底 */ })
-    }, BLOB_DOWNLOAD_DELAY_MS)
+        }
+        shouldAutoPlayRef.current = wasPlaying || shouldAutoPlayRef.current
+        setAudioSrc(url)
+      })
+      .catch(() => { /* Blob 下载失败，保持远程 URL，seek 时走 Media Fragment 兜底 */ })
 
     return () => {
-      clearTimeout(timer)
       controller.abort()
     }
   }, [hasStarted, video.video_url])
@@ -157,6 +160,8 @@ export function AudioPlayer({
     if (!hasStarted) return
     const el = audioRef.current
     if (!el) return
+    // 如果已经在播放（pageClient 在用户手势内直接 play 了），不要 reload
+    if (!el.paused) return
     if (initialPosition > 0) el.currentTime = initialPosition
     el.load()
   }, [hasStarted, initialPosition])
@@ -198,8 +203,8 @@ export function AudioPlayer({
 
         return () => { el.removeEventListener('seeked', onSeeked); clearTimeout(fallback) }
       } else {
-        // blob 未就绪：Media Fragment 强制从目标位置重新建流
-        pendingSeekRef.current = seekTo
+        // blob 未就绪：Media Fragment 从目标位置重新建流
+        // 不设置 pendingSeekRef，避免 handleCanPlay 做 double seek 导致 iOS 偏移
         shouldAutoPlayRef.current = true
         setIsLoading(true)
         const baseUrl = video.video_url.split('#')[0]

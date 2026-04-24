@@ -183,11 +183,16 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
   // 字幕点击 - 跳转到对应时间
   const handleSubtitleClick = useCallback((subtitle: { start_time: number }) => {
-    // 使用 seekToTime 状态通知 VideoPlayer 跳转
-    // 同时增加 seekTrigger 确保每次点击都能触发跳转
     setSeekToTime(subtitle.start_time)
     setSeekTrigger(prev => prev + 1)
-  }, [])
+    setSegmentEndTime(undefined)
+    // 直接操作音频/视频元素：在用户手势内 seek + play，绕过 iOS 自动播放限制
+    const el = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+    if (el) {
+      el.currentTime = subtitle.start_time
+      if (el.paused) el.play().catch(() => {})
+    }
+  }, [isAudioContent])
 
   // 播放片段
   const [segmentEndTime, setSegmentEndTime] = useState<number | undefined>(undefined)
