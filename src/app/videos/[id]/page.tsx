@@ -1,7 +1,6 @@
 import { notFound, redirect } from 'next/navigation'
 import { Suspense } from 'react'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
-import { hasVideoAccess } from '@/lib/video-permissions'
 import { getCached, setCache } from '@/lib/cache/api-cache'
 import VideoLearningClient from './pageClient'
 import VideoLoading from './loading'
@@ -33,21 +32,6 @@ interface VideoStaticCache {
   }>
 }
 
-// 获取视频基本信息（快速返回）
-async function getVideoBasicInfo(videoId: string) {
-  const supabase = await createAdminClient()
-  const { data: video, error } = await supabase
-    .from('videos')
-    .select('id, title, original_title, description, video_url, thumbnail_url, duration, language, difficulty, view_count, creator_id, creator_name')
-    .eq('id', videoId)
-    .single()
-
-  if (error || !video) {
-    return null
-  }
-  return video
-}
-
 /**
  * 获取视频静态数据（带缓存）
  * 视频的字幕、卡片、练习等数据不随用户变化，可全局缓存
@@ -62,7 +46,6 @@ async function getVideoStaticData(videoId: string, creatorId: string | null): Pr
 
   const supabase = await createAdminClient()
 
-  // 并行获取所有静态数据（11 → 1 次 Redis + 1 次并行 DB）
   const [
     subtitlesResult,
     wordCardsResult,
@@ -92,7 +75,6 @@ async function getVideoStaticData(videoId: string, creatorId: string | null): Pr
   const subtitles = subtitlesResult.data || []
   const subtitleIds = subtitles.map(s => s.id)
 
-  // 获取或计算高亮关联
   let highlightRelations: VideoStaticCache['highlightRelations'] = []
 
   if (subtitleIds.length > 0) {
@@ -103,7 +85,6 @@ async function getVideoStaticData(videoId: string, creatorId: string | null): Pr
     highlightRelations = relations || []
   }
 
-  // 动态匹配（仅在无预计算数据时）
   if (highlightRelations.length === 0) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const allCards = [
@@ -161,7 +142,6 @@ async function getVideoStaticData(videoId: string, creatorId: string | null): Pr
     highlightRelations,
   }
 
-  // 回填缓存（不阻塞响应）
   setCache(cacheKey, staticData, VIDEO_STATIC_CACHE_TTL).catch(() => {})
 
   return staticData
@@ -191,9 +171,7 @@ async function fetchExerciseProgress(
   }))
 }
 
-/**
- * 转换练习数据格式（供 FillBlankExercise 组件使用）
- */
+/** 转换练习数据格式 */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function transformExercises(rawExercises: any[], subtitles: any[]) {
   const subtitleMap = new Map(subtitles.map((s: any) => [s.id as string, s]))
@@ -264,11 +242,49 @@ function transformExercises(rawExercises: any[], subtitles: any[]) {
   })
 }
 
-// 获取完整数据（带缓存优化）
+/**
+ * 内联权限检查：用已有的 video 数据 + 单次 users 查询判断权限
+ * 避免 hasVideoAccess() 的 2 次额外 DB 查询（它会重新查 videos 表）
+ */
+async function checkAccess(
+  supabase: Awaited<ReturnType<typeof createAdminClient>>,
+  userId: string,
+  videoPackageIds: string[] | null,
+  videoStatus: string,
+): Promise<boolean> {
+  if (videoStatus !== 'published') return false
+  if (!videoPackageIds || videoPackageIds.length === 0) return false
+
+  const { data: user } = await supabase
+    .from('users')
+    .select('package_ids, feature_permissions, permission_expires_at')
+    .eq('id', userId)
+    .single()
+
+  if (!user) return false
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const u = user as any
+  const featurePermissions: string[] | null = u.feature_permissions
+  const permissionExpiresAt: string | null = u.permission_expires_at
+
+  // feature_permissions 包含 'video' 且未过期
+  if (featurePermissions?.includes('video')) {
+    if (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date()) {
+      return true
+    }
+  }
+
+  // 用户套餐与视频套餐有重叠
+  const userPackageIds: string[] = u.package_ids || []
+  return userPackageIds.some((id: string) => videoPackageIds.includes(id))
+}
+
+// 核心数据加载：消除重复查询，最大化并行
 async function getVideoFullData(videoId: string, userId: string): Promise<VideoFullResponseExtended | null> {
   const supabase = await createAdminClient()
 
-  // 1. 获取视频基本信息
+  // 1. 唯一的视频查询（不再重复查 3 次）
   const { data: video, error: videoError } = await supabase
     .from('videos')
     .select('*')
@@ -279,8 +295,20 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     return null
   }
 
-  // 2. 检查权限
-  const hasAccess = await hasVideoAccess(userId, videoId)
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const v = video as any
+
+  // 2. 并行：权限检查 + 静态数据 + 用户进度（关键优化：原来串行，现在并行）
+  const [hasAccess, staticData, progressResult] = await Promise.all([
+    checkAccess(supabase, userId, v.package_ids, v.status),
+    getVideoStaticData(videoId, v.creator_id),
+    supabase
+      .from('user_video_progress')
+      .select('last_position, max_progress, is_completed')
+      .eq('user_id', userId)
+      .eq('video_id', videoId)
+      .maybeSingle(),
+  ])
 
   if (!hasAccess) {
     return {
@@ -299,21 +327,10 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     }
   }
 
-  // 3. 获取静态数据（带缓存，全局共享）
-  const staticData = await getVideoStaticData(videoId, video.creator_id)
+  // 3. 答题记录（需要 staticData.rawExercises，但在上面已并行完成）
+  const exerciseProgressData = await fetchExerciseProgress(supabase, userId, staticData.rawExercises)
 
-  // 4. 仅获取用户实时数据（2 次查询 vs 原来的 12+ 次）
-  const [progressResult, exerciseProgressData] = await Promise.all([
-    supabase
-      .from('user_video_progress')
-      .select('last_position, max_progress, is_completed')
-      .eq('user_id', userId)
-      .eq('video_id', videoId)
-      .maybeSingle(),
-    fetchExerciseProgress(supabase, userId, staticData.rawExercises),
-  ])
-
-  // 5. 构建带高亮的字幕
+  // 4. 构建带高亮的字幕
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const subtitlesWithHighlights = (staticData.subtitles as any[]).map((subtitle: any) => ({
     ...subtitle,
@@ -328,34 +345,22 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       })),
   }))
 
-  // 6. 转换练习数据
+  // 5. 转换练习数据
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const transformedExercises = transformExercises(staticData.rawExercises as any[], staticData.subtitles as any[])
 
-  // 7. 异步更新观看次数（不阻塞响应）
-  supabase
-    .from('videos')
-    .update({ view_count: (video.view_count || 0) + 1 })
-    .eq('id', videoId)
-    .then(() => {})
+  // 6. 异步非阻塞更新（不 await）
+  supabase.from('videos').update({ view_count: (v.view_count || 0) + 1 }).eq('id', videoId).then(() => {})
+  supabase.from('user_video_progress').upsert(
+    { user_id: userId, video_id: videoId, updated_at: new Date().toISOString() },
+    { onConflict: 'user_id,video_id', ignoreDuplicates: false },
+  ).then(() => {})
 
-  // 8. 异步更新学习进度记录
-  supabase
-    .from('user_video_progress')
-    .upsert(
-      { user_id: userId, video_id: videoId, updated_at: new Date().toISOString() },
-      { onConflict: 'user_id,video_id', ignoreDuplicates: false },
-    )
-    .then(() => {})
-
-  // 9. 异步更新学习日历
-  const { updateLearningCalendar } = await import('@/lib/learning-calendar')
-  updateLearningCalendar(supabase, userId, { videoId })
-    .then(result => {
-      if (!result.success) {
-        console.error('[VideoLearningPage] Calendar update failed:', result.error)
-      }
-    })
+  // 学习日历也异步（用顶层 import 避免动态导入开销）
+  import('@/lib/learning-calendar').then(({ updateLearningCalendar }) => {
+    updateLearningCalendar(supabase, userId, { videoId })
+      .then(result => { if (!result.success) console.error('[VideoDetail] Calendar update failed:', result.error) })
+  })
 
   return {
     video,
@@ -377,7 +382,7 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
   }
 }
 
-// 数据加载组件（用于流式渲染）
+// 数据加载组件
 async function VideoDataLoader({ videoId, userId }: { videoId: string; userId: string }) {
   const data = await getVideoFullData(videoId, userId)
 
@@ -396,13 +401,10 @@ export default async function VideoLearningPage({ params }: PageProps) {
 
   const { id: videoId } = await params
 
-  const video = await getVideoBasicInfo(videoId)
-  if (!video) {
-    notFound()
-  }
-
+  // 不再单独查 getVideoBasicInfo，统一在 getVideoFullData 中处理
+  // Suspense 只显示通用加载态
   return (
-    <Suspense fallback={<VideoLoading video={video} />}>
+    <Suspense fallback={<VideoLoading video={null} />}>
       <VideoDataLoader videoId={videoId} userId={user.id} />
     </Suspense>
   )
