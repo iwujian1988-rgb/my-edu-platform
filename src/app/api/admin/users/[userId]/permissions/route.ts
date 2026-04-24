@@ -7,6 +7,7 @@ import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdminForAPI } from '@/lib/admin-auth'
 import { logAdminAction } from '@/lib/admin-auth'
 import { NextRequest, NextResponse } from 'next/server'
+import { invalidateUserCache } from '@/lib/cache/cache-invalidation'
 
 export async function PUT(
   request: NextRequest,
@@ -179,6 +180,9 @@ export async function PUT(
         }
       }
     )
+
+    // 清除该用户的缓存（权限变更后立即生效）
+    invalidateUserCache(userId)
 
     return NextResponse.json({
       success: true,

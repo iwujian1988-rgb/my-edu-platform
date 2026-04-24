@@ -20,6 +20,7 @@ import { createAdminClient } from '@/lib/supabase/server'
 import type { SupabaseClient } from '@supabase/supabase-js'
 import { checkAdminForAPI } from '@/lib/admin-auth'
 import { completeStep } from '@/lib/workflow-helper'
+import { invalidatePublishCache } from '@/lib/cache/cache-invalidation'
 
 // ============================================
 // 类型定义
@@ -264,7 +265,11 @@ export async function POST(request: Request) {
       }
     }
 
-    // 5. 返回结果
+    // 5. 返回结果（发布成功后清除前端缓存）
+    if (publishedCount > 0) {
+      invalidatePublishCache()
+    }
+
     return NextResponse.json({
       success: publishedCount > 0,
       data: {

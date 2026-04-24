@@ -21,6 +21,8 @@ const MAX_LIMIT = 100
 const USER_INFO_CACHE_TTL = 300 // 5 分钟
 /** 视频列表缓存 TTL（秒） */
 const VIDEO_LIST_CACHE_TTL = 60 // 1 分钟
+/** 可用语言列表缓存 TTL（秒）— 全局共享，极少变化 */
+const LANGUAGES_CACHE_TTL = 600 // 10 分钟
 
 type LearnStatus = 'all' | 'learned' | 'unlearned'
 
@@ -77,80 +79,74 @@ export async function GET(request: NextRequest) {
     const onlyAccessible = searchParams.get('only_accessible') !== 'false'
     const contentTypeParam = searchParams.get('content_type') as ContentType | null
 
-    // 0. 尝试从缓存获取用户权限信息（5 分钟有效）
+    // 0. 所有独立数据源并行获取（用户信息 + 标签 + 学习状态 + 可用语言）
+    // 这些查询互不依赖，并行执行省 ~400ms
     const userInfoCacheKey = `videos:user_info:${authUser.id}`
-    let userPackageIds: string[]
-    let hasVideoPermission: boolean
-    let permissionExpiresAt: string | null
-    let userPackages: Array<{ id: string; name: string; expires_at: string | null }>
-    let packageNameMap: Map<string, string>
 
-    const cachedUserInfo = await getCached<{
-      packageIds: string[]
-      hasVideoPermission: boolean
-      permissionExpiresAt: string | null
-      packages: Array<{ id: string; name: string; expires_at: string | null }>
-      packageNameMap: Array<[string, string]>
-    }>(userInfoCacheKey)
+    const [userInfoResult, tagResult, progressResult, languagesResult] = await Promise.all([
+      // 0a. 用户权限信息（带缓存）
+      (async () => {
+        const cached = await getCached<{
+          packageIds: string[]
+          hasVideoPermission: boolean
+          permissionExpiresAt: string | null
+          packages: Array<{ id: string; name: string; expires_at: string | null }>
+          packageNameMap: Array<[string, string]>
+        }>(userInfoCacheKey)
 
-    if (cachedUserInfo) {
-      userPackageIds = cachedUserInfo.packageIds
-      hasVideoPermission = cachedUserInfo.hasVideoPermission
-      permissionExpiresAt = cachedUserInfo.permissionExpiresAt
-      userPackages = cachedUserInfo.packages
-      packageNameMap = new Map(cachedUserInfo.packageNameMap)
-    } else {
-      // 缓存未命中 → 查 DB
-      const { data: userRow } = await supabase
-        .from('users')
-        .select('package_ids, feature_permissions, permission_expires_at')
-        .eq('id', authUser.id)
-        .single()
+        if (cached) {
+          return { ...cached, packageNameMap: new Map(cached.packageNameMap), fromCache: true }
+        }
 
-      const userInfo = userRow as UserInfo | null
-      userPackageIds = userInfo?.package_ids || []
-      const featurePermissions = userInfo?.feature_permissions
-      permissionExpiresAt = userInfo?.permission_expires_at ?? null
-      hasVideoPermission = !!(
-        featurePermissions?.includes('video') &&
-        (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
-      )
+        const { data: userRow } = await supabase
+          .from('users')
+          .select('package_ids, feature_permissions, permission_expires_at')
+          .eq('id', authUser.id)
+          .single()
 
-      // 获取套餐名称
-      packageNameMap = new Map<string, string>()
-      if (userPackageIds.length > 0) {
-        const { data: pkgData } = await supabase
-          .from('invitation_packages')
-          .select('id, name')
-          .in('id', userPackageIds)
-        if (pkgData) {
-          for (const pkg of pkgData) {
-            packageNameMap.set(pkg.id, pkg.name || '套餐')
+        const userInfo = userRow as UserInfo | null
+        const userPackageIds = userInfo?.package_ids || []
+        const featurePermissions = userInfo?.feature_permissions
+        const permissionExpiresAt = userInfo?.permission_expires_at ?? null
+        const hasVideoPermission = !!(
+          featurePermissions?.includes('video') &&
+          (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
+        )
+
+        // 套餐名查询（在用户信息内部，因为依赖 userPackageIds）
+        const packageNameMap = new Map<string, string>()
+        if (userPackageIds.length > 0) {
+          const { data: pkgData } = await supabase
+            .from('invitation_packages')
+            .select('id, name')
+            .in('id', userPackageIds)
+          if (pkgData) {
+            for (const pkg of pkgData) {
+              packageNameMap.set(pkg.id, pkg.name || '套餐')
+            }
           }
         }
-      }
 
-      userPackages = []
-      for (const pkgId of userPackageIds) {
-        const pkgName = packageNameMap.get(pkgId)
-        if (pkgName) {
-          userPackages.push({ id: pkgId, name: pkgName, expires_at: permissionExpiresAt })
+        const userPackages: Array<{ id: string; name: string; expires_at: string | null }> = []
+        for (const pkgId of userPackageIds) {
+          const pkgName = packageNameMap.get(pkgId)
+          if (pkgName) {
+            userPackages.push({ id: pkgId, name: pkgName, expires_at: permissionExpiresAt })
+          }
         }
-      }
 
-      // 回填缓存（不阻塞响应）
-      setCache(userInfoCacheKey, {
-        packageIds: userPackageIds,
-        hasVideoPermission,
-        permissionExpiresAt,
-        packages: userPackages,
-        packageNameMap: Array.from(packageNameMap.entries()),
-      }, USER_INFO_CACHE_TTL).catch(() => {})
-    }
+        setCache(userInfoCacheKey, {
+          packageIds: userPackageIds,
+          hasVideoPermission,
+          permissionExpiresAt,
+          packages: userPackages,
+          packageNameMap: Array.from(packageNameMap.entries()),
+        }, USER_INFO_CACHE_TTL).catch(() => {})
 
-    // 1. 并行获取：标签ID + 学习状态 + 可用语言（与用户信息无关的查询）
-    const [tagResult, progressResult, languagesResult] = await Promise.all([
-      // 标签 ID：只需匹配标签名拿到 ID
+        return { packageIds: userPackageIds, hasVideoPermission, permissionExpiresAt, packages: userPackages, packageNameMap, fromCache: false }
+      })(),
+
+      // 0b. 标签 ID 查找
       tag && tag !== 'all' ? (async () => {
         const { data: tagData } = await supabase
           .from('video_tags')
@@ -163,24 +159,33 @@ export async function GET(request: NextRequest) {
         return { tagIds: [], found: false }
       })() : Promise.resolve({ tagIds: null, found: true }),
 
+      // 0c. 用户已学习视频（用于 learnStatus 过滤）
       learnStatus !== 'all' ? supabase
         .from('user_video_progress')
         .select('video_id')
         .eq('user_id', authUser.id) : Promise.resolve({ data: null }),
 
-      supabase
-        .from('videos')
-        .select('language')
-        .eq('status', 'published'),
+      // 0d. 可用语言（全局缓存 10 分钟，避免每次全表扫 videos）
+      (async () => {
+        const cachedLangs = await getCached<VideoLanguage[]>('videos:available_languages')
+        if (cachedLangs) return cachedLangs
+
+        const { data } = await supabase
+          .from('videos')
+          .select('language')
+          .eq('status', 'published')
+
+        const langs = [...new Set(
+          (data || []).filter(v => v.language).map(v => v.language as VideoLanguage)
+        )]
+        setCache('videos:available_languages', langs, LANGUAGES_CACHE_TTL).catch(() => {})
+        return langs
+      })(),
     ])
 
-    // 提取可用语言
-    const availableLanguages = new Set<VideoLanguage>()
-    for (const v of (languagesResult.data || [])) {
-      if (v.language) {
-        availableLanguages.add(v.language as VideoLanguage)
-      }
-    }
+    // 解构用户信息
+    const { packageIds: userPackageIds, hasVideoPermission, packages: userPackages, packageNameMap } = userInfoResult
+    const availableLanguages = languagesResult
 
     // 2. 尝试从缓存获取视频列表（60 秒有效）
     // 缓存 key 包含所有筛选参数，确保不同筛选条件有独立缓存
@@ -219,13 +224,13 @@ export async function GET(request: NextRequest) {
 
       return NextResponse.json({
         success: true,
-        data: { items: itemsWithProgress, total: cachedList.total, user_packages: userPackages, available_languages: Array.from(availableLanguages) } as VideoListResponse,
+        data: { items: itemsWithProgress, total: cachedList.total, user_packages: userPackages, available_languages: availableLanguages } as VideoListResponse,
       })
     }
 
     // 3. 标签名不存在 → 空结果
     if (tag && tag !== 'all' && !tagResult.found) {
-      return NextResponse.json({ success: true, data: { items: [], total: 0, user_packages: userPackages, available_languages: Array.from(availableLanguages) } })
+      return NextResponse.json({ success: true, data: { items: [], total: 0, user_packages: userPackages, available_languages: availableLanguages } })
     }
 
     // 4. 学习状态处理
@@ -233,12 +238,12 @@ export async function GET(request: NextRequest) {
       ? (progressResult.data as Array<{ video_id: string }>).map(p => p.video_id)
       : null
     if (learnStatus === 'learned' && learnedVideoIds && learnedVideoIds.length === 0) {
-      return NextResponse.json({ success: true, data: { items: [], total: 0, user_packages: [], available_languages: Array.from(availableLanguages) } })
+      return NextResponse.json({ success: true, data: { items: [], total: 0, user_packages: [], available_languages: availableLanguages } })
     }
 
     // 5. 权限检查：无权限且无套餐 → 空结果
     if (onlyAccessible && !hasVideoPermission && userPackageIds.length === 0) {
-      return NextResponse.json({ success: true, data: { items: [], total: 0, user_packages: [], available_languages: Array.from(availableLanguages) } })
+      return NextResponse.json({ success: true, data: { items: [], total: 0, user_packages: [], available_languages: availableLanguages } })
     }
 
     // 6. 调用 DB 层分页函数，排序和分页全部在 PostgreSQL 完成
@@ -266,33 +271,36 @@ export async function GET(request: NextRequest) {
     const totalCount = rows.length > 0 ? rows[0].total_count : 0
     const videoIds = rows.map(r => r.id)
 
-    // 7. 获取当页视频的用户进度
+    // 7. 用户进度 + UP主头像并行获取（原来串行，省 ~200ms）
+    const [progressDataResult, creatorRowsResult] = await Promise.all([
+      videoIds.length > 0
+        ? supabase
+            .from('user_video_progress')
+            .select('video_id, last_position, max_progress, is_completed')
+            .eq('user_id', authUser.id)
+            .in('video_id', videoIds)
+        : Promise.resolve({ data: null }),
+      (() => {
+        const uniqueCreatorNames = [...new Set(rows.map(r => r.creator_name).filter(Boolean))] as string[]
+        if (uniqueCreatorNames.length === 0) return Promise.resolve({ data: null })
+        return supabase
+          .from('upstream_creators')
+          .select('name, avatar_url')
+          .in('name', uniqueCreatorNames)
+      })(),
+    ])
+
     const userProgress: Record<string, { last_position: number; max_progress: number; is_completed: boolean }> = {}
-    if (videoIds.length > 0) {
-      const { data: progressData } = await supabase
-        .from('user_video_progress')
-        .select('video_id, last_position, max_progress, is_completed')
-        .eq('user_id', authUser.id)
-        .in('video_id', videoIds)
-      if (progressData) {
-        for (const p of progressData as Array<{ video_id: string; last_position: number; max_progress: number; is_completed: boolean }>) {
-          userProgress[p.video_id] = { last_position: p.last_position, max_progress: p.max_progress, is_completed: p.is_completed }
-        }
+    if (progressDataResult.data) {
+      for (const p of progressDataResult.data as Array<{ video_id: string; last_position: number; max_progress: number; is_completed: boolean }>) {
+        userProgress[p.video_id] = { last_position: p.last_position, max_progress: p.max_progress, is_completed: p.is_completed }
       }
     }
 
-    // 7.5 批量获取 UP主头像（用于无封面时的兜底）
     const creatorAvatarMap = new Map<string, string>()
-    const uniqueCreatorNames = [...new Set(rows.map(r => r.creator_name).filter(Boolean))] as string[]
-    if (uniqueCreatorNames.length > 0) {
-      const { data: creatorRows } = await supabase
-        .from('upstream_creators')
-        .select('name, avatar_url')
-        .in('name', uniqueCreatorNames)
-      if (creatorRows) {
-        for (const c of creatorRows as Array<{ name: string; avatar_url: string | null }>) {
-          if (c.avatar_url) creatorAvatarMap.set(c.name, c.avatar_url)
-        }
+    if (creatorRowsResult.data) {
+      for (const c of creatorRowsResult.data as Array<{ name: string; avatar_url: string | null }>) {
+        if (c.avatar_url) creatorAvatarMap.set(c.name, c.avatar_url)
       }
     }
 
@@ -337,7 +345,7 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({
       success: true,
-      data: { items, total: totalCount, user_packages: userPackages, available_languages: Array.from(availableLanguages) } as VideoListResponse,
+      data: { items, total: totalCount, user_packages: userPackages, available_languages: availableLanguages } as VideoListResponse,
     })
   } catch (error) {
     console.error('[api/videos] Unexpected error:', error)

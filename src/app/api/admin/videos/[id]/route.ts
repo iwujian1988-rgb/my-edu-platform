@@ -13,6 +13,7 @@ import { checkAdminForAPI } from '@/lib/admin-auth'
 import { createClient } from '@supabase/supabase-js'
 import type { UpdateVideoBody } from '@/types/video'
 import { completeStep } from '@/lib/workflow-helper'
+import { invalidateVideoCache } from '@/lib/cache/cache-invalidation'
 
 // 创建 admin 客户端（直接使用 service_role key）
 async function getAdminClient() {
@@ -245,6 +246,10 @@ export async function PUT(
       }
     }
 
+    // 清除相关缓存（视频列表 + 详情页静态数据 + 播主内容）
+    const creatorId = (video as Record<string, unknown>).creator_id as string | null
+    invalidateVideoCache(videoId, creatorId)
+
     return NextResponse.json({
       success: true,
       data: video,
@@ -257,10 +262,6 @@ export async function PUT(
     )
   }
 }
-
-// ============================================
-// DELETE - 删除视频
-// ============================================
 
 export async function DELETE(
   request: NextRequest,
@@ -292,6 +293,9 @@ export async function DELETE(
         { status: 500 }
       )
     }
+
+    // 清除相关缓存
+    invalidateVideoCache(videoId)
 
     return NextResponse.json({
       success: true,
