@@ -10,8 +10,8 @@ const withPWA = withPWAInit({
   aggressiveFrontEndNavCaching: false,
   reloadOnOnline: true,
   swcMinify: true,
-  // ⚠️ 开发环境禁用 PWA，避免 Service Worker 缓存问题
-  disable: process.env.NODE_ENV === 'development',
+  // 禁用 PWA Service Worker（手机端 Workbox 拦截导致 API 请求超时）
+  disable: true,
   // PWA 图标配置
   icon: true,
   icons: {
