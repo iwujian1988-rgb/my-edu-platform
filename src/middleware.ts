@@ -26,10 +26,9 @@ const PROTECTED_ROUTES = [
 ]
 
 export async function middleware(request: NextRequest) {
-  const startTime = Date.now()
   const { pathname } = request.nextUrl
 
-  // 快速跳过：完全公开的页面，不需要 Supabase auth 调用（省 ~500ms）
+  // 快速跳过：完全公开的页面（0ms）
   const isPublicRoute = PUBLIC_ROUTES.some(
     route => pathname === route || pathname.startsWith(`${route}/`)
   )
@@ -37,39 +36,38 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
-  // 1. 初始 Response
-  let response = NextResponse.next({
-    request: {
-      headers: request.headers,
-    },
-  })
-
-  // 快速判断：如果没有 Supabase auth cookies，用户未登录
-  // 避免在未登录用户上浪费 ~500ms 的 auth 网络调用
+  // 纯 cookie 存在性检查（0ms，无网络调用）
   const hasSbCookies = request.cookies.getAll().some(c => c.name.startsWith('sb-'))
 
   const isProtectedRoute = PROTECTED_ROUTES.some(route =>
     pathname === route || pathname.startsWith(`${route}/`)
   )
+  const needsFullAuth = pathname.startsWith('/admin') || pathname === '/login' || pathname === '/register'
 
-  // 未登录 + 受保护路由 → 直接跳转登录，不需要调用 auth
+  // 未登录 + 受保护路由 → 跳转登录（0ms）
   if (!hasSbCookies && isProtectedRoute) {
     const redirectUrl = new URL('/login', request.url)
     redirectUrl.searchParams.set('redirect', pathname)
     return NextResponse.redirect(redirectUrl)
   }
 
-  // 未登录 + 非受保护路由（如首页、API）→ 不需要 auth，直接放行
-  // 注意：API 路由内部会自行处理 auth
-  if (!hasSbCookies && !pathname.startsWith('/admin') && !pathname.startsWith('/login') && !pathname.startsWith('/register')) {
+  // 已登录 + 非 admin/login/register → 直接放行（省 200ms，API 层自行验证 auth）
+  if (hasSbCookies && !needsFullAuth) {
     return NextResponse.next()
   }
 
-  // 以下情况需要 Supabase auth 调用：
-  // 1. 有 cookies 的用户（需要刷新 token）
-  // 2. admin 路由（需要验证管理员身份）
-  // 3. login/register（需要判断是否已登录以决定重定向）
-  const clientStart = Date.now()
+  // 未登录 + 非受保护路由 → 放行
+  if (!hasSbCookies && !needsFullAuth) {
+    return NextResponse.next()
+  }
+
+  // ── 以下只有 /admin、/login、/register 会走到 ──
+  let response = NextResponse.next({
+    request: {
+      headers: request.headers,
+    },
+  })
+
   const supabase = createServerClient<Database>(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
@@ -98,39 +96,17 @@ export async function middleware(request: NextRequest) {
       },
     }
   )
-  const clientTime = Date.now() - clientStart
 
-  // 触发刷新逻辑
-  const authStart = Date.now()
   const {
     data: { user },
   } = await supabase.auth.getUser()
-  const authTime = Date.now() - authStart
 
-  // Debug log for library/study routes
-  if (pathname.startsWith('/library') || pathname.startsWith('/study')) {
-    const totalTime = Date.now() - startTime
-    console.log('[Middleware]', {
-      pathname,
-      hasUser: !!user,
-      userId: user?.id,
-      timing: { clientCreate: `${clientTime}ms`, authCall: `${authTime}ms`, total: `${totalTime}ms` }
-    })
-  }
-
-  // 路由保护逻辑
-  if (isProtectedRoute && !user) {
-    const redirectUrl = new URL('/login', request.url)
-    redirectUrl.searchParams.set('redirect', pathname)
-    return NextResponse.redirect(redirectUrl)
-  }
-
-  const authRoutes = ['/login', '/register']
-
-  if (user && authRoutes.includes(pathname)) {
+  // 已登录用户访问 login/register → 重定向到首页
+  if (user && (pathname === '/login' || pathname === '/register')) {
     return NextResponse.redirect(new URL('/', request.url))
   }
 
+  // Admin 路由保护
   if (pathname.startsWith('/admin')) {
     if (pathname.startsWith('/admin/login')) {
       return response
