@@ -13,13 +13,26 @@ import { Redis } from 'ioredis'
 /** Redis 单例（跨请求复用） */
 let redisInstance: Redis | null = null
 let redisDisabled = false
+/** 禁用后自动恢复的时间（毫秒） */
+let redisRetryAt = 0
 
 const REDIS_CONNECT_TIMEOUT = 5000
 const MAX_RETRIES = 3
+const REDIS_RETRY_INTERVAL = 30000 // 禁用后 30 秒自动重试
 
 /** 获取 Redis 单例，连接失败时返回 null */
 async function getRedis(): Promise<Redis | null> {
-  if (redisDisabled) return null
+  // 禁用后超过重试间隔，自动尝试重新连接
+  if (redisDisabled) {
+    if (Date.now() < redisRetryAt) return null
+    // 关闭旧连接再重试
+    if (redisInstance) {
+      try { redisInstance.disconnect() } catch { /* 忽略 */ }
+      redisInstance = null
+    }
+    redisDisabled = false
+    console.log('[api-cache] 尝试重新连接 Redis...')
+  }
   if (redisInstance) return redisInstance
 
   const redisUrl = process.env.REDIS_URL
@@ -36,8 +49,9 @@ async function getRedis(): Promise<Redis | null> {
       keepAlive: 30000,
       retryStrategy(times) {
         if (times > MAX_RETRIES) {
-          console.error('[api-cache] Redis 连接失败次数过多，暂时禁用')
+          console.error('[api-cache] Redis 连接失败次数过多，30 秒后自动重试')
           redisDisabled = true
+          redisRetryAt = Date.now() + REDIS_RETRY_INTERVAL
           return null
         }
         return Math.min(times * 100, 2000)
@@ -67,8 +81,9 @@ async function getRedis(): Promise<Redis | null> {
     redisInstance = client
     return redisInstance
   } catch (err) {
-    console.error('[api-cache] Redis 初始化失败，缓存禁用:', (err as Error).message)
+    console.error('[api-cache] Redis 初始化失败，30 秒后自动重试:', (err as Error).message)
     redisDisabled = true
+    redisRetryAt = Date.now() + REDIS_RETRY_INTERVAL
     return null
   }
 }
