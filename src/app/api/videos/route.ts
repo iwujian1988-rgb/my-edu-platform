@@ -79,6 +79,9 @@ export async function GET(request: NextRequest) {
     const onlyAccessible = searchParams.get('only_accessible') !== 'false'
     const contentTypeParam = searchParams.get('content_type') as ContentType | null
 
+    // iOS 设备跳过 Redis 缓存（iOS 网络栈与缓存机制不兼容，导致间歇性超时）
+    const isIOS = /iPhone|iPad|iPod/i.test(request.headers.get('user-agent') || '')
+
     // 0. 所有独立数据源并行获取（用户信息 + 标签 + 学习状态 + 可用语言）
     // 这些查询互不依赖，并行执行省 ~400ms
     const userInfoCacheKey = `videos:user_info:${authUser.id}`
@@ -86,16 +89,18 @@ export async function GET(request: NextRequest) {
     const [userInfoResult, tagResult, progressResult, languagesResult] = await Promise.all([
       // 0a. 用户权限信息（带缓存）
       (async () => {
-        const cached = await getCached<{
-          packageIds: string[]
-          hasVideoPermission: boolean
-          permissionExpiresAt: string | null
-          packages: Array<{ id: string; name: string; expires_at: string | null }>
-          packageNameMap: Array<[string, string]>
-        }>(userInfoCacheKey)
+        if (!isIOS) {
+          const cached = await getCached<{
+            packageIds: string[]
+            hasVideoPermission: boolean
+            permissionExpiresAt: string | null
+            packages: Array<{ id: string; name: string; expires_at: string | null }>
+            packageNameMap: Array<[string, string]>
+          }>(userInfoCacheKey)
 
-        if (cached) {
-          return { ...cached, packageNameMap: new Map(cached.packageNameMap), fromCache: true }
+          if (cached) {
+            return { ...cached, packageNameMap: new Map(cached.packageNameMap), fromCache: true }
+          }
         }
 
         const { data: userRow } = await supabase
@@ -167,8 +172,10 @@ export async function GET(request: NextRequest) {
 
       // 0d. 可用语言（全局缓存 10 分钟，避免每次全表扫 videos）
       (async () => {
-        const cachedLangs = await getCached<VideoLanguage[]>('videos:available_languages')
-        if (cachedLangs) return cachedLangs
+        if (!isIOS) {
+          const cachedLangs = await getCached<VideoLanguage[]>('videos:available_languages')
+          if (cachedLangs) return cachedLangs
+        }
 
         const { data } = await supabase
           .from('videos')
@@ -178,7 +185,9 @@ export async function GET(request: NextRequest) {
         const langs = [...new Set(
           (data || []).filter(v => v.language).map(v => v.language as VideoLanguage)
         )]
-        setCache('videos:available_languages', langs, LANGUAGES_CACHE_TTL).catch(() => {})
+        if (!isIOS) {
+          setCache('videos:available_languages', langs, LANGUAGES_CACHE_TTL).catch(() => {})
+        }
         return langs
       })(),
     ])
@@ -188,45 +197,47 @@ export async function GET(request: NextRequest) {
     const availableLanguages = languagesResult
 
     // 2. 尝试从缓存获取视频列表（60 秒有效）
-    // 缓存 key 包含所有筛选参数，确保不同筛选条件有独立缓存
-    const filterHash = [limit, offset, language, difficulty, tag, learnStatus, onlyAccessible, contentTypeParam,
-      userPackageIds.join(','), hasVideoPermission].join('|')
-    const listCacheKey = `videos:list:${authUser.id}:${filterHash}`
+    // iOS 跳过缓存，直接查库
+    if (!isIOS) {
+      const filterHash = [limit, offset, language, difficulty, tag, learnStatus, onlyAccessible, contentTypeParam,
+        userPackageIds.join(','), hasVideoPermission].join('|')
+      const listCacheKey = `videos:list:${authUser.id}:${filterHash}`
 
-    const cachedList = await getCached<{
-      items: Array<Record<string, unknown>>
-      total: number
-    }>(listCacheKey)
+      const cachedList = await getCached<{
+        items: Array<Record<string, unknown>>
+        total: number
+      }>(listCacheKey)
 
-    if (cachedList) {
-      // 缓存命中 → 只需实时获取用户进度，合并后返回
-      const cachedItems = cachedList.items as Array<Record<string, unknown>>
-      const videoIds = cachedItems.map(item => item.id as string)
-      let userProgress: Record<string, { last_position: number; max_progress: number; is_completed: boolean }> = {}
-      if (videoIds.length > 0) {
-        const { data: progressData } = await supabase
-          .from('user_video_progress')
-          .select('video_id, last_position, max_progress, is_completed')
-          .eq('user_id', authUser.id)
-          .in('video_id', videoIds)
-        if (progressData) {
-          for (const p of progressData as Array<{ video_id: string; last_position: number; max_progress: number; is_completed: boolean }>) {
-            userProgress[p.video_id] = { last_position: p.last_position, max_progress: p.max_progress, is_completed: p.is_completed }
+      if (cachedList) {
+        // 缓存命中 → 只需实时获取用户进度，合并后返回
+        const cachedItems = cachedList.items as Array<Record<string, unknown>>
+        const videoIds = cachedItems.map(item => item.id as string)
+        let userProgress: Record<string, { last_position: number; max_progress: number; is_completed: boolean }> = {}
+        if (videoIds.length > 0) {
+          const { data: progressData } = await supabase
+            .from('user_video_progress')
+            .select('video_id, last_position, max_progress, is_completed')
+            .eq('user_id', authUser.id)
+            .in('video_id', videoIds)
+          if (progressData) {
+            for (const p of progressData as Array<{ video_id: string; last_position: number; max_progress: number; is_completed: boolean }>) {
+              userProgress[p.video_id] = { last_position: p.last_position, max_progress: p.max_progress, is_completed: p.is_completed }
+            }
           }
         }
+
+        // 合并实时进度到缓存数据
+        const itemsWithProgress = cachedItems.map(item => ({
+          ...item,
+          user_progress: userProgress[item.id as string] || null,
+        }))
+
+        return NextResponse.json({
+          success: true,
+          data: { items: itemsWithProgress, total: cachedList.total, user_packages: userPackages, available_languages: availableLanguages } as VideoListResponse,
+        })
       }
-
-      // 合并实时进度到缓存数据
-      const itemsWithProgress = cachedItems.map(item => ({
-        ...item,
-        user_progress: userProgress[item.id as string] || null,
-      }))
-
-      return NextResponse.json({
-        success: true,
-        data: { items: itemsWithProgress, total: cachedList.total, user_packages: userPackages, available_languages: availableLanguages } as VideoListResponse,
-      })
-    }
+    } // end if (!isIOS) cache block
 
     // 3. 标签名不存在 → 空结果
     if (tag && tag !== 'all' && !tagResult.found) {
@@ -340,8 +351,10 @@ export async function GET(request: NextRequest) {
       }
     })
 
-    // 8.5 回填视频列表缓存（不阻塞响应）
-    setCache(listCacheKey, { items: items.map(({ user_progress, ...rest }) => rest), total: totalCount }, VIDEO_LIST_CACHE_TTL).catch(() => {})
+    // 8.5 回填视频列表缓存（不阻塞响应，iOS 跳过）
+    if (!isIOS) {
+      setCache(listCacheKey, { items: items.map(({ user_progress, ...rest }) => rest), total: totalCount }, VIDEO_LIST_CACHE_TTL).catch(() => {})
+    }
 
     return NextResponse.json({
       success: true,
