@@ -28,6 +28,18 @@ export default function RootLayout({
     <html lang="zh-CN" suppressHydrationWarning>
       <head>
         {/* 🔥 防止主题闪烁：在页面渲染前就设置正确的主题 */}
+        {/* 清理残留 Service Worker：旧 Workbox SW 拦截 API 请求导致手机端超时 */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.getRegistrations().then(function(rs) {
+                  rs.forEach(function(r) { r.unregister(); });
+                });
+              }
+            `,
+          }}
+        />
         <script
           dangerouslySetInnerHTML={{
             __html: `

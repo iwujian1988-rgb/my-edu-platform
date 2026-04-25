@@ -4,6 +4,13 @@ import { useEffect } from 'react'
 
 export default function ClearCachePageClient() {
   useEffect(() => {
+    // 卸载残留的 Service Worker（旧 Workbox SW 会拦截 API 请求导致超时）
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        registrations.forEach((reg) => reg.unregister())
+      })
+    }
+
     // 清除所有缓存
     if ('caches' in window) {
       caches.keys().then((names) => {
