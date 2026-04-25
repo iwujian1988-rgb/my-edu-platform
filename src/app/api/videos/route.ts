@@ -197,12 +197,11 @@ export async function GET(request: NextRequest) {
     const availableLanguages = languagesResult
 
     // 2. 尝试从缓存获取视频列表（60 秒有效）
-    // iOS 跳过缓存，直接查库
-    if (!isIOS) {
-      const filterHash = [limit, offset, language, difficulty, tag, learnStatus, onlyAccessible, contentTypeParam,
-        userPackageIds.join(','), hasVideoPermission].join('|')
-      const listCacheKey = `videos:list:${authUser.id}:${filterHash}`
+    const filterHash = [limit, offset, language, difficulty, tag, learnStatus, onlyAccessible, contentTypeParam,
+      userPackageIds.join(','), hasVideoPermission].join('|')
+    const listCacheKey = `videos:list:${authUser.id}:${filterHash}`
 
+    if (!isIOS) {
       const cachedList = await getCached<{
         items: Array<Record<string, unknown>>
         total: number
