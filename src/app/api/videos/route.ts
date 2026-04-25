@@ -79,8 +79,8 @@ export async function GET(request: NextRequest) {
     const onlyAccessible = searchParams.get('only_accessible') !== 'false'
     const contentTypeParam = searchParams.get('content_type') as ContentType | null
 
-    // iOS 设备跳过 Redis 缓存（iOS 网络栈与缓存机制不兼容，导致间歇性超时）
-    const isIOS = /iPhone|iPad|iPod/i.test(request.headers.get('user-agent') || '')
+    // iOS 也走缓存（跳过缓存反而每次直连 Supabase 更慢）
+    const isIOS = false
 
     // 0. 所有独立数据源并行获取（用户信息 + 标签 + 学习状态 + 可用语言）
     // 这些查询互不依赖，并行执行省 ~400ms

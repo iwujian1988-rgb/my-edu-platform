@@ -19,6 +19,7 @@ let redisRetryAt = 0
 const REDIS_CONNECT_TIMEOUT = 5000
 const MAX_RETRIES = 3
 const REDIS_RETRY_INTERVAL = 30000 // 禁用后 30 秒自动重试
+const REDIS_COMMAND_TIMEOUT = 500 // 单条命令超时，防止 Redis 慢响应阻塞 API
 
 /** 获取 Redis 单例，连接失败时返回 null */
 async function getRedis(): Promise<Redis | null> {
@@ -93,12 +94,25 @@ async function getRedis(): Promise<Redis | null> {
  *
  * @returns 缓存命中返回反序列化后的数据，未命中或出错返回 null
  */
+/** Redis 命令超时包装，防止慢响应阻塞 API */
+function withCommandTimeout<T>(promise: Promise<T>, label: string): Promise<T | null> {
+  return Promise.race([
+    promise,
+    new Promise<null>((resolve) =>
+      setTimeout(() => {
+        console.warn(`[api-cache] ${label} 超时 ${REDIS_COMMAND_TIMEOUT}ms，降级`)
+        resolve(null)
+      }, REDIS_COMMAND_TIMEOUT)
+    ),
+  ])
+}
+
 export async function getCached<T>(key: string): Promise<T | null> {
   try {
     const redis = await getRedis()
     if (!redis) return null
 
-    const raw = await redis.get(key)
+    const raw = await withCommandTimeout(redis.get(key), 'getCached')
     if (!raw) return null
 
     return JSON.parse(raw) as T
@@ -118,7 +132,7 @@ export async function setCache<T>(key: string, data: T, ttl: number): Promise<vo
     const redis = await getRedis()
     if (!redis) return
 
-    await redis.setex(key, ttl, JSON.stringify(data))
+    await withCommandTimeout(redis.setex(key, ttl, JSON.stringify(data)), 'setCache')
   } catch {
     // 缓存写失败 → 静默忽略
   }
@@ -132,7 +146,7 @@ export async function deleteCache(key: string): Promise<void> {
     const redis = await getRedis()
     if (!redis) return
 
-    await redis.del(key)
+    await withCommandTimeout(redis.del(key), 'deleteCache')
   } catch {
     // 静默忽略
   }
@@ -148,9 +162,9 @@ export async function invalidatePattern(pattern: string): Promise<void> {
     const redis = await getRedis()
     if (!redis) return
 
-    const keys = await redis.keys(pattern)
-    if (keys.length > 0) {
-      await redis.del(...keys)
+    const keys = await withCommandTimeout(redis.keys(pattern), 'invalidatePattern') as string[] | null
+    if (keys && keys.length > 0) {
+      await withCommandTimeout(redis.del(...keys), 'invalidatePattern-del')
     }
   } catch {
     // 静默忽略
