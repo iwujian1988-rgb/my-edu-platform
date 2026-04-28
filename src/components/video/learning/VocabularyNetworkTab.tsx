@@ -18,7 +18,7 @@ import { useState, useEffect, useMemo, memo } from 'react'
 import { cn } from '@/lib/utils'
 import { Network, Link2, Lightbulb, ChevronDown, ChevronUp } from 'lucide-react'
 import type { VideoVocabularyNetwork, VideoWordCard, VideoLanguage } from '@/types/video'
-import { WordTooltip } from './WordTooltip'
+import { WordTooltip, type VnWordFallback } from './WordTooltip'
 import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
 // ============================================
@@ -80,6 +80,17 @@ export function VocabularyNetworkTab({ network, wordCards = [], videoLanguage = 
   // word → brief 映射（小写 key，用于内联释义匹配）
   const wordMap = useMemo(() => buildWordMap(wordCards), [wordCards])
 
+  // word → VN 导入释义（优先于词典）
+  const vnFallbackMap = useMemo(() => {
+    const map = new Map<string, VnWordFallback>()
+    if (network?.word_details) {
+      for (const d of network.word_details) {
+        map.set(d.word.toLowerCase(), { meaning: d.meaning, example: d.example, example_translation: d.example_translation })
+      }
+    }
+    return map
+  }, [network?.word_details])
+
   // 挂载时提取 structure + related_words 中的词预加载
   useEffect(() => {
     if (!network || !ttsPreload) return
@@ -126,6 +137,7 @@ export function VocabularyNetworkTab({ network, wordCards = [], videoLanguage = 
           videoLanguage={videoLanguage}
           ttsPreload={ttsPreload}
           wordMap={wordMap}
+          vnFallbackMap={vnFallbackMap}
         />
       ) : network.core_word && network.related_words && network.related_words.length > 0 ? (
         <SimpleNetworkVisualization
@@ -134,6 +146,7 @@ export function VocabularyNetworkTab({ network, wordCards = [], videoLanguage = 
           videoLanguage={videoLanguage}
           ttsPreload={ttsPreload}
           wordMap={wordMap}
+          vnFallbackMap={vnFallbackMap}
         />
       ) : null}
 
@@ -147,7 +160,7 @@ export function VocabularyNetworkTab({ network, wordCards = [], videoLanguage = 
           <div className="p-3">
             <div className="flex flex-wrap gap-2">
               {network.related_words.map((word, index) => (
-                <NetworkWord key={index} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} />
+                <NetworkWord key={index} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} vnFallback={vnFallbackMap.get(word.toLowerCase())} />
               ))}
             </div>
           </div>
@@ -181,16 +194,14 @@ interface NetworkWordProps {
   wordMap: Map<string, WordBrief>
   videoLanguage: VideoLanguage
   ttsPreload?: TTSPreloadInstance
-  /** 标签样式变体 */
   variant?: 'default' | 'compact'
+  /** VN 导入的释义回退 */
+  vnFallback?: VnWordFallback | null
 }
 
-function NetworkWord({ word, wordMap, videoLanguage, ttsPreload, variant = 'default' }: NetworkWordProps) {
-  const brief = wordMap.get(word.toLowerCase())
-
-  // 统一：点击才显示释义（无论是否有 wordCard 数据）
+function NetworkWord({ word, wordMap, videoLanguage, ttsPreload, variant = 'default', vnFallback }: NetworkWordProps) {
   return (
-    <WordTooltip word={word} language={videoLanguage} ttsPreload={ttsPreload}>
+    <WordTooltip word={word} language={videoLanguage} ttsPreload={ttsPreload} vnFallback={vnFallback}>
       <span className={cn(
         "px-2 py-1 text-xs font-medium border-[2px] cursor-pointer transition-colors rounded-sm",
         variant === 'compact'
@@ -213,9 +224,10 @@ interface StructuredNetworkVisualizationProps {
   videoLanguage: VideoLanguage
   ttsPreload?: TTSPreloadInstance
   wordMap: Map<string, WordBrief>
+  vnFallbackMap: Map<string, VnWordFallback>
 }
 
-const StructuredNetworkVisualization = memo(function StructuredNetworkVisualization({ structure, centerLabel, videoLanguage, ttsPreload, wordMap }: StructuredNetworkVisualizationProps) {
+const StructuredNetworkVisualization = memo(function StructuredNetworkVisualization({ structure, centerLabel, videoLanguage, ttsPreload, wordMap, vnFallbackMap }: StructuredNetworkVisualizationProps) {
   const [isExpanded, setIsExpanded] = useState(true)
 
   let parsedStructure: Record<string, string[]> | null = null
@@ -290,7 +302,7 @@ const StructuredNetworkVisualization = memo(function StructuredNetworkVisualizat
                 <div className="p-2">
                   <div className="flex flex-wrap gap-1 justify-center">
                     {Array.isArray(words) && words.map((word, i) => (
-                      <NetworkWord key={i} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} variant="compact" />
+                      <NetworkWord key={i} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} variant="compact" vnFallback={vnFallbackMap.get(word.toLowerCase())} />
                     ))}
                   </div>
                 </div>
@@ -313,9 +325,10 @@ interface SimpleNetworkVisualizationProps {
   videoLanguage: VideoLanguage
   ttsPreload?: TTSPreloadInstance
   wordMap: Map<string, WordBrief>
+  vnFallbackMap: Map<string, VnWordFallback>
 }
 
-const SimpleNetworkVisualization = memo(function SimpleNetworkVisualization({ centerLabel, relatedWords, videoLanguage, ttsPreload, wordMap }: SimpleNetworkVisualizationProps) {
+const SimpleNetworkVisualization = memo(function SimpleNetworkVisualization({ centerLabel, relatedWords, videoLanguage, ttsPreload, wordMap, vnFallbackMap }: SimpleNetworkVisualizationProps) {
   const [isExpanded, setIsExpanded] = useState(true)
   const wordCount = relatedWords.length
 
@@ -353,7 +366,7 @@ const SimpleNetworkVisualization = memo(function SimpleNetworkVisualization({ ce
             <div className="p-3">
               <div className="flex flex-wrap gap-2 justify-center">
                 {relatedWords.map((word, i) => (
-                  <NetworkWord key={i} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} />
+                  <NetworkWord key={i} word={word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} vnFallback={vnFallbackMap.get(word.toLowerCase())} />
                 ))}
               </div>
             </div>
@@ -363,5 +376,64 @@ const SimpleNetworkVisualization = memo(function SimpleNetworkVisualization({ ce
     </div>
   )
 })
+
+// ============================================
+// 带释义的词汇卡片（word_details 格式）
+// ============================================
+
+import type { VocabWordDetail } from '@/types/video'
+
+interface WordDetailsVisualizationProps {
+  centerLabel: string
+  wordDetails: VocabWordDetail[]
+  videoLanguage: VideoLanguage
+  ttsPreload?: TTSPreloadInstance
+  wordMap: Map<string, WordBrief>
+  vnFallbackMap: Map<string, VnWordFallback>
+}
+
+function WordDetailsVisualization({ centerLabel, wordDetails, videoLanguage, ttsPreload, wordMap, vnFallbackMap }: WordDetailsVisualizationProps) {
+  return (
+    <div className="space-y-3">
+      {/* 中心词 */}
+      <div className="flex flex-col items-center">
+        <div className="px-4 py-2 bg-indigo-500 text-white text-sm font-black border-[2px] border-black dark:border-gray-500 rounded-sm shadow-[2px_2px_0px_0px_#000]">
+          {centerLabel}
+        </div>
+      </div>
+
+      {/* 词汇卡片列表 */}
+      <div className="space-y-2">
+        {wordDetails.map((item, idx) => (
+          <div
+            key={idx}
+            className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 rounded-sm shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666]"
+          >
+            <div className="px-3 py-2">
+              <div className="flex items-center gap-2 mb-1">
+                <NetworkWord word={item.word} wordMap={wordMap} videoLanguage={videoLanguage} ttsPreload={ttsPreload} vnFallback={vnFallbackMap.get(item.word.toLowerCase())} />
+                <span className="text-sm font-bold text-gray-800 dark:text-gray-200">
+                  {item.meaning}
+                </span>
+              </div>
+              {item.example && (
+                <div className="mt-1 pl-2 border-l-2 border-indigo-300 dark:border-indigo-600">
+                  <p className="text-xs text-gray-600 dark:text-gray-400 italic">
+                    {item.example}
+                  </p>
+                  {item.example_translation && (
+                    <p className="text-xs text-gray-500 dark:text-gray-500 mt-0.5">
+                      {item.example_translation}
+                    </p>
+                  )}
+                </div>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
 
 export default VocabularyNetworkTab

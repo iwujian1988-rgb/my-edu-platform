@@ -13,15 +13,24 @@ import { useDictionaryStore } from '@/hooks/useDictionaryStore'
 import type { DictionaryLanguage } from '@/lib/dictionary/types'
 import type { TTSPreloadInstance } from '@/hooks/useTTSPreload'
 
+/** VN 导入的词汇释义回退数据 */
+export interface VnWordFallback {
+  meaning: string
+  example?: string | null
+  example_translation?: string | null
+}
+
 export interface WordTooltipProps {
   word: string
   language?: DictionaryLanguage
   children: React.ReactNode
   className?: string
   ttsPreload?: TTSPreloadInstance
+  /** 词汇网络导入的释义，词典查不到时作为回退 */
+  vnFallback?: VnWordFallback | null
 }
 
-function WordTooltipInner({ word, language = 'fr', children, className, ttsPreload }: WordTooltipProps) {
+function WordTooltipInner({ word, language = 'fr', children, className, ttsPreload, vnFallback }: WordTooltipProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isPlaying, setIsPlaying] = useState(false)
   const [cardPos, setCardPos] = useState({ top: 0, left: 0 })
@@ -150,6 +159,26 @@ function WordTooltipInner({ word, language = 'fr', children, className, ttsPrelo
       )
     }
     if (!hasData) {
+      // 词典查不到，回退到 VN 导入数据
+      if (vnFallback) {
+        return (
+          <div className="px-3 py-2 space-y-2 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="font-black text-base text-black dark:text-white">{word}</span>
+              <span className="text-xs bg-indigo-100 dark:bg-indigo-900/40 text-indigo-700 dark:text-indigo-300 px-1.5 py-0.5 rounded">VN</span>
+            </div>
+            {vnFallback.meaning && <p className="text-gray-800 dark:text-gray-200 font-medium">{vnFallback.meaning}</p>}
+            {vnFallback.example && (
+              <div className="pt-1 border-t border-gray-200 dark:border-gray-600">
+                <p className="text-xs text-gray-500 dark:text-gray-400 italic">{vnFallback.example}</p>
+                {vnFallback.example_translation && (
+                  <p className="text-xs text-gray-400 dark:text-gray-500 mt-0.5">{vnFallback.example_translation}</p>
+                )}
+              </div>
+            )}
+          </div>
+        )
+      }
       return <div className="px-3 py-4 text-sm text-gray-500 text-center">未找到「{word}」</div>
     }
 
