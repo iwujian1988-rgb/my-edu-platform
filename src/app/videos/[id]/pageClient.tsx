@@ -40,7 +40,7 @@ import { VideoPlayer } from '@/components/video/VideoPlayer'
 import { AudioPlayer } from '@/components/video/AudioPlayer'
 import { SubtitleList } from '@/components/video/SubtitleList'
 import { CardPopover } from '@/components/video/CardPopover'
-import { RecordingPanel } from '@/components/video/RecordingPanel'
+import { ShadowReadingPanel } from '@/components/video/ShadowReadingPanel'
 import { FillBlankExercise } from '@/components/video/exercises/FillBlankExercise'
 import { MultipleChoiceExercise } from '@/components/video/exercises/MultipleChoiceExercise'
 import { TranslationExercise } from '@/components/video/exercises/TranslationExercise'
@@ -52,7 +52,6 @@ import { LearningTabs } from '@/components/video/learning/LearningTabs'
 import { LearningModal } from '@/components/video/learning/LearningModal'
 import { PracticeSheet } from '@/components/video/learning/PracticeSheet'
 import { AccessDenied } from '@/components/video/AccessDenied'
-import { DraggablePIP } from '@/components/video/DraggablePIP'
 import { DraggableAudioPIP } from '@/components/video/DraggableAudioPIP'
 
 import { useVideoProgress } from '@/hooks/useVideoProgress'
@@ -107,6 +106,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [wasMainVideoPlaying, setWasMainVideoPlaying] = useState(false) // 记录打开弹层前主视频的播放状态
   const [isLearningModalOpen, setIsLearningModalOpen] = useState(false) // PC端学习弹层
   const [isPracticeSheetOpen, setIsPracticeSheetOpen] = useState(false) // 移动端练习抽屉
+  const [isShadowReadingOpen, setIsShadowReadingOpen] = useState(false) // 跟读浮层
 
   // PIP 模式状态（移动端学习模块）
   const [pipMode, setPipMode] = useState(false)
@@ -602,7 +602,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   <Headphones className="w-3.5 h-3.5" />
                   字幕
                 </button>
-                <button onClick={() => handleTabChange('speak')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'speak' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
+                <button onClick={() => setIsShadowReadingOpen(true)} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", isShadowReadingOpen ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
                   <Mic className="w-3.5 h-3.5" />
                   跟读
                 </button>
@@ -654,18 +654,6 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 externalExportTrigger={exportTrigger}
               />
             </div>
-          )}
-          {currentTab === 'speak' && (
-            <RecordingPanel
-              videoId={videoId}
-              videoUrl={video.video_url}
-              subtitles={subtitles}
-              currentVideoTime={currentVideoTime}
-              onPlaySegment={handlePlaySegment}
-              onPauseMainVideo={() => setPauseMainVideo(true)}
-              onDialogClose={() => setPauseMainVideo(false)}
-              autoScroll={autoScroll}
-            />
           )}
           {currentTab === 'write' && (
             <div className="space-y-6">
@@ -737,46 +725,22 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           )}
         </div>
 
-        {/* PIP 小窗 - 移动端学习模块（复用主视频/音频元素，零缓冲延迟） */}
+        {/* PIP 小窗 - 移动端学习模块 */}
+        {/* 音频：移入 PIP 容器管理；视频：不动 DOM，仅控制栏 UI + 回调控制 */}
         {pipMode && (
-          isAudioContent ? (
-            <DraggableAudioPIP
-              video={video}
-              audioElement={mainAudioRef.current}
-              isPlaying={isPipPlaying}
-              currentTime={currentVideoTime}
-              duration={video.duration || 0}
-              onTogglePlay={togglePipPlay}
-              onSeek={(time) => {
-                const audioEl = mainAudioRef.current
-                if (audioEl) audioEl.currentTime = time
-              }}
-              onExpand={exitPipMode}
-              fallbackImageUrl={data.creator?.avatar_url || undefined}
-            />
-          ) : (
-            <DraggablePIP
-              video={video}
-              videoElement={mainVideoRef.current}
-              isPlaying={isPipPlaying}
-              currentTime={currentVideoTime}
-              duration={video.duration || 0}
-              isMuted={isPipMuted}
-              onTogglePlay={togglePipPlay}
-              onToggleMute={togglePipMute}
-              onSeek={(time) => {
-                const videoEl = mainVideoRef.current
-                if (videoEl) videoEl.currentTime = time
-              }}
-              onExpand={exitPipMode}
-              onTimeUpdate={(time) => {
-                setCurrentVideoTime(time)
-                if (video.duration) {
-                  updateProgress(time, video.duration)
-                }
-              }}
-            />
-          )
+          <DraggableAudioPIP
+            video={video}
+            isPlaying={isPipPlaying}
+            currentTime={currentVideoTime}
+            duration={video.duration || 0}
+            onTogglePlay={togglePipPlay}
+            onSeek={(time) => {
+              const el = isAudioContent ? mainAudioRef.current : mainVideoRef.current
+              if (el) el.currentTime = time
+            }}
+            onExpand={exitPipMode}
+            fallbackImageUrl={data.creator?.avatar_url || undefined}
+          />
         )}
       </div>
 
@@ -945,7 +909,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                       <button onClick={() => setCurrentTab('listen')} className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", currentTab === 'listen' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}>
                         字幕
                       </button>
-                      <button onClick={() => setCurrentTab('speak')} className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", currentTab === 'speak' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}>
+                      <button onClick={() => setIsShadowReadingOpen(true)} className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", isShadowReadingOpen ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}>
                         跟读
                       </button>
                       <button onClick={() => setCurrentTab('write')} className={cn("px-2.5 py-1.5 border-[2px] border-black transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black", currentTab === 'write' ? "bg-[#B4F416] text-black" : "bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300")}>
@@ -993,22 +957,6 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                       externalExportTrigger={exportTrigger}
                       noScrollContainer={true}
                     />
-                  )}
-
-                  {currentTab === 'speak' && (
-                    <div className="p-4">
-                      <RecordingPanel
-                        videoId={videoId}
-                        videoUrl={video.video_url}
-                        subtitles={subtitles}
-                        currentVideoTime={currentVideoTime}
-                        onPlaySegment={handlePlaySegment}
-                        onPauseMainVideo={() => setPauseMainVideo(true)}
-                        onDialogClose={() => setPauseMainVideo(false)}
-                        autoScroll={autoScroll}
-                        noScrollContainer={true}
-                      />
-                    </div>
                   )}
 
                   {currentTab === 'write' && (
@@ -1142,6 +1090,37 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           onPlaySegment={handlePlaySegment}
         />
       )}
+
+      {/* 跟读浮层 — 全屏 */}
+      <ShadowReadingPanel
+        open={isShadowReadingOpen}
+        onOpenChange={setIsShadowReadingOpen}
+        videoId={videoId}
+        videoUrl={video.video_url}
+        subtitles={subtitles}
+        currentVideoTime={currentVideoTime}
+        onPlaySegment={handlePlaySegment}
+        onPauseMainVideo={() => setPauseMainVideo(true)}
+        onResumeMainVideo={() => setPauseMainVideo(false)}
+        isAudio={isAudioContent}
+        videoInfo={{
+          title: video.title,
+          description: video.description,
+          wordCount: cards.words.length,
+          expressionCount: cards.expressions.length,
+          grammarPointCount: grammar_points.length,
+          exerciseCount: exercises.length,
+          exerciseTypes: [...new Set(exercises.map(e => e.exercise_type))],
+        }}
+        onNavigateTo={(target) => {
+          setIsShadowReadingOpen(false)
+          if (target === 'words' || target === 'expressions' || target === 'grammar') {
+            setCurrentTab('learn')
+          } else if (target === 'exercises') {
+            setIsPracticeSheetOpen(true)
+          }
+        }}
+      />
     </div>
   )
 }
