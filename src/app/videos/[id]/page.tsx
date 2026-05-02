@@ -267,17 +267,21 @@ async function checkAccess(
   const u = user as any
   const featurePermissions: string[] | null = u.feature_permissions
   const permissionExpiresAt: string | null = u.permission_expires_at
+  const userPackageIds: string[] = u.package_ids || []
 
-  // feature_permissions 包含 'video' 且未过期
+  // 有套餐时必须走套餐匹配，不靠 feature_permissions 越权
+  if (userPackageIds.length > 0) {
+    return userPackageIds.some((id: string) => videoPackageIds.includes(id))
+  }
+
+  // 无套餐但 feature_permissions 包含 'video' 且未过期
   if (featurePermissions?.includes('video')) {
     if (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date()) {
       return true
     }
   }
 
-  // 用户套餐与视频套餐有重叠
-  const userPackageIds: string[] = u.package_ids || []
-  return userPackageIds.some((id: string) => videoPackageIds.includes(id))
+  return false
 }
 
 // 核心数据加载：消除重复查询，最大化并行

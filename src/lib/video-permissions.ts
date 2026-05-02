@@ -89,21 +89,22 @@ export async function hasVideoAccess(
     return false
   }
 
-  // 5. 检查用户是否有 'video' 功能权限
+  // 5. 获取用户套餐和权限
   const userData = user as Record<string, unknown>
   const featurePermissions = userData.feature_permissions as string[] | null
   const permissionExpiresAt = userData.permission_expires_at as string | null
+  const userPackageIds = (userData.package_ids as string[] | null) || []
 
-  if (featurePermissions?.includes('video')) {
+  // 6. 检查用户的 package_ids 与视频的 package_ids 是否有重叠
+  if (userPackageIds.length > 0 && userPackageIds.some(id => videoPackageIds.includes(id))) {
+    return true
+  }
+
+  // 7. 无套餐但有 video 功能权限 → 放行（仅有套餐用户不能靠 feature_permissions 越权）
+  if (userPackageIds.length === 0 && featurePermissions?.includes('video')) {
     if (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date()) {
       return true
     }
-  }
-
-  // 6. 检查用户的 package_ids 与视频的 package_ids 是否有重叠
-  const userPackageIds = (userData.package_ids as string[] | null) || []
-  if (userPackageIds.some(id => videoPackageIds.includes(id))) {
-    return true
   }
 
   return false
@@ -159,30 +160,34 @@ export async function getVideoAccessResult(
   const permissionExpiresAt = userData.permission_expires_at as string | null
   const userPackageIds = (userData.package_ids as string[] | null) || []
 
-  // 检查功能权限
+  // 检查套餐权限（数组重叠）— 有套餐时优先走套餐匹配
+  if (userPackageIds.length > 0) {
+    const overlappingIds = userPackageIds.filter(id => videoPackageIds.includes(id))
+    if (overlappingIds.length > 0) {
+      // 获取第一个匹配套餐的信息用于展示
+      const { data: pkg } = await supabase
+        .from('invitation_packages')
+        .select('id, name')
+        .eq('id', overlappingIds[0])
+        .single()
+
+      return {
+        hasAccess: true,
+        packageInfo: pkg ? {
+          id: pkg.id,
+          name: pkg.name,
+          expiresAt: permissionExpiresAt,
+        } : undefined,
+      }
+    }
+    // 有套餐但无匹配 → 拒绝
+    return { hasAccess: false }
+  }
+
+  // 无套餐但有 video 功能权限 → 放行
   if (featurePermissions?.includes('video')) {
     if (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date()) {
       return { hasAccess: true }
-    }
-  }
-
-  // 检查套餐权限（数组重叠）
-  const overlappingIds = userPackageIds.filter(id => videoPackageIds.includes(id))
-  if (overlappingIds.length > 0) {
-    // 获取第一个匹配套餐的信息用于展示
-    const { data: pkg } = await supabase
-      .from('invitation_packages')
-      .select('id, name')
-      .eq('id', overlappingIds[0])
-      .single()
-
-    return {
-      hasAccess: true,
-      packageInfo: pkg ? {
-        id: pkg.id,
-        name: pkg.name,
-        expiresAt: permissionExpiresAt,
-      } : undefined,
     }
   }
 
@@ -214,23 +219,10 @@ export async function getAccessibleVideoIds(userId: string): Promise<string[]> {
   const featurePermissions = userData.feature_permissions as string[] | null
   const permissionExpiresAt = userData.permission_expires_at as string | null
 
-  // 2. 构建查询条件
-  let query = supabase
-    .from('videos')
-    .select('id')
-    .eq('status', 'published')
-
-  // 如果用户有 'video' 功能权限（且未过期）
+  // 2. 如果用户有套餐，获取套餐关联的视频（优先级最高）
   const hasVideoPermission = featurePermissions?.includes('video') &&
     (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
 
-  if (hasVideoPermission) {
-    const { data, error } = await query
-    if (error || !data) return []
-    return data.map(v => v.id)
-  }
-
-  // 如果用户有套餐，获取套餐关联的视频
   if (userPackageIds.length > 0) {
     const { data, error: queryError } = await supabase
       .from('videos')
@@ -248,7 +240,17 @@ export async function getAccessibleVideoIds(userId: string): Promise<string[]> {
       .map(v => v.id)
   }
 
-  // 没有套餐，无法访问任何视频
+  // 无套餐但有 video 功能权限 → 放行所有视频
+  if (hasVideoPermission) {
+    const { data, error } = await supabase
+      .from('videos')
+      .select('id')
+      .eq('status', 'published')
+    if (error || !data) return []
+    return data.map(v => v.id)
+  }
+
+  // 没有套餐也没有权限
   return []
 }
 

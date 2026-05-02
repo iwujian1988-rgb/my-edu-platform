@@ -79,6 +79,12 @@ export async function GET(request: NextRequest) {
     const onlyAccessible = searchParams.get('only_accessible') !== 'false'
     const contentTypeParam = searchParams.get('content_type') as ContentType | null
 
+    // 根据客户端时区计算本地日期，避免 UTC 偏差（如中国用户 UTC+8 在早上 0-8 点看不到当天内容）
+    const tzOffsetMin = parseInt(searchParams.get('tz_offset') || '0')
+    const nowUtc = new Date()
+    const localMs = nowUtc.getTime() - tzOffsetMin * 60 * 1000
+    const today = new Date(localMs).toISOString().split('T')[0]
+
     // iOS 也走缓存（跳过缓存反而每次直连 Supabase 更慢）
     const isIOS = false
 
@@ -257,7 +263,6 @@ export async function GET(request: NextRequest) {
     }
 
     // 6. 调用 DB 层分页函数，排序和分页全部在 PostgreSQL 完成
-    const today = new Date().toISOString().split('T')[0]
     const { data: rpcRows, error } = await supabase.rpc('get_published_videos_paginated', {
       p_limit: limit,
       p_offset: offset,
@@ -267,7 +272,8 @@ export async function GET(request: NextRequest) {
       p_learned_video_ids: learnedVideoIds,
       p_learn_status: learnStatus,
       p_package_ids: userPackageIds.length > 0 ? userPackageIds : null,
-      p_has_permission: !onlyAccessible || hasVideoPermission,
+      // 有套餐时走套餐过滤，不走全局权限豁免
+      p_has_permission: userPackageIds.length > 0 ? false : (!onlyAccessible || hasVideoPermission),
       p_today: today,
       p_content_type: contentTypeParam || null,
     })
@@ -346,7 +352,9 @@ export async function GET(request: NextRequest) {
         tags: row.tag_names,
         packages: row.package_ids?.map(id => packageNameMap.get(id)).filter(Boolean) || [],
         user_progress: userProgress[row.id] || null,
-        has_access: hasVideoPermission || (userPackageIds.length > 0 ? row.package_ids?.some(pid => userPackageIds.includes(pid)) : false),
+        has_access: userPackageIds.length > 0
+          ? row.package_ids?.some(pid => userPackageIds.includes(pid)) ?? false
+          : hasVideoPermission,
       }
     })
 

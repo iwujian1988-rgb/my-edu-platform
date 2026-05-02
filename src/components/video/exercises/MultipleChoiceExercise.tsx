@@ -44,8 +44,8 @@ function parseOptions(questionText: string, answer: string, metadataOptions?: Re
     }
   }
 
-  // 兼容旧格式：从题目文本中解析选项
-  const optionPattern = /([A-D])[.．)）、]\s*([^A-D]*?)(?=[A-D][.．)）、]|$)/gi
+  // 兼容旧格式：从题目文本中逐行解析选项（每行一个 A. xxx B. xxx）
+  const optionPattern = /^([A-D])[.．)）、]\s*(.+)$/gm
   const options: ParsedOption[] = []
   let match
 

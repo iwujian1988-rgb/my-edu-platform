@@ -117,7 +117,8 @@ export async function uploadVideoToOSS(
       // 使用分片上传
       result = await client.multipartUpload(objectKey, buffer, {
         headers: getCacheHeaders('video'),
-        partSize: 1024 * 1024, // 1MB 每片
+        partSize: 10 * 1024 * 1024, // 10MB 每片，减少分片数量避免连接断开
+        parallel: 1, // 串行上传，避免并发连接被 reset
         progress: (p: number) => {
           const percent = Math.round(p * 100)
           if (percent % 20 === 0) { // 每20%打印一次，减少日志
