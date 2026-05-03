@@ -101,9 +101,62 @@ export async function GET(
     const supabase = await createAdminClient()
     const needsFullFetch = sort === 'episode'
 
-    // 1. 三路并行：播主信息 + 内容列表 + 用户权限
-    const [creatorData, contentData, userInfoResult] = await Promise.all([
-      // 1a. 播主信息（全局缓存 5 分钟）
+    // 1. 先获取用户权限（通常命中缓存，极快）
+    const userInfoCacheKey = `videos:user_info:${authUser.id}`
+    const cachedUserInfo = await getCached<{
+      packageIds: string[]
+      hasVideoPermission: boolean
+      permissionExpiresAt: string | null
+      packageNameMap: Array<[string, string]>
+    }>(userInfoCacheKey)
+
+    let userPackageIds: string[] = []
+    let hasVideoPermission = false
+    let packageNameMap = new Map<string, string>()
+
+    if (cachedUserInfo) {
+      userPackageIds = cachedUserInfo.packageIds
+      hasVideoPermission = cachedUserInfo.hasVideoPermission
+      packageNameMap = new Map(cachedUserInfo.packageNameMap)
+    } else {
+      const { data: userRow } = await supabase
+        .from('users')
+        .select('package_ids, feature_permissions, permission_expires_at')
+        .eq('id', authUser.id)
+        .single()
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const u = userRow as any
+      userPackageIds = u?.package_ids || []
+      hasVideoPermission = !!(
+        u?.feature_permissions?.includes('video') &&
+        (!u?.permission_expires_at || new Date(u.permission_expires_at) > new Date())
+      )
+
+      if (userPackageIds.length > 0) {
+        const { data: pkgData } = await supabase
+          .from('invitation_packages')
+          .select('id, name')
+          .in('id', userPackageIds)
+        if (pkgData) {
+          for (const pkg of pkgData) {
+            packageNameMap.set(pkg.id, pkg.name || '套餐')
+          }
+        }
+      }
+
+      setCache(userInfoCacheKey, {
+        packageIds: userPackageIds,
+        hasVideoPermission,
+        permissionExpiresAt: u?.permission_expires_at ?? null,
+        packageNameMap: Array.from(packageNameMap.entries()),
+      }, USER_INFO_CACHE_TTL).catch(() => {})
+    }
+
+    // 2. 播主信息 + 内容列表并行（权限已就绪）
+    const packageFilterKey = userPackageIds.length > 0 ? userPackageIds.join(',') : 'all'
+    const [creatorData, contentData] = await Promise.all([
+      // 2a. 播主信息（全局缓存 5 分钟）
       (async () => {
         const cacheKey = `creator:info:${creatorId}`
         const cached = await getCached<CreatorInfo>(cacheKey)
@@ -153,9 +206,9 @@ export async function GET(
         return { data: info, fromCache: false }
       })(),
 
-      // 1b. 内容列表（缓存 60 秒，不含用户进度）
+      // 2b. 内容列表（缓存 60 秒，按用户套餐隔离）
       (async () => {
-        const cacheKey = `creator:content:${creatorId}:${sort}`
+        const cacheKey = `creator:content:${creatorId}:${sort}:${packageFilterKey}`
         const cached = await getCached<{ rows: RpcContentRow[]; totalCount: number }>(cacheKey)
         if (cached) return { ...cached, fromCache: true }
 
@@ -163,6 +216,8 @@ export async function GET(
           p_creator_id: creatorId,
           p_limit: needsFullFetch ? MAX_LIMIT : limit,
           p_offset: needsFullFetch ? 0 : offset,
+          p_package_ids: userPackageIds.length > 0 ? userPackageIds : null,
+          p_has_permission: userPackageIds.length > 0 ? false : hasVideoPermission,
         })
 
         if (error) return { rows: [], totalCount: 0, fromCache: false }
@@ -186,61 +241,6 @@ export async function GET(
         setCache(cacheKey, result, CONTENT_CACHE_TTL).catch(() => {})
         return { ...result, fromCache: false }
       })(),
-
-      // 1c. 用户权限（缓存 5 分钟，与视频列表共享逻辑）
-      (async () => {
-        const cacheKey = `videos:user_info:${authUser.id}`
-        const cached = await getCached<{
-          packageIds: string[]
-          hasVideoPermission: boolean
-          permissionExpiresAt: string | null
-          packageNameMap: Array<[string, string]>
-        }>(cacheKey)
-
-        if (cached) {
-          return {
-            packageIds: cached.packageIds,
-            hasVideoPermission: cached.hasVideoPermission,
-            packageNameMap: new Map(cached.packageNameMap),
-          }
-        }
-
-        const { data: userRow } = await supabase
-          .from('users')
-          .select('package_ids, feature_permissions, permission_expires_at')
-          .eq('id', authUser.id)
-          .single()
-
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const u = userRow as any
-        const packageIds: string[] = u?.package_ids || []
-        const hasPermission = !!(
-          u?.feature_permissions?.includes('video') &&
-          (!u?.permission_expires_at || new Date(u.permission_expires_at) > new Date())
-        )
-
-        const pkgMap = new Map<string, string>()
-        if (packageIds.length > 0) {
-          const { data: pkgData } = await supabase
-            .from('invitation_packages')
-            .select('id, name')
-            .in('id', packageIds)
-          if (pkgData) {
-            for (const pkg of pkgData) {
-              pkgMap.set(pkg.id, pkg.name || '套餐')
-            }
-          }
-        }
-
-        setCache(cacheKey, {
-          packageIds,
-          hasVideoPermission: hasPermission,
-          permissionExpiresAt: u?.permission_expires_at ?? null,
-          packageNameMap: Array.from(pkgMap.entries()),
-        }, USER_INFO_CACHE_TTL).catch(() => {})
-
-        return { packageIds, hasVideoPermission: hasPermission, packageNameMap: pkgMap }
-      })(),
     ])
 
     // 2. 验证播主存在
@@ -251,7 +251,6 @@ export async function GET(
     // 3. 获取当页视频的用户进度（唯一实时查询）
     const creatorInfo = creatorData.data
     const { rows: pagedRows, totalCount } = contentData
-    const { packageIds: userPackageIds, hasVideoPermission, packageNameMap } = userInfoResult
 
     // episode 排序时需要二次分页
     let finalRows = pagedRows

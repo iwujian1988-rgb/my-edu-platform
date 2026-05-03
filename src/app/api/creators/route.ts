@@ -7,7 +7,11 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
+import { getCached, setCache } from '@/lib/cache/api-cache'
 import type { PodcastCreatorListItem } from '@/types/video'
+
+/** 用户权限信息缓存 TTL（秒） */
+const USER_INFO_CACHE_TTL = 300
 
 interface RpcCreatorRow {
   id: string
@@ -42,8 +46,50 @@ export async function GET(request: NextRequest) {
     const supabase = await createAdminClient()
     const limit = parseInt(searchParams.get('limit') || '8')
 
+    // 获取用户套餐权限（复用缓存逻辑）
+    const userInfoCacheKey = `creators:user_info:${authUser.id}`
+    const cached = await getCached<{
+      packageIds: string[]
+      hasVideoPermission: boolean
+    }>(userInfoCacheKey)
+
+    let userPackageIds: string[] = []
+    let hasVideoPermission = false
+
+    if (cached) {
+      userPackageIds = cached.packageIds
+      hasVideoPermission = cached.hasVideoPermission
+    } else {
+      const { data: userRow } = await supabase
+        .from('users')
+        .select('package_ids, feature_permissions, permission_expires_at')
+        .eq('id', authUser.id)
+        .single()
+
+      const userInfo = userRow as {
+        package_ids: string[] | null
+        feature_permissions: string[] | null
+        permission_expires_at: string | null
+      } | null
+
+      userPackageIds = userInfo?.package_ids || []
+      const featurePermissions = userInfo?.feature_permissions
+      const permissionExpiresAt = userInfo?.permission_expires_at ?? null
+      hasVideoPermission = !!(
+        featurePermissions?.includes('video') &&
+        (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
+      )
+
+      setCache(userInfoCacheKey, {
+        packageIds: userPackageIds,
+        hasVideoPermission,
+      }, USER_INFO_CACHE_TTL).catch(() => {})
+    }
+
     const { data: rpcRows, error } = await supabase.rpc('get_podcast_creators', {
       p_limit: limit,
+      p_package_ids: userPackageIds.length > 0 ? userPackageIds : null,
+      p_has_permission: userPackageIds.length > 0 ? false : hasVideoPermission,
     })
 
     if (error) {

@@ -92,7 +92,7 @@ export async function GET(request: NextRequest) {
     // 这些查询互不依赖，并行执行省 ~400ms
     const userInfoCacheKey = `videos:user_info:${authUser.id}`
 
-    const [userInfoResult, tagResult, progressResult, languagesResult] = await Promise.all([
+    const [userInfoResult, tagResult, progressResult] = await Promise.all([
       // 0a. 用户权限信息（带缓存）
       (async () => {
         if (!isIOS) {
@@ -175,32 +175,57 @@ export async function GET(request: NextRequest) {
         .from('user_video_progress')
         .select('video_id')
         .eq('user_id', authUser.id) : Promise.resolve({ data: null }),
+    ])
 
-      // 0d. 可用语言（全局缓存 10 分钟，避免每次全表扫 videos）
-      (async () => {
-        if (!isIOS) {
-          const cachedLangs = await getCached<VideoLanguage[]>('videos:available_languages')
-          if (cachedLangs) return cachedLangs
-        }
+    // 0d. 可用语言（依赖用户权限，需在 userInfoResult 之后）
+    const { packageIds: resolvedPkgIds, hasVideoPermission: resolvedHasPerm } = userInfoResult
+    let availableLanguages: VideoLanguage[]
 
+    if (resolvedPkgIds.length > 0) {
+      // 有套餐时：只查询用户套餐覆盖的视频语言
+      const langsCacheKey = `videos:available_languages:${resolvedPkgIds.join(',')}`
+      const cachedLangs = await getCached<VideoLanguage[]>(langsCacheKey)
+      if (cachedLangs) {
+        availableLanguages = cachedLangs
+      } else {
+        const { data: langData } = await supabase
+          .from('videos')
+          .select('language, package_ids')
+          .eq('status', 'published')
+
+        availableLanguages = [...new Set(
+          (langData || [])
+            .filter(v => v.language && (
+              !v.package_ids ||
+              v.package_ids.length === 0 ||
+              v.package_ids.some((pid: string) => resolvedPkgIds.includes(pid))
+            ))
+            .map(v => v.language as VideoLanguage)
+        )]
+        setCache(langsCacheKey, availableLanguages, LANGUAGES_CACHE_TTL).catch(() => {})
+      }
+    } else if (resolvedHasPerm) {
+      // 全局权限：缓存所有语言
+      const cachedLangs = await getCached<VideoLanguage[]>('videos:available_languages:all')
+      if (cachedLangs) {
+        availableLanguages = cachedLangs
+      } else {
         const { data } = await supabase
           .from('videos')
           .select('language')
           .eq('status', 'published')
 
-        const langs = [...new Set(
+        availableLanguages = [...new Set(
           (data || []).filter(v => v.language).map(v => v.language as VideoLanguage)
         )]
-        if (!isIOS) {
-          setCache('videos:available_languages', langs, LANGUAGES_CACHE_TTL).catch(() => {})
-        }
-        return langs
-      })(),
-    ])
+        setCache('videos:available_languages:all', availableLanguages, LANGUAGES_CACHE_TTL).catch(() => {})
+      }
+    } else {
+      availableLanguages = []
+    }
 
     // 解构用户信息
     const { packageIds: userPackageIds, hasVideoPermission, packages: userPackages, packageNameMap } = userInfoResult
-    const availableLanguages = languagesResult
 
     // 2. 尝试从缓存获取视频列表（60 秒有效）
     const filterHash = [limit, offset, language, difficulty, tag, learnStatus, onlyAccessible, contentTypeParam,
