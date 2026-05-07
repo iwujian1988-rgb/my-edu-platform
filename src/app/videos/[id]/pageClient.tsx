@@ -176,6 +176,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [countdown, setCountdown] = useState<number | null>(null)
   const [countdownInfo, setCountdownInfo] = useState<{ title: string; isNextGroup: boolean } | null>(null)
   const countdownTimerRef = useRef<{ interval: NodeJS.Timeout; timeout: NodeJS.Timeout } | null>(null)
+  const nextGroupRef = useRef<{ video_id: string; title: string } | null>(null)
 
   const handleContinuousPlayToggle = useCallback((enabled: boolean) => {
     setContinuousPlayEnabled(enabled)
@@ -197,6 +198,22 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     countdownTimerRef.current = { interval, timeout }
   }, [router])
 
+  // 预取下一组信息：当播放到同组最后一集时提前 fetch，避免视频结束时才请求导致延迟
+  useEffect(() => {
+    if (!continuousPlayEnabled || !data.playlist || !data.source_video_id) return
+    const isLast = data.playlist[data.playlist.length - 1]?.id === videoId
+    if (!isLast) return
+
+    const lang = (data.video as VideoListItem)?.language || ''
+    const queryParam = lang ? `&language=${lang}` : ''
+    fetch(`/api/videos/next-group?current_source_video_id=${data.source_video_id}${queryParam}`)
+      .then(res => res.json())
+      .then(json => {
+        if (json.data?.video_id) nextGroupRef.current = json.data
+      })
+      .catch(() => {})
+  }, [continuousPlayEnabled, data.playlist, data.source_video_id, data.video, videoId])
+
   const handleVideoEnded = useCallback(() => {
     if (!continuousPlayEnabled || !data.playlist || data.playlist.length <= 1) return
 
@@ -207,22 +224,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     saveProgress()
 
     if (nextVideo) {
-      // 同组下一集
       startCountdown(nextVideo.title, false, `/videos/${nextVideo.id}?continuous=1`)
-    } else if (data.source_video_id) {
-      // 同组播完，查找更新的下一组
-      const lang = (data.video as VideoListItem)?.language || ''
-      const queryParam = lang ? `&language=${lang}` : ''
-      fetch(`/api/videos/next-group?current_source_video_id=${data.source_video_id}${queryParam}`)
-        .then(res => res.json())
-        .then(json => {
-          if (json.data?.video_id) {
-            startCountdown(json.data.title, true, `/videos/${json.data.video_id}?continuous=1`)
-          }
-        })
-        .catch(() => {})
+    } else if (nextGroupRef.current) {
+      // 下一组已预取，直接导航
+      startCountdown(nextGroupRef.current.title, true, `/videos/${nextGroupRef.current.video_id}?continuous=1`)
     }
-  }, [continuousPlayEnabled, data.playlist, data.source_video_id, data.video, videoId, markCompleted, saveProgress, startCountdown])
+  }, [continuousPlayEnabled, data.playlist, videoId, markCompleted, saveProgress, startCountdown])
 
   const cancelCountdown = useCallback(() => {
     setCountdown(null)

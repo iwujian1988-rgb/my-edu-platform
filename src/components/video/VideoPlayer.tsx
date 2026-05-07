@@ -329,13 +329,17 @@ export function VideoPlayer({
     const videoEl = videoRef.current
     if (!videoEl) return
 
-    // autoPlay 联播：尝试播放，若浏览器阻止则静音后重试
+    // autoPlay 联播：先尝试有声播放，被阻止则静音播放后立即尝试恢复声音
     if (shouldAutoPlayRef.current) {
       shouldAutoPlayRef.current = false
       videoEl.play().catch(() => {
         videoEl.muted = true
         setIsMuted(true)
-        videoEl.play().catch(() => {})
+        videoEl.play().then(() => {
+          videoEl.muted = false
+          setIsMuted(false)
+          videoEl.play().catch(() => {})
+        }).catch(() => {})
       })
     }
 
