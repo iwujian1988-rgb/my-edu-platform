@@ -4,7 +4,7 @@ import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
 import { getCached, setCache } from '@/lib/cache/api-cache'
 import VideoLearningClient from './pageClient'
 import VideoLoading from './loading'
-import type { VideoFullResponseExtended } from '@/types/video'
+import type { PlaylistItem, VideoFullResponseExtended } from '@/types/video'
 
 interface PageProps {
   params: Promise<{ id: string }>
@@ -251,9 +251,9 @@ async function checkAccess(
   userId: string,
   videoPackageIds: string[] | null,
   videoStatus: string,
-): Promise<boolean> {
-  if (videoStatus !== 'published') return false
-  if (!videoPackageIds || videoPackageIds.length === 0) return false
+): Promise<{ hasAccess: boolean; canContinuousPlay: boolean }> {
+  if (videoStatus !== 'published') return { hasAccess: false, canContinuousPlay: false }
+  if (!videoPackageIds || videoPackageIds.length === 0) return { hasAccess: false, canContinuousPlay: false }
 
   const { data: user } = await supabase
     .from('users')
@@ -261,7 +261,7 @@ async function checkAccess(
     .eq('id', userId)
     .single()
 
-  if (!user) return false
+  if (!user) return { hasAccess: false, canContinuousPlay: false }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const u = user as any
@@ -269,19 +269,27 @@ async function checkAccess(
   const permissionExpiresAt: string | null = u.permission_expires_at
   const userPackageIds: string[] = u.package_ids || []
 
+  const canContinuousPlay = !!(
+    featurePermissions?.includes('continuous_play') &&
+    (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
+  )
+
   // 有套餐时必须走套餐匹配，不靠 feature_permissions 越权
   if (userPackageIds.length > 0) {
-    return userPackageIds.some((id: string) => videoPackageIds.includes(id))
+    return {
+      hasAccess: userPackageIds.some((id: string) => videoPackageIds.includes(id)),
+      canContinuousPlay,
+    }
   }
 
   // 无套餐但 feature_permissions 包含 'video' 且未过期
   if (featurePermissions?.includes('video')) {
     if (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date()) {
-      return true
+      return { hasAccess: true, canContinuousPlay }
     }
   }
 
-  return false
+  return { hasAccess: false, canContinuousPlay: false }
 }
 
 // 核心数据加载：消除重复查询，最大化并行
@@ -302,8 +310,8 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const v = video as any
 
-  // 2. 并行：权限检查 + 静态数据 + 用户进度（关键优化：原来串行，现在并行）
-  const [hasAccess, staticData, progressResult] = await Promise.all([
+  // 2. 并行：权限检查 + 静态数据 + 用户进度 + 播放列表（关键优化：原来串行，现在并行）
+  const [accessResult, staticData, progressResult, playlistResult] = await Promise.all([
     checkAccess(supabase, userId, v.package_ids, v.status),
     getVideoStaticData(videoId, v.creator_id),
     supabase
@@ -312,7 +320,17 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       .eq('user_id', userId)
       .eq('video_id', videoId)
       .maybeSingle(),
+    v.source_video_id
+      ? supabase
+          .from('videos')
+          .select('id, title, duration, display_order, thumbnail_url, cover_url')
+          .eq('source_video_id', v.source_video_id)
+          .eq('status', 'published')
+          .order('display_order', { ascending: true })
+      : Promise.resolve({ data: null, error: null }),
   ])
+
+  const { hasAccess, canContinuousPlay } = accessResult
 
   if (!hasAccess) {
     return {
@@ -328,6 +346,9 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
       vocabulary_network: null,
       creator: null,
       exerciseProgress: [],
+      source_video_id: v.source_video_id || null,
+      playlist: null,
+      canContinuousPlay: false,
     }
   }
 
@@ -383,6 +404,9 @@ async function getVideoFullData(videoId: string, userId: string): Promise<VideoF
     vocabulary_network: staticData.vocabularyNetwork as VideoFullResponseExtended['vocabulary_network'],
     creator: staticData.creator as VideoFullResponseExtended['creator'],
     exerciseProgress: exerciseProgressData,
+    source_video_id: v.source_video_id || null,
+    playlist: playlistResult.data || null,
+    canContinuousPlay,
   }
 }
 
