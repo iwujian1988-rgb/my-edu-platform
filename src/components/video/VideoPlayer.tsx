@@ -329,10 +329,14 @@ export function VideoPlayer({
     const videoEl = videoRef.current
     if (!videoEl) return
 
-    // 如果是刚点击封面开始播放，自动播放
+    // autoPlay 联播：尝试播放，若浏览器阻止则静音后重试
     if (shouldAutoPlayRef.current) {
       shouldAutoPlayRef.current = false
-      videoEl.play().catch(() => {})
+      videoEl.play().catch(() => {
+        videoEl.muted = true
+        setIsMuted(true)
+        videoEl.play().catch(() => {})
+      })
     }
 
     // 备用：处理 pending 的跳转（如果 handleCanPlayThrough 没触发)

@@ -201,7 +201,7 @@ export function AudioPlayer({
     const el = audioRef.current; if (!el) return
     setIsLoading(false)
     // media fragment seek 后自动播放（或首次加载自动播放）
-    if (shouldAutoPlayRef.current) { shouldAutoPlayRef.current = false; el.play().catch(() => {}) }
+    if (shouldAutoPlayRef.current) { shouldAutoPlayRef.current = false; el.play().catch(() => { el.muted = true; el.play().catch(() => {}) }) }
     // 首次播放的 pending seek（hasStarted=false 时的延迟跳转）
     if (pendingSeekRef.current !== null) {
       const targetTime = pendingSeekRef.current
