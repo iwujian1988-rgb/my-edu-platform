@@ -138,6 +138,14 @@ export function VideoPlayer({
     }
   }, [video.video_url])
 
+  // autoPlay: 联播模式下自动开始播放，只设状态，由 hasStarted effect 统一 load
+  useEffect(() => {
+    if (!autoPlay || hasStarted) return
+    setHasStarted(true)
+    setIsLoading(true)
+    shouldAutoPlayRef.current = true
+  }, [autoPlay, hasStarted])
+
   // 当 hasStarted 变为 true 后加载视频
   useEffect(() => {
     if (!hasStarted) return
@@ -150,7 +158,6 @@ export function VideoPlayer({
       videoEl.currentTime = initialPosition
     }
 
-    // 加载并播放视频
     videoEl.load()
   }, [hasStarted, initialPosition])
 

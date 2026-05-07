@@ -139,6 +139,12 @@ export function AudioPlayer({
     })
   }, [video.title, video.creator_name, coverImageUrl])
 
+  // autoPlay: 联播模式下自动开始播放，只设状态，由 hasStarted effect 统一 load
+  useEffect(() => {
+    if (!autoPlay || hasStarted) return
+    setHasStarted(true); setIsLoading(true); shouldAutoPlayRef.current = true
+  }, [autoPlay, hasStarted])
+
   const handleSpeedChange = useCallback((speed: number) => {
     const el = audioRef.current
     if (!el) return

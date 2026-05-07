@@ -342,8 +342,10 @@ function VideoListContent() {
   const [filterDrawerOpen, setFilterDrawerOpen] = useState(false)
 
   // 构建查询 URL
+  const tzOffset = useMemo(() => String(new Date().getTimezoneOffset()), [])
   const buildQueryUrl = useCallback(() => {
     const params = new URLSearchParams()
+    params.set('tz_offset', tzOffset)
     if (language && language !== 'all') {
       params.set('language', language)
     }

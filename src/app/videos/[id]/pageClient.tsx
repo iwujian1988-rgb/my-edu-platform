@@ -11,7 +11,7 @@
  */
 
 import { useState, useCallback, useEffect, useRef } from 'react'
-import { useRouter } from 'next/navigation'
+import { useRouter, useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
@@ -53,6 +53,7 @@ import { LearningModal } from '@/components/video/learning/LearningModal'
 import { PracticeSheet } from '@/components/video/learning/PracticeSheet'
 import { AccessDenied } from '@/components/video/AccessDenied'
 import { DraggableAudioPIP } from '@/components/video/DraggableAudioPIP'
+import { ContinuousPlayPanel, getStoredContinuousPlay, setStoredContinuousPlay } from '@/components/video/ContinuousPlayPanel'
 
 import { useVideoProgress } from '@/hooks/useVideoProgress'
 import { useCardProgress } from '@/hooks/useCardProgress'
@@ -61,6 +62,7 @@ import { useExerciseProgress } from '@/hooks/useExerciseProgress'
 
 import type {
   VideoFullResponseExtended,
+  VideoListItem,
   VideoWordCard,
   VideoPhraseCard,
   VideoExpressionCard,
@@ -115,6 +117,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const mainVideoRef = useRef<HTMLVideoElement>(null)
   const mainAudioRef = useRef<HTMLAudioElement>(null)
 
+
   const isAudioContent = data.video.content_type === 'audio'
     || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(data.video.video_url || '')
 
@@ -151,7 +154,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [exportTrigger, setExportTrigger] = useState(0) // 导出弹窗触发器
 
   // Hooks
-  const { updateProgress, saveProgress } = useVideoProgress({
+  const { updateProgress, markCompleted, saveProgress } = useVideoProgress({
     videoId,
     initialProgress: data?.user_progress,
     onSave: async (progress) => {
@@ -162,6 +165,82 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
       })
     },
   })
+
+  // 连续播放
+  const searchParams = useSearchParams()
+  const shouldAutoEnable = searchParams.get('continuous') === '1'
+  const [continuousPlayEnabled, setContinuousPlayEnabled] = useState(() => {
+    if (data.canContinuousPlay && shouldAutoEnable) return true
+    return data.canContinuousPlay ? getStoredContinuousPlay() : false
+  })
+  const [countdown, setCountdown] = useState<number | null>(null)
+  const [countdownInfo, setCountdownInfo] = useState<{ title: string; isNextGroup: boolean } | null>(null)
+  const countdownTimerRef = useRef<{ interval: NodeJS.Timeout; timeout: NodeJS.Timeout } | null>(null)
+
+  const handleContinuousPlayToggle = useCallback((enabled: boolean) => {
+    setContinuousPlayEnabled(enabled)
+    setStoredContinuousPlay(enabled)
+  }, [])
+
+  const startCountdown = useCallback((title: string, isNextGroup: boolean, targetUrl: string) => {
+    setCountdownInfo({ title, isNextGroup })
+    setCountdown(3)
+    const interval = setInterval(() => {
+      setCountdown(prev => {
+        if (prev === null || prev <= 1) return null
+        return prev - 1
+      })
+    }, 1000)
+    const timeout = setTimeout(() => {
+      router.push(targetUrl)
+    }, 3000)
+    countdownTimerRef.current = { interval, timeout }
+  }, [router])
+
+  const handleVideoEnded = useCallback(() => {
+    if (!continuousPlayEnabled || !data.playlist || data.playlist.length <= 1) return
+
+    const currentIndex = data.playlist.findIndex(v => v.id === videoId)
+    const nextVideo = data.playlist[currentIndex + 1]
+
+    markCompleted()
+    saveProgress()
+
+    if (nextVideo) {
+      // 同组下一集
+      startCountdown(nextVideo.title, false, `/videos/${nextVideo.id}?continuous=1`)
+    } else if (data.source_video_id) {
+      // 同组播完，查找更新的下一组
+      const lang = (data.video as VideoListItem)?.language || ''
+      const queryParam = lang ? `&language=${lang}` : ''
+      fetch(`/api/videos/next-group?current_source_video_id=${data.source_video_id}${queryParam}`)
+        .then(res => res.json())
+        .then(json => {
+          if (json.data?.video_id) {
+            startCountdown(json.data.title, true, `/videos/${json.data.video_id}?continuous=1`)
+          }
+        })
+        .catch(() => {})
+    }
+  }, [continuousPlayEnabled, data.playlist, data.source_video_id, data.video, videoId, markCompleted, saveProgress, startCountdown])
+
+  const cancelCountdown = useCallback(() => {
+    setCountdown(null)
+    if (countdownTimerRef.current) {
+      clearInterval(countdownTimerRef.current.interval)
+      clearTimeout(countdownTimerRef.current.timeout)
+      countdownTimerRef.current = null
+    }
+  }, [])
+
+  useEffect(() => {
+    return () => {
+      if (countdownTimerRef.current) {
+        clearInterval(countdownTimerRef.current.interval)
+        clearTimeout(countdownTimerRef.current.timeout)
+      }
+    }
+  }, [])
 
   const { getCardStatus, updateStatus } = useCardProgress({ videoId })
   const { isFavorited, toggleFavorite } = useVideoFavorites({ videoId })
@@ -482,24 +561,28 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   <AudioPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
-                    initialPosition={data.user_progress?.last_position || 0}
+                    initialPosition={shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)}
                     seekTo={seekToTime}
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
                     pause={pauseMainVideo}
                     audioRefOut={mainAudioRef}
                     fallbackImageUrl={data.creator?.avatar_url || undefined}
+                    onEnded={handleVideoEnded}
+                    autoPlay={shouldAutoEnable}
                   />
                 ) : (
                   <VideoPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
-                    initialPosition={data.user_progress?.last_position || 0}
+                    initialPosition={shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)}
                     seekTo={seekToTime}
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
                     pause={pauseMainVideo}
                     videoRefOut={mainVideoRef}
+                    onEnded={handleVideoEnded}
+                    autoPlay={shouldAutoEnable}
                   />
                 )
               )}
@@ -766,22 +849,26 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   <AudioPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
-                    initialPosition={data.user_progress?.last_position || 0}
+                    initialPosition={shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)}
                     seekTo={seekToTime}
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
                     pause={pauseMainVideo}
                     fallbackImageUrl={data.creator?.avatar_url || undefined}
+                    onEnded={handleVideoEnded}
+                    autoPlay={shouldAutoEnable}
                   />
                 ) : (
                   <VideoPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
-                    initialPosition={data.user_progress?.last_position || 0}
+                    initialPosition={shouldAutoEnable ? 0 : (data.user_progress?.last_position || 0)}
                     seekTo={seekToTime}
                     seekTrigger={seekTrigger}
                     segmentEndTime={segmentEndTime}
                     pause={pauseMainVideo}
+                    onEnded={handleVideoEnded}
+                    autoPlay={shouldAutoEnable}
                   />
                 )
               )}
@@ -1091,6 +1178,16 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         />
       )}
 
+      {/* 连续播放控件 — 右下角固定 */}
+      <ContinuousPlayPanel
+        playlist={data.playlist || []}
+        currentVideoId={videoId}
+        canContinuousPlay={data.canContinuousPlay}
+        enabled={continuousPlayEnabled}
+        onToggle={handleContinuousPlayToggle}
+        onNavigate={id => router.push(`/videos/${id}${continuousPlayEnabled ? '?continuous=1' : ''}`)}
+      />
+
       {/* 跟读浮层 — 全屏 */}
       <ShadowReadingPanel
         open={isShadowReadingOpen}
@@ -1121,6 +1218,29 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           }
         }}
       />
+
+      {/* 连续播放倒计时浮层 */}
+      {countdown !== null && countdownInfo && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="bg-white border-[3px] border-black shadow-[6px_6px_0px_0px_#000] rounded-2xl p-8 text-center max-w-sm mx-4">
+            <p className="text-sm font-bold text-gray-500 mb-1">
+              {countdownInfo.isNextGroup ? '本组已播完，切换下一组' : '连续播放中'}
+            </p>
+            <p className="text-3xl font-black text-black mb-2">
+              即将播放 ({countdown})
+            </p>
+            <p className="text-sm text-gray-600 mb-5 truncate">
+              {countdownInfo.title}
+            </p>
+            <button
+              onClick={cancelCountdown}
+              className="px-6 py-2 bg-white border-[2px] border-black rounded-lg text-sm font-bold shadow-[2px_2px_0px_0px_#000] hover:bg-gray-50 active:shadow-none active:translate-x-[2px] active:translate-y-[2px] transition-all"
+            >
+              取消
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
