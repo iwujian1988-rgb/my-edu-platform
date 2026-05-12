@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 /**
  * 跟读模式 - 播放视图
@@ -90,20 +90,6 @@ const DOT_STYLES: Record<string, string> = {
   done: 'bg-[#16a34a]',
 }
 
-/** KTV 逐字高亮：避免 clipPath 在多行文本上整块变色的视觉错误 */
-function KTKText({ text, progress }: { text: string; progress: number }) {
-  const chars = Array.from(text)
-  const highlightCount = Math.round(progress * chars.length)
-  return (
-    <>
-      {chars.map((char, i) => (
-        <span key={i} className={i < highlightCount ? 'text-[#B4F416]' : ''}>
-          {char}
-        </span>
-      ))}
-    </>
-  )
-}
 
 export function ShadowReadingPlayer({
   phase,
@@ -134,13 +120,33 @@ export function ShadowReadingPlayer({
   const [confirmTarget, setConfirmTarget] = useState<NavigateTarget | null>(null)
   const group = getPhaseGroup(phase)
   const label = getPhaseLabel(phase)
-  const isListenPhase = phase === 'listen1' || phase === 'listen2'
   const isSpeakPhase = phase === 'speak'
   const isPlaybackPhase = phase === 'playback'
-  const isComparePhase = phase === 'compare'
   const isDonePhase = phase === 'done'
 
   const showVideoDimmed = false
+
+  // 词级 KTV：追踪 mini video currentTime，确定当前激活单词
+  type SubtitleWord = { text: string; start: number; end: number }
+  const [activeWordIdx, setActiveWordIdx] = useState(0)
+  const activeWordIdxRef = useRef(0)
+  useEffect(() => {
+    const video = miniVideoRef.current
+    if (!video) return
+    const words = (currentSubtitle as any)?.words as SubtitleWord[] | undefined
+    if (!words?.length) return
+    const onTime = () => {
+      const t = video.currentTime
+      const idx = words.findIndex(w => t >= w.start && t < w.end)
+      // 间隔期保持上一个词，避免方块乱跳
+      if (idx >= 0) {
+        activeWordIdxRef.current = idx
+        setActiveWordIdx(idx)
+      }
+    }
+    video.addEventListener('timeupdate', onTime)
+    return () => video.removeEventListener('timeupdate', onTime)
+  }, [currentSubtitle, miniVideoRef])
 
   // 长文本检测：缩小字号防溢出
   const isLongText = (currentSubtitle?.original_text?.length ?? 0) > LONG_TEXT_THRESHOLD
@@ -161,12 +167,12 @@ export function ShadowReadingPlayer({
         </div>
       )}
 
-      {/* ── Mini 视频窗口 / 音频可视化 ── */}
-      <div className="relative flex-shrink-0 bg-black">
+      {/* ── Mini 视频窗口 / 音频可视化（紧凑） ── */}
+      <div className="relative flex-shrink-0 bg-black max-h-[30vh]">
         <video
           ref={miniVideoRef}
           src={videoUrl || undefined}
-          className={cn("w-full aspect-video object-cover", isAudio && "opacity-0 absolute inset-0")}
+          className={cn("w-full max-h-[30vh] object-contain", isAudio && "opacity-0 absolute inset-0")}
           playsInline
           preload="auto"
           style={!isAudio ? { opacity: showVideoDimmed ? 0.15 : 1, transition: 'opacity 0.4s' } : undefined}
@@ -174,31 +180,19 @@ export function ShadowReadingPlayer({
 
         {/* 音频可视化占位 */}
         {isAudio && (
-          <div className="w-full aspect-video bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 flex items-center justify-center">
-            <div className="flex flex-col items-center gap-3">
-              <Headphones className="w-8 h-8 lg:w-10 lg:h-10 text-white/30" />
-              <div className="flex items-end gap-1 h-8">
-                {Array.from({ length: 7 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-1.5 bg-[#B4F416]/50 rounded-full"
-                    style={{ animation: `audioBar ${0.8 + i * 0.1}s ease-in-out ${i * 0.1}s infinite alternate` }}
-                  />
-                ))}
-              </div>
+          <div className="w-full h-24 bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 flex items-center justify-center">
+            <div className="flex items-center gap-1 h-6">
+              {Array.from({ length: 5 }).map((_, i) => (
+                <div
+                  key={i}
+                  className="w-1 bg-[#B4F416]/50 rounded-full"
+                  style={{ animation: `audioBar ${0.8 + i * 0.1}s ease-in-out ${i * 0.1}s infinite alternate` }}
+                />
+              ))}
             </div>
           </div>
         )}
 
-        {/* 视频进度条 */}
-        {(isListenPhase || isComparePhase) && (
-          <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-white/10">
-            <div
-              className="h-full bg-[#B4F416] transition-[width] duration-100"
-              style={{ width: `${ktvProgress * 100}%` }}
-            />
-          </div>
-        )}
 
         {/* Speak 阶段：半透明遮罩 + 录音中提示 */}
         {isSpeakPhase && !isAudio && (
@@ -300,13 +294,30 @@ export function ShadowReadingPlayer({
                     )}>
                       <div className="relative inline-block max-w-full">
                         <div className={cn(
-                          "font-black leading-relaxed tracking-tight text-black break-words",
+                          "font-black leading-relaxed tracking-tight text-black break-words flex flex-wrap justify-center gap-x-2 gap-y-1",
                           isLongText ? "text-sm lg:text-base" : "text-lg lg:text-xl"
                         )}>
-                          {!isPlaybackPhase
-                            ? <KTKText text={sub.original_text} progress={ktvProgress} />
-                            : sub.original_text
-                          }
+                          {(() => {
+                            const words = (sub as any).words as SubtitleWord[] | undefined
+                            if (!words?.length) {
+                              return isPlaybackPhase ? sub.original_text : (
+                                <span className="text-[#B4F416]">{sub.original_text}</span>
+                              )
+                            }
+                            return words.map((w, wi) => (
+                              <span
+                                key={wi}
+                                className={cn(
+                                  'px-1 rounded transition-colors duration-100',
+                                  wi === activeWordIdx && !isPlaybackPhase
+                                    ? 'text-[#B4F416] bg-[#B4F416]/20 border border-[#B4F416]/60'
+                                    : ''
+                                )}
+                              >
+                                {w.text}
+                              </span>
+                            ))
+                          })()}
                         </div>
                       </div>
                       {sub.chinese_text && (

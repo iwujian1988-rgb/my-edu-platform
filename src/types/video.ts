@@ -133,6 +133,26 @@ export interface VideoPackageListItem extends VideoPackage {
 // 视频基础类型
 // ============================================
 
+/** 影子跟读 — 逐词时间戳 */
+export interface ShadowReadingWord {
+  text: string
+  start: number
+  end: number
+}
+
+/** 影子跟读 — 精选句 */
+export interface ShadowReadingEntry {
+  subtitle_index: number
+  start_time: string
+  end_time: string
+  spanish?: string   // 西语
+  french?: string    // 法语
+  chinese: string
+  score: number
+  selection_reason: string
+  words: ShadowReadingWord[]
+}
+
 export interface Video {
   id: string
   title: string  // 视频名称，导入时从 unit_info.unit_name_cn 填充
@@ -151,9 +171,11 @@ export interface Video {
   creator_name: string | null
   creator_id: string | null  // 关联的 UP主 ID
   source_url: string | null
+  source_video_id: string | null  // YouTube video ID for grouping segments
   view_count: number
   package_ids: string[] | null  // 关联的套餐 ID 列表
   learning_date: string | null  // 学习归属时间，用于前台排序
+  shadow_reading: ShadowReadingEntry[] | null  // 影子跟读精选句+逐词时间戳
   workflow_progress: WorkflowProgress | null  // 工作流进度
   created_at: string
   published_at: string | null
@@ -562,13 +584,6 @@ export interface CardPopoverProps {
   isFavorited: boolean
 }
 
-export interface RecordingPanelProps {
-  videoId: string
-  subtitles: SubtitleWithHighlights[]
-  currentVideoTime: number
-  onPlaySegment: (startTime: number, endTime: number) => void
-}
-
 export interface FlashcardModeProps {
   cards: Array<{
     card: VideoCard
@@ -755,6 +770,14 @@ export interface VideoPronunciationTip {
   created_at: string
 }
 
+/** 词汇网络中的词详情 */
+export interface VocabWordDetail {
+  word: string
+  meaning: string
+  example?: string
+  example_translation?: string
+}
+
 /** 词汇网络 */
 export interface VideoVocabularyNetwork {
   id: string
@@ -764,6 +787,7 @@ export interface VideoVocabularyNetwork {
   related_words: string[] | null
   collocations: string | null
   core_word: string | null
+  word_details: VocabWordDetail[] | null
   created_at: string
 }
 
@@ -1076,6 +1100,16 @@ export interface ExerciseProgressEntry {
   attempts: number
 }
 
+/** 播放列表项（同 source_video_id 的视频片段） */
+export interface PlaylistItem {
+  id: string
+  title: string
+  duration: number
+  display_order: number
+  thumbnail_url: string | null
+  cover_url: string | null
+}
+
 /** 完整视频响应（包含新增的学习内容） */
 export interface VideoFullResponseExtended extends VideoFullResponse {
   grammar_points: VideoGrammarPoint[]
@@ -1083,6 +1117,9 @@ export interface VideoFullResponseExtended extends VideoFullResponse {
   vocabulary_network: VideoVocabularyNetwork | null
   creator?: UpstreamCreator | null  // 关联的 UP主信息
   exerciseProgress?: ExerciseProgressEntry[]  // 用户答题记录（预取）
+  source_video_id: string | null  // 同源视频分组 ID
+  playlist: PlaylistItem[] | null  // 同一 source_video_id 的视频片段列表
+  canContinuousPlay: boolean  // 当前用户是否可开启连续播放
 }
 
 // ============================================

@@ -10,7 +10,7 @@
  * - 移动端：滚动时视频区吸顶，Tab栏紧贴视频底部
  */
 
-import { useState, useCallback, useEffect, useRef } from 'react'
+import { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
@@ -522,6 +522,35 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   }
 
   const { video, subtitles, cards, exercises, grammar_points, pronunciation_tips, vocabulary_network } = data
+
+  // 影子跟读精选句：有 shadow_reading 数据时用它，否则回退全部字幕
+  const shadowReadingSubtitles = useMemo(() => {
+    if (!video.shadow_reading?.length) return subtitles
+    const parseTime = (t: string): number => {
+      const parts = t.split(':').map(Number)
+      if (parts.length === 3) return parts[0] * 3600 + parts[1] * 60 + parts[2]
+      if (parts.length === 2) return parts[0] * 60 + parts[1]
+      return parts[0] || 0
+    }
+    return video.shadow_reading.map((sr, idx) => ({
+      id: `sr-${idx}`,
+      video_id: video.id,
+      start_time: parseTime(sr.start_time),
+      end_time: parseTime(sr.end_time),
+      original_text: sr.spanish || sr.french || '',
+      chinese_text: sr.chinese || null,
+      word_count: sr.words?.length || 0,
+      display_order: idx,
+      created_at: '',
+      highlights: [],
+      // 逐词时间戳，供 ShadowReadingPlayer 做词级 KTV
+      words: (sr.words || []).map(w => ({
+        text: w.text,
+        start: w.start,
+        end: w.end,
+      })),
+    }))
+  }, [video.shadow_reading, video.id, subtitles])
 
   // 按类型过滤练习
   const fillBlankExercises = exercises.filter(e => e.exercise_type === 'fill_blank')
@@ -1201,7 +1230,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         onOpenChange={setIsShadowReadingOpen}
         videoId={videoId}
         videoUrl={video.video_url}
-        subtitles={subtitles}
+        subtitles={shadowReadingSubtitles}
         currentVideoTime={currentVideoTime}
         onPlaySegment={handlePlaySegment}
         onPauseMainVideo={() => setPauseMainVideo(true)}
