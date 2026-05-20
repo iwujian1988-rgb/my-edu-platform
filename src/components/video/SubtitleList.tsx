@@ -288,7 +288,7 @@ export function SubtitleList({
     >
 
       {/* 字幕列表 */}
-      <div className="space-y-2 p-3">
+      <div className="space-y-2.5 p-4 lg:space-y-2 lg:p-3">
         {subtitles.map((subtitle) => {
           const isActive = subtitle.id === activeSubtitleId
 
@@ -297,32 +297,60 @@ export function SubtitleList({
               key={subtitle.id}
               ref={isActive ? activeSubtitleRef : null}
               className={cn(
-                'relative p-3 cursor-pointer transition-all duration-200 border-[2px]',
+                'relative cursor-pointer transition-all duration-200',
+                // 移动端：柔和圆角卡片
+                'p-4 rounded-2xl border',
+                // PC端：Neo-Brutalism 方角
+                'lg:p-3 lg:rounded-none lg:border-[2px]',
                 isActive
-                  ? 'bg-[#B4F416] dark:bg-teal-700 border-black dark:border-teal-500 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#555] -translate-y-0.5'
-                  : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-black dark:hover:border-gray-500 hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666]'
+                  ? cn(
+                      // 移动端激活：柔和浅黄绿 + 半透明边框
+                      'bg-[#F6FFD9] border-[#E8F5B8] shadow-[0_1px_2px_rgba(180,210,120,0.15)] translate-y-0',
+                      // PC端保持原有
+                      'lg:bg-[#B4F416] lg:dark:bg-teal-700 lg:border-black lg:dark:border-teal-500 lg:shadow-[4px_4px_0px_0px_#000] lg:dark:shadow-[4px_4px_0px_0px_#555] lg:-translate-y-0.5'
+                    )
+                  : cn(
+                      // 移动端未激活：白底 + 浅灰边框
+                      'bg-white border-[#EDEDED] hover:border-[#E0E0E0]',
+                      // PC端保持原有
+                      'lg:dark:bg-gray-800 lg:border-gray-200 lg:dark:border-gray-700 lg:hover:border-black lg:dark:hover:border-gray-500 lg:hover:shadow-[2px_2px_0px_0px_#000] lg:dark:hover:shadow-[2px_2px_0px_0px_#666]'
+                    )
               )}
               onClick={() => onSubtitleClick(subtitle)}
             >
-              {/* 当前播放指示器 */}
+              {/* 当前播放指示器 - PC端保留 */}
               {isActive && (
-                <div className="absolute -left-1 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-black rounded-full animate-pulse" />
+                <div className="hidden lg:block absolute -left-1 top-1/2 -translate-y-1/2 w-1.5 h-8 bg-black rounded-full animate-pulse" />
               )}
 
               {/* 时间戳 */}
-              <div className="flex items-center gap-2 mb-1.5">
+              <div className="flex items-center gap-2 mb-2 lg:mb-1.5">
                 <span
                   className={cn(
-                    'text-xs font-mono font-bold px-1.5 py-0.5 border',
+                    'font-mono font-bold',
+                    // 移动端：圆角 pill
+                    'text-[11px] px-2 py-0.5 rounded-full',
+                    // PC端：方角 border
+                    'lg:text-xs lg:px-1.5 lg:rounded-none lg:border',
                     isActive
-                      ? 'bg-black text-white border-black'
-                      : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 border-gray-300 dark:border-gray-600'
+                      ? cn(
+                          'bg-black/80 text-white',
+                          'lg:bg-black lg:border-black'
+                        )
+                      : cn(
+                          'bg-[#F5F5F5] text-[#9CA3AF]',
+                          'lg:bg-gray-100 lg:dark:bg-gray-700 lg:text-gray-600 lg:dark:text-gray-400 lg:border-gray-300 lg:dark:border-gray-600'
+                        )
                   )}
                 >
                   {formatTime(subtitle.start_time)}
                 </span>
                 {isActive && (
-                  <span className="text-xs font-black text-black animate-pulse">
+                  <span className={cn(
+                    'font-bold animate-pulse',
+                    'text-[11px] text-gray-600',
+                    'lg:text-xs lg:font-black lg:text-black'
+                  )}>
                     ● 播放中
                   </span>
                 )}

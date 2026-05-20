@@ -118,7 +118,7 @@ export function createTTSPreload(language: string): TTSPreloadInstance {
     },
 
     destroy() {
-      abortController.abort()
+      abortController.abort('component unmounted')
       // 释放 blob URL
       cache.forEach((entry) => {
         if (entry.blobUrl) URL.revokeObjectURL(entry.blobUrl)

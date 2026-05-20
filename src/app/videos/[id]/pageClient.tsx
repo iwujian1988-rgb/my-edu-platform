@@ -588,6 +588,19 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           </div>
         )}
 
+        {/* 移动端标题栏 - 返回按钮 + 标题 */}
+        {!pipMode && (
+          <div className="flex items-center gap-2 px-3 pt-3 pb-1 bg-gray-50 dark:bg-gray-900">
+            <button
+              onClick={() => router.back()}
+              className="flex-shrink-0 text-gray-400 dark:text-gray-500 active:text-gray-600 dark:active:text-gray-300 transition-colors p-1"
+            >
+              <ArrowLeft className="w-5 h-5" />
+            </button>
+            <h1 className="flex-1 min-w-0 text-base font-black text-black dark:text-white line-clamp-1">{video.title}</h1>
+          </div>
+        )}
+
         {/* 视频区 - 吸顶（PIP 模式下收缩，fixed 定位的 video 不受影响） */}
         <div className={cn("sticky top-0 z-40", isPracticeSheetOpen && "z-10", pipMode && "h-0 overflow-hidden")}>
             {/* 视频播放器 + 半透明返回按钮 */}
@@ -622,119 +635,82 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                   />
                 )
               )}
-              <button
-                onClick={() => router.back()}
-                className="absolute top-2 left-3 z-50 flex items-center gap-1 px-2 py-1 text-xs font-bold text-white bg-black/40 backdrop-blur-sm rounded active:bg-black/60 transition-colors"
-              >
-                <ArrowLeft className="w-3 h-3" />
-                返回
-              </button>
+              {/* 返回按钮已移至顶部标题栏 */}
             </div>
 
           {/* 功能按钮导航 */}
-          <div className="bg-white dark:bg-gray-800 border-l-[3px] border-r-[3px] border-black dark:border-gray-600 px-3 py-2">
-            {/* 视频标题 - 双语显示 */}
-            <div className="mb-6">
-              <h1 className="text-lg font-black text-black dark:text-white truncate">{video.title}</h1>
-              {video.original_title && video.original_title !== video.title && (
-                <p className="text-sm text-gray-500 dark:text-gray-400 truncate mt-0.5">{video.original_title}</p>
+          <div className="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 h-12 flex items-center px-2 lg:border-l-[3px] lg:border-r-[3px] lg:border-black lg:dark:border-gray-600 lg:px-3 lg:py-2 lg:h-auto lg:border-b-0">
+            <div className="flex items-center w-full lg:justify-between lg:gap-1 lg:w-auto">
+              {/* 字幕模式下拉 - 小圆角按钮，低存在感 */}
+              {currentTab === 'listen' && (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <button className="flex items-center gap-0.5 px-2 py-1 text-[11px] font-medium rounded-full bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-400 transition-colors whitespace-nowrap flex-shrink-0 border border-gray-100 dark:border-gray-600 lg:text-sm lg:font-bold lg:bg-[#F0FFC2] lg:text-gray-800 lg:border-0">
+                      {displayMode === 'bilingual' ? '双语' : displayMode === 'chinese' ? '中文' : '原文'}
+                      <ChevronDown className="w-2.5 h-2.5 lg:w-3 lg:h-3" />
+                    </button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="start" className="border-[2px] border-black shadow-[3px_3px_0px_0px_#000] bg-white dark:bg-gray-800">
+                    <DropdownMenuItem
+                      onClick={() => setDisplayMode('original')}
+                      className={cn("cursor-pointer font-bold", displayMode === 'original' && "bg-[#B4F416]")}
+                    >
+                      原文
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => setDisplayMode('chinese')}
+                      className={cn("cursor-pointer font-bold", displayMode === 'chinese' && "bg-[#B4F416]")}
+                    >
+                      中文
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={() => setDisplayMode('bilingual')}
+                      className={cn("cursor-pointer font-bold", displayMode === 'bilingual' && "bg-[#B4F416]")}
+                    >
+                      双语
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
               )}
-              {video.description && (
-                <p className="text-sm text-gray-400 dark:text-gray-500 truncate mt-1">{video.description}</p>
-              )}
-            </div>
 
-            {/* UP主信息 - 移动端紧凑显示 */}
-            {data.creator && (
-              <a href={`/videos/creators/${data.creator.id}`} className="flex items-center gap-2 mb-2 pb-2 border-b border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/30 transition-colors cursor-pointer group/creator">
-                {data.creator.avatar_url ? (
-                  <img
-                    src={data.creator.avatar_url}
-                    alt={data.creator.name}
-                    className="w-6 h-6 rounded-full border border-black object-cover"
-                  />
-                ) : (
-                  <div className="w-6 h-6 rounded-full border border-black bg-gray-200 dark:bg-gray-600 flex items-center justify-center">
-                    <Users className="w-3 h-3 text-gray-400" />
-                  </div>
-                )}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-1">
-                    <span className="text-xs font-bold text-black dark:text-white truncate">{data.creator.name}</span>
-                    <ChevronRight className="w-3 h-3 text-gray-300 group-hover/creator:text-[#B4F416] transition-colors flex-shrink-0" />
-                  </div>
-                  {data.creator.description && (
-                    <p className="text-[10px] text-gray-400 dark:text-gray-500 line-clamp-1">{data.creator.description}</p>
-                  )}
-                </div>
-                {data.creator.follower_count > 0 && (
-                  <span className="text-xs text-gray-500 dark:text-gray-400">
-                    {data.creator.follower_count >= 1000000
-                      ? `${(data.creator.follower_count / 1000000).toFixed(1)}M`
-                      : data.creator.follower_count >= 1000
-                        ? `${(data.creator.follower_count / 1000).toFixed(1)}K`
-                        : data.creator.follower_count
-                    } 粉丝
-                  </span>
-                )}
-              </a>
-            )}
-            {/* 字幕模式居左，功能按钮居右，与PC布局一致 */}
-            <div className="flex items-center justify-between gap-1">
-              {/* 字幕模式下拉菜单 - 居左，只在听模式显示 */}
-              <div className="w-[44px] flex-shrink-0">
-                {currentTab === 'listen' && (
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <button className={cn("flex items-center gap-0.5 pb-0.5 text-xs font-bold transition-colors border-b-[3px] border-[#B4F416] text-[#B4F416]")}>
-                        {displayMode === 'bilingual' ? '双' : displayMode === 'chinese' ? '汉' : '原'}
-                        <ChevronDown className="w-3 h-3" />
-                      </button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="border-[2px] border-black shadow-[3px_3px_0px_0px_#000] bg-white dark:bg-gray-800">
-                      <DropdownMenuItem
-                        onClick={() => setDisplayMode('original')}
-                        className={cn("cursor-pointer font-bold", displayMode === 'original' && "bg-[#B4F416]")}
-                      >
-                        原文
-                      </DropdownMenuItem>
-                      <DropdownMenuItem
-                        onClick={() => setDisplayMode('chinese')}
-                        className={cn("cursor-pointer font-bold", displayMode === 'chinese' && "bg-[#B4F416]")}
-                      >
-                        中文
-                      </DropdownMenuItem>
-                      <DropdownMenuItem
-                        onClick={() => setDisplayMode('bilingual')}
-                        className={cn("cursor-pointer font-bold", displayMode === 'bilingual' && "bg-[#B4F416]")}
-                      >
-                        双语
-                      </DropdownMenuItem>
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                )}
-              </div>
-
-              {/* 5个功能按钮 - 图标+文字+绿色下划线 */}
-              <div className="flex items-center gap-3">
-                <button onClick={() => handleTabChange('listen')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'listen' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
-                  <Headphones className="w-3.5 h-3.5" />
+              {/* 功能Tab - 纯文字，单行 */}
+              <div className="flex items-center flex-1 justify-around ml-1 lg:gap-2 lg:flex-none lg:justify-start lg:ml-2">
+                <button onClick={() => handleTabChange('listen')} className={cn(
+                  "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
+                  currentTab === 'listen'
+                    ? "bg-[#EEFFA8] text-gray-900 dark:text-white dark:bg-[#F0FFC2]/20"
+                    : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+                )}>
                   字幕
                 </button>
-                <button onClick={() => setIsShadowReadingOpen(true)} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", isShadowReadingOpen ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
-                  <Mic className="w-3.5 h-3.5" />
+                <button onClick={() => setIsShadowReadingOpen(true)} className={cn(
+                  "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
+                  isShadowReadingOpen
+                    ? "bg-[#EEFFA8] text-gray-900 dark:text-white dark:bg-[#F0FFC2]/20"
+                    : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+                )}>
                   跟读
                 </button>
-                <button onClick={() => !isLargeScreen ? setIsPracticeSheetOpen(true) : handleTabChange('write')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", (currentTab === 'write' || isPracticeSheetOpen) ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
-                  <Pen className="w-3.5 h-3.5" />
+                <button onClick={() => !isLargeScreen ? setIsPracticeSheetOpen(true) : handleTabChange('write')} className={cn(
+                  "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
+                  (currentTab === 'write' || isPracticeSheetOpen)
+                    ? "bg-[#EEFFA8] text-gray-900 dark:text-white dark:bg-[#F0FFC2]/20"
+                    : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+                )}>
                   练习
                 </button>
-                <button onClick={() => handleTabChange('learn')} className={cn("flex items-center gap-1 pb-0.5 text-xs font-bold transition-colors border-b-[3px]", currentTab === 'learn' ? "border-[#B4F416] text-black dark:text-white bg-[#B4F416]/10" : "border-transparent text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300")}>
-                  <BookOpen className="w-3.5 h-3.5" />
+                <button onClick={() => handleTabChange('learn')} className={cn(
+                  "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
+                  currentTab === 'learn'
+                    ? "bg-[#EEFFA8] text-gray-900 dark:text-white dark:bg-[#F0FFC2]/20"
+                    : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+                )}>
                   知识点
                 </button>
-                <button onClick={() => setExportTrigger(prev => prev + 1)} className="flex items-center gap-1 pb-0.5 text-xs font-bold text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition-colors border-b-2 border-transparent">
-                  <Download className="w-3.5 h-3.5" />
+                <button onClick={() => setExportTrigger(prev => prev + 1)} className={cn(
+                  "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
+                  "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
+                )}>
                   导出
                 </button>
               </div>
