@@ -724,7 +724,8 @@ function BlindListenPhase({
           onPointerDown={onDragStart}
           onPointerMove={onDragMove}
           onPointerUp={onDragEnd}
-          className="fixed z-[60] touch-none select-none"
+          className="fixed touch-none select-none"
+          style={{ left: pos.x, top: pos.y, width: size.w, height: size.h, zIndex: 9999 }}
           style={{ left: pos.x, top: pos.y, width: size.w, height: size.h }}
         >
           <div className="w-full h-full bg-black rounded-lg border-2 border-gray-400 cursor-grab active:cursor-grabbing flex items-center justify-center gap-2 overflow-hidden">
