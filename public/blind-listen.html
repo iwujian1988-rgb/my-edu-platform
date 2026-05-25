@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<title>法语听力训练</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden}
+
+body{
+  background:linear-gradient(170deg,#06102e 0%,#0a1a3d 40%,#0d1530 100%);
+  color:#c0d0e8;
+  font-family:'SimHei','PingFang SC','Microsoft YaHei',sans-serif;
+  height:100dvh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:space-between;
+  position:relative;
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+/* 飘逸三色光晕 */
+body::before{
+  content:'';
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(ellipse 50vw 50vh at 25% 55%,rgba(0,35,149,.08),transparent),
+    radial-gradient(ellipse 50vw 50vh at 75% 45%,rgba(237,41,57,.06),transparent);
+  pointer-events:none;
+}
+
+/* 国旗飘动 canvas */
+#flag{
+  position:fixed;
+  top:0;left:0;
+  width:100%;height:100%;
+  pointer-events:none;
+  z-index:0;
+}
+
+.top{
+  text-align:center;
+  padding-top:13vh;
+}
+.top .fr{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:3.2vw;
+  font-style:italic;
+  color:rgba(237,41,57,.45);
+  letter-spacing:.35em;
+  margin-bottom:2.5vh;
+}
+.top h1{
+  font-size:7vw;
+  font-weight:700;
+  letter-spacing:.3em;
+  color:#e8eeff;
+  margin-bottom:2.5vh;
+}
+.top .sub{
+  font-size:4.8vw;
+  color:#8ab4f8;
+  letter-spacing:.15em;
+  position:relative;
+  display:inline-block;
+}
+.top .sub::before,.top .sub::after{
+  content:'';
+  position:absolute;
+  top:50%;
+  width:6vw;
+  border-top:1px solid rgba(138,180,248,.25);
+}
+.top .sub::before{right:calc(100% + 3vw)}
+.top .sub::after{left:calc(100% + 3vw)}
+
+.mid{
+  position:relative;
+  width:72vw;
+  max-width:300px;
+  aspect-ratio:1;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.mic-ring{
+  position:absolute;
+  width:18vw;height:18vw;
+  max-width:76px;max-height:76px;
+  min-width:60px;min-height:60px;
+  border-radius:50%;
+  border:2px solid rgba(60,140,255,.35);
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;
+  background:rgba(20,50,120,.25);
+}
+.mic-ring svg{
+  width:36%;height:36%;
+  fill:#5a9aff;
+}
+
+.mic-ring::before,.mic-ring::after{
+  content:'';
+  position:absolute;
+  inset:-8px;
+  border-radius:50%;
+  border:1px solid rgba(60,140,255,.18);
+  animation:pulse 2.8s ease-out infinite;
+}
+.mic-ring::after{animation-delay:1.4s}
+@keyframes pulse{
+  0%{transform:scale(1);opacity:.6}
+  100%{transform:scale(1.8);opacity:0}
+}
+
+canvas{
+  position:absolute;
+  inset:0;
+  width:100%;height:100%;
+}
+
+.bot{
+  padding-bottom:10vh;
+  text-align:center;
+}
+.bot .cta{
+  font-size:4.8vw;
+  color:#8ab4f8;
+  letter-spacing:.18em;
+  margin-bottom:1.5vh;
+}
+.bot .fr-small{
+  font-family:Georgia,'Times New Roman',serif;
+  font-size:3vw;
+  font-style:italic;
+  color:rgba(138,180,248,.3);
+  letter-spacing:.2em;
+}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="fr">Écoutez attentivement</div>
+  <h1>法语听力训练</h1>
+  <div class="sub">请先认真盲听</div>
+</div>
+
+<div class="mid">
+  <canvas id="wave"></canvas>
+  <div class="mic-ring">
+    <svg viewBox="0 0 24 24"><path d="M12 1a4 4 0 0 0-4 4v7a4 4 0 0 0 8 0V5a4 4 0 0 0-4-4zm0 18c-3.3 0-6-2.7-6-6H4c0 3.9 3.1 7.1 7 7.5V24h2v-3.5c3.9-.4 7-3.6 7-7.5h-2c0 3.3-2.7 6-6 6z"/></svg>
+  </div>
+</div>
+
+<div class="bot">
+  <div class="cta">写下没听懂的词汇</div>
+  <div class="fr-small">Notez les mots incompris</div>
+</div>
+
+<!-- 飘逸法国国旗背景 -->
+<canvas id="flag"></canvas>
+
+<script>
+/* ====== 飘逸法国国旗 ====== */
+const fc = document.getElementById('flag')
+const fctx = fc.getContext('2d')
+
+function resizeFlag(){
+  const dpr = window.devicePixelRatio || 1
+  fc.width = window.innerWidth * dpr
+  fc.height = window.innerHeight * dpr
+  fctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+}
+resizeFlag()
+window.addEventListener('resize', resizeFlag)
+
+// 国旗三色：蓝白红，用曲线画飘逸的色带
+const STRIPS = [
+  { color: 'rgba(0,35,149,', baseAlpha: .07 },
+  { color: 'rgba(200,210,235,', baseAlpha: .03 },
+  { color: 'rgba(237,41,57,', baseAlpha: .06 },
+]
+
+let ft = 0
+function drawFlag(){
+  const W = window.innerWidth
+  const H = window.innerHeight
+  fctx.clearRect(0, 0, W, H)
+
+  // 国旗整体斜 30°，从左下到右上飘
+  const cx = W * .5, cy = H * .5
+  const flagW = W * 1.2, flagH = H * .7
+  const angle = -20 * Math.PI / 180
+
+  fctx.save()
+  fctx.translate(cx, cy)
+  fctx.rotate(angle)
+
+  for(let s = 0; s < 3; s++){
+    const strip = STRIPS[s]
+    const xStart = -flagW / 2 + s * flagW / 3
+    const xEnd = xStart + flagW / 3
+
+    fctx.beginPath()
+    // 上边缘 — 正弦波浪
+    const steps = 60
+    for(let i = 0; i <= steps; i++){
+      const frac = i / steps
+      const x = xStart + frac * (xEnd - xStart)
+      const waveY = -flagH / 2
+        + Math.sin(ft * .4 + frac * 6 + s * 1.2) * flagH * .08
+        + Math.sin(ft * .25 + frac * 3.5 + s * .8) * flagH * .05
+      if(i === 0) fctx.moveTo(x, waveY)
+      else fctx.lineTo(x, waveY)
+    }
+    // 下边缘 — 反向波浪
+    for(let i = steps; i >= 0; i--){
+      const frac = i / steps
+      const x = xStart + frac * (xEnd - xStart)
+      const waveY = flagH / 2
+        + Math.sin(ft * .35 + frac * 5 + s * 1.5 + 2) * flagH * .07
+        + Math.sin(ft * .2 + frac * 4 + s) * flagH * .04
+      fctx.lineTo(x, waveY)
+    }
+    fctx.closePath()
+
+    // 渐变填充 — 从中心向边缘渐隐
+    const grd = fctx.createLinearGradient(xStart, 0, xEnd, 0)
+    grd.addColorStop(0, strip.color + (strip.baseAlpha * .6) + ')')
+    grd.addColorStop(.5, strip.color + strip.baseAlpha + ')')
+    grd.addColorStop(1, strip.color + (strip.baseAlpha * .6) + ')')
+    fctx.fillStyle = grd
+    fctx.fill()
+  }
+
+  fctx.restore()
+  ft += .02
+  requestAnimationFrame(drawFlag)
+}
+drawFlag()
+
+/* ====== 声波动画 ====== */
+const c = document.getElementById('wave')
+const ctx = c.getContext('2d')
+
+function resize(){
+  const rect = c.parentElement.getBoundingClientRect()
+  const S = Math.round(rect.width)
+  const dpr = window.devicePixelRatio || 1
+  c.width = S * dpr
+  c.height = S * dpr
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+}
+resize()
+window.addEventListener('resize', resize)
+
+const lines = []
+for(let i=0;i<7;i++){
+  lines.push({
+    freq:.012+Math.random()*.008,
+    amp:8+i*6+Math.random()*4,
+    phase:Math.random()*Math.PI*2,
+    speed:.3+Math.random()*.4,
+    alpha:.07+(6-i)*.022,
+    yOff:(i-3)*5+(Math.random()-.5)*3,
+  })
+}
+
+let t=0
+function draw(){
+  const rect=c.parentElement.getBoundingClientRect()
+  const S=rect.width
+  ctx.clearRect(0,0,S,S)
+  const cx=S/2,cy=S/2
+
+  for(const l of lines){
+    ctx.beginPath()
+    ctx.strokeStyle=`rgba(80,160,255,${l.alpha})`
+    ctx.lineWidth=1.5
+    for(let x=0;x<=S;x+=1.5){
+      const dx=x-cx
+      const dist=Math.abs(dx)/cx
+      const env=1-dist*dist
+      const y=cy+l.yOff
+        +Math.sin(x*l.freq+t*l.speed+l.phase)*l.amp*Math.max(0,env)
+        +Math.sin(x*l.freq*2.1+t*l.speed*.6+1.2)*3*Math.max(0,env)
+      if(x===0)ctx.moveTo(x,y)
+      else ctx.lineTo(x,y)
+    }
+    ctx.stroke()
+  }
+
+  const r=S*.12
+  const g=ctx.createRadialGradient(cx,cy,0,cx,cy,r)
+  g.addColorStop(0,'rgba(80,160,255,.08)')
+  g.addColorStop(1,'transparent')
+  ctx.fillStyle=g
+  ctx.fillRect(cx-r,cy-r,r*2,r*2)
+
+  t+=.025
+  requestAnimationFrame(draw)
+}
+draw()
+</script>
+</body>
+</html>
