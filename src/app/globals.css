@@ -1080,3 +1080,13 @@ html.dark [data-immersive="light"] [class*="bg-amber-100"],
 html.dark [data-immersive="light"] [class*="bg-teal-100"] {
   background-color: #111827 !important;
 }
+
+/* ========================================
+   沉浸模式 — 防止 Android sticky 抖动
+   ======================================== */
+@supports (position: sticky) {
+  .sticky {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+}

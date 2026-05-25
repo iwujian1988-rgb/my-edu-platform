@@ -155,7 +155,7 @@ export function ImmersiveOverlay({
         </div>
 
         {/* Video player — 横屏时不吸顶，避免占满屏幕 */}
-        <div className={isLandscape ? 'relative' : 'sticky top-[44px] z-40 relative'}>
+        <div className={isLandscape ? 'relative' : 'sticky top-[44px] z-40'} style={!isLandscape ? { willChange: 'transform' } : undefined}>
           {isAudioContent ? (
             <AudioPlayer {...playerProps} audioRefOut={mainAudioRef} fallbackImageUrl={creatorAvatarUrl} />
           ) : (
