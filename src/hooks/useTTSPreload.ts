@@ -118,7 +118,7 @@ export function createTTSPreload(language: string): TTSPreloadInstance {
     },
 
     destroy() {
-      abortController.abort('component unmounted')
+      abortController.abort()
       // 释放 blob URL
       cache.forEach((entry) => {
         if (entry.blobUrl) URL.revokeObjectURL(entry.blobUrl)
@@ -164,6 +164,8 @@ export function createTTSPreload(language: string): TTSPreloadInstance {
       if (abortController.signal.aborted) return
       // 间隔后继续下一批
       setTimeout(() => loadBatch(words, startIndex + MAX_CONCURRENT), BATCH_INTERVAL_MS)
+    }).catch(() => {
+      // abort 或网络错误已被 loadSingle 内部处理，此处仅防止 unhandled rejection
     })
   }
 

@@ -1,15 +1,15 @@
 'use client'
 
 /**
- * 音频博客 PIP（画中画）组件
+ * 音频/视频 PIP（画中画）组件
  *
- * 基于 DraggablePIP 简化版：
- * - 横条形布局：封面小图 + 播放/暂停 + 进度条 + 时间 + 展开按钮
- * - 共享同一个 <audio> DOM 元素（appendChild 方式，零缓冲延迟）
+ * 双态切换：
+ * - Expanded bar：封面 + 播放/暂停 + 进度条 + 时间 + 展开按钮
+ * - Mini dot：3秒无操作自动收起 → 48×48 圆形，点击展开回 bar
  * - 支持拖拽、边缘吸附
  */
 
-import { useRef, useState, useCallback, useEffect } from 'react'
+import { useRef, useState, useCallback, useEffect, useLayoutEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
 import { Play, Pause, Maximize } from 'lucide-react'
@@ -18,13 +18,14 @@ import type { Video } from '@/types/video'
 const PIP_WIDTH = 260
 const PIP_HEIGHT = 64
 const PIP_MARGIN = 12
-const SNAP_THRESHOLD = 50
 const DRAG_THRESHOLD = 5
+const MINI_DOT_SIZE = 48
+const MINI_PEEK_OFFSET = MINI_DOT_SIZE / 2
+const AUTO_COLLAPSE_DELAY = 3000
+const SAFE_AREA_BOTTOM = 80
 
 interface DraggableAudioPIPProps {
   video: Video
-  /** 共享的 <audio> DOM 元素 */
-  audioElement: HTMLAudioElement | null
   isPlaying: boolean
   currentTime: number
   duration: number
@@ -43,9 +44,95 @@ interface Position {
   y: number
 }
 
+/** Mini dot 呼吸动画 variants（独立 transition 避免 exit 复用 animate 的 repeat 配置） */
+const miniDotVariants = {
+  initial: { scale: 0.5, opacity: 0 },
+  animate: {
+    scale: [1, 1.05, 1],
+    opacity: 1,
+    transition: {
+      scale: { repeat: Infinity, duration: 2, ease: 'easeInOut' as const, repeatType: 'loop' as const },
+      opacity: { duration: 0.2 },
+    },
+  },
+  exit: {
+    scale: 0.5,
+    opacity: 0,
+    transition: { duration: 0.15 },
+  },
+}
+
+function getPipSize(miniMode: boolean): { width: number; height: number } {
+  if (miniMode) return { width: MINI_DOT_SIZE, height: MINI_DOT_SIZE }
+  return {
+    width: Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2),
+    height: PIP_HEIGHT,
+  }
+}
+
+function detectCorner(x: number, y: number, miniMode: boolean): Corner {
+  if (typeof window === 'undefined') return 'bottom-right'
+  const size = getPipSize(miniMode)
+  const centerX = x + size.width / 2
+  const centerY = y + size.height / 2
+  const windowCenterX = window.innerWidth / 2
+  const windowCenterY = window.innerHeight / 2
+
+  if (centerX < windowCenterX && centerY < windowCenterY) return 'top-left'
+  if (centerX >= windowCenterX && centerY < windowCenterY) return 'top-right'
+  if (centerX < windowCenterX && centerY >= windowCenterY) return 'bottom-left'
+  return 'bottom-right'
+}
+
+function snapToCorner(corner: Corner, miniMode: boolean): Position {
+  if (typeof window === 'undefined') return { x: 0, y: 0 }
+  const size = getPipSize(miniMode)
+
+  switch (corner) {
+    case 'top-left':
+      return { x: PIP_MARGIN, y: PIP_MARGIN }
+    case 'top-right':
+      return { x: window.innerWidth - size.width - PIP_MARGIN, y: PIP_MARGIN }
+    case 'bottom-left':
+      return { x: PIP_MARGIN, y: window.innerHeight - size.height - PIP_MARGIN - SAFE_AREA_BOTTOM }
+    case 'bottom-right':
+    default:
+      return { x: window.innerWidth - size.width - PIP_MARGIN, y: window.innerHeight - size.height - PIP_MARGIN - SAFE_AREA_BOTTOM }
+  }
+}
+
+function clampToScreen(x: number, y: number, miniMode: boolean): Position {
+  if (typeof window === 'undefined') return { x, y }
+  const size = getPipSize(miniMode)
+  if (miniMode) {
+    // Mini 模式允许水平方向半隐藏（贴边），垂直方向正常 clamp
+    return {
+      x: Math.max(-MINI_PEEK_OFFSET, Math.min(x, window.innerWidth - MINI_PEEK_OFFSET)),
+      y: Math.max(0, Math.min(y, window.innerHeight - size.height - SAFE_AREA_BOTTOM)),
+    }
+  }
+  return {
+    x: Math.max(0, Math.min(x, window.innerWidth - size.width)),
+    y: Math.max(0, Math.min(y, window.innerHeight - size.height - SAFE_AREA_BOTTOM)),
+  }
+}
+
+/** Mini dot 吸附到最近的左/右屏幕边缘，半个藏在屏幕外 */
+function snapMiniToEdge(x: number, y: number): Position {
+  if (typeof window === 'undefined') return { x: 0, y: 0 }
+  const isRightEdge = x + MINI_DOT_SIZE / 2 >= window.innerWidth / 2
+  const snapX = isRightEdge
+    ? window.innerWidth - MINI_PEEK_OFFSET
+    : -MINI_PEEK_OFFSET
+  const clampY = Math.max(PIP_MARGIN, Math.min(
+    y,
+    window.innerHeight - MINI_DOT_SIZE - PIP_MARGIN - SAFE_AREA_BOTTOM,
+  ))
+  return { x: snapX, y: clampY }
+}
+
 export function DraggableAudioPIP({
   video,
-  audioElement,
   isPlaying,
   currentTime,
   duration,
@@ -56,10 +143,11 @@ export function DraggableAudioPIP({
   fallbackImageUrl,
 }: DraggableAudioPIPProps) {
   const containerRef = useRef<HTMLDivElement>(null)
-  const audioSlotRef = useRef<HTMLDivElement>(null)
-  const originalParentRef = useRef<HTMLElement | null>(null)
-  const originalNextSiblingRef = useRef<Node | null>(null)
   const [position, setPosition] = useState<Position>({ x: 0, y: 0 })
+  // positionRef 保持与 position 同步，供 isMiniMode 切换 effect 读取最新值
+  const positionRef = useRef<Position>({ x: 0, y: 0 })
+  positionRef.current = position
+
   const [isDragging, setIsDragging] = useState(false)
   const [hasDragged, setHasDragged] = useState(false)
   const dragStartRef = useRef<Position | null>(null)
@@ -69,87 +157,41 @@ export function DraggableAudioPIP({
   const trackRef = useRef<HTMLDivElement>(null)
   const [seekingPercent, setSeekingPercent] = useState<number | null>(null)
 
-  // 共享 <audio> 元素：挂载时移入 PIP，卸载时还原
+  // Mini dot 状态
+  const [isMiniMode, setIsMiniMode] = useState(false)
+  const collapseTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  // ── 自动收起定时器 ──
+  // bar 模式下启动 3s 倒计时；seek / 拖拽 / 播放暂停时通过 dep 变化自动重置
   useEffect(() => {
-    if (!audioElement || !audioSlotRef.current) return
-
-    // 保存原始位置
-    originalParentRef.current = audioElement.parentElement
-    originalNextSiblingRef.current = audioElement.nextSibling
-
-    // 保存播放状态
-    const wasPlaying = !audioElement.paused
-    const currentTime = audioElement.currentTime
-
-    // 修改样式：保持交互能力但视觉隐藏
-    audioElement.style.width = '1px'
-    audioElement.style.height = '1px'
-    audioElement.style.position = 'absolute'
-    audioElement.style.opacity = '0'
-    audioElement.style.pointerEvents = 'auto' // 保持交互能力
-
-    // 先暂停避免移动时的冲突
-    audioElement.pause()
-
-    // 移动元素到 PIP 容器
-    audioSlotRef.current.appendChild(audioElement)
-
-    // 恢复播放状态和时间位置
-    audioElement.currentTime = currentTime
-    if (wasPlaying) {
-      audioElement.play().catch((err) => {
-        console.warn('[DraggableAudioPIP] Failed to resume playback after move:', err)
-      })
+    if (isMiniMode || seekingPercent !== null || isDragging) {
+      if (collapseTimerRef.current) {
+        clearTimeout(collapseTimerRef.current)
+        collapseTimerRef.current = null
+      }
+      return
     }
 
-    console.log('[DraggableAudioPIP] Audio element moved to PIP, wasPlaying:', wasPlaying)
+    collapseTimerRef.current = setTimeout(() => {
+      setIsMiniMode(true)
+    }, AUTO_COLLAPSE_DELAY)
 
     return () => {
-      const parent = originalParentRef.current
-      if (parent && audioElement.parentElement !== parent) {
-        // 保存播放状态
-        const wasPlaying = !audioElement.paused
-        const currentTime = audioElement.currentTime
-
-        // 先暂停
-        audioElement.pause()
-
-        // 移回原位置
-        const nextSibling = originalNextSiblingRef.current
-        if (nextSibling && nextSibling.parentNode === parent) {
-          parent.insertBefore(audioElement, nextSibling)
-        } else {
-          parent.appendChild(audioElement)
-        }
-
-        // 恢复播放状态
-        audioElement.currentTime = currentTime
-        if (wasPlaying) {
-          audioElement.play().catch((err) => {
-            console.warn('[DraggableAudioPIP] Failed to resume playback after restore:', err)
-          })
-        }
-
-        console.log('[DraggableAudioPIP] Audio element restored to original position, wasPlaying:', wasPlaying)
+      if (collapseTimerRef.current) {
+        clearTimeout(collapseTimerRef.current)
       }
-
-      // 清理样式
-      audioElement.style.width = ''
-      audioElement.style.height = ''
-      audioElement.style.position = ''
-      audioElement.style.opacity = ''
-      audioElement.style.pointerEvents = ''
     }
-  }, [audioElement])
+  }, [isMiniMode, seekingPercent, isDragging, isPlaying])
 
-  // 初始化位置（底部居中偏右）
+  // ── 初始化位置（底部偏右） ──
   useEffect(() => {
+    if (typeof window === 'undefined') return
+
     const initPosition = () => {
-      if (typeof window === 'undefined') return
-      const pipWidth = Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
+      const size = getPipSize(false)
       setPosition({
-        x: window.innerWidth - pipWidth - PIP_MARGIN,
-        y: window.innerHeight - PIP_HEIGHT - PIP_MARGIN - 80,
+        x: window.innerWidth - size.width - PIP_MARGIN,
+        y: window.innerHeight - size.height - PIP_MARGIN - SAFE_AREA_BOTTOM,
       })
     }
     initPosition()
@@ -157,47 +199,24 @@ export function DraggableAudioPIP({
     return () => window.removeEventListener('resize', initPosition)
   }, [])
 
-  const getNearestCorner = useCallback((x: number, y: number): Corner => {
-    if (typeof window === 'undefined') return 'bottom-right'
-    const pipWidth = Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
-    const centerX = x + pipWidth / 2
-    const centerY = y + PIP_HEIGHT / 2
-    const windowCenterX = window.innerWidth / 2
-    const windowCenterY = window.innerHeight / 2
+  // ── isMiniMode 切换时重算位置 ──
+  useEffect(() => {
+    if (typeof window === 'undefined') return
 
-    if (centerX < windowCenterX && centerY < windowCenterY) return 'top-left'
-    if (centerX >= windowCenterX && centerY < windowCenterY) return 'top-right'
-    if (centerX < windowCenterX && centerY >= windowCenterY) return 'bottom-left'
-    return 'bottom-right'
-  }, [])
-
-  const getSnapPosition = useCallback((corner: Corner): Position => {
-    if (typeof window === 'undefined') return { x: 0, y: 0 }
-    const pipWidth = Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
-    const safeAreaBottom = 80
-
-    switch (corner) {
-      case 'top-left':
-        return { x: PIP_MARGIN, y: PIP_MARGIN }
-      case 'top-right':
-        return { x: window.innerWidth - pipWidth - PIP_MARGIN, y: PIP_MARGIN }
-      case 'bottom-left':
-        return { x: PIP_MARGIN, y: window.innerHeight - PIP_HEIGHT - PIP_MARGIN - safeAreaBottom }
-      case 'bottom-right':
-      default:
-        return { x: window.innerWidth - pipWidth - PIP_MARGIN, y: window.innerHeight - PIP_HEIGHT - PIP_MARGIN - safeAreaBottom }
+    const pos = positionRef.current
+    if (isMiniMode) {
+      // Bar → Mini：贴边吸附，半个藏在屏幕外
+      setPosition(snapMiniToEdge(pos.x, pos.y))
+    } else {
+      // Mini → Bar：固定右下角
+      setSnappedCorner('bottom-right')
+      setPosition(snapToCorner('bottom-right', false))
     }
-  }, [])
+    // 仅在 isMiniMode 变化时执行
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isMiniMode])
 
-  const clampPosition = useCallback((x: number, y: number): Position => {
-    if (typeof window === 'undefined') return { x, y }
-    const pipWidth = Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
-    const safeAreaBottom = 80
-    return {
-      x: Math.max(0, Math.min(x, window.innerWidth - pipWidth)),
-      y: Math.max(0, Math.min(y, window.innerHeight - PIP_HEIGHT - safeAreaBottom)),
-    }
-  }, [])
+  // ── 拖拽 ──
 
   const handleDragStart = useCallback((e: React.TouchEvent | React.MouseEvent) => {
     e.preventDefault()
@@ -225,25 +244,36 @@ export function DraggableAudioPIP({
     rafRef.current = requestAnimationFrame(() => {
       const newX = positionStartRef.current!.x + deltaX
       const newY = positionStartRef.current!.y + deltaY
-      setPosition(clampPosition(newX, newY))
+      setPosition(clampToScreen(newX, newY, isMiniMode))
     })
-  }, [clampPosition])
+  }, [isMiniMode])
 
   const handleDragEnd = useCallback(() => {
     if (!hasDragged) {
       setIsDragging(false)
-      onExpand()
+      if (isMiniMode) {
+        // Mini dot 点击 → 展开回 PIP bar
+        setIsMiniMode(false)
+      } else {
+        // Bar 点击 → 回到全屏播放页
+        onExpand()
+      }
       return
     }
-    const corner = getNearestCorner(position.x, position.y)
-    setPosition(getSnapPosition(corner))
-    setSnappedCorner(corner)
+    if (isMiniMode) {
+      setPosition(snapMiniToEdge(position.x, position.y))
+    } else {
+      const corner = detectCorner(position.x, position.y, false)
+      setPosition(snapToCorner(corner, false))
+      setSnappedCorner(corner)
+    }
     setIsDragging(false)
     dragStartRef.current = null
     positionStartRef.current = null
-  }, [hasDragged, position, getNearestCorner, getSnapPosition, onExpand])
+  }, [hasDragged, position, isMiniMode, onExpand])
 
-  useEffect(() => {
+  // useLayoutEffect 保证 listener 在 paint 前同步注册，避免快速点击时 mouseup 先于 listener 触发
+  useLayoutEffect(() => {
     if (!isDragging) return
     const handleMove = (e: TouchEvent | MouseEvent) => handleDragMove(e)
     const handleEnd = () => handleDragEnd()
@@ -261,6 +291,8 @@ export function DraggableAudioPIP({
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
     }
   }, [isDragging, handleDragMove, handleDragEnd])
+
+  // ── 进度条 seek ──
 
   const formatTime = (seconds: number): string => {
     const mins = Math.floor(seconds / 60)
@@ -297,99 +329,154 @@ export function DraggableAudioPIP({
     window.addEventListener('mouseup', handleUp)
   }, [calcPercent, duration, onSeek])
 
+  // ── 渲染 ──
+
   const coverUrl = video.cover_url || video.thumbnail_url || fallbackImageUrl
+  const barWidth = typeof window !== 'undefined'
+    ? Math.min(PIP_WIDTH, window.innerWidth - PIP_MARGIN * 2)
+    : PIP_WIDTH
 
   return (
-    <AnimatePresence>
-      <motion.div
-        ref={containerRef}
-        className={cn(
-          'fixed z-[100] rounded-xl overflow-hidden',
-          isDragging ? 'cursor-grabbing' : 'cursor-grab',
-          className
-        )}
-        style={{
-          height: PIP_HEIGHT,
-          width: Math.min(PIP_WIDTH, typeof window !== 'undefined' ? window.innerWidth - PIP_MARGIN * 2 : PIP_WIDTH),
-          left: position.x,
-          top: position.y,
-          touchAction: 'none',
-          backgroundColor: '#111',
-        }}
-        initial={{ scale: 0, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0, opacity: 0 }}
-        transition={{ type: 'spring', stiffness: 300, damping: 25 }}
-        onMouseDown={handleDragStart}
-        onTouchStart={handleDragStart}
-      >
-        {/* 模糊背景 */}
-        {coverUrl && (
-          <img src={coverUrl} alt="" className="absolute inset-0 w-full h-full object-cover"
-            style={{ transform: 'scale(1.4)', filter: 'blur(40px) saturate(2) brightness(0.5) contrast(1.1)' }} />
-        )}
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
+    <AnimatePresence mode="wait">
+      {isMiniMode ? (
+        /* ── Mini dot ── */
+        <motion.div
+          key="mini"
+          ref={containerRef}
+          className={cn(
+            'fixed z-[100] rounded-lg overflow-hidden',
+            isDragging ? 'cursor-grabbing' : 'cursor-pointer',
+            className
+          )}
+          style={{
+            width: MINI_DOT_SIZE,
+            height: MINI_DOT_SIZE,
+            left: position.x,
+            top: position.y,
+            touchAction: 'none',
+            backgroundColor: '#111',
+          }}
+          variants={miniDotVariants}
+          initial="initial"
+          animate="animate"
+          exit="exit"
+          onMouseDown={handleDragStart}
+          onTouchStart={handleDragStart}
+        >
+          {/* 封面背景 */}
+          {coverUrl ? (
+            <img src={coverUrl} alt="" className="absolute inset-0 w-full h-full object-cover" />
+          ) : (
+            <div className="absolute inset-0 bg-[#333]" />
+          )}
 
-        {/* 隐藏的 audio 元素插槽 */}
-        <div ref={audioSlotRef} className="hidden" />
+          {/* 半透明遮罩 */}
+          <div className="absolute inset-0 bg-black/30" />
 
-        {/* ===== 横排布局：封面 + 标题/进度 + 播放 + 展开 ===== */}
-        <div className="relative z-10 flex items-center h-full px-2 gap-2">
-          {/* 封面小图 */}
-          <div
-            className="w-10 h-10 rounded-lg flex-shrink-0 border border-white/10"
-            style={{
-              backgroundImage: coverUrl ? `url(${coverUrl})` : undefined,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              backgroundColor: '#333',
-            }}
-          />
-
-          {/* 标题 + 进度条 */}
-          <div className="flex-1 flex flex-col gap-1 min-w-0">
-            <p className="text-white font-bold text-[11px] truncate drop-shadow">{video.title}</p>
-            <div
-              ref={trackRef}
-              className="relative h-1 bg-white/20 cursor-pointer rounded-full"
-              onTouchStart={(e) => e.stopPropagation()}
-              onMouseDown={handleTrackMouseDown}
-            >
-              <div className="h-full bg-[#B4F416] rounded-full" style={{ width: `${progressPercent}%` }} />
-              <div className="absolute -top-1 -bottom-1 left-0 right-0" />
-            </div>
-            <div className="flex justify-between">
-              <span className="text-white/50 text-[8px] font-mono">{formatTime(currentTime)}</span>
-              <span className="text-white/50 text-[8px] font-mono">{formatTime(duration)}</span>
-            </div>
+          {/* 右下角播放/暂停状态指示（纯展示，不可点击） */}
+          <div className="absolute bottom-0.5 right-0.5 w-4 h-4 rounded-full bg-black/60 flex items-center justify-center pointer-events-none">
+            {isPlaying ? (
+              <Pause className="w-2 h-2 text-white" />
+            ) : (
+              <Play className="w-2 h-2 text-white ml-[1px]" />
+            )}
           </div>
 
-          {/* 播放/暂停 */}
-          <button
-            onTouchStart={(e) => e.stopPropagation()}
-            onMouseDown={(e) => e.stopPropagation()}
-            onClick={(e) => { e.stopPropagation(); onTogglePlay() }}
-            className="p-2 text-white hover:text-[#B4F416] transition-colors flex-shrink-0"
-          >
-            {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
-          </button>
+          {/* 拖动指示器 */}
+          {isDragging && (
+            <div className="absolute inset-0 border-2 border-[#B4F416] rounded-lg pointer-events-none" />
+          )}
+        </motion.div>
+      ) : (
+        /* ── Expanded bar ── */
+        <motion.div
+          key="bar"
+          ref={containerRef}
+          className={cn(
+            'fixed z-[100] rounded-xl overflow-hidden',
+            isDragging ? 'cursor-grabbing' : 'cursor-grab',
+            className
+          )}
+          style={{
+            height: PIP_HEIGHT,
+            width: barWidth,
+            left: position.x,
+            top: position.y,
+            touchAction: 'none',
+            backgroundColor: '#111',
+          }}
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.5, opacity: 0 }}
+          transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+          onMouseDown={handleDragStart}
+          onTouchStart={handleDragStart}
+        >
+          {/* 模糊背景 */}
+          {coverUrl && (
+            <img src={coverUrl} alt="" className="absolute inset-0 w-full h-full object-cover"
+              style={{ transform: 'scale(1.4)', filter: 'blur(40px) saturate(2) brightness(0.5) contrast(1.1)' }} />
+          )}
+          <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
 
-          {/* 展开 */}
-          <button
-            onTouchStart={(e) => e.stopPropagation()}
-            onMouseDown={(e) => e.stopPropagation()}
-            onClick={(e) => { e.stopPropagation(); onExpand() }}
-            className="p-1.5 text-white/50 hover:text-white transition-colors flex-shrink-0"
-          >
-            <Maximize className="w-3.5 h-3.5" />
-          </button>
-        </div>
+          {/* ===== 横排布局：封面 + 标题/进度 + 播放 + 展开 ===== */}
+          <div className="relative z-10 flex items-center h-full px-2 gap-2">
+            {/* 封面小图 */}
+            <div
+              className="w-10 h-10 rounded-lg flex-shrink-0 border border-white/10"
+              style={{
+                backgroundImage: coverUrl ? `url(${coverUrl})` : undefined,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundColor: '#333',
+              }}
+            />
 
-        {/* 拖动指示器 */}
-        {isDragging && (
-          <div className="absolute inset-0 border-2 border-[#B4F416] rounded-xl pointer-events-none" />
-        )}
-      </motion.div>
+            {/* 标题 + 进度条 */}
+            <div className="flex-1 flex flex-col gap-1 min-w-0">
+              <p className="text-white font-bold text-[11px] truncate drop-shadow">{video.title}</p>
+              <div
+                ref={trackRef}
+                className="relative h-1 bg-white/20 cursor-pointer rounded-full"
+                onTouchStart={(e) => e.stopPropagation()}
+                onMouseDown={handleTrackMouseDown}
+              >
+                <div className="h-full bg-[#B4F416] rounded-full" style={{ width: `${progressPercent}%` }} />
+                <div className="absolute -top-1 -bottom-1 left-0 right-0" />
+              </div>
+              <div className="flex justify-between">
+                <span className="text-white/50 text-[8px] font-mono">{formatTime(currentTime)}</span>
+                <span className="text-white/50 text-[8px] font-mono">{formatTime(duration)}</span>
+              </div>
+            </div>
+
+            {/* 播放/暂停 */}
+            <button
+              onTouchStart={(e) => e.stopPropagation()}
+              onMouseDown={(e) => e.stopPropagation()}
+              onClick={(e) => { e.stopPropagation(); onTogglePlay() }}
+              className="p-2 text-white hover:text-[#B4F416] transition-colors flex-shrink-0"
+            >
+              {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+            </button>
+
+            {/* 展开 */}
+            <button
+              onTouchStart={(e) => e.stopPropagation()}
+              onMouseDown={(e) => e.stopPropagation()}
+              onClick={(e) => { e.stopPropagation(); onExpand() }}
+              className="p-1.5 text-white/50 hover:text-white transition-colors flex-shrink-0"
+            >
+              <Maximize className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* 拖动指示器 */}
+          {isDragging && (
+            <div className="absolute inset-0 border-2 border-[#B4F416] rounded-xl pointer-events-none" />
+          )}
+        </motion.div>
+      )}
     </AnimatePresence>
   )
 }

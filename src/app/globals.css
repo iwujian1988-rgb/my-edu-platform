@@ -1042,3 +1042,41 @@ html.dark .neo-card-video::after {
 html.dark .neo-card-continue::after {
   box-shadow: 6px 6px 0px 0px #666;
 }
+
+/* ========================================
+   Immersive mode — lightweight overrides
+   去掉子组件的 neo-brutalism 粗边框/阴影
+   ======================================== */
+[data-immersive="light"] > div,
+[data-immersive="light"] [class*="border-black"],
+[data-immersive="light"] [class*="border-[2px]"],
+[data-immersive="light"] [class*="border-[3px]"] {
+  border-width: 1px !important;
+  border-color: #e5e7eb !important;
+}
+html.dark [data-immersive="light"] > div,
+html.dark [data-immersive="light"] [class*="border-black"],
+html.dark [data-immersive="light"] [class*="border-[2px]"],
+html.dark [data-immersive="light"] [class*="border-[3px]"] {
+  border-color: #374151 !important;
+}
+
+[data-immersive="light"] [class*="shadow-["] {
+  box-shadow: none !important;
+}
+
+/* 功能色（正确/错误）保留原色，只降级装饰色 */
+[data-immersive="light"] [class*="bg-purple-100"],
+[data-immersive="light"] [class*="bg-purple-400"],
+[data-immersive="light"] [class*="bg-indigo-100"],
+[data-immersive="light"] [class*="bg-amber-100"],
+[data-immersive="light"] [class*="bg-teal-100"] {
+  background-color: #f9fafb !important;
+}
+html.dark [data-immersive="light"] [class*="bg-purple-100"],
+html.dark [data-immersive="light"] [class*="bg-purple-400"],
+html.dark [data-immersive="light"] [class*="bg-indigo-100"],
+html.dark [data-immersive="light"] [class*="bg-amber-100"],
+html.dark [data-immersive="light"] [class*="bg-teal-100"] {
+  background-color: #111827 !important;
+}

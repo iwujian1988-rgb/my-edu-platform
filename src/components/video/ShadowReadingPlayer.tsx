@@ -120,13 +120,16 @@ export function ShadowReadingPlayer({
   const [confirmTarget, setConfirmTarget] = useState<NavigateTarget | null>(null)
   const group = getPhaseGroup(phase)
   const label = getPhaseLabel(phase)
+  // 切句时重置词索引
+  useEffect(() => { setActiveWordIdx(0); activeWordIdxRef.current = 0 }, [currentSubtitle])
+
   const isSpeakPhase = phase === 'speak'
   const isPlaybackPhase = phase === 'playback'
   const isDonePhase = phase === 'done'
 
   const showVideoDimmed = false
 
-  // 词级 KTV：追踪 mini video currentTime，确定当前激活单词
+  // 词级 KTV：用 rAF 高频追踪 video.currentTime，匹配逐词时间戳
   type SubtitleWord = { text: string; start: number; end: number }
   const [activeWordIdx, setActiveWordIdx] = useState(0)
   const activeWordIdxRef = useRef(0)
@@ -135,17 +138,18 @@ export function ShadowReadingPlayer({
     if (!video) return
     const words = (currentSubtitle as any)?.words as SubtitleWord[] | undefined
     if (!words?.length) return
-    const onTime = () => {
+    let raf = 0
+    const tick = () => {
       const t = video.currentTime
       const idx = words.findIndex(w => t >= w.start && t < w.end)
-      // 间隔期保持上一个词，避免方块乱跳
-      if (idx >= 0) {
+      if (idx >= 0 && idx !== activeWordIdxRef.current) {
         activeWordIdxRef.current = idx
         setActiveWordIdx(idx)
       }
+      raf = requestAnimationFrame(tick)
     }
-    video.addEventListener('timeupdate', onTime)
-    return () => video.removeEventListener('timeupdate', onTime)
+    raf = requestAnimationFrame(tick)
+    return () => cancelAnimationFrame(raf)
   }, [currentSubtitle, miniVideoRef])
 
   // 长文本检测：缩小字号防溢出
@@ -229,12 +233,28 @@ export function ShadowReadingPlayer({
         {/* ── Speak 阶段：字幕突出 + 倒计时在下方 + 跳过按钮 ── */}
         {isSpeakPhase && currentSubtitle && (
           <div className="flex-1 flex flex-col items-center justify-center px-6 lg:px-8 min-h-0">
-            {/* 原文 — 大号突出，长文本自动缩小 */}
+            {/* 原文 — 大号突出，长文本自动缩小，词级 KTV */}
             <div className={cn(
-              "font-black leading-relaxed text-center text-black max-w-lg",
+              "font-black leading-relaxed text-center text-black max-w-lg flex flex-wrap justify-center gap-x-2 gap-y-1",
               isLongText ? "text-base lg:text-lg" : "text-2xl lg:text-3xl"
             )}>
-              {currentSubtitle.original_text}
+              {(() => {
+                const words = (currentSubtitle as any).words as SubtitleWord[] | undefined
+                if (!words?.length) return currentSubtitle.original_text
+                return words.map((w, wi) => (
+                  <span
+                    key={wi}
+                    className={cn(
+                      'px-1 rounded transition-colors duration-100',
+                      wi === activeWordIdx
+                        ? 'text-[#B4F416] bg-[#B4F416]/20 border border-[#B4F416]/60'
+                        : ''
+                    )}
+                  >
+                    {w.text}
+                  </span>
+                ))
+              })()}
             </div>
             {currentSubtitle.chinese_text && (
               <div className={cn(

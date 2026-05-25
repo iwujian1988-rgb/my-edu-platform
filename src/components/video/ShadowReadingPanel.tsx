@@ -104,9 +104,9 @@ function RecordingRow({ recording, subtitle }: { recording: LocalRecording; subt
   )
 }
 
-type ViewMode = 'intro' | 'playing' | 'recordings'
+export type ViewMode = 'intro' | 'playing' | 'recordings'
 
-function ShadowReadingContent({
+export function ShadowReadingContent({
   videoId,
   videoUrl,
   subtitles,
@@ -118,7 +118,7 @@ function ShadowReadingContent({
   videoId: string
   videoUrl: string | null
   subtitles: SubtitleWithHighlights[]
-  onClose: () => void
+  onClose?: () => void
   isAudio?: boolean
   videoInfo?: VideoInfoSummary
   onNavigateTo?: (target: NavigateTarget) => void
@@ -319,12 +319,14 @@ function ShadowReadingContent({
   if (!videoUrl) {
     return (
       <div className="relative flex flex-col h-full bg-white">
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        )}
         <div className="flex flex-col items-center justify-center flex-1 gap-4 p-8">
           <div className="w-16 h-16 rounded-full bg-amber-50 border-2 border-amber-200 flex items-center justify-center">
             <AlertCircle className="w-8 h-8 text-amber-500" />
@@ -333,12 +335,14 @@ function ShadowReadingContent({
             <h3 className="text-lg font-black text-black">暂无音视频资源</h3>
             <p className="text-sm text-gray-500 mt-1">该内容暂未上传音频/视频，无法使用跟读功能</p>
           </div>
-          <button
-            onClick={onClose}
-            className="px-6 py-3 border-2 border-black rounded-xl bg-[#B4F416] text-black font-bold shadow-[2px_2px_0px_0px_#000] cursor-pointer transition-all"
-          >
-            返回
-          </button>
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="px-6 py-3 border-2 border-black rounded-xl bg-[#B4F416] text-black font-bold shadow-[2px_2px_0px_0px_#000] cursor-pointer transition-all"
+            >
+              返回
+            </button>
+          )}
         </div>
       </div>
     )
@@ -348,12 +352,14 @@ function ShadowReadingContent({
   if (isLoading) {
     return (
       <div className="relative flex flex-col h-full bg-white">
-        <button
-          onClick={onClose}
-          className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
+        {onClose && (
+          <button
+            onClick={onClose}
+            className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        )}
         <div className="flex items-center justify-center flex-1">
           <div className="text-sm text-gray-400">加载进度...</div>
         </div>
@@ -403,12 +409,14 @@ function ShadowReadingContent({
   if (isFinished) {
     return (
       <div className="relative flex flex-col h-full bg-white">
-        <button
-          onClick={() => { cleanup(); onClose() }}
-          className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
+        {onClose && (
+          <button
+            onClick={() => { cleanup(); onClose() }}
+            className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        )}
         <div className="flex flex-col items-center justify-center flex-1 gap-3 p-6 overflow-y-auto">
           <div className="w-14 h-14 rounded-full bg-[#f0fdf4] border-2 border-[#86efac] flex items-center justify-center flex-shrink-0">
             <span className="text-2xl">🎉</span>
@@ -420,12 +428,14 @@ function ShadowReadingContent({
             </p>
           </div>
 
-          <button
-            onClick={onClose}
-            className="px-6 py-3 border-2 border-black rounded-xl bg-[#B4F416] text-black font-bold shadow-[2px_2px_0px_0px_#000] cursor-pointer transition-all flex-shrink-0"
-          >
-            返回
-          </button>
+          {onClose && (
+            <button
+              onClick={onClose}
+              className="px-6 py-3 border-2 border-black rounded-xl bg-[#B4F416] text-black font-bold shadow-[2px_2px_0px_0px_#000] cursor-pointer transition-all flex-shrink-0"
+            >
+              返回
+            </button>
+          )}
         </div>
       </div>
     )
@@ -435,12 +445,14 @@ function ShadowReadingContent({
   if (isStarted) {
     return (
       <div className="relative flex flex-col h-full bg-white">
-        <button
-          onClick={() => { cleanup(); onClose() }}
-          className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
-        >
-          <X className="w-5 h-5" />
-        </button>
+        {onClose && (
+          <button
+            onClick={() => { cleanup(); onClose() }}
+            className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+          >
+            <X className="w-5 h-5" />
+          </button>
+        )}
         <ShadowReadingPlayer
           phase={phase}
           currentIndex={currentIndex}
@@ -474,12 +486,14 @@ function ShadowReadingContent({
   // ── Intro 引导页 ──
   return (
     <div className="relative flex flex-col h-full bg-white">
-      <button
-        onClick={() => { cleanup(); onClose() }}
-        className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
-      >
-        <X className="w-5 h-5" />
-      </button>
+      {onClose && (
+        <button
+          onClick={() => { cleanup(); onClose() }}
+          className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
+        >
+          <X className="w-5 h-5" />
+        </button>
+      )}
       <ShadowReadingIntro
         subtitleCount={subtitles.length}
         speedMultiplier={activeSpeed}

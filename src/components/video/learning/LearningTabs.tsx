@@ -629,9 +629,10 @@ interface ExpressionsTabProps {
   onPlaySegment?: (startTime: number, endTime: number) => void
   getCardStatus?: (cardType: 'expression', cardId: string) => CardStatus | undefined
   onStatusChange?: (cardType: 'expression', cardId: string, status: CardStatus) => Promise<void>
+  showProgress?: boolean
 }
 
-function ExpressionsTab({ expressions, onJumpToSubtitle, onPlaySegment, getCardStatus, onStatusChange }: ExpressionsTabProps) {
+export function ExpressionsTab({ expressions, onJumpToSubtitle, onPlaySegment, getCardStatus, onStatusChange, showProgress = true }: ExpressionsTabProps) {
   const learnedCount = expressions.filter(expr => {
     const status = getCardStatus?.('expression', expr.id)
     return status === 'known' || status === 'learning'
@@ -726,7 +727,7 @@ function ExpressionsTab({ expressions, onJumpToSubtitle, onPlaySegment, getCardS
         )
       })}
 
-      <Progress learned={learnedCount} total={expressions.length} />
+      {showProgress && <Progress learned={learnedCount} total={expressions.length} />}
     </div>
   )
 }

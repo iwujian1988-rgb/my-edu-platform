@@ -26,6 +26,7 @@ interface UseRecordingsResult {
   isPaused: boolean
   duration: number
   audioURL: string | null
+  audioURLSyncRef: React.RefObject<string | null>  // 同步版本，stopRecording().then() 后立即可用
   error: string | null
   isUploading: boolean
   uploadProgress: number // 上传进度 0-100
@@ -71,6 +72,9 @@ export function useRecordings({
   const blobRef = useRef<Blob | null>(null)
   const currentSubtitleIdRef = useRef<string | null>(null)
   const stopResolveRef = useRef<(() => void) | null>(null) // 用于等待 stop 完成
+
+  // 同步 ref：onstop 中在 resolve promise 之前写入，确保 .then() 回调能立即读到
+  const audioURLSyncRef = useRef<string | null>(null)
 
   // 清理
   const cleanup = useCallback(() => {
@@ -135,9 +139,20 @@ export function useRecordings({
 
       streamRef.current = stream
 
-      // 创建 MediaRecorder - 锁定高码率
+      // 创建 MediaRecorder — 检测浏览器支持的 MIME 类型（Safari 不支持 webm/opus）
+      const MIME_CANDIDATES = [
+        'audio/webm;codecs=opus',
+        'audio/webm',
+        'audio/ogg;codecs=opus',
+        'audio/mp4',
+      ]
+      const selectedMime = MIME_CANDIDATES.find(m => MediaRecorder.isTypeSupported(m)) || ''
+      if (!selectedMime) {
+        throw new Error('浏览器不支持音频录制')
+      }
+
       const mediaRecorder = new MediaRecorder(stream, {
-        mimeType: 'audio/webm;codecs=opus',
+        mimeType: selectedMime,
         audioBitsPerSecond: 128000,  // 128kbps 保证清晰度
       })
 
@@ -154,12 +169,13 @@ export function useRecordings({
       // 录音结束
       mediaRecorder.onstop = () => {
         const totalChunks = chunksRef.current.length
-        const blob = new Blob(chunksRef.current, { type: 'audio/webm' })
+        const blob = new Blob(chunksRef.current, { type: mediaRecorder.mimeType })
         blobRef.current = blob
 
         console.log(`[useRecordings] 🏁 录音结束: ${totalChunks} chunks, ${(blob.size / 1024).toFixed(1)}KB`)
 
         const url = URL.createObjectURL(blob)
+        audioURLSyncRef.current = url  // 同步写入 ref，.then() 立刻可用
         setAudioURL(url)
 
         cleanup()
@@ -196,9 +212,11 @@ export function useRecordings({
   }, [maxDuration, cleanup])
 
   // 停止录音 - 返回 Promise 等待数据准备好
+  // 检查 MediaRecorder.state 而非 React isRecording state，避免闭包陈旧问题
   const stopRecording = useCallback((): Promise<void> => {
     return new Promise((resolve) => {
-      if (!mediaRecorderRef.current || !isRecording) {
+      const recorder = mediaRecorderRef.current
+      if (!recorder || recorder.state === 'inactive') {
         resolve()
         return
       }
@@ -206,11 +224,11 @@ export function useRecordings({
       // 保存 resolve 函数，在 onstop 回调中调用
       stopResolveRef.current = resolve
 
-      mediaRecorderRef.current.stop()
+      recorder.stop()
       setIsRecording(false)
       setIsPaused(false)
     })
-  }, [isRecording])
+  }, [])
 
   // 暂停录音
   const pauseRecording = useCallback(() => {
@@ -254,6 +272,7 @@ export function useRecordings({
       URL.revokeObjectURL(audioURL)
       setAudioURL(null)
     }
+    audioURLSyncRef.current = null
 
     blobRef.current = null
     currentSubtitleIdRef.current = null
@@ -458,8 +477,8 @@ export function useRecordings({
 
           console.log('[useRecordings] ✅ 录音保存成功（后台）')
         } catch (err) {
-          console.error('[useRecordings] ❌ 后台上传失败:', err)
-          setError('上传失败，但录音已保存到本地')
+          console.warn('[useRecordings] 后台上传失败（录音已本地保存）:', err)
+          // 后台上传失败不影响用户体验，录音已在本地可用
         } finally {
           setIsUploading(false)
           setPendingUploadSubtitleId(null)
@@ -503,6 +522,7 @@ export function useRecordings({
       URL.revokeObjectURL(audioURL)
     }
     setAudioURL(null)
+    audioURLSyncRef.current = null
     blobRef.current = null
     setDuration(0)
     setError(null)
@@ -514,6 +534,7 @@ export function useRecordings({
     isPaused,
     duration,
     audioURL,
+    audioURLSyncRef,
     error,
     isUploading,
     uploadProgress,

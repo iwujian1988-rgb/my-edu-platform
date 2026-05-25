@@ -32,6 +32,7 @@ import {
   Pin,
   PinOff,
   Users,
+  Brain,
   ExternalLink,
   ChevronRight,
 } from 'lucide-react'
@@ -54,6 +55,7 @@ import { PracticeSheet } from '@/components/video/learning/PracticeSheet'
 import { AccessDenied } from '@/components/video/AccessDenied'
 import { DraggableAudioPIP } from '@/components/video/DraggableAudioPIP'
 import { ContinuousPlayPanel, getStoredContinuousPlay, setStoredContinuousPlay } from '@/components/video/ContinuousPlayPanel'
+import { ImmersiveOverlay } from '@/components/video/immersive/ImmersiveOverlay'
 
 import { useVideoProgress } from '@/hooks/useVideoProgress'
 import { useCardProgress } from '@/hooks/useCardProgress'
@@ -109,6 +111,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [isLearningModalOpen, setIsLearningModalOpen] = useState(false) // PC端学习弹层
   const [isPracticeSheetOpen, setIsPracticeSheetOpen] = useState(false) // 移动端练习抽屉
   const [isShadowReadingOpen, setIsShadowReadingOpen] = useState(false) // 跟读浮层
+  const [isImmersiveMode, setIsImmersiveMode] = useState(false) // 沉浸模式
 
   // PIP 模式状态（移动端学习模块）
   const [pipMode, setPipMode] = useState(false)
@@ -560,6 +563,45 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const sentencePatternExercises = exercises.filter(e => e.exercise_type === 'sentence_pattern')
   const scenarioExercises = exercises.filter(e => e.exercise_type === 'scenario')
 
+  // 沉浸模式：替换整个布局
+  if (isImmersiveMode) {
+    return (
+      <ImmersiveOverlay
+        data={data}
+        videoId={videoId}
+        isLargeScreen={isLargeScreen}
+        isAudioContent={isAudioContent}
+        currentVideoTime={currentVideoTime}
+        seekToTime={seekToTime}
+        seekTrigger={seekTrigger}
+        segmentEndTime={segmentEndTime}
+        pauseMainVideo={pauseMainVideo}
+        mainVideoRef={mainVideoRef}
+        mainAudioRef={mainAudioRef}
+        onTimeUpdate={handleTimeUpdate}
+        onSeekTo={(time) => setSeekToTime(time)}
+        onSeekTrigger={() => setSeekTrigger(prev => prev + 1)}
+        onSubtitleClick={(startTime) => handleSubtitleClick({ start_time: startTime })}
+        onPlaySegment={handlePlaySegment}
+        onHighlightClick={handleHighlightClick}
+        onPauseMainVideo={() => setPauseMainVideo(true)}
+        onResumeMainVideo={() => setPauseMainVideo(false)}
+        onExit={() => setIsImmersiveMode(false)}
+        displayMode={displayMode}
+        selectedCard={selectedCard}
+        onSelectedCardClose={() => setSelectedCard(null)}
+        exerciseProgressMap={exerciseProgressMap}
+        onRecordExerciseAnswer={recordExerciseAnswer}
+        getCardStatus={getCardStatus}
+        onCardStatusChange={updateStatus}
+        shouldAutoEnable={shouldAutoEnable}
+        onVideoEnded={handleVideoEnded}
+        creatorAvatarUrl={data.creator?.avatar_url || undefined}
+        shadowReadingSubtitles={shadowReadingSubtitles}
+      />
+    )
+  }
+
   return (
     <div className="min-h-screen bg-gray-50 transition-colors duration-300">
       {/* ===== 移动端布局 ===== */}
@@ -598,6 +640,13 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               <ArrowLeft className="w-5 h-5" />
             </button>
             <h1 className="flex-1 min-w-0 text-base font-black text-black dark:text-white line-clamp-1">{video.title}</h1>
+            <button
+              onClick={() => setIsImmersiveMode(true)}
+              className="flex-shrink-0 flex items-center gap-1.5 px-3 py-1.5 text-xs font-black bg-[#B4F416] dark:bg-[#B4F416]/80 text-black border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] active:shadow-[1px_1px_0px_0px_#000] active:-translate-y-0.5 transition-all"
+            >
+              <Brain className="w-3.5 h-3.5" />
+              沉浸学习
+            </button>
           </div>
         )}
 
@@ -1035,6 +1084,13 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                         className="px-2.5 py-1.5 border-[2px] border-black bg-white dark:bg-gray-600 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-500 transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black"
                       >
                         导出
+                      </button>
+                      <button
+                        onClick={() => setIsImmersiveMode(true)}
+                        className="flex items-center gap-1.5 px-3 py-1.5 border-[2px] border-black bg-[#B4F416] dark:bg-[#B4F416]/80 text-black hover:bg-[#a3e014] transition-colors shadow-[2px_2px_0px_0px_#000] text-xs font-black"
+                      >
+                        <Brain className="w-3.5 h-3.5" />
+                        沉浸学习
                       </button>
                     </div>
                   </div>
