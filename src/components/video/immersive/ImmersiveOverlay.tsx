@@ -1,6 +1,6 @@
 'use client'
 
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState, useEffect, useRef } from 'react'
 import { ArrowLeft, Subtitles } from 'lucide-react'
 import { SingleLineSubtitle } from './SingleLineSubtitle'
 import { ImmersiveAccordion } from './ImmersiveAccordion'
@@ -99,13 +99,24 @@ export function ImmersiveOverlay({
   const [subtitleVisible, setSubtitleVisible] = useState(true)
   // 横屏检测：横屏时视频不吸顶，避免占满屏幕看不到内容
   const [isLandscape, setIsLandscape] = useState(false)
+  // 移动端视频高度（用于 fixed 布局的占位）
+  const videoWrapRef = useRef<HTMLDivElement>(null)
+  const [videoHeight, setVideoHeight] = useState(0)
 
   useEffect(() => {
-    const check = () => setIsLandscape(window.innerWidth > window.innerHeight)
+    const check = () => {
+      setIsLandscape(window.innerWidth > window.innerHeight)
+      if (videoWrapRef.current) {
+        setVideoHeight(videoWrapRef.current.offsetHeight)
+      }
+    }
     check()
     window.addEventListener('resize', check)
     return () => window.removeEventListener('resize', check)
   }, [])
+
+  // 移动端用 fixed + 占位，桌面端用 sticky
+  const useFixed = !isLargeScreen && !isLandscape
 
   const toggleSection = useCallback((index: number) => {
     setClosedSections(prev => {
@@ -154,8 +165,17 @@ export function ImmersiveOverlay({
           </h1>
         </div>
 
-        {/* Video player — 横屏时不吸顶，避免占满屏幕 */}
-        <div className={isLandscape ? 'relative' : 'sticky top-[44px] z-40'} style={!isLandscape ? { willChange: 'transform' } : undefined}>
+        {/* Video player — 移动端 fixed 防抖动，桌面端 sticky */}
+        <div
+          ref={videoWrapRef}
+          className={
+            useFixed
+              ? 'fixed top-0 left-0 right-0 z-40'
+              : isLandscape
+                ? 'relative'
+                : 'sticky top-[44px] z-40'
+          }
+        >
           {isAudioContent ? (
             <AudioPlayer {...playerProps} audioRefOut={mainAudioRef} fallbackImageUrl={creatorAvatarUrl} />
           ) : (
@@ -189,6 +209,11 @@ export function ImmersiveOverlay({
             </h2>
           </div>
         </div>
+
+        {/* 移动端 fixed 布局的占位空间 */}
+        {useFixed && videoHeight > 0 && (
+          <div style={{ height: videoHeight }} />
+        )}
 
         {/* All sections */}
         <div className="px-3 pb-6">

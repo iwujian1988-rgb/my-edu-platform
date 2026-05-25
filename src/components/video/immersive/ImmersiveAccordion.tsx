@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useCallback, useRef, useEffect } from 'react'
+import { createPortal } from 'react-dom'
 import { ImmersiveSection } from './ImmersiveSection'
 import { InlineShadowReading } from './InlineShadowReading'
 import { SummaryReviewSection } from './SummaryReviewSection'
@@ -718,7 +719,7 @@ function BlindListenPhase({
         <p className="text-[10px] text-gray-400">↕ 拖动遮罩移动 · ↘ 拖右下角缩放</p>
       )}
 
-      {overlayVisible && (
+      {overlayVisible && typeof window !== 'undefined' && createPortal(
         <div
           onPointerDown={onDragStart}
           onPointerMove={onDragMove}
@@ -747,7 +748,8 @@ function BlindListenPhase({
               <line x1="14" y1="12" x2="12" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
             </svg>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </div>
   )
