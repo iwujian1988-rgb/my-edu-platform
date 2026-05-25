@@ -1,7 +1,7 @@
 'use client'
 
-import { useCallback, useState, useEffect, useRef } from 'react'
-import { ArrowLeft, Subtitles } from 'lucide-react'
+import { useCallback, useState, useEffect, useRef, useMemo } from 'react'
+import { ArrowLeft, Subtitles, X } from 'lucide-react'
 import { SingleLineSubtitle } from './SingleLineSubtitle'
 import { ImmersiveAccordion } from './ImmersiveAccordion'
 import { VideoPlayer } from '@/components/video/VideoPlayer'
@@ -12,6 +12,19 @@ import type {
   VideoWordCard, VideoPhraseCard, VideoExpressionCard,
   SubtitleWithHighlights,
 } from '@/types/video'
+
+const AUTHORIZED_DEBUG_PHONES = ['15652936305']
+const PHONE_EMAIL_SUFFIX = '@phone.xiaoyu.com'
+
+// 手写笔记风格：3 种标注
+// 0: 荧光笔涂抹
+// 1: 手写波浪线（蓝色）
+// 2: 手写下划线（红色）
+const MARK_STYLES = [
+  'bg-yellow-200/70 dark:bg-yellow-400/30 rounded-sm px-0.5 -mx-0.5',
+  'underline decoration-[3px] decoration-blue-500 underline-offset-4 decoration-wavy',
+  'underline decoration-[3px] decoration-rose-500 underline-offset-4',
+]
 
 interface ImmersiveOverlayProps {
   data: VideoFullResponseExtended
@@ -102,6 +115,23 @@ export function ImmersiveOverlay({
   // 移动端视频高度（用于 fixed 布局的占位）
   const videoWrapRef = useRef<HTMLDivElement>(null)
   const [videoHeight, setVideoHeight] = useState(0)
+  // 字幕调试模式：仅授权账号可见
+  const [isDebugUser, setIsDebugUser] = useState(false)
+  const [showFullSubtitles, setShowFullSubtitles] = useState(false)
+
+  useEffect(() => {
+    fetch('/api/auth/user')
+      .then(res => res.ok ? res.json() : null)
+      .then(data => {
+        if (data?.email) {
+          const phone = data.email.replace(PHONE_EMAIL_SUFFIX, '')
+          if (AUTHORIZED_DEBUG_PHONES.includes(phone)) {
+            setIsDebugUser(true)
+          }
+        }
+      })
+      .catch(() => {})
+  }, [])
 
   useEffect(() => {
     const check = () => {
@@ -118,6 +148,25 @@ export function ImmersiveOverlay({
   // 移动端用 fixed + 占位，桌面端用 sticky
   const useFixed = !isLargeScreen && !isLandscape
 
+  const { video, subtitles, cards, exercises, grammar_points, pronunciation_tips, vocabulary_network } = data
+  const video_ = video as VideoListItem
+
+  // 字幕调试：随机给部分单词做手写笔记标注（基于 hash 稳定）
+  const coloredSubtitles = useMemo(() => {
+    if (!showFullSubtitles) return []
+    return subtitles.map((sub) => {
+      const tokens = sub.original_text.split(/(\s+)/)
+      return tokens.map((token, wIdx) => {
+        if (/^\s*$/.test(token)) return { text: token, mark: -1 }
+        const code = token.split('').reduce((acc, c) => acc + c.charCodeAt(0), 0)
+        const hash = (code * 31 + wIdx * 7 + Math.round(sub.start_time * 13)) % 10
+        // ~30% 的单词被标注，标注类型由 hash 决定
+        if (hash < 3) return { text: token, mark: hash % 3 }
+        return { text: token, mark: -1 }
+      })
+    })
+  }, [showFullSubtitles, subtitles])
+
   const toggleSection = useCallback((index: number) => {
     setClosedSections(prev => {
       const next = new Set(prev)
@@ -129,9 +178,6 @@ export function ImmersiveOverlay({
       return next
     })
   }, [])
-
-  const { video, subtitles, cards, exercises, grammar_points, pronunciation_tips, vocabulary_network } = data
-  const video_ = video as VideoListItem
 
   const playerProps = {
     video: video_,
@@ -163,6 +209,14 @@ export function ImmersiveOverlay({
           <h1 className="flex-1 min-w-0 text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-1">
             {video_.title}
           </h1>
+          {isDebugUser && !showFullSubtitles && (
+            <button
+              onClick={() => setShowFullSubtitles(true)}
+              className="px-2 py-0.5 text-xs font-black text-gray-500 bg-gray-100 rounded hover:bg-gray-200 transition-colors"
+            >
+              S
+            </button>
+          )}
         </div>
 
         {/* Video player — 移动端 fixed 防抖动，桌面端 sticky */}
@@ -215,7 +269,36 @@ export function ImmersiveOverlay({
           <div style={{ height: videoHeight }} />
         )}
 
-        {/* All sections */}
+        {/* All sections / Full subtitles debug view */}
+        {showFullSubtitles ? (
+          <div className="px-3 pb-6">
+            <div className="sticky top-[44px] z-30 flex items-center justify-between bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 px-2 py-2">
+              <span className="text-xs font-bold text-gray-500">字幕全文</span>
+              <button
+                onClick={() => setShowFullSubtitles(false)}
+                className="flex items-center gap-1 px-2 py-1 text-xs text-gray-500 hover:text-black transition-colors"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+            <div className="divide-y divide-amber-100 dark:divide-gray-800 bg-amber-50/40 dark:bg-gray-900/40">
+              {coloredSubtitles.map((tokens, idx) => (
+                <div
+                  key={idx}
+                  className="px-4 py-3 text-xl leading-loose font-serif text-gray-800 dark:text-gray-200"
+                >
+                  {tokens.map((t, tIdx) =>
+                    t.mark >= 0 ? (
+                      <span key={tIdx} className={MARK_STYLES[t.mark]}>{t.text}</span>
+                    ) : (
+                      <span key={tIdx}>{t.text}</span>
+                    )
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ) : (
         <div className="px-3 pb-6">
           <ImmersiveAccordion
           videoId={videoId}
@@ -256,6 +339,7 @@ export function ImmersiveOverlay({
           onShowSubtitle={() => setSubtitleVisible(true)}
         />
       </div>
+        )}
 
       {/* Card popover */}
       {selectedCard && (
