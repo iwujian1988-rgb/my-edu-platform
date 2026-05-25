@@ -44,7 +44,7 @@ body::before{
 
 .top{
   text-align:center;
-  padding-top:13vh;
+  padding-top:4vh;
 }
 .top .fr{
   font-family:Georgia,'Times New Roman',serif;
@@ -125,21 +125,31 @@ canvas{
 }
 
 .bot{
-  padding-bottom:10vh;
+  padding-bottom:8vh;
   text-align:center;
 }
 .bot .cta{
   font-size:4.8vw;
   color:#8ab4f8;
   letter-spacing:.18em;
-  margin-bottom:1.5vh;
+  margin-bottom:3vh;
+}
+.bot .next{
+  font-size:3.8vw;
+  color:rgba(138,180,248,.45);
+  letter-spacing:.1em;
+}
+.bot .next strong{
+  color:#8ab4f8;
+  font-weight:700;
 }
 .bot .fr-small{
   font-family:Georgia,'Times New Roman',serif;
   font-size:3vw;
   font-style:italic;
-  color:rgba(138,180,248,.3);
+  color:rgba(138,180,248,.25);
   letter-spacing:.2em;
+  margin-top:1.5vh;
 }
 </style>
 </head>
@@ -160,6 +170,7 @@ canvas{
 
 <div class="bot">
   <div class="cta">写下没听懂的词汇</div>
+  <div class="next">即将播放 &nbsp;<strong>原视频 + 字幕</strong></div>
   <div class="fr-small">Notez les mots incompris</div>
 </div>
 
@@ -182,9 +193,9 @@ window.addEventListener('resize', resizeFlag)
 
 // 国旗三色：蓝白红，用曲线画飘逸的色带
 const STRIPS = [
-  { color: 'rgba(0,35,149,', baseAlpha: .07 },
-  { color: 'rgba(200,210,235,', baseAlpha: .03 },
-  { color: 'rgba(237,41,57,', baseAlpha: .06 },
+  { color: 'rgba(0,35,149,', baseAlpha: .15 },
+  { color: 'rgba(200,210,235,', baseAlpha: .07 },
+  { color: 'rgba(237,41,57,', baseAlpha: .13 },
 ]
 
 let ft = 0
