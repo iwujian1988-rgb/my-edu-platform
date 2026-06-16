@@ -1,0 +1,5297 @@
+{
+  "exercises": [
+    {
+      "id": 100,
+      "title": "法语初学者生存短语与沟通技巧",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_114_seg001_thumb.jpg",
+      "description": "本视频介绍了法语初学者在法语国家旅行时必备的基础短语，包括问候、问路、点餐等生存用语。同时，视频还重点讲解了在沟通遇到困难时，如何礼貌地表明自己不会说法语、请求对方重复或放慢语速，以及如何询问对方是否会说英语或其他语言。",
+      "duration": 430,
+      "video": {
+        "url": "/videos/SEF/SEF_114_seg001.mp4",
+        "duration": 430,
+        "subtitles": "/videos/SEF/SEF_114_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "débutant",
+              "right": "初学者"
+            },
+            {
+              "left": "essentiel",
+              "right": "基本的，必不可少的"
+            },
+            {
+              "left": "se trouver",
+              "right": "位于，在"
+            },
+            {
+              "left": "lentement",
+              "right": "缓慢地"
+            },
+            {
+              "left": "comprendre",
+              "right": "理解，明白"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 86,
+            "end": 215
+          },
+          "instruction": "Complétez. (使用 \"Est-ce que\" 引导疑问句)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Est-ce que tu "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "peux"
+            },
+            {
+              "type": "text",
+              "content": " parler en anglais ?"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 129,
+            "end": 258
+          },
+          "instruction": "Complétez. (否定句结构 \"ne ... pas\")",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Désolé, je ne "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "parle"
+            },
+            {
+              "type": "text",
+              "content": " pas français."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 215,
+            "end": 344
+          },
+          "instruction": "如果你想请对方说慢一点，根据视频内容，应该说哪一句？",
+          "question": "如果你想请对方说慢一点，根据视频内容，应该说哪一句？",
+          "options": [
+            {
+              "id": "a",
+              "text": "Parlez plus vite."
+            },
+            {
+              "id": "b",
+              "text": "Pouvez-vous répéter plus lentement s'il vous plaît ?"
+            },
+            {
+              "id": "c",
+              "text": "Je ne comprends pas."
+            },
+            {
+              "id": "d",
+              "text": "Où sont les toilettes ?"
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文中明确提到了这一表达：'Pouvez-vous répéter plus lentement s'il vous plaît ?'"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 301,
+            "end": 430
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« débutant » signifie « 初学者 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« essentiel » signifie « 位于，在 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« se trouver » signifie « 位于，在 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 430
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "ne"
+            },
+            {
+              "type": "text",
+              "content": " parle pas français."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 430
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 请翻译：您说英语吗？\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Parlez-vous anglais ?"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 430
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将 \"Tu parles anglais ?\" 改为使用 \"Est-ce que\" 的形式。 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Est-ce que tu parles anglais ?"
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "débutant",
+            "pos": "n.m.",
+            "meaning": "初学者",
+            "example": "Bonjour les amis, aujourd'hui on s'adresse au débutant, on va demander au parisien quels sont les phrases essentielles à connaître avant de venir dans un pays francophone.",
+            "example_translation": "朋友们好，今天我们要面向初学者，去问问巴黎人，在来到法语国家之前，必须掌握哪些核心短语。"
+          },
+          {
+            "word": "essentiel",
+            "pos": "adj.",
+            "meaning": "基本的，必不可少的",
+            "example": "on va demander au parisien quels sont les phrases essentielles à connaître avant de venir dans un pays francophone.",
+            "example_translation": "我们要问问巴黎人，在来到法语国家之前，必须掌握哪些核心短语。"
+          },
+          {
+            "word": "se trouver",
+            "pos": "v.",
+            "meaning": "位于，在",
+            "example": "Où se trouve, je ne sais pas, est-ce-que tel endroit ?",
+            "example_translation": "……在哪里，我不知道，是不是某个地方？"
+          },
+          {
+            "word": "lentement",
+            "pos": "adv.",
+            "meaning": "缓慢地",
+            "example": "Pouvez-vous répéter plus lentement s'il vous plaît ?",
+            "example_translation": "请问您可以重复得更慢一点吗？"
+          },
+          {
+            "word": "comprendre",
+            "pos": "v.",
+            "meaning": "理解，明白",
+            "example": "Excusez-moi, je ne comprends pas le français.",
+            "example_translation": "抱歉，我听不懂法语。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "使用 \"Est-ce que\" 引导疑问句",
+            "explanation": "在法语中，在陈述句前加上 \"Est-ce que\" 是最常用的构成疑问句的方法，表示“是否……”。",
+            "example_from_text": "Est-ce que tu peux parler en anglais ?",
+            "example_translation": "你能用英语说话吗？"
+          },
+          {
+            "point": "否定句结构 \"ne ... pas\"",
+            "explanation": "法语的标准否定形式是在变位动词两边分别加上 \"ne\" 和 \"pas\"。在口语中，\"ne\" 有时会被省略。",
+            "example_from_text": "Désolé, je ne parle pas français.",
+            "example_translation": "抱歉，我不说法语。"
+          },
+          {
+            "point": "动词与主语倒装表示委婉请求",
+            "explanation": "在正式场合或表示礼貌时，可以将动词移至主语前构成疑问句，常用于请求对方做某事。",
+            "example_from_text": "Pouvez-vous répéter plus lentement s'il vous plaît ?",
+            "example_translation": "请问您可以重复得更慢一点吗？"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Je ___ parle pas français. (请填入否定助词)",
+            "answer": "ne",
+            "explanation": "法语否定句的完整结构是 ne + 动词 + pas。"
+          },
+          {
+            "type": "选择",
+            "question": "如果你想请对方说慢一点，根据视频内容，应该说哪一句？",
+            "options": {
+              "A": "Parlez plus vite.",
+              "B": "Pouvez-vous répéter plus lentement s'il vous plaît ?",
+              "C": "Je ne comprends pas.",
+              "D": "Où sont les toilettes ?"
+            },
+            "answer": "B",
+            "explanation": "原文中明确提到了这一表达：'Pouvez-vous répéter plus lentement s'il vous plaît ?'"
+          },
+          {
+            "type": "翻译",
+            "question": "请翻译：您说英语吗？",
+            "answer": "Parlez-vous anglais ?",
+            "explanation": "视频结尾回顾了这一常用生存短语：'Parlez-vous anglais ?'"
+          },
+          {
+            "type": "语法",
+            "question": "将 \"Tu parles anglais ?\" 改为使用 \"Est-ce que\" 的形式。",
+            "answer": "Est-ce que tu parles anglais ?",
+            "explanation": "在陈述句前直接加 'Est-ce que' 即可构成疑问句，视频结尾总结中出现了 'Est-ce que vous parlez anglais ?'，同理可得。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 102,
+      "title": "课程介绍与基础自我介绍学习（姓名、年龄），重点练习法语鼻音",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_121_seg001_thumb.jpg",
+      "description": "这段视频记录了 Easy French 与 Easy Spanish 的跨频道合作，Sarah 学习了如何用法语进行基础自我介绍（姓名和年龄），并重点练习了法语中较难掌握的鼻元音（如 'an' 和 'in'），通过对比 'vin'（酒）和 'vent'（风）来辨析发音。",
+      "duration": 291,
+      "video": {
+        "url": "/videos/SEF/SEF_121_seg001.mp4",
+        "duration": 291,
+        "subtitles": "/videos/SEF/SEF_121_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "se présenter",
+              "right": "自我介绍；介绍某人"
+            },
+            {
+              "left": "collaboration",
+              "right": "合作"
+            },
+            {
+              "left": "s'entraîner",
+              "right": "训练；练习"
+            },
+            {
+              "left": "voyelle nasale",
+              "right": "鼻元音"
+            },
+            {
+              "left": "le vin",
+              "right": "葡萄酒"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 58,
+            "end": 146
+          },
+          "instruction": "Complétez. (Je m'appelle...)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Bonjour, je m'appelle "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Judit"
+            },
+            {
+              "type": "text",
+              "content": " et toi?"
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 146,
+            "end": 233
+          },
+          "instruction": "根据视频中的解释，“Le vin est bon” 翻译成中文最准确的是？",
+          "question": "根据视频中的解释，“Le vin est bon” 翻译成中文最准确的是？",
+          "options": [
+            {
+              "id": "a",
+              "text": "风很大"
+            },
+            {
+              "id": "b",
+              "text": "酒很好喝"
+            },
+            {
+              "id": "c",
+              "text": "他来得很快"
+            },
+            {
+              "id": "d",
+              "text": "面包很新鲜"
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文中提到 \"Le vin, c'est elle vina\" (el vino) 且 \"Le vin est bon. Elle vina est bueno.\""
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 204,
+            "end": 291
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« se présenter » signifie « 自我介绍；介绍某人 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« collaboration » signifie « 训练；练习 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« s'entraîner » signifie « 训练；练习 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 291
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "根据视频内容补全自我介绍：Bonjour, je "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "m'appelle"
+            },
+            {
+              "type": "text",
+              "content": " Sarah."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 291
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 将句子“我25岁”翻译成法语。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Moi, j'ai 25 ans."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 291
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "在法语中，询问对方“你能重复一遍吗？”可以使用 \"Est-ce que\" 开头。请补全句子："
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Est-ce que"
+            },
+            {
+              "type": "text",
+              "content": " tu peux le répéter ?"
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "se présenter",
+            "pos": "v.",
+            "meaning": "自我介绍；介绍某人",
+            "example": "Je veux bien te présenter.",
+            "example_translation": "我想让你自我介绍一下。"
+          },
+          {
+            "word": "collaboration",
+            "pos": "n.f.",
+            "meaning": "合作",
+            "example": "Exactement, on fait une collaboration avec l'équipe Disney Spanish.",
+            "example_translation": "没错，我们正在和 Easy Spanish 团队进行合作。"
+          },
+          {
+            "word": "s'entraîner",
+            "pos": "v.",
+            "meaning": "训练；练习",
+            "example": "Et ensuite, tu pourras pratiquer, t'entraîner avec J. que nous allons vous présenter.",
+            "example_translation": "然后，你可以和我们将要介绍给你的 Judith 一起实践和练习。"
+          },
+          {
+            "word": "voyelle nasale",
+            "pos": "n.f.",
+            "meaning": "鼻元音",
+            "example": "C'est une voyelle nasal.",
+            "example_translation": "这是一个鼻元音。"
+          },
+          {
+            "word": "le vin",
+            "pos": "n.m.",
+            "meaning": "葡萄酒",
+            "example": "Le vin, le vin, le vin.",
+            "example_translation": "酒，酒，酒。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "Je m'appelle...",
+            "explanation": "法语中介绍自己姓名的标准表达，由代词式动词 se appeler 构成。⚠️ 注意：勿与 \"Mon nom est...\" 混淆，虽然意思相同，但前者在口语中更为常用。",
+            "example_from_text": "Bonjour, je m'appelle Judit et toi?",
+            "example_translation": "你好，我叫 Judith，你呢？"
+          },
+          {
+            "point": "J'ai + [nombre] + ans",
+            "explanation": "法语表达年龄时使用动词 avoir（有）而非 être（是）。⚠️ 注意：勿与英语用法混淆，例如：I am 25 (Je suis 25) 是错误的。",
+            "example_from_text": "Moi, j'ai 28 ans.",
+            "example_translation": "我 28 岁。"
+          },
+          {
+            "point": "Est-ce que",
+            "explanation": "放在陈述句前将其变为疑问句，是法语中最通用的提问方式。⚠️ 注意：勿与 \"Qu'est-ce que\" 混淆，后者用于询问“什么”，例如：Qu'est-ce que tu fais ? (你在做什么？)",
+            "example_from_text": "Est-ce que tu peux le répéter?",
+            "example_translation": "你能重复一遍吗？"
+          },
+          {
+            "point": "Encore une fois",
+            "explanation": "在口语中常用于请求对方再次重复某事，意为“再来一次”。⚠️ 注意：勿与 \"une autre fois\" 混淆，后者表示“另找个时间/下一次”，例如：On se voit une autre fois. (我们下次再见。)",
+            "example_from_text": "Encore une fois?",
+            "example_translation": "再来一次？"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "根据视频内容补全自我介绍：Bonjour, je ___ Sarah.",
+            "answer": "m'appelle",
+            "explanation": "原文中 Judith 教 Sarah 说 \"Je m'appelle Sarah.\""
+          },
+          {
+            "type": "选择",
+            "question": "根据视频中的解释，“Le vin est bon” 翻译成中文最准确的是？",
+            "options": {
+              "A": "风很大",
+              "B": "酒很好喝",
+              "C": "他来得很快",
+              "D": "面包很新鲜"
+            },
+            "answer": "B",
+            "explanation": "原文中提到 \"Le vin, c'est elle vina\" (el vino) 且 \"Le vin est bon. Elle vina est bueno.\""
+          },
+          {
+            "type": "翻译",
+            "question": "将句子“我25岁”翻译成法语。",
+            "answer": "Moi, j'ai 25 ans.",
+            "explanation": "原文中 Sarah 练习表达年龄时说的是 \"Moi, j'ai 25 ans.\""
+          },
+          {
+            "type": "语法",
+            "question": "在法语中，询问对方“你能重复一遍吗？”可以使用 \"Est-ce que\" 开头。请补全句子：___ tu peux le répéter ?",
+            "answer": "Est-ce que",
+            "explanation": "原文中使用了 \"Est-ce que tu peux le répéter ?\" 来进行询问。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 103,
+      "title": "学习讨论居住地和相关活动，并进行第一次练习，包含赞助商信息",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_121_seg002_thumb.jpg",
+      "description": "本视频片段主要教授如何询问和回答居住地（使用 habiter 和 vivre），讨论在巴塞罗那夏季可以进行的活动（如去海滩），并介绍了语言学习工具 Lingopai 的功能，如双语字幕和闪卡复习。",
+      "duration": 264,
+      "video": {
+        "url": "/videos/SEF/SEF_121_seg002.mp4",
+        "duration": 264,
+        "subtitles": "/videos/SEF/SEF_121_seg002.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "habiter",
+              "right": "居住"
+            },
+            {
+              "left": "vivre",
+              "right": "生活，居住"
+            },
+            {
+              "left": "la plage",
+              "right": "海滩"
+            },
+            {
+              "left": "ludique",
+              "right": "趣味性的，寓教于乐的"
+            },
+            {
+              "left": "s'inscrire",
+              "right": "注册，报名"
+            },
+            {
+              "left": "ultérieurement",
+              "right": "随后，以后"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 53,
+            "end": 132
+          },
+          "instruction": "Complétez. (疑问句结构 \"Où est-ce que...\")",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Où est-ce "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "que"
+            },
+            {
+              "type": "text",
+              "content": " tu habites?"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 79,
+            "end": 158
+          },
+          "instruction": "Complétez. (表达可能性 \"On peut + 动词原形\")",
+          "segments": [
+            {
+              "type": "text",
+              "content": "On peut "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "aller"
+            },
+            {
+              "type": "text",
+              "content": " à la plage."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 132,
+            "end": 211
+          },
+          "instruction": "Qu'est-ce qu'on peut faire à Barcelone en été selon la vidéo ?",
+          "question": "Qu'est-ce qu'on peut faire à Barcelone en été selon la vidéo ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Faire du ski"
+            },
+            {
+              "id": "b",
+              "text": "Aller à la plage"
+            },
+            {
+              "id": "c",
+              "text": "Rester à la maison"
+            },
+            {
+              "id": "d",
+              "text": "Travailler beaucoup"
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文中提到：\"On peut aller à la plage.\""
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 185,
+            "end": 264
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« habiter » signifie « 居住 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« vivre » signifie « 海滩 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« la plage » signifie « 海滩 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 264
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Où est-ce "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "que"
+            },
+            {
+              "type": "text",
+              "content": " tu habites ?"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 264
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 翻译句子：阳光充足。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Il y a beaucoup de soleil."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 264
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将 \"Tu comprends chaque mot ?\" 改写为使用 \"est-ce que\" 的疑问句。 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Est-ce que tu comprends chaque mot ?"
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "habiter",
+            "pos": "v.",
+            "meaning": "居住",
+            "example": "Où est-ce que tu habites?",
+            "example_translation": "你住在哪里？"
+          },
+          {
+            "word": "vivre",
+            "pos": "v.",
+            "meaning": "生活，居住",
+            "example": "Je vis à Barcelone.",
+            "example_translation": "我住在巴塞罗那。"
+          },
+          {
+            "word": "la plage",
+            "pos": "n.f.",
+            "meaning": "海滩",
+            "example": "On peut aller à la plage.",
+            "example_translation": "我们可以去海滩。"
+          },
+          {
+            "word": "ludique",
+            "pos": "adj.",
+            "meaning": "趣味性的，寓教于乐的",
+            "example": "Vous êtes tous abonnés à notre chaîne car vous aimez apprendre de façon ludique et amusante notre belle langue française.",
+            "example_translation": "你们都订阅了我们的频道，因为你们喜欢以寓教于乐、有趣的方式学习我们美丽的法语。"
+          },
+          {
+            "word": "s'inscrire",
+            "pos": "v.",
+            "meaning": "注册，报名",
+            "example": "Il suffit d'aller sur l'honne.lingopai.com.cisifrange pour vous inscrire cela ne vous engage en rien.",
+            "example_translation": "只需访问 honne.lingopai.com.cisifrange 进行注册，这不会让您承担任何义务。"
+          },
+          {
+            "word": "ultérieurement",
+            "pos": "adv.",
+            "meaning": "随后，以后",
+            "example": "Tous ces mots, vous pourrez les retrouver sous forme de FlashCard pour les réviser, ultérieurement.",
+            "example_translation": "所有这些单词，您稍后都可以以闪卡的形式找到它们以便复习。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "疑问句结构 \"Où est-ce que...\"",
+            "explanation": "在法语中，\"est-ce que\" 常用于构成疑问句，放在疑问词（如 Où）之后，后面接陈述句语序。这种形式在口语和非正式书面语中非常常见。",
+            "example_from_text": "Où est-ce que tu habites?",
+            "example_translation": "你住在哪里？"
+          },
+          {
+            "point": "表达可能性 \"On peut + 动词原形\"",
+            "explanation": "代词 \"on\" 在这里表示泛指的“我们”或“人们”。\"pouvoir\"（能够）的变位 \"peut\" 后接动词原形，用于描述在某个地方可以进行的活动。",
+            "example_from_text": "On peut aller à la plage.",
+            "example_translation": "我们可以去海滩。"
+          },
+          {
+            "point": "无人称句型 \"Il y a...\"",
+            "explanation": "用于表达“有……”或“存在……”。在本段中用于描述天气状况（阳光充足）。",
+            "example_from_text": "Il y a beaucoup de soleil.",
+            "example_translation": "阳光充足。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Où est-ce ___ tu habites ?",
+            "answer": "que",
+            "explanation": "原文中使用的疑问结构是 \"Où est-ce que...\"。"
+          },
+          {
+            "type": "选择",
+            "question": "Qu'est-ce qu'on peut faire à Barcelone en été selon la vidéo ?",
+            "options": {
+              "A": "Faire du ski",
+              "B": "Aller à la plage",
+              "C": "Rester à la maison",
+              "D": "Travailler beaucoup"
+            },
+            "answer": "B",
+            "explanation": "原文中提到：\"On peut aller à la plage.\""
+          },
+          {
+            "type": "翻译",
+            "question": "翻译句子：阳光充足。",
+            "answer": "Il y a beaucoup de soleil.",
+            "explanation": "原文中使用 \"Il y a beaucoup de soleil\" 来描述夏天的天气。"
+          },
+          {
+            "type": "语法",
+            "question": "将 \"Tu comprends chaque mot ?\" 改写为使用 \"est-ce que\" 的疑问句。",
+            "answer": "Est-ce que tu comprends chaque mot ?",
+            "explanation": "在陈述句前加上 \"Est-ce que\" 是法语中最常用的提问方式之一，不改变原句意思。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 104,
+      "title": "学习讨论个人爱好与过往旅行经历，并进行第二次练习巩固",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_121_seg003_thumb.jpg",
+      "description": "本课程通过师生对话的形式，练习讨论个人爱好和过往的旅行经历。学生Sarah学习如何提问和回答关于最喜欢的爱好的问题，并讲述自己去法国的经历。课程重点纠正了过去时态（passé composé）的误用，并对关键词汇（如“quand”）的发音和拼写进行了说明。最后通过一个简短的测试来巩固所学内容。",
+      "duration": 218,
+      "video": {
+        "url": "/videos/SEF/SEF_121_seg003.mp4",
+        "duration": 218,
+        "subtitles": "/videos/SEF/SEF_121_seg003.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "passe-temps",
+              "right": "爱好，消遣"
+            },
+            {
+              "left": "préféré",
+              "right": "最喜欢的"
+            },
+            {
+              "left": "cuisiner",
+              "right": "烹饪，做饭"
+            },
+            {
+              "left": "visiter",
+              "right": "参观，游览（某个地方）"
+            },
+            {
+              "left": "une fois",
+              "right": "一次"
+            },
+            {
+              "left": "quand",
+              "right": "什么时候"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 44,
+            "end": 109
+          },
+          "instruction": "Complétez. (Passé Composé (复合过去时))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Tu as "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "déjà"
+            },
+            {
+              "type": "text",
+              "content": " visité la France?"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 65,
+            "end": 131
+          },
+          "instruction": "Complétez. (Interrogative Adjective \"quel\")",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Quelle est "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "ton"
+            },
+            {
+              "type": "text",
+              "content": " passentant préféré?"
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 109,
+            "end": 174
+          },
+          "instruction": "Selon le dialogue, quel est le passe-temps préféré de Sarah ?",
+          "question": "Selon le dialogue, quel est le passe-temps préféré de Sarah ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Le yoga"
+            },
+            {
+              "id": "b",
+              "text": "Visiter la France"
+            },
+            {
+              "id": "c",
+              "text": "Cuisiner"
+            },
+            {
+              "id": "d",
+              "text": "Apprendre l'espagnol"
+            }
+          ],
+          "correct": "c",
+          "explanation": "在对话开头，Sarah 回答说：“Mais j'aime beaucoup cuisiner.”（但我非常喜欢烹饪。）"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 153,
+            "end": 218
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« passe-temps » signifie « 爱好，消遣 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« préféré » signifie « 烹饪，做饭 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« cuisiner » signifie « 烹饪，做饭 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 218
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Mon passe-temps "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "préféré"
+            },
+            {
+              "type": "text",
+              "content": ", c'est le yoga."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 218
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 请将这句话翻译成法语：“我访问过法国一次。”\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "J'ai visité la France une fois."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 218
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "请用正确的时态改写以下句子：“Hier, je visite Paris.” "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Hier, j'ai visité Paris."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "passe-temps",
+            "pos": "n.m.",
+            "meaning": "爱好，消遣",
+            "example": "Sarah, quelle est ton passentant préféré?",
+            "example_translation": "莎拉，你最喜欢的爱好是什么？"
+          },
+          {
+            "word": "préféré",
+            "pos": "adj.",
+            "meaning": "最喜欢的",
+            "example": "Quelle est ton passentant préféré?",
+            "example_translation": "你最喜欢的爱好是什么？"
+          },
+          {
+            "word": "cuisiner",
+            "pos": "v.",
+            "meaning": "烹饪，做饭",
+            "example": "Mais j'aime beaucoup cuisiner.",
+            "example_translation": "但我非常喜欢烹饪。"
+          },
+          {
+            "word": "visiter",
+            "pos": "v.",
+            "meaning": "参观，游览（某个地方）",
+            "example": "Tu as déjà visité la France?",
+            "example_translation": "你已经去过法国了吗？"
+          },
+          {
+            "word": "une fois",
+            "pos": "loc. adv.",
+            "meaning": "一次",
+            "example": "Tu as visité la France une fois ou d'autre fois?",
+            "example_translation": "你访问过法国一次还是很多次？"
+          },
+          {
+            "word": "quand",
+            "pos": "adv.",
+            "meaning": "什么时候",
+            "example": "Ah, quand? C'est ça.",
+            "example_translation": "啊，“quand”？就是这个。"
+          },
+          {
+            "word": "progresser",
+            "pos": "v.",
+            "meaning": "进步，前进",
+            "example": "Maintenant, Sarah, je vois que tu as déjà bien progressé.",
+            "example_translation": "现在，莎拉，我看到你已经进步很大了。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "Passé Composé (复合过去时)",
+            "explanation": "复合过去时（Passé Composé）用于描述在过去发生并且已经完成的、一次性的动作。它由助动词 avoir 或 être 的现在时变位加上动词的过去分词构成。例如，visiter（参观）的复合过去时是 avoir + visité。",
+            "example_from_text": "Tu as déjà visité la France?",
+            "example_translation": "你已经去过法国了吗？"
+          },
+          {
+            "point": "Interrogative Adjective \"quel\"",
+            "explanation": "疑问形容词“quel”用于提问，意为“哪个”或“什么”。它需要与所修饰的名词进行性数配合。在文中，“passe-temps”是阳性单数名词，所以正确的形式是“quel”。（quel (阳单), quelle (阴单), quels (阳复), quelles (阴复)）",
+            "example_from_text": "Quelle est ton passentant préféré?",
+            "example_translation": "你最喜欢的爱好是什么？"
+          },
+          {
+            "point": "Interrogative Adverb \"quand\"",
+            "explanation": "疑问副词“quand”用于询问时间，意为“什么时候”。它放在句首或句末来构成问句。",
+            "example_from_text": "Et c'était con. Ah, qu'est-ce qu'il y a? Con. Ça s'écrit. Q. U. A. N. D. Ah, quand?",
+            "example_translation": "那是什么时候？啊，怎么了？Con。它的拼写是 Q. U. A. N. D. 啊，“quand”？"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Mon passe-temps __________, c'est le yoga.",
+            "answer": "préféré",
+            "explanation": "préféré 是形容词“最喜欢的”，需要与阳性单数名词 passe-temps 保持性数一致。"
+          },
+          {
+            "type": "选择",
+            "question": "Selon le dialogue, quel est le passe-temps préféré de Sarah ?",
+            "options": {
+              "A": "Le yoga",
+              "B": "Visiter la France",
+              "C": "Cuisiner",
+              "D": "Apprendre l'espagnol"
+            },
+            "answer": "C",
+            "explanation": "在对话开头，Sarah 回答说：“Mais j'aime beaucoup cuisiner.”（但我非常喜欢烹饪。）"
+          },
+          {
+            "type": "翻译",
+            "question": "请将这句话翻译成法语：“我访问过法国一次。”",
+            "answer": "J'ai visité la France une fois.",
+            "explanation": "这是一个发生在过去的已完成动作，应使用复合过去时（passé composé）。动词 visiter 的助动词是 avoir，其第一人称单数现在时是 ai，过去分词是 visité。"
+          },
+          {
+            "type": "语法",
+            "question": "请用正确的时态改写以下句子：“Hier, je visite Paris.”",
+            "answer": "Hier, j'ai visité Paris.",
+            "explanation": "时间状语“Hier”（昨天）表明这是一个发生在过去的动作，因此需要使用复合过去时（passé composé），而不是现在时（présent）。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 105,
+      "title": "学习更高阶的主题",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_121_seg004_thumb.jpg",
+      "description": "Sarah 在本段中学习了如何用法语询问和表达时间。随后，她分享了自己的学习心得，提到通过倾听和重复，她逐渐能够构建完整的句子。视频最后以鼓励和订阅号召圆满结束。",
+      "duration": 219,
+      "video": {
+        "url": "/videos/SEF/SEF_121_seg004.mp4",
+        "duration": 219,
+        "subtitles": "/videos/SEF/SEF_121_seg004.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "heure",
+              "right": "小时；时间"
+            },
+            {
+              "left": "apprentissage",
+              "right": "学习；学徒期"
+            },
+            {
+              "left": "potentiel",
+              "right": "潜力；潜能"
+            },
+            {
+              "left": "rater",
+              "right": "错过；失败"
+            },
+            {
+              "left": "manquer",
+              "right": "错过；漏掉；缺乏"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 66,
+            "end": 131
+          },
+          "instruction": "Complétez. (无人称句表达时间 (Il est...))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Il est... Troise "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "heure"
+            },
+            {
+              "type": "text",
+              "content": " et demi."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 110,
+            "end": 175
+          },
+          "instruction": "根据视频内容，Sarah 对这次学习体验的感觉如何？",
+          "question": "根据视频内容，Sarah 对这次学习体验的感觉如何？",
+          "options": [
+            {
+              "id": "a",
+              "text": "Elle n'a pas aimé."
+            },
+            {
+              "id": "b",
+              "text": "Elle est enchantée."
+            },
+            {
+              "id": "c",
+              "text": "C'était trop facile."
+            },
+            {
+              "id": "d",
+              "text": "Elle veut arrêter."
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文中 Sarah 提到 \"Pues la vraie est-il encantée?\"，表达了她对学习过程的喜爱。"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 153,
+            "end": 219
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« heure » signifie « 小时；时间 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« apprentissage » signifie « 潜力；潜能 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« potentiel » signifie « 潜力；潜能 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 219
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "请根据上下文填入缺少的单词：Quelle "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "heure"
+            },
+            {
+              "type": "text",
+              "content": " est-il ?"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 219
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 翻译句子：“千万不要错过。”\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Ne le manquez pas. Surtout."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 219
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将陈述句 \"Tu t'abonnes à notre chaîne\" 改为针对 \"vous\" 的肯定命令式。 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Abonnez-vous à notre chaîne."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "heure",
+            "pos": "n.f.",
+            "meaning": "小时；时间",
+            "example": "Quelle heure est-il?",
+            "example_translation": "现在几点了？"
+          },
+          {
+            "word": "apprentissage",
+            "pos": "n.m.",
+            "meaning": "学习；学徒期",
+            "example": "Alors, Sarah, c'était comment ton expérience d'apprentissage du français express?",
+            "example_translation": "那么，莎拉，你这次法语速成学习体验感觉如何？"
+          },
+          {
+            "word": "potentiel",
+            "pos": "n.m.",
+            "meaning": "潜力；潜能",
+            "example": "En tout cas, tu as le potentiel pour apprendre le français.",
+            "example_translation": "无论如何，你有学习法语的潜力。"
+          },
+          {
+            "word": "rater",
+            "pos": "v.",
+            "meaning": "错过；失败",
+            "example": "abonnez-vous à notre chaîne pour ne rien rater.",
+            "example_translation": "订阅我们的频道，以免错过任何内容。"
+          },
+          {
+            "word": "manquer",
+            "pos": "v.",
+            "meaning": "错过；漏掉；缺乏",
+            "example": "Ne le manquez pas.",
+            "example_translation": "不要错过它。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "询问时间的倒装句式 (Quelle heure est-il ?)",
+            "explanation": "在正式或标准法语中，询问时间通常使用疑问词 Quelle + heure + 动词 être + 代词 il 的倒装结构。",
+            "example_from_text": "Quelle heure est-il?",
+            "example_translation": "现在几点了？"
+          },
+          {
+            "point": "无人称句表达时间 (Il est...)",
+            "explanation": "法语中使用无人称代词 \"Il\" 配合动词 \"être\" 来表达时间。注意 transcript 中出现的 \"Troise heure\" 为口语中的发音偏误或拼写错误，标准写法应为 \"trois heures\"。",
+            "example_from_text": "Il est... Troise heure et demi.",
+            "example_translation": "三点半。"
+          },
+          {
+            "point": "命令式 (L'impératif)",
+            "explanation": "用于表示命令、请求或建议。在视频结尾，说话者使用命令式呼吁观众采取行动。⚠️ 注意：代词式动词在肯定命令式中，代词（如 vous）要放在动词后面并用连字符连接。",
+            "example_from_text": "Like la vidéo si elle vous a plu et abonnez-vous à notre chaîne pour ne rien rater.",
+            "example_translation": "如果你喜欢这个视频就点个赞，并订阅我们的频道，以免错过任何内容。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "请根据上下文填入缺少的单词：Quelle ____ est-il ?",
+            "options": null,
+            "answer": "heure",
+            "explanation": "这是法语中询问时间的标准表达方式。"
+          },
+          {
+            "type": "选择",
+            "question": "根据视频内容，Sarah 对这次学习体验的感觉如何？",
+            "options": {
+              "A": "Elle n'a pas aimé.",
+              "B": "Elle est enchantée.",
+              "C": "C'était trop facile.",
+              "D": "Elle veut arrêter."
+            },
+            "answer": "B",
+            "explanation": "原文中 Sarah 提到 \"Pues la vraie est-il encantée?\"，表达了她对学习过程的喜爱。"
+          },
+          {
+            "type": "翻译",
+            "question": "翻译句子：“千万不要错过。”",
+            "options": null,
+            "answer": "Ne le manquez pas. Surtout.",
+            "explanation": "原文结尾处提到 \"Ne le manquez pas. Surtout.\"。"
+          },
+          {
+            "type": "语法",
+            "question": "将陈述句 \"Tu t'abonnes à notre chaîne\" 改为针对 \"vous\" 的肯定命令式。",
+            "options": null,
+            "answer": "Abonnez-vous à notre chaîne.",
+            "explanation": "命令式用于号召或建议，代词式动词在肯定命令式中代词置于动词后并用连字符连接。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 107,
+      "title": "法国礼貌用语",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_160_seg001_thumb.jpg",
+      "description": "本课程介绍法国日常礼仪，重点讲解日间问候语 'Bonjour' 和告别语 'Bonne journée' 的使用场景（早晨至下午5点左右）及其发音技巧，包括鼻元音 'on' 和法语字母 'r' 的发音方法。",
+      "duration": 185,
+      "video": {
+        "url": "/videos/SEF/SEF_160_seg001.mp4",
+        "duration": 185,
+        "subtitles": "/videos/SEF/SEF_160_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 56
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "politesse",
+              "right": "礼貌，客气"
+            },
+            {
+              "left": "basique",
+              "right": "基础的，基本的"
+            },
+            {
+              "left": "boulangerie",
+              "right": "面包店"
+            },
+            {
+              "left": "rugissement",
+              "right": "（狮、虎等的）吼叫声"
+            },
+            {
+              "left": "environ",
+              "right": "大约，左右"
+            },
+            {
+              "left": "caisse",
+              "right": "收银台，结账处"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 37,
+            "end": 93
+          },
+          "instruction": "Complétez. (En + Participe Présent (Gérondif) 表示方式或同时性)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "En entrant, dans une boutique, en arrivant à la caisse d'un "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "supermarché"
+            },
+            {
+              "type": "text",
+              "content": " ou avant de commander quelque chose dans une boulangerie."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 56,
+            "end": 111
+          },
+          "instruction": "Complétez. (Après avoir + Participe Passé 表示动作的先后顺序)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "On le dit par exemple en "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "sortant"
+            },
+            {
+              "type": "text",
+              "content": " d'un magasin après avoir acheté quelque chose."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 93,
+            "end": 148
+          },
+          "instruction": "Quand utilise-t-on l'expression 'Bonne journée' selon la vidéo ?",
+          "question": "Quand utilise-t-on l'expression 'Bonne journée' selon la vidéo ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Pour saluer quelqu'un en arrivant le matin."
+            },
+            {
+              "id": "b",
+              "text": "Pour dire au revoir entre le matin et 17h environ."
+            },
+            {
+              "id": "c",
+              "text": "Pour commander un café dans une boulangerie."
+            },
+            {
+              "id": "d",
+              "text": "Pour s'excuser d'un retard."
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文指出：On dit, bonne journée, en journée, du matin, jusqu'à environ 17h, pour dire au revoir."
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 130,
+            "end": 185
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« politesse » signifie « 礼貌，客气 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« basique » signifie « 面包店 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« boulangerie » signifie « 面包店 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 185
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "La journée, du matin, jusqu'à "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "environ"
+            },
+            {
+              "type": "text",
+              "content": " 17h, il est très important de dire bonjour."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 185
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 将句子 'Je voudrais payer s'il vous plaît' 翻译成中文。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "我想付钱，请。"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 185
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将句子 'Il est très important de dire bonjour' 改写为以动词不定式短语作主语的句子。 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Dire bonjour est très important."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "politesse",
+            "pos": "n.f.",
+            "meaning": "礼貌，客气",
+            "example": "La politesse est très importante en France, mais en tant qu'étranger, on n'en connaît pas forcément l'école.",
+            "example_translation": "礼貌在法国非常重要，但作为外国人，我们不一定了解其中的准则。"
+          },
+          {
+            "word": "basique",
+            "pos": "adj.",
+            "meaning": "基础的，基本的",
+            "example": "on va vous montrer comment utiliser les expressions de politesse, les plus basiques",
+            "example_translation": "我们将向大家展示如何使用最基础的礼貌用语"
+          },
+          {
+            "word": "boulangerie",
+            "pos": "n.f.",
+            "meaning": "面包店",
+            "example": "avant de commander quelque chose dans une boulangerie",
+            "example_translation": "在面包店点餐之前"
+          },
+          {
+            "word": "rugissement",
+            "pos": "n.m.",
+            "meaning": "（狮、虎等的）吼叫声",
+            "example": "on peut s'enpréner à imiter le rugissement d'un tigre",
+            "example_translation": "我们可以练习模仿老虎的吼叫"
+          },
+          {
+            "word": "environ",
+            "pos": "adv.",
+            "meaning": "大约，左右",
+            "example": "La journée, du matin, jusqu'à environ 17h, il est très important de dire bonjour.",
+            "example_translation": "在白天，从早晨到大约下午5点，说你好是非常重要的。"
+          },
+          {
+            "word": "caisse",
+            "pos": "n.f.",
+            "meaning": "收银台，结账处",
+            "example": "en arrivant à la caisse d'un supermarché",
+            "example_translation": "到达超市收银台时"
+          },
+          {
+            "word": "commander",
+            "pos": "v.",
+            "meaning": "点餐，订购",
+            "example": "avant de commander quelque chose dans une boulangerie",
+            "example_translation": "在面包店点餐之前"
+          },
+          {
+            "word": "nasal",
+            "pos": "adj.",
+            "meaning": "鼻音的",
+            "example": "On est une voyelle nasal.",
+            "example_translation": "“On”是一个鼻元音。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "En + Participe Présent (Gérondif) 表示方式或同时性",
+            "explanation": "副分词（Gérondif）由“en + 现在分词”构成，在文中用于描述做某事时的状态或方式。",
+            "example_from_text": "En entrant, dans une boutique, en arrivant à la caisse d'un supermarché ou avant de commander quelque chose dans une boulangerie.",
+            "example_translation": "在进入商店、到达超市收银台或在面包店点餐之前。"
+          },
+          {
+            "point": "Après avoir + Participe Passé 表示动作的先后顺序",
+            "explanation": "“Après + 过去不定式”结构用于表示一个动作在另一个动作之后发生。",
+            "example_from_text": "On le dit par exemple en sortant d'un magasin après avoir acheté quelque chose.",
+            "example_translation": "例如，在买完东西离开商店时说这句话。"
+          },
+          {
+            "point": "Il est + adjectif + de + infinitif 表达必要性或重要性",
+            "explanation": "这是一种无人称句型，用于陈述某种客观情况或必要性。",
+            "example_from_text": "La journée, du matin, jusqu'à environ 17h, il est très important de dire bonjour.",
+            "example_translation": "在白天，从早晨到下午5点左右，说你好是非常重要的。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "La journée, du matin, jusqu'à ______ 17h, il est très important de dire bonjour.",
+            "answer": "environ",
+            "explanation": "原文提到：La journée, du matin, jusqu'à environ 17h, il est très important de dire bonjour."
+          },
+          {
+            "type": "选择",
+            "question": "Quand utilise-t-on l'expression 'Bonne journée' selon la vidéo ?",
+            "options": {
+              "A": "Pour saluer quelqu'un en arrivant le matin.",
+              "B": "Pour dire au revoir entre le matin et 17h environ.",
+              "C": "Pour commander un café dans une boulangerie.",
+              "D": "Pour s'excuser d'un retard."
+            },
+            "answer": "B",
+            "explanation": "原文指出：On dit, bonne journée, en journée, du matin, jusqu'à environ 17h, pour dire au revoir."
+          },
+          {
+            "type": "翻译",
+            "question": "将句子 'Je voudrais payer s'il vous plaît' 翻译成中文。",
+            "answer": "我想付钱，请。",
+            "explanation": "'Je voudrais' 表示委婉的请求，'payer' 意为支付，'s'il vous plaît' 是礼貌用语“请”。"
+          },
+          {
+            "type": "语法",
+            "question": "将句子 'Il est très important de dire bonjour' 改写为以动词不定式短语作主语的句子。",
+            "answer": "Dire bonjour est très important.",
+            "explanation": "将无人称结构 'Il est + adj + de + inf' 改写为不定式作主语的结构，语义保持一致。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 108,
+      "title": "讲解如何使用“s'il vous plaît/s'il te plaît”表达请求，以及晚间和睡前问候语“bonsoir",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_160_seg002_thumb.jpg",
+      "description": "本视频详细讲解了法语中表达请求的两种形式：“s'il vous plaît”（正式）和“s'il te plaît”（非正式），并介绍了它们的缩写SVP和STP。视频强调了在不同场合正确使用这些礼貌用语的重要性。此外，视频还区分了晚间问候语“bonsoir”（用于打招呼和告别）、“bonne soirée”（用于告别，祝愿夜晚愉快）和“bonne nuit”（用于睡前告别）的用法，并提供了发音技巧和实际对话示例。",
+      "duration": 261,
+      "video": {
+        "url": "/videos/SEF/SEF_160_seg002.mp4",
+        "duration": 261,
+        "subtitles": "/videos/SEF/SEF_160_seg002.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "Littéralement",
+              "right": "字面上地，确实地"
+            },
+            {
+              "left": "abréviations",
+              "right": "缩写，简称"
+            },
+            {
+              "left": "raccourcie",
+              "right": "缩短的，简化的"
+            },
+            {
+              "left": "apprentissage",
+              "right": "学习，学徒期"
+            },
+            {
+              "left": "communauté",
+              "right": "社区，团体"
+            },
+            {
+              "left": "auteur",
+              "right": "作者"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 52,
+            "end": 131
+          },
+          "instruction": "Complétez. (S'il vous plaît / S'il te plaît (请求的正式与非正式表达))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Littéralement, s'il vous plaît, "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "si"
+            },
+            {
+              "type": "text",
+              "content": "gnifie si cela vous plaît."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 78,
+            "end": 157
+          },
+          "instruction": "Complétez. (疑问句中的倒装与否定 (Comment n'ai-je pas pu y penser ?))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Comment n'ai-je "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "pas"
+            },
+            {
+              "type": "text",
+              "content": " pu y penser ?"
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 131,
+            "end": 209
+          },
+          "instruction": "根据文本，以下哪种说法是正确的？",
+          "question": "根据文本，以下哪种说法是正确的？",
+          "options": [
+            {
+              "id": "a",
+              "text": "“Bonsoir”只能用于晚上见面时打招呼，不能用于告别。"
+            },
+            {
+              "id": "b",
+              "text": "“Bonne nuit”通常在晚上17点左右使用。"
+            },
+            {
+              "id": "c",
+              "text": "“S'il te plaît”是对家人和朋友使用的非正式请求。"
+            },
+            {
+              "id": "d",
+              "text": "“SVP”是“S'il te plaît”的缩写。"
+            }
+          ],
+          "correct": "c",
+          "explanation": "文本中提到：“Avec la famille et les amis, on utilise la forme informelle s'il te plaît.” 选项A错误，\"Bonsoir\" 也可以用于告别。选项B错误，\"Bonne nuit\" 通常在22点左右使用。选项D错误，\"SVP\" 是 \"S'il vous plaît\" 的缩写。"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 183,
+            "end": 261
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« Littéralement » signifie « 字面上地，确实地 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« abréviations » signifie « 缩短的，简化的 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« raccourcie » signifie « 缩短的，简化的 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 261
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Il est important d'ajouter "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "s'il vous plaît"
+            },
+            {
+              "type": "text",
+              "content": " pour demander quelque chose dans un magasin ou un restaurant."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 261
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : Translate the following sentence into Chinese: 'Dis-lui de s'inscrire rapidement pour ne pas rater ça.'\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "告诉他快点报名，以免错过。"
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "Littéralement",
+            "pos": "adv.",
+            "meaning": "字面上地，确实地",
+            "example": "Littéralement, s'il vous plaît, signifie si cela vous plaît.",
+            "example_translation": "字面上，“s'il vous plaît”的意思是“如果这让您高兴”。"
+          },
+          {
+            "word": "abréviations",
+            "pos": "n.f.",
+            "meaning": "缩写，简称",
+            "example": "Sur des panneaux ou dans des mails, vous pourrez voir des abréviations SVP ou STP.",
+            "example_translation": "在告示牌或邮件中，您可能会看到缩写SVP或STP。"
+          },
+          {
+            "word": "raccourcie",
+            "pos": "p.p.",
+            "meaning": "缩短的，简化的",
+            "example": "Même avec des amis, il est important d'utiliser la version informelle s'il te plaît, qui est parfois raccourcie en STP.",
+            "example_translation": "即使是和朋友在一起，使用非正式版本“s'il te plaît”也很重要，它有时会缩写为STP。"
+          },
+          {
+            "word": "apprentissage",
+            "pos": "n.m.",
+            "meaning": "学习，学徒期",
+            "example": "J'ai cette amie étrangère qui me demande des conseils pour être plus régulière dans son apprentissage du français.",
+            "example_translation": "我有一个外国朋友，她向我寻求建议，希望能更规律地学习法语。"
+          },
+          {
+            "word": "communauté",
+            "pos": "n.f.",
+            "meaning": "社区，团体",
+            "example": "De rejoindre notre communauté pour apprendre le français avec nous, bien sûr.",
+            "example_translation": "当然是加入我们的社区，和我们一起学习法语。"
+          },
+          {
+            "word": "auteur",
+            "pos": "n.m.",
+            "meaning": "作者",
+            "example": "ils pourront rencontrer l'auteur du livre en live pour lui poser toutes les questions.",
+            "example_translation": "他们将能够在线与这本书的作者见面，向他提出所有问题。"
+          },
+          {
+            "word": "exceptionnelle",
+            "pos": "adj.",
+            "meaning": "特殊的，非凡的，杰出的",
+            "example": "pour ne surtout pas rater cette occasion exceptionnelle.",
+            "example_translation": "千万不要错过这个绝佳的机会。"
+          },
+          {
+            "word": "saluer",
+            "pos": "v.",
+            "meaning": "问候，打招呼",
+            "example": "On dit bonsoir pour saluer quelqu'un, le soir à partir de 17h.",
+            "example_translation": "我们说“bonsoir”是为了在晚上17点以后向某人打招呼。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "S'il vous plaît / S'il te plaît (请求的正式与非正式表达)",
+            "explanation": "“S'il vous plaît” 是正式场合或对不熟悉的人使用的请求表达，字面意思是“如果这让您高兴”。“S'il te plaît” 是非正式场合或对家人朋友使用的请求表达，字面意思是“如果这让你高兴”。两者都相当于英语的“please”。",
+            "example_from_text": "Littéralement, s'il vous plaît, signifie si cela vous plaît.",
+            "example_translation": "字面上，“s'il vous plaît”的意思是“如果这让您高兴”。"
+          },
+          {
+            "point": "疑问句中的倒装与否定 (Comment n'ai-je pas pu y penser ?)",
+            "explanation": "在疑问句中，当主语是代词时，可以通过倒装来构成疑问句。如果同时存在否定，否定词 \"ne...pas\" 会围绕倒装后的动词和主语代词。这种结构在口语中较少使用，但在书面语或正式语体中常见。",
+            "example_from_text": "Comment n'ai-je pas pu y penser ?",
+            "example_translation": "我怎么会没想到呢？"
+          },
+          {
+            "point": "pour + ne pas + 动词原形 (表示目的的否定)",
+            "explanation": "“pour ne pas” 加上动词原形表示“为了不（做某事）”或“以免（做某事）”，表达一个否定的目的。它通常用于引导目的状语从句。",
+            "example_from_text": "Dis-lui de s'inscrire rapidement pour ne pas rater ça.",
+            "example_translation": "告诉他快点报名，以免错过。"
+          },
+          {
+            "point": "à l'issue de (固定短语)",
+            "explanation": "“à l'issue de” 是一个固定短语，意为“在……结束时”、“在……之后”。它通常用于表示某个事件或过程的终结。",
+            "example_from_text": "On va y rassembler un livre en français et à l'issue de ce projet, ils pourront rencontrer l'auteur du livre en live pour lui poser toutes les questions.",
+            "example_translation": "我们将收集一本法语书，在这个项目结束时，他们将能够在线与这本书的作者见面，向他提出所有问题。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Il est important d'ajouter _______ pour demander quelque chose dans un magasin ou un restaurant.",
+            "options": null,
+            "answer": "s'il vous plaît",
+            "explanation": "根据文本，在商店或餐厅等正式场合请求时，应使用“s'il vous plaît”。"
+          },
+          {
+            "type": "选择",
+            "question": "根据文本，以下哪种说法是正确的？",
+            "options": {
+              "A": "“Bonsoir”只能用于晚上见面时打招呼，不能用于告别。",
+              "B": "“Bonne nuit”通常在晚上17点左右使用。",
+              "C": "“S'il te plaît”是对家人和朋友使用的非正式请求。",
+              "D": "“SVP”是“S'il te plaît”的缩写。"
+            },
+            "answer": "C",
+            "explanation": "文本中提到：“Avec la famille et les amis, on utilise la forme informelle s'il te plaît.” 选项A错误，\"Bonsoir\" 也可以用于告别。选项B错误，\"Bonne nuit\" 通常在22点左右使用。选项D错误，\"SVP\" 是 \"S'il vous plaît\" 的缩写。"
+          },
+          {
+            "type": "翻译",
+            "question": "Translate the following sentence into Chinese: 'Dis-lui de s'inscrire rapidement pour ne pas rater ça.'",
+            "options": null,
+            "answer": "告诉他快点报名，以免错过。",
+            "explanation": "“Dis-lui de s'inscrire rapidement” 意为“告诉他快点报名”，“pour ne pas rater ça” 意为“以免错过这个”。"
+          },
+          {
+            "type": "语法",
+            "question": "Rewrite the following sentence using a different structure while keeping the same meaning: 'J'ai cette amie étrangère qui me demande des conseils pour être plus régulière dans son apprentissage du français.'",
+            "options": null,
+            "answer": "J'ai cette amie étrangère qui me demande des conseils afin d'être plus régulière dans son apprentissage du français.",
+            "explanation": "“pour” 和 “afin de” 都可以表示目的，此处将 “pour” 替换为 “afin d'” 保持了原句的语义和施事者。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 109,
+      "title": "学习非正式问候语“salut”，表达感谢的“merci”和“de rien”，以及用于道歉或引起注意的“excusez-",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_160_seg003_thumb.jpg",
+      "description": "本视频教授了法语中一些基本的非正式问候语和表达方式。学习者将了解如何使用“salut”进行非正式的问候和告别，以及在何时不宜使用。视频还详细讲解了如何表达感谢（“merci”和“merci beaucoup”）以及如何回应感谢（“de rien”）。此外，它还介绍了如何使用“excusez-moi”来道歉或礼貌地引起他人注意，并区分了其正式和非正式用法。视频中还提供了针对特定法语发音的实用技巧。",
+      "duration": 335,
+      "video": {
+        "url": "/videos/SEF/SEF_160_seg003.mp4",
+        "duration": 335,
+        "subtitles": "/videos/SEF/SEF_160_seg003.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "informellement",
+              "right": "非正式地，不拘礼节地"
+            },
+            {
+              "left": "s'adresser",
+              "right": "向……讲话，称呼"
+            },
+            {
+              "left": "pratiquer",
+              "right": "练习，实践"
+            },
+            {
+              "left": "essentiel",
+              "right": "必要的，重要的"
+            },
+            {
+              "left": "gratitude",
+              "right": "感谢，感激"
+            },
+            {
+              "left": "indispensable",
+              "right": "必不可少的，必需的"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 67,
+            "end": 168
+          },
+          "instruction": "Complétez. (代词 \"On\" 的用法)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "On utilise salut pour dire "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "bonjour"
+            },
+            {
+              "type": "text",
+              "content": " au revoir de manière informelle."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 101,
+            "end": 201
+          },
+          "instruction": "Complétez. (动词短语 \"N'hésitez pas à + 动词原形\")",
+          "segments": [
+            {
+              "type": "text",
+              "content": "N'hésitez pas à beaucoup pratiquer le son, lui, "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "qui"
+            },
+            {
+              "type": "text",
+              "content": " est absent de beaucoup d'autres langues."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 168,
+            "end": 268
+          },
+          "instruction": "Quand est-ce qu'on NE doit PAS utiliser 'salut'?",
+          "question": "Quand est-ce qu'on NE doit PAS utiliser 'salut'?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Avec des amis"
+            },
+            {
+              "id": "b",
+              "text": "Avec de la famille"
+            },
+            {
+              "id": "c",
+              "text": "Avec un vendeur"
+            },
+            {
+              "id": "d",
+              "text": "Avec des collègues"
+            }
+          ],
+          "correct": "c",
+          "explanation": "原文提到“On utilise avec des amis de la famille des collègues mais jamais pour s'adresser. Un vendeur, un serveur ou un chauffeur de taxi par exemple.”，因此不应用于称呼销售员。"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 234,
+            "end": 335
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« informellement » signifie « 非正式地，不拘礼节地 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« s'adresser » signifie « 练习，实践 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« pratiquer » signifie « 练习，实践 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 335
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "On utilise salut pour dire bonjour au revoir de manière "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "informelle"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "informellement",
+            "pos": "adv.",
+            "meaning": "非正式地，不拘礼节地",
+            "example": "On utilise salut pour dire bonjour au revoir de manière informelle.",
+            "example_translation": "我们使用“salut”来非正式地打招呼或告别。"
+          },
+          {
+            "word": "s'adresser",
+            "pos": "v.",
+            "meaning": "向……讲话，称呼",
+            "example": "mais jamais pour s'adresser.",
+            "example_translation": "但绝不能用来称呼。"
+          },
+          {
+            "word": "pratiquer",
+            "pos": "v.",
+            "meaning": "练习，实践",
+            "example": "N'hésitez pas à beaucoup pratiquer le son, lui, qui est absent de beaucoup d'autres langues.",
+            "example_translation": "请务必多加练习“u”这个音，它在许多其他语言中是不存在的。"
+          },
+          {
+            "word": "essentiel",
+            "pos": "adj.",
+            "meaning": "必要的，重要的",
+            "example": "Remerciez être essentiel en France.",
+            "example_translation": "在法国，说谢谢至关重要。"
+          },
+          {
+            "word": "gratitude",
+            "pos": "n.f.",
+            "meaning": "感谢，感激",
+            "example": "Pour montrer une plus grande gratitude, on peut dire merci beaucoup.",
+            "example_translation": "为了表达更大的感谢，我们可以说“merci beaucoup”。"
+          },
+          {
+            "word": "indispensable",
+            "pos": "adj.",
+            "meaning": "必不可少的，必需的",
+            "example": "Mais ce n'est pas indispensable dans tous les contextes.",
+            "example_translation": "但这并非在所有情况下都必不可少。"
+          },
+          {
+            "word": "contexte",
+            "pos": "n.m.",
+            "meaning": "语境，上下文，环境",
+            "example": "Mais ce n'est pas indispensable dans tous les contextes.",
+            "example_translation": "但这并非在所有情况下都必不可少。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "代词 \"On\" 的用法",
+            "explanation": "代词“on”在法语中是一个非人称代词，通常表示“我们”、“人们”、“某人”或泛指的“你”。它的动词变位与第三人称单数（il/elle）相同，但在口语中常用来替代“nous”。",
+            "example_from_text": "On utilise salut pour dire bonjour au revoir de manière informelle.",
+            "example_translation": "我们使用“salut”来非正式地打招呼或告别。"
+          },
+          {
+            "point": "动词短语 \"N'hésitez pas à + 动词原形\"",
+            "explanation": "这个短语意为“请不要犹豫做某事”，常用于鼓励或建议他人采取行动。它由否定形式的动词“hésiter”（犹豫）与介词“à”和动词原形构成。",
+            "example_from_text": "N'hésitez pas à beaucoup pratiquer le son, lui, qui est absent de beaucoup d'autres langues.",
+            "example_translation": "请务必多加练习“u”这个音，它在许多其他语言中是不存在的。"
+          },
+          {
+            "point": "表达目的 \"Pour + 动词原形\"",
+            "explanation": "介词“pour”后接动词原形时，表示动作的目的或意图，相当于英语中的“in order to”或“to”。",
+            "example_from_text": "Pour vous entraîner, ajoutez des consonnes avant le U.",
+            "example_translation": "为了练习，在“u”之前加上辅音。"
+          },
+          {
+            "point": "固定表达 \"De rien\"",
+            "explanation": "“De rien”是法语中回应“merci”（谢谢）的常用表达，意为“不客气”、“没什么”。它表示对方的感谢无需回报，或者所做之事微不足道。",
+            "example_from_text": "Après qu'on vous est remercie, vous pouvez répondre de rien.",
+            "example_translation": "在别人感谢你之后，你可以回答“de rien”。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "On utilise salut pour dire bonjour au revoir de manière ________.",
+            "options": null,
+            "answer": "informelle",
+            "explanation": "根据原文“On utilise salut pour dire bonjour au revoir de manière informelle.”，此处应填入“informelle”。"
+          },
+          {
+            "type": "选择",
+            "question": "Quand est-ce qu'on NE doit PAS utiliser 'salut'?",
+            "options": {
+              "A": "Avec des amis",
+              "B": "Avec de la famille",
+              "C": "Avec un vendeur",
+              "D": "Avec des collègues"
+            },
+            "answer": "C",
+            "explanation": "原文提到“On utilise avec des amis de la famille des collègues mais jamais pour s'adresser. Un vendeur, un serveur ou un chauffeur de taxi par exemple.”，因此不应用于称呼销售员。"
+          },
+          {
+            "type": "翻译",
+            "question": "Translate the following sentence into French: '为了表达更大的感谢，我们可以说 merci beaucoup。'",
+            "options": null,
+            "answer": "Pour montrer une plus grande gratitude, on peut dire merci beaucoup.",
+            "explanation": "原文：Pour montrer une plus grande gratitude, on peut dire merci beaucoup。"
+          },
+          {
+            "type": "语法",
+            "question": "将句子 'Pour montrer une plus grande gratitude, on peut dire merci beaucoup.' 改写，使其意思不变，但使用 'il est possible de' 结构。",
+            "options": null,
+            "answer": "Pour montrer une plus grande gratitude, il est possible de dire merci beaucoup.",
+            "explanation": "原句中的 'on peut dire' 表示 '我们可以说'，改写为 'il est possible de dire' 意为 '说……是可能的'，两者都表达了可能性，且语义保持一致。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 111,
+      "title": "探索巴黎市场",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_167_seg001_thumb.jpg",
+      "description": "这段视频带我们走进巴黎 13 区的 Auguste Blanqui 市场，重点介绍了蔬果摊位（Le Primeur）。主持人讲解了巴黎市场中水果和蔬菜的售卖方式（按公斤或按个计价），介绍了梨、橙子、苹果、彩椒等常年供应的品种，以及油桃、桃子、杏子等夏季特有水果，最后还提到了热带水果及其价格。",
+      "duration": 316,
+      "video": {
+        "url": "/videos/SEF/SEF_167_seg001.mp4",
+        "duration": 316,
+        "subtitles": "/videos/SEF/SEF_167_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "arrondissement",
+              "right": "（法国城市的）区"
+            },
+            {
+              "left": "à la pièce",
+              "right": "按个计价，按件计价"
+            },
+            {
+              "left": "grignoter",
+              "right": "吃零食，（一点一点地）啃，吃"
+            },
+            {
+              "left": "confiture",
+              "right": "果酱"
+            },
+            {
+              "left": "exotique",
+              "right": "异国的，热带的"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 63,
+            "end": 158
+          },
+          "instruction": "Complétez. (代动词表示被动意义 (Le pronominal à sens passif))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Certains fruits, certains légumes "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "s'achètent"
+            },
+            {
+              "type": "text",
+              "content": " au kilo"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 95,
+            "end": 190
+          },
+          "instruction": "Complétez. (代词 'en' 代替由部分冠词或 de 引导的名词)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "on peut aussi "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "en"
+            },
+            {
+              "type": "text",
+              "content": " faire des confitures."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 158,
+            "end": 253
+          },
+          "instruction": "D'où viennent les oranges maltaises mentionnées dans la vidéo ?",
+          "question": "D'où viennent les oranges maltaises mentionnées dans la vidéo ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Du Portugal"
+            },
+            {
+              "id": "b",
+              "text": "De Tunisie"
+            },
+            {
+              "id": "c",
+              "text": "De France"
+            },
+            {
+              "id": "d",
+              "text": "De Thaïlande"
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文中提到：'elles s'appelle des oranges maltaises, mais elles viennent de Tunisie'."
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 221,
+            "end": 316
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« arrondissement » signifie « （法国城市的）区 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« à la pièce » signifie « 吃零食，（一点一点地）啃，吃 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« grignoter » signifie « 吃零食，（一点一点地）啃，吃 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 316
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Certains fruits, certains légumes s'achètent au kilo et d'autres directement à la "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "pièce"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 316
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : Les abricots sont des fruits très populaires en été.\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "杏子是夏天非常受欢迎的水果。"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 316
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Remplacez le complément par le pronom 'en' : On peut faire des confitures avec ces fruits. "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "On peut en faire des confitures."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "arrondissement",
+            "pos": "n.m.",
+            "meaning": "（法国城市的）区",
+            "example": "Aujourd'hui, nous sommes au marché Auguste Blanqui dans le 13e arrondissement de Paris.",
+            "example_translation": "今天，我们在巴黎 13 区的 Auguste Blanqui 市场。"
+          },
+          {
+            "word": "à la pièce",
+            "pos": "loc. adv.",
+            "meaning": "按个计价，按件计价",
+            "example": "Certains fruits, certains légumes s'achètent au kilo et d'autres directement à la pièce.",
+            "example_translation": "有些水果和蔬菜按公斤购买，而另一些则直接按个购买。"
+          },
+          {
+            "word": "grignoter",
+            "pos": "v.",
+            "meaning": "吃零食，（一点一点地）啃，吃",
+            "example": "ils sont tout petits, très facile à grignoter",
+            "example_translation": "它们非常小，非常容易当零嘴吃。"
+          },
+          {
+            "word": "confiture",
+            "pos": "n.f.",
+            "meaning": "果酱",
+            "example": "on peut aussi en faire des confitures.",
+            "example_translation": "我们也可以用它们来做果酱。"
+          },
+          {
+            "word": "exotique",
+            "pos": "adj.",
+            "meaning": "异国的，热带的",
+            "example": "En France, on trouve aussi des fruits exotiques qui viennent de très loin",
+            "example_translation": "在法国，我们也能找到来自远方的热带水果。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "代动词表示被动意义 (Le pronominal à sens passif)",
+            "explanation": "在法语中，代动词（se + 动词）常用来表达被动意义，强调动作本身而非执行者。在本句中，'s'achètent' 表示水果和蔬菜“被购买”。",
+            "example_from_text": "Certains fruits, certains légumes s'achètent au kilo",
+            "example_translation": "有些水果和蔬菜是按公斤卖的（被购买）。"
+          },
+          {
+            "point": "代词 'en' 代替由部分冠词或 de 引导的名词",
+            "explanation": "代词 'en' 用来指代前面提到过的事物，以避免重复。在本句中，'en' 指代前面的 'abricots'，表示“用杏子做果酱”。",
+            "example_from_text": "on peut aussi en faire des confitures.",
+            "example_translation": "我们也可以用它们（杏子）来做果酱。"
+          },
+          {
+            "point": "Il faut + 动词原形 (L'obligation impersonnelle)",
+            "explanation": "无人称句型 'il faut' 后接动词原形，表示“必须”或“需要”做某事。⚠️ 注意：勿与 [个人义务 devoir] 混淆，例如：Je dois écosser les pois.（我必须剥豌豆。）",
+            "example_from_text": "il y a également des petits poids qu'il faut écocer soi-même",
+            "example_translation": "还有一些需要自己剥壳的豌豆。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Certains fruits, certains légumes s'achètent au kilo et d'autres directement à la _______.",
+            "answer": "pièce",
+            "explanation": "根据原文，水果蔬菜除了按公斤（au kilo）卖，还可以按个（à la pièce）卖。"
+          },
+          {
+            "type": "选择",
+            "question": "D'où viennent les oranges maltaises mentionnées dans la vidéo ?",
+            "options": {
+              "A": "Du Portugal",
+              "B": "De Tunisie",
+              "C": "De France",
+              "D": "De Thaïlande"
+            },
+            "answer": "B",
+            "explanation": "原文中提到：'elles s'appelle des oranges maltaises, mais elles viennent de Tunisie'."
+          },
+          {
+            "type": "翻译",
+            "question": "Les abricots sont des fruits très populaires en été.",
+            "answer": "杏子是夏天非常受欢迎的水果。",
+            "explanation": "这是文中介绍夏季水果时的原句。"
+          },
+          {
+            "type": "语法",
+            "question": "Remplacez le complément par le pronom 'en' : On peut faire des confitures avec ces fruits.",
+            "answer": "On peut en faire des confitures.",
+            "explanation": "使用代词 'en' 代替 'avec ces fruits'（或由 de 引导的成分）来简化句子并避免重复。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 112,
+      "title": "深入了解新鲜食品摊位",
+      "level": "B1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_167_seg002_thumb.jpg",
+      "description": "本段视频带观众走访了市场中的奶酪、乳制品和鱼类摊位。首先介绍了奶酪的多样性（如硬质、软质奶酪）及其价格，随后参观了乳制品店（crémier），展示了散装黄油和不同脂肪含量的牛奶。最后，视频转向鱼贩（poissonnier），详细介绍了马达加斯加虾、海螺（bulots）以及龙利鱼（sole）和红鲣（rouget）等鱼类的特点与售价。",
+      "duration": 248,
+      "video": {
+        "url": "/videos/SEF/SEF_167_seg002.mp4",
+        "duration": 248,
+        "subtitles": "/videos/SEF/SEF_167_seg002.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "pâte dure",
+              "right": "（指奶酪）硬质的。常用于描述质地较硬、熟成时间较长的奶酪。"
+            },
+            {
+              "left": "crénier",
+              "right": "乳制品商（注：原文为 crémier 的拼写错误）。指专门销售黄油、鸡蛋、奶酪和牛奶等乳制品的商家。"
+            },
+            {
+              "left": "demi-écrémé",
+              "right": "半脱脂的。指去除了部分乳脂的牛奶。"
+            },
+            {
+              "left": "poissonnier",
+              "right": "鱼贩，鱼商。指在市场或商店里销售鱼类和海鲜的人。"
+            },
+            {
+              "left": "chair",
+              "right": "（鱼、肉、水果等的）肉，肉质。"
+            },
+            {
+              "left": "crustacé",
+              "right": "甲壳类动物（如虾、蟹、海螺等）。原文中多次出现拼写变体如 cruises tassées 或 cruces tassées。"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 50,
+            "end": 124
+          },
+          "instruction": "Complétez. (关系代词 dont 的用法)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Ce sont des petits cruces tassées dont il faut "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "retirer"
+            },
+            {
+              "type": "text",
+              "content": " la chair avec un petit pic comme une petite forchette."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 74,
+            "end": 149
+          },
+          "instruction": "Complétez. (介词 chez 表示“在……店里/处”)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Ici, nous sommes "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "chez"
+            },
+            {
+              "type": "text",
+              "content": " le crénier."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 124,
+            "end": 198
+          },
+          "instruction": "Combien coûtent les crevettes de Madagascar au kilo ?",
+          "question": "Combien coûtent les crevettes de Madagascar au kilo ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "5 euros"
+            },
+            {
+              "id": "b",
+              "text": "20 euros 50"
+            },
+            {
+              "id": "c",
+              "text": "50 euros"
+            },
+            {
+              "id": "d",
+              "text": "14 euros 80"
+            }
+          ],
+          "correct": "c",
+          "explanation": "原文提到：elles coûte 5 euros, les 100 grammes, donc 50 euros le kilo。"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 174,
+            "end": 248
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« pâte dure » signifie « （指奶酪）硬质的。常用于描述质地较硬、熟成时间较长的奶酪。 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« crénier » signifie « 半脱脂的。指去除了部分乳脂的牛奶。 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« demi-écrémé » signifie « 半脱脂的。指去除了部分乳脂的牛奶。 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 248
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Ici, nous sommes chez le "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "crénier"
+            },
+            {
+              "type": "text",
+              "content": ". On trouve toutes sortes de produits létiers."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 248
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 这是一种肉质非常细腻的白肉鱼。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "C'est un poisson blanc à la chair très très fine."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "pâte dure",
+            "pos": "loc. adj.",
+            "meaning": "（指奶酪）硬质的。常用于描述质地较硬、熟成时间较长的奶酪。",
+            "example": "On trouve des frommages à pâte dure, à pâte môles, des frommages pasteurisés, des frommages aux les entiers qui viennent de France, mais aussi d'autres pays.",
+            "example_translation": "我们可以找到硬质奶酪、软质奶酪、巴氏杀菌奶酪，以及来自法国或其他国家的全脂奶酪。"
+          },
+          {
+            "word": "crénier",
+            "pos": "n.m.",
+            "meaning": "乳制品商（注：原文为 crémier 的拼写错误）。指专门销售黄油、鸡蛋、奶酪和牛奶等乳制品的商家。",
+            "example": "Ici, nous sommes chez le crénier.",
+            "example_translation": "这里，我们在乳制品商这里。"
+          },
+          {
+            "word": "demi-écrémé",
+            "pos": "adj.",
+            "meaning": "半脱脂的。指去除了部分乳脂的牛奶。",
+            "example": "On trouve aussi bien sûr du lait, entier, demi-écrémé ou même écrémé, et on trouve aussi des yaours.",
+            "example_translation": "当然也能找到牛奶，全脂、半脱脂甚至脱脂的，还有酸奶。"
+          },
+          {
+            "word": "poissonnier",
+            "pos": "n.m.",
+            "meaning": "鱼贩，鱼商。指在市场或商店里销售鱼类和海鲜的人。",
+            "example": "Nous sommes maintenant chez le poissonnier, le vendeur de poisson.",
+            "example_translation": "我们现在在鱼贩这里，也就是卖鱼的人。"
+          },
+          {
+            "word": "chair",
+            "pos": "n.f.",
+            "meaning": "（鱼、肉、水果等的）肉，肉质。",
+            "example": "Ce sont des petits cruces tassées dont il faut retirer la chair avec un petit pic comme une petite forchette.",
+            "example_translation": "这是一种小的甲壳类动物，必须用一个小签子像小叉子一样把肉挑出来。"
+          },
+          {
+            "word": "crustacé",
+            "pos": "n.m.",
+            "meaning": "甲壳类动物（如虾、蟹、海螺等）。原文中多次出现拼写变体如 cruises tassées 或 cruces tassées。",
+            "example": "Commençons par les cruises tassées.",
+            "example_translation": "让我们从甲壳类动物开始。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "关系代词 dont 的用法",
+            "explanation": "dont 用来引导关系从句，代替由介词 de 引导的成分。在本句中，dont 代替了 'de ces crustacés'（retirer la chair DE ces crustacés）。",
+            "example_from_text": "Ce sont des petits cruces tassées dont il faut retirer la chair avec un petit pic comme une petite forchette.",
+            "example_translation": "这是一种小的甲壳类动物，必须用一个小签子像小叉子一样把肉挑出来。"
+          },
+          {
+            "point": "介词 chez 表示“在……店里/处”",
+            "explanation": "chez 后面接表示人的名词或职业名词，表示去某人的家或某人的商店。⚠️ 注意：勿与 à 混淆，例如：Je vais à la boulangerie (去面包店) 但 Je vais chez le boulanger (去面包师那儿)。",
+            "example_from_text": "Ici, nous sommes chez le crénier.",
+            "example_translation": "这里，我们在乳制品商这里。"
+          },
+          {
+            "point": "定冠词 le/la/les 表示单位价格",
+            "explanation": "在法语中，表示“每……”（单位价格）时，通常在度量单位前使用定冠词 le, la, les，而不是介词 par。",
+            "example_from_text": "Elles sont certifiées à agriculture, biologique, et elles coûte 5 euros, les 100 grammes, donc 50 euros le kilo.",
+            "example_translation": "它们经过有机农业认证，价格是每100克5欧元，也就是每公斤50欧元。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Ici, nous sommes chez le ________. On trouve toutes sortes de produits létiers.",
+            "answer": "crénier",
+            "explanation": "根据原文，在乳制品摊位（crénier，原文拼写错误，标准为 crémier）可以找到各种乳制品。"
+          },
+          {
+            "type": "选择",
+            "question": "Combien coûtent les crevettes de Madagascar au kilo ?",
+            "options": {
+              "A": "5 euros",
+              "B": "20 euros 50",
+              "C": "50 euros",
+              "D": "14 euros 80"
+            },
+            "answer": "C",
+            "explanation": "原文提到：elles coûte 5 euros, les 100 grammes, donc 50 euros le kilo。"
+          },
+          {
+            "type": "翻译",
+            "question": "这是一种肉质非常细腻的白肉鱼。",
+            "answer": "C'est un poisson blanc à la chair très très fine.",
+            "explanation": "参考原文描述龙利鱼（la seule）的句子：'la seule qui est un poisson blanc à la chair très très fine'。"
+          },
+          {
+            "type": "语法",
+            "question": "请用关系代词 dont 将以下两句合并：Ce sont des petits crustacés. Il faut retirer la chair de ces crustacés.",
+            "answer": "Ce sont des petits crustacés dont il faut retirer la chair.",
+            "explanation": "dont 代替 de 引导的补语 de ces crustacés，使句子更简洁。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 113,
+      "title": "市场特色商品",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_167_seg003_thumb.jpg",
+      "description": "视频介绍了巴黎市场的特色商品，包括各种口味的橄榄（如辣味、去核等）、干果（如腰果、阿让西梅干）以及实惠的床上用品。此外，还展示了一段包含询问数量、健康益处及刷卡支付的完整购物对话。",
+      "duration": 193,
+      "video": {
+        "url": "/videos/SEF/SEF_167_seg003.mp4",
+        "duration": 193,
+        "subtitles": "/videos/SEF/SEF_167_seg003.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 58
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "pimenté",
+              "right": "加了辣椒的，辣的"
+            },
+            {
+              "left": "dénoyauté",
+              "right": "去核的"
+            },
+            {
+              "left": "noix de cajou",
+              "right": "腰果"
+            },
+            {
+              "left": "pruneau",
+              "right": "西梅干"
+            },
+            {
+              "left": "linge de lit",
+              "right": "床上用品"
+            },
+            {
+              "left": "avantageux",
+              "right": "（价格）优惠的，实惠的"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 39,
+            "end": 97
+          },
+          "instruction": "Complétez. (Je voudrais (Conditionnel présent de politesse))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Bonjour, je voudrais 200 grammes "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "d'olives"
+            },
+            {
+              "type": "text",
+              "content": " pimentées s'il vous plaît."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 58,
+            "end": 116
+          },
+          "instruction": "Complétez. (Et avec ceci ? (服务用语))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Très bien que je vous prépare ça "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "et"
+            },
+            {
+              "type": "text",
+              "content": " avec ceci, je vais prendre aussi quelques amandes."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 97,
+            "end": 154
+          },
+          "instruction": "D'où viennent les pruneaux mentionnés dans la vidéo ?",
+          "question": "D'où viennent les pruneaux mentionnés dans la vidéo ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "De Paris"
+            },
+            {
+              "id": "b",
+              "text": "D'Agen"
+            },
+            {
+              "id": "c",
+              "text": "De Lyon"
+            },
+            {
+              "id": "d",
+              "text": "De Marseille"
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文提到：\"Alors, les prunos viennent d'agents\" (Agen是法国著名的西梅产地)。"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 135,
+            "end": 193
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« pimenté » signifie « 加了辣椒的，辣的 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« dénoyauté » signifie « 腰果 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« noix de cajou » signifie « 腰果 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 193
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je voudrais 200 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "grammes"
+            },
+            {
+              "type": "text",
+              "content": " d'olives pimentées s'il vous plaît."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 193
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 这对健康很有好处。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "C'est très bon pour la santé"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 193
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将句子 \"Je vais payer en carte\" 中的支付方式介词改为 \"par\"。 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Je vais payer par carte"
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "pimenté",
+            "pos": "adj.",
+            "meaning": "加了辣椒的，辣的",
+            "example": "des olives pimentées",
+            "example_translation": "辣味橄榄"
+          },
+          {
+            "word": "dénoyauté",
+            "pos": "p.p.",
+            "meaning": "去核的",
+            "example": "des olives des noyautés",
+            "example_translation": "去核橄榄"
+          },
+          {
+            "word": "noix de cajou",
+            "pos": "n.f.",
+            "meaning": "腰果",
+            "example": "une noix de cajou",
+            "example_translation": "一颗腰果"
+          },
+          {
+            "word": "pruneau",
+            "pos": "n.m.",
+            "meaning": "西梅干",
+            "example": "Alors, les prunos viennent d'agents",
+            "example_translation": "西梅干产自阿让"
+          },
+          {
+            "word": "linge de lit",
+            "pos": "n.m.",
+            "meaning": "床上用品",
+            "example": "notamment du linge de lit",
+            "example_translation": "特别是床上用品"
+          },
+          {
+            "word": "avantageux",
+            "pos": "adj.",
+            "meaning": "（价格）优惠的，实惠的",
+            "example": "les prix sont très avantageux",
+            "example_translation": "价格非常实惠"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "Je voudrais (Conditionnel présent de politesse)",
+            "explanation": "在购物或点餐场景中，使用动词 vouloir 的条件式现在时表示礼貌的请求，比直陈式现在时（Je veux）更委婉。",
+            "example_from_text": "Bonjour, je voudrais 200 grammes d'olives pimentées s'il vous plaît.",
+            "example_translation": "你好，请给我200克辣味橄榄。"
+          },
+          {
+            "point": "Et avec ceci ? (服务用语)",
+            "explanation": "商家在服务过程中常用的短语，意为“还要别的吗？”，用于询问顾客是否需要增加商品。",
+            "example_from_text": "Très bien que je vous prépare ça et avec ceci, je vais prendre aussi quelques amandes.",
+            "example_translation": "好的，我为您准备这个。还要别的吗？我还要一些杏仁。"
+          },
+          {
+            "point": "Ça vous fera + 价格 (结算用语)",
+            "explanation": "在结账时，商家常用此结构告知顾客总金额。使用简单将来时（fera）显得专业且礼貌。",
+            "example_from_text": "Ça vous fera 23 euros et 50 centines.",
+            "example_translation": "一共是23欧元50分。"
+          },
+          {
+            "point": "Payer en / par carte (支付方式)",
+            "explanation": "表示“刷卡支付”。在法语中，en carte 和 par carte 均可使用，但在口语中 en carte 非常普遍。",
+            "example_from_text": "Oui, bien sûr, je vais payer en carte.",
+            "example_translation": "是的，当然，我刷卡支付。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Je voudrais 200 ___ d'olives pimentées s'il vous plaît.",
+            "answer": "grammes",
+            "explanation": "原文中顾客说：\"je voudrais 200 grammes d'olives pimentées\"。"
+          },
+          {
+            "type": "选择",
+            "question": "D'où viennent les pruneaux mentionnés dans la vidéo ?",
+            "options": {
+              "A": "De Paris",
+              "B": "D'Agen",
+              "C": "De Lyon",
+              "D": "De Marseille"
+            },
+            "answer": "B",
+            "explanation": "原文提到：\"Alors, les prunos viennent d'agents\" (Agen是法国著名的西梅产地)。"
+          },
+          {
+            "type": "翻译",
+            "question": "这对健康很有好处。",
+            "answer": "C'est très bon pour la santé",
+            "explanation": "原文中提到杏仁时说：\"C'est très bon pour la santé\"。"
+          },
+          {
+            "type": "语法",
+            "question": "将句子 \"Je vais payer en carte\" 中的支付方式介词改为 \"par\"。",
+            "answer": "Je vais payer par carte",
+            "explanation": "\"en carte\" 和 \"par carte\" 均表示刷卡支付，语义完全对等。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 115,
+      "title": "介绍法国小吃文化及甜点品尝",
+      "level": "B1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_156_seg001_thumb.jpg",
+      "description": "这段视频介绍了法国独特的零食文化，重点区分了下午茶（Goûter）和餐前酒（Apéritif）的时间与内容。主持人还实地品尝并讲解了三种经典饼干：无花果夹心饼干（Figolu）、巧克力片饼干（Petit Écolier）以及具有象征意义的黄油饼干（Petit Beurre），并分享了黄油饼干外形设计背后的有趣寓意。",
+      "duration": 301,
+      "video": {
+        "url": "/videos/SEF/SEF_156_seg001.mp4",
+        "duration": 301,
+        "subtitles": "/videos/SEF/SEF_156_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "collation",
+              "right": "小点心，轻餐"
+            },
+            {
+              "left": "apéritif",
+              "right": "餐前酒，餐前小吃时间"
+            },
+            {
+              "left": "fourré",
+              "right": "夹心的，填充的"
+            },
+            {
+              "left": "croustillant",
+              "right": "酥脆的"
+            },
+            {
+              "left": "valider",
+              "right": "认可，批准（口语中表示“我给满分/我认可”）"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 60,
+            "end": 151
+          },
+          "instruction": "Complétez. (代词 \"en\" 代替部分冠词或数量词后的名词)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "je vais "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "en"
+            },
+            {
+              "type": "text",
+              "content": " manger un."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 90,
+            "end": 181
+          },
+          "instruction": "Complétez. (关系代词 \"selon laquelle\")",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Alors, je crois qu'il y a une tradition, selon laquelle on "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "mange"
+            },
+            {
+              "type": "text",
+              "content": " les petits beurres en commençant par les coins."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 151,
+            "end": 241
+          },
+          "instruction": "Pourquoi le Petit Beurre a-t-il 52 \"dents\" ?",
+          "question": "Pourquoi le Petit Beurre a-t-il 52 \"dents\" ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Pour les 52 jours de fête par an."
+            },
+            {
+              "id": "b",
+              "text": "Pour les 52 semaines de l'année."
+            },
+            {
+              "id": "c",
+              "text": "Pour les 52 ingrédients de la recette."
+            },
+            {
+              "id": "d",
+              "text": "Pour les 52 ans du créateur."
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文明确指出：il a 52 petites dents comme les 52 semaines de l'année."
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 211,
+            "end": 301
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« collation » signifie « 小点心，轻餐 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« apéritif » signifie « 夹心的，填充的 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« fourré » signifie « 夹心的，填充的 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 301
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "En France, le "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "goûter"
+            },
+            {
+              "type": "text",
+              "content": " est une petite collation qu'on mange vers 16 ou 17 heures."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 301
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 翻译句子：Les enfants adorent manger le goûter, mais les adultes aussi.\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "孩子们喜欢吃下午茶，但成年人也一样。"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 301
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将句子 \"Je vais goûter les petits écoliers\" 中的宾语用适当的代词替换。 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Je vais les goûter."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "collation",
+            "pos": "n.f.",
+            "meaning": "小点心，轻餐",
+            "example": "Donc le goutté, c'est une petite collation dans la primie dit vers 16 ou 17 heures.",
+            "example_translation": "所以下午茶就是下午16点或17点左右的一顿小点心。"
+          },
+          {
+            "word": "apéritif",
+            "pos": "n.m.",
+            "meaning": "餐前酒，餐前小吃时间",
+            "example": "Alors on mange les snacks salés plutôt à l'apéritif.",
+            "example_translation": "那么我们通常在餐前酒时间吃咸味零食。"
+          },
+          {
+            "word": "fourré",
+            "pos": "p.p.",
+            "meaning": "夹心的，填充的",
+            "example": "Les figolus se sont des petits biscuits sablais qui sont fourrés à la pâte de figuer.",
+            "example_translation": "Figolu是一种夹着无花果泥的小酥饼。"
+          },
+          {
+            "word": "croustillant",
+            "pos": "adj.",
+            "meaning": "酥脆的",
+            "example": "C'est la partie la plus croustillante.",
+            "example_translation": "这是最酥脆的部分。"
+          },
+          {
+            "word": "valider",
+            "pos": "v.",
+            "meaning": "认可，批准（口语中表示“我给满分/我认可”）",
+            "example": "Donc vraiment, le figolu, je valide.",
+            "example_translation": "所以真的，Figolu我给满分。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "代词 \"en\" 代替部分冠词或数量词后的名词",
+            "explanation": "在句子中，\"en\" 用来代替前面提到的名词，以避免重复。在本例中，它代替了 \"des figolus\"。当后面有具体数量（如 un）时，\"en\" 必须保留。",
+            "example_from_text": "je vais en manger un.",
+            "example_translation": "我要吃一个（无花果饼干）。"
+          },
+          {
+            "point": "关系代词 \"selon laquelle\"",
+            "explanation": "用于引导关系从句，其中 \"laquelle\" 指代前面的阴性单数名词 \"tradition\"。\"selon\" 表示“根据”。",
+            "example_from_text": "Alors, je crois qu'il y a une tradition, selon laquelle on mange les petits beurres en commençant par les coins.",
+            "example_translation": "那么，我记得有一个传统，根据这个传统，人们吃黄油饼干要先从角开始吃。"
+          },
+          {
+            "point": "最高级结构 \"la plus + 形容词\"",
+            "explanation": "用于表示在某一范围内程度最高。形容词要与修饰的名词（此处为 la partie）进行性数配合。",
+            "example_from_text": "C'est la partie la plus croustillante.",
+            "example_translation": "这是最酥脆的部分。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "En France, le ______ est une petite collation qu'on mange vers 16 ou 17 heures.",
+            "answer": "goûter",
+            "explanation": "原文提到：Donc le goutté (goûter), c'est une petite collation dans la primie dit vers 16 ou 17 heures."
+          },
+          {
+            "type": "选择",
+            "question": "Pourquoi le Petit Beurre a-t-il 52 \"dents\" ?",
+            "options": {
+              "A": "Pour les 52 jours de fête par an.",
+              "B": "Pour les 52 semaines de l'année.",
+              "C": "Pour les 52 ingrédients de la recette.",
+              "D": "Pour les 52 ans du créateur."
+            },
+            "answer": "B",
+            "explanation": "原文明确指出：il a 52 petites dents comme les 52 semaines de l'année."
+          },
+          {
+            "type": "翻译",
+            "question": "翻译句子：Les enfants adorent manger le goûter, mais les adultes aussi.",
+            "answer": "孩子们喜欢吃下午茶，但成年人也一样。",
+            "explanation": "这句话展示了 goûter 文化在法国是全民性的。"
+          },
+          {
+            "type": "语法",
+            "question": "将句子 \"Je vais goûter les petits écoliers\" 中的宾语用适当的代词替换。",
+            "answer": "Je vais les goûter.",
+            "explanation": "使用直接宾语代词 \"les\" 代替复数名词 \"les petits écoliers\"，代词置于变位动词和不定式之间。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 116,
+      "title": "继续品尝争议性甜点",
+      "level": "B1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_156_seg002_thumb.jpg",
+      "description": "本段视频介绍了草莓船形蛋糕、袋装果泥（Pom'Pote）、玛德琳蛋糕以及四分之一蛋糕等法国经典零食。主讲人分享了这些甜点的特点、文化背景（如普鲁斯特的玛德琳）以及制作配方，并邀请观众加入 Discord 社区和 EasyFrench 会员计划以获取更多学习资源。",
+      "duration": 334,
+      "video": {
+        "url": "/videos/SEF/SEF_156_seg002.mp4",
+        "duration": 334,
+        "subtitles": "/videos/SEF/SEF_156_seg002.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "barquette",
+              "right": "船形蛋糕；小船"
+            },
+            {
+              "left": "gourde",
+              "right": "（便携式）水袋，水壶"
+            },
+            {
+              "left": "incontournable",
+              "right": "不可错过的，必不可少的"
+            },
+            {
+              "left": "réconfortant",
+              "right": "慰藉的，令人感到宽慰的，治愈的"
+            },
+            {
+              "left": "à part égale",
+              "right": "等分地，以相等的比例"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 67,
+            "end": 167
+          },
+          "instruction": "Complétez. (Rendre + 形容词)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Et en tout cas, la marque a rendu ça très "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "célèbre"
+            },
+            {
+              "type": "text",
+              "content": " parce que vraiment, les gâteaux bonnes maman sont extrêmement populaires."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 100,
+            "end": 200
+          },
+          "instruction": "Complétez. (En tant que + 名词)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "En plus du groupe, en tant que membres, vous aurez accès à "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "plein"
+            },
+            {
+              "type": "text",
+              "content": " d'extra, notamment des exercices pour pratiquer le contenu de nos vidéos."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 167,
+            "end": 267
+          },
+          "instruction": "Qu'est-ce qu'une barquette aux fraises selon le texte ?",
+          "question": "Qu'est-ce qu'une barquette aux fraises selon le texte ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Un fruit frais en forme de bateau"
+            },
+            {
+              "id": "b",
+              "text": "Un petit gâteau avec de la confiture"
+            },
+            {
+              "id": "c",
+              "text": "Une boisson à la fraise"
+            },
+            {
+              "id": "d",
+              "text": "Un yaourt à la fraise"
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文提到：'...ce sont des petits gâteaux en forme de barque avec à l'intérieur de la confiture de fraises.'"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 234,
+            "end": 334
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« barquette » signifie « 船形蛋糕；小船 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« gourde » signifie « 不可错过的，必不可少的 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« incontournable » signifie « 不可错过的，必不可少的 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 334
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Le quatre-quarts est composé de quatre ingrédients "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "à part égale"
+            },
+            {
+              "type": "text",
+              "content": " ."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 334
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : It is very practical to take to school.\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "C'est très pratique à emporter à l'école"
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "barquette",
+            "pos": "n.f.",
+            "meaning": "船形蛋糕；小船",
+            "example": "Alors, les barquettes aux fraises, ce sont des petits gâteaux en forme de barque avec à l'intérieur de la confiture de fraises.",
+            "example_translation": "那么，草莓船形蛋糕就是一种船形的、中间填有草莓果酱的小蛋糕。"
+          },
+          {
+            "word": "gourde",
+            "pos": "n.f.",
+            "meaning": "（便携式）水袋，水壶",
+            "example": "Vous voyez, ça a la forme d'une petite gourde.",
+            "example_translation": "你看，它的形状像一个小水袋。"
+          },
+          {
+            "word": "incontournable",
+            "pos": "adj.",
+            "meaning": "不可错过的，必不可少的",
+            "example": "Alors, il y a aussi un petit gâteau absolument incontournable, n'est-ce pas ?",
+            "example_translation": "那么，还有一种绝对不可错过的小蛋糕，对吧？"
+          },
+          {
+            "word": "réconfortant",
+            "pos": "adj.",
+            "meaning": "慰藉的，令人感到宽慰的，治愈的",
+            "example": "Il y a vraiment un côté réconfortant à la Madlaine.",
+            "example_translation": "玛德琳确实有一种治愈感。"
+          },
+          {
+            "word": "à part égale",
+            "pos": "loc. adv.",
+            "meaning": "等分地，以相等的比例",
+            "example": "Et il tient son nom du fait qu'il est composé de 4 ingrédients à part égale.",
+            "example_translation": "它的名字源于它是由四种等量的原料组成的。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "Rendre + 形容词",
+            "explanation": "表示“使……变得……”，常用于描述某种行为、品牌或情况导致的状态变化。⚠️ 注意：勿与 'faire + 动词原形' 混淆，例如：'Ça me fait rire' (这让我笑)。",
+            "example_from_text": "Et en tout cas, la marque a rendu ça très célèbre parce que vraiment, les gâteaux bonnes maman sont extrêmement populaires.",
+            "example_translation": "无论如何，这个品牌使它变得非常出名，因为“巧婆婆”蛋糕确实非常受欢迎。"
+          },
+          {
+            "point": "En tant que + 名词",
+            "explanation": "表示“作为……”，用于说明某人的身份、职能或事物的性质。⚠️ 注意：勿与 'comme' 混淆，'comme' 更多用于比较或原因，而 'en tant que' 强调正式的身份。",
+            "example_from_text": "En plus du groupe, en tant que membres, vous aurez accès à plein d'extra, notamment des exercices pour pratiquer le contenu de nos vidéos.",
+            "example_translation": "除了群组之外，作为会员，你们还可以获得许多额外内容，特别是练习视频内容的习题。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Le quatre-quarts est composé de quatre ingrédients ____ (in equal parts).",
+            "answer": "à part égale",
+            "explanation": "原文中描述四分之一蛋糕的配方时使用了该短语，表示四种原料比例相同。"
+          },
+          {
+            "type": "选择",
+            "question": "Qu'est-ce qu'une barquette aux fraises selon le texte ?",
+            "options": {
+              "A": "Un fruit frais en forme de bateau",
+              "B": "Un petit gâteau avec de la confiture",
+              "C": "Une boisson à la fraise",
+              "D": "Un yaourt à la fraise"
+            },
+            "answer": "B",
+            "explanation": "原文提到：'...ce sont des petits gâteaux en forme de barque avec à l'intérieur de la confiture de fraises.'"
+          },
+          {
+            "type": "翻译",
+            "question": "It is very practical to take to school.",
+            "answer": "C'est très pratique à emporter à l'école",
+            "explanation": "原文中描述袋装果泥（Pom'Pote）时使用了这句话，强调其便携性。"
+          },
+          {
+            "type": "语法",
+            "question": "Comme vous êtes membres d'EasyFrench, vous avez accès à des exercices. (用 'en tant que' 改写句子)",
+            "answer": "En tant que membres d'EasyFrench, vous avez accès à des exercices.",
+            "explanation": "'En tant que' 表示“作为……”，后接名词，表示身份或地位，改写后意思严格对等。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 117,
+      "title": "法国咸味小吃品尝",
+      "level": "B1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_156_seg003_thumb.jpg",
+      "description": "本视频介绍了法国开胃酒（apéritif）时段常见的各种咸味零食。主持人品尝了老式芥末味薯片、迷你椒盐脆饼、极具成瘾性的Tuc饼干、迷你披萨饼干以及著名的Babybel奶酪。最后，他们分享了各自最喜爱的零食，并提到了这些零食带来的童年回忆。",
+      "duration": 439,
+      "video": {
+        "url": "/videos/SEF/SEF_156_seg003.mp4",
+        "duration": 439,
+        "subtitles": "/videos/SEF/SEF_156_seg003.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "aromatisé",
+              "right": "调过味的，加了香料的"
+            },
+            {
+              "left": "addictif",
+              "right": "使人上瘾的"
+            },
+            {
+              "left": "ludique",
+              "right": "有趣的，具有游戏性质的"
+            },
+            {
+              "left": "se déguster",
+              "right": "被品尝，被享用"
+            },
+            {
+              "left": "neutre",
+              "right": "中性的，（味道）淡的"
+            },
+            {
+              "left": "régressif",
+              "right": "退化的，（在零食语境下指）让人怀旧的、像小孩子一样的"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 88,
+            "end": 220
+          },
+          "instruction": "Complétez. (代词 'en' 代替由部分冠词或 de 引导的名词)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "On en mange "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "partout"
+            },
+            {
+              "type": "text",
+              "content": " dans le monde."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 132,
+            "end": 263
+          },
+          "instruction": "Complétez. (Mettre quelqu'un au défi de + 动词原形)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "je vous mets au "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "défi"
+            },
+            {
+              "type": "text",
+              "content": " de n'en manger qu'un seul."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 220,
+            "end": 351
+          },
+          "instruction": "Selon la vidéo, quelle est la caractéristique du fromage Babybel ?",
+          "question": "Selon la vidéo, quelle est la caractéristique du fromage Babybel ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "C'est un fromage très fort avec beaucoup de caractère."
+            },
+            {
+              "id": "b",
+              "text": "C'est un fromage avec un goût très neutre."
+            },
+            {
+              "id": "c",
+              "text": "C'est un fromage qu'on ne trouve qu'en France."
+            },
+            {
+              "id": "d",
+              "text": "C'est un fromage qui se mange toujours avec du pain."
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文提到：'Pour le coup, c'est un formage avec un goût très neutre.'"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 307,
+            "end": 439
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« aromatisé » signifie « 调过味的，加了香料的 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« addictif » signifie « 有趣的，具有游戏性质的 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« ludique » signifie « 有趣的，具有游戏性质的 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 439
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Les chips sont très populaires en France. On "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "en"
+            },
+            {
+              "type": "text",
+              "content": " mange souvent à l'apéritif."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 439
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "请用副动词（en + 现在分词）合并以下两个句子：Il faut l'enlever. On sépare les deux parties. "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Il faut l'enlever en séparant les deux parties."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "aromatisé",
+            "pos": "adj.",
+            "meaning": "调过味的，加了香料的",
+            "example": "Et celles-ci sont aromatisées, saveur moutarde à l'ancienne.",
+            "example_translation": "这些是调过味的，老式芥末味。"
+          },
+          {
+            "word": "addictif",
+            "pos": "adj.",
+            "meaning": "使人上瘾的",
+            "example": "En France, ce qui est aussi très addictif, ce sont les tuques.",
+            "example_translation": "在法国，同样让人上瘾的是Tuc饼干。"
+          },
+          {
+            "word": "ludique",
+            "pos": "adj.",
+            "meaning": "有趣的，具有游戏性质的",
+            "example": "Alors, les balibels, ce sont des petits formages ronds qui se dégustent d'une manière assez ludique.",
+            "example_translation": "那么，Babybel是这种圆形的小奶酪，吃法相当有趣。"
+          },
+          {
+            "word": "se déguster",
+            "pos": "v.",
+            "meaning": "被品尝，被享用",
+            "example": "Alors, les balibels, ce sont des petits formages ronds qui se dégustent d'une manière assez ludique.",
+            "example_translation": "那么，Babybel是这种圆形的小奶酪，吃法相当有趣。"
+          },
+          {
+            "word": "neutre",
+            "pos": "adj.",
+            "meaning": "中性的，（味道）淡的",
+            "example": "Pour le coup, c'est un formage avec un goût très neutre.",
+            "example_translation": "就这款而言，它是一种味道非常淡的奶酪。"
+          },
+          {
+            "word": "régressif",
+            "pos": "adj.",
+            "meaning": "退化的，（在零食语境下指）让人怀旧的、像小孩子一样的",
+            "example": "Donc la pom pote, c'est un côté un peu régressif qui est assez agréable, donc j'adore.",
+            "example_translation": "所以Pom'Potes有一种让人怀旧的感觉，挺舒服的，所以我很喜欢。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "代词 'en' 代替由部分冠词或 de 引导的名词",
+            "explanation": "在句子中，'en' 用来代替前面提到的名词，以避免重复。在本例中，'en' 代替了 'des chips'。",
+            "example_from_text": "On en mange partout dans le monde.",
+            "example_translation": "全世界的人都在吃它（薯片）。"
+          },
+          {
+            "point": "Mettre quelqu'un au défi de + 动词原形",
+            "explanation": "这是一个固定搭配，意为“挑战某人做某事”。",
+            "example_from_text": "je vous mets au défi de n'en manger qu'un seul.",
+            "example_translation": "我挑战你们只吃一个。"
+          },
+          {
+            "point": "副动词 (Le gérondif) 表示方式",
+            "explanation": "由 'en + 现在分词' 构成，在本句中用来表示完成动作（去掉包装）的方式。",
+            "example_from_text": "Il faut donc l'enlever en séparant les deux parties",
+            "example_translation": "因此必须通过分开这两个部分来把它取下来。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Les chips sont très populaires en France. On ___ mange souvent à l'apéritif.",
+            "answer": "en",
+            "explanation": "此处需要代词 en 来代替前面提到的 des chips。"
+          },
+          {
+            "type": "选择",
+            "question": "Selon la vidéo, quelle est la caractéristique du fromage Babybel ?",
+            "options": {
+              "A": "C'est un fromage très fort avec beaucoup de caractère.",
+              "B": "C'est un fromage avec un goût très neutre.",
+              "C": "C'est un fromage qu'on ne trouve qu'en France.",
+              "D": "C'est un fromage qui se mange toujours avec du pain."
+            },
+            "answer": "B",
+            "explanation": "原文提到：'Pour le coup, c'est un formage avec un goût très neutre.'"
+          },
+          {
+            "type": "翻译",
+            "question": "它们很咸，非常非常让人上瘾，我挑战你们只吃一个。",
+            "answer": "Ils sont très salés, très, très addictifs et je vous mets au défi de n'en manger qu'un seul.",
+            "explanation": "这句话使用了形容词 addictif 以及固定搭配 mettre au défi de。"
+          },
+          {
+            "type": "语法",
+            "question": "请用副动词（en + 现在分词）合并以下两个句子：Il faut l'enlever. On sépare les deux parties.",
+            "answer": "Il faut l'enlever en séparant les deux parties.",
+            "explanation": "副动词 'en séparant' 表示通过某种方式来完成前一个动作。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 118,
+      "title": "介绍法国小吃文化及甜点品尝",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_156_seg001_thumb.jpg",
+      "description": "本集视频介绍了法国的两种主要零食时间：Goûter（下午加餐，通常在下午4-5点，孩子们尤其喜欢）和Apéritif（晚餐前的开胃时间，吃咸味小吃配饮品）。视频中品尝了三种甜点：无花果饼干（Figolus，一种夹心饼干，受成人喜爱）、小校生饼干（Petits écoliers，饼干上覆盖巧克力，深受儿童和成人喜爱）和黄油饼干（Petit beurre，一种简单的饼干，以其特殊形状和象征意义而闻名）。",
+      "duration": 301,
+      "video": {
+        "url": "/videos/SEF/SEF_156_seg001.mp4",
+        "duration": 301,
+        "subtitles": "/videos/SEF/SEF_156_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "snack",
+              "right": "零食"
+            },
+            {
+              "left": "goûter",
+              "right": "下午加餐，点心"
+            },
+            {
+              "left": "collation",
+              "right": "点心，加餐"
+            },
+            {
+              "left": "apéritif",
+              "right": "餐前酒，开胃小吃"
+            },
+            {
+              "left": "sablé",
+              "right": "酥脆的，易碎的"
+            },
+            {
+              "left": "fourré",
+              "right": "夹心的"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 60,
+            "end": 151
+          },
+          "instruction": "Complétez. (代词 il y a)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Alors, il y a au "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "chocolat"
+            },
+            {
+              "type": "text",
+              "content": " noir, au chocolat au lait, au chocolat blanc."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 90,
+            "end": 181
+          },
+          "instruction": "Complétez. (形容词的位置（通常在名词之后）)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Les enfants adorent manger "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "le"
+            },
+            {
+              "type": "text",
+              "content": " goûter, mais les adultes aussi."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 151,
+            "end": 241
+          },
+          "instruction": "Quel type de biscuit est le 'Petit beurre' ?",
+          "question": "Quel type de biscuit est le 'Petit beurre' ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Un biscuit fourré"
+            },
+            {
+              "id": "b",
+              "text": "Un biscuit recouvert de chocolat"
+            },
+            {
+              "id": "c",
+              "text": "Un biscuit simple et célèbre"
+            },
+            {
+              "id": "d",
+              "text": "Un biscuit en forme de barque"
+            }
+          ],
+          "correct": "c",
+          "explanation": "视频中提到 Petit beurre 是一种更简单的饼干，没有巧克力覆盖，并且非常有名。"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 211,
+            "end": 301
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« snack » signifie « 零食 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« goûter » signifie « 点心，加餐 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« collation » signifie « 点心，加餐 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 301
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "En France, on mange généralement les snacks sucrés au "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "goûter"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 301
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 无花果饼干是一种夹心饼干。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Les biscuits à la figue sont des biscuits fourrés."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 301
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Corrigez la phrase : Il y a beaucoup de monde ici. "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Ils ont beaucoup de monde ici."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "snack",
+            "pos": "noun",
+            "meaning": "零食",
+            "example": "Aujourd'hui, on va vous présenter les snacks sucrés et salés les plus populaires en France.",
+            "example_translation": "今天，我们将向大家介绍法国最受欢迎的甜味和咸味零食。"
+          },
+          {
+            "word": "goûter",
+            "pos": "noun",
+            "meaning": "下午加餐，点心",
+            "example": "En France, on mange généralement les snacks sucrés au goûter.",
+            "example_translation": "在法国，我们通常在下午茶时间吃甜味零食。"
+          },
+          {
+            "word": "collation",
+            "pos": "noun",
+            "meaning": "点心，加餐",
+            "example": "Donc le goûter, c'est une petite collation dans l'après-midi, vers 16 ou 17 heures.",
+            "example_translation": "下午茶（goûter）是在下午4点或5点左右吃的一份小点心。"
+          },
+          {
+            "word": "apéritif",
+            "pos": "noun",
+            "meaning": "餐前酒，开胃小吃",
+            "example": "Alors, on mange les snacks salés plutôt à l'apéritif.",
+            "example_translation": "我们更倾向于在餐前酒时间（apéritif）吃咸味零食。"
+          },
+          {
+            "word": "sablé",
+            "pos": "adjective",
+            "meaning": "酥脆的，易碎的",
+            "example": "Les figolus, ce sont des petits biscuits sablés qui sont fourrés à la pâte de figue.",
+            "example_translation": "Figolus是一种夹心无花果酱的酥饼。"
+          },
+          {
+            "word": "fourré",
+            "pos": "adjective",
+            "meaning": "夹心的",
+            "example": "Les figolus, ce sont des petits biscuits sablés qui sont fourrés à la pâte de figue.",
+            "example_translation": "Figolus是一种夹心无花果酱的酥饼。"
+          },
+          {
+            "word": "couvrir",
+            "pos": "verb",
+            "meaning": "覆盖",
+            "example": "Les petits écoliers, c'est un biscuit, en fait, recouvert d'une tablette de chocolat.",
+            "example_translation": "Petits écoliers实际上是一种饼干，上面覆盖着一块巧克力。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "代词 il y a",
+            "explanation": "用于表示某处存在某物，相当于英语的 'there is' 或 'there are'。",
+            "example_from_text": "Alors, il y a au chocolat noir, au chocolat au lait, au chocolat blanc.",
+            "example_translation": "有黑巧克力、牛奶巧克力、白巧克力。"
+          },
+          {
+            "point": "形容词的位置（通常在名词之后）",
+            "explanation": "大多数形容词在法语中放在名词之后，但也有一些常见的形容词（如 beau, joli, petit, grand, bon, mauvais, nouveau, vieux, jeune）放在名词之前。",
+            "example_from_text": "Les enfants adorent manger le goûter, mais les adultes aussi.",
+            "example_translation": "孩子们喜欢吃下午茶，大人们也喜欢。"
+          },
+          {
+            "point": "被动语态 (être + participe passé)",
+            "explanation": "表示动作的承受者，常用于描述状态或过程。",
+            "example_from_text": "Les petits écoliers, c'est un biscuit, en fait, recouvert d'une tablette de chocolat.",
+            "example_translation": "Petits écoliers实际上是一种饼干，上面覆盖着一块巧克力。"
+          },
+          {
+            "point": "不定冠词 un/une",
+            "explanation": "用于指代不特定的单数名词，相当于英语的 'a' 或 'an'。",
+            "example_from_text": "Donc le goûter, c'est une petite collation dans l'après-midi, vers 16 ou 17 heures.",
+            "example_translation": "下午茶（goûter）是在下午4点或5点左右吃的一份小点心。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "En France, on mange généralement les snacks sucrés au ______.",
+            "options": null,
+            "answer": "goûter",
+            "explanation": "Goûter 指的是下午茶或下午加餐时间。"
+          },
+          {
+            "type": "选择",
+            "question": "Quel type de biscuit est le 'Petit beurre' ?",
+            "options": {
+              "A": "Un biscuit fourré",
+              "B": "Un biscuit recouvert de chocolat",
+              "C": "Un biscuit simple et célèbre",
+              "D": "Un biscuit en forme de barque"
+            },
+            "answer": "C",
+            "explanation": "视频中提到 Petit beurre 是一种更简单的饼干，没有巧克力覆盖，并且非常有名。"
+          },
+          {
+            "type": "翻译",
+            "question": "无花果饼干是一种夹心饼干。",
+            "options": null,
+            "answer": "Les biscuits à la figue sont des biscuits fourrés.",
+            "explanation": "无花果饼干 (biscuits à la figue)，夹心 (fourrés)。"
+          },
+          {
+            "type": "语法",
+            "question": "Corrigez la phrase : Il y a beaucoup de monde ici. (Utilisez 'avoir' à la 3ème personne du pluriel)",
+            "options": null,
+            "answer": "Ils ont beaucoup de monde ici.",
+            "explanation": "当 'il y a' 指代具体的人或物时，可以用 'avoir' 的第三人称形式代替，例如 'ils ont' 或 'elles ont'。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 119,
+      "title": "继续品尝争议性甜点",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_156_seg002_thumb.jpg",
+      "description": "本集继续介绍法国零食，品尝了草莓船形蛋糕（Barquettes aux fraises，口感偏软，非人人喜爱）、袋装果泥（Pompote，方便携带的果泥饮料，受儿童和赶时间的大人欢迎）、玛德琳蛋糕（Madeleine，经典的贝壳状小蛋糕，常用于下午茶，与普鲁斯特有关）和四分之一蛋糕（4-4，一种由四种等量成分组成的传统蛋糕）。视频最后邀请观众加入Discord群组，成为EasyFrench会员，以获得更多练习和视频内容。",
+      "duration": 334,
+      "video": {
+        "url": "/videos/SEF/SEF_156_seg002.mp4",
+        "duration": 334,
+        "subtitles": "/videos/SEF/SEF_156_seg002.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "controversé",
+              "right": "有争议的"
+            },
+            {
+              "left": "barquette",
+              "right": "小船形糕点"
+            },
+            {
+              "left": "confiture",
+              "right": "果酱"
+            },
+            {
+              "left": "croustillant",
+              "right": "酥脆的"
+            },
+            {
+              "left": "compote",
+              "right": "水果泥"
+            },
+            {
+              "left": "gourde",
+              "right": "水壶，瓶子"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 67,
+            "end": 167
+          },
+          "instruction": "Complétez. (形容词 'mou' (软))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "C'est un peu mou, "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "ça"
+            },
+            {
+              "type": "text",
+              "content": " manque de croustillant."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 100,
+            "end": 200
+          },
+          "instruction": "Complétez. (不定代词 'on')",
+          "segments": [
+            {
+              "type": "text",
+              "content": "On les mange au goûter, on les trempe "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "dans"
+            },
+            {
+              "type": "text",
+              "content": " le chocolat chaud et c'est très bon."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 167,
+            "end": 267
+          },
+          "instruction": "Quelle est la particularité du gâteau '4-4' ?",
+          "question": "Quelle est la particularité du gâteau '4-4' ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Il est fourré à la confiture."
+            },
+            {
+              "id": "b",
+              "text": "Il est recouvert de chocolat."
+            },
+            {
+              "id": "c",
+              "text": "Il est composé de 4 ingrédients à part égale."
+            },
+            {
+              "id": "d",
+              "text": "Il a une forme de coquillage."
+            }
+          ],
+          "correct": "c",
+          "explanation": "4-4蛋糕的名字来源于它由四种等量成分组成：面粉、黄油、糖和牛奶。"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 234,
+            "end": 334
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« controversé » signifie « 有争议的 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« barquette » signifie « 果酱 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« confiture » signifie « 果酱 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 334
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Les barquettes aux fraises sont des petits gâteaux en forme de "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "barque"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 334
+          },
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 这个玛德琳蛋糕非常柔软和美味。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Cette madeleine est très moelleuse et délicieuse."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 334
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Transformez la phrase suivante à la forme passive : Les enfants mangent la Pompote. "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "La Pompote est mangée par les enfants."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "controversé",
+            "pos": "adjective",
+            "meaning": "有争议的",
+            "example": "Peut-être des choses un peu plus controversées.",
+            "example_translation": "也许是一些更有争议的东西。"
+          },
+          {
+            "word": "barquette",
+            "pos": "noun",
+            "meaning": "小船形糕点",
+            "example": "Moi, je dirais les barquettes aux fraises.",
+            "example_translation": "我会说是草莓船形蛋糕（Barquettes aux fraises）。"
+          },
+          {
+            "word": "confiture",
+            "pos": "noun",
+            "meaning": "果酱",
+            "example": "Alors, les barquettes aux fraises, ce sont des petits gâteaux en forme de barque avec à l'intérieur de la confiture de fraises.",
+            "example_translation": "那么，草莓船形蛋糕，它们是船形的蛋糕，里面是草莓酱。"
+          },
+          {
+            "word": "croustillant",
+            "pos": "adjective",
+            "meaning": "酥脆的",
+            "example": "C'est un peu mou, ça manque de croustillant.",
+            "example_translation": "它有点软，缺乏酥脆感。"
+          },
+          {
+            "word": "compote",
+            "pos": "noun",
+            "meaning": "水果泥",
+            "example": "C'est donc une compote de fruits à boire.",
+            "example_translation": "它是一种可以喝的水果泥。"
+          },
+          {
+            "word": "gourde",
+            "pos": "noun",
+            "meaning": "水壶，瓶子",
+            "example": "Vous voyez, ça a la forme d'une petite gourde.",
+            "example_translation": "你看，它是一个小瓶子的形状。"
+          },
+          {
+            "word": "incontournable",
+            "pos": "adjective",
+            "meaning": "不可避免的，必不可少的",
+            "example": "Alors, il y a aussi un petit gâteau absolument incontournable, n'est-ce pas ?",
+            "example_translation": "那么，还有一个绝对不可或缺的小蛋糕，对吧？"
+          },
+          {
+            "word": "coquillage",
+            "pos": "noun",
+            "meaning": "贝壳",
+            "example": "C'est des petits gâteaux traditionnels aux œufs en forme de coquillage et on les mange au goûter, on les trempe dans le chocolat chaud et c'est très bon.",
+            "example_translation": "它们是传统的、贝壳形状的小蛋糕，我们在下午茶时吃，蘸着热巧克力吃，非常好吃。"
+          },
+          {
+            "word": "moelleux",
+            "pos": "adjective",
+            "meaning": "柔软的，湿润的",
+            "example": "C'est tellement moelleux.",
+            "example_translation": "它太柔软了。"
+          },
+          {
+            "word": "réconfortant",
+            "pos": "adjective",
+            "meaning": "令人安慰的",
+            "example": "Il y a vraiment un côté réconfortant à la Madeleine.",
+            "example_translation": "玛德琳蛋糕确实有一种令人安慰的感觉。"
+          },
+          {
+            "word": "kermesse",
+            "pos": "noun",
+            "meaning": "（学校）联欢会",
+            "example": "Alors moi j'ai l'impression que le 4-4, c'est souvent le gâteau qu'on mange aux kermesses d'école ou aux événements comme ça où il y a des groupes d'enfants.",
+            "example_translation": "我感觉4-4通常是在学校联欢会或类似的团体儿童活动中吃的蛋糕。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "形容词 'mou' (软)",
+            "explanation": "用于描述食物的质地，表示不够硬或不够脆。",
+            "example_from_text": "C'est un peu mou, ça manque de croustillant.",
+            "example_translation": "它有点软，缺乏酥脆感。"
+          },
+          {
+            "point": "不定代词 'on'",
+            "explanation": "常用于泛指，表示“人们”、“我们”或“任何人”，使表达更口语化和普遍化。",
+            "example_from_text": "On les mange au goûter, on les trempe dans le chocolat chaud et c'est très bon.",
+            "example_translation": "我们在下午茶时吃，蘸着热巧克力吃，非常好吃。"
+          },
+          {
+            "point": "形容词 'incontournable' (不可或缺的)",
+            "explanation": "表示某事物非常重要或必不可少。",
+            "example_from_text": "Alors, il y a aussi un petit gâteau absolument incontournable, n'est-ce pas ?",
+            "example_translation": "那么，还有一个绝对不可或缺的小蛋糕，对吧？"
+          },
+          {
+            "point": "副词 'absolument' (绝对地)",
+            "explanation": "用于加强语气，表示程度非常高。",
+            "example_from_text": "Alors, il y a aussi un petit gâteau absolument incontournable, n'est-ce pas ?",
+            "example_translation": "那么，还有一个绝对不可或缺的小蛋糕，对吧？"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Les barquettes aux fraises sont des petits gâteaux en forme de ______.",
+            "options": null,
+            "answer": "barque",
+            "explanation": "视频中提到这种蛋糕的形状像船 (barque)。"
+          },
+          {
+            "type": "选择",
+            "question": "Quelle est la particularité du gâteau '4-4' ?",
+            "options": {
+              "A": "Il est fourré à la confiture.",
+              "B": "Il est recouvert de chocolat.",
+              "C": "Il est composé de 4 ingrédients à part égale.",
+              "D": "Il a une forme de coquillage."
+            },
+            "answer": "C",
+            "explanation": "4-4蛋糕的名字来源于它由四种等量成分组成：面粉、黄油、糖和牛奶。"
+          },
+          {
+            "type": "翻译",
+            "question": "这个玛德琳蛋糕非常柔软和美味。",
+            "options": null,
+            "answer": "Cette madeleine est très moelleuse et délicieuse.",
+            "explanation": "玛德琳蛋糕 (madeleine)，柔软 (moelleuse)，美味 (délicieuse)。"
+          },
+          {
+            "type": "语法",
+            "question": "Transformez la phrase suivante à la forme passive : Les enfants mangent la Pompote.",
+            "options": null,
+            "answer": "La Pompote est mangée par les enfants.",
+            "explanation": "将主动语态 'Les enfants mangent la Pompote' 转换为被动语态，需要使用 'être + participe passé' 结构，并将原句的宾语 'la Pompote' 变为新句的主语。"
+          }
+        ]
+      }
+    },
+    {
+      "id": 120,
+      "title": "法国咸味小吃品尝",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_156_seg003_thumb.jpg",
+      "description": "本集视频介绍了法国的咸味零食，包括：传统薯片（Chips à l'ancienne，特别是芥末味）、椒盐脆饼（Bretzel，虽然不如德国正宗，但适合餐前酒）、Tuc饼干（非常受欢迎且易上瘾）、迷你披萨（Mini pizza，饼干底配番茄酱和奶酪）、摩纳哥饼干（Monaco，小巧咸香）和迷你奶酪（Belin，一种圆形的、口味温和的奶酪，吃法有趣）。最后，主持人分享了他们最喜欢的餐前小吃和下午茶点心。",
+      "duration": 439,
+      "video": {
+        "url": "/videos/SEF/SEF_156_seg003.mp4",
+        "duration": 439,
+        "subtitles": "/videos/SEF/SEF_156_seg003.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "videoSegment": {
+            "start": 0,
+            "end": 60
+          },
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "snack salé",
+              "right": "咸味零食"
+            },
+            {
+              "left": "chips à l'ancienne",
+              "right": "传统薯片"
+            },
+            {
+              "left": "moutarde à l'ancienne",
+              "right": "传统芥末酱"
+            },
+            {
+              "left": "croustillant",
+              "right": "酥脆的"
+            },
+            {
+              "left": "bretzel",
+              "right": "椒盐脆饼"
+            },
+            {
+              "left": "addictif",
+              "right": "令人上瘾的"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 88,
+            "end": 220
+          },
+          "instruction": "Complétez. (感叹词 'ma foi')",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Et elles sont, ma foi, "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "très"
+            },
+            {
+              "type": "text",
+              "content": " bonnes et très croustillantes."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 132,
+            "end": 263
+          },
+          "instruction": "Complétez. (动词 'mettre au défi')",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Et je vous mets au "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "défi"
+            },
+            {
+              "type": "text",
+              "content": " de n'en manger qu'un seul."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "videoSegment": {
+            "start": 220,
+            "end": 351
+          },
+          "instruction": "Quel snack est décrit comme très salé et très addictif, avec un petit côté sableux ?",
+          "question": "Quel snack est décrit comme très salé et très addictif, avec un petit côté sableux ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Les chips"
+            },
+            {
+              "id": "b",
+              "text": "Les bretzels"
+            },
+            {
+              "id": "c",
+              "text": "Les Tuc"
+            },
+            {
+              "id": "d",
+              "text": "Les mini pizzas"
+            }
+          ],
+          "correct": "c",
+          "explanation": "视频中将Tuc饼干描述为非常咸、非常容易上瘾，并带有一点沙质口感。"
+        },
+        {
+          "type": "true_false",
+          "videoSegment": {
+            "start": 307,
+            "end": 439
+          },
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« snack salé » signifie « 咸味零食 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« chips à l'ancienne » signifie « 传统芥末酱 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« moutarde à l'ancienne » signifie « 传统芥末酱 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 439
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Les chips présentées dans la vidéo sont à la saveur "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "moutarde"
+            },
+            {
+              "type": "text",
+              "content": " à l'ancienne."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "videoSegment": {
+            "start": 0,
+            "end": 439
+          },
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Reformulez la phrase en utilisant le pronom relatif 'qui' : C'est un fromage. Ce fromage a un goût très neutre. "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "C'est un fromage qui a un goût très neutre."
+            }
+          ]
+        }
+      ],
+      "_meta": {
+        "vocabulary": [
+          {
+            "word": "snack salé",
+            "pos": "noun",
+            "meaning": "咸味零食",
+            "example": "nous allons passer aux snacks salés.",
+            "example_translation": "我们将开始介绍咸味零食。"
+          },
+          {
+            "word": "chips à l'ancienne",
+            "pos": "noun",
+            "meaning": "传统薯片",
+            "example": "C'est des chips à l'ancienne.",
+            "example_translation": "它们是传统薯片（chips à l'ancienne）。"
+          },
+          {
+            "word": "moutarde à l'ancienne",
+            "pos": "noun",
+            "meaning": "传统芥末酱",
+            "example": "Et celles-ci sont aromatisées, saveur moutarde à l'ancienne.",
+            "example_translation": "这些是调味的，是传统芥末味。"
+          },
+          {
+            "word": "croustillant",
+            "pos": "adjective",
+            "meaning": "酥脆的",
+            "example": "Et elles sont, ma foi, très bonnes et très croustillantes.",
+            "example_translation": "它们确实非常好吃，非常酥脆。"
+          },
+          {
+            "word": "bretzel",
+            "pos": "noun",
+            "meaning": "椒盐脆饼",
+            "example": "Alors, moi, je vais continuer avec un petit bretzel.",
+            "example_translation": "那么，我将继续吃椒盐脆饼（bretzel）。"
+          },
+          {
+            "word": "addictif",
+            "pos": "adjective",
+            "meaning": "令人上瘾的",
+            "example": "En France, ce qui est aussi très addictif, ce sont les tuques.",
+            "example_translation": "在法国，同样非常令人上瘾的是Tuc饼干。"
+          },
+          {
+            "word": "octogonal",
+            "pos": "adjective",
+            "meaning": "八边形的",
+            "example": "Ils sont des formes octogonales, ils ont une couleur plutôt jaune, ils sont très salés, très, très addictifs et je vous mets au défi de n'en manger qu'un seul.",
+            "example_translation": "它们是八边形的，颜色偏黄，非常咸，非常非常容易上瘾，我敢打赌你只吃一个。"
+          },
+          {
+            "word": "fromage fondu",
+            "pos": "noun",
+            "meaning": "融化的奶酪",
+            "example": "Clairement, c'est un biscuit de forme ronde, recouverte quelque chose qui ressemble à un peu de sauce tomate, des petites herbes, du fromage fondu.",
+            "example_translation": "这是一种圆形的饼干，上面有一些像番茄酱、小香草、融化奶酪的东西。"
+          },
+          {
+            "word": "ludique",
+            "pos": "adjective",
+            "meaning": "有趣的，好玩的",
+            "example": "Alors, les Belin, ce sont des petits fromages ronds qui se dégustent d'une manière assez ludique.",
+            "example_translation": "Belin是那种小圆奶酪，吃起来很有趣。"
+          },
+          {
+            "word": "neutre",
+            "pos": "adjective",
+            "meaning": "中性的",
+            "example": "Pour le coup, c'est un fromage avec un goût très neutre.",
+            "example_translation": "它是一种味道非常中性的奶酪。"
+          }
+        ],
+        "grammarPoints": [
+          {
+            "point": "感叹词 'ma foi'",
+            "explanation": "一种表示惊讶、强调或无奈的感叹语，类似于“说实话”、“我的天”等。",
+            "example_from_text": "Et elles sont, ma foi, très bonnes et très croustillantes.",
+            "example_translation": "它们确实非常好吃，非常酥脆。"
+          },
+          {
+            "point": "动词 'mettre au défi'",
+            "explanation": "意为“向某人挑战”，常用于鼓励或激发某人做某事。",
+            "example_from_text": "Et je vous mets au défi de n'en manger qu'un seul.",
+            "example_translation": "我敢打赌你只吃一个。"
+          },
+          {
+            "point": "形容词 'addictif' (令人上瘾的)",
+            "explanation": "用来形容某事物非常吸引人，让人忍不住想继续。",
+            "example_from_text": "En France, ce qui est aussi très addictif, ce sont les tuques.",
+            "example_translation": "在法国，同样非常令人上瘾的是Tuc饼干。"
+          },
+          {
+            "point": "不定代词 'quelque chose qui'",
+            "explanation": "表示“某件…的东西”，后面跟一个关系从句来描述这个东西。",
+            "example_from_text": "recouverte quelque chose qui ressemble à un peu de sauce tomate, des petites herbes, du fromage fondu.",
+            "example_translation": "上面有一些像番茄酱、小香草、融化奶酪的东西。"
+          }
+        ],
+        "rawExercises": [
+          {
+            "type": "填空",
+            "question": "Les chips présentées dans la vidéo sont à la saveur ______ à l'ancienne.",
+            "options": null,
+            "answer": "moutarde",
+            "explanation": "视频中介绍了传统芥末味（moutarde à l'ancienne）的薯片。"
+          },
+          {
+            "type": "选择",
+            "question": "Quel snack est décrit comme très salé et très addictif, avec un petit côté sableux ?",
+            "options": {
+              "A": "Les chips",
+              "B": "Les bretzels",
+              "C": "Les Tuc",
+              "D": "Les mini pizzas"
+            },
+            "answer": "C",
+            "explanation": "视频中将Tuc饼干描述为非常咸、非常容易上瘾，并带有一点沙质口感。"
+          },
+          {
+            "type": "翻译",
+            "question": "这些小圆奶酪吃起来很有趣。",
+            "options": null,
+            "answer": "Ces petits fromages ronds se dégustent d'une manière ludique.",
+            "explanation": "小圆奶酪 (petits fromages ronds)，吃起来 (se dégustent)，有趣的方式 (d'une manière ludique)。"
+          },
+          {
+            "type": "语法",
+            "question": "Reformulez la phrase en utilisant le pronom relatif 'qui' : C'est un fromage. Ce fromage a un goût très neutre.",
+            "options": null,
+            "answer": "C'est un fromage qui a un goût très neutre.",
+            "explanation": "使用关系代词 'qui' 将两个句子合并，指代前面的名词 'fromage'。"
+          }
+        ]
+      }
+    }
+  ],
+  "series": [
+    {
+      "id": 101,
+      "slug": "sef_114",
+      "title": "法语初学者生存短语与沟通技巧",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "description": "本视频介绍了法语初学者在法语国家旅行时必备的基础短语，包括问候、问路、点餐等生存用语。同时，视频还重点讲解了在沟通遇到困难时，如何礼貌地表明自己不会说法语、请求对方重复或放慢语速，以及如何询问对方是否会说英语或其他语言。",
+      "exerciseIds": [
+        100
+      ],
+      "thumbnail": null
+    },
+    {
+      "id": 106,
+      "slug": "sef_121",
+      "title": "课程介绍与基础自我介绍学习（姓名、年龄），重点练习法语鼻音",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "description": "这段视频记录了 Easy French 与 Easy Spanish 的跨频道合作，Sarah 学习了如何用法语进行基础自我介绍（姓名和年龄），并重点练习了法语中较难掌握的鼻元音（如 'an' 和 'in'），通过对比 'vin'（酒）和 'vent'（风）来辨析发音。",
+      "exerciseIds": [
+        102,
+        103,
+        104,
+        105
+      ],
+      "thumbnail": null
+    },
+    {
+      "id": 110,
+      "slug": "sef_160",
+      "title": "法国礼貌用语",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "description": "本课程介绍法国日常礼仪，重点讲解日间问候语 'Bonjour' 和告别语 'Bonne journée' 的使用场景（早晨至下午5点左右）及其发音技巧，包括鼻元音 'on' 和法语字母 'r' 的发音方法。",
+      "exerciseIds": [
+        107,
+        108,
+        109
+      ],
+      "thumbnail": null
+    },
+    {
+      "id": 114,
+      "slug": "sef_167",
+      "title": "探索巴黎市场",
+      "level": "A2",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "description": "这段视频带我们走进巴黎 13 区的 Auguste Blanqui 市场，重点介绍了蔬果摊位（Le Primeur）。主持人讲解了巴黎市场中水果和蔬菜的售卖方式（按公斤或按个计价），介绍了梨、橙子、苹果、彩椒等常年供应的品种，以及油桃、桃子、杏子等夏季特有水果，最后还提到了热带水果及其价格。",
+      "exerciseIds": [
+        111,
+        112,
+        113
+      ],
+      "thumbnail": null
+    },
+    {
+      "id": 121,
+      "slug": "sef_156",
+      "title": "介绍法国小吃文化及甜点品尝",
+      "level": "B1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "description": "这段视频介绍了法国独特的零食文化，重点区分了下午茶（Goûter）和餐前酒（Apéritif）的时间与内容。主持人还实地品尝并讲解了三种经典饼干：无花果夹心饼干（Figolu）、巧克力片饼干（Petit Écolier）以及具有象征意义的黄油饼干（Petit Beurre），并分享了黄油饼干外形设计背后的有趣寓意。",
+      "exerciseIds": [
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
+      ],
+      "thumbnail": null
+    }
+  ],
+  "generatedAt": "2026-05-29T17:31:16.361Z",
+  "source": "SEF_batch1_v2"
+}

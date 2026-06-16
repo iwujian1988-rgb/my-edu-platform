@@ -1,0 +1,360 @@
+{
+  "id": "30days-listening",
+  "slug": "30days-listening",
+  "title": "30天听懂法国人说话",
+  "level": "A1",
+  "courseType": "practice",
+  "description": "通过真实法语视频和系统训练，30天内建立法语听力基础。每天10分钟，从完全听不懂到能抓住关键信息。",
+  "audience": "零基础 / 初学者 / 想突破听力瓶颈的学习者",
+  "goals": [
+    "适应真实法语语速",
+    "听懂日常问候和自我介绍",
+    "抓住关键信息（姓名、地点、时间）",
+    "建立法语听力自信"
+  ],
+  "modules": [
+    {
+      "id": "30d-m01",
+      "slug": "est-ce-que-ca-se-dit-vraiment",
+      "title": "法国人真的这么说话吗？",
+      "description": "从零开始，感受真实法语的语速、语调和日常表达。你会发现法语并不像课本上那样。",
+      "objectives": [
+        "感受真实法语语速",
+        "辨认 Bonjour / Salut / Merci 等基础词汇",
+        "理解法语口语与书面语的区别"
+      ],
+      "lessons": [
+        {
+          "id": "30d-m01-l01",
+          "slug": "premier-contact",
+          "title": "第一印象：法语听起来什么样",
+          "description": "先不急着学，先听。感受法语的节奏、语调和旋律。",
+          "estimatedMinutes": 10,
+          "blocks": [
+            {
+              "type": "text",
+              "id": "intro",
+              "title": "为什么从「听」开始",
+              "content": "<p>婴儿学母语，不是先背单词表，而是先听了整整一年。</p><p>学法语也一样。在你能「说」之前，你需要大量「听」。这个模块的目标不是让你听懂每一句话，而是让法语的声音不再陌生。</p><p>接下来的每个 Lesson 都会有一段真实法国人说话的视频。不要担心听不懂——你的大脑正在适应一种新的声音系统。</p><h4>今天的目标</h4><ul><li>听一段真实法语视频</li><li>试着辨认你能听到的词（Bonjour？Merci？）</li><li>不追求全部听懂，只追求「不害怕」</li></ul>"
+            },
+            {
+              "type": "exercise",
+              "title": "热身练习：基础问候",
+              "exerciseIds": [
+                100
+              ],
+              "id": "exercise"
+            },
+            {
+              "type": "maxtube_link",
+              "title": "去 Maxtube 看更多真实法语视频",
+              "url": "#maxtube-placeholder",
+              "description": "在 Maxtube 中观看 Super Easy French 系列视频，带双语字幕和跟读练习。",
+              "id": "maxtube"
+            }
+          ]
+        },
+        {
+          "id": "30d-m01-l02",
+          "slug": "bonjour-ou-salut",
+          "title": "Bonjour 还是 Salut？",
+          "description": "学习两种最常见的问候方式，以及什么时候用哪个。",
+          "estimatedMinutes": 12,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "正式 vs 非正式",
+              "content": "<p>法语里最基础的社交技能就是知道什么时候说 Bonjour，什么时候说 Salut。</p><p><strong>Bonjour</strong>（你好）—— 正式场合、对陌生人、对长辈、进入商店。这是安全牌，任何时候说 Bonjour 都不会错。</p><p><strong>Salut</strong>（嗨）—— 朋友之间、同事之间、熟人之间。比 Bonjour 轻松，但对不太熟的人说 Salut 会显得不够礼貌。</p><h4>简单规则</h4><ul><li>不确定？说 Bonjour。</li><li>对方是朋友？可以说 Salut。</li><li>在商店/餐厅？一定说 Bonjour。</li></ul>",
+              "id": "formal-vs-informal"
+            },
+            {
+              "type": "exercise",
+              "title": "问候语练习",
+              "exerciseIds": [
+                109
+              ],
+              "id": "exercise"
+            },
+            {
+              "type": "text",
+              "title": "延伸：更多打招呼方式",
+              "content": "<p>法国人还经常说：</p><ul><li><strong>Ça va ?</strong>（你好吗？）—— 最万能的问候，回答也是 Ça va（挺好的）</li><li><strong>Bonsoir</strong>（晚上好）—— 傍晚 6 点以后用 Bonsoir 替代 Bonjour</li><li><strong>Au revoir</strong>（再见）—— 正式告别</li><li><strong>Bonne journée!</strong>（祝你今天愉快）—— 很多人告别时会加这一句</li></ul><p>你不需要一次全记住。先掌握 Bonjour 和 Salut 的区别就好。</p>",
+              "id": "extensions"
+            }
+          ]
+        },
+        {
+          "id": "30d-m01-l03",
+          "slug": "je-mappelle",
+          "title": "自我介绍：Je m'appelle...",
+          "description": "学会用法语说出自己的名字，听懂别人的自我介绍。",
+          "estimatedMinutes": 10,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "三秒钟学会自我介绍",
+              "content": "<p>法语自我介绍最简单的句式：</p><p><strong>Je m'appelle ______.</strong>（我叫______。）</p><p>例如：Je m'appelle Marie. / Je m'appelle Paul.</p><p>如果想问对方的名字：</p><p><strong>Comment tu t'appelles ?</strong>（你叫什么名字？—— 非正式）<br><strong>Comment vous appelez-vous ?</strong>（您叫什么名字？—— 正式）</p><p>注意：法语有「你」（tu）和「您」（vous）的区别。对朋友用 tu，对陌生人或长辈用 vous。</p>",
+              "id": "self-intro"
+            },
+            {
+              "type": "exercise",
+              "title": "自我介绍练习",
+              "exerciseIds": [
+                102,
+                200
+              ],
+              "id": "exercise"
+            },
+            {
+              "type": "maxtube_link",
+              "title": "去 Maxtube 听法国人自我介绍",
+              "url": "#maxtube-placeholder",
+              "description": "观看 Easy French 街头采访：法国人如何自我介绍。带双语字幕和跟读练习。",
+              "id": "maxtube"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "30d-m02",
+      "slug": "comprendre-les-expressions",
+      "title": "听懂法国人的日常表达",
+      "description": "从问候走向日常对话。学会听懂点餐、购物、问路等高频场景的关键表达。",
+      "objectives": [
+        "听懂咖啡馆点餐常用句",
+        "听懂数字和价格",
+        "听懂问路和指路的基本表达"
+      ],
+      "lessons": [
+        {
+          "id": "30d-m02-l01",
+          "slug": "au-cafe",
+          "title": "咖啡馆生存法语",
+          "description": "在法国咖啡馆点一杯咖啡，你需要听懂什么？",
+          "estimatedMinutes": 12,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "法国咖啡馆的点餐逻辑",
+              "content": "<p>法国咖啡馆和国内不太一样。你不是到柜台点完就走，而是坐下来，等服务生过来。</p><p>服务生通常会问：<strong>Vous désirez ?</strong>（您要点什么？）</p><p>你可以回答：</p><ul><li><strong>Un café, s'il vous plaît.</strong>（一杯咖啡，谢谢。）</li><li><strong>Un croissant.</strong>（一个牛角面包。）</li><li><strong>L'addition, s'il vous plaît.</strong>（买单，谢谢。）</li></ul><p>注意法国人点餐时几乎都会加一句 s'il vous plaît（请）。这不是客套，是基本礼仪。</p>",
+              "id": "cafe-phrases"
+            },
+            {
+              "type": "exercise",
+              "title": "咖啡馆场景练习",
+              "exerciseIds": [
+                107,
+                207
+              ],
+              "id": "exercise"
+            },
+            {
+              "type": "maxtube_link",
+              "title": "去 Maxtube 体验真实咖啡馆对话",
+              "url": "#maxtube-placeholder",
+              "description": "观看法国咖啡馆点餐实录，练习听力和跟读。",
+              "id": "maxtube"
+            }
+          ]
+        },
+        {
+          "id": "30d-m02-l02",
+          "slug": "au-marche",
+          "title": "逛巴黎市场",
+          "description": "学会听懂价格、重量和市场用语。",
+          "estimatedMinutes": 12,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "巴黎市场的声音",
+              "content": "<p>巴黎的露天市场（marché）是体验真实法语的最佳场所。摊主大声吆喝、顾客讨价还价，语速飞快。</p><p>你不需要听懂每一句话。只要能抓住关键信息就够了：</p><ul><li><strong>数字</strong>：Combien ça coûte ?（多少钱？）→ Deux euros cinquante.（两块五。）</li><li><strong>重量</strong>：Je voudrais deux cents grammes.（我要 200 克。）</li><li><strong>确认</strong>：C'est tout ?（就这些？）→ Oui, merci.</li></ul><p>市场里的法语比课本快 3 倍。但你会发现，在真实场景中，你比你想象的能听懂更多。</p>",
+              "id": "market-phrases"
+            },
+            {
+              "type": "exercise",
+              "title": "市场场景练习",
+              "exerciseIds": [
+                203,
+                111
+              ],
+              "id": "exercise"
+            },
+            {
+              "type": "text",
+              "title": "听力技巧：抓关键词",
+              "content": "<p>听不懂整句话没关系。学会抓关键词：</p><ul><li>听到 <strong>euros</strong> → 后面跟的是价格</li><li>听到 <strong>je voudrais</strong> → 后面跟的是对方想要的东西</li><li>听到 <strong>merci / au revoir</strong> → 对话即将结束</li></ul><p>这种「关键词抓取」技巧是听力理解的基础。不需要听懂每个词，抓住关键信息就达到目的了。</p>",
+              "id": "keyword-tips"
+            }
+          ]
+        },
+        {
+          "id": "30d-m02-l03",
+          "slug": "demander-son-chemin",
+          "title": "迷路了怎么办",
+          "description": "学会听懂问路和指路的基本表达。",
+          "estimatedMinutes": 10,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "问路只需要一句话",
+              "content": "<p>在法国迷路了？只需要一句：</p><p><strong>Excusez-moi, où est la gare ?</strong>（打扰一下，火车站在哪里？）</p><p>把 la gare 换成任何地点：la pharmacie（药店）、le musée（博物馆）、les toilettes（洗手间）。</p><p>听懂回答更难，但常见的就几种：</p><ul><li><strong>Tout droit.</strong>（一直走。）</li><li><strong>À gauche / À droite.</strong>（左转 / 右转。）</li><li><strong>C'est juste là.</strong>（就在那儿。）</li></ul>",
+              "id": "asking-directions"
+            },
+            {
+              "type": "exercise",
+              "title": "问路场景练习",
+              "exerciseIds": [
+                206
+              ],
+              "id": "exercise"
+            },
+            {
+              "type": "maxtube_link",
+              "title": "去 Maxtube 看法国人怎么指路",
+              "url": "#maxtube-placeholder",
+              "description": "观看真实问路场景视频，练习方位听力理解。",
+              "id": "maxtube"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "30d-m03",
+      "slug": "entrainement-input-reel",
+      "title": "真实法语输入训练",
+      "description": "把前两个模块学到的能力用到更复杂的真实视频中。不再有字幕提示，用耳朵去理解。",
+      "objectives": [
+        "适应更长的法语段落",
+        "在没有字幕辅助的情况下抓住大意",
+        "建立每天听法语的习惯"
+      ],
+      "lessons": [
+        {
+          "id": "30d-m03-l01",
+          "slug": "les-loisirs-des-francais",
+          "title": "法国人下班后做什么",
+          "description": "听法国人聊自己的爱好和日常活动。",
+          "estimatedMinutes": 12,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "从短语到段落",
+              "content": "<p>前两个模块你学会了听关键词。现在我们升级：听完整段落。</p><p>接下来这段视频里，法国人会用 3-5 句话描述自己的爱好。你不需要听懂每一句，试着回答这些问题：</p><ul><li>这个人喜欢做什么？</li><li>他多久做一次？（每天？每周？）</li><li>他为什么喜欢这个活动？</li></ul><p>听不懂的地方，不要倒回去重听。先往下走，最后再看字幕核对。</p>",
+              "id": "phrases-to-paragraphs"
+            },
+            {
+              "type": "exercise",
+              "title": "日常活动练习",
+              "exerciseIds": [
+                201,
+                205
+              ],
+              "id": "exercise"
+            },
+            {
+              "type": "maxtube_link",
+              "title": "去 Maxtube 听法国人聊爱好",
+              "url": "#maxtube-placeholder",
+              "description": "观看法国街头采访：你下班后做什么？练习段落级听力理解。",
+              "id": "maxtube"
+            }
+          ]
+        },
+        {
+          "id": "30d-m03-l02",
+          "slug": "chez-les-francais",
+          "title": "法国人的家",
+          "description": "听法国人描述自己的住所和居家生活。",
+          "estimatedMinutes": 12,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "你的听力进步了多少？",
+              "content": "<p>到了第三个模块，回顾一下你已经能听懂的东西：</p><ul><li>Bonjour / Salut / Merci / S'il vous plaît</li><li>数字和价格</li><li>Je m'appelle / Je voudrais</li><li>Tout droit / À gauche / À droite</li></ul><p>这些词你已经不需要字幕就能听出来了。这就是进步。</p><p>今天的主题是「家」。你会听到法国人描述自己的房子、房间和日常生活。试着听出这些关键词：</p><ul><li><strong>maison</strong>（房子）/ <strong>appartement</strong>（公寓）</li><li><strong>chambre</strong>（卧室）/ <strong>cuisine</strong>（厨房）/ <strong>salle de bain</strong>（浴室）</li><li><strong>grand</strong>（大的）/ <strong>petit</strong>（小的）</li></ul>",
+              "id": "progress-review"
+            },
+            {
+              "type": "exercise",
+              "title": "居家场景练习",
+              "exerciseIds": [
+                202,
+                209
+              ],
+              "id": "exercise"
+            },
+            {
+              "type": "text",
+              "title": "30 天计划：每天 10 分钟",
+              "content": "<p>这个课程给了你起步的框架。但要真正听懂法国人说话，关键是<strong>每天听</strong>。</p><h4>建议的每日计划</h4><ul><li><strong>5 分钟</strong>：看一段 Maxtube 视频（带双语字幕）</li><li><strong>3 分钟</strong>：关掉字幕再听一遍，试着抓关键词</li><li><strong>2 分钟</strong>：跟读其中一句你觉得好听的句子</li></ul><p>不需要每天学新内容。重复听同一个视频，直到你能不用字幕听懂 80%——这比每天换新视频效果好得多。</p>",
+              "id": "daily-plan"
+            }
+          ]
+        },
+        {
+          "id": "30d-m03-l03",
+          "slug": "demo-video-block",
+          "title": "试听：真实法语输入示例",
+          "description": "体验一段真实的法语视频，感受完整学习流程。",
+          "estimatedMinutes": 8,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "这一课你能获得什么",
+              "content": "<p>前面我们一直在「听」和「练」。这一课加上了<strong>视频</strong>——你会看到法国人说话时的表情、手势和语境。</p><p>视频是理解法语的重要工具。看到说话人的嘴唇动作和肢体语言，能帮你更好地理解他们在说什么。</p><p>下面是一段演示视频。如果你的网络或设备不支持视频播放，也可以直接跳到下方的 Maxtube 链接完成学习。</p>",
+              "id": "video-intro"
+            },
+            {
+              "type": "video",
+              "title": "演示：法国人日常对话",
+              "videoUrl": "/videos/demo.mp4",
+              "id": "demo-video"
+            },
+            {
+              "type": "maxtube_link",
+              "title": "去 Maxtube 看更多真实法语视频",
+              "url": "#maxtube-placeholder",
+              "description": "在 Maxtube 中观看完整的法语学习视频，带双语字幕和跟读练习。",
+              "id": "maxtube"
+            }
+          ]
+        },
+        {
+          "id": "30d-m03-l04",
+          "slug": "maxtube-ef105",
+          "title": "真实法语：波尔多的方言与词汇",
+          "description": "听 Easy French 街头采访，了解法国不同地区的词汇差异。",
+          "estimatedMinutes": 10,
+          "blocks": [
+            {
+              "type": "text",
+              "title": "法语不只有一种",
+              "content": "<p>你可能学过标准法语，但法国不同地区的人说话方式差别很大。</p><p>比如最经典的例子：<strong>chocolatine</strong> 还是 <strong>pain au chocolat</strong>？南方人说 chocolatine，巴黎人说 pain au chocolat。光是这一个词就能暴露你是哪里人。</p><p>下面这段视频来自 <strong>Easy French</strong> 频道，他们在波尔多街头采访当地人，问他们是否了解法国南方的特色词汇。你会听到真实的法语口语，语速比课本快很多。</p><h4>听的时候注意</h4><ul><li>你能听到哪些你认识的词？</li><li>说话人的语速比你预期的快还是慢？</li><li>有没有某个词你听了好几遍才听出来？</li></ul>",
+              "id": "dialect-intro"
+            },
+            {
+              "type": "video",
+              "title": "Easy French 街头采访：波尔多的方言词汇",
+              "asset": {
+                "channel": "EF",
+                "segmentId": "EF_105_seg001",
+                "videoUrl": "/content/videos/EF/EF_105_seg001.mp4",
+                "subtitleUrl": "/content/subtitles/EF/EF_105_seg001.json",
+                "materialUrl": "/content/materials/EF/EF_105_seg001.json"
+              },
+              "id": "ef105-video"
+            },
+            {
+              "type": "maxtube_link",
+              "title": "在 Maxtube 中完整体验这段视频",
+              "url": "#maxtube-placeholder",
+              "description": "前往 Maxtube 观看带双语字幕、跟读训练和学习资料的完整版本。",
+              "id": "maxtube"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

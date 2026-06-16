@@ -1,0 +1,2257 @@
+{
+  "exercises": [
+    {
+      "id": 200,
+      "title": "学习如何介绍自己的姓名和年龄，包含提问方式、常见错误和学习建议。 + 学习如何介绍自己的国籍、职业和居住地，并附有路人采",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_196_seg001_thumb.jpg",
+      "description": "本视频教授如何用法语进行自我介绍，涵盖姓名、年龄、国籍、职业和居住地。视频详细讲解了每项信息的表达方式和提问方法，并指出了常见的语言错误。此外，视频还提供了学习建议，并穿插了街头采访示例，最后通过完整的自我介绍总结了所学内容。",
+      "duration": 401,
+      "video": {
+        "url": "/videos/SEF/SEF_196_seg001.mp4",
+        "duration": 401,
+        "subtitles": "/videos/SEF/SEF_196_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "se présenter",
+              "right": "介绍自己"
+            },
+            {
+              "left": "familier",
+              "right": "口语的，非正式的"
+            },
+            {
+              "left": "feedback",
+              "right": "反馈"
+            },
+            {
+              "left": "originaire de",
+              "right": "原籍是，来自"
+            },
+            {
+              "left": "liaison",
+              "right": "连读（指法语中词末辅音与后一词词首元音的连读现象）"
+            },
+            {
+              "left": "retraité",
+              "right": "退休人员 / 已退休的"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (Présenter son nom : \"Je m'appelle\")",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Bonjour, je "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "m'appelle"
+            },
+            {
+              "type": "text",
+              "content": " Simon"
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Quelle est la manière correcte de demander l'âge de quelqu'un en français ?",
+          "question": "Quelle est la manière correcte de demander l'âge de quelqu'un en français ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tu es quel âge?"
+            },
+            {
+              "id": "b",
+              "text": "Vous avez quel âge?"
+            },
+            {
+              "id": "c",
+              "text": "Quel âge tu as?"
+            },
+            {
+              "id": "d",
+              "text": "Quel âge vous êtes?"
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文：“pour demander à quelqu'un son âge, on dit tu à quel âge, ou vous avez quel âge ?” 选项B是原文中给出的正确问法之一。"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« se présenter » signifie « 介绍自己 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« familier » signifie « 反馈 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« feedback » signifie « 反馈 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Pour dire son nom, on utilise je m'appelle ou de manière plus "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "familière"
+            },
+            {
+              "type": "text",
+              "content": ", moi, c'est."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "改写句子，使其更符合法语口语中介绍名字的习惯：\"Mon nom est Simon.\" "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Je m'appelle Simon."
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "les-salutations"
+    },
+    {
+      "id": 201,
+      "title": "定义爱好，分享个人兴趣，学习表达活动频率，并了解Easy French社区资源",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_184_seg001_thumb.jpg",
+      "description": "Cet épisode de Super Easy French présente le concept des hobbies ou passe-temps, définis comme des activités pratiquées pour le plaisir pendant le temps libre, sans obligation professionnelle. Il donne des exemples variés comme la lecture, le dessin, la cuisine ou l'apprentissage d'une langue. L'animatrice partage ses propres passe-temps, la lecture de romans contemporains et la photographie, et introduit des expressions courantes pour exprimer la fréquence d'une activité (par exemple, \"tous les jours\", \"souvent\", \"de temps en temps\", \"jamais\"). Enfin, l'épisode met en avant les ressources de la communauté Easy French, telles qu'un chat Discord quotidien et des appels vidéo hebdomadaires, pour aider les apprenants à progresser efficacement et de manière ludique.",
+      "duration": 294,
+      "video": {
+        "url": "/videos/SEF/SEF_184_seg001.mp4",
+        "duration": 294,
+        "subtitles": "/videos/SEF/SEF_184_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "un hobby / un passe-temps",
+              "right": "爱好，消遣（指在空闲时间为乐趣而进行的活动）"
+            },
+            {
+              "left": "captivant",
+              "right": "引人入胜的，迷人的"
+            },
+            {
+              "left": "bouleversant",
+              "right": "令人心碎的，震撼人心的"
+            },
+            {
+              "left": "se détendre",
+              "right": "放松，休息"
+            },
+            {
+              "left": "efficacement",
+              "right": "有效地，高效地"
+            },
+            {
+              "left": "ludique",
+              "right": "有趣的，好玩的（尤指学习或教学方法）"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (表达频率的副词和短语)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Pour dire à quelle fréquence on fait une activité, on utilise des expressions "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "comme"
+            },
+            {
+              "type": "text",
+              "content": " tout les jours. Tous les jours, tout le temps, tout le temps, souvent, souvent, de temps en temps."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (\"C'est\" + 形容词)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "C'est "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "captivant"
+            },
+            {
+              "type": "text",
+              "content": " et bouleversant."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Selon la vidéo, quelle est la définition d'un hobby ou d'un passe-temps ?",
+          "question": "Selon la vidéo, quelle est la définition d'un hobby ou d'un passe-temps ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Une activité que l'on fait pour le travail."
+            },
+            {
+              "id": "b",
+              "text": "Une obligation quotidienne."
+            },
+            {
+              "id": "c",
+              "text": "Une activité que l'on fait pendant son temps libre pour le plaisir."
+            },
+            {
+              "id": "d",
+              "text": "Une activité que l'on fait seulement pendant les vacances."
+            }
+          ],
+          "correct": "c",
+          "explanation": "原文提到 \"Ce sont des activités que l'on fait pendant son temps libre. Ce n'est pas pour le travail, ce n'est pas une obligation. C'est juste pour le plaisir.\" (这些是我们空闲时做的活动。它不是为了工作，也不是一种义务。它只是为了乐趣。)"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« un hobby / un passe-temps » signifie « 爱好，消遣（指在空闲时间为乐趣而进行的活动） ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« captivant » signifie « 令人心碎的，震撼人心的 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« bouleversant » signifie « 令人心碎的，震撼人心的 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Pour progresser "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "efficacement"
+            },
+            {
+              "type": "text",
+              "content": ", il est idéal de consacrer un peu de temps au français tous les jours."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : Translate the following sentence into French: \"我每周做几次瑜伽。\"\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Je fais du yoga plusieurs fois par semaine."
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "les-loisirs"
+    },
+    {
+      "id": 202,
+      "title": "学习家居词汇",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_128_seg001_thumb.jpg",
+      "description": "本集节目中，主讲人身处埃塞俄比亚的亚的斯亚贝巴，向初学者介绍与房屋主要房间相关的基本词汇。她详细描述了客厅（salon/séjour），包括沙发、靠垫、毯子、茶几、地毯和电视等家具。接着，她介绍了厨房，列举了炉灶、烤箱、水槽、冷冻柜和冰箱等电器。最后，她描述了卧室，提到了床、羽绒被、枕头和衣柜。",
+      "duration": 188,
+      "video": {
+        "url": "/videos/SEF/SEF_128_seg001.mp4",
+        "duration": 188,
+        "subtitles": "/videos/SEF/SEF_128_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "pièce",
+              "right": "房间，屋子"
+            },
+            {
+              "left": "salon",
+              "right": "客厅"
+            },
+            {
+              "left": "cuisine",
+              "right": "厨房"
+            },
+            {
+              "left": "chambre",
+              "right": "卧室"
+            },
+            {
+              "left": "canapé",
+              "right": "沙发"
+            },
+            {
+              "left": "couette",
+              "right": "羽绒被，被子"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (\"Il y a\" 用于表达存在)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Il y a généralement un salon, une cuisine, une "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "salle"
+            },
+            {
+              "type": "text",
+              "content": " de bain, des toilettes, une ou plusieurs chambres."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (介词 \"dans\" 和 \"chez\")",
+          "segments": [
+            {
+              "type": "text",
+              "content": "je suis actuellement à Addis-Abeba en Éthiopie, chez mon copain Emmanuel qui a un grand appartement dont j'ai voulu profiter pour "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "réaliser"
+            },
+            {
+              "type": "text",
+              "content": " cet épisode spécial débutant où je vais vous présenter le vocabulaire lié à la maison. Je suis dans le salon."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Selon le texte, quel meuble se trouve dans le salon ?",
+          "question": "Selon le texte, quel meuble se trouve dans le salon ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Un lit"
+            },
+            {
+              "id": "b",
+              "text": "Un placard"
+            },
+            {
+              "id": "c",
+              "text": "Un canapé"
+            },
+            {
+              "id": "d",
+              "text": "Un évier"
+            }
+          ],
+          "correct": "c",
+          "explanation": "原文提到 \"Dans le salon, il y a un grand canapé avec beaucoup de coussins et une couverture pour quand il fait froid.\" (客厅里有一个大沙发)。"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« pièce » signifie « 房间，屋子 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« salon » signifie « 厨房 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« cuisine » signifie « 厨房 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Dans la "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "cuisine"
+            },
+            {
+              "type": "text",
+              "content": ", il y a des plaques de cuisson et un four."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : Translate the following sentence into French: \"卧室是睡觉的房间。\"\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "La chambre est la pièce où on dort."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Reformulez la phrase suivante en utilisant \"Il n'y a pas de...\" : \"Ici, il y a une salle à manger.\" "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Ici, il n'y a pas de salle à manger."
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "le-logement"
+    },
+    {
+      "id": 203,
+      "title": "探索巴黎市场",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_167_seg001_thumb.jpg",
+      "description": "这段视频带我们走进巴黎 13 区的 Auguste Blanqui 市场，重点介绍了蔬果摊位（Le Primeur）。主持人讲解了巴黎市场中水果和蔬菜的售卖方式（按公斤或按个计价），介绍了梨、橙子、苹果、彩椒等常年供应的品种，以及油桃、桃子、杏子等夏季特有水果，最后还提到了热带水果及其价格。",
+      "duration": 316,
+      "video": {
+        "url": "/videos/SEF/SEF_167_seg001.mp4",
+        "duration": 316,
+        "subtitles": "/videos/SEF/SEF_167_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "arrondissement",
+              "right": "（法国城市的）区"
+            },
+            {
+              "left": "à la pièce",
+              "right": "按个计价，按件计价"
+            },
+            {
+              "left": "grignoter",
+              "right": "吃零食，（一点一点地）啃，吃"
+            },
+            {
+              "left": "confiture",
+              "right": "果酱"
+            },
+            {
+              "left": "exotique",
+              "right": "异国的，热带的"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (代动词表示被动意义 (Le pronominal à sens passif))",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Certains fruits, certains légumes "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "s'achètent"
+            },
+            {
+              "type": "text",
+              "content": " au kilo"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (代词 'en' 代替由部分冠词或 de 引导的名词)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "on peut aussi "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "en"
+            },
+            {
+              "type": "text",
+              "content": " faire des confitures."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "D'où viennent les oranges maltaises mentionnées dans la vidéo ?",
+          "question": "D'où viennent les oranges maltaises mentionnées dans la vidéo ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Du Portugal"
+            },
+            {
+              "id": "b",
+              "text": "De Tunisie"
+            },
+            {
+              "id": "c",
+              "text": "De France"
+            },
+            {
+              "id": "d",
+              "text": "De Thaïlande"
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文中提到：'elles s'appelle des oranges maltaises, mais elles viennent de Tunisie'."
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« arrondissement » signifie « （法国城市的）区 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« à la pièce » signifie « 吃零食，（一点一点地）啃，吃 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« grignoter » signifie « 吃零食，（一点一点地）啃，吃 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Certains fruits, certains légumes s'achètent au kilo et d'autres directement à la "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "pièce"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : Les abricots sont des fruits très populaires en été.\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "杏子是夏天非常受欢迎的水果。"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Remplacez le complément par le pronom 'en' : On peut faire des confitures avec ces fruits. "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "On peut en faire des confitures."
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "les-repas"
+    },
+    {
+      "id": 204,
+      "title": "了解巴黎主要公共交通",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_155_seg001_thumb.jpg",
+      "description": "本视频介绍了巴黎主要的公共交通工具——地铁和公交车。内容涵盖了如何使用Navigo交通卡（包括月卡和次卡）、单张车票的价格及其适用范围，以及在乘坐地铁和公交车时的刷卡与换乘注意事项。",
+      "duration": 224,
+      "video": {
+        "url": "/videos/SEF/SEF_155_seg001.mp4",
+        "duration": 224,
+        "subtitles": "/videos/SEF/SEF_155_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "moyen de transport",
+              "right": "交通工具"
+            },
+            {
+              "left": "abonnement",
+              "right": "（交通卡、报刊等的）订阅，月票/季票"
+            },
+            {
+              "left": "trajet à l'unité",
+              "right": "单次行程（按次计费）"
+            },
+            {
+              "left": "recharger",
+              "right": "充值，充电"
+            },
+            {
+              "left": "valider",
+              "right": "确认，刷卡（使票证生效）"
+            },
+            {
+              "left": "embouteillage",
+              "right": "交通堵塞，塞车"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (Il faut + 动词原形)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Pour prendre le métro, il "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "faut"
+            },
+            {
+              "type": "text",
+              "content": " avoir une carte navigo."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (Pour + 动词原形)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "À Paris, on prend souvent le "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "bus"
+            },
+            {
+              "type": "text",
+              "content": " pour faire de courte distance."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Selon la vidéo, combien coûte un ticket ?",
+          "question": "Selon la vidéo, combien coûte un ticket ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Un euro"
+            },
+            {
+              "id": "b",
+              "text": "Deux euros"
+            },
+            {
+              "id": "c",
+              "text": "Deux euros, dix"
+            },
+            {
+              "id": "d",
+              "text": "Trois euros"
+            }
+          ],
+          "correct": "c",
+          "explanation": "原文明确提到 \"un ticket, coûte deux euros, dix\"。"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« moyen de transport » signifie « 交通工具 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« abonnement » signifie « 单次行程（按次计费） ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« trajet à l'unité » signifie « 单次行程（按次计费） ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Elaine "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "recharge"
+            },
+            {
+              "type": "text",
+              "content": " sa carte navigo à la machine."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将句子 'Il faut avoir une carte navigo' 改写为使用 'On doit' 的形式。 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "On doit avoir une carte navigo."
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "le-travail"
+    },
+    {
+      "id": 205,
+      "title": "运动项目、频率与参与动机",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 9,
+      "collection": "Easy French",
+      "thumbnail": "/videos/SEF/EF_150_seg001_thumb.jpg",
+      "description": "这段视频通过街头采访的形式，探讨了巴黎路人的运动习惯。受访者分享了他们从事的各种运动（如瑜伽、普拉提、拳击、足球、攀岩等）、运动的频率以及坚持或放弃运动的原因，如时间管理、金钱成本和社交需求。最后，视频还宣传了相关的法语学习资源。",
+      "duration": 257,
+      "video": {
+        "url": "/videos/SEF/EF_150_seg001.mp4",
+        "duration": 257,
+        "subtitles": "/videos/SEF/EF_150_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "rentable",
+              "right": "划算的，有收益的，盈利的"
+            },
+            {
+              "left": "souplesse",
+              "right": "柔韧性，灵活性"
+            },
+            {
+              "left": "musculation",
+              "right": "肌肉训练，力量训练，健身"
+            },
+            {
+              "left": "escalade",
+              "right": "攀岩"
+            },
+            {
+              "left": "fréquence",
+              "right": "频率"
+            },
+            {
+              "left": "conviabilité",
+              "right": "（原文拼写错误，应为convivialité）欢乐，友好，社交性"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (代词 \"en\" 代替由 \"de\" 引导的名词短语)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "devrais"
+            },
+            {
+              "type": "text",
+              "content": " en refaire, mais... Non."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (\"pour que\" 引导目的从句并接虚拟式)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "J'y vais pas assez "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "souvent"
+            },
+            {
+              "type": "text",
+              "content": " pour que ça soit rentable."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Pourquoi la personne interviewée aime-t-elle le football ?",
+          "question": "Pourquoi la personne interviewée aime-t-elle le football ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Parce que c'est un sport individuel."
+            },
+            {
+              "id": "b",
+              "text": "Parce que c'est un moment de conviabilité entre amis."
+            },
+            {
+              "id": "c",
+              "text": "Parce que ça coûte très cher."
+            },
+            {
+              "id": "d",
+              "text": "Parce qu'elle veut devenir professionnelle."
+            }
+          ],
+          "correct": "b",
+          "explanation": "原文中提到：'Et c'est un moment de conviabilité entre amis.'"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« rentable » signifie « 划算的，有收益的，盈利的 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« souplesse » signifie « 肌肉训练，力量训练，健身 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« musculation » signifie « 肌肉训练，力量训练，健身 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "J'y vais pas assez souvent pour que ça soit "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "rentable"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 我有时间的时候在家里做力量训练。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "De la musculation chez moi, quand j'ai le temps."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将句子中的名词短语用代词 'en' 替换：'Je devrais refaire du sport.' "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Je devrais en refaire."
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "la-sante"
+    },
+    {
+      "id": 206,
+      "title": "法语问路与指路",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_147_seg001_thumb.jpg",
+      "description": "本视频教学如何用法语询问和指引路线，涵盖了药店、取款机等常见地点，以及“直走”、“右转”等方向表达。",
+      "duration": 191,
+      "video": {
+        "url": "/videos/SEF/SEF_147_seg001.mp4",
+        "duration": 191,
+        "subtitles": "/videos/SEF/SEF_147_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "quartier",
+              "right": "街区，附近区域"
+            },
+            {
+              "left": "distributeur",
+              "right": "自动取款机 (ATM)"
+            },
+            {
+              "left": "retirer",
+              "right": "取（钱），提取"
+            },
+            {
+              "left": "rond point",
+              "right": "环岛，圆形路口"
+            },
+            {
+              "left": "tout droit",
+              "right": "直着走，径直"
+            },
+            {
+              "left": "au bout de",
+              "right": "在...的尽头"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (代词 en 的用法)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Oui, je cherche une pharmacie, "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "il"
+            },
+            {
+              "type": "text",
+              "content": " y en a une ici ?"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (jusqu'au 的缩合用法)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Vous continuez tout "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "droit"
+            },
+            {
+              "type": "text",
+              "content": " jusqu'au rond point"
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Où se trouve la pharmacie ?",
+          "question": "Où se trouve la pharmacie ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Au bout de la rue"
+            },
+            {
+              "id": "b",
+              "text": "Sur le boulevard"
+            },
+            {
+              "id": "c",
+              "text": "À côté de la station de métro"
+            },
+            {
+              "id": "d",
+              "text": "Près du rond-point"
+            }
+          ],
+          "correct": "c",
+          "explanation": "原文中提到 \"la pharmacie est là juste à côté de la station de métro\"。"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« quartier » signifie « 街区，附近区域 ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« distributeur » signifie « 取（钱），提取 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« retirer » signifie « 取（钱），提取 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Prenez la prochaine "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "droite"
+            },
+            {
+              "type": "text",
+              "content": ", marchez 100 mètres et la pharmacie est là."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : We can withdraw money over there.\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "On peut retirer de l'argent là-bas."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "将陈述句 \"Vous tournez à gauche\" 改为命令式  以给出指令。 "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Tournez à gauche."
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "les-voyages"
+    },
+    {
+      "id": 207,
+      "title": "咖啡馆与面包店点餐：实用法语表达",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_168_seg001_thumb.jpg",
+      "description": "在法国咖啡馆、面包店点餐及购买交通票时所需的基本法语表达",
+      "duration": 211,
+      "video": {
+        "url": "/videos/SEF/SEF_168_seg001.mp4",
+        "duration": 211,
+        "subtitles": "/videos/SEF/SEF_168_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "allongé",
+              "right": "美式咖啡（一种加入热水稀释的意式浓缩咖啡）"
+            },
+            {
+              "left": "l'addition",
+              "right": "账单"
+            },
+            {
+              "left": "en espèce",
+              "right": "用现金（支付）"
+            },
+            {
+              "left": "la monnaie",
+              "right": "找零，零钱"
+            },
+            {
+              "left": "une part de",
+              "right": "一份，一片（用于食物）"
+            },
+            {
+              "left": "une formule déjeunée",
+              "right": "午餐套餐"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (礼貌请求：s'il vous plaît)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Un café "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "s'il"
+            },
+            {
+              "type": "text",
+              "content": " vous plaît."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (礼貌点餐/请求：Je voudrais...)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je voudrais intiquer pour aller à l'aéroport "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Charles"
+            },
+            {
+              "type": "text",
+              "content": " de Gaulle s'il vous plaît."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "根据对话，如果消费金额低于10欧元，通常需要用什么方式支付？",
+          "question": "根据对话，如果消费金额低于10欧元，通常需要用什么方式支付？",
+          "options": [
+            {
+              "id": "a",
+              "text": "Par carte"
+            },
+            {
+              "id": "b",
+              "text": "En espèce"
+            },
+            {
+              "id": "c",
+              "text": "Par chèque"
+            },
+            {
+              "id": "d",
+              "text": "Par virement"
+            }
+          ],
+          "correct": "b",
+          "explanation": "对话中提到 \"La carte c'est à partir de 10 euros à l'heure en espèce.\"，意思是刷卡消费需满10欧元，否则需用现金支付。"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« allongé » signifie « 美式咖啡（一种加入热水稀释的意式浓缩咖啡） ».",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« l'addition » signifie « 用现金（支付） ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« en espèce » signifie « 用现金（支付） ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "请根据原文填空：Excusez-moi. Oui, l'"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "addition"
+            },
+            {
+              "type": "text",
+              "content": "_ s'il vous plaît."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 请翻译这句话：'Je vous réchauffe la kiche.' "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "我为您加热乳蛋饼。"
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "les-loisirs"
+    },
+    {
+      "id": 208,
+      "title": "找住宿：到达法国后的旅馆入住",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/EF_pGFvNYUwaEw_seg001_thumb.jpg",
+      "description": "一个旅行者到达法国后问路、找住宿、入住旅馆的完整场景",
+      "duration": 311,
+      "video": {
+        "url": "/videos/SEF/EF_pGFvNYUwaEw_seg001.mp4",
+        "duration": 311,
+        "subtitles": "/videos/SEF/EF_pGFvNYUwaEw_seg001.vtt"
+      },
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot à sa traduction.",
+          "pairs": [
+            {
+              "left": "hébergement",
+              "right": "住宿"
+            },
+            {
+              "left": "chambre",
+              "right": "房间"
+            },
+            {
+              "left": "billet d'avion",
+              "right": "机票"
+            },
+            {
+              "left": "réserver",
+              "right": "预订"
+            },
+            {
+              "left": "valise",
+              "right": "行李箱"
+            },
+            {
+              "left": "voyage",
+              "right": "旅行"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (预订住宿)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je voudrais "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "réserver"
+            },
+            {
+              "type": "text",
+              "content": " une chambre pour deux nuits."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (到达酒店)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je suis arrivé à mon "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "hébergement"
+            },
+            {
+              "type": "text",
+              "content": " en fin d'après-midi."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Quand vous arrivez à l'hôtel, que dites-vous ?",
+          "question": "Quand vous arrivez à l'hôtel, que dites-vous ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "J'ai une réservation au nom de..."
+            },
+            {
+              "id": "b",
+              "text": "Je veux manger maintenant."
+            },
+            {
+              "id": "c",
+              "text": "Où est la gare ?"
+            }
+          ],
+          "correct": "a",
+          "explanation": "Quand on arrive à l'hôtel, on dit qu'on a une réservation."
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« Hébergement » signifie « 住宿 » en chinois.",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« Chambre » signifie « 餐厅 » en chinois.",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« Billet d'avion » signifie « 机票 » en chinois.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez. (看房间)",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Elle me montre ma "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "chambre"
+            },
+            {
+              "type": "text",
+              "content": " et me dit : Voilà votre chambre."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 我想要预订一个房间\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Je voudrais réserver une chambre"
+            }
+          ]
+        }
+      ],
+      "_moduleSlug": "les-voyages"
+    },
+    {
+      "id": 209,
+      "title": "房屋内部：浴室、走廊与厨房",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_128_seg002_thumb.jpg",
+      "description": "继续学习家居词汇：浴室、卫生间、走廊和厨房",
+      "duration": 120,
+      "video": {
+        "url": "/videos/SEF/SEF_128_seg002.mp4",
+        "duration": 120,
+        "subtitles": "/videos/SEF/SEF_128_seg002.vtt"
+      },
+      "_moduleSlug": "le-logement",
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot.",
+          "pairs": [
+            {
+              "left": "la salle de bain",
+              "right": "浴室"
+            },
+            {
+              "left": "les toilettes",
+              "right": "卫生间"
+            },
+            {
+              "left": "le lavabo",
+              "right": "洗手池"
+            },
+            {
+              "left": "la douche",
+              "right": "淋浴"
+            },
+            {
+              "left": "le couloir",
+              "right": "走廊"
+            },
+            {
+              "left": "la cuisine",
+              "right": "厨房"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Il y a aussi un lavabo et une douche. La "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "salle de bain"
+            },
+            {
+              "type": "text",
+              "content": ", les toilettes."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "La cuisine est au bout du "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "couloir"
+            },
+            {
+              "type": "text",
+              "content": "."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Où trouve-t-on un four ?",
+          "question": "Où trouve-t-on un four ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Dans la cuisine"
+            },
+            {
+              "id": "b",
+              "text": "Dans la salle de bain"
+            },
+            {
+              "id": "c",
+              "text": "Dans le couloir"
+            }
+          ],
+          "correct": "a"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "En France, les toilettes sont parfois séparées de la salle de bain.",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "Le lavabo est dans le couloir.",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "La cuisine est au bout du couloir.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 浴室里有淋浴。\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Il y a une douche dans la salle de bain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 210,
+      "title": "在法国看医生：就医经历与表达",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_159_seg001_thumb.jpg",
+      "description": "学习在法国看医生：预约、描述症状、理解医嘱",
+      "duration": 200,
+      "video": {
+        "url": "/videos/SEF/SEF_159_seg001.mp4",
+        "duration": 200,
+        "subtitles": "/videos/SEF/SEF_159_seg001.vtt"
+      },
+      "_moduleSlug": "la-sante",
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot.",
+          "pairs": [
+            {
+              "left": "le médecin",
+              "right": "医生"
+            },
+            {
+              "left": "le rendez-vous",
+              "right": "预约"
+            },
+            {
+              "left": "la pharmacie",
+              "right": "药房"
+            },
+            {
+              "left": "l'ordonnance",
+              "right": "处方"
+            },
+            {
+              "left": "avoir mal",
+              "right": "疼痛"
+            },
+            {
+              "left": "le symptôme",
+              "right": "症状"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je voudrais prendre "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "rendez-vous"
+            },
+            {
+              "type": "text",
+              "content": " chez le médecin."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "J'ai "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "mal à la tête"
+            },
+            {
+              "type": "text",
+              "content": " depuis deux jours."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Que dit le médecin ?",
+          "question": "Que dit le médecin ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Prenez ce médicament trois fois par jour."
+            },
+            {
+              "id": "b",
+              "text": "Vous pouvez aller au cinéma."
+            },
+            {
+              "id": "c",
+              "text": "Le temps est beau."
+            }
+          ],
+          "correct": "a"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« Ordonnance » signifie « 药房 ».",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "text": "« Avoir mal à » signifie « ……疼 ».",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "text": "« Prendre rendez-vous » signifie « 预约 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 我头疼\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "J'ai mal à la tête"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 211,
+      "title": "巴黎人的职业：街头采访谈工作",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 9,
+      "collection": "Easy French",
+      "thumbnail": "/videos/SEF/EF_95_seg001_thumb.jpg",
+      "description": "在巴黎街头采访路人，了解不同职业的法语表达",
+      "duration": 300,
+      "video": {
+        "url": "/videos/SEF/EF_95_seg001.mp4",
+        "duration": 300,
+        "subtitles": "/videos/SEF/EF_95_seg001.vtt"
+      },
+      "_moduleSlug": "le-travail",
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot.",
+          "pairs": [
+            {
+              "left": "le métier",
+              "right": "职业"
+            },
+            {
+              "left": "l'ingénieur",
+              "right": "工程师"
+            },
+            {
+              "left": "le professeur",
+              "right": "老师"
+            },
+            {
+              "left": "l'étudiant",
+              "right": "学生"
+            },
+            {
+              "left": "le développeur",
+              "right": "开发者"
+            },
+            {
+              "left": "le serveur",
+              "right": "服务员"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Quelle est votre "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "profession"
+            },
+            {
+              "type": "text",
+              "content": " ?"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je suis "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "ingénieur"
+            },
+            {
+              "type": "text",
+              "content": " dans une entreprise."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Comment demandez-vous le métier ?",
+          "question": "Comment demandez-vous le métier de quelqu'un ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Qu'est-ce que tu fais dans la vie ?"
+            },
+            {
+              "id": "b",
+              "text": "Comment tu t'appelles ?"
+            },
+            {
+              "id": "c",
+              "text": "Où habites-tu ?"
+            }
+          ],
+          "correct": "a"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "« Métier » et « profession » sont des synonymes.",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« Un serveur » travaille dans un hôpital.",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« Un développeur » travaille avec des ordinateurs.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 你做什么工作？\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Qu'est-ce que tu fais dans la vie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 212,
+      "title": "请朋友来家里：用法语谈论未来计划",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_175_seg001_thumb.jpg",
+      "description": "学习用法语谈论未来计划、邀请朋友、组织聚会",
+      "duration": 339,
+      "video": {
+        "url": "/videos/SEF/SEF_175_seg001.mp4",
+        "duration": 339,
+        "subtitles": "/videos/SEF/SEF_175_seg001.vtt"
+      },
+      "_moduleSlug": "le-logement",
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot.",
+          "pairs": [
+            {
+              "left": "inviter",
+              "right": "邀请"
+            },
+            {
+              "left": "organiser",
+              "right": "组织"
+            },
+            {
+              "left": "une soirée",
+              "right": "晚会"
+            },
+            {
+              "left": "prévoir",
+              "right": "计划"
+            },
+            {
+              "left": "le week-end",
+              "right": "周末"
+            },
+            {
+              "left": "chez moi",
+              "right": "在我家"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je vais "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "inviter"
+            },
+            {
+              "type": "text",
+              "content": " des amis ce week-end."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Est-ce que tu veux venir "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "chez moi"
+            },
+            {
+              "type": "text",
+              "content": " ce soir ?"
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Comment proposez-vous une soirée ?",
+          "question": "Comment proposez-vous une soirée à un ami ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Tu veux venir dîner chez moi samedi ?"
+            },
+            {
+              "id": "b",
+              "text": "Il fait beau aujourd'hui."
+            },
+            {
+              "id": "c",
+              "text": "Où est la gare ?"
+            }
+          ],
+          "correct": "a"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "Pour parler de l'avenir, on peut utiliser le futur proche.",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« Organiser une fête » signifie « 取消聚会 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "« Chez moi » signifie « 在我家 ».",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 周末你想来我家吗？\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "Tu veux venir chez moi le week-end"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 213,
+      "title": "巴黎药房：买药与处方",
+      "level": "A1",
+      "theme": "Vie quotidienne",
+      "collectionId": 8,
+      "collection": "Super Easy French",
+      "thumbnail": "/videos/SEF/SEF_169_seg001_thumb.jpg",
+      "description": "探索巴黎著名药房，学习药房相关词汇和购药表达",
+      "duration": 227,
+      "video": {
+        "url": "/videos/SEF/SEF_169_seg001.mp4",
+        "duration": 227,
+        "subtitles": "/videos/SEF/SEF_169_seg001.vtt"
+      },
+      "_moduleSlug": "la-sante",
+      "steps": [
+        {
+          "type": "match_pairs",
+          "instruction": "Associez chaque mot.",
+          "pairs": [
+            {
+              "left": "la pharmacie",
+              "right": "药房"
+            },
+            {
+              "left": "le médicament",
+              "right": "药"
+            },
+            {
+              "left": "l'ordonnance",
+              "right": "处方"
+            },
+            {
+              "left": "sans ordonnance",
+              "right": "非处方"
+            },
+            {
+              "left": "la parapharmacie",
+              "right": "药妆"
+            },
+            {
+              "left": "ouvert",
+              "right": "营业中"
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Je voudrais acheter des "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "médicaments"
+            },
+            {
+              "type": "text",
+              "content": " sans ordonnance."
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Complétez.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Cette pharmacie est "
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "ouverte"
+            },
+            {
+              "type": "text",
+              "content": " tous les jours."
+            }
+          ]
+        },
+        {
+          "type": "multiple_choice",
+          "instruction": "Que pouvez-vous acheter en pharmacie ?",
+          "question": "Que pouvez-vous acheter en pharmacie ?",
+          "options": [
+            {
+              "id": "a",
+              "text": "Des médicaments et des produits de parapharmacie"
+            },
+            {
+              "id": "b",
+              "text": "Des fruits et des légumes"
+            },
+            {
+              "id": "c",
+              "text": "Des livres et des jouets"
+            }
+          ],
+          "correct": "a"
+        },
+        {
+          "type": "true_false",
+          "instruction": "Vrai ou faux ?",
+          "statements": [
+            {
+              "id": 1,
+              "text": "En France, certains médicaments nécessitent une ordonnance.",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "text": "« Sans ordonnance » signifie « 需要处方 ».",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "text": "La parapharmacie vend des produits de beauté.",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "type": "fill_blank",
+          "instruction": "Traduisez en français.",
+          "segments": [
+            {
+              "type": "text",
+              "content": "Traduisez : 我需要买药\n"
+            },
+            {
+              "type": "blank",
+              "id": 1,
+              "answer": "J'ai besoin d'acheter des médicaments"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generatedAt": "2026-05-29T18:08:55.149Z",
+  "source": "course_batch2_v1"
+}
