@@ -1,0 +1,86 @@
+/**
+ * MAXCLASS 自定义工具类 — 1:1 移植自 MAXCLASS_V1_HANDOFF_2026-06-14/src/assets/main.css
+ *
+ * 包含：
+ *   - level-badge / level-A1..B2：级别徽章（4 个 CEFR 级别）
+ *   - btn-primary / btn-secondary / btn-cta：按钮
+ *   - card：卡片（hover 上浮）
+ *   - container-app：容器
+ *   - skeleton：骨架屏
+ *   - flip-card：翻卡（词汇练习用）
+ *
+ * 使用项目已有的 primary palette（tailwind.config.ts）和 cta 色。
+ *
+ * 注：原版使用 `@layer components { ... }` 包裹，但该写法要求所在 CSS 文件
+ * 同时声明 `@tailwind components` 指令（Next.js 中每个 CSS 文件独立编译）。
+ * 这里改为直接写普通 CSS 规则（@apply 仍可工作，因为 Tailwind/PostCSS 仍会
+ * 处理本文件），与 maxclass-skin.css 保持一致。
+ */
+
+/* Level badges */
+.level-badge {
+  @apply inline-block px-3 py-1 rounded-full text-xs font-bold text-white uppercase tracking-wide;
+}
+.level-A1 { @apply bg-green-600; }
+.level-A2 { @apply bg-blue-600; }
+.level-B1 { @apply bg-orange-500; }
+.level-B2 { @apply bg-purple-600; }
+
+/* Buttons */
+.btn-primary {
+  @apply bg-primary-700 hover:bg-primary-800 text-white font-medium py-2.5 px-6 rounded-lg transition-all duration-200 active:scale-[0.97];
+}
+.btn-secondary {
+  @apply bg-white hover:bg-gray-50 text-primary-700 font-medium py-2.5 px-6 rounded-lg border border-primary-700 transition-all duration-200;
+}
+.btn-cta {
+  @apply bg-cta hover:bg-orange-700 text-white font-bold py-3 px-8 rounded-lg transition-all duration-200 active:scale-[0.97];
+}
+
+/* Cards */
+.card {
+  @apply bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border border-gray-100;
+}
+.card:hover {
+  transform: translateY(-2px);
+}
+
+/* Container helper */
+.container-app {
+  @apply max-w-7xl mx-auto px-4;
+}
+
+/* Skeleton loading */
+.skeleton {
+  @apply animate-pulse bg-gray-200 rounded;
+}
+
+/* Flip card for vocabulary */
+.flip-card { perspective: 600px; }
+.flip-card-inner {
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.flip-card-inner.flipped { transform: rotateY(180deg); }
+.flip-card-front,
+.flip-card-back {
+  backface-visibility: hidden;
+  position: absolute;
+  inset: 0;
+}
+.flip-card-back { transform: rotateY(180deg); }
+
+/* Page transitions (Vue transition；React 端可不用，但保留 CSS) */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}

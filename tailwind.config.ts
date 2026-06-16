@@ -85,6 +85,21 @@ const config: Config = {
           yellow: '#FACC15',
           red: '#FF6B6B',
         },
+        // MAXCLASS palette（别名 mc-primary，避免破坏现有 primary）
+        // 用于 /parcours 路由的新组件，配合 maxclass-skin.css 全局皮肤
+        'mc-primary': {
+          50: '#e8eaf6',
+          100: '#c5cae9',
+          200: '#9fa8da',
+          300: '#7986cb',
+          400: '#5c6bc0',
+          500: '#3f51b5',
+          600: '#3949ab',
+          700: '#303f9f',
+          800: '#283593',
+          900: '#1a237e',
+        },
+        cta: '#ff6f00',
       },
       fontFamily: {
         sans: [

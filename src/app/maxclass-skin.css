@@ -1,0 +1,718 @@
+/* ========================================
+   MAXCLASS 全局皮肤层
+   把现有 neo-brutalism（粗黑边 + 硬阴影 + 柠檬绿）统一为 MAXCLASS 冷靛蓝软阴影风格。
+   选择器技术沿用 globals.css 旧的 [data-course-soft] 块（[class*="..."] 属性匹配）。
+   触发条件：<body data-maxclass-skin="true">
+   ======================================== */
+
+/* ---------- 调色板 + 基础 ---------- */
+[data-maxclass-skin="true"] {
+  --mc-primary-50: #e8eaf6;
+  --mc-primary-100: #c5cae9;
+  --mc-primary-200: #9fa8da;
+  --mc-primary-300: #7986cb;
+  --mc-primary-400: #5c6bc0;
+  --mc-primary-500: #3f51b5;
+  --mc-primary-600: #3949ab;
+  --mc-primary-700: #303f9f;
+  --mc-primary-800: #283593;
+  --mc-primary-900: #1a237e;
+  --mc-cta: #ff6f00;
+  color-scheme: light;
+  background-color: #f9fafb;
+  color: #1f2937;
+  font-family: var(--font-roboto), 'Roboto', 'Nunito', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+}
+
+[data-maxclass-skin="true"] button,
+[data-maxclass-skin="true"] a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+[data-maxclass-skin="true"] audio,
+[data-maxclass-skin="true"] video {
+  border-radius: 12px;
+}
+
+/* ---------- 边框软化（覆盖 border-black / border-[Npx]）---------- */
+[data-maxclass-skin="true"] [class*="border-black"],
+[data-maxclass-skin="true"] [class*="border-[2px]"],
+[data-maxclass-skin="true"] [class*="border-[3px]"],
+[data-maxclass-skin="true"] [class*="border-[4px]"] {
+  border-color: #e5e7eb !important;
+  border-width: 1px !important;
+}
+
+/* ---------- 硬阴影软化（覆盖 shadow-[...] / shadow-neo-* / shadow-hard-*）---------- */
+[data-maxclass-skin="true"] [class*="shadow-["],
+[data-maxclass-skin="true"] [class*="shadow-neo"],
+[data-maxclass-skin="true"] [class*="shadow-hard"] {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07) !important;
+}
+
+/* ---------- Neo-brutalism 色块统一为 MAXCLASS 冷靛蓝/暖辅色 ---------- */
+
+/* 柠檬绿/亮绿主色块 → primary-700 */
+[data-maxclass-skin="true"] [class*="bg-[#B4F416]"],
+[data-maxclass-skin="true"] [class*="bg-[#9cff2e]"],
+[data-maxclass-skin="true"] [class*="bg-[#ccff00]"],
+[data-maxclass-skin="true"] [class*="bg-[#ccff48]"],
+[data-maxclass-skin="true"] [class*="bg-[#D4FF00]"],
+[data-maxclass-skin="true"] [class*="bg-[#D4FF32]"],
+[data-maxclass-skin="true"] [class*="bg-[#99CC00]"],
+[data-maxclass-skin="true"] [class*="bg-[#A3E014]"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* 浅黄绿背景 → 浅靛蓝 */
+[data-maxclass-skin="true"] [class*="bg-[#F0FFC2]"],
+[data-maxclass-skin="true"] [class*="bg-[#EEFFA8]"],
+[data-maxclass-skin="true"] [class*="bg-[#E8F5B8]"],
+[data-maxclass-skin="true"] [class*="bg-[#F6FFD9]"] {
+  background-color: var(--mc-primary-50) !important;
+  color: var(--mc-primary-900) !important;
+}
+
+/* 深绿（Tailwind green 系，原为"成功/活跃"装饰色）→ primary-700 */
+[data-maxclass-skin="true"] [class*="bg-[#16A34A]"],
+[data-maxclass-skin="true"] [class*="bg-[#22C55E]"],
+[data-maxclass-skin="true"] [class*="bg-[#4ADE80]"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* 浅绿背景 → 浅靛蓝 */
+[data-maxclass-skin="true"] [class*="bg-[#86EFAC]"],
+[data-maxclass-skin="true"] [class*="bg-[#F0FDF4]"] {
+  background-color: var(--mc-primary-50) !important;
+  color: var(--mc-primary-900) !important;
+}
+
+/* 蓝色色块 → 统一为 primary-700（含 Tailwind blue/indigo）*/
+[data-maxclass-skin="true"] [class*="bg-[#3B82F6]"],
+[data-maxclass-skin="true"] [class*="bg-[#60A5FA]"],
+[data-maxclass-skin="true"] [class*="bg-[#6366F1]"],
+[data-maxclass-skin="true"] [class*="bg-[#4F46E5]"],
+[data-maxclass-skin="true"] [class*="bg-[#4ECDC4]"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* 浅蓝/浅青绿背景 → 浅靛蓝 */
+[data-maxclass-skin="true"] [class*="bg-[#3B82F6]/40"],
+[data-maxclass-skin="true"] [class*="bg-[#4ECDC4]/40"],
+[data-maxclass-skin="true"] [class*="bg-[#EEF2FF]"] {
+  background-color: var(--mc-primary-50) !important;
+  color: var(--mc-primary-900) !important;
+}
+
+/* 紫色色块 → primary-700（统一）*/
+[data-maxclass-skin="true"] [class*="bg-[#A855F7]"],
+[data-maxclass-skin="true"] [class*="bg-[#C084FC]"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* 红色变体（#FF3366 等）→ 浅红 + 深红字 */
+[data-maxclass-skin="true"] [class*="bg-[#FF3366]"] {
+  background-color: #fee2e2 !important;
+  color: #7f1d1d !important;
+}
+
+/* 暖橙/橙系 → CTA 橙 + 白字（保留 CTA 语义）*/
+[data-maxclass-skin="true"] [class*="bg-[#C2410C]"] {
+  background-color: var(--mc-cta) !important;
+  color: #ffffff !important;
+}
+
+[data-maxclass-skin="true"] [class*="bg-[#FFF7ED]"] {
+  background-color: #fff7ed !important;
+  color: #78350f !important;
+}
+
+/* 文字色：黄绿系（hover/强调）→ primary-700 */
+[data-maxclass-skin="true"] [class*="text-[#B4F416]"],
+[data-maxclass-skin="true"] [class*="text-[#9cff2e]"],
+[data-maxclass-skin="true"] [class*="text-[#ccff00]"],
+[data-maxclass-skin="true"] [class*="text-[#D4FF00]"],
+[data-maxclass-skin="true"] [class*="text-[#D4FF32]"],
+[data-maxclass-skin="true"] [class*="text-[#A3E014]"] {
+  color: var(--mc-primary-700) !important;
+}
+
+/* 文字色：蓝色/青绿/紫（语义色统一到 primary-700）→ primary-700 */
+[data-maxclass-skin="true"] [class*="text-[#3B82F6]"],
+[data-maxclass-skin="true"] [class*="text-[#60A5FA]"],
+[data-maxclass-skin="true"] [class*="text-[#6366F1]"],
+[data-maxclass-skin="true"] [class*="text-[#4F46E5]"],
+[data-maxclass-skin="true"] [class*="text-[#4ECDC4]"],
+[data-maxclass-skin="true"] [class*="text-[#A855F7]"],
+[data-maxclass-skin="true"] [class*="text-[#C084FC]"] {
+  color: var(--mc-primary-700) !important;
+}
+
+/* 文字色：深绿 → primary-700 */
+[data-maxclass-skin="true"] [class*="text-[#16A34A]"],
+[data-maxclass-skin="true"] [class*="text-[#22C55E]"],
+[data-maxclass-skin="true"] [class*="text-[#4ADE80]"] {
+  color: var(--mc-primary-700) !important;
+}
+
+/* 边框色：黄绿/蓝/紫 → primary-200（浅靛蓝边框）*/
+[data-maxclass-skin="true"] [class*="border-[#B4F416]"],
+[data-maxclass-skin="true"] [class*="border-[#4ECDC4]"],
+[data-maxclass-skin="true"] [class*="border-[#A855F7]"],
+[data-maxclass-skin="true"] [class*="border-[#C084FC]"],
+[data-maxclass-skin="true"] [class*="border-[#3B82F6]"] {
+  border-color: var(--mc-primary-200) !important;
+}
+
+/* 亮黄/暖黄 → 浅黄底 + 棕字（保留警告语义，柔化对比度）*/
+[data-maxclass-skin="true"] [class*="bg-[#FFE800]"],
+[data-maxclass-skin="true"] [class*="bg-[#FACC15]"],
+[data-maxclass-skin="true"] [class*="bg-[#ffeb6e]"],
+[data-maxclass-skin="true"] [class*="bg-[#fff2a8]"],
+[data-maxclass-skin="true"] [class*="bg-[#fde047]"] {
+  background-color: #fef3c7 !important;
+  color: #78350f !important;
+}
+
+/* 红色/危险色块 → 浅红底 + 深红字 */
+[data-maxclass-skin="true"] [class*="bg-[#FF6B6B]"],
+[data-maxclass-skin="true"] [class*="bg-[#ff8585]"] {
+  background-color: #fee2e2 !important;
+  color: #7f1d1d !important;
+}
+
+/* 蓝色色块 → 浅蓝底 + 深蓝字 */
+[data-maxclass-skin="true"] [class*="bg-[#3B82F6]"] {
+  background-color: #dbeafe !important;
+  color: #1e3a8a !important;
+}
+
+/* 浅色背景（米色/米黄）→ 灰白 */
+[data-maxclass-skin="true"] [class*="bg-[#f7f9ef]"],
+[data-maxclass-skin="true"] [class*="bg-[#fffdf7]"],
+[data-maxclass-skin="true"] [class*="bg-[#faf7ee]"] {
+  background-color: #ffffff !important;
+  color: #1f2937 !important;
+}
+
+/* 深色背景（#1a1f36 等）→ primary-900 */
+[data-maxclass-skin="true"] [class*="bg-[#1a1f36]"],
+[data-maxclass-skin="true"] [class*="bg-[#111827]"] {
+  background-color: var(--mc-primary-900) !important;
+  color: #ffffff !important;
+}
+
+/* ---------- 文字颜色覆盖 ---------- */
+[data-maxclass-skin="true"] [class*="text-[#B4F416]"],
+[data-maxclass-skin="true"] [class*="text-[#9cff2e]"],
+[data-maxclass-skin="true"] [class*="text-[#ccff00]"] {
+  color: var(--mc-primary-700) !important;
+}
+
+/* ---------- 内联 style 覆盖（针对 src/app/page.tsx 未登录态 landing page）
+   背景：首页有 115 处 style={{ border: '3px solid #000000', backgroundColor: '#XXX', boxShadow: '4px 4px 0px 0px #000000' }}
+   CSS [class*=] 选择器对内联 style 完全无效，必须用 [style*=] 属性选择器 + !important 覆盖。
+   React SSR 输出格式：background-color:#B4F416（属性名 kebab-case，冒号后无空格）。
+   ---------- */
+
+/* neo-brutalism 边框（3px/2px solid #000000）→ 1px 灰色边框 */
+[data-maxclass-skin="true"] [style*="border:3px solid #000000"],
+[data-maxclass-skin="true"] [style*="border: 3px solid #000000"],
+[data-maxclass-skin="true"] [style*="border:2px solid #000000"],
+[data-maxclass-skin="true"] [style*="border: 2px solid #000000"],
+[data-maxclass-skin="true"] [style*="border:3px solid black"],
+[data-maxclass-skin="true"] [style*="border:2px solid black"] {
+  border-color: #e5e7eb !important;
+  border-width: 1px !important;
+}
+
+/* neo-brutalism 硬阴影（Npx Npx 0px 0px #000000）→ 软阴影 */
+[data-maxclass-skin="true"] [style*="0px 0px #000000"],
+[data-maxclass-skin="true"] [style*="0px 0px black"] {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07) !important;
+}
+
+/* 柠檬绿背景 #B4F416 → primary-700 + 白字 */
+[data-maxclass-skin="true"] [style*="background-color:#B4F416"],
+[data-maxclass-skin="true"] [style*="background-color: #B4F416"],
+[data-maxclass-skin="true"] [style*="background:#B4F416"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* 橙色 #FF8C61 / #FF7F50（CTA 按钮）→ MAXCLASS CTA 橙 + 白字 */
+[data-maxclass-skin="true"] [style*="background-color:#FF8C61"],
+[data-maxclass-skin="true"] [style*="background-color: #FF8C61"],
+[data-maxclass-skin="true"] [style*="background-color:#FF7F50"],
+[data-maxclass-skin="true"] [style*="background:#FF8C61"],
+[data-maxclass-skin="true"] [style*="background:#FF7F50"] {
+  background-color: var(--mc-cta) !important;
+  color: #ffffff !important;
+}
+
+/* 黄色 #FACC15 / #FFE800 → 浅黄 + 棕字 */
+[data-maxclass-skin="true"] [style*="background-color:#FACC15"],
+[data-maxclass-skin="true"] [style*="background-color: #FACC15"],
+[data-maxclass-skin="true"] [style*="background-color:#FFE800"],
+[data-maxclass-skin="true"] [style*="background:#FACC15"],
+[data-maxclass-skin="true"] [style*="background:#FFE800"] {
+  background-color: #fef3c7 !important;
+  color: #78350f !important;
+}
+
+/* 粉色 #FFB6D9 → 浅红 + 深红字 */
+[data-maxclass-skin="true"] [style*="background-color:#FFB6D9"],
+[data-maxclass-skin="true"] [style*="background-color: #FFB6D9"],
+[data-maxclass-skin="true"] [style*="background:#FFB6D9"] {
+  background-color: #fee2e2 !important;
+  color: #7f1d1d !important;
+}
+
+/* 紫色 #E9D5FF → 浅靛蓝 + 深靛蓝字 */
+[data-maxclass-skin="true"] [style*="background-color:#E9D5FF"],
+[data-maxclass-skin="true"] [style*="background-color: #E9D5FF"],
+[data-maxclass-skin="true"] [style*="background:#E9D5FF"] {
+  background-color: var(--mc-primary-50) !important;
+  color: var(--mc-primary-900) !important;
+}
+
+/* 浅橙 #FDBCB4 / #FEF3C7 → 浅橙 + 棕字 */
+[data-maxclass-skin="true"] [style*="background-color:#FDBCB4"],
+[data-maxclass-skin="true"] [style*="background-color: #FDBCB4"],
+[data-maxclass-skin="true"] [style*="background:#FDBCB4"],
+[data-maxclass-skin="true"] [style*="background-color:#FEF3C7"],
+[data-maxclass-skin="true"] [style*="background:#FEF3C7"] {
+  background-color: #fef3c7 !important;
+  color: #78350f !important;
+}
+
+/* 浅蓝 #ADD8E6 → 浅蓝 + 深蓝字 */
+[data-maxclass-skin="true"] [style*="background-color:#ADD8E6"],
+[data-maxclass-skin="true"] [style*="background-color: #ADD8E6"],
+[data-maxclass-skin="true"] [style*="background:#ADD8E6"] {
+  background-color: #dbeafe !important;
+  color: #1e3a8a !important;
+}
+
+/* 浅绿 #BBF7D0 → 浅绿 + 深绿字 */
+[data-maxclass-skin="true"] [style*="background-color:#BBF7D0"],
+[data-maxclass-skin="true"] [style*="background-color: #BBF7D0"],
+[data-maxclass-skin="true"] [style*="background:#BBF7D0"] {
+  background-color: #d1fae5 !important;
+  color: #064e3b !important;
+}
+
+/* 紫色 #C084FC/#A855F7 → primary-700 + 白字（含 video 模块装饰紫）*/
+[data-maxclass-skin="true"] [style*="color:#C084FC"],
+[data-maxclass-skin="true"] [style*="color: #C084FC"],
+[data-maxclass-skin="true"] [style*="color:#A855F7"],
+[data-maxclass-skin="true"] [style*="color: #A855F7"],
+[data-maxclass-skin="true"] [style*="background-color:#C084FC"],
+[data-maxclass-skin="true"] [style*="background-color: #C084FC"],
+[data-maxclass-skin="true"] [style*="background:#C084FC"] {
+  color: var(--mc-primary-700) !important;
+}
+
+[data-maxclass-skin="true"] [style*="background-color:#C084FC"],
+[data-maxclass-skin="true"] [style*="background-color: #C084FC"],
+[data-maxclass-skin="true"] [style*="background:#C084FC"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* 蓝色文字 #3B82F6 → primary-700 */
+[data-maxclass-skin="true"] [style*="color:#3B82F6"],
+[data-maxclass-skin="true"] [style*="color: #3B82F6"] {
+  color: var(--mc-primary-700) !important;
+}
+
+/* 绿色背景/文字 #22C55E → primary-700（login 页 + 视频模块）
+   注意顺序：必须先 color 规则、后 background-color 规则，否则
+   CSS [style*=] 是子串匹配，`background-color:#22C55E` 字符串里包含 `color:#22C55E`
+   子串 → color 规则会误匹配到 background 元素 → 文字变 primary-700 与背景同色看不见。
+*/
+[data-maxclass-skin="true"] [style*="color:#22C55E"],
+[data-maxclass-skin="true"] [style*="color: #22C55E"] {
+  color: var(--mc-primary-700) !important;
+}
+[data-maxclass-skin="true"] [style*="background-color:#22C55E"],
+[data-maxclass-skin="true"] [style*="background-color: #22C55E"],
+[data-maxclass-skin="true"] [style*="background:#22C55E"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* 绿色变体（#16A34A, #4ADE80 等）→ primary-700 */
+[data-maxclass-skin="true"] [style*="color:#16A34A"],
+[data-maxclass-skin="true"] [style*="color: #16A34A"],
+[data-maxclass-skin="true"] [style*="color:#4ADE80"],
+[data-maxclass-skin="true"] [style*="color: #4ADE80"] {
+  color: var(--mc-primary-700) !important;
+}
+[data-maxclass-skin="true"] [style*="background-color:#16A34A"],
+[data-maxclass-skin="true"] [style*="background-color: #16A34A"],
+[data-maxclass-skin="true"] [style*="background-color:#4ADE80"],
+[data-maxclass-skin="true"] [style*="background-color: #4ADE80"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* 青绿 #4ECDC4 → primary-700（含 video TranslationExercise）*/
+[data-maxclass-skin="true"] [style*="background-color:#4ECDC4"],
+[data-maxclass-skin="true"] [style*="background-color: #4ECDC4"],
+[data-maxclass-skin="true"] [style*="background:#4ECDC4"],
+[data-maxclass-skin="true"] [style*="color:#4ECDC4"],
+[data-maxclass-skin="true"] [style*="color: #4ECDC4"] {
+  color: var(--mc-primary-700) !important;
+}
+[data-maxclass-skin="true"] [style*="background-color:#4ECDC4"],
+[data-maxclass-skin="true"] [style*="background-color: #4ECDC4"],
+[data-maxclass-skin="true"] [style*="background:#4ECDC4"] {
+  background-color: var(--mc-primary-700) !important;
+  color: #ffffff !important;
+}
+
+/* ---------- 暗色模式：内联 style ---------- */
+html.dark [data-maxclass-skin="true"] [style*="0px 0px #000000"],
+html.dark [data-maxclass-skin="true"] [style*="0px 0px black"] {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ---------- 暗色模式 ---------- */
+html.dark [data-maxclass-skin="true"] {
+  background-color: #111827 !important;
+  color: #f9fafb !important;
+}
+
+html.dark [data-maxclass-skin="true"] [class*="border-black"],
+html.dark [data-maxclass-skin="true"] [class*="border-[2px]"],
+html.dark [data-maxclass-skin="true"] [class*="border-[3px]"],
+html.dark [data-maxclass-skin="true"] [class*="border-[4px]"] {
+  border-color: #374151 !important;
+}
+
+html.dark [data-maxclass-skin="true"] [class*="shadow-["],
+html.dark [data-maxclass-skin="true"] [class*="shadow-neo"],
+html.dark [data-maxclass-skin="true"] [class*="shadow-hard"] {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* ---------- 课程内容 HTML 排版（从 data-course-soft 迁移，颜色换为 MAXCLASS 冷靛蓝）---------- */
+[data-maxclass-skin="true"] .course-content-renderer {
+  color: #1f2937;
+}
+
+[data-maxclass-skin="true"] .course-content-html {
+  display: grid;
+  gap: 18px;
+  color: #1f2937;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0;
+}
+
+[data-maxclass-skin="true"] .course-content-html > * {
+  margin: 0 !important;
+}
+
+[data-maxclass-skin="true"] .course-content-html p {
+  color: #374151;
+  font-weight: 500;
+  line-height: 1.85;
+}
+
+[data-maxclass-skin="true"] .course-content-html p:empty,
+[data-maxclass-skin="true"] .course-content-html h1:empty,
+[data-maxclass-skin="true"] .course-content-html h2:empty,
+[data-maxclass-skin="true"] .course-content-html h3:empty,
+[data-maxclass-skin="true"] .course-content-html h4:empty {
+  display: none;
+}
+
+[data-maxclass-skin="true"] .course-content-html h1,
+[data-maxclass-skin="true"] .course-content-html h2,
+[data-maxclass-skin="true"] .course-content-html h3,
+[data-maxclass-skin="true"] .course-content-html h4 {
+  margin-top: 14px !important;
+  color: var(--mc-primary-900);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+
+[data-maxclass-skin="true"] .course-content-html h1 {
+  font-size: 28px;
+}
+
+[data-maxclass-skin="true"] .course-content-html h2 {
+  font-size: 23px;
+}
+
+[data-maxclass-skin="true"] .course-content-html h3,
+[data-maxclass-skin="true"] .course-content-html h4 {
+  font-size: 19px;
+}
+
+[data-maxclass-skin="true"] .course-content-html hr {
+  height: 1px;
+  border: 0;
+  background: #e5e7eb;
+  opacity: 0.7;
+}
+
+[data-maxclass-skin="true"] .course-content-html hr + hr,
+[data-maxclass-skin="true"] .course-content-html hr:first-child,
+[data-maxclass-skin="true"] .course-content-html hr:last-child {
+  display: none;
+}
+
+[data-maxclass-skin="true"] .course-content-html ul,
+[data-maxclass-skin="true"] .course-content-html ol {
+  display: grid;
+  gap: 10px;
+  padding-left: 1.35rem;
+}
+
+[data-maxclass-skin="true"] .course-content-html li {
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+[data-maxclass-skin="true"] .course-content-html blockquote {
+  border-left: 4px solid var(--mc-primary-500);
+  border-radius: 12px;
+  background: #eef2ff;
+  padding: 16px 18px;
+  color: #374151;
+}
+
+[data-maxclass-skin="true"] .course-content-html img {
+  display: block;
+  max-width: min(100%, 680px);
+  height: auto;
+  margin: 4px auto;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+[data-maxclass-skin="true"] .course-content-html audio {
+  width: 100%;
+  margin: 4px 0;
+}
+
+[data-maxclass-skin="true"] .course-content-html table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+[data-maxclass-skin="true"] .course-content-html th,
+[data-maxclass-skin="true"] .course-content-html td {
+  min-width: 88px;
+  border-bottom: 1px solid #f3f4f6;
+  border-right: 1px solid #f3f4f6;
+  padding: 12px 14px;
+  text-align: center;
+  color: #1f2937;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+[data-maxclass-skin="true"] .course-content-html tr:last-child td {
+  border-bottom: 0;
+}
+
+[data-maxclass-skin="true"] .course-content-html th:last-child,
+[data-maxclass-skin="true"] .course-content-html td:last-child {
+  border-right: 0;
+}
+
+/* ---------- 课程内容暗色模式 ---------- */
+html.dark [data-maxclass-skin="true"] .course-content-html {
+  color: #f9fafb;
+}
+
+html.dark [data-maxclass-skin="true"] .course-content-html p {
+  color: #e5e7eb;
+}
+
+html.dark [data-maxclass-skin="true"] .course-content-html h1,
+html.dark [data-maxclass-skin="true"] .course-content-html h2,
+html.dark [data-maxclass-skin="true"] .course-content-html h3,
+html.dark [data-maxclass-skin="true"] .course-content-html h4 {
+  color: #c5cae9;
+}
+
+html.dark [data-maxclass-skin="true"] .course-content-html blockquote {
+  background: rgba(63, 81, 181, 0.18);
+  color: #e5e7eb;
+}
+
+html.dark [data-maxclass-skin="true"] .course-content-html table {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+html.dark [data-maxclass-skin="true"] .course-content-html th,
+html.dark [data-maxclass-skin="true"] .course-content-html td {
+  color: #f9fafb;
+  border-color: #374151;
+}
+
+html.dark [data-maxclass-skin="true"] .course-content-html img {
+  background: #1f2937;
+  border-color: #374151;
+}
+
+/* ---------- 蓝色按钮内部深色文字/图标强制白色 ----------
+   根因：parent 设了 color:#fff 但子元素显式 text-black / text-gray-900 等 class
+   specificity 更高，覆盖继承 → 蓝底黑字看不清。
+   解决：列出所有"被 skin 改成深靛蓝背景"的 class，对其内部深色文字强制白色。
+   Tailwind v3.4 原生支持 :is()，组合 21 个蓝色变体 × 7 个深色文字 class
+   写成两条规则即可覆盖。
+*/
+
+[data-maxclass-skin="true"]
+  :is(
+    [class*="bg-[#B4F416]"],
+    [class*="bg-[#9cff2e]"],
+    [class*="bg-[#ccff00]"],
+    [class*="bg-[#ccff48]"],
+    [class*="bg-[#D4FF00]"],
+    [class*="bg-[#D4FF32]"],
+    [class*="bg-[#99CC00]"],
+    [class*="bg-[#A3E014]"],
+    [class*="bg-[#16A34A]"],
+    [class*="bg-[#22C55E]"],
+    [class*="bg-[#4ADE80]"],
+    [class*="bg-[#3B82F6]"],
+    [class*="bg-[#60A5FA]"],
+    [class*="bg-[#6366F1]"],
+    [class*="bg-[#4F46E5]"],
+    [class*="bg-[#4ECDC4]"],
+    [class*="bg-[#A855F7]"],
+    [class*="bg-[#C084FC]"],
+    [class*="bg-[#C2410C]"],
+    [class*="bg-mc-primary-600"],
+    [class*="bg-mc-primary-700"],
+    [style*="background-color:#B4F416"],
+    [style*="background-color: #B4F416"],
+    [style*="background:#B4F416"],
+    [style*="background-color:#22C55E"],
+    [style*="background-color: #22C55E"],
+    [style*="background:#22C55E"],
+    [style*="background-color:#16A34A"],
+    [style*="background-color: #16A34A"],
+    [style*="background-color:#4ADE80"],
+    [style*="background-color: #4ADE80"],
+    [style*="background-color:#4ECDC4"],
+    [style*="background-color: #4ECDC4"],
+    [style*="background:#4ECDC4"],
+    [style*="background-color:#C084FC"],
+    [style*="background-color: #C084FC"],
+    [style*="background:#C084FC"]
+  )
+  :is(
+    [class*="text-black"],
+    [class*="text-gray-900"],
+    [class*="text-gray-800"],
+    [class*="text-gray-700"],
+    [class*="text-slate-900"],
+    [class*="text-slate-800"],
+    [class*="text-slate-700"],
+    [style*="color:#000000"],
+    [style*="color: #000000"],
+    [style*="color:#000"],
+    [style*="color: #000"]
+  ) {
+  color: #ffffff !important;
+}
+
+/* 蓝色按钮内的 SVG（lucide-react 默认 currentColor，但若有 text-black / inline color 强制白色） */
+[data-maxclass-skin="true"]
+  :is(
+    [class*="bg-[#B4F416]"],
+    [class*="bg-[#9cff2e]"],
+    [class*="bg-[#ccff00]"],
+    [class*="bg-[#ccff48]"],
+    [class*="bg-[#D4FF00]"],
+    [class*="bg-[#D4FF32]"],
+    [class*="bg-[#99CC00]"],
+    [class*="bg-[#A3E014]"],
+    [class*="bg-[#16A34A]"],
+    [class*="bg-[#22C55E]"],
+    [class*="bg-[#4ADE80]"],
+    [class*="bg-[#3B82F6]"],
+    [class*="bg-[#60A5FA]"],
+    [class*="bg-[#6366F1]"],
+    [class*="bg-[#4F46E5]"],
+    [class*="bg-[#4ECDC4]"],
+    [class*="bg-[#A855F7]"],
+    [class*="bg-[#C084FC]"],
+    [class*="bg-[#C2410C]"],
+    [class*="bg-mc-primary-600"],
+    [class*="bg-mc-primary-700"],
+    [style*="background-color:#B4F416"],
+    [style*="background-color: #B4F416"],
+    [style*="background:#B4F416"],
+    [style*="background-color:#22C55E"],
+    [style*="background-color: #22C55E"],
+    [style*="background:#22C55E"],
+    [style*="background-color:#16A34A"],
+    [style*="background-color: #16A34A"],
+    [style*="background-color:#4ADE80"],
+    [style*="background-color: #4ADE80"],
+    [style*="background-color:#4ECDC4"],
+    [style*="background-color: #4ECDC4"],
+    [style*="background:#4ECDC4"],
+    [style*="background-color:#C084FC"],
+    [style*="background-color: #C084FC"],
+    [style*="background:#C084FC"]
+  )
+  svg {
+  color: #ffffff !important;
+}
+
+/* 蓝色按钮内的边框（border-black 在蓝底上极不协调）→ 透明白边 */
+[data-maxclass-skin="true"]
+  :is(
+    [class*="bg-[#B4F416]"],
+    [class*="bg-[#9cff2e]"],
+    [class*="bg-[#ccff00]"],
+    [class*="bg-[#ccff48]"],
+    [class*="bg-[#D4FF00]"],
+    [class*="bg-[#D4FF32]"],
+    [class*="bg-[#99CC00]"],
+    [class*="bg-[#A3E014]"],
+    [class*="bg-[#16A34A]"],
+    [class*="bg-[#22C55E]"],
+    [class*="bg-[#4ADE80]"],
+    [class*="bg-[#3B82F6]"],
+    [class*="bg-[#60A5FA]"],
+    [class*="bg-[#6366F1]"],
+    [class*="bg-[#4F46E5]"],
+    [class*="bg-[#4ECDC4]"],
+    [class*="bg-[#A855F7]"],
+    [class*="bg-[#C084FC]"],
+    [class*="bg-[#C2410C]"],
+    [class*="bg-mc-primary-600"],
+    [class*="bg-mc-primary-700"]
+  )
+  :is(
+    [class*="border-black"],
+    [class*="border-gray-900"],
+    [class*="border-gray-800"]
+  ) {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
