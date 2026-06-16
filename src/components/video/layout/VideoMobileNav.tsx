@@ -13,13 +13,14 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { Home, BarChart3, User } from 'lucide-react'
+import { Home, BarChart3, User, GraduationCap } from 'lucide-react'
 
 /** 与 ContinueLearningBar 中定义的属性名一致 */
 const COMPACT_NAV_ATTR = 'data-compact-nav'
 
 const MOBILE_NAV_ITEMS = [
   { href: '/videos', label: '首页', icon: Home },
+  { href: '/parcours', label: '系统课程', icon: GraduationCap },
   { href: '/video-stats', label: '知识点', icon: BarChart3 },
   { href: '/profile', label: '我的', icon: User },
 ]

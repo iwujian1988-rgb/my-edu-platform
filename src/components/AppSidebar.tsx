@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
-import { Home, Library, Dumbbell, Settings, Mic } from 'lucide-react'
+import { Home, Library, Dumbbell, Settings, Mic, GraduationCap } from 'lucide-react'
 import { BookSelectorModal } from './BookSelectorModal'
 import type { Book } from '@/types/book'
 import { useTheme } from '@/contexts/ThemeContext'
@@ -25,11 +25,13 @@ interface AppSidebarProps {
 }
 
 const navItems: NavItem[] = [
-  { label: '工作台', href: '/', icon: Home },
-  { label: '系统词库', href: '/library', icon: Library },
-  { label: '肌肉训练', href: '/practice', icon: Dumbbell },
+  { label: '学习首页', href: '/', icon: Home },
+  { label: '系统课程', href: '/parcours', icon: GraduationCap },
+  { label: '单词书', href: '/library', icon: Library },
+  { label: '专项练习', href: '/practice', icon: Dumbbell },
   { label: '雯姐学习法', href: '/speaker', icon: Mic, requiresPermission: 'speaker' },
-  { label: '系统设置', href: '/settings', icon: Settings },
+  { label: '法语课程', href: '/courses', icon: GraduationCap, requiresPermission: 'course_a1' },
+  { label: '我的设置', href: '/settings', icon: Settings },
 ]
 
 export function AppSidebar({ books, userId, scopeStatsMap, userPermissions: propUserPermissions }: AppSidebarProps) {
@@ -167,16 +169,16 @@ export function AppSidebar({ books, userId, scopeStatsMap, userPermissions: prop
               return null
             }
 
-            const isActive = pathname === item.href
+            const isActive = pathname === item.href || (item.href !== '/' && pathname.startsWith(item.href))
             const Icon = item.icon
-            const isMuscleTraining = item.label === '肌肉训练'
-            const isSettings = item.label === '系统设置'
+            const isMuscleTraining = item.label === '专项练习'
+            const isSettings = item.label === '我的设置'
 
             if (item.comingSoon) {
               return (
                 <button
                   key={item.href}
-                  onClick={() => alert('功能开发中，敬请期待！')}
+                  onClick={() => alert('这个功能还在准备中，很快就会上线。')}
                   className="w-full flex items-center gap-3 px-4 py-3 rounded border-[3px] border-black opacity-60 hover:opacity-80 transition-all relative cursor-not-allowed"
                   style={{ backgroundColor: 'var(--card-bg)' }}
                 >

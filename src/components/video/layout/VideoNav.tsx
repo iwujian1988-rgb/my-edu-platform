@@ -12,12 +12,13 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { cn } from '@/lib/utils'
-import { Home, BarChart3, Menu, X, Video, BookOpen, User, Headphones, LogOut, ChevronDown } from 'lucide-react'
+import { Home, BarChart3, Menu, X, Video, BookOpen, User, Headphones, LogOut, ChevronDown, GraduationCap } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 
 const NAV_ITEMS = [
   { href: '/videos', label: '首页', icon: Home },
+  { href: '/parcours', label: '系统课程', icon: GraduationCap },
   { href: '/video-stats', label: '知识点', icon: BarChart3 },
 ]
 
