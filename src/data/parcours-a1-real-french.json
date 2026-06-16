@@ -1,0 +1,343 @@
+{
+  "id": "a1-real-french",
+  "slug": "a1-real-french",
+  "title": "A1 法语真实入门：法国人天天会说的话",
+  "level": "A1",
+  "courseType": "structured",
+  "description": "用真实法语素材带学习者进入法语听力，先建立“能听懂一点真实法语”的成就感。",
+  "audience": "A1 / A2 初学者，尤其是学过一点法语但一听真实内容就慌的学习者",
+  "goals": [
+    "先听懂法国人口语中的高频表达",
+    "建立按语气和语境理解法语的习惯",
+    "从教材法语过渡到真实法语输入"
+  ],
+  "modules": [
+    {
+      "id": "afr-m01",
+      "slug": "real-everyday-expressions",
+      "title": "真实高频表达入门",
+      "description": "从法国人口语里最常见、最值得优先掌握的表达开始，建立真实听力的第一步。",
+      "objectives": [
+        "识别法国人口语里的高频表达",
+        "不再只靠逐词翻译理解句子",
+        "学会通过语气判断表达功能"
+      ],
+      "lessons": [
+        {
+          "id": "afr-m01-l01",
+          "slug": "quand-meme-common-uses",
+          "title": "quand meme 的 3 种常见用法",
+          "description": "学会在真实法语口语中识别 quand meme 的强调、转折和“总算”三种常见功能。",
+          "estimatedMinutes": 12,
+          "blocks": [
+            {
+              "type": "text",
+              "id": "lesson-goal",
+              "title": "本课目标",
+              "content": "<p>这一课我们不把 <code>quand meme</code> 当成一个死记硬背的词条，而是把它当成法国人口语里非常高频的“语气信号”。你会先知道它为什么重要，再进入真实句子里抓它的功能。</p><p>学完这一步，你至少要带走三件事：</p><ul><li>一听到 <code>quand meme</code>，先想到“语气”和“态度”，而不是急着逐字翻译。</li><li>能区分它最常见的三种功能：强调、转折 / 尽管如此、总算 / 终于。</li><li>敢在简单句里自己说出一两句带 <code>quand meme</code> 的表达。</li></ul><p><strong>学习方式提醒：</strong>这一课不是背唯一中文解释，而是练习先听感觉，再判断意思。</p>"
+            },
+            {
+              "type": "text",
+              "id": "real-fragment",
+              "title": "真实片段",
+              "content": "<p>先别逐字翻译，先抓住说话人到底是在“加强语气”，还是在“虽然这样但还是……”。下面这几句，就是最值得优先听熟的真实片段：</p><ul><li><strong><code>Utiliser \"quand meme\" a la fin d'une phrase permet d'en renforcer la charge emotionnelle.</code></strong><br>先记住一个总感觉：它常常是在给整句话“加情绪”。</li><li><strong><code>Mais attention, \"quand meme\" permet aussi d'exprimer une opposition.</code></strong><br>这里开始进入“尽管如此 / 不过还是”的功能。</li><li><strong><code>Enfin, vous voila quand meme !</code></strong><br>这是“你总算来了”的典型口语句，重点是感受“终于发生”的语气。</li><li><strong><code>J'ai pas le temps, mais bon, je vais le faire quand meme !</code></strong><br>虽然条件不理想，但结果还是去做，这是最常见的转折用法。</li><li><strong><code>Ah, quand meme !</code></strong><br>这类短促感叹最能说明：真实法语很多时候靠语气理解，不靠字面拆解。</li></ul><p>这一步的任务只有一个：<strong>先抓重点，不逐字翻译。</strong></p>"
+            },
+            {
+              "type": "text",
+              "id": "key-expressions",
+              "title": "重点表达",
+              "content": "<p><code>quand meme</code> 难，不是因为它复杂，而是因为它不像课本词汇那样只对应一个中文。你更应该把它理解成一个“语气工具”。</p><h4>这一课先只掌握三种最常见功能</h4><ol><li><strong>表示强调</strong><br><code>C'est cher, quand meme.</code><br>说话人不是单纯说“贵”，而是在表达“这可真贵啊”。</li><li><strong>表示转折 / 尽管如此</strong><br><code>Je vais le faire quand meme.</code><br>虽然有困难、虽然不太想做，但最后还是做。</li><li><strong>表示总算 / 终于</strong><br><code>Enfin, vous voila quand meme !</code><br>重点是“等了很久，终于来了”。</li></ol><p>你可以顺手认识这些词，但不要把这一课做成词典背诵：</p><ul><li><code>malgre tout</code>：帮助你理解“尽管如此”这一层意思。</li><li><code>renforcer</code>：帮助你理解它为什么会“增强语气”。</li><li><code>l'opposition</code>：提醒你它也常承担转折作用。</li></ul><p><strong>判断口诀：</strong>这里是在强调？还是在说“虽然这样，还是……”？还是在表达“终于 / 总算”？</p>"
+            },
+            {
+              "type": "quiz",
+              "id": "practice-quiz",
+              "title": "练习测验",
+              "questions": [
+                {
+                  "type": "single-choice",
+                  "question": "这节课里，`quand meme` 最重要的学习重点是什么？",
+                  "options": [
+                    "它永远翻译成“什么时候”",
+                    "它是一个高频口语表达，意思要看语气和语境",
+                    "它只在书面法语中使用"
+                  ],
+                  "answer": "它是一个高频口语表达，意思要看语气和语境",
+                  "explanation": "本课的重点不是死记一个中文，而是通过语境判断功能。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "在这节课里，`quand meme` 的 3 种常见功能不包括哪一个？",
+                  "options": [
+                    "强调",
+                    "转折 / 尽管如此",
+                    "表示未来时"
+                  ],
+                  "answer": "表示未来时",
+                  "explanation": "本课讲的是语气功能，不是时态功能。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`Il est alors un synonyme plus informel de \"malgre tout\".` 说明了什么？",
+                  "options": [
+                    "`quand meme` 有时可表示“尽管如此”",
+                    "`quand meme` 是一个人名",
+                    "`quand meme` 只能用于否定句"
+                  ],
+                  "answer": "`quand meme` 有时可表示“尽管如此”",
+                  "explanation": "这里明确指出它可以表达转折、让步。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`Enfin, vous voila quand meme !` 更接近下面哪种意思？",
+                  "options": [
+                    "你总算来了！",
+                    "你要去哪儿？",
+                    "你什么时候来？"
+                  ],
+                  "answer": "你总算来了！",
+                  "explanation": "这里的重点是“终于、总算”的语气。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`J'ai pas le temps, mais bon, je vais le faire quand meme !` 中的 `quand meme` 最接近：",
+                  "options": [
+                    "虽然没时间，但还是要做",
+                    "因为没时间，所以不做",
+                    "明天再做"
+                  ],
+                  "answer": "虽然没时间，但还是要做",
+                  "explanation": "这是一种典型的“尽管如此，还是……”。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "学习 `quand meme` 时，最好的方法是什么？",
+                  "options": [
+                    "只背一个固定中文意思",
+                    "每次都按字面拆词翻译",
+                    "先听语气，再看它在句子里表达什么"
+                  ],
+                  "answer": "先听语气，再看它在句子里表达什么",
+                  "explanation": "这正是本课希望建立的真实法语学习方式。"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "review",
+              "title": "复习总结",
+              "content": "<p>这一课不是要你背出一个固定词义，而是建立真实法语里“按语气理解表达”的第一步。</p><h4>复习时只抓三件事</h4><ul><li><code>quand meme</code> 很高频，先听熟它。</li><li>它常见的三种功能：强调、转折 / 尽管如此、总算 / 终于。</li><li>每次遇到它，先判断说话人的态度，再理解句子。</li></ul><h4>现在就做这 4 个复习动作</h4><ol><li>再读一遍 <code>Enfin, vous voila quand meme !</code> 和 <code>Je vais le faire quand meme.</code>，说出它们分别属于哪种功能。</li><li>把 <code>Ah, quand meme !</code> 用你自己的中文语气解释一次，不要求逐字对应。</li><li>自己造 2 句句子：1 句表示“虽然……还是……”，1 句表示“总算…… / 终于……”。</li><li>跟读这三句核心表达，重点模仿语气而不是背语法：</li></ol><ul><li><code>Il est alors un synonyme plus informel de \"malgre tout\".</code></li><li><code>J'ai pas le temps, mais bon, je vais le faire quand meme !</code></li><li><code>Enfin, vous voila quand meme !</code></li></ul><p><strong>如果你已经开始注意语气，而不是只盯着字面，这节课就真正起作用了。</strong></p>"
+            }
+          ]
+        },
+        {
+          "id": "afr-m01-l02",
+          "slug": "high-frequency-adjectives-basics",
+          "title": "20 个高频形容词与基础配合",
+          "description": "学会在真实法语句子里识别高频形容词，并建立最基础的性、数配合感觉。",
+          "estimatedMinutes": 14,
+          "blocks": [
+            {
+              "type": "text",
+              "id": "lesson-goal",
+              "title": "本课目标",
+              "content": "<p>这一课不想把你塞进“20 个词表”里，而是先帮你建立真实句子里看形容词的基本感觉：它会变化，也会影响句子节奏。</p><p>学完这一步，你要做到：</p><ul><li>看到 <code>grand / grande</code>、<code>beau / belle</code> 这类形式时，不再慌。</li><li>知道法语形容词要跟名词在性、数上配合。</li><li>初步感受哪些形容词更常放前面，哪些更常放后面。</li><li>能用几个高频形容词描述人、房间或物品。</li></ul><p><strong>学习方式提醒：</strong>先抓最常见规律，不追求一次弄懂所有例外。</p>"
+            },
+            {
+              "type": "text",
+              "id": "real-fragment",
+              "title": "真实片段",
+              "content": "<p>这一段不要急着背规则，先观察真实句子里形容词到底怎么变、怎么摆。你只需要盯住几个最值钱的例子：</p><ul><li><strong><code>Les adjectifs s'accordent en genre et en nombre avec le nom qu'ils accompagnent.</code></strong><br>这是整课最核心的一句：形容词会跟着名词变化。</li><li><strong><code>Un grand appartement, une grande maison.</code></strong><br>先直接看见 <code>grand</code> 到 <code>grande</code> 的变化。</li><li><strong><code>Ce sont de beaux appartements, ils sont grands.</code></strong><br>这里同时出现了复数和前置高频形容词。</li><li><strong><code>J'ai un grand appartement.</code></strong><br>短而常见的形容词，经常放在名词前面。</li><li><strong><code>J'ai un appartement lumineux.</code></strong><br>更具体的描述词，经常放在名词后面。</li><li><strong><code>Mon appartement est beau.</code></strong><br>和 <code>etre</code> 连用时，形容词通常出现在后面位置。</li></ul><p>这一步的任务不是逐字拆句，而是<strong>先抓“配合”和“位置”这两个重点。</strong></p>"
+            },
+            {
+              "type": "text",
+              "id": "key-expressions",
+              "title": "重点表达",
+              "content": "<p>这一课真正要记住的，不是“20 个形容词名单”，而是看句子时先想到两个问题：它为什么变化？它为什么放在这里？</p><h4>核心规则只记三条</h4><ol><li><strong>形容词要跟名词配合</strong><br>阳性 / 阴性会变，单数 / 复数也会变。</li><li><strong>最常见的变化方式很简单</strong><br>阴性常加 <code>e</code>，复数常加 <code>s</code>。</li><li><strong>位置有基本感觉</strong><br>短而常见的词常前置，更具体、更长的词常后置。</li></ol><p>你可以用这些高频词做第一轮训练：</p><ul><li><code>grand / grande</code>：最适合入门理解配合。</li><li><code>beau / belle</code>：提醒你法语里也有常见不规则变化。</li><li><code>vieux / vieille</code>：帮助你尽早建立“不是所有词都机械加 e”的感觉。</li><li><code>lumineux</code>：用来感受后置描述词。</li></ul><p><strong>学习判断：</strong>它是在跟名词配合，还是在告诉你这个形容词更自然地放前面 / 后面？</p>"
+            },
+            {
+              "type": "quiz",
+              "id": "practice-quiz",
+              "title": "练习测验",
+              "questions": [
+                {
+                  "type": "single-choice",
+                  "question": "这节课里最核心的规则是什么？",
+                  "options": [
+                    "形容词永远不变",
+                    "形容词要和名词在性、数上配合",
+                    "所有形容词都放在名词后面"
+                  ],
+                  "answer": "形容词要和名词在性、数上配合",
+                  "explanation": "这就是本课最核心的入门规则。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`une grande maison` 中为什么是 `grande`？",
+                  "options": [
+                    "因为 `maison` 是阴性单数",
+                    "因为 `maison` 是阳性复数",
+                    "因为 `grande` 是动词"
+                  ],
+                  "answer": "因为 `maison` 是阴性单数",
+                  "explanation": "形容词要和名词在性、数上保持一致。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "下面哪一个更符合“短而常见的形容词常放在名词前面”的规则？",
+                  "options": [
+                    "`un grand appartement`",
+                    "`un appartement grand`",
+                    "`grand un appartement`"
+                  ],
+                  "answer": "`un grand appartement`",
+                  "explanation": "`grand` 是典型的高频前置形容词。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`Mon appartement est beau.` 说明了什么？",
+                  "options": [
+                    "和 `etre` 连用时，形容词通常放在后面",
+                    "`beau` 是副词",
+                    "`appartement` 是复数"
+                  ],
+                  "answer": "和 `etre` 连用时，形容词通常放在后面",
+                  "explanation": "这是一条非常实用的入门规则。"
+                },
+                {
+                  "type": "fill-blank",
+                  "question": "把句子补完整：`une _____ maison`",
+                  "answer": "grande",
+                  "placeholder": "输入正确的形容词形式",
+                  "explanation": "这里要根据 `maison` 的阴性单数形式写出 `grande`。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "在 `J'ai un appartement lumineux.` 里，`lumineux` 更像哪一类形容词？",
+                  "options": [
+                    "较长或更具体，常后置",
+                    "永远前置",
+                    "动词过去分词"
+                  ],
+                  "answer": "较长或更具体，常后置",
+                  "explanation": "`lumineux` 这类更具体的描述词，常见位置是在名词后面。"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "review",
+              "title": "复习总结",
+              "content": "<p>今天最重要的收获，不是背了多少词，而是你开始看懂法语形容词的三种基础感觉：会变化、有规律、有位置。</p><h4>复习时只抓这三件事</h4><ul><li>形容词会跟名词在性、数上配合。</li><li>最常见变化方式：阴性加 <code>e</code>，复数加 <code>s</code>。</li><li>短而常见的词常前置，更具体的词常后置。</li></ul><h4>现在就做这 4 个复习动作</h4><ol><li>解释为什么是 <code>un grand appartement</code>、<code>une grande maison</code>、<code>des grandes maisons</code>。</li><li>比较 <code>un grand appartement</code> 和 <code>un appartement lumineux</code>，说出位置差异。</li><li>自己写 3 个短语：一个小商店、一座漂亮的房子、一个明亮的房间。</li><li>跟读这 4 句核心表达，重点把形式变化读顺：</li></ol><ul><li><code>Les adjectifs s'accordent en genre et en nombre.</code></li><li><code>Un grand appartement.</code></li><li><code>Une grande maison.</code></li><li><code>Mon appartement est beau.</code></li></ul><p><strong>如果你已经能看懂 <code>grand / grande / beau / belle</code> 这些变化，这一课就已经把你往真实法语推进了一步。</strong></p>"
+            }
+          ]
+        },
+        {
+          "id": "afr-m01-l03",
+          "slug": "airport-luggage-boarding-basics",
+          "title": "机场、行李、登机的基础表达",
+          "description": "学会在真实机场场景里识别护照、行李、值机、安检和登机等高频表达。",
+          "estimatedMinutes": 14,
+          "blocks": [
+            {
+              "type": "text",
+              "id": "lesson-goal",
+              "title": "本课目标",
+              "content": "<p>这一课带你把机场场景里的法语先搭成一条清晰流程，而不是零散背一堆旅行单词。你只要先听懂几个关键节点，整段真实法语就会轻松很多。</p><p>学完这一步，你要做到：</p><ul><li>听见 <code>passeport</code>、<code>valise</code>、<code>carte d'embarquement</code>、<code>embarquement</code> 这些词时，能立刻对上场景。</li><li>看懂“在线值机、托运行李、过安检、去登机口”这一条机场流程。</li><li>能用简单法语复述一次出发前准备或登机前步骤。</li></ul><p><strong>学习方式提醒：</strong>先知道人在机场会做什么，再记法语怎么说。</p>"
+            },
+            {
+              "type": "text",
+              "id": "real-fragment",
+              "title": "真实片段",
+              "content": "<p>这一段先抓场景顺序，不要逐句硬译。你只要把“准备什么”和“接下来做什么”串起来，就已经在听真实法语了：</p><ul><li><strong><code>Aujourd'hui, je vous emmene avec moi prendre l'avion.</code></strong><br>先点明整个场景：今天要去坐飞机。</li><li><strong><code>Il y a ma valise ici.</code></strong> / <strong><code>J'ai bien sur pense a prendre mon passeport.</code></strong><br>先准备行李和护照。</li><li><strong><code>J'ai deja fait l'enregistrement en ligne.</code></strong><br>出发前已经在线值机。</li><li><strong><code>J'ai donc ma carte d'embarquement dans mon telephone.</code></strong><br>登机牌已经在手机里。</li><li><strong><code>J'attends pour enregistrer mes bagages.</code></strong><br>到了机场，开始托运行李。</li><li><strong><code>Je me prepare maintenant a faire la queue pour passer la securite.</code></strong><br>接下来排队过安检。</li><li><strong><code>Je suis bien arrivee a la porte L.</code></strong> / <strong><code>C'est deja l'heure de commencer l'embarquement.</code></strong><br>最后去登机口，准备登机。</li></ul><p>这一步最重要的是：<strong>抓住流程和关键词，而不是逐字翻译每一句。</strong></p>"
+            },
+            {
+              "type": "text",
+              "id": "key-expressions",
+              "title": "重点表达",
+              "content": "<p>机场法语最适合按“场景动作”来记。你不是要背一个词表，而是要把它们放回真实流程里。</p><h4>先把这些表达装进脑子里的机场路线图</h4><ul><li><code>la valise</code>：出发前先想到的行李箱。</li><li><code>le passeport</code>：国际出行里最关键的证件。</li><li><code>l'enregistrement en ligne</code>：出发前就能完成的在线值机。</li><li><code>la carte d'embarquement</code>：登机牌，常常已经在手机里。</li><li><code>les bagages</code>：到了机场后要托运的行李。</li><li><code>la securite</code>：过安检时最容易听到的高频词。</li><li><code>la porte</code>：机场场景里的登机口。</li><li><code>embarquer</code> / <code>l'embarquement</code>：最后真正登机。</li></ul><h4>本课只带一个知识点</h4><p><strong><code>il faut + infinitif</code></strong> 很适合机场场景，因为它能直接表达“需要 / 必须做什么”。</p><ul><li><code>Il faut aller a l'aeroport.</code></li><li><code>Il ne faut pas oublier son passeport.</code></li></ul><p><strong>理解重点：</strong><code>il faut</code> 后面直接接动词原形，用来组织行动步骤特别自然。</p>"
+            },
+            {
+              "type": "quiz",
+              "id": "practice-quiz",
+              "title": "练习测验",
+              "questions": [
+                {
+                  "type": "single-choice",
+                  "question": "`la carte d'embarquement` 是什么？",
+                  "options": [
+                    "行李箱",
+                    "登机牌",
+                    "护照"
+                  ],
+                  "answer": "登机牌",
+                  "explanation": "这是机场场景里最常见的一张“登机凭证”。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`le passeport` 指的是：",
+                  "options": [
+                    "护照",
+                    "机票价格",
+                    "安检口"
+                  ],
+                  "answer": "护照",
+                  "explanation": "护照是国际出行场景里的核心证件。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`J'ai deja fait l'enregistrement en ligne.` 最接近哪句意思？",
+                  "options": [
+                    "我已经在线值机了",
+                    "我刚到机场",
+                    "我还没收拾行李"
+                  ],
+                  "answer": "我已经在线值机了",
+                  "explanation": "`enregistrement en ligne` 就是在线办理值机。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`enregistrer mes bagages` 在机场场景里最接近：",
+                  "options": [
+                    "买咖啡",
+                    "托运行李",
+                    "找座位"
+                  ],
+                  "answer": "托运行李",
+                  "explanation": "这里的重点是把行李交给航空公司办理托运。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "`passer la securite` 指的是：",
+                  "options": [
+                    "通过安检",
+                    "坐出租车",
+                    "领取护照"
+                  ],
+                  "answer": "通过安检",
+                  "explanation": "机场里过安检是登机前的重要步骤。"
+                },
+                {
+                  "type": "single-choice",
+                  "question": "下面哪一个最适合表达“已经开始登机了”？",
+                  "options": [
+                    "`commencer l'embarquement`",
+                    "`faire la cuisine`",
+                    "`prendre le petit dejeuner`"
+                  ],
+                  "answer": "`commencer l'embarquement`",
+                  "explanation": "`embarquement` 就是登机，开始登机就是 `commencer l'embarquement`。"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "id": "review",
+              "title": "复习总结",
+              "content": "<p>这一课最值得带走的，不是零散机场细节，而是一条你能复述出来的完整登机流程。</p><h4>复习时只抓这一条线</h4><ol><li>准备行李和护照</li><li>在线值机</li><li>到机场托运行李</li><li>过安检</li><li>去登机口等待</li><li>开始登机</li></ol><h4>现在就做这 4 个复习动作</h4><ol><li>按顺序说出：在线值机、去机场、托运行李、过安检、去登机口、登机。</li><li>把“我的护照、我的登机牌、我的行李箱、机场安检”说成最简单的法语短语。</li><li>用 <code>passeport</code> 和 <code>embarquement</code> 各造一句简单法语。</li><li>跟读这 4 句，把机场流程读顺：</li></ol><ul><li><code>J'ai deja fait l'enregistrement en ligne.</code></li><li><code>J'attends pour enregistrer mes bagages.</code></li><li><code>Je me prepare a passer la securite.</code></li><li><code>C'est l'heure de commencer l'embarquement.</code></li></ul><p><strong>如果你已经能按顺序说出机场里的关键动作，这节课就已经真正进入生活场景了。</strong></p>"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
