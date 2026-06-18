@@ -50,18 +50,18 @@ const WEEKDAYS = ['日', '一', '二', '三', '四', '五', '六']
 // 获取学习强度颜色
 const getIntensityColor = (day: CalendarDay): string => {
   const total = day.video_count + day.words_marked + day.phrases_marked + day.expressions_marked
-  if (total === 0) return 'bg-gray-100 dark:bg-gray-700'
-  if (total <= 3) return 'bg-green-200 dark:bg-green-900'
-  if (total <= 6) return 'bg-green-300 dark:bg-green-800'
-  if (total <= 10) return 'bg-green-400 dark:bg-green-700'
-  return 'bg-[#B4F416] dark:bg-green-600'
+  if (total === 0) return 'bg-[#f3f5fb] dark:bg-[#202941]'
+  if (total <= 3) return 'bg-[#edf0ff] dark:bg-[#24305a]'
+  if (total <= 6) return 'bg-[#dce3ff] dark:bg-[#2a3a72]'
+  if (total <= 10) return 'bg-[#c6d0ff] dark:bg-[#34478b]'
+  return 'bg-[#7f8cff] dark:bg-[#6574ff]'
 }
 
 // 获取强度边框颜色
 const getIntensityBorder = (day: CalendarDay): string => {
   const total = day.video_count + day.words_marked + day.phrases_marked + day.expressions_marked
-  if (total === 0) return 'border-gray-300 dark:border-gray-600'
-  return 'border-black dark:border-gray-500'
+  if (total === 0) return 'border-[#e7eaf2] dark:border-[#273149]'
+  return 'border-[#cbd3ff] dark:border-[#5363d6]'
 }
 
 // 详情弹窗组件
@@ -79,15 +79,15 @@ function DayDetailModal({
   return (
     <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" onClick={onClose}>
       <div
-        className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded max-w-sm w-full"
+        className="w-full max-w-sm rounded-[14px] border border-[#e7eaf2] bg-white shadow-[0_18px_48px_rgba(31,42,104,0.18)] dark:border-[#273149] dark:bg-[#141b2d]"
         onClick={e => e.stopPropagation()}
       >
         {/* 头部 */}
-        <div className="flex items-center justify-between p-4 border-b-[3px] border-black dark:border-gray-600">
+        <div className="flex items-center justify-between border-b border-[#e7eaf2] p-4 dark:border-[#273149]">
           <h3 className="font-black text-lg text-black dark:text-white">{dateStr}</h3>
           <button
             onClick={onClose}
-            className="w-8 h-8 flex items-center justify-center bg-gray-100 dark:bg-gray-700 border-[2px] border-black dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
+            className="flex h-8 w-8 items-center justify-center rounded-[8px] bg-[#f3f5fb] transition-colors hover:bg-[#e9ecf4] dark:bg-[#202941] dark:hover:bg-[#26304b]"
           >
             <X className="w-4 h-4 text-black dark:text-white" />
           </button>
@@ -98,8 +98,8 @@ function DayDetailModal({
           {hasActivity ? (
             <div className="space-y-3">
               {day.video_count > 0 && (
-                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded">
-                  <div className="w-10 h-10 bg-blue-500 border-[2px] border-black flex items-center justify-center">
+                <div className="flex items-center gap-3 rounded-[10px] border border-[#e7eaf2] bg-[#f8faff] p-3 dark:border-[#273149] dark:bg-[#202941]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-[9px] bg-[#4454ee]">
                     <Video className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -110,9 +110,9 @@ function DayDetailModal({
               )}
 
               {day.words_marked > 0 && (
-                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded">
-                  <div className="w-10 h-10 bg-[#B4F416] border-[2px] border-black flex items-center justify-center">
-                    <BookOpen className="w-5 h-5 text-black" />
+                <div className="flex items-center gap-3 rounded-[10px] border border-[#e7eaf2] bg-[#f8faff] p-3 dark:border-[#273149] dark:bg-[#202941]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-[9px] bg-[#f0efff]">
+                    <BookOpen className="w-5 h-5 text-[#5a45d6]" />
                   </div>
                   <div>
                     <div className="text-sm text-gray-500 dark:text-gray-400">标记单词</div>
@@ -122,8 +122,8 @@ function DayDetailModal({
               )}
 
               {day.phrases_marked > 0 && (
-                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded">
-                  <div className="w-10 h-10 bg-purple-500 border-[2px] border-black flex items-center justify-center">
+                <div className="flex items-center gap-3 rounded-[10px] border border-[#e7eaf2] bg-[#f8faff] p-3 dark:border-[#273149] dark:bg-[#202941]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-[9px] bg-[#6550ff]">
                     <MessageSquare className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -134,8 +134,8 @@ function DayDetailModal({
               )}
 
               {day.expressions_marked > 0 && (
-                <div className="flex items-center gap-3 p-3 bg-gray-50 dark:bg-gray-700 border-[2px] border-gray-200 dark:border-gray-600 rounded">
-                  <div className="w-10 h-10 bg-orange-500 border-[2px] border-black flex items-center justify-center">
+                <div className="flex items-center gap-3 rounded-[10px] border border-[#e7eaf2] bg-[#f8faff] p-3 dark:border-[#273149] dark:bg-[#202941]">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-[9px] bg-[#ff9f43]">
                     <Sparkles className="w-5 h-5 text-white" />
                   </div>
                   <div>
@@ -238,24 +238,24 @@ export default function LearningCalendar() {
   const today = useMemo(() => new Date().toISOString().split('T')[0], [])
 
   return (
-    <div className="bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] rounded overflow-hidden transition-colors duration-300">
+    <div className="overflow-hidden rounded-[14px] border border-[#e7eaf2] bg-white shadow-[0_10px_28px_rgba(31,42,104,0.06)] transition-colors duration-300 dark:border-[#273149] dark:bg-[#141b2d]">
       {/* 头部 - 紧凑 */}
-      <div className="bg-[#B4F416] border-b-[2px] border-black dark:border-gray-600 p-1.5">
+      <div className="border-b border-[#e7eaf2] bg-[#f8faff] p-2 dark:border-[#273149] dark:bg-[#18213a]">
         <div className="flex items-center justify-between">
           <button
             onClick={prevMonth}
-            className="w-5 h-5 flex items-center justify-center bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[1px_1px_0px_0px_#000] hover:shadow-[0.5px_0.5px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+            className="flex h-6 w-6 items-center justify-center rounded-[7px] bg-white text-[#4f586d] shadow-[0_4px_10px_rgba(31,42,104,0.06)] transition-all hover:-translate-y-0.5 hover:text-[#2d39bb] dark:bg-[#202941] dark:text-[#c5cce0]"
           >
             <ChevronLeft className="w-2.5 h-2.5 text-black dark:text-white" />
           </button>
 
-          <h2 className="font-black text-[10px] text-black">
+          <h2 className="text-xs font-extrabold text-[#121729] dark:text-white">
             {year} 年 {month} 月
           </h2>
 
           <button
             onClick={nextMonth}
-            className="w-5 h-5 flex items-center justify-center bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[1px_1px_0px_0px_#000] hover:shadow-[0.5px_0.5px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+            className="flex h-6 w-6 items-center justify-center rounded-[7px] bg-white text-[#4f586d] shadow-[0_4px_10px_rgba(31,42,104,0.06)] transition-all hover:-translate-y-0.5 hover:text-[#2d39bb] dark:bg-[#202941] dark:text-[#c5cce0]"
           >
             <ChevronRight className="w-2.5 h-2.5 text-black dark:text-white" />
           </button>
@@ -276,7 +276,7 @@ export default function LearningCalendar() {
         {/* 日期网格 */}
         {isLoading ? (
           <div className="flex items-center justify-center py-2">
-            <div className="inline-block animate-spin h-3 w-3 border-[2px] border-black dark:border-gray-500 border-t-[#B4F416]"></div>
+            <div className="inline-block h-3 w-3 animate-spin rounded-full border-2 border-[#d7dceb] border-t-[#4454ee]"></div>
           </div>
         ) : (
           <div className="grid grid-cols-7 gap-0.5">
@@ -295,7 +295,7 @@ export default function LearningCalendar() {
                   onClick={() => setSelectedDay(day)}
                   className={`
                     aspect-square flex items-center justify-center text-[8px] font-bold
-                    border-[1px] transition-all duration-150
+                    rounded-[6px] border transition-all duration-150
                     ${getIntensityColor(day)}
                     ${getIntensityBorder(day)}
                     ${isToday ? 'ring-1 ring-blue-500' : ''}
@@ -314,34 +314,34 @@ export default function LearningCalendar() {
         {/* 图例 - 紧凑 */}
         <div className="flex items-center justify-center gap-0.5 mt-1.5 pt-1.5 border-t border-gray-200 dark:border-gray-600">
           <span className="text-[6px] text-gray-500 dark:text-gray-400">少</span>
-          <div className="w-2 h-2 bg-gray-100 dark:bg-gray-700 border-[1px] border-gray-300 dark:border-gray-600" />
-          <div className="w-2 h-2 bg-green-200 dark:bg-green-900 border-[1px] border-black dark:border-gray-600" />
-          <div className="w-2 h-2 bg-green-400 dark:bg-green-700 border-[1px] border-black dark:border-gray-600" />
-          <div className="w-2 h-2 bg-[#B4F416] dark:bg-green-600 border-[1px] border-black dark:border-gray-600" />
+          <div className="h-2 w-2 rounded-[2px] border border-[#e7eaf2] bg-[#f3f5fb] dark:border-[#273149] dark:bg-[#202941]" />
+          <div className="h-2 w-2 rounded-[2px] border border-[#cbd3ff] bg-[#edf0ff] dark:border-[#5363d6] dark:bg-[#24305a]" />
+          <div className="h-2 w-2 rounded-[2px] border border-[#cbd3ff] bg-[#c6d0ff] dark:border-[#5363d6] dark:bg-[#34478b]" />
+          <div className="h-2 w-2 rounded-[2px] border border-[#cbd3ff] bg-[#7f8cff] dark:border-[#5363d6] dark:bg-[#6574ff]" />
           <span className="text-[6px] text-gray-500 dark:text-gray-400">多</span>
         </div>
       </div>
 
       {/* 月度统计 - 紧凑 */}
       {data?.stats && (
-        <div className="border-t-[2px] border-black dark:border-gray-600 p-1.5 bg-gray-50 dark:bg-gray-900">
+        <div className="border-t border-[#e7eaf2] bg-[#f8faff] p-2 dark:border-[#273149] dark:bg-[#101626]">
           <div className="grid grid-cols-4 gap-0.5">
-            <div className="bg-white dark:bg-gray-800 border-[1px] border-black dark:border-gray-600 p-1 text-center">
+            <div className="rounded-[6px] bg-white p-1 text-center dark:bg-[#202941]">
               <Video className="w-2 h-2 text-blue-500 mx-auto" />
               <div className="font-black text-[9px] text-black dark:text-white">{data.stats.total_videos}</div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 border-[1px] border-black dark:border-gray-600 p-1 text-center">
-              <BookOpen className="w-2 h-2 text-[#B4F416] mx-auto" />
+            <div className="rounded-[6px] bg-white p-1 text-center dark:bg-[#202941]">
+              <BookOpen className="w-2 h-2 text-[#5a45d6] mx-auto" />
               <div className="font-black text-[9px] text-black dark:text-white">{data.stats.total_words}</div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 border-[1px] border-black dark:border-gray-600 p-1 text-center">
+            <div className="rounded-[6px] bg-white p-1 text-center dark:bg-[#202941]">
               <MessageSquare className="w-2 h-2 text-purple-500 mx-auto" />
               <div className="font-black text-[9px] text-black dark:text-white">{data.stats.total_phrases}</div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 border-[1px] border-black dark:border-gray-600 p-1 text-center">
+            <div className="rounded-[6px] bg-white p-1 text-center dark:bg-[#202941]">
               <Sparkles className="w-2 h-2 text-orange-500 mx-auto" />
               <div className="font-black text-[9px] text-black dark:text-white">{data.stats.total_expressions}</div>
             </div>
@@ -350,7 +350,7 @@ export default function LearningCalendar() {
           {/* 活跃天数 */}
           <div className="mt-1 text-center">
             <span className="text-[7px] text-gray-500 dark:text-gray-400">
-              学习 <span className="font-black text-[#B4F416]">{data.stats.active_days}</span> 天
+              学习 <span className="font-black text-[#4454ee]">{data.stats.active_days}</span> 天
             </span>
           </div>
         </div>

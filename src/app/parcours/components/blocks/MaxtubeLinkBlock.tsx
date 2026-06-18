@@ -1,6 +1,9 @@
 import type { Block } from '@/data/parcours-mock'
 
 export function MaxtubeLinkBlock({ block }: { block: Block }) {
+  const href = block.url || '/videos?language=fr'
+  const isExternal = /^https?:\/\//i.test(href)
+
   return (
     <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-lg border border-indigo-200 p-5">
       <h3 className="font-bold text-indigo-800 mb-2">{block.title}</h3>
@@ -8,9 +11,9 @@ export function MaxtubeLinkBlock({ block }: { block: Block }) {
         <p className="text-sm text-gray-600 mb-4">{block.description}</p>
       )}
       <a
-        href={block.url || '#'}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={href}
+        target={isExternal ? '_blank' : undefined}
+        rel={isExternal ? 'noopener noreferrer' : undefined}
         className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white text-sm font-medium hover:bg-indigo-700 transition-colors"
       >
         <svg

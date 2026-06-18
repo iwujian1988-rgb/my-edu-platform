@@ -54,12 +54,12 @@ function optionClass(
 ): string {
   if (!submitted) {
     return ans?.selected === option
-      ? 'border-primary-300 bg-primary-50'
-      : 'border-gray-200 hover:border-gray-300'
+      ? 'border-primary-300 bg-primary-50 dark:bg-primary-900/40 dark:border-primary-500'
+      : 'border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-500'
   }
-  if (option === question.answer) return 'border-green-300 bg-green-50'
-  if (ans?.selected === option) return 'border-red-300 bg-red-50'
-  return 'border-gray-200'
+  if (option === question.answer) return 'border-green-300 bg-green-50 dark:bg-green-950/40 dark:border-green-700'
+  if (ans?.selected === option) return 'border-red-300 bg-red-50 dark:bg-red-950/40 dark:border-red-700'
+  return 'border-gray-200 dark:border-gray-700'
 }
 
 function multiOptionClass(
@@ -70,13 +70,13 @@ function multiOptionClass(
 ): string {
   if (!submitted) {
     return ans?.multiSelected?.includes(option)
-      ? 'border-primary-300 bg-primary-50'
-      : 'border-gray-200 hover:border-gray-300'
+      ? 'border-primary-300 bg-primary-50 dark:bg-primary-900/40 dark:border-primary-500'
+      : 'border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-500'
   }
   if (Array.isArray(question.answer) && question.answer.includes(option))
-    return 'border-green-300 bg-green-50'
-  if (ans?.multiSelected?.includes(option)) return 'border-red-300 bg-red-50'
-  return 'border-gray-200'
+    return 'border-green-300 bg-green-50 dark:bg-green-950/40 dark:border-green-700'
+  if (ans?.multiSelected?.includes(option)) return 'border-red-300 bg-red-50 dark:bg-red-950/40 dark:border-red-700'
+  return 'border-gray-200 dark:border-gray-700'
 }
 
 function blankInputClass(
@@ -85,11 +85,11 @@ function blankInputClass(
   submitted: boolean,
 ): string {
   if (!submitted) {
-    return 'border-gray-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500'
+    return 'border-gray-300 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100 focus:border-primary-500 focus:ring-1 focus:ring-primary-500'
   }
   return isQuestionCorrect(question, ans, submitted)
-    ? 'border-green-300 bg-green-50'
-    : 'border-red-300 bg-red-50'
+    ? 'border-green-300 bg-green-50 dark:bg-green-950/40 dark:border-green-700 dark:text-gray-100'
+    : 'border-red-300 bg-red-50 dark:bg-red-950/40 dark:border-red-700 dark:text-gray-100'
 }
 
 export function QuizBlock({
@@ -156,14 +156,14 @@ export function QuizBlock({
 
   if (!isMultiQuiz && !singleQuiz) {
     return (
-      <div className="bg-white rounded-lg border border-gray-200 p-5">
+      <div className="bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 p-5">
         <p className="text-sm text-gray-400">本测验暂无题目</p>
       </div>
     )
   }
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 p-5">
+    <div className="bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 p-5">
       <h3 className="font-bold text-gray-800 mb-4">{block.title || '小测验'}</h3>
 
       {isMultiQuiz ? (
@@ -175,10 +175,10 @@ export function QuizBlock({
               return (
                 <section
                   key={question.id || index}
-                  className="rounded-xl border border-gray-200 p-4"
+                  className="rounded-xl border border-gray-200 dark:border-gray-800 p-4"
                 >
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <p className="text-sm font-medium text-gray-800">
+                    <p className="text-sm font-medium text-gray-800 dark:text-gray-100">
                       {index + 1}. {question.question}
                     </p>
                     {submitted && (
@@ -214,7 +214,7 @@ export function QuizBlock({
                             }
                             className="accent-primary-600"
                           />
-                          <span className="text-sm">{opt}</span>
+                          <span className="text-sm text-gray-800 dark:text-gray-100">{opt}</span>
                           {submitted && opt === question.answer && (
                             <svg
                               className="w-4 h-4 text-green-500 ml-auto shrink-0"
@@ -279,7 +279,7 @@ export function QuizBlock({
                             }
                             className="accent-primary-600"
                           />
-                          <span className="text-sm">{opt}</span>
+                          <span className="text-sm text-gray-800 dark:text-gray-100">{opt}</span>
                           {submitted &&
                             Array.isArray(question.answer) &&
                             question.answer.includes(opt) && (
@@ -350,8 +350,8 @@ export function QuizBlock({
                   )}
 
                   {submitted && question.explanation && (
-                    <div className="mt-4 p-4 rounded-lg bg-blue-50 border border-blue-100">
-                      <p className="text-sm text-blue-800">{question.explanation}</p>
+                    <div className="mt-4 p-4 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-800">
+                      <p className="text-sm text-blue-800 dark:text-blue-200">{question.explanation}</p>
                     </div>
                   )}
                 </section>
@@ -367,7 +367,7 @@ export function QuizBlock({
                 className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
                   allAnswered
                     ? 'bg-primary-600 text-white hover:bg-primary-700'
-                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500 cursor-not-allowed'
                 }`}
               >
                 提交测验
@@ -375,7 +375,7 @@ export function QuizBlock({
             ) : (
               <button
                 onClick={resetQuiz}
-                className="px-5 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+                className="px-5 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
               >
                 重新作答
               </button>
@@ -383,11 +383,11 @@ export function QuizBlock({
           </div>
 
           {submitted && (
-            <div className="mt-4 rounded-xl border border-primary-100 bg-primary-50 px-4 py-3">
-              <p className="text-sm font-semibold text-primary-800">
+            <div className="mt-4 rounded-xl border border-primary-100 dark:border-primary-800 bg-primary-50 dark:bg-primary-900/40 px-4 py-3">
+              <p className="text-sm font-semibold text-primary-800 dark:text-primary-100">
                 得分 {score} / {questions.length}
               </p>
-              <p className="text-xs text-primary-700 mt-1">
+              <p className="text-xs text-primary-700 dark:text-primary-200 mt-1">
                 已显示每题结果，你可以直接复盘，或修改答案后重新提交。
               </p>
             </div>
@@ -395,7 +395,7 @@ export function QuizBlock({
         </>
       ) : singleQuiz ? (
         <>
-          <p className="text-sm text-gray-700 mb-4">{singleQuiz.question}</p>
+          <p className="text-sm text-gray-700 dark:text-gray-200 mb-4">{singleQuiz.question}</p>
 
           {singleQuiz.type === 'single-choice' && (
             <div className="space-y-2 mb-4">
@@ -421,7 +421,7 @@ export function QuizBlock({
                       }
                       className="accent-primary-600"
                     />
-                    <span className="text-sm">{opt}</span>
+                    <span className="text-sm text-gray-800 dark:text-gray-100">{opt}</span>
                     {submitted && opt === singleQuiz.answer && (
                       <svg
                         className="w-4 h-4 text-green-500 ml-auto shrink-0"
@@ -489,7 +489,7 @@ export function QuizBlock({
                       }
                       className="accent-primary-600"
                     />
-                    <span className="text-sm">{opt}</span>
+                    <span className="text-sm text-gray-800 dark:text-gray-100">{opt}</span>
                   </label>
                 )
               })}
@@ -530,7 +530,7 @@ export function QuizBlock({
                 className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
                   allAnswered
                     ? 'bg-primary-600 text-white hover:bg-primary-700'
-                    : 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                    : 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500 cursor-not-allowed'
                 }`}
               >
                 检查答案
@@ -538,7 +538,7 @@ export function QuizBlock({
             ) : (
               <button
                 onClick={resetQuiz}
-                className="px-5 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors"
+                className="px-5 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
               >
                 重试
               </button>
@@ -556,8 +556,8 @@ export function QuizBlock({
           </div>
 
           {submitted && singleQuiz.explanation && (
-            <div className="mt-4 p-4 rounded-lg bg-blue-50 border border-blue-100">
-              <p className="text-sm text-blue-800">{singleQuiz.explanation}</p>
+            <div className="mt-4 p-4 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-800">
+              <p className="text-sm text-blue-800 dark:text-blue-200">{singleQuiz.explanation}</p>
             </div>
           )}
         </>

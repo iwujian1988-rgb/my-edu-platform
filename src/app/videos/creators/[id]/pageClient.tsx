@@ -254,6 +254,11 @@ export default function CreatorDetailClient({ creatorId }: Props) {
               </div>
             ))}
           </div>
+        ) : error && error.message !== 'UNAUTHORIZED' ? (
+          <div className="text-center py-20">
+            <Podcast className="w-16 h-16 mx-auto text-gray-300 mb-4" />
+            <p className="text-lg font-bold text-gray-400">内容暂时没有加载出来，请稍后再试</p>
+          </div>
         ) : items.length === 0 ? (
           <div className="text-center py-20">
             <Podcast className="w-16 h-16 mx-auto text-gray-300 mb-4" />

@@ -48,7 +48,7 @@
             {
               "type": "maxtube_link",
               "title": "去 Maxtube 看更多真实法语视频",
-              "url": "#maxtube-placeholder",
+              "url": "/videos?language=fr",
               "description": "在 Maxtube 中观看 Super Easy French 系列视频，带双语字幕和跟读练习。",
               "id": "maxtube"
             }
@@ -108,7 +108,7 @@
             {
               "type": "maxtube_link",
               "title": "去 Maxtube 听法国人自我介绍",
-              "url": "#maxtube-placeholder",
+              "url": "/videos?language=fr",
               "description": "观看 Easy French 街头采访：法国人如何自我介绍。带双语字幕和跟读练习。",
               "id": "maxtube"
             }
@@ -152,7 +152,7 @@
             {
               "type": "maxtube_link",
               "title": "去 Maxtube 体验真实咖啡馆对话",
-              "url": "#maxtube-placeholder",
+              "url": "/videos?language=fr",
               "description": "观看法国咖啡馆点餐实录，练习听力和跟读。",
               "id": "maxtube"
             }
@@ -212,7 +212,7 @@
             {
               "type": "maxtube_link",
               "title": "去 Maxtube 看法国人怎么指路",
-              "url": "#maxtube-placeholder",
+              "url": "/videos?language=fr",
               "description": "观看真实问路场景视频，练习方位听力理解。",
               "id": "maxtube"
             }
@@ -256,7 +256,7 @@
             {
               "type": "maxtube_link",
               "title": "去 Maxtube 听法国人聊爱好",
-              "url": "#maxtube-placeholder",
+              "url": "/videos?language=fr",
               "description": "观看法国街头采访：你下班后做什么？练习段落级听力理解。",
               "id": "maxtube"
             }
@@ -308,13 +308,13 @@
             {
               "type": "video",
               "title": "演示：法国人日常对话",
-              "videoUrl": "/videos/demo.mp4",
+              "videoUrl": "https://english-word-audio-wujian.oss-cn-hongkong.aliyuncs.com/maxclass/media/content/videos/EF/EF_105_seg001.mp4",
               "id": "demo-video"
             },
             {
               "type": "maxtube_link",
               "title": "去 Maxtube 看更多真实法语视频",
-              "url": "#maxtube-placeholder",
+              "url": "/videos?language=fr",
               "description": "在 Maxtube 中观看完整的法语学习视频，带双语字幕和跟读练习。",
               "id": "maxtube"
             }
@@ -339,16 +339,16 @@
               "asset": {
                 "channel": "EF",
                 "segmentId": "EF_105_seg001",
-                "videoUrl": "/content/videos/EF/EF_105_seg001.mp4",
-                "subtitleUrl": "/content/subtitles/EF/EF_105_seg001.json",
-                "materialUrl": "/content/materials/EF/EF_105_seg001.json"
+                "videoUrl": "https://english-word-audio-wujian.oss-cn-hongkong.aliyuncs.com/maxclass/media/content/videos/EF/EF_105_seg001.mp4",
+                "subtitleUrl": "https://english-word-audio-wujian.oss-cn-hongkong.aliyuncs.com/maxclass/media/content/subtitles/EF/EF_105_seg001.json",
+                "materialUrl": "https://english-word-audio-wujian.oss-cn-hongkong.aliyuncs.com/maxclass/media/content/materials/EF/EF_105_seg001.json"
               },
               "id": "ef105-video"
             },
             {
               "type": "maxtube_link",
               "title": "在 Maxtube 中完整体验这段视频",
-              "url": "#maxtube-placeholder",
+              "url": "/videos?language=fr",
               "description": "前往 Maxtube 观看带双语字幕、跟读训练和学习资料的完整版本。",
               "id": "maxtube"
             }

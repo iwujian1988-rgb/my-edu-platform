@@ -42,12 +42,12 @@ export function ParcoursHeader() {
       </div>
 
       {/* MainNav: sticky 白色导航 */}
-      <div className="bg-white border-b sticky top-0 z-30 shadow-sm">
+      <div className="bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 sticky top-0 z-30 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-14">
           <div className="flex items-center gap-2">
             <Link
               href="/parcours"
-              className="flex items-center gap-2 font-bold text-lg text-primary-800"
+              className="flex items-center gap-2 font-bold text-lg text-primary-800 dark:text-primary-200"
             >
               <span className="text-2xl" aria-hidden>
                 🗼
@@ -59,15 +59,15 @@ export function ParcoursHeader() {
                 href="/parcours"
                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                   pathname?.startsWith('/parcours')
-                    ? 'bg-primary-50 text-primary-700'
-                    : 'text-gray-600 hover:bg-gray-100'
+                    ? 'bg-primary-50 text-primary-700 dark:bg-primary-900/40 dark:text-primary-200'
+                    : 'text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800'
                 }`}
               >
                 MaxClass
               </Link>
               <Link
                 href="/videos"
-                className="px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors"
+                className="px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors"
               >
                 MaxTube
               </Link>
@@ -75,7 +75,7 @@ export function ParcoursHeader() {
                 href="https://maxnote.example.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 transition-colors"
+                className="px-3 py-1.5 rounded-md text-sm font-medium text-gray-600 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-800 transition-colors"
               >
                 MaxNote
               </a>

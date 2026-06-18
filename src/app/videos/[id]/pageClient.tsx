@@ -70,7 +70,8 @@ import type {
   VideoExpressionCard,
   CardType,
 } from '@/types/video'
-import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, CREATOR_PLATFORM_LABELS } from '@/types/video'
+import { VIDEO_DIFFICULTY_LABELS, CEFR_LEVEL_LABELS, VIDEO_LANGUAGE_LABELS, CREATOR_PLATFORM_LABELS } from '@/types/video'
+import type { CefrLevel } from '@/types/video'
 
 interface Props {
   videoId: string
@@ -727,7 +728,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <button onClick={() => handleTabChange('listen')} className={cn(
                   "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
                   currentTab === 'listen'
-                    ? "bg-[#EEFFA8] text-gray-900 dark:text-white dark:bg-[#F0FFC2]/20"
+                    ? "bg-[#EEFFA8] text-gray-900 dark:bg-[#F0FFC2] dark:text-gray-950"
                     : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 )}>
                   字幕
@@ -735,7 +736,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <button onClick={() => setIsShadowReadingOpen(true)} className={cn(
                   "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
                   isShadowReadingOpen
-                    ? "bg-[#EEFFA8] text-gray-900 dark:text-white dark:bg-[#F0FFC2]/20"
+                    ? "bg-[#EEFFA8] text-gray-900 dark:bg-[#F0FFC2] dark:text-gray-950"
                     : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 )}>
                   跟读
@@ -743,7 +744,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <button onClick={() => !isLargeScreen ? setIsPracticeSheetOpen(true) : handleTabChange('write')} className={cn(
                   "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
                   (currentTab === 'write' || isPracticeSheetOpen)
-                    ? "bg-[#EEFFA8] text-gray-900 dark:text-white dark:bg-[#F0FFC2]/20"
+                    ? "bg-[#EEFFA8] text-gray-900 dark:bg-[#F0FFC2] dark:text-gray-950"
                     : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 )}>
                   练习
@@ -751,7 +752,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <button onClick={() => handleTabChange('learn')} className={cn(
                   "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
                   currentTab === 'learn'
-                    ? "bg-[#EEFFA8] text-gray-900 dark:text-white dark:bg-[#F0FFC2]/20"
+                    ? "bg-[#EEFFA8] text-gray-900 dark:bg-[#F0FFC2] dark:text-gray-950"
                     : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 )}>
                   知识点
@@ -951,7 +952,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                       {VIDEO_LANGUAGE_LABELS[video.language]}
                     </div>
                     <div className="px-2 py-1 bg-white dark:bg-gray-700 border-[2px] border-black dark:border-gray-500 text-xs font-bold text-black dark:text-white">
-                      {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
+                      {video.cefr_level ? CEFR_LEVEL_LABELS[video.cefr_level as CefrLevel] : VIDEO_DIFFICULTY_LABELS[video.difficulty]}
                     </div>
                   </div>
 

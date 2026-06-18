@@ -163,3 +163,8 @@ DATA_IMPORT_SPEC.md
 SPEAKER_GHOST_WORDS_MIGRATION.md
 SPEAKER_REFACTOR_PLAN.md
 TECHNICAL_MODIFICATION_PLAN.md
+gen-titles-deepseek.mjs
+
+# MAXCLASS Vue source archive, kept outside the deployable Next.js app.
+# It was used as the migration reference for the /parcours + /videos merge.
+MAXCLASS_V1_HANDOFF_2026-06-14/

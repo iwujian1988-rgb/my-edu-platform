@@ -41,17 +41,19 @@ export function VideoNav() {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-800 border-b-[3px] border-black dark:border-gray-600 transition-colors duration-300">
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-12 items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-[#e7eaf2] bg-white/92 backdrop-blur-xl transition-colors duration-300 dark:border-[#273149] dark:bg-[#0f1424]/92">
+      <div className="mx-auto max-w-[1480px] px-3 sm:px-6 lg:px-8">
+        <div className="flex h-[68px] items-center justify-between">
           {/* 左侧：Logo + 导航项 */}
           <div className="flex items-center gap-2">
             {/* Logo */}
             <Link
               href="/videos"
-              className="flex items-center gap-2 px-3 py-1.5 bg-[#B4F416] dark:bg-gray-700 border-[2px] border-black dark:border-gray-600 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all font-black text-sm tracking-tight text-black dark:text-white"
+              className="flex items-center gap-2.5 text-[20px] font-extrabold tracking-normal text-[#101426] transition-colors hover:text-[#2d39bb] dark:text-white dark:hover:text-[#bcc5ff]"
             >
-              <Video className="w-4 h-4" />
+              <span className="grid h-[34px] w-[34px] place-items-center rounded-[9px] bg-gradient-to-br from-[#4454ee] to-[#6752ff] text-white shadow-[0_8px_18px_rgba(68,82,238,0.2)]">
+                <Video className="h-4 w-4" />
+              </span>
               <span className="hidden sm:inline">视频首页</span>
             </Link>
 
@@ -66,10 +68,10 @@ export function VideoNav() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    'hidden md:flex items-center gap-1.5 px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all duration-150',
+                    'relative hidden h-[38px] items-center gap-1.5 rounded-[8px] px-3 text-sm font-bold tracking-normal transition-all duration-150 md:flex',
                     isActive
-                      ? 'bg-[#B4F416] shadow-[2px_2px_0px_0px_#000] text-black'
-                      : 'bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 text-black dark:text-white'
+                      ? 'bg-[#f1f2ff] text-[#2d39bb] dark:bg-[#202a4d] dark:text-[#bcc5ff]'
+                      : 'text-[#4f586d] hover:bg-[#f3f5fb] hover:text-[#2d39bb] dark:text-[#c5cce0] dark:hover:bg-[#202941] dark:hover:text-white'
                   )}
                 >
                   <Icon className="h-3.5 w-3.5" />
@@ -84,33 +86,33 @@ export function VideoNav() {
             {/* 卡片复习按钮 */}
             <Link
               href="/video-flashcards"
-              className="flex items-center gap-1.5 px-2 py-1.5 bg-[#B4F416] border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+              className="flex h-[38px] items-center gap-1.5 rounded-[9px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-3 text-white shadow-[0_8px_18px_rgba(48,56,196,0.22)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(48,56,196,0.26)]"
             >
-              <BookOpen className="h-3.5 w-3.5 text-black" />
-              <span className="text-xs font-black text-black">复习</span>
+              <BookOpen className="h-3.5 w-3.5" />
+              <span className="text-xs font-bold">复习</span>
             </Link>
 
             {/* 用户下拉菜单 - PC和iPad显示 */}
             <div className="relative" ref={userMenuRef}>
               <button
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
-                className="hidden md:flex items-center gap-1.5 px-2 py-1.5 bg-white dark:bg-gray-800 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+                className="hidden h-[38px] items-center gap-1.5 rounded-[9px] border border-[#e7eaf2] bg-white px-3 text-[#343947] shadow-[0_6px_14px_rgba(31,42,104,0.05)] transition-all hover:-translate-y-0.5 hover:border-[#d7dceb] hover:bg-[#f8faff] dark:border-[#273149] dark:bg-[#141b2d] dark:text-[#c5cce0] dark:hover:bg-[#202941] md:flex"
               >
-                <User className="h-3.5 w-3.5 text-black dark:text-white" />
-                <span className="text-xs font-black text-black dark:text-white">我的</span>
-                <ChevronDown className={cn("h-3 w-3 text-black dark:text-white transition-transform", userMenuOpen && "rotate-180")} />
+                <User className="h-3.5 w-3.5" />
+                <span className="text-xs font-bold">我的</span>
+                <ChevronDown className={cn("h-3 w-3 transition-transform", userMenuOpen && "rotate-180")} />
               </button>
 
               {/* 下拉菜单内容 */}
               {userMenuOpen && (
-                <div className="absolute right-0 top-full mt-1 w-40 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] z-50">
+                <div className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-[12px] border border-[#e7eaf2] bg-white shadow-[0_14px_34px_rgba(31,42,104,0.12)] dark:border-[#273149] dark:bg-[#141b2d]">
                   {/* 联系客服 */}
                   <button
                     onClick={() => {
                       window.open('https://work.weixin.qq.com/kfid/kfc49c2602e3dbe2fc1', '_blank')
                       setUserMenuOpen(false)
                     }}
-                    className="w-full flex items-center gap-2 px-3 py-2.5 text-sm font-bold text-black dark:text-white hover:bg-[#B4F416] transition-colors border-b-[2px] border-black dark:border-gray-600"
+                    className="flex w-full items-center gap-2 border-b border-[#e7eaf2] px-3 py-2.5 text-sm font-bold text-[#343947] transition-colors hover:bg-[#f1f2ff] hover:text-[#2d39bb] dark:border-[#273149] dark:text-[#c5cce0] dark:hover:bg-[#202a4d] dark:hover:text-white"
                   >
                     <Headphones className="h-4 w-4" />
                     联系客服
@@ -121,7 +123,7 @@ export function VideoNav() {
                       setUserMenuOpen(false)
                       router.push('/logout')
                     }}
-                    className="w-full flex items-center gap-2 px-3 py-2.5 text-sm font-bold text-black dark:text-white hover:bg-[#FF6B6B] hover:text-white transition-colors"
+                    className="flex w-full items-center gap-2 px-3 py-2.5 text-sm font-bold text-[#343947] transition-colors hover:bg-[#fff0f0] hover:text-[#d43737] dark:text-[#c5cce0] dark:hover:bg-[#3a1e28] dark:hover:text-white"
                   >
                     <LogOut className="h-4 w-4" />
                     退出登录
@@ -134,13 +136,13 @@ export function VideoNav() {
             <Button
               variant="ghost"
               size="icon"
-              className="md:hidden h-8 w-8 border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-700 p-0"
+              className="h-9 w-9 rounded-[9px] border border-[#e7eaf2] bg-white p-0 shadow-[0_6px_14px_rgba(31,42,104,0.05)] hover:bg-[#f8faff] dark:border-[#273149] dark:bg-[#141b2d] dark:hover:bg-[#202941] md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
-                <X className="h-4 w-4 text-black dark:text-white" />
+                <X className="h-4 w-4 text-[#343947] dark:text-white" />
               ) : (
-                <Menu className="h-4 w-4 text-black dark:text-white" />
+                <Menu className="h-4 w-4 text-[#343947] dark:text-white" />
               )}
             </Button>
           </div>
@@ -149,8 +151,8 @@ export function VideoNav() {
 
       {/* 移动端下拉菜单 */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-t-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800">
-          <nav className="max-w-[1600px] mx-auto px-4 py-3 flex flex-col gap-2">
+        <div className="border-t border-[#e7eaf2] bg-white/96 shadow-[0_12px_24px_rgba(31,42,104,0.08)] dark:border-[#273149] dark:bg-[#0f1424]/96 md:hidden">
+          <nav className="mx-auto flex max-w-[1480px] flex-col gap-2 px-4 py-3">
             {NAV_ITEMS.map((item) => {
               const Icon = item.icon
               const isActive = pathname === item.href ||
@@ -162,10 +164,10 @@ export function VideoNav() {
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
                   className={cn(
-                    'flex items-center gap-3 px-4 py-2.5 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all duration-150',
+                    'flex items-center gap-3 rounded-[10px] px-4 py-2.5 text-sm font-bold tracking-normal transition-all duration-150',
                     isActive
-                      ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] text-black'
-                      : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                      ? 'bg-gradient-to-br from-[#2633a8] to-[#6550ff] text-white shadow-[0_8px_18px_rgba(48,56,196,0.2)]'
+                      : 'bg-[#f3f5fb] text-[#343947] dark:bg-[#202941] dark:text-[#c5cce0]'
                   )}
                 >
                   <Icon className="h-4 w-4" />

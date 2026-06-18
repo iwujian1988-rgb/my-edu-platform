@@ -104,7 +104,9 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
       })()
     : ''
   const courseTypeClass =
-    courseType === 'structured' ? 'bg-blue-100 text-blue-800' : 'bg-amber-100 text-amber-800'
+    courseType === 'structured'
+      ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/40 dark:text-blue-200'
+      : 'bg-amber-100 text-amber-800 dark:bg-amber-950/40 dark:text-amber-200'
 
   const moduleCount = course.modules?.length ?? 0
   const allLessons = course.modules?.flatMap(mod => mod.lessons ?? []) ?? []
@@ -140,12 +142,12 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
     return t('pages.courseLanding.notStarted')
   }
   function lessonStatusClass(lessonId: string, blocksCount: number): string {
-    if (!mounted) return 'bg-gray-100 text-gray-600'
-    if (isLessonCompleted(lessonId)) return 'bg-green-100 text-green-700'
+    if (!mounted) return 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300'
+    if (isLessonCompleted(lessonId)) return 'bg-green-100 text-green-700 dark:bg-green-950/40 dark:text-green-200'
     if (completedBlockCount(lessonId, []) > 0 || blocksCount > 0) {
-      return 'bg-primary-100 text-primary-700'
+      return 'bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-200'
     }
-    return 'bg-gray-100 text-gray-600'
+    return 'bg-gray-100 text-gray-600 dark:bg-gray-800 dark:text-gray-300'
   }
 
   return (
@@ -226,14 +228,14 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
       <div className="text-center mb-10">
         <a
           href="#modules"
-          className="inline-flex flex-col items-center gap-1 text-primary-600 hover:text-primary-800 transition-colors"
+          className="inline-flex flex-col items-center gap-1 text-primary-600 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 transition-colors"
         >
           <span className="text-sm font-medium">
             {totalLessons > 0
               ? t('pages.courseLanding.lessonCount', { count: totalLessons })
               : t('pages.courseLanding.viewExercises', { count: course.exerciseCount ?? 0 })}
           </span>
-          <span className="text-xs text-gray-400">{t('pages.courseLanding.scrollDown')}</span>
+          <span className="text-xs text-gray-400 dark:text-gray-500">{t('pages.courseLanding.scrollDown')}</span>
           <svg className="w-5 h-5 animate-bounce mt-1" fill="currentColor" viewBox="0 0 20 20">
             <path
               fillRule="evenodd"
@@ -253,7 +255,7 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               activeModule === mod.slug
                 ? 'bg-primary-600 text-white shadow-sm'
-                : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                : 'bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700'
             }`}
           >
             {moduleTitle(mod)}
@@ -263,12 +265,12 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
 
       <div className="mb-6">
         <div className="flex items-center justify-between mb-1">
-          <span className="text-sm font-medium text-gray-700">
+          <span className="text-sm font-medium text-gray-700 dark:text-gray-300">
             {t('pages.courseLanding.globalProgress')}
           </span>
-          <span className="text-sm font-mono text-gray-500">{globalProgressPercent}%</span>
+          <span className="text-sm font-mono text-gray-500 dark:text-gray-400">{globalProgressPercent}%</span>
         </div>
-        <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
+        <div className="h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden">
           <div
             className="h-full bg-primary-600 rounded-full transition-all"
             style={{ width: `${globalProgressPercent}%` }}
@@ -277,11 +279,11 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
       </div>
 
       {courseTip ? (
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4 mb-10 flex items-start gap-3">
+        <div className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-lg p-4 mb-10 flex items-start gap-3">
           <span className="text-2xl shrink-0">💡</span>
           <div>
-            <p className="font-semibold text-amber-800 text-sm">{t('pages.courseLanding.tip')}</p>
-            <p className="text-amber-700 text-sm mt-1">{courseTip}</p>
+            <p className="font-semibold text-amber-800 dark:text-amber-200 text-sm">{t('pages.courseLanding.tip')}</p>
+            <p className="text-amber-700 dark:text-amber-300 text-sm mt-1">{courseTip}</p>
           </div>
         </div>
       ) : null}
@@ -290,12 +292,12 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
         <section key={mod.id} id={`module-${mod.slug}`} className="mb-12 scroll-mt-24">
           <div className="flex items-start justify-between mb-4">
             <div>
-              <h2 className="text-xl font-bold text-gray-800">{moduleTitle(mod)}</h2>
-              <p className="text-gray-500 mt-1 text-sm leading-relaxed">{moduleDescription(mod)}</p>
+              <h2 className="text-xl font-bold text-gray-800 dark:text-gray-100">{moduleTitle(mod)}</h2>
+              <p className="text-gray-500 dark:text-gray-400 mt-1 text-sm leading-relaxed">{moduleDescription(mod)}</p>
             </div>
             <Link
               href={moduleRoute(course, mod)}
-              className="shrink-0 ml-4 text-primary-600 hover:text-primary-800 text-sm font-medium transition-colors"
+              className="shrink-0 ml-4 text-primary-600 dark:text-primary-300 hover:text-primary-800 dark:hover:text-primary-200 text-sm font-medium transition-colors"
             >
               {t('pages.courseLanding.viewModule')} →
             </Link>
@@ -304,10 +306,10 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
           {mod.lessons?.length ? (
             <>
               <div className="flex items-center justify-between mb-3">
-                <p className="text-xs text-gray-400 uppercase font-semibold">
+                <p className="text-xs text-gray-400 dark:text-gray-500 uppercase font-semibold">
                   {t('pages.courseLanding.lessons')}
                 </p>
-                <p className="text-xs text-gray-500">
+                <p className="text-xs text-gray-500 dark:text-gray-400">
                   {mounted ? completedCount(mod.lessons) : 0} / {mod.lessons.length}{' '}
                   {t('pages.courseLanding.completed')}
                 </p>
@@ -319,7 +321,7 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
                     <Link
                       key={lesson.id}
                       href={lessonRoute(course, mod, lessonIndex)}
-                      className="group block bg-white rounded-lg border border-gray-200 p-5 hover:border-primary-300 hover:shadow-md transition-all"
+                      className="group block bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 p-5 hover:border-primary-300 dark:hover:border-primary-500 hover:shadow-md transition-all"
                     >
                       <div className="flex items-center justify-between gap-3 mb-3">
                         <span
@@ -330,19 +332,19 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
                         >
                           {lessonStatusLabel(lesson.id, blocksCount)}
                         </span>
-                        <span className="text-xs text-gray-400">
+                        <span className="text-xs text-gray-400 dark:text-gray-500">
                           {t('pages.courseLanding.blocksCount', { count: blocksCount })}
                         </span>
                       </div>
-                      <h3 className="font-semibold text-gray-800 group-hover:text-primary-700 transition-colors">
+                      <h3 className="font-semibold text-gray-800 dark:text-gray-100 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors">
                         {formatLessonTitle(lessonIndex, lesson.title)}
                       </h3>
                       {lesson.description ? (
-                        <p className="text-sm text-gray-500 mt-2 line-clamp-2">{lesson.description}</p>
+                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2 line-clamp-2">{lesson.description}</p>
                       ) : null}
-                      <div className="flex items-center justify-between mt-4 text-xs text-gray-400">
+                      <div className="flex items-center justify-between mt-4 text-xs text-gray-400 dark:text-gray-500">
                         <span>{lesson.estimatedMinutes ?? 0} min</span>
-                        <span className="text-primary-600 font-medium">
+                        <span className="text-primary-600 dark:text-primary-300 font-medium">
                           {t('pages.courseLanding.openLesson')} →
                         </span>
                       </div>
@@ -354,14 +356,14 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
           ) : mod.steps?.length ? (
             <>
               <div className="mb-4">
-                <p className="text-xs text-gray-400 mb-2">
+                <p className="text-xs text-gray-400 dark:text-gray-500 mb-2">
                   {t('pages.courseLanding.stepProgress')}
                 </p>
                 <div className="flex gap-2">
                   {mod.steps.map((_step: ModuleStep, si: number) => (
                     <div
                       key={si}
-                      className="flex-1 h-2 bg-gray-200 rounded-full overflow-hidden"
+                      className="flex-1 h-2 bg-gray-200 dark:bg-gray-800 rounded-full overflow-hidden"
                     >
                       <div className="h-full bg-green-500 rounded-full" style={{ width: '0%' }} />
                     </div>
@@ -373,7 +375,7 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
                 {mod.steps.map((step: ModuleStep, si: number) => (
                   <span
                     key={si}
-                    className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-500"
+                    className="text-xs px-2 py-0.5 rounded bg-gray-100 text-gray-500 dark:bg-gray-800 dark:text-gray-300"
                   >
                     {t('pages.courseLanding.stepLabel', {
                       n: String(si + 1).padStart(2, '0'),
@@ -382,14 +384,14 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
                 ))}
               </div>
 
-              <p className="text-xs text-gray-400 uppercase font-semibold mb-3">
+              <p className="text-xs text-gray-400 dark:text-gray-500 uppercase font-semibold mb-3">
                 {t('pages.courseLanding.steps')}
               </p>
 
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {mod.steps.map((step: ModuleStep, si: number) => (
                   <Link key={step.id} href={moduleRoute(course, mod)} className="group block">
-                    <div className="bg-white rounded-lg border-2 border-gray-200 overflow-hidden transition-all hover:border-primary-300 hover:shadow-md">
+                    <div className="bg-white dark:bg-gray-950 rounded-lg border-2 border-gray-200 dark:border-gray-800 overflow-hidden transition-all hover:border-primary-300 dark:hover:border-primary-500 hover:shadow-md">
                       <div
                         className={`h-32 flex items-center justify-center text-4xl ${
                           STEP_GRADIENTS[si % STEP_GRADIENTS.length]
@@ -398,14 +400,14 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
                         {step.thumbnail}
                       </div>
                       <div className="p-3">
-                        <h3 className="font-medium text-sm text-gray-800 group-hover:text-primary-700 transition-colors line-clamp-2">
+                        <h3 className="font-medium text-sm text-gray-800 dark:text-gray-100 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors line-clamp-2">
                           {translated(
                             `${course.slug}.${mod.slug}.${step.slug}`,
                             'title',
                             step.title ?? '',
                           )}
                         </h3>
-                        <p className="text-xs text-gray-400 mt-1">
+                        <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
                           0/{step.exerciseCount ?? 0} {t('pages.courseLanding.exercisesUnit')}
                         </p>
                       </div>
@@ -415,8 +417,8 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
               </div>
             </>
           ) : (
-            <div className="bg-white rounded-lg border border-gray-200 p-5">
-              <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500">
+            <div className="bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 p-5">
+              <div className="flex flex-wrap items-center gap-3 text-sm text-gray-500 dark:text-gray-400">
                 <span>
                   {(mod.exerciseIds ?? []).length} {t('pages.course.exercises')}
                 </span>
@@ -431,7 +433,7 @@ export function CourseLandingPageClient({ course }: { course: Course }) {
                   {mod.objectives.map((objective, index) => (
                     <li
                       key={index}
-                      className="text-sm text-gray-600 flex items-start gap-2"
+                      className="text-sm text-gray-600 dark:text-gray-300 flex items-start gap-2"
                     >
                       <span className="text-green-500 mt-0.5">•</span>
                       <span>{objective}</span>

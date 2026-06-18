@@ -106,7 +106,12 @@ export function SubtitleWithHighlights({
   if (displayMode === 'chinese') {
     return (
       <div className="space-y-1">
-        <p className="text-[15px] font-medium leading-relaxed text-gray-700 lg:text-sm lg:font-normal lg:text-muted-foreground">
+        <p className={cn(
+          'text-[15px] font-medium leading-relaxed lg:text-sm lg:font-normal',
+          isActive
+            ? 'text-gray-800 dark:text-gray-900'
+            : 'text-gray-700 dark:text-gray-300 lg:text-muted-foreground',
+        )}>
           {subtitle.chinese_text || <span className="text-muted-foreground italic">暂无翻译</span>}
         </p>
       </div>
@@ -116,7 +121,12 @@ export function SubtitleWithHighlights({
   if (displayMode === 'original') {
     return (
       <div className="space-y-1">
-        <p className="text-[16px] font-semibold leading-[1.6] text-gray-900 lg:text-sm lg:font-normal">
+        <p className={cn(
+          'text-[16px] font-semibold leading-[1.6] lg:text-sm lg:font-normal',
+          isActive
+            ? 'text-gray-950 dark:text-gray-950'
+            : 'text-gray-900 dark:text-gray-100',
+        )}>
           {renderHighlightedText(subtitle.original_text, sortedHighlights)}
         </p>
       </div>
@@ -126,11 +136,21 @@ export function SubtitleWithHighlights({
   // bilingual - 双语显示
   return (
     <div className="space-y-1 lg:space-y-1">
-      <p className="text-[16px] font-semibold leading-[1.6] text-gray-900 lg:text-sm lg:font-normal">
+      <p className={cn(
+        'text-[16px] font-semibold leading-[1.6] lg:text-sm lg:font-normal',
+        isActive
+          ? 'text-gray-950 dark:text-gray-950'
+          : 'text-gray-900 dark:text-gray-100',
+      )}>
         {renderHighlightedText(subtitle.original_text, sortedHighlights)}
       </p>
       {subtitle.chinese_text && (
-        <p className="text-[14px] leading-relaxed text-[#4B5563] lg:text-xs lg:text-muted-foreground">
+        <p className={cn(
+          'text-[14px] leading-relaxed lg:text-xs',
+          isActive
+            ? 'text-gray-800 dark:text-gray-900'
+            : 'text-[#4B5563] dark:text-gray-300 lg:text-muted-foreground',
+        )}>
           {subtitle.chinese_text}
         </p>
       )}

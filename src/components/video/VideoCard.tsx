@@ -15,21 +15,27 @@ import {
   Video,
   Podcast,
 } from 'lucide-react'
-import type { VideoListItem } from '@/types/video'
-import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, formatDuration } from '@/types/video'
+import type { VideoListItem, CefrLevel } from '@/types/video'
+import { VIDEO_DIFFICULTY_LABELS, CEFR_LEVEL_LABELS, VIDEO_LANGUAGE_LABELS, formatDuration } from '@/types/video'
 import { AudioCoverBackground } from '@/components/video/AudioCoverBackground'
+
+// 获取难度显示文本
+export const getDifficultyLabel = (video: VideoListItem) => {
+  if (video.cefr_level) return CEFR_LEVEL_LABELS[video.cefr_level as CefrLevel]
+  return VIDEO_DIFFICULTY_LABELS[video.difficulty]
+}
 
 // 获取难度等级的颜色
 export const getDifficultyColor = (difficulty: string) => {
   switch (difficulty) {
     case 'beginner':
-      return 'bg-[#B4F416]'
+      return 'bg-[#eef1ff] text-[#2d39bb]'
     case 'intermediate':
-      return 'bg-purple-400'
+      return 'bg-[#f0efff] text-[#5a45d6]'
     case 'advanced':
-      return 'bg-red-400'
+      return 'bg-[#fff0f0] text-[#d43737]'
     default:
-      return 'bg-gray-400'
+      return 'bg-[#f3f5fb] text-[#4f586d]'
   }
 }
 
@@ -45,10 +51,10 @@ export default function VideoCard({ video }: VideoCardProps) {
   return (
     <Link
       href={`/videos/${video.id}`}
-      className="neo-card neo-card-video group relative bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-150 cursor-pointer overflow-hidden block flex flex-col"
+      className="neo-card-video group relative flex cursor-pointer flex-col overflow-hidden rounded-[12px] border border-[#e7eaf2] bg-white shadow-[0_9px_24px_rgba(31,42,104,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(31,42,104,0.10)] dark:border-[#273149] dark:bg-[#141b2d]"
     >
       {/* 缩略图 - 移动端更大，PC端正常 */}
-      <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b border-gray-200 dark:border-gray-700 flex-shrink-0 transition-colors duration-300">
+      <div className="relative w-full aspect-video flex-shrink-0 overflow-hidden border-b border-[#e7eaf2] bg-gray-100 transition-colors duration-300 dark:border-[#273149] dark:bg-[#202941]">
         {isAudio && coverImage ? (
           /* 音频：主色调模糊背景 + 居中封面 */
           <>
@@ -83,7 +89,7 @@ export default function VideoCard({ video }: VideoCardProps) {
               <span className="text-xs font-semibold tracking-tight">播客</span>
             </div>
           ) : (
-            <div className="px-3 py-1 bg-[#B4F416] border border-[#99CC00] rounded shadow-sm transform -rotate-1">
+            <div className="rounded-[7px] bg-white/92 px-3 py-1 text-[#2d39bb] shadow-[0_6px_14px_rgba(31,42,104,0.12)] backdrop-blur-sm">
               <span className="text-xs font-semibold tracking-tight flex items-center gap-1">
                 <Play className="w-3 h-3" />
                 视频
@@ -100,7 +106,7 @@ export default function VideoCard({ video }: VideoCardProps) {
               <span className="text-[10px] font-semibold">播客</span>
             </div>
           ) : (
-            <div className="px-2 py-0.5 bg-[#B4F416] border border-[#99CC00] rounded text-[10px] font-semibold flex items-center gap-0.5">
+            <div className="flex items-center gap-0.5 rounded-[6px] bg-white/92 px-2 py-0.5 text-[10px] font-semibold text-[#2d39bb] shadow-[0_5px_12px_rgba(31,42,104,0.10)] backdrop-blur-sm">
               <Play className="w-2.5 h-2.5" />
               视频
             </div>
@@ -109,17 +115,17 @@ export default function VideoCard({ video }: VideoCardProps) {
 
         {/* 难度标签 - PC端 */}
         <div className="hidden md:block absolute top-3 right-3">
-          <div className={`px-3 py-1 ${getDifficultyColor(video.difficulty)} border border-gray-800 dark:border-gray-600 rounded shadow-sm transform rotate-1`}>
+          <div className={`rounded-[7px] px-3 py-1 shadow-[0_6px_14px_rgba(31,42,104,0.12)] ${getDifficultyColor(video.difficulty)}`}>
             <span className="text-xs font-semibold tracking-tight">
-              {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
+              {getDifficultyLabel(video)}
             </span>
           </div>
         </div>
 
         {/* 难度标签 - 移动端 */}
         <div className="md:hidden absolute top-2 right-2">
-          <div className={`px-2 py-0.5 ${getDifficultyColor(video.difficulty)} border border-gray-800 dark:border-gray-600 rounded text-[10px] font-semibold`}>
-            {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
+          <div className={`rounded-[6px] px-2 py-0.5 text-[10px] font-semibold shadow-[0_5px_12px_rgba(31,42,104,0.10)] ${getDifficultyColor(video.difficulty)}`}>
+            {getDifficultyLabel(video)}
           </div>
         </div>
 
@@ -136,7 +142,7 @@ export default function VideoCard({ video }: VideoCardProps) {
         {/* 完成标记 - PC端 */}
         {progress?.is_completed && (
           <div className="hidden md:block absolute bottom-2 left-2">
-            <div className="px-3 py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[3px_3px_0px_0px_#000] transform rotate-2">
+            <div className="rounded-[7px] bg-[#f1f2ff] px-3 py-1.5 text-[#2d39bb] shadow-[0_6px_14px_rgba(31,42,104,0.12)]">
               <span className="text-xs font-black tracking-tight">✓ DONE</span>
             </div>
           </div>
@@ -145,7 +151,7 @@ export default function VideoCard({ video }: VideoCardProps) {
         {/* 完成标记 - 移动端 */}
         {progress?.is_completed && (
           <div className="md:hidden absolute bottom-2 left-2">
-            <div className="px-2 py-1 bg-[#B4F416] border-[1px] border-black text-[10px] font-black">
+            <div className="rounded-[6px] bg-[#f1f2ff] px-2 py-1 text-[10px] font-black text-[#2d39bb] shadow-[0_5px_12px_rgba(31,42,104,0.10)]">
               ✓ 已完成
             </div>
           </div>
@@ -155,7 +161,7 @@ export default function VideoCard({ video }: VideoCardProps) {
         {progress && progress.max_progress > 0 && !progress.is_completed && (
           <div className="hidden md:block absolute bottom-0 left-0 right-0 h-[4px] bg-gray-300 dark:bg-gray-600">
             <div
-              className="h-full bg-[#B4F416] transition-all duration-300"
+              className="h-full bg-gradient-to-r from-[#2633a8] to-[#6550ff] transition-all duration-300"
               style={{ width: `${Math.min(progress.max_progress, 100)}%` }}
             />
           </div>
@@ -165,7 +171,7 @@ export default function VideoCard({ video }: VideoCardProps) {
         {progress && progress.max_progress > 0 && !progress.is_completed && (
           <div className="md:hidden absolute bottom-0 left-0 right-0 h-[3px] bg-gray-300 dark:bg-gray-600">
             <div
-              className="h-full bg-[#B4F416] transition-all duration-300"
+              className="h-full bg-gradient-to-r from-[#2633a8] to-[#6550ff] transition-all duration-300"
               style={{ width: `${Math.min(progress.max_progress, 100)}%` }}
             />
           </div>
@@ -173,28 +179,28 @@ export default function VideoCard({ video }: VideoCardProps) {
       </div>
 
       {/* 信息区 - 移动端更紧凑 */}
-      <div className="flex-1 p-3 md:p-4 min-w-0">
+      <div className="min-w-0 flex-1 p-[15px]">
         {/* 标题 */}
-        <h3 className="text-base md:text-base font-black tracking-tight text-black dark:text-white mb-1 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
+        <h3 className="mb-1 line-clamp-2 text-base font-extrabold tracking-normal text-[#2639b1] transition-colors group-hover:text-[#3745df] dark:text-[#bcc5ff]">
           {video.title}
         </h3>
 
         {/* 描述 */}
         {video.description && (
-          <p className="text-[11px] md:text-xs text-gray-400 dark:text-gray-500 mb-2 md:mb-3 line-clamp-1">
+          <p className="mb-2 line-clamp-1 text-[11px] text-[#68718a] dark:text-[#a7b0c8] md:mb-3 md:text-xs">
             {video.description}
           </p>
         )}
 
         {/* 语种和标签 - 移动端 */}
         <div className="flex md:hidden items-center gap-2 mb-1">
-          <div className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 border-[1px] border-gray-300 dark:border-gray-500">
+          <div className="rounded-[5px] bg-[#f3f5fb] px-2 py-0.5 dark:bg-[#202941]">
             <span className="text-[11px] font-bold text-gray-700 dark:text-gray-300">
               {VIDEO_LANGUAGE_LABELS[video.language]}
             </span>
           </div>
           {video.tags.slice(0, 2).map((tag) => (
-            <div key={tag} className="px-2 py-0.5 bg-gray-100 dark:bg-gray-700 border-[1px] border-gray-300 dark:border-gray-500">
+            <div key={tag} className="rounded-[5px] bg-[#f3f5fb] px-2 py-0.5 dark:bg-[#202941]">
               <span className="text-[11px] font-bold text-gray-700 dark:text-gray-300">{tag}</span>
             </div>
           ))}
@@ -202,13 +208,13 @@ export default function VideoCard({ video }: VideoCardProps) {
 
         {/* 语种和标签 - PC端 */}
         <div className="hidden md:flex items-center gap-2 mb-3">
-          <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500">
+          <div className="rounded-[5px] bg-[#f3f5fb] px-2 py-1 dark:bg-[#202941]">
             <span className="text-xs font-bold text-gray-700 dark:text-gray-300">
               {VIDEO_LANGUAGE_LABELS[video.language]}
             </span>
           </div>
           {video.tags.slice(0, 1).map((tag) => (
-            <div key={tag} className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500">
+            <div key={tag} className="rounded-[5px] bg-[#f3f5fb] px-2 py-1 dark:bg-[#202941]">
               <span className="text-xs font-bold text-gray-700 dark:text-gray-300">{tag}</span>
             </div>
           ))}
@@ -232,7 +238,7 @@ export default function VideoCard({ video }: VideoCardProps) {
       </div>
 
       {/* Hover 效果：荧光绿底部边框 - 仅PC端 */}
-      <div className="hidden md:block absolute bottom-0 left-0 w-full h-[3px] bg-[#B4F416] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
+      <div className="absolute bottom-0 left-0 hidden h-[3px] w-full origin-left scale-x-0 bg-gradient-to-r from-[#2633a8] to-[#6550ff] transition-transform duration-200 group-hover:scale-x-100 md:block"></div>
     </Link>
   )
 }

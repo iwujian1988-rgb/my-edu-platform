@@ -1,5 +1,5 @@
-import { MaxtubeLandingPageClient } from './pageClient'
+import { redirect } from 'next/navigation'
 
 export default function MaxtubeRoute() {
-  return <MaxtubeLandingPageClient />
+  redirect('/videos?language=fr')
 }

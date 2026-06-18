@@ -11,7 +11,7 @@
  * resolveJsonModule 导入 JSON，再断言为我们定义的类型。
  */
 
-import a1RealFrenchJson from './parcours-a1-real-french.json'
+import { getManifestCourses } from './maxclass/contentManifest'
 
 // ---------- 类型定义 ----------
 
@@ -98,9 +98,7 @@ export interface Course {
 
 // ---------- 课程数据 ----------
 
-const a1RealFrenchCourse = a1RealFrenchJson as unknown as Course
-
-export const parcoursCourses: Course[] = [a1RealFrenchCourse]
+export const parcoursCourses = getManifestCourses() as unknown as Course[]
 
 // ---------- 助手函数 ----------
 

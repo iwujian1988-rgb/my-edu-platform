@@ -22,9 +22,12 @@ import {
   Zap,
   Star,
   Podcast,
+  GraduationCap,
+  ArrowRight,
 } from 'lucide-react'
 import type { VideoListItem, VideoListResponse } from '@/types/video'
-import { VIDEO_DIFFICULTY_LABELS, VIDEO_LANGUAGE_LABELS, CONTENT_TYPE_LABELS, formatDuration } from '@/types/video'
+import { VIDEO_DIFFICULTY_LABELS, CEFR_LEVEL_LABELS, VIDEO_LANGUAGE_LABELS, CONTENT_TYPE_LABELS, formatDuration } from '@/types/video'
+import type { CefrLevel } from '@/types/video'
 import LearningCalendar from '@/components/video/LearningCalendar'
 import { VideoPromoPopup } from '@/components/video/VideoPromoPopup'
 import { AudioCoverBackground } from '@/components/video/AudioCoverBackground'
@@ -32,6 +35,7 @@ import VideoCard from '@/components/video/VideoCard'
 import { getDifficultyColor } from '@/components/video/VideoCard'
 import PodcastZone from '@/components/video/PodcastZone'
 import { ContinueLearningBar } from '@/components/video/ContinueLearningBar'
+import { AppImportLinkButton } from '@/components/video/AppImportLinkButton'
 
 // 语言选项（从 API 动态获取，基于用户权限范围内的语言）
 const buildLanguageOptions = (availableLanguages: string[] | undefined) => {
@@ -71,6 +75,17 @@ const CONTENT_TYPE_OPTIONS = [
 
 // 分页常量
 const PAGE_SIZE = 12
+const FRENCH_LANGUAGE = 'fr'
+
+class UnauthorizedFetchError extends Error {
+  status: number
+
+  constructor() {
+    super('UNAUTHORIZED')
+    this.name = 'UnauthorizedFetchError'
+    this.status = 401
+  }
+}
 
 // 最新发布大卡（FeaturedCard）
 function FeaturedCard({ video }: { video: VideoListItem }) {
@@ -80,10 +95,10 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
   const hasProgress = progress && progress.max_progress > 0 && !progress.is_completed
 
   return (
-    <section className="mb-8">
+    <section className="maxtube-featured mb-7">
       {/* 区域标题 */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-8 h-8 bg-[#B4F416] flex items-center justify-center text-black rounded-lg border border-[#99CC00] shadow-sm">
+        <div className="flex h-8 w-8 items-center justify-center rounded-[8px] bg-gradient-to-br from-[#3140b5] to-[#6853ff] text-white shadow-[0_7px_14px_rgba(57,65,190,0.18)]">
           <span className="font-semibold text-sm">N</span>
         </div>
         <h2 className="text-xl font-bold uppercase tracking-wide text-black dark:text-white">
@@ -93,12 +108,12 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
 
       <Link
         href={`/videos/${video.id}`}
-        className="group block bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 overflow-hidden"
+        className="group block overflow-hidden rounded-[15px] border border-[#e7eaf2] bg-white shadow-[0_12px_30px_rgba(31,42,104,0.055)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_36px_rgba(31,42,104,0.10)] dark:border-[#273149] dark:bg-[#141b2d]"
       >
         {/* PC端：横向布局 */}
         <div className="hidden md:flex">
           {/* 封面区 */}
-          <div className="relative w-[360px] lg:w-[420px] flex-shrink-0 aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-r border-gray-200 dark:border-gray-700">
+          <div className="relative w-[360px] lg:w-[420px] flex-shrink-0 aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-r border-[#e7eaf2] dark:border-[#273149]">
             {isAudio && coverImage ? (
               <>
                 <AudioCoverBackground imageUrl={coverImage} />
@@ -130,7 +145,7 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
                   <span className="text-xs font-semibold tracking-tight">播客</span>
                 </div>
               ) : (
-                <div className="px-3 py-1.5 bg-[#B4F416] border border-[#99CC00] rounded shadow-sm transform -rotate-1">
+                <div className="rounded-[7px] bg-white/92 px-3 py-1.5 text-[#2d39bb] shadow-[0_6px_14px_rgba(31,42,104,0.12)] backdrop-blur-sm">
                   <span className="text-xs font-semibold tracking-tight flex items-center gap-1">
                     <Play className="w-3 h-3" />
                     视频
@@ -139,14 +154,14 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
               )}
             </div>
             {/* 时长 */}
-            <div className="absolute bottom-3 right-3 px-2 py-1 bg-black/80 text-white text-xs font-bold border-[2px] border-black">
+            <div className="absolute bottom-3 right-3 rounded-[6px] bg-black/75 px-2 py-1 text-xs font-bold text-white backdrop-blur-sm">
               {formatDuration(video.duration)}
             </div>
             {/* 进度条 */}
             {hasProgress && (
               <div className="absolute bottom-0 left-0 right-0 h-[4px] bg-gray-300 dark:bg-gray-600">
                 <div
-                  className="h-full bg-[#B4F416] transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-[#2633a8] to-[#6550ff] transition-all duration-300"
                   style={{ width: `${Math.min(progress.max_progress, 100)}%` }}
                 />
               </div>
@@ -155,12 +170,12 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
 
           {/* 信息区 */}
           <div className="flex-1 p-6 lg:p-8 flex flex-col justify-center min-w-0">
-            <h3 className="text-2xl font-black tracking-tight text-black dark:text-white mb-3 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
+            <h3 className="text-[23px] font-extrabold leading-snug tracking-[-0.01em] text-[#2639b1] dark:text-[#bcc5ff] mb-3 line-clamp-2 group-hover:text-[#3745df] transition-colors">
               {video.title}
             </h3>
 
             {video.description && (
-              <p className="text-sm text-gray-500 dark:text-gray-400 mb-4 line-clamp-2">
+              <p className="text-sm leading-7 text-[#5c6479] dark:text-[#a7b0c8] mb-4 line-clamp-2">
                 {video.description}
               </p>
             )}
@@ -172,9 +187,9 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
                   {VIDEO_LANGUAGE_LABELS[video.language]}
                 </span>
               </div>
-              <div className={`px-2 py-1 ${getDifficultyColor(video.difficulty)} border-[2px] border-black rounded`}>
+              <div className={`rounded-[7px] px-2 py-1 ${getDifficultyColor(video.difficulty)}`}>
                 <span className="text-xs font-bold">
-                  {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
+                  {video.cefr_level ? CEFR_LEVEL_LABELS[video.cefr_level as CefrLevel] : VIDEO_DIFFICULTY_LABELS[video.difficulty]}
                 </span>
               </div>
               <div className="px-2 py-1 bg-gray-100 dark:bg-gray-700 border-[2px] border-gray-300 dark:border-gray-500 rounded flex items-center gap-1">
@@ -187,7 +202,7 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
 
             {/* CTA 按钮 */}
             <div>
-              <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#B4F416] border-[3px] border-black shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] font-black text-sm rounded group-hover:shadow-[2px_2px_0px_0px_#000] dark:group-hover:shadow-[2px_2px_0px_0px_#666] group-hover:-translate-y-0.5 transition-all">
+              <div className="inline-flex h-[42px] items-center gap-2 rounded-[10px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-5 text-sm font-bold text-white shadow-[0_10px_24px_rgba(48,56,196,0.25)] transition-all group-hover:-translate-y-0.5 group-hover:shadow-[0_13px_28px_rgba(48,56,196,0.3)]">
                 <Play className="w-4 h-4" fill="currentColor" />
                 {hasProgress ? '继续学习' : '开始学习'}
               </div>
@@ -203,7 +218,7 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
         {/* 移动端：纵向布局 */}
         <div className="md:hidden">
           {/* 封面区 */}
-          <div className="relative w-full aspect-video bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[2px] border-black dark:border-gray-600">
+          <div className="relative w-full aspect-video overflow-hidden border-b border-[#e7eaf2] bg-gray-100 dark:border-[#273149] dark:bg-gray-700">
             {isAudio && coverImage ? (
               <>
                 <AudioCoverBackground imageUrl={coverImage} />
@@ -230,12 +245,12 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
             {/* 类型标签角标 */}
             <div className="absolute top-2 left-2">
               {isAudio ? (
-                <div className="flex items-center gap-1 px-2 py-0.5 bg-white/90 backdrop-blur-sm border-[1px] border-black">
+                <div className="flex items-center gap-1 rounded-[6px] bg-white/92 px-2 py-0.5 shadow-[0_5px_12px_rgba(31,42,104,0.10)] backdrop-blur-sm">
                   <Podcast className="w-3 h-3 text-purple-600" />
                   <span className="text-[10px] font-black">播客</span>
                 </div>
               ) : (
-                <div className="px-2 py-0.5 bg-[#B4F416] border-[1px] border-black text-[10px] font-black flex items-center gap-0.5">
+                <div className="flex items-center gap-0.5 rounded-[6px] bg-white/92 px-2 py-0.5 text-[10px] font-bold text-[#2d39bb] shadow-[0_5px_12px_rgba(31,42,104,0.10)] backdrop-blur-sm">
                   <Play className="w-2.5 h-2.5" />
                   视频
                 </div>
@@ -249,7 +264,7 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
             {hasProgress && (
               <div className="absolute bottom-0 left-0 right-0 h-[3px] bg-gray-300 dark:bg-gray-600">
                 <div
-                  className="h-full bg-[#B4F416] transition-all duration-300"
+                  className="h-full bg-gradient-to-r from-[#2633a8] to-[#6550ff] transition-all duration-300"
                   style={{ width: `${Math.min(progress.max_progress, 100)}%` }}
                 />
               </div>
@@ -258,12 +273,12 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
 
           {/* 信息区 */}
           <div className="p-4">
-            <h3 className="text-lg font-black tracking-tight text-black dark:text-white mb-2 line-clamp-2 group-hover:text-[#B4F416] transition-colors">
+            <h3 className="text-lg font-extrabold tracking-[-0.01em] text-[#2639b1] dark:text-[#bcc5ff] mb-2 line-clamp-2 group-hover:text-[#3745df] transition-colors">
               {video.title}
             </h3>
 
             {video.description && (
-              <p className="text-xs text-gray-500 dark:text-gray-400 mb-3 line-clamp-2">
+              <p className="text-xs leading-5 text-[#5c6479] dark:text-[#a7b0c8] mb-3 line-clamp-2">
                 {video.description}
               </p>
             )}
@@ -275,13 +290,13 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
                   {VIDEO_LANGUAGE_LABELS[video.language]}
                 </span>
               </div>
-              <div className={`px-2 py-0.5 ${getDifficultyColor(video.difficulty)} border-[1px] border-black text-[11px] font-black`}>
+              <div className={`rounded-[6px] px-2 py-0.5 ${getDifficultyColor(video.difficulty)} text-[11px] font-bold`}>
                 {VIDEO_DIFFICULTY_LABELS[video.difficulty]}
               </div>
             </div>
 
             {/* CTA 按钮 */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#B4F416] border-[2px] border-black shadow-[2px_2px_0px_0px_#000] font-black text-sm rounded">
+            <div className="inline-flex items-center gap-2 rounded-[10px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-4 py-2 text-sm font-bold text-white shadow-[0_8px_18px_rgba(48,56,196,0.22)]">
               <Play className="w-3.5 h-3.5" fill="currentColor" />
               {hasProgress ? '继续学习' : '开始学习'}
             </div>
@@ -297,21 +312,63 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
   )
 }
 
+function MaxClassEntryCard() {
+  return (
+    <section className="maxtube-course-hero mb-6 md:mb-7">
+      <Link
+        href="/parcours"
+        className="group relative block min-h-[360px] overflow-hidden rounded-[22px] border border-[#e3e7f1] bg-white px-6 py-7 pb-[118px] shadow-[0_12px_34px_rgba(31,42,104,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(31,42,104,0.12)] sm:min-h-[320px] md:min-h-0 md:pb-7 dark:border-[#29324a] dark:bg-[#12182a]"
+      >
+        <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_70%_35%,rgba(101,80,255,0.16),transparent_36%),linear-gradient(100deg,transparent,#f4f5ff)] dark:bg-[radial-gradient(circle_at_70%_35%,rgba(101,80,255,0.22),transparent_38%)]" />
+        <img
+          src="/maxtube/hero-illustration.png"
+          alt="Arc de Triomphe and French flag"
+          className="pointer-events-none absolute bottom-2 right-3 w-[250px] opacity-65 sm:bottom-3 sm:right-8 sm:w-[290px] md:bottom-auto md:right-[170px] md:top-1/2 md:w-[270px] md:-translate-y-1/2 md:opacity-100 lg:right-[190px] lg:w-[310px] dark:hidden"
+        />
+        <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="flex items-start gap-5">
+            <div className="hidden h-[62px] w-[62px] shrink-0 place-items-center rounded-[13px] border border-[#edf0f7] bg-white text-[#4452ee] shadow-[0_8px_20px_rgba(68,82,238,0.08)] md:grid dark:border-[#2b3550] dark:bg-[#18213a] dark:text-[#9aa5ff]">
+              <GraduationCap className="h-6 w-6" aria-hidden />
+            </div>
+            <div className="min-w-0 md:max-w-[620px] lg:max-w-[680px]">
+              <p className="mb-2 text-xs font-extrabold tracking-wide text-[#2f43d8] dark:text-[#9aa5ff]">
+                MaxClass
+              </p>
+              <h2 className="text-[25px] font-extrabold leading-tight tracking-[-0.02em] text-[#121729] md:text-[30px] dark:text-white">
+                A1 Real French parcours
+              </h2>
+              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#4d566f] dark:text-[#c5cce0]">
+                Enter the structured French course from your video membership. Lessons, practice blocks,
+                progress, and authentic video-based activities stay in one learning flow.
+              </p>
+              <div className="mt-6 flex flex-wrap gap-2.5">
+                {['Structured course', 'Real practice', 'Progress tracking', 'Video lessons'].map((item) => (
+                  <span key={item} className="rounded-full bg-[#f1f2ff] px-3.5 py-2 text-xs font-semibold text-[#3f4cdb] dark:bg-[#202a4d] dark:text-[#b8c0ff]">
+                    {item}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="relative z-20 inline-flex h-[52px] shrink-0 items-center justify-center gap-2 rounded-[10px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-6 text-sm font-bold text-white shadow-[0_10px_24px_rgba(48,56,196,0.25)] transition-all group-hover:shadow-[0_13px_28px_rgba(48,56,196,0.3)] md:h-[58px] md:text-base">
+            Start class
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </div>
+        </div>
+      </Link>
+    </section>
+  )
+}
+
 
 // SWR fetcher
 const fetcher = async (url: string): Promise<VideoListResponse> => {
-  console.log('[fetcher] Fetching:', url)
   const res = await fetch(url)
-  console.log('[fetcher] Status:', res.status)
   if (res.status === 401) {
-    // 未登录，抛出特殊错误
-    const error = new Error('UNAUTHORIZED')
-    ;(error as any).status = 401
-    throw error
+    throw new UnauthorizedFetchError()
   }
   if (!res.ok) throw new Error('Failed to fetch')
   const json = await res.json()
-  console.log('[fetcher] Response:', json)
   return json.data
 }
 
@@ -341,6 +398,14 @@ function VideoListContent() {
   )
   const [filterDrawerOpen, setFilterDrawerOpen] = useState(false)
 
+  const updateFilter = useCallback((
+    setter: React.Dispatch<React.SetStateAction<string>>,
+    value: string
+  ) => {
+    setter(value)
+    setPage(1)
+  }, [])
+
   // 构建查询 URL
   const tzOffset = useMemo(() => String(new Date().getTimezoneOffset()), [])
   const buildQueryUrl = useCallback(() => {
@@ -368,7 +433,7 @@ function VideoListContent() {
 
     const queryString = params.toString()
     return `/api/videos${queryString ? `?${queryString}` : ''}`
-  }, [language, difficulty, tag, learnStatus, contentType, page])
+  }, [language, difficulty, tag, learnStatus, contentType, page, tzOffset])
 
   // 获取视频列表
   const { data, error, isLoading, isValidating, mutate } = useSWR<VideoListResponse>(
@@ -412,11 +477,6 @@ function VideoListContent() {
       router.push(`/login?redirect=${encodeURIComponent(window.location.pathname)}`)
     }
   }, [error, router])
-
-  // 筛选条件变化时重置页码
-  useEffect(() => {
-    setPage(1)
-  }, [language, difficulty, tag, learnStatus, contentType])
 
   // 翻页或切换筛选时回到页面顶部
   useEffect(() => {
@@ -472,11 +532,10 @@ function VideoListContent() {
   const showLanguageFilter = (data?.available_languages?.length || 0) > 1
 
   return (
-    <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <div className="maxtube-home min-h-screen transition-colors duration-300">
       {/* 注入跑马灯动画和镂空文字的自定义 CSS */}
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
           @keyframes marquee {
             0% { transform: translateX(0%); }
             100% { transform: translateX(-50%); }
@@ -510,6 +569,106 @@ function VideoListContent() {
           @keyframes loading {
             0% { transform: translateX(-100%); }
             100% { transform: translateX(350%); }
+          }
+          .maxtube-home {
+            --mt-bg: #f8faff;
+            --mt-surface: #ffffff;
+            --mt-text: #121729;
+            --mt-muted: #68718a;
+            --mt-line: #e7eaf2;
+            --mt-soft: #f3f5fb;
+            --mt-blue: #2d39bb;
+            --mt-violet: #6550ff;
+            --mt-shadow: 0 12px 34px rgba(31,42,104,.08);
+            background: linear-gradient(180deg, #fbfcff 0%, #f7f9fd 100%);
+            color: var(--mt-text);
+          }
+          .dark .maxtube-home {
+            --mt-bg: #0f1424;
+            --mt-surface: #141b2d;
+            --mt-text: #edf1ff;
+            --mt-muted: #a7b0c8;
+            --mt-line: #273149;
+            --mt-soft: #192238;
+            background: linear-gradient(180deg, #101626 0%, #0c1120 100%);
+          }
+          .maxtube-home > div:first-of-type {
+            display: none;
+          }
+          .maxtube-home .neo-card-video {
+            border: 1px solid var(--mt-line) !important;
+            border-radius: 12px !important;
+            background: var(--mt-surface) !important;
+            box-shadow: 0 9px 24px rgba(31,42,104,.06) !important;
+          }
+          .maxtube-home .neo-card-video:hover {
+            transform: translateY(-3px) !important;
+            box-shadow: 0 14px 30px rgba(31,42,104,.10) !important;
+          }
+          .maxtube-home .neo-card-video h3 {
+            color: #2639b1;
+            font-weight: 800;
+            letter-spacing: 0;
+          }
+          .dark .maxtube-home .neo-card-video h3 {
+            color: #bcc5ff;
+          }
+          .maxtube-home .neo-card-video:hover h3 {
+            color: #3745df !important;
+          }
+          .maxtube-home .neo-card-video [class*="border-b"] {
+            border-color: var(--mt-line) !important;
+          }
+          .maxtube-home .neo-card-video [class*="bg-gray-100"],
+          .maxtube-home .neo-card-video [class*="dark:bg-gray-700"] {
+            border-color: transparent !important;
+            border-radius: 4px !important;
+            background: #f2f3f6 !important;
+            color: #424756 !important;
+          }
+          .dark .maxtube-home .neo-card-video [class*="bg-gray-100"],
+          .dark .maxtube-home .neo-card-video [class*="dark:bg-gray-700"] {
+            background: #202941 !important;
+            color: #c5cce0 !important;
+          }
+          .maxtube-home .bottom-player,
+          .maxtube-home [class*="fixed"][class*="bottom-0"] {
+            border-color: var(--mt-line) !important;
+            background: rgba(255,255,255,.96) !important;
+            box-shadow: 0 -8px 28px rgba(40,47,94,.08) !important;
+            backdrop-filter: blur(14px);
+          }
+          .dark .maxtube-home .bottom-player,
+          .dark .maxtube-home [class*="fixed"][class*="bottom-0"] {
+            background: rgba(15,20,36,.94) !important;
+          }
+          .maxtube-home .slide-in-from-right {
+            border-left: 1px solid var(--mt-line);
+            background: var(--mt-surface) !important;
+            box-shadow: -12px 0 34px rgba(31,42,104,.12) !important;
+          }
+          .maxtube-home .slide-in-from-right [class*="border-black"] {
+            border-color: var(--mt-line) !important;
+          }
+          .maxtube-home .slide-in-from-right [class*="shadow-"] {
+            box-shadow: none !important;
+          }
+          .maxtube-home .slide-in-from-right button,
+          .maxtube-home .slide-in-from-right span {
+            border-radius: 8px;
+          }
+          .maxtube-home .slide-in-from-right [class*="bg-[#B4F416]"] {
+            background: linear-gradient(135deg, #2633a8, #6550ff) !important;
+            color: #fff !important;
+          }
+          .maxtube-home .slide-in-from-right [class*="bg-gray-100"] {
+            background: #f3f5fb !important;
+            color: #343947 !important;
+          }
+          .dark .maxtube-home .slide-in-from-right [class*="bg-gray-100"],
+          .dark .maxtube-home .slide-in-from-right [class*="dark:bg-gray-800"] {
+            background: #202941 !important;
+            color: #c5cce0 !important;
           }
           @media (min-width: 768px) {
             .banner-content {
@@ -579,7 +738,10 @@ function VideoListContent() {
       </div>
 
       {/* 主内容区域 */}
-      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div className="max-w-[1480px] mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-10">
+        {page === 1 && (language === 'all' || language === FRENCH_LANGUAGE) && (
+          <MaxClassEntryCard />
+        )}
 
           {/* 移动端筛选抽屉 - 右侧滑出 */}
           {filterDrawerOpen && (
@@ -610,9 +772,12 @@ function VideoListContent() {
                       <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">套餐</div>
                       <div className="flex gap-2 flex-wrap">
                         {data.user_packages.map((pkg) => (
-                          <span key={pkg.id} className="px-3 py-1.5 text-xs font-black bg-[#B4F416] border-[2px] border-black">
-                            {pkg.name}
-                          </span>
+                          <div key={pkg.id} className="inline-flex items-center gap-1.5">
+                            <span className="px-3 py-1.5 text-xs font-black bg-[#B4F416] border-[2px] border-black">
+                              {pkg.name}
+                            </span>
+                            <AppImportLinkButton packageId={pkg.id} compact />
+                          </div>
                         ))}
                       </div>
                     </div>
@@ -625,7 +790,7 @@ function VideoListContent() {
                       {CONTENT_TYPE_OPTIONS.map((opt) => (
                         <button
                           key={opt.value}
-                          onClick={() => { setContentType(opt.value); setFilterDrawerOpen(false) }}
+                          onClick={() => { updateFilter(setContentType, opt.value); setFilterDrawerOpen(false) }}
                           className={`
                             px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
                             ${contentType === opt.value
@@ -647,7 +812,7 @@ function VideoListContent() {
                       {LEARN_STATUS_OPTIONS.map((opt) => (
                         <button
                           key={opt.value}
-                          onClick={() => { setLearnStatus(opt.value); setFilterDrawerOpen(false) }}
+                          onClick={() => { updateFilter(setLearnStatus, opt.value); setFilterDrawerOpen(false) }}
                           className={`
                             px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
                             ${learnStatus === opt.value
@@ -670,7 +835,7 @@ function VideoListContent() {
                         {languageOptions.slice(0, 5).map((opt) => (
                           <button
                             key={opt.value}
-                            onClick={() => { setLanguage(opt.value); setFilterDrawerOpen(false) }}
+                            onClick={() => { updateFilter(setLanguage, opt.value); setFilterDrawerOpen(false) }}
                             className={`
                               px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
                               ${language === opt.value
@@ -693,7 +858,7 @@ function VideoListContent() {
                       {DIFFICULTY_OPTIONS.map((opt) => (
                         <button
                           key={opt.value}
-                          onClick={() => { setDifficulty(opt.value); setFilterDrawerOpen(false) }}
+                          onClick={() => { updateFilter(setDifficulty, opt.value); setFilterDrawerOpen(false) }}
                           className={`
                             px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
                             ${difficulty === opt.value
@@ -714,7 +879,7 @@ function VideoListContent() {
                       <div className="text-sm font-black text-gray-700 dark:text-gray-300 mb-2">标签</div>
                       <div className="flex gap-2 flex-wrap">
                         <button
-                          onClick={() => { setTag('all'); setFilterDrawerOpen(false) }}
+                          onClick={() => { updateFilter(setTag, 'all'); setFilterDrawerOpen(false) }}
                           className={`
                             px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
                             ${tag === 'all'
@@ -728,7 +893,7 @@ function VideoListContent() {
                         {tagsData.slice(0, 8).map((t) => (
                           <button
                             key={t.id}
-                            onClick={() => { setTag(t.name); setFilterDrawerOpen(false) }}
+                            onClick={() => { updateFilter(setTag, t.name); setFilterDrawerOpen(false) }}
                             className={`
                               px-3 py-1.5 text-xs font-black tracking-tight border-[2px] border-black dark:border-gray-600 transition-all
                               ${tag === t.name
@@ -752,6 +917,7 @@ function VideoListContent() {
                         setLanguage('all')
                         setDifficulty('all')
                         setTag('all')
+                        setPage(1)
                         setFilterDrawerOpen(false)
                       }}
                       className="w-full py-2.5 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600 bg-gray-100 dark:bg-gray-800 text-black dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 transition-all"
@@ -765,7 +931,7 @@ function VideoListContent() {
           )}
 
         {/* 主内容区：左侧视频 + 右侧日历 */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-6">
+        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
           {/* 左侧：视频区域 */}
           <div className="flex-1 min-w-0">
             {/* 最新发布大卡 - 仅在首页(page=1)且无筛选时显示 */}
@@ -773,21 +939,22 @@ function VideoListContent() {
               <FeaturedCard video={featuredVideo} />
             )}
 
-            {/* PC端筛选工具栏 - 轻量样式 */}
-            <div className="hidden md:flex flex-wrap items-center gap-6 mb-6 py-3 border-b border-gray-200 dark:border-gray-700">
+            {/* PC端筛选工具栏 */}
+            <section className="mb-5 hidden px-1 py-2 md:block">
+              <div className="mb-3 flex flex-wrap items-center gap-2">
               {/* 内容类型筛选 */}
               <div className="flex items-center gap-2">
-                <span className="text-xs font-medium text-gray-500">类型</span>
+                <span className="mr-1 text-[13px] font-medium text-[#747b8d]">类型</span>
                 <div className="flex gap-1">
                   {CONTENT_TYPE_OPTIONS.map((opt) => (
                     <button
                       key={opt.value}
-                      onClick={() => setContentType(opt.value)}
+                      onClick={() => updateFilter(setContentType, opt.value)}
                       className={`
-                        px-2.5 py-1 text-xs font-bold transition-all
+                        h-[31px] rounded-[7px] border border-transparent px-3 text-xs font-bold transition-all
                         ${contentType === opt.value
-                          ? 'bg-[#B4F416] text-black'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                          ? 'bg-gradient-to-br from-[#2633a8] to-[#6550ff] text-white shadow-[0_5px_12px_rgba(54,62,190,0.15)]'
+                          : 'bg-[#f3f5f8] text-[#343947] hover:bg-[#e9ecf4] dark:bg-[#202941] dark:text-[#c5cce0] dark:hover:bg-[#26304b]'
                         }
                       `}
                     >
@@ -800,28 +967,32 @@ function VideoListContent() {
               {/* 套餐标签 */}
               {data?.user_packages && data.user_packages.length > 0 && (
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium text-gray-500">套餐</span>
+                  <span className="ml-3 mr-1 text-[13px] font-medium text-[#747b8d]">套餐</span>
                   {data.user_packages.map((pkg) => (
-                    <span key={pkg.id} className="px-2 py-0.5 text-xs font-bold bg-[#B4F416]">
+                    <span
+                      key={pkg.id}
+                      className="inline-flex h-[31px] items-center rounded-[7px] bg-[#f6f7fa] px-3 text-xs font-bold text-[#343947] dark:bg-[#202941] dark:text-[#c5cce0]"
+                    >
                       {pkg.name}
                     </span>
                   ))}
                 </div>
               )}
+              </div>
 
               {/* 学习状态筛选 */}
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-medium text-gray-500">状态</span>
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="mr-1 text-[13px] font-medium text-[#747b8d]">状态</span>
                 <div className="flex gap-1">
                   {LEARN_STATUS_OPTIONS.map((opt) => (
                     <button
                       key={opt.value}
-                      onClick={() => setLearnStatus(opt.value)}
+                      onClick={() => updateFilter(setLearnStatus, opt.value)}
                       className={`
-                        px-2.5 py-1 text-xs font-bold transition-all
+                        h-[31px] rounded-[7px] border border-transparent px-3 text-xs font-bold transition-all
                         ${learnStatus === opt.value
-                          ? 'bg-[#B4F416] text-black'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                          ? 'bg-gradient-to-br from-[#2633a8] to-[#6550ff] text-white shadow-[0_5px_12px_rgba(54,62,190,0.15)]'
+                          : 'bg-[#f3f5f8] text-[#343947] hover:bg-[#e9ecf4] dark:bg-[#202941] dark:text-[#c5cce0] dark:hover:bg-[#26304b]'
                         }
                       `}
                     >
@@ -829,23 +1000,22 @@ function VideoListContent() {
                     </button>
                   ))}
                 </div>
-              </div>
 
               {/* 语言筛选 */}
               {showLanguageFilter && (
                 <div className="flex items-center gap-2">
-                  <span className="text-xs font-medium text-gray-500">语言</span>
+                  <span className="ml-3 mr-1 text-[13px] font-medium text-[#747b8d]">语言</span>
                   <div className="flex gap-1">
                     {languageOptions.slice(0, 4).map((opt) => (
                       <button
                         key={opt.value}
-                        onClick={() => setLanguage(opt.value)}
+                        onClick={() => updateFilter(setLanguage, opt.value)}
                         className={`
-                          px-2.5 py-1 text-xs font-bold transition-all
-                          ${language === opt.value
-                            ? 'bg-[#B4F416] text-black'
-                            : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
-                          }
+                          h-[31px] rounded-[7px] border border-transparent px-3 text-xs font-bold transition-all
+                           ${language === opt.value
+                             ? 'bg-gradient-to-br from-[#2633a8] to-[#6550ff] text-white shadow-[0_5px_12px_rgba(54,62,190,0.15)]'
+                             : 'bg-[#f3f5f8] text-[#343947] hover:bg-[#e9ecf4] dark:bg-[#202941] dark:text-[#c5cce0] dark:hover:bg-[#26304b]'
+                           }
                         `}
                       >
                         {opt.label}
@@ -857,17 +1027,17 @@ function VideoListContent() {
 
               {/* 难度筛选 */}
               <div className="flex items-center gap-2">
-                <span className="text-xs font-medium text-gray-500">难度</span>
+                <span className="ml-3 mr-1 text-[13px] font-medium text-[#747b8d]">难度</span>
                 <div className="flex gap-1">
                   {DIFFICULTY_OPTIONS.map((opt) => (
                     <button
                       key={opt.value}
-                      onClick={() => setDifficulty(opt.value)}
+                      onClick={() => updateFilter(setDifficulty, opt.value)}
                       className={`
-                        px-2.5 py-1 text-xs font-bold transition-all
+                        h-[31px] rounded-[7px] border border-transparent px-3 text-xs font-bold transition-all
                         ${difficulty === opt.value
-                          ? 'bg-[#B4F416] text-black'
-                          : 'bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700'
+                          ? 'bg-gradient-to-br from-[#2633a8] to-[#6550ff] text-white shadow-[0_5px_12px_rgba(54,62,190,0.15)]'
+                          : 'bg-[#f3f5f8] text-[#343947] hover:bg-[#e9ecf4] dark:bg-[#202941] dark:text-[#c5cce0] dark:hover:bg-[#26304b]'
                         }
                       `}
                     >
@@ -882,9 +1052,8 @@ function VideoListContent() {
                 <div className="ml-auto">
                   <select
                     value={tag}
-                    onChange={(e) => setTag(e.target.value)}
-                    className="px-2.5 py-1 text-xs font-bold bg-gray-100 dark:bg-gray-800 text-black dark:text-white border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] outline-none cursor-pointer appearance-none pr-6 bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22currentColor%22%20stroke-width%3D%223%22%3E%3Cpath%20d%3D%22m6%209%206%206-6%22%2F%3E%2Fsvg%3E')] bg-[length:10px] bg-[right_6px_center] bg-no-repeat"
-                    style={tag !== 'all' ? { backgroundColor: '#B4F416' } : undefined}
+                    onChange={(e) => updateFilter(setTag, e.target.value)}
+                    className="h-[34px] cursor-pointer appearance-none rounded-[8px] border border-[#e1e5ee] bg-white bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%234f586d%22%20stroke-width%3D%223%22%3E%3Cpath%20d%3D%22m6%209%206%206-6%22%2F%3E%3C%2Fsvg%3E')] bg-[length:10px] bg-[right_10px_center] bg-no-repeat px-3 pr-8 text-xs font-bold text-[#343947] outline-none transition-colors hover:bg-[#f8faff] dark:border-[#273149] dark:bg-[#141b2d] dark:text-[#c5cce0] dark:hover:bg-[#202941]"
                   >
                     <option value="all">全部</option>
                     {tagsData.map((t) => (
@@ -902,22 +1071,24 @@ function VideoListContent() {
                     setLanguage('all')
                     setDifficulty('all')
                     setTag('all')
+                    setPage(1)
                   }}
-                  className="px-3 py-1 text-xs font-bold text-red-500 hover:text-red-600 dark:text-red-400 dark:hover:text-red-300 transition-all"
+                  className="h-[31px] rounded-[7px] px-3 text-xs font-bold text-red-500 transition-all hover:bg-[#fff0f0] hover:text-red-600 dark:text-red-400 dark:hover:bg-[#3a1e28] dark:hover:text-red-300"
                 >
-                  ✕ 重置
+                  重置
                 </button>
               )}
-            </div>
+              </div>
+            </section>
 
             {/* 全部视频 */}
             <section>
           <div className="flex items-center justify-between mb-4">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center text-white dark:text-black shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]">
+              <div className="flex h-[31px] w-[31px] items-center justify-center rounded-[8px] bg-gradient-to-br from-[#3140b5] to-[#6853ff] text-white shadow-[0_7px_14px_rgba(57,65,190,0.18)]">
                 <span className="font-bold text-sm">V</span>
               </div>
-              <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">
+              <h2 className="text-[19px] font-bold tracking-[-0.01em] text-[#121729] dark:text-white">
                 全部资料
                 {data && (
                   <span className="text-sm font-normal text-gray-500 ml-2">
@@ -933,16 +1104,16 @@ function VideoListContent() {
                 <button
                   onClick={() => setFilterDrawerOpen(true)}
                   className={`
-                    md:hidden flex items-center gap-1.5 px-3 py-1.5 border-[2px] border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] font-bold text-sm active:translate-y-0.5 transition-colors
+                    md:hidden flex items-center gap-1.5 rounded-[9px] px-3 py-1.5 font-bold text-sm active:translate-y-0.5 transition-colors
                     ${hasActiveFilter
-                      ? 'bg-[#B4F416] text-black'
-                      : 'bg-white dark:bg-gray-800 text-black dark:text-white'
+                      ? 'bg-gradient-to-br from-[#2633a8] to-[#6550ff] text-white shadow-[0_5px_12px_rgba(54,62,190,0.15)]'
+                      : 'bg-white text-[#343947] shadow-[0_6px_16px_rgba(31,42,104,0.08)] dark:bg-[#141b2d] dark:text-[#c5cce0]'
                     }
                   `}
                 >
                   <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg>
                   筛选
-                  {hasActiveFilter && <span className="w-2 h-2 bg-black rounded-full" />}
+                    {hasActiveFilter && <span className="w-2 h-2 bg-white rounded-full" />}
                 </button>
               )
             })()}
@@ -951,7 +1122,7 @@ function VideoListContent() {
           {/* 翻页加载进度条 */}
           {isPageChanging && (
             <div className="h-1 bg-gray-200 dark:bg-gray-700 overflow-hidden rounded-full">
-              <div className="h-full bg-[#B4F416] animate-[loading_1s_ease-in-out_infinite]" style={{ width: '40%' }} />
+              <div className="h-full animate-[loading_1s_ease-in-out_infinite] bg-gradient-to-r from-[#2633a8] to-[#6550ff]" style={{ width: '40%' }} />
             </div>
           )}
 
@@ -959,7 +1130,7 @@ function VideoListContent() {
           {isLoading && !data && (
             <div className="flex items-center justify-center py-16">
               <div className="text-center">
-                <div className="inline-block animate-spin rounded h-12 w-12 border-[3px] border-black dark:border-gray-500 border-t-[#B4F416]"></div>
+                <div className="inline-block h-12 w-12 animate-spin rounded-full border-[3px] border-[#d7dceb] border-t-[#4454ee]"></div>
                 <p className="mt-4 text-sm font-mono font-bold text-black dark:text-white">
                   加载中...
                 </p>
@@ -969,16 +1140,16 @@ function VideoListContent() {
 
           {/* 错误状态 */}
           {error && (
-            <div className="bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded p-6">
+            <div className="rounded-[14px] border border-[#e7eaf2] bg-white p-6 shadow-[0_10px_28px_rgba(31,42,104,0.06)] dark:border-[#273149] dark:bg-[#141b2d]">
               <div className="flex items-center">
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-red-500 border-[3px] border-black rounded flex items-center justify-center">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-[10px] bg-[#fff0f0] text-[#d43737]">
                     <span className="text-2xl">⚠️</span>
                   </div>
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-black tracking-tighter text-black dark:text-white">
-                    加载失败
+                    内容暂时没有加载出来，请稍后再试
                   </h3>
                   <p className="text-sm font-mono font-bold text-gray-600 dark:text-gray-400 mt-1">
                     请检查网络连接后重试
@@ -986,7 +1157,7 @@ function VideoListContent() {
                 </div>
                 <button
                   onClick={() => mutate()}
-                  className="ml-auto px-4 py-2 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 text-sm font-black transition-all"
+                  className="ml-auto rounded-[9px] bg-gradient-to-br from-[#2633a8] to-[#6550ff] px-4 py-2 text-sm font-bold text-white shadow-[0_8px_18px_rgba(48,56,196,0.2)] transition-all hover:-translate-y-0.5"
                 >
                   重试
                 </button>
@@ -999,7 +1170,7 @@ function VideoListContent() {
             <div className={`transition-opacity duration-150 ${isPageChanging ? 'opacity-30 pointer-events-none' : 'opacity-100'}`}>
               {data.items.length === 0 ? (
                 <div className="text-center py-16">
-                  <div className="inline-block p-6 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded mb-4">
+                  <div className="mb-4 inline-block rounded-[14px] border border-[#e7eaf2] bg-white p-6 shadow-[0_10px_28px_rgba(31,42,104,0.06)] dark:border-[#273149] dark:bg-[#141b2d]">
                     <span className="text-6xl">📭</span>
                   </div>
                   <h3 className="text-xl font-black tracking-tighter text-black dark:text-white mb-2">
@@ -1010,7 +1181,7 @@ function VideoListContent() {
                   </p>
                 </div>
               ) : (
-                <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-4 lg:gap-5">
+                <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                   {gridItems.map((video) => (
                     <VideoCard key={video.id} video={video} />
                   ))}
@@ -1024,11 +1195,11 @@ function VideoListContent() {
                     onClick={() => setPage(p => Math.max(1, p - 1))}
                     disabled={page === 1}
                     className={`
-                      px-4 py-2 text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600 rounded
+                      rounded-[9px] px-4 py-2 text-sm font-bold tracking-normal
                       transition-all duration-150
                       ${page === 1
-                        ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
-                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 text-black dark:text-white'
+                        ? 'cursor-not-allowed bg-[#f3f5fb] text-[#a4abbc] dark:bg-[#202941] dark:text-[#68718a]'
+                        : 'bg-white text-[#343947] shadow-[0_7px_18px_rgba(31,42,104,0.08)] hover:-translate-y-0.5 hover:text-[#2d39bb] dark:bg-[#141b2d] dark:text-[#c5cce0] dark:hover:text-white'
                       }
                     `}
                   >
@@ -1046,11 +1217,11 @@ function VideoListContent() {
                           <button
                             onClick={() => setPage(p)}
                             className={`
-                              w-10 h-10 text-sm font-black tracking-tight border-[2px] border-black dark:border-gray-600 rounded
+                              h-10 w-10 rounded-[9px] text-sm font-bold tracking-normal
                               transition-all duration-150
                               ${page === p
-                                ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] text-black'
-                                : 'bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 text-black dark:text-white'
+                                ? 'bg-gradient-to-br from-[#2633a8] to-[#6550ff] text-white shadow-[0_8px_18px_rgba(48,56,196,0.2)]'
+                                : 'bg-white text-[#343947] shadow-[0_7px_18px_rgba(31,42,104,0.08)] hover:-translate-y-0.5 hover:text-[#2d39bb] dark:bg-[#141b2d] dark:text-[#c5cce0] dark:hover:text-white'
                               }
                             `}
                           >
@@ -1064,11 +1235,11 @@ function VideoListContent() {
                     onClick={() => setPage(p => Math.min(Math.ceil(data.total / PAGE_SIZE), p + 1))}
                     disabled={page >= Math.ceil(data.total / PAGE_SIZE)}
                     className={`
-                      px-4 py-2 text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600 rounded
+                      rounded-[9px] px-4 py-2 text-sm font-bold tracking-normal
                       transition-all duration-150
                       ${page >= Math.ceil(data.total / PAGE_SIZE)
-                        ? 'bg-gray-100 dark:bg-gray-700 text-gray-400 cursor-not-allowed'
-                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 text-black dark:text-white'
+                        ? 'cursor-not-allowed bg-[#f3f5fb] text-[#a4abbc] dark:bg-[#202941] dark:text-[#68718a]'
+                        : 'bg-white text-[#343947] shadow-[0_7px_18px_rgba(31,42,104,0.08)] hover:-translate-y-0.5 hover:text-[#2d39bb] dark:bg-[#141b2d] dark:text-[#c5cce0] dark:hover:text-white'
                       }
                     `}
                   >
@@ -1085,16 +1256,16 @@ function VideoListContent() {
           </div>
 
           {/* 右侧：知识点侧边栏 - 仅大屏显示 */}
-          <aside className="hidden lg:block lg:w-[200px] xl:w-[220px] shrink-0">
-            <div className="sticky top-4 space-y-3">
+          <aside className="hidden min-w-0 lg:block">
+            <div className="sticky top-[92px] space-y-[18px]">
               {/* 学习日历组件 - 仅大屏显示 */}
               <div className="hidden lg:block">
                 {/* 标题 */}
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-8 h-8 bg-black dark:bg-white flex items-center justify-center text-white dark:text-black shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]">
+                  <div className="flex h-[31px] w-[31px] items-center justify-center rounded-[8px] bg-gradient-to-br from-[#3140b5] to-[#6853ff] text-white shadow-[0_7px_14px_rgba(57,65,190,0.18)]">
                     <span className="font-bold text-sm">📅</span>
                   </div>
-                  <h2 className="text-xl font-black uppercase tracking-wide text-black dark:text-white">学习日历</h2>
+                  <h2 className="text-[19px] font-bold tracking-[-0.01em] text-[#121729] dark:text-white">学习日历</h2>
                 </div>
                 <Suspense fallback={null}>
                   <LearningCalendar />
@@ -1103,14 +1274,14 @@ function VideoListContent() {
 
               {/* 领取好礼模块 */}
               <div className="hidden lg:block mt-4">
-                <div className="bg-[#D4FF00] border-[3px] border-black shadow-[4px_4px_0px_0px_#000] rounded overflow-hidden">
+                <div className="overflow-hidden rounded-[14px] border border-[#e7eaf2] bg-white shadow-[0_10px_28px_rgba(31,42,104,0.06)] dark:border-[#273149] dark:bg-[#141b2d]">
                   {/* 顶部跑马灯 */}
-                  <div className="bg-black text-white py-1 border-b-[3px] border-black flex overflow-hidden whitespace-nowrap">
-                    <div className="flex gap-4 items-center font-black text-[10px] tracking-widest animate-pulse">
+                  <div className="flex overflow-hidden whitespace-nowrap bg-gradient-to-br from-[#5661ed] to-[#6a54f3] py-2 text-white">
+                    <div className="flex items-center gap-4 text-[10px] font-bold tracking-wide">
                       <span>🔥 限时福利</span>
-                      <span>///</span>
+                      <span>{'///'}</span>
                       <span>好评免费送</span>
-                      <span>///</span>
+                      <span>{'///'}</span>
                       <span>🔥 限时福利</span>
                     </div>
                   </div>
@@ -1118,16 +1289,16 @@ function VideoListContent() {
                   {/* 主内容 */}
                   <div className="p-3">
                     {/* 标签 */}
-                    <div className="bg-[#FF3366] text-white border-[2px] border-black px-2 py-0.5 -rotate-2 inline-block font-black text-xs shadow-[2px_2px_0px_0px_#000] mb-2 rounded">
+                    <div className="mb-2 inline-block rounded-full bg-[#fff0f0] px-2.5 py-1 text-xs font-extrabold text-[#d43737]">
                       0元白嫖！
                     </div>
 
                     {/* 标题 */}
-                    <div className="bg-white border-[2px] border-black p-2 shadow-[3px_3px_0px_0px_#000] rounded">
+                    <div className="rounded-[10px] bg-gradient-to-br from-white to-[#f0efff] p-3 shadow-[inset_0_0_0_1px_rgba(231,234,242,0.9)] dark:from-[#18213a] dark:to-[#202a4d]">
                       <h3 className="text-base font-black text-black leading-tight">
-                        法语<span className="text-[#C084FC] underline decoration-2 underline-offset-2 decoration-black">原声大礼包</span>
+                        法语<span className="text-[#5a45d6]">原声大礼包</span>
                       </h3>
-                      <div className="bg-black text-white font-bold text-[10px] px-2 py-0.5 mt-1 inline-block rounded">
+                      <div className="mt-2 inline-block rounded-full bg-[#f1f2ff] px-2 py-1 text-[10px] font-bold text-[#2d39bb] dark:bg-[#202a4d] dark:text-[#bcc5ff]">
                         小红书好评 = 免费解锁 🔓
                       </div>
                     </div>
@@ -1135,14 +1306,14 @@ function VideoListContent() {
                     {/* 按钮 */}
                     <button
                       onClick={() => window.open('https://work.weixin.qq.com/kfid/kfc49c2602e3dbe2fc1', '_blank')}
-                      className="w-full mt-3 bg-[#C084FC] border-[3px] border-black px-3 py-2 font-black text-sm text-black shadow-[3px_3px_0px_0px_#000] hover:translate-y-[2px] hover:translate-x-[2px] hover:shadow-[1px_1px_0px_0px_#000] transition-all flex items-center justify-center gap-2 rounded"
+                      className="mt-3 flex w-full items-center justify-center gap-2 rounded-[10px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-3 py-2.5 text-sm font-bold text-white shadow-[0_8px_18px_rgba(48,56,196,0.2)] transition-all hover:-translate-y-0.5"
                     >
                       <span>🎁</span>
                       立即领取
                     </button>
 
                     {/* 稀缺感 */}
-                    <div className="text-center font-black text-black text-[10px] mt-2 border-b-2 border-black border-dashed pb-0.5">
+                    <div className="mt-2 border-b border-dashed border-[#d7dceb] pb-1 text-center text-[10px] font-bold text-[#68718a] dark:border-[#273149] dark:text-[#a7b0c8]">
                       🔥 仅限前 100 名
                     </div>
                   </div>

@@ -34,6 +34,24 @@
   border-radius: 12px;
 }
 
+/* ---------- Videos module inherits MAXCLASS visual surface ---------- */
+[data-maxclass-skin="true"] [data-video-surface="true"] {
+  background-color: #f9fafb !important;
+  color: #1f2937;
+}
+
+[data-maxclass-skin="true"] [data-video-surface="true"] header,
+[data-maxclass-skin="true"] [data-video-surface="true"] nav,
+[data-maxclass-skin="true"] [data-video-surface="true"] .neo-card {
+  background-color: #ffffff !important;
+  border-color: #e5e7eb !important;
+}
+
+[data-maxclass-skin="true"] [data-video-surface="true"] .neo-card {
+  border-radius: 8px !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07) !important;
+}
+
 /* ---------- 边框软化（覆盖 border-black / border-[Npx]）---------- */
 [data-maxclass-skin="true"] [class*="border-black"],
 [data-maxclass-skin="true"] [class*="border-[2px]"],
@@ -384,8 +402,25 @@ html.dark [data-maxclass-skin="true"] [style*="0px 0px black"] {
 
 /* ---------- 暗色模式 ---------- */
 html.dark [data-maxclass-skin="true"] {
+  color-scheme: dark;
   background-color: #111827 !important;
   color: #f9fafb !important;
+}
+
+html.dark [data-maxclass-skin="true"] [data-video-surface="true"] {
+  background-color: #111827 !important;
+  color: #f9fafb;
+}
+
+html.dark [data-maxclass-skin="true"] [data-video-surface="true"] header,
+html.dark [data-maxclass-skin="true"] [data-video-surface="true"] nav,
+html.dark [data-maxclass-skin="true"] [data-video-surface="true"] .neo-card {
+  background-color: #1f2937 !important;
+  border-color: #374151 !important;
+}
+
+html.dark [data-maxclass-skin="true"] [data-video-surface="true"] .neo-card {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4) !important;
 }
 
 html.dark [data-maxclass-skin="true"] [class*="border-black"],
@@ -639,6 +674,114 @@ html.dark [data-maxclass-skin="true"] .course-content-html img {
   color: #ffffff !important;
 }
 
+/* Deep blue / violet CTA contrast guard.
+   Covers same-element and child text color overrides on gradient buttons. */
+:is([data-maxclass-skin="true"], [data-video-surface="true"])
+  :is(
+    [class*="bg-[#2633a8]"],
+    [class*="bg-[#2d39bb]"],
+    [class*="bg-[#3447dd]"],
+    [class*="bg-[#4454ee]"],
+    [class*="bg-[#5661ed]"],
+    [class*="bg-[#5e4eea]"],
+    [class*="bg-[#6550ff]"],
+    [class*="bg-[#6752ff]"],
+    [class*="bg-[#6853ff]"],
+    [class*="bg-blue-600"],
+    [class*="bg-blue-700"],
+    [class*="bg-indigo-500"],
+    [class*="bg-indigo-600"],
+    [class*="bg-indigo-700"],
+    [class*="bg-purple-600"],
+    [class*="from-[#2633a8]"],
+    [class*="from-[#2d39bb]"],
+    [class*="from-[#3140b5]"],
+    [class*="from-[#3447dd]"],
+    [class*="from-[#4454ee]"],
+    [class*="from-[#5661ed]"],
+    [class*="via-[#3447dd]"],
+    [class*="to-[#6550ff]"],
+    [class*="to-[#6752ff]"],
+    [class*="to-[#6853ff]"],
+    [class*="to-indigo-900"],
+    [class*="to-blue-900"]
+  ):is(
+    [class*="text-black"],
+    [class*="text-gray-900"],
+    [class*="text-gray-800"],
+    [class*="text-gray-700"],
+    [class*="text-slate-900"],
+    [class*="text-slate-800"],
+    [class*="text-slate-700"]
+  ),
+:is([data-maxclass-skin="true"], [data-video-surface="true"])
+  :is(
+    [class*="bg-[#2633a8]"],
+    [class*="bg-[#2d39bb]"],
+    [class*="bg-[#3447dd]"],
+    [class*="bg-[#4454ee]"],
+    [class*="bg-[#5661ed]"],
+    [class*="bg-[#5e4eea]"],
+    [class*="bg-[#6550ff]"],
+    [class*="bg-[#6752ff]"],
+    [class*="bg-[#6853ff]"],
+    [class*="bg-blue-600"],
+    [class*="bg-blue-700"],
+    [class*="bg-indigo-500"],
+    [class*="bg-indigo-600"],
+    [class*="bg-indigo-700"],
+    [class*="bg-purple-600"],
+    [class*="from-[#2633a8]"],
+    [class*="from-[#2d39bb]"],
+    [class*="from-[#3140b5]"],
+    [class*="from-[#3447dd]"],
+    [class*="from-[#4454ee]"],
+    [class*="from-[#5661ed]"],
+    [class*="via-[#3447dd]"],
+    [class*="to-[#6550ff]"],
+    [class*="to-[#6752ff]"],
+    [class*="to-[#6853ff]"],
+    [class*="to-indigo-900"],
+    [class*="to-blue-900"]
+  )
+  :is(
+    [class*="text-black"],
+    [class*="text-gray-900"],
+    [class*="text-gray-800"],
+    [class*="text-gray-700"],
+    [class*="text-slate-900"],
+    [class*="text-slate-800"],
+    [class*="text-slate-700"]
+  ) {
+  color: #ffffff !important;
+}
+
+:is([data-maxclass-skin="true"], [data-video-surface="true"])
+  :is(
+    [class*="bg-[#2633a8]"],
+    [class*="bg-[#2d39bb]"],
+    [class*="bg-[#3447dd]"],
+    [class*="bg-[#4454ee]"],
+    [class*="bg-[#5661ed]"],
+    [class*="bg-[#5e4eea]"],
+    [class*="bg-[#6550ff]"],
+    [class*="bg-[#6752ff]"],
+    [class*="bg-[#6853ff]"],
+    [class*="from-[#2633a8]"],
+    [class*="from-[#2d39bb]"],
+    [class*="from-[#3140b5]"],
+    [class*="from-[#3447dd]"],
+    [class*="from-[#4454ee]"],
+    [class*="from-[#5661ed]"],
+    [class*="via-[#3447dd]"],
+    [class*="to-[#6550ff]"],
+    [class*="to-[#6752ff]"],
+    [class*="to-[#6853ff]"]
+  )
+  svg {
+  color: #ffffff !important;
+}
+
 /* 蓝色按钮内的 SVG（lucide-react 默认 currentColor，但若有 text-black / inline color 强制白色） */
 [data-maxclass-skin="true"]
   :is(
@@ -715,4 +858,44 @@ html.dark [data-maxclass-skin="true"] .course-content-html img {
     [class*="border-gray-800"]
   ) {
   border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+html.dark
+  [data-maxclass-skin="true"]
+  :is(
+    [class*="dark:bg-gray-950"],
+    [class*="dark:bg-gray-900"],
+    [class*="dark:bg-gray-800"],
+    [class*="dark:bg-blue-950"],
+    [class*="dark:bg-indigo-950"],
+    [class*="dark:bg-primary-900"]
+  )
+  :is(
+    [class*="text-gray-900"],
+    [class*="text-gray-800"],
+    [class*="text-gray-700"],
+    [class*="text-slate-900"],
+    [class*="text-slate-800"],
+    [class*="text-slate-700"]
+  ) {
+  color: #f8fafc !important;
+}
+
+html.dark
+  [data-maxclass-skin="true"]
+  :is(
+    [class*="dark:bg-gray-950"],
+    [class*="dark:bg-gray-900"],
+    [class*="dark:bg-gray-800"],
+    [class*="dark:bg-blue-950"],
+    [class*="dark:bg-indigo-950"],
+    [class*="dark:bg-primary-900"]
+  )
+  :is(
+    [class*="text-gray-600"],
+    [class*="text-gray-500"],
+    [class*="text-slate-600"],
+    [class*="text-slate-500"]
+  ) {
+  color: #cbd5e1 !important;
 }

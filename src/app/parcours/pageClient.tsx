@@ -3,7 +3,6 @@
 import Link from 'next/link'
 import { useMemo, useRef, useSyncExternalStore } from 'react'
 import type { Course, Lesson, Module } from '@/data/parcours-mock'
-import { getCourse, getCourseModule } from '@/data/parcours-mock'
 import { Breadcrumb } from './components/Breadcrumb'
 import {
   completedCount,
@@ -23,6 +22,24 @@ function formatLessonTitle(index: number, title = ''): string {
   return title ? `${prefix} · ${title}` : prefix
 }
 
+function countLessons(course: Course): number {
+  return (course.modules || []).reduce(
+    (sum, module) => sum + (module.lessons?.length || 0),
+    0,
+  )
+}
+
+function countVideoBlocks(course: Course): number {
+  return (course.modules || []).reduce(
+    (courseTotal, module) => courseTotal + (module.lessons || []).reduce(
+      (moduleTotal, lesson) => moduleTotal
+        + (lesson.blocks || []).filter(block => block.type === 'video').length,
+      0,
+    ),
+    0,
+  )
+}
+
 // React 19 idiom for reading client-only external state (localStorage).
 // subscribe 返回空 unsubscribe，因为本场景不需要响应跨 tab 变化；
 // getServerSnapshot 返回 null 保证 SSR/CSR 一致。
@@ -31,16 +48,17 @@ function subscribeNoop() {
 }
 
 export function ParcoursHubClient({
-  course,
+  courses,
 }: {
-  course: Course
+  courses: Course[]
 }) {
-  const featuredCourse = course
+  const featuredCourse = courses[0]
   const featuredModule: Module | undefined = featuredCourse.modules?.[0]
   const featuredLessons: Lesson[] = useMemo(
     () => featuredModule?.lessons || [],
     [featuredModule],
   )
+  const totalLessonCount = courses.reduce((sum, course) => sum + countLessons(course), 0)
 
   // useSyncExternalStore 要求 getSnapshot 返回稳定引用，否则 React 会陷入
   // 无限循环警告（每次调用都新建对象 → 判定为 snapshot 变化 → re-render → 再调用）。
@@ -72,8 +90,8 @@ export function ParcoursHubClient({
         continueCardCacheRef.current = { raw, value: null }
         return null
       }
-      const c = getCourse(data.courseSlug)
-      const mod = getCourseModule(data.courseSlug, data.moduleSlug)
+      const c = courses.find(course => course.slug === data.courseSlug) || null
+      const mod = c?.modules.find(module => module.slug === data.moduleSlug)
       if (!c || !mod) {
         continueCardCacheRef.current = { raw, value: null }
         return null
@@ -130,16 +148,16 @@ export function ParcoursHubClient({
 
       {/* Continue Learning */}
       {continueCard && (
-        <section className="bg-indigo-50 border border-indigo-100 rounded-xl p-5 mb-8">
+        <section className="bg-indigo-50 dark:bg-indigo-950/30 border border-indigo-100 dark:border-indigo-800 rounded-xl p-5 mb-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
               <p className="text-xs font-semibold uppercase tracking-wide text-indigo-500 mb-2">
                 继续学习
               </p>
-              <h2 className="text-lg font-bold text-gray-800">
+              <h2 className="text-lg font-bold text-gray-800 dark:text-gray-100">
                 {continueCard.courseTitle}
               </h2>
-              <p className="text-sm text-gray-500 mt-1">
+              <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
                 {continueCard.moduleTitle}
                 {continueCard.lessonLabel && ` · ${continueCard.lessonLabel}`}
               </p>
@@ -172,10 +190,10 @@ export function ParcoursHubClient({
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 mb-2">
             首发课程
           </p>
-          <h2 className="text-3xl font-bold text-gray-800 mb-3">
+          <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-3">
             {featuredCourse.title}
           </h2>
-          <p className="text-gray-600 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
             从真实法语片段出发，学习高频表达、基础描述和旅行场景表达。
           </p>
         </div>
@@ -183,38 +201,38 @@ export function ParcoursHubClient({
 
       {/* Featured Course Card */}
       <section className="mb-8">
-        <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8">
+        <div className="bg-white dark:bg-gray-950 rounded-2xl border border-gray-200 dark:border-gray-800 p-6 md:p-8">
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
             <div className="flex-1">
               <div className="flex flex-wrap items-center gap-2 mb-4">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-primary-50 text-primary-700">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-primary-50 text-primary-700 dark:bg-primary-900/40 dark:text-primary-200">
                   {featuredCourse.level}
                 </span>
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
                   {featuredLessons.length} 节首发课
                 </span>
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
                   Quiz
                 </span>
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
                   学习进度
                 </span>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
-                <div className="rounded-lg bg-gray-50 p-3">
+                <div className="rounded-lg bg-gray-50 dark:bg-gray-900 p-3">
                   <p className="text-xs text-gray-400 mb-1">模块</p>
                   <p className="text-sm font-semibold text-gray-800">
                     {featuredCourse.modules?.length || 0}
                   </p>
                 </div>
-                <div className="rounded-lg bg-gray-50 p-3">
+                <div className="rounded-lg bg-gray-50 dark:bg-gray-900 p-3">
                   <p className="text-xs text-gray-400 mb-1">课程</p>
                   <p className="text-sm font-semibold text-gray-800">
                     {featuredLessons.length}
                   </p>
                 </div>
-                <div className="rounded-lg bg-gray-50 p-3">
+                <div className="rounded-lg bg-gray-50 dark:bg-gray-900 p-3">
                   <p className="text-xs text-gray-400 mb-1">进度</p>
                   <p className="text-sm font-semibold text-gray-800">
                     {featuredProgressPercent}%
@@ -222,7 +240,7 @@ export function ParcoursHubClient({
                 </div>
               </div>
 
-              <div className="h-2 bg-gray-100 rounded-full overflow-hidden mb-5">
+              <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden mb-5">
                 <div
                   className="h-full bg-primary-600 rounded-full transition-all"
                   style={{ width: `${featuredProgressPercent}%` }}
@@ -252,6 +270,69 @@ export function ParcoursHubClient({
         </div>
       </section>
 
+      {/* All courses */}
+      <section className="mb-8">
+        <div className="flex items-end justify-between gap-4 mb-4">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 mb-2">
+              All courses
+            </p>
+            <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">
+              MaxClass course library
+            </h2>
+          </div>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {courses.length} courses / {totalLessonCount} lessons
+          </p>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          {courses.map((course) => {
+            const lessonCount = countLessons(course)
+            const videoCount = countVideoBlocks(course)
+            const firstModule = course.modules?.[0]
+
+            return (
+              <Link
+                key={course.slug}
+                href={`/parcours/${course.slug}`}
+                className="block bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 p-6 hover:border-primary-300 dark:hover:border-primary-500 hover:shadow-md transition-all group"
+              >
+                <div className="flex flex-wrap items-center gap-2 mb-4">
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-primary-50 text-primary-700 dark:bg-primary-900/40 dark:text-primary-200">
+                    {course.level}
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                    {course.modules?.length || 0} modules
+                  </span>
+                  <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-200">
+                    {lessonCount} lessons
+                  </span>
+                  {videoCount > 0 && (
+                    <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-700 dark:bg-blue-900/40 dark:text-blue-200">
+                      {videoCount} videos
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 dark:text-gray-100 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors mb-2">
+                  {course.title}
+                </h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-5 line-clamp-3">
+                  {course.description}
+                </p>
+                <div className="flex items-center justify-between gap-4 text-sm">
+                  <span className="text-gray-500 dark:text-gray-400">
+                    {firstModule?.title || 'MaxClass'}
+                  </span>
+                  <span className="text-primary-600 dark:text-primary-300 font-medium shrink-0">
+                    Open course
+                  </span>
+                </div>
+              </Link>
+            )
+          })}
+        </div>
+      </section>
+
       {/* 3 lesson cards */}
       <section className="mb-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -262,27 +343,27 @@ export function ParcoursHubClient({
                 pathname: `/parcours/${featuredCourse.slug}/module/${featuredModule?.slug}`,
                 query: { lesson: String(index) },
               }}
-              className="block bg-white rounded-xl border border-gray-200 p-6 hover:border-primary-300 hover:shadow-md transition-all group"
+              className="block bg-white dark:bg-gray-950 rounded-xl border border-gray-200 dark:border-gray-800 p-6 hover:border-primary-300 dark:hover:border-primary-500 hover:shadow-md transition-all group"
             >
               <div className="flex items-center justify-between gap-3 mb-3">
-                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-primary-50 text-primary-700">
+                <span className="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-semibold bg-primary-50 text-primary-700 dark:bg-primary-900/40 dark:text-primary-200">
                   {formatLessonTitle(index)}
                 </span>
-                <span className="text-xs text-gray-400">
+                <span className="text-xs text-gray-400 dark:text-gray-500">
                   {lesson.estimatedMinutes || 0} min
                 </span>
               </div>
-              <h3 className="text-lg font-bold text-gray-800 group-hover:text-primary-700 transition-colors mb-2">
+              <h3 className="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-primary-700 dark:group-hover:text-primary-300 transition-colors mb-2">
                 {lesson.title}
               </h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-4">
+              <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4">
                 {lesson.description}
               </p>
-              <div className="flex items-center justify-between text-xs text-gray-400">
+              <div className="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
                 <span>
                   {lesson.blocks?.length || 0} 个学习单元
                 </span>
-                <span className="text-primary-600 font-medium">
+                <span className="text-primary-600 dark:text-primary-300 font-medium">
                   进入本课 →
                 </span>
               </div>
@@ -292,14 +373,16 @@ export function ParcoursHubClient({
       </section>
 
       {/* Coming soon */}
-      <section className="bg-amber-50 border border-amber-200 rounded-xl p-5">
-        <p className="text-sm font-medium text-amber-800">
+      {courses.length < 2 && (
+      <section className="bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800 rounded-xl p-5">
+        <p className="text-sm font-medium text-amber-800 dark:text-amber-200">
           更多课程正在准备中。
         </p>
-        <p className="text-sm text-amber-700 mt-1">
+        <p className="text-sm text-amber-700 dark:text-amber-300 mt-1">
           后续会逐步补充更多系统课程，但当前首发阶段先聚焦这门可完整学习的课程。
         </p>
       </section>
+      )}
     </div>
   )
 }

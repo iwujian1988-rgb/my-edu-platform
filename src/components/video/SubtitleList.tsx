@@ -307,7 +307,7 @@ export function SubtitleList({
                       // 移动端激活：柔和浅黄绿 + 半透明边框
                       'bg-[#F6FFD9] border-[#E8F5B8] shadow-[0_1px_2px_rgba(180,210,120,0.15)] translate-y-0',
                       // PC端保持原有
-                      'lg:bg-[#B4F416] lg:dark:bg-teal-700 lg:border-black lg:dark:border-teal-500 lg:shadow-[4px_4px_0px_0px_#000] lg:dark:shadow-[4px_4px_0px_0px_#555] lg:-translate-y-0.5'
+                      'lg:bg-[#B4F416] lg:dark:bg-[#E7F6C2] lg:border-black lg:dark:border-[#B4F416] lg:shadow-[4px_4px_0px_0px_#000] lg:dark:shadow-[4px_4px_0px_0px_#555] lg:-translate-y-0.5'
                     )
                   : cn(
                       // 移动端未激活：白底 + 浅灰边框
