@@ -11,6 +11,7 @@
 
 export type VideoLanguage = 'en' | 'fr' | 'de' | 'es' | 'ja' | 'it' | 'ru'
 export type VideoDifficulty = 'beginner' | 'intermediate' | 'advanced'
+export type CefrLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'C2'
 export type VideoStatus = 'draft' | 'published' | 'archived'
 export type CardType = 'word' | 'phrase' | 'expression'
 export type CardStatus = 'known' | 'unknown' | 'learning'
@@ -36,6 +37,15 @@ export const VIDEO_DIFFICULTY_LABELS: Record<VideoDifficulty, string> = {
   beginner: '入门',
   intermediate: '进阶',
   advanced: '难',
+}
+
+export const CEFR_LEVEL_LABELS: Record<CefrLevel, string> = {
+  A1: 'A1 入门',
+  A2: 'A2 初级',
+  B1: 'B1 中级',
+  B2: 'B2 中高级',
+  C1: 'C1 高级',
+  C2: 'C2 精通',
 }
 
 export const CONTENT_TYPE_LABELS: Record<ContentType, string> = {
@@ -164,6 +174,7 @@ export interface Video {
   duration: number
   language: VideoLanguage
   difficulty: VideoDifficulty
+  cefr_level: CefrLevel | null
   content_type: ContentType  // 'video' 或 'audio'（音频博客）
   cover_url: string | null  // 音频博客封面图 URL
   status: VideoStatus

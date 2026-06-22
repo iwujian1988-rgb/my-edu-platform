@@ -3,6 +3,7 @@ import '@/lib/disable-logs'
 
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
+import { Suspense } from "react";
 import "./globals.css";
 import "./maxclass-skin.css";
 import "./maxclass-components.css";
@@ -85,7 +86,9 @@ export default function RootLayout({
       <body className={`${roboto.variable} font-sans antialiased`} data-maxclass-skin="true" suppressHydrationWarning>
         <ThemeProvider>
           <SoundEffects />
-          <LoadingOverlay />
+          <Suspense fallback={null}>
+            <LoadingOverlay />
+          </Suspense>
           {children}
           <InstallPWAButton />
         </ThemeProvider>

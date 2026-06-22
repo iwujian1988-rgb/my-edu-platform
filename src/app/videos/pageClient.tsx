@@ -35,7 +35,6 @@ import VideoCard from '@/components/video/VideoCard'
 import { getDifficultyColor } from '@/components/video/VideoCard'
 import PodcastZone from '@/components/video/PodcastZone'
 import { ContinueLearningBar } from '@/components/video/ContinueLearningBar'
-import { AppImportLinkButton } from '@/components/video/AppImportLinkButton'
 
 // 语言选项（从 API 动态获取，基于用户权限范围内的语言）
 const buildLanguageOptions = (availableLanguages: string[] | undefined) => {
@@ -776,7 +775,6 @@ function VideoListContent() {
                             <span className="px-3 py-1.5 text-xs font-black bg-[#B4F416] border-[2px] border-black">
                               {pkg.name}
                             </span>
-                            <AppImportLinkButton packageId={pkg.id} compact />
                           </div>
                         ))}
                       </div>
