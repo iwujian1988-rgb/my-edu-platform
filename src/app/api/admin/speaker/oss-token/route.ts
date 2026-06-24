@@ -6,8 +6,17 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { STS } from 'ali-oss'
+import { checkAdminForAPI } from '@/lib/admin-auth'
 
 export async function POST(request: NextRequest) {
+  const adminCheck = await checkAdminForAPI()
+  if (!adminCheck.success) {
+    return NextResponse.json(
+      { error: adminCheck.error, code: adminCheck.code },
+      { status: adminCheck.status || 401 }
+    )
+  }
+
   const config = {
     accessKeyId: process.env.ALIYUN_OSS_ACCESS_KEY_ID!,
     accessKeySecret: process.env.ALIYUN_OSS_ACCESS_KEY_SECRET!,

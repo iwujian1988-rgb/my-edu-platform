@@ -5,9 +5,11 @@
  * POST: 执行模式 - 更新数据库中的难度等级
  */
 
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { autoDetectLevel, LEVEL_SHORT_NAMES } from '@/lib/speaker-auto-analysis'
+import { checkAdminForAPI } from '@/lib/admin-auth'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 interface ArticleWithSentences {
   id: string
@@ -23,9 +25,17 @@ interface ArticleWithSentences {
 }
 
 export async function GET(request: NextRequest) {
-  const supabase = await createClient()
-
   try {
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
+    const supabase = await createAdminClient() as SupabaseClient
+
     // 支持 limit 参数，用于测试
     const { searchParams } = new URL(request.url)
     const limit = searchParams.get('limit') ? parseInt(searchParams.get('limit')!) : undefined
@@ -137,14 +147,17 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
-  const supabase = await createClient()
-
   try {
     // 1. 权限检查
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
-    if (authError || !user) {
-      return NextResponse.json({ error: '未授权访问' }, { status: 401 })
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
     }
+
+    const supabase = await createAdminClient() as SupabaseClient
 
     // 2. 获取所有文章
     const { data: articles, error } = await supabase

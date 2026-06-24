@@ -29,7 +29,8 @@ export const LEVEL_NAMES: Record<SpeakerLevel, string> = {
 /**
  * 文章状态
  */
-export type SpeakerArticleStatus = 'active' | 'archived'
+export type SpeakerArticleStatus = 'draft' | 'published' | 'active' | 'archived'
+export type PublicSpeakerArticleStatus = Extract<SpeakerArticleStatus, 'published' | 'active'>
 
 /**
  * 支持的语言列表
@@ -325,16 +326,6 @@ export interface SpeakerKTVState {
 // ========================================
 // 7. API 请求/响应类型
 // ========================================
-
-/**
- * 获取文章列表的请求参数
- */
-export interface GetArticlesParams {
-  level?: SpeakerLevel  // 可选的难度等级过滤
-  status?: SpeakerArticleStatus  // 可选的状态过滤
-  limit?: number  // 返回数量限制
-  offset?: number  // 分页偏移量
-}
 
 /**
  * 获取文章列表的响应

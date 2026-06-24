@@ -7,9 +7,10 @@
 import { AppSidebar } from './AppSidebar'
 import { SpeakerPageContent } from './SpeakerPageContent'
 import { MobileBottomNav } from './MobileBottomNav'
+import type { SpeakerArticle } from '@/types/speaker'
 
 interface SpeakerClientProps {
-  initialArticles: any[]
+  initialArticles: SpeakerArticle[]
   userId?: string
 }
 

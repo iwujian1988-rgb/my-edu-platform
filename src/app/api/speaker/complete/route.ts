@@ -11,7 +11,20 @@
  */
 
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import type { ProgressStatus } from '@/types/speaker'
+import type { SupabaseClient } from '@supabase/supabase-js'
+
+type CompletionStep = 'step1' | 'step2' | 'step3' | 'step4'
+type CompletionUpdate = {
+  updated_at: string
+  step1_completed?: boolean
+  step2_completed?: boolean
+  step3_completed?: boolean
+  step4_completed?: boolean
+  status?: ProgressStatus
+  completed_at?: string
+}
 
 /**
  * PUT 处理器：标记步骤完成
@@ -25,29 +38,37 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json()
-    const { articleId, userId, step } = body
+    const { articleId, step } = body
+    const user = await getCurrentUser()
 
     // 验证必填字段
-    if (!articleId || !userId || !step) {
+    if (!user) {
       return NextResponse.json(
-        { error: 'MISSING_FIELDS', message: '缺少 articleId、userId 或 step' },
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
+    if (!articleId || !step) {
+      return NextResponse.json(
+        { error: 'MISSING_FIELDS', message: '缺少 articleId 或 step' },
         { status: 400 }
       )
     }
 
     // 验证步骤名称
-    const validSteps = ['step1', 'step2', 'step3', 'step4']
-    if (!validSteps.includes(step)) {
+    const validSteps: CompletionStep[] = ['step1', 'step2', 'step3', 'step4']
+    if (!validSteps.includes(step as CompletionStep)) {
       return NextResponse.json(
         { error: 'INVALID_STEP', message: '无效的步骤名称' },
         { status: 400 }
       )
     }
 
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     // 确定要更新的字段
-    const updateData: any = {
+    const updateData: CompletionUpdate = {
       updated_at: new Date().toISOString()
     }
 
@@ -74,7 +95,7 @@ export async function PUT(request: Request) {
     const { data, error } = await supabase
       .from('speaker_progress')
       .upsert({
-        user_id: userId,
+        user_id: user.id,
         article_id: articleId,
         ...updateData
       },
@@ -90,7 +111,7 @@ export async function PUT(request: Request) {
     }
 
     console.log('[Speaker Complete API] ✅ 完课确认成功:', {
-      userId,
+      userId: user.id,
       articleId,
       step
     })

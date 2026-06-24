@@ -6,11 +6,13 @@
  * - POST: 创建新文章（使用 Zod 强校验）
  */
 
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
 import { z } from 'zod'
 import { resolveImageUrl } from '@/lib/speaker-auto-analysis'
+import { checkAdminForAPI } from '@/lib/admin-auth'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 // ========================================
 // Zod Schema - 强校验
@@ -56,7 +58,15 @@ const uploadSchema = z.object({
 // ========================================
 export async function GET(request: NextRequest) {
   try {
-    const supabase = await createClient()
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
+    const supabase = await createAdminClient() as SupabaseClient
     const { searchParams } = new URL(request.url)
 
     // 解析查询参数
@@ -132,19 +142,18 @@ export async function GET(request: NextRequest) {
 // POST - 创建新文章（重构版）
 // ========================================
 export async function POST(request: NextRequest) {
-  const supabase = await createClient()
+  const supabase = await createAdminClient() as SupabaseClient
 
   try {
     // ============================================================
     // 1. 权限检查
     // ============================================================
-    const { data: { user }, error: authError } = await supabase.auth.getUser()
-
-    if (authError || !user) {
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success || !adminCheck.admin) {
       console.error('[API] 未授权访问')
       return NextResponse.json(
-        { error: '未授权访问' },
-        { status: 401 }
+        { error: adminCheck.error || '未授权访问', code: adminCheck.code },
+        { status: adminCheck.status || 401 }
       )
     }
 
@@ -236,7 +245,7 @@ export async function POST(request: NextRequest) {
         status: 'published',
 
         // 用户 ID（从 auth 获取）
-        user_id: user.id
+        user_id: adminCheck.admin.user_id
       })
       .select()
       .single()

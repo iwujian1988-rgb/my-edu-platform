@@ -12,7 +12,8 @@
  */
 
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 /**
  * GET 处理器：获取用户在某篇文章的所有听写记录
@@ -29,22 +30,29 @@ export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
     const articleId = searchParams.get('articleId')
-    const userId = searchParams.get('userId')
+    const user = await getCurrentUser()
 
-    if (!articleId || !userId) {
+    if (!user) {
       return NextResponse.json(
-        { error: 'MISSING_PARAMS', message: '缺少文章 ID 或用户 ID' },
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
+    if (!articleId) {
+      return NextResponse.json(
+        { error: 'MISSING_PARAMS', message: '缺少文章 ID' },
         { status: 400 }
       )
     }
 
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     // 查询该用户在该文章的所有听写记录
     const { data, error } = await supabase
       .from('speaker_dictation_submissions')
       .select('*')
-      .eq('user_id', userId)
+      .eq('user_id', user.id)
       .eq('article_id', articleId)
       .order('created_at', { ascending: false })  // 最新记录在前
 

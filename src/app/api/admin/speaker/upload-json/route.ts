@@ -9,6 +9,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { analyzeArticle } from '@/lib/speaker-auto-analysis'
+import { checkAdminForAPI } from '@/lib/admin-auth'
 import { VALID_LANGUAGES, VALID_CATEGORIES, DEFAULT_STATUS, FIELD_NAMES } from '@/lib/speaker-constants'
 
 // ========================================
@@ -16,6 +17,14 @@ import { VALID_LANGUAGES, VALID_CATEGORIES, DEFAULT_STATUS, FIELD_NAMES } from '
 // ========================================
 export async function POST(request: NextRequest) {
   try {
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
     // 调试日志
     const contentType = request.headers.get('content-type')
     console.log('[UPLOAD-JSON] Content-Type:', contentType)

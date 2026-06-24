@@ -11,21 +11,27 @@
  */
 
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
-import { getDictEntry, getBatchDictEntries } from '@/lib/dict-service'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import { getBatchDictEntries } from '@/lib/dict-service'
+import { parseSentenceTokens, validateWordInput } from '@/lib/speaker-utils'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 /**
  * 提交数据结构
  */
 interface DictationSubmission {
   articleId: string
-  userId: string
   answers: Array<{
     sentenceIndex: number
     userWords: Array<string | null>  // null = skipped
-    correctWords: string[]
   }>
   timeSpentSeconds: number
+}
+
+interface SpeakerArticleSentence {
+  text?: string
+  text_en?: string
+  start_time?: number | null
 }
 
 /**
@@ -36,27 +42,69 @@ export async function POST(request: Request) {
 
   try {
     const body: DictationSubmission = await request.json()
-    const { articleId, userId, answers, timeSpentSeconds } = body
+    const { articleId, answers, timeSpentSeconds } = body
+    const user = await getCurrentUser()
 
     // 验证必填字段
-    if (!articleId || !userId || !answers) {
+    if (!user) {
       return NextResponse.json(
-        { error: 'MISSING_FIELDS', message: '缺少必填字段' },
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
+    if (!articleId || !Array.isArray(answers)) {
+      return NextResponse.json(
+        { error: 'MISSING_FIELDS', message: '缺少必填字段或答案格式错误' },
         { status: 400 }
       )
     }
 
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
+
+    const { data: article, error: articleError } = await supabase
+      .from('speaker_articles')
+      .select('id, json_data')
+      .eq('id', articleId)
+      .single()
+
+    if (articleError || !article) {
+      console.error('[Speaker Dictation Submit API] 获取文章数据失败:', articleError)
+      return NextResponse.json(
+        { error: 'ARTICLE_NOT_FOUND', message: '文章不存在或无权访问' },
+        { status: 404 }
+      )
+    }
+
+    const sentences = (article.json_data?.sentences || []) as SpeakerArticleSentence[]
+    if (sentences.length === 0) {
+      return NextResponse.json(
+        { error: 'INVALID_ARTICLE', message: '文章缺少句子数据' },
+        { status: 400 }
+      )
+    }
+
+    const answerMap = new Map<number, Array<string | null>>()
+    answers.forEach(answer => {
+      if (Number.isInteger(answer.sentenceIndex) && Array.isArray(answer.userWords)) {
+        answerMap.set(answer.sentenceIndex, answer.userWords)
+      }
+    })
 
     // ========================================
-    // 1. 判分逻辑（严格按照 shangwenjie.md 第 2.4-F 节）
+    // 1. 判分逻辑：正确答案只能来自服务端文章数据
     // ========================================
 
-    let totalSentences = answers.length
+    const totalSentences = sentences.length
     let totalWords = 0
     let correctCount = 0
     let wrongCount = 0
     let skippedCount = 0
+    const gradedAnswers: Array<{
+      sentenceIndex: number
+      userWords: Array<string | null>
+      correctWords: string[]
+    }> = []
 
     const wrongWords: Array<{
       sentenceIndex: number
@@ -66,11 +114,23 @@ export async function POST(request: Request) {
       errorType: 'wrong' | 'skipped'
     }> = []
 
-    answers.forEach(({ sentenceIndex, userWords, correctWords }) => {
+    sentences.forEach((sentence, sentenceIndex) => {
+      const sentenceText = sentence.text_en || sentence.text || ''
+      const correctWords = parseSentenceTokens(sentenceText)
+        .filter(token => token.type === 'word' && !token.skipInput)
+        .map(token => token.text)
+      const userWords = answerMap.get(sentenceIndex) || []
+
+      gradedAnswers.push({
+        sentenceIndex,
+        userWords,
+        correctWords
+      })
+
       totalWords += correctWords.length
 
       correctWords.forEach((correctWord, wordIndex) => {
-        const userInput = userWords[wordIndex]
+        const userInput = userWords[wordIndex] ?? null
 
         if (userInput === null) {
           // 用户右键放弃
@@ -83,11 +143,7 @@ export async function POST(request: Request) {
             errorType: 'skipped'
           })
         } else {
-          // 判分：大小写不敏感，trim，缩写不兼容
-          const normalizedInput = userInput.trim().toLowerCase()
-          const normalizedCorrect = correctWord.trim().toLowerCase()
-
-          if (normalizedInput === normalizedCorrect) {
+          if (validateWordInput(userInput, correctWord)) {
             correctCount++
           } else {
             wrongCount++
@@ -122,9 +178,9 @@ export async function POST(request: Request) {
     const { data: submission, error: submitError } = await supabase
       .from('speaker_dictation_submissions')
       .insert({
-        user_id: userId,
+        user_id: user.id,
         article_id: articleId,
-        answers: answers,  // 完整的答案 JSON
+        answers: gradedAnswers,
         total_sentences: totalSentences,
         total_words: totalWords,
         correct_count: correctCount,
@@ -152,35 +208,12 @@ export async function POST(request: Request) {
     if (wrongWords.length > 0) {
       console.log(`[Speaker Dictation Submit API] 开始生成 ${wrongWords.length} 个生词`)
 
-      // 获取文章信息（从 json_data 字段获取句子）
-      const { data: article, error: articleError } = await supabase
-        .from('speaker_articles')
-        .select('id, json_data')
-        .eq('id', articleId)
-        .single()
-
-      // 🔧 修复：检查文章数据获取是否成功
-      if (articleError) {
-        console.error('[Speaker Dictation Submit API] ❌ 获取文章数据失败:', articleError)
-      } else if (!article) {
-        console.error('[Speaker Dictation Submit API] ❌ 文章不存在:', articleId)
-      } else {
-        console.log('[Speaker Dictation Submit API] ✅ 文章数据获取成功:', {
-          hasJsonData: !!article.json_data,
-          hasSentences: !!article.json_data?.sentences,
-          sentencesLength: article.json_data?.sentences?.length || 0
-        })
-      }
-
-      // 🔧 修复：即使没有 json_data，也要尝试插入生词本（使用默认值）
-      const sentences = article?.json_data?.sentences || []
-
       // 生成生词本记录
       const ghostWordsInserts = wrongWords.map((wrongWord) => {
         const sentence = sentences[wrongWord.sentenceIndex]
 
         return {
-          user_id: userId,
+          user_id: user.id,
           word: wrongWord.correctWord,
           article_id: articleId,
           sentence_id: wrongWord.sentenceIndex,
@@ -201,7 +234,7 @@ export async function POST(request: Request) {
       const { error: deleteError } = await supabase
         .from('speaker_ghost_words')
         .delete()
-        .eq('user_id', userId)
+        .eq('user_id', user.id)
         .eq('article_id', articleId)
 
       if (deleteError) {
@@ -283,14 +316,15 @@ export async function POST(request: Request) {
                   // P1修复：使用 onConflict + ignore 避免并发插入冲突
                   const { error: insertError } = await supabase
                     .from('speaker_word_cache')
-                    .insert({
+                    .upsert({
                       word: entry.word,
                       phonetic: entry.phonetic || entry.us_phonetic || entry.uk_phonetic,
                       definition: entry.definition,
                       example_sentence: entry.example_sentence_en || entry.example_sentence
+                    }, {
+                      onConflict: 'word',
+                      ignoreDuplicates: true
                     })
-                    .onConflict('word')
-                    .ignore()
 
                   // 如果插入失败（可能是并发冲突），重新查询缓存
                   if (insertError) {
@@ -324,7 +358,7 @@ export async function POST(request: Request) {
                       example_sentence: dictEntry.example_sentence_en || dictEntry.example_sentence
                     })
                     .eq('word', word)
-                    .eq('user_id', userId)
+                    .eq('user_id', user.id)
                     .is('phonetic', null)
                 }
               }
@@ -350,10 +384,10 @@ export async function POST(request: Request) {
     const { error: progressError } = await supabase
       .from('speaker_progress')
       .upsert({
-        user_id: userId,
+        user_id: user.id,
         article_id: articleId,
         step2_completed: true,
-        step2_last_sentence_index: answers.length - 1,
+        step2_last_sentence_index: totalSentences - 1,
         step2_draft: null,  // 🔧 关键修复：提交成功后清除草稿，避免下次进入时重复提示
         status: 'in_progress',  // 还需要完成 Step 3 和 4
         updated_at: new Date().toISOString()

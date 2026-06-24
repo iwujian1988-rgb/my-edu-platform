@@ -11,7 +11,8 @@
  */
 
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 /**
  * GET 处理器：获取背诵练习进度
@@ -22,22 +23,29 @@ import { createClient } from '@/lib/supabase/server'
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const articleId = searchParams.get('articleId')
-  const userId = searchParams.get('userId')
+  const user = await getCurrentUser()
 
-  if (!articleId || !userId) {
+  if (!user) {
     return NextResponse.json(
-      { error: 'MISSING_FIELDS', message: '缺少 articleId 或 userId' },
+      { error: 'UNAUTHORIZED', message: '请先登录' },
+      { status: 401 }
+    )
+  }
+
+  if (!articleId) {
+    return NextResponse.json(
+      { error: 'MISSING_FIELDS', message: '缺少 articleId' },
       { status: 400 }
     )
   }
 
   try {
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     const { data, error } = await supabase
       .from('speaker_progress')
       .select('step3_practiced_sentences, step3_mastered_sentences, step3_completed')
-      .eq('user_id', userId)
+      .eq('user_id', user.id)
       .eq('article_id', articleId)
       .single()
 
@@ -93,12 +101,20 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json()
-    const { articleId, userId, practicedSentences, masteredSentences, completed } = body
+    const { articleId, practicedSentences, masteredSentences, completed } = body
+    const user = await getCurrentUser()
 
     // 验证必填字段
-    if (!articleId || !userId) {
+    if (!user) {
       return NextResponse.json(
-        { error: 'MISSING_FIELDS', message: '缺少 articleId 或 userId' },
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
+    if (!articleId) {
+      return NextResponse.json(
+        { error: 'MISSING_FIELDS', message: '缺少 articleId' },
         { status: 400 }
       )
     }
@@ -118,13 +134,13 @@ export async function PUT(request: Request) {
       )
     }
 
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     // 使用 upsert 保存或更新进度
     const { data, error } = await supabase
       .from('speaker_progress')
       .upsert({
-        user_id: userId,
+        user_id: user.id,
         article_id: articleId,
         step3_practiced_sentences: practicedSentences,
         step3_mastered_sentences: masteredSentences || [],

@@ -11,7 +11,20 @@
  */
 
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import type { ProgressStatus } from '@/types/speaker'
+import type { SupabaseClient } from '@supabase/supabase-js'
+
+type ResetStep = 'step1' | 'step2' | 'step3' | 'step4'
+type ResetUpdate = {
+  updated_at: string
+  step1_completed?: boolean
+  step2_completed?: boolean
+  step3_completed?: boolean
+  step4_completed?: boolean
+  status?: ProgressStatus
+  completed_at?: string | null
+}
 
 /**
  * PUT 处理器：重置步骤为未完成
@@ -25,29 +38,37 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json()
-    const { articleId, userId, step } = body
+    const { articleId, step } = body
+    const user = await getCurrentUser()
 
     // 验证必填字段
-    if (!articleId || !userId || !step) {
+    if (!user) {
       return NextResponse.json(
-        { error: 'MISSING_FIELDS', message: '缺少 articleId、userId 或 step' },
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
+    if (!articleId || !step) {
+      return NextResponse.json(
+        { error: 'MISSING_FIELDS', message: '缺少 articleId 或 step' },
         { status: 400 }
       )
     }
 
     // 验证步骤名称
-    const validSteps = ['step1', 'step2', 'step3', 'step4']
-    if (!validSteps.includes(step)) {
+    const validSteps: ResetStep[] = ['step1', 'step2', 'step3', 'step4']
+    if (!validSteps.includes(step as ResetStep)) {
       return NextResponse.json(
         { error: 'INVALID_STEP', message: '无效的步骤名称' },
         { status: 400 }
       )
     }
 
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     // 确定要更新的字段
-    const updateData: any = {
+    const updateData: ResetUpdate = {
       updated_at: new Date().toISOString()
     }
 
@@ -74,7 +95,7 @@ export async function PUT(request: Request) {
     const { data: existingData } = await supabase
       .from('speaker_progress')
       .select('step1_completed, step2_completed, step3_completed')
-      .eq('user_id', userId)
+      .eq('user_id', user.id)
       .eq('article_id', articleId)
       .single()
 
@@ -94,7 +115,7 @@ export async function PUT(request: Request) {
     const { data, error } = await supabase
       .from('speaker_progress')
       .update(updateData)
-      .eq('user_id', userId)
+      .eq('user_id', user.id)
       .eq('article_id', articleId)
       .select()
       .single()
@@ -105,7 +126,7 @@ export async function PUT(request: Request) {
     }
 
     console.log('[Speaker Reset Progress API] ✅ 重置进度成功:', {
-      userId,
+      userId: user.id,
       articleId,
       step
     })

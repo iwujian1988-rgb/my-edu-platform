@@ -58,9 +58,9 @@ export async function getSpeakerArticles(
     // 状态过滤
     const statusFilter = params?.status
     if (statusFilter) {
-      countQuery = countQuery.eq('status', statusFilter as SpeakerArticleStatus)
+      countQuery = countQuery.eq('status', statusFilter)
     } else {
-      countQuery = countQuery.in('status', ['published', 'active'] as SpeakerArticleStatus[])
+      countQuery = countQuery.in('status', ['published', 'active'] satisfies SpeakerArticleStatus[])
     }
 
     if (params?.level) {
@@ -89,9 +89,9 @@ export async function getSpeakerArticles(
 
     // 状态过滤：如果未指定，默认查询 published 和 active
     if (statusFilter) {
-      query = query.eq('status', statusFilter as SpeakerArticleStatus)
+      query = query.eq('status', statusFilter)
     } else {
-      query = query.in('status', ['published', 'active'] as SpeakerArticleStatus[])
+      query = query.in('status', ['published', 'active'] satisfies SpeakerArticleStatus[])
     }
 
     if (params?.level) {

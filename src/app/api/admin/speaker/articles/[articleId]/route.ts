@@ -7,9 +7,39 @@
  * - DELETE: 删除文章
  */
 
-import { createClient } from '@/lib/supabase/server'
+import { createAdminClient } from '@/lib/supabase/server'
 import { NextRequest, NextResponse } from 'next/server'
 import { revalidatePath } from 'next/cache'
+import { checkAdminForAPI } from '@/lib/admin-auth'
+import type { SupabaseClient } from '@supabase/supabase-js'
+
+interface SpeakerArticleSentenceInput {
+  text: string
+  text_en?: string | null
+  start_time?: number | null
+  end_time?: number | null
+}
+
+interface SpeakerArticlePatchBody {
+  level?: number
+  language?: string
+  category?: string
+  title?: string
+  source_url?: string | null
+  audio_url?: string
+  image_url?: string | null
+  has_preroll_ad?: boolean
+  status?: string
+  json_data?: {
+    sentences?: SpeakerArticleSentenceInput[]
+    [key: string]: unknown
+  }
+}
+
+type SpeakerArticleUpdate = Partial<SpeakerArticlePatchBody> & {
+  total_sentences?: number
+  duration_seconds?: number | null
+}
 
 // ========================================
 // GET - 获取文章详情
@@ -19,7 +49,15 @@ export async function GET(
   { params }: { params: Promise<{ articleId: string }> }
 ) {
   try {
-    const supabase = await createClient()
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
+    const supabase = await createAdminClient() as SupabaseClient
     const { articleId } = await params
 
     // 获取文章数据
@@ -71,23 +109,63 @@ export async function PATCH(
   { params }: { params: Promise<{ articleId: string }> }
 ) {
   try {
-    const supabase = await createClient()
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
+    const supabase = await createAdminClient() as SupabaseClient
     const { articleId } = await params
-    const body = await request.json()
+    const body = await request.json() as SpeakerArticlePatchBody
 
     // 构建更新数据（只包含提供的字段）
-    const updateData: any = {}
+    const updateData: SpeakerArticleUpdate = {}
 
     // 允许更新的字段
-    const allowedFields = [
+    const allowedFields: Array<keyof SpeakerArticlePatchBody> = [
       'level', 'language', 'category', 'title',
       'source_url', 'audio_url', 'image_url',
       'has_preroll_ad', 'status', 'json_data'
     ]
 
     allowedFields.forEach(field => {
-      if (body[field] !== undefined) {
-        updateData[field] = body[field]
+      const value = body[field]
+      if (value === undefined) return
+
+      switch (field) {
+        case 'level':
+          updateData.level = value as number
+          break
+        case 'language':
+          updateData.language = value as string
+          break
+        case 'category':
+          updateData.category = value as string
+          break
+        case 'title':
+          updateData.title = value as string
+          break
+        case 'source_url':
+          updateData.source_url = value as string | null
+          break
+        case 'audio_url':
+          updateData.audio_url = value as string
+          break
+        case 'image_url':
+          updateData.image_url = value as string | null
+          break
+        case 'has_preroll_ad':
+          updateData.has_preroll_ad = value as boolean
+          break
+        case 'status':
+          updateData.status = value as string
+          break
+        case 'json_data':
+          updateData.json_data = value as SpeakerArticlePatchBody['json_data']
+          break
       }
     })
 
@@ -133,11 +211,11 @@ export async function PATCH(
       }
 
       // 插入新句子
-      const sentencesToInsert = body.json_data.sentences.map((s: any, index: number) => ({
+      const sentencesToInsert = body.json_data.sentences.map((s, index) => ({
         article_id: articleId,
         sentence_index: index,
         text: s.text,
-        text_en: s.text,
+        text_en: s.text_en || null,
         start_time: s.start_time || null,
         end_time: s.end_time || null
       }))
@@ -178,7 +256,15 @@ export async function DELETE(
   { params }: { params: Promise<{ articleId: string }> }
 ) {
   try {
-    const supabase = await createClient()
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
+    const supabase = await createAdminClient() as SupabaseClient
     const { articleId } = await params
 
     // 先删除关联的句子

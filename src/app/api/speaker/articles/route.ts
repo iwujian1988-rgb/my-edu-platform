@@ -11,8 +11,9 @@
 
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
-import type { SpeakerLevel, SupportedLanguage, ArticleCategory } from '../../../../types/speaker'
+import type { SpeakerLevel, SupportedLanguage, ArticleCategory, PublicSpeakerArticleStatus } from '../../../../types/speaker'
 import { getSpeakerArticles } from '../../../../lib/speaker-data'
 
 /**
@@ -44,6 +45,7 @@ export async function GET(request: Request) {
     const pageParam = searchParams.get('page')
     const pageSizeParam = searchParams.get('pageSize')
     const statusParam = searchParams.get('status')
+    const validPublicStatuses: PublicSpeakerArticleStatus[] = ['published', 'active']
 
     console.log('[Speaker API] 查询参数:', {
       level: levelParam,
@@ -98,6 +100,17 @@ export async function GET(request: Request) {
     // 解析分页参数
     const page = pageParam ? parseInt(pageParam, 10) : 1
     const pageSize = pageSizeParam ? parseInt(pageSizeParam, 10) : 12
+    let status: PublicSpeakerArticleStatus | undefined
+
+    if (statusParam) {
+      if (!validPublicStatuses.includes(statusParam as PublicSpeakerArticleStatus)) {
+        return NextResponse.json(
+          { error: 'INVALID_STATUS', message: 'status 只能是 published 或 active' },
+          { status: 400 }
+        )
+      }
+      status = statusParam as PublicSpeakerArticleStatus
+    }
 
     if (pageParam && (isNaN(page) || page < 1)) {
       console.warn('[Speaker API] ⚠️ 无效的 page 参数:', pageParam)
@@ -116,7 +129,7 @@ export async function GET(request: Request) {
     }
 
     // 3. 创建 Supabase 客户端
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     // 4. 查询文章列表（RLS 会自动过滤未购语言）
     const { articles, total } = await getSpeakerArticles(supabase, {
@@ -125,7 +138,7 @@ export async function GET(request: Request) {
       category,
       page,
       pageSize,
-      status: statusParam as 'active' | 'archived'
+      status
     })
 
     const totalPages = Math.ceil(total / pageSize)

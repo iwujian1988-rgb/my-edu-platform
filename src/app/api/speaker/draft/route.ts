@@ -11,7 +11,8 @@
  */
 
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
+import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 /**
  * 草稿数据结构（完全符合 shangwenjie.md 要求）
@@ -32,7 +33,6 @@ interface DictationDraft {
  * PUT 处理器：保存听写草稿
  *
  * @body articleId - 文章 ID
- * @body userId - 用户 ID
  * @body draft - 草稿数据
  */
 export async function PUT(request: Request) {
@@ -40,18 +40,26 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json()
-    const { articleId, userId, draft } = body
+    const { articleId, draft } = body
+    const user = await getCurrentUser()
 
-    console.log('[Speaker Draft API] 请求参数:', { articleId, userId, hasDraft: !!draft })
+    console.log('[Speaker Draft API] 请求参数:', { articleId, userId: user?.id, hasDraft: !!draft })
     console.log('[Speaker Draft API] 草稿数据:', {
       wordInputsLength: draft?.wordInputs?.length,
       activeSentenceIndex: draft?.activeSentenceIndex
     })
 
     // 验证必填字段
-    if (!articleId || !userId) {
+    if (!user) {
       return NextResponse.json(
-        { error: 'MISSING_FIELDS', message: '缺少 articleId 或 userId' },
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
+    if (!articleId) {
+      return NextResponse.json(
+        { error: 'MISSING_FIELDS', message: '缺少 articleId' },
         { status: 400 }
       )
     }
@@ -64,13 +72,13 @@ export async function PUT(request: Request) {
       )
     }
 
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     // 使用 upsert 保存或更新草稿（完全符合 shangwenjie.md 第 2.4-E 节）
     const { data, error } = await supabase
       .from('speaker_progress')
       .upsert({
-        user_id: userId,
+        user_id: user.id,
         article_id: articleId,
         step2_draft: draft,  // 保存完整的草稿数据
         step2_last_sentence_index: draft.activeSentenceIndex,
@@ -116,17 +124,24 @@ export async function PUT(request: Request) {
 export async function DELETE(request: Request) {
   const { searchParams } = new URL(request.url)
   const articleId = searchParams.get('articleId')
-  const userId = searchParams.get('userId')
+  const user = await getCurrentUser()
 
-  if (!articleId || !userId) {
+  if (!user) {
     return NextResponse.json(
-      { error: 'MISSING_FIELDS', message: '缺少 articleId 或 userId' },
+      { error: 'UNAUTHORIZED', message: '请先登录' },
+      { status: 401 }
+    )
+  }
+
+  if (!articleId) {
+    return NextResponse.json(
+      { error: 'MISSING_FIELDS', message: '缺少 articleId' },
       { status: 400 }
     )
   }
 
   try {
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     // 删除草稿（将 step2_draft 字段设为 null）
     const { error } = await supabase
@@ -136,7 +151,7 @@ export async function DELETE(request: Request) {
         step2_last_sentence_index: 0,
         updated_at: new Date().toISOString()
       })
-      .eq('user_id', userId)
+      .eq('user_id', user.id)
       .eq('article_id', articleId)
 
     if (error) {
@@ -168,24 +183,31 @@ export async function DELETE(request: Request) {
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
   const articleId = searchParams.get('articleId')
-  const userId = searchParams.get('userId')
+  const user = await getCurrentUser()
 
-  console.log('[Speaker Draft API] 获取草稿请求:', { articleId, userId })
+  console.log('[Speaker Draft API] 获取草稿请求:', { articleId, userId: user?.id })
 
-  if (!articleId || !userId) {
+  if (!user) {
     return NextResponse.json(
-      { error: 'MISSING_FIELDS', message: '缺少 articleId 或 userId' },
+      { error: 'UNAUTHORIZED', message: '请先登录' },
+      { status: 401 }
+    )
+  }
+
+  if (!articleId) {
+    return NextResponse.json(
+      { error: 'MISSING_FIELDS', message: '缺少 articleId' },
       { status: 400 }
     )
   }
 
   try {
-    const supabase = await createClient()
+    const supabase = await createClient() as SupabaseClient
 
     const { data, error } = await supabase
       .from('speaker_progress')
       .select('step2_draft, step2_last_sentence_index')
-      .eq('user_id', userId)
+      .eq('user_id', user.id)
       .eq('article_id', articleId)
       .single()
 

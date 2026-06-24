@@ -8,6 +8,46 @@
 import { NextResponse } from 'next/server'
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { upsertSpeakerProgress } from '@/lib/speaker-data'
+import type { SpeakerProgress } from '@/types/speaker'
+
+type SpeakerProgressUpdate = Partial<Pick<
+  SpeakerProgress,
+  | 'step1_completed'
+  | 'step1_last_position'
+  | 'step2_completed'
+  | 'step2_draft'
+  | 'step2_last_sentence_index'
+  | 'step3_completed'
+  | 'step3_practiced_sentences'
+  | 'step4_completed'
+  | 'status'
+  | 'completed_at'
+>>
+
+const ALLOWED_PROGRESS_FIELDS: Array<keyof SpeakerProgressUpdate> = [
+  'step1_completed',
+  'step1_last_position',
+  'step2_completed',
+  'step2_draft',
+  'step2_last_sentence_index',
+  'step3_completed',
+  'step3_practiced_sentences',
+  'step4_completed',
+  'status',
+  'completed_at'
+]
+
+function pickProgressUpdate(body: Record<string, unknown>): SpeakerProgressUpdate {
+  return ALLOWED_PROGRESS_FIELDS.reduce<SpeakerProgressUpdate>((update, field) => {
+    if (field in body) {
+      return {
+        ...update,
+        [field]: body[field]
+      }
+    }
+    return update
+  }, {})
+}
 
 /**
  * PUT 处理器：更新学习进度
@@ -34,7 +74,8 @@ export async function PUT(request: Request) {
 
   try {
     const body = await request.json()
-    const { articleId, ...progressData } = body
+    const { articleId } = body
+    const progressData = pickProgressUpdate(body)
 
     // 验证必填字段
     if (!articleId) {

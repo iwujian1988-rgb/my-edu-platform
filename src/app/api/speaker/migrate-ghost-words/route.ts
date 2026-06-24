@@ -15,8 +15,9 @@
  */
 
 import { NextResponse } from 'next/server'
-import { createClient } from '@/lib/supabase/server'
-import { createClient as createAdminClient } from '@supabase/supabase-js'
+import { createAdminClient } from '@/lib/supabase/server'
+import { checkAdminForAPI } from '@/lib/admin-auth'
+import type { SupabaseClient } from '@supabase/supabase-js'
 
 /**
  * POST 处理器：执行历史错题迁移
@@ -25,22 +26,19 @@ export async function POST(request: Request) {
   console.log('[Speaker Migrate Ghost Words] 开始执行迁移')
 
   try {
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
     const { searchParams } = new URL(request.url)
     const userId = searchParams.get('userId')
     const dryRun = searchParams.get('dryRun') === 'true'  // 预演模式，不实际插入数据
 
-    // 使用 service role 权限（需要跳过 RLS）
-    const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!
-    const supabaseServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY!
-
-    if (!supabaseServiceKey) {
-      return NextResponse.json(
-        { error: 'MISSING_SERVICE_KEY', message: '缺少 Service Role Key' },
-        { status: 500 }
-      )
-    }
-
-    const supabase = createAdminClient(supabaseUrl, supabaseServiceKey)
+    const supabase = await createAdminClient() as SupabaseClient
 
     // 查询历史听写记录
     let submissionsQuery = supabase

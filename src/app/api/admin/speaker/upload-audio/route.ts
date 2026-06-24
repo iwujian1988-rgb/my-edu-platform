@@ -7,10 +7,19 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { getOSSClient, getCacheHeaders } from '@/lib/oss'
+import { checkAdminForAPI } from '@/lib/admin-auth'
 import { randomUUID } from 'crypto'
 
 export async function POST(request: NextRequest) {
   try {
+    const adminCheck = await checkAdminForAPI()
+    if (!adminCheck.success) {
+      return NextResponse.json(
+        { error: adminCheck.error, code: adminCheck.code },
+        { status: adminCheck.status || 401 }
+      )
+    }
+
     console.log('[API] 收到音频上传请求')
     console.log('[API] Content-Type:', request.headers.get('content-type'))
 
