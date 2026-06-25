@@ -1,24 +1,23 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Home, Library, Dumbbell, Settings, Mic } from 'lucide-react'
 import { useTheme } from '@/contexts/ThemeContext'
 import { BookSelectorModal } from './BookSelectorModal'
 import type { Book } from '@/types/book'
-import { createClient } from '@/lib/supabase/client'
 
 interface NavItem {
   label: string
-  href: string
+  href?: string
   icon: any
   isPractice?: boolean // 标记是否为练习按钮
   requiresPermission?: string // 需要的权限标识
 }
 
 const navItems: NavItem[] = [
-  { label: '工作台', href: '/', icon: Home },
-  { label: '词库', href: '/library', icon: Library },
+  { label: '首页', href: '/', icon: Home },
+  { label: '单词书', href: '/library', icon: Library },
   { label: '练习', href: '/practice', icon: Dumbbell, isPractice: true },
   { label: '雯姐', href: '/speaker', icon: Mic, requiresPermission: 'speaker' },
   { label: '设置', icon: Settings }, // 特殊处理
@@ -28,79 +27,18 @@ interface MobileBottomNavProps {
   books?: Book[]
   userId?: string
   scopeStatsMap?: Record<string, any>
+  userPermissions?: string[]
+  currentView?: 'dashboard' | 'settings'
+  onViewChange?: (view: 'dashboard' | 'settings') => void
 }
 
-export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBottomNavProps) {
+export function MobileBottomNav({ books = [], userId, scopeStatsMap, userPermissions: propUserPermissions }: MobileBottomNavProps) {
   const pathname = usePathname()
   const router = useRouter()
   const { theme, mounted } = useTheme()
   const isDark = mounted && theme === 'dark'
   const [showBookSelector, setShowBookSelector] = useState(false)
-  const [userPermissions, setUserPermissions] = useState<string[]>([])
-
-  // 获取用户权限
-  useEffect(() => {
-    let isMounted = true
-
-    const fetchUserPermissions = async () => {
-      if (!userId) return
-
-      try {
-        const supabase = createClient()
-        const { data, error } = await supabase
-          .from('users')
-          .select('feature_permissions, invitation_code_id')
-          .eq('id', userId)
-          .single()
-
-        if (error) {
-          if (isMounted) console.error('[MobileBottomNav] 获取用户权限失败:', error)
-          return
-        }
-
-        if (!isMounted) return
-
-        // 优先使用用户自己设置的权限
-        if (data?.feature_permissions && data.feature_permissions.length > 0) {
-          if (isMounted) setUserPermissions(data.feature_permissions)
-          return
-        }
-
-        // 通过 invitation_code 获取套餐权限
-        if (data?.invitation_code_id) {
-          const { data: codeData } = await supabase
-            .from('invitation_codes')
-            .select('package_id')
-            .eq('id', data.invitation_code_id)
-            .single()
-
-          if (!isMounted) return
-
-          if (codeData?.package_id) {
-            const { data: packageData } = await supabase
-              .from('invitation_packages')
-              .select('feature_permissions')
-              .eq('id', codeData.package_id)
-              .single()
-
-            if (!isMounted) return
-
-            if (packageData?.feature_permissions) {
-              if (isMounted) setUserPermissions(packageData.feature_permissions)
-            }
-          }
-        }
-      } catch (error) {
-        if (isMounted) console.error('[MobileBottomNav] 获取权限失败:', error)
-      }
-    }
-
-    fetchUserPermissions()
-
-    return () => {
-      isMounted = false
-    }
-  }, [userId])
+  const userPermissions = propUserPermissions || []
 
   // 检查用户是否有特定权限
   const hasPermission = (permission: string) => {
@@ -143,6 +81,7 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
             const Icon = item.icon
             const isSettings = item.label === '设置'
             const isPractice = item.isPractice
+            const href = item.href
 
             // 判断是否激活
             const isActive = isSettings ? pathname === '/settings' : pathname === item.href
@@ -194,7 +133,7 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
                 return (
                   <button
                     key={item.label}
-                    onClick={() => handleNavigation(item.href)}
+                    onClick={() => href && handleNavigation(href)}
                     className="flex-1 flex flex-col items-center justify-center py-3 px-2 transition-all duration-200 active:scale-95"
                     suppressHydrationWarning
                   >
@@ -259,10 +198,12 @@ export function MobileBottomNav({ books = [], userId, scopeStatsMap }: MobileBot
             }
 
           // 普通导航：使用 button + router
+          if (!href) return null
+
           return (
             <button
               key={item.label}
-              onClick={() => handleNavigation(item.href)}
+              onClick={() => handleNavigation(href)}
               className="flex-1 flex flex-col items-center justify-center py-3 px-2 transition-all duration-200 active:scale-95"
               suppressHydrationWarning
             >

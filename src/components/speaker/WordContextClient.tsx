@@ -7,7 +7,7 @@
 import { useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowLeft, Volume2, Play, Pause } from 'lucide-react'
-import type { SpeakerGhostWord, SpeakerArticle } from '@/types/speaker'
+import type { SpeakerGhostWord, SpeakerArticle, SpeakerSentence } from '@/types/speaker'
 import { toast } from 'sonner'
 
 interface WordContextClientProps {
@@ -29,7 +29,7 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
   const hasValidSentence = targetSentence?.text_en || targetSentence?.text
 
   // 获取句子文本（优先使用 text_en，回退到 text）
-  const getSentenceText = (sentence: any) => sentence?.text_en || sentence?.text || ''
+  const getSentenceText = (sentence?: SpeakerSentence) => sentence?.text_en || sentence?.text || ''
 
   // 播放/暂停句子音频
   const togglePlayPause = async () => {
@@ -38,20 +38,12 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
       if (isPlaying) {
         audioRef.current.pause()
         setIsPlaying(false)
-        console.log('[Word Context] 暂停播放')
       } else {
         await audioRef.current.play()
         setIsPlaying(true)
-        console.log('[Word Context] 继续播放')
       }
       return
     }
-
-    // 首次播放
-    console.log('[Word Context] 准备播放原声', {
-      audioUrl: article.audio_url,
-      startTime: ghostWord.start_time
-    })
 
     if (!article.audio_url) {
       console.error('[Word Context] 文章没有音频URL')
@@ -67,30 +59,21 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
       const audio = new Audio(article.audio_url)
       audioRef.current = audio
 
-      // 监听音频加载事件
-      audio.addEventListener('canplay', () => {
-        console.log('[Word Context] 音频加载成功，准备播放')
-      })
-
       audio.addEventListener('error', (e) => {
         console.error('[Word Context] 音频加载失败:', e)
-        toast.error('音频加载失败')
+        toast.error('音频暂时播放不了，请稍后再试')
         setIsPlaying(false)
       })
 
       // 设置播放位置
       audio.currentTime = startTime
-      console.log('[Word Context] 设置播放位置:', startTime)
 
       audio.onended = () => {
-        console.log('[Word Context] 音频播放结束')
         setIsPlaying(false)
       }
 
       // 开始播放
-      console.log('[Word Context] 开始播放...')
       await audio.play()
-      console.log('[Word Context] 播放成功')
     } catch (error) {
       console.error('[Word Context] 播放失败:', error)
       toast.error(`播放失败: ${error instanceof Error ? error.message : '未知错误'}`)
@@ -114,14 +97,14 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
             }}
             className="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-800 border-3 border-black dark:border-gray-700 hover:bg-black dark:hover:bg-gray-700 hover:text-white transition-all mb-6"
           >
-            <ArrowLeft className="w-6 h-6 text-black dark:text-white" strokeWidth={3} />
+            <ArrowLeft className="w-6 h-6 text-current" strokeWidth={3} />
           </button>
 
           <h1 className="text-5xl font-black text-gray-900 dark:text-white mb-2">
             生词上下文
           </h1>
           <p className="text-gray-600 dark:text-gray-400 mt-2">
-            查看"{ghostWord.word}"在文章中的上下文
+            查看“{ghostWord.word}”在文章中的上下文
           </p>
         </div>
       </div>
@@ -170,7 +153,7 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
               onClick={togglePlayPause}
               className="flex items-center gap-2 px-6 py-3 border-2 border-black dark:border-gray-600 bg-black dark:bg-gray-700 text-white dark:text-gray-200 font-bold hover:bg-[#B4F416] dark:hover:bg-[#84cc16] hover:text-black transition-all"
             >
-              {audioRef.current && isPlaying ? (
+              {isPlaying ? (
                 <>
                   <Pause className="w-5 h-5" />
                   <span>暂停</span>

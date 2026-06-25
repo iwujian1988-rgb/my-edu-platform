@@ -41,7 +41,11 @@ export default async function LibraryPage() {
 
   return (
     <Suspense fallback={<div className="text-center py-12">Loading...</div>}>
-      <LibraryClient books={books} userId={user.id} />
+      <LibraryClient
+        books={books}
+        userId={user.id}
+        userPermissions={userPermissions?.featurePermissions || []}
+      />
     </Suspense>
   )
 }

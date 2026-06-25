@@ -15,11 +15,12 @@ import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import type { ProgressStatus } from '@/types/speaker'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
-type CompletionStep = 'step1' | 'step2' | 'step3' | 'step4'
+type CompletionStep = 'step1' | 'step2' | 'step3_words' | 'step3' | 'step4'
 type CompletionUpdate = {
   updated_at: string
   step1_completed?: boolean
   step2_completed?: boolean
+  step3_words_completed?: boolean
   step3_completed?: boolean
   step4_completed?: boolean
   status?: ProgressStatus
@@ -57,7 +58,7 @@ export async function PUT(request: Request) {
     }
 
     // 验证步骤名称
-    const validSteps: CompletionStep[] = ['step1', 'step2', 'step3', 'step4']
+    const validSteps: CompletionStep[] = ['step1', 'step2', 'step3_words', 'step3', 'step4']
     if (!validSteps.includes(step as CompletionStep)) {
       return NextResponse.json(
         { error: 'INVALID_STEP', message: '无效的步骤名称' },
@@ -79,6 +80,9 @@ export async function PUT(request: Request) {
         break
       case 'step2':
         updateData.step2_completed = true
+        break
+      case 'step3_words':
+        updateData.step3_words_completed = true
         break
       case 'step3':
         updateData.step3_completed = true

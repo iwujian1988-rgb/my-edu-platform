@@ -13,7 +13,7 @@
 
 'use client'
 
-import { useState, useEffect, useRef, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowLeft, Volume2, CheckCircle, BookOpen, ExternalLink, Filter, X, Pause, Play, BookText, ChevronLeft } from 'lucide-react'
 import type { SpeakerGhostWord, SpeakerArticle } from '@/types/speaker'
@@ -25,9 +25,14 @@ interface DictEntry {
   word: string
   phonetic?: string
   definition?: string
+  definition_en?: string
   example_sentence?: string
   explanation?: string
+  forms?: string
+  synonyms?: string
   translations?: string[]
+  _raw_exampleSentences?: Array<{ en: string; zh: string }>
+  _raw_collocations?: Array<{ en: string; zh: string }>
 }
 
 interface GhostWordBookProps {
@@ -66,6 +71,37 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   const [totalCount, setTotalCount] = useState(0)
   const [hasMore, setHasMore] = useState(false)
   const [loadingMore, setLoadingMore] = useState(false)
+  const step3CompletionSavedRef = useRef(false)
+
+  const goToRecitation = () => {
+    if (articleId) {
+      router.push(`/speaker/steps/step3?id=${articleId}`)
+    } else {
+      router.push('/speaker')
+    }
+  }
+
+  const markStep3WordsCompleted = useCallback(async () => {
+    if (!articleId || step3CompletionSavedRef.current) return
+
+    try {
+      const response = await fetch('/api/speaker/progress', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          articleId,
+          step3_words_completed: true,
+          status: 'in_progress'
+        })
+      })
+
+      if (response.ok) {
+        step3CompletionSavedRef.current = true
+      }
+    } catch (error) {
+      console.error('[Ghost Word Book] 保存 Step 3 进度失败:', error)
+    }
+  }, [articleId])
 
   // 当 articleId prop 变化时更新筛选器
   useEffect(() => {
@@ -131,6 +167,10 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
           setHasMore(data.pagination?.hasMore || false)
           setCurrentPage(1)
 
+          if (articleId && (data.pagination?.totalCount || 0) === 0) {
+            await markStep3WordsCompleted()
+          }
+
           // 性能优化：直接使用API返回的articles映射，不再逐个请求
           if (data.articles) {
             const newArticlesMap = new Map<string, SpeakerArticle>()
@@ -153,7 +193,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
     fetchWords()
      
-  }, [userId, articleId])
+  }, [userId, articleId, markStep3WordsCompleted])
 
   // 加载更多生词
   const loadMoreWords = async () => {
@@ -186,7 +226,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       }
     } catch (error) {
       console.error('[Ghost Word Book] ❌ 加载更多失败:', error)
-      toast.error('加载失败')
+      toast.error('内容暂时没有加载出来，请稍后再试')
     } finally {
       setLoadingMore(false)
     }
@@ -249,7 +289,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       }
     } catch (error) {
       console.error('[Ghost Word Book] 重新加载失败:', error)
-      toast.error('❌ 加载失败，请刷新页面')
+      toast.error('内容暂时没有加载出来，请稍后再试')
     }
   }
 
@@ -283,7 +323,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
         const response = await fetch(`/api/speaker/articles/${word.article_id}`)
 
         if (!response.ok) {
-          const errorData = await response.json().catch(() => ({ message: '请求失败' }))
+          const errorData = await response.json().catch(() => ({ message: '操作没有成功，请稍后再试' }))
           throw new Error(errorData.message || '获取文章失败')
         }
 
@@ -436,6 +476,9 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
         // 如果后台更新失败，调用统一的 reload 函数
         toast.error('❌ 标记失败，已撤销')
         await reloadGhostWords()
+      } else if (data.step3WordsCompleted) {
+        step3CompletionSavedRef.current = true
+        toast.success('Step 3 已完成，可以进入跟读背诵')
       }
     } catch (error) {
       console.error('[Ghost Word Book] 标记失败:', error)
@@ -474,7 +517,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
         <div className="max-w-6xl mx-auto px-6 sm:px-6 lg:px-8 py-6">
           <div className="flex items-center gap-4 mb-4">
             <button
-              onClick={() => router.push('/speaker')}
+              onClick={() => router.push(articleId ? `/speaker/timeline?id=${articleId}` : '/speaker')}
               className="w-10 h-10 flex items-center justify-center bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
             >
               <ChevronLeft className="w-6 h-6 text-black dark:text-white" strokeWidth={3} />
@@ -638,6 +681,15 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                 ? '没有符合条件的生词'
                 : '你目前没有需要复习的生词'}
             </p>
+            {articleId && (
+              <button
+                onClick={goToRecitation}
+                className="mt-6 inline-flex items-center justify-center gap-2 px-6 py-3 bg-[#B4F416] text-black border-2 border-black font-black shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+              >
+                <span>进入跟读背诵</span>
+                <ArrowLeft className="w-4 h-4 rotate-180" strokeWidth={3} />
+              </button>
+            )}
           </div>
         ) : (
           <>

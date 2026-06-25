@@ -16,6 +16,7 @@ interface DashboardClientProps {
   todayNewWordsCount?: number  // 🔧 改为可选
   userPhone: string
   recentBooks: any[]
+  userPermissions?: string[]
 }
 
 export function DashboardClient({
@@ -26,7 +27,8 @@ export function DashboardClient({
   mistakesCount,
   todayNewWordsCount,
   userPhone,
-  recentBooks
+  recentBooks,
+  userPermissions
 }: DashboardClientProps) {
   return (
     <>
@@ -34,6 +36,7 @@ export function DashboardClient({
         books={books}
         userId={userId}
         scopeStatsMap={scopeStatsMap}
+        userPermissions={userPermissions}
       />
       <DashboardContent
         books={books}
@@ -46,6 +49,7 @@ export function DashboardClient({
         books={books}
         userId={userId}
         scopeStatsMap={scopeStatsMap}
+        userPermissions={userPermissions}
       />
       {/* 运营弹窗 */}
       <PromoPopup />

@@ -202,11 +202,39 @@ export async function PUT(request: Request) {
       throw error
     }
 
+    const { count: remainingCount, error: countError } = await supabase
+      .from('speaker_ghost_words')
+      .select('id', { count: 'exact', head: true })
+      .eq('user_id', userId)
+      .eq('article_id', data.article_id)
+      .eq('is_mastered', false)
+
+    if (countError) {
+      console.error('[Speaker Words API] ❌ 检查剩余生词失败:', countError)
+    } else if ((remainingCount || 0) === 0) {
+      const { error: progressError } = await supabase
+        .from('speaker_progress')
+        .upsert({
+          user_id: userId,
+          article_id: data.article_id,
+          step3_words_completed: true,
+          status: 'in_progress',
+          updated_at: new Date().toISOString()
+        }, {
+          onConflict: 'user_id,article_id'
+        })
+
+      if (progressError) {
+        console.error('[Speaker Words API] ❌ 更新 Step 3 进度失败:', progressError)
+      }
+    }
+
     console.log('[Speaker Words API] ✅ 单词已标记为掌握')
 
     return NextResponse.json({
       success: true,
-      word: data
+      word: data,
+      step3WordsCompleted: (remainingCount || 0) === 0
     })
 
   } catch (error) {

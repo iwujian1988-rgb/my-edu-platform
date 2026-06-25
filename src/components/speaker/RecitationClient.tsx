@@ -92,7 +92,6 @@ export function RecitationClient({ article, sentences, userId }: RecitationClien
         if (data.success) {
           setPracticedSentenceIndices(data.practicedSentences || [])
           setMasteredSentenceIndices(data.masteredSentences || [])
-          console.log('[Recitation] 加载进度成功:', data)
         }
       } catch (error) {
         console.error('[Recitation] 加载进度失败:', error)
@@ -216,6 +215,10 @@ export function RecitationClient({ article, sentences, userId }: RecitationClien
     router.push(`/speaker/timeline?id=${article.id}`)
   }
 
+  const goToKtvComparison = () => {
+    router.push(`/speaker/steps/step4?id=${article.id}`)
+  }
+
   // ========================================
   // 10. 临时显示/隐藏句子文字
   // ========================================
@@ -252,7 +255,7 @@ export function RecitationClient({ article, sentences, userId }: RecitationClien
                 onClick={goToTimeline}
                 className="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-700 border-3 border-black dark:border-gray-600 hover:bg-black dark:hover:bg-gray-900 hover:text-white transition-all mb-6"
               >
-                <ArrowLeft className="w-6 h-6 text-black dark:text-white" strokeWidth={3} />
+                <ArrowLeft className="w-6 h-6 text-current" strokeWidth={3} />
               </button>
 
               <div className="flex items-center gap-3 mb-3">
@@ -316,7 +319,7 @@ export function RecitationClient({ article, sentences, userId }: RecitationClien
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-black dark:text-white font-bold">②</span>
-                  <span>背诵完成后，点击右侧"标记完成"按钮</span>
+                  <span>背诵完成后，点击右侧“标记完成”按钮</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="text-black dark:text-white font-bold">③</span>
@@ -362,12 +365,13 @@ export function RecitationClient({ article, sentences, userId }: RecitationClien
                         className={`
                           w-12 h-12 rounded-full border-2 border-black dark:border-gray-600 flex items-center justify-center transition-all duration-200
                           ${playing
-                            ? 'bg-[#B4F416] dark:bg-[#84cc16]'
-                            : 'bg-white dark:bg-gray-700 hover:bg-black dark:hover:bg-black hover:text-white'
+                            ? 'bg-[#B4F416] dark:bg-[#84cc16] text-black'
+                            : 'bg-white dark:bg-gray-700 text-black dark:text-white hover:bg-black dark:hover:bg-black hover:text-white'
                           }
                         `}
+                        aria-label={playing ? '正在播放' : '播放句子'}
                       >
-                        <Play className={`w-5 h-5 ${playing ? 'animate-pulse' : ''}`} fill={playing ? 'black' : 'none'} />
+                        <Play className={`w-5 h-5 ${playing ? 'animate-pulse' : ''}`} fill={playing ? 'currentColor' : 'none'} />
                       </button>
                     </div>
 
@@ -404,7 +408,7 @@ export function RecitationClient({ article, sentences, userId }: RecitationClien
                           border-2 px-5 py-3 font-bold text-sm uppercase tracking-wide transition-all
                           ${mastered
                             ? 'bg-black dark:bg-black text-white dark:text-white border-black dark:border-gray-600'
-                            : 'bg-white dark:bg-gray-700 text-black dark:text-white border-black dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600'
+                            : 'bg-white dark:bg-gray-700 text-black dark:text-white border-black dark:border-gray-600 hover:bg-black dark:hover:bg-black hover:text-white'
                           }
                         `}
                       >
@@ -426,10 +430,10 @@ export function RecitationClient({ article, sentences, userId }: RecitationClien
                   你已掌握这篇文章的所有句子，可以进入下一步了！
                 </p>
                 <button
-                  onClick={goToTimeline}
+                  onClick={goToKtvComparison}
                   className="px-8 py-4 border-3 border-black bg-white dark:bg-gray-800 text-black dark:text-white font-black text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-[6px_6px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-1"
                 >
-                  返回时间轴
+                  进入原音对比
                 </button>
               </div>
             )}

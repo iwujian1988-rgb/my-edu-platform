@@ -1,13 +1,12 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { usePathname, useRouter } from 'next/navigation'
 import { Home, Library, Dumbbell, Settings, Mic, GraduationCap } from 'lucide-react'
 import { BookSelectorModal } from './BookSelectorModal'
 import type { Book } from '@/types/book'
 import { useTheme } from '@/contexts/ThemeContext'
 import { useLoading } from './LoadingOverlay'
-import { createClient } from '@/lib/supabase/client'
 
 interface NavItem {
   label: string
@@ -20,6 +19,8 @@ interface NavItem {
 interface AppSidebarProps {
   books?: Book[]
   userId?: string
+  currentView?: 'dashboard' | 'settings'
+  onViewChange?: (view: 'dashboard' | 'settings') => void
   scopeStatsMap?: Record<string, any>  // 🔧 性能优化：缓存统计信息
   userPermissions?: string[]  // 用户权限列表，用于判断是否显示特定功能
 }
@@ -38,81 +39,10 @@ export function AppSidebar({ books, userId, scopeStatsMap, userPermissions: prop
   const pathname = usePathname()
   const router = useRouter()
   const [showBookSelector, setShowBookSelector] = useState(false)
-  const [userPermissions, setUserPermissions] = useState<string[]>(propUserPermissions || [])
+  const userPermissions = propUserPermissions || []
   const { theme, mounted } = useTheme()
   const { showLoading } = useLoading()
   const isDark = mounted && theme === 'dark'
-
-  // 获取用户权限
-  // 优先级：用户自己设置的权限 > 套餐默认权限（通过 invitation_code 获取）
-  useEffect(() => {
-    let isMounted = true
-
-    const fetchUserPermissions = async () => {
-      if (!userId) return
-
-      try {
-        const supabase = createClient()
-        const { data, error } = await supabase
-          .from('users')
-          .select('feature_permissions, invitation_code_id')
-          .eq('id', userId)
-          .single()
-
-        if (error) {
-          if (isMounted) console.error('[AppSidebar] 获取用户权限失败:', error)
-          return
-        }
-
-        if (!isMounted) return
-
-        // 优先使用用户自己设置的权限（管理员在用户管理中单独设置的）
-        if (data?.feature_permissions && data.feature_permissions.length > 0) {
-          if (isMounted) {
-            setUserPermissions(data.feature_permissions)
-            console.log('[AppSidebar] 使用用户自定义权限:', data.feature_permissions)
-          }
-          return
-        }
-
-        // 如果用户没有单独设置权限，则通过 invitation_code 获取套餐权限
-        if (data?.invitation_code_id) {
-          const { data: codeData } = await supabase
-            .from('invitation_codes')
-            .select('package_id')
-            .eq('id', data.invitation_code_id)
-            .single()
-
-          if (!isMounted) return
-
-          if (codeData?.package_id) {
-            const { data: packageData } = await supabase
-              .from('invitation_packages')
-              .select('feature_permissions')
-              .eq('id', codeData.package_id)
-              .single()
-
-            if (!isMounted) return
-
-            if (packageData?.feature_permissions) {
-              if (isMounted) {
-                setUserPermissions(packageData.feature_permissions)
-                console.log('[AppSidebar] 使用套餐权限:', packageData.feature_permissions)
-              }
-            }
-          }
-        }
-      } catch (error) {
-        if (isMounted) console.error('[AppSidebar] 获取权限失败:', error)
-      }
-    }
-
-    fetchUserPermissions()
-
-    return () => {
-      isMounted = false
-    }
-  }, [userId])
 
   // 检查用户是否有特定权限
   const hasPermission = (permission: string) => {

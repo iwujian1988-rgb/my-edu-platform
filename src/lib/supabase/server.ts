@@ -15,6 +15,7 @@
  */
 
 import { createServerClient } from '@supabase/ssr'
+import type { SupabaseClient } from '@supabase/supabase-js'
 import { cookies } from 'next/headers'
 import { cache } from 'react'
 import type { Database } from '@/types/database'
@@ -93,7 +94,7 @@ async function getProxyFetch(): Promise<typeof fetch | undefined> {
  * - Server Actions: await createClient()
  * - Route Handlers: await createClient()
  */
-export async function createClient() {
+export async function createClient(): Promise<SupabaseClient<Database>> {
   const cookieStore = await cookies()
 
   // 🔧 Fix: 检测是否为 HTTPS 环境
@@ -203,7 +204,7 @@ export async function createClient() {
  * Create admin client that bypasses RLS using service role key
  * WARNING: Only use for admin operations that need to bypass RLS
  */
-export async function createAdminClient() {
+export async function createAdminClient(): Promise<SupabaseClient<Database>> {
   const { createClient: createDirectClient } = await import('@supabase/supabase-js')
 
   // 开发环境使用代理 fetch

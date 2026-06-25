@@ -576,6 +576,7 @@ export default async function Home() {
         // 🔥 性能优化：移除统计数字，让客户端异步加载
         userPhone={userPhone}
         recentBooks={recentBooks}
+        userPermissions={userPermissions?.featurePermissions || []}
       />
     )
   }

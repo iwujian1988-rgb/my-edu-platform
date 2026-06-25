@@ -29,7 +29,6 @@ export interface WordInputState {
   isFocused: boolean      // 是否当前聚焦
   isCorrect: boolean | null  // 判分结果（null = 未判分）
 }
-
 /**
  * 单个句子的遮罩状态
  */
@@ -72,13 +71,11 @@ export interface DictationState {
  *
  * @param sentences - 句子数组
  * @param audioUrl - 音频 URL
- * @param userId - 用户 ID（用于草稿保存）
  * @param articleId - 文章 ID
  */
 export function useSpeakerDictationV2(
   sentences: SpeakerSentence[],
   audioUrl: string,
-  userId: string,
   articleId: string
 ) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
@@ -182,19 +179,11 @@ export function useSpeakerDictationV2(
 
     // 如果点击的是当前正在播放的句子 → 暂停
     if (currentPlayingSentence === sentenceIndex && isPlaying) {
-      console.log('[Dictation] 暂停句子:', sentenceIndex)
       audio.pause()
       setIsPlaying(false)
       setCurrentPlayingSentence(null)
       return
     }
-
-    console.log('[Dictation] 播放句子:', {
-      index: sentenceIndex,
-      text: sentence.text_en?.substring(0, 50),
-      start_time: sentence.start_time,
-      end_time: sentence.end_time
-    })
 
     // 检查时间戳
     const startTime = sentence.start_time ?? 0
@@ -255,8 +244,6 @@ export function useSpeakerDictationV2(
   const playSentenceFromStart = useCallback((sentenceIndex: number) => {
     const sentence = sentences[sentenceIndex]
     if (!sentence || !audioRef.current) return
-
-    console.log('[Dictation] 从头播放句子:', sentenceIndex)
 
     const audio = audioRef.current
     const startTime = sentence.start_time ?? 0
@@ -392,8 +379,6 @@ export function useSpeakerDictationV2(
   // 7-1. 一键清除单个句子（清除该句所有输入）
   // ========================================
   const clearSentence = useCallback((sentenceIndex: number) => {
-    console.log('[Dictation] 清除句子:', sentenceIndex)
-
     setWordInputs(prev => {
       const newInputs = [...prev]
       const sentenceInputs = newInputs[sentenceIndex]
@@ -422,8 +407,6 @@ export function useSpeakerDictationV2(
   // 7-2. 检查句子对错（不进入魔鬼生词本，仅显示结果）
   // ========================================
   const checkSentence = useCallback((sentenceIndex: number) => {
-    console.log('[Dictation] 检查句子对错:', sentenceIndex)
-
     const sentence = sentences[sentenceIndex]
     if (!sentence) return { correct: 0, wrong: 0, skipped: 0 }
 
@@ -471,7 +454,6 @@ export function useSpeakerDictationV2(
       return newInputs
     })
 
-    console.log('[Dictation] 检查结果:', { correct, wrong, skipped })
     return { correct, wrong, skipped }
   }, [sentences, wordInputs])
 
@@ -523,9 +505,6 @@ export function useSpeakerDictationV2(
       allCorrectWords.push(correctWords)
     })
 
-    // 判分（数据准备好，由组件调用 API 提交）
-    console.log('[Dictation] 提交判分', { allUserInputs, allCorrectWords })
-
     setIsSubmitted(true)
   }, [sentences, wordInputs])
 
@@ -535,19 +514,16 @@ export function useSpeakerDictationV2(
   const saveDraftTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // 使用 ref 保存最新数据，解决闭包问题
-  const latestDataRef = useRef({ articleId, userId, wordInputs, activeSentenceIndex })
+  const latestDataRef = useRef({ articleId, wordInputs, activeSentenceIndex })
 
   // 更新 ref（每次状态变化时）
   useEffect(() => {
-    latestDataRef.current = { articleId, userId, wordInputs, activeSentenceIndex }
-  }, [articleId, userId, wordInputs, activeSentenceIndex])
+    latestDataRef.current = { articleId, wordInputs, activeSentenceIndex }
+  }, [articleId, wordInputs, activeSentenceIndex])
 
   const saveDraft = useCallback(async () => {
     // 使用 ref 中的最新数据
-    const { articleId, userId, wordInputs, activeSentenceIndex } = latestDataRef.current
-
-    console.log('[Dictation Hook] 自动保存草稿, wordInputs 句子数:', wordInputs.length)
-    console.log('[Dictation Hook] 第一个句子的输入:', wordInputs[0]?.map(w => w.value).filter(v => v))
+    const { articleId, wordInputs, activeSentenceIndex } = latestDataRef.current
 
     try {
       const response = await fetch('/api/speaker/draft', {
@@ -555,7 +531,6 @@ export function useSpeakerDictationV2(
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           articleId,
-          userId,
           draft: {
             wordInputs,
             activeSentenceIndex,
@@ -565,9 +540,7 @@ export function useSpeakerDictationV2(
         })
       })
 
-      if (response.ok) {
-        console.log('[Dictation Hook] ✅ 草稿自动保存成功')
-      } else {
+      if (!response.ok) {
         console.error('[Dictation Hook] ❌ 草稿自动保存失败:', response.status)
       }
     } catch (error) {
@@ -587,12 +560,12 @@ export function useSpeakerDictationV2(
 
   // 组件卸载时强制保存草稿（使用 keepalive 确保请求完成）
   // 使用 ref 保存最新数据，避免每次状态变化都触发保存
-  const draftDataRef = useRef({ articleId, userId, wordInputs, activeSentenceIndex })
+  const draftDataRef = useRef({ articleId, wordInputs, activeSentenceIndex })
 
   // 更新 ref
   useEffect(() => {
-    draftDataRef.current = { articleId, userId, wordInputs, activeSentenceIndex }
-  }, [articleId, userId, wordInputs, activeSentenceIndex])
+    draftDataRef.current = { articleId, wordInputs, activeSentenceIndex }
+  }, [articleId, wordInputs, activeSentenceIndex])
 
   // 组件卸载时保存
   useEffect(() => {
@@ -603,11 +576,10 @@ export function useSpeakerDictationV2(
       }
 
       // 使用 ref 中的最新数据
-      const { articleId, userId, wordInputs, activeSentenceIndex } = draftDataRef.current
+      const { articleId, wordInputs, activeSentenceIndex } = draftDataRef.current
 
       const draftData = {
         articleId,
-        userId,
         draft: {
           wordInputs,
           activeSentenceIndex,
@@ -632,8 +604,6 @@ export function useSpeakerDictationV2(
   // 11. 恢复草稿（用于断点续传）
   // ========================================
   const restoreDraft = useCallback(async (draft: any) => {
-    console.log('[Dictation Hook] 开始恢复草稿:', JSON.stringify(draft, null, 2))
-
     if (!draft) {
       console.warn('[Dictation Hook] 草稿数据为空，跳过恢复')
       return
@@ -642,21 +612,16 @@ export function useSpeakerDictationV2(
     try {
       // 恢复 activeSentenceIndex
       if (draft.activeSentenceIndex !== undefined) {
-        console.log('[Dictation Hook] 恢复 activeSentenceIndex:', draft.activeSentenceIndex)
         setActiveSentenceIndex(draft.activeSentenceIndex)
       }
 
       // 恢复 wordInputs
       if (draft.wordInputs && Array.isArray(draft.wordInputs)) {
-        console.log('[Dictation Hook] 恢复 wordInputs, 句子数:', draft.wordInputs.length)
-        console.log('[Dictation Hook] 第一个句子的单词数:', draft.wordInputs[0]?.length)
-        console.log('[Dictation Hook] 第一个句子的第一个单词:', draft.wordInputs[0]?.[0])
         setWordInputs(draft.wordInputs)
       } else {
         console.warn('[Dictation Hook] wordInputs 数据无效:', draft.wordInputs)
       }
 
-      console.log('[Dictation Hook] ✅ 草稿恢复成功')
     } catch (error) {
       console.error('[Dictation Hook] ❌ 恢复草稿失败:', error)
     }
@@ -698,8 +663,3 @@ export function useSpeakerDictationV2(
 
   return [state, actions] as const
 }
-
-/**
- * 类型守卫：导出类型供组件使用
- */
-export type { DictationState, WordInputState, SentenceMaskState }

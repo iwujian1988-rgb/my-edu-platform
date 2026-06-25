@@ -10,9 +10,10 @@ import { MobileBottomNav } from '@/components/MobileBottomNav'
 interface SettingsPageClientProps {
   books: any[]
   userId: string
+  userPermissions?: string[]
 }
 
-export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
+export function SettingsPageClient({ books, userId, userPermissions }: SettingsPageClientProps) {
   const router = useRouter()
   const { theme, themeMode, setThemeMode, mounted } = useTheme()
   const [showPasswordModal, setShowPasswordModal] = useState(false)
@@ -26,7 +27,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
   return (
     <>
       {/* 全站左侧导航 - 传递必需的props */}
-      <AppSidebar books={books} userId={userId} />
+      <AppSidebar books={books} userId={userId} userPermissions={userPermissions} />
 
       <div
         className="min-h-screen lg:ml-64 p-4 md:p-8 transition-colors duration-300"
@@ -335,7 +336,7 @@ export function SettingsPageClient({ books, userId }: SettingsPageClientProps) {
       </div>
 
       {/* 全站移动端底部导航 - 传递必需的props */}
-      <MobileBottomNav books={books} userId={userId} />
+      <MobileBottomNav books={books} userId={userId} userPermissions={userPermissions} />
     </>
   )
 }

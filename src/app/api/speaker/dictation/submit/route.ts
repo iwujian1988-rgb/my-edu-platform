@@ -389,7 +389,8 @@ export async function POST(request: Request) {
         step2_completed: true,
         step2_last_sentence_index: totalSentences - 1,
         step2_draft: null,  // 🔧 关键修复：提交成功后清除草稿，避免下次进入时重复提示
-        status: 'in_progress',  // 还需要完成 Step 3 和 4
+        step3_words_completed: wrongWords.length === 0,
+        status: 'in_progress',  // 还需要完成后续步骤
         updated_at: new Date().toISOString()
       },
       {

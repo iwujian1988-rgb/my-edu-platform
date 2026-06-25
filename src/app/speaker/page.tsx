@@ -9,10 +9,10 @@
  * - AI_DEVELOPMENT_GUIDE.md Step 3.2
  */
 
-import { createClient, getCurrentUser } from '@/lib/supabase/server'
+import { getCurrentUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { SpeakerClient } from '@/components/SpeakerClient'
-import { getSpeakerArticles } from '@/lib/speaker-data'
+import { getUserPermissions } from '@/lib/permissions'
 
 // 强制动态渲染
 export const dynamic = 'force-dynamic'
@@ -27,6 +27,14 @@ export default async function SpeakerPage() {
   // 直接返回空数组，完全使用客户端渲染避免服务端阻塞
   console.log('[Speaker Page] 使用客户端渲染模式')
 
-  return <SpeakerClient initialArticles={[]} userId={user.id} />
+  const userPermissions = await getUserPermissions()
+
+  return (
+    <SpeakerClient
+      initialArticles={[]}
+      userId={user.id}
+      userPermissions={userPermissions?.featurePermissions || []}
+    />
+  )
 }
 

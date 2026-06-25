@@ -15,11 +15,12 @@ import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import type { ProgressStatus } from '@/types/speaker'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
-type ResetStep = 'step1' | 'step2' | 'step3' | 'step4'
+type ResetStep = 'step1' | 'step2' | 'step3_words' | 'step3' | 'step4'
 type ResetUpdate = {
   updated_at: string
   step1_completed?: boolean
   step2_completed?: boolean
+  step3_words_completed?: boolean
   step3_completed?: boolean
   step4_completed?: boolean
   status?: ProgressStatus
@@ -57,7 +58,7 @@ export async function PUT(request: Request) {
     }
 
     // 验证步骤名称
-    const validSteps: ResetStep[] = ['step1', 'step2', 'step3', 'step4']
+    const validSteps: ResetStep[] = ['step1', 'step2', 'step3_words', 'step3', 'step4']
     if (!validSteps.includes(step as ResetStep)) {
       return NextResponse.json(
         { error: 'INVALID_STEP', message: '无效的步骤名称' },
@@ -80,6 +81,9 @@ export async function PUT(request: Request) {
       case 'step2':
         updateData.step2_completed = false
         break
+      case 'step3_words':
+        updateData.step3_words_completed = false
+        break
       case 'step3':
         updateData.step3_completed = false
         break
@@ -94,7 +98,7 @@ export async function PUT(request: Request) {
     // 检查是否还有其他步骤完成，如果没有完成，则重置整体状态
     const { data: existingData } = await supabase
       .from('speaker_progress')
-      .select('step1_completed, step2_completed, step3_completed')
+      .select('step1_completed, step2_completed, step3_words_completed, step3_completed')
       .eq('user_id', user.id)
       .eq('article_id', articleId)
       .single()
@@ -103,6 +107,7 @@ export async function PUT(request: Request) {
       const hasOtherCompletedSteps =
         (existingData.step1_completed && step !== 'step1') ||
         (existingData.step2_completed && step !== 'step2') ||
+        (existingData.step3_words_completed && step !== 'step3_words') ||
         (existingData.step3_completed && step !== 'step3')
 
       if (!hasOtherCompletedSteps) {

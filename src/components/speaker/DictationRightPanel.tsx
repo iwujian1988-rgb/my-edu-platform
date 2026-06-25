@@ -127,7 +127,6 @@ function SentenceInput({
 
     setIsDemoMode(true)
     isDemoModeRef.current = true
-    console.log(`[Demo] 开始演示模式 (速度: ${speedMultiplier}x)`)
 
     // 清空当前句子的所有输入
     handleClearSentence()
@@ -208,7 +207,6 @@ function SentenceInput({
       }
     }
 
-    console.log('[Demo] 演示完成')
     setIsDemoMode(false)
     isDemoModeRef.current = false
     return true
@@ -222,7 +220,6 @@ function SentenceInput({
     }
     setIsDemoMode(false)
     isDemoModeRef.current = false
-    console.log('[Demo] 演示已停止')
   }
 
   // 双击 ⌨️ 图标切换单句演示模式
@@ -237,9 +234,7 @@ function SentenceInput({
   // 双击 🖱️ 图标触发全局演示模式（仅在第一个句子有效）
   const handleMouseDoubleClick = () => {
     if (index === 0 && onStartGlobalDemo) {
-      if (isGlobalDemoMode) {
-        console.log('[Demo] 全局演示已在运行中')
-      } else {
+      if (!isGlobalDemoMode) {
         onStartGlobalDemo()
       }
     }
@@ -248,8 +243,6 @@ function SentenceInput({
   // 监听全局演示模式：当 runGlobalDemoSentence 匹配当前句子时执行演示
   useEffect(() => {
     if (runGlobalDemoSentence === index && !isDemoMode) {
-      console.log(`[Demo] 全局演示: 句子 ${index + 1} 开始`)
-
       // 激活当前句子（触发左侧滚动同步）
       if (onSentenceFocus) {
         onSentenceFocus(index)
@@ -257,7 +250,6 @@ function SentenceInput({
 
       startDemoMode().then((completed) => {
         if (completed && onDemoComplete) {
-          console.log(`[Demo] 全局演示: 句子 ${index + 1} 完成`)
           onDemoComplete(index)
         }
       })
@@ -375,7 +367,7 @@ function SentenceInput({
       className={`
         p-6 rounded-sm border-2 transition-all duration-200
         ${isActive
-          ? 'border-black dark:border-gray-400 bg-[#B4F416]/10 dark:bg-[#B4F416]/5 shadow-[4px_4px_0px_0px_#B4F416] dark:shadow-[4px_4px_0px_0px_#666]'
+          ? 'border-[#2f3f9f] bg-[#2f3f9f] text-white shadow-[4px_4px_0px_0px_#000]'
           : 'border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 hover:border-black dark:hover:border-gray-400'
         }
       `}
@@ -385,7 +377,7 @@ function SentenceInput({
     >
       {/* 句子头部：编号 + 功能按钮组 */}
       <div className="flex items-center justify-between mb-4 mt-0 gap-2">
-        <span className="text-xs font-mono font-black text-gray-700 dark:text-gray-300 uppercase tracking-wider shrink-0">
+        <span className={`text-xs font-mono font-black uppercase tracking-wider shrink-0 ${isActive ? 'text-white' : 'text-gray-700 dark:text-gray-300'}`}>
           {String(index + 1).padStart(2, '0')}
         </span>
 
@@ -397,7 +389,7 @@ function SentenceInput({
               flex items-center gap-1 px-2 py-1 rounded-sm text-xs font-bold
               transition-all duration-150
               border-2 border-black dark:border-gray-500
-              bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200
+              bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100
               hover:bg-red-500 hover:text-white hover:border-red-500
               active:translate-y-0.5
             "
@@ -439,7 +431,7 @@ function SentenceInput({
             return (
               <span
                 key={`punct-${tokenIndex}`}
-                className="text-gray-900 dark:text-white text-lg font-mono font-medium"
+                className={`${isActive ? 'text-white' : 'text-gray-900 dark:text-white'} text-lg font-mono font-medium`}
               >
                 {token.text}
               </span>
@@ -449,7 +441,7 @@ function SentenceInput({
             return (
               <span
                 key={`word-${tokenIndex}`}
-                className="text-gray-900 dark:text-white text-lg font-mono font-bold"
+                className={`${isActive ? 'text-white' : 'text-gray-900 dark:text-white'} text-lg font-mono font-bold`}
               >
                 {token.text}
               </span>
@@ -499,8 +491,12 @@ function SentenceInput({
                     : checkResult === false
                       ? 'border-red-500 bg-red-50 text-red-700 dark:bg-red-900/30 dark:text-red-300 dark:border-red-500'
                       : isFocused
-                        ? 'border-black dark:border-gray-400 bg-[#B4F416]/20 text-gray-900 dark:text-white'
-                        : 'border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-black dark:hover:border-gray-400'
+                        ? isActive
+                          ? 'border-white bg-white text-gray-950 placeholder:text-gray-600'
+                          : 'border-black dark:border-gray-400 bg-[#B4F416]/20 text-gray-900 dark:text-white'
+                        : isActive
+                          ? 'border-white/40 text-white hover:border-white placeholder:text-white/70'
+                          : 'border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:border-black dark:hover:border-gray-400'
                   }
                   ${isSkipped
                     ? 'opacity-50 line-through text-gray-400'
@@ -520,7 +516,7 @@ function SentenceInput({
 
       {/* 右键提示 */}
       {isActive && (
-        <div className="mt-3 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+        <div className={`mt-3 flex items-center gap-2 text-xs ${isActive ? 'text-white/80' : 'text-gray-500 dark:text-gray-400'}`}>
           <span
             className="text-base cursor-pointer select-none"
             onDoubleClick={handleKeyboardDoubleClick}
@@ -578,7 +574,6 @@ export function DictationRightPanel({
   const startGlobalDemoMode = useCallback(() => {
     if (globalDemoStateRef.current.isRunning) return
 
-    console.log('[Global Demo] 开始全局演示模式')
     globalDemoStateRef.current.isRunning = true
     globalDemoStateRef.current.currentIndex = 0
     setIsGlobalDemoMode(true)
@@ -605,13 +600,10 @@ export function DictationRightPanel({
     setIsGlobalDemoMode(false)
     setRunGlobalDemoSentence(null)
     setSimulatePlayingSentence(null)
-    console.log('[Global Demo] 全局演示已停止')
   }, [])
 
   // 处理单个句子演示完成
   const handleDemoSentenceComplete = useCallback((sentenceIndex: number) => {
-    console.log(`[Global Demo] 句子 ${sentenceIndex + 1} 演示完成`)
-
     // 检查是否还有下一个句子
     const nextIndex = sentenceIndex + 1
     if (nextIndex < sentences.length && globalDemoStateRef.current.isRunning) {
@@ -631,7 +623,6 @@ export function DictationRightPanel({
       }, 2000)
     } else {
       // 全部完成
-      console.log('[Global Demo] 全局演示完成')
       globalDemoStateRef.current.isRunning = false
       globalDemoStateRef.current.currentIndex = -1
       setIsGlobalDemoMode(false)

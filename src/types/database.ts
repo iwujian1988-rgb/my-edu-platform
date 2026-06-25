@@ -5,7 +5,43 @@
  * Updated: 2026-01-08 - Added invitation_packages table, made words.chapter_id optional
  */
 
-export type Database = {
+import type {
+  ArticleCategory,
+  GhostWordErrorType,
+  ProgressStatus,
+  SpeakerArticle,
+  SpeakerArticleStatus,
+  SpeakerDictationSubmission,
+  SpeakerGhostWord,
+  SpeakerLevel,
+  SpeakerProgress,
+  SpeakerSentence,
+  Step2Draft,
+  SupportedLanguage,
+} from '@/types/speaker'
+
+type WithSupabaseTableShape<T> = T extends {
+  Row: infer Row
+  Insert: infer Insert
+  Update: infer Update
+}
+  ? Omit<T, 'Row' | 'Insert' | 'Update'> & {
+      Row: Row & Record<string, unknown>
+      Insert: Insert & Record<string, unknown>
+      Update: Update & Record<string, unknown>
+      Relationships: []
+    }
+  : T & { Relationships: [] }
+
+type WithTableRelationships<T extends { public: { Tables: Record<string, unknown> } }> = {
+  public: Omit<T['public'], 'Tables'> & {
+    Tables: {
+      [TableName in keyof T['public']['Tables']]: WithSupabaseTableShape<T['public']['Tables'][TableName]>
+    }
+  }
+}
+
+type DatabaseSchema = {
   public: {
     Tables: {
       users: {
@@ -88,12 +124,55 @@ export type Database = {
         Insert: UserBookPreferenceInsert
         Update: UserBookPreferenceUpdate
       }
+      resource_skus: {
+        Row: ResourceSku
+        Insert: ResourceSkuInsert
+        Update: ResourceSkuUpdate
+      }
+      resource_claims: {
+        Row: ResourceClaim
+        Insert: ResourceClaimInsert
+        Update: ResourceClaimUpdate
+      }
+      speaker_articles: {
+        Row: SpeakerArticleRow
+        Insert: SpeakerArticleInsert
+        Update: SpeakerArticleUpdate
+      }
+      speaker_sentences: {
+        Row: SpeakerSentenceRow
+        Insert: SpeakerSentenceInsert
+        Update: SpeakerSentenceUpdate
+      }
+      speaker_progress: {
+        Row: SpeakerProgressRow
+        Insert: SpeakerProgressInsert
+        Update: SpeakerProgressUpdate
+      }
+      speaker_dictation_submissions: {
+        Row: SpeakerDictationSubmissionRow
+        Insert: SpeakerDictationSubmissionInsert
+        Update: SpeakerDictationSubmissionUpdate
+      }
+      speaker_ghost_words: {
+        Row: SpeakerGhostWordRow
+        Insert: SpeakerGhostWordInsert
+        Update: SpeakerGhostWordUpdate
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      claim_resource_sku: {
+        Args: {
+          p_public_slug: string
+          p_claim_token_hash: string
+          p_ip_hash?: string | null
+          p_user_agent_hash?: string | null
+        }
+        Returns: ClaimResourceSkuResult[]
+      }
     }
     Enums: {
       book_category: 'exam' | 'scenario' | 'textbook' | 'custom'
@@ -105,6 +184,8 @@ export type Database = {
     }
   }
 }
+
+export type Database = WithTableRelationships<DatabaseSchema>
 
 // ============================================
 // Core User System
@@ -476,6 +557,186 @@ export interface UserBookPreferenceInsert {
 }
 
 export type UserBookPreferenceUpdate = Partial<UserBookPreferenceInsert>
+
+// ============================================
+// Resource SKU Anonymous Claims
+// ============================================
+
+export type ResourceSkuStatus = 'draft' | 'active' | 'inactive' | 'archived'
+export type ResourceClaimStatus = 'claimed' | 'revoked'
+
+export interface ResourceSku {
+  id: string
+  sku: string
+  public_slug: string
+  title: string
+  description: string | null
+  third_party_url: string
+  status: ResourceSkuStatus
+  stock_total: number
+  stock_remaining: number
+  created_by_admin: string | null
+  created_at: string
+  updated_at: string
+  published_at: string | null
+}
+
+export interface ResourceSkuInsert {
+  sku: string
+  public_slug: string
+  title: string
+  description?: string | null
+  third_party_url: string
+  status?: ResourceSkuStatus
+  stock_total: number
+  stock_remaining: number
+  created_by_admin?: string | null
+  published_at?: string | null
+}
+
+export type ResourceSkuUpdate = Partial<ResourceSkuInsert>
+
+export interface ResourceClaim {
+  id: string
+  resource_id: string
+  claim_token_hash: string
+  status: ResourceClaimStatus
+  ip_hash: string | null
+  user_agent_hash: string | null
+  claimed_at: string
+  last_seen_at: string
+}
+
+export interface ResourceClaimInsert {
+  resource_id: string
+  claim_token_hash: string
+  status?: ResourceClaimStatus
+  ip_hash?: string | null
+  user_agent_hash?: string | null
+}
+
+export type ResourceClaimUpdate = Partial<ResourceClaimInsert>
+
+export interface ClaimResourceSkuResult {
+  result_status: 'claimed' | 'already_claimed' | 'not_found' | 'unavailable' | 'sold_out'
+  resource_id: string | null
+  third_party_url: string | null
+  stock_remaining: number | null
+  claimed_at: string | null
+}
+
+// ============================================
+// Speaker Learning Module
+// ============================================
+
+export interface SpeakerArticleRow extends Omit<SpeakerArticle, 'sentences' | 'progress'> {
+  user_id: string | null
+  json_data: SpeakerArticle['json_data']
+}
+
+export interface SpeakerArticleInsert {
+  id?: string
+  user_id?: string | null
+  level: SpeakerLevel
+  language?: SupportedLanguage
+  category?: ArticleCategory
+  title: string
+  source_url?: string | null
+  audio_url: string
+  image_url?: string | null
+  has_preroll_ad?: boolean
+  total_sentences: number
+  duration_seconds?: number | null
+  word_count?: number | null
+  sentences?: SpeakerSentence[]
+  json_data: SpeakerArticle['json_data']
+  status?: SpeakerArticleStatus
+  created_at?: string
+  updated_at?: string
+}
+
+export type SpeakerArticleUpdate = Partial<SpeakerArticleInsert>
+
+export interface SpeakerSentenceRow extends SpeakerSentence {}
+
+export interface SpeakerSentenceInsert {
+  id?: string
+  article_id: string
+  sentence_index: number
+  text: string
+  text_en?: string | null
+  start_time?: number | null
+  end_time?: number | null
+  created_at?: string
+}
+
+export type SpeakerSentenceUpdate = Partial<SpeakerSentenceInsert>
+
+export interface SpeakerProgressRow extends SpeakerProgress {}
+
+export interface SpeakerProgressInsert {
+  id?: string
+  user_id: string
+  article_id: string
+  step1_completed?: boolean
+  step1_last_position?: number | null
+  step2_completed?: boolean
+  step2_draft?: Step2Draft | null
+  step2_last_sentence_index?: number | null
+  step3_words_completed?: boolean
+  step3_completed?: boolean
+  step3_practiced_sentences?: number[] | null
+  step4_completed?: boolean
+  status?: ProgressStatus
+  completed_at?: string | null
+  created_at?: string
+  updated_at?: string
+}
+
+export type SpeakerProgressUpdate = Partial<SpeakerProgressInsert>
+
+export interface SpeakerDictationSubmissionRow extends SpeakerDictationSubmission {
+  total_words: number
+}
+
+export interface SpeakerDictationSubmissionInsert {
+  id?: string
+  user_id: string
+  article_id: string
+  answers: Record<number, string>
+  total_sentences: number
+  total_words?: number
+  correct_count: number
+  wrong_count: number
+  skipped_count: number
+  accuracy_rate?: number | null
+  time_spent_seconds?: number | null
+  created_at?: string
+}
+
+export type SpeakerDictationSubmissionUpdate = Partial<SpeakerDictationSubmissionInsert>
+
+export interface SpeakerGhostWordRow extends SpeakerGhostWord {}
+
+export interface SpeakerGhostWordInsert {
+  id?: string
+  user_id: string
+  word: string
+  article_id: string
+  sentence_id: number
+  sentence_text: string
+  start_time?: number | null
+  error_type: GhostWordErrorType
+  phonetic?: string | null
+  definition?: string | null
+  example_sentence?: string | null
+  example_audio_url?: string | null
+  is_mastered?: boolean
+  mastered_at?: string | null
+  created_at?: string
+}
+
+export type SpeakerGhostWordUpdate = Partial<SpeakerGhostWordInsert>
 
 // ============================================
 // JOIN TYPES

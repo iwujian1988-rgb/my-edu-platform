@@ -9,7 +9,7 @@ import { SpeakerCard } from '@/components/speaker/SpeakerCard'
 import type { SpeakerArticle, ArticleCategory } from '@/types/speaker'
 import { ARTICLE_CATEGORIES } from '@/types/speaker'
 import React from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { AlertTriangle, BookOpen, ChevronLeft, ChevronRight, FileText } from 'lucide-react'
 
 interface FilterState {
   level: 'all' | 1 | 2 | 3 | 4 | 5
@@ -22,6 +22,14 @@ interface PaginationState {
   total: number
   totalPages: number
 }
+
+const LEVEL_FILTERS = [
+  { value: 1, label: 'L1 入门' },
+  { value: 2, label: 'L2 基础' },
+  { value: 3, label: 'L3 进阶' },
+  { value: 4, label: 'L4 高级' },
+  { value: 5, label: 'L5 专家' }
+] as const
 
 export function SpeakerPageContent({ initialArticles }: { initialArticles: SpeakerArticle[] }) {
   const [articles, setArticles] = useState<SpeakerArticle[]>(initialArticles)
@@ -63,8 +71,6 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
   }, [pagination.page])
 
   const fetchArticles = async (page: number = pagination.page) => {
-    console.log('[Speaker Page] 获取文章列表，过滤器:', filter, '页码:', page)
-
     setLoading(true)
     setError(null)
 
@@ -80,28 +86,18 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
       params.append('pageSize', pagination.pageSize.toString())
 
       const url = `/api/speaker/articles?${params.toString()}`
-      console.log('[Speaker Page] 发起请求:', url)
-
       const response = await fetch(url)
 
-      console.log('[Speaker Page] 收到响应:', {
-        status: response.status,
-        ok: response.ok
-      })
-
       if (!response.ok) {
-        const errorData = await response.json().catch(() => ({ message: '请求失败' }))
+        const errorData = await response.json().catch(() => ({ message: '操作没有成功，请稍后再试' }))
         throw new Error(errorData.message || '获取文章列表失败')
       }
 
       const data = await response.json()
-      console.log('[Speaker Page] 响应数据:', data)
 
       if (!data.articles) {
         throw new Error('响应数据格式错误：缺少 articles 字段')
       }
-
-      console.log('[Speaker Page] ✅ 成功获取文章列表:', { count: data.articles.length })
 
       setArticles(data.articles)
       if (data.pagination) {
@@ -113,7 +109,6 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
       }
     } catch (err) {
       const errorMessage = err instanceof Error ? err.message : '未知错误'
-      console.error('[Speaker Page] ❌ 获取文章列表失败:', errorMessage)
       setError(errorMessage)
     } finally {
       setLoading(false)
@@ -147,13 +142,9 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
               href="/speaker/ghost-words"
               className="hidden md:flex items-center gap-2 px-6 py-3 bg-[#B4F416] hover:bg-[#a3e014] border-3 border-black dark:border-gray-600 rounded-sm shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 transition-all group"
             >
-              <svg className="w-5 h-5 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-              </svg>
+              <BookOpen className="w-5 h-5 text-black" strokeWidth={3} />
               <span className="font-black text-black text-base">魔鬼生词本</span>
-              <svg className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
-              </svg>
+              <ChevronRight className="w-4 h-4 text-black group-hover:translate-x-1 transition-transform" strokeWidth={3} />
             </a>
           </div>
         </div>
@@ -224,60 +215,30 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                 >
                   全部
                 </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 1 })}
-                  className={`
-                    px-4 py-2 rounded-sm text-sm font-black tracking-tight
-                    border-[3px] border-black dark:border-gray-600
-                    transition-all duration-150
-                    ${filter.level === 1
-                      ? 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  L1
-                </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 2 })}
-                  className={`
-                    px-4 py-2 rounded-sm text-sm font-black tracking-tight
-                    border-[3px] border-black dark:border-gray-600
-                    transition-all duration-150
-                    ${filter.level === 2
-                      ? 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  L2
-                </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 3 })}
-                  className={`
-                    px-4 py-2 rounded-sm text-sm font-black tracking-tight
-                    border-[3px] border-black dark:border-gray-600
-                    transition-all duration-150
-                    ${filter.level === 3
-                      ? 'bg-purple-400 shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  L3
-                </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 4 })}
-                  className="px-4 py-2 rounded-sm text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[6px_6px_0px_#000] dark:shadow-[6px_6px_0px_#666] hover:shadow-[4px_4px_0px_#000] dark:hover:shadow-[4px_4px_0px_#666] hover:-translate-y-1 transition-all duration-150 text-black dark:text-white"
-                >
-                  L4
-                </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 5 })}
-                  className="px-4 py-2 rounded-sm text-sm font-black tracking-tight border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[6px_6px_0px_#000] dark:shadow-[6px_6px_0px_#666] hover:shadow-[4px_4px_0px_#000] dark:hover:shadow-[4px_4px_0px_#666] hover:-translate-y-1 transition-all duration-150 text-black dark:text-white"
-                >
-                  L5
-                </button>
+                {LEVEL_FILTERS.map(({ value, label }) => (
+                  <button
+                    key={value}
+                    onClick={() => setFilter({ ...filter, level: value })}
+                    title={`${label} 难度`}
+                    className={`
+                      px-4 py-2 rounded-sm text-sm font-black tracking-tight
+                      border-[3px] border-black dark:border-gray-600
+                      transition-all duration-150
+                      ${filter.level === value
+                        ? value === 3
+                          ? 'bg-purple-400 shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                          : value === 4
+                            ? 'bg-orange-400 shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                            : value === 5
+                              ? 'bg-red-400 shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                              : 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                        : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                      }
+                    `}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -340,76 +301,30 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                 >
                   全部
                 </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 1 })}
-                  className={`
-                    px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                    border-[2px] border-black dark:border-gray-600
-                    transition-all duration-150
-                    ${filter.level === 1
-                      ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  L1
-                </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 2 })}
-                  className={`
-                    px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                    border-[2px] border-black dark:border-gray-600
-                    transition-all duration-150
-                    ${filter.level === 2
-                      ? 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  L2
-                </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 3 })}
-                  className={`
-                    px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                    border-[2px] border-black dark:border-gray-600
-                    transition-all duration-150
-                    ${filter.level === 3
-                      ? 'bg-purple-400 shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  L3
-                </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 4 })}
-                  className={`
-                    px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                    border-[2px] border-black dark:border-gray-600
-                    transition-all duration-150
-                    ${filter.level === 4
-                      ? 'bg-orange-400 shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  L4
-                </button>
-                <button
-                  onClick={() => setFilter({ ...filter, level: 5 })}
-                  className={`
-                    px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
-                    border-[2px] border-black dark:border-gray-600
-                    transition-all duration-150
-                    ${filter.level === 5
-                      ? 'bg-red-400 shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
-                      : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
-                    }
-                  `}
-                >
-                  L5
-                </button>
+                {LEVEL_FILTERS.map(({ value, label }) => (
+                  <button
+                    key={value}
+                    onClick={() => setFilter({ ...filter, level: value })}
+                    title={`${label} 难度`}
+                    className={`
+                      px-3 py-1.5 rounded-sm text-xs font-black tracking-tight
+                      border-[2px] border-black dark:border-gray-600
+                      transition-all duration-150
+                      ${filter.level === value
+                        ? value === 3
+                          ? 'bg-purple-400 shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                          : value === 4
+                            ? 'bg-orange-400 shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                            : value === 5
+                              ? 'bg-red-400 shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                              : 'bg-[#B4F416] shadow-[3px_3px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                        : 'bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[3px_3px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                      }
+                    `}
+                  >
+                    {label}
+                  </button>
+                ))}
               </div>
             </div>
 
@@ -457,14 +372,24 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
       {/* 文章列表区域 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {loading ? (
-          // 加载状态
-          <div className="flex items-center justify-center py-12">
-            <div className="text-center">
-              <div className="inline-block animate-spin rounded-sm h-12 w-12 border-[3px] border-black dark:border-gray-500 border-t-[#B4F416]"></div>
-              <p className="mt-4 text-sm font-mono font-bold text-black dark:text-white transition-colors duration-300">
-                加载中...
-              </p>
-            </div>
+          // 加载状态：保持卡片布局，避免筛选时页面大幅跳动。
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6" aria-label="正在加载文章">
+            {Array.from({ length: 8 }).map((_, index) => (
+              <div
+                key={index}
+                className="h-[320px] bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm overflow-hidden animate-pulse"
+              >
+                <div className="h-48 bg-gray-200 dark:bg-gray-700 border-b-[3px] border-black dark:border-gray-600" />
+                <div className="p-4 space-y-3">
+                  <div className="h-5 w-4/5 bg-gray-200 dark:bg-gray-700 rounded-sm" />
+                  <div className="flex gap-2">
+                    <div className="h-6 w-12 bg-gray-200 dark:bg-gray-700 rounded-sm" />
+                    <div className="h-6 w-16 bg-gray-200 dark:bg-gray-700 rounded-sm" />
+                  </div>
+                  <div className="h-4 w-2/3 bg-gray-200 dark:bg-gray-700 rounded-sm" />
+                </div>
+              </div>
+            ))}
           </div>
         ) : error ? (
           // 错误状态
@@ -472,19 +397,19 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
             <div className="flex items-center">
               <div className="flex-shrink-0">
                 <div className="w-12 h-12 bg-red-500 border-[3px] border-black rounded-sm flex items-center justify-center">
-                  <span className="text-2xl">⚠️</span>
+                  <AlertTriangle className="w-7 h-7 text-white" strokeWidth={3} />
                 </div>
               </div>
               <div className="ml-3">
                 <h3 className="text-lg font-black tracking-tighter italic text-black dark:text-white transition-colors duration-300">
-                  加载失败
+                  内容暂时没有加载出来，请稍后再试
                 </h3>
                 <div className="mt-2 text-sm font-mono font-bold text-gray-700 dark:text-gray-300 transition-colors duration-300">
                   <p>{error}</p>
                 </div>
                 <div className="mt-4">
                   <button
-                    onClick={fetchArticles}
+                    onClick={() => fetchArticles()}
                     className="px-4 py-2 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 text-sm font-black tracking-tight transition-all duration-150 text-black dark:text-white"
                   >
                     重试
@@ -497,7 +422,8 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
           // 空状态
           <div className="text-center py-12">
             <div className="inline-block p-6 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] rounded-sm mb-4 transition-colors duration-300">
-              <span className="text-6xl">📭</span>
+              <FileText className="w-14 h-14 text-black dark:text-white" strokeWidth={2.5} />
+              <span className="sr-only">暂无文章</span>
             </div>
             <h3 className="text-xl font-black tracking-tighter italic text-black dark:text-white mb-2 transition-colors duration-300">
               暂无文章

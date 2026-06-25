@@ -5,7 +5,7 @@
  * 功能：录音跟读，自我评价
  *
  * 参考：
- * - shangwenjie.md 第 2.5 节（Step 3 跟读）
+ * - shangwenjie.md 跟读背诵步骤
  * - TECHNICAL_MODIFICATION_PLAN.md（逻辑隔离）
  */
 

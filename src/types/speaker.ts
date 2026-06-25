@@ -118,6 +118,11 @@ export interface SpeakerArticle {
   progress?: {
     status: ProgressStatus
     isCompleted: boolean
+    step1Completed?: boolean
+    step2Completed?: boolean
+    step3WordsCompleted?: boolean
+    step3Completed?: boolean
+    step4Completed?: boolean
   } | null
 }
 
@@ -190,11 +195,14 @@ export interface SpeakerProgress {
   step2_draft: Step2Draft | null  // 草稿数据（JSONB）
   step2_last_sentence_index: number | null
 
-  // Step 3: 跟读
+  // Step 3: 搞懂单词
+  step3_words_completed: boolean
+
+  // Step 4: 跟读
   step3_completed: boolean
   step3_practiced_sentences: number[] | null  // 已练习的句子索引列表
 
-  // Step 4: KTV 对比
+  // Step 5: KTV 对比
   step4_completed: boolean
 
   // 整体状态
@@ -453,8 +461,9 @@ export enum LearningStep {
   Timeline = 'timeline',
   Step1 = 'step1',  // 盲听
   Step2 = 'step2',  // 听写
-  Step3 = 'step3',  // 跟读
-  Step4 = 'step4',  // KTV 对比
+  Step3Words = 'step3_words',  // 搞懂单词
+  Step4Recitation = 'step3',  // 跟读（保留旧路由/字段名）
+  Step5Ktv = 'step4',  // KTV 对比（保留旧路由/字段名）
 }
 
 /**

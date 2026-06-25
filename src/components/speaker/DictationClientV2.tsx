@@ -43,7 +43,6 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
   const [state, actions] = useSpeakerDictationV2(
     article.sentences || [],
     article.audio_url,
-    userId,
     article.id
   )
 
@@ -104,7 +103,6 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
     if (targetSentenceIndex !== null) {
       const index = parseInt(targetSentenceIndex, 10)
       if (!isNaN(index) && index >= 0 && index < (article.sentences?.length || 0)) {
-        console.log('[Dictation Client] 自动定位到句子:', index)
         actions.setActiveSentence(index)
       }
     }
@@ -116,7 +114,7 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
 
     const checkDraft = async () => {
       try {
-        const response = await fetch(`/api/speaker/draft?articleId=${article.id}&userId=${userId}`)
+        const response = await fetch(`/api/speaker/draft?articleId=${article.id}`)
         const data = await response.json()
 
         if (!isMounted) return
@@ -134,7 +132,7 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
     return () => {
       isMounted = false
     }
-  }, [article.id, userId])
+  }, [article.id])
 
   // 监听回车跳转到下一句的事件
   useEffect(() => {
@@ -152,20 +150,14 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
 
   // 恢复草稿
   const resumeDraft = async () => {
-    console.log('[Dictation Client] 开始恢复草稿')
-
     try {
       // 获取草稿数据
-      const response = await fetch(`/api/speaker/draft?articleId=${article.id}&userId=${userId}`)
+      const response = await fetch(`/api/speaker/draft?articleId=${article.id}`)
       const data = await response.json()
 
       if (data.success && data.draft) {
-        console.log('[Dictation Client] 草稿数据:', data.draft)
-
         // 调用 hook 的恢复方法
         await actions.restoreDraft(data.draft)
-
-        console.log('[Dictation Client] ✅ 草稿恢复成功')
       } else {
         console.warn('[Dictation Client] 草稿数据为空')
       }
@@ -178,17 +170,13 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
 
   // 丢弃草稿
   const discardDraft = async () => {
-    console.log('[Dictation Client] 开始丢弃草稿')
-
     try {
       // 调用 DELETE API 删除服务端草稿
-      const response = await fetch(`/api/speaker/draft?articleId=${article.id}&userId=${userId}`, {
+      const response = await fetch(`/api/speaker/draft?articleId=${article.id}`, {
         method: 'DELETE'
       })
 
-      if (response.ok) {
-        console.log('[Dictation Client] ✅ 草稿删除成功')
-      } else {
+      if (!response.ok) {
         console.warn('[Dictation Client] ⚠️ 草稿删除失败，但继续关闭弹窗')
       }
     } catch (error) {
@@ -300,7 +288,6 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           articleId: article.id,
-          userId,
           draft: {
             wordInputs: state.wordInputs,
             activeSentenceIndex: state.activeSentenceIndex,
@@ -385,7 +372,7 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
       </div>
 
       {/* 主内容区：左右分栏布局 - 为底部固定栏留出空间 */}
-      <div className="flex-1 max-w-[1800px] mx-auto w-full pb-24 px-4 sm:px-6 lg:px-8">
+      <div className="flex-1 max-w-[1800px] mx-auto w-full pb-[calc(6.5rem+env(safe-area-inset-bottom))] px-4 sm:px-6 lg:px-8">
         {/* PC端：左右分栏（40%:60%） */}
         <div className="hidden md:flex md:h-[calc(100vh-220px)]">
           {/* 左栏：原文遮罩（40%） - 加粗黑框 */}
@@ -436,7 +423,7 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
         </div>
 
         {/* 移动端：上下分栏（横向滚动） */}
-        <div className="md:hidden flex flex-col h-[calc(100vh-200px)]">
+        <div className="md:hidden flex flex-col h-[calc(100dvh-200px)] min-h-[420px]">
           {/* 上半部分：原文遮罩（横向滚动卡片） */}
           <DictationLeftPanelMobile
             sentences={article.sentences || []}
@@ -544,24 +531,24 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
       )}
 
       {/* 底部固定栏 - 进度 + 保存 + 提交按钮 */}
-      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t-[3px] border-black dark:border-gray-600 shadow-[0_-4px_0px_0px_rgba(0,0,0,0.1)] z-40">
-        <div className="max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <div className="flex items-center justify-between gap-4">
+      <div className="fixed bottom-0 left-0 right-0 bg-white dark:bg-gray-800 border-t-[3px] border-black dark:border-gray-600 shadow-[0_-4px_0px_0px_rgba(0,0,0,0.1)] z-40 pb-[env(safe-area-inset-bottom)]">
+        <div className="max-w-[1800px] mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-3">
+          <div className="flex items-center justify-between gap-2 sm:gap-4">
             {/* 进度指示器 */}
             <div className="flex items-center gap-2 px-3 py-2 bg-black dark:bg-gray-700 border-2 border-black dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666]">
-              <span className="text-[10px] font-mono font-black text-gray-400 hidden xs:inline">PROGRESS</span>
+              <span className="text-[10px] font-mono font-black text-gray-400 hidden sm:inline">PROGRESS</span>
               <div className="text-base font-mono font-black text-[#B4F416]">
                 {String(state.activeSentenceIndex + 1).padStart(2, '0')} / {String(article.sentences?.length || 0).padStart(2, '0')}
               </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2 sm:gap-3">
               {/* 保存按钮 */}
               <button
                 onClick={handleSaveDraft}
                 disabled={isSaving}
                 className={`
-                  inline-flex flex-col items-center justify-center px-4 py-2.5 border-2 font-black text-sm tracking-wider uppercase transition-all duration-150 min-w-[100px]
+                  inline-flex flex-col items-center justify-center px-3 py-2 sm:px-4 sm:py-2.5 border-2 font-black text-xs sm:text-sm tracking-wider uppercase transition-all duration-150 min-w-[82px] sm:min-w-[100px]
                   ${showSaveSuccess
                     ? 'bg-green-500 text-white border-green-500'
                     : 'bg-white dark:bg-gray-800 text-black dark:text-white border-black dark:border-gray-600 hover:bg-[#B4F416] hover:text-black hover:border-[#B4F416] shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[1px_1px_0px_0px_#000]'
@@ -593,7 +580,7 @@ export function DictationClientV2({ article, userId }: DictationClientProps) {
                 onClick={handleSubmit}
                 disabled={state.isSubmitted || isSubmitting}
                 className={`
-                  inline-flex flex-col items-center justify-center px-6 py-2.5 border-2 font-black text-sm tracking-wider uppercase transition-all duration-150 min-w-[140px]
+                  inline-flex flex-col items-center justify-center px-4 py-2 sm:px-6 sm:py-2.5 border-2 font-black text-xs sm:text-sm tracking-wider uppercase transition-all duration-150 min-w-[112px] sm:min-w-[140px]
                   ${state.isSubmitted || isSubmitting
                     ? 'bg-gray-400 text-gray-600 border-gray-400 cursor-not-allowed'
                     : 'bg-black dark:bg-gray-800 text-white border-black dark:border-gray-600 hover:bg-[#B4F416] hover:text-black hover:border-[#B4F416] shadow-[2px_2px_0px_0px_#000] dark:shadow-[2px_2px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#B4F416]'

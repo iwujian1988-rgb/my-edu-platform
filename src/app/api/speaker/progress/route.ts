@@ -17,6 +17,7 @@ type SpeakerProgressUpdate = Partial<Pick<
   | 'step2_completed'
   | 'step2_draft'
   | 'step2_last_sentence_index'
+  | 'step3_words_completed'
   | 'step3_completed'
   | 'step3_practiced_sentences'
   | 'step4_completed'
@@ -30,6 +31,7 @@ const ALLOWED_PROGRESS_FIELDS: Array<keyof SpeakerProgressUpdate> = [
   'step2_completed',
   'step2_draft',
   'step2_last_sentence_index',
+  'step3_words_completed',
   'step3_completed',
   'step3_practiced_sentences',
   'step4_completed',

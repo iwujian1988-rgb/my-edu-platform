@@ -29,5 +29,11 @@ export default async function SettingsPage() {
 
   console.log(`[Settings Page] Loaded ${books.length} books`)
 
-  return <SettingsPageClient books={books} userId={user.id} />
+  return (
+    <SettingsPageClient
+      books={books}
+      userId={user.id}
+      userPermissions={userPermissions?.featurePermissions || []}
+    />
+  )
 }

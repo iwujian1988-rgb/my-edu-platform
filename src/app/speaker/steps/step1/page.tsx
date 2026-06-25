@@ -44,9 +44,7 @@ export default async function BlindListenPage({
     redirect('/speaker')
   }
 
-  // TODO: 获取真实用户ID后查询进度
-  // 暂时设为 null，表示用户还未开始学习
-  const progress = null
+  const progress = await getSpeakerProgress(supabase, user.id, articleId)
 
   return (
     <BlindListenClient

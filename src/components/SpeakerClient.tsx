@@ -12,21 +12,23 @@ import type { SpeakerArticle } from '@/types/speaker'
 interface SpeakerClientProps {
   initialArticles: SpeakerArticle[]
   userId?: string
+  userPermissions?: string[]
 }
 
-export function SpeakerClient({ initialArticles, userId }: SpeakerClientProps) {
+export function SpeakerClient({ initialArticles, userId, userPermissions }: SpeakerClientProps) {
   return (
     <>
       {/* 桌面端侧边栏 */}
       <AppSidebar
         books={[]}  // 演说家不需要书籍数据
         userId={userId}
+        userPermissions={userPermissions}
       />
       <div className="lg:ml-64 min-h-screen pb-20 lg:pb-0">
         <SpeakerPageContent initialArticles={initialArticles} />
       </div>
       {/* 移动端底部导航 */}
-      <MobileBottomNav userId={userId} />
+      <MobileBottomNav userId={userId} userPermissions={userPermissions} />
     </>
   )
 }

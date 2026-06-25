@@ -34,8 +34,6 @@ import { getSpeakerArticles } from '../../../../lib/speaker-data'
  * GET /api/speaker/articles?language=en&category=健康&page=2
  */
 export async function GET(request: Request) {
-  console.log('[Speaker API] 收到文章列表请求')
-
   try {
     // 1. 解析查询参数
     const { searchParams } = new URL(request.url)
@@ -46,15 +44,6 @@ export async function GET(request: Request) {
     const pageSizeParam = searchParams.get('pageSize')
     const statusParam = searchParams.get('status')
     const validPublicStatuses: PublicSpeakerArticleStatus[] = ['published', 'active']
-
-    console.log('[Speaker API] 查询参数:', {
-      level: levelParam,
-      language: languageParam,
-      category: categoryParam,
-      page: pageParam,
-      pageSize: pageSizeParam,
-      status: statusParam
-    })
 
     // 2. 验证参数
     let level: SpeakerLevel | undefined
@@ -152,7 +141,7 @@ export async function GET(request: Request) {
       // 批量查询用户的所有进度
       const { data: progressData } = await supabase
         .from('speaker_progress')
-        .select('article_id, status, step4_completed')
+        .select('article_id, status, step1_completed, step2_completed, step3_words_completed, step3_completed, step4_completed')
         .eq('user_id', user.id)
 
       // 创建进度映射表
@@ -161,7 +150,12 @@ export async function GET(request: Request) {
         progressData.forEach(progress => {
           progressMap.set(progress.article_id, {
             status: progress.status,
-            isCompleted: progress.step4_completed
+            isCompleted: progress.step4_completed,
+            step1Completed: progress.step1_completed,
+            step2Completed: progress.step2_completed,
+            step3WordsCompleted: progress.step3_words_completed,
+            step3Completed: progress.step3_completed,
+            step4Completed: progress.step4_completed
           })
         })
       }
@@ -172,9 +166,6 @@ export async function GET(request: Request) {
         progress: progressMap.get(article.id) || null
       }))
     }
-
-    // 7. 返回结果
-    console.log('[Speaker API] ✅ 成功返回文章列表:', { count: articlesWithProgress.length, total, page, pageSize })
 
     return NextResponse.json({
       articles: articlesWithProgress,

@@ -17,7 +17,7 @@
 
 import { useState, useRef, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { ArrowLeft, Play, Pause, Volume2, VolumeX, CheckCircle } from 'lucide-react'
+import { ArrowLeft, BookOpen, Play, Pause, RotateCcw, Volume2, VolumeX, CheckCircle } from 'lucide-react'
 import { toast } from 'sonner'
 import type { SpeakerArticle, SpeakerSentence } from '@/types/speaker'
 
@@ -313,12 +313,8 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
   const handlePause = () => {
     if (!audioRef.current) return
 
-    console.log('[KTV] 暂停播放，当前状态:', playbackState)
-
     audioRef.current.pause()
     setPlaybackState('paused')
-
-    console.log('[KTV] 暂停完成')
   }
 
   // ========================================
@@ -435,7 +431,6 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
         // 倒计时结束，开始演示
         setIsDemoMode(true)
         setPlaybackState('playing')
-        console.log('[KTV Demo] 演示模式已启动 - 时长:', realDuration)
       }
     }, 1000)
   }
@@ -451,7 +446,6 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
     setDemoCountdown(0)
     setPlaybackState('idle')
     setCurrentSentenceIndex(0)
-    console.log('[KTV Demo] 演示模式已停止')
   }
 
   // 演示模式：30秒内完成，显示真实音频时长倒计时
@@ -587,7 +581,7 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
                 onClick={goToTimeline}
                 className="w-12 h-12 flex items-center justify-center bg-white dark:bg-gray-700 border-3 border-black dark:border-gray-600 hover:bg-black dark:hover:bg-gray-900 hover:text-white transition-all mb-6"
               >
-                <ArrowLeft className="w-6 h-6 text-black dark:text-white" strokeWidth={3} />
+                <ArrowLeft className="w-6 h-6 text-current" strokeWidth={3} />
               </button>
 
               <div className="flex items-center gap-3 mb-3">
@@ -918,15 +912,17 @@ export function KTVClient({ article, sentences, userId, isCompleted: initialIsCo
               <div className="space-y-3">
                 <button
                   onClick={goToSpeakerHome}
-                  className="w-full py-4 px-8 border-3 border-black bg-white dark:bg-gray-800 text-black dark:text-white font-black text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-[6px_6px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-1"
+                  className="w-full py-4 px-8 border-3 border-black bg-white dark:bg-gray-800 text-black dark:text-white font-black text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-[6px_6px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-1 inline-flex items-center justify-center gap-3"
                 >
-                  📚 学习更多
+                  <BookOpen className="w-5 h-5 text-current" strokeWidth={2.5} />
+                  <span>学习更多</span>
                 </button>
                 <button
                   onClick={handleResetProgress}
-                  className="w-full py-4 px-8 border-3 border-black bg-white dark:bg-gray-800 text-black dark:text-white font-black text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-[6px_6px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-1"
+                  className="w-full py-4 px-8 border-3 border-black bg-white dark:bg-gray-800 text-black dark:text-white font-black text-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-[6px_6px_0px_0px_#000] hover:shadow-[3px_3px_0px_0px_#000] hover:-translate-y-1 inline-flex items-center justify-center gap-3"
                 >
-                  🔄 重新学习
+                  <RotateCcw className="w-5 h-5 text-current" strokeWidth={2.5} />
+                  <span>重新学习</span>
                 </button>
               </div>
             </div>

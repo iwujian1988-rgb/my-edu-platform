@@ -4,8 +4,9 @@
 
 'use client'
 
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { CheckCircle2, Circle, PlayCircle, BookOpen, Mic, Music, BookText } from 'lucide-react'
+import { ArrowLeft, ArrowRight, CheckCircle2, Info, PlayCircle, BookOpen, Mic, Music, BookText } from 'lucide-react'
 import type { SpeakerArticle, SpeakerProgress } from '@/types/speaker'
 
 interface TimelineClientProps {
@@ -23,9 +24,10 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
     // 按顺序找到第一个未完成的步骤
     if (!progress.step1_completed) return 0
     if (!progress.step2_completed) return 1
-    if (!progress.step3_completed) return 2
-    if (!progress.step4_completed) return 3
-    return 3 // 全部完成，停留在最后一步
+    if (!progress.step3_words_completed) return 2
+    if (!progress.step3_completed) return 3
+    if (!progress.step4_completed) return 4
+    return 4 // 全部完成，停留在最后一步
   }
 
   const currentStepIndex = getCurrentStep()
@@ -53,13 +55,13 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
       path: `/speaker/steps/step2?id=${article.id}`
     },
     {
-      id: 'step2_5',
+      id: 'step3_words',
       number: 3,
       title: '搞懂单词',
       description: '她说："查字典把听不懂的单词学完"',
       icon: BookText,
-      completed: false, // 魔鬼单词表不需要完成状态追踪
-      current: false,   // 不影响进度判断
+      completed: progress?.step3_words_completed ?? false,
+      current: currentStepIndex === 2,
       path: `/speaker/ghost-words?articleId=${article.id}`
     },
     {
@@ -69,7 +71,7 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
       description: '模仿发音，强化记忆',
       icon: Mic,
       completed: progress?.step3_completed ?? false,
-      current: currentStepIndex === 2,
+      current: currentStepIndex === 3,
       path: `/speaker/steps/step3?id=${article.id}`
     },
     {
@@ -79,13 +81,22 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
       description: '背到和原音一样快 方可结束',
       icon: Music,
       completed: progress?.step4_completed ?? false,
-      current: currentStepIndex === 3,
+      current: currentStepIndex === 4,
       path: `/speaker/steps/step4?id=${article.id}`
     }
   ]
 
+  const currentPrimaryStep = steps.find(step => step.current) ?? steps[0]
+  const completedPrimarySteps = [
+    progress?.step1_completed,
+    progress?.step2_completed,
+    progress?.step3_words_completed,
+    progress?.step3_completed,
+    progress?.step4_completed
+  ].filter(Boolean).length
+  const visibleProgressSteps = Math.max(completedPrimarySteps, currentStepIndex + 1)
+
   const handleStepClick = (path: string) => {
-    console.log('[Timeline] 点击步骤:', path)
     router.push(path)
   }
 
@@ -95,15 +106,13 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
       <div className="bg-white dark:bg-gray-800 border-b-[3px] border-black dark:border-gray-600 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* 返回按钮 */}
-          <button
-            onClick={() => router.push('/speaker')}
+          <Link
+            href="/speaker"
             className="inline-flex items-center gap-2 px-4 py-2 bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] hover:shadow-[2px_2px_0px_0px_#000] dark:hover:shadow-[2px_2px_0px_0px_#666] hover:-translate-y-0.5 text-sm font-black tracking-tight transition-all duration-150 text-black dark:text-white mb-6"
           >
-            <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-            </svg>
+            <ArrowLeft className="w-5 h-5" strokeWidth={3} />
             返回文章列表
-          </button>
+          </Link>
 
           {/* 标题 */}
           <h1 className="text-2xl md:text-4xl lg:text-5xl font-black tracking-tight leading-snug text-black dark:text-white transition-colors duration-300 mb-4 font-sans">
@@ -141,6 +150,26 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
               </div>
             )}
           </div>
+
+          <div className="mt-6 p-4 md:p-5 bg-gray-50 dark:bg-gray-900 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] rounded-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div>
+                <p className="text-xs font-mono font-black text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1">
+                  {completedPrimarySteps}/5 completed
+                </p>
+                <h2 className="text-lg md:text-xl font-black text-black dark:text-white">
+                  {currentPrimaryStep.completed ? '这篇已经完成，可以回看任意步骤' : `继续：${currentPrimaryStep.title}`}
+                </h2>
+              </div>
+              <Link
+                href={currentPrimaryStep.path}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-[#B4F416] border-[3px] border-black text-black font-black text-sm shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
+              >
+                {currentPrimaryStep.completed ? '查看时间线' : '继续学习'}
+                <ArrowRight className="w-4 h-4" strokeWidth={3} />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -153,7 +182,7 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
             <div
               className="bg-[#B4F416] transition-all duration-500"
               style={{
-                height: `${((currentStepIndex + 1) / steps.length) * 100}%`
+                height: `${(visibleProgressSteps / 5) * 100}%`
               }}
             />
           </div>
@@ -241,9 +270,7 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
                           transition-all duration-150
                           group-hover:bg-black dark:group-hover:bg-black group-hover:text-white
                         `}>
-                          <svg className="w-4 h-4 md:w-5 md:h-5 text-black dark:text-white group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                          </svg>
+                          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-black dark:text-white group-hover:text-white transition-transform duration-300 group-hover:translate-x-0.5" strokeWidth={3} />
                         </div>
                       </div>
                     </div>
@@ -259,9 +286,7 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0">
               <div className="w-12 h-12 bg-[#B4F416] border-[3px] border-black rounded-sm flex items-center justify-center">
-                <svg className="w-6 h-6 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <Info className="w-6 h-6 text-black" strokeWidth={3} />
               </div>
             </div>
             <div className="flex-1">
@@ -269,7 +294,7 @@ export function TimelineClient({ article, progress }: TimelineClientProps) {
                 学习提示
               </h4>
               <p className="text-sm font-bold text-gray-700 dark:text-gray-300 transition-colors duration-300 font-sans">
-                你可以自由选择任意步骤开始学习，不需要按顺序完成。建议按照 Step 1 → Step 2 → Step 3 → Step 4 的顺序循序渐进。
+                你可以自由选择任意步骤开始学习，不需要按顺序完成。建议按照 Step 1 → Step 2 → Step 3 → Step 4 → Step 5 的顺序循序渐进。
               </p>
             </div>
           </div>

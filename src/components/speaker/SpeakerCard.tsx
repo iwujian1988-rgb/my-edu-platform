@@ -13,12 +13,44 @@
 
 'use client'
 
-import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { Clock, BookOpen, CheckCircle2 } from 'lucide-react'
 import type { SpeakerArticle, SpeakerCardProps } from '@/types/speaker'
 
+const LEVEL_LABELS: Record<number, string> = {
+  1: '入门',
+  2: '基础',
+  3: '进阶',
+  4: '高级',
+  5: '专家'
+}
+
 export function SpeakerCard({ article, showStatus = true }: SpeakerCardProps) {
-  const router = useRouter()
+  const completedSteps = [
+    article.progress?.step1Completed,
+    article.progress?.step2Completed,
+    article.progress?.step3WordsCompleted,
+    article.progress?.step3Completed,
+    article.progress?.step4Completed
+  ].filter(Boolean).length
+
+  const progressLabel = article.progress?.isCompleted
+    ? '已完成'
+    : article.progress
+      ? `继续学习 ${completedSteps}/5`
+      : '开始学习'
+
+  const nextStepLabel = article.progress?.isCompleted
+    ? '复习时间线'
+    : completedSteps === 0
+      ? '从整段盲听开始'
+      : completedSteps === 1
+        ? '下一步：听写训练'
+        : completedSteps === 2
+          ? '下一步：搞懂单词'
+          : completedSteps === 3
+            ? '下一步：跟读背诵'
+            : '下一步：原音对比'
 
   // 格式化时长显示（秒 → 分钟:秒）
   const formatDuration = (seconds: number | null): string => {
@@ -39,23 +71,21 @@ export function SpeakerCard({ article, showStatus = true }: SpeakerCardProps) {
     }
 
     const badge = badges[level as keyof typeof badges] || badges[3]
+    const levelLabel = LEVEL_LABELS[level] || '进阶'
 
     return (
       <div className={`px-3 py-1 ${badge.color} border-[2px] border-black shadow-[2px_2px_0px_0px_#000] transform ${badge.rotate}`}>
-        <span className="text-xs font-black tracking-tight">L{level}</span>
+        <span className="text-xs font-black tracking-tight">L{level} {levelLabel}</span>
       </div>
     )
   }
 
   // 点击卡片跳转到时间轴页面
-  const handleClick = () => {
-    router.push(`/speaker/timeline?id=${article.id}`)
-  }
-
   return (
-    <div
-      onClick={handleClick}
-      className="group relative bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[8px_8px_0px_0px_#000] dark:hover:shadow-[8px_8px_0px_0px_#666] hover:-translate-y-1 transition-all duration-150 cursor-pointer overflow-hidden rounded-sm"
+    <Link
+      href={`/speaker/timeline?id=${article.id}`}
+      className="group block relative bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[8px_8px_0px_0px_#000] dark:hover:shadow-[8px_8px_0px_0px_#666] hover:-translate-y-1 transition-all duration-150 cursor-pointer overflow-hidden rounded-sm"
+      aria-label={`打开学习素材：${article.title}`}
     >
       {/* 封面图片区域 */}
       <div className="relative h-48 bg-gray-100 dark:bg-gray-700 overflow-hidden border-b-[3px] border-black dark:border-gray-600 transition-colors duration-300">
@@ -80,7 +110,10 @@ export function SpeakerCard({ article, showStatus = true }: SpeakerCardProps) {
         {showStatus && article.progress?.isCompleted && (
           <div className="absolute top-3 right-3">
             <div className="px-3 py-1.5 bg-[#B4F416] border-[2px] border-black shadow-[3px_3px_0px_0px_#000] transform -rotate-3">
-              <span className="text-xs font-black tracking-tight">✓ DONE</span>
+              <span className="text-xs font-black tracking-tight inline-flex items-center gap-1">
+                <CheckCircle2 className="w-3.5 h-3.5" strokeWidth={3} />
+                DONE
+              </span>
             </div>
           </div>
         )}
@@ -131,10 +164,33 @@ export function SpeakerCard({ article, showStatus = true }: SpeakerCardProps) {
             词汇：{article.word_count}
           </div>
         )}
+
+        <div className="mt-4 pt-3 border-t-2 border-black/10 dark:border-white/10">
+          <div className="flex items-center justify-between gap-3 mb-2">
+            <span className="text-xs font-black text-black dark:text-white">
+              {progressLabel}
+            </span>
+            <span className="text-[11px] font-bold text-gray-600 dark:text-gray-400 text-right">
+              {nextStepLabel}
+            </span>
+          </div>
+          <div className="grid grid-cols-5 gap-1" aria-hidden="true">
+            {[0, 1, 2, 3, 4].map((stepIndex) => (
+              <div
+                key={stepIndex}
+                className={`h-1.5 rounded-sm ${
+                  stepIndex < completedSteps
+                    ? 'bg-[#B4F416]'
+                    : 'bg-gray-200 dark:bg-gray-700'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* Hover 效果：荧光绿边框 */}
       <div className="absolute bottom-0 left-0 w-full h-[3px] bg-[#B4F416] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></div>
-    </div>
+    </Link>
   )
 }

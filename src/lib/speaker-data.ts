@@ -272,8 +272,9 @@ export async function getSpeakerProgress(
       status: data.status,
       step1: data.step1_completed,
       step2: data.step2_completed,
-      step3: data.step3_completed,
-      step4: data.step4_completed
+      step3Words: data.step3_words_completed,
+      step4Recitation: data.step3_completed,
+      step5Ktv: data.step4_completed
     })
 
     return data as SpeakerProgress
@@ -309,8 +310,9 @@ export async function upsertSpeakerProgress(
     articleId: progress.article_id,
     step1: progress.step1_completed,
     step2: progress.step2_completed,
-    step3: progress.step3_completed,
-    step4: progress.step4_completed
+    step3Words: progress.step3_words_completed,
+    step4Recitation: progress.step3_completed,
+    step5Ktv: progress.step4_completed
   })
 
   try {

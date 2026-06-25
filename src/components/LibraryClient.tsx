@@ -9,9 +9,10 @@ import { MobileBottomNav } from './MobileBottomNav'
 interface LibraryClientProps {
   books: any[]
   userId?: string
+  userPermissions?: string[]
 }
 
-export function LibraryClient({ books, userId }: LibraryClientProps) {
+export function LibraryClient({ books, userId, userPermissions }: LibraryClientProps) {
   const [view, setView] = useState<'dashboard' | 'settings'>('dashboard')
 
   useEffect(() => {
@@ -28,6 +29,7 @@ export function LibraryClient({ books, userId }: LibraryClientProps) {
       <AppSidebar
         books={books}
         userId={userId}
+        userPermissions={userPermissions}
         currentView={view}
         onViewChange={handleViewChange}
       />
@@ -43,7 +45,7 @@ export function LibraryClient({ books, userId }: LibraryClientProps) {
             <div className="min-h-screen p-8 transition-colors duration-300" style={{ backgroundColor: 'var(--bg-secondary)' }}>
               <div className="max-w-7xl mx-auto text-center py-16 border-[3px] border-black rounded transition-colors duration-300" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <p className="font-bold mb-4 transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>还没有可用的词库</p>
-                <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>请联系管理员获取词库访问权限</p>
+                <p className="text-sm transition-colors duration-300" style={{ color: 'var(--text-tertiary)' }}>如果看不到词库，请联系客服开通。</p>
               </div>
             </div>
           ) : (
@@ -54,6 +56,7 @@ export function LibraryClient({ books, userId }: LibraryClientProps) {
       <MobileBottomNav
         currentView={view}
         onViewChange={handleViewChange}
+        userPermissions={userPermissions}
       />
     </>
   )
