@@ -167,8 +167,9 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
               {[
                 { id: 1, num: '01', title: "整段盲听", desc: "纯听觉输入" },
                 { id: 2, num: '02', title: "听写训练", desc: "逐句听写" },
-                { id: 3, num: '03', title: "跟读背诵", desc: "模仿发音" },
-                { id: 4, num: '04', title: "原音对比", desc: "KTV式对比" }
+                { id: 3, num: '03', title: "搞懂单词", desc: "清理生词" },
+                { id: 4, num: '04', title: "跟读背诵", desc: "模仿发音" },
+                { id: 5, num: '05', title: "原音对比", desc: "KTV式对比" }
               ].map((step, index) => (
                 <React.Fragment key={step.id}>
                   <div className="flex-1 relative group min-w-[70px] md:min-w-[140px]">
@@ -184,7 +185,7 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
                     </div>
                   </div>
                   {/* 简单的连接箭头 */}
-                  {index < 3 && (
+                  {index < 4 && (
                     <div className="flex items-center justify-center px-1 md:px-2 text-black dark:text-white font-black text-lg md:text-2xl transition-colors duration-300">→</div>
                   )}
                 </React.Fragment>

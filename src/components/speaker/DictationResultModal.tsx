@@ -57,9 +57,15 @@ export function DictationResultModal({
   onClose
 }: GradingResultProps) {
   const router = useRouter()
+  const hasGhostWords = wrongWords.length > 0
 
-  // 跳转到 Step 3
+  // 有生词时先完成单词清理，避免用户跳过必要学习步骤。
   const goToNextStep = () => {
+    if (hasGhostWords) {
+      router.push(`/speaker/ghost-words?articleId=${articleId}`)
+      return
+    }
+
     router.push(`/speaker/steps/step3?id=${articleId}`)
   }
 
@@ -196,7 +202,7 @@ export function DictationResultModal({
         </div>
 
         {/* 错误单词列表（如果有） */}
-        {wrongWords.length > 0 && (
+        {hasGhostWords && (
           <div className="px-6 pb-6">
             <div className="rounded-none bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666]">
               <h3 className="px-4 py-3 text-base font-black text-gray-900 dark:text-white uppercase tracking-wider border-b-2 border-black dark:border-gray-600">
@@ -293,7 +299,7 @@ export function DictationResultModal({
             onClick={goToNextStep}
             className="flex-[2] flex items-center justify-center gap-2 px-6 py-3 rounded-none bg-black dark:bg-gray-700 border-[3px] border-black dark:border-gray-600 text-white dark:text-white font-black uppercase tracking-widest hover:bg-[#B4F416] hover:text-black hover:border-[#B4F416] hover:shadow-[6px_6px_0px_0px_#B4F416] dark:hover:shadow-[6px_6px_0px_0px_#666] transition-all"
           >
-            <span>进入下一步</span>
+            <span>{hasGhostWords ? '去搞懂单词' : '进入跟读背诵'}</span>
             <ArrowRight className="w-5 h-5" strokeWidth={2.5} />
           </button>
         </div>

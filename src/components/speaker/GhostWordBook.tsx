@@ -4,7 +4,7 @@
  * 功能：
  * 1. 显示错词列表（包括答错和放弃的）
  * 2. 调用有道 API 显示音标和释义
- * 3. 原声回放（定位到具体单词）
+ * 3. 原声回放（播放单词所在句）
  * 4. 上下文回溯（跳转到独立页面）
  * 5. 标记为"我已掌握"
  * 6. 筛选：按错误类型、收录时间
@@ -15,7 +15,7 @@
 
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react'
 import { useRouter } from 'next/navigation'
-import { ArrowLeft, Volume2, CheckCircle, BookOpen, ExternalLink, Filter, X, Pause, Play, BookText, ChevronLeft } from 'lucide-react'
+import { ArrowLeft, Volume2, CheckCircle, BookOpen, ExternalLink, Filter, X, Pause, Play, BookText, ChevronLeft, Ban } from 'lucide-react'
 import type { SpeakerGhostWord, SpeakerArticle } from '@/types/speaker'
 import { toast } from 'sonner'
 import { SpeakerSubPageLayout } from '@/components/speaker/SpeakerSubPageLayout'
@@ -43,6 +43,9 @@ interface GhostWordBookProps {
 type ErrorTypeFilter = 'all' | 'wrong' | 'skipped'
 type TimeFilter = 'all' | 'today' | 'week' | 'month'
 type ArticleFilter = string | 'all'  // 'all' 或具体的 article_id
+type WordAction = 'mastered' | 'ignored'
+
+const TASK_BATCH_SIZE = 12
 
 export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   const router = useRouter()
@@ -71,6 +74,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   const [totalCount, setTotalCount] = useState(0)
   const [hasMore, setHasMore] = useState(false)
   const [loadingMore, setLoadingMore] = useState(false)
+  const [visibleWordLimit, setVisibleWordLimit] = useState(TASK_BATCH_SIZE)
   const step3CompletionSavedRef = useRef(false)
 
   const goToRecitation = () => {
@@ -195,6 +199,10 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
      
   }, [userId, articleId, markStep3WordsCompleted])
 
+  useEffect(() => {
+    setVisibleWordLimit(TASK_BATCH_SIZE)
+  }, [articleFilter, errorTypeFilter, timeFilter])
+
   // 加载更多生词
   const loadMoreWords = async () => {
     if (loadingMore || !hasMore) return
@@ -264,6 +272,14 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
     return filtered
   }, [words, errorTypeFilter, timeFilter, articleFilter])
+
+  const visibleWords = useMemo(
+    () => filteredWords.slice(0, visibleWordLimit),
+    [filteredWords, visibleWordLimit]
+  )
+  const hiddenLocalWordsCount = Math.max(filteredWords.length - visibleWords.length, 0)
+  const hasLocalFilters = errorTypeFilter !== 'all' || timeFilter !== 'all'
+  const remainingWordCount = hasLocalFilters ? filteredWords.length : totalCount
 
   // 重新加载生词数据（提取为独立函数，消除重复代码）
   const reloadGhostWords = async () => {
@@ -433,6 +449,21 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       }
     } catch (error) {
       console.error('[Ghost Word Book] 查询词典失败:', error)
+      if (word.definition || word.phonetic || word.example_sentence) {
+        toast.warning('在线词典暂时不可用，已显示本地缓存')
+        setDictModal({
+          word,
+          loading: false,
+          data: {
+            word: word.word,
+            phonetic: word.phonetic || undefined,
+            definition: word.definition || undefined,
+            example_sentence: word.example_sentence || undefined
+          }
+        })
+        return
+      }
+
       toast.error('查询词典失败，请重试')
       setDictModal(prev => prev ? { ...prev, loading: false } : null)
     }
@@ -456,33 +487,70 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
     }
   }
 
-  // 标记为已掌握（乐观更新：立即移除UI，后台异步更新）
-  const markAsMastered = async (wordId: string) => {
-    // 立即从UI移除，给用户即时反馈
-    setWords(prev => prev.filter(w => w.id !== wordId))
-    toast.success('✅ 已标记为掌握')
-
-    // 后台异步更新，不阻塞UI
+  const restoreWord = async (word: SpeakerGhostWord) => {
     try {
-      const response = await fetch(`/api/speaker/words?id=${wordId}`, {
+      const response = await fetch(`/api/speaker/words?id=${word.id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({})  // 后端已自动使用当前用户 ID，无需传递 userId
+        body: JSON.stringify({ action: 'restore' })
       })
 
       const data = await response.json()
 
       if (!data.success) {
-        // 如果后台更新失败，调用统一的 reload 函数
-        toast.error('❌ 标记失败，已撤销')
+        throw new Error(data.message || '恢复失败')
+      }
+
+      setWords(prev => prev.some(item => item.id === word.id) ? prev : [word, ...prev])
+      setTotalCount(prev => prev + 1)
+      step3CompletionSavedRef.current = false
+      toast.success('已撤销，单词回到本轮任务')
+    } catch (error) {
+      console.error('[Ghost Word Book] 撤销失败:', error)
+      toast.error('撤销失败，请刷新后重试')
+      await reloadGhostWords()
+    }
+  }
+
+  const completeWord = async (word: SpeakerGhostWord, action: WordAction) => {
+    const remainingAfterAction = filteredWords.filter(item => item.id !== word.id).length
+
+    setWords(prev => prev.filter(item => item.id !== word.id))
+    setTotalCount(prev => Math.max(prev - 1, 0))
+
+    toast.success(action === 'ignored' ? '已忽略这个词' : '已标记为掌握', {
+      action: {
+        label: '撤销',
+        onClick: () => {
+          void restoreWord(word)
+        }
+      }
+    })
+
+    try {
+      const response = await fetch(`/api/speaker/words?id=${word.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action })
+      })
+
+      const data = await response.json()
+
+      if (!data.success) {
+        toast.error('操作失败，已恢复列表')
         await reloadGhostWords()
-      } else if (data.step3WordsCompleted) {
+      } else if (data.step3WordsCompleted || remainingAfterAction === 0) {
         step3CompletionSavedRef.current = true
-        toast.success('Step 3 已完成，可以进入跟读背诵')
+        toast.success('单词清理完成，可以进入跟读背诵', {
+          action: {
+            label: '进入',
+            onClick: goToRecitation
+          }
+        })
       }
     } catch (error) {
-      console.error('[Ghost Word Book] 标记失败:', error)
-      toast.error('❌ 网络错误，已撤销')
+      console.error('[Ghost Word Book] 操作失败:', error)
+      toast.error('网络错误，已恢复列表')
       await reloadGhostWords()
     }
   }
@@ -542,9 +610,9 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       {showFilters && (
         <div className="bg-white dark:bg-gray-800 border-y-2 border-black dark:border-gray-700">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center justify-between flex-wrap">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               {/* 左侧筛选 */}
-              <div className="flex items-center gap-4 flex-wrap">
+              <div className="flex w-full items-center gap-4 flex-wrap lg:w-auto">
                 {/* 错误类型筛选 */}
                 <div className="flex items-center gap-2">
                   <span className="text-sm text-black dark:text-white font-bold uppercase tracking-wide">类型:</span>
@@ -646,12 +714,12 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
               </div>
 
               {/* 右侧文章筛选 */}
-              <div className="flex items-center gap-2 ml-auto">
+              <div className="flex w-full items-center gap-2 lg:w-auto lg:ml-auto">
                 <span className="text-sm text-black dark:text-white font-bold uppercase tracking-wide">文章:</span>
                 <select
                   value={articleFilter}
                   onChange={(e) => setArticleFilter(e.target.value)}
-                  className="px-3 py-1 rounded-sm text-sm bg-white dark:bg-gray-700 border-2 border-black dark:border-gray-600 text-black dark:text-white font-medium hover:border-gray-600 dark:hover:border-gray-500 transition-colors focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-gray-500"
+                  className="min-w-0 flex-1 px-3 py-1 rounded-sm text-sm bg-white dark:bg-gray-700 border-2 border-black dark:border-gray-600 text-black dark:text-white font-medium hover:border-gray-600 dark:hover:border-gray-500 transition-colors focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-gray-500 lg:flex-none"
                 >
                   <option value="all">全部文章</option>
                   {Array.from(articles.entries()).map(([articleId, article]) => (
@@ -668,6 +736,30 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
       {/* 主内容区 */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {filteredWords.length > 0 && (
+          <div className="mb-6 border-[3px] border-black dark:border-gray-700 bg-white dark:bg-gray-800 shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666] p-4 sm:p-5">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+              <div>
+                <p className="text-xs font-mono font-black uppercase tracking-wider text-gray-500 dark:text-gray-400">
+                  Step 3 · 搞懂单词
+                </p>
+                <h2 className="mt-1 text-xl sm:text-2xl font-black text-black dark:text-white">
+                  还剩 {remainingWordCount} 个，本轮先清 {visibleWords.length} 个
+                </h2>
+              </div>
+              {articleId && (
+                <button
+                  onClick={goToRecitation}
+                  className="inline-flex items-center justify-center gap-2 border-2 border-black bg-[#B4F416] px-4 py-2 text-sm font-black text-black shadow-[3px_3px_0px_0px_#000] transition-all hover:-translate-y-0.5 hover:shadow-[2px_2px_0px_0px_#000]"
+                >
+                  <span>清完后去跟读</span>
+                  <ArrowLeft className="w-4 h-4 rotate-180" strokeWidth={3} />
+                </button>
+              )}
+            </div>
+          </div>
+        )}
+
         {filteredWords.length === 0 ? (
           <div className="text-center py-12">
             <div className="w-20 h-20 mx-auto mb-4 rounded-sm bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-700 flex items-center justify-center shadow-[4px_4px_0px_0px_#000] dark:shadow-[4px_4px_0px_0px_#666]">
@@ -694,7 +786,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
         ) : (
           <>
             <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              {filteredWords.map((word) => (
+              {visibleWords.map((word) => (
               <div
                 key={word.id}
                 className="flex flex-col p-4 sm:p-6 md:p-8 rounded-sm bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-700 shadow-[4px_4px_0px_0px_#000] sm:shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#B4F416] sm:hover:shadow-[6px_6px_0px_0px_#B4F416] dark:hover:shadow-[6px_6px_0px_0px_#84cc16] transition-all min-h-0 sm:min-h-[320px]"
@@ -767,7 +859,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                           : 'bg-white dark:bg-gray-700 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-600'
                         }
                       `}
-                      title={isPlaying === word.id ? '点击暂停' : '播放该单词所在句子的原声'}
+                      title={isPlaying === word.id ? '点击暂停' : '播放这个词所在句子的原声'}
                     >
                       {isPlaying === word.id ? (
                         <>
@@ -777,7 +869,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                       ) : (
                         <>
                           <Volume2 className="w-4 h-4" />
-                          <span>原声</span>
+                          <span>所在句</span>
                         </>
                       )}
                     </button>
@@ -792,21 +884,40 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                     </button>
                   </div>
 
-                  {/* 我已掌握按钮 - 主按钮 */}
-                  <button
-                    onClick={() => markAsMastered(word.id)}
-                    className="w-full py-3 px-4 rounded-sm bg-black dark:bg-gray-700 text-white dark:text-gray-200 font-bold border-2 border-black dark:border-gray-600 hover:bg-[#B4F416] dark:hover:bg-[#84cc16] hover:text-black dark:hover:text-black transition-all flex items-center justify-center gap-2"
-                  >
-                    <CheckCircle className="w-5 h-5" />
-                    <span>我已掌握</span>
-                  </button>
+                  <div className="grid grid-cols-[1fr_auto] gap-2">
+                    <button
+                      onClick={() => completeWord(word, 'mastered')}
+                      className="py-3 px-4 rounded-sm bg-black dark:bg-gray-700 text-white dark:text-gray-200 font-bold border-2 border-black dark:border-gray-600 hover:bg-[#B4F416] dark:hover:bg-[#84cc16] hover:text-black dark:hover:text-black transition-all flex items-center justify-center gap-2"
+                    >
+                      <CheckCircle className="w-5 h-5" />
+                      <span>我已掌握</span>
+                    </button>
+                    <button
+                      onClick={() => completeWord(word, 'ignored')}
+                      className="w-12 py-3 rounded-sm bg-white dark:bg-gray-700 text-black dark:text-white font-bold border-2 border-black dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all flex items-center justify-center"
+                      title="忽略这个词"
+                    >
+                      <Ban className="w-5 h-5" />
+                    </button>
+                  </div>
                 </div>
               </div>
             ))}
           </div>
 
+          {hiddenLocalWordsCount > 0 && (
+            <div className="mt-8 text-center">
+              <button
+                onClick={() => setVisibleWordLimit(prev => prev + TASK_BATCH_SIZE)}
+                className="px-8 py-3 bg-white dark:bg-gray-800 text-black dark:text-white font-bold border-2 border-black dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all"
+              >
+                显示下一批（还有 {hiddenLocalWordsCount} 个）
+              </button>
+            </div>
+          )}
+
           {/* 加载更多按钮 */}
-          {hasMore && (
+          {hasMore && hiddenLocalWordsCount === 0 && (
             <div className="mt-8 text-center">
               <button
                 onClick={loadMoreWords}
@@ -895,6 +1006,17 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                       </h3>
                       <p className="text-gray-900 dark:text-white leading-relaxed">
                         {dictModal.data.definition_en}
+                      </p>
+                    </div>
+                  )}
+
+                  {dictModal.data.example_sentence && (
+                    <div>
+                      <h3 className="text-sm font-bold text-gray-700 dark:text-gray-300 mb-2 uppercase tracking-wider">
+                        例句
+                      </h3>
+                      <p className="text-gray-900 dark:text-white leading-relaxed">
+                        {dictModal.data.example_sentence}
                       </p>
                     </div>
                   )}

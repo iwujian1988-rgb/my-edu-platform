@@ -15,6 +15,10 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { z } from 'zod'
 
+const wordActionSchema = z.object({
+  action: z.enum(['mastered', 'ignored', 'restore']).optional()
+})
+
 /**
  * GET 处理器：获取用户的魔鬼生词列表
  *
@@ -182,15 +186,27 @@ export async function PUT(request: Request) {
       )
     }
 
+    const requestBody = await request.json().catch(() => ({} as unknown))
+    const parsedBody = wordActionSchema.safeParse(requestBody)
+
+    if (!parsedBody.success) {
+      return NextResponse.json(
+        { error: 'INVALID_ACTION', message: '操作类型不正确' },
+        { status: 400 }
+      )
+    }
+
+    const action = parsedBody.data.action ?? 'mastered'
+    const isRestoring = action === 'restore'
+
     // 忽略请求体中的 userId，直接使用当前登录用户的 ID（更安全）
     const userId = user.id
 
-    // 标记为已掌握
     const { data, error } = await supabase
       .from('speaker_ghost_words')
       .update({
-        is_mastered: true,
-        mastered_at: new Date().toISOString()
+        is_mastered: !isRestoring,
+        mastered_at: isRestoring ? null : new Date().toISOString()
       })
       .eq('id', wordId)
       .eq('user_id', userId)
@@ -211,6 +227,22 @@ export async function PUT(request: Request) {
 
     if (countError) {
       console.error('[Speaker Words API] ❌ 检查剩余生词失败:', countError)
+    } else if (isRestoring) {
+      const { error: progressError } = await supabase
+        .from('speaker_progress')
+        .upsert({
+          user_id: userId,
+          article_id: data.article_id,
+          step3_words_completed: false,
+          status: 'in_progress',
+          updated_at: new Date().toISOString()
+        }, {
+          onConflict: 'user_id,article_id'
+        })
+
+      if (progressError) {
+        console.error('[Speaker Words API] ❌ 撤销 Step 3 进度失败:', progressError)
+      }
     } else if ((remainingCount || 0) === 0) {
       const { error: progressError } = await supabase
         .from('speaker_progress')
@@ -234,7 +266,9 @@ export async function PUT(request: Request) {
     return NextResponse.json({
       success: true,
       word: data,
-      step3WordsCompleted: (remainingCount || 0) === 0
+      action,
+      remainingCount: remainingCount || 0,
+      step3WordsCompleted: !isRestoring && (remainingCount || 0) === 0
     })
 
   } catch (error) {

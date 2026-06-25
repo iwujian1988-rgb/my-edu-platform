@@ -85,6 +85,10 @@ async function getProxyFetch(): Promise<typeof fetch | undefined> {
   }
 }
 
+function isReadonlyCookieMutationError(error: unknown): boolean {
+  return error instanceof Error && error.message.includes('Cookies can only be modified')
+}
+
 /**
  * Creates a Supabase client for server-side usage
  *
@@ -164,6 +168,9 @@ export async function createClient(): Promise<SupabaseClient<Database>> {
             }
             */
           } catch (error) {
+            if (isReadonlyCookieMutationError(error)) {
+              return
+            }
             console.error('[createClient] Failed to set cookie:', name, 'error:', error)
           }
         },
@@ -192,6 +199,9 @@ export async function createClient(): Promise<SupabaseClient<Database>> {
               secure: isHttps,  // 使用相同的设置
             })
           } catch (error) {
+            if (isReadonlyCookieMutationError(error)) {
+              return
+            }
             console.error('[createClient] Failed to remove cookie:', name, 'error:', error)
           }
         },

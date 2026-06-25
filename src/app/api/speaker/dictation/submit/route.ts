@@ -14,6 +14,7 @@ import { NextResponse } from 'next/server'
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { getBatchDictEntries } from '@/lib/dict-service'
 import { parseSentenceTokens, validateWordInput } from '@/lib/speaker-utils'
+import { dedupeGhostWordInserts, getGhostWordLookupWords } from '@/lib/speaker-ghost-words'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
 /**
@@ -205,6 +206,8 @@ export async function POST(request: Request) {
     // 注意：答错和放弃的单词都进入生词本
     // ========================================
 
+    let ghostWordsToReviewCount = 0
+
     if (wrongWords.length > 0) {
       console.log(`[Speaker Dictation Submit API] 开始生成 ${wrongWords.length} 个生词`)
 
@@ -243,17 +246,8 @@ export async function POST(request: Request) {
         console.log('[Speaker Dictation Submit API] ✅ 旧生词删除成功')
       }
 
-      // 🔧 关键修复：去重同一提交内的重复单词（同一句子里出现多次的相同单词）
-      // 使用 Map 按 user_id + word + article_id + sentence_id 去重
-      const uniqueMap = new Map<string, typeof ghostWordsInserts[0]>()
-      ghostWordsInserts.forEach(item => {
-        const key = `${item.user_id}-${item.word}-${item.article_id}-${item.sentence_id}`
-        if (!uniqueMap.has(key)) {
-          uniqueMap.set(key, item)
-        }
-      })
-
-      const deduplicatedInserts = Array.from(uniqueMap.values())
+      const deduplicatedInserts = dedupeGhostWordInserts(ghostWordsInserts)
+      ghostWordsToReviewCount = deduplicatedInserts.length
 
       console.log('[Speaker Dictation Submit API] 去重结果:', {
         原始数量: ghostWordsInserts.length,
@@ -261,25 +255,27 @@ export async function POST(request: Request) {
         去除重复: ghostWordsInserts.length - deduplicatedInserts.length
       })
 
-      // 然后直接插入去重后的数据（不需要 upsert，因为已经删除了）
-      const { error: ghostError, data: insertedData } = await supabase
-        .from('speaker_ghost_words')
-        .insert(deduplicatedInserts)
-        .select()
+      if (deduplicatedInserts.length > 0) {
+        // 然后直接插入去重后的数据（不需要 upsert，因为已经删除了）
+        const { error: ghostError, data: insertedData } = await supabase
+          .from('speaker_ghost_words')
+          .insert(deduplicatedInserts)
+          .select()
 
-      if (ghostError) {
-        console.error('[Speaker Dictation Submit API] ❌ 生成生词本失败:', {
-          code: ghostError.code,
-          message: ghostError.message,
-          details: ghostError.details,
-          hint: ghostError.hint
-        })
-      } else {
-        console.log('[Speaker Dictation Submit API] ✅ 生词本生成成功，插入数量:', insertedData?.length || 0)
+        if (ghostError) {
+          console.error('[Speaker Dictation Submit API] ❌ 生成生词本失败:', {
+            code: ghostError.code,
+            message: ghostError.message,
+            details: ghostError.details,
+            hint: ghostError.hint
+          })
+        } else {
+          console.log('[Speaker Dictation Submit API] ✅ 生词本生成成功，插入数量:', insertedData?.length || 0)
+        }
       }
 
       // 后台异步填充词典数据（不阻塞响应）
-      const uniqueWords = Array.from(new Set(wrongWords.map(w => w.correctWord)))
+      const uniqueWords = getGhostWordLookupWords(deduplicatedInserts)
 
       if (uniqueWords.length > 0) {
         // 使用 setImmediate 确保在响应发送后再执行
@@ -389,7 +385,7 @@ export async function POST(request: Request) {
         step2_completed: true,
         step2_last_sentence_index: totalSentences - 1,
         step2_draft: null,  // 🔧 关键修复：提交成功后清除草稿，避免下次进入时重复提示
-        step3_words_completed: wrongWords.length === 0,
+        step3_words_completed: ghostWordsToReviewCount === 0,
         status: 'in_progress',  // 还需要完成后续步骤
         updated_at: new Date().toISOString()
       },
