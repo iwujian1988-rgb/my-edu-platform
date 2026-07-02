@@ -15,10 +15,22 @@ import {
   Loader2,
   FileAudio,
   Mic,
-  Image as ImageIcon
+  Image as ImageIcon,
+  AlertTriangle,
+  CheckCircle2,
+  X
 } from 'lucide-react'
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, ARTICLE_CATEGORIES } from '@/types/speaker'
 import ImageUploadModal from '@/components/admin/ImageUploadModal'
+
+interface PageMessage {
+  type: 'success' | 'error'
+  text: string
+}
+
+const getErrorMessage = (error: unknown) => {
+  return error instanceof Error ? error.message : '未知错误'
+}
 
 export default function SpeakerArticleCreatePage() {
   const router = useRouter()
@@ -26,6 +38,7 @@ export default function SpeakerArticleCreatePage() {
   const [uploadingAudio, setUploadingAudio] = useState(false)
   const [uploadingImage, setUploadingImage] = useState(false)
   const [imageModalOpen, setImageModalOpen] = useState(false)
+  const [message, setMessage] = useState<PageMessage | null>(null)
 
   // 表单数据
   const [formData, setFormData] = useState({
@@ -63,10 +76,10 @@ export default function SpeakerArticleCreatePage() {
 
       const result = await response.json()
       setFormData(prev => ({ ...prev, audio_url: result.data.url }))
-      alert('音频上传成功！')
-    } catch (error: any) {
+      setMessage({ type: 'success', text: '音频上传成功，已自动填入音频 URL' })
+    } catch (error: unknown) {
       console.error('上传音频失败:', error)
-      alert('上传音频失败: ' + error.message)
+      setMessage({ type: 'error', text: `上传音频失败：${getErrorMessage(error)}` })
     } finally {
       setUploadingAudio(false)
     }
@@ -74,17 +87,19 @@ export default function SpeakerArticleCreatePage() {
 
   // 保存文章
   const handleSave = async () => {
+    setMessage(null)
+
     // 验证必填字段
     if (!formData.title.trim()) {
-      alert('请输入文章标题')
+      setMessage({ type: 'error', text: '请输入文章标题' })
       return
     }
     if (!formData.audio_url.trim()) {
-      alert('请上传或输入音频 URL')
+      setMessage({ type: 'error', text: '请上传或输入音频 URL' })
       return
     }
     if (!formData.jsonData.trim()) {
-      alert('请输入 JSON 数据')
+      setMessage({ type: 'error', text: '请输入 JSON 数据' })
       return
     }
 
@@ -92,19 +107,19 @@ export default function SpeakerArticleCreatePage() {
     let jsonData
     try {
       jsonData = JSON.parse(formData.jsonData)
-    } catch (error: any) {
-      alert('JSON 格式错误: ' + error.message)
+    } catch (error: unknown) {
+      setMessage({ type: 'error', text: `JSON 格式错误：${getErrorMessage(error)}` })
       return
     }
 
     // 验证 JSON 结构
     if (!jsonData.sentences || !Array.isArray(jsonData.sentences)) {
-      alert('JSON 必须包含 sentences 数组')
+      setMessage({ type: 'error', text: 'JSON 必须包含 sentences 数组' })
       return
     }
 
     if (jsonData.sentences.length === 0) {
-      alert('sentences 不能为空')
+      setMessage({ type: 'error', text: 'sentences 不能为空' })
       return
     }
 
@@ -134,11 +149,11 @@ export default function SpeakerArticleCreatePage() {
         throw new Error(error.error || '创建失败')
       }
 
-      alert('文章创建成功！')
+      setMessage({ type: 'success', text: '文章创建成功，正在返回列表' })
       router.push('/admin/speaker/articles')
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('创建失败:', error)
-      alert('创建失败: ' + error.message)
+      setMessage({ type: 'error', text: `创建失败：${getErrorMessage(error)}` })
     } finally {
       setSaving(false)
     }
@@ -176,6 +191,34 @@ export default function SpeakerArticleCreatePage() {
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
+      {message && (
+        <div
+          className={`mb-4 flex items-start justify-between gap-3 rounded-lg border-2 px-4 py-3 shadow-[3px_3px_0px_0px_#000] ${
+            message.type === 'success'
+              ? 'border-green-800 bg-green-50 text-green-900'
+              : 'border-red-800 bg-red-50 text-red-900'
+          }`}
+          role={message.type === 'error' ? 'alert' : 'status'}
+        >
+          <div className="flex items-start gap-2">
+            {message.type === 'success' ? (
+              <CheckCircle2 size={18} className="mt-0.5 shrink-0" />
+            ) : (
+              <AlertTriangle size={18} className="mt-0.5 shrink-0" />
+            )}
+            <span className="text-sm font-bold">{message.text}</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setMessage(null)}
+            className="rounded p-1 hover:bg-black/5"
+            aria-label="关闭提示"
+          >
+            <X size={16} />
+          </button>
+        </div>
+      )}
+
       {/* 页面标题 */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">

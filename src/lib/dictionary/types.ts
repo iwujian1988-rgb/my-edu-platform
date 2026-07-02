@@ -39,7 +39,7 @@ export const LANGUAGE_NAMES: Record<DictionaryLanguage, string> = {
 // API Provider 类型
 // ============================================
 
-export type DictionaryProvider = 'youdao' | 'ultimate' | 'local'
+export type DictionaryProvider = 'youdao' | 'ultimate' | 'local' | 'llm'
 
 // ============================================
 // 统一词典条目结构（与系统词库字段一致）

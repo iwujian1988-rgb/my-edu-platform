@@ -18,7 +18,8 @@ import {
   XCircle,
   AlertCircle,
   Loader2,
-  Image as ImageIcon
+  Image as ImageIcon,
+  X
 } from 'lucide-react'
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, ARTICLE_CATEGORIES } from '@/types/speaker'
 import OSS from 'ali-oss'
@@ -55,9 +56,18 @@ interface ParsedArticle {
   audioFile?: File
 }
 
+interface PageMessage {
+  type: 'success' | 'error' | 'warning'
+  text: string
+}
+
 // 上传进度类型
 interface UploadProgress {
   [key: number]: number // 文章索引 -> 进度百分比 (0-100)
+}
+
+const getErrorMessage = (error: unknown) => {
+  return error instanceof Error ? error.message : '未知错误'
 }
 
 const LEVEL_MAP = {
@@ -78,6 +88,8 @@ export default function SpeakerUploadPage() {
   const [audioUrls, setAudioUrls] = useState<Record<number, string>>({})
   const [uploadProgress, setUploadProgress] = useState<UploadProgress>({})
   const [importErrors, setImportErrors] = useState<Array<{ index: number; title: string; error: string }>>([])
+  const [message, setMessage] = useState<PageMessage | null>(null)
+  const [showImportConfirm, setShowImportConfirm] = useState(false)
 
   // 图片上传弹层状态
   const [imageModalOpen, setImageModalOpen] = useState(false)
@@ -103,7 +115,6 @@ export default function SpeakerUploadPage() {
   const uploadAudio = async (file: File, index: number): Promise<string> => {
     try {
       // 1. 获取 STS Token
-      console.log('[OSS上传] 正在获取 STS Token...')
       const tokenRes = await fetch('/api/admin/speaker/oss-token', {
         method: 'POST',
       })
@@ -114,7 +125,6 @@ export default function SpeakerUploadPage() {
       }
 
       const tokenData = await tokenRes.json()
-      console.log('[OSS上传] STS Token 获取成功')
 
       // 2. 初始化 OSS 客户端（使用临时凭证）
       const client = new OSS({
@@ -132,20 +142,15 @@ export default function SpeakerUploadPage() {
       const timestamp = Date.now()
       const filename = `speaker/${datePath}/${timestamp}-${file.name}`
 
-      console.log(`[OSS上传] 开始上传: ${filename} (${(file.size / 1024 / 1024).toFixed(2)} MB)`)
-
       // 4. 上传文件（带进度回调）
       const result = await client.put(filename, file, {
         headers: getCacheHeaders('audio'),
         progress: (p: number) => {
           // p 是上传进度 (0-1)
           const percent = Math.round(p * 100)
-          console.log(`[OSS上传] 上传进度: ${percent}%`)
           setUploadProgress(prev => ({ ...prev, [index]: percent }))
         },
       })
-
-      console.log(`[OSS上传] 上传成功: ${result.url}`)
 
       // 5. 清除进度条
       setUploadProgress(prev => {
@@ -161,7 +166,7 @@ export default function SpeakerUploadPage() {
       }))
 
       return result.url
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('[OSS上传] 失败:', error)
       setUploadProgress(prev => {
         const newProgress = { ...prev }
@@ -203,8 +208,10 @@ export default function SpeakerUploadPage() {
 
   // 解析 JSON 文件
   const handleParseJson = async () => {
+    setMessage(null)
+
     if (jsonFiles.length === 0) {
-      alert('请选择至少一个 JSON 文件')
+      setMessage({ type: 'error', text: '请选择至少一个 JSON 文件' })
       return
     }
 
@@ -225,27 +232,14 @@ export default function SpeakerUploadPage() {
       }
 
       const result = await response.json()
-      console.log('[前端] API 返回数据:', result)
-      console.log('[前端] 文章数量:', result.data.articles?.length)
-
-      result.data.articles?.forEach((article: any, index: number) => {
-        console.log(`[前端] 文章 ${index}:`, {
-          title: article.meta.title,
-          level: article.meta.level,
-          category: article.meta.category,
-          hasAnalysis: !!article.analysis,
-          analysisLevel: article.analysis?.level,
-          analysisCategory: article.analysis?.category,
-          suggestedImage: article.analysis?.suggestedImage
-        })
-      })
 
       setParsedArticles(result.data.articles)
       setErrors(result.data.errors)
       setStep('preview')
-    } catch (error: any) {
+      setMessage({ type: 'success', text: `解析完成，共 ${result.data.articles?.length || 0} 篇文章` })
+    } catch (error: unknown) {
       console.error('解析 JSON 失败:', error)
-      alert('解析失败: ' + error.message)
+      setMessage({ type: 'error', text: `解析失败：${getErrorMessage(error)}` })
     } finally {
       setUploading(false)
     }
@@ -253,6 +247,7 @@ export default function SpeakerUploadPage() {
 
   // 上传所有音频文件
   const handleUploadAllAudio = async () => {
+    setMessage(null)
     setUploading(true)
     try {
       const newAudioUrls: Record<number, string> = {}
@@ -266,17 +261,18 @@ export default function SpeakerUploadPage() {
       }
 
       setAudioUrls(newAudioUrls)
-      alert('音频上传完成！')
-    } catch (error: any) {
+      setMessage({ type: 'success', text: '音频上传完成' })
+    } catch (error: unknown) {
       console.error('上传音频失败:', error)
-      alert('上传音频失败: ' + error.message)
+      setMessage({ type: 'error', text: `上传音频失败：${getErrorMessage(error)}` })
     } finally {
       setUploading(false)
     }
   }
 
   // 导入文章
-  const handleImport = async () => {
+  const handleImport = () => {
+    setMessage(null)
     // 清空之前的导入错误
     setImportErrors([])
 
@@ -287,13 +283,15 @@ export default function SpeakerUploadPage() {
     })
 
     if (invalidArticles.length > 0) {
-      alert('请先完善所有文章的必填信息（难度、语言、分类、音频）')
+      setMessage({ type: 'error', text: '请先完善所有文章的必填信息（难度、语言、分类、音频）' })
       return
     }
 
-    if (!confirm(`确定要导入 ${parsedArticles.length} 篇文章吗？`)) {
-      return
-    }
+    setShowImportConfirm(true)
+  }
+
+  const runImport = async () => {
+    setShowImportConfirm(false)
 
     setStep('importing')
     setUploading(true)
@@ -320,14 +318,6 @@ export default function SpeakerUploadPage() {
           json_data: article.jsonData
         }
 
-        // 调试日志：打印请求体
-        console.log(`[导入] 文章 ${i + 1} 正在提交:`, {
-          title: article.meta.title,
-          level: article.meta.level,
-          levelType: typeof article.meta.level,
-          payload: JSON.stringify(payload)
-        })
-
         try {
           const response = await fetch('/api/admin/speaker/articles', {
             method: 'POST',
@@ -339,7 +329,6 @@ export default function SpeakerUploadPage() {
 
           if (response.ok) {
             successCount++
-            console.log(`[导入] ✅ 文章 ${i + 1} "${article.meta.title}" 导入成功`)
           } else {
             failCount++
             // 1. 尝试解析后端返回的详细错误
@@ -376,14 +365,15 @@ export default function SpeakerUploadPage() {
 
       // 显示详细结果
       if (failCount > 0) {
-        alert(`导入完成！\n成功: ${successCount} 篇\n失败: ${failCount} 篇\n\n请在下方查看失败详情`)
+        setStep('preview')
+        setMessage({ type: 'warning', text: `导入完成：成功 ${successCount} 篇，失败 ${failCount} 篇。请在下方查看失败详情` })
       } else {
-        alert(`导入完成！全部 ${successCount} 篇文章导入成功`)
+        setMessage({ type: 'success', text: `导入完成，全部 ${successCount} 篇文章导入成功` })
         router.push('/admin/speaker/articles')
       }
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('导入失败:', error)
-      alert('导入失败: ' + error.message)
+      setMessage({ type: 'error', text: `导入失败：${getErrorMessage(error)}` })
       setStep('preview')
     } finally {
       setUploading(false)
@@ -405,6 +395,38 @@ export default function SpeakerUploadPage() {
           <p className="text-gray-600">上传 JSON 文件和音频文件，批量创建文章</p>
         </div>
       </div>
+
+      {message && (
+        <div
+          className={`mb-4 flex items-start justify-between gap-3 rounded-lg border-2 px-4 py-3 shadow-[3px_3px_0px_0px_#000] ${
+            message.type === 'success'
+              ? 'border-green-800 bg-green-50 text-green-900'
+              : message.type === 'warning'
+                ? 'border-amber-800 bg-amber-50 text-amber-900'
+                : 'border-red-800 bg-red-50 text-red-900'
+          }`}
+          role={message.type === 'error' ? 'alert' : 'status'}
+        >
+          <div className="flex items-start gap-2">
+            {message.type === 'success' ? (
+              <CheckCircle size={18} className="mt-0.5 shrink-0" />
+            ) : message.type === 'warning' ? (
+              <AlertCircle size={18} className="mt-0.5 shrink-0" />
+            ) : (
+              <XCircle size={18} className="mt-0.5 shrink-0" />
+            )}
+            <span className="text-sm font-bold">{message.text}</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setMessage(null)}
+            className="rounded p-1 hover:bg-black/5"
+            aria-label="关闭提示"
+          >
+            <X size={16} />
+          </button>
+        </div>
+      )}
 
       {step === 'upload' && (
         <div className="space-y-6">
@@ -519,12 +541,6 @@ export default function SpeakerUploadPage() {
                 // 图片URL优先级：用户手动设置 > AI推荐
                 const imageUrl = article.meta.image_filename || article.analysis?.suggestedImage
                 const hasRequiredFields = article.meta.level && article.meta.language && article.meta.category && audioUrl
-
-                // 调试日志：打印图片相关信息
-                console.log(`[文章 ${index}] 标题: ${article.meta.title}`)
-                console.log(`[文章 ${index}] 手动图片: ${article.meta.image_filename}`)
-                console.log(`[文章 ${index}] AI推荐图片: ${article.analysis?.suggestedImage}`)
-                console.log(`[文章 ${index}] 最终图片URL: ${imageUrl}`)
 
                 return (
                   <div key={index} className={`border-2 rounded-lg p-6 ${hasRequiredFields ? 'border-green-300 bg-green-50' : 'border-yellow-300 bg-yellow-50'}`}>
@@ -696,11 +712,7 @@ export default function SpeakerUploadPage() {
                                 e.currentTarget.src = 'https://via.placeholder.com/400x250?text=Image+Load+Failed'
                               }}
                               onLoad={(e) => {
-                                // 图片加载成功的日志 - 显示最终 URL（可能是重定向后的）
-                                const finalUrl = (e.target as HTMLImageElement).src
-                                console.log(`[图片加载成功] ${article.meta.title}`)
-                                console.log(`  - 原始 URL: ${imageUrl}`)
-                                console.log(`  - 最终 URL: ${finalUrl}`)
+                                e.currentTarget.style.opacity = '1'
                               }}
                             />
                             {article.analysis?.suggestedImage && imageUrl === article.analysis.suggestedImage && (
@@ -751,8 +763,6 @@ export default function SpeakerUploadPage() {
                                   const updated = [...parsedArticles]
                                   updated[index].meta.image_filename = newImageUrl
                                   setParsedArticles(updated)
-
-                                  console.log(`[更换图片] ${article.meta.title}: ${newImageUrl}`)
                                 }}
                                 className="flex-1 px-3 py-2 text-sm border-2 border-purple-300 text-purple-600 bg-purple-50 rounded-lg hover:bg-purple-100 flex items-center justify-center gap-2"
                               >
@@ -866,7 +876,7 @@ export default function SpeakerUploadPage() {
                               onClick={async () => {
                                 const file = article.audioFile
                                 if (!file) {
-                                  alert('请先选择音频文件')
+                                  setMessage({ type: 'error', text: '请先选择音频文件' })
                                   return
                                 }
 
@@ -874,9 +884,9 @@ export default function SpeakerUploadPage() {
                                 setUploading(true)
                                 try {
                                   await uploadAudio(file, index)
-                                  alert('音频上传成功！')
-                                } catch (error: any) {
-                                  alert('上传失败: ' + error.message)
+                                  setMessage({ type: 'success', text: '音频上传成功' })
+                                } catch (error: unknown) {
+                                  setMessage({ type: 'error', text: `上传失败：${getErrorMessage(error)}` })
                                 } finally {
                                   setUploading(false)
                                 }
@@ -945,6 +955,43 @@ export default function SpeakerUploadPage() {
           <Loader2 className="animate-spin text-purple-600 mx-auto mb-4" size={48} />
           <h2 className="text-2xl font-bold mb-2">正在导入文章...</h2>
           <p className="text-gray-600">请稍候，正在处理 {parsedArticles.length} 篇文章</p>
+        </div>
+      )}
+
+      {showImportConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+          <div className="w-full max-w-md rounded-xl border-2 border-black bg-white p-6 shadow-[6px_6px_0px_0px_#000]">
+            <div className="mb-4 flex items-center gap-3">
+              <div className="flex h-11 w-11 items-center justify-center rounded-lg border-2 border-black bg-purple-100">
+                <Upload className="text-purple-700" size={22} />
+              </div>
+              <div>
+                <h3 className="text-xl font-black text-gray-900">确认批量导入</h3>
+                <p className="text-sm text-gray-600">即将创建 {parsedArticles.length} 篇 Speaker 文章</p>
+              </div>
+            </div>
+
+            <p className="mb-6 text-sm leading-6 text-gray-700">
+              导入后文章会进入后台列表，并按当前预览中的难度、语言、分类和音频地址保存。请确认预览信息无误后继续。
+            </p>
+
+            <div className="flex justify-end gap-3">
+              <button
+                type="button"
+                onClick={() => setShowImportConfirm(false)}
+                className="rounded-lg border-2 border-black bg-white px-4 py-2 font-bold text-black hover:bg-gray-50"
+              >
+                取消
+              </button>
+              <button
+                type="button"
+                onClick={runImport}
+                className="rounded-lg border-2 border-purple-900 bg-purple-600 px-4 py-2 font-bold text-white hover:bg-purple-700"
+              >
+                确认导入
+              </button>
+            </div>
+          </div>
         </div>
       )}
 

@@ -11,6 +11,7 @@
 
 import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
+import type { SupportedLanguage } from '@/types/speaker'
 
 import { getSpeakerArticleById } from '../../../../../lib/speaker-data'
 
@@ -42,6 +43,14 @@ export async function GET(
 
     // 2. 创建 Supabase 客户端
     const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json(
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
 
     // 3. 查询文章详情
     const article = await getSpeakerArticleById(supabase, id)
@@ -52,6 +61,29 @@ export async function GET(
       return NextResponse.json(
         { error: 'ARTICLE_NOT_FOUND', message: '文章不存在' },
         { status: 404 }
+      )
+    }
+
+    const { data: purchase, error: purchaseError } = await supabase
+      .from('speaker_user_language_purchases')
+      .select('expires_at')
+      .eq('user_id', user.id)
+      .eq('language', article.language as SupportedLanguage)
+      .eq('status', 'active')
+      .maybeSingle()
+
+    if (purchaseError) {
+      throw purchaseError
+    }
+
+    const hasActiveLanguage = Boolean(
+      purchase && (!purchase.expires_at || new Date(purchase.expires_at) > new Date())
+    )
+
+    if (!hasActiveLanguage) {
+      return NextResponse.json(
+        { error: 'FORBIDDEN_LANGUAGE', message: '当前账号未购买该语言包' },
+        { status: 403 }
       )
     }
 

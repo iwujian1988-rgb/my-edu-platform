@@ -57,7 +57,7 @@ export function parseSentenceTokens(sentence: string): Token[] {
   ])
 
   // 正则：匹配英文单词 | 数字 | 标点符号
-  const regex = /([a-zA-Z]+(?:'[a-zA-Z]+)?)|(\d+)|([^\w\s])/g
+  const regex = /([\p{L}]+(?:[’'][\p{L}]+)*)|(\d+)|([^\p{L}\d\s])/gu
 
   let match
   while ((match = regex.exec(sentence)) !== null) {
@@ -95,15 +95,19 @@ export function parseSentenceTokens(sentence: string): Token[] {
  */
 export function validateWordInput(userInput: string, correctWord: string): boolean {
   // 1. trim 去除首尾空格
-  const normalizedInput = userInput.trim()
-  const normalizedCorrect = correctWord.trim()
+  const normalizedInput = normalizeComparableWord(userInput)
+  const normalizedCorrect = normalizeComparableWord(correctWord)
 
   // 2. 大小写不敏感
-  const inputLower = normalizedInput.toLowerCase()
-  const correctLower = normalizedCorrect.toLowerCase()
+  const inputLower = normalizedInput
+  const correctLower = normalizedCorrect
 
   // 3. 严格比对（不支持缩写展开）
   return inputLower === correctLower
+}
+
+function normalizeComparableWord(value: string): string {
+  return value.trim().toLowerCase().replace(/[’]/g, "'")
 }
 
 /**

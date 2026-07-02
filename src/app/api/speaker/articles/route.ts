@@ -13,7 +13,7 @@ import { NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import type { SupabaseClient } from '@supabase/supabase-js'
 
-import type { SpeakerLevel, SupportedLanguage, ArticleCategory, PublicSpeakerArticleStatus } from '../../../../types/speaker'
+import type { SpeakerArticle, SpeakerLevel, SupportedLanguage, ArticleCategory, PublicSpeakerArticleStatus } from '../../../../types/speaker'
 import { getSpeakerArticles } from '../../../../lib/speaker-data'
 
 /**
@@ -119,11 +119,50 @@ export async function GET(request: Request) {
 
     // 3. 创建 Supabase 客户端
     const supabase = await createClient() as SupabaseClient
+    const { data: { user: currentUser } } = await supabase.auth.getUser()
+
+    if (!currentUser) {
+      return NextResponse.json(
+        { error: 'UNAUTHORIZED', message: '请先登录' },
+        { status: 401 }
+      )
+    }
+
+    const { data: purchases, error: purchasesError } = await supabase
+      .from('speaker_user_language_purchases')
+      .select('language, expires_at')
+      .eq('user_id', currentUser.id)
+      .eq('status', 'active')
+
+    if (purchasesError) {
+      console.error('[Speaker API] 获取用户语言包失败:', purchasesError)
+      throw purchasesError
+    }
+
+    const now = new Date()
+    const purchasedLanguages = (purchases || [])
+      .filter(purchase => !purchase.expires_at || new Date(purchase.expires_at) > now)
+      .map(purchase => purchase.language as SupportedLanguage)
+
+    if (purchasedLanguages.length === 0) {
+      return NextResponse.json({
+        articles: [],
+        pagination: { total: 0, page, pageSize, totalPages: 0 }
+      })
+    }
+
+    if (language && !purchasedLanguages.includes(language)) {
+      return NextResponse.json(
+        { error: 'FORBIDDEN_LANGUAGE', message: '当前账号未购买该语言包' },
+        { status: 403 }
+      )
+    }
 
     // 4. 查询文章列表（RLS 会自动过滤未购语言）
     const { articles, total } = await getSpeakerArticles(supabase, {
       level,
       language,
+      languages: language ? undefined : purchasedLanguages,
       category,
       page,
       pageSize,
@@ -133,19 +172,20 @@ export async function GET(request: Request) {
     const totalPages = Math.ceil(total / pageSize)
 
     // 5. 获取当前用户信息（如果有）
-    const { data: { user } } = await supabase.auth.getUser()
-
     // 6. 如果用户已登录，获取每篇文章的学习进度
-    let articlesWithProgress: any[] = articles
-    if (user) {
+    let articlesWithProgress: SpeakerArticle[] = articles
+    const articleIds = articles.map(article => article.id)
+
+    if (articleIds.length > 0) {
       // 批量查询用户的所有进度
       const { data: progressData } = await supabase
         .from('speaker_progress')
         .select('article_id, status, step1_completed, step2_completed, step3_words_completed, step3_completed, step4_completed')
-        .eq('user_id', user.id)
+        .eq('user_id', currentUser.id)
+        .in('article_id', articleIds)
 
       // 创建进度映射表
-      const progressMap = new Map()
+      const progressMap = new Map<string, NonNullable<SpeakerArticle['progress']>>()
       if (progressData) {
         progressData.forEach(progress => {
           progressMap.set(progress.article_id, {

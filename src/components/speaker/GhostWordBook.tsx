@@ -44,17 +44,50 @@ type ErrorTypeFilter = 'all' | 'wrong' | 'skipped'
 type TimeFilter = 'all' | 'today' | 'week' | 'month'
 type ArticleFilter = string | 'all'  // 'all' 或具体的 article_id
 type WordAction = 'mastered' | 'ignored'
+type GhostArticle = Pick<SpeakerArticle, 'id' | 'title'> & Partial<Pick<SpeakerArticle, 'language' | 'audio_url' | 'sentences' | 'json_data'>>
 
 const TASK_BATCH_SIZE = 12
+const ACTION_REMOVAL_DELAY_MS = 700
+
+function hasLocalDictData(word: SpeakerGhostWord): boolean {
+  return Boolean(word.definition || word.phonetic || word.example_sentence)
+}
+
+function createLocalDictEntry(word: SpeakerGhostWord): DictEntry {
+  return {
+    word: word.word,
+    phonetic: word.phonetic || undefined,
+    definition: word.definition || undefined,
+    example_sentence: word.example_sentence || undefined
+  }
+}
+
+function hasDictEntryContent(entry: DictEntry): boolean {
+  return Boolean(entry.definition || entry.definition_en || entry.phonetic || entry.example_sentence)
+}
+
+function getPlayableAudioUrl(audioUrl: string): string {
+  try {
+    const url = new URL(audioUrl)
+    if (url.hostname.endsWith('aliyuncs.com')) {
+      return audioUrl
+    }
+  } catch {
+    return audioUrl
+  }
+
+  return `/api/proxy-audio?url=${encodeURIComponent(audioUrl)}`
+}
 
 export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   const router = useRouter()
 
   const [words, setWords] = useState<SpeakerGhostWord[]>([])
   const [loading, setLoading] = useState(true)
-  const [articles, setArticles] = useState<Map<string, SpeakerArticle>>(new Map())
+  const [articles, setArticles] = useState<Map<string, GhostArticle>>(new Map())
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const [isPlaying, setIsPlaying] = useState<string | null>(null)
+  const [pendingWordActions, setPendingWordActions] = useState<Record<string, WordAction>>({})
 
   // 词典弹窗状态
   const [dictModal, setDictModal] = useState<{
@@ -137,6 +170,33 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
     }
   }, [dictModal])
 
+  const getArticleForWord = async (articleId: string, requireFullArticle = false): Promise<GhostArticle | null> => {
+    const cachedArticle = articles.get(articleId)
+    const cachedSentences = cachedArticle?.sentences || cachedArticle?.json_data?.sentences || []
+    const hasRequiredArticleData = cachedArticle?.language && (
+      !requireFullArticle || (cachedArticle.audio_url && cachedSentences.length > 0)
+    )
+
+    if (cachedArticle && hasRequiredArticleData) {
+      return cachedArticle
+    }
+
+    try {
+      const res = await fetch(`/api/speaker/articles/${articleId}`)
+      if (!res.ok) return cachedArticle || null
+      const d = await res.json()
+      if (d.article) {
+        setArticles(prev => new Map(prev).set(articleId, d.article))
+        console.log('[Ghost Word Book] ✅ 文章数据加载成功:', d.article.title)
+        return d.article
+      }
+    } catch (err) {
+      console.error('[Ghost Word Book] 文章加载失败:', articleId, err)
+    }
+
+    return cachedArticle || null
+  }
+
   // 加载文章标题（独立的函数，放在useEffect之前）- 保留用于播放原声时按需加载完整文章信息
   const loadArticleTitle = async (articleId: string) => {
     if (articles.has(articleId)) return
@@ -177,9 +237,9 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
           // 性能优化：直接使用API返回的articles映射，不再逐个请求
           if (data.articles) {
-            const newArticlesMap = new Map<string, SpeakerArticle>()
+            const newArticlesMap = new Map<string, GhostArticle>()
             Object.entries(data.articles).forEach(([id, article]: [string, unknown]) => {
-              newArticlesMap.set(id, article as SpeakerArticle)
+              newArticlesMap.set(id, article as GhostArticle)
             })
             setArticles(newArticlesMap)
             console.log('[Ghost Word Book] ✅ 批量获取文章标题:', newArticlesMap.size)
@@ -296,9 +356,9 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
         // 更新文章标题
         if (data.articles) {
-          const newArticlesMap = new Map<string, SpeakerArticle>()
+          const newArticlesMap = new Map<string, GhostArticle>()
           Object.entries(data.articles).forEach(([id, article]: [string, unknown]) => {
-            newArticlesMap.set(id, article as SpeakerArticle)
+            newArticlesMap.set(id, article as GhostArticle)
           })
           setArticles(newArticlesMap)
         }
@@ -334,24 +394,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
       setIsPlaying(word.id)
 
-      let article = articles.get(word.article_id)
-      if (!article) {
-        const response = await fetch(`/api/speaker/articles/${word.article_id}`)
-
-        if (!response.ok) {
-          const errorData = await response.json().catch(() => ({ message: '操作没有成功，请稍后再试' }))
-          throw new Error(errorData.message || '获取文章失败')
-        }
-
-        const data = await response.json()
-
-        if (!data.article) {
-          throw new Error('文章数据不存在')
-        }
-
-        article = data.article
-        setArticles(prev => new Map(prev).set(word.article_id, article))
-      }
+      const article = await getArticleForWord(word.article_id, true)
 
       if (!article || !article.audio_url) {
         toast.error('音频文件不存在')
@@ -365,13 +408,14 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
         return
       }
 
-      const audio = new Audio(article.audio_url)
+      const audio = new Audio(getPlayableAudioUrl(article.audio_url))
       audioRef.current = audio
 
       audio.currentTime = word.start_time
 
       // 获取句子结束时间，用于限制播放范围
-      const sentence = article.sentences?.find(s => s.sentence_index === word.sentence_id)
+      const sentences = article.sentences || article.json_data?.sentences || []
+      const sentence = sentences.find(s => s.sentence_index === word.sentence_id) || sentences[word.sentence_id]
       const endTime = sentence?.end_time
 
       // 使用 timeupdate 事件在到达结束时间时暂停
@@ -422,17 +466,21 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
   // 查看词典（实时调用有道API，优化体验：立即显示弹窗）
   const viewDict = async (word: SpeakerGhostWord) => {
-    // 立即显示弹窗（loading状态）
-    setDictModal({ word, data: null, loading: true })
+    const localDictEntry = hasLocalDictData(word) ? createLocalDictEntry(word) : null
+
+    // 已有入库释义时直接展示，在线词典只做后台刷新，避免用户卡在外部 API 上。
+    setDictModal({ word, data: localDictEntry, loading: !localDictEntry })
 
     // 异步加载数据
     try {
       console.log('[Ghost Word Book] 查询词典:', word.word)
 
+      const article = await getArticleForWord(word.article_id)
+      const language = article?.language === 'fr' ? 'fr' : 'en'
       const response = await fetch('/api/speaker/dict', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ word: word.word })
+        body: JSON.stringify({ word: word.word, language })
       })
 
       if (!response.ok) {
@@ -441,14 +489,30 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
 
       const data = await response.json()
 
-      if (data.success && data.entry) {
+      if (data.success && data.entry && hasDictEntryContent(data.entry)) {
         console.log('[Ghost Word Book] ✅ 词典数据获取成功')
         setDictModal({ word, data: data.entry, loading: false })
+        setWords(prev => prev.map(item => item.id === word.id
+          ? {
+              ...item,
+              phonetic: data.entry.phonetic || item.phonetic,
+              definition: data.entry.definition || item.definition,
+              example_sentence: data.entry.example_sentence || item.example_sentence
+            }
+          : item
+        ))
+      } else if (localDictEntry) {
+        setDictModal({ word, data: localDictEntry, loading: false })
       } else {
         throw new Error('词典数据为空')
       }
     } catch (error) {
       console.error('[Ghost Word Book] 查询词典失败:', error)
+      if (localDictEntry) {
+        setDictModal({ word, loading: false, data: localDictEntry })
+        return
+      }
+
       if (word.definition || word.phonetic || word.example_sentence) {
         toast.warning('在线词典暂时不可用，已显示本地缓存')
         setDictModal({
@@ -502,6 +566,11 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       }
 
       setWords(prev => prev.some(item => item.id === word.id) ? prev : [word, ...prev])
+      setPendingWordActions(prev => {
+        const next = { ...prev }
+        delete next[word.id]
+        return next
+      })
       setTotalCount(prev => prev + 1)
       step3CompletionSavedRef.current = false
       toast.success('已撤销，单词回到本轮任务')
@@ -515,17 +584,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
   const completeWord = async (word: SpeakerGhostWord, action: WordAction) => {
     const remainingAfterAction = filteredWords.filter(item => item.id !== word.id).length
 
-    setWords(prev => prev.filter(item => item.id !== word.id))
-    setTotalCount(prev => Math.max(prev - 1, 0))
-
-    toast.success(action === 'ignored' ? '已忽略这个词' : '已标记为掌握', {
-      action: {
-        label: '撤销',
-        onClick: () => {
-          void restoreWord(word)
-        }
-      }
-    })
+    setPendingWordActions(prev => ({ ...prev, [word.id]: action }))
 
     try {
       const response = await fetch(`/api/speaker/words?id=${word.id}`, {
@@ -537,6 +596,11 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
       const data = await response.json()
 
       if (!data.success) {
+        setPendingWordActions(prev => {
+          const next = { ...prev }
+          delete next[word.id]
+          return next
+        })
         toast.error('操作失败，已恢复列表')
         await reloadGhostWords()
       } else if (data.step3WordsCompleted || remainingAfterAction === 0) {
@@ -547,9 +611,33 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
             onClick: goToRecitation
           }
         })
+      } else {
+        toast.success(action === 'ignored' ? '已忽略这个词' : '已标记为掌握', {
+          action: {
+            label: '撤销',
+            onClick: () => {
+              void restoreWord(word)
+            }
+          }
+        })
       }
+
+      window.setTimeout(() => {
+        setWords(prev => prev.filter(item => item.id !== word.id))
+        setTotalCount(prev => Math.max(prev - 1, 0))
+        setPendingWordActions(prev => {
+          const next = { ...prev }
+          delete next[word.id]
+          return next
+        })
+      }, ACTION_REMOVAL_DELAY_MS)
     } catch (error) {
       console.error('[Ghost Word Book] 操作失败:', error)
+      setPendingWordActions(prev => {
+        const next = { ...prev }
+        delete next[word.id]
+        return next
+      })
       toast.error('网络错误，已恢复列表')
       await reloadGhostWords()
     }
@@ -786,11 +874,22 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
         ) : (
           <>
             <div className="grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-              {visibleWords.map((word) => (
+              {visibleWords.map((word) => {
+                const pendingAction = pendingWordActions[word.id]
+                return (
               <div
                 key={word.id}
-                className="flex flex-col p-4 sm:p-6 md:p-8 rounded-sm bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-700 shadow-[4px_4px_0px_0px_#000] sm:shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#B4F416] sm:hover:shadow-[6px_6px_0px_0px_#B4F416] dark:hover:shadow-[6px_6px_0px_0px_#84cc16] transition-all min-h-0 sm:min-h-[320px]"
+                className={`relative flex flex-col p-4 sm:p-6 md:p-8 rounded-sm bg-white dark:bg-gray-800 border-[3px] border-black dark:border-gray-700 shadow-[4px_4px_0px_0px_#000] sm:shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#B4F416] sm:hover:shadow-[6px_6px_0px_0px_#B4F416] dark:hover:shadow-[6px_6px_0px_0px_#84cc16] transition-all min-h-0 sm:min-h-[320px] ${
+                  pendingAction ? 'opacity-75 translate-y-1' : ''
+                }`}
               >
+                {pendingAction && (
+                  <div className="absolute inset-0 z-10 flex items-center justify-center bg-white/85 dark:bg-gray-900/85">
+                    <div className="border-2 border-black bg-[#B4F416] px-4 py-2 text-sm font-black text-black shadow-[3px_3px_0px_0px_#000]">
+                      {pendingAction === 'ignored' ? '正在忽略...' : '正在标记掌握...'}
+                    </div>
+                  </div>
+                )}
                 {/* 顶部：单词 + 查看上下文链接（左侧） + 标签（右侧） */}
                 <div className="flex items-start justify-between mb-2 sm:mb-4">
                   <div className="flex-1">
@@ -852,6 +951,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                     {/* 原声回放按钮 */}
                     <button
                       onClick={() => isPlaying === word.id ? stopOriginalAudio() : playOriginalAudio(word)}
+                      disabled={Boolean(pendingAction)}
                       className={`
                         flex-1 py-2 px-4 rounded-sm text-sm font-medium transition-all flex items-center justify-center gap-2 border-2 border-black dark:border-gray-600
                         ${isPlaying === word.id
@@ -877,6 +977,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                     {/* 查看释义按钮 */}
                     <button
                       onClick={() => viewDict(word)}
+                      disabled={Boolean(pendingAction)}
                       className="flex-1 py-2 px-4 rounded-sm bg-white dark:bg-gray-700 text-black dark:text-white text-sm font-medium border-2 border-black dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all flex items-center justify-center gap-2"
                     >
                       <BookText className="w-4 h-4" />
@@ -887,6 +988,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                   <div className="grid grid-cols-[1fr_auto] gap-2">
                     <button
                       onClick={() => completeWord(word, 'mastered')}
+                      disabled={Boolean(pendingAction)}
                       className="py-3 px-4 rounded-sm bg-black dark:bg-gray-700 text-white dark:text-gray-200 font-bold border-2 border-black dark:border-gray-600 hover:bg-[#B4F416] dark:hover:bg-[#84cc16] hover:text-black dark:hover:text-black transition-all flex items-center justify-center gap-2"
                     >
                       <CheckCircle className="w-5 h-5" />
@@ -894,6 +996,7 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                     </button>
                     <button
                       onClick={() => completeWord(word, 'ignored')}
+                      disabled={Boolean(pendingAction)}
                       className="w-12 py-3 rounded-sm bg-white dark:bg-gray-700 text-black dark:text-white font-bold border-2 border-black dark:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-600 transition-all flex items-center justify-center"
                       title="忽略这个词"
                     >
@@ -902,7 +1005,8 @@ export function GhostWordBook({ userId, articleId }: GhostWordBookProps) {
                   </div>
                 </div>
               </div>
-            ))}
+                )
+              })}
           </div>
 
           {hiddenLocalWordsCount > 0 && (

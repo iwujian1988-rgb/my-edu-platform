@@ -4,15 +4,30 @@
 
 'use client'
 
-import { useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { useRouter } from 'next/navigation'
 import { ArrowLeft, Volume2, Play, Pause } from 'lucide-react'
 import type { SpeakerGhostWord, SpeakerArticle, SpeakerSentence } from '@/types/speaker'
 import { toast } from 'sonner'
 
+type WordContextArticle = Pick<SpeakerArticle, 'id' | 'title' | 'audio_url' | 'json_data'> & Partial<Pick<SpeakerArticle, 'language'>>
+
+function getPlayableAudioUrl(audioUrl: string): string {
+  try {
+    const url = new URL(audioUrl)
+    if (url.hostname.endsWith('aliyuncs.com')) {
+      return audioUrl
+    }
+  } catch {
+    return audioUrl
+  }
+
+  return `/api/proxy-audio?url=${encodeURIComponent(audioUrl)}`
+}
+
 interface WordContextClientProps {
   ghostWord: SpeakerGhostWord
-  article: SpeakerArticle
+  article: WordContextArticle
   fromPage?: string  // 来源页面：'ghost-words' | 'step2' | 其他
 }
 
@@ -30,6 +45,15 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
 
   // 获取句子文本（优先使用 text_en，回退到 text）
   const getSentenceText = (sentence?: SpeakerSentence) => sentence?.text_en || sentence?.text || ''
+
+  useEffect(() => {
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause()
+        audioRef.current = null
+      }
+    }
+  }, [])
 
   // 播放/暂停句子音频
   const togglePlayPause = async () => {
@@ -51,18 +75,20 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
       return
     }
 
-    const startTime = ghostWord.start_time ?? 0
+    const startTime = targetSentence?.start_time ?? ghostWord.start_time ?? 0
+    const endTime = targetSentence?.end_time ?? null
 
     try {
       setIsPlaying(true)
 
-      const audio = new Audio(article.audio_url)
+      const audio = new Audio(getPlayableAudioUrl(article.audio_url))
       audioRef.current = audio
 
       audio.addEventListener('error', (e) => {
         console.error('[Word Context] 音频加载失败:', e)
         toast.error('音频暂时播放不了，请稍后再试')
         setIsPlaying(false)
+        audioRef.current = null
       })
 
       // 设置播放位置
@@ -70,6 +96,18 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
 
       audio.onended = () => {
         setIsPlaying(false)
+        audioRef.current = null
+      }
+
+      if (endTime !== null && endTime > startTime) {
+        audio.ontimeupdate = () => {
+          if (audio.currentTime >= endTime) {
+            audio.pause()
+            audio.currentTime = startTime
+            setIsPlaying(false)
+            audioRef.current = null
+          }
+        }
       }
 
       // 开始播放
@@ -78,6 +116,7 @@ export function WordContextClient({ ghostWord, article, fromPage = 'ghost-words'
       console.error('[Word Context] 播放失败:', error)
       toast.error(`播放失败: ${error instanceof Error ? error.message : '未知错误'}`)
       setIsPlaying(false)
+      audioRef.current = null
     }
   }
 

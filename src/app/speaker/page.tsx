@@ -17,7 +17,11 @@ import { getUserPermissions } from '@/lib/permissions'
 // 强制动态渲染
 export const dynamic = 'force-dynamic'
 
-export default async function SpeakerPage() {
+export default async function SpeakerPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ language?: string }>
+}) {
   // 检查登录状态
   const user = await getCurrentUser()
   if (!user) {
@@ -28,10 +32,12 @@ export default async function SpeakerPage() {
   console.log('[Speaker Page] 使用客户端渲染模式')
 
   const userPermissions = await getUserPermissions()
+  const { language } = await searchParams
 
   return (
     <SpeakerClient
       initialArticles={[]}
+      initialLanguage={language}
       userId={user.id}
       userPermissions={userPermissions?.featurePermissions || []}
     />

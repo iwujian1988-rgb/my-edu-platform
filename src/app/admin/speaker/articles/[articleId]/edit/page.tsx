@@ -17,11 +17,22 @@ import {
   CheckCircle,
   Mic,
   Play,
-  Image as ImageIcon
+  Image as ImageIcon,
+  AlertTriangle,
+  X
 } from 'lucide-react'
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, ARTICLE_CATEGORIES } from '@/types/speaker'
 import { uploadAudio as uploadAudioAction } from '@/app/api/admin/speaker/upload-audio/action'
 import ImageUploadModal from '@/components/admin/ImageUploadModal'
+
+interface PageMessage {
+  type: 'success' | 'error'
+  text: string
+}
+
+const getErrorMessage = (error: unknown) => {
+  return error instanceof Error ? error.message : '未知错误'
+}
 
 interface SpeakerArticle {
   id: string
@@ -61,6 +72,7 @@ export default function SpeakerArticleEditPage({ params }: { params: Promise<{ a
   const [saving, setSaving] = useState(false)
   const [uploadingAudio, setUploadingAudio] = useState(false)
   const [imageModalOpen, setImageModalOpen] = useState(false)
+  const [message, setMessage] = useState<PageMessage | null>(null)
 
   // 表单数据
   const [formData, setFormData] = useState({
@@ -97,9 +109,9 @@ export default function SpeakerArticleEditPage({ params }: { params: Promise<{ a
         has_preroll_ad: data.has_preroll_ad,
         status: data.status
       })
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('获取文章详情失败:', error)
-      alert('获取文章详情失败: ' + error.message)
+      setMessage({ type: 'error', text: `获取文章详情失败：${getErrorMessage(error)}` })
     } finally {
       setLoading(false)
     }
@@ -122,10 +134,10 @@ export default function SpeakerArticleEditPage({ params }: { params: Promise<{ a
       }
 
       setFormData(prev => ({ ...prev, audio_url: result.data.url }))
-      alert('音频上传成功！')
-    } catch (error: any) {
+      setMessage({ type: 'success', text: '音频上传成功，保存后会替换当前音频' })
+    } catch (error: unknown) {
       console.error('上传音频失败:', error)
-      alert('上传音频失败: ' + error.message)
+      setMessage({ type: 'error', text: `上传音频失败：${getErrorMessage(error)}` })
     } finally {
       setUploadingAudio(false)
     }
@@ -133,9 +145,11 @@ export default function SpeakerArticleEditPage({ params }: { params: Promise<{ a
 
   // 保存文章
   const handleSave = async () => {
+    setMessage(null)
+
     // 验证必填字段
     if (!formData.title.trim()) {
-      alert('请输入文章标题')
+      setMessage({ type: 'error', text: '请输入文章标题' })
       return
     }
 
@@ -153,11 +167,11 @@ export default function SpeakerArticleEditPage({ params }: { params: Promise<{ a
         throw new Error('保存失败')
       }
 
-      alert('保存成功！')
+      setMessage({ type: 'success', text: '保存成功' })
       await fetchArticle() // 重新加载数据
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('保存失败:', error)
-      alert('保存失败: ' + error.message)
+      setMessage({ type: 'error', text: `保存失败：${getErrorMessage(error)}` })
     } finally {
       setSaving(false)
     }
@@ -201,6 +215,34 @@ export default function SpeakerArticleEditPage({ params }: { params: Promise<{ a
 
   return (
     <div className="p-6 max-w-4xl mx-auto">
+      {message && (
+        <div
+          className={`mb-4 flex items-start justify-between gap-3 rounded-lg border-2 px-4 py-3 shadow-[3px_3px_0px_0px_#000] ${
+            message.type === 'success'
+              ? 'border-green-800 bg-green-50 text-green-900'
+              : 'border-red-800 bg-red-50 text-red-900'
+          }`}
+          role={message.type === 'error' ? 'alert' : 'status'}
+        >
+          <div className="flex items-start gap-2">
+            {message.type === 'success' ? (
+              <CheckCircle size={18} className="mt-0.5 shrink-0" />
+            ) : (
+              <AlertTriangle size={18} className="mt-0.5 shrink-0" />
+            )}
+            <span className="text-sm font-bold">{message.text}</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setMessage(null)}
+            className="rounded p-1 hover:bg-black/5"
+            aria-label="关闭提示"
+          >
+            <X size={16} />
+          </button>
+        </div>
+      )}
+
       {/* 页面标题 */}
       <div className="flex items-center justify-between mb-6">
         <div className="flex items-center gap-4">

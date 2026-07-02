@@ -9,6 +9,7 @@ import {
   checkInvitationCodeAttempts,
   recordInvitationCodeFailure
 } from '@/lib/security'
+import { grantSpeakerLanguagePurchases } from '@/lib/speaker-entitlements'
 
 /**
  * 获取客户端IP地址
@@ -219,7 +220,9 @@ export async function signup(formData: {
         invitation_packages (
           id,
           name,
-          feature_permissions
+          feature_permissions,
+          language_packages,
+          validity_days
         )
       `)
       .eq('code', invitationCode)
@@ -422,6 +425,18 @@ export async function signup(formData: {
       console.log('[Signup] Continuing despite invitation code error (non-fatal)')
     } else {
       console.log('[Signup] Invitation code used successfully')
+      try {
+        const grantedCount = await grantSpeakerLanguagePurchases(supabaseAdmin, {
+          userId: authData.user.id,
+          featurePermissions: packageData?.feature_permissions,
+          languagePackages: packageData?.language_packages,
+          validityDays: packageData?.validity_days,
+          source: 'invitation_code',
+        })
+        console.log('[Signup] Speaker language purchases granted:', grantedCount)
+      } catch (speakerGrantError) {
+        console.error('[Signup] Speaker language purchase grant failed:', speakerGrantError)
+      }
     }
 
     console.log('[Signup] All steps completed successfully')

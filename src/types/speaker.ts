@@ -569,6 +569,7 @@ export interface UserAvailableLanguage {
 export interface GetArticlesParams {
   level?: SpeakerLevel
   language?: SupportedLanguage  // ✅ 新增
+  languages?: SupportedLanguage[]
   category?: ArticleCategory    // ✅ 新增
   status?: SpeakerArticleStatus
   limit?: number

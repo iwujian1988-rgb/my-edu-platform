@@ -111,19 +111,19 @@ export async function GET(request: Request) {
 
     // 性能优化：批量获取文章标题，避免前端逐个请求
     const uniqueArticleIds = Array.from(new Set(wordsWithDict.map(w => w.article_id).filter(Boolean)))
-    let articlesMap: Record<string, { id: string; title: string }> = {}
+    let articlesMap: Record<string, { id: string; title: string; language: string | null }> = {}
 
     if (uniqueArticleIds.length > 0) {
       const { data: articlesData, error: articlesError } = await supabase
         .from('speaker_articles')
-        .select('id, title')
+        .select('id, title, language')
         .in('id', uniqueArticleIds)
 
       if (!articlesError && articlesData) {
         articlesMap = articlesData.reduce((acc, article) => {
           acc[article.id] = article
           return acc
-        }, {} as Record<string, { id: string; title: string }>)
+        }, {} as Record<string, { id: string; title: string; language: string | null }>)
         console.log('[Speaker Words API] ✅ 批量获取文章标题:', articlesData.length)
       }
     }

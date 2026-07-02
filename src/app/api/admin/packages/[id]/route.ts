@@ -57,6 +57,7 @@ export async function PUT(
       validity_days,
       feature_permissions,
       book_permissions,
+      language_packages,
       is_active,
       sort_order
     } = body
@@ -83,6 +84,7 @@ export async function PUT(
         validity_days: validity_days !== undefined ? validity_days : (oldPackage as any).validity_days,
         feature_permissions: feature_permissions ?? (oldPackage as any).feature_permissions,
         book_permissions: book_permissions ?? (oldPackage as any).book_permissions,
+        language_packages: language_packages ?? (oldPackage as any).language_packages,
         is_active: is_active !== undefined ? is_active : (oldPackage as any).is_active,
         sort_order: sort_order !== undefined ? sort_order : (oldPackage as any).sort_order
       })

@@ -74,7 +74,7 @@ export const localFrenchProvider: IDictionaryProvider = {
     try {
       // 确保词库已加载
       const wordMap = await loadFrenchWords()
-      const found = wordMap.get(normalizedWord)
+      const found = resolveWord(wordMap, normalizedWord)
 
       if (!found) {
         return createEmptyEntry(word, 'Not found in local dictionary')
@@ -94,7 +94,7 @@ export const localFrenchProvider: IDictionaryProvider = {
 
     return words.map(word => {
       const normalizedWord = word.trim().toLowerCase()
-      const found = wordMap.get(normalizedWord)
+      const found = resolveWord(wordMap, normalizedWord)
 
       if (!found) {
         return createEmptyEntry(word, 'Not found')
@@ -116,11 +116,7 @@ async function loadFrenchWords(): Promise<Map<string, FrenchLocalWord>> {
 
   try {
     // 从 public/ 目录 fetch JSON（Turbopack 不支持 src 外的动态 import）
-    const response = await fetch('/data/french/french_words_all.json')
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}`)
-    }
-    const data: FrenchWordsData = await response.json()
+    const data = await loadFrenchWordsData()
 
     frenchWordsCache = new Map()
 
@@ -139,6 +135,24 @@ async function loadFrenchWords(): Promise<Map<string, FrenchLocalWord>> {
     console.error('[LocalFrench] 词库加载失败:', error)
     throw new Error('Failed to load French dictionary')
   }
+}
+
+async function loadFrenchWordsData(): Promise<FrenchWordsData> {
+  if (typeof window !== 'undefined') {
+    const response = await fetch('/data/french/french_words_all.json')
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`)
+    }
+    return response.json() as Promise<FrenchWordsData>
+  }
+
+  const [{ readFile }, path] = await Promise.all([
+    import('node:fs/promises'),
+    import('node:path'),
+  ])
+  const dictionaryPath = path.join(process.cwd(), 'public', 'data', 'french', 'french_words_all.json')
+  const raw = await readFile(dictionaryPath, 'utf8')
+  return JSON.parse(raw) as FrenchWordsData
 }
 
 // ============================================
@@ -199,6 +213,71 @@ function convertToUnifiedEntry(data: FrenchLocalWord): UnifiedDictEntry {
     // 元数据
     _fetched_at: Date.now()
   }
+}
+
+// ============================================
+// 词汇解析：处理冠词、缩写、括号注解等变体
+// ============================================
+
+/** 法语定冠词和不定冠词（用于从 "le logement" 中提取 "logement"） */
+const FRENCH_ARTICLES = [
+  "l'", "le ", "la ", "les ", "un ", "une ", "des ", "du ", "de la ", "de l'", "d'", "au ", "aux ",
+]
+
+/**
+ * 从词库 Map 中查找词，支持多种变体：
+ * 1. 原始查询（如 "le logement"）
+ * 2. 去冠词（"le logement" → "logement"）
+ * 3. 去括号注解（"le/la colocataire (coloc)" → "colocataire"）
+ * 4. 取斜杠后的备选形式（"pro (professionnel)" → "professionnel"）
+ */
+function resolveWord(wordMap: Map<string, FrenchLocalWord>, query: string): FrenchLocalWord | null {
+  // 1. 直接查
+  const direct = wordMap.get(query)
+  if (direct) return direct
+
+  // 2. 去括号及内容，再去冠词
+  //    "le/la colocataire (coloc)" → "le/la colocataire" → strip articles → ...
+  const noParens = query.replace(/\s*\(.*?\)\s*/g, '').trim()
+  if (noParens !== query) {
+    const found = resolveWord(wordMap, noParens)
+    if (found) return found
+  }
+
+  // 3. 括号里的内容可能就是词本身
+  //    "pro (professionnel)" → "professionnel"
+  const parenContent = query.match(/\(([^)]+)\)/)
+  if (parenContent) {
+    const inner = parenContent[1].trim().toLowerCase()
+    const found = wordMap.get(inner)
+    if (found) return found
+  }
+
+  // 4. 去冠词前缀
+  for (const article of FRENCH_ARTICLES) {
+    if (query.startsWith(article)) {
+      const stripped = query.slice(article.length).trim()
+      if (!stripped) continue
+
+      // 直接查去冠词后的词
+      const found = wordMap.get(stripped)
+      if (found) return found
+
+      // 去冠词后可能还有括号
+      return resolveWord(wordMap, stripped)
+    }
+  }
+
+  // 5. 处理 "word1/word2" 格式，取第一个和第二个分别试
+  if (query.includes('/')) {
+    const parts = query.split('/').map(p => p.trim())
+    for (const part of parts) {
+      const found = resolveWord(wordMap, part)
+      if (found) return found
+    }
+  }
+
+  return null
 }
 
 // ============================================

@@ -25,7 +25,27 @@ const LEVEL_LABELS: Record<number, string> = {
   5: '专家'
 }
 
+const COVER_STYLES: Record<number, { bg: string; accent: string; text: string }> = {
+  1: { bg: 'bg-[#F8D95B]', accent: 'bg-[#1F2937]', text: 'text-black' },
+  2: { bg: 'bg-[#B4F416]', accent: 'bg-[#0F172A]', text: 'text-black' },
+  3: { bg: 'bg-[#7DD3FC]', accent: 'bg-[#7C2D12]', text: 'text-black' },
+  4: { bg: 'bg-[#FDBA74]', accent: 'bg-[#164E63]', text: 'text-black' },
+  5: { bg: 'bg-[#FCA5A5]', accent: 'bg-[#111827]', text: 'text-black' },
+}
+
+function getCoverLabel(article: SpeakerArticle): string {
+  if (article.language === 'fr') {
+    if (article.title.includes('ABC')) return 'Petits Contes'
+    if (article.title.includes('Cinq semaines')) return 'Cinq semaines'
+    if (article.title.includes('Misérables')) return 'Les Misérables'
+  }
+
+  return article.title.split('·')[0]?.trim() || article.title
+}
+
 export function SpeakerCard({ article, showStatus = true }: SpeakerCardProps) {
+  const coverStyle = COVER_STYLES[article.level] || COVER_STYLES[3]
+  const coverLabel = getCoverLabel(article)
   const completedSteps = [
     article.progress?.step1Completed,
     article.progress?.step2Completed,
@@ -96,8 +116,22 @@ export function SpeakerCard({ article, showStatus = true }: SpeakerCardProps) {
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
           />
         ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <BookOpen className="w-16 h-16 text-black dark:text-white opacity-20" />
+          <div className={`w-full h-full ${coverStyle.bg} ${coverStyle.text} relative overflow-hidden flex flex-col justify-between p-5`}>
+            <div className={`absolute -right-10 -top-10 w-28 h-28 ${coverStyle.accent} rotate-12 opacity-95`} />
+            <div className={`absolute -left-8 bottom-4 w-24 h-8 ${coverStyle.accent} -rotate-12 opacity-90`} />
+            <div className="relative z-10 flex items-center gap-2 text-xs font-black tracking-[0.18em] uppercase">
+              <span>Speaker</span>
+              <span className="h-[3px] w-10 bg-black" />
+              <span>{article.language.toUpperCase()}</span>
+            </div>
+            <div className="relative z-10">
+              <div className="text-3xl font-black tracking-tight leading-none italic">
+                {coverLabel}
+              </div>
+              <div className="mt-3 inline-flex border-[2px] border-black bg-white/80 px-2 py-1 text-xs font-black">
+                L{article.level} · {LEVEL_LABELS[article.level] || '进阶'}
+              </div>
+            </div>
           </div>
         )}
 

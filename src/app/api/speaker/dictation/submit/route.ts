@@ -13,6 +13,7 @@
 import { NextResponse } from 'next/server'
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { getBatchDictEntries } from '@/lib/dict-service'
+import { lookupBatch, type DictionaryLanguage } from '@/lib/dictionary'
 import { parseSentenceTokens, validateWordInput } from '@/lib/speaker-utils'
 import { dedupeGhostWordInserts, getGhostWordLookupWords } from '@/lib/speaker-ghost-words'
 import type { SupabaseClient } from '@supabase/supabase-js'
@@ -33,6 +34,16 @@ interface SpeakerArticleSentence {
   text?: string
   text_en?: string
   start_time?: number | null
+}
+
+interface SpeakerDictEntryForCache {
+  word: string
+  phonetic?: string
+  us_phonetic?: string
+  uk_phonetic?: string
+  definition?: string
+  example_sentence?: string
+  example_sentence_en?: string
 }
 
 /**
@@ -65,7 +76,7 @@ export async function POST(request: Request) {
 
     const { data: article, error: articleError } = await supabase
       .from('speaker_articles')
-      .select('id, json_data')
+      .select('id, json_data, language')
       .eq('id', articleId)
       .single()
 
@@ -305,10 +316,20 @@ export async function POST(request: Request) {
               if (wordsNeedApi.length > 0) {
                 console.log(`[Dict Async Fill] 批次 ${Math.floor(i / BATCH_SIZE) + 1}: 缓存未命中 ${wordsNeedApi.length} 个单词`)
 
-                const dictEntries = await getBatchDictEntries(wordsNeedApi)
+                const articleLanguage = article.language === 'fr' ? 'fr' : 'en'
+                const dictEntries: SpeakerDictEntryForCache[] = articleLanguage === 'fr'
+                  ? await lookupBatch(wordsNeedApi, articleLanguage as DictionaryLanguage, {
+                      skipCache: true,
+                      skipFallback: false
+                    })
+                  : await getBatchDictEntries(wordsNeedApi)
 
                 // 存入缓存表
                 for (const entry of dictEntries) {
+                  if (!entry.definition) {
+                    continue
+                  }
+
                   // P1修复：使用 onConflict + ignore 避免并发插入冲突
                   const { error: insertError } = await supabase
                     .from('speaker_word_cache')
@@ -355,7 +376,6 @@ export async function POST(request: Request) {
                     })
                     .eq('word', word)
                     .eq('user_id', user.id)
-                    .is('phonetic', null)
                 }
               }
 

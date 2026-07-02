@@ -20,9 +20,20 @@ import {
   Filter,
   ChevronDown,
   FileAudio,
-  FileJson
+  FileJson,
+  AlertTriangle,
+  Loader2,
+  X
 } from 'lucide-react'
 import { LANGUAGE_NAMES, LANGUAGE_FLAGS, ARTICLE_CATEGORIES } from '@/types/speaker'
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+} from '@/components/ui/dialog'
 
 interface SpeakerArticle {
   id: string
@@ -43,6 +54,11 @@ interface PaginationInfo {
   pageSize: number
   total: number
   totalPages: number
+}
+
+interface PageMessage {
+  type: 'success' | 'error'
+  text: string
 }
 
 const LEVEL_MAP = {
@@ -88,6 +104,9 @@ export default function SpeakerArticlesPage() {
   const [statusFilter, setStatusFilter] = useState<string>('')
   const [sortBy, setSortBy] = useState('created_at')
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
+  const [message, setMessage] = useState<PageMessage | null>(null)
+  const [deleteTarget, setDeleteTarget] = useState<SpeakerArticle | null>(null)
+  const [deletingId, setDeletingId] = useState<string | null>(null)
 
   // 获取文章列表
   const fetchArticles = async () => {
@@ -114,30 +133,32 @@ export default function SpeakerArticlesPage() {
       setPagination(data.pagination || pagination)
     } catch (error) {
       console.error('获取文章列表失败:', error)
-      alert('获取文章列表失败，请稍后重试')
+      setMessage({ type: 'error', text: '获取文章列表失败，请稍后重试' })
     } finally {
       setLoading(false)
     }
   }
 
   // 删除文章
-  const handleDelete = async (id: string, title: string) => {
-    if (!confirm(`确定要删除文章"${title}"吗？此操作不可恢复！`)) {
-      return
-    }
-
+  const handleDelete = async () => {
+    if (!deleteTarget) return
+    setDeletingId(deleteTarget.id)
+    setMessage(null)
     try {
-      const response = await fetch(`/api/admin/speaker/articles/${id}`, {
+      const response = await fetch(`/api/admin/speaker/articles/${deleteTarget.id}`, {
         method: 'DELETE'
       })
 
       if (!response.ok) throw new Error('删除失败')
 
-      alert('删除成功')
+      setMessage({ type: 'success', text: `已删除《${deleteTarget.title}》` })
+      setDeleteTarget(null)
       fetchArticles()
     } catch (error) {
       console.error('删除文章失败:', error)
-      alert('删除失败，请稍后重试')
+      setMessage({ type: 'error', text: '删除失败，请稍后重试' })
+    } finally {
+      setDeletingId(null)
     }
   }
 
@@ -155,6 +176,30 @@ export default function SpeakerArticlesPage() {
 
   return (
     <div className="p-6">
+      {message && (
+        <div
+          className={`mb-4 flex items-start justify-between gap-3 rounded-lg border-2 px-4 py-3 shadow-[3px_3px_0px_0px_#000] ${
+            message.type === 'success'
+              ? 'border-green-800 bg-green-50 text-green-900'
+              : 'border-red-800 bg-red-50 text-red-900'
+          }`}
+          role={message.type === 'error' ? 'alert' : 'status'}
+        >
+          <div className="flex items-start gap-2">
+            {message.type === 'error' && <AlertTriangle size={18} className="mt-0.5 shrink-0" />}
+            <span className="text-sm font-bold">{message.text}</span>
+          </div>
+          <button
+            type="button"
+            onClick={() => setMessage(null)}
+            className="rounded p-1 hover:bg-black/5"
+            aria-label="关闭提示"
+          >
+            <X size={16} />
+          </button>
+        </div>
+      )}
+
       {/* 页面标题和操作按钮 */}
       <div className="flex items-center justify-between mb-6">
         <div>
@@ -374,7 +419,7 @@ export default function SpeakerArticlesPage() {
                           <Edit size={18} />
                         </Link>
                         <button
-                          onClick={() => handleDelete(article.id, article.title)}
+                          onClick={() => setDeleteTarget(article)}
                           className="p-2 text-gray-600 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors"
                           title="删除"
                         >
@@ -414,6 +459,49 @@ export default function SpeakerArticlesPage() {
           </div>
         </div>
       )}
+
+      <Dialog open={!!deleteTarget} onOpenChange={(open) => {
+        if (!open && !deletingId) setDeleteTarget(null)
+      }}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle className="flex items-center gap-2 text-red-700">
+              <AlertTriangle size={22} />
+              删除文章
+            </DialogTitle>
+            <DialogDescription>
+              此操作不可恢复。删除后，这篇文章的前台入口、学习路径和相关素材引用都将不可用。
+            </DialogDescription>
+          </DialogHeader>
+
+          {deleteTarget && (
+            <div className="rounded-lg border-2 border-black bg-gray-50 p-4">
+              <p className="text-sm font-bold text-gray-500">即将删除</p>
+              <p className="mt-1 font-black text-gray-900">{deleteTarget.title}</p>
+            </div>
+          )}
+
+          <DialogFooter>
+            <button
+              type="button"
+              onClick={() => setDeleteTarget(null)}
+              disabled={!!deletingId}
+              className="px-4 py-2 border-2 border-black rounded-lg bg-white text-black font-bold hover:bg-gray-50 disabled:opacity-50"
+            >
+              取消
+            </button>
+            <button
+              type="button"
+              onClick={handleDelete}
+              disabled={!!deletingId}
+              className="inline-flex items-center justify-center gap-2 px-4 py-2 border-2 border-red-900 rounded-lg bg-red-600 text-white font-bold hover:bg-red-700 disabled:opacity-60"
+            >
+              {deletingId && <Loader2 size={16} className="animate-spin" />}
+              确认删除
+            </button>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     </div>
   )
 }

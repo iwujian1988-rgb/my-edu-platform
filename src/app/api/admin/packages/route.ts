@@ -65,6 +65,7 @@ export async function POST(request: NextRequest) {
       validity_days,
       feature_permissions,
       book_permissions,
+      language_packages,
       video_package_ids,
       is_active = true,
       sort_order = 0
@@ -86,6 +87,7 @@ export async function POST(request: NextRequest) {
         validity_days: validity_days || null,
         feature_permissions: feature_permissions || [],
         book_permissions: book_permissions || [],
+        language_packages: language_packages || [],
         is_active,
         sort_order
       })

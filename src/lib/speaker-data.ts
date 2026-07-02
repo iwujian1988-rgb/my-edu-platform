@@ -26,6 +26,42 @@ import type {
   ArticleCategory,
 } from '../types/speaker'
 
+const SPEAKER_ARTICLE_LIST_SELECT = [
+  'id',
+  'level',
+  'language',
+  'category',
+  'title',
+  'source_url',
+  'audio_url',
+  'image_url',
+  'has_preroll_ad',
+  'total_sentences',
+  'duration_seconds',
+  'word_count',
+  'status',
+  'created_at',
+  'updated_at',
+].join(', ')
+
+interface SpeakerArticleListRow {
+  id: string
+  level: SpeakerLevel
+  language: SupportedLanguage
+  category: ArticleCategory
+  title: string
+  source_url: string | null
+  audio_url: string
+  image_url: string | null
+  has_preroll_ad: boolean
+  total_sentences: number
+  duration_seconds: number | null
+  word_count: number | null
+  status: SpeakerArticleStatus
+  created_at: string
+  updated_at: string
+}
+
 // ========================================
 // 1. 文章相关查询
 // ========================================
@@ -53,7 +89,7 @@ export async function getSpeakerArticles(
     // 先获取总数
     let countQuery = supabase
       .from('speaker_articles')
-      .select('*', { count: 'exact', head: true })
+      .select('id', { count: 'exact', head: true })
 
     // 状态过滤
     const statusFilter = params?.status
@@ -68,6 +104,8 @@ export async function getSpeakerArticles(
     }
     if (params?.language) {
       countQuery = countQuery.eq('language', params.language)
+    } else if (params?.languages?.length) {
+      countQuery = countQuery.in('language', params.languages)
     }
     if (params?.category) {
       countQuery = countQuery.eq('category', params.category)
@@ -85,7 +123,7 @@ export async function getSpeakerArticles(
     // 获取分页数据
     let query = supabase
       .from('speaker_articles')
-      .select('*')
+      .select(SPEAKER_ARTICLE_LIST_SELECT)
 
     // 状态过滤：如果未指定，默认查询 published 和 active
     if (statusFilter) {
@@ -99,6 +137,8 @@ export async function getSpeakerArticles(
     }
     if (params?.language) {
       query = query.eq('language', params.language)
+    } else if (params?.languages?.length) {
+      query = query.in('language', params.languages)
     }
     if (params?.category) {
       query = query.eq('category', params.category)
@@ -128,17 +168,22 @@ export async function getSpeakerArticles(
     }
 
     // 处理每篇文章的 sentences 字段
-    const articles = data.map((item: any) => {
-      const sentences = (item.json_data?.sentences || []).map((s: any) => ({
-        ...s,
-        text_en: s.text || s.text_en || ''
-      }))
-
-      return {
-        ...item,
-        sentences
-      } as SpeakerArticle
-    })
+    const articles = (data as SpeakerArticleListRow[]).map(row => ({
+      ...row,
+      sentences: [],
+      json_data: {
+        meta: {
+          level: row.level,
+          title: row.title,
+          source_url: row.source_url || '',
+          audio_url: row.audio_url,
+          image_url: row.image_url || '',
+          has_preroll_ad: row.has_preroll_ad,
+          status: row.status,
+        },
+        sentences: [],
+      },
+    } satisfies SpeakerArticle))
 
     console.log('[Speaker Data] ✅ 成功获取文章列表:', { count: articles.length, total, page, pageSize })
     return { articles, total }

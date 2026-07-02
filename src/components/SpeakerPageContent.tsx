@@ -6,7 +6,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { SpeakerCard } from '@/components/speaker/SpeakerCard'
-import type { SpeakerArticle, ArticleCategory } from '@/types/speaker'
+import type { SpeakerArticle, ArticleCategory, SupportedLanguage } from '@/types/speaker'
 import { ARTICLE_CATEGORIES } from '@/types/speaker'
 import React from 'react'
 import { AlertTriangle, BookOpen, ChevronLeft, ChevronRight, FileText } from 'lucide-react'
@@ -14,6 +14,7 @@ import { AlertTriangle, BookOpen, ChevronLeft, ChevronRight, FileText } from 'lu
 interface FilterState {
   level: 'all' | 1 | 2 | 3 | 4 | 5
   category: ArticleCategory | 'all'
+  language: SupportedLanguage | 'all'
 }
 
 interface PaginationState {
@@ -31,13 +32,40 @@ const LEVEL_FILTERS = [
   { value: 5, label: 'L5 专家' }
 ] as const
 
-export function SpeakerPageContent({ initialArticles }: { initialArticles: SpeakerArticle[] }) {
+const VALID_LANGUAGES: SupportedLanguage[] = ['en', 'pl', 'es', 'fr', 'de', 'ja']
+const LANGUAGE_LABELS: Record<SupportedLanguage, string> = {
+  en: '英语',
+  pl: '波兰语',
+  es: '西班牙语',
+  fr: '法语',
+  de: '德语',
+  ja: '日语',
+}
+
+interface PurchasedLanguage {
+  language: SupportedLanguage
+  language_name?: string
+  is_purchased: boolean
+}
+
+export function SpeakerPageContent({
+  initialArticles,
+  initialLanguage,
+}: {
+  initialArticles: SpeakerArticle[]
+  initialLanguage?: string
+}) {
+  const normalizedInitialLanguage = VALID_LANGUAGES.includes(initialLanguage as SupportedLanguage)
+    ? initialLanguage as SupportedLanguage
+    : 'all'
   const [articles, setArticles] = useState<SpeakerArticle[]>(initialArticles)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [purchasedLanguages, setPurchasedLanguages] = useState<PurchasedLanguage[]>([])
   const [filter, setFilter] = useState<FilterState>({
     level: 'all',
-    category: 'all'
+    category: 'all',
+    language: normalizedInitialLanguage
   })
   const [pagination, setPagination] = useState<PaginationState>({
     page: 1,
@@ -46,6 +74,24 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
     totalPages: 0
   })
   const isFirstRender = useRef(true)
+
+  useEffect(() => {
+    const loadLanguages = async () => {
+      try {
+        const response = await fetch('/api/speaker/languages')
+        if (!response.ok) return
+        const data = await response.json()
+        const purchased = (data.languages || [])
+          .filter((item: PurchasedLanguage) => item.is_purchased)
+          .map((item: PurchasedLanguage) => item)
+        setPurchasedLanguages(purchased)
+      } catch (err) {
+        console.error('[Speaker Page] 语言包加载失败:', err)
+      }
+    }
+
+    void loadLanguages()
+  }, [])
 
   // 获取文章列表
   useEffect(() => {
@@ -60,7 +106,7 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
       fetchArticles(1)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [filter.level, filter.category])
+  }, [filter.level, filter.category, filter.language])
 
   // 页码改变时获取数据
   useEffect(() => {
@@ -81,6 +127,9 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
       }
       if (filter.category !== 'all') {
         params.append('category', filter.category)
+      }
+      if (filter.language !== 'all') {
+        params.append('language', filter.language)
       }
       params.append('page', page.toString())
       params.append('pageSize', pagination.pageSize.toString())
@@ -196,6 +245,45 @@ export function SpeakerPageContent({ initialArticles }: { initialArticles: Speak
 
         {/* 过滤器工具栏 */}
         <div className="mb-6">
+          {purchasedLanguages.length > 1 && (
+            <div className="mb-5">
+              <div className="text-sm font-black text-gray-700 dark:text-gray-300 transition-colors duration-300 mb-3">语言包：</div>
+              <div className="flex gap-2 flex-wrap">
+                <button
+                  onClick={() => setFilter({ ...filter, language: 'all' })}
+                  className={`
+                    px-4 py-2 rounded-sm text-sm font-black tracking-tight
+                    border-[3px] border-black dark:border-gray-600
+                    transition-all duration-150
+                    ${filter.language === 'all'
+                      ? 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                      : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                    }
+                  `}
+                >
+                  全部已购
+                </button>
+                {purchasedLanguages.map(item => (
+                  <button
+                    key={item.language}
+                    onClick={() => setFilter({ ...filter, language: item.language })}
+                    className={`
+                      px-4 py-2 rounded-sm text-sm font-black tracking-tight
+                      border-[3px] border-black dark:border-gray-600
+                      transition-all duration-150
+                      ${filter.language === item.language
+                        ? 'bg-[#B4F416] shadow-[4px_4px_0px_0px_#000] hover:shadow-[2px_2px_0px_0px_#000] hover:-translate-y-0.5'
+                        : 'bg-white dark:bg-gray-800 shadow-[6px_6px_0px_0px_#000] dark:shadow-[6px_6px_0px_0px_#666] hover:shadow-[4px_4px_0px_0px_#000] dark:hover:shadow-[4px_4px_0px_0px_#666] hover:-translate-y-1 text-black dark:text-white'
+                      }
+                    `}
+                  >
+                    {item.language_name || LANGUAGE_LABELS[item.language]}
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* PC端：难度等级和内容分类在同一行，标签在上方 */}
           <div className="hidden md:flex items-start gap-8">
             {/* 难度等级筛选 */}
