@@ -35,10 +35,7 @@ function isQuestionCorrect(
   if (question.type === 'multiple-choice') {
     const selected = [...(ans.multiSelected || [])].sort()
     const answer = [...(Array.isArray(question.answer) ? question.answer : [])].sort()
-    return (
-      selected.length === answer.length &&
-      selected.every((value, i) => value === answer[i])
-    )
+    return selected.length === answer.length && selected.every((value, i) => value === answer[i])
   }
   if (question.type === 'fill-blank') {
     return normalize(ans.blankAnswer) === normalize(String(question.answer))
@@ -54,11 +51,15 @@ function optionClass(
 ): string {
   if (!submitted) {
     return ans?.selected === option
-      ? 'border-primary-300 bg-primary-50 dark:bg-primary-900/40 dark:border-primary-500'
+      ? 'border-primary-300 bg-primary-50 dark:border-primary-500 dark:bg-primary-900/40'
       : 'border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-500'
   }
-  if (option === question.answer) return 'border-green-300 bg-green-50 dark:bg-green-950/40 dark:border-green-700'
-  if (ans?.selected === option) return 'border-red-300 bg-red-50 dark:bg-red-950/40 dark:border-red-700'
+  if (option === question.answer) {
+    return 'border-green-300 bg-green-50 dark:border-green-700 dark:bg-green-950/40'
+  }
+  if (ans?.selected === option) {
+    return 'border-red-300 bg-red-50 dark:border-red-700 dark:bg-red-950/40'
+  }
   return 'border-gray-200 dark:border-gray-700'
 }
 
@@ -70,12 +71,15 @@ function multiOptionClass(
 ): string {
   if (!submitted) {
     return ans?.multiSelected?.includes(option)
-      ? 'border-primary-300 bg-primary-50 dark:bg-primary-900/40 dark:border-primary-500'
+      ? 'border-primary-300 bg-primary-50 dark:border-primary-500 dark:bg-primary-900/40'
       : 'border-gray-200 hover:border-gray-300 dark:border-gray-700 dark:hover:border-gray-500'
   }
-  if (Array.isArray(question.answer) && question.answer.includes(option))
-    return 'border-green-300 bg-green-50 dark:bg-green-950/40 dark:border-green-700'
-  if (ans?.multiSelected?.includes(option)) return 'border-red-300 bg-red-50 dark:bg-red-950/40 dark:border-red-700'
+  if (Array.isArray(question.answer) && question.answer.includes(option)) {
+    return 'border-green-300 bg-green-50 dark:border-green-700 dark:bg-green-950/40'
+  }
+  if (ans?.multiSelected?.includes(option)) {
+    return 'border-red-300 bg-red-50 dark:border-red-700 dark:bg-red-950/40'
+  }
   return 'border-gray-200 dark:border-gray-700'
 }
 
@@ -85,11 +89,53 @@ function blankInputClass(
   submitted: boolean,
 ): string {
   if (!submitted) {
-    return 'border-gray-300 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100 focus:border-primary-500 focus:ring-1 focus:ring-primary-500'
+    return 'border-gray-300 focus:border-primary-500 focus:ring-1 focus:ring-primary-500 dark:border-gray-700 dark:bg-gray-950 dark:text-gray-100'
   }
   return isQuestionCorrect(question, ans, submitted)
-    ? 'border-green-300 bg-green-50 dark:bg-green-950/40 dark:border-green-700 dark:text-gray-100'
-    : 'border-red-300 bg-red-50 dark:bg-red-950/40 dark:border-red-700 dark:text-gray-100'
+    ? 'border-green-300 bg-green-50 dark:border-green-700 dark:bg-green-950/40 dark:text-gray-100'
+    : 'border-red-300 bg-red-50 dark:border-red-700 dark:bg-red-950/40 dark:text-gray-100'
+}
+
+function ResultBadge({ correct }: { correct: boolean }) {
+  return (
+    <span className={`shrink-0 text-xs font-medium ${correct ? 'text-green-600' : 'text-red-500'}`}>
+      {correct ? '正确' : '错误'}
+    </span>
+  )
+}
+
+function CorrectIcon() {
+  return (
+    <svg
+      className="ml-auto h-4 w-4 shrink-0 text-green-500"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      aria-hidden
+    >
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+        clipRule="evenodd"
+      />
+    </svg>
+  )
+}
+
+function WrongIcon() {
+  return (
+    <svg
+      className="ml-auto h-4 w-4 shrink-0 text-red-400"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      aria-hidden
+    >
+      <path
+        fillRule="evenodd"
+        d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+        clipRule="evenodd"
+      />
+    </svg>
+  )
 }
 
 export function QuizBlock({
@@ -100,10 +146,7 @@ export function QuizBlock({
   onCompleted?: () => void
 }) {
   const isMultiQuiz = Array.isArray(block.questions) && block.questions.length > 0
-  const questions = useMemo(
-    () => (isMultiQuiz ? block.questions || [] : []),
-    [isMultiQuiz, block.questions],
-  )
+  const questions = useMemo(() => (isMultiQuiz ? block.questions || [] : []), [isMultiQuiz, block.questions])
   const singleQuiz = block.quiz
 
   const [answers, setAnswers] = useState<AnswerState[]>([])
@@ -117,17 +160,14 @@ export function QuizBlock({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [block.id, block.questions, block.quiz])
 
-  const allAnswered =
-    source.length > 0 && source.every((q, i) => hasAnswer(q, answers[i]))
+  const allAnswered = source.length > 0 && source.every((q, i) => hasAnswer(q, answers[i]))
 
   const score = questions.reduce(
     (total, q, i) => total + (isQuestionCorrect(q, answers[i], submitted) ? 1 : 0),
     0,
   )
 
-  const singleIsCorrect = singleQuiz
-    ? isQuestionCorrect(singleQuiz, answers[0], submitted)
-    : false
+  const singleIsCorrect = singleQuiz ? isQuestionCorrect(singleQuiz, answers[0], submitted) : false
 
   function inputName(index: number): string {
     return `quiz-${block.id || 'block'}-${index}`
@@ -156,15 +196,15 @@ export function QuizBlock({
 
   if (!isMultiQuiz && !singleQuiz) {
     return (
-      <div className="bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 p-5">
-        <p className="text-sm text-gray-400">本测验暂无题目</p>
+      <div className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-950">
+        <p className="text-sm text-gray-400 dark:text-gray-500">本测验暂无题目</p>
       </div>
     )
   }
 
   return (
-    <div className="bg-white dark:bg-gray-950 rounded-lg border border-gray-200 dark:border-gray-800 p-5">
-      <h3 className="font-bold text-gray-800 mb-4">{block.title || '小测验'}</h3>
+    <div className="rounded-lg border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-950">
+      <h3 className="mb-4 font-bold text-gray-800 dark:text-gray-100">{block.title || '小测验'}</h3>
 
       {isMultiQuiz ? (
         <>
@@ -172,24 +212,17 @@ export function QuizBlock({
             {questions.map((question, index) => {
               const ans = answers[index] || emptyAnswer()
               const correct = isQuestionCorrect(question, ans, submitted)
+
               return (
                 <section
                   key={question.id || index}
-                  className="rounded-xl border border-gray-200 dark:border-gray-800 p-4"
+                  className="rounded-xl border border-gray-200 p-4 dark:border-gray-800"
                 >
-                  <div className="flex items-start justify-between gap-3 mb-3">
+                  <div className="mb-3 flex items-start justify-between gap-3">
                     <p className="text-sm font-medium text-gray-800 dark:text-gray-100">
                       {index + 1}. {question.question}
                     </p>
-                    {submitted && (
-                      <span
-                        className={`shrink-0 text-xs font-medium ${
-                          correct ? 'text-green-600' : 'text-red-500'
-                        }`}
-                      >
-                        {correct ? '正确' : '错误'}
-                      </span>
-                    )}
+                    {submitted && <ResultBadge correct={correct} />}
                   </div>
 
                   {question.type === 'single-choice' && (
@@ -197,7 +230,7 @@ export function QuizBlock({
                       {(question.options || []).map((opt, oi) => (
                         <label
                           key={oi}
-                          className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors ${optionClass(
+                          className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition-colors ${optionClass(
                             question,
                             ans,
                             opt,
@@ -209,42 +242,12 @@ export function QuizBlock({
                             name={inputName(index)}
                             value={opt}
                             checked={ans.selected === opt}
-                            onChange={() =>
-                              updateAnswer(index, (a) => ({ ...a, selected: opt }))
-                            }
+                            onChange={() => updateAnswer(index, (a) => ({ ...a, selected: opt }))}
                             className="accent-primary-600"
                           />
                           <span className="text-sm text-gray-800 dark:text-gray-100">{opt}</span>
-                          {submitted && opt === question.answer && (
-                            <svg
-                              className="w-4 h-4 text-green-500 ml-auto shrink-0"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
-                              aria-hidden
-                            >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                          )}
-                          {submitted &&
-                            ans.selected === opt &&
-                            opt !== question.answer && (
-                              <svg
-                                className="w-4 h-4 text-red-400 ml-auto shrink-0"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                aria-hidden
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            )}
+                          {submitted && opt === question.answer && <CorrectIcon />}
+                          {submitted && ans.selected === opt && opt !== question.answer && <WrongIcon />}
                         </label>
                       ))}
                     </div>
@@ -255,7 +258,7 @@ export function QuizBlock({
                       {(question.options || []).map((opt, oi) => (
                         <label
                           key={oi}
-                          className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors ${multiOptionClass(
+                          className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition-colors ${multiOptionClass(
                             question,
                             ans,
                             opt,
@@ -282,39 +285,10 @@ export function QuizBlock({
                           <span className="text-sm text-gray-800 dark:text-gray-100">{opt}</span>
                           {submitted &&
                             Array.isArray(question.answer) &&
-                            question.answer.includes(opt) && (
-                              <svg
-                                className="w-4 h-4 text-green-500 ml-auto shrink-0"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                aria-hidden
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            )}
+                            question.answer.includes(opt) && <CorrectIcon />}
                           {submitted &&
                             ans.multiSelected.includes(opt) &&
-                            !(
-                              Array.isArray(question.answer) &&
-                              question.answer.includes(opt)
-                            ) && (
-                              <svg
-                                className="w-4 h-4 text-red-400 ml-auto shrink-0"
-                                fill="currentColor"
-                                viewBox="0 0 20 20"
-                                aria-hidden
-                              >
-                                <path
-                                  fillRule="evenodd"
-                                  d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                                  clipRule="evenodd"
-                                />
-                              </svg>
-                            )}
+                            !(Array.isArray(question.answer) && question.answer.includes(opt)) && <WrongIcon />}
                         </label>
                       ))}
                     </div>
@@ -335,14 +309,14 @@ export function QuizBlock({
                         onKeyUp={(e) => {
                           if (e.key === 'Enter') submitQuiz()
                         }}
-                        className={`w-full px-4 py-2.5 rounded-lg border text-sm transition-colors ${blankInputClass(
+                        className={`w-full rounded-lg border px-4 py-2.5 text-sm transition-colors ${blankInputClass(
                           question,
                           ans,
                           submitted,
                         )}`}
                       />
                       {submitted && !correct && (
-                        <p className="text-sm text-green-600 mt-2">
+                        <p className="mt-2 text-sm text-green-600 dark:text-green-300">
                           正确答案：<strong>{String(question.answer)}</strong>
                         </p>
                       )}
@@ -350,7 +324,7 @@ export function QuizBlock({
                   )}
 
                   {submitted && question.explanation && (
-                    <div className="mt-4 p-4 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-800">
+                    <div className="mt-4 rounded-lg border border-blue-100 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950/40">
                       <p className="text-sm text-blue-800 dark:text-blue-200">{question.explanation}</p>
                     </div>
                   )}
@@ -364,10 +338,10 @@ export function QuizBlock({
               <button
                 onClick={submitQuiz}
                 disabled={!allAnswered}
-                className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`rounded-lg px-5 py-2 text-sm font-medium transition-colors ${
                   allAnswered
                     ? 'bg-primary-600 text-white hover:bg-primary-700'
-                    : 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500 cursor-not-allowed'
+                    : 'cursor-not-allowed bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500'
                 }`}
               >
                 提交测验
@@ -375,7 +349,7 @@ export function QuizBlock({
             ) : (
               <button
                 onClick={resetQuiz}
-                className="px-5 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
+                className="rounded-lg bg-gray-100 px-5 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
               >
                 重新作答
               </button>
@@ -383,11 +357,11 @@ export function QuizBlock({
           </div>
 
           {submitted && (
-            <div className="mt-4 rounded-xl border border-primary-100 dark:border-primary-800 bg-primary-50 dark:bg-primary-900/40 px-4 py-3">
+            <div className="mt-4 rounded-xl border border-primary-100 bg-primary-50 px-4 py-3 dark:border-primary-800 dark:bg-primary-900/40">
               <p className="text-sm font-semibold text-primary-800 dark:text-primary-100">
                 得分 {score} / {questions.length}
               </p>
-              <p className="text-xs text-primary-700 dark:text-primary-200 mt-1">
+              <p className="mt-1 text-xs text-primary-700 dark:text-primary-200">
                 已显示每题结果，你可以直接复盘，或修改答案后重新提交。
               </p>
             </div>
@@ -395,16 +369,16 @@ export function QuizBlock({
         </>
       ) : singleQuiz ? (
         <>
-          <p className="text-sm text-gray-700 dark:text-gray-200 mb-4">{singleQuiz.question}</p>
+          <p className="mb-4 text-sm text-gray-700 dark:text-gray-200">{singleQuiz.question}</p>
 
           {singleQuiz.type === 'single-choice' && (
-            <div className="space-y-2 mb-4">
+            <div className="mb-4 space-y-2">
               {(singleQuiz.options || []).map((opt, i) => {
                 const ans = answers[0] || emptyAnswer()
                 return (
                   <label
                     key={i}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors ${optionClass(
+                    className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition-colors ${optionClass(
                       singleQuiz,
                       ans,
                       opt,
@@ -416,42 +390,12 @@ export function QuizBlock({
                       name={inputName(0)}
                       value={opt}
                       checked={ans.selected === opt}
-                      onChange={() =>
-                        updateAnswer(0, (a) => ({ ...a, selected: opt }))
-                      }
+                      onChange={() => updateAnswer(0, (a) => ({ ...a, selected: opt }))}
                       className="accent-primary-600"
                     />
                     <span className="text-sm text-gray-800 dark:text-gray-100">{opt}</span>
-                    {submitted && opt === singleQuiz.answer && (
-                      <svg
-                        className="w-4 h-4 text-green-500 ml-auto shrink-0"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                        aria-hidden
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    )}
-                    {submitted &&
-                      ans.selected === opt &&
-                      opt !== singleQuiz.answer && (
-                        <svg
-                          className="w-4 h-4 text-red-400 ml-auto shrink-0"
-                          fill="currentColor"
-                          viewBox="0 0 20 20"
-                          aria-hidden
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      )}
+                    {submitted && opt === singleQuiz.answer && <CorrectIcon />}
+                    {submitted && ans.selected === opt && opt !== singleQuiz.answer && <WrongIcon />}
                   </label>
                 )
               })}
@@ -459,13 +403,13 @@ export function QuizBlock({
           )}
 
           {singleQuiz.type === 'multiple-choice' && (
-            <div className="space-y-2 mb-4">
+            <div className="mb-4 space-y-2">
               {(singleQuiz.options || []).map((opt, i) => {
                 const ans = answers[0] || emptyAnswer()
                 return (
                   <label
                     key={i}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-lg border cursor-pointer transition-colors ${multiOptionClass(
+                    className={`flex cursor-pointer items-center gap-3 rounded-lg border px-4 py-3 transition-colors ${multiOptionClass(
                       singleQuiz,
                       ans,
                       opt,
@@ -502,20 +446,18 @@ export function QuizBlock({
                 type="text"
                 value={(answers[0] || emptyAnswer()).blankAnswer}
                 placeholder={singleQuiz.placeholder || '输入你的答案...'}
-                onChange={(e) =>
-                  updateAnswer(0, (a) => ({ ...a, blankAnswer: e.target.value }))
-                }
+                onChange={(e) => updateAnswer(0, (a) => ({ ...a, blankAnswer: e.target.value }))}
                 onKeyUp={(e) => {
                   if (e.key === 'Enter') submitQuiz()
                 }}
-                className={`w-full px-4 py-2.5 rounded-lg border text-sm transition-colors ${blankInputClass(
+                className={`w-full rounded-lg border px-4 py-2.5 text-sm transition-colors ${blankInputClass(
                   singleQuiz,
                   answers[0],
                   submitted,
                 )}`}
               />
               {submitted && !singleIsCorrect && (
-                <p className="text-sm text-green-600 mt-2">
+                <p className="mt-2 text-sm text-green-600 dark:text-green-300">
                   正确答案：<strong>{String(singleQuiz.answer)}</strong>
                 </p>
               )}
@@ -527,10 +469,10 @@ export function QuizBlock({
               <button
                 onClick={submitQuiz}
                 disabled={!allAnswered}
-                className={`px-5 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`rounded-lg px-5 py-2 text-sm font-medium transition-colors ${
                   allAnswered
                     ? 'bg-primary-600 text-white hover:bg-primary-700'
-                    : 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500 cursor-not-allowed'
+                    : 'cursor-not-allowed bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-500'
                 }`}
               >
                 检查答案
@@ -538,25 +480,21 @@ export function QuizBlock({
             ) : (
               <button
                 onClick={resetQuiz}
-                className="px-5 py-2 rounded-lg text-sm font-medium bg-gray-100 text-gray-600 hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700 transition-colors"
+                className="rounded-lg bg-gray-100 px-5 py-2 text-sm font-medium text-gray-600 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-300 dark:hover:bg-gray-700"
               >
                 重试
               </button>
             )}
 
             {submitted && (
-              <span
-                className={`text-sm font-medium ${
-                  singleIsCorrect ? 'text-green-600' : 'text-red-500'
-                }`}
-              >
+              <span className={`text-sm font-medium ${singleIsCorrect ? 'text-green-600' : 'text-red-500'}`}>
                 {singleIsCorrect ? '正确!' : '不正确'}
               </span>
             )}
           </div>
 
           {submitted && singleQuiz.explanation && (
-            <div className="mt-4 p-4 rounded-lg bg-blue-50 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-800">
+            <div className="mt-4 rounded-lg border border-blue-100 bg-blue-50 p-4 dark:border-blue-800 dark:bg-blue-950/40">
               <p className="text-sm text-blue-800 dark:text-blue-200">{singleQuiz.explanation}</p>
             </div>
           )}

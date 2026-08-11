@@ -21,32 +21,31 @@ export function VideoBlock({ block }: { block: Block }) {
   const resolvedUrl = block.videoUrl || block.asset?.videoUrl || null
 
   return (
-    <div className="bg-white rounded-lg border border-gray-200 overflow-hidden">
+    <div className="overflow-hidden rounded-lg border border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950">
       {block.title && (
-        <div className="px-5 pt-4 pb-2">
-          <h3 className="font-bold text-gray-800 text-sm">{block.title}</h3>
+        <div className="px-5 pb-2 pt-4">
+          <h3 className="text-sm font-bold text-gray-800 dark:text-gray-100">{block.title}</h3>
         </div>
       )}
 
       {!resolvedUrl ? (
         <div className="px-5 py-8 text-center">
-          <p className="text-gray-400 text-sm">视频暂不可用</p>
+          <p className="text-sm text-gray-400 dark:text-gray-500">视频暂不可用</p>
         </div>
       ) : (
         <div className="relative bg-black">
-          {/* Loading skeleton */}
           {buffering && !loadFailed && (
-            <div className="absolute inset-0 z-10 flex items-center justify-center bg-gray-900 pointer-events-none">
+            <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-gray-900">
               <div className="text-center">
-                <div className="w-10 h-10 mx-auto mb-2 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                <p className="text-gray-400 text-xs">加载视频中...</p>
+                <div className="mx-auto mb-2 h-10 w-10 animate-spin rounded-full border-2 border-white/30 border-t-white" />
+                <p className="text-xs text-gray-400">加载视频中...</p>
               </div>
             </div>
           )}
 
           <video
             controls
-            className="w-full aspect-video"
+            className="aspect-video w-full"
             poster={block.poster || undefined}
             preload="metadata"
             onLoadedData={() => setBuffering(false)}
@@ -65,7 +64,7 @@ export function VideoBlock({ block }: { block: Block }) {
             <div className="absolute inset-0 flex items-center justify-center bg-gray-900">
               <div className="text-center">
                 <svg
-                  className="w-12 h-12 text-gray-500 mx-auto mb-2"
+                  className="mx-auto mb-2 h-12 w-12 text-gray-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -78,9 +77,9 @@ export function VideoBlock({ block }: { block: Block }) {
                     d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
                   />
                 </svg>
-                <p className="text-gray-400 text-sm">视频暂不可用</p>
+                <p className="text-sm text-gray-300">视频暂不可用</p>
                 {block.asset?.channel && (
-                  <p className="text-gray-600 text-xs mt-1">
+                  <p className="mt-1 text-xs text-gray-500">
                     {block.asset.channel} / {block.asset.segmentId}
                   </p>
                 )}
