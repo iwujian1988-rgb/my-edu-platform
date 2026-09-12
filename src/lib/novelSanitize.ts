@@ -58,3 +58,29 @@ export function sanitizeNovelHtml(html: string): string {
 
   return template.innerHTML
 }
+
+/**
+ * 把紧跟在 <b class="fw"> 之后的中文注释（（…））包进 <i class="zh">，
+ * 供阅读器按显示模式隐藏（隐藏中文 = 藏 i.zh，隐藏法语 = 藏 b.fw）。
+ * 在 sanitize 之后运行，<i> 由代码生成、内容原样取自文本节点，无注入面。
+ */
+export function wrapZhGlosses(html: string): string {
+  if (!html) return ''
+
+  const template = document.createElement('template')
+  template.innerHTML = html
+
+  for (const b of Array.from(template.content.querySelectorAll('b.fw'))) {
+    const next = b.nextSibling
+    if (!next || next.nodeType !== Node.TEXT_NODE) continue
+    const m = (next.textContent || '').match(/^\s*（[^）]*）/)
+    if (!m) continue
+    const gloss = document.createElement('i')
+    gloss.className = 'zh'
+    gloss.textContent = m[0]
+    b.parentNode?.insertBefore(gloss, next)
+    next.textContent = (next.textContent || '').slice(m[0].length)
+  }
+
+  return template.innerHTML
+}

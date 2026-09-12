@@ -1128,6 +1128,15 @@ html.dark [data-immersive="light"] [class*="bg-teal-100"] {
   border-bottom-color: #9daaff;
 }
 
+/* 显示模式：隐藏中文注释（i.zh 由 wrapZhGlosses 运行时包裹）/ 隐藏法语词 */
+.novel-content[data-mode='hide-zh'] i.zh {
+  display: none;
+}
+
+.novel-content[data-mode='hide-fr'] b.fw {
+  display: none;
+}
+
 /* 点词弹卡里的例句（含 <b class="fw"> 高亮） */
 .novel-popover-example b.fw {
   color: #2d39bb;

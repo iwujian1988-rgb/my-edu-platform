@@ -8,6 +8,7 @@
  * - 断点续读：每 30s + 翻章离开 + 页面隐藏时 saveNovelProgress（章号+%）
  * - 书签：每章一个（📍 开关），记录滚动 %
  * - 字号：Aa 菜单，localStorage 持久化
+ * - 显示模式：Aa 菜单（中法对照 / 隐藏中文注释 / 隐藏法语词），localStorage 持久化
  * - 布局：移动全屏沉浸（sticky 顶栏 + 底部上/下章条）；PC lg: 双栏 + sticky 侧栏
  */
 
@@ -15,7 +16,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { ChevronLeft, Bookmark, Type, List, ArrowRight, RefreshCw } from 'lucide-react'
 import { cn } from '@/lib/utils'
-import { sanitizeNovelHtml } from '@/lib/novelSanitize'
+import { sanitizeNovelHtml, wrapZhGlosses } from '@/lib/novelSanitize'
 import { normForm } from '@/lib/novel-forms'
 import { saveNovelProgress } from '@/lib/readingProgress'
 import { WordPopover, type LexiconEntry } from './WordPopover'
@@ -32,6 +33,15 @@ interface NovelReaderProps {
 
 const FONT_KEY = 'novel-font-size'
 const FONT_SIZES = [15, 16, 17, 18, 19, 20, 21, 22]
+
+/** 显示模式：中法对照 / 隐藏中文注释 / 隐藏法语词 */
+type DisplayMode = 'all' | 'hide-zh' | 'hide-fr'
+const DISPLAY_KEY = 'novel-display-mode'
+const DISPLAY_MODES: Array<{ id: DisplayMode; name: string }> = [
+  { id: 'all', name: '中法对照' },
+  { id: 'hide-zh', name: '隐藏中文' },
+  { id: 'hide-fr', name: '隐藏法语' },
+]
 
 interface ChapterMeta {
   chapter_number: number
@@ -50,6 +60,7 @@ const escapeHtml = (s: string) =>
 export function NovelReader({ bookId, totalChapters, chapter, newWords, initialPercent }: NovelReaderProps) {
   const [fontSize, setFontSize] = useState(17)
   const [fontMenuOpen, setFontMenuOpen] = useState(false)
+  const [displayMode, setDisplayMode] = useState<DisplayMode>('all')
   const [percent, setPercent] = useState(0)
   const [lexiconMap, setLexiconMap] = useState<Map<string, LexiconEntry> | null>(null)
   const [chapters, setChapters] = useState<ChapterMeta[]>([])
@@ -69,10 +80,12 @@ export function NovelReader({ bookId, totalChapters, chapter, newWords, initialP
   const hasNext = chapter.number < totalChapters
   const chapterBookmark = bookmarks.find((b) => b.chapter_number === chapter.number)
 
-  // 字号恢复
+  // 字号 / 显示模式恢复
   useEffect(() => {
     const saved = parseInt(localStorage.getItem(FONT_KEY) || '', 10)
     if (FONT_SIZES.includes(saved)) setFontSize(saved)
+    const savedMode = localStorage.getItem(DISPLAY_KEY)
+    if (savedMode === 'hide-zh' || savedMode === 'hide-fr') setDisplayMode(savedMode)
   }, [])
 
   // 词表 + 章节目录 + 书签 + 生词本一次性预载
@@ -239,7 +252,12 @@ export function NovelReader({ bookId, totalChapters, chapter, newWords, initialP
     setFontMenuOpen(false)
   }
 
-  const cleanHtml = sanitizeNovelHtml(chapter.contentHtml)
+  const applyDisplayMode = (mode: DisplayMode) => {
+    setDisplayMode(mode)
+    localStorage.setItem(DISPLAY_KEY, mode)
+  }
+
+  const cleanHtml = wrapZhGlosses(sanitizeNovelHtml(chapter.contentHtml))
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] pb-24 text-[#121729] lg:pb-12 dark:from-[#101626] dark:to-[#0c1120] dark:text-[#edf1ff]">
@@ -276,7 +294,7 @@ export function NovelReader({ bookId, totalChapters, chapter, newWords, initialP
             </button>
             <button
               onClick={() => setFontMenuOpen((v) => !v)}
-              aria-label="字号"
+              aria-label="字号与显示"
               className="cursor-pointer rounded-lg p-2 text-[#68718a] transition-colors hover:bg-[#f3f5fb] hover:text-[#121729] dark:text-[#a7b0c8] dark:hover:bg-[#192238] dark:hover:text-[#edf1ff]"
             >
               <Type className="h-5 w-5" />
@@ -285,22 +303,44 @@ export function NovelReader({ bookId, totalChapters, chapter, newWords, initialP
             {fontMenuOpen && (
               <>
                 <div className="fixed inset-0 z-10" onClick={() => setFontMenuOpen(false)} />
-                <div className="absolute right-0 top-11 z-20 flex w-44 rounded-[12px] border border-[#e7eaf2] bg-white p-2 shadow-[0_12px_34px_rgba(31,42,104,0.14)] dark:border-[#273149] dark:bg-[#141b2d]">
-                  <div className="grid w-full grid-cols-4 gap-1">
-                    {FONT_SIZES.map((s) => (
-                      <button
-                        key={s}
-                        onClick={() => applyFontSize(s)}
-                        className={cn(
-                          'cursor-pointer rounded-lg py-1.5 text-xs font-bold transition-all duration-200',
-                          s === fontSize
-                            ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
-                            : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
-                        )}
-                      >
-                        {s}
-                      </button>
-                    ))}
+                <div className="absolute right-0 top-11 z-20 flex w-56 flex-col gap-2 rounded-[12px] border border-[#e7eaf2] bg-white p-2.5 shadow-[0_12px_34px_rgba(31,42,104,0.14)] dark:border-[#273149] dark:bg-[#141b2d]">
+                  <div>
+                    <div className="mb-1 px-1 text-[11px] font-bold text-[#68718a] dark:text-[#a7b0c8]">字号</div>
+                    <div className="grid w-full grid-cols-4 gap-1">
+                      {FONT_SIZES.map((s) => (
+                        <button
+                          key={s}
+                          onClick={() => applyFontSize(s)}
+                          className={cn(
+                            'cursor-pointer rounded-lg py-1.5 text-xs font-bold transition-all duration-200',
+                            s === fontSize
+                              ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
+                              : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
+                          )}
+                        >
+                          {s}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="border-t border-[#e7eaf2] pt-2 dark:border-[#273149]">
+                    <div className="mb-1 px-1 text-[11px] font-bold text-[#68718a] dark:text-[#a7b0c8]">显示</div>
+                    <div className="grid w-full grid-cols-3 gap-1">
+                      {DISPLAY_MODES.map((m) => (
+                        <button
+                          key={m.id}
+                          onClick={() => applyDisplayMode(m.id)}
+                          className={cn(
+                            'cursor-pointer rounded-lg px-1 py-1.5 text-[11px] font-bold transition-all duration-200',
+                            m.id === displayMode
+                              ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
+                              : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
+                          )}
+                        >
+                          {m.name}
+                        </button>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </>
@@ -326,6 +366,7 @@ export function NovelReader({ bookId, totalChapters, chapter, newWords, initialP
 
           <article
             className="novel-content"
+            data-mode={displayMode}
             style={{ fontSize: `${fontSize}px` }}
             onClick={handleArticleClick}
             dangerouslySetInnerHTML={{ __html: cleanHtml }}
