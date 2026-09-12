@@ -57,6 +57,20 @@ const nextConfig: NextConfig = {
     },
   }),
 
+  // ✅ 静态图标/manifest 长缓存（默认 max-age=0 导致每次导航都 304 再验证，慢网络下拖累并发）
+  async headers() {
+    return [
+      {
+        source: "/icons/:path*",
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
+      },
+      {
+        source: "/manifest.json",
+        headers: [{ key: "Cache-Control", value: "public, max-age=86400" }],
+      },
+    ];
+  },
+
   // ✅ 增加 Server Action 的 body 大小限制（支持大音频文件上传，使用字节数）
   experimental: {
     serverActions: {

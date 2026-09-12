@@ -55,7 +55,24 @@ export default async function NovelChapterPage({
   const chapter = chapterRes.data
   const book = bookRes.data
   if (!user || !book || !chapter || !chapter.is_published) notFound()
-  if (!(await hasNovelAccessForBook(user.id, book))) notFound()
+
+  // 权限判定与书签/生词本并行（两者随 RSC 下发，省两次客户端往返）
+  const [hasAccess, bookmarksRes, notebookRes] = await Promise.all([
+    hasNovelAccessForBook(user.id, book),
+    admin
+      .from('novel_bookmarks')
+      .select('chapter_number, scroll_percent')
+      .eq('user_id', user.id)
+      .eq('book_id', bookId)
+      .order('chapter_number', { ascending: true }),
+    admin
+      .from('novel_word_progress')
+      .select('lemma')
+      .eq('user_id', user.id)
+      .eq('book_id', bookId)
+      .eq('in_notebook', true),
+  ])
+  if (!hasAccess) notFound()
 
   const initialPercent = p ? Math.min(99, Math.max(0, parseInt(p, 10) || 0)) : undefined
 
@@ -70,6 +87,8 @@ export default async function NovelChapterPage({
       }}
       newWords={wordsRes.data || []}
       initialPercent={initialPercent}
+      initialBookmarks={bookmarksRes.data || []}
+      initialNotebook={(notebookRes.data || []).map((r) => r.lemma)}
     />
   )
 }

@@ -25,12 +25,14 @@ interface ChapterIndexClientProps {
   bookTitle: string
   description?: string | null
   chapters: ChapterMeta[]
+  /** 服务端随 RSC 下发的书签章号（免客户端往返） */
+  initialBookmarks?: number[]
 }
 
-export function ChapterIndexClient({ bookId, bookTitle, description, chapters }: ChapterIndexClientProps) {
+export function ChapterIndexClient({ bookId, bookTitle, description, chapters, initialBookmarks }: ChapterIndexClientProps) {
   const [resume, setResume] = useState<{ chapter: number; percent: number } | null>(null)
   const [resumeLoaded, setResumeLoaded] = useState(false)
-  const [bookmarks, setBookmarks] = useState<number[]>([])
+  const [bookmarks, setBookmarks] = useState<number[]>(initialBookmarks || [])
   const [onlyBookmarks, setOnlyBookmarks] = useState(false)
 
   useEffect(() => {
@@ -38,10 +40,6 @@ export function ChapterIndexClient({ bookId, bookTitle, description, chapters }:
       if (p) setResume({ chapter: p.chapter, percent: p.percent })
       setResumeLoaded(true)
     })
-    fetch(`/api/novel/${bookId}/bookmarks`)
-      .then((r) => (r.ok ? r.json() : { data: [] }))
-      .then((json) => setBookmarks((json.data || []).map((b: any) => b.chapter_number as number)))
-      .catch(() => {})
   }, [bookId])
 
   const totalWords = chapters.reduce((sum, c) => sum + (c.new_word_count || 0), 0)
@@ -151,6 +149,7 @@ export function ChapterIndexClient({ bookId, bookTitle, description, chapters }:
                 <Link
                   key={c.chapter_number}
                   href={`/read/${bookId}/${c.chapter_number}`}
+                  prefetch={false}
                   className={cn(
                     'flex cursor-pointer items-center gap-3 px-4 py-3 transition-colors duration-200 hover:bg-[#f8faff] dark:hover:bg-[#192238]',
                     isCurrent && 'bg-gradient-to-r from-[#2633a8]/5 to-[#6550ff]/5'

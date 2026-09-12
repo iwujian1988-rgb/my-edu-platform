@@ -29,6 +29,9 @@ interface NovelReaderProps {
   newWords: NovelWord[]
   /** 从目录"继续阅读"进入时带回的滚动位置（%） */
   initialPercent?: number
+  /** 服务端随 RSC 下发的书签/生词本（免客户端往返） */
+  initialBookmarks?: BookmarkRow[]
+  initialNotebook?: string[]
 }
 
 const FONT_KEY = 'novel-font-size'
@@ -57,15 +60,23 @@ interface BookmarkRow {
 const escapeHtml = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
-export function NovelReader({ bookId, totalChapters, chapter, newWords, initialPercent }: NovelReaderProps) {
+export function NovelReader({
+  bookId,
+  totalChapters,
+  chapter,
+  newWords,
+  initialPercent,
+  initialBookmarks,
+  initialNotebook,
+}: NovelReaderProps) {
   const [fontSize, setFontSize] = useState(17)
   const [fontMenuOpen, setFontMenuOpen] = useState(false)
   const [displayMode, setDisplayMode] = useState<DisplayMode>('all')
   const [percent, setPercent] = useState(0)
   const [lexiconMap, setLexiconMap] = useState<Map<string, LexiconEntry> | null>(null)
   const [chapters, setChapters] = useState<ChapterMeta[]>([])
-  const [bookmarks, setBookmarks] = useState<BookmarkRow[]>([])
-  const [notebookSet, setNotebookSet] = useState<Set<string>>(new Set())
+  const [bookmarks, setBookmarks] = useState<BookmarkRow[]>(initialBookmarks || [])
+  const [notebookSet, setNotebookSet] = useState<Set<string>>(new Set(initialNotebook || []))
   const [popover, setPopover] = useState<{
     entry: LexiconEntry | null
     raw: string
@@ -88,7 +99,7 @@ export function NovelReader({ bookId, totalChapters, chapter, newWords, initialP
     if (savedMode === 'hide-zh' || savedMode === 'hide-fr') setDisplayMode(savedMode)
   }, [])
 
-  // 词表 + 章节目录 + 书签 + 生词本一次性预载
+  // 词表 + 章节目录预载（均有 ETag 缓存，二次进入走磁盘缓存零传输）
   useEffect(() => {
     fetch(`/api/novel/${bookId}/lexicon`)
       .then((r) => (r.ok ? r.json() : { data: [] }))
@@ -102,20 +113,6 @@ export function NovelReader({ bookId, totalChapters, chapter, newWords, initialP
     fetch(`/api/novel/${bookId}/chapters`)
       .then((r) => (r.ok ? r.json() : { data: [] }))
       .then((json) => setChapters(json.data || []))
-      .catch(() => {})
-
-    fetch(`/api/novel/${bookId}/bookmarks`)
-      .then((r) => (r.ok ? r.json() : { data: [] }))
-      .then((json) => setBookmarks(json.data || []))
-      .catch(() => {})
-
-    fetch(`/api/novel/${bookId}/progress`)
-      .then((r) => (r.ok ? r.json() : { data: [] }))
-      .then((json) => {
-        setNotebookSet(
-          new Set((json.data || []).filter((p: any) => p.in_notebook).map((p: any) => p.lemma as string))
-        )
-      })
       .catch(() => {})
   }, [bookId])
 
@@ -426,6 +423,7 @@ export function NovelReader({ bookId, totalChapters, chapter, newWords, initialP
                     <Link
                       key={c.chapter_number}
                       href={`/read/${bookId}/${c.chapter_number}`}
+                      prefetch={false}
                       className={cn(
                         'flex cursor-pointer items-center justify-between gap-2 rounded-lg px-2.5 py-2 text-sm transition-colors duration-200',
                         current

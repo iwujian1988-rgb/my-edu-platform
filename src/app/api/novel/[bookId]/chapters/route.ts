@@ -4,14 +4,20 @@
  * GET /api/novel/[bookId]/chapters
  * 返回章号/标题/新词数。正文必须走 chapters/[num]（正文卡点同权限）。
  * 无权限一律 404，不泄露书的存在性。
+ * ETag + 304：章节列表仅重新导入时变化，重复进入走浏览器缓存（同 lexicon）。
  */
 
 import { NextRequest, NextResponse } from 'next/server'
+import { createHash } from 'crypto'
 import { createClient, createAdminClient } from '@/lib/supabase/server'
 import { hasNovelAccess } from '@/lib/novel-permissions'
 
+const CACHE_HEADERS = {
+  'Cache-Control': 'private, max-age=86400',
+}
+
 export async function GET(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ bookId: string }> }
 ) {
   try {
@@ -36,7 +42,17 @@ export async function GET(
       return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
     }
 
-    return NextResponse.json({ data })
+    const body = JSON.stringify({ data })
+    const etag = `"${createHash('sha1').update(body).digest('hex').slice(0, 32)}"`
+
+    if (request.headers.get('if-none-match') === etag) {
+      return new NextResponse(null, { status: 304, headers: { ETag: etag, ...CACHE_HEADERS } })
+    }
+
+    return new NextResponse(body, {
+      status: 200,
+      headers: { 'Content-Type': 'application/json', ETag: etag, ...CACHE_HEADERS },
+    })
   } catch (error) {
     console.error('[novel chapters] Exception:', error)
     return NextResponse.json({ error: 'Internal server error' }, { status: 500 })

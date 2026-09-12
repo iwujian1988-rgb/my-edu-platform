@@ -38,9 +38,19 @@ export default async function NovelIndexPage({
   ])
 
   const book = bookRes.data
-  if (!user || !book || !(await hasNovelAccessForBook(user.id, book))) {
-    notFound()
-  }
+  if (!user || !book) notFound()
+
+  // 权限判定与书签并行（书签随 RSC 下发，省一次客户端往返）
+  const [hasAccess, bookmarksRes] = await Promise.all([
+    hasNovelAccessForBook(user.id, book),
+    admin
+      .from('novel_bookmarks')
+      .select('chapter_number')
+      .eq('user_id', user.id)
+      .eq('book_id', bookId)
+      .order('chapter_number', { ascending: true }),
+  ])
+  if (!hasAccess) notFound()
 
   return (
     <ChapterIndexClient
@@ -48,6 +58,7 @@ export default async function NovelIndexPage({
       bookTitle={book.title}
       description={book.description}
       chapters={chaptersRes.data || []}
+      initialBookmarks={(bookmarksRes.data || []).map((b) => b.chapter_number)}
     />
   )
 }
