@@ -25,7 +25,8 @@ const FEATURE_PERMISSIONS = [
   { id: 'custom_book', name: '自定义词库' },
   { id: 'review_mode', name: '复习模式' },
   { id: 'speaker', name: '雯姐学习法' },
-  { id: 'video', name: '视频学习' }
+  { id: 'video', name: '视频学习' },
+  { id: 'novel', name: '小说学习' }
 ]
 
 // 语言包选项（雯姐学习法）
@@ -53,6 +54,15 @@ interface VideoPackageOption {
   id: string
   name: string
   language: string | null
+}
+
+// 小说选项（绑定关系存 books.package_ids，与套餐反向）
+interface NovelOption {
+  id: string
+  title: string
+  package_ids: string[]
+  is_published: boolean
+  total_chapters: number | null
 }
 
 interface Package {
@@ -83,6 +93,20 @@ export default function PackageListClient({ initialPackages }: PackageListClient
   const [loading, setLoading] = useState(false)
   const [bookOptions, setBookOptions] = useState<BookOption[]>([ALL_BOOKS_OPTION])
   const [videoPackageOptions, setVideoPackageOptions] = useState<VideoPackageOption[]>([])
+  const [novelOptions, setNovelOptions] = useState<NovelOption[]>([])
+
+  // 加载小说列表（绑定关系随 novels 带 package_ids）
+  const fetchNovels = async () => {
+    try {
+      const response = await fetch('/api/admin/novels')
+      const data = await response.json()
+      if (data.novels) {
+        setNovelOptions(data.novels)
+      }
+    } catch (error) {
+      console.error('Failed to fetch novels:', error)
+    }
+  }
 
   // 加载单词书列表和视频套餐列表
   useEffect(() => {
@@ -117,6 +141,9 @@ export default function PackageListClient({ initialPackages }: PackageListClient
       } catch (error) {
         console.error('Failed to fetch video packages:', error)
       }
+
+      // 加载小说
+      fetchNovels()
     }
     fetchData()
   }, [])
@@ -194,6 +221,7 @@ export default function PackageListClient({ initialPackages }: PackageListClient
   const handleSaveSuccess = () => {
     handleCloseModal()
     refreshPackages()
+    fetchNovels()
   }
 
   return (
@@ -371,6 +399,7 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         package={null}
         bookOptions={bookOptions}
         videoPackageOptions={videoPackageOptions}
+        novelOptions={novelOptions}
         onClose={handleCloseModal}
         onSave={handleSaveSuccess}
       />
@@ -381,6 +410,7 @@ export default function PackageListClient({ initialPackages }: PackageListClient
         package={editingPackage}
         bookOptions={bookOptions}
         videoPackageOptions={videoPackageOptions}
+        novelOptions={novelOptions}
         onClose={handleCloseModal}
         onSave={handleSaveSuccess}
       />
@@ -394,6 +424,7 @@ function PackageFormDialog({
   package: pkg,
   bookOptions,
   videoPackageOptions,
+  novelOptions,
   onClose,
   onSave
 }: {
@@ -401,6 +432,7 @@ function PackageFormDialog({
   package: Package | null
   bookOptions: BookOption[]
   videoPackageOptions: VideoPackageOption[]
+  novelOptions: NovelOption[]
   onClose: () => void
   onSave: () => void
 }) {
@@ -413,6 +445,7 @@ function PackageFormDialog({
     book_permissions: [] as string[],
     language_packages: [] as string[],
     video_package_ids: [] as string[],
+    novelBookIds: [] as string[],
     is_active: true,
     sort_order: 0
   })
@@ -428,6 +461,9 @@ function PackageFormDialog({
         book_permissions: pkg.book_permissions || [],
         language_packages: pkg.language_packages || [],
         video_package_ids: pkg.video_package_ids || [],
+        novelBookIds: novelOptions
+          .filter(novel => (novel.package_ids || []).includes(pkg.id))
+          .map(novel => novel.id),
         is_active: pkg.is_active,
         sort_order: pkg.sort_order || 0
       })
@@ -440,11 +476,12 @@ function PackageFormDialog({
         book_permissions: [],
         language_packages: [],
         video_package_ids: [],
+        novelBookIds: [],
         is_active: true,
         sort_order: 0
       })
     }
-  }, [pkg, open])
+  }, [pkg, open, novelOptions])
 
   // 切换功能权限
   const toggleFeaturePermission = (permId: string) => {
@@ -496,6 +533,16 @@ function PackageFormDialog({
       video_package_ids: prev.video_package_ids.includes(pkgId)
         ? prev.video_package_ids.filter(id => id !== pkgId)
         : [...prev.video_package_ids, pkgId]
+    }))
+  }
+
+  // 切换小说绑定（写 books.package_ids，保存时同步）
+  const toggleNovelBook = (bookId: string) => {
+    setFormData(prev => ({
+      ...prev,
+      novelBookIds: prev.novelBookIds.includes(bookId)
+        ? prev.novelBookIds.filter(id => id !== bookId)
+        : [...prev.novelBookIds, bookId]
     }))
   }
 
@@ -560,6 +607,30 @@ function PackageFormDialog({
       })
 
       if (response.ok) {
+        // 同步小说绑定：勾选状态与 books.package_ids 求差集，只提交有变化的小说
+        const result = await response.json().catch(() => null)
+        const packageId = pkg?.id || result?.package?.id
+        if (packageId) {
+          const syncResults = await Promise.all(
+            novelOptions.map(async (novel) => {
+              const bound = (novel.package_ids || []).includes(packageId)
+              const checked = formData.novelBookIds.includes(novel.id)
+              if (bound === checked) return true
+              const packageIds = checked
+                ? [...(novel.package_ids || []), packageId]
+                : (novel.package_ids || []).filter((id: string) => id !== packageId)
+              const res = await fetch('/api/admin/novels', {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ bookId: novel.id, packageIds })
+              })
+              return res.ok
+            })
+          )
+          if (syncResults.some(ok => !ok)) {
+            alert('套餐已保存，但小说绑定更新失败，请到「小说管理」检查')
+          }
+        }
         onSave()
       } else {
         const error = await response.json()
@@ -698,7 +769,7 @@ function PackageFormDialog({
               ))}
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 font-semibold">
-              共 {bookOptions.length - 1} 本单词书可选，选择"全部单词书"将自动授权所有单词书
+              共 {bookOptions.length - 1} 本单词书可选，选择&quot;全部单词书&quot;将自动授权所有单词书
             </p>
           </div>
 
@@ -772,11 +843,59 @@ function PackageFormDialog({
                 </div>
               ) : (
                 <p className="text-sm text-red-600 dark:text-red-400">
-                  暂无视频套餐可选，请先在"视频套餐管理"中创建视频套餐
+                  暂无视频套餐可选，请先在&quot;视频套餐管理&quot;中创建视频套餐
                 </p>
               )}
               <p className="text-xs text-red-600 dark:text-red-400 mt-2 font-semibold">
                 已选择 {formData.video_package_ids.length} 个视频套餐
+              </p>
+            </div>
+          )}
+
+          {/* 小说权限 - 勾选小说即把本套餐写入 books.package_ids */}
+          {formData.feature_permissions.includes('novel') && (
+            <div className="p-4 bg-violet-100 dark:bg-violet-900 border-[3px] border-violet-500">
+              <label className="block text-sm font-bold text-violet-900 dark:text-violet-200 mb-2">
+                小说学习 - 关联小说
+              </label>
+              <p className="text-xs text-violet-700 dark:text-violet-300 mb-3">
+                用户使用此套餐（邀请码注册或后台调整）后，自动获得以下小说的阅读权限；已注册用户即时生效
+              </p>
+              {novelOptions.length > 0 ? (
+                <div className="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
+                  {novelOptions.map(novel => (
+                    <label
+                      key={novel.id}
+                      className={`flex items-center gap-2 px-4 py-2 font-bold border-[3px] cursor-pointer transition-all ${
+                        formData.novelBookIds.includes(novel.id)
+                          ? 'border-violet-500 bg-violet-200 dark:bg-violet-800 text-violet-900 dark:text-violet-100 shadow-[2px_2px_0px_0px_#8b5cf6]'
+                          : 'border-violet-300 dark:border-violet-700 bg-white dark:bg-gray-800 text-violet-900 dark:text-violet-100 hover:bg-violet-50 dark:hover:bg-gray-700'
+                      }`}
+                    >
+                      <input
+                        type="checkbox"
+                        checked={formData.novelBookIds.includes(novel.id)}
+                        onChange={() => toggleNovelBook(novel.id)}
+                        className="w-4 h-4"
+                      />
+                      <span className="text-sm">
+                        {novel.title}
+                        {novel.total_chapters != null && (
+                          <span className="ml-1 text-xs opacity-70">
+                            ({novel.total_chapters} 章)
+                          </span>
+                        )}
+                      </span>
+                    </label>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-sm text-violet-600 dark:text-violet-400">
+                  暂无小说可选，请先导入小说
+                </p>
+              )}
+              <p className="text-xs text-violet-600 dark:text-violet-400 mt-2 font-semibold">
+                已选择 {formData.novelBookIds.length} 本小说
               </p>
             </div>
           )}
