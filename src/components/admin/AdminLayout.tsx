@@ -25,7 +25,9 @@ import {
   Package,
   Mic,
   Video,
-  Tag
+  Tag,
+  Download,
+  BookMarked
 } from 'lucide-react'
 import { AdminUser } from '@/lib/admin-auth'
 
@@ -254,9 +256,21 @@ function getMenuItemsByRole(role: AdminUser['role']) {
       roles: ['super_admin', 'content_admin']
     },
     {
+      path: '/admin/resource-skus',
+      icon: Download,
+      label: 'Resource SKUs',
+      roles: ['super_admin', 'content_admin']
+    },
+    {
       path: '/admin/word-books',
       icon: BookOpen,
       label: '词库管理',
+      roles: ['super_admin', 'content_admin']
+    },
+    {
+      path: '/admin/novels',
+      icon: BookMarked,
+      label: '小说管理',
       roles: ['super_admin', 'content_admin']
     },
     {
@@ -312,7 +326,9 @@ function getPageTitle(pathname: string): string {
     '/admin/videos': '视频管理',
     '/admin/videos/tags': '标签管理',
     '/admin/upstream-creators': 'UP主管理',
+    '/admin/resource-skus': 'Resource SKUs',
     '/admin/word-books': '词库管理',
+    '/admin/novels': '小说管理',
     '/admin/reviews': '审核管理',
     '/admin/statistics': '数据统计',
     '/admin/administrators': '管理员管理',

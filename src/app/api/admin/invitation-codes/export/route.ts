@@ -1,5 +1,6 @@
 import { createAdminClient } from '@/lib/supabase/server'
 import { requireAdmin } from '@/lib/admin-auth'
+import { getNovelRedirectForPackage } from '@/lib/novel-permissions'
 import { NextRequest, NextResponse } from 'next/server'
 import * as XLSX from 'xlsx'
 
@@ -63,19 +64,27 @@ export async function POST(request: NextRequest) {
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://maxnote.top'
 
     // 准备 Excel 数据
-    const excelData = codesData.map((code: any) => {
+    const excelData = await Promise.all(codesData.map(async (code: any) => {
       const packageName = code.invitation_packages?.name || '未知套餐'
-      const registerUrl = `${siteUrl}/register?code=${code.code}`
+
+      // 套餐绑定了小说 → 注册链接带小说落地页（注册完成直接进小说）
+      const novelRedirect = code.package_id ? await getNovelRedirectForPackage(code.package_id) : null
+      let registerUrl = `${siteUrl}/register?code=${code.code}`
+      if (novelRedirect) {
+        registerUrl += `&redirect=${encodeURIComponent(novelRedirect)}`
+      }
+
       const exportStatus = code.is_exported ? '已导出' : '未导出'
 
       return {
         '邀请码': code.code,
         '套餐名称': packageName,
         '注册链接': registerUrl,
+        '小说入口': novelRedirect ? '有（注册直达小说）' : '无',
         '导出状态': exportStatus,
         '创建时间': new Date(code.created_at).toLocaleString('zh-CN')
       }
-    })
+    }))
 
     // 创建工作簿
     const worksheet = XLSX.utils.json_to_sheet(excelData)

@@ -183,3 +183,80 @@ export async function clearReadingProgress(bookId: string): Promise<void> {
     console.error('Exception in clearReadingProgress:', error)
   }
 }
+
+// ============================================
+// 小说阅读进度（断点续读）
+// ============================================
+
+/**
+ * 小说进度 shape 特意不含 bookId 字段：
+ * 现有 getReadingProgress 对 shape 不匹配的记录返回 null，
+ * 词书组件读到小说进度会自动忽略，互不干扰。
+ */
+export interface NovelReadingProgress {
+  type: 'novel'
+  novelBookId: string
+  chapter: number
+  percent: number
+}
+
+export async function saveNovelProgress(
+  bookId: string,
+  chapter: number,
+  percent: number
+): Promise<void> {
+  try {
+    const supabase = createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return
+
+    const progress: NovelReadingProgress = {
+      type: 'novel',
+      novelBookId: bookId,
+      chapter,
+      percent: Math.round(percent),
+    }
+
+    const { error } = await (supabase
+      .from('user_book_preferences') as any)
+      .upsert({
+        user_id: user.id,
+        book_id: bookId,
+        last_reading_progress: progress,
+        updated_at: new Date().toISOString()
+      }, {
+        onConflict: 'user_id,book_id'
+      })
+
+    if (error) {
+      const isEmptyError = Object.keys(error).length === 0
+      if ((error.message || error.code) && !isEmptyError) {
+        console.error('[saveNovelProgress] Failed:', error)
+      }
+    }
+  } catch (error) {
+    console.error('[saveNovelProgress] Exception:', error)
+  }
+}
+
+export async function getNovelProgress(bookId: string): Promise<NovelReadingProgress | null> {
+  try {
+    const supabase = createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return null
+
+    const { data } = await supabase
+      .from('user_book_preferences')
+      .select('last_reading_progress')
+      .eq('user_id', user.id)
+      .eq('book_id', bookId)
+      .maybeSingle()
+
+    const saved = (data as any)?.last_reading_progress
+    if (!saved || saved.type !== 'novel' || saved.novelBookId !== bookId) return null
+    return saved as NovelReadingProgress
+  } catch (error) {
+    console.error('[getNovelProgress] Exception:', error)
+    return null
+  }
+}

@@ -204,6 +204,7 @@ export async function getUserPermissions() {
     featurePermissions: profile.feature_permissions || [],
     bookPermissions: profile.book_permissions || [],
     languagePackages,
+    packageIds: ((profile as any).package_ids as string[] | null | undefined) || [],
     permissionExpiresAt: profile.permission_expires_at,
     isExpired: expirationCheck.isExpired,
     isExpiringSoon: expirationCheck.isExpiringSoon,
@@ -216,6 +217,7 @@ export interface UserPermissions {
   featurePermissions: string[]
   bookPermissions: string[]
   languagePackages: string[]
+  packageIds: string[]
   permissionExpiresAt: string | null
   isExpired: boolean
   isExpiringSoon: boolean

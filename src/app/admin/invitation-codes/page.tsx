@@ -60,6 +60,22 @@ export default async function AdminInvitationCodesPage({
 
   const totalPages = count ? Math.ceil(count / pageSize) : 1
 
+  // 套餐绑定了小说的邀请码 → 复制链接时带小说落地页
+  const { data: novelBooks } = await supabase
+    .from('books')
+    .select('id, package_ids')
+    .eq('is_novel', true)
+    .eq('is_published', true)
+    .order('created_at', { ascending: true })
+
+  const novelRedirectByCode: Record<string, string> = {}
+  if (novelBooks?.length) {
+    for (const c of codes || []) {
+      const book = novelBooks.find((b: any) => ((b.package_ids as string[]) || []).includes(c.package_id))
+      if (book) novelRedirectByCode[c.code] = `/read/${book.id}`
+    }
+  }
+
   return (
     <div className="space-y-6">
       {/* 页面标题 */}
@@ -83,6 +99,7 @@ export default async function AdminInvitationCodesPage({
         totalPages={totalPages}
         search={search}
         status={status}
+        novelRedirectByCode={novelRedirectByCode}
       />
     </div>
   )

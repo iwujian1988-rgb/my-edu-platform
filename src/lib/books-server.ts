@@ -8,6 +8,7 @@
 import { cache } from 'react'
 import { createClient } from '@/lib/supabase/server'
 import { hasLanguagePermission } from '@/lib/permissions'
+import { hasNovelPackageOverlap } from '@/lib/novel-permissions'
 
 /**
  * 词书数据类型定义
@@ -22,6 +23,7 @@ export interface BookData {
   cover_url?: string | null
   created_by?: string
   is_official?: boolean
+  is_novel?: boolean // 小说书：详情页走阅读器入口，权限走套餐绑定
   coverType?: 'cn' | 'global' | 'k12' | 'uni'
   categoryLabel?: string
   code?: string // 封面大字代码（如 "CET", "IEL", "TOE"）
@@ -51,7 +53,7 @@ export const getAllBooks = cache(async (
   // 1. 获取基础词书数据 - 只查询需要的字段以提升性能
   const { data: booksData, error: booksError } = await supabase
     .from('books')
-    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language, is_novel, package_ids')
     .order('created_at', { ascending: false })
 
   if (booksError) {
@@ -64,11 +66,11 @@ export const getAllBooks = cache(async (
     return []
   }
 
-  // 2. 如果没有 userId，返回所有已发布的词书
+  // 2. 如果没有 userId，返回所有已发布的词书（小说对未登录用户完全隐藏）
   if (!userId) {
     console.log('[Books Server] No userId provided, filtering published books only')
     return booksData
-      .filter((book: any) => book.is_published !== false)
+      .filter((book: any) => book.is_published !== false && !book.is_novel)
       .map((book: any) => normalizeBookData(book))
   }
 
@@ -81,7 +83,14 @@ export const getAllBooks = cache(async (
   const userLangPkgs = userPermissions?.languagePackages || ['en']
 
   // 5. 根据权限和语言过滤词书
+  const userPackageIds = (userPermissions as any)?.packageIds as string[] | undefined
+  const permissionExpired = (userPermissions as any)?.isExpired as boolean | undefined
   const filteredBooks = booksData.filter((book: any) => {
+    // 小说：套餐绑定闸门（不走词书 book_permissions；无权限完全隐藏）
+    if (book.is_novel) {
+      return hasNovelPackageOverlap(book.package_ids, userPackageIds, permissionExpired)
+    }
+
     // 用户自定义词书：只显示自己创建的
     if (book.is_official === false) {
       return book.created_by === userId
@@ -156,6 +165,7 @@ function normalizeBookData(book: any): BookData {
     cover_url: book.cover_url || null,
     created_by: book.created_by,
     is_official: book.is_official,
+    is_novel: book.is_novel || false,
     coverType,
     categoryLabel,
     code,
@@ -239,13 +249,30 @@ export const getBookById = cache(async (
 
   const { data: book, error } = await supabase
     .from('books')
-    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language, is_novel, package_ids')
     .eq('id', bookId)
     .single()
 
   if (error || !book) {
     console.error('[Books Server] Error fetching book by ID:', error)
     return null
+  }
+
+  // 小说：套餐绑定闸门（完全隐藏——无权限/未登录视为书不存在，不走词书权限链）
+  if (book.is_novel) {
+    if (!userId) return null
+    const { data: novelUserProfile } = await supabase
+      .from('users')
+      .select('package_ids, permission_expires_at')
+      .eq('id', userId)
+      .maybeSingle()
+    const expired = !!(novelUserProfile?.permission_expires_at &&
+      new Date(novelUserProfile.permission_expires_at as string) <= new Date())
+    if (!hasNovelPackageOverlap(book.package_ids, novelUserProfile?.package_ids as string[] | null | undefined, expired)) {
+      console.warn('[Books Server] Novel book access denied:', bookId)
+      return null
+    }
+    return normalizeBookData(book)
   }
 
   // 权限检查
@@ -305,7 +332,7 @@ export const getBooksByIds = cache(async (
 
   const { data: books, error } = await supabase
     .from('books')
-    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language')
+    .select('id, title, abbreviation, description, total_words, cover_color, cover_url, created_by, is_official, is_published, created_at, language, is_novel, package_ids')
     .in('id', bookIds)
 
   if (error) {
@@ -321,13 +348,25 @@ export const getBooksByIds = cache(async (
   // 权限过滤
   let filteredBooks = books
 
+  // 小说：无登录信息或未传权限时完全隐藏（带权限的走下方套餐闸门）
+  if (!userId || !userPermissions) {
+    filteredBooks = books.filter((book: any) => !book.is_novel)
+  }
+
   if (userId && userPermissions) {
     const hasAllBooks = userPermissions?.bookPermissions?.includes('*') ||
                          userPermissions?.bookPermissions?.includes('全部') || false
     const userBookIds = userPermissions?.bookPermissions || []
     const userLangPkgs = userPermissions?.languagePackages || ['en']
+    const userPackageIds = (userPermissions as any)?.packageIds as string[] | undefined
+    const permissionExpired = (userPermissions as any)?.isExpired as boolean | undefined
 
     filteredBooks = books.filter((book: any) => {
+      // 小说：套餐绑定闸门（完全隐藏）
+      if (book.is_novel) {
+        return hasNovelPackageOverlap(book.package_ids, userPackageIds, permissionExpired)
+      }
+
       // 用户自定义词书：必须是自己创建的
       if (book.is_official === false) {
         return book.created_by === userId

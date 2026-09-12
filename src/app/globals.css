@@ -1090,3 +1090,50 @@ html.dark [data-immersive="light"] [class*="bg-teal-100"] {
     overscroll-behavior: none;
   }
 }
+
+/* ========================================
+   小说阅读器正文（《落地》/read/**）
+   content_html 由导出管线生成：仅 <p> 与 <b class="fw" data-w>
+   ======================================== */
+.novel-content p {
+  margin: 0 0 1.15em;
+  line-height: 1.95;
+  letter-spacing: 0.01em;
+  text-align: justify;
+}
+
+.novel-content b.fw {
+  color: #2d39bb;
+  font-weight: 600;
+  cursor: pointer;
+  border-bottom: 1px dashed rgba(45, 57, 187, 0.35);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+  border-radius: 2px;
+}
+
+.novel-content b.fw:hover,
+.novel-content b.fw:active {
+  background-color: rgba(101, 80, 255, 0.10);
+  border-bottom-color: #6550ff;
+}
+
+.dark .novel-content b.fw {
+  color: #9daaff;
+  border-bottom-color: rgba(157, 170, 255, 0.35);
+}
+
+.dark .novel-content b.fw:hover,
+.dark .novel-content b.fw:active {
+  background-color: rgba(101, 80, 255, 0.18);
+  border-bottom-color: #9daaff;
+}
+
+/* 点词弹卡里的例句（含 <b class="fw"> 高亮） */
+.novel-popover-example b.fw {
+  color: #2d39bb;
+  font-weight: 600;
+}
+
+.dark .novel-popover-example b.fw {
+  color: #9daaff;
+}

@@ -159,6 +159,31 @@ type DatabaseSchema = {
         Insert: SpeakerGhostWordInsert
         Update: SpeakerGhostWordUpdate
       }
+      novel_chapters: {
+        Row: NovelChapter
+        Insert: NovelChapterInsert
+        Update: NovelChapterUpdate
+      }
+      novel_words: {
+        Row: NovelWordRow
+        Insert: NovelWordInsert
+        Update: NovelWordUpdate
+      }
+      novel_lexicon: {
+        Row: NovelLexiconRow
+        Insert: NovelLexiconInsert
+        Update: NovelLexiconUpdate
+      }
+      novel_word_progress: {
+        Row: NovelWordProgressRow
+        Insert: NovelWordProgressInsert
+        Update: NovelWordProgressUpdate
+      }
+      novel_bookmarks: {
+        Row: NovelBookmarkRow
+        Insert: NovelBookmarkInsert
+        Update: NovelBookmarkUpdate
+      }
     }
     Views: {
       [_ in never]: never
@@ -342,6 +367,10 @@ export interface Book {
   review_reason: string | null
   reviewed_by: string | null
   reviewed_at: string | null
+  /** 解锁本书的邀请套餐（小说书专用：与 users.package_ids 相交即解锁） */
+  package_ids: string[]
+  /** 小说书标记：详情页走阅读器入口，书库对无权限用户完全隐藏 */
+  is_novel: boolean
 }
 
 export interface BookInsert {
@@ -353,6 +382,8 @@ export interface BookInsert {
   created_by?: string | null
   is_published?: boolean
   review_status?: Database['public']['Enums']['review_status']
+  package_ids?: string[]
+  is_novel?: boolean
 }
 
 export type BookUpdate = Partial<BookInsert>
@@ -737,6 +768,155 @@ export interface SpeakerGhostWordInsert {
 }
 
 export type SpeakerGhostWordUpdate = Partial<SpeakerGhostWordInsert>
+
+// ============================================
+// Novel Module（《落地》付费小说，与词书体系物理隔离）
+// ============================================
+
+export type NovelWordStatus = 'new' | 'unknown' | 'vague' | 'known'
+
+export interface NovelChapter {
+  id: string
+  book_id: string
+  chapter_number: number
+  title: string
+  content_html: string
+  new_word_count: number
+  is_published: boolean
+  created_at: string
+  updated_at: string
+}
+
+export interface NovelChapterInsert {
+  id?: string
+  book_id: string
+  chapter_number: number
+  title: string
+  content_html: string
+  new_word_count?: number
+  is_published?: boolean
+}
+
+export type NovelChapterUpdate = Partial<NovelChapterInsert>
+
+export interface NovelWordRow {
+  id: string
+  book_id: string
+  chapter_number: number
+  word: string
+  phonetic: string | null
+  definition: string
+  part_of_speech: string | null
+  gender: 'f' | 'm' | null
+  cefr: string | null
+  theme: string | null
+  star: boolean
+  order_index: number
+  example_sentence: string | null
+  created_at: string
+}
+
+export interface NovelWordInsert {
+  id?: string
+  book_id: string
+  chapter_number: number
+  word: string
+  definition: string
+  phonetic?: string | null
+  part_of_speech?: string | null
+  gender?: 'f' | 'm' | null
+  cefr?: string | null
+  theme?: string | null
+  star?: boolean
+  order_index?: number
+  example_sentence?: string | null
+}
+
+export type NovelWordUpdate = Partial<NovelWordInsert>
+
+export interface NovelLexiconRow {
+  id: string
+  book_id: string
+  form_key: string
+  lemma: string
+  display_form: string
+  phonetic: string | null
+  pos: string | null
+  gender: 'f' | 'm' | null
+  definition: string
+  cefr: string | null
+  scene: string | null
+  example_html: string | null
+  chapter_first: number | null
+  chapters: number[]
+  created_at: string
+}
+
+export interface NovelLexiconInsert {
+  id?: string
+  book_id: string
+  form_key: string
+  lemma: string
+  display_form: string
+  definition: string
+  phonetic?: string | null
+  pos?: string | null
+  gender?: 'f' | 'm' | null
+  cefr?: string | null
+  scene?: string | null
+  example_html?: string | null
+  chapter_first?: number | null
+  chapters?: number[]
+}
+
+export type NovelLexiconUpdate = Partial<NovelLexiconInsert>
+
+export interface NovelWordProgressRow {
+  id: string
+  user_id: string
+  book_id: string
+  lemma: string
+  status: NovelWordStatus
+  in_notebook: boolean
+  next_review_at: string | null
+  repetition_count: number
+  easiness_factor: number
+  updated_at: string
+}
+
+export interface NovelWordProgressInsert {
+  id?: string
+  user_id: string
+  book_id: string
+  lemma: string
+  status?: NovelWordStatus
+  in_notebook?: boolean
+  next_review_at?: string | null
+  repetition_count?: number
+  easiness_factor?: number
+  updated_at?: string
+}
+
+export type NovelWordProgressUpdate = Partial<NovelWordProgressInsert>
+
+export interface NovelBookmarkRow {
+  id: string
+  user_id: string
+  book_id: string
+  chapter_number: number
+  scroll_percent: number
+  created_at: string
+}
+
+export interface NovelBookmarkInsert {
+  id?: string
+  user_id: string
+  book_id: string
+  chapter_number: number
+  scroll_percent?: number
+}
+
+export type NovelBookmarkUpdate = Partial<NovelBookmarkInsert>
 
 // ============================================
 // JOIN TYPES

@@ -23,7 +23,7 @@ function RegisterForm() {
   const [signupData, setSignupData] = useState({
     phone: '',
     password: '',
-    invitationCode: ''
+    invitationCode: (searchParams.get('code') || '').toUpperCase()
   })
 
   // 字段验证错误
@@ -31,17 +31,6 @@ function RegisterForm() {
     phone: '',
     password: ''
   })
-
-  // 从 URL 参数读取邀请码
-  useEffect(() => {
-    const codeParam = searchParams.get('code')
-    if (codeParam) {
-      setSignupData(prev => ({
-        ...prev,
-        invitationCode: codeParam.toUpperCase()
-      }))
-    }
-  }, [searchParams])
 
   // 验证手机号
   const validatePhone = (phone: string) => {
@@ -100,6 +89,15 @@ function RegisterForm() {
         console.error('[Signup] 注册失败:', result.error)
         setError(result.error)
         setLoading(false)
+        return
+      }
+
+      // 邀请链接带站内落地页（如套餐绑定小说）→ 注册成功直接进
+      // 仅接受站内相对路径，防开放跳转
+      const redirectTo = searchParams.get('redirect')
+      if (redirectTo && redirectTo.startsWith('/') && !redirectTo.startsWith('//')) {
+        console.log('[Signup] 有redirect参数，跳转到:', redirectTo)
+        window.location.href = redirectTo
         return
       }
 
@@ -444,15 +442,6 @@ function RegisterForm() {
                       name="invitationCode"
                     />
                   </div>
-                  {/* 仅在开发环境显示测试邀请码 */}
-                  {process.env.NODE_ENV === 'development' && (
-                    <div className="mt-2 md:mt-3 flex items-start gap-2 px-2">
-                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 mt-0.5 flex-shrink-0" style={{ color: '#22C55E' }} strokeWidth={2.5} />
-                      <p className="text-xs md:text-sm font-semibold leading-relaxed transition-colors duration-300" style={{ color: 'var(--text-secondary)' }}>
-                        测试邀请码（仅开发环境）：<span className="font-black" style={{ color: '#22C55E' }}>TEST1234</span>, <span className="font-black" style={{ color: '#3B82F6' }}>DEMO2024</span>, <span className="font-black" style={{ color: '#FF8C61' }}>BETA5000</span>
-                      </p>
-                    </div>
-                  )}
                 </div>
 
                 <button

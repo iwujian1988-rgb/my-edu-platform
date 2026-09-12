@@ -1,6 +1,8 @@
 import { createClient, getCurrentUser } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import { BookDetailPageClient } from '@/components/BookDetailPageClient'
+import { NovelDetailClient } from '@/components/novel/NovelDetailClient'
+import { hasNovelAccess } from '@/lib/novel-permissions'
 import { notFound } from 'next/navigation'
 import { getWordsForBookServer } from '@/lib/words-server'
 
@@ -34,6 +36,36 @@ export default async function BookDetailPage({
   // 自定义词库：检查是否为创建者
   if (book.is_official === false && book.created_by !== user.id) {
     redirect('/?no-permission=true')
+  }
+
+  // 小说书：套餐绑定闸门（无权限 → 完全隐藏）+ 阅读器入口页
+  if (book.is_novel) {
+    if (!(await hasNovelAccess(user.id, id))) {
+      notFound()
+    }
+
+    const { data: pref } = await supabase
+      .from('user_book_preferences')
+      .select('last_reading_progress')
+      .eq('user_id', user.id)
+      .eq('book_id', id)
+      .maybeSingle()
+    const saved = (pref as any)?.last_reading_progress
+    const novelProgress =
+      saved?.type === 'novel' && saved.novelBookId === id
+        ? { chapter: saved.chapter as number, percent: saved.percent as number }
+        : null
+
+    return (
+      <NovelDetailClient
+        bookId={id}
+        title={book.title}
+        description={book.description}
+        totalChapters={book.total_chapters || 0}
+        totalWords={book.total_words || 0}
+        novelProgress={novelProgress}
+      />
+    )
   }
 
   // 获取chapters

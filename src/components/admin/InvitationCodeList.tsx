@@ -27,6 +27,8 @@ interface InvitationCodeListProps {
   totalPages: number
   search: string
   status: string
+  /** 套餐绑定了小说的邀请码 → 邀请链接追加小说落地页 */
+  novelRedirectByCode?: Record<string, string>
 }
 
 export function InvitationCodeList({
@@ -35,7 +37,8 @@ export function InvitationCodeList({
   currentPage,
   totalPages,
   search,
-  status
+  status,
+  novelRedirectByCode = {}
 }: InvitationCodeListProps) {
   const [searchQuery, setSearchQuery] = useState(search)
   const [statusFilter, setStatusFilter] = useState(status)
@@ -323,7 +326,7 @@ export function InvitationCodeList({
                       {/* 操作按钮 */}
                       <td className="py-4 px-6">
                         <div className="flex items-center justify-end gap-2">
-                          <CopyLinkButton code={code.code} />
+                          <CopyLinkButton code={code.code} novelRedirect={novelRedirectByCode[code.code]} />
                           <DisableButton codeId={code.id} code={code.code} isDisabled={!code.is_active} />
                           <DeleteButton codeId={code.id} code={code.code} />
                         </div>
@@ -384,7 +387,7 @@ export function InvitationCodeList({
                   <div className="flex items-center justify-between pt-3 border-t border-gray-200">
                     <span className="text-xs text-gray-500">{formatDate(code.created_at)}</span>
                     <div className="flex gap-2">
-                      <CopyLinkButton code={code.code} />
+                      <CopyLinkButton code={code.code} novelRedirect={novelRedirectByCode[code.code]} />
                       <DisableButton codeId={code.id} code={code.code} isDisabled={!code.is_active} />
                       <DeleteButton codeId={code.id} code={code.code} />
                     </div>
@@ -563,11 +566,14 @@ function DeleteButton({ codeId, code }: { codeId: string; code: string }) {
 /**
  * 复制邀请链接按钮
  */
-function CopyLinkButton({ code }: { code: string }) {
+function CopyLinkButton({ code, novelRedirect }: { code: string; novelRedirect?: string }) {
   const [copied, setCopied] = useState(false)
 
   const handleCopyLink = () => {
-    const registerUrl = `https://maxnote.top/register?code=${code}`
+    let registerUrl = `https://maxnote.top/register?code=${code}`
+    if (novelRedirect) {
+      registerUrl += `&redirect=${encodeURIComponent(novelRedirect)}`
+    }
     navigator.clipboard.writeText(registerUrl)
     setCopied(true)
     setTimeout(() => setCopied(false), 2000)

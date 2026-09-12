@@ -10,6 +10,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
 import { updateLearningCalendar } from '@/lib/learning-calendar'
+import { scheduleSm2Review } from '@/lib/sm2-scheduler'
 import type { CardType, VideoCard } from '@/types/video'
 
 // 卡片类型对应的表名
@@ -297,36 +298,11 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // SM-2 算法计算下次复习时间
+    // SM-2 算法计算下次复习时间（纯函数，与小说词卡复习共用）
     // quality: 1=忘记, 2=一般, 3=简单 (客户端约定)
-    let newEaseFactor = progress.ease_factor
-    let interval = 1
     const reviewCount = progress.review_count || 0
-
-    if (quality >= 3) {
-      // 简单/已知
-      if (reviewCount === 0) {
-        interval = 1
-      } else if (reviewCount === 1) {
-        interval = 6
-      } else {
-        interval = Math.round(reviewCount * progress.ease_factor)
-      }
-      // 更新 ease factor
-      newEaseFactor = Math.max(1.3, progress.ease_factor + 0.1)
-    } else if (quality >= 2) {
-      // 一般/学习中
-      interval = Math.max(1, Math.round(reviewCount * 0.5))
-      newEaseFactor = Math.max(1.3, progress.ease_factor - 0.1)
-    } else {
-      // 忘记/未知 (quality === 1)
-      interval = 1
-      newEaseFactor = Math.max(1.3, progress.ease_factor - 0.2)
-    }
-
-    // 计算下次复习时间
-    const nextReviewAt = new Date()
-    nextReviewAt.setDate(nextReviewAt.getDate() + interval)
+    const { intervalDays: interval, easeFactor: newEaseFactor, nextReviewAt: nextReviewAtIso } =
+      scheduleSm2Review({ easeFactor: progress.ease_factor, reviewCount, quality })
 
     // 确定状态
     let newStatus = 'learning'
@@ -340,7 +316,7 @@ export async function POST(request: NextRequest) {
         status: newStatus,
         review_count: reviewCount + 1,
         last_reviewed_at: new Date().toISOString(),
-        next_review_at: nextReviewAt.toISOString(),
+        next_review_at: nextReviewAtIso,
         ease_factor: newEaseFactor,
         updated_at: new Date().toISOString(),
       })
@@ -365,7 +341,7 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({
       success: true,
       data: {
-        next_review: nextReviewAt.toISOString(),
+        next_review: nextReviewAtIso,
         interval_days: interval,
         ease_factor: newEaseFactor,
       },

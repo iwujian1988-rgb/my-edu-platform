@@ -19,7 +19,7 @@ export async function updateLearningCalendar(
   userId: string,
   updates: {
     videoId?: string
-    cardType?: CardType
+    cardType?: CardType | string
     durationMinutes?: number
   }
 ): Promise<{ success: boolean; error?: string }> {
