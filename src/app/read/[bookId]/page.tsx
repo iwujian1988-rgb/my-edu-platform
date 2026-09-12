@@ -6,7 +6,7 @@
 
 import { notFound } from 'next/navigation'
 import { createClient, createAdminClient } from '@/lib/supabase/server'
-import { hasNovelAccess } from '@/lib/novel-permissions'
+import { hasNovelAccessForBook } from '@/lib/novel-permissions'
 import { ChapterIndexClient } from '@/components/novel/ChapterIndexClient'
 
 export const dynamic = 'force-dynamic'
@@ -19,34 +19,35 @@ export default async function NovelIndexPage({
   const { bookId } = await params
 
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user || !(await hasNovelAccess(user.id, bookId))) {
-    notFound()
-  }
-
   const admin = await createAdminClient()
 
-  const { data: book } = await admin
-    .from('books')
-    .select('id, title, description, total_chapters')
-    .eq('id', bookId)
-    .maybeSingle()
+  // getUser + 书行 + 章节列表并行，权限判定只补 user 行一次往返
+  const [{ data: { user } }, bookRes, chaptersRes] = await Promise.all([
+    supabase.auth.getUser(),
+    admin
+      .from('books')
+      .select('id, title, description, total_chapters, is_novel, is_published, package_ids')
+      .eq('id', bookId)
+      .maybeSingle(),
+    admin
+      .from('novel_chapters')
+      .select('chapter_number, title, new_word_count')
+      .eq('book_id', bookId)
+      .eq('is_published', true)
+      .order('chapter_number', { ascending: true }),
+  ])
 
-  if (!book) notFound()
-
-  const { data: chapters } = await admin
-    .from('novel_chapters')
-    .select('chapter_number, title, new_word_count')
-    .eq('book_id', bookId)
-    .eq('is_published', true)
-    .order('chapter_number', { ascending: true })
+  const book = bookRes.data
+  if (!user || !book || !(await hasNovelAccessForBook(user.id, book))) {
+    notFound()
+  }
 
   return (
     <ChapterIndexClient
       bookId={bookId}
       bookTitle={book.title}
       description={book.description}
-      chapters={chapters || []}
+      chapters={chaptersRes.data || []}
     />
   )
 }

@@ -7,7 +7,7 @@
 
 import { notFound } from 'next/navigation'
 import { createClient, createAdminClient } from '@/lib/supabase/server'
-import { hasNovelAccess } from '@/lib/novel-permissions'
+import { hasNovelAccessForBook } from '@/lib/novel-permissions'
 import { NovelReader } from '@/components/novel/NovelReader'
 
 export const dynamic = 'force-dynamic'
@@ -28,34 +28,34 @@ export default async function NovelChapterPage({
   }
 
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user || !(await hasNovelAccess(user.id, bookId))) {
-    notFound()
-  }
-
   const admin = await createAdminClient()
 
-  const { data: chapter } = await admin
-    .from('novel_chapters')
-    .select('chapter_number, title, content_html, new_word_count, is_published')
-    .eq('book_id', bookId)
-    .eq('chapter_number', chapterNumber)
-    .maybeSingle()
+  // getUser + 章节 + 新词 + 书行并行，权限判定只补 user 行一次往返
+  const [{ data: { user } }, chapterRes, wordsRes, bookRes] = await Promise.all([
+    supabase.auth.getUser(),
+    admin
+      .from('novel_chapters')
+      .select('chapter_number, title, content_html, new_word_count, is_published')
+      .eq('book_id', bookId)
+      .eq('chapter_number', chapterNumber)
+      .maybeSingle(),
+    admin
+      .from('novel_words')
+      .select('chapter_number, word, phonetic, definition, part_of_speech, gender, cefr, theme, star, order_index, example_sentence')
+      .eq('book_id', bookId)
+      .eq('chapter_number', chapterNumber)
+      .order('order_index', { ascending: true }),
+    admin
+      .from('books')
+      .select('total_chapters, is_novel, is_published, package_ids')
+      .eq('id', bookId)
+      .maybeSingle(),
+  ])
 
-  if (!chapter || !chapter.is_published) notFound()
-
-  const { data: newWords } = await admin
-    .from('novel_words')
-    .select('chapter_number, word, phonetic, definition, part_of_speech, gender, cefr, theme, star, order_index, example_sentence')
-    .eq('book_id', bookId)
-    .eq('chapter_number', chapterNumber)
-    .order('order_index', { ascending: true })
-
-  const { data: book } = await admin
-    .from('books')
-    .select('total_chapters')
-    .eq('id', bookId)
-    .single()
+  const chapter = chapterRes.data
+  const book = bookRes.data
+  if (!user || !book || !chapter || !chapter.is_published) notFound()
+  if (!(await hasNovelAccessForBook(user.id, book))) notFound()
 
   const initialPercent = p ? Math.min(99, Math.max(0, parseInt(p, 10) || 0)) : undefined
 
@@ -68,7 +68,7 @@ export default async function NovelChapterPage({
         title: chapter.title,
         contentHtml: chapter.content_html,
       }}
-      newWords={newWords || []}
+      newWords={wordsRes.data || []}
       initialPercent={initialPercent}
     />
   )

@@ -69,6 +69,28 @@ export async function hasNovelAccess(userId: string, bookId: string): Promise<bo
 }
 
 /**
+ * 页面并行取数版的权限判定：
+ * 页面已把 book 行与其他数据 Promise.all 取回后，只补一次 user 行做相交判定，
+ * 避免串行 hasNovelAccess 的两次往返（getUser + 数据查询已并行完成）。
+ */
+export async function hasNovelAccessForBook(
+  userId: string,
+  book: { is_novel: boolean; is_published: boolean; package_ids: string[] | null } | null | undefined
+): Promise<boolean> {
+  if (!book || !book.is_novel || !book.is_published) return false
+  const supabase = await createAdminClient()
+  const { data: user } = await supabase
+    .from('users')
+    .select('package_ids, permission_expires_at')
+    .eq('id', userId)
+    .maybeSingle()
+  if (!user) return false
+  const expiresAt = user.permission_expires_at as string | null
+  if (expiresAt && new Date(expiresAt) <= new Date()) return false
+  return hasNovelPackageOverlap(book.package_ids, user.package_ids as string[] | null)
+}
+
+/**
  * 列出全部小说书（admin 用；is_novel=true 的书）
  */
 export async function listNovelBooks(): Promise<

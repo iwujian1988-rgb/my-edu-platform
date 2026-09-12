@@ -6,7 +6,7 @@
 
 import { notFound } from 'next/navigation'
 import { createClient, createAdminClient } from '@/lib/supabase/server'
-import { hasNovelAccess } from '@/lib/novel-permissions'
+import { hasNovelAccessForBook } from '@/lib/novel-permissions'
 import { ReviewClient, type ReviewRange } from '@/components/novel/ReviewClient'
 
 export const dynamic = 'force-dynamic'
@@ -24,22 +24,25 @@ export default async function NovelReviewPage({
   const { range: rangeParam, chapter: chapterParam } = await searchParams
 
   const supabase = await createClient()
-  const { data: { user } } = await supabase.auth.getUser()
-  if (!user || !(await hasNovelAccess(user.id, bookId))) {
+  const admin = await createAdminClient()
+
+  // getUser + 书行并行，权限判定只补 user 行一次往返
+  const [{ data: { user } }, bookRes] = await Promise.all([
+    supabase.auth.getUser(),
+    admin
+      .from('books')
+      .select('id, title, is_novel, is_published, package_ids')
+      .eq('id', bookId)
+      .maybeSingle(),
+  ])
+
+  const book = bookRes.data
+  if (!user || !book || !(await hasNovelAccessForBook(user.id, book))) {
     notFound()
   }
 
   const range = (rangeParam && VALID_RANGES.has(rangeParam) ? rangeParam : 'all') as ReviewRange
   const chapter = chapterParam ? parseInt(chapterParam, 10) : undefined
-
-  const admin = await createAdminClient()
-  const { data: book } = await admin
-    .from('books')
-    .select('id, title')
-    .eq('id', bookId)
-    .maybeSingle()
-
-  if (!book) notFound()
 
   // 阅读进度章（服务端直查，getNovelProgress 是浏览器实现不能在此用）
   const { data: pref } = await admin
