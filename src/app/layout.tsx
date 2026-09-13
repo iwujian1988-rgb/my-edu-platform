@@ -2,7 +2,6 @@
 import '@/lib/disable-logs'
 
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import { Suspense } from "react";
 import "./globals.css";
 import "./maxclass-skin.css";
@@ -22,13 +21,6 @@ export const metadata: Metadata = {
     apple: "/icons/icon-192.png",
   },
 };
-
-const roboto = Roboto({
-  subsets: ['latin'],
-  weight: ['300', '400', '500', '700', '900'],
-  variable: '--font-roboto',
-  display: 'swap',
-});
 
 export default function RootLayout({
   children,
@@ -83,7 +75,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${roboto.variable} font-sans antialiased`} data-maxclass-skin="true" suppressHydrationWarning>
+      <body className="font-sans antialiased" data-maxclass-skin="true" suppressHydrationWarning>
         <ThemeProvider>
           <SoundEffects />
           <Suspense fallback={null}>

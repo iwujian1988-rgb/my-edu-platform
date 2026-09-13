@@ -53,21 +53,9 @@ export default function LoginFormClient() {
 
       console.log('[Login] 登录成功:', data.user.id)
 
-      // 性能优化：Supabase SDK 会确保 cookies 在返回前设置完成
-      // 无需额外等待，直接验证 session
-      console.log('[Login] 验证 session 稳定性...')
-
-      // 直接验证 session（无需延迟）
-      const { data: { user: verifiedUser }, error: verifyError } = await supabase.auth.getUser()
-
-      if (verifyError || !verifiedUser) {
-        console.error('[Login] ❌ Session 验证失败:', verifyError)
-        setError('登录状态验证失败，请重试')
-        setLoading(false)
-        return
-      }
-
-      console.log('[Login] ✅ Session 验证成功:', verifiedUser.id)
+      // signInWithPassword 已返回经过认证的用户；避免马上再发一次
+      // getUser 请求，把一次短暂的 Supabase 网络抖动误判为登录失败。
+      console.log('[Login] ✅ 登录凭证已确认:', data.user.id)
 
       // 检查用户是否被封禁（需要额外调用API）
       const checkBanResponse = await fetch('/api/auth/check-ban', {

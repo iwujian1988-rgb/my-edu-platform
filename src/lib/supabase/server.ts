@@ -182,16 +182,6 @@ export async function createClient(): Promise<SupabaseClient<Database>> {
             }
             */
 
-            // 🔧 临时阻止删除 auth-token 相关的 cookies
-            if (name.includes('auth-token')) {
-              /* // 已禁用：日志输出导致内存泄漏
-              if (isDev) {
-                console.log('🛑 [createClient] BLOCKED removal of auth cookie:', name)
-              }
-              */
-              return  // 阻止删除
-            }
-
             cookieStore.set({
               name,
               value: '',
