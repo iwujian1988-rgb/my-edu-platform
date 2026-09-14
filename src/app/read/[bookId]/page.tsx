@@ -1,10 +1,10 @@
 /**
  * 小说目录页（/read/[bookId]）
  *
- * 权限卡点：未登录/无套餐 → notFound()（完全隐藏，不泄露存在性）
+ * 权限卡点：未登录 → 登录页（带回跳）；无套餐 → notFound()（不泄露存在性）
  */
 
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { createClient, createAdminClient } from '@/lib/supabase/server'
 import { hasNovelAccessForBook } from '@/lib/novel-permissions'
 import { ChapterIndexClient } from '@/components/novel/ChapterIndexClient'
@@ -26,7 +26,7 @@ export default async function NovelIndexPage({
     supabase.auth.getUser(),
     admin
       .from('books')
-      .select('id, title, description, total_chapters, is_novel, is_published, package_ids')
+      .select('id, title, description, total_chapters, is_novel, is_published, package_ids, cover_url')
       .eq('id', bookId)
       .maybeSingle(),
     admin
@@ -38,7 +38,8 @@ export default async function NovelIndexPage({
   ])
 
   const book = bookRes.data
-  if (!user || !book) notFound()
+  if (!user) redirect(`/login?redirect=${encodeURIComponent(`/read/${bookId}`)}`)
+  if (!book) notFound()
 
   // 权限判定与书签并行（书签随 RSC 下发，省一次客户端往返）
   const [hasAccess, bookmarksRes] = await Promise.all([
@@ -57,6 +58,7 @@ export default async function NovelIndexPage({
       bookId={bookId}
       bookTitle={book.title}
       description={book.description}
+      coverUrl={book.cover_url}
       chapters={chaptersRes.data || []}
       initialBookmarks={(bookmarksRes.data || []).map((b) => b.chapter_number)}
     />

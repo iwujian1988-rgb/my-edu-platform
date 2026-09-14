@@ -4,7 +4,7 @@
  * 静态段 review 优先于动态段 [chapter]（Next.js 路由规则）。
  */
 
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { createClient, createAdminClient } from '@/lib/supabase/server'
 import { hasNovelAccessForBook } from '@/lib/novel-permissions'
 import { ReviewClient, type ReviewRange } from '@/components/novel/ReviewClient'
@@ -37,7 +37,14 @@ export default async function NovelReviewPage({
   ])
 
   const book = bookRes.data
-  if (!user || !book || !(await hasNovelAccessForBook(user.id, book))) {
+  if (!user) {
+    const qs = new URLSearchParams()
+    if (rangeParam) qs.set('range', rangeParam)
+    if (chapterParam) qs.set('chapter', chapterParam)
+    const s = qs.toString()
+    redirect(`/login?redirect=${encodeURIComponent(`/read/${bookId}/review${s ? `?${s}` : ''}`)}`)
+  }
+  if (!book || !(await hasNovelAccessForBook(user.id, book))) {
     notFound()
   }
 

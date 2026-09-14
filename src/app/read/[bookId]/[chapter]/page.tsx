@@ -5,7 +5,7 @@
  * ?p= 由目录"继续阅读"带入，阅读器挂载后滚到上次位置。
  */
 
-import { notFound } from 'next/navigation'
+import { notFound, redirect } from 'next/navigation'
 import { createClient, createAdminClient } from '@/lib/supabase/server'
 import { hasNovelAccessForBook } from '@/lib/novel-permissions'
 import { NovelReader } from '@/components/novel/NovelReader'
@@ -54,7 +54,8 @@ export default async function NovelChapterPage({
 
   const chapter = chapterRes.data
   const book = bookRes.data
-  if (!user || !book || !chapter || !chapter.is_published) notFound()
+  if (!user) redirect(`/login?redirect=${encodeURIComponent(`/read/${bookId}/${chapterNumber}`)}`)
+  if (!book || !chapter || !chapter.is_published) notFound()
 
   // 权限判定与书签/生词本并行（两者随 RSC 下发，省两次客户端往返）
   const [hasAccess, bookmarksRes, notebookRes] = await Promise.all([

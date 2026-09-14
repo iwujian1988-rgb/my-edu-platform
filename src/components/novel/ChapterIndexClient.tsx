@@ -24,12 +24,13 @@ interface ChapterIndexClientProps {
   bookId: string
   bookTitle: string
   description?: string | null
+  coverUrl?: string | null
   chapters: ChapterMeta[]
   /** 服务端随 RSC 下发的书签章号（免客户端往返） */
   initialBookmarks?: number[]
 }
 
-export function ChapterIndexClient({ bookId, bookTitle, description, chapters, initialBookmarks }: ChapterIndexClientProps) {
+export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, chapters, initialBookmarks }: ChapterIndexClientProps) {
   const [resume, setResume] = useState<{ chapter: number; percent: number } | null>(null)
   const [resumeLoaded, setResumeLoaded] = useState(false)
   const [bookmarks, setBookmarks] = useState<number[]>(initialBookmarks || [])
@@ -51,14 +52,24 @@ export function ChapterIndexClient({ bookId, bookTitle, description, chapters, i
     <div className="min-h-screen bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] text-[#121729] dark:from-[#101626] dark:to-[#0c1120] dark:text-[#edf1ff]">
       <div className="mx-auto max-w-[880px] px-4 py-6 md:py-10">
         {/* 书头 */}
-        <div className="mb-6">
-          <h1 className="text-2xl font-extrabold tracking-[-0.01em] md:text-3xl">{bookTitle}</h1>
-          <p className="mt-2 text-sm text-[#68718a] dark:text-[#a7b0c8]">
-            共 {chapters.length} 章 · {totalWords} 个新词 · 点正文蓝色词看释义
-          </p>
-          {description && (
-            <p className="mt-2 line-clamp-2 text-sm text-[#68718a] dark:text-[#a7b0c8]">{description}</p>
+        <div className="mb-6 flex items-start gap-4">
+          {coverUrl && (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={coverUrl}
+              alt={bookTitle}
+              className="w-20 shrink-0 rounded-lg shadow-[0_12px_30px_rgba(31,42,104,0.25)] md:w-24"
+            />
           )}
+          <div className="min-w-0">
+            <h1 className="text-2xl font-extrabold tracking-[-0.01em] md:text-3xl">{bookTitle}</h1>
+            <p className="mt-2 text-sm text-[#68718a] dark:text-[#a7b0c8]">
+              共 {chapters.length} 章 · {totalWords} 个新词 · 点正文蓝色词看释义
+            </p>
+            {description && (
+              <p className="mt-2 line-clamp-2 text-sm text-[#68718a] dark:text-[#a7b0c8]">{description}</p>
+            )}
+          </div>
         </div>
 
         {/* 继续阅读卡 */}
