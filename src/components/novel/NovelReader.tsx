@@ -20,7 +20,7 @@ import { sanitizeNovelHtml, wrapZhGlosses } from '@/lib/novelSanitize'
 import { normForm } from '@/lib/novel-forms'
 import { saveNovelProgress } from '@/lib/readingProgress'
 import { WordPopover, type LexiconEntry } from './WordPopover'
-import { NewWordsPanel, type NovelWord } from './NewWordsPanel'
+import { NewWordsPanel, type NovelWord, type ReappearanceWord } from './NewWordsPanel'
 
 interface NovelReaderProps {
   bookId: string
@@ -83,9 +83,11 @@ export function NovelReader({
     x: number
     y: number
   } | null>(null)
+  const [reappearances, setReappearances] = useState<ReappearanceWord[]>([])
 
   const percentRef = useRef(0)
   const rafRef = useRef<number | null>(null)
+  const articleRef = useRef<HTMLElement>(null)
 
   const hasPrev = chapter.number > 1
   const hasNext = chapter.number < totalChapters
@@ -115,6 +117,32 @@ export function NovelReader({
       .then((json) => setChapters(json.data || []))
       .catch(() => {})
   }, [bookId])
+
+  // 复现词推导：扫正文 b.fw 标记（按出场顺序）→ 词典命中 → 排除本章新词
+  useEffect(() => {
+    if (!lexiconMap || !articleRef.current) return
+    const newLemmas = new Set(newWords.map((w) => normForm(w.word)))
+    const seen = new Set<string>()
+    const list: ReappearanceWord[] = []
+    for (const el of Array.from(articleRef.current.querySelectorAll('b.fw'))) {
+      const raw = el.getAttribute('data-w') || el.textContent || ''
+      const entry = lexiconMap.get(normForm(raw))
+      if (!entry || seen.has(entry.lemma)) continue
+      seen.add(entry.lemma)
+      if (entry.chapter_first === chapter.number || newLemmas.has(normForm(entry.lemma))) continue
+      list.push({
+        form: raw,
+        lemma: entry.lemma,
+        phonetic: entry.phonetic,
+        pos: entry.pos,
+        gender: entry.gender,
+        definition: entry.definition,
+        cefr: entry.cefr,
+        chapterFirst: entry.chapter_first,
+      })
+    }
+    setReappearances(list)
+  }, [lexiconMap, chapter.number, newWords])
 
   // 滚动进度
   useEffect(() => {
@@ -207,6 +235,26 @@ export function NovelReader({
       chapters: [w.chapter_number],
     }
     setPopover({ entry, raw: w.word, x: pos.x, y: pos.y })
+  }
+
+  // 复现词点词（词条本身在词典；缺行时用面板数据合成）
+  const handleReappearanceClick = (w: ReappearanceWord, pos: { x: number; y: number }) => {
+    const hit = lexiconMap?.get(normForm(w.lemma))
+    const entry: LexiconEntry = hit || {
+      form_key: normForm(w.lemma),
+      lemma: w.lemma,
+      display_form: w.form,
+      phonetic: w.phonetic,
+      pos: w.pos,
+      gender: w.gender,
+      definition: w.definition,
+      cefr: w.cefr,
+      scene: null,
+      example_html: null,
+      chapter_first: w.chapterFirst,
+      chapters: null,
+    }
+    setPopover({ entry, raw: w.form, x: pos.x, y: pos.y })
   }
 
   // 生词本开关（乐观更新）
@@ -362,6 +410,7 @@ export function NovelReader({
           </h1>
 
           <article
+            ref={articleRef}
             className="novel-content"
             data-mode={displayMode}
             style={{ fontSize: `${fontSize}px` }}
@@ -373,7 +422,9 @@ export function NovelReader({
             bookId={bookId}
             chapter={chapter.number}
             words={newWords}
+            reappearances={reappearances}
             onWordClick={handlePanelWordClick}
+            onReappearanceClick={handleReappearanceClick}
           />
 
           {/* PC 上/下章 */}
@@ -447,6 +498,11 @@ export function NovelReader({
               <div className="space-y-1.5 text-xs text-[#68718a] dark:text-[#a7b0c8]">
                 <p>
                   新词 <span className="font-bold text-[#121729] dark:text-[#edf1ff]">{newWords.length}</span> 个
+                  {reappearances.length > 0 && (
+                    <>
+                      {' '}· 复现 <span className="font-bold text-[#121729] dark:text-[#edf1ff]">{reappearances.length}</span> 个
+                    </>
+                  )}
                 </p>
                 <p>
                   已读 <span className="font-bold text-[#121729] dark:text-[#edf1ff]">{Math.round(percent)}%</span>
