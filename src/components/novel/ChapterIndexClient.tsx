@@ -35,12 +35,30 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
   const [resumeLoaded, setResumeLoaded] = useState(false)
   const [bookmarks, setBookmarks] = useState<number[]>(initialBookmarks || [])
   const [onlyBookmarks, setOnlyBookmarks] = useState(false)
+  const [totalByChapter, setTotalByChapter] = useState<Map<number, number> | null>(null)
 
   useEffect(() => {
     getNovelProgress(bookId).then((p) => {
       if (p) setResume({ chapter: p.chapter, percent: p.percent })
       setResumeLoaded(true)
     })
+  }, [bookId])
+
+  // 每章词汇总数（新词+复现）：词典行按词条去重，chapters 数组逐章计数（ETag 缓存，二次进入零传输）
+  useEffect(() => {
+    fetch(`/api/novel/${bookId}/lexicon`)
+      .then((r) => (r.ok ? r.json() : { data: [] }))
+      .then((json) => {
+        const per = new Map<number, number>()
+        const seen = new Set<string>()
+        for (const row of json.data || []) {
+          if (seen.has(row.lemma)) continue
+          seen.add(row.lemma)
+          for (const ch of row.chapters || []) per.set(ch, (per.get(ch) || 0) + 1)
+        }
+        setTotalByChapter(per)
+      })
+      .catch(() => setTotalByChapter(new Map()))
   }, [bookId])
 
   const totalWords = chapters.reduce((sum, c) => sum + (c.new_word_count || 0), 0)
@@ -156,6 +174,7 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
             {visibleChapters.map((c) => {
               const marked = bookmarks.includes(c.chapter_number)
               const isCurrent = resume?.chapter === c.chapter_number
+              const reap = Math.max(0, (totalByChapter?.get(c.chapter_number) ?? c.new_word_count) - c.new_word_count)
               return (
                 <Link
                   key={c.chapter_number}
@@ -177,9 +196,11 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
                   <span className="min-w-0 flex-1 truncate text-sm font-medium text-[#121729] dark:text-[#edf1ff]">
                     {c.title}
                   </span>
-                  {c.new_word_count > 0 && (
+                  {(c.new_word_count > 0 || reap > 0) && (
                     <span className="shrink-0 rounded bg-[#f3f5fb] px-1.5 py-0.5 text-[10px] font-semibold text-[#68718a] dark:bg-[#192238] dark:text-[#a7b0c8]">
-                      {c.new_word_count} 词
+                      {c.new_word_count > 0 && `新${c.new_word_count}`}
+                      {c.new_word_count > 0 && reap > 0 && '·'}
+                      {reap > 0 && `复${reap}`}
                     </span>
                   )}
                   {isCurrent && resume && (
