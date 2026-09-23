@@ -109,9 +109,9 @@ export function SubtitleWithHighlights({
         <p className={cn(
           'text-[15px] font-medium leading-relaxed lg:text-sm lg:font-normal',
           isActive
-            ? 'text-gray-800 dark:text-gray-900'
-            : 'text-gray-700 dark:text-gray-300 lg:text-muted-foreground',
-        )}>
+            ? 'text-gray-800 dark:text-gray-950'
+            : 'text-gray-700 dark:text-[#4B5563] lg:text-muted-foreground',
+        )} data-video-subtitle-translation="true" data-active={isActive}>
           {subtitle.chinese_text || <span className="text-muted-foreground italic">暂无翻译</span>}
         </p>
       </div>
@@ -125,7 +125,7 @@ export function SubtitleWithHighlights({
           'text-[16px] font-semibold leading-[1.6] lg:text-sm lg:font-normal',
           isActive
             ? 'text-gray-950 dark:text-gray-950'
-            : 'text-gray-900 dark:text-gray-100',
+            : 'text-gray-900 dark:text-gray-950',
         )}>
           {renderHighlightedText(subtitle.original_text, sortedHighlights)}
         </p>
@@ -140,7 +140,7 @@ export function SubtitleWithHighlights({
         'text-[16px] font-semibold leading-[1.6] lg:text-sm lg:font-normal',
         isActive
           ? 'text-gray-950 dark:text-gray-950'
-          : 'text-gray-900 dark:text-gray-100',
+          : 'text-gray-900 dark:text-gray-950',
       )}>
         {renderHighlightedText(subtitle.original_text, sortedHighlights)}
       </p>
@@ -148,9 +148,9 @@ export function SubtitleWithHighlights({
         <p className={cn(
           'text-[14px] leading-relaxed lg:text-xs',
           isActive
-            ? 'text-gray-800 dark:text-gray-900'
-            : 'text-[#4B5563] dark:text-gray-300 lg:text-muted-foreground',
-        )}>
+            ? 'text-gray-800 dark:text-gray-950'
+            : 'text-[#4B5563] dark:text-[#4B5563] lg:text-muted-foreground',
+        )} data-video-subtitle-translation="true" data-active={isActive}>
           {subtitle.chinese_text}
         </p>
       )}

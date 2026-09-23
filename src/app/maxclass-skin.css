@@ -899,3 +899,16 @@ html.dark
   ) {
   color: #cbd5e1 !important;
 }
+
+/* 字幕卡片在移动端保持浅色底；不要继承 MAXCLASS 深色块的白字规则。 */
+[data-maxclass-skin="true"]
+  [data-video-surface="true"]
+  [data-video-subtitle-translation="true"][data-active="true"] {
+  color: #1f2937 !important;
+}
+
+[data-maxclass-skin="true"]
+  [data-video-surface="true"]
+  [data-video-subtitle-translation="true"][data-active="false"] {
+  color: #4b5563 !important;
+}
