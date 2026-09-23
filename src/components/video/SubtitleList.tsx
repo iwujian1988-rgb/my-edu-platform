@@ -304,18 +304,18 @@ export function SubtitleList({
                 'lg:p-3 lg:rounded-none lg:border-[2px]',
                 isActive
                   ? cn(
-                      // 移动端激活：柔和浅黄绿 + 半透明边框
-                      'bg-[#F6FFD9] border-[#E8F5B8] shadow-[0_1px_2px_rgba(180,210,120,0.15)] translate-y-0',
-                      // PC端保持原有
-                      'lg:bg-[#B4F416] lg:dark:bg-[#E7F6C2] lg:border-black lg:dark:border-[#B4F416] lg:shadow-[4px_4px_0px_0px_#000] lg:dark:shadow-[4px_4px_0px_0px_#555] lg:-translate-y-0.5'
+                      // 激活字幕用浅色强调；深色模式切换为层次更柔和的深蓝灰。
+                      'bg-[#F6FFD9] border-[#E8F5B8] dark:bg-[#26344B] dark:border-[#40516B] shadow-[0_1px_2px_rgba(180,210,120,0.15)] translate-y-0',
+                      'lg:bg-[#B4F416] lg:dark:bg-[#26344B] lg:border-black lg:dark:border-[#40516B] lg:shadow-[4px_4px_0px_0px_#000] lg:dark:shadow-[4px_4px_0px_0px_#111827] lg:-translate-y-0.5'
                     )
                   : cn(
-                      // 移动端未激活：白底 + 浅灰边框
-                      'bg-white border-[#EDEDED] hover:border-[#E0E0E0]',
-                      // PC端保持原有
-                      'lg:dark:bg-gray-800 lg:border-gray-200 lg:dark:border-gray-700 lg:hover:border-black lg:dark:hover:border-gray-500 lg:hover:shadow-[2px_2px_0px_0px_#000] lg:dark:hover:shadow-[2px_2px_0px_0px_#666]'
+                      // 未激活字幕白天为白底，深色模式与页面融为深蓝灰。
+                      'bg-white border-[#EDEDED] hover:border-[#E0E0E0] dark:bg-[#1B263B] dark:border-[#2F405A] dark:hover:border-[#526684]',
+                      'lg:dark:bg-[#1B263B] lg:border-gray-200 lg:dark:border-[#2F405A] lg:hover:border-black lg:dark:hover:border-[#526684] lg:hover:shadow-[2px_2px_0px_0px_#000] lg:dark:hover:shadow-[2px_2px_0px_0px_#111827]'
                     )
               )}
+              data-video-subtitle-card="true"
+              data-active={isActive}
               onClick={() => onSubtitleClick(subtitle)}
             >
               {/* 当前播放指示器 - PC端保留 */}
@@ -338,7 +338,7 @@ export function SubtitleList({
                           'lg:bg-black lg:border-black'
                         )
                       : cn(
-                          'bg-[#F5F5F5] text-[#9CA3AF]',
+                          'bg-[#F5F5F5] text-[#9CA3AF] dark:bg-[#334155] dark:text-[#CBD5E1]',
                           'lg:bg-gray-100 lg:dark:bg-gray-700 lg:text-gray-600 lg:dark:text-gray-400 lg:border-gray-300 lg:dark:border-gray-600'
                         )
                   )}
