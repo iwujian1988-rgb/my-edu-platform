@@ -194,10 +194,10 @@ function CompactWordCards({
         {words.map(word => {
           const status = getCardStatus('word', word.id)
           const statusColor = status === 'known'
-            ? 'border-green-300 bg-green-50'
+            ? 'border-green-300 bg-green-50 dark:border-green-800 dark:bg-green-950/40'
             : status === 'learning'
-              ? 'border-yellow-300 bg-yellow-50'
-              : 'border-red-300 bg-red-50'
+              ? 'border-yellow-300 bg-yellow-50 dark:border-yellow-800 dark:bg-yellow-950/40'
+              : 'border-red-300 bg-red-50 dark:border-red-800 dark:bg-red-950/40'
           return (
             <button
               key={word.id}
@@ -207,10 +207,10 @@ function CompactWordCards({
               <div className="flex items-center gap-1">
                 <span className="text-[12px] font-black text-black dark:text-white">{word.word}</span>
                 {word.phonetic && (
-                  <span className="text-[9px] text-gray-400">[{word.phonetic}]</span>
+                  <span className="text-[9px] text-gray-500 dark:text-gray-400">[{word.phonetic}]</span>
                 )}
               </div>
-              <p className="text-[10px] text-gray-500 mt-0.5 line-clamp-1">
+              <p className="text-[10px] text-gray-600 dark:text-gray-300 mt-0.5 line-clamp-1">
                 {word.chinese_definition}
               </p>
             </button>
@@ -235,9 +235,9 @@ function CompactWordCards({
 
 /* ===== Word detail popover with full info + status buttons ===== */
 const STATUS_LABELS: Record<CardStatus, { label: string; color: string; activeColor: string }> = {
-  unknown: { label: '不认识', color: 'border-red-300 bg-white text-red-600', activeColor: 'bg-red-500 text-white border-red-600' },
-  learning: { label: '学习中', color: 'border-yellow-300 bg-white text-yellow-700', activeColor: 'bg-yellow-400 text-black border-yellow-500' },
-  known: { label: '认识', color: 'border-green-300 bg-white text-green-700', activeColor: 'bg-green-500 text-white border-green-600' },
+  unknown: { label: '不认识', color: 'border-red-300 dark:border-red-800 bg-white dark:bg-gray-700 text-red-600 dark:text-red-300', activeColor: 'bg-red-500 text-white border-red-600' },
+  learning: { label: '学习中', color: 'border-yellow-300 dark:border-yellow-800 bg-white dark:bg-gray-700 text-yellow-700 dark:text-yellow-200', activeColor: 'bg-yellow-400 text-black border-yellow-500' },
+  known: { label: '认识', color: 'border-green-300 dark:border-green-800 bg-white dark:bg-gray-700 text-green-700 dark:text-green-200', activeColor: 'bg-green-500 text-white border-green-600' },
 }
 
 function WordDetailPopover({
@@ -313,7 +313,7 @@ function WordDetailPopover({
             <h3 className="text-lg font-bold">{word.word}</h3>
             <div className="flex items-center gap-2 flex-wrap mt-0.5">
               {word.phonetic && (
-                <span className="text-sm text-gray-500 font-mono">[{word.phonetic}]</span>
+                <span className="text-sm text-gray-600 dark:text-gray-300 font-mono">[{word.phonetic}]</span>
               )}
               {word.part_of_speech && (
                 <span className="text-xs px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">{word.part_of_speech}</span>
@@ -329,7 +329,7 @@ function WordDetailPopover({
             <div className="space-y-0.5">
               {word.definitions.map((def, i) => (
                 <p key={i} className="text-xs text-gray-600 flex items-start gap-1">
-                  <span className="text-gray-400 flex-shrink-0">{i + 1}.</span>
+                  <span className="text-gray-500 dark:text-gray-400 flex-shrink-0">{i + 1}.</span>
                   {def}
                 </p>
               ))}
@@ -345,7 +345,7 @@ function WordDetailPopover({
               </div>
               <p>{word.example_from_video}</p>
               {word.example_translation && (
-                <p className="text-gray-500 mt-0.5 text-xs">{word.example_translation}</p>
+                <p className="text-gray-600 dark:text-gray-300 mt-0.5 text-xs">{word.example_translation}</p>
               )}
               <button
                 onClick={() => onPlaySegment(word.subtitle_start_time, word.subtitle_end_time)}
@@ -359,13 +359,13 @@ function WordDetailPopover({
           {/* Dictionary examples */}
           {word.examples && word.examples.length > 0 && (
             <div>
-              <span className="text-[10px] text-gray-400 font-bold">例句</span>
+              <span className="text-[10px] text-gray-500 dark:text-gray-400 font-bold">例句</span>
               <div className="mt-1 space-y-1">
                 {word.examples.slice(0, 3).map((ex: WordCardExample, i: number) => (
                   <div key={i} className="p-1.5 bg-gray-50 dark:bg-gray-700/50 rounded text-xs">
                     {ex.fr && <p>{ex.fr}</p>}
                     {ex.en && <p>{ex.en}</p>}
-                    <p className="text-gray-500 mt-0.5">{ex.zh}</p>
+                    <p className="text-gray-600 dark:text-gray-300 mt-0.5">{ex.zh}</p>
                   </div>
                 ))}
               </div>
@@ -378,7 +378,7 @@ function WordDetailPopover({
               <span className="text-[10px] text-amber-600 font-bold">搭配</span>
               <p className="mt-0.5">{word.collocation}</p>
               {word.collocation_cn && (
-                <p className="text-gray-500 text-xs mt-0.5">{word.collocation_cn}</p>
+                <p className="text-gray-600 dark:text-gray-300 text-xs mt-0.5">{word.collocation_cn}</p>
               )}
             </div>
           )}
@@ -447,7 +447,7 @@ function PhaseContent({
               {isPlaying ? '暂停' : '播放'}
             </button>
           </div>
-          <p className="text-[11px] text-gray-500 leading-relaxed">
+          <p className="text-[11px] text-gray-600 dark:text-gray-300 leading-relaxed">
             现在打开字幕重新听一遍，逐句对比你刚才听懂了多少。关注连读、弱读和生词发音——每一次发现「原来这里说的是这个」都是进步。
           </p>
         </div>
@@ -690,18 +690,18 @@ function BlindListenPhase({
 
   return (
     <div className="space-y-2">
-      <p className="text-[11px] text-gray-500 leading-relaxed">第一遍不看字幕纯听，就像真实对话一样。你的大脑会主动捕捉关键词、感受语调节奏，这是建立听力直觉最有效的方式。</p>
+      <p className="text-[11px] text-gray-600 dark:text-gray-300 leading-relaxed">第一遍不看字幕纯听，就像真实对话一样。你的大脑会主动捕捉关键词、感受语调节奏，这是建立听力直觉最有效的方式。</p>
 
       <div className="flex items-center gap-2 flex-wrap">
         <button onClick={onTogglePlay} className="flex items-center gap-1 px-2.5 py-1 text-[10px] font-black bg-[#B4F416] text-black border border-black shadow-[2px_2px_0px_0px_#000] transition-all">
           {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
           {isPlaying ? '暂停' : '播放'}
         </button>
-        <button onClick={onRestart} className="flex items-center gap-1 px-2 py-1 text-[10px] font-black bg-white text-gray-600 border border-black shadow-[2px_2px_0px_0px_#000] transition-all">
+        <button onClick={onRestart} className="flex items-center gap-1 px-2 py-1 text-[10px] font-black bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] transition-all">
           <RotateCcw className="w-3 h-3" /> 重播
         </button>
         {!isAudioContent && (
-          <button onClick={() => setOverlayVisible(v => !v)} className={`flex items-center gap-1 px-2 py-1 text-[10px] font-black border border-black shadow-[2px_2px_0px_0px_#000] transition-all ${overlayVisible ? 'bg-gray-800 text-white' : 'bg-white text-gray-600'}`}>
+          <button onClick={() => setOverlayVisible(v => !v)} className={`flex items-center gap-1 px-2 py-1 text-[10px] font-black border shadow-[2px_2px_0px_0px_#000] transition-all ${overlayVisible ? 'bg-gray-800 text-white border-gray-700' : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border-gray-300 dark:border-gray-600'}`}>
             {overlayVisible ? '隐藏遮罩' : '遮挡字幕'}
           </button>
         )}
@@ -709,14 +709,14 @@ function BlindListenPhase({
         {isCompleted ? (
           <span className="flex items-center gap-1 text-green-600 text-[10px] font-bold"><Check className="w-3 h-3" /> 已完成</span>
         ) : (
-          <button onClick={onComplete} className="px-2.5 py-1 text-[10px] font-black bg-white text-gray-500 border border-gray-300 transition-all hover:bg-gray-100">
+          <button onClick={onComplete} className="px-2.5 py-1 text-[10px] font-black bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 transition-all hover:bg-gray-100 dark:hover:bg-gray-600">
             我听完了
           </button>
         )}
       </div>
 
       {overlayVisible && (
-        <p className="text-[10px] text-gray-400">↕ 拖动遮罩移动 · ↘ 拖右下角缩放</p>
+        <p className="text-[10px] text-gray-500 dark:text-gray-400">↕ 拖动遮罩移动 · ↘ 拖右下角缩放</p>
       )}
 
       {overlayVisible && typeof window !== 'undefined' && createPortal(
@@ -726,7 +726,6 @@ function BlindListenPhase({
           onPointerUp={onDragEnd}
           className="fixed touch-none select-none"
           style={{ left: pos.x, top: pos.y, width: size.w, height: size.h, zIndex: 9999 }}
-          style={{ left: pos.x, top: pos.y, width: size.w, height: size.h }}
         >
           <div className="w-full h-full bg-black rounded-lg border-2 border-gray-400 cursor-grab active:cursor-grabbing flex items-center justify-center gap-2 overflow-hidden">
             {/* 移动图标 + 脉冲动画 */}

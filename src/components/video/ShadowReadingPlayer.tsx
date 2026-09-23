@@ -160,11 +160,11 @@ export function ShadowReadingPlayer({
       {/* ── 视频标题 / 描述（移动端直播展示用） ── */}
       {videoInfo && (
         <div className="px-4 pt-3 pb-2 flex-shrink-0">
-          <div className="text-sm font-black text-black truncate leading-tight">
+          <div className="text-sm font-black text-gray-900 dark:text-gray-100 truncate leading-tight">
             {videoInfo.title}
           </div>
           {videoInfo.description && (
-            <div className="text-[11px] text-gray-400 truncate mt-0.5 leading-tight">
+            <div className="text-[11px] text-gray-500 dark:text-gray-400 truncate mt-0.5 leading-tight">
               {videoInfo.description}
             </div>
           )}
@@ -235,7 +235,7 @@ export function ShadowReadingPlayer({
           <div className="flex-1 flex flex-col items-center justify-center px-6 lg:px-8 min-h-0">
             {/* 原文 — 大号突出，长文本自动缩小，词级 KTV */}
             <div className={cn(
-              "font-black leading-relaxed text-center text-black max-w-lg flex flex-wrap justify-center gap-x-2 gap-y-1",
+              "font-black leading-relaxed text-center text-gray-900 dark:text-gray-100 max-w-lg flex flex-wrap justify-center gap-x-2 gap-y-1",
               isLongText ? "text-base lg:text-lg" : "text-2xl lg:text-3xl"
             )}>
               {(() => {
@@ -258,7 +258,7 @@ export function ShadowReadingPlayer({
             </div>
             {currentSubtitle.chinese_text && (
               <div className={cn(
-                "text-gray-500 mt-2 text-center",
+                "text-gray-600 dark:text-gray-300 mt-2 text-center",
                 isLongText ? "text-xs lg:text-sm" : "text-sm lg:text-base"
               )}>
                 {currentSubtitle.chinese_text}
@@ -267,16 +267,16 @@ export function ShadowReadingPlayer({
 
             {/* 倒计时 */}
             <div className="mt-5 flex flex-col items-center">
-              <div className="text-5xl lg:text-6xl font-black text-gray-300 tabular-nums leading-none">
+              <div className="text-5xl lg:text-6xl font-black text-gray-400 dark:text-gray-500 tabular-nums leading-none">
                 {speakCountdown}
               </div>
-              <div className="text-xs text-gray-400 mt-1">秒</div>
+              <div className="text-xs text-gray-500 dark:text-gray-400 mt-1">秒</div>
             </div>
 
             {/* 跳过按钮 */}
             <button
               onClick={onSkipNext}
-              className="mt-4 px-4 py-1.5 text-xs lg:text-sm text-gray-400 hover:text-gray-700 border border-gray-200 hover:border-gray-400 rounded-full transition-colors cursor-pointer"
+              className="mt-4 px-4 py-1.5 text-xs lg:text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white border border-gray-300 dark:border-gray-700 hover:border-gray-500 dark:hover:border-gray-500 rounded-full transition-colors cursor-pointer"
             >
               跳过这句
             </button>
@@ -290,7 +290,7 @@ export function ShadowReadingPlayer({
             {!isDonePhase && (
               <button
                 onClick={onSkipPhase}
-                className="mb-2 px-3 py-1 text-[11px] lg:text-xs text-gray-400 hover:text-gray-700 border border-gray-200 hover:border-gray-400 rounded-full transition-colors flex-shrink-0 cursor-pointer"
+                className="mb-2 px-3 py-1 text-[11px] lg:text-xs text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white border border-gray-300 dark:border-gray-700 hover:border-gray-500 dark:hover:border-gray-500 rounded-full transition-colors flex-shrink-0 cursor-pointer"
               >
                 跳过
               </button>
@@ -314,7 +314,7 @@ export function ShadowReadingPlayer({
                     )}>
                       <div className="relative inline-block max-w-full">
                         <div className={cn(
-                          "font-black leading-relaxed tracking-tight text-black break-words flex flex-wrap justify-center gap-x-2 gap-y-1",
+                          "font-black leading-relaxed tracking-tight text-gray-900 dark:text-gray-100 break-words flex flex-wrap justify-center gap-x-2 gap-y-1",
                           isLongText ? "text-sm lg:text-base" : "text-lg lg:text-xl"
                         )}>
                           {(() => {
@@ -341,12 +341,12 @@ export function ShadowReadingPlayer({
                         </div>
                       </div>
                       {sub.chinese_text && (
-                        <div className="text-xs lg:text-sm text-gray-500 mt-1 leading-snug">
+                        <div className="text-xs lg:text-sm text-gray-600 dark:text-gray-300 mt-1 leading-snug">
                           {sub.chinese_text}
                         </div>
                       )}
-                      <div className="text-[11px] lg:text-sm text-gray-400 mt-2 font-bold tracking-wide">
-                        <span className="text-gray-600 font-extrabold">{currentIndex + 1}</span> / {totalCount}
+                      <div className="text-[11px] lg:text-sm text-gray-500 dark:text-gray-400 mt-2 font-bold tracking-wide">
+                        <span className="text-gray-700 dark:text-gray-200 font-extrabold">{currentIndex + 1}</span> / {totalCount}
                       </div>
                     </div>
                   )
@@ -355,7 +355,7 @@ export function ShadowReadingPlayer({
                   const opacity = Math.max(0.08, 0.35 - distance * 0.12)
                   rows.push(
                     <div key={sub.id} className="text-center w-full mb-0.5 mt-0.5 flex-shrink-0" style={{ opacity }}>
-                      <div className="text-xs lg:text-sm font-semibold text-gray-400 truncate">
+                      <div className="text-xs lg:text-sm font-semibold text-gray-500 dark:text-gray-500 truncate">
                         {sub.original_text}
                       </div>
                     </div>
@@ -390,36 +390,36 @@ export function ShadowReadingPlayer({
       </div>
 
       {/* ── 底部控制区（固定在底部） ── */}
-      <div className="flex-shrink-0 border-t-2 border-gray-200 bg-white">
+      <div className="flex-shrink-0 border-t-2 border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
         {/* 快捷跳转按钮行 */}
         {videoInfo && onNavigateTo && (
           <div className="grid grid-cols-4 gap-1.5 px-4 pt-2.5 pb-1">
             {videoInfo.wordCount > 0 && (
-              <button onClick={() => setConfirmTarget('words')} className="flex flex-col items-center gap-0.5 py-1.5 bg-gray-50 active:bg-[#B4F416] active:scale-95 transition-all cursor-pointer border border-transparent active:border-black">
-                <BookOpen className="w-4 h-4 text-gray-500" />
-                <span className="text-[10px] font-black text-black leading-none">{videoInfo.wordCount}</span>
-                <span className="text-[9px] text-gray-400 leading-none">词</span>
+              <button onClick={() => setConfirmTarget('words')} className="flex flex-col items-center gap-0.5 py-1.5 bg-gray-50 dark:bg-gray-800 active:bg-[#B4F416] active:scale-95 transition-all cursor-pointer border border-transparent active:border-black">
+                <BookOpen className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                <span className="text-[10px] font-black text-gray-900 dark:text-gray-100 leading-none">{videoInfo.wordCount}</span>
+                <span className="text-[9px] text-gray-500 dark:text-gray-400 leading-none">词</span>
               </button>
             )}
             {videoInfo.expressionCount > 0 && (
-              <button onClick={() => setConfirmTarget('expressions')} className="flex flex-col items-center gap-0.5 py-1.5 bg-gray-50 active:bg-[#B4F416] active:scale-95 transition-all cursor-pointer border border-transparent active:border-black">
-                <MessageSquareText className="w-4 h-4 text-gray-500" />
-                <span className="text-[10px] font-black text-black leading-none">{videoInfo.expressionCount}</span>
-                <span className="text-[9px] text-gray-400 leading-none">表达</span>
+              <button onClick={() => setConfirmTarget('expressions')} className="flex flex-col items-center gap-0.5 py-1.5 bg-gray-50 dark:bg-gray-800 active:bg-[#B4F416] active:scale-95 transition-all cursor-pointer border border-transparent active:border-black">
+                <MessageSquareText className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                <span className="text-[10px] font-black text-gray-900 dark:text-gray-100 leading-none">{videoInfo.expressionCount}</span>
+                <span className="text-[9px] text-gray-500 dark:text-gray-400 leading-none">表达</span>
               </button>
             )}
             {videoInfo.grammarPointCount > 0 && (
-              <button onClick={() => setConfirmTarget('grammar')} className="flex flex-col items-center gap-0.5 py-1.5 bg-gray-50 active:bg-[#B4F416] active:scale-95 transition-all cursor-pointer border border-transparent active:border-black">
-                <Volume2 className="w-4 h-4 text-gray-500" />
-                <span className="text-[10px] font-black text-black leading-none">{videoInfo.grammarPointCount}</span>
-                <span className="text-[9px] text-gray-400 leading-none">语法</span>
+              <button onClick={() => setConfirmTarget('grammar')} className="flex flex-col items-center gap-0.5 py-1.5 bg-gray-50 dark:bg-gray-800 active:bg-[#B4F416] active:scale-95 transition-all cursor-pointer border border-transparent active:border-black">
+                <Volume2 className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+                <span className="text-[10px] font-black text-gray-900 dark:text-gray-100 leading-none">{videoInfo.grammarPointCount}</span>
+                <span className="text-[9px] text-gray-500 dark:text-gray-400 leading-none">语法</span>
               </button>
             )}
             {videoInfo.exerciseCount > 0 && (
-              <button onClick={() => setConfirmTarget('exercises')} className="flex flex-col items-center gap-0.5 py-1.5 bg-gray-50 active:bg-[#B4F416] active:scale-95 transition-all cursor-pointer border border-transparent active:border-black">
-                <PenLine className="w-4 h-4 text-gray-500" />
-                <span className="text-[10px] font-black text-black leading-none">{videoInfo.exerciseCount}</span>
-                <span className="text-[9px] text-gray-400 leading-none">练习</span>
+              <button onClick={() => setConfirmTarget('exercises')} className="flex flex-col items-center gap-0.5 py-1.5 bg-gray-50 dark:bg-gray-800 active:bg-[#B4F416] active:scale-95 transition-all cursor-pointer border border-transparent active:border-black">
+                <PenLine className="w-4 h-4 text-gray-500 dark:text-gray-300" />
+                <span className="text-[10px] font-black text-black dark:text-gray-100 leading-none">{videoInfo.exerciseCount}</span>
+                <span className="text-[9px] text-gray-500 dark:text-gray-400 leading-none">练习</span>
               </button>
             )}
           </div>
@@ -429,13 +429,13 @@ export function ShadowReadingPlayer({
         <div className="flex items-center gap-3 px-5 py-3">
         <button
           onClick={onSkipPrev}
-          className="w-11 h-11 lg:w-12 lg:h-12 border-2 border-black bg-gray-50 flex items-center justify-center flex-shrink-0 cursor-pointer active:scale-[0.88] transition-transform"
+          className="w-11 h-11 lg:w-12 lg:h-12 border-2 border-black dark:border-gray-600 bg-gray-50 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 cursor-pointer active:scale-[0.88] transition-transform"
         >
-          <SkipBack className="w-4 h-4 text-gray-600" />
+          <SkipBack className="w-4 h-4 text-gray-600 dark:text-gray-300" />
         </button>
 
         {isRecording ? (
-          <div className="flex-1 h-11 lg:h-12 border-2 border-gray-300 bg-gray-100 text-gray-400 font-black text-sm flex items-center justify-center gap-2">
+          <div className="flex-1 h-11 lg:h-12 border-2 border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 font-black text-sm flex items-center justify-center gap-2">
             <Mic className="w-4 h-4" />
             <span>录音中</span>
           </div>
@@ -454,9 +454,9 @@ export function ShadowReadingPlayer({
 
         <button
           onClick={onSkipNext}
-          className="w-11 h-11 lg:w-12 lg:h-12 border-2 border-black bg-gray-50 flex items-center justify-center flex-shrink-0 cursor-pointer active:scale-[0.88] transition-transform"
+          className="w-11 h-11 lg:w-12 lg:h-12 border-2 border-black dark:border-gray-600 bg-gray-50 dark:bg-gray-800 flex items-center justify-center flex-shrink-0 cursor-pointer active:scale-[0.88] transition-transform"
         >
-          <SkipForward className="w-4 h-4 text-gray-600" />
+          <SkipForward className="w-4 h-4 text-gray-600 dark:text-gray-300" />
         </button>
         </div>
       </div>
@@ -464,13 +464,13 @@ export function ShadowReadingPlayer({
       {/* ── 跳转确认弹窗 ── */}
       {confirmTarget && onNavigateTo && (
         <div className="absolute inset-0 z-50 bg-black/50 flex items-center justify-center px-8">
-          <div className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_#000] p-5 w-full max-w-xs">
-            <div className="text-sm font-black text-black mb-1">离开跟读模式？</div>
-            <div className="text-xs text-gray-500 mb-4">将跳转到{confirmTarget === 'exercises' ? '随堂练习' : confirmTarget === 'words' ? '词汇学习' : confirmTarget === 'expressions' ? '地道表达' : '语法点'}</div>
+          <div className="bg-white dark:bg-gray-800 border-2 border-black dark:border-gray-600 shadow-[4px_4px_0px_0px_#000] p-5 w-full max-w-xs">
+            <div className="text-sm font-black text-black dark:text-white mb-1">离开跟读模式？</div>
+            <div className="text-xs text-gray-600 dark:text-gray-300 mb-4">将跳转到{confirmTarget === 'exercises' ? '随堂练习' : confirmTarget === 'words' ? '词汇学习' : confirmTarget === 'expressions' ? '地道表达' : '语法点'}</div>
             <div className="flex gap-2">
               <button
                 onClick={() => setConfirmTarget(null)}
-                className="flex-1 py-2 border-2 border-gray-200 bg-white text-gray-600 font-bold text-xs cursor-pointer hover:border-gray-300 transition-all"
+                className="flex-1 py-2 border-2 border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-200 font-bold text-xs cursor-pointer hover:border-gray-300 dark:hover:border-gray-500 transition-all"
               >
                 取消
               </button>

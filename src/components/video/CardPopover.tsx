@@ -31,9 +31,9 @@ interface CardPopoverProps {
 
 // 类型标签配置
 const TYPE_CONFIG: Record<CardType, { label: string; color: string }> = {
-  word: { label: '单词', color: 'bg-blue-100 text-blue-700' },
-  phrase: { label: '短语', color: 'bg-green-100 text-green-700' },
-  expression: { label: '地道表达', color: 'bg-purple-100 text-purple-700' },
+  word: { label: '单词', color: 'bg-blue-100 text-blue-700 dark:bg-blue-900/40 dark:text-blue-200' },
+  phrase: { label: '短语', color: 'bg-green-100 text-green-700 dark:bg-green-900/40 dark:text-green-200' },
+  expression: { label: '地道表达', color: 'bg-purple-100 text-purple-700 dark:bg-purple-900/40 dark:text-purple-200' },
 }
 
 export function CardPopover({
@@ -59,7 +59,7 @@ export function CardPopover({
       {/* 音标和词性 */}
       <div className="flex items-center gap-2 flex-wrap">
         {c.phonetic && (
-          <span className="text-sm text-gray-500 font-mono">[{c.phonetic}]</span>
+          <span className="text-sm text-gray-600 dark:text-gray-300 font-mono">[{c.phonetic}]</span>
         )}
         {c.part_of_speech && (
           <span className="text-xs px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">
@@ -76,7 +76,7 @@ export function CardPopover({
         <div className="p-2 bg-gray-50 dark:bg-gray-700/50 rounded text-sm">
           <p>{c.example_from_video}</p>
           {c.example_translation && (
-            <p className="text-gray-500 mt-1">{c.example_translation}</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-1">{c.example_translation}</p>
           )}
         </div>
       )}
@@ -88,7 +88,7 @@ export function CardPopover({
     <div className="space-y-2">
       {/* 音标 */}
       {c.phonetic && (
-        <span className="text-sm text-gray-500 font-mono">[{c.phonetic}]</span>
+        <span className="text-sm text-gray-600 dark:text-gray-300 font-mono">[{c.phonetic}]</span>
       )}
 
       {/* 释义 */}
@@ -97,7 +97,7 @@ export function CardPopover({
       {/* 同义词 */}
       {c.synonyms && (
         <div className="flex items-center gap-1 flex-wrap">
-          <span className="text-xs text-gray-400">同义：</span>
+          <span className="text-xs text-gray-500 dark:text-gray-400">同义：</span>
           {c.synonyms.split(',').map((syn, i) => (
             <span key={i} className="text-xs px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded">
               {syn.trim()}
@@ -111,7 +111,7 @@ export function CardPopover({
         <div className="p-2 bg-gray-50 dark:bg-gray-700/50 rounded text-sm">
           <p>{c.context}</p>
           {c.context_translation && (
-            <p className="text-gray-500 mt-1">{c.context_translation}</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-1">{c.context_translation}</p>
           )}
         </div>
       )}
@@ -126,7 +126,7 @@ export function CardPopover({
         <div className="p-2 bg-purple-50 dark:bg-purple-900/20 rounded text-sm">
           <p>{c.context}</p>
           {c.context_translation && (
-            <p className="text-gray-500 mt-1">{c.context_translation}</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-1">{c.context_translation}</p>
           )}
         </div>
       )}
@@ -142,7 +142,7 @@ export function CardPopover({
       {/* 含义 */}
       {c.meaning && (
         <div>
-          <span className="text-xs text-gray-400">核心含义</span>
+          <span className="text-xs text-gray-500 dark:text-gray-400">核心含义</span>
           <p className="mt-0.5">{c.meaning}</p>
         </div>
       )}
@@ -158,12 +158,12 @@ export function CardPopover({
       {/* 例句 */}
       {c.examples && c.examples.length > 0 && (
         <div>
-          <span className="text-xs text-gray-400">举一反三</span>
+          <span className="text-xs text-gray-500 dark:text-gray-400">举一反三</span>
           <div className="mt-1 space-y-1">
             {c.examples.slice(0, 2).map((ex, i) => (
               <div key={i} className="p-2 bg-gray-50 dark:bg-gray-700/50 rounded text-sm">
                 <p>{ex.original}</p>
-                {ex.cn && <p className="text-gray-500 mt-0.5">{ex.cn}</p>}
+                {ex.cn && <p className="text-gray-600 dark:text-gray-300 mt-0.5">{ex.cn}</p>}
               </div>
             ))}
           </div>

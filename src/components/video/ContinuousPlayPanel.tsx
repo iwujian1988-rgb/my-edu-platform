@@ -45,8 +45,8 @@ export function ContinuousPlayPanel({
   return (
     <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end gap-1.5">
       {/* 进度：仅 xx/xx */}
-      <div className="flex items-center bg-white/90 backdrop-blur rounded-full px-2.5 py-1 border border-gray-200 shadow-sm">
-        <span className="text-[11px] font-bold text-gray-600 tabular-nums">
+      <div className="flex items-center bg-white/90 dark:bg-gray-800/95 backdrop-blur rounded-full px-2.5 py-1 border border-gray-200 dark:border-gray-600 shadow-sm">
+        <span className="text-[11px] font-bold text-gray-700 dark:text-gray-200 tabular-nums">
           {currentIndex + 1}/{playlist.length}
         </span>
       </div>
@@ -56,7 +56,7 @@ export function ContinuousPlayPanel({
         className={cn(
           'inline-flex items-center gap-1.5 cursor-pointer select-none',
           'px-2.5 py-1 rounded-full border border-gray-200',
-          'bg-white/90 backdrop-blur shadow-sm transition-all hover:shadow-md',
+          'bg-white/90 dark:bg-gray-800/95 backdrop-blur shadow-sm transition-all hover:shadow-md',
           enabled && 'bg-[#B4F416]/20 border-[#B4F416]/50',
         )}
       >
@@ -74,7 +74,7 @@ export function ContinuousPlayPanel({
         </span>
         <span className={cn(
           'text-[11px] font-medium whitespace-nowrap',
-          enabled ? 'text-black' : 'text-gray-500',
+          enabled ? 'text-black dark:text-white' : 'text-gray-700 dark:text-gray-200',
         )}>
           连续
         </span>

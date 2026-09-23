@@ -86,7 +86,7 @@ function RecordingRow({ recording, subtitle }: { recording: LocalRecording; subt
   }, [])
 
   return (
-    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 border border-gray-200">
+    <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
       <button
         onClick={toggle}
         className="w-7 h-7 rounded-full bg-[#B4F416] border border-black flex items-center justify-center flex-shrink-0 cursor-pointer"
@@ -96,10 +96,10 @@ function RecordingRow({ recording, subtitle }: { recording: LocalRecording; subt
       <div className="flex-1 min-w-0">
         <div className="text-[11px] lg:text-sm font-bold truncate">{subtitle?.original_text || '...'}</div>
         {subtitle?.chinese_text && (
-          <div className="text-[9px] lg:text-xs text-gray-400 truncate">{subtitle.chinese_text}</div>
+          <div className="text-[9px] lg:text-xs text-gray-600 dark:text-gray-300 truncate">{subtitle.chinese_text}</div>
         )}
       </div>
-      <span className="text-[9px] lg:text-xs text-gray-400 flex-shrink-0">{recording.duration.toFixed(1)}s</span>
+      <span className="text-[9px] lg:text-xs text-gray-600 dark:text-gray-300 flex-shrink-0">{recording.duration.toFixed(1)}s</span>
     </div>
   )
 }
@@ -318,7 +318,7 @@ export function ShadowReadingContent({
   // ── videoUrl 为 null 时，整条链路不可用 ──
   if (!videoUrl) {
     return (
-      <div className="relative flex flex-col h-full bg-white">
+      <div className="relative flex flex-col h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         {onClose && (
           <button
             onClick={onClose}
@@ -332,8 +332,8 @@ export function ShadowReadingContent({
             <AlertCircle className="w-8 h-8 text-amber-500" />
           </div>
           <div className="text-center">
-            <h3 className="text-lg font-black text-black">暂无音视频资源</h3>
-            <p className="text-sm text-gray-500 mt-1">该内容暂未上传音频/视频，无法使用跟读功能</p>
+            <h3 className="text-lg font-black text-gray-900 dark:text-gray-100">暂无音视频资源</h3>
+            <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">该内容暂未上传音频/视频，无法使用跟读功能</p>
           </div>
           {onClose && (
             <button
@@ -351,7 +351,7 @@ export function ShadowReadingContent({
   // ── 加载中 ──
   if (isLoading) {
     return (
-      <div className="relative flex flex-col h-full bg-white">
+      <div className="relative flex flex-col h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         {onClose && (
           <button
             onClick={onClose}
@@ -370,7 +370,7 @@ export function ShadowReadingContent({
   // ── 录音回放列表 ──
   if (viewMode === 'recordings') {
     return (
-      <div className="relative flex flex-col h-full bg-white">
+      <div className="relative flex flex-col h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         <button
           onClick={() => setViewMode('intro')}
           className="absolute top-3 right-3 z-10 p-2 rounded-full bg-black/20 hover:bg-black/40 text-white transition-colors"
@@ -396,7 +396,7 @@ export function ShadowReadingContent({
         <div className="flex-shrink-0 px-5 pb-5 pt-2">
           <button
             onClick={() => setViewMode('intro')}
-            className="w-full py-3 border-2 border-gray-200 rounded-2xl bg-white text-gray-600 font-bold text-sm cursor-pointer hover:border-gray-300 transition-all"
+            className="w-full py-3 border-2 border-gray-200 dark:border-gray-700 rounded-2xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-bold text-sm cursor-pointer hover:border-gray-400 dark:hover:border-gray-500 transition-all"
           >
             返回
           </button>
@@ -408,7 +408,7 @@ export function ShadowReadingContent({
   // ── 跟读完成页 ──
   if (isFinished) {
     return (
-      <div className="relative flex flex-col h-full bg-white">
+      <div className="relative flex flex-col h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         {onClose && (
           <button
             onClick={() => { cleanup(); onClose() }}
@@ -422,8 +422,8 @@ export function ShadowReadingContent({
             <span className="text-2xl">🎉</span>
           </div>
           <div className="text-center flex-shrink-0">
-            <h3 className="text-lg lg:text-xl font-black text-black">全部完成！</h3>
-            <p className="text-sm lg:text-base text-gray-500 mt-0.5">
+            <h3 className="text-lg lg:text-xl font-black text-gray-900 dark:text-gray-100">全部完成！</h3>
+            <p className="text-sm lg:text-base text-gray-600 dark:text-gray-300 mt-0.5">
               你已完成全部 {subtitles.length} 句跟读
             </p>
           </div>
@@ -444,7 +444,7 @@ export function ShadowReadingContent({
   // ── 跟读进行中 ──
   if (isStarted) {
     return (
-      <div className="relative flex flex-col h-full bg-white">
+      <div className="relative flex flex-col h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
         {onClose && (
           <button
             onClick={() => { cleanup(); onClose() }}
@@ -485,7 +485,7 @@ export function ShadowReadingContent({
 
   // ── Intro 引导页 ──
   return (
-    <div className="relative flex flex-col h-full bg-white">
+    <div className="relative flex flex-col h-full bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100">
       {onClose && (
         <button
           onClick={() => { cleanup(); onClose() }}
@@ -559,14 +559,14 @@ export function ShadowReadingPanel({
           {/* 主面板：移动端全屏，PC 端居中浮层 */}
           <motion.div
             key="shadow-panel"
-            className={`fixed z-50 ${isDesktop ? 'inset-0 flex items-center justify-center p-6 pointer-events-none' : 'inset-0 bg-white flex flex-col'}`}
+            className={`fixed z-50 ${isDesktop ? 'inset-0 flex items-center justify-center p-6 pointer-events-none' : 'inset-0 bg-white dark:bg-gray-950 flex flex-col'}`}
             initial={isDesktop ? { opacity: 0, scale: 0.95 } : { opacity: 0, y: '100%' }}
             animate={isDesktop ? { opacity: 1, scale: 1 } : { opacity: 1, y: 0 }}
             exit={isDesktop ? { opacity: 0, scale: 0.95 } : { opacity: 0, y: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 300 }}
           >
             {isDesktop ? (
-              <div className="bg-white rounded-2xl border-[3px] border-black shadow-[6px_6px_0px_0px_#000] w-full max-w-2xl h-[85vh] flex flex-col overflow-hidden pointer-events-auto">
+              <div className="bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 rounded-2xl border-[3px] border-black dark:border-gray-700 shadow-[6px_6px_0px_0px_#000] dark:shadow-xl w-full max-w-2xl h-[85vh] flex flex-col overflow-hidden pointer-events-auto">
                 <ShadowReadingContent
                   videoId={videoId}
                   videoUrl={videoUrl}

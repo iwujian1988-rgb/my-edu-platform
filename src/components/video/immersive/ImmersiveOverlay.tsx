@@ -212,7 +212,7 @@ export function ImmersiveOverlay({
           {isDebugUser && !showFullSubtitles && (
             <button
               onClick={() => setShowFullSubtitles(true)}
-              className="px-2 py-0.5 text-xs font-black text-gray-500 bg-gray-100 rounded hover:bg-gray-200 transition-colors"
+              className="px-2 py-0.5 text-xs font-black text-gray-700 dark:text-gray-200 bg-gray-100 dark:bg-gray-700 rounded hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
             >
               S
             </button>
@@ -273,10 +273,10 @@ export function ImmersiveOverlay({
         {showFullSubtitles ? (
           <div className="px-3 pb-6">
             <div className="sticky top-[44px] z-30 flex items-center justify-between bg-white dark:bg-gray-950 border-b border-gray-200 dark:border-gray-800 px-2 py-2">
-              <span className="text-xs font-bold text-gray-500">字幕全文</span>
+              <span className="text-xs font-bold text-gray-600 dark:text-gray-300">字幕全文</span>
               <button
                 onClick={() => setShowFullSubtitles(false)}
-                className="flex items-center gap-1 px-2 py-1 text-xs text-gray-500 hover:text-black transition-colors"
+                className="flex items-center gap-1 px-2 py-1 text-xs text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
               >
                 <X className="w-3.5 h-3.5" />
               </button>

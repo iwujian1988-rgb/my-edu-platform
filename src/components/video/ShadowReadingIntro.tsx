@@ -105,11 +105,11 @@ export function ShadowReadingIntro({
     if (!hasProgress && !isAllDone) {
       return (
         <div className="text-center mb-3 lg:mb-4">
-          <div className="text-xs lg:text-sm text-gray-400">
+          <div className="text-xs lg:text-sm text-gray-500 dark:text-gray-400">
             共 {subtitleCount} 句 · 全部未练习
           </div>
-          <div className="h-2 bg-gray-100 rounded-full mt-1.5 overflow-hidden">
-            <div className="h-full bg-gray-200 rounded-full w-full" />
+          <div className="h-2 bg-gray-100 dark:bg-gray-800 rounded-full mt-1.5 overflow-hidden">
+            <div className="h-full bg-gray-300 dark:bg-gray-700 rounded-full w-full" />
           </div>
         </div>
       )
@@ -118,7 +118,7 @@ export function ShadowReadingIntro({
     return (
       <div className="mb-3 lg:mb-4">
         {/* 进度条 */}
-        <div className="h-2.5 bg-gray-100 rounded-full overflow-hidden">
+        <div className="h-2.5 bg-gray-100 dark:bg-gray-800 rounded-full overflow-hidden">
           <div
             className={cn(
               'h-full rounded-full transition-all duration-500',
@@ -131,14 +131,14 @@ export function ShadowReadingIntro({
         <div className="flex items-center justify-between mt-1">
           <span className={cn(
             'text-xs lg:text-sm font-black',
-            isAllDone ? 'text-[#22C55E]' : 'text-black',
+            isAllDone ? 'text-[#22C55E]' : 'text-gray-900 dark:text-gray-100',
           )}>
             {practicedCount}/{subtitleCount}
           </span>
           {isAllDone ? (
             <span className="text-xs lg:text-sm text-[#22C55E] font-bold">全部练完!</span>
           ) : (
-            <span className="text-[10px] lg:text-xs text-gray-400">
+            <span className="text-[10px] lg:text-xs text-gray-500 dark:text-gray-400">
               上次练到第 {(progress?.resumeIndex ?? 0) + 1} 句 · {formatRelativeTime(progress?.updatedAt ?? null)}
             </span>
           )}
@@ -161,7 +161,7 @@ export function ShadowReadingIntro({
           {recordingCount > 0 && (
             <button
               onClick={onReviewRecordings}
-              className="w-full py-3 border-2 border-gray-200 rounded-2xl bg-white text-black font-bold text-sm cursor-pointer hover:border-gray-300 transition-all flex items-center justify-center gap-2"
+              className="w-full py-3 border-2 border-gray-200 dark:border-gray-700 rounded-2xl bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-100 font-bold text-sm cursor-pointer hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center justify-center gap-2"
             >
               <Volume2 className="w-4 h-4" />
               回听全部录音 ({recordingCount})
@@ -183,7 +183,7 @@ export function ShadowReadingIntro({
           <div className="flex gap-2">
             <button
               onClick={onRestart}
-              className="flex-1 py-2.5 border-2 border-gray-200 rounded-xl bg-white text-gray-600 font-bold text-xs lg:text-sm cursor-pointer hover:border-gray-300 transition-all flex items-center justify-center gap-1.5"
+              className="flex-1 py-2.5 border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-bold text-xs lg:text-sm cursor-pointer hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center justify-center gap-1.5"
             >
               <RotateCcw className="w-3 h-3" />
               从头开始
@@ -191,7 +191,7 @@ export function ShadowReadingIntro({
             {recordingCount > 0 && (
               <button
                 onClick={onReviewRecordings}
-                className="flex-1 py-2.5 border-2 border-gray-200 rounded-xl bg-white text-gray-600 font-bold text-xs lg:text-sm cursor-pointer hover:border-gray-300 transition-all flex items-center justify-center gap-1.5"
+                className="flex-1 py-2.5 border-2 border-gray-200 dark:border-gray-700 rounded-xl bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-bold text-xs lg:text-sm cursor-pointer hover:border-gray-400 dark:hover:border-gray-500 transition-all flex items-center justify-center gap-1.5"
               >
                 <Volume2 className="w-3 h-3" />
                 回听录音({recordingCount})
@@ -211,7 +211,7 @@ export function ShadowReadingIntro({
         >
           开始跟读
         </button>
-        <div className="text-center text-[10px] lg:text-xs text-gray-400 mt-1.5">
+        <div className="text-center text-[10px] lg:text-xs text-gray-500 dark:text-gray-400 mt-1.5">
           共 {subtitleCount} 句 · 随时暂停或跳过
         </div>
       </div>
@@ -224,7 +224,7 @@ export function ShadowReadingIntro({
       <div className="text-center px-5 pt-4 pb-2 flex-shrink-0">
         <h2 className="text-base lg:text-lg font-black tracking-tight">跟读模式</h2>
         {!hasProgress && !isAllDone && (
-          <p className="text-[11px] lg:text-sm text-gray-500 mt-0.5">选一种方式，跟着读就行</p>
+          <p className="text-[11px] lg:text-sm text-gray-600 dark:text-gray-300 mt-0.5">选一种方式，跟着读就行</p>
         )}
       </div>
 
@@ -247,15 +247,15 @@ export function ShadowReadingIntro({
                 className={cn(
                   'flex-1 p-3 lg:p-4 border-2 rounded-xl text-left transition-all cursor-pointer',
                   isActive
-                    ? 'bg-[#B4F416] border-black shadow-[2px_2px_0px_0px_#000] -translate-x-[1px] -translate-y-[1px]'
-                    : 'bg-white border-gray-200 hover:border-gray-300',
+                    ? 'bg-[#B4F416] dark:bg-[#4653B8] border-black dark:border-[#6875D9] shadow-[2px_2px_0px_0px_#000] -translate-x-[1px] -translate-y-[1px]'
+                    : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500',
                 )}
               >
-                <Icon className={cn('w-4 h-4 mb-1', isActive ? 'text-black' : 'text-gray-400')} />
-                <div className={cn('text-xs lg:text-sm font-black', isActive ? 'text-black' : 'text-gray-700')}>
+                <Icon className={cn('w-4 h-4 mb-1', isActive ? 'text-black dark:text-white' : 'text-gray-500 dark:text-gray-300')} />
+                <div className={cn('text-xs lg:text-sm font-black', isActive ? 'text-black dark:text-white' : 'text-gray-800 dark:text-gray-100')}>
                   {cfg.title}
                 </div>
-                <div className={cn('text-[9px] lg:text-xs mt-0.5', isActive ? 'text-black/50' : 'text-gray-400')}>
+                <div className={cn('text-[9px] lg:text-xs mt-0.5', isActive ? 'text-black/70 dark:text-white/80' : 'text-gray-600 dark:text-gray-400')}>
                   {cfg.desc}
                 </div>
               </button>
@@ -264,20 +264,20 @@ export function ShadowReadingIntro({
         </div>
 
         {/* 流程步骤 */}
-        <div className="bg-gray-50 border-2 border-gray-200 rounded-xl p-2.5 lg:p-3.5 mb-3 lg:mb-4">
+        <div className="bg-gray-50 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-700 rounded-xl p-2.5 lg:p-3.5 mb-3 lg:mb-4">
           <div className="flex items-center gap-1 flex-wrap">
             {activeConfig.steps.map((step, i) => (
               <span key={i} className="flex items-center gap-1">
-                <span className="text-[10px] lg:text-xs font-bold text-gray-600 bg-white px-1.5 py-0.5 rounded border border-gray-200">
+                <span className="text-[10px] lg:text-xs font-bold text-gray-700 dark:text-gray-200 bg-white dark:bg-gray-700 px-1.5 py-0.5 rounded border border-gray-200 dark:border-gray-600">
                   {step}
                 </span>
                 {i < activeConfig.steps.length - 1 && (
-                  <span className="text-gray-300 text-[10px] lg:text-xs">→</span>
+                  <span className="text-gray-500 dark:text-gray-400 text-[10px] lg:text-xs">→</span>
                 )}
               </span>
             ))}
           </div>
-          <div className="text-center text-[9px] lg:text-xs text-gray-400 mt-1.5">
+          <div className="text-center text-[9px] lg:text-xs text-gray-500 dark:text-gray-400 mt-1.5">
             走完自动进入下一句
           </div>
         </div>
@@ -285,7 +285,7 @@ export function ShadowReadingIntro({
         {/* 速度选择器 — 录音跟读才显示 */}
         {selectedMode === 'recording' && (
           <div className="mb-3 lg:mb-4">
-            <div className="text-[10px] lg:text-xs font-bold text-gray-500 mb-1.5 pl-0.5">
+            <div className="text-[10px] lg:text-xs font-bold text-gray-600 dark:text-gray-300 mb-1.5 pl-0.5">
               跟读间隔 = 原句时长 ×
             </div>
             <div className="flex gap-2">
@@ -296,14 +296,14 @@ export function ShadowReadingIntro({
                   className={cn(
                     'flex-1 py-2 lg:py-2.5 border-2 rounded-xl text-center transition-all cursor-pointer',
                     speedMultiplier === opt.value
-                      ? 'bg-[#B4F416] border-black shadow-[2px_2px_0px_0px_#000] -translate-x-[1px] -translate-y-[1px]'
-                      : 'bg-white border-gray-200 hover:border-gray-300',
+                      ? 'bg-[#B4F416] dark:bg-[#4653B8] border-black dark:border-[#6875D9] shadow-[2px_2px_0px_0px_#000] -translate-x-[1px] -translate-y-[1px]'
+                      : 'bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700 hover:border-gray-400 dark:hover:border-gray-500',
                   )}
                 >
-                  <div className={cn('text-xs lg:text-sm font-black', speedMultiplier === opt.value ? 'text-black' : 'text-gray-700')}>
+                  <div className={cn('text-xs lg:text-sm font-black', speedMultiplier === opt.value ? 'text-black dark:text-white' : 'text-gray-800 dark:text-gray-100')}>
                     {opt.label}
                   </div>
-                  <div className={cn('text-[9px] lg:text-xs', speedMultiplier === opt.value ? 'text-black/40' : 'text-gray-400')}>
+                  <div className={cn('text-[9px] lg:text-xs', speedMultiplier === opt.value ? 'text-black/70 dark:text-white/80' : 'text-gray-600 dark:text-gray-400')}>
                     {opt.description}
                   </div>
                 </button>

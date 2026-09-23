@@ -604,7 +604,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 transition-colors duration-300">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       {/* ===== 移动端布局 ===== */}
       <div className="lg:hidden">
         {/* PIP 模式下的简洁顶部栏 */}
@@ -695,7 +695,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
               {currentTab === 'listen' && (
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <button className="flex items-center gap-0.5 px-2 py-1 text-[11px] font-medium rounded-full bg-gray-50 dark:bg-gray-700 text-gray-500 dark:text-gray-400 transition-colors whitespace-nowrap flex-shrink-0 border border-gray-100 dark:border-gray-600 lg:text-sm lg:font-bold lg:bg-[#F0FFC2] lg:text-gray-800 lg:border-0">
+                    <button className="flex items-center gap-0.5 px-2 py-1 text-[11px] font-medium rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 transition-colors whitespace-nowrap flex-shrink-0 border border-gray-200 dark:border-gray-600 lg:text-sm lg:font-bold lg:bg-[#E8EAF6] lg:text-[#283593] lg:dark:bg-[#4653B8] lg:dark:text-white lg:border-0">
                       {displayMode === 'bilingual' ? '双语' : displayMode === 'chinese' ? '中文' : '原文'}
                       <ChevronDown className="w-2.5 h-2.5 lg:w-3 lg:h-3" />
                     </button>
@@ -728,7 +728,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <button onClick={() => handleTabChange('listen')} className={cn(
                   "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
                   currentTab === 'listen'
-                    ? "bg-[#EEFFA8] text-gray-900 dark:bg-[#F0FFC2] dark:text-gray-950"
+                    ? "bg-[#E8EAF6] text-[#283593] dark:bg-[#4653B8] dark:text-white"
                     : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 )}>
                   字幕
@@ -736,7 +736,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <button onClick={() => setIsShadowReadingOpen(true)} className={cn(
                   "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
                   isShadowReadingOpen
-                    ? "bg-[#EEFFA8] text-gray-900 dark:bg-[#F0FFC2] dark:text-gray-950"
+                    ? "bg-[#E8EAF6] text-[#283593] dark:bg-[#4653B8] dark:text-white"
                     : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 )}>
                   跟读
@@ -744,7 +744,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <button onClick={() => !isLargeScreen ? setIsPracticeSheetOpen(true) : handleTabChange('write')} className={cn(
                   "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
                   (currentTab === 'write' || isPracticeSheetOpen)
-                    ? "bg-[#EEFFA8] text-gray-900 dark:bg-[#F0FFC2] dark:text-gray-950"
+                    ? "bg-[#E8EAF6] text-[#283593] dark:bg-[#4653B8] dark:text-white"
                     : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 )}>
                   练习
@@ -752,7 +752,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                 <button onClick={() => handleTabChange('learn')} className={cn(
                   "text-[13px] font-semibold whitespace-nowrap px-3 py-1 rounded-full transition-all lg:px-2.5 lg:text-sm",
                   currentTab === 'learn'
-                    ? "bg-[#EEFFA8] text-gray-900 dark:bg-[#F0FFC2] dark:text-gray-950"
+                    ? "bg-[#E8EAF6] text-[#283593] dark:bg-[#4653B8] dark:text-white"
                     : "text-[#4B5563] dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200"
                 )}>
                   知识点
