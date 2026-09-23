@@ -111,7 +111,7 @@ export function SubtitleWithHighlights({
           isActive
             ? 'text-gray-800 dark:text-gray-950'
             : 'text-gray-700 dark:text-[#4B5563] lg:text-muted-foreground',
-        )} data-video-subtitle-translation="true" data-active={isActive}>
+        )} data-video-subtitle-text="translation" data-active={isActive}>
           {subtitle.chinese_text || <span className="text-muted-foreground italic">暂无翻译</span>}
         </p>
       </div>
@@ -126,7 +126,7 @@ export function SubtitleWithHighlights({
           isActive
             ? 'text-gray-950 dark:text-gray-950'
             : 'text-gray-900 dark:text-gray-950',
-        )}>
+        )} data-video-subtitle-text="original" data-active={isActive}>
           {renderHighlightedText(subtitle.original_text, sortedHighlights)}
         </p>
       </div>
@@ -141,7 +141,7 @@ export function SubtitleWithHighlights({
         isActive
           ? 'text-gray-950 dark:text-gray-950'
           : 'text-gray-900 dark:text-gray-950',
-      )}>
+      )} data-video-subtitle-text="original" data-active={isActive}>
         {renderHighlightedText(subtitle.original_text, sortedHighlights)}
       </p>
       {subtitle.chinese_text && (
@@ -150,7 +150,7 @@ export function SubtitleWithHighlights({
           isActive
             ? 'text-gray-800 dark:text-gray-950'
             : 'text-[#4B5563] dark:text-[#4B5563] lg:text-muted-foreground',
-        )} data-video-subtitle-translation="true" data-active={isActive}>
+        )} data-video-subtitle-text="translation" data-active={isActive}>
           {subtitle.chinese_text}
         </p>
       )}
