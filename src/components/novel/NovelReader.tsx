@@ -14,7 +14,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, Bookmark, Type, List, ArrowRight, RefreshCw } from 'lucide-react'
+import { ChevronLeft, Bookmark, Type, List, ArrowRight, RefreshCw, X } from 'lucide-react'
+import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import { sanitizeNovelHtml, wrapZhGlosses } from '@/lib/novelSanitize'
 import { normForm } from '@/lib/novel-forms'
@@ -305,6 +306,7 @@ export function NovelReader({
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] pb-24 text-[#121729] lg:pb-12 dark:from-[#101626] dark:to-[#0c1120] dark:text-[#edf1ff]">
       {/* 顶栏 */}
+      <DialogPrimitive.Root open={fontMenuOpen} onOpenChange={setFontMenuOpen}>
       <header className="sticky top-0 z-30 border-b border-[#e7eaf2] bg-white/95 backdrop-blur dark:border-[#273149] dark:bg-[#141b2d]/95">
         <div className="mx-auto flex h-14 max-w-[1140px] items-center justify-between gap-2 px-4">
           <Link
@@ -335,59 +337,15 @@ export function NovelReader({
             >
               <Bookmark className={cn('h-5 w-5', chapterBookmark && 'fill-[#6550ff]')} />
             </button>
-            <button
-              onClick={() => setFontMenuOpen((v) => !v)}
-              aria-label="字号与显示"
-              className="cursor-pointer rounded-lg p-2 text-[#68718a] transition-colors hover:bg-[#f3f5fb] hover:text-[#121729] dark:text-[#a7b0c8] dark:hover:bg-[#192238] dark:hover:text-[#edf1ff]"
-            >
-              <Type className="h-5 w-5" />
-            </button>
-
-            {fontMenuOpen && (
-              <>
-                <div className="fixed inset-0 z-10" onClick={() => setFontMenuOpen(false)} />
-                <div className="absolute right-0 top-11 z-20 flex w-56 flex-col gap-2 rounded-[12px] border border-[#e7eaf2] bg-white p-2.5 shadow-[0_12px_34px_rgba(31,42,104,0.14)] dark:border-[#273149] dark:bg-[#141b2d]">
-                  <div>
-                    <div className="mb-1 px-1 text-[11px] font-bold text-[#68718a] dark:text-[#a7b0c8]">字号</div>
-                    <div className="grid w-full grid-cols-4 gap-1">
-                      {FONT_SIZES.map((s) => (
-                        <button
-                          key={s}
-                          onClick={() => applyFontSize(s)}
-                          className={cn(
-                            'cursor-pointer rounded-lg py-1.5 text-xs font-bold transition-all duration-200',
-                            s === fontSize
-                              ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
-                              : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
-                          )}
-                        >
-                          {s}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="border-t border-[#e7eaf2] pt-2 dark:border-[#273149]">
-                    <div className="mb-1 px-1 text-[11px] font-bold text-[#68718a] dark:text-[#a7b0c8]">显示</div>
-                    <div className="grid w-full grid-cols-3 gap-1">
-                      {DISPLAY_MODES.map((m) => (
-                        <button
-                          key={m.id}
-                          onClick={() => applyDisplayMode(m.id)}
-                          className={cn(
-                            'cursor-pointer rounded-lg px-1 py-1.5 text-[11px] font-bold transition-all duration-200',
-                            m.id === displayMode
-                              ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
-                              : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
-                          )}
-                        >
-                          {m.name}
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </>
-            )}
+            <DialogPrimitive.Trigger asChild>
+              <button
+                aria-label="字号与显示"
+                aria-haspopup="dialog"
+                className="cursor-pointer rounded-lg p-2 text-[#68718a] transition-colors hover:bg-[#f3f5fb] hover:text-[#121729] dark:text-[#a7b0c8] dark:hover:bg-[#192238] dark:hover:text-[#edf1ff]"
+              >
+                <Type className="h-5 w-5" />
+              </button>
+            </DialogPrimitive.Trigger>
           </div>
         </div>
         {/* 阅读进度条 */}
@@ -398,6 +356,80 @@ export function NovelReader({
           />
         </div>
       </header>
+
+        <DialogPrimitive.Portal>
+          <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0" />
+          <DialogPrimitive.Content
+            aria-describedby="reader-settings-description"
+            className="fixed left-1/2 top-1/2 z-50 max-h-[min(85dvh,640px)] w-[calc(100vw-32px)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl border border-[#e7eaf2] bg-white p-5 shadow-[0_24px_80px_rgba(0,0,0,0.3)] outline-none dark:border-[#273149] dark:bg-[#141b2d] sm:p-6"
+          >
+            <div className="mb-5 flex items-start justify-between gap-4">
+              <div>
+                <DialogPrimitive.Title className="text-lg font-extrabold text-[#121729] dark:text-[#edf1ff]">
+                  阅读设置
+                </DialogPrimitive.Title>
+                <DialogPrimitive.Description id="reader-settings-description" className="mt-1 text-sm text-[#68718a] dark:text-[#a7b0c8]">
+                  调整字号和正文显示方式，选择后立即生效
+                </DialogPrimitive.Description>
+              </div>
+              <DialogPrimitive.Close
+                aria-label="关闭阅读设置"
+                className="flex h-11 w-11 shrink-0 cursor-pointer items-center justify-center rounded-lg text-[#68718a] transition-colors hover:bg-[#f3f5fb] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6550ff] dark:text-[#a7b0c8] dark:hover:bg-[#192238]"
+              >
+                <X className="h-5 w-5" />
+              </DialogPrimitive.Close>
+            </div>
+
+            <section aria-labelledby="reader-font-size-label">
+              <h3 id="reader-font-size-label" className="mb-2 px-1 text-sm font-bold text-[#68718a] dark:text-[#a7b0c8]">
+                字号
+              </h3>
+              <div className="grid grid-cols-4 gap-2">
+                {FONT_SIZES.map((size) => (
+                  <button
+                    key={size}
+                    type="button"
+                    aria-pressed={size === fontSize}
+                    onClick={() => applyFontSize(size)}
+                    className={cn(
+                      'min-h-11 cursor-pointer rounded-lg text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6550ff]',
+                      size === fontSize
+                        ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
+                        : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
+                    )}
+                  >
+                    {size}
+                  </button>
+                ))}
+              </div>
+            </section>
+
+            <section aria-labelledby="reader-display-mode-label" className="mt-5 border-t border-[#e7eaf2] pt-4 dark:border-[#273149]">
+              <h3 id="reader-display-mode-label" className="mb-2 px-1 text-sm font-bold text-[#68718a] dark:text-[#a7b0c8]">
+                显示
+              </h3>
+              <div className="grid grid-cols-3 gap-2">
+                {DISPLAY_MODES.map((mode) => (
+                  <button
+                    key={mode.id}
+                    type="button"
+                    aria-pressed={mode.id === displayMode}
+                    onClick={() => applyDisplayMode(mode.id)}
+                    className={cn(
+                      'min-h-11 cursor-pointer rounded-lg px-3 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6550ff]',
+                      mode.id === displayMode
+                        ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
+                        : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
+                    )}
+                  >
+                    {mode.name}
+                  </button>
+                ))}
+              </div>
+            </section>
+          </DialogPrimitive.Content>
+        </DialogPrimitive.Portal>
+      </DialogPrimitive.Root>
 
       {/* 主区：PC 双栏 */}
       <div className="mx-auto grid max-w-[1140px] grid-cols-1 gap-6 px-4 pt-6 lg:grid-cols-[minmax(0,1fr)_300px]">
