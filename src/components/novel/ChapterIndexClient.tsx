@@ -10,7 +10,8 @@
 
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
-import { ChevronRight, RefreshCw, Bookmark, BookOpen, Play, BookmarkCheck } from 'lucide-react'
+import { ChevronRight, RefreshCw, Bookmark, BookOpen, Play, BookmarkCheck, Filter, Check, X } from 'lucide-react'
+import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
 import { getNovelProgress } from '@/lib/readingProgress'
 
@@ -35,6 +36,8 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
   const [resumeLoaded, setResumeLoaded] = useState(false)
   const [bookmarks, setBookmarks] = useState<number[]>(initialBookmarks || [])
   const [onlyBookmarks, setOnlyBookmarks] = useState(false)
+  const [filterDialogOpen, setFilterDialogOpen] = useState(false)
+  const [draftOnlyBookmarks, setDraftOnlyBookmarks] = useState(false)
   const [totalByChapter, setTotalByChapter] = useState<Map<number, number> | null>(null)
 
   useEffect(() => {
@@ -151,16 +154,22 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
             <h2 className="text-sm font-extrabold">目录</h2>
             {bookmarks.length > 0 && (
               <button
-                onClick={() => setOnlyBookmarks((v) => !v)}
+                onClick={() => {
+                  setDraftOnlyBookmarks(onlyBookmarks)
+                  setFilterDialogOpen(true)
+                }}
                 className={cn(
-                  'flex cursor-pointer items-center gap-1 rounded-lg px-2 py-1 text-xs font-semibold transition-colors duration-200',
+                  'flex min-h-10 cursor-pointer items-center gap-1.5 rounded-lg px-3 py-1.5 text-xs font-semibold transition-colors duration-200',
                   onlyBookmarks
                     ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
                     : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
                 )}
+                aria-haspopup="dialog"
+                aria-expanded={filterDialogOpen}
               >
-                <Bookmark className={cn('h-3.5 w-3.5', onlyBookmarks && 'fill-white')} />
-                仅看书签 ({bookmarks.length})
+                <Filter className="h-3.5 w-3.5" />
+                筛选
+                {onlyBookmarks && <span className="h-1.5 w-1.5 rounded-full bg-white" />}
               </button>
             )}
           </div>
@@ -214,6 +223,74 @@ export function ChapterIndexClient({ bookId, bookTitle, description, coverUrl, c
           </div>
         </div>
       </div>
+
+      <DialogPrimitive.Root open={filterDialogOpen} onOpenChange={setFilterDialogOpen}>
+        <DialogPrimitive.Portal>
+          <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0" />
+          <DialogPrimitive.Content
+            className="fixed left-1/2 top-1/2 z-50 w-[calc(100vw-32px)] max-w-md -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-[#e7eaf2] bg-white p-5 shadow-[0_24px_80px_rgba(0,0,0,0.3)] outline-none dark:border-[#273149] dark:bg-[#141b2d] sm:p-6"
+            aria-describedby="chapter-filter-description"
+          >
+            <div className="mb-5 flex items-start justify-between gap-4">
+              <div>
+                <DialogPrimitive.Title className="text-lg font-extrabold text-[#121729] dark:text-[#edf1ff]">
+                  筛选章节
+                </DialogPrimitive.Title>
+                <DialogPrimitive.Description id="chapter-filter-description" className="mt-1 text-sm text-[#68718a] dark:text-[#a7b0c8]">
+                  选择要在目录中显示的章节
+                </DialogPrimitive.Description>
+              </div>
+              <DialogPrimitive.Close
+                aria-label="关闭筛选"
+                className="flex h-10 w-10 shrink-0 cursor-pointer items-center justify-center rounded-lg text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]"
+              >
+                <X className="h-5 w-5" />
+              </DialogPrimitive.Close>
+            </div>
+
+            <button
+              type="button"
+              role="checkbox"
+              aria-checked={draftOnlyBookmarks}
+              onClick={() => setDraftOnlyBookmarks((value) => !value)}
+              className="flex min-h-14 w-full cursor-pointer items-center gap-3 rounded-xl border border-[#e7eaf2] bg-[#f8faff] px-4 text-left transition-colors hover:bg-[#f3f5fb] dark:border-[#273149] dark:bg-[#192238] dark:hover:bg-[#202a43]"
+            >
+              <span className={cn(
+                'flex h-5 w-5 shrink-0 items-center justify-center rounded border',
+                draftOnlyBookmarks
+                  ? 'border-[#3447dd] bg-[#3447dd] text-white'
+                  : 'border-[#a7b0c8] bg-white dark:border-[#68718a] dark:bg-[#141b2d]'
+              )}>
+                {draftOnlyBookmarks && <Check className="h-3.5 w-3.5" />}
+              </span>
+              <span className="flex-1">
+                <span className="block text-sm font-bold text-[#121729] dark:text-[#edf1ff]">仅看书签</span>
+                <span className="mt-0.5 block text-xs text-[#68718a] dark:text-[#a7b0c8]">只显示已收藏的 {bookmarks.length} 个章节</span>
+              </span>
+              <Bookmark className={cn('h-4 w-4', draftOnlyBookmarks ? 'fill-[#6550ff] text-[#6550ff]' : 'text-[#68718a] dark:text-[#a7b0c8]')} />
+            </button>
+
+            <div className="mt-6 flex justify-end gap-2 border-t border-[#e7eaf2] pt-4 dark:border-[#273149]">
+              <button
+                type="button"
+                onClick={() => setDraftOnlyBookmarks(false)}
+                className="min-h-10 cursor-pointer rounded-lg px-4 text-sm font-semibold text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]"
+              >
+                重置
+              </button>
+              <DialogPrimitive.Close asChild>
+                <button
+                  type="button"
+                  onClick={() => setOnlyBookmarks(draftOnlyBookmarks)}
+                  className="min-h-10 cursor-pointer rounded-lg bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+                >
+                  显示章节
+                </button>
+              </DialogPrimitive.Close>
+            </div>
+          </DialogPrimitive.Content>
+        </DialogPrimitive.Portal>
+      </DialogPrimitive.Root>
     </div>
   )
 }

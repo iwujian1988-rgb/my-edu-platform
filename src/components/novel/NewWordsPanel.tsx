@@ -10,20 +10,8 @@
 import { Star, ArrowRight, Undo2 } from 'lucide-react'
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
-
-export interface NovelWord {
-  chapter_number: number
-  word: string
-  phonetic: string | null
-  definition: string
-  part_of_speech: string | null
-  gender: string | null
-  cefr: string | null
-  theme: string | null
-  star: boolean
-  order_index: number
-  example_sentence: string | null
-}
+import type { NovelWord } from '@/types/novel'
+export type { NovelWord } from '@/types/novel'
 
 /** 复现词：以前章节学过、本章正文再次出现的词 */
 export interface ReappearanceWord {
@@ -42,8 +30,8 @@ interface NewWordsPanelProps {
   chapter: number
   words: NovelWord[]
   reappearances?: ReappearanceWord[]
-  onWordClick?: (word: NovelWord, position: { x: number; y: number }) => void
-  onReappearanceClick?: (word: ReappearanceWord, position: { x: number; y: number }) => void
+  onWordClick?: (word: NovelWord) => void
+  onReappearanceClick?: (word: ReappearanceWord) => void
 }
 
 const CEFR_STYLE: Record<string, string> = {
@@ -84,9 +72,7 @@ export function NewWordsPanel({
           {words.map((w) => (
             <button
               key={`${w.chapter_number}-${w.word}`}
-              onClick={(e) =>
-                onWordClick?.(w, { x: e.clientX, y: e.clientY })
-              }
+              onClick={() => onWordClick?.(w)}
               className="group flex cursor-pointer items-start justify-between gap-2 rounded-lg border border-transparent bg-[#f8faff] px-3 py-2.5 text-left transition-all duration-200 hover:border-[#6550ff]/30 hover:bg-[#f3f5fb] dark:bg-[#192238] dark:hover:bg-[#1c2540]"
             >
               <div className="min-w-0">
@@ -128,9 +114,7 @@ export function NewWordsPanel({
             {reappearances.map((w) => (
               <button
                 key={`reap-${w.lemma}`}
-                onClick={(e) =>
-                  onReappearanceClick?.(w, { x: e.clientX, y: e.clientY })
-                }
+                onClick={() => onReappearanceClick?.(w)}
                 className="group flex cursor-pointer items-start justify-between gap-2 rounded-lg border border-transparent bg-[#f8fafc] px-3 py-2.5 text-left transition-all duration-200 hover:border-[#6550ff]/30 hover:bg-[#f3f5fb] dark:bg-[#161d31] dark:hover:bg-[#1c2540]"
               >
                 <div className="min-w-0">

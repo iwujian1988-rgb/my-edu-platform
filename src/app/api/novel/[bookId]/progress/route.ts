@@ -92,6 +92,8 @@ export async function POST(
 
       const { intervalDays, easeFactor: newEaseFactor, nextReviewAt } =
         scheduleSm2Review({ easeFactor, reviewCount: repetitionCount, quality })
+      // Forgetting resets successful repetitions; otherwise later correct answers can jump to a long interval.
+      const nextRepetitionCount = quality === 1 ? 0 : repetitionCount + 1
 
       const { error } = await admin
         .from('novel_word_progress')
@@ -100,7 +102,7 @@ export async function POST(
           book_id: bookId,
           lemma,
           status: STATUS_BY_QUALITY[quality],
-          repetition_count: repetitionCount + 1,
+          repetition_count: nextRepetitionCount,
           easiness_factor: newEaseFactor,
           next_review_at: nextReviewAt,
           updated_at: new Date().toISOString(),

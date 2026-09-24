@@ -26,7 +26,9 @@ import {
   BookOpen,
 } from 'lucide-react'
 import { useFrenchTTS } from '@/hooks/useFrenchTTS'
-import type { NovelWord } from './NewWordsPanel'
+import type { NovelWord } from '@/types/novel'
+import { normForm } from '@/lib/novel-forms'
+import { orderNovelReviewQueue, type NovelReviewSchedule } from '@/lib/novel-review-queue'
 
 export type ReviewRange = 'chapter' | 'notebook' | 'star' | 'all'
 
@@ -73,7 +75,8 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   const [chapter, setChapter] = useState<number>(initialChapter || progressChapter || 1)
 
   const [words, setWords] = useState<NovelWord[] | null>(null)
-  const [loadError, setLoadError] = useState(false)
+  const [loadedKey, setLoadedKey] = useState<string | null>(null)
+  const [failedKey, setFailedKey] = useState<string | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isFlipped, setIsFlipped] = useState(false)
   const [reviewedCount, setReviewedCount] = useState(0)
@@ -97,34 +100,48 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
     else if (range === 'notebook') url += '?notebook=true'
     else if (range === 'star') url += '?star=true'
 
-    setWords(null)
-    setLoadError(false)
-    setCurrentIndex(0)
-    setIsFlipped(false)
-    setReviewedCount(0)
-    setCorrectCount(0)
-    setResumedAt(null)
+    const controller = new AbortController()
 
-    fetch(url)
+    fetch(url, { signal: controller.signal })
       .then((r) => {
         if (!r.ok) throw new Error('fetch failed')
         return r.json()
       })
       .then((json) => {
         const list: NovelWord[] = json.data?.words || []
-        setWords(list)
+        const progress: Record<string, NovelReviewSchedule> = json.data?.progress || {}
+        const orderedList = orderNovelReviewQueue(list, progress)
+        setWords(orderedList)
+        setLoadedKey(storageKey)
+        setFailedKey(null)
+        setCurrentIndex(0)
+        setIsFlipped(false)
+        setReviewedCount(0)
+        setCorrectCount(0)
+        setResumedAt(null)
         // 断点续刷：本轮没刷完的从上次位置继续
-        const saved = parseInt(localStorage.getItem(storageKey) || '', 10)
-        if (Number.isInteger(saved) && saved > 0 && saved < list.length) {
-          setCurrentIndex(saved)
-          setResumedAt(saved)
+        const saved = localStorage.getItem(storageKey) || ''
+        const savedIndex = Number.parseInt(saved, 10)
+        const savedWordIndex = saved.startsWith('word:')
+          ? orderedList.findIndex((word) => `word:${normForm(word.lemma || word.word)}` === saved)
+          : -1
+        const resumeIndex = savedWordIndex >= 0 ? savedWordIndex : savedIndex
+        if (Number.isInteger(resumeIndex) && resumeIndex > 0 && resumeIndex < orderedList.length) {
+          setCurrentIndex(resumeIndex)
+          setResumedAt(resumeIndex)
         }
       })
-      .catch(() => setLoadError(true))
+      .catch(() => {
+        if (!controller.signal.aborted) setFailedKey(storageKey)
+      })
+
+    return () => controller.abort()
   }, [bookId, range, chapter, storageKey])
 
-  const total = words?.length || 0
-  const currentWord = words?.[currentIndex]
+  const activeWords = loadedKey === storageKey ? words : null
+  const loadError = failedKey === storageKey
+  const total = activeWords?.length || 0
+  const currentWord = activeWords?.[currentIndex]
   const progress = total > 0 ? ((currentIndex + 1) / total) * 100 : 0
 
   const updateCardTransform = useCallback((x: number, y: number, immediate = false) => {
@@ -138,9 +155,9 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   const persistIndex = useCallback(
     (i: number) => {
       if (i >= total) localStorage.removeItem(storageKey)
-      else localStorage.setItem(storageKey, String(i))
+      else localStorage.setItem(storageKey, `word:${normForm(activeWords?.[i]?.lemma || activeWords?.[i]?.word || String(i))}`)
     },
-    [storageKey, total]
+    [storageKey, total, activeWords]
   )
 
   // 提交评分（乐观更新）
@@ -164,7 +181,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
       fetch(`/api/novel/${bookId}/progress`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ action: 'review', lemma: currentWord.word, quality }),
+        body: JSON.stringify({ action: 'review', lemma: currentWord.lemma || currentWord.word, quality }),
       })
         .then((r) => {
           if (!r.ok) toast.error('复习记录同步失败')
@@ -295,7 +312,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   }, [range])
 
   // 加载中
-  if (words === null && !loadError) {
+  if (activeWords === null && !loadError) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] dark:from-[#101626] dark:to-[#0c1120]">
         <div className="text-center">

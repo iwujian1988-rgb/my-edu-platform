@@ -11,7 +11,8 @@
  * 视觉：videos MaxTube token。
  */
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { X, Volume2, BookmarkPlus, BookmarkCheck } from 'lucide-react'
 import { cn } from '@/lib/utils'
 import { useFrenchTTS } from '@/hooks/useFrenchTTS'
@@ -36,7 +37,6 @@ interface WordPopoverProps {
   entry: LexiconEntry | null
   /** 未命中时的原始点词文本 */
   rawText?: string
-  position: { x: number; y: number } | null
   inNotebook?: boolean
   onToggleNotebook?: (lemma: string, next: boolean) => void
   onClose: () => void
@@ -54,48 +54,12 @@ const CEFR_STYLE: Record<string, string> = {
 export function WordPopover({
   entry,
   rawText,
-  position,
   inNotebook = false,
   onToggleNotebook,
   onClose,
 }: WordPopoverProps) {
   const { speak } = useFrenchTTS()
   const [notebook, setNotebook] = useState(inNotebook)
-
-  useEffect(() => setNotebook(inNotebook), [inNotebook, entry?.form_key])
-
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose()
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [onClose])
-
-  const getPopoverStyle = () => {
-    if (!position) {
-      return { top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }
-    }
-
-    const popoverWidth = 320
-    const popoverHeight = 320
-    const padding = 12
-
-    let left = position.x
-    let top = position.y + 12
-
-    if (left + popoverWidth + padding > window.innerWidth) {
-      left = window.innerWidth - popoverWidth - padding
-    }
-    if (top + popoverHeight + padding > window.innerHeight) {
-      top = Math.max(padding, position.y - popoverHeight - 12)
-    }
-    if (left < padding) {
-      left = padding
-    }
-
-    return { top: `${top}px`, left: `${left}px` }
-  }
 
   const handleToggleNotebook = () => {
     if (!entry?.lemma || !onToggleNotebook) return
@@ -105,17 +69,16 @@ export function WordPopover({
   }
 
   return (
-    <>
-      <div className="fixed inset-0 z-40" onClick={onClose} />
-
-      <div
-        className={cn(
-          'fixed z-50 w-80 max-w-[calc(100vw-24px)] rounded-[12px] border border-[#e7eaf2] bg-white',
-          'shadow-[0_12px_34px_rgba(31,42,104,0.14)] dark:border-[#273149] dark:bg-[#141b2d]'
-        )}
-        style={getPopoverStyle()}
-        onClick={(e) => e.stopPropagation()}
-      >
+    <DialogPrimitive.Root open onOpenChange={(open) => { if (!open) onClose() }}>
+      <DialogPrimitive.Portal>
+        <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0" />
+        <DialogPrimitive.Content
+          aria-describedby="novel-word-definition"
+          className={cn(
+            'fixed left-1/2 top-1/2 z-50 flex max-h-[min(80dvh,640px)] w-[calc(100vw-32px)] max-w-md -translate-x-1/2 -translate-y-1/2 flex-col overflow-hidden rounded-2xl border border-[#e7eaf2] bg-white',
+            'shadow-[0_24px_80px_rgba(0,0,0,0.3)] outline-none dark:border-[#273149] dark:bg-[#141b2d]'
+          )}
+        >
         {/* 头部 */}
         <div className="flex items-center justify-between border-b border-[#e7eaf2] bg-[#f8faff] px-3 py-2 dark:border-[#273149] dark:bg-[#192238]">
           <div className="flex items-center gap-1.5">
@@ -140,22 +103,23 @@ export function WordPopover({
               </span>
             )}
           </div>
-          <button
-            onClick={onClose}
-            aria-label="关闭"
-            className="cursor-pointer rounded p-1 text-[#68718a] transition-colors hover:bg-[#f3f5fb] hover:text-[#121729] dark:text-[#a7b0c8] dark:hover:bg-[#192238] dark:hover:text-[#edf1ff]"
-          >
-            <X className="h-4 w-4" />
-          </button>
+          <DialogPrimitive.Close asChild>
+            <button
+              aria-label="关闭"
+              className="flex h-10 w-10 cursor-pointer items-center justify-center rounded-lg text-[#68718a] transition-colors hover:bg-[#f3f5fb] hover:text-[#121729] dark:text-[#a7b0c8] dark:hover:bg-[#192238] dark:hover:text-[#edf1ff]"
+            >
+              <X className="h-4 w-4" />
+            </button>
+          </DialogPrimitive.Close>
         </div>
 
         {/* 内容 */}
-        <div className="max-h-[52vh] overflow-y-auto p-3">
+        <div className="min-h-0 overflow-y-auto p-4">
           <div className="mb-2 flex items-start justify-between gap-2">
             <div>
-              <h3 className="text-lg font-extrabold tracking-[-0.01em] text-[#121729] dark:text-[#edf1ff]">
+              <DialogPrimitive.Title className="text-lg font-extrabold tracking-[-0.01em] text-[#121729] dark:text-[#edf1ff]">
                 {entry?.display_form || rawText}
-              </h3>
+              </DialogPrimitive.Title>
               <div className="mt-1 flex flex-wrap items-center gap-1.5 text-xs text-[#68718a] dark:text-[#a7b0c8]">
                 {entry?.gender && (
                   <span className="rounded bg-[#f3f5fb] px-1.5 py-0.5 dark:bg-[#192238]">
@@ -170,7 +134,7 @@ export function WordPopover({
 
           {entry ? (
             <>
-              <p className="text-sm font-medium leading-relaxed text-[#121729] dark:text-[#edf1ff]">
+              <p id="novel-word-definition" className="text-sm font-medium leading-relaxed text-[#121729] dark:text-[#edf1ff]">
                 {entry.definition}
               </p>
 
@@ -206,12 +170,13 @@ export function WordPopover({
               </div>
             </>
           ) : (
-            <p className="py-4 text-center text-sm text-[#68718a] dark:text-[#a7b0c8]">
+            <p id="novel-word-definition" className="py-4 text-center text-sm text-[#68718a] dark:text-[#a7b0c8]">
               暂无释义：该词不在本书词库中
             </p>
           )}
         </div>
-      </div>
-    </>
+        </DialogPrimitive.Content>
+      </DialogPrimitive.Portal>
+    </DialogPrimitive.Root>
   )
 }

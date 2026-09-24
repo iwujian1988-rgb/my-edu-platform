@@ -80,8 +80,6 @@ export function NovelReader({
   const [popover, setPopover] = useState<{
     entry: LexiconEntry | null
     raw: string
-    x: number
-    y: number
   } | null>(null)
   const [reappearances, setReappearances] = useState<ReappearanceWord[]>([])
 
@@ -214,11 +212,11 @@ export function NovelReader({
     if (!el) return
     const raw = el.getAttribute('data-w') || el.textContent || ''
     const entry = lexiconMap?.get(normForm(raw)) || null
-    setPopover({ entry, raw, x: e.clientX, y: e.clientY })
+    setPopover({ entry, raw })
   }
 
   // 章末新词面板点词（词条本身在词库，缺行时用面板数据合成）
-  const handlePanelWordClick = (w: NovelWord, pos: { x: number; y: number }) => {
+  const handlePanelWordClick = (w: NovelWord) => {
     const hit = lexiconMap?.get(normForm(w.word))
     const entry: LexiconEntry = hit || {
       form_key: normForm(w.word),
@@ -234,11 +232,11 @@ export function NovelReader({
       chapter_first: w.chapter_number,
       chapters: [w.chapter_number],
     }
-    setPopover({ entry, raw: w.word, x: pos.x, y: pos.y })
+    setPopover({ entry, raw: w.word })
   }
 
   // 复现词点词（词条本身在词典；缺行时用面板数据合成）
-  const handleReappearanceClick = (w: ReappearanceWord, pos: { x: number; y: number }) => {
+  const handleReappearanceClick = (w: ReappearanceWord) => {
     const hit = lexiconMap?.get(normForm(w.lemma))
     const entry: LexiconEntry = hit || {
       form_key: normForm(w.lemma),
@@ -254,7 +252,7 @@ export function NovelReader({
       chapter_first: w.chapterFirst,
       chapters: null,
     }
-    setPopover({ entry, raw: w.form, x: pos.x, y: pos.y })
+    setPopover({ entry, raw: w.form })
   }
 
   // 生词本开关（乐观更新）
@@ -565,9 +563,9 @@ export function NovelReader({
       {/* 点词弹卡 */}
       {popover && (
         <WordPopover
+          key={popover.entry?.form_key || popover.raw}
           entry={popover.entry}
           rawText={popover.raw}
-          position={{ x: popover.x, y: popover.y }}
           inNotebook={!!popover.entry && notebookSet.has(popover.entry.lemma)}
           onToggleNotebook={handleToggleNotebook}
           onClose={() => setPopover(null)}
