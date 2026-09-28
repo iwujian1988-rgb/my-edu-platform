@@ -41,6 +41,7 @@ const FONT_SIZES = [15, 16, 17, 18, 19, 20, 21, 22]
 /** 显示模式：中法对照 / 隐藏中文注释 / 隐藏法语词 */
 type DisplayMode = 'all' | 'hide-zh' | 'hide-fr'
 const DISPLAY_KEY = 'novel-display-mode'
+const displayKeyForBook = (bookId: string) => `${DISPLAY_KEY}:${bookId}`
 const DISPLAY_MODES: Array<{ id: DisplayMode; name: string }> = [
   { id: 'all', name: '中法对照' },
   { id: 'hide-zh', name: '隐藏中文' },
@@ -96,9 +97,9 @@ export function NovelReader({
   useEffect(() => {
     const saved = parseInt(localStorage.getItem(FONT_KEY) || '', 10)
     if (FONT_SIZES.includes(saved)) setFontSize(saved)
-    const savedMode = localStorage.getItem(DISPLAY_KEY)
-    if (savedMode === 'hide-zh' || savedMode === 'hide-fr') setDisplayMode(savedMode)
-  }, [])
+    const savedMode = localStorage.getItem(displayKeyForBook(bookId))
+    setDisplayMode(savedMode === 'hide-zh' || savedMode === 'hide-fr' ? savedMode : 'all')
+  }, [bookId])
 
   // 词表 + 章节目录预载（均有 ETag 缓存，二次进入走磁盘缓存零传输）
   useEffect(() => {
@@ -298,10 +299,11 @@ export function NovelReader({
 
   const applyDisplayMode = (mode: DisplayMode) => {
     setDisplayMode(mode)
-    localStorage.setItem(DISPLAY_KEY, mode)
+    localStorage.setItem(displayKeyForBook(bookId), mode)
   }
 
   const cleanHtml = wrapZhGlosses(sanitizeNovelHtml(chapter.contentHtml))
+  const hasEmbeddedFrench = chapter.contentHtml.includes('class="fw"')
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] pb-24 text-[#121729] lg:pb-12 dark:from-[#101626] dark:to-[#0c1120] dark:text-[#edf1ff]">
@@ -439,6 +441,20 @@ export function NovelReader({
             第 {chapter.number} 章 · {chapter.title}
           </h1>
 
+          {displayMode === 'hide-fr' && (
+            <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-200">
+              当前设置隐藏了正文法语词。
+              <button type="button" className="ml-2 font-bold underline" onClick={() => applyDisplayMode('all')}>
+                显示法语
+              </button>
+            </div>
+          )}
+          {!hasEmbeddedFrench && (
+            <div className="mb-6 rounded-lg border border-[#e7eaf2] bg-white px-4 py-3 text-sm text-[#68718a] dark:border-[#273149] dark:bg-[#141b2d] dark:text-[#a7b0c8]">
+              本章是纯剧情章，没有安排法语词。
+              {hasNext && <Link href={`/read/${bookId}/${chapter.number + 1}`} className="ml-2 font-bold text-[#2d39bb] underline dark:text-[#9daaff]">下一章开始看法语词</Link>}
+            </div>
+          )}
           <article
             ref={articleRef}
             className="novel-content"
