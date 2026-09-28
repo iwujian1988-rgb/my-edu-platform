@@ -62,6 +62,7 @@ export default async function BookDetailPage({
         title={book.title}
         description={book.description}
         totalChapters={book.total_chapters || 0}
+        coverUrl={book.cover_url}
         totalWords={book.total_words || 0}
         novelProgress={novelProgress}
       />

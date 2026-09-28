@@ -16,6 +16,7 @@ interface NovelDetailClientProps {
   title: string
   description: string | null
   totalChapters: number
+  coverUrl?: string | null
   totalWords: number
   novelProgress?: { chapter: number; percent: number } | null
 }
@@ -25,6 +26,7 @@ export function NovelDetailClient({
   title,
   description,
   totalChapters,
+  coverUrl,
   totalWords,
   novelProgress,
 }: NovelDetailClientProps) {
@@ -47,11 +49,19 @@ export function NovelDetailClient({
         {/* 书籍卡 */}
         <div className="rounded-[12px] border border-[#e7eaf2] bg-white p-5 shadow-[0_9px_24px_rgba(31,42,104,0.06)] md:p-7 dark:border-[#273149] dark:bg-[#141b2d]">
           <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
-            {/* 封面占位（后期作图直接走 cover_url，此处大字渐变兜底） */}
-            <div className="mx-auto flex h-44 w-32 shrink-0 flex-col items-center justify-center rounded-[12px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] p-3 text-white shadow-[0_12px_30px_rgba(45,57,187,0.35)] sm:mx-0">
-              <span className="text-3xl font-extrabold leading-tight">{title.slice(1, 3) || title.slice(0, 2)}</span>
-              <span className="mt-1 text-[10px] tracking-widest opacity-80">TCF NOUVELLE</span>
-            </div>
+            {coverUrl ? (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                src={coverUrl}
+                alt={`${title}封面`}
+                className="mx-auto h-44 w-32 shrink-0 rounded-[12px] object-cover shadow-[0_12px_30px_rgba(45,57,187,0.35)] sm:mx-0"
+              />
+            ) : (
+              <div className="mx-auto flex h-44 w-32 shrink-0 flex-col items-center justify-center rounded-[12px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] p-3 text-white shadow-[0_12px_30px_rgba(45,57,187,0.35)] sm:mx-0">
+                <span className="text-3xl font-extrabold leading-tight">{title.slice(1, 3) || title.slice(0, 2)}</span>
+                <span className="mt-1 text-[10px] tracking-widest opacity-80">TCF NOUVELLE</span>
+              </div>
+            )}
 
             <div className="min-w-0 flex-1 text-center sm:text-left">
               <h1 className="text-2xl font-extrabold tracking-[-0.01em] md:text-3xl">{title}</h1>
