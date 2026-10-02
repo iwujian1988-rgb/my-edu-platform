@@ -12,16 +12,17 @@
  * - 布局：移动全屏沉浸（sticky 顶栏 + 底部上/下章条）；PC lg: 双栏 + sticky 侧栏
  */
 
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, useSyncExternalStore } from 'react'
 import Link from 'next/link'
-import { ChevronLeft, Bookmark, Type, List, ArrowRight, RefreshCw, X } from 'lucide-react'
+import { ChevronLeft, Bookmark, Type, List, ArrowRight, RefreshCw, X, Keyboard } from 'lucide-react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
-import { sanitizeNovelHtml, wrapZhGlosses } from '@/lib/novelSanitize'
+import { EMPTY_NOVEL_TYPING_CONTENT, parseNovelTypingContent, type NovelHintMode } from '@/lib/novel-typing'
 import { normForm } from '@/lib/novel-forms'
 import { saveNovelProgress } from '@/lib/readingProgress'
 import { WordPopover, type LexiconEntry } from './WordPopover'
 import { NewWordsPanel, type NovelWord, type ReappearanceWord } from './NewWordsPanel'
+import { NovelTypingHints, NovelTypingPractice } from './NovelTypingPractice'
 
 interface NovelReaderProps {
   bookId: string
@@ -37,6 +38,10 @@ interface NovelReaderProps {
 
 const FONT_KEY = 'novel-font-size'
 const FONT_SIZES = [15, 16, 17, 18, 19, 20, 21, 22]
+const READER_HEADER_OFFSET = 72
+const subscribeToClient = () => () => undefined
+const clientSnapshot = () => true
+const serverSnapshot = () => false
 
 /** 显示模式：中法对照 / 隐藏中文注释 / 隐藏法语词 */
 type DisplayMode = 'all' | 'hide-zh' | 'hide-fr'
@@ -74,6 +79,9 @@ export function NovelReader({
   const [fontSize, setFontSize] = useState(17)
   const [fontMenuOpen, setFontMenuOpen] = useState(false)
   const [displayMode, setDisplayMode] = useState<DisplayMode>('all')
+  const [typingEnabled, setTypingEnabled] = useState(false)
+  const [hintMode, setHintMode] = useState<NovelHintMode>('none')
+  const [inputFocused, setInputFocused] = useState(false)
   const [percent, setPercent] = useState(0)
   const [lexiconMap, setLexiconMap] = useState<Map<string, LexiconEntry> | null>(null)
   const [chapters, setChapters] = useState<ChapterMeta[]>([])
@@ -88,6 +96,17 @@ export function NovelReader({
   const percentRef = useRef(0)
   const rafRef = useRef<number | null>(null)
   const articleRef = useRef<HTMLElement>(null)
+  const readingAnchorRef = useRef<{ index: number; top: number } | null>(null)
+  // Sanitization requires DOM APIs. Keep the server and first hydration render identical.
+  const clientReady = useSyncExternalStore(subscribeToClient, clientSnapshot, serverSnapshot)
+  const content = useMemo(() => clientReady ? parseNovelTypingContent(chapter.contentHtml) : EMPTY_NOVEL_TYPING_CONTENT, [clientReady, chapter.contentHtml])
+  const hasEmbeddedFrench = content.blanks.length > 0
+  const practiceActive = typingEnabled && hasEmbeddedFrench
+  const definitions = useMemo(() => {
+    const map = new Map(newWords.map((word) => [normForm(word.word), word.definition]))
+    lexiconMap?.forEach((entry, key) => { if (entry.definition) map.set(key, entry.definition) })
+    return map
+  }, [newWords, lexiconMap])
 
   const hasPrev = chapter.number > 1
   const hasNext = chapter.number < totalChapters
@@ -119,13 +138,14 @@ export function NovelReader({
   }, [bookId])
 
   // 复现词推导：扫正文 b.fw 标记（按出场顺序）→ 词典命中 → 排除本章新词
+  // 使用同源解析结果，避免练习时正文已变成输入框而丢失复现词。
   useEffect(() => {
-    if (!lexiconMap || !articleRef.current) return
+    if (!lexiconMap) return
     const newLemmas = new Set(newWords.map((w) => normForm(w.word)))
     const seen = new Set<string>()
     const list: ReappearanceWord[] = []
-    for (const el of Array.from(articleRef.current.querySelectorAll('b.fw'))) {
-      const raw = el.getAttribute('data-w') || el.textContent || ''
+    for (const blank of content.blanks) {
+      const raw = blank.lookup
       const entry = lexiconMap.get(normForm(raw))
       if (!entry || seen.has(entry.lemma)) continue
       seen.add(entry.lemma)
@@ -142,7 +162,25 @@ export function NovelReader({
       })
     }
     setReappearances(list)
-  }, [lexiconMap, chapter.number, newWords])
+  }, [lexiconMap, chapter.number, newWords, content])
+
+  const toggleTyping = () => {
+    const paragraphs = Array.from(articleRef.current?.querySelectorAll('p') || [])
+    const index = paragraphs.findIndex((paragraph) => paragraph.getBoundingClientRect().bottom > READER_HEADER_OFFSET)
+    readingAnchorRef.current = window.scrollY > 0 && index >= 0
+      ? { index, top: paragraphs[index].getBoundingClientRect().top } : null
+    setPopover(null)
+    setInputFocused(false)
+    setTypingEnabled((previous) => !previous)
+  }
+
+  useLayoutEffect(() => {
+    const anchor = readingAnchorRef.current
+    if (!anchor) return
+    const paragraph = articleRef.current?.querySelectorAll('p')[anchor.index]
+    if (paragraph) window.scrollBy({ top: paragraph.getBoundingClientRect().top - anchor.top, behavior: 'instant' })
+    readingAnchorRef.current = null
+  }, [practiceActive])
 
   // 滚动进度
   useEffect(() => {
@@ -153,19 +191,24 @@ export function NovelReader({
         const doc = document.documentElement
         const total = doc.scrollHeight - window.innerHeight
         const p = total > 0 ? Math.min(100, Math.max(0, (window.scrollY / total) * 100)) : 0
-        percentRef.current = p
+        // Input boxes change paragraph heights; their percentage is not a normal-reading checkpoint.
+        if (!practiceActive) percentRef.current = p
         setPercent(p)
       })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
+    onScroll()
     return () => {
       window.removeEventListener('scroll', onScroll)
       if (rafRef.current) cancelAnimationFrame(rafRef.current)
+      rafRef.current = null
     }
-  }, [])
+  }, [practiceActive])
 
   // 断点续读：继续阅读进入时滚到上次位置
   useEffect(() => {
+    // DOM-only sanitization must finish before measuring the chapter for resume scrolling.
+    if (!clientReady) return
     window.scrollTo(0, 0)
     if (initialPercent && initialPercent > 2 && initialPercent < 100) {
       const doc = document.documentElement
@@ -177,7 +220,7 @@ export function NovelReader({
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  }, [clientReady])
 
   // 每 30s 保存阅读进度
   useEffect(() => {
@@ -302,9 +345,6 @@ export function NovelReader({
     localStorage.setItem(displayKeyForBook(bookId), mode)
   }
 
-  const cleanHtml = wrapZhGlosses(sanitizeNovelHtml(chapter.contentHtml))
-  const hasEmbeddedFrench = chapter.contentHtml.includes('class="fw"')
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#fbfcff] to-[#f7f9fd] pb-24 text-[#121729] lg:pb-12 dark:from-[#101626] dark:to-[#0c1120] dark:text-[#edf1ff]">
       {/* 顶栏 */}
@@ -326,6 +366,19 @@ export function NovelReader({
           </div>
 
           <div className="relative flex items-center gap-1">
+            <button
+              type="button" aria-label="输入练习" aria-pressed={practiceActive}
+              disabled={!hasEmbeddedFrench} onClick={toggleTyping}
+              title={hasEmbeddedFrench ? '挖空法语词，输入练习' : '本章没有可练习的法语词'}
+              className={cn(
+                'flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6550ff] disabled:cursor-not-allowed disabled:opacity-50',
+                practiceActive ? 'bg-[#3447dd] text-white dark:bg-[#4657c7]'
+                  : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]',
+              )}
+            >
+              <Keyboard className="h-4 w-4" />
+              {practiceActive ? '退出练习' : '输入练习'}
+            </button>
             <button
               onClick={toggleBookmark}
               aria-label="书签"
@@ -362,7 +415,6 @@ export function NovelReader({
         <DialogPrimitive.Portal>
           <DialogPrimitive.Overlay className="fixed inset-0 z-50 bg-black/60 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=open]:fade-in-0 data-[state=closed]:fade-out-0" />
           <DialogPrimitive.Content
-            aria-describedby="reader-settings-description"
             className="fixed left-1/2 top-1/2 z-50 max-h-[min(85dvh,640px)] w-[calc(100vw-32px)] max-w-md -translate-x-1/2 -translate-y-1/2 overflow-y-auto rounded-2xl border border-[#e7eaf2] bg-white p-5 shadow-[0_24px_80px_rgba(0,0,0,0.3)] outline-none dark:border-[#273149] dark:bg-[#141b2d] sm:p-6"
           >
             <div className="mb-5 flex items-start justify-between gap-4">
@@ -370,7 +422,7 @@ export function NovelReader({
                 <DialogPrimitive.Title className="text-lg font-extrabold text-[#121729] dark:text-[#edf1ff]">
                   阅读设置
                 </DialogPrimitive.Title>
-                <DialogPrimitive.Description id="reader-settings-description" className="mt-1 text-sm text-[#68718a] dark:text-[#a7b0c8]">
+                <DialogPrimitive.Description className="mt-1 text-sm text-[#68718a] dark:text-[#a7b0c8]">
                   调整字号和正文显示方式，选择后立即生效
                 </DialogPrimitive.Description>
               </div>
@@ -416,9 +468,10 @@ export function NovelReader({
                     key={mode.id}
                     type="button"
                     aria-pressed={mode.id === displayMode}
+                    disabled={practiceActive}
                     onClick={() => applyDisplayMode(mode.id)}
                     className={cn(
-                      'min-h-11 cursor-pointer rounded-lg px-3 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6550ff]',
+                      'min-h-11 cursor-pointer rounded-lg px-3 text-sm font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6550ff] disabled:cursor-not-allowed disabled:opacity-50',
                       mode.id === displayMode
                         ? 'bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] text-white'
                         : 'text-[#68718a] hover:bg-[#f3f5fb] dark:text-[#a7b0c8] dark:hover:bg-[#192238]'
@@ -428,7 +481,13 @@ export function NovelReader({
                   </button>
                 ))}
               </div>
+              {practiceActive && <p className="mt-2 text-xs text-[#68718a] dark:text-[#a7b0c8]">练习时法语词自动挖空，退出后恢复此显示设置。</p>}
             </section>
+            {practiceActive && (
+              <section className="mt-5 border-t border-[#e7eaf2] pt-4 dark:border-[#273149]">
+                <NovelTypingHints value={hintMode} onChange={setHintMode} />
+              </section>
+            )}
           </DialogPrimitive.Content>
         </DialogPrimitive.Portal>
       </DialogPrimitive.Root>
@@ -441,7 +500,7 @@ export function NovelReader({
             第 {chapter.number} 章 · {chapter.title}
           </h1>
 
-          {displayMode === 'hide-fr' && (
+          {!practiceActive && displayMode === 'hide-fr' && (
             <div className="mb-6 rounded-lg border border-amber-300 bg-amber-50 px-4 py-3 text-sm text-amber-900 dark:border-amber-700 dark:bg-amber-950/30 dark:text-amber-200">
               当前设置隐藏了正文法语词。
               <button type="button" className="ml-2 font-bold underline" onClick={() => applyDisplayMode('all')}>
@@ -449,19 +508,17 @@ export function NovelReader({
               </button>
             </div>
           )}
-          {!hasEmbeddedFrench && (
+          {clientReady && !hasEmbeddedFrench && (
             <div className="mb-6 rounded-lg border border-[#e7eaf2] bg-white px-4 py-3 text-sm text-[#68718a] dark:border-[#273149] dark:bg-[#141b2d] dark:text-[#a7b0c8]">
               本章是纯剧情章，没有安排法语词。
               {hasNext && <Link href={`/read/${bookId}/${chapter.number + 1}`} className="ml-2 font-bold text-[#2d39bb] underline dark:text-[#9daaff]">下一章开始看法语词</Link>}
             </div>
           )}
-          <article
-            ref={articleRef}
-            className="novel-content"
-            data-mode={displayMode}
-            style={{ fontSize: `${fontSize}px` }}
-            onClick={handleArticleClick}
-            dangerouslySetInnerHTML={{ __html: cleanHtml }}
+          <NovelTypingPractice
+            key={`${bookId}:${chapter.number}`}
+            content={content} enabled={practiceActive} hintMode={hintMode} onHintChange={setHintMode}
+            definitions={definitions} fontSize={fontSize} displayMode={displayMode}
+            articleRef={articleRef} onArticleClick={handleArticleClick} onInputFocusChange={setInputFocused}
           />
 
           <NewWordsPanel
@@ -572,7 +629,7 @@ export function NovelReader({
       </div>
 
       {/* 移动端底部上/下章 */}
-      <nav className="fixed inset-x-0 bottom-0 z-30 border-t border-[#e7eaf2] bg-white/95 backdrop-blur lg:hidden dark:border-[#273149] dark:bg-[#141b2d]/95">
+      <nav className={cn('fixed inset-x-0 bottom-0 z-30 border-t border-[#e7eaf2] bg-white/95 backdrop-blur lg:hidden dark:border-[#273149] dark:bg-[#141b2d]/95', practiceActive && inputFocused && 'hidden')}>
         <div className="grid h-14 grid-cols-3">
           {hasPrev ? (
             <Link
