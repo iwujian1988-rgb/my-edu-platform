@@ -14,6 +14,8 @@ import { hasNovelAccess } from '@/lib/novel-permissions'
 import { scheduleSm2Review } from '@/lib/sm2-scheduler'
 import { updateLearningCalendar } from '@/lib/learning-calendar'
 import type { NovelWordStatus } from '@/types/database'
+import { normForm } from '@/lib/novel-forms'
+import { NOVEL_MASTERY_REPETITIONS } from '@/lib/novel-typing'
 
 const VALID_STATUS = new Set(['new', 'unknown', 'vague', 'known'])
 const STATUS_BY_QUALITY: Record<number, NovelWordStatus> = { 1: 'unknown', 2: 'vague', 3: 'known' }
@@ -73,35 +75,60 @@ export async function POST(
     const admin = await createAdminClient()
 
     // 翻卡评分：SM-2 调度
-    if (action === 'review') {
+    if (action === 'review' || action === 'typing') {
       const quality = Number(body.quality)
       if (![1, 2, 3].includes(quality)) {
         return NextResponse.json({ error: 'Bad request' }, { status: 400 })
       }
 
-      const { data: current } = await admin
+      let progressLemma = lemma
+      if (action === 'typing') {
+        const { data: entry, error: lookupError } = await admin.from('novel_lexicon')
+          .select('lemma').eq('book_id', bookId).eq('form_key', normForm(lemma)).maybeSingle()
+        if (lookupError) return NextResponse.json({ error: 'Vocabulary lookup failed' }, { status: 500 })
+        if (entry) progressLemma = entry.lemma
+        else {
+          const { data: canonical, error: canonicalError } = await admin.from('novel_lexicon')
+            .select('lemma').eq('book_id', bookId).eq('lemma', lemma).limit(1).maybeSingle()
+          if (canonicalError) return NextResponse.json({ error: 'Vocabulary lookup failed' }, { status: 500 })
+          if (canonical) progressLemma = canonical.lemma
+          const { data: word, error: wordError } = canonical ? { data: null, error: null } : await admin.from('novel_words')
+            .select('word').eq('book_id', bookId).eq('word', lemma).limit(1).maybeSingle()
+          if (wordError) return NextResponse.json({ error: 'Vocabulary lookup failed' }, { status: 500 })
+          if (!word && !canonical) return NextResponse.json({ error: 'Word not in this book' }, { status: 400 })
+        }
+      }
+      const { data: current, error: currentError } = await admin
         .from('novel_word_progress')
-        .select('id, repetition_count, easiness_factor')
+        .select('id, repetition_count, easiness_factor, next_review_at')
         .eq('user_id', user.id)
         .eq('book_id', bookId)
-        .eq('lemma', lemma)
+        .eq('lemma', progressLemma)
         .maybeSingle()
+      if (currentError) return NextResponse.json({ error: 'Progress lookup failed' }, { status: 500 })
 
       const repetitionCount = current?.repetition_count || 0
       const easeFactor = Number(current?.easiness_factor ?? 2.5)
 
       const { intervalDays, easeFactor: newEaseFactor, nextReviewAt } =
-        scheduleSm2Review({ easeFactor, reviewCount: repetitionCount, quality })
+        scheduleSm2Review({ easeFactor, reviewCount: action === 'typing' && quality === 2 ? 0 : repetitionCount, quality })
       // Forgetting resets successful repetitions; otherwise later correct answers can jump to a long interval.
-      const nextRepetitionCount = quality === 1 ? 0 : repetitionCount + 1
+      // Assisted typing is not an independent successful retrieval.
+      const nextRepetitionCount = quality === 1 ? 0 : action === 'typing' && quality === 2 ? repetitionCount : repetitionCount + 1
+      // Reloads/local retries before the due date cannot manufacture spaced mastery.
+      if (action === 'typing' && current) {
+        if (quality === 3 && current.next_review_at && Date.parse(current.next_review_at) > Date.now()) {
+          return NextResponse.json({ success: true, data: { next_review: current.next_review_at, practice_only: true } })
+        }
+      }
 
       const { error } = await admin
         .from('novel_word_progress')
         .upsert({
           user_id: user.id,
           book_id: bookId,
-          lemma,
-          status: STATUS_BY_QUALITY[quality],
+          lemma: progressLemma,
+          status: action === 'typing' && quality === 3 && nextRepetitionCount < NOVEL_MASTERY_REPETITIONS ? 'vague' : STATUS_BY_QUALITY[quality],
           repetition_count: nextRepetitionCount,
           easiness_factor: newEaseFactor,
           next_review_at: nextReviewAt,

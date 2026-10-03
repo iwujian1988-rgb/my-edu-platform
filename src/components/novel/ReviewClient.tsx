@@ -28,7 +28,7 @@ import {
 import { useFrenchTTS } from '@/hooks/useFrenchTTS'
 import type { NovelWord } from '@/types/novel'
 import { normForm } from '@/lib/novel-forms'
-import { orderNovelReviewQueue, type NovelReviewSchedule } from '@/lib/novel-review-queue'
+import { dueNovelReviewQueue, orderNovelReviewQueue, type NovelReviewSchedule } from '@/lib/novel-review-queue'
 
 export type ReviewRange = 'chapter' | 'notebook' | 'star' | 'all'
 
@@ -72,6 +72,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   const { speak } = useFrenchTTS()
 
   const [range, setRange] = useState<ReviewRange>(initialRange)
+  const [includeFuture, setIncludeFuture] = useState(false)
   const [chapter, setChapter] = useState<number>(initialChapter || progressChapter || 1)
 
   const [words, setWords] = useState<NovelWord[] | null>(null)
@@ -91,7 +92,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   const rafRef = useRef<number | null>(null)
 
   const rangeKey = range === 'chapter' ? `chapter-${chapter}` : range
-  const storageKey = `novel-review-pos-${bookId}-${rangeKey}`
+  const storageKey = `novel-review-pos-${bookId}-${rangeKey}-${includeFuture ? 'all' : 'due'}`
 
   // 拉词
   useEffect(() => {
@@ -110,7 +111,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
       .then((json) => {
         const list: NovelWord[] = json.data?.words || []
         const progress: Record<string, NovelReviewSchedule> = json.data?.progress || {}
-        const orderedList = orderNovelReviewQueue(list, progress)
+        const orderedList = includeFuture ? orderNovelReviewQueue(list, progress) : dueNovelReviewQueue(list, progress)
         setWords(orderedList)
         setLoadedKey(storageKey)
         setFailedKey(null)
@@ -136,7 +137,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
       })
 
     return () => controller.abort()
-  }, [bookId, range, chapter, storageKey])
+  }, [bookId, range, chapter, storageKey, includeFuture])
 
   const activeWords = loadedKey === storageKey ? words : null
   const loadError = failedKey === storageKey
@@ -306,10 +307,11 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   }, [range, chapter])
 
   const emptyHint = useMemo(() => {
+    if (!includeFuture) return '本范围暂无到期或未练习的词，可以主动复习全部词汇。'
     if (range === 'notebook') return '生词本还是空的——读正文时点蓝色词，加进来这里复习。'
     if (range === 'star') return '本书暂无核心词标记。'
     return '这里还没有词。'
-  }, [range])
+  }, [range, includeFuture])
 
   // 加载中
   if (activeWords === null && !loadError) {
@@ -350,6 +352,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
           </div>
           <h3 className="mb-2 text-lg font-extrabold text-[#121729] dark:text-[#edf1ff]">{rangeLabel} · 暂无内容</h3>
           <p className="mb-6 text-sm text-[#68718a] dark:text-[#a7b0c8]">{emptyHint}</p>
+          {!includeFuture && <button type="button" className="mb-4 min-h-11 rounded-lg border px-4" onClick={() => setIncludeFuture(true)}>复习全部（含未到期）</button>}
           <Link
             href={`/read/${bookId}`}
             className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
@@ -439,6 +442,7 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
 
         {/* 范围切换 */}
         <div className="mx-auto flex max-w-4xl gap-1.5 overflow-x-auto px-4 pb-2.5">
+          <button type="button" aria-pressed={includeFuture} onClick={() => setIncludeFuture((value) => !value)} className="min-h-11 shrink-0 rounded-full border px-3 text-xs font-semibold">{includeFuture ? '全部词（含未到期）' : '到期词＋新词'}</button>
           {([
             { r: 'chapter' as ReviewRange, label: `本章·${chapter}` },
             { r: 'notebook' as ReviewRange, label: '生词本' },

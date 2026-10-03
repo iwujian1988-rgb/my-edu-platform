@@ -17,7 +17,7 @@ import Link from 'next/link'
 import { ChevronLeft, Bookmark, Type, List, ArrowRight, RefreshCw, X, Keyboard } from 'lucide-react'
 import * as DialogPrimitive from '@radix-ui/react-dialog'
 import { cn } from '@/lib/utils'
-import { EMPTY_NOVEL_TYPING_CONTENT, parseNovelTypingContent, type NovelHintMode } from '@/lib/novel-typing'
+import { buildNovelPracticeContent, EMPTY_NOVEL_TYPING_CONTENT, parseNovelTypingContent, type NovelHintMode, type NovelTypingSchedule } from '@/lib/novel-typing'
 import { normForm } from '@/lib/novel-forms'
 import { saveNovelProgress } from '@/lib/readingProgress'
 import { WordPopover, type LexiconEntry } from './WordPopover'
@@ -82,6 +82,8 @@ export function NovelReader({
   const [typingEnabled, setTypingEnabled] = useState(false)
   const [hintMode, setHintMode] = useState<NovelHintMode>('none')
   const [inputFocused, setInputFocused] = useState(false)
+  const [typingSchedules, setTypingSchedules] = useState<ReadonlyMap<string, NovelTypingSchedule>>(new Map())
+  const [progressLoadedBook, setProgressLoadedBook] = useState<string | null>(null)
   const [percent, setPercent] = useState(0)
   const [lexiconMap, setLexiconMap] = useState<Map<string, LexiconEntry> | null>(null)
   const [chapters, setChapters] = useState<ChapterMeta[]>([])
@@ -107,6 +109,26 @@ export function NovelReader({
     lexiconMap?.forEach((entry, key) => { if (entry.definition) map.set(key, entry.definition) })
     return map
   }, [newWords, lexiconMap])
+  const practiceContent = useMemo(() => {
+    const lemmas = new Map(newWords.map((word) => [normForm(word.word), word.lemma || word.word]))
+    lexiconMap?.forEach((entry, key) => lemmas.set(normForm(key), entry.lemma))
+    return buildNovelPracticeContent(content, lemmas, typingSchedules)
+  }, [content, newWords, lexiconMap, typingSchedules])
+
+  useEffect(() => {
+    const controller = new AbortController()
+    fetch(`/api/novel/${bookId}/progress`, { signal: controller.signal })
+      .then((response) => { if (!response.ok) throw new Error('Progress unavailable'); return response.json() })
+      .then((json: { data: Array<NovelTypingSchedule & { lemma: string }> }) => {
+        if (!controller.signal.aborted) {
+          setTypingSchedules(new Map((json.data || []).map((row) => [normForm(row.lemma), row])))
+          setProgressLoadedBook(bookId)
+        }
+      })
+      // Offline practice stays available without claiming a synchronized schedule.
+      .catch(() => { if (!controller.signal.aborted) { setTypingSchedules(new Map()); setProgressLoadedBook(bookId) } })
+    return () => controller.abort()
+  }, [bookId])
 
   const hasPrev = chapter.number > 1
   const hasNext = chapter.number < totalChapters
@@ -368,7 +390,7 @@ export function NovelReader({
           <div className="relative flex items-center gap-1">
             <button
               type="button" aria-label="输入练习" aria-pressed={practiceActive}
-              disabled={!hasEmbeddedFrench} onClick={toggleTyping}
+              disabled={!hasEmbeddedFrench || progressLoadedBook !== bookId || lexiconMap === null} onClick={toggleTyping}
               title={hasEmbeddedFrench ? '挖空法语词，输入练习' : '本章没有可练习的法语词'}
               className={cn(
                 'flex min-h-11 items-center gap-1.5 rounded-lg px-2 text-xs font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6550ff] disabled:cursor-not-allowed disabled:opacity-50',
@@ -516,7 +538,7 @@ export function NovelReader({
           )}
           <NovelTypingPractice
             key={`${bookId}:${chapter.number}`}
-            content={content} enabled={practiceActive} hintMode={hintMode} onHintChange={setHintMode}
+            bookId={bookId} content={practiceContent} enabled={practiceActive} hintMode={hintMode} onHintChange={setHintMode}
             definitions={definitions} fontSize={fontSize} displayMode={displayMode}
             articleRef={articleRef} onArticleClick={handleArticleClick} onInputFocusChange={setInputFocused}
           />

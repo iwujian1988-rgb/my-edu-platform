@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { parseNovelTypingContent, matchesNovelAnswer, frenchInitial } from '../novel-typing'
+import { parseNovelTypingContent, matchesNovelAnswer, frenchInitial, splitNovelArticle, buildNovelPracticeContent, novelTypingQuality } from '../novel-typing'
 
 describe('novel typing content', () => {
   it('blanks only marked French, preserving surface forms, occurrences and contextual glosses', () => {
@@ -45,5 +45,41 @@ describe('French typing answers', () => {
     expect(frenchInitial('École')).toBe('É…')
     expect(frenchInitial('la sortie')).toBe('l…')
     expect(frenchInitial('« aujourd’hui »')).toBe('a…')
+  })
+})
+
+describe('vocabulary practice selection', () => {
+  it.each([['le taxi', 'le ', 'taxi'], ['La neige', 'La ', 'neige'], ["l'école", "l'", 'école'], ['le billet de train', '', 'le billet de train'], ['en plein cœur de', '', 'en plein cœur de']])(
+    'splits only standalone article nouns: %s', (source, prefix, answer) => {
+      expect(splitNovelArticle(source)).toEqual({ prefix, answer })
+    },
+  )
+  it('deduplicates canonical lemmas without changing normal-reader occurrences', () => {
+    const original = parseNovelTypingContent('<p><b class="fw" data-w="le taxi">le taxi</b>（出租车）<b class="fw" data-w="taxi">taxi</b><b class="fw" data-w="aller">vais</b><b class="fw" data-w="aller">allons</b></p>')
+    const practice = buildNovelPracticeContent(original, new Map([['le taxi', 'taxi']]), new Map())
+    expect(practice.blanks.map((blank) => blank.answer)).toEqual(['taxi', 'vais'])
+    expect(practice.blanks[0].prefix).toBe('le ')
+    expect(original.blanks).toHaveLength(4)
+    expect(practice.html).toBe(original.html)
+    const paragraph = practice.nodes[0]
+    if (paragraph.kind !== 'paragraph') throw new Error('Expected paragraph')
+    const repeat = paragraph.children[3]
+    expect(repeat.kind).toBe('repeat')
+    if (repeat.kind === 'repeat') expect(repeat.blank.answer).toBe('allons')
+  })
+  it('includes due/new/weak words but does not drill future known words', () => {
+    const content = parseNovelTypingContent('<p><b class="fw">taxi</b><b class="fw">neige</b><b class="fw">billet</b><b class="fw">demain</b></p>')
+    const now = Date.parse('2026-10-03T00:00:00Z')
+    const progress = new Map([
+      ['taxi', { status: 'known', next_review_at: '2026-10-04T00:00:00Z' }],
+      ['neige', { status: 'vague', next_review_at: '2026-10-04T00:00:00Z' }],
+      ['billet', { status: 'known', next_review_at: '2026-10-02T00:00:00Z' }],
+    ])
+    expect(buildNovelPracticeContent(content, new Map(), progress, now).blanks.map((blank) => blank.answer)).toEqual(['neige', 'billet', 'demain'])
+  })
+  it('never grades assisted recall as independent success', () => {
+    expect(novelTypingQuality(true, true)).toBe(2)
+    expect(novelTypingQuality(true, false)).toBe(3)
+    expect(novelTypingQuality(false, false)).toBe(1)
   })
 })

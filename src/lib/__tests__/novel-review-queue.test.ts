@@ -1,8 +1,14 @@
 import { describe, expect, it } from 'vitest'
-import { orderNovelReviewQueue } from '../novel-review-queue'
+import { dueNovelReviewQueue, orderNovelReviewQueue } from '../novel-review-queue'
 
 describe('orderNovelReviewQueue', () => {
   const now = Date.parse('2026-09-24T12:00:00.000Z')
+  it('normal sessions exclude future cards, all-cards mode retains them', () => {
+    const words = [{ word: 'taxi' }, { word: 'neige' }, { word: 'billet' }]
+    const progress = { taxi: { next_review_at: '2026-09-25T00:00:00Z', repetition_count: 2 }, neige: { next_review_at: '2026-09-23T00:00:00Z', repetition_count: 1 } }
+    expect(dueNovelReviewQueue(words, progress, now).map((word) => word.word)).toEqual(['neige', 'billet'])
+    expect(orderNovelReviewQueue(words, progress, now)).toHaveLength(3)
+  })
 
   it('prioritizes overdue cards, then unseen words, then upcoming cards', () => {
     const words = [

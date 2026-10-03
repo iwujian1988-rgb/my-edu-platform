@@ -5,6 +5,17 @@ export interface NovelReviewSchedule {
   repetition_count: number
 }
 
+/** Normal sessions focus on due/new cards; deliberate all-cards practice remains available. */
+export function dueNovelReviewQueue<T extends { word: string; lemma?: string }>(
+  words: T[], progress: Record<string, NovelReviewSchedule>, now = Date.now(),
+): T[] {
+  return orderNovelReviewQueue(words, progress, now).filter((word) => {
+    const date = progress[normForm(word.lemma || word.word)]?.next_review_at
+    const timestamp = date ? Date.parse(date) : Number.NaN
+    return !Number.isFinite(timestamp) || timestamp <= now
+  })
+}
+
 /** Keep every eligible word, but put overdue cards first and scheduled future cards last. */
 export function orderNovelReviewQueue<T extends { word: string }>(
   words: T[],

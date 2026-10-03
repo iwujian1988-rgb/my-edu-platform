@@ -13,17 +13,52 @@ vi.mock('../WordPopover', () => ({ WordPopover: ({ rawText }: { rawText: string 
 
 const chapter = {
   number: 2, title: '门外的一天',
-  contentHtml: '<p>我说 <b class="fw" data-w="bonjour">Bonjour</b>（你好），接着到了 <b class="fw" data-w="école">école</b>（学校）。</p><p>后来又说 <b class="fw" data-w="bonjour">bonjour</b>。</p>',
+  contentHtml: '<p>我说 <b class="fw" data-w="bonjour">Bonjour</b>（你好），接着到了 <b class="fw" data-w="école">école</b>（学校）。</p><p>后来又说 <b class="fw" data-w="bonjour">bonjour</b>，<b class="fw" data-w="salut">Salut</b>。</p>',
 }
 const props = { bookId: 'test-novel', totalChapters: 5, chapter, newWords: [] as NovelWord[] }
-const entries = [{ form_key: 'bonjour', lemma: 'bonjour', display_form: 'bonjour', definition: '词典问候语', chapter_first: 1 }]
-const api = vi.fn(async (url: string) => ({ ok: true, json: async () => ({ data: url.endsWith('/lexicon') ? entries : [] }) }))
+const entries = ['bonjour', 'salut'].map((word) => ({ form_key: word, lemma: word, display_form: word, definition: '词典问候语', chapter_first: 1 }))
+const api = vi.fn(async (url: string, _options?: RequestInit) => ({ ok: true, json: async () => ({ data: url.endsWith('/lexicon') ? entries : [] }) }))
 
 function article() {
   const element = document.querySelector('article')
   if (!element) throw new Error('Reader article missing')
   return within(element)
 }
+
+describe('vocabulary-focused typing', () => {
+  it('keeps articles outside inputs, hides repeated answers and records only the first outcome', async () => {
+    const user = userEvent.setup()
+    render(<NovelReader {...props} chapter={{ ...chapter, contentHtml: '<p><b class="fw" data-w="le taxi">le taxi</b>（出租车），<b class="fw" data-w="le taxi">le taxi</b>。</p>' }} />)
+    await user.click(screen.getByRole('button', { name: '输入练习' }))
+    expect(screen.getAllByRole('textbox')).toHaveLength(1)
+    expect(article().getByText('le')).toBeVisible()
+    expect(article().getByText('〔同词，见前一空〕')).toBeVisible()
+    await user.click(screen.getByRole('button', { name: '第 1 空首字母提示' }))
+    expect(article().getByText('t…')).toBeVisible()
+    await user.type(screen.getByRole('textbox'), 'taxi{Enter}')
+    expect(article().getByText('提示后答对')).toBeVisible()
+    expect(article().getByText('le taxi')).toBeVisible()
+    expect(screen.getByRole('button', { name: '拼写补练（1）' })).toBeEnabled()
+    expect(screen.getByRole('button', { name: '冠词练习（1）' })).toBeEnabled()
+    const posts = api.mock.calls.filter((args) => args[1]?.method === 'POST')
+    expect(posts).toHaveLength(1)
+    expect(JSON.parse(String(posts[0][1]?.body))).toEqual({ action: 'typing', lemma: 'le taxi', quality: 2 })
+    await user.click(screen.getByRole('button', { name: '再练一次' }))
+    await user.type(screen.getByRole('textbox'), 'taxi{Enter}')
+    expect(api.mock.calls.filter((args) => args[1]?.method === 'POST')).toHaveLength(1)
+  })
+  it('turning a seen hint off does not turn it into independent recall', async () => {
+    const user = userEvent.setup()
+    render(<NovelReader {...props} />)
+    await user.click(screen.getByRole('button', { name: '输入练习' }))
+    await user.click(screen.getByLabelText('首字母提示'))
+    await user.click(screen.getByLabelText('无提示'))
+    await user.type(screen.getAllByRole('textbox')[0], 'bonjour{Enter}')
+    expect(article().getByText('提示后答对')).toBeVisible()
+    const post = api.mock.calls.find((args) => args[1]?.method === 'POST')
+    expect(JSON.parse(String(post?.[1]?.body)).quality).toBe(2)
+  })
+})
 
 beforeEach(() => {
   localStorage.clear()
@@ -41,7 +76,7 @@ afterEach(() => {
 })
 
 describe('NovelReader typing practice', () => {
-  it('defaults to normal reading; enabled mode blanks every marked occurrence without leaking glosses', async () => {
+  it('defaults to normal reading; enabled mode deduplicates words without leaking glosses', async () => {
     const user = userEvent.setup()
     render(<NovelReader {...props} />)
     expect(article().getByText('Bonjour')).toBeVisible()
@@ -88,14 +123,15 @@ describe('NovelReader typing practice', () => {
     await user.clear(second)
     await user.type(second, 'école{Enter}')
     expect(third).toHaveFocus()
-    await user.type(third, 'bonjour')
+    await user.type(third, 'salut')
     await user.tab()
     expect(screen.getByText('本章全部答对！')).toBeVisible()
     await user.click(screen.getByRole('button', { name: '再练一次' }))
     expect(first).toHaveValue('')
     expect(first).toHaveFocus()
     expect(screen.getByText('已答对 0 / 3 空')).toBeVisible()
-    expect(api.mock.calls.every((args) => args.length === 1)).toBe(true)
+    const posts = api.mock.calls.filter((args) => args[1]?.method === 'POST')
+    expect(posts).toHaveLength(3)
   })
 
   it('does not submit an Enter that confirms an IME candidate', async () => {
