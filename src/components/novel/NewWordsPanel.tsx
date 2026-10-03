@@ -55,11 +55,11 @@ export function NewWordsPanel({
   const starCount = words.filter((w) => w.star).length
 
   return (
-    <section className="mt-12 rounded-[12px] border border-[#e7eaf2] bg-white p-4 shadow-[0_9px_24px_rgba(31,42,104,0.06)] md:p-6 dark:border-[#273149] dark:bg-[#141b2d]">
+    <section className="mt-10 rounded-2xl border border-[#e7eaf2] bg-white p-5 md:p-7 dark:border-[#303b53] dark:bg-[#141b2d]">
       <div className="mb-4 flex items-center justify-between gap-2">
         <h2 className="text-base font-extrabold tracking-[-0.01em] text-[#121729] md:text-lg dark:text-[#edf1ff]">
           本章词汇
-          <span className="ml-2 text-sm font-semibold text-[#68718a] dark:text-[#a7b0c8]">
+          <span className="mt-2 block text-xs font-medium text-[#68718a] dark:text-[#a7b0c8]">
             {words.length > 0 ? `新词 ${words.length} 个` : ''}
             {reappearances.length > 0 && `${words.length > 0 ? ' · ' : ''}复现 ${reappearances.length} 个`}
             {starCount > 0 && ` · ★核心 ${starCount}`}
@@ -73,11 +73,11 @@ export function NewWordsPanel({
             <button
               key={`${w.chapter_number}-${w.word}`}
               onClick={() => onWordClick?.(w)}
-              className="group flex cursor-pointer items-start justify-between gap-2 rounded-lg border border-transparent bg-[#f8faff] px-3 py-2.5 text-left transition-all duration-200 hover:border-[#6550ff]/30 hover:bg-[#f3f5fb] dark:bg-[#192238] dark:hover:bg-[#1c2540]"
+              className="group flex min-h-11 cursor-pointer items-start justify-between gap-2 rounded-xl border border-[#e3e7ef] bg-[#f8faff] px-4 py-4 text-left transition-colors hover:border-[#6550ff]/40 hover:bg-[#f1f3ff] focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-[#303b53] dark:bg-[#192238] dark:hover:bg-[#1c2540]"
             >
               <div className="min-w-0">
                 <div className="flex flex-wrap items-center gap-1.5">
-                  <span className="font-semibold text-[#121729] dark:text-[#edf1ff]">{w.word}</span>
+                  <span className="text-lg font-semibold text-[#343ba0] dark:text-[#d0d6ff]">{w.word}</span>
                   {w.star && <Star className="h-3 w-3 fill-amber-400 text-amber-400" />}
                   {w.cefr && (
                     <span
@@ -95,6 +95,7 @@ export function NewWordsPanel({
                     </span>
                   )}
                 </div>
+                {w.phonetic && <p className="mt-1 text-xs text-[#68718a] dark:text-[#a7b0c8]">[{w.phonetic}]</p>}
                 <p className="mt-1 line-clamp-2 text-xs leading-relaxed text-[#68718a] dark:text-[#a7b0c8]">
                   {w.definition}
                 </p>

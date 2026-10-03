@@ -68,11 +68,14 @@ interface NovelTypingPracticeProps {
   articleRef: RefObject<HTMLElement | null>
   onArticleClick: MouseEventHandler<HTMLElement>
   onInputFocusChange: (focused: boolean) => void
+  hidden?: boolean
+  viewedAnswers?: ReadonlySet<string>
+  readingContent: NovelTypingContent
 }
 
 export function NovelTypingPractice({
   bookId, content, enabled, hintMode, onHintChange, definitions, fontSize, displayMode,
-  articleRef, onArticleClick, onInputFocusChange,
+  articleRef, onArticleClick, onInputFocusChange, hidden = false, viewedAnswers, readingContent,
 }: NovelTypingPracticeProps) {
   const [attempts, setAttempts] = useState<Record<number, Attempt>>({})
   const inputRefs = useRef(new Map<number, HTMLInputElement>())
@@ -82,6 +85,7 @@ export function NovelTypingPractice({
   const [failedSync, setFailedSync] = useState<Record<string, 1 | 2 | 3>>({})
   const [syncing, setSyncing] = useState(false)
   const [revealed, setRevealed] = useState<Record<number, NovelHintMode>>({})
+  const [openHint, setOpenHint] = useState<number | null>(null)
   const idPrefix = useId()
   const correctCount = content.blanks.filter((blank) => attempts[blank.id]?.status === 'correct').length
   const complete = content.blanks.length > 0 && correctCount === content.blanks.length
@@ -108,7 +112,8 @@ export function NovelTypingPractice({
 
   const update = (blank: NovelBlank, value: string, check: boolean): boolean => {
     const correct = matchesNovelAnswer(value, blank.answer)
-    const assisted = Boolean(attempts[blank.id]?.assisted || hintSeen.current.has(blank.id) || hintMode !== 'none' || revealed[blank.id])
+    const assisted = Boolean(attempts[blank.id]?.assisted || hintSeen.current.has(blank.id) || hintMode !== 'none' || revealed[blank.id]
+      || viewedAnswers?.has(normForm(blank.lookup)) || (blank.lemma && viewedAnswers?.has(normForm(blank.lemma))))
     const hadError = Boolean(attempts[blank.id]?.hadError || (check && value.trim() && !correct))
     setAttempts((previous) => ({
       ...previous,
@@ -183,14 +188,19 @@ export function NovelTypingPractice({
         )}>
           {status === 'correct' ? (attempt?.assisted ? '提示后答对' : attempt?.hadError ? '纠正后答对' : '独立答对') : status === 'incorrect' ? '再试一次，注意重音和词形' : ''}
         </span>
-        {status !== 'correct' && <span className="flex flex-wrap gap-1 text-xs">
+        {status !== 'correct' && <span className="flex flex-wrap items-center gap-1 text-xs">
+          <button type="button" aria-label={`第 ${blank.id + 1} 空提示`} aria-expanded={openHint === blank.id}
+            className="novel-hint-trigger" onClick={() => setOpenHint(previous => previous === blank.id ? null : blank.id)}>提示{openHint === blank.id ? ' −' : ' +'}</button>
+          {openHint === blank.id && <span className="flex flex-wrap gap-1">
           {(['zh', 'initial'] as const).map((mode) => <button key={mode} type="button"
             aria-label={`第 ${blank.id + 1} 空${mode === 'zh' ? '中文提示' : '首字母提示'}`}
             className="min-h-11 rounded px-1 text-[#59647e] underline focus-visible:ring-2 focus-visible:ring-[#6550ff] dark:text-[#bbc4de]"
             onClick={() => {
               setRevealed((previous) => ({ ...previous, [blank.id]: mode }))
+              setOpenHint(null)
               setAttempts((previous) => ({ ...previous, [blank.id]: { value: previous[blank.id]?.value || '', status: previous[blank.id]?.status || 'editing', hadError: previous[blank.id]?.hadError || false, assisted: true } }))
             }}>{mode === 'zh' ? '中文' : '首字母'}</button>)}
+          </span>}
         </span>}
       </span>
       </span>
@@ -209,18 +219,33 @@ export function NovelTypingPractice({
     }
   })
 
+  const renderReading = (nodes: NovelTypingNode[], path = 'read'): ReactNode => nodes.map((node, index) => {
+    const key = `${path}-${index}`
+    if (node.kind === 'text') return node.text
+    if (node.kind === 'paragraph') return <p key={key}>{renderReading(node.children, key)}</p>
+    if (node.kind === 'bold') return <b key={key}>{renderReading(node.children, key)}</b>
+    if (node.kind !== 'blank' && node.kind !== 'repeat') return null
+    return <span key={key}><b className="fw" data-w={node.blank.lookup} role="button" tabIndex={0}
+      aria-label={displayMode === 'hide-fr' ? `查看第 ${node.blank.id + 1} 处词卡` : `查看词卡：${node.blank.answer}`}>
+      {node.blank.answer}
+    </b>{node.blank.gloss && <i className="zh">（{node.blank.gloss}）</i>}</span>
+  })
+
+  if (hidden) return null
+
   return (
     <>
       {enabled && (
-        <section aria-label="输入练习设置" className="mb-6 rounded-xl border border-[#dce1f2] bg-[#f1f4ff] p-4 dark:border-[#35415d] dark:bg-[#141b2d]">
+        <section aria-label="输入练习设置" className="novel-learning-note">
           <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-            <h2 className="flex items-center gap-2 text-base font-bold"><Keyboard className="h-5 w-5" />输入练习</h2>
+            <h2 className="flex items-center gap-2 text-base font-bold"><Keyboard className="h-5 w-5" />写出来，才是真的记住</h2>
             <span role="status" className="text-sm font-semibold text-[#2d39bb] dark:text-[#bcc5ff]">
               {complete ? '本章全部答对！' : `已答对 ${correctCount} / ${content.blanks.length} 空`}
             </span>
           </div>
+          <div className="novel-practice-progress" aria-hidden="true"><span style={{ width: `${content.blanks.length ? correctCount / content.blanks.length * 100 : 0}%` }} /></div>
           <p className="mb-3 text-sm leading-relaxed text-[#59647e] dark:text-[#bbc4de]">
-            每个词本章只考一次。冠词留在外面，只填单词；固定词组整体填写。回车或离开输入框检查，答对后回车跳到下一空。
+            保留冠词，只填核心词；词组整体填写。回车检查，答对跳到下一空。
           </p>
           <NovelTypingHints value={hintMode} onChange={onHintChange} />
           {complete && (
@@ -228,7 +253,8 @@ export function NovelTypingPractice({
               <RotateCcw className="h-4 w-4" />再练一次
             </button>
           )}
-          <p className="mt-3 text-xs leading-relaxed text-[#68718a] dark:text-[#a7b0c8]">独立答对 {correctCount - assistedCount} 个 · 辅助或纠正后答对 {assistedCount} 个。首次答对只记待巩固；本页反复练习不会重复延长复习间隔。</p>
+          <p className="mt-3 text-xs leading-relaxed text-[#68718a] dark:text-[#a7b0c8]">独立答对 {correctCount - assistedCount} 个 · 待巩固 {assistedCount} 个</p>
+          <details className="mt-1 text-xs leading-relaxed"><summary className="cursor-pointer py-2">复习记录怎么算？</summary><p>首次答对只记待巩固；看过答案、使用提示或纠正后答对不算独立回忆。本页反复练习不会重复延长复习间隔。</p></details>
           {content.blanks.length === 0 && <p role="status">本章词汇均未到复习时间，可以继续阅读，或去词库主动复习。</p>}
           {Object.keys(failedSync).length > 0 && <p role="alert" className="mt-2 text-sm text-rose-700 dark:text-rose-300">复习记录未同步，答案仍保留在本页。<button type="button" disabled={syncing} className="min-h-11 px-2 underline" onClick={async () => {
             setSyncing(true)
@@ -244,7 +270,13 @@ export function NovelTypingPractice({
           onBlurCapture={(event) => { if (!event.currentTarget.contains(event.relatedTarget)) onInputFocusChange(false) }}
         >{renderNodes(content.nodes)}</article>
       ) : (
-        <article ref={articleRef} className="novel-content" data-mode={displayMode} style={{ fontSize: `${fontSize}px` }} onClick={onArticleClick} dangerouslySetInnerHTML={{ __html: content.html }} />
+        <article ref={articleRef} className="novel-content" data-mode={displayMode} style={{ fontSize: `${fontSize}px` }} onClick={onArticleClick}
+          onKeyDown={event => {
+            if ((event.key === 'Enter' || event.key === ' ') && event.target instanceof HTMLElement && event.target.matches('b.fw')) {
+              event.preventDefault()
+              event.target.click()
+            }
+          }}>{renderReading(readingContent.nodes)}</article>
       )}
       {enabled && <NovelRecallReview
         retryWords={complete ? content.blanks.filter((blank) => attempts[blank.id]?.assisted || attempts[blank.id]?.hadError) : []}

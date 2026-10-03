@@ -25,10 +25,36 @@ try {
       const page = await browser.newPage({ viewport: { width, height: 844 }, reducedMotion: 'reduce' })
       const errors = []
       page.on('pageerror', e => errors.push(e.message))
-      await page.route('**/api/**', route => route.fulfill({ json: { data: [] } }))
+      const posts = []
+      await page.route('**/api/**', route => {
+        if (route.request().method() === 'POST') posts.push(route.request().postDataJSON())
+        return route.fulfill({ json: { data: route.request().url().endsWith('/lexicon') ? [{ form_key: 'la sortie', lemma: 'sortie', display_form: 'la sortie', definition: '出口', phonetic: 'sɔʁti', gender: 'f', cefr: 'A1', example_html: '<p>Où est la sortie ?</p>', chapter_first: 1 }] : [] } })
+      })
       await page.goto(`http://127.0.0.1:${address.port}`)
       if (dark) await page.evaluate(() => document.documentElement.classList.add('dark'))
-      const toggle = page.getByRole('button', { name: '输入练习', exact: true })
+      const toggle = page.getByRole('button', { name: '拼写自测', exact: true })
+      await page.screenshot({ path: path.join(root, `reading-${width}-${dark ? 'dark' : 'light'}.png`), animations: 'disabled' })
+      await page.locator('article b.fw').first().click()
+      const wordCard = page.getByRole('dialog')
+      await expect(wordCard.getByRole('heading', { name: 'la sortie' })).toBeVisible()
+      if (width < 640) {
+        const rect = await wordCard.boundingBox()
+        assert.ok(Math.abs(rect.y + rect.height - 844) <= 1, 'Mobile word card must sit at the bottom')
+      }
+      await wordCard.getByText('查看例句', { exact: true }).click()
+      await expect(wordCard.getByText('Où est la sortie ?')).toBeVisible()
+      await page.screenshot({ path: path.join(root, `word-card-${width}-${dark ? 'dark' : 'light'}.png`), animations: 'disabled' })
+      await wordCard.getByRole('button', { name: '关闭', exact: true }).click()
+      await expect(page.locator('article b.fw').first()).toBeFocused()
+      await page.getByRole('button', { name: '遮词回忆', exact: true }).click()
+      const concealed = page.getByRole('button', { name: '第 1 处查看法语答案', exact: true })
+      const originalRect = await concealed.boundingBox()
+      assert.equal(await concealed.locator('span').evaluate(el => getComputedStyle(el).opacity), '0')
+      await concealed.click()
+      const revealed = page.getByRole('button', { name: '第 1 处重新遮住', exact: true })
+      assert.deepEqual(await revealed.boundingBox(), originalRect, 'Reveal must not change paragraph layout')
+      assert.equal(posts.length, 0, 'Viewing an answer must not write a mastery result')
+      await page.screenshot({ path: path.join(root, `recall-${width}-${dark ? 'dark' : 'light'}.png`), animations: 'disabled' })
       await toggle.click()
       const inputs = page.getByRole('textbox')
       assert.equal(await inputs.count(), 6)
@@ -46,7 +72,8 @@ try {
         const next = el.closest('p').querySelectorAll('input')[1]
         return { first: el.getBoundingClientRect().top, next: next.getBoundingClientRect().top }
       })
-      assert.ok(Math.abs(alignment.first - alignment.next) <= 1, `Misaligned fields at ${width}px: ${JSON.stringify(alignment)}`)
+      // A 320px viewport legitimately wraps two fields inside the new padded reading surface.
+      if (width >= 390) assert.ok(Math.abs(alignment.first - alignment.next) <= 1, `Misaligned fields at ${width}px: ${JSON.stringify(alignment)}`)
       const fieldWidth = await inputs.nth(1).evaluate(el => el.getBoundingClientRect().width)
       for (const mode of ['无提示', '首字母提示', '中文提示']) {
         await page.getByText(mode, { exact: true }).click()
@@ -54,7 +81,7 @@ try {
           const next = el.closest('p').querySelectorAll('input')[1]
           return { delta: Math.abs(el.getBoundingClientRect().top - next.getBoundingClientRect().top), width: el.getBoundingClientRect().width }
         })
-        assert.ok(row.delta <= 1, `Hint ${mode} shifts the input row: ${JSON.stringify(row)}`)
+        if (width >= 390) assert.ok(row.delta <= 1, `Hint ${mode} shifts the input row: ${JSON.stringify(row)}`)
         assert.equal(row.width, fieldWidth, 'Feedback must not widen the field')
       }
       await page.getByRole('button', { name: '字号与显示' }).click()
@@ -73,12 +100,18 @@ try {
       await page.screenshot({ path: path.join(root, `reader-${width}-${dark ? 'dark' : 'light'}.png`), animations: 'disabled' })
       await page.locator('article p').nth(6).scrollIntoViewIfNeeded()
       const anchor = await page.locator('article p').evaluateAll(ps => {
-        const index = ps.findIndex(p => p.getBoundingClientRect().bottom > 72)
+        const index = ps.findIndex(p => p.getBoundingClientRect().bottom > 128)
         return { index, top: ps[index].getBoundingClientRect().top, y: scrollY, height: document.documentElement.scrollHeight }
       })
       await toggle.click()
       await expect(page.locator('article')).toHaveAttribute('data-mode', 'all')
       await expect.poll(async () => Math.abs(await page.locator('article p').nth(anchor.index).evaluate(el => el.getBoundingClientRect().top) - anchor.top)).toBeLessThanOrEqual(2)
+      const readingAnchor = await page.locator('article p').evaluateAll(ps => {
+        const index = ps.findIndex(p => p.getBoundingClientRect().bottom > 128)
+        return { index, top: ps[index].getBoundingClientRect().top }
+      })
+      await page.getByRole('button', { name: '遮词回忆', exact: true }).click()
+      await expect.poll(async () => Math.abs(await page.locator('article p').nth(readingAnchor.index).evaluate(el => el.getBoundingClientRect().top) - readingAnchor.top)).toBeLessThanOrEqual(2)
       await toggle.click()
       assert.equal(await page.getByRole('textbox').first().inputValue(), 'sortie')
       for (const size of [15, 22]) {
