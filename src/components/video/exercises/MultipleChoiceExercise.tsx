@@ -11,7 +11,7 @@ import { useState, useCallback } from 'react'
 import { cn } from '@/lib/utils'
 import type { VideoExercise } from '@/types/video'
 import type { ExerciseProgressItem } from '@/hooks/useExerciseProgress'
-import { Check, X, ChevronRight, ListChecks, RotateCcw } from 'lucide-react'
+import { Check, X, ListChecks, RotateCcw } from 'lucide-react'
 
 export interface MultipleChoiceExerciseProps {
   exercises: VideoExercise[]
@@ -72,13 +72,51 @@ export function MultipleChoiceExercise({
   progressMap,
   onRecordAnswer,
 }: MultipleChoiceExerciseProps) {
-  const [currentIndex, setCurrentIndex] = useState(0)
+  if (exercises.length === 0) return null
+
+  return (
+    <div className="mb-6">
+      {/* 标题 */}
+      <div className="flex items-center gap-2 mb-3">
+        <div className="p-1.5 bg-amber-400 border-[2px] border-black">
+          <ListChecks className="w-4 h-4 text-black" />
+        </div>
+        <h3 className="text-base font-black text-black dark:text-white">选择题</h3>
+        <span className="text-xs font-bold text-gray-500 dark:text-gray-400">({exercises.length} 题)</span>
+      </div>
+      <p className="mb-3 text-sm text-gray-500 dark:text-gray-400">全部题目已展开，每题可独立提交并查看解析。</p>
+      <div className="space-y-4">
+        {exercises.map((exercise, index) => (
+          <MultipleChoiceQuestion
+            key={exercise.id}
+            exercise={exercise}
+            questionNumber={index + 1}
+            existingProgress={progressMap?.get(exercise.id)}
+            onRecordAnswer={onRecordAnswer}
+          />
+        ))}
+      </div>
+    </div>
+  )
+}
+
+interface MultipleChoiceQuestionProps {
+  exercise: VideoExercise
+  questionNumber: number
+  existingProgress: ExerciseProgressItem | undefined
+  onRecordAnswer: MultipleChoiceExerciseProps['onRecordAnswer']
+}
+
+function MultipleChoiceQuestion({
+  exercise,
+  questionNumber,
+  existingProgress,
+  onRecordAnswer,
+}: MultipleChoiceQuestionProps) {
+  // Keyed cards keep each question's selection and feedback independent, including after reordering.
   const [selectedLabel, setSelectedLabel] = useState<string | null>(null)
   const [submitted, setSubmitted] = useState(false)
 
-  if (exercises.length === 0) return null
-
-  const exercise = exercises[currentIndex]
   const meta = exercise.exercise_metadata as { question?: string; answer?: string; explanation?: string; options?: Record<string, string> } | null
   const questionText = meta?.question || exercise.original_text || ''
   const answer = meta?.answer || exercise.answer_text || ''
@@ -94,48 +132,19 @@ export function MultipleChoiceExercise({
     onRecordAnswer(exercise.id, selectedLabel === parsed.correctLabel)
   }, [selectedLabel, submitted, exercise.id, parsed.correctLabel, onRecordAnswer])
 
-  const handleNext = useCallback(() => {
-    if (currentIndex < exercises.length - 1) {
-      setCurrentIndex(prev => prev + 1)
-      setSelectedLabel(null)
-      setSubmitted(false)
-    }
-  }, [currentIndex, exercises.length])
-
-  const handlePrev = useCallback(() => {
-    if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 1)
-      setSelectedLabel(null)
-      setSubmitted(false)
-    }
-  }, [currentIndex])
-
   const handleRetry = useCallback(() => {
     setSelectedLabel(null)
     setSubmitted(false)
   }, [])
 
-  const existingProgress = progressMap?.get(exercise.id)
-
   return (
-    <div className="mb-6">
-      {/* 标题 */}
-      <div className="flex items-center gap-2 mb-3">
-        <div className="p-1.5 bg-amber-400 border-[2px] border-black">
-          <ListChecks className="w-4 h-4 text-black" />
-        </div>
-        <h3 className="text-base font-black text-black dark:text-white">选择题</h3>
-        <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
-          ({exercises.length} 题)
-        </span>
-      </div>
-
+    <div>
       {/* 卡片 */}
-      <div className="border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
+      <div role="region" aria-label={`第${questionNumber}题`} className="border-[3px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[3px_3px_0px_0px_#000] dark:shadow-[3px_3px_0px_0px_#666]">
         {/* 进度条 */}
         <div className="bg-amber-200 dark:bg-amber-900/40 px-3 py-2 border-b-[3px] border-black dark:border-gray-600 flex items-center justify-between">
           <span className="text-xs font-black text-black dark:text-white">
-            {currentIndex + 1} / {exercises.length}
+            第{questionNumber}题
           </span>
           {existingProgress && (
             <span className={cn(
@@ -180,8 +189,9 @@ export function MultipleChoiceExercise({
                     key={opt.label}
                     onClick={() => !submitted && setSelectedLabel(opt.label)}
                     disabled={submitted}
+                    aria-pressed={isSelected}
                     className={cn(
-                      'w-full text-left px-3 py-2 transition-all flex items-start gap-2',
+                      'w-full min-h-11 text-left px-3 py-2 transition-all flex items-start gap-2 focus-visible:outline-2 focus-visible:outline-offset-2',
                       !submitted && 'hover:-translate-y-0.5 hover:shadow-[2px_2px_0px_0px_#000]',
                       btnClass
                     )}
@@ -224,13 +234,6 @@ export function MultipleChoiceExercise({
           {/* 操作按钮 */}
           <div className="flex items-center justify-between pt-1">
             <div className="flex items-center gap-2">
-              <button
-                onClick={handlePrev}
-                disabled={currentIndex === 0}
-                className="px-3 py-1.5 text-xs font-bold border-[2px] border-black dark:border-gray-600 bg-white dark:bg-gray-800 shadow-[2px_2px_0px_0px_#000] disabled:opacity-30 hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 transition-all"
-              >
-                上一题
-              </button>
               {submitted && !isCorrect && (
                 <button
                   onClick={handleRetry}
@@ -255,15 +258,7 @@ export function MultipleChoiceExercise({
               >
                 提交
               </button>
-            ) : (
-              <button
-                onClick={handleNext}
-                disabled={currentIndex >= exercises.length - 1}
-                className="flex items-center gap-1 px-4 py-1.5 text-xs font-black bg-[#B4F416] text-black border-[2px] border-black shadow-[2px_2px_0px_0px_#000] hover:shadow-[1px_1px_0px_0px_#000] hover:-translate-y-0.5 disabled:opacity-30 transition-all"
-              >
-                下一题 <ChevronRight className="w-3.5 h-3.5" />
-              </button>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
