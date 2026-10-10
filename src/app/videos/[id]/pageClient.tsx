@@ -57,6 +57,7 @@ import { AccessDenied } from '@/components/video/AccessDenied'
 import { DraggableAudioPIP } from '@/components/video/DraggableAudioPIP'
 import { ContinuousPlayPanel, getStoredContinuousPlay, setStoredContinuousPlay } from '@/components/video/ContinuousPlayPanel'
 import { ImmersiveOverlay } from '@/components/video/immersive/ImmersiveOverlay'
+import { DesktopFloatingPlayer } from '@/components/video/DesktopFloatingPlayer'
 
 import { useVideoProgress } from '@/hooks/useVideoProgress'
 import { useCardProgress } from '@/hooks/useCardProgress'
@@ -907,7 +908,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         <div className="grid grid-cols-12 gap-3">
           {/* 左侧：视频区 - 吸顶 */}
           <div className="col-span-8">
-            <div ref={leftColumnRef} className="sticky top-2 z-30 space-y-3">
+            <div ref={leftColumnRef} className="relative z-30 space-y-3">
               {/* 返回按钮 */}
               <Button
                 variant="ghost"
@@ -920,7 +921,8 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
               {/* 视频播放器 - 只在PC端渲染 */}
               {isLargeScreen && (
-                isAudioContent ? (
+                <DesktopFloatingPlayer desktop={isLargeScreen}>
+                {isAudioContent ? (
                   <AudioPlayer
                     video={video}
                     onTimeUpdate={handleTimeUpdate}
@@ -945,7 +947,8 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
                     onEnded={handleVideoEnded}
                     autoPlay={shouldAutoEnable}
                   />
-                )
+                )}
+                </DesktopFloatingPlayer>
               )}
 
               {/* 视频信息 */}

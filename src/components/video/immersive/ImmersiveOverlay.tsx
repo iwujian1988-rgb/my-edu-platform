@@ -3,6 +3,7 @@
 import { useCallback, useState, useEffect, useRef, useMemo } from 'react'
 import { ArrowLeft, Subtitles, X } from 'lucide-react'
 import { SubtitleMask } from '@/components/video/SubtitleMask'
+import { DesktopFloatingPlayer } from '@/components/video/DesktopFloatingPlayer'
 import { SingleLineSubtitle } from './SingleLineSubtitle'
 import { ImmersiveAccordion } from './ImmersiveAccordion'
 import { VideoPlayer } from '@/components/video/VideoPlayer'
@@ -153,8 +154,11 @@ export function ImmersiveOverlay({
       }
     }
     check()
+    // 隐藏字幕或切换屏幕方向会改变固定播放器高度，持续测量以避免内容被遮住或留下空洞。
+    const observer = new ResizeObserver(check)
+    if (videoWrapRef.current) observer.observe(videoWrapRef.current)
     window.addEventListener('resize', check)
-    return () => window.removeEventListener('resize', check)
+    return () => { observer.disconnect(); window.removeEventListener('resize', check) }
   }, [])
 
   // 移动端用 fixed + 占位，桌面端用 sticky
@@ -231,17 +235,18 @@ export function ImmersiveOverlay({
           )}
         </div>
 
-        {/* Video player — 移动端 fixed 防抖动，桌面端 sticky */}
+        {/* Video player — 保留移动端吸顶；PC 滚出原位置后悬浮，避免大视频一直挡住练习区。 */}
         <div
           ref={videoWrapRef}
           className={
             useFixed
-              ? 'fixed top-0 left-0 right-0 z-40'
-              : isLandscape
+              ? 'fixed top-[44px] left-0 right-0 z-40'
+              : isLargeScreen || isLandscape
                 ? 'relative'
                 : 'sticky top-[44px] z-40'
           }
         >
+          <DesktopFloatingPlayer desktop={isLargeScreen}>
           {isAudioContent ? (
             <AudioPlayer {...playerProps} audioRefOut={mainAudioRef} fallbackImageUrl={creatorAvatarUrl} />
           ) : (
@@ -257,16 +262,19 @@ export function ImmersiveOverlay({
             visible={subtitleVisible}
           />
 
-          {/* 字幕隐藏时的恢复按钮 */}
-          {!subtitleVisible && (
+          {/* 常驻字幕开关，同时保留盲听/精听对字幕的自动控制。 */}
+          <div className="flex justify-end bg-black px-2">
             <button
-              onClick={() => setSubtitleVisible(true)}
-              className="absolute bottom-2 right-2 z-10 flex items-center gap-1 px-2 py-1 text-[10px] font-bold text-white bg-black/70 rounded hover:bg-black/90 transition-colors"
+              type="button"
+              aria-pressed={subtitleVisible}
+              onClick={() => setSubtitleVisible(value => !value)}
+              className="flex min-h-11 cursor-pointer items-center gap-1 px-3 text-xs font-semibold text-white hover:bg-gray-800"
             >
               <Subtitles className="w-3 h-3" />
-              字幕
+              {subtitleVisible ? '隐藏字幕' : '显示字幕'}
             </button>
-          )}
+          </div>
+          </DesktopFloatingPlayer>
 
           {/* 总标题 — 跟随视频吸顶 */}
           <div className="bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 px-4 py-3">

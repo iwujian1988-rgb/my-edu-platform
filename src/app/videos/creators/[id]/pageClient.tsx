@@ -23,7 +23,7 @@ import { ArrowLeft, Play, Podcast, Headphones, Users, Hash, Globe } from 'lucide
 import type { CreatorContentResponse, CreatorSortMode, VideoListItem, CreatorInfo } from '@/types/video'
 import { CREATOR_PLATFORM_LABELS, formatDuration } from '@/types/video'
 
-const PAGE_SIZE = 20
+const PAGE_SIZE = 40
 
 interface Props {
   creatorId: string

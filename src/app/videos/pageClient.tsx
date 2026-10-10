@@ -30,6 +30,7 @@ import { VIDEO_DIFFICULTY_LABELS, CEFR_LEVEL_LABELS, VIDEO_LANGUAGE_LABELS, CONT
 import type { CefrLevel } from '@/types/video'
 import LearningCalendar from '@/components/video/LearningCalendar'
 import { LearningWelcome } from '@/components/video/LearningWelcome'
+import { VideoCategoryFilters } from '@/components/video/VideoCategoryFilters'
 import { VideoPromoPopup } from '@/components/video/VideoPromoPopup'
 import { AudioCoverBackground } from '@/components/video/AudioCoverBackground'
 import VideoCard from '@/components/video/VideoCard'
@@ -74,7 +75,7 @@ const CONTENT_TYPE_OPTIONS = [
 ]
 
 // 分页常量
-const PAGE_SIZE = 12
+const PAGE_SIZE = 24
 const FRENCH_LANGUAGE = 'fr'
 
 class UnauthorizedFetchError extends Error {
@@ -868,7 +869,7 @@ function VideoListContent() {
           )}
 
         {/* 主内容区：左侧视频 + 右侧日历 */}
-        <section aria-label="分类快速筛选" className="mb-6 rounded-xl border border-gray-200 bg-white p-4 dark:bg-gray-900 dark:border-gray-700"><div className="mb-3 flex items-center justify-between"><h2 className="font-bold">分类 · 快速筛选</h2><Link href="/videos/guide" className="text-sm font-semibold text-indigo-600">不知道怎么学？查看指南 →</Link></div><div className="flex flex-wrap gap-2">{[{name:'全部',value:'all'},...(tagsData || []).map(item=>({name:item.name,value:item.name}))].map(item=><button type="button" key={item.value} aria-pressed={tag===item.value} onClick={()=>updateFilter(setTag,item.value)} className={tag===item.value?'rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white':'rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-200'}>{item.name}</button>)}</div></section>
+        <VideoCategoryFilters tags={tagsData || []} selected={tag} onSelect={value => updateFilter(setTag, value)} />
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
           {/* 左侧：视频区域 */}
           <div className="flex-1 min-w-0">
