@@ -2,6 +2,7 @@
 
 import { useCallback, useState, useEffect, useRef, useMemo } from 'react'
 import { ArrowLeft, Subtitles, X } from 'lucide-react'
+import { SubtitleMask } from '@/components/video/SubtitleMask'
 import { SingleLineSubtitle } from './SingleLineSubtitle'
 import { ImmersiveAccordion } from './ImmersiveAccordion'
 import { VideoPlayer } from '@/components/video/VideoPlayer'
@@ -49,6 +50,7 @@ interface ImmersiveOverlayProps {
   onPauseMainVideo: () => void
   onResumeMainVideo: () => void
   onExit: () => void
+  onCompleteLearning: () => Promise<void>
 
   displayMode: 'bilingual' | 'original' | 'chinese'
 
@@ -94,6 +96,7 @@ export function ImmersiveOverlay({
   onPauseMainVideo,
   onResumeMainVideo,
   onExit,
+  onCompleteLearning,
   displayMode,
   selectedCard,
   onSelectedCardClose,
@@ -106,6 +109,15 @@ export function ImmersiveOverlay({
   creatorAvatarUrl,
   shadowReadingSubtitles,
 }: ImmersiveOverlayProps) {
+  const [completing, setCompleting] = useState(false)
+  const [completionError, setCompletionError] = useState('')
+  const finishLearning = async () => {
+    if (completing) return
+    setCompleting(true)
+    setCompletionError('')
+    try { await onCompleteLearning() }
+    catch { setCompletionError('保存学习记录失败，请重试'); setCompleting(false) }
+  }
   // Track which sections are open - default ALL open
   const [closedSections, setClosedSections] = useState<Set<number>>(new Set())
   // 字幕可见性：盲听时隐藏，精听时恢复
@@ -233,7 +245,7 @@ export function ImmersiveOverlay({
           {isAudioContent ? (
             <AudioPlayer {...playerProps} audioRefOut={mainAudioRef} fallbackImageUrl={creatorAvatarUrl} />
           ) : (
-            <VideoPlayer {...playerProps} videoRefOut={mainVideoRef} />
+            <VideoPlayer {...playerProps} videoRefOut={mainVideoRef} overlay={<SubtitleMask />} />
           )}
 
           {/* Single-line subtitle */}
@@ -341,6 +353,7 @@ export function ImmersiveOverlay({
       </div>
         )}
 
+      <div className="px-4 pb-10 pt-4"><button type="button" disabled={completing} onClick={finishLearning} className="w-full rounded-xl bg-indigo-600 px-6 py-4 font-semibold text-white disabled:opacity-60">{completing ? '正在保存学习记录…' : '完成学习，返回首页'}</button>{completionError && <p role="alert" className="mt-3 text-sm text-red-600">{completionError}</p>}</div>
       {/* Card popover */}
       {selectedCard && (
         <CardPopover

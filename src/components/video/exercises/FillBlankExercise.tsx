@@ -424,11 +424,8 @@ export function FillBlankExercise({
 
   // 如果没有练习题
   if (exercises.length === 0) {
-    return (
-      <div className="flex flex-col items-center justify-center h-64">
-        <p className="font-black text-gray-400 dark:text-gray-500">暂无练习题</p>
-      </div>
-    )
+    // This component only knows about fill-blank questions; the parent owns the all-types empty state.
+    return null
   }
 
   // 移除难度选择界面

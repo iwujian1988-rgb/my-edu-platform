@@ -25,7 +25,7 @@ export function VideoLayout({ children }: VideoLayoutProps) {
   const pathname = usePathname()
 
   // 让 videos 继承全局主题和 MAXCLASS skin；不要在布局层强制浅色。
-  const isVideoLearningPage = pathname?.match(/^\/videos\/[^/]+$/)
+  const isVideoLearningPage = pathname !== '/videos/guide' && pathname?.match(/^\/videos\/[^/]+$/)
   const isCreatorPage = pathname?.match(/^\/videos\/creators\//)
   const hideNav = isVideoLearningPage || isCreatorPage
 

@@ -54,7 +54,7 @@ export default function VideoCard({ video }: VideoCardProps) {
       className="neo-card-video group relative flex cursor-pointer flex-col overflow-hidden rounded-[12px] border border-[#e7eaf2] bg-white shadow-[0_9px_24px_rgba(31,42,104,0.06)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_14px_30px_rgba(31,42,104,0.10)] dark:border-[#273149] dark:bg-[#141b2d]"
     >
       {/* 缩略图 - 移动端更大，PC端正常 */}
-      <div className="relative w-full aspect-video flex-shrink-0 overflow-hidden border-b border-[#e7eaf2] bg-gray-100 transition-colors duration-300 dark:border-[#273149] dark:bg-[#202941]">
+      <div className="relative w-full aspect-[4/3] flex-shrink-0 overflow-hidden border-b border-[#e7eaf2] bg-gray-100 transition-colors duration-300 dark:border-[#273149] dark:bg-[#202941]">
         {isAudio && coverImage ? (
           /* 音频：主色调模糊背景 + 居中封面 */
           <>
@@ -185,12 +185,6 @@ export default function VideoCard({ video }: VideoCardProps) {
           {video.title}
         </h3>
 
-        {/* 描述 */}
-        {video.description && (
-          <p className="mb-2 line-clamp-1 text-[11px] text-[#68718a] dark:text-[#a7b0c8] md:mb-3 md:text-xs">
-            {video.description}
-          </p>
-        )}
 
         {/* 语种和标签 - 移动端 */}
         <div className="flex md:hidden items-center gap-2 mb-1">

@@ -40,6 +40,7 @@ export function ProfileClient() {
           </Suspense>
         </div>
 
+        <Link href="/profile/learning-records" className="mb-6 block rounded-xl border border-gray-200 bg-white p-5 font-bold dark:bg-gray-800 dark:border-gray-700">学习记录 <span className="float-right">→</span><p className="mt-2 text-sm font-normal text-gray-500">查看学过的视频和完成状态</p></Link>
         {/* 功能菜单 */}
         <div className="space-y-3">
           {/* 联系客服 */}

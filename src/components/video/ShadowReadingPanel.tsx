@@ -41,6 +41,7 @@ interface ShadowReadingPanelProps {
   /** 视频摘要信息（移动端跟读界面展示用） */
   videoInfo?: VideoInfoSummary
   /** 快捷跳转回调（移动端） */
+  inlinePreview?: boolean
   onNavigateTo?: (target: NavigateTarget) => void
 }
 
@@ -114,6 +115,8 @@ export function ShadowReadingContent({
   isAudio,
   videoInfo,
   onNavigateTo,
+  inlinePreview = false,
+  onPreviewPlay,
 }: {
   videoId: string
   videoUrl: string | null
@@ -121,6 +124,8 @@ export function ShadowReadingContent({
   onClose?: () => void
   isAudio?: boolean
   videoInfo?: VideoInfoSummary
+  inlinePreview?: boolean
+  onPreviewPlay?: () => void
   onNavigateTo?: (target: NavigateTarget) => void
 }) {
   // ── 从 DB / IndexedDB 恢复的状态 ──
@@ -494,6 +499,7 @@ export function ShadowReadingContent({
           <X className="w-5 h-5" />
         </button>
       )}
+      {inlinePreview && !isAudio && videoUrl && <video aria-label="跟读小视频" src={videoUrl} controls playsInline preload="metadata" className="w-full max-w-lg aspect-video mx-auto bg-black" onPlay={onPreviewPlay} />}
       <ShadowReadingIntro
         subtitleCount={subtitles.length}
         speedMultiplier={activeSpeed}

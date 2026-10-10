@@ -24,7 +24,7 @@ import type {
 } from '@/types/video'
 import {
   Play, Pause, RotateCcw, Check, X, MapPin, Volume2,
-  BookMarked, MessageSquare, Volume1, Network, Hand,
+  BookMarked, MessageSquare, Volume1, Network,
 } from 'lucide-react'
 
 interface ImmersiveAccordionProps {
@@ -440,11 +440,11 @@ function PhaseContent({
         <div className="space-y-2">
           <div className="flex items-center gap-2">
             <button
-              onClick={() => { togglePlay(); props.onShowSubtitle() }}
+              onClick={() => { props.onResumeMainVideo(); props.onSeekTo(0); restart(); props.onShowSubtitle() }}
               className="flex items-center gap-1 px-2 py-1 text-[10px] font-black bg-[#B4F416] text-black border border-black shadow-[2px_2px_0px_0px_#000] transition-all"
             >
               {isPlaying ? <Pause className="w-3 h-3" /> : <Play className="w-3 h-3" />}
-              {isPlaying ? '暂停' : '播放'}
+              重新播放
             </button>
           </div>
           <p className="text-[11px] text-gray-600 dark:text-gray-300 leading-relaxed">
@@ -620,74 +620,6 @@ function BlindListenPhase({
   mainVideoRef: React.RefObject<HTMLVideoElement | null>
   mainAudioRef: React.RefObject<HTMLAudioElement | null>
 }) {
-  const [overlayVisible, setOverlayVisible] = useState(false)
-  const [pos, setPos] = useState({ x: 50, y: 200 })
-  const [size, setSize] = useState({ w: 300, h: 60 })
-  const dragging = useRef(false)
-  const resizing = useRef(false)
-  const dragOff = useRef({ x: 0, y: 0 })
-
-  // 获取播放器边界（视口坐标）
-  const getPlayerBounds = useCallback(() => {
-    const el = isAudioContent ? mainAudioRef.current : mainVideoRef.current
-    if (!el) return { left: 0, top: 0, right: window.innerWidth, bottom: window.innerHeight }
-    const rect = el.getBoundingClientRect()
-    // 扩展底部覆盖字幕条区域
-    return {
-      left: rect.left,
-      top: rect.top,
-      right: rect.right,
-      bottom: rect.bottom + 44,
-    }
-  }, [isAudioContent, mainVideoRef, mainAudioRef])
-
-  const clampPos = useCallback((x: number, y: number, w: number, h: number) => {
-    const b = getPlayerBounds()
-    return {
-      x: Math.max(b.left, Math.min(x, b.right - w)),
-      y: Math.max(b.top, Math.min(y, b.bottom - h)),
-    }
-  }, [getPlayerBounds])
-
-  const clampSize = useCallback((w: number, h: number) => {
-    const b = getPlayerBounds()
-    return {
-      w: Math.max(120, Math.min(w, b.right - pos.x)),
-      h: Math.max(36, Math.min(h, b.bottom - pos.y)),
-    }
-  }, [getPlayerBounds, pos])
-
-  const onDragStart = useCallback((e: React.PointerEvent) => {
-    if (resizing.current) return
-    dragging.current = true
-    dragOff.current = { x: e.clientX - pos.x, y: e.clientY - pos.y }
-    ;(e.target as HTMLElement).setPointerCapture(e.pointerId)
-  }, [pos])
-
-  const onDragMove = useCallback((e: React.PointerEvent) => {
-    if (dragging.current) {
-      const raw = { x: e.clientX - dragOff.current.x, y: e.clientY - dragOff.current.y }
-      setPos(clampPos(raw.x, raw.y, size.w, size.h))
-    }
-    if (resizing.current) {
-      setSize(prev => {
-        const next = clampSize(prev.w + e.movementX, prev.h + e.movementY)
-        return { w: Math.max(120, next.w), h: Math.max(36, next.h) }
-      })
-    }
-  }, [clampPos, clampSize, size.w, size.h])
-
-  const onDragEnd = useCallback(() => {
-    dragging.current = false
-    resizing.current = false
-  }, [])
-
-  const onResizeStart = useCallback((e: React.PointerEvent) => {
-    e.stopPropagation()
-    resizing.current = true
-    ;(e.target as HTMLElement).setPointerCapture(e.pointerId)
-  }, [])
-
   return (
     <div className="space-y-2">
       <p className="text-[11px] text-gray-600 dark:text-gray-300 leading-relaxed">第一遍不看字幕纯听，就像真实对话一样。你的大脑会主动捕捉关键词、感受语调节奏，这是建立听力直觉最有效的方式。</p>
@@ -700,11 +632,6 @@ function BlindListenPhase({
         <button onClick={onRestart} className="flex items-center gap-1 px-2 py-1 text-[10px] font-black bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border border-gray-300 dark:border-gray-600 shadow-[2px_2px_0px_0px_#000] transition-all">
           <RotateCcw className="w-3 h-3" /> 重播
         </button>
-        {!isAudioContent && (
-          <button onClick={() => setOverlayVisible(v => !v)} className={`flex items-center gap-1 px-2 py-1 text-[10px] font-black border shadow-[2px_2px_0px_0px_#000] transition-all ${overlayVisible ? 'bg-gray-800 text-white border-gray-700' : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-100 border-gray-300 dark:border-gray-600'}`}>
-            {overlayVisible ? '隐藏遮罩' : '遮挡字幕'}
-          </button>
-        )}
         <div className="flex-1" />
         {isCompleted ? (
           <span className="flex items-center gap-1 text-green-600 text-[10px] font-bold"><Check className="w-3 h-3" /> 已完成</span>
@@ -715,42 +642,7 @@ function BlindListenPhase({
         )}
       </div>
 
-      {overlayVisible && (
-        <p className="text-[10px] text-gray-500 dark:text-gray-400">↕ 拖动遮罩移动 · ↘ 拖右下角缩放</p>
-      )}
 
-      {overlayVisible && typeof window !== 'undefined' && createPortal(
-        <div
-          onPointerDown={onDragStart}
-          onPointerMove={onDragMove}
-          onPointerUp={onDragEnd}
-          className="fixed touch-none select-none"
-          style={{ left: pos.x, top: pos.y, width: size.w, height: size.h, zIndex: 9999 }}
-        >
-          <div className="w-full h-full bg-black rounded-lg border-2 border-gray-400 cursor-grab active:cursor-grabbing flex items-center justify-center gap-2 overflow-hidden">
-            {/* 移动图标 + 脉冲动画 */}
-            <div className="relative select-none pointer-events-none">
-              <Hand className="w-4 h-4 text-gray-300" />
-              <div className="absolute inset-0 animate-ping">
-                <Hand className="w-4 h-4 text-gray-300/40" />
-              </div>
-            </div>
-            <span className="text-[10px] text-gray-400 font-bold select-none pointer-events-none">拖动挡住视频原字幕</span>
-          </div>
-          {/* 右下角 resize 手柄 — 三条斜线 */}
-          <div
-            onPointerDown={onResizeStart}
-            className="absolute bottom-0 right-0 w-8 h-8 cursor-se-resize flex items-center justify-center"
-          >
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" className="text-gray-400">
-              <line x1="14" y1="2" x2="2" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="14" y1="7" x2="7" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-              <line x1="14" y1="12" x2="12" y2="14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
-            </svg>
-          </div>
-        </div>,
-        document.body
-      )}
     </div>
   )
 }

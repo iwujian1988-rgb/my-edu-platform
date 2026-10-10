@@ -29,6 +29,7 @@ import type { VideoListItem, VideoListResponse } from '@/types/video'
 import { VIDEO_DIFFICULTY_LABELS, CEFR_LEVEL_LABELS, VIDEO_LANGUAGE_LABELS, CONTENT_TYPE_LABELS, formatDuration } from '@/types/video'
 import type { CefrLevel } from '@/types/video'
 import LearningCalendar from '@/components/video/LearningCalendar'
+import { LearningWelcome } from '@/components/video/LearningWelcome'
 import { VideoPromoPopup } from '@/components/video/VideoPromoPopup'
 import { AudioCoverBackground } from '@/components/video/AudioCoverBackground'
 import VideoCard from '@/components/video/VideoCard'
@@ -173,11 +174,6 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
               {video.title}
             </h3>
 
-            {video.description && (
-              <p className="text-sm leading-7 text-[#5c6479] dark:text-[#a7b0c8] mb-4 line-clamp-2">
-                {video.description}
-              </p>
-            )}
 
             {/* 标签行 */}
             <div className="flex items-center gap-2 mb-5 flex-wrap">
@@ -276,11 +272,6 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
               {video.title}
             </h3>
 
-            {video.description && (
-              <p className="text-xs leading-5 text-[#5c6479] dark:text-[#a7b0c8] mb-3 line-clamp-2">
-                {video.description}
-              </p>
-            )}
 
             {/* 标签行 */}
             <div className="flex items-center gap-2 mb-3 flex-wrap">
@@ -310,55 +301,6 @@ function FeaturedCard({ video }: { video: VideoListItem }) {
     </section>
   )
 }
-
-function MaxClassEntryCard() {
-  return (
-    <section className="maxtube-course-hero mb-6 md:mb-7">
-      <Link
-        href="/parcours"
-        className="group relative block min-h-[360px] overflow-hidden rounded-[22px] border border-[#e3e7f1] bg-white px-6 py-7 pb-[118px] shadow-[0_12px_34px_rgba(31,42,104,0.08)] transition-all duration-200 hover:-translate-y-0.5 hover:shadow-[0_16px_40px_rgba(31,42,104,0.12)] sm:min-h-[320px] md:min-h-0 md:pb-7 dark:border-[#29324a] dark:bg-[#12182a]"
-      >
-        <div className="pointer-events-none absolute right-0 top-0 h-full w-1/2 bg-[radial-gradient(circle_at_70%_35%,rgba(101,80,255,0.16),transparent_36%),linear-gradient(100deg,transparent,#f4f5ff)] dark:bg-[radial-gradient(circle_at_70%_35%,rgba(101,80,255,0.22),transparent_38%)]" />
-        <img
-          src="/maxtube/hero-illustration.png"
-          alt="Arc de Triomphe and French flag"
-          className="pointer-events-none absolute bottom-2 right-3 w-[250px] opacity-65 sm:bottom-3 sm:right-8 sm:w-[290px] md:bottom-auto md:right-[170px] md:top-1/2 md:w-[270px] md:-translate-y-1/2 md:opacity-100 lg:right-[190px] lg:w-[310px] dark:hidden"
-        />
-        <div className="relative z-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-          <div className="flex items-start gap-5">
-            <div className="hidden h-[62px] w-[62px] shrink-0 place-items-center rounded-[13px] border border-[#edf0f7] bg-white text-[#4452ee] shadow-[0_8px_20px_rgba(68,82,238,0.08)] md:grid dark:border-[#2b3550] dark:bg-[#18213a] dark:text-[#9aa5ff]">
-              <GraduationCap className="h-6 w-6" aria-hidden />
-            </div>
-            <div className="min-w-0 md:max-w-[620px] lg:max-w-[680px]">
-              <p className="mb-2 text-xs font-extrabold tracking-wide text-[#2f43d8] dark:text-[#9aa5ff]">
-                MaxClass
-              </p>
-              <h2 className="text-[25px] font-extrabold leading-tight tracking-[-0.02em] text-[#121729] md:text-[30px] dark:text-white">
-                A1 Real French parcours
-              </h2>
-              <p className="mt-4 max-w-3xl text-sm leading-7 text-[#4d566f] dark:text-[#c5cce0]">
-                Enter the structured French course from your video membership. Lessons, practice blocks,
-                progress, and authentic video-based activities stay in one learning flow.
-              </p>
-              <div className="mt-6 flex flex-wrap gap-2.5">
-                {['Structured course', 'Real practice', 'Progress tracking', 'Video lessons'].map((item) => (
-                  <span key={item} className="rounded-full bg-[#f1f2ff] px-3.5 py-2 text-xs font-semibold text-[#3f4cdb] dark:bg-[#202a4d] dark:text-[#b8c0ff]">
-                    {item}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-          <div className="relative z-20 inline-flex h-[52px] shrink-0 items-center justify-center gap-2 rounded-[10px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-6 text-sm font-bold text-white shadow-[0_10px_24px_rgba(48,56,196,0.25)] transition-all group-hover:shadow-[0_13px_28px_rgba(48,56,196,0.3)] md:h-[58px] md:text-base">
-            Start class
-            <ArrowRight className="h-4 w-4" aria-hidden />
-          </div>
-        </div>
-      </Link>
-    </section>
-  )
-}
-
 
 // SWR fetcher
 const fetcher = async (url: string): Promise<VideoListResponse> => {
@@ -738,9 +680,6 @@ function VideoListContent() {
 
       {/* 主内容区域 */}
       <div className="max-w-[1480px] mx-auto px-3 sm:px-6 lg:px-8 pt-6 pb-10">
-        {page === 1 && (language === 'all' || language === FRENCH_LANGUAGE) && (
-          <MaxClassEntryCard />
-        )}
 
           {/* 移动端筛选抽屉 - 右侧滑出 */}
           {filterDrawerOpen && (
@@ -929,6 +868,7 @@ function VideoListContent() {
           )}
 
         {/* 主内容区：左侧视频 + 右侧日历 */}
+        <section aria-label="分类快速筛选" className="mb-6 rounded-xl border border-gray-200 bg-white p-4 dark:bg-gray-900 dark:border-gray-700"><div className="mb-3 flex items-center justify-between"><h2 className="font-bold">分类 · 快速筛选</h2><Link href="/videos/guide" className="text-sm font-semibold text-indigo-600">不知道怎么学？查看指南 →</Link></div><div className="flex flex-wrap gap-2">{[{name:'全部',value:'all'},...(tagsData || []).map(item=>({name:item.name,value:item.name}))].map(item=><button type="button" key={item.value} aria-pressed={tag===item.value} onClick={()=>updateFilter(setTag,item.value)} className={tag===item.value?'rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white':'rounded-full bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700 dark:bg-gray-800 dark:text-gray-200'}>{item.name}</button>)}</div></section>
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-[minmax(0,1fr)_300px]">
           {/* 左侧：视频区域 */}
           <div className="flex-1 min-w-0">
@@ -1179,7 +1119,7 @@ function VideoListContent() {
                   </p>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="grid grid-cols-1 gap-[18px] sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
                   {gridItems.map((video) => (
                     <VideoCard key={video.id} video={video} />
                   ))}
@@ -1288,7 +1228,7 @@ function VideoListContent() {
                   <div className="p-3">
                     {/* 标签 */}
                     <div className="mb-2 inline-block rounded-full bg-[#fff0f0] px-2.5 py-1 text-xs font-extrabold text-[#d43737]">
-                      0元白嫖！
+                      0元免费领
                     </div>
 
                     {/* 标题 */}
@@ -1323,6 +1263,7 @@ function VideoListContent() {
       </div>
 
       {/* 运营弹窗 */}
+      <LearningWelcome />
       <VideoPromoPopup />
 
       {/* 继续学习 — 底部播放器栏 */}

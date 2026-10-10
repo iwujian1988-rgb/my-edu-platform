@@ -39,6 +39,7 @@ interface VideoPlayerProps {
   pause?: boolean // 外部控制：暂停视频
   autoPlay?: boolean
   className?: string
+  overlay?: React.ReactNode
   /** 外部传入的 videoRef，用于 PIP 模式共享同一个 <video> 元素 */
   videoRefOut?: React.MutableRefObject<HTMLVideoElement | null>
 }
@@ -54,6 +55,7 @@ export function VideoPlayer({
   pause,
   autoPlay = false,
   className,
+  overlay,
   videoRefOut,
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
@@ -371,6 +373,7 @@ export function VideoPlayer({
   return (
     <div
       ref={containerRef}
+      data-subtitle-mask-host
       className={cn(
         'relative z-0 bg-black overflow-hidden group',
         isFullscreen ? 'fixed inset-0 z-50' : '',
@@ -379,6 +382,7 @@ export function VideoPlayer({
       onMouseMove={showControlsTemporarily}
       onMouseLeave={() => isPlaying && setShowControls(false)}
     >
+      {overlay}
       {/* 视频元素 - 只有开始后才设置 src */}
       <video
         ref={(el) => {

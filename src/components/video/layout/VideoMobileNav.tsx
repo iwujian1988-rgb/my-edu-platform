@@ -20,7 +20,7 @@ const COMPACT_NAV_ATTR = 'data-compact-nav'
 
 const MOBILE_NAV_ITEMS = [
   { href: '/videos', label: '首页', icon: Home },
-  { href: '/parcours', label: '系统课程', icon: GraduationCap },
+  { href: '/videos/guide', label: '学习指南', icon: GraduationCap },
   { href: '/video-stats', label: '知识点', icon: BarChart3 },
   { href: '/profile', label: '我的', icon: User },
 ]

@@ -12,6 +12,7 @@
 
 import { useState, useCallback, useEffect, useRef, useMemo } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
+import { completeLearningAndReturn } from '@/lib/video-learning-completion'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import {
@@ -112,7 +113,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
   const [isLearningModalOpen, setIsLearningModalOpen] = useState(false) // PC端学习弹层
   const [isPracticeSheetOpen, setIsPracticeSheetOpen] = useState(false) // 移动端练习抽屉
   const [isShadowReadingOpen, setIsShadowReadingOpen] = useState(false) // 跟读浮层
-  const [isImmersiveMode, setIsImmersiveMode] = useState(false) // 沉浸模式
+  const [isImmersiveMode, setIsImmersiveMode] = useState(true) // 进入详情直接开始沉浸式学习
 
   // PIP 模式状态（移动端学习模块）
   const [pipMode, setPipMode] = useState(false)
@@ -162,11 +163,12 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
     videoId,
     initialProgress: data?.user_progress,
     onSave: async (progress) => {
-      await fetch(`/api/user/video-progress/${videoId}`, {
+      const response = await fetch(`/api/user/video-progress/${videoId}`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(progress),
       })
+      if (!response.ok) throw new Error("保存学习记录失败，请重试")
     },
   })
 
@@ -580,14 +582,22 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
         mainVideoRef={mainVideoRef}
         mainAudioRef={mainAudioRef}
         onTimeUpdate={handleTimeUpdate}
-        onSeekTo={(time) => setSeekToTime(time)}
+        onSeekTo={(time) => { setSegmentEndTime(undefined); setSeekToTime(time) }}
         onSeekTrigger={() => setSeekTrigger(prev => prev + 1)}
         onSubtitleClick={(startTime) => handleSubtitleClick({ start_time: startTime })}
         onPlaySegment={handlePlaySegment}
         onHighlightClick={handleHighlightClick}
         onPauseMainVideo={() => setPauseMainVideo(true)}
         onResumeMainVideo={() => setPauseMainVideo(false)}
-        onExit={() => setIsImmersiveMode(false)}
+        onExit={() => router.push("/videos")}
+        onCompleteLearning={async () => {
+          setPauseMainVideo(true)
+          await completeLearningAndReturn({
+            saveProgress: () => saveProgress(true),
+            markCompleted,
+            returnHome: () => { router.push('/videos'); router.refresh() },
+          })
+        }}
         displayMode={displayMode}
         selectedCard={selectedCard}
         onSelectedCardClose={() => setSelectedCard(null)}
@@ -802,6 +812,9 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           )}
           {currentTab === 'write' && (
             <div className="space-y-6">
+              {exercises.length === 0 && (
+                <p className="py-12 text-center font-black text-gray-400 dark:text-gray-500">暂无练习题</p>
+              )}
               <FillBlankExercise
                 exercises={fillBlankExercises}
                 progressMap={exerciseProgressMap}
@@ -1117,6 +1130,9 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
                   {currentTab === 'write' && (
                     <div className="p-4 space-y-6">
+                      {exercises.length === 0 && (
+                        <p className="py-12 text-center font-black text-gray-400 dark:text-gray-500">暂无练习题</p>
+                      )}
                       <FillBlankExercise
                         exercises={fillBlankExercises}
                         progressMap={exerciseProgressMap}

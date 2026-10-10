@@ -6,8 +6,8 @@
 import { expect, afterEach, vi } from 'vitest'
 import { cleanup } from '@testing-library/react'
 import * as matchers from '@testing-library/jest-dom/matchers'
-import fs from 'fs'
-import path from 'path'
+import { existsSync, readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 
 // 扩展 Vitest 的 expect 以支持 Jest DOM 匹配器
 expect.extend(matchers)
@@ -18,9 +18,9 @@ afterEach(() => {
 })
 
 // 加载 .env.local 环境变量
-const envLocalPath = path.resolve(process.cwd(), '.env.local')
-if (fs.existsSync(envLocalPath)) {
-  const envContent = fs.readFileSync(envLocalPath, 'utf-8')
+const envLocalPath = resolve(process.cwd(), '.env.local')
+if (existsSync(envLocalPath)) {
+  const envContent = readFileSync(envLocalPath, 'utf-8')
   envContent.split('\n').forEach(line => {
     const trimmedLine = line.trim()
     if (trimmedLine && !trimmedLine.startsWith('#')) {

@@ -69,6 +69,8 @@ export function InlineShadowReading({
   return (
     <div className="border border-black dark:border-gray-600 rounded-lg overflow-hidden">
       <ShadowReadingContent
+        inlinePreview
+        onPreviewPlay={onPauseMainVideo}
         videoId={videoId}
         videoUrl={videoUrl}
         subtitles={subtitles}

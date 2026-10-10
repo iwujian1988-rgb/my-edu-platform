@@ -13,6 +13,12 @@ export function VideoPromoPopup() {
   const [dontShowAgain, setDontShowAgain] = useState(false)
 
   useEffect(() => {
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      return
+    }
+
+    // 首次访问优先显示学习指南，避免两层弹窗叠加。
+    if (localStorage.getItem('videos_learning_guide_seen_v1') !== '1') return
     const today = new Date().toISOString().split('T')[0]
 
     const permanentDismissed = localStorage.getItem(STORAGE_KEY_PERMANENT)
@@ -127,7 +133,7 @@ export function VideoPromoPopup() {
                 boxShadow: '2px 2px 0px 0px #000000',
               }}
             >
-              0元白嫖！
+              0元免费领
             </span>
           </div>
 

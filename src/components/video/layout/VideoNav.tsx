@@ -18,7 +18,7 @@ import { Button } from '@/components/ui/button'
 
 const NAV_ITEMS = [
   { href: '/videos', label: '首页', icon: Home },
-  { href: '/parcours', label: '系统课程', icon: GraduationCap },
+  { href: '/videos/guide', label: '学习指南', icon: GraduationCap },
   { href: '/video-stats', label: '知识点', icon: BarChart3 },
 ]
 
@@ -43,7 +43,7 @@ export function VideoNav() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-[#e7eaf2] bg-white/92 backdrop-blur-xl transition-colors duration-300 dark:border-[#273149] dark:bg-[#0f1424]/92">
       <div className="mx-auto max-w-[1480px] px-3 sm:px-6 lg:px-8">
-        <div className="flex h-[68px] items-center justify-between">
+        <div className="flex h-[58px] items-center justify-between md:h-[68px]">
           {/* 左侧：Logo + 导航项 */}
           <div className="flex items-center gap-2">
             {/* Logo */}
@@ -51,7 +51,7 @@ export function VideoNav() {
               href="/videos"
               className="flex items-center gap-2.5 text-[20px] font-extrabold tracking-normal text-[#101426] transition-colors hover:text-[#2d39bb] dark:text-white dark:hover:text-[#bcc5ff]"
             >
-              <span className="grid h-[34px] w-[34px] place-items-center rounded-[9px] bg-gradient-to-br from-[#4454ee] to-[#6752ff] text-white shadow-[0_8px_18px_rgba(68,82,238,0.2)]">
+              <span className="grid h-8 w-8 place-items-center rounded-[9px] bg-gradient-to-br from-[#4454ee] to-[#6752ff] text-white shadow-[0_6px_14px_rgba(68,82,238,0.16)] md:h-[34px] md:w-[34px] md:shadow-[0_8px_18px_rgba(68,82,238,0.2)]">
                 <Video className="h-4 w-4" />
               </span>
               <span className="hidden sm:inline">视频首页</span>
@@ -86,7 +86,7 @@ export function VideoNav() {
             {/* 卡片复习按钮 */}
             <Link
               href="/video-flashcards"
-              className="flex h-[38px] items-center gap-1.5 rounded-[9px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-3 text-white shadow-[0_8px_18px_rgba(48,56,196,0.22)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(48,56,196,0.26)]"
+              className="flex h-9 items-center gap-1.5 rounded-[9px] bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-3 text-white shadow-[0_6px_14px_rgba(48,56,196,0.18)] transition-all hover:-translate-y-0.5 hover:shadow-[0_10px_22px_rgba(48,56,196,0.26)] md:h-[38px]"
             >
               <BookOpen className="h-3.5 w-3.5" />
               <span className="text-xs font-bold">复习</span>
@@ -106,6 +106,7 @@ export function VideoNav() {
               {/* 下拉菜单内容 */}
               {userMenuOpen && (
                 <div className="absolute right-0 top-full z-50 mt-2 w-44 overflow-hidden rounded-[12px] border border-[#e7eaf2] bg-white shadow-[0_14px_34px_rgba(31,42,104,0.12)] dark:border-[#273149] dark:bg-[#141b2d]">
+                  <Link href="/profile/learning-records" onClick={() => setUserMenuOpen(false)} className="flex px-3 py-3 text-sm font-semibold">学习记录</Link>
                   {/* 联系客服 */}
                   <button
                     onClick={() => {
@@ -136,7 +137,7 @@ export function VideoNav() {
             <Button
               variant="ghost"
               size="icon"
-              className="h-9 w-9 rounded-[9px] border border-[#e7eaf2] bg-white p-0 shadow-[0_6px_14px_rgba(31,42,104,0.05)] hover:bg-[#f8faff] dark:border-[#273149] dark:bg-[#141b2d] dark:hover:bg-[#202941] md:hidden"
+              className="h-9 w-9 rounded-[9px] border border-[#e7eaf2] bg-white p-0 shadow-[0_4px_10px_rgba(31,42,104,0.04)] hover:bg-[#f8faff] dark:border-[#273149] dark:bg-[#141b2d] dark:hover:bg-[#202941] md:hidden"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? (
