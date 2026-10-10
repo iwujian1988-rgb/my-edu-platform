@@ -1,0 +1,4 @@
+/* 视频区全局皮肤给所有 header/nav 强制填色，指南内部的文字区应透出纸色背景。 */
+.page .paperSurface.paperSurface.paperSurface {
+  background-color: transparent !important;
+}
