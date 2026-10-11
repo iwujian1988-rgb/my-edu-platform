@@ -44,6 +44,21 @@ type WithTableRelationships<T extends { public: { Tables: Record<string, unknown
 type DatabaseSchema = {
   public: {
     Tables: {
+      medical_package_features: {
+        Row: { package_id: string; feature: string }
+        Insert: { package_id: string; feature: string }
+        Update: { package_id?: string; feature?: string }
+      }
+      medical_video_learning: {
+        Row: { video_id: string; version: number; material: unknown; updated_at: string }
+        Insert: { video_id: string; version?: number; material: unknown; updated_at?: string }
+        Update: { version?: number; material?: unknown; updated_at?: string }
+      }
+      medical_training_progress: {
+        Row: { user_id: string; video_id: string; feature: string; version: number; submission: unknown; result: unknown; updated_at: string }
+        Insert: { user_id: string; video_id: string; feature: string; version: number; submission: unknown; result: unknown; updated_at?: string }
+        Update: { submission?: unknown; result?: unknown; updated_at?: string }
+      }
       users: {
         Row: User
         Insert: UserInsert
@@ -189,6 +204,10 @@ type DatabaseSchema = {
       [_ in never]: never
     }
     Functions: {
+      replace_medical_package_features: {
+        Args: { p_package_id: string; p_features: string[] }
+        Returns: undefined
+      }
       claim_resource_sku: {
         Args: {
           p_public_slug: string

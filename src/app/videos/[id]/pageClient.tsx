@@ -57,6 +57,7 @@ import { AccessDenied } from '@/components/video/AccessDenied'
 import { DraggableAudioPIP } from '@/components/video/DraggableAudioPIP'
 import { ContinuousPlayPanel, getStoredContinuousPlay, setStoredContinuousPlay } from '@/components/video/ContinuousPlayPanel'
 import { ImmersiveOverlay } from '@/components/video/immersive/ImmersiveOverlay'
+import { MedicalTrainingPanel } from '@/components/video/MedicalTrainingPanel'
 import { DesktopFloatingPlayer } from '@/components/video/DesktopFloatingPlayer'
 
 import { useVideoProgress } from '@/hooks/useVideoProgress'
@@ -813,6 +814,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
           )}
           {currentTab === 'write' && (
             <div className="space-y-6">
+              <MedicalTrainingPanel videoId={videoId} language={data.video.language} onPlaySegment={handlePlaySegment} />
               {exercises.length === 0 && (
                 <p className="py-12 text-center font-black text-gray-400 dark:text-gray-500">暂无练习题</p>
               )}
@@ -1133,6 +1135,7 @@ export default function VideoLearningClient({ videoId, initialData }: Props) {
 
                   {currentTab === 'write' && (
                     <div className="p-4 space-y-6">
+                      <MedicalTrainingPanel videoId={videoId} language={data.video.language} onPlaySegment={handlePlaySegment} />
                       {exercises.length === 0 && (
                         <p className="py-12 text-center font-black text-gray-400 dark:text-gray-500">暂无练习题</p>
                       )}

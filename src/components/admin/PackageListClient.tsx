@@ -16,6 +16,7 @@ import {
   DialogFooter,
 } from '@/components/ui/dialog'
 import { Plus, Pencil, Trash2, ToggleLeft, ToggleRight } from 'lucide-react'
+import { MedicalPackageFeatures } from '@/components/admin/MedicalPackageFeatures'
 
 // 功能权限选项
 const FEATURE_PERMISSIONS = [
@@ -740,6 +741,8 @@ function PackageFormDialog({
               ))}
             </div>
           </div>
+
+          {pkg && formData.feature_permissions.includes('video') && <MedicalPackageFeatures key={pkg.id} packageId={pkg.id} />}
 
           {/* 单词书权限 */}
           <div>

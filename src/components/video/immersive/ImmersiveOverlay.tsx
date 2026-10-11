@@ -6,6 +6,7 @@ import { SubtitleMask } from '@/components/video/SubtitleMask'
 import { DesktopFloatingPlayer } from '@/components/video/DesktopFloatingPlayer'
 import { SingleLineSubtitle } from './SingleLineSubtitle'
 import { ImmersiveAccordion } from './ImmersiveAccordion'
+import { MedicalTrainingPanel } from '@/components/video/MedicalTrainingPanel'
 import { VideoPlayer } from '@/components/video/VideoPlayer'
 import { AudioPlayer } from '@/components/video/AudioPlayer'
 import { CardPopover } from '@/components/video/CardPopover'
@@ -320,6 +321,7 @@ export function ImmersiveOverlay({
           </div>
         ) : (
         <div className="px-3 pb-6">
+          <MedicalTrainingPanel videoId={videoId} language={video_.language} onPlaySegment={onPlaySegment} />
           <ImmersiveAccordion
           videoId={videoId}
           videoUrl={video_.video_url}
