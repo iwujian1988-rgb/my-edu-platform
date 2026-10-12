@@ -9,6 +9,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
+import { canAccessInternalReviewVideo, isInternalReviewPackageName } from '@/lib/video-permissions'
 
 export async function GET(request: NextRequest) {
   try {
@@ -100,8 +101,19 @@ export async function GET(request: NextRequest) {
     const userPackageIds: string[] = u.package_ids || []
     const videoPackageIds: string[] = firstVideoRow.package_ids || []
 
+    const { data: videoPackages, error: packagesError } = videoPackageIds.length
+      ? await supabase.from('invitation_packages').select('id, name').in('id', videoPackageIds)
+      : { data: [], error: null }
+    if (packagesError || !videoPackages) throw new Error('无法校验分组访问权限')
+    const restrictedPackageIds = videoPackages
+      .filter(pkg => isInternalReviewPackageName(pkg.name))
+      .map(pkg => pkg.id)
+    const restrictedForOtherAccounts = !canAccessInternalReviewVideo(videoPackageIds, userPackageIds, restrictedPackageIds)
+
     let hasAccess = false
-    if (userPackageIds.length > 0) {
+    if (restrictedForOtherAccounts) {
+      hasAccess = false
+    } else if (userPackageIds.length > 0) {
       hasAccess = userPackageIds.some((id: string) => videoPackageIds.includes(id))
     } else if (u.feature_permissions?.includes('video')) {
       hasAccess = !u.permission_expires_at || new Date(u.permission_expires_at) > new Date()

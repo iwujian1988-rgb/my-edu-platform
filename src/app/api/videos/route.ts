@@ -13,6 +13,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
 import { getCached, setCache } from '@/lib/cache/api-cache'
 import type { VideoLanguage, VideoDifficulty, VideoListResponse, ContentType } from '@/types/video'
+import { canAccessInternalReviewVideo, isInternalReviewPackageName } from '@/lib/video-permissions'
 
 const DEFAULT_LIMIT = 20
 const MAX_LIMIT = 100
@@ -179,6 +180,14 @@ export async function GET(request: NextRequest) {
 
     // 0d. 可用语言（依赖用户权限，需在 userInfoResult 之后）
     const { packageIds: resolvedPkgIds, hasVideoPermission: resolvedHasPerm } = userInfoResult
+    const { data: reviewPackages, error: reviewPackagesError } = await supabase
+      .from('invitation_packages')
+      .select('id, name')
+      .like('name', '内部审核：%')
+    if (reviewPackagesError || !reviewPackages) throw new Error('无法校验内部审核视频权限')
+    const restrictedPackageIds = new Set(reviewPackages.map(pkg => pkg.id))
+    const canIncludeVideo = (packageIds: string[] | null | undefined) =>
+      canAccessInternalReviewVideo(packageIds, resolvedPkgIds, restrictedPackageIds)
     let availableLanguages: VideoLanguage[]
 
     if (resolvedPkgIds.length > 0) {
@@ -212,12 +221,12 @@ export async function GET(request: NextRequest) {
       } else {
         const { data } = await supabase
           .from('videos')
-          .select('language')
+          .select('language, package_ids')
           .eq('status', 'published')
 
-        availableLanguages = [...new Set(
-          (data || []).filter(v => v.language).map(v => v.language as VideoLanguage)
-        )]
+        availableLanguages = [...new Set((data || [])
+          .filter(v => v.language && canIncludeVideo(v.package_ids))
+          .map(v => v.language as VideoLanguage))]
         setCache('videos:available_languages:all', availableLanguages, LANGUAGES_CACHE_TTL).catch(() => {})
       }
     } else {
@@ -240,7 +249,8 @@ export async function GET(request: NextRequest) {
 
       if (cachedList) {
         // 缓存命中 → 只需实时获取用户进度，合并后返回
-        const cachedItems = cachedList.items as Array<Record<string, unknown>>
+        const cachedItems = (cachedList.items as Array<Record<string, unknown>>)
+          .filter(item => canIncludeVideo(item.package_ids as string[] | null))
         const videoIds = cachedItems.map(item => item.id as string)
         let userProgress: Record<string, { last_position: number; max_progress: number; is_completed: boolean }> = {}
         if (videoIds.length > 0) {
@@ -308,7 +318,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ success: false, error: '查询失败' }, { status: 500 })
     }
 
-    const rows = (rpcRows || []) as RpcVideoRow[]
+    const rows = ((rpcRows || []) as RpcVideoRow[]).filter(row => canIncludeVideo(row.package_ids))
     const totalCount = rows.length > 0 ? rows[0].total_count : 0
     const videoIds = rows.map(r => r.id)
 

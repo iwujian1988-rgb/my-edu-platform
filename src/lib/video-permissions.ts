@@ -34,6 +34,38 @@ export interface UserPackageInfo {
   is_active: boolean
 }
 
+export const INTERNAL_REVIEW_PACKAGE_PREFIX = '内部审核：'
+
+export function isInternalReviewPackageName(name: string | null | undefined): boolean {
+  return name?.startsWith(INTERNAL_REVIEW_PACKAGE_PREFIX) ?? false
+}
+
+export function canAccessInternalReviewVideo(
+  videoPackageIds: string[] | null | undefined,
+  userPackageIds: string[],
+  restrictedPackageIds: Iterable<string>,
+): boolean {
+  const restrictedIds = new Set(restrictedPackageIds)
+  return !(videoPackageIds ?? []).some(id => restrictedIds.has(id) && !userPackageIds.includes(id))
+}
+
+async function hasUnmatchedInternalReviewPackage(
+  supabase: Awaited<ReturnType<typeof createClient>>,
+  videoPackageIds: string[],
+  userPackageIds: string[],
+): Promise<boolean> {
+  const { data, error } = await supabase
+    .from('invitation_packages')
+    .select('id, name')
+    .in('id', videoPackageIds)
+
+  if (error || !data) return true
+
+  return data.some(pkg =>
+    isInternalReviewPackageName(pkg.name) && !userPackageIds.includes(pkg.id)
+  )
+}
+
 // ============================================
 // 核心权限检查函数
 // ============================================
@@ -94,6 +126,10 @@ export async function hasVideoAccess(
   const featurePermissions = userData.feature_permissions as string[] | null
   const permissionExpiresAt = userData.permission_expires_at as string | null
   const userPackageIds = (userData.package_ids as string[] | null) || []
+
+  if (await hasUnmatchedInternalReviewPackage(supabase, videoPackageIds, userPackageIds)) {
+    return false
+  }
 
   // 6. 检查用户的 package_ids 与视频的 package_ids 是否有重叠
   if (userPackageIds.length > 0 && userPackageIds.some(id => videoPackageIds.includes(id))) {
@@ -159,6 +195,10 @@ export async function getVideoAccessResult(
   const featurePermissions = userData.feature_permissions as string[] | null
   const permissionExpiresAt = userData.permission_expires_at as string | null
   const userPackageIds = (userData.package_ids as string[] | null) || []
+
+  if (await hasUnmatchedInternalReviewPackage(supabase, videoPackageIds, userPackageIds)) {
+    return { hasAccess: false }
+  }
 
   // 检查套餐权限（数组重叠）— 有套餐时优先走套餐匹配
   if (userPackageIds.length > 0) {
@@ -244,10 +284,25 @@ export async function getAccessibleVideoIds(userId: string): Promise<string[]> {
   if (hasVideoPermission) {
     const { data, error } = await supabase
       .from('videos')
-      .select('id')
+      .select('id, package_ids')
       .eq('status', 'published')
     if (error || !data) return []
-    return data.map(v => v.id)
+    const packageIds = [...new Set(data.flatMap(video => video.package_ids ?? []))]
+    const { data: packages, error: packageError } = await supabase
+      .from('invitation_packages')
+      .select('id, name')
+      .in('id', packageIds.length ? packageIds : ['00000000-0000-0000-0000-000000000000'])
+    if (packageError || !packages) return []
+    const restrictedPackageIds = new Set(
+      packages.filter(pkg => isInternalReviewPackageName(pkg.name)).map(pkg => pkg.id)
+    )
+    return data
+      .filter(video => canAccessInternalReviewVideo(
+        video.package_ids,
+        (userData.package_ids as string[] | null) ?? [],
+        restrictedPackageIds,
+      ))
+      .map(video => video.id)
   }
 
   // 没有套餐也没有权限

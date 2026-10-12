@@ -2,6 +2,7 @@ import { notFound, redirect } from 'next/navigation'
 import { Suspense } from 'react'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
 import { getCached, setCache } from '@/lib/cache/api-cache'
+import { canAccessInternalReviewVideo, isInternalReviewPackageName } from '@/lib/video-permissions'
 import VideoLearningClient from './pageClient'
 import VideoLoading from './loading'
 import type { PlaylistItem, VideoFullResponseExtended } from '@/types/video'
@@ -269,10 +270,21 @@ async function checkAccess(
   const permissionExpiresAt: string | null = u.permission_expires_at
   const userPackageIds: string[] = u.package_ids || []
 
+  const { data: videoPackages, error: packagesError } = await supabase
+    .from('invitation_packages')
+    .select('id, name')
+    .in('id', videoPackageIds)
+  if (packagesError || !videoPackages) return { hasAccess: false, canContinuousPlay: false }
+  const restrictedPackageIds = videoPackages
+    .filter(pkg => isInternalReviewPackageName(pkg.name))
+    .map(pkg => pkg.id)
+  const hasUnmatchedReviewPackage = !canAccessInternalReviewVideo(videoPackageIds, userPackageIds, restrictedPackageIds)
   const canContinuousPlay = !!(
     featurePermissions?.includes('continuous_play') &&
     (!permissionExpiresAt || new Date(permissionExpiresAt) > new Date())
   )
+
+  if (hasUnmatchedReviewPackage) return { hasAccess: false, canContinuousPlay }
 
   // 有套餐时必须走套餐匹配，不靠 feature_permissions 越权
   if (userPackageIds.length > 0) {

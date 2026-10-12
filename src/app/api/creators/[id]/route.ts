@@ -15,6 +15,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
 import { getCached, setCache } from '@/lib/cache/api-cache'
+import { canAccessInternalReviewVideo, isInternalReviewPackageName } from '@/lib/video-permissions'
 import type { CreatorInfo, CreatorContentResponse, VideoListItem, CreatorSortMode } from '@/types/video'
 
 const DEFAULT_LIMIT = 20
@@ -153,16 +154,27 @@ export async function GET(
       }, USER_INFO_CACHE_TTL).catch(() => {})
     }
 
+    const { data: reviewPackages, error: reviewPackagesError } = await supabase
+      .from('invitation_packages')
+      .select('id, name')
+      .like('name', '内部审核：%')
+    if (reviewPackagesError || !reviewPackages) throw new Error('无法校验播主内容权限')
+    const restrictedPackageIds = reviewPackages
+      .filter(pkg => isInternalReviewPackageName(pkg.name))
+      .map(pkg => pkg.id)
+    const canIncludeVideo = (packageIds: string[] | null | undefined) =>
+      canAccessInternalReviewVideo(packageIds, userPackageIds, restrictedPackageIds)
+
     // 2. 播主信息 + 内容列表并行（权限已就绪）
     const packageFilterKey = userPackageIds.length > 0 ? userPackageIds.join(',') : 'all'
     const [creatorData, contentData] = await Promise.all([
       // 2a. 播主信息（全局缓存 5 分钟）
       (async () => {
-        const cacheKey = `creator:info:${creatorId}`
+        const cacheKey = `creator:info:${creatorId}:${packageFilterKey}`
         const cached = await getCached<CreatorInfo>(cacheKey)
         if (cached) return { data: cached, fromCache: true }
 
-        const [creatorResult, audioCountResult, videoCountResult] = await Promise.all([
+        const [creatorResult, audioCountResult, videoCountResult, restrictedContentResult] = await Promise.all([
           supabase
             .from('upstream_creators')
             .select('id, name, avatar_url, description, platform, platform_user_id, channel_url, follower_count, is_active, display_order')
@@ -180,6 +192,9 @@ export async function GET(
             .eq('creator_id', creatorId)
             .eq('status', 'published')
             .neq('content_type', 'audio'),
+          restrictedPackageIds.length > 0
+            ? supabase.from('videos').select('content_type, package_ids').eq('creator_id', creatorId).eq('status', 'published').overlaps('package_ids', restrictedPackageIds)
+            : Promise.resolve({ data: [], error: null }),
         ])
 
         if (creatorResult.error || !creatorResult.data) {
@@ -187,6 +202,13 @@ export async function GET(
         }
 
         const row = creatorResult.data
+        if (restrictedContentResult.error) throw new Error('无法校验播主内容权限')
+        const hiddenAudioCount = (restrictedContentResult.data ?? []).filter(video =>
+          video.content_type === 'audio' && !canIncludeVideo(video.package_ids)
+        ).length
+        const hiddenVideoCount = (restrictedContentResult.data ?? []).filter(video =>
+          video.content_type !== 'audio' && !canIncludeVideo(video.package_ids)
+        ).length
         const info: CreatorInfo = {
           id: row.id,
           name: row.name,
@@ -198,8 +220,8 @@ export async function GET(
           follower_count: row.follower_count || 0,
           is_active: row.is_active ?? true,
           display_order: row.display_order || 0,
-          audio_count: audioCountResult.count || 0,
-          video_count: videoCountResult.count || 0,
+          audio_count: Math.max(0, (audioCountResult.count || 0) - hiddenAudioCount),
+          video_count: Math.max(0, (videoCountResult.count || 0) - hiddenVideoCount),
         }
 
         setCache(cacheKey, info, CREATOR_CACHE_TTL).catch(() => {})
@@ -210,7 +232,10 @@ export async function GET(
       (async () => {
         const cacheKey = `creator:content:${creatorId}:${sort}:${packageFilterKey}`
         const cached = await getCached<{ rows: RpcContentRow[]; totalCount: number }>(cacheKey)
-        if (cached) return { ...cached, fromCache: true }
+        if (cached) {
+          const rows = cached.rows.filter(row => canIncludeVideo(row.package_ids))
+          return { rows, totalCount: Math.max(0, cached.totalCount - (cached.rows.length - rows.length)), fromCache: true }
+        }
 
         const { data, error } = await supabase.rpc('get_creator_published_content', {
           p_creator_id: creatorId,
@@ -222,7 +247,8 @@ export async function GET(
 
         if (error) return { rows: [], totalCount: 0, fromCache: false }
 
-        const rows = (data || []) as RpcContentRow[]
+        const allRows = (data || []) as RpcContentRow[]
+        const rows = allRows.filter(row => canIncludeVideo(row.package_ids))
         let totalCount: number
         let pagedRows: RpcContentRow[]
 

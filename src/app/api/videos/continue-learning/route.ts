@@ -7,6 +7,7 @@
 
 import { NextRequest, NextResponse } from 'next/server'
 import { getCurrentUser, createAdminClient } from '@/lib/supabase/server'
+import { canAccessInternalReviewVideo, isInternalReviewPackageName } from '@/lib/video-permissions'
 import type { VideoListItem } from '@/types/video'
 
 const MAX_ITEMS = 3
@@ -31,6 +32,7 @@ interface VideoRow {
   content_type: string | null
   cover_url: string | null
   creator_name: string | null
+  package_ids: string[] | null
 }
 
 export async function GET() {
@@ -41,6 +43,20 @@ export async function GET() {
     }
 
     const supabase = await createAdminClient()
+    const { data: user } = await supabase
+      .from('users')
+      .select('package_ids')
+      .eq('id', authUser.id)
+      .single()
+    const userPackageIds = user?.package_ids ?? []
+    const { data: internalPackages, error: internalPackagesError } = await supabase
+      .from('invitation_packages')
+      .select('id, name')
+      .like('name', '内部审核：%')
+    if (internalPackagesError || !internalPackages) throw new Error('无法校验继续学习权限')
+    const restrictedPackageIds = internalPackages
+      .filter(pkg => isInternalReviewPackageName(pkg.name))
+      .map(pkg => pkg.id)
 
     /* 1. 取最近进行中的进度（未完成，按更新时间倒序） */
     const { data: progressRows, error: progressError } = await supabase
@@ -62,7 +78,7 @@ export async function GET() {
     /* 2. 取对应视频详情 */
     const { data: videoRows, error: videoError } = await supabase
       .from('videos')
-      .select('id, title, description, thumbnail_url, video_url, duration, language, difficulty, content_type, cover_url, creator_name')
+      .select('id, title, description, thumbnail_url, video_url, duration, language, difficulty, content_type, cover_url, creator_name, package_ids')
       .in('id', videoIds)
       .eq('status', 'published')
 
@@ -74,7 +90,13 @@ export async function GET() {
     const videoMap = new Map((videoRows as VideoRow[]).map(v => [v.id, v]))
 
     const items: VideoListItem[] = progresses
-      .filter(p => videoMap.has(p.video_id))
+      .filter(p => {
+        const video = videoMap.get(p.video_id)
+        if (!video) return false
+        const packageIds = video.package_ids ?? []
+        return canAccessInternalReviewVideo(packageIds, userPackageIds, restrictedPackageIds)
+          && (packageIds.length === 0 || packageIds.some(id => userPackageIds.includes(id)))
+      })
       .map(p => {
         const v = videoMap.get(p.video_id)!
         const isAudio = v.content_type === 'audio' || /\.(mp3|m4a|wav|ogg|aac|flac|wma)(\?|$)/i.test(v.video_url || '')
