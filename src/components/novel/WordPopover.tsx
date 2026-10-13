@@ -58,7 +58,7 @@ export function WordPopover({
   onToggleNotebook,
   onClose,
 }: WordPopoverProps) {
-  const { speak } = useFrenchTTS()
+  const { speak, status: speechStatus, error: speechError } = useFrenchTTS()
   const [notebook, setNotebook] = useState(inNotebook)
 
   const handleToggleNotebook = () => {
@@ -152,7 +152,7 @@ export function WordPopover({
                   className="flex min-h-11 flex-1 cursor-pointer items-center justify-center gap-2 rounded-xl border border-[#e7eaf2] bg-white px-3 py-2 text-sm font-semibold text-[#2d39bb] transition-colors hover:bg-[#f8faff] focus-visible:ring-2 focus-visible:ring-indigo-500 dark:border-[#35415d] dark:bg-[#192238] dark:text-[#bcc5ff]"
                 >
                   <Volume2 className="h-3.5 w-3.5" />
-                  发音
+                  {speechStatus === 'loading' ? '加载发音…' : speechStatus === 'playing' ? '正在发音' : speechError ? '重试发音' : '发音'}
                 </button>
                 {onToggleNotebook && (
                   <button
@@ -169,6 +169,7 @@ export function WordPopover({
                   </button>
                 )}
               </div>
+              {speechError && <p role="alert" className="mt-2 text-sm text-rose-600 dark:text-rose-400">{speechError}</p>}
             </>
           ) : (
             <p id="novel-word-definition" className="py-4 text-center text-sm text-[#68718a] dark:text-[#a7b0c8]">

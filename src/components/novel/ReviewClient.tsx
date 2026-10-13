@@ -13,6 +13,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
+import { logger } from '@/lib/logger'
 import {
   ChevronLeft,
   RotateCcw,
@@ -69,7 +70,7 @@ const SWIPE_THRESHOLD = 80
 const SWIPE_VELOCITY_THRESHOLD = 0.3
 
 export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: initialChapter, progressChapter }: ReviewClientProps) {
-  const { speak } = useFrenchTTS()
+  const { speak, status: speechStatus, error: speechError } = useFrenchTTS()
 
   const [range, setRange] = useState<ReviewRange>(initialRange)
   const [includeFuture, setIncludeFuture] = useState(false)
@@ -78,6 +79,8 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   const [words, setWords] = useState<NovelWord[] | null>(null)
   const [loadedKey, setLoadedKey] = useState<string | null>(null)
   const [failedKey, setFailedKey] = useState<string | null>(null)
+  const [retryCount, setRetryCount] = useState(0)
+  const [availableWordCount, setAvailableWordCount] = useState(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [isFlipped, setIsFlipped] = useState(false)
   const [reviewedCount, setReviewedCount] = useState(0)
@@ -109,9 +112,12 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
         return r.json()
       })
       .then((json) => {
-        const list: NovelWord[] = json.data?.words || []
+        if (controller.signal.aborted) return
+        const list: NovelWord[] = json.data?.words
+        if (!Array.isArray(list)) throw new Error('Invalid word response')
         const progress: Record<string, NovelReviewSchedule> = json.data?.progress || {}
         const orderedList = includeFuture ? orderNovelReviewQueue(list, progress) : dueNovelReviewQueue(list, progress)
+        setAvailableWordCount(orderNovelReviewQueue(list, progress).length)
         setWords(orderedList)
         setLoadedKey(storageKey)
         setFailedKey(null)
@@ -121,7 +127,13 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
         setCorrectCount(0)
         setResumedAt(null)
         // 断点续刷：本轮没刷完的从上次位置继续
-        const saved = localStorage.getItem(storageKey) || ''
+        let saved = ''
+        // Browser storage failures must not turn a successful download into a load error.
+        try {
+          saved = localStorage.getItem(storageKey) || ''
+        } catch (error) {
+          logger.warn('[NovelReview] Resume storage unavailable', error)
+        }
         const savedIndex = Number.parseInt(saved, 10)
         const savedWordIndex = saved.startsWith('word:')
           ? orderedList.findIndex((word) => `word:${normForm(word.lemma || word.word)}` === saved)
@@ -132,12 +144,15 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
           setResumedAt(resumeIndex)
         }
       })
-      .catch(() => {
-        if (!controller.signal.aborted) setFailedKey(storageKey)
+      .catch((error: unknown) => {
+        if (!controller.signal.aborted) {
+          logger.warn('[NovelReview] Word loading failed', error)
+          setFailedKey(storageKey)
+        }
       })
 
     return () => controller.abort()
-  }, [bookId, range, chapter, storageKey, includeFuture])
+  }, [bookId, range, chapter, storageKey, includeFuture, retryCount])
 
   const activeWords = loadedKey === storageKey ? words : null
   const loadError = failedKey === storageKey
@@ -155,8 +170,12 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
 
   const persistIndex = useCallback(
     (i: number) => {
-      if (i >= total) localStorage.removeItem(storageKey)
-      else localStorage.setItem(storageKey, `word:${normForm(activeWords?.[i]?.lemma || activeWords?.[i]?.word || String(i))}`)
+      try {
+        if (i >= total) localStorage.removeItem(storageKey)
+        else localStorage.setItem(storageKey, `word:${normForm(activeWords?.[i]?.lemma || activeWords?.[i]?.word || String(i))}`)
+      } catch (error) {
+        logger.warn('[NovelReview] Resume storage unavailable', error)
+      }
     },
     [storageKey, total, activeWords]
   )
@@ -307,11 +326,11 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
   }, [range, chapter])
 
   const emptyHint = useMemo(() => {
-    if (!includeFuture) return '本范围暂无到期或未练习的词，可以主动复习全部词汇。'
+    if (!includeFuture && availableWordCount > 0) return `本范围有 ${availableWordCount} 个词，暂无到期或未练习的词，可以主动复习全部词汇。`
     if (range === 'notebook') return '生词本还是空的——读正文时点蓝色词，加进来这里复习。'
     if (range === 'star') return '本书暂无核心词标记。'
     return '这里还没有词。'
-  }, [range, includeFuture])
+  }, [range, includeFuture, availableWordCount])
 
   // 加载中
   if (activeWords === null && !loadError) {
@@ -332,7 +351,11 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
         <div className="p-8 text-center">
           <p className="mb-4 font-semibold text-[#121729] dark:text-[#edf1ff]">词卡暂时没加载出来，请稍后再试。</p>
           <button
-            onClick={() => switchRange(range === 'chapter' ? 'all' : 'chapter')}
+            onClick={() => {
+              setFailedKey(null)
+              setLoadedKey(null)
+              setRetryCount(count => count + 1)
+            }}
             className="cursor-pointer rounded-lg bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-6 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
           >
             重试
@@ -350,9 +373,9 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
           <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[#2633a8]/10 to-[#6550ff]/10">
             <BookOpen className="h-6 w-6 text-[#6550ff]" />
           </div>
-          <h3 className="mb-2 text-lg font-extrabold text-[#121729] dark:text-[#edf1ff]">{rangeLabel} · 暂无内容</h3>
+          <h3 className="mb-2 text-lg font-extrabold text-[#121729] dark:text-[#edf1ff]">{rangeLabel} · {availableWordCount > 0 ? '暂无到期词' : '暂无内容'}</h3>
           <p className="mb-6 text-sm text-[#68718a] dark:text-[#a7b0c8]">{emptyHint}</p>
-          {!includeFuture && <button type="button" className="mb-4 min-h-11 rounded-lg border px-4" onClick={() => setIncludeFuture(true)}>复习全部（含未到期）</button>}
+          {!includeFuture && availableWordCount > 0 && <button type="button" className="mb-4 min-h-11 rounded-lg border px-4" onClick={() => setIncludeFuture(true)}>复习全部（含未到期）</button>}
           <Link
             href={`/read/${bookId}`}
             className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg bg-gradient-to-br from-[#2633a8] via-[#3447dd] to-[#6550ff] px-5 py-2.5 text-sm font-semibold text-white transition-opacity hover:opacity-90"
@@ -573,10 +596,11 @@ export function ReviewClient({ bookId, bookTitle, range: initialRange, chapter: 
                   className="flex cursor-pointer items-center gap-1.5 rounded-lg border border-[#e7eaf2] px-4 py-2 text-xs font-semibold text-[#2d39bb] transition-all duration-200 hover:border-[#6550ff]/40 hover:bg-[#f8faff] dark:border-[#273149] dark:text-[#bcc5ff] dark:hover:bg-[#192238]"
                 >
                   <Volume2 className="h-3.5 w-3.5" />
-                  发音
+                  {speechStatus === 'loading' ? '加载发音…' : speechStatus === 'playing' ? '正在发音' : speechError ? '重试发音' : '发音'}
                 </button>
               </div>
 
+              {speechError && <p role="alert" className="mb-3 text-center text-sm text-rose-600 dark:text-rose-400">{speechError}</p>}
               <p className="text-center text-xs text-[#68718a] dark:text-[#a7b0c8]">
                 <span className="hidden md:inline">点击或按空格翻面 · 键盘 1/2/3 评分</span>
                 <span className="md:hidden">点卡片翻面</span>

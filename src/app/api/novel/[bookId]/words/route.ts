@@ -14,6 +14,7 @@ import { createClient, createAdminClient } from '@/lib/supabase/server'
 import { hasNovelAccess } from '@/lib/novel-permissions'
 import { normForm } from '@/lib/novel-forms'
 import type { NovelWord } from '@/types/novel'
+import { readNovelRows, readNovelRowsByValues } from '@/lib/novel-query'
 
 export async function GET(
   request: NextRequest,
@@ -36,12 +37,14 @@ export async function GET(
 
     // 生词本以 progress lemma 为准，并通过词典 lemma 回查词面；词形别名不要求与 word 字段完全相等。
     if (notebookOnly) {
-      const { data: progressRows, error: pError } = await admin
+      const { data: progressRows, error: pError } = await readNovelRows((from, to) => admin
         .from('novel_word_progress')
         .select('lemma, next_review_at, repetition_count')
         .eq('user_id', user.id)
         .eq('book_id', bookId)
         .eq('in_notebook', true)
+        .order('lemma', { ascending: true })
+        .range(from, to))
 
       if (pError) {
         console.error('[novel words notebook] Progress error:', pError)
@@ -54,18 +57,22 @@ export async function GET(
       }
 
       const [wordResult, lexiconResult] = await Promise.all([
-        admin
+        readNovelRowsByValues(lemmas, (batch, from, to) => admin
           .from('novel_words')
           .select('chapter_number, word, phonetic, definition, part_of_speech, gender, cefr, theme, star, order_index, example_sentence')
           .eq('book_id', bookId)
-          .in('word', lemmas)
-          .order('chapter_number', { ascending: true }),
-        admin
+          .in('word', batch)
+          .order('chapter_number', { ascending: true })
+          .order('id', { ascending: true })
+          .range(from, to)),
+        readNovelRowsByValues(lemmas, (batch, from, to) => admin
           .from('novel_lexicon')
           .select('lemma, display_form, phonetic, pos, gender, definition, cefr, scene, chapter_first')
           .eq('book_id', bookId)
-          .in('lemma', lemmas)
-          .order('chapter_first', { ascending: true }),
+          .in('lemma', batch)
+          .order('chapter_first', { ascending: true })
+          .order('id', { ascending: true })
+          .range(from, to)),
       ])
 
       if (wordResult.error || lexiconResult.error) {
@@ -73,12 +80,12 @@ export async function GET(
         return NextResponse.json({ error: 'Internal server error' }, { status: 500 })
       }
 
-      const wordsByLemma = new Map<string, (typeof wordResult.data)[number]>()
+      const wordsByLemma = new Map<string, NonNullable<typeof wordResult.data>[number]>()
       for (const word of wordResult.data || []) {
         const key = normForm(word.word)
         if (!wordsByLemma.has(key)) wordsByLemma.set(key, word)
       }
-      const lexiconByLemma = new Map<string, (typeof lexiconResult.data)[number]>()
+      const lexiconByLemma = new Map<string, NonNullable<typeof lexiconResult.data>[number]>()
       for (const entry of lexiconResult.data || []) {
         const key = normForm(entry.lemma)
         if (!lexiconByLemma.has(key)) lexiconByLemma.set(key, entry)
@@ -140,9 +147,11 @@ export async function GET(
       query = query.eq('star', true)
     }
 
-    const { data: words, error } = await query
+    query = query
       .order('chapter_number', { ascending: true })
       .order('order_index', { ascending: true })
+      .order('id', { ascending: true })
+    const { data: words, error } = await readNovelRows((from, to) => query.range(from, to))
 
     if (error) {
       console.error('[novel words] Error:', error)
@@ -151,11 +160,13 @@ export async function GET(
 
     const wordForms = (words || []).map((word) => normForm(word.word))
     const { data: lexiconRows, error: lexiconError } = wordForms.length > 0
-      ? await admin
+      ? await readNovelRowsByValues(wordForms, (batch, from, to) => admin
           .from('novel_lexicon')
           .select('form_key, lemma')
           .eq('book_id', bookId)
-          .in('form_key', wordForms)
+          .in('form_key', batch)
+          .order('form_key', { ascending: true })
+          .range(from, to))
       : { data: [], error: null }
 
     if (lexiconError) {
@@ -176,12 +187,14 @@ export async function GET(
     }
 
     const { data: progressRows, error: progressError } = uniqueWords.length > 0
-      ? await admin
+      // User/book already scopes these rows; avoid dozens of mostly empty lemma-filter requests.
+      ? await readNovelRows((from, to) => admin
           .from('novel_word_progress')
           .select('lemma, next_review_at, repetition_count')
           .eq('user_id', user.id)
           .eq('book_id', bookId)
-          .in('lemma', uniqueWords.map((word) => word.lemma || word.word))
+          .order('lemma', { ascending: true })
+          .range(from, to))
       : { data: [], error: null }
 
     if (progressError) {
