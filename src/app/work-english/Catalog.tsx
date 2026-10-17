@@ -1,7 +1,8 @@
 'use client'
 
-import {useState} from 'react'
+import {useRef, useState} from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import {Search, ArrowUpRight, BookOpen, Check, LogOut, Headphones, Bookmark, ChevronLeft, ChevronRight} from 'lucide-react'
 import {WORK_ENGLISH_PATH, WORK_ENGLISH_TITLE} from '@/lib/work-english/constants'
 import {authEntryPath} from '@/lib/auth-return-path'
@@ -89,30 +90,41 @@ function LatestLessonsCarousel({
   summaries: Props['summaries']
 }) {
   const [activeIndex, setActiveIndex] = useState(0)
-  const goTo = (direction: -1 | 1) => setActiveIndex(index => (index + direction + lessons.length) % lessons.length)
+  const trackRef = useRef<HTMLDivElement>(null)
+  const scrollTo = (index: number) => {
+    const track = trackRef.current
+    const slide = track?.children[index] as HTMLElement | undefined
+    if (track && slide) track.scrollTo({left: slide.offsetLeft - track.offsetLeft, behavior: 'smooth'})
+    setActiveIndex(index)
+  }
+  const goTo = (direction: -1 | 1) => scrollTo(Math.max(0, Math.min(lessons.length - 1, activeIndex + direction)))
+  const updateActiveIndex = () => {
+    const track = trackRef.current
+    if (!track) return
+    let nearest = 0
+    let distance = Number.POSITIVE_INFINITY
+    Array.from(track.children).forEach((child, index) => {
+      const nextDistance = Math.abs((child as HTMLElement).offsetLeft - track.offsetLeft - track.scrollLeft)
+      if (nextDistance < distance) { nearest = index; distance = nextDistance }
+    })
+    setActiveIndex(nearest)
+  }
 
   return <section className="we-latest" aria-label="最新更新内容" aria-roledescription="carousel">
-    <div className="we-latest-track-window">
-      <div className="we-latest-track" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
-        {lessons.map((item, index) => <article className="we-latest-slide" key={item.id} aria-label={`第 ${index + 1} 项，共 ${lessons.length} 项`} aria-hidden={index !== activeIndex} inert={index !== activeIndex}>
-          <div className="we-latest-copy">
-            <p className="we-latest-label">最新更新 <span>第 {item.id} 期</span></p>
-            <h2>{item.title}</h2>
-            <p className="we-latest-meta">{item.companyZh} · {item.topic} · {item.minutes} 分钟</p>
-            <p className="we-latest-description">{item.description}</p>
-            <Link href={hasAccess ? `${WORK_ENGLISH_PATH}/lessons/${item.id}#${summaries[item.id]?.lastSection ?? 'reading'}` : '#package-access'} className="we-latest-cta">
-              {summaries[item.id]?.started ? '继续本期' : '开始今天的学习'} <ArrowUpRight size={16}/>
-            </Link>
-          </div>
-          <div className="we-latest-art" aria-hidden="true">
-            <LessonCover id={item.id} company={item.company} sourceType={item.sourceType} title={item.title} routeStep={null} action="开始学习"/>
-          </div>
+    <div className="we-latest-heading"><div><p className="we-eyebrow">每日更新</p><h2>最近更新</h2></div><span>从最新一期开始，也可以左右滑动看前几期</span></div>
+    <div className="we-latest-track-window" ref={trackRef} onScroll={updateActiveIndex}>
+      <div className="we-latest-track">
+        {lessons.map((item, index) => <article className="we-latest-slide" key={item.id} aria-label={`第 ${index + 1} 项，共 ${lessons.length} 项`}>
+          <Link href={hasAccess ? `${WORK_ENGLISH_PATH}/lessons/${item.id}#${summaries[item.id]?.lastSection ?? 'reading'}` : '#package-access'} className="we-latest-card">
+            <div className="we-latest-art">{hasAccess ? <Image src={`${WORK_ENGLISH_PATH}/lessons/${item.id}/media/illustration.png`} alt={`${item.companyZh}第${item.id}期封面`} fill sizes="(max-width: 720px) 82vw, 370px" unoptimized priority={index < 3}/> : <LessonCover id={item.id} company={item.company} sourceType={item.sourceType} title={item.title} routeStep={null} action="开始学习"/>}</div>
+            <div className="we-latest-copy"><div className="we-latest-meta"><span>{item.companyZh}</span><span>第 {item.id} 期</span><span>{item.minutes} 分钟</span></div><h3>{item.title}</h3><div className="we-latest-footer"><span>{item.topic}</span><span>{summaries[item.id]?.started ? '继续学习' : '开始学习'} <ArrowUpRight size={14}/></span></div></div>
+          </Link>
         </article>)}
       </div>
     </div>
     <div className="we-latest-controls" aria-label="选择最新内容">
       <span>{String(activeIndex + 1).padStart(2, '0')} <i>/</i> {String(lessons.length).padStart(2, '0')}</span>
-      <div className="we-latest-dots">{lessons.map((item, index) => <button key={item.id} className={index === activeIndex ? 'selected' : ''} onClick={() => setActiveIndex(index)} aria-label={`查看第 ${item.id} 期`} aria-current={index === activeIndex ? 'true' : undefined}/>)}</div>
+      <div className="we-latest-dots">{lessons.map((item, index) => <button key={item.id} className={index === activeIndex ? 'selected' : ''} onClick={() => scrollTo(index)} aria-label={`查看第 ${item.id} 期`} aria-current={index === activeIndex ? 'true' : undefined}/>)}</div>
       <div className="we-latest-arrows"><button onClick={() => goTo(-1)} aria-label="上一期"><ChevronLeft size={17}/></button><button onClick={() => goTo(1)} aria-label="下一期"><ChevronRight size={17}/></button></div>
     </div>
   </section>
