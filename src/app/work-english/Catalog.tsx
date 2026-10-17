@@ -2,7 +2,7 @@
 
 import {useState} from 'react'
 import Link from 'next/link'
-import {Search, ArrowUpRight, BookOpen, Check, LogOut, Headphones, Bookmark} from 'lucide-react'
+import {Search, ArrowUpRight, BookOpen, Check, LogOut, Headphones, Bookmark, ChevronLeft, ChevronRight} from 'lucide-react'
 import {WORK_ENGLISH_PATH, WORK_ENGLISH_TITLE} from '@/lib/work-english/constants'
 import {authEntryPath} from '@/lib/auth-return-path'
 import {createClient} from '@/lib/supabase/client'
@@ -32,6 +32,7 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
   })
   const nextLesson = sceneLessons.find(lesson => !summaries[lesson.id]?.complete)
   const searchTerm = query.toLowerCase().trim()
+  const latestLessons = [...catalogLessons].sort((a,b) => Number(b.id) - Number(a.id)).slice(0,5)
   const baseLessons = filter === 'scenes' && !searchTerm ? sceneLessons : catalogLessons
   const lessons = baseLessons.filter(lesson => `${lesson.company} ${lesson.companyZh} ${lesson.title} ${lesson.topic} ${lesson.description}`.toLowerCase().includes(searchTerm)
     && (filter !== 'all' || searchTerm || !groupId || SCENE_GROUPS.find(group => group.id === groupId)?.lessonIds.some(id => id === lesson.id))
@@ -55,11 +56,14 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
     <main className="we-main"><div className="we-intro"><p className="we-eyebrow">COMPANY DOCUMENTS, REAL WORK</p><h1>{WORK_ENGLISH_TITLE}</h1><p>先找你正在遇到的工作场景，再读名企原文、练习自己的表达。</p><div className="we-count"><span>推荐路线 <b>{SCENE_PATHS.reduce((sum,scene)=>sum+scene.lessonIds.length,0)}</b> 期</span><span>资料 <b>{catalogLessons.length}</b> 期</span><span>已完成 <b>{complete}</b> 期</span></div></div>
     {!hasAccess && <section className="we-access-notice" id="package-access" tabIndex={-1} aria-label="套餐权限提示"><div><h2>当前账号暂无有效的名企英语套餐</h2><p>如已购买，请联系店铺客服核对注册账号与套餐有效期。</p></div><button onClick={signOut}>切换账号 <ArrowUpRight size={15}/></button></section>}
     {message && <p className="we-error" role="alert">{message}</p>}
+    {filter === 'scenes' && !searchTerm && latestLessons.length > 0 && <LatestLessonsCarousel lessons={latestLessons} hasAccess={hasAccess} summaries={summaries}/>}
     {hasAccess && dueReviewWords.length > 0 && <section className="we-due-review" aria-label="今日词汇复习"><div className="we-due-review-heading"><div><p className="we-eyebrow">WORD REVIEW</p><h2>今天复习 <span>{dueReviewWords.length}</span> 个词</h2><p>先看中文回想英文，再点开核对。</p></div><span>来自你收藏过的课程</span></div><div className="we-due-review-list">{dueReviewWords.slice(0,6).map((item,index)=><article className="we-due-review-card" key={`${item.lessonId}-${item.id}`}><span className="we-due-review-index">{String(index+1).padStart(2,'0')}</span><div className="we-due-review-main"><span>{item.companyZh} · 第 {item.lessonId} 期</span><p>{item.meaning}</p><details><summary>显示英文答案</summary><strong>{item.word}</strong><small>{item.example}{item.translation ? ` · ${item.translation}` : ''}</small></details></div><Link href={`${WORK_ENGLISH_PATH}/lessons/${item.lessonId}#review`} aria-label={`进入第 ${item.lessonId} 期复习`}>进入本期 <ArrowUpRight size={14}/></Link></article>)}</div>{dueReviewWords.length>6&&<p className="we-due-review-more">还有 {dueReviewWords.length-6} 个词待复习</p>}</section>}
-    {filter === 'scenes' && !searchTerm && <section className="we-scenes" aria-label="职场场景路线"><div className="we-scenes-heading"><div><p className="we-eyebrow">CHOOSE A WORK SITUATION</p><h2>先选一个你会遇到的场景</h2></div><p>每条路线从名企原文出发，逐步练到自己的工作表达。</p></div><div className="we-scene-options">{SCENE_PATHS.map(scene => <button key={scene.id} className={sceneId===scene.id?'selected':''} aria-pressed={sceneId===scene.id} onClick={()=>setSceneId(scene.id)}><span>{scene.name}</span><strong>{scene.question}</strong><small>{scene.lessonIds.length} 期 · {scene.description}</small></button>)}</div>
-      <div className="we-route-next"><div><span className="we-route-kicker">{activeScene.name} · 下一步</span><strong>{nextLesson ? nextLesson.title : '这条路线已经完成'}</strong><p>{nextLesson ? `读 ${nextLesson.companyZh} 的${nextLesson.sourceType}，完成本期练习。` : '可以换一条场景路线继续学习。'}</p></div>{nextLesson && <a href={hasAccess?`${WORK_ENGLISH_PATH}/lessons/${nextLesson.id}#${summaries[nextLesson.id]?.lastSection??'reading'}`:'#package-access'}>{summaries[nextLesson.id]?.started?'继续学习':'从原文开始'} <ArrowUpRight size={16}/></a>}</div>
+    {filter === 'scenes' && !searchTerm && <section className="we-scenes" aria-label="职场场景路线">
+      <div className="we-scenes-heading"><div><p className="we-eyebrow">按场景学习</p><h2>今天想练什么？</h2></div><p className="we-learning-steps"><span>选场景</span><i>›</i><span>读原文</span><i>›</i><span>练表达</span></p></div>
+      <div className="we-scene-options">{SCENE_PATHS.map(scene => <button key={scene.id} className={sceneId===scene.id?'selected':''} aria-pressed={sceneId===scene.id} onClick={()=>setSceneId(scene.id)}><span>{scene.name}</span><strong>{scene.question}</strong><small>{scene.lessonIds.length} 篇</small></button>)}</div>
+      <div className="we-route-next"><span>{nextLesson ? `${nextLesson.companyZh} · ${nextLesson.title}` : '这条路线已经完成'}</span>{nextLesson && <a href={hasAccess?`${WORK_ENGLISH_PATH}/lessons/${nextLesson.id}#${summaries[nextLesson.id]?.lastSection??'reading'}`:'#package-access'}>{summaries[nextLesson.id]?.started?'继续':'开始'}这条路线 <ArrowUpRight size={15}/></a>}</div>
     </section>}
-    {filter === 'scenes' && !searchTerm && <section className="we-shelves we-shelves-entry" aria-label="全部资料的场景分类"><div className="we-scenes-heading"><div><p className="we-eyebrow">100 LESSONS BY SITUATION</p><h2>更多工作场景</h2></div><p>按你遇到的问题找资料。</p></div><div className="we-shelf-options">{SCENE_GROUPS.map(group=><button key={group.id} onClick={()=>{setGroupId(group.id);setFilter('all')}}>{group.name} <span>{group.lessonIds.length}</span></button>)}</div></section>}
+    {filter === 'scenes' && !searchTerm && <section className="we-shelves we-shelves-entry" aria-label="更多工作场景"><div className="we-scenes-heading"><div><h2>更多场景</h2></div><button className="we-all-link" onClick={()=>{setGroupId(null);setFilter('all')}}>全部资料 <ArrowUpRight size={14}/></button></div><div className="we-shelf-options">{SCENE_GROUPS.map(group=><button key={group.id} onClick={()=>{setGroupId(group.id);setFilter('all')}}>{group.name} <span>{group.lessonIds.length}</span></button>)}</div></section>}
     {filter === 'all' && !searchTerm && <section className="we-shelves" aria-label="按场景浏览全部资料"><div className="we-scenes-heading"><div><p className="we-eyebrow">BROWSE BY SITUATION</p><h2>按工作场景找原文</h2></div><p>这里收录全部资料；推荐路线可从左侧进入。</p></div><div className="we-shelf-options"><button className={!groupId?'selected':''} aria-pressed={!groupId} onClick={()=>setGroupId(null)}>全部 <span>{catalogLessons.length}</span></button>{SCENE_GROUPS.map(group=><button key={group.id} className={groupId===group.id?'selected':''} aria-pressed={groupId===group.id} onClick={()=>setGroupId(group.id)}>{group.name} <span>{group.lessonIds.length}</span></button>)}</div></section>}
     <div className="we-toolbar"><div className="we-tabs"><span>{searchTerm?'搜索结果':filter==='scenes'?activeScene.name:filter==='all'?(SCENE_GROUPS.find(group=>group.id===groupId)?.name??'全部资料'):filter==='complete'?'已完成':'继续学习'}</span><small>{lessons.length} 期</small></div><label className="we-search"><Search size={16}/><input aria-label="搜索内容" placeholder="搜索公司、话题、表达场景" value={query} onChange={e=>setQuery(e.target.value)}/></label></div>
     <div className="we-grid">{lessons.map(lesson=>{
@@ -73,4 +77,43 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
     <footer className="we-footer"><span>从一段原文开始，留下一次自己的表达。</span><p>来源为企业公开资料。教学内容由本学习库独立编写；不代表相关企业官方课程或背书。</p></footer>
     </main></div>
   </div>
+}
+
+function LatestLessonsCarousel({
+  lessons,
+  hasAccess,
+  summaries,
+}: {
+  lessons: Props['catalogLessons']
+  hasAccess: boolean
+  summaries: Props['summaries']
+}) {
+  const [activeIndex, setActiveIndex] = useState(0)
+  const goTo = (direction: -1 | 1) => setActiveIndex(index => (index + direction + lessons.length) % lessons.length)
+
+  return <section className="we-latest" aria-label="最新更新内容" aria-roledescription="carousel">
+    <div className="we-latest-track-window">
+      <div className="we-latest-track" style={{transform: `translateX(-${activeIndex * 100}%)`}}>
+        {lessons.map((item, index) => <article className="we-latest-slide" key={item.id} aria-label={`第 ${index + 1} 项，共 ${lessons.length} 项`} aria-hidden={index !== activeIndex} inert={index !== activeIndex}>
+          <div className="we-latest-copy">
+            <p className="we-latest-label">最新更新 <span>第 {item.id} 期</span></p>
+            <h2>{item.title}</h2>
+            <p className="we-latest-meta">{item.companyZh} · {item.topic} · {item.minutes} 分钟</p>
+            <p className="we-latest-description">{item.description}</p>
+            <Link href={hasAccess ? `${WORK_ENGLISH_PATH}/lessons/${item.id}#${summaries[item.id]?.lastSection ?? 'reading'}` : '#package-access'} className="we-latest-cta">
+              {summaries[item.id]?.started ? '继续本期' : '开始今天的学习'} <ArrowUpRight size={16}/>
+            </Link>
+          </div>
+          <div className="we-latest-art" aria-hidden="true">
+            <LessonCover id={item.id} company={item.company} sourceType={item.sourceType} title={item.title} routeStep={null} action="开始学习"/>
+          </div>
+        </article>)}
+      </div>
+    </div>
+    <div className="we-latest-controls" aria-label="选择最新内容">
+      <span>{String(activeIndex + 1).padStart(2, '0')} <i>/</i> {String(lessons.length).padStart(2, '0')}</span>
+      <div className="we-latest-dots">{lessons.map((item, index) => <button key={item.id} className={index === activeIndex ? 'selected' : ''} onClick={() => setActiveIndex(index)} aria-label={`查看第 ${item.id} 期`} aria-current={index === activeIndex ? 'true' : undefined}/>)}</div>
+      <div className="we-latest-arrows"><button onClick={() => goTo(-1)} aria-label="上一期"><ChevronLeft size={17}/></button><button onClick={() => goTo(1)} aria-label="下一期"><ChevronRight size={17}/></button></div>
+    </div>
+  </section>
 }
