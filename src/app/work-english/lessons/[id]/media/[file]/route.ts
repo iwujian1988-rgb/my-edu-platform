@@ -5,6 +5,7 @@ import { findInternalPreviewLesson, findLesson } from '@/lib/work-english/consta
 import { getWorkEnglishSession } from '@/lib/work-english/server'
 import { parseMediaRange } from '@/lib/work-english/range'
 import { logger } from '@/lib/logger'
+import { getOSSClient } from '@/lib/oss'
 
 export const dynamic = 'force-dynamic'
 export const runtime = 'nodejs'
@@ -18,10 +19,27 @@ export async function GET(request: NextRequest, {params}: {params: Promise<{id:s
     const session = await getWorkEnglishSession()
     if (!session.user || !session.hasAccess) return new Response(null, {status:session.user ? 403 : 401, headers:{'Cache-Control':'no-store'}})
     if (!findLesson(id) && !findInternalPreviewLesson(id)) return new Response(null, {status:404})
-    const bytes = await readFile(path.join(process.cwd(), 'src/content/work-english', id, 'media', file))
     const headers: Record<string,string> = {'Content-Type':file.endsWith('.mp3')?'audio/mpeg':'image/png',
       'Cache-Control':'private, no-store', 'Accept-Ranges':'bytes', 'X-Content-Type-Options':'nosniff'}
     const rangeHeader = request.headers.get('range')
+    if (file.endsWith('.mp3')) {
+      const objectKey = `work-english/${id}/media/${file}`
+      const client = getOSSClient()
+      if (rangeHeader) {
+        const metadata = await client.head(objectKey)
+        const size = Number(metadata.res.headers['content-length']) || 0
+        const range = parseMediaRange(rangeHeader, size)
+        if (!range) return new Response(null, {status:416, headers:{...headers,'Content-Range':`bytes */${size}`}})
+        const result = await client.get(objectKey, { headers: { Range: `bytes=${range.start}-${range.end}` } })
+        headers['Content-Range'] = result.res.headers['content-range'] || `bytes ${range.start}-${range.end}/${size}`
+        headers['Content-Length'] = String(result.content.length)
+        return new Response(new Uint8Array(result.content), {status:206, headers})
+      }
+      const result = await client.get(objectKey)
+      const bytes = result.content
+      return new Response(new Uint8Array(bytes), {headers:{...headers,'Content-Length':String(bytes.length)}})
+    }
+    const bytes = await readFile(path.join(process.cwd(), 'src/content/work-english', id, 'media', file))
     if (rangeHeader) {
       const range = parseMediaRange(rangeHeader, bytes.length)
       if (!range) return new Response(null, {status:416, headers:{...headers,'Content-Range':`bytes */${bytes.length}`}})
@@ -32,6 +50,7 @@ export async function GET(request: NextRequest, {params}: {params: Promise<{id:s
     return new Response(new Uint8Array(bytes), {headers:{...headers,'Content-Length':String(bytes.length)}})
   } catch (error) {
     if (error instanceof Error && 'code' in error && error.code === 'ENOENT') return new Response(null, {status:404, headers:{'Cache-Control':'no-store'}})
+    if (error instanceof Error && 'code' in error && error.code === 'NoSuchKey') return new Response(null, {status:404, headers:{'Cache-Control':'no-store'}})
     logger.error('[work-english] media unavailable', error)
     return new Response(null, {status:503, headers:{'Cache-Control':'no-store'}})
   }
