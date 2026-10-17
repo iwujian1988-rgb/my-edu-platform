@@ -41,6 +41,9 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    '/work-english/lessons/**': ['./src/content/work-english/**/*'],
+  },
   // 这里保留你原有的 nextConfig 配置 (如 images, experimental 等)
   // 如果没有其他特殊配置，保持为空对象即可
 

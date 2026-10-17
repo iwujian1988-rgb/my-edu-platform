@@ -1,6 +1,8 @@
 import { createServerClient } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 import type { Database } from '@/types/database'
+import { safeReturnPath } from '@/lib/auth-return-path'
+import { requestOrigin } from '@/lib/request-origin'
 
 /** 完全公开的页面 — 不需要任何 auth 检查 */
 const PUBLIC_ROUTES = ['/privacy', '/clear-cache']
@@ -46,8 +48,8 @@ export async function middleware(request: NextRequest) {
 
   // 未登录 + 受保护路由 → 跳转登录（0ms）
   if (!hasSbCookies && isProtectedRoute) {
-    const redirectUrl = new URL('/login', request.url)
-    redirectUrl.searchParams.set('redirect', pathname)
+    const redirectUrl = new URL('/login', requestOrigin(request))
+    redirectUrl.searchParams.set('redirect', pathname + request.nextUrl.search)
     return NextResponse.redirect(redirectUrl)
   }
 
@@ -101,9 +103,12 @@ export async function middleware(request: NextRequest) {
     data: { user },
   } = await supabase.auth.getUser()
 
-  // 已登录用户访问 login/register → 重定向到首页
+  // 产品入口携带返回地址时，已登录用户也应回到该产品，保留刷新后的 cookie。
   if (user && (pathname === '/login' || pathname === '/register')) {
-    return NextResponse.redirect(new URL('/', request.url))
+    const destination = safeReturnPath(request.nextUrl.searchParams.get('redirect')) || '/'
+    const redirectResponse = NextResponse.redirect(new URL(destination, requestOrigin(request)))
+    response.cookies.getAll().forEach(cookie => redirectResponse.cookies.set(cookie))
+    return redirectResponse
   }
 
   // Admin 路由保护
@@ -113,7 +118,7 @@ export async function middleware(request: NextRequest) {
     }
 
     if (!user) {
-      const redirectUrl = new URL('/admin/login', request.url)
+      const redirectUrl = new URL('/admin/login', requestOrigin(request))
       redirectUrl.searchParams.set('redirect', pathname)
       return NextResponse.redirect(redirectUrl)
     }
@@ -126,7 +131,7 @@ export async function middleware(request: NextRequest) {
       .maybeSingle()
 
     if (!admin) {
-      const redirectUrl = new URL('/admin/login', request.url)
+      const redirectUrl = new URL('/admin/login', requestOrigin(request))
       redirectUrl.searchParams.set('error', 'not_admin')
       return NextResponse.redirect(redirectUrl)
     }
