@@ -48,7 +48,7 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
         <div className="we-masthead-copy">
           <div className="we-masthead-brands" aria-label="Google、Microsoft、GitLab、Basecamp"><span>Google</span><span>Microsoft</span><span>GitLab</span><span>Basecamp</span></div>
           <p className="we-masthead-kicker">把真实工作里的英语，学成自己的表达</p>
-          <h1>{WORK_ENGLISH_TITLE}</h1>
+          <h1 aria-label={WORK_ENGLISH_TITLE}><span>跟着谷歌、微软</span><span>学职场英语</span></h1>
           <p className="we-masthead-desc">从邮件、会议到反馈和协作，每天读一篇真实职场材料，学会在工作里说清楚、写明白。</p>
           <div className="we-masthead-stats"><span><b>{catalogLessons.length}</b> 篇学习内容</span><span><b>{completed}</b> 篇已完成</span><span>每天更新</span></div>
         </div>
@@ -63,7 +63,7 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
       {message && <p className="we-error" role="alert">{message}</p>}
 
       <section className="we-catalog" aria-label="按场景学习">
-        <div className="we-catalog-heading"><div><p className="we-eyebrow">LEARNING LIBRARY</p><h2>按场景学习</h2><p>选一篇你正需要的内容，开始练习。</p></div><span className="we-catalog-count">共 {lessons.length} 篇</span></div>
+        <div className="we-catalog-heading"><div><h2>按场景学习</h2><p>选一篇你正需要的内容，开始练习。</p></div><span className="we-catalog-count">共 {lessons.length} 篇</span></div>
         <div className="we-list">{pageLessons.map((lesson,index)=>{
           const done = summaries[lesson.id]?.complete
           const started = summaries[lesson.id]?.started
