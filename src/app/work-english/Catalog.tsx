@@ -54,7 +54,7 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
         </div>
         {latest && <Link href={lessonHref(latest.id)} className="we-hero" aria-label={`学习最新一期：${latest.title}`}>
           <div className="we-hero-art" aria-hidden="true">{hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${latest.id}/media/illustration.png`} alt="" fill sizes="(max-width: 760px) 100vw, 48vw" unoptimized priority/>}</div>
-          <div className="we-hero-copy"><span className="we-hero-label">最新更新 <i>第 {latest.id} 期</i></span><span className="we-hero-company">{latest.companyZh}　·　{latest.topic}</span><strong>{latest.title}</strong><span className="we-hero-action">{summaries[latest.id]?.started?'继续学习':'开始今天的学习'} <ArrowUpRight size={18}/></span></div>
+          <div className="we-hero-copy"><span className="we-hero-label">最新更新 <i>第 {latest.id} 期</i></span><span className="we-hero-company">{latest.companyZh}{latest.topic && latest.topic !== latest.title ? `　·　${latest.topic}` : ''}</span><strong>{latest.title}</strong><span className="we-hero-action">{summaries[latest.id]?.started?'继续学习':'开始今天的学习'} <ArrowUpRight size={18}/></span></div>
           <span className="we-hero-mark" aria-hidden="true">↗</span>
         </Link>}
       </section>
@@ -70,7 +70,7 @@ export default function Catalog({signedIn,hasAccess,summaries,dueReviewWords,cat
           return <Link href={lessonHref(lesson.id)} className="we-list-row" key={lesson.id}>
             <span className="we-list-number">{String(Number(lesson.id)).padStart(3,'0')}</span>
             <span className="we-list-art">{hasAccess && <Image src={`${WORK_ENGLISH_PATH}/lessons/${lesson.id}/media/illustration.png`} alt="" fill sizes="150px" unoptimized loading={index < 3 ? 'eager' : 'lazy'}/>}</span>
-            <span className="we-list-copy"><span className="we-list-meta"><b>{lesson.companyZh}</b><i>{lesson.topic}</i><i>{lesson.minutes} 分钟</i><i>{lesson.level}</i></span><strong>{lesson.title}</strong></span>
+            <span className="we-list-copy"><span className="we-list-meta"><b>{lesson.companyZh}</b>{lesson.topic && lesson.topic !== lesson.title && <i>{lesson.topic}</i>}<i>{lesson.minutes} 分钟</i><i>{lesson.level}</i></span><strong>{lesson.title}</strong></span>
             <span className={`we-list-status${done?' is-done':''}`}>{done?'已完成':started?'继续学习':'开始学习'} <ArrowUpRight size={16}/></span>
           </Link>
         })}</div>
