@@ -84,9 +84,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "跨部门团队需要在供应商 A 和 B 之间作决定：A 交付更快，B 有更多测试时间。请用英文列出选项及取舍，明确最终决策人，并约定何时复查决定。",
-    "sample": "Option A is faster; Option B gives us more time to test. Could we name the person who will make the final call? Let’s agree to revisit the decision after the vendor confirms the delivery date.",
-    "rationale": "先摆出选项和取舍，明确决策人，再约定出现新信息时何时复查。"
+    "prompt": "团队要在两家供应商中作决定：一家交付更快，另一家能留出更多测试时间。请用英文说明取舍、确认最终决策人，并约定何时重新评估。",
+    "sample": "Vendor A can deliver sooner, while Vendor B gives us more time to test. Could we confirm who will make the final call? Let’s revisit the options after both vendors confirm their delivery dates.",
+    "rationale": "把选项差异说清楚，确定谁作决定，并约好在关键信息到齐后重新评估。"
   },
   "words": [
     {
@@ -166,10 +166,10 @@
     "transfer": "A DACI framework can clarify who moves the supplier decision forward and who makes the final call."
   },
   "rewrite": {
-    "bad": "Option A is better. Let’s decide now and work out who owns it later.",
-    "good": "Option A would get the vendor in sooner, while Option B gives us more time to test. Could we confirm who will make the final call? Let’s revisit the choice after the vendor confirms the delivery date.",
-    "translation": "方案 A 能让供应商更早交付，方案 B 则给我们更多测试时间。我们能否确认由谁作最终决定？等供应商确认交付日期后，再重新评估这两个选项。",
-    "pattern": "[Option A] offers [benefit], while [Option B] offers [trade-off]. Could we confirm who will make the final call? Let’s revisit it after [new information arrives]."
+    "bad": "The finance manager is delaying us. We should approve the budget now and sort out the roles later.",
+    "good": "Could we confirm who is driving this decision, who needs to approve it, and when we need their input? That should help us keep the work moving.",
+    "translation": "我们能否确认由谁推动、谁需要批准，以及何时需要他们反馈？这样工作就能继续往前走。",
+    "pattern": "Could we confirm [the Driver], [the Approver], and [the time for input]?"
   },
   "cloze": [
     {
@@ -186,9 +186,9 @@
     },
     {
       "id": "c3",
-      "prompt": "Let’s ___ this after the vendor confirms the delivery date.",
+      "prompt": "Let’s ___ the options after both vendors confirm their delivery dates.",
       "answer": "revisit",
-      "why": "有关键事实未到位时，约定触发条件和回看时间。"
+      "why": "有关键事实未到位时，约定触发条件再回看方案。"
     }
   ],
   "dictation": [
@@ -213,28 +213,28 @@
       "why": ""
     },
     {
-      "prompt": "等供应商确认交付日期后，我们再重新讨论。",
-      "answer": "Let’s revisit this after the vendor confirms the delivery date.",
+      "prompt": "等两家供应商都确认交付日期后，我们再重新评估这些方案。",
+      "answer": "Let’s revisit the options after both vendors confirm their delivery dates.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "供应商 A 交付更快，供应商 B 能提供更多测试时间。请选出能把取舍、最终决策人和复查时间说清楚的表达。",
+    "prompt": "供应商 A 交付更快，供应商 B 能提供更多测试时间。请选择能说清取舍、决策人和复查条件的表达。",
     "options": [
       "Vendor A is better because speed matters most. Let’s approve it today.",
-      "Vendor A can deliver sooner, while Vendor B gives us more time to test. Who should make the final call? Could we revisit the options once both vendors confirm their dates?",
+      "Vendor A can deliver sooner, while Vendor B gives us more time to test. Could we confirm who will make the final call? Let’s revisit the options after both vendors confirm their delivery dates.",
       "We should ask every team to approve both vendors before making a decision."
     ],
     "correct": 1,
     "why": "先把两种选择的取舍摆出来，再明确谁作最终决定，并在关键日期确认后复查。"
   },
   "output": {
-    "prompt": "团队需要决定下一季度先做移动端离线模式还是批量导出。离线模式能服务外勤客户，批量导出能减少运营团队的手工工作。请用英文概括取舍、明确决策人并约定决策时间。",
-    "sample": "Offline mode would help customers working in the field, while bulk export could reduce manual work for Operations. Could we ask Priya to make the final call? Let’s revisit the options with her on Thursday and confirm the priority for next quarter.",
+    "prompt": "团队需要在两套客户调研方案中作决定：方案 A 覆盖人数更多，方案 B 能更快完成。请用英文说明取舍、确认决策人，并约定何时回看选择。",
+    "sample": "Option A reaches more customers, while Option B gives us results sooner. Could we confirm who will make the final call? Let’s revisit the options once we know when the next release decision is due.",
     "check": [
-      "是否列出两个选项及其取舍？",
-      "是否明确由谁作决定？",
-      "是否约定何时重新检查决定？"
+      "是否比较两个方案的实际取舍？",
+      "是否确认由谁作最终决定？",
+      "是否约定重新评估的时间或条件？"
     ]
   },
   "credits": {
@@ -246,10 +246,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
@@ -273,8 +283,8 @@
       "word": "agree on when to revisit the decision",
       "meaning": "约定何时重新检查决定",
       "collocation": "agree on when to + verb",
-      "example": "Let’s revisit this after the vendor confirms the delivery date.",
-      "translation": "等供应商确认交付日期后，我们再重新讨论。"
+      "example": "Let’s revisit the options after both vendors confirm their delivery dates.",
+      "translation": "等两家供应商都确认交付日期后，我们再重新评估这些方案。"
     }
   ]
 }

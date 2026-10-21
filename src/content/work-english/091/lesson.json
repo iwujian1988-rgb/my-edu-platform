@@ -211,10 +211,10 @@
     "transfer": "We’ll record decisions, owners, due dates, and open questions in one live document as the meeting happens."
   },
   "rewrite": {
-    "bad": "I’ll send my notes after the meeting. The rest of the team can ask if they need details.",
-    "good": "Decision: We’ll keep the current launch date and reduce the first rollout group. Open question: Can Support cover the weekend launch? Maya will confirm with Support by Thursday.",
-    "translation": "决定：保持当前发布日期，并缩小首批试点范围。待确认：客服能否覆盖周末上线？Maya 会在周四前向客服团队确认。",
-    "pattern": "Decision: [agreed action]. Open question: [unresolved issue]? [Owner] will confirm [next step] by [date]."
+    "bad": "I will take private notes myself. There is no need for everyone to use the shared agenda.",
+    "good": "Let’s use a shared agenda doc instead of the automatic notes doc. Everyone can edit it, and we can record decisions as we go.",
+    "translation": "我们用共享议程文档代替自动生成的会议记录吧。每个人都能编辑，也可以边讨论边记录决定。",
+    "pattern": "Let’s use [a shared editable document] so everyone can [record decisions together]."
   },
   "cloze": [
     {
@@ -274,12 +274,12 @@
     "why": "把已确定的决定、未解决的问题和负责确认的人及期限分开写清楚。"
   },
   "output": {
-    "prompt": "在讨论客服排班时，团队决定先试行两周晚间轮值，由 Nina 周五前确认人员安排；周末是否延长覆盖仍未决定。请用英文记录决定、待确认问题、负责人和期限。",
-    "sample": "Decision: We’ll pilot evening coverage for two weeks. Open question: Will weekend coverage also be extended? Nina will confirm the staffing plan by Friday.",
+    "prompt": "供应商评估会上，团队决定先在两个办公室试用新系统，但安全评估仍未完成。请用英文记录已定事项、待确认问题、负责人和截止时间。",
+    "sample": "Decision: We’ll pilot the new system in two offices. Open question: Has the security review been completed? Priya will confirm the review status with Security by Friday.",
     "check": [
-      "是否把已作决定和待确认问题分开？",
-      "是否写明负责人和截止时间？",
-      "是否让讨论中的决定留在共享文档里？"
+      "是否把已定决定和待确认问题分开？",
+      "是否为待办事项写明负责人？",
+      "是否注明确认期限？"
     ]
   },
   "credits": {
@@ -291,11 +291,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收",
       "听写讲一边开会一边赶季度报告，与本期共享文档记录讨论结论的主题不符；需同步修复音频与文本。"
-    ]
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

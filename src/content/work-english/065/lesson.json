@@ -160,9 +160,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "团队每周例会经常重复讨论已作出的决定，交接记录又缺少负责人和下一步。请用英文提出一项要开始、一项要停止和一项要继续的做法，并约定下个 sprint 再检查。",
-    "sample": "Let’s start adding an owner and next step to each handoff, stop reopening decisions without new information, and continue using the shared handoff document. We can review the change at the next retrospective.",
-    "rationale": "用开始、停止、继续三个角度提出具体团队习惯，并约定回看时间。"
+    "prompt": "团队想改善每周例会，但不知道哪些做法该保留、调整或停止。请用英文邀请大家分别说出一项要开始、停止和继续的习惯。",
+    "sample": "Let’s each name one meeting habit to start, one to stop, and one to continue. Then we can choose one change to try at our next meeting.",
+    "rationale": "用“开始、停止、继续”三个角度收集具体做法，再选一项小改动试行。"
   },
   "words": [
     {
@@ -243,9 +243,9 @@
   },
   "rewrite": {
     "bad": "This is how we have always handled handoffs. There is no need to review it.",
-    "good": "Let’s start adding an owner and next step to each handoff, stop reopening decisions without new information, and continue using the shared handoff document. We can review the change at the next retrospective.",
-    "translation": "我们开始给每次交接添加负责人和下一步，停止在没有新信息时重开决定，并继续使用共享交接文档。下次复盘时再看这些调整的效果。",
-    "pattern": "Let’s start [new action], stop [unhelpful habit], and continue [useful practice]. We can review the changes at [time]."
+    "good": "What should we change about our handoffs? Could we try adding an owner and next step to each handoff for the next sprint, then review whether it helped?",
+    "translation": "我们的交接有哪些地方值得改？能否在下一轮为每次交接补上负责人和下一步，之后再看是否有帮助？",
+    "pattern": "What should we change about [the process]? Could we try [one change] and review it next time?"
   },
   "cloze": [
     {
@@ -305,12 +305,12 @@
     "why": "建议分别对应当前的交接和重复讨论问题，并约定在下个 sprint 回看效果。"
   },
   "output": {
-    "prompt": "团队交接经常漏掉客户影响，导致接手人重复询问；大家认可现有的值班表。请用英文提出一项要开始、一项要停止和一项要继续的做法，并约定何时回顾。",
-    "sample": "Let’s start including customer impact and steps already tried in each handoff, stop sending cases without that summary, and continue using the shared on-call schedule. We can review the changes at next month’s team meeting.",
+    "prompt": "团队复盘发现交接记录缺少负责人和下一步。请用英文提出一项要开始、一项要停止和一项要继续的做法，并约定下个 sprint 再检查。",
+    "sample": "Let’s start adding an owner to each handoff, stop sending updates without a next step, and continue using the shared handoff document. We can review the change at the next retrospective.",
     "check": [
       "是否分别提出开始、停止和继续的做法？",
-      "是否针对交接信息缺漏和团队认可的值班安排？",
-      "是否安排下一次复查？"
+      "是否针对交接信息的实际问题？",
+      "是否安排下一次复查看效果？"
     ]
   },
   "credits": {
@@ -322,10 +322,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

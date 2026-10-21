@@ -82,9 +82,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "下周的评审会需要决定是否采用新的客户反馈流程。请用英文写清要作出的决定，为风险和待解决问题留出讨论时间，并说明何时会提前发送议程和数据。",
-    "sample": "The goal is to decide whether to adopt the new feedback process. Let’s allow ten minutes for risks and open questions. I’ll send the agenda and customer data by Tuesday.",
-    "rationale": "议程先说明要作出的决定，再为关键讨论预留时间并提前分享材料。"
+    "prompt": "你要和同事一起准备一次项目决策会。请用英文建议议程写明要做的决定、需要讨论的问题，并提前共享预读材料。",
+    "sample": "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
+    "rationale": "议程要让参会者知道会议要解决什么，并能提前看到准备材料。"
   },
   "words": [
     {
@@ -164,10 +164,10 @@
     "transfer": "Put the decision to make and the discussion questions on the agenda, then link the pre-read in the same document."
   },
   "rewrite": {
-    "bad": "Let’s discuss the customer feedback flow and see where the conversation goes. I’ll send the agenda when I have time.",
-    "good": "The goal is to decide whether to adopt the new feedback process. Let’s allow ten minutes for risks and open questions. I’ll send the agenda and customer data by Tuesday.",
-    "translation": "会议目标是决定是否采用新的反馈流程。我们为风险和待解决问题留十分钟。我会在周二前发送议程和客户数据。",
-    "pattern": "The goal is to decide whether [decision]. Let’s allow [time] for [key discussion]. I’ll send [materials] by [date]."
+    "bad": "Put every possible topic on the agenda. We can decide what the meeting is for when we get there.",
+    "good": "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
+    "translation": "我们能否在议程中写清要做的决定和关键讨论问题？也请把预读材料放在同一文档，方便大家提前准备。",
+    "pattern": "Could we state [the decision and key questions] and share [pre-read materials] in advance?"
   },
   "cloze": [
     {
@@ -227,12 +227,12 @@
     "why": "议程要让参会者知道会议要解决什么，并能提前看到准备材料。"
   },
   "output": {
-    "prompt": "你要召开一次招聘评审会，决定是否进入候选人的最后一轮面试。请用英文写出会议要作出的决定、讨论证据的时间安排，以及会前材料的发送时间。",
-    "sample": "The goal is to decide whether the candidate should move to the final interview. Let’s allow ten minutes to compare the evidence and discuss any concerns. I’ll send the interview notes and agenda by Wednesday afternoon.",
+    "prompt": "下周的评审会需要决定是否采用新的客户反馈流程。请用英文建议议程写明要作出的决定、需要比较的问题，并提前共享相关数据。",
+    "sample": "Could we state that the meeting will decide whether to adopt the new feedback process? Let’s add the key questions and share the customer data in the agenda beforehand.",
     "check": [
       "是否清楚写出会议要作出的决定？",
-      "是否给风险和问题留出讨论时间？",
-      "是否说明预读材料的发送时间？"
+      "是否列出需要讨论的问题？",
+      "是否建议提前共享预读材料？"
     ]
   },
   "credits": {
@@ -244,10 +244,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

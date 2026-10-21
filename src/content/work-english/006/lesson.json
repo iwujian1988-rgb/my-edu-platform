@@ -181,28 +181,28 @@
   },
   "rewrite": {
     "bad": "You should skip the extra analysis and finish the report by Friday.",
-    "good": "What outcome does the client need by Friday? What is making the analysis difficult right now? What could you try today to move it forward?",
+    "good": "What is the most important thing the client needs by Friday? What is making the analysis difficult right now? What could you try today to move it forward?",
     "translation": "客户周五前最需要什么？目前分析卡在哪里？你今天可以先做什么来推进？",
     "pattern": "What does [the other person need]? What is [the obstacle]? What could they [try next]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "What outcome does the client need by ___?",
-      "answer": "Friday",
-      "why": "问清客户需要结果的时间。"
+      "prompt": "A good coach can help an employee ___ through a setback.",
+      "answer": "persevere",
+      "why": "help someone persevere through a challenge：帮助某人坚持应对困难。"
     },
     {
       "id": "c2",
-      "prompt": "What is making the deadline ___ right now?",
-      "answer": "difficult",
-      "why": "difficult 在这里描述当前完成期限的难处。"
+      "prompt": "A manager must ___ to meet the diverse needs of team members.",
+      "answer": "flex their coaching styles",
+      "why": "这里用 flex 表示灵活调整辅导方式。"
     },
     {
       "id": "c3",
-      "prompt": "What could you try today to move the analysis ___?",
-      "answer": "forward",
-      "why": "move the analysis forward 表示推进分析工作。"
+      "prompt": "Effective coaching focuses on ___ employees’ potential.",
+      "answer": "unlocking",
+      "why": "unlock potential 表示帮助某人发挥潜力。"
     }
   ],
   "dictation": [
@@ -219,17 +219,17 @@
     {
       "prompt": "客户周五前需要什么结果？",
       "answer": "What outcome does the client need by Friday?",
-      "why": ""
+      "why": "先确认对方要交付的结果。"
     },
     {
       "prompt": "目前是什么让这个截止时间难以完成？",
       "answer": "What is making the deadline difficult right now?",
-      "why": ""
+      "why": "追问具体障碍，避免替对方下结论。"
     },
     {
       "prompt": "你今天可以试着做什么来推进分析？",
       "answer": "What could you try today to move the analysis forward?",
-      "why": ""
+      "why": "邀请对方提出今天可以采取的行动。"
     }
   ],
   "choice": {
@@ -243,12 +243,12 @@
     "why": "先让对方说清目标和障碍，再由对方提出下一步；不要替对方直接下结论。"
   },
   "output": {
-    "prompt": "一名同事要在周一向客户演示分析结果，但数据还没整理好。请用英文通过三个开放问题了解客户需要的结果、当前障碍和今天能采取的下一步，不要直接替对方决定。",
-    "sample": "What outcome does the client need from Monday’s presentation? What is making the analysis difficult right now? What could you try today to move it forward?",
+    "prompt": "组员需要准备客户演示，但还没想清楚重点。请用英文问三个开放问题：先确认听众需要什么，再了解目前准备情况，最后请对方选一个今天能采取的行动。",
+    "sample": "What do you want the client to understand by the end of the demo? What have you prepared so far? What could you do today to make the key point clearer?",
     "check": [
-      "是否先问清客户需要的结果？",
-      "是否了解当前困难？",
-      "是否请对方提出今天能采取的下一步？"
+      "第一个问题是否了解听众需要？",
+      "第二个问题是否了解当前进展？",
+      "第三个问题是否引导对方提出今天能做的行动？"
     ]
   },
   "credits": {
@@ -260,8 +260,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频逐条核对",
-      "页面与练习交互人工验收"
+      "音频逐条核对"
     ],
     "rubricVersion": "1.1",
     "scores": {

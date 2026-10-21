@@ -104,9 +104,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "团队准备把一项客户请求放入下个 sprint，但还不知道如何验收，且要等待设计团队交付方案。请用英文询问需要补齐哪些信息后再判断是否 ready。",
-    "sample": "Could we define how we’ll verify the customer request and confirm when the design will be ready? Then we can decide whether the story is detailed enough to estimate for the sprint.",
-    "rationale": "先明确验收方法和设计依赖，再判断需求是否具体到足以估算。"
+    "prompt": "一个开发任务还没有明确验收结果，也没写清外部依赖。请用英文询问补齐哪些信息后，团队才能判断它是否可以开始。",
+    "sample": "Could we add testable acceptance criteria and identify any dependencies before we start? Then the team can check whether the work is ready to enter the sprint.",
+    "rationale": "Ready 的判断需要具体、可检查的信息。这里关注验收标准和依赖，而不是笼统要求“所有细节都确定”。"
   },
   "words": [
     {
@@ -187,9 +187,9 @@
   },
   "rewrite": {
     "bad": "Let’s start the task now and work out the acceptance criteria and dependencies later.",
-    "good": "Could we define how we’ll verify the customer request and confirm when the design will be ready? Then we can decide whether the story is detailed enough to estimate for the sprint.",
-    "translation": "我们能否先明确如何验收这项客户请求，并确认设计何时准备好？然后再判断需求是否足够清楚，可以估算并排入 sprint。",
-    "pattern": "Could we define how we’ll verify [the request] and confirm when [the dependency] will be ready? Then we can decide whether [the work] is ready to estimate."
+    "good": "Could we add testable acceptance criteria and identify dependencies before we start? Then the team can check whether the work is ready for the sprint.",
+    "translation": "开始前，我们能否补上可测试的验收标准并确认依赖项？这样团队才能判断任务是否已准备好进入 sprint。",
+    "pattern": "Could we define [the acceptance criteria] and identify [dependencies] before [starting]?"
   },
   "cloze": [
     {
@@ -249,8 +249,8 @@
     "why": "Ready 的判断需要具体、可检查的信息。这里关注验收标准和依赖，而不是笼统要求“所有细节都确定”。"
   },
   "output": {
-    "prompt": "市场团队希望把活动落地页放进下个迭代，但验收方式还没定，视觉稿也未交付。请用英文询问需要补齐哪些信息，再判断能否估算排期。",
-    "sample": "Could we define how we’ll verify the landing page and confirm when the design will be ready? Then we can decide whether the request is detailed enough to estimate for the next sprint.",
+    "prompt": "团队准备把一项客户请求放入下个 sprint，但还不知道如何验收，且要等待设计团队交付方案。请用英文询问需要补齐哪些信息后再判断是否 ready。",
+    "sample": "Could we define how we’ll verify the customer request and confirm when the design will be ready? Then we can decide whether the story is detailed enough to estimate for the sprint.",
     "check": [
       "是否提出可验证的验收方式？",
       "是否确认外部依赖的状态？",
@@ -266,10 +266,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

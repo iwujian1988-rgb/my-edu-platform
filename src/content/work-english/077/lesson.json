@@ -83,9 +83,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "会议还有五分钟结束，但缺少的数据尚未到齐，今天无法作决定。Priya 会在周四前补上分析。请用英文总结暂缓事项、负责人和期限，并说明会后会发书面总结。",
-    "sample": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon.",
-    "rationale": "会议结束前说清决定状态、行动负责人和期限，并发送书面回顾。"
+    "prompt": "会议还有五分钟结束，但团队发现关键数据尚未到齐，今天无法决定是否扩大试点。请用英文说明暂缓决定、安排负责人和期限，并承诺会后发出书面总结，然后按时收尾。",
+    "sample": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon, then we’ll finish on time.",
+    "rationale": "缺少关键信息时，不要仓促下结论；说清谁补充数据、何时完成，并把安排写下来。"
   },
   "words": [
     {
@@ -167,8 +167,8 @@
   "rewrite": {
     "bad": "We can finish the market research later. I need to leave now.",
     "good": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon.",
-    "translation": "我们会等缺少的数据到齐后再作决定。Priya 负责分析，并会在周四前分享。我今天下午会发送书面总结，写明决定状态、负责人和截止时间。",
-    "pattern": "We’ll hold [the decision] until [the missing information arrives]. [Owner] will share [the work] by [deadline]. I’ll send a written recap with [status, owner, and due date]."
+    "translation": "在拿到缺失的数据前，我们暂缓决定。Priya 负责分析并会在周四前分享结果。我今天下午会发送书面总结，列出决定状态、负责人和截止日期。",
+    "pattern": "We’ll hold the decision until [information is ready]. [Owner] will share [work] by [date]. I’ll send a recap with [status, owner, and due date]."
   },
   "cloze": [
     {
@@ -228,12 +228,12 @@
     "why": "在缺少数据时明确暂缓决定，同时写清补充分析的负责人和期限，并承诺发送书面总结。"
   },
   "output": {
-    "prompt": "会议结束前，团队仍缺少安全评估，暂时不能确定上线日期。Morgan 会在周五提供评估。请用英文总结暂缓的决定、负责人和期限，并说明你会发书面记录。",
-    "sample": "We’ll hold the launch date decision until the security assessment is complete. Morgan will share the assessment by Friday. I’ll send a written recap with the decision status, owner, and due date after the meeting.",
+    "prompt": "会议还有五分钟结束，但团队发现需要补充的数据尚未到齐，今天无法作出决定。Priya 会在周四前补上分析。请用英文说明暂缓的事项、下一步负责人和期限，并按时收尾。",
+    "sample": "We’ll hold the decision until we have the missing data. Priya will share the analysis by Thursday, and I’ll add it to the meeting notes. Let’s stop here and make the decision at our next check-in.",
     "check": [
-      "是否总结哪些决定暂缓？",
-      "是否明确负责人和截止时间？",
-      "是否承诺会后发送书面总结？"
+      "是否清楚说明哪些决定暂缓？",
+      "是否明确下一步负责人和期限？",
+      "是否记录后续安排并结束会议？"
     ]
   },
   "credits": {
@@ -245,10 +245,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

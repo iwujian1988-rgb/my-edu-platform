@@ -105,9 +105,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "员工希望逐步承担更多客户研究工作，并想通过项目提升主持讨论的能力。请用英文说明发展方向、商定一个实践机会，并约定下个月回顾进展。",
+    "prompt": "你想在公司逐步承担更多客户研究工作。请用英文和经理讨论这个方向、提出一个能练习相关技能的项目机会，并约定回顾时间。",
     "sample": "I’d like to grow into a role with more customer research. I can build my facilitation skills by leading the next planning session. Let’s check in next month and review what I’ve learned.",
-    "rationale": "把职业方向转成项目中的练习机会，并约定回顾时间。"
+    "rationale": "把发展方向拆成近期可以练习的工作，再约一个时间回顾进展。"
   },
   "words": [
     {
@@ -187,10 +187,10 @@
     "transfer": "To grow into a customer-research role, I’ll lead the next interview and ask my manager for feedback afterward."
   },
   "rewrite": {
-    "bad": "I’ll wait until my manager decides what my career should look like.",
-    "good": "I’d like to grow into a role with more customer research. I can build my facilitation skills by leading the next planning session. Let’s check in next month and review what I’ve learned.",
-    "translation": "我希望逐步承担更多客户研究工作。我可以通过主持下次规划会锻炼引导讨论的能力。我们下个月再回顾我学到的内容。",
-    "pattern": "I’d like to grow into [a role or responsibility]. I can build [a skill] by [taking a specific task]. Let’s check in [date] to review progress."
+    "bad": "The campaign is all that matters now. Career development can wait until next year.",
+    "good": "As your manager, I’ll look for opportunities for you to demonstrate your skills and share clear expectations. I also encourage you to seek feedback and adapt as you learn how our team works.",
+    "translation": "作为你的经理，我会帮你寻找展示能力的机会，并说清期待。我也鼓励你主动寻求反馈，在了解团队工作方式的过程中持续调整。",
+    "pattern": "As your manager, I’ll [create opportunities and clarify expectations]. I encourage you to [seek feedback and adapt]."
   },
   "cloze": [
     {
@@ -250,11 +250,11 @@
     "why": "把长期方向拆成一个近期实践机会，并约定回顾时间。"
   },
   "output": {
-    "prompt": "你希望从执行用户访谈逐步成长为能独立制定研究计划的人。请用英文说明目标，提出一个近期可以承担的任务，并约定何时和经理回顾进展。",
-    "sample": "I’d like to grow from conducting interviews to planning a research study independently. Could I draft the plan for the next round of interviews and get your feedback? Let’s review my progress in our check-in next month.",
+    "prompt": "你希望提升主持团队讨论的能力。请用英文提出一个近期实践机会，并约定之后回顾经验和下一步。",
+    "sample": "I’d like to build my facilitation skills by leading the next project retrospective. Let’s check in two weeks afterward and discuss what went well and what I should practice next.",
     "check": [
-      "是否说明希望发展的工作方向？",
-      "是否把能力培养落实到一个项目机会？",
+      "是否提出具体的工作实践机会？",
+      "是否把机会与要培养的技能联系起来？",
       "是否约定回顾进展的时间？"
     ]
   },
@@ -267,10 +267,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

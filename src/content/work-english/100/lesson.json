@@ -217,9 +217,9 @@
   },
   "rewrite": {
     "bad": "All employees get the same vacation allowance, and the company pays the full cost of every benefit.",
-    "good": "Those details apply to eligible U.S. employees. Could you check the benefits information for your location? Contact the benefits team to confirm the coverage that applies to you.",
-    "translation": "这些条件适用于符合资格的美国员工。你能查看所在地对应的福利信息吗？请联系福利团队，确认哪些保障适用于你。",
-    "pattern": "Those details apply to [eligible group]. Please check [the information for your location] and contact [the relevant team] to confirm [what applies to you]."
+    "good": "For eligible U.S. employees, coverage begins on the first day of employment, and the company pays 75% of the premium. The full plan details are available in Basecamp.",
+    "translation": "符合条件的美国员工从入职第一天起即可获得保险，公司承担 75% 的保费。完整计划信息可在 Basecamp 查看。",
+    "pattern": "For [eligible group], [benefit condition]. The full details are available in [source]."
   },
   "cloze": [
     {
@@ -244,11 +244,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah is tasked with drafting the employee benefits section of the company handbook, focusing on vacation policies, support programs, and compensation details."
+      "text": "Sarah is tasked with drafting the employee benefits section of the company handbook, focusing on vacation policies, support programs, and compensation details.",
+      "label": "听写 1 · 员工福利手册的主题",
+      "why": "听出 vacation policies、support programs 和 compensation details。"
     },
     {
       "id": "d2",
-      "text": "She faces conflicting priorities: management wants to limit vacation days to reduce costs, while HR insists on comprehensive family medical coverage to attract talent."
+      "text": "She faces conflicting priorities: management wants to limit vacation days to reduce costs, while HR insists on comprehensive family medical coverage to attract talent.",
+      "label": "听写 2 · 模拟福利安排中的不同诉求",
+      "why": "这段是练习情境，管理层与 HR 的分歧不代表 Basecamp 手册内容；福利资格以原文为准。",
+      "apply": {
+        "prompt": "新员工不确定美国福利条款是否适用于自己。说明应查看什么并向谁确认。",
+        "sample": "Those details apply to eligible U.S. employees. Please check the benefits information for your location or contact the benefits team to confirm."
+      }
     }
   ],
   "translationPractice": [
@@ -279,12 +287,12 @@
     "why": "把手册中美国员工的具体条件限定在适用范围内，并引导员工核实所在地的福利。"
   },
   "output": {
-    "prompt": "一位员工搬到另一个国家后，询问原来的医疗保险和带薪假期是否继续适用。请用英文说明福利可能因所在地和资格而异，并建议查看当地福利说明或联系福利团队确认。",
-    "sample": "Your benefits may change when your work location changes, and eligibility can vary by location. Please review the benefits information for your new country or contact the benefits team to confirm what applies to you.",
+    "prompt": "一位在加拿大入职的新同事看到美国员工福利页中关于带薪休假的说明，想知道自己是否适用。请用英文说明适用范围，并建议查看所在地的福利信息或联系福利团队核实。",
+    "sample": "Those details apply to eligible U.S. employees. Could you check the benefits information for your location? Contact the benefits team to confirm the paid-leave coverage that applies to you.",
     "check": [
-      "是否准确说明该政策的适用对象？",
-      "是否避免把美国福利条件推广到其他地区？",
-      "是否提供了核实本人福利信息的下一步？"
+      "是否准确说明美国员工福利页的适用范围？",
+      "是否建议查看所在地的福利信息？",
+      "是否指出可向福利团队核实具体待遇？"
     ]
   },
   "credits": {
@@ -296,11 +304,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写是编写福利手册时的管理层与 HR 冲突，未帮助学习者说明员工福利细节；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

@@ -232,12 +232,12 @@
     "why": "区分固定环节和开放安排，帮助新同事知道活动的大致节奏。"
   },
   "output": {
-    "prompt": "一位新同事询问团队每周有哪些固定协作安排，哪些时间可以自行安排。请用英文说明周一产品同步会是固定的，其余时间由小组根据项目安排，并提醒他在哪里查看日历。",
-    "sample": "Our product sync is scheduled every Monday. The rest of the team’s collaboration time is arranged around project needs, so it can vary from week to week. You can check the shared team calendar for the latest schedule.",
+    "prompt": "跨部门同事想在公司聚会周安排一次产品复盘，担心日程已经排满。请用英文说明只有少数全员活动会提前排定，其余时间通常留给团队灵活安排，并邀请对方商量时间。",
+    "sample": "Monday’s All Hands is one of the sessions scheduled in advance. The rest of the week is more flexible, so let’s find a time that works for both teams.",
     "check": [
-      "是否说清每周一固定的产品同步会？",
-      "是否说明其他协作时间会随项目安排变化？",
-      "是否告诉新人去哪里查看最新安排？"
+      "是否说明少数固定环节会提前安排？",
+      "是否说明其余时间较灵活？",
+      "是否提出结合团队日程商量具体时间？"
     ]
   },
   "credits": {
@@ -249,11 +249,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收",
       "听写讲虚构的团队活动预算分歧，与本期公司聚会和 All Hands 的固定安排无关；需同步修复音频与文本。"
-    ]
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

@@ -112,8 +112,8 @@
   },
   "firstAttempt": {
     "prompt": "评审者说你的项目时间表“完全不合理”，并质疑你是否核对过依赖事项。你确实漏了审批步骤。请用两句英文承认遗漏，并说明你已经做了什么。",
-    "sample": "You're right that I missed the approval step. I've added it to the timeline and let the project lead know.",
-    "rationale": "先确认具体遗漏，再说已经补进时间表并通知了项目负责人。"
+    "sample": "You're right that I missed the approval step. I've added it and updated the timeline.",
+    "rationale": "第一句确认具体遗漏，第二句说明已采取的修改；不必回应对方的语气。"
   },
   "words": [
     {
@@ -194,9 +194,9 @@
   },
   "rewrite": {
     "bad": "You’re just trying to make me look bad. I’m not changing anything.",
-    "good": "You're right that I missed the approval step. I've added it to the timeline and let the project lead know.",
-    "translation": "你说得对，我确实漏了审批步骤。我已把它补进时间表，也通知了项目负责人。",
-    "pattern": "You’re right that [specific issue]. I’ve [made the correction] and let [person] know."
+    "good": "You’re right that I missed the approval step. I’ve added it and updated the timeline.",
+    "translation": "你说得对，我确实漏了审批步骤。我已经补上并更新了时间表。",
+    "pattern": "You’re right that I missed [the specific issue]. I’ve [made the correction] and [updated the related work]."
   },
   "cloze": [
     {
@@ -258,12 +258,12 @@
     "why": "直接确认可核实的遗漏和修改动作，不回应刺耳的语气。"
   },
   "output": {
-    "prompt": "同事指出你的客户演示稿没有说明数据来源。你检查后发现确实漏了。请用英文承认问题、说明会怎样补充，并告知项目负责人。",
-    "sample": "You're right that I left out the data source. I'll add it to the slide and let the project lead know once it's updated.",
+    "prompt": "同事指出你的客户演示稿没有说明数据来源。你检查后发现确实漏了。请用英文承认问题，并说明你会怎样补上。",
+    "sample": "You're right that I left out the data source. I'll add it to the slide and update the speaker notes.",
     "check": [
       "是否承认了具体遗漏？",
-      "是否说清楚要补充什么？",
-      "是否说明会把更新告知项目负责人？"
+      "是否给出明确的修正动作？",
+      "是否聚焦工作内容，而非评价对方？"
     ]
   },
   "credits": {
@@ -275,8 +275,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频逐条核对",
-      "页面与练习交互人工验收"
+      "音频逐条核对"
     ],
     "rubricVersion": "1.1",
     "scores": {

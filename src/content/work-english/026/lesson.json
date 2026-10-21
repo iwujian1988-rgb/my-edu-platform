@@ -350,12 +350,12 @@
     "why": "这句话先安排普通进展的共享位置，再约定紧急标准，正好回应跨时区协作中的即时回复压力。"
   },
   "output": {
-    "prompt": "客服团队需要约定非工作时间的升级规则。请用英文建议把普通问题放在共享工单里异步跟进，并共同定义哪些情况需要即时联系。",
-    "sample": "Could we post routine requests in the shared support queue and agree on what counts as urgent? That way, everyone knows when an immediate response is actually needed.",
+    "prompt": "产品团队希望改善下班后的通知规则。请用英文建议把普通版本进展发到项目频道，只在影响客户的紧急故障时直接联系值班同事，并说明这样做的好处。",
+    "sample": "Could we keep routine release updates in the project channel and call the on-call teammate only for customer-impacting incidents? That would make it easier for everyone else to disconnect after work.",
     "check": [
-      "是否为普通进度更新提出异步渠道？",
-      "是否建议明确紧急情况的边界？",
-      "是否说明约定可以减少对即时回复的猜测？"
+      "是否把普通消息和紧急事件分开处理？",
+      "是否明确何时需要直接联系？",
+      "是否说明边界如何保护非值班同事的下班时间？"
     ]
   },
   "credits": {
@@ -367,10 +367,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文/译文逐条复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "optionalWords": [
     {

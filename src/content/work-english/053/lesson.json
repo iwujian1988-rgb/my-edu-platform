@@ -109,9 +109,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "请用英文写两句，概括 Meta 2022 年员工信中的裁员规模，并表达 CEO 对决策承担责任。",
-    "sample": "Meta announced a workforce reduction of about 13%, affecting more than 11,000 employees. Mark Zuckerberg said he took accountability for the decisions and for how the company got there.",
-    "rationale": "聚焦题目要求的规模和责任表述；判断失误可作为选读延伸。"
+    "prompt": "请用英文概括 Zuckerberg 在 Meta 2022 年员工信中承认的判断失误，以及他如何承担责任并回应受影响员工。",
+    "sample": "He expected the surge in online commerce to continue, but it didn’t. He said, “I got this wrong,” took responsibility for that decision, and apologized to the employees affected.",
+    "rationale": "先说清他当时的判断和实际结果，再看他如何承认错误、承担责任并回应受影响的人。"
   },
   "words": [
     {
@@ -191,75 +191,83 @@
     "transfer": "I expected the pilot to reduce support time, but the results were mixed. I should have checked with the team before expanding it."
   },
   "rewrite": {
-    "bad": "The company announced cuts but did not explain their scale or the leadership’s role in the decision.",
-    "good": "Meta announced a workforce reduction of about 13%, affecting more than 11,000 employees. Mark Zuckerberg said he took accountability for the decisions and for how the company got there.",
-    "translation": "Meta 宣布裁员约 13%，影响 11,000 多名员工。Mark Zuckerberg 表示，他为这些决定以及公司走到这一步承担责任。",
-    "pattern": "[Company] announced a workforce reduction of about [percentage], affecting [number] employees. [Leader] said [he/she/they] took accountability for [the decisions and outcome]."
+    "bad": "The market changed. The project did not work, so we will move on.",
+    "good": "We expected the new support tool to reduce response times, but it didn’t. I got this wrong, and I take responsibility for that decision. I’m sorry to the teams affected by the change.",
+    "translation": "我们原以为新客服工具能缩短回复时间，但实际并没有。我判断失误，愿意为这个决定承担责任。对于受到影响的团队，我表示歉意。",
+    "pattern": "We expected [result], but it didn’t happen. I got this wrong, and I take responsibility for [decision]. I’m sorry to [people affected]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Meta announced a workforce reduction of about ___%.",
-      "answer": "13",
-      "why": "用 about 13% 准确概括原信中的裁员比例。"
+      "prompt": "We expected online sales to keep growing, but they ___ to previous levels.",
+      "answer": "returned",
+      "why": "用实际结果说明原先预期没有实现。"
     },
     {
       "id": "c2",
-      "prompt": "The reduction affected more than 11,000 ___.",
-      "answer": "employees",
-      "why": "employees 指此次裁员影响的员工。"
+      "prompt": "I got this wrong, and I take ___ for that decision.",
+      "answer": "responsibility",
+      "why": "take responsibility for 表示为判断或决定承担责任。"
     },
     {
       "id": "c3",
-      "prompt": "Zuckerberg said he took accountability ___ the decisions.",
-      "answer": "for",
-      "why": "take accountability for 表示为决定承担责任。"
+      "prompt": "I’m sorry to the teams ___ by the change.",
+      "answer": "affected",
+      "why": "affected by the change 指受到调整影响的团队。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a department manager, needs to inform her team about reducing the team size by 15% due to unexpected market downturn in 2022."
+      "text": "Sarah, a department manager, needs to inform her team about reducing the team size by 15% due to unexpected market downturn in 2022.",
+      "label": "听写 1 · 模拟团队缩编沟通",
+      "why": "15% 和市场下行属于模拟场景；扎克伯格 2022 年员工信写的是约 13%、超过 11,000 人。"
     },
     {
       "id": "d2",
-      "text": "She faces the challenge of balancing transparency with maintaining team morale while adhering to company policy about not sharing financial details prematurely."
+      "text": "She faces the challenge of balancing transparency with maintaining team morale while adhering to company policy about not sharing financial details prematurely.",
+      "label": "听写 2 · 透明沟通与信息边界",
+      "why": "这段为模拟情境。原文重点是约 13%、超过 11,000 人，以及 CEO 承担决策责任。",
+      "apply": {
+        "prompt": "概括 Meta 2022 年员工信中的裁员规模，并说明 CEO 如何承担责任。",
+        "sample": "Meta planned to reduce its workforce by about 13%, affecting more than 11,000 employees. Mark Zuckerberg took accountability for the decisions."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "Meta 宣布裁员约 13%。",
-      "answer": "Meta announced a workforce reduction of about 13%.",
+      "prompt": "我们原以为线上销售会继续增长，但它回到了之前的水平。",
+      "answer": "We expected online sales to keep growing, but they returned to previous levels.",
       "why": ""
     },
     {
-      "prompt": "此次裁员影响了 11,000 多名员工。",
-      "answer": "The reduction affected more than 11,000 employees.",
+      "prompt": "我对发布预测判断错了，我愿意为这个决定承担责任。",
+      "answer": "I got the launch forecast wrong, and I take responsibility for that decision.",
       "why": ""
     },
     {
-      "prompt": "Zuckerberg 表示，他为这些决定以及公司走到这一步承担责任。",
-      "answer": "Zuckerberg said he took accountability for the decisions and for how the company got there.",
+      "prompt": "我对受到这项调整影响的团队表示歉意。",
+      "answer": "I’m sorry to the teams affected by the change.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "请用英文写两句，概括 Meta 2022 年员工信中的裁员规模，并表达 CEO 对决策承担责任。",
+    "prompt": "（情景练习）一项产品投入没有达到原先预期，团队也受到决定影响。请选择一段能说明预期与结果、承认判断失误并回应受影响同事的话。",
     "options": [
-      "Meta announced a reduction of about 13%, affecting more than 11,000 employees; Zuckerberg said he took accountability.",
-      "Meta announced a workforce reduction of about 13%, affecting more than 11,000 employees. Mark Zuckerberg said he took accountability for the decisions and for how the company got there.",
-      "Meta announced about 1,100 role reductions and said the decision was made by outside regulators."
+      "The market changed, so there was nothing we could do. Let’s move on.",
+      "We expected the pilot to reduce response times, but it didn’t. I got this wrong, and I take responsibility for that decision. I’m sorry to the teams affected by the change.",
+      "The pilot did not work. The team should have handled it better."
     ],
     "correct": 1,
-    "why": "聚焦题目要求的规模和责任表述；判断失误可作为选读延伸。"
+    "why": "把预期、实际结果、负责人态度和对受影响团队的回应说清楚。"
   },
   "output": {
-    "prompt": "同事认为 Meta 2022 年裁员完全是市场造成的。请用英文说明 CEO 在员工信中还承认了什么判断失误，并概括他对决策的态度。",
-    "sample": "Zuckerberg said he had expected the pandemic-driven growth in online commerce to continue, but it did not. He took accountability for the decisions and for how the company got there.",
+    "prompt": "（情景练习）团队原以为新客服工具能缩短回复时间，但试点数据显示并没有改善。请用英文向团队说明预期与结果，承认判断失误，并向受影响的人表达歉意。",
+    "sample": "We expected the new support tool to reduce response times, but it didn’t. I got this wrong, and I take responsibility for that decision. I’m sorry to the teams affected by the change.",
     "check": [
-      "是否准确说明 CEO 对增长预期的判断失误？",
-      "是否写出他承担责任的表态？",
-      "是否避免把原因简化成单一外部因素？"
+      "是否说出原先的预期和实际结果？",
+      "是否承认判断失误并承担责任？",
+      "是否回应受到影响的同事？"
     ]
   },
   "credits": {
@@ -271,36 +279,45 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写写成裁员 15%，与原文约 13%、11,000 多人的信息冲突；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "reduce the workforce by about 13%",
-      "meaning": "准确说明裁员比例",
-      "collocation": "reduce the workforce by + percentage",
-      "example": "Meta announced a workforce reduction of about 13%.",
-      "translation": "Meta 宣布裁员约 13%。"
+      "word": "We expected…to continue, but it didn’t.",
+      "meaning": "说明原先的预期与实际结果不同",
+      "collocation": "expect + trend + to continue, but…",
+      "example": "We expected online sales to keep growing, but they returned to previous levels.",
+      "translation": "我们原以为线上销售会继续增长，但它回到了之前的水平。"
     },
     {
       "id": "work-02",
-      "word": "affect more than 11,000 employees",
-      "meaning": "说明裁员影响人数",
-      "collocation": "affect + number of people",
-      "example": "The reduction affected more than 11,000 employees.",
-      "translation": "此次裁员影响了 11,000 多名员工。"
+      "word": "I got this wrong, and I take responsibility for that.",
+      "meaning": "承认判断失误并承担责任",
+      "collocation": "take responsibility for + decision / mistake",
+      "example": "I got the launch forecast wrong, and I take responsibility for that decision.",
+      "translation": "我对发布预测判断错了，我愿意为这个决定承担责任。"
     },
     {
       "id": "work-03",
-      "word": "take accountability for the decisions",
-      "meaning": "说明负责人为决策承担责任",
-      "collocation": "take accountability for + decision / outcome",
-      "example": "Zuckerberg said he took accountability for the decisions and for how the company got there.",
-      "translation": "Zuckerberg 表示，他为这些决定以及公司走到这一步承担责任。"
+      "word": "I’m sorry to those affected.",
+      "meaning": "向受到决定影响的人表达歉意",
+      "collocation": "be sorry to + people affected",
+      "example": "I’m sorry to the teams affected by the change.",
+      "translation": "我对受到这项调整影响的团队表示歉意。"
     }
   ]
 }

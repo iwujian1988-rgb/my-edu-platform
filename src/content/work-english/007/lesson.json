@@ -97,22 +97,22 @@
     }
   ],
   "scenario": {
-    "title": "Set priorities and support a teammate",
+    "title": "Balancing delivery and team development",
     "english": [
-      "Alex needs to complete a client report by Friday while Sarah is preparing for a product launch on the same day.",
-      "Both tasks require immediate attention, but Alex’s report has higher priority because it affects client relationships.",
-      "Alex explains why the report comes first and offers to help Sarah with launch preparation once the report is complete."
+      "A newly promoted manager asks how to balance delivery with supporting the team.",
+      "You explain that the manager role includes delivering results, developing people, and building community. You suggest agreeing on the quarter’s priorities and using regular one-to-ones to discuss each person’s growth.",
+      "The manager leaves with a practical way to connect team goals with individual development."
     ],
     "chinese": [
-      "Alex 必须在周五前完成客户报告；Sarah 也要在同一天为产品发布做准备。",
-      "两项任务都很紧急，但客户报告会影响客户关系，因此优先级更高。",
-      "Alex 说明报告为什么要先完成，并提出报告完成后帮 Sarah 准备发布活动。"
+      "一位刚晋升的经理问，怎样兼顾交付结果和支持团队。",
+      "你解释，经理的职责包括交付结果、培养员工和建设团队。你建议先对齐本季度重点，再通过定期一对一讨论每个人的发展。",
+      "经理由此找到一种把团队目标与个人成长结合起来的做法。"
     ]
   },
   "firstAttempt": {
-    "prompt": "客户报告和产品发布准备都赶在周五。请用英文说明为什么要先完成客户报告，并提出之后帮助 Sarah 准备发布活动。",
-    "sample": "The client report takes priority because it affects our relationship with the client. I can help Sarah with the launch preparation once I’ve finished the report.",
-    "rationale": "先说明工作的优先级和原因，再给出明确的支持安排。"
+    "prompt": "新任经理问，怎样兼顾团队交付和员工发展。请用两句英文说明经理的三项职责，并提出一个可执行的做法。",
+    "sample": "A manager is responsible for delivering results, developing people, and building community. Could we agree on this quarter’s priorities and use our one-to-ones to discuss each person’s growth?",
+    "rationale": "先说清经理职责的三个方面，再把它落实到团队重点和一对一沟通。"
   },
   "words": [
     {
@@ -192,75 +192,83 @@
     "transfer": "Good project planning centers on clarifying priorities, setting milestones, and helping the team stay focused during changes."
   },
   "rewrite": {
-    "bad": "The report matters more. Sarah can handle the launch by herself.",
-    "good": "The client report takes priority because it affects our relationship with the client. I can help Sarah with the launch preparation once I’ve finished the report.",
-    "translation": "客户报告要优先完成，因为它会影响我们和客户的关系。报告完成后，我可以帮 Sarah 准备发布活动。",
-    "pattern": "[Task A] takes priority because [reason]. I can help [person] with [Task B] once [condition]."
+    "bad": "Let’s focus only on this quarter’s numbers. We can think about the team later.",
+    "good": "Could we agree on this quarter’s priorities and use our one-to-ones to discuss each person’s growth? That would help us deliver results while developing the team.",
+    "translation": "我们能否先对齐本季度的重点，再利用一对一讨论每个人的发展？这样既能交付结果，也能培养团队。",
+    "pattern": "Could we [agree on the team goal] and use [regular check-ins] to [support people’s growth]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "The client report takes ___ because it affects our relationship with the client.",
-      "answer": "priority",
-      "why": "take priority 表示优先处理。"
+      "prompt": "A manager is responsible for delivering results and ___ people.",
+      "answer": "developing",
+      "why": "develop people 指帮助团队成员提升能力、获得成长。"
     },
     {
       "id": "c2",
-      "prompt": "A late report could ___ our relationship with the client.",
-      "answer": "affect",
-      "why": "affect 表示对关系或结果产生影响。"
+      "prompt": "Could we agree on this quarter’s ___?",
+      "answer": "priorities",
+      "why": "先明确当前阶段最重要的工作。"
     },
     {
       "id": "c3",
-      "prompt": "I can help Sarah with the launch preparation ___ I’ve finished the report.",
-      "answer": "once",
-      "why": "once 在这里表示“等……之后”。"
+      "prompt": "Let’s use our one-to-ones to discuss each person’s ___.",
+      "answer": "growth",
+      "why": "把员工发展落实到定期的一对一沟通。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex needs to complete a client report by Friday while Sarah is preparing for a product launch on the same day."
+      "text": "Alex needs to complete a client report by Friday while Sarah is preparing for a product launch on the same day.",
+      "label": "听写 1 · 两项工作都赶在周五",
+      "why": "while 连接同时进行的任务。听出谁负责报告、谁准备产品发布。"
     },
     {
       "id": "d2",
-      "text": "Both tasks require immediate attention, but Alex’s report has higher priority as it affects client relationships."
+      "text": "Both tasks require immediate attention, but Alex’s report has higher priority as it affects client relationships.",
+      "label": "听写 2 · 说明优先事项和原因",
+      "why": "higher priority as… 用原因解释先后顺序。可改说：The client report takes priority because it affects our relationship with the client.",
+      "apply": {
+        "prompt": "客户报告和产品发布都赶在周五。用 take priority because… 说明先做哪项，再说你何时能支持同事。",
+        "sample": "The client report takes priority because it affects our relationship with the client. I can help Sarah once I’ve finished it."
+      }
     }
   ],
   "translationPractice": [
     {
-      "prompt": "客户报告要优先完成，因为它会影响我们和客户的关系。",
-      "answer": "The client report takes priority because it affects our relationship with the client.",
+      "prompt": "经理既要交付成果，也要培养员工。",
+      "answer": "A manager is responsible for delivering results and developing people.",
       "why": ""
     },
     {
-      "prompt": "报告完成后，我可以帮 Sarah 准备发布活动。",
-      "answer": "I can help Sarah with the launch preparation once I’ve finished the report.",
-      "why": "once 引出提供帮助的时间条件。"
+      "prompt": "我们能否先对齐本季度的优先事项？",
+      "answer": "Could we agree on this quarter’s priorities?",
+      "why": ""
     },
     {
-      "prompt": "报告延迟可能会影响我们和客户的关系。",
-      "answer": "A late report could affect our relationship with the client.",
-      "why": "could 表示一种可能的影响。"
+      "prompt": "我们可以通过一对一沟通讨论每个人的成长。",
+      "answer": "Let’s use our one-to-ones to discuss each person’s growth.",
+      "why": ""
     }
   ],
   "choice": {
-    "prompt": "客户报告和产品发布准备都赶在周五。请说明先后顺序和原因，并提出如何支持 Sarah。",
+    "prompt": "你刚接手一支团队，需要兼顾季度目标和成员成长。请选择一条能说明经理职责并提出具体做法的表达。",
     "options": [
-      "The client report takes priority because it affects our relationship with the client. I can help Sarah with the launch preparation once I’ve finished the report.",
-      "Both tasks are urgent, so there is no point deciding what to do first.",
-      "Sarah should finish the report, and I will work on whatever is easiest."
+      "A manager is responsible for delivering results, developing people, and building community. Could we agree on this quarter’s priorities and use our one-to-ones to discuss each person’s growth?",
+      "Managers should focus only on delivery and discuss development later if there is time.",
+      "Each person should decide their goals without discussing them with the manager."
     ],
     "correct": 0,
-    "why": "说明优先级及其业务原因，再给出具体的协助时间。"
+    "why": "先明确交付与培养并重，再把目标落实到季度重点和一对一沟通。"
   },
   "output": {
-    "prompt": "本周客户续约方案和新员工入职培训都需要你处理。请用英文说明哪件事要先完成、为什么，并提出之后如何帮助同事。",
-    "sample": "The renewal proposal takes priority because the client needs it before Friday. I can help with the onboarding session once I’ve sent it.",
+    "prompt": "你刚接手一支合作不顺的团队，大家对本季度重点理解不一，例会也只汇报进度。请用两句英文说明经理的职责，并提出能同时推进目标和团队合作的做法。",
+    "sample": "A manager needs to deliver results, develop people, and build community. Could we agree on the quarter’s priorities and use part of our team meeting to share how we can support one another?",
     "check": [
-      "是否说清哪项工作先做？",
-      "是否给出具体原因？",
-      "是否说明之后怎样提供帮助？"
+      "是否准确说出经理的三项职责？",
+      "是否提出明确的团队做法？",
+      "做法是否同时服务于目标推进和团队合作？"
     ]
   },
   "credits": {
@@ -272,36 +280,46 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写文本与本课管理职责主题无关；需在允许同步更新音频时修复"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2,
+      "audio": 0
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "take priority because…",
-      "meaning": "说明某项工作为什么要优先处理",
-      "collocation": "[task] takes priority because + 原因",
-      "example": "The client report takes priority because it affects our relationship with the client.",
-      "translation": "客户报告要优先完成，因为它会影响我们和客户的关系。"
+      "word": "deliver results and develop people",
+      "meaning": "经理既要推进团队目标，也要帮助成员成长",
+      "collocation": "deliver + results / develop + people",
+      "example": "A manager is responsible for delivering results and developing people.",
+      "translation": "经理既要交付成果，也要培养员工。"
     },
     {
       "id": "work-02",
-      "word": "affect our relationship with…",
-      "meaning": "说明某件事会影响与谁的关系",
-      "collocation": "affect + relationship with + 人/团队",
-      "example": "A late report could affect our relationship with the client.",
-      "translation": "报告延迟可能会影响我们和客户的关系。"
+      "word": "agree on this quarter’s priorities",
+      "meaning": "和团队明确本季度最重要的工作",
+      "collocation": "agree on + priorities / goals",
+      "example": "Could we agree on this quarter’s priorities?",
+      "translation": "我们能否先对齐本季度的优先事项？"
     },
     {
       "id": "work-03",
-      "word": "I can help… once…",
-      "meaning": "说明自己何时能提供帮助",
-      "collocation": "I can help + 人 + once + 完成条件",
-      "example": "I can help Sarah with the launch preparation once I’ve finished the report.",
-      "translation": "报告完成后，我可以帮 Sarah 准备发布活动。"
+      "word": "use one-to-ones to discuss each person’s growth",
+      "meaning": "通过一对一沟通了解成员的发展",
+      "collocation": "use + meeting + to + verb",
+      "example": "Let’s use our one-to-ones to discuss each person’s growth.",
+      "translation": "我们可以通过一对一沟通讨论每个人的成长。"
     }
   ]
 }

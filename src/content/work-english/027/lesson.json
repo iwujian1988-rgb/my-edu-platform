@@ -34,8 +34,8 @@
       "ISE团队在每个客户合作中与一个新的开发团队一起工作，这需要在开始合作前有一个介绍和知识转移的阶段。",
       "完成破冰活动并讨论团队标准需要时间，但这有助于新团队逐步上手。",
       "团队宣言是一份由团队成员共同使用的一页轻量级敏捷文档，总结团队的基本原则和价值观，并帮助大家就每位成员的技术职责达成共识，从而在每次客户合作结束时交付高质量成果。",
-      "撰写宣言的目的之一，是通过“宣言共创会议”展开讨论，发现团队对工作方式的不同看法。它也能帮助新成员快速了解团队已经达成一致的标准。",
-      "撰写宣言的另一个主要目标是在'宣言构建会议'期间开始对话，以发现团队工作方式方面的任何意见分歧。",
+      "它旨在减少团队对齐工作预期所需的时间，避免安排冗长的“团队文档阅读”会议；同时围绕“新团队如何开发软件？”这一问题帮助成员达成共识，内容涵盖发布流程、整洁编码和测试等工程实践。",
+      "撰写宣言的另一个主要目标，是在“宣言共创会议”中开启对话，发现团队成员对工作方式的不同看法。",
       "当新成员加入团队时，这份宣言也能发挥同样的作用。新人可以迅速了解团队约定的标准。"
     ],
     "fullTextParagraphs": [
@@ -102,9 +102,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "产品团队对上线前的测试范围和发布沟通方式各有理解。请用英文建议在项目开始时一起写下共同约定，并说明可以在合作中更新。",
-    "sample": "Could we write down our testing and release expectations together before the project gets underway? We can revisit the agreement as we learn what the team needs.",
-    "rationale": "团队共同写下具体工作约定，并在合作中根据新经验回看和调整。"
+    "prompt": "新项目团队对发布、测试和代码规范的理解不一致。请用英文建议在开发开始前共同写一页团队约定，并邀请成员补充。",
+    "sample": "Could we create a one-page team manifesto together before development starts? We can agree on release, testing, and coding expectations, then update it as the team learns.",
+    "rationale": "团队约定应由团队共同建立，把具体工作标准放在一页内，后续也能根据合作情况调整。"
   },
   "words": [
     {
@@ -212,11 +212,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "The marketing team needs to create a team manifesto during the introduction phase of a new product launch project."
+      "text": "The marketing team needs to create a team manifesto during the introduction phase of a new product launch project.",
+      "label": "听写 1 · 项目启动时共同写什么",
+      "why": "manifesto 指团队共同遵守的工作约定。"
     },
     {
       "id": "d2",
-      "text": "Different team members have varying priorities: some focus on speed, others on quality, and some on budget constraints."
+      "text": "Different team members have varying priorities: some focus on speed, others on quality, and some on budget constraints.",
+      "label": "听写 2 · 成员对速度、质量和预算的不同关注",
+      "why": "听出三种优先事项。团队约定可以把发布和测试标准提前说清。",
+      "apply": {
+        "prompt": "项目即将启动，成员对测试和发布标准理解不同。邀请大家先写一份共同约定。",
+        "sample": "Could we write down our testing and release expectations before the project gets underway? We can revisit the agreement as we learn."
+      }
     }
   ],
   "translationPractice": [
@@ -247,8 +255,8 @@
     "why": "答案说明共同约定的内容，也明确邀请团队成员补充。"
   },
   "output": {
-    "prompt": "新产品发布前，支持团队担心升级后客户问题由谁跟进，工程团队也不确定多久同步一次。请用英文建议在发布前写下交接和升级约定，并在首周后根据实际情况更新。",
-    "sample": "Could we write down our handoff and escalation expectations before the launch? We can revisit the agreement after the first week and update it based on what the teams need.",
+    "prompt": "产品团队对上线前的测试范围和发布沟通方式各有理解。请用英文建议在项目开始时一起写下共同约定，并说明可以在合作中更新。",
+    "sample": "Could we write down our testing and release expectations together before the project gets underway? We can revisit the agreement as we learn what the team needs.",
     "check": [
       "是否提出团队共同制定约定？",
       "是否举出具体的工作规范？",
@@ -264,10 +272,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

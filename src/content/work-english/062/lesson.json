@@ -138,9 +138,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "新同事加入团队，大家想互相了解工作习惯和沟通偏好。请用英文写一段简短的个人工作说明，介绍适合自己的工作方式和反馈偏好，并邀请同事告诉你怎样配合更好。",
-    "sample": "I do my best work when I have time to focus before a discussion. I prefer to receive feedback in writing before our one-on-one. Please let me know if a different format would work better for you.",
-    "rationale": "用具体偏好帮助同事了解如何与你合作，并邀请他们提出自己的需要。"
+    "prompt": "新团队成员希望大家了解彼此的协作方式。请用英文建议每个人填写一份简短的工作使用说明书，介绍工作习惯和沟通偏好，并放到团队共享空间。",
+    "sample": "Could each of us create a short work user manual with our working style and communication preferences? We can save them in the team space so people can refer to them when collaborating.",
+    "rationale": "工作使用说明书的价值是分享个人协作偏好，并让团队之后能随时查阅。"
   },
   "words": [
     {
@@ -283,12 +283,12 @@
     "why": "工作使用说明书的价值是分享个人协作偏好，并让团队之后能随时查阅。"
   },
   "output": {
-    "prompt": "你将和一位新项目搭档合作一个月。请用英文说明你通常怎样接收任务、遇到不确定时会怎么做，并邀请对方提出自己的合作偏好。",
-    "sample": "I work best when a task includes a clear outcome, deadline, and owner. If something is unclear, I’ll ask early rather than make assumptions. How do you prefer to share updates and questions?",
+    "prompt": "一位新同事加入跨部门项目，大家还不知道彼此适合怎样沟通。请用英文邀请他写几句工作偏好，例如专注时间、反馈方式或联系渠道，并说明会放在哪里供团队查看。",
+    "sample": "Would you add a few notes about how you prefer to work, such as when you like to focus or how you prefer to receive feedback? We can keep the team manuals in our shared space so everyone can refer to them.",
     "check": [
-      "是否说明你需要怎样的任务信息？",
-      "是否说明遇到不确定时会怎么做？",
-      "是否询问对方的协作偏好？"
+      "是否邀请对方分享工作偏好？",
+      "是否给出与合作有关的例子？",
+      "是否说明信息放在团队可查阅的位置？"
     ]
   },
   "credits": {
@@ -300,10 +300,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

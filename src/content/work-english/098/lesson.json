@@ -254,12 +254,12 @@
     "why": "先核对潜在利益冲突和现行政策；不确定时再向合适联系人确认。"
   },
   "output": {
-    "prompt": "同事受邀为一家潜在供应商做有偿咨询，不确定这是否会影响公司的采购决策。请用英文建议他先披露潜在冲突、查看现行政策，并在接受前向合适团队确认。",
-    "sample": "Please disclose the potential conflict before accepting the consulting work. Check the current outside-work policy, and contact People Operations or the procurement lead if you’re unsure whether it could affect a company decision.",
+    "prompt": "同事受邀在行业活动上做一次有偿演讲，担心这会和本职工作冲突。请用英文说明应结合具体情况检查，并建议拿不准时向经理确认。",
+    "sample": "A speaking engagement may be fine, but we should check whether it creates a conflict of interest or affects your work responsibilities. If the situation is unclear, discuss it with your manager before accepting.",
     "check": [
-      "是否避免把外部工作说成一概禁止或一概允许？",
-      "是否提出检查利益冲突和当前政策？",
-      "是否说明不确定时向谁咨询？"
+      "是否避免把副业边界说成一概禁止或一概允许？",
+      "是否指出利益冲突和工作职责等条件？",
+      "是否提出遇到不确定情况时的核实方式？"
     ]
   },
   "credits": {
@@ -271,10 +271,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

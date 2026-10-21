@@ -175,9 +175,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你和同事已经对齐项目范围，但之后范围又发生了变化，测试团队因此没有稳定计划。请用英文邀请对方直接沟通，说明具体影响，并约定以后如何处理确认后的变更。",
-    "sample": "I’d like to talk about the scope change after we had agreed on it. It left the testing team without a stable plan. Could we agree on how to review changes after sign-off before adding them to scope?",
-    "rationale": "说明已确认的范围发生变化及其对测试的影响，再共同约定确认后的变更流程。"
+    "prompt": "你和同事已经确认项目范围，但昨天评审后又加入了新改动，测试团队因此无法按原计划准备。请用英文邀请对方直接沟通，说明影响并提出后续处理办法。",
+    "sample": "Could we talk about yesterday’s scope change? It left the testing team without a stable plan. Could we review changes after sign-off before adding them to scope?",
+    "rationale": "用具体事件说明对工作的影响，再提出一个可以共同执行的处理办法。"
   },
   "words": [
     {
@@ -257,10 +257,10 @@
     "transfer": "I see the deadline differently because of the data review. Could we compare the risks and agree what can be ready by Wednesday?"
   },
   "rewrite": {
-    "bad": "You changed the scope again after we agreed. This is your fault.",
-    "good": "I’d like to talk about the scope change after we had agreed on it. It left the testing team without a stable plan. Could we agree on how to review changes after sign-off before adding them to scope?",
-    "translation": "我想谈谈已经对齐范围后又发生变更的问题。这让测试团队没有稳定计划。我们能否约定，确认范围后先评估变更，再决定是否纳入？",
-    "pattern": "I’d like to talk about [the scope change]. It affected [the work]. Could we agree on how to review changes after [sign-off] before adding them to scope?"
+    "bad": "Everyone says your approach is wrong. Just use my plan and we can stop discussing it.",
+    "good": "Could we talk directly about the disagreement on the project approach? I’d like to compare the specific concerns and work out a solution with you.",
+    "translation": "我们能否直接谈谈项目做法上的分歧？我想把具体顾虑摆出来，和你一起找到解决办法。",
+    "pattern": "Could we talk directly about [the disagreement] and compare [specific concerns]?"
   },
   "cloze": [
     {
@@ -285,11 +285,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Tom are working on a joint marketing report."
+      "text": "Sarah and Tom are working on a joint marketing report.",
+      "label": "听写 1 · 两人共同负责的报告",
+      "why": "先听清双方的共同任务，再指出具体分歧。"
     },
     {
       "id": "d2",
-      "text": "Sarah needs the data analysis section by Wednesday to complete her part, while Tom believes he needs until Friday to ensure accuracy."
+      "text": "Sarah needs the data analysis section by Wednesday to complete her part, while Tom believes he needs until Friday to ensure accuracy.",
+      "label": "听写 2 · 交付日期与准确性的分歧",
+      "why": "一方要周三数据，另一方需要更多时间核对；可以描述影响并邀请对方一起找方案。",
+      "apply": {
+        "prompt": "同事间的分歧开始影响合作。邀请对方直接沟通，并约定怎样处理已确认后的新增改动。",
+        "sample": "Could we talk directly about the changes added after sign-off? I’ll explain how they affect testing, and we can agree on a review step before adding more to scope."
+      }
     }
   ],
   "translationPractice": [
@@ -310,22 +318,22 @@
     }
   ],
   "choice": {
-    "prompt": "你和同事对项目做法有分歧，私下抱怨已经影响合作。请用英文邀请对方直接沟通，描述具体问题，并一起讨论解决办法。",
+    "prompt": "昨天评审中，已确认的范围又增加了改动，测试团队因此无法按原计划准备。请选择能说明具体事件、影响并提出共同做法的表达。",
     "options": [
       "You have to finish the data analysis by Wednesday. The deadline is Thursday and I can't wait any longer.",
-      "Could we talk about the design handoff? In yesterday’s review, the files were not ready, so the team had to postpone its feedback. Could we agree on an owner and a deadline for sharing the next draft?",
+      "Could we talk about yesterday’s scope change? It left the testing team without a stable plan. Could we review changes after sign-off before adding them to scope?",
       "Could we talk directly about the disagreement on the project approach?"
     ],
     "correct": 1,
     "why": "用昨天评审中的具体例子说明问题对工作造成的影响，再提出可共同执行的改进办法。"
   },
   "output": {
-    "prompt": "你和同事都需要同一位设计师支持各自的交付，双方因此都无法按原计划推进。请用英文邀请对方讨论，说明影响，并提出一起确认优先级和时间安排。",
-    "sample": "Could we talk about how we’re sharing design support? Both projects are now at risk because we planned around the same availability. Could we review the deadlines together and agree on priorities with the design lead before changing the scope?",
+    "prompt": "项目范围已经确认，客户随后提出新增一个结账字段，测试团队因此没有足够时间验证本次发布。请用英文邀请同事直接讨论，说明对工作的影响，并商量今后如何处理确认后的新增需求。",
+    "sample": "Could we talk about the new checkout field requested after sign-off? It leaves QA without enough time to test this release. Could we agree on how to review post-sign-off changes before adding them to scope?",
     "check": [
-      "是否邀请对方直接讨论资源冲突？",
-      "是否说明冲突对交付造成的影响？",
-      "是否提出与设计负责人共同确认优先级和时间？"
+      "是否点明确认后新增的具体改动？",
+      "是否说明它对测试工作的影响？",
+      "是否提出后续处理范围变更的办法？"
     ]
   },
   "credits": {
@@ -337,10 +345,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

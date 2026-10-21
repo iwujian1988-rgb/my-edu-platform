@@ -149,9 +149,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "新同事刚接到第一个客户支持任务。请用英文告诉他先熟悉客服队列和知识库，再观察一位同事处理普通退款，最后在入职伙伴协助下亲自处理一个案例。",
-    "sample": "Start with the support queue and the team knowledge base. Shadow a teammate while they process a standard refund. Then process one case with your onboarding partner nearby.",
-    "rationale": "先熟悉岗位系统，再观察和练习具体工作，让新人逐步上手。"
+    "prompt": "新同事刚接到第一个客服任务。请用英文建议他先熟悉岗位会用到的系统，观察同事完成一项日常工作，再在有人协助时自己尝试。",
+    "sample": "Start with the support queue and the team knowledge base. Shadow a teammate while they process a standard refund, then try one case with your onboarding partner nearby.",
+    "rationale": "先认识工具和资料，再观察实际流程，最后在有支持的情况下练习。"
   },
   "words": [
     {
@@ -226,10 +226,10 @@
     "transfer": "Start with the handbook page for your current task, then ask your onboarding buddy about anything that is still unclear."
   },
   "rewrite": {
-    "bad": "You have to figure out the refund process on your own. The guide is somewhere in the shared drive.",
-    "good": "I’ll show you where to find the support queue and refund guide. You can shadow Priya on one standard case, then handle your first refund with your onboarding partner nearby.",
-    "translation": "我带你看看客服队列和退款指南在哪里。你可以先跟着 Priya 处理一个普通案例，再在入职伙伴陪同下处理第一笔退款。",
-    "pattern": "I’ll show you where to find [tool/guide]. First, shadow [teammate] on [routine task], then try one with [support person] nearby."
+    "bad": "I do not have time to help. Look through the shared drive and figure it out.",
+    "good": "The team handbook is a good place to start. Try the pages related to your current project first, and message me if anything is unclear.",
+    "translation": "可以先从团队手册开始，优先看与你当前项目相关的页面。有不清楚的地方就发消息问我。",
+    "pattern": "Start with [the guide], review [the pages related to your task], and ask me if [anything is unclear]."
   },
   "cloze": [
     {
@@ -254,11 +254,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "As a new marketing associate, Alex is tasked with preparing a client presentation by Friday, but lacks familiarity with the company's presentation templates and approval process."
+      "text": "As a new marketing associate, Alex is tasked with preparing a client presentation by Friday, but lacks familiarity with the company's presentation templates and approval process.",
+      "label": "听写 1 · 新员工不熟悉的工作材料",
+      "why": "模板和审批流程是新人当前需要了解的资料。"
     },
     {
       "id": "d2",
-      "text": "The manager emphasizes the need to 'hit the ground running' while the team lead explains the strict three-day review cycle for all materials, creating time pressure."
+      "text": "The manager emphasizes the need to 'hit the ground running' while the team lead explains the strict three-day review cycle for all materials, creating time pressure.",
+      "label": "听写 2 · 尽快上手与审核周期的要求",
+      "why": "hit the ground running 表示尽快进入工作状态；新人也需要先了解审核流程和时间。",
+      "apply": {
+        "prompt": "新同事不知道从哪了解团队流程。介绍手册并建议从当前任务相关的页面开始。",
+        "sample": "Start with the handbook pages for the systems you need in this role. You can shadow a teammate on a routine task, then try it with someone nearby."
+      }
     }
   ],
   "translationPractice": [
@@ -289,12 +297,12 @@
     "why": "先了解岗位工具和资料，再观察日常任务，最后在有人支持时自己练习。"
   },
   "output": {
-    "prompt": "新同事要第一次主持客户演示。请用英文安排循序渐进的练习：先熟悉演示环境和产品流程，再旁听一场演示，最后在同事陪同下讲解一个部分。",
-    "sample": "Start by getting familiar with the demo environment and the product flow. Then sit in on a customer demo and note the questions that come up. For your first turn, walk through one section while a teammate is there to support you.",
+    "prompt": "新同事第一次处理换货申请，不熟悉操作流程。请用英文建议他先打开客服队列和知识库，观察同事完成一次换货，再在入职伙伴协助下自己处理一单。",
+    "sample": "Start with the support queue and the team knowledge base. Shadow a teammate while they process a replacement order, then handle one case with your onboarding partner nearby.",
     "check": [
-      "是否从岗位需要的系统开始？",
-      "是否先观察一项日常任务？",
-      "是否安排在有人支持时亲自尝试？"
+      "是否先指向岗位会用到的系统和资料？",
+      "是否安排新人先观察实际操作？",
+      "是否让他在有人协助时完成首次练习？"
     ]
   },
   "credits": {
@@ -306,10 +314,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

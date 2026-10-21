@@ -92,9 +92,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "新同事需要查看客户信息，但不确定自己是否有权限。请用英文建议先读相关系统指南，确认岗位访问要求；仍不清楚时先向系统负责人询问。",
-    "sample": "Please check the internal systems guide for the access requirements first. Confirm whether your role allows access before opening customer information. If it’s still unclear, ask the system owner.",
-    "rationale": "引导新人查阅指南、确认岗位权限，并在仍不清楚时向系统负责人核实。"
+    "prompt": "新同事不知道公司内部工具分别用于什么，也不确定自己的岗位能否查看客户资料。请用英文建议他先查内部系统指南，再确认访问权限；仍不清楚时询问系统负责人。",
+    "sample": "Start with the internal systems guide to see what each tool is for. Then confirm whether your role allows access to customer information. If it’s still unclear, ask the system owner.",
+    "rationale": "先看与工作相关的系统说明，再核实岗位权限；不确定时找负责该系统的人确认。"
   },
   "words": [
     {
@@ -174,10 +174,10 @@
     "transfer": "Before opening the payroll system, check the access requirements and ask the system owner whether your role needs approval."
   },
   "rewrite": {
-    "bad": "If the system opens, you must have access. Go ahead and look up the customer record.",
-    "good": "Please check the internal systems guide for the access requirements first. Confirm whether your role allows access before opening customer information. If it’s still unclear, ask the system owner.",
-    "translation": "请先查看内部系统指南中的访问要求。打开客户信息前，确认你的岗位是否有访问权限；如果仍不确定，请询问系统负责人。",
-    "pattern": "Check [the access guide] first. Confirm whether [your role] allows access before [opening information]. If it’s unclear, ask [the system owner]."
+    "bad": "Just open the accounting system and process the invoice; you do not need to check who owns it.",
+    "good": "The internal systems guide explains what each tool is used for. Start with the section related to your task, and check with your team if anything is unclear.",
+    "translation": "内部系统指南会说明每个工具的用途。先看与你任务相关的部分；不清楚时，向团队确认。",
+    "pattern": "Check [the systems guide] for [the tool related to your task], and ask [the relevant team] if unclear."
   },
   "cloze": [
     {
@@ -237,12 +237,12 @@
     "why": "先确认岗位访问要求，再查看客户信息；不确定时询问系统负责人。"
   },
   "output": {
-    "prompt": "一位同事需要查看客户反馈仪表盘，但不确定实习岗位是否有权限。请用英文建议他先查看访问指南、核对岗位要求；如果仍不确定，再联系系统负责人。",
-    "sample": "Please check the access guide for the customer feedback dashboard and confirm the requirements for your role first. If it’s still unclear whether interns can view the data, ask the system owner before requesting access.",
+    "prompt": "新同事需要查看客户信息，但不确定自己是否有权限。请用英文建议先查内部系统指南，确认岗位访问权限；仍不清楚时联系系统负责人。",
+    "sample": "Please check the internal systems guide for the access requirements first. Then confirm whether your role allows access. If it’s still unclear, ask the system owner before opening customer information.",
     "check": [
-      "是否引导对方查阅系统指南？",
-      "是否提醒先确认岗位权限？",
-      "是否说明不确定时向谁核实？"
+      "是否先查与任务相关的系统指南？",
+      "是否明确建议确认岗位权限？",
+      "是否指出拿不准时应询问系统负责人？"
     ]
   },
   "credits": {
@@ -254,10 +254,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

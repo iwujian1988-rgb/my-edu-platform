@@ -260,12 +260,12 @@
     "why": "先确定要培养什么，再试行、收集反馈，避免一开始就把项目铺得过大。"
   },
   "output": {
-    "prompt": "公司准备推出新的客户入门流程，但还不清楚用户在哪一步容易卡住。请用英文建议先选一小组客户试用，收集反馈并调整流程，再全面推出。",
-    "sample": "Could we pilot the new onboarding flow with a small group of customers first? We can use their feedback to fix the confusing steps before rolling it out more widely.",
+    "prompt": "公司准备更新新经理培训，但还不清楚哪些内容最有用。请用英文建议先小范围试行，收集反馈后再决定如何调整和推广。",
+    "sample": "Could we test the updated sessions with a small group of new managers first? We can use their feedback to improve the program before offering it more widely.",
     "check": [
-      "是否建议先让一小组客户试用？",
-      "是否说明会根据反馈调整流程？",
-      "是否表达了之后再扩大推出？"
+      "是否提出先小范围试行？",
+      "是否说明要根据反馈调整？",
+      "是否把扩大推广放在试行和改进之后？"
     ]
   },
   "credits": {
@@ -277,10 +277,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

@@ -313,12 +313,12 @@
     "why": "把结果写成可统计比例，再明确当前水平、目标和复查日期。"
   },
   "output": {
-    "prompt": "客服团队想缩短客户等待时间，但当前目标描述得太笼统。请用英文建议记录目前的平均等待时间，并共同确定目标时长和复查日期。",
-    "sample": "Could we track the average customer wait time? Let’s record the baseline and agree on a target and review date.",
+    "prompt": "团队希望减少新客户在设置账户时求助的次数，但目前的关键结果无法衡量。请用英文建议明确衡量指标，并同时记录当前基线和目标日期。",
+    "sample": "Could we track how many new customers complete setup without help? Let’s record the current baseline and set a target date so we can see whether the change is working.",
     "check": [
-      "是否提出一个可测量的指标？",
-      "是否提到记录当前基线？",
-      "是否共同确定目标和复查日期？"
+      "是否把目标改成可观察的结果？",
+      "是否提到当前基线和目标日期？",
+      "是否说明这些信息如何帮助判断进展？"
     ]
   },
   "credits": {
@@ -330,10 +330,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

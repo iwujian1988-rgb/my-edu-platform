@@ -92,9 +92,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "新同事第一天加入远程团队，不知道从哪里开始。请用英文建议他先看 Getting Started 指南，再设置岗位所需工具；如果不确定优先事项，可以找经理确认。",
-    "sample": "Start with the Getting Started guide, then set up the tools you need for your role. If you’re unsure what to tackle first, ask your manager to help set priorities.",
-    "rationale": "先看入门指南、配置岗位工具；不确定时请经理帮助排定优先级。"
+    "prompt": "新同事第一天加入远程团队，不知道应该先了解什么。请用英文建议他从“Getting Started”指南开始，先熟悉团队工作方式和当前项目，再安排后续任务。",
+    "sample": "Start with the Getting Started guide to understand how the team works. Then review the current project context, and we can choose your first task together.",
+    "rationale": "先了解工作方式和项目背景，再确定第一项任务，符合新员工指南的入职顺序。"
   },
   "words": [
     {
@@ -171,32 +171,32 @@
       "involves a lot of little details, a number of big tasks, learning the details of your new job, meeting new coworkers 是由并列结构组成的宾语，包含名词短语和动名词短语，列举了入职需要做的事情",
       "all while working remotely 是一个伴随状语从句，表示'同时远程工作'，其中working是现在分词短语"
     ],
-    "transfer": "Use the Getting Started guide to learn the team routines, then read the current project page before taking your first task."
+    "transfer": "After the team overview, read the latest project update. Then we’ll choose a starter issue that fits your role."
   },
   "rewrite": {
     "bad": "Start with the campaign analysis and review marketing policies before anyone explains the team’s work.",
-    "good": "Start with the Getting Started guide, then set up the tools you need for your role. If you’re unsure what to tackle first, ask your manager to help set priorities.",
-    "translation": "先看 Getting Started 指南，再设置岗位所需工具。如果不确定先做什么，请经理帮你确定优先事项。",
-    "pattern": "Start with [the guide], then set up [the role-specific tools]. If you’re unsure what to do first, ask [your manager] to help set priorities."
+    "good": "Start with the Getting Started guide to understand how the team works. Then review the current project context, and we can choose your first task together.",
+    "translation": "先读 Getting Started 指南，了解团队的工作方式；再查看当前项目背景，我们一起确定你的第一项任务。",
+    "pattern": "Start with [the onboarding guide], then review [the current context] before [choosing the next task]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Start with the ___ guide, then set up your work account.",
-      "answer": "getting-started",
-      "why": "用清楚的先后顺序帮助新人迈出第一步。"
+      "prompt": "Start with the Getting Started ___ to learn how the team works.",
+      "answer": "guide",
+      "why": "start with 后接先阅读的指南或资料。"
     },
     {
       "id": "c2",
-      "prompt": "Your manager will help you set up the ___ for your role.",
-      "answer": "tools",
-      "why": "说明谁协助新人完成必要配置。"
+      "prompt": "Then review the current project ___ before taking on a task.",
+      "answer": "context",
+      "why": "了解项目背景后，再开始具体工作。"
     },
     {
       "id": "c3",
-      "prompt": "If you’re unsure what to tackle first, ask your manager to help set ___.",
-      "answer": "priorities",
-      "why": "给新人一个遇到不确定时的求助办法。"
+      "prompt": "We can choose your first task ___.",
+      "answer": "together",
+      "why": "together 表示与新人共同确定，而不是让其独自摸索。"
     }
   ],
   "dictation": [
@@ -211,18 +211,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "先从 Getting Started 指南开始。",
-      "answer": "Start with the Getting Started guide.",
+      "prompt": "先从 Getting Started 指南开始，了解团队的工作方式。",
+      "answer": "Start with the Getting Started guide to understand how the team works.",
       "why": ""
     },
     {
-      "prompt": "配置岗位所需的工具。",
-      "answer": "Set up the tools you need for your role.",
+      "prompt": "接任务前，再了解当前项目背景。",
+      "answer": "Then review the current project context before taking on a task.",
       "why": ""
     },
     {
-      "prompt": "如果不确定先做什么，请经理帮你排定优先级。",
-      "answer": "If you’re unsure what to tackle first, ask your manager to help set priorities.",
+      "prompt": "我们可以一起确定你的第一项任务。",
+      "answer": "We can choose your first task together.",
       "why": ""
     }
   ],
@@ -237,12 +237,12 @@
     "why": "先了解工作方式和项目背景，再确定第一项任务，符合新员工指南的入职顺序。"
   },
   "output": {
-    "prompt": "一位刚入职的同事已经读完入职指南，但不确定第一个月应该优先熟悉产品还是客户流程。请用英文建议他带着具体问题找经理确认，并说明你可以分享哪些入门资料。",
-    "sample": "It may help to ask your manager which should come first: learning the product or understanding the customer workflow. I can share the product overview and the support guide to help you get started.",
+    "prompt": "一位新同事完成基础入职后，将加入一个正在进行的客户项目，但还不了解团队的工作方式和项目进展。请用英文告诉他先读哪份指南、再了解什么，并邀请他一起确定第一个任务。",
+    "sample": "Read the Getting Started guide first; it explains how the team works. After that, we’ll go through the current project context and pick a starter task that matches your role.",
     "check": [
-      "是否建议新人把具体优先级问题带给经理？",
-      "是否提供了与两种学习方向相关的入门资料？",
-      "是否避免替经理擅自决定优先顺序？"
+      "是否建议先阅读团队入职指南？",
+      "是否说明接任务前要了解当前项目？",
+      "是否邀请新人一起确定第一项任务？"
     ]
   },
   "credits": {
@@ -254,35 +254,45 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "start with the getting-started guide",
-      "meaning": "从入门指南开始",
-      "collocation": "start with + guide",
-      "example": "Start with the Getting Started guide.",
-      "translation": "先从 Getting Started 指南开始。"
+      "word": "Start with the Getting Started guide.",
+      "meaning": "先从入职指南开始，了解团队的工作方式",
+      "collocation": "start with + guide / resource",
+      "example": "Start with the Getting Started guide to understand how the team works.",
+      "translation": "先从 Getting Started 指南开始，了解团队的工作方式。"
     },
     {
       "id": "work-02",
-      "word": "set up the tools you need for your role",
-      "meaning": "配置岗位所需工具",
-      "collocation": "set up + tools",
-      "example": "Set up the tools you need for your role.",
-      "translation": "配置岗位所需的工具。"
+      "word": "review the current project context",
+      "meaning": "先了解当前项目的背景和进展",
+      "collocation": "review + current project context",
+      "example": "Then review the current project context before taking on a task.",
+      "translation": "接任务前，再了解当前项目背景。"
     },
     {
       "id": "work-03",
-      "word": "ask your manager to help set priorities",
-      "meaning": "不确定先做什么时，请经理帮你排定优先级",
-      "collocation": "ask someone to help + verb",
-      "example": "If you’re unsure what to tackle first, ask your manager to help set priorities.",
-      "translation": "如果不确定先做什么，请经理帮你排定优先级。"
+      "word": "choose your first task together",
+      "meaning": "和同事一起确定第一项任务",
+      "collocation": "choose + task + together",
+      "example": "We can choose your first task together.",
+      "translation": "我们可以一起确定你的第一项任务。"
     }
   ]
 }

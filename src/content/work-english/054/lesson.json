@@ -232,11 +232,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a team leader, needed to inform two team members about their layoffs while finalizing a critical client presentation that was due in three days."
+      "text": "Sarah, a team leader, needed to inform two team members about their layoffs while finalizing a critical client presentation that was due in three days.",
+      "label": "听写 1 · 模拟岗位调整通知",
+      "why": "Sarah 和客户演示属于模拟场景；Airbnb CEO 2020 年的员工邮件没有提到这些细节。"
     },
     {
       "id": "d2",
-      "text": "The company faced unexpected financial difficulties, and management had decided to downsize the department, but Sarah was instructed to maintain productivity until the last day."
+      "text": "The company faced unexpected financial difficulties, and management had decided to downsize the department, but Sarah was instructed to maintain productivity until the last day.",
+      "label": "听写 2 · 区分已确认信息与假设",
+      "why": "unexpected financial difficulties 是练习中的说法，并非 Airbnb 邮件给出的裁员原因；不要把推测当事实。",
+      "apply": {
+        "prompt": "团队岗位调整已确认，但原因和支持细节尚未全部确认。用英文回应员工，不补充猜测。",
+        "sample": "I know this news affects the team. I’ll walk you through the confirmed support details and follow up on the remaining information once it’s confirmed."
+      }
     }
   ],
   "translationPractice": [
@@ -284,10 +292,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

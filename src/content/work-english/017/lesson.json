@@ -255,12 +255,12 @@
     "why": "可移动座椅能在小组讨论和个人阅读之间灵活调整，也适合先试行再评估。"
   },
   "output": {
-    "prompt": "培训室平时用于讲解，分组讨论时又需要小组围坐。请用英文建议先试可移动桌椅，说明怎样在两种布局间切换。",
-    "sample": "Could we try movable tables in the training room? We could arrange them in small groups for discussion and move them back when people need a clear view of the presentation.",
+    "prompt": "部门的多功能会议室既要做全员培训，也要开小组复盘。请用英文建议一种便于快速切换的布置方式，并说明两种活动分别怎样使用。",
+    "sample": "Could we use lightweight tables that can be moved between sessions? We could place them in rows for training and regroup them for the team retrospectives.",
     "check": [
-      "是否提出一项可先试的调整？",
-      "是否说明座位怎样适应不同活动？",
-      "是否避免把一次试行说成确定的效果保证？"
+      "是否提出一种可执行、便于调整的布置方式？",
+      "是否分别说明它怎样服务两种活动？",
+      "是否使用 could 等表达提出建议，而非声称已验证效果？"
     ]
   },
   "credits": {
@@ -272,10 +272,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

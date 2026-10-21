@@ -212,11 +212,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, HR Manager at TechNova Solutions, needs to inform employees about the company's decision to reduce workforce by approximately 200 positions due to economic challenges."
+      "text": "Sarah, HR Manager at TechNova Solutions, needs to inform employees about the company's decision to reduce workforce by approximately 200 positions due to economic challenges.",
+      "label": "听写 1 · 模拟裁员沟通场景",
+      "why": "Sarah、TechNova 和“约 200 个岗位”属于模拟场景；Google 2023 年员工邮件没有公布这个数字。"
     },
     {
       "id": "d2",
-      "text": "The announcement must balance transparency with maintaining employee morale while adhering to legal requirements and avoiding panic in the workplace."
+      "text": "The announcement must balance transparency with maintaining employee morale while adhering to legal requirements and avoiding panic in the workplace.",
+      "label": "听写 2 · 说明沟通艰难决定时的限制",
+      "why": "这段为模拟对话。原文中 CEO 对决定承担责任并为影响道歉；不要把练习中的法律要求当成原文内容。",
+      "apply": {
+        "prompt": "用英文概括 Google 2023 年裁员邮件中的人数，并说明 CEO 如何回应。",
+        "sample": "Google announced about 12,000 role reductions. Sundar Pichai took responsibility for the decision and apologized for its impact."
+      }
     }
   ],
   "translationPractice": [
@@ -247,12 +255,12 @@
     "why": "准确保留 approximately 12,000 roles，以及承担责任和致歉这两个信息；不要改写成其他人数或自行补充原因。"
   },
   "output": {
-    "prompt": "新经理需要在内部简报中说明 Google 2023 年裁员公告中的两个信息：受影响岗位规模，以及 CEO 对决策承担了什么责任。请用英文简洁写出这两点。",
-    "sample": "Google announced plans to eliminate about 12,000 roles in 2023. Sundar Pichai said he took responsibility for the decisions behind the cuts and apologized for their impact.",
+    "prompt": "（情景练习）你负责向团队说明一个产品线将停止维护，决定会影响多个岗位。请用英文说明调整范围，承担决策责任，并向受影响的同事表达歉意。",
+    "sample": "We’ve decided to eliminate several roles as we close the product line. I take responsibility for this decision, and I’m sorry for the impact on the people affected.",
     "check": [
-      "人数是否与原文一致？",
-      "是否准确概括 CEO 承担责任并道歉？",
-      "是否没有加入原文未确认的解释？"
+      "是否清楚说明调整范围？",
+      "是否明确承担决策责任？",
+      "是否表达了对受影响同事的歉意？"
     ]
   },
   "credits": {
@@ -264,10 +272,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

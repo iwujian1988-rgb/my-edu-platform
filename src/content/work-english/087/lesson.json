@@ -255,9 +255,9 @@
   },
   "rewrite": {
     "bad": "Your report is fine, but the data could be better.",
-    "good": "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data? That would make it easier for readers to follow your reasoning.",
-    "translation": "你对客户群体的分析帮助我们聚焦了报告。下一版能否把每项建议和数据联系得更清楚？这样读者更容易理解你的推理。",
-    "pattern": "Your [specific contribution] helped us [result]. For the next [work], could you [specific suggestion]? That would make it easier for [reader/team] to [benefit]."
+    "good": "Your customer-segment analysis helped us focus the report. For the next draft, could you connect each recommendation more clearly to the data?",
+    "translation": "你对客户群体的分析帮助我们明确了报告重点。下一版能否把每条建议和数据依据联系得更清楚？",
+    "pattern": "Your [specific contribution] helped [the team]. Could you [make one actionable improvement] next time?"
   },
   "cloze": [
     {
@@ -317,12 +317,12 @@
     "why": "具体肯定一项贡献，提出下一版可执行的修改，并说明它如何帮助读者。"
   },
   "output": {
-    "prompt": "你要给一位项目搭档写季度反馈：她把客户问题整理得很清楚，团队可以据此确定优先事项；下一次希望她在汇报中更早分享风险。请写两句具体反馈。",
-    "sample": "Your summary of customer issues helped the team set clear priorities. In the next update, could you flag emerging risks earlier? That would give us more time to respond.",
+    "prompt": "你要给一位项目搭档写季度反馈：她整理的供应商成本分析帮助团队确定预算重点；下一版希望她把每条建议和对应的成本数据联系得更清楚，这样管理层更容易理解依据。请写三句具体反馈。",
+    "sample": "Your supplier cost analysis helped us focus the budget review. For the next draft, could you connect each recommendation more clearly to the cost data? That would make it easier for leadership to follow your reasoning.",
     "check": [
-      "是否指出具体贡献及其影响？",
-      "改进建议是否具体、可执行？",
-      "是否说明建议对团队有什么帮助？"
+      "是否肯定了一项具体贡献？",
+      "是否提出了可执行的改进建议？",
+      "是否说明改进如何帮助读者理解？"
     ]
   },
   "credits": {
@@ -334,10 +334,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

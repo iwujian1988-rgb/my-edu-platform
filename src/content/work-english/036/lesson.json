@@ -184,9 +184,9 @@
   },
   "rewrite": {
     "bad": "We need to promise a final delivery date now, even though we do not know when the API will be ready.",
-    "good": "Let’s map out the work we can confirm and mark the review as an open dependency. Once we know when Legal can finish, we can update the milestone dates.",
-    "translation": "我们先列出目前可以确定的工作，并把评审标记为尚未解决的依赖。等法务确认完成时间后，再更新里程碑日期。",
-    "pattern": "Let’s map out [the work we can confirm] and mark [the review] as an open dependency. Once we know [the timing], we can update [the milestone dates]."
+    "good": "Let’s make a rough plan based on what we know, then update the milestones once the API team’s timing is clearer.",
+    "translation": "我们先根据已知信息做一个初步计划，等 API 团队的时间安排明确后再更新里程碑。",
+    "pattern": "Let’s make [a rough plan] now, then update [the milestone] when [the dependency is clearer]."
   },
   "cloze": [
     {
@@ -246,12 +246,12 @@
     "why": "先梳理可确定的工作，再标记开放依赖，最后根据时间信息更新里程碑。"
   },
   "output": {
-    "prompt": "供应商的接口预计下月交付，但日期尚未确认。请用英文建议先规划不受该接口影响的工作，把交付列为开放依赖，并在日期确认后调整里程碑。",
-    "sample": "Let’s map out the work we can confirm and mark the vendor handoff as an open dependency. Once we know the delivery date, we can update the milestone dates.",
+    "prompt": "客户培训的上线计划取决于供应商何时开放测试环境，但对方还没给日期。请用英文说明目前可以先做什么、要标记哪项依赖，以及何时更新发布里程碑。",
+    "sample": "We can draft the training materials now and mark vendor access as an open dependency. Once the vendor confirms the testing window, we can set the rollout milestones.",
     "check": [
-      "是否先安排目前可以确认的工作？",
-      "是否标出尚未确定的依赖？",
-      "是否把调整里程碑放到依赖时间明确之后？"
+      "是否区分已能开始的工作和未确认的依赖？",
+      "是否明确需要供应商确认什么？",
+      "是否说明得到时间后再确定里程碑？"
     ]
   },
   "credits": {
@@ -263,10 +263,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

@@ -124,9 +124,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "两位同事对一项不稳定测试的原因判断不同，继续各自排查会重复劳动。请用英文建议先结对复现问题，确定方向后再分开处理。",
-    "sample": "Could we reproduce the flaky test together first and compare what we observe? Once we agree on the likely cause, we can split the follow-up investigation.",
-    "rationale": "先一起复现并比较观察结果，形成共同判断后再分工，减少重复排查。"
+    "prompt": "同事建议大家各自独立处理一个复杂的集成问题。请用英文提出先结对梳理问题，再明确后续分工。",
+    "sample": "Could we pair on the integration issue first to share context and agree on an approach? Then we can split the follow-up tasks clearly.",
+    "rationale": "先一起处理复杂问题，能让双方共享背景和判断；思路明确后再分工，减少重复摸索。"
   },
   "words": [
     {
@@ -207,9 +207,9 @@
   },
   "rewrite": {
     "bad": "Just handle your own part. We can worry about integration later.",
-    "good": "Could we reproduce the flaky test together first and compare what we observe? Once we agree on the likely cause, we can split the follow-up investigation.",
-    "translation": "我们能否先一起复现这个不稳定测试，并比较各自观察到的现象？确认可能原因后，再分头排查后续问题。",
-    "pattern": "Could we first [investigate the issue] together and compare [what we observe]? Once we agree on [the likely cause], we can [split the follow-up work]."
+    "good": "Could we pair on the integration issue first and agree on an approach? Then we can split the follow-up tasks clearly.",
+    "translation": "我们能否先结对梳理集成问题并商定做法？之后再把后续任务分清楚。",
+    "pattern": "Could we [work through the issue together] first, then [divide the next steps]?"
   },
   "cloze": [
     {
@@ -234,11 +234,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex and Jamie are software engineers tasked with fixing a critical bug in the payment processing system before the end of the day."
+      "text": "Alex and Jamie are software engineers tasked with fixing a critical bug in the payment processing system before the end of the day.",
+      "label": "听写 1 · 故障任务和交付时间",
+      "why": "critical bug 和 before the end of the day 说明问题的紧急程度。"
     },
     {
       "id": "d2",
-      "text": "Alex says, 'Let's split the task - I'll focus on the authentication module while you handle the database connection."
+      "text": "Alex says, 'Let's split the task - I'll focus on the authentication module while you handle the database connection.",
+      "label": "听写 2 · 同事提出的分工方案",
+      "why": "这段是对方的提议。先一起复现问题，再商量后续如何分工。",
+      "apply": {
+        "prompt": "复杂集成问题反复出现。提出先结对复现，再分开排查。",
+        "sample": "Could we reproduce the flaky test together first, compare what we observe, and then split the follow-up investigation?"
+      }
     }
   ],
   "translationPractice": [
@@ -269,8 +277,8 @@
     "why": "先一起处理复杂问题，能让双方共享背景和判断；思路明确后再分工，减少重复摸索。"
   },
   "output": {
-    "prompt": "客户反馈移动端同步偶尔失败，产品和工程同事对原因判断不同。请用英文建议先在测试环境一起复现并比较日志，确认方向后再分配后续排查。",
-    "sample": "Could we reproduce the sync issue in staging first and compare the logs? Once we agree on the likely cause, we can split the follow-up investigation.",
+    "prompt": "两位同事对一项不稳定测试的原因判断不同，继续各自排查会重复劳动。请用英文建议先结对复现问题，确定方向后再分开处理。",
+    "sample": "Could we reproduce the flaky test together first and compare what we observe? Once we agree on the likely cause, we can split the follow-up investigation.",
     "check": [
       "是否提出先结对处理复杂问题？",
       "是否说明共同排查要解决什么？",
@@ -286,10 +294,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

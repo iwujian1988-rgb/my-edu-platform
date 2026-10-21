@@ -208,11 +208,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, the marketing director, needed to share the below communication about forming a new AI organization with her team while preparing the quarterly campaign report."
+      "text": "Sarah, the marketing director, needed to share the below communication about forming a new AI organization with her team while preparing the quarterly campaign report.",
+      "label": "听写 1 · 模拟团队转达组织调整",
+      "why": "这是团队内部的练习情境；听出组织安排与季度工作并行。"
     },
     {
       "id": "d2",
-      "text": "The team faced conflicting priorities - some members wanted immediate AI integration in campaigns while others were concerned about budget constraints and resource allocation."
+      "text": "The team faced conflicting priorities - some members wanted immediate AI integration in campaigns while others were concerned about budget constraints and resource allocation.",
+      "label": "听写 2 · AI 应用速度与资源安排的分歧",
+      "why": "区分成员的设想与公告已确认的信息；不确定的团队影响要向负责人核实。",
+      "apply": {
+        "prompt": "团队担心新成立的 AI 组织会影响项目。说明公告确认了什么，并提出核实办法。",
+        "sample": "The announcement says Microsoft AI will focus on consumer AI products and research. It doesn’t say how our project will change, so let’s check with our lead."
+      }
     }
   ],
   "translationPractice": [
@@ -260,11 +268,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写将组织公告改写成虚构营销团队冲突，核心主题偏离本期组织调整公告；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

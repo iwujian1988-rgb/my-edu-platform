@@ -92,9 +92,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事问 Amazon 2021 年返岗邮件为什么重新讨论每周至少到办公室三天的建议。请用英文概括邮件提出的实际问题。",
+    "prompt": "同事问 Amazon 2021 年返岗邮件为什么重新讨论每周至少到办公室三天的建议。请用英文说出邮件提出的两个实际问题。",
     "sample": "The guidance raised questions about who would choose the office days and whether everyone on a team needed to be in on the same days. It also asked whether some teams work better from home or in the office.",
-    "rationale": "邮件提出了几个仍待讨论的问题，并没有宣布最终的到岗政策。"
+    "rationale": "回答只概括现有原文展示的具体问题，不补写后文没有出现在本课材料中的最终政策。"
   },
   "words": [
     {
@@ -238,7 +238,7 @@
   },
   "output": {
     "prompt": "团队正在讨论是否安排共同到办公室的日子，但成员的工作内容不同。请用英文建议先了解哪些工作需要面对面协作，再由团队决定安排。",
-    "sample": "Could we first discuss which tasks benefit from in-person collaboration and which can be done remotely? Then the team can decide whether shared office days would help.",
+    "sample": "Could we first discuss which work would benefit from being together in the office and which work can be done remotely? Then the team can decide whether shared office days would help.",
     "check": [
       "是否先提出了解团队实际工作的需要？",
       "是否区分适合线下和远程完成的工作？",
@@ -254,10 +254,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

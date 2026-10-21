@@ -200,11 +200,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing manager, needed to reduce her department's digital advertising budget by 30% for the next quarter while maintaining campaign performance."
+      "text": "Sarah, a marketing manager, needed to reduce her department's digital advertising budget by 30% for the next quarter while maintaining campaign performance.",
+      "label": "听写 1 · 下一季度的预算调整",
+      "why": "听出调整幅度、时间范围和需要维持的结果。"
     },
     {
       "id": "d2",
-      "text": "Her team argued that cutting spend would hurt long-term brand visibility, but finance insisted on immediate cost reductions due to declining revenue."
+      "text": "Her team argued that cutting spend would hurt long-term brand visibility, but finance insisted on immediate cost reductions due to declining revenue.",
+      "label": "听写 2 · 眼前成本与长期品牌投入的冲突",
+      "why": "while 对照短期成本压力和长期品牌目标；微软员工信还讨论了长期 AI 投入。",
+      "apply": {
+        "prompt": "用英文说明客户支出变化，并概括微软对 AI 长期机会的判断。",
+        "sample": "Customers are looking to get more value from digital spending, so Microsoft needs to be disciplined. The letter describes AI as a long-term opportunity worth investing in."
+      }
     }
   ],
   "translationPractice": [
@@ -236,7 +244,7 @@
   },
   "output": {
     "prompt": "同事问，为什么公司一边要求团队提高效率，一边仍投资新技术。请用英文说明客户当前的支出环境和长期技术机会可以同时存在。",
-    "sample": "Customers are trying to get more value from their digital spending, so we need to be disciplined about spending. At the same time, the message describes AI as a long-term opportunity worth investing in.",
+    "sample": "Customers are trying to get more value from their digital spending, so we need to be disciplined. At the same time, the message describes AI as a long-term opportunity worth investing in.",
     "check": [
       "是否说明客户支出趋于谨慎？",
       "是否准确表达长期技术机会？",
@@ -252,10 +260,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

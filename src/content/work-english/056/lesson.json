@@ -311,11 +311,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, and Tom, a senior developer, were leading a team to implement a new software feature with a tight deadline."
+      "text": "Sarah, a project manager, and Tom, a senior developer, were leading a team to implement a new software feature with a tight deadline.",
+      "label": "听写 1 · 项目背景和交付期限",
+      "why": "先听出项目任务、负责人和紧迫期限。"
     },
     {
       "id": "d2",
-      "text": "The team had conflicting priorities: some members wanted to focus on perfecting the code quality while others emphasized meeting the deadline at all costs."
+      "text": "The team had conflicting priorities: some members wanted to focus on perfecting the code quality while others emphasized meeting the deadline at all costs.",
+      "label": "听写 2 · 速度与质量的优先级冲突",
+      "why": "at all costs 表示“不惜一切代价”。团队约定可以提前说明如何处理这类冲突。",
+      "apply": {
+        "prompt": "成员对消息、文档和会议的用法各不相同。建议共同约定沟通方式并记录决定。",
+        "sample": "Could we use chat for quick coordination and the shared project document for decisions and background? We can record outcomes there for everyone."
+      }
     }
   ],
   "translationPractice": [
@@ -363,11 +371,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写练的是代码质量与工期冲突，未练本期的团队沟通约定；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

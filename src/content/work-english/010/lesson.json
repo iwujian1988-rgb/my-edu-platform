@@ -95,22 +95,22 @@
     }
   ],
   "scenario": {
-    "title": "Ask about a delayed event approval",
+    "title": "Learning what managers actually need",
     "english": [
-      "Sarah, a marketing coordinator, needs to organize a product launch event, but her manager, David, keeps delaying approval despite her detailed proposals.",
-      "David is under pressure to reduce department expenses by 15% this quarter while maintaining team morale and meeting quarterly targets.",
-      "Sarah asks David directly about his specific concerns regarding the budget, leading to a more productive discussion about reallocating funds from less critical areas."
+      "A learning team is designing a new program for managers but does not yet understand which parts of the current training are hardest to apply.",
+      "You suggest speaking with a small, representative group of managers. Ask them to describe a recent situation, what made it difficult, and what support would have helped.",
+      "Their examples help the team understand why the problem occurs and what to test in the next version of the program."
     ],
     "chinese": [
-      "市场协调员 Sarah 正在筹备产品发布活动，但尽管她提交了详细方案，经理 David 仍一再推迟审批。",
-      "David 面临本季度削减部门开支 15% 的压力，同时还要维持团队士气并完成季度目标。",
-      "Sarah 直接询问 David 对预算的具体顾虑，两人因此更有效地讨论了从不太重要的项目中调拨资金。"
+      "学习与发展团队正在设计新的经理培训，但还不清楚现有培训中哪些内容最难应用。",
+      "你建议先与一组有代表性的经理交流，请他们描述最近遇到的具体情境、困难所在，以及当时什么支持会有帮助。",
+      "这些真实例子帮助团队理解问题原因，并决定下一版培训要测试什么。"
     ]
   },
   "firstAttempt": {
-    "prompt": "产品发布活动的审批迟迟没有进展。请用英文邀请 David 讲讲预算审批遇到的困难，再追问原因，以及当时什么支持会有帮助。",
-    "sample": "Could you walk me through the challenge you faced with the budget approval? What made it difficult, and what kind of support would have helped?",
-    "rationale": "先围绕预算审批请对方讲清经历，再追问困难来源和所需支持。"
+    "prompt": "你要了解经理为什么觉得一项培训难以应用。请用英文问三个问题：让对方描述最近的具体情境、说出困难，并指出什么支持会有帮助。",
+    "sample": "Could you walk me through a recent situation where the training was hard to apply? What made it difficult? What support would have helped you in that moment?",
+    "rationale": "从具体经历追问困难和所需支持，帮助听者理解数据背后的原因。"
   },
   "words": [
     {
@@ -190,10 +190,10 @@
     "transfer": "A recent interview can show what made a manager’s week difficult and what support would have helped."
   },
   "rewrite": {
-    "bad": "You should have approved the event already. Why did you make this so difficult?",
-    "good": "Could you walk me through the challenge you faced with the budget approval? What made it difficult, and what kind of support would have helped?",
-    "translation": "你能按过程讲讲这次预算审批遇到的困难吗？当时难在哪里？什么样的支持会有帮助？",
-    "pattern": "Could you walk me through [the challenge]? What made it difficult, and what support would have helped?"
+    "bad": "We already have enough survey data. Let’s launch the same training again.",
+    "good": "Could we talk with a few managers about a recent situation where the training was hard to apply? Their examples could help us understand what to improve before we update the program.",
+    "translation": "我们能否找几位经理聊聊最近一次难以应用培训内容的情境？他们的例子可以帮助我们在更新项目之前弄清楚需要改进什么。",
+    "pattern": "Could we talk with [a representative group] about [a recent example] to understand [what needs to change]?"
   },
   "cloze": [
     {
@@ -218,11 +218,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing coordinator, needs to organize a product launch event but her manager, David, keeps delaying approval despite her detailed proposals."
+      "text": "Sarah, a marketing coordinator, needs to organize a product launch event but her manager, David, keeps delaying approval despite her detailed proposals.",
+      "label": "听写 1 · 描述审批延误的具体情境",
+      "why": "keeps delaying approval 描述反复发生的情况。提问时可先请对方讲最近一次具体经历。"
     },
     {
       "id": "d2",
-      "text": "David is under pressure to reduce department expenses by 15% this quarter while maintaining team morale and meeting quarterly targets."
+      "text": "David is under pressure to reduce department expenses by 15% this quarter while maintaining team morale and meeting quarterly targets.",
+      "label": "听写 2 · 听出预算、士气和目标的冲突",
+      "why": "while 连接需要同时处理的限制。追问困难时，可用 What made it difficult?",
+      "apply": {
+        "prompt": "经理说培训很难用到实际工作。用一个追问了解困难，再问需要什么支持。",
+        "sample": "What made it difficult to apply the training? What kind of support would have helped?"
+      }
     }
   ],
   "translationPractice": [
@@ -253,12 +261,12 @@
     "why": "先让对方讲自己的经历，再追问困难和所需支持，避免替对方预设答案。"
   },
   "output": {
-    "prompt": "HR 原定给新任经理安排一轮入职辅导，但几场会议因时间冲突取消了。请用英文请 HR 协调人讲讲遇到的困难、原因，以及当时什么支持会有帮助。",
-    "sample": "Could you walk me through the challenge you faced with the onboarding sessions? What made them difficult to schedule, and what kind of support would have helped?",
+    "prompt": "你想了解新任经理在带团队时遇到的真实困难。请用英文邀请一位经理讲一次近期经历，再追问当时的难点和有帮助的支持。",
+    "sample": "Could you tell me about a recent challenge you faced while leading the team? What made it difficult, and what kind of support would have helped?",
     "check": [
-      "是否请对方讲一次具体经历？",
-      "是否追问了造成困难的原因？",
-      "是否询问当时什么支持会有帮助？"
+      "是否邀请对方分享具体经历？",
+      "是否用开放问题了解困难？",
+      "是否追问对方需要什么支持？"
     ]
   },
   "credits": {
@@ -270,11 +278,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写文本与本课访谈提问主题无关；需在允许同步更新音频时修复"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2,
+      "audio": 0
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

@@ -320,10 +320,10 @@
     "transfer": "Schedule the core call during the time-zone overlap, send the remaining questions asynchronously, and share the decisions afterward."
   },
   "rewrite": {
-    "bad": "Let’s schedule the meeting when I am free. Everyone else can adjust.",
-    "good": "Could we hold the quarterly review on Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time? I’ll post the decisions and action items after the call, and we’ll leave the final ten minutes for questions from each region.",
-    "translation": "我们能否把季度评审安排在 2027 年 1 月 13 日西雅图上午九点／伦敦下午五点？会后我会发布决定和行动项，并在最后十分钟留给各地区提问。",
-    "pattern": "The meeting is on [date] at [time and location A] / [time and location B]. I’ll post [follow-up] after the call, and we’ll leave [time] for [participants] to ask questions."
+    "bad": "Let’s schedule the meeting at a time that is convenient for me and ask everyone else to adjust.",
+    "good": "Could we review the materials asynchronously first? If we need a live meeting, let’s find a time that overlaps with the required participants’ working hours and assign a host.",
+    "translation": "我们能否先异步评审材料？如果确实需要开会，再找必要参会者的工作时间重叠段，并指定主持人。",
+    "pattern": "Could we [try async first]? If a meeting is needed, let’s [find overlap] and [assign a host]."
   },
   "cloze": [
     {
@@ -383,12 +383,12 @@
     "why": "同时写明两个时区的时间、会后要发布的内容和各地区提问的机会。"
   },
   "output": {
-    "prompt": "你要安排一场 2027 年 1 月 13 日的跨时区产品演示，伦敦和西雅图的同事都会参加。请用英文写明两地时间，说明演示材料会提前发送，并为无法参会的人提供会后查看方式。",
-    "sample": "The demo is Wednesday, January 13, 2027, at 9 a.m. Seattle / 5 p.m. London time. I’ll share the slides in advance and post the recording and follow-up notes afterward for anyone who can’t attend.",
+    "prompt": "你要安排一场 2027 年 4 月 6 日的供应商评审，西雅图和伦敦团队都会参加。请用英文写出同一天两地的会议时间，会后如何同步结果，并给各地区同事留出提问时间。",
+    "sample": "The vendor review is Tuesday, April 6, 2027, at 10 a.m. Seattle / 6 p.m. London time. I’ll post the decisions and action items after the call, and we’ll leave the final ten minutes for questions from each region.",
     "check": [
-      "是否同时写出西雅图和伦敦的时间？",
-      "是否说明演示材料会提前发送？",
-      "是否说明无法参会者会在哪里查看录制或后续记录？"
+      "是否写出同一天两地的当地时间？",
+      "是否说明会后发布决定和行动项？",
+      "是否为不同地区的参会者留出提问时间？"
     ]
   },
   "credits": {
@@ -400,10 +400,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

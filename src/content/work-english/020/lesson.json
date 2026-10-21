@@ -524,12 +524,12 @@
     "why": "先表示理解，再提出具体帮助并让对方选择。"
   },
   "output": {
-    "prompt": "一位同事刚接手新的客户组合，担心无法及时回复所有人。请用英文表达理解，提出一起梳理优先级，并询问他是否更需要其他支持。",
-    "sample": "It sounds like the new account load is a lot to manage. Would it help to review priorities together, or is there another kind of support you’d prefer?",
+    "prompt": "一位新同事说自己还不熟悉团队的工作流程，担心拖慢进度。请用英文表达理解，再询问什么帮助最有用，不要直接替他安排。",
+    "sample": "It sounds like the workflow is still new to you. Would it help to walk through one task together, or is there another kind of support you’d prefer?",
     "check": [
-      "是否回应了同事面对的具体压力？",
-      "是否提出一种可选择的帮助？",
-      "是否让对方表达更希望得到什么支持？"
+      "是否回应了对方的担忧？",
+      "是否询问对方想要哪种帮助？",
+      "是否把选择权留给对方？"
     ]
   },
   "credits": {
@@ -541,10 +541,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

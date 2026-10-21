@@ -234,11 +234,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex needs to identify key behaviors of effective managers for a company training program."
+      "text": "Alex needs to identify key behaviors of effective managers for a company training program.",
+      "label": "听写 1 · 研究要识别的管理行为",
+      "why": "key behaviors 指管理者在工作中表现出的具体做法。"
     },
     {
       "id": "d2",
-      "text": "Must analyze performance reviews without accessing confidential employee data."
+      "text": "Must analyze performance reviews without accessing confidential employee data.",
+      "label": "听写 2 · 听出分析限制",
+      "why": "录音从 Must 开始，是承接前文的片段；完整写句时补上主语，例如 The team must analyze…",
+      "apply": {
+        "prompt": "团队要研究有效经理的行为。建议怎样收集经验，同时保护员工隐私？",
+        "sample": "We could use structured interviews and surveys to identify effective manager behaviors without sharing confidential employee information."
+      }
     }
   ],
   "translationPractice": [
@@ -269,12 +277,12 @@
     "why": "把信息来源和研究目的放在同一句里；不要把个别印象当成结论。"
   },
   "output": {
-    "prompt": "客服团队发现，新用户经常找不到账户恢复说明。请用英文建议通过结构化访谈或调查了解用户经历，并说明如何在收集反馈时保护账户信息。",
-    "sample": "Could we use structured interviews and a short survey to learn where new users get stuck? We can collect examples without asking people to share passwords or other private account details.",
+    "prompt": "员工调查显示大家对经理反馈的体验差异很大，但团队还不知道原因。请用英文建议再做一项定性调研，并说明它能补充什么信息。",
+    "sample": "Could we interview a few team members about recent feedback conversations? Their examples could help us understand what is behind the different survey responses.",
     "check": [
-      "是否提出结构化访谈或调查来收集用户经历？",
-      "是否把调研问题聚焦在用户遇到的困难？",
-      "是否说明如何避免收集敏感账户信息？"
+      "是否建议通过访谈收集具体经历？",
+      "是否说明访谈能解释调查结果背后的原因？",
+      "是否避免把相关性说成确定因果？"
     ]
   },
   "credits": {
@@ -286,11 +294,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写第 2 句缺少明确主语，且与本课目标练习不一致；需在允许同步更新音频时修复"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2,
+      "audio": 0
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

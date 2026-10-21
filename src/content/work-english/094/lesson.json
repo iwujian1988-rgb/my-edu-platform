@@ -106,9 +106,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "今天的账单修复会阻塞发布，你需要留出专注时间；如果进度影响客服排班，要及时同步。请用英文说明今天先做什么、怎样保护专注时间，以及何时会更新进展。",
-    "sample": "I’m focusing on the billing fix because it blocks the release. I’m blocking the morning to finish the analysis before the review. I’ll post an update if the fix changes the support team’s schedule.",
-    "rationale": "讲清今天的优先工作、专注安排和影响他人时的同步方式。"
+    "prompt": "团队使用六周工作周期安排项目。请用英文向同事说明下一步：先看当前周期的优先事项，再把新想法放进后续周期评估。",
+    "sample": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should move forward.",
+    "rationale": "依照 37signals 的六周周期节奏处理新想法，不编造同事必须放下技术问题去帮别人的安排。"
   },
   "words": [
     {
@@ -185,32 +185,32 @@
       "where引导的从句'where employees choose to live and work'作为care的宾语，表示员工选择生活和工作的地点",
       "that引导的从句'that they're here to do great work on exceptional products, alongside a world-class team'作为just的宾语，强调公司真正关心的是员工能在这里与一流团队合作，在卓越产品上做出出色工作"
     ],
-    "transfer": "I’m blocking the morning to finish the billing analysis and will post an update if the work affects another team’s schedule."
+    "transfer": "Let’s keep the current cycle focused on the launch work. We can add the reporting idea to the next cycle’s planning list and decide then whether it should replace a planned priority."
   },
   "rewrite": {
-    "bad": "I’ll switch between all three tasks throughout the morning and reply to new requests as they arrive.",
-    "good": "I’m focusing on the billing fix because it blocks the release. I’m blocking the morning to finish the analysis before the review. I’ll post an update if the fix changes the support team’s schedule.",
-    "translation": "我今天先处理账单修复，因为它会阻塞发布。我会把上午留出来，在评审前完成分析。如果修复影响客服团队的排班，我会发出更新。",
-    "pattern": "I’m focusing on [priority] because [impact]. I’m blocking [time] for [work]. I’ll update [people] if [their work] is affected."
+    "bad": "Drop your current work and help Mark finish his report right now.",
+    "good": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should move forward.",
+    "translation": "我们先把当前周期的重点做完。新想法可以放进下一周期的规划清单，到时再决定是否推进。",
+    "pattern": "Let’s keep the current cycle focused on [agreed priorities]. We can add [the new idea] to the next cycle’s planning list and decide whether it should replace a planned priority."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’m ___ on the billing fix because it blocks the release.",
-      "answer": "focusing",
-      "why": "用业务影响解释工作优先级。"
+      "prompt": "Let’s keep the current cycle ___ on the agreed priorities.",
+      "answer": "focused",
+      "why": "keep something focused on something 表示让工作继续围绕既定重点。"
     },
     {
       "id": "c2",
-      "prompt": "I’ll post an update if the fix changes the support team’s ___.",
-      "answer": "schedule",
-      "why": "同步与他人协作有关的变化。"
+      "prompt": "We can add the customer idea to the next cycle’s planning ___.",
+      "answer": "list",
+      "why": "planning list 是记录待评估事项的规划清单。"
     },
     {
       "id": "c3",
-      "prompt": "I’m blocking the ___ to finish the analysis before the review.",
-      "answer": "morning",
-      "why": "明确专注时间，减少无计划打断。"
+      "prompt": "We can decide whether it should ___ one of the planned priorities.",
+      "answer": "replace",
+      "why": "评估新想法时，判断它是否值得替换原有重点。"
     }
   ],
   "dictation": [
@@ -225,38 +225,38 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我今天先处理账单修复，因为它会阻塞发布。",
-      "answer": "I’m focusing on the billing fix because it blocks the release.",
+      "prompt": "我们先让当前周期围绕已经确定的重点推进。",
+      "answer": "Let’s keep the current cycle focused on the agreed priorities.",
       "why": ""
     },
     {
-      "prompt": "如果修复影响客服团队的排班，我会发出更新。",
-      "answer": "I’ll post an update if the fix changes the support team’s schedule.",
+      "prompt": "我们可以把客户的新想法记入下一周期的规划清单。",
+      "answer": "We can add the customer idea to the next cycle’s planning list.",
       "why": ""
     },
     {
-      "prompt": "我把上午留出来，在评审前完成分析。",
-      "answer": "I’m blocking the morning to finish the analysis before the review.",
+      "prompt": "到时再决定是否用它替换一项已计划的重点工作。",
+      "answer": "We can decide whether it should replace one of the planned priorities.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "账单修复会阻塞发布，需要一段不被打断的分析时间；修复也可能影响客服排班。请选出安排清楚的更新。",
+    "prompt": "六周周期过半，客户提出一个新功能想法，团队当前重点已经排定。请选择合适的回复。",
     "options": [
-      "I’ll work on several tasks at once and let the team know if anything changes.",
-      "I’m focusing on the billing fix because it blocks the release. I’m blocking the morning to finish the analysis before the review. I’ll post an update if the fix changes the support team’s schedule.",
-      "I’ll finish the analysis later. The support team can check the schedule themselves."
+      "Let’s stop the current work and build the new feature immediately.",
+      "Let’s keep the current cycle focused on the agreed priorities. We can add the customer idea to the next cycle’s planning list and decide whether it should replace a planned priority.",
+      "We can’t discuss new ideas while the current cycle is running."
     ],
     "correct": 1,
-    "why": "说清当天优先工作、专注时间和需要通知团队的情况。"
+    "why": "先保持当前周期的工作重点，再把新想法留到下一周期评估。"
   },
   "output": {
-    "prompt": "你今天要修复一个会影响客户续费的账单错误，同时还要参加例行周会。请用英文说明工作的优先顺序、如何保护专注时间，以及什么情况下会通知团队调整安排。",
-    "sample": "I’m prioritizing the billing error because it could affect customer renewals. I’ll block the morning for focused work. If the fix takes longer than expected or changes the team’s plans, I’ll let everyone know.",
+    "prompt": "六周周期进行到一半，客户提出一个数据导出功能，但当前周期的工作已经排定。请用英文回复同事：先完成本周期重点，把新想法记入下周期规划，并说明届时会评估是否替换原计划。",
+    "sample": "Let’s keep the current cycle focused on the agreed priorities. We can add the data export idea to the next cycle’s planning list and decide then whether it should replace one of the planned priorities.",
     "check": [
-      "是否说明当前最重要的工作？",
-      "是否为专注任务留出时间？",
-      "是否说明什么情况下需要同步进度？"
+      "是否明确保留当前周期的重点？",
+      "是否记录了客户的新想法？",
+      "是否说明下周期会评估是否替换原计划？"
     ]
   },
   "credits": {
@@ -268,35 +268,45 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "focus on the work that matters most",
-      "meaning": "把注意力放在当前最重要的工作上",
-      "collocation": "focus on + priority",
-      "example": "I’m focusing on the billing fix because it blocks the release.",
-      "translation": "我今天先处理账单修复，因为它会阻塞发布。"
+      "word": "keep the current cycle focused on…",
+      "meaning": "让当前周期继续围绕已确定的重点",
+      "collocation": "keep + cycle + focused on + priorities",
+      "example": "Let’s keep the current cycle focused on the agreed priorities.",
+      "translation": "我们先让当前周期围绕已经确定的重点推进。"
     },
     {
       "id": "work-02",
-      "word": "share progress when it affects someone else",
-      "meaning": "在进度影响他人时及时同步",
-      "collocation": "share progress when + condition",
-      "example": "I’ll post an update if the fix changes the support team’s schedule.",
-      "translation": "如果修复影响客服团队的排班，我会发出更新。"
+      "word": "add the idea to the next cycle’s planning list",
+      "meaning": "把新想法记入下一周期的规划清单",
+      "collocation": "add + idea + to + planning list",
+      "example": "We can add the customer idea to the next cycle’s planning list.",
+      "translation": "我们可以把客户的新想法记入下一周期的规划清单。"
     },
     {
       "id": "work-03",
-      "word": "protect time for focused work",
-      "meaning": "为专注工作留出时间",
-      "collocation": "protect time for + work",
-      "example": "I’m blocking the morning to finish the analysis before the review.",
-      "translation": "我把上午留出来，在评审前完成分析。"
+      "word": "decide whether it should replace…",
+      "meaning": "评估新想法是否值得替换现有优先事项",
+      "collocation": "decide whether + subject + should + verb",
+      "example": "We can decide whether it should replace one of the planned priorities.",
+      "translation": "到时再决定是否用它替换一项已计划的重点工作。"
     }
   ]
 }

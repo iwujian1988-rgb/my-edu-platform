@@ -139,9 +139,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "准备关闭一次客户问题处理任务时，你发现解决方案已完成，但测试结果和交接说明还没记录。请用英文建议按团队的完成标准补齐检查项后再关闭。",
-    "sample": "Before we close this task, could we record the test result and add the handoff note? Then we can check the Definition of Done together and confirm everything is complete.",
-    "rationale": "关闭任务前补齐测试和交接记录，并按团队标准一起核对。"
+    "prompt": "团队成员对“任务已完成”的判断不一致。请用英文建议团队共同定义完成标准，把检查项写进项目文档，并在关闭任务前逐项核对。",
+    "sample": "Could we agree on a Definition of Done as a team and document it in the project? Before closing a task, we can check that its acceptance criteria and required reviews are complete.",
+    "rationale": "完成标准需要团队共同决定并记录；示例检查项包括验收标准和必要评审。"
   },
   "words": [
     {
@@ -284,12 +284,12 @@
     "why": "完成标准需要团队共同决定并记录；示例检查项包括验收标准和必要评审。"
   },
   "output": {
-    "prompt": "客户问题已修复，准备交给客服团队跟进。请用英文建议先记录回归测试结果和处理说明，再对照交接清单确认可以移交。",
-    "sample": "Before we hand this case to Support, could we record the regression test result and add the resolution note? Then we can check the handoff criteria together and confirm everything is ready.",
+    "prompt": "准备关闭一次客户问题处理任务时，你发现解决方案已完成，但测试结果和交接说明还没记录。请用英文建议按团队的完成标准补齐检查项后再关闭。",
+    "sample": "Before we close this task, could we record the test result and add the handoff note? Then we can check the Definition of Done together and confirm everything is complete.",
     "check": [
-      "是否在交接前记录回归测试结果和处理说明？",
-      "是否对照团队约定的交接标准？",
-      "是否在确认准备就绪后再移交给客服？"
+      "是否指出关闭任务前缺少的检查项？",
+      "是否回到团队共同约定的完成标准？",
+      "是否把逐项确认放在关闭任务之前？"
     ]
   },
   "credits": {
@@ -301,10 +301,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

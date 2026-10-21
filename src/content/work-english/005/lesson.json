@@ -262,12 +262,12 @@
     "why": "讨论停滞时提议同步沟通，并明确会后如何留下决定记录。"
   },
   "output": {
-    "prompt": "你和设计同事在文档评论里对活动页主标题争论了几轮，仍没有结论。请用英文指出讨论陷入重复，建议开个短会比较两个版本，并说明会后会记录决定和理由。",
-    "sample": "We seem to be going in circles on the headline. Could we have a 10-minute call to compare the two versions? I’ll record the decision and the reason afterward.",
+    "prompt": "设计团队和产品团队在邮件里反复讨论新功能的优先级，还是无法决定。请用英文提议改用短会讨论，并说明会后会记录决定和理由。",
+    "sample": "We seem to be going in circles in the email thread. Could we have a short call to compare the priorities? I’ll record the decision and the reason in the project notes afterward.",
     "check": [
-      "是否委婉指出讨论反复、没有进展？",
-      "是否建议开短会并说清要比较什么？",
-      "是否说明会后会记录决定和理由？"
+      "是否指出邮件讨论没有推进？",
+      "是否提议用短会继续讨论？",
+      "是否说明会后记录决定及理由？"
     ]
   },
   "credits": {
@@ -279,8 +279,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频逐条核对",
-      "页面与练习交互人工验收"
+      "音频逐条核对"
     ],
     "rubricVersion": "1.1",
     "scores": {

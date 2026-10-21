@@ -190,9 +190,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "一次产品发布按时完成，但工程团队收到客服升级的问题时，常常缺少客户影响和已尝试步骤。请用英文主持简短复盘：说出做得好的地方，提出一个改进，并约定下一次怎么做。",
-    "sample": "What went well was that the launch stayed on schedule. We could improve the handoff by including the customer impact and steps already tried. For the next project, let’s add those details to the escalation template.",
-    "rationale": "复盘时先保留有效做法，再针对交接缺口提出下一次可执行的改进。"
+    "prompt": "一次 sprint 刚结束。请用英文邀请团队各分享一项做得好的地方和一项可以改进的地方，再共同选出下一轮要尝试的改动。",
+    "sample": "Let’s each share one thing that went well and one thing we could improve this sprint. Then we can choose one change to try in the next sprint.",
+    "rationale": "复盘既回顾有效做法，也讨论改进点，并把讨论转成下一轮可以尝试的行动。"
   },
   "words": [
     {
@@ -273,9 +273,9 @@
   },
   "rewrite": {
     "bad": "Retrospectives are just a chance to complain. We do not need to choose an action afterward.",
-    "good": "What went well was that the launch stayed on schedule. We could improve the handoff by including the customer impact and steps already tried. For the next project, let’s add those details to the escalation template.",
-    "translation": "做得好的是，我们按时完成了上线。交接中可以补充客户影响和已经尝试过的步骤。下个项目中，我们把这些信息加到升级处理模板里。",
-    "pattern": "What went well was [result]. We could improve [the handoff] by [specific change]. For the next project, let’s [action]."
+    "good": "Let’s each share one thing that went well and one thing we could improve this sprint. Then we can choose one change to try in the next sprint.",
+    "translation": "我们每人分享一项本轮做得好的地方和一项可以改进的地方，然后选一个改动在下一轮试行。",
+    "pattern": "Let’s share [what worked] and [what could improve], then choose [one change to test]."
   },
   "cloze": [
     {
@@ -335,12 +335,12 @@
     "why": "把有效做法、具体缺口和下次要改的流程连起来，团队才能照着执行。"
   },
   "output": {
-    "prompt": "一次客户上线按期完成，但客服团队直到上线当天才拿到故障排查说明。请用英文复盘一个做得好的地方、一个需要改进的地方，并提出下次的具体行动。",
-    "sample": "What went well was that we launched on schedule. We could improve the handoff by sharing the troubleshooting guide with Support earlier. For the next launch, let’s add Support to the readiness review.",
+    "prompt": "客户支持团队刚结束一次产品发布。发布按时完成，但问题升级给工程团队时经常缺少背景。请用英文主持一次简短复盘：邀请大家说出做得好的地方和一个改进点，再选下一次要试的做法。",
+    "sample": "What went well during the launch, and where did the handoff to Engineering break down? Could we include the customer impact and steps already tried in each escalation next time?",
     "check": [
-      "是否指出一项有效做法？",
-      "是否把改进点和具体做法连起来？",
-      "是否说明下一次要采取的行动？"
+      "是否同时回顾有效做法和问题？",
+      "是否提出了具体的下一轮改进？",
+      "改进是否能回应本次发现的交接缺口？"
     ]
   },
   "credits": {
@@ -352,10 +352,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

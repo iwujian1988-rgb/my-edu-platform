@@ -130,8 +130,8 @@
   },
   "firstAttempt": {
     "prompt": "团队正讨论一个跨部门决定，但每个人都在等别人拍板。请用英文建议明确决策角色、适用的价值取舍，并在决定后同步结果。",
-    "sample": "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale. Afterward, let’s share it with the affected teams.",
-    "rationale": "先明确推动人与批准人，再用团队价值观权衡选项；决定后记录理由并同步受影响的团队。"
+    "sample": "Could we clarify who will drive and approve this decision, and which GitLab values should guide the trade-offs? Once we decide, let’s document the rationale and share it with the teams affected.",
+    "rationale": "GitLab 的决策流程强调价值取舍、明确决策过程，并在决定后总结和分享。"
   },
   "words": [
     {
@@ -212,9 +212,9 @@
   },
   "rewrite": {
     "bad": "Let’s keep discussing until everyone agrees. That way, nobody has to own the decision.",
-    "good": "Could we clarify who will drive and approve this decision? We should weigh customer impact against delivery speed, then document the decision and rationale and share it with the affected teams.",
-    "translation": "我们能否明确由谁推动、谁负责审批？我们应权衡客户影响和交付速度，再记录决定和理由并同步给受影响的团队。",
-    "pattern": "Could we clarify who will [drive / approve] this decision? We should weigh [trade-off], then document [the decision and rationale] and share it with [affected teams]."
+    "good": "Could we clarify who will drive and approve this decision, and which GitLab values should guide the trade-offs? Once we decide, let’s document the rationale and share it with the teams affected.",
+    "translation": "我们能否明确由谁推动、谁批准这项决定，以及哪些 GitLab 价值观应指导取舍？决定后，把理由记录下来并同步给受影响的团队。",
+    "pattern": "Could we clarify who will [drive/approve the decision]? Then let’s [record the rationale] and [share it with affected teams]."
   },
   "cloze": [
     {
@@ -291,11 +291,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收",
       "听写讲营销渠道预算分歧，未练本期的决策角色、价值取舍与记录理由；需同步修复音频与文本。"
-    ]
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

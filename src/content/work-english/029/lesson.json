@@ -113,9 +113,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "欧洲和亚洲同事无法参加同一场设计评审。请用英文说明你已把设计演示和问题清单放进共享文档，并邀请他们在方便时异步留言。",
-    "sample": "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread whenever you have time in your workday.",
-    "rationale": "把设计评审材料放到共享文档中，再请不同时区的同事在工作时间异步留言。"
+    "prompt": "东京团队无法参加你所在时区的同步会。请用英文在共享 issue 中发布简短演示，写清结果和验收标准，并说明大家可以用线程异步提问。",
+    "sample": "I’ve posted a 5–8 minute demo and a short summary in the shared issue, focusing on the outcome and acceptance criteria. Please add any questions in the thread when it works for your time zone.",
+    "rationale": "异步协作需要把结果和验收标准写下来，并给不同时区的成员留下异步回应的空间。"
   },
   "words": [
     {
@@ -196,9 +196,9 @@
   },
   "rewrite": {
     "bad": "Could we schedule a live meeting? Everyone should be online at the same time before we can review the work.",
-    "good": "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread whenever you have time in your workday.",
-    "translation": "我已把设计演示和评审问题清单放进共享文档。请在各自工作时间里到讨论串留言。",
-    "pattern": "I’ve added [the design walkthrough] and [review questions] to [the shared document]. Please leave [comments] during [your workday]."
+    "good": "I’ve posted a short demo and summary in the shared issue, including the outcome and acceptance criteria. Please add questions in the thread when it works for your time zone.",
+    "translation": "我已在共享 issue 中放了简短演示和摘要，包括结果与验收标准。请按自己的时区方便时在讨论串里提问。",
+    "pattern": "I’ve shared [the result and criteria] in [the shared space]. Please add [questions] asynchronously."
   },
   "cloze": [
     {
@@ -223,11 +223,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a marketing coordinator in New York, needs feedback on a campaign proposal from team members in London and Tokyo who are in different time zones."
+      "text": "Sarah, a marketing coordinator in New York, needs feedback on a campaign proposal from team members in London and Tokyo who are in different time zones.",
+      "label": "听写 1 · 跨时区团队如何收集反馈",
+      "why": "听出团队所在时区和需要评审的材料。"
     },
     {
       "id": "d2",
-      "text": "The London team has conflicting priorities with another project deadline, while the Tokyo team needs more time to review due to language barriers."
+      "text": "The London team has conflicting priorities with another project deadline, while the Tokyo team needs more time to review due to language barriers.",
+      "label": "听写 2 · 影响异步回复的两个障碍",
+      "why": "项目期限和审阅时间都会影响回复节奏；异步留言要写清评论位置和截止时间。",
+      "apply": {
+        "prompt": "跨时区同事无法参加同步评审。邀请他们在共享 issue 的讨论串留言。",
+        "sample": "I’ve added the design walkthrough to the issue. Please leave your comments in the thread when you have a moment during your workday."
+      }
     }
   ],
   "translationPractice": [
@@ -243,7 +251,7 @@
     },
     {
       "prompt": "请在你工作日有空时留下意见。",
-      "answer": "Please leave your comments whenever you have time in your workday.",
+      "answer": "Please leave your comments when you have a moment during your workday.",
       "why": ""
     }
   ],
@@ -251,15 +259,15 @@
     "prompt": "欧洲和亚洲的同事无法参加同一场设计评审。请选择一条说明材料已放入共享文档、邀请同事按各自工作时间异步留言的消息。",
     "options": [
       "Can everyone join a live review at 8 a.m. Pacific tomorrow? We need comments before the end of the day.",
-      "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread whenever you have time in your workday.",
+      "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread when you have a moment during your workday.",
       "I’ve added the design walkthrough. Please send me your comments within the next hour."
     ],
     "correct": 1,
     "why": "正确选项用到本期三条表达：共享文档中的演示和问题、讨论串留言、按各自工作时间参与。"
   },
   "output": {
-    "prompt": "纽约团队无法参加亚洲同事的产品演示。请用英文说明你已上传录屏和决策问题清单，并邀请大家在各自工作时间内异步留言。",
-    "sample": "I’ve posted the product demo recording and a list of decision questions in the shared document. Please add your comments in the thread during your workday, and we’ll review them before the next planning session.",
+    "prompt": "欧洲和亚洲同事无法参加同一场设计评审。请用英文说明你已把设计演示和问题清单放进共享文档，并邀请他们在方便时异步留言。",
+    "sample": "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread whenever you have time in your workday.",
     "check": [
       "是否说明异步材料放在哪里？",
       "是否提出具体的评审问题或评论方式？",
@@ -275,10 +283,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
@@ -299,10 +317,10 @@
     },
     {
       "id": "work-03",
-      "word": "whenever you have time in your workday",
+      "word": "when you have a moment during your workday",
       "meaning": "让不同时区的同事在各自工作时间参与",
       "collocation": "whenever + 主语 + have time",
-      "example": "Please leave your comments whenever you have time in your workday.",
+      "example": "Please leave your comments when you have a moment during your workday.",
       "translation": "请在你工作日有空时留下意见。"
     }
   ]

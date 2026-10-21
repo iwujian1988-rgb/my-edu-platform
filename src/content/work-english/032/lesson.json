@@ -97,9 +97,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "待办列表里积压了很多低优先级事项，团队很难看出接下来最该做什么。请用英文建议先按价值和依赖关系梳理，再挑出适合下个 sprint 的工作。",
-    "sample": "Could we rank the backlog by customer value and dependencies first? Then we can choose the highest-priority items that are ready for the next sprint.",
-    "rationale": "按客户价值和依赖关系排序，再从具备条件的事项中选出下个 sprint 的工作。"
+    "prompt": "待办列表里有些需求没有验收标准，设计工作也还没完成。请用英文建议团队持续梳理待办，并在任务进入 sprint 前确认 ready 条件。",
+    "sample": "Could we refine the backlog regularly and add clear acceptance criteria to each story? Let’s also agree on what “ready” means before we pull work into a sprint.",
+    "rationale": "原文强调持续梳理待办、明确验收标准，以及由团队共同约定 ready 和 done 的定义。"
   },
   "words": [
     {
@@ -180,9 +180,9 @@
   },
   "rewrite": {
     "bad": "Let’s pull the story into the sprint and work out the acceptance criteria later.",
-    "good": "Could we rank the backlog by customer value and dependencies first? Then we can choose the highest-priority items that are ready for the next sprint.",
-    "translation": "我们能否先按客户价值和依赖关系排列待办事项？然后挑出优先级最高且已准备好进入下个 sprint 的事项。",
-    "pattern": "Could we rank [the backlog] by [value and dependencies] first? Then we can choose [the highest-priority items] that are ready for [the next sprint]."
+    "good": "Could we refine the backlog regularly and add clear acceptance criteria to each story? Let’s also agree on what “ready” means before we pull work into a sprint.",
+    "translation": "我们能否定期梳理待办事项，为每个故事补上清楚的验收标准？在把任务放进 sprint 前，也先约定好“可以开始”的条件。",
+    "pattern": "Could we [refine the backlog] and agree on [ready criteria] before we [start the work]?"
   },
   "cloze": [
     {
@@ -242,12 +242,12 @@
     "why": "先比较客户价值和依赖关系，再据此挑选下个 sprint 的工作。"
   },
   "output": {
-    "prompt": "下一次产品版本前，团队收到几项客户改进请求，其中一些依赖尚未完成。请用英文建议按客户影响和依赖关系排序，再选出能进入本次发布的事项。",
-    "sample": "Could we rank the requests by customer impact and dependencies first? Then we can choose the highest-priority items that are ready for the next release.",
+    "prompt": "待办列表里积压了很多低优先级事项，团队很难看出接下来最该做什么。请用英文建议先按价值和依赖关系梳理，再挑出适合下个 sprint 的工作。",
+    "sample": "Could we rank the backlog by customer value and dependencies first? Then we can choose the highest-priority items that are ready for the next sprint.",
     "check": [
-      "是否建议先按客户影响和依赖关系排列请求？",
-      "是否区分已准备好和仍受依赖阻塞的事项？",
-      "是否只把准备好的事项纳入本次发布？"
+      "是否提出先梳理优先级？",
+      "是否考虑价值和依赖关系？",
+      "是否只把已准备好的工作放入下个 sprint？"
     ]
   },
   "credits": {
@@ -259,10 +259,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

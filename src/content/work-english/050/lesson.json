@@ -195,11 +195,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a team manager, needed to inform her team about the company's decision to eliminate three positions due to budget constraints in 2022."
+      "text": "Sarah, a team manager, needed to inform her team about the company's decision to eliminate three positions due to budget constraints in 2022.",
+      "label": "听写 1 · 模拟岗位调整沟通",
+      "why": "Sarah 和“三个岗位”属于模拟场景；Amazon 2022 年的邮件没有给出这个数字。"
     },
     {
       "id": "d2",
-      "text": "She faced the challenge of delivering this news while maintaining team morale and addressing concerns about workload distribution."
+      "text": "She faced the challenge of delivering this news while maintaining team morale and addressing concerns about workload distribution.",
+      "label": "听写 2 · 回应员工对工作量的担忧",
+      "why": "练习关注如何说明决定及其影响。Amazon 邮件中已确认和未确定的人数以原文为准。",
+      "apply": {
+        "prompt": "同事把 Amazon 2022 年邮件转述为所有岗位调整人数都已确定。澄清哪些信息已公布。",
+        "sample": "The message confirms role changes in Devices and Books and a voluntary offer for some PXT employees. The number of additional reductions had not been finalized."
+      }
     }
   ],
   "translationPractice": [
@@ -230,12 +238,12 @@
     "why": "把已宣布事项与仍未确定的数字分开表达，不补猜测。"
   },
   "output": {
-    "prompt": "一封员工邮件只说明部分组织调整已经确认，其他岗位变化仍在评估。同事却转述成“全部人数已经定了”。请用英文澄清已知和未定的信息。",
-    "sample": "The message confirms some role changes, but it says the number of additional reductions has not been finalized. We should wait for the next update before treating the wider impact as decided.",
+    "prompt": "（情景练习）公司已确认部分团队调整，但其他岗位变化还未定。一位同事转述成“所有裁员人数都已经确定”。请用英文纠正已知与未定信息，并建议等待下一次更新。",
+    "sample": "The message confirms some role changes, but the number of additional reductions has not been finalized. Let’s wait for the next update before treating the wider impact as decided.",
     "check": [
-      "是否区分已经宣布的决定和仍在评估的事项？",
-      "是否没有补造人数？",
-      "是否说明何时再确认？"
+      "是否区分已确认和未确定的信息？",
+      "是否说明额外调整人数还未最终确定？",
+      "是否建议等下一次更新再下结论？"
     ]
   },
   "credits": {
@@ -247,11 +255,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写加入“裁掉三个岗位”等来源未提及的具体信息，容易让用户误以为是原文事实；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

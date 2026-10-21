@@ -100,8 +100,8 @@
   },
   "firstAttempt": {
     "prompt": "新同事问纳德拉在就任微软 CEO 的首封员工邮件中提出了什么使命和战略重点。请用两句英文概括原文。",
-    "sample": "Nadella said Microsoft was here to change the world through technology that empowers people to do amazing things. He said the company needed to thrive in a mobile-first and cloud-first world.",
-    "rationale": "第一句概括邮件中的使命，第二句保留当时的战略重点，不替换成后来常用的使命口号。"
+    "sample": "Our mission is to empower every person and every organization on the planet to achieve more. Nadella said Microsoft would focus on a mobile-first, cloud-first world.",
+    "rationale": "两句分别概括邮件中的使命表述和战略重点，不额外加入预算或营销安排。"
   },
   "words": [
     {
@@ -181,10 +181,10 @@
     "transfer": "Technology helps our team give customers better tools, while cloud services let us support them at scale."
   },
   "rewrite": {
-    "bad": "Microsoft’s mission is to sell more software, and it should focus on desktop computers.",
-    "good": "Nadella said Microsoft was here to change the world through technology that empowers people to do amazing things. He said the company needed to thrive in a mobile-first and cloud-first world.",
-    "translation": "纳德拉说，微软要用技术赋能人们做了不起的事，借此改变世界。他说，公司需要在移动优先、云优先的世界中发展。",
-    "pattern": "We are here to [purpose]. Our next challenge is to [strategic direction]."
+    "bad": "The mission is just about selling more software. The strategy can wait.",
+    "good": "Our mission is to empower every person and every organization on the planet to achieve more. Nadella said Microsoft would focus on a mobile-first, cloud-first world.",
+    "translation": "我们的使命是赋能全球每个人和每个组织取得更大成就。纳德拉表示，微软将聚焦移动优先、云优先的世界。",
+    "pattern": "Our mission is to [mission]. Nadella said Microsoft would focus on [strategic direction]."
   },
   "cloze": [
     {
@@ -209,11 +209,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex Chen, newly appointed Director of Operations, needs to send his first company-wide email introducing himself and outlining his vision for the department."
+      "text": "Alex Chen, newly appointed Director of Operations, needs to send his first company-wide email introducing himself and outlining his vision for the department.",
+      "label": "听写 1 · 模拟新任负责人发全员邮件",
+      "why": "Alex 和部门愿景属于模拟场景；微软这封邮件写的是 Satya Nadella 接任 CEO。"
     },
     {
       "id": "d2",
-      "text": "The marketing team insists on highlighting innovative approaches, while the finance department emphasizes budget constraints, creating conflicting priorities for the email content."
+      "text": "The marketing team insists on highlighting innovative approaches, while the finance department emphasizes budget constraints, creating conflicting priorities for the email content.",
+      "label": "听写 2 · 不同部门对邮件重点的关注",
+      "why": "创新与预算代表不同关注点。微软这封全员邮件重点说明使命和战略方向。",
+      "apply": {
+        "prompt": "向新同事概括 Nadella 在首封微软全员邮件中提出的使命和方向。",
+        "sample": "Nadella said Microsoft was here to change the world through technology and help people achieve more in a mobile-first, cloud-first world."
+      }
     }
   ],
   "translationPractice": [
@@ -244,12 +252,12 @@
     "why": "第一句概括邮件中的使命，第二句保留当时的战略重点，不替换成后来常用的使命口号。"
   },
   "output": {
-    "prompt": "你正在向新同事介绍团队的技术使命和未来方向。请用英文说明技术希望怎样帮助客户，以及团队需要适应怎样的行业变化。",
-    "sample": "Our technology should empower customers to achieve more. We also need to thrive in an AI-first and cloud-first world.",
+    "prompt": "（情景练习）你在新人介绍会上介绍一个为教师开发移动学习工具的团队。请用英文说明团队希望用技术帮助谁、希望他们实现什么，以及产品需要适应怎样的技术环境。",
+    "sample": "We’re here to make learning more accessible through technology. We want to empower teachers and students to achieve more, so our product needs to thrive in a mobile-first and cloud-first world.",
     "check": [
-      "是否说明技术为客户带来的帮助？",
-      "是否提出团队需要适应的行业变化？",
-      "是否使用清楚、具体的英文表达？"
+      "是否说明团队想用技术解决什么问题？",
+      "是否说明希望帮助谁实现什么？",
+      "是否把移动端与云端作为产品工作的重点？"
     ]
   },
   "credits": {
@@ -261,11 +269,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "两条听写均为虚构营销部门邮件冲突，与纳德拉首封 CEO 员工信的目标无关；需在允许同步更新音频时修复。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

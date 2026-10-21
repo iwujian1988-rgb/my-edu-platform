@@ -255,10 +255,10 @@
     "transfer": "A weekly update with progress, blockers, and next steps lets teammates catch up without adding another meeting."
   },
   "rewrite": {
-    "bad": "We did the redesign. The test is happening. Design might do something later.",
-    "good": "Progress: The payment page redesign is complete. Key update: Accessibility testing is still underway. Next step: Once testing is complete, the Design team will review the final flow.",
-    "translation": "进展：付款页面改版已完成。重要信息：无障碍测试仍在进行。下一步：测试完成后，设计团队会复查最终流程。",
-    "pattern": "Progress: [completed work]. Key update: [current status]. Next step: Once [condition], [owner] will [action]."
+    "bad": "Let’s schedule another meeting so everyone can give a spoken update.",
+    "good": "Please post your progress, key updates, and next steps in the weekly team update by Thursday. We can review everyone’s notes asynchronously instead of adding another meeting.",
+    "translation": "请在周四前把进展、重要信息和下一步写进团队周报。我们可以异步查看大家的更新，不必再加一场会议。",
+    "pattern": "Please post [progress, key information, and next steps] by [time]. We can review it [asynchronously]."
   },
   "cloze": [
     {
@@ -318,12 +318,12 @@
     "why": "这句明确邀请大家异步分享进展、重要信息和下一步，也回应了无需再开同步会的要求。"
   },
   "output": {
-    "prompt": "客户演示已完成，两个客户要求补充导出功能，工程团队会在周四前给出工期评估。请写一段英文异步更新，交代进展、重要信息、下一步，并说明何时再同步。",
-    "sample": "Progress: The customer demo is complete. Key update: Two customers asked for an export option. Next step: Engineering will share an estimate by Thursday, and I’ll post another update by the end of the day.",
+    "prompt": "客户成功团队询问数据迁移项目的进度。数据映射已完成；安全审核仍在进行；审核完成后，Priya 会确认上线清单。请按“进展、重要信息、下一步”写一段英文更新，并说明何时再同步。",
+    "sample": "Progress: Data mapping is complete. Key update: The security review is still underway. Next step: Once it’s complete, Priya will confirm the launch checklist. I’ll post another update on Friday.",
     "check": [
-      "是否分别交代了进展、客户反馈和下一步？",
-      "是否把工程评估时间与后续更新时间说清楚？",
-      "是否没有把尚未评估的功能说成已承诺交付？"
+      "是否分别写出进展、重要信息和下一步？",
+      "是否点明下一步负责人？",
+      "是否说明下次更新时间？"
     ]
   },
   "credits": {
@@ -335,10 +335,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

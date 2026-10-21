@@ -106,9 +106,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "产品发布计划只列了日期，没有写出外部供应商延迟可能造成的影响。请用英文建议补充风险、影响和可选应对方式，供团队比较取舍。",
-    "sample": "Could we add the supplier delay as a risk and describe its impact on the launch? Then we can compare mitigation options and their effect on cost and timing.",
-    "rationale": "把具体风险、影响和应对选项写清楚，帮助团队比较成本与时间。"
+    "prompt": "项目评审时，团队只讨论了进度，没有记录风险。请用英文建议在计划、设计和代码评审中识别风险，并记录影响、应对方式和取舍。",
+    "sample": "Could we identify risks during planning, design, and code reviews, then record their impact and possible mitigations? That will help decision-makers weigh the cost and timeline trade-offs.",
+    "rationale": "风险管理贯穿不同活动，评估结果要帮助团队做知情决策，而不是只争论某一种风险更重要。"
   },
   "words": [
     {
@@ -184,9 +184,9 @@
   },
   "rewrite": {
     "bad": "Let’s deal with risks after launch. Right now, we only need to discuss the timeline.",
-    "good": "Could we add the supplier delay as a risk and describe its impact on the launch? Then we can compare mitigation options and their effect on cost and timing.",
-    "translation": "我们能否把供应商延迟列为风险，并说明它对发布的影响？然后比较应对方案及其对成本和时间的影响。",
-    "pattern": "Could we add [the supplier delay] as a risk and describe [its impact]? Then we can compare [mitigation options] and their effect on [cost and timing]."
+    "good": "Could we record and assess risks during planning, design, and code reviews? Then we can agree on possible mitigations and weigh their impact on cost and timing.",
+    "translation": "我们能否在计划、设计和代码评审中记录并评估风险？之后再商定应对方式，并权衡它们对成本和时间的影响。",
+    "pattern": "Could we identify [risks] during [the work], then assess [impact] and agree on [mitigations]?"
   },
   "cloze": [
     {
@@ -246,8 +246,8 @@
     "why": "风险管理贯穿不同活动，评估结果要帮助团队做知情决策，而不是只争论某一种风险更重要。"
   },
   "output": {
-    "prompt": "一次数据迁移可能让客户记录被不该访问的人看到。请用英文建议把这项风险和影响写进计划，并比较几种降低风险的办法及其成本、时间影响。",
-    "sample": "Could we add the access issue as a risk and describe its impact on customer data? Then we can compare mitigation options and their effect on cost and timing.",
+    "prompt": "产品发布计划只列了日期，没有写出外部供应商延迟可能造成的影响。请用英文建议补充风险、影响和可选应对方式，供团队比较取舍。",
+    "sample": "Could we add the supplier delay as a risk and describe its impact on the launch? Then we can compare mitigation options and their effect on cost and timing.",
     "check": [
       "是否明确指出一个可能的风险？",
       "是否说明风险影响和应对选项？",
@@ -263,10 +263,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

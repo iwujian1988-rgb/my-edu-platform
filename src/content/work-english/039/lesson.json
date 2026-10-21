@@ -143,9 +143,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你在产品说明中发现错误提示没有告诉用户下一步该做什么。请用英文针对文档内容提出具体修改建议，并说明它能帮助用户什么。",
+    "prompt": "你在代码评审中发现错误提示只写了 “Something went wrong”，用户不知道下一步怎么做。请用英文针对这处改动提出建议，并说明它能带来的帮助。",
     "sample": "Could we add a next step to the error message? That would help users understand how to continue instead of leaving them stuck.",
-    "rationale": "针对错误提示提出具体修改，并解释它如何帮助用户继续操作。"
+    "rationale": "建议针对代码呈现给用户的内容，并说明修改如何帮助用户继续操作。"
   },
   "words": [
     {
@@ -220,10 +220,10 @@
     "transfer": "A useful review comment identifies the problem and suggests a next step the author can take."
   },
   "rewrite": {
-    "bad": "The service notice is useless. Customers should know what to do.",
-    "good": "The error message explains what went wrong. Could we add a recovery step? That would show users how to continue instead of leaving them stuck.",
-    "translation": "这条错误提示解释了哪里出错。我们能否补充一个恢复步骤？这样用户就知道如何继续，不会卡在当前页面。",
-    "pattern": "The [error message] explains [what went wrong]. Could we add [a recovery step]? That would show users how to [continue]."
+    "bad": "Your code is completely wrong. Redo it exactly the way I would.",
+    "good": "Could we extract this repeated logic into a helper? That would make the change easier to maintain. What do you think?",
+    "translation": "我们能否把重复逻辑提取成一个辅助函数？这样后续维护会更容易。你觉得呢？",
+    "pattern": "Could we [change this part of the code] so that [the future change is easier]?"
   },
   "cloze": [
     {
@@ -248,11 +248,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex, a senior developer, is reviewing a pull request from junior developer Jordan, who has implemented a feature using a different approach than the team's standard."
+      "text": "Alex, a senior developer, is reviewing a pull request from junior developer Jordan, who has implemented a feature using a different approach than the team's standard.",
+      "label": "听写 1 · 代码评审的参与者和改动",
+      "why": "听清谁在评审、谁提交代码，以及实现方式与团队惯例的关系。"
     },
     {
       "id": "d2",
-      "text": "The team has strict guidelines about code consistency, but Jordan's implementation is more efficient, though it deviates from the established patterns."
+      "text": "The team has strict guidelines about code consistency, but Jordan's implementation is more efficient, though it deviates from the established patterns.",
+      "label": "听写 2 · 效率和团队一致性的取舍",
+      "why": "though 引出让步。反馈时针对实现方式，并说明它对后续维护的影响。",
+      "apply": {
+        "prompt": "用本课表达，针对登录错误提示提出一条具体改进建议，并说明它能帮用户什么。",
+        "sample": "Could we add “Check your connection and try again” to the login error? That would give users a clear next step."
+      }
     }
   ],
   "translationPractice": [
@@ -283,12 +291,12 @@
     "why": "先指出具体要改的内容，再说明这样能帮助用户继续操作。"
   },
   "output": {
-    "prompt": "上线公告解释了服务中断的原因，却没告诉客户如何恢复访问。请用英文针对公告内容提出具体修改，并说明这能帮助客户什么。",
-    "sample": "Could we add a recovery step to the service notice? That would help customers regain access instead of leaving them unsure what to do.",
+    "prompt": "产品注册页的密码重置错误只告诉用户“请求失败”，没有给出下一步。请用英文在评审中提出修改建议，并说明这能怎样帮助用户。",
+    "sample": "Could we add a next step to the password-reset error? That would help users understand how to continue instead of leaving them stuck.",
     "check": [
-      "是否针对具体内容提出建议？",
-      "是否说明建议带来的用户价值？",
-      "是否避免评价文档作者？"
+      "是否明确指出要补充的操作提示？",
+      "是否说明这能怎样帮助用户？",
+      "是否针对产品内容提出建议？"
     ]
   },
   "credits": {
@@ -300,10 +308,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

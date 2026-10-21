@@ -173,9 +173,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "跨时区同事半夜收到普通项目消息。请用英文写三条团队约定：普通消息何时回复、紧急问题走什么渠道、何时复查这条规则。",
-    "sample": "For routine questions, let’s reply during our local working hours. For urgent incidents, please use the escalation channel and tag the on-call owner. Let’s review this rule in two weeks.",
-    "rationale": "先按消息紧急程度区分回复方式，并约定复查时间。"
+    "prompt": "跨时区同事半夜收到普通项目消息。请用英文提出两条团队沟通规则：普通消息什么时候回复，紧急问题走什么渠道。",
+    "sample": "For routine questions, let’s reply during our local working hours. For urgent incidents, please use the escalation channel and tag the on-call owner.",
+    "rationale": "把消息优先级和回复方式分开，减少含糊的“尽快回复”。"
   },
   "words": [
     {
@@ -252,32 +252,32 @@
       "the way your team communicates：指出讨论对象是现有沟通方式。",
       "to improve ...：用不定式说明调整要达到的三个目标。"
     ],
-    "transfer": "Routine messages can wait until local working hours; urgent incidents go through the escalation channel."
+    "transfer": "Let’s brainstorm how to adjust our response rules to protect focus and improve visibility."
   },
   "rewrite": {
-    "bad": "Everyone should reply to every message as soon as it arrives, no matter the time zone.",
-    "good": "For routine questions, let’s reply during our local working hours. For urgent incidents, use the escalation channel and tag the on-call owner. Let’s review the rule in two weeks.",
-    "translation": "普通问题在各自工作时间内回复；紧急事件走升级渠道并标记值班负责人。两周后我们再检查这条约定。",
-    "pattern": "For [routine messages], do [X]. For [urgent issues], use [Y]. Let’s review this rule [at a set time]."
+    "bad": "Everyone must answer chat messages immediately, even at night.",
+    "good": "For routine questions, let’s reply during local working hours. For urgent incidents, use the escalation channel and tag the on-call owner.",
+    "translation": "普通问题请在当地工作时间回复；紧急故障请走升级渠道并提醒值班负责人。",
+    "pattern": "For [routine work], let’s [response rule]. For [urgent case], use [channel] and contact [owner]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "For routine questions, let’s reply during our local working ___.",
-      "answer": "hours",
-      "why": "working hours 指工作时间；local 强调按每位成员所在时区安排。"
+      "prompt": "We need clear communication ___ for late-night messages.",
+      "answer": "norms",
+      "why": "norms 指共同遵守的沟通规则。"
     },
     {
       "id": "c2",
-      "prompt": "For urgent incidents, use the ___ channel and tag the on-call owner.",
-      "answer": "escalation",
-      "why": "incident channel 用于需要即时处理的故障。"
+      "prompt": "Let’s ___ options before deciding on one channel.",
+      "answer": "brainstorm",
+      "why": "brainstorm options 表示集思广益。"
     },
     {
       "id": "c3",
-      "prompt": "Review whether this approach is ___ at our next check-in.",
-      "answer": "working",
-      "why": "试行之后检查效果，再决定是否调整约定。"
+      "prompt": "A shared decision log improves ___ across time zones.",
+      "answer": "visibility",
+      "why": "visibility 指相关人能够看见信息。"
     }
   ],
   "dictation": [
@@ -296,36 +296,31 @@
     {
       "prompt": "普通问题在各自当地的工作时间回复。",
       "answer": "For routine questions, let’s reply during our local working hours.",
-      "why": ""
+      "why": "在各自当地的工作时间回复普通消息"
     },
     {
       "prompt": "遇到紧急故障时，使用升级处理渠道并标记值班负责人。",
       "answer": "For urgent incidents, use the escalation channel and tag the on-call owner.",
-      "why": ""
-    },
-    {
-      "prompt": "我们两周后复查这条规则是否有效。",
-      "answer": "Let’s review whether this approach is working in two weeks.",
-      "why": "review whether ... is working 用来约定之后检查做法是否有效。"
+      "why": "紧急故障通过升级处理渠道联系值班负责人"
     }
   ],
   "choice": {
-    "prompt": "跨时区同事半夜收到普通项目消息。请用英文写三条团队约定：普通消息何时回复、紧急问题走什么渠道、何时复查这条规则。",
+    "prompt": "哪条规则最适合跨时区团队？",
     "options": [
-      "Everyone must answer chat messages immediately, even at night.",
-      "For routine questions, let’s reply during our local working hours. For urgent incidents, please use the escalation channel and tag the on-call owner. Let’s review this rule in two weeks.",
-      "All messages must be answered immediately."
+      "All messages must be answered immediately.",
+      "Routine questions can wait until local working hours; urgent incidents go to the escalation channel.",
+      "Please use your judgment, but no one will document the rule."
     ],
     "correct": 1,
-    "why": "先按消息紧急程度区分回复方式，并约定复查时间。"
+    "why": "它区分普通与紧急情况，并说明相应渠道。"
   },
   "output": {
-    "prompt": "跨时区客服团队夜间会收到普通客户问题，也可能遇到需要值班人员处理的服务故障。请用英文区分两类消息的回复方式，并提出复查规则的时间。",
-    "sample": "For routine customer questions, let’s reply during our local working hours. For urgent service incidents, use the escalation channel and tag the on-call owner. We can review the rule in two weeks.",
+    "prompt": "发布团队中有人把普通更新发成紧急提醒，导致值班同事频繁被打断。请用英文建议约定普通状态更新和紧急故障各用什么渠道，并在试行后复查。",
+    "sample": "Let’s use the project channel for routine status updates and the incident channel for urgent issues. We can try this approach and review whether it is working at our next check-in.",
     "check": [
-      "是否区分普通问题和紧急故障？",
-      "是否说清普通问题的回复时段和紧急故障的沟通渠道？",
-      "是否约定复查规则的时间？"
+      "是否区分普通更新和紧急事件？",
+      "是否为两种情况指定不同渠道？",
+      "是否安排复查规则的效果？"
     ]
   },
   "credits": {
@@ -337,10 +332,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

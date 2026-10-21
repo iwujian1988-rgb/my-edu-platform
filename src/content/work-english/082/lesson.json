@@ -227,9 +227,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你和经理的 1:1 只有二十分钟。你想讨论客户迁移、请经理反馈你主持发布评审的表现，并确定下次沟通前的一项行动。请用英文开场并排出讨论顺序。",
+    "prompt": "一对一会议只有二十分钟。请用英文带来一个优先事项，围绕一项具体能力请求反馈，并在结束前约定一个下一步。",
     "sample": "I’d like to discuss the customer migration as my top priority. Could you give me feedback on how I handled the launch review? Before we finish, let’s agree on one action I can take before our next check-in.",
-    "rationale": "一对一带着优先事项进入，围绕具体表现请教，并确定下一步。"
+    "rationale": "把一对一谈话落到一个重要事项、具体反馈和可跟进的行动上。"
   },
   "words": [
     {
@@ -305,9 +305,9 @@
   },
   "rewrite": {
     "bad": "Let’s talk about the budget first, even though I also have a project blocker and a development topic.",
-    "good": "I’d like to discuss the customer migration as my top priority. Could you give me feedback on how I handled the launch review? Before we finish, let’s agree on one action I can take before our next check-in.",
-    "translation": "今天大约有二十分钟，我想优先讨论客户迁移。你能给我一些关于我主持发布评审表现的反馈吗？结束前，我们确定一项我在下次沟通前可以采取的行动。",
-    "pattern": "I’d like to discuss [priority]. Could you give me feedback on [specific skill]? Before we finish, let’s agree on [one action] before [next check-in]."
+    "good": "We have about twenty minutes today, and I’d like to discuss both the project blocker and my development goals. Which would be most useful to focus on first?",
+    "translation": "今天大约有二十分钟，我想谈项目阻碍和发展目标。你觉得先讨论哪一个更有用？",
+    "pattern": "We have [limited time] and [two topics]. Which should we focus on first?"
   },
   "cloze": [
     {
@@ -357,22 +357,22 @@
     }
   ],
   "choice": {
-    "prompt": "你的一对一会议只剩二十分钟，但有项目阻碍和职业发展两个话题。请用英文请经理先帮你确定本次优先讨论哪一项。",
+    "prompt": "你的一对一只有二十分钟，想讨论客户迁移并提升主持评审的能力。请选择能带来明确反馈和下一步的说法。",
     "options": [
-      "You always make me talk about budget first. I want to discuss campaign metrics instead.",
-      "We have about twenty minutes today, and I’d like to discuss both the project blocker and my development goals. Which would be most useful to focus on first?",
-      "We have about twenty minutes today, and I’d like to discuss both the project blocker and my development goals."
+      "We can talk about anything that comes up. There is no need to decide on an action.",
+      "I’d like to discuss the customer migration as my top priority. Could you give me feedback on how I handled the launch review? Before we finish, let’s agree on one action I can take before our next check-in.",
+      "Could you tell me whether I am doing well in general?"
     ],
     "correct": 1,
-    "why": "把有限时间和两个议题说清楚，再请经理共同确定优先顺序，避免默认只有单向汇报。"
+    "why": "先确定优先事项，再针对具体能力请求反馈，最后约定一项行动。"
   },
   "output": {
-    "prompt": "你和经理的一对一只有二十分钟。你想讨论手头任务的优先级、询问自己最近一次客户演示的反馈，并确定下周前要完成的一件事。请用英文开场并排出顺序。",
-    "sample": "We have twenty minutes, so I’d like to start by checking the priorities for my current work. Could you give me feedback on my last customer demo? Before we finish, let’s agree on one action I should complete by next week.",
+    "prompt": "你和经理的 1:1 临时缩短到十五分钟。你想讨论 API 交接，并改进主持跨团队评审的能力。请用英文提出重点、请求具体反馈，再约一项会后的行动。",
+    "sample": "I’d like to discuss the API handoff as my top priority. Could you give me feedback on how I handled the vendor review? Before we finish, let’s agree on one action I can take before our next check-in.",
     "check": [
-      "是否提出一个优先讨论的话题？",
-      "是否围绕具体技能请求反馈？",
-      "是否确定下次沟通前的一项行动？"
+      "是否先说明本次优先事项？",
+      "是否围绕具体能力请求反馈？",
+      "是否约定了下一步行动？"
     ]
   },
   "credits": {
@@ -384,10 +384,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

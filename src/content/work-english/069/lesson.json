@@ -47,198 +47,195 @@
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "jot down the tools",
-      "meaning": "记下工具",
-      "explain": "快速记录下团队日常使用的协作工具，用于后续讨论和分析",
-      "example": "During the onboarding process, new employees are asked to jot down the tools they've used in previous positions."
+      "phrase": "How are these tools working for us?",
+      "meaning": "这些工具是否真正适合团队协作？",
+      "explain": "working for us 在这里询问现有工具是否满足团队需要。",
+      "example": "How are these tools working for us across the team?"
     },
     {
-      "paragraph": 1,
-      "phrase": "pull up tooling 101",
-      "meaning": "调出工具基础介绍",
-      "explain": "在会议开始时展示基础工具知识，帮助团队了解工具使用的最佳实践",
-      "example": "Before the training session, the manager pulled up tooling 101 on the screen to ensure everyone was on the same page."
-    },
-    {
-      "paragraph": 3,
-      "phrase": "tool rules worksheet",
-      "meaning": "工具规则工作表",
-      "explain": "用于制定团队工具使用规范的表格，帮助明确不同工具的使用场景和规则",
-      "example": "Our team used the tool rules worksheet to define when to use email versus instant messaging for different types of communication."
+      "paragraph": 0,
+      "phrase": "reflect",
+      "meaning": "回想并评估",
+      "explain": "在讨论工具习惯前，先回顾当前的使用情况。",
+      "example": "Take a moment to reflect on how the team shares project updates."
     },
     {
       "paragraph": 4,
-      "phrase": "ping-free afternoon",
-      "meaning": "无打扰的下午",
-      "explain": "指通过合理使用工具规则，减少不必要的通知和打扰，提高工作效率的时间段",
-      "example": "After implementing our communication guidelines, we finally enjoyed a ping-free afternoon where everyone could focus on deep work."
+      "phrase": "who’s responsible",
+      "meaning": "由谁负责",
+      "explain": "工具规则需要明确负责人，后续才有人落实。",
+      "example": "Let’s record who’s responsible for updating the shared guide."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Schedule an asynchronous check-in",
+      "meaning": "安排一次异步回顾",
+      "explain": "成员可以在不同时间通过文档反馈约定是否有效。",
+      "example": "Let’s schedule an asynchronous check-in next month."
     }
   ],
   "scenario": {
-    "title": "Communication Channel Guidelines",
+    "title": "The same decision appears in three places",
     "english": [
-      "Alex and Taylor are project managers at a mid-sized marketing firm, coordinating a product launch campaign with tight deadlines.",
-      "They disagree on communication methods: Alex prefers detailed emails for documentation, while Taylor wants instant messaging for quick updates, causing confusion and missed deadlines.",
-      "Alex suggests, 'Let's establish clear guidelines: emails for formal decisions and documentation, chat for quick questions, and meetings for complex discussions. What do you think?'"
+      "The product team discusses a launch date in chat, revisits it by email, and then books a meeting because nobody knows which decision is final.",
+      "Nora suggests a simple rule: use chat for quick questions, a shared document for decisions, and a meeting only when the team needs live debate.",
+      "She puts the rule in the team workspace, names who will maintain it, and schedules a check-in next month to see whether it works."
     ],
     "chinese": [
-      "Alex和Taylor是一家中型营销公司的项目经理，负责协调一个有严格截止日期的产品推广活动。",
-      "他们在沟通方式上有分歧：Alex偏好详细的邮件进行文档记录，而Taylor希望使用即时通讯获取快速更新，这导致了混乱和错过截止日期。",
-      "Alex建议：'让我们制定明确的指导原则：邮件用于正式决策和文档记录，聊天用于快速提问，会议用于复杂讨论。你觉得怎么样？'"
+      "产品团队先在聊天工具里讨论上线日期，又在邮件中重复讨论，最后因没人知道最终决定而安排会议。",
+      "Nora 提议明确规则：快速提问用聊天，决定写进共享文档，需要实时讨论时才开会。",
+      "她把规则放在团队工作区，指定维护人，并约定下个月检查规则是否有效。"
     ]
   },
   "firstAttempt": {
-    "prompt": "团队发现简单问题、重要决定和多人讨论经常混在即时聊天里，后来很难查找。请用英文提议团队约定聊天、共享文档和会议各自的用途。",
-    "sample": "Could we use chat for quick questions that need a same-day answer? Let’s put decisions in the shared document so the whole team can find them, and set up a meeting when an issue needs a live discussion.",
-    "rationale": "为不同沟通渠道明确用途，让团队知道去哪里提问、查决定或讨论复杂问题。"
+    "prompt": "团队在聊天、邮件和会议里重复讨论上线日期。请写两句英文，提议分别用什么渠道做什么，并说明最终决定记在哪里。",
+    "sample": "Let’s use chat for quick questions and the shared document for final decisions. We can meet when a topic needs live discussion.",
+    "rationale": "给每个工具分配用途，并指出决定的唯一记录位置。"
   },
   "words": [
     {
-      "id": "jot-down",
-      "word": "jot down",
-      "ipa": "/dʒɒt daʊn/",
-      "pos": "phrasal verb",
-      "meaning": "快速记下",
-      "collocation": "jot down notes/ideas/details",
-      "example": "Before booking a meeting, jot down the decision you need the group to make.",
-      "translation": "预约会议前，先记下你需要大家共同作出的决定。",
-      "note": "用于表示快速、简要地记录信息，通常不需要完整的句子。"
+      "id": "collaboration",
+      "word": "collaboration",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "协作",
+      "collocation": "collaboration tools",
+      "example": "We use a shared document for project collaboration.",
+      "translation": "我们用共享文档进行项目协作。",
+      "note": "常与 tool、team、cross-functional 搭配。"
     },
     {
-      "id": "tooling",
-      "word": "tooling",
-      "ipa": "/ˈtuːlɪŋ/",
-      "pos": "noun",
-      "meaning": "工具集合；工具使用",
-      "collocation": "digital tooling/development tooling/tooling strategy",
-      "example": "Our company is investing in new tooling to improve collaboration efficiency.",
-      "translation": "我们公司正在投资新的工具集合以提高协作效率。",
-      "note": "指一组工具或工具系统，常用于技术或工作环境中。"
+      "id": "contextswitching",
+      "word": "context-switching",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "任务或工具间的频繁切换",
+      "collocation": "reduce context-switching",
+      "example": "One decision log can reduce context-switching.",
+      "translation": "一份决策记录可以减少来回切换。",
+      "note": "复合名词，常用于说明效率损失。"
     },
     {
-      "id": "scorecard",
-      "word": "scorecard",
-      "ipa": "/ˈskɔːrkɑːrd/",
-      "pos": "noun",
-      "meaning": "记分卡；评估表",
-      "collocation": "performance scorecard/evaluation scorecard",
-      "example": "The department uses a quarterly scorecard to track progress on key initiatives.",
-      "translation": "该部门使用季度评估表来跟踪关键举措的进展。",
-      "note": "用于记录和评估表现的表格或系统，常见于商业和项目管理中。"
+      "id": "fragment",
+      "word": "fragment",
+      "ipa": "",
+      "pos": "v.",
+      "meaning": "使零散；分散",
+      "collocation": "fragment attention",
+      "example": "Constant notifications can fragment our attention.",
+      "translation": "持续通知会分散注意力。",
+      "note": "原文说的是注意力被打散。"
+    },
+    {
+      "id": "norms",
+      "word": "norms",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "团队共同遵守的做法",
+      "collocation": "team norms",
+      "example": "We need clear norms for urgent messages.",
+      "translation": "我们需要明确紧急消息的团队规则。",
+      "note": "多用复数，指约定俗成或共同制定的规则。"
     },
     {
       "id": "mitigate",
       "word": "mitigate",
-      "ipa": "/ˈmɪtɪɡeɪt/",
-      "pos": "verb",
-      "meaning": "减轻；缓解",
-      "collocation": "mitigate risks/mitigate damage/mitigate effects",
-      "example": "The new security measures are designed to mitigate potential cyber threats.",
-      "translation": "新的安全措施旨在减轻潜在的网络安全威胁。",
-      "note": "采取措施降低风险、伤害或负面影响，常用于风险管理情境。"
+      "ipa": "",
+      "pos": "v.",
+      "meaning": "减轻；降低风险",
+      "collocation": "mitigate a risk",
+      "example": "A backup owner can mitigate the handoff risk.",
+      "translation": "备份负责人可以降低交接风险。",
+      "note": "常与 risk 搭配。"
     },
     {
       "id": "asynchronous",
       "word": "asynchronous",
-      "ipa": "/eɪˈsɪŋkrənəs/",
-      "pos": "adjective",
+      "ipa": "",
+      "pos": "adj.",
       "meaning": "异步的",
-      "collocation": "asynchronous communication/asynchronous meeting/asynchronous learning",
-      "example": "Our team uses asynchronous communication tools to accommodate different time zones.",
-      "translation": "我们的团队使用异步通信工具来适应不同的时区。",
-      "note": "指不需要同时参与的活动，允许参与者在不同时间完成工作。"
-    },
-    {
-      "id": "disruption",
-      "word": "disruption",
-      "ipa": "/dɪsˈrʌpʃn/",
-      "pos": "noun",
-      "meaning": "中断；扰乱",
-      "collocation": "minimize disruption/cause disruption/digital disruption",
-      "example": "The company implemented new policies to minimize disruption during the transition period.",
-      "translation": "公司实施了新政策以在过渡期间减少中断。",
-      "note": "指正常流程或活动的中断，常用于描述变革或技术变革的影响。"
+      "collocation": "asynchronous check-in",
+      "example": "We can collect feedback in an asynchronous check-in.",
+      "translation": "我们可以在异步回顾中收集反馈。",
+      "note": "强调不需要同时在线。"
     }
   ],
   "structure": {
-    "original": "Before the virtual workshop, ask your team to jot down the tools they regularly use for collaboration, writing and designing, documentation, knowledge management, project management, whiteboarding, and more.",
+    "original": "If there are any risks in your choice of tools, decide what you’ll do to mitigate them, and who’s responsible.",
     "analysis": [
-      "“Before the virtual workshop”是时间状语；主句用 ask your team to jot down，表示请团队记下信息。to jot down 是 ask 的宾语补足成分。",
-      "“the tools (that) they regularly use…”是修饰 tools 的定语从句，关系代词 that/which 在从句中作 use 的宾语，因此省略。",
-      "for 后面并列列出工具用途：collaboration、writing and designing、documentation、knowledge management、project management、whiteboarding 等。"
+      "If there are any risks ...：先提出需要处理的条件。",
+      "decide what you’ll do ...：明确风险应对动作。",
+      "and who’s responsible：补上执行人，避免只写原则。"
     ],
-    "transfer": "Use email for decisions that need a record, chat for quick questions, and meetings for issues that need discussion."
+    "transfer": "If urgent requests might be missed in email, decide which chat channel to use and who will monitor it."
   },
   "rewrite": {
-    "bad": "Let’s keep every decision in chat, even when the thread becomes difficult to follow.",
-    "good": "Could we use chat for quick questions, record decisions in the shared document, and set up a meeting when an issue needs live discussion?",
-    "translation": "我们能否用聊天处理简单问题，把决定记录在共享文档里，并在问题需要实时讨论时安排会议？",
-    "pattern": "Could we use [channel] for [purpose], record [information] in [shared place], and meet when [discussion need]?"
+    "bad": "Please stop using so many tools. It is confusing.",
+    "good": "Let’s use chat for quick questions and record final decisions in the shared document. We can review this rule next month.",
+    "translation": "快速问题用聊天工具，最终决定记在共享文档里。我们下个月回顾这条规则。",
+    "pattern": "Let’s use [channel] for [purpose] and record [decision] in [place]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Use chat for quick questions that need a same-day ___.",
-      "answer": "answer",
-      "why": "聊天适合需要较快回复的简单问题。"
+      "prompt": "We need team ___ for where final decisions are recorded.",
+      "answer": "norms",
+      "why": "team norms 指团队共同约定的做法。"
     },
     {
       "id": "c2",
-      "prompt": "Put decisions ___ the shared document so the whole team can find them.",
-      "answer": "in",
-      "why": "把决定记录在共享文档中，便于后续查找。"
+      "prompt": "A backup owner can ___ the risk of missed requests.",
+      "answer": "mitigate",
+      "why": "mitigate a risk 指降低风险。"
     },
     {
       "id": "c3",
-      "prompt": "Set up a meeting ___ the issue needs a live discussion.",
-      "answer": "when",
-      "why": "when 指明适合安排会议的条件。"
+      "prompt": "We can collect comments in an ___ check-in.",
+      "answer": "asynchronous",
+      "why": "不要求同时参加的回顾是 asynchronous check-in。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Alex and Taylor are project managers at a mid-sized marketing firm, coordinating a product launch campaign with tight deadlines."
+      "text": "Use this workshop to help your core team agree on which tools you’ll use and how you’ll use them.",
+      "why": "听清 agree on 后面并列的 which 和 how。"
     },
     {
       "id": "d2",
-      "text": "They disagree on communication methods: Alex prefers detailed emails for documentation, while Taylor wants instant messaging for quick updates, causing confusion and missed deadlines."
+      "text": "Let’s use chat for quick questions and record final decisions in the shared document.",
+      "why": "注意两个工具及其各自用途。"
     }
   ],
   "translationPractice": [
     {
       "prompt": "当天需要答复的简单问题用聊天沟通。",
       "answer": "Use chat for quick questions that need a same-day answer.",
-      "why": ""
+      "why": "即时聊天用于简单、及时的问题"
     },
     {
       "prompt": "把决定写进共享文档，方便整个团队查找。",
       "answer": "Put decisions in the shared document so the whole team can find them.",
-      "why": ""
-    },
-    {
-      "prompt": "问题需要实时讨论时，再安排会议。",
-      "answer": "Set up a meeting when the issue needs a live discussion.",
-      "why": ""
+      "why": "把重要决定留在可查找的地方"
     }
   ],
   "choice": {
-    "prompt": "团队同时用邮件、聊天和多个文档工具，信息经常找不到。请用英文建议开一次工具约定讨论，先盘点常用工具，再共同决定各自用途。",
+    "prompt": "团队总在不同工具中重复讨论，哪条规则最可执行？",
     "options": [
-      "You always use chat for everything, which makes it hard to track important information. We should only use email for important stuff.",
-      "Could we review the tools we use for messaging, documents, and project tracking, then agree on what each one is for? We can check whether the current setup is working for the team.",
-      "Could we review the tools we use for messaging, documents, and project tracking, then agree on what each one is for?"
+      "Please communicate better in the future.",
+      "Use chat for quick questions, record decisions in the shared document, and review the rule next month.",
+      "No one should send messages anymore."
     ],
     "correct": 1,
-    "why": "工具约定应由团队一起盘点、评估和讨论，而不是由一个人预设“邮件做什么、聊天做什么”。"
+    "why": "它明确渠道、记录位置和复查时间。"
   },
   "output": {
-    "prompt": "团队用聊天讨论复杂的客户故障，重要决定散落在多个线程里。请用英文提出一套沟通约定，说明即时消息、共享记录和会议分别适合处理什么。",
-    "sample": "Could we use chat for quick coordination during an incident, record decisions and owners in the shared incident log, and start a call when we need to troubleshoot together?",
+    "prompt": "新成员入组时，常不知道项目决定、日常更新和文件分别在哪里。请用英文建议把团队常用工具和用途整理成一份共享指南。",
+    "sample": "Could we create a short guide to the tools we use and what each one is for? Let’s show where decisions, routine updates, and working documents belong so new teammates can find them.",
     "check": [
-      "是否区分简单问题、重要决定和实时讨论？",
-      "是否说明决定放在哪里便于查找？",
-      "是否把约定表述为团队共同商定？"
+      "是否建议盘点工具并说明用途？",
+      "是否举出信息存放的具体类别？",
+      "是否说明指南如何帮助新成员？"
     ]
   },
   "credits": {
@@ -250,10 +247,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

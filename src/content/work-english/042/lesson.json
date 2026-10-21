@@ -90,8 +90,8 @@
   },
   "firstAttempt": {
     "prompt": "同事问 Steve Ballmer 在 2014 年宣布 Satya Nadella 接任 CEO 时，怎样介绍他的能力并表达对交接的态度。请用英文概括。",
-    "sample": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and looked forward to seeing him bring Microsoft’s teams together around new opportunities.",
-    "rationale": "既概括 Ballmer 对 Nadella 的评价，也补上他对团队交接的期待。"
+    "sample": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and how Microsoft teams could work together to act on opportunities.",
+    "rationale": "回答概括原邮件对 Nadella 的评价和协作方式，不加入原文没有的项目变更或担忧。"
   },
   "words": [
     {
@@ -172,8 +172,8 @@
   },
   "rewrite": {
     "bad": "We should announce the new CEO without explaining his experience or how the handoff will work.",
-    "good": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and looked forward to seeing him bring Microsoft’s teams together around new opportunities.",
-    "translation": "Ballmer 将 Nadella 描述为一位经得起验证的领导者，具备很强的技术能力和商业洞察力。他表示，Nadella 了解市场，并期待看到他如何围绕新机遇凝聚微软团队。",
+    "good": "Ballmer described Nadella as a proven leader with strong technical skills and business insight. He said Nadella understood the market and how Microsoft teams could work together to act on opportunities.",
+    "translation": "鲍尔默称纳德拉是一位经验丰富的领导者，具备扎实的技术能力和商业洞察力。他表示，纳德拉了解市场，也懂得如何让微软团队协作抓住机会。",
     "pattern": "Ballmer described [the successor] as [strengths] and expressed confidence in [the transition]."
   },
   "cloze": [
@@ -199,11 +199,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "The team members express concerns about Mark's different management style and worry about potential changes in their established workflows and project priorities."
+      "text": "The team members express concerns about Mark's different management style and worry about potential changes in their established workflows and project priorities.",
+      "label": "听写 1 · 团队成员担心新经理带来变化",
+      "why": "听出他们担心工作方式和项目优先级。"
     },
     {
       "id": "d2",
-      "text": "Sarah addresses the concerns by highlighting Mark's relevant experience and facilitating a team discussion where Mark shares his vision while also listening to team members' perspectives."
+      "text": "Sarah addresses the concerns by highlighting Mark's relevant experience and facilitating a team discussion where Mark shares his vision while also listening to team members' perspectives.",
+      "label": "听写 2 · 介绍经验并邀请团队交流",
+      "why": "highlighting experience 说明介绍能力，listening to perspectives 表示愿意听取团队意见。",
+      "apply": {
+        "prompt": "向同事概括 Ballmer 怎样介绍 Nadella 的能力，以及他对交接的态度。",
+        "sample": "Ballmer described Nadella as a proven leader with strong technical skills and business insight, and expressed confidence in the transition."
+      }
     }
   ],
   "translationPractice": [
@@ -235,7 +243,7 @@
   },
   "output": {
     "prompt": "你要向团队介绍一位新项目负责人。请用两句英文概括对方的专业背景和协作优势，并表达你对合作的期待。",
-    "sample": "The new project lead brings strong technical skills and business insight. I’m looking forward to seeing how they bring the team together around new opportunities.",
+    "sample": "She brings deep product experience and a strong understanding of our customers. I’m looking forward to seeing how she brings the team together around new opportunities.",
     "check": [
       "是否介绍了具体的专业优势？",
       "是否说明了对团队协作的期待？",
@@ -251,10 +259,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

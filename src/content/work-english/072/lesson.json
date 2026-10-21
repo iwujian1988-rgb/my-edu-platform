@@ -40,199 +40,201 @@
   },
   "notes": [
     {
-      "paragraph": 0,
-      "phrase": "sentences should have fewer than 15 words",
-      "meaning": "句子应少于15个单词",
-      "explain": "保持句子简短有助于提高清晰度，让读者更容易理解信息",
-      "example": "To improve readability, ensure your sentences have fewer than 15 words."
+      "paragraph": 1,
+      "phrase": "bring your ask up front",
+      "meaning": "把请求放到开头",
+      "explain": "把需要对方完成的事先写出来，再补必要背景。",
+      "example": "Let’s bring the approval request up front."
     },
     {
       "paragraph": 1,
-      "phrase": "cut the last line and paste it at the top",
-      "meaning": "删除最后一行并将其粘贴到顶部",
-      "explain": "这是一种写作技巧，通过将最重要的信息前置，帮助读者快速抓住重点",
-      "example": "To make your email more effective, cut the last line and paste it at the top."
+      "phrase": "loop themselves in",
+      "meaning": "自行补上背景、了解进展",
+      "explain": "给出必要背景和记录位置，让没有参加前序讨论的人也能跟上。",
+      "example": "The decision log helps new teammates loop themselves in."
     },
     {
       "paragraph": 1,
-      "phrase": "Humans are storytellers",
-      "meaning": "人类是天生的讲故事者",
-      "explain": "人们习惯于按故事结构组织信息，先铺垫再揭示重点，而简洁写作要求打破这种习惯",
-      "example": "Humans are storytellers by nature, but business writing requires a different approach."
+      "phrase": "Brevity requires you to think differently",
+      "meaning": "简洁需要调整信息组织方式",
+      "explain": "原文强调简洁不只是删词，也要改变信息出现的顺序。",
+      "example": "Brevity requires us to put the decision before the background."
     },
     {
       "paragraph": 2,
-      "phrase": "Actively avoid words which weaken your point",
-      "meaning": "主动避免削弱你观点的词语",
-      "explain": "在职场沟通中，应使用直接、有力的表达，避免模糊或弱化信息的词汇",
-      "example": "To strengthen your argument, actively avoid words which weaken your point."
+      "phrase": "Actively avoid words which weaken your point.",
+      "meaning": "主动删掉削弱重点的词",
+      "explain": "用明确数据替代模糊修饰，让请求或结论更清楚。",
+      "example": "Use the confirmed figure instead of saying “nearly 100.”"
     }
   ],
   "scenario": {
-    "title": "Shortening Work Emails",
+    "title": "The decision is buried in the email",
     "english": [
-      "Sarah needed to inform her team about a project deadline change while also requesting additional resources.",
-      "Her manager emphasized brevity in emails, while team members needed clear context to adjust their schedules.",
-      "She applied the principle of cutting unnecessary words and starting with the most critical information."
+      "Lena needs the sales team to approve the final price list by Thursday. Her draft email opens with three paragraphs of background, and the actual request appears at the end.",
+      "Her manager asks her to put the decision first. Lena moves the request to the opening line, then keeps only the context the team needs to decide.",
+      "The new email tells readers what to approve, where the file is, and when she needs a reply. Colleagues can respond without another round of questions."
     ],
     "chinese": [
-      "莎拉需要通知团队项目截止日期变更，同时请求额外资源支持。",
-      "她的经理强调邮件要简洁，而团队成员需要清晰背景来调整工作安排。",
-      "她运用了删减不必要词汇、从最关键信息开始沟通的原则。"
+      "Lena 需要销售团队在周四前批准最终价目表。她的邮件草稿先写了三段背景，真正的请求却放在末尾。",
+      "经理让她把待决定的事放在开头。Lena 将请求移到第一行，只留下做决定必需的背景。",
+      "新邮件写清要批准什么、文件在哪里、何时需要答复。同事无需来回追问就能回复。"
     ]
   },
   "firstAttempt": {
-    "prompt": "客户把项目截止日期提前到下周五。你需要团队本周增加一位评审人。请用两句英文写一封简短邮件：先说明日期变化，再提出支持请求并请对方确认。",
-    "sample": "The client moved the deadline to next Friday. Could we add another reviewer this week to meet the new timeline, and could you confirm who is available by 3 p.m. today?",
-    "rationale": "先说日期变化，再提出具体支持请求并说明何时需要答复。"
+    "prompt": "你要请销售团队在周四前批准共享文件中的最终价目表。先写邮件开头两句：第一句直接说请求，第二句给出文件位置和截止时间。",
+    "sample": "Could you approve the final price list in the shared folder by Thursday? The file is named Price List v3, and I need your reply before 3 p.m.",
+    "rationale": "先出现可执行的请求，再交代文件位置和具体时间；读者不用读完背景才知道要做什么。"
   },
   "words": [
     {
+      "id": "request",
+      "word": "request",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "请求；需要对方完成的事",
+      "collocation": "make a request",
+      "example": "My request is to approve the price list by Thursday.",
+      "translation": "我的请求是周四前批准价目表。",
+      "note": "工作邮件里应让 request 明确、可执行。"
+    },
+    {
+      "id": "distributed",
+      "word": "distributed",
+      "ipa": "",
+      "pos": "adj.",
+      "meaning": "分布在不同地点的",
+      "collocation": "distributed team",
+      "example": "Our distributed team works across three time zones.",
+      "translation": "我们的分布式团队横跨三个时区。",
+      "note": "修饰 team、workforce 等。"
+    },
+    {
+      "id": "efficiently",
+      "word": "efficiently",
+      "ipa": "",
+      "pos": "adv.",
+      "meaning": "高效地",
+      "collocation": "respond efficiently",
+      "example": "The team can respond efficiently when the deadline is clear.",
+      "translation": "截止时间明确时，团队能高效回复。",
+      "note": "修饰动作，表示用较少的往返完成任务。"
+    },
+    {
+      "id": "loop",
+      "word": "loop themselves in",
+      "ipa": "",
+      "pos": "phr.",
+      "meaning": "自行补上背景信息",
+      "collocation": "loop yourself in",
+      "example": "The notes help new members loop themselves in.",
+      "translation": "这些记录帮助新成员自行了解背景。",
+      "note": "原文中的 themselves 随主语变化。"
+    },
+    {
+      "id": "reframe",
+      "word": "reframe",
+      "ipa": "",
+      "pos": "v.",
+      "meaning": "重新表述；调整说法",
+      "collocation": "reframe a message",
+      "example": "Reframe the opening as a direct request.",
+      "translation": "把开头改写成直接的请求。",
+      "note": "通常改变表达角度，不改变事实。"
+    },
+    {
       "id": "brevity",
       "word": "brevity",
-      "ipa": "/ˈbrevəti/",
-      "pos": "noun",
-      "meaning": "简洁，简短",
-      "collocation": "brevity is key",
-      "example": "Brevity helps readers find the main point quickly.",
-      "translation": "简洁有助于读者快速找到重点。",
-      "note": "在职场写作中，简洁性往往比冗长的解释更有效"
-    },
-    {
-      "id": "loop-themselves-in",
-      "word": "loop themselves in",
-      "ipa": "/luːp ðəmˈselvz ɪn/",
-      "pos": "phrasal verb",
-      "meaning": "使某人参与进来",
-      "collocation": "loop someone in on the discussion",
-      "example": "Please loop the design team in if the new deadline changes their workload.",
-      "translation": "如果新截止时间会影响设计团队的工作量，请把他们也拉进沟通。",
-      "note": "loop someone in 表示让某人加入讨论并同步信息。"
-    },
-    {
-      "id": "tweak",
-      "word": "tweak",
-      "ipa": "/twiːk/",
-      "pos": "verb",
-      "meaning": "微调，稍作修改",
-      "collocation": "tweak the wording",
-      "example": "I’ll tweak the email to state the new deadline and request in two sentences.",
-      "translation": "我会把邮件改成两句话，写清新截止时间和请求。",
-      "note": "表示对细节进行小幅度调整，使表达更精确"
-    },
-    {
-      "id": "rewire",
-      "word": "rewire",
-      "ipa": "/ˌriːˈwaɪər/",
-      "pos": "verb",
-      "meaning": "重连，重塑",
-      "collocation": "rewire your brain",
-      "example": "Regular practice can rewire your writing habits over time.",
-      "translation": "持续练习可以逐渐改变你的写作习惯。",
-      "note": "常作比喻，表示改变人的思维方式或习惯。"
-    },
-    {
-      "id": "roundabouts",
-      "word": "roundabouts",
-      "ipa": "/ˈraʊndəbaʊts/",
-      "pos": "noun",
-      "meaning": "模糊表达，含糊其辞",
-      "collocation": "avoid roundabout expressions",
-      "example": "Avoid roundabout expressions; state the new deadline first.",
-      "translation": "避免绕弯表达，先写新的截止时间。",
-      "note": "roundabout 在这里作形容词，描述表达迂回。"
-    },
-    {
-      "id": "adverb",
-      "word": "adverb",
-      "ipa": "/ˈædvɜːrb/",
-      "pos": "noun",
-      "meaning": "副词",
-      "collocation": "remove unnecessary adverbs",
-      "example": "Remove unnecessary adverbs to make the email more concise.",
-      "translation": "删去不必要的副词，让邮件更简洁。",
-      "note": "副词常会使表达变得冗长，在简洁写作中应谨慎使用"
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "简洁",
+      "collocation": "value brevity",
+      "example": "Brevity makes the next action easier to find.",
+      "translation": "简洁让下一步行动更容易被找到。",
+      "note": "强调用必要的信息说清楚。"
     }
   ],
   "structure": {
     "original": "Make sure that you’ve provided enough information for others to loop themselves in.",
     "analysis": [
-      "Make sure that… 是祈使表达，that 引导 make sure 的内容从句；you’ve provided enough information 是现在完成时。",
-      "“for others to loop themselves in”中，for others 是不定式的逻辑主语，to loop 是目的/结果动作；loop oneself in 指补上上下文后加入讨论。",
-      "“enough information for someone to do something”是常用结构：提供足够信息，让别人能够自行接上进度。"
+      "Make sure that ...：提醒写信人检查一项必要条件。",
+      "enough information for others to ...：说明信息要足以让未参与讨论的人自行跟上。",
+      "句子强调“请求先行”仍要保留足够背景。"
     ],
-    "transfer": "The client moved the deadline to Friday. Could you send the revised estimate by 3 p.m. today? I’ll add a reviewer if you need support."
+    "transfer": "Make sure that the team has the file link and deadline before asking for approval."
   },
   "rewrite": {
-    "bad": "I am writing to inform you that the deadline has changed and we need more resources to complete everything.",
-    "good": "The client moved the deadline to next Friday. Could we add another reviewer this week to meet the new timeline, and could you confirm who is available by 3 p.m. today?",
-    "translation": "客户把截止日期提前到下周五。为了赶上新的时间安排，我们能否本周增加一位评审人？你能在今天下午三点前确认谁有空吗？",
-    "pattern": "[The change]. Could we [specific request] to meet [the new timeline], and could you confirm [who/what] by [time]?"
+    "bad": "We have discussed the price list for weeks. There are many comments. Please see the file. I need approval by Thursday.",
+    "good": "Could you approve the final price list by Thursday? The shared file includes the changes discussed this week.",
+    "translation": "能否在周四前批准最终价目表？共享文件已包含本周讨论的修改。",
+    "pattern": "Could you [action] by [time]? [Where to find the material or key context]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "The client moved the deadline to next ___.",
-      "answer": "Friday",
-      "why": "move the deadline to… 后接新的日期。"
+      "prompt": "Could you ___ the final price list by Thursday?",
+      "answer": "approve",
+      "why": "邮件开头直接写清楚希望对方采取的动作。"
     },
     {
       "id": "c2",
-      "prompt": "Could we add another reviewer this ___?",
-      "answer": "week",
-      "why": "this week 说明需要增加评审人的时间范围。"
+      "prompt": "The file is ___ Price List v3.",
+      "answer": "named",
+      "why": "文件名让收件人可以快速找到材料。"
     },
     {
       "id": "c3",
-      "prompt": "Could you confirm who is ___ by 3 p.m. today?",
-      "answer": "available",
-      "why": "available 表示有空且可以参与。"
+      "prompt": "I need your reply ___ 3 p.m.",
+      "answer": "before",
+      "why": "给出明确时间，避免“尽快”带来的误解。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah needed to inform her team about a project deadline change while also requesting additional resources."
+      "text": "Make sure that you’ve provided enough information for others to loop themselves in.",
+      "why": "听出 enough information for others to ... 的连贯结构。"
     },
     {
       "id": "d2",
-      "text": "Her manager emphasized brevity in emails, while team members needed clear context to adjust their schedules."
+      "text": "Could you approve the final price list by Thursday?",
+      "why": "听清请求动作 approve 和截止时间 Thursday。"
     }
   ],
   "translationPractice": [
     {
-      "prompt": "客户把截止日期提前到了下周五。",
-      "answer": "The client moved the deadline to next Friday.",
+      "prompt": "你能在周四前批准最终价目表吗？",
+      "answer": "Could you approve the final price list by Thursday?",
       "why": ""
     },
     {
-      "prompt": "我们能否在本周增加一位评审人，以赶上新的时间安排？",
-      "answer": "Could we add another reviewer this week to meet the new timeline?",
+      "prompt": "文件名是 Price List v3。",
+      "answer": "The file is named Price List v3.",
       "why": ""
     },
     {
-      "prompt": "你能在今天下午三点前确认谁有空吗？",
-      "answer": "Could you confirm who is available by 3 p.m. today?",
+      "prompt": "我需要在下午三点前收到回复。",
+      "answer": "I need your reply before 3 p.m.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "客户把项目截止日期提前到下周五。请用英文说明日期变化，提出本周增加一位评审人，并询问谁有空。",
+    "prompt": "哪封邮件开头最方便对方立即采取行动？",
     "options": [
-      "The project is delayed. Can someone help?",
-      "The client moved the deadline to next Friday. Could we add another reviewer this week to meet the new timeline, and could you confirm who is available by 3 p.m. today?",
-      "We need more resources at some point, and I will send another update later."
+      "There are a few things from the project history that may be relevant.",
+      "Could you approve the final price list by Thursday? The file is named Price List v3. I need your reply before 3 p.m.",
+      "Please read the history of this project before I explain what I need."
     ],
     "correct": 1,
-    "why": "两句里交代截止日期变化、具体支持请求和明确的确认时间。"
+    "why": "先写请求和期限，再提供文件名与所需回复时间。"
   },
   "output": {
-    "prompt": "数据团队告知你，周报中的客户留存数据要晚一天才能确认。请用两句英文通知经理：说明变化、影响和你建议的处理方式，并请对方确认。",
-    "sample": "The retention figures will be ready one day later than planned, so I recommend sending the report with verified numbers on Thursday. Could you confirm this change by 3 p.m.?",
+    "prompt": "团队需要批准一份更新后的折扣清单。请写三句简短邮件：先提出批准请求，再告诉对方文件名，最后写明你需要回复的时间。",
+    "sample": "Could you approve the updated discount list by Thursday? The file is named Q4 Discount v2. I need your reply before 3 p.m. Wednesday.",
     "check": [
-      "是否先说明数据延迟及其对周报的影响？",
-      "是否提出了清楚的处理建议？",
-      "是否请对方在明确时间前确认？"
+      "是否在第一句提出具体请求？",
+      "是否给出文件名？",
+      "是否写明回复期限？"
     ]
   },
   "credits": {
@@ -244,35 +246,45 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "The client moved the deadline to…",
-      "meaning": "第一句交代最重要的变化",
-      "collocation": "move the deadline to + 日期",
-      "example": "The client moved the deadline to next Friday.",
-      "translation": "客户把截止日期提前到了下周五。"
+      "word": "Could you approve [file] by [date]?",
+      "meaning": "把需要对方完成的动作和期限放在开头",
+      "collocation": "Could you + verb + by + deadline?",
+      "example": "Could you approve the final price list by Thursday?",
+      "translation": "你能在周四前批准最终价目表吗？"
     },
     {
       "id": "work-02",
-      "word": "Could we add… this week?",
-      "meaning": "明确提出需要的支持",
-      "collocation": "Could we add + support / reviewer + 时间?",
-      "example": "Could we add another reviewer this week to meet the new timeline?",
-      "translation": "我们能否在本周增加一位评审人，以赶上新的时间安排？"
+      "word": "The file is named…",
+      "meaning": "用文件名帮助对方快速定位材料",
+      "collocation": "The file is named + file name",
+      "example": "The file is named Price List v3.",
+      "translation": "文件名是 Price List v3。"
     },
     {
       "id": "work-03",
-      "word": "confirm who is available",
-      "meaning": "请对方给出明确答复",
-      "collocation": "confirm + who / when + 完整句子",
-      "example": "Could you confirm who is available by 3 p.m. today?",
-      "translation": "你能在今天下午三点前确认谁有空吗？"
+      "word": "I need your reply before…",
+      "meaning": "说明需要回复的具体时间",
+      "collocation": "need + someone’s reply + before + time",
+      "example": "I need your reply before 3 p.m.",
+      "translation": "我需要在下午三点前收到回复。"
     }
   ]
 }

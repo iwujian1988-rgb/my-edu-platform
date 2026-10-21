@@ -268,12 +268,12 @@
     "why": "先确认收到，再承诺具体时间，并在时间不合适时提供另一条可行路径。"
   },
   "output": {
-    "prompt": "经理请你今天审阅一份发布公告，但你正在处理客户故障，最快下午 4 点才能看完。请用英文确认收到、给出反馈时间；如果发布团队等不及，再建议一个替代审阅人。",
-    "sample": "I have the announcement. I’m handling a customer issue this morning, but I can send you comments by 4 p.m. If you need feedback sooner, Jordan may be available this afternoon.",
+    "prompt": "同事请你今天审阅一份培训材料，但你正在准备客户会议，明天下午 2 点可以给出完整意见。请用英文确认收到，并说明你能兑现的时间。",
+    "sample": "I have the training material. I’m preparing for a client meeting today, but I can send you my full comments by 2 p.m. tomorrow.",
     "check": [
-      "是否先确认收到材料？",
-      "是否承诺了具体且可兑现的反馈时间？",
-      "如果时间不合适，是否给出替代审阅人？"
+      "是否确认收到材料？",
+      "是否简短说明今天无法完整审阅？",
+      "是否给出明确且可兑现的回复时间？"
     ]
   },
   "credits": {
@@ -285,8 +285,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频逐条核对",
-      "页面与练习交互人工验收"
+      "音频逐条核对"
     ],
     "rubricVersion": "1.1",
     "scores": {

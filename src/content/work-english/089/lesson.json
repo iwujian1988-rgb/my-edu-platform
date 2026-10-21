@@ -109,9 +109,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "远程团队新同事不知道去哪里找发布资料、不同问题该问谁，也不确定第一个客户案例处理后是否有人跟进。请用英文说明入职伙伴可以提供的帮助。",
+    "prompt": "你是新员工的入职伙伴。请用英文告诉她去哪里找入职资料、不同问题应该问谁，并约定她完成第一个任务后一起复盘。",
     "sample": "I’ll show you where to find the launch checklist and support guide. Ask Priya about billing questions and Leo about release access. Let’s check in after your first customer case and review what was unclear.",
-    "rationale": "告诉新人资料位置、联系人和第一次实践后的回顾安排。"
+    "rationale": "把资料入口、联系人和第一次实践后的跟进安排说清楚，新人就知道下一步去哪、找谁。"
   },
   "words": [
     {
@@ -192,9 +192,9 @@
   },
   "rewrite": {
     "bad": "You need to attend every onboarding meeting before you can ask me questions.",
-    "good": "I’ll show you where to find the launch checklist and support guide. Ask Priya about billing questions and Leo about release access. Let’s check in after your first customer case and review what was unclear.",
-    "translation": "我带你看发布检查表和客服指南在哪里。账单问题找 Priya，发布权限找 Leo。你处理完第一个客户案例后，我们再聊聊哪些地方不清楚。",
-    "pattern": "I’ll show you where to find [resources]. Ask [person] about [topic]. Let’s check in after [first task] and review [what was unclear]."
+    "good": "I’m your onboarding buddy, so I can help you get familiar with how our remote team works. Send me your questions as they come up, and we can work through them together.",
+    "translation": "我是你的入职伙伴，可以帮你熟悉远程团队的工作方式。遇到问题随时发给我，我们一起解决。",
+    "pattern": "I can help you [get familiar with the team]. Send me [questions as they come up]."
   },
   "cloze": [
     {
@@ -254,12 +254,12 @@
     "why": "给出资料位置、具体联系人和第一次实践后的跟进安排，让新人知道下一步去哪、找谁。"
   },
   "output": {
-    "prompt": "新同事要独立处理第一份退款申请，但还不熟悉审批规则和升级联系人。请用英文说明入职伙伴会怎样带他查看规则、确认联系人，并在处理后一起复盘。",
-    "sample": "I’ll walk you through the refund rules and show you where to find the approval guide. I’ll also introduce you to the person who handles exceptions. After your first case, let’s review what went smoothly and what was unclear.",
+    "prompt": "新同事要参与一次产品发布，但不清楚该看哪些入职资料、发布权限该问谁。请用英文指给她资料位置和联系人，并约定首次操作后跟进。",
+    "sample": "I’ll show you where to find the release checklist and access guide. Ask Leo about release permissions. Let’s check in after your first release task and go over any questions.",
     "check": [
-      "是否告诉新人去哪里找资料？",
-      "是否说明不同问题该找谁？",
-      "是否安排完成第一个任务后的跟进？"
+      "是否指出相关资料的位置？",
+      "是否说明发布权限该找谁？",
+      "是否约定首次实践后的跟进？"
     ]
   },
   "credits": {
@@ -271,10 +271,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

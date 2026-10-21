@@ -85,9 +85,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事写了一封很长的项目邮件，重复背景很多，读者不容易看出需要作出的决定，也没有回复期限。请用英文建议把重点和请求放在前面，并补上读者作决定所需的背景和回复时间。",
-    "sample": "Could we put the main point first and add only the context readers need to make the decision? Could you confirm the regional launch option by Wednesday so we can finalize the plan?",
-    "rationale": "先让读者看到重点和行动请求，再补充必要背景与截止时间。"
+    "prompt": "同事写了一封很长的邮件，读者不容易找到需要回复的问题。请用英文建议先删去重复背景，再把请求和截止时间放在前面。",
+    "sample": "Could we shorten the background and put the request at the top? Please also state when you need a reply so the reader can respond without searching through the whole email.",
+    "rationale": "Dropbox 写作指南强调简单、易懂和编辑；练习把读者需要的信息提前，不凭空增加项目细节。"
   },
   "words": [
     {
@@ -167,10 +167,10 @@
     "transfer": "Clear, concise messages help teammates act without searching through a long email for the request."
   },
   "rewrite": {
-    "bad": "The email repeats the background but never says what the reader needs to do or when to reply.",
-    "good": "Could we put the main point first and add only the context readers need to make the decision? Could you confirm the regional launch option by Wednesday so we can finalize the plan?",
-    "translation": "我们能否把重点放在前面，并只补上读者作决定所需的背景？你能在周三前确认区域发布选项吗？这样我们就能敲定计划。",
-    "pattern": "Could we put [the main point] first and add only [needed context]? Could you confirm [the decision] by [deadline] so we can [next step]?"
+    "bad": "Hi Jamie, I wanted to share some background about how the project started and what everyone said. There are a few things we might need to discuss. Let me know your thoughts when you have time.",
+    "good": "Could we shorten the background and put the request at the top? Please also state when you need a reply so the reader can respond without searching through the whole email.",
+    "translation": "我们能否缩短背景并把请求放在开头？也请写清需要回复的时间，让读者不用翻完整封邮件就能作答。",
+    "pattern": "Could we [shorten the background] and put [the request and response time] at the top?"
   },
   "cloze": [
     {
@@ -230,12 +230,12 @@
     "why": "先压缩重复背景，再明确请求和回复期限，收件人就能快速判断要做什么。"
   },
   "output": {
-    "prompt": "你需要请同事确认一次产品发布是否可以延期。请用英文写一封简短消息：先给出需要作出的决定，再补充必要背景、明确回复期限。",
-    "sample": "Could you confirm by noon tomorrow whether we should move the release from Friday to Tuesday? The final accessibility check needs one additional day, so the team needs a decision before updating the launch plan.",
+    "prompt": "同事写了一段面向客户的故障排查说明，用户看完仍不知道先做什么。请用英文建议把第一步放到开头、用常见词表达，并补上用户采取行动所需的背景；再请同事在周四前改好。",
+    "sample": "Could we put the first action at the top and use plain language? Please add the context customers need to choose the right step, and could you send the revised guide by Thursday?",
     "check": [
-      "是否把主要请求放在开头？",
-      "是否只保留帮助读者作决定的背景？",
-      "是否给出明确的回复时间？"
+      "是否把第一步放在开头？",
+      "是否建议使用客户容易理解的语言？",
+      "是否说明所需背景和修改期限？"
     ]
   },
   "credits": {
@@ -247,10 +247,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

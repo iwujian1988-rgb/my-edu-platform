@@ -218,11 +218,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a HR coordinator, is tasked with improving the new employee onboarding process at her company."
+      "text": "Sarah, a HR coordinator, is tasked with improving the new employee onboarding process at her company.",
+      "label": "听写 1 · 谁负责改善新员工入职",
+      "why": "onboarding 是新员工熟悉团队、流程和工具的过程。"
     },
     {
       "id": "d2",
-      "text": "Her manager wants to implement data-driven changes but has limited budget and tight quarterly deadlines."
+      "text": "Her manager wants to implement data-driven changes but has limited budget and tight quarterly deadlines.",
+      "label": "听写 2 · 改进计划的预算和时间限制",
+      "why": "limited budget 和 tight deadlines 会影响试点范围；可以先测试一个信息入口。",
+      "apply": {
+        "prompt": "新人找不到团队资料。建议先收集反馈、试改一个入口，再检查效果。",
+        "sample": "Could we ask new hires where they look for team information, test a clearer starting page, and check whether it helps?"
+      }
     }
   ],
   "translationPractice": [
@@ -253,12 +261,12 @@
     "why": "先了解实际困难，再小范围试改，并根据下一批新员工的结果判断效果。"
   },
   "output": {
-    "prompt": "客服团队发现，新客户经常找不到账户恢复说明并重复提交工单。请用英文建议收集客户反馈、先改进一个帮助入口，并检查后续工单是否减少。",
-    "sample": "Could we ask customers where they look for account recovery steps when they get stuck? We can improve one entry point in the help center and check whether related support tickets decrease.",
+    "prompt": "新员工说，遇到电脑权限问题时不知道该联系谁。请用英文建议入职团队询问新员工在求助流程中卡在哪里，先试着补充一个清晰的联系人入口，再检查下一批新人是否能更快找到帮助。",
+    "sample": "Could we ask new hires where they get stuck when requesting computer access? Let’s add a clear support contact to the onboarding page and check whether the next group can find help more quickly.",
     "check": [
-      "是否从客户处收集他们查找帮助信息的具体经历？",
-      "是否提出一项可试行的入口改进？",
-      "是否说明用什么结果判断改进是否有效？"
+      "是否询问了新员工在哪一步遇到困难？",
+      "是否提出一项具体、可试行的改进？",
+      "是否计划观察下一批新员工的实际效果？"
     ]
   },
   "credits": {
@@ -270,10 +278,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

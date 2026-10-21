@@ -236,9 +236,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事反馈你的分析页指标太多，读者不容易看出结论。请用英文感谢对方指出问题、询问哪些指标最重要，并说明你会据此修改。",
+    "prompt": "同事指出你的分析页放了太多指标，读者很难看出结论。请用英文感谢对方，问清哪些信息最重要，并说明你会怎样修改。",
     "sample": "Thanks for pointing that out. Which metrics do you think are essential for the decision? I’ll simplify the page and share the revised version with you.",
-    "rationale": "回应具体反馈、问清关键标准，并说明下一步会怎样修改。"
+    "rationale": "收到反馈后，先确认判断依据，再说明接下来会做的修改。"
   },
   "words": [
     {
@@ -318,10 +318,10 @@
     "transfer": "Could we review the draft together? The background is too long for the page, so let’s keep the details readers need and move the rest to notes."
   },
   "rewrite": {
-    "bad": "Those numbers are all important. The analysis page should stay as it is.",
-    "good": "Thanks for pointing that out. Which metrics do you think are essential for the decision? I’ll simplify the page and share the revised version with you.",
-    "translation": "谢谢你指出这个问题。你觉得哪些指标对作出决定最重要？我会精简页面，再把修改版发给你。",
-    "pattern": "Thanks for pointing that out. Which [details] do you think are essential for [the task]? I’ll [make a change] and share the revised version with you."
+    "bad": "The design is bad and you need to make room for all of my content.",
+    "good": "The current background section is too long for the layout, so the key point is hard to see. Could we review it together and keep the details readers need most?",
+    "translation": "目前背景部分太长，版面放不下，重点也不容易看出来。我们能否一起检查，保留读者最需要的信息？",
+    "pattern": "The [specific content] makes [the key point] hard to see. Could we [review and prioritize] together?"
   },
   "cloze": [
     {
@@ -346,11 +346,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Tom are working on a marketing campaign with a tight deadline."
+      "text": "Sarah and Tom are working on a marketing campaign with a tight deadline.",
+      "label": "听写 1 · 模拟营销项目与交付期限",
+      "why": "Sarah 和 Tom 的分工属于练习情境；听出时间压力来自哪里。"
     },
     {
       "id": "d2",
-      "text": "Sarah is responsible for content creation while Tom handles design elements."
+      "text": "Sarah is responsible for content creation while Tom handles design elements.",
+      "label": "听写 2 · 两位同事各自负责的工作",
+      "why": "明确内容和设计分工后，指出信息过多对页面的影响，并询问哪些指标必须保留。",
+      "apply": {
+        "prompt": "同事的报告背景太多，设计稿放不下。问清必须保留的指标并提出修改。",
+        "sample": "Which metrics do you think are essential? I’ll simplify the page around those and share a revised version for your feedback."
+      }
     }
   ],
   "translationPractice": [
@@ -381,12 +389,12 @@
     "why": "先接住对方的反馈，再询问判断重点，并说明准备采取的修改。"
   },
   "output": {
-    "prompt": "同事指出你的演示文稿颜色对比不足，投影时部分图表看不清。请用英文感谢对方、确认影响最大的页面，并说明你会先调整再请他复查。",
-    "sample": "Thanks for catching that. Which slides were hardest to read on the projector? I’ll increase the contrast on those charts first and send you the revised deck to check.",
+    "prompt": "同事指出你的客户反馈图表放了太多指标，读者难以比较两个方案。请用英文感谢对方，询问哪些指标最重要，并说明你会修改后发给他。",
+    "sample": "Thanks for pointing that out. Which metrics are essential for comparing the two options? I’ll simplify the chart and send you an updated version.",
     "check": [
       "是否接住了对方的反馈？",
-      "是否询问了具体的改进依据？",
-      "是否说明了下一步修改动作？"
+      "是否询问了对比方案所需的关键信息？",
+      "是否说明了修改和回传动作？"
     ]
   },
   "credits": {
@@ -398,10 +406,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

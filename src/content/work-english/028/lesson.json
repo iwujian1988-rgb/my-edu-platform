@@ -233,9 +233,9 @@
   },
   "rewrite": {
     "bad": "You do both the backlog and the playbook. I’ll check them tomorrow.",
-    "good": "I can draft the project guide while you put together the initial backlog. Once we each have a first draft, let’s review them together and check they fit the project.",
-    "translation": "我可以起草项目指南，你来整理最初的待办列表。我们各自完成初稿后，一起检查两份内容是否适合这个项目。",
-    "pattern": "I can draft [one project document] while you put together [the initial backlog]. Once we each have [a first draft], let’s review them and check [they fit the project]."
+    "good": "Let’s split the work: I’ll organize the playbook structure while you start the backlog. We can review both tomorrow.",
+    "translation": "我们分一下工：我整理工程手册的结构，你先建待办列表。明天我们一起检查。",
+    "pattern": "Let’s split the work: I’ll handle [task A], while you take [task B]. Then we can [review together]."
   },
   "cloze": [
     {
@@ -260,11 +260,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Organize content in the playbook for quick reference and discoverability Provide content in a logical structure which reflects the engineering process Extensible hierarchy to allow teams to share deep subject-matter expertise Discuss and start writing the Team Agreements."
+      "text": "Organize content in the playbook for quick reference and discoverability Provide content in a logical structure which reflects the engineering process Extensible hierarchy to allow teams to share deep subject-matter expertise Discuss and start writing the Team Agreements.",
+      "label": "听写 1 · 项目手册应怎样组织",
+      "why": "听出 quick reference、logical structure 和 extensible hierarchy 三个组织要求。"
     },
     {
       "id": "d2",
-      "text": "Update these documents with any process decisions made throughout the project Working Agreement Definition of Ready Definition of Done Estimation Set up the repository/repositories Decide on repository structure/s Add README."
+      "text": "Update these documents with any process decisions made throughout the project Working Agreement Definition of Ready Definition of Done Estimation Set up the repository/repositories Decide on repository structure/s Add README.",
+      "label": "听写 2 · 项目启动时要建立的资料",
+      "why": "录音列出工作约定、完成标准、代码仓库和 README 等材料；注意把它听成清单。",
+      "apply": {
+        "prompt": "你和同事要启动新项目。分配项目指南和待办清单的初稿，约好一起检查。",
+        "sample": "I’ll outline the project guide while you create the initial backlog. Once we both have a first draft, let’s review them together."
+      }
     }
   ],
   "translationPractice": [
@@ -295,12 +303,12 @@
     "why": "答案包含了题目要求的分工、明天共同检查，以及确认每项工作都有负责人。"
   },
   "output": {
-    "prompt": "客户迁移项目需要准备操作手册和风险清单，但还没有人负责。请用英文提出分工方案，并约定双方完成初稿后一起检查负责人是否明确。",
-    "sample": "I can outline the migration runbook while you build the initial risk list. Once we both have a first draft, let’s review them together and make sure the owners are clear.",
+    "prompt": "团队要为新客户准备一套上线材料，一人负责操作清单，另一人整理问题升级联系人。请用英文说清分工，并约好初稿完成后交叉检查。",
+    "sample": "I’ll draft the launch checklist, and you can put together the escalation contacts. Once both drafts are ready, let’s cross-check them before sending the pack to the customer.",
     "check": [
-      "是否清楚分配了两项工作？",
-      "是否使用初稿而非假设已经完成？",
-      "是否提出共同检查的后续安排？"
+      "是否明确分配两项不同工作？",
+      "是否说清交叉检查的时间点？",
+      "是否把检查安排在材料发给客户之前？"
     ]
   },
   "credits": {
@@ -312,10 +320,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

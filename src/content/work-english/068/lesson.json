@@ -84,9 +84,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事在项目确认范围后又加入新需求，测试计划因此被打乱。请用英文开启一次平和的对话，说明具体影响，并提出共同约定以后如何处理变更。",
+    "prompt": "同事建议在已确认的项目范围里再加一项功能，测试计划会因此受影响。请用英文开启谈话、说明影响，并建议先约定如何评估变更。",
     "sample": "I’d like to talk about the new feature request. When we add a feature after scope sign-off, it affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
-    "rationale": "先说清临近确认后的新需求及其对测试的影响，再约定新增需求的评估方式。"
+    "rationale": "把讨论落到具体变更及其工作影响，再提出共同的评估办法。"
   },
   "words": [
     {
@@ -166,10 +166,10 @@
     "transfer": "If a scope change affects testing after sign-off, raise it directly and agree how to review the change before adding it."
   },
   "rewrite": {
-    "bad": "You keep changing the scope after sign-off. Now testing is impossible.",
-    "good": "I’d like to talk about the new feature request. When we add a feature after scope sign-off, it affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
-    "translation": "我想谈谈新增功能的请求。确认范围后再加功能，会影响测试计划。我们能否约定，在把临时变更加入范围前先评估？",
-    "pattern": "I’d like to talk about [the request]. It affects [the work]. Could we agree on how to review [late changes] before adding them to scope?"
+    "bad": "Your quality checks are slowing us down. Just sign off so we can meet the date.",
+    "good": "I’m concerned that the current review may put Thursday’s handoff at risk. Which quality issue worries you most? Could we review that part together and agree on what must be resolved before handoff?",
+    "translation": "我担心当前的评审可能影响周四交接。你最担心哪项质量问题？我们能否一起检查，并商定交接前必须解决的内容？",
+    "pattern": "I’m concerned about [the impact]. Which issue worries you most? Could we [review it together] and agree on [what must be resolved]?"
   },
   "cloze": [
     {
@@ -194,11 +194,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Tom are working on a joint marketing campaign."
+      "text": "Sarah and Tom are working on a joint marketing campaign.",
+      "label": "听写 1 · 两人共同负责的项目",
+      "why": "先听清合作背景，再辨认双方的不同要求。"
     },
     {
       "id": "d2",
-      "text": "Sarah needs the final design assets by Thursday to meet the client's deadline, while Tom insists he needs until Friday to ensure quality."
+      "text": "Sarah needs the final design assets by Thursday to meet the client's deadline, while Tom insists he needs until Friday to ensure quality.",
+      "label": "听写 2 · 客户期限与质量检查的冲突",
+      "why": "while 对比周四交付与周五完成检查；沟通时先说明影响，再询问对方担心的风险。",
+      "apply": {
+        "prompt": "交付期限与质量要求有分歧。说明影响，询问风险并商量处理方式。",
+        "sample": "When late changes are added to scope, they affect our Thursday handoff. What quality risk are you most concerned about? Could we review the changes before adding them?"
+      }
     }
   ],
   "translationPractice": [
@@ -219,22 +227,22 @@
     }
   ],
   "choice": {
-    "prompt": "项目范围确认后，又有人提出加入一项功能，测试团队因此需要重排计划。请选出最合适的沟通方式。",
+    "prompt": "项目范围确认后，同事又提出加入一项功能，测试团队需要重排计划。请选择能说明影响并约定如何处理变更的表达。",
     "options": [
       "You already approved the scope. Stop adding requests or the launch will fail.",
-      "I’d like to talk about the new feature request after scope sign-off. It affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
+      "I’d like to talk about the new feature request. When we add a feature after scope sign-off, it affects the testing plan. Could we agree on how to review late changes before adding them to scope?",
       "It is fine to add the feature now. We can figure out testing later."
     ],
     "correct": 1,
     "why": "表达具体需求及其工作影响，并提出先评估、再决定是否变更范围的约定。"
   },
   "output": {
-    "prompt": "一位同事临近交付时要求加入新的地区版本，翻译团队因此没有时间完成校对。请用英文开启对话，说明具体影响，并提出以后如何评估临时需求。",
-    "sample": "Could we talk about the request to add another regional version? It leaves the translation team without enough time to review the content. Could we agree to review late requests against the launch date before adding them to scope?",
+    "prompt": "客户要求在上线前增加一个导出功能，回归测试的时间已经排定。请用英文说明改动对测试的影响，并建议先评估再决定是否纳入本次范围。",
+    "sample": "I’d like to talk about the export request. When we add a feature after scope sign-off, it affects the regression plan. Could we agree on how to review late changes before adding them to scope?",
     "check": [
-      "是否针对变更及其工作影响，而非评价同事？",
-      "是否说明了具体影响？",
-      "是否提出双方可确认的做法？"
+      "是否点出客户提出的具体变更？",
+      "是否说明它对测试安排的影响？",
+      "是否建议先评估再决定是否纳入？"
     ]
   },
   "credits": {
@@ -246,10 +254,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

@@ -267,12 +267,12 @@
     "why": "说明延迟原因，并给候选人一个明确的再次联系时间。"
   },
   "output": {
-    "prompt": "一位候选人补交了作品集，但面试小组还需要时间完成评审。请用英文说明评审仍在进行，并承诺周四前发送进展，即使届时还没有最终决定。",
-    "sample": "We’re still reviewing your portfolio. I’ll send you an update by Thursday, even if the final decision isn’t ready yet.",
+    "prompt": "候选人完成最后一轮面试后，团队还需要几天讨论。请用英文告知候选人目前没有最终决定，并说明你会在何时再次联系。",
+    "sample": "Thank you for meeting with the team. We’re still discussing the next step, and I’ll send you an update by Friday.",
     "check": [
-      "是否说明评审还在进行？",
-      "是否约定了明确的更新时间？",
-      "是否说明即使没有最终决定也会继续同步？"
+      "是否感谢候选人参加面试？",
+      "是否如实说明尚无最终决定？",
+      "是否给出明确的再次联系时间？"
     ]
   },
   "credits": {
@@ -284,10 +284,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

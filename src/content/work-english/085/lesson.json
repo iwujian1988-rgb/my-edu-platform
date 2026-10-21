@@ -227,14 +227,18 @@
     {
       "id": "d1",
       "text": "Alex, a marketing specialist, was asked by his direct manager, Sarah, to present the Q3 campaign plan to the department head, Mr.",
-      "label": "听写 1 · 先听到称呼",
-      "why": "Mr. 是对部门负责人的称呼，下一段会接上姓氏。"
+      "label": "听写 1 · 句子开头：人物与会议任务",
+      "why": "这是一段未完成的句子。先听出 Alex、直属经理 Sarah 和部门主管。"
     },
     {
       "id": "d2",
       "text": "Thompson, during a skip-level meeting without Sarah's presence.",
-      "label": "听写 2 · 接着写完姓名和句子",
-      "why": "Thompson 接在 Mr. 后面，构成完整姓名。"
+      "label": "听写 2 · 接续姓名和 skip-level meeting",
+      "why": "Thompson 接在 Mr. 后组成姓名；without Sarah’s presence 说明直属经理没有参加。",
+      "apply": {
+        "prompt": "你希望参与更多跨部门项目。向 skip-level manager 询问需要积累哪些经验。",
+        "sample": "I’d like to build experience in cross-functional projects. What skills or opportunities would you recommend? I’ll discuss the follow-up plan with my direct manager."
+      }
     }
   ],
   "translationPractice": [
@@ -265,12 +269,12 @@
     "why": "说清发展目标、询问可采取的下一步，并让直属经理参与后续计划。"
   },
   "output": {
-    "prompt": "你在 skip-level meeting 中想了解公司如何决定客户问题的优先级，也想争取旁听一次相关评审。请用英文说明兴趣、提出具体问题，并表示会和直属经理对齐后续安排。",
-    "sample": "I’d like to understand how the company prioritizes customer issues. Could I sit in on an upcoming prioritization review to learn how those decisions are made? I’ll align with my direct manager on the follow-up.",
+    "prompt": "你希望在下季度带一位新同事熟悉客户支持流程，但还没有正式带教经验。请用英文说明这个发展目标，向部门负责人询问应先积累哪些能力，并表示会和直属经理商量安排。",
+    "sample": "I’d like to build experience mentoring a new teammate on the support process. What skills should I develop before taking that on? I’ll discuss the timing with my direct manager.",
     "check": [
-      "是否清楚表达职业发展目标？",
-      "是否提出具体的建议请求？",
-      "是否说明会与直属经理保持沟通？"
+      "是否说明希望承担的成长机会？",
+      "是否询问了开始前需要发展的能力？",
+      "是否提出与直属经理协调安排？"
     ]
   },
   "credits": {
@@ -282,11 +286,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写把一个完整句子拆成两条残句，第一条人名被切断；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

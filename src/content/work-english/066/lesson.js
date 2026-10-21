@@ -94,7 +94,7 @@
     $('translationBtn').setAttribute('aria-expanded', String(open));
   });
   document.addEventListener('keydown', event => { if (event.key === 'Escape' && !$('docNoteDetail').hidden) closeNote(); });
-  const savedFields = ['warmupInput', 'practiceInput', 'c1', 'c2', 'c3', 'd1Input', 'd2Input', 'self1', 'self2', 'self3'];
+  const savedFields = ['warmupInput', 'practiceInput', 'c1', 'c2', 'c3', 'd1Input', 'd2Input', 'self1', 'self2', 'self3', ...data.dictation.filter(item => item.apply).map(item => item.id + 'Apply')];
   for (const id of savedFields) {
     const field = $(id);
     if (!field) continue;

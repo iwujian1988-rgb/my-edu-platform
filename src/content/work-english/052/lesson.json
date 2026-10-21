@@ -264,12 +264,12 @@
     "why": "明确一位决策负责人并记录决定及理由，同时保留与风险相称的检查。"
   },
   "output": {
-    "prompt": "一项影响范围有限的内部工具更新，需要经过多位管理者重复审批。请用英文建议明确一位决策负责人、记录决定，并保留必要的风险检查。",
-    "sample": "Could we name one owner to make this routine decision and record the rationale? We can keep the security check while removing duplicate sign-offs.",
+    "prompt": "团队要调整一项员工权限申请流程：当前变更风险较低，却要经过多位管理者重复签字。请用英文建议指定一位决策负责人、记录决定理由，同时保留必要的数据安全检查。",
+    "sample": "Could we name one owner to make this routine decision and record the rationale? We can keep the data security check while removing duplicate sign-offs.",
     "check": [
-      "是否明确一个决策负责人？",
-      "是否提出记录决定及理由？",
-      "是否在减少重复审批时保留必要检查？"
+      "是否明确由谁作常规决定？",
+      "是否说明要记录决定理由？",
+      "是否保留必要的安全检查并去除重复签字？"
     ]
   },
   "credits": {
@@ -281,10 +281,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

@@ -249,12 +249,12 @@
     "why": "第一句说明全员会议用途，第二句补充手册列出的提问安排。"
   },
   "output": {
-    "prompt": "你要在全员会上介绍一个新客户支持流程。请用英文用三句话说明流程解决什么问题、从何时开始试行，以及员工在哪里提问或反馈。",
-    "sample": "The new support process will make it easier to route urgent customer issues to the right team. We’ll begin a two-week pilot on Monday. Please add questions to the shared Q&A document, and we’ll address them during the next Ask Me Anything session.",
+    "prompt": "一位同事准备参加下次 GitLab 全员会议，想知道会议是否只用于发布消息，以及之后能否提问。请用英文说明会议目的和手册列出的提问机会。",
+    "sample": "The Assembly is meant to align employees on key initiatives, business updates, and priorities. The handbook also lists Ask Me Anything sessions three times per quarter for questions.",
     "check": [
-      "是否说明新流程解决的问题？",
-      "是否交代试行开始时间？",
-      "是否指明员工提问或反馈的渠道？"
+      "是否说明全员会议不只是发布消息？",
+      "是否概括了会议的主要用途？",
+      "提问机会和频次是否与手册一致？"
     ]
   },
   "credits": {
@@ -266,10 +266,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

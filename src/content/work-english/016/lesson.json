@@ -124,9 +124,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "几位同事刚开始使用新的项目跟踪流程，其中一位同事已经熟悉这套做法。请用英文邀请他自愿做一次简短分享，并提出先收集听众的问题。",
-    "sample": "Would you be willing to walk the team through the new project workflow? We can collect their questions first so you can focus the session on what they need.",
-    "rationale": "邀请有经验的同事分享，并先了解听众的问题，让内容贴近实际需要。"
+    "prompt": "团队里有人熟悉一款新工具，几位同事想学。请用两句英文邀请这位同事自愿做一次短分享，并说明后续内容会根据学习者的需要决定。",
+    "sample": "Would you be open to leading a short session on the tool? We can ask colleagues what they need to learn and use their feedback to plan a follow-up.",
+    "rationale": "员工互教从内部经验出发；先试一场，再按学习者反馈决定后续内容。"
   },
   "words": [
     {
@@ -207,9 +207,9 @@
   },
   "rewrite": {
     "bad": "Let’s hire an outside trainer before asking anyone on the team.",
-    "good": "Would you be willing to walk the team through the new project workflow? We can collect their questions first so you can focus the session on what they need.",
-    "translation": "你愿意带团队逐步了解新的项目流程吗？我们可以先收集大家的问题，这样分享就能聚焦在他们需要了解的内容上。",
-    "pattern": "Would you be willing to [walk the team through a workflow]? We can collect [their questions] first so the session focuses on [what they need]."
+    "good": "You’ve used the tool in real projects. Would you be open to leading a short session? We can ask colleagues what they need to learn and build from there.",
+    "translation": "你在真实项目中用过这款工具。你愿意带一场简短的分享吗？我们可以先问问同事想学什么，再决定后续安排。",
+    "pattern": "Would you be open to [sharing a skill]? We can ask learners what they need and [choose the next step]."
   },
   "cloze": [
     {
@@ -269,8 +269,8 @@
     "why": "员工互教从内部经验出发；先试一场，再按学习者反馈决定后续内容。"
   },
   "output": {
-    "prompt": "客服团队刚开始使用新的工单系统，其中一位同事已经熟悉常见操作。请用英文邀请他自愿分享几项实用技巧，并建议先收集大家的问题。",
-    "sample": "Would you be willing to walk the team through a few useful support shortcuts? We can collect their questions first so you can focus the session on what they need.",
+    "prompt": "几位同事刚开始使用新的项目跟踪流程，其中一位同事已经熟悉这套做法。请用英文邀请他自愿做一次简短分享，并提出先收集听众的问题。",
+    "sample": "Would you be willing to walk the team through the new project workflow? We can collect their questions first so you can focus the session on what they need.",
     "check": [
       "是否以自愿方式邀请同事分享？",
       "是否围绕具体的工作流程？",
@@ -286,10 +286,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

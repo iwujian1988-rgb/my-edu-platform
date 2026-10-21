@@ -449,9 +449,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你要设计一场新经理培训，前主管希望重点讲专业技术，HR 希望重点讲领导力。请用英文建议把两方面结合，并提出先共同确认培训提纲。",
-    "sample": "Could we align both perspectives with a framework that connects technical expertise with leadership fundamentals? We can agree on a shared outline before drafting the materials.",
-    "rationale": "先把不同意见放进同一个培训目标，再约定共同的提纲。"
+    "prompt": "新经理培训同时涉及专业技术和管理能力，组织者还没有确定课程结构。请用英文建议先整合两方面的意见，再共同确认培训提纲。",
+    "sample": "Could we align both perspectives before drafting the training materials? The framework should connect technical expertise with leadership fundamentals, and we can agree on a shared outline first.",
+    "rationale": "先对齐技术与管理两方面的重点，再确认共同提纲。"
   },
   "words": [
     {
@@ -534,29 +534,29 @@
     "transfer": "Think of a time a manager helped you do your best work. What did they do?"
   },
   "rewrite": {
-    "bad": "HR should decide the training content. The former manager’s technical focus is not relevant.",
-    "good": "Could we align both perspectives with a framework that connects technical expertise with leadership fundamentals? We can agree on a shared outline before drafting the materials.",
-    "translation": "我们能否在起草培训材料前先把两方面的意见对齐？用一个框架把专业技术与领导基础结合起来，并在动笔前共同确认提纲。",
-    "pattern": "Could we align [perspectives] with a framework that connects [A] with [B]? We can agree on [a shared outline] first."
+    "bad": "We already know what new managers need. Let’s finalize the training plan today.",
+    "good": "Could we ask new managers where they need support before setting the training priorities? That will help us build sessions around real challenges.",
+    "translation": "我们能否先问问新经理在哪些方面需要支持，再确定培训重点？这样课程就能围绕他们真正遇到的困难来设计。",
+    "pattern": "Could we first [find out what people need], then [set the priorities]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we ___ both perspectives before drafting the materials?",
+      "prompt": "Could we ___ both perspectives before drafting the training materials?",
       "answer": "align",
-      "why": "align perspectives 表示让不同意见围绕共同目标协调起来。"
+      "why": "align both perspectives 表示把两方面意见放到同一目标下讨论。"
     },
     {
       "id": "c2",
-      "prompt": "The framework connects technical expertise ___ leadership fundamentals.",
-      "answer": "with",
-      "why": "connect A with B 表示把两个方面联系起来。"
+      "prompt": "The framework connects technical expertise with leadership ___.",
+      "answer": "fundamentals",
+      "why": "fundamentals 指管理工作需要掌握的基础能力。"
     },
     {
       "id": "c3",
       "prompt": "We can agree on a shared ___ before drafting the materials.",
       "answer": "outline",
-      "why": "shared outline 指各方共同确认的内容结构。"
+      "why": "先确认共同提纲，再展开课程内容。"
     }
   ],
   "dictation": [
@@ -587,22 +587,22 @@
     }
   ],
   "choice": {
-    "prompt": "技术负责人和 HR 对新经理培训各有重点。请选一条把两个重点整合并提出下一步的建议。",
+    "prompt": "技术负责人和 People 团队对新经理培训各有重点。请选择能整合双方意见并明确下一步的表达。",
     "options": [
-      "Could we align both perspectives with a framework that connects technical expertise with leadership fundamentals? We can agree on a shared outline before drafting the materials.",
+      "Could we align both perspectives and agree on a shared outline before drafting? The framework can connect technical expertise with leadership fundamentals.",
       "We should use only the technical material because it is more practical.",
-      "Let HR write the leadership section and the technical team write theirs without reviewing them together."
+      "Let each group write its own section without reviewing the full course together."
     ],
     "correct": 0,
-    "why": "用共同框架整合两个重点，再由双方确认提纲。"
+    "why": "整合两类重点、共同确认结构，课程才不会变成互不衔接的材料拼接。"
   },
   "output": {
-    "prompt": "客服培训既要讲清产品操作，也要练习如何回应客户情绪。请用英文建议先把两方面整合进共同提纲，再开始制作材料。",
-    "sample": "Could we align both training priorities in a shared outline that connects product knowledge with customer communication? We can review the outline together before drafting the materials.",
+    "prompt": "一场新经理培训既要讲团队管理，也要保留必要的业务知识。请用英文建议如何整合这两类内容，并在编写课程前先确认结构。",
+    "sample": "Could we connect the business examples with the leadership principles? Let’s align both perspectives and agree on a shared outline before drafting the sessions.",
     "check": [
-      "是否提到两方面的培训重点？",
-      "是否建议用共同结构把它们结合起来？",
-      "是否提出共同确认提纲这一步？"
+      "是否兼顾业务知识和管理能力？",
+      "是否提出先对齐重点？",
+      "是否在展开编写前确认共同结构？"
     ]
   },
   "credits": {
@@ -614,10 +614,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

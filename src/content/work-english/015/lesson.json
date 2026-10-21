@@ -120,9 +120,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "同事想提高做项目汇报的能力，你以前也遇到过类似困难。请用英文提出和对方一起练习，并先问他最希望改进哪一部分。",
-    "sample": "I had to work on my project updates too. Would you like to practice one together? Which part would you most like to improve first?",
-    "rationale": "分享相似经历建立连接，再一起练习，并从对方最关心的部分开始。"
+    "prompt": "同事想提升项目汇报能力，问你能否帮忙。请用英文分享自己也练过这项技能，邀请对方一起练习，并问他最想先改进哪部分。",
+    "sample": "I had to work on presenting project updates too. Would you like to practice one together? Which part would you most like to improve first?",
+    "rationale": "先分享相似经历、再邀请一起练习，最后让对方选定练习重点。"
   },
   "words": [
     {
@@ -203,9 +203,9 @@
   },
   "rewrite": {
     "bad": "I know exactly what you should do. Just follow my approach.",
-    "good": "I had to work on my project updates too. Would you like to practice one together? Which part would you most like to improve first?",
-    "translation": "我以前也需要改进项目进展汇报。你愿意一起练习一次吗？你最想先改进哪一部分？",
-    "pattern": "I had to work on [a skill] too. Would you like to practice [one task] together? Which part would you most like to improve first?"
+    "good": "I’ve faced something similar and can share what worked for me. Which part feels most challenging for you right now?",
+    "translation": "我也遇到过类似情况，可以分享对我有用的做法。你现在觉得哪部分最有挑战？",
+    "pattern": "I’ve faced [a similar challenge]. What part of [the task] feels most difficult right now?"
   },
   "cloze": [
     {
@@ -230,11 +230,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Tom are team members working on a quarterly marketing campaign."
+      "text": "Sarah and Tom are team members working on a quarterly marketing campaign.",
+      "label": "听写 1 · 两位同事的合作背景",
+      "why": "先听清两人共同负责的项目，再判断他们能交换哪些经验。"
     },
     {
       "id": "d2",
-      "text": "Sarah has more experience with digital analytics while Tom excels in creative content."
+      "text": "Sarah has more experience with digital analytics while Tom excels in creative content.",
+      "label": "听写 2 · 两人的经验如何互补",
+      "why": "while 对比两项强项。提供帮助前，可以先问：Which part would you most like to improve first?",
+      "apply": {
+        "prompt": "同事想提升数据分析能力。先问对方最想练什么，再提出一起练习。",
+        "sample": "Which part of data analysis would you most like to improve first? Would you like to practice one example together?"
+      }
     }
   ],
   "translationPractice": [
@@ -265,8 +273,8 @@
     "why": "答案先分享自己的相似经历，再邀请一起练习，并把练习重点交给对方选择。"
   },
   "output": {
-    "prompt": "同事要做第一次客户演示，担心问答环节。你以前也紧张过。请用英文提出一起练习，并先问他最想练哪一部分。",
-    "sample": "I had to work on customer demos too. Would you like to practice one together? Which part would you most like to improve first?",
+    "prompt": "同事想提高做项目汇报的能力，你以前也遇到过类似困难。请用英文提出和对方一起练习，并先问他最希望改进哪一部分。",
+    "sample": "I had to work on my project updates too. Would you like to practice one together? Which part would you most like to improve first?",
     "check": [
       "是否简短分享了自己的相关经历？",
       "是否提出一起练习？",
@@ -282,10 +290,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

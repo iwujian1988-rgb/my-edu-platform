@@ -233,14 +233,18 @@
     {
       "id": "d1",
       "text": "Sarah, a hiring manager at TechSolutions Inc.",
-      "label": "听写 1 · 句子前半段",
-      "why": "先听出人物姓名和职位；这段还没有说完。"
+      "label": "听写 1 · 句子开头：Sarah 的职位",
+      "why": "这是一段未完成的句子。先听清主语和职位，再接着听下一段。"
     },
     {
       "id": "d2",
       "text": "Needs to conduct interviews for a new software developer position but has been using unstructured methods that lead to inconsistent evaluations.",
-      "label": "听写 2 · 接着听完这句",
-      "why": "needs to 接着前面的 Sarah，才构成完整句子。"
+      "label": "听写 2 · 接上句子：面试任务与问题",
+      "why": "Needs 承接 Sarah，完整句是 Sarah…needs to conduct interviews…；留意主谓一致。",
+      "apply": {
+        "prompt": "几位面试官各用一套标准。建议如何让评价更一致？",
+        "sample": "Could we agree on role-related questions and use the same scoring criteria for every candidate?"
+      }
     }
   ],
   "translationPractice": [
@@ -271,12 +275,12 @@
     "why": "建议与结构化面试的核心做法直接对应：同岗使用相关问题和一致的评分标准。"
   },
   "output": {
-    "prompt": "你要为项目分析师岗位安排面试，几位面试官准备的问题和评分方法不同。请用英文建议统一岗位相关问题和评分标准，并说明这样做的好处。",
-    "sample": "Could we agree on a shared set of role-related questions and scoring criteria for the project analyst interviews? That would give us a consistent basis for comparing each candidate’s answers.",
+    "prompt": "你和同事复核运营岗位的面试结果，大家对候选人的沟通能力评价不一。请用英文建议大家回到共同的岗位标准，根据回答中的具体证据进行比较。",
+    "sample": "Could we compare each candidate’s answers against the same role-related criteria? That would give us a fairer basis for evaluating their communication skills.",
     "check": [
-      "是否建议统一岗位相关的问题？",
-      "是否明确评分依据也要一致？",
-      "是否说明这有助于公平比较候选人？"
+      "是否用同一套岗位标准比较候选人？",
+      "是否依据回答中的具体证据，而不是个人印象？",
+      "是否说明这样比较更公平？"
     ]
   },
   "credits": {
@@ -288,11 +292,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写两条文本被拆成残句；需在允许同步更新音频时修复"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2,
+      "audio": 0
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

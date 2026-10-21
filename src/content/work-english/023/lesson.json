@@ -183,10 +183,10 @@
     "transfer": "Across projects, we value open discussion and practical problem-solving to make useful information easier to find."
   },
   "rewrite": {
-    "bad": "We do good work and want customers to like our products.",
-    "good": "We emphasize an atmosphere of creativity and challenge. Providing unbiased, accurate, and free access to information remains at the heart of our work.",
-    "translation": "我们强调鼓励创造与挑战的氛围。提供公正、准确且免费的信息获取服务，仍是我们工作的核心。",
-    "pattern": "We emphasize [an atmosphere that supports our work]. Providing [the service users need] remains at the heart of [our work]."
+    "bad": "Google was a conventional company focused on selling software. The founders did not mention access to information.",
+    "good": "The founders described Google as an unconventional company and said its atmosphere of creativity and challenge helped it provide unbiased, accurate, and free access to information.",
+    "translation": "创始人把 Google 描述为一家不走寻常路的公司，并表示，鼓励创造和挑战的氛围帮助公司为人们提供公正、准确且免费的信息。",
+    "pattern": "The founders described [the company’s approach] and connected it to [its mission]."
   },
   "cloze": [
     {
@@ -211,11 +211,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager, was tasked with implementing new reporting procedures after her department's leadership changed."
+      "text": "Sarah, a project manager, was tasked with implementing new reporting procedures after her department's leadership changed.",
+      "label": "听写 1 · 管理变化后调整工作流程",
+      "why": "这段是练习情境。听出 reporting procedures 与 leadership change 的关系。"
     },
     {
       "id": "d2",
-      "text": "She needed to coordinate with her team while adjusting to the new management's directives."
+      "text": "She needed to coordinate with her team while adjusting to the new management's directives.",
+      "label": "听写 2 · 协调团队落实新要求",
+      "why": "adjusting to… 表示适应变化中的要求；说明团队做法时也可补充它如何服务用户。",
+      "apply": {
+        "prompt": "新同事问团队为什么重视创意和挑战。说明工作方式如何帮助用户。",
+        "sample": "We encourage creativity and challenge because they help us provide accurate, unbiased access to information."
+      }
     }
   ],
   "translationPractice": [
@@ -246,8 +254,8 @@
     "why": "第一句说明工作氛围，第二句说明原文所述的信息服务使命。"
   },
   "output": {
-    "prompt": "新同事问团队扩展到多个产品后，是否还坚持原来的使命。请用英文介绍团队鼓励的工作氛围，以及为用户提供的信息服务仍处于工作的核心。",
-    "sample": "We encourage creativity and challenge as we explore new products. Providing unbiased, accurate, and accessible information remains at the heart of our work.",
+    "prompt": "你要给新同事介绍团队的工作方式。请用两句英文说明团队看重什么，以及团队工作希望为用户带来什么。",
+    "sample": "We value clear, creative problem-solving and open discussion. Our goal is to make it easier for customers to get the information they need.",
     "check": [
       "是否说明团队的工作方式或价值取向？",
       "是否说明工作希望带来的结果？",
@@ -263,11 +271,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写练习改成新管理层的汇报流程，与本期原文主题无关；需在允许同步更新音频时改用本期原文及核心表达。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2,
+      "audio": 0
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

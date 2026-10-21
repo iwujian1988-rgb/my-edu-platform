@@ -252,12 +252,12 @@
     "why": "参考表达先给出天数，再补上团队协商到岗日这一信息。"
   },
   "output": {
-    "prompt": "同事想根据 2021 年的邮件安排本月到岗日。请用英文说明邮件当时提出的安排，并提醒他先确认目前适用的政策。",
-    "sample": "The email described about three days in the office and flexible work locations for the other days, with teams deciding which days to come in. Since it dates from 2021, let’s check the current policy before changing the schedule.",
+    "prompt": "新员工问你们团队现在怎样安排混合办公。请用两句英文介绍本团队已经确认的到岗安排，并说明团队如何协商具体到岗日。",
+    "sample": "Our team works from the office on the days we have agreed on together. I’ll share the current schedule with you so you know which days the team plans to be in.",
     "check": [
-      "是否明确这是 2021 年邮件描述的历史安排？",
-      "是否提醒同事先确认目前适用的政策？",
-      "是否避免把历史安排当作当前规则？"
+      "是否明确说的是自己团队当前的安排？",
+      "是否说明到岗日由团队协商？",
+      "是否避免把 2021 年 Google 邮件说成当前政策？"
     ]
   },
   "credits": {
@@ -269,10 +269,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

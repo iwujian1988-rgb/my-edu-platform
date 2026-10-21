@@ -248,12 +248,12 @@
     "why": "先邀请同事带练，再约定复盘内容，让新面试官得到一次具体练习。"
   },
   "output": {
-    "prompt": "新客服需要练习处理客户投诉，但还没在模拟情境中试过。请用英文邀请一位有经验的同事带一次角色练习，并约定练习后一起看反馈。",
-    "sample": "Could you lead a short role-play for the new support agents? Afterward, we can review their feedback together and discuss what to improve.",
+    "prompt": "一位新同事下周要独立主持客户访谈，担心自己会漏问关键问题。请用英文邀请一位资深同事陪他做一次角色扮演，并约好练习后给出反馈。",
+    "sample": "Would you be available to role-play a customer interview with Jordan before next week? After the practice, we can review what went well and choose one question to improve.",
     "check": [
-      "是否提出具体的客户投诉角色练习？",
-      "是否邀请有经验的同事带练？",
-      "是否安排练习后的反馈回顾？"
+      "是否提出具体的角色扮演练习？",
+      "是否邀请资深同事参与？",
+      "是否约好练习后的反馈和改进点？"
     ]
   },
   "credits": {
@@ -265,10 +265,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

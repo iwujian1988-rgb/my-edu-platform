@@ -336,12 +336,12 @@
     "why": "建议拆句时明确保留背景、已完成事项和下一步，并说明这样更容易浏览。"
   },
   "output": {
-    "prompt": "客户上线周报的一句话混在一起写了背景、已完成的检查和下一步，阅读者容易错过行动项。请用英文建议拆成三个短句，并保留这三类信息。",
-    "sample": "Could we split this update into three short sentences? We can keep the launch context, what has been checked, and the next step while making each point easier to scan.",
+    "prompt": "客服知识库里的一条故障处理说明把原因、风险和操作步骤挤在一个长句中。请用英文建议拆开写，同时保留风险提醒和操作顺序。",
+    "sample": "Could we split the troubleshooting note into shorter sentences? Let’s keep the risk warning and list the steps in order so new agents can follow them quickly.",
     "check": [
-      "是否提出拆分长句？",
-      "是否保留背景、进展和下一步？",
-      "是否说明短句能让信息更容易浏览？"
+      "是否提出拆分过长的说明？",
+      "是否保留风险提醒和操作顺序？",
+      "是否说明这样能帮助新员工按步骤执行？"
     ]
   },
   "credits": {
@@ -353,10 +353,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
       "页面与练习人工验收"
-    ]
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

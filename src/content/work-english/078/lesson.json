@@ -95,32 +95,10 @@
       "ipa": "/ˈklærəfaɪ/",
       "pos": "verb",
       "meaning": "阐明，澄清",
-      "collocation": "clarify expectations/requirements",
-      "example": "It's important to clarify the project scope before starting.",
-      "translation": "在开始前明确项目范围很重要。",
-      "note": "在职场沟通中，clarify常用于消除歧义，确保各方理解一致。"
-    },
-    {
-      "id": "in-depth-feedback",
-      "word": "in-depth",
-      "ipa": "/ˌɪnˈdepθ/",
-      "pos": "adjective",
-      "meaning": "深入的，详尽的",
-      "collocation": "in-depth analysis/review/feedback",
-      "example": "The manager requested an in-depth review of the quarterly report.",
-      "translation": "经理要求对季度报告进行深入审查。",
-      "note": "in-depth强调全面性和深度，常用于描述需要细致分析的工作。"
-    },
-    {
-      "id": "grasp-context",
-      "word": "grasp",
-      "ipa": "/ɡræsp/",
-      "pos": "verb",
-      "meaning": "理解，掌握",
-      "collocation": "grasp the concept/context/meaning",
-      "example": "New employees need time to grasp the company's workflow.",
-      "translation": "新员工需要时间掌握公司的工作流程。",
-      "note": "grasp比understand更强调完全理解并掌握复杂概念。"
+      "collocation": "clarify expectations / requirements",
+      "example": "Could you clarify whether this pass includes line edits?",
+      "translation": "你能说明本轮是否包括逐句修改吗？",
+      "note": "用于确认评审要求或工作范围。"
     },
     {
       "id": "actionable-feedback",
@@ -128,21 +106,10 @@
       "ipa": "/ˈækʃənəbl/",
       "pos": "adjective",
       "meaning": "可执行的，可操作的",
-      "collocation": "actionable steps/feedback/suggestions",
-      "example": "The consultant provided actionable recommendations to improve team productivity.",
-      "translation": "顾问提供了可执行的建议来提高团队生产力。",
-      "note": "actionable强调反馈具有实际操作性，而非仅是理论建议。"
-    },
-    {
-      "id": "articulate-direction",
-      "word": "articulate",
-      "ipa": "/ɑːˈtɪkjuleɪt/",
-      "pos": "verb",
-      "meaning": "清晰表达，阐明",
-      "collocation": "articulate thoughts/ideas/direction",
-      "example": "A good leader can articulate the company vision to motivate employees.",
-      "translation": "优秀的领导者能够清晰表达公司愿景以激励员工。",
-      "note": "articulate强调表达清晰、有条理，常用于描述复杂概念的传达。"
+      "collocation": "actionable steps / feedback / suggestions",
+      "example": "Please add one actionable suggestion to the customer notice.",
+      "translation": "请为客户通知补充一条可执行的建议。",
+      "note": "指对方能据此采取行动的意见。"
     },
     {
       "id": "timeliness-feedback",
@@ -150,10 +117,10 @@
       "ipa": "/ˈtaɪmlɪnəs/",
       "pos": "noun",
       "meaning": "及时性",
-      "collocation": "ensure timeliness/maintain timeliness",
-      "example": "The project manager emphasized the importance of timeliness in delivering client reports.",
-      "translation": "项目经理强调了及时提交客户报告的重要性。",
-      "note": "timeliness是time的抽象名词形式，强调在正确时间完成工作的重要性。"
+      "collocation": "ensure timeliness / maintain timeliness",
+      "example": "Timeliness matters because the team needs comments by Thursday.",
+      "translation": "及时很重要，因为团队需要在周四前收到意见。",
+      "note": "用于说明反馈或交付是否赶得上所需时间。"
     }
   ],
   "structure": {
@@ -166,29 +133,29 @@
     "transfer": "Could you review the proposal for risks and assumptions by Thursday? A direction check is enough; no line edits are needed."
   },
   "rewrite": {
-    "bad": "What do you think of the plan? Please send me feedback soon.",
-    "good": "Could you review the customer communication plan for accuracy and tone? Please send me your comments by Thursday; a focused review of those two areas is enough.",
-    "translation": "你能帮我检查客户沟通方案的信息是否准确、语气是否清楚吗？请在周四前发我意见；只需重点看这两方面。",
-    "pattern": "Could you review [the document] for [specific points]? Please send me your comments by [deadline]."
+    "bad": "What do you think of the proposal? Please send me some feedback soon.",
+    "good": "Before I review it, could you let me know whether you need a quick direction check or a full review, and when you need my feedback?",
+    "translation": "开始评审前，你能告诉我需要快速看方向，还是完整审稿吗？你希望我什么时候给反馈？",
+    "pattern": "Before I review [the proposal], could you clarify [the review scope] and [the deadline]?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Please review the ___ section, especially the customer impact.",
-      "answer": "risk",
-      "why": "指明范围，反馈者才知道重点看哪里。"
+      "prompt": "Could you review the customer communication plan for ___ and tone?",
+      "answer": "accuracy",
+      "why": "accuracy 指信息准确性，与本次评审范围对应。"
     },
     {
       "id": "c2",
-      "prompt": "Could you tell me ___ the fallback plan is clear?",
-      "answer": "whether",
-      "why": "具体问题比笼统地问“有什么反馈”更容易得到可用意见。"
+      "prompt": "No need for line ___ in this pass.",
+      "answer": "edits",
+      "why": "line edits 指逐句润色。"
     },
     {
       "id": "c3",
-      "prompt": "Please add your comments by end of day ___.",
+      "prompt": "Please send me your comments by ___.",
       "answer": "Thursday",
-      "why": "注明期限，让异步评审能按计划推进。"
+      "why": "by + 时间表示不晚于该时间。"
     }
   ],
   "dictation": [
@@ -203,18 +170,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "请评审风险部分，尤其是对客户的影响。",
-      "answer": "Please review the risk section, especially the customer impact.",
+      "prompt": "你能评审一下客户沟通方案的信息准确性和语气吗？",
+      "answer": "Could you review the customer communication plan for accuracy and tone?",
       "why": ""
     },
     {
-      "prompt": "你能告诉我备用方案是否清楚吗？",
-      "answer": "Could you tell me whether the fallback plan is clear?",
+      "prompt": "本轮不需要逐句修改。",
+      "answer": "No need for line edits in this pass.",
       "why": ""
     },
     {
-      "prompt": "请在周四下班前添加意见。",
-      "answer": "Please add your comments by end of day Thursday.",
+      "prompt": "请在周四前把意见发给我。",
+      "answer": "Please send me your comments by Thursday.",
       "why": ""
     }
   ],
@@ -229,12 +196,12 @@
     "why": "说明评审对象、检查范围、截止时间和本轮不需要做的逐句修改。"
   },
   "output": {
-    "prompt": "请同事评审一份新员工入职清单，你只需要他检查步骤顺序和链接是否有效，并在周二前反馈。请用英文写出清楚、范围明确的评审请求。",
-    "sample": "Could you review the onboarding checklist for step order and working links? Please send me your comments by Tuesday. There’s no need to review the wording in this pass.",
+    "prompt": "新产品 FAQ 下周要发给客户。请同事检查链接是否有效、术语是否一致，不必逐句润色，并在周三前给你意见。请写出清楚的评审请求。",
+    "sample": "Could you review the product FAQ for working links and consistent terminology? Please send me your comments by Wednesday; no need for line edits in this pass.",
     "check": [
-      "是否明确评审范围？",
-      "是否给出反馈时间？",
-      "是否说明需要何种深度的反馈？"
+      "是否说明评审的具体范围？",
+      "是否给出明确的反馈期限？",
+      "是否说明不需要逐句润色？"
     ]
   },
   "credits": {
@@ -246,35 +213,45 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "point to the section you want reviewed",
-      "meaning": "指出需要评审的具体部分",
-      "collocation": "point to + section",
-      "example": "Please review the risk section, especially the customer impact.",
-      "translation": "请评审风险部分，尤其是对客户的影响。"
+      "word": "review the customer communication plan for accuracy and tone",
+      "meaning": "说明评审对象和本轮需要检查的方面",
+      "collocation": "review + document + for + accuracy / clarity / tone",
+      "example": "Could you review the customer communication plan for accuracy and tone?",
+      "translation": "你能评审一下客户沟通方案的信息准确性和语气吗？"
     },
     {
       "id": "work-02",
-      "word": "ask for feedback on a specific question",
-      "meaning": "围绕具体问题征求意见",
-      "collocation": "ask for feedback on + question",
-      "example": "Could you tell me whether the fallback plan is clear?",
-      "translation": "你能告诉我备用方案是否清楚吗？"
+      "word": "No need for line edits in this pass.",
+      "meaning": "说明本轮评审的范围，不要求逐句修改",
+      "collocation": "no need for + line edits / a full rewrite",
+      "example": "No need for line edits in this pass.",
+      "translation": "本轮不需要逐句修改。"
     },
     {
       "id": "work-03",
-      "word": "set a response deadline",
-      "meaning": "明确希望收到反馈的时间",
-      "collocation": "set + response deadline",
-      "example": "Please add your comments by end of day Thursday.",
-      "translation": "请在周四下班前添加意见。"
+      "word": "Please send me your comments by Thursday.",
+      "meaning": "给出明确的反馈截止时间",
+      "collocation": "send comments by + day / time",
+      "example": "Please send me your comments by Thursday.",
+      "translation": "请在周四前把意见发给我。"
     }
   ]
 }

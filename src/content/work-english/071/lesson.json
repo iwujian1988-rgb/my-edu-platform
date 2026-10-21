@@ -46,194 +46,197 @@
   "notes": [
     {
       "paragraph": 0,
-      "phrase": "pause",
-      "meaning": "暂停",
-      "explain": "在发送会议请求前先停下来思考",
-      "example": "Before sending that email, take a moment to pause and consider the consequences."
+      "phrase": "What’s the expected outcome or end result?",
+      "meaning": "预期结果是什么？",
+      "explain": "发会议邀请前先确认要得到决定、讨论结果，还是只需传递信息。",
+      "example": "What outcome do we need from this discussion?"
     },
     {
       "paragraph": 0,
-      "phrase": "async. As a",
-      "meaning": "异步更新",
-      "explain": "不需要实时会议的信息更新方式",
-      "example": "The team prefers async updates to accommodate different time zones."
+      "phrase": "documenting an ask",
+      "meaning": "把请求写成可查看的记录",
+      "explain": "把口头请求写下来，别人才能按自己的时间阅读和回应。",
+      "example": "Documenting the ask helped us avoid another meeting."
     },
     {
-      "paragraph": 1,
-      "phrase": "bring them up to speed",
-      "meaning": "让他们快速了解情况",
-      "explain": "向新加入者提供必要背景信息",
-      "example": "The manager sent a memo to bring new hires up to speed on the project status."
+      "paragraph": 0,
+      "phrase": "warrants a meeting",
+      "meaning": "值得开会讨论",
+      "explain": "warrants 表示事情有充分理由采用某种处理方式。",
+      "example": "This decision warrants a short meeting."
     },
     {
-      "paragraph": 1,
-      "phrase": "loop themselves in",
-      "meaning": "自行加入讨论",
-      "explain": "让相关人员能够自主获取信息并参与",
-      "example": "The shared document allows team members to loop themselves in without constant meetings."
+      "paragraph": 0,
+      "phrase": "If you write first, you’re likely to continue that way.",
+      "meaning": "先写下来，就更可能持续记录",
+      "explain": "先形成书面材料，有助于后续的异步协作。",
+      "example": "Let’s write the proposal first and discuss only unresolved points."
     }
   ],
   "scenario": {
-    "title": "Moving a simple status update out of a meeting",
+    "title": "A meeting request with no decision to make",
     "english": [
-      "You planned to schedule a meeting for a routine progress update.",
-      "The update only needs a current status, blockers, and next steps, and teammates can read it in a shared document.",
-      "You ask colleagues to post the information by Thursday so the team can review it asynchronously."
+      "Owen is about to invite six colleagues to a half-hour status meeting. His draft invitation says only “project sync,” so nobody knows what they should prepare.",
+      "He pauses and writes down the expected outcome: everyone needs to see the updated timeline and flag blockers. A shared update can do this without a meeting.",
+      "He posts the timeline, asks each owner to add blockers by Thursday, and reserves a live meeting only if the team needs to debate a decision."
     ],
     "chinese": [
-      "你原本打算为一次常规进度更新安排会议。",
-      "这次更新只需要当前进展、阻碍和下一步，团队可以在共享文档中查看。",
-      "你请同事在周四前补充信息，大家异步查看即可。"
+      "Owen 准备邀请六位同事参加半小时进度会。邀请只写了“项目同步”，没人知道该准备什么。",
+      "他停下来写出预期结果：大家需要看到更新后的时间表并提出阻碍。这件事可以用共享更新完成。",
+      "他发布进度，请各负责人周四前补充阻碍；只有需要讨论决定时才安排实时会议。"
     ]
   },
   "firstAttempt": {
-    "prompt": "同事发起了一个会议，只为收集大家对方案文档的意见。请用英文建议把文档发给相关同事异步批注，并请他们标出仍需讨论的问题。",
-    "sample": "Could we share the proposal for comments before scheduling a meeting? Please add your suggestions in the document and flag any questions that still need a live discussion.",
-    "rationale": "先异步收集批注，只为仍需实时讨论的问题开会。"
+    "prompt": "你本来想开一个“项目同步会”，但只需要大家查看新时间表并报告阻碍。请写两句英文异步更新，说明资料在哪里、各负责人要做什么和截止时间。",
+    "sample": "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday?",
+    "rationale": "先写清预期结果，再选择合适的沟通方式；这里不必为单向进度更新开会。"
   },
   "words": [
     {
-      "id": "meeting-request",
-      "word": "meeting request",
+      "id": "outcome",
+      "word": "outcome",
       "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "会议请求",
-      "collocation": "send a meeting request",
-      "example": "For a routine update, let’s use the shared document instead of sending a meeting request.",
-      "translation": "常规进度更新就放在共享文档里，不用再发会议邀请。",
-      "note": "在职场中，发送会议请求前应明确会议目的和预期成果。"
+      "pos": "n.",
+      "meaning": "预期结果",
+      "collocation": "expected outcome",
+      "example": "The expected outcome is a decision on the launch date.",
+      "translation": "预期结果是确定上线日期。",
+      "note": "开会前先明确要得到什么。"
     },
     {
-      "id": "shared-document",
-      "word": "shared document",
+      "id": "documenting",
+      "word": "documenting",
       "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "共享文档",
-      "collocation": "edit a shared document",
-      "example": "Please add your status and blockers to the shared document by Thursday.",
-      "translation": "请在周四前把进度和阻碍补充到共享文档。",
-      "note": "共享文档是异步协作的重要工具，可以减少不必要的会议。"
+      "pos": "v.-ing",
+      "meaning": "形成书面记录",
+      "collocation": "documenting an ask",
+      "example": "Documenting the request lets others respond asynchronously.",
+      "translation": "把请求写下来让其他人可以异步回复。",
+      "note": "来自 document，指记录而非仅保存文件。"
     },
     {
-      "id": "distributed-company",
-      "word": "distributed company",
+      "id": "verbalized",
+      "word": "verbalized",
       "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "分布式公司",
-      "collocation": "work in a distributed company",
-      "example": "A distributed company can use written updates to keep everyone informed across time zones.",
-      "translation": "分布式团队可以用书面更新，让不同时区的同事都了解进展。",
-      "note": "分布式公司需要特别注重书面沟通，以弥补地理距离带来的挑战。"
+      "pos": "v.",
+      "meaning": "用口头表达",
+      "collocation": "a verbalized request",
+      "example": "A verbalized request can be easy to forget.",
+      "translation": "口头提出的请求容易被忘记。",
+      "note": "原文用过去分词，强调原本会口头说出。"
     },
     {
-      "id": "prior-context",
-      "word": "prior context",
+      "id": "warrants",
+      "word": "warrants",
       "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "先前背景",
-      "collocation": "provide prior context",
-      "example": "Add enough context so readers can understand the update without a meeting.",
-      "translation": "补充必要背景，让读者不用开会也能看懂更新。",
-      "note": "提供适当的先前背景可以减少重复解释和澄清的需求。"
+      "pos": "v.",
+      "meaning": "值得；有必要",
+      "collocation": "warrants a meeting",
+      "example": "A sensitive decision may warrant a meeting.",
+      "translation": "敏感决定可能值得开会讨论。",
+      "note": "主语为单数时用 warrants。"
     },
     {
-      "id": "centralized-location",
-      "word": "centralized location",
+      "id": "proposals",
+      "word": "proposals",
       "ipa": "",
-      "pos": "noun phrase",
-      "meaning": "集中位置",
-      "collocation": "store in centralized location",
-      "example": "Keep the weekly status updates in one shared location.",
-      "translation": "把每周进度更新放在同一个共享位置。",
-      "note": "使用集中位置存储信息可以提高团队协作效率。"
+      "pos": "n.",
+      "meaning": "提案；建议方案",
+      "collocation": "share proposals",
+      "example": "Please share your proposals in the document.",
+      "translation": "请在文档中分享方案。",
+      "note": "比 status update 更可能需要讨论。"
     },
     {
-      "id": "chronology",
-      "word": "chronology",
-      "ipa": "/krəˈnɒlədʒi/",
-      "pos": "noun",
-      "meaning": "时间顺序",
-      "collocation": "follow a chronology",
-      "example": "List the update in a clear order: status, blockers, and next steps.",
-      "translation": "按清楚的顺序列出进度、阻碍和下一步。",
-      "note": "按时间顺序组织信息可以帮助读者更好地理解事件发展过程。"
+      "id": "async",
+      "word": "async",
+      "ipa": "",
+      "pos": "adj./adv.",
+      "meaning": "异步的；异步地",
+      "collocation": "share async",
+      "example": "We can share the status update async.",
+      "translation": "我们可以异步分享进度更新。",
+      "note": "asynchronous 的常用缩写。"
     }
   ],
   "structure": {
-    "original": "You’ve just tricked yourself into documenting an ask that would’ve been verbalized.",
+    "original": "If you write first, you’re likely to continue that way.",
     "analysis": [
-      "“trick yourself into doing something”里的 into 是介词，后接动名词 documenting；整句带有“结果发现自己还是把请求写下来了”的语气。",
-      "“that would’ve been verbalized”是修饰 ask 的定语从句；that 在从句中作主语。",
-      "“would’ve been verbalized”是 would have been + 过去分词构成的情态动词完成时被动结构，表示这个请求原本可能只会口头说出。"
+      "If you write first：用条件从句提出起始行为。",
+      "you’re likely to ...：说明可能带来的后续习惯，而非绝对保证。",
+      "that way 指代前面的书面沟通方式。"
     ],
-    "transfer": "Could we share the proposal for comments first? If questions remain after the async review, we can schedule a short meeting."
+    "transfer": "If we write the timeline first, we can discuss only the blockers that need a decision."
   },
   "rewrite": {
-    "bad": "Could we meet so I can explain the proposal? I have not added comments to the shared document.",
-    "good": "Could we share the proposal for comments before scheduling a meeting? Please add your suggestions in the document and flag any questions that still need a live discussion.",
-    "translation": "我们能否先分享提案收集意见，再安排会议？请把建议写在文档里，并标出仍需实时讨论的问题。",
-    "pattern": "Could we share [the material] for comments before [scheduling a meeting]? Please add [input] and flag [questions that need a live discussion]."
+    "bad": "Project sync tomorrow. Please join.",
+    "good": "The updated timeline is in the shared document. Could each owner add blockers by Thursday? We’ll meet only if a decision needs live discussion.",
+    "translation": "更新时间表在共享文档里。请各负责人周四前补充阻碍；只有需要实时讨论决定时我们才开会。",
+    "pattern": "The [material] is in [place]. Could [owner] add [input] by [time]? We’ll meet if [specific reason]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Could we share the proposal for comments before scheduling a ___?",
-      "answer": "meeting",
-      "why": "先收集文档意见，再判断是否需要开会。"
+      "prompt": "What is the expected ___ of this meeting?",
+      "answer": "outcome",
+      "why": "outcome 指会议希望得到的结果。"
     },
     {
       "id": "c2",
-      "prompt": "Please add your suggestions in the ___.",
-      "answer": "document",
-      "why": "说明反馈写在共享文档中。"
+      "prompt": "A sensitive decision ___ a live discussion.",
+      "answer": "warrants",
+      "why": "单数主语 a decision 后用 warrants。"
     },
     {
       "id": "c3",
-      "prompt": "Please flag any questions that still need a live ___.",
-      "answer": "discussion",
-      "why": "把仍需要实时讨论的问题标出来。"
+      "prompt": "We can share the status update ___.",
+      "answer": "async",
+      "why": "async 表示异步进行。"
     }
   ],
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah needed to finalize the quarterly report by Friday but was waiting for data from Tom, who was handling the sales figures."
+      "text": "If you’re about to hit send on a meeting request, pause.",
+      "why": "hit send on a meeting request 指准备发送会议邀请；先确认是否必须同步讨论。",
+      "label": "听写 1 · 判断是否真的需要开会"
     },
     {
       "id": "d2",
-      "text": "Tom was dealing with a client emergency and couldn't provide the data until Wednesday, creating a tight deadline for Sarah."
+      "text": "Could each owner add any blockers there by Thursday?",
+      "why": "each owner、blockers 和 by Thursday 让后续行动清楚。",
+      "label": "听写 2 · 在书面更新中写明负责人和期限",
+      "apply": {
+        "prompt": "只需更新进度和收集阻碍，不必开同步会。写一句异步留言并说明截止时间。",
+        "sample": "Could we share the proposal for comments in the document? Please add your suggestions there and flag any questions that need a live discussion by Thursday."
+      }
     }
   ],
   "translationPractice": [
     {
       "prompt": "我们能否先把提案发给大家批注，再决定是否需要开会？",
       "answer": "Could we share the proposal for comments before scheduling a meeting?",
-      "why": ""
+      "why": "先把提案发给相关同事异步评审"
     },
     {
       "prompt": "请在文档中添加你的建议。",
       "answer": "Please add your suggestions in the document.",
-      "why": ""
-    },
-    {
-      "prompt": "请标出仍需要实时讨论的问题。",
-      "answer": "Please flag any questions that still need a live discussion.",
-      "why": ""
+      "why": "说明反馈应该写在哪里"
     }
   ],
   "choice": {
-    "prompt": "团队要评审一份方案文档，尚不确定是否需要开会。请选出最合适的异步评审建议。",
+    "prompt": "只需收集进度和阻碍，哪种做法最合适？",
     "options": [
-      "Let’s book a meeting first. We can decide what feedback we need after everyone joins.",
-      "Could we share the proposal for comments before scheduling a meeting? Please add your suggestions in the document and flag any questions that still need a live discussion.",
-      "Please send your comments to me privately so no one else needs to read them."
+      "Send a meeting invite titled “Sync” with no agenda.",
+      "Share the updated timeline and ask owners to add blockers in the document by Thursday.",
+      "Wait for the next meeting without recording the timeline."
     ],
     "correct": 1,
-    "why": "先在共享文档收集意见，再把仍需实时讨论的问题带进会议。"
+    "why": "异步材料已足够完成信息收集，且请求和截止时间清楚。"
   },
   "output": {
-    "prompt": "你要收集大家对新的值班手册的意见，当前没有需要现场决定的问题。请用英文建议先异步评审，说明希望同事重点检查什么，并要求标出仍需讨论的部分。",
-    "sample": "Could we share the on-call guide for comments before scheduling a meeting? Please check whether the escalation steps are clear and flag any questions that still need a live discussion.",
+    "prompt": "同事发起了一个会议，只为收集大家对方案文档的意见。请用英文建议把文档发给相关同事异步批注，并请他们标出仍需讨论的问题。",
+    "sample": "Could we share the proposal for comments before scheduling a meeting? Please add your suggestions in the document and flag any questions that still need a live discussion.",
     "check": [
       "是否优先提出异步收集意见？",
       "是否给出清楚的批注方式？",
@@ -249,11 +252,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写讲季度报告等待销售数据，与本期用书面异步更新替代例会的目标无关；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

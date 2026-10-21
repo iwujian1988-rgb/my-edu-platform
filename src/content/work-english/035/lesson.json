@@ -118,9 +118,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "新成立的远程团队中，有人偏好实时讨论，有人需要专注时间。请用英文建议先谈清团队的协作需要，再约定一套可以试行和调整的做法。",
-    "sample": "Could we discuss what the team needs to coordinate well before choosing a routine? Let’s try a short meeting for decisions and use a shared document for routine updates, then review whether it works.",
-    "rationale": "先了解团队需求，再组合实时讨论和异步更新，并在试行后回看效果。"
+    "prompt": "新项目团队想照搬另一支团队的全部协作流程。请用英文说明团队需求各不相同，并建议先讨论当前项目需要哪些协作约定。",
+    "sample": "Each engagement has different team needs, so we shouldn’t treat another team’s practices as a mandatory checklist. Could we discuss which working agreements fit this project and adjust them as we learn?",
+    "rationale": "来源提供的是可调整的高层建议，并明确表示它不是每个团队都必须照做的清单。"
   },
   "words": [
     {
@@ -201,9 +201,9 @@
   },
   "rewrite": {
     "bad": "The other team’s process worked, so we should copy every step without changing it.",
-    "good": "Could we discuss what the team needs to coordinate well before choosing a routine? Let’s try a short meeting for decisions and use a shared document for routine updates, then review whether it works.",
-    "translation": "我们能否先讨论团队需要怎样协作，再决定采用什么固定流程？先试短会讨论决策、共享文档更新日常进度，之后再看是否有效。",
-    "pattern": "Could we discuss [what the team needs] before choosing [a routine]? Let’s try [one practice for decisions] and [another for updates], then review whether it works."
+    "good": "Each team has different needs. Could we discuss which working agreements fit this project and adjust them as we learn?",
+    "translation": "每个团队的需求都不同。我们能否讨论哪些协作约定适合当前项目，并在实践中调整？",
+    "pattern": "Because [teams have different needs], could we choose [the practices that fit this project]?"
   },
   "cloze": [
     {
@@ -263,12 +263,12 @@
     "why": "来源提供的是可调整的高层建议，并明确表示它不是每个团队都必须照做的清单。"
   },
   "output": {
-    "prompt": "设计团队和客服团队对哪些客户问题需要立即升级意见不同。请用英文建议先了解双方的协作需要，试行一套升级流程，再约定何时复盘。",
-    "sample": "Could we discuss what both teams need to coordinate well before choosing a process? Let’s try a clear escalation path and review whether it works after the next launch.",
+    "prompt": "新成立的远程团队中，有人偏好实时讨论，有人需要专注时间。请用英文建议先谈清团队的协作需要，再约定一套可以试行和调整的做法。",
+    "sample": "Could we discuss what the team needs to coordinate well before choosing a routine? Let’s try a short meeting for decisions and use a shared document for routine updates, then review whether it works.",
     "check": [
-      "是否先了解设计和客服团队各自的需要？",
-      "是否建议试行一条明确的升级流程？",
-      "是否约定根据实际协作结果复盘？"
+      "是否先了解团队的实际需要？",
+      "是否提出了不同沟通方式的用途？",
+      "是否说明约定可以试行后调整？"
     ]
   },
   "credits": {
@@ -280,10 +280,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

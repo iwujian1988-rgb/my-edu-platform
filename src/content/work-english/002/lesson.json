@@ -254,12 +254,12 @@
     "why": "先承认沿用模板的理由，再说明客户已提出的新要求并给出具体调整。"
   },
   "output": {
-    "prompt": "设计同事坚持沿用旧版仪表盘，但销售团队反馈客户找不到关键指标。请用英文先承认旧设计的考虑，再转述客户反馈，并提出一个可共同验证的调整。",
-    "sample": "I understand why you want to keep the current layout. Sales has heard that customers can’t find the key metrics. Could we test moving those metrics to the top with a few users before changing the full dashboard?",
+    "prompt": "同事想把一项清理工作留到下个版本，但你发现相同问题已经影响本周的交接。请用英文说明你理解他想尽快交付，再解释为什么现在处理更合适，并提出具体做法。",
+    "sample": "I understand that you want to ship this version quickly. Since the issue is already affecting this week’s handoff, could we fix it before release? That would keep the same problem from carrying over to the next team.",
     "check": [
-      "是否承认旧版布局原本的考虑？",
-      "是否准确转述客户找不到关键指标的反馈？",
-      "是否提出先小范围验证再全面调整？"
+      "是否先承认对方希望尽快交付？",
+      "是否说明问题已经影响当前交接？",
+      "是否提出现在处理的具体建议？"
     ]
   },
   "credits": {
@@ -271,8 +271,7 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "音频逐条核对",
-      "页面与练习交互人工验收"
+      "音频逐条核对"
     ],
     "rubricVersion": "1.1",
     "scores": {

@@ -165,9 +165,9 @@
   },
   "rewrite": {
     "bad": "The pre-read is in a separate attachment. Please find it yourself before the meeting.",
-    "good": "I’ve shared the draft before the session so you can review it in advance. Please bring one customer example and come prepared to discuss the main risk and one possible response. That will help us use the meeting time to decide what to do.",
-    "translation": "我已在会前分享了草稿，方便大家提前查看。请带来一个客户案例，并准备讨论主要风险和一种可能的应对方式。这样会议时间就能用来决定下一步。",
-    "pattern": "I’ve shared [the material] before [the session]. Please bring [one example] and prepare to discuss [a risk and response]. That will help us use the meeting to [make a decision]."
+    "good": "I’ve added the pre-read and discussion questions to the agenda. I’ll share the updated document one business day before the meeting so you can review it in advance.",
+    "translation": "我已把预读材料和讨论问题放进议程，会在会议前一个工作日分享更新后的文档，方便大家提前阅读。",
+    "pattern": "I’ve added [the pre-read and questions] to [the shared agenda]. I’ll share it [in advance]."
   },
   "cloze": [
     {
@@ -227,12 +227,12 @@
     "why": "要求具体、工作量清楚，也把会前准备与会议中的讨论和决定联系起来。"
   },
   "output": {
-    "prompt": "客户顾问会前，参会者需要阅读一份新功能说明，并准备一个客户使用案例和一个疑问。请用英文发出会前准备要求，并说明这样做是为了什么。",
-    "sample": "Please review the new feature brief before the customer advisory session. Bring one example of how a customer might use it and one question. This will help us spend the session discussing real use cases.",
+    "prompt": "新版结账流程评审会前，大家已经收到客户录屏和方案草稿。请用英文提醒参会者提前查看，并请每个人带来一个客户使用中的问题，准备讨论风险和可能的应对。",
+    "sample": "I’ve shared the checkout draft and customer recordings before the session. Please review them in advance and bring one customer issue. Come prepared to discuss the main risk and one possible response.",
     "check": [
-      "是否明确要求会前阅读哪份材料？",
-      "是否布置了一个案例和一个问题作为准备？",
-      "是否说明提前准备能让会议更聚焦？"
+      "是否说明材料已提前分享并提醒预读？",
+      "是否要求参会者准备一个具体客户例子？",
+      "是否指出会上要讨论的风险和应对？"
     ]
   },
   "credits": {
@@ -244,10 +244,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

@@ -736,9 +736,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你和同事决定把测试推迟到下周三，因为还在等客户反馈。请用英文把新日期、原因和共享记录更新告诉远程团队。",
-    "sample": "We agreed to move testing to next Wednesday because we are still waiting for customer feedback. I’ve updated the project issue with the new date. Please add any risks or corrections there by tomorrow.",
-    "rationale": "写清变更、原因和共享文档位置，让不同时间区的同事能异步补充。"
+    "prompt": "测试原定周二完成，但客户反馈还不完整，团队决定把测试改到下周三，由 Nina 先确认缺少哪些反馈。请用英文写明改期及原因，并把决定记录到共享项目记录中。",
+    "sample": "We agreed to move testing to next Wednesday because we are still waiting for complete customer feedback. Nina will confirm what is missing, and I’ve recorded the decision in the shared project issue.",
+    "rationale": "异步同步决定时，把新安排、原因、负责人和记录位置写全。"
   },
   "words": [
     {
@@ -815,32 +815,32 @@
       "ensuring that ...：强调要确保事情真的发生。",
       "conclusions ... are written down：被动语态聚焦“结论被记录”，而不是谁来记。"
     ],
-    "transfer": "We also write down conclusions from offline conversations so colleagues in other time zones can find the same decision."
+    "transfer": "We place an emphasis on ensuring that decisions from private calls are recorded in the project issue."
   },
   "rewrite": {
-    "bad": "We changed the delivery date in a call. Ask someone if you need the reason.",
-    "good": "We agreed to move testing to next Wednesday because we are still waiting for customer feedback. I’ve updated the project issue with the new date. Please add any risks or corrections there by tomorrow.",
-    "translation": "我们同意把测试推迟到下周三，因为还在等客户反馈。我已在项目 issue 中更新日期，请在明天前在那里补充风险或更正。",
-    "pattern": "We changed [the date] because [the reason]. I’ve recorded it in [the shared space]; please add [corrections or risks] there."
+    "bad": "We changed the date in a call. Ask someone if you need to know more.",
+    "good": "We agreed to move delivery to next Tuesday. I’ve recorded the reason and next steps in the project issue for everyone to review.",
+    "translation": "我们同意把交付日期改到下周二。我已将原因和下一步写进项目记录，供大家查看。",
+    "pattern": "We agreed to [decision]. I’ve recorded [reason/next steps] in [shared place]."
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "We agreed to move testing to next Wednesday because we are still ___ for customer feedback.",
-      "answer": "waiting",
-      "why": "wait for 表示等待某项信息或回应。"
+      "prompt": "Please write down the ___ of the offline call.",
+      "answer": "conclusions",
+      "why": "conclusions 指讨论得出的结论。"
     },
     {
       "id": "c2",
-      "prompt": "I’ve ___ the project issue with the new date.",
-      "answer": "updated",
-      "why": "update a record with… 表示把新信息补充到共享记录。"
+      "prompt": "A shared issue makes the decision more ___.",
+      "answer": "transparent",
+      "why": "transparent 表示相关人员都能看到信息。"
     },
     {
       "id": "c3",
-      "prompt": "Please add any risks or corrections there by ___.",
-      "answer": "tomorrow",
-      "why": "by tomorrow 给出补充信息的截止时间。"
+      "prompt": "We can start with an ___ update instead of another meeting.",
+      "answer": "asynchronous",
+      "why": "异步更新不要求大家同时在线。"
     }
   ],
   "dictation": [
@@ -859,36 +859,31 @@
     {
       "prompt": "我们同意把测试改到下周三，因为还在等待客户反馈。",
       "answer": "We agreed to move testing to next Wednesday because we are still waiting for customer feedback.",
-      "why": ""
+      "why": "说明测试改期和原因"
     },
     {
       "prompt": "我已经在项目 issue 中更新了新日期。",
       "answer": "I’ve updated the project issue with the new date.",
-      "why": ""
-    },
-    {
-      "prompt": "请在明天前在那里补充风险或修正意见。",
-      "answer": "Please add any risks or corrections there by tomorrow.",
-      "why": ""
+      "why": "把新日期更新到团队可见的项目记录"
     }
   ],
   "choice": {
-    "prompt": "你和同事决定把测试推迟到下周三，因为还在等客户反馈。请用英文把新日期、原因和共享记录更新告诉远程团队。",
+    "prompt": "电话里改了交付日期，哪条更新最适合远程团队？",
     "options": [
-      "We changed the date in a call. Ask someone if you need to know more.",
-      "We agreed to move testing to next Wednesday because we are still waiting for customer feedback. I’ve updated the project issue with the new date. Please add any risks or corrections there by tomorrow.",
-      "The date changed. Everyone should already know."
+      "The date changed. Everyone should already know.",
+      "We moved delivery to next Tuesday. The reason and next steps are in the shared issue; please add corrections there.",
+      "I discussed this privately, so no written update is needed."
     ],
     "correct": 1,
-    "why": "写清变更、原因和共享文档位置，让不同时间区的同事能异步补充。"
+    "why": "它公开记录变更、原因和下一步，并允许同事核对。"
   },
   "output": {
-    "prompt": "远程团队在电话里同意把测试改到下周三，并由 Nina 先确认客户反馈是否完整。请用英文把决定、原因和负责人写进共享项目记录。",
-    "sample": "We agreed to move testing to next Wednesday because we are still waiting for complete customer feedback. Nina will confirm what is missing, and I’ve recorded the decision in the shared project issue.",
+    "prompt": "客户数据测试原定本周五完成，但隐私审核仍未结束。团队同意把测试改到下周一，Oliver 会确认审核状态。请用英文同步改期原因、负责人和项目记录，并请团队在周五前补充风险或更正。",
+    "sample": "Because the privacy review is still open, we agreed to move the customer-data test to next Monday. Oliver will confirm the review status, and I’ve updated the project issue. Please add any remaining risks or corrections there by Friday.",
     "check": [
-      "是否记录了新日期和原因？",
-      "是否写明下一步负责人？",
-      "是否将通话结论放入共享记录？"
+      "是否写清新的测试日期及改期原因？",
+      "是否明确审核状态的负责人？",
+      "是否指出共享记录位置并邀请补充风险或更正？"
     ]
   },
   "credits": {
@@ -900,10 +895,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

@@ -190,9 +190,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "一项新功能即将上线。请分别向销售负责人、项目决策人和工程团队同步：发布日期未变、需要决定是否纳入区域发布、会后会发送实施细节。用英文写三句，每句面向一个对象。",
-    "sample": "Sales: What you need to know is that the launch date is unchanged. Decision-maker: The decision we need from you is whether to include the regional rollout. Engineering: I’ll share the implementation details after this call.",
-    "rationale": "根据听众的职责分别给重点、决定请求和所需细节。"
+    "prompt": "新功能准备上线，工程团队需要参与测试，销售只需了解客户影响，客服要提前拿到答复口径。请用英文建议先区分参与和知情对象，再约定更新渠道和频率。",
+    "sample": "The engineering team needs to be involved in testing the new feature, while Sales only needs to be kept informed about the customer impact. Could we share project updates via Jira every Monday?",
+    "rationale": "先区分需要直接参与和只需知情的团队，再明确更新渠道与频率。"
   },
   "words": [
     {
@@ -273,28 +273,28 @@
   },
   "rewrite": {
     "bad": "Let’s send every update to everyone in the same channel at the same time.",
-    "good": "Sales: What you need to know is that the launch date is unchanged. Decision-maker: The decision we need from you is whether to include the regional rollout. Engineering: I’ll share the implementation details after this call.",
-    "translation": "销售：你需要知道的是，发布日期没有变化。决策人：我们需要你决定是否纳入区域发布。工程：这次电话会后，我会分享实施细节。",
-    "pattern": "[Audience]: What you need to know is [update]. [Decision-maker]: The decision we need from you is [decision]. [Team]: I’ll share [details] after [time]."
+    "good": "Could we list who needs to be involved or kept informed, then agree on the right channel and update cadence for each group?",
+    "translation": "我们能否先列出需要参与或知情的人，再为每个群体约定合适的渠道和更新频率？",
+    "pattern": "Could we identify who needs to be involved or kept informed, then agree on their channel and update cadence?"
   },
   "cloze": [
     {
       "id": "c1",
-      "prompt": "What you need to ___ is that the launch date is unchanged.",
-      "answer": "know",
-      "why": "先给听众与当前决策相关的信息。"
+      "prompt": "The engineering team needs to be involved ___ testing the new feature.",
+      "answer": "in",
+      "why": "be involved in 后面接参与的工作。"
     },
     {
       "id": "c2",
-      "prompt": "The decision we need from you is ___ to include the regional rollout.",
-      "answer": "whether",
-      "why": "whether 引出需要对方判断的两个可能。"
+      "prompt": "Sales only needs to be kept ___ about the customer impact.",
+      "answer": "informed",
+      "why": "keep a team informed about something 表示让团队了解相关信息。"
     },
     {
       "id": "c3",
-      "prompt": "I’ll share the implementation details ___ the engineering team after this call.",
-      "answer": "with",
-      "why": "share something with someone 表示把信息分享给某人。"
+      "prompt": "Let’s share project updates ___ Jira every Monday.",
+      "answer": "via",
+      "why": "via 后接信息传递所用的渠道。"
     }
   ],
   "dictation": [
@@ -309,38 +309,38 @@
   ],
   "translationPractice": [
     {
-      "prompt": "你需要知道的是，发布日期没有变化。",
-      "answer": "What you need to know is that the launch date is unchanged.",
+      "prompt": "工程团队需要参与新功能测试。",
+      "answer": "The engineering team needs to be involved in testing the new feature.",
       "why": ""
     },
     {
-      "prompt": "我们需要你决定是否纳入区域发布。",
-      "answer": "The decision we need from you is whether to include the regional rollout.",
+      "prompt": "销售团队只需了解这项功能对客户的影响。",
+      "answer": "Sales only needs to be kept informed about the customer impact.",
       "why": ""
     },
     {
-      "prompt": "会议后我会把实施细节发给工程团队。",
-      "answer": "I’ll share the implementation details with the engineering team after this call.",
+      "prompt": "我们每周一通过 Jira 同步项目进展。",
+      "answer": "Let’s share project updates via Jira every Monday.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "新功能发布日期不变，但是否纳入区域发布还需决定，工程团队会在会后收到实施细节。请选出按对象分别传达重点的三句更新。",
+    "prompt": "新功能上线前，工程团队要参与测试，销售只需了解客户影响。项目任务在 Jira 管理，每周一更新一次。请选择合适的沟通安排。",
     "options": [
-      "The launch date is unchanged. We may include a regional rollout. Engineering will get more details later.",
-      "Sales: The launch date is unchanged. Decision-maker: Please confirm whether to include the regional rollout. Engineering: I’ll send the implementation details after this call.",
-      "Sales: Please decide on the regional rollout. Decision-maker: The launch date is unchanged. Engineering: Please send the sales update after the call."
+      "Engineering, Sales, and Support all need to join every testing meeting. Let’s send the same update to everyone whenever there is a change.",
+      "The engineering team needs to be involved in testing the new feature. Sales only needs to be kept informed about the customer impact. Let’s share project updates via Jira every Monday.",
+      "Sales needs to approve the technical test. Engineering only needs the customer summary. Let’s send updates to both teams when the launch is over."
     ],
     "correct": 1,
-    "why": "销售先收到发布日期，决策人收到明确的决定请求，工程团队知道实施细节何时发送。"
+    "why": "工程团队直接参与测试，销售接收客户影响信息，并按约定渠道和频率更新。"
   },
   "output": {
-    "prompt": "区域试点已经获批，但尚未确定首批客户名单。请分别给销售团队、决策人和工程团队写一句英文更新：说明各自需要知道或完成的事项。",
-    "sample": "Sales: The regional pilot is approved, and we’re preparing the first customer list. Decision-maker: Please review the proposed list and confirm whether it is ready to share. Engineering: I’ll send the rollout requirements after the list is confirmed.",
+    "prompt": "产品上线日期可能推迟：工程团队需要评估新的测试安排，销售要了解客户影响，客服则需要拿到最新答复口径。请用英文安排各团队需要参与或接收的信息，并写清日常更新渠道和频率。",
+    "sample": "The engineering team needs to be involved in assessing the revised test plan. Sales only needs to be kept informed about the customer impact. Let’s share project updates via Jira every Wednesday and send Support the approved response before any date changes.",
     "check": [
-      "是否让每个对象先看到与自己有关的信息？",
-      "是否明确需要对方作出的决定？",
-      "是否说明工程团队何时收到实施细节？"
+      "是否区分了直接参与和只需知情的团队？",
+      "是否说明销售需要了解的客户影响？",
+      "是否写明更新渠道、频率及客服所需信息？"
     ]
   },
   "credits": {
@@ -352,35 +352,45 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "What you need to know is…",
-      "meaning": "先告诉听众与他们有关的重点",
-      "collocation": "What + audience + needs to know",
-      "example": "What you need to know is that the launch date is unchanged.",
-      "translation": "你需要知道的是，发布日期没有变化。"
+      "word": "The engineering team needs to be involved in…",
+      "meaning": "说明哪个团队需要直接参与",
+      "collocation": "be involved in + task / decision",
+      "example": "The engineering team needs to be involved in testing the new feature.",
+      "translation": "工程团队需要参与新功能测试。"
     },
     {
       "id": "work-02",
-      "word": "The decision we need from you is…",
-      "meaning": "明确希望对方作出的决定",
-      "collocation": "the decision we need from you",
-      "example": "The decision we need from you is whether to include the regional rollout.",
-      "translation": "我们需要你决定是否纳入区域发布。"
+      "word": "…only needs to be kept informed about…",
+      "meaning": "说明哪个团队只需了解进展",
+      "collocation": "keep + person/team + informed about + topic",
+      "example": "Sales only needs to be kept informed about the customer impact.",
+      "translation": "销售团队只需了解这项功能对客户的影响。"
     },
     {
       "id": "work-03",
-      "word": "I’ll share the details…",
-      "meaning": "按听众需要补充细节和时间",
-      "collocation": "share the details + 时间 / 渠道",
-      "example": "I’ll share the implementation details with the engineering team after this call.",
-      "translation": "会议后我会把实施细节发给工程团队。"
+      "word": "Let’s share updates via… every…",
+      "meaning": "约定更新渠道和频率",
+      "collocation": "share updates via + channel + every + time period",
+      "example": "Let’s share project updates via Jira every Monday.",
+      "translation": "我们每周一通过 Jira 同步项目进展。"
     }
   ]
 }

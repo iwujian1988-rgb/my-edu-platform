@@ -208,14 +208,18 @@
     {
       "id": "d1",
       "text": "Sarah, a team leader at TechFlow Inc.,",
-      "label": "听写 1 · 句子前半段",
-      "why": "a team leader at TechFlow Inc. 补充说明 Sarah 的职位。"
+      "label": "听写 1 · 句子开头：人物和公司",
+      "why": "这是一段未完成的句子。先听清 Sarah 的职位和公司名称。"
     },
     {
       "id": "d2",
       "text": "was tasked with implementing the new hybrid work policy while also communicating the company's decision to reduce management layers from three to two.",
-      "label": "听写 2 · 接着听完这句",
-      "why": "was tasked 接在 Sarah 后面，是本句的谓语部分。"
+      "label": "听写 2 · 接续句子：两项政策的执行工作",
+      "why": "was tasked with 承接 Sarah，说明她负责执行混合办公政策并转达管理层级调整。",
+      "apply": {
+        "prompt": "概括 Amazon 2024 年邮件中返办公室安排的生效时间，以及减少管理层级的目标。",
+        "sample": "The return-to-office policy was set to take effect in January 2025. Amazon also aimed to reduce the ratio of managers to individual contributors by at least 15% by March 2025."
+      }
     }
   ],
   "translationPractice": [
@@ -247,7 +251,7 @@
   },
   "output": {
     "prompt": "同事看到 Amazon 2024 年邮件，想据此安排今年的办公日。请用英文提醒对方这是一项有具体日期的历史安排，并建议先核实目前适用的政策。",
-    "sample": "That message said the new five-day in-office expectation was set to take effect in January 2025. Since that date has passed, could we check whether the policy is still in effect with HR before making plans?",
+    "sample": "That message described an expectation scheduled to start in January 2025. Since it was a dated announcement, could we confirm the current policy with HR before making plans?",
     "check": [
       "是否指出原邮件中的时间背景？",
       "是否没有把历史安排说成现行政策？",
@@ -263,11 +267,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写两段被拆开，第一段在公司名后截断，第二段以逗号开头；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

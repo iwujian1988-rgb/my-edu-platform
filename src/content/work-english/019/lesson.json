@@ -290,11 +290,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah and Mike are planning a quarterly marketing campaign, with Sarah focusing on social media content and Mike handling email marketing."
+      "text": "Sarah and Mike are planning a quarterly marketing campaign, with Sarah focusing on social media content and Mike handling email marketing.",
+      "label": "听写 1 · 两位同事各自负责的渠道",
+      "why": "focusing on… 和 handling… 交代分工。"
     },
     {
       "id": "d2",
-      "text": "Sarah wants to allocate more resources to Instagram Reels, while Mike insists on prioritizing email newsletters due to higher conversion rates."
+      "text": "Sarah wants to allocate more resources to Instagram Reels, while Mike insists on prioritizing email newsletters due to higher conversion rates.",
+      "label": "听写 2 · 两人对预算分配的不同依据",
+      "why": "一方看重 Reels，另一方看重转化率。比较意见时，可以说 one metric alone may miss…",
+      "apply": {
+        "prompt": "社媒和邮件团队对预算分配有分歧。建议用哪些信息作判断？",
+        "sample": "Could we ask both teams for feedback and compare it with the campaign results? One metric alone may miss the full picture."
+      }
     }
   ],
   "translationPractice": [
@@ -325,12 +333,12 @@
     "why": "同时查看两组反馈和活动结果，避免把单一指标当成全部依据。"
   },
   "output": {
-    "prompt": "一次客户入职项目按时完成，但销售和实施团队对交接过程评价不同。请用英文建议听取双方反馈，并与交付结果对照。",
-    "sample": "Could we ask both teams how the handoff went, then compare their feedback with the onboarding results? One measure alone may miss important context.",
+    "prompt": "一次产品发布按时完成，但团队成员认为分工和协作过程不清楚。请用英文建议从不同角色收集评价，再结合实际结果判断团队表现。",
+    "sample": "Could we ask the project lead and team members how the work went, then compare their feedback with the launch results? One outcome measure alone may miss important context.",
     "check": [
-      "是否听取了不同角色的反馈？",
-      "是否把反馈与业务结果对照？",
-      "是否提醒单一指标可能遗漏背景？"
+      "是否从不止一个角色收集评价？",
+      "是否把主观反馈与实际结果结合？",
+      "是否说明单一指标可能遗漏背景？"
     ]
   },
   "credits": {
@@ -342,11 +350,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写文本与本课团队效能评估主题不一致；需在允许同步更新音频时修复"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "english": 2,
+      "pageCopy": 2,
+      "exercises": 2,
+      "audio": 0
+    },
+    "rubricVersion": "1.1"
   },
   "taskPhrases": [
     {

@@ -158,8 +158,8 @@
   },
   "firstAttempt": {
     "prompt": "项目组正在做一项需要跨部门决定的选择，但没人清楚谁负责推动、谁最终批准。请用英文建议先明确 DACI 角色，再记录并分享决定。",
-    "sample": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and document the decision before sharing it with everyone affected.",
-    "rationale": "先明确谁推动、谁拍板、谁提供意见，再把决定记录下来并告知相关人员。"
+    "sample": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and share the decision once it’s made.",
+    "rationale": "DACI 用角色分工减少决策过程中的不确定性，并要求把决定总结后分享。"
   },
   "words": [
     {
@@ -240,9 +240,9 @@
   },
   "rewrite": {
     "bad": "Everyone should approve the decision, even if that means we cannot move forward yet.",
-    "good": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and document the decision before sharing it with everyone affected.",
-    "translation": "比较选项前，我们能否先分配好 DACI 角色？明确推动者和批准者、收集参与者意见，再把决定记录下来并告知受影响的人。",
-    "pattern": "Could we assign [the DACI roles] before [comparing options]? Let’s name [the Driver and Approver], gather input from [Contributors], and document [the decision] before sharing it with [everyone affected]."
+    "good": "Could we assign the DACI roles before we compare the options? Let’s name the Driver and Approver, gather input from Contributors, and share the decision once it’s made.",
+    "translation": "比较选项前，我们能否先分配好 DACI 角色？明确推动者和批准者，收集参与者意见，并在决定后同步结果。",
+    "pattern": "Could we name [the Driver and Approver] before [comparing options]?"
   },
   "cloze": [
     {
@@ -303,7 +303,7 @@
   },
   "output": {
     "prompt": "采购团队要在多个方案中作选择，但没人负责收集意见，最终批准人也不明确。请用英文建议指定 Driver、Approver 和 Contributors，并约定如何告知其他相关人员。",
-    "sample": "Could we name a Driver to gather the options and one Approver to make the final call? Let’s identify the Contributors who should advise, document the decision, and share it with everyone affected.",
+    "sample": "Could we name a Driver to gather the options and one Approver to make the final call? Let’s identify the Contributors who should advise and share the decision with everyone affected.",
     "check": [
       "是否区分推动决定的人和最终批准人？",
       "是否说明哪些人提供意见？",
@@ -319,11 +319,21 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
       "音频与文本核对",
-      "页面与练习人工验收",
       "听写练的是营销活动预算冲突，未练 DACI 的 Driver/Approver 等决策角色；需同步修复音频与文本。"
-    ]
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

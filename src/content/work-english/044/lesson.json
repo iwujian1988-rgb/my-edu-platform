@@ -220,11 +220,19 @@
   "dictation": [
     {
       "id": "d1",
-      "text": "Sarah, a project manager at TechNova, was coordinating the launch of a new client portal while her team simultaneously worked on an internal software update."
+      "text": "Sarah, a project manager at TechNova, was coordinating the launch of a new client portal while her team simultaneously worked on an internal software update.",
+      "label": "听写 1 · 两个项目同时推进",
+      "why": "这是模拟项目情境。听出客户门户和内部更新同时进行。"
     },
     {
       "id": "d2",
-      "text": "The marketing team demanded immediate changes to the portal's homepage design, conflicting with the development team's tight deadline for the backend integration."
+      "text": "The marketing team demanded immediate changes to the portal's homepage design, conflicting with the development team's tight deadline for the backend integration.",
+      "label": "听写 2 · 设计需求与后端期限的冲突",
+      "why": "营销需求和开发期限发生冲突；可先确认优先事项，再说明团队具体受何影响。",
+      "apply": {
+        "prompt": "公司公布新优先事项，但没说明你的团队会怎样调整。承认疑问并提出向谁确认。",
+        "sample": "I can see why the announcement raises questions. It explains the broader priorities, but not what they mean for our projects. Let’s ask our lead."
+      }
     }
   ],
   "translationPractice": [
@@ -255,12 +263,12 @@
     "why": "先承认消息引发的疑问，再区分信中说明的公司层面内容与尚未确认的项目影响。"
   },
   "output": {
-    "prompt": "部门负责人收到一份新的公司战略备忘录，组员担心现有客户项目是否需要暂停。请用英文承认他们的疑问，说明备忘录只讲了公司层面的优先事项，并建议向负责人确认项目安排。",
-    "sample": "I can see why the memo raises questions. It explains the broader priorities, but it does not say whether our client project should pause. Could we ask our lead what this means for our current roadmap?",
+    "prompt": "公司发布了新的数据安全要求，但公告没有说明它会怎样影响正在进行的客户试点。请用英文回应同事的担忧，说明公告尚未交代的部分，并建议向项目负责人确认。",
+    "sample": "I understand why the update raises questions. It sets a company-wide security standard, but it doesn’t explain what changes for our pilot. Could we ask the project lead what we need to adjust?",
     "check": [
-      "是否承认同事的疑问？",
-      "是否避免替公司推测项目去留？",
-      "是否提出一个明确的核实对象和问题？"
+      "是否回应了同事的担忧？",
+      "是否区分已知的公司要求与未说明的项目影响？",
+      "是否提出向合适的负责人核实下一步？"
     ]
   },
   "credits": {
@@ -272,11 +280,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收",
-      "听写内容是虚构客户门户项目，与本期使命、优先级和文化邮件无关；需同步修复音频与文本。"
-    ]
+      "音频与显示文本逐条核对、录音质量尚未验收"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {

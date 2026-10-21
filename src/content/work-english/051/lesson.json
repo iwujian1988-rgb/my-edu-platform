@@ -181,10 +181,10 @@
     "transfer": "Our team works like a sports team: people bring different strengths, and success depends on how well we work together."
   },
   "rewrite": {
-    "bad": "Netflix says coworkers should compete with one another and replace anyone who makes a mistake.",
-    "good": "The memo says a great workplace is about the people, not the perks. It compares Netflix to a professional sports team rather than a family because the team focuses on performance, the right person for each position, and strengths that make everyone better together.",
-    "translation": "备忘录说，优秀的工作环境重在同事，而不是福利。它把 Netflix 比作职业运动队而不是家庭，因为团队关注表现、为每个位置选择合适的人，并让成员的优势共同提升团队表现。",
-    "pattern": "The memo says [what makes a good workplace]. It compares the team to [a professional sports team] because [performance and role fit matter]."
+    "bad": "Let’s follow the memo without discussing the concerns people raised.",
+    "good": "Could we talk openly about what isn’t working and give each other specific feedback? That will help us address the issue directly.",
+    "translation": "我们能否坦诚地谈谈哪些地方行不通，并给彼此具体反馈？这样才能直接处理问题。",
+    "pattern": "Could we [discuss the concern openly] and [give specific feedback]?"
   },
   "cloze": [
     {
@@ -245,7 +245,7 @@
   },
   "output": {
     "prompt": "招聘小组讨论如何判断候选人是否适合团队。请用英文建议既评估岗位能力，也看候选人是否能与他人有效合作，并联系到“职业运动队”的比喻。",
-    "sample": "The memo says a strong team is built around people who work well together. In hiring, we can look for candidates with the right strengths for each role who make the whole team better.",
+    "sample": "Could we assess both the skills needed for the role and how each candidate works with others? The sports-team comparison values strong performance and people who make the whole team better.",
     "check": [
       "是否同时提到岗位能力和协作？",
       "是否用运动队比喻解释团队适配？",
@@ -261,10 +261,20 @@
     "reviewer": null,
     "reviewedAt": null,
     "blockers": [
-      "原文和译文逐句复核",
-      "音频与文本核对",
-      "页面与练习人工验收"
-    ]
+      "音频与文本核对"
+    ],
+    "rubricVersion": "1.1",
+    "scores": {
+      "userTask": 2,
+      "promptAnswer": 2,
+      "transfer": 2,
+      "coreExpressions": 2,
+      "source": 2,
+      "sequence": 2,
+      "exercises": 2,
+      "english": 2,
+      "pageCopy": 2
+    }
   },
   "taskPhrases": [
     {
