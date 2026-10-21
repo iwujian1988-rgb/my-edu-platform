@@ -230,7 +230,7 @@
   },
   "output": {
     "prompt": "你要向团队介绍一位新项目负责人。请用两句英文概括对方的专业背景和协作优势，并表达你对合作的期待。",
-    "sample": "He brings strong technical skills and business insight. I’m looking forward to seeing how he brings the team together around new opportunities.",
+    "sample": "The new project lead brings strong technical skills and business insight. I’m looking forward to seeing how they bring the team together around new opportunities.",
     "check": [
       "是否介绍了具体的专业优势？",
       "是否说明了对团队协作的期待？",
