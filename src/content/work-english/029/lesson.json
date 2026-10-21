@@ -203,21 +203,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "I’ve added the design walkthrough to the shared ___.",
-      "answer": "document",
-      "why": "把材料放在共享文档，方便不同时区的同事查看。"
+      "prompt": "I’ve posted a short demo in the shared ___.",
+      "answer": "issue",
+      "why": "把演示放在团队共用的项目记录中。"
     },
     {
       "id": "c2",
-      "prompt": "Please leave your comments in the ___.",
-      "answer": "thread",
-      "why": "leave comments in the thread 表示在同一讨论串中异步留言。"
+      "prompt": "The demo focuses on the outcome and acceptance ___.",
+      "answer": "criteria",
+      "why": "验收标准说明怎样判断结果是否达到要求。"
     },
     {
       "id": "c3",
-      "prompt": "Leave your comments whenever you have time in your ___.",
-      "answer": "workday",
-      "why": "workday 强调按各自工作时间参与，不要求同时在线。"
+      "prompt": "Please add any questions in the ___ when it works for your time zone.",
+      "answer": "thread",
+      "why": "在同一讨论串异步提问，方便团队集中查看。"
     }
   ],
   "dictation": [
@@ -240,18 +240,18 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我已把设计演示和评审问题清单放到共享文档里。",
-      "answer": "I’ve added the design walkthrough and a list of review questions to the shared document.",
+      "prompt": "我已把 5–8 分钟的演示和简短摘要发到共享 issue。",
+      "answer": "I’ve posted a 5–8 minute demo and a short summary in the shared issue.",
       "why": ""
     },
     {
-      "prompt": "请在讨论串里留下你的意见。",
-      "answer": "Please leave your comments in the thread.",
+      "prompt": "演示重点说明预期结果和验收标准。",
+      "answer": "The demo focuses on the outcome and acceptance criteria.",
       "why": ""
     },
     {
-      "prompt": "请在你工作日有空时留下意见。",
-      "answer": "Please leave your comments when you have a moment during your workday.",
+      "prompt": "请在适合你所在时区的时间于讨论串中提出问题。",
+      "answer": "Please add any questions in the thread when it works for your time zone.",
       "why": ""
     }
   ],
@@ -301,27 +301,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "add the design walkthrough and review questions",
-      "meaning": "把演示材料和评审问题放在共享处",
-      "collocation": "add + material + to + shared document",
-      "example": "I’ve added the design walkthrough and a list of review questions to the shared document.",
-      "translation": "我已把设计演示和评审问题清单放到共享文档里。"
+      "word": "post a short demo in the shared issue",
+      "meaning": "把简短演示和摘要放在团队可查看的位置",
+      "collocation": "post + a demo / summary + in + shared issue",
+      "example": "I’ve posted a 5–8 minute demo and a short summary in the shared issue.",
+      "translation": "我已把 5–8 分钟的演示和简短摘要发到共享 issue。"
     },
     {
       "id": "work-02",
-      "word": "leave your comments in the thread",
-      "meaning": "在共享讨论串中异步留言",
-      "collocation": "leave comments / questions in + thread",
-      "example": "Please leave your comments in the thread.",
-      "translation": "请在讨论串里留下你的意见。"
+      "word": "focus on the outcome and acceptance criteria",
+      "meaning": "说明演示结果和验收标准",
+      "collocation": "focus on + outcome / acceptance criteria",
+      "example": "The demo focuses on the outcome and acceptance criteria.",
+      "translation": "演示重点说明预期结果和验收标准。"
     },
     {
       "id": "work-03",
-      "word": "when you have a moment during your workday",
-      "meaning": "让不同时区的同事在各自工作时间参与",
-      "collocation": "whenever + 主语 + have time",
-      "example": "Please leave your comments when you have a moment during your workday.",
-      "translation": "请在你工作日有空时留下意见。"
+      "word": "add questions in the thread when it works for your time zone",
+      "meaning": "请同事按各自时区在讨论串里提问",
+      "collocation": "add questions in + thread + when…",
+      "example": "Please add any questions in the thread when it works for your time zone.",
+      "translation": "请在适合你所在时区的时间于讨论串中提出问题。"
     }
   ]
 }

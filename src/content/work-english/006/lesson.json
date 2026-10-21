@@ -188,21 +188,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "A good coach can help an employee ___ through a setback.",
-      "answer": "persevere",
-      "why": "help someone persevere through a challenge：帮助某人坚持应对困难。"
+      "prompt": "What ___ does the client need by Friday?",
+      "answer": "outcome",
+      "why": "What outcome does… need? 先确认对方要达成的结果。"
     },
     {
       "id": "c2",
-      "prompt": "A manager must ___ to meet the diverse needs of team members.",
-      "answer": "flex their coaching styles",
-      "why": "这里用 flex 表示灵活调整辅导方式。"
+      "prompt": "What is making the deadline ___ right now?",
+      "answer": "difficult",
+      "why": "询问当前具体的困难。"
     },
     {
       "id": "c3",
-      "prompt": "Effective coaching focuses on ___ employees’ potential.",
-      "answer": "unlocking",
-      "why": "unlock potential 表示帮助某人发挥潜力。"
+      "prompt": "What could you try today to move the analysis ___?",
+      "answer": "forward",
+      "why": "请对方提出今天可以采取的下一步。"
     }
   ],
   "dictation": [

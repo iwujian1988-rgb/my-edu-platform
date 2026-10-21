@@ -258,7 +258,7 @@
       "label": "听写 2 · 效率和团队一致性的取舍",
       "why": "though 引出让步。反馈时针对实现方式，并说明它对后续维护的影响。",
       "apply": {
-        "prompt": "用本课表达，针对登录错误提示提出一条具体改进建议，并说明它能帮用户什么。",
+        "prompt": "产品登录页只提示“登录失败”，没有说明下一步。请写出一条具体修改建议，并说明这能怎样帮助用户。",
         "sample": "Could we add “Check your connection and try again” to the login error? That would give users a clear next step."
       }
     }

@@ -177,21 +177,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "What is the expected ___ of this meeting?",
-      "answer": "outcome",
-      "why": "outcome 指会议希望得到的结果。"
+      "prompt": "The updated timeline is in the shared project ___.",
+      "answer": "document",
+      "why": "先说明团队可以在哪里查看材料。"
     },
     {
       "id": "c2",
-      "prompt": "A sensitive decision ___ a live discussion.",
-      "answer": "warrants",
-      "why": "单数主语 a decision 后用 warrants。"
+      "prompt": "Could each owner add any blockers there ___ Thursday?",
+      "answer": "by",
+      "why": "by Thursday 表示最迟在周四前补充。"
     },
     {
       "id": "c3",
-      "prompt": "We can share the status update ___.",
-      "answer": "async",
-      "why": "async 表示异步进行。"
+      "prompt": "We’ll meet only if a decision needs live ___.",
+      "answer": "discussion",
+      "why": "把会议留给确实需要实时讨论的决定。"
     }
   ],
   "dictation": [
@@ -214,25 +214,30 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们能否先把提案发给大家批注，再决定是否需要开会？",
-      "answer": "Could we share the proposal for comments before scheduling a meeting?",
-      "why": "先把提案发给相关同事异步评审"
+      "prompt": "更新后的时间表在共享项目文档中。",
+      "answer": "The updated timeline is in the shared project document.",
+      "why": ""
     },
     {
-      "prompt": "请在文档中添加你的建议。",
-      "answer": "Please add your suggestions in the document.",
-      "why": "说明反馈应该写在哪里"
+      "prompt": "请各负责人在周四前把遇到的阻碍补充到那里。",
+      "answer": "Could each owner add any blockers there by Thursday?",
+      "why": ""
+    },
+    {
+      "prompt": "只有需要实时讨论决定时，我们才开会。",
+      "answer": "We’ll meet only if a decision needs live discussion.",
+      "why": ""
     }
   ],
   "choice": {
-    "prompt": "只需收集进度和阻碍，哪种做法最合适？",
+    "prompt": "你只需要大家查看新时间表并报告阻碍，哪条消息最清楚？",
     "options": [
-      "Send a meeting invite titled “Sync” with no agenda.",
-      "Share the updated timeline and ask owners to add blockers in the document by Thursday.",
-      "Wait for the next meeting without recording the timeline."
+      "Project sync tomorrow. Please join.",
+      "The updated timeline is in the shared project document. Could each owner add any blockers there by Thursday?",
+      "Let’s meet tomorrow and discuss everything."
     ],
     "correct": 1,
-    "why": "异步材料已足够完成信息收集，且请求和截止时间清楚。"
+    "why": "它写明资料位置、负责人要补充的内容和截止时间。"
   },
   "output": {
     "prompt": "同事发起了一个会议，只为收集大家对方案文档的意见。请用英文建议把文档发给相关同事异步批注，并请他们标出仍需讨论的问题。",
@@ -270,27 +275,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "Could we share the proposal for comments…?",
-      "meaning": "先把提案发给相关同事异步评审",
-      "collocation": "share + document / proposal + for comments",
-      "example": "Could we share the proposal for comments before scheduling a meeting?",
-      "translation": "我们能否先把提案发给大家批注，再决定是否需要开会？"
+      "word": "The updated timeline is in the shared project document.",
+      "meaning": "告诉团队资料放在哪里",
+      "collocation": "[material] is in the shared [place]",
+      "example": "The updated timeline is in the shared project document.",
+      "translation": "更新后的时间表在共享项目文档中。"
     },
     {
       "id": "work-02",
-      "word": "add your suggestions in the document",
-      "meaning": "说明反馈应该写在哪里",
-      "collocation": "add suggestions / comments in + document",
-      "example": "Please add your suggestions in the document.",
-      "translation": "请在文档中添加你的建议。"
+      "word": "Could each owner add any blockers there by Thursday?",
+      "meaning": "说明谁要补充什么、何时完成",
+      "collocation": "Could + owner + add + input + by + time?",
+      "example": "Could each owner add any blockers there by Thursday?",
+      "translation": "请各负责人在周四前把遇到的阻碍补充到那里。"
     },
     {
       "id": "work-03",
-      "word": "flag any questions that need a live discussion",
-      "meaning": "只把需要实时讨论的问题留给会议",
-      "collocation": "flag + question / issue",
-      "example": "Please flag any questions that still need a live discussion.",
-      "translation": "请标出仍需要实时讨论的问题。"
+      "word": "We’ll meet only if a decision needs live discussion.",
+      "meaning": "只有需要共同讨论决定时才开会",
+      "collocation": "meet only if + condition",
+      "example": "We’ll meet only if a decision needs live discussion.",
+      "translation": "只有需要实时讨论决定时，我们才开会。"
     }
   ]
 }

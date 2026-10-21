@@ -826,21 +826,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "Please write down the ___ of the offline call.",
-      "answer": "conclusions",
-      "why": "conclusions 指讨论得出的结论。"
+      "prompt": "We agreed to move testing to next Wednesday ___ we are still waiting for customer feedback.",
+      "answer": "because",
+      "why": "because 引出改期原因。"
     },
     {
       "id": "c2",
-      "prompt": "A shared issue makes the decision more ___.",
-      "answer": "transparent",
-      "why": "transparent 表示相关人员都能看到信息。"
+      "prompt": "Nina will confirm what is ___.",
+      "answer": "missing",
+      "why": "说明下一步负责人要核实的具体事项。"
     },
     {
       "id": "c3",
-      "prompt": "We can start with an ___ update instead of another meeting.",
-      "answer": "asynchronous",
-      "why": "异步更新不要求大家同时在线。"
+      "prompt": "I’ve recorded the decision in the shared project ___.",
+      "answer": "issue",
+      "why": "说明团队可以在哪里查到决定记录。"
     }
   ],
   "dictation": [
@@ -865,6 +865,11 @@
       "prompt": "我已经在项目 issue 中更新了新日期。",
       "answer": "I’ve updated the project issue with the new date.",
       "why": "把新日期更新到团队可见的项目记录"
+    },
+    {
+      "prompt": "请在明天前在那里补充风险或修正意见。",
+      "answer": "Please add any risks or corrections there by tomorrow.",
+      "why": ""
     }
   ],
   "choice": {

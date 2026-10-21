@@ -263,21 +263,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "We need clear communication ___ for late-night messages.",
-      "answer": "norms",
-      "why": "norms 指共同遵守的沟通规则。"
+      "prompt": "For routine questions, let’s reply during our local working ___.",
+      "answer": "hours",
+      "why": "普通问题在各自当地的工作时间回复。"
     },
     {
       "id": "c2",
-      "prompt": "Let’s ___ options before deciding on one channel.",
-      "answer": "brainstorm",
-      "why": "brainstorm options 表示集思广益。"
+      "prompt": "For urgent incidents, use the ___ channel and tag the on-call owner.",
+      "answer": "escalation",
+      "why": "紧急故障通过升级渠道联系值班负责人。"
     },
     {
       "id": "c3",
-      "prompt": "A shared decision log improves ___ across time zones.",
-      "answer": "visibility",
-      "why": "visibility 指相关人能够看见信息。"
+      "prompt": "Let’s ___ whether this approach is working in two weeks.",
+      "answer": "review",
+      "why": "试行后检查这条沟通约定是否有效。"
     }
   ],
   "dictation": [
@@ -302,6 +302,11 @@
       "prompt": "遇到紧急故障时，使用升级处理渠道并标记值班负责人。",
       "answer": "For urgent incidents, use the escalation channel and tag the on-call owner.",
       "why": "紧急故障通过升级处理渠道联系值班负责人"
+    },
+    {
+      "prompt": "我们两周后复查这条规则是否有效。",
+      "answer": "Let’s review whether this approach is working in two weeks.",
+      "why": ""
     }
   ],
   "choice": {

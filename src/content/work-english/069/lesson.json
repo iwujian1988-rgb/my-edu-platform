@@ -178,21 +178,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "We need team ___ for where final decisions are recorded.",
-      "answer": "norms",
-      "why": "team norms 指团队共同约定的做法。"
+      "prompt": "Use chat for quick ___.",
+      "answer": "questions",
+      "why": "简单、及时的问题适合用聊天沟通。"
     },
     {
       "id": "c2",
-      "prompt": "A backup owner can ___ the risk of missed requests.",
-      "answer": "mitigate",
-      "why": "mitigate a risk 指降低风险。"
+      "prompt": "Put decisions in the shared ___.",
+      "answer": "document",
+      "why": "重要决定要写在团队可查找的共享文档中。"
     },
     {
       "id": "c3",
-      "prompt": "We can collect comments in an ___ check-in.",
-      "answer": "asynchronous",
-      "why": "不要求同时参加的回顾是 asynchronous check-in。"
+      "prompt": "Set up a meeting when the issue needs live ___.",
+      "answer": "discussion",
+      "why": "需要多人实时讨论时再安排会议。"
     }
   ],
   "dictation": [
@@ -217,6 +217,11 @@
       "prompt": "把决定写进共享文档，方便整个团队查找。",
       "answer": "Put decisions in the shared document so the whole team can find them.",
       "why": "把重要决定留在可查找的地方"
+    },
+    {
+      "prompt": "问题需要实时讨论时，再安排会议。",
+      "answer": "Set up a meeting when the issue needs a live discussion.",
+      "why": ""
     }
   ],
   "choice": {
