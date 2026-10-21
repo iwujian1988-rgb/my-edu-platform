@@ -1,0 +1,294 @@
+{
+  "id": "036",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "微软交付计划：怎样解释里程碑和依赖关系",
+  "topic": "微软交付计划：怎样解释里程碑和依赖关系",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Delivery Plan - Engineering Fundamentals Playbook",
+    "section": "公开团队指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队指南",
+    "url": "https://microsoft.github.io/code-with-engineering-playbook/agile-development/advanced-topics/effective-organization/delivery-plan/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Microsoft 微软 公开资料。",
+    "paragraphs": [
+      "While Scrum does not require and discourages planning more than one sprint at a time. Most of us work in enterprises where we are dependent outside teams (for example: marketing, sales, support).",
+      "A rough assessment of the planned project scope is achievable within a reasonable time frame and resources. The goal is to have a rough plan and estimate as a starting point, not to implement \"Agilefall.\"",
+      "Note that this is just a starting point to enable planning discussions. We expect the actual schedule to evolve and shift over time and that you will update the scope and timeline as you progress.",
+      "Delivery Plans ensure your teams are aligning with your organizational goals.",
+      "As you complete the assessment, you can push back on the scope, time frame or ask for more resources.",
+      "As you progress in your project/product delivery, you can highlight risks to the scope, time frame, and resources.",
+      "One approach you can take to accomplish is with stickies and a spreadsheet.",
+      "Stack rank the features for everything in your backlog - Functional Features - Non-functional Features - User Research and Design - Testing - Documentation - Knowledge Transfer/Support Processes"
+    ],
+    "translations": [
+      "虽然Scrum并不要求且不鼓励一次规划超过一个冲刺周期。但我们大多数人都在企业中工作，而这些企业依赖于外部团队（例如：营销、销售、支持团队）。",
+      "对计划的项目范围进行大致评估，判断其在合理的时间和资源范围内是否可行。目标是以一个大致的计划和估算作为起点，而不是实施\"敏捷瀑布式\"开发。",
+      "请注意，这仅是启动规划讨论的起点。我们预计实际进度会随时间演变和调整，并且您会在项目推进过程中更新范围和时间线。",
+      "交付计划确保您的团队与组织目标保持一致。",
+      "完成评估后，您可以对范围、时间线提出异议，或要求更多资源。",
+      "在项目/产品交付过程中，您可以突出范围、时间线和资源方面的风险。",
+      "您可以采用的一种方法是使用便利贴和电子表格。",
+      "对您积压事项中的所有功能进行优先级排序 - 功能性功能 - 非功能性功能 - 用户研究和设计 - 测试 - 文档 - 知识传递/支持流程"
+    ],
+    "fullTextParagraphs": [
+      "While Scrum does not require and discourages planning more than one sprint at a time. Most of us work in enterprises where we are dependent outside teams (for example: marketing, sales, support).",
+      "A rough assessment of the planned project scope is achievable within a reasonable time frame and resources. The goal is to have a rough plan and estimate as a starting point, not to implement \"Agilefall.\"",
+      "Note that this is just a starting point to enable planning discussions. We expect the actual schedule to evolve and shift over time and that you will update the scope and timeline as you progress.",
+      "Delivery Plans ensure your teams are aligning with your organizational goals.",
+      "As you complete the assessment, you can push back on the scope, time frame or ask for more resources.",
+      "As you progress in your project/product delivery, you can highlight risks to the scope, time frame, and resources.",
+      "One approach you can take to accomplish is with stickies and a spreadsheet.",
+      "Stack rank the features for everything in your backlog - Functional Features - Non-functional Features - User Research and Design - Testing - Documentation - Knowledge Transfer/Support Processes",
+      "T-Shirt Features in terms of working weeks per person. In some scenarios, you have no idea how complex the work. In this situation, you can ask for time to conduct a spike (timebox the effort so you can get back on time).",
+      "Calculate the capacity for the team based on the number of weeks person with his/her start and end date and minus holidays, vacation, conferences, training, and onboarding days. Also, minus time if the person is also working on defects and support.",
+      "Based on your capacity, you know have the options",
+      "Ask for more resources. Caution: onboarding new resources take time.",
+      "Reduce the scope to the most MVP. Caution: as you trim more of the scope, it might not be valuable anymore to the customer. Consider a cupcake which is everything you need. You don't want to skim off the frosting.",
+      "Ask for more time. Usually, this is the most flexible, but if there is a marketing date that you need to hit, this might be as flexible.",
+      "You can also leverage one of these tools by creating your epics and features and add the weeks estimates.",
+      "The Plans (Preview) feature on Azure DevOps will help you make a plan. Delivery Plans provide a schedule of stories or features your team plan to deliver. Delivery Plans show the scheduled work items by a sprint (iteration path) of selected teams against a calendar view.",
+      "Confluence JIRA, Trello, Rally, Asana, Basecamp, and GitHub Issues are other similar tools in the market (some are free, others you pay a monthly fee, or you can install on-prem) that you can leverage."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "dependent outside teams",
+      "meaning": "依赖外部团队",
+      "explain": "指项目进展需要依赖组织外部的其他团队协作的情况",
+      "example": "Our success depends on effective communication with dependent outside teams."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "rough assessment",
+      "meaning": "粗略评估",
+      "explain": "对项目范围、时间或资源进行初步估算，不需要精确到细节",
+      "example": "Before committing to the timeline, we need a rough assessment of the required resources."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "Delivery Plans",
+      "meaning": "交付计划",
+      "explain": "确保团队与组织目标保持一致的规划文档",
+      "example": "The Delivery Plans should be reviewed quarterly to align with changing business priorities."
+    },
+    {
+      "paragraph": 7,
+      "phrase": "Stack rank the features",
+      "meaning": "对功能进行优先级排序",
+      "explain": "将产品功能按照重要性或业务价值进行分级排列的方法",
+      "example": "Before the sprint planning, we need to stack rank the features based on customer impact."
+    }
+  ],
+  "scenario": {
+    "title": "Explaining Milestones and Dependencies in Delivery Planning",
+    "english": [
+      "Sarah, the project manager, needs to create a delivery plan for the new customer portal feature with her team.",
+      "The team has limited resources and must prioritize features while depending on outside teams for API integration.",
+      "Sarah explains the rough assessment of dependencies and stack ranks the features based on business impact and team capacity."
+    ],
+    "chinese": [
+      "项目经理Sarah需要为团队创建新的客户门户功能的交付计划。",
+      "团队资源有限，必须在依赖外部团队进行API集成的同时优先排序功能。",
+      "Sarah解释了依赖关系的初步评估，并根据业务影响和团队能力对功能进行优先级排序。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "一个培训项目需要等待法务团队确认材料，确认时间还不清楚。请用英文提出先列出可确定的工作和暂定里程碑，等依赖明确后再更新计划。",
+    "sample": "Let’s map out the work we can confirm and mark the review as an open dependency. Once we know when Legal can finish, we can update the milestone dates.",
+    "rationale": "先规划确定的工作并标记待确认依赖，等信息明确后调整里程碑。"
+  },
+  "words": [
+    {
+      "id": "discourages-planning",
+      "word": "discourages",
+      "ipa": "",
+      "pos": "verb",
+      "meaning": "不鼓励，劝阻",
+      "collocation": "discourage sb from doing sth",
+      "example": "The agile methodology discourages rigid planning that cannot adapt to change.",
+      "translation": "敏捷方法论不鼓励无法适应变化的僵化规划。",
+      "note": "常用于表示对某种做法的负面态度，暗示有更好的替代方案"
+    },
+    {
+      "id": "achievable-timeframe",
+      "word": "achievable",
+      "pos": "adjective",
+      "meaning": "可实现的，可达成的",
+      "collocation": "achievable goals/targets",
+      "example": "We need to set realistic and achievable milestones for the project.",
+      "translation": "我们需要为项目设定切实可行的里程碑。",
+      "note": "强调目标在现有条件下的可行性，避免不切实际的期望"
+    },
+    {
+      "id": "rough-plan",
+      "word": "rough",
+      "pos": "adjective",
+      "meaning": "粗略的，大致的",
+      "collocation": "rough estimate/outline/draft",
+      "example": "This is just a rough draft of the proposal; we'll refine it later.",
+      "translation": "这只是提案的初稿，我们稍后会进一步完善。",
+      "note": "表示不精确但足够作为初步指导的规划或估计"
+    },
+    {
+      "id": "evolve-shift",
+      "word": "evolve",
+      "pos": "verb",
+      "meaning": "逐步发展，演变",
+      "collocation": "evolve over time",
+      "example": "Our project strategy will evolve as we gather more user feedback.",
+      "translation": "随着我们收集更多用户反馈，项目策略将逐步演变。",
+      "note": "强调计划不是固定不变的，而是会根据新信息调整"
+    },
+    {
+      "id": "aligning-goals",
+      "word": "aligning",
+      "pos": "verb",
+      "meaning": "使一致，对齐",
+      "collocation": "align with objectives",
+      "example": "The team is aligning their development priorities with the company's strategic goals.",
+      "translation": "团队正在将开发优先级与公司的战略目标保持一致。",
+      "note": "确保不同团队或部门的工作方向与整体目标协调"
+    },
+    {
+      "id": "highlight-risks",
+      "word": "highlight",
+      "pos": "verb",
+      "meaning": "强调，突出显示",
+      "collocation": "highlight risks/concerns",
+      "example": "During the retrospective, we should highlight any potential risks for the next sprint.",
+      "translation": "在回顾会议上，我们应该强调下一轮冲刺中可能存在的风险。",
+      "note": "主动指出需要关注的问题，以便及时处理"
+    }
+  ],
+  "structure": {
+    "original": "While Scrum does not require and discourages planning more than one sprint at a time.",
+    "analysis": [
+      "While引导的让步状语从句，表示尽管如此",
+      "does not require and discourages是并列谓语结构，由and连接两个动词短语",
+      "planning more than one sprint at a time是动名词短语作宾语，其中more than one sprint和at a time都是介词短语作修饰成分"
+    ],
+    "transfer": "While agile methodology embraces change and discourages rigid documentation upfront."
+  },
+  "rewrite": {
+    "bad": "We need to promise a final delivery date now, even though we do not know when the API will be ready.",
+    "good": "Let’s make a rough plan based on what we know, then update the milestones once the API team’s timing is clearer.",
+    "translation": "我们先根据已知信息做一个初步计划，等 API 团队的时间安排明确后再更新里程碑。",
+    "pattern": "Let’s make [a rough plan] now, then update [the milestone] when [the dependency is clearer]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s map ___ the work we can confirm.",
+      "answer": "out",
+      "why": "map out 表示把工作内容或计划梳理清楚。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Mark the review as an open ___.",
+      "answer": "dependency",
+      "why": "open dependency 表示当前计划依赖一项尚未确定的信息。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Once we know when Legal can finish, we can update the milestone ___.",
+      "answer": "dates",
+      "why": "等依赖日期明确后再更新里程碑安排。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, the project manager, needs to create a delivery plan for the new customer portal feature with her team.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "The team has limited resources and must prioritize features while depending on outside teams for API integration.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们先梳理目前可以确定的工作。",
+      "answer": "Let’s map out the work we can confirm.",
+      "why": "本句练习“map out the work we can confirm”在先梳理当前已经确定的工作时的用法。"
+    },
+    {
+      "prompt": "把评审时间标记为尚未确认的依赖项。",
+      "answer": "Mark the review as an open dependency.",
+      "why": "本句练习“mark the review as an open dependency”在标记尚未确定的评审时间依赖时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "客户门户项目依赖外部 API 团队，交付时间还不确定。请用英文说明可以先做一个初步计划，并在依赖时间明确后调整里程碑。",
+    "options": [
+      "We need to make the delivery plan now. The external team will tell us when they're done.",
+      "Let’s make a rough plan based on what we know, then update the milestones once the API team’s timing is clearer.",
+      "Let’s make a rough plan based on what we know."
+    ],
+    "correct": 1,
+    "why": "先用估算作为起点，依赖信息变化时再调整计划。"
+  },
+  "output": {
+    "prompt": "供应商的接口预计下月交付，但日期尚未确认。请用英文建议先规划不受该接口影响的工作，把交付列为开放依赖，并在日期确认后调整里程碑。",
+    "sample": "Let’s map out the work we can confirm and mark the vendor handoff as an open dependency. Once we know the delivery date, we can update the milestone dates.",
+    "check": [
+      "是否先安排目前可以确认的工作？",
+      "是否标出尚未确定的依赖？",
+      "是否把调整里程碑放到依赖时间明确之后？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "map out the work we can confirm",
+      "meaning": "先梳理当前已经确定的工作",
+      "collocation": "map out + work / plan / next steps",
+      "example": "Let’s map out the work we can confirm.",
+      "translation": "我们先梳理目前可以确定的工作。"
+    },
+    {
+      "id": "work-02",
+      "word": "mark the review as an open dependency",
+      "meaning": "标记尚未确定的评审时间依赖",
+      "collocation": "mark something as + status / dependency",
+      "example": "Mark the review as an open dependency.",
+      "translation": "把评审时间标记为尚未确认的依赖项。"
+    },
+    {
+      "id": "work-03",
+      "word": "update the milestone dates",
+      "meaning": "获得依赖信息后更新里程碑日期",
+      "collocation": "update + milestone dates / timeline",
+      "example": "Once we know when Legal can finish, we can update the milestone dates.",
+      "translation": "确认法务团队何时完成后，我们就能更新里程碑日期。"
+    }
+  ]
+}

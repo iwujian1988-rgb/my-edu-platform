@@ -1,0 +1,313 @@
+{
+  "id": "015",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "谷歌的同伴辅导：同事怎样帮助同事成长",
+  "topic": "谷歌的同伴辅导：同事怎样帮助同事成长",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Coaching for everyone: The amplified impact of peer coaching - Google re:Work",
+    "section": "公开管理指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开管理指南",
+    "url": "https://rework.withgoogle.com/intl/en/guides/coaching-for-everyone-the-amplified-impact-of-peer-coaching",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Google 谷歌 公开资料。",
+    "paragraphs": [
+      "In today’s era of rapid change and complexity, coaching has emerged as an increasingly important lever for companies to unlock employee and organizational potential. Coaching delivers personalized support customized to each individual’s challenges, opportunities, learning preferences, and development goals.",
+      "Coaching can come in many forms: Professional executive coaching has long been seen as essential for C-suite leaders, and manager-as-coach models have proliferated across the corporate landscape. But, in most cases, dedicated, one-on-one coaching is still reserved for the most senior managers and executives, as it can be cost-prohibitive to offer more broadly.",
+      "This is where peer coaching comes in. Peer coaching is when two colleagues share knowledge, insights, and experiences to enhance professional growth. Peer coaching can be one-way, or bi-directional.",
+      "When comparing peer coaching to traditional coaching models, some unique benefits emerge:",
+      "It can be far more scalable across a company — providing greater access to customized support for career and skills development.",
+      "It strengthens peer relationships and builds a sense of community within the workplace, which can help reduce burnout, loneliness, and turnover.",
+      "Peer coaches are familiar with the unique nuances of the coachees' work environment and company culture."
+    ],
+    "translations": [
+      "在当今快速变化且复杂的时代，辅导已成为公司释放员工和组织潜力的重要杠杆。辅导提供个性化支持，根据每个人的挑战、机会、学习偏好和发展目标量身定制。",
+      "辅导可以有多种形式：专业的执行辅导长期以来被视为C级高管必不可少的，而管理者作为教练的模式已遍布企业界。但在大多数情况下，专门的、一对一的辅导仍然只留给最高层的管理者和高管，因为更广泛地提供辅导可能成本过高。",
+      "这就是同伴辅导发挥作用的地方。同伴辅导是指两位同事分享知识、见解和经验，以促进专业成长。同伴辅导可以是单向的，也可以是双向的。",
+      "当将同伴辅导与传统辅导模式进行比较时，会出现一些独特的好处：",
+      "它可以在整个公司范围内更具可扩展性——为职业和技能发展提供更广泛的定制化支持渠道。",
+      "它加强了同事之间的关系，并在工作场所建立了一种社区感，这有助于减少职业倦怠、孤独感和人员流失。",
+      "同伴教练熟悉被辅导者工作环境和公司文化的独特细微差别。"
+    ],
+    "fullTextParagraphs": [
+      "Product Lead, People Development, Google",
+      "Manager, People Development, Google",
+      "In today’s era of rapid change and complexity, coaching has emerged as an increasingly important lever for companies to unlock employee and organizational potential. Coaching delivers personalized support customized to each individual’s challenges, opportunities, learning preferences, and development goals.",
+      "Coaching can come in many forms: Professional executive coaching has long been seen as essential for C-suite leaders, and manager-as-coach models have proliferated across the corporate landscape. But, in most cases, dedicated, one-on-one coaching is still reserved for the most senior managers and executives, as it can be cost-prohibitive to offer more broadly.",
+      "This is where peer coaching comes in. Peer coaching is when two colleagues share knowledge, insights, and experiences to enhance professional growth. Peer coaching can be one-way, or bi-directional.",
+      "When comparing peer coaching to traditional coaching models, some unique benefits emerge:",
+      "It can be far more scalable across a company — providing greater access to customized support for career and skills development.",
+      "It strengthens peer relationships and builds a sense of community within the workplace, which can help reduce burnout, loneliness, and turnover.",
+      "Peer coaches are familiar with the unique nuances of the coachees' work environment and company culture.",
+      "The coach benefits as well as the coachee, by expanding their professional network and building confidence in their leadership, communication, and coaching skills.",
+      "Google offers a number of internal coaching programs that aim to provide accessible and scalable coaching for all Googlers. These programs are designed to help Googlers develop essential skills, navigate key career moments, and proactively manage their career development.",
+      "The largest of these initiatives is Googler-to-Googler Coaching — called g2g Coaching for short. In the g2g Coaching program, one Googler provides confidential coaching to another in a single standalone session or a months-long engagement. More than 2,000 Googlers actively volunteer to coach in the g2g Coaching program, which has thrived for over 20 years and reached over 25,000 Googlers.",
+      "Access to a g2g Coach is open to all full-time Googlers globally, and coaches are encouraged to share their knowledge and passions on a variety of topics — from onboarding at Google to career navigation, building future-ready skills, and more. This program is part of The Google School — Google’s center of excellence for Googler onboarding, career development, and skills development. Access to coaching is key to The School’s strategy to help Googlers grow in their role today and explore possibilities for the future.",
+      "Internal survey data, based on a post-session questionnaire sent to every g2g coaching participant, highlights the impact of this program:",
+      "99% of coaching recipients say they feel more confident after just one coaching session.¹",
+      "92% of g2g Coaches report that as a result of being an internal coach, they are building new skills that make them more effective in their primary roles.¹",
+      "96% of g2g Coaches report they are developing their own leadership and communication capabilities, helping to advance critical career development skills.2",
+      "\"Being a g2g Coach has been the most fulfilling experience throughout my 8-plus years at Google. I feel I can contribute to other Googlers' success and gain a greater understanding of the broader challenges facing my coachees in their jobs. g2g Coaching is a big motivation for me to remain at Google.\" - A g2g Coach",
+      "Google's peer coaching programs share several fundamental features we consider crucial to their impact and scalability.",
+      "Training: While many peer coaches have earned external professional coaching certifications, we also conduct our own training sessions for anyone aspiring to be a g2g Coach. The training equips all g2g Coaches with a consistent approach to peer coaching and a foundational set of skills, which include:",
+      "Mindful and active listening that demonstrates attentiveness and understanding, and establishes a space for the coachee to feel heard.",
+      "Asking powerful questions, such as “What’s a strength you have that can support you in this situation?” or “What’s really at the heart of this for you?”",
+      "Empowering employees to come to their own solutions, rather than giving advice.",
+      "Coaching across lines of difference (e.g., location, social identity, language) to support all employees around the globe.",
+      "Flexibility: Peer coaching at Google is available in single sessions and longer timeframes of three to six months. These options help support employees’ varied needs and preferences, whether they want to establish a dialogue over time with a coach, or focus on one specific area in a standalone session. This flexibility is another way peer coaching seeks to remove barriers to access for all Googlers.",
+      "Single-session skills-based coaching: This one-off format helps Googlers get support on a specific topic. Targeted engagements are designed to help develop skills in areas such as communication, leadership, problem-solving, decision-making, and giving feedback. They are also tailored to different career stages and roles.",
+      "Multi-month career development coaching: This format allows Googlers to build relationships with a single coach as they work on deeper developmental goals. These programs are intended to guide Googlers through key career moments, including onboarding, returning from leave, joining a new team, receiving a promotion, and navigating organizational changes.",
+      "Matching: In our coaching programs, coaches and coachees are matched intentionally, based on a number of factors — including the coachee's desired topic areas, location preference, and the coach's skills and expertise. Some of our programs, like g2g Coaching, are an open marketplace where Googlers select their own coach, while other programs help pair a coach and coachee based on self-assessments.",
+      "Recognition: Coaches can be rewarded for their contributions, via formal peer recognition channels and verbal and written acknowledgements. We also offer supplemental training and leadership development opportunities, such as our education reimbursement program, which provide further avenues to support and develop our internal coaches.",
+      "As more organizations recognize the value of coaching in today’s complex work environment, they will undoubtedly seek to provide the benefit beyond the C-suite. Peer coaching offers a scalable pathway — and a proven one, based on Google’s 20 years of experience — to unlock potential within an organization. From skills development to navigating major career moments, peer coaching not only expands access to personalized support, it also strengthens connections and builds a more engaged and empowered workforce.",
+      "By embracing peer coaching, organizations can tap into the collective wisdom of their employees, creating a dynamic ecosystem of learning and development that benefits both individuals and the company as a whole.",
+      "¹Source: Google Internal Research (2020-2025). Based on Post g2g-Coaching Survey (The Google School) responses from 36,009 sessions.",
+      "2Source: Google Internal Research (2023-2025). Based on The g2g Coach Experience Survey (The Google School) responses from 523 coaches."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "unlock employee and organizational potential",
+      "meaning": "释放员工和组织的潜力",
+      "explain": "这个短语表示通过某种方法或手段激发员工和组织的内在能力，使其发挥最大效能",
+      "example": "Effective leadership can unlock employee and organizational potential, driving innovation and productivity."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "manager-as-coach models",
+      "meaning": "管理者作为教练的模式",
+      "explain": "指将传统管理者角色转变为教练角色的组织实践，强调指导而非命令",
+      "example": "Many tech companies have adopted manager-as-coach models to foster employee development."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "share knowledge, insights, and experiences",
+      "meaning": "分享知识、见解和经验",
+      "explain": "指同事之间相互交流专业知识、个人观点和实践经历的过程",
+      "example": "Regular team meetings provide a platform for members to share knowledge, insights, and experiences."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "reduce burnout, loneliness, and turnover",
+      "meaning": "减少职业倦怠、孤独感和人员流失",
+      "explain": "指通过改善工作环境和人际关系来降低员工负面情绪和离职率",
+      "example": "A supportive workplace culture can significantly reduce burnout, loneliness, and turnover."
+    }
+  ],
+  "scenario": {
+    "title": "Offering a peer coaching conversation",
+    "english": [
+      "A colleague wants to build a new skill but cannot get one-to-one support from a formal coach.",
+      "You have faced a similar challenge. You offer to share what you learned and ask which part of the work feels most difficult right now.",
+      "You agree to a short follow-up conversation so both colleagues can exchange ideas and decide on a useful next step."
+    ],
+    "chinese": [
+      "一位同事想提升一项新技能，但暂时没有机会获得正式教练的一对一支持。",
+      "你遇到过类似挑战，于是提出分享自己的经验，并询问对方目前觉得哪部分工作最难。",
+      "你们约好再聊一会儿，互相交流想法并确定一个有用的下一步。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "同事想提高做项目汇报的能力，你以前也遇到过类似困难。请用英文提出和对方一起练习，并先问他最希望改进哪一部分。",
+    "sample": "I had to work on my project updates too. Would you like to practice one together? Which part would you most like to improve first?",
+    "rationale": "分享相似经历建立连接，再一起练习，并从对方最关心的部分开始。"
+  },
+  "words": [
+    {
+      "id": "emerged-as",
+      "word": "emerged",
+      "ipa": "",
+      "pos": "verb",
+      "meaning": "浮现，显现",
+      "collocation": "emerged as",
+      "example": "Coaching has emerged as a critical development tool in modern organizations.",
+      "translation": "辅导已成为现代组织中关键的发展工具。",
+      "note": "表示逐渐显现或成为某种重要事物，常用于描述趋势或现象的出现"
+    },
+    {
+      "id": "proliferated",
+      "word": "proliferated",
+      "ipa": "",
+      "pos": "verb",
+      "meaning": "激增，扩散",
+      "collocation": "proliferate across",
+      "example": "Flexible work arrangements have proliferated across industries worldwide.",
+      "translation": "灵活的工作安排已在全球各行业激增。",
+      "note": "表示快速增加或广泛传播，常用于描述政策、做法或现象的扩散"
+    },
+    {
+      "id": "cost-prohibitive",
+      "word": "cost-prohibitive",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "成本过高的，因费用而不可行的",
+      "collocation": "be cost-prohibitive to",
+      "example": "Providing individual laptops for all employees would be cost-prohibitive for our startup.",
+      "translation": "为所有员工提供个人笔记本电脑对我们的初创公司来说成本过高。",
+      "note": "形容某事物因成本过高而无法实施或负担"
+    },
+    {
+      "id": "bi-directional",
+      "word": "bi-directional",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "双向的",
+      "collocation": "bi-directional communication",
+      "example": "Effective mentoring programs should include bi-directional feedback between mentors and mentees.",
+      "translation": "有效的辅导计划应包括导师和学员之间的双向反馈。",
+      "note": "表示双向流动或互动的，常用于描述沟通、关系或过程"
+    },
+    {
+      "id": "scalable",
+      "word": "scalable",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "可扩展的，可规模化的",
+      "collocation": "be scalable across",
+      "example": "Our training program is designed to be scalable across different departments and regions.",
+      "translation": "我们的培训计划设计为可扩展到不同部门和地区。",
+      "note": "形容能够按比例扩大或适应不同规模的能力"
+    },
+    {
+      "id": "nuances",
+      "word": "nuances",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "细微差别；微妙之处",
+      "collocation": "understand the nuances of",
+      "example": "Successful negotiators must understand the nuances of cross-cultural communication.",
+      "translation": "成功的谈判者必须理解跨文化沟通的细微差别。",
+      "note": "指细微差别或微妙之处，强调对细节的敏感理解"
+    }
+  ],
+  "structure": {
+    "original": "In today’s era of rapid change and complexity, coaching has emerged as an increasingly important lever for companies to unlock employee and organizational potential.",
+    "analysis": [
+      "In today's era of rapid change and complexity 是一个介词短语作状语，其中 'of rapid change and complexity' 是 'era' 的后置定语，说明这个时代的特征",
+      "coaching has emerged as an increasingly important lever 是主句，其中 'has emerged as' 是现在完成时，表示'已经发展成为'，'an increasingly important lever' 是主语补足语，说明教练法的作用",
+      "for companies to unlock employee and organizational potential 是不定式短语作目的状语，其中 'to unlock' 是目的，'employee and organizational potential' 是 'unlock' 的宾语"
+    ],
+    "transfer": "Peer coaching has become a useful way for new managers to practice difficult conversations."
+  },
+  "rewrite": {
+    "bad": "I know exactly what you should do. Just follow my approach.",
+    "good": "I’ve faced something similar and can share what worked for me. Which part feels most challenging for you right now?",
+    "translation": "我也遇到过类似情况，可以分享对我有用的做法。你现在觉得哪部分最有挑战？",
+    "pattern": "I’ve faced [a similar challenge]. What part of [the task] feels most difficult right now?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I had to work ___ my project updates too.",
+      "answer": "on",
+      "why": "work on a skill 表示持续练习、改进一项技能。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Would you like to practice one ___?",
+      "answer": "together",
+      "why": "together 表示你愿意和对方共同练习。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Which part would you most like to improve ___?",
+      "answer": "first",
+      "why": "first 先确定对方最想优先练习的部分。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah and Tom are team members working on a quarterly marketing campaign.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah has more experience with digital analytics while Tom excels in creative content.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我以前也需要改进项目进展汇报。",
+      "answer": "I had to work on my project updates too.",
+      "why": "本句练习“I had to work on… too.”在分享自己也经历过类似的提升过程时的用法。"
+    },
+    {
+      "prompt": "你愿意一起练习一次吗？",
+      "answer": "Would you like to practice one together?",
+      "why": "本句练习“Would you like to practice one together?”在邀请对方一起练习时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事想提升一项工作技能，问你能否帮忙。请用两句英文分享你愿意交流经验，并先询问对方目前最想解决的困难。",
+    "options": [
+      "I know exactly what you should do. Just follow my approach.",
+      "I’d be happy to share what I’ve learned. Which part of the work feels most challenging for you right now?",
+      "I’d be happy to share what worked for me. Here’s exactly what you should do."
+    ],
+    "correct": 1,
+    "why": "同伴辅导是互相交流经验；先了解对方的具体需要，再决定分享什么。"
+  },
+  "output": {
+    "prompt": "同事要做第一次客户演示，担心问答环节。你以前也紧张过。请用英文提出一起练习，并先问他最想练哪一部分。",
+    "sample": "I had to work on customer demos too. Would you like to practice one together? Which part would you most like to improve first?",
+    "check": [
+      "是否简短分享了自己的相关经历？",
+      "是否提出一起练习？",
+      "是否询问对方最想改进的部分？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "I had to work on… too.",
+      "meaning": "分享自己也经历过类似的提升过程",
+      "collocation": "work on + 技能 / 项目 / 难点",
+      "example": "I had to work on my project updates too.",
+      "translation": "我以前也需要改进项目进展汇报。"
+    },
+    {
+      "id": "work-02",
+      "word": "Would you like to practice one together?",
+      "meaning": "邀请对方一起练习",
+      "collocation": "Would you like to + 动词原形?",
+      "example": "Would you like to practice one together?",
+      "translation": "你愿意一起练习一次吗？"
+    },
+    {
+      "id": "work-03",
+      "word": "Which part would you most like to improve first?",
+      "meaning": "先了解对方最想改进的部分",
+      "collocation": "Which part would you like to + 动词原形?",
+      "example": "Which part would you most like to improve first?",
+      "translation": "你最想先改进哪一部分？"
+    }
+  ]
+}

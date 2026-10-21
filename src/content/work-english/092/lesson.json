@@ -1,0 +1,297 @@
+{
+  "id": "092",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "GitLab 全员会议怎样分享信息、回答问题",
+  "topic": "GitLab 全员会议怎样分享信息、回答问题",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "GitLab All-Company Meetings | The GitLab Handbook",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://handbook.gitlab.com/handbook/company/gitlab-all-company-meetings/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 GitLab 公开资料。",
+    "paragraphs": [
+      "GitLab internal-only company meetings align team members on key initiatives, business updates, and priorities across the business. At the start of our fiscal year, a company kickoff (CKO) meeting is held followed by 1x per quarter company-wide Assembly meetings. Ask Me Anything (AMA) Sessions will happen three times per quarter. This page provides an overview of each of these.",
+      "Earnings Call (first half of the second month of the quarter): Public call that team members are invited to attend",
+      "Post-Earnings Recap & AMA (immediately following earnings): A 25 minute private AMA occurring after Earnings",
+      "Assembly (start of each quarter)",
+      "Recordings and agendas (internal only) listed in reverse chronological order.",
+      "Held the week of our quarterly Earnings Call, the Post-Earnings Recap & AMA is an opportunity for team members to ask questions related to our Financial Results.",
+      "For more information about our quarterly Earnings process, visit the Investor Relations Handbook page.",
+      "The Post-Earnings Recap & AMA is a Finance initiative.",
+      "GitLab Assembly is our quarterly all-company meeting and is an opportunity for team members to hear from leaders and teams across the company.",
+      "To learn more about GitLab Assembly, visit the Assembly section of the People Communications & team member engagement Handbook page."
+    ],
+    "translations": [
+      "GitLab内部公司会议旨在协调团队成员对关键举措、业务更新和业务优先事项的认识。在我们的财年开始时，会举行公司启动会议（CKO），随后每季度举行1次全体员工大会会议。问答环节（AMA）每季度举行三次。本页面概述了这些会议的每一项。",
+      "财报电话会议（每季度第二个月的前半部分）：团队成员受邀参加的公开电话会议",
+      "财报回顾与问答（紧接着财报之后）：在财报后举行的25分钟私人问答环节",
+      "大会（每季度开始时）",
+      "按倒序排列的录音和议程（仅限内部）。",
+      "在我们季度财报电话会议的那一周举行，财报回顾与问答环节是团队成员就我们的财务结果提问的机会。",
+      "有关我们季度财报流程的更多信息，请访问投资者关系手册页面。",
+      "财报回顾与问答是财务部门的倡议。",
+      "GitLab大会是我们每季度的全体员工会议，是团队成员听取公司各层领导和团队发言的机会。",
+      "要了解更多关于GitLab大会的信息，请访问人员沟通与员工参与手册页面的大会部分。"
+    ],
+    "fullTextParagraphs": [
+      "GitLab internal-only company meetings align team members on key initiatives, business updates, and priorities across the business. At the start of our fiscal year, a company kickoff (CKO) meeting is held followed by 1x per quarter company-wide Assembly meetings. Ask Me Anything (AMA) Sessions will happen three times per quarter. This page provides an overview of each of these.",
+      "Earnings Call (first half of the second month of the quarter): Public call that team members are invited to attend",
+      "Post-Earnings Recap & AMA (immediately following earnings): A 25 minute private AMA occurring after Earnings",
+      "Assembly (start of each quarter)",
+      "Recordings and agendas (internal only) listed in reverse chronological order.",
+      "Held the week of our quarterly Earnings Call, the Post-Earnings Recap & AMA is an opportunity for team members to ask questions related to our Financial Results.",
+      "For more information about our quarterly Earnings process, visit the Investor Relations Handbook page.",
+      "The Post-Earnings Recap & AMA is a Finance initiative.",
+      "GitLab Assembly is our quarterly all-company meeting and is an opportunity for team members to hear from leaders and teams across the company.",
+      "To learn more about GitLab Assembly, visit the Assembly section of the People Communications & team member engagement Handbook page.",
+      "Assembly is a People Communications & Engagement initiative."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Ask Me Anything (AMA) Sessions",
+      "meaning": "问答环节",
+      "explain": "这是一种开放式的问答会议形式，参与者可以就任何相关问题提问",
+      "example": "Our company hosts monthly AMA sessions where employees can directly ask executives about company strategy."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Post-Earnings Recap & AMA",
+      "meaning": "财报回顾与问答环节",
+      "explain": "这是在财报发布后举行的内部问答会议，专门回答与财务结果相关的问题",
+      "example": "After the quarterly earnings announcement, the CFO will lead a Post-Earnings Recap & AMA to address any questions from the team."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "ask questions related to our Financial Results",
+      "meaning": "询问与我们财务结果相关的问题",
+      "explain": "这是专门针对财务数据的问答环节，员工可以就公司财务表现提问",
+      "example": "During the finance briefing, team members are encouraged to ask questions related to our Financial Results for the past quarter."
+    },
+    {
+      "paragraph": 8,
+      "phrase": "hear from leaders and teams across the company",
+      "meaning": "听取公司各领导和团队的分享",
+      "explain": "这是全员会议中让不同部门领导和团队分享信息、更新进展的环节",
+      "example": "The all-hands meeting provides an opportunity for employees to hear from leaders and teams across the company about upcoming projects."
+    }
+  ],
+  "scenario": {
+    "title": "Explaining the purpose of a company-wide meeting",
+    "english": [
+      "A teammate missed the latest company-wide Assembly and asks what these meetings are for.",
+      "The handbook says company-wide meetings align team members on key initiatives, business updates, and priorities.",
+      "You explain the purpose and point out that the handbook lists Ask Me Anything sessions three times per quarter."
+    ],
+    "chinese": [
+      "一位同事错过了最近一次全员 Assembly，来问这类会议是做什么的。",
+      "手册说明，全员会议用于同步重要事项、业务更新和公司优先级。",
+      "你向同事解释会议目的，并说明手册列出的 Ask Me Anything 问答场次为每季度三次。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "一位同事准备参加下次 GitLab 全员会议，想知道会议用途和提问机会。请用英文说明会议帮助大家对齐什么，并准确说出手册列出的问答环节和频次。",
+    "sample": "Company-wide meetings align team members on key initiatives, business updates, and priorities. The handbook lists Ask Me Anything sessions for employee questions, and these take place three times per quarter.",
+    "rationale": "准确说明全员会议的沟通目的和手册列出的员工提问机会。"
+  },
+  "words": [
+    {
+      "id": "kickoff-meeting",
+      "word": "kickoff",
+      "ipa": "/ˈkɪkɒf/",
+      "pos": "noun",
+      "meaning": "启动会议",
+      "collocation": "project kickoff meeting",
+      "example": "We'll have a project kickoff meeting next Monday to align on objectives and timelines.",
+      "translation": "我们将在下周一举行项目启动会议，就目标和时间线达成一致。",
+      "note": "kickoff通常用于项目或活动开始前的首次会议，旨在明确目标和方向。"
+    },
+    {
+      "id": "quarterly-assembly",
+      "word": "Assembly",
+      "ipa": "/əˈsembli/",
+      "pos": "noun",
+      "meaning": "全体会议",
+      "collocation": "quarterly company assembly",
+      "example": "The quarterly assembly is where important company announcements are made.",
+      "translation": "季度全体会议是发布重要公司公告的场合。",
+      "note": "在GitLab语境中，Assembly特指其季度全员会议形式。"
+    },
+    {
+      "id": "earnings-call",
+      "word": "Earnings",
+      "ipa": "/ˈɜːrnɪŋz/",
+      "pos": "noun",
+      "meaning": "收益，盈利",
+      "collocation": "quarterly earnings",
+      "example": "The company's quarterly earnings exceeded market expectations.",
+      "translation": "该公司的季度收益超过了市场预期。",
+      "note": "在商业语境中，earnings通常指公司的财务收益或盈利情况。"
+    },
+    {
+      "id": "recap-session",
+      "word": "Recap",
+      "ipa": "/ˈriːkæp/",
+      "pos": "noun",
+      "meaning": "回顾，摘要",
+      "collocation": "meeting recap",
+      "example": "Please send me a recap of today's strategy meeting by tomorrow.",
+      "translation": "请于明天前发送今天战略会议的回顾摘要给我。",
+      "note": "Recap是recapitation的缩写，常用于会议或活动后的总结回顾。"
+    },
+    {
+      "id": "team-engagement",
+      "word": "engagement",
+      "ipa": "/ɪnˈɡeɪdʒmənt/",
+      "pos": "noun",
+      "meaning": "参与度，投入",
+      "collocation": "employee engagement",
+      "example": "Regular team building activities help improve employee engagement.",
+      "translation": "定期团队建设活动有助于提高员工参与度。",
+      "note": "在职场中，engagement常用来描述员工对工作的投入程度和参与感。"
+    },
+    {
+      "id": "internal-only",
+      "word": "internal-only",
+      "ipa": "/ɪnˈtɜːrnl ˈəʊnli/",
+      "pos": "adjective",
+      "meaning": "仅限内部的",
+      "collocation": "internal-only documents",
+      "example": "This meeting is internal-only, so please don't share the information outside the company.",
+      "translation": "这次会议仅限内部，请不要将信息分享给公司外部人员。",
+      "note": "internal-only强调信息或活动的保密性，仅限组织内部人员参与。"
+    }
+  ],
+  "structure": {
+    "original": "GitLab internal-only company meetings align team members on key initiatives, business updates, and priorities across the business.",
+    "analysis": [
+      "\"GitLab internal-only company meetings\" 是名词短语作主语，其中\"internal-only\"是复合形容词修饰\"company meetings\"，表示这些会议仅限公司内部人员参加",
+      "\"align team members on key initiatives, business updates, and priorities\" 是动词短语作谓语，其中\"align\"是及物动词，\"on\"引导的介词短语表示\"在...方面达成一致\"，后面接三个并列的名词短语作宾语：\"key initiatives\"、\"business updates\"和\"priorities\"",
+      "\"across the business\"是介词短语作状语，修饰整个谓语部分，表示这些会议覆盖整个企业的范围"
+    ],
+    "transfer": "Our quarterly all-hands meetings align employees on strategic goals, departmental progress, and organizational priorities across the company."
+  },
+  "rewrite": {
+    "bad": "The all-hands is mainly for sales results. Employees cannot ask questions during it.",
+    "good": "Company-wide meetings align team members on key initiatives, business updates, and priorities. The handbook lists Ask Me Anything sessions three times per quarter for questions.",
+    "translation": "全员会议帮助团队了解重要项目、业务更新和优先事项。手册还列出每季度三次 Ask Me Anything 提问环节。",
+    "pattern": "Company-wide meetings cover [purpose]. The handbook also lists [the question opportunities]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Company-wide meetings align team members ___ key initiatives and priorities.",
+      "answer": "on",
+      "why": "align on 表示围绕某事达成共同了解。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The handbook lists Ask Me Anything sessions for employee ___.",
+      "answer": "questions",
+      "why": "说明问答环节的用途。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Ask Me Anything sessions take place three times per ___.",
+      "answer": "quarter",
+      "why": "准确写出每季度的次数。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a marketing coordinator, needs to present quarterly campaign results during the all-hands meeting while addressing questions from various departments.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "She faces constraints: limited time slot, technical team's focus on metrics versus creative team's emphasis on brand storytelling, and executives wanting concise data.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "全员会议帮助团队成员了解重要事项、业务更新和优先级。",
+      "answer": "Company-wide meetings align team members on key initiatives, business updates, and priorities.",
+      "why": "用 align on 概括全员会议让员工对齐的信息。"
+    },
+    {
+      "prompt": "Ask Me Anything 环节每季度举行三次。",
+      "answer": "Ask Me Anything sessions take place three times per quarter.",
+      "why": "准确表达手册列出的问答频次。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事问全员会议的目的是什么。请用英文写两句：说明会议用途，并指出手册列出的提问机会。",
+    "options": [
+      "I don't know why sales didn't increase. Maybe the product wasn't good enough.",
+      "Company-wide meetings align team members on key initiatives, business updates, and priorities. The handbook lists Ask Me Anything sessions three times per quarter for questions.",
+      "They guarantee that every team will meet its quarterly sales target."
+    ],
+    "correct": 1,
+    "why": "第一句说明全员会议用途，第二句补充手册列出的提问安排。"
+  },
+  "output": {
+    "prompt": "你要在全员会上介绍一个新客户支持流程。请用英文用三句话说明流程解决什么问题、从何时开始试行，以及员工在哪里提问或反馈。",
+    "sample": "The new support process will make it easier to route urgent customer issues to the right team. We’ll begin a two-week pilot on Monday. Please add questions to the shared Q&A document, and we’ll address them during the next Ask Me Anything session.",
+    "check": [
+      "是否说明新流程解决的问题？",
+      "是否交代试行开始时间？",
+      "是否指明员工提问或反馈的渠道？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "align on key initiatives, business updates, and priorities",
+      "meaning": "说明全员会议如何让大家对齐重要信息",
+      "collocation": "align on + initiatives / updates / priorities",
+      "example": "Company-wide meetings align team members on key initiatives, business updates, and priorities.",
+      "translation": "全员会议帮助团队成员了解重要事项、业务更新和优先级。"
+    },
+    {
+      "id": "work-02",
+      "word": "Ask Me Anything sessions",
+      "meaning": "说明员工集中提问的环节",
+      "collocation": "an Ask Me Anything session",
+      "example": "The handbook lists Ask Me Anything sessions for employee questions.",
+      "translation": "手册列出了供员工提问的 Ask Me Anything 环节。"
+    },
+    {
+      "id": "work-03",
+      "word": "three times per quarter",
+      "meaning": "准确说明问答环节的频次",
+      "collocation": "number + times per quarter",
+      "example": "Ask Me Anything sessions take place three times per quarter.",
+      "translation": "Ask Me Anything 环节每季度举行三次。"
+    }
+  ]
+}

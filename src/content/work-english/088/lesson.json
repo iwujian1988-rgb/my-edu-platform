@@ -1,0 +1,337 @@
+{
+  "id": "088",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "新员工入职时，怎样一步步熟悉工作",
+  "topic": "新员工入职时，怎样一步步熟悉工作",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "GitLab Onboarding | The GitLab Handbook",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://handbook.gitlab.com/handbook/people-group/general-onboarding/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 GitLab 公开资料。",
+    "paragraphs": [
+      "Onboarding is incredibly important at GitLab. We don’t expect you to hit the ground running from day one.",
+      "We highly recommend taking at least two full weeks for onboarding and only in week three starting with team specific onboarding and training. Please feel free to participate in your team’s work in your first two weeks, but don’t feel like you have to contribute heavily.",
+      "All onboarding steps are in the onboarding issue template which is owned by the People Operations team. The onboarding process for the new team member is self-driven and self-learning, whilst also remaining as asynchronous, where possible, settling into the remote life at GitLab.",
+      "At GitLab we take great pride in using our own product, that is why all onboarding tasks are completed in a GitLab issue. First of all, what is an issue? You can learn more about what an issue is here.",
+      "The People Operations Specialist assigned to the team members specific onboarding will open the onboarding issue at least 4 days prior to the hire date.",
+      "Each onboarding issue has a main section that contains tasks relevant to all GitLab team-members and a due date of 30 days. Below the main section are department and role-specific tasks. Some roles and departments have tasks that link to a supplemental issue template or an additional onboarding page. Reach out to your onboarding buddy or other GitLab team members if you need help understanding or completing any of your tasks."
+    ],
+    "translations": [
+      "入职培训在 GitLab 至关重要。我们不期望您从第一天起就能立即上手。",
+      "我们强烈建议至少花两周时间进行入职培训，直到第三周才开始团队特定的入职培训与培训。在前两周，您可以自由参与团队工作，但不必觉得自己需要大量贡献。",
+      "所有入职步骤都在入职问题模板中，该模板由人员运营团队负责。新团队成员的入职过程是自我驱动和自我学习的，同时尽可能保持异步，以适应 GitLab 的远程生活。",
+      "在 GitLab，我们非常自豪地使用自己的产品，这就是为什么所有入职任务都在 GitLab 问题中完成。首先，什么是问题？您可以在这里了解更多关于问题的信息。",
+      "负责团队成员特定入职的人员运营专员将在入职日期前至少 4 天打开入职问题。",
+      "每个入职问题都有一个主要部分，包含与所有 GitLab 团队成员相关的任务，截止日期为 30 天。主要部分下方是部门和特定角色的任务。某些角色和部门有链接到补充问题模板或额外入职页面的任务。如果您需要帮助理解或完成任何任务，请联系您的入职伙伴或其他 GitLab 团队成员。"
+    ],
+    "fullTextParagraphs": [
+      "Onboarding is incredibly important at GitLab. We don’t expect you to hit the ground running from day one.",
+      "We highly recommend taking at least two full weeks for onboarding and only in week three starting with team specific onboarding and training. Please feel free to participate in your team’s work in your first two weeks, but don’t feel like you have to contribute heavily.",
+      "All onboarding steps are in the onboarding issue template which is owned by the People Operations team. The onboarding process for the new team member is self-driven and self-learning, whilst also remaining as asynchronous, where possible, settling into the remote life at GitLab.",
+      "At GitLab we take great pride in using our own product, that is why all onboarding tasks are completed in a GitLab issue. First of all, what is an issue? You can learn more about what an issue is here.",
+      "The People Operations Specialist assigned to the team members specific onboarding will open the onboarding issue at least 4 days prior to the hire date.",
+      "Each onboarding issue has a main section that contains tasks relevant to all GitLab team-members and a due date of 30 days. Below the main section are department and role-specific tasks. Some roles and departments have tasks that link to a supplemental issue template or an additional onboarding page. Reach out to your onboarding buddy or other GitLab team members if you need help understanding or completing any of your tasks.",
+      "Through onboarding issues, you should gain access to our team member baseline entitlements. On Day 2 of onboarding an Access Request will be generated, if a template has been created for the role. Access requests are owned by the IT team. If you have any access requests related questions, please reach out to #it-help in Slack.",
+      "In certain instances, the People Operations team may not be able to assist with onboardings due to a national holiday or Family and Friends Day. These specific dates are documented in the People Operations team availability.",
+      "The People Operations team hosts a pre-onboarding call known as the Ta-New-Ki call (a play on the abstract Tanuki i.e. Japanese raccoon dog you will find in our logo). The purpose of this call, which is hosted in Zoom, is to give soon to onboard team members the chance to meet / socialise and to provide an opportunity to ask any lingering questions ahead of their start date. Internally we refer to this as an AMA (Ask Me Anything) call.",
+      "Hiring managers and current team members (such as onboarding buddies), are more than welcome to join the call.",
+      "This call occurs every two weeks on Thursday at three times to account for timezones.",
+      "04:00/16:00 PM PT",
+      "12:00/00:00 AM PT",
+      "For current team members: To add the invite to your calendar, review the GitLab Team Meeting Calendar.",
+      "For future team members: You will receive an email with the future dates.",
+      "Please note that this call will take a place a week or two before your actual start date.",
+      "Review the onboarding process on Day 1",
+      "Encourage team members to take their time",
+      "Self Driven and self service",
+      "Questions from the new team members",
+      "Invites are sent by the People Operations Specialist in the respective rotation. This email should be sent out at least one week before the call. Open the Ta\"NEW\"ki Folder located People Experience/Ops Shared Drive>People Experience>Ta\"NEW\"ki Call Update the google form to include the next two TaNEWki call dates (AMER/APAC, APAC/EMEA and EMEA/AMER times) Use this email template Add the new team members emails to the BCC line and CC the People Operations team. The People Operations team can check who will be attending the call by looking at the Google response sheet. Once new hires have completed the form an auto-response (via Document Studio) will reply with the zoom link and the date selected.",
+      "Open the Ta\"NEW\"ki Folder located People Experience/Ops Shared Drive>People Experience>Ta\"NEW\"ki Call",
+      "Update the google form to include the next two TaNEWki call dates (AMER/APAC, APAC/EMEA and EMEA/AMER times)",
+      "Use this email template",
+      "Add the new team members emails to the BCC line and CC the People Operations team.",
+      "The People Operations team can check who will be attending the call by looking at the Google response sheet.",
+      "Once new hires have completed the form an auto-response (via Document Studio) will reply with the zoom link and the date selected.",
+      "By default, all new team members are added to the below Slack channels from day 1 to ensure that they are able to ask any questions or for assistance in the correct channels upfront:",
+      "#new_team_members (go say hi and introduce yourself)",
+      "#diversity_inclusion_and_belonging (connect with other team members to find out more about what we do in Diversity, Inclusion and Belonging)",
+      "Compass (any IT related support needed, such as issues with laptop, 1Password, Okta, JAMF, etc)",
+      "#questions (anything that the Handbook can’t help with)",
+      "#donut-be-strangers (need some help setting up a coffee chat)",
+      "#team-member-updates (new team member, anniversaries, goodbyes)",
+      "#thanks (want to acknowledge and thank someone at GitLab, this is the channel)",
+      "#whats-happening-at-gitlab (all important updates/reminders/notifications related to GitLab)",
+      "An issue is created for new team members at least 4 business days prior to their start date. The Manager and a People Operations Team member will be assigned to this issue. Managers and People Operations all have tasks that need to be completed prior to the start date to ensure a smooth and successful onboarding process. For questions or help with any of these tasks feel free to reach out in the issue or by creating a request via Compass.",
+      "The Senior People Operations Specialist completes a monthly audit of all open onboarding issues to ensure that the new team member, manager and People Operations team tasks are completed. More importantly, there are certain tasks which need to be completed in line with our company compliance (security, payroll, etc).",
+      "If any tasks are still outstanding, the People Operations Specialist will ping the relevant members on the issue requesting action on the items or checking whether the issue can be closed.",
+      "It remains the responsibility of the People Operations Specialist to close the issue and remain compliant.",
+      "The employment bot will automatically close any onboarding issues still open after 60 days.",
+      "First of all, what is an issue? You can learn more about what an issue is here.",
+      "To ensure a successful completion of the onboarding issue, it is important that all tasks are checked off, whether the task is applicable to the onboarding team member or not. Checking the box indicates one of the following:",
+      "I have completed this task",
+      "I have checked and this task is not applicable to me",
+      "These templates are used by the People Operations team to onboard new team members.",
+      "All GitLab team-members",
+      "All onboarding related employment templates (country and role based) can be found in the public repository",
+      "Interviewing training issue",
+      "Analytics group onboarding issue",
+      "Becoming a GitLab manager issue",
+      "Production engineering onboarding issue",
+      "Security products technical onboarding issue",
+      "Support engineer onboarding issue",
+      "The People team is not involved in the process for hiring, onboarding, or offboarding temporary service providers. You can work with the Procurement team on these onboardings and review the temporary service provider internal handbook page for templates and other helpful information.",
+      "Developer onboarding",
+      "GitLab onboarding buddies",
+      "Merge Request buddies",
+      "Onboarding Processes",
+      "Developer Experience Onboarding",
+      "Sales team onboarding",
+      "Support team onboarding",
+      "SRE Onboarding",
+      "UX Researcher onboarding"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "hit the ground running",
+      "meaning": "立即投入工作，快速上手",
+      "explain": "这个习语表示某人开始新工作或新任务时迅速进入状态并高效工作",
+      "example": "After the intensive training, she was able to hit the ground running in her new role as project manager."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "self-driven and self-learning",
+      "meaning": "自我驱动和自主学习",
+      "explain": "描述入职过程需要新员工主动承担责任，通过自己的努力来学习和适应",
+      "example": "Our company culture encourages self-driven and self-learning approaches to professional development."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "take great pride in",
+      "meaning": "为...感到自豪",
+      "explain": "表达对某事物的强烈自豪感和重视程度",
+      "example": "The team takes great pride in delivering high-quality work to every client."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "Reach out to",
+      "meaning": "联系，求助",
+      "explain": "主动与他人沟通以获取帮助或信息的表达方式",
+      "example": "If you encounter any technical issues, please reach out to the IT support team for assistance."
+    }
+  ],
+  "scenario": {
+    "title": "Showing a new teammate where to find team information",
+    "english": [
+      "A new teammate is unsure where to find the team’s processes and project background.",
+      "The team handbook gathers the relevant guidance, but the new teammate does not need to read every page at once.",
+      "You point them to the pages related to their current task and invite questions."
+    ],
+    "chinese": [
+      "新同事不知道去哪里查团队流程和项目背景。",
+      "团队手册集中整理了相关指引，但新人不必一次看完所有页面。",
+      "你建议他先看与当前任务相关的内容，并欢迎他随时提问。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新同事刚接到第一个客户支持任务。请用英文告诉他先熟悉客服队列和知识库，再观察一位同事处理普通退款，最后在入职伙伴协助下亲自处理一个案例。",
+    "sample": "Start with the support queue and the team knowledge base. Shadow a teammate while they process a standard refund. Then process one case with your onboarding partner nearby.",
+    "rationale": "先熟悉岗位系统，再观察和练习具体工作，让新人逐步上手。"
+  },
+  "words": [
+    {
+      "id": "onboarding",
+      "word": "onboarding",
+      "ipa": "/ˈɒnbɔːdɪŋ/",
+      "pos": "noun",
+      "meaning": "入职流程，入职培训",
+      "collocation": "onboarding process",
+      "example": "During onboarding, the handbook helps new teammates find team processes.",
+      "translation": "入职期间，团队手册帮助新人查找团队流程。",
+      "note": "在职场环境中，onboarding特指新员工加入公司后的适应和培训过程"
+    },
+    {
+      "id": "asynchronous",
+      "word": "asynchronous",
+      "pos": "adjective",
+      "meaning": "异步的，不同步的",
+      "collocation": "asynchronous communication",
+      "example": "The handbook lets new teammates find answers asynchronously.",
+      "translation": "新人可以随时通过手册查找信息，不必等别人回复。",
+      "note": "在远程工作环境中，asynchronous指不需要同时在线的协作方式"
+    },
+    {
+      "id": "supplemental",
+      "word": "supplemental",
+      "pos": "adjective",
+      "meaning": "补充的，附加的",
+      "collocation": "supplemental materials",
+      "example": "Open the supplemental guidance only if your current task needs it.",
+      "translation": "只有当前任务需要时，再打开补充指引。",
+      "note": "supplemental常用于描述额外提供的信息或资源"
+    },
+    {
+      "id": "specific",
+      "word": "specific",
+      "pos": "adjective",
+      "meaning": "特定的，具体的",
+      "collocation": "specific requirements",
+      "example": "Start with the pages for your specific project.",
+      "translation": "先看与你当前项目直接相关的页面。",
+      "note": "specific强调明确、详细的特性，区别于一般性"
+    },
+    {
+      "id": "participate",
+      "word": "participate",
+      "pos": "verb",
+      "meaning": "参与，参加",
+      "collocation": "participate in meetings",
+      "example": "The handbook explains how to participate in the team’s regular work.",
+      "translation": "手册说明了如何参与团队的日常工作。",
+      "note": "participate表示主动加入某活动或讨论，比attend更强调互动性"
+    },
+    {
+      "id": "contribute",
+      "word": "contribute",
+      "pos": "verb",
+      "meaning": "贡献，提供",
+      "collocation": "contribute ideas",
+      "example": "Message me if you have a question or want to contribute an update.",
+      "translation": "有问题或想补充更新时，随时给我留言。",
+      "note": "contribute强调主动提供有价值的内容或帮助"
+    }
+  ],
+  "structure": {
+    "original": "We highly recommend taking at least two full weeks for onboarding and only in week three starting with team specific onboarding and training.",
+    "analysis": [
+      "主语'We'与谓语动词'recommend'构成主谓结构，表示建议的主体",
+      "动名词短语'taking at least two full weeks for onboarding'作为recommend的宾语，其中'taking'是动名词，'at least two full weeks'是时间状语，'for onboarding'是目的状语",
+      "由'and'连接的并列结构'only in week three starting with team specific onboarding and training'，其中'only in week three'是时间状语，'starting with...'是现在分词短语作伴随状语"
+    ],
+    "transfer": "We strongly suggest allocating a minimum of three complete days for orientation and not until day four beginning department-specific introductions and skill development."
+  },
+  "rewrite": {
+    "bad": "I do not have time to help. Look through the shared drive and figure it out.",
+    "good": "The team handbook is a good place to start. Try the pages related to your current project first, and message me if anything is unclear.",
+    "translation": "可以先从团队手册开始，优先看与你当前项目相关的页面。有不清楚的地方就发消息问我。",
+    "pattern": "Start with [the guide], review [the pages related to your task], and ask me if [anything is unclear]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Start with the ___ queue and the team knowledge base.",
+      "answer": "support",
+      "why": "从日常工作真正会用到的工具开始。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Shadow a teammate while they process a ___ refund.",
+      "answer": "standard",
+      "why": "先观察有经验同事的实际流程。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Then process one ___ with your onboarding partner nearby.",
+      "answer": "case",
+      "why": "从观察过渡到带支持的实际操作。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "As a new marketing associate, Alex is tasked with preparing a client presentation by Friday, but lacks familiarity with the company's presentation templates and approval process.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "The manager emphasizes the need to 'hit the ground running' while the team lead explains the strict three-day review cycle for all materials, creating time pressure.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "先熟悉客服队列和团队知识库。",
+      "answer": "Start with the support queue and the team knowledge base.",
+      "why": "本句练习“start with the systems you need for the role”在先熟悉岗位需要的系统时的用法。"
+    },
+    {
+      "prompt": "跟着同事观察他们如何处理普通退款。",
+      "answer": "Shadow a teammate while they process a standard refund.",
+      "why": "本句练习“shadow a teammate on a routine task”在跟着同事观察一项日常任务时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "新同事不知道从哪里查团队流程和项目背景。请用英文介绍团队手册，并建议他先看与当前任务最相关的页面；不确定时可以向你提问。",
+    "options": [
+      "I don't have time to help you with that. Just figure it out yourself like everyone else does.",
+      "The team handbook is a good place to start. Try the pages related to your current project first, and message me if anything is unclear.",
+      "The team handbook is a good place to start."
+    ],
+    "correct": 1,
+    "why": "用手册帮助新人自主查找信息，同时给出清楚的求助方式；没有编造审批周期或文件路径。"
+  },
+  "output": {
+    "prompt": "新同事要第一次主持客户演示。请用英文安排循序渐进的练习：先熟悉演示环境和产品流程，再旁听一场演示，最后在同事陪同下讲解一个部分。",
+    "sample": "Start by getting familiar with the demo environment and the product flow. Then sit in on a customer demo and note the questions that come up. For your first turn, walk through one section while a teammate is there to support you.",
+    "check": [
+      "是否从岗位需要的系统开始？",
+      "是否先观察一项日常任务？",
+      "是否安排在有人支持时亲自尝试？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "start with the systems you need for the role",
+      "meaning": "先熟悉岗位需要的系统",
+      "collocation": "start with + systems",
+      "example": "Start with the support queue and the team knowledge base.",
+      "translation": "先熟悉客服队列和团队知识库。"
+    },
+    {
+      "id": "work-02",
+      "word": "shadow a teammate on a routine task",
+      "meaning": "跟着同事观察一项日常任务",
+      "collocation": "shadow someone on + task",
+      "example": "Shadow a teammate while they process a standard refund.",
+      "translation": "跟着同事观察他们如何处理普通退款。"
+    },
+    {
+      "id": "work-03",
+      "word": "try the task with someone nearby",
+      "meaning": "在有人协助时亲自尝试",
+      "collocation": "try + task + with support",
+      "example": "Then process one case with your onboarding partner nearby.",
+      "translation": "然后在入职伙伴协助下处理一个案例。"
+    }
+  ]
+}

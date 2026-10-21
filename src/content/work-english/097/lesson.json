@@ -1,0 +1,285 @@
+{
+  "id": "097",
+  "version": 1,
+  "status": "draft",
+  "company": "37signals",
+  "companyZh": "/ Basecamp",
+  "title": "新员工要用哪些内部系统",
+  "topic": "新员工要用哪些内部系统",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Our Internal Systems",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://basecamp.com/handbook/our-internal-systems",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "paragraphs": [
+      "Besides the customer-facing applications, like the different versions of Basecamp, we have a number of internal systems that help us support, report, and operate the company. They are as follows:",
+      "Queenbee is our invoice, accounting, and identity system. Here you can look up any customer account, see whether they are comped, refund an invoice, or even login as a customer.",
+      "That’s an immense amount of power and we take its use very seriously. We only ever login as a customer after having been given explicit permission to do so, never preemptively. Our customers expect that their information is confidential, even from us, and we intend to honor that expectation at all times.",
+      "We track programming exceptions on Sentry. When a customer hits a “Oops, something went wrong!” screen, that means there’ll be an entry in Sentry explaining to programmers why they saw that screen. Keeping the exceptions under control and monitored is primarily the responsibility of SIP and Jim via on-call.",
+      "We monitor our systems and their health through Grafana. Here you’ll find dashboards and alerting rules. It is our go-to for diagnosing performance issues, outages, and any other form for operational insight."
+    ],
+    "translations": [
+      "除了面向客户的应用程序，如不同版本的 Basecamp，我们还有许多内部系统，帮助我们支持、报告和运营公司。它们如下：",
+      "Queenbee 是我们的发票、会计和身份验证系统。在这里您可以查找任何客户账户，查看他们是否获得免费服务，退还发票，甚至以客户身份登录。",
+      "这赋予了极大的权力，我们非常严肃地对待其使用。只有在获得明确许可后，我们才会以客户身份登录，绝不会预先登录。我们的客户期望他们的信息是保密的，甚至对我们也是如此，我们打算始终尊重这一期望。",
+      "我们在 Sentry 上跟踪编程异常。当客户看到\"哎呀，出错了！\"屏幕时，Sentry 中会有一个条目向程序员解释他们为什么会看到这个屏幕。控制并监控异常主要是 SIP 和 Jim 通过值班负责的。",
+      "我们通过 Grafana 监控我们的系统及其健康状况。在这里您会发现仪表板和警报规则。它是我们诊断性能问题、故障以及任何其他形式运营洞察的首选工具。"
+    ],
+    "fullTextParagraphs": [
+      "Besides the customer-facing applications, like the different versions of Basecamp, we have a number of internal systems that help us support, report, and operate the company. They are as follows:",
+      "Queenbee is our invoice, accounting, and identity system. Here you can look up any customer account, see whether they are comped, refund an invoice, or even login as a customer.",
+      "That’s an immense amount of power and we take its use very seriously. We only ever login as a customer after having been given explicit permission to do so, never preemptively. Our customers expect that their information is confidential, even from us, and we intend to honor that expectation at all times.",
+      "We track programming exceptions on Sentry. When a customer hits a “Oops, something went wrong!” screen, that means there’ll be an entry in Sentry explaining to programmers why they saw that screen. Keeping the exceptions under control and monitored is primarily the responsibility of SIP and Jim via on-call.",
+      "We monitor our systems and their health through Grafana. Here you’ll find dashboards and alerting rules. It is our go-to for diagnosing performance issues, outages, and any other form for operational insight.",
+      "Dash is the main hub for everything that has to do with logging (like finding why a request is slow or whether an email has been delivered), reporting (everything from number of support cases handled to split of devices used to access Basecamp), application health (response times, job queue exceptions etc).",
+      "Omarchy is our new Linux distribution that everyone on Ops, SIP, and Ruby programmers on Product are moving to. We developed it in-house and continue to lead the development.",
+      "Kandji is how we make sure all work Mac laptops are securely configured and running the latest software updates. It helps us reduce our exposure to security incidents. You can read more about this in Managing work devices.",
+      "Shipshape is the OG in-house tool for ensuring your work Mac laptop is safe and secure. We still run it, but it’s gradually being superceded by Kandji. When you’re given access to the company’s GitHub account, you can run Shipshape to be sure you’re up to code. Shipshape will also test your machine periodically to let you know (and our SIP team know) if your machine springs a leak and needs bailing out."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "internal systems",
+      "meaning": "内部系统",
+      "explain": "指公司内部使用的支持、报告和运营公司的各类软件系统",
+      "example": "Our company has implemented several internal systems to streamline workflow and improve communication."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "invoice, accounting, and identity system",
+      "meaning": "发票、会计和身份验证系统",
+      "explain": "Queenbee系统的主要功能，包括处理发票、会计记录和用户身份管理",
+      "example": "The new invoice, accounting, and identity system has significantly reduced our billing errors."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "programming exceptions",
+      "meaning": "编程异常",
+      "explain": "程序运行中出现的错误或异常情况，通过Sentry系统进行跟踪",
+      "example": "The development team reviews programming exceptions weekly to improve system stability."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "dashboards and alerting rules",
+      "meaning": "仪表板和警报规则",
+      "explain": "Grafana系统中的监控界面和设置，用于系统健康监测",
+      "example": "Our operations team configures dashboards and alerting rules to detect system issues proactively."
+    }
+  ],
+  "scenario": {
+    "title": "Finding the right internal system for a task",
+    "english": [
+      "A new teammate wants to know which internal systems are used for accounting, programming exceptions, and system health.",
+      "The handbook describes each system and explains that access to customer information requires explicit permission.",
+      "You suggest starting with the relevant section of the guide and asking the system owner if anything is unclear."
+    ],
+    "chinese": [
+      "新同事想了解哪些内部系统用于会计、程序异常和系统运行状态。",
+      "手册介绍了各系统的用途，并说明查看客户信息必须取得明确授权。",
+      "你建议先读与任务相关的部分，不清楚时再向系统负责人确认。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新同事需要查看客户信息，但不确定自己是否有权限。请用英文建议先读相关系统指南，确认岗位访问要求；仍不清楚时先向系统负责人询问。",
+    "sample": "Please check the internal systems guide for the access requirements first. Confirm whether your role allows access before opening customer information. If it’s still unclear, ask the system owner.",
+    "rationale": "引导新人查阅指南、确认岗位权限，并在仍不清楚时向系统负责人核实。"
+  },
+  "words": [
+    {
+      "id": "customer-facing",
+      "word": "customer-facing",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "面向客户的",
+      "collocation": "customer-facing applications/systems",
+      "example": "The handbook distinguishes customer-facing applications from internal systems.",
+      "translation": "手册把面向客户的应用与内部系统区分开来。",
+      "note": "用于描述直接与客户互动或供客户使用的系统、应用或界面"
+    },
+    {
+      "id": "comped",
+      "word": "comped",
+      "ipa": "",
+      "pos": "verb",
+      "meaning": "免费提供",
+      "collocation": "be comped",
+      "example": "The accounting system shows whether a customer account is comped.",
+      "translation": "会计系统会显示客户账户是否享有免费使用。",
+      "note": "comp是complimentary的缩写，表示免费提供，常见于商业和客户服务场景"
+    },
+    {
+      "id": "explicit-permission",
+      "word": "explicit permission",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "明确许可",
+      "collocation": "obtain explicit permission",
+      "example": "Employees need explicit permission before logging in as a customer.",
+      "translation": "员工以客户身份登录前，必须获得明确许可。",
+      "note": "指清晰、直接、不含糊的授权，常用于安全和隐私相关场景"
+    },
+    {
+      "id": "preemptively",
+      "word": "preemptively",
+      "ipa": "",
+      "pos": "adverb",
+      "meaning": "预防性地，先发制人地",
+      "collocation": "act preemptively",
+      "example": "The handbook says not to access a customer account preemptively.",
+      "translation": "手册明确要求，不要擅自提前访问客户账户。",
+      "note": "表示在问题发生前采取行动，强调主动性和前瞻性"
+    },
+    {
+      "id": "exceptions",
+      "word": "exceptions",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "异常情况，例外",
+      "collocation": "track exceptions",
+      "example": "Sentry tracks programming exceptions so the team can investigate them.",
+      "translation": "Sentry 会记录程序异常，供团队排查。",
+      "note": "在技术语境中指程序运行时出现的错误或异常情况"
+    },
+    {
+      "id": "operational-insight",
+      "word": "operational insight",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "运营洞察",
+      "collocation": "gain operational insight",
+      "example": "Grafana dashboards provide operational insight into system health.",
+      "translation": "Grafana 仪表板提供系统运行状况的运维信息。",
+      "note": "指对日常运营活动的深入理解和分析，常用于商业和技术管理"
+    }
+  ],
+  "structure": {
+    "original": "Besides the customer-facing applications, like the different versions of Basecamp, we have a number of internal systems that help us support, report, and operate the company.",
+    "analysis": [
+      "Besides the customer-facing applications, like the different versions of Basecamp 是一个介词短语，作为状语，表示除了面向客户的应用程序外",
+      "we have a number of internal systems 是主句，其中we是主语，have是谓语动词，a number of internal systems是宾语",
+      "that help us support, report, and operate the company 是定语从句，修饰internal systems，其中that是关系代词，help是谓语动词，us是间接宾语，support, report, and operate是并列的动词短语，the company是直接宾语"
+    ],
+    "transfer": "Besides the marketing tools, like the CRM software and analytics platforms, we have several internal resources that help us manage, analyze, and improve our business operations."
+  },
+  "rewrite": {
+    "bad": "Just open the accounting system and process the invoice; you do not need to check who owns it.",
+    "good": "The internal systems guide explains what each tool is used for. Start with the section related to your task, and check with your team if anything is unclear.",
+    "translation": "内部系统指南会说明每个工具的用途。先看与你任务相关的部分；不清楚时，向团队确认。",
+    "pattern": "Check [the systems guide] for [the tool related to your task], and ask [the relevant team] if unclear."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Please check the internal systems ___ for the access requirements first.",
+      "answer": "guide",
+      "why": "guide 指向真实的系统使用资料。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Confirm whether your role allows ___ before opening customer information.",
+      "answer": "access",
+      "why": "先核实权限再查看客户信息。"
+    },
+    {
+      "id": "c3",
+      "prompt": "If it’s still unclear, ask the system ___ before opening customer information.",
+      "answer": "owner",
+      "why": "向能确认系统权限的负责人求证。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a new marketing associate, needs to process her first vendor invoice but is unsure which internal systems to use.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Her manager directs her to use the accounting system, while the finance team insists she must also update her identity access first.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "请先查看内部系统指南中的访问要求。",
+      "answer": "Please check the internal systems guide for the access requirements first.",
+      "why": "先查阅指南了解该工具的访问要求。"
+    },
+    {
+      "prompt": "打开客户信息前，请确认你的岗位是否有访问权限。",
+      "answer": "Confirm whether your role allows access before opening customer information.",
+      "why": "访问客户资料前先确认权限是否适用于自己的岗位。"
+    }
+  ],
+  "choice": {
+    "prompt": "新同事不知道公司内部工具分别用于什么。请用英文建议他先查阅内部系统指南，再根据工作任务联系对应工具负责人；不要替公司编造操作流程。",
+    "options": [
+      "Just do the identity thing first and then do the invoice.",
+      "The internal systems guide explains what each tool is used for. Start with the section related to your task, and check with your team if anything is unclear.",
+      "The internal systems guide explains what each tool is used for."
+    ],
+    "correct": 1,
+    "why": "引导新人先查阅真实指南，再就不清楚的地方向团队确认，不凭空增加身份验证、发票等流程。"
+  },
+  "output": {
+    "prompt": "一位同事需要查看客户反馈仪表盘，但不确定实习岗位是否有权限。请用英文建议他先查看访问指南、核对岗位要求；如果仍不确定，再联系系统负责人。",
+    "sample": "Please check the access guide for the customer feedback dashboard and confirm the requirements for your role first. If it’s still unclear whether interns can view the data, ask the system owner before requesting access.",
+    "check": [
+      "是否引导对方查阅系统指南？",
+      "是否提醒先确认岗位权限？",
+      "是否说明不确定时向谁核实？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "check the internal systems guide",
+      "meaning": "先查阅真实的内部工具指南",
+      "collocation": "check + guide / handbook",
+      "example": "Please check the internal systems guide for the access requirements first.",
+      "translation": "请先查看内部系统指南中的访问要求。"
+    },
+    {
+      "id": "work-02",
+      "word": "confirm whether your role allows access",
+      "meaning": "确认岗位是否有权访问相关信息",
+      "collocation": "confirm whether + full clause",
+      "example": "Confirm whether your role allows access before opening customer information.",
+      "translation": "打开客户信息前，请确认你的岗位是否有访问权限。"
+    },
+    {
+      "id": "work-03",
+      "word": "ask the system owner if it is unclear",
+      "meaning": "不确定时向系统负责人确认",
+      "collocation": "ask + owner + if / when + clause",
+      "example": "If it’s still unclear, ask the system owner before opening customer information.",
+      "translation": "如果仍不确定，请在打开客户信息前询问系统负责人。"
+    }
+  ]
+}

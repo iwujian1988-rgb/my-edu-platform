@@ -1,0 +1,297 @@
+{
+  "id": "038",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "微软怎样判断“这项任务可以开始了”",
+  "topic": "微软怎样判断“这项任务可以开始了”",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Definition of Ready - Engineering Fundamentals Playbook",
+    "section": "公开团队指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队指南",
+    "url": "https://microsoft.github.io/code-with-engineering-playbook/agile-development/team-agreements/definition-of-ready/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Microsoft 微软 公开资料。",
+    "paragraphs": [
+      "When the development team picks a user story from the top of the backlog, the user story needs to have enough detail to estimate the work needed to complete the story within the sprint. If it has enough detail to estimate, it is Ready to be developed.",
+      "If a user story is not Ready in the beginning of the Sprint it increases the chance that the story will not be done at the end of this sprint.",
+      "Definition of Ready is the agreement made by the scrum team around how complete a user story should be in order to be selected as candidate for estimation in the sprint planning. These can be codified as a checklist in user stories using GitHub Issue Templates or Azure DevOps Work Item Templates.",
+      "It can be understood as a checklist that helps the Product Owner to ensure that the user story they wrote contains all the necessary details for the scrum team to understand the work to be done.",
+      "Does the description have the details including any input values required to implement the user story?",
+      "Does the user story have clear and complete acceptance criteria?"
+    ],
+    "translations": [
+      "当开发团队从产品待办列表顶部选择一个用户故事时，该用户故事需要有足够的细节，以便在冲刺内完成该故事所需的工作进行估算。如果它有足够的细节进行估算，那么它就准备好可以开发了。",
+      "如果用户故事在冲刺开始时没有准备好，那么这个故事在本次冲刺结束时无法完成的可能性会增加。",
+      "Definition of Ready（就绪定义）是敏捷团队就用户故事应该达到什么样的完整程度才能被选为冲刺规划中估算的候选对象所达成的协议。这些可以通过使用 GitHub Issue 模板或 Azure DevOps 工作项模板在用户故事中编码为检查清单。",
+      "它可以被理解为一个帮助产品负责人确保他们编写的用户故事包含敏捷团队理解所需完成工作的所有必要细节的检查清单。",
+      "描述是否包含实施用户故事所需的任何输入值的细节？",
+      "用户故事是否有清晰且完整的验收标准？"
+    ],
+    "fullTextParagraphs": [
+      "When the development team picks a user story from the top of the backlog, the user story needs to have enough detail to estimate the work needed to complete the story within the sprint. If it has enough detail to estimate, it is Ready to be developed.",
+      "If a user story is not Ready in the beginning of the Sprint it increases the chance that the story will not be done at the end of this sprint.",
+      "Definition of Ready is the agreement made by the scrum team around how complete a user story should be in order to be selected as candidate for estimation in the sprint planning. These can be codified as a checklist in user stories using GitHub Issue Templates or Azure DevOps Work Item Templates.",
+      "It can be understood as a checklist that helps the Product Owner to ensure that the user story they wrote contains all the necessary details for the scrum team to understand the work to be done.",
+      "Does the description have the details including any input values required to implement the user story?",
+      "Does the user story have clear and complete acceptance criteria?",
+      "Does the user story address the business need?",
+      "Can we measure the acceptance criteria?",
+      "Is the user story small enough to be implemented in a short amount of time, but large enough to provide value to the customer?",
+      "Is the user story blocked? For example, does it depend on any of the following: The completion of unfinished work A deliverable provided by another team (code artifact, data, etc...)",
+      "The completion of unfinished work",
+      "A deliverable provided by another team (code artifact, data, etc...)",
+      "The ready checklist can be written by a Product Owner in agreement with the development team and the Process Lead.",
+      "Update or change the definition of ready anytime the scrum team observes that there are missing information in the user stories that recurrently impacts the planning.",
+      "The ready checklist should contain items that apply broadly. Don't include items or details that only apply to one or two user stories. This may become an overhead when writing the user stories.",
+      "In the case that the highest priority work is not yet ready, it still may be possible to make forward progress. Here are some strategies that may help:",
+      "Backlog Refinement sessions are a good time to validate that high priority user stories are verified to have a clear description, acceptance criteria and demonstrable business value. It is also a good time to breakdown large stories will likely not be completable in a single sprint.",
+      "Prioritization sessions are a good time to prioritize user stories that unblock other blocked high priority work.",
+      "Blocked user stories can often be broken down in a way that unblocks a portion of the original stories scope. This is a good way to make forward progress even when some work is blocked."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Ready to be developed",
+      "meaning": "准备好进行开发",
+      "explain": "在敏捷开发中，表示用户故事已经具备足够细节，可以被开发团队开始实施",
+      "example": "The user story is Ready to be developed after the product owner added all acceptance criteria."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Definition of Ready",
+      "meaning": "就绪定义",
+      "explain": "Scrum团队就用户故事需要达到什么程度才能被选入Sprint规划所达成的共识",
+      "example": "Our team has a clear Definition of Ready to ensure everyone understands the entry criteria."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "ensure that the user story they wrote contains all the necessary details",
+      "meaning": "确保他们编写的用户故事包含所有必要细节",
+      "explain": "产品负责人使用检查清单来确保用户故事的完整性，使开发团队能够理解所需工作",
+      "example": "The product manager uses a checklist to ensure that the user story contains all the necessary details before sprint planning."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "clear and complete acceptance criteria",
+      "meaning": "清晰完整的验收标准",
+      "explain": "用户故事必须具备明确的验收标准，以便开发团队知道何时任务算完成",
+      "example": "Before approving a user story, the product owner verifies it has clear and complete acceptance criteria."
+    }
+  ],
+  "scenario": {
+    "title": "Check whether a story is ready for a sprint",
+    "english": [
+      "A high-priority user story is being considered for the next sprint, but the team cannot yet estimate it confidently.",
+      "The acceptance criteria are not testable, and the story depends on an unfinished deliverable from another team.",
+      "You ask the product owner and team to clarify the criteria and dependency before deciding whether the story is ready."
+    ],
+    "chinese": [
+      "一项高优先级用户故事正在考虑进入下个 sprint，但团队还无法准确估算工作量。",
+      "它的验收标准无法测试，而且依赖另一团队尚未交付的内容。",
+      "你请产品负责人和团队先澄清验收标准及依赖，再判断这项工作是否已准备好。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队准备把一项客户请求放入下个 sprint，但还不知道如何验收，且要等待设计团队交付方案。请用英文询问需要补齐哪些信息后再判断是否 ready。",
+    "sample": "Could we define how we’ll verify the customer request and confirm when the design will be ready? Then we can decide whether the story is detailed enough to estimate for the sprint.",
+    "rationale": "先明确验收方法和设计依赖，再判断需求是否具体到足以估算。"
+  },
+  "words": [
+    {
+      "id": "backlog",
+      "word": "backlog",
+      "ipa": "/ˈbæklɒɡ/",
+      "pos": "noun",
+      "meaning": "积压的工作，待办事项列表",
+      "collocation": "sprint backlog",
+      "example": "The development team prioritized items in the backlog for the upcoming sprint.",
+      "translation": "开发团队为即将到来的冲刺排定了积压工作列表中的优先级。",
+      "note": "在敏捷开发中，backlog指所有待完成工作的集合，通常按优先级排序"
+    },
+    {
+      "id": "estimate",
+      "word": "estimate",
+      "ipa": "/ˈestɪmeɪt/",
+      "pos": "verb",
+      "meaning": "估算，估计",
+      "collocation": "estimate effort",
+      "example": "The team needs to estimate the effort required for each user story.",
+      "translation": "团队需要估算每个用户故事所需的工作量。",
+      "note": "在敏捷开发中，estimate指对完成工作所需时间和资源的评估"
+    },
+    {
+      "id": "sprint",
+      "word": "sprint",
+      "ipa": "/sprɪnt/",
+      "pos": "noun",
+      "meaning": "冲刺，短期的开发周期",
+      "collocation": "sprint planning",
+      "example": "Our team delivers working software at the end of each two-week sprint.",
+      "translation": "我们的团队在每个两周的冲刺结束时交付可用的软件。",
+      "note": "Scrum框架中的核心概念，指固定时间（通常1-4周）的开发周期"
+    },
+    {
+      "id": "codified",
+      "word": "codified",
+      "ipa": "/ˈkoʊdɪfaɪd/",
+      "pos": "verb",
+      "meaning": "编成法典，系统化",
+      "collocation": "codify as checklist",
+      "example": "The team codified their Definition of Ready as a checklist in the project management tool.",
+      "translation": "团队将他们的\"就绪定义\"系统化为项目管理工具中的检查清单。",
+      "note": "指将非正式的规则或标准转化为明确的、可执行的文档或流程"
+    },
+    {
+      "id": "acceptance-criteria",
+      "word": "acceptance criteria",
+      "ipa": "/əkˈseptəns ˈkraɪtɪriə/",
+      "pos": "noun phrase",
+      "meaning": "验收标准",
+      "collocation": "define acceptance criteria",
+      "example": "The product owner works with stakeholders to define clear acceptance criteria.",
+      "translation": "产品负责人与利益相关者合作，明确验收标准。",
+      "note": "用户故事必须满足的条件，用于确定任务是否完成"
+    },
+    {
+      "id": "implementation",
+      "word": "implementation",
+      "ipa": "/ˌɪmplɪmenˈteɪʃn/",
+      "pos": "noun",
+      "meaning": "实施，实现",
+      "collocation": "implementation plan",
+      "example": "The team created a detailed implementation plan for the new feature.",
+      "translation": "团队为新功能制定了详细的实施计划。",
+      "note": "指将设计或计划转化为实际操作的过程"
+    }
+  ],
+  "structure": {
+    "original": "When the development team picks a user story from the top of the backlog, the user story needs to have enough detail to estimate the work needed to complete the story within the sprint.",
+    "analysis": [
+      "主句结构：'the user story needs to have enough detail'，其中主语是'the user story'，谓语是'needs to have'，宾语是'enough detail'",
+      "时间状语从句：'When the development team picks a user story from the top of the backlog'，表示主句动作发生的时间条件，其中包含介词短语'from the top of the backlog'修饰'picks a user story'",
+      "不定式短语：'to estimate the work needed to complete the story within the sprint'，作为目的状语修饰'have enough detail'，其中包含过去分词短语'needed to complete the story within the sprint'修饰'the work'"
+    ],
+    "transfer": "When the marketing team selects a campaign from the priority list, the campaign needs to have sufficient data to predict the resources required to launch the promotion within the quarter."
+  },
+  "rewrite": {
+    "bad": "Let’s start the task now and work out the acceptance criteria and dependencies later.",
+    "good": "Could we add testable acceptance criteria and identify dependencies before we start? Then the team can check whether the work is ready for the sprint.",
+    "translation": "开始前，我们能否补上可测试的验收标准并确认依赖项？这样团队才能判断任务是否已准备好进入 sprint。",
+    "pattern": "Could we define [the acceptance criteria] and identify [dependencies] before [starting]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we define how we’ll ___ the customer request?",
+      "answer": "verify",
+      "why": "明确如何验证需求，才能判断工作完成标准。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we confirm when the design will be ___?",
+      "answer": "ready",
+      "why": "设计交付时间是进入 sprint 前需要确认的依赖信息。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Is the story detailed enough to ___?",
+      "answer": "estimate",
+      "why": "需求足够具体后，团队才能估算工作量。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah and Tom are assigned to develop a new customer feedback feature for their company's mobile app.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah believes they can start immediately since the basic requirements are outlined, while Tom insists on waiting for complete acceptance criteria from the marketing team.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否先明确如何验证这项客户需求？",
+      "answer": "Could we define how we’ll verify the customer request?",
+      "why": "本句练习“define how we’ll verify the customer request”在先明确如何验收客户需求时的用法。"
+    },
+    {
+      "prompt": "我们能否确认设计何时准备好？",
+      "answer": "Could we confirm when the design will be ready?",
+      "why": "本句练习“confirm when the design will be ready”在确认设计交付时间时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "一个开发任务还没有明确验收结果，也没写清外部依赖。请用英文询问补齐哪些信息后，团队才能判断它是否可以开始。",
+    "options": [
+      "You're being too rigid. We need to start now or we'll miss the deadline.",
+      "Could we add testable acceptance criteria and identify any dependencies before we start? Then the team can check whether the work is ready to enter the sprint.",
+      "Could we add testable acceptance criteria and identify any dependencies before we start?"
+    ],
+    "correct": 1,
+    "why": "Ready 的判断需要具体、可检查的信息。这里关注验收标准和依赖，而不是笼统要求“所有细节都确定”。"
+  },
+  "output": {
+    "prompt": "市场团队希望把活动落地页放进下个迭代，但验收方式还没定，视觉稿也未交付。请用英文询问需要补齐哪些信息，再判断能否估算排期。",
+    "sample": "Could we define how we’ll verify the landing page and confirm when the design will be ready? Then we can decide whether the request is detailed enough to estimate for the next sprint.",
+    "check": [
+      "是否提出可验证的验收方式？",
+      "是否确认外部依赖的状态？",
+      "是否根据这些信息决定能否估算并进入 sprint？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "define how we’ll verify the customer request",
+      "meaning": "先明确如何验收客户需求",
+      "collocation": "define how + 主语 + will + 动词",
+      "example": "Could we define how we’ll verify the customer request?",
+      "translation": "我们能否先明确如何验证这项客户需求？"
+    },
+    {
+      "id": "work-02",
+      "word": "confirm when the design will be ready",
+      "meaning": "确认设计交付时间",
+      "collocation": "confirm when + 主语 + will + 动词",
+      "example": "Could we confirm when the design will be ready?",
+      "translation": "我们能否确认设计何时准备好？"
+    },
+    {
+      "id": "work-03",
+      "word": "detailed enough to estimate",
+      "meaning": "信息具体到足以估算工作量",
+      "collocation": "adjective + enough to + 动词",
+      "example": "Then we can decide whether the story is detailed enough to estimate for the sprint.",
+      "translation": "然后再判断这条需求是否具体到足以估算 sprint 工作量。"
+    }
+  ]
+}

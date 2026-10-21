@@ -1,0 +1,384 @@
+{
+  "id": "025",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "谷歌写作课：怎样把英文长句写短、写清楚",
+  "topic": "谷歌写作课：怎样把英文长句写短、写清楚",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Short sentences | Technical Writing | Google for Developers",
+    "section": "写作课程公开版",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "写作课程公开版",
+    "url": "https://developers.google.com/tech-writing/one/short-sentences",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Google 谷歌 公开资料。",
+    "paragraphs": [
+      "Concise technical writing mirrors efficient coding by prioritizing clarity and brevity for better readability and maintenance.",
+      "Focus each sentence on a single idea to improve comprehension and avoid overly complex sentence structures.",
+      "Convert lengthy sentences containing lists or multiple ideas into bullet points or shorter, separate sentences for clarity.",
+      "Eliminate unnecessary words and phrases to create concise and impactful technical documentation.",
+      "Differentiate between \"that\" and \"which\" when introducing subordinate clauses to ensure grammatical accuracy and clarity for US audiences.",
+      "Software engineers generally try to minimize the number of lines of code in an implementation for the following reasons:",
+      "Shorter code is typically easier for others to read.",
+      "Shorter code is typically easier to maintain than longer code.",
+      "Extra lines of code introduce additional points of failure.",
+      "In fact, the same rules apply to technical writing:",
+      "Shorter documentation reads faster than longer documentation.",
+      "Shorter documentation is typically easier to maintain than longer documentation.",
+      "Extra lines of documentation introduce additional points of failure.",
+      "Finding the shortest documentation implementation takes time but is ultimately worthwhile. Short sentences communicate more powerfully than long sentences, and short sentences are usually easier to understand than long sentences."
+    ],
+    "translations": [
+      "简洁的技术写作通过优先考虑清晰和简洁来提高可读性和可维护性，这与高效的编程相呼应。",
+      "将每个句子集中在单一思想上，以提高理解力并避免过于复杂的句子结构。",
+      "将包含列表或多个想法的长句转换为要点或更短的独立句子，以提高清晰度。",
+      "删除不必要的词语和短语，以创建简洁且有力的技术文档。",
+      "在引入从句时区分\"that\"和\"which\"，以确保美国受众的语法准确性和清晰度。",
+      "软件工程师通常尝试减少实现中的代码行数，原因如下：",
+      "较短的代码通常更容易被他人阅读。",
+      "较短的代码通常比长代码更容易维护。",
+      "额外的代码行会引入额外的故障点。",
+      "事实上，同样的规则适用于技术写作：",
+      "较短的文档阅读速度比长文档快。",
+      "较短的文档通常比长文档更容易维护。",
+      "额外的文档行会引入额外的故障点。",
+      "找到最短的文档实现需要时间，但最终是值得的。短句比长句传达更强大的信息，而且短句通常比长句更容易理解。"
+    ],
+    "fullTextParagraphs": [
+      "Technical Writing",
+      "Português – Brasil",
+      "For Students",
+      "Technical Writing One",
+      "Concise technical writing mirrors efficient coding by prioritizing clarity and brevity for better readability and maintenance.",
+      "Focus each sentence on a single idea to improve comprehension and avoid overly complex sentence structures.",
+      "Convert lengthy sentences containing lists or multiple ideas into bullet points or shorter, separate sentences for clarity.",
+      "Eliminate unnecessary words and phrases to create concise and impactful technical documentation.",
+      "Differentiate between \"that\" and \"which\" when introducing subordinate clauses to ensure grammatical accuracy and clarity for US audiences.",
+      "Software engineers generally try to minimize the number of lines of code in an implementation for the following reasons:",
+      "Shorter code is typically easier for others to read.",
+      "Shorter code is typically easier to maintain than longer code.",
+      "Extra lines of code introduce additional points of failure.",
+      "In fact, the same rules apply to technical writing:",
+      "Shorter documentation reads faster than longer documentation.",
+      "Shorter documentation is typically easier to maintain than longer documentation.",
+      "Extra lines of documentation introduce additional points of failure.",
+      "Finding the shortest documentation implementation takes time but is ultimately worthwhile. Short sentences communicate more powerfully than long sentences, and short sentences are usually easier to understand than long sentences.",
+      "Focus each sentence on a single idea, thought, or concept. Just as statements in a program execute a single task, sentences should execute a single idea. For example, the following very long sentence contains multiple thoughts:",
+      "The late 1950s was a key era for programming languages because IBM introduced Fortran in 1957 and John McCarthy introduced Lisp the following year, which gave programmers both an iterative way of solving problems and a recursive way.",
+      "Breaking the long sentence into a succession of single-idea sentences yields the following result:",
+      "The late 1950s was a key era for programming languages. IBM introduced Fortran in 1957. John McCarthy invented Lisp the following year. Consequently, by the late 1950s, programmers could solve problems iteratively or recursively.",
+      "Convert the following overly long sentence to a series of shorter sentences. Don't revise too much; just end up with a few sentences instead of only one.",
+      "In bash, use the if, then, and fi statements to implement a simple conditional branching block in which the if statement evaluates an expression, the then statement introduces a block of statements to run when the if expression is true, and the fi statement marks the end of the conditional branching block.",
+      "Inside many long technical sentences is a list yearning to break free. For example, consider the following sentence:",
+      "To alter the usual flow of a loop, you may use either a break statement (which hops you out of the current loop) or a continue statement (which skips past the remainder of the current iteration of the current loop).",
+      "When you see the conjunction or in a long sentence, consider refactoring that sentence into a bulleted list. When you see an embedded list of items or tasks within a long sentence, consider refactoring that sentence into a bulleted or numbered list. For example, the preceding example contains the conjunction or, so let's convert that long sentence to the following bulleted list:",
+      "To alter the usual flow of a loop, call one of the following statements:",
+      "break, which hops you out of the current loop.",
+      "continue, which skips past the remainder of the current iteration of the current loop.",
+      "Refactor the following sentences into something shorter and clearer. Make sure that your answer contains a list:",
+      "To get started with the Frambus app, you must first find the app at a suitable store, pay for it using a valid credit or debit card, download it, configure it by assigning a value for the Foo variable in the /etc/Frambus file, and then run it by saying the magic word twice.",
+      "KornShell was invented by David Korn in 1983, then a computer scientist at Bell Labs, as a superset of features, enhancements, and improvements over the Bourne Shell (which it was backwards compatible with), which was invented by Stephen Bourne in 1977 who was also a computer scientist at Bell Labs.",
+      "Take the following steps to get started with the Frambus app:",
+      "Find the app at a suitable store.",
+      "Pay for the app using a valid credit or debit card.",
+      "Download the app.",
+      "Configure the app by assigning a value for the Foo variable in the /etc/Frambus file.",
+      "Run the app by saying the magic word twice.",
+      "The following two Bell Labs computer scientists invented popular shells:",
+      "Stephen Bourne invented the Bourne Shell in 1977.",
+      "David Korn invented the KornShell in 1983.",
+      "The KornShell is a backwards-compatible superset of the Bourne Shell, containing many improvements over the older shell.",
+      "Many sentences contain filler—textual junk food that consumes space without nourishing the reader. For example, see if you can spot the unnecessary words in the following sentence:",
+      "An input value greater than 100 causes the triggering of logging.",
+      "Replacing causes the triggering of with the much shorter verb triggers yields a shorter sentence:",
+      "An input value greater than 100 triggers logging.",
+      "With practice, you'll spot the extra words and feel enormous happiness in removing or reducing them. For example, consider the following sentence:",
+      "This design document provides a detailed description of Project Frambus.",
+      "The phrase provides a detailed description of reduces to the verb describes (or the verb details), so the resulting sentence could become:",
+      "This design document describes Project Frambus.",
+      "The following table suggests replacements for a few common bloated phrases:",
+      "Shorten the following sentences without changing their meaning:",
+      "In spite of the fact that Arnold writes buggy code, he writes error-free documentation.",
+      "Changing the sentence from passive voice to active voice enhances the clarification of the key points.",
+      "Determine whether Rikona is able to write code in COBOL.",
+      "Frambus causes the production of bugs, which will be chronicled in logs by the LogGenerator method.",
+      "Although Arnold writes buggy code, he writes error-free documentation. Alternative answer: Arnold writes buggy code. However, he writes error-free documentation.",
+      "Changing the sentence from passive voice to active voice clarifies the key points.",
+      "Determine whether Rikona can code in COBOL.",
+      "Frambus produces bugs, which the LogGenerator method logs.",
+      "A clause is an independent logical fragment of a sentence, which contains an actor and an action. Every sentence contains the following:",
+      "A main clause",
+      "Zero or more subordinate clauses",
+      "Subordinate clauses modify the idea in the main clause. As the name implies, subordinate clauses are less important than the main clause. For example, consider the following sentence:",
+      "Python is an interpreted programming language, which was invented in 1991. Main clause: Python is an interpreted programming language Subordinate clause: which was invented in 1991",
+      "Main clause: Python is an interpreted programming language",
+      "Subordinate clause: which was invented in 1991",
+      "You can usually identify subordinate clauses by the words that introduce them. The following list (by no means complete) shows common words that introduce subordinate clauses:",
+      "Some subordinate clauses begin with a comma and some don't. The highlighted subordinate clause in the following sentence, for example, begins with the word because and does not contain a comma:",
+      "I prefer to code in C++ because I like strong data typing.",
+      "When editing, scrutinize subordinate clauses. Keep the one sentence = one idea, single-responsibility principle in mind. Do the subordinate clauses in a sentence extend the single idea or do they branch off into a separate idea? If the latter, consider dividing the offending subordinate clause(s) into separate sentences.",
+      "Determine which of the sentences contain subordinate clauses that should be branched off into separate sentences. (Don't rewrite the sentences, just identify the sentences that should be rewritten.)",
+      "Python is an interpreted language, which means that the language can execute source code directly.",
+      "Bash is a modern shell scripting language that takes many of its features from KornShell 88, which was developed at Bell Labs.",
+      "Lisp is a programming language that relies on Polish prefix notation, which is one of the systems invented by the Polish logician Jan Łukasiewicz.",
+      "I don't want to say that Fortran is old, but only radiocarbon dating can determine its true age.",
+      "We've shaded the subordinate clauses.",
+      "Python is an interpreted language, which means that the language can execute source code directly. The subordinate clause in this sentence extends the main idea, so this sentence is fine as is.",
+      "Bash is a modern shell scripting language that takes many of its features from KornShell 88, which was developed at Bell Labs. The first subordinate clause extends the main idea, but the second subordinate clause goes in another direction. Divide this sentence in two.",
+      "Lisp is a programming language that relies on Polish prefix notation, which is one of the systems invented by the Polish logician Jan Łukasiewicz. The first subordinate clause is clearly critical to the sentence, but the second subordinate clause takes the reader too far away from the main clause. Divide this sentence in two.",
+      "I don't want to say that Fortran is old, but only radiocarbon dating can determine its true age. The subordinate clause is critical to the sentence, so this sentence is fine as is.",
+      "That and which both introduce subordinate clauses. What's the difference between them? Well, in some countries, the two words are pretty much interchangeable. Inevitably though, alert readers from the United States will angrily announce that you confused the two words again.",
+      "In the United States, reserve which for nonessential subordinate clauses, and use that for an essential subordinate clause that the sentence can't live without. For example, the key message in the following sentence is that Python is an interpreted language; the sentence can survive without Guido van Rossum invented:",
+      "Python is an interpreted language, which Guido van Rossum invented.",
+      "By contrast, the following sentence requires don't involve linear algebra:",
+      "Fortran is perfect for mathematical calculations that don't involve linear algebra.",
+      "If you read a sentence aloud and hear a pause just before the subordinate clause, then use which. If you don't hear a pause, use that. Go back and read the preceding two example sentences. Do you hear the pause in the first sentence?",
+      "Place a comma before which; do not place a comma before that.",
+      "Except as otherwise noted, the content of this page is licensed under the Creative Commons Attribution 4.0 License, and code samples are licensed under the Apache 2.0 License. For details, see the Google Developers Site Policies. Java is a registered trademark of Oracle and/or its affiliates."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "prioritizing clarity and brevity",
+      "meaning": "优先考虑清晰和简洁",
+      "explain": "在技术写作中，应将清晰度和简洁性放在首位，确保内容易于理解和维护",
+      "example": "When creating user manuals, prioritizing clarity and brevity helps users quickly find the information they need."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Convert lengthy sentences containing lists or multiple ideas",
+      "meaning": "将包含列表或多个想法的长句进行转换",
+      "explain": "当句子包含多个要点或列表时，应将其转换为项目符号或更短的独立句子，以提高可读性",
+      "example": "Instead of writing a long sentence about all the features, convert lengthy sentences containing lists or multiple ideas into bullet points for better comprehension."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Differentiate between \"that\" and \"which\"",
+      "meaning": "区分\"that\"和\"which\"的用法",
+      "explain": "在引入从句时，正确使用\"that\"和\"which\"对于美国受众的语法准确性和清晰度至关重要",
+      "example": "To improve your technical writing, differentiate between \"that\" and \"which\" when introducing subordinate clauses to ensure grammatical accuracy."
+    },
+    {
+      "paragraph": 13,
+      "phrase": "Finding the shortest documentation implementation takes time",
+      "meaning": "找到最简洁的文档实现需要时间",
+      "explain": "虽然创建简洁的文档需要投入更多时间和精力，但这种努力最终是值得的，因为简洁的文档更有效",
+      "example": "Finding the shortest documentation implementation takes time but is ultimately worthwhile, as it leads to more effective communication with your audience."
+    }
+  ],
+  "scenario": {
+    "title": "Make a long project sentence easier to read",
+    "english": [
+      "A setup instruction in your project guide explains several steps in one long sentence, so new teammates keep missing what to do first.",
+      "You suggest separating the steps into short sentences and keeping each sentence focused on one action.",
+      "The revised instruction is easier to scan while retaining the information a new teammate needs."
+    ],
+    "chinese": [
+      "项目指南里的一条操作说明把多个步骤塞进一个长句，新同事经常看漏先做什么。",
+      "你建议把步骤拆成短句，并让每句话只讲一个动作。",
+      "修改后的说明更容易浏览，也保留了新同事需要的信息。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "项目周报的一句话同时写了背景、已完成事项和下一步，新同事读起来容易漏掉重点。请用英文建议拆分句子，并保留三类必要信息。",
+    "sample": "Could we split this update into three short sentences? We can keep the project context, what is done, and the next step while making each point easier to scan.",
+    "rationale": "把一句包含多个信息的项目更新拆成短句，同时保留背景、进展和下一步。"
+  },
+  "words": [
+    {
+      "id": "concise-technical-writing",
+      "word": "concise",
+      "ipa": "/kənˈsaɪs/",
+      "pos": "adjective",
+      "meaning": "简洁的，简明的",
+      "collocation": "concise writing/report/explanation",
+      "example": "The technical manual provides concise instructions that even beginners can follow.",
+      "translation": "这本技术手册提供了连初学者都能理解的简明说明。",
+      "note": "在技术文档中使用concise可以确保信息传达高效且易于理解"
+    },
+    {
+      "id": "brevity-in-communication",
+      "word": "brevity",
+      "ipa": "/ˈbrevəti/",
+      "pos": "noun",
+      "meaning": "简洁，简短",
+      "collocation": "value/appreciate brevity",
+      "example": "In business communication, we value brevity to respect the reader's time.",
+      "translation": "在商务沟通中，我们重视简洁以尊重读者的时间。",
+      "note": "brevity强调信息表达的简短性，是高效沟通的关键要素"
+    },
+    {
+      "id": "subordinate-clauses",
+      "word": "subordinate",
+      "ipa": "/səˈbɔːrdɪnət/",
+      "pos": "adjective",
+      "meaning": "从属的，次要的",
+      "collocation": "subordinate clause/relation",
+      "example": "Clear technical writing limits the use of subordinate clauses to improve readability.",
+      "translation": "清晰的技术写作限制从句的使用以提高可读性。",
+      "note": "在技术写作中，应谨慎使用从属结构，避免句子过于复杂"
+    },
+    {
+      "id": "implementation-process",
+      "word": "implementation",
+      "ipa": "/ˌɪmplɪmenˈteɪʃn/",
+      "pos": "noun",
+      "meaning": "实施，执行",
+      "collocation": "successful implementation/plan",
+      "example": "The implementation of the new documentation system improved team efficiency.",
+      "translation": "新文档系统的实施提高了团队效率。",
+      "note": "implementation强调将计划或想法转化为实际行动的过程"
+    },
+    {
+      "id": "comprehension-level",
+      "word": "comprehension",
+      "ipa": "/ˌkɑːmprɪˈhenʃn/",
+      "pos": "noun",
+      "meaning": "理解，领悟",
+      "collocation": "reading/listening comprehension",
+      "example": "Technical writers should aim for maximum comprehension with minimal reading effort.",
+      "translation": "技术作者应努力实现用最少的阅读努力获得最大的理解效果。",
+      "note": "在技术写作中，提高读者的comprehension是核心目标之一"
+    },
+    {
+      "id": "impactful-communication",
+      "word": "impactful",
+      "ipa": "/ˈɪmpæktfl/",
+      "pos": "adjective",
+      "meaning": "有影响力的，有效的",
+      "collocation": "impactful message/presentation",
+      "example": "An impactful technical document can significantly reduce user support requests.",
+      "translation": "一份有影响力的技术文档可以显著减少用户支持请求。",
+      "note": "impactful强调沟通内容能够产生实际效果和影响"
+    }
+  ],
+  "structure": {
+    "original": "Concise technical writing mirrors efficient coding by prioritizing clarity and brevity for better readability and maintenance.",
+    "analysis": [
+      "主语'Concise technical writing'与谓语'mirrors'构成主谓结构，其中'Concise'作为形容词修饰'technical writing'",
+      "介词短语'by prioritizing clarity and brevity'作为方式状语，说明技术写作如何模仿高效编码，其中'prioritizing'是动名词，'clarity and brevity'是并列名词短语作其宾语",
+      "目的状语'for better readability and maintenance'表示目的，其中'readability and maintenance'是并列名词短语，说明清晰简洁带来的好处"
+    ],
+    "transfer": "The setup guide lists the required tools, explains how to request access, and identifies the person to contact for help. Split it into three short steps."
+  },
+  "rewrite": {
+    "bad": "The project documentation which was created last month needs to be revised because it contains sentences that are too long and which might confuse new employees.",
+    "good": "Last month's project documentation needs revision. Some sentences are too long and may confuse new employees.",
+    "translation": "上个月的项目文档需要修订。一些句子太长，可能会让新员工感到困惑。",
+    "pattern": "将包含多个从句的长句拆分为两个或更多简短句子，移除不必要的'that'和'which'，使用更直接的表达方式。"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we split this update ___ three short sentences?",
+      "answer": "into",
+      "why": "split A into B 表示把一项内容拆分成几部分。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We can keep the project context, what is done, and the next ___.",
+      "answer": "step",
+      "why": "明确保留下一步，避免只说明背景和已完成事项。"
+    },
+    {
+      "id": "c3",
+      "prompt": "This will make each point easier to ___.",
+      "answer": "scan",
+      "why": "scan 表示快速浏览文字以找到重点。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah needed to revise the company's new onboarding manual, which contained lengthy sentences with multiple clauses and confusing explanations.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Her manager emphasized prioritizing clarity and brevity, while the legal department insisted on maintaining comprehensive coverage of all potential scenarios.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否把这条进展拆成三个短句？",
+      "answer": "Could we split this update into three short sentences?",
+      "why": "本句练习“split this update into three short sentences”在把一条信息拆成更容易读的短句时的用法。"
+    },
+    {
+      "prompt": "我们可以保留项目背景、已完成的事和下一步。",
+      "answer": "We can keep the project context, what is done, and the next step.",
+      "why": "本句练习“keep the project context, what is done, and the next step”在拆句时保留背景、完成事项和下一步时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事请你帮忙修改项目文档中的一句长句。请用英文建议把它拆成更短的句子，同时保留必要信息。",
+    "options": [
+      "The project documentation which was created last month needs to be revised because it contains sentences that are too long and which might confuse new employees.",
+      "Let’s split the long sentence in section 3.2 into shorter statements, keeping the key information.",
+      "Could you share a specific example and explain what effect it had on the team?"
+    ],
+    "correct": 1,
+    "why": "一句只表达一个重点，同时保留读者需要的信息。"
+  },
+  "output": {
+    "prompt": "客户上线周报的一句话混在一起写了背景、已完成的检查和下一步，阅读者容易错过行动项。请用英文建议拆成三个短句，并保留这三类信息。",
+    "sample": "Could we split this update into three short sentences? We can keep the launch context, what has been checked, and the next step while making each point easier to scan.",
+    "check": [
+      "是否提出拆分长句？",
+      "是否保留背景、进展和下一步？",
+      "是否说明短句能让信息更容易浏览？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "split this update into three short sentences",
+      "meaning": "把一条信息拆成更容易读的短句",
+      "collocation": "split A into + 数量 + 部分",
+      "example": "Could we split this update into three short sentences?",
+      "translation": "我们能否把这条进展拆成三个短句？"
+    },
+    {
+      "id": "work-02",
+      "word": "keep the project context, what is done, and the next step",
+      "meaning": "拆句时保留背景、完成事项和下一步",
+      "collocation": "keep + 并列信息",
+      "example": "We can keep the project context, what is done, and the next step.",
+      "translation": "我们可以保留项目背景、已完成的事和下一步。"
+    },
+    {
+      "id": "work-03",
+      "word": "easier to scan",
+      "meaning": "更容易快速浏览并找到重点",
+      "collocation": "easy / easier to scan",
+      "example": "That will make each point easier to scan.",
+      "translation": "这样每个要点都会更容易浏览。"
+    }
+  ]
+}

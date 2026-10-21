@@ -1,0 +1,368 @@
+{
+  "id": "083",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "同事之间出现冲突，怎样直接而尊重地处理",
+  "topic": "同事之间出现冲突，怎样直接而尊重地处理",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Managing Conflict | The GitLab Handbook",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://handbook.gitlab.com/handbook/leadership/managing-conflict/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 GitLab 公开资料。",
+    "paragraphs": [
+      "In this section, we will review the definition of conflict, the different causes of conflict, different methods for addressing conflict, steps in the conflict process, and some do’s and don’ts of workplace conflict. Conflict in the workplace is inevitable when you have team members of various backgrounds and different work styles all working towards the same goals and OKRs (Objectives and Key Results). Conflict should never just be avoided, conflict should be managed and resolved. The first step is for the team members who experience conflict to work to address the situation to work towards a resolution. If a resolution is not possible, the manager should work with the team members and their assigned People Business Partner to help foster a resolution.",
+      "Conflict is any situation where your concerns, desires, perceptions, goals, or values differ and clash with other team members. Here are a few examples of potential causes of workplace conflict:",
+      "Personality differences",
+      "Team member behavior is regarded by some as irritating or annoying",
+      "Perceived unfairness or inequities of resources, training or project work",
+      "Unclear role expectations",
+      "Poor communication skills",
+      "Differences in work methods or goals",
+      "This method involves managing conflict through unilateral decision making."
+    ],
+    "translations": [
+      "在本节中，我们将回顾冲突的定义、冲突的不同原因、解决冲突的不同方法、冲突过程中的步骤，以及职场中的一些冲突应该做和不应该做的事情。当团队成员具有不同的背景和工作风格，都朝着相同的目标和 OKRs（目标与关键成果）努力时，职场中的冲突是不可避免的。冲突不应该仅仅被回避，而应该被管理和解决。第一步是让经历冲突的团队成员努力解决情况，以达成解决方案。如果无法达成解决方案，经理应与团队成员及其指定的人员业务合作伙伴合作，以促进解决方案的达成。",
+      "冲突是指你的关注点、愿望、认知、目标或价值观与其他团队成员存在差异并发生冲突的任何情况。以下是职场冲突潜在原因的几个例子：",
+      "个性差异",
+      "某些团队成员认为团队成员的行为令人恼火或讨厌",
+      "对资源、培训或项目工作的感知不公平或不平等",
+      "角色期望不明确",
+      "沟通技巧差",
+      "工作方法或目标差异",
+      "这种方法涉及通过单方面决策来管理冲突。"
+    ],
+    "fullTextParagraphs": [
+      "In this section, we will review the definition of conflict, the different causes of conflict, different methods for addressing conflict, steps in the conflict process, and some do’s and don’ts of workplace conflict. Conflict in the workplace is inevitable when you have team members of various backgrounds and different work styles all working towards the same goals and OKRs (Objectives and Key Results). Conflict should never just be avoided, conflict should be managed and resolved. The first step is for the team members who experience conflict to work to address the situation to work towards a resolution. If a resolution is not possible, the manager should work with the team members and their assigned People Business Partner to help foster a resolution.",
+      "Conflict is any situation where your concerns, desires, perceptions, goals, or values differ and clash with other team members. Here are a few examples of potential causes of workplace conflict:",
+      "Personality differences",
+      "Team member behavior is regarded by some as irritating or annoying",
+      "Perceived unfairness or inequities of resources, training or project work",
+      "Unclear role expectations",
+      "Poor communication skills",
+      "Differences in work methods or goals",
+      "This method involves managing conflict through unilateral decision making.",
+      "Primarily used for: Situations that require a quick decision, instances where there is no compromise or debate on making a hard decision.",
+      "Competing styles: Win-Lose approach, Assertive & Uncooperative and You try to satisfy your concerns at the other team members’ expense.",
+      "Examples: Imposing or dictating a decision - “Sorry X, but that’s my decision as your manager” Arguing for a conclusion that fits your data - “Our customer survey shows a steady decline. We need to design the route” Hard bargaining (making no concessions) - I won’t take less than X - Take it or leave it.",
+      "Imposing or dictating a decision - “Sorry X, but that’s my decision as your manager”",
+      "Arguing for a conclusion that fits your data - “Our customer survey shows a steady decline. We need to design the route”",
+      "Hard bargaining (making no concessions) - I won’t take less than X - Take it or leave it.",
+      "Actively deciding not to manage a conflict.",
+      "Primarily used for: Unimportant, non-work issues, buying time until a resolution can be reached, and recognizing issues as symptoms.",
+      "Avoiding styles: “Lose-Lose” approach, unassertive and uncooperative, evading conflict without trying to satisfy either person’s concerns, and effective in emotionally charged circumstances.",
+      "Examples: Avoiding people you find troublesome - “This doesn’t seem to be a good time to discuss this issue with X”. Avoiding issues that are unimportant, complex, or perceived threatening - “Maybe. We’ll see. Let’s move along to the next topic.” Postponing the discussion until later - “Let me check on that and get back to you next week.”",
+      "Avoiding people you find troublesome - “This doesn’t seem to be a good time to discuss this issue with X”.",
+      "Avoiding issues that are unimportant, complex, or perceived threatening - “Maybe. We’ll see. Let’s move along to the next topic.”",
+      "Postponing the discussion until later - “Let me check on that and get back to you next week.”",
+      "Primarily used for: Maintaining perspective in a conflict situation, making active decisions on what can be “let go”, maintaining peace, and creating goodwill.",
+      "Accommodating styles: Unassertive & cooperative and you attempt to satisfy the other team members’ concerns at the expense of your own concerns.",
+      "Examples: Doing a favor to help someone - “I can see this is important to you, OK.” Being persuaded - “I didn’t think of that, you are right.” Obeying an authority - “I’d do it differently, but it is your call.” Deferring to another’s expertise - “You are the experts, I’ll trust your judgment.” Appeasing someone who is threatening - “Ok, ok, please calm down.”",
+      "Doing a favor to help someone - “I can see this is important to you, OK.”",
+      "Being persuaded - “I didn’t think of that, you are right.”",
+      "Obeying an authority - “I’d do it differently, but it is your call.”",
+      "Deferring to another’s expertise - “You are the experts, I’ll trust your judgment.”",
+      "Appeasing someone who is threatening - “Ok, ok, please calm down.”",
+      "Reaching a resolution with a “win” on both sides.",
+      "Primarily used for: Resolving issues of moderate to high importance, finding a solution that involves equal power and strong commitment on both sides, situations where a temporary “fix” may be needed, and backing up a decision that’s been made via the competing or collaborating method.",
+      "Compromising style: In the middle and you try to find an acceptable settlement that only partially satisfies both team members’ concerns.",
+      "Examples: Soft bargaining or exchanging concessions - “Let’s split the difference and settle for X”. Taking turns - “Suppose I do X this time and then you do Y next time.” Moderating your conclusions - “You think X will solve the problem but I think Y will, so perhaps we say X&Y are possible solutions?”",
+      "Soft bargaining or exchanging concessions - “Let’s split the difference and settle for X”.",
+      "Taking turns - “Suppose I do X this time and then you do Y next time.”",
+      "Moderating your conclusions - “You think X will solve the problem but I think Y will, so perhaps we say X&Y are possible solutions?”",
+      "Managing conflict through team input.",
+      "Primarily used for: Gaining support from the team, using different perspectives as an opportunity to learn and improve relationships through collaboration.",
+      "Collaborating style: Assertive and cooperative and finding a “win-win.”",
+      "Examples: Reconciling interest through a “win-win” solution - “You need to fund project X but I need to project Y, how can we do both?” Combining insights into a richer understanding - “You are praising X’s technical skills, however, I have concerns about their iteration and collaboration skills. Both are true, aren’t they? They have high potential if they can improve on their interpersonal skills.”",
+      "Reconciling interest through a “win-win” solution - “You need to fund project X but I need to project Y, how can we do both?”",
+      "Combining insights into a richer understanding - “You are praising X’s technical skills, however, I have concerns about their iteration and collaboration skills. Both are true, aren’t they? They have high potential if they can improve on their interpersonal skills.”",
+      "Management/leadership sets the tone A workplace built on mutual respect Managers/leaders’ behavior and actions provide team members with a model to follow",
+      "A workplace built on mutual respect",
+      "Managers/leaders’ behavior and actions provide team members with a model to follow",
+      "Hire the right people Look for team members who demonstrate the ability to address conflict in a positive and productive way",
+      "Look for team members who demonstrate the ability to address conflict in a positive and productive way",
+      "Train team members Provide learning and development opportunities on how to engage in positive conflict",
+      "Provide learning and development opportunities on how to engage in positive conflict",
+      "Reward meaningful conflict Recognize team members who participate in positive conflict, and acknowledge those whose actions result in successful outcomes for the department, division, and GitLab.",
+      "Recognize team members who participate in positive conflict, and acknowledge those whose actions result in successful outcomes for the department, division, and GitLab.",
+      "Encourage team members to support their position Team members should be expected to be able to support their positions with data. This will take the conflict from emotional to rational.",
+      "Team members should be expected to be able to support their positions with data. This will take the conflict from emotional to rational.",
+      "Encourage your team members to be respectful Team members in meaningful conflict situations must be respectful of others and should not be allowed to make personal attacks.",
+      "Team members in meaningful conflict situations must be respectful of others and should not be allowed to make personal attacks.",
+      "Encourage transparency and inclusion All team members must feel free to express their opinions in a non-judgmental environment.",
+      "All team members must feel free to express their opinions in a non-judgmental environment.",
+      "Serve as a resource Serve as a resource in business decisions to coach through conflict and understand a path forward to support GitLab’s Vision.",
+      "Serve as a resource in business decisions to coach through conflict and understand a path forward to support GitLab’s Vision.",
+      "Managers and leaders need to find the right balance depending on the team members involved and the situation. Remember conflict is a problem when it:",
+      "Hampers productivity and increases tensions",
+      "Lowers morale",
+      "Causes more and continued conflict",
+      "Causes inappropriate behavior",
+      "Leads to team member absenteeism.",
+      "Opens up issues of importance resulting in issue clarification",
+      "Helps build cohesiveness as team members learn more about each other",
+      "Causes team members to reassess processes or actions",
+      "Increases team member involvement.",
+      "If at any time a manager feels the conflict situation has violated our values or code of conduct they should reach out to the PBP (People Business Partner). Also, if a manager would like to talk through different conflict situations and approaches your PBP is willing to help you work through the best strategies.",
+      "Managers need to be well-versed in managing and facilitating conflict resolution between team members. They can do this by surfacing and clarifying areas of disagreement and by creating an environment where resolution is possible. Conflict resolution is a key component to enabling team members to be successful and reach their potential.",
+      "Skills and behavior of the conflict resolution manager competency:",
+      "Facilitates conflict resolution between co-workers by surfacing and clarifying areas of disagreement",
+      "Creates an environment where resolution is possible",
+      "Works to resolve conflict by engaging in open, productive dialogue that clarifies differences, identifies common ground, and works towards agreement or acceptance",
+      "Provides guidance to team members on conflict management as needed",
+      "Advises team or others on conflict management strategies, especially for difficult or complex situations",
+      "If you are interested in learning about conflict and your role as a manager please review the following articles.",
+      "Do You Handle Conflict like a Rhinoceros or an Ostrich",
+      "How to deal with employees who do not get along How managers should deal with conflict between two employees",
+      "5 Conflict Management Skills For Every Manager",
+      "5 Conflict Management Styles for Every Personality type",
+      "The Science of Productive Conflict: Podcast Transcript"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Conflict should never just be avoided, conflict should be managed and resolved.",
+      "meaning": "冲突不应仅仅被避免，而应被管理和解决。",
+      "explain": "这句话强调了在职场中面对冲突的正确态度，即逃避不是解决方案，而是需要主动管理和解决。",
+      "example": "In our team meetings, we always address disagreements directly because we believe that issues should be managed and resolved, not swept under the rug."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Conflict is any situation where your concerns, desires, perceptions, goals, or values differ and clash with other team members.",
+      "meaning": "冲突是指你的关注点、愿望、认知、目标或价值观与其他团队成员不同并产生冲突的任何情况。",
+      "explain": "这句话提供了冲突的明确定义，强调了冲突源于个人与他人之间的差异和碰撞。",
+      "example": "The project conflict arose when Sarah's perception of the deadline clashed with John's assessment of the required resources."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Perceived unfairness or inequities of resources, training or project work",
+      "meaning": "对资源、培训或项目工作感知到的不公平或不平等",
+      "explain": "这是职场冲突的常见原因之一，指团队成员对分配不均或机会不等的感受。",
+      "example": "The team conflict was triggered by perceived inequities in access to the latest software tools between departments."
+    },
+    {
+      "paragraph": 7,
+      "phrase": "Differences in work methods or goals",
+      "meaning": "工作方法或目标上的差异",
+      "explain": "这是职场冲突的另一个常见原因，指团队成员在如何完成任务或追求目标上的分歧。",
+      "example": "The marketing team experienced conflict due to differences in work methods between the traditional and digital specialists."
+    }
+  ],
+  "scenario": {
+    "title": "Handling Project Deadline Conflict",
+    "english": [
+      "Sarah and Tom are working on a joint marketing report. Sarah needs the data analysis section by Wednesday to complete her part, while Tom believes he needs until Friday to ensure accuracy.",
+      "The team manager expects the complete report by Thursday morning, creating a tight deadline that neither can meet without compromising quality or cooperation.",
+      "Sarah approaches Tom directly: 'I understand your concern about data accuracy. Could we collaborate on Wednesday to review your section together? This way we can meet the deadline without sacrificing quality.'"
+    ],
+    "chinese": [
+      "莎拉和汤姆正在合作一份营销报告。莎拉需要在周三前拿到数据分析部分来完成她的工作，而汤姆认为他需要到周五才能确保数据的准确性。",
+      "团队经理期望周四早上前拿到完整报告，这创造了一个紧迫的截止日期，双方都无法在不影响质量或合作的情况下完成。",
+      "莎拉直接找到汤姆说：'我理解你对数据准确性的担忧。我们周三能否一起审查你的部分？这样我们就能在保证质量的前提下按时完成。'"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你和同事已经对齐项目范围，但之后范围又发生了变化，测试团队因此没有稳定计划。请用英文邀请对方直接沟通，说明具体影响，并约定以后如何处理确认后的变更。",
+    "sample": "In yesterday’s review, the scope changed after we had agreed on it. That change left the testing team without a stable plan. Could we agree on how changes will be reviewed before sign-off?",
+    "rationale": "把事实和工作影响说清楚，再直接与同事约定改进办法。"
+  },
+  "words": [
+    {
+      "id": "inevitable-conflict",
+      "word": "inevitable",
+      "ipa": "/ɪnˈevɪtəbəl/",
+      "pos": "adjective",
+      "meaning": "不可避免的",
+      "collocation": "inevitable consequence/result",
+      "example": "In a diverse workplace, some level of conflict is inevitable.",
+      "translation": "在多元化的工作场所，某种程度的冲突是不可避免的。",
+      "note": "用于强调某事物是必然发生的，无法避免的，常用于描述负面但不可避免的情况。"
+    },
+    {
+      "id": "address-conflict",
+      "word": "address",
+      "ipa": "/əˈdres/",
+      "pos": "verb",
+      "meaning": "处理，解决",
+      "collocation": "address an issue/problem/conflict",
+      "example": "It's important to address workplace conflicts promptly before they escalate.",
+      "translation": "及时处理工作场所的冲突很重要，以免事态升级。",
+      "note": "比'deal with'更正式，常用于正式场合，表示着手处理问题或情况。"
+    },
+    {
+      "id": "perceived-unfairness",
+      "word": "perceived",
+      "ipa": "/pərˈsiːvd/",
+      "pos": "adjective",
+      "meaning": "感知到的，意识到的",
+      "collocation": "perceived risk/benefit/threat",
+      "example": "The conflict arose from perceived unfairness in the distribution of bonuses.",
+      "translation": "冲突源于对奖金分配不公的感知。",
+      "note": "强调是主观上的感受或认知，而非客观事实，常用于描述误解或主观判断。"
+    },
+    {
+      "id": "role-expectations",
+      "word": "expectations",
+      "ipa": "/ˌekspekˈteɪʃənz/",
+      "pos": "noun",
+      "meaning": "期望，预期",
+      "collocation": "meet expectations/exceed expectations",
+      "example": "Unclear role expectations often lead to misunderstandings and conflict.",
+      "translation": "角色期望不明确常常导致误解和冲突。",
+      "note": "复数形式，指对某人或某事的预期表现或结果，常用于评估绩效。"
+    },
+    {
+      "id": "unilateral-decision",
+      "word": "unilateral",
+      "ipa": "/ˌjuːnɪˈlætərəl/",
+      "pos": "adjective",
+      "meaning": "单方面的，单边的",
+      "collocation": "unilateral decision/action/decision-making",
+      "example": "Making unilateral decisions without consulting the team can create resentment.",
+      "translation": "不与团队协商就做出单方面决定可能会引起怨恨。",
+      "note": "描述仅由一方采取的行动或决定，不考虑其他方的意见或利益。"
+    },
+    {
+      "id": "foster-resolution",
+      "word": "foster",
+      "ipa": "/ˈfɑːstər/",
+      "pos": "verb",
+      "meaning": "促进，培养",
+      "collocation": "foster understanding/relationship/growth",
+      "example": "The manager's role is to foster a resolution that satisfies all parties involved.",
+      "translation": "经理的角色是促进一个让所有相关方都满意的解决方案。",
+      "note": "指培育或促进某事物的成长或发展，常用于抽象概念如关系、理解等。"
+    }
+  ],
+  "structure": {
+    "original": "In this section, we will review the definition of conflict, the different causes of conflict, different methods for addressing conflict, steps in the conflict process, and some do’s and don’ts of workplace conflict.",
+    "analysis": [
+      "主句结构为'In this section, we will review...'，其中'In this section'是介词短语作状语，表示范围",
+      "review后面接了五个并列的宾语，由逗号和最后的'and'连接：'the definition of conflict', 'the different causes of conflict', 'different methods for addressing conflict', 'steps in the conflict process', 'some do's and don'ts of workplace conflict'",
+      "每个宾语都有各自的修饰结构：'of conflict'修饰definition和causes，'for addressing conflict'修饰methods，'in the conflict process'修饰steps，'of workplace conflict'修饰do's and don'ts"
+    ],
+    "transfer": "In this module, we will examine the principles of effective communication, the key components of persuasive speaking, various techniques for audience engagement, stages of speech preparation, and some best practices for professional presentations."
+  },
+  "rewrite": {
+    "bad": "Everyone says your approach is wrong. Just use my plan and we can stop discussing it.",
+    "good": "Could we talk directly about the disagreement on the project approach? I’d like to compare the specific concerns and work out a solution with you.",
+    "translation": "我们能否直接谈谈项目做法上的分歧？我想把具体顾虑摆出来，和你一起找到解决办法。",
+    "pattern": "Could we talk directly about [the disagreement] and compare [specific concerns]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "In ___ review, the scope changed after we had agreed on it.",
+      "answer": "yesterday’s",
+      "why": "说具体事件，避免给同事贴标签。"
+    },
+    {
+      "id": "c2",
+      "prompt": "That change left the ___ team without a stable plan.",
+      "answer": "testing",
+      "why": "聚焦工作结果，让对话有事实依据。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Could we agree on how changes will be ___ before sign-off?",
+      "answer": "reviewed",
+      "why": "从指出问题转向双方能执行的解决办法。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah and Tom are working on a joint marketing report.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah needs the data analysis section by Wednesday to complete her part, while Tom believes he needs until Friday to ensure accuracy.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "昨天的评审中，我们已经对齐范围后，范围又发生了变化。",
+      "answer": "In yesterday’s review, the scope changed after we had agreed on it.",
+      "why": "本句练习“describe what happened with a specific example”在用具体例子说明发生了什么时的用法。"
+    },
+    {
+      "prompt": "这次变更让测试团队没有稳定的计划。",
+      "answer": "That change left the testing team without a stable plan.",
+      "why": "本句练习“explain the impact on the work”在说明事情对工作的影响时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "你和同事对项目做法有分歧，私下抱怨已经影响合作。请用英文邀请对方直接沟通，描述具体问题，并一起讨论解决办法。",
+    "options": [
+      "You have to finish the data analysis by Wednesday. The deadline is Thursday and I can't wait any longer.",
+      "Could we talk directly about the disagreement on the project approach? I’d like to compare the specific concerns and work out a solution with you.",
+      "Could we talk directly about the disagreement on the project approach?"
+    ],
+    "correct": 1,
+    "why": "GitLab 冲突处理指南鼓励当事人先直接沟通，聚焦具体问题并共同寻找解决办法。"
+  },
+  "output": {
+    "prompt": "你和同事都需要同一位设计师支持各自的交付，双方因此都无法按原计划推进。请用英文邀请对方讨论，说明影响，并提出一起确认优先级和时间安排。",
+    "sample": "Could we talk about how we’re sharing design support? Both projects are now at risk because we planned around the same availability. Could we review the deadlines together and agree on priorities with the design lead?",
+    "check": [
+      "是否邀请对方直接讨论资源冲突？",
+      "是否说明冲突对交付造成的影响？",
+      "是否提出与设计负责人共同确认优先级和时间？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "describe what happened with a specific example",
+      "meaning": "用具体例子说明发生了什么",
+      "collocation": "describe + what happened",
+      "example": "In yesterday’s review, the scope changed after we had agreed on it.",
+      "translation": "昨天的评审中，我们已经对齐范围后，范围又发生了变化。"
+    },
+    {
+      "id": "work-02",
+      "word": "explain the impact on the work",
+      "meaning": "说明事情对工作的影响",
+      "collocation": "impact on + work / timeline",
+      "example": "That change left the testing team without a stable plan.",
+      "translation": "这次变更让测试团队没有稳定的计划。"
+    },
+    {
+      "id": "work-03",
+      "word": "ask to agree on a way forward",
+      "meaning": "提出共同确认后续做法",
+      "collocation": "agree on + way forward",
+      "example": "Could we agree on how changes will be reviewed before sign-off?",
+      "translation": "我们能否约定在确认前如何评审变更？"
+    }
+  ]
+}

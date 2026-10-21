@@ -1,0 +1,277 @@
+{
+  "id": "080",
+  "version": 1,
+  "status": "draft",
+  "company": "Dropbox",
+  "companyZh": "Dropbox",
+  "title": "跨时区交接工作，怎样把信息交代完整",
+  "topic": "跨时区交接工作，怎样把信息交代完整",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Communicate Handoffs Across Time Zones - Dropbox",
+    "section": "公开协作指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开协作指南",
+    "url": "https://experience.dropbox.com/virtual-first-toolkit/teamwork/communicate-handoffs-across-time-zones",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Dropbox 公开资料。",
+    "paragraphs": [
+      "Step 1: Evaluate team processes Even if you’re not directly handing off work to another person, taking a few minutes to share a brief end-of-day update is an effective async best practice for distributed teams. These updates help teams summarize progress, raise questions, or ask for feedback. They also help cross-functional teams in different time zones stay informed and aligned on the current status of projects. While formal handoffs may not apply to every workflow, they can be highly effective in certain contexts. For example, engineering teams may benefit from handoffs in Kanban-style work (a visual workflow method that uses boards and columns to track tasks through stages), during high-severity incidents that require rapid debugging, or in on-call support roles to ensure seamless coverage and faster response times. Step 2: Schedule time to make a handoff In a “follow-the-sun” workflow—where global teams in different time zones collaborate to maintain around-the-clock progress—it's helpful to block time at the end of the workday to collect salient information the next shift will need. In addition to sharing project updates, it’s a good idea to ask the recipient to flag any blockers they’re facing and request any details that would make the handoff smoother. This simple, shared habit keeps everyone aligned and workflows running seamlessly across time zones.",
+      "Step 3: Establish clear handoff processes Teams should define specific handoff protocols that outline how work will transition between different time zones, and agree on a cadence that works for everyone. Keep updates short, easy to understand, and delivered in a consistent format, whether it’s a quick note or short video. Post updates in one go-to place, like your project doc or team channel, so nothing gets lost. In fact, 73% of Dropboxers say clear communication and documentation are the most effective ways to support asynchronous collaboration with colleagues across time zones. Step 4: Iterate on format As teams bond and get more comfortable with workflows, it’s worth periodically checking in to see how the handoff documentation can be sharpened, shortened, and improved. Hold quarterly retrospectives to identify what is working well and what can be improved in the collaboration process. For instance, you might realize one big handoff isn’t cutting it anymore—and that smaller, functional ones work better."
+    ],
+    "translations": [
+      "步骤1：评估团队流程 即使您不是直接将工作交接给另一个人，花几分钟分享简短的工作日结束更新也是分布式团队的一种有效的异步最佳实践。这些更新帮助团队总结进度、提出问题或请求反馈。它们还帮助不同时区的跨职能团队了解项目当前状态并保持一致。虽然正式交接可能不适用于每个工作流程，但在某些情况下它们可能非常有效。例如，工程团队可能从看板式工作（一种使用看板和列来跟踪任务通过各个阶段的可视化工作流方法）中的交接中受益，在需要快速调试的高严重性事件期间，或在待命支持角色中，以确保无缝覆盖和更快的响应时间。",
+      "步骤3：建立明确的交接流程 团队应定义具体的交接协议，概述工作将如何在不同时区之间过渡，并商定适合每个人的节奏。保持更新简短、易于理解，并以一致的格式呈现，无论是快速笔记还是短视频。将更新发布在一个固定的地方，如您的项目文档或团队频道，以免遗漏信息。事实上，73%的Dropbox员工表示，清晰的沟通和文档是与跨时区同事进行异步协作的最有效支持方式。步骤4：迭代格式 随着团队熟悉工作流程并更加适应，值得定期检查交接文档如何能够更加精炼、简化和改进。每季度进行回顾会议，以确定协作过程中哪些方面运作良好，哪些方面可以改进。例如，您可能会意识到一个大型的交接已经不够用了——而更小、功能性的交接效果更好。"
+    ],
+    "audioIndices": [
+      0,
+      1,
+      0
+    ],
+    "fullTextParagraphs": [
+      "Step 1: Evaluate team processes Even if you’re not directly handing off work to another person, taking a few minutes to share a brief end-of-day update is an effective async best practice for distributed teams. These updates help teams summarize progress, raise questions, or ask for feedback. They also help cross-functional teams in different time zones stay informed and aligned on the current status of projects. While formal handoffs may not apply to every workflow, they can be highly effective in certain contexts. For example, engineering teams may benefit from handoffs in Kanban-style work (a visual workflow method that uses boards and columns to track tasks through stages), during high-severity incidents that require rapid debugging, or in on-call support roles to ensure seamless coverage and faster response times. Step 2: Schedule time to make a handoff In a “follow-the-sun” workflow—where global teams in different time zones collaborate to maintain around-the-clock progress—it's helpful to block time at the end of the workday to collect salient information the next shift will need. In addition to sharing project updates, it’s a good idea to ask the recipient to flag any blockers they’re facing and request any details that would make the handoff smoother. This simple, shared habit keeps everyone aligned and workflows running seamlessly across time zones.",
+      "Step 3: Establish clear handoff processes Teams should define specific handoff protocols that outline how work will transition between different time zones, and agree on a cadence that works for everyone. Keep updates short, easy to understand, and delivered in a consistent format, whether it’s a quick note or short video. Post updates in one go-to place, like your project doc or team channel, so nothing gets lost. In fact, 73% of Dropboxers say clear communication and documentation are the most effective ways to support asynchronous collaboration with colleagues across time zones. Step 4: Iterate on format As teams bond and get more comfortable with workflows, it’s worth periodically checking in to see how the handoff documentation can be sharpened, shortened, and improved. Hold quarterly retrospectives to identify what is working well and what can be improved in the collaboration process. For instance, you might realize one big handoff isn’t cutting it anymore—and that smaller, functional ones work better."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "taking a few minutes to share a brief end-of-day update",
+      "meaning": "花几分钟分享简短的当日工作更新",
+      "explain": "这是一种异步协作的最佳实践，帮助团队成员总结进度、提出问题或请求反馈",
+      "example": "Taking a few minutes to share a brief end-of-day update helps keep everyone aligned on project goals."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "cross-functional teams in different time zones",
+      "meaning": "不同时区的跨职能团队",
+      "explain": "指由不同专业背景成员组成的团队，且分布在不同时区，需要高效协作",
+      "example": "Cross-functional teams in different time zones benefit from standardized communication protocols."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "block time at the end of the workday",
+      "meaning": "在工作日结束前预留时间",
+      "explain": "特意安排时间来准备交接信息，确保下一班次能够顺利接手工作",
+      "example": "I always block time at the end of the workday to prepare handoff notes for my overseas colleagues."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "flag any blockers they’re facing",
+      "meaning": "标记他们面临的任何障碍",
+      "explain": "指出工作中遇到的困难或阻碍，以便交接对象能够提前了解并协助解决",
+      "example": "Please flag any blockers you're facing so we can address them before the handoff."
+    }
+  ],
+  "scenario": {
+    "title": "Leaving a useful update for the next time zone",
+    "english": [
+      "You are ending your workday while a teammate in another time zone is about to take over the project.",
+      "The teammate needs the latest progress, customer feedback, open items, and a way to flag missing information.",
+      "You update the shared project document and invite the next person to call out blockers."
+    ],
+    "chinese": [
+      "你即将下班，另一个时区的同事将接手这个项目。",
+      "对方需要了解最新进展、客户反馈、待处理事项，并知道如何指出缺失信息。",
+      "你更新共享项目文档，请接班同事标出阻碍或需要补充的内容。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你在伦敦下班前把客户问题交给新加坡同事。迁移已完成 80%，客户需在伦敦时间上午十点前得到答复；最新草稿和测试结果在共享项目文件夹。Alex 负责下一次跟进。请用英文写清当前状态、时限、下一步和文件位置。",
+    "sample": "The migration is 80% complete, and the latest draft and test results are in the shared project folder. The client needs an answer before 10 a.m. London time. Alex will run the final checks and own the next follow-up.",
+    "rationale": "交接要让接班同事看清状态、紧急时限、下一步负责人和文件位置。"
+  },
+  "words": [
+    {
+      "id": "async-best-practice",
+      "word": "async",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "异步的",
+      "collocation": "async collaboration",
+      "example": "Our team relies on async communication to bridge time zone differences.",
+      "translation": "我们的团队依靠异步沟通来弥合时区差异。",
+      "note": "async是asynchronous的缩写，在远程工作中常用来描述不需要同时在线的协作方式"
+    },
+    {
+      "id": "distributed-teams",
+      "word": "distributed",
+      "ipa": "/dɪˈstrɪbjuːtɪd/",
+      "pos": "adjective",
+      "meaning": "分布式的",
+      "collocation": "distributed teams",
+      "example": "Managing distributed teams requires clear communication protocols.",
+      "translation": "管理分布式团队需要明确的沟通协议。",
+      "note": "指地理位置分散的团队，常见于远程工作环境"
+    },
+    {
+      "id": "cross-functional",
+      "word": "cross-functional",
+      "ipa": "/ˌkrɒsˈfʌŋkʃənl/",
+      "pos": "adjective",
+      "meaning": "跨职能的",
+      "collocation": "cross-functional collaboration",
+      "example": "The update includes input from the cross-functional team.",
+      "translation": "这份更新汇总了跨职能团队的意见。",
+      "note": "指由不同专业背景人员组成的团队协作"
+    },
+    {
+      "id": "handoff-protocols",
+      "word": "handoff",
+      "ipa": "/ˈhændɒf/",
+      "pos": "noun",
+      "meaning": "交接",
+      "collocation": "handoff process",
+      "example": "Clear handoff protocols ensure smooth transitions between shifts.",
+      "translation": "明确的交接协议确保班次之间的平稳过渡。",
+      "note": "指工作或责任从一个团队或个人转移到另一个的过程"
+    },
+    {
+      "id": "salient-information",
+      "word": "salient",
+      "ipa": "/ˈseɪliənt/",
+      "pos": "adjective",
+      "meaning": "显著的，重要的",
+      "collocation": "salient points",
+      "example": "Please highlight the salient information in the project update.",
+      "translation": "请在项目更新中突出重要信息。",
+      "note": "指最显著、最关键的信息，需要特别关注"
+    },
+    {
+      "id": "iterating-on-format",
+      "word": "iterate",
+      "ipa": "/ˈɪtəreɪt/",
+      "pos": "verb",
+      "meaning": "迭代，改进",
+      "collocation": "iterate on design",
+      "example": "We need to iterate on our documentation process to make it more efficient.",
+      "translation": "我们需要改进我们的文档流程以提高效率。",
+      "note": "指通过反复测试和改进来完善某物，常用于产品开发和流程优化"
+    }
+  ],
+  "structure": {
+    "original": "Step 1: Evaluate team processes Even if you’re not directly handing off work to another person, taking a few minutes to share a brief end-of-day update is an effective async best practice for distributed teams.",
+    "analysis": [
+      "主句结构为'taking...is an effective...practice'，其中'taking a few minutes to share a brief end-of-day update'是动名词短语作主语",
+      "Even if引导的让步状语从句'Even if you're not directly handing off work to another person'修饰整个主句，表示即使不直接交接工作",
+      "async best practice for distributed teams'是名词短语，作为表语，其中'async'是asynchronous的缩写，'distributed teams'指分布式团队"
+    ],
+    "transfer": "Step 1: Evaluate team processes Even if you're not directly collaborating with international colleagues, spending a few minutes to provide a brief project status update is an effective async communication strategy for remote teams."
+  },
+  "rewrite": {
+    "bad": "I need the campaign data by 6 p.m. EST or I cannot continue tomorrow.",
+    "good": "I’ve posted today’s campaign results and the open customer feedback items in the project doc. Please flag any blocker you need me to clarify before I sign off.",
+    "translation": "我已把今天的营销结果和未处理的客户反馈写进项目文档。下班前如有需要我说明的阻碍，请告诉我。",
+    "pattern": "I’ve posted [progress and open items] in [the shared doc]. Please flag [any blocker] before I sign off."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The migration is 80% ___; Alex will run the final checks.",
+      "answer": "complete",
+      "why": "交接先说明做到哪里、接下来谁做什么。"
+    },
+    {
+      "id": "c2",
+      "prompt": "The client needs an ___ before 10 a.m. London time.",
+      "answer": "answer",
+      "why": "跨时区交接要写清时区和截止时间。"
+    },
+    {
+      "id": "c3",
+      "prompt": "The latest draft and test results are in the ___ project folder.",
+      "answer": "shared",
+      "why": "提供可访问的文件位置，接手者才可以继续工作。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a marketing coordinator in New York, needs to hand off her campaign progress to Tom in Singapore who starts his day 12 hours later.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah decides to create a structured handover document with clear sections and flags any pending issues that require Tom's attention the next day.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "迁移已完成 80%；Alex 会执行最后检查。",
+      "answer": "The migration is 80% complete; Alex will run the final checks.",
+      "why": "本句练习“include the current status and next action”在交代当前状态和下一步时的用法。"
+    },
+    {
+      "prompt": "客户需要在伦敦时间上午十点前得到答复。",
+      "answer": "The client needs an answer before 10 a.m. London time.",
+      "why": "本句练习“flag anything time-sensitive”在标出有时限要求的事项时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "你在跨时区团队下班前要交接营销项目。请用英文更新目前进展、客户反馈和待处理事项，并请接班同事指出阻碍。",
+    "options": [
+      "I need the campaign data now because I have to start working on it tomorrow morning.",
+      "I’ve posted today’s campaign results and the open customer feedback items in the project doc. Please flag any blocker you need me to clarify before I sign off.",
+      "I’ve posted today’s campaign results and the open customer feedback items in the project doc."
+    ],
+    "correct": 1,
+    "why": "简短交接要让下一位同事知道进展、待办和需要补充的信息。"
+  },
+  "output": {
+    "prompt": "你在旧金山下班前将一个支付故障交给都柏林同事。问题影响部分客户，临时绕行方案已验证；日志在事件记录中，Sam 负责两小时后检查指标。请用英文交代状态、措施、资料位置和下一步。",
+    "sample": "The payment issue is affecting some customers, and we’ve verified a temporary workaround. The logs are in the incident record. Sam will check the metrics in two hours and update the incident channel.",
+    "check": [
+      "是否交代故障影响和已验证的临时措施？",
+      "是否说明日志所在位置？",
+      "是否写明 Sam 的下一步和时间？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "include the current status and next action",
+      "meaning": "交代当前状态和下一步",
+      "collocation": "include + status + next action",
+      "example": "The migration is 80% complete; Alex will run the final checks.",
+      "translation": "迁移已完成 80%；Alex 会执行最后检查。"
+    },
+    {
+      "id": "work-02",
+      "word": "flag anything time-sensitive",
+      "meaning": "标出有时限要求的事项",
+      "collocation": "flag + time-sensitive item",
+      "example": "The client needs an answer before 10 a.m. London time.",
+      "translation": "客户需要在伦敦时间上午十点前得到答复。"
+    },
+    {
+      "id": "work-03",
+      "word": "leave the working files in…",
+      "meaning": "说明工作文件存放位置",
+      "collocation": "leave files in + location",
+      "example": "The latest draft and test results are in the shared project folder.",
+      "translation": "最新草稿和测试结果在共享项目文件夹里。"
+    }
+  ]
+}

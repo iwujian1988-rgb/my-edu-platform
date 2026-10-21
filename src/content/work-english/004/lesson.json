@@ -1,0 +1,338 @@
+{
+  "id": "004",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "现在没空处理，怎样回复才不让同事一直等？",
+  "topic": "及时确认与回复预期",
+  "level": "B1–B2",
+  "minutes": 24,
+  "source": {
+    "title": "Speed of Code Reviews",
+    "section": "Fast Responses",
+    "collection": "Engineering Practices",
+    "displayScope": "完整原文",
+    "type": "公开工作指南",
+    "url": "https://google.github.io/eng-practices/review/reviewer/speed.html",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "licenseEvidence": "https://google.github.io/eng-practices/",
+    "verifiedAt": "2026-10-16",
+    "context": "原文讨论代码评审的回复速度；练习把表达迁移到报告与项目协作。",
+    "headings": {
+      "0": "Fast Responses"
+    },
+    "paragraphs": [
+      "When we talk about the speed of code reviews, it is the response time that we are concerned with, as opposed to how long it takes a CL to get through the whole review and be submitted. The whole process should also be fast, ideally, but it’s even more important for the individual responses to come quickly than it is for the whole process to happen rapidly.",
+      "Even if it sometimes takes a long time to get through the entire review process, having quick responses from the reviewer throughout the process significantly eases the frustration developers can feel with “slow” code reviews.",
+      "If you are too busy to do a full review on a CL when it comes in, you can still send a quick response that lets the developer know when you will get to it, suggest other reviewers who might be able to respond more quickly, or provide some initial broad comments. (Note: none of this means you should interrupt coding even to send a response like this—send the response at a reasonable break point in your work.)",
+      "It is important that reviewers spend enough time on review that they are certain their “LGTM” means “this code meets our standards.” However, individual responses should still ideally be fast."
+    ],
+    "translations": [
+      "我们谈代码评审速度时，更关心的是每次回复要多久，而不是一项代码修改完成整轮评审并提交需要多久。整个流程最好也快，但每次答复及时，比整个流程迅速结束更重要。",
+      "即使完成整轮评审偶尔需要较长时间，评审者在过程中持续及时回复，也能明显减轻开发者面对‘缓慢’评审时的挫败感。",
+      "如果一项代码修改提交时你太忙，没法立即做完整评审，仍可以先简短回复，告诉开发者你什么时候能处理；也可以推荐能更快回复的其他评审者，或先给一些初步的总体意见。（注意：这并不意味着你要为发这样的回复打断正在进行的编码工作——可以等到工作中合适的间隙再回复。）",
+      "评审者必须花足够时间评审，确保自己写下‘LGTM’（看起来可以通过）时，确实意味着‘这段代码符合我们的标准’。不过，每次单独的回复理想情况下仍应及时。"
+    ],
+    "fullTextParagraphs": [
+      "At Google, we optimize for the speed at which a team of developers can produce a product together, as opposed to optimizing for the speed at which an individual developer can write code. The speed of individual development is important, it’s just not as important as the velocity of the entire team.",
+      "When code reviews are slow, several things happen:",
+      "The velocity of the team as a whole is decreased. Yes, the individual who doesn’t respond quickly to the review gets other work done. However, new features and bug fixes for the rest of the team are delayed by days, weeks, or months as each CL waits for review and re-review.",
+      "Developers start to protest the code review process. If a reviewer only responds every few days, but requests major changes to the CL each time, that can be frustrating and difficult for developers. Often, this is expressed as complaints about how “strict” the reviewer is being. If the reviewer requests the same substantial changes (changes which really do improve code health), but responds quickly every time the developer makes an update, the complaints tend to disappear. Most complaints about the code review process are actually resolved by making the process faster.",
+      "Code health can be impacted. When reviews are slow, there is increased pressure to allow developers to submit CLs that are not as good as they could be. Slow reviews also discourage code cleanups, refactorings, and further improvements to existing CLs.",
+      "If you are not in the middle of a focused task, you should do a code review shortly after it comes in.",
+      "One business day is the maximum time it should take to respond to a code review request (i.e., first thing the next morning).",
+      "Following these guidelines means that a typical CL should get multiple rounds of review (if needed) within a single day.",
+      "There is one time where the consideration of personal velocity trumps team velocity. If you are in the middle of a focused task, such as writing code, don’t interrupt yourself to do a code review. Research has shown that it can take a long time for a developer to get back into a smooth flow of development after being interrupted. So interrupting yourself while coding is actually more expensive to the team than making another developer wait a bit for a code review.",
+      "Instead, wait for a break point in your work before you respond to a request for review. This could be when your current coding task is completed, after lunch, returning from a meeting, coming back from the breakroom, etc.",
+      "When we talk about the speed of code reviews, it is the response time that we are concerned with, as opposed to how long it takes a CL to get through the whole review and be submitted. The whole process should also be fast, ideally, but it’s even more important for the individual responses to come quickly than it is for the whole process to happen rapidly.",
+      "Even if it sometimes takes a long time to get through the entire review process, having quick responses from the reviewer throughout the process significantly eases the frustration developers can feel with “slow” code reviews.",
+      "If you are too busy to do a full review on a CL when it comes in, you can still send a quick response that lets the developer know when you will get to it, suggest other reviewers who might be able to respond more quickly, or provide some initial broad comments. (Note: none of this means you should interrupt coding even to send a response like this—send the response at a reasonable break point in your work.)",
+      "It is important that reviewers spend enough time on review that they are certain their “LGTM” means “this code meets our standards.” However, individual responses should still ideally be fast.",
+      "When dealing with time zone differences, try to get back to the author while they have time to respond before the end of their working hours. If they have already finished work for the day, then try to make sure your review is done before they start work the next day.",
+      "In order to speed up code reviews, there are certain situations in which a reviewer should give LGTM/Approval even though they are also leaving unresolved comments on the CL. This should be done when at least one of the following applies:",
+      "The reviewer is confident that the developer will appropriately address all the reviewer’s remaining comments.",
+      "The comments don’t have to be addressed by the developer.",
+      "The suggestions are minor, e.g. sort imports, fix a nearby typo, apply a suggested fix, remove an unused dep, etc.",
+      "The reviewer should specify which of these options they intend, if it is not otherwise clear.",
+      "LGTM With Comments is especially worth considering when the developer and reviewer are in different time zones and otherwise the developer would be waiting for a whole day just to get “LGTM, Approval”.",
+      "If somebody sends you a code review that is so large you’re not sure when you will be able to have time to review it, your typical response should be to ask the developer to split the CL into several smaller CLs that build on each other, instead of one huge CL that has to be reviewed all at once. This is usually possible and very helpful to reviewers, even if it takes additional work from the developer.",
+      "If a CL can’t be broken up into smaller CLs, and you don’t have time to review the entire thing quickly, then at least write some comments on the overall design of the CL and send it back to the developer for improvement. One of your goals as a reviewer should be to always unblock the developer or enable them to take some sort of further action quickly, without sacrificing code health to do so.",
+      "If you follow these guidelines and you are strict with your code reviews, you should find that the entire code review process tends to go faster and faster over time. Developers learn what is required for healthy code, and send you CLs that are great from the start, requiring less and less review time. Reviewers learn to respond quickly and not add unnecessary latency into the review process. But don’t compromise on the code review standards or quality for an imagined improvement in velocity—it’s not actually going to make anything happen more quickly, in the long run.",
+      "There are also emergencies where CLs must pass through the whole review process very quickly, and where the quality guidelines would be relaxed. However, please see What Is An Emergency? for a description of which situations actually qualify as emergencies and which don’t."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "it is the response time that we are concerned with",
+      "meaning": "我们关注的是回复时间",
+      "explain": "强调句 it is ... that ... 把重点明确放在 response time。",
+      "example": "It's the first response time that matters most to the client."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "as opposed to how long it takes",
+      "meaning": "而不是整个流程要花多久",
+      "explain": "as opposed to 用于区分两个容易混在一起的指标。",
+      "example": "We measure reply time, as opposed to total project duration."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "significantly eases the frustration",
+      "meaning": "明显减轻挫败感",
+      "explain": "ease the frustration 指降低等待带来的负面体验。",
+      "example": "A short update can ease the client's frustration."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "you can still send a quick response",
+      "meaning": "仍可以先简短回复",
+      "explain": "still 表示虽然暂时无法完成全部工作，却仍有可做的一步。",
+      "example": "I can't finish the report today, but I can still send a quick update."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "lets the developer know when you will get to it",
+      "meaning": "让对方知道何时能处理",
+      "explain": "get to it 指开始处理这件事；关键是给出可信的时间预期。",
+      "example": "I'll get to your proposal tomorrow morning."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "at a reasonable break point in your work",
+      "meaning": "在工作中合适的间隙",
+      "explain": "原文并未要求随时中断手头任务；及时回复和专注工作需要平衡。",
+      "example": "I'll reply at the next break point in my work."
+    }
+  ],
+  "scenario": {
+    "title": "A report is waiting for your review",
+    "english": [
+      "A teammate sends Priya a client report and asks for comments before Friday. Priya is in back-to-back meetings and cannot review the whole document right away.",
+      "At the next break, she replies, “I have the report. I can't review it in full today, but I can send comments by 11 a.m. tomorrow. If you need feedback sooner, Sam may be available this afternoon.”",
+      "The teammate can now plan the next step instead of waiting without a timeline. Priya still leaves enough time to read the report carefully before approving it."
+    ],
+    "chinese": [
+      "同事把客户报告发给 Priya，希望周五前收到意见。Priya 会议排满，不能马上完整审阅。",
+      "她在工作间隙回复：“我收到报告了。今天没法完整审阅，但明天上午 11 点前可以把意见发给你。如果你需要更早得到反馈，Sam 今天下午也许有空。”",
+      "同事因此可以安排下一步，不必在没有时间预期的情况下等待。Priya 仍留出足够时间认真阅读报告后再批准。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "同事今天把一份客户报告发给你，希望尽快收到意见，但你今天无法完整审阅。请用英文确认收到，并给出一个明确的反馈时间。",
+    "sample": "I have the report. I can’t review it in full today, but I can send you my comments by 11 a.m. tomorrow.",
+    "rationale": "先确认材料已收到，再说明限制并给出可兑现的时间。"
+  },
+  "words": [
+    {
+      "id": "response",
+      "word": "response",
+      "ipa": "/rɪˈspɑːns/",
+      "pos": "n.",
+      "meaning": "回复；回应",
+      "collocation": "response time",
+      "example": "A quick response helps the team plan ahead.",
+      "translation": "及时回复能帮助团队提前安排。",
+      "note": "response time 指收到请求到回应之间的时间。"
+    },
+    {
+      "id": "frustration",
+      "word": "frustration",
+      "ipa": "/frʌˈstreɪʃən/",
+      "pos": "n.",
+      "meaning": "挫败感",
+      "collocation": "ease frustration",
+      "example": "A clear update can ease frustration.",
+      "translation": "清楚的进度说明能减轻挫败感。",
+      "note": "这里指等待回复的不确定感。"
+    },
+    {
+      "id": "initial",
+      "word": "initial",
+      "ipa": "/ɪˈnɪʃəl/",
+      "pos": "adj.",
+      "meaning": "初步的",
+      "collocation": "initial comments",
+      "example": "I can share some initial comments today.",
+      "translation": "我今天可以先分享一些初步意见。",
+      "note": "与完整评审区分。"
+    },
+    {
+      "id": "broad",
+      "word": "broad",
+      "ipa": "/brɔːd/",
+      "pos": "adj.",
+      "meaning": "总体的；宽泛的",
+      "collocation": "broad comments",
+      "example": "These are broad comments; I'll review the details tomorrow.",
+      "translation": "这些是总体意见；明天我会再看细节。",
+      "note": "不要把初步意见误写成最终结论。"
+    },
+    {
+      "id": "interrupt",
+      "word": "interrupt",
+      "ipa": "/ˌɪntəˈrʌpt/",
+      "pos": "v.",
+      "meaning": "打断",
+      "collocation": "interrupt your work",
+      "example": "You don't need to interrupt your work for every message.",
+      "translation": "你不必为每条消息打断工作。",
+      "note": "可以与 at a reasonable break point 对比学习。"
+    },
+    {
+      "id": "reasonable",
+      "word": "reasonable",
+      "ipa": "/ˈriːzənəbəl/",
+      "pos": "adj.",
+      "meaning": "合理的",
+      "collocation": "a reasonable break point",
+      "example": "I'll respond at a reasonable break point.",
+      "translation": "我会在工作中合适的间隙回复。",
+      "note": "强调实际可执行。"
+    }
+  ],
+  "structure": {
+    "original": "If you are too busy to do a full review on a CL when it comes in, you can still send a quick response that lets the developer know when you will get to it, suggest other reviewers who might be able to respond more quickly, or provide some initial broad comments.",
+    "analysis": [
+      "If you are too busy ...：先承认暂时无法完成完整审阅。",
+      "you can still ...：转向此刻能够做的事，不让对方无期限等待。",
+      "when you will get to it / other reviewers：给出预计时间或可替代的负责人。"
+    ],
+    "transfer": "If I can’t review the full report today, I can still confirm receipt and give you a time for my comments."
+  },
+  "rewrite": {
+    "bad": "Busy. Later.",
+    "good": "I have the report. I can't review it in full today, but I can send comments by 11 a.m. tomorrow.",
+    "translation": "我收到报告了。今天没法完整审阅，但明天上午 11 点前可以发给你意见。",
+    "pattern": "I have ... . I can't ... today, but I can ... by ... ."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I ___ the report.",
+      "answer": "have",
+      "why": "先确认收到材料。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I can’t review it in full ___, but I can send comments tomorrow.",
+      "answer": "today",
+      "why": "说明今天无法完成完整审阅。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I can send you my comments ___ 11 a.m. tomorrow.",
+      "answer": "by",
+      "why": "by 加截止时间，表示最迟在该时间前。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "I can send comments by eleven tomorrow morning.",
+      "why": "听清 by 与 tomorrow morning。"
+    },
+    {
+      "id": "d2",
+      "text": "You can still send a quick response.",
+      "why": "still 表示当前仍有可做的一步。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我收到报告了。",
+      "answer": "I have the report.",
+      "why": "简洁确认收到材料。"
+    },
+    {
+      "prompt": "我今天没法完整审阅，但明天上午 11 点前可以把意见发给你。",
+      "answer": "I can’t review it in full today, but I can send you my comments by 11 a.m. tomorrow.",
+      "why": "说明当前限制，并给出明确交付时间。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事请你今天审阅一份报告，但你今天没时间。请用英文先确认收到，再说一个可兑现的回复时间。",
+    "options": [
+      "Busy. Later.",
+      "I have the report. I can't review it in full today, but I can send comments by 11 a.m. tomorrow.",
+      "Looks good. Approved, though I haven't read it."
+    ],
+    "correct": 1,
+    "why": "确认收到、说明当前限制、给出具体时间，能帮助对方安排下一步。"
+  },
+  "output": {
+    "prompt": "经理临时请你今天审阅一份发布公告，但你正在处理客户故障，下午才能空出时间。请用英文说明当前情况，并给出明确的审阅时间。",
+    "sample": "I’m handling a customer issue this morning, so I can’t review the announcement right away. I can send you my comments by 4 p.m. today.",
+    "check": [
+      "是否说明当前无法马上审阅的原因？",
+      "是否明确承诺会在何时给出意见？",
+      "时间是否具体且可兑现？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非谷歌员工原声。",
+    "illustration": "工作场景插画 · 忙碌时先回复处理时间"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文/译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "optionalWords": [
+    {
+      "id": "rapidly",
+      "word": "rapidly",
+      "ipa": "/ˈræpɪdli/",
+      "pos": "adv.",
+      "meaning": "迅速地",
+      "collocation": "happen rapidly",
+      "example": "The entire review cannot always happen rapidly.",
+      "translation": "整轮审阅未必总能迅速完成。",
+      "note": "和 quickly 意近，原文用于描述整个流程。"
+    },
+    {
+      "id": "standards",
+      "word": "standards",
+      "ipa": "/ˈstændərdz/",
+      "pos": "n.",
+      "meaning": "标准",
+      "collocation": "meet our standards",
+      "example": "I need more time to check whether the report meets our standards.",
+      "translation": "我需要更多时间核对报告是否达到我们的标准。",
+      "note": "快速确认不等于草率批准。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "I have the report.",
+      "meaning": "确认材料已经收到",
+      "collocation": "I have + 文件 / 材料",
+      "example": "I have the report.",
+      "translation": "我收到报告了。"
+    },
+    {
+      "id": "work-02",
+      "word": "I can’t… today, but I can…",
+      "meaning": "说明当前限制并给出替代安排",
+      "collocation": "I can’t + 今天无法做的事, but I can + 可承诺的事",
+      "example": "I can’t review it in full today, but I can send you my comments by 11 a.m. tomorrow.",
+      "translation": "我今天没法完整审阅，但明天上午 11 点前可以把意见发给你。"
+    },
+    {
+      "id": "work-03",
+      "word": "by 11 a.m. tomorrow",
+      "meaning": "给出明确的最晚交付时间",
+      "collocation": "by + 截止时间",
+      "example": "I can send you my comments by 11 a.m. tomorrow.",
+      "translation": "我明天上午 11 点前可以把意见发给你。"
+    }
+  ]
+}

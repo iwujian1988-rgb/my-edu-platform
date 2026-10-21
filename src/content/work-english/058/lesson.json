@@ -1,0 +1,348 @@
+{
+  "id": "058",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "项目启动会怎样对齐目标、范围和分工",
+  "topic": "项目启动会怎样对齐目标、范围和分工",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Planning Project Kickoff Meetings: Steps & Example Agenda",
+    "section": "公开团队工具",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队工具",
+    "url": "https://www.atlassian.com/team-playbook/plays/project-kickoff",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Atlassian 公开资料。",
+    "paragraphs": [
+      "A little planning can lead to a lot more success. Gather your project team for a kickoff to align on the project's purpose and how you’ll work together to achieve it.",
+      "Determine project team members and their roles.",
+      "Define the project vision, mission, and mission tests.",
+      "Get your team aligned on the purpose of the project and how you’ll work together to achieve it.",
+      "Video conferencing with screen sharing or meeting space.",
+      "Digital collaboration tool (see templates).",
+      "Optional: physical whiteboard, markers, timer, and sticky notes.",
+      "Bring your team together at the beginning of a project to agree on what success looks like and start creating a plan to achieve it.",
+      "About this Play",
+      "A project kickoff meeting is the first meeting with the project team and the project client (when applicable). This meeting establishes the project’s purpose, roles, responsibilities, and success markers.",
+      "Starting a project without a kickoff meeting is like starting a road trip without a map or directions. You’ll probably waste a lot of time, money, and energy getting to your destination – if you make it at all. Running the Project Kickoff Play sets the course for smooth collaboration and success."
+    ],
+    "translations": [
+      "一点规划可以带来更多成功。召集您的项目团队进行启动会议，就项目的目的以及如何共同努力实现它达成一致。",
+      "确定项目团队成员及其角色。",
+      "定义项目愿景、使命和使命测试。",
+      "让您的团队就项目的目的以及如何共同努力实现它达成一致。",
+      "视频会议与屏幕共享或会议室。",
+      "数字协作工具（请参见模板）。",
+      "可选：实体白板、记号笔、计时器和便利贴。",
+      "在项目开始时将您的团队聚集在一起，就成功的样子达成一致，并开始制定实现它的计划。",
+      "关于此方案",
+      "项目启动会议是与项目团队和项目客户（如适用）的第一次会议。这次会议确立了项目的目的、角色、职责和成功指标。",
+      "没有启动会议就开始一个项目，就像没有地图或方向就开始公路旅行一样。您可能会浪费大量时间、金钱和精力才能到达目的地——如果真能到达的话。运行项目启动方案为顺利协作和成功奠定了基础。"
+    ],
+    "fullTextParagraphs": [
+      "A little planning can lead to a lot more success. Gather your project team for a kickoff to align on the project's purpose and how you’ll work together to achieve it.",
+      "Determine project team members and their roles.",
+      "Define the project vision, mission, and mission tests.",
+      "Get your team aligned on the purpose of the project and how you’ll work together to achieve it.",
+      "Video conferencing with screen sharing or meeting space.",
+      "Digital collaboration tool (see templates).",
+      "Optional: physical whiteboard, markers, timer, and sticky notes.",
+      "Bring your team together at the beginning of a project to agree on what success looks like and start creating a plan to achieve it.",
+      "About this Play",
+      "Instructions",
+      "A project kickoff meeting is the first meeting with the project team and the project client (when applicable). This meeting establishes the project’s purpose, roles, responsibilities, and success markers.",
+      "Starting a project without a kickoff meeting is like starting a road trip without a map or directions. You’ll probably waste a lot of time, money, and energy getting to your destination – if you make it at all. Running the Project Kickoff Play sets the course for smooth collaboration and success.",
+      "The project kickoff typically takes place after the statement of work or project poster has been finalized and everyone is ready to get started.",
+      "The kickoff meeting is an opportunity to align your team around the project's “who, what, where, when, why, and how.”",
+      "Research shows there are proven benefits to gaining consensus around several of the topics discussed during a project kickoff:",
+      "Clarifying roles Clearly understanding roles and responsibilities can drive better outcomes by improving communication, coordination, trust, and team member satisfaction.",
+      "Set the stage by building psychological safety Teams with established norms that encourage collaboration and open dialogue perform better.",
+      "Vision When employees understand the vision (or why their work matters and how it affects others), their job performance, persistence, and productivity increase.",
+      "Clear success criteria, or mission tests Unclear requirements lead to costly rework. Outlining what success looks like and fixing things early often reduces confusion and costs later.",
+      "Before running this Play, identify your project sponsor, project leader, facilitator, core team, and stakeholders. (One team member might hold multiple roles.)",
+      "Project sponsor (or executive sponsor): The most senior stakeholder who has the most to gain or lose from your project’s delivery",
+      "Project leader: Sets the vision on what the team is delivering and why",
+      "Facilitator: Responsible for keeping the kickoff meeting flowing and focused",
+      "Core team: The people who do the project work",
+      "Stakeholders: Anyone with insights, information, feedback, or a vested interest in the project’s outcome",
+      "The Project Kickoff Play is flexible and can easily be adapted. Use the other Plays under “Variations” below as inspiration to customize the agenda for your team.",
+      "Not everyone needs to attend all parts of the kickoff. Keep any variations you add to just the core team.",
+      "Bring together the project sponsor, leader, and facilitator to draft a project vision, mission, and mission tests in a collaborative document, such as a Confluence page, whiteboard, or Trello board. The rest of the project team will participate in a 5-minute silent pre-read of the project poster. Next, the team will revise these elements during the kickoff meeting:",
+      "Vision: Your “why,” or the impact your team will make when the project is completed. Why are you pursuing this project?",
+      "Mission: Your “what” and “how.” What are you trying to do? How will you achieve your vision?",
+      "Mission tests: Your “when.” What will it look like when this project is successful? These tests indicate if your mission is on track and create a shared definition of “done.”",
+      "Ask your project sponsor to open the session by welcoming attendees and sharing a quick overview of the project and its relationship to the organization. If your sponsor isn’t available to join the session, you can ask them to record a quick video, like a Loom, ahead of time to share with the group.",
+      "At the beginning of the project kickoff meeting, share an overview of the agenda, along with some mutual agreements to keep the conversation productive:",
+      "Collaboration: Let’s work together to setup this project for success.",
+      "Good enough: Let’s aim for progress, not perfection. Gather enough information to create a shared understanding, then continue refining it in the future.",
+      "Possibility: Let’s suspend judgment about what has been, and keep an open mind about what could be.",
+      "Start with a short icebreaker to get everyone focused and in the right mindset. If the group doesn’t already know each other, have each person introduce themselves, explain their role in the project, and answer one icebreaker question. (See the Icebreakers Play for inspiration.) If the group is already familiar, skip straight to the icebreaker.",
+      "This is the most important aspect of the project kickoff: rallying the team around a shared purpose that can inspire and guide them. Begin by sharing the initial vision, mission, and mission tests created before the kickoff. Then, break attendees into three groups: one for vision, one for mission, and one for mission tests. Give each group 20 minutes to refine the initial statements. Next, bring the group back together to present and discuss their revised statements. Make any agreed-upon changes, then vote to formally accept them for the project. You can (and should) refine these elements later in the project as you uncover new information.",
+      "Try a Roman vote to get a quick gauge on consensus and/or concerns:",
+      "Invite your project leader to close the meeting by thanking the group for their collaboration, providing any feedback or closing thoughts, and recapping the next steps. On your list of action items, assign a team member to update the project poster with your agreed-upon vision, mission, and mission tests.",
+      "All work and no play make a dull project team. Arrange a fun event shortly after the kickoff, like virtual games or a social outing.",
+      "If there’s time during your kickoff meeting, or in a separate session, you can use other Plays to continue outlining the project plans.",
+      "Set Objectives and Key Results.",
+      "Make a DACI Decision-making Framework to determine who will drive the project and who will be accountable, consulted, and informed.",
+      "Map out your project’s proposed timeline, tasks, and milestones so you can Prioritize, as a Team.",
+      "Create a workback plan or a backlog of tasks using a tool like Trello, a Jira project management template, or a Confluence project plan template.",
+      "As the project moves along, revisit these plans and your project post to document progress and make any needed adjustments.",
+      "For a shorter meeting, try limiting the template to questions about working hours, ideal environment, communication preferences, and learning styles before discussing anything longer and deeper.",
+      "Following the icebreaker, run a short Retrospective Play to discuss what you’ve learned from past projects and how you will apply those lessons to this project.",
+      "Use the Working Agreements Play to create a set of mutual agreements about how the team will work together to get the job done efficiently and effectively.",
+      "After you agree on your project’s purpose, what are the individual roles on the project? Run the Roles & Responsibilities Play to provide team members with clarity on how they will each contribute towards the project’s success. This Play also helps identify any gaps in skills or functions so you can address them early on in the project.",
+      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
+      "Map out and optimize cross-team relationships at the beginning of a project.",
+      "Clarify individual responsibilities and find gaps that need to be filled.",
+      "Create shared norms that help your team work well together to achieve common goals.",
+      "Uncover the root of a problem and explore possible solutions.",
+      "Get the latest Plays and work life advice when you sign up for our newsletter.",
+      "A team of app developers uses Confluence to identify project roles and strategies.",
+      "A package design team brainstorms its project mission.",
+      "A filmmaking team uses Trello and Zoom to kick off their project"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "align on the project's purpose",
+      "meaning": "就项目目标达成一致",
+      "explain": "指团队成员对项目的核心目标和意义形成共识，确保所有人朝着同一方向努力",
+      "example": "Before starting the marketing campaign, we need to align on the primary purpose of increasing brand awareness."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "project vision, mission, and mission tests",
+      "meaning": "项目愿景、使命和使命检验标准",
+      "explain": "vision指项目的长远理想状态，mission指项目的核心任务，mission tests则是衡量是否完成使命的具体标准",
+      "example": "Our project vision is to become the market leader, our mission is to innovate sustainable solutions, and mission tests include reducing carbon footprint by 30%."
+    },
+    {
+      "paragraph": 9,
+      "phrase": "roles, responsibilities, and success markers",
+      "meaning": "角色、职责和成功指标",
+      "explain": "明确团队成员的具体职责和衡量项目成功的标准，确保责任清晰、目标可衡量",
+      "example": "The project charter clearly outlines each team member's roles, responsibilities, and success markers for the quarterly objectives."
+    },
+    {
+      "paragraph": 10,
+      "phrase": "sets the course for smooth collaboration",
+      "meaning": "为顺利合作奠定基础",
+      "explain": "比喻项目启动会如同设定航向，确保团队协作顺畅无阻，朝着共同目标前进",
+      "example": "A well-conducted kickoff meeting sets the course for smooth collaboration throughout the entire product development lifecycle."
+    }
+  ],
+  "scenario": {
+    "title": "Agreeing on the goal before assigning work",
+    "english": [
+      "A project team is preparing a product launch, but people have different ideas about what success means.",
+      "The team has not agreed on the main goal, how to measure it, or what is outside the project scope.",
+      "You suggest settling those points before assigning tasks."
+    ],
+    "chinese": [
+      "项目组正在准备产品发布，但成员对“成功”各有理解。",
+      "团队还没有明确主要目标、衡量方式，以及哪些事项不属于本项目范围。",
+      "你建议先把这几项说清楚，再分配任务。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "项目启动会上，大家对“项目成功”理解不同。请用英文建议先明确目标、成功标准和项目范围，再讨论分工。",
+    "sample": "Before we assign the work, could we agree on the project goal, how we’ll measure success, and what is in scope? That will give the team a shared basis for planning.",
+    "rationale": "启动会先对齐目标、范围和成功标准，团队才有共同依据安排工作。"
+  },
+  "words": [
+    {
+      "id": "kickoff-meeting",
+      "word": "kickoff",
+      "ipa": "/ˈkɪkɒf/",
+      "pos": "noun",
+      "meaning": "启动会",
+      "collocation": "project kickoff meeting",
+      "example": "The project kickoff meeting is scheduled for next Monday to align all stakeholders.",
+      "translation": "项目启动会定于下周一举行，以协调所有利益相关者。",
+      "note": "kickoff常用于项目、活动或计划的开始阶段，表示正式启动"
+    },
+    {
+      "id": "align-on",
+      "word": "align on",
+      "ipa": "/əˈlaɪn ɒn/",
+      "pos": "phrasal verb",
+      "meaning": "就...达成一致",
+      "collocation": "align on objectives",
+      "example": "Before assigning tasks, let’s align on what a successful launch means.",
+      "translation": "分配任务前，我们先对怎样才算发布成功达成一致。",
+      "note": "align on强调在目标、方向或理解上达成共识，常用于团队合作场景"
+    },
+    {
+      "id": "mission-tests",
+      "word": "mission tests",
+      "ipa": "/ˈmɪʃən tests/",
+      "pos": "noun phrase",
+      "meaning": "使命检验；目标检验",
+      "collocation": "mission tests",
+      "example": "The team used mission tests to check whether each option supported the project goal.",
+      "translation": "团队用目标检验来判断每个方案是否支持项目目标。",
+      "note": "这是特定项目语境中的说法；本期更常用的表达是 success criteria。"
+    },
+    {
+      "id": "success-markers",
+      "word": "success markers",
+      "ipa": "/səkˈses ˈmɑːrkərz/",
+      "pos": "noun phrase",
+      "meaning": "成功标志；衡量指标",
+      "collocation": "define success markers",
+      "example": "We need clear success markers before assigning the work.",
+      "translation": "分配工作前，我们需要明确衡量成功的指标。",
+      "note": "表示用于判断项目成果的指标；本期常用表达也可用 success criteria。"
+    },
+    {
+      "id": "video-conferencing",
+      "word": "video conferencing",
+      "ipa": "/ˈvɪdiəʊ ˈkɒnfərənsɪŋ/",
+      "pos": "noun",
+      "meaning": "视频会议",
+      "collocation": "conduct video conferencing",
+      "example": "We can use the kickoff to agree on the goal before discussing the task list.",
+      "translation": "我们可以在启动会上先确认目标，再讨论任务清单。",
+      "note": "video conferencing指通过视频技术进行的远程会议"
+    },
+    {
+      "id": "digital-collaboration",
+      "word": "digital collaboration",
+      "ipa": "/ˈdɪdʒɪtəl kəˌlæbəˈreɪʃən/",
+      "pos": "noun phrase",
+      "meaning": "数字协作",
+      "collocation": "digital collaboration tools",
+      "example": "After the kickoff, we’ll keep the scope and decisions in the shared project space.",
+      "translation": "启动会后，我们会把范围和决定记录在共享项目空间里。",
+      "note": "digital collaboration指利用数字技术和工具进行的团队协作"
+    }
+  ],
+  "structure": {
+    "original": "Gather your project team for a kickoff to align on the project's purpose and how you’ll work together to achieve it.",
+    "analysis": [
+      "主句结构为祈使句'Gather your project team for a kickoff'，其中'Gather'是动词，'your project team'是宾语，'for a kickoff'是目的状语",
+      "不定式'to align on the project's purpose and how you'll work together to achieve it'作目的状语，其中包含两个并列的宾语：'the project's purpose'和'how you'll work together to achieve it'",
+      "第二个宾语'how you'll work together to achieve it'是一个由how引导的名词性从句，其中包含不定式'to achieve it'作目的状语"
+    ],
+    "transfer": "Assemble your marketing department for a strategy session to clarify the campaign's objectives and what metrics you'll use to measure success."
+  },
+  "rewrite": {
+    "bad": "Let’s divide the tasks now. We can decide what success means after the project starts.",
+    "good": "Before we assign the work, could we agree on the project goal, how we’ll measure success, and what is in scope? That will give the team a shared basis for planning.",
+    "translation": "分配工作前，我们能否先对齐项目目标、成功标准和范围？这样团队就有共同的计划依据。",
+    "pattern": "Before we [assign the work], could we agree on [the goal, success measure, and scope]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we agree on what the portal should help customers ___?",
+      "answer": "do",
+      "why": "先定义用户要完成的任务，再讨论项目方案。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we agree on how we’ll measure ___?",
+      "answer": "success",
+      "why": "共同确定成功标准，避免各自理解不同。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Define what is in scope before assigning the ___.",
+      "answer": "work",
+      "why": "先对齐范围，再拆分项目工作。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, the marketing manager, and Tom, the sales representative, are preparing for a new product launch campaign.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah wants to focus on brand awareness while Tom prioritizes immediate lead generation.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否先明确这个门户要帮助客户完成什么？",
+      "answer": "Could we agree on what the portal should help customers do?",
+      "why": "本句练习“agree on what the portal should help customers do”在明确产品要帮助客户完成的任务时的用法。"
+    },
+    {
+      "prompt": "我们能否约定怎样衡量成功？",
+      "answer": "Could we agree on how we’ll measure success?",
+      "why": "本句练习“how we’ll measure success”在约定怎样判断项目是否成功时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "项目启动会上，大家对“项目成功”理解不同。请用英文建议先明确目标、成功标准和项目范围，再讨论分工。",
+    "options": [
+      "You're wrong. We need to focus on leads now, not brand awareness. That's what sales cares about.",
+      "Before we assign the work, could we agree on the project goal, how we’ll measure success, and what is in scope? That will give the team a shared basis for planning.",
+      "Before we assign the work, could we agree on the project goal, how we’ll measure success, and what is in scope?"
+    ],
+    "correct": 1,
+    "why": "启动会先对齐目标、范围和成功标准，团队才有共同依据安排工作。"
+  },
+  "output": {
+    "prompt": "新客户门户项目启动会上，大家对成功标准理解不同，也不清楚哪些需求属于本期范围。请用英文建议先对齐目标、衡量方式和范围，再安排分工。",
+    "sample": "Could we agree on what the portal should help customers do and how we’ll measure success? Let’s also define what is in scope before we assign the work.",
+    "check": [
+      "是否说明项目希望实现什么？",
+      "是否提出衡量成功的方式？",
+      "是否在分工前明确范围？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "agree on what the portal should help customers do",
+      "meaning": "明确产品要帮助客户完成的任务",
+      "collocation": "agree on what + product + should help users do",
+      "example": "Could we agree on what the portal should help customers do?",
+      "translation": "我们能否先明确这个门户要帮助客户完成什么？"
+    },
+    {
+      "id": "work-02",
+      "word": "how we’ll measure success",
+      "meaning": "约定怎样判断项目是否成功",
+      "collocation": "measure success by + metric",
+      "example": "Could we agree on how we’ll measure success?",
+      "translation": "我们能否约定怎样衡量成功？"
+    },
+    {
+      "id": "work-03",
+      "word": "define what is in scope before assigning the work",
+      "meaning": "分工前明确本期包含的工作",
+      "collocation": "define what is in scope",
+      "example": "Let’s also define what is in scope before we assign the work.",
+      "translation": "分配任务前，我们也先明确本期范围。"
+    }
+  ]
+}

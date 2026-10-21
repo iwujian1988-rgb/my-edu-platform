@@ -1,0 +1,328 @@
+{
+  "id": "003",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "收到尖锐反馈，先别急着回",
+  "topic": "回应工作反馈",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "How to handle reviewer comments",
+    "section": "Don’t Take it Personally",
+    "collection": "Engineering Practices",
+    "displayScope": "完整原文",
+    "type": "公开工作指南",
+    "url": "https://google.github.io/eng-practices/review/developer/handling-comments.html",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "licenseEvidence": "https://google.github.io/eng-practices/",
+    "verifiedAt": "2026-10-16",
+    "context": "原文谈代码评审中的反馈；下面将回应方法练习到一般工作沟通中。",
+    "headings": {
+      "0": "Don’t Take it Personally"
+    },
+    "paragraphs": [
+      "The goal of review is to maintain the quality of our codebase and our products. When a reviewer provides a critique of your code, think of it as their attempt to help you, the codebase, and Google, rather than as a personal attack on you or your abilities.",
+      "Sometimes reviewers feel frustrated and they express that frustration in their comments. This isn’t a good practice for reviewers, but as a developer you should be prepared for this. Ask yourself, “What is the constructive thing that the reviewer is trying to communicate to me?” and then operate as though that’s what they actually said.",
+      "Never respond in anger to code review comments. That is a serious breach of professional etiquette that will live forever in the code review tool. If you are too angry or annoyed to respond kindly, then walk away from your computer for a while, or work on something else until you feel calm enough to reply politely.",
+      "In general, if a reviewer isn’t providing feedback in a way that’s constructive and polite, explain this to them in person. If you can’t talk to them in person or on a video call, then send them a private email. Explain to them in a kind way what you don’t like and what you’d like them to do differently. If they also respond in a non-constructive way to this private discussion, or it doesn’t have the intended effect, then escalate to your manager as appropriate."
+    ],
+    "translations": [
+      "评审的目标是维持代码库和产品的质量。评审者批评你的代码时，可以把它看作对你、代码库和谷歌的帮助，而不是针对你个人或能力的攻击。",
+      "有时评审者感到沮丧，会在评论中流露出来。这对评审者来说并非好做法，但作为开发者你要为此做好准备。问问自己：‘评审者想传达的建设性意见是什么？’然后先按他确实表达了这个意思来处理。",
+      "不要带着怒气回复代码评审意见。这严重违反职业礼仪，而且回复会一直留在评审工具中。如果你太生气或烦躁，无法友善地回答，就暂时离开电脑，或做点别的事，等平静下来再礼貌回复。",
+      "一般来说，如果评审者给出的反馈缺乏建设性或礼貌，可以当面向他说明。如果不能当面或视频沟通，就发一封私下的邮件。以友善的方式告诉对方你不喜欢什么，以及希望他怎样调整。如果私下沟通仍没有建设性的回应，或没有达到预期效果，再视情况向经理反映。"
+    ],
+    "fullTextParagraphs": [
+      "When you’ve sent a CL out for review, it’s likely that your reviewer will respond with several comments on your CL. Here are some useful things to know about handling reviewer comments.",
+      "The goal of review is to maintain the quality of our codebase and our products. When a reviewer provides a critique of your code, think of it as their attempt to help you, the codebase, and Google, rather than as a personal attack on you or your abilities.",
+      "Sometimes reviewers feel frustrated and they express that frustration in their comments. This isn’t a good practice for reviewers, but as a developer you should be prepared for this. Ask yourself, “What is the constructive thing that the reviewer is trying to communicate to me?” and then operate as though that’s what they actually said.",
+      "Never respond in anger to code review comments. That is a serious breach of professional etiquette that will live forever in the code review tool. If you are too angry or annoyed to respond kindly, then walk away from your computer for a while, or work on something else until you feel calm enough to reply politely.",
+      "In general, if a reviewer isn’t providing feedback in a way that’s constructive and polite, explain this to them in person. If you can’t talk to them in person or on a video call, then send them a private email. Explain to them in a kind way what you don’t like and what you’d like them to do differently. If they also respond in a non-constructive way to this private discussion, or it doesn’t have the intended effect, then escalate to your manager as appropriate.",
+      "If a reviewer says that they don’t understand something in your code, your first response should be to clarify the code itself. If the code can’t be clarified, add a code comment that explains why the code is there. If a comment seems pointless, only then should your response be an explanation in the code review tool.",
+      "If a reviewer didn’t understand some piece of your code, it’s likely other future readers of the code won’t understand either. Writing a response in the code review tool doesn’t help future code readers, but clarifying your code or adding code comments does help them.",
+      "Writing a CL can take a lot of work. It’s often really satisfying to finally send one out for review, feel like it’s done, and be pretty sure that no further work is needed. It can be frustrating to receive comments asking for changes, especially if you don’t agree with them.",
+      "At times like this, take a moment to step back and consider if the reviewer is providing valuable feedback that will help the codebase and Google. Your first question to yourself should always be, “Do I understand what the reviewer is asking for?”",
+      "If you can’t answer that question, ask the reviewer for clarification.",
+      "And then, if you understand the comments but disagree with them, it’s important to think collaboratively, not combatively or defensively:",
+      "```txt {.bad} Bad: “No, I’m not going to do that.”",
+      "Remember, courtesy and respect should always be a first priority. If you disagree with the reviewer, find ways to collaborate: ask for clarifications, discuss pros/cons, and provide explanations of why your method of doing things is better for the codebase, users, and/or Google.",
+      "Sometimes, you might know something about the users, codebase, or CL that the reviewer doesn’t know. Fix the code where appropriate, and engage your reviewer in discussion, including giving them more context. Usually you can come to some consensus between yourself and the reviewer based on technical facts.",
+      "Your first step in resolving conflicts should always be to try to come to consensus with your reviewer. If you can’t achieve consensus, see The Standard of Code Review, which gives principles to follow in such a situation."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "rather than as a personal attack",
+      "meaning": "而不是把它当作人身攻击",
+      "explain": "rather than 对比两种理解方式；这里讨论的是对工作内容的批评。",
+      "example": "I see the comment as feedback on the draft rather than a personal attack."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "What is the constructive thing",
+      "meaning": "其中有建设性的部分是什么",
+      "explain": "constructive 指能帮助改进具体工作的意见。",
+      "example": "What is the constructive point we can take from this review?"
+    },
+    {
+      "paragraph": 1,
+      "phrase": "operate as though that’s what they actually said",
+      "meaning": "先按对方确实表达了这个意思来处理",
+      "explain": "as though 引出一种暂时采用的理解，有助于先处理问题。",
+      "example": "Let's respond as though the request is about clarity, not blame."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "walk away from your computer for a while",
+      "meaning": "暂时离开电脑",
+      "explain": "不是逃避问题，而是先冷静下来，避免留下情绪化的文字记录。",
+      "example": "I'll walk away for ten minutes before replying."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "what you’d like them to do differently",
+      "meaning": "你希望对方具体怎样调整",
+      "explain": "反馈不能只停在‘我不喜欢’，还要说出可执行的替代方式。",
+      "example": "Next time, could you point to a specific section and suggest a change?"
+    },
+    {
+      "paragraph": 3,
+      "phrase": "escalate to your manager as appropriate",
+      "meaning": "必要时向经理反映",
+      "explain": "as appropriate 表示视情况而定，并非每个分歧都需要升级。",
+      "example": "If the issue continues, we may need to escalate it to our manager."
+    }
+  ],
+  "scenario": {
+    "title": "Responding to a sharp comment on a proposal",
+    "english": [
+      "Jules submits a project proposal. A reviewer writes, “This timeline makes no sense. Did you even check the dependencies?” Jules feels embarrassed and starts typing an angry reply.",
+      "Instead, Jules pauses. The useful question may be whether the timeline includes the approval step. Jules checks the plan and replies, “You're right that I missed the approval step. I've added it and moved the launch date by a week.”",
+      "Later, Jules privately asks the reviewer to name the specific issue in future comments so that the team can fix it faster."
+    ],
+    "chinese": [
+      "Jules 提交项目方案后，评审者留言：‘这个时间表完全不合理。你到底有没有核对依赖事项？’Jules 感到难堪，开始写一封带着怒气的回复。",
+      "Jules 暂停了一下。对方有用的问题可能是时间表漏了审批步骤。Jules 检查计划后回复：‘你说得对，我漏了审批这一步。我已经补上，并把上线日期推迟一周。’",
+      "之后，Jules 私下请评审者下次指出具体问题，方便团队更快修改。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "评审者说你的项目时间表“完全不合理”，并质疑你是否核对过依赖事项。你确实漏了审批步骤。请用两句英文承认遗漏，并说明你已经做了什么。",
+    "sample": "You're right that I missed the approval step. I've added it and updated the timeline.",
+    "rationale": "第一句确认具体遗漏，第二句说明已采取的修改；不必回应对方的语气。"
+  },
+  "words": [
+    {
+      "id": "critique",
+      "word": "critique",
+      "ipa": "/krɪˈtiːk/",
+      "pos": "n.",
+      "meaning": "批评；评议",
+      "collocation": "a critique of the proposal",
+      "example": "The review included a critique of the project timeline.",
+      "translation": "评审中包含对项目时间表的批评。",
+      "note": "可指对作品或方案的具体评议。"
+    },
+    {
+      "id": "constructive",
+      "word": "constructive",
+      "ipa": "/kənˈstrʌktɪv/",
+      "pos": "adj.",
+      "meaning": "建设性的",
+      "collocation": "constructive feedback",
+      "example": "Can you turn that comment into constructive feedback?",
+      "translation": "你能把那条评论转成建设性的反馈吗？",
+      "note": "常与 feedback、discussion 搭配。"
+    },
+    {
+      "id": "frustrated",
+      "word": "frustrated",
+      "ipa": "/ˈfrʌstreɪtɪd/",
+      "pos": "adj.",
+      "meaning": "沮丧的；受挫的",
+      "collocation": "feel frustrated",
+      "example": "I felt frustrated after reading the comment.",
+      "translation": "读完那条评论后我感到沮丧。",
+      "note": "描述感受，不等于认定对方有恶意。"
+    },
+    {
+      "id": "politely",
+      "word": "politely",
+      "ipa": "/pəˈlaɪtli/",
+      "pos": "adv.",
+      "meaning": "礼貌地",
+      "collocation": "reply politely",
+      "example": "Please reply politely even if you disagree.",
+      "translation": "即使不同意，也请礼貌回复。",
+      "note": "修饰动作 reply。"
+    },
+    {
+      "id": "specific",
+      "word": "specific",
+      "ipa": "/spəˈsɪfɪk/",
+      "pos": "adj.",
+      "meaning": "具体的",
+      "collocation": "a specific suggestion",
+      "example": "Could you give a specific suggestion for the opening paragraph?",
+      "translation": "你能对开头一段提出具体建议吗？",
+      "note": "让反馈可以转化为修改动作。"
+    },
+    {
+      "id": "intended",
+      "word": "intended",
+      "ipa": "/ɪnˈtendɪd/",
+      "pos": "adj.",
+      "meaning": "预期的",
+      "collocation": "the intended effect",
+      "example": "The message did not have the intended effect.",
+      "translation": "这条消息没有达到预期效果。",
+      "note": "常用于结果与目标的比较。"
+    }
+  ],
+  "structure": {
+    "original": "If you are too angry or annoyed to respond kindly, then walk away from your computer for a while, or work on something else until you feel calm enough to reply politely.",
+    "analysis": [
+      "If ... then ...：先说触发条件，再说合适动作。",
+      "too ... to ...：情绪太强，以至于当下不能友善回复。",
+      "until you feel calm enough ...：等到能够礼貌回复时再继续。"
+    ],
+    "transfer": "If I am too frustrated to write a useful reply, I'll review the facts first and respond later."
+  },
+  "rewrite": {
+    "bad": "You’re just trying to make me look bad. I’m not changing anything.",
+    "good": "You’re right that I missed the approval step. I’ve added it and updated the timeline.",
+    "translation": "你说得对，我确实漏了审批步骤。我已经补上并更新了时间表。",
+    "pattern": "You’re right that I missed [the specific issue]. I’ve [made the correction] and [updated the related work]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "You're right that I missed the approval ___.",
+      "answer": "step",
+      "why": "承认具体遗漏，让对方知道你理解了反馈内容。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I've ___ the missing step and updated the timeline.",
+      "answer": "added",
+      "why": "I've added... 用现在完成时说明已经完成的修改。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ve added the approval step and ___ the timeline.",
+      "answer": "updated",
+      "why": "过去时说明已完成的修正和同步更新。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "What is the constructive thing that the reviewer is trying to communicate?",
+      "why": "注意 constructive 和 communicate 的重音。"
+    },
+    {
+      "id": "d2",
+      "text": "I missed the approval step and updated the timeline.",
+      "why": "按动作顺序记录：发现遗漏，再更新。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你说得对，我确实漏了审批步骤。",
+      "answer": "You're right that I missed the approval step.",
+      "why": "本句练习“You’re right that…”在承认对方指出的问题属实时的用法。"
+    },
+    {
+      "prompt": "我已经把审批步骤补进时间表。",
+      "answer": "I've added the approval step to the timeline.",
+      "why": "用现在完成时说明已经完成的修改，并交代同步更新了什么。"
+    }
+  ],
+  "choice": {
+    "prompt": "评审者说你的项目时间表‘完全不合理’，并质疑你是否核对过依赖事项。你确实漏了审批步骤。请先写一句英文回复。",
+    "options": [
+      "Your comment is rude and wrong.",
+      "You're right that I missed the approval step. I've added it and updated the timeline.",
+      "Your tone is unacceptable, so I won't fix anything."
+    ],
+    "correct": 1,
+    "why": "直接确认可核实的遗漏和修改动作，不回应刺耳的语气。"
+  },
+  "output": {
+    "prompt": "同事指出你的客户演示稿没有说明数据来源。你检查后发现确实漏了。请用英文承认问题，并说明你会怎样补上。",
+    "sample": "You're right that I left out the data source. I'll add it to the slide and update the speaker notes.",
+    "check": [
+      "是否承认了具体遗漏？",
+      "是否给出明确的修正动作？",
+      "是否聚焦工作内容，而非评价对方？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非谷歌员工原声。",
+    "illustration": "工作场景插画 · 收到反馈后冷静核对方案"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文/译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "optionalWords": [
+    {
+      "id": "etiquette",
+      "word": "etiquette",
+      "ipa": "/ˈetɪkət/",
+      "pos": "n.",
+      "meaning": "礼仪；行为规范",
+      "collocation": "professional etiquette",
+      "example": "A calm reply is part of professional etiquette.",
+      "translation": "冷静回复是职业礼仪的一部分。",
+      "note": "通常作不可数名词。"
+    },
+    {
+      "id": "escalate",
+      "word": "escalate",
+      "ipa": "/ˈeskəleɪt/",
+      "pos": "v.",
+      "meaning": "向上反映；升级处理",
+      "collocation": "escalate an issue",
+      "example": "We can escalate the issue if private discussion does not help.",
+      "translation": "如果私下沟通无效，我们可以向上反映这个问题。",
+      "note": "根据情况使用，不等于立即投诉。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "You’re right that…",
+      "meaning": "承认对方指出的问题属实",
+      "collocation": "You’re right that + 完整句子",
+      "example": "You're right that I missed the approval step.",
+      "translation": "你说得对，我确实漏了审批步骤。"
+    },
+    {
+      "id": "work-02",
+      "word": "I've added…",
+      "meaning": "说明自己已经补上了什么",
+      "collocation": "I've added + 遗漏的信息",
+      "example": "I've added the approval step to the timeline.",
+      "translation": "我已经把审批步骤补进时间表。"
+    },
+    {
+      "id": "work-03",
+      "word": "update the…",
+      "meaning": "同步修改相关材料",
+      "collocation": "update the + 相关文件或记录",
+      "example": "I’ve added the approval step and updated the timeline.",
+      "translation": "我补上了审批步骤，也更新了时间表。"
+    }
+  ]
+}

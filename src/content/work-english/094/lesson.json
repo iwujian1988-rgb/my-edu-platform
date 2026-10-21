@@ -1,0 +1,299 @@
+{
+  "id": "094",
+  "version": 1,
+  "status": "draft",
+  "company": "37signals",
+  "companyZh": "/ Basecamp",
+  "title": "37signals 的工作方式：员工如何安排日常工作",
+  "topic": "37signals 的工作方式：员工如何安排日常工作",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "How We Work",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://basecamp.com/handbook/how-we-work",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "paragraphs": [
+      "37signals is a fully distributed company. Our team works from all over the world, across 5 continents. We don’t care where employees choose to live and work, just that they’re here to do great work on exceptional products, alongside a world-class team. We’ve been remote since we started, and our founders literally wrote the book on the subject.",
+      "You can work from anywhere, but please be sure to inform your People Ops team when you move – especially across state or country borders. It may affect your or the company’s tax situation.",
+      "We work in 6-week cycles at 37signals. This fixed cadence serves to give us an internal sense of urgency, to keep projects from ballooning, and to provide us with a regular interval to make decisions about what we’re working on.",
+      "Our cycle structure is particularly important for the product teams, since they approach feature and product development with scope and budget in mind up front. For more on this, all employees are encouraged to read Shape Up.",
+      "All teams operate on the same 6-week cadence.",
+      "In between each cycle, we spend two weeks cooling down. That’s when product teams deal with bugs, when everyone writes up what they’ve worked on, and when teams decide what to tackle next. Sometimes big batch projects extend into cool down, but we try to avoid that."
+    ],
+    "translations": [
+      "37signals是一家完全分布式公司。我们的团队成员遍布全球五大洲。我们不关心员工选择在哪里生活和工作，只要求他们能与世界一流的团队合作，在卓越的产品上做出杰出的工作。我们从创立之初就实行远程办公，而我们的创始人 literally（字面上）就写了关于这个主题的书。",
+      "你可以从任何地方工作，但请务必在你搬家时通知你的人力运营团队——尤其是在跨越州或国家边界时。这可能影响你或公司的税务状况。",
+      "在37signals，我们以6周为一个工作周期。这种固定的节奏给予我们一种内在的紧迫感，防止项目无限膨胀，并为我们提供定期评估工作内容的决策间隔。",
+      "我们的周期结构对产品团队尤为重要，因为他们从一开始就考虑范围和预算来进行功能和产品开发。关于这一点，我们鼓励所有员工阅读《Shape Up》一书。",
+      "所有团队都遵循相同的6周节奏。",
+      "在每个周期之间，我们会用两周时间进行冷却期。在这期间，产品团队处理bug，每个人记录自己的工作内容，团队决定下一步要处理什么。有时大型批量项目会延伸到冷却期，但我们尽量避免这种情况。"
+    ],
+    "fullTextParagraphs": [
+      "37signals is a fully distributed company. Our team works from all over the world, across 5 continents. We don’t care where employees choose to live and work, just that they’re here to do great work on exceptional products, alongside a world-class team. We’ve been remote since we started, and our founders literally wrote the book on the subject.",
+      "You can work from anywhere, but please be sure to inform your People Ops team when you move – especially across state or country borders. It may affect your or the company’s tax situation.",
+      "We work in 6-week cycles at 37signals. This fixed cadence serves to give us an internal sense of urgency, to keep projects from ballooning, and to provide us with a regular interval to make decisions about what we’re working on.",
+      "Our cycle structure is particularly important for the product teams, since they approach feature and product development with scope and budget in mind up front. For more on this, all employees are encouraged to read Shape Up.",
+      "All teams operate on the same 6-week cadence.",
+      "In between each cycle, we spend two weeks cooling down. That’s when product teams deal with bugs, when everyone writes up what they’ve worked on, and when teams decide what to tackle next. Sometimes big batch projects extend into cool down, but we try to avoid that.",
+      "Since we work asynchronously and remotely, it’s important to radiate information about what we’re working on. We have 4 chief mechanisms for doing that.",
+      "What did you work on today? You’ll be asked this question every afternoon, and you’re required to answer at least twice a week. You should describe what you’re working on and give some context about why you’re working on it or why it’s important.",
+      "What will you be working on this week? You’ll be asked this question every Monday morning, and you’re required to answer every week.",
+      "Daily and weekly check-ins are subdivided by department so you’re only subscribed to your team’s answers. You’re of course free to subscribe to other team check-ins, but you’re not obligated to do so if you find it too noisy.",
+      "Every team submits a Kickoff for the upcoming cycle, and they’re due the second Friday of the cooldown period. Teams use their kickoff to summarize the work they have scheduled for the upcoming cycle.",
+      "Heartbeats are required of every team, and they’re due on the first Friday of the cooldown period. Teams use their heartbeat to summarize and celebrate the work they completed during the previous cycle, and the work described in the cycle heartbeat should line up (more or less) with the work you scheduled in the cycle kickoff.",
+      "These 4 mechanisms work together to free individuals and teams to run their days and cycles with confidence and independence. We have six opportunities per year to make big decisions about what to work on, and the rest of the time should chiefly be spent carrying out those short-term plans. By having clear expectations for communication, it’s easier for everyone to build trust in where we’re going and why.",
+      "Heartbeats and Kickoffs are assigned to team leads well in advance of every cycle. Heartbeats, kickoffs, and automatic check-in answers can all be found in the What Works project for the current year.",
+      "Most of the work you do at 37signals shouldn’t require you to be in constant communication throughout the entire day with someone.",
+      "You should collaborate as though most things you ask of others will get an answer eventually, but not necessarily right this second. Your first choice of action should be to post a message, a todo, or a document about what you need to explain or need to know. Then others can read it on their schedule, when the natural lulls of the day allow it, rather than being interrupted right in their peak flow time.",
+      "Of course there will be times when you do need to tightly collaborate with someone in real time, but those cases should be infrequent. We have pings, video calls, screen-sharing, or even in-person collaboration for when async isn’t efficient.",
+      "We rely on everyone at 37signals to do a lot of self-management. People who do this well are managers of one, and we expect everyone to embody this principle.",
+      "That means setting your own direction when one isn’t given; and determining what needs to be done, and doing it, without waiting for someone to tell you to. A manager of one will spend their time well when left to their own devices. There’s always more work to be done, always more initiatives to kick off, and always more improvement to be had.",
+      "We limit ourselves to a 40-hour (32-hour in the summer) work week. Keeping our hours at work limited forces us to prioritize the work that really matters. A healthy amount of sleep and a rich and rewarding life outside of work should not be squandered for a few more hours at work.",
+      "There are occasions when teams or individuals need to work off-hours for on-call, maintenance, or emergencies. This time should not be in addition to your normal working hours. Use your discretion to take time off to make up for the additional hours you put in during the week."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "fully distributed company",
+      "meaning": "完全分布式公司",
+      "explain": "指员工分布在全球各地，没有固定办公地点的企业组织形式",
+      "example": "Many tech startups are adopting the fully distributed company model to attract global talent."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "6-week cycles",
+      "meaning": "六周工作周期",
+      "explain": "37signals采用的工作节奏，每六周为一个完整的工作周期，包含工作时间和休息时间",
+      "example": "Our team operates in 6-week cycles to maintain productivity and prevent project creep."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "scope and budget in mind",
+      "meaning": "考虑范围和预算",
+      "explain": "在项目开始前就明确工作范围和预算限制，避免项目无限扩展",
+      "example": "Before starting any new initiative, managers must approach it with scope and budget in mind."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "cool down",
+      "meaning": "冷却期/休整期",
+      "explain": "指两个工作周期之间的两周时间，用于处理遗留问题、总结工作和规划下一阶段",
+      "example": "After the intense launch phase, the team welcomed the cool down period to recharge and plan."
+    }
+  ],
+  "scenario": {
+    "title": "Keeping the current six-week cycle focused",
+    "english": [
+      "The team is midway through a six-week work cycle with agreed priorities.",
+      "A new idea has come up, but the team has not assessed whether it should displace the work already planned.",
+      "You suggest keeping the current cycle focused and adding the idea to the next cycle’s planning list."
+    ],
+    "chinese": [
+      "团队正在进行一个六周工作周期，当前优先事项已经确定。",
+      "这时出现了一个新想法，但团队还没有评估是否要调整现有计划。",
+      "你建议先完成当前重点，再把新想法放到下个周期评估。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "今天的账单修复会阻塞发布，你需要留出专注时间；如果进度影响客服排班，要及时同步。请用英文说明今天先做什么、怎样保护专注时间，以及何时会更新进展。",
+    "sample": "I’m focusing on the billing fix because it blocks the release. I’m blocking the morning to finish the analysis before the review. I’ll post an update if the fix changes the support team’s schedule.",
+    "rationale": "讲清今天的优先工作、专注安排和影响他人时的同步方式。"
+  },
+  "words": [
+    {
+      "id": "distributed-company",
+      "word": "distributed",
+      "ipa": "/dɪˈstrɪbjuːtɪd/",
+      "pos": "adjective",
+      "meaning": "分布式的",
+      "collocation": "distributed team/company/workforce",
+      "example": "Our distributed team spans across 12 countries.",
+      "translation": "我们的分布式团队遍布12个国家。",
+      "note": "常用于描述地理位置分散的组织结构，强调远程协作能力"
+    },
+    {
+      "id": "exceptional-products",
+      "word": "exceptional",
+      "ipa": "/ɪkˈsepʃənl/",
+      "pos": "adjective",
+      "meaning": "卓越的，杰出的",
+      "collocation": "exceptional quality/products/service",
+      "example": "The company is known for delivering exceptional customer service.",
+      "translation": "该公司以其卓越的客户服务而闻名。",
+      "note": "比'excellent'程度更深，表示超出预期的优秀表现"
+    },
+    {
+      "id": "fixed-cadence",
+      "word": "cadence",
+      "ipa": "/ˈkeɪdns/",
+      "pos": "noun",
+      "meaning": "节奏，韵律",
+      "collocation": "work cadence/project cadence/rhythm",
+      "example": "The team maintains a steady cadence to meet quarterly goals.",
+      "translation": "团队保持稳定的节奏以实现季度目标。",
+      "note": "在项目管理中指工作节奏和频率，帮助团队保持高效运转"
+    },
+    {
+      "id": "ballooning-projects",
+      "word": "ballooning",
+      "ipa": "/bəˈluːnɪŋ/",
+      "pos": "verb",
+      "meaning": "膨胀，扩大",
+      "collocation": "ballooning costs/projects/time",
+      "example": "Without proper oversight, project timelines can start ballooning.",
+      "translation": "如果没有适当的监督，项目时间可能会开始膨胀。",
+      "note": "形象地描述项目规模、成本或时间不受控制地增长"
+    },
+    {
+      "id": "feature-development",
+      "word": "feature",
+      "ipa": "/ˈfiːtʃər/",
+      "pos": "noun",
+      "meaning": "功能，特性",
+      "collocation": "new features/feature development/feature set",
+      "example": "The latest software update includes several requested features.",
+      "translation": "最新的软件更新包含几个被请求的功能。",
+      "note": "在产品开发中指产品的具体功能或特性"
+    },
+    {
+      "id": "batch-projects",
+      "word": "batch",
+      "ipa": "/bætʃ/",
+      "pos": "noun",
+      "meaning": "一批，一组",
+      "collocation": "batch processing/batch projects/batch production",
+      "example": "The team handles client requests in batch to improve efficiency.",
+      "translation": "团队批量处理客户请求以提高效率。",
+      "note": "指将多个任务或项目集中在一起处理的工作方式"
+    }
+  ],
+  "structure": {
+    "original": "We don’t care where employees choose to live and work, just that they’re here to do great work on exceptional products, alongside a world-class team.",
+    "analysis": [
+      "主句结构为'We don't care...just that...'，表示公司不关心员工的生活工作地点，只关心他们的工作表现",
+      "where引导的从句'where employees choose to live and work'作为care的宾语，表示员工选择生活和工作的地点",
+      "that引导的从句'that they're here to do great work on exceptional products, alongside a world-class team'作为just的宾语，强调公司真正关心的是员工能在这里与一流团队合作，在卓越产品上做出出色工作"
+    ],
+    "transfer": "We don't mind when employees decide to start and finish their day, just that they deliver high-quality results on innovative projects, with a talented group of colleagues."
+  },
+  "rewrite": {
+    "bad": "Drop your current work and help Mark finish his report right now.",
+    "good": "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should move forward.",
+    "translation": "我们先把当前周期的重点做完。新想法可以放进下一周期的规划清单，到时再决定是否推进。",
+    "pattern": "Let’s keep [the current cycle] focused and add [new ideas] to [the next planning cycle]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’m ___ on the billing fix because it blocks the release.",
+      "answer": "focusing",
+      "why": "用业务影响解释工作优先级。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’ll post an update if the fix changes the support team’s ___.",
+      "answer": "schedule",
+      "why": "同步与他人协作有关的变化。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’m blocking the ___ to finish the analysis before the review.",
+      "answer": "morning",
+      "why": "明确专注时间，减少无计划打断。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "37signals is a fully distributed company.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Our team works from all over the world, across 5 continents.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我今天先处理账单修复，因为它会阻塞发布。",
+      "answer": "I’m focusing on the billing fix because it blocks the release.",
+      "why": "本句练习“choose the work that matters most today”在选出今天最重要的工作时的用法。"
+    },
+    {
+      "prompt": "如果修复影响客服团队的排班，我会发出更新。",
+      "answer": "I’ll post an update if the fix changes the support team’s schedule.",
+      "why": "本句练习“share progress when it affects someone else”在在进度影响他人时及时同步时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队使用六周工作周期安排项目。请用英文向同事说明下一步：先看当前周期的优先事项，再把新想法放进后续周期评估。",
+    "options": [
+      "You need to drop everything and help Mark with his report right now. Your technical issue can wait.",
+      "Let’s keep the current cycle focused on its planned priorities. We can add the new idea to the next cycle’s planning list and decide then whether it should move forward.",
+      "Let’s keep the current cycle focused on its planned priorities."
+    ],
+    "correct": 1,
+    "why": "依照 37signals 的六周周期节奏处理新想法，不编造同事必须放下技术问题去帮别人的安排。"
+  },
+  "output": {
+    "prompt": "你今天要修复一个会影响客户续费的账单错误，同时还要参加例行周会。请用英文说明工作的优先顺序、如何保护专注时间，以及什么情况下会通知团队调整安排。",
+    "sample": "I’m prioritizing the billing error because it could affect customer renewals. I’ll block the morning for focused work. If the fix takes longer than expected or changes the team’s plans, I’ll let everyone know.",
+    "check": [
+      "是否说明当前最重要的工作？",
+      "是否为专注任务留出时间？",
+      "是否说明什么情况下需要同步进度？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "choose the work that matters most today",
+      "meaning": "选出今天最重要的工作",
+      "collocation": "choose + work that matters",
+      "example": "I’m focusing on the billing fix because it blocks the release.",
+      "translation": "我今天先处理账单修复，因为它会阻塞发布。"
+    },
+    {
+      "id": "work-02",
+      "word": "share progress when it affects someone else",
+      "meaning": "在进度影响他人时及时同步",
+      "collocation": "share progress when + condition",
+      "example": "I’ll post an update if the fix changes the support team’s schedule.",
+      "translation": "如果修复影响客服团队的排班，我会发出更新。"
+    },
+    {
+      "id": "work-03",
+      "word": "protect time for focused work",
+      "meaning": "为专注工作留出时间",
+      "collocation": "protect time for + work",
+      "example": "I’m blocking the morning to finish the analysis before the review.",
+      "translation": "我把上午留出来，在评审前完成分析。"
+    }
+  ]
+}

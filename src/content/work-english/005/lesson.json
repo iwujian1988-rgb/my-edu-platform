@@ -1,0 +1,332 @@
+{
+  "id": "005",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "文字里争不清，什么时候该开个会？",
+  "topic": "分歧升级与会议确认",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "The Standard of Code Review",
+    "section": "Resolving Conflicts",
+    "collection": "Engineering Practices",
+    "displayScope": "完整原文",
+    "type": "公开工作指南",
+    "url": "https://google.github.io/eng-practices/review/reviewer/standard.html",
+    "license": "CC BY 3.0",
+    "licenseUrl": "https://creativecommons.org/licenses/by/3.0/",
+    "licenseEvidence": "https://google.github.io/eng-practices/",
+    "verifiedAt": "2026-10-16",
+    "context": "原文讨论代码评审的分歧解决；下面将表达迁移到一般项目协作。",
+    "headings": {
+      "0": "Resolving Conflicts"
+    },
+    "maxParagraphs": 3,
+    "paragraphs": [
+      "In any conflict on a code review, the first step should always be for the developer and reviewer to try to come to consensus, based on the contents of this document and the other documents in The CL Author’s Guide and this Reviewer Guide.",
+      "When coming to consensus becomes especially difficult, it can help to have a face-to-face meeting or a video conference between the reviewer and the author, instead of just trying to resolve the conflict through code review comments. (If you do this, though, make sure to record the results of the discussion as a comment on the CL, for future readers.)",
+      "If that doesn’t resolve the situation, the most common way to resolve it would be to escalate. Often the escalation path is to a broader team discussion, having a Technical Lead weigh in, asking for a decision from a maintainer of the code, or asking an Eng Manager to help out. Don’t let a CL sit around because the author and the reviewer can’t come to an agreement."
+    ],
+    "translations": [
+      "代码评审中出现任何分歧时，第一步都应是开发者和评审者依据本文档以及《代码修改作者指南》和《评审者指南》的内容，尝试达成共识。",
+      "如果尤其难以达成共识，评审者和作者可以当面或通过视频会议讨论，不要只靠代码评审评论来解决冲突。（不过，如果这样做，务必把讨论结果以评论形式记录在代码修改中，供之后的人查阅。）",
+      "如果这样仍无法解决，最常见的办法是向上协调。通常可以扩大到团队讨论、请技术负责人给出意见、请代码维护者作决定，或请工程经理帮忙。不要因为作者和评审者无法达成一致，就让这项代码修改一直搁置。"
+    ],
+    "fullTextParagraphs": [
+      "The primary purpose of code review is to make sure that the overall code health of Google’s code base is improving over time. All of the tools and processes of code review are designed to this end.",
+      "In order to accomplish this, a series of trade-offs have to be balanced.",
+      "First, developers must be able to make progress on their tasks. If you never submit an improvement to the codebase, then the codebase never improves. Also, if a reviewer makes it very difficult for any change to go in, then developers are disincentivized to make improvements in the future.",
+      "On the other hand, it is the duty of the reviewer to make sure that each CL is of such a quality that the overall code health of their codebase is not decreasing as time goes on. This can be tricky, because often, codebases degrade through small decreases in code health over time, especially when a team is under significant time constraints and they feel that they have to take shortcuts in order to accomplish their goals.",
+      "Also, a reviewer has ownership and responsibility over the code they are reviewing. They want to ensure that the codebase stays consistent, maintainable, and all of the other things mentioned in “What to look for in a code review.”",
+      "Thus, we get the following rule as the standard we expect in code reviews:",
+      "In general, reviewers should favor approving a CL once it is in a state where it definitely improves the overall code health of the system being worked on, even if the CL isn’t perfect.",
+      "That is the senior principle among all of the code review guidelines.",
+      "There are limitations to this, of course. For example, if a CL adds a feature that the reviewer doesn’t want in their system, then the reviewer can certainly deny approval even if the code is well-designed.",
+      "A key point here is that there is no such thing as “perfect” code—there is only better code. Reviewers should not require the author to polish every tiny piece of a CL before granting approval. Rather, the reviewer should balance out the need to make forward progress compared to the importance of the changes they are suggesting. Instead of seeking perfection, what a reviewer should seek is continuous improvement. A CL that, as a whole, improves the maintainability, readability, and understandability of the system shouldn’t be delayed for days or weeks because it isn’t “perfect.”",
+      "Reviewers should always feel free to leave comments expressing that something could be better, but if it’s not very important, prefix it with something like “Nit: “ to let the author know that it’s just a point of polish that they could choose to ignore.",
+      "Note: Nothing in this document justifies checking in CLs that definitely worsen the overall code health of the system. The only time you would do that would be in an emergency.",
+      "Code review can have an important function of teaching developers something new about a language, a framework, or general software design principles. It’s always fine to leave comments that help a developer learn something new. Sharing knowledge is part of improving the code health of a system over time. Just keep in mind that if your comment is purely educational, but not critical to meeting the standards described in this document, prefix it with “Nit: “ or otherwise indicate that it’s not mandatory for the author to resolve it in this CL.",
+      "Technical facts and data overrule opinions and personal preferences.",
+      "On matters of style, the style guide is the absolute authority. Any purely style point (whitespace, etc.) that is not in the style guide is a matter of personal preference. The style should be consistent with what is there. If there is no previous style, accept the author’s.",
+      "Aspects of software design are almost never a pure style issue or just a personal preference. They are based on underlying principles and should be weighed on those principles, not simply by personal opinion. Sometimes there are a few valid options. If the author can demonstrate (either through data or based on solid engineering principles) that several approaches are equally valid, then the reviewer should accept the preference of the author. Otherwise the choice is dictated by standard principles of software design.",
+      "If no other rule applies, then the reviewer may ask the author to be consistent with what is in the current codebase, as long as that doesn’t worsen the overall code health of the system.",
+      "In any conflict on a code review, the first step should always be for the developer and reviewer to try to come to consensus, based on the contents of this document and the other documents in The CL Author’s Guide and this Reviewer Guide.",
+      "When coming to consensus becomes especially difficult, it can help to have a face-to-face meeting or a video conference between the reviewer and the author, instead of just trying to resolve the conflict through code review comments. (If you do this, though, make sure to record the results of the discussion as a comment on the CL, for future readers.)",
+      "If that doesn’t resolve the situation, the most common way to resolve it would be to escalate. Often the escalation path is to a broader team discussion, having a Technical Lead weigh in, asking for a decision from a maintainer of the code, or asking an Eng Manager to help out. Don’t let a CL sit around because the author and the reviewer can’t come to an agreement."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "try to come to consensus",
+      "meaning": "先尝试达成共识",
+      "explain": "come to consensus 指经过讨论形成共同判断，并非一方直接压过另一方。",
+      "example": "Let's try to come to consensus on the launch criteria."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "a face-to-face meeting or a video conference",
+      "meaning": "当面会议或视频会议",
+      "explain": "文字讨论打转时，换到同步沟通可能更快澄清分歧。",
+      "example": "Could we discuss this in a short video call?"
+    },
+    {
+      "paragraph": 1,
+      "phrase": "instead of just trying to resolve the conflict through code review comments",
+      "meaning": "不要只靠评论区解决分歧",
+      "explain": "instead of 对比替代做法；原文仍要求会后留存书面结果。",
+      "example": "Let's talk live instead of adding another long email thread."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "record the results of the discussion",
+      "meaning": "记录讨论结果",
+      "explain": "讨论过程可以口头进行，结果应让未参会的人也能查到。",
+      "example": "I'll record the decision in the project document."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "escalate",
+      "meaning": "向更大范围或上级协调",
+      "explain": "这里是分歧无法解决后的下一步，包括团队、技术负责人或经理。",
+      "example": "If we still disagree, let's escalate the decision to the project lead."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "sit around",
+      "meaning": "一直搁置",
+      "explain": "口语表达，指事情迟迟没有进展。",
+      "example": "We shouldn't let the proposal sit around for another week."
+    }
+  ],
+  "scenario": {
+    "title": "Two teams disagree on a launch date",
+    "english": [
+      "The sales team wants to launch on Monday. The product team says an important test is still unfinished. Their email thread is getting longer, but neither side has changed its position.",
+      "Nora suggests a short video call. They review the test result and agree that the launch should move to Thursday. Nora writes the decision and its reason in the project document after the call.",
+      "If the test had remained uncertain, the teams would have asked the project lead to decide instead of leaving the launch date open."
+    ],
+    "chinese": [
+      "销售团队希望周一上线，产品团队说还有一项重要测试没有完成。邮件越写越长，双方立场却没有改变。",
+      "Nora 建议开一个简短视频会议。双方核对测试结果，同意把上线时间改到周四。会后 Nora 把决定和理由写进项目文档。",
+      "如果测试结果仍不确定，团队会请项目负责人作决定，而不是让上线日期一直悬而未决。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "两组同事在邮件里反复讨论上线时间，仍没有结果。请用英文提议开个短会，并说明会后会把决定记录下来。",
+    "sample": "We seem to be stuck in the email thread. Could we have a short call today? I’ll record the decision in the project document afterward.",
+    "rationale": "讨论停滞时提议同步沟通，并明确会后如何留下决定记录。"
+  },
+  "words": [
+    {
+      "id": "consensus",
+      "word": "consensus",
+      "ipa": "/kənˈsensəs/",
+      "pos": "n.",
+      "meaning": "共识",
+      "collocation": "come to consensus",
+      "example": "We need to come to consensus on the launch date.",
+      "translation": "我们需要就上线日期达成共识。",
+      "note": "常用 come to / reach a consensus。"
+    },
+    {
+      "id": "conflict",
+      "word": "conflict",
+      "ipa": "/ˈkɑːnflɪkt/",
+      "pos": "n.",
+      "meaning": "分歧；冲突",
+      "collocation": "resolve a conflict",
+      "example": "A short meeting helped resolve the conflict.",
+      "translation": "一次短会帮助解决了分歧。",
+      "note": "这里指工作判断不一致。"
+    },
+    {
+      "id": "conference",
+      "word": "conference",
+      "ipa": "/ˈkɑːnfərəns/",
+      "pos": "n.",
+      "meaning": "会议",
+      "collocation": "video conference",
+      "example": "Let's schedule a video conference with both teams.",
+      "translation": "我们安排两组一起开个视频会。",
+      "note": "在工作沟通中可指视频会议。"
+    },
+    {
+      "id": "record",
+      "word": "record",
+      "ipa": "/rɪˈkɔːrd/",
+      "pos": "v.",
+      "meaning": "记录",
+      "collocation": "record the results",
+      "example": "Please record the final decision in the project document.",
+      "translation": "请把最终决定记录在项目文档中。",
+      "note": "动词读音重音在第二音节。"
+    },
+    {
+      "id": "escalate",
+      "word": "escalate",
+      "ipa": "/ˈeskəleɪt/",
+      "pos": "v.",
+      "meaning": "升级处理；向上协调",
+      "collocation": "escalate a decision",
+      "example": "We may need to escalate the decision to the project lead.",
+      "translation": "我们可能需要请项目负责人协调决定。",
+      "note": "先尝试直接沟通，仍无解时再升级。"
+    },
+    {
+      "id": "discussion",
+      "word": "discussion",
+      "ipa": "/dɪˈskʌʃən/",
+      "pos": "n.",
+      "meaning": "讨论",
+      "collocation": "record the discussion",
+      "example": "I'll summarize the discussion after the call.",
+      "translation": "通话后我会总结讨论内容。",
+      "note": "讨论结果和决定应写清楚。"
+    }
+  ],
+  "structure": {
+    "original": "When coming to consensus becomes especially difficult, it can help to have a face-to-face meeting or a video conference between the reviewer and the author, instead of just trying to resolve the conflict through code review comments.",
+    "analysis": [
+      "When ... becomes difficult：说明何时需要改变沟通方式。",
+      "it can help to ...：提出一种可能有效的方法，语气不过度绝对。",
+      "instead of ...：指出替代掉的低效方式。"
+    ],
+    "transfer": "When the email thread stops moving us forward, it can help to have a short video call instead of sending more messages."
+  },
+  "rewrite": {
+    "bad": "We've argued enough. The manager can decide.",
+    "good": "We seem to be stuck in the email thread. Could we discuss this in a short call and record the decision afterward?",
+    "translation": "我们在邮件讨论里似乎没有进展。能否开个短会讨论，并在会后记录决定？",
+    "pattern": "We seem to be stuck on ... . Could we ... and record ... afterward?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We seem to be going in ___ on the launch date.",
+      "answer": "circles",
+      "why": "go in circles 描述讨论反复但没有进展。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we have a short call to review the test ___?",
+      "answer": "results",
+      "why": "说明短会要解决的具体事项。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll ___ the decision and the reason afterward.",
+      "answer": "record",
+      "why": "说明会后留下书面记录。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Could we discuss this in a short video call?",
+      "why": "听清 could we 的提议语气。"
+    },
+    {
+      "id": "d2",
+      "text": "Please record the results of the discussion.",
+      "why": "注意 results 和 discussion 的词尾。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们关于上线日期的讨论似乎一直没有进展。",
+      "answer": "We seem to be going in circles on the launch date.",
+      "why": "委婉说明邮件讨论陷入重复。"
+    },
+    {
+      "prompt": "我们能否开个短会一起看一下测试结果？",
+      "answer": "Could we have a short call to review the test results?",
+      "why": "提出短会，并说明会议要处理的事情。"
+    }
+  ],
+  "choice": {
+    "prompt": "两组同事在邮件里反复讨论上线时间，仍没有结果。请用英文提议开个短会，并说明会后会把决定记录下来。",
+    "options": [
+      "We've argued enough. The manager can decide.",
+      "We seem to be stuck in the email thread. Could we have a short call today? I’ll record the decision in the project document afterward.",
+      "Leave the decision open until someone gives up."
+    ],
+    "correct": 1,
+    "why": "讨论停滞时提议同步沟通，并明确会后如何留下决定记录。"
+  },
+  "output": {
+    "prompt": "销售团队希望周一上线，产品团队认为测试还没完成，双方在邮件里反复讨论。请用英文指出讨论没有进展，提议开个短会核对测试结果，并说明会后会记录决定和原因。",
+    "sample": "We seem to be going in circles on the launch date. Could we have a short call to review the test results? I’ll record the decision and the reason afterward.",
+    "check": [
+      "是否指出邮件讨论没有进展？",
+      "是否提议开短会核对测试结果？",
+      "是否承诺会后记录决定和原因？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非谷歌员工原声。",
+    "illustration": "工作场景插画 · 会议讨论后记录决定"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文/译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "optionalWords": [
+    {
+      "id": "maintainer",
+      "word": "maintainer",
+      "ipa": "/meɪnˈteɪnər/",
+      "pos": "n.",
+      "meaning": "维护负责人",
+      "collocation": "code maintainer",
+      "example": "The maintainer can make the final technical decision.",
+      "translation": "维护负责人可以作出最终技术决定。",
+      "note": "原文是代码维护者；其他情境可替换成项目负责人。"
+    },
+    {
+      "id": "broader",
+      "word": "broader",
+      "ipa": "/ˈbrɔːdər/",
+      "pos": "adj.",
+      "meaning": "范围更广的",
+      "collocation": "a broader team discussion",
+      "example": "We may need a broader team discussion before deciding.",
+      "translation": "作决定前，我们可能需要更大范围的团队讨论。",
+      "note": "原文用 broader team discussion 表示扩大讨论范围。"
+    }
+  ],
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "We seem to be going in circles.",
+      "meaning": "委婉指出讨论一直重复、没有进展",
+      "collocation": "go in circles in + 讨论 / 邮件串",
+      "example": "We seem to be going in circles on the launch date.",
+      "translation": "我们关于上线日期的讨论似乎一直没有进展。"
+    },
+    {
+      "id": "work-02",
+      "word": "Could we have a short call to…?",
+      "meaning": "建议用短会讨论具体问题",
+      "collocation": "a short call to + 动词原形",
+      "example": "Could we have a short call to review the test results?",
+      "translation": "我们能否开个短会一起看一下测试结果？"
+    },
+    {
+      "id": "work-03",
+      "word": "I’ll record the decision and the reason.",
+      "meaning": "承诺会后记录决定及依据",
+      "collocation": "record + the decision / reason / next step",
+      "example": "I’ll record the launch decision and the reason afterward.",
+      "translation": "之后我会记录上线决定和原因。"
+    }
+  ]
+}

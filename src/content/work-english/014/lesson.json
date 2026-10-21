@@ -1,0 +1,301 @@
+{
+  "id": "014",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "谷歌如何用数据改进新员工入职",
+  "topic": "谷歌如何用数据改进新员工入职",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "A data-driven approach to optimizing employee onboarding - Google re:Work",
+    "section": "公开管理指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开管理指南",
+    "url": "https://rework.withgoogle.com/intl/en/guides/a-data-driven-approach-to-optimizing-employee-onboarding",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Google 谷歌 公开资料。",
+    "paragraphs": [
+      "Content Strategist, People Development, Google",
+      "Effective onboarding programs are known to increase employee engagement, productivity, and retention. But how do you know if yours is effective? And, if it is, how do you make sure it remains resonant and useful over time?",
+      "At Google, we take a data-driven approach to ensuring new Googlers (or “Nooglers”) are equipped with the tools and knowledge to thrive as quickly as possible. Because if there’s one thing we’ve learned in 25 years of onboarding Nooglers, it’s that the only constant is change. Onboarding needs to evolve with the company, industry trends, and our employees.",
+      "That’s why a crucial, newer component of our onboarding process is a survey sent to new hires periodically throughout their first year. Based on the survey responses, we compare key metrics over time to identify trends and optimize the onboarding experience.",
+      "Since introducing this survey model two years ago, we’ve used data-driven insights to inform over a dozen adjustments to Noogler onboarding and support the end-to-end new hire experience.",
+      "In our survey, we ask Nooglers the same questions at 30, 90, and 365 days into their Google journey, seeking to gauge how they are settling in during their first year."
+    ],
+    "translations": [
+      "谷歌人才发展内容策略师",
+      "有效的入职计划被证明可以提高员工敬业度、生产力和留存率。但您如何知道您的计划是否有效？而且，如果有效，您如何确保它随时间推移保持共鸣和有用？",
+      "在谷歌，我们采用数据驱动的方法，确保新谷歌人（或称为\"新谷歌人\"）尽快获得茁壮成长所需的工具和知识。因为如果在入职新谷歌人的25年里我们学到了一件事，那就是唯一不变的就是变化。入职需要随着公司、行业趋势和我们员工的发展而演变。",
+      "这就是为什么我们入职流程中一个关键且较新的组成部分是定期向新员工发送调查问卷。基于调查反馈，我们比较随时间变化的关键指标，以识别趋势并优化入职体验。",
+      "自两年前引入这一调查模式以来，我们已利用数据驱动的洞见，对谷歌人入职流程进行了十多项调整，并支持新员工端到端的入职体验。",
+      "在我们的调查中，我们在新员工加入谷歌后的30天、90天和365天问他们相同的问题，旨在衡量他们在第一年的适应情况。"
+    ],
+    "fullTextParagraphs": [
+      "Content Strategist, People Development, Google",
+      "Product Lead, People Development, Google",
+      "Effective onboarding programs are known to increase employee engagement, productivity, and retention. But how do you know if yours is effective? And, if it is, how do you make sure it remains resonant and useful over time?",
+      "At Google, we take a data-driven approach to ensuring new Googlers (or “Nooglers”) are equipped with the tools and knowledge to thrive as quickly as possible. Because if there’s one thing we’ve learned in 25 years of onboarding Nooglers, it’s that the only constant is change. Onboarding needs to evolve with the company, industry trends, and our employees.",
+      "That’s why a crucial, newer component of our onboarding process is a survey sent to new hires periodically throughout their first year. Based on the survey responses, we compare key metrics over time to identify trends and optimize the onboarding experience.",
+      "Since introducing this survey model two years ago, we’ve used data-driven insights to inform over a dozen adjustments to Noogler onboarding and support the end-to-end new hire experience.",
+      "In our survey, we ask Nooglers the same questions at 30, 90, and 365 days into their Google journey, seeking to gauge how they are settling in during their first year.",
+      "Identifying the most valuable resources and experiences for new hires",
+      "Clarifying the moments when new hires particularly need support",
+      "Finding opportunities for the central onboarding team to collaborate with cross-functional teams to deliver a holistic onboarding experience",
+      "Specifically, our survey asks new hires to evaluate their experience across three fundamental elements of the Google employee experience:",
+      "Technology and tools: “I have access to the systems, tools, and technology that enable me to onboard and do my job effectively.”",
+      "Productivity and skills: “I feel productive and able to make an impact on team goals.”",
+      "Culture and connection: “I feel my unique background and experience is valued at Google.”",
+      "A new hire’s onboarding experience is shaped by programming, resources, and interactions. At Google, dozens of teams and Googlers, including those in People Operations (Google's Human Resources team), IT, and management, contribute to Noogler onboarding. The new hire survey enables us to efficiently gather and analyze data and feedback, then share insights with the cross-section of teams who work together to support Nooglers.",
+      "For example, insights from the survey led us to strengthen the partnership between Google-wide Orientation (which occurs during a new hire’s first week) and department-level onboarding (where Nooglers develop role-specific skills over the following weeks and months). This connection is arguably the most critical in new hire onboarding, influencing the time it takes a Noogler to become a productive member of their team. With survey data to guide us, multiple teams can come together to identify opportunities to create a more seamless and connected experience for Nooglers.",
+      "As another example, survey feedback suggested an opportunity to help Nooglers form meaningful relationships outside their core working group. Research shows that such relationships increase employee engagement, encourage creativity, innovation, and knowledge sharing, and contribute to a sense of engagement. Based on this feedback, we worked with regional teams to redesign local onboarding sessions – adding community-building activities and social events encouraging Nooglers to meet and connect with Googlers from different departments and backgrounds.",
+      "Companies of all sizes can introduce surveys to their onboarding process to improve the employee experience and get new hires up to speed as quickly as possible. Here are a few important things to consider when designing an onboarding survey:",
+      "Align to the business: At Google, we identified three areas critical to the success of our people and teams: 1) technology and tools, 2) productivity and skills, and 3) culture and connection. When crafting your survey, focus on questions that support your onboarding goals and company values.",
+      "Make it easy for new hires to contribute: Our survey is designed to be completed in less than 15 minutes and includes both multiple choice and open ended questions. Participation is voluntary and confidential, and respondents can skip any questions they choose not to answer.",
+      "Check in more than once: Onboarding takes place over months, not days. By checking back over time, you’ll gain insights into the longitudinal experience and long-term effectiveness of your onboarding process. We choose to survey at 30, 90, and 365 days.",
+      "Know your audience: Mid-career new hires will likely have a different perspective than will recent college graduates. The same is true for people managers, as well as those in technical and non-technical roles, etc. To ensure actionable insights, analyze survey results across various audience dimensions, and consider including a few specific questions for different role types, skill sets, and levels of responsibility.",
+      "As the saying goes: You can't manage what you don't measure. By identifying what’s important to your company and gathering data on how new hires experience their first days, weeks, and months, you’ll gain valuable visibility into what’s working, what’s not, and what you can do to improve. Remember, the effects of an onboarding experience – positive and negative – last long after orientation wraps up. It’s worth taking the time to collect the data, analyze the feedback, and make smart changes to ensure you’re getting it right."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 1,
+      "phrase": "Effective onboarding programs",
+      "meaning": "有效的入职项目",
+      "explain": "指帮助新员工快速适应公司文化和工作的系统性计划",
+      "example": "Effective onboarding programs can reduce new hire turnover by up to 50%."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "data-driven approach",
+      "meaning": "数据驱动的方法",
+      "explain": "基于数据分析而非直觉做决策的方法",
+      "example": "Our marketing team uses a data-driven approach to optimize campaign performance."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "identify trends and optimize",
+      "meaning": "识别趋势并优化",
+      "explain": "通过数据分析发现模式并改进流程",
+      "example": "The HR department analyzes exit interviews to identify trends and optimize employee retention strategies."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "gauge how they are settling in",
+      "meaning": "评估他们适应情况",
+      "explain": "衡量新员工融入公司环境的程度",
+      "example": "Managers should conduct regular check-ins to gauge how new team members are settling into their roles."
+    }
+  ],
+  "scenario": {
+    "title": "Use new-hire feedback to improve onboarding",
+    "english": [
+      "Your company wants to know whether onboarding is helping new employees settle in and do their jobs.",
+      "You suggest checking in with new hires at several points during their first year and asking about tools, productivity, skills, and connection with the team.",
+      "The onboarding team reviews patterns over time and chooses one improvement to test with the teams involved."
+    ],
+    "chinese": [
+      "公司想了解入职流程是否帮助新员工融入团队并顺利开展工作。",
+      "你建议在新员工入职后的不同阶段进行回访，了解工具使用、工作效率与技能、团队融入等方面的体验。",
+      "入职团队对照一段时间内的反馈，选出一项改进，与相关团队共同试行。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新员工反馈说，入职第一周不清楚该从哪里找团队信息。请用英文建议团队收集这类反馈，并先试改一个信息入口，再观察新员工是否更容易找到资料。",
+    "sample": "Could we ask new hires where they look for team information during their first week? Let’s improve one starting point and check whether it helps the next group find what they need.",
+    "rationale": "先了解新员工遇到的具体问题，再试一项改进并检查效果。"
+  },
+  "words": [
+    {
+      "id": "onboarding-programs",
+      "word": "onboarding",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "入职流程",
+      "collocation": "onboarding process",
+      "example": "The company has implemented a comprehensive onboarding program for all new employees.",
+      "translation": "公司为所有新员工实施了全面的入职计划。",
+      "note": "职场中常用，指帮助新员工熟悉公司文化、流程和职责的系统化过程"
+    },
+    {
+      "id": "employee-engagement",
+      "word": "engagement",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "员工投入度",
+      "collocation": "employee engagement",
+      "example": "High employee engagement is correlated with better business outcomes.",
+      "translation": "高员工投入度与更好的业务成果相关。",
+      "note": "指员工对工作的情感承诺和投入程度，是HR重要指标"
+    },
+    {
+      "id": "data-driven-approach",
+      "word": "data-driven",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "数据驱动的",
+      "collocation": "data-driven decision making",
+      "example": "Our company adopts a data-driven approach to strategic planning.",
+      "translation": "我们公司采用数据驱动的方法进行战略规划。",
+      "note": "强调基于数据分析而非直觉做决策的工作方式"
+    },
+    {
+      "id": "periodically-throughout",
+      "word": "periodically",
+      "ipa": "",
+      "pos": "adverb",
+      "meaning": "定期地",
+      "collocation": "periodically review",
+      "example": "The team periodically reviews project milestones to ensure timely delivery.",
+      "translation": "团队定期审查项目里程碑，确保按时交付。",
+      "note": "表示按照固定时间间隔重复进行某事"
+    },
+    {
+      "id": "key-metrics",
+      "word": "metrics",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "指标",
+      "collocation": "performance metrics",
+      "example": "We track several key metrics to evaluate the success of our marketing campaigns.",
+      "translation": "我们跟踪几个关键指标来评估营销活动的成功。",
+      "note": "用于衡量和评估绩效的具体量化标准"
+    },
+    {
+      "id": "end-to-end-experience",
+      "word": "end-to-end",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "端到端的",
+      "collocation": "end-to-end solution",
+      "example": "Our software provides an end-to-end solution for project management.",
+      "translation": "我们的软件为项目管理提供端到端的解决方案。",
+      "note": "描述覆盖整个过程从头到尾的完整服务或产品"
+    }
+  ],
+  "structure": {
+    "original": "Effective onboarding programs are known to increase employee engagement, productivity, and retention.",
+    "analysis": [
+      "主语是'Effective onboarding programs'，其中'Effective'是形容词作定语修饰'onboarding programs'",
+      "谓语部分是'are known to increase'，使用了被动语态'are known'，后接不定式'to increase'表示已知的结果",
+      "宾语是并列结构'employee engagement, productivity, and retention'，由三个名词短语通过逗号和'and'连接"
+    ],
+    "transfer": "A clear onboarding guide can help new hires find the right team information faster."
+  },
+  "rewrite": {
+    "bad": "We do not have budget for a new onboarding program, so there is nothing we can change.",
+    "good": "Could we check in with new hires at a few points during their first year? Comparing their feedback over time could help us choose one practical improvement to test.",
+    "translation": "我们能否在新员工入职后的几个时间点进行回访？对比一段时间内的反馈，有助于我们选出一项切实可行的改进先测试。",
+    "pattern": "Could we check in with [people] at [several points]? Comparing [feedback over time] could help us choose [one change to test]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we ask new hires where they ___ for team information?",
+      "answer": "look",
+      "why": "where they look for... 询问信息通常从哪里查找。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s improve one starting ___ first.",
+      "answer": "point",
+      "why": "a starting point 指用户开始查找信息的入口。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Check whether it ___ the next group find what they need.",
+      "answer": "helps",
+      "why": "help someone do something 中，主语 it 为第三人称单数。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a HR coordinator, is tasked with improving the new employee onboarding process at her company.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Her manager wants to implement data-driven changes but has limited budget and tight quarterly deadlines.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否问问新员工，入职第一周会去哪里找团队信息？",
+      "answer": "Could we ask new hires where they look for team information during their first week?",
+      "why": "本句练习“ask new hires where they look for…”在询问新员工通常去哪里找信息时的用法。"
+    },
+    {
+      "prompt": "我们先改进一个起始入口，再看看是否能帮助下一批人找到所需信息。",
+      "answer": "Let’s improve one starting point and check whether it helps the next group find what they need.",
+      "why": "本句练习“improve one starting point”在先改进一个信息入口时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队想改进入职体验，但不确定问题出在哪。请用英文建议在入职后的不同阶段收集新员工反馈，再根据变化选一项改进先试。",
+    "options": [
+      "We do not have budget for a new onboarding program, so there is nothing we can change.",
+      "Could we check in with new hires at 30, 90, and 365 days to see how their experience changes? We can compare the feedback over time and choose one improvement to test first.",
+      "Could we collect feedback from new hires and then decide what to change?"
+    ],
+    "correct": 1,
+    "why": "用多个时间点了解入职体验的变化，再从反馈中确定先测试的一项改进。"
+  },
+  "output": {
+    "prompt": "客服团队发现，新客户经常找不到账户恢复说明并重复提交工单。请用英文建议收集客户反馈、先改进一个帮助入口，并检查后续工单是否减少。",
+    "sample": "Could we ask customers where they look for account recovery steps when they get stuck? We can improve one entry point in the help center and check whether related support tickets decrease.",
+    "check": [
+      "是否从客户处收集他们查找帮助信息的具体经历？",
+      "是否提出一项可试行的入口改进？",
+      "是否说明用什么结果判断改进是否有效？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "ask new hires where they look for…",
+      "meaning": "询问新员工通常去哪里找信息",
+      "collocation": "ask someone where they + 动词",
+      "example": "Could we ask new hires where they look for team information during their first week?",
+      "translation": "我们能否问问新员工，入职第一周会去哪里找团队信息？"
+    },
+    {
+      "id": "work-02",
+      "word": "improve one starting point",
+      "meaning": "先改进一个信息入口",
+      "collocation": "improve a starting point / first step",
+      "example": "Let’s improve one starting point and check whether it helps the next group find what they need.",
+      "translation": "我们先改进一个起始入口，再看看是否能帮助下一批人找到所需信息。"
+    },
+    {
+      "id": "work-03",
+      "word": "check whether it helps…",
+      "meaning": "观察改动是否解决了问题",
+      "collocation": "check whether + 完整句子",
+      "example": "Check whether it helps the next group find what they need.",
+      "translation": "检查它是否能帮助下一批新员工找到所需信息。"
+    }
+  ]
+}

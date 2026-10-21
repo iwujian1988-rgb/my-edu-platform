@@ -1,0 +1,298 @@
+{
+  "id": "095",
+  "version": 1,
+  "status": "draft",
+  "company": "37signals",
+  "companyZh": "/ Basecamp",
+  "title": "员工怎样在公司发展职业、获得成长",
+  "topic": "员工怎样在公司发展职业、获得成长",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Making a Career",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://basecamp.com/handbook/making-a-career",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "paragraphs": [
+      "Congratulations! You’re part of the team!",
+      "In your first few weeks, you’ll get aligned with your manager and team on approach and expectations. You’ll get up and running, doing real work. It’s your manager’s responsibility to give you proper opportunities to demonstrate your skills and fit for the job. This includes your technical expertise, your engagement with coworkers, and your ability to take feedback and adapt to the 37signals culture. Similarly, it’s on you to take advantage of those opportunities and to show that you’re capable of meeting the team standards.",
+      "When you start, you’ll receive an outline of expected performance metrics. Those standards will be clear and attainable, and your manager will give you frequent, candid feedback on how you’re doing meeting them, as you go.",
+      "You’ll have formal performance reviews with your manager at the 3-, 6-, and 12-month marks. On occasion, despite our collective best efforts, it’s not a fit. We don’t do full-scale performance improvement plans during the first year. So if during that time it starts looking like your long-term employment won’t work out, your manager will let you know early and why.",
+      "By the time you’ve reached your 1st anniversary with the company, we expect to be as excited about working with you as we were on day one. Likewise you should consider if you feel the same about having joined the team. When both of those answers are “hell yeah!”, you’ll move into a less frequent performance review cycle. Just once a year, around your anniversary of joining the company."
+    ],
+    "translations": [
+      "恭喜！你已成为团队的一员！",
+      "在你最初的几周里，你将与你的经理和团队就工作方法和期望达成一致。你将开始上手，做实际的工作。你的经理有责任给你适当的机会来展示你的技能和与岗位的匹配度。这包括你的专业知识、与同事的互动能力，以及接受反馈并适应37signals文化的能力。同样，你也需要抓住这些机会，证明你能够达到团队的标准。",
+      "当你入职时，你会收到一份预期绩效指标的概述。这些标准将清晰且可达成，你的经理会随着工作的进行，就你如何达到这些标准给予频繁、坦诚的反馈。",
+      "你将在入职3个月、6个月和12个月时与你的经理进行正式的绩效评估。偶尔，尽管我们尽了最大的集体努力，但可能并不合适。在第一年，我们不进行全面性的绩效改进计划。因此，如果在这段时间内，看起来你的长期雇佣关系无法持续，你的经理会尽早告知你原因。",
+      "当你与公司共度1周年纪念日时，我们期望能像第一天一样兴奋地与你共事。同样，你也应该考虑自己是否对加入团队感到同样的兴奋。当这两个问题的答案都是\"太棒了！\"时，你将进入一个频率较低的绩效评估周期。每年一次，大约在你加入公司的周年纪念日前后。"
+    ],
+    "fullTextParagraphs": [
+      "Congratulations! You’re part of the team!",
+      "In your first few weeks, you’ll get aligned with your manager and team on approach and expectations. You’ll get up and running, doing real work. It’s your manager’s responsibility to give you proper opportunities to demonstrate your skills and fit for the job. This includes your technical expertise, your engagement with coworkers, and your ability to take feedback and adapt to the 37signals culture. Similarly, it’s on you to take advantage of those opportunities and to show that you’re capable of meeting the team standards.",
+      "When you start, you’ll receive an outline of expected performance metrics. Those standards will be clear and attainable, and your manager will give you frequent, candid feedback on how you’re doing meeting them, as you go.",
+      "You’ll have formal performance reviews with your manager at the 3-, 6-, and 12-month marks. On occasion, despite our collective best efforts, it’s not a fit. We don’t do full-scale performance improvement plans during the first year. So if during that time it starts looking like your long-term employment won’t work out, your manager will let you know early and why.",
+      "By the time you’ve reached your 1st anniversary with the company, we expect to be as excited about working with you as we were on day one. Likewise you should consider if you feel the same about having joined the team. When both of those answers are “hell yeah!”, you’ll move into a less frequent performance review cycle. Just once a year, around your anniversary of joining the company.",
+      "Your first year with 37signals should confirm what we learned in the hiring phase — you’re well suited for this job, and you’re invigorated by the work to be done. Just put in your best effort, make sure you reach out if things aren’t feeling right, embrace the feedback you get from your manager, and openly share your feedback with them!",
+      "Advancing your career at 37signals doesn’t mean giving up on your craft. No matter your role, you can become better at the work itself and level up that way. This is especially important since we’re a relatively small company with few layers of managerial cake.",
+      "Within each of our job functions, we’ve mapped our trajectory of mastery to five different levels. That title structure is shared amongst all departments, but the particulars of what characterizes one level from another will of course be different.",
+      "Mid-level (L2)",
+      "Principal (L5)",
+      "Mastery and internal leveling are assessed and determined during hiring.",
+      "If you’re hired at a level below Senior, you should work towards developing Senior level skills. Juniors should achieve Senior in 4 years (2 to Mid-level, 2 to Senior), and Mid-level contributors should achieve Senior in 2 years. When everyone is able to follow that trajectory, we create healthy, high-performing teams where everyone can trust each other to run at similar speeds. When people aren’t able to level up within the above timeframes, after ample opportunities to do so, we usually determine that to be a bad long-term fit and we’ll decide to part ways.",
+      "Once you reach Senior, there is no expectation of further progression to Lead or Principal. In fact, most people will not achieve the Principal title! We see that level as reserved for people whose innovative work creates a resounding impact across the organization and even the industry. Those who do end up progressing all the way through our path usually have worked at 37signals for a decade or more.",
+      "The proficiencies expected of all of our major teams by level are documented here: Designers, Ops, Programmers, QA, and Support.",
+      "37signals pays at the top 10% for our industry at San Francisco salary levels, regardless of where you live. The comparison data is provided by a company called Radford that polls compensation data from all the major companies in our industry and plenty of our smaller peers as well.",
+      "Some jobs at 37signals are not matched to Radford comparison data. Compensation for common technical roles like programming and design is reliably competitive in a market like San Francisco. For some non-technical roles, compensation is much lower, and much less competitive. To compensate for that industry disparity, we instituted a $73,500 salary floor (floor adjusted for inflation since publishing).",
+      "The Radford data is reviewed once per year at the end of November. If it’s warranted, that is if the market rates in the top 10% have gone up, we’ll increase pay on January 1st to follow suit. We don’t decrease pay, even if the market rates may have dropped. If that happens, we’ll hold them steady until they come up again.",
+      "Everyone in the same role at the same level is paid the same at 37signals.",
+      "When you get a promotion, that is you move from one level to another, you’ll get a corresponding pay raise effective on your next pay cycle.",
+      "You’ll meet with your manager for formal performance reviews. When you’re new to 37signals, you’ll meet at the 3-month, 6-month, and 1-year marks. Then you’ll meet once a year, around your anniversary with the company. Your manager will share performance expectations for your role when you start, and they’ll keep you apprised of any changes to expectations should they evolve.",
+      "Managers are expected to document performance review outcomes and any action items or deadlines that come out of the meetings.",
+      "If your work performance is not meeting expectations, you may be put on a Performance Improvement Plan (PIP). We only initiate PIPs if your manager’s concern is correctable in the short term. We do not initiate PIPs for fundamental performance issues that relate to your core job skills. If you’re a Programmer whose coding skills are not at the level they need to be, we’d forego a PIP. However, we may initiate a PIP to help you improve your performance in a coachable skill like project management."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Congratulations! You’re part of the team",
+      "meaning": "恭喜！你已成为团队的一员！",
+      "explain": "这是欢迎新员工加入团队时的常用表达，传递了归属感和认可。",
+      "example": "Welcome aboard! You're officially part of our creative team now."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "get aligned with your manager and team on approach and expectations",
+      "meaning": "与你的经理和团队就工作方法和期望达成一致",
+      "explain": "表示新员工需要了解团队的工作方式、目标和对自己的期望，这是入职初期的重要环节。",
+      "example": "During onboarding, new hires should get aligned with their supervisors on project timelines and deliverables."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "expected performance metrics",
+      "meaning": "预期的绩效指标",
+      "explain": "指公司用来衡量员工工作表现的具体标准和量化指标，是评估员工表现的基础。",
+      "example": "Our department uses key performance metrics like sales conversion rate and customer satisfaction score."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "move into a less frequent performance review cycle",
+      "meaning": "转入频率较低的绩效评估周期",
+      "explain": "表示员工通过试用期后，绩效评估的频率会降低，通常意味着对员工表现的认可和信任。",
+      "example": "After successfully completing your probation period, you'll move into a less frequent performance review cycle with quarterly check-ins instead of monthly ones."
+    }
+  ],
+  "scenario": {
+    "title": "Discussing growth as a shared responsibility",
+    "english": [
+      "A manager and a new employee are discussing how the employee can grow in the role.",
+      "The manager can create opportunities to demonstrate skills and explain expectations; the employee can seek feedback and adapt.",
+      "You describe both sides’ part in supporting career development."
+    ],
+    "chinese": [
+      "经理和新员工正在讨论如何在岗位上成长。",
+      "经理可以提供展示能力的机会并说明预期；员工也可以主动寻求反馈、不断调整。",
+      "你说明双方在职业发展中的责任。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "员工希望逐步承担更多客户研究工作，并想通过项目提升主持讨论的能力。请用英文说明发展方向、商定一个实践机会，并约定下个月回顾进展。",
+    "sample": "I’d like to grow into a role with more customer research. I can build my facilitation skills by leading the next planning session. Let’s check in next month and review what I’ve learned.",
+    "rationale": "把职业方向转成项目中的练习机会，并约定回顾时间。"
+  },
+  "words": [
+    {
+      "id": "aligned",
+      "word": "aligned",
+      "ipa": "/əˈlaɪnd/",
+      "pos": "adjective",
+      "meaning": "一致的，协调的",
+      "collocation": "get aligned with",
+      "example": "We’ll align the development goals with the employee’s role and interests.",
+      "translation": "我们会让发展目标与员工的岗位和兴趣相匹配。",
+      "note": "常用于描述目标、期望或价值观的一致性，在职场沟通中强调协调性。"
+    },
+    {
+      "id": "demonstrate",
+      "word": "demonstrate",
+      "ipa": "/ˈdemənstreɪt/",
+      "pos": "verb",
+      "meaning": "展示，证明",
+      "collocation": "demonstrate skills",
+      "example": "I’ll look for opportunities for you to demonstrate your skills.",
+      "translation": "我会为你创造展示能力的机会。",
+      "note": "比'show'更正式，强调通过实际行动或证据来证明能力或品质。"
+    },
+    {
+      "id": "engagement",
+      "word": "engagement",
+      "ipa": "/ɪnˈɡeɪdʒmənt/",
+      "pos": "noun",
+      "meaning": "参与，投入",
+      "collocation": "engagement with coworkers",
+      "example": "Regular check-ins give employees a chance to discuss their growth.",
+      "translation": "定期沟通让员工有机会讨论自己的成长。",
+      "note": "在职场环境中指与同事、工作的积极互动和参与程度。"
+    },
+    {
+      "id": "metrics",
+      "word": "metrics",
+      "ipa": "/ˈmetrɪks/",
+      "pos": "noun",
+      "meaning": "指标，度量标准",
+      "collocation": "performance metrics",
+      "example": "We track several key metrics to evaluate our marketing campaign's success.",
+      "translation": "我们追踪几个关键指标来评估营销活动的成功度。",
+      "note": "选学词：metrics 指衡量指标，与本期职业成长对话并非核心表达。"
+    },
+    {
+      "id": "candid",
+      "word": "candid",
+      "ipa": "/ˈkændɪd/",
+      "pos": "adjective",
+      "meaning": "坦率的，直言的",
+      "collocation": "candid feedback",
+      "example": "I’ll give candid feedback and make the expectations clear.",
+      "translation": "我会坦诚地提供反馈，并说明工作预期。",
+      "note": "形容反馈或意见是诚实、直接且建设性的，不回避问题。"
+    },
+    {
+      "id": "anniversary",
+      "word": "anniversary",
+      "ipa": "/ˌænɪˈvɜːrsəri/",
+      "pos": "noun",
+      "meaning": "周年纪念",
+      "collocation": "1st anniversary",
+      "example": "The company celebrates employee anniversaries with a special lunch.",
+      "translation": "公司通过特别的午餐来庆祝员工的周年纪念。",
+      "note": "选学词：anniversary 指周年纪念日，与本期职业成长沟通无关。"
+    }
+  ],
+  "structure": {
+    "original": "In your first few weeks, you’ll get aligned with your manager and team on approach and expectations.",
+    "analysis": [
+      "In your first few weeks 是时间状语短语，表示'在你最初的几周内'，介词短语作状语",
+      "you'll get aligned with your manager and team 是主句，其中get aligned with是被动语态结构，表示'与...达成一致'，your manager and team是介词with的宾语",
+      "on approach and expectations 是介词短语作状语，表示'在方法和期望方面'，approach and expectations是并列名词短语"
+    ],
+    "transfer": "In your initial onboarding period, you'll get synchronized with your supervisor and colleagues on project goals and deliverables."
+  },
+  "rewrite": {
+    "bad": "The campaign is all that matters now. Career development can wait until next year.",
+    "good": "As your manager, I’ll look for opportunities for you to demonstrate your skills and share clear expectations. I also encourage you to seek feedback and adapt as you learn how our team works.",
+    "translation": "作为你的经理，我会帮你寻找展示能力的机会，并说清期待。我也鼓励你主动寻求反馈，在了解团队工作方式的过程中持续调整。",
+    "pattern": "As your manager, I’ll [create opportunities and clarify expectations]. I encourage you to [seek feedback and adapt]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’d like to grow into a role with more ___ research.",
+      "answer": "customer",
+      "why": "把职业发展讨论落到具体工作内容。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I can build my ___ skills by leading the next planning session.",
+      "answer": "facilitation",
+      "why": "用真实工作机会练习目标能力。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s check in ___ and review what I’ve learned.",
+      "answer": "next month",
+      "why": "设定回顾节点，让发展计划持续推进。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a marketing specialist, was tasked with developing a new campaign strategy while also mentoring a junior team member.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Her manager expected her to focus on immediate campaign results while Sarah believed investing time in mentoring would benefit long-term team performance.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我希望逐步承担更多客户研究工作。",
+      "answer": "I’d like to grow into a role with more customer research.",
+      "why": "本句练习“talk about the work you want to grow into”在谈谈希望发展的工作方向时的用法。"
+    },
+    {
+      "prompt": "我可以通过主持下次规划会锻炼引导讨论的能力。",
+      "answer": "I can build my facilitation skills by leading the next planning session.",
+      "why": "本句练习“identify a skill to build through a project”在通过项目确定要培养的能力时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "经理和新员工在讨论职业成长。请用英文说明经理应提供展示能力的机会，员工也要主动接受反馈并调整。",
+    "options": [
+      "You should focus on the campaign now. Mentoring is not important right now.",
+      "As your manager, I’ll look for opportunities for you to demonstrate your skills and share clear expectations. I also encourage you to seek feedback and adapt as you learn how our team works.",
+      "As your manager, I’ll look for opportunities for you to demonstrate your skills and share clear expectations."
+    ],
+    "correct": 1,
+    "why": "原文把成长责任分给经理和员工双方：经理提供机会和预期，员工主动展现能力并接受反馈。"
+  },
+  "output": {
+    "prompt": "你希望从执行用户访谈逐步成长为能独立制定研究计划的人。请用英文说明目标，提出一个近期可以承担的任务，并约定何时和经理回顾进展。",
+    "sample": "I’d like to grow from conducting interviews to planning a research study independently. Could I draft the plan for the next round of interviews and get your feedback? Let’s review my progress in our check-in next month.",
+    "check": [
+      "是否说明希望发展的工作方向？",
+      "是否把能力培养落实到一个项目机会？",
+      "是否约定回顾进展的时间？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "talk about the work you want to grow into",
+      "meaning": "谈谈希望发展的工作方向",
+      "collocation": "grow into + role / work",
+      "example": "I’d like to grow into a role with more customer research.",
+      "translation": "我希望逐步承担更多客户研究工作。"
+    },
+    {
+      "id": "work-02",
+      "word": "identify a skill to build through a project",
+      "meaning": "通过项目确定要培养的能力",
+      "collocation": "build a skill through + project",
+      "example": "I can build my facilitation skills by leading the next planning session.",
+      "translation": "我可以通过主持下次规划会锻炼引导讨论的能力。"
+    },
+    {
+      "id": "work-03",
+      "word": "agree on a check-in date",
+      "meaning": "约定回顾进展的时间",
+      "collocation": "agree on + check-in date",
+      "example": "Let’s check in next month and review what I’ve learned.",
+      "translation": "我们下个月再回顾我学到了什么。"
+    }
+  ]
+}

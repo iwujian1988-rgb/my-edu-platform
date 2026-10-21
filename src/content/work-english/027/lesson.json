@@ -1,0 +1,295 @@
+{
+  "id": "027",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "微软项目团队怎样写共同遵守的工作宣言",
+  "topic": "微软项目团队怎样写共同遵守的工作宣言",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Team Manifesto - Engineering Fundamentals Playbook",
+    "section": "公开团队指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队指南",
+    "url": "https://microsoft.github.io/code-with-engineering-playbook/agile-development/team-agreements/team-manifesto/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Microsoft 微软 公开资料。",
+    "paragraphs": [
+      "ISE teams work with a new development team in each customer engagement which requires a phase of introduction & knowledge transfer before starting an engagement.",
+      "Completion of this phase of ice-breakers and discussions about the standards takes time, but is required to start increasing the learning curve of the new team.",
+      "A team manifesto is a light-weight one page agile document among team members which summarizes the basic principles and values of the team and aiming to provide a consensus about technical expectations from each team member in order to deliver high quality output at the end of each engagement.",
+      "It aims to reduce the time on setting the right expectations without arranging longer \"team document reading\" meetings and provide a consensus among team members to answer the question - \"How does the new team develop the software?\" - by covering all engineering fundamentals and excellence topics such as release process, clean coding, testing.",
+      "Another main goal of writing the manifesto is to start a conversation during the \"manifesto building session\" to detect any differences of opinion around how the team should work.",
+      "It also serves in the same way when a new team member joins to the team. New joiners can quickly get up to speed on the agreed standards."
+    ],
+    "translations": [
+      "ISE团队在每个客户合作中与一个新的开发团队一起工作，这需要在开始合作前有一个介绍和知识转移的阶段。",
+      "完成这个破冰和讨论标准的阶段需要时间，但这是提高新团队学习曲线所必需的。",
+      "团队宣言是一页轻量级的敏捷文档，团队成员之间使用，总结了团队的基本原则和价值观，旨在就每个团队成员的技术期望达成共识，以便在每个合作结束时交付高质量的产出。",
+      "它的目标是在不安排更长的'团队文档阅读'会议的情况下，减少设定正确期望的时间，并通过涵盖所有工程基础和卓越主题（如发布流程、清洁代码、测试）来回答一个问题——'新团队如何开发软件？'——从而在团队成员之间达成共识。",
+      "撰写宣言的另一个主要目标是在'宣言构建会议'期间开始对话，以发现团队工作方式方面的任何意见分歧。",
+      "当新成员加入团队时，它也以同样的方式发挥作用。新加入者可以迅速了解商定的标准。"
+    ],
+    "fullTextParagraphs": [
+      "ISE teams work with a new development team in each customer engagement which requires a phase of introduction & knowledge transfer before starting an engagement.",
+      "Completion of this phase of ice-breakers and discussions about the standards takes time, but is required to start increasing the learning curve of the new team.",
+      "A team manifesto is a light-weight one page agile document among team members which summarizes the basic principles and values of the team and aiming to provide a consensus about technical expectations from each team member in order to deliver high quality output at the end of each engagement.",
+      "It aims to reduce the time on setting the right expectations without arranging longer \"team document reading\" meetings and provide a consensus among team members to answer the question - \"How does the new team develop the software?\" - by covering all engineering fundamentals and excellence topics such as release process, clean coding, testing.",
+      "Another main goal of writing the manifesto is to start a conversation during the \"manifesto building session\" to detect any differences of opinion around how the team should work.",
+      "It also serves in the same way when a new team member joins to the team. New joiners can quickly get up to speed on the agreed standards.",
+      "It can be said that the best time to start building it is at the very early phase of the engagement when teams meet with each other for swarming or during the preparation phase.",
+      "It is recommended to keep team manifesto as simple as possible, so preferably, one-page simple document which doesn't include any references or links is a nice format for it. If there is a need for providing knowledge on certain topics, the way to do is delivering brown-bag sessions, technical katas, team practices, documentations and others later on.",
+      "A few important points about the team manifesto",
+      "The team manifesto is built by the development team itself",
+      "It should cover all required technical engineering points for the excellence as well as behavioral agility mindset items that the team finds relevant",
+      "It aims to give a common understanding about the desired expertise, practices and/or mindset within the team",
+      "Based on the needs of the team and retrospective results, it can be modified during the engagement.",
+      "In ISE, we aim for quality over quantity, and well-crafted software as well as to a comfortable/transparent environment where each team member can reach their highest potential.",
+      "The difference between the team manifesto and other team documents is that it is used to give a short summary of expectations around the technical way of working and supported mindset in the team, before code-with sprints starts.",
+      "Below, you can find some including, but not limited, topics many teams touch during engagements,",
+      "Generally team sessions are enough for building a manifesto and having a consensus around it, and if there is a need for improving it in a structured way, there are many blogs and tools online, any retrospective tool can be used."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "phase of introduction & knowledge transfer",
+      "meaning": "介绍与知识转移阶段",
+      "explain": "指团队协作初期，通过正式和非正式交流使新成员了解项目背景、技术栈和工作流程的过程",
+      "example": "The onboarding process includes a phase of introduction & knowledge transfer to ensure new hires understand our company culture."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "team manifesto",
+      "meaning": "团队宣言",
+      "explain": "轻量级的一页式敏捷文档，概述团队基本价值观和技术期望，帮助团队达成共识",
+      "example": "Our team manifesto outlines our commitment to quality and continuous improvement in every sprint."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "reduce the time on setting the right expectations",
+      "meaning": "减少设定正确期望的时间",
+      "explain": "通过预先明确标准，避免冗长的会议讨论，提高团队效率",
+      "example": "The project charter helps reduce the time on setting the right expectations among stakeholders."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "detect any differences of opinion",
+      "meaning": "发现意见分歧",
+      "explain": "在团队协作初期识别成员间工作方式的不同观点，以便及时协调",
+      "example": "The workshop aims to detect any differences of opinion regarding the project timeline before development begins."
+    }
+  ],
+  "scenario": {
+    "title": "Agree on engineering expectations before a project starts",
+    "english": [
+      "A new engineering team is beginning a customer engagement. Team members have different expectations for code review, testing, and release practices.",
+      "You suggest writing a one-page team manifesto together so everyone can agree on the technical expectations before work begins.",
+      "The team can update the document as it learns what works during the engagement."
+    ],
+    "chinese": [
+      "一个工程团队刚开始客户项目，成员对代码评审、测试和发布流程的预期不一致。",
+      "你建议大家共同写一页团队宣言，在开始工作前对齐技术协作标准。",
+      "项目过程中，团队还可以根据实际情况更新这份文件。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "产品团队对上线前的测试范围和发布沟通方式各有理解。请用英文建议在项目开始时一起写下共同约定，并说明可以在合作中更新。",
+    "sample": "Could we write down our testing and release expectations together before the project gets underway? We can revisit the agreement as we learn what the team needs.",
+    "rationale": "团队共同写下具体工作约定，并在合作中根据新经验回看和调整。"
+  },
+  "words": [
+    {
+      "id": "customer-engagement",
+      "word": "customer engagement",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "客户参与/项目合作",
+      "collocation": "ongoing customer engagement",
+      "example": "Our team maintains regular customer engagement throughout the project lifecycle.",
+      "translation": "我们的团队在整个项目生命周期中保持与客户的持续互动。",
+      "note": "指企业与客户之间的互动关系，也可指具体的项目合作"
+    },
+    {
+      "id": "learning-curve",
+      "word": "learning curve",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "学习曲线",
+      "collocation": "steep learning curve",
+      "example": "The new software has a steep learning curve, so we allocated extra training time.",
+      "translation": "这个新软件的学习曲线很陡峭，所以我们分配了额外的培训时间。",
+      "note": "描述掌握新技能所需的时间和难度，曲线越陡表示学习难度越大"
+    },
+    {
+      "id": "agile-document",
+      "word": "agile document",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "敏捷文档",
+      "collocation": "light-weight agile document",
+      "example": "Our team prefers creating concise agile documents rather than extensive specifications.",
+      "translation": "我们团队倾向于创建简洁的敏捷文档，而不是冗长的规范文档。",
+      "note": "敏捷开发中使用的简洁、实用的文档，强调可操作性和及时更新"
+    },
+    {
+      "id": "technical-expectations",
+      "word": "technical expectations",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "技术期望",
+      "collocation": "clear technical expectations",
+      "example": "The onboarding process sets clear technical expectations for all developers.",
+      "translation": "入职流程为所有开发者设定明确的技术期望。",
+      "note": "对团队成员在技术实现方面应达到的标准和要求"
+    },
+    {
+      "id": "engineering-fundamentals",
+      "word": "engineering fundamentals",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "工程基础",
+      "collocation": "master engineering fundamentals",
+      "example": "Before working on advanced features, all engineers must master the engineering fundamentals.",
+      "translation": "在处理高级功能之前，所有工程师必须掌握工程基础知识。",
+      "note": "指软件开发的基本原则、方法和最佳实践"
+    },
+    {
+      "id": "get-up-to-speed",
+      "word": "get up to speed",
+      "ipa": "",
+      "pos": "phrasal verb",
+      "meaning": "快速了解/赶上进度",
+      "collocation": "quickly get up to speed",
+      "example": "The new hire was able to quickly get up to speed with our development workflow.",
+      "translation": "新员工能够快速了解我们的开发工作流程。",
+      "note": "指迅速熟悉新环境、新项目或新技术的状态"
+    }
+  ],
+  "structure": {
+    "original": "ISE teams work with a new development team in each customer engagement which requires a phase of introduction & knowledge transfer before starting an engagement.",
+    "analysis": [
+      "主语是'ISE teams'，谓语是'work with'，宾语是'a new development team'",
+      "状语'in each customer engagement'修饰谓语动词，表示工作发生的场景",
+      "定语从句'which requires...'修饰'customer engagement'，说明每个客户合作都需要介绍和知识转移阶段"
+    ],
+    "transfer": "Sales representatives collaborate with a new marketing team in every product launch which necessitates a period of orientation & information exchange before commencing the campaign."
+  },
+  "rewrite": {
+    "bad": "Li, draft the manifesto by Friday. I’ll decide what everyone’s expectations should be.",
+    "good": "Could we write a one-page team manifesto together before development starts? Let’s agree on release, testing, and coding expectations, then update it as we learn.",
+    "translation": "我们能否在开发开始前一起写一页团队宣言？先对齐发布、测试和代码规范，再根据实际经验更新。",
+    "pattern": "Could we create [a shared working agreement] before [the project starts] and update it as [the team learns]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we write ___ our testing and release expectations together?",
+      "answer": "down",
+      "why": "write down 表示把口头约定记录下来。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s agree on this before the project gets ___.",
+      "answer": "underway",
+      "why": "get underway 表示项目开始推进。"
+    },
+    {
+      "id": "c3",
+      "prompt": "We can ___ the agreement as we learn what the team needs.",
+      "answer": "revisit",
+      "why": "revisit the agreement 表示后续回看并根据需要调整。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "The marketing team needs to create a team manifesto during the introduction phase of a new product launch project.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Different team members have varying priorities: some focus on speed, others on quality, and some on budget constraints.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否一起写下测试和发布方面的共同约定？",
+      "answer": "Could we write down our testing and release expectations together?",
+      "why": "本句练习“write down our testing and release expectations”在把测试和发布的共同预期写下来时的用法。"
+    },
+    {
+      "prompt": "我们能否在项目开始前写下共同约定？",
+      "answer": "Could we write down our expectations before the project gets underway?",
+      "why": "本句练习“before the project gets underway”在在项目正式开始之前时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "新项目团队对发布、测试和代码规范的理解不一致。请用英文建议在开发开始前共同写一页团队约定，并邀请成员补充。",
+    "options": [
+      "Li, draft the manifesto by Friday. I’ll decide what everyone’s expectations should be.",
+      "Could we create a one-page team manifesto together before development starts? We can agree on release, testing, and coding expectations, then update it as the team learns.",
+      "Could you share a specific example and explain what effect it had on the team?"
+    ],
+    "correct": 1,
+    "why": "团队约定应由团队共同建立，把具体工作标准放在一页内，后续也能根据合作情况调整。"
+  },
+  "output": {
+    "prompt": "新产品发布前，支持团队担心升级后客户问题由谁跟进，工程团队也不确定多久同步一次。请用英文建议在发布前写下交接和升级约定，并在首周后根据实际情况更新。",
+    "sample": "Could we write down our handoff and escalation expectations before the launch? We can revisit the agreement after the first week and update it based on what the teams need.",
+    "check": [
+      "是否提出团队共同制定约定？",
+      "是否举出具体的工作规范？",
+      "是否说明约定可以根据实际合作调整？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "write down our testing and release expectations",
+      "meaning": "把测试和发布的共同预期写下来",
+      "collocation": "write down + expectations / agreement",
+      "example": "Could we write down our testing and release expectations together?",
+      "translation": "我们能否一起写下测试和发布方面的共同约定？"
+    },
+    {
+      "id": "work-02",
+      "word": "before the project gets underway",
+      "meaning": "在项目正式开始之前",
+      "collocation": "get underway = begin",
+      "example": "Could we write down our expectations before the project gets underway?",
+      "translation": "我们能否在项目开始前写下共同约定？"
+    },
+    {
+      "id": "work-03",
+      "word": "revisit the agreement as we learn…",
+      "meaning": "合作中发现新需要后再回看约定",
+      "collocation": "revisit + agreement / plan / decision",
+      "example": "We can revisit the agreement as we learn what the team needs.",
+      "translation": "我们可以在了解团队需要的过程中再调整这份约定。"
+    }
+  ]
+}

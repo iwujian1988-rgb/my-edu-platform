@@ -1,0 +1,332 @@
+{
+  "id": "062",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "写一份“我的工作使用说明书”，让同事更了解你",
+  "topic": "写一份“我的工作使用说明书”，让同事更了解你",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "How to create a personal user manual for work | Atlassian",
+    "section": "公开团队工具",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队工具",
+    "url": "https://www.atlassian.com/team-playbook/plays/my-user-manual",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Atlassian 公开资料。",
+    "paragraphs": [
+      "Personal user manuals are helpful tools for sharing your working style, communication preferences, and other details, making it easier for teams to work together.",
+      "Prep your user manual using a template.",
+      "Save your user manual to share with others in the future.",
+      "Video conferencing with screen sharing or meeting space.",
+      "Digital collaboration tool (see templates).",
+      "Help your teammates understand how best to work with you.",
+      "About this Play",
+      "A personal user manual for work is a document that outlines an individual's work style, preferences, strengths, and communication habits.",
+      "Running the My User Manual Play creates a dedicated safe space for teams to reduce misunderstanding by clarifying expectations and sharing how best to collaborate with a specific co-worker. Research shows that making work process preferences explicit benefits collaboration.",
+      "You should create a user manual at work when joining a new team, taking on a leadership role, or starting a project that requires close collaboration. It can also be useful during team-building activities or when communication issues arise. Essentially, it's beneficial anytime you want to improve clarity and teamwork with colleagues.",
+      "Improved communication: It clarifies your preferred communication style, which research shows reduces misunderstandings and improves performance."
+    ],
+    "translations": [
+      "个人用户手册是分享您的工作风格、沟通偏好和其他细节的有用工具，使团队能够更轻松地协作。",
+      "使用模板准备您的用户手册。",
+      "保存您的用户手册以便将来与他人分享。",
+      "带有屏幕共享或会议空间的视频会议。",
+      "数字协作工具（请参阅模板）。",
+      "帮助您的团队成员了解如何与您最好地合作。",
+      "关于此方法",
+      "工作中的个人用户手册是一份概述个人工作风格、偏好、优势和沟通习惯的文件。",
+      "运行我的用户手册方法为团队创建了一个专门的、安全的空间，通过明确期望和分享如何与特定同事最好地协作来减少误解。研究表明，明确工作流程偏好有利于协作。",
+      "当加入新团队、担任领导角色或开始需要紧密协作的项目时，您应该在工作中创建用户手册。在团队建设活动或出现沟通问题时，它也可能很有用。本质上，只要您想提高与同事的清晰度和团队合作，它都是有益的。",
+      "改进沟通：它阐明了您偏好的沟通风格，研究表明这可以减少误解并提高绩效。"
+    ],
+    "fullTextParagraphs": [
+      "Personal user manuals are helpful tools for sharing your working style, communication preferences, and other details, making it easier for teams to work together.",
+      "Prep your user manual using a template.",
+      "Save your user manual to share with others in the future.",
+      "Video conferencing with screen sharing or meeting space.",
+      "Digital collaboration tool (see templates).",
+      "Help your teammates understand how best to work with you.",
+      "About this Play",
+      "Instructions",
+      "A personal user manual for work is a document that outlines an individual's work style, preferences, strengths, and communication habits.",
+      "Running the My User Manual Play creates a dedicated safe space for teams to reduce misunderstanding by clarifying expectations and sharing how best to collaborate with a specific co-worker. Research shows that making work process preferences explicit benefits collaboration.",
+      "You should create a user manual at work when joining a new team, taking on a leadership role, or starting a project that requires close collaboration. It can also be useful during team-building activities or when communication issues arise. Essentially, it's beneficial anytime you want to improve clarity and teamwork with colleagues.",
+      "Improved communication: It clarifies your preferred communication style, which research shows reduces misunderstandings and improves performance.",
+      "Stronger collaboration: Colleagues gain insights into how you work best, fostering more effective teamwork.",
+      "Faster onboarding: New team members can quickly understand your strengths, preferences, and work habits, speeding up integration.",
+      "Conflict prevention: By setting clear expectations, research shows you help prevent potential conflicts or frustration around work styles and interactions.",
+      "Increased productivity: When colleagues know how to engage with you efficiently, it reduces time spent on miscommunication and boosts overall productivity.",
+      "Before the meeting, ask each team member to fill out a user manual using one of the provided templates or by creating their own. Let them know that they can choose to answer the prompts they feel comfortable sharing. Here are some ideas to get them started:",
+      "What is your work and life set up?",
+      "Where do you typically work from?",
+      "What work hours do you keep?",
+      "What are the best ways to communicate with you?",
+      "What are the worst ways to communicate with you?",
+      "What communication channels do you prefer?",
+      "How do you like to receive feedback?",
+      "What formats for feedback work for you?",
+      "What are your top 3 values in life?",
+      "What is your proudest achievement ever?",
+      "We’ve provided prompts in the template but we encourage you to make it your own with bold colors, plentiful memes, and random factoids.",
+      "Have team members join the meeting with their personal user manuals. For remote teams, setup a video conference with screen sharing. For in-person teams, have a meeting space that lets you share your user manual. If you’re sharing a physical copy, be sure to share a digital copy of your user manual as well. Next, share the rules for the Play.",
+      "This activity is designed for team members to understand how to support each other’s ideal conditions for getting their best work done.",
+      "No one will be pressured to share anything they’re not comfortable sharing.",
+      "This meeting is a safe space. Nothing they share will be used against them.",
+      "When new hires start, assign them the task of creating and presenting their user manual in their first 90 days.",
+      "Each team member shares their user manual with the team and answers any questions teammates have on the content.",
+      "Keep your team’s user manuals archived in your team's Confluence space or other file-sharing space so future teammates can quickly learn.",
+      "For a shorter meeting, try limiting the template to questions about working hours, ideal environment, communication preferences, and learning styles before discussing anything longer and deeper.",
+      "Have team members complete a personality test or training together, such as DiSC, Strengths Finder, or Myers-Briggs. Share and discuss the results as a team.",
+      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
+      "Better meetings start with a page that outlines the purpose, expected outcomes, and key discussion points.",
+      "Provide a safe space to discuss what worked and what didn’t.",
+      "Prep your user manual using a template",
+      "Save your user manual to share with others in the future",
+      "Get the latest Plays and work life advice when you sign up for our newsletter."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Personal user manuals",
+      "meaning": "个人使用说明书",
+      "explain": "指个人创建的工作风格和偏好文档，帮助团队成员更好地了解和协作",
+      "example": "Creating personal user manuals can significantly enhance team productivity."
+    },
+    {
+      "paragraph": 7,
+      "phrase": "work style, preferences, strengths, and communication habits",
+      "meaning": "工作风格、偏好、优势和沟通习惯",
+      "explain": "这是个人工作使用说明书应包含的核心内容，全面展示个人的工作特点",
+      "example": "When writing your user manual, be sure to include your work style, preferences, strengths, and communication habits."
+    },
+    {
+      "paragraph": 8,
+      "phrase": "clarifying expectations and sharing how best to collaborate",
+      "meaning": "明确期望并分享最佳协作方式",
+      "explain": "创建个人使用说明书的主要目的，减少误解，提高团队协作效率",
+      "example": "Regular team meetings are effective for clarifying expectations and sharing how best to collaborate on projects."
+    },
+    {
+      "paragraph": 10,
+      "phrase": "Improved communication",
+      "meaning": "改善沟通",
+      "explain": "创建个人使用说明书带来的主要好处之一，能减少误解并提高工作表现",
+      "example": "Our company's new communication policy has led to improved communication across all departments."
+    }
+  ],
+  "scenario": {
+    "title": "Creating a personal work manual for a new team",
+    "english": [
+      "You have joined a cross-functional team, and colleagues are learning how each other prefers to work.",
+      "Atlassian’s personal work manual introduces someone’s work style, communication preferences, strengths, and expectations.",
+      "You suggest creating a short manual and saving it in the shared team space."
+    ],
+    "chinese": [
+      "你加入了一个跨职能团队，大家正在了解彼此的工作方式。",
+      "Atlassian 的个人工作说明书用于介绍工作风格、沟通偏好、优势和协作预期。",
+      "你建议每个人写一份简短说明，并放到团队共享空间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新同事加入团队，大家想互相了解工作习惯和沟通偏好。请用英文写一段简短的个人工作说明，介绍适合自己的工作方式和反馈偏好，并邀请同事告诉你怎样配合更好。",
+    "sample": "I do my best work when I have time to focus before a discussion. I prefer to receive feedback in writing before our one-on-one. Please let me know if a different format would work better for you.",
+    "rationale": "用具体偏好帮助同事了解如何与你合作，并邀请他们提出自己的需要。"
+  },
+  "words": [
+    {
+      "id": "user-manual",
+      "word": "manual",
+      "ipa": "/ˈmænjuəl/",
+      "pos": "noun",
+      "meaning": "手册，说明书",
+      "collocation": "user manual",
+      "example": "Before assembling the furniture, please read the instruction manual carefully.",
+      "translation": "在组装家具前，请仔细阅读说明书。",
+      "note": "在职场环境中，manual常指操作指南或工作流程说明"
+    },
+    {
+      "id": "collaboration",
+      "word": "collaboration",
+      "ipa": "/kəˌlæbəˈreɪʃn/",
+      "pos": "noun",
+      "meaning": "协作，合作",
+      "collocation": "team collaboration",
+      "example": "Sharing our work manuals can make collaboration smoother.",
+      "translation": "分享工作说明书可以让协作更顺畅。",
+      "note": "现代职场中，collaboration强调不同背景和专长的人共同工作"
+    },
+    {
+      "id": "preferences",
+      "word": "preferences",
+      "ipa": "/ˈprefrənsɪz/",
+      "pos": "noun",
+      "meaning": "偏好，偏爱",
+      "collocation": "personal preferences",
+      "example": "Please include your communication preferences in the manual.",
+      "translation": "请在说明书里写上你的沟通偏好。",
+      "note": "在职场环境中，明确个人偏好有助于提高工作满意度和效率"
+    },
+    {
+      "id": "misunderstanding",
+      "word": "misunderstanding",
+      "ipa": "/ˌmɪsʌndərˈstændɪŋ/",
+      "pos": "noun",
+      "meaning": "误解，误会",
+      "collocation": "avoid misunderstanding",
+      "example": "Knowing how a teammate prefers to work can prevent misunderstandings.",
+      "translation": "了解同事偏好的工作方式，可以减少误解。",
+      "note": "职场中的misunderstanding常因文化差异或沟通不畅造成"
+    },
+    {
+      "id": "expectations",
+      "word": "expectations",
+      "ipa": "/ɪkˈspekteɪʃənz/",
+      "pos": "noun",
+      "meaning": "期望，预期",
+      "collocation": "manage expectations",
+      "example": "We can use the manual to clarify expectations when we start working together.",
+      "translation": "开始协作时，我们可以用这份说明明确彼此的预期。",
+      "note": "在职场中，明确expectations是成功管理项目和关系的关键"
+    },
+    {
+      "id": "performance",
+      "word": "performance",
+      "ipa": "/pərˈfɔːrməns/",
+      "pos": "noun",
+      "meaning": "表现，绩效",
+      "collocation": "performance evaluation",
+      "example": "The manual can mention the conditions that help you do your best work.",
+      "translation": "说明书可以写明哪些工作条件有助于你发挥。",
+      "note": "performance在职场中常用于评估工作成果和效率"
+    }
+  ],
+  "structure": {
+    "original": "Personal user manuals are helpful tools for sharing your working style, communication preferences, and other details, making it easier for teams to work together.",
+    "analysis": [
+      "\"Personal user manuals\"是主语，其中\"personal\"作为形容词修饰\"user manuals\"",
+      "\"are helpful tools\"是系表结构作谓语，其中\"helpful\"是形容词修饰\"tools\"",
+      "\"for sharing your working style, communication preferences, and other details\"是介词短语作定语修饰\"tools\"，其中包含三个并列的名词短语",
+      "\"making it easier for teams to work together\"是现在分词短语作结果状语，其中\"it\"是形式宾语，\"easier\"是宾语补足语，\"for teams to work together\"是不定式短语作真正宾语"
+    ],
+    "transfer": "Team collaboration guides are valuable resources for outlining your expertise areas, decision-making processes, and work expectations, enabling smoother project execution and better alignment among colleagues."
+  },
+  "rewrite": {
+    "bad": "You need to make a manual so we know how to work with you. Do it by Friday.",
+    "good": "I'd appreciate it if you could create a personal user manual that shares your work preferences, communication style, and how you approach different types of tasks. This would help us understand each other better and work more efficiently together.",
+    "translation": "如果你能创建一份个人使用说明书，分享你的工作偏好、沟通风格以及你处理不同任务的方式，我将不胜感激。这将帮助我们更好地相互理解，并更高效地一起工作。",
+    "pattern": "I'd appreciate it if you could [具体行动] that [具体内容]. This would help [具体好处]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I do my best work ___ I have time to focus before a discussion.",
+      "answer": "when",
+      "why": "用 when 说明自己发挥最好的工作条件。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I prefer to receive feedback in ___ before our one-on-one.",
+      "answer": "writing",
+      "why": "in writing 清楚表达偏好的反馈渠道。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Please let me know ___ a different format would work better for you.",
+      "answer": "if",
+      "why": "if 引出对方可以提出调整的情况。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Alex is a data analyst who needs to create a personal user manual to help his team understand his work style and preferences.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Alex faces conflicting priorities between his detailed data analysis approach and his manager's expectation for quick results, causing tension in team meetings.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "如果讨论前能留出专注时间，我的工作状态最好。",
+      "answer": "I do my best work when I have time to focus before a discussion.",
+      "why": "本句练习“I do my best work when…”在说明什么工作条件能帮助自己发挥时的用法。"
+    },
+    {
+      "prompt": "我更希望在一对一会议前收到书面反馈。",
+      "answer": "I prefer to receive feedback in writing before our one-on-one.",
+      "why": "本句练习“I prefer to receive feedback…”在说清自己偏好的反馈方式时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "新团队成员希望大家了解彼此的协作方式。请用英文建议每个人填写一份简短的工作使用说明书，介绍工作习惯和沟通偏好，并放到团队共享空间。",
+    "options": [
+      "You need to make a manual so we know how to work with you. Do it by Friday.",
+      "Could each of us create a short work user manual with our working style and communication preferences? We can save them in the team space so people can refer to them when collaborating.",
+      "Could each of us create a short work user manual with our working style and communication preferences?"
+    ],
+    "correct": 1,
+    "why": "工作使用说明书的价值是分享个人协作偏好，并让团队之后能随时查阅。"
+  },
+  "output": {
+    "prompt": "你将和一位新项目搭档合作一个月。请用英文说明你通常怎样接收任务、遇到不确定时会怎么做，并邀请对方提出自己的合作偏好。",
+    "sample": "I work best when the expected outcome and deadline are clear. If something is unclear, I’ll ask early rather than make assumptions. How do you prefer to share updates and questions?",
+    "check": [
+      "是否写出具体的工作习惯？",
+      "是否说明一种反馈偏好？",
+      "是否给同事留下提出不同需要的空间？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "I do my best work when…",
+      "meaning": "说明什么工作条件能帮助自己发挥",
+      "collocation": "do one’s best work when + 句子",
+      "example": "I do my best work when I have time to focus before a discussion.",
+      "translation": "如果讨论前能留出专注时间，我的工作状态最好。"
+    },
+    {
+      "id": "work-02",
+      "word": "I prefer to receive feedback…",
+      "meaning": "说清自己偏好的反馈方式",
+      "collocation": "prefer to receive feedback + 方式",
+      "example": "I prefer to receive feedback in writing before our one-on-one.",
+      "translation": "我更希望在一对一会议前收到书面反馈。"
+    },
+    {
+      "id": "work-03",
+      "word": "Please let me know if…",
+      "meaning": "邀请同事提出需要调整的地方",
+      "collocation": "let me know if + 句子",
+      "example": "Please let me know if a different format would work better for you.",
+      "translation": "如果其他形式对你更合适，请告诉我。"
+    }
+  ]
+}

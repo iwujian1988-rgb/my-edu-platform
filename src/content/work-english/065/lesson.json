@@ -1,0 +1,352 @@
+{
+  "id": "065",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "团队文化复盘：哪些习惯应该开始、停止、继续",
+  "topic": "团队文化复盘：哪些习惯应该开始、停止、继续",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Team Culture Retro - Atlassian Plays | Atlassian",
+    "section": "公开团队工具",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队工具",
+    "url": "https://www.atlassian.com/team-playbook/plays/team-culture-retro",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Atlassian 公开资料。",
+    "paragraphs": [
+      "Take a closer look at your team's culture, habits, and rituals to decide – together – what to start doing, what's not working, and what's worth keeping.",
+      "Take a closer look at your team's culture, habits, and rituals.",
+      "Use the “Start, Stop, Continue” framework to decide as a team what's working and what to change.",
+      "Assign owners to action items and follow up to keep momentum going.",
+      "Meeting space or video conferencing with screen sharing",
+      "Physical or digital whiteboard, like a Confluence whiteboard",
+      "Sticky notes and markers for in‑person sessions",
+      "Your preferred AI tool, such as Rovo",
+      "Reflect on your team's habits and rituals to decide what to start, stop, and continue.",
+      "About this Play",
+      "A team culture retro is a structured exercise where a team reflects on their habits, rituals, and ways of working. Using the “Start, Stop, Continue” framework, team members share what they'd like the team to start doing (what could work well), stop doing (what isn't working and should be dropped), and continue doing (what’s valuable and worth keeping).",
+      "Unlike a sprint retrospective, which focuses on project delivery, a team culture retro zooms out to look at the underlying norms and behaviors that shape how a team collaborates."
+    ],
+    "translations": [
+      "更仔细地审视您团队的文化、习惯和仪式，共同决定开始做什么、什么不起作用，以及什么值得保留。",
+      "更仔细地审视您团队的文化、习惯和仪式。",
+      "使用\"开始、停止、继续\"框架，共同决定什么有效以及需要改变什么。",
+      "为行动项目分配负责人，并进行跟进以保持势头。",
+      "会议室或带屏幕共享的视频会议",
+      "实体或数字白板，如Confluence白板",
+      "用于面对面会议的便利贴和记号笔",
+      "您首选的AI工具，如Rovo",
+      "反思您团队的习惯和仪式，决定开始做什么、停止做什么以及继续做什么。",
+      "关于此方法",
+      "团队文化回顾是一项结构化练习，团队在其中反思他们的习惯、仪式和工作方式。使用\"开始、停止、继续\"框架，团队成员分享他们希望团队开始做的事情（可能效果良好的）、停止做的事情（不起作用且应该放弃的）以及继续做的事情（有价值且值得保留的）。",
+      "与关注项目交付的冲刺回顾不同，团队文化回顾退后一步，审视塑造团队协作方式的潜在规范和行为。"
+    ],
+    "fullTextParagraphs": [
+      "Take a closer look at your team's culture, habits, and rituals to decide – together – what to start doing, what's not working, and what's worth keeping.",
+      "Take a closer look at your team's culture, habits, and rituals.",
+      "Use the “Start, Stop, Continue” framework to decide as a team what's working and what to change.",
+      "Assign owners to action items and follow up to keep momentum going.",
+      "Meeting space or video conferencing with screen sharing",
+      "Physical or digital whiteboard, like a Confluence whiteboard",
+      "Sticky notes and markers for in‑person sessions",
+      "Your preferred AI tool, such as Rovo",
+      "Reflect on your team's habits and rituals to decide what to start, stop, and continue.",
+      "About this Play",
+      "Instructions",
+      "A team culture retro is a structured exercise where a team reflects on their habits, rituals, and ways of working. Using the “Start, Stop, Continue” framework, team members share what they'd like the team to start doing (what could work well), stop doing (what isn't working and should be dropped), and continue doing (what’s valuable and worth keeping).",
+      "Unlike a sprint retrospective, which focuses on project delivery, a team culture retro zooms out to look at the underlying norms and behaviors that shape how a team collaborates.",
+      "Every team develops habits over time – some intentional, some not. A team culture retro creates dedicated time and space to reflect on those habits and make deliberate choices about how you work together.",
+      "Research shows that teams with higher levels of reflexivity – the extent to which team members collectively reflect on objectives, strategies, and processes – are more innovative, adaptable, and effective at problem-solving (Schippers, West, & Dawson, 2015).",
+      "Organizational culture has also been shown to be a significant predictor of employee attitudes, organizational effectiveness, and financial performance (Hartnell et al., 2019).",
+      "By regularly reflecting on your culture, you can build shared ownership of your team's norms and create a foundation for continuous improvement.",
+      "You can run a team culture retro anytime your team is:",
+      "Starting fresh with new members or a new project",
+      "Adapting to change, such as a reorg, new tools, or a shift to hybrid or distributed work",
+      "Focused on inclusion and wants to make sure everyone's voice is heard",
+      "Feeling stuck or noticing friction in how the team collaborates",
+      "Looking to adopt new ways of working, like exploring how the team uses AI",
+      "Team culture retros are proven to help:",
+      "Align on priorities. Teams zero in on what’s effective and what’s not — because culture works through specific, identifiable practices, not vague values. (Hartnell et al., 2019)",
+      "Build shared ownership. Everyone contributes to shaping team norms — and equal contribution is a hallmark of the highest-performing teams. (Duhigg, 2016)",
+      "Create space for improvement. Encourage candid discussion and follow-through — structured team reflection on processes predicts innovation and better outcomes. (Schippers, West & Dawson, 2015; Schippers & West, 2017)",
+      "Surface hidden friction. Psychological safety — the top predictor of high-performing teams — lets people name what isn’t working without fear of judgment. (Duhigg, 2016)",
+      "Drive intentional change. Reflexivity only improves performance when reflection leads to concrete, adapted behavior — not just conversation. (Schippers & West, 2017)",
+      "Schedule a one-hour meeting with your teammates, and pick a topic to discuss that’s related to your team’s culture. It could be a broad topic, like communication or collaboration, or a specific topic, like using AI. Next, nominate someone on your team to run this activity as the facilitator. It can be someone who's a skilled presenter or who’s keen to build their facilitation skills. Then, prepare a physical or digital whiteboard, like a Confluence whiteboard, with three columns: Start, Stop, and Continue. If you’re using a digital whiteboard, give all attendees access.",
+      "Open the meeting by setting the intention for this session and introducing the topic. Let your team know this is a safe space to reflect on what's working and what could improve. Remind them that the goal is improvement, not blame.",
+      "If you're facilitating the meeting virtually, don’t record the meeting or use an AI notetaker. This can help create a more psychologically safe environment that encourages honest feedback.",
+      "Ask each person to write down their ideas – one idea per sticky note or whiteboard entry – in each of the three categories:",
+      "What should our team start doing? Encourage suggestions for habits, tools, or ways of working that could improve collaboration. Sample questions to discuss:",
+      "What habits or rituals should we start doing?",
+      "Is there a communication style that might work better for the team?",
+      "Is there a tool that could improve how we collaborate?",
+      "What rituals could we create to encourage the team to explore new ways of working, like AI?",
+      "What isn't working and should be stopped? Focus on unhelpful behaviors, tools, or rituals. Sample questions to discuss:",
+      "Is our team doing something that doesn't work for you?",
+      "Is there a meeting style or communication method that isn't working?",
+      "What happens on this team that limits or discourages you from exploring new tools or ways of working?",
+      "What's working and worth keeping? Highlight things that bring value but might not yet be formal team habits. Sample questions to discuss:",
+      "What's something we do as a team that you appreciate and would like to continue?",
+      "What norms or rituals help you feel included and supported?",
+      "How has the team encouraged you to try new things, like AI, that you'd like to see continue?",
+      "Group similar items, and talk through which suggestions you want to try implementing as a team, along with who owns each next step.",
+      "If you’re meeting in person, use AI to digitize your whiteboard, save time, and make sure nothing gets lost in translation.",
+      "Take a photo of your physical whiteboard.",
+      "Use your preferred AI tool, like Rovo, to extract the sticky note contents.",
+      "Ask AI to sort the sticky notes into the Start, Stop, and Continue categories.",
+      "For virtual whiteboards, use AI tool to summarize the key themes and group them into categories. This helps you quickly identify patterns and prioritize what to act on.",
+      "Finally, save the digital version of your whiteboard, and link it in a prominent place (like a bookmark in the team Slack channel) where the team can easily find and revisit the norms.",
+      "Consider linking to your team's culture retro results in onboarding guides for new team members. It's a great way to jumpstart their understanding of your team's norms and how you work together.",
+      "Discuss any remaining questions, and schedule a follow-up to revisit the list, check progress, and make updates if needed.",
+      "Assess your team’s health and determine an improvement plan.",
+      "Make the unspoken spoken and build team safety by making team norms visible and inclusive.",
+      "Re-evaluate team meetings and practices to focus on what matters most.",
+      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
+      "Better meetings start with a page that outlines the purpose, expected outcomes, and key discussion points.",
+      "Help your teammates understand how best to work with you.",
+      "Provide a safe space to discuss what worked and what didn’t.",
+      "Get the latest Plays and work life advice when you sign up for our newsletter."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Take a closer look at your team's culture, habits, and rituals",
+      "meaning": "更仔细地审视你团队的文化、习惯和仪式",
+      "explain": "这个短语用于引导团队进行深入反思，关注团队日常运作的基本元素",
+      "example": "Before implementing new policies, managers should take a closer look at their team's culture, habits, and rituals to ensure alignment."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Use the “Start, Stop, Continue” framework",
+      "meaning": "使用'开始、停止、继续'框架",
+      "explain": "这是一种结构化的团队反思方法，帮助团队决定哪些新实践应该开始，哪些应该停止，哪些应该继续",
+      "example": "To improve our workflow, we decided to use the \"Start, Stop, Continue\" framework during our quarterly planning meeting."
+    },
+    {
+      "paragraph": 8,
+      "phrase": "Reflect on your team's habits and rituals",
+      "meaning": "反思你团队的习惯和仪式",
+      "explain": "这个短语强调了对团队现有工作方式和实践的深入思考过程",
+      "example": "As a new team leader, I spent the first month reflecting on my team's habits and rituals before proposing any changes."
+    },
+    {
+      "paragraph": 10,
+      "phrase": "A team culture retro is a structured exercise",
+      "meaning": "团队文化复盘是一种结构化的练习",
+      "explain": "这个短语定义了团队文化复盘的本质，强调其有组织的特性",
+      "example": "A team culture retro is a structured exercise that helps identify underlying issues affecting collaboration."
+    }
+  ],
+  "scenario": {
+    "title": "Choosing one improvement in the sprint retrospective",
+    "english": [
+      "At the end of a sprint, the team notices that handoff notes often leave out the next owner or next step.",
+      "The team wants to improve the handoff without adding a recurring meeting or changing the whole process at once.",
+      "You ask what should change and suggest trying one small adjustment in the next sprint."
+    ],
+    "chinese": [
+      "一个 sprint 结束后，团队发现交接记录经常漏掉下一位负责人或下一步。",
+      "团队希望改善交接，但不想增加固定会议，也不打算一次改掉整套流程。",
+      "你提出复盘问题，并建议下一轮先试行一项小改动。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队每周例会经常重复讨论已作出的决定，交接记录又缺少负责人和下一步。请用英文提出一项要开始、一项要停止和一项要继续的做法，并约定下个 sprint 再检查。",
+    "sample": "Let’s start adding an owner and next step to each handoff, stop reopening decisions without new information, and continue using the shared handoff document. We can review the change at the next retrospective.",
+    "rationale": "用开始、停止、继续三个角度提出具体团队习惯，并约定回看时间。"
+  },
+  "words": [
+    {
+      "id": "rituals",
+      "word": "rituals",
+      "ipa": "/ˈrɪtʃuəlz/",
+      "pos": "noun",
+      "meaning": "仪式，惯例",
+      "collocation": "team rituals, daily rituals, work rituals",
+      "example": "The team wants to improve handoffs without adding another recurring ritual.",
+      "translation": "团队想改善交接，但不想增加另一项固定活动。",
+      "note": "在职场环境中，rituals通常指团队定期进行的习惯性活动，有助于建立团队文化和认同感"
+    },
+    {
+      "id": "framework",
+      "word": "framework",
+      "ipa": "/ˈfreɪmwɜːrk/",
+      "pos": "noun",
+      "meaning": "框架，结构",
+      "collocation": "analytical framework, conceptual framework, working framework",
+      "example": "The retrospective gives the team a simple framework for discussing improvements.",
+      "translation": "复盘为团队讨论改进提供了一个简单框架。",
+      "note": "在职场中，framework指用于组织思想、流程或决策的结构化方法"
+    },
+    {
+      "id": "momentum",
+      "word": "momentum",
+      "ipa": "/məˈmentəm/",
+      "pos": "noun",
+      "meaning": "势头，动力",
+      "collocation": "gain momentum, maintain momentum, lose momentum",
+      "example": "One small change can build momentum for improving the handoff process.",
+      "translation": "一项小改动可以推动交接流程持续改善。",
+      "note": "在职场环境中，momentum常用来描述项目或进展的速度和持续前进的状态"
+    },
+    {
+      "id": "retrospective",
+      "word": "retrospective",
+      "ipa": "/ˌretrəˈspektɪv/",
+      "pos": "noun",
+      "meaning": "回顾，复盘",
+      "collocation": "sprint retrospective, project retrospective, team retrospective",
+      "example": "In the retrospective, we’ll discuss what worked and what to improve next sprint.",
+      "translation": "复盘时，我们会讨论哪些做得好，以及下个 sprint 要改进什么。",
+      "note": "在敏捷开发和项目管理中，retrospective指团队对已完成工作的反思会议"
+    },
+    {
+      "id": "collaborates",
+      "word": "collaborates",
+      "ipa": "/kəˈlæbəreɪts/",
+      "pos": "verb",
+      "meaning": "合作，协作",
+      "collocation": "collaborates effectively, collaborates closely, collaborates with",
+      "example": "The team collaborates on one handoff improvement for the next sprint.",
+      "translation": "团队会一起确定下个 sprint 的一项交接改进。",
+      "note": "collaborates强调多方共同工作以实现共同目标，比简单的work together更正式"
+    },
+    {
+      "id": "norms",
+      "word": "norms",
+      "ipa": "/nɔːrmz/",
+      "pos": "noun",
+      "meaning": "规范，准则",
+      "collocation": "social norms, cultural norms, workplace norms",
+      "example": "A clear handoff norm says who owns the next step.",
+      "translation": "明确的交接约定会说明谁负责下一步。",
+      "note": "在职场环境中，norms指被团队接受的行为标准和期望"
+    }
+  ],
+  "structure": {
+    "original": "Take a closer look at your team's culture, habits, and rituals to decide – together – what to start doing, what's not working, and what's worth keeping.",
+    "analysis": [
+      "Take a closer look at your team's culture, habits, and rituals 是祈使句开头，'Take a closer look at' 是动词短语，'your team's culture, habits, and rituals' 是介词'at'的宾语，其中包含三个并列名词短语，由'and'连接",
+      "to decide – together – what to start doing, what's not working, and what's worth keeping 是不定式短语作目的状语，'together'作为插入语，'what to start doing, what's not working, and what's worth keeping'是由'and'连接的三个并列的what从句，每个从句都包含不定式或现在分词结构"
+    ],
+    "transfer": "Examine your company's communication patterns, decision-making processes, and feedback mechanisms to collectively determine what improvements to implement, what obstacles to remove, and what practices to maintain."
+  },
+  "rewrite": {
+    "bad": "This is how we have always handled handoffs. There is no need to review it.",
+    "good": "What should we change about our handoffs? Could we try adding an owner and next step to each handoff for the next sprint, then review whether it helped?",
+    "translation": "我们的交接有哪些地方值得改？能否在下一轮为每次交接补上负责人和下一步，之后再看是否有帮助？",
+    "pattern": "What should we change about [the process]? Could we try [one change] and review it next time?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Let’s start ___ a short written update before the weekly meeting.",
+      "answer": "sharing",
+      "why": "start 后接动名词，提出新的团队习惯。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We should stop ___ decisions without new information.",
+      "answer": "reopening",
+      "why": "stop doing 表示停止某个做法。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s continue ___ decisions in the project page.",
+      "answer": "documenting",
+      "why": "continue doing 表示继续保留有效习惯。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "During a weekly team meeting, Sarah and Mike were reviewing the project timeline when they realized their team's communication habits were causing delays.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah believed the team should start daily stand-up meetings to improve coordination, while Mike argued that adding another meeting would reduce their focus on actual work.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们开始在周会前分享简短的书面更新吧。",
+      "answer": "Let’s start sharing a short written update before the weekly meeting.",
+      "why": "本句练习“Let’s start doing…”在提出值得开始的新团队习惯时的用法。"
+    },
+    {
+      "prompt": "没有新信息时，我们不应反复重开已作出的决定。",
+      "answer": "We should stop reopening decisions without new information.",
+      "why": "本句练习“We should stop…”在指出应停止的低效做法时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "一次迭代结束后，团队发现交接信息经常缺失。请用英文提出一个复盘问题，并建议下一轮试行一项改进。",
+    "options": [
+      "You're wrong, we don't need more meetings, we need to focus on our work.",
+      "What should we change about our handoffs? Could we try adding an owner and next step to each handoff for the next sprint, then review whether it helped?",
+      "What should we change about our handoffs?"
+    ],
+    "correct": 1,
+    "why": "复盘聚焦具体工作习惯，并把讨论转成下一轮可以检验的改动。"
+  },
+  "output": {
+    "prompt": "团队交接经常漏掉客户影响，导致接手人重复询问；大家认可现有的值班表。请用英文提出一项要开始、一项要停止和一项要继续的做法，并约定何时回顾。",
+    "sample": "Let’s start including customer impact and steps already tried in each handoff, stop sending cases without that summary, and continue using the shared on-call schedule. We can review the changes at next month’s team meeting.",
+    "check": [
+      "是否分别提出开始、停止和继续的做法？",
+      "是否针对团队当前的交接和会议问题？",
+      "是否安排下一次复查？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Let’s start doing…",
+      "meaning": "提出值得开始的新团队习惯",
+      "collocation": "start doing + 具体行动",
+      "example": "Let’s start sharing a short written update before the weekly meeting.",
+      "translation": "我们开始在周会前分享简短的书面更新吧。"
+    },
+    {
+      "id": "work-02",
+      "word": "We should stop…",
+      "meaning": "指出应停止的低效做法",
+      "collocation": "stop + doing",
+      "example": "We should stop reopening decisions without new information.",
+      "translation": "没有新信息时，我们不应反复重开已作出的决定。"
+    },
+    {
+      "id": "work-03",
+      "word": "Let’s continue…",
+      "meaning": "保留已经证明有效的做法",
+      "collocation": "continue + doing",
+      "example": "Let’s continue documenting decisions in the project page.",
+      "translation": "我们继续在项目页面记录决策。"
+    }
+  ]
+}

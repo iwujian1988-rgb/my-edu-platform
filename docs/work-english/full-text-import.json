@@ -1,0 +1,607 @@
+{
+  "importedAt": "2026-10-17T03:22:45.631Z",
+  "count": 100,
+  "totalWords": 128096,
+  "lessons": [
+    {
+      "id": "001",
+      "paragraphs": 16,
+      "words": 652,
+      "annotations": 9
+    },
+    {
+      "id": "002",
+      "paragraphs": 11,
+      "words": 680,
+      "annotations": 6
+    },
+    {
+      "id": "003",
+      "paragraphs": 15,
+      "words": 643,
+      "annotations": 6
+    },
+    {
+      "id": "004",
+      "paragraphs": 25,
+      "words": 1119,
+      "annotations": 6
+    },
+    {
+      "id": "005",
+      "paragraphs": 20,
+      "words": 920,
+      "annotations": 6
+    },
+    {
+      "id": "006",
+      "paragraphs": 19,
+      "words": 524,
+      "annotations": 4
+    },
+    {
+      "id": "007",
+      "paragraphs": 25,
+      "words": 709,
+      "annotations": 4
+    },
+    {
+      "id": "008",
+      "paragraphs": 41,
+      "words": 1107,
+      "annotations": 4
+    },
+    {
+      "id": "009",
+      "paragraphs": 28,
+      "words": 905,
+      "annotations": 4
+    },
+    {
+      "id": "010",
+      "paragraphs": 25,
+      "words": 1247,
+      "annotations": 4
+    },
+    {
+      "id": "011",
+      "paragraphs": 41,
+      "words": 1345,
+      "annotations": 4
+    },
+    {
+      "id": "012",
+      "paragraphs": 24,
+      "words": 813,
+      "annotations": 4
+    },
+    {
+      "id": "013",
+      "paragraphs": 39,
+      "words": 1242,
+      "annotations": 4
+    },
+    {
+      "id": "014",
+      "paragraphs": 23,
+      "words": 859,
+      "annotations": 4
+    },
+    {
+      "id": "015",
+      "paragraphs": 33,
+      "words": 1091,
+      "annotations": 4
+    },
+    {
+      "id": "016",
+      "paragraphs": 45,
+      "words": 1922,
+      "annotations": 4
+    },
+    {
+      "id": "017",
+      "paragraphs": 29,
+      "words": 807,
+      "annotations": 4
+    },
+    {
+      "id": "018",
+      "paragraphs": 81,
+      "words": 2713,
+      "annotations": 4
+    },
+    {
+      "id": "019",
+      "paragraphs": 101,
+      "words": 2496,
+      "annotations": 4
+    },
+    {
+      "id": "020",
+      "paragraphs": 276,
+      "words": 3461,
+      "annotations": 4
+    },
+    {
+      "id": "021",
+      "paragraphs": 344,
+      "words": 3685,
+      "annotations": 4
+    },
+    {
+      "id": "022",
+      "paragraphs": 24,
+      "words": 1023,
+      "annotations": 4
+    },
+    {
+      "id": "023",
+      "paragraphs": 20,
+      "words": 1117,
+      "annotations": 4
+    },
+    {
+      "id": "024",
+      "paragraphs": 19,
+      "words": 613,
+      "annotations": 4
+    },
+    {
+      "id": "025",
+      "paragraphs": 90,
+      "words": 1735,
+      "annotations": 4
+    },
+    {
+      "id": "026",
+      "paragraphs": 42,
+      "words": 706,
+      "annotations": 6
+    },
+    {
+      "id": "027",
+      "paragraphs": 17,
+      "words": 498,
+      "annotations": 4
+    },
+    {
+      "id": "028",
+      "paragraphs": 51,
+      "words": 605,
+      "annotations": 4
+    },
+    {
+      "id": "029",
+      "paragraphs": 16,
+      "words": 160,
+      "annotations": 4
+    },
+    {
+      "id": "030",
+      "paragraphs": 82,
+      "words": 1921,
+      "annotations": 4
+    },
+    {
+      "id": "031",
+      "paragraphs": 39,
+      "words": 1162,
+      "annotations": 4
+    },
+    {
+      "id": "032",
+      "paragraphs": 12,
+      "words": 188,
+      "annotations": 4
+    },
+    {
+      "id": "033",
+      "paragraphs": 11,
+      "words": 212,
+      "annotations": 4
+    },
+    {
+      "id": "034",
+      "paragraphs": 44,
+      "words": 455,
+      "annotations": 4
+    },
+    {
+      "id": "035",
+      "paragraphs": 31,
+      "words": 596,
+      "annotations": 4
+    },
+    {
+      "id": "036",
+      "paragraphs": 17,
+      "words": 459,
+      "annotations": 4
+    },
+    {
+      "id": "037",
+      "paragraphs": 22,
+      "words": 191,
+      "annotations": 4
+    },
+    {
+      "id": "038",
+      "paragraphs": 19,
+      "words": 479,
+      "annotations": 4
+    },
+    {
+      "id": "039",
+      "paragraphs": 44,
+      "words": 868,
+      "annotations": 4
+    },
+    {
+      "id": "040",
+      "paragraphs": 28,
+      "words": 643,
+      "annotations": 4
+    },
+    {
+      "id": "041",
+      "paragraphs": 20,
+      "words": 1009,
+      "annotations": 4
+    },
+    {
+      "id": "042",
+      "paragraphs": 8,
+      "words": 279,
+      "annotations": 4
+    },
+    {
+      "id": "043",
+      "paragraphs": 15,
+      "words": 653,
+      "annotations": 4
+    },
+    {
+      "id": "044",
+      "paragraphs": 27,
+      "words": 1111,
+      "annotations": 4
+    },
+    {
+      "id": "045",
+      "paragraphs": 9,
+      "words": 641,
+      "annotations": 4
+    },
+    {
+      "id": "046",
+      "paragraphs": 16,
+      "words": 1417,
+      "annotations": 4
+    },
+    {
+      "id": "047",
+      "paragraphs": 18,
+      "words": 1212,
+      "annotations": 4
+    },
+    {
+      "id": "048",
+      "paragraphs": 10,
+      "words": 616,
+      "annotations": 4
+    },
+    {
+      "id": "049",
+      "paragraphs": 11,
+      "words": 862,
+      "annotations": 4
+    },
+    {
+      "id": "050",
+      "paragraphs": 6,
+      "words": 528,
+      "annotations": 4
+    },
+    {
+      "id": "051",
+      "paragraphs": 20,
+      "words": 1863,
+      "annotations": 4
+    },
+    {
+      "id": "052",
+      "paragraphs": 38,
+      "words": 2388,
+      "annotations": 4
+    },
+    {
+      "id": "053",
+      "paragraphs": 28,
+      "words": 1387,
+      "annotations": 4
+    },
+    {
+      "id": "054",
+      "paragraphs": 41,
+      "words": 1668,
+      "annotations": 4
+    },
+    {
+      "id": "055",
+      "paragraphs": 34,
+      "words": 1372,
+      "annotations": 4
+    },
+    {
+      "id": "056",
+      "paragraphs": 100,
+      "words": 1987,
+      "annotations": 4
+    },
+    {
+      "id": "057",
+      "paragraphs": 54,
+      "words": 1055,
+      "annotations": 4
+    },
+    {
+      "id": "058",
+      "paragraphs": 60,
+      "words": 1340,
+      "annotations": 4
+    },
+    {
+      "id": "059",
+      "paragraphs": 58,
+      "words": 1074,
+      "annotations": 4
+    },
+    {
+      "id": "060",
+      "paragraphs": 86,
+      "words": 1380,
+      "annotations": 4
+    },
+    {
+      "id": "061",
+      "paragraphs": 78,
+      "words": 1310,
+      "annotations": 4
+    },
+    {
+      "id": "062",
+      "paragraphs": 43,
+      "words": 704,
+      "annotations": 4
+    },
+    {
+      "id": "063",
+      "paragraphs": 91,
+      "words": 2046,
+      "annotations": 4
+    },
+    {
+      "id": "064",
+      "paragraphs": 95,
+      "words": 1499,
+      "annotations": 4
+    },
+    {
+      "id": "065",
+      "paragraphs": 63,
+      "words": 1193,
+      "annotations": 4
+    },
+    {
+      "id": "066",
+      "paragraphs": 4,
+      "words": 206,
+      "annotations": 4
+    },
+    {
+      "id": "067",
+      "paragraphs": 7,
+      "words": 560,
+      "annotations": 4
+    },
+    {
+      "id": "068",
+      "paragraphs": 5,
+      "words": 438,
+      "annotations": 4
+    },
+    {
+      "id": "069",
+      "paragraphs": 5,
+      "words": 245,
+      "annotations": 4
+    },
+    {
+      "id": "070",
+      "paragraphs": 6,
+      "words": 556,
+      "annotations": 4
+    },
+    {
+      "id": "071",
+      "paragraphs": 3,
+      "words": 373,
+      "annotations": 4
+    },
+    {
+      "id": "072",
+      "paragraphs": 3,
+      "words": 216,
+      "annotations": 4
+    },
+    {
+      "id": "073",
+      "paragraphs": 3,
+      "words": 182,
+      "annotations": 4
+    },
+    {
+      "id": "074",
+      "paragraphs": 3,
+      "words": 217,
+      "annotations": 4
+    },
+    {
+      "id": "075",
+      "paragraphs": 3,
+      "words": 250,
+      "annotations": 4
+    },
+    {
+      "id": "076",
+      "paragraphs": 3,
+      "words": 330,
+      "annotations": 4
+    },
+    {
+      "id": "077",
+      "paragraphs": 4,
+      "words": 324,
+      "annotations": 4
+    },
+    {
+      "id": "078",
+      "paragraphs": 2,
+      "words": 335,
+      "annotations": 4
+    },
+    {
+      "id": "079",
+      "paragraphs": 2,
+      "words": 373,
+      "annotations": 4
+    },
+    {
+      "id": "080",
+      "paragraphs": 2,
+      "words": 373,
+      "annotations": 4
+    },
+    {
+      "id": "081",
+      "paragraphs": 656,
+      "words": 21544,
+      "annotations": 3
+    },
+    {
+      "id": "082",
+      "paragraphs": 144,
+      "words": 5011,
+      "annotations": 4
+    },
+    {
+      "id": "083",
+      "paragraphs": 84,
+      "words": 1692,
+      "annotations": 4
+    },
+    {
+      "id": "084",
+      "paragraphs": 46,
+      "words": 1626,
+      "annotations": 4
+    },
+    {
+      "id": "085",
+      "paragraphs": 23,
+      "words": 563,
+      "annotations": 4
+    },
+    {
+      "id": "086",
+      "paragraphs": 125,
+      "words": 1832,
+      "annotations": 4
+    },
+    {
+      "id": "087",
+      "paragraphs": 83,
+      "words": 2217,
+      "annotations": 4
+    },
+    {
+      "id": "088",
+      "paragraphs": 64,
+      "words": 1234,
+      "annotations": 4
+    },
+    {
+      "id": "089",
+      "paragraphs": 30,
+      "words": 1283,
+      "annotations": 4
+    },
+    {
+      "id": "090",
+      "paragraphs": 155,
+      "words": 5121,
+      "annotations": 4
+    },
+    {
+      "id": "091",
+      "paragraphs": 41,
+      "words": 1489,
+      "annotations": 4
+    },
+    {
+      "id": "092",
+      "paragraphs": 11,
+      "words": 210,
+      "annotations": 4
+    },
+    {
+      "id": "093",
+      "paragraphs": 11,
+      "words": 518,
+      "annotations": 4
+    },
+    {
+      "id": "094",
+      "paragraphs": 21,
+      "words": 874,
+      "annotations": 4
+    },
+    {
+      "id": "095",
+      "paragraphs": 22,
+      "words": 978,
+      "annotations": 4
+    },
+    {
+      "id": "096",
+      "paragraphs": 6,
+      "words": 296,
+      "annotations": 4
+    },
+    {
+      "id": "097",
+      "paragraphs": 9,
+      "words": 384,
+      "annotations": 4
+    },
+    {
+      "id": "098",
+      "paragraphs": 19,
+      "words": 591,
+      "annotations": 4
+    },
+    {
+      "id": "099",
+      "paragraphs": 15,
+      "words": 390,
+      "annotations": 4
+    },
+    {
+      "id": "100",
+      "paragraphs": 45,
+      "words": 2100,
+      "annotations": 4
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "id": "077",
+  "version": 1,
+  "status": "draft",
+  "company": "Dropbox",
+  "companyZh": "Dropbox",
+  "title": "怎样结束会议，明确大家接下来做什么",
+  "topic": "怎样结束会议，明确大家接下来做什么",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "How to end a meeting well - Dropbox",
+    "section": "公开协作指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开协作指南",
+    "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/end-a-meeting-well",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Dropbox 公开资料。",
+    "paragraphs": [
+      "Don’t schedule a meeting without a clear idea of what success looks and feels like one minute after it ends. Be bold. Write “outcome” or “the end” at the top of your meeting agenda document to align participants right away. This visioning exercise is like driving a boat — you tend to wind up where you look. Know in advance if you want alignment, answers to questions, or to assign actions.",
+      "Ending a meeting on time is a great way to earn trust. As the meeting facilitator, honoring the end time you all agreed to shows that you respect participants’ time and attention. It also affirms participants can join future meetings you schedule without worrying whether it will end on time. The key here is to watch the clock — and know that many videoconferencing tools have built-in timers to remove the manual burden. When you’re ten minutes out, alert folks to this reality. Highlighted in our learnings as a lab for distributed work, a recent Economist Impact survey showed that shorter meeting blocks and more frequent breaks can improve focus, quality of work, and overall well-being. While distributed work may result in more screen time, ending meetings on time can provide more break opportunities to stay refreshed and productive.",
+      "A key reason for using a documented agenda in meetings is it makes wrapping up much easier. With a few minutes left, write down action items and owners — this helps to create clarity and drive results. But don’t stop there. If you’re able, note which items will need a meeting and which can be handled async — and default to async where possible."
+    ],
+    "translations": [
+      "没有对会议结束后一分钟成功是什么样子有清晰的概念，就不要安排会议。要大胆。在你的会议议程文档顶部写上“成果”或“结束”，以便立即让参与者达成一致。这个愿景练习就像驾驶船只——你往往会看向哪里就驶向哪里。提前确定你是想要达成一致、回答问题，还是分配任务。",
+      "准时结束会议是赢得信任的好方法。作为会议主持人，遵守你们共同商定的结束时间，表明你尊重参与者的时间和注意力。这也确认参与者可以参加你安排的未来会议，而不用担心是否会准时结束。这里的关键是看时间——要知道许多视频会议工具都有内置计时器，可以减轻手动负担。当距离结束还有十分钟时，提醒大家这一点。在我们作为分布式工作实验室的学习中，最近《经济学人》影响调查显示，较短的会议时段和更频繁的休息可以提高专注度、工作质量和整体幸福感。虽然分布式工作可能导致更多的屏幕时间，但准时结束会议可以提供更多的休息机会，让人保持精力充沛和高效。",
+      "在会议中使用书面议程的一个关键原因是它使结束会议变得容易得多。在剩下的几分钟内，写下行动项目和负责人——这有助于创造清晰度和推动成果。但不要就此停止。如果可能，记录哪些项目需要开会，哪些可以异步处理——并在可能的情况下默认使用异步方式。"
+    ],
+    "fullTextParagraphs": [
+      "Don’t schedule a meeting without a clear idea of what success looks and feels like one minute after it ends. Be bold. Write “outcome” or “the end” at the top of your meeting agenda document to align participants right away. This visioning exercise is like driving a boat — you tend to wind up where you look. Know in advance if you want alignment, answers to questions, or to assign actions.",
+      "Ending a meeting on time is a great way to earn trust. As the meeting facilitator, honoring the end time you all agreed to shows that you respect participants’ time and attention. It also affirms participants can join future meetings you schedule without worrying whether it will end on time. The key here is to watch the clock — and know that many videoconferencing tools have built-in timers to remove the manual burden. When you’re ten minutes out, alert folks to this reality. Highlighted in our learnings as a lab for distributed work, a recent Economist Impact survey showed that shorter meeting blocks and more frequent breaks can improve focus, quality of work, and overall well-being. While distributed work may result in more screen time, ending meetings on time can provide more break opportunities to stay refreshed and productive.",
+      "A key reason for using a documented agenda in meetings is it makes wrapping up much easier. With a few minutes left, write down action items and owners — this helps to create clarity and drive results. But don’t stop there. If you’re able, note which items will need a meeting and which can be handled async — and default to async where possible.",
+      "Pretty much every calendar tool now offers a setting that reduces half-hour meetings to 25 minutes and hour-long meetings to 50 minutes. Show up as a hero and activate this setting. Either start the meeting late (for example, 2:05pm - 2:30pm) or end it early (for example, 2:00pm - 2:25pm)."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "outcome",
+      "meaning": "成果",
+      "explain": "在会议议程顶部明确标注期望达成的成果，有助于所有参与者从一开始就明确会议目标",
+      "example": "The project outcome was successfully delivered ahead of schedule."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "honoring the end time",
+      "meaning": "遵守结束时间",
+      "explain": "作为会议主持人，准时结束会议是对参与者时间和注意力的尊重，有助于建立信任",
+      "example": "By honoring the end time, the manager demonstrated respect for everyone's schedule."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "shorter meeting blocks",
+      "meaning": "更短的会议时段",
+      "explain": "将会议分割为更短的时段可以提高专注度、工作质量和整体幸福感",
+      "example": "Our company implemented shorter meeting blocks to improve team productivity."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "action items and owners",
+      "meaning": "行动项目和负责人",
+      "explain": "在会议结束前记录明确的行动项目和负责人，有助于创建清晰度和推动结果",
+      "example": "Please review the action items and owners assigned to you in the meeting summary."
+    }
+  ],
+  "scenario": {
+    "title": "Closing the meeting with clear owners and dates",
+    "english": [
+      "A team meeting is nearly over, but the decision and follow-up tasks have not been summarized.",
+      "Participants need to leave knowing who owns each action and when it is due.",
+      "You restate the decision, confirm owners and due dates, record them, and close on time."
+    ],
+    "chinese": [
+      "团队会议快结束了，但还没有总结决定和后续任务。",
+      "参会者需要明确每项任务由谁负责、何时完成。",
+      "你重述决定，确认负责人和截止时间，记入会议记录并按时结束。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "会议还有五分钟结束，但缺少的数据尚未到齐，今天无法作决定。Priya 会在周四前补上分析。请用英文总结暂缓事项、负责人和期限，并说明会后会发书面总结。",
+    "sample": "We’ll hold the decision until we have the missing data. Priya owns the analysis and will share it by Thursday. I’ll send a written recap with the decision status, owner, and due date this afternoon.",
+    "rationale": "会议结束前说清决定状态、行动负责人和期限，并发送书面回顾。"
+  },
+  "words": [
+    {
+      "id": "facilitator",
+      "word": "facilitator",
+      "ipa": "/fəˈsɪlɪteɪtər/",
+      "pos": "noun",
+      "meaning": "主持人，促进者",
+      "collocation": "meeting facilitator",
+      "example": "The facilitator confirms the decision and checks each action owner before closing.",
+      "translation": "主持人在结束前确认决定，并核对每项行动的负责人。",
+      "note": "指引导会议进程、确保会议目标达成的人，通常不是会议主持人"
+    },
+    {
+      "id": "distributed-work",
+      "word": "distributed work",
+      "ipa": "/dɪˈstrɪbjuːtɪd wɜːrk/",
+      "pos": "noun phrase",
+      "meaning": "分布式工作",
+      "collocation": "distributed work environment",
+      "example": "Our company has adapted to distributed work with flexible hours.",
+      "translation": "我们公司已经适应了分布式工作模式，实行弹性工作时间。",
+      "note": "选学词：distributed work 指分布式办公，与本期会议收尾任务关系较弱。"
+    },
+    {
+      "id": "async",
+      "word": "async",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "异步的",
+      "collocation": "async communication",
+      "example": "We prefer async communication for non-urgent matters to respect everyone's focus time.",
+      "translation": "对于非紧急事务，我们倾向于使用异步沟通，以尊重每个人的专注时间。",
+      "note": "选学词：async 指异步沟通；本期练习的是同步会议的收尾表达。"
+    },
+    {
+      "id": "wrap-up",
+      "word": "wrap up",
+      "ipa": "/ræp ʌp/",
+      "pos": "phrasal verb",
+      "meaning": "结束，总结",
+      "collocation": "wrap up the meeting",
+      "example": "Before we wrap up, let’s confirm the decision and due dates.",
+      "translation": "结束前，我们确认一下决定和截止时间。",
+      "note": "指会议结束前的总结和收尾工作"
+    },
+    {
+      "id": "visioning-exercise",
+      "word": "visioning exercise",
+      "ipa": "/ˈvɪʒənɪŋ ˈeksərsaɪz/",
+      "pos": "noun phrase",
+      "meaning": "愿景练习",
+      "collocation": "conduct a visioning exercise",
+      "example": "The team conducted a visioning exercise to clarify their long-term goals.",
+      "translation": "团队进行了一次愿景练习，以明确他们的长期目标。",
+      "note": "选学词：visioning exercise 是愿景讨论活动，与本期行动项收尾无直接关系。"
+    },
+    {
+      "id": "videoconferencing",
+      "word": "videoconferencing",
+      "ipa": "/ˌvɪdioʊˈkɒnfərənsɪŋ/",
+      "pos": "noun",
+      "meaning": "视频会议",
+      "collocation": "videoconferencing tools",
+      "example": "We use videoconferencing tools to connect with remote team members.",
+      "translation": "我们使用视频会议工具与远程团队成员保持联系。",
+      "note": "选学词：videoconferencing 指视频会议；本期核心是会议结束时如何确认行动项。"
+    }
+  ],
+  "structure": {
+    "original": "Don’t schedule a meeting without a clear idea of what success looks and feels like one minute after it ends.",
+    "analysis": [
+      "\"Don't schedule a meeting\" 是祈使句的否定形式，作为主句，直接发出指令",
+      "\"without a clear idea of what success looks and feels like\" 是介词短语作状语，其中\"what success looks and feels like\"是名词性从句，作介词\"of\"的宾语",
+      "\"one minute after it ends\" 是时间状语，修饰\"looks and feels like\"，表示成功状态的具体时间点"
+    ],
+    "transfer": "Don't launch a project without a clear understanding of how success will be measured one quarter after it goes live."
+  },
+  "rewrite": {
+    "bad": "We can finish the market research later. I need to leave now.",
+    "good": "Before we wrap up, let’s confirm the decision and each action owner and due date. I’ll add them to the agenda notes, and we’ll finish on time.",
+    "translation": "结束前，我们确认决定、每项行动的负责人和截止日期。我会写进议程记录，然后准时结束。",
+    "pattern": "Before we wrap up, let’s confirm [the decision and action owners/deadlines]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "We’ll ___ the pilot open for two more weeks.",
+      "answer": "keep",
+      "why": "结束前复述结论，确认所有人理解一致。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Leo ___ the customer email; Priya will update the FAQ.",
+      "answer": "owns",
+      "why": "逐项确认负责人，避免会后无人跟进。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll send the ___ with owners and dates this afternoon.",
+      "answer": "recap",
+      "why": "书面记录方便缺席者查看，也能留下行动依据。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a project manager, needs to end a weekly team meeting that has run over time while ensuring everyone understands their next steps.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "The team is divided on whether to extend the meeting to discuss a new marketing idea or stick to the original agenda and end on time.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们会把试点再延长两周。",
+      "answer": "We’ll keep the pilot open for two more weeks.",
+      "why": "本句练习“summarize what we decided”在总结已经作出的决定时的用法。"
+    },
+    {
+      "prompt": "Leo 负责客户邮件；Priya 更新常见问题。",
+      "answer": "Leo owns the customer email; Priya will update the FAQ.",
+      "why": "本句练习“confirm who owns each action”在确认每项行动由谁负责时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "会议快到结束时间，但还没有总结。请用英文收尾：确认会议结果，逐项重述行动负责人和期限，并按时结束。",
+    "options": [
+      "I'll try to get the market research done when I can, but I'm really busy with other stuff.",
+      "Before we wrap up, let’s confirm the decision and each action owner and due date. I’ll add them to the agenda notes, and we’ll finish on time.",
+      "Before we wrap up, let’s confirm the decision and each action owner and due date."
+    ],
+    "correct": 1,
+    "why": "有效收尾需要确认会议结果和行动安排，也要尊重参会者的时间。"
+  },
+  "output": {
+    "prompt": "会议结束前，团队仍缺少安全评估，暂时不能确定上线日期。Morgan 会在周五提供评估。请用英文总结暂缓的决定、负责人和期限，并说明你会发书面记录。",
+    "sample": "We’ll hold the launch date decision until the security assessment is complete. Morgan will share the assessment by Friday. I’ll send a written recap with the decision status, owner, and due date after the meeting.",
+    "check": [
+      "是否总结哪些决定暂缓？",
+      "是否明确负责人和截止时间？",
+      "是否承诺会后发送书面总结？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "summarize what we decided",
+      "meaning": "总结已经作出的决定",
+      "collocation": "summarize + decision",
+      "example": "We’ll keep the pilot open for two more weeks.",
+      "translation": "我们会把试点再延长两周。"
+    },
+    {
+      "id": "work-02",
+      "word": "confirm who owns each action",
+      "meaning": "确认每项行动由谁负责",
+      "collocation": "confirm + who owns + action",
+      "example": "Leo owns the customer email; Priya will update the FAQ.",
+      "translation": "Leo 负责客户邮件；Priya 更新常见问题。"
+    },
+    {
+      "id": "work-03",
+      "word": "send a written recap after the meeting",
+      "meaning": "会后发送书面总结",
+      "collocation": "send + recap + after the meeting",
+      "example": "I’ll send the recap with owners and dates this afternoon.",
+      "translation": "我今天下午会发出包含负责人和日期的总结。"
+    }
+  ]
+}

@@ -1,0 +1,343 @@
+{
+  "id": "028",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "微软项目启动的第一周，团队要完成什么",
+  "topic": "微软项目启动的第一周，团队要完成什么",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "The First Week of an ISE Project - Engineering Fundamentals Playbook",
+    "section": "公开团队指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队指南",
+    "url": "https://microsoft.github.io/code-with-engineering-playbook/the-first-week-of-an-ise-project/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Microsoft 微软 公开资料。",
+    "paragraphs": [
+      "Organize content in the playbook for quick reference and discoverability",
+      "Provide content in a logical structure which reflects the engineering process",
+      "Extensible hierarchy to allow teams to share deep subject-matter expertise",
+      "Discuss and start writing the Team Agreements. Update these documents with any process decisions made throughout the project Working Agreement Definition of Ready Definition of Done Estimation",
+      "Set up the repository/repositories Decide on repository structure/s Add README.md, LICENSE, CONTRIBUTING.md, .gitignore, etc",
+      "Add README.md, LICENSE, CONTRIBUTING.md, .gitignore, etc",
+      "Build a Product Backlog Set up a project in your chosen project management tool (ex. Azure DevOps) INVEST in good User Stories and Acceptance Criteria Non-Functional Requirements Guidance",
+      "Set up a project in your chosen project management tool (ex. Azure DevOps)",
+      "INVEST in good User Stories and Acceptance Criteria",
+      "Plan the first sprint Agree on a sprint goal, and how to measure the sprint progress Determine team capacity Assign user stories to the sprint and split user stories into tasks Set up Work in Progress (WIP) limits",
+      "Agree on a sprint goal, and how to measure the sprint progress",
+      "Assign user stories to the sprint and split user stories into tasks",
+      "Decide on test frameworks and discuss test strategies Discuss the purpose and goals of tests and how to measure test coverage Agree on how to separate unit tests from integration, load and smoke tests Design the first test cases"
+    ],
+    "translations": [
+      "在手册中组织内容以便快速参考和发现",
+      "提供反映工程流程的逻辑结构",
+      "可扩展的层次结构，使团队能够分享深入的领域专业知识",
+      "讨论并开始编写团队协议。用整个项目过程中做出的任何流程决策更新这些文档：工作协议、就绪定义、完成定义、估算",
+      "设置存储库/存储库。决定存储库结构/添加README.md、LICENSE、CONTRIBUTING.md、.gitignore等",
+      "添加README.md、LICENSE、CONTRIBUTING.md、.gitignore等",
+      "构建产品待办事项列表。在您选择的项目管理工具中设置项目（例如Azure DevOps）。在良好的用户故事和验收标准中应用INVEST原则。非功能性需求指南",
+      "在您选择的项目管理工具中设置项目（例如Azure DevOps）",
+      "在良好的用户故事和验收标准中应用INVEST原则",
+      "计划第一个冲刺。商定冲刺目标以及如何衡量冲刺进度。确定团队能力。将用户故事分配到冲刺中，并将用户故事拆分为任务。设置进行中（WIP）限制",
+      "商定冲刺目标以及如何衡量冲刺进度",
+      "将用户故事分配到冲刺中，并将用户故事拆分为任务",
+      "决定测试框架并讨论测试策略。讨论测试的目的和目标以及如何衡量测试覆盖率。商定如何将单元测试与集成测试、负载测试和冒烟测试分开。设计第一个测试用例"
+    ],
+    "fullTextParagraphs": [
+      "The purpose of this document is to:",
+      "Organize content in the playbook for quick reference and discoverability",
+      "Provide content in a logical structure which reflects the engineering process",
+      "Extensible hierarchy to allow teams to share deep subject-matter expertise",
+      "Discuss and start writing the Team Agreements. Update these documents with any process decisions made throughout the project Working Agreement Definition of Ready Definition of Done Estimation",
+      "Working Agreement",
+      "Definition of Ready",
+      "Definition of Done",
+      "Set up the repository/repositories Decide on repository structure/s Add README.md, LICENSE, CONTRIBUTING.md, .gitignore, etc",
+      "Decide on repository structure/s",
+      "Add README.md, LICENSE, CONTRIBUTING.md, .gitignore, etc",
+      "Build a Product Backlog Set up a project in your chosen project management tool (ex. Azure DevOps) INVEST in good User Stories and Acceptance Criteria Non-Functional Requirements Guidance",
+      "Set up a project in your chosen project management tool (ex. Azure DevOps)",
+      "INVEST in good User Stories and Acceptance Criteria",
+      "Non-Functional Requirements Guidance",
+      "Plan the first sprint Agree on a sprint goal, and how to measure the sprint progress Determine team capacity Assign user stories to the sprint and split user stories into tasks Set up Work in Progress (WIP) limits",
+      "Agree on a sprint goal, and how to measure the sprint progress",
+      "Determine team capacity",
+      "Assign user stories to the sprint and split user stories into tasks",
+      "Set up Work in Progress (WIP) limits",
+      "Decide on test frameworks and discuss test strategies Discuss the purpose and goals of tests and how to measure test coverage Agree on how to separate unit tests from integration, load and smoke tests Design the first test cases",
+      "Discuss the purpose and goals of tests and how to measure test coverage",
+      "Agree on how to separate unit tests from integration, load and smoke tests",
+      "Design the first test cases",
+      "Decide on branch naming",
+      "Discuss security needs and verify that secrets are kept out of source control",
+      "Set up Source Control Agree on best practices for commits Set up basic Continuous Integration with linters and automated tests Set up meetings for Daily Stand-ups and decide on a Process Lead Discuss purpose, goals, participants and facilitation guidance Discuss timing, and how to run an efficient stand-up",
+      "Agree on best practices for commits",
+      "Set up basic Continuous Integration with linters and automated tests",
+      "Set up meetings for Daily Stand-ups and decide on a Process Lead",
+      "Discuss purpose, goals, participants and facilitation guidance",
+      "Discuss timing, and how to run an efficient stand-up",
+      "If the project has sub-teams, set up a Scrum of Scrums",
+      "Agree on code style and on how to assign Pull Requests",
+      "Set up Build Validation for Pull Requests (2 reviewers, linters, automated tests) and agree on Definition of Done",
+      "Agree on a Code Merging strategy and update the CONTRIBUTING.md",
+      "Agree on logging and observability frameworks and strategies",
+      "Set up Continuous Deployment Determine what environments are appropriate for this solution For each environment discuss purpose, when deployment should trigger, pre-deployment approvers, sing-off for promotion.",
+      "Determine what environments are appropriate for this solution",
+      "For each environment discuss purpose, when deployment should trigger, pre-deployment approvers, sing-off for promotion.",
+      "Decide on a versioning strategy",
+      "Agree on how to Design a feature and conduct a Design Review",
+      "Conduct a Sprint Demo",
+      "Conduct a Retrospective Determine required participants, how to capture input (tools) and outcome Set a timeline, and discuss facilitation, meeting structure etc.",
+      "Determine required participants, how to capture input (tools) and outcome",
+      "Set a timeline, and discuss facilitation, meeting structure etc.",
+      "Refine the Backlog Determine required participants Update the Definition of Ready Update estimates, and the Estimation document",
+      "Determine required participants",
+      "Update the Definition of Ready",
+      "Update estimates, and the Estimation document",
+      "Submit Engineering Feedback for issues encountered"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Organize content in the playbook for quick reference and discoverability",
+      "meaning": "在手册中组织内容以便快速参考和发现",
+      "explain": "这一步强调创建一个结构化的文档系统，使团队成员能够轻松找到所需信息，提高工作效率。",
+      "example": "Organize content in the knowledge base for quick reference and discoverability to help new team members onboard faster."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "Discuss and start writing the Team Agreements",
+      "meaning": "讨论并开始撰写团队协议",
+      "explain": "团队协议是项目成功的基础，它定义了团队如何协作、沟通和工作，确保所有成员对期望和规范有共同理解。",
+      "example": "During the kickoff meeting, the team discussed and started writing the Team Agreements to establish clear communication channels."
+    },
+    {
+      "paragraph": 6,
+      "phrase": "Build a Product Backlog",
+      "meaning": "构建产品待办列表",
+      "explain": "产品待办列表是项目的核心文档，包含所有需要完成的功能和任务，按照优先级排序，为后续开发和迭代提供基础。",
+      "example": "The product owner worked with stakeholders to build a comprehensive Product Backlog before the development sprint began."
+    },
+    {
+      "paragraph": 9,
+      "phrase": "Plan the first sprint",
+      "meaning": "规划第一个冲刺周期",
+      "explain": "第一个冲刺周期的规划是项目启动的关键步骤，它确定了团队在接下来的迭代中要完成的目标、任务和衡量标准。",
+      "example": "The team gathered to plan the first sprint, setting realistic goals based on their capacity and the project timeline."
+    }
+  ],
+  "scenario": {
+    "title": "First Week Project Kickoff Challenges",
+    "english": [
+      "During the first week of the new project, Sarah and Tom were responsible for organizing the playbook content and building the initial product backlog while also discussing team agreements.",
+      "Sarah prioritized creating a comprehensive playbook for quick reference, while Tom insisted on focusing on building the product backlog first due to the upcoming client deadline.",
+      "Sarah suggested, 'Let's split our time - I'll finalize the playbook structure while you start on the backlog, then we can review together tomorrow to ensure alignment.'"
+    ],
+    "chinese": [
+      "在新项目启动的第一周，Sarah和Tom负责组织手册内容和构建初始产品待办事项列表，同时讨论团队协议。",
+      "Sarah优先考虑创建便于快速参考的综合手册，而Tom则坚持先构建产品待办事项列表，因为即将面临客户截止日期。",
+      "Sarah建议道：'让我们分工合作 - 我来完成手册结构，你开始处理待办事项列表，然后我们明天一起审查以确保一致。'"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新项目刚启动，团队还没有整理好项目指南和待办事项。请用英文分配两项工作，并约定双方完成初稿后一起检查。",
+    "sample": "I’ll outline the project guide while you create the initial backlog. Once we both have a first draft, let’s review them together and check that they fit the project.",
+    "rationale": "通过并行分工启动项目，并约定双方有初稿后一起检查。"
+  },
+  "words": [
+    {
+      "id": "playbook",
+      "word": "playbook",
+      "ipa": "/ˈpleɪbʊk/",
+      "pos": "noun",
+      "meaning": "手册；指南",
+      "collocation": "digital playbook, sales playbook, operations playbook",
+      "example": "The team created a comprehensive digital playbook to document all standard operating procedures.",
+      "translation": "团队创建了一个全面的数字化手册来记录所有标准操作流程。",
+      "note": "在商业和技术环境中，playbook通常指包含策略、流程和最佳实践的参考文档。"
+    },
+    {
+      "id": "discoverability",
+      "word": "discoverability",
+      "ipa": "/dɪˌskʌvərəˈbɪləti/",
+      "pos": "noun",
+      "meaning": "可发现性；可检索性",
+      "collocation": "improve discoverability, enhance discoverability, content discoverability",
+      "example": "The company invested in a new search system to improve the discoverability of technical documentation.",
+      "translation": "公司投资于新的搜索系统，以提高技术文档的可发现性。",
+      "note": "在信息管理中，discoverability指用户能够轻松找到所需信息的能力。"
+    },
+    {
+      "id": "extensible-hierarchy",
+      "word": "extensible hierarchy",
+      "ipa": "/ɪkˈstɛnsəbl ˈhaɪərɑːrki/",
+      "pos": "noun phrase",
+      "meaning": "可扩展的层次结构",
+      "collocation": "design extensible hierarchy, implement extensible hierarchy, modular extensible hierarchy",
+      "example": "The team designed an extensible hierarchy for the documentation system to accommodate future growth.",
+      "translation": "团队为文档系统设计了一个可扩展的层次结构，以适应未来的发展。",
+      "note": "可扩展的层次结构允许系统随着需求变化而灵活调整，而不需要重新设计整个架构。"
+    },
+    {
+      "id": "team-agreements",
+      "word": "Team Agreements",
+      "ipa": "/tiːm əˈɡriːmənts/",
+      "pos": "noun phrase",
+      "meaning": "团队协议",
+      "collocation": "establish team agreements, document team agreements, review team agreements",
+      "example": "The agile coach facilitated a workshop to help the team establish effective Team Agreements.",
+      "translation": "敏捷教练主持了一个研讨会，帮助团队建立有效的团队协议。",
+      "note": "团队协议是敏捷团队中关于如何共同工作的约定，包括沟通方式、会议规范、决策流程等。"
+    },
+    {
+      "id": "repository-structure",
+      "word": "repository structure",
+      "ipa": "/rɪˈpɒzətɔːri ˈstrʌktʃər/",
+      "pos": "noun phrase",
+      "meaning": "仓库结构",
+      "collocation": "define repository structure, organize repository structure, standard repository structure",
+      "example": "The development team spent time defining the repository structure to ensure code organization and maintainability.",
+      "translation": "开发团队花时间定义仓库结构，以确保代码组织和可维护性。",
+      "note": "良好的仓库结构有助于代码管理、团队协作和项目维护。"
+    },
+    {
+      "id": "user-stories",
+      "word": "User Stories",
+      "ipa": "/ˈjuːzər ˈstɔːriz/",
+      "pos": "noun phrase",
+      "meaning": "用户故事",
+      "collocation": "write user stories, prioritize user stories, refine user stories",
+      "example": "The product owner worked with stakeholders to write clear User Stories that capture user requirements.",
+      "translation": "产品负责人与利益相关者合作编写清晰的用户故事，以捕捉用户需求。",
+      "note": "用户故事是敏捷开发中描述功能需求的方式，通常遵循'作为[用户角色]，我希望[功能]，以便[价值]'的格式。"
+    }
+  ],
+  "structure": {
+    "original": "Build a Product Backlog Set up a project in your chosen project management tool (ex.",
+    "analysis": [
+      "\"Build a Product Backlog\" 是一个祈使句，作为指令，其中\"Build\"是动词，\"a Product Backlog\"是名词短语作宾语",
+      "\"Set up a project\" 是另一个祈使句，与前面的祈使句并列，其中\"Set up\"是动词短语，\"a project\"是名词短语作宾语",
+      "\"in your chosen project management tool\" 是介词短语，修饰\"Set up\"，表示设置项目的工具，其中\"your chosen\"是过去分词短语作定语修饰\"project management tool\""
+    ],
+    "transfer": "Create a Marketing Plan Develop a campaign in your selected marketing software (ex."
+  },
+  "rewrite": {
+    "bad": "You do both the backlog and the playbook. I’ll check them tomorrow.",
+    "good": "Let’s split the work: I’ll organize the playbook structure while you start the backlog. We can review both tomorrow.",
+    "translation": "我们分一下工：我整理工程手册的结构，你先建待办列表。明天我们一起检查。",
+    "pattern": "Let’s split the work: I’ll handle [task A], while you take [task B]. Then we can [review together]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’ll ___ the project guide while you create the initial backlog.",
+      "answer": "outline",
+      "why": "outline a guide 表示先整理出指南的结构。"
+    },
+    {
+      "id": "c2",
+      "prompt": "You can create the initial ___.",
+      "answer": "backlog",
+      "why": "backlog 是待办事项列表。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Once we both have a first draft, let’s review them ___.",
+      "answer": "together",
+      "why": "together 明确双方共同检查两项初稿。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Organize content in the playbook for quick reference and discoverability Provide content in a logical structure which reflects the engineering process Extensible hierarchy to allow teams to share deep subject-matter expertise Discuss and start writing the Team Agreements.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Update these documents with any process decisions made throughout the project Working Agreement Definition of Ready Definition of Done Estimation Set up the repository/repositories Decide on repository structure/s Add README.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我来梳理项目指南的框架，你来建立初始待办列表。",
+      "answer": "I’ll outline the project guide while you create the initial backlog.",
+      "why": "本句练习“outline the project guide”在先搭出项目指南的初稿结构时的用法。"
+    },
+    {
+      "prompt": "你来建立初始待办列表。",
+      "answer": "You create the initial backlog.",
+      "why": "本句练习“create the initial backlog”在建立项目最初的待办事项列表时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "Tom希望先建立产品待办列表，你负责整理工程手册。请用英文提出分工：你整理手册结构，他先建立待办列表，明天一起检查。",
+    "options": [
+      "You're wrong, we need to do the backlog first because the client is waiting.",
+      "Let’s split the work: I’ll organize the playbook structure while you start the backlog. We can review both tomorrow.",
+      "Let’s split the work: I’ll organize the playbook structure while you start the backlog."
+    ],
+    "correct": 1,
+    "why": "把分工、交付内容和同步时间说清楚，避免两个人都等对方先做。"
+  },
+  "output": {
+    "prompt": "客户迁移项目需要准备操作手册和风险清单，但还没有人负责。请用英文提出分工方案，并约定双方完成初稿后一起检查负责人是否明确。",
+    "sample": "I can outline the migration runbook while you build the initial risk list. Once we both have a first draft, let’s review them together and make sure the owners are clear.",
+    "check": [
+      "是否清楚分配了两项工作？",
+      "是否使用初稿而非假设已经完成？",
+      "是否提出共同检查的后续安排？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "outline the project guide",
+      "meaning": "先搭出项目指南的初稿结构",
+      "collocation": "outline + a guide / plan / proposal",
+      "example": "I’ll outline the project guide while you create the initial backlog.",
+      "translation": "我来梳理项目指南的框架，你来建立初始待办列表。"
+    },
+    {
+      "id": "work-02",
+      "word": "create the initial backlog",
+      "meaning": "建立项目最初的待办事项列表",
+      "collocation": "create / review / prioritize a backlog",
+      "example": "You create the initial backlog.",
+      "translation": "你来建立初始待办列表。"
+    },
+    {
+      "id": "work-03",
+      "word": "Once we both have a first draft…",
+      "meaning": "约定双方完成初稿后再一起检查",
+      "collocation": "Once + 主语 + have + 完成事项",
+      "example": "Once we both have a first draft, let’s review them together.",
+      "translation": "等我们双方都有初稿后，再一起检查。"
+    }
+  ]
+}

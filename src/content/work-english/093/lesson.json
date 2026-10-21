@@ -1,0 +1,285 @@
+{
+  "id": "093",
+  "version": 1,
+  "status": "draft",
+  "company": "37signals",
+  "companyZh": "/ Basecamp",
+  "title": "37signals 新员工指南：入职后从哪里开始",
+  "topic": "37signals 新员工指南：入职后从哪里开始",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Getting Started",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://basecamp.com/handbook/getting-started",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "paragraphs": [
+      "Getting started at 37signals involves a lot of little details, a number of big tasks, learning the details of your new job, meeting new coworkers, all while working remotely. Your teammates, your manager, your 37signals buddy, your Ops buddy, and our People team are all here to help as you navigate your first few days and weeks.",
+      "Before you start, the People team will order you a new computer with the specs you request and any accessories you need like an external keyboard, mouse, or display. Get what you need, while keeping in mind the demands of your work when choosing specs. Everyone working on ops, SIP, or writing Ruby for product should be running Omarchy. Everyone else are invited to run either Omarchy or a Mac.",
+      "A day or two before you start, your manager will email you instructions for your first day. Your manager will be your point of contact for your early projects and activities. You’ll also work with a member of our Ops team who will help you as you set up all the accounts you need to work at 37signals.",
+      "On your first day, you’ll log into Basecamp to see a project dedicated to your onboarding called “Welcome, [your name]!”. Your welcome project will contain a few to-do lists, tailored to your role and linking to accounts or services that you need to set up. You’ll also see to-do lists that your Ops buddy and manager will be working through. Your Ops buddy and your manager will be in contact with you as you set up your environment, should you have questions or get stuck."
+    ],
+    "translations": [
+      "在 37signals 开始工作涉及许多细节、多项大任务、学习新工作的细节、认识新同事，同时还要远程工作。您的队友、您的经理、您的 37signals 伙伴、您的 Ops 伙伴以及我们的人力团队都会在您入职的头几天和几周内为您提供帮助。",
+      "在您开始工作之前，人力团队会根据您的要求订购一台新电脑，以及您需要的任何配件，如外接键盘、鼠标或显示器。在配置规格时，请获取您所需的一切，同时考虑您工作的需求。所有从事 ops、SIP 或为产品编写 Ruby 的员工都应该运行 Omarchy。其他人可以选择运行 Omarchy 或 Mac。",
+      "在您开始工作的一两天前，您的经理会通过电子邮件发送给您第一天的指导说明。您的经理将是您早期项目和活动的联系人。您还将与我们的 Ops 团队成员合作，帮助您设置在 37signals 工作所需的所有账户。",
+      "在您的第一天，您将登录 Basecamp，看到一个专门为您入职的项目，名为“欢迎，[您的姓名]！”。您的欢迎项目将包含几个待办事项列表，根据您的角色定制，并链接到您需要设置的账户或服务。您还会看到您的 Ops 伙伴和经理将要处理的待办事项列表。在您设置环境时，如果您有问题或遇到困难，您的 Ops 伙伴和经理将与您联系。"
+    ],
+    "fullTextParagraphs": [
+      "Getting started at 37signals involves a lot of little details, a number of big tasks, learning the details of your new job, meeting new coworkers, all while working remotely. Your teammates, your manager, your 37signals buddy, your Ops buddy, and our People team are all here to help as you navigate your first few days and weeks.",
+      "Before you start, the People team will order you a new computer with the specs you request and any accessories you need like an external keyboard, mouse, or display. Get what you need, while keeping in mind the demands of your work when choosing specs. Everyone working on ops, SIP, or writing Ruby for product should be running Omarchy. Everyone else are invited to run either Omarchy or a Mac.",
+      "A day or two before you start, your manager will email you instructions for your first day. Your manager will be your point of contact for your early projects and activities. You’ll also work with a member of our Ops team who will help you as you set up all the accounts you need to work at 37signals.",
+      "On your first day, you’ll log into Basecamp to see a project dedicated to your onboarding called “Welcome, [your name]!”. Your welcome project will contain a few to-do lists, tailored to your role and linking to accounts or services that you need to set up. You’ll also see to-do lists that your Ops buddy and manager will be working through. Your Ops buddy and your manager will be in contact with you as you set up your environment, should you have questions or get stuck.",
+      "Your training schedules and onboarding expectations will be in your welcome project. You’ll also find docs with helpful links to technical documentation, walkthrough videos, important Basecamp projects, and more.",
+      "Your welcome project will also contain a list of people to meet over the course of your first few weeks.",
+      "Your manager. You and your manager will meet on your first day to sort out a recurring 1:1 schedule and to review your specific onboarding expectations.",
+      "Your team. Most teams have a weekly call which you’ll join your first week.",
+      "Your 37signals buddy. Your buddy will be someone who’s not on your immediate team, who’s worked at 37signals for a while, and who can point you in the right direction when you have a question and don’t quite know where to turn. They’ll introduce themselves during your first week, to say hi and offer their help. They’ll check in with you periodically throughout your first couple months to see how you’re settling in.",
+      "People Ops. You’ll meet with Andrea to review 37signals policies, benefits, and compensation.",
+      "After your environment has been set up, expectations are clear, and you’ve met who you need to meet, you’ll get to work! You’ll begin working on real projects, with plenty of support and guidance, within your first week. Your responsibilities and impact will increase as you learn and gain confidence over the next few months, and most people are up to speed and feeling fully part of the team in about 3 months."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Getting started at 37signals",
+      "meaning": "在37signals开始工作",
+      "explain": "这是一个表示入职开始的常用表达，适用于任何公司",
+      "example": "Getting started at Google requires completing several onboarding modules."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "running Omarchy",
+      "meaning": "运行Omarchy系统",
+      "explain": "指使用特定的操作系统或软件环境",
+      "example": "All developers in our company are required to be running Ubuntu for consistency."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "point of contact",
+      "meaning": "联系人",
+      "explain": "指负责处理特定事务或回答问题的主要人员",
+      "example": "For all technical issues, John will be your point of contact during the transition period."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "dedicated to your onboarding",
+      "meaning": "专门用于你的入职流程",
+      "explain": "指为特定目的设置的资源或空间",
+      "example": "The company has created a dedicated portal for your onboarding process."
+    }
+  ],
+  "scenario": {
+    "title": "Helping a new teammate find a useful starting point",
+    "english": [
+      "A new teammate has joined a remote team and is unsure where to begin.",
+      "The “Getting Started” guide introduces how the team works, while current project context can help the new teammate prepare for an initial task.",
+      "You suggest reading the guide first, reviewing the project, and choosing a first task together."
+    ],
+    "chinese": [
+      "一位新同事加入远程团队，不确定应该从哪里开始。",
+      "“Getting Started”指南介绍团队的工作方式；了解当前项目能帮助新人准备第一项任务。",
+      "你建议先读指南，再看项目背景，随后一起选定第一项任务。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新同事第一天加入远程团队，不知道从哪里开始。请用英文建议他先看 Getting Started 指南，再设置岗位所需工具；如果不确定优先事项，可以找经理确认。",
+    "sample": "Start with the Getting Started guide, then set up the tools you need for your role. If you’re unsure what to tackle first, ask your manager to help set priorities.",
+    "rationale": "先看入门指南、配置岗位工具；不确定时请经理帮助排定优先级。"
+  },
+  "words": [
+    {
+      "id": "navigate-first-days",
+      "word": "navigate",
+      "ipa": "/ˈnævɪɡeɪt/",
+      "pos": "verb",
+      "meaning": "引导，导航",
+      "collocation": "navigate through",
+      "example": "She will help you navigate through the first weeks of your new position.",
+      "translation": "她将帮助你度过新职位的前几周。",
+      "note": "常用于描述引导他人通过复杂或陌生的过程"
+    },
+    {
+      "id": "specs-computer",
+      "word": "specs",
+      "ipa": "/speks/",
+      "pos": "noun",
+      "meaning": "规格，技术参数",
+      "collocation": "computer specs",
+      "example": "Please submit your computer specs to the IT department by Friday.",
+      "translation": "请在周五前向IT部门提交你的电脑配置要求。",
+      "note": "specifications的缩写，常用于描述设备或系统的技术要求"
+    },
+    {
+      "id": "external-accessories",
+      "word": "accessories",
+      "ipa": "/əkˈsesəriz/",
+      "pos": "noun",
+      "meaning": "配件，附件",
+      "collocation": "computer accessories",
+      "example": "The company provides all necessary accessories for remote work.",
+      "translation": "公司为远程工作提供所有必要的配件。",
+      "note": "指与主要设备配套使用的辅助物品"
+    },
+    {
+      "id": "tailored-to-role",
+      "word": "tailored",
+      "ipa": "/ˈteɪlərd/",
+      "pos": "adjective",
+      "meaning": "定制的，量身定做的",
+      "collocation": "tailored to",
+      "example": "The training program is tailored to the specific needs of each department.",
+      "translation": "培训计划是根据每个部门的具体需求量身定制的。",
+      "note": "描述根据特定需求或特点专门制作或调整的"
+    },
+    {
+      "id": "set-up-accounts",
+      "word": "set up",
+      "ipa": "/set ʌp/",
+      "pos": "phrasal verb",
+      "meaning": "建立，设置",
+      "collocation": "set up accounts",
+      "example": "You'll need to set up your accounts before accessing the company systems.",
+      "translation": "在访问公司系统之前，你需要先设置账户。",
+      "note": "指准备或配置某物使其可以使用"
+    },
+    {
+      "id": "get-stuck-process",
+      "word": "get stuck",
+      "ipa": "/ɡet stʌk/",
+      "pos": "phrasal verb",
+      "meaning": "卡住，陷入困境",
+      "collocation": "get stuck in",
+      "example": "If you get stuck in the onboarding process, don't hesitate to ask for help.",
+      "translation": "如果在入职过程中遇到困难，请随时寻求帮助。",
+      "note": "描述在某个过程中遇到困难而无法继续前进"
+    }
+  ],
+  "structure": {
+    "original": "Getting started at 37signals involves a lot of little details, a number of big tasks, learning the details of your new job, meeting new coworkers, all while working remotely.",
+    "analysis": [
+      "Getting started at 37signals 是动名词短语作主语，表示'在37signals开始工作'这一动作",
+      "involves a lot of little details, a number of big tasks, learning the details of your new job, meeting new coworkers 是由并列结构组成的宾语，包含名词短语和动名词短语，列举了入职需要做的事情",
+      "all while working remotely 是一个伴随状语从句，表示'同时远程工作'，其中working是现在分词短语"
+    ],
+    "transfer": "Starting your new position at TechCorp requires understanding company policies, completing necessary paperwork, learning the software systems, meeting your team members, all while collaborating from home."
+  },
+  "rewrite": {
+    "bad": "Start with the campaign analysis and review marketing policies before anyone explains the team’s work.",
+    "good": "Start with the Getting Started guide to understand how the team works. Then review the current project context, and we can choose your first task together.",
+    "translation": "先读 Getting Started 指南，了解团队的工作方式；再查看当前项目背景，我们一起确定你的第一项任务。",
+    "pattern": "Start with [the onboarding guide], then review [the current context] before [choosing the next task]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Start with the ___ guide, then set up your work account.",
+      "answer": "getting-started",
+      "why": "用清楚的先后顺序帮助新人迈出第一步。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Your manager will help you set up the ___ for your role.",
+      "answer": "tools",
+      "why": "说明谁协助新人完成必要配置。"
+    },
+    {
+      "id": "c3",
+      "prompt": "If you’re unsure what to tackle first, ask your manager to help set ___.",
+      "answer": "priorities",
+      "why": "给新人一个遇到不确定时的求助办法。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a new marketing associate, was confused about her first tasks after orientation.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Her manager mentioned reviewing company policies while her team lead wanted her to start analyzing campaign data.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "先从 Getting Started 指南开始。",
+      "answer": "Start with the Getting Started guide.",
+      "why": "按入职顺序先了解指南，再准备岗位所需工具。"
+    },
+    {
+      "prompt": "配置岗位所需的工具。",
+      "answer": "Set up the tools you need for your role.",
+      "why": "按入职顺序先了解指南，再准备岗位所需工具。"
+    }
+  ],
+  "choice": {
+    "prompt": "新同事第一天加入远程团队，不知道应该先了解什么。请用英文建议他从“Getting Started”指南开始，先熟悉团队工作方式和当前项目，再安排后续任务。",
+    "options": [
+      "Just do whatever they tell you. It doesn't matter which comes first.",
+      "Start with the Getting Started guide to understand how the team works. Then review the current project context, and we can choose your first task together.",
+      "Start with the Getting Started guide to understand how the team works."
+    ],
+    "correct": 1,
+    "why": "先了解工作方式和项目背景，再确定第一项任务，符合新员工指南的入职顺序。"
+  },
+  "output": {
+    "prompt": "一位刚入职的同事已经读完入职指南，但不确定第一个月应该优先熟悉产品还是客户流程。请用英文建议他带着具体问题找经理确认，并说明你可以分享哪些入门资料。",
+    "sample": "It may help to ask your manager which should come first: learning the product or understanding the customer workflow. I can share the product overview and the support guide to help you get started.",
+    "check": [
+      "是否建议新人把具体优先级问题带给经理？",
+      "是否提供了与两种学习方向相关的入门资料？",
+      "是否避免替经理擅自决定优先顺序？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "start with the getting-started guide",
+      "meaning": "从入门指南开始",
+      "collocation": "start with + guide",
+      "example": "Start with the Getting Started guide.",
+      "translation": "先从 Getting Started 指南开始。"
+    },
+    {
+      "id": "work-02",
+      "word": "set up the tools you need for your role",
+      "meaning": "配置岗位所需工具",
+      "collocation": "set up + tools",
+      "example": "Set up the tools you need for your role.",
+      "translation": "配置岗位所需的工具。"
+    },
+    {
+      "id": "work-03",
+      "word": "ask your manager where to begin",
+      "meaning": "询问经理从哪里开始",
+      "collocation": "ask someone where to begin",
+      "example": "If you’re unsure what to tackle first, ask your manager to help set priorities.",
+      "translation": "如果不确定先做什么，请经理帮你排定优先级。"
+    }
+  ]
+}

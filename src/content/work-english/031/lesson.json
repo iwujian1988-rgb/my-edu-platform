@@ -1,0 +1,317 @@
+{
+  "id": "031",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "微软工程团队怎样结对工作、一起解决难题",
+  "topic": "微软工程团队怎样结对工作、一起解决难题",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Why Collaboration - Engineering Fundamentals Playbook",
+    "section": "公开团队指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队指南",
+    "url": "https://microsoft.github.io/code-with-engineering-playbook/agile-development/advanced-topics/collaboration/why-collaboration/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Microsoft 微软 公开资料。",
+    "paragraphs": [
+      "In engagements, we aim to be highly collaborative because when we code together, we perform better, have a higher sprint velocity, and have a greater degree of knowledge sharing across the team.",
+      "There are two common patterns we use for collaboration: Pairing and swarming.",
+      "Pair programming (“pairing”) - two software engineers assigned to, and working on, one shared story at a time during the sprint. The Dev Lead assigns a user story to two engineers -- one primary engineer (story owner) and one secondary engineer (pairing assignee).",
+      "Swarm programming (“swarming”) - three or more software engineers collaborating on a high-priority item to bring it to completion.",
+      "As mentioned, every story is intentionally assigned to a pair. The pairing assignee may be in the process of upskilling, nevertheless, they are equal partners in the development effort. Below are some general guidelines for pairing:",
+      "Upon assignment of the story/product backlog item (PBI), the pair needs to be deliberate about defining how to work together and have a firm definition of the work to be completed. This information should be expressed clearly in the story’s description and acceptance criteria. The expectations about this need to be communicated and agreed upon by both engineers and should be done prior to any actual working sessions."
+    ],
+    "translations": [
+      "在合作项目中，我们力求高度协作，因为当我们一起编码时，我们表现更好，冲刺速度更快，团队间的知识共享程度也更高。",
+      "我们使用两种常见的协作模式：结对编程和群体编程。",
+      "结对编程（\"pairing\"）- 在冲刺期间，两名软件工程师被分配到同一个用户故事上，并共同工作。开发负责人将一个用户故事分配给两名工程师——一名主要工程师（故事负责人）和一名次要工程师（结对分配人）。",
+      "群体编程（\"swarming\"）- 三名或更多软件工程师协作处理一个高优先级项目，直至完成。",
+      "如前所述，每个故事都会有意分配给一对工程师。结对分配人可能正在提升技能，但他们在开发工作中是平等的合作伙伴。以下是结对编程的一些通用指南：",
+      "在分配故事/产品待办事项（PBI）后，结对团队需要明确如何一起工作，并对要完成的工作有明确的定义。这些信息应在故事的描述和验收标准中清晰表达。关于这方面的期望需要由两名工程师沟通并达成一致，且应在任何实际工作开始前完成。"
+    ],
+    "fullTextParagraphs": [
+      "In engagements, we aim to be highly collaborative because when we code together, we perform better, have a higher sprint velocity, and have a greater degree of knowledge sharing across the team.",
+      "There are two common patterns we use for collaboration: Pairing and swarming.",
+      "Pair programming (“pairing”) - two software engineers assigned to, and working on, one shared story at a time during the sprint. The Dev Lead assigns a user story to two engineers -- one primary engineer (story owner) and one secondary engineer (pairing assignee).",
+      "Swarm programming (“swarming”) - three or more software engineers collaborating on a high-priority item to bring it to completion.",
+      "As mentioned, every story is intentionally assigned to a pair. The pairing assignee may be in the process of upskilling, nevertheless, they are equal partners in the development effort. Below are some general guidelines for pairing:",
+      "Upon assignment of the story/product backlog item (PBI), the pair needs to be deliberate about defining how to work together and have a firm definition of the work to be completed. This information should be expressed clearly in the story’s description and acceptance criteria. The expectations about this need to be communicated and agreed upon by both engineers and should be done prior to any actual working sessions.",
+      "The story owner and pairing assignee do not merely split the work up and sync regularly – they actively work together on the same tasks, and might share their screens via a Teams online session. Collaborative tools like VS Live Share can be preferable to sharing screens. Not all collaboration needs to be screen-share based.",
+      "During the collaborative sessions, one engineer provides the development environment while the other actively views and comments verbally.",
+      "Engineers trade places often from one session to the next so that everyone has time in control of the keyboard.",
+      "Engineers leverage feature branches for the collaboration during the development of each story to have small Pull Requests (PRs) (as opposed to a single giant PR) at the end of the sprint.",
+      "Code is committed to the repository by both members of the assigned pair where and when it makes sense as tasks were completed.",
+      "The pairing assignee is the voice representing the pair during the daily standup while being supported by the story owner.",
+      "Having the names of both individuals (owner and pair assignee) visible on the PBI can be helpful during sprint ceremonies and lead to greater accountability by the pairing assignee. An example of this using Azure DevOps cards can be found here.",
+      "Pair programming helps collaboration because both engineers share equal responsibility for bringing the story to completion. This is a mutually beneficial exercise because, while the story owner often has more experience to lean on, the pairing assignee brings a fresh view that is unclouded by repetition.",
+      "Fewer defects and increased accountability. Having two sets of eyes allows the engineers more opportunity to catch errors and to remember often-overlooked tasks such as writing unit and integration tests.",
+      "Pairing allows engineers with different experience and expertise to learn from one another by collaborating and receiving feedback in real-time. Instead of having an engineer work alone on a task for long hours and hit an isolation breaking point, pairing allows the pair to check in with one another.",
+      "Even something as simple as describing the problem out loud can help uncover issues or bugs in the code.",
+      "Pairing can help brainstorming as well as validating details such as making the variable names consistent.",
+      "It is important to know that not every PBI needs to use swarming. Some sprints may not even warrant swarming at all. Swarm when:",
+      "The work is complex enough to have collective minds collaborating (not because the quantity of work is more than what would be completed in one sprint).",
+      "The task that the swarm works on has become (or is in imminent danger of becoming) a blocker to other stories.",
+      "An unknown is discovered that needs a collaborative effort to form a decision on how to move forward. The collective knowledge and expertise help move the story forward more quickly and ultimately produced better quality code.",
+      "A conflict or unresolved difference of opinion arises during a pairing session. Promote the work to become a swarming session to help resolve the conflict.",
+      "As soon the pair finds out that the PBI will warrant swarming, the pair brings it up to the rest of the team (via parking lot during stand-up or asynchronously). Members of the team agree or volunteer to assist.",
+      "The story owner (or pairing assignee) sends Teams call invite to the interested parties. This allows the swarm to have dedicated focus time by blocking time in calendars.",
+      "During a swarming session, an engineer can branch out if there is something that needs to be handled while the swarm tackles the main problem at hand, then reconnects and reports back. This allows the swarm to focus on a core aspect and to be all on the same page.",
+      "The Teams call is repeated until resolution is found or alternative path forward is formulated.",
+      "Swarming allows the collective knowledge and expertise of the team to come together in a focused and unified way.",
+      "Not only does swarming help close out the item faster, but it also helps the team understand each other’s strengths and weaknesses.",
+      "Allows the team to build a higher level of trust and work as a cohesive unit.",
+      "While a lot of time can be spent on pair programming, it does make sense to split the work when folks understand how the work will be carried out, and the work to be done is largely prescriptive.",
+      "Once the story has been jointly tasked out by both engineers, the engineers may choose to tackle some tasks separately and then combine the work together at the end.",
+      "Pair programming is more helpful when the engineers do not have perfect clarity about what is needed to be done or how it can be done.",
+      "Swarming is done when the two engineers assigned to the story need an additional sounding board or need expertise that other team members could provide.",
+      "Knowledge sharing and bringing ISE and customer engineers together in a ‘code-with’ manner is an important aspect of ISE engagements. This grows both our customers’ and our ISE team’s capability to build on Azure. We are responsible for demonstrating engineering fundamentals and leaving the customer in a better place after we disengage. This can only happen if we collaborate and engage together as a team. In addition to improved software quality, this also adds a beneficial social aspect to the engagements.",
+      "How to add a pairing custom field in Azure DevOps User Stories - adding a custom field of type Identity in Azure DevOps for pairing",
+      "On Pair Programming - Martin Fowler",
+      "Pair Programming hands-on lessons - these can be used (and adapted) to support bringing pair programming into your team (MS internal or including customers)",
+      "Effortless Pair Programming with GitHub Codespaces and VSCode"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "highly collaborative",
+      "meaning": "高度协作的",
+      "explain": "形容团队或工作方式强调紧密合作、共同参与",
+      "example": "Our team culture is highly collaborative, encouraging open communication and shared decision-making."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "two common patterns",
+      "meaning": "两种常见模式",
+      "explain": "指在协作过程中普遍采用的两种工作方式",
+      "example": "The company has implemented two common patterns for remote work: asynchronous and synchronous collaboration."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "primary engineer",
+      "meaning": "主要工程师",
+      "explain": "在结对编程中负责主要责任和决策的工程师",
+      "example": "As the primary engineer on this project, she will lead the technical design and code implementation."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "deliberate about defining",
+      "meaning": "有意识地定义",
+      "explain": "强调需要经过深思熟虑来明确工作方式和目标",
+      "example": "Before starting the sprint, the team was deliberate about defining their success metrics and deliverables."
+    }
+  ],
+  "scenario": {
+    "title": "Pair up to understand a complex issue, then divide the work",
+    "english": [
+      "Two engineers are working on an unfamiliar integration issue. They do not yet agree on the cause or on how to fix it.",
+      "You suggest pairing first to share context and decide on an approach. Once the work is clear, you can split the follow-up tasks.",
+      "Both engineers understand the decision and know who owns each next step."
+    ],
+    "chinese": [
+      "两位工程师正在处理一个不熟悉的集成问题，还没有弄清原因，也没商定修复方法。",
+      "你建议先结对梳理背景并确定做法，等工作内容明确后再分配后续任务。",
+      "双方理解了决定，也清楚各自负责的下一步。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "两位同事对一项不稳定测试的原因判断不同，继续各自排查会重复劳动。请用英文建议先结对复现问题，确定方向后再分开处理。",
+    "sample": "Could we reproduce the flaky test together first and compare what we observe? Once we agree on the likely cause, we can split the follow-up investigation.",
+    "rationale": "先一起复现并比较观察结果，形成共同判断后再分工，减少重复排查。"
+  },
+  "words": [
+    {
+      "id": "sprint-velocity",
+      "word": "sprint velocity",
+      "ipa": "/sprɪnt vəˈlɒsɪti/",
+      "pos": "noun",
+      "meaning": "冲刺速度",
+      "collocation": "measure sprint velocity, increase sprint velocity",
+      "example": "Our team's sprint velocity has improved by 30% since implementing the new workflow.",
+      "translation": "我们团队的工作效率自从实施新工作流程后提高了30%。",
+      "note": "敏捷开发中衡量团队在单个冲刺周期内完成工作量的指标"
+    },
+    {
+      "id": "pair-programming",
+      "word": "pair programming",
+      "ipa": "/peər ˈproʊɡræmɪŋ/",
+      "pos": "noun",
+      "meaning": "结对编程",
+      "collocation": "practice pair programming, benefit from pair programming",
+      "example": "Many tech companies practice pair programming to improve code quality and knowledge sharing.",
+      "translation": "许多科技公司采用结对编程来提高代码质量和知识共享。",
+      "note": "两名程序员在同一台计算机上共同完成编程任务的开发技术"
+    },
+    {
+      "id": "user-story",
+      "word": "user story",
+      "ipa": "/ˈjuːzər ˈstɔːri/",
+      "pos": "noun",
+      "meaning": "用户故事",
+      "collocation": "write user stories, prioritize user stories",
+      "example": "The product manager worked with stakeholders to write comprehensive user stories for the next release.",
+      "translation": "产品经理与利益相关者合作，为下一版本编写了全面的用户故事。",
+      "note": "从用户角度描述功能需求的简短描述"
+    },
+    {
+      "id": "upskilling",
+      "word": "upskilling",
+      "ipa": "/ˈʌpˌskɪlɪŋ/",
+      "pos": "noun",
+      "meaning": "技能提升",
+      "collocation": "invest in upskilling, provide upskilling opportunities",
+      "example": "The company offers regular training programs to support employee upskilling and career development.",
+      "translation": "公司提供定期培训项目，支持员工技能提升和职业发展。",
+      "note": "通过培训使员工获得新技能的过程"
+    },
+    {
+      "id": "backlog-item",
+      "word": "backlog item",
+      "ipa": "/ˈbæklɒɡ ˈaɪtəm/",
+      "pos": "noun",
+      "meaning": "积压项目",
+      "collocation": "prioritize backlog items, complete backlog items",
+      "example": "The development team meets weekly to prioritize and estimate the product backlog items.",
+      "translation": "开发团队每周开会，对产品积压项目进行优先级排序和估算。",
+      "note": "待完成的工作项列表中的单个项目"
+    },
+    {
+      "id": "acceptance-criteria",
+      "word": "acceptance criteria",
+      "ipa": "/əkˈseptəns kraɪtɪriə/",
+      "pos": "noun",
+      "meaning": "验收标准",
+      "collocation": "define acceptance criteria, meet acceptance criteria",
+      "example": "Before deploying the feature, we must ensure all acceptance criteria have been met and tested.",
+      "translation": "在部署功能前，我们必须确保所有验收标准都已满足并经过测试。",
+      "note": "确定功能是否被接受的特定条件和标准"
+    }
+  ],
+  "structure": {
+    "original": "In engagements, we aim to be highly collaborative because when we code together, we perform better, have a higher sprint velocity, and have a greater degree of knowledge sharing across the team.",
+    "analysis": [
+      "In engagements 是介词短语作状语，表示'在项目合作中'，限定整个句子的背景范围",
+      "we aim to be highly collaborative 是主句，其中 aim to be 是动词不定式作表语，highly collaborative 是副词修饰形容词 collaborative",
+      "because 引导原因状语从句，包含 when 引导的时间状语从句 'when we code together'，以及三个并列的谓语动词短语 'perform better, have a higher sprint velocity, and have a greater degree of knowledge sharing'"
+    ],
+    "transfer": "In projects, we strive to be extremely cooperative because when we work together, we achieve more, have greater productivity, and foster better communication across the department."
+  },
+  "rewrite": {
+    "bad": "Just handle your own part. We can worry about integration later.",
+    "good": "Could we pair on the integration issue first and agree on an approach? Then we can split the follow-up tasks clearly.",
+    "translation": "我们能否先结对梳理集成问题并商定做法？之后再把后续任务分清楚。",
+    "pattern": "Could we [work through the issue together] first, then [divide the next steps]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we ___ the flaky test together first?",
+      "answer": "reproduce",
+      "why": "先共同复现问题，避免各自重复排查。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s compare what we ___.",
+      "answer": "observe",
+      "why": "compare what we observe 对照双方实际看到的现象。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Once we agree on the likely cause, we can ___ the follow-up investigation.",
+      "answer": "split",
+      "why": "split the follow-up investigation 表示确定方向后分头处理。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Alex and Jamie are software engineers tasked with fixing a critical bug in the payment processing system before the end of the day.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Alex says, 'Let's split the task - I'll focus on the authentication module while you handle the database connection.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否先一起复现这个不稳定测试？",
+      "answer": "Could we reproduce the flaky test together first?",
+      "why": "本句练习“reproduce the flaky test together”在两个人一起复现不稳定问题时的用法。"
+    },
+    {
+      "prompt": "然后我们可以对照各自观察到的现象。",
+      "answer": "Then we can compare what we observe.",
+      "why": "本句练习“compare what we observe”在对照各自看到的现象时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事建议大家各自独立处理一个复杂的集成问题。请用英文提出先结对梳理问题，再明确后续分工。",
+    "options": [
+      "You do the database part, I'll do the authentication. We'll talk later.",
+      "Could we pair on the integration issue first to share context and agree on an approach? Then we can split the follow-up tasks clearly.",
+      "Could we pair on the integration issue first to share context and agree on an approach?"
+    ],
+    "correct": 1,
+    "why": "先一起处理复杂问题，能让双方共享背景和判断；思路明确后再分工，减少重复摸索。"
+  },
+  "output": {
+    "prompt": "客户反馈移动端同步偶尔失败，产品和工程同事对原因判断不同。请用英文建议先在测试环境一起复现并比较日志，确认方向后再分配后续排查。",
+    "sample": "Could we reproduce the sync issue in staging first and compare the logs? Once we agree on the likely cause, we can split the follow-up investigation.",
+    "check": [
+      "是否提出先结对处理复杂问题？",
+      "是否说明共同排查要解决什么？",
+      "是否把后续分工放在共享判断之后？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "reproduce the flaky test together",
+      "meaning": "两人先一起复现不稳定的问题",
+      "collocation": "reproduce + a test or issue + together",
+      "example": "Could we reproduce the flaky test together first?",
+      "translation": "我们能否先一起复现这个不稳定测试？"
+    },
+    {
+      "id": "work-02",
+      "word": "compare what we observe",
+      "meaning": "对照双方观察到的现象",
+      "collocation": "compare + what we observe",
+      "example": "Then we can compare what we observe.",
+      "translation": "然后我们可以对照各自观察到的现象。"
+    },
+    {
+      "id": "work-03",
+      "word": "split the follow-up investigation",
+      "meaning": "确定方向后分开排查",
+      "collocation": "split + the follow-up work / investigation",
+      "example": "Once we agree on the likely cause, we can split the follow-up investigation.",
+      "translation": "确定可能原因后，我们可以分头继续排查。"
+    }
+  ]
+}

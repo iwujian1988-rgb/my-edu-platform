@@ -1,0 +1,12 @@
+{
+  "updatedAt": "2026-10-16T17:39:34.314Z",
+  "completed": 1,
+  "total": 1,
+  "results": [
+    {
+      "id": "070",
+      "status": "validated",
+      "detail": "{\n  \"id\": \"070\",\n  \"status\": \"PASS\",\n  \"audio\": 13,\n  \"sourceWords\": 317,\n  \"issues\": []\n}"
+    }
+  ]
+}

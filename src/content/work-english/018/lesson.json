@@ -1,0 +1,361 @@
+{
+  "id": "018",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "谷歌 OKR 指南：怎样写清目标和关键结果",
+  "topic": "谷歌 OKR 指南：怎样写清目标和关键结果",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Google re:Work - Guides: Set goals with OKRs",
+    "section": "公开管理指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开管理指南",
+    "url": "https://rework.withgoogle.com/intl/en/guides/set-goals-with-okrs",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Google 谷歌 公开资料。",
+    "paragraphs": [
+      "Editor’s Note: This article outlines the fundamentals behind Google’s cornerstone method for setting goals through “Objectives and Key Results,” or OKRs. We’ve preserved this content as a record of our findings, and while some references may reflect their original era, the core insights behind OKRs remain relevant for any organization.",
+      "Studies have shown that committing to a goal can help improve employee performance. But more specifically, research reveals that setting challenging and specific goals can further enhance employee engagement in attaining those goals. Google often uses “Objectives and Key Results” (OKRs) to try to set ambitious goals and track progress.",
+      "Objectives are ambitious and may feel somewhat uncomfortable",
+      "Key results are measurable and should be easy to grade with a number (Google uses a scale of 0 – 1.0)",
+      "OKRs are public so that everyone in the organization can see what others are working on",
+      "The “sweet spot” for an OKR grade is 60% – 70%; if someone consistently fully attains their objectives, their OKRs aren’t ambitious enough and they need to think bigger",
+      "Low grades should be viewed as data to help refine the next OKRs"
+    ],
+    "translations": [
+      "编者按：本文概述了谷歌通过“目标与关键结果”（OKRs）设定目标这一基石方法的基本原理。我们保留此内容作为我们研究成果的记录，尽管某些参考资料可能反映了其原始时代背景，但OKRs背后的核心洞见对任何组织仍然适用。",
+      "研究表明，致力于目标可以帮助提高员工绩效。但更具体地说，研究揭示设定具有挑战性和具体性的目标可以进一步增强员工在实现这些目标时的参与度。谷歌经常使用“目标与关键结果”（OKRs）来尝试设定雄心勃勃的目标并跟踪进展。",
+      "目标应该是雄心勃勃的，并且可能让人感到有些不适",
+      "关键结果应该是可衡量的，并且应该可以用数字轻松评分（谷歌使用0-1.0的评分标准）",
+      "OKRs是公开的，这样组织中的每个人都可以看到其他人正在做什么",
+      "OKR评分的\"最佳区间\"是60%-70%；如果有人持续完全实现他们的目标，说明他们的OKRs不够雄心勃勃，他们需要思考更大的目标",
+      "低分应被视为有助于完善下一轮OKRs的数据"
+    ],
+    "fullTextParagraphs": [
+      "Introduction",
+      "Learn the abridged history of OKRs",
+      "OKRs and Stretch Goals",
+      "Bring OKRs to your organization",
+      "Set objectives and develop key results",
+      "Avoid OKR-writing mistakes",
+      "Develop team OKRs",
+      "Update OKRs regularly",
+      "Watch Google's OKR presentation",
+      "Editor’s Note: This article outlines the fundamentals behind Google’s cornerstone method for setting goals through “Objectives and Key Results,” or OKRs. We’ve preserved this content as a record of our findings, and while some references may reflect their original era, the core insights behind OKRs remain relevant for any organization.",
+      "Studies have shown that committing to a goal can help improve employee performance. But more specifically, research reveals that setting challenging and specific goals can further enhance employee engagement in attaining those goals. Google often uses “Objectives and Key Results” (OKRs) to try to set ambitious goals and track progress.",
+      "Objectives are ambitious and may feel somewhat uncomfortable",
+      "Key results are measurable and should be easy to grade with a number (Google uses a scale of 0 – 1.0)",
+      "OKRs are public so that everyone in the organization can see what others are working on",
+      "The “sweet spot” for an OKR grade is 60% – 70%; if someone consistently fully attains their objectives, their OKRs aren’t ambitious enough and they need to think bigger",
+      "Low grades should be viewed as data to help refine the next OKRs",
+      "OKRs are not synonymous with employee evaluations",
+      "OKRs are not a shared to-do list",
+      "In practice, using OKRs is different from other goal-setting techniques because of the aim to set very ambitious goals. When used this way, OKRs can enable teams to focus on the big bets and accomplish more than the team thought was possible, even if they don’t fully attain the stated goal. OKRs can help teams and individuals get outside of their comfort zones, prioritize work, and learn from both success and failure.",
+      "As the former Intel CEO Andy Grove explained in his book, High Output Management, there are two questions to be answered to successfully setup a system of shared objectives, like OKRs:",
+      "Where do I want to go? This answer provides the objective.",
+      "How will I pace myself to see if I am getting there? This answer provides the milestones, or key results.",
+      "John Doerr, one of Google’s early investors and a current Board of Directors member, learned about OKRs from Andy Grove while at Intel. Doerr explained that when he joined Intel, the company was transitioning from a memory company to a microprocessor company, and Grove and the management team needed a way to help employees focus on a set of priorities in order to make a successful transition. OKRs helped them communicate those priorities, maintain alignment, and make that switch.",
+      "A few decades later in early 2000, Doerr introduced OKRs to Google’s leadership who saw the value and started testing them out over the next couple of quarters. Today, Google sets annual and quarterly OKRs and holds company-wide meetings quarterly to share and grade OKRs.",
+      "OKRs are used far beyond Silicon Valley, in a wide range of organizations. Sears Holding Company, a Fortune 100 company, rolled out OKRs to their 20,000 employees and saw positive impacts on bottom-line sales and individual performance.",
+      "Google often sets goals that are just beyond the threshold of what seems possible, sometimes referred to as “stretch goals.” Creating unachievable goals is tricky as it could be seen as setting a team up for failure. However, more often than not, such goals can tend to attract the best people and create the most exciting work environments. Moreover, when aiming high, even failed goals tend to result in substantial advancements.",
+      "The key is clearly communicating the nature of stretch goals and what are the thresholds for success. Google likes to set OKRs such that success means achieving 70% of the objectives, while fully reaching them is considered extraordinary performance.",
+      "Such stretch goals are the building blocks for remarkable achievements in the long term, or “moonshots.”",
+      "An important part about OKRs is their transparency. When bringing OKRs to an organization, it can be helpful to be clear about what they are, why they can be helpful, and how they will be used. Performance is higher when people are committed to their goals, so it can be important to get everyone onboard.",
+      "What are OKRs? Cover the basics of what OKRs are and how they work.",
+      "Why use OKRs? Review of how the organization currently approaches setting goals, and any limits or issues with that approach.",
+      "How OKRs work? Explain the timeline, what is expected of each person, what the major milestones are, and how people will be accountable.",
+      "Still skeptical about OKRs? Leave time for questions, with a particular emphasis on drawing out any skepticism.",
+      "Alignment. Once the organization knows what it’s focused on and how it will measure success, it can become easier for individuals to connect their projects with the organizational objectives.",
+      "Discipline & prioritization. It can be hard for any one team in a company to say no to a good idea, a worthwhile project, or a needed improvement. Once everyone agrees what the most important objectives are, it can be easier to say no to the less important ideas. Saying no isn’t a political or emotional debate, it becomes a rational response to a commitment that the entire organization has already made.",
+      "Communication. OKRs should be public within an organization so that every employee knows the organizational objectives and metrics for success. In an interview, Dick Costolo, former Googler and former CEO of Twitter, was asked “What did you learn from Google that you applied to Twitter?” and shared:",
+      "“The thing that I saw at Google that I definitely have applied at Twitter are OKRs - Objectives and Key Results. Those are a great way to help everyone in the company understand what’s important and how you’re going to measure what’s important. It’s essentially a great way to communicate strategy and how you’re going to measure strategy. And that’s how we try to use them. As you grow a company, the single hardest thing to scale is communication. It’s remarkably difficult. OKRs are a great way to make sure everyone understands how you’re going to measure success and strategy.”",
+      "When setting objectives, Google often starts with the organizational OKRs and aligns priorities using three to five objectives with about three key results for each objective. Successful OKRs can often come from a mix of top-down and bottom-up suggestions, allowing individuals from all over the organization to voice what they believe is worth their time and how they can best apply their efforts.",
+      "Pick just three to five objectives - more can lead to over-extended teams and a diffusion of effort.",
+      "Avoid expressions that don’t push for new achievements, e.g., “keep hiring,” “maintain market position,” “continue doing X.”",
+      "Use expressions that convey endpoints and states, e.g., “climb the mountain,” “eat 5 pies,” “ship feature Y.”",
+      "Use tangible, objective, and unambiguous terms. It should be obvious to an observer whether or not an objective has been achieved. Research shows more specific goals can result in higher performance and goal attainment",
+      "Determine around three key results per objective.",
+      "Key results express measurable milestones which, if achieved, will directly advance the objective.",
+      "Key results should describe outcomes, not activities. If the KRs include words like “consult,” “help,” “analyze,” “participate,” they’re describing activities. Instead, describe the impact of these activities, e.g., “publish customer service satisfaction levels by March 7th” rather than “assess customer service satisfaction.”",
+      "Measurable milestones should include evidence of completion and this evidence should be available, credible, and easily discoverable.",
+      "Developing OKRs that set clear goals, measured by agreed upon results, can push teams to achieve great things and keep an organization focused on the most important priorities. Poorly written OKRs can create confusing strategy, undermine internal metrics, and cause teams to focus on maintaining the status quo. When developing OKRs, try to avoid these traps:",
+      "Miscommunicating stretch goal OKRs - Setting stretch goals requires careful communication within the teams delivering the objectives as well as other teams that depend on the work being delivered as part of the stretch goal OKR. If your project depends on another team’s objectives make sure you understand their goal-setting philosophy. If they are using stretch goals you should expect them to deliver on about 70% of their stated OKRs.",
+      "Business-as-usual OKRs - OKRs are often written based on what the team believes it can achieve without changing anything they’re currently doing, as opposed to what the team or its customers really want. To test this, stack rank the team’s current work as well as newly requested projects in terms of value versus effort required. If the OKRs contain anything other than top efforts, then they are just business-as-usual OKRs. Drop low-priority efforts and reassign resources to the top OKRs. There are some objectives that will stay the same quarter after quarter, like “Ensure customer satisfaction is over XX%,” and this is ok if that objective is always a high priority. But the key results should evolve to push the team to continue to innovate and become more efficient.",
+      "Sandbagging - Teams who can meet all of their OKRs without needing all of their team’s bandwidth may either be hoarding resources, not pushing their teams, or both.",
+      "Low-value objectives - OKRs should promise clear business value - otherwise, there’s no reason to expend resources doing them. “Low-value objectives,” even if fully achieved, won’t make much of a difference to the organization. Ask, could the OKR get a 1.0 under reasonable circumstances without providing direct organizational benefit? If so, reword the OKR to focus on the tangible benefit.",
+      "Insufficient key results for objectives - If the key results for a given objective don’t represent all that is needed to fully achieve that objective, an unexpected miss on that OKR can happen. That can cause delays of both the discovery of the resource requirements as well as the discovery that the objective will not be completed on schedule.",
+      "Although approaches will vary, it can be helpful to commit first to organizational objectives, so that teams and individuals can set their own objectives in service of those larger goals. This can help to create alignment throughout an org. The next decision is how many levels of “team” OKRs work for the organization - does each department, function, and sub-group need OKRs?",
+      "For team-level goals, recognize that not every organizational OKR needs to be reflected in every team OKR. It’s possible that a team’s OKRs will focus on just one of the organizational OKRs. But there should be some connection between team OKRs and at least one of the organizational OKRs.",
+      "One way to set these team OKRs is to have all of the team leaders meet to set goals. At Google, team leaders sometimes list priorities for the upcoming quarter in the context of the company OKRs. When creating these priorities, it is helpful to pay attention to the organizational OKRs and check:",
+      "Do the team priorities connect to any of the organizational key results?",
+      "Do the team priorities make it more likely that the organization will successfully achieve the organizational OKRs?",
+      "Are there things missing that others think this team should be working on?",
+      "Are there more than three priorities?",
+      "One thing OKRs are not is a checklist. They are not intended to be a master task list of all the things the teams will work on in a quarter. If a team treats this as a shared to-do list it may result in getting overly prescriptive about what the team wants done, rather than what the team wants to achieve. Use OKRs to define the impact the team wants to see, and let the teams come up with the methods of achieving that impact.",
+      "Here are a few sample OKRs a team or individual might set to support an organization's goal to \"reach xx% of industry market share.\"",
+      "Objective: Accelerate [product] revenue growth",
+      "Launch xx feature to all users",
+      "Implement xx initiative to increase revenue per user by xx%",
+      "Launch three revenue-specific experiments to learn what drives revenue growth",
+      "Secure tech support to build xx feature in Q1",
+      "Objective: Improve [product]’s reputation",
+      "Re-establish [product]’s leadership by speaking at three industry events",
+      "Identify and personally reach out to top xx users",
+      "Shorten response time to user-flagged errors by xx%",
+      "At Google, OKRs are usually graded on a scale of 0.0 to 1.0, 1.0 meaning the objective was fully achieved. Each individual key result is graded and then, using a rough average, correspondingly the objective is graded. This is described as “rough” because sometimes there’s some weighting of different key results. Sometimes key results are either 0 or 1 - if the key result was to “Launch a new widget marketing campaign” the end result could be that either it was launched or it wasn’t. Some are more granular - if the key result is to “Launch six new features” and only three new features were launched the OKR could be graded with a 0.5. This isn’t a science but it’s important to be honest and, more than anything, consistent with the grading process.",
+      "Things to consider when grading OKRs:",
+      "The sweet spot for OKRs is somewhere in the 60-70% range. Scoring lower may mean the organization is not achieving enough of what it could be. Scoring higher may mean the aspirational goals are not being set high enough. With Google’s 0.0 – 1.0 scale, the expectation is to get an average of 0.6 to 0.7 across all OKRs. For organizations who are new to OKRs, this tolerance for “failure” to hit the uncomfortable goals is itself uncomfortable.",
+      "OKRs are not synonymous with performance evaluation. This means OKRs are not a comprehensive means to evaluate an individual (or an organization). Rather, they can be used as a summary of what an individual has worked on in the last period of time and can show contributions and impact to the larger organizational OKRs.",
+      "Publicly grade organizational OKRs. At Google, organizational OKRs are typically shared and graded annually and quarterly. At the start of the year, there is a company-wide meeting where the grades for the prior OKRs are shared and the new OKRs are shared both for the year and for the upcoming quarter. Then the company meets quarterly to review grades and set new OKRs. At these company meetings, the owner for each OKR (usually the leader from the relevant team) explains the grade and any adjustments for the upcoming quarter.",
+      "Check in throughout the quarter. Prior to assigning a final grade, it can be helpful to have a mid-quarter check-in for all levels of OKRs to give both individuals and teams a sense of where they are. An end of quarter check-in can be used to prepare ahead of the final grading.",
+      "OKRs serve to help set strategy for the company at Google – they are the handful of goals the company is trying to accomplish. To that end, some teams find that they are best revisited a few times a quarter. In this manner, they can serve as a calibration tool, giving everyone an opportunity to adjust to new information, abandon objectives that are clearly not going to happen, and increasing attention on borderline objectives that will benefit from additional resources. Here’s an example timeline of how a team could approach OKR setting:",
+      "How often a team checks-in will depend on their own seasonal needs, how good the communication within the team already is, and how well the team is doing at predicting outcomes based on their ability to execute.",
+      "Some teams at Google have found midpoint check-ins are helpful and can make sure everyone remains focused on the same goals. For some teams, an informal review of the quarter’s goals is enough, for others, a more formal approach may be in order.",
+      "The Google Ventures team has shared some of what Google has learned about using OKRs with the portfolio companies. Rick Klau, a partner at Google Ventures, has given this presentation to many startups working to adopt OKRs for the first time. The presentation outlines what OKRs are, how they can help a fast-growing startup stay focused, and what to avoid when adopting OKRs.",
+      "Link to Youtube Video (visible only when JS is disabled)"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "cornerstone method",
+      "meaning": "基石方法",
+      "explain": "指某事物赖以建立的基础性方法或核心方法",
+      "example": "Innovation is the cornerstone method for our company's long-term success."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "challenging and specific goals",
+      "meaning": "具有挑战性和明确性的目标",
+      "explain": "指既需要努力才能达成又清晰定义的目标",
+      "example": "The manager set challenging and specific goals for the team to improve productivity."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "sweet spot",
+      "meaning": "最佳平衡点",
+      "explain": "指最理想的状态或位置，在这里指OKR评分的最佳区间",
+      "example": "Finding the sweet spot between work and life is essential for maintaining productivity."
+    },
+    {
+      "paragraph": 6,
+      "phrase": "refine the next OKRs",
+      "meaning": "完善下一轮OKR",
+      "explain": "指根据反馈数据调整和改进下一周期的目标设定",
+      "example": "After reviewing the quarterly results, we need to refine the next OKRs to address the identified gaps."
+    }
+  ],
+  "scenario": {
+    "title": "Make a key result measurable",
+    "english": [
+      "Your team is drafting quarterly OKRs. One key result says “improve customer onboarding,” but it does not show how progress will be measured.",
+      "You suggest naming a measurable outcome and a clear deadline so the team can tell whether the result has been achieved.",
+      "The team revises the key result before sharing the draft."
+    ],
+    "chinese": [
+      "团队正在制定季度 OKR。其中一条关键结果写着“改善客户入职体验”，却没有说明如何衡量进展。",
+      "你建议写出可衡量的结果和明确的截止时间，让团队能够判断是否达成。",
+      "团队在分享草案前修改了这条关键结果。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "团队希望减少新客户在设置账户时求助的次数，但目前的关键结果无法衡量。请用英文建议明确衡量指标，并同时记录当前基线和目标日期。",
+    "sample": "Could we track how many new customers complete setup without help? Let’s record the current baseline and set a target date so we can see whether the change is working.",
+    "rationale": "先把目标写成可观察的结果，再记录当前水平和复查时间。"
+  },
+  "words": [
+    {
+      "id": "committing-to-goals",
+      "word": "committing to goals",
+      "ipa": "",
+      "pos": "phrase",
+      "meaning": "致力于实现目标",
+      "collocation": "commit to/committing to + noun",
+      "example": "Committing to clear goals helps teams stay focused and motivated.",
+      "translation": "致力于实现清晰的目标有助于团队保持专注和动力。",
+      "note": "常用于描述对目标的坚定投入和承诺"
+    },
+    {
+      "id": "enhance-engagement",
+      "word": "enhance engagement",
+      "ipa": "",
+      "pos": "phrase",
+      "meaning": "提高参与度",
+      "collocation": "enhance + noun",
+      "example": "Regular team meetings can enhance engagement among employees.",
+      "translation": "定期团队会议可以提高员工的参与度。",
+      "note": "指增加员工对工作的投入和参与程度"
+    },
+    {
+      "id": "ambitious-goals",
+      "word": "ambitious goals",
+      "ipa": "",
+      "pos": "phrase",
+      "meaning": "雄心勃勃的目标",
+      "collocation": "set/achieve + ambitious goals",
+      "example": "The company set ambitious goals for market expansion this year.",
+      "translation": "公司今年为市场扩张设定了雄心勃勃的目标。",
+      "note": "指具有挑战性且需要付出巨大努力才能实现的目标"
+    },
+    {
+      "id": "measurable",
+      "word": "measurable",
+      "ipa": "/ˈmeʒərəbl/",
+      "pos": "adjective",
+      "meaning": "可测量的",
+      "collocation": "measurable results/outcomes/indicators",
+      "example": "We need to establish measurable criteria to evaluate the project's success.",
+      "translation": "我们需要建立可衡量的标准来评估项目的成功。",
+      "note": "指可以用具体数值或标准来评估和量化的特性"
+    },
+    {
+      "id": "public",
+      "word": "public",
+      "ipa": "/ˈpʌblɪk/",
+      "pos": "adjective",
+      "meaning": "公开的",
+      "collocation": "public information/public records/public display",
+      "example": "The company maintains a public database of its sustainability initiatives.",
+      "translation": "公司维护其可持续发展倡议的公开数据库。",
+      "note": "指对所有人可见或可访问的，不保密的"
+    },
+    {
+      "id": "refine",
+      "word": "refine",
+      "ipa": "/rɪˈfaɪn/",
+      "pos": "verb",
+      "meaning": "完善，改进",
+      "collocation": "refine a process/refine a strategy/refine a plan",
+      "example": "We need to refine our marketing strategy based on customer feedback.",
+      "translation": "我们需要根据客户反馈完善我们的营销策略。",
+      "note": "指通过仔细调整和改进使某事物更加精确和完善"
+    }
+  ],
+  "structure": {
+    "original": "Editor’s Note: This article outlines the fundamentals behind Google’s cornerstone method for setting goals through “Objectives and Key Results,” or OKRs.",
+    "analysis": [
+      "\"Editor's Note\" 是一个名词短语，作为句子的插入语，表示这是编辑的说明",
+      "\"This article outlines the fundamentals behind Google's cornerstone method for setting goals through 'Objectives and Key Results,' or OKRs\" 是主句，其中主语是\"This article\"，谓语动词是\"outlines\"，宾语是\"the fundamentals behind Google's cornerstone method for setting goals through 'Objectives and Key Results,' or OKRs\"",
+      "\"behind Google's cornerstone method for setting goals through 'Objectives and Key Results,' or OKRs\" 是介词短语，修饰\"fundamentals\"，其中\"Google's cornerstone method for setting goals\"是名词短语，\"through 'Objectives and Key Results,' or OKRs\"是介词短语，表示方式"
+    ],
+    "transfer": "The team uses quarterly objectives and measurable results to keep projects on track."
+  },
+  "rewrite": {
+    "bad": "Let’s write “improve onboarding” as the key result. Everyone knows what that means.",
+    "good": "Could we make this key result measurable and add a clear deadline? That would make it easier to track whether we’ve achieved the outcome.",
+    "translation": "我们能否把这条关键结果写得可衡量一些，并加上明确的截止时间？这样更容易追踪是否达成了预期结果。",
+    "pattern": "Could we make [the key result] measurable and add [a clear deadline]? That would make it easier to track [the outcome]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we track how many new customers complete setup without ___?",
+      "answer": "help",
+      "why": "用 without help 明确“不需要帮助”这一可观察结果。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s record the current ___.",
+      "answer": "baseline",
+      "why": "baseline 是设定改进目标前的当前水平。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s set a target ___ so we know when to review the result.",
+      "answer": "date",
+      "why": "target date 给出检查目标结果的时间点。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a marketing team member, is tasked with drafting the next quarter's OKRs for her department, focusing on campaign effectiveness metrics.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Her manager emphasizes ambitious targets while the finance department warns against setting unrealistic goals that could strain resources.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否追踪有多少新客户在没有帮助的情况下完成设置？",
+      "answer": "Could we track how many new customers complete setup without help?",
+      "why": "本句练习“track how many…”在把目标改成可以统计的数量时的用法。"
+    },
+    {
+      "prompt": "我们先记录当前基线。",
+      "answer": "Let’s record the current baseline.",
+      "why": "本句练习“record the current baseline”在记录调整前的当前水平时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "一条关键结果只写了“改善客户入职体验”，无法衡量进展。请用英文建议补上可衡量的结果和截止时间。",
+    "options": [
+      "Let’s write “improve onboarding” as the key result. Everyone knows what that means.",
+      "Could we make this key result measurable and add a clear deadline? That would make it easier to track whether we’ve achieved the outcome.",
+      "Could we add a deadline? That would give us a date, but still would not show how to measure the result."
+    ],
+    "correct": 1,
+    "why": "关键结果要描述可衡量的结果，并让团队能清楚判断是否完成。"
+  },
+  "output": {
+    "prompt": "客服团队想缩短客户等待时间，但当前目标描述得太笼统。请用英文建议记录目前的平均等待时间，设定可衡量的目标和复查日期。",
+    "sample": "Could we track the average customer wait time? Let’s record the current baseline and set a target date so we can see whether the change is working.",
+    "check": [
+      "是否把目标改成可观察的结果？",
+      "是否提到当前基线和目标日期？",
+      "是否说明这些信息如何帮助判断进展？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "track how many…",
+      "meaning": "把目标改成可以统计的数量",
+      "collocation": "track how many + 复数名词 + 动词",
+      "example": "Could we track how many new customers complete setup without help?",
+      "translation": "我们能否追踪有多少新客户在没有帮助的情况下完成设置？"
+    },
+    {
+      "id": "work-02",
+      "word": "record the current baseline",
+      "meaning": "记录调整前的当前水平",
+      "collocation": "record / establish the baseline",
+      "example": "Let’s record the current baseline.",
+      "translation": "我们先记录当前基线。"
+    },
+    {
+      "id": "work-03",
+      "word": "set a target date",
+      "meaning": "为目标设定检查日期",
+      "collocation": "set a target date for + 目标",
+      "example": "Set a target date so we can see whether the change is working.",
+      "translation": "设定目标日期，这样我们就能检查改动是否有效。"
+    }
+  ]
+}

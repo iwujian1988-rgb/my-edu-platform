@@ -1,0 +1,331 @@
+{
+  "id": "039",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "微软评审规范：怎样提出建议，让同事愿意接受",
+  "topic": "微软评审规范：怎样提出建议，让同事愿意接受",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Inclusion in Code Review - Engineering Fundamentals Playbook",
+    "section": "公开团队指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队指南",
+    "url": "https://microsoft.github.io/code-with-engineering-playbook/code-reviews/inclusion-in-code-review/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Microsoft 微软 公开资料。",
+    "paragraphs": [
+      "Below are some points which emphasize why inclusivity in code reviews is important:",
+      "Code reviews are an important part of our job as software professionals.",
+      "In ISE we work with cross cultural teams from across the globe.",
+      "How we communicate affects team morale.",
+      "Inclusive code reviews welcome new developers and make them comfortable with the team.",
+      "Rude or personal attacks doing code reviews alienate - people can unknowingly make rude comments when reviewing pull requests (PRs).",
+      "Inequitable review assignments. Example: Assigning most reviews to few people and dismissing some members of the team altogether.",
+      "Example: Assigning most reviews to few people and dismissing some members of the team altogether.",
+      "Negative interpersonal interactions. Example: Long arguments over subjective topics such as code style.",
+      "Example: Long arguments over subjective topics such as code style.",
+      "Biased decision making. Example: Comments about the developer and not the code. Assuming code from developer X will always be good and hence not reviewing it properly and vice versa.",
+      "Example: Comments about the developer and not the code. Assuming code from developer X will always be good and hence not reviewing it properly and vice versa.",
+      "Anyone and everyone in the team should be assigned PRs to review."
+    ],
+    "translations": [
+      "以下是一些强调代码审查中包容性为何重要的要点：",
+      "代码审查是我们作为软件专业人士工作的重要组成部分。",
+      "在ISE，我们与来自全球的跨文化团队合作。",
+      "我们的沟通方式会影响团队士气。",
+      "包容性的代码审查欢迎新开发者，让他们感到舒适并融入团队。",
+      "粗鲁或人身攻击式的代码审查会疏远他人——人们在审查拉取请求（PR）时可能会无意中做出粗鲁的评论。",
+      "不平等的审查分配。例如：将大多数审查分配给少数人，而完全忽视团队中的某些成员。",
+      "例如：将大多数审查分配给少数人，而完全忽视团队中的某些成员。",
+      "负面的人际互动。例如：就代码风格等主观话题进行长时间的争论。",
+      "例如：就代码风格等主观话题进行长时间的争论。",
+      "有偏见的决策。例如：针对开发者而非代码的评论。假设开发者X的代码总是好的，因此不对其进行适当审查，反之亦然。",
+      "例如：针对开发者而非代码的评论。假设开发者X的代码总是好的，因此不对其进行适当审查，反之亦然。",
+      "团队中的每个人都应该被分配审查PR。"
+    ],
+    "fullTextParagraphs": [
+      "Below are some points which emphasize why inclusivity in code reviews is important:",
+      "Code reviews are an important part of our job as software professionals.",
+      "In ISE we work with cross cultural teams from across the globe.",
+      "How we communicate affects team morale.",
+      "Inclusive code reviews welcome new developers and make them comfortable with the team.",
+      "Rude or personal attacks doing code reviews alienate - people can unknowingly make rude comments when reviewing pull requests (PRs).",
+      "Inequitable review assignments. Example: Assigning most reviews to few people and dismissing some members of the team altogether.",
+      "Example: Assigning most reviews to few people and dismissing some members of the team altogether.",
+      "Negative interpersonal interactions. Example: Long arguments over subjective topics such as code style.",
+      "Example: Long arguments over subjective topics such as code style.",
+      "Biased decision making. Example: Comments about the developer and not the code. Assuming code from developer X will always be good and hence not reviewing it properly and vice versa.",
+      "Example: Comments about the developer and not the code. Assuming code from developer X will always be good and hence not reviewing it properly and vice versa.",
+      "Anyone and everyone in the team should be assigned PRs to review.",
+      "Reviewer should be clear about what is an opinion, their personal preference, best practice or a fact. Arguments over personal preferences and opinions are mostly avoidable.",
+      "Using inclusive language and tone in the code review comments. For example, being suggestive rather being prescriptive in the review comments is a good way to get the point across the table.",
+      "It's a good practice for the author of a PR to thank the reviewer for the review, when they have contributed in improving the code or you have learnt something new.",
+      "Using the sandwich method for recommending a code change to a new developer or a new customer: Sandwich the suggestion between 2 compliments. For example: \"Great work so far, but I would recommend a few changes here. Btw, I loved the use of XYZ here, nice job!\"",
+      "Aim to write a code that is easy to read, review and maintain.",
+      "It’s important to ensure that whoever is looking at the code, whether that be the reviewer or a future engineer, can understand the motivations and how your code achieves its goals.",
+      "Proactively asking for targeted help or feedback.",
+      "Respond clearly to questions asked by the reviewers.",
+      "Avoid huge commits by submitting incremental changes. Commits which are large and contain changes to multiple files will lead to unfair review of the code. Biased behavior of reviewers may kick in while reviewing such PRs. For e.g. a huge commit from a senior developer may get approved without thorough review whereas a huge commit from a junior developer may never get reviewed and approved.",
+      "Assume positive intent from the author.",
+      "Write clear and elaborate comments.",
+      "Identify subjectivity, choice of coding and best practice. It is good to discuss coding style and subjective coding choices in some other forum and not in the PR. A PR should not become a ground to discuss subjective coding choices and having long arguments over it.",
+      "If you do not understand the code properly, refrain from commenting e.g., \"This code is incomprehensible\". It is better to have a call with the author and get a basic understanding of their work.",
+      "Be suggestive and not prescriptive. A reviewer should suggest changes and not prescribe changes, let the author decide if they really want to accept the changes proposed.",
+      "We in ISE, may come across situations in which code reviews are not ideal and often we are observing non inclusive code review behaviors. Its important to be aware of the fact that culture and communication style of a particular geography also influences how people interact over pull requests. In such cases, assuming positive intent of the author and reviewer is a good start to start analyzing quality of code reviews.",
+      "Impostor phenomenon is a psychological pattern in which an individual doubts their skills, talents, or accomplishments and has a persistent internalized fear of being exposed as a \"fraud\" - Wikipedia.",
+      "Someone experiencing impostor phenomenon may find submitting code for a review particularly stressful. It is important to realize that everybody can have meaningful contributions and not to let the perceived weaknesses prevent contributions.",
+      "Some tips for overcoming the impostor phenomenon for authors:",
+      "Review the guidelines highlighted above and make sure your code change adhere to them.",
+      "Ask for help from a colleague - pair program with an experienced colleague that you can learn from.",
+      "Some tips for overcoming the impostor phenomenon for reviewers:",
+      "Anyone can have valuable insights.",
+      "A fresh new pair of eyes are always welcome.",
+      "Study the review until you have clearly understood it, check the corner cases and look for ways to improve it.",
+      "If something is not clear, a simple specific question should be asked.",
+      "If you have learnt something, you can always compliment the author.",
+      "If possible, pair with someone to review the code so that you can establish a personal connection and have a more profound discussion about the code.",
+      "Below are some tools which may help in establishing inclusive code review culture within our teams.",
+      "Anonymous GitHub",
+      "Blind Code Reviews",
+      "inclusivelint"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "Below are some points which emphasize why inclusivity in code reviews is important",
+      "meaning": "以下是一些强调代码审查中包容性重要性的要点",
+      "explain": "这个短语用于引出一系列关于代码审查包容性的重要观点，适合在技术文档或团队指南中使用",
+      "example": "Below are some points which emphasize why effective communication is crucial in remote teams."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Inclusive code reviews welcome new developers and make them comfortable with the team",
+      "meaning": "包容性的代码审查欢迎新开发者，让他们感到舒适并融入团队",
+      "explain": "这个短语强调了包容性代码审查对团队融入的重要性，特别适用于新成员加入时的团队建设",
+      "example": "Inclusive onboarding processes welcome new employees and make them comfortable with the company culture."
+    },
+    {
+      "paragraph": 5,
+      "phrase": "Rude or personal attacks doing code reviews alienate",
+      "meaning": "在代码审查中进行粗鲁或人身攻击会使他人疏远",
+      "explain": "这个短语警告了在代码审查中不当行为的负面影响，强调了尊重他人的重要性",
+      "example": "Rude or dismissive feedback in meetings alienate team members and hinder collaboration."
+    },
+    {
+      "paragraph": 12,
+      "phrase": "Anyone and everyone in the team should be assigned PRs to review",
+      "meaning": "团队中的每个人都应该被分配审查PR的任务",
+      "explain": "这个短语强调了代码审查任务分配的公平性，确保团队成员都有参与机会",
+      "example": "Anyone and everyone in the department should be given the opportunity to present their ideas in the quarterly meeting."
+    }
+  ],
+  "scenario": {
+    "title": "Code Review Feedback",
+    "english": [
+      "Alex, a senior developer, is reviewing a pull request from junior developer Jordan, who has implemented a feature using a different approach than the team's standard.",
+      "The team has strict guidelines about code consistency, but Jordan's implementation is more efficient, though it deviates from the established patterns.",
+      "Alex uses a collaborative approach, acknowledging Jordan's innovation while explaining the team's consistency requirements, and asks for a compromise that maintains both efficiency and standards."
+    ],
+    "chinese": [
+      "高级开发人员Alex正在审查初级开发人员Jordan的拉取请求，Jordan实现功能的方式与团队标准不同。",
+      "团队有严格的代码一致性指导原则，但Jordan的实现更高效，尽管它偏离了既定模式。",
+      "Alex采用协作方式，肯定Jordan的创新，同时解释团队的 consistency 要求，并寻求一个既能保持效率又能符合标准的折中方案。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "你在产品说明中发现错误提示没有告诉用户下一步该做什么。请用英文针对文档内容提出具体修改建议，并说明它能帮助用户什么。",
+    "sample": "Could we add a next step to the error message? That would help users understand how to continue instead of leaving them stuck.",
+    "rationale": "针对错误提示提出具体修改，并解释它如何帮助用户继续操作。"
+  },
+  "words": [
+    {
+      "id": "inclusivity",
+      "word": "inclusivity",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "包容性，包含性",
+      "collocation": "promote inclusivity",
+      "example": "Our company promotes inclusivity by ensuring all voices are heard in decision-making processes.",
+      "translation": "我们公司通过确保在决策过程中听取所有声音来促进包容性。",
+      "note": "在职场环境中，inclusivity强调尊重和接纳不同背景、观点的团队成员"
+    },
+    {
+      "id": "cross-cultural",
+      "word": "cross-cultural",
+      "pos": "adjective",
+      "meaning": "跨文化的",
+      "collocation": "cross-cultural communication",
+      "example": "Effective cross-cultural communication is essential for global teams to collaborate successfully.",
+      "translation": "有效的跨文化沟通对于全球团队成功协作至关重要。",
+      "note": "在跨国企业中，cross-cultural skills是重要的职场能力"
+    },
+    {
+      "id": "alienate",
+      "word": "alienate",
+      "pos": "verb",
+      "meaning": "使疏远，使孤立",
+      "collocation": "alienate team members",
+      "example": "Constant criticism can alienate team members and reduce their productivity.",
+      "translation": "持续的批评可能会使团队成员疏远并降低他们的生产力。",
+      "note": "在职场中，避免alienate同事是维持良好工作关系的关键"
+    },
+    {
+      "id": "inequitable",
+      "word": "inequitable",
+      "pos": "adjective",
+      "meaning": "不公平的，不公正的",
+      "collocation": "inequitable distribution",
+      "example": "The inequitable distribution of workload led to burnout among some team members.",
+      "translation": "工作量的不公平分配导致一些团队成员倦怠。",
+      "note": "在职场管理中，inequitable practices会影响团队士气和效率"
+    },
+    {
+      "id": "subjective",
+      "word": "subjective",
+      "pos": "adjective",
+      "meaning": "主观的",
+      "collocation": "subjective opinion",
+      "example": "Performance reviews should be based on objective criteria rather than subjective opinions.",
+      "translation": "绩效评估应基于客观标准而非主观意见。",
+      "note": "在专业环境中，区分subjective和objective因素对于公平评估很重要"
+    },
+    {
+      "id": "biased",
+      "word": "biased",
+      "pos": "adjective",
+      "meaning": "有偏见的，不公平的",
+      "collocation": "biased decision",
+      "example": "Making biased decisions based on personal relationships can harm team dynamics.",
+      "translation": "基于个人关系做出有偏见的决定可能会损害团队动态。",
+      "note": "在职场中，避免biased judgment是专业素养的体现"
+    }
+  ],
+  "structure": {
+    "original": "Inclusive code reviews welcome new developers and make them comfortable with the team.",
+    "analysis": [
+      "主语是'Inclusive code reviews'，这是一个名词短语，其中'Inclusive'是形容词修饰'code reviews'，表示包容性的代码审查",
+      "谓语部分由两个并列动词短语组成：'welcome new developers'和'make them comfortable with the team'，通过连词'and'连接",
+      "第一个动词短语'welcome new developers'中，'welcome'是动词，'new developers'是宾语；第二个动词短语'make them comfortable with the team'中，'make'是动词，'them'是宾语，'comfortable with the team'是复合宾语，其中'comfortable'是形容词，'with the team'是介词短语"
+    ],
+    "transfer": "Diverse team meetings encourage new members and help them adapt to the company culture."
+  },
+  "rewrite": {
+    "bad": "Your code is completely wrong. Redo it exactly the way I would.",
+    "good": "Could we extract this repeated logic into a helper? That would make the change easier to maintain. What do you think?",
+    "translation": "我们能否把重复逻辑提取成一个辅助函数？这样后续维护会更容易。你觉得呢？",
+    "pattern": "Could we [change this part of the code] so that [the future change is easier]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we add a next ___ to the error message?",
+      "answer": "step",
+      "why": "next step 告诉用户遇到错误后该做什么。"
+    },
+    {
+      "id": "c2",
+      "prompt": "That would help users understand how to ___.",
+      "answer": "continue",
+      "why": "说明修改如何帮助用户继续完成操作。"
+    },
+    {
+      "id": "c3",
+      "prompt": "They can continue instead of being left ___.",
+      "answer": "stuck",
+      "why": "stuck 表示用户不知道下一步而无法继续。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Alex, a senior developer, is reviewing a pull request from junior developer Jordan, who has implemented a feature using a different approach than the team's standard.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "The team has strict guidelines about code consistency, but Jordan's implementation is more efficient, though it deviates from the established patterns.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否在错误提示里加上下一步操作？",
+      "answer": "Could we add a next step to the error message?",
+      "why": "本句练习“add a next step to the error message”在让错误提示告诉用户接下来怎么做时的用法。"
+    },
+    {
+      "prompt": "这样能帮助用户知道怎样继续操作。",
+      "answer": "That would help users understand how to continue.",
+      "why": "本句练习“help users understand how to continue”在说明修改如何帮助用户继续操作时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "你在代码评审中发现一个实现会让后续修改更困难。请用英文针对代码提出具体问题和改进建议，避免评价作者本人。",
+    "options": [
+      "Your code is completely wrong and doesn't follow our standards at all. You need to redo it exactly as we've done before.",
+      "Could we extract this repeated logic into a helper? That would make the change easier to maintain. What do you think?",
+      "Could we extract this repeated logic into a helper?"
+    ],
+    "correct": 1,
+    "why": "评审评论聚焦实现本身，给出具体建议并说明理由，让讨论留在代码和改进上。"
+  },
+  "output": {
+    "prompt": "上线公告解释了服务中断的原因，却没告诉客户如何恢复访问。请用英文针对公告内容提出具体修改，并说明这能帮助客户什么。",
+    "sample": "Could we add a recovery step to the service notice? That would help customers regain access instead of leaving them unsure what to do.",
+    "check": [
+      "是否针对具体内容提出建议？",
+      "是否说明建议带来的用户价值？",
+      "是否避免评价文档作者？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "add a next step to the error message",
+      "meaning": "让错误提示告诉用户接下来怎么做",
+      "collocation": "add + information + to + message / document",
+      "example": "Could we add a next step to the error message?",
+      "translation": "我们能否在错误提示里加上下一步操作？"
+    },
+    {
+      "id": "work-02",
+      "word": "help users understand how to continue",
+      "meaning": "说明修改如何帮助用户继续操作",
+      "collocation": "help someone + 动词原形",
+      "example": "That would help users understand how to continue.",
+      "translation": "这样能帮助用户知道怎样继续操作。"
+    },
+    {
+      "id": "work-03",
+      "word": "instead of leaving them stuck",
+      "meaning": "指出修改能避免用户卡在当前页面",
+      "collocation": "instead of + 动名词",
+      "example": "Users could understand how to continue instead of being left stuck.",
+      "translation": "用户就能知道如何继续，而不会卡在当前步骤。"
+    }
+  ]
+}

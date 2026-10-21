@@ -1,0 +1,366 @@
+{
+  "id": "060",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "跨时区团队怎样约定消息回复和沟通方式",
+  "topic": "跨时区团队怎样约定消息回复和沟通方式",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Team Communication Norms - Atlassian Plays | Atlassian",
+    "section": "公开团队工具",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队工具",
+    "url": "https://www.atlassian.com/team-playbook/plays/team-communication-norms",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Atlassian 公开资料。",
+    "paragraphs": [
+      "Collaborating with people who have different communication styles and across time zones can be tricky. Make it easier by agreeing on team communication norms.",
+      "Identify pain points or challenges with your team’s communication.",
+      "Brainstorm how to adjust the way your team communicates to improve timing, inclusivity, and visibility.",
+      "Document decisions, and put them into practice to see what works well and what needs further improvement.",
+      "Video conferencing with screen sharing or meeting space",
+      "Digital or physical whiteboard (see templates)",
+      "Markers, sticky notes, and a time for in-person meetings"
+    ],
+    "translations": [
+      "与具有不同沟通风格且跨越时区的人合作可能很棘手。通过商定团队沟通规范来简化这一点。",
+      "确定您团队沟通中的痛点或挑战。",
+      "集思广益，调整您团队的沟通方式，以提高时间安排、包容性和可见性。",
+      "记录决策，并将其付诸实践，以了解哪些有效，哪些需要进一步改进。",
+      "视频会议，带屏幕共享或会议空间",
+      "数字或实体白板（请参阅模板）",
+      "标记笔、便利贴以及线下会议的时间"
+    ],
+    "fullTextParagraphs": [
+      "Collaborating with people who have different communication styles and across time zones can be tricky. Make it easier by agreeing on team communication norms.",
+      "Identify pain points or challenges with your team’s communication.",
+      "Brainstorm how to adjust the way your team communicates to improve timing, inclusivity, and visibility.",
+      "Document decisions, and put them into practice to see what works well and what needs further improvement.",
+      "Video conferencing with screen sharing or meeting space",
+      "Digital or physical whiteboard (see templates)",
+      "Markers, sticky notes, and a time for in-person meetings",
+      "Improve collaboration, especially across time zones, by agreeing on how your team will communicate with each other.",
+      "About this Play",
+      "Instructions",
+      "Team communication norms are expectations for how team members behave and interact with each other. They can include what to do and what not to do to keep communication smooth, respectful, and inclusive.",
+      "Everyone has different communication styles, which can create challenges with understanding and team culture. Distributed teams often feel these pains even more because they’re working across multiple time zones. Reaching your goals requires finding common ground.",
+      "This quick, practical exercise helps your team co-create shared norms that improve collaboration— no matter where or when you work.",
+      "Clarify communication expectations across time zones",
+      "Respect working hours by balancing availability",
+      "Support inclusion by making space of all voices",
+      "Boost team effectiveness by aligning tool use and building trust through transparent practices",
+      "There is never a bad time to do this exercise. It’s especially helpful when team members are experiencing burnout or when expectations around how and when to communicate are unclear.",
+      "Atlassian’s Teamwork Lab ran an internal experiment on setting communication norms and reported the following:",
+      "Encourage productive communication: 74% of executives say lack of communication interferes with speed and quality of work. Explicit communication norms help everyone do their jobs efficiently and effectively.",
+      "Reduce stress and improve productivity: Research shows that a lack of work-life balance or an inability to unplug impacts stress levels and workplace productivity. Setting clear norms and boundaries for communication can relieve stress for the team and pave the way for impactful collaboration.",
+      "Create space for meaningful work: 65% of knowledge workers say it’s more important to quickly respond to messages than it is to make progress on top priorities. Without transparent communication agreements, it can be difficult for employees to balance focus time with collaboration expectations.",
+      "Reduce meeting overload: 78% of workers say they’re expected to attend so many meetings, it’s hard to get their work done. For distributed teams, clear norms around async communication and meeting expectations help respect time zones and working hours, making it easier for everyone to participate.",
+      "Send a calendar invitation for a one-hour meeting with your teammates. Make sure to include context about the meeting's topic.",
+      "Primarily for Molly and Allison.",
+      "Review my page and leave comments, particularly regarding page readability and content clarity.",
+      "I made a page detailing our decision to shift directions on the latest project.",
+      "It is to be shared with stakeholders Jolene and Dolly to keep them informed.",
+      "They have lots of competition for attention, so this should be crisp.",
+      "The page is about the new project direction.",
+      "We’re pivoting from the old feature to a new one because of recent feedback from leadership.",
+      "The new direction requires a slight change of roles, especially for Molly and Allison.",
+      "Use the Comms Crafter Rovo Agent to draft your outline and/or script.",
+      "Set up a digital or physical whiteboard to guide the conversation with five sections:",
+      "Timing your messages",
+      "Response expectations",
+      "Team communication norms",
+      "A note about on-call teammates: On-call rotations are a special case. Since they require availability outside of core working hours, they’re considered out of scope for this exercise.",
+      "Open the conversation by explaining why the team is meeting and by creating a safe place for discussion. Having a leader to do this introduction can help gain buy-in and communicate the importance of the conversation. During the intro, highlight a few challenges team members have been experiencing, like feeling pressure to respond outside of working hours, or goals you have for improving communication, like providing clarity on expectations and being more inclusive with decision-making. To make the conversation as productive as possible, share a few mutual agreements, too, such as:",
+      "Listen with an open mind.",
+      "Think outside the box. There are no wrong answers during this meeting.",
+      "Remember that everyone’s experience is valid.",
+      "Be honest and candid about potential issues and risks.",
+      "Make critique constructive by focusing on ways to improve rather than blaming.",
+      "First, explore why some team members may be feeling like they can’t unplug after working hours. If you aren’t using the Confluence whiteboard template, write these three questions on the board:",
+      "When you get messages outside your working hours, do you feel like you have to respond right away?",
+      "After your workday ends, do you worry important decisions might happen without your input?",
+      "Do you ever feel like not responding during core hours might make you seem less committed?",
+      "Give the team 10 minutes to answer these questions using “Yes” or “No” stickers for a digital whiteboard or green and red markers for physical whiteboards. The responses will determine which kind of communication norms would be most helpful for the team:",
+      "If several people said “Yes” to question 1, try exercises A, B, and D.",
+      "If several people said “Yes” to question 2, try exercise C.",
+      "If several people said “Yes” to question 3, try exercises A, B, and D.",
+      "Divide each exercise into two sections: * Brainwriting (3 mins): Ask team members to add their responses to the prompts on sticky notes. (One response or idea per sticky note.)",
+      "2. Discussion and commitment (7 mins): Discuss the responses as a team, and decide on your process and communication norms. Capture those decisions on sticky notes in the section called “Our team communication norms.”",
+      "When is the best time to send team communications?",
+      "Should direct messages be sent anytime or saved for the start of someone’s day?",
+      "Again, spend three minutes brainwriting and seven minutes discussing and committing.",
+      "How quickly should teammates reply to messages outside of their core working hours?",
+      "When should someone ideally read and respond to messages?",
+      "How can we gather input from everyone?",
+      "How can everyone weigh in on important discussions, no matter their time zone?",
+      "How might the process change depending on the type of decision that needs to be made?",
+      "How can we flag time-sensitive info so it gets noticed?",
+      "What’s the best way to mark communications as critical or urgent?",
+      "Where should we post important updates so people see them as soon as they log in?",
+      "As the team goes through each of the exercises, add decisions from each topic to the appropriate section below to create norms about:",
+      "When will team communications be sent",
+      "When we expect people to read and respond to messages",
+      "How we gather input from everyone",
+      "How we share time-sensitive information",
+      "Any other team communication norms that come up during the conversation",
+      "Capture what your team agreed on so the norms aren’t forgotten when the meeting ends.",
+      "Document the decisions in your team’s shared workspace, such as a Confluence page or a Slack channel.",
+      "Make it easy to find by pinning the Slack message or bookmarking the page in your team’s chat channel.",
+      "If a team member is facilitating this exercise instead of a manager, make sure the leader is aware of these communication norms and ask them to help reinforce them. Their support can go a long way toward turning agreements into lasting habits.",
+      "Set a recurring, quarterly check-in to reflect on what’s working and what needs adjusting.",
+      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
+      "Better meetings start with a page that outlines the purpose, expected outcomes, and key discussion points.",
+      "Help your teammates understand how best to work with you.",
+      "Provide a safe space to discuss what worked and what didn’t.",
+      "Get the latest Plays and work life advice when you sign up for our newsletter.",
+      "Loom speaker notes show up while you’re recording, but aren’t visible to viewers.",
+      "The five sections you will put on the whiteboard to guide the conversation",
+      "Questions for identifying communication challenges",
+      "Questions for increasing visibility",
+      "A summary of the team’s communication norms"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "across time zones",
+      "meaning": "跨时区",
+      "explain": "提醒沟通者考虑接收者所处的工作时间。",
+      "example": "We work across time zones, so a quick reply cannot always be expected."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "agreeing on team communication norms",
+      "meaning": "共同约定团队沟通规则",
+      "explain": "norms 可以涵盖渠道、回复时间和紧急情况的升级方式。",
+      "example": "Let’s agree on team communication norms before the launch."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "improve timing, inclusivity, and visibility",
+      "meaning": "改善时效、参与感和信息可见性",
+      "explain": "并列三个目标，说明好规则不仅追求更快回复。",
+      "example": "The shared channel improves timing and visibility."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "put them into practice",
+      "meaning": "把决定付诸实践",
+      "explain": "先试行规则，再根据实际效果调整。",
+      "example": "We can put these rules into practice for two weeks."
+    }
+  ],
+  "scenario": {
+    "title": "A message arrives after midnight",
+    "english": [
+      "The team has members in Shanghai and London. A project chat notification reaches Theo after midnight, but the sender has not said whether it is urgent.",
+      "At their next team check-in, Theo asks the group to agree on response expectations: routine questions can wait until local working hours, while urgent incidents use a named escalation channel.",
+      "Maya writes down the rule and asks the team to revisit it after two weeks, when they have tried it in real work."
+    ],
+    "chinese": [
+      "团队成员分布在上海和伦敦。一条项目聊天消息在 Theo 的午夜响起，发信人却没有说明是否紧急。",
+      "下次团队沟通时，Theo 提议明确回复预期：普通问题等到当地工作时间，紧急故障走指定升级渠道。",
+      "Maya 记录这条规则，并请团队试行两周后再检查是否适用。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "跨时区同事半夜收到普通项目消息。请用英文写三条团队约定：普通消息何时回复、紧急问题走什么渠道、何时复查这条规则。",
+    "sample": "For routine questions, let’s reply during our local working hours. For urgent incidents, please use the escalation channel and tag the on-call owner. Let’s review this rule in two weeks.",
+    "rationale": "先按消息紧急程度区分回复方式，并约定复查时间。"
+  },
+  "words": [
+    {
+      "id": "norms",
+      "word": "norms",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "团队规则；共同做法",
+      "collocation": "communication norms",
+      "example": "Our communication norms say when a reply is expected.",
+      "translation": "我们的沟通规则说明何时需要回复。",
+      "note": "通常以复数出现。"
+    },
+    {
+      "id": "painpoints",
+      "word": "pain points",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "痛点；具体困难",
+      "collocation": "identify pain points",
+      "example": "Late-night notifications are a pain point for this team.",
+      "translation": "深夜通知是团队的一个痛点。",
+      "note": "比笼统说“沟通不好”更具体。"
+    },
+    {
+      "id": "brainstorm",
+      "word": "brainstorm",
+      "ipa": "",
+      "pos": "v.",
+      "meaning": "集思广益",
+      "collocation": "brainstorm options",
+      "example": "Let’s brainstorm ways to handle urgent requests.",
+      "translation": "我们一起想想如何处理紧急请求。",
+      "note": "后面常接 ideas、options、solutions。"
+    },
+    {
+      "id": "timing",
+      "word": "timing",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "时机；时间安排",
+      "collocation": "improve timing",
+      "example": "Clear response windows can improve timing.",
+      "translation": "明确回复时段有助于改善时间安排。",
+      "note": "在本句中关注何时沟通。"
+    },
+    {
+      "id": "inclusivity",
+      "word": "inclusivity",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "包容性；参与机会",
+      "collocation": "improve inclusivity",
+      "example": "Written updates improve inclusivity for remote colleagues.",
+      "translation": "书面更新使远程同事更有机会参与。",
+      "note": "名词，对应 inclusive。"
+    },
+    {
+      "id": "visibility",
+      "word": "visibility",
+      "ipa": "",
+      "pos": "n.",
+      "meaning": "信息可见性",
+      "collocation": "improve visibility",
+      "example": "A shared log improves visibility across time zones.",
+      "translation": "共享记录提高跨时区的信息可见性。",
+      "note": "这里指相关人能看到进展。"
+    }
+  ],
+  "structure": {
+    "original": "Brainstorm how to adjust the way your team communicates to improve timing, inclusivity, and visibility.",
+    "analysis": [
+      "Brainstorm how to ...：不是直接宣布规则，而是共同讨论怎么调整。",
+      "the way your team communicates：指出讨论对象是现有沟通方式。",
+      "to improve ...：用不定式说明调整要达到的三个目标。"
+    ],
+    "transfer": "Let’s brainstorm how to adjust our response rules to protect focus and improve visibility."
+  },
+  "rewrite": {
+    "bad": "Everyone should reply to every message as soon as it arrives, no matter the time zone.",
+    "good": "For routine questions, let’s reply during our local working hours. For urgent incidents, use the escalation channel and tag the on-call owner. Let’s review the rule in two weeks.",
+    "translation": "普通问题在各自工作时间内回复；紧急事件走升级渠道并标记值班负责人。两周后我们再检查这条约定。",
+    "pattern": "For [routine messages], do [X]. For [urgent issues], use [Y]. Let’s review this rule [at a set time]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Use the project channel for routine status ___.",
+      "answer": "updates",
+      "why": "常规更新与紧急故障使用不同渠道。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Use the incident channel for urgent ___.",
+      "answer": "issues",
+      "why": "incident channel 用于需要即时处理的故障。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Review whether this approach is ___ at our next check-in.",
+      "answer": "working",
+      "why": "试行之后检查效果，再决定是否调整约定。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Make it easier by agreeing on team communication norms.",
+      "why": "听清 agreeing on 后接的是共同制定的规则。"
+    },
+    {
+      "id": "d2",
+      "text": "For routine questions, let’s reply during our local working hours.",
+      "why": "注意 routine 和 local working hours。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "普通状态更新发到项目频道。",
+      "answer": "Let’s use the project channel for routine status updates.",
+      "why": "本句练习“use the project channel for routine status updates”在普通状态更新发在项目频道时的用法。"
+    },
+    {
+      "prompt": "紧急问题使用事故频道。",
+      "answer": "Use the incident channel for urgent issues.",
+      "why": "本句练习“use the incident channel for urgent issues”在紧急故障通过事故频道联系时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "跨时区同事半夜收到普通项目消息。请用英文写三条团队约定：普通消息何时回复、紧急问题走什么渠道、何时复查这条规则。",
+    "options": [
+      "Everyone must answer chat messages immediately, even at night.",
+      "For routine questions, let’s reply during our local working hours. For urgent incidents, please use the escalation channel and tag the on-call owner. Let’s review this rule in two weeks.",
+      "All messages must be answered immediately."
+    ],
+    "correct": 1,
+    "why": "先按消息紧急程度区分回复方式，并约定复查时间。"
+  },
+  "output": {
+    "prompt": "发布团队中有人把普通更新发成紧急提醒，导致值班同事频繁被打断。请用英文建议约定普通状态更新和紧急故障各用什么渠道，并在试行后复查。",
+    "sample": "Let’s use the project channel for routine status updates and the incident channel for urgent issues. We can try this approach and review whether it is working at our next check-in.",
+    "check": [
+      "是否区分普通更新和紧急事件？",
+      "是否为两种情况指定不同渠道？",
+      "是否安排复查规则的效果？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "use the project channel for routine status updates",
+      "meaning": "普通状态更新发在项目频道",
+      "collocation": "use + channel + for + updates",
+      "example": "Let’s use the project channel for routine status updates.",
+      "translation": "普通状态更新发到项目频道。"
+    },
+    {
+      "id": "work-02",
+      "word": "use the incident channel for urgent issues",
+      "meaning": "紧急故障通过事故频道联系",
+      "collocation": "use + incident channel + for urgent issues",
+      "example": "Use the incident channel for urgent issues.",
+      "translation": "紧急问题使用事故频道。"
+    },
+    {
+      "id": "work-03",
+      "word": "review whether this approach is working",
+      "meaning": "试行后检查沟通约定是否有效",
+      "collocation": "review whether + 完整句子",
+      "example": "We can try this approach and review whether it is working at our next check-in.",
+      "translation": "我们可以先试行，在下次同步时检查是否有效。"
+    }
+  ]
+}

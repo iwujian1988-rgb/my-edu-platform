@@ -1,0 +1,275 @@
+{
+  "id": "074",
+  "version": 1,
+  "status": "draft",
+  "company": "Dropbox",
+  "companyZh": "Dropbox",
+  "title": "会前准备怎样分配给参会者",
+  "topic": "会前准备怎样分配给参会者",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "How to set your pre-meeting up for success - Dropbox",
+    "section": "公开协作指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开协作指南",
+    "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/set-your-pre-meeting-up-for-success",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Dropbox 公开资料。",
+    "paragraphs": [
+      "That meeting agenda you created? Open it, add any links or pre-read materials to the async ‘Context’ section, and pre-populate the ‘3d’s’ section with questions or topics you need input on. Think about what you want to tell or ask folks once the meeting begins, and document that before the meeting.",
+      "Once the pre-read materials and questions are in the agenda document, message or email those who are confirmed to attend the meeting. Aim to send this one business day before your meeting (or two for especially robust topics). Point attendees to the updated questions and topics to ponder, empowering them to gain context on their terms. As a bonus, you may see the conversation begin in the document before the meeting even happens!",
+      "Depending on how in-depth the pre-read materials are, set aside 5, 10, or even 15 minutes at the start of a meeting for folks to read and absorb the content. Switch cameras off during silent reading and turn cameras back on when you’re ready to engage. Not only is this a calming way to start a meeting, but it also reinforces the practice of documentation across your team. When folks see that documented agendas are given proper space to be read and consumed, they’ll feel compelled to hop on the documented agenda bandwagon!"
+    ],
+    "translations": [
+      "你创建的那份会议议程？打开它，将任何链接或预读材料添加到异步的\"背景\"部分，并在\"3d\"部分预先填入你需要输入的问题或主题。思考一下会议开始后你想告诉或询问大家什么，并在会前记录下来。",
+      "一旦预读材料和问题已放入议程文档中，向已确认参加会议的人员发送消息或电子邮件。尽量在会议前一个工作日发送此信息（对于特别深入的主题则提前两天）。引导参会者查看更新的问题和思考主题，让他们能够按照自己的节奏获取背景信息。额外的好处是，你可能会看到对话在会议开始前就在文档中展开了！",
+      "根据预读材料的深度，在会议开始时留出5、10甚至15分钟的时间让大家阅读和吸收内容。在默读期间关闭摄像头，准备参与时再重新打开。这不仅是一种平静的会议开始方式，还能强化团队中的文档实践。当人们看到有记录的议程被给予适当的空间去阅读和理解时，他们会感到有必要加入有记录的议程行列！"
+    ],
+    "fullTextParagraphs": [
+      "That meeting agenda you created? Open it, add any links or pre-read materials to the async ‘Context’ section, and pre-populate the ‘3d’s’ section with questions or topics you need input on. Think about what you want to tell or ask folks once the meeting begins, and document that before the meeting.",
+      "Once the pre-read materials and questions are in the agenda document, message or email those who are confirmed to attend the meeting. Aim to send this one business day before your meeting (or two for especially robust topics). Point attendees to the updated questions and topics to ponder, empowering them to gain context on their terms. As a bonus, you may see the conversation begin in the document before the meeting even happens!",
+      "Depending on how in-depth the pre-read materials are, set aside 5, 10, or even 15 minutes at the start of a meeting for folks to read and absorb the content. Switch cameras off during silent reading and turn cameras back on when you’re ready to engage. Not only is this a calming way to start a meeting, but it also reinforces the practice of documentation across your team. When folks see that documented agendas are given proper space to be read and consumed, they’ll feel compelled to hop on the documented agenda bandwagon!"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "add any links or pre-read materials",
+      "meaning": "将任何链接或预习材料添加到异步'背景'部分",
+      "explain": "指在会议议程中专门设置一个区域，用于存放参会者会前需要阅读的资料和链接，帮助大家提前了解会议背景",
+      "example": "Before the team meeting, remember to add any relevant case studies to the async 'Context' section for everyone's review."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Aim to send this one business day before your meeting",
+      "meaning": "目标在会议前一个工作日发送这些材料",
+      "explain": "强调发送预习材料的最佳时间点，确保参会者有足够时间准备但又不会过早遗忘",
+      "example": "For the quarterly review, aim to send the pre-read materials one business day before the meeting to allow for proper preparation."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "set aside 5, 10, or even 15 minutes at the start of a meeting",
+      "meaning": "在会议开始时预留5、10甚至15分钟",
+      "explain": "建议在会议正式讨论前，专门安排时间让参会者阅读和消化预习材料",
+      "example": "To ensure everyone is on the same page, set aside 10 minutes at the start of the meeting for reviewing the pre-read materials."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Switch cameras off during silent reading",
+      "meaning": "在默读时关闭摄像头",
+      "explain": "在视频会议中，建议在参会者默读材料时关闭摄像头，创造一个专注且不尴尬的环境",
+      "example": "During the silent reading portion of our virtual workshop, please switch cameras off to help everyone concentrate better."
+    }
+  ],
+  "scenario": {
+    "title": "Preparing participants to read before a meeting",
+    "english": [
+      "You are organizing a meeting and have added the pre-read materials and discussion questions to the agenda.",
+      "Participants need to know where the materials are and when they will receive the final agenda.",
+      "You tell them the document will be shared one business day in advance and ask them to review it before the meeting."
+    ],
+    "chinese": [
+      "你正在组织一次会议，已将预读材料和讨论问题放入议程。",
+      "参会者需要知道材料在哪里，以及最终议程何时发出。",
+      "你告知大家将在会前一个工作日收到更新后的文档，并请他们提前阅读。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "会议材料已经放进议程，但参会者常常到了会议才第一次打开。请用英文分配一项简短会前准备，提醒大家提前查看，并说明会前分享材料的目的。",
+    "sample": "I’ve shared the draft before the session. Please bring one customer example to the review and come prepared to discuss the main risk and one possible response.",
+    "rationale": "提前分享材料，并要求参会者带着具体案例和讨论准备参会。"
+  },
+  "words": [
+    {
+      "id": "pre-read-materials",
+      "word": "pre-read materials",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "预习材料",
+      "collocation": "distribute pre-read materials",
+      "example": "The pre-read materials and questions are in the agenda.",
+      "translation": "预读材料和讨论问题都在议程里。",
+      "note": "指会议前发送给参会者阅读的背景资料、报告或文章，帮助与会者提前了解会议主题和内容。"
+    },
+    {
+      "id": "async-context",
+      "word": "async 'Context'",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "异步'背景'",
+      "collocation": "add to async 'Context'",
+      "example": "I’ve added the background documents to the context section.",
+      "translation": "我已把背景文件放进语境资料区。",
+      "note": "'async'指异步，在会议语境中指不需要实时同步进行的准备工作，'Context'部分专门用于存放会议背景资料。"
+    },
+    {
+      "id": "pre-populate",
+      "word": "pre-populate",
+      "ipa": "ˌpriːˈpɒpjʊleɪt",
+      "pos": "verb",
+      "meaning": "预先填充",
+      "collocation": "pre-populate with",
+      "example": "I’ll pre-populate the agenda with the goal and discussion questions.",
+      "translation": "我会先在议程里填好会议目标和讨论问题。",
+      "note": "指在正式使用前预先填入内容或数据，在会议准备中特指提前在议程中设置好需要讨论的问题或主题。"
+    },
+    {
+      "id": "empowering",
+      "word": "empowering",
+      "ipa": "ɪmˈpaʊərɪŋ",
+      "pos": "adjective",
+      "meaning": "赋权的，授权的",
+      "collocation": "empowering someone to",
+      "example": "Sharing the pre-read early empowers participants to prepare questions.",
+      "translation": "提前分享预读材料，让参会者能准备好问题。",
+      "note": "指给予某人权力、能力或信心去完成某事，在会议语境中指通过提供资料和问题，让参会者能够自主准备和参与讨论。"
+    },
+    {
+      "id": "in-depth",
+      "word": "in-depth",
+      "ipa": "ɪnˈdepθ",
+      "pos": "adjective",
+      "meaning": "深入的，详尽的",
+      "collocation": "in-depth analysis/research",
+      "example": "The pre-read includes an in-depth explanation of the two options.",
+      "translation": "预读材料深入解释了两个选项。",
+      "note": "指全面、细致地探讨某个主题，强调研究的深度和广度，用于描述需要仔细阅读的预习材料。"
+    },
+    {
+      "id": "bandwagon",
+      "word": "bandwagon",
+      "ipa": "ˈbændwæɡən",
+      "pos": "noun",
+      "meaning": "潮流，时尚",
+      "collocation": "jump on the bandwagon",
+      "example": "After the successful campaign, many companies jumped on the sustainability bandwagon.",
+      "translation": "在成功的活动之后，许多公司加入了可持续发展的潮流。",
+      "note": "选学词，与本期“会前材料和议程”任务无直接关系。"
+    }
+  ],
+  "structure": {
+    "original": "Open it, add any links or pre-read materials to the async ‘Context’ section, and pre-populate the ‘3d’s’ section with questions or topics you need input on.",
+    "analysis": [
+      "句子由三个并列的祈使句组成，通过逗号和'and'连接，形成连贯的动作指令序列",
+      "'add any links or pre-read materials to the async 'Context' section'是一个动宾结构，其中'any links or pre-read materials'是宾语，'to the async 'Context' section'是介词短语作状语，表示添加的位置",
+      "'pre-populate the '3d's' section with questions or topics you need input on'中，'with questions or topics'是介词短语作状语，'you need input on'是定语从句修饰'topics'"
+    ],
+    "transfer": "Open the document, insert relevant data or references into the 'Background' tab, and fill the 'Action Items' section with tasks or deliverables requiring team feedback."
+  },
+  "rewrite": {
+    "bad": "The pre-read is in a separate attachment. Please find it yourself before the meeting.",
+    "good": "I’ve added the pre-read and discussion questions to the agenda. I’ll share the updated document one business day before the meeting so you can review it in advance.",
+    "translation": "我已把预读材料和讨论问题放进议程，会在会议前一个工作日分享更新后的文档，方便大家提前阅读。",
+    "pattern": "I’ve added [the pre-read and questions] to [the shared agenda]. I’ll share it [in advance]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Please bring one customer ___ to the review.",
+      "answer": "example",
+      "why": "准备任务要具体，参会者才知道要带什么。"
+    },
+    {
+      "id": "c2",
+      "prompt": "I’ve shared the ___ so you can add comments before Thursday.",
+      "answer": "draft",
+      "why": "提前提供材料，避免会议时间都花在首次阅读上。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Come prepared to ___ the main risk and one possible response.",
+      "answer": "discuss",
+      "why": "说明需要准备的讨论内容，让会议更聚焦。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah needed to prepare for the quarterly marketing review meeting but was unsure how to distribute pre-read materials among team members with varying workloads.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "The team faced constraints: some members were overwhelmed with client projects while others had lighter schedules, creating tension about fair preparation distribution.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "请为评审准备一个客户案例。",
+      "answer": "Please bring one customer example to the review.",
+      "why": "本句练习“assign each person a short preparation task”在给每位参会者分配一项简短准备时的用法。"
+    },
+    {
+      "prompt": "我已分享草稿，你可以在周四前添加意见。",
+      "answer": "I’ve shared the draft so you can add comments before Thursday.",
+      "why": "本句练习“share the material before the session”在会前分享材料时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要主持一次会议。请用英文告诉参会者，预读材料和讨论问题已放进议程，并请他们提前查看。",
+    "options": [
+      "You must read all these materials before the meeting, no excuses.",
+      "I’ve added the pre-read and discussion questions to the agenda. I’ll send the updated document one business day before the meeting so you can review it in advance.",
+      "I’ve added the pre-read and discussion questions to the agenda."
+    ],
+    "correct": 1,
+    "why": "把材料放到共享议程并提前发送，让参会者能异步准备。"
+  },
+  "output": {
+    "prompt": "客户顾问会前，参会者需要阅读一份新功能说明，并准备一个客户使用案例和一个疑问。请用英文发出会前准备要求，并说明这样做是为了什么。",
+    "sample": "Please review the new feature brief before the customer advisory session. Bring one example of how a customer might use it and one question. This will help us spend the session discussing real use cases.",
+    "check": [
+      "是否明确要求会前阅读哪份材料？",
+      "是否布置了一个案例和一个问题作为准备？",
+      "是否说明提前准备能让会议更聚焦？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "bring one customer example to the review",
+      "meaning": "请参会者带一个客户案例参加评审",
+      "collocation": "bring + 名词 + to + meeting / review",
+      "example": "Please bring one customer example to the review.",
+      "translation": "请为评审准备一个客户案例。"
+    },
+    {
+      "id": "work-02",
+      "word": "share the material before the session",
+      "meaning": "会前分享材料",
+      "collocation": "share material before + meeting",
+      "example": "I’ve shared the draft so you can add comments before Thursday.",
+      "translation": "我已分享草稿，你可以在周四前添加意见。"
+    },
+    {
+      "id": "work-03",
+      "word": "come prepared to discuss…",
+      "meaning": "带着准备讨论某个问题",
+      "collocation": "come prepared to + verb",
+      "example": "Come prepared to discuss the main risk and one possible response.",
+      "translation": "请准备好讨论主要风险和一种可能的应对办法。"
+    }
+  ]
+}

@@ -1,0 +1,294 @@
+{
+  "id": "047",
+  "version": 1,
+  "status": "draft",
+  "company": "Amazon",
+  "companyZh": "亚马逊",
+  "title": "亚马逊 CEO 给员工的 AI 转型信（2025）",
+  "topic": "亚马逊 CEO 给员工的 AI 转型信（2025）",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Update from Amazon CEO Andy Jassy on Generative AI",
+    "section": "员工信",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "员工信",
+    "url": "https://www.aboutamazon.com/news/company-news/amazon-ceo-andy-jassy-on-generative-ai",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Amazon 亚马逊 公开资料。",
+    "paragraphs": [
+      "The message below was shared with Amazon employees earlier today.",
+      "Today, in virtually every corner of the company, we’re using Generative AI to make customers' lives better and easier. What started as deep conviction that every customer experience would be reinvented using AI, and that altogether new experiences we’ve only dreamed of would become possible, is rapidly becoming reality. Technologies like Generative AI are rare; they come about once-in-a-lifetime, and completely change what’s possible for customers and businesses. So, we are investing quite expansively, and, the progress we are making is evident.",
+      "You can see it in what we're rolling out in Alexa+, our next generation Alexa personal assistant that's meaningfully smarter, more capable, and is the first personal assistant that can take significant actions for customers on top of providing intelligent answers to virtually any question.",
+      "You can see it with our AI shopping assistant that’s being used by tens of millions of customers around the world to discover new products and make more informed purchase decisions.",
+      "You can see it in an increasing array of shopping features like “Lens” (very cool to be able to take a picture of an item and have it pull up the shopping result), “Buy for Me” (where I can ask our shopping agent to buy an item on another merchant’s website for me), or Recommended Size (where we can predict the right size for you based on prior purchases and how different apparel brands run fit-wise relative to each other)."
+    ],
+    "translations": [
+      "以下信息已于今日早些时候与亚马逊员工分享。",
+      "今天，在公司的几乎每一个角落，我们都在使用生成式AI来改善和简化客户的生活。最初我们坚信，每项客户体验都将通过AI重新定义，那些我们仅能想象的全新体验将成为现实，这一信念正迅速变为现实。像生成式AI这样的技术十分罕见；它们一生仅出现一次，并彻底改变客户和企业所能实现的可能性。因此，我们正在进行相当大规模的投资，并且我们取得的进展是显而易见的。",
+      "您可以在我们推出的Alexa+中看到这一点，这是我们下一代个人助手，它明显更智能、功能更强大，并且是首个在提供几乎所有问题的智能答案之外，还能为客户采取重要行动的个人助手。",
+      "您可以在我们的AI购物助手中看到这一点，该助手正被全球数千万客户使用，以发现新产品并做出更明智的购买决策。",
+      "您可以在不断增加的购物功能阵列中看到这一点，例如“Lens”（能够拍摄物品图片并获取购物结果，非常酷）、“Buy for Me”（我可以要求我们的购物代理为我购买另一商家网站上的商品）或“Recommended Size”（我们可以根据您之前的购买以及不同服装品牌的尺码相对合身程度来预测适合您的尺码）。"
+    ],
+    "fullTextParagraphs": [
+      "The message below was shared with Amazon employees earlier today.",
+      "Today, in virtually every corner of the company, we’re using Generative AI to make customers' lives better and easier. What started as deep conviction that every customer experience would be reinvented using AI, and that altogether new experiences we’ve only dreamed of would become possible, is rapidly becoming reality. Technologies like Generative AI are rare; they come about once-in-a-lifetime, and completely change what’s possible for customers and businesses. So, we are investing quite expansively, and, the progress we are making is evident.",
+      "You can see it in what we're rolling out in Alexa+, our next generation Alexa personal assistant that's meaningfully smarter, more capable, and is the first personal assistant that can take significant actions for customers on top of providing intelligent answers to virtually any question.",
+      "You can see it with our AI shopping assistant that’s being used by tens of millions of customers around the world to discover new products and make more informed purchase decisions.",
+      "You can see it in an increasing array of shopping features like “Lens” (very cool to be able to take a picture of an item and have it pull up the shopping result), “Buy for Me” (where I can ask our shopping agent to buy an item on another merchant’s website for me), or Recommended Size (where we can predict the right size for you based on prior purchases and how different apparel brands run fit-wise relative to each other).",
+      "You can see it in how we're helping our independent sellers more easily create new product detail pages or get advice on how to be even more effective as a seller in our marketplace. Nearly half a million selling partners are using these services, and the listings they’re creating are measurably better.",
+      "You can see it in Advertising where we’ve built a suite of AI tools that make it easier for brands to plan, onboard, create and optimize campaigns. In Q1 alone, over 50K advertisers used these capabilities.",
+      "And, you can see it in what we’re delivering in AWS for builders, whether it’s custom silicon (Trainium2) to provide better price-performance on model-training and inference, services that make it much easier to build Foundation Models (SageMaker), or leverage leading frontier models and do GenAI inference at scale (Bedrock), our own frontier model (Nova) to give customers leading intelligence at lower latency and cost, or services to make it much easier for developers to write code (Q and QCLI).",
+      "We’re also using Generative AI broadly across our internal operations. In our fulfillment network, we’re using AI to improve inventory placement, demand forecasting, and the efficiency of our robots—all of which have improved cost to serve and delivery speed. We’ve rebuilt our Customer Service Chatbot with GenAI, providing an even better experience than we’d had before. And, we’re assembling more intelligent and compelling product detail pages from leveraging GenAI.",
+      "I could go on, but you get the idea.",
+      "While we’ve made a lot of progress, we’re still at the relative beginning. There are a few reasons we believe this and want to go even faster.",
+      "First, we have strong conviction that AI agents will change how we all work and live. Think of agents as software systems that use AI to perform tasks on behalf of users or other systems. Agents let you tell them what you want (often in natural language), and do things like scour the web (and various data sources) and summarize results, engage in deep research, write code, find anomalies, highlight interesting insights, translate language and code into other variants, and automate a lot of tasks that consume our time. There will be billions of these agents, across every company and in every imaginable field. There will also be agents that routinely do things for you outside of work, from shopping to travel to daily chores and tasks. Many of these agents have yet to be built, but make no mistake, they’re coming, and coming fast.",
+      "Second, and what makes this agentic future so compelling for Amazon, is that these agents are going to change the scope and speed at which we can innovate for customers. Agents will allow us to start almost everything from a more advanced starting point. We’ll be able to focus less on rote work and more on thinking strategically about how to improve customer experiences and invent new ones. Agents will be teammates that we can call on at various stages of our work, and that will get wiser and more helpful with more experience. If we build and leverage the right agents, it’s going to rapidly accelerate our ability to make customers' lives easier and better every day, and it’s going to make our jobs even more exciting and fun than they are today.",
+      "And third, we’re going to keep pushing to operate like the world’s largest start-up-- customer-obsessed, inventive, fast-moving, lean, scrappy, and full of missionaries trying to build something better for customers and a business that outlasts us all. You will continue to see steam and I take actions to help us move faster, have more ownership, and invent more easily. AI will be a substantial catalyst here.",
+      "Today, we have over 1,000 Generative AI services and applications in progress or built, but at our scale, that’s a small fraction of what we will ultimately build. We’re going to lean in further in the coming months. We’re going to make it much easier to build agents, and then build (or partner) on several new agents across all of our business units and G&A areas.",
+      "As we roll out more Generative AI and agents, it should change the way our work is done. We will need fewer people doing some of the jobs that are being done today, and more people doing other types of jobs. It’s hard to know exactly where this nets out over time, but in the next few years, we expect that this will reduce our total corporate workforce as we get efficiency gains from using AI extensively across the company.",
+      "As we go through this transformation together, be curious about AI, educate yourself, attend workshops and take trainings, use and experiment with AI whenever you can, participate in your team’s brainstorms to figure out how to invent for our customers more quickly and expansively, and how to get more done with scrappier teams. When I first started at Amazon in 1997 as an Assistant Product Manager, I worked on leaner teams that got a lot done quickly and where I could have substantial impact. We didn’t have tools resembling anything like Generative AI, but we had broad remits, high ambition, and saw the opportunity to improve (and invent) so many customer experiences. Fast forward 28 years and the most transformative technology since the Internet is here. Those who embrace this change, become conversant in AI, help us build and improve our AI capabilities internally and deliver for customers, will be well-positioned to have high impact and help us reinvent the company.",
+      "There's so much more to come with Generative AI. I'm energized by our progress, excited about our plans ahead, and looking forward to partnering with you all as we change what’s possible for our customers, partners, and how we work."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 1,
+      "phrase": "Generative AI",
+      "meaning": "生成式人工智能",
+      "explain": "指能够生成新内容的人工智能技术，如文本、图像、音频等",
+      "example": "Our company is exploring the potential of Generative AI to automate content creation."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "next generation Alexa personal assistant",
+      "meaning": "新一代 Alexa 个人助理",
+      "explain": "next generation 用来指某产品或服务的下一代版本；这里修饰 Alexa personal assistant。",
+      "example": "Our next generation analytics tool will help teams spot customer trends earlier."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "Alexa+",
+      "meaning": "Alexa+（亚马逊的升级版语音助手）",
+      "explain": "产品名称后加 + 常用来标记升级版本；阅读时保留品牌原名。",
+      "example": "The new service is called CloudDesk+, and it adds shared workspaces for project teams."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Buy for Me",
+      "meaning": "帮我购买",
+      "explain": "亚马逊的一项AI购物功能，可让AI代理在第三方网站上为用户购买商品",
+      "example": "With the 'Buy for Me' feature, I can ask the shopping agent to restock my favorite coffee beans automatically."
+    }
+  ],
+  "scenario": {
+    "title": "Respond to a colleague worried about AI and jobs",
+    "english": [
+      "A colleague has read Andy Jassy’s 2025 message and asks whether generative AI will change people’s jobs.",
+      "You explain that the message expected AI to change the kinds of work people do and said Amazon’s corporate workforce could shrink over time, though the exact impact was uncertain.",
+      "You also mention Jassy’s advice to learn about AI, experiment with it, and look for ways to improve customer experiences."
+    ],
+    "chinese": [
+      "一位同事读了 Andy Jassy 2025 年的员工信，担心生成式 AI 会改变大家的工作。",
+      "你说明，信中预计 AI 会改变工作类型，也提到 Amazon 的企业员工总数未来可能减少，但具体影响尚不确定。",
+      "你还转述 Jassy 对员工的建议：学习 AI、尝试使用，并思考如何改善客户体验。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "同事担心自己不懂生成式 AI，会被工作变化甩在后面。请用英文回应这种担忧，并建议从一个小的工作任务开始尝试、分享学到的经验。",
+    "sample": "I understand why the changes feel uncertain. Could we try one small use case and share what we learn? That may help us see where AI can improve the customer experience.",
+    "rationale": "先回应同事的不确定感，再提出可从小任务开始的尝试，并连接到客户价值。"
+  },
+  "words": [
+    {
+      "id": "conviction",
+      "word": "conviction",
+      "ipa": "/kənˈvɪkʃən/",
+      "pos": "noun",
+      "meaning": "坚定的信念",
+      "collocation": "deep conviction",
+      "example": "She pursued her career with deep conviction despite numerous setbacks.",
+      "translation": "尽管面临多次挫折，她仍以坚定的信念追求自己的事业。",
+      "note": "表示对某事强烈的信念或确信，常与deep、strong等形容词搭配使用"
+    },
+    {
+      "id": "reinvent",
+      "word": "reinvent",
+      "ipa": "/ˌriːɪnˈvent/",
+      "pos": "verb",
+      "meaning": "彻底改造，重新创造",
+      "collocation": "reinvent customer experience",
+      "example": "The company aims to reinvent the retail experience through innovative technology.",
+      "translation": "该公司旨在通过创新技术彻底改造零售体验。",
+      "note": "表示以全新方式重新设计或创造某事物，常用于商业创新语境"
+    },
+    {
+      "id": "expansively",
+      "word": "expansively",
+      "ipa": "/ɪkˈspænsɪvli/",
+      "pos": "adverb",
+      "meaning": "大规模地，广泛地",
+      "collocation": "invest expansively",
+      "example": "The tech giant is investing expansively in artificial research and development.",
+      "translation": "这家科技巨头正在大规模投资人工智能研发。",
+      "note": "表示在规模或范围上广泛地，常与投资、扩张等动词搭配"
+    },
+    {
+      "id": "roll-out",
+      "word": "roll-out",
+      "ipa": "/ˈroʊl aʊt/",
+      "pos": "phrasal verb",
+      "meaning": "推出，发布",
+      "collocation": "roll out new features",
+      "example": "The company will roll out its new software update next month.",
+      "translation": "公司将于下月推出新的软件更新。",
+      "note": "表示逐步引入或发布新产品、服务或功能，常用于商业和技术领域"
+    },
+    {
+      "id": "informed",
+      "word": "informed",
+      "ipa": "/ɪnˈfɔːrmd/",
+      "pos": "adjective",
+      "meaning": "信息充分的，有见识的",
+      "collocation": "informed decision",
+      "example": "Making informed decisions requires thorough research and analysis.",
+      "translation": "做出明智的决策需要彻底的研究和分析。",
+      "note": "表示基于充分信息或知识的，常与decision、choice等名词搭配"
+    },
+    {
+      "id": "apparel",
+      "word": "apparel",
+      "ipa": "/əˈpærəl/",
+      "pos": "noun",
+      "meaning": "服装，服饰",
+      "collocation": "apparel brands",
+      "example": "The company specializes in high-performance athletic apparel for professional athletes.",
+      "translation": "这家公司专门为专业运动员生产高性能运动服装。",
+      "note": "指服装的总称，比clothing更正式，常用于商业和时尚行业"
+    }
+  ],
+  "structure": {
+    "original": "Today, in virtually every corner of the company, we’re using Generative AI to make customers' lives better and easier.",
+    "analysis": [
+      "时间状语'Today'位于句首，表示句子描述的是当前情况",
+      "介词短语'in virtually every corner of the company'作为地点状语，修饰整个句子，表示公司内部各个角落",
+      "主句结构为'we're using...to...'，其中现在进行时表示正在进行的动作，'to make customers' lives better and easier'是不定式短语作目的状语"
+    ],
+    "transfer": "Our team is testing machine learning tools to reduce repetitive work and improve response time."
+  },
+  "rewrite": {
+    "bad": "AI will replace everyone soon, so employees should stop learning their current jobs.",
+    "good": "Jassy said AI would change the kinds of jobs people do and could reduce Amazon’s corporate workforce over time, though the exact impact was uncertain. He encouraged employees to learn about AI, experiment with it, and use it to improve customer experiences.",
+    "translation": "Jassy 表示，AI 会改变人们从事的工作类型，Amazon 的企业员工总数未来可能减少，但具体影响尚不确定。他鼓励员工学习和尝试 AI，并用它改善客户体验。",
+    "pattern": "The message says [how work may change], but [what remains uncertain]. It encourages employees to [specific action]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I understand why you’re ___ about using AI in customer replies.",
+      "answer": "concerned",
+      "why": "concerned about 后接让人担心的事项。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Could we start with a low-risk use ___?",
+      "answer": "case",
+      "why": "use case 指产品或工具的一种具体用途。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s share what we ___ before we expand the test.",
+      "answer": "learn",
+      "why": "what we learn 指试用中得到的经验。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah faces tight deadlines and budget constraints, while Mark argues that Alexa+ would save time on routine tasks, creating a conflict in workflow priorities.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah resolves the issue by suggesting: 'What if we use Generative AI for initial drafts and Alexa+ for voice-activated revisions?",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我理解你为什么担心在客户回复中使用 AI。",
+      "answer": "I understand why you’re concerned about using AI in customer replies.",
+      "why": "先承认对方担心的具体事项，再继续讨论做法。"
+    },
+    {
+      "prompt": "扩大试用前，我们先把结果分享给客服团队。",
+      "answer": "Let’s share what we learn with the support team before we expand the test.",
+      "why": "先分享试用结果，再决定是否扩大范围。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事担心生成式 AI 会怎样影响工作。请用英文概括 CEO 对工作内容和企业员工数量的判断，并说出他建议员工做什么。",
+    "options": [
+      "AI will replace everyone soon, so employees should stop learning their current jobs.",
+      "Jassy said AI would change the kinds of jobs people do and could reduce Amazon’s corporate workforce over time, though the exact impact was uncertain. He encouraged employees to learn about AI, experiment with it, and use it to improve customer experiences.",
+      "The message confirms some changes, but I would not assume details about the team that it does not mention."
+    ],
+    "correct": 1,
+    "why": "保留对工作类型变化、企业员工数量和具体建议的三项信息，也说明人数影响尚不确定。"
+  },
+  "output": {
+    "prompt": "团队准备把生成式 AI 用在客户回复中，但成员担心错误内容会直接发给客户。请用英文回应这种担忧，建议先用一个低风险任务试用并分享结果，再判断是否改善客户体验。",
+    "sample": "I understand why that feels risky. Could we try one low-risk use case and share what we learn? That will help us see whether AI can improve the customer experience.",
+    "check": [
+      "是否回应了对方的不确定感？",
+      "是否提出从小任务开始尝试？",
+      "是否把尝试与分享经验或客户价值联系起来？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "I understand why you’re concerned about…",
+      "meaning": "先承认同事担心的具体问题",
+      "collocation": "understand why + 主语 + be concerned about + 名词 / 动名词",
+      "example": "I understand why you’re concerned about using AI in customer replies.",
+      "translation": "我理解你为什么担心在客户回复中使用 AI。"
+    },
+    {
+      "id": "work-02",
+      "word": "start with a low-risk use case",
+      "meaning": "从低风险的小场景开始试用",
+      "collocation": "start with + a low-risk use case",
+      "example": "Could we start with a low-risk use case, such as drafting internal replies for review?",
+      "translation": "我们能否从一个低风险场景开始，比如先起草供内部审核的回复？"
+    },
+    {
+      "id": "work-03",
+      "word": "share what we learn before we expand the test",
+      "meaning": "扩大试用前先分享结果",
+      "collocation": "share what + 主语 + learn / find",
+      "example": "Let’s share what we learn with the support team before we expand the test.",
+      "translation": "扩大试用前，我们先把结果分享给客服团队。"
+    }
+  ]
+}

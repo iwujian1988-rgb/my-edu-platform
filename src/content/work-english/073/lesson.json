@@ -1,0 +1,275 @@
+{
+  "id": "073",
+  "version": 1,
+  "status": "draft",
+  "company": "Dropbox",
+  "companyZh": "Dropbox",
+  "title": "开会前怎样写一份清楚的议程",
+  "topic": "开会前怎样写一份清楚的议程",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Keep Meetings on Track with a Documented Agenda - Dropbox",
+    "section": "公开协作指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开协作指南",
+    "url": "https://experience.dropbox.com/virtual-first-toolkit/communication/meet-with-a-documented-agenda",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Dropbox 公开资料。",
+    "paragraphs": [
+      "Don’t overthink the agenda creation. By default, include async content/pre-read, followed by the 3d’s — important decisions, debates, and discussion. The first section provides an overview of why this topic is important and what information you want to tell or ask attendees asynchronously, either before the meeting or during allocated silent read time.",
+      "Whether you’re preparing for a 1-to-1, a weekly team standup, or a creative review, take a moment and attach a shared agenda document to the calendar invite. That way, everyone in the meeting is aligned and focused, with zero ambiguity on how the meeting should kick off or end - this is all documented before the session even begins!",
+      "If a meeting recurs (like a 1-to-1 with your manager) or a topic gets revisited (like a second stakeholder review of a project brief), use the same document. By leveraging the same document and simply adding a fresh date at the top, you are creating a single source of truth that attendees can trust to bring themselves up to speed. Dropbox Paper is tailor-made for this workflow with pre-made templates."
+    ],
+    "translations": [
+      "不要过度思考议程的创建。默认情况下，应包含异步内容/预读材料，然后是3d's——重要决定、辩论和讨论。第一部分概述了为什么这个主题很重要，以及你想在会议前或分配的静默阅读时间内异步告知或询问参会者的信息。",
+      "无论你是在准备一对一会议、每周团队站会还是创意评审，花点时间在日历邀请中附加一个共享的议程文档。这样，会议中的每个人都能保持一致和专注，对于会议应该如何开始或结束没有任何模糊之处——这些都在会议开始前就已记录在案！",
+      "如果会议是定期举行的（比如与经理的一对一会）或某个话题被重新讨论（比如项目简介的第二次利益相关者评审），请使用同一份文档。通过利用同一份文档并在顶部仅添加新的日期，你正在创建一个单一的事实来源，参会者可以信任它来快速了解情况。Dropbox Paper 为此工作流程量身定制，配有预制模板。"
+    ],
+    "fullTextParagraphs": [
+      "Don’t overthink the agenda creation. By default, include async content/pre-read, followed by the 3d’s — important decisions, debates, and discussion. The first section provides an overview of why this topic is important and what information you want to tell or ask attendees asynchronously, either before the meeting or during allocated silent read time.",
+      "Whether you’re preparing for a 1-to-1, a weekly team standup, or a creative review, take a moment and attach a shared agenda document to the calendar invite. That way, everyone in the meeting is aligned and focused, with zero ambiguity on how the meeting should kick off or end - this is all documented before the session even begins!",
+      "If a meeting recurs (like a 1-to-1 with your manager) or a topic gets revisited (like a second stakeholder review of a project brief), use the same document. By leveraging the same document and simply adding a fresh date at the top, you are creating a single source of truth that attendees can trust to bring themselves up to speed. Dropbox Paper is tailor-made for this workflow with pre-made templates."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "By default, include async content/pre-read",
+      "meaning": "默认情况下，包含异步内容/会前阅读材料",
+      "explain": "指在会议议程中默认包含不需要实时讨论的内容，让与会者在会前阅读",
+      "example": "By default, include async content/pre-read before our weekly team meeting to ensure everyone is prepared."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "attach a shared agenda document",
+      "meaning": "附加共享的议程文档",
+      "explain": "指将议程文档作为附件添加到会议邀请中，方便所有与会者提前查看",
+      "example": "Remember to attach a shared agenda document to the calendar invite for the client presentation."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "single source of truth",
+      "meaning": "单一事实来源",
+      "explain": "指一个权威的信息来源，确保所有人获取的信息一致且可靠",
+      "example": "Our project wiki serves as the single source of truth for all team members to reference."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "bring themselves up to speed",
+      "meaning": "让自己快速了解最新情况",
+      "explain": "指通过阅读文档等方式快速获取信息，赶上进度",
+      "example": "New hires can use onboarding documents to bring themselves up to speed on company processes."
+    }
+  ],
+  "scenario": {
+    "title": "Creating an Effective Meeting Agenda",
+    "english": [
+      "Sarah needs to prepare an agenda for the weekly team meeting but is unsure what to include beyond the standard topics.",
+      "Her manager emphasizes time efficiency while her team members want thorough discussion of all issues, creating conflicting priorities.",
+      "Sarah decides to attach a shared agenda document with pre-read materials to ensure everyone comes prepared and can focus discussion on key points."
+    ],
+    "chinese": [
+      "莎拉需要准备每周团队会议的议程，但不确定除了标准话题外还应包含什么内容。",
+      "她的经理强调时间效率，而团队成员希望对所有问题进行充分讨论，产生了相互冲突的优先级。",
+      "莎拉决定附上一份共享的议程文档和预读材料，确保每个人都做好准备，并将讨论集中在关键点上。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "下周的评审会需要决定是否采用新的客户反馈流程。请用英文写清要作出的决定，为风险和待解决问题留出讨论时间，并说明何时会提前发送议程和数据。",
+    "sample": "The goal is to decide whether to adopt the new feedback process. Let’s allow ten minutes for risks and open questions. I’ll send the agenda and customer data by Tuesday.",
+    "rationale": "议程先说明要作出的决定，再为关键讨论预留时间并提前分享材料。"
+  },
+  "words": [
+    {
+      "id": "overthink",
+      "word": "overthink",
+      "ipa": "/ˌoʊvərˈθɪŋk/",
+      "pos": "verb",
+      "meaning": "过度思考",
+      "collocation": "overthink something",
+      "example": "Don't overthink your presentation; just focus on delivering your key points clearly.",
+      "translation": "不要过度思考你的演讲；只需专注于清晰地传达你的要点。",
+      "note": "常用于提醒人们不要过度分析或担忧简单的事情"
+    },
+    {
+      "id": "agenda",
+      "word": "agenda",
+      "ipa": "/əˈdʒendə/",
+      "pos": "noun",
+      "meaning": "议程",
+      "collocation": "meeting agenda",
+      "example": "The team reviewed the agenda for tomorrow's quarterly planning session.",
+      "translation": "团队审查了明天季度规划会议的议程。",
+      "note": "指会议的议题安排或待办事项清单"
+    },
+    {
+      "id": "asynchronous",
+      "word": "asynchronous",
+      "ipa": "/eɪˈsɪŋkrənəs/",
+      "pos": "adjective",
+      "meaning": "异步的",
+      "collocation": "asynchronous communication",
+      "example": "Our team uses asynchronous communication tools like Slack for non-urgent matters.",
+      "translation": "我们的团队使用Slack等异步沟通工具处理非紧急事务。",
+      "note": "指不同步发生、不需要同时进行的活动"
+    },
+    {
+      "id": "aligned",
+      "word": "aligned",
+      "ipa": "/əˈlaɪnd/",
+      "pos": "adjective",
+      "meaning": "一致的，协调的",
+      "collocation": "goals aligned",
+      "example": "It's crucial that all department goals are aligned with the company's strategic objectives.",
+      "translation": "所有部门目标与公司战略目标保持一致至关重要。",
+      "note": "指各方目标、观点或行动协调一致"
+    },
+    {
+      "id": "recurring",
+      "word": "recurring",
+      "ipa": "/rɪˈkɜːrɪŋ/",
+      "pos": "adjective",
+      "meaning": "周期性发生的，反复出现的",
+      "collocation": "recurring meeting",
+      "example": "Our weekly team standup is a recurring meeting that helps us stay on track.",
+      "translation": "我们的每周团队站会是一个周期性会议，帮助我们保持进度。",
+      "note": "指按固定时间间隔重复发生的事件"
+    },
+    {
+      "id": "stakeholder",
+      "word": "stakeholder",
+      "ipa": "/ˈsteɪkhoʊldər/",
+      "pos": "noun",
+      "meaning": "利益相关者",
+      "collocation": "key stakeholder",
+      "example": "Before launching the product, we need to get feedback from all key stakeholders.",
+      "translation": "在推出产品之前，我们需要获取所有关键利益相关者的反馈。",
+      "note": "指对项目或组织有利益关系的个人或团体"
+    }
+  ],
+  "structure": {
+    "original": "By default, include async content/pre-read, followed by the 3d’s — important decisions, debates, and discussion.",
+    "analysis": [
+      "By default 是一个介词短语，作为句子的状语，表示'默认情况下'，修饰整个句子",
+      "include async content/pre-read 是句子的主要谓语部分，其中include是动词，async content/pre-read是宾语，中间用斜杠表示'或'的关系",
+      "followed by the 3d's — important decisions, debates, and discussion 是过去分词短语作后置定语，修饰前面的content/pre-read，破折号后的内容是对3d's的具体解释，其中decisions, debates, and discussion是三个并列的名词"
+    ],
+    "transfer": "By default, attach relevant documents/background materials, followed by the key points — critical issues, action items, and next steps."
+  },
+  "rewrite": {
+    "bad": "Put every possible topic on the agenda. We can decide what the meeting is for when we get there.",
+    "good": "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
+    "translation": "我们能否在议程中写清要做的决定和关键讨论问题？也请把预读材料放在同一文档，方便大家提前准备。",
+    "pattern": "Could we state [the decision and key questions] and share [pre-read materials] in advance?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The goal is to ___ whether to extend the pilot.",
+      "answer": "decide",
+      "why": "议程应先指出需要完成的决策。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s allow ___ minutes for risks and open questions.",
+      "answer": "ten",
+      "why": "给议题安排时间，控制讨论范围。"
+    },
+    {
+      "id": "c3",
+      "prompt": "I’ll send the agenda and pre-read by ___.",
+      "answer": "Tuesday",
+      "why": "提前发出材料，让参会者有准备时间。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah needs to prepare an agenda for the weekly team meeting but is unsure what to include beyond the standard topics.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Her manager emphasizes time efficiency while her team members want thorough discussion of all issues, creating conflicting priorities.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "目标是决定是否延长试点。",
+      "answer": "The goal is to decide whether to extend the pilot.",
+      "why": "本句练习“share the decision we need to make”在说明会议要作出的决定时的用法。"
+    },
+    {
+      "prompt": "我们为风险和待解决问题留十分钟。",
+      "answer": "Let’s allow ten minutes for risks and open questions.",
+      "why": "本句练习“allow ten minutes for…”在为某项议题预留时间时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "你要和同事一起准备一次项目决策会。请用英文建议议程写明要做的决定、需要讨论的问题，并提前共享预读材料。",
+    "options": [
+      "I want everything in the meeting agenda, don't forget anything important.",
+      "Could we add the decision we need to make and the key discussion questions to the agenda? Please share any pre-read in the same document so everyone can prepare.",
+      "Could we add the decision we need to make and the key discussion questions to the agenda?"
+    ],
+    "correct": 1,
+    "why": "议程要让参会者知道会议要解决什么，并能提前看到准备材料。"
+  },
+  "output": {
+    "prompt": "你要召开一次招聘评审会，决定是否进入候选人的最后一轮面试。请用英文写出会议要作出的决定、讨论证据的时间安排，以及会前材料的发送时间。",
+    "sample": "The goal is to decide whether the candidate should move to the final interview. Let’s reserve time to compare the interview evidence and discuss any concerns. I’ll send the interview notes and agenda by Wednesday afternoon.",
+    "check": [
+      "是否清楚写出会议要作出的决定？",
+      "是否给风险和问题留出讨论时间？",
+      "是否说明预读材料的发送时间？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "The goal is to decide whether to…",
+      "meaning": "说明会议结束时需要作出的决定",
+      "collocation": "the goal is to decide whether to + 动词原形",
+      "example": "The goal is to decide whether to extend the pilot.",
+      "translation": "目标是决定是否延长试点。"
+    },
+    {
+      "id": "work-02",
+      "word": "allow ten minutes for…",
+      "meaning": "为某项议题预留时间",
+      "collocation": "allow + time + for + topic",
+      "example": "Let’s allow ten minutes for risks and open questions.",
+      "translation": "我们为风险和待解决问题留十分钟。"
+    },
+    {
+      "id": "work-03",
+      "word": "send the agenda in advance",
+      "meaning": "提前发送议程",
+      "collocation": "send + agenda + in advance",
+      "example": "I’ll send the agenda and pre-read by Tuesday.",
+      "translation": "我会在周二前发送议程和预读材料。"
+    }
+  ]
+}

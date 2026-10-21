@@ -1,0 +1,302 @@
+{
+  "id": "089",
+  "version": 1,
+  "status": "draft",
+  "company": "GitLab",
+  "companyZh": "GitLab",
+  "title": "入职伙伴要怎么带新人",
+  "topic": "入职伙伴要怎么带新人",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "GitLab Onboarding Buddies | The GitLab Handbook",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://handbook.gitlab.com/handbook/people-group/general-onboarding/onboarding-buddies/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 GitLab 公开资料。",
+    "paragraphs": [
+      "Onboarding buddies are crucial to making the onboarding experience for a new GitLab team-member a positive one. New Job Anxiety is a reality for many people, and the adjustment to GitLab might be particularly challenging for new GitLab team-members who may not be used to our all-remote culture. That’s why it’s important that all new GitLab team-members be assigned a buddy who is ready, willing, and excited to assist with the onboarding process.",
+      "Not only are buddies helpful to someone that has just started with GitLab, but also to a team member transitioning to a new role within GitLab. When someone migrates to a new team / department, it is highly recommended that managers assign a Career Mobility buddy in the issue to help support the team members that are busy migrating.",
+      "The first and most important thing a buddy should do is schedule a call with the GitLab team-member. You can do this in the days leading up to a new team member starting at GitLab by asking their manager for the new starter’s personal email address. Introduce yourself and ask them when a good time to schedule an initial coffee chat would be. Consider picking a time towards the end of their first day so they have time to digest some of the onboarding issue and can come to the coffee chat with questions. We attempt to match (as best as possible, anyway) time zones between the GitLab team-member and their buddy so that as soon as the GitLab team-member logs on, you, the buddy, can be there ready and waiting to welcome them to the team."
+    ],
+    "translations": [
+      "入职伙伴对于让新加入 GitLab 团队的成员获得积极的入职体验至关重要。对新工作的焦虑对许多人来说是真实存在的，而对于可能不习惯我们完全远程文化的新 GitLab 团队成员来说，适应 GitLab 可能尤其具有挑战性。因此，重要的是所有新 GitLab 团队成员都应被分配一位伙伴，这位伙伴已准备好、愿意并且乐于协助入职过程。",
+      "伙伴不仅对刚加入 GitLab 的人有帮助，对在 GitLab 内部转换到新角色的团队成员也有帮助。当有人迁移到新的团队/部门时，强烈建议经理在问题中分配一位职业流动伙伴，以帮助支持那些正忙于迁移的团队成员。",
+      "伙伴应该做的第一件也是最重要的事情是与 GitLab 团队成员安排一次通话。你可以在新团队成员加入 GitLab 之前的几天内通过询问其经理获取新员工的个人电子邮件地址来完成此操作。介绍你自己，并询问他们何时是安排初次咖啡聊天的好时机。考虑选择在他们第一天的临近结束时，这样他们有时间消化一些入职问题，并可以在咖啡聊天时提出问题。我们尝试（尽可能）在 GitLab 团队成员和他们的伙伴之间匹配时区，以便一旦 GitLab 团队成员登录，你作为伙伴就能准备好并欢迎他们加入团队。"
+    ],
+    "fullTextParagraphs": [
+      "Onboarding buddies are crucial to making the onboarding experience for a new GitLab team-member a positive one. New Job Anxiety is a reality for many people, and the adjustment to GitLab might be particularly challenging for new GitLab team-members who may not be used to our all-remote culture. That’s why it’s important that all new GitLab team-members be assigned a buddy who is ready, willing, and excited to assist with the onboarding process.",
+      "Not only are buddies helpful to someone that has just started with GitLab, but also to a team member transitioning to a new role within GitLab. When someone migrates to a new team / department, it is highly recommended that managers assign a Career Mobility buddy in the issue to help support the team members that are busy migrating.",
+      "The first and most important thing a buddy should do is schedule a call with the GitLab team-member. You can do this in the days leading up to a new team member starting at GitLab by asking their manager for the new starter’s personal email address. Introduce yourself and ask them when a good time to schedule an initial coffee chat would be. Consider picking a time towards the end of their first day so they have time to digest some of the onboarding issue and can come to the coffee chat with questions. We attempt to match (as best as possible, anyway) time zones between the GitLab team-member and their buddy so that as soon as the GitLab team-member logs on, you, the buddy, can be there ready and waiting to welcome them to the team.",
+      "Check how far the new GitLab team-member has gotten in their onboarding / career mobility issue. The onboarding / career mobility issue that all new/transitioning GitLab team-members are assigned can be overwhelming at first glance, particularly on the first day of work. Check to see how much, if any, the GitLab team-member has done by the time your call happens, and offer some direction or advice on areas the team member may be having trouble with.",
+      "Suggest helpful handbook pages. Chances are that you’ve discovered some particularly helpful pages in the handbook during your time at GitLab. Point them out to the new GitLab team-member, and help them get used to navigating the handbook. Some examples might include: GitLab’s guide for starting a remote role The tools page The team page that feeds in to the un-audited internal-only org chart The Organization chart in Workday, which is our SSoT for organizational structure The positioning FAQ",
+      "GitLab’s guide for starting a remote role",
+      "The tools page",
+      "The team page that feeds in to the un-audited internal-only org chart",
+      "The Organization chart in Workday, which is our SSoT for organizational structure",
+      "The positioning FAQ",
+      "Remind them about introducing themselves. Remind the new team member to introduce themselves in the Slack channel #new_team_members or relevant team channel. Encourage them to write a little personal note, and if they’re comfortable, include a photo or two!",
+      "Encourage them to organize a group call with other new hires. New GitLab team-members who are used to (or prefer) a more conventional new hire orientation — frequently hosted in group settings in colocated organizations — may feel a lack of early bonding. Encourage them to organize a group call with other new hires in order to walk through onboarding together, while learning about new personalities and departments of the company.",
+      "Introduce them to Slack. Slack may seem like it’s ubiquitous, but that doesn’t necessarily mean the new GitLab team-member will have had experience using it before. Since it’s a central part of how we communicate at GitLab, consider showing them around, and give them some pointers about how we use it. Be sure to suggest location channels and Social Slack Groups where they can immediately plug in with other team members who appreciate similar things.",
+      "Be sure to suggest location channels and Social Slack Groups where they can immediately plug in with other team members who appreciate similar things.",
+      "Ask where they need help and connect them with the experts. Buddies should make the effort to connect new GitLab team-members with subject matter experts if your assigned team member requests additional help in a given area. Examples are below. For new GitLab team-members who have not worked in a remote organization before, they may need assistance in thinking through an ideal workspace and embracing informal communication. Consider asking seasoned remote colleagues in the #remote Slack channel to reach out and answer questions. If they’re new to Git, consider asking experts in the #git-help Slack channel to reach out and offer a tutorial. If they’re new to Markdown, consider asking experts in the #content Slack channel to reach out and offer support.",
+      "For new GitLab team-members who have not worked in a remote organization before, they may need assistance in thinking through an ideal workspace and embracing informal communication. Consider asking seasoned remote colleagues in the #remote Slack channel to reach out and answer questions.",
+      "If they’re new to Git, consider asking experts in the #git-help Slack channel to reach out and offer a tutorial.",
+      "If they’re new to Markdown, consider asking experts in the #content Slack channel to reach out and offer support.",
+      "Check in regularly. You may very well be the first friend the new GitLab team-member makes on the team. Checking in with them regularly will help them feel welcome and supported. Reach out via Slack, and schedule at least two follow-up calls for the week after their start date, and at least one follow-up call for the rest of the first month. But since it differs from one person to another, you may also ask them if they prefer more or less frequent calls per week.",
+      "Provide backup if needed. If you plan to be out (e.g. vacation, company business, events, etc.) during a new GitLab team-member’s first few weeks, please ensure that a backup onboarding buddy is available to offer support.",
+      "Consider a long-term mentorship program. It can take a long time before new team members are comfortable in their new role, and having a mentor during that process goes a long way to help the transition into their role’s responsibilities go as smooth as possible. Consider setting up a weekly, or bi-weekly one-hour mentorship session, which your buddy can use to bring up any matter they are struggling with along the way.",
+      "Buddy assignation is the new team member’s manager’s responsibility as outlined in the onboarding issue as the very first Before Starting at GitLab manager task. If you have been at GitLab 3+ months and are interested in participating in the Onboarding Buddy Program, please express your interest to your manager.",
+      "has been at GitLab longer than 3 months",
+      "available during the first two weeks (no major PTO events or leave)",
+      "is someone who can support the adjustment to GitLab and knows a bit about the applications / tools the new team member may be using in the course of their role",
+      "These guidelines have been developed from the feedback we receive in the Onboarding Survey and feedback from onboarding buddies. It is not always possible to achieve all of these guidelines depending on the team or location.",
+      "This is an example template you can use to introduce yourself to a new team member as their onboarding buddy.",
+      "Guide for starting a remote job",
+      "{Any other applicable links}",
+      "That’s all there is to it! Thanks for your help welcoming the newest GitLab team-member to the team and getting them on board. If you have questions that are not answered on this page, please reach out to the People Operations Team via the onboarding issue or Compass."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "New Job Anxiety",
+      "meaning": "新工作焦虑",
+      "explain": "指新员工面对新工作环境时产生的紧张、担忧等负面情绪",
+      "example": "Many companies address new job anxiety through comprehensive orientation programs."
+    },
+    {
+      "paragraph": 0,
+      "phrase": "all-remote culture",
+      "meaning": "全远程文化",
+      "explain": "指完全远程工作的组织文化和工作方式",
+      "example": "Our all-remote culture requires employees to be self-disciplined and proactive in communication."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Career Mobility buddy",
+      "meaning": "职业发展伙伴",
+      "explain": "帮助员工在公司内部转换角色或部门时的指导伙伴",
+      "example": "When Sarah moved from marketing to product development, her career mobility buddy helped her understand the new team's workflow."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "coffee chat",
+      "meaning": "非正式聊天",
+      "explain": "指轻松、非正式的交流会议，常用于建立人际关系",
+      "example": "The manager scheduled a coffee chat with the new hire to discuss their career aspirations in a relaxed setting."
+    }
+  ],
+  "scenario": {
+    "title": "Offering support as an onboarding buddy",
+    "english": [
+      "A new teammate has joined a fully remote team and is still learning how the team works.",
+      "An onboarding buddy can explain team routines, point the new teammate to useful information, and answer questions as they come up.",
+      "You introduce yourself as the buddy and invite the new teammate to reach out whenever they need help."
+    ],
+    "chinese": [
+      "一位新同事加入了全远程团队，还在熟悉团队的工作方式。",
+      "入职伙伴可以介绍团队日常、指引新人查找资料，并回答过程中遇到的问题。",
+      "你说明自己是她的入职伙伴，欢迎她有问题时随时联系。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "远程团队新同事不知道去哪里找发布资料、不同问题该问谁，也不确定第一个客户案例处理后是否有人跟进。请用英文说明入职伙伴可以提供的帮助。",
+    "sample": "I’ll show you where to find the launch checklist and support guide. Ask Priya about billing questions and Leo about release access. Let’s check in after your first customer case and review what was unclear.",
+    "rationale": "告诉新人资料位置、联系人和第一次实践后的回顾安排。"
+  },
+  "words": [
+    {
+      "id": "onboarding-buddies",
+      "word": "onboarding buddies",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "入职伙伴",
+      "collocation": "assign onboarding buddies",
+      "example": "As onboarding buddies, we can help new teammates learn how the remote team works.",
+      "translation": "作为入职伙伴，我们可以帮助新人了解远程团队的工作方式。",
+      "note": "入职伙伴是帮助新员工适应工作环境和支持其融入团队的同事"
+    },
+    {
+      "id": "transitioning",
+      "word": "transitioning",
+      "ipa": "/trænˈzɪʃənɪŋ/",
+      "pos": "verb",
+      "meaning": "转换，过渡",
+      "collocation": "transitioning to a new role",
+      "example": "She is transitioning to a management position after five years as a specialist.",
+      "translation": "在担任五年专家后，她正在向管理岗位过渡。",
+      "note": "选学词：transitioning 指过渡到新的状态或角色，不是本期核心表达。"
+    },
+    {
+      "id": "migration",
+      "word": "migration",
+      "ipa": "/maɪˈɡreɪʃən/",
+      "pos": "noun",
+      "meaning": "迁移，调动",
+      "collocation": "migration to a new team",
+      "example": "The migration to the new team required significant adaptation to different processes.",
+      "translation": "向新团队的迁移需要适应不同的流程。",
+      "note": "选学词：migration 在本句中指迁移；本期讲的是新人融入团队，工作中更常说 onboarding."
+    },
+    {
+      "id": "schedule",
+      "word": "schedule",
+      "ipa": "/ˈʃedjuːl/",
+      "pos": "verb",
+      "meaning": "安排，计划",
+      "collocation": "schedule a meeting",
+      "example": "We can schedule a short call if a question is easier to talk through.",
+      "translation": "如果某个问题当面聊更方便，我们可以约个短会。",
+      "note": "职场中用于安排会议、活动或任务的时间"
+    },
+    {
+      "id": "digest",
+      "word": "digest",
+      "ipa": "/daɪˈdʒest/",
+      "pos": "verb",
+      "meaning": "消化，理解",
+      "collocation": "digest information",
+      "example": "Take the time you need to digest the team handbook.",
+      "translation": "你可以按自己的节奏熟悉团队手册。",
+      "note": "在职场语境中，指处理和理解大量信息的过程"
+    },
+    {
+      "id": "match",
+      "word": "match",
+      "ipa": "/mætʃ/",
+      "pos": "verb",
+      "meaning": "匹配，协调",
+      "collocation": "match time zones",
+      "example": "We try to match project team members across different time zones for efficient collaboration.",
+      "translation": "我们尝试匹配不同时区的项目团队成员以实现高效协作。",
+      "note": "选学词：match 指匹配，与本期入职伙伴提供帮助的任务关系较弱。"
+    }
+  ],
+  "structure": {
+    "original": "Onboarding buddies are crucial to making the onboarding experience for a new GitLab team-member a positive one.",
+    "analysis": [
+      "主语是'Onboarding buddies'（入职伙伴），这是一个名词短语，指负责帮助新员工适应环境的同事",
+      "谓语是'are crucial to'（至关重要），这是一个系动词短语，表示主语的重要性",
+      "动名词短语'making the onboarding experience for a new GitLab team-member a positive one'作为介词'to'的宾语，其中包含三个部分：动名词'making'、名词短语'the onboarding experience for a new GitLab team-member'（介词短语'for a new GitLab team-member'修饰'onboarding experience'）和形容词短语'a positive one'（作为宾语补足语）"
+    ],
+    "transfer": "Mentors are essential to ensuring the integration process for a new marketing associate runs smoothly."
+  },
+  "rewrite": {
+    "bad": "You need to attend every onboarding meeting before you can ask me questions.",
+    "good": "I’m your onboarding buddy, so I can help you get familiar with how our remote team works. Send me your questions as they come up, and we can work through them together.",
+    "translation": "我是你的入职伙伴，可以帮你熟悉远程团队的工作方式。遇到问题随时发给我，我们一起解决。",
+    "pattern": "I can help you [get familiar with the team]. Send me [questions as they come up]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "I’ll show you where to find the launch ___ and support guide.",
+      "answer": "checklist",
+      "why": "给新人可直接使用的入口，而非一次塞大量链接。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Ask Priya about ___ questions and Leo about release access.",
+      "answer": "billing",
+      "why": "清楚的联系人能降低新人求助成本。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s check in after your first ___ case and review what was unclear.",
+      "answer": "customer",
+      "why": "在真实任务后及时解答问题和调整支持。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, a new marketing associate, was paired with Tom as her Career Mobility buddy for onboarding.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Tom was tasked with helping Sarah navigate the company's all-remote culture during her first week.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我会带你看发布检查表和客服指南在哪里。",
+      "answer": "I’ll show you where to find the launch checklist and support guide.",
+      "why": "本句练习“show the new hire where to find…”在告诉新人去哪里找…时的用法。"
+    },
+    {
+      "prompt": "账单问题找 Priya，发布权限找 Leo。",
+      "answer": "Ask Priya about billing questions and Leo about release access.",
+      "why": "本句练习“explain who to ask about…”在说明遇到某类问题该找谁时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "你是新同事的 onboarding buddy。她还不熟悉全远程团队的工作方式。请用英文介绍你可以怎样帮忙，并邀请她把遇到的问题随时发给你。",
+    "options": [
+      "You have to attend the coffee chat because it's important for your onboarding. Your training can wait.",
+      "I’m your onboarding buddy, so I can help you get familiar with how our remote team works. Send me your questions as they come up, and we can work through them together.",
+      "I’m your onboarding buddy, so I can help you get familiar with how our remote team works."
+    ],
+    "correct": 1,
+    "why": "入职伙伴的职责是支持新人适应团队和远程工作方式，不是用虚构的咖啡聊天或录音替代帮助。"
+  },
+  "output": {
+    "prompt": "新同事要独立处理第一份退款申请，但还不熟悉审批规则和升级联系人。请用英文说明入职伙伴会怎样带他查看规则、确认联系人，并在处理后一起复盘。",
+    "sample": "I’ll walk you through the refund rules and show you where to find the approval guide. I’ll also introduce you to the person who handles exceptions. After your first case, let’s review what went smoothly and what was unclear.",
+    "check": [
+      "是否告诉新人去哪里找资料？",
+      "是否说明不同问题该找谁？",
+      "是否安排完成第一个任务后的跟进？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "show the new hire where to find…",
+      "meaning": "告诉新人去哪里找…",
+      "collocation": "show someone where to find + resource",
+      "example": "I’ll show you where to find the launch checklist and support guide.",
+      "translation": "我会带你看发布检查表和客服指南在哪里。"
+    },
+    {
+      "id": "work-02",
+      "word": "explain who to ask about…",
+      "meaning": "说明遇到某类问题该找谁",
+      "collocation": "ask someone about + topic",
+      "example": "Ask Priya about billing questions and Leo about release access.",
+      "translation": "账单问题找 Priya，发布权限找 Leo。"
+    },
+    {
+      "id": "work-03",
+      "word": "check in after the first task",
+      "meaning": "完成第一个任务后跟进",
+      "collocation": "check in after + task",
+      "example": "Let’s check in after your first customer case and review what was unclear.",
+      "translation": "你处理完第一个客户案例后，我们再聊聊哪些地方不清楚。"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "id": "035",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "微软新项目团队怎样建立合作关系",
+  "topic": "微软新项目团队怎样建立合作关系",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Engagement Team Development - Engineering Fundamentals Playbook",
+    "section": "公开团队指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队指南",
+    "url": "https://microsoft.github.io/code-with-engineering-playbook/agile-development/advanced-topics/collaboration/teaming-up/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Microsoft 微软 公开资料。",
+    "paragraphs": [
+      "In every ISE engagement, dynamics are different so are the team requirements. Based on transfer learning among teams, we aim to build right \"code-with\" environments in every team.",
+      "This documentation gives a high-level template with some suggestions by aiming to accelerate team swarming phase to achieve a high speed agility however it has no intention to provide a list of \"must-do\" items.",
+      "As it's stated in Tuckman's team phases, traditional team development has several stages. However those phases can be extremely fast or sometimes mismatched in teams due to external factors, what applies to ISE engagements.",
+      "In order to minimize the risk and set the expectations on the right way for all parties, an identification phase is important to understand each other. Some potential steps in this phase may be as following (not limited):",
+      "Identification of styles/preferences in communication, sharing, learning, decision making of each team member Talking about necessity of pair programming Decisions on backlog management & refinement meetings, weekly design sessions, social time sessions...etc. Sync/Async communication methods, work hours/flexible times",
+      "Decisions on backlog management & refinement meetings, weekly design sessions, social time sessions...etc.",
+      "Sync/Async communication methods, work hours/flexible times"
+    ],
+    "translations": [
+      "在每个ISE合作项目中，情况各不相同，团队需求也各不相同。基于团队间的迁移学习，我们旨在为每个团队构建合适的\"协作编码\"环境。",
+      "本文档提供了一个高层模板并附带一些建议，旨在加速团队的群聚阶段以实现高速敏捷，但它无意提供一份\"必须执行\"的清单。",
+      "正如塔克曼团队阶段所述，传统团队发展有几个阶段。然而，由于外部因素，这些阶段在团队中可能极为迅速或有时不匹配，这适用于ISE合作项目。",
+      "为了将风险降至最低并为所有相关方正确设定期望，识别阶段对于相互理解至关重要。此阶段的一些潜在步骤可能如下（不限于）：",
+      "识别每位团队成员在沟通、分享、学习和决策方面的风格/偏好；讨论结对编程的必要性；确定待办事项管理与细化会议、每周设计会议、社交时间会议等的决策；同步/异步沟通方式、工作时间/灵活时间",
+      "确定待办事项管理与细化会议、每周设计会议、社交时间会议等的决策",
+      "同步/异步沟通方式、工作时间/灵活时间"
+    ],
+    "fullTextParagraphs": [
+      "In every ISE engagement, dynamics are different so are the team requirements. Based on transfer learning among teams, we aim to build right \"code-with\" environments in every team.",
+      "This documentation gives a high-level template with some suggestions by aiming to accelerate team swarming phase to achieve a high speed agility however it has no intention to provide a list of \"must-do\" items.",
+      "As it's stated in Tuckman's team phases, traditional team development has several stages. However those phases can be extremely fast or sometimes mismatched in teams due to external factors, what applies to ISE engagements.",
+      "In order to minimize the risk and set the expectations on the right way for all parties, an identification phase is important to understand each other. Some potential steps in this phase may be as following (not limited):",
+      "Working agreement",
+      "Identification of styles/preferences in communication, sharing, learning, decision making of each team member Talking about necessity of pair programming Decisions on backlog management & refinement meetings, weekly design sessions, social time sessions...etc. Sync/Async communication methods, work hours/flexible times",
+      "Talking about necessity of pair programming",
+      "Decisions on backlog management & refinement meetings, weekly design sessions, social time sessions...etc.",
+      "Sync/Async communication methods, work hours/flexible times",
+      "Decisions and identifications of charts that will be helpful to provide transparent and true information to everyone",
+      "Identification of \"Software Craftspersonship\" areas which means the tools and methods will be widely used during the engagement and taking the required actions on team upskilling side if necessary. GitHub, Visual Studio Live Share, Azure DevOps, necessary development tools & libraries, and other collaboration tools. If upskilling on certain topic(s) is needed, identifying the areas and arranging code spikes for increasing the team knowledge on the regarding topic(s).",
+      "GitHub, Visual Studio Live Share, Azure DevOps, necessary development tools & libraries, and other collaboration tools.",
+      "If upskilling on certain topic(s) is needed, identifying the areas and arranging code spikes for increasing the team knowledge on the regarding topic(s).",
+      "Identification of communication channels, feedback loops and recurrent team call slots out of regular sprint meetings",
+      "Introduction to Technical Agility Team Manifesto and planning the technical delivery by aiming to keep technical debt risk minimum.",
+      "Identification phase accelerates the process of building a safe environment for every individual in the team, later on team has the required assets to follow the plan. And it is team's itself responsibility (engineers,PO,Process Lead) to debug their Agility level.",
+      "In every team stabilization takes time and pro-active agile debugging is the best accelerator to decrease the distraction away from sprint/engagement goal. Team is also responsible to keep the plan up-to-date based on team changes/needs and debugging results.",
+      "Just as an example, agility debugging activities may include:",
+      "Dashboards related with \"Goal\" such as burndown/burnout, Item/PR Aging, Mood Chart ..etc. are accessible to the team and team is always up-to-date",
+      "Backlog Refinement meetings Size of stories (Too big? Too small?) Are \"User Stories\" and \"Tasks\" clear ? Are Acceptance Criteria enough and right? Is everyone ready-to-go after taking the User Story/Task?",
+      "Size of stories (Too big? Too small?)",
+      "Are \"User Stories\" and \"Tasks\" clear ?",
+      "Are Acceptance Criteria enough and right?",
+      "Is everyone ready-to-go after taking the User Story/Task?",
+      "Running efficient retrospectives",
+      "Is the Sprint Goal clear in every iteration ?",
+      "Is the estimation process in the team improving over time or does it meet the delivery/workload prediction?",
+      "Kindly check Scrum Values to have a better understanding to improve team commitment.",
+      "Following that, above suggestions aim to remove agile/team disfunctionalities and provide a broader team understanding, potential time savings and full transparency.",
+      "Tuckman's Stages of Group Development",
+      "Scrum Values"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "code-with\" environments",
+      "meaning": "协作编码环境",
+      "explain": "指团队成员可以一起编写代码的工作环境，强调协作而非独立工作",
+      "example": "Our team benefits greatly from well-organized code-with environments that facilitate knowledge sharing."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "team swarming phase",
+      "meaning": "团队集结阶段",
+      "explain": "指团队成员快速聚集并高效协作的初始阶段，是敏捷团队形成的关键时期",
+      "example": "During the team swarming phase, we focus on aligning our goals and establishing communication protocols."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "identification phase",
+      "meaning": "识别阶段",
+      "explain": "团队建设初期阶段，用于了解团队成员特点、偏好和工作方式",
+      "example": "The identification phase helps us understand each team member's strengths and working preferences."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Sync/Async communication methods",
+      "meaning": "同步/异步沟通方法",
+      "explain": "指团队中同时使用的实时沟通和非实时沟通方式",
+      "example": "Effective teams often balance Sync/Async communication methods to accommodate different work styles and time zones."
+    }
+  ],
+  "scenario": {
+    "title": "Building Team Collaboration for a New Project",
+    "english": [
+      "Alex, the project manager, needs to coordinate between Sarah, the frontend developer who prefers synchronous communication, and Mike, the backend developer who works better with async methods, to establish a 'code-with' environment for their new e-commerce platform.",
+      "Sarah insists on daily stand-up meetings to align their work, while Mike argues that constant interruptions disrupt his deep focus and suggests using a project management tool with clear task assignments instead.",
+      "Alex proposes a hybrid approach: 'How about we start our day with a 15-minute sync-up to set priorities, then use async communication tools for detailed discussions, allowing everyone to work at their most productive times?'"
+    ],
+    "chinese": [
+      "项目经理亚历克斯需要在偏好同步沟通的前端开发者莎拉和更适合异步工作的后端开发者迈克之间协调，为他们新的电商平台建立'共同编码'环境。",
+      "莎拉坚持每日站会来协调工作，而迈克认为频繁的打断会破坏他的深度专注，建议使用具有清晰任务分配的项目管理工具。",
+      "亚历克斯提出折中方案：'我们不如每天开始工作前用15分钟同步会议设定优先级，然后使用异步沟通工具进行详细讨论，让每个人都能在最高效的时间工作？'"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新成立的远程团队中，有人偏好实时讨论，有人需要专注时间。请用英文建议先谈清团队的协作需要，再约定一套可以试行和调整的做法。",
+    "sample": "Could we discuss what the team needs to coordinate well before choosing a routine? Let’s try a short meeting for decisions and use a shared document for routine updates, then review whether it works.",
+    "rationale": "先了解团队需求，再组合实时讨论和异步更新，并在试行后回看效果。"
+  },
+  "words": [
+    {
+      "id": "engagement",
+      "word": "engagement",
+      "ipa": "/ɪnˈɡeɪdʒmənt/",
+      "pos": "noun",
+      "meaning": "项目，合作",
+      "collocation": "client engagement",
+      "example": "Our team has been assigned a new engagement with a major tech company.",
+      "translation": "我们的团队被分配了一个与一家大型科技公司的合作项目。",
+      "note": "在商业环境中，engagement常指与客户或合作伙伴的项目合作，而非简单的'参与'"
+    },
+    {
+      "id": "transfer-learning",
+      "word": "transfer learning",
+      "ipa": "/ˈtrænsfɜːr ˈlɜːrnɪŋ/",
+      "pos": "noun phrase",
+      "meaning": "迁移学习",
+      "collocation": "knowledge transfer learning",
+      "example": "We implement transfer learning approaches to share best practices across different teams.",
+      "translation": "我们实施迁移学习方法来在不同团队间分享最佳实践。",
+      "note": "原指机器学习概念，此处引申为团队间知识经验的迁移与共享"
+    },
+    {
+      "id": "backlog-management",
+      "word": "backlog management",
+      "ipa": "/ˈbæklɒɡ ˈmænɪdʒmənt/",
+      "pos": "noun phrase",
+      "meaning": "积压工作管理",
+      "collocation": "efficient backlog management",
+      "example": "Good backlog management is crucial for maintaining team productivity and meeting deadlines.",
+      "translation": "良好的积压工作管理对于维持团队生产力并按时完成工作至关重要。",
+      "note": "敏捷开发中指对待办事项列表的组织、优先级排序和处理"
+    },
+    {
+      "id": "refinement-meetings",
+      "word": "refinement meetings",
+      "ipa": "/rɪˈfaɪnmənt ˈmiːtɪŋz/",
+      "pos": "noun phrase",
+      "meaning": "需求细化会议",
+      "collocation": "regular refinement meetings",
+      "example": "The team holds refinement meetings every Monday to clarify upcoming tasks.",
+      "translation": "团队每周一举行需求细化会议，以明确即将到来的任务。",
+      "note": "敏捷开发中指团队对产品需求进行详细讨论和澄清的会议"
+    },
+    {
+      "id": "mismatched",
+      "word": "mismatched",
+      "ipa": "/ˌmɪsˈmætʃt/",
+      "pos": "adjective",
+      "meaning": "不匹配的，不一致的",
+      "collocation": "mismatched expectations",
+      "example": "Mismatched communication styles can lead to misunderstandings in cross-cultural teams.",
+      "translation": "沟通方式不一致可能导致跨文化团队中的误解。",
+      "note": "描述团队成员间在期望、风格或节奏上的不一致"
+    },
+    {
+      "id": "flexible-times",
+      "word": "flexible times",
+      "ipa": "/ˈfleksəbəl taɪmz/",
+      "pos": "noun phrase",
+      "meaning": "灵活时间",
+      "collocation": "work flexible times",
+      "example": "Our company offers flexible times to help employees maintain work-life balance.",
+      "translation": "我们公司提供灵活的工作时间，帮助员工保持工作与生活的平衡。",
+      "note": "指允许员工根据个人情况调整工作时间的政策"
+    }
+  ],
+  "structure": {
+    "original": "Based on transfer learning among teams, we aim to build right \"code-with\" environments in every team.",
+    "analysis": [
+      "\"Based on transfer learning among teams\" 是一个介词短语作状语，表示整个行动的基础和依据",
+      "\"we aim to build\" 是主句，其中\"aim to\"是不定式结构作谓语，表示\"旨在\"",
+      "\"right 'code-with' environments in every team\" 是动词\"build\"的宾语，其中\"right\"是形容词修饰\"environments\"，\"'code-with'\"是复合形容词修饰\"environments\"，\"in every team\"是介词短语作地点状语"
+    ],
+    "transfer": "Based on shared best practices across departments, we aim to create effective \"work-with\" systems in every unit."
+  },
+  "rewrite": {
+    "bad": "The other team’s process worked, so we should copy every step without changing it.",
+    "good": "Each team has different needs. Could we discuss which working agreements fit this project and adjust them as we learn?",
+    "translation": "每个团队的需求都不同。我们能否讨论哪些协作约定适合当前项目，并在实践中调整？",
+    "pattern": "Because [teams have different needs], could we choose [the practices that fit this project]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Could we discuss what the team needs to ___ well?",
+      "answer": "coordinate",
+      "why": "coordinate well 表示团队能够顺利配合。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Let’s try a short meeting for ___.",
+      "answer": "decisions",
+      "why": "把短会用于需要实时讨论的决定。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Use a shared document for routine ___.",
+      "answer": "updates",
+      "why": "routine updates 可异步查看，减少不必要的实时会议。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "In every ISE engagement, dynamics are different so are the team requirements.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Based on transfer learning among teams, we aim to build right \"code-with\" environments in every team.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "我们能否在选定协作习惯前，先讨论团队顺利配合需要什么？",
+      "answer": "Could we discuss what the team needs to coordinate well before choosing a routine?",
+      "why": "本句练习“discuss what the team needs to coordinate well”在先谈清团队顺利协作需要什么时的用法。"
+    },
+    {
+      "prompt": "我们先试试用短会讨论需要作出的决定。",
+      "answer": "Let’s try a short meeting for decisions.",
+      "why": "本句练习“try a short meeting for decisions”在用短会处理需要实时讨论的决定时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "新项目团队想照搬另一支团队的全部协作流程。请用英文说明团队需求各不相同，并建议先讨论当前项目需要哪些协作约定。",
+    "options": [
+      "You have to attend the daily meetings because Sarah wants it.",
+      "Each engagement has different team needs, so we shouldn’t treat another team’s practices as a mandatory checklist. Could we discuss which working agreements fit this project and adjust them as we learn?",
+      "Each engagement has different team needs, so we shouldn’t treat another team’s practices as a mandatory checklist."
+    ],
+    "correct": 1,
+    "why": "来源提供的是可调整的高层建议，并明确表示它不是每个团队都必须照做的清单。"
+  },
+  "output": {
+    "prompt": "设计团队和客服团队对哪些客户问题需要立即升级意见不同。请用英文建议先了解双方的协作需要，试行一套升级流程，再约定何时复盘。",
+    "sample": "Could we discuss what both teams need to coordinate well before choosing a process? Let’s try a clear escalation path and review whether it works after the next launch.",
+    "check": [
+      "是否先了解设计和客服团队各自的需要？",
+      "是否建议试行一条明确的升级流程？",
+      "是否约定根据实际协作结果复盘？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "discuss what the team needs to coordinate well",
+      "meaning": "先谈清团队顺利协作需要什么",
+      "collocation": "discuss what + 主语 + need(s) to…",
+      "example": "Could we discuss what the team needs to coordinate well before choosing a routine?",
+      "translation": "我们能否在选定协作习惯前，先讨论团队顺利配合需要什么？"
+    },
+    {
+      "id": "work-02",
+      "word": "try a short meeting for decisions",
+      "meaning": "用短会处理需要实时讨论的决定",
+      "collocation": "a short meeting for + decisions / discussion",
+      "example": "Let’s try a short meeting for decisions.",
+      "translation": "我们先试试用短会讨论需要作出的决定。"
+    },
+    {
+      "id": "work-03",
+      "word": "use a shared document for routine updates",
+      "meaning": "用共享文档异步更新日常进展",
+      "collocation": "use + channel / document + for + purpose",
+      "example": "Use a shared document for routine updates, then review whether it works.",
+      "translation": "用共享文档记录日常更新，再检查这种方式是否有效。"
+    }
+  ]
+}

@@ -1,0 +1,280 @@
+{
+  "id": "096",
+  "version": 1,
+  "status": "draft",
+  "company": "37signals",
+  "companyZh": "/ Basecamp",
+  "title": "团队有哪些固定活动和工作惯例",
+  "topic": "团队有哪些固定活动和工作惯例",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Our Rituals",
+    "section": "公开员工手册",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开员工手册",
+    "url": "https://basecamp.com/handbook/our-rituals",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 37signals / Basecamp 公开资料。",
+    "paragraphs": [
+      "The entire company gathers in person twice a year. We meet up in a different city every time. In 2022, we traveled to Miami and Amsterdam. In 2023, Barcelona and New Orleans. Most of the planning is taken care of for you; you just need to book your flights. Lodging, meeting space, agenda, and social outings will be planned and communicated well in advance.",
+      "There are some scheduled talks at every meet-up, like the All Hands session on Monday morning, lightning talks, and peer appreciation. Occasionally, we bring in outside speakers or trainers. Other than that, the meet-up is intentionally loosely structured. Teams huddle in a breakout room for a strategy session, groups go out for coffee or to explore the city, or managers meet 1:1s with employees.",
+      "Meet-ups are 1 week long. Most people arrive Sunday, we meet Monday through Thursday, then travel home on Friday. Everyone should come to every meet-up, but skipping one here and there is okay if you have an engagement you can’t cancel.",
+      "At the end of every cycle, we hold an All Hands meeting. Everyone at the company gathers on a Zoom call (or in person, at meetups) to hear about product development, business operations, new hires, and anything else that’s happened recently that’s worth sharing."
+    ],
+    "translations": [
+      "整个公司每年两次亲自聚集在一起。我们每次都在不同的城市会面。2022年，我们去了迈阿密和阿姆斯特丹。2023年，是巴塞罗那和新奥尔良。大部分的规划都为你准备好了；你只需要预订你的航班。住宿、会议空间、议程和社交活动都会提前规划和沟通。",
+      "每次聚会都会安排一些演讲，比如周一上午的全员会议、闪电演讲和同事欣赏活动。偶尔，我们会邀请外部演讲者或培训师。除此之外，聚会是有意地结构松散的。团队在 breakout room 里进行策略会议，小组外出喝咖啡或探索城市，或者经理与员工进行一对一会议。",
+      "聚会持续一周。大多数人周日到达，我们周一到周四开会，然后周五回家。每个人都应该参加每一次聚会，但如果你有无法取消的安排，偶尔错过一次是可以的。",
+      "在每个周期结束时，我们都会举行一次全员会议。公司所有的人都会参加 Zoom 会议（或在聚会上亲自参加），了解产品开发、业务运营、新员工招聘以及最近发生的任何其他值得分享的事情。"
+    ],
+    "fullTextParagraphs": [
+      "The entire company gathers in person twice a year. We meet up in a different city every time. In 2022, we traveled to Miami and Amsterdam. In 2023, Barcelona and New Orleans. Most of the planning is taken care of for you; you just need to book your flights. Lodging, meeting space, agenda, and social outings will be planned and communicated well in advance.",
+      "There are some scheduled talks at every meet-up, like the All Hands session on Monday morning, lightning talks, and peer appreciation. Occasionally, we bring in outside speakers or trainers. Other than that, the meet-up is intentionally loosely structured. Teams huddle in a breakout room for a strategy session, groups go out for coffee or to explore the city, or managers meet 1:1s with employees.",
+      "Meet-ups are 1 week long. Most people arrive Sunday, we meet Monday through Thursday, then travel home on Friday. Everyone should come to every meet-up, but skipping one here and there is okay if you have an engagement you can’t cancel.",
+      "At the end of every cycle, we hold an All Hands meeting. Everyone at the company gathers on a Zoom call (or in person, at meetups) to hear about product development, business operations, new hires, and anything else that’s happened recently that’s worth sharing.",
+      "Our COO runs the All Hands, but many people across departments may present on topics close to them during these meetings.",
+      "Everyone in the company is encouraged to do periodic Customer Support shifts. We call it Everyone on Support (EOS). Talking directly to customers helps us realize what’s wrong and what’s right with our products. You’ll always have access to our wonderful Support team if you need help writing clear and correct answers to customer questions through Help Scout, our support response tool."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "The entire company gathers in person twice a year",
+      "meaning": "整个公司每年两次亲自聚集在一起",
+      "explain": "表示公司全体成员定期面对面聚会的传统，强调团队凝聚力和面对面交流的重要性",
+      "example": "Our entire department gathers in person twice a year for strategic planning sessions."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "lightning talks",
+      "meaning": "闪电演讲",
+      "explain": "指简短、快速的信息分享环节，通常每位演讲者只有5-10分钟时间，适合分享快速更新或创意想法",
+      "example": "During our monthly team meeting, we allocate time for lightning talks where each team member shares one quick update."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "skipping one here and there is okay",
+      "meaning": "偶尔缺席一次是可以的",
+      "explain": "表达对员工偶尔无法参加集体活动的理解，体现公司灵活的工作文化",
+      "example": "While we encourage attendance at all workshops, skipping one here and there is okay if you have a prior commitment."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "All Hands meeting",
+      "meaning": "全员会议",
+      "explain": "指公司所有员工参加的会议，通常用于重要信息共享、决策传达和公司动态更新",
+      "example": "Our CEO will announce the quarterly results during the All Hands meeting next Monday."
+    }
+  ],
+  "scenario": {
+    "title": "Explaining the company meet-up schedule",
+    "english": [
+      "A new teammate asks how the company meet-up and All Hands are usually organized.",
+      "The company meet-up happens twice a year and lasts a week. It includes a few scheduled sessions, while the rest of the time is intentionally flexible for team activities and one-to-ones.",
+      "You summarize the fixed sessions and the flexible time."
+    ],
+    "chinese": [
+      "新同事问，公司聚会和 All Hands 通常怎么安排。",
+      "公司每年举办两次为期一周的聚会，其中有几项固定活动；其他时间会留给团队活动和一对一交流。",
+      "你概括固定安排和可灵活使用的时间。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "新同事想提前安排 team meet-up 期间的协作时间。请用英文说明少数固定活动会提前安排，大部分时间留给团队自行交流和开一对一会议。",
+    "sample": "A few sessions, including Monday’s All Hands, are scheduled in advance. Most of the week remains flexible for teams to meet, work together, or have one-to-ones.",
+    "rationale": "区分提前安排的固定活动和团队可灵活使用的时间。"
+  },
+  "words": [
+    {
+      "id": "gather-in-person",
+      "word": "gather in person",
+      "ipa": "/ˈɡæðər ɪn ˈpɜːrsən/",
+      "pos": "phrasal verb",
+      "meaning": "亲自聚集",
+      "collocation": "gather in person for meetings/events",
+      "example": "The whole company gathers in person twice a year for a meet-up.",
+      "translation": "全体员工每年会线下聚会两次。",
+      "note": "强调面对面交流而非远程参与，适用于团队建设活动"
+    },
+    {
+      "id": "breakout-room",
+      "word": "breakout room",
+      "ipa": "/ˈbreɪkaʊt ruːm/",
+      "pos": "noun",
+      "meaning": "分组讨论室",
+      "collocation": "use breakout rooms for discussions",
+      "example": "Teams use a breakout room for a strategy session during the meet-up.",
+      "translation": "聚会期间，各团队会使用分组讨论室开展策略讨论。",
+      "note": "指大型会议中用于小组讨论的独立空间，可以是物理空间或虚拟空间"
+    },
+    {
+      "id": "peer-appreciation",
+      "word": "peer appreciation",
+      "ipa": "/pɪər əˌpriːʃiˈeɪʃn/",
+      "pos": "noun",
+      "meaning": "同事认可",
+      "collocation": "express peer appreciation publicly",
+      "example": "Peer appreciation is one of the scheduled meet-up sessions.",
+      "translation": "同事互相致谢是聚会中的固定环节之一。",
+      "note": "指同事之间表达感谢和认可的活动或文化"
+    },
+    {
+      "id": "loosely-structured",
+      "word": "loosely structured",
+      "ipa": "/ˈluːsli ˈstrʌktʃərd/",
+      "pos": "adjective",
+      "meaning": "结构松散的",
+      "collocation": "have a loosely structured agenda",
+      "example": "The rest of the meet-up is intentionally loosely structured.",
+      "translation": "聚会的其他时间会有意安排得比较灵活。",
+      "note": "形容活动或计划有灵活性，不严格遵循固定流程"
+    },
+    {
+      "id": "strategy-session",
+      "word": "strategy session",
+      "ipa": "/ˈstrætədʒi ˈseʃn/",
+      "pos": "noun",
+      "meaning": "战略会议",
+      "collocation": "conduct a strategy session",
+      "example": "Teams can hold a strategy session during the flexible part of the week.",
+      "translation": "团队可以在一周中较灵活的时段安排策略讨论。",
+      "note": "指专门用于制定或讨论战略规划的会议"
+    },
+    {
+      "id": "business-operations",
+      "word": "business operations",
+      "ipa": "/ˈbɪznəs ˌɑːpəˈreɪʃənz/",
+      "pos": "noun",
+      "meaning": "业务运营",
+      "collocation": "review business operations",
+      "example": "The All Hands covers product development and business operations.",
+      "translation": "全员会议会介绍产品开发和业务运营情况。",
+      "note": "指企业日常运营活动的各个方面，包括生产、销售、服务等"
+    }
+  ],
+  "structure": {
+    "original": "Most of the planning is taken care of for you; you just need to book your flights.",
+    "analysis": [
+      "主句'Most of the planning is taken care of for you'使用被动语态，其中'Most of the planning'是主语，'is taken care of'是谓语动词短语，'for you'是介词短语表示受益对象",
+      "分号连接两个独立分句，第二个分句'you just need to book your flights'中，'you'是主语，'just need to book'是谓语动词短语，'your flights'是动词'book'的宾语",
+      "第一个分句中的'Most of the planning'是名词短语，其中'Most of'是限定词，'the planning'是名词；第二个分句中的'just'是副词修饰动词'need'，'to book your flights'是不定式短语作宾语"
+    ],
+    "transfer": "Most of the equipment is provided for you; you just need to bring your personal protective gear."
+  },
+  "rewrite": {
+    "bad": "Let’s schedule every hour of the company meet-up so there is no unstructured time.",
+    "good": "Each company meet-up has a few scheduled sessions, such as Monday’s All Hands, but most of the week is intentionally flexible for team discussions and one-to-ones.",
+    "translation": "公司聚会会安排少数固定环节，例如周一的全员会议；大部分时间则留给团队讨论和一对一交流。",
+    "pattern": "Some sessions are [scheduled], while the rest of the time stays [flexible for teams]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "A few sessions are ___ in advance.",
+      "answer": "scheduled",
+      "why": "scheduled in advance 表示提前安排。"
+    },
+    {
+      "id": "c2",
+      "prompt": "Most of the week remains ___.",
+      "answer": "flexible",
+      "why": "说明时间安排具有弹性。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Teams can use the open time for discussions and one-to-___.",
+      "answer": "ones",
+      "why": "one-to-ones 指一对一沟通。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Alex, a marketing coordinator, was tasked with organizing the quarterly team-building activity while preparing for the upcoming All Hands meeting.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "The team had conflicting priorities: some wanted a casual lunch, others preferred a structured workshop, and management emphasized budget constraints.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "包括周一 All Hands 在内，有少数环节会提前安排。",
+      "answer": "A few sessions, including Monday’s All Hands, are scheduled in advance.",
+      "why": "说明哪些活动会预先排定。"
+    },
+    {
+      "prompt": "一周中的大部分时间较灵活，团队可以自行安排会议、协作或一对一沟通。",
+      "answer": "Most of the week remains flexible for teams to meet, work together, or have one-to-ones.",
+      "why": "说明其他时间可以按团队需要灵活安排。"
+    }
+  ],
+  "choice": {
+    "prompt": "新同事问公司聚会和 All Hands 通常怎么安排。请用英文说明哪些环节有固定安排、哪些时间留给团队自行交流。",
+    "options": [
+      "The handbook describes some scheduled sessions, including Monday’s All Hands, while leaving much of the meet-up flexible.",
+      "Each company meet-up has a few scheduled sessions, such as Monday’s All Hands, but most of the week is intentionally flexible for team discussions and one-on-ones.",
+      "Every hour of the company meet-up follows a fixed mandatory schedule."
+    ],
+    "correct": 1,
+    "why": "区分固定环节和开放安排，帮助新同事知道活动的大致节奏。"
+  },
+  "output": {
+    "prompt": "一位新同事询问团队每周有哪些固定协作安排，哪些时间可以自行安排。请用英文说明周一产品同步会是固定的，其余时间由小组根据项目安排，并提醒他在哪里查看日历。",
+    "sample": "Our product sync is scheduled every Monday. The rest of the team’s collaboration time is arranged around project needs, so it can vary from week to week. You can check the shared team calendar for the latest schedule.",
+    "check": [
+      "是否说清每周一固定的产品同步会？",
+      "是否说明其他协作时间会随项目安排变化？",
+      "是否告诉新人去哪里查看最新安排？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "a few sessions are scheduled in advance",
+      "meaning": "说明活动中预先安排的固定环节",
+      "collocation": "be scheduled in advance",
+      "example": "A few sessions, including Monday’s All Hands, are scheduled in advance.",
+      "translation": "包括周一 All Hands 在内，有少数环节会提前安排。"
+    },
+    {
+      "id": "work-02",
+      "word": "most of the week remains flexible",
+      "meaning": "说明其他时间留给团队自行安排",
+      "collocation": "remain flexible for + purpose",
+      "example": "Most of the week remains flexible for teams to meet, work together, or have one-to-ones.",
+      "translation": "一周中的大部分时间较灵活，团队可以自行安排会议、协作或一对一沟通。"
+    },
+    {
+      "id": "work-03",
+      "word": "use the open time for…",
+      "meaning": "说明团队如何利用开放时段",
+      "collocation": "use time for + activity",
+      "example": "Teams can use the open time for discussions and one-to-ones.",
+      "translation": "团队可以利用开放时段安排讨论和一对一沟通。"
+    }
+  ]
+}

@@ -96,6 +96,30 @@ try {
     await page.locator('#plainReadBtn').click()
     await page.screenshot({path:`${root}/screenshots/03-lesson-desktop.png`,fullPage:false})
   })
+  await check('迁移练习、工作表达词卡与选学词汇显示正常',async()=>{
+    for (const id of ['002','020','030','061','071','081','091','100']) {
+      await page.goto(`/work-english/lessons/${id}`)
+      await expect(page.locator('#sourceText .article-paragraph').first()).not.toBeEmpty()
+      await expect(page.locator('#practiceInput')).toBeVisible()
+      if (['002','020','030','100'].includes(id)) {
+        await expect(page.locator('.task-phrase')).toHaveCount(3)
+        await expect(page.locator('.source-vocabulary > summary')).toHaveText('原文词汇 · 选学')
+        await expect(page.locator('.practice-translation > p')).toHaveCount(2)
+      }
+      const lessonData=JSON.parse(await page.locator('#lessonData').textContent())
+      assert.ok(lessonData.output.sample)
+      if (id==='002') {
+        const phrase=lessonData.words.find(word=>word.id==='work-01')
+        assert.ok(phrase?.word)
+        await page.locator('.task-phrase .save-word').first().click()
+        await saved(page)
+        await expect(page.locator('#reviewQueue')).toContainText(phrase.word)
+        await page.locator('.task-phrase .save-word').first().click()
+        await saved(page)
+      }
+    }
+    await page.goto('/work-english/lessons/001')
+  })
   await check('音频存在、真实播放、倍速和循环',async()=>{
     const clips=await page.locator('#lessonData').textContent();const data=JSON.parse(clips)
     assert.ok(Object.keys(data.audio).length>0)
@@ -161,10 +185,6 @@ try {
   await check('已登录访问登录页仍回到产品',async()=>{
     await page.goto('/login?redirect=%2Fwork-english%2Flessons%2F001');await page.waitForURL('**/work-english/lessons/001')
   })
-  await check('退出登录清除服务端会话',async()=>{
-    await page.goto('/work-english');await page.getByRole('link',{name:/退出登录/}).click();await page.waitForURL('**/login')
-    await page.goto('/work-english');await page.waitForURL('**/login?redirect=%2Fwork-english')
-  })
   await check('输入边界、跨站写入和版本冲突',async()=>{
     const current=await (await buyer.request.get('/api/work-english/progress/001')).json()
     const make=(data,origin=base)=>buyer.request.put('/api/work-english/progress/001',{headers:{Origin:origin},data})
@@ -173,6 +193,10 @@ try {
     assert.equal((await make({version:1,revision:0,state:{}})).status(),409)
     assert.equal((await buyer.request.get('/work-english/lessons/999')).status(),404)
     assert.equal((await buyer.request.get('/work-english/lessons/001/media/unknown.mp3')).status(),404)
+  })
+  await check('退出登录清除服务端会话',async()=>{
+    await page.goto('/work-english');await page.getByRole('link',{name:/退出登录/}).click();await page.waitForURL('**/login')
+    await page.goto('/work-english');await page.waitForURL('**/login?redirect=%2Fwork-english')
   })
   await check('无运行时JavaScript错误',async()=>assert.deepEqual(errors,[]))
 } finally {

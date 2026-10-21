@@ -1,0 +1,383 @@
+{
+  "id": "063",
+  "version": 1,
+  "status": "draft",
+  "company": "Atlassian",
+  "companyZh": "Atlassian",
+  "title": "项目复盘怎样讨论做得好和需要改进的地方",
+  "topic": "项目复盘怎样讨论做得好和需要改进的地方",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Sprint Retrospective: How to Hold an Effective Meeting | Atlassian",
+    "section": "公开团队工具",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开团队工具",
+    "url": "https://www.atlassian.com/team-playbook/plays/retrospective",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Atlassian 公开资料。",
+    "paragraphs": [
+      "A sprint retrospective gives you an opportunity to review your latest sprint and make improvements for future sprints. These meetings are essential because regularly assessing and improving processes leads to quality results and fewer obstacles.",
+      "In this guide, we’ll talk about what a sprint retrospective is, why it’s important, and how you can conduct successful sprint reviews to make your team more effective.",
+      "Celebrate what went well during the last sprint.",
+      "Discuss what didn’t go as well or could have been better.",
+      "Determine how to make improvements in the next sprint.",
+      "Use AI to summarize insights, generate takeaways, and make actioning them easier.",
+      "Meeting space or video conferencing with screen sharing.",
+      "Digital collaboration tool (see templates).",
+      "Optional: physical whiteboard, markers, sticky notes, and timer.",
+      "Reflect on past sprints to make improvements for the future.",
+      "About this Play",
+      "A sprint retrospective is a review conducted after a sprint that plays a key role in the Agile methodology. A sprint retrospective aims to determine what went well and where you had problems and identify areas where you can improve.",
+      "Regular reviews are an essential part of team collaboration. By understanding what works and what doesn’t, you can improve Agile processes to simplify your next sprint."
+    ],
+    "translations": [
+      "冲刺回顾会为你提供回顾最近一次冲刺并改进未来冲刺的机会。这些会议至关重要，因为定期评估和改进流程能带来更好的成果和更少的障碍。",
+      "在本指南中，我们将讨论什么是冲刺回顾会，它为什么重要，以及如何成功进行冲刺回顾，以使你的团队更加高效。",
+      "庆祝上一次冲刺中进展顺利的事情。",
+      "讨论哪些进展不顺利或本可以做得更好的地方。",
+      "确定如何在下一次冲刺中做出改进。",
+      "使用人工智能来总结见解、生成要点，并使执行这些要点变得更加容易。",
+      "会议空间或带屏幕共享的视频会议。",
+      "数字协作工具（请参见模板）。",
+      "可选：实体白板、记号笔、便利贴和计时器。",
+      "反思过去的冲刺，以便为未来做出改进。",
+      "关于此实践",
+      "冲刺回顾会是在一次冲刺后进行的回顾，它在敏捷方法论中扮演着关键角色。冲刺回顾会的目的是确定哪些进展顺利，哪些存在问题，并找出可以改进的领域。",
+      "定期回顾是团队协作的重要组成部分。通过了解哪些方法有效，哪些无效，你可以改进敏捷流程，简化下一次冲刺。"
+    ],
+    "fullTextParagraphs": [
+      "A sprint retrospective gives you an opportunity to review your latest sprint and make improvements for future sprints. These meetings are essential because regularly assessing and improving processes leads to quality results and fewer obstacles.",
+      "In this guide, we’ll talk about what a sprint retrospective is, why it’s important, and how you can conduct successful sprint reviews to make your team more effective.",
+      "Celebrate what went well during the last sprint.",
+      "Discuss what didn’t go as well or could have been better.",
+      "Determine how to make improvements in the next sprint.",
+      "Use AI to summarize insights, generate takeaways, and make actioning them easier.",
+      "Meeting space or video conferencing with screen sharing.",
+      "Digital collaboration tool (see templates).",
+      "Optional: physical whiteboard, markers, sticky notes, and timer.",
+      "Reflect on past sprints to make improvements for the future.",
+      "About this Play",
+      "Instructions",
+      "A sprint retrospective is a review conducted after a sprint that plays a key role in the Agile methodology. A sprint retrospective aims to determine what went well and where you had problems and identify areas where you can improve.",
+      "Regular reviews are an essential part of team collaboration. By understanding what works and what doesn’t, you can improve Agile processes to simplify your next sprint.",
+      "And with AI helping you find documentation from the sprint, summarize takeaways, and generate actionable steps, sprint retros are even more valuable.",
+      "Your sprint retrospective meeting should include the product owner, the Scrum team, the Scrum Master, stakeholders, and Rovo.",
+      "During a sprint retrospective meeting, it’s good to have a diverse array of perspectives in the room. Everyone can work together to analyze your latest sprint and determine what changes you need to make before starting the next portion of your project.",
+      "Retrospectives work best when done at the end of each sprint. However, if your sprints are short (like one week), it may make more sense to do a retrospective after every other sprint.",
+      "The duration of your sprint retrospective meeting can vary depending on the duration of the sprint. They can be as short as 45 minutes or as long as 3 hours. Give your team enough time and space for a meaningful conversation. Taking a bit of extra time upfront helps save time and improve results in the long run.",
+      "Sprint retrospectives help your team learn from the past and improve in the future, leading to streamlined Scrum sprints and a better end result.",
+      "Research shows the main benefits of retrospectives are that they help teams:",
+      "Achieve continuous improvement Building an action plan and following up on it in future meetings is critical for growth.",
+      "Improve team reflexivity Reflexivity is \"the extent to which team members collectively reflect upon the team's objectives, strategies, and processes and adapt them to current or anticipated circumstances.” Teams with higher levels of reflexivity are more likely to be better at innovating, identifying problems and opportunities, adapting to change, and implementing new ideas effectively.",
+      "Higher reflexivity correlates with:",
+      "Better decision-making",
+      "Better problem-solving",
+      "More effective strategy implementation",
+      "More team learning",
+      "More innovation",
+      "More adaptability to change",
+      "Other research reinforces that reflexivity helps teams:",
+      "Process information more thoroughly",
+      "Reduce errors and failures",
+      "Be more agile and flexible when things change",
+      "Sprint retrospectives may seem overwhelming at first, but they’re a pretty straightforward concept. You can use a sprint retrospective template or follow the five steps listed in this guide. As long as you’re gathering feedback and using it to generate insights and implement changes, you’re doing something right.",
+      "Every Sprint retrospective begins with a successful Sprint. Jira offers several key features that can help you organize successful sprints, including:",
+      "Backlogs: Backlogs allow you to list all the work related to a project or initiative. You can break this work down into individual sprints — which are usually 2 weeks.",
+      "Boards: Jira boards allow you to break your large project into more manageable pieces so you can plan your sprints and ensure your deliverables ship faster.",
+      "Timelines: Timelines keep your team in sync with stakeholders, providing an overview of the project timeline with mapped work items, dependencies, and releases.",
+      "Jira makes it easy for Agile teams to visualize, track, and manage sprints. With Jira, you can streamline your next sprint to ensure timely deliverables. Try Jira Scrum Boards and see how Jira can help you optimize your Agile team.",
+      "A lack of feedback is one of the biggest potential challenges of a sprint retrospective. If people aren’t transparent or are having trouble providing detailed feedback, it’s hard to determine what went well and what didn’t. You can encourage better input by providing a simple structure for your sprint retrospective, such as the sad, mad, glad (SMG) method and the 4 Ls method. You can also try collecting anonymous submissions.",
+      "You should also avoid focusing on one-time mistakes or successes. Sprint retrospectives are about improving your next sprint, so don’t focus on feedback that won’t impact the rest of your project.",
+      "The length of your sprint retrospective meeting can vary depending on the duration of the sprint. Sprint retrospectives can be as short as 45 minutes or as long as 3 hours — it all depends on the sprint. While you want to be efficient in everything you do, it’s important to give your team enough time to have a meaningful discussion and make progress during a sprint retrospective.",
+      "There are several ways to stimulate discussion in a sprint retrospective. You can use the 4 Ls method to ask people what they loved, loathed, learned, and longed for in a sprint. You can also use the sad, mad, glad method to dive deeper into your most recent sprint. Some questions you may want to ask during a sprint retrospective include:",
+      "What went well?",
+      "What went wrong?",
+      "What did you learn?",
+      "What changes can we make?",
+      "Retrospectives are part of the sprint planning process. The goal is to collect a variety of feedback and perspectives to improve processes and results. Use one of our pre-made templates to help facilitate the process.",
+      "At the beginning of the meeting, encourage people to respectfully share their open and honest thoughts throughout the session, focusing on improvement instead of blame. (This is key to developing psychological safety and a blameless culture.) To help, add Loom AI to your meeting to capture notes so that your team can focus on the retro itself.",
+      "Lastly, encourage your team to chat with Rovo as a thought partner if they have any concerns around tone or messaging of feedback.",
+      "Make it clear what will happen with the information discussed during the retrospective. Will it stay within the group? Will it be shared with leadership? Consider adopting the Chatham House Rule to help team members feel safe and comfortable.",
+      "Once you’ve set the tone and expectations for the meeting, you can gather team members' feedback on how the last sprint went. There are many ways to do this, including:",
+      "💬 Open group discussion about what went well and what didn’t",
+      "🗒️ Surveys (anonymous or attributed)",
+      "❤️ 4 Ls retrospective: Discuss what everyone loved, loathed, learned, and longed for during the last sprint",
+      "🙂 The Sad, Mad, Glad framework: Discuss what made team members feel each of those emotions. What was disappointing? Frustrating? Exciting and encouraging?",
+      "Use Rovo Search to gather relevant pages or tickets to help contextualize the feedback.",
+      "One of the biggest obstacles to a sprint retrospective is when team members don’t share enough feedback. In addition to creating a safe space, try guiding the conversation with a simple structure like the 4Ls or Sad, Mad, Glad. You can also try collecting anonymous submissions.",
+      "If someone is dominating the conversation, call on others for their thoughts to make sure everyone gets their voice heard.",
+      "As a group, look for patterns and trends in the feedback. What did we learn? What changes could we make to build on the good things and minimize or avoid the bad things? These insights are key to setting goals and making improvements, so encourage everyone to contribute any they may have.",
+      "Sprint retrospectives are about improving your next sprint, so focus more on patterns and trends vs. one-time mistakes or successes that likely won’t happen again.",
+      "Use Rovo Chat to distill the feedback into key patterns and trends.",
+      "Now, it’s time to turn insights into action. This is where you can start setting goals and determine what changes to make for future sprints.",
+      "As you document changes and action items, be sure to assign owners and deadlines to kickstart progress.",
+      "Rather than (or in addition to) writing action items on a sticky note or digital document, enter them directly into your sprint planning or project management system, such as Jira or Trello, so they’re already incorporated into your plans.",
+      "If any of the action items have corresponding tickets or issues, include those links on the retrospective page and/or tasks so it's easy to see the status.",
+      "Convert the feedback, patterns, and insights into actionable next steps with AI chat.",
+      "Wrap up your sprint retrospective by thanking everyone for their contributions and sharing a summary of key takeaways and action items. Then, on to the next sprint!",
+      "Don’t let your retros become stale, check-the-box, and let’s get outta here exercises that serve no purpose. There are various ways to encourage conversation, so experiment and see what works best for your group. Here are nine of our favorite sprint retrospective exercises.",
+      "Start a conversation with other Atlassian Team Playbook users, get support, or provide feedback.",
+      "Better meetings start with a page that outlines the purpose, expected outcomes, and key discussion points.",
+      "Help your teammates understand how best to work with you.",
+      "Assess your team’s health and determine an improvement plan.",
+      "Get the latest Plays and work life advice when you sign up for our newsletter.",
+      "A team's sticky notes from an in-person sprint retrospective",
+      "This team used Confluence to guide their retrospective conversation",
+      "A distributed team uses Trello to set ground rules, add feedback, create action items, and guide the discussion",
+      "In addition to using retrospective templates, you can follow a few simple steps to conduct a successful sprint retrospective meeting. Everyone on the team should feel welcome to contribute to the meeting. Once you’ve collected feedback, you can analyze that feedback and create action items for improvements.",
+      "Here are 5 steps for a successful sprint retrospective meeting:",
+      "Setting the tone is the first step of conducting a sprint retrospective. The goal of sprint planning is to collect feedback from different perspectives and use that feedback to set goals and improve Agile processes. Everyone should feel like they have a voice at a sprint review, so set that tone from the beginning of the meeting.",
+      "You want to encourage people to share feedback and provide valuable insights during your sprint retrospective. Focus on improving instead of blaming people for mistakes, and allow everyone to communicate openly and honestly.",
+      "Running this Play remotely? Use this free Retrospective template to guide the conversation and capture your session’s output.",
+      "As an Agile team leader, your job goes beyond understanding Scrum board basics — you have to lead meetings to generate valuable insights. Looking at sprint retrospective examples can help you develop ideas for your next sprint retrospective meeting so you can streamline the process and collect valuable feedback.",
+      "Using the 4 Ls method can encourage team members to offer feedback and give you a quick idea of what went well and where you need to improve.",
+      "You can also use the sad, mad, glad framework to create a discussion at your next sprint retrospective. Just create three columns that give your team a template for providing feedback:",
+      "Sad: What disappointed you? Were there any areas where you felt you could improve?",
+      "Mad: What frustrated you? Was there something that stopped you from performing your best?",
+      "Glad: What were your favorite moments during the project? What do you think went well?",
+      "There are various ways to encourage discussions at sprint retrospectives, so don’t be afraid to experiment to keep meetings dynamic. Keep in mind that some teams may prefer anonymous feedback, and there’s nothing wrong with that. You can tailor your sprint retrospectives to determine what works for your team.",
+      "If you need to find consensus on the ideas that emerge, use dot voting to guide the conversation."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 2,
+      "phrase": "Celebrate what went well during the last sprint.",
+      "meaning": "庆祝在上一个冲刺中做得好的方面",
+      "explain": "在项目复盘时，首先肯定和庆祝团队的成功和亮点，这有助于建立积极的团队氛围，增强团队凝聚力",
+      "example": "After completing the project, let's celebrate what went well during the last quarter to recognize everyone's hard work."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "Discuss what didn’t go as well",
+      "meaning": "讨论哪些方面没有达到预期或可以改进的地方",
+      "explain": "在项目复盘时，坦诚地讨论遇到的问题和不足，这是改进的关键步骤，需要营造开放、安全的讨论环境",
+      "example": "During our post-mortem meeting, we need to discuss what didn't go as well or could have been better in our product launch."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "Determine how to make improvements in the next sprint.",
+      "meaning": "确定如何在下一个冲刺中做出改进",
+      "explain": "基于前面的讨论，制定具体的改进措施和行动计划，确保问题得到解决，流程得到优化",
+      "example": "After analyzing the project data, we determined how to make improvements in the next sprint by implementing automated testing."
+    },
+    {
+      "paragraph": 11,
+      "phrase": "determine what went well and where you had problems",
+      "meaning": "确定哪些方面做得好以及遇到了哪些问题",
+      "explain": "项目复盘的核心目的是评估项目表现，识别成功因素和问题点，为后续工作提供指导",
+      "example": "The team met to determine what went well and where they had problems during the client implementation phase."
+    }
+  ],
+  "scenario": {
+    "title": "Project Retrospective: Celebrating Successes and Identifying Improvements",
+    "english": [
+      "Sarah, the project manager, and Tom, the lead developer, are conducting a retrospective meeting after completing a two-week sprint for their e-commerce platform update.",
+      "Sarah wants to focus on celebrating the successful features and discussing improvements, while Tom insists on spending more time analyzing the technical issues that caused delays.",
+      "Sarah suggests using a structured approach: first celebrate what went well, then discuss problems, and finally determine improvements for the next sprint."
+    ],
+    "chinese": [
+      "项目经理Sarah和开发主管Tom正在完成电商平台更新项目的两周冲刺后进行复盘会议。",
+      "Sarah希望专注于庆祝成功功能并讨论改进点，而Tom坚持花更多时间分析导致延误的技术问题。",
+      "Sarah建议采用结构化方法：首先庆祝做得好的地方，然后讨论问题，最后确定下一轮的改进措施。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "一次产品发布按时完成，但工程团队收到客服升级的问题时，常常缺少客户影响和已尝试步骤。请用英文主持简短复盘：说出做得好的地方，提出一个改进，并约定下一次怎么做。",
+    "sample": "What went well was that the launch stayed on schedule. We could improve the handoff by including the customer impact and steps already tried. For the next project, let’s add those details to the escalation template.",
+    "rationale": "复盘时先保留有效做法，再针对交接缺口提出下一次可执行的改进。"
+  },
+  "words": [
+    {
+      "id": "sprint-retrospective",
+      "word": "sprint retrospective",
+      "ipa": "/sprɪnt ˌrɛtrəˈspɛktɪv/",
+      "pos": "noun",
+      "meaning": "冲刺回顾会议",
+      "collocation": "conduct sprint retrospective",
+      "example": "At the end of each sprint, we discuss what went well and what to improve.",
+      "translation": "每个 sprint 结束时，我们会讨论做得好的地方和需要改进的地方。",
+      "note": "敏捷开发中的关键会议，用于评估冲刺表现并制定改进计划"
+    },
+    {
+      "id": "assessing-processes",
+      "word": "assessing processes",
+      "ipa": "/əˈsɛsɪŋ ˈproʊsɛsɪz/",
+      "pos": "verb phrase",
+      "meaning": "评估流程",
+      "collocation": "regularly assessing processes",
+      "example": "Regularly assessing our process helps us spot obstacles before the next sprint.",
+      "translation": "定期评估流程能帮助我们在下个 sprint 前发现障碍。",
+      "note": "持续改进的关键步骤，通过评估发现问题和优化机会"
+    },
+    {
+      "id": "actioning-them",
+      "word": "actioning them",
+      "ipa": "/ˈækʃənɪŋ ðəm/",
+      "pos": "verb phrase",
+      "meaning": "把这些内容付诸行动（商务用语）",
+      "collocation": "actioning the takeaways",
+      "example": "The facilitator helps the team with actioning the takeaways after the retrospective.",
+      "translation": "主持人帮助团队在复盘后落实讨论结论。",
+      "note": "原文用 actioning 表示落实；日常工作中更自然的说法是 turn the takeaways into action items。"
+    },
+    {
+      "id": "agile-methodology",
+      "word": "Agile methodology",
+      "ipa": "/ˈæɡɪl ˌmɛθəˈdɒlədʒi/",
+      "pos": "noun phrase",
+      "meaning": "敏捷方法论",
+      "collocation": "Agile methodology",
+      "example": "The retrospective is one way Agile teams improve their process.",
+      "translation": "复盘是敏捷团队改进流程的一种方式。",
+      "note": "一种强调迭代、灵活性和团队协作的项目管理方法"
+    },
+    {
+      "id": "identify-areas",
+      "word": "identify areas",
+      "ipa": "/aɪˈdɛntɪˌfaɪr ˈɛəriəz/",
+      "pos": "verb phrase",
+      "meaning": "确定领域",
+      "collocation": "identify areas for improvement",
+      "example": "The team identified one area to improve before the next sprint.",
+      "translation": "团队找出了一项下个 sprint 前要改进的地方。",
+      "note": "在项目复盘中发现需要改进的具体方面"
+    },
+    {
+      "id": "agile-processes",
+      "word": "Agile processes",
+      "ipa": "/ˈæɡɪl ˈproʊsɛsɪz/",
+      "pos": "noun phrase",
+      "meaning": "敏捷流程",
+      "collocation": "improve Agile processes",
+      "example": "We review our Agile process after each sprint.",
+      "translation": "我们在每个 sprint 后回顾敏捷流程。",
+      "note": "遵循敏捷原则的工作流程和方法，强调迭代和适应变化"
+    }
+  ],
+  "structure": {
+    "original": "A sprint retrospective gives you an opportunity to review your latest sprint and make improvements for future sprints.",
+    "analysis": [
+      "主语'A sprint retrospective'是一个名词短语，其中'sprint'作为形容词修饰'retrospective'，表示'冲刺回顾会议'",
+      "谓语'gives'是一个及物动词，后面接双宾语'you'和'an opportunity'，构成'give sb sth'结构",
+      "不定式'to review your latest sprint and make improvements for future sprints'作为后置定语修饰'an opportunity'，其中包含两个并列的不定式短语，由'and'连接，表示回顾和改进两个动作"
+    ],
+    "transfer": "A team meeting gives you a chance to discuss project progress and adjust strategies for upcoming milestones."
+  },
+  "rewrite": {
+    "bad": "Retrospectives are just a chance to complain. We do not need to choose an action afterward.",
+    "good": "Let’s each share one thing that went well and one thing we could improve this sprint. Then we can choose one change to try in the next sprint.",
+    "translation": "我们每人分享一项本轮做得好的地方和一项可以改进的地方，然后选一个改动在下一轮试行。",
+    "pattern": "Let’s share [what worked] and [what could improve], then choose [one change to test]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "What went ___ was the early review with the support team.",
+      "answer": "well",
+      "why": "用具体事实说明项目中奏效的做法。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We could improve the handoff ___ documenting the owner and deadline.",
+      "answer": "by",
+      "why": "by doing 表示通过什么做法改进。"
+    },
+    {
+      "id": "c3",
+      "prompt": "For the next project, let’s ___ the review owner at kickoff.",
+      "answer": "confirm",
+      "why": "把复盘结论变成下次项目启动时的具体动作。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, the project manager, and Tom, the lead developer, are conducting a retrospective meeting after completing a two-week sprint for their e-commerce platform update.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah wants to focus on celebrating the successful features and discussing improvements, while Tom insists on spending more time analyzing the technical issues that caused delays.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "做得好的一点是我们较早邀请了客服团队评审。",
+      "answer": "What went well was the early review with the support team.",
+      "why": "本句练习“What went well was…”在复盘时具体指出有效做法时的用法。"
+    },
+    {
+      "prompt": "我们可以把负责人和截止时间记下来，改进交接。",
+      "answer": "We could improve the handoff by documenting the owner and deadline.",
+      "why": "本句练习“We could improve… by…”在把改进点和可执行做法连起来时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "一次 sprint 刚结束。请用英文邀请团队各分享一项做得好的地方和一项可以改进的地方，再共同选出下一轮要尝试的改动。",
+    "options": [
+      "You need to stop complaining about technical problems and focus on what we did right for once.",
+      "Let’s each share one thing that went well and one thing we could improve this sprint. Then we can choose one change to try in the next sprint.",
+      "Let’s each share one thing that went well and one thing we could improve this sprint."
+    ],
+    "correct": 1,
+    "why": "复盘既回顾有效做法，也讨论改进点，并把讨论转成下一轮可以尝试的行动。"
+  },
+  "output": {
+    "prompt": "一次客户上线按期完成，但客服团队直到上线当天才拿到故障排查说明。请用英文复盘一个做得好的地方、一个需要改进的地方，并提出下次的具体行动。",
+    "sample": "What went well was that we launched on schedule. We could improve the handoff by sharing the troubleshooting guide with Support earlier. For the next launch, let’s add Support to the readiness review.",
+    "check": [
+      "是否指出一项有效做法？",
+      "是否把改进点和具体做法连起来？",
+      "是否说明下一次要采取的行动？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "What went well was…",
+      "meaning": "复盘时具体指出有效做法",
+      "collocation": "what went well / what could improve",
+      "example": "What went well was the early review with the support team.",
+      "translation": "做得好的一点是我们较早邀请了客服团队评审。"
+    },
+    {
+      "id": "work-02",
+      "word": "We could improve… by…",
+      "meaning": "把改进点和可执行做法连起来",
+      "collocation": "improve A by doing B",
+      "example": "We could improve the handoff by documenting the owner and deadline.",
+      "translation": "我们可以把负责人和截止时间记下来，改进交接。"
+    },
+    {
+      "id": "work-03",
+      "word": "For the next project, let’s…",
+      "meaning": "把复盘结论转成下一次行动",
+      "collocation": "for the next project, let’s + 动词",
+      "example": "For the next project, let’s confirm the review owner at kickoff.",
+      "translation": "下个项目开始时，我们先确认评审负责人。"
+    }
+  ]
+}

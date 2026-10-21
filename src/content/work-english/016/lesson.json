@@ -1,0 +1,317 @@
+{
+  "id": "016",
+  "version": 1,
+  "status": "draft",
+  "company": "Google",
+  "companyZh": "谷歌",
+  "title": "谷歌的员工互教机制：让员工成为讲师",
+  "topic": "谷歌的员工互教机制：让员工成为讲师",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Employee-led learning: Principles and practice - Google re:Work",
+    "section": "公开管理指南",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "公开管理指南",
+    "url": "https://rework.withgoogle.com/intl/en/guides/employee-led-learning-principles-and-practice",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Google 谷歌 公开资料。",
+    "paragraphs": [
+      "Organizations that embrace a culture of learning create an environment that encourages curiosity and knowledge sharing, which in turn leads to better business outcomes. A strong learning culture can better position your organization for future skill shifts and primes employees to think and act more like owners when it comes to their own development needs. One effective way to promote a learning culture is through an employee-to-employee learning program. Employees develop and grow by teaching others, and the people in your organization learn from peers with first-hand knowledge of the business.",
+      "At Google, many trainings are run through an employee-to-employee network called “g2g” (Googler-to-Googler). This volunteer teaching network of Google employees dedicate a portion of their time to helping their peers learn and grow. Volunteers — known internally as “g2g'ers” — can participate in a variety of ways, such as teaching courses, providing 1:1 coaching, and designing learning materials, and they come from every part of Google. Where needed, Google still uses outside professional trainers to help with highly specialized topics or targeted sessions for executives.",
+      "Many of the most popular classes led by g2g’ers focus on general professional skills, like negotiations and leadership, and role-related skills, like sales training and Python coding. It’s also helped upskill huge numbers of employees around new opportunities."
+    ],
+    "translations": [
+      "拥抱学习文化的组织创造了一个鼓励好奇心和知识分享的环境，这反过来又带来了更好的业务成果。强大的学习文化可以使您的组织更好地应对未来的技能转变，并促使员工在自身发展需求方面更像所有者一样思考和行动。促进学习文化的一种有效方式是通过员工对员工的学习计划。员工通过教导他人来发展和成长，而组织中的员工则可以从具有业务第一手知识的同行那里学习。",
+      "在谷歌，许多培训通过一个名为“g2g”（谷歌员工对谷歌员工）的员工网络进行。这个谷歌员工的志愿教学网络投入部分时间帮助同行学习和成长。志愿者——内部称为“g2g'ers”——可以通过多种方式参与，例如教授课程、提供1:1辅导和设计学习材料，他们来自谷歌的各个部门。在需要时，谷歌仍然使用外部专业培训师来帮助处理高度专业化的主题或针对高管的目标课程。",
+      "由g2g'ers主导的最受欢迎的课程侧重于通用专业技能，如谈判和领导力，以及与角色相关的技能，如销售培训和Python编程。这也帮助大量员工围绕新机会提升了技能。"
+    ],
+    "fullTextParagraphs": [
+      "Introduction",
+      "Define your goals",
+      "Integrate learning into culture",
+      "Recruit facilitators",
+      "Develop facilitator skills",
+      "Recognize and reward",
+      "Avoid pitfalls",
+      "Organizations that embrace a culture of learning create an environment that encourages curiosity and knowledge sharing, which in turn leads to better business outcomes. A strong learning culture can better position your organization for future skill shifts and primes employees to think and act more like owners when it comes to their own development needs. One effective way to promote a learning culture is through an employee-to-employee learning program. Employees develop and grow by teaching others, and the people in your organization learn from peers with first-hand knowledge of the business.",
+      "At Google, many trainings are run through an employee-to-employee network called “g2g” (Googler-to-Googler). This volunteer teaching network of Google employees dedicate a portion of their time to helping their peers learn and grow. Volunteers — known internally as “g2g'ers” — can participate in a variety of ways, such as teaching courses, providing 1:1 coaching, and designing learning materials, and they come from every part of Google. Where needed, Google still uses outside professional trainers to help with highly specialized topics or targeted sessions for executives.",
+      "Many of the most popular classes led by g2g’ers focus on general professional skills, like negotiations and leadership, and role-related skills, like sales training and Python coding. It’s also helped upskill huge numbers of employees around new opportunities.",
+      "An employee-to-employee learning program is not about “doing more with less.” If you’re looking to save money on a training budget and mandating participation, you could end up with resentful employee teachers delivering rushed classes to confused employee learners. Before proceeding, consider potential pitfalls. One thing that has made the g2g program so successful at Google is that the employees participate voluntarily and are supported by a culture that values learning.",
+      "What are your goals for learning in your organization? What do you hope to achieve by launching an employee-to-employee learning program? These are important questions to ask at the start. The goal at Google is to provide the right learning to the right people at the right time. For g2g, this means focusing efforts on providing high quality learning experiences at scale through community-driven initiatives.",
+      "This goal is anchored on three core beliefs:",
+      "All employees have the right to learn, regardless of location, role, tenure or level in the organization.",
+      "Learning is the responsibility of the entire company, not just the Learning & Development team.",
+      "Trust that employees are smart, capable and motivated — they have the capacity to grow Google’s learning culture.",
+      "Make sure your org size can support an employee-to-employee program. While empowering employees to teach and learn from each other can offer tremendous benefits, it may also be impractical given the size of your organization. There is a cost to selecting, supporting, and training employee facilitators. Take time to do an analysis to determine your setup and operating costs and compare that to what it would cost to provide the same training via other means (e.g., vendors or hiring full time training staff).",
+      "Make sure the content can be appropriately delivered by a peer. If you’re trying to teach highly specialized content, content aimed at your most senior leaders, or content that could be very sensitive, consider having a professional deliver it. You don’t want to set up an employee facilitator to fail by giving them an impossible task.",
+      "Remember that not all learning happens in a classroom with a single teacher in front of multiple students. So even if a full employee-to-employee learning program doesn’t make sense for your organization, consider the many other ways your employees can help one another learn. One-on-one mentoring programs can be incredibly powerful, or having employees hold open office hours can be an easy way for expertise to be shared.",
+      "In order for an employee-to-employee learning program to work, it needs to be part of a wider organizational culture that values continuous learning. No matter your industry, it’s likely that your employees, your organization, and, ultimately, your bottom line would benefit from a culture where employees are constantly learning new things, seeking out new opportunities, and developing new skills.",
+      "The success of the g2g program at Google is due largely to the culture of learning fostered within the company. We also work to reward and spotlight g2gers to help cultivate their volunteer participation. The g2g program is aligned with Google’s core learning philosophies:",
+      "Learning is a process, not an event, that requires motivation, opportunities to practice, and continuous feedback.",
+      "Learning happens in real life, especially during transitions or challenging moments.",
+      "Learning is personal. Everyone has different learning styles and different levels of challenge within which they can work.",
+      "Learning is social. Google supports an environment for Googlers to connect with peers for advice and support.",
+      "Here are a few things Google has done to help make peer-to-peer learning a part of the culture:",
+      "Strong leadership sponsorship: Like so many large-scale efforts, getting support from the top is critical. Employees need to hear (and hopefully see) that leaders believe that learning is an important part of work. At Google, one senior leader said: “It’s very unlikely that you’ll ever learn faster, or better than you will from one of your fellow employees.”",
+      "Connection to core values: It can be easy to pay lip service to employee development, but it’s difficult to fake if your core values include how you treat employees. If your organization is serious about fostering a learning culture, tie it into your organizational mission or core values. By then supporting an employee-to-employee learning program, you’re sharing responsibility and ownership for a learning culture with your employees and everyone can see how it connects to your organization’s reason for being.",
+      "Start early: Making it clear and explicit from day one that learning is expected and part of everyone’s job is an important opportunity. Consider how you can incorporate it directly into new hire orientation or encourage managers to bring it up with new team members. At Google, the new-hire (“Noogler”) orientation program itself features multiple g2g facilitators talking about a variety of topics.",
+      "The g2g team is often asked: “How do you motivate people to do something outside their core job?” The answer is actually pretty simple; trust people to do great work, give them tools and feedback, show them how it connects to the big picture, and then step aside.",
+      "Selecting the right people to teach the content makes a huge difference to the success of an employee-to-employee learning program. By investing up front in finding folks who are passionate about helping their peers grow, you’ll save time and resources later on by not having to struggle with volunteer accountability or motivation.",
+      "Make sure they’re interested: Having leaders nominate the best subject matter experts for the topic sounds like a good idea, but often it doesn’t work. A passion for teaching and sharing expertise is critical to a volunteer’s success. The Google team has found that g2g’ers who have been nominated to teach, but don’t have a passion for teaching, tend to have lower quality scores than those who self-select into the program. Assessing a candidate’s level of interest, not just their level of competency, has to be part of the process.",
+      "But, interest alone isn’t enough: Interest is critical when selecting volunteers, but you don’t want to just accept everyone who’s interested. It needs to be a balance between finding folks who are passionate about teaching as well as experts in the content.",
+      "Take the time to interview: Sit down with potential teachers to get to know them and assess their fit for the program.Recruiting the right people for the right content is a critical step in building a successful peer-to-peer learning program, even if they’ve been nominated to participate by leadership.",
+      "Development is critical to both the quality of your program and to the motivation of your participants. When people volunteer for something, they usually want to do a good job. By providing them with the resources and support they need to improve their own skills, you’ll not only increase the quality of the trainings they teach, but your facilitators will view this support as a reward itself.",
+      "Think about meaningful recognition options for your facilitators. This can be a message to their manager explaining their great work, a certificate they can print, or physical rewards.",
+      "You may want to send your facilitators recognition if they've:",
+      "Taken on a new challenge, such as facilitating a customized session.",
+      "Been an active member of the facilitator community, encouraging participation from others.",
+      "Volunteered to upskill a new facilitator, or provided qualitative feedback to an existing facilitator.",
+      "You may also want to reward facilitators when they've met a milestone in their facilitator career, such as delivering their 5th session, their 10 session, reaching a 100% satisfied feedback score from participants, etc. Consider not publicizing when these milestones are to avoid creating a culture where participants are motivated if they’ll be recognized with physical rewards.",
+      "To keep facilitators engaged on an ongoing basis, consider creating a network and connecting all of your facilitators for key programs. Building a supportive, well-connected community with your facilitators will be well worth the effort in the long term. Program managers who have cultivated strong communities can rely more heavily on their facilitators to help them out with onboarding new facilitators, updating content, and handling custom requests. This can be done with a simple email list, chat group, or you can hold regular meetings to convene facilitators. Encourage your facilitators to discuss best practices, content changes, new projects, and more.",
+      "There were plenty of growing pains for the g2g team as they started and scaled the program at Google. But so long as lessons were learned and shared, the team continued to improve the program.",
+      "Remove barriers to entry. When g2g first started, in the name of quality, there were tons of hoops that volunteers needed to jump through in order to participate. The process could take up to a year to complete, which is too long for any organization. The g2g program’s growth wasn’t keeping up with Google’s expanding needs, so the team decided to run an uncontrolled “experiment.” All general prerequisites to participate in g2g were removed, and instead instituted program-specific requirements. After this change, facilitator participation doubled in just six months, and quality remained high. In the years since, the program has removed even more barriers and given volunteers more support resources to bring in more facilitators and help them build their skills, and our quality has continued to rise over time. Trust people to do great work and create a quality assurance process that assumes people will do well, rather than assuming they will fail.",
+      "Secure leadership support, not just permission. When g2g first started, the team focused on making sure volunteers had permission from their managers to participate, rather than active support to make their participation successful. This was a major mistake. Permission and support are two very different things, and it’s taken years to shift the organization to a culture of support for volunteer programs like this. We started providing more data to managers and leaders, showing the individual and organizational value of having employees teach. Now, instead of just allowing their reports to participate as long as it “doesn’t interfere with their core job,” Google managers are encouraging participation and making space in employees’ workloads for activities that benefit the larger organization. Take the time to embed these concepts into manager training and expectations before scaling too far."
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "culture of learning",
+      "meaning": "学习文化",
+      "explain": "指组织内鼓励持续学习和知识共享的环境与价值观",
+      "example": "A strong culture of learning is essential for companies to adapt to rapid market changes."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "in a",
+      "meaning": "员工互教项目",
+      "explain": "一种让员工之间互相传授知识和技能的培训机制",
+      "example": "Our employee-to-employee learning program has significantly reduced external training costs while improving knowledge retention."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "Googler-to-Googler",
+      "meaning": "谷歌员工互教网络",
+      "explain": "谷歌内部员工自愿参与的教学网络，简称g2g",
+      "example": "The Googler-to-Googler program has become a cornerstone of Google's internal development strategy."
+    },
+    {
+      "paragraph": 2,
+      "phrase": "upskill huge numbers of employees",
+      "meaning": "提升大量员工的技能",
+      "explain": "通过培训使大量员工获得新的或更高水平的技能",
+      "example": "The company launched a digital transformation initiative to upskill huge numbers of employees in data analytics."
+    }
+  ],
+  "scenario": {
+    "title": "Starting a peer-led learning session",
+    "english": [
+      "A teammate has practical experience with a new tool that several colleagues want to learn.",
+      "You suggest asking the teammate to lead a short, voluntary session and invite learners to bring questions from their own work.",
+      "After the first session, the group can use feedback to decide whether a follow-up or learning materials would be useful."
+    ],
+    "chinese": [
+      "一位同事熟悉一款新工具，团队里有几个人也想学习。",
+      "你建议邀请这位同事自愿带一场短分享，让参与者带着实际工作中的问题来。",
+      "第一次分享后，团队可以根据反馈决定是否需要后续课程或学习材料。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "几位同事刚开始使用新的项目跟踪流程，其中一位同事已经熟悉这套做法。请用英文邀请他自愿做一次简短分享，并提出先收集听众的问题。",
+    "sample": "Would you be willing to walk the team through the new project workflow? We can collect their questions first so you can focus the session on what they need.",
+    "rationale": "邀请有经验的同事分享，并先了解听众的问题，让内容贴近实际需要。"
+  },
+  "words": [
+    {
+      "id": "embrace-culture",
+      "word": "embrace",
+      "ipa": "",
+      "pos": "verb",
+      "meaning": "采纳，拥抱",
+      "collocation": "embrace a culture",
+      "example": "Successful companies embrace a culture of innovation to stay competitive.",
+      "translation": "成功的公司采纳创新文化以保持竞争力。",
+      "note": "常用于表示积极接受某种理念、文化或方法"
+    },
+    {
+      "id": "curiosity",
+      "word": "curiosity",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "好奇心",
+      "collocation": "foster curiosity",
+      "example": "Good leaders foster curiosity in their teams to drive creative problem-solving.",
+      "translation": "优秀的领导者培养团队的好奇心以推动创造性解决问题。",
+      "note": "职场中指对知识和新事物的探索欲望"
+    },
+    {
+      "id": "knowledge-sharing",
+      "word": "knowledge sharing",
+      "ipa": "",
+      "pos": "noun phrase",
+      "meaning": "知识共享",
+      "collocation": "encourage knowledge sharing",
+      "example": "Our intranet platform is designed to facilitate knowledge sharing across departments.",
+      "translation": "我们的内部网络平台旨在促进跨部门的知识共享。",
+      "note": "指组织内成员之间交换信息和知识的过程"
+    },
+    {
+      "id": "volunteer-teaching",
+      "word": "volunteer",
+      "ipa": "",
+      "pos": "noun/adjective",
+      "meaning": "志愿者/自愿的",
+      "collocation": "volunteer network",
+      "example": "Our volunteer teaching network has expanded to include over 200 subject matter experts.",
+      "translation": "我们的志愿者教学网络已扩展到包括200多名主题专家。",
+      "note": "指自愿无偿提供时间或服务的员工"
+    },
+    {
+      "id": "role-related-skills",
+      "word": "role-related",
+      "ipa": "",
+      "pos": "adjective",
+      "meaning": "与角色相关的",
+      "collocation": "role-related skills",
+      "example": "The training program focuses on both technical and role-related competencies for managers.",
+      "translation": "该培训项目专注于管理者的技术和角色相关能力。",
+      "note": "指特定职位所需的专业技能和知识"
+    },
+    {
+      "id": "new-opportunities",
+      "word": "opportunities",
+      "ipa": "",
+      "pos": "noun",
+      "meaning": "机会",
+      "collocation": "seize opportunities",
+      "example": "Employees who continuously learn are better positioned to seize new opportunities in the market.",
+      "translation": "持续学习的员工能更好地把握市场中的新机会。",
+      "note": "职场中指职业发展或业务增长的可能性"
+    }
+  ],
+  "structure": {
+    "original": "Organizations that embrace a culture of learning create an environment that encourages curiosity and knowledge sharing, which in turn leads to better business outcomes.",
+    "analysis": [
+      "\"Organizations that embrace a culture of learning\" 是主语从句，其中\"that embrace a culture of learning\"是定语从句修饰\"Organizations\"，表示\"拥抱学习文化的组织\"",
+      "\"create an environment\"是谓语部分，\"that encourages curiosity and knowledge sharing\"是定语从句修饰\"an environment\"，表示\"鼓励好奇心和知识分享的环境\"",
+      "\"which in turn leads to better business outcomes\"是非限制性定语从句，\"which\"指代前面整个句子内容，\"in turn\"表示\"反过来\"，强调因果关系"
+    ],
+    "transfer": "Teams that make time for peer demos encourage knowledge sharing, which helps new hires learn the tools faster."
+  },
+  "rewrite": {
+    "bad": "Let’s hire an outside trainer before asking anyone on the team.",
+    "good": "You’ve used the tool in real projects. Would you be open to leading a short session? We can ask colleagues what they need to learn and build from there.",
+    "translation": "你在真实项目中用过这款工具。你愿意带一场简短的分享吗？我们可以先问问同事想学什么，再决定后续安排。",
+    "pattern": "Would you be open to [sharing a skill]? We can ask learners what they need and [choose the next step]."
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "Would you be willing to ___ the team through the new project workflow?",
+      "answer": "walk",
+      "why": "walk someone through a workflow 表示带对方逐步了解流程。"
+    },
+    {
+      "id": "c2",
+      "prompt": "We can ___ their questions first.",
+      "answer": "collect",
+      "why": "先收集问题，分享者才能围绕听众需要准备内容。"
+    },
+    {
+      "id": "c3",
+      "prompt": "You can focus the session ___ what they need.",
+      "answer": "on",
+      "why": "focus on... 表示把分享重点放在听众的需求上。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Mark, the team manager, emphasized the importance of developing internal expertise but couldn't allocate additional resources or reduce Sarah's existing responsibilities.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "Sarah proposed a peer-to-peer teaching approach where team members with complementary skills would lead short sessions during weekly team meetings.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "你愿意为新客服带一次简短的角色练习吗？",
+      "answer": "Would you be willing to lead a short role-play for the new support agents?",
+      "why": "Would you be willing to…? 礼貌询问对方是否愿意承担这项工作。"
+    },
+    {
+      "prompt": "我们可以提前收集他们的问题，让练习围绕实际需要展开。",
+      "answer": "We can collect their questions in advance so the practice focuses on what they need.",
+      "why": "collect questions in advance 表示在活动开始前了解参与者的疑问。"
+    }
+  ],
+  "choice": {
+    "prompt": "团队里有人熟悉一款新工具，几位同事想学。请用两句英文邀请这位同事自愿做一次短分享，并说明后续内容会根据学习者的需要决定。",
+    "options": [
+      "Let’s hire an outside trainer before asking anyone on the team.",
+      "Would you be open to leading a short session on the tool? We can ask colleagues what they need to learn and use their feedback to plan a follow-up.",
+      "We can ask colleagues what they need to learn and plan a follow-up, without inviting the teammate who knows the tool to share."
+    ],
+    "correct": 1,
+    "why": "员工互教从内部经验出发；先试一场，再按学习者反馈决定后续内容。"
+  },
+  "output": {
+    "prompt": "客服团队刚开始使用新的工单系统，其中一位同事已经熟悉常见操作。请用英文邀请他自愿分享几项实用技巧，并建议先收集大家的问题。",
+    "sample": "Would you be willing to walk the team through a few useful support shortcuts? We can collect their questions first so you can focus the session on what they need.",
+    "check": [
+      "是否以自愿方式邀请同事分享？",
+      "是否围绕具体的工作流程？",
+      "是否提出先了解学习者的问题？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "Would you be willing to…?",
+      "meaning": "礼貌询问对方是否愿意承担一件事",
+      "collocation": "Would you be willing to + 动词原形?",
+      "example": "Would you be willing to lead a short role-play for the new support agents?",
+      "translation": "你愿意为新客服带一次简短的角色练习吗？"
+    },
+    {
+      "id": "work-02",
+      "word": "walk someone through…",
+      "meaning": "带对方逐步了解某个流程",
+      "collocation": "walk someone through + a process / tool",
+      "example": "I can walk the new agents through the refund steps first.",
+      "translation": "我可以先带新客服逐步熟悉退款流程。"
+    },
+    {
+      "id": "work-03",
+      "word": "collect questions in advance",
+      "meaning": "提前收集听众的问题",
+      "collocation": "collect questions / feedback in advance",
+      "example": "We can collect their questions in advance so the practice focuses on what they need.",
+      "translation": "我们可以提前收集他们的问题，让练习围绕实际需要展开。"
+    }
+  ]
+}

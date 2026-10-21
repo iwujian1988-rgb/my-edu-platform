@@ -1,0 +1,291 @@
+{
+  "id": "043",
+  "version": 1,
+  "status": "draft",
+  "company": "Microsoft",
+  "companyZh": "微软",
+  "title": "微软如何宣布新的 AI 负责人和组织安排（2024）",
+  "topic": "微软如何宣布新的 AI 负责人和组织安排（2024）",
+  "level": "B1–B2",
+  "minutes": 25,
+  "source": {
+    "title": "Mustafa Suleyman, DeepMind and Inflection Co-founder, joins Microsoft to lead Copilot - The Official Microsoft Blog",
+    "section": "员工信",
+    "collection": "公开工作资料",
+    "displayScope": "完整原文",
+    "type": "员工信",
+    "url": "https://blogs.microsoft.com/blog/2024/03/19/mustafa-suleyman-deepmind-and-inflection-co-founder-joins-microsoft-to-lead-copilot/",
+    "license": "原文按项目方确认的授权收录",
+    "licenseUrl": null,
+    "licenseEvidence": null,
+    "usageBasis": "project_authorized",
+    "authorizationConfirmedAt": "2026-10-16",
+    "verifiedAt": "2026-10-16",
+    "context": "原文出自 Microsoft 微软 公开资料。",
+    "paragraphs": [
+      "Satya Nadella, Chairman and CEO, shared the below communication today with Microsoft employees.",
+      "I want to share an exciting and important organizational update today. We are in Year 2 of the AI platform shift and must ensure we have the capability and capacity to boldly innovate.",
+      "There is no franchise value in our industry and the work and product innovation we drive at this moment will define the next decade and beyond. Let us use this opportunity to build world-class AI products, like Copilot, that are loved by end-users! This is about science, engineering, product, and design coming together and embracing a learning mindset to push our innovation culture and product building process forward in fundamental ways.",
+      "In that context, I’m very excited to announce that Mustafa Suleyman and Karén Simonyan are joining Microsoft to form a new organization called Microsoft AI, focused on advancing Copilot and our other consumer AI products and research.",
+      "Mustafa will be EVP and CEO, Microsoft AI, and joins the senior leadership team (SLT), reporting to me. Karén is joining this group as Chief Scientist, reporting to Mustafa. I’ve known Mustafa for several years and have greatly admired him as a founder of both DeepMind and Inflection, and as a visionary, product maker, and builder of pioneering teams that go after bold missions."
+    ],
+    "translations": [
+      "萨提亚·纳德拉（Satya Nadella），董事长兼首席执行官，今日向微软员工传达了以下信息。",
+      "今天我想分享一个令人振奋且重要的组织更新。我们正处于AI平台转型的第二年，必须确保我们有能力大胆创新。",
+      "在我们的行业中，没有特许经营价值，我们此刻推动的工作和产品创新将定义未来十年乃至更长远的未来。让我们利用这个机会构建像Copilot这样的世界级AI产品，让终端用户喜爱！这关乎科学、工程、产品和设计的融合，并拥抱学习心态，以根本性的方式推动我们的创新文化和产品构建进程。",
+      "在此背景下，我非常高兴地宣布Mustafa Suleyman和Karén Simonyan加入微软，成立一个名为Microsoft AI的新组织，专注于推进Copilot以及其他消费者AI产品和研究。",
+      "Mustafa将担任Microsoft AI的执行副总裁兼首席执行官，加入高级领导团队（SLT），向我汇报。Karén将加入该团队担任首席科学家，向Mustafa汇报。我认识Mustafa已有数年，一直非常钦佩他作为DeepMind和Inflection的创始人，以及作为远见卓识的产品制造者和大胆使命先驱团队的构建者。"
+    ],
+    "fullTextParagraphs": [
+      "Satya Nadella, Chairman and CEO, shared the below communication today with Microsoft employees.",
+      "I want to share an exciting and important organizational update today. We are in Year 2 of the AI platform shift and must ensure we have the capability and capacity to boldly innovate.",
+      "There is no franchise value in our industry and the work and product innovation we drive at this moment will define the next decade and beyond. Let us use this opportunity to build world-class AI products, like Copilot, that are loved by end-users! This is about science, engineering, product, and design coming together and embracing a learning mindset to push our innovation culture and product building process forward in fundamental ways.",
+      "In that context, I’m very excited to announce that Mustafa Suleyman and Karén Simonyan are joining Microsoft to form a new organization called Microsoft AI, focused on advancing Copilot and our other consumer AI products and research.",
+      "Mustafa will be EVP and CEO, Microsoft AI, and joins the senior leadership team (SLT), reporting to me. Karén is joining this group as Chief Scientist, reporting to Mustafa. I’ve known Mustafa for several years and have greatly admired him as a founder of both DeepMind and Inflection, and as a visionary, product maker, and builder of pioneering teams that go after bold missions.",
+      "Karén, a Co-founder and Chief Scientist of Inflection, is a renowned AI researcher and thought leader, who has led the development of some of the biggest AI breakthroughs over the past decade including AlphaZero.",
+      "Several members of the Inflection team have chosen to join Mustafa and Karén at Microsoft. They include some of the most accomplished AI engineers, researchers, and builders in the world. They have designed, led, launched, and co-authored many of the most important contributions in advancing AI over the last five years. I am excited for them to contribute their knowledge, talent, and expertise to our consumer AI research and product making.",
+      "At our core, we have always been a platform and partner-led company, and we’ll continue to bring that sensibility to all we do. Our AI innovation continues to build on our most strategic and important partnership with OpenAI. We will continue to build AI infrastructure inclusive of custom systems and silicon work in support of OpenAI’s foundation model roadmap, and also innovate and build products on top of their foundation models. And today’s announcement further reinforces our partnership construct and principles.",
+      "As part of this transition, Mikhail Parakhin and his entire team, including Copilot, Bing, and Edge; and Misha Bilenko and the GenAI team will move to report to Mustafa. These teams are at the vanguard of innovation at Microsoft, bringing a new entrant energy and ethos, to a changing consumer product landscape driven by the AI platform shift. These organizational changes will help us double down on this innovation.",
+      "Kevin Scott continues as CTO and EVP of AI, responsible for all-up AI strategy, including all system architecture decisions, partnerships, and cross-company orchestration. Kevin was the first person I leaned on to help us manage our transformation to an AI-first company and I’ll continue to lean on him to ensure that our AI strategy and initiatives are coherent across the breadth of Microsoft.",
+      "Rajesh Jha continues as EVP of Experiences & Devices and I’m grateful for his leadership as he continues to build out Copilot for Microsoft 365, partnering closely with Mustafa and team.",
+      "There are no other changes to the senior leadership team or other organizations.",
+      "We have been operating with speed and intensity and this infusion of new talent will enable us to accelerate our pace yet again.",
+      "We have a real shot to build technology that was once thought impossible and that lives up to our mission to ensure the benefits of AI reach every person and organization on the planet, safely and responsibly. I’m looking forward to doing so with you.",
+      "Check us out on RSS"
+    ]
+  },
+  "notes": [
+    {
+      "paragraph": 0,
+      "phrase": "shared the below communication",
+      "meaning": "分享了以下沟通内容",
+      "explain": "用于正式场合宣布重要信息，表示管理层向员工传达官方消息",
+      "example": "The CEO shared the below communication regarding the company's new sustainability initiative."
+    },
+    {
+      "paragraph": 1,
+      "phrase": "organizational update",
+      "meaning": "组织架构更新",
+      "explain": "指公司内部组织结构、人员安排或战略方向的正式调整通知",
+      "example": "The HR department sent an organizational update to all employees about the new reporting structure."
+    },
+    {
+      "paragraph": 3,
+      "phrase": "form a new organization",
+      "meaning": "成立一个新组织",
+      "explain": "表示创建一个新的部门、团队或机构，通常是为了特定目的",
+      "example": "The company decided to form a new organization focused on emerging markets."
+    },
+    {
+      "paragraph": 4,
+      "phrase": "reporting to me",
+      "meaning": "向我汇报",
+      "explain": "表示直接向上级汇报工作，明确汇报关系和组织层级",
+      "example": "The new marketing director will be reporting to the Chief Operating Officer."
+    }
+  ],
+  "scenario": {
+    "title": "Responding to an organizational announcement",
+    "english": [
+      "A teammate has read Microsoft's announcement that Mustafa Suleyman will lead Microsoft AI, a new organization focused on consumer AI products and research.",
+      "The teammate wants to ask how the organizational change may affect the team's current project and priorities.",
+      "You acknowledge the announcement and ask what information is available before drawing conclusions about the team's resources or timeline."
+    ],
+    "chinese": [
+      "一位同事读到微软宣布由 Mustafa Suleyman 领导 Microsoft AI。新组织将聚焦消费级 AI 产品与研究。",
+      "同事想了解这项组织调整会怎样影响团队当前的项目和优先级。",
+      "你先回应这项公告，再询问目前有哪些已确认的信息，不对团队资源或时间线作未经证实的判断。"
+    ]
+  },
+  "firstAttempt": {
+    "prompt": "同事看到微软宣布成立 Microsoft AI 后，担心团队项目和资源会受影响。请用英文说明公告中已确认的组织安排，再提出确认团队计划的建议。",
+    "sample": "Microsoft announced a new Microsoft AI organization, led by Mustafa Suleyman and focused on Copilot and other consumer AI products and research. The announcement does not specify our team’s resource plan. Could we check with our lead before changing the project timeline?",
+    "rationale": "先复述公告中确认的组织安排，再区分尚未说明的团队影响，并提出核实方式。"
+  },
+  "words": [
+    {
+      "id": "franchise-value",
+      "word": "franchise",
+      "ipa": "/ˈfræntʃaɪz/",
+      "pos": "noun",
+      "meaning": "特许经营权；行业优势",
+      "collocation": "franchise value",
+      "example": "The company's strong brand gives it significant franchise value in the market.",
+      "translation": "公司的强大品牌使其在市场上拥有显著的行业优势。",
+      "note": "在科技行业语境中，指企业长期积累的竞争优势和市场地位"
+    },
+    {
+      "id": "boldly-innovate",
+      "word": "boldly",
+      "ipa": "/ˈboʊldli/",
+      "pos": "adverb",
+      "meaning": "大胆地；勇敢地",
+      "collocation": "boldly innovate",
+      "example": "We need to boldly innovate to stay ahead of our competitors.",
+      "translation": "我们需要大胆创新以保持领先于竞争对手。",
+      "note": "修饰创新行为，表示不畏风险、勇于突破的进取精神"
+    },
+    {
+      "id": "pioneering-teams",
+      "word": "pioneering",
+      "ipa": "/ˌpaɪəˈnɪərɪŋ/",
+      "pos": "adjective",
+      "meaning": "开创性的；先锋的",
+      "collocation": "pioneering teams",
+      "example": "She is known for building pioneering teams that tackle industry challenges.",
+      "translation": "她因组建解决行业挑战的开创性团队而闻名。",
+      "note": "形容具有创新精神、引领行业发展的团队"
+    },
+    {
+      "id": "visionary-product-maker",
+      "word": "visionary",
+      "ipa": "/ˈvɪʒəneri/",
+      "pos": "adjective",
+      "meaning": "有远见的； visionary",
+      "collocation": "visionary leader",
+      "example": "A visionary leader can anticipate market trends and steer the company accordingly.",
+      "translation": "有远见的领导者能够预见市场趋势并相应地引导公司。",
+      "note": "形容能够预见未来、具有前瞻性思维的人"
+    },
+    {
+      "id": "embracing-learning-mindset",
+      "word": "embracing",
+      "ipa": "/ɪmˈbreɪsɪŋ/",
+      "pos": "verb",
+      "meaning": "拥抱；接受",
+      "collocation": "embracing a mindset",
+      "example": "The company is embracing a growth mindset to foster innovation.",
+      "translation": "公司正在拥抱成长心态以促进创新。",
+      "note": "表示积极接受某种理念或态度，常用于企业文化描述"
+    },
+    {
+      "id": "advancing-consumer-ai",
+      "word": "advancing",
+      "ipa": "/ədˈvænsɪŋ/",
+      "pos": "verb",
+      "meaning": "推进；促进",
+      "collocation": "advancing technology",
+      "example": "Our team is focused on advancing AI applications in healthcare.",
+      "translation": "我们的团队专注于推进人工智能在医疗领域的应用。",
+      "note": "表示使某事物向前发展或进步，常用于技术或产品发展语境"
+    }
+  ],
+  "structure": {
+    "original": "Satya Nadella, Chairman and CEO, shared the below communication today with Microsoft employees.",
+    "analysis": [
+      "\"Satya Nadella, Chairman and CEO\" 是同位语结构，对主语 Satya Nadella 进行补充说明，表明他的职位",
+      "\"shared the below communication today with Microsoft employees\" 是谓语部分，其中 \"shared\" 是谓语动词，\"the below communication\" 是直接宾语，\"today\" 是时间状语，\"with Microsoft employees\" 是介词短语作状语，表示动作的对象",
+      "整个句子是简单句，主语+谓语+宾语结构，包含同位语和介词短语状语"
+    ],
+    "transfer": "The leadership team shared the updated organization structure with product groups this morning."
+  },
+  "rewrite": {
+    "bad": "The announcement means our team will lose its budget and miss the current deadline.",
+    "good": "Microsoft announced a new Microsoft AI organization, led by Mustafa Suleyman and focused on Copilot and other consumer AI products and research. The announcement does not specify our team’s resource plan. Could we check with our lead before changing the project timeline?",
+    "translation": "微软宣布成立由 Mustafa Suleyman 领导的 Microsoft AI，重点负责 Copilot 及其他面向消费者的 AI 产品和研究。公告没有说明我们团队的资源安排。我们能否先向负责人确认，再调整项目时间表？",
+    "pattern": "The announcement confirms [what is changing]. It does not specify [team-level impact]. Could we check with [the owner] before [changing the plan]?"
+  },
+  "cloze": [
+    {
+      "id": "c1",
+      "prompt": "The announcement says the organization will focus on consumer AI products and ___.",
+      "answer": "research",
+      "why": "按公告原文概括已确认的业务重点。"
+    },
+    {
+      "id": "c2",
+      "prompt": "It doesn’t say ___ our project will change.",
+      "answer": "whether",
+      "why": "whether 引出公告未说明的问题。"
+    },
+    {
+      "id": "c3",
+      "prompt": "Let’s check with our lead before ___ the plan.",
+      "answer": "updating",
+      "why": "before 后接动名词；先核实，再改计划。"
+    }
+  ],
+  "dictation": [
+    {
+      "id": "d1",
+      "text": "Sarah, the marketing director, needed to share the below communication about forming a new AI organization with her team while preparing the quarterly campaign report.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    },
+    {
+      "id": "d2",
+      "text": "The team faced conflicting priorities - some members wanted immediate AI integration in campaigns while others were concerned about budget constraints and resource allocation.",
+      "why": "听清句中的工作任务、动作和时间信息。"
+    }
+  ],
+  "translationPractice": [
+    {
+      "prompt": "公告确认，Microsoft AI 将聚焦消费者 AI 产品和研究。",
+      "answer": "The announcement confirms that Microsoft AI will focus on consumer AI products and research.",
+      "why": "本句练习“focus on consumer AI products and research”在准确说明公告确认的业务重点时的用法。"
+    },
+    {
+      "prompt": "公告没有说明我们的项目是否会改变。",
+      "answer": "It doesn’t say whether our project will change.",
+      "why": "本句练习“It doesn’t say whether…”在指出公告没有说明的内容时的用法。"
+    }
+  ],
+  "choice": {
+    "prompt": "同事看到微软宣布成立 Microsoft AI 后，担心团队项目和资源会受影响。请用英文说明公告中已确认的组织安排，再提出确认团队计划的建议。",
+    "options": [
+      "The announcement means our team will lose its budget and miss the current deadline.",
+      "Microsoft announced a new Microsoft AI organization, led by Mustafa Suleyman and focused on Copilot and other consumer AI products and research. The announcement does not specify our team’s resource plan. Could we check with our lead before changing the project timeline?",
+      "The message confirms some changes, but I would not assume details about the team that it does not mention."
+    ],
+    "correct": 1,
+    "why": "先复述公告中确认的组织安排，再区分尚未说明的团队影响，并提出核实方式。"
+  },
+  "output": {
+    "prompt": "同事把 Microsoft AI 的组织公告理解成你们项目一定会改方向。请用英文说明公告确认了什么，并提出先向项目负责人核实具体影响。",
+    "sample": "The announcement confirms that Microsoft AI will focus on consumer AI products and research. It doesn’t say whether our project will change, so let’s check with our lead before updating the plan.",
+    "check": [
+      "是否只复述公告确认的信息？",
+      "是否区分公开公告与自己团队的计划？",
+      "是否提出核实后再调整？"
+    ]
+  },
+  "credits": {
+    "audio": "美式英语合成朗读，非公司员工原声。",
+    "illustration": "工作场景插画。"
+  },
+  "review": {
+    "status": "needs_editorial_review",
+    "reviewer": null,
+    "reviewedAt": null,
+    "blockers": [
+      "原文和译文逐句复核",
+      "音频与文本核对",
+      "页面与练习人工验收"
+    ]
+  },
+  "taskPhrases": [
+    {
+      "id": "work-01",
+      "word": "focus on consumer AI products and research",
+      "meaning": "准确说明公告确认的业务重点",
+      "collocation": "focus on + products / research / customers",
+      "example": "The announcement confirms that Microsoft AI will focus on consumer AI products and research.",
+      "translation": "公告确认，Microsoft AI 将聚焦消费者 AI 产品和研究。"
+    },
+    {
+      "id": "work-02",
+      "word": "It doesn’t say whether…",
+      "meaning": "指出公告没有说明的内容",
+      "collocation": "It doesn’t say whether + 完整句子",
+      "example": "It doesn’t say whether our project will change.",
+      "translation": "公告没有说明我们的项目是否会改变。"
+    },
+    {
+      "id": "work-03",
+      "word": "check with our lead before…",
+      "meaning": "采取行动前先向负责人核实",
+      "collocation": "check with + 人 + before + 动名词",
+      "example": "Let’s check with our lead before updating the plan.",
+      "translation": "更新计划前，我们先和负责人确认一下。"
+    }
+  ]
+}
