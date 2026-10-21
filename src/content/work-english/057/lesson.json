@@ -311,7 +311,7 @@
   },
   "output": {
     "prompt": "团队要准备一次客户培训，你负责讲义和流程演示，同事负责安排场地与邀请参会者。请用英文说清分工，并询问你何时能收到参会名单。",
-    "sample": "I’ll prepare the handout and demo, while you arrange the room and invite the participants. Could you share the attendee list once it’s ready so I can tailor the examples?",
+    "sample": "I’ll prepare the handout and demo, while you arrange the room and invite the participants. Could you send me the attendee list by Wednesday so I can tailor the examples?",
     "check": [
       "是否说清楚双方各自负责什么？",
       "是否提出一个明确的交接请求？",

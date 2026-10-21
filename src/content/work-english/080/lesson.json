@@ -84,7 +84,7 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你在伦敦下班前把客户问题交给新加坡同事。迁移已完成 80%，客户需在伦敦时间上午十点前得到答复；最新草稿和测试结果在共享项目文件夹。Alex 负责下一次跟进。请用英文写清当前状态、时限、下一步和文件位置。",
+    "prompt": "你在伦敦下班前把客户问题交给新加坡同事。迁移已完成 80%，客户需在伦敦时间上午十点前得到答复；最新草稿和测试结果在共享项目文件夹。Alex 负责下一次跟进。请用英文写清当前状态、客户时限、下一位负责人和文件位置。",
     "sample": "The migration is 80% complete, and the latest draft and test results are in the shared project folder. The client needs an answer before 10 a.m. London time. Alex owns the next follow-up.",
     "rationale": "交接要让接班同事看清状态、紧急时限、下一步负责人和文件位置。"
   },

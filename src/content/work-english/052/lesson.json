@@ -119,8 +119,8 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "一项低风险更新卡在重复审批中。请用两句英文建议指定一位决策负责人、把决定记入项目记录，同时保留必要的安全审查。",
-    "sample": "Could we assign one decision owner for this update and document the decision in the project record? We can keep the security review while removing duplicate approvals.",
+    "prompt": "一项低风险更新卡在重复审批中。请用两句英文建议指定一位决策负责人、把决定及理由记入项目记录，同时保留必要的安全审查。",
+    "sample": "Could we assign one decision owner for this update and document the decision and rationale in the project record? We can keep the security review while removing duplicate approvals.",
     "rationale": "减少重复审批，同时保留与风险相称的检查。"
   },
   "words": [
@@ -202,7 +202,7 @@
   },
   "rewrite": {
     "bad": "I need your approval today. It’s critical, so please decide now.",
-    "good": "Could we assign one decision owner for this update and document the decision in the project record? We can keep the security review while removing duplicate approvals.",
+    "good": "Could we assign one decision owner for this update and document the decision and rationale in the project record? We can keep the security review while removing duplicate approvals.",
     "translation": "我们能否为这项更新明确一位决策负责人，并把决定及理由记入项目记录？在减少重复审批的同时，我们仍可保留安全检查。",
     "pattern": "Could we assign [one decision owner] and record [the decision and rationale]? We can keep [the security check] while removing [duplicate sign-offs]."
   },
@@ -254,14 +254,14 @@
     }
   ],
   "choice": {
-    "prompt": "一项低风险更新卡在重复审批中。请用两句英文建议指定一位决策负责人、把决定记入项目记录，同时保留必要的安全审查。",
+    "prompt": "一项低风险更新卡在重复审批中。请用两句英文建议指定一位决策负责人、把决定及理由记入项目记录，同时保留必要的安全审查。",
     "options": [
       "Could we remove the security review too? It would make the update faster.",
-      "Could we assign one decision owner for this update and document the decision in the project record? We can keep the security review while removing duplicate approvals.",
+      "Could we assign one decision owner for this update and document the decision and rationale in the project record? We can keep the security review while removing duplicate approvals.",
       "Let’s ask every department lead to approve the update before we record a decision."
     ],
     "correct": 1,
-    "why": "减少重复审批，同时保留与风险相称的检查。"
+    "why": "明确一位决策负责人并记录决定及理由，同时保留与风险相称的检查。"
   },
   "output": {
     "prompt": "一项影响范围有限的内部工具更新，需要经过多位管理者重复审批。请用英文建议明确一位决策负责人、记录决定，并保留必要的风险检查。",
