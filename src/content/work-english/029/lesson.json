@@ -248,14 +248,14 @@
     }
   ],
   "choice": {
-    "prompt": "东京团队无法参加你所在时区的同步会。请用英文在共享 issue 中发布简短演示，写清结果和验收标准，并说明大家可以用线程异步提问。",
+    "prompt": "欧洲和亚洲的同事无法参加同一场设计评审。请选择一条说明材料已放入共享文档、邀请同事按各自工作时间异步留言的消息。",
     "options": [
-      "I need your feedback on this proposal immediately. The deadline is tomorrow and I can't wait any longer.",
-      "I’ve posted a 5–8 minute demo and a short summary in the shared issue, focusing on the outcome and acceptance criteria. Please add any questions in the thread when it works for your time zone.",
-      "I’ve posted a 5–8 minute demo and a short summary in the shared issue, focusing on the outcome and acceptance criteria."
+      "Can everyone join a live review at 8 a.m. Pacific tomorrow? We need comments before the end of the day.",
+      "I’ve added the design walkthrough and a list of review questions to the shared document. Please leave your comments in the thread whenever you have time in your workday.",
+      "I’ve added the design walkthrough. Please send me your comments within the next hour."
     ],
     "correct": 1,
-    "why": "异步协作需要把结果和验收标准写下来，并给不同时区的成员留下异步回应的空间。"
+    "why": "正确选项用到本期三条表达：共享文档中的演示和问题、讨论串留言、按各自工作时间参与。"
   },
   "output": {
     "prompt": "纽约团队无法参加亚洲同事的产品演示。请用英文说明你已上传录屏和决策问题清单，并邀请大家在各自工作时间内异步留言。",

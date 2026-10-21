@@ -256,8 +256,8 @@
     "prompt": "新项目团队想照搬另一支团队的全部协作流程。请用英文说明团队需求各不相同，并建议先讨论当前项目需要哪些协作约定。",
     "options": [
       "You have to attend the daily meetings because Sarah wants it.",
-      "Each engagement has different team needs, so we shouldn’t treat another team’s practices as a mandatory checklist. Could we discuss which working agreements fit this project and adjust them as we learn?",
-      "Each engagement has different team needs, so we shouldn’t treat another team’s practices as a mandatory checklist."
+      "Each team has different needs, so we shouldn’t treat another team’s practices as a mandatory checklist. Could we discuss which working agreements fit this project and adjust them as we learn?",
+      "Each team has different needs, so we shouldn’t treat another team’s practices as a mandatory checklist."
     ],
     "correct": 1,
     "why": "来源提供的是可调整的高层建议，并明确表示它不是每个团队都必须照做的清单。"

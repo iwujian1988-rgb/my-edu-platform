@@ -238,12 +238,12 @@
   "choice": {
     "prompt": "客户门户项目依赖外部 API 团队，交付时间还不确定。请用英文说明可以先做一个初步计划，并在依赖时间明确后调整里程碑。",
     "options": [
-      "We need to make the delivery plan now. The external team will tell us when they're done.",
-      "Let’s make a rough plan based on what we know, then update the milestones once the API team’s timing is clearer.",
+      "We need to make the delivery plan now. The external team will tell us when they are done.",
+      "Let’s map out the work we can confirm and mark the API delivery as an open dependency. Once the timing is clear, we can update the milestone dates.",
       "Let’s make a rough plan based on what we know."
     ],
     "correct": 1,
-    "why": "先用估算作为起点，依赖信息变化时再调整计划。"
+    "why": "先梳理可确定的工作，再标记开放依赖，最后根据时间信息更新里程碑。"
   },
   "output": {
     "prompt": "供应商的接口预计下月交付，但日期尚未确认。请用英文建议先规划不受该接口影响的工作，把交付列为开放依赖，并在日期确认后调整里程碑。",
