@@ -329,11 +329,11 @@
     "prompt": "同事请你帮忙修改项目文档中的一句长句。请用英文建议把它拆成更短的句子，同时保留必要信息。",
     "options": [
       "The project documentation which was created last month needs to be revised because it contains sentences that are too long and which might confuse new employees.",
-      "Let’s split the long sentence in section 3.2 into shorter statements, keeping the key information.",
+      "Could we split the update into three short sentences: one for the project context, one for what is done, and one for the next step? That will make each point easier to scan.",
       "Could you share a specific example and explain what effect it had on the team?"
     ],
     "correct": 1,
-    "why": "一句只表达一个重点，同时保留读者需要的信息。"
+    "why": "建议拆句时明确保留背景、已完成事项和下一步，并说明这样更容易浏览。"
   },
   "output": {
     "prompt": "客户上线周报的一句话混在一起写了背景、已完成的检查和下一步，阅读者容易错过行动项。请用英文建议拆成三个短句，并保留这三类信息。",

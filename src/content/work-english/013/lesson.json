@@ -212,9 +212,9 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "We’re still ___ the next step.",
-      "answer": "discussing",
-      "why": "现在进行时表示团队仍在讨论，尚未做出最终决定。"
+      "prompt": "We’re still ___ feedback from the interview panel.",
+      "answer": "gathering",
+      "why": "现在进行时表示反馈仍在收集中，决定尚未完成。"
     },
     {
       "id": "c2",
@@ -241,8 +241,8 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们还在讨论下一步。",
-      "answer": "We’re still discussing the next step.",
+      "prompt": "我们还在收集面试小组的反馈。",
+      "answer": "We’re still gathering feedback from the interview panel.",
       "why": ""
     },
     {
@@ -292,11 +292,11 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "We’re still discussing the next step.",
-      "meaning": "告知对方团队仍在讨论下一步",
+      "word": "We’re still gathering feedback.",
+      "meaning": "告知对方团队仍在收集面试反馈",
       "collocation": "still be + 动词-ing",
-      "example": "We’re still discussing the next step.",
-      "translation": "我们还在讨论下一步。"
+      "example": "We’re still gathering feedback from the interview panel.",
+      "translation": "我们还在收集面试小组的反馈。"
     },
     {
       "id": "work-02",

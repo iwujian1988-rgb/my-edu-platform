@@ -101,9 +101,9 @@
     ]
   },
   "firstAttempt": {
-    "prompt": "你要给新同事介绍团队的工作方式。请用两句英文说明团队看重什么，以及团队工作希望为用户带来什么。",
-    "sample": "We value open discussion and practical problem-solving. Our goal is to make it easier for customers to find the information they need.",
-    "rationale": "分别介绍团队重视的工作方式和希望为用户带来的结果。"
+    "prompt": "你要给新同事介绍团队的工作方式和使命。请用两句英文说明团队如何鼓励创造与挑战，以及这如何服务用户。",
+    "sample": "We emphasize an atmosphere of creativity and challenge. Providing unbiased, accurate, and free access to information remains at the heart of our work.",
+    "rationale": "先介绍工作氛围，再说明这与团队为用户提供的信息服务如何相连。"
   },
   "words": [
     {
@@ -191,21 +191,21 @@
   "cloze": [
     {
       "id": "c1",
-      "prompt": "We ___ clear, creative problem-solving and open discussion.",
-      "answer": "value",
-      "why": "value 在这里表示重视某种工作方式。"
+      "prompt": "We emphasize an atmosphere of creativity and ___.",
+      "answer": "challenge",
+      "why": "creativity and challenge 概括原文提到的工作氛围。"
     },
     {
       "id": "c2",
-      "prompt": "Our goal is to make it ___ for customers to find the information they need.",
-      "answer": "easier",
-      "why": "make it easier for someone to… 表示让某人更容易做某事。"
+      "prompt": "Our goal is to provide unbiased, accurate, and free access ___ information.",
+      "answer": "to",
+      "why": "access to information 是固定搭配。"
     },
     {
       "id": "c3",
-      "prompt": "Our goal is to make it easier for customers to ___ the information they need.",
-      "answer": "find",
-      "why": "make it easier for someone to 后接动词原形。"
+      "prompt": "Providing accurate information remains at the ___ of our work.",
+      "answer": "heart",
+      "why": "at the heart of 表示处于核心位置。"
     }
   ],
   "dictation": [
@@ -220,34 +220,34 @@
   ],
   "translationPractice": [
     {
-      "prompt": "我们重视清晰、有创造性的解决问题方式和开放讨论。",
-      "answer": "We value clear, creative problem-solving and open discussion.",
+      "prompt": "我们强调营造鼓励创造与挑战的氛围。",
+      "answer": "We emphasize an atmosphere of creativity and challenge.",
       "why": ""
     },
     {
-      "prompt": "我们的目标是让客户更容易解决账户问题。",
-      "answer": "Our goal is to make it easier for customers to resolve account issues.",
+      "prompt": "我们的目标是提供公正、准确且免费的信息获取服务。",
+      "answer": "Our goal is to provide unbiased, accurate, and free access to information.",
       "why": ""
     },
     {
-      "prompt": "我们的目标是让客户更容易找到所需信息。",
-      "answer": "Our goal is to make it easier for customers to find the information they need.",
+      "prompt": "提供准确信息仍是我们工作的核心。",
+      "answer": "Providing accurate information remains at the heart of our work.",
       "why": ""
     }
   ],
   "choice": {
-    "prompt": "你要给新同事介绍团队的工作方式。请选择两句能说明团队看重什么、以及希望为用户带来什么的表达。",
+    "prompt": "请用两句英文向新同事介绍 Google 创始人信中的工作氛围和核心使命。",
     "options": [
-      "We value open discussion and practical problem-solving. Our goal is to make it easier for customers to find the information they need.",
+      "We emphasize an atmosphere of creativity and challenge. Providing unbiased, accurate, and free access to information remains at the heart of our work.",
       "We follow the same process as every other company. Our goal is to sell more products this quarter.",
       "Could we share an example of a difficult decision? It may help the team understand what happened."
     ],
     "correct": 0,
-    "why": "第一句介绍团队的工作方式，第二句说明工作希望给用户带来的结果。"
+    "why": "第一句说明工作氛围，第二句说明原文所述的信息服务使命。"
   },
   "output": {
-    "prompt": "你要在跨部门项目启动会上介绍团队。请用英文写两句：第一句说明你们重视的工作方式，第二句说明这次合作希望给客户带来的结果。",
-    "sample": "Our team values open discussion and practical problem-solving across functions. Our goal is to make it easier for customers to resolve account issues.",
+    "prompt": "新同事问团队扩展到多个产品后，是否还坚持原来的使命。请用英文介绍团队鼓励的工作氛围，以及为用户提供的信息服务仍处于工作的核心。",
+    "sample": "We encourage creativity and challenge as we explore new products. Providing unbiased, accurate, and accessible information remains at the heart of our work.",
     "check": [
       "是否说明团队的工作方式或价值取向？",
       "是否说明工作希望带来的结果？",
@@ -272,27 +272,27 @@
   "taskPhrases": [
     {
       "id": "work-01",
-      "word": "We value…",
-      "meaning": "说明团队重视的工作方式",
-      "collocation": "value + 名词 / 动名词",
-      "example": "We value clear, creative problem-solving and open discussion.",
-      "translation": "我们重视清晰、有创造性的解决问题方式和开放讨论。"
+      "word": "emphasize an atmosphere of creativity and challenge",
+      "meaning": "说明团队鼓励的工作氛围",
+      "collocation": "emphasize + atmosphere / value",
+      "example": "We emphasize an atmosphere of creativity and challenge.",
+      "translation": "我们强调营造鼓励创造与挑战的氛围。"
     },
     {
       "id": "work-02",
-      "word": "Our goal is to…",
-      "meaning": "说明团队希望达成的目标",
-      "collocation": "Our goal is to + 动词原形",
-      "example": "Our goal is to make it easier for customers to resolve account issues.",
-      "translation": "我们的目标是让客户更容易解决账户问题。"
+      "word": "provide unbiased, accurate, and free access to information",
+      "meaning": "说明团队为用户提供什么",
+      "collocation": "provide + access to + information",
+      "example": "Our goal is to provide unbiased, accurate, and free access to information.",
+      "translation": "我们的目标是提供公正、准确且免费的信息获取服务。"
     },
     {
       "id": "work-03",
-      "word": "make it easier for someone to find…",
-      "meaning": "说明团队希望怎样改善用户体验",
-      "collocation": "make it easier for someone to + 动词原形",
-      "example": "Our goal is to make it easier for customers to find the information they need.",
-      "translation": "我们的目标是让客户更容易找到所需信息。"
+      "word": "remain at the heart of our work",
+      "meaning": "说明某项使命仍是工作的核心",
+      "collocation": "remain at the heart of + noun",
+      "example": "Providing accurate information remains at the heart of our work.",
+      "translation": "提供准确信息仍是我们工作的核心。"
     }
   ]
 }

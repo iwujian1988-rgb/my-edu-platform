@@ -240,11 +240,11 @@
     "prompt": "新项目团队对发布、测试和代码规范的理解不一致。请用英文建议在开发开始前共同写一页团队约定，并邀请成员补充。",
     "options": [
       "Li, draft the manifesto by Friday. I’ll decide what everyone’s expectations should be.",
-      "Could we create a one-page team manifesto together before development starts? We can agree on release, testing, and coding expectations, then update it as the team learns.",
+      "Could we create a one-page team manifesto together before development starts? We can agree on release, testing, and coding expectations, and invite everyone to suggest additions.",
       "Could you share a specific example and explain what effect it had on the team?"
     ],
     "correct": 1,
-    "why": "团队约定应由团队共同建立，把具体工作标准放在一页内，后续也能根据合作情况调整。"
+    "why": "答案说明共同约定的内容，也明确邀请团队成员补充。"
   },
   "output": {
     "prompt": "新产品发布前，支持团队担心升级后客户问题由谁跟进，工程团队也不确定多久同步一次。请用英文建议在发布前写下交接和升级约定，并在首周后根据实际情况更新。",
