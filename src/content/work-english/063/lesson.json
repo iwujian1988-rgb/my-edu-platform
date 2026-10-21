@@ -213,8 +213,8 @@
       "pos": "verb phrase",
       "meaning": "评估流程",
       "collocation": "regularly assessing processes",
-      "example": "Regularly assessing our process helps us spot obstacles before the next sprint.",
-      "translation": "定期评估流程能帮助我们在下个 sprint 前发现障碍。",
+      "example": "By assessing processes after each sprint, we can catch repeated blockers before planning the next one.",
+      "translation": "每个 sprint 结束后评估流程，能在规划下一轮前发现反复出现的阻碍。",
       "note": "持续改进的关键步骤，通过评估发现问题和优化机会"
     },
     {
@@ -224,9 +224,9 @@
       "pos": "verb phrase",
       "meaning": "把这些内容付诸行动（商务用语）",
       "collocation": "actioning the takeaways",
-      "example": "The facilitator helps the team with actioning the takeaways after the retrospective.",
-      "translation": "主持人帮助团队在复盘后落实讨论结论。",
-      "note": "原文用 actioning 表示落实；日常工作中更自然的说法是 turn the takeaways into action items。"
+      "example": "The team is actioning the retrospective’s two top priorities before the next sprint.",
+      "translation": "团队正在下一轮 sprint 开始前落实复盘中最优先的两项改进。",
+      "note": "原文用 actioning 表示落实；日常沟通中更自然的说法是 put the takeaways into practice。"
     },
     {
       "id": "agile-methodology",
